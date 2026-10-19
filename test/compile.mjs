@@ -12,13 +12,16 @@ import { fileURLToPath } from 'node:url';
 export const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 // css: the entry's text after Tailwind's import (paths relative to the
-// root); classes: the class strings Tailwind is to find
-export function compile({ css = '@import "index.css";', classes = '' } = {}) {
+// root); classes: the class strings Tailwind is to find; sources: files or
+// directories (relative to the root) it scans for more, as a site's
+// @source does
+export function compile({ css = '@import "index.css";', classes = '', sources = [] } = {}) {
   const dir = mkdtempSync(join(tmpdir(), 'ciderui-test-'));
   try {
     const entry = join(dir, 'entry.css');
     const imports = css.replace(/@import "([^"]+)"/g, (_, p) => `@import "${join(ROOT, p)}"`);
-    writeFileSync(entry, `@import "${join(ROOT, 'node_modules/tailwindcss/index.css')}" source(none);\n@source inline(${JSON.stringify(classes)});\n${imports}\n`);
+    const scanned = sources.map(s => `@source "${join(ROOT, s)}";\n`).join('');
+    writeFileSync(entry, `@import "${join(ROOT, 'node_modules/tailwindcss/index.css')}" source(none);\n@source inline(${JSON.stringify(classes)});\n${scanned}${imports}\n`);
     const out = join(dir, 'out.css');
     execFileSync(join(ROOT, 'node_modules/.bin/tailwindcss'), ['-i', entry, '-o', out, '--minify'], { stdio: 'pipe' });
     return readFileSync(out, 'utf8');

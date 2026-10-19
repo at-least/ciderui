@@ -15,7 +15,9 @@
 //            one (reference/apple.com/results/<page>.json) at the same
 //            width, or at `at[width]` for a width the reference was not read
 //            at; never a box's width or a `width` (apple.com's text was SF,
-//            ciderui's here is Inter)
+//            ciderui's here is Inter); `as` maps a property to apple.com's
+//            that does the same (an icon's margin-left to its glyph's
+//            padding-left)
 //   golden   why it is ciderui's: the value equals golden.json's, which
 //            UPDATE_GOLDEN=1 rewrites
 //   rest     a touch screen's hovered or pressed element equals itself at

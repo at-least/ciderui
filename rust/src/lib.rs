@@ -16,6 +16,25 @@
 #[cfg(feature = "css")]
 pub mod css;
 pub mod icon;
+mod link;
+
+pub use link::MoreLink;
 
 #[cfg(test)]
 mod example;
+
+use hypertext::{AttributeBuffer, context::AttributeValue, prelude::*};
+
+/// A component's root class: its block, then the page's utilities (its
+/// `class` field), if any.
+struct Class<'a>(&'static str, &'a str);
+
+impl Renderable<AttributeValue> for Class<'_> {
+    fn render_to(&self, buffer: &mut AttributeBuffer) {
+        self.0.render_to(buffer);
+        if !self.1.is_empty() {
+            " ".render_to(buffer);
+            self.1.render_to(buffer);
+        }
+    }
+}

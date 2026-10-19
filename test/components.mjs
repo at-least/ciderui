@@ -22,8 +22,10 @@ if (UPDATE && PICK) throw new Error('UPDATE_GOLDEN=1 runs every case: drop CASES
 
 const names = readdirSync(join(ROOT, 'components')).filter(n => existsSync(join(ROOT, 'components', n, `${n}.test.mjs`)));
 const sheets = names.map(n => `@import "components/${n}/${n}.css";`).join('\n');
-const markup = names.flatMap(n => readdirSync(join(ROOT, 'components', n, 'examples')).map(f => readFileSync(join(ROOT, 'components', n, 'examples', f), 'utf8'))).join('\n');
-const css = compile({ css: `@import "index.css";\n${sheets}`, classes: markup });
+// Tailwind scans the components' directories, as a site's @source does: the
+// examples and the test files, whose cases write markup of their own (a type
+// class around an example)
+const css = compile({ css: `@import "index.css";\n${sheets}`, sources: ['components'] });
 
 for (const name of names) {
   const file = join(ROOT, 'components', name, `${name}.test.mjs`);
@@ -48,7 +50,10 @@ for (const name of names) {
             for (const prop of k.props) {
               // apple.com drew SF, ciderui draws Inter here: a width is the text's
               if (prop === 'width' || prop === 'box-width') throw new Error(`${label}: an apple.com check reads no width (${prop})`);
-              check(`${label} ${prop} is apple.com's ${p}:${probe}${state ? ':' + state : ''} at ${at}px`, got[prop], ref(p, probe, at, prop, state));
+              // `as`: apple.com's property where it does the same with another (a
+              // pseudo-element's padding for an icon's margin)
+              const theirs = k.as?.[prop] ?? prop;
+              check(`${label} ${prop} is apple.com's ${p}:${probe}${state ? ':' + state : ''} ${theirs} at ${at}px`, got[prop], ref(p, probe, at, theirs, state));
             }
           } else if (k.golden) {
             for (const prop of k.props) {
