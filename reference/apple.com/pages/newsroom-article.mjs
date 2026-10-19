@@ -11,6 +11,8 @@ import { TYPE, BOX, BLUR, LINK, PAGE, FLEX, TEXT } from './common.mjs';
 
 const COLUMN = ['width', 'max-width', 'margin-left', 'margin-right', 'padding-left', 'padding-right'];
 const SPACE = ['margin-top', 'margin-bottom', 'padding-top', 'padding-bottom'];
+// how a word too long for its line breaks, if it does
+const WRAP = ['overflow-wrap', 'word-break', 'hyphens', 'white-space'];
 
 export default {
   url: 'https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/',
@@ -38,23 +40,23 @@ export default {
     { name: 'eyebrow', select: '.category-eyebrow', props: [...BOX, ...FLEX] },
     { name: 'eyebrow.category', select: '.category-eyebrow__category', props: [...TYPE, ...TEXT, 'text-transform'] },
     { name: 'eyebrow.date', select: '.category-eyebrow__date', props: [...TYPE, ...TEXT, 'margin-top'] },
-    { name: 'headline', select: 'h1.hero-headline', props: [...TYPE, 'margin-top', 'margin-bottom', 'text-align'] },
-    { name: 'subhead', select: '.article-subhead .component-content', props: [...TYPE, 'margin-top', 'margin-bottom'] },
+    { name: 'headline', select: 'h1.hero-headline', props: [...TYPE, 'margin-top', 'margin-bottom', 'text-align', ...WRAP] },
+    { name: 'subhead', select: '.article-subhead .component-content', props: [...TYPE, 'margin-top', 'margin-bottom', ...WRAP] },
     // the hero figure, its picture and its caption
     { name: 'figure', select: 'figure.image-fullbleed', props: [...COLUMN, 'margin-top', 'margin-bottom'], box: true },
     { name: 'figure.img', select: 'figure.image-fullbleed img.picture-image', props: ['max-width', 'border-top-left-radius'], box: true },
-    { name: 'figure.caption', select: 'figure.image-fullbleed .image-caption', props: [...TYPE, ...SPACE, 'text-align'] },
+    { name: 'figure.caption', select: 'figure.image-fullbleed .image-caption', props: [...TYPE, ...SPACE, 'text-align', ...WRAP] },
     // the caption's room: the text's column, under the picture
     { name: 'figure.description', select: 'figure.image-fullbleed .image-description', props: [...COLUMN, 'margin-top'], box: true },
     { name: 'figure.inline', select: 'figure.image-inline', props: [...COLUMN, 'margin-top', 'margin-bottom'], box: true },
     // the copy: a paragraph of it, a paragraph a page adds there, a link, a
     // footnote's mark, bold, a subhead and its strong
-    { name: 'copy', select: '.pagebody .component-content > .pagebody-copy', props: [...TYPE, 'margin-top', 'margin-bottom'] },
+    { name: 'copy', select: '.pagebody .component-content > .pagebody-copy', props: [...TYPE, 'margin-top', 'margin-bottom', ...WRAP] },
     { name: 'copy.p', inject: '<p>Sample text</p>', into: '.pagebody .component-content', props: [...TYPE, 'margin-top', 'margin-bottom'] },
-    { name: 'copy.link', select: '.pagebody-copy a', props: [...TYPE, ...LINK], states: ['hover'] },
+    { name: 'copy.link', select: '.pagebody-copy a', props: [...TYPE, ...LINK, ...WRAP], states: ['hover'] },
     { name: 'copy.sup', select: '.pagebody-copy sup', props: [...TYPE, 'font-feature-settings', 'vertical-align', 'position', 'top'] },
     { name: 'copy.strong', select: '.pagebody-small .pagebody-copy li strong', props: TYPE },
-    { name: 'h2', select: 'h2.pagebody-header', props: [...TYPE, 'margin-top', 'margin-bottom'] },
+    { name: 'h2', select: 'h2.pagebody-header', props: [...TYPE, 'margin-top', 'margin-bottom', ...WRAP] },
     { name: 'h2.strong', select: 'h2.pagebody-header strong', props: TYPE },
     // the small print's list
     { name: 'list', select: '.pagebody-small .pagebody-copy ul', props: ['margin-top', 'margin-bottom', 'padding-left', 'list-style-type', 'list-style-position', 'margin-left'] },
@@ -63,7 +65,7 @@ export default {
     // the footnotes
     { name: 'footnotes', select: '.sosumi', props: [...SPACE, 'border-top-width', 'border-top-style', 'border-top-color'] },
     { name: 'footnotes.ol', select: '.sosumi ol', props: [...TYPE, 'margin-top', 'margin-bottom', 'padding-left', 'list-style-type', 'margin-left'] },
-    { name: 'footnotes.li', select: '.sosumi li', props: [...TYPE, 'margin-top', 'margin-bottom'] },
+    { name: 'footnotes.li', select: '.sosumi li', props: [...TYPE, 'margin-top', 'margin-bottom', ...WRAP] },
     { name: 'footnotes.link', select: '.sosumi li a', props: [...TYPE, ...LINK], states: ['hover'] },
     // the related stories: a heading over ruled rows, each a link with a
     // picture, a category, a title and a date
