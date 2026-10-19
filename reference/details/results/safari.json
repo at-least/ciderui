@@ -1,0 +1,23 @@
+{
+ "browser": "safari 27.0.1 on macOS 27.0.1",
+ "date": "2026-10-19T10:03:39.449Z",
+ "closed": {
+  "answer": 61.59375,
+  "open": false,
+  "item": 56,
+  "chevron": "none"
+ },
+ "opening": {
+  "answer": 61.59375,
+  "open": true,
+  "item": 117.59375,
+  "chevron": "matrix(1, 0, 0, 0.383858, 0, 0)"
+ },
+ "opened": {
+  "answer": 61.59375,
+  "open": true,
+  "item": 117.59375,
+  "chevron": "matrix(1, 0, 0, -1, 0, 0)"
+ },
+ "interpolateSize": false
+}
