@@ -1,0 +1,282 @@
+/* ciderui — the stories: apple.com's Newsroom index, a band on the alternate
+ * ground, its heading over a grid of stories, each a white rounded tile,
+ * the whole of it its link: its picture, its category, its headline, its
+ * date. One across, two, or three.
+ *
+ * From apple.com's Newsroom (reference/apple.com/): newsroom-index:* (the
+ * feed, its heading, its grid, its tiles one, two and three across).
+ *
+ *   <section class="cui-stories">
+ *     <div class="cui-stories-content">
+ *       <h2 class="cui-stories-heading">Latest News</h2>
+ *       <ul class="cui-stories-list">
+ *         <li><a class="cui-story" data-size="lg" href="/news/zola/">
+ *           <img class="cui-story-media" src="…" alt="" width="1280" height="720">
+ *           <div class="cui-story-content">
+ *             <div class="cui-story-head">
+ *               <p class="cui-story-category">Update</p>
+ *               <h3 class="cui-story-headline">ciderui comes to Zola</h3>
+ *             </div>
+ *             <time class="cui-story-date" datetime="2026-10-19">October 19, 2026</time>
+ *           </div>
+ *         </a></li>
+ *       </ul>
+ *     </div>
+ *   </section>
+ *
+ * cui-stories          the alternate ground, 52px down and 80px up (40px
+ *                      and 64px from 735px, 32px and 40px below)
+ * cui-stories-content  980px, 692px from 735px, below 87.5% at most 366px;
+ *                      centered
+ * cui-stories-heading  32px at 700 (28px from 735px, 24px below), 24px over
+ *                      the grid (16px below 1069px)
+ * cui-stories-list     twelve columns 36px apart (24px below 1069px); below
+ *                      735px one story under another, 24px apart
+ * cui-story            a story, three across (four columns), its picture
+ *                      over its text, rounded 32px (24px below 1069px), on
+ *                      the page's ground, clipped, its columns' width; two
+ *                      across from 735px to 1068px, whatever its size, 3px in
+ *                      from its columns
+ *   data-size="md"     two across (six columns), 1px in, 472px tall at least
+ *                      (328px from 735px, 347px below)
+ *   data-size="lg"     one across: from 1069px its picture (643px) beside its
+ *                      text
+ * cui-story-media      its picture, 16:9, covering
+ * cui-story-content    its text, 24px in (32px from 1069px one or two
+ *                      across): its head (cui-story-head, its category and
+ *                      headline) at its top, its date at its foot
+ * cui-story-category   12px at 700 (14px from 1069px one or two across), the
+ *                      secondary text, uppercase
+ * cui-story-headline   21px at 700 (24px two across, 32px one across, from
+ *                      1069px), 8px down (12px)
+ * cui-story-date       14px at 600 (17px from 1069px one or two across), the
+ *                      secondary text, 12px down
+ *
+ * apple.com's: all of it, by its classes at each width (its script gives
+ * every tile tile-2up from 735px to 1068px), no hover and no shadow.
+ * ciderui's: the letter-spacing (tokens.css); the category uppercase
+ * (apple.com writes it in capitals); the picture an <img> (apple.com's a
+ * picture inside a box of its own); three across, its columns' 302.66px
+ * (apple.com's a fixed 303px, 0.34px over them). */
+
+@layer components {
+  .cui-stories {
+    padding: 32px 0 40px;
+    color: var(--cui-c-text);
+    background-color: var(--cui-c-bg-alt);
+
+    @media (width >= 735px) {
+      padding: 40px 0 64px;
+    }
+
+    @media (width >= 1069px) {
+      padding: 52px 0 80px;
+    }
+  }
+
+  .cui-stories-content {
+    width: 87.5%;
+    max-width: 366px;
+    margin-inline: auto;
+
+    @media (width >= 735px) {
+      width: 692px;
+      max-width: none;
+    }
+
+    @media (width >= 1069px) {
+      width: 980px;
+    }
+  }
+
+  .cui-stories-heading {
+    margin: 0 0 16px;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+    letter-spacing: var(--cui-tracking-24);
+
+    @media (width >= 735px) {
+      font-size: 28px;
+      line-height: 32px;
+      letter-spacing: var(--cui-tracking-28);
+    }
+
+    @media (width >= 1069px) {
+      margin-bottom: 24px;
+      font-size: 32px;
+      line-height: 36px;
+      letter-spacing: var(--cui-tracking-32);
+    }
+  }
+
+  .cui-stories-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+      width: 100%;
+    }
+
+    @media (width >= 735px) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+
+      > li {
+        grid-column-end: span 6;
+        width: auto;
+      }
+    }
+
+    @media (width >= 1069px) {
+      gap: 36px;
+
+      > li {
+        grid-column-end: span 4;
+      }
+
+      > li:has(> .cui-story[data-size="md"]) {
+        grid-column-end: span 6;
+      }
+
+      > li:has(> .cui-story[data-size="lg"]) {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  .cui-story {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 24px;
+    color: var(--cui-c-text);
+    text-decoration-line: none;
+    background-color: var(--cui-c-bg);
+
+    @media (width >= 735px) {
+      min-height: 328px;
+      margin-inline: 3px;
+    }
+
+    @media (width < 735px) {
+      &[data-size="md"] {
+        min-height: 347px;
+      }
+    }
+
+    @media (width >= 1069px) {
+      min-height: 0;
+      margin-inline: 0;
+      border-radius: 32px;
+
+      &[data-size="md"] {
+        min-height: 472px;
+        margin-inline: 1px;
+      }
+
+      &[data-size="lg"] {
+        display: grid;
+        grid-template-columns: 643px 1fr;
+      }
+    }
+  }
+
+  .cui-story-media {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .cui-story-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    padding: 24px;
+
+    @media (width >= 1069px) {
+      .cui-story:is([data-size="md"], [data-size="lg"]) & {
+        padding: 32px;
+      }
+    }
+  }
+
+  .cui-story-category {
+    margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: var(--cui-tracking-12);
+    text-transform: uppercase;
+    color: var(--cui-c-text-2);
+
+    @media (width >= 1069px) {
+      .cui-story:is([data-size="md"], [data-size="lg"]) & {
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: var(--cui-tracking-14);
+      }
+    }
+  }
+
+  .cui-story-headline {
+    margin: 8px 0 0;
+    font-size: 21px;
+    line-height: 25px;
+    font-weight: 700;
+    letter-spacing: var(--cui-tracking-21);
+
+    @media (width < 735px) {
+      .cui-story:not([data-size]) & {
+        margin-top: 12px;
+      }
+    }
+
+    @media (width >= 1069px) {
+      .cui-story[data-size="md"] & {
+        margin-top: 12px;
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: var(--cui-tracking-24);
+      }
+
+      .cui-story[data-size="lg"] & {
+        margin-top: 12px;
+        font-size: 32px;
+        line-height: 36px;
+        letter-spacing: var(--cui-tracking-32);
+      }
+    }
+  }
+
+  .cui-story-date {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-14);
+    color: var(--cui-c-text-2);
+
+    @media (width >= 1069px) {
+      .cui-story[data-size="md"] & {
+        font-size: 17px;
+        line-height: 21px;
+        letter-spacing: var(--cui-tracking-17);
+      }
+
+      .cui-story[data-size="lg"] & {
+        font-size: 17px;
+        line-height: 25px;
+        letter-spacing: var(--cui-tracking-17);
+      }
+    }
+  }
+}

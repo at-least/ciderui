@@ -34,6 +34,7 @@ mod ribbon;
 mod section;
 mod shelf;
 mod stat;
+mod stories;
 mod swatch;
 mod tile;
 
@@ -55,6 +56,7 @@ pub use ribbon::Ribbon;
 pub use section::{Ground, Rhythm, Section, SectionHeader};
 pub use shelf::Shelf;
 pub use stat::Stat;
+pub use stories::{Stories, Story, StorySize};
 pub use swatch::Swatch;
 pub use tile::{Tile, TileSize};
 
