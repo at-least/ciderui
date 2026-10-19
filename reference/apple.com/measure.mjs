@@ -6,7 +6,8 @@
 // into `into` or the body; `select` then picks the element inside it) for a
 // class the page defines but may not use, and reads `props`, `vars` (custom
 // properties) and `pseudo`'s, its box with `box`, and with `states` the same
-// again with each pseudo-class forced through the DevTools protocol on the
+// again with each pseudo-class (or several, 'focus+focus-visible') forced
+// through the DevTools protocol on the
 // element itself or on `stateOn` (an input whose label is read), transitions
 // off while it is forced; a frame's element is found in the page's own
 // session, so only a frame in the page's process can have its states forced
@@ -24,7 +25,8 @@
 // on what, its duration, delay and timing, its first and last values);
 // `keyframes` records the @keyframes its animation-name names (read from
 // the page's own stylesheets; one the page's CSS does not hold is null and
-// fails the run). A probe that matches nothing is recorded as null, printed,
+// fails the run). A spec's `colorScheme` reads the page in that color scheme
+// (`prefers-color-scheme`, emulated before a reload). A probe that matches nothing is recorded as null, printed,
 // and fails the run. The result is results/<name>.json.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
@@ -125,6 +127,11 @@ const read = (probe) => {
 
 const page = await open('chromium', spec.url);
 const pw = page.page;
+// `colorScheme`: the page read in that scheme (prefers-color-scheme), from its load
+if (spec.colorScheme) {
+  await pw.emulateMedia({ colorScheme: spec.colorScheme });
+  await pw.reload({ waitUntil: 'load' });
+}
 const cdp = await pw.context().newCDPSession(pw);
 await cdp.send('DOM.enable');
 await cdp.send('CSS.enable');
@@ -188,7 +195,8 @@ try {
           .then(h => h.evaluate(e => e.setAttribute('data-cui-still', '')));
         at[probe.name].states = {};
         for (const state of probe.states) {
-          await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [state] });
+          // a state may be several at once: 'focus+focus-visible'
+          await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: state.split('+') });
           at[probe.name].states[state] = (await frame.evaluate(read, probe)).styles;
           await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] });
         }
