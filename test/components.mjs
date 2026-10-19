@@ -53,6 +53,12 @@ for (const name of names) {
           for (const key of [].concat(c.press ?? [])) await page.page.keyboard.press(key);
           await page.page.waitForTimeout(c.wait ?? (c.reducedMotion ? 100 : 1000));
         }
+        // `scroll`: [selector, x], that element scrolled to x (snapping where
+        // it snaps) at every width, before the checks
+        if (c.scroll) {
+          await page.page.evaluate(([selector, x]) => { document.querySelector(selector).scrollLeft = x; }, c.scroll);
+          await page.page.waitForTimeout(100);
+        }
         for (const k of c.checks) {
           const label = `${name} ${c.name}: ${k.target}${k.pseudo ?? ''}${k.state ? ':' + k.state : ''} at ${width}px`;
           const got = await page.read(k.target, k.props, { state: k.state, on: k.on, pseudo: k.pseudo });

@@ -1,0 +1,106 @@
+/* ciderui — the shelf: the store's row of cards, a header (a headline and
+ * its secondary text after it) over a scroller across the whole window,
+ * its cards snapping into place 20px apart, the first and the last as far
+ * in as the header.
+ *
+ * From apple.com's store (reference/apple.com/): store:shelf* (the shelf
+ * of its 400px cards).
+ *
+ *   <div class="cui-shelf">
+ *     <div class="cui-shelf-header">
+ *       <h2 class="cui-shelf-headline">The latest.</h2> <span class="cui-shelf-subhead">Take a look at what's new.</span>
+ *     </div>
+ *     <ul class="cui-shelf-scroller">
+ *       <li><div class="cui-card">…</div></li>
+ *     </ul>
+ *   </div>
+ *
+ * cui-shelf            the row, 46px below it (28px below 735px); its
+ *                      inset, 22px to 1024px, 140px from 1440px, between
+ *                      the two with the window
+ * cui-shelf-header     8px above the scroller, as far in as the first card
+ *                      (87.5% of the window wide below 735px)
+ * cui-shelf-headline   28px at 600 (24px below 735px), the text's color
+ * cui-shelf-subhead    the same in the secondary text, after a space
+ * cui-shelf-scroller   a list of its items (cards), each snapping at its
+ *                      start, 16px of room above them and 22px below
+ *
+ * apple.com's: the inset, the gaps, the room, the type, the colors, the
+ * snapping. ciderui's: the letter-spacing (tokens.css); its scrollbar hidden
+ * by scrollbar-width (apple.com's crop clips it, and the 18px of its
+ * scroller's foot under it: ciderui's foot is the 22px in sight); its cards
+ * as far in by the scroller's padding and its scroll padding (apple.com's
+ * items are translated so far, the last padded at its end); the steps at
+ * 735px by the window (apple.com's by a phone's screen); no paddles here
+ * (a gallery's). */
+
+@layer components {
+  .cui-shelf {
+    /* apple.com's: 22px to 1024px, 140px from 1440px, a straight line
+       between (store:shelf.card) */
+    --cui-shelf-inset: clamp(22px, 28.36538vw - 268.46154px, 140px);
+
+    padding-bottom: 28px;
+
+    @media (width >= 735px) {
+      padding-bottom: 46px;
+    }
+  }
+
+  .cui-shelf-header {
+    width: 87.5%;
+    margin-inline-start: var(--cui-shelf-inset);
+    padding-bottom: 8px;
+
+    @media (width >= 735px) {
+      width: auto;
+    }
+  }
+
+  .cui-shelf-headline,
+  .cui-shelf-subhead {
+    display: inline;
+    margin: 0;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-24);
+
+    @media (width >= 735px) {
+      font-size: 28px;
+      line-height: 32px;
+      letter-spacing: var(--cui-tracking-28);
+    }
+  }
+
+  .cui-shelf-headline {
+    color: var(--cui-c-text);
+  }
+
+  .cui-shelf-subhead {
+    color: var(--cui-c-text-2);
+  }
+
+  .cui-shelf-scroller {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 16px var(--cui-shelf-inset) 22px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--cui-shelf-inset);
+    scrollbar-width: none;
+    list-style: none;
+
+    /* Safari before 18.2 */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > li {
+      flex: none;
+      scroll-snap-align: start;
+    }
+  }
+}

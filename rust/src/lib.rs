@@ -22,6 +22,7 @@ mod link;
 mod localnav;
 mod ribbon;
 mod section;
+mod shelf;
 mod tile;
 
 pub use card::Card;
@@ -30,6 +31,7 @@ pub use link::MoreLink;
 pub use localnav::LocalNav;
 pub use ribbon::Ribbon;
 pub use section::{Ground, Rhythm, Section, SectionHeader};
+pub use shelf::Shelf;
 pub use tile::{Tile, TileSize};
 
 #[cfg(test)]
