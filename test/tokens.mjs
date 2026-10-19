@@ -102,6 +102,9 @@ const CONTRACT = {
   '--cui-c-on-paddle-hover': [['iphone', 'paddle', W, 'color', 'hover'], ['product', 'paddle.next', W, 'color', 'hover']],
   '--cui-c-dot': [['iphone', 'gallery.dot', W, 'background-color'], ['product', 'gallery.dot', W, 'background-color']],
   '--cui-c-dot-hover': [['iphone', 'gallery.dot', W, 'background-color', 'hover'], ['product', 'gallery.dot', W, 'background-color', 'hover']],
+  // apple.com's own field (the retail page's form-textbox), and in a dark
+  // color scheme
+  '--cui-c-field': [['retail', 'field.input', W, 'background-color'], ['retail-dark', 'field.input', W, 'background-color']],
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-'));
@@ -172,6 +175,13 @@ for (const [on, bar] of [['--cui-c-on-bar', '--cui-c-bar'], ['--cui-c-on-bar-hov
   }
 }
 
+// a field's text, its value and its label, on its ground over the field's
+// own (the page's ground, light: a field keeps its light look)
+for (const fg of ['--cui-c-text', '--cui-c-text-2']) {
+  const ground = over(sides('--cui-c-field')[0], sides('--cui-c-bg')[0]);
+  check(`${fg} on --cui-c-field over --cui-c-bg, light, at least 4.5:1`, ratio(sides(fg)[0], ground) >= 4.5, true);
+}
+
 // a gallery's marks, 3:1 (WCAG 2's for what is not text): a paddle's chevron
 // on its paddle, the paddle over the page's grounds; a dot on them
 for (const [mark, layers] of [['--cui-c-on-paddle', ['--cui-c-paddle']], ['--cui-c-on-paddle-hover', ['--cui-c-paddle-hover']], ['--cui-c-on-paddle-hover', ['--cui-c-paddle-active']], ['--cui-c-dot', []], ['--cui-c-dot-hover', []]]) {
@@ -195,7 +205,6 @@ check('--cui-focus-ring', vars['--cui-focus-ring'], '2px solid var(--cui-c-accen
 check('the focus ring is apple.com\'s width', ref('home', 'button', W, 'outline-width', 'focus-visible'), '2px');
 check('the focus ring is apple.com\'s color', rgb(sides('--cui-c-accent')[0]), ref('home', 'button', W, 'outline-color', 'focus-visible'));
 check('--cui-focus-ring-offset is apple.com\'s', vars['--cui-focus-ring-offset'], ref('home', 'button', W, 'outline-offset', 'focus-visible'));
-check('--cui-focus-ring-offset-field is apple.com\'s', vars['--cui-focus-ring-offset-field'], ref('signin', 'field.input', W, 'outline-offset', 'focus-visible'));
 
 // the card's shadows, as the browser computes one: its color first, then its
 // lengths (the spread 0px where none is written)

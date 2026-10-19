@@ -1,0 +1,87 @@
+/* ciderui — the field: apple.com's text field, 56px, its label the
+ * placeholder until the field is focused or filled, then small at its top.
+ *
+ * From apple.com's own form field, the store's (reference/apple.com/):
+ * retail:field* (the retail page's form-textbox: a plain one the probe
+ * adds with its classes), retail-dark:field* (the same in a dark color
+ * scheme).
+ *
+ *   <div class="cui-field">
+ *     <input class="cui-field-input" id="email" type="email" name="email" placeholder=" " autocomplete="email">
+ *     <label class="cui-field-label" for="email">Email</label>
+ *   </div>
+ *
+ * cui-field          the field, on its own light ground in any block
+ * cui-field-input    the input: 56px, its 1px edge, 12px corners, on the
+ *                    field's translucent ground, 17px text 18px down and
+ *                    16px in; focused, a 2px accent edge (15px in, the box
+ *                    unchanged). Its placeholder a space (placeholder=" "),
+ *                    so the label can tell it empty
+ * cui-field-label    after the input: 17px in the secondary text, 18px
+ *                    down, as its placeholder; with the field focused or
+ *                    filled, 12px at its top, in 0.125s
+ *
+ * apple.com's: the sizes, the edge, the ground, the type, the label and
+ * its motion; the light look in a dark color scheme. ciderui's: the
+ * letter-spacing (tokens.css); the label floats with no script, read off
+ * the input (focused, or its placeholder not shown: apple.com's script sets
+ * a class); focused, the accent edge alone and no ring (a text field matches
+ * :focus-visible however it is focused, so no ring can show for the keyboard
+ * alone, as apple.com's script's does); the field on a light ground of its
+ * own, its corners the input's, so it reads in a dark block too (apple.com
+ * shows no field in one); no margin below it (apple.com's 14px is the
+ * form's spacing, the page's). */
+
+@layer components {
+  .cui-field {
+    position: relative;
+    color-scheme: light;
+    border-radius: 12px;
+    background-color: var(--cui-c-bg);
+  }
+
+  .cui-field-input {
+    display: block;
+    width: 100%;
+    height: 56px;
+    margin: 0;
+    padding: 18px 16px 0;
+    border: 1px solid var(--cui-c-border);
+    border-radius: 12px;
+    font-size: 17px;
+    line-height: 21px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-17);
+    color: var(--cui-c-text);
+    background-color: var(--cui-c-field);
+
+    &:focus {
+      padding-left: 15px;
+      border-width: 2px;
+      border-color: var(--cui-c-accent);
+      outline: none;
+    }
+  }
+
+  .cui-field-label {
+    position: absolute;
+    top: 18px;
+    left: 17px;
+    font-size: 17px;
+    line-height: 21px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-17);
+    color: var(--cui-c-text-2);
+    white-space: nowrap;
+    transition: all 0.125s ease-in;
+  }
+
+  /* focused or filled: at the field's top */
+  .cui-field-input:focus + .cui-field-label,
+  .cui-field-input:not(:placeholder-shown) + .cui-field-label {
+    top: 10px;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: var(--cui-tracking-12);
+  }
+}

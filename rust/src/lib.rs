@@ -16,6 +16,7 @@
 mod card;
 #[cfg(feature = "css")]
 pub mod css;
+mod field;
 mod gallery;
 mod globalnav;
 pub mod icon;
@@ -27,6 +28,7 @@ mod shelf;
 mod tile;
 
 pub use card::Card;
+pub use field::Field;
 pub use gallery::Gallery;
 pub use globalnav::GlobalNav;
 pub use link::MoreLink;

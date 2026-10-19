@@ -44,7 +44,7 @@ Every component follows these.
 
 8. **apple.com's control sizes, not one height.** apple.com's pill comes in four heights, measured: 24px (`data-size="sm"`, 12px text), 36px (the default, 14px: the store's shared button styles' default and most of the store's buttons), 44px (`lg`, 17px), 56px (`xl`, 17px); and its marketing pages' tile buttons step at 735px, 36px below and 44px from it, which is `data-size="cta"`, a hero's call to action. A field is 56px; the store's form button 56px. This is where ciderui departs from vpkit's one control height (decision 7; the default is ciderui's recommendation, the owner deferring to it).
 
-9. **One focus ring.** `base.css` draws `:focus-visible { outline: 2px solid var(--cui-c-accent); outline-offset: 3px }` on every element, apple.com's on every control it was read on (the home page's buttons, the store's, the bag's form buttons, the buy page's options); a text field restates it at `outline-offset: 1px`, as apple.com's does. A component draws no ring of its own; it restates the ring only to move it.
+9. **One focus ring.** `base.css` draws `:focus-visible { outline: 2px solid var(--cui-c-accent); outline-offset: 3px }` on every element, apple.com's on every control it was read on (the home page's buttons, the store's, the bag's form buttons, the buy page's options); a text field shows its 2px accent edge in its place (`cui-field`: apple.com's field draws no ring for a click, `retail:field.input`, and its script's ring for the keyboard alone, which CSS cannot tell apart on a text field). A component draws no ring of its own; it restates the ring only to move it or, a field, to set it aside.
 
 10. **apple.com's motion, through the tokens.** No button transitions its colors (apple.com's 0s, every button measured); the global nav's links fade their color in 0.32s `cubic-bezier(.4,0,.6,1)`, its menu grows over the window in 0.45s, its rows come in over 0.24s each from 0.2s, 20ms apart, its X turns in 0.24s (`home:menu.open`'s recorded animations); a paddle in 0.1s linear, a gallery's dot its color in 0.25s linear; a card's shadow and scale in 0.3s `cubic-bezier(0,0,.5,1)` (apple.com's `all`, which would also move its size as a window crosses 735px); a field's label in 0.125s. `base.css` neutralizes every transition and animation under `prefers-reduced-motion`.
 
@@ -73,7 +73,7 @@ Every component follows these.
 | `link` | `#0066cc` | `#2997ff` | a link; a secondary button's text and edge |
 | `neutral`, `neutral-hover`, `neutral-active` | `#1d1d1f`, `#272729`, `#18181a` | `#f5f5f7`, `#ffffff`, `#ededf2` (a dark gallery item's, `home:gallery.button-neutral`) | the neutral fill |
 | `on-accent`, `on-neutral` | `#ffffff`, `#ffffff` | `#ffffff`, `#000000` | text on the accent's and the neutral's fills |
-| `field` | `rgba(255,255,255,.8)` | guessed | a field's and an option's ground |
+| `field` | `rgba(255,255,255,.8)` (`retail:field.input`) | the same (`retail-dark:field.input`: apple.com's field in a dark color scheme) | a field's and an option's ground; a field keeps its light look in a dark block |
 | `bar` | `rgba(255,255,255,.8)` | `rgba(0,0,0,.8)` (the Newsroom's dark nav, `newsroom:nav`) | the global nav's ground, under its material |
 | `on-bar`, `on-bar-hover` | `rgba(0,0,0,.8)`, `#000000` | `rgba(255,255,255,.8)`, `#ffffff` | the nav's links and icons, and hovered; the menu's button is `on-bar-hover` at 0.8 opacity |
 | `menu`, `on-menu` | `#fafafc`, `#333336` | `#161617`, `#e8e8ed` | the nav's menu opened over the window on a phone, and its links; the local nav's menu |
@@ -96,7 +96,7 @@ Not themed, in tokens.css too:
 
 - **The radii**: the pill `980px`; a field, an option and a form button `12px`; a block button `8px`; a card `18px`; a rounded tile `28px`; a checkbox `3px`; a swatch and a paddle `50%` (measured, each with its probe).
 - **The control sizes**: 24, 36, 44 and 56px (rule 8).
-- **The focus ring**: 2px, the accent, 3px out (1px for a field) (rule 9).
+- **The focus ring**: 2px, the accent, 3px out; a text field shows its 2px accent edge instead (rule 9).
 - **The durations**: 0.1s, 0.125s, 0.24s, 0.25s, 0.3s, 0.32s, 0.45s with apple.com's curve (rule 10).
 - **The materials**: the bar's `saturate(1.8) blur(20px)`, the floating nav's and a curtain's `blur(20px)` (measured).
 - **The shadows**: a card's `2px 4px 12px rgba(0,0,0,.08)`, hovered `2px 4px 16px rgba(0,0,0,.16)`, `--cui-shadow-card` and `-hover` (measured, `store:card`; a dark card's the same, `store:card.dark`).
@@ -168,7 +168,7 @@ What apple.com's pages are made of, from the measurements, as the components to 
 | `cui-card` (built) | the store's card: 400 by 500px (309 by 450px below 735px) on the page's ground, dark with `cui-dark`, 18px corners, its shadow, lifted hovered or with the focus in it; its picture filling it (`cui-card-media`), its eyebrow or tag (`data-variant="tag"`), headline, description and price; the whole card its headline's link, with no script (the crate's `Card`) | `store:card*` |
 | `cui-shelf` (built) | the store's row of cards: its header, a headline and its secondary text after it, over a scroller across the window, its items snapping into place 20px apart, the first and the last as far in as the header (22px to 1024px, 140px from 1440px, a straight line between), its scrollbar hidden; its paddles a gallery's large ones (`cui-shelf-paddle` on `cui-gallery-paddle`, `data-size="lg"`) at its sides, the one at an end hidden, none on a screen with no hover, their state the page's script's (the crate's `Shelf`) | `store:shelf*` |
 | `cui-gallery` (built) | a product page's gallery: a row of items across the window, each snapping where the content starts, 20px apart; its paddles' row at the content's right edge, 36px paddles (56px, the store's, `data-size="lg"`) translucent over the page, their chevrons `icon::PADDLE_PREVIOUS` and `icon::PADDLE_NEXT`, disabled at an end; its dots, 8px, the current a 48px pill (32px below 735px), each a link to its item; the paddles' and dots' state the page's script sets, as it opens a dialog (the crate's `Gallery`) | `product:gallery.*`, `product:paddle*`, `iphone:paddle*`, `iphone:gallery.*`, `store:shelf.paddle`; the chevrons `reference/icons/` |
-| `cui-field` | the 56px text field and its floating label | `signin:field*` |
+| `cui-field` (built) | apple.com's own 56px text field (the store's form-textbox): its edge, its translucent ground, its label the placeholder until the field is focused or filled, then small at its top, with no script (its placeholder a space); focused, its 2px accent edge; light in a dark block, on a ground of its own (the crate's `Field`) | `retail:field*`, `retail-dark:field*` |
 | `cui-checkbox` | the 16px checkbox | `signin:checkbox*` |
 | `cui-option` | an option on a radio: 12px, its edge, checked, focused | `buy:option*` (checked: apple.com's classes on a checked copy the probe adds, `buy:option.checked`) |
 | `cui-swatch` | a color swatch, 28px in its 36px ring | `buy:swatch*` (checked: the same, `buy:swatch.checked*`) |

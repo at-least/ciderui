@@ -42,6 +42,9 @@
  *   paddle, -hover, -active a gallery's paddle, translucent over the page
  *   on-paddle, -hover       its chevron, and hovered or pressed
  *   dot, dot-hover          a gallery's dots, and hovered
+ *   field                   a field's ground, translucent; one value: a
+ *                           field keeps its light look in a dark block, as
+ *                           apple.com's does in a dark color scheme
  *
  * The rest is not themed: the font stack, the letter-spacing per size, the
  * radii, the focus ring, the shadows. */
@@ -81,6 +84,7 @@
   --cui-c-on-paddle-hover: light-dark(rgb(0 0 0 / 0.64), #ffffff);
   --cui-c-dot: light-dark(rgb(29 29 31 / 0.6), rgb(255 255 255 / 0.36));
   --cui-c-dot-hover: light-dark(rgb(0 0 0 / 0.54), rgb(255 255 255 / 0.48));
+  --cui-c-field: rgb(255 255 255 / 0.8);
 
   /* SF on Apple's platforms by its two Apple-only names (-apple-system
      Safari's, BlinkMacSystemFont Chrome's; system-ui would be a font
@@ -108,10 +112,9 @@
   --cui-tracking-96: -0.0156em;
 
   /* the focus ring: apple.com's on every control it was read on, 2px of the
-     accent 3px out; a text field's 1px out */
+     accent 3px out (a text field shows its edge instead: cui-field) */
   --cui-focus-ring: 2px solid var(--cui-c-accent);
   --cui-focus-ring-offset: 3px;
-  --cui-focus-ring-offset-field: 1px;
 
   /* a card's shadow, and hovered: apple.com's store cards', a dark card's the
      same */
