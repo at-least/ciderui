@@ -18,7 +18,7 @@ export default {
     { name: 'page.body', select: 'body', props: PAGE },
     { name: 'page.strong', select: 'main strong, main b, .rs-page-content strong, body strong', props: TYPE },
     // the page is dark (body.globalheader-dark): the global nav's dark side
-    { name: 'nav', select: '#globalnav', props: ['background-color', ...BLUR] },
+    { name: 'nav', select: '#globalnav', props: ['position', 'background-color', ...BLUR] },
     { name: 'nav.link', select: '#globalnav .globalnav-item:not(.globalnav-item-apple) .globalnav-link', props: TYPE, states: ['hover'] },
     { name: 'content', select: 'main .viewport-content', props: ['width', 'max-width', 'margin-left', 'margin-right', 'padding-left', 'padding-right'], box: true },
     { name: 'section', select: 'main section.section:not(.theme-dark):not(.background-alt)', props: [...BOX, 'padding-top', 'padding-bottom'], box: true },
@@ -47,5 +47,12 @@ export default {
     { name: 'localnav.product', select: '#localnav-container .product-name', scroll: 2500, props: TYPE },
     { name: 'localnav.explore', select: '#localnav-container .cta.explore', scroll: 2500, props: [...TYPE, ...BOX], box: true, states: ['hover'] },
     { name: 'localnav.buy', select: '#localnav-container .cta.buy', scroll: 2500, props: [...TYPE, ...BOX], box: true, states: ['hover'] },
+    // the global nav's icons on a dark page, and its phone menu opened: last
+    { name: 'nav.search', select: '#globalnav .globalnav-link-search', props: ['color'], states: ['hover'] },
+    { name: 'nav.menutrigger', select: '#globalnav .globalnav-menutrigger-button', props: ['color', 'opacity'], widths: [900, 390], states: ['hover'] },
+    { name: 'menu.open', click: '#globalnav-menutrigger-button', select: '#globalnav', props: ['background-color', ...BLUR], widths: [390] },
+    { name: 'menu.content', select: '#globalnav .globalnav-content', props: ['background-color', ...BLUR], widths: [390] },
+    { name: 'menu.link', select: '#globalnav .globalnav-item-mac .globalnav-link', props: TYPE, widths: [390], states: ['hover'] },
+    { name: 'menu.trigger', select: '#globalnav .globalnav-menutrigger-button', props: ['color', 'opacity'], widths: [390] },
   ],
 };

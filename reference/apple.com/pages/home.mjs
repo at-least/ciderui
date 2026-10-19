@@ -1,7 +1,7 @@
 // apple.com's home page: the type scale (every typography class its stylesheets
 // define, added to the page), the page, the global nav, the hero and its
 // buttons, a light and a dark promo tile, the gallery's dots, the footer.
-import { TYPE, BOX, MOTION, BLUR, LINK, FOCUS, PAGE } from './common.mjs';
+import { TYPE, BOX, MOTION, BLUR, LINK, FOCUS, PAGE, FLEX } from './common.mjs';
 const TYPOGRAPHY = ['headline-super', 'headline-elevated', 'headline', 'headline-reduced', 'intro-elevated', 'intro',
   'body', 'body-reduced', 'callout', 'caption', 'cta-medium', 'tile-headline', 'tile-subhead', 'tile-callout',
   'promo-headline', 'promo-subhead', 'promo-callout'];
@@ -14,11 +14,27 @@ export default {
     ...TYPOGRAPHY.map(c => ({ name: `type.${c}`, inject: `<p class="typography-${c}">Sample text</p>`, into: 'main', props: TYPE })),
     { name: 'page.html', select: 'html', props: ['background-color', 'color-scheme'] },
     { name: 'page.body', select: 'body', props: PAGE },
-    { name: 'nav', select: '#globalnav', props: ['height', 'background-color', ...BLUR], vars: ['--globalnav-background', '--globalnav-backdrop-filter'], box: true },
+    { name: 'nav', select: '#globalnav', props: ['height', 'position', 'background-color', ...BLUR], vars: ['--globalnav-background', '--globalnav-backdrop-filter'], box: true },
     { name: 'nav.curtain', select: '#globalnav-curtain', props: ['background-color', ...BLUR] },
     { name: 'nav.content', select: '#globalnav .globalnav-content', props: ['height', 'max-width', 'padding-left', 'padding-right', 'background-color', ...BLUR], box: true },
     { name: 'nav.link', select: '#globalnav .globalnav-item:not(.globalnav-item-apple) .globalnav-link', props: [...TYPE, 'opacity', ...MOTION], states: ['hover'] },
     { name: 'nav.link-text', select: '#globalnav .globalnav-link-text', props: TYPE },
+    // the bar's parts: its list, a link's box, the logo's, the search's and the bag's and their images
+    { name: 'nav.list', select: '#globalnav .globalnav-list', props: [...BOX, ...FLEX, 'margin-left', 'margin-right', 'padding-left', 'padding-right', 'height'], box: true },
+    { name: 'nav.link-box', select: '#globalnav .globalnav-item-mac .globalnav-link', props: [...BOX, ...FLEX, 'padding-left', 'padding-right', 'height', 'text-decoration-line'], box: true },
+    { name: 'nav.logo', select: '#globalnav .globalnav-link-apple', props: [...BOX, ...FLEX, 'padding-left', 'padding-right', 'height'], box: true },
+    { name: 'nav.logo-image', select: '#globalnav .globalnav-link-apple .globalnav-link-image:not([style*="none"]) svg', props: ['width', 'height', 'fill'], box: true },
+    { name: 'nav.search', select: '#globalnav .globalnav-link-search', props: [...BOX, ...FLEX, 'padding-left', 'padding-right', 'height', 'color', ...MOTION], box: true, states: ['hover'] },
+    { name: 'nav.search-image', select: '#globalnav .globalnav-link-search svg', props: ['width', 'height', 'fill'], box: true },
+    { name: 'nav.bag', select: '#globalnav .globalnav-link-bag', props: [...BOX, ...FLEX, 'padding-left', 'padding-right', 'height', 'color'], box: true, states: ['hover'] },
+    { name: 'nav.bag-image', select: '#globalnav .globalnav-link-bag svg', props: ['width', 'height', 'fill'], box: true },
+    // the phone's images: the compact logo, search and bag (17 by 48), and the menu's button
+    { name: 'nav.logo-compact', select: '#globalnav .globalnav-link-apple .globalnav-image-compact svg', props: ['width', 'height'], box: true, widths: [390] },
+    { name: 'nav.search-compact', select: '#globalnav .globalnav-link-search .globalnav-image-compact svg', props: ['width', 'height'], box: true, widths: [390] },
+    { name: 'nav.bag-compact', select: '#globalnav .globalnav-link-bag .globalnav-image-compact svg', props: ['width', 'height'], box: true, widths: [390] },
+    { name: 'nav.menutrigger', select: '#globalnav .globalnav-menutrigger-button', props: [...BOX, ...FLEX, 'width', 'height', 'color', 'opacity', ...MOTION], box: true, widths: [900, 390], states: ['hover'] },
+    // its two lines are an SVG's polylines (reference/icons/ reads their points); their box
+    { name: 'nav.menutrigger-bread', select: '#globalnav .globalnav-menutrigger-bread-top', props: ['stroke-width'], box: true, widths: [390] },
     { name: 'hero.section', select: '.section-hero', props: BOX, box: true },
     { name: 'hero.tile', select: '.section-hero .tile-wrapper', props: BOX, box: true },
     { name: 'hero.content', select: '.section-hero .tile-content', props: [...BOX, 'text-align'], box: true },
@@ -52,5 +68,16 @@ export default {
     { name: 'footer.legal', select: '.ac-gf-footer-legal', props: [...TYPE, ...BOX] },
     { name: 'footer.legal-link', select: '.ac-gf-footer-legal-link', props: [...TYPE, ...LINK, 'border-right-color', 'border-right-width', 'padding-right', 'margin-right'], states: ['hover'] },
     { name: 'footer.copyright', select: '.ac-gf-footer-legal-copyright', props: TYPE },
+    // the phone's menu, opened: last, as the page stays open after the click
+    { name: 'menu.open', click: '#globalnav-menutrigger-button', select: '#globalnav', props: ['background-color', 'height', ...BLUR], box: true, widths: [390] },
+    { name: 'menu.content', select: '#globalnav .globalnav-content', props: [...BOX, 'height', ...BLUR], box: true, widths: [390] },
+    // the rows' places in the open menu, which fills the window: the list, its first row and its second
+    { name: 'menu.list', select: '#globalnav .globalnav-menu-list', props: [...BOX, 'padding-left', 'padding-right'], box: true, position: true, widths: [390] },
+    { name: 'menu.link', select: '#globalnav .globalnav-item-mac .globalnav-link', props: [...TYPE, ...BOX, 'padding-left', 'padding-right', 'height', 'display'], box: true, position: true, widths: [390], states: ['hover'] },
+    { name: 'menu.link-first', select: '#globalnav .globalnav-item-store .globalnav-link', props: ['padding-top', 'margin-bottom'], box: true, position: true, widths: [390] },
+    { name: 'menu.item', select: '#globalnav .globalnav-item-mac', props: [...BOX, 'height'], box: true, position: true, widths: [390] },
+    { name: 'menu.trigger', select: '#globalnav .globalnav-menutrigger-button', props: ['color', 'opacity'], widths: [390] },
+    { name: 'menu.trigger-bread-top', select: '#globalnav .globalnav-menutrigger-bread-top', props: ['stroke-width'], box: true, widths: [390] },
+    { name: 'menu.trigger-bread-bottom', select: '#globalnav .globalnav-menutrigger-bread-bottom', props: ['stroke-width'], box: true, widths: [390] },
   ],
 };

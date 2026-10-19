@@ -15,6 +15,7 @@ Measured 2026-10-19 in Playwright's Chromium 151 on Linux, with `--font-render-h
 | `buy` | https://www.apple.com/shop/buy-iphone/iphone-18-pro | the option tiles (rest, focused, checked), the color swatches, a price |
 | `bag` | https://www.apple.com/shop/bag | the empty bag, its form buttons, the ribbon, an accordion |
 | `signin` | https://secure.store.apple.com/shop/account/home | Apple Account's sign-in widget (its iframe, idmsa.apple.com): a text field and its floating label, a checkbox, a link |
+| `newsroom` | https://www.apple.com/newsroom/ | a light page under a dark global nav: the bar's dark material, its links and icons, its phone menu opened |
 
 Each is read at 1600, 1200, 900 and 390px wide (one width inside each of apple.com's bands), `breakpoints` at the boundaries.
 
@@ -53,7 +54,9 @@ Across both, a size has one line height and one letter-spacing, the cut followin
 
 **The page's width.** The marketing pages' newer content is 87.5% of the window up to 1260px (`product:content`; 420px at most to 734px); the footer and the global nav keep the older 980px and 1024px (`home:footer.content`, `home:nav.content`), 22px from the edge (16px to 734px). The home page's promo grid is two columns from 735px with a 12px gap (`home:promo.section`).
 
-**The global nav** (`home:nav`). 44px (48px to 833px), `rgba(255,255,255,.8)` under `backdrop-filter: saturate(1.8) blur(20px)`; links 12px, `rgba(0,0,0,.8)`, `#000` hovered, color in 0.32s `cubic-bezier(.4,0,.6,1)`; an open menu's curtain `rgba(232,232,237,.4)` under `blur(20px)`. On a dark page (`product:nav`) the bar is clear and its links `rgba(255,255,255,.8)`, `#fff` hovered.
+**The global nav** (`home:nav*`, `home:menu*`). 44px (48px to 833px), `rgba(255,255,255,.8)` under `backdrop-filter: saturate(1.8) blur(20px)`; its content 1024px at most, 22px in; one row of links spread across it (`justify-content: space-between`, 8px out on each side), each 44px tall and 8px in, 12px text on a 12px line at 400, `rgba(0,0,0,.8)`, `#000` hovered, color in 0.32s `cubic-bezier(.4,0,.6,1)`; the logo, the search and the bag images 14, 15 and 14px wide, 44px tall. Fixed to the top on the home page; on the product page and the Newsroom placed at the top and scrolled away (`position: absolute`), the local nav the one that stays. An open menu's curtain is `rgba(232,232,237,.4)` under `blur(20px)`. On a dark page (`product:nav`) the bar is clear and its links `rgba(255,255,255,.8)`, `#fff` hovered; under the Newsroom's dark nav (`newsroom:nav`) the bar is `rgba(0,0,0,.8)` under the same blur, its links the same.
+
+To 833px the bar holds the logo, the search and the bag, 48px squares of 17 by 48 images (`nav.*-compact`), and the menu's button, a 48px square at the right: two lines in 18 by 18, `#000` at `opacity: .8` (1 hovered; `#fff` on a dark nav), opacity and color in 0.32s. Opened (`menu.*`, the button clicked), the menu fills the window on `#fafafc` (`#161617` on a dark nav) and the page stops scrolling (`overflow: hidden` on the root and the body); its rows start 47px down, each 53px tall and 7px over the next (`margin-bottom: -7px`, a 46px pitch), its links 28px on a 28px line at 600, 3px 48px 4px in, `#333336` (`#e8e8ed` dark), `#000` hovered (`#fff`); the list 84px short of its end. Its motion, read off the animations it runs: the ground from the bar's to the menu's and its height to the window's in 450ms `cubic-bezier(.4,0,.6,1)`; the logo, search and bag out in 240ms; each row in from 8px up and transparent, in 240ms from 200ms, 20ms after the row above; the button's lines into an X in 240ms.
 
 **Buttons.** The pill, `border-radius: 980px`, a 1px transparent border:
 
@@ -99,4 +102,4 @@ What the harness had to learn, each a reading that was wrong before it:
 - The store's elements rename after hydration (`rf-ccard-content-eyebrow` in the served HTML is `rf-ccard-content-header-eyebrow` in the page).
 - The sign-in widget's iframe shares the page's process here, so its elements are reached through the page's own DevTools session.
 
-Not measured: a touch screen's hover, the global nav on a dark page once scrolled, the modals, the checkout, the search field open, and every page in Safari.
+Not measured: a touch screen's hover, the modals, the checkout, the search field open, the global nav's flyouts (a desktop's menus under a link), and every page in Safari.

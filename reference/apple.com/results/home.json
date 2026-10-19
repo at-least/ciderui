@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/",
  "finalUrl": "https://www.apple.com/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T04:30:18.523Z",
+ "date": "2026-10-19T05:11:36.128Z",
  "widths": {
   "390": {
    "type.none": {
@@ -229,6 +229,7 @@
     "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "48px",
+     "position": "fixed",
      "background-color": "rgba(0, 0, 0, 0)",
      "backdrop-filter": "saturate(1.8) blur(20px)",
      "-webkit-backdrop-filter": "",
@@ -302,6 +303,410 @@
      "font-weight": "600",
      "letter-spacing": "0.228px",
      "color": "rgba(0, 0, 0, 0.8)"
+    }
+   },
+   "nav.list": {
+    "html": "<ul id=\"globalnav-list\" class=\"globalnav-list\" role=\"none\"><li data-analytics-element-engagement=\"globalnav hover - apple\" class=\"\n\t\t\t\tglobalnav-item\n\t\t\t\tglobalnav-item-apple\n\t\t\t\t\n\t\t\t\t\n\t\t\t\"><a href=\"/\" data-globalnav-item-name=\"apple\" data-",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "48px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "space-between",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "margin-left": "0px",
+     "margin-right": "0px",
+     "height": "48px"
+    },
+    "box": {
+     "width": 390,
+     "height": 48
+    }
+   },
+   "nav.link-box": {
+    "html": "<a href=\"/mac/\" data-globalnav-item-name=\"mac\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"mac\" data-analytics-element-engagement=\"hover - mac\" aria-label=\"Mac menu\" class=\"globalnav-link globalnav-submenu-trigger-link g",
+    "styles": {
+     "padding-top": "3px",
+     "padding-right": "48px",
+     "padding-bottom": "4px",
+     "padding-left": "48px",
+     "margin-top": "0px",
+     "margin-bottom": "-7px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 54)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 54)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "flex-start",
+     "justify-content": "space-between",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "46px",
+     "text-decoration-line": "none"
+    },
+    "box": {
+     "width": 390,
+     "height": 53
+    }
+   },
+   "nav.logo": {
+    "html": "<a href=\"/\" data-globalnav-item-name=\"apple\" data-analytics-title=\"apple home\" aria-label=\"Apple\" class=\"globalnav-link globalnav-link-apple\"><span aria-hidden=\"true\" class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"44\" vie",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "16px",
+     "padding-bottom": "0px",
+     "padding-left": "16px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.8)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "48px"
+    },
+    "box": {
+     "width": 49,
+     "height": 48
+    }
+   },
+   "nav.logo-image": {
+    "html": "<svg height=\"44\" viewBox=\"0 0 14 44\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 ",
+    "styles": {
+     "width": "14px",
+     "height": "44px",
+     "fill": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    }
+   },
+   "nav.search": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"false\" aria-controls=\"globalnav-submen",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "8px",
+     "padding-bottom": "0px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.8)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "48px",
+     "color": "rgba(0, 0, 0, 0.8)",
+     "transition-property": "opacity, visibility",
+     "transition-duration": "0.24s, 0.24s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), steps(1, start)"
+    },
+    "box": {
+     "width": 48,
+     "height": 48
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "8px",
+      "padding-bottom": "0px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "center",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "height": "48px",
+      "color": "rgb(0, 0, 0)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "nav.search-image": {
+    "html": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"15px\" height=\"44px\" viewBox=\"0 0 15 44\">\n<path d=\"M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5",
+    "styles": {
+     "width": "15px",
+     "height": "44px",
+     "fill": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    }
+   },
+   "nav.bag": {
+    "html": "<a id=\"globalnav-menubutton-link-bag\" href=\"/us/shop/goto/bag\" aria-label=\"Shopping Bag\" aria-expanded=\"false\" aria-controls=\"globalnav-submenu-bag\" data-globalnav-item-name=\"bag\" role=\"button\" data-topnav-flyout-trigger-regular=\"true\" data",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "8px",
+     "padding-bottom": "0px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.8)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "48px",
+     "color": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 48,
+     "height": 48
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "8px",
+      "padding-bottom": "0px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "center",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "height": "48px",
+      "color": "rgb(0, 0, 0)"
+     }
+    }
+   },
+   "nav.bag-image": {
+    "html": "<svg height=\"44\" viewBox=\"0 0 14 44\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m11.3535 16.0283h-1.0205a3.4229 3.4229 0 0 0 -3.333-2.9648 3.4229 3.4229 0 0 0 -3.333 2.9648h-1.02a2.1184 2.1184 0 0 0 -2.117 2.1162v7.7155a2.1186 2",
+    "styles": {
+     "width": "14px",
+     "height": "44px",
+     "fill": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    }
+   },
+   "nav.logo-compact": {
+    "html": "<svg height=\"48\" viewBox=\"0 0 17 48\" width=\"17\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m15.5752 19.0792a4.2055 4.2055 0 0 0 -2.01 3.5376 4.0931 4.0931 0 0 0 2.4908 3.7542 9.7779 9.7779 0 0 1 -1.2755 2.6351c-.7941 1.1431-1.6244 2.2862-2",
+    "styles": {
+     "width": "17px",
+     "height": "48px"
+    },
+    "box": {
+     "width": 17,
+     "height": 48
+    }
+   },
+   "nav.search-compact": {
+    "html": "<svg height=\"48\" viewBox=\"0 0 17 48\" width=\"17\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m16.2294 29.9556-4.1755-4.0821a6.4711 6.4711 0 1 0 -1.2839 1.2625l4.2005 4.1066a.9.9 0 1 0 1.2588-1.287zm-14.5294-8.0017a5.2455 5.2455 0 1 1 5.2455 ",
+    "styles": {
+     "width": "17px",
+     "height": "48px"
+    },
+    "box": {
+     "width": 17,
+     "height": 48
+    }
+   },
+   "nav.bag-compact": {
+    "html": "<svg height=\"48\" viewBox=\"0 0 17 48\" width=\"17\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m13.4575 16.9268h-1.1353a3.8394 3.8394 0 0 0 -7.6444 0h-1.1353a2.6032 2.6032 0 0 0 -2.6 2.6v8.9232a2.6032 2.6032 0 0 0 2.6 2.6h9.915a2.6032 2.6032 0",
+    "styles": {
+     "width": "17px",
+     "height": "48px"
+    },
+    "box": {
+     "width": 17,
+     "height": 48
+    }
+   },
+   "nav.menutrigger": {
+    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"Menu\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-button",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 0, 0)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "width": "48px",
+     "height": "48px",
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0.8",
+     "transition-property": "opacity, color",
+     "transition-duration": "0.32s, 0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 48,
+     "height": 48
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "center",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "width": "48px",
+      "height": "48px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "nav.menutrigger-bread": {
+    "html": "<polyline id=\"globalnav-menutrigger-bread-top\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"2 5, 16 5\" class=\"globalnav-menutrigger-bread globalnav-menutrigger-bread-top\"><anima",
+    "styles": {
+     "stroke-width": "1.2px"
+    },
+    "box": {
+     "width": 14,
+     "height": 0
     }
    },
    "hero.section": {
@@ -1415,6 +1820,215 @@
      "letter-spacing": "-0.12px",
      "color": "rgba(0, 0, 0, 0.56)"
     }
+   },
+   "menu.open": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "background-color": "rgba(0, 0, 0, 0)",
+     "height": "48px",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 390,
+     "height": 48
+    }
+   },
+   "menu.content": {
+    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"Menu\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(250, 250, 252)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "1024px",
+     "height": "900px",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 390,
+     "height": 900
+    }
+   },
+   "menu.list": {
+    "html": "<div class=\"globalnav-menu-list\" style=\"--r-globalnav-flyout-item-total: 11;\" role=\"list\"><div data-analytics-element-engagement=\"globalnav hover - store\" class=\"\n\t\t\t\tglobalnav-item\n\t\t\t\tglobalnav-item-store\n\t\t\t\tglobalnav-item-menu\n\t\t\t\tgloba",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "84px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 390,
+     "height": 590,
+     "top": 47,
+     "left": 0
+    }
+   },
+   "menu.link": {
+    "html": "<a href=\"/mac/\" data-globalnav-item-name=\"mac\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"mac\" data-analytics-element-engagement=\"hover - mac\" aria-label=\"Mac menu\" class=\"globalnav-link globalnav-submenu-trigger-link g",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "3px",
+     "padding-right": "48px",
+     "padding-bottom": "4px",
+     "padding-left": "48px",
+     "margin-top": "0px",
+     "margin-bottom": "-7px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 54)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 54)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "height": "46px",
+     "display": "flex"
+    },
+    "box": {
+     "width": 390,
+     "height": 53,
+     "top": 93,
+     "left": 0
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "28px",
+      "line-height": "28px",
+      "font-weight": "600",
+      "letter-spacing": "0.196px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "3px",
+      "padding-right": "48px",
+      "padding-bottom": "4px",
+      "padding-left": "48px",
+      "margin-top": "0px",
+      "margin-bottom": "-7px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "height": "46px",
+      "display": "flex"
+     }
+    }
+   },
+   "menu.link-first": {
+    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"Store menu\" class=\"globalnav-link globalnav-",
+    "styles": {
+     "padding-top": "3px",
+     "margin-bottom": "-7px"
+    },
+    "box": {
+     "width": 390,
+     "height": 53,
+     "top": 47,
+     "left": 0
+    }
+   },
+   "menu.item": {
+    "html": "<div data-analytics-element-engagement=\"globalnav hover - mac\" class=\"\n\t\t\t\tglobalnav-item\n\t\t\t\tglobalnav-item-mac\n\t\t\t\tglobalnav-item-menu\n\t\t\t\tglobalnav-item-submenu\n\t\t\t\" style=\"--r-globalnav-flyout-item-number: 1;\" data-topnav-flyout-label=\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "height": "53px"
+    },
+    "box": {
+     "width": 390,
+     "height": 53,
+     "top": 93,
+     "left": 0
+    }
+   },
+   "menu.trigger": {
+    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"Close\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-butto",
+    "styles": {
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0.8"
+    }
+   },
+   "menu.trigger-bread-top": {
+    "html": "<polyline id=\"globalnav-menutrigger-bread-top\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"2 5, 16 5\" class=\"globalnav-menutrigger-bread globalnav-menutrigger-bread-top\"><anima",
+    "styles": {
+     "stroke-width": "1.2px"
+    },
+    "box": {
+     "width": 11.5,
+     "height": 11.5
+    }
+   },
+   "menu.trigger-bread-bottom": {
+    "html": "<polyline id=\"globalnav-menutrigger-bread-bottom\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"2 12, 16 12\" class=\"globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom",
+    "styles": {
+     "stroke-width": "1.2px"
+    },
+    "box": {
+     "width": 11.5,
+     "height": 11.5
+    }
    }
   },
   "900": {
@@ -1642,6 +2256,7 @@
     "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "44px",
+     "position": "fixed",
      "background-color": "rgba(255, 255, 255, 0.8)",
      "backdrop-filter": "saturate(1.8) blur(20px)",
      "-webkit-backdrop-filter": "",
@@ -1715,6 +2330,367 @@
      "font-weight": "600",
      "letter-spacing": "-0.374px",
      "color": "rgba(0, 0, 0, 0.8)"
+    }
+   },
+   "nav.list": {
+    "html": "<ul id=\"globalnav-list\" class=\"globalnav-list\"><li data-analytics-element-engagement=\"globalnav hover - apple\" class=\"\n\t\t\t\tglobalnav-item\n\t\t\t\tglobalnav-item-apple\n\t\t\t\t\n\t\t\t\t\n\t\t\t\"><a href=\"/\" data-globalnav-item-name=\"apple\" data-analytics-ti",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "space-between",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "margin-left": "-8px",
+     "margin-right": "-8px",
+     "height": "44px"
+    },
+    "box": {
+     "width": 872,
+     "height": 44
+    }
+   },
+   "nav.link-box": {
+    "html": "<a href=\"/mac/\" data-globalnav-item-name=\"mac\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"mac\" data-analytics-element-engagement=\"hover - mac\" aria-label=\"Mac\" class=\"globalnav-link globalnav-submenu-trigger-link global",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "8px",
+     "padding-bottom": "0px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.8)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "44px",
+     "text-decoration-line": "none"
+    },
+    "box": {
+     "width": 39,
+     "height": 44
+    }
+   },
+   "nav.logo": {
+    "html": "<a href=\"/\" data-globalnav-item-name=\"apple\" data-analytics-title=\"apple home\" aria-label=\"Apple\" class=\"globalnav-link globalnav-link-apple\"><span aria-hidden=\"true\" class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"44\" vie",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "8px",
+     "padding-bottom": "0px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.8)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "44px"
+    },
+    "box": {
+     "width": 30,
+     "height": 44
+    }
+   },
+   "nav.logo-image": {
+    "html": "<svg height=\"44\" viewBox=\"0 0 14 44\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 ",
+    "styles": {
+     "width": "14px",
+     "height": "44px",
+     "fill": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 14,
+     "height": 44
+    }
+   },
+   "nav.search": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"false\" aria-controls=\"globalnav-submen",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "8px",
+     "padding-bottom": "0px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.8)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "44px",
+     "color": "rgba(0, 0, 0, 0.8)",
+     "transition-property": "color",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 31,
+     "height": 44
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "8px",
+      "padding-bottom": "0px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "center",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "height": "44px",
+      "color": "rgb(0, 0, 0)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "nav.search-image": {
+    "html": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"15px\" height=\"44px\" viewBox=\"0 0 15 44\">\n<path d=\"M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5",
+    "styles": {
+     "width": "15px",
+     "height": "44px",
+     "fill": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 15,
+     "height": 44
+    }
+   },
+   "nav.bag": {
+    "html": "<a id=\"globalnav-menubutton-link-bag\" href=\"/us/shop/goto/bag\" aria-label=\"Shopping Bag\" aria-expanded=\"false\" aria-controls=\"globalnav-submenu-bag\" data-globalnav-item-name=\"bag\" role=\"button\" data-topnav-flyout-trigger-regular=\"true\" data",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "8px",
+     "padding-bottom": "0px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.8)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "44px",
+     "color": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 30,
+     "height": 44
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "8px",
+      "padding-bottom": "0px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "center",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "height": "44px",
+      "color": "rgb(0, 0, 0)"
+     }
+    }
+   },
+   "nav.bag-image": {
+    "html": "<svg height=\"44\" viewBox=\"0 0 14 44\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m11.3535 16.0283h-1.0205a3.4229 3.4229 0 0 0 -3.333-2.9648 3.4229 3.4229 0 0 0 -3.333 2.9648h-1.02a2.1184 2.1184 0 0 0 -2.117 2.1162v7.7155a2.1186 2",
+    "styles": {
+     "width": "14px",
+     "height": "44px",
+     "fill": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 14,
+     "height": 44
+    }
+   },
+   "nav.menutrigger": {
+    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"Menu\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-button",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 0, 0)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "width": "48px",
+     "height": "48px",
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0.8",
+     "transition-property": "opacity, color",
+     "transition-duration": "0.32s, 0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "center",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "width": "48px",
+      "height": "48px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
     }
    },
    "hero.section": {
@@ -3055,6 +4031,7 @@
     "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "44px",
+     "position": "fixed",
      "background-color": "rgba(255, 255, 255, 0.8)",
      "backdrop-filter": "saturate(1.8) blur(20px)",
      "-webkit-backdrop-filter": "",
@@ -3128,6 +4105,290 @@
      "font-weight": "600",
      "letter-spacing": "-0.374px",
      "color": "rgba(0, 0, 0, 0.8)"
+    }
+   },
+   "nav.list": {
+    "html": "<ul id=\"globalnav-list\" class=\"globalnav-list\"><li data-analytics-element-engagement=\"globalnav hover - apple\" class=\"\n\t\t\t\tglobalnav-item\n\t\t\t\tglobalnav-item-apple\n\t\t\t\t\n\t\t\t\t\n\t\t\t\"><a href=\"/\" data-globalnav-item-name=\"apple\" data-analytics-ti",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "space-between",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "margin-left": "-8px",
+     "margin-right": "-8px",
+     "height": "44px"
+    },
+    "box": {
+     "width": 996,
+     "height": 44
+    }
+   },
+   "nav.link-box": {
+    "html": "<a href=\"/mac/\" data-globalnav-item-name=\"mac\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"mac\" data-analytics-element-engagement=\"hover - mac\" aria-label=\"Mac\" class=\"globalnav-link globalnav-submenu-trigger-link global",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "8px",
+     "padding-bottom": "0px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.8)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "44px",
+     "text-decoration-line": "none"
+    },
+    "box": {
+     "width": 39,
+     "height": 44
+    }
+   },
+   "nav.logo": {
+    "html": "<a href=\"/\" data-globalnav-item-name=\"apple\" data-analytics-title=\"apple home\" aria-label=\"Apple\" class=\"globalnav-link globalnav-link-apple\"><span aria-hidden=\"true\" class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"44\" vie",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "8px",
+     "padding-bottom": "0px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.8)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "44px"
+    },
+    "box": {
+     "width": 30,
+     "height": 44
+    }
+   },
+   "nav.logo-image": {
+    "html": "<svg height=\"44\" viewBox=\"0 0 14 44\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 ",
+    "styles": {
+     "width": "14px",
+     "height": "44px",
+     "fill": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 14,
+     "height": 44
+    }
+   },
+   "nav.search": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"false\" aria-controls=\"globalnav-submen",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "8px",
+     "padding-bottom": "0px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.8)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "44px",
+     "color": "rgba(0, 0, 0, 0.8)",
+     "transition-property": "color",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 31,
+     "height": 44
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "8px",
+      "padding-bottom": "0px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "center",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "height": "44px",
+      "color": "rgb(0, 0, 0)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "nav.search-image": {
+    "html": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"15px\" height=\"44px\" viewBox=\"0 0 15 44\">\n<path d=\"M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5",
+    "styles": {
+     "width": "15px",
+     "height": "44px",
+     "fill": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 15,
+     "height": 44
+    }
+   },
+   "nav.bag": {
+    "html": "<a id=\"globalnav-menubutton-link-bag\" href=\"/us/shop/goto/bag\" aria-label=\"Shopping Bag\" aria-expanded=\"false\" aria-controls=\"globalnav-submenu-bag\" data-globalnav-item-name=\"bag\" role=\"button\" data-topnav-flyout-trigger-regular=\"true\" data",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "8px",
+     "padding-bottom": "0px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.8)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "44px",
+     "color": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 30,
+     "height": 44
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "8px",
+      "padding-bottom": "0px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "center",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "height": "44px",
+      "color": "rgb(0, 0, 0)"
+     }
+    }
+   },
+   "nav.bag-image": {
+    "html": "<svg height=\"44\" viewBox=\"0 0 14 44\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m11.3535 16.0283h-1.0205a3.4229 3.4229 0 0 0 -3.333-2.9648 3.4229 3.4229 0 0 0 -3.333 2.9648h-1.02a2.1184 2.1184 0 0 0 -2.117 2.1162v7.7155a2.1186 2",
+    "styles": {
+     "width": "14px",
+     "height": "44px",
+     "fill": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 14,
+     "height": 44
     }
    },
    "hero.section": {
@@ -3225,7 +4486,7 @@
     }
    },
    "hero.subhead": {
-    "html": "<p class=\"tile-subhead typography-tile-subhead\"><span class=\"visuallyhidden\">Hello, hello.</span><span class=\"subhead-left\" aria-hidden=\"true\" style=\"transform: matrix(1, 0, 0, 1, 10.249, 0);\"><span class=\"subhead-end\" style=\"opacity: 0.452",
+    "html": "<p class=\"tile-subhead typography-tile-subhead\"><span class=\"visuallyhidden\">Hello, hello.</span><span class=\"subhead-left\" aria-hidden=\"true\" style=\"transform: matrix(1, 0, 0, 1, 0.793427, 0);\"><span class=\"subhead-end\" style=\"opacity: 1;\"",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -4468,6 +5729,7 @@
     "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "44px",
+     "position": "fixed",
      "background-color": "rgba(255, 255, 255, 0.8)",
      "backdrop-filter": "saturate(1.8) blur(20px)",
      "-webkit-backdrop-filter": "",
@@ -4541,6 +5803,290 @@
      "font-weight": "600",
      "letter-spacing": "-0.374px",
      "color": "rgba(0, 0, 0, 0.8)"
+    }
+   },
+   "nav.list": {
+    "html": "<ul id=\"globalnav-list\" class=\"globalnav-list\"><li data-analytics-element-engagement=\"globalnav hover - apple\" class=\"\n\t\t\t\tglobalnav-item\n\t\t\t\tglobalnav-item-apple\n\t\t\t\t\n\t\t\t\t\n\t\t\t\"><a href=\"/\" data-globalnav-item-name=\"apple\" data-analytics-ti",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "space-between",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "margin-left": "-8px",
+     "margin-right": "-8px",
+     "height": "44px"
+    },
+    "box": {
+     "width": 996,
+     "height": 44
+    }
+   },
+   "nav.link-box": {
+    "html": "<a href=\"/mac/\" data-globalnav-item-name=\"mac\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"mac\" data-analytics-element-engagement=\"hover - mac\" aria-label=\"Mac\" class=\"globalnav-link globalnav-submenu-trigger-link global",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "8px",
+     "padding-bottom": "0px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.8)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "44px",
+     "text-decoration-line": "none"
+    },
+    "box": {
+     "width": 39,
+     "height": 44
+    }
+   },
+   "nav.logo": {
+    "html": "<a href=\"/\" data-globalnav-item-name=\"apple\" data-analytics-title=\"apple home\" aria-label=\"Apple\" class=\"globalnav-link globalnav-link-apple\"><span aria-hidden=\"true\" class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"44\" vie",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "8px",
+     "padding-bottom": "0px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.8)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "44px"
+    },
+    "box": {
+     "width": 30,
+     "height": 44
+    }
+   },
+   "nav.logo-image": {
+    "html": "<svg height=\"44\" viewBox=\"0 0 14 44\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 ",
+    "styles": {
+     "width": "14px",
+     "height": "44px",
+     "fill": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 14,
+     "height": 44
+    }
+   },
+   "nav.search": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"false\" aria-controls=\"globalnav-submen",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "8px",
+     "padding-bottom": "0px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.8)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "44px",
+     "color": "rgba(0, 0, 0, 0.8)",
+     "transition-property": "color",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 31,
+     "height": 44
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "8px",
+      "padding-bottom": "0px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "center",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "height": "44px",
+      "color": "rgb(0, 0, 0)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "nav.search-image": {
+    "html": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"15px\" height=\"44px\" viewBox=\"0 0 15 44\">\n<path d=\"M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5",
+    "styles": {
+     "width": "15px",
+     "height": "44px",
+     "fill": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 15,
+     "height": 44
+    }
+   },
+   "nav.bag": {
+    "html": "<a id=\"globalnav-menubutton-link-bag\" href=\"/us/shop/goto/bag\" aria-label=\"Shopping Bag\" aria-expanded=\"false\" aria-controls=\"globalnav-submenu-bag\" data-globalnav-item-name=\"bag\" role=\"button\" data-topnav-flyout-trigger-regular=\"true\" data",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "8px",
+     "padding-bottom": "0px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.8)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "height": "44px",
+     "color": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 30,
+     "height": 44
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "8px",
+      "padding-bottom": "0px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "center",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "height": "44px",
+      "color": "rgb(0, 0, 0)"
+     }
+    }
+   },
+   "nav.bag-image": {
+    "html": "<svg height=\"44\" viewBox=\"0 0 14 44\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m11.3535 16.0283h-1.0205a3.4229 3.4229 0 0 0 -3.333-2.9648 3.4229 3.4229 0 0 0 -3.333 2.9648h-1.02a2.1184 2.1184 0 0 0 -2.117 2.1162v7.7155a2.1186 2",
+    "styles": {
+     "width": "14px",
+     "height": "44px",
+     "fill": "rgba(0, 0, 0, 0.8)"
+    },
+    "box": {
+     "width": 14,
+     "height": 44
     }
    },
    "hero.section": {

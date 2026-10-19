@@ -1,0 +1,378 @@
+{
+ "url": "https://www.apple.com/newsroom/",
+ "finalUrl": "https://www.apple.com/newsroom/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T05:11:29.724Z",
+ "widths": {
+  "390": {
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "48px",
+     "position": "absolute",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "saturate(1.8) blur(20px)",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(0, 0, 0, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 390,
+     "height": 48
+    }
+   },
+   "nav.content": {
+    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span class=\"globalnav-chevron-icon\"><svg height=\"48\" v",
+    "styles": {
+     "background-color": "rgba(0, 0, 0, 0.8)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    }
+   },
+   "nav.link": {
+    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"Store\" class=\"globalnav-link globalnav-subme",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(232, 232, 237)",
+     "transition-property": "color",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "28px",
+      "line-height": "28px",
+      "font-weight": "600",
+      "letter-spacing": "0.196px",
+      "color": "rgb(255, 255, 255)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "nav.search": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" data-analytics-title=\"open - search field\" class=\"glo",
+    "styles": {
+     "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(255, 255, 255)"
+     }
+    }
+   },
+   "nav.bag": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-bag\" href=\"/us/shop/goto/bag\" aria-label=\"Shopping Bag\" data-globalnav-item-name=\"bag\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"",
+    "styles": {
+     "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(255, 255, 255)"
+     }
+    }
+   },
+   "nav.menutrigger": {
+    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"Menu\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-button",
+    "styles": {
+     "color": "rgb(255, 255, 255)",
+     "opacity": "0.8"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1"
+     }
+    }
+   },
+   "menu.open": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    }
+   },
+   "menu.content": {
+    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"Menu\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback",
+    "styles": {
+     "background-color": "rgb(22, 22, 23)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    }
+   },
+   "menu.link": {
+    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"Store\" class=\"globalnav-link globalnav-subme",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(232, 232, 237)"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "28px",
+      "line-height": "28px",
+      "font-weight": "600",
+      "letter-spacing": "0.196px",
+      "color": "rgb(255, 255, 255)"
+     }
+    }
+   },
+   "menu.trigger": {
+    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"Close\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-butto",
+    "styles": {
+     "color": "rgb(255, 255, 255)",
+     "opacity": "0.8"
+    }
+   }
+  },
+  "900": {
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "position": "absolute",
+     "background-color": "rgba(0, 0, 0, 0.8)",
+     "backdrop-filter": "saturate(1.8) blur(20px)",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(0, 0, 0, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 900,
+     "height": 44
+    }
+   },
+   "nav.content": {
+    "html": "<div class=\"globalnav-content\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://",
+    "styles": {
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    }
+   },
+   "nav.link": {
+    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"Store\" class=\"globalnav-link globalnav-subme",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "12px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(255, 255, 255, 0.8)",
+     "transition-property": "color",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "12px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(255, 255, 255)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "nav.search": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" data-analytics-title=\"open - search field\" class=\"glo",
+    "styles": {
+     "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(255, 255, 255)"
+     }
+    }
+   },
+   "nav.bag": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-bag\" href=\"/us/shop/goto/bag\" aria-label=\"Shopping Bag\" data-globalnav-item-name=\"bag\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"",
+    "styles": {
+     "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(255, 255, 255)"
+     }
+    }
+   },
+   "nav.menutrigger": {
+    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"Menu\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-button",
+    "styles": {
+     "color": "rgb(255, 255, 255)",
+     "opacity": "0.8"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1"
+     }
+    }
+   }
+  },
+  "1200": {
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "position": "absolute",
+     "background-color": "rgba(0, 0, 0, 0.8)",
+     "backdrop-filter": "saturate(1.8) blur(20px)",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(0, 0, 0, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 1200,
+     "height": 44
+    }
+   },
+   "nav.content": {
+    "html": "<div class=\"globalnav-content\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://",
+    "styles": {
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    }
+   },
+   "nav.link": {
+    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"Store\" class=\"globalnav-link globalnav-subme",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "12px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(255, 255, 255, 0.8)",
+     "transition-property": "color",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "12px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(255, 255, 255)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "nav.search": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" data-analytics-title=\"open - search field\" class=\"glo",
+    "styles": {
+     "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(255, 255, 255)"
+     }
+    }
+   },
+   "nav.bag": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-bag\" href=\"/us/shop/goto/bag\" aria-label=\"Shopping Bag\" data-globalnav-item-name=\"bag\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"",
+    "styles": {
+     "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(255, 255, 255)"
+     }
+    }
+   }
+  },
+  "1600": {
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "position": "absolute",
+     "background-color": "rgba(0, 0, 0, 0.8)",
+     "backdrop-filter": "saturate(1.8) blur(20px)",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(0, 0, 0, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 1600,
+     "height": 44
+    }
+   },
+   "nav.content": {
+    "html": "<div class=\"globalnav-content\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://",
+    "styles": {
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    }
+   },
+   "nav.link": {
+    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"Store\" class=\"globalnav-link globalnav-subme",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "12px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(255, 255, 255, 0.8)",
+     "transition-property": "color",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "12px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(255, 255, 255)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "nav.search": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" data-analytics-title=\"open - search field\" class=\"glo",
+    "styles": {
+     "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(255, 255, 255)"
+     }
+    }
+   },
+   "nav.bag": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-bag\" href=\"/us/shop/goto/bag\" aria-label=\"Shopping Bag\" data-globalnav-item-name=\"bag\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"",
+    "styles": {
+     "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(255, 255, 255)"
+     }
+    }
+   }
+  }
+ }
+}

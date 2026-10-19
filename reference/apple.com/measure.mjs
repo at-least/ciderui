@@ -13,8 +13,12 @@
 // (for what shows only once scrolled), every other probe reading at the top;
 // `blur` takes the focus off the element that has it (a field the page
 // focuses on load) before reading; `frame` reads in the frame whose URL holds
-// that text. A probe that matches
-// nothing is recorded as null, printed, and fails the run. The result is
+// that text; `widths` reads at those of the spec's widths alone; `click`
+// clicks that element first (a menu's button: the page stays so for the
+// probes after it at that width, so a spec puts such probes last);
+// `position` adds the box's top and left in the window (where the window is
+// what it is placed in: an open menu's rows). A probe that matches nothing is
+// recorded as null, printed, and fails the run. The result is
 // results/<name>.json.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
@@ -68,7 +72,7 @@ const read = (probe) => {
   for (const v of probe.vars ?? []) out.styles[v] = cs.getPropertyValue(v).trim();
   if (probe.box) {
     const r = el.getBoundingClientRect();
-    out.box = { width: r.width, height: r.height };
+    out.box = { width: r.width, height: r.height, ...(probe.position ? { top: r.top, left: r.left } : {}) };
   }
   return out;
 };
@@ -113,7 +117,12 @@ try {
     await pw.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 800)))));
     const at = (result.widths[width] = {});
     for (const probe of spec.probes) {
+      if (probe.widths && !probe.widths.includes(width)) continue;
       const frame = frameOf(probe);
+      if (probe.click) {
+        await frame.click(probe.click);
+        await pw.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 900)))));
+      }
       used.add(frame);
       const html = await frame.evaluate(place, probe);
       if (html === null) {
