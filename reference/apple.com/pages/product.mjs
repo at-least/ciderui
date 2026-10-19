@@ -1,8 +1,8 @@
 // A product page, iPhone 18 Pro's, a dark page: apple.com's base type scale
 // (the classes its stylesheets define, added to the page), the global nav's
 // dark side, the content's width, a section,
-// its header, a dark and an alternate section, a rounded tile, the gallery's
-// paddles, the "more" link, a stat, a footnote, and the floating local nav,
+// its header, a dark and an alternate section, a rounded tile, a gallery (its
+// scroller, items, paddles and dots), the "more" link, a stat, a footnote, and the floating local nav,
 // which shows once the page is scrolled past its hero.
 import { TYPE, BOX, MOTION, BLUR, LINK, PAGE, FLEX } from './common.mjs';
 const TYPOGRAPHY = ['headline-super', 'headline-elevated', 'headline', 'headline-reduced', 'eyebrow-super',
@@ -35,6 +35,23 @@ export default {
     { name: 'tile.rounded-light', select: 'main .theme-light .tile.tile-rounded, main .tile.tile-rounded:not(.theme-dark *)', props: [...BOX], box: true },
     { name: 'paddle', select: 'main .paddlenav-arrow', props: [...BOX, 'width', 'height', 'color', 'opacity', ...BLUR, ...MOTION], box: true, states: ['hover', 'active'] },
     { name: 'paddle.icon', select: 'main .paddlenav-arrow svg', props: ['width', 'height', 'fill', 'color'], box: true },
+    // a gallery (the first scroll gallery, the camera system's): its scroller,
+    // its items' inset and gap, an item's snapping, its paddles' row below
+    // it and an enabled paddle (the next: the first, the previous, is
+    // disabled); a media card gallery's dots, 8px, the current a pill (its
+    // timer's fill drawn in it)
+    { name: 'gallery.scroller', select: 'main .scroll-gallery .scroll-container', props: ['overflow-x', 'overflow-y', 'scroll-snap-type', 'scroll-padding-left', 'overscroll-behavior-x', 'padding-top', 'padding-bottom', 'margin-top', 'margin-bottom'], box: true },
+    { name: 'gallery.items', select: 'main .scroll-gallery .item-container', props: ['padding-left', 'padding-right'], box: true },
+    { name: 'gallery.set', select: 'main .scroll-gallery .item-container > ul', props: ['display', 'column-gap'], box: true },
+    { name: 'gallery.item', select: 'main .scroll-gallery .item-container > ul > li', props: ['scroll-snap-align', 'scroll-snap-stop'], box: true, position: true },
+    { name: 'gallery.nav', select: 'main .scroll-gallery .scroll-gallery-paddlenav', props: ['display', 'justify-content', 'padding-top'], box: true, position: true },
+    { name: 'gallery.nav-list', select: 'main .scroll-gallery .scroll-gallery-paddlenav ul', props: ['display', 'column-gap', 'margin-top'], box: true },
+    { name: 'paddle.next', select: 'main .scroll-gallery .paddlenav-arrow-next', props: [...BOX, 'width', 'height', 'color', 'opacity', 'cursor', ...MOTION], box: true, position: true, states: ['hover', 'active'] },
+    { name: 'gallery.dots', select: 'main .dotnav-items', props: [...FLEX], box: true },
+    { name: 'gallery.dot-item', select: 'main .dotnav-item:not(.current)', props: ['margin-left', 'margin-right', 'padding-left', 'padding-right'], box: true },
+    { name: 'gallery.dot', select: 'main .dotnav-link:not(.current)', props: ['width', 'height', 'background-color', 'border-top-left-radius', 'padding-top', ...MOTION], box: true, states: ['hover'] },
+    { name: 'gallery.dot-current', select: 'main .dotnav-link.current', props: ['width', 'height', 'background-color', 'border-top-left-radius', 'padding-top'], box: true },
+    { name: 'gallery.dot-fill', select: 'main .dotnav-link.current', pseudo: '::after', props: ['width', 'height', 'background-color', 'border-top-left-radius', 'position', 'content'] },
     // a link in running text in a dark section: apple.com's own `a`, on markup added to it
     { name: 'link.inline', inject: '<p>Text with <a href="#cui">a link</a> in it.</p>', into: 'main section.section.theme-dark', select: 'a', props: [...TYPE, ...LINK], states: ['hover', 'active'] },
     { name: 'link.more', select: 'main a.icon-wrapper', props: [...TYPE, ...LINK], states: ['hover'] },

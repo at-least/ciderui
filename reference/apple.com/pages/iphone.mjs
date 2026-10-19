@@ -1,7 +1,7 @@
 // The iPhone page, a light one: its links (the "more" link, its copy and its
 // chevron; a section header's link) and its ribbon, the message above the
 // content.
-import { TYPE, BOX, LINK, PAGE, TEXT, FLEX } from './common.mjs';
+import { TYPE, BOX, LINK, PAGE, TEXT, FLEX, MOTION } from './common.mjs';
 export default {
   url: 'https://www.apple.com/iphone/',
   probes: [
@@ -22,5 +22,13 @@ export default {
     { name: 'ribbon', select: '.ribbon', props: [...TYPE, ...BOX], box: true },
     { name: 'ribbon.content', select: '.ribbon .ribbon-content', props: [...TYPE, ...BOX, 'text-align'], box: true },
     { name: 'ribbon.link', select: '.ribbon .ribbon-link', props: [...TYPE, ...LINK], states: ['hover'] },
+    // a light page's gallery paddles (the first enabled one, and a disabled
+    // one) and a media card gallery's dots
+    { name: 'paddle', select: 'main .paddlenav-arrow-next:not([disabled])', props: [...BOX, 'width', 'height', 'color', 'opacity', 'cursor', ...MOTION], box: true, states: ['hover', 'active', 'focus-visible'] },
+    { name: 'paddle.icon', select: 'main .paddlenav-arrow-next:not([disabled]) svg', props: ['width', 'height', 'fill', 'color'], box: true },
+    { name: 'paddle.disabled', select: 'main .paddlenav-arrow[disabled]', props: ['opacity', 'background-color', 'color', 'cursor', 'pointer-events'] },
+    { name: 'gallery.dot', select: 'main .dotnav-link:not(.current)', props: ['width', 'height', 'background-color', 'border-top-left-radius', 'padding-top', ...MOTION], box: true, states: ['hover'] },
+    { name: 'gallery.dot-current', select: 'main .dotnav-link.current', props: ['width', 'height', 'background-color', 'border-top-left-radius', 'padding-top'], box: true },
+    { name: 'gallery.dot-fill', select: 'main .dotnav-link.current', pseudo: '::after', props: ['width', 'height', 'background-color', 'border-top-left-radius', 'position', 'content'] },
   ],
 };
