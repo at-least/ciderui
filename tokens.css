@@ -2,7 +2,8 @@
  * every component reads, and the only colors it may. Each is apple.com's,
  * measured (reference/apple.com/), one light-dark() pair, light first, or
  * one value where both sides are the same; the dark secondary text is
- * fitted (apple.com's #6e6e73 is 4.1:1 on black, below 4.5:1). The palette
+ * fitted (apple.com's #6e6e73 is 4.1:1 on black, below 4.5:1), and so is
+ * the dark error's (below). The palette
  * is fixed: no site redefines a color. A slot enters with the first
  * component that reads it, its dark side measured then (DESIGN.md, the
  * token contract). The pairs follow the color scheme of the element they
@@ -53,6 +54,12 @@
  *   field                   a field's ground, translucent; one value: a
  *                           field keeps its light look in a dark block, as
  *                           apple.com's does in a dark color scheme
+ *   field-error, -disabled, a field's ground in error and disabled, its
+ *   -prefix, border-disabled prefix's ground, a disabled field's edge; one
+ *                           value each, as the field's
+ *   error                   a field's edge, label and message in error; its
+ *                           dark side fitted (apple.com's #e30000 is 4.3:1 on
+ *                           black, below 4.5:1: Apple's dark red, #ff453a)
  *   scrim                   the layer a modal lays over the page, dimming it
  *   close, -hover, -active  a modal's close button, its circle
  *   on-close, -hover        its X, and hovered (pressed, on-close). One value
@@ -99,6 +106,11 @@
   --cui-c-dot: light-dark(rgb(29 29 31 / 0.6), rgb(255 255 255 / 0.36));
   --cui-c-dot-hover: light-dark(rgb(0 0 0 / 0.54), rgb(255 255 255 / 0.48));
   --cui-c-field: rgb(255 255 255 / 0.8);
+  --cui-c-field-error: #fff2f4;
+  --cui-c-field-disabled: rgb(0 0 0 / 0.01);
+  --cui-c-field-prefix: rgb(0 0 0 / 0.02);
+  --cui-c-border-disabled: rgb(134 134 139 / 0.42);
+  --cui-c-error: light-dark(#e30000, #ff453a);
   --cui-c-divider: light-dark(#d2d2d7, #424245);
   --cui-c-on-footer: rgb(0 0 0 / 0.56);
   --cui-c-on-footer-link: rgb(0 0 0 / 0.72);

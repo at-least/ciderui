@@ -1,0 +1,109 @@
+{
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T21:59:57.227Z",
+ "ours": {
+  "alert": "<circle cx=\"585\" cy=\"497.5\" r=\"456.25\" fill=\"none\" stroke=\"#000\" stroke-width=\"82.5\"/><path d=\"M584 280V550\" fill=\"none\" stroke=\"#000\" stroke-width=\"70\" stroke-linecap=\"round\"/><circle cx=\"585\" cy=\"692.5\" r=\"50\" fill=\"#000\"/>",
+  "dropdown": "<svg viewBox=\"0 0 21 21\"><path d=\"M6.075 9.275 10.5 13.7 14.925 9.275\" fill=\"none\" stroke=\"#000\" stroke-width=\"1.45\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+ },
+ "alert": {
+  "char": "U+F312",
+  "size": 400,
+  "advance": 1.1709,
+  "ink": {
+   "left": 0.0875,
+   "right": 1.0825,
+   "top": 0.85,
+   "bottom": -0.145
+  },
+  "iou": 0.9695
+ },
+ "alertPlace": {
+  "scale": 4.006581716603528,
+  "ink": {
+   "left": 1.7471252292176038,
+   "right": 13.727412515281173,
+   "top": 2.7454825030562344,
+   "bottom": 14.725769789119804
+  },
+  "textLeft": 16.9375,
+  "rowHeight": 16
+ },
+ "dropdown": {
+  "appleBox": {
+   "left": 5.3,
+   "right": 15.7,
+   "top": 8.55,
+   "bottom": 14.45
+  },
+  "oursBox": {
+   "left": 5.35,
+   "right": 15.65,
+   "top": 8.55,
+   "bottom": 14.4
+  },
+  "iou": 0.9689,
+  "rows": [
+   [
+    10,
+    [
+     [
+      5.75,
+      7.85
+     ],
+     [
+      13.15,
+      15.25
+     ]
+    ],
+    [
+     [
+      5.8,
+      7.85
+     ],
+     [
+      13.15,
+      15.2
+     ]
+    ]
+   ],
+   [
+    12,
+    [
+     [
+      7.75,
+      9.8
+     ],
+     [
+      11.15,
+      13.25
+     ]
+    ],
+    [
+     [
+      7.8,
+      9.85
+     ],
+     [
+      11.15,
+      13.2
+     ]
+    ]
+   ],
+   [
+    13.5,
+    [
+     [
+      9.25,
+      11.75
+     ]
+    ],
+    [
+     [
+      9.3,
+      11.7
+     ]
+    ]
+   ]
+  ]
+ }
+}

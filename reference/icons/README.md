@@ -58,6 +58,17 @@ The global nav's search, opened, draws two more SVGs, each a regular one from 83
 
 Intersection over union; the probe fails below 0.85, a mark set before the run, or if the search's example (`components/globalnav/examples/search.html`) draws others. Measured 2026-10-19 on https://www.apple.com/ in Chromium 151 on Linux (`results/searchfield.json`).
 
+## The field's icons
+
+`form.mjs` reads the store's two form icons. The error's mark before a field's message is an SF Pro Icons glyph, U+F312, read as the "more" chevron is (drawn at 400px on the gift card's page, where the font is declared): its advance 1.1709em, its ink 0.0875 to 1.0825em across and 0.85 to −0.145em about the baseline; a ring, its rows' runs 0.0825em thick; in it a stem 0.265 to 0.605em up, 0.04 to 0.085em wide (tapering), and a dot 0.1075 to 0.2075em up. In the page's message row (12px, at four device pixels to the CSS pixel) its ink is 1.75 to 13.73px across and 2.75 to 14.73px down the 16px row. The dropdown's chevron is an SVG its background draws, 21 by 21 at 25px: a line 1.45 thick (its rows' runs 2 to 2.1 across at 45°), its ink 5.3 to 15.7 across and 8.55 to 14.45 down, in `#6e6e73`.
+
+| icon | ciderui's | shared ink |
+| --- | --- | --- |
+| `ALERT`, 1.171em by 0.995em (from the ink's top) | a ring at (585, 497.5) thousandths, radius 456.25, 82.5 thick; a stem from (584, 280) to (584, 550), 70 thick, round; a dot at (585, 692.5), radius 50 | 0.9695 |
+| `DROPDOWN`, 21 by 21 drawn at 25 | a line through (6.075, 9.275), (10.5, 13.7) and (14.925, 9.275), 1.45 thick, round | 0.9689 |
+
+Intersection over union; `form.mjs` fails below 0.85, a mark set before the run, or if the field's examples (`error.html`, `select.html`) draw others. Measured 2026-10-20 in Chromium 151 on Linux (`results/form.json`).
+
 ## The local nav's chevron
 
 `localnav.mjs` reads it off MacBook Air's page: a polyline in 16 by 9 through (15.265, 0.835), (8, 8.167) and (0.735, 0.835), 1.2 thick, round at the ends and the join; opened, apple.com's animation ends on the same line upside down, (15.265, 8.165), (8, 0.835), (0.735, 8.165), in 320ms, through a straight line at 4.5. ciderui's `CHEVRON` is that line; `localnav.css` turns it up with `scaleY(-1)` about its middle, which passes through the same straight line. Shared ink: 1 closed, 0.996 open (`results/localnav.json`, 2026-10-19, Chromium 151).
@@ -69,6 +80,7 @@ PW=…/playwright-chromium/index.mjs node run.mjs   # the "more" chevron
 PW=…/playwright-chromium/index.mjs node nav.mjs   # the global nav's icons
 PW=…/playwright-chromium/index.mjs node localnav.mjs   # the local nav's chevron
 PW=…/playwright-chromium/index.mjs node searchfield.mjs   # the search's magnifier and arrow
+PW=…/playwright-chromium/index.mjs node form.mjs   # the field's error mark and the dropdown's chevron
 ```
 
 `glyph.js` runs on apple.com's page, where its icon font is declared: it loads the face, draws the character on a canvas, reads the numbers off the ink, draws the chevron they describe on another, and compares the two. `nav.mjs` reads the nav's SVG off the page and compares on a blank one. The browsers are `../browsers.mjs`'s.

@@ -204,6 +204,51 @@
      "width": 980,
      "css": true,
      "page": 1423
+    },
+    {
+     "height": 128,
+     "content": 128,
+     "images": [],
+     "title": "A field in error and its message",
+     "width": 980,
+     "css": true,
+     "page": 1423
+    },
+    {
+     "height": 104,
+     "content": 104,
+     "images": [],
+     "title": "A disabled field",
+     "width": 980,
+     "css": true,
+     "page": 1423
+    },
+    {
+     "height": 104,
+     "content": 104,
+     "images": [],
+     "title": "A field with a currency before it",
+     "width": 980,
+     "css": true,
+     "page": 1423
+    },
+    {
+     "height": 104,
+     "content": 104,
+     "images": [],
+     "title": "A dropdown, nothing chosen",
+     "width": 980,
+     "css": true,
+     "page": 1423
+    },
+    {
+     "height": 104,
+     "content": 104,
+     "images": [],
+     "title": "A dropdown with a choice made",
+     "width": 980,
+     "css": true,
+     "page": 1423
     }
    ]
   },
@@ -869,6 +914,51 @@
      "width": 414,
      "css": true,
      "page": 683
+    },
+    {
+     "height": 128,
+     "content": 128,
+     "images": [],
+     "title": "A field in error and its message",
+     "width": 414,
+     "css": true,
+     "page": 683
+    },
+    {
+     "height": 104,
+     "content": 104,
+     "images": [],
+     "title": "A disabled field",
+     "width": 414,
+     "css": true,
+     "page": 683
+    },
+    {
+     "height": 104,
+     "content": 104,
+     "images": [],
+     "title": "A field with a currency before it",
+     "width": 414,
+     "css": true,
+     "page": 683
+    },
+    {
+     "height": 104,
+     "content": 104,
+     "images": [],
+     "title": "A dropdown, nothing chosen",
+     "width": 414,
+     "css": true,
+     "page": 683
+    },
+    {
+     "height": 104,
+     "content": 104,
+     "images": [],
+     "title": "A dropdown with a choice made",
+     "width": 414,
+     "css": true,
+     "page": 683
     }
    ]
   },
@@ -1358,6 +1448,18 @@
    "window": 848,
    "bar": 52
   },
+  "dropdown at 1440": {
+   "empty": {
+    "top": "18px",
+    "size": "17px",
+    "text": "rgba(0, 0, 0, 0)"
+   },
+   "chosen": {
+    "top": "10px",
+    "size": "12px",
+    "text": "rgb(29, 29, 31)"
+   }
+  },
   "gallery at 700": {
    "previous": false,
    "shown": true,
@@ -1383,6 +1485,18 @@
    "height": 800,
    "window": 848,
    "bar": 48
+  },
+  "dropdown at 700": {
+   "empty": {
+    "top": "18px",
+    "size": "17px",
+    "text": "rgba(0, 0, 0, 0)"
+   },
+   "chosen": {
+    "top": "10px",
+    "size": "12px",
+    "text": "rgb(29, 29, 31)"
+   }
   },
   "globalnav menu at 700": {
    "closed": 48,

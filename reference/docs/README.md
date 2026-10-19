@@ -8,20 +8,21 @@ The probe behind the claim that ciderui's documentation (`docs/`, built with cid
 4. an example's link leaves its frame where it is (`about:srcdoc`);
 5. below 834px, the global nav's menu opens over its frame, the frame grown to the window's height under the page's sticky local nav and scrolled there, and back to the bar's height closed;
 6. below 834px, the local nav's menu opens below its bar, the frame grown to hold it;
-7. the global nav's search opens in its frame by its button, its field focused, the frame grown to the window's height under the local nav; in a frame 834px wide or more it hangs from the bar's bottom (anchor positioning), its curtain to the frame's bottom, in a narrower one it is a sheet over the frame; its curtain or its X closes it, the frame the bar's height again.
+7. the global nav's search opens in its frame by its button, its field focused, the frame grown to the window's height under the local nav; in a frame 834px wide or more it hangs from the bar's bottom (anchor positioning), its curtain to the frame's bottom, in a narrower one it is a sheet over the frame; its curtain or its X closes it, the frame the bar's height again;
+8. the field's dropdown, with no script: nothing chosen, its label the placeholder (17px, 18px down) and its own text not shown; a choice made (its value set, as a pick sets it), its label at its top (12px, 10px down) and its text shown.
 
 The frames' elements are clicked by the page's script (`click()`, the activation a tap's click runs): safaridriver's taps on the iOS simulator never click (`../popover/`).
 
 ## The result
 
-| browser | window | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Safari 27.0.1, macOS 27.0.1 | 1440, 700 | ok | ok (94 frames) | ok | ok | ok | ok | ok (the flyout in its 978px frame, the sheet in its 412px one) |
-| Safari 26.5, iOS 26.5 simulator | 402 | ok | ok (47 frames) | ok | ok | ok | ok | ok (the sheet) |
-| Chrome 155.0.8059.80, macOS 27.0.1 | 1440, 700 | ok | ok (94 frames) | ok | ok | ok | ok | ok (the flyout, the sheet) |
-| Chromium 151, Linux | 1440, 700 | ok | ok (94 frames) | ok | ok | ok | ok | ok (the flyout, the sheet) |
+| browser | window | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Safari 27.0.1, macOS 27.0.1 | 1440, 700 | ok | ok (104 frames) | ok | ok | ok | ok | ok (the flyout in its 978px frame, the sheet in its 412px one) | ok |
+| Safari 26.5, iOS 26.5 simulator | 402 | ok | ok (47 frames) | ok | ok | ok | ok | ok (the sheet) | not run |
+| Chrome 155.0.8059.80, macOS 27.0.1 | 1440, 700 | ok | ok (104 frames) | ok | ok | ok | ok | ok (the flyout, the sheet) | ok |
+| Chromium 151, Linux | 1440, 700 | ok | ok (104 frames) | ok | ok | ok | ok | ok (the flyout, the sheet) | ok |
 
-Measured 2026-10-19 (`results/`), the site with the global nav's search (the commit after ciderui 89fc76a) with ciderui-zola 3ae85a0; first measured at ciderui b63888e with ciderui-zola 4bad1c7. Before ciderui-zola 4bad1c7, Safari on the iOS simulator failed 3 once, the shelf's: its row scrolled (400px, 18 scroll events) but its previous paddle stayed disabled, since the theme's script set the paddles in an animation frame and an iframe out of sight runs almost none there (2 in 1.5s, against 89 in sight; of 18 asked for as its row scrolled, none); the script now sets them in the scroll event itself. Not measured: Firefox, a real iPhone.
+Measured 2026-10-20 (`results/`), the site with the field's states and dropdown (the commit after ciderui 31b8622) with ciderui-zola fd5c713, but on the iOS simulator, whose row is the run of 2026-10-19 with the global nav's search (the commit after 89fc76a): run again with the dropdown, its Safari failed WebDriver's commands (`500 unknown error`) at the first pages and then held the session paired for minutes, in four runs; it is not run here until it is restarted. First measured at ciderui b63888e with ciderui-zola 4bad1c7. Before ciderui-zola 4bad1c7, Safari on the iOS simulator failed 3 once, the shelf's: its row scrolled (400px, 18 scroll events) but its previous paddle stayed disabled, since the theme's script set the paddles in an animation frame and an iframe out of sight runs almost none there (2 in 1.5s, against 89 in sight; of 18 asked for as its row scrolled, none); the script now sets them in the scroll event itself. Not measured: Firefox, a real iPhone.
 
 ## Running it
 

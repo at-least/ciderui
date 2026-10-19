@@ -255,6 +255,30 @@ pub const FOOTER_CHEVRON: Icon = Icon {
     inner: r#"<path d="M10.075.675 5.5 5.323.925.675" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>"#,
 };
 
+/// A field's error mark (`cui-field-message`), in place of apple.com's SF
+/// Pro Icons glyph: a ring at (0.585em, 0.4975em down), radius 0.456em,
+/// 0.0825em thick, and in it a stem from 0.28 to 0.55em down, 0.07em thick,
+/// round, over a dot of radius 0.05em at 0.6925em down, in the glyph's
+/// advance (1.171em) by its ink's height (0.995em); 0.9695 of its ink
+/// apple.com's (`reference/icons/`). In em: it takes the message's size.
+pub const ALERT: Icon = Icon {
+    width: "1.171em",
+    height: "0.995em",
+    view_box: "0 0 1171 995",
+    inner: r#"<circle cx="585" cy="497.5" r="456.25" fill="none" stroke="currentColor" stroke-width="82.5"/><path d="M584 280V550" fill="none" stroke="currentColor" stroke-width="70" stroke-linecap="round"/><circle cx="585" cy="692.5" r="50" fill="currentColor"/>"#,
+};
+
+/// A dropdown's chevron (`cui-field-chevron`), in place of the store's
+/// background SVG: a line through (6.075, 9.275), (10.5, 13.7) and
+/// (14.925, 9.275) in 21 by 21, 1.45 thick, round, drawn 25 by 25 as
+/// apple.com's; 0.9689 of its ink apple.com's (`reference/icons/`).
+pub const DROPDOWN: Icon = Icon {
+    width: "25",
+    height: "25",
+    view_box: "0 0 21 21",
+    inner: r#"<path d="M6.075 9.275 10.5 13.7 14.925 9.275" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"/>"#,
+};
+
 /// A modal's X (`cui-modal-close`), in place of the store overlay's SVG: two
 /// lines from (4.88, 4.88) to (15.12, 15.12) and from (15.12, 4.88) to
 /// (4.88, 15.12) in 20 by 20, 3 thick, round; 0.9927 of its ink apple.com's

@@ -44,7 +44,7 @@ pub use accordion::{Accordion, AccordionItem};
 pub use article::Article;
 pub use card::Card;
 pub use checkbox::Checkbox;
-pub use field::Field;
+pub use field::{Field, Select};
 pub use footer::{Footer, FooterSection};
 pub use footnote::Footnote;
 pub use gallery::Gallery;

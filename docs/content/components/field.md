@@ -1,6 +1,6 @@
 +++
 title = "Field"
-description = "apple.com’s 56px text field, its label the placeholder until it is filled."
+description = "apple.com’s 56px text field, its label the placeholder until it is filled; in error, disabled, with a currency before it, and the store’s dropdown."
 
 [extra]
 category = "Controls"
@@ -17,10 +17,27 @@ apple.com’s own text field, the store’s: 56px, a 1px edge and 12px corners o
 
 {{ <cui_example file="field/filled" title="A filled field" pad={true} /> }}
 
+A field in error has a red edge and label on a pink ground, and its message under it, 12px in red after a mark. The error is the page’s to set, with its message, as its server answers the form: `aria-invalid="true"` on the input, and `aria-describedby` naming the message. A disabled field is grey, its edge faint. A currency or a country code can sit at the field’s start, on a faint ground of its own with a rule after it, its text and label moved past it.
+
+{{ <cui_example file="field/error" title="A field in error and its message" pad={true} /> }}
+
+{{ <cui_example file="field/disabled" title="A disabled field" pad={true} /> }}
+
+{{ <cui_example file="field/prefix" title="A field with a currency before it" pad={true} /> }}
+
+The store’s dropdown is a `<select>` with the same look and a chevron at its end. Its first choice is an empty one (`value=""`), chosen while nothing is: its label is then the placeholder and its own text is not shown; a choice made, the label moves to the top.
+
+{{ <cui_example file="field/select" title="A dropdown, nothing chosen" pad={true} /> }}
+
+{{ <cui_example file="field/selected" title="A dropdown with a choice made" pad={true} /> }}
+
 | class | what |
 | --- | --- |
 | `cui-field` | the field |
-| `cui-field-input` | the `<input>`; its placeholder a space, `placeholder=" "`, so the label can tell it empty |
+| `cui-field-input` | the `<input>` or the `<select>`; an input’s placeholder a space, `placeholder=" "`, so the label can tell it empty; a select’s empty choice first, `value=""`; `aria-invalid="true"` in error; `disabled` |
 | `cui-field-label` | its `<label>`, after the input |
+| `cui-field-prefix` | a currency or a country code, after the label; the input’s `aria-describedby` names it |
+| `cui-field-chevron` | a select’s chevron, `icon::DROPDOWN`, after the label |
+| `cui-field-message` | its error, after the field, its mark `icon::ALERT` |
 
-Focused, the field shows a 2px accent edge in place of the focus ring: a text field is `:focus-visible` however it is focused, so a ring cannot show for the keyboard alone, as apple.com’s script’s does. In a dark block it keeps its light look on a ground of its own, as apple.com’s field does in a dark color scheme. The crate writes it with `Field`.
+Focused, the field shows a 2px accent edge in place of the focus ring: a text field is `:focus-visible` however it is focused, so a ring cannot show for the keyboard alone, as apple.com’s script’s does; in error too. In a dark block it keeps its light look on a ground of its own, as apple.com’s field does in a dark color scheme; its message there, on the block’s ground, is a lighter red, as apple.com’s is below 4.5:1 on black. The crate writes it with `Field` and the dropdown with `Select`.

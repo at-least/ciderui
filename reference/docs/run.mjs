@@ -12,7 +12,9 @@
 // an example's link leaves its frame where it is; the global nav's search
 // opens in its frame by its button, its field focused, hung from the bar
 // where the frame is 834px wide or more, a sheet where it is narrower,
-// and its curtain or its X closes it; in a window narrower than
+// and its curtain or its X closes it; the dropdown's label the placeholder
+// while it is empty and at its top once a choice is made, its text shown
+// then, with no script; in a window narrower than
 // 834px the global nav's menu opens over its frame, grown to the window's
 // height under the page's local nav and scrolled there, and the local nav's
 // menu below its bar, the frame grown to hold it. On a phone at its width;
@@ -129,6 +131,26 @@ const behave = async (width) => {
     await page.run(wait(700));
     const again = await page.run(`Promise.resolve(${frame(title)}.clientHeight)`);
     claim(`${flyout ? 'its curtain' : 'its X'} closes it at ${width}px, its frame the bar's height again`, again === closed, { closed, again });
+  }
+  // the dropdown, with no script: empty, its label the placeholder and its
+  // own text not shown; a choice made (its value set, as a pick sets it),
+  // its label at its top and its text shown
+  {
+    const title = 'A dropdown, nothing chosen';
+    await page.go(`${ORIGIN}/components/field/`);
+    await page.run(wait(700));
+    const look = `Promise.resolve((() => {
+      const d = ${frame(title)}.contentDocument;
+      const label = getComputedStyle(d.querySelector('.cui-field-label'));
+      return { top: label.top, size: label.fontSize, text: getComputedStyle(d.querySelector('select')).color };
+    })())`;
+    const empty = await page.run(look);
+    await page.run(`Promise.resolve((() => { const s = ${frame(title)}.contentDocument.querySelector('select'); s.value = 'iphone-air'; s.dispatchEvent(new Event('change', { bubbles: true })); return true; })())`);
+    await page.run(wait(500));
+    const chosen = await page.run(look);
+    got.frames[`dropdown at ${width}`] = { empty, chosen };
+    claim(`the dropdown at ${width}px: empty, its label the placeholder and its text not shown; chosen, its label at its top and its text shown`,
+      empty.top === '18px' && empty.size === '17px' && empty.text === 'rgba(0, 0, 0, 0)' && chosen.top === '10px' && chosen.size === '12px' && chosen.text === 'rgb(29, 29, 31)', { empty, chosen });
   }
   // an example's link, clicked
   await page.go(`${ORIGIN}/components/link/`);

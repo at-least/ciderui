@@ -107,6 +107,15 @@ const CONTRACT = {
   // apple.com's own field (the retail page's form-textbox), and in a dark
   // color scheme
   '--cui-c-field': [['retail', 'field.input', W, 'background-color'], ['retail-dark', 'field.input', W, 'background-color']],
+  // a field's states: the gift card's page's (an empty required field the
+  // focus left, one disabled, the currency field's), and copies on the retail
+  // page in a dark color scheme; the currency's ground read on the gift
+  // card's page alone (a field is light on any page)
+  '--cui-c-field-error': [['giftcard', 'error', W, 'background-color'], ['retail-dark', 'field.error', W, 'background-color']],
+  '--cui-c-field-disabled': [['giftcard', 'field.disabled', 1600, 'background-color'], ['retail-dark', 'field.disabled', W, 'background-color']],
+  '--cui-c-field-prefix': [['giftcard', 'prefix.currency', 1600, 'background-color'], ['giftcard', 'prefix.currency', 1600, 'background-color']],
+  '--cui-c-border-disabled': [['giftcard', 'field.disabled', 1600, 'border-top-color'], ['retail-dark', 'field.disabled', W, 'border-top-color']],
+  '--cui-c-error': [['giftcard', 'error.message', W, 'color'], 'fitted: apple.com\'s #e30000 is below 4.5:1 on black'],
   // the bag's accordion's rule, and a rule between copy blocks on iPhone 18
   // Pro's dark page
   '--cui-c-divider': [['bag', 'accordion.item', W, 'border-top-color'], ['product', 'divider', W, 'border-top-color']],
@@ -162,6 +171,8 @@ const MIN = [
   ['--cui-c-link', ['--cui-c-tile'], 4.5],
   ['--cui-c-link', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
   ['--cui-c-text-3', ['--cui-c-bg', '--cui-c-bg-alt'], 3],
+  // a field's message on the page
+  ['--cui-c-error', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
   ['--cui-c-border', ['--cui-c-bg', '--cui-c-bg-alt'], 3],
   // a card's text on its ground, the page's
   ['--cui-c-on-card', ['--cui-c-bg'], 4.5],
@@ -194,11 +205,13 @@ for (const [on, bar] of [['--cui-c-on-bar', '--cui-c-bar'], ['--cui-c-on-bar-hov
 }
 
 // a field's text, its value and its label, on its ground over the field's
-// own (the page's ground, light: a field keeps its light look)
+// own (the page's ground, light: a field keeps its light look); in error,
+// its label on the error's ground
 for (const fg of ['--cui-c-text', '--cui-c-text-2']) {
   const ground = over(sides('--cui-c-field')[0], sides('--cui-c-bg')[0]);
   check(`${fg} on --cui-c-field over --cui-c-bg, light, at least 4.5:1`, ratio(sides(fg)[0], ground) >= 4.5, true);
 }
+check('--cui-c-error on --cui-c-field-error, light, at least 4.5:1', ratio(sides('--cui-c-error')[0], sides('--cui-c-field-error')[0]) >= 4.5, true);
 
 // the footer's text on its ground, the alternate (light: the footer keeps
 // its light look)
