@@ -1,9 +1,32 @@
 use hypertext::{Buffer, prelude::*};
 
-use crate::icon::{BAG, BAG_COMPACT, MENU, SEARCH, SEARCH_COMPACT};
+use crate::icon::{
+    ARROW, ARROW_COMPACT, BAG, BAG_COMPACT, MENU, SEARCH, SEARCH_COMPACT, SEARCHFIELD,
+    SEARCHFIELD_COMPACT,
+};
 
-// the list's id, which its button opens: a page has one global nav
+// the list's id, which its button opens, and the search's: a page has one
+// global nav
 const MENU_ID: &str = "cui-globalnav-menu";
+const SEARCH_ID: &str = "cui-globalnav-search";
+const HEADING_ID: &str = "cui-globalnav-searchheading";
+
+/// The global nav's search ([`GlobalNav`]'s `search`).
+pub enum Search<'a> {
+    /// A link to the site's search page.
+    Link(&'a str),
+    /// A button opening the search with no script: its field, focused, sent
+    /// as `q` (GET) to `action`, the site's search page, and under it the
+    /// quick links, (text, href) each, under the heading Quick Links (none,
+    /// no heading); from 834px a flyout under the bar, to 833px a sheet over
+    /// the window.
+    Flyout {
+        /// The site's search page. Required: an empty one panics.
+        action: &'a str,
+        /// The quick links, in order; `&[]` for none.
+        links: &'a [(&'a str, &'a str)],
+    },
+}
 
 /// `cui-globalnav` (`components/globalnav`): the bar across the top of the
 /// page, the site's logo, its links and its search and bag; to 833px the
@@ -37,8 +60,9 @@ pub struct GlobalNav<'a, L: Renderable> {
     /// The links, (text, href) each, in order. At least one: a menu of
     /// nothing panics.
     pub links: &'a [(&'a str, &'a str)],
-    /// The site's search page, if it has one ([`SEARCH`]).
-    pub search: Option<&'a str>,
+    /// The site's search, if it has one ([`SEARCH`]): a link to its page,
+    /// or the search opened over the page ([`Search`]).
+    pub search: Option<Search<'a>>,
     /// The site's bag, if it has one ([`BAG`]).
     pub bag: Option<&'a str>,
     /// Whether the nav is dark (`cui-dark`): the dark bar and menu.
@@ -55,6 +79,12 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
         assert!(!self.home.is_empty(), "ciderui::GlobalNav needs a home");
         assert!(!self.name.is_empty(), "ciderui::GlobalNav needs a name");
         assert!(!self.links.is_empty(), "ciderui::GlobalNav needs links");
+        if let Some(Search::Flyout { action, .. }) = self.search {
+            assert!(
+                !action.is_empty(),
+                "ciderui::GlobalNav's search needs its page (action)"
+            );
+        }
         let mut class = String::from("cui-globalnav");
         if self.dark {
             class.push_str(" cui-dark");
@@ -72,14 +102,37 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
                         @for (text, href) in self.links {
                             <li><a class="cui-globalnav-link" href=(href)>(text)</a></li>
                         }
-                        @if let Some(href) = self.search {
+                        @if let Some(Search::Link(href)) = self.search {
                             <li><a class="cui-globalnav-icon" href=(href) aria-label="Search">(SEARCH.class("cui-globalnav-image"))(SEARCH_COMPACT.class("cui-globalnav-image-compact"))</a></li>
+                        }
+                        @if let Some(Search::Flyout { .. }) = self.search {
+                            <li><button class="cui-globalnav-icon" popovertarget=(SEARCH_ID) aria-label="Search">(SEARCH.class("cui-globalnav-image"))(SEARCH_COMPACT.class("cui-globalnav-image-compact"))</button></li>
                         }
                         @if let Some(href) = self.bag {
                             <li><a class="cui-globalnav-icon" href=(href) aria-label="Bag">(BAG.class("cui-globalnav-image"))(BAG_COMPACT.class("cui-globalnav-image-compact"))</a></li>
                         }
                     </ul>
                     <button class="cui-globalnav-menubutton" popovertarget=(MENU_ID) aria-label="Menu">(MENU)</button>
+                    @if let Some(Search::Flyout { action, links }) = self.search {
+                        <div class="cui-globalnav-search" id=(SEARCH_ID) popover>
+                            <div class="cui-globalnav-searchpanel">
+                                <form class="cui-globalnav-searchfield" action=(action) method="get" role="search">
+                                    (SEARCHFIELD.class("cui-globalnav-image"))(SEARCHFIELD_COMPACT.class("cui-globalnav-image-compact"))
+                                    <input class="cui-globalnav-searchinput" type="text" name="q" placeholder="Search" aria-label="Search" autocomplete="off" autocapitalize="off" autofocus>
+                                </form>
+                                @if !links.is_empty() {
+                                    <h2 class="cui-globalnav-searchheading" id=(HEADING_ID)>"Quick Links"</h2>
+                                    <ul class="cui-globalnav-searchlinks" aria-labelledby=(HEADING_ID)>
+                                        @for (text, href) in links {
+                                            <li><a class="cui-globalnav-searchlink" href=(href)>(ARROW.class("cui-globalnav-image"))(ARROW_COMPACT.class("cui-globalnav-image-compact"))(text)</a></li>
+                                        }
+                                    </ul>
+                                }
+                                <button class="cui-globalnav-closebutton" popovertarget=(SEARCH_ID) popovertargetaction="hide" aria-label="Close">(MENU)</button>
+                            </div>
+                            <button class="cui-globalnav-curtain" popovertarget=(SEARCH_ID) popovertargetaction="hide" tabindex="-1" aria-hidden="true"></button>
+                        </div>
+                    }
                 </div>
             </nav>
         }
@@ -109,7 +162,7 @@ mod tests {
     #[test]
     fn renders_the_example() {
         let html = rsx! {
-            <GlobalNav logo=(logo()) home="/" name="Cider" links=(LINKS) search=(Some("/search")) bag=(Some("/bag")) dark=false clear=false class="" />
+            <GlobalNav logo=(logo()) home="/" name="Cider" links=(LINKS) search=(Some(Search::Link("/search"))) bag=(Some("/bag")) dark=false clear=false class="" />
         }
         .render();
         assert_eq!(
@@ -118,6 +171,50 @@ mod tests {
                 "../../components/globalnav/examples/globalnav.html"
             ))
         );
+    }
+
+    const QUICK: &[(&str, &str)] = &[
+        ("Find a Store", "/retail"),
+        ("Mac", "/mac"),
+        ("iPad", "/ipad"),
+        ("Gift Cards", "/gift-cards"),
+        ("Support", "/support"),
+    ];
+
+    #[test]
+    fn renders_the_search_example() {
+        let html = rsx! {
+            <GlobalNav logo=(logo()) home="/" name="Cider" links=(LINKS) search=(Some(Search::Flyout { action: "/search", links: QUICK })) bag=(Some("/bag")) dark=false clear=false class="" />
+        }
+        .render();
+        assert_eq!(
+            *html.as_inner(),
+            example(include_str!(
+                "../../components/globalnav/examples/search.html"
+            ))
+        );
+    }
+
+    #[test]
+    fn a_search_with_no_quick_links_has_no_heading() {
+        let html = rsx! {
+            <GlobalNav logo=(logo()) home="/" name="Cider" links=(LINKS) search=(Some(Search::Flyout { action: "/find?a&b", links: &[] })) bag=None dark=false clear=false class="" />
+        }
+        .render();
+        assert!(html.as_inner().contains(
+            r#"<form class="cui-globalnav-searchfield" action="/find?a&amp;b" method="get" role="search">"#
+        ));
+        assert!(!html.as_inner().contains("cui-globalnav-searchheading"));
+        assert!(!html.as_inner().contains("cui-globalnav-searchlinks"));
+    }
+
+    #[test]
+    #[should_panic(expected = "needs its page")]
+    fn a_search_with_no_page_panics() {
+        let _ = rsx! {
+            <GlobalNav logo=(logo()) home="/" name="Cider" links=(LINKS) search=(Some(Search::Flyout { action: "", links: &[] })) bag=None dark=false clear=false class="" />
+        }
+        .render();
     }
 
     #[test]

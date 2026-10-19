@@ -18,8 +18,8 @@
    "images": [],
    "frames": [
     {
-     "height": 796,
-     "content": 796,
+     "height": 260,
+     "content": 260,
      "images": [],
      "title": "Two questions, the first open",
      "width": 980,
@@ -268,6 +268,15 @@
      "width": 980,
      "css": true,
      "page": 1423
+    },
+    {
+     "height": 44,
+     "content": 44,
+     "images": [],
+     "title": "A global nav and its search",
+     "width": 980,
+     "css": true,
+     "page": 1423
     }
    ]
   },
@@ -306,6 +315,22 @@
      "content": 52,
      "images": [],
      "title": "A local nav",
+     "width": 980,
+     "css": true,
+     "page": 1423
+    }
+   ]
+  },
+  "/components/modal/ at 1440": {
+   "sideways": -17,
+   "width": 1440,
+   "images": [],
+   "frames": [
+    {
+     "height": 84,
+     "content": 84,
+     "images": [],
+     "title": "A modal and the button that opens it",
      "width": 980,
      "css": true,
      "page": 1423
@@ -658,8 +683,8 @@
    "images": [],
    "frames": [
     {
-     "height": 800,
-     "content": 800,
+     "height": 254,
+     "content": 254,
      "images": [],
      "title": "Two questions, the first open",
      "width": 414,
@@ -908,6 +933,15 @@
      "width": 414,
      "css": true,
      "page": 683
+    },
+    {
+     "height": 48,
+     "content": 48,
+     "images": [],
+     "title": "A global nav and its search",
+     "width": 414,
+     "css": true,
+     "page": 683
     }
    ]
   },
@@ -946,6 +980,22 @@
      "content": 48,
      "images": [],
      "title": "A local nav",
+     "width": 414,
+     "css": true,
+     "page": 683
+    }
+   ]
+  },
+  "/components/modal/ at 700": {
+   "sideways": -17,
+   "width": 700,
+   "images": [],
+   "frames": [
+    {
+     "height": 84,
+     "content": 84,
+     "images": [],
+     "title": "A modal and the button that opens it",
      "width": 414,
      "css": true,
      "page": 683
@@ -1294,6 +1344,20 @@
    "current": -1,
    "scroll": 726
   },
+  "globalnav search at 1440": {
+   "closed": 44,
+   "frameHeight": 796,
+   "search": 44,
+   "focus": "cui-globalnav-searchinput",
+   "open": true,
+   "inner": 978,
+   "searchHeight": 752,
+   "curtain": 796,
+   "nav": 44,
+   "height": 796,
+   "window": 848,
+   "bar": 52
+  },
   "gallery at 700": {
    "previous": false,
    "shown": true,
@@ -1305,6 +1369,20 @@
    "shown": true,
    "current": -1,
    "scroll": 412
+  },
+  "globalnav search at 700": {
+   "closed": 48,
+   "frameHeight": 800,
+   "search": 0,
+   "focus": "cui-globalnav-searchinput",
+   "open": true,
+   "inner": 412,
+   "searchHeight": 800,
+   "curtain": 0,
+   "nav": 48,
+   "height": 800,
+   "window": 848,
+   "bar": 48
   },
   "globalnav menu at 700": {
    "closed": 48,

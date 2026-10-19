@@ -38,6 +38,26 @@ apple.com's nav draws its icons as inline SVG, a regular one in the bar from 834
 
 Intersection over union; the probe fails below 0.85, a mark set before the run. Measured 2026-10-19 on https://www.apple.com/ in Chromium 151 on Linux (`results/nav.json`). The open X is ciderui's lines as `globalnav.css` turns them, written here as SVG transforms with the same numbers; the component's test holds the rendered button to the same place (each line's box 11.5 by 11.5 from 3.5, 3.5).
 
+## The search's icons
+
+The global nav's search, opened, draws two more SVGs, each a regular one from 834px and a compact one below: the field's magnifier and the arrow before each quick link. `searchfield.mjs` reads them off the home page (the flyout's markup is in the page closed) and compares them as `nav.mjs` does:
+
+| icon | apple.com's ink | ciderui's |
+| --- | --- | --- |
+| the field's magnifier, 30 by 32 | 6.6 to 23.65 across, 7.9 to 25.2 down; the ring's outer edge 6.6 to 20.35 across and 7.9 to 21.65 down, 1.25 to 1.3 thick; the handle's run 3.1 across at 45° (2.2 thick), its middle on x = y − 1.5, its round end at 23.65, 25.2 | a circle at (13.475, 14.775), radius 6.225, stroke 1.3; the handle from (18.11, 19.61), where its round end meets the ring's inner edge, to (22.57, 24.07), stroke 2.2, round |
+| the magnifier, 38 by 40 | 9.25 to 29.05, 9.9 to 30.05; the ring 9.25 to 25.2 across, 9.9 to 25.9 down, 1.45 thick; the handle's run 3.7 across (2.62 thick), its middle on x = y − 1 | a circle at (17.225, 17.9), radius 7.25, stroke 1.45; the handle from (22.6, 23.6) to (27.74, 28.74), stroke 2.62, round |
+| the arrow, 9 by 16 | 0.25 to 8.75, 4.25 to 11.25; the shaft at 7.75 down, 1 thick; the head's strokes 1.4 across at 45° (1 thick), meeting at (8.25, 7.75) | the shaft from (0.75, 7.75) to (8.25, 7.75), the head from (5.25, 4.75) to it and back to (5.25, 10.75), stroke 1, round |
+| the arrow, 13 by 25 | 0.45 to 12.55, 7.95 to 18.05; the shaft at 13 down, 1.3 thick; the head's strokes 1.7 across (1.2 thick), meeting at (11.93, 13) | the shaft from (1.1, 13), stroke 1.3; the head from (7.48, 8.55) to (11.93, 13) to (7.48, 17.45), stroke 1.2, round |
+
+| icon | shared ink |
+| --- | --- |
+| the magnifier | 0.9742 |
+| the magnifier, compact | 0.9697 |
+| the arrow | 0.9825 |
+| the arrow, compact | 0.9952 |
+
+Intersection over union; the probe fails below 0.85, a mark set before the run, or if the search's example (`components/globalnav/examples/search.html`) draws others. Measured 2026-10-19 on https://www.apple.com/ in Chromium 151 on Linux (`results/searchfield.json`).
+
 ## The local nav's chevron
 
 `localnav.mjs` reads it off MacBook Air's page: a polyline in 16 by 9 through (15.265, 0.835), (8, 8.167) and (0.735, 0.835), 1.2 thick, round at the ends and the join; opened, apple.com's animation ends on the same line upside down, (15.265, 8.165), (8, 0.835), (0.735, 8.165), in 320ms, through a straight line at 4.5. ciderui's `CHEVRON` is that line; `localnav.css` turns it up with `scaleY(-1)` about its middle, which passes through the same straight line. Shared ink: 1 closed, 0.996 open (`results/localnav.json`, 2026-10-19, Chromium 151).
@@ -48,6 +68,7 @@ Intersection over union; the probe fails below 0.85, a mark set before the run. 
 PW=…/playwright-chromium/index.mjs node run.mjs   # the "more" chevron
 PW=…/playwright-chromium/index.mjs node nav.mjs   # the global nav's icons
 PW=…/playwright-chromium/index.mjs node localnav.mjs   # the local nav's chevron
+PW=…/playwright-chromium/index.mjs node searchfield.mjs   # the search's magnifier and arrow
 ```
 
 `glyph.js` runs on apple.com's page, where its icon font is declared: it loads the face, draws the character on a canvas, reads the numbers off the ink, draws the chevron they describe on another, and compares the two. `nav.mjs` reads the nav's SVG off the page and compares on a blank one. The browsers are `../browsers.mjs`'s.

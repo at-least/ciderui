@@ -9,7 +9,10 @@
 // tap's click runs: safaridriver's taps on the iOS simulator never click):
 // the theme's script moves a gallery's row (its Next paddle: the row
 // scrolled, the previous paddle enabled, a later dot current) and a shelf's;
-// an example's link leaves its frame where it is; in a window narrower than
+// an example's link leaves its frame where it is; the global nav's search
+// opens in its frame by its button, its field focused, hung from the bar
+// where the frame is 834px wide or more, a sheet where it is narrower,
+// and its curtain or its X closes it; in a window narrower than
 // 834px the global nav's menu opens over its frame, grown to the window's
 // height under the page's local nav and scrolled there, and the local nav's
 // menu below its bar, the frame grown to hold it. On a phone at its width;
@@ -94,6 +97,38 @@ const behave = async (width) => {
     })())`);
     got.frames[`${row} at ${width}`] = r;
     claim(`${row}'s Next scrolls its row on in its frame at ${width}px, the previous paddle enabled`, r.scroll > 0 && !r.previous && (row !== 'gallery' || r.current > 0), r);
+  }
+  // the global nav's search, opened by its button: in a frame 834px wide or
+  // more the flyout hung from the bar's bottom, the curtain to the frame's
+  // bottom, else the sheet over the frame; its field focused; the frame
+  // grown to the window under the local nav; closed by the curtain or the
+  // sheet's X, the frame the bar's height again
+  {
+    const title = 'A global nav and its search';
+    await page.go(`${ORIGIN}/components/globalnav/`);
+    await page.run(wait(700));
+    const closed = await page.run(`Promise.resolve(${frame(title)}.clientHeight)`);
+    await page.run(inFrame(title, '[popovertarget="cui-globalnav-search"]', 'click'));
+    await page.run(wait(1200));
+    const r = await page.run(`Promise.resolve((() => {
+      const f = ${frame(title)};
+      const d = f.contentDocument, w = f.contentWindow;
+      const box = (s) => d.querySelector(s).getBoundingClientRect();
+      return {
+        open: d.querySelector('.cui-globalnav-search').matches(':popover-open'), focus: d.activeElement.className,
+        inner: w.innerWidth, frameHeight: w.innerHeight, nav: box('.cui-globalnav').bottom, search: box('.cui-globalnav-search').top, searchHeight: box('.cui-globalnav-search').height,
+        curtain: box('.cui-globalnav-curtain').bottom, height: f.clientHeight, window: innerHeight, bar: document.querySelector('.cui-localnav').getBoundingClientRect().height,
+      };
+    })())`);
+    const flyout = r.inner >= 834;
+    got.frames[`globalnav search at ${width}`] = { closed, ...r };
+    claim(`the global nav's search opens in its frame at ${width}px, its field focused, the frame the window's height under the local nav`, r.open && r.focus === 'cui-globalnav-searchinput' && Math.abs(r.height - (r.window - r.bar)) <= 1, r);
+    claim(flyout ? `in its ${r.inner}px frame it hangs from the bar's bottom, the curtain to the frame's bottom` : `in its ${r.inner}px frame it is a sheet over the frame`,
+      flyout ? Math.abs(r.search - r.nav) <= 0.5 && Math.abs(r.curtain - r.frameHeight) <= 0.5 : r.search === 0 && Math.abs(r.searchHeight - r.frameHeight) <= 0.5, r);
+    await page.run(inFrame(title, flyout ? '.cui-globalnav-curtain' : '.cui-globalnav-search .cui-globalnav-closebutton', 'click'));
+    await page.run(wait(700));
+    const again = await page.run(`Promise.resolve(${frame(title)}.clientHeight)`);
+    claim(`${flyout ? 'its curtain' : 'its X'} closes it at ${width}px, its frame the bar's height again`, again === closed, { closed, again });
   }
   // an example's link, clicked
   await page.go(`${ORIGIN}/components/link/`);

@@ -5,8 +5,10 @@
  *
  * From apple.com's global nav (reference/apple.com/): home:nav* (the bar,
  * light), home:menu* (the phone's menu, opened), newsroom:nav* and
- * newsroom:menu* (a dark nav), product:nav (a clear one); its icons
- * ciderui's own (reference/icons/), its menu a popover (reference/popover/).
+ * newsroom:menu* (a dark nav), product:nav (a clear one), search:* and
+ * search-dark:* (its search, opened); its icons ciderui's own
+ * (reference/icons/), its menu and its search popovers (reference/popover/,
+ * reference/search/).
  *
  *   <nav class="cui-globalnav" aria-label="Global">
  *     <div class="cui-globalnav-content">
@@ -30,6 +32,38 @@
  * reference/popover/). In the markup the logo comes first and the close
  * button second, so that the next stop after the X is the first link.
  *
+ * The search is a link to the site's search page (above), or a button
+ * opening the search, another popover, after the menu's button:
+ *
+ *         <li><button class="cui-globalnav-icon" popovertarget="cui-globalnav-search" aria-label="Search">(icon::SEARCH, icon::SEARCH_COMPACT)</button></li>
+ *       …
+ *       <div class="cui-globalnav-search" id="cui-globalnav-search" popover>
+ *         <div class="cui-globalnav-searchpanel">
+ *           <form class="cui-globalnav-searchfield" action="/search" method="get" role="search">
+ *             (icon::SEARCHFIELD, icon::SEARCHFIELD_COMPACT)
+ *             <input class="cui-globalnav-searchinput" type="text" name="q" placeholder="Search" aria-label="Search" autocomplete="off" autocapitalize="off" autofocus>
+ *           </form>
+ *           <h2 class="cui-globalnav-searchheading" id="cui-globalnav-searchheading">Quick Links</h2>
+ *           <ul class="cui-globalnav-searchlinks" aria-labelledby="cui-globalnav-searchheading">
+ *             <li><a class="cui-globalnav-searchlink" href="/store">(icon::ARROW, icon::ARROW_COMPACT)Find a Store</a></li>
+ *           </ul>
+ *           <button class="cui-globalnav-closebutton" popovertarget="cui-globalnav-search" popovertargetaction="hide" aria-label="Close">(icon::MENU)</button>
+ *         </div>
+ *         <button class="cui-globalnav-curtain" popovertarget="cui-globalnav-search" popovertargetaction="hide" tabindex="-1" aria-hidden="true"></button>
+ *       </div>
+ *
+ * Opened, its field takes the focus (autofocus); Return sends the form, GET,
+ * to the site's search page; Escape closes it, the focus back on its
+ * button, and so does its button again. From 834px it hangs from the bar's
+ * bottom (anchor positioning: the nav is --cui-globalnav) to the window's:
+ * its panel, and behind it the curtain over the page, blurring it, a button
+ * that closes it (a popover's own backdrop takes no click: a click there
+ * would close it and go on to the page under it); the bar is outside it, so
+ * a click on the bar closes it and reaches what it clicked. To 833px it is a
+ * sheet over the window, the bar too, with its own X where the menu's button
+ * is, the page held. Its field is a text field: with type="search" Escape in
+ * it leaves it open in Safari 27 (reference/search/).
+ *
  * cui-globalnav             the bar: 48px, 44px from 834px, on the bar's
  *                           material, translucent under a blur (dark in a
  *                           dark block, cui-dark on the nav)
@@ -43,7 +77,17 @@
  *                           (15 or 14 by 44), cui-globalnav-image-compact to
  *                           833px (17 by 48)
  * cui-globalnav-menubutton  the menu's button, to 833px: two lines
- * cui-globalnav-closebutton the opened menu's: an X
+ * cui-globalnav-closebutton the opened menu's: an X; the search's, to 833px
+ * cui-globalnav-search      the search, opened: a flyout under the bar from
+ *                           834px, a sheet over the window to 833px
+ * cui-globalnav-searchpanel its ground, #fafafc, and its room
+ * cui-globalnav-searchfield the form: its magnifier (cui-globalnav-image,
+ *                           30 by 32; -compact, 38 by 40) and its input
+ * cui-globalnav-searchinput the field: 24px at 600, 28px to 833px
+ * cui-globalnav-searchheading the quick links' heading
+ * cui-globalnav-searchlinks the quick links, each a cui-globalnav-searchlink
+ *                           after its arrow (9 by 16; 13 by 25)
+ * cui-globalnav-curtain     the curtain under the flyout, from 834px
  *
  * apple.com's: every size, color, the material, the motion. ciderui's: the
  * letter-spacing (tokens.css); no place on the page: apple.com fixes its nav
@@ -56,14 +100,30 @@
  * (apple.com's fold into one line, then turn) and their round ends are
  * stretched with them (0.05px further); the menu closes at once, its list
  * leaving the top layer when it closes (apple.com's runs its motion back);
- * no flyouts (a desktop's menus under a link) and no search field. */
+ * no flyouts (a desktop's menus under a link). The search: its flyout
+ * starts under the bar, revealed from its top (apple.com's grows from
+ * behind the bar, the bar's ground over its own), and closes at once; the
+ * bar while it is open draws its ground over the flyout's, unblurred, as
+ * apple.com's flyout is under it; one placeholder, Search (apple.com's
+ * script writes Search apple.com from 834px); its quick links' heading is
+ * Quick Links, apple.com's; no clear button (apple.com's script shows one
+ * once there is text); the field's magnifier is an image, not a disabled
+ * submit button (a disabled default button keeps Return from sending the
+ * form); a focused link has the focus ring with its hovered look (apple.com
+ * forced into focus-visible draws no outline); the sheet's X turns as the
+ * menu's; opened on a phone the bar's logo, search and bag are under the
+ * sheet at once (apple.com's fade in 240ms); a window widened or narrowed
+ * with it open keeps it, as the other layout (apple.com's closes it at
+ * 833px). */
 
 @layer components {
   .cui-globalnav {
     --cui-globalnav-ease: cubic-bezier(0.4, 0, 0.6, 1);
 
-    /* its own height: the bar keeps it while the list is opened out of it */
+    /* its own height: the bar keeps it while the list is opened out of it;
+       the anchor the search hangs from */
     height: 48px;
+    anchor-name: --cui-globalnav;
     background-color: var(--cui-c-bar);
     backdrop-filter: saturate(1.8) blur(20px);
 
@@ -144,12 +204,16 @@
     padding-inline: 16px;
   }
 
+  /* a link, or the button opening the search */
   .cui-globalnav-icon {
     align-items: center;
     justify-content: center;
     width: 48px;
     height: 48px;
-    padding-inline: 8px;
+    padding: 0 8px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
   }
 
   .cui-globalnav-image {
@@ -277,6 +341,317 @@
   /* the page under the menu holds still, as apple.com's does */
   :root:has(.cui-globalnav-list:popover-open) {
     overflow: hidden;
+  }
+
+  /* the search: closed, not shown (the browser's own style for a popover,
+     undone but its display) */
+  .cui-globalnav-search {
+    inset: auto;
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: visible;
+    color: inherit;
+    background-color: transparent;
+  }
+
+  /* opened, to 833px: a sheet over the window, the bar too, growing from the
+     bar's height and ground to the window's and the menu's, as the menu */
+  .cui-globalnav-search:popover-open {
+    position: fixed;
+    inset: 0 0 auto;
+    height: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background-color: var(--cui-c-menu);
+    transition: height 0.45s var(--cui-globalnav-ease), background-color 0.45s var(--cui-globalnav-ease);
+  }
+
+  .cui-globalnav-searchpanel {
+    position: relative;
+    padding: 54px 48px 84px;
+  }
+
+  /* the sheet's X, where the menu's button is */
+  .cui-globalnav-search .cui-globalnav-closebutton {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .cui-globalnav-searchfield {
+    position: relative;
+    display: flex;
+    height: 40px;
+    margin: 0;
+  }
+
+  /* its magnifier, an image over the input's start */
+  .cui-globalnav-searchfield > svg {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    color: var(--cui-c-text-2);
+    pointer-events: none;
+  }
+
+  /* the caret shows the focus: apple.com's field has no outline, focused too */
+  .cui-globalnav-searchinput {
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    padding: 0 0 0 34px;
+    border: 0;
+    border-radius: 0;
+    outline: none;
+    color: var(--cui-c-on-menu);
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-28);
+    appearance: none;
+
+    &::placeholder {
+      color: var(--cui-c-text-2);
+      opacity: 1;
+    }
+  }
+
+  .cui-globalnav-searchheading {
+    margin: 49px 0 0;
+    font-size: 17px;
+    line-height: 21px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-17);
+    color: var(--cui-c-text-2);
+  }
+
+  .cui-globalnav-searchlinks {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 9px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* a row 12px out on either side, its ground on hover and focus */
+  .cui-globalnav-searchlink {
+    display: flex;
+    align-items: flex-start;
+    margin-inline: -12px;
+    padding: 4px 12px 3px;
+    border-radius: 6px;
+    font-size: 17px;
+    line-height: 26px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-17);
+    color: var(--cui-c-on-menu);
+    text-decoration-line: none;
+    transition: color 0.02s var(--cui-globalnav-ease), background-color 0.02s var(--cui-globalnav-ease);
+
+    > svg {
+      flex: none;
+      margin-right: 14px;
+      color: var(--cui-c-text-2);
+    }
+
+    &:focus-visible {
+      color: var(--cui-c-on-bar-hover);
+      background-color: var(--cui-c-bg-alt);
+
+      > svg {
+        color: inherit;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--cui-c-on-bar-hover);
+        background-color: var(--cui-c-bg-alt);
+
+        > svg {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  /* the curtain is the flyout's, from 834px */
+  .cui-globalnav-curtain {
+    display: none;
+  }
+
+  /* the field and each row in from above, 20ms after the one before, from
+     200ms */
+  .cui-globalnav-search:popover-open {
+    .cui-globalnav-searchfield,
+    .cui-globalnav-searchheading,
+    .cui-globalnav-searchlinks > li {
+      transition-property: opacity, transform;
+      transition-duration: 0.32s;
+      transition-timing-function: var(--cui-globalnav-ease);
+      transition-delay: 0.2s;
+    }
+
+    .cui-globalnav-searchfield { transition-duration: 0.24s; }
+    .cui-globalnav-searchlinks > li:nth-child(1) { transition-delay: 0.22s; }
+    .cui-globalnav-searchlinks > li:nth-child(2) { transition-delay: 0.24s; }
+    .cui-globalnav-searchlinks > li:nth-child(3) { transition-delay: 0.26s; }
+    .cui-globalnav-searchlinks > li:nth-child(4) { transition-delay: 0.28s; }
+    .cui-globalnav-searchlinks > li:nth-child(n + 5) { transition-delay: 0.3s; }
+  }
+
+  @starting-style {
+    .cui-globalnav-search:popover-open {
+      .cui-globalnav-searchfield,
+      .cui-globalnav-searchheading,
+      .cui-globalnav-searchlinks > li {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+
+      .cui-globalnav-closebutton path {
+        transform: none;
+      }
+    }
+  }
+
+  @media (width < 834px) {
+    @starting-style {
+      .cui-globalnav-search:popover-open {
+        height: 48px;
+        background-color: var(--cui-c-bar);
+      }
+    }
+
+    /* the page under the sheet holds still, as apple.com's does */
+    :root:has(.cui-globalnav-search:popover-open) {
+      overflow: hidden;
+    }
+  }
+
+  /* from 834px: the flyout, from the bar's bottom to the window's, its panel
+     and the curtain behind it */
+  @media (width >= 834px) {
+    .cui-globalnav-search:popover-open {
+      position-anchor: --cui-globalnav;
+      top: anchor(bottom);
+      bottom: 0;
+      height: auto;
+      background-color: transparent;
+      transition: none;
+    }
+
+    /* the content 980px at most (apple.com's 1024px, 22px in) */
+    .cui-globalnav-searchpanel {
+      z-index: 1;
+      padding: 32px max(22px, (100% - 980px) / 2) 80px;
+      background-color: var(--cui-c-menu);
+      clip-path: inset(0);
+    }
+
+    .cui-globalnav-search:popover-open .cui-globalnav-searchpanel {
+      transition: clip-path 0.24s var(--cui-globalnav-ease), background-color 0.24s var(--cui-globalnav-ease);
+    }
+
+    .cui-globalnav-search .cui-globalnav-closebutton,
+    .cui-globalnav-search .cui-globalnav-image-compact {
+      display: none;
+    }
+
+    .cui-globalnav-search .cui-globalnav-image {
+      display: block;
+    }
+
+    .cui-globalnav-searchfield > svg {
+      top: -0.5px;
+      left: -6px;
+    }
+
+    .cui-globalnav-searchinput {
+      padding: 1px 0 0 28px;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: var(--cui-tracking-24);
+    }
+
+    .cui-globalnav-searchheading {
+      margin-top: 32px;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: var(--cui-tracking-12);
+    }
+
+    .cui-globalnav-searchlinks {
+      gap: 4px;
+      margin-top: 8px;
+    }
+
+    .cui-globalnav-searchlink {
+      margin-inline: -8px;
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: var(--cui-tracking-12);
+
+      > svg {
+        margin-right: 11px;
+      }
+    }
+
+    /* over the page under the flyout, a button that closes it */
+    .cui-globalnav-curtain {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background-color: var(--cui-c-curtain);
+      backdrop-filter: blur(20px);
+      cursor: default;
+      transition: opacity 0.32s var(--cui-globalnav-ease);
+    }
+
+    @starting-style {
+      .cui-globalnav-search:popover-open {
+        .cui-globalnav-searchpanel {
+          clip-path: inset(0 0 100% 0);
+          background-color: var(--cui-c-bar);
+        }
+
+        .cui-globalnav-searchfield,
+        .cui-globalnav-searchheading,
+        .cui-globalnav-searchlinks > li {
+          transform: translateY(-4px);
+        }
+
+        .cui-globalnav-curtain {
+          opacity: 0;
+        }
+      }
+    }
+
+    /* while it is open the bar draws its ground over the flyout's, unblurred,
+       and its search button is hovered's */
+    .cui-globalnav:has(.cui-globalnav-search:popover-open) {
+      background-color: var(--cui-c-menu);
+      background-image: linear-gradient(var(--cui-c-bar), var(--cui-c-bar));
+      backdrop-filter: none;
+
+      .cui-globalnav-icon[popovertarget] {
+        color: var(--cui-c-on-bar-hover);
+      }
+    }
   }
 
   /* from 834px, closed: one row of everything, spread across the bar */

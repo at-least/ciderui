@@ -6,9 +6,15 @@
 // motion and its start, the keys (the focus on the X, Tab to the first link,
 // Escape back to the button: reference/popover/), a dark nav
 // (newsroom:nav*, newsroom:menu*), a clear one (product:nav), a touch
-// screen. Golden, with their why: the letter-spacing, the images' widths
-// (apple.com's SVG boxes), the X's lines (apple.com's end points,
-// reference/icons/), the focus, and where ciderui's markup differs from
+// screen. Its search opened by its button (search:*, search-dark:*): from
+// 834px the flyout, its field, its quick links, the curtain, the bar over
+// it; to 833px the sheet, the page held; its motion and its start; the focus
+// on its field, Tab to the first link, Escape, the curtain, a click on the
+// bar and its button again closing it (reference/search/); a dark nav's; a
+// touch screen's. Golden, with their why: the letter-spacing, the images'
+// widths (apple.com's SVG boxes), the X's lines (apple.com's end points,
+// reference/icons/), the focus, the places apple.com's recorded with its
+// locale banner above them, and where ciderui's markup differs from
 // apple.com's with the same picture.
 
 import { examples, PADDING } from '../../test/harness.mjs';
@@ -39,6 +45,28 @@ const TRIGGER_AT = { 1600: 900, 1200: 900 };
 // nav at every width: the same ground, apple.com's at 900px
 const GROUND_AT = { 390: 900 };
 const OPEN = { click: BUTTON, widths: [390], height: 900 };
+
+// the search: the example with the button opening it, opened at the widths
+// apple.com's was read at, a flyout from 834px and a sheet to 833px
+const SEARCH_NAV = ex('search');
+const SEARCH_DARK = SEARCH_NAV.replace('class="cui-globalnav"', 'class="cui-globalnav cui-dark"');
+const SBUTTON = `${LIST} > li:nth-child(7) > .cui-globalnav-icon`;
+const FLY = '.cui-globalnav-search';
+const PANEL = '.cui-globalnav-searchpanel';
+const FIELD = '.cui-globalnav-searchfield';
+const INPUT = '.cui-globalnav-searchinput';
+const HEADING = '.cui-globalnav-searchheading';
+const QLINK = '.cui-globalnav-searchlinks > li:first-child > .cui-globalnav-searchlink';
+const QLINK2 = '.cui-globalnav-searchlinks > li:nth-child(2) > .cui-globalnav-searchlink';
+const CURTAIN = '.cui-globalnav-curtain';
+const SCLOSE = `${FLY} .cui-globalnav-closebutton`;
+const WIDE = [1600, 1200, 900, 834];
+const NARROW = [833, 390];
+const SEARCHING = { click: SBUTTON, height: 900 };
+const TYPE = ['font-size', 'line-height', 'font-weight', 'color'];
+// apple.com's places in the window are below its locale banner (70px from
+// 834px, 135px to 833px): a place here is the same distance from the bar
+const PLACE = 'the same distance from the bar as apple.com\'s (search:*, its locale banner above its nav)';
 
 export const cases = [
   {
@@ -266,6 +294,240 @@ export const cases = [
     touch: true,
     widths: [1200],
     checks: [{ target: LINK, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5)' }],
+  },
+  {
+    name: 'search',
+    html: SEARCH_NAV,
+    ...SEARCHING,
+    widths: WIDE,
+    reducedMotion: 'reduce',
+    checks: [
+      // the bar over it, its button, the page not held
+      { target: '.cui-globalnav', props: ['backdrop-filter'], apple: ['search', 'nav'] },
+      { target: '.cui-globalnav', props: ['background-color', 'background-image'], golden: 'its ground over the flyout\'s, as apple.com\'s bar (search:nav, rgba(255,255,255,.8)) is over its flyout\'s #fafafc' },
+      { target: SBUTTON, props: ['color'], apple: ['search', 'search'] },
+      { target: 'html', props: ['overflow-y'], apple: ['search', 'root'] },
+      // the flyout from the bar's bottom, its panel, the curtain behind it
+      { target: FLY, props: ['box-top', 'box-left', 'box-height'], golden: 'from the bar\'s bottom (anchor positioning) to the window\'s, across it (reference/search/)' },
+      { target: PANEL, props: ['background-color'], apple: ['search', 'flyout'] },
+      { target: PANEL, props: ['box-height', 'box-top'], golden: 'apple.com\'s flyout below the bar, 344px (search:flyout.scroll), its content\'s' },
+      { target: PANEL, props: ['padding-top', 'padding-bottom'], apple: ['search', 'flyout.content'] },
+      { target: CURTAIN, props: ['background-color', 'backdrop-filter', 'opacity'], apple: ['search', 'curtain'] },
+      { target: CURTAIN, props: ['box-top', 'box-height', 'hit'], golden: 'behind the panel from the bar\'s bottom to the window\'s, a button: what the pointer finds under the panel (apple.com\'s curtain is the window\'s, under its flyout)' },
+      // the field: its row, its input, its placeholder, its magnifier
+      { target: FIELD, props: ['height'], apple: ['search', 'field'] },
+      { target: FIELD, props: ['box-top', 'box-left'], golden: PLACE },
+      { target: INPUT, props: [...TYPE, 'height', 'background-color', 'border-top-width', 'border-top-style', 'border-top-left-radius', 'outline-style', 'caret-color'], apple: ['search', 'field.input'] },
+      { target: INPUT, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: INPUT, props: ['padding-left', 'padding-top'], golden: 'its text 28px in from the field\'s start, where apple.com\'s is (its input 6px out, 34px in: search:field.input)' },
+      { target: INPUT, pseudo: '::placeholder', props: ['color', 'font-weight', 'opacity'], apple: ['search', 'field.placeholder'] },
+      { target: `${FIELD} .cui-globalnav-image`, props: ['box-height', 'color'], as: { 'box-height': 'box-height', color: 'fill' }, apple: ['search', 'field.submit-image'] },
+      { target: `${FIELD} .cui-globalnav-image`, props: ['box-width', 'box-top', 'box-left'], golden: 'apple.com\'s 30 by 32 magnifier, 6px out from the field\'s start, 0.5px up (search:field.submit-image)' },
+      { target: `${FIELD} .cui-globalnav-image-compact`, props: ['box-height'], golden: 'the phone\'s magnifier, not drawn from 834px' },
+      { target: INPUT, props: ['focused'], golden: 'opened, the focus is on its field (autofocus; reference/search/)' },
+      // the quick links
+      { target: HEADING, props: [...TYPE], apple: ['search', 'results.header'] },
+      { target: HEADING, props: ['box-height'], apple: ['search', 'results.header'] },
+      { target: HEADING, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: HEADING, props: ['box-top'], golden: `32px below the field, ${PLACE}` },
+      { target: QLINK, props: [...TYPE, ...PADDING, 'display', 'align-items', 'text-decoration-line', 'background-color', 'border-top-left-radius', 'box-height'], apple: ['search', 'results.link'] },
+      { target: QLINK, state: 'hover', props: ['color', 'background-color'], apple: ['search', 'results.link', 'hover'] },
+      { target: QLINK, state: 'focus-visible', props: ['color', 'background-color'], apple: ['search', 'results.link', 'focus-visible'] },
+      { target: QLINK, state: 'focus-visible', props: ['outline-style'], golden: 'the focus ring with its hovered look (base.css; apple.com forced into focus-visible draws none)' },
+      { target: QLINK, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: QLINK, props: ['box-top', 'box-left'], golden: `8px below the heading, 8px out from the field's start, ${PLACE}` },
+      { target: QLINK2, props: ['box-top'], golden: `4px below the first, ${PLACE}` },
+      { target: `${QLINK} .cui-globalnav-image`, props: ['box-height', 'color'], as: { color: 'fill' }, apple: ['search', 'results.icon-image'] },
+      { target: `${QLINK} .cui-globalnav-image`, state: 'hover', on: QLINK, props: ['color'], as: { color: 'fill' }, apple: ['search', 'results.icon-image', 'hover'] },
+      { target: `${QLINK} .cui-globalnav-image`, props: ['margin-right'], apple: ['search', 'results.icon'] },
+      { target: `${QLINK} .cui-globalnav-image`, props: ['box-width'], golden: 'apple.com\'s arrow, 9 by 16 (search:results.icon-image)' },
+    ],
+  },
+  {
+    name: 'search-phone',
+    html: SEARCH_NAV,
+    ...SEARCHING,
+    widths: NARROW,
+    reducedMotion: 'reduce',
+    checks: [
+      { target: FLY, props: ['background-color'], apple: ['search', 'content'] },
+      { target: FLY, props: ['box-top', 'box-left', 'box-height'], golden: 'a sheet over the window, the bar too (apple.com\'s, search:content, from its nav\'s top below its locale banner)' },
+      { target: 'html', props: ['overflow-y'], apple: ['search', 'root'] },
+      { target: PANEL, props: ['padding-top', 'padding-left', 'padding-right'], apple: ['search', 'flyout.content'] },
+      { target: PANEL, props: ['padding-bottom'], as: { 'padding-bottom': 'padding-bottom' }, apple: ['search', 'flyout.scroll'] },
+      { target: CURTAIN, props: ['display'], golden: 'no curtain: the sheet is over the window (apple.com\'s, under it, is not seen)' },
+      { target: FIELD, props: ['height'], apple: ['search', 'field'] },
+      { target: FIELD, props: ['box-top', 'box-left'], golden: PLACE },
+      { target: INPUT, props: [...TYPE, 'height', 'background-color', 'outline-style'], apple: ['search', 'field.input'] },
+      { target: INPUT, props: ['letter-spacing', 'padding-left'], golden: 'the fitted letter-spacing; its text 34px in from the field\'s start, where apple.com\'s is (its input 8px out, 42px in)' },
+      { target: `${FIELD} .cui-globalnav-image-compact`, props: ['box-height', 'color'], as: { color: 'fill' }, apple: ['search', 'field.submit-compact'] },
+      { target: `${FIELD} .cui-globalnav-image-compact`, props: ['box-width', 'box-top', 'box-left'], golden: 'apple.com\'s 38 by 40 magnifier, 8px out and 8px up from the field (search:field.submit-compact)' },
+      { target: `${FIELD} .cui-globalnav-image`, props: ['box-height'], golden: 'the wide magnifier, not drawn to 833px' },
+      { target: INPUT, props: ['focused'], golden: 'opened, the focus is on its field (autofocus; reference/search/)' },
+      { target: HEADING, props: [...TYPE, 'box-height'], apple: ['search', 'results.header'] },
+      { target: HEADING, props: ['box-top'], golden: `49px below the field, ${PLACE}` },
+      { target: QLINK, props: [...TYPE, ...PADDING, 'background-color', 'border-top-left-radius', 'box-height'], apple: ['search', 'results.link'] },
+      { target: QLINK, state: 'hover', props: ['color', 'background-color'], apple: ['search', 'results.link', 'hover'] },
+      { target: QLINK, props: ['box-top', 'box-left'], golden: `9px below the heading, 12px out, ${PLACE}` },
+      { target: QLINK2, props: ['box-top'], golden: `6px below the first, ${PLACE}` },
+      { target: `${QLINK} .cui-globalnav-image-compact`, props: ['box-height', 'color'], as: { color: 'fill' }, apple: ['search', 'results.icon-compact'] },
+      { target: `${QLINK} .cui-globalnav-image-compact`, props: ['margin-right'], apple: ['search', 'results.icon'] },
+      { target: `${QLINK} .cui-globalnav-image-compact`, props: ['box-width'], golden: 'apple.com\'s arrow, 13 by 25 (search:results.icon-compact)' },
+      { target: SCLOSE, props: ['box-top', 'box-left', 'box-width', 'box-height', 'color', 'opacity'], golden: 'apple.com\'s X where the menu\'s button is, its Close (scouted: the menu\'s button turned, 48px at the right)' },
+      ...[`${SCLOSE} path:first-child`, `${SCLOSE} path:last-child`].map(target => ({ target, props: ['box-x', 'box-y', 'box-width', 'box-height'], golden: 'the menu\'s X: its lines from (3.5, 3.5) to (15, 15) and from (3.5, 15) to (15, 3.5) (reference/icons/)' })),
+    ],
+  },
+  {
+    name: 'search-motion',
+    html: SEARCH_NAV,
+    ...SEARCHING,
+    widths: [1600, 390],
+    checks: [
+      { target: FIELD, props: [...MOTION, 'transition-delay'], golden: 'apple.com\'s field in 240ms from 200ms (search:field.wrapper\'s keyframes, an animation there)' },
+      { target: HEADING, props: ['transition-duration', 'transition-delay'], golden: 'apple.com\'s heading in 320ms from 200ms (search:results.header)' },
+      { target: '.cui-globalnav-searchlinks > li:first-child', props: ['transition-duration', 'transition-delay'], golden: 'apple.com\'s rows 20ms after the one above (search:nav\'s animations)' },
+      { target: '.cui-globalnav-searchlinks > li:nth-child(2)', props: ['transition-delay'], golden: 'apple.com\'s rows 20ms after the one above (search:nav\'s animations)' },
+      { target: FLY, props: MOTION, golden: 'the sheet\'s height and ground in 450ms to 833px (search:nav.phone\'s animations on its content); no motion of its own from 834px' },
+      { target: PANEL, props: MOTION, golden: 'from 834px revealed down and from the bar\'s ground in 0.24s, apple.com\'s flyout\'s height and ground (search:nav\'s animations)' },
+      { target: CURTAIN, props: MOTION, golden: 'apple.com\'s curtain in 0.32s (search:curtain), from 834px' },
+      { target: QLINK, props: MOTION, golden: 'apple.com\'s color and ground in 0.02s (search:results.link; its fill too, where the arrow here is drawn in currentColor)' },
+    ],
+  },
+  {
+    // read at its start: apple.com's from (search:nav's animations); the
+    // panel and the curtain move at once, so here they wait, to be read
+    name: 'search-start',
+    html: `<style>.cui-globalnav-searchpanel, .cui-globalnav-curtain { transition-delay: 10s !important; }</style>${SEARCH_NAV}`,
+    ...SEARCHING,
+    widths: [1600],
+    wait: 0,
+    checks: [
+      { target: FIELD, props: ['opacity', 'transform'], golden: 'the field from transparent, 4px up (search:field.wrapper\'s keyframes)' },
+      { target: '.cui-globalnav-searchlinks > li:first-child', props: ['opacity', 'transform'], golden: 'each row from transparent, 4px up (search:results.header\'s keyframes)' },
+      { target: PANEL, props: ['clip-path', 'background-color'], golden: 'the panel hidden down from the bar, on its ground: apple.com\'s flyout 44px tall, the bar\'s ground (search:nav\'s animations)' },
+      { target: CURTAIN, props: ['opacity'], golden: 'the curtain from transparent (search:curtain\'s transition)' },
+    ],
+  },
+  {
+    name: 'search-start-phone',
+    html: `<style>.cui-globalnav-search { transition-delay: 10s !important; }</style>${SEARCH_NAV}`,
+    ...SEARCHING,
+    widths: [390],
+    wait: 0,
+    checks: [
+      { target: FLY, props: ['height', 'background-color'], golden: 'the sheet from the bar\'s height and ground (search:nav.phone\'s animations on its content)' },
+      { target: FIELD, props: ['opacity', 'transform'], golden: 'the field from transparent, 8px up (search:nav.phone\'s animations)' },
+    ],
+  },
+  {
+    name: 'search-tab',
+    html: SEARCH_NAV,
+    ...SEARCHING,
+    widths: [1600],
+    press: 'Tab',
+    reducedMotion: 'reduce',
+    checks: [{ target: QLINK, props: ['focused'], golden: 'Tab goes from its field to the first quick link' }],
+  },
+  {
+    name: 'search-escape',
+    html: SEARCH_NAV,
+    ...SEARCHING,
+    widths: [1600, 390],
+    press: 'Escape',
+    reducedMotion: 'reduce',
+    checks: [
+      { target: FLY, props: ['display'], golden: 'Escape closes it (a text field: reference/search/)' },
+      { target: SBUTTON, props: ['focused'], golden: 'the focus back on its button (reference/search/)' },
+      { target: 'html', props: ['overflow-y'], golden: 'the page scrolls again' },
+    ],
+  },
+  {
+    name: 'search-curtain',
+    html: SEARCH_NAV,
+    click: [SBUTTON, CURTAIN],
+    height: 900,
+    widths: [1600],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: FLY, props: ['display'], golden: 'a click on the curtain closes it (reference/search/)' },
+      { target: '.cui-globalnav', props: ['background-color', 'backdrop-filter'], apple: ['home', 'nav'] },
+    ],
+  },
+  {
+    // its links to fragments here, as a click on the bar's middle is on one
+    name: 'search-bar',
+    html: SEARCH_NAV.replaceAll('href="/', 'href="#/'),
+    click: [SBUTTON, '.cui-globalnav'],
+    height: 900,
+    widths: [1600],
+    reducedMotion: 'reduce',
+    checks: [{ target: FLY, props: ['display'], golden: 'a click on the bar, outside it, closes it (reference/search/)' }],
+  },
+  {
+    name: 'search-again',
+    html: SEARCH_NAV,
+    click: [SBUTTON, SBUTTON],
+    height: 900,
+    widths: [1600],
+    reducedMotion: 'reduce',
+    checks: [{ target: FLY, props: ['display'], golden: 'its button closes it again (reference/search/)' }],
+  },
+  {
+    name: 'search-close',
+    html: SEARCH_NAV,
+    click: [SBUTTON, SCLOSE],
+    height: 900,
+    widths: [390],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: FLY, props: ['display'], golden: 'the sheet\'s X closes it (reference/search/)' },
+      { target: 'html', props: ['overflow-y'], golden: 'the page scrolls again' },
+    ],
+  },
+  {
+    name: 'search-dark',
+    html: SEARCH_DARK,
+    ...SEARCHING,
+    widths: [1600, 390],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: INPUT, props: ['color', 'caret-color'], apple: ['search-dark', 'field.input'] },
+      { target: INPUT, pseudo: '::placeholder', props: ['color'], apple: ['search-dark', 'field.placeholder'] },
+      { target: HEADING, props: ['color'], apple: ['search-dark', 'results.header'] },
+      { target: QLINK, props: ['color', 'background-color'], apple: ['search-dark', 'results.link'] },
+      { target: QLINK, state: 'hover', props: ['color', 'background-color'], apple: ['search-dark', 'results.link', 'hover'] },
+    ],
+  },
+  {
+    name: 'search-dark-flyout',
+    html: SEARCH_DARK,
+    ...SEARCHING,
+    widths: [1600],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: PANEL, props: ['background-color'], apple: ['search-dark', 'flyout'] },
+      { target: CURTAIN, props: ['background-color', 'backdrop-filter'], apple: ['search-dark', 'curtain'] },
+      { target: `${FIELD} .cui-globalnav-image`, props: ['color'], as: { color: 'fill' }, apple: ['search-dark', 'field.submit-image'] },
+      { target: `${QLINK} .cui-globalnav-image`, props: ['color'], as: { color: 'fill' }, apple: ['search-dark', 'results.icon-image'] },
+      { target: `${QLINK} .cui-globalnav-image`, state: 'hover', on: QLINK, props: ['color'], as: { color: 'fill' }, apple: ['search-dark', 'results.icon-image', 'hover'] },
+    ],
+  },
+  {
+    name: 'search-dark-sheet',
+    html: SEARCH_DARK,
+    ...SEARCHING,
+    widths: [390],
+    reducedMotion: 'reduce',
+    checks: [{ target: FLY, props: ['background-color'], apple: ['search-dark', 'content'] }],
+  },
+  {
+    name: 'search-touch',
+    html: SEARCH_NAV,
+    ...SEARCHING,
+    touch: true,
+    widths: [1200, 390],
+    reducedMotion: 'reduce',
+    checks: [{ target: QLINK, state: 'hover', props: ['color', 'background-color'], rest: 'no hover on a touch screen (rule 5)' }],
   },
   {
     name: 'touch-menu',

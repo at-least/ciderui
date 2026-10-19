@@ -134,6 +134,51 @@ pub const BAG_COMPACT: Icon = Icon {
     inner: r#"<rect x="1.55" y="17.5" width="13.9" height="12.95" rx="2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M5.375 17.5V17.175a3.125 3.125 0 0 1 6.25 0v.325" fill="none" stroke="currentColor" stroke-width="1.2"/>"#,
 };
 
+/// The global nav's search field's magnifier from 834px (`cui-globalnav-image`
+/// in a `cui-globalnav-searchfield`), in place of apple.com's 30 by 32 SVG: a
+/// ring at (13.475, 14.775), radius 6.225, 1.3 thick, and its handle from the
+/// ring at 45° to (22.57, 24.07), 2.2 thick, round; 0.974 of its ink
+/// apple.com's.
+pub const SEARCHFIELD: Icon = Icon {
+    width: "30",
+    height: "32",
+    view_box: "0 0 30 32",
+    inner: r#"<circle cx="13.475" cy="14.775" r="6.225" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M18.11 19.61 22.57 24.07" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>"#,
+};
+
+/// The search field's magnifier to 833px (`cui-globalnav-image-compact`), in
+/// place of apple.com's 38 by 40 SVG: a ring at (17.225, 17.9), radius 7.25,
+/// 1.45 thick, and its handle to (27.74, 28.74), 2.62 thick, round; 0.970 of
+/// its ink apple.com's.
+pub const SEARCHFIELD_COMPACT: Icon = Icon {
+    width: "38",
+    height: "40",
+    view_box: "0 0 38 40",
+    inner: r#"<circle cx="17.225" cy="17.9" r="7.25" fill="none" stroke="currentColor" stroke-width="1.45"/><path d="M22.6 23.6 27.74 28.74" fill="none" stroke="currentColor" stroke-width="2.62" stroke-linecap="round"/>"#,
+};
+
+/// A search quick link's arrow from 834px (`cui-globalnav-image` in a
+/// `cui-globalnav-searchlink`), in place of apple.com's 9 by 16 SVG: a shaft
+/// from (0.75, 7.75) to its head at (8.25, 7.75), the head's two strokes 3
+/// back at 45°, 1 thick, round; 0.983 of its ink apple.com's.
+pub const ARROW: Icon = Icon {
+    width: "9",
+    height: "16",
+    view_box: "0 0 9 16",
+    inner: r#"<path d="M.75 7.75H8.25M5.25 4.75 8.25 7.75 5.25 10.75" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>"#,
+};
+
+/// The quick link's arrow to 833px (`cui-globalnav-image-compact`), in place
+/// of apple.com's 13 by 25 SVG: a shaft from (1.1, 13) to its head at
+/// (11.93, 13), 1.3 thick, the head's strokes 4.45 back at 45°, 1.2 thick,
+/// round; 0.995 of its ink apple.com's.
+pub const ARROW_COMPACT: Icon = Icon {
+    width: "13",
+    height: "25",
+    view_box: "0 0 13 25",
+    inner: r#"<path d="M1.1 13H11.93" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7.48 8.55 11.93 13 7.48 17.45" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>"#,
+};
+
 /// The global nav's menu button's lines (`cui-globalnav-menubutton`), as
 /// apple.com's: two lines across 18 by 18, from 2 to 16 at 5 and 12 down,
 /// 1.2 thick, round; in the opened menu's close button
