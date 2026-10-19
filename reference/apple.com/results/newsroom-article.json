@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/",
  "finalUrl": "https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T12:27:01.490Z",
+ "date": "2026-10-19T13:09:42.520Z",
  "widths": {
   "390": {
    "page.body": {
@@ -772,6 +772,13 @@
      "letter-spacing": "-0.224px",
      "color": "rgb(110, 110, 115)",
      "margin-top": "8px"
+    }
+   },
+   "footertile": {
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "styles": {
+     "margin-top": "52px",
+     "margin-bottom": "0px"
     }
    }
   },
@@ -1544,6 +1551,13 @@
      "color": "rgb(110, 110, 115)",
      "margin-top": "8px"
     }
+   },
+   "footertile": {
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "styles": {
+     "margin-top": "52px",
+     "margin-bottom": "0px"
+    }
    }
   },
   "735": {
@@ -2314,6 +2328,13 @@
      "letter-spacing": "-0.224px",
      "color": "rgb(110, 110, 115)",
      "margin-top": "8px"
+    }
+   },
+   "footertile": {
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "styles": {
+     "margin-top": "64px",
+     "margin-bottom": "0px"
     }
    }
   },
@@ -3086,6 +3107,13 @@
      "color": "rgb(110, 110, 115)",
      "margin-top": "8px"
     }
+   },
+   "footertile": {
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "styles": {
+     "margin-top": "64px",
+     "margin-bottom": "0px"
+    }
    }
   },
   "1068": {
@@ -3856,6 +3884,13 @@
      "letter-spacing": "-0.224px",
      "color": "rgb(110, 110, 115)",
      "margin-top": "8px"
+    }
+   },
+   "footertile": {
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "styles": {
+     "margin-top": "64px",
+     "margin-bottom": "0px"
     }
    }
   },
@@ -4628,6 +4663,13 @@
      "color": "rgb(110, 110, 115)",
      "margin-top": "8px"
     }
+   },
+   "footertile": {
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "styles": {
+     "margin-top": "80px",
+     "margin-bottom": "0px"
+    }
    }
   },
   "1200": {
@@ -5399,6 +5441,13 @@
      "color": "rgb(110, 110, 115)",
      "margin-top": "8px"
     }
+   },
+   "footertile": {
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "styles": {
+     "margin-top": "80px",
+     "margin-bottom": "0px"
+    }
    }
   },
   "1600": {
@@ -6169,6 +6218,13 @@
      "letter-spacing": "-0.224px",
      "color": "rgb(110, 110, 115)",
      "margin-top": "8px"
+    }
+   },
+   "footertile": {
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "styles": {
+     "margin-top": "80px",
+     "margin-bottom": "0px"
     }
    }
   }

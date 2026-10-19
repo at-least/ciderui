@@ -75,5 +75,8 @@ export default {
     { name: 'related.category', select: '.article-list__item__category', props: [...TYPE, ...TEXT, 'text-transform', 'margin-bottom'] },
     { name: 'related.title', select: '.article-list__item__title', props: [...TYPE, 'margin-top', 'margin-bottom', ...LINK], states: ['hover'] },
     { name: 'related.date', select: '.article-list__item__date', props: [...TYPE, 'margin-top'] },
+    // the room under the related stories, before the footer's band (the
+    // footer tile, Newsroom's own, not read)
+    { name: 'footertile', select: '.footertile', props: ['margin-top', 'margin-bottom'] },
   ],
 };
