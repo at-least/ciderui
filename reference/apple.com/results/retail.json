@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/retail/",
  "finalUrl": "https://www.apple.com/retail/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T08:08:22.859Z",
+ "date": "2026-10-19T21:49:41.000Z",
  "widths": {
   "390": {
    "field.search": {
@@ -246,6 +246,61 @@
      "position": "absolute",
      "top": "10px",
      "left": "17px"
+    }
+   },
+   "field.error": {
+    "html": "<input type=\"text\" class=\"form-textbox-input\" id=\"cui-error\" aria-invalid=\"true\" value=\"\">",
+    "styles": {
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 242, 244)",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-top-width": "1px"
+    }
+   },
+   "field.error-label": {
+    "html": "<label class=\"form-textbox-label\" for=\"cui-error\">Email</label>",
+    "styles": {
+     "color": "rgb(227, 0, 0)"
+    }
+   },
+   "field.error-message": {
+    "html": "<span class=\"form-message\">Please enter a valid email.</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "field.error-icon": {
+    "html": "<div class=\"form-message-wrapper\" id=\"cui-error-message\"><span class=\"form-message\">Please enter a valid email.</span></div>",
+    "styles": {
+     "content": "none",
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "color": "rgb(29, 29, 31)",
+     "padding-right": "0px",
+     "display": "inline"
+    }
+   },
+   "field.disabled": {
+    "html": "<input type=\"text\" class=\"form-textbox-input\" id=\"cui-disabled\" disabled=\"\" value=\"\">",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "background-color": "rgba(0, 0, 0, 0.01)",
+     "border-top-color": "rgba(134, 134, 139, 0.42)",
+     "opacity": "1",
+     "cursor": "default"
+    }
+   },
+   "field.disabled-label": {
+    "html": "<label class=\"form-textbox-label\" for=\"cui-disabled\">Email</label>",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "opacity": "1"
     }
    },
    "field.input-filled": {
@@ -522,6 +577,61 @@
      "left": "17px"
     }
    },
+   "field.error": {
+    "html": "<input type=\"text\" class=\"form-textbox-input\" id=\"cui-error\" aria-invalid=\"true\" value=\"\">",
+    "styles": {
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 242, 244)",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-top-width": "1px"
+    }
+   },
+   "field.error-label": {
+    "html": "<label class=\"form-textbox-label\" for=\"cui-error\">Email</label>",
+    "styles": {
+     "color": "rgb(227, 0, 0)"
+    }
+   },
+   "field.error-message": {
+    "html": "<span class=\"form-message\">Please enter a valid email.</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "field.error-icon": {
+    "html": "<div class=\"form-message-wrapper\" id=\"cui-error-message\"><span class=\"form-message\">Please enter a valid email.</span></div>",
+    "styles": {
+     "content": "none",
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "color": "rgb(29, 29, 31)",
+     "padding-right": "0px",
+     "display": "inline"
+    }
+   },
+   "field.disabled": {
+    "html": "<input type=\"text\" class=\"form-textbox-input\" id=\"cui-disabled\" disabled=\"\" value=\"\">",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "background-color": "rgba(0, 0, 0, 0.01)",
+     "border-top-color": "rgba(134, 134, 139, 0.42)",
+     "opacity": "1",
+     "cursor": "default"
+    }
+   },
+   "field.disabled-label": {
+    "html": "<label class=\"form-textbox-label\" for=\"cui-disabled\">Email</label>",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "opacity": "1"
+    }
+   },
    "field.input-filled": {
     "html": "<input type=\"text\" class=\"form-textbox-input form-textbox-entered\" id=\"cui-field\" required=\"\" value=\"\">",
     "styles": {
@@ -796,6 +906,61 @@
      "left": "17px"
     }
    },
+   "field.error": {
+    "html": "<input type=\"text\" class=\"form-textbox-input\" id=\"cui-error\" aria-invalid=\"true\" value=\"\">",
+    "styles": {
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 242, 244)",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-top-width": "1px"
+    }
+   },
+   "field.error-label": {
+    "html": "<label class=\"form-textbox-label\" for=\"cui-error\">Email</label>",
+    "styles": {
+     "color": "rgb(227, 0, 0)"
+    }
+   },
+   "field.error-message": {
+    "html": "<span class=\"form-message\">Please enter a valid email.</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "field.error-icon": {
+    "html": "<div class=\"form-message-wrapper\" id=\"cui-error-message\"><span class=\"form-message\">Please enter a valid email.</span></div>",
+    "styles": {
+     "content": "none",
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "color": "rgb(29, 29, 31)",
+     "padding-right": "0px",
+     "display": "inline"
+    }
+   },
+   "field.disabled": {
+    "html": "<input type=\"text\" class=\"form-textbox-input\" id=\"cui-disabled\" disabled=\"\" value=\"\">",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "background-color": "rgba(0, 0, 0, 0.01)",
+     "border-top-color": "rgba(134, 134, 139, 0.42)",
+     "opacity": "1",
+     "cursor": "default"
+    }
+   },
+   "field.disabled-label": {
+    "html": "<label class=\"form-textbox-label\" for=\"cui-disabled\">Email</label>",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "opacity": "1"
+    }
+   },
    "field.input-filled": {
     "html": "<input type=\"text\" class=\"form-textbox-input form-textbox-entered\" id=\"cui-field\" required=\"\" value=\"\">",
     "styles": {
@@ -1068,6 +1233,61 @@
      "position": "absolute",
      "top": "10px",
      "left": "17px"
+    }
+   },
+   "field.error": {
+    "html": "<input type=\"text\" class=\"form-textbox-input\" id=\"cui-error\" aria-invalid=\"true\" value=\"\">",
+    "styles": {
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 242, 244)",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-top-width": "1px"
+    }
+   },
+   "field.error-label": {
+    "html": "<label class=\"form-textbox-label\" for=\"cui-error\">Email</label>",
+    "styles": {
+     "color": "rgb(227, 0, 0)"
+    }
+   },
+   "field.error-message": {
+    "html": "<span class=\"form-message\">Please enter a valid email.</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "field.error-icon": {
+    "html": "<div class=\"form-message-wrapper\" id=\"cui-error-message\"><span class=\"form-message\">Please enter a valid email.</span></div>",
+    "styles": {
+     "content": "none",
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "color": "rgb(29, 29, 31)",
+     "padding-right": "0px",
+     "display": "inline"
+    }
+   },
+   "field.disabled": {
+    "html": "<input type=\"text\" class=\"form-textbox-input\" id=\"cui-disabled\" disabled=\"\" value=\"\">",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "background-color": "rgba(0, 0, 0, 0.01)",
+     "border-top-color": "rgba(134, 134, 139, 0.42)",
+     "opacity": "1",
+     "cursor": "default"
+    }
+   },
+   "field.disabled-label": {
+    "html": "<label class=\"form-textbox-label\" for=\"cui-disabled\">Email</label>",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "opacity": "1"
     }
    },
    "field.input-filled": {
