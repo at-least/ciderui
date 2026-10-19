@@ -1,0 +1,167 @@
+{
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T02:36:50.156Z",
+ "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+ "faces": {
+  "SF Pro Text 400": "SF Pro Text 400 loaded",
+  "SF Pro Text 600": "SF Pro Text 600 loaded",
+  "SF Pro Display 400": "SF Pro Display 400 loaded",
+  "SF Pro Display 600": "SF Pro Display 600 loaded"
+ },
+ "rows": [
+  {
+   "size": 12,
+   "weight": 400,
+   "text": 365,
+   "display": 325,
+   "sys": 356.34375
+  },
+  {
+   "size": 12,
+   "weight": 600,
+   "text": 381,
+   "display": 341,
+   "sys": 374.3125
+  },
+  {
+   "size": 14,
+   "weight": 400,
+   "text": 430,
+   "display": 384,
+   "sys": 415.71875
+  },
+  {
+   "size": 14,
+   "weight": 600,
+   "text": 448,
+   "display": 404,
+   "sys": 436.6875
+  },
+  {
+   "size": 17,
+   "weight": 400,
+   "text": 517,
+   "display": 461,
+   "sys": 504.796875
+  },
+  {
+   "size": 17,
+   "weight": 600,
+   "text": 544,
+   "display": 484,
+   "sys": 530.265625
+  },
+  {
+   "size": 19,
+   "weight": 400,
+   "text": 576,
+   "display": 522,
+   "sys": 564.203125
+  },
+  {
+   "size": 19,
+   "weight": 600,
+   "text": 608,
+   "display": 548,
+   "sys": 592.65625
+  },
+  {
+   "size": 21,
+   "weight": 400,
+   "text": 638,
+   "display": 571,
+   "sys": 623.578125
+  },
+  {
+   "size": 21,
+   "weight": 600,
+   "text": 669,
+   "display": 599,
+   "sys": 655.03125
+  },
+  {
+   "size": 24,
+   "weight": 400,
+   "text": 733,
+   "display": 657,
+   "sys": 712.65625
+  },
+  {
+   "size": 24,
+   "weight": 600,
+   "text": 757,
+   "display": 687,
+   "sys": 748.609375
+  },
+  {
+   "size": 28,
+   "weight": 400,
+   "text": 850,
+   "display": 769,
+   "sys": 831.4375
+  },
+  {
+   "size": 28,
+   "weight": 600,
+   "text": 886,
+   "display": 809,
+   "sys": 873.390625
+  },
+  {
+   "size": 32,
+   "weight": 400,
+   "text": 974,
+   "display": 882,
+   "sys": 950.21875
+  },
+  {
+   "size": 32,
+   "weight": 600,
+   "text": 1017,
+   "display": 909,
+   "sys": 998.15625
+  },
+  {
+   "size": 40,
+   "weight": 400,
+   "text": 1213,
+   "display": 1086,
+   "sys": 1187.765625
+  },
+  {
+   "size": 40,
+   "weight": 600,
+   "text": 1265,
+   "display": 1146,
+   "sys": 1247.6875
+  },
+  {
+   "size": 48,
+   "weight": 400,
+   "text": 1456,
+   "display": 1309,
+   "sys": 1425.328125
+  },
+  {
+   "size": 48,
+   "weight": 600,
+   "text": 1518,
+   "display": 1381,
+   "sys": 1497.234375
+  },
+  {
+   "size": 56,
+   "weight": 400,
+   "text": 1704,
+   "display": 1531,
+   "sys": 1662.875
+  },
+  {
+   "size": 56,
+   "weight": 600,
+   "text": 1771,
+   "display": 1604,
+   "sys": 1746.765625
+  }
+ ]
+}

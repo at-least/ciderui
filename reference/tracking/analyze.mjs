@@ -1,0 +1,59 @@
+// apple.com's scale (grepped from its stylesheets, 2026-10-19): the size, the
+// cut it sets at that size, and its letter-spacing in em.
+export const SCALE = {
+  12: ['Text', -0.01], 14: ['Text', -0.016], 17: ['Text', -0.022],
+  19: ['Display', 0.012], 21: ['Display', 0.011], 24: ['Display', 0.009], 28: ['Display', 0.007],
+  32: ['Display', 0.002], 40: ['Display', 0], 48: ['Display', -0.002], 56: ['Display', -0.005],
+};
+export const WEIGHTS = [400, 600];
+export const SAMPLE = 'Sphinx of black quartz judge my vow 0123456789 AVATAR Wave';
+// decided before the run: system-ui matches apple.com's cut within 0.003em per
+// character (apple.com's smallest nonzero letter-spacing is 0.002em)
+export const TOLERANCE = 0.003;
+
+const em = (a, b, size) => (a - b) / ([...SAMPLE].length * size);
+const f = x => (x >= 0 ? '+' : '') + x.toFixed(4);
+
+export function analyze(label, result) {
+  console.log(`\n${label}\n${result.ua}`);
+  console.log('size weight cut      apple-ls  Δ(sys−cut)em  Δ(sys−Text)  Δ(sys−Display)  ok');
+  let pass = true;
+  for (const r of result.rows) {
+    const [cut, ls] = SCALE[r.size];
+    const d = em(r.sys, cut === 'Text' ? r.text : r.display, r.size);
+    const ok = Math.abs(d) < TOLERANCE;
+    pass &&= ok;
+    console.log(`${String(r.size).padStart(4)} ${String(r.weight).padStart(6)} ${cut.padEnd(8)} ${f(ls).padStart(8)}  ${f(d).padStart(12)}  ${f(em(r.sys, r.text, r.size)).padStart(11)}  ${f(em(r.sys, r.display, r.size)).padStart(14)}  ${ok ? 'yes' : 'NO'}`);
+  }
+  console.log(pass ? `PASS: system-ui within ${TOLERANCE}em of apple.com's cut at every size` : `FAIL: system-ui off apple.com's cut by ${TOLERANCE}em or more somewhere`);
+  return pass;
+}
+
+export const measureCall = (src) =>
+  `(async () => {\n${src}\nreturn measure(${JSON.stringify(Object.keys(SCALE).map(Number))}, ${JSON.stringify(WEIGHTS)}, ${JSON.stringify(SAMPLE)});\n})()`;
+
+// verify: decided before the run, system-ui at ciderui's letter-spacing within
+// 0.0015em per character of apple.com's text (the table averages two weights and
+// two browsers; at 56px 0.0015em is 0.08px a character)
+export const VERIFY_TOLERANCE = 0.0015;
+export const FAMILIES = ['system-ui', '-apple-system', 'BlinkMacSystemFont'];
+
+export function analyzeVerify(label, result) {
+  console.log(`\n${label}\n${result.ua}`);
+  console.log('Δ(name at ciderui ls − apple.com cut at apple.com ls), em per character');
+  console.log('size weight' + FAMILIES.map(x => x.padStart(20)).join(''));
+  let pass = true;
+  const worst = Object.fromEntries(FAMILIES.map(x => [x, 0]));
+  for (const r of result.rows) {
+    const cells = FAMILIES.map(fam => {
+      const d = em(r.fams[fam], r.web, r.size);
+      worst[fam] = Math.max(worst[fam], Math.abs(d));
+      return f(d).padStart(20);
+    });
+    console.log(`${String(r.size).padStart(4)} ${String(r.weight).padStart(6)}${cells.join('')}`);
+  }
+  for (const fam of FAMILIES) console.log(`worst |Δ| ${fam}: ${worst[fam].toFixed(4)}em ${worst[fam] < VERIFY_TOLERANCE ? 'within' : 'OUTSIDE'} ${VERIFY_TOLERANCE}`);
+  pass = worst['system-ui'] < VERIFY_TOLERANCE;
+  console.log(pass ? 'PASS: system-ui at ciderui\'s letter-spacing lands on apple.com\'s widths' : 'FAIL: system-ui at ciderui\'s letter-spacing misses apple.com\'s widths');
+  return pass;
+}

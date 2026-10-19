@@ -1,0 +1,227 @@
+{
+ "browser": "chrome 155.0.8059.80 on darwin",
+ "date": "2026-10-19T02:37:25.033Z",
+ "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+ "rows": [
+  {
+   "size": 12,
+   "weight": 400,
+   "web": 357.9375,
+   "fams": {
+    "system-ui": 357.59375,
+    "-apple-system": 313.109375,
+    "BlinkMacSystemFont": 357.59375
+   }
+  },
+  {
+   "size": 12,
+   "weight": 600,
+   "web": 372.609375,
+   "fams": {
+    "system-ui": 373.015625,
+    "-apple-system": 327.328125,
+    "BlinkMacSystemFont": 373.015625
+   }
+  },
+  {
+   "size": 14,
+   "weight": 400,
+   "web": 412.71875,
+   "fams": {
+    "system-ui": 412.28125,
+    "-apple-system": 369.109375,
+    "BlinkMacSystemFont": 412.28125
+   }
+  },
+  {
+   "size": 14,
+   "weight": 600,
+   "web": 429.828125,
+   "fams": {
+    "system-ui": 430.265625,
+    "-apple-system": 385.703125,
+    "BlinkMacSystemFont": 430.265625
+   }
+  },
+  {
+   "size": 17,
+   "weight": 400,
+   "web": 495.25,
+   "fams": {
+    "system-ui": 494.765625,
+    "-apple-system": 456.78125,
+    "BlinkMacSystemFont": 494.765625
+   }
+  },
+  {
+   "size": 17,
+   "weight": 600,
+   "web": 516.03125,
+   "fams": {
+    "system-ui": 516.609375,
+    "-apple-system": 476.9375,
+    "BlinkMacSystemFont": 516.609375
+   }
+  },
+  {
+   "size": 19,
+   "weight": 400,
+   "web": 531.9375,
+   "fams": {
+    "system-ui": 532.375,
+    "-apple-system": 493.109375,
+    "BlinkMacSystemFont": 532.375
+   }
+  },
+  {
+   "size": 19,
+   "weight": 600,
+   "web": 557.46875,
+   "fams": {
+    "system-ui": 556.984375,
+    "-apple-system": 515.625,
+    "BlinkMacSystemFont": 556.984375
+   }
+  },
+  {
+   "size": 21,
+   "weight": 400,
+   "web": 586.71875,
+   "fams": {
+    "system-ui": 586.890625,
+    "-apple-system": 554.75,
+    "BlinkMacSystemFont": 586.890625
+   }
+  },
+  {
+   "size": 21,
+   "weight": 600,
+   "web": 614.9375,
+   "fams": {
+    "system-ui": 614.859375,
+    "-apple-system": 579.65625,
+    "BlinkMacSystemFont": 614.859375
+   }
+  },
+  {
+   "size": 24,
+   "weight": 400,
+   "web": 667.734375,
+   "fams": {
+    "system-ui": 667.25,
+    "-apple-system": 635.25,
+    "BlinkMacSystemFont": 667.25
+   }
+  },
+  {
+   "size": 24,
+   "weight": 600,
+   "web": 699.984375,
+   "fams": {
+    "system-ui": 700.515625,
+    "-apple-system": 663.703125,
+    "BlinkMacSystemFont": 700.515625
+   }
+  },
+  {
+   "size": 28,
+   "weight": 400,
+   "web": 775.78125,
+   "fams": {
+    "system-ui": 774.765625,
+    "-apple-system": 735.765625,
+    "BlinkMacSystemFont": 774.765625
+   }
+  },
+  {
+   "size": 28,
+   "weight": 600,
+   "web": 813.40625,
+   "fams": {
+    "system-ui": 814.328125,
+    "-apple-system": 768.96875,
+    "BlinkMacSystemFont": 814.328125
+   }
+  },
+  {
+   "size": 32,
+   "weight": 400,
+   "web": 877.328125,
+   "fams": {
+    "system-ui": 876.203125,
+    "-apple-system": 833.453125,
+    "BlinkMacSystemFont": 876.203125
+   }
+  },
+  {
+   "size": 32,
+   "weight": 600,
+   "web": 920.328125,
+   "fams": {
+    "system-ui": 921.421875,
+    "-apple-system": 871.390625,
+    "BlinkMacSystemFont": 921.421875
+   }
+  },
+  {
+   "size": 40,
+   "weight": 400,
+   "web": 1092.015625,
+   "fams": {
+    "system-ui": 1090.578125,
+    "-apple-system": 1045.0625,
+    "BlinkMacSystemFont": 1090.578125
+   }
+  },
+  {
+   "size": 40,
+   "weight": 600,
+   "web": 1145.765625,
+   "fams": {
+    "system-ui": 1147.078125,
+    "-apple-system": 1092.484375,
+    "BlinkMacSystemFont": 1147.078125
+   }
+  },
+  {
+   "size": 48,
+   "weight": 400,
+   "web": 1304.859375,
+   "fams": {
+    "system-ui": 1303.25,
+    "-apple-system": 1254.078125,
+    "BlinkMacSystemFont": 1303.25
+   }
+  },
+  {
+   "size": 48,
+   "weight": 600,
+   "web": 1369.359375,
+   "fams": {
+    "system-ui": 1371.0625,
+    "-apple-system": 1310.984375,
+    "BlinkMacSystemFont": 1371.0625
+   }
+  },
+  {
+   "size": 56,
+   "weight": 400,
+   "web": 1512.578125,
+   "fams": {
+    "system-ui": 1510.546875,
+    "-apple-system": 1459.515625,
+    "BlinkMacSystemFont": 1510.546875
+   }
+  },
+  {
+   "size": 56,
+   "weight": 600,
+   "web": 1587.828125,
+   "fams": {
+    "system-ui": 1589.65625,
+    "-apple-system": 1525.90625,
+    "BlinkMacSystemFont": 1589.65625
+   }
+  }
+ ]
+}

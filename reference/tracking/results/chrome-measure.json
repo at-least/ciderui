@@ -1,0 +1,167 @@
+{
+ "browser": "chrome 155.0.8059.80 on darwin",
+ "date": "2026-10-19T02:36:58.153Z",
+ "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+ "faces": {
+  "SF Pro Text 400": "SF Pro Text 400 loaded",
+  "SF Pro Text 600": "SF Pro Text 600 loaded",
+  "SF Pro Display 400": "SF Pro Display 400 loaded",
+  "SF Pro Display 600": "SF Pro Display 600 loaded"
+ },
+ "rows": [
+  {
+   "size": 12,
+   "weight": 400,
+   "text": 364.90625,
+   "display": 327.609375,
+   "sys": 364.90625
+  },
+  {
+   "size": 12,
+   "weight": 600,
+   "text": 379.5625,
+   "display": 343.734375,
+   "sys": 380.3125
+  },
+  {
+   "size": 14,
+   "weight": 400,
+   "text": 425.71875,
+   "display": 382.21875,
+   "sys": 417
+  },
+  {
+   "size": 14,
+   "weight": 600,
+   "text": 442.828125,
+   "display": 401.03125,
+   "sys": 434.984375
+  },
+  {
+   "size": 17,
+   "weight": 400,
+   "text": 516.9375,
+   "display": 464.109375,
+   "sys": 491.90625
+  },
+  {
+   "size": 17,
+   "weight": 600,
+   "text": 537.71875,
+   "display": 486.953125,
+   "sys": 513.75
+  },
+  {
+   "size": 19,
+   "weight": 400,
+   "text": 577.75,
+   "display": 518.71875,
+   "sys": 546.578125
+  },
+  {
+   "size": 19,
+   "weight": 600,
+   "text": 600.96875,
+   "display": 544.25,
+   "sys": 571.1875
+  },
+  {
+   "size": 21,
+   "weight": 400,
+   "text": 638.5625,
+   "display": 573.3125,
+   "sys": 592.859375
+  },
+  {
+   "size": 21,
+   "weight": 600,
+   "text": 664.234375,
+   "display": 601.53125,
+   "sys": 620.828125
+  },
+  {
+   "size": 24,
+   "weight": 400,
+   "text": 729.796875,
+   "display": 655.21875,
+   "sys": 672.8125
+  },
+  {
+   "size": 24,
+   "weight": 600,
+   "text": 759.125,
+   "display": 687.46875,
+   "sys": 706.09375
+  },
+  {
+   "size": 28,
+   "weight": 400,
+   "text": 851.421875,
+   "display": 764.421875,
+   "sys": 786.625
+  },
+  {
+   "size": 28,
+   "weight": 600,
+   "text": 885.640625,
+   "display": 802.046875,
+   "sys": 826.171875
+  },
+  {
+   "size": 32,
+   "weight": 400,
+   "text": 973.046875,
+   "display": 873.609375,
+   "sys": 897.171875
+  },
+  {
+   "size": 32,
+   "weight": 600,
+   "text": 1012.15625,
+   "display": 916.609375,
+   "sys": 942.390625
+  },
+  {
+   "size": 40,
+   "weight": 400,
+   "text": 1216.3125,
+   "display": 1092.015625,
+   "sys": 1113.546875
+  },
+  {
+   "size": 40,
+   "weight": 600,
+   "text": 1265.203125,
+   "display": 1145.765625,
+   "sys": 1170.046875
+  },
+  {
+   "size": 48,
+   "weight": 400,
+   "text": 1459.578125,
+   "display": 1310.421875,
+   "sys": 1330.8125
+  },
+  {
+   "size": 48,
+   "weight": 600,
+   "text": 1518.234375,
+   "display": 1374.921875,
+   "sys": 1398.625
+  },
+  {
+   "size": 56,
+   "weight": 400,
+   "text": 1702.84375,
+   "display": 1528.828125,
+   "sys": 1546.265625
+  },
+  {
+   "size": 56,
+   "weight": 600,
+   "text": 1771.28125,
+   "display": 1604.078125,
+   "sys": 1625.390625
+  }
+ ]
+}
