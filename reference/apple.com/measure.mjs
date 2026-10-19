@@ -19,7 +19,9 @@
 // clicks that element first, once, at the first width the probe is read (a
 // menu's button, an accordion's: the page stays so for the probes after it
 // and at the widths after, so a spec puts such probes last, or in a spec of
-// their own; the pointer then leaves for the window's bottom corner);
+// their own; the pointer then leaves for the window's bottom corner, or, once
+// what the click opened has opened, for `pointer`, [x, y], inside it, when
+// leaving it closes it);
 // `position` adds the box's top and left in the window (where the window is
 // what it is placed in: an open menu's rows); `animations`, with `click`,
 // records every animation and transition the click starts on an element
@@ -182,10 +184,14 @@ try {
         clicked.add(probe.name);
         if (probe.animations) await frame.evaluate(watchAnimations, probe.animations);
         await frame.click(probe.click);
+        const settle = () => pw.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 900)))));
         // the pointer off what it clicked, which it would leave hovered, to the
-        // window's bottom corner
-        await pw.mouse.move(0, 899);
-        await pw.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 900)))));
+        // window's bottom corner; or, once what the click opened has opened, to
+        // `pointer`, a point inside it, which the pointer leaving would close
+        // (moved at once, it lands beyond what is still growing)
+        if (probe.pointer) await settle();
+        await pw.mouse.move(...(probe.pointer ?? [0, 899]));
+        await settle();
       }
       used.add(frame);
       const html = await frame.evaluate(place, probe);

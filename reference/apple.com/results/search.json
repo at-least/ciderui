@@ -1,0 +1,3918 @@
+{
+ "url": "https://www.apple.com/",
+ "finalUrl": "https://www.apple.com/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T15:01:20.944Z",
+ "widths": {
+  "390": {
+   "nav.phone": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "48px",
+     "position": "fixed",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(255, 255, 255, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 390,
+     "height": 48,
+     "top": 135,
+     "left": 0
+    }
+   },
+   "content": {
+    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"Search apple.com\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"global",
+    "styles": {
+     "position": "absolute",
+     "top": "0px",
+     "height": "765px",
+     "background-color": "rgb(250, 250, 252)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "z-index": "2",
+     "transition-property": "background",
+     "transition-duration": "0.45s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 390,
+     "height": 765,
+     "top": 135,
+     "left": 0
+    }
+   },
+   "root": {
+    "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\" prefix=\"og: http://ogp.me/ns#\" class=\"js no-touch progressive-image enhanced no-reduced-motion desktop no-retina no-tablet no-windows no-android no-safari chrome no-fi",
+    "styles": {
+     "overflow-y": "hidden"
+    }
+   },
+   "body": {
+    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\">\n\t\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
+    "styles": {
+     "overflow-y": "hidden"
+    }
+   },
+   "search": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
+    "styles": {
+     "opacity": "0",
+     "visibility": "hidden",
+     "color": "rgb(0, 0, 0)",
+     "transition-property": "opacity, visibility",
+     "transition-duration": "0.24s, 0.24s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), steps(1)"
+    },
+    "box": {
+     "width": 48,
+     "height": 48,
+     "top": 135,
+     "left": 246
+    }
+   },
+   "flyout": {
+    "html": "<div id=\"globalnav-submenu-search\" role=\"search\" aria-labelledby=\"globalnav-menubutton-link-search\" class=\"globalnav-flyout globalnav-submenu\" style=\"--r-globalnav-flyout-item-total: 0; --r-globalnav-flyout-group-number: 0; --r-globalnav-fl",
+    "styles": {
+     "position": "absolute",
+     "top": "0px",
+     "left": "0px",
+     "right": "0px",
+     "height": "765px",
+     "max-height": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "color": "rgb(29, 29, 31)",
+     "overflow-y": "visible",
+     "z-index": "auto",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 390,
+     "height": 765,
+     "top": 135,
+     "left": 0
+    }
+   },
+   "flyout.scroll": {
+    "html": "<div class=\"globalnav-flyout-scroll-container\"><div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholde",
+    "styles": {
+     "height": "362px",
+     "max-height": "none",
+     "overflow-y": "visible",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "84px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 390,
+     "height": 446,
+     "top": 135,
+     "left": 0
+    }
+   },
+   "flyout.content": {
+    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search\" aria-label=\"Search apple.com\" autoco",
+    "styles": {
+     "max-width": "1024px",
+     "padding-top": "54px",
+     "padding-right": "48px",
+     "padding-bottom": "0px",
+     "padding-left": "48px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 390,
+     "height": 362,
+     "top": 135,
+     "left": 0
+    }
+   },
+   "field": {
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globa",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "height": "40px"
+    },
+    "box": {
+     "width": 294,
+     "height": 40,
+     "top": 189,
+     "left": 48
+    }
+   },
+   "field.input": {
+    "html": "<input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "0px",
+     "padding-right": "38px",
+     "padding-bottom": "0px",
+     "padding-left": "42px",
+     "margin-top": "0px",
+     "margin-right": "-33px",
+     "margin-bottom": "0px",
+     "margin-left": "-38px",
+     "height": "40px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-left-radius": "0px",
+     "outline-style": "none",
+     "caret-color": "rgb(51, 51, 54)",
+     "text-overflow": "clip",
+     "-webkit-appearance": "auto",
+     "appearance": "auto"
+    },
+    "box": {
+     "width": 309,
+     "height": 40,
+     "top": 189,
+     "left": 40
+    }
+   },
+   "field.placeholder": {
+    "html": "<input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "font-weight": "600",
+     "opacity": "1"
+    }
+   },
+   "field.focus": {
+    "html": "<input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "outline-style": "none",
+     "outline-color": "rgb(51, 51, 54)",
+     "outline-width": "3px",
+     "outline-offset": "1px"
+    },
+    "states": {
+     "focus-visible": {
+      "outline-style": "none",
+      "outline-color": "rgb(51, 51, 54)",
+      "outline-width": "3px",
+      "outline-offset": "1px"
+     },
+     "focus": {
+      "outline-style": "none",
+      "outline-color": "rgb(51, 51, 54)",
+      "outline-width": "3px",
+      "outline-offset": "1px"
+     }
+    }
+   },
+   "field.submit": {
+    "html": "<button aria-label=\"Submit search\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "-8px",
+     "width": "38px",
+     "height": "38px",
+     "position": "relative",
+     "left": "0px",
+     "top": "0px",
+     "color": "rgb(29, 29, 31)",
+     "fill": "rgb(110, 110, 115)",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "cursor": "default",
+     "transition-property": "fill",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 38,
+     "height": 38,
+     "top": 182,
+     "left": 40
+    }
+   },
+   "field.submit-compact": {
+    "html": "<svg width=\"38\" height=\"40\" viewBox=\"0 0 38 40\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m28.6724 27.8633-5.07-5.07c-.0095-.0095-.0224-.0122-.032-.0213a7.9967 7.9967 0 1 0 -1.8711 1.7625c.0254.03.0357.0681.0642.0967l5.07 5.07a1.3 1.3 0 0",
+    "styles": {
+     "width": "38px",
+     "height": "40px",
+     "fill": "rgb(110, 110, 115)"
+    },
+    "box": {
+     "width": 38,
+     "height": 40,
+     "top": 181,
+     "left": 40
+    }
+   },
+   "field.reset": {
+    "html": "<button aria-label=\"Clear search\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
+    "styles": {
+     "opacity": "0",
+     "visibility": "hidden",
+     "width": "32px",
+     "height": "38px",
+     "transition-property": "opacity, fill, visibility",
+     "transition-duration": "0.32s, 0.32s, 0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), steps(1)"
+    },
+    "box": {
+     "width": 32,
+     "height": 38,
+     "top": 182,
+     "left": 317
+    }
+   },
+   "results": {
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"glob",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "49px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 294,
+     "height": 219,
+     "top": 278,
+     "left": 48
+    }
+   },
+   "results.header": {
+    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\">Quick Links</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(110, 110, 115)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 294,
+     "height": 21,
+     "top": 270,
+     "left": 48
+    }
+   },
+   "results.list": {
+    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\">\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"ht",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "list-style-type": "none"
+    },
+    "box": {
+     "width": 294,
+     "height": 189,
+     "top": 308,
+     "left": 48
+    }
+   },
+   "results.item": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "9px",
+     "margin-right": "-12px",
+     "margin-bottom": "0px",
+     "margin-left": "-12px",
+     "display": "flex"
+    },
+    "box": {
+     "width": 318,
+     "height": 33,
+     "top": 300,
+     "left": 36
+    }
+   },
+   "results.item2": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "6px",
+     "margin-right": "-12px",
+     "margin-bottom": "0px",
+     "margin-left": "-12px"
+    },
+    "box": {
+     "width": 318,
+     "height": 33,
+     "top": 339,
+     "left": 36
+    }
+   },
+   "results.link": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"quicklinks\" data-items=\"5\" data-index=\"0\" data-label=\"Find a Store\" data-analytics-click=\"eVar23: {data-query} | {data-s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "4px",
+     "padding-right": "12px",
+     "padding-bottom": "3px",
+     "padding-left": "12px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "align-items": "flex-start",
+     "text-decoration-line": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "transition-property": "color, background-color, fill",
+     "transition-duration": "0.02s, 0.02s, 0.02s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 318,
+     "height": 33,
+     "top": 300,
+     "left": 36
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "26px",
+      "font-weight": "600",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "12px",
+      "padding-bottom": "3px",
+      "padding-left": "12px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "26px",
+      "font-weight": "600",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "12px",
+      "padding-bottom": "3px",
+      "padding-left": "12px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "results.icon": {
+    "html": "<span class=\"globalnav-searchresults-list-icon\">\n\n\t\t\t\t\t\t\t\t\t\t<span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "14px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "color": "rgb(51, 51, 54)"
+    },
+    "box": {
+     "width": 13,
+     "height": 25,
+     "top": 304,
+     "left": 48
+    }
+   },
+   "results.icon-compact": {
+    "html": "<svg height=\"25\" viewBox=\"0 0 13 25\" width=\"13\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m12.3577 13.4238-4.4444 4.4444a.6.6 0 0 1 -.8486-.8477l3.37-3.37h-9.3231a.65.65 0 0 1 0-1.3008h9.3232l-3.37-3.37a.6.6 0 0 1 .8486-.8477l4.4444 4.444",
+    "styles": {
+     "width": "13px",
+     "height": "25px",
+     "fill": "rgb(110, 110, 115)"
+    },
+    "box": {
+     "width": 13,
+     "height": 25,
+     "top": 304,
+     "left": 48
+    }
+   },
+   "results.text": {
+    "html": "<span class=\"globalnav-searchresults-list-text\">Find a Store</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 95.3125,
+     "height": 26,
+     "top": 304,
+     "left": 75
+    }
+   },
+   "curtain": {
+    "html": "<div id=\"globalnav-curtain\" class=\"globalnav-curtain\" data-original-aria-hidden=\"\" aria-hidden=\"true\"></div>",
+    "styles": {
+     "position": "fixed",
+     "top": "0px",
+     "z-index": "9998",
+     "background-color": "rgba(232, 232, 237, 0.4)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "opacity": "1",
+     "visibility": "visible",
+     "transition-property": "opacity, visibility",
+     "transition-duration": "0.32s, 0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), steps(1, start)"
+    },
+    "box": {
+     "width": 390,
+     "height": 900,
+     "top": 0,
+     "left": 0
+    }
+   }
+  },
+  "833": {
+   "nav.phone": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "48px",
+     "position": "fixed",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(255, 255, 255, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 833,
+     "height": 48,
+     "top": 135,
+     "left": 0
+    },
+    "animations": [
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "background-color",
+      "on": "div.globalnav-content",
+      "duration": 450,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgba(255, 255, 255, 0.8)",
+      "to": "rgb(250, 250, 252)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "height",
+      "on": "div.globalnav-content",
+      "duration": 450,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "100%",
+      "to": "765px"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "a.globalnav-link.globalnav-link-apple",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "1",
+      "to": "0"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "a.globalnav-link.globalnav-link-apple",
+      "duration": 240,
+      "delay": 0,
+      "easing": "steps(1)",
+      "from": "visible",
+      "to": "hidden"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "a#globalnav-menubutton-link-search.globalnav-link.globalnav-link-search",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "1",
+      "to": "0"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "a#globalnav-menubutton-link-search.globalnav-link.globalnav-link-search",
+      "duration": 240,
+      "delay": 0,
+      "easing": "steps(1)",
+      "from": "visible",
+      "to": "hidden"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "div.globalnav-bag-wrapper",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "1",
+      "to": "0"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "div.globalnav-bag-wrapper",
+      "duration": 240,
+      "delay": 0,
+      "easing": "steps(1)",
+      "from": "visible",
+      "to": "hidden"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "a#globalnav-menubutton-link-bag.globalnav-link.globalnav-link-bag",
+      "duration": 240,
+      "delay": 0,
+      "easing": "steps(1)",
+      "from": "visible",
+      "to": "hidden"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-input-intro",
+      "on": "div.globalnav-searchfield-wrapper",
+      "duration": 240,
+      "delay": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "h2.globalnav-searchresults-header",
+      "duration": 320,
+      "delay": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 220,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 240,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 260,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 280,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 0,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 100,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 200,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 300,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 400,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 500,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 600,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 700,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     }
+    ]
+   },
+   "content": {
+    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"Search apple.com\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"global",
+    "styles": {
+     "position": "absolute",
+     "top": "0px",
+     "height": "765px",
+     "background-color": "rgb(250, 250, 252)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "z-index": "2",
+     "transition-property": "background",
+     "transition-duration": "0.45s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 833,
+     "height": 765,
+     "top": 135,
+     "left": 0
+    }
+   },
+   "root": {
+    "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\" prefix=\"og: http://ogp.me/ns#\" class=\"js no-touch progressive-image enhanced no-reduced-motion desktop no-retina no-tablet no-windows no-android no-safari chrome no-fi",
+    "styles": {
+     "overflow-y": "hidden"
+    }
+   },
+   "body": {
+    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\">\n\t\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
+    "styles": {
+     "overflow-y": "hidden"
+    }
+   },
+   "search": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
+    "styles": {
+     "opacity": "0",
+     "visibility": "hidden",
+     "color": "rgb(0, 0, 0)",
+     "transition-property": "opacity, visibility",
+     "transition-duration": "0.24s, 0.24s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), steps(1)"
+    },
+    "box": {
+     "width": 48,
+     "height": 48,
+     "top": 135,
+     "left": 689
+    }
+   },
+   "flyout": {
+    "html": "<div id=\"globalnav-submenu-search\" role=\"search\" aria-labelledby=\"globalnav-menubutton-link-search\" class=\"globalnav-flyout globalnav-submenu\" style=\"--r-globalnav-flyout-item-total: 0; --r-globalnav-flyout-group-number: 0; --r-globalnav-fl",
+    "styles": {
+     "position": "absolute",
+     "top": "0px",
+     "left": "0px",
+     "right": "0px",
+     "height": "765px",
+     "max-height": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "color": "rgb(29, 29, 31)",
+     "overflow-y": "visible",
+     "z-index": "auto",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 833,
+     "height": 765,
+     "top": 135,
+     "left": 0
+    }
+   },
+   "flyout.scroll": {
+    "html": "<div class=\"globalnav-flyout-scroll-container\"><div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholde",
+    "styles": {
+     "height": "362px",
+     "max-height": "none",
+     "overflow-y": "visible",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "84px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 833,
+     "height": 446,
+     "top": 135,
+     "left": 0
+    }
+   },
+   "flyout.content": {
+    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search\" aria-label=\"Search apple.com\" autoco",
+    "styles": {
+     "max-width": "1024px",
+     "padding-top": "54px",
+     "padding-right": "48px",
+     "padding-bottom": "0px",
+     "padding-left": "48px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 833,
+     "height": 362,
+     "top": 135,
+     "left": 0
+    }
+   },
+   "field": {
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globa",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "height": "40px"
+    },
+    "box": {
+     "width": 737,
+     "height": 40,
+     "top": 189,
+     "left": 48
+    }
+   },
+   "field.input": {
+    "html": "<input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "0px",
+     "padding-right": "38px",
+     "padding-bottom": "0px",
+     "padding-left": "42px",
+     "margin-top": "0px",
+     "margin-right": "-33px",
+     "margin-bottom": "0px",
+     "margin-left": "-38px",
+     "height": "40px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-left-radius": "0px",
+     "outline-style": "none",
+     "caret-color": "rgb(51, 51, 54)",
+     "text-overflow": "clip",
+     "-webkit-appearance": "auto",
+     "appearance": "auto"
+    },
+    "box": {
+     "width": 752,
+     "height": 40,
+     "top": 189,
+     "left": 40
+    }
+   },
+   "field.placeholder": {
+    "html": "<input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "font-weight": "600",
+     "opacity": "1"
+    }
+   },
+   "field.focus": {
+    "html": "<input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "outline-style": "none",
+     "outline-color": "rgb(51, 51, 54)",
+     "outline-width": "3px",
+     "outline-offset": "1px"
+    },
+    "states": {
+     "focus-visible": {
+      "outline-style": "none",
+      "outline-color": "rgb(51, 51, 54)",
+      "outline-width": "3px",
+      "outline-offset": "1px"
+     },
+     "focus": {
+      "outline-style": "none",
+      "outline-color": "rgb(51, 51, 54)",
+      "outline-width": "3px",
+      "outline-offset": "1px"
+     }
+    }
+   },
+   "field.submit": {
+    "html": "<button aria-label=\"Submit search\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "-8px",
+     "width": "38px",
+     "height": "38px",
+     "position": "relative",
+     "left": "0px",
+     "top": "0px",
+     "color": "rgb(29, 29, 31)",
+     "fill": "rgb(110, 110, 115)",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "cursor": "default",
+     "transition-property": "fill",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 38,
+     "height": 38,
+     "top": 182,
+     "left": 40
+    }
+   },
+   "field.submit-compact": {
+    "html": "<svg width=\"38\" height=\"40\" viewBox=\"0 0 38 40\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m28.6724 27.8633-5.07-5.07c-.0095-.0095-.0224-.0122-.032-.0213a7.9967 7.9967 0 1 0 -1.8711 1.7625c.0254.03.0357.0681.0642.0967l5.07 5.07a1.3 1.3 0 0",
+    "styles": {
+     "width": "38px",
+     "height": "40px",
+     "fill": "rgb(110, 110, 115)"
+    },
+    "box": {
+     "width": 38,
+     "height": 40,
+     "top": 181,
+     "left": 40
+    }
+   },
+   "field.reset": {
+    "html": "<button aria-label=\"Clear search\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
+    "styles": {
+     "opacity": "0",
+     "visibility": "hidden",
+     "width": "32px",
+     "height": "38px",
+     "transition-property": "opacity, fill, visibility",
+     "transition-duration": "0.32s, 0.32s, 0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), steps(1)"
+    },
+    "box": {
+     "width": 32,
+     "height": 38,
+     "top": 182,
+     "left": 760
+    }
+   },
+   "results": {
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"glob",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "49px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 737,
+     "height": 219,
+     "top": 278,
+     "left": 48
+    }
+   },
+   "results.header": {
+    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\">Quick Links</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(110, 110, 115)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 737,
+     "height": 21,
+     "top": 270,
+     "left": 48
+    }
+   },
+   "results.list": {
+    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\">\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"ht",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "list-style-type": "none"
+    },
+    "box": {
+     "width": 737,
+     "height": 189,
+     "top": 308,
+     "left": 48
+    }
+   },
+   "results.item": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "9px",
+     "margin-right": "-12px",
+     "margin-bottom": "0px",
+     "margin-left": "-12px",
+     "display": "flex"
+    },
+    "box": {
+     "width": 761,
+     "height": 33,
+     "top": 300,
+     "left": 36
+    }
+   },
+   "results.item2": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "6px",
+     "margin-right": "-12px",
+     "margin-bottom": "0px",
+     "margin-left": "-12px"
+    },
+    "box": {
+     "width": 761,
+     "height": 33,
+     "top": 339,
+     "left": 36
+    }
+   },
+   "results.link": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"quicklinks\" data-items=\"5\" data-index=\"0\" data-label=\"Find a Store\" data-analytics-click=\"eVar23: {data-query} | {data-s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "4px",
+     "padding-right": "12px",
+     "padding-bottom": "3px",
+     "padding-left": "12px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "align-items": "flex-start",
+     "text-decoration-line": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "transition-property": "color, background-color, fill",
+     "transition-duration": "0.02s, 0.02s, 0.02s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 761,
+     "height": 33,
+     "top": 300,
+     "left": 36
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "26px",
+      "font-weight": "600",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "12px",
+      "padding-bottom": "3px",
+      "padding-left": "12px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "26px",
+      "font-weight": "600",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "12px",
+      "padding-bottom": "3px",
+      "padding-left": "12px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "results.icon": {
+    "html": "<span class=\"globalnav-searchresults-list-icon\">\n\n\t\t\t\t\t\t\t\t\t\t<span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "14px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "color": "rgb(51, 51, 54)"
+    },
+    "box": {
+     "width": 13,
+     "height": 25,
+     "top": 304,
+     "left": 48
+    }
+   },
+   "results.icon-compact": {
+    "html": "<svg height=\"25\" viewBox=\"0 0 13 25\" width=\"13\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m12.3577 13.4238-4.4444 4.4444a.6.6 0 0 1 -.8486-.8477l3.37-3.37h-9.3231a.65.65 0 0 1 0-1.3008h9.3232l-3.37-3.37a.6.6 0 0 1 .8486-.8477l4.4444 4.444",
+    "styles": {
+     "width": "13px",
+     "height": "25px",
+     "fill": "rgb(110, 110, 115)"
+    },
+    "box": {
+     "width": 13,
+     "height": 25,
+     "top": 304,
+     "left": 48
+    }
+   },
+   "results.text": {
+    "html": "<span class=\"globalnav-searchresults-list-text\">Find a Store</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 95.3125,
+     "height": 26,
+     "top": 304,
+     "left": 75
+    }
+   },
+   "curtain": {
+    "html": "<div id=\"globalnav-curtain\" class=\"globalnav-curtain\" data-original-aria-hidden=\"\" aria-hidden=\"true\"></div>",
+    "styles": {
+     "position": "fixed",
+     "top": "0px",
+     "z-index": "9998",
+     "background-color": "rgba(232, 232, 237, 0.4)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "opacity": "1",
+     "visibility": "visible",
+     "transition-property": "opacity, visibility",
+     "transition-duration": "0.32s, 0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), steps(1, start)"
+    },
+    "box": {
+     "width": 833,
+     "height": 900,
+     "top": 0,
+     "left": 0
+    }
+   }
+  },
+  "834": {
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "position": "fixed",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(255, 255, 255, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 834,
+     "height": 44,
+     "top": 70,
+     "left": 0
+    }
+   },
+   "content": {
+    "html": "<div class=\"globalnav-content\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width",
+    "styles": {
+     "position": "static",
+     "top": "auto",
+     "height": "44px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "z-index": "2",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 834,
+     "height": 44,
+     "top": 70,
+     "left": 0
+    }
+   },
+   "root": {
+    "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\" prefix=\"og: http://ogp.me/ns#\" class=\"js no-touch progressive-image enhanced no-reduced-motion desktop no-retina no-tablet no-windows no-android no-safari chrome no-fi",
+    "styles": {
+     "overflow-y": "visible"
+    }
+   },
+   "body": {
+    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\">\n\t\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
+    "styles": {
+     "overflow-y": "visible"
+    }
+   },
+   "search": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
+    "styles": {
+     "opacity": "1",
+     "visibility": "visible",
+     "color": "rgb(0, 0, 0)",
+     "transition-property": "color",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 31,
+     "height": 44,
+     "top": 70,
+     "left": 752
+    }
+   },
+   "flyout": {
+    "html": "<div id=\"globalnav-submenu-search\" role=\"search\" aria-labelledby=\"globalnav-menubutton-link-search\" class=\"globalnav-flyout globalnav-submenu\" style=\"--r-globalnav-flyout-item-total: 0; --r-globalnav-flyout-group-number: 0; --r-globalnav-fl",
+    "styles": {
+     "position": "absolute",
+     "top": "44px",
+     "left": "0px",
+     "right": "0px",
+     "height": "388px",
+     "max-height": "812px",
+     "background-color": "rgb(250, 250, 252)",
+     "color": "rgb(29, 29, 31)",
+     "overflow-y": "hidden",
+     "z-index": "auto",
+     "transition-property": "height",
+     "transition-duration": "0.24s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 834,
+     "height": 388,
+     "top": 70,
+     "left": 0
+    }
+   },
+   "flyout.scroll": {
+    "html": "<div class=\"globalnav-flyout-scroll-container\"><div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholde",
+    "styles": {
+     "height": "344px",
+     "max-height": "calc(100% - 44px)",
+     "overflow-y": "hidden",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "44px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 834,
+     "height": 344,
+     "top": 114,
+     "left": 0
+    }
+   },
+   "flyout.content": {
+    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.c",
+    "styles": {
+     "max-width": "1024px",
+     "padding-top": "32px",
+     "padding-right": "22px",
+     "padding-bottom": "80px",
+     "padding-left": "22px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 834,
+     "height": 344,
+     "top": 114,
+     "left": 0
+    }
+   },
+   "field": {
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" cl",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "height": "40px"
+    },
+    "box": {
+     "width": 790,
+     "height": 40,
+     "top": 146,
+     "left": 22
+    }
+   },
+   "field.input": {
+    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "24px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "1px",
+     "padding-right": "34px",
+     "padding-bottom": "0px",
+     "padding-left": "34px",
+     "margin-top": "0px",
+     "margin-right": "-31px",
+     "margin-bottom": "0px",
+     "margin-left": "-30px",
+     "height": "40px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-left-radius": "0px",
+     "outline-style": "none",
+     "caret-color": "rgb(51, 51, 54)",
+     "text-overflow": "clip",
+     "-webkit-appearance": "auto",
+     "appearance": "auto"
+    },
+    "box": {
+     "width": 805,
+     "height": 40,
+     "top": 146,
+     "left": 16
+    }
+   },
+   "field.placeholder": {
+    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "font-weight": "600",
+     "opacity": "1"
+    }
+   },
+   "field.focus": {
+    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "outline-style": "none",
+     "outline-color": "rgb(51, 51, 54)",
+     "outline-width": "3px",
+     "outline-offset": "1px"
+    },
+    "states": {
+     "focus-visible": {
+      "outline-style": "none",
+      "outline-color": "rgb(51, 51, 54)",
+      "outline-width": "3px",
+      "outline-offset": "1px"
+     },
+     "focus": {
+      "outline-style": "none",
+      "outline-color": "rgb(51, 51, 54)",
+      "outline-width": "3px",
+      "outline-offset": "1px"
+     }
+    }
+   },
+   "field.submit": {
+    "html": "<button aria-label=\"Submit search\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
+    "styles": {
+     "padding-top": "2px",
+     "padding-right": "0px",
+     "padding-bottom": "2px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "-6px",
+     "width": "30px",
+     "height": "31px",
+     "position": "relative",
+     "left": "0px",
+     "top": "0px",
+     "color": "rgb(29, 29, 31)",
+     "fill": "rgb(110, 110, 115)",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "cursor": "default",
+     "transition-property": "fill",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 30,
+     "height": 35,
+     "top": 144.5,
+     "left": 16
+    }
+   },
+   "field.submit-image": {
+    "html": "<svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m23.3291 23.3066-4.35-4.35c-.0105-.0105-.0247-.0136-.0355-.0235a6.8714 6.8714 0 1 0 -1.5736 1.4969c.0214.0256.03.0575.0542.0815l4.35 4.35a1.1 1.1 0 ",
+    "styles": {
+     "width": "30px",
+     "height": "32px",
+     "fill": "rgb(110, 110, 115)"
+    },
+    "box": {
+     "width": 30,
+     "height": 32,
+     "top": 145.5,
+     "left": 16
+    }
+   },
+   "field.reset": {
+    "html": "<button aria-label=\"Clear search\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
+    "styles": {
+     "opacity": "0",
+     "visibility": "hidden",
+     "width": "30px",
+     "height": "32px",
+     "transition-property": "opacity, fill, visibility",
+     "transition-duration": "0.32s, 0.32s, 0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), steps(1)"
+    },
+    "box": {
+     "width": 30,
+     "height": 36,
+     "top": 144,
+     "left": 790
+    }
+   },
+   "results": {
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"glob",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "32px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 790,
+     "height": 160,
+     "top": 218,
+     "left": 22
+    }
+   },
+   "results.header": {
+    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\">Quick Links</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 790,
+     "height": 16,
+     "top": 214,
+     "left": 22
+    }
+   },
+   "results.list": {
+    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\">\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"ht",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "list-style-type": "none"
+    },
+    "box": {
+     "width": 790,
+     "height": 136,
+     "top": 242,
+     "left": 22
+    }
+   },
+   "results.item": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "8px",
+     "margin-right": "-8px",
+     "margin-bottom": "0px",
+     "margin-left": "-8px",
+     "display": "flex"
+    },
+    "box": {
+     "width": 806,
+     "height": 24,
+     "top": 238,
+     "left": 14
+    }
+   },
+   "results.item2": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "4px",
+     "margin-right": "-8px",
+     "margin-bottom": "0px",
+     "margin-left": "-8px"
+    },
+    "box": {
+     "width": 806,
+     "height": 24,
+     "top": 266,
+     "left": 14
+    }
+   },
+   "results.link": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"quicklinks\" data-items=\"5\" data-index=\"0\" data-label=\"Find a Store\" data-analytics-click=\"eVar23: {data-query} | {data-s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "4px",
+     "padding-right": "8px",
+     "padding-bottom": "4px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "align-items": "flex-start",
+     "text-decoration-line": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "transition-property": "color, background-color, fill",
+     "transition-duration": "0.02s, 0.02s, 0.02s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 806,
+     "height": 24,
+     "top": 238,
+     "left": 14
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "600",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "8px",
+      "padding-bottom": "4px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "600",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "8px",
+      "padding-bottom": "4px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "results.icon": {
+    "html": "<span class=\"globalnav-searchresults-list-icon\">\n\n\t\t\t\t\t\t\t\t\t\t<span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "11px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "color": "rgb(51, 51, 54)"
+    },
+    "box": {
+     "width": 9,
+     "height": 16,
+     "top": 242,
+     "left": 22
+    }
+   },
+   "results.icon-image": {
+    "html": "<svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0 0 1 -.7071-.7071l2.1366-2.1364h-6.316a.5.5 0 0 1 0-1h6.316l-2.1368-2.1367a.5.5 0 0 1 .7071-.7071l2.99 2.99a.5.5 0 0 1 ",
+    "styles": {
+     "width": "9px",
+     "height": "16px",
+     "fill": "rgb(110, 110, 115)"
+    },
+    "box": {
+     "width": 9,
+     "height": 16,
+     "top": 242,
+     "left": 22
+    }
+   },
+   "results.text": {
+    "html": "<span class=\"globalnav-searchresults-list-text\">Find a Store</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 69.015625,
+     "height": 16,
+     "top": 242,
+     "left": 42
+    }
+   },
+   "curtain": {
+    "html": "<div id=\"globalnav-curtain\" class=\"globalnav-curtain\"></div>",
+    "styles": {
+     "position": "fixed",
+     "top": "0px",
+     "z-index": "9998",
+     "background-color": "rgba(232, 232, 237, 0.4)",
+     "backdrop-filter": "blur(20px)",
+     "-webkit-backdrop-filter": "",
+     "opacity": "1",
+     "visibility": "visible",
+     "transition-property": "opacity, visibility",
+     "transition-duration": "0.32s, 0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), steps(1, start)"
+    },
+    "box": {
+     "width": 834,
+     "height": 900,
+     "top": 0,
+     "left": 0
+    }
+   }
+  },
+  "900": {
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "position": "fixed",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(255, 255, 255, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 900,
+     "height": 44,
+     "top": 70,
+     "left": 0
+    }
+   },
+   "content": {
+    "html": "<div class=\"globalnav-content\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width",
+    "styles": {
+     "position": "static",
+     "top": "auto",
+     "height": "44px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "z-index": "2",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 900,
+     "height": 44,
+     "top": 70,
+     "left": 0
+    }
+   },
+   "root": {
+    "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\" prefix=\"og: http://ogp.me/ns#\" class=\"js no-touch progressive-image enhanced no-reduced-motion desktop no-retina no-tablet no-windows no-android no-safari chrome no-fi",
+    "styles": {
+     "overflow-y": "visible"
+    }
+   },
+   "body": {
+    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\">\n\t\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
+    "styles": {
+     "overflow-y": "visible"
+    }
+   },
+   "search": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
+    "styles": {
+     "opacity": "1",
+     "visibility": "visible",
+     "color": "rgb(0, 0, 0)",
+     "transition-property": "color",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 31,
+     "height": 44,
+     "top": 70,
+     "left": 812.921875
+    }
+   },
+   "flyout": {
+    "html": "<div id=\"globalnav-submenu-search\" role=\"search\" aria-labelledby=\"globalnav-menubutton-link-search\" class=\"globalnav-flyout globalnav-submenu\" style=\"--r-globalnav-flyout-item-total: 0; --r-globalnav-flyout-group-number: 0; --r-globalnav-fl",
+    "styles": {
+     "position": "absolute",
+     "top": "44px",
+     "left": "0px",
+     "right": "0px",
+     "height": "388px",
+     "max-height": "812px",
+     "background-color": "rgb(250, 250, 252)",
+     "color": "rgb(29, 29, 31)",
+     "overflow-y": "hidden",
+     "z-index": "auto",
+     "transition-property": "height",
+     "transition-duration": "0.24s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 900,
+     "height": 388,
+     "top": 70,
+     "left": 0
+    }
+   },
+   "flyout.scroll": {
+    "html": "<div class=\"globalnav-flyout-scroll-container\"><div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholde",
+    "styles": {
+     "height": "344px",
+     "max-height": "calc(100% - 44px)",
+     "overflow-y": "hidden",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "44px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 900,
+     "height": 344,
+     "top": 114,
+     "left": 0
+    }
+   },
+   "flyout.content": {
+    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.c",
+    "styles": {
+     "max-width": "1024px",
+     "padding-top": "32px",
+     "padding-right": "22px",
+     "padding-bottom": "80px",
+     "padding-left": "22px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 900,
+     "height": 344,
+     "top": 114,
+     "left": 0
+    }
+   },
+   "field": {
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" cl",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "height": "40px"
+    },
+    "box": {
+     "width": 856,
+     "height": 40,
+     "top": 146,
+     "left": 22
+    }
+   },
+   "field.input": {
+    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "24px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "1px",
+     "padding-right": "34px",
+     "padding-bottom": "0px",
+     "padding-left": "34px",
+     "margin-top": "0px",
+     "margin-right": "-31px",
+     "margin-bottom": "0px",
+     "margin-left": "-30px",
+     "height": "40px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-left-radius": "0px",
+     "outline-style": "none",
+     "caret-color": "rgb(51, 51, 54)",
+     "text-overflow": "clip",
+     "-webkit-appearance": "auto",
+     "appearance": "auto"
+    },
+    "box": {
+     "width": 871,
+     "height": 40,
+     "top": 146,
+     "left": 16
+    }
+   },
+   "field.placeholder": {
+    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "font-weight": "600",
+     "opacity": "1"
+    }
+   },
+   "field.focus": {
+    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "outline-style": "none",
+     "outline-color": "rgb(51, 51, 54)",
+     "outline-width": "3px",
+     "outline-offset": "1px"
+    },
+    "states": {
+     "focus-visible": {
+      "outline-style": "none",
+      "outline-color": "rgb(51, 51, 54)",
+      "outline-width": "3px",
+      "outline-offset": "1px"
+     },
+     "focus": {
+      "outline-style": "none",
+      "outline-color": "rgb(51, 51, 54)",
+      "outline-width": "3px",
+      "outline-offset": "1px"
+     }
+    }
+   },
+   "field.submit": {
+    "html": "<button aria-label=\"Submit search\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
+    "styles": {
+     "padding-top": "2px",
+     "padding-right": "0px",
+     "padding-bottom": "2px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "-6px",
+     "width": "30px",
+     "height": "31px",
+     "position": "relative",
+     "left": "0px",
+     "top": "0px",
+     "color": "rgb(29, 29, 31)",
+     "fill": "rgb(110, 110, 115)",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "cursor": "default",
+     "transition-property": "fill",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 30,
+     "height": 35,
+     "top": 144.5,
+     "left": 16
+    }
+   },
+   "field.submit-image": {
+    "html": "<svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m23.3291 23.3066-4.35-4.35c-.0105-.0105-.0247-.0136-.0355-.0235a6.8714 6.8714 0 1 0 -1.5736 1.4969c.0214.0256.03.0575.0542.0815l4.35 4.35a1.1 1.1 0 ",
+    "styles": {
+     "width": "30px",
+     "height": "32px",
+     "fill": "rgb(110, 110, 115)"
+    },
+    "box": {
+     "width": 30,
+     "height": 32,
+     "top": 145.5,
+     "left": 16
+    }
+   },
+   "field.reset": {
+    "html": "<button aria-label=\"Clear search\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
+    "styles": {
+     "opacity": "0",
+     "visibility": "hidden",
+     "width": "30px",
+     "height": "32px",
+     "transition-property": "opacity, fill, visibility",
+     "transition-duration": "0.32s, 0.32s, 0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), steps(1)"
+    },
+    "box": {
+     "width": 30,
+     "height": 36,
+     "top": 144,
+     "left": 856
+    }
+   },
+   "results": {
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"glob",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "32px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 856,
+     "height": 160,
+     "top": 218,
+     "left": 22
+    }
+   },
+   "results.header": {
+    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\">Quick Links</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 856,
+     "height": 16,
+     "top": 214,
+     "left": 22
+    }
+   },
+   "results.list": {
+    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\">\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"ht",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "list-style-type": "none"
+    },
+    "box": {
+     "width": 856,
+     "height": 136,
+     "top": 242,
+     "left": 22
+    }
+   },
+   "results.item": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "8px",
+     "margin-right": "-8px",
+     "margin-bottom": "0px",
+     "margin-left": "-8px",
+     "display": "flex"
+    },
+    "box": {
+     "width": 872,
+     "height": 24,
+     "top": 238,
+     "left": 14
+    }
+   },
+   "results.item2": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "4px",
+     "margin-right": "-8px",
+     "margin-bottom": "0px",
+     "margin-left": "-8px"
+    },
+    "box": {
+     "width": 872,
+     "height": 24,
+     "top": 266,
+     "left": 14
+    }
+   },
+   "results.link": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"quicklinks\" data-items=\"5\" data-index=\"0\" data-label=\"Find a Store\" data-analytics-click=\"eVar23: {data-query} | {data-s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "4px",
+     "padding-right": "8px",
+     "padding-bottom": "4px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "align-items": "flex-start",
+     "text-decoration-line": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "transition-property": "color, background-color, fill",
+     "transition-duration": "0.02s, 0.02s, 0.02s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 872,
+     "height": 24,
+     "top": 238,
+     "left": 14
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "600",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "8px",
+      "padding-bottom": "4px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "600",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "8px",
+      "padding-bottom": "4px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "results.icon": {
+    "html": "<span class=\"globalnav-searchresults-list-icon\">\n\n\t\t\t\t\t\t\t\t\t\t<span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "11px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "color": "rgb(51, 51, 54)"
+    },
+    "box": {
+     "width": 9,
+     "height": 16,
+     "top": 242,
+     "left": 22
+    }
+   },
+   "results.icon-image": {
+    "html": "<svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0 0 1 -.7071-.7071l2.1366-2.1364h-6.316a.5.5 0 0 1 0-1h6.316l-2.1368-2.1367a.5.5 0 0 1 .7071-.7071l2.99 2.99a.5.5 0 0 1 ",
+    "styles": {
+     "width": "9px",
+     "height": "16px",
+     "fill": "rgb(110, 110, 115)"
+    },
+    "box": {
+     "width": 9,
+     "height": 16,
+     "top": 242,
+     "left": 22
+    }
+   },
+   "results.text": {
+    "html": "<span class=\"globalnav-searchresults-list-text\">Find a Store</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 69.015625,
+     "height": 16,
+     "top": 242,
+     "left": 42
+    }
+   },
+   "curtain": {
+    "html": "<div id=\"globalnav-curtain\" class=\"globalnav-curtain\"></div>",
+    "styles": {
+     "position": "fixed",
+     "top": "0px",
+     "z-index": "9998",
+     "background-color": "rgba(232, 232, 237, 0.4)",
+     "backdrop-filter": "blur(20px)",
+     "-webkit-backdrop-filter": "",
+     "opacity": "1",
+     "visibility": "visible",
+     "transition-property": "opacity, visibility",
+     "transition-duration": "0.32s, 0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), steps(1, start)"
+    },
+    "box": {
+     "width": 900,
+     "height": 900,
+     "top": 0,
+     "left": 0
+    }
+   }
+  },
+  "1200": {
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "position": "fixed",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(255, 255, 255, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 1200,
+     "height": 44,
+     "top": 70,
+     "left": 0
+    }
+   },
+   "content": {
+    "html": "<div class=\"globalnav-content\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width",
+    "styles": {
+     "position": "static",
+     "top": "auto",
+     "height": "44px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "z-index": "2",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 1024,
+     "height": 44,
+     "top": 70,
+     "left": 88
+    }
+   },
+   "root": {
+    "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\" prefix=\"og: http://ogp.me/ns#\" class=\"js no-touch progressive-image enhanced no-reduced-motion desktop no-retina no-tablet no-windows no-android no-safari chrome no-fi",
+    "styles": {
+     "overflow-y": "visible"
+    }
+   },
+   "body": {
+    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\">\n\t\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
+    "styles": {
+     "overflow-y": "visible"
+    }
+   },
+   "search": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
+    "styles": {
+     "opacity": "1",
+     "visibility": "visible",
+     "color": "rgb(0, 0, 0)",
+     "transition-property": "color",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 31,
+     "height": 44,
+     "top": 70,
+     "left": 1015.390625
+    }
+   },
+   "flyout": {
+    "html": "<div id=\"globalnav-submenu-search\" role=\"search\" aria-labelledby=\"globalnav-menubutton-link-search\" class=\"globalnav-flyout globalnav-submenu\" style=\"--r-globalnav-flyout-item-total: 0; --r-globalnav-flyout-group-number: 0; --r-globalnav-fl",
+    "styles": {
+     "position": "absolute",
+     "top": "44px",
+     "left": "0px",
+     "right": "0px",
+     "height": "388px",
+     "max-height": "812px",
+     "background-color": "rgb(250, 250, 252)",
+     "color": "rgb(29, 29, 31)",
+     "overflow-y": "hidden",
+     "z-index": "auto",
+     "transition-property": "height",
+     "transition-duration": "0.24s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 1200,
+     "height": 388,
+     "top": 70,
+     "left": 0
+    }
+   },
+   "flyout.scroll": {
+    "html": "<div class=\"globalnav-flyout-scroll-container\"><div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholde",
+    "styles": {
+     "height": "344px",
+     "max-height": "calc(100% - 44px)",
+     "overflow-y": "hidden",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "44px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 1200,
+     "height": 344,
+     "top": 114,
+     "left": 0
+    }
+   },
+   "flyout.content": {
+    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.c",
+    "styles": {
+     "max-width": "1024px",
+     "padding-top": "32px",
+     "padding-right": "22px",
+     "padding-bottom": "80px",
+     "padding-left": "22px",
+     "margin-top": "0px",
+     "margin-right": "88px",
+     "margin-bottom": "0px",
+     "margin-left": "88px"
+    },
+    "box": {
+     "width": 1024,
+     "height": 344,
+     "top": 114,
+     "left": 88
+    }
+   },
+   "field": {
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" cl",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "height": "40px"
+    },
+    "box": {
+     "width": 980,
+     "height": 40,
+     "top": 146,
+     "left": 110
+    }
+   },
+   "field.input": {
+    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "24px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "1px",
+     "padding-right": "34px",
+     "padding-bottom": "0px",
+     "padding-left": "34px",
+     "margin-top": "0px",
+     "margin-right": "-31px",
+     "margin-bottom": "0px",
+     "margin-left": "-30px",
+     "height": "40px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-left-radius": "0px",
+     "outline-style": "none",
+     "caret-color": "rgb(51, 51, 54)",
+     "text-overflow": "clip",
+     "-webkit-appearance": "auto",
+     "appearance": "auto"
+    },
+    "box": {
+     "width": 995,
+     "height": 40,
+     "top": 146,
+     "left": 104
+    }
+   },
+   "field.placeholder": {
+    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "font-weight": "600",
+     "opacity": "1"
+    }
+   },
+   "field.focus": {
+    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "outline-style": "none",
+     "outline-color": "rgb(51, 51, 54)",
+     "outline-width": "3px",
+     "outline-offset": "1px"
+    },
+    "states": {
+     "focus-visible": {
+      "outline-style": "none",
+      "outline-color": "rgb(51, 51, 54)",
+      "outline-width": "3px",
+      "outline-offset": "1px"
+     },
+     "focus": {
+      "outline-style": "none",
+      "outline-color": "rgb(51, 51, 54)",
+      "outline-width": "3px",
+      "outline-offset": "1px"
+     }
+    }
+   },
+   "field.submit": {
+    "html": "<button aria-label=\"Submit search\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
+    "styles": {
+     "padding-top": "2px",
+     "padding-right": "0px",
+     "padding-bottom": "2px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "-6px",
+     "width": "30px",
+     "height": "31px",
+     "position": "relative",
+     "left": "0px",
+     "top": "0px",
+     "color": "rgb(29, 29, 31)",
+     "fill": "rgb(110, 110, 115)",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "cursor": "default",
+     "transition-property": "fill",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 30,
+     "height": 35,
+     "top": 144.5,
+     "left": 104
+    }
+   },
+   "field.submit-image": {
+    "html": "<svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m23.3291 23.3066-4.35-4.35c-.0105-.0105-.0247-.0136-.0355-.0235a6.8714 6.8714 0 1 0 -1.5736 1.4969c.0214.0256.03.0575.0542.0815l4.35 4.35a1.1 1.1 0 ",
+    "styles": {
+     "width": "30px",
+     "height": "32px",
+     "fill": "rgb(110, 110, 115)"
+    },
+    "box": {
+     "width": 30,
+     "height": 32,
+     "top": 145.5,
+     "left": 104
+    }
+   },
+   "field.reset": {
+    "html": "<button aria-label=\"Clear search\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
+    "styles": {
+     "opacity": "0",
+     "visibility": "hidden",
+     "width": "30px",
+     "height": "32px",
+     "transition-property": "opacity, fill, visibility",
+     "transition-duration": "0.32s, 0.32s, 0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), steps(1)"
+    },
+    "box": {
+     "width": 30,
+     "height": 36,
+     "top": 144,
+     "left": 1068
+    }
+   },
+   "results": {
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"glob",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "32px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 160,
+     "top": 218,
+     "left": 110
+    }
+   },
+   "results.header": {
+    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\">Quick Links</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 16,
+     "top": 214,
+     "left": 110
+    }
+   },
+   "results.list": {
+    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\">\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"ht",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "list-style-type": "none"
+    },
+    "box": {
+     "width": 980,
+     "height": 136,
+     "top": 242,
+     "left": 110
+    }
+   },
+   "results.item": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "8px",
+     "margin-right": "-8px",
+     "margin-bottom": "0px",
+     "margin-left": "-8px",
+     "display": "flex"
+    },
+    "box": {
+     "width": 996,
+     "height": 24,
+     "top": 238,
+     "left": 102
+    }
+   },
+   "results.item2": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "4px",
+     "margin-right": "-8px",
+     "margin-bottom": "0px",
+     "margin-left": "-8px"
+    },
+    "box": {
+     "width": 996,
+     "height": 24,
+     "top": 266,
+     "left": 102
+    }
+   },
+   "results.link": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"quicklinks\" data-items=\"5\" data-index=\"0\" data-label=\"Find a Store\" data-analytics-click=\"eVar23: {data-query} | {data-s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "4px",
+     "padding-right": "8px",
+     "padding-bottom": "4px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "align-items": "flex-start",
+     "text-decoration-line": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "transition-property": "color, background-color, fill",
+     "transition-duration": "0.02s, 0.02s, 0.02s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 996,
+     "height": 24,
+     "top": 238,
+     "left": 102
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "600",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "8px",
+      "padding-bottom": "4px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "600",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "8px",
+      "padding-bottom": "4px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "results.icon": {
+    "html": "<span class=\"globalnav-searchresults-list-icon\">\n\n\t\t\t\t\t\t\t\t\t\t<span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "11px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "color": "rgb(51, 51, 54)"
+    },
+    "box": {
+     "width": 9,
+     "height": 16,
+     "top": 242,
+     "left": 110
+    }
+   },
+   "results.icon-image": {
+    "html": "<svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0 0 1 -.7071-.7071l2.1366-2.1364h-6.316a.5.5 0 0 1 0-1h6.316l-2.1368-2.1367a.5.5 0 0 1 .7071-.7071l2.99 2.99a.5.5 0 0 1 ",
+    "styles": {
+     "width": "9px",
+     "height": "16px",
+     "fill": "rgb(110, 110, 115)"
+    },
+    "box": {
+     "width": 9,
+     "height": 16,
+     "top": 242,
+     "left": 110
+    }
+   },
+   "results.text": {
+    "html": "<span class=\"globalnav-searchresults-list-text\">Find a Store</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 69.015625,
+     "height": 16,
+     "top": 242,
+     "left": 130
+    }
+   },
+   "curtain": {
+    "html": "<div id=\"globalnav-curtain\" class=\"globalnav-curtain\"></div>",
+    "styles": {
+     "position": "fixed",
+     "top": "0px",
+     "z-index": "9998",
+     "background-color": "rgba(232, 232, 237, 0.4)",
+     "backdrop-filter": "blur(20px)",
+     "-webkit-backdrop-filter": "",
+     "opacity": "1",
+     "visibility": "visible",
+     "transition-property": "opacity, visibility",
+     "transition-duration": "0.32s, 0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), steps(1, start)"
+    },
+    "box": {
+     "width": 1200,
+     "height": 900,
+     "top": 0,
+     "left": 0
+    }
+   }
+  },
+  "1600": {
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "position": "fixed",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(255, 255, 255, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 1600,
+     "height": 44,
+     "top": 70,
+     "left": 0
+    },
+    "animations": [
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "h2.globalnav-searchresults-header",
+      "duration": 320,
+      "delay": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 220,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 240,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 260,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 280,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "color",
+      "on": "a#globalnav-menubutton-link-search.globalnav-link.globalnav-link-search",
+      "duration": 320,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgba(0, 0, 0, 0.8)",
+      "to": "rgb(0, 0, 0)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "background-color",
+      "on": "div#globalnav-submenu-search.globalnav-flyout.globalnav-submenu",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgba(255, 255, 255, 0.8)",
+      "to": "rgb(250, 250, 252)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "height",
+      "on": "div#globalnav-submenu-search.globalnav-flyout.globalnav-submenu",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "44px",
+      "to": "388px"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "div#globalnav-submenu-search.globalnav-flyout.globalnav-submenu",
+      "duration": 240,
+      "delay": 0,
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-input-intro",
+      "on": "div.globalnav-searchfield-wrapper",
+      "duration": 240,
+      "delay": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "h2.globalnav-searchresults-header",
+      "duration": 320,
+      "delay": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 220,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 240,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 260,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 280,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 0,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 100,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 200,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 300,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 400,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 500,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 600,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 700,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     }
+    ]
+   },
+   "content": {
+    "html": "<div class=\"globalnav-content\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width",
+    "styles": {
+     "position": "static",
+     "top": "auto",
+     "height": "44px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "z-index": "2",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 1024,
+     "height": 44,
+     "top": 70,
+     "left": 288
+    }
+   },
+   "root": {
+    "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\" prefix=\"og: http://ogp.me/ns#\" class=\"js no-touch progressive-image enhanced no-reduced-motion desktop no-retina no-tablet no-windows no-android no-safari chrome no-fi",
+    "styles": {
+     "overflow-y": "visible"
+    }
+   },
+   "body": {
+    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\">\n\t\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
+    "styles": {
+     "overflow-y": "visible"
+    }
+   },
+   "search": {
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
+    "styles": {
+     "opacity": "1",
+     "visibility": "visible",
+     "color": "rgb(0, 0, 0)",
+     "transition-property": "color",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 31,
+     "height": 44,
+     "top": 70,
+     "left": 1215.390625
+    }
+   },
+   "flyout": {
+    "html": "<div id=\"globalnav-submenu-search\" role=\"search\" aria-labelledby=\"globalnav-menubutton-link-search\" class=\"globalnav-flyout globalnav-submenu\" style=\"--r-globalnav-flyout-item-total: 0; --r-globalnav-flyout-group-number: 0; --r-globalnav-fl",
+    "styles": {
+     "position": "absolute",
+     "top": "44px",
+     "left": "0px",
+     "right": "0px",
+     "height": "388px",
+     "max-height": "812px",
+     "background-color": "rgb(250, 250, 252)",
+     "color": "rgb(29, 29, 31)",
+     "overflow-y": "hidden",
+     "z-index": "auto",
+     "transition-property": "height",
+     "transition-duration": "0.24s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 1600,
+     "height": 388,
+     "top": 70,
+     "left": 0
+    }
+   },
+   "flyout.scroll": {
+    "html": "<div class=\"globalnav-flyout-scroll-container\"><div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholde",
+    "styles": {
+     "height": "344px",
+     "max-height": "calc(100% - 44px)",
+     "overflow-y": "hidden",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "44px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 1600,
+     "height": 344,
+     "top": 114,
+     "left": 0
+    }
+   },
+   "flyout.content": {
+    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.c",
+    "styles": {
+     "max-width": "1024px",
+     "padding-top": "32px",
+     "padding-right": "22px",
+     "padding-bottom": "80px",
+     "padding-left": "22px",
+     "margin-top": "0px",
+     "margin-right": "288px",
+     "margin-bottom": "0px",
+     "margin-left": "288px"
+    },
+    "box": {
+     "width": 1024,
+     "height": 344,
+     "top": 114,
+     "left": 288
+    }
+   },
+   "field": {
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" cl",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "height": "40px"
+    },
+    "box": {
+     "width": 980,
+     "height": 40,
+     "top": 146,
+     "left": 310
+    }
+   },
+   "field.input": {
+    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "24px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "1px",
+     "padding-right": "34px",
+     "padding-bottom": "0px",
+     "padding-left": "34px",
+     "margin-top": "0px",
+     "margin-right": "-31px",
+     "margin-bottom": "0px",
+     "margin-left": "-30px",
+     "height": "40px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-left-radius": "0px",
+     "outline-style": "none",
+     "caret-color": "rgb(51, 51, 54)",
+     "text-overflow": "clip",
+     "-webkit-appearance": "auto",
+     "appearance": "auto"
+    },
+    "box": {
+     "width": 995,
+     "height": 40,
+     "top": 146,
+     "left": 304
+    }
+   },
+   "field.placeholder": {
+    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "font-weight": "600",
+     "opacity": "1"
+    }
+   },
+   "field.focus": {
+    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "styles": {
+     "outline-style": "none",
+     "outline-color": "rgb(51, 51, 54)",
+     "outline-width": "3px",
+     "outline-offset": "1px"
+    },
+    "states": {
+     "focus-visible": {
+      "outline-style": "none",
+      "outline-color": "rgb(51, 51, 54)",
+      "outline-width": "3px",
+      "outline-offset": "1px"
+     },
+     "focus": {
+      "outline-style": "none",
+      "outline-color": "rgb(51, 51, 54)",
+      "outline-width": "3px",
+      "outline-offset": "1px"
+     }
+    }
+   },
+   "field.submit": {
+    "html": "<button aria-label=\"Submit search\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
+    "styles": {
+     "padding-top": "2px",
+     "padding-right": "0px",
+     "padding-bottom": "2px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "-6px",
+     "width": "30px",
+     "height": "31px",
+     "position": "relative",
+     "left": "0px",
+     "top": "0px",
+     "color": "rgb(29, 29, 31)",
+     "fill": "rgb(110, 110, 115)",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "cursor": "default",
+     "transition-property": "fill",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 30,
+     "height": 35,
+     "top": 144.5,
+     "left": 304
+    }
+   },
+   "field.submit-image": {
+    "html": "<svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m23.3291 23.3066-4.35-4.35c-.0105-.0105-.0247-.0136-.0355-.0235a6.8714 6.8714 0 1 0 -1.5736 1.4969c.0214.0256.03.0575.0542.0815l4.35 4.35a1.1 1.1 0 ",
+    "styles": {
+     "width": "30px",
+     "height": "32px",
+     "fill": "rgb(110, 110, 115)"
+    },
+    "box": {
+     "width": 30,
+     "height": 32,
+     "top": 145.5,
+     "left": 304
+    }
+   },
+   "field.reset": {
+    "html": "<button aria-label=\"Clear search\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
+    "styles": {
+     "opacity": "0",
+     "visibility": "hidden",
+     "width": "30px",
+     "height": "32px",
+     "transition-property": "opacity, fill, visibility",
+     "transition-duration": "0.32s, 0.32s, 0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), steps(1)"
+    },
+    "box": {
+     "width": 30,
+     "height": 36,
+     "top": 144,
+     "left": 1268
+    }
+   },
+   "results": {
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"glob",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "32px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 160,
+     "top": 218,
+     "left": 310
+    }
+   },
+   "results.header": {
+    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\">Quick Links</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 16,
+     "top": 214,
+     "left": 310
+    }
+   },
+   "results.list": {
+    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\">\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"ht",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "list-style-type": "none"
+    },
+    "box": {
+     "width": 980,
+     "height": 136,
+     "top": 242,
+     "left": 310
+    }
+   },
+   "results.item": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "8px",
+     "margin-right": "-8px",
+     "margin-bottom": "0px",
+     "margin-left": "-8px",
+     "display": "flex"
+    },
+    "box": {
+     "width": 996,
+     "height": 24,
+     "top": 238,
+     "left": 302
+    }
+   },
+   "results.item2": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "4px",
+     "margin-right": "-8px",
+     "margin-bottom": "0px",
+     "margin-left": "-8px"
+    },
+    "box": {
+     "width": 996,
+     "height": 24,
+     "top": 266,
+     "left": 302
+    }
+   },
+   "results.link": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"quicklinks\" data-items=\"5\" data-index=\"0\" data-label=\"Find a Store\" data-analytics-click=\"eVar23: {data-query} | {data-s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "4px",
+     "padding-right": "8px",
+     "padding-bottom": "4px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "align-items": "flex-start",
+     "text-decoration-line": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "transition-property": "color, background-color, fill",
+     "transition-duration": "0.02s, 0.02s, 0.02s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 996,
+     "height": 24,
+     "top": 238,
+     "left": 302
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "600",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "8px",
+      "padding-bottom": "4px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "600",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "8px",
+      "padding-bottom": "4px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "results.icon": {
+    "html": "<span class=\"globalnav-searchresults-list-icon\">\n\n\t\t\t\t\t\t\t\t\t\t<span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "11px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "color": "rgb(51, 51, 54)"
+    },
+    "box": {
+     "width": 9,
+     "height": 16,
+     "top": 242,
+     "left": 310
+    }
+   },
+   "results.icon-image": {
+    "html": "<svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0 0 1 -.7071-.7071l2.1366-2.1364h-6.316a.5.5 0 0 1 0-1h6.316l-2.1368-2.1367a.5.5 0 0 1 .7071-.7071l2.99 2.99a.5.5 0 0 1 ",
+    "styles": {
+     "width": "9px",
+     "height": "16px",
+     "fill": "rgb(110, 110, 115)"
+    },
+    "box": {
+     "width": 9,
+     "height": 16,
+     "top": 242,
+     "left": 310
+    }
+   },
+   "results.text": {
+    "html": "<span class=\"globalnav-searchresults-list-text\">Find a Store</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 69.015625,
+     "height": 16,
+     "top": 242,
+     "left": 330
+    }
+   },
+   "curtain": {
+    "html": "<div id=\"globalnav-curtain\" class=\"globalnav-curtain\"></div>",
+    "styles": {
+     "position": "fixed",
+     "top": "0px",
+     "z-index": "9998",
+     "background-color": "rgba(232, 232, 237, 0.4)",
+     "backdrop-filter": "blur(20px)",
+     "-webkit-backdrop-filter": "",
+     "opacity": "1",
+     "visibility": "visible",
+     "transition-property": "opacity, visibility",
+     "transition-duration": "0.32s, 0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), steps(1, start)"
+    },
+    "box": {
+     "width": 1600,
+     "height": 900,
+     "top": 0,
+     "left": 0
+    }
+   }
+  }
+ }
+}
