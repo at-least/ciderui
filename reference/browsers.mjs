@@ -5,14 +5,17 @@
 // browser's own input (a trusted click on the element, a key pressed: the
 // WebDriver key's name, as Escape).
 //   safari    Safari through safaridriver, raw WebDriver over HTTP (Safari's
-//             "Allow remote automation" on)
+//             "Allow remote automation" on); a Safari the run launches is quit
+//             when it closes, one running before it is left as it is (one macOS
+//             had reopened offered itself to no session, twice on 2026-10-19:
+//             quit Safari before the run)
 //   ios       the same on an iPhone simulator (Xcode), whichever safaridriver finds
 //   chrome    the installed Google Chrome through playwright-core
 //   chromium  Playwright's own Chromium (PW names the module when it is not
 //             playwright-core), with --font-render-hinting=none: on Linux it
 //             hints every glyph to a whole-pixel advance otherwise, and no text
 //             width measured there means anything
-import { spawn } from 'node:child_process';
+import { execFileSync, spawn, spawnSync } from 'node:child_process';
 
 export function open(name, url) {
   switch (name) {
@@ -50,6 +53,14 @@ const KEYS = { Escape: '\uE00C' };
 async function viaSafariDriver(capabilities, url) {
   const port = 4473;
   const base = `http://localhost:${port}`;
+  // On the Mac a Safari the run launches is quit when it closes. Left with no
+  // window, macOS quits it under memory pressure and still counts it as running
+  // (automatic termination): safaridriver then waits for it and launches no
+  // other ("waiting for its RWIApplication"), and the Safari macOS reopened
+  // later offered itself to no session either (twice, 2026-10-19).
+  const mac = !capabilities['safari:useSimulator'];
+  const running = () => spawnSync('pgrep', ['-x', 'Safari']).status === 0;
+  const launched = mac && !running();
   const driver = spawn('/usr/bin/safaridriver', ['-p', String(port)], { stdio: ['ignore', 'inherit', 'inherit'] });
   const wd = async (method, path, body) => {
     const res = await fetch(base + path, { method, headers: { 'content-type': 'application/json' }, body: body && JSON.stringify(body) });
@@ -61,6 +72,13 @@ async function viaSafariDriver(capabilities, url) {
   const close = async () => {
     if (session) await wd('DELETE', `/session/${session.sessionId}`).catch(e => console.error('delete session:', e.message));
     driver.kill();
+    if (launched && running()) {
+      execFileSync('osascript', ['-e', 'quit app "Safari"']);
+      for (let i = 0; running(); i++) {
+        if (i > 100) throw new Error('Safari did not quit');
+        await new Promise(r => setTimeout(r, 100));
+      }
+    }
   };
   try {
     for (let i = 0; ; i++) {
