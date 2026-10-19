@@ -109,6 +109,8 @@ The fills are the accent's and the neutral's (above); a secondary button is the 
 
 **Accordions** (`bag:accordion.*`, `bag-accordion:*`). A 1px `#d2d2d7` rule above each item. The bag's outer item: its title 32/36 at 600 (24/28 on a phone) 32px from the rule and from its foot (24px), its chevron at the end (a 32 by 35 box, the line 2.25 thick, round). Opened, its compact items, the FAQ: each 56px, the question 17/21 at 600 (14/18 on a phone) 17px from the rule, a 17px chevron at its end (14px), `#86868b`, `#6e6e73` with the question hovered (in 0.1s linear); opened, the answer 13.6px below the question, 14/20, 28px above the next rule, 35px short of the end (none on a phone); each panel's height in 0.3s ease-in-out; the chevron turned up as it opens, through a flat line (its points, in 320ms). The rule between copy blocks on iPhone 18 Pro's dark page is `#424245` (`product:divider`).
 
+**The store's overlay** (`overlay:*`, iPhone 18 Pro's buy page, its first "Show more", opened). A layer fixed over the window, `rgba(0,0,0,.48)`, no blur, fading in over 0.1s ease-in-out, which is what scrolls when the dialog is taller than the window (`overflow: auto`), the page under it held (`html` `overflow: hidden`). In it the dialog (`role=dialog`, `aria-modal`): from 737px a white panel 816px wide at most (the window's width below 816px), 40px from the layer's top and as far below its end, 18px corners, its content 76px in at the sides, 76px down, 60px up; to 736px, the store's own step, 640px at most (the window's width below), 20px from the top and none below, its content 40px in (6.25% of the window below 640px). Its close button at the panel's top right corner, 20px in: a 44px target holding a 36px circle `#e8e8ed` and a 20px X `#6e6e73`, `#ececf0` and `rgba(0,0,0,.72)` hovered, `#dfdfe4` pressed, both in 0.1s linear; it scrolls with the panel. Opened, the dialog itself takes the focus; Escape, the close button and a click on the layer close it, the focus back on what opened it (scouted, not recorded).
+
 ## Running it
 
 ```sh
@@ -126,4 +128,4 @@ What the harness had to learn, each a reading that was wrong before it:
 - The store's elements rename after hydration (`rf-ccard-content-eyebrow` in the served HTML is `rf-ccard-content-header-eyebrow` in the page).
 - The sign-in widget's iframe shares the page's process here, so its elements are reached through the page's own DevTools session.
 
-Not measured: a touch screen's hover, the modals, the checkout, the search field open, the global nav's flyouts (a desktop's menus under a link), and every page in Safari.
+Not measured: a touch screen's hover, the checkout, the search field open, the global nav's flyouts (a desktop's menus under a link), and every page in Safari.
