@@ -1,7 +1,9 @@
 // The browsers the reference probes run in, behind one interface:
-// open(name, url) loads the page and gives { label, run(expr), close() }, where
-// run evaluates an expression whose value is a promise and hands back what it
-// resolves to.
+// open(name, url) loads the page and gives { label, run(expr), click(selector),
+// press(key), close() }, where run evaluates an expression whose value is a
+// promise and hands back what it resolves to, and click and press are the
+// browser's own input (a trusted click on the element, a key pressed: the
+// WebDriver key's name, as Escape).
 //   safari    Safari through safaridriver, raw WebDriver over HTTP (Safari's
 //             "Allow remote automation" on)
 //   ios       the same on an iPhone simulator (Xcode), whichever safaridriver finds
@@ -31,6 +33,8 @@ async function viaPlaywright(channel, url) {
     return {
       label: `${channel ?? 'chromium'} ${browser.version()} on ${process.platform}`,
       run: (expr) => page.evaluate(expr),
+      click: (selector) => page.click(selector),
+      press: (key) => page.keyboard.press(key),
       close: () => browser.close(),
       page, // Playwright's, for a probe that resizes the viewport or forces states
     };
@@ -39,6 +43,9 @@ async function viaPlaywright(channel, url) {
     throw e;
   }
 }
+
+// WebDriver's code points for the keys a probe presses
+const KEYS = { Escape: '\uE00C' };
 
 async function viaSafariDriver(capabilities, url) {
   const port = 4473;
@@ -75,6 +82,15 @@ async function viaSafariDriver(capabilities, url) {
         const value = await wd('POST', `/session/${id}/execute/async`, { script, args: [] });
         if (!value.ok) throw new Error(value.e);
         return value.r;
+      },
+      click: async (selector) => {
+        const el = await wd('POST', `/session/${id}/element`, { using: 'css selector', value: selector });
+        await wd('POST', `/session/${id}/element/${Object.values(el)[0]}/click`, {});
+      },
+      press: async (key) => {
+        const value = KEYS[key];
+        if (!value) throw new Error(`no WebDriver key for ${key}`);
+        await wd('POST', `/session/${id}/actions`, { actions: [{ type: 'key', id: 'keyboard', actions: [{ type: 'keyDown', value }, { type: 'keyUp', value }] }] });
       },
       close,
     };
