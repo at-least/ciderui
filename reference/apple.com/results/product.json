@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/iphone-18-pro/",
  "finalUrl": "https://www.apple.com/iphone-18-pro/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T08:41:08.883Z",
+ "date": "2026-10-19T09:05:35.870Z",
  "widths": {
   "390": {
    "type.none": {
@@ -709,6 +709,62 @@
     "box": {
      "width": 36,
      "height": 36
+    }
+   },
+   "footer": {
+    "html": "<footer id=\"ac-globalfooter\" class=\"js\" lang=\"en-US\" dir=\"ltr\" data-analytics-region=\"global footer\" role=\"contentinfo\" aria-labelledby=\"ac-gf-label\">\n\t\t<div class=\"ac-gf-content\" data-nosnippet=\"\">\n\t\t\t<h2 class=\"ac-gf-label\" id=\"ac-gf-labe",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.56)",
+     "background-color": "rgb(245, 245, 247)"
+    }
+   },
+   "footer.title": {
+    "html": "<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.88)"
+    }
+   },
+   "footer.link": {
+    "html": "<a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\">Store</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.72)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0.72)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "footer.shop": {
+    "html": "<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\">\n\t\tMore ways to shop: <a href=\"/retail/\" data-analytics-title=\"find an apple store\">Find an Apple Store</a> or <a href=\"https://locate.apple.com/\" data-analytics-title=\"other retai",
+    "styles": {
+     "border-bottom-color": "rgba(0, 0, 0, 0.56)"
     }
    },
    "divider": {
@@ -2065,6 +2121,62 @@
      "height": 36
     }
    },
+   "footer": {
+    "html": "<footer id=\"ac-globalfooter\" class=\"js\" lang=\"en-US\" dir=\"ltr\" data-analytics-region=\"global footer\" role=\"contentinfo\" aria-labelledby=\"ac-gf-label\">\n\t\t<div class=\"ac-gf-content\" data-nosnippet=\"\">\n\t\t\t<h2 class=\"ac-gf-label\" id=\"ac-gf-labe",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.56)",
+     "background-color": "rgb(245, 245, 247)"
+    }
+   },
+   "footer.title": {
+    "html": "<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.88)"
+    }
+   },
+   "footer.link": {
+    "html": "<a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\">Store</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.72)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0.72)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "footer.shop": {
+    "html": "<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\">\n\t\tMore ways to shop: <a href=\"/retail/\" data-analytics-title=\"find an apple store\">Find an Apple Store</a> or <a href=\"https://locate.apple.com/\" data-analytics-title=\"other retai",
+    "styles": {
+     "border-bottom-color": "rgba(0, 0, 0, 0.16)"
+    }
+   },
    "divider": {
     "html": "<div class=\"callout-subsection-copy-block keyline typography-callout-elevated\">\n\t\t\t\t\t\t\t<p>More power for all your AI tasks. And faster Apple&nbsp;Intelligence thanks to new Neural Accelerators, a Dual 16‑core Neural&nbsp;Engine, and 50&nbsp",
     "styles": {
@@ -3375,6 +3487,62 @@
      "height": 36
     }
    },
+   "footer": {
+    "html": "<footer id=\"ac-globalfooter\" class=\"js\" lang=\"en-US\" dir=\"ltr\" data-analytics-region=\"global footer\" role=\"contentinfo\" aria-labelledby=\"ac-gf-label\">\n\t\t<div class=\"ac-gf-content\" data-nosnippet=\"\">\n\t\t\t<h2 class=\"ac-gf-label\" id=\"ac-gf-labe",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.56)",
+     "background-color": "rgb(245, 245, 247)"
+    }
+   },
+   "footer.title": {
+    "html": "<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.88)"
+    }
+   },
+   "footer.link": {
+    "html": "<a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\">Store</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.72)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0.72)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "footer.shop": {
+    "html": "<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\">\n\t\tMore ways to shop: <a href=\"/retail/\" data-analytics-title=\"find an apple store\">Find an Apple Store</a> or <a href=\"https://locate.apple.com/\" data-analytics-title=\"other retai",
+    "styles": {
+     "border-bottom-color": "rgba(0, 0, 0, 0.16)"
+    }
+   },
    "divider": {
     "html": "<div class=\"callout-subsection-copy-block keyline typography-callout-elevated\">\n\t\t\t\t\t\t\t<p>More power for all your AI tasks. And faster Apple&nbsp;Intelligence thanks to new Neural Accelerators, a Dual 16‑core Neural&nbsp;Engine, and 50&nbsp",
     "styles": {
@@ -4670,6 +4838,62 @@
     "box": {
      "width": 36,
      "height": 36
+    }
+   },
+   "footer": {
+    "html": "<footer id=\"ac-globalfooter\" class=\"js\" lang=\"en-US\" dir=\"ltr\" data-analytics-region=\"global footer\" role=\"contentinfo\" aria-labelledby=\"ac-gf-label\">\n\t\t<div class=\"ac-gf-content\" data-nosnippet=\"\">\n\t\t\t<h2 class=\"ac-gf-label\" id=\"ac-gf-labe",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.56)",
+     "background-color": "rgb(245, 245, 247)"
+    }
+   },
+   "footer.title": {
+    "html": "<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.88)"
+    }
+   },
+   "footer.link": {
+    "html": "<a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\">Store</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.72)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0.72)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "footer.shop": {
+    "html": "<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\">\n\t\tMore ways to shop: <a href=\"/retail/\" data-analytics-title=\"find an apple store\">Find an Apple Store</a> or <a href=\"https://locate.apple.com/\" data-analytics-title=\"other retai",
+    "styles": {
+     "border-bottom-color": "rgba(0, 0, 0, 0.16)"
     }
    },
    "divider": {

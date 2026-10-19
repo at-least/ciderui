@@ -1,0 +1,76 @@
+{
+ "url": "https://www.apple.com/",
+ "finalUrl": "https://www.apple.com/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T09:06:23.006Z",
+ "widths": {
+  "390": {
+   "section.open": {
+    "html": "<div class=\"ac-gf-directory-column-section ac-gf-directory-column-expanded\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>\n\t\t\t\t\t<button class=\"ac-gf-",
+    "styles": {
+     "padding-bottom": "1px"
+    },
+    "box": {
+     "width": 366,
+     "height": 366
+    }
+   },
+   "list.open": {
+    "html": "<ul id=\"footer-directory-column-section-products\" class=\"ac-gf-directory-column-section-list\" role=\"list\">\n\t\t\t\t\t<li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/go",
+    "styles": {
+     "visibility": "visible",
+     "padding-top": "5px",
+     "padding-bottom": "16px",
+     "transition-property": "transform",
+     "transition-duration": "0.3s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 358,
+     "height": 329
+    }
+   },
+   "item.open": {
+    "html": "<li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\">Store</a></li>",
+    "styles": {
+     "margin-bottom": "0px",
+     "padding-top": "0px"
+    },
+    "box": {
+     "width": 358,
+     "height": 28
+    }
+   },
+   "link.open": {
+    "html": "<a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\">Store</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.72)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+     "text-underline-offset": "auto",
+     "display": "block",
+     "padding-top": "6px",
+     "padding-right": "14px",
+     "padding-bottom": "6px",
+     "padding-left": "14px"
+    },
+    "box": {
+     "width": 358,
+     "height": 28
+    }
+   },
+   "icon.open": {
+    "html": "<span class=\"ac-gf-directory-column-section-title-icon\" aria-hidden=\"true\"><svg class=\"footer-icon-svg\" width=\"11\" height=\"6\" viewBox=\"0 0 11 6\">\n\t<polyline data-footer-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linej",
+    "styles": {
+     "color": "rgba(0, 0, 0, 0.88)",
+     "transform": "none"
+    }
+   }
+  }
+ }
+}

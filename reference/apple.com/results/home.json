@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/",
  "finalUrl": "https://www.apple.com/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T06:50:18.781Z",
+ "date": "2026-10-19T09:05:25.153Z",
  "widths": {
   "390": {
    "type.none": {
@@ -2000,7 +2000,222 @@
      "line-height": "16.0005px",
      "font-weight": "400",
      "letter-spacing": "-0.12px",
-     "color": "rgba(0, 0, 0, 0.56)"
+     "color": "rgba(0, 0, 0, 0.56)",
+     "margin-top": "5px",
+     "margin-right": "0px"
+    }
+   },
+   "footer.directory": {
+    "html": "<nav class=\"ac-gf-directory with-5-columns\" aria-label=\"Apple Directory\" role=\"navigation\">\n\t\t<div class=\"ac-gf-directory-column\">\n\t\t\t<div class=\"ac-gf-directory-column-section\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<s",
+    "styles": {
+     "display": "flex",
+     "flex-direction": "column",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "padding-top": "20px"
+    },
+    "box": {
+     "width": 358,
+     "height": 427
+    }
+   },
+   "footer.column": {
+    "html": "<div class=\"ac-gf-directory-column\">\n\t\t\t<div class=\"ac-gf-directory-column-section\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>\n\t\t\t\t\t<button class",
+    "styles": {
+     "flex-grow": "0",
+     "flex-shrink": "1",
+     "flex-basis": "auto"
+    },
+    "box": {
+     "width": 358,
+     "height": 74
+    }
+   },
+   "footer.section-second": {
+    "html": "<div class=\"ac-gf-directory-column-section\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<span class=\"ac-gf-directory-column-section-title-text\">Apple Wallet</span>\n\t\t\t\t\t<button class=\"ac-gf-directory-column-section-title-but",
+    "styles": {
+     "padding-top": "0px"
+    }
+   },
+   "footer.title-text": {
+    "html": "<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>",
+    "styles": {
+     "margin-right": "20px",
+     "margin-bottom": "9.6px",
+     "display": "none"
+    }
+   },
+   "footer.footer": {
+    "html": "<section class=\"ac-gf-footer\">\n\t<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\">\n\t\tMore ways to shop: <a href=\"/retail/\" data-analytics-title=\"find an apple store\">Find an Apple Store</a> or <a href=\"https://locate.apple.com/\" d",
+    "styles": {
+     "padding-top": "17px",
+     "padding-bottom": "9px"
+    }
+   },
+   "footer.end": {
+    "html": "<div class=\"ac-gf-footer-end\">\n\t\t<div class=\"ac-gf-footer-locale ac-gf-footer-locale-small\">\n\t\t\t<a class=\"ac-gf-footer-locale-link\" href=\"/choose-country-region/\" title=\"Choose your country or region\" aria-label=\"United States. Choose your ",
+    "styles": {
+     "display": "block"
+    }
+   },
+   "footer.legal-links": {
+    "html": "<ul class=\"ac-gf-footer-legal-links\" role=\"list\">\n\t\t\t\t<li class=\"ac-gf-footer-legal-links-item\" role=\"listitem\">\n\t\t\t\t\t<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>\n\t\t\t\t</l",
+    "styles": {
+     "margin-top": "5px",
+     "margin-right": "0px"
+    }
+   },
+   "footer.legal-item": {
+    "html": "<li class=\"ac-gf-footer-legal-links-item\" role=\"listitem\">\n\t\t\t\t\t<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>\n\t\t\t\t</li>",
+    "styles": {
+     "display": "inline-block",
+     "margin-top": "5px",
+     "margin-right": "6px"
+    }
+   },
+   "footer.legal-rule": {
+    "html": "<li class=\"ac-gf-footer-legal-links-item\" role=\"listitem\">\n\t\t\t\t\t<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>\n\t\t\t\t</li>",
+    "styles": {
+     "content": "\"\"",
+     "width": "1px",
+     "height": "10px",
+     "background-color": "rgba(0, 0, 0, 0.48)",
+     "margin-top": "3px",
+     "position": "absolute",
+     "right": "-1px"
+    }
+   },
+   "footer.legal-link-box": {
+    "html": "<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>",
+    "styles": {
+     "padding-left": "9px",
+     "padding-right": "9px",
+     "margin-left": "-9px"
+    }
+   },
+   "footer.locale": {
+    "html": "<div class=\"ac-gf-footer-locale ac-gf-footer-locale-small\">\n\t\t\t<a class=\"ac-gf-footer-locale-link\" href=\"/choose-country-region/\" title=\"Choose your country or region\" aria-label=\"United States. Choose your country or region\" data-analytics",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.56)",
+     "margin-top": "5px",
+     "margin-left": "0px",
+     "float": "none",
+     "display": "block"
+    },
+    "box": {
+     "width": 358,
+     "height": 20,
+     "top": 27814.21875,
+     "left": 16
+    }
+   },
+   "footer.locale-link": {
+    "html": "<a class=\"ac-gf-footer-locale-link\" href=\"/choose-country-region/\" title=\"Choose your country or region\" aria-label=\"United States. Choose your country or region\" data-analytics-title=\"choose your country\">United States</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.72)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0.72)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "footer.section-phone": {
+    "html": "<div class=\"ac-gf-directory-column-section\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>\n\t\t\t\t\t<button class=\"ac-gf-directory-column-section-title-b",
+    "styles": {
+     "padding-left": "4px",
+     "padding-right": "4px",
+     "padding-bottom": "1px",
+     "margin-left": "-4px",
+     "position": "relative"
+    },
+    "box": {
+     "width": 366,
+     "height": 37
+    }
+   },
+   "footer.section-rule": {
+    "html": "<div class=\"ac-gf-directory-column-section\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>\n\t\t\t\t\t<button class=\"ac-gf-directory-column-section-title-b",
+    "styles": {
+     "content": "\"\"",
+     "position": "absolute",
+     "bottom": "0px",
+     "left": "4px",
+     "right": "4px",
+     "height": "1px",
+     "background-color": "rgba(0, 0, 0, 0.16)"
+    }
+   },
+   "footer.title-button": {
+    "html": "<button class=\"ac-gf-directory-column-section-title-button\" aria-expanded=\"false\" aria-controls=\"footer-directory-column-section-products\">\n\t\t\t\t\t\t<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>\n\t\t\t\t\t\t<span clas",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.88)",
+     "display": "block",
+     "padding-top": "10px",
+     "padding-bottom": "10px",
+     "width": "358px",
+     "text-align": "start",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 358,
+     "height": 36
+    }
+   },
+   "footer.title-icon": {
+    "html": "<span class=\"ac-gf-directory-column-section-title-icon\" aria-hidden=\"true\"><svg class=\"footer-icon-svg\" width=\"11\" height=\"6\" viewBox=\"0 0 11 6\">\n\t<polyline data-footer-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linej",
+    "styles": {
+     "color": "rgba(0, 0, 0, 0.88)",
+     "margin-top": "5px",
+     "display": "flex",
+     "position": "static",
+     "right": "auto",
+     "top": "auto"
+    },
+    "box": {
+     "width": 11,
+     "height": 6
+    }
+   },
+   "footer.list-closed": {
+    "html": "<ul id=\"footer-directory-column-section-products\" class=\"ac-gf-directory-column-section-list\" role=\"list\">\n\t\t\t\t\t<li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/go",
+    "styles": {
+     "visibility": "hidden",
+     "height": "308px",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 366,
+     "height": 329
     }
    },
    "menu.open": {
@@ -2685,36 +2900,6 @@
       "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
       "from": "1",
       "to": "0.2"
-     },
-     {
-      "kind": "CSSTransition",
-      "what": "color",
-      "on": "a.globalnav-link.globalnav-submenu-trigger-link.globalnav-link-ipad",
-      "duration": 320,
-      "delay": 0,
-      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
-      "from": "rgb(51, 51, 54)",
-      "to": "rgb(0, 0, 0)"
-     },
-     {
-      "kind": "CSSTransition",
-      "what": "visibility",
-      "on": "span.globalnav-link-chevron",
-      "duration": 240,
-      "delay": 0,
-      "easing": "steps(1, start)",
-      "from": "hidden",
-      "to": "visible"
-     },
-     {
-      "kind": "CSSAnimation",
-      "what": "globalnav-chevron-slide-in-hover",
-      "on": "span.globalnav-link-chevron",
-      "duration": 240,
-      "delay": 0,
-      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
-      "from": "translate(-4px)",
-      "to": "translate(0px)"
      }
     ]
    },
@@ -4935,7 +5120,168 @@
      "line-height": "16.0005px",
      "font-weight": "400",
      "letter-spacing": "-0.12px",
-     "color": "rgba(0, 0, 0, 0.56)"
+     "color": "rgba(0, 0, 0, 0.56)",
+     "margin-top": "5px",
+     "margin-right": "0px"
+    }
+   },
+   "footer.directory": {
+    "html": "<nav class=\"ac-gf-directory with-5-columns\" aria-label=\"Apple Directory\" role=\"navigation\">\n\t\t<div class=\"ac-gf-directory-column\">\n\t\t\t<div class=\"ac-gf-directory-column-section\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<s",
+    "styles": {
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "padding-top": "20px"
+    },
+    "box": {
+     "width": 856,
+     "height": 459.9375
+    }
+   },
+   "footer.column": {
+    "html": "<div class=\"ac-gf-directory-column\">\n\t\t\t<div class=\"ac-gf-directory-column-section\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>\n\t\t\t\t\t<button class",
+    "styles": {
+     "flex-grow": "0",
+     "flex-shrink": "1",
+     "flex-basis": "25%"
+    },
+    "box": {
+     "width": 171.203125,
+     "height": 439.9375
+    }
+   },
+   "footer.section-second": {
+    "html": "<div class=\"ac-gf-directory-column-section\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<span class=\"ac-gf-directory-column-section-title-text\">Apple Wallet</span>\n\t\t\t\t\t<button class=\"ac-gf-directory-column-section-title-but",
+    "styles": {
+     "padding-top": "24px"
+    }
+   },
+   "footer.title-text": {
+    "html": "<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>",
+    "styles": {
+     "margin-right": "20px",
+     "margin-bottom": "9.6px",
+     "display": "block"
+    }
+   },
+   "footer.list": {
+    "html": "<ul id=\"footer-directory-column-section-products\" class=\"ac-gf-directory-column-section-list\" role=\"list\">\n\t\t\t\t\t<li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/go",
+    "styles": {
+     "margin-right": "20px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    }
+   },
+   "footer.item": {
+    "html": "<li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\">Store</a></li>",
+    "styles": {
+     "margin-bottom": "9.6px"
+    }
+   },
+   "footer.item-last": {
+    "html": "<li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/giftcards\" data-analytics-title=\"gift cards\">Gift Cards</a></li>",
+    "styles": {
+     "margin-bottom": "0px"
+    }
+   },
+   "footer.footer": {
+    "html": "<section class=\"ac-gf-footer\">\n\t<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\">\n\t\tMore ways to shop: <a href=\"/retail/\" data-analytics-title=\"find an apple store\">Find an Apple Store</a> or <a href=\"https://locate.apple.com/\" d",
+    "styles": {
+     "padding-top": "37px",
+     "padding-bottom": "11px"
+    }
+   },
+   "footer.end": {
+    "html": "<div class=\"ac-gf-footer-end\">\n\t\t<div class=\"ac-gf-footer-locale ac-gf-footer-locale-small\">\n\t\t\t<a class=\"ac-gf-footer-locale-link\" href=\"/choose-country-region/\" title=\"Choose your country or region\" aria-label=\"United States. Choose your ",
+    "styles": {
+     "display": "flex"
+    }
+   },
+   "footer.legal-links": {
+    "html": "<ul class=\"ac-gf-footer-legal-links\" role=\"list\">\n\t\t\t\t<li class=\"ac-gf-footer-legal-links-item\" role=\"listitem\">\n\t\t\t\t\t<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>\n\t\t\t\t</l",
+    "styles": {
+     "margin-top": "5px",
+     "margin-right": "0px"
+    }
+   },
+   "footer.legal-item": {
+    "html": "<li class=\"ac-gf-footer-legal-links-item\" role=\"listitem\">\n\t\t\t\t\t<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>\n\t\t\t\t</li>",
+    "styles": {
+     "display": "inline-block",
+     "margin-top": "4px",
+     "margin-right": "6px"
+    }
+   },
+   "footer.legal-rule": {
+    "html": "<li class=\"ac-gf-footer-legal-links-item\" role=\"listitem\">\n\t\t\t\t\t<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>\n\t\t\t\t</li>",
+    "styles": {
+     "content": "\"\"",
+     "width": "1px",
+     "height": "10px",
+     "background-color": "rgba(0, 0, 0, 0.48)",
+     "margin-top": "3px",
+     "position": "absolute",
+     "right": "-1px"
+    }
+   },
+   "footer.legal-link-box": {
+    "html": "<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>",
+    "styles": {
+     "padding-left": "9px",
+     "padding-right": "9px",
+     "margin-left": "-9px"
+    }
+   },
+   "footer.locale": {
+    "html": "<div class=\"ac-gf-footer-locale ac-gf-footer-locale-small\">\n\t\t\t<a class=\"ac-gf-footer-locale-link\" href=\"/choose-country-region/\" title=\"Choose your country or region\" aria-label=\"United States. Choose your country or region\" data-analytics",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.56)",
+     "margin-top": "5px",
+     "margin-left": "0px",
+     "float": "none",
+     "display": "none"
+    },
+    "box": {
+     "width": 0,
+     "height": 0,
+     "top": 0,
+     "left": 0
+    }
+   },
+   "footer.locale-link": {
+    "html": "<a class=\"ac-gf-footer-locale-link\" href=\"/choose-country-region/\" title=\"Choose your country or region\" aria-label=\"United States. Choose your country or region\" data-analytics-title=\"choose your country\">United States</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.72)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0.72)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+      "text-underline-offset": "auto"
+     }
     }
    }
   },
@@ -5670,7 +6016,7 @@
     }
    },
    "hero.subhead": {
-    "html": "<p class=\"tile-subhead typography-tile-subhead\"><span class=\"visuallyhidden\">Hello, hello.</span><span class=\"subhead-left\" aria-hidden=\"true\" style=\"transform: matrix(1, 0, 0, 1, 0, 0);\"><span class=\"subhead-end\" style=\"opacity: 1;\">Hello,",
+    "html": "<p class=\"tile-subhead typography-tile-subhead\"><span class=\"visuallyhidden\">Hello, hello.</span><span class=\"subhead-left\" aria-hidden=\"true\" style=\"transform: matrix(1, 0, 0, 1, 0.12398, 0);\"><span class=\"subhead-end\" style=\"opacity: 1;\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -6811,7 +7157,168 @@
      "line-height": "16.0005px",
      "font-weight": "400",
      "letter-spacing": "-0.12px",
-     "color": "rgba(0, 0, 0, 0.56)"
+     "color": "rgba(0, 0, 0, 0.56)",
+     "margin-top": "5px",
+     "margin-right": "30px"
+    }
+   },
+   "footer.directory": {
+    "html": "<nav class=\"ac-gf-directory with-5-columns\" aria-label=\"Apple Directory\" role=\"navigation\">\n\t\t<div class=\"ac-gf-directory-column\">\n\t\t\t<div class=\"ac-gf-directory-column-section\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<s",
+    "styles": {
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "padding-top": "20px"
+    },
+    "box": {
+     "width": 980,
+     "height": 459.90625
+    }
+   },
+   "footer.column": {
+    "html": "<div class=\"ac-gf-directory-column\">\n\t\t\t<div class=\"ac-gf-directory-column-section\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>\n\t\t\t\t\t<button class",
+    "styles": {
+     "flex-grow": "0",
+     "flex-shrink": "1",
+     "flex-basis": "25%"
+    },
+    "box": {
+     "width": 196,
+     "height": 439.90625
+    }
+   },
+   "footer.section-second": {
+    "html": "<div class=\"ac-gf-directory-column-section\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<span class=\"ac-gf-directory-column-section-title-text\">Apple Wallet</span>\n\t\t\t\t\t<button class=\"ac-gf-directory-column-section-title-but",
+    "styles": {
+     "padding-top": "24px"
+    }
+   },
+   "footer.title-text": {
+    "html": "<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>",
+    "styles": {
+     "margin-right": "20px",
+     "margin-bottom": "9.6px",
+     "display": "block"
+    }
+   },
+   "footer.list": {
+    "html": "<ul id=\"footer-directory-column-section-products\" class=\"ac-gf-directory-column-section-list\" role=\"list\">\n\t\t\t\t\t<li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/go",
+    "styles": {
+     "margin-right": "20px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    }
+   },
+   "footer.item": {
+    "html": "<li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\">Store</a></li>",
+    "styles": {
+     "margin-bottom": "9.6px"
+    }
+   },
+   "footer.item-last": {
+    "html": "<li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/giftcards\" data-analytics-title=\"gift cards\">Gift Cards</a></li>",
+    "styles": {
+     "margin-bottom": "0px"
+    }
+   },
+   "footer.footer": {
+    "html": "<section class=\"ac-gf-footer\">\n\t<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\">\n\t\tMore ways to shop: <a href=\"/retail/\" data-analytics-title=\"find an apple store\">Find an Apple Store</a> or <a href=\"https://locate.apple.com/\" d",
+    "styles": {
+     "padding-top": "37px",
+     "padding-bottom": "11px"
+    }
+   },
+   "footer.end": {
+    "html": "<div class=\"ac-gf-footer-end\">\n\t\t<div class=\"ac-gf-footer-locale ac-gf-footer-locale-small\">\n\t\t\t<a class=\"ac-gf-footer-locale-link\" href=\"/choose-country-region/\" title=\"Choose your country or region\" aria-label=\"United States. Choose your ",
+    "styles": {
+     "display": "flex"
+    }
+   },
+   "footer.legal-links": {
+    "html": "<ul class=\"ac-gf-footer-legal-links\" role=\"list\">\n\t\t\t\t<li class=\"ac-gf-footer-legal-links-item\" role=\"listitem\">\n\t\t\t\t\t<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>\n\t\t\t\t</l",
+    "styles": {
+     "margin-top": "5px",
+     "margin-right": "30px"
+    }
+   },
+   "footer.legal-item": {
+    "html": "<li class=\"ac-gf-footer-legal-links-item\" role=\"listitem\">\n\t\t\t\t\t<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>\n\t\t\t\t</li>",
+    "styles": {
+     "display": "inline-block",
+     "margin-top": "5px",
+     "margin-right": "6px"
+    }
+   },
+   "footer.legal-rule": {
+    "html": "<li class=\"ac-gf-footer-legal-links-item\" role=\"listitem\">\n\t\t\t\t\t<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>\n\t\t\t\t</li>",
+    "styles": {
+     "content": "\"\"",
+     "width": "1px",
+     "height": "10px",
+     "background-color": "rgba(0, 0, 0, 0.48)",
+     "margin-top": "3px",
+     "position": "absolute",
+     "right": "-1px"
+    }
+   },
+   "footer.legal-link-box": {
+    "html": "<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>",
+    "styles": {
+     "padding-left": "9px",
+     "padding-right": "9px",
+     "margin-left": "-9px"
+    }
+   },
+   "footer.locale": {
+    "html": "<div class=\"ac-gf-footer-locale ac-gf-footer-locale-small\">\n\t\t\t<a class=\"ac-gf-footer-locale-link\" href=\"/choose-country-region/\" title=\"Choose your country or region\" aria-label=\"United States. Choose your country or region\" data-analytics",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.56)",
+     "margin-top": "5px",
+     "margin-left": "0px",
+     "float": "none",
+     "display": "none"
+    },
+    "box": {
+     "width": 0,
+     "height": 0,
+     "top": 0,
+     "left": 0
+    }
+   },
+   "footer.locale-link": {
+    "html": "<a class=\"ac-gf-footer-locale-link\" href=\"/choose-country-region/\" title=\"Choose your country or region\" aria-label=\"United States. Choose your country or region\" data-analytics-title=\"choose your country\">United States</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.72)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0.72)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+      "text-underline-offset": "auto"
+     }
     }
    }
   },
@@ -8687,7 +9194,168 @@
      "line-height": "16.0005px",
      "font-weight": "400",
      "letter-spacing": "-0.12px",
-     "color": "rgba(0, 0, 0, 0.56)"
+     "color": "rgba(0, 0, 0, 0.56)",
+     "margin-top": "5px",
+     "margin-right": "30px"
+    }
+   },
+   "footer.directory": {
+    "html": "<nav class=\"ac-gf-directory with-5-columns\" aria-label=\"Apple Directory\" role=\"navigation\">\n\t\t<div class=\"ac-gf-directory-column\">\n\t\t\t<div class=\"ac-gf-directory-column-section\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<s",
+    "styles": {
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "padding-top": "20px"
+    },
+    "box": {
+     "width": 980,
+     "height": 459.90625
+    }
+   },
+   "footer.column": {
+    "html": "<div class=\"ac-gf-directory-column\">\n\t\t\t<div class=\"ac-gf-directory-column-section\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>\n\t\t\t\t\t<button class",
+    "styles": {
+     "flex-grow": "0",
+     "flex-shrink": "1",
+     "flex-basis": "25%"
+    },
+    "box": {
+     "width": 196,
+     "height": 439.90625
+    }
+   },
+   "footer.section-second": {
+    "html": "<div class=\"ac-gf-directory-column-section\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<span class=\"ac-gf-directory-column-section-title-text\">Apple Wallet</span>\n\t\t\t\t\t<button class=\"ac-gf-directory-column-section-title-but",
+    "styles": {
+     "padding-top": "24px"
+    }
+   },
+   "footer.title-text": {
+    "html": "<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>",
+    "styles": {
+     "margin-right": "20px",
+     "margin-bottom": "9.6px",
+     "display": "block"
+    }
+   },
+   "footer.list": {
+    "html": "<ul id=\"footer-directory-column-section-products\" class=\"ac-gf-directory-column-section-list\" role=\"list\">\n\t\t\t\t\t<li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/go",
+    "styles": {
+     "margin-right": "20px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    }
+   },
+   "footer.item": {
+    "html": "<li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\">Store</a></li>",
+    "styles": {
+     "margin-bottom": "9.6px"
+    }
+   },
+   "footer.item-last": {
+    "html": "<li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/giftcards\" data-analytics-title=\"gift cards\">Gift Cards</a></li>",
+    "styles": {
+     "margin-bottom": "0px"
+    }
+   },
+   "footer.footer": {
+    "html": "<section class=\"ac-gf-footer\">\n\t<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\">\n\t\tMore ways to shop: <a href=\"/retail/\" data-analytics-title=\"find an apple store\">Find an Apple Store</a> or <a href=\"https://locate.apple.com/\" d",
+    "styles": {
+     "padding-top": "37px",
+     "padding-bottom": "11px"
+    }
+   },
+   "footer.end": {
+    "html": "<div class=\"ac-gf-footer-end\">\n\t\t<div class=\"ac-gf-footer-locale ac-gf-footer-locale-small\">\n\t\t\t<a class=\"ac-gf-footer-locale-link\" href=\"/choose-country-region/\" title=\"Choose your country or region\" aria-label=\"United States. Choose your ",
+    "styles": {
+     "display": "flex"
+    }
+   },
+   "footer.legal-links": {
+    "html": "<ul class=\"ac-gf-footer-legal-links\" role=\"list\">\n\t\t\t\t<li class=\"ac-gf-footer-legal-links-item\" role=\"listitem\">\n\t\t\t\t\t<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>\n\t\t\t\t</l",
+    "styles": {
+     "margin-top": "5px",
+     "margin-right": "30px"
+    }
+   },
+   "footer.legal-item": {
+    "html": "<li class=\"ac-gf-footer-legal-links-item\" role=\"listitem\">\n\t\t\t\t\t<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>\n\t\t\t\t</li>",
+    "styles": {
+     "display": "inline-block",
+     "margin-top": "5px",
+     "margin-right": "6px"
+    }
+   },
+   "footer.legal-rule": {
+    "html": "<li class=\"ac-gf-footer-legal-links-item\" role=\"listitem\">\n\t\t\t\t\t<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>\n\t\t\t\t</li>",
+    "styles": {
+     "content": "\"\"",
+     "width": "1px",
+     "height": "10px",
+     "background-color": "rgba(0, 0, 0, 0.48)",
+     "margin-top": "3px",
+     "position": "absolute",
+     "right": "-1px"
+    }
+   },
+   "footer.legal-link-box": {
+    "html": "<a class=\"ac-gf-footer-legal-link\" href=\"/legal/privacy/\" data-analytics-title=\"privacy policy\">Privacy Policy</a>",
+    "styles": {
+     "padding-left": "9px",
+     "padding-right": "9px",
+     "margin-left": "-9px"
+    }
+   },
+   "footer.locale": {
+    "html": "<div class=\"ac-gf-footer-locale ac-gf-footer-locale-small\">\n\t\t\t<a class=\"ac-gf-footer-locale-link\" href=\"/choose-country-region/\" title=\"Choose your country or region\" aria-label=\"United States. Choose your country or region\" data-analytics",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.56)",
+     "margin-top": "5px",
+     "margin-left": "0px",
+     "float": "none",
+     "display": "none"
+    },
+    "box": {
+     "width": 0,
+     "height": 0,
+     "top": 0,
+     "left": 0
+    }
+   },
+   "footer.locale-link": {
+    "html": "<a class=\"ac-gf-footer-locale-link\" href=\"/choose-country-region/\" title=\"Choose your country or region\" aria-label=\"United States. Choose your country or region\" data-analytics-title=\"choose your country\">United States</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.72)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0.72)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+      "text-underline-offset": "auto"
+     }
     }
    }
   }
