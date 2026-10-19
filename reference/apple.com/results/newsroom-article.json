@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/",
  "finalUrl": "https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T12:22:03.536Z",
+ "date": "2026-10-19T12:27:01.490Z",
  "widths": {
   "390": {
    "page.body": {
@@ -331,6 +331,22 @@
      "text-align": "start"
     }
    },
+   "figure.description": {
+    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "styles": {
+     "width": "341.25px",
+     "max-width": "none",
+     "margin-left": "24.375px",
+     "margin-right": "24.375px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "margin-top": "12px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 80
+    }
+   },
    "figure.inline": {
     "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"Media, An iPhone 18 Pro screen shows Find My locating a Siri Remote, with the message “80 ft ahead.”\" style=\"--nr-animation",
     "styles": {
@@ -600,7 +616,7 @@
     },
     "box": {
      "width": 341.25,
-     "height": 507
+     "height": 528
     }
    },
    "related.item": {
@@ -711,7 +727,8 @@
      "cursor": "pointer",
      "vertical-align": "baseline",
      "opacity": "1",
-     "text-transform": "uppercase"
+     "text-transform": "uppercase",
+     "margin-bottom": "4px"
     }
    },
    "related.title": {
@@ -1085,6 +1102,22 @@
      "text-align": "start"
     }
    },
+   "figure.description": {
+    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "styles": {
+     "width": "362.25px",
+     "max-width": "none",
+     "margin-left": "25.875px",
+     "margin-right": "25.875px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "margin-top": "12px"
+    },
+    "box": {
+     "width": 362.25,
+     "height": 80
+    }
+   },
    "figure.inline": {
     "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"Media, An iPhone 18 Pro screen shows Find My locating a Siri Remote, with the message “80 ft ahead.”\" style=\"--nr-animation",
     "styles": {
@@ -1354,7 +1387,7 @@
     },
     "box": {
      "width": 362.25,
-     "height": 491
+     "height": 507
     }
    },
    "related.item": {
@@ -1465,7 +1498,8 @@
      "cursor": "pointer",
      "vertical-align": "baseline",
      "opacity": "1",
-     "text-transform": "uppercase"
+     "text-transform": "uppercase",
+     "margin-bottom": "4px"
     }
    },
    "related.title": {
@@ -1839,6 +1873,22 @@
      "text-align": "start"
     }
    },
+   "figure.description": {
+    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "styles": {
+     "width": "576px",
+     "max-width": "none",
+     "margin-left": "58px",
+     "margin-right": "58px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "margin-top": "12px"
+    },
+    "box": {
+     "width": 576,
+     "height": 48
+    }
+   },
    "figure.inline": {
     "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"Media, An iPhone 18 Pro screen shows Find My locating a Siri Remote, with the message “80 ft ahead.”\" style=\"--nr-animation",
     "styles": {
@@ -2219,7 +2269,8 @@
      "cursor": "pointer",
      "vertical-align": "baseline",
      "opacity": "1",
-     "text-transform": "uppercase"
+     "text-transform": "uppercase",
+     "margin-bottom": "4px"
     }
    },
    "related.title": {
@@ -2593,6 +2644,22 @@
      "text-align": "start"
     }
    },
+   "figure.description": {
+    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "styles": {
+     "width": "576px",
+     "max-width": "none",
+     "margin-left": "58px",
+     "margin-right": "58px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "margin-top": "12px"
+    },
+    "box": {
+     "width": 576,
+     "height": 48
+    }
+   },
    "figure.inline": {
     "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"Media, An iPhone 18 Pro screen shows Find My locating a Siri Remote, with the message “80 ft ahead.”\" style=\"--nr-animation",
     "styles": {
@@ -2973,7 +3040,8 @@
      "cursor": "pointer",
      "vertical-align": "baseline",
      "opacity": "1",
-     "text-transform": "uppercase"
+     "text-transform": "uppercase",
+     "margin-bottom": "4px"
     }
    },
    "related.title": {
@@ -3345,6 +3413,22 @@
      "padding-top": "0px",
      "padding-bottom": "0px",
      "text-align": "start"
+    }
+   },
+   "figure.description": {
+    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "styles": {
+     "width": "576px",
+     "max-width": "none",
+     "margin-left": "58px",
+     "margin-right": "58px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "margin-top": "12px"
+    },
+    "box": {
+     "width": 576,
+     "height": 48
     }
    },
    "figure.inline": {
@@ -3727,7 +3811,8 @@
      "cursor": "pointer",
      "vertical-align": "baseline",
      "opacity": "1",
-     "text-transform": "uppercase"
+     "text-transform": "uppercase",
+     "margin-bottom": "4px"
     }
    },
    "related.title": {
@@ -4101,6 +4186,22 @@
      "text-align": "start"
     }
    },
+   "figure.description": {
+    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "styles": {
+     "width": "653px",
+     "max-width": "none",
+     "margin-left": "163.5px",
+     "margin-right": "163.5px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "margin-top": "16px"
+    },
+    "box": {
+     "width": 653,
+     "height": 48
+    }
+   },
    "figure.inline": {
     "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"Media, An iPhone 18 Pro screen shows Find My locating a Siri Remote, with the message “80 ft ahead.”\" style=\"--nr-animation",
     "styles": {
@@ -4481,7 +4582,8 @@
      "cursor": "pointer",
      "vertical-align": "baseline",
      "opacity": "1",
-     "text-transform": "uppercase"
+     "text-transform": "uppercase",
+     "margin-bottom": "4px"
     }
    },
    "related.title": {
@@ -4855,6 +4957,22 @@
      "text-align": "start"
     }
    },
+   "figure.description": {
+    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "styles": {
+     "width": "653px",
+     "max-width": "none",
+     "margin-left": "163.5px",
+     "margin-right": "163.5px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "margin-top": "16px"
+    },
+    "box": {
+     "width": 653,
+     "height": 48
+    }
+   },
    "figure.inline": {
     "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"Media, An iPhone 18 Pro screen shows Find My locating a Siri Remote, with the message “80 ft ahead.”\" style=\"--nr-animation",
     "styles": {
@@ -5235,7 +5353,8 @@
      "cursor": "pointer",
      "vertical-align": "baseline",
      "opacity": "1",
-     "text-transform": "uppercase"
+     "text-transform": "uppercase",
+     "margin-bottom": "4px"
     }
    },
    "related.title": {
@@ -5607,6 +5726,22 @@
      "padding-top": "0px",
      "padding-bottom": "0px",
      "text-align": "start"
+    }
+   },
+   "figure.description": {
+    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "styles": {
+     "width": "653px",
+     "max-width": "none",
+     "margin-left": "163.5px",
+     "margin-right": "163.5px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "margin-top": "16px"
+    },
+    "box": {
+     "width": 653,
+     "height": 48
     }
    },
    "figure.inline": {
@@ -5989,7 +6124,8 @@
      "cursor": "pointer",
      "vertical-align": "baseline",
      "opacity": "1",
-     "text-transform": "uppercase"
+     "text-transform": "uppercase",
+     "margin-bottom": "4px"
     }
    },
    "related.title": {

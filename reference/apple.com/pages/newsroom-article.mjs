@@ -44,6 +44,8 @@ export default {
     { name: 'figure', select: 'figure.image-fullbleed', props: [...COLUMN, 'margin-top', 'margin-bottom'], box: true },
     { name: 'figure.img', select: 'figure.image-fullbleed img.picture-image', props: ['max-width', 'border-top-left-radius'], box: true },
     { name: 'figure.caption', select: 'figure.image-fullbleed .image-caption', props: [...TYPE, ...SPACE, 'text-align'] },
+    // the caption's room: the text's column, under the picture
+    { name: 'figure.description', select: 'figure.image-fullbleed .image-description', props: [...COLUMN, 'margin-top'], box: true },
     { name: 'figure.inline', select: 'figure.image-inline', props: [...COLUMN, 'margin-top', 'margin-bottom'], box: true },
     // the copy: a paragraph of it, a paragraph a page adds there, a link, a
     // footnote's mark, bold, a subhead and its strong
@@ -70,7 +72,7 @@ export default {
     { name: 'related.item', select: '.article-list__item', props: [...BOX, 'border-bottom-width'], box: true },
     { name: 'related.link', select: '.article-list__item__link', props: [...FLEX, ...LINK, 'cursor'], box: true, states: ['hover'] },
     { name: 'related.img', select: '.article-list__item__img-wrapper', props: [...BOX, 'width', 'height', 'flex-shrink'], box: true },
-    { name: 'related.category', select: '.article-list__item__category', props: [...TYPE, ...TEXT, 'text-transform'] },
+    { name: 'related.category', select: '.article-list__item__category', props: [...TYPE, ...TEXT, 'text-transform', 'margin-bottom'] },
     { name: 'related.title', select: '.article-list__item__title', props: [...TYPE, 'margin-top', 'margin-bottom', ...LINK], states: ['hover'] },
     { name: 'related.date', select: '.article-list__item__date', props: [...TYPE, 'margin-top'] },
   ],
