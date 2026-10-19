@@ -70,7 +70,7 @@ The fills are the accent's and the neutral's (above); a secondary button is the 
 
 **Fields** (`signin:field.*`). 56px tall, `border-radius: 12px`, a 1px `#86868b` border on `rgba(255,255,255,.8)`, 17px text, 16px in from the left; focused, a 2px `#0071e3` border (15px in, the box unchanged). The label is the placeholder at 17px `#6e6e73` until the field is focused, then 12px at the field's top (`top` 18px to 10px, in 0.125s). The checkbox is 16px, a 1px `#86868b` border, `border-radius: 3px`.
 
-**Option tiles and swatches** (`buy:*`). An option is a label on a radio: `border-radius: 12px`, a 1px `#86868b` border, 15px in, on `rgba(255,255,255,.8)`; checked, a 2px `#0071e3` border, 14px in, the box unchanged; focused, the focus ring. A color swatch is a 28px circle in a 36px ring, 2px of `#0071e3` when checked.
+**Option tiles and swatches** (`buy:*`; the checked ones, `buy:option.checked` and `buy:swatch.checked*`, are apple.com's classes on a checked copy the probe adds beside the page's own, which is not checked until clicked). An option is a label on a radio: `border-radius: 12px`, a 1px `#86868b` border, 15px in, on `rgba(255,255,255,.8)`; checked, a 2px `#0071e3` border, 14px in, the box unchanged; focused, the focus ring. A color swatch is a 28px circle in a 36px ring, 2px of `#0071e3` when checked.
 
 **Tiles and cards.** The home page's tiles are square-cornered, on `#f5f5f7` or `#000` (`home:hero.tile`, `home:tile.dark`), 692px tall from 1069px; the product page's rounded tiles `border-radius: 28px` (`product:tile.rounded`); the store's cards `border-radius: 18px` with `box-shadow: 2px 4px 12px rgba(0,0,0,.08)`, hovered `2px 4px 16px rgba(0,0,0,.16)` and `scale(1.01)` in 0.3s (`store:card`).
 

@@ -30,7 +30,7 @@ Every component follows these.
 
 1. **One component, one directory.** `components/<name>/<name>.css`, in Tailwind's `components` layer, so a utility on the same element always wins (`class="cui-btn px-8"`); `examples/<id>.html`, the canonical markup, which the crate's tests render and the cases measure; `<name>.test.mjs`, its proof; `golden.json`, its recorded values. Nothing is unlayered; nothing uses `!important`.
 
-2. **The class says what it is; what varies is an attribute.** The block is `cui-<name>`, a part `cui-<name>-<part>`. A mutually exclusive axis is `data-variant` (`data-variant="secondary"`, `"neutral"`) or `data-size` (`sm`, `lg`, `xl`); an orthogonal switch is a class; a state is the attribute the markup carries for assistive technology anyway (`aria-current`, `aria-invalid`, `aria-expanded`, `:checked`, `:disabled`, `[open]`) or `data-state` where none says it. A variant's rule is `.cui-x[data-variant="y"]`, so a state one attribute more wins over every variant whatever the order.
+2. **The class says what it is; what varies is an attribute.** The block is `cui-<name>`, a part `cui-<name>-<part>`. A mutually exclusive axis is `data-variant` (`data-variant="secondary"`, `"neutral"`) or `data-size` (`sm`, `lg`, `xl`); an orthogonal switch is a class; a state is what the markup carries anyway: an ARIA attribute (`aria-current`, `aria-invalid`, `aria-expanded`), a control's own state (`checked`, `disabled`, read as `:checked` and `:disabled`), `[open]`, or `data-state` where none says it. A variant's rule is `.cui-x[data-variant="y"]`, so a state one attribute more wins over every variant whatever the order.
 
 3. **Component-local variables.** The block sets its own `--cui-<name>-*` from the contract; a variant overrides the locals and nothing else, so a component nested in another keeps its colors and recoloring one block is one rule on it.
 
@@ -48,7 +48,7 @@ Every component follows these.
 
 10. **apple.com's motion, through the tokens.** No button transitions its colors (apple.com's 0s, every button measured); the global nav's links fade their color in 0.32s `cubic-bezier(.4,0,.6,1)`; a paddle in 0.1s linear; a card's shadow and scale in 0.3s; a field's label in 0.125s. `base.css` neutralizes every transition and animation under `prefers-reduced-motion`.
 
-11. **Dark comes through the tokens, set on any element.** Every color is a `light-dark()` pair declared once on `:root`; `cui-dark` on an element sets `color-scheme: dark` and every pair inside it resolves dark, `cui-light` inside it light again (measured in Safari 27.0.1, Chrome 155 and Chromium 151 and on the iOS 26.5 simulator, `reference/scheme/`). On `<html>` it darkens the page, as apple.com's product pages are. There is no automatic dark mode: apple.com has none.
+11. **Dark comes through the tokens, set on any element.** Every color is a `light-dark()` pair declared once on `:root`; `cui-dark` on an element sets `color-scheme: dark` and every pair inside it resolves dark, `cui-light` inside it light again (measured in Safari 27.0.1, Chrome 155 and Chromium 151 and on the iOS 26.5 simulator, `reference/scheme/`). On `<html>` it darkens the whole page; apple.com's dark product page also clears its global nav over the hero (`product:nav`: no ground, no material), which is the global nav's own treatment, built with it, not the scheme's. There is no automatic dark mode: apple.com has none.
 
 12. **Icons are inline SVG**, from the crate, in `currentColor`. apple.com draws its chevrons and plus signs with its own icon font (`SF Pro Icons`: `product:link.more-icon`, `buy:accordion.icon`), which is Apple's; ciderui draws them as SVG, so a page needs no font and no `data:` image for them (vpkit's decision 13).
 
@@ -79,7 +79,7 @@ Every component follows these.
 
 Their contrast, computed (WCAG 2): `text` 16.8:1 on `bg` and 15.5:1 on `bg-alt` (dark: 19.3:1, 15.5:1); `text-2` 5.1:1 and 4.7:1 (dark: 5.8:1, 4.7:1); `link` 5.6:1 and 5.1:1 (dark: 7.0:1, 5.6:1); white on `accent` 4.7:1, on `accent-hover` 4.5:1, on `accent-active` 4.9:1; `border` 3.6:1 on `bg` and 3.3:1 on `bg-alt` (dark: 4.1:1, 3.3:1); `tag` 5.5:1. apple.com's dark secondary text, `#6e6e73` (the product page's stat captions), is 4.1:1 on black and 3.3:1 on `#1d1d1f`, below 4.5:1, so the contract's dark `text-2` is `#86868b` (5.8:1 and 4.7:1) and apple.com's `#6e6e73` is dark `text-3` and `border` (decision 6). The token test holds these minimums on both sides: body and secondary text 4.5:1 on `bg` and `bg-alt`, `text-3` and `border` 3:1, white 4.5:1 on the accent's three grounds.
 
-The accent family is the one place a site restyles ciderui: a site may redefine `accent` and its two steps (and `link`), and the token test holds its fill to white at 4.5:1. There is no theme gallery: apple.com has one palette.
+There is no theme gallery: apple.com has one palette. A site that redefines `accent` and its two steps (and `link`) supplies values already fitted: the token test fails a fill that does not take white at 4.5:1, and apple.com's own hover ground is at 4.51:1, so a color picked by eye will usually fail; ciderui has no fitter (vpkit's `fit-stock`) until a site needs one.
 
 Not themed, in tokens.css too:
 
@@ -113,10 +113,11 @@ Not themed, in tokens.css too:
 | `cui-label` | 24/28 | 21/25 | 600 |
 | `cui-quote` | 40/48 | 28/36 | 600 |
 | `cui-quote-reduced` | 32/40 | 24/32 | 400 |
+| `cui-manifesto` | 32/40 | 24/32 | 600 |
 | `cui-intro-elevated` | 24/32 | 21/29 | 400 |
 | `cui-intro` | 21/29 | 19/27 | 400 |
 | `cui-tout` | 19/23 | 19/23 | 600 |
-| `cui-body` | 17/25 | 17/25 | 400 |
+| `cui-body` | 17/25 | 17/25 | 400 (the page's body text: the store defines no `t-body`) |
 | `cui-body-tight` | 17/21 | 17/21 | 400 |
 | `cui-body-reduced` | 14/20 | 14/20 | 400 |
 | `cui-body-reduced-tight` | 14/18 | 14/18 | 400 |
@@ -158,8 +159,8 @@ What apple.com's pages are made of, from the measurements, as the components to 
 | `cui-gallery` | a gallery's scroller, its paddles (36px, 56px) and its dots (8px, the current a 32px pill) | `product:paddle*`, `store:shelf.paddle`, `home:gallery.*` |
 | `cui-field` | the 56px text field and its floating label | `signin:field*` |
 | `cui-checkbox` | the 16px checkbox | `signin:checkbox*` |
-| `cui-option` | an option on a radio: 12px, its edge, checked, focused | `buy:option*` |
-| `cui-swatch` | a color swatch, 28px in its 36px ring | `buy:swatch*` |
+| `cui-option` | an option on a radio: 12px, its edge, checked, focused | `buy:option*` (checked: apple.com's classes on a checked copy the probe adds, `buy:option.checked`) |
+| `cui-swatch` | a color swatch, 28px in its 36px ring | `buy:swatch*` (checked: the same, `buy:swatch.checked*`) |
 | `cui-accordion` | an accordion on `<details>`, its rule and question | `bag:accordion*` |
 | `cui-quicklinks`, `cui-productnav` | the store's row of pill links, its row of product images | `store:quicklink`, `store:productnav*` |
 | `cui-footer` | the footer: its directory, its rules, its legal line | `home:footer*` |
@@ -169,7 +170,7 @@ Not measured yet: the modals, the search field open, the checkout's forms (not r
 
 ## The crate
 
-`rust/` is the crate `ciderui`, for a site that renders with hypertext (0.12, as vpkit's apps do):
+`rust/` is the crate `ciderui`, for a site that renders with hypertext (0.12.1, as vpkit's apps do; the newest on crates.io on 2026-10-19):
 
 - hypertext components for the markup that is more than a class on one element: the global nav, the local nav, the footer, a field and its label, an option, a swatch, an accordion, a gallery, a tile, a card. A button or a link is a class string on the page's own element. Each component's test renders its example and asserts the output equal to it, so the markup and the CSS cannot part. A component writes ciderui's classes and nothing else.
 - `icon`: the icons as inline SVG in `currentColor` (rule 12).
@@ -182,6 +183,7 @@ Not measured yet: the modals, the search field open, the checkout's forms (not r
 - **Linux's hinting.** Playwright's Chromium on Linux hints every glyph to a whole-pixel advance unless launched with `--font-render-hinting=none`; with it, its text widths are the Mac's within 0.00006em a character (measured, `reference/tracking/`). Every run passes the flag.
 - **The fonts differ between the two sides.** apple.com's values were read with its SF Pro webfonts; ciderui's cases render on Linux in Inter (the stack falls through). So an `apple.com` check compares what does not depend on the text's width (the type's own values, colors, borders, radii, padding, heights where the line height fixes them), and a box that depends on the text's width is a `reference` or `golden` check.
 - **Transitions.** A state is forced with transitions off, and styles are flushed before they return, or a later read lands in flight.
+- **States the protocol cannot force.** `:checked` is not a pseudo-class DevTools forces, so a checked state is proven by an example with `checked` in its markup, against the probe that measured apple.com's classes on a checked copy (`buy:option.checked`); such a probe says so in its name and its spec.
 - **What only Safari or iOS can answer** (the system font's tracking, a section's color scheme, the stack's fetching) is measured on the Mac (`reference/browsers.mjs`'s `safari`, `ios`, `chrome`), not assumed from Chromium.
 
 The token test holds the contract (every component reads only it) and its contrast minimums; the Rust test holds the crate to `cargo fmt`, clippy with warnings as errors, its tests and its documentation, as vpkit's does.
