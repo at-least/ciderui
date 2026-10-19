@@ -39,7 +39,9 @@ const PARTS = `<div class="cui-shelf"><div class="cui-shelf-row"><ul class="cui-
   card('Newsroom', 'Article', 'The Newsroom’s story, for a page’s markdown.'),
 ].join('')}</ul></div></div>`;
 
-// name: the examples drawn, one after another (or html, a scene's own);
+// name: the examples drawn, one after another (or html, a scene's own: the
+// modal's opens it, then blurs its close button, whose ring a script's
+// opening shows and a click's would not);
 // zoom: how much larger;
 // width: the scene's own width before the zoom (the window's, for a band;
 // none, a small part's own);
@@ -58,6 +60,7 @@ const SCENES = [
   { name: 'globalnav', files: ['globalnav/globalnav', 'tile/hero'], zoom: 1, width: 1280 },
   { name: 'link', files: ['link/more'], zoom: 3.5, center: true },
   { name: 'localnav', files: ['localnav/localnav', 'tile/tile'], zoom: 1, width: 1280 },
+  { name: 'modal', html: `${example('modal/modal')}<script>document.querySelector('.cui-modal').showModal(); document.activeElement.blur()</script>`, zoom: 1, width: 1280 },
   { name: 'option', files: ['option/checked', 'option/option'], zoom: 1.6, width: 500, center: true },
   { name: 'posts', files: ['posts/archive'], zoom: 1, width: 1280 },
   { name: 'price', files: ['price/price'], zoom: 2.5, center: true },
@@ -119,6 +122,8 @@ for (const s of scenes) {
   current = s.html;
   await page.goto('https://pictures.test/', { waitUntil: 'load' });
   await page.evaluate(() => document.fonts.ready);
+  // what moves as it shows (a modal fading in) at its end
+  await page.waitForTimeout(300);
   await page.screenshot({ path: join(OUT, `${s.name}.png`) });
   console.log(`docs/static/pictures/${s.name}.png`);
 }

@@ -64,3 +64,7 @@ apple.com's sign-in widget draws its check as an SF Pro Icons glyph (`.form-chec
 
 Both are apple.com's lines, drawn as its pages draw them: the bag's accordion's a polyline through (15, 1.13), (8.5, 7.72) and (2, 1.13) in 17 by 8.85, 2.25 thick, round (`DISCLOSURE`); a phone's footer section's through (10.075, 0.675), (5.5, 5.323) and (0.925, 0.675) in 11 by 6, 1 thick, round (`FOOTER_CHEVRON`). Turned up, each is the line its animation ends on (the same points mirrored). `lines.mjs` reads both live and holds ciderui's to them: 1 and 1 of the ink shared (fails below 0.85), each in its component's example. Measured 2026-10-19 in Chromium 151 on Linux (`results/lines.json`).
 
+
+## A modal's X
+
+The store's overlay draws its close button's X as a 20px SVG with no view box (`.rc-overlay-close svg`, its units the button's pixels), the outline of two lines 3 thick, round at their ends: its ink 3.35 to 16.7 across and 3.3 to 16.6 down, each round end's middle at 4.88 and 15.12 (the arcs' points, `a1.5 1.5` between them). ciderui's `CLOSE` is those two lines, from (4.88, 4.88) to (15.12, 15.12) and from (15.12, 4.88) to (4.88, 15.12), 3 thick, round, in 20 by 20: it shares 0.9927 of its ink with apple.com's (intersection over union; `close.mjs` fails below 0.85, and holds the drawing to the modal's example), the runs across its middle and its arms the same to the twentieth of a unit. Measured 2026-10-19 on iPhone 18 Pro's buy page, its first "Show more" opened, in Chromium 151 on Linux (`results/close.json`).

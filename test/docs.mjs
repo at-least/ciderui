@@ -8,10 +8,12 @@
 // link within the site to a page that exists, no scrolling sideways; each
 // example frame loads its stylesheet, draws every picture it has, is no
 // wider than the page and as tall as its content, so it never scrolls.
-// And what the frames do: the theme's script moves a gallery's row; at
-// 390px the global nav's menu opens over its frame, grown to the window's
-// height, and the local nav's below its bar, the frame grown to hold it;
-// an example's link leaves the frame where it is.
+// And what the frames do: the theme's script moves a gallery's row; a
+// modal opens in its frame by its button, the frame grown to the window under
+// the page's local nav, and its close button closes it; at 390px the global
+// nav's menu opens over its frame, grown to the window's height, and the
+// local nav's below its bar, the frame grown to hold it; an example's link
+// leaves the frame where it is.
 //
 //   node test/docs.mjs
 //
@@ -159,6 +161,19 @@ for (const width of [1440, 390]) {
     await inner.click('a');
     await settle(inner);
     check(`a link in an example leaves its frame where it is at ${width}px`, await inner.evaluate(() => location.href), 'about:srcdoc');
+  }
+  {
+    const { handle, inner } = await frame('/components/modal/', 'A modal and the button that opens it');
+    const closed = await height(handle);
+    await inner.click('[command="show-modal"]');
+    await settle(inner);
+    const open = await inner.evaluate(() => document.querySelector('.cui-modal').matches(':modal'));
+    const below = await page.evaluate(() => innerHeight - document.querySelector('.cui-localnav').getBoundingClientRect().height);
+    check(`at ${width}px a modal opens in its frame by its button, with no script`, open, true);
+    check(`at ${width}px its frame grows to the window's height below the page's local nav (${closed}px closed)`, await height(handle), below);
+    await inner.click('.cui-modal-close');
+    await settle(inner);
+    check(`at ${width}px its close button closes it, its frame its content's height again`, await height(handle), closed);
   }
   if (width === 390) {
     {

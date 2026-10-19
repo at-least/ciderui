@@ -3,10 +3,10 @@
  * of the documentation, and it is as tall as its content, so it never
  * scrolls: its flow, and what is laid out of it and visible (a local nav's
  * menu below its bar), whenever any of it changes size or shows; while a
- * global nav's menu is open, a sheet over the frame's window, as tall as
- * the page's window below the page's own bar, and scrolled there. A srcdoc
- * frame shares the page's origin, which lets it size its own element
- * there. */
+ * global nav's menu or a modal is open, a sheet over the frame's window, as
+ * tall as the page's window below the page's own bar, and scrolled there.
+ * A srcdoc frame shares the page's origin, which lets it size its own
+ * element there. */
 const root = document.documentElement;
 let sheet = 0;
 const size = () => {
@@ -26,15 +26,23 @@ for (const type of ['change', 'transitionend']) document.addEventListener(type, 
 const bars = () => [...parent.document.querySelectorAll('.cui-globalnav, .cui-localnav')]
   .filter((e) => ['sticky', 'fixed'].includes(parent.getComputedStyle(e).position))
   .reduce((sum, e) => sum + e.getBoundingClientRect().height, 0);
-document.addEventListener('toggle', (e) => {
+// a sheet over the frame's window open or not: the frame as tall as the
+// page's window below its bars, scrolled there, or its content's height
+const cover = (open) => {
   const covered = bars();
-  sheet = e.newState === 'open' ? parent.innerHeight - covered : 0;
+  sheet = open ? parent.innerHeight - covered : 0;
   size();
   if (sheet) {
     frameElement.style.scrollMarginTop = `${covered}px`;
     frameElement.scrollIntoView({ block: 'start' });
   }
+};
+// a popover's (the global nav's menu), and a modal dialog's (cui-modal),
+// whose opening and closing set its open attribute
+document.addEventListener('toggle', (e) => {
+  if (e.target.matches('[popover]')) cover(e.newState === 'open');
 }, true);
+new MutationObserver(() => cover(Boolean(document.querySelector('dialog:modal')))).observe(document, { subtree: true, attributeFilter: ['open'] });
 
 // an example's links are the example's, not pages of the documentation: a
 // srcdoc frame's base URL is the page's, so a click would load the page (a

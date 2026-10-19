@@ -210,6 +210,17 @@ pub const FOOTER_CHEVRON: Icon = Icon {
     inner: r#"<path d="M10.075.675 5.5 5.323.925.675" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>"#,
 };
 
+/// A modal's X (`cui-modal-close`), in place of the store overlay's SVG: two
+/// lines from (4.88, 4.88) to (15.12, 15.12) and from (15.12, 4.88) to
+/// (4.88, 15.12) in 20 by 20, 3 thick, round; 0.9927 of its ink apple.com's
+/// (`reference/icons/`).
+pub const CLOSE: Icon = Icon {
+    width: "20",
+    height: "20",
+    view_box: "0 0 20 20",
+    inner: r#"<path d="M4.88 4.88 15.12 15.12M15.12 4.88 4.88 15.12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>"#,
+};
+
 #[cfg(test)]
 mod tests {
     use super::*;

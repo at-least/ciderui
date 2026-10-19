@@ -113,6 +113,14 @@ const CONTRACT = {
   '--cui-c-on-footer-link': [['home', 'footer.link', W, 'color'], ['product', 'footer.link', W, 'color']],
   '--cui-c-on-footer-title': [['home', 'footer.title', W, 'color'], ['product', 'footer.title', W, 'color']],
   '--cui-c-footer-rule': [['home', 'footer.legal-rule', W, 'background-color'], ['home', 'footer.legal-rule', 390, 'background-color']],
+  // the store's overlay (iPhone 18 Pro's buy page, its Show more opened): one
+  // value each, read at a wide window and a phone's, a modal light on any page
+  '--cui-c-scrim': [['overlay', 'overlay', W, 'background-color'], ['overlay', 'overlay', 390, 'background-color']],
+  '--cui-c-close': [['overlay', 'close.circle', W, 'background-color'], ['overlay', 'close.circle', 390, 'background-color']],
+  '--cui-c-close-hover': [['overlay', 'close.circle-hover', W, 'background-color', 'hover'], ['overlay', 'close.circle-hover', 390, 'background-color', 'hover']],
+  '--cui-c-close-active': [['overlay', 'close.circle-hover', W, 'background-color', 'active'], ['overlay', 'close.circle-hover', 390, 'background-color', 'active']],
+  '--cui-c-on-close': [['overlay', 'close.circle', W, 'color'], ['overlay', 'close.circle-hover', 390, 'color', 'active']],
+  '--cui-c-on-close-hover': [['overlay', 'close.circle-hover', W, 'color', 'hover'], ['overlay', 'close.circle-hover', 390, 'color', 'hover']],
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-'));
@@ -206,6 +214,13 @@ for (const [mark, layers] of [['--cui-c-on-paddle', ['--cui-c-paddle']], ['--cui
       check(`${mark}${layers.length ? ' on ' + layers[0] : ''} over ${bg}, ${['light', 'dark'][i]}, at least 3:1`, ratio(over(sides(mark)[i], ground), ground) >= 3, true);
     }
   }
+}
+
+// a modal's close button: its X on its circle, at rest, hovered and pressed,
+// 3:1 (a mark, not text); the circle opaque, on the modal's light ground
+for (const [mark, fill] of [['--cui-c-on-close', '--cui-c-close'], ['--cui-c-on-close-hover', '--cui-c-close-hover'], ['--cui-c-on-close', '--cui-c-close-active']]) {
+  const ground = sides(fill)[0];
+  check(`${mark} on ${fill}, at least 3:1`, ratio(over(sides(mark)[0], ground), ground) >= 3, true);
 }
 
 // the letter-spacing per size
