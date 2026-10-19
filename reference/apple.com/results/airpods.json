@@ -1,0 +1,256 @@
+{
+ "url": "https://www.apple.com/airpods-pro/",
+ "finalUrl": "https://www.apple.com/airpods-pro/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T09:19:24.719Z",
+ "widths": {
+  "390": {
+   "stat.content": {
+    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Removes up to</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-value\">2x more</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">unwanted noise than AirPods&nbsp;Pro&nbsp;2<sup class=\"footnote footnote-n",
+    "styles": {
+     "padding-top": "4px",
+     "padding-bottom": "2px",
+     "margin-top": "20px",
+     "margin-bottom": "40px"
+    }
+   },
+   "stat.caption": {
+    "html": "<span class=\"stat-caption\">Removes up to</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block"
+    }
+   },
+   "stat.value": {
+    "html": "<span class=\"stat-value\">2x more</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "48px",
+     "line-height": "48px",
+     "font-weight": "600",
+     "letter-spacing": "-0.144px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "display": "block"
+    }
+   },
+   "footnote": {
+    "html": "<sup class=\"footnote footnote-number\"><a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a></sup>",
+    "styles": {
+     "font-feature-settings": "\"numr\"",
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)",
+     "vertical-align": "baseline",
+     "position": "relative",
+     "top": "0px"
+    }
+   },
+   "footnote.link": {
+    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a>",
+    "styles": {
+     "font-feature-settings": "\"numr\"",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "underline",
+     "font-size": "12px",
+     "vertical-align": "baseline"
+    }
+   }
+  },
+  "900": {
+   "stat.content": {
+    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Removes up to</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-value\">2x more</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">unwanted noise than AirPods&nbsp;Pro&nbsp;2<sup class=\"footnote footnote-n",
+    "styles": {
+     "padding-top": "4px",
+     "padding-bottom": "2px",
+     "margin-top": "20px",
+     "margin-bottom": "40px"
+    }
+   },
+   "stat.caption": {
+    "html": "<span class=\"stat-caption\">Removes up to</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block"
+    }
+   },
+   "stat.value": {
+    "html": "<span class=\"stat-value\">2x more</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "64px",
+     "line-height": "64px",
+     "font-weight": "600",
+     "letter-spacing": "-0.576px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "display": "block"
+    }
+   },
+   "footnote": {
+    "html": "<sup class=\"footnote footnote-number\"><a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a></sup>",
+    "styles": {
+     "font-feature-settings": "\"numr\"",
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "vertical-align": "baseline",
+     "position": "relative",
+     "top": "0px"
+    }
+   },
+   "footnote.link": {
+    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a>",
+    "styles": {
+     "font-feature-settings": "\"numr\"",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "underline",
+     "font-size": "17px",
+     "vertical-align": "baseline"
+    }
+   }
+  },
+  "1200": {
+   "stat.content": {
+    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Removes up to</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-value\">2x more</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">unwanted noise than AirPods&nbsp;Pro&nbsp;2<sup class=\"footnote footnote-n",
+    "styles": {
+     "padding-top": "4px",
+     "padding-bottom": "2px",
+     "margin-top": "20px",
+     "margin-bottom": "40px"
+    }
+   },
+   "stat.caption": {
+    "html": "<span class=\"stat-caption\">Removes up to</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "23px",
+     "font-weight": "600",
+     "letter-spacing": "0.228px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block"
+    }
+   },
+   "stat.value": {
+    "html": "<span class=\"stat-value\">2x more</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "80px",
+     "line-height": "80px",
+     "font-weight": "600",
+     "letter-spacing": "-1.2px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "display": "block"
+    }
+   },
+   "footnote": {
+    "html": "<sup class=\"footnote footnote-number\"><a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a></sup>",
+    "styles": {
+     "font-feature-settings": "\"numr\"",
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "vertical-align": "baseline",
+     "position": "relative",
+     "top": "0px"
+    }
+   },
+   "footnote.link": {
+    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a>",
+    "styles": {
+     "font-feature-settings": "\"numr\"",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "underline",
+     "font-size": "17px",
+     "vertical-align": "baseline"
+    }
+   }
+  },
+  "1600": {
+   "stat.content": {
+    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Removes up to</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-value\">2x more</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">unwanted noise than AirPods&nbsp;Pro&nbsp;2<sup class=\"footnote footnote-n",
+    "styles": {
+     "padding-top": "4px",
+     "padding-bottom": "2px",
+     "margin-top": "20px",
+     "margin-bottom": "40px"
+    }
+   },
+   "stat.caption": {
+    "html": "<span class=\"stat-caption\">Removes up to</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "23px",
+     "font-weight": "600",
+     "letter-spacing": "0.228px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block"
+    }
+   },
+   "stat.value": {
+    "html": "<span class=\"stat-value\">2x more</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "80px",
+     "line-height": "80px",
+     "font-weight": "600",
+     "letter-spacing": "-1.2px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "display": "block"
+    }
+   },
+   "footnote": {
+    "html": "<sup class=\"footnote footnote-number\"><a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a></sup>",
+    "styles": {
+     "font-feature-settings": "\"numr\"",
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "vertical-align": "baseline",
+     "position": "relative",
+     "top": "0px"
+    }
+   },
+   "footnote.link": {
+    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a>",
+    "styles": {
+     "font-feature-settings": "\"numr\"",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "underline",
+     "font-size": "17px",
+     "vertical-align": "baseline"
+    }
+   }
+  }
+ }
+}

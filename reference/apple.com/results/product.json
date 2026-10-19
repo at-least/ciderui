@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/iphone-18-pro/",
  "finalUrl": "https://www.apple.com/iphone-18-pro/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T09:05:35.870Z",
+ "date": "2026-10-19T09:18:45.247Z",
  "widths": {
   "390": {
    "type.none": {
@@ -1110,6 +1110,25 @@
      "content": "\"\" / \"\""
     }
    },
+   "stat.content": {
+    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Up to</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-value\">25 more hours</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">video playback on <br class=\"small-hide\">iPhone&nbsp;18&nbsp;Pro&nb",
+    "styles": {
+     "padding-top": "2px",
+     "padding-bottom": "2px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    }
+   },
+   "footnote.link": {
+    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a>",
+    "styles": {
+     "font-feature-settings": "\"numr\"",
+     "color": "rgb(245, 245, 247)",
+     "text-decoration-line": "underline",
+     "font-size": "14px",
+     "vertical-align": "baseline"
+    }
+   },
    "stat.value": {
     "html": "<span class=\"stat-value\">25 more hours</span>",
     "styles": {
@@ -1118,7 +1137,10 @@
      "line-height": "28px",
      "font-weight": "600",
      "letter-spacing": "0.196px",
-     "color": "rgb(245, 245, 247)"
+     "color": "rgb(245, 245, 247)",
+     "margin-top": "2px",
+     "margin-bottom": "2px",
+     "display": "block"
     }
    },
    "stat.caption": {
@@ -1129,12 +1151,14 @@
      "line-height": "16.0005px",
      "font-weight": "600",
      "letter-spacing": "-0.12px",
-     "color": "rgb(110, 110, 115)"
+     "color": "rgb(110, 110, 115)",
+     "display": "block"
     }
    },
    "footnote": {
     "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a></sup>",
     "styles": {
+     "font-feature-settings": "\"numr\"",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
      "line-height": "20.0003px",
@@ -2520,6 +2544,25 @@
      "content": "\"\" / \"\""
     }
    },
+   "stat.content": {
+    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Up to</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-value\">25 more hours</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">video playback on <br class=\"small-hide\">iPhone&nbsp;18&nbsp;Pro&nb",
+    "styles": {
+     "padding-top": "2px",
+     "padding-bottom": "2px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    }
+   },
+   "footnote.link": {
+    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a>",
+    "styles": {
+     "font-feature-settings": "\"numr\"",
+     "color": "rgb(245, 245, 247)",
+     "text-decoration-line": "underline",
+     "font-size": "14px",
+     "vertical-align": "baseline"
+    }
+   },
    "stat.value": {
     "html": "<span class=\"stat-value\">25 more hours</span>",
     "styles": {
@@ -2528,7 +2571,10 @@
      "line-height": "28px",
      "font-weight": "600",
      "letter-spacing": "0.196px",
-     "color": "rgb(245, 245, 247)"
+     "color": "rgb(245, 245, 247)",
+     "margin-top": "2px",
+     "margin-bottom": "2px",
+     "display": "block"
     }
    },
    "stat.caption": {
@@ -2539,12 +2585,14 @@
      "line-height": "16.0005px",
      "font-weight": "600",
      "letter-spacing": "-0.12px",
-     "color": "rgb(110, 110, 115)"
+     "color": "rgb(110, 110, 115)",
+     "display": "block"
     }
    },
    "footnote": {
     "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a></sup>",
     "styles": {
+     "font-feature-settings": "\"numr\"",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
      "line-height": "20.0003px",
@@ -3886,6 +3934,25 @@
      "content": "\"\" / \"\""
     }
    },
+   "stat.content": {
+    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Up to</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-value\">25 more hours</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">video playback on <br class=\"small-hide\">iPhone&nbsp;18&nbsp;Pro&nb",
+    "styles": {
+     "padding-top": "2px",
+     "padding-bottom": "2px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    }
+   },
+   "footnote.link": {
+    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a>",
+    "styles": {
+     "font-feature-settings": "\"numr\"",
+     "color": "rgb(245, 245, 247)",
+     "text-decoration-line": "underline",
+     "font-size": "14px",
+     "vertical-align": "baseline"
+    }
+   },
    "stat.value": {
     "html": "<span class=\"stat-value\">25 more hours</span>",
     "styles": {
@@ -3894,7 +3961,10 @@
      "line-height": "28px",
      "font-weight": "600",
      "letter-spacing": "0.196px",
-     "color": "rgb(245, 245, 247)"
+     "color": "rgb(245, 245, 247)",
+     "margin-top": "2px",
+     "margin-bottom": "2px",
+     "display": "block"
     }
    },
    "stat.caption": {
@@ -3905,12 +3975,14 @@
      "line-height": "16.0005px",
      "font-weight": "600",
      "letter-spacing": "-0.12px",
-     "color": "rgb(110, 110, 115)"
+     "color": "rgb(110, 110, 115)",
+     "display": "block"
     }
    },
    "footnote": {
     "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a></sup>",
     "styles": {
+     "font-feature-settings": "\"numr\"",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
      "line-height": "20.0003px",
@@ -5239,6 +5311,25 @@
      "content": "\"\" / \"\""
     }
    },
+   "stat.content": {
+    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Up to</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-value\">25 more hours</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">video playback on <br class=\"small-hide\">iPhone&nbsp;18&nbsp;Pro&nb",
+    "styles": {
+     "padding-top": "2px",
+     "padding-bottom": "2px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    }
+   },
+   "footnote.link": {
+    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a>",
+    "styles": {
+     "font-feature-settings": "\"numr\"",
+     "color": "rgb(245, 245, 247)",
+     "text-decoration-line": "underline",
+     "font-size": "14px",
+     "vertical-align": "baseline"
+    }
+   },
    "stat.value": {
     "html": "<span class=\"stat-value\">25 more hours</span>",
     "styles": {
@@ -5247,7 +5338,10 @@
      "line-height": "28px",
      "font-weight": "600",
      "letter-spacing": "0.196px",
-     "color": "rgb(245, 245, 247)"
+     "color": "rgb(245, 245, 247)",
+     "margin-top": "2px",
+     "margin-bottom": "2px",
+     "display": "block"
     }
    },
    "stat.caption": {
@@ -5258,12 +5352,14 @@
      "line-height": "16.0005px",
      "font-weight": "600",
      "letter-spacing": "-0.12px",
-     "color": "rgb(110, 110, 115)"
+     "color": "rgb(110, 110, 115)",
+     "display": "block"
     }
    },
    "footnote": {
     "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a></sup>",
     "styles": {
+     "font-feature-settings": "\"numr\"",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
      "line-height": "20.0003px",

@@ -42,6 +42,9 @@ export default {
     { name: 'accordion.icon', select: '.rc-accordion-button .icon-plus, .rc-accordion-button .as-accordion-plusicon', props: ['font-family', 'font-size', 'color', 'width', 'height'], pseudo: '::after' },
     { name: 'accordion.content', select: '.rc-accordion-box-content', props: [...TYPE, ...BOX] },
     { name: 'price', select: '.price-point-fullPrice', props: TYPE },
+    // the page's own price, under its title: its amounts kept whole
+    { name: 'price.header', select: '.rf-bfe-header-price .rc-prices-currentprice', props: [...TYPE, 'display'] },
+    { name: 'price.amount', select: '.rf-bfe-header-price .nowrap', props: [...TYPE, 'white-space', 'display'] },
     { name: 'buttonlink', select: '.as-buttonlink', props: [...TYPE, ...BOX], states: ['hover'] },
   ],
 };
