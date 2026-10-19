@@ -1,0 +1,83 @@
+/* ciderui — the page, apple.com's: what it sets on the body after Tailwind's
+ * preflight (which Tailwind supplies), the one focus ring, the dark and
+ * light blocks, bold at 600, and reduced motion. Measured on apple.com's
+ * home page, its store and a product page (reference/apple.com/,
+ * `*:page.body`, `*:page.strong`): body text 17px on 25px, its text drawn
+ * antialiased, no synthesized weight or style; its letter-spacing is the
+ * system font's fitted value (tokens.css), not apple.com's.
+ *
+ * The focus ring is apple.com's, one for everything: `:focus-visible`
+ * draws tokens.css's --cui-focus-ring, 2px of the accent 3px out, on a
+ * button, a link, an option; a text field moves it to 1px out. A component
+ * draws no ring of its own; `outline-none` on an element removes it.
+ *
+ * `cui-dark` on any element sets its color scheme dark, and every
+ * light-dark() pair used inside it resolves dark; `cui-light` inside it
+ * light again (reference/scheme/). Each also sets its own text and ground,
+ * because a color inherited from outside was resolved outside. On <html>
+ * it darkens the page.
+ *
+ * Everything sits in @layer base, after the preflight, so a utility on the
+ * element still wins; the reduced-motion rule is unlayered, as it must beat
+ * every component's motion. Part of index.css. */
+
+@layer base {
+  /* the page's scheme, here and not in tokens.css: an unlayered :root would
+     beat `cui-dark` on <html> */
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    color: var(--cui-c-text);
+    background-color: var(--cui-c-bg);
+    font-family: var(--cui-font);
+    font-size: 17px;
+    line-height: 25px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-17);
+    -webkit-font-smoothing: antialiased;
+    font-synthesis: none;
+  }
+
+  b,
+  strong {
+    font-weight: 600;
+  }
+
+  .cui-dark,
+  .cui-light {
+    color: var(--cui-c-text);
+    background-color: var(--cui-c-bg);
+  }
+
+  .cui-dark {
+    color-scheme: dark;
+  }
+
+  .cui-light {
+    color-scheme: light;
+  }
+
+  /* the one focus ring */
+  :focus-visible {
+    outline: var(--cui-focus-ring);
+    outline-offset: var(--cui-focus-ring-offset);
+  }
+}
+
+/* https://web.dev/articles/prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after,
+  ::backdrop {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}

@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/iphone-18-pro/",
  "finalUrl": "https://www.apple.com/iphone-18-pro/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T03:13:03.806Z",
+ "date": "2026-10-19T04:10:28.616Z",
  "widths": {
   "390": {
    "type.none": {
@@ -278,7 +278,21 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(0, 0, 0)"
+     "background-color": "rgb(0, 0, 0)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "page.strong": {
+    "html": "<strong class=\"has-dynamic-content\"><span class=\"dynamic-pricing-product\" data-pricing-product=\"iphone-18-pro\" data-product-template=\"${price.display.from} \" data-acmi-idx=\"0\" data-display-style=\"\" data-pricing-loaded=\"\">From $1199 </span>\n",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)"
     }
    },
    "nav": {
@@ -1159,7 +1173,21 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(0, 0, 0)"
+     "background-color": "rgb(0, 0, 0)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "page.strong": {
+    "html": "<strong class=\"has-dynamic-content\"><span class=\"dynamic-pricing-product\" data-pricing-product=\"iphone-18-pro\" data-product-template=\"${price.display.from} \" data-acmi-idx=\"0\" data-display-style=\"\" data-pricing-loaded=\"\">From $1199 </span>\n",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)"
     }
    },
    "nav": {
@@ -2040,7 +2068,21 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(0, 0, 0)"
+     "background-color": "rgb(0, 0, 0)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "page.strong": {
+    "html": "<strong class=\"has-dynamic-content\"><span class=\"dynamic-pricing-product\" data-pricing-product=\"iphone-18-pro\" data-product-template=\"${price.display.from} \" data-acmi-idx=\"0\" data-display-style=\"\" data-pricing-loaded=\"\">From $1199 </span>\n",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)"
     }
    },
    "nav": {
@@ -2921,7 +2963,21 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(0, 0, 0)"
+     "background-color": "rgb(0, 0, 0)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "page.strong": {
+    "html": "<strong class=\"has-dynamic-content\"><span class=\"dynamic-pricing-product\" data-pricing-product=\"iphone-18-pro\" data-product-template=\"${price.display.from} \" data-acmi-idx=\"0\" data-display-style=\"\" data-pricing-loaded=\"\">From $1199 </span>\n",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)"
     }
    },
    "nav": {

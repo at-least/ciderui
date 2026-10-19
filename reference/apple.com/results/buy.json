@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/shop/buy-iphone/iphone-18-pro",
  "finalUrl": "https://www.apple.com/shop/buy-iphone/iphone-18-pro",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T03:10:30.469Z",
+ "date": "2026-10-19T04:10:29.646Z",
  "widths": {
   "390": {
    "page.body": {
@@ -14,7 +14,10 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(255, 255, 255)"
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
     }
    },
    "title": {
@@ -29,7 +32,7 @@
     }
    },
    "option": {
-    "html": "<label for=\"_r_1u_\" class=\"form-selector-label\" id=\"_r_1u__label\"><span class=\"row\"><span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small",
+    "html": "<label for=\"_r_22_\" class=\"form-selector-label\" id=\"_r_22__label\"><span class=\"row\"><span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -96,7 +99,7 @@
     }
    },
    "option.focus": {
-    "html": "<label for=\"_r_1u_\" class=\"form-selector-label\" id=\"_r_1u__label\"><span class=\"row\"><span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small",
+    "html": "<label for=\"_r_22_\" class=\"form-selector-label\" id=\"_r_22__label\"><span class=\"row\"><span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small",
     "styles": {
      "padding-top": "15px",
      "padding-right": "15px",
@@ -257,7 +260,7 @@
     }
    },
    "swatch.link": {
-    "html": "<label for=\"_r_21_\" class=\"colornav-link rc-dimension-colornav-link rf-bfe-product-dimension-colornav-label\"><img alt=\"\" class=\"colornav-swatch\" src=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-burg",
+    "html": "<label for=\"_r_25_\" class=\"colornav-link rc-dimension-colornav-link rf-bfe-product-dimension-colornav-label\"><img alt=\"\" class=\"colornav-swatch\" src=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-burg",
     "styles": {
      "padding-top": "2px",
      "padding-right": "2px",
@@ -371,7 +374,7 @@
     }
    },
    "swatch.label": {
-    "html": "<span id=\"_r_21__label\" class=\"colornav-label\">Burgundy</span>",
+    "html": "<span id=\"_r_25__label\" class=\"colornav-label\">Burgundy</span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -628,7 +631,10 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(255, 255, 255)"
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
     }
    },
    "title": {
@@ -1242,7 +1248,10 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(255, 255, 255)"
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
     }
    },
    "title": {
@@ -1856,7 +1865,10 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(255, 255, 255)"
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
     }
    },
    "title": {

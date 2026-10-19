@@ -1,0 +1,244 @@
+/* ciderui — the type: apple.com store's t- ladder (measured,
+ * reference/apple.com/, store:type.t-*) as Tailwind utilities, each with
+ * its own step at 735px, apple.com's small screen below it. A utility, not
+ * a component class, so a variant composes with it (lg:cui-headline-super
+ * over cui-headline) and a plain utility on the same element wins
+ * (text-[20px]): measured, Tailwind 4.3.3, Chromium 151. The size, line
+ * height and weight are apple.com's; the letter-spacing is the system
+ * font's fitted value for the size (tokens.css), not apple.com's. 735px is
+ * theme.css's md. Tailwind writes a class only where a source uses it.
+ * Part of index.css. */
+
+@utility cui-headline-standalone {
+  font-size: 48px;
+  line-height: 52px;
+  letter-spacing: var(--cui-tracking-48);
+  font-weight: 600;
+  @media (width >= 735px) {
+    font-size: 96px;
+    line-height: 100px;
+    letter-spacing: var(--cui-tracking-96);
+  }
+}
+
+@utility cui-headline-super {
+  font-size: 48px;
+  line-height: 52px;
+  letter-spacing: var(--cui-tracking-48);
+  font-weight: 600;
+  @media (width >= 735px) {
+    font-size: 80px;
+    line-height: 84px;
+    letter-spacing: var(--cui-tracking-80);
+  }
+}
+
+@utility cui-headline-elevated {
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: var(--cui-tracking-40);
+  font-weight: 600;
+  @media (width >= 735px) {
+    font-size: 64px;
+    line-height: 68px;
+    letter-spacing: var(--cui-tracking-64);
+  }
+}
+
+@utility cui-headline {
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: var(--cui-tracking-32);
+  font-weight: 600;
+  @media (width >= 735px) {
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: var(--cui-tracking-48);
+  }
+}
+
+@utility cui-headline-reduced {
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: var(--cui-tracking-28);
+  font-weight: 600;
+  @media (width >= 735px) {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: var(--cui-tracking-40);
+  }
+}
+
+@utility cui-eyebrow-super {
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: var(--cui-tracking-24);
+  font-weight: 600;
+  @media (width >= 735px) {
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: var(--cui-tracking-32);
+  }
+}
+
+@utility cui-eyebrow-elevated {
+  font-size: 21px;
+  line-height: 25px;
+  letter-spacing: var(--cui-tracking-21);
+  font-weight: 600;
+  @media (width >= 735px) {
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: var(--cui-tracking-28);
+  }
+}
+
+@utility cui-eyebrow {
+  font-size: 21px;
+  line-height: 25px;
+  letter-spacing: var(--cui-tracking-21);
+  font-weight: 600;
+  @media (width >= 735px) {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: var(--cui-tracking-24);
+  }
+}
+
+@utility cui-eyebrow-reduced {
+  font-size: 19px;
+  line-height: 23px;
+  letter-spacing: var(--cui-tracking-19);
+  font-weight: 600;
+  @media (width >= 735px) {
+    font-size: 21px;
+    line-height: 25px;
+    letter-spacing: var(--cui-tracking-21);
+  }
+}
+
+@utility cui-callout {
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: var(--cui-tracking-24);
+  font-weight: 600;
+  @media (width >= 735px) {
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: var(--cui-tracking-32);
+  }
+}
+
+@utility cui-label {
+  font-size: 21px;
+  line-height: 25px;
+  letter-spacing: var(--cui-tracking-21);
+  font-weight: 600;
+  @media (width >= 735px) {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: var(--cui-tracking-24);
+  }
+}
+
+@utility cui-quote {
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: var(--cui-tracking-28);
+  font-weight: 600;
+  @media (width >= 735px) {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: var(--cui-tracking-40);
+  }
+}
+
+@utility cui-quote-reduced {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: var(--cui-tracking-24);
+  font-weight: 400;
+  @media (width >= 735px) {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: var(--cui-tracking-32);
+  }
+}
+
+@utility cui-manifesto {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: var(--cui-tracking-24);
+  font-weight: 600;
+  @media (width >= 735px) {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: var(--cui-tracking-32);
+  }
+}
+
+@utility cui-intro-elevated {
+  font-size: 21px;
+  line-height: 29px;
+  letter-spacing: var(--cui-tracking-21);
+  font-weight: 400;
+  @media (width >= 735px) {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: var(--cui-tracking-24);
+  }
+}
+
+@utility cui-intro {
+  font-size: 19px;
+  line-height: 27px;
+  letter-spacing: var(--cui-tracking-19);
+  font-weight: 400;
+  @media (width >= 735px) {
+    font-size: 21px;
+    line-height: 29px;
+    letter-spacing: var(--cui-tracking-21);
+  }
+}
+
+@utility cui-tout {
+  font-size: 19px;
+  line-height: 23px;
+  letter-spacing: var(--cui-tracking-19);
+  font-weight: 600;
+}
+
+@utility cui-body {
+  font-size: 17px;
+  line-height: 25px;
+  letter-spacing: var(--cui-tracking-17);
+  font-weight: 400;
+}
+
+@utility cui-body-tight {
+  font-size: 17px;
+  line-height: 21px;
+  letter-spacing: var(--cui-tracking-17);
+  font-weight: 400;
+}
+
+@utility cui-body-reduced {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: var(--cui-tracking-14);
+  font-weight: 400;
+}
+
+@utility cui-body-reduced-tight {
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: var(--cui-tracking-14);
+  font-weight: 400;
+}
+
+@utility cui-caption {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: var(--cui-tracking-12);
+  font-weight: 400;
+}

@@ -1,7 +1,7 @@
 // apple.com's home page: the type scale (every typography class its stylesheets
 // define, added to the page), the page, the global nav, the hero and its
 // buttons, a light and a dark promo tile, the gallery's dots, the footer.
-import { TYPE, BOX, MOTION, BLUR, LINK, FOCUS } from './common.mjs';
+import { TYPE, BOX, MOTION, BLUR, LINK, FOCUS, PAGE } from './common.mjs';
 const TYPOGRAPHY = ['headline-super', 'headline-elevated', 'headline', 'headline-reduced', 'intro-elevated', 'intro',
   'body', 'body-reduced', 'callout', 'caption', 'cta-medium', 'tile-headline', 'tile-subhead', 'tile-callout',
   'promo-headline', 'promo-subhead', 'promo-callout'];
@@ -13,7 +13,7 @@ export default {
     { name: 'type.none', inject: '<p>Sample text</p>', into: 'main', props: TYPE },
     ...TYPOGRAPHY.map(c => ({ name: `type.${c}`, inject: `<p class="typography-${c}">Sample text</p>`, into: 'main', props: TYPE })),
     { name: 'page.html', select: 'html', props: ['background-color', 'color-scheme'] },
-    { name: 'page.body', select: 'body', props: [...TYPE, 'background-color'] },
+    { name: 'page.body', select: 'body', props: PAGE },
     { name: 'nav', select: '#globalnav', props: ['height', 'background-color', ...BLUR], vars: ['--globalnav-background', '--globalnav-backdrop-filter'], box: true },
     { name: 'nav.curtain', select: '#globalnav-curtain', props: ['background-color', ...BLUR] },
     { name: 'nav.content', select: '#globalnav .globalnav-content', props: ['height', 'max-width', 'padding-left', 'padding-right', 'background-color', ...BLUR], box: true },

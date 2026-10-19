@@ -7,3 +7,5 @@ export const MOTION = ['transition-property', 'transition-duration', 'transition
 export const BLUR = ['backdrop-filter', '-webkit-backdrop-filter'];
 export const LINK = ['text-decoration-line', 'text-decoration-color', 'text-underline-offset'];
 export const FOCUS = ['outline-style', 'outline-color', 'outline-width', 'outline-offset'];
+// the page's own: its text, its ground, how its text is drawn
+export const PAGE = [...TYPE, 'background-color', '-webkit-font-smoothing', 'font-synthesis', 'text-rendering'];

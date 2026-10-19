@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/shop/bag",
  "finalUrl": "https://www.apple.com/shop/bag",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T03:12:21.149Z",
+ "date": "2026-10-19T04:10:29.143Z",
  "widths": {
   "390": {
    "page.body": {
@@ -14,7 +14,10 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(255, 255, 255)"
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
     }
    },
    "header": {
@@ -472,7 +475,10 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(255, 255, 255)"
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
     }
    },
    "header": {
@@ -930,7 +936,10 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(255, 255, 255)"
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
     }
    },
    "header": {
@@ -1388,7 +1397,10 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(255, 255, 255)"
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
     }
    },
    "header": {

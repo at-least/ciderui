@@ -1,14 +1,14 @@
 // A buy page, iPhone 18 Pro's: the title, an option (a form selector) at rest
 // and, as a copy added beside it, checked, a color swatch the same way, an
 // accordion's question, a price, a button link.
-import { TYPE, BOX, MOTION } from './common.mjs';
+import { TYPE, BOX, MOTION, PAGE } from './common.mjs';
 const OPTION = `<div class="rc-dimension-selector-row form-selector"><input class="form-selector-input" id="cui-option" type="radio" name="cui-option" checked><label for="cui-option" class="form-selector-label"><span class="row"><span class="column form-selector-left-col rf-bfe-selector-left-col"><span class="form-selector-title">iPhone 18 Pro <span class="form-label-small">6.3-inch display</span></span></span></span></label></div>`;
 const SWATCH = `<li class="colornav-item"><input type="radio" class="colornav-value rc-dimension-colornav-input rf-bfe-product-dimension-colornav-input" id="cui-swatch" name="cui-swatch" checked><label for="cui-swatch" class="colornav-link rc-dimension-colornav-link rf-bfe-product-dimension-colornav-label"><img alt="" class="colornav-swatch" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="><span class="colornav-label">Burgundy</span></label></li>`;
 export default {
   url: 'https://www.apple.com/shop/buy-iphone/iphone-18-pro',
   wait: 2500,
   probes: [
-    { name: 'page.body', select: 'body', props: [...TYPE, 'background-color'] },
+    { name: 'page.body', select: 'body', props: PAGE },
     { name: 'title', select: 'h1', props: TYPE },
     { name: 'option', select: '.form-selector:not([data-cui-injected]) .form-selector-label', props: [...TYPE, ...BOX, ...MOTION], box: true, states: ['hover'] },
     { name: 'option.focus', select: '.form-selector:not([data-cui-injected]) .form-selector-label', stateOn: '.form-selector:not([data-cui-injected]) .form-selector-input', props: [...BOX, 'outline-color', 'outline-style', 'outline-width', 'outline-offset'], states: ['focus-visible', 'focus'] },

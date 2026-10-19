@@ -4,7 +4,7 @@
 // its header, a dark and an alternate section, a rounded tile, the gallery's
 // paddles, the "more" link, a stat, a footnote, and the floating local nav,
 // which shows once the page is scrolled past its hero.
-import { TYPE, BOX, MOTION, BLUR, LINK } from './common.mjs';
+import { TYPE, BOX, MOTION, BLUR, LINK, PAGE } from './common.mjs';
 const TYPOGRAPHY = ['headline-super', 'headline-elevated', 'headline', 'headline-reduced', 'eyebrow-super',
   'intro-elevated', 'intro', 'body', 'body-reduced', 'body-reduced-tight', 'callout-super', 'callout-elevated',
   'callout-base', 'callout-cta', 'caption-elevated', 'caption', 'caption-cta', 'caption-sosumi',
@@ -15,7 +15,8 @@ export default {
     // a class the page does not define reads as this paragraph does
     { name: 'type.none', inject: '<p>Sample text</p>', into: 'main', props: TYPE },
     ...TYPOGRAPHY.map(c => ({ name: `type.${c}`, inject: `<p class="typography-${c}">Sample text</p>`, into: 'main', props: TYPE })),
-    { name: 'page.body', select: 'body', props: [...TYPE, 'background-color'] },
+    { name: 'page.body', select: 'body', props: PAGE },
+    { name: 'page.strong', select: 'main strong, main b, .rs-page-content strong, body strong', props: TYPE },
     // the page is dark (body.globalheader-dark): the global nav's dark side
     { name: 'nav', select: '#globalnav', props: ['background-color', ...BLUR] },
     { name: 'nav.link', select: '#globalnav .globalnav-item:not(.globalnav-item-apple) .globalnav-link', props: TYPE, states: ['hover'] },

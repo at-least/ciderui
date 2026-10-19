@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/",
  "finalUrl": "https://www.apple.com/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T03:12:20.761Z",
+ "date": "2026-10-19T04:10:28.110Z",
  "widths": {
   "390": {
    "type.none": {
@@ -219,7 +219,10 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(255, 255, 255)"
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
     }
    },
    "nav": {
@@ -1524,7 +1527,10 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(255, 255, 255)"
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
     }
    },
    "nav": {
@@ -2829,7 +2835,10 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(255, 255, 255)"
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
     }
    },
    "nav": {
@@ -3006,7 +3015,7 @@
     }
    },
    "hero.subhead": {
-    "html": "<p class=\"tile-subhead typography-tile-subhead\"><span class=\"visuallyhidden\">Hello, hello.</span><span class=\"subhead-left\" aria-hidden=\"true\" style=\"transform: matrix(1, 0, 0, 1, 0.949744, 0);\"><span class=\"subhead-end\" style=\"opacity: 1;\"",
+    "html": "<p class=\"tile-subhead typography-tile-subhead\"><span class=\"visuallyhidden\">Hello, hello.</span><span class=\"subhead-left\" aria-hidden=\"true\" style=\"transform: matrix(1, 0, 0, 1, 10.7438, 0);\"><span class=\"subhead-end\" style=\"opacity: 0.43",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -4134,7 +4143,10 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(255, 255, 255)"
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
     }
    },
    "nav": {

@@ -1,0 +1,45 @@
+/* ciderui — the Tailwind CSS v4 wiring: apple.com's breakpoints (they
+ * replace Tailwind's), the `dark:` variant on a dark block, and the
+ * semantic utilities (`text-body`, `bg-alt`, `text-link`, …) that resolve
+ * to the --cui-* variables in tokens.css. Part of index.css. */
+
+/* `dark:` inside a `cui-dark` block (base.css), not the OS's appearance:
+   apple.com has no dark mode of its own. A `cui-light` block inside a dark
+   one still counts as dark for this variant; the colors themselves follow
+   the nearest block (tokens.css), so the variant is for what no token
+   carries (an image's filter). */
+@custom-variant dark (&:where(.cui-dark, .cui-dark *));
+
+/* apple.com's breakpoints, in pixels as its media queries are (measured,
+   reference/apple.com/, breakpoints: the content steps at 735px and
+   1069px; its stylesheets name 1441px, where nothing measured changes);
+   type.css's classes step at md. */
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-md: 735px;
+  --breakpoint-lg: 1069px;
+  --breakpoint-xl: 1441px;
+}
+
+/* Semantic names on the --cui-* custom properties. Because the mapping is
+   `inline`, a utility emits the var() directly and follows the block's
+   color scheme. A text color reads --text-color-* before --color-*, a
+   ground --background-color-*: the words below make text- and bg- classes
+   only (no bg-secondary, no text-alt). */
+@theme inline {
+  --font-sans: var(--cui-font);
+
+  /* the text: text-body, text-secondary, text-muted */
+  --text-color-body: var(--cui-c-text);
+  --text-color-secondary: var(--cui-c-text-2);
+  --text-color-muted: var(--cui-c-text-3);
+
+  /* the grounds: bg-page, bg-alt */
+  --background-color-page: var(--cui-c-bg);
+  --background-color-alt: var(--cui-c-bg-alt);
+
+  /* for every color utility: border-border, text-accent, bg-accent, text-link */
+  --color-border: var(--cui-c-border);
+  --color-accent: var(--cui-c-accent);
+  --color-link: var(--cui-c-link);
+}

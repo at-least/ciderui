@@ -29,7 +29,7 @@ Each is read at 1600, 1200, 900 and 390px wide (one width inside each of apple.c
 | text | `#1d1d1f` | every page's body |
 | secondary text | `#6e6e73` | `home:hero.callout`, `store:shelf.subheader` |
 | tertiary, a control's edge | `#86868b` | `buy:option` border, `signin:field.input` border, `signin:checkbox` |
-| page | `#ffffff` | the store's, the bag's body |
+| page | `#ffffff` | the home page's and the bag's body (the store's home page is on `#f5f5f7`) |
 | alternate ground | `#f5f5f7` | `home:hero.tile`, `home:footer`, `bag:ribbon` |
 | divider | `#d2d2d7` | `bag:accordion.item` |
 | accent fill | `#0071e3`, hover `#0076df`, pressed `#006edb` | every primary button |

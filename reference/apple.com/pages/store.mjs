@@ -2,7 +2,7 @@
 // page), the buttons of its shared button styles (common-css), the header, the
 // quick links, the product nav, a shelf's header, a card and its hover, the
 // shelf's paddles.
-import { TYPE, BOX, MOTION, FOCUS } from './common.mjs';
+import { TYPE, BOX, MOTION, FOCUS, PAGE } from './common.mjs';
 const T = ['headline-super', 'headline-elevated', 'headline', 'headline-reduced', 'headline-standalone', 'eyebrow-super',
   'eyebrow-elevated', 'eyebrow', 'eyebrow-reduced', 'intro-elevated', 'intro', 'body', 'body-tight', 'body-reduced',
   'body-reduced-tight', 'caption', 'label', 'callout', 'tout', 'quote', 'quote-reduced', 'manifesto'];
@@ -15,7 +15,8 @@ export default {
     { name: 'type.none', inject: '<p>Sample text</p>', into: '.rs-page-content, main, body', props: TYPE },
     ...T.map(c => ({ name: `type.t-${c}`, inject: `<p class="t-${c}">Sample text</p>`, into: '.rs-page-content, main, body', props: TYPE })),
     ...BUTTONS.map(c => ({ name: `button${c ? '.' + c.replace('button-', '') : ''}`, inject: `<a href="#" class="button ${c}">Buy</a>`, into: '.rs-page-content, main, body', props: [...TYPE, ...BOX, 'display', 'width', ...FOCUS, ...MOTION], box: true, states: STATES })),
-    { name: 'page.body', select: 'body', props: [...TYPE, 'background-color'] },
+    { name: 'page.body', select: 'body', props: PAGE },
+    { name: 'page.strong', select: 'main strong, main b, .rs-page-content strong, body strong', props: TYPE },
     { name: 'header', select: 'h1.rs-shop-header', props: [...TYPE, 'margin-top', 'margin-bottom'] },
     { name: 'header.tagline', select: '.rs-shop-header + *, .rs-shop-subheader', props: TYPE },
     { name: 'quicklink', select: '.rs-quicklinks-button', props: [...TYPE, ...BOX], box: true, states: ['hover'] },

@@ -77,6 +77,8 @@ Every component follows these.
 | `bar` | `rgba(255,255,255,.8)` | `rgba(22,22,23,.8)` (read from the global nav's stylesheet, not seen live) | the global nav's ground, under its material |
 | `paddle`, `-hover`, `-active` | `rgba(210,210,215,.64)`, `rgba(222,222,227,.698)`, `rgba(194,194,199,.655)` | `rgba(66,66,69,.72)`, `rgba(73,73,76,.725)`, `rgba(57,57,60,.74)` | a gallery's paddles |
 
+tokens.css holds the slots measured on both sides (`bg`, `bg-alt`, `text`, `text-2`, `text-3`, `border`, the accent's three, `link`); a slot with a guessed side enters with the first component that reads it, that side measured then, so no stylesheet ever reads a guess. `test/tokens.mjs` holds each to the probe beside it.
+
 Their contrast, computed (WCAG 2): `text` 16.8:1 on `bg` and 15.5:1 on `bg-alt` (dark: 19.3:1, 15.5:1); `text-2` 5.1:1 and 4.7:1 (dark: 5.8:1, 4.7:1); `link` 5.6:1 and 5.1:1 (dark: 7.0:1, 5.6:1); white on `accent` 4.7:1, on `accent-hover` 4.5:1, on `accent-active` 4.9:1; `border` 3.6:1 on `bg` and 3.3:1 on `bg-alt` (dark: 4.1:1, 3.3:1); `tag` 5.5:1. apple.com's dark secondary text, `#6e6e73` (the product page's stat captions), is 4.1:1 on black and 3.3:1 on `#1d1d1f`, below 4.5:1, so the contract's dark `text-2` is `#86868b` (5.8:1 and 4.7:1) and apple.com's `#6e6e73` is dark `text-3` and `border` (decision 6). The token test holds these minimums on both sides: body and secondary text 4.5:1 on `bg` and `bg-alt`, `text-3` and `border` 3:1, white 4.5:1 on the accent's three grounds.
 
 The palette is fixed: no site redefines a color, and there are no themes (stated: "顏色不能換"); apple.com has one palette. The token test holds tokens.css to the values above.
@@ -133,7 +135,7 @@ The marketing pages' three-tier headlines (the home page's tile headline: 32px b
 
 Where apple.com tunes a size two ways, the store's is taken (32px +0.004em, 48px −0.003em; the home page's +0.002em, −0.002em). CSS has no letter-spacing per font of a stack, so Inter takes SF's values and runs wide of apple.com's text: by up to 0.0243em a character at 400 (21px), 0.0208em at 17px, about 21px over a 60-character line (measured, `reference/tracking/`). That is the price of SF exact on Apple's platforms, the owner's choice of Inter (decision 3).
 
-**How the classes compose with Tailwind** is to be settled by measurement before the first one ships: whether a class written as Tailwind v4's `@utility` can hold its own `@media` step and still take a variant (`lg:cui-headline-super`), which would let a page add a tier in the markup; otherwise they are component classes and a third tier is a component's.
+**The classes are Tailwind utilities** (`type.css`, `@utility`), not component classes: measured in Tailwind 4.3.3 and Chromium 151, a class holds its own step at 735px, a variant composes with it (`cui-headline lg:cui-headline-super` is 32, 48 and 80px at 390, 900 and 1069px), and a plain utility on the same element wins at every width (`cui-headline text-[20px]` is 20px), as rule 1 wants of a component. `test/type.mjs` holds each class to the store's at 390, 734, 735, 900, 1200 and 1600px.
 
 ## The page
 

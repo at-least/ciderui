@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/store",
  "finalUrl": "https://www.apple.com/store",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T03:12:21.159Z",
+ "date": "2026-10-19T04:10:28.572Z",
  "widths": {
   "390": {
    "type.none": {
@@ -1757,7 +1757,21 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(245, 245, 247)"
+     "background-color": "rgb(245, 245, 247)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "page.strong": {
+    "html": "<strong>AT&amp;T iPhone 18 Pro, iPhone 18 Pro Max, and iPhone 17 Special Deal:</strong>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)"
     }
    },
    "header": {
@@ -3816,7 +3830,21 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(245, 245, 247)"
+     "background-color": "rgb(245, 245, 247)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "page.strong": {
+    "html": "<strong>AT&amp;T iPhone 18 Pro, iPhone 18 Pro Max, and iPhone 17 Special Deal:</strong>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)"
     }
    },
    "header": {
@@ -5875,7 +5903,21 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(245, 245, 247)"
+     "background-color": "rgb(245, 245, 247)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "page.strong": {
+    "html": "<strong>AT&amp;T iPhone 18 Pro, iPhone 18 Pro Max, and iPhone 17 Special Deal:</strong>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)"
     }
    },
    "header": {
@@ -7934,7 +7976,21 @@
      "font-weight": "400",
      "letter-spacing": "-0.374px",
      "color": "rgb(29, 29, 31)",
-     "background-color": "rgb(245, 245, 247)"
+     "background-color": "rgb(245, 245, 247)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "page.strong": {
+    "html": "<strong>AT&amp;T iPhone 18 Pro, iPhone 18 Pro Max, and iPhone 17 Special Deal:</strong>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)"
     }
    },
    "header": {

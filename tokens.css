@@ -1,0 +1,67 @@
+/* ciderui — the tokens. The colors are the contract: the --cui-c-* variables
+ * every component reads, and the only colors it may. Each is apple.com's,
+ * measured (reference/apple.com/), one light-dark() pair, light first, or
+ * one value where both sides are the same; the dark secondary text is
+ * fitted (apple.com's #6e6e73 is 4.1:1 on black, below 4.5:1). The palette
+ * is fixed: no site redefines a color. A slot enters with the first
+ * component that reads it, its dark side measured then (DESIGN.md, the
+ * token contract). The pairs follow the color scheme of the element they
+ * are used on: `cui-dark` on any element darkens what is inside it
+ * (base.css; reference/scheme/). Plain custom properties, no Tailwind
+ * directive. Part of index.css.
+ *
+ * What each color is for:
+ *   bg, bg-alt              the page; the alternate ground (a tile, the
+ *                           footer, a dark section's alternate)
+ *   text, text-2, text-3    body, secondary and muted text (muted at 3:1,
+ *                           never body)
+ *   border                  a control's edge (a field, an option)
+ *   accent, -hover, -active the primary fill, white on it; the focus ring
+ *   link                    a link; a secondary button's text and edge
+ *
+ * The rest is not themed: the font stack, the letter-spacing per size, the
+ * radii, the focus ring. */
+
+:root {
+  --cui-c-bg: light-dark(#ffffff, #000000);
+  --cui-c-bg-alt: light-dark(#f5f5f7, #1d1d1f);
+  --cui-c-text: light-dark(#1d1d1f, #f5f5f7);
+  --cui-c-text-2: light-dark(#6e6e73, #86868b);
+  --cui-c-text-3: light-dark(#86868b, #6e6e73);
+  --cui-c-border: light-dark(#86868b, #6e6e73);
+  --cui-c-accent: #0071e3;
+  --cui-c-accent-hover: #0076df;
+  --cui-c-accent-active: #006edb;
+  --cui-c-link: light-dark(#0066cc, #2997ff);
+
+  /* SF on Apple's platforms by its two Apple-only names (-apple-system
+     Safari's, BlinkMacSystemFont Chrome's; system-ui would be a font
+     everywhere and Inter never drawn), Inter where neither is a font,
+     fetched only there (reference/stack/) */
+  --cui-font: -apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* the letter-spacing per size: apple.com's minus the system font's own
+     tracking, which apple.com's SF Pro webfonts do not carry
+     (reference/tracking/cui-tracking.json; within 0.0006em of apple.com's
+     text in Safari, Chrome and iOS's Safari; Inter takes the same) */
+  --cui-tracking-12: -0.0105em;
+  --cui-tracking-14: -0.0058em;
+  --cui-tracking-17: 0.0029em;
+  --cui-tracking-19: -0.0129em;
+  --cui-tracking-21: -0.0049em;
+  --cui-tracking-24: -0.004em;
+  --cui-tracking-28: -0.0073em;
+  --cui-tracking-32: -0.0093em;
+  --cui-tracking-40: -0.0099em;
+  --cui-tracking-48: -0.0109em;
+  --cui-tracking-56: -0.011em;
+  --cui-tracking-64: -0.013em;
+  --cui-tracking-80: -0.0156em;
+  --cui-tracking-96: -0.0156em;
+
+  /* the focus ring: apple.com's on every control it was read on, 2px of the
+     accent 3px out; a text field's 1px out */
+  --cui-focus-ring: 2px solid var(--cui-c-accent);
+  --cui-focus-ring-offset: 3px;
+  --cui-focus-ring-offset-field: 1px;
+}
