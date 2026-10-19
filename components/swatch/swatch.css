@@ -1,0 +1,94 @@
+/* ciderui — the swatch: apple.com's buy page's color choice, a 28px circle
+ * of the color in a 36px ring, on a radio; checked, the ring the accent.
+ *
+ * From apple.com's buy page (reference/apple.com/): buy:swatch* (iPhone 18
+ * Pro's finishes: at rest; checked, apple.com's classes on a checked copy
+ * the probe adds; the list, an item's parts).
+ *
+ *   <ul class="cui-swatches">
+ *     <li class="cui-swatch">
+ *       <input class="cui-swatch-input" type="radio" id="color-burgundy" name="color" value="burgundy" checked>
+ *       <label class="cui-swatch-ring" for="color-burgundy">
+ *         <img class="cui-swatch-color" src="/finish-burgundy.png" alt="">
+ *         <span class="cui-swatch-name">Burgundy</span>
+ *       </label>
+ *     </li>
+ *   </ul>
+ *
+ * cui-swatches       a row of them that wraps, 5px apart, 8px between rows
+ * cui-swatch         one
+ * cui-swatch-input   the radio itself, over the ring, transparent
+ * cui-swatch-ring    the ring: 36px, 2px of padding and a 2px edge, clear;
+ *                    checked, the accent; focused from the keyboard, the
+ *                    focus ring
+ * cui-swatch-color   the color, 28px: the page's image, or an element its
+ *                    style colors (the alternate ground until then)
+ * cui-swatch-name    the color's name, hidden but read
+ *
+ * apple.com's: the sizes, the ring, the gaps, the hidden name. ciderui's:
+ * the ring a block, so an item is 36px tall (apple.com's ring is inline and
+ * its item 39px, the line's descent under it); the gaps the list's (apple.com's
+ * each item's margins, 4px above and below the row too); focused from the
+ * keyboard, the focus ring around the ring, as on an option (apple.com's
+ * swatches take no keyboard focus until a model is chosen: not measured). */
+
+@layer components {
+  .cui-swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 5px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cui-swatch {
+    position: relative;
+  }
+
+  .cui-swatch-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    opacity: 0;
+  }
+
+  .cui-swatch-ring {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    padding: 2px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+  }
+
+  .cui-swatch-color {
+    display: block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--cui-c-bg-alt);
+  }
+
+  .cui-swatch-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(0 0 99.9% 99.9%);
+    white-space: nowrap;
+  }
+
+  .cui-swatch-input:checked + .cui-swatch-ring {
+    border-color: var(--cui-c-accent);
+  }
+
+  .cui-swatch-input:focus-visible + .cui-swatch-ring {
+    outline: var(--cui-focus-ring);
+    outline-offset: var(--cui-focus-ring-offset);
+  }
+}

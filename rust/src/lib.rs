@@ -27,6 +27,7 @@ mod option;
 mod ribbon;
 mod section;
 mod shelf;
+mod swatch;
 mod tile;
 
 pub use card::Card;
@@ -40,6 +41,7 @@ pub use option::OptionTile;
 pub use ribbon::Ribbon;
 pub use section::{Ground, Rhythm, Section, SectionHeader};
 pub use shelf::Shelf;
+pub use swatch::Swatch;
 pub use tile::{Tile, TileSize};
 
 #[cfg(test)]
