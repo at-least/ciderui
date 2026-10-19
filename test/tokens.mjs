@@ -88,6 +88,11 @@ const CONTRACT = {
   '--cui-c-separator': [['localnav', 'localnav.rule', W, 'background-color'], ['localnav-dark', 'localnav.rule', W, 'background-color']],
   // the home page's tiles: the hero's, light, and a dark one (.tile-wrapper.theme-dark)
   '--cui-c-tile': [['home', 'hero.tile', W, 'background-color'], ['home', 'tile.dark', W, 'background-color']],
+  // the store's cards: a light one, a dark one (rf-ccard-darkbg); a dark
+  // card's plain eyebrow on a copy the probe adds
+  '--cui-c-on-card': [['store', 'card.header', W, 'color'], ['store', 'card.dark-header', W, 'color']],
+  '--cui-c-eyebrow': [['store', 'card.eyebrow', W, 'color'], ['store', 'card.dark-eyebrow', W, 'color']],
+  '--cui-c-tag': [['store', 'card.tag', W, 'color'], ['store', 'card.dark-tag', W, 'color']],
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-'));
@@ -128,6 +133,10 @@ const MIN = [
   ['--cui-c-link', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
   ['--cui-c-text-3', ['--cui-c-bg', '--cui-c-bg-alt'], 3],
   ['--cui-c-border', ['--cui-c-bg', '--cui-c-bg-alt'], 3],
+  // a card's text on its ground, the page's
+  ['--cui-c-on-card', ['--cui-c-bg'], 4.5],
+  ['--cui-c-eyebrow', ['--cui-c-bg'], 4.5],
+  ['--cui-c-tag', ['--cui-c-bg'], 4.5],
 ];
 for (const [fg, grounds, min] of MIN) {
   for (const bg of grounds) {
@@ -167,6 +176,20 @@ check('the focus ring is apple.com\'s width', ref('home', 'button', W, 'outline-
 check('the focus ring is apple.com\'s color', rgb(sides('--cui-c-accent')[0]), ref('home', 'button', W, 'outline-color', 'focus-visible'));
 check('--cui-focus-ring-offset is apple.com\'s', vars['--cui-focus-ring-offset'], ref('home', 'button', W, 'outline-offset', 'focus-visible'));
 check('--cui-focus-ring-offset-field is apple.com\'s', vars['--cui-focus-ring-offset-field'], ref('signin', 'field.input', W, 'outline-offset', 'focus-visible'));
+
+// the card's shadows, as the browser computes one: its color first, then its
+// lengths (the spread 0px where none is written)
+const shadow = (value) => {
+  const color = value.match(/rgba?\([^)]*\)/)[0];
+  const lengths = value.replace(color, '').trim().split(/\s+/);
+  while (lengths.length < 4) lengths.push('0px');
+  return `${color.includes(',') ? color : rgb(color)} ${lengths.join(' ')}`;
+};
+for (const [name, state] of [['--cui-shadow-card'], ['--cui-shadow-card-hover', 'hover']]) {
+  for (const probe of ['card', 'card.dark']) {
+    check(`${name} is apple.com's store:${probe}${state ? ':' + state : ''} box-shadow`, shadow(vars[name]), shadow(ref('store', probe, W, 'box-shadow', state)));
+  }
+}
 
 // no stylesheet but tokens.css writes a color: not by value, not by name
 // (transparent, currentColor and inherit are not a color of its own)

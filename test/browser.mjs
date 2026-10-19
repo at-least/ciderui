@@ -10,7 +10,8 @@
 // Besides a property, a check reads `box-height` and `box-width`, the
 // element's box, `box-top`, `box-left` and `box-right`, its place in the window,
 // `box-x` and `box-y`, its place in its parent's box (a line in its SVG),
-// and `focused`, whether it has the focus.
+// `focused`, whether it has the focus, and `hit`, what the pointer finds at
+// five points of its box (a tenth in from each corner, and its middle).
 
 import { chromium } from 'playwright-chromium';
 
@@ -45,7 +46,12 @@ export async function open(css, html, { width = 1200, height = 800, reducedMotio
       const parent = () => el.parentElement.getBoundingClientRect();
       const BOX = { 'box-height': () => box.height, 'box-width': () => box.width, 'box-top': () => box.top, 'box-left': () => box.left, 'box-right': () => box.right,
         'box-x': () => box.left - parent().left, 'box-y': () => box.top - parent().top };
-      return Object.fromEntries(props.map(p => [p, p in BOX ? `${BOX[p]()}px` : p === 'focused' ? String(document.activeElement === el) : cs.getPropertyValue(p)]));
+      // each point's element, by its tag and classes
+      const hit = () => [[0.1, 0.1], [0.9, 0.1], [0.1, 0.9], [0.9, 0.9], [0.5, 0.5]].map(([x, y]) => {
+        const e = document.elementFromPoint(box.left + box.width * x, box.top + box.height * y);
+        return e ? [e.tagName.toLowerCase(), ...e.classList].join('.') : 'none';
+      }).join(' ');
+      return Object.fromEntries(props.map(p => [p, p in BOX ? `${BOX[p]()}px` : p === 'focused' ? String(document.activeElement === el) : p === 'hit' ? hit() : cs.getPropertyValue(p)]));
     }, [selector, props, pseudo]);
     if (state) {
       await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] });

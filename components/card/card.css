@@ -1,0 +1,167 @@
+/* ciderui — the card: the store's card, a block of the page's ground with
+ * rounded corners and a shadow, its picture filling it and its text at its
+ * top (an eyebrow or a tag, its headline, a description, a price); the
+ * whole card its headline's link, lifted as the pointer comes over it.
+ *
+ * From apple.com's store (reference/apple.com/): store:card* (a light card
+ * with a tag, a dark one, one with a plain eyebrow; their parts, hovered).
+ *
+ *   <div class="cui-card">
+ *     <img class="cui-card-media" src="/iphone.jpg" alt="">
+ *     <div class="cui-card-content">
+ *       <p class="cui-card-eyebrow" data-variant="tag">NEW</p>
+ *       <h3 class="cui-card-headline"><a class="cui-card-link" href="/iphone/">iPhone 18 Pro</a></h3>
+ *       <p class="cui-card-description">The ultimate iPhone.</p>
+ *       <p class="cui-card-price">From $1199</p>
+ *     </div>
+ *   </div>
+ *
+ * cui-card              the card: 400 by 500px (309 by 450px below 735px),
+ *                       on the page's ground (white; black in a dark block,
+ *                       cui-dark on the card, its text white), 18px corners,
+ *                       its shadow; hovered or with the focus in it, a
+ *                       deeper shadow and 1% larger, in 0.3s
+ * cui-card-media        its picture, filling it (object-fit: cover), under
+ *                       its text
+ * cui-card-content      its text, at its top: 28px in, 340px wide at most
+ * cui-card-eyebrow      12px at 600, 8px above the headline (7px)
+ *   data-variant="tag"  a tag in its place ("NEW"), in the tag's color
+ * cui-card-headline     28px at 600 (21px below 735px), as far down with no
+ *                       eyebrow above it as with one
+ * cui-card-link         its headline's link, the whole card's
+ * cui-card-description  14px at 600, 10px below the headline (6px)
+ * cui-card-price        14px at 400, 6px below the description
+ *
+ * apple.com's: the size, the ground, the corners, the shadows and the
+ * motion, the spacing, the type and the colors. ciderui's: the
+ * letter-spacing (tokens.css); its size steps with the window at 735px
+ * (apple.com's with a phone's screen, `max-device-width: 736px`: the same
+ * at the widths measured); the whole card is its link with no script, the
+ * link's ::after over it (apple.com's script follows the link from anywhere
+ * on the card), so its text cannot be selected, as apple.com's cannot; it
+ * lifts as the pointer comes over it anywhere (apple.com's in a shelf, its
+ * scroller still); its shadow and its scale are what move (apple.com's
+ * `transition: all` would also move its size as a window's width crosses
+ * 735px, which a screen's does not); its picture is laid under its text (apple.com's text is
+ * laid over its picture). One size, the store's most (its rf-ccard-40): a
+ * site sets another width with a utility (`w-full`), the picture cropped to
+ * it. */
+
+@layer components {
+  .cui-card {
+    position: relative;
+    isolation: isolate;
+    width: 309px;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 18px;
+    color: var(--cui-c-on-card);
+    background-color: var(--cui-c-bg);
+    box-shadow: var(--cui-shadow-card);
+    transition-property: box-shadow, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0, 0, 0.5, 1);
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus-within {
+        box-shadow: var(--cui-shadow-card-hover);
+        transform: scale3d(1.01, 1.01, 1.01);
+      }
+    }
+
+    @media (width >= 735px) {
+      width: 400px;
+      height: 500px;
+    }
+  }
+
+  /* under the text, inside the card's own stacking */
+  .cui-card-media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cui-card-content {
+    box-sizing: content-box;
+    max-width: 340px;
+    padding: 28px;
+  }
+
+  .cui-card-eyebrow {
+    margin: 0;
+    padding-bottom: 7px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-12);
+    color: var(--cui-c-eyebrow);
+
+    &[data-variant="tag"] {
+      color: var(--cui-c-tag);
+    }
+
+    @media (width >= 735px) {
+      padding-bottom: 8px;
+    }
+  }
+
+  /* first in the card, it is as far down as after an eyebrow */
+  .cui-card-headline {
+    margin: 0;
+    padding-top: 23px;
+    font-size: 21px;
+    line-height: 25px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-21);
+
+    @media (width >= 735px) {
+      padding-top: 24px;
+      font-size: 28px;
+      line-height: 32px;
+      letter-spacing: var(--cui-tracking-28);
+    }
+  }
+
+  .cui-card-eyebrow + .cui-card-headline {
+    padding-top: 0;
+  }
+
+  .cui-card-link {
+    display: inline-block;
+    color: inherit;
+    text-decoration-line: none;
+
+    /* the whole card: the card is the nearest box placed */
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  .cui-card-description,
+  .cui-card-price {
+    margin: 6px 0 0;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-14);
+
+    @media (width >= 735px) {
+      margin-top: 10px;
+    }
+  }
+
+  .cui-card-description {
+    font-weight: 600;
+  }
+
+  .cui-card-description + .cui-card-price {
+    margin-top: 6px;
+  }
+}

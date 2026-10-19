@@ -35,9 +35,13 @@
  *                           footer's rows
  *   tile                    a tile's ground: the alternate ground, black
  *                           in a dark block (apple.com's dark tiles are #000)
+ *   on-card                 a card's text (on the page's ground: white,
+ *                           black in a dark block), white in a dark one
+ *   eyebrow, tag            a card's eyebrow, and a tag in its place
+ *                           ("NEW")
  *
  * The rest is not themed: the font stack, the letter-spacing per size, the
- * radii, the focus ring. */
+ * radii, the focus ring, the shadows. */
 
 :root {
   --cui-c-bg: light-dark(#ffffff, #000000);
@@ -64,6 +68,9 @@
   --cui-c-on-bar-2: light-dark(rgb(0 0 0 / 0.88), rgb(255 255 255 / 0.92));
   --cui-c-separator: light-dark(rgb(0 0 0 / 0.16), rgb(255 255 255 / 0.24));
   --cui-c-tile: light-dark(#f5f5f7, #000000);
+  --cui-c-on-card: light-dark(#1d1d1f, #ffffff);
+  --cui-c-eyebrow: light-dark(#424245, #f5f5f7);
+  --cui-c-tag: light-dark(#b64400, #ff791b);
 
   /* SF on Apple's platforms by its two Apple-only names (-apple-system
      Safari's, BlinkMacSystemFont Chrome's; system-ui would be a font
@@ -95,4 +102,9 @@
   --cui-focus-ring: 2px solid var(--cui-c-accent);
   --cui-focus-ring-offset: 3px;
   --cui-focus-ring-offset-field: 1px;
+
+  /* a card's shadow, and hovered: apple.com's store cards', a dark card's the
+     same */
+  --cui-shadow-card: 2px 4px 12px rgb(0 0 0 / 0.08);
+  --cui-shadow-card-hover: 2px 4px 16px rgb(0 0 0 / 0.16);
 }

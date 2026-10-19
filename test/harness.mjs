@@ -17,7 +17,7 @@
 // A check:
 //   target   a selector in the case's markup; props, the values read (a
 //            property, the box: box-height, box-width, box-top, box-left, box-right,
-//            box-x, box-y, or `focused`, test/browser.mjs), of its `pseudo`
+//            box-x, box-y, `focused` or `hit`, test/browser.mjs), of its `pseudo`
 //            element (::after) if it names one; state, the pseudo-classes
 //            forced on it (or on `on`)
 //   apple    [page, probe, state?]: each value equals apple.com's measured

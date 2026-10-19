@@ -13,6 +13,7 @@
 
 #![warn(missing_docs)]
 
+mod card;
 #[cfg(feature = "css")]
 pub mod css;
 mod globalnav;
@@ -23,6 +24,7 @@ mod ribbon;
 mod section;
 mod tile;
 
+pub use card::Card;
 pub use globalnav::GlobalNav;
 pub use link::MoreLink;
 pub use localnav::LocalNav;
