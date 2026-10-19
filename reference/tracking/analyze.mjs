@@ -57,3 +57,20 @@ export function analyzeVerify(label, result) {
   console.log(pass ? 'PASS: system-ui at ciderui\'s letter-spacing lands on apple.com\'s widths' : 'FAIL: system-ui at ciderui\'s letter-spacing misses apple.com\'s widths');
   return pass;
 }
+
+// inter: no pass mark for the distance, which is what is being measured; the
+// run fails only if Inter did not load (inter.js throws) or drew nothing.
+export function analyzeInter(label, result) {
+  console.log(`\n${label}\n${result.ua}`);
+  console.log('size weight  Δ(Inter at ciderui ls − apple.com)  Inter alone: ls to land on apple.com');
+  let drew = true;
+  for (const r of result.rows) {
+    drew &&= r.inter0 > 0;
+    const d = em(r.inter, r.web, r.size);
+    const own = SCALE[r.size][1] - em(r.inter0, r.web0, r.size);
+    console.log(`${String(r.size).padStart(4)} ${String(r.weight).padStart(6)}  ${f(d).padStart(33)}  ${f(own).padStart(36)}`);
+  }
+  const worst = Math.max(...result.rows.map(r => Math.abs(em(r.inter, r.web, r.size))));
+  console.log(`worst |Δ| Inter at ciderui's letter-spacing: ${worst.toFixed(4)}em a character`);
+  return drew;
+}

@@ -27,10 +27,31 @@ Measured 2026-10-19 in Safari 27.0.1 on macOS 27.0.1, Google Chrome 155.0.8059.8
 What else it showed:
 
 - **The name.** `-apple-system` is Safari's alone (in Chrome it falls to another font, 0.065em off) and `BlinkMacSystemFont` is Chrome's alone (0.064em off in Safari); `system-ui` is the one name both take.
-- **The control.** On Linux, Chromium 151's `system-ui` is Noto Sans, 0.010em to 0.048em off apple.com's cut at every size: the probe fails where the font is not SF (`results/chromium-measure.json`).
+- **The control.** On Linux, Chromium 151's `system-ui` is Noto Sans, 0.0075em to 0.0439em off apple.com's cut at every size: the probe fails where the font is not SF (`results/chromium-measure.json`).
 - **Safari's font loading.** On apple.com, `document.fonts.ready` never settles in Safari 27 (some of its icon faces stay loading), so the probe loads each face it measures explicitly and fails if one is not `loaded`.
+- **Linux's hinting.** Playwright's Chromium on Linux hints every glyph to a whole-pixel advance (100 of Inter's 17px "a" are 1000px; 942.141px with `--font-render-hinting=none`), so no width measured there means anything without that flag, which `run.mjs` passes. With it, Linux's widths are the Mac's: the Inter runs below agree with Chrome's and Safari's on macOS within 0.00006em a character.
 
 Not measured: a real iPhone (the simulator's iOS 26.5, not iOS 27), weights other than 400 and 600, Firefox, and the platforms where `system-ui` is not SF.
+
+## Inter, where the system font is not SF
+
+Where the system font is not SF, ciderui's text is Inter (4.001, the variable font with its `opsz` axis, 14 to 32, and `wght`; `fonts/`), and it takes the same letter-spacing: CSS has no letter-spacing per font of a stack. So the table is SF's, exact on Apple's platforms, and Inter is as near as it falls. Δ here is Inter at ciderui's letter-spacing against apple.com's cut at apple.com's, in em per character; "Inter alone" is the letter-spacing Inter would need to land on apple.com's widths by itself, for comparison:
+
+| size | Δ at 400 | Δ at 600 | Inter alone at 400 | Inter alone at 600 |
+| ---: | ---: | ---: | ---: | ---: |
+| 12px | +0.0023 | −0.0075 | −0.0128 | −0.0030 |
+| 14px | +0.0130 | +0.0032 | −0.0188 | −0.0090 |
+| 17px | +0.0208 | +0.0120 | −0.0179 | −0.0091 |
+| 19px | +0.0199 | +0.0098 | −0.0328 | −0.0227 |
+| 21px | +0.0243 | +0.0149 | −0.0292 | −0.0198 |
+| 24px | +0.0202 | +0.0120 | −0.0242 | −0.0160 |
+| 28px | +0.0097 | +0.0030 | −0.0170 | −0.0103 |
+| 32px | +0.0014 | −0.0038 | −0.0127 | −0.0075 |
+| 40px | +0.0048 | −0.0004 | −0.0147 | −0.0095 |
+| 48px | +0.0068 | +0.0016 | −0.0167 | −0.0115 |
+| 56px | +0.0087 | +0.0035 | −0.0197 | −0.0145 |
+
+Inter at 400 runs wider than apple.com's text by up to 0.0243em a character (21px), 0.0208em at 17px: a 60-character line of body text about 21px wider. Measured 2026-10-19 in Safari 27.0.1 (the table), Chrome 155 on macOS and Chromium 151 on Linux, the three within 0.00006em of each other (`results/*-inter.json`); Inter is added to apple.com's page from its bytes (`inter.js`), `fonts/inter-roman-latin.woff2`.
 
 ## The method
 
@@ -51,7 +72,8 @@ BROWSER=ios    MODE=measure node run.mjs   # safaridriver on an iPhone simulator
 BROWSER=chrome MODE=measure node run.mjs   # playwright-core, the installed Google Chrome
 node derive.mjs
 BROWSER=safari MODE=verify node run.mjs    # and ios, chrome
+BROWSER=safari MODE=inter node run.mjs     # and chrome, chromium; INTER names another font file
 PW=…/playwright-chromium/index.mjs BROWSER=chromium MODE=measure node run.mjs   # the Linux control
 ```
 
-On the Mac it runs from a copy of this directory with `playwright-core` installed beside it (`npm i playwright-core`, no browser download: Chrome is the installed one). `safari:deviceType: iPhone` takes whichever iPhone simulator safaridriver finds.
+On the Mac it runs from a copy of this directory with `playwright-core` installed beside it (`npm i playwright-core`, no browser download: Chrome is the installed one), and `INTER` naming the copied font file. `safari:deviceType: iPhone` takes whichever iPhone simulator safaridriver finds. The `chromium` runs pass `--font-render-hinting=none`.

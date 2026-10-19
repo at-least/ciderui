@@ -1,23 +1,30 @@
-// BROWSER=safari|ios|chrome|chromium MODE=measure|verify node run.mjs
+// BROWSER=safari|ios|chrome|chromium MODE=measure|verify|inter node run.mjs
 // safari and ios through safaridriver (raw WebDriver), chrome through
 // playwright-core and the installed Google Chrome, chromium through Playwright's
 // own build (PW names the module when it is not playwright-core beside this
 // file); the page is https://www.apple.com/; the result is results/<browser>-<mode>.json.
 import { spawn } from 'node:child_process';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { SCALE, WEIGHTS, SAMPLE, FAMILIES, analyze, analyzeVerify } from './analyze.mjs';
+import { SCALE, WEIGHTS, SAMPLE, FAMILIES, analyze, analyzeVerify, analyzeInter } from './analyze.mjs';
 
 const BROWSER = process.env.BROWSER;
 const MODE = process.env.MODE ?? 'measure';
 const src = readFileSync(new URL(`./${MODE}.js`, import.meta.url), 'utf8');
-const args = MODE === 'measure'
-  ? [Object.keys(SCALE).map(Number), WEIGHTS, SAMPLE]
-  : [SCALE, JSON.parse(readFileSync(new URL('./cui-tracking.json', import.meta.url), 'utf8')), WEIGHTS, SAMPLE, FAMILIES];
+const tracking = () => JSON.parse(readFileSync(new URL('./cui-tracking.json', import.meta.url), 'utf8'));
+const args = {
+  measure: () => [Object.keys(SCALE).map(Number), WEIGHTS, SAMPLE],
+  verify: () => [SCALE, tracking(), WEIGHTS, SAMPLE, FAMILIES],
+  // INTER names the font file, by default the kit's Latin subset
+  inter: () => [SCALE, tracking(), WEIGHTS, SAMPLE,
+    readFileSync(process.env.INTER ?? new URL('../../fonts/inter-roman-latin.woff2', import.meta.url)).toString('base64')],
+}[MODE]();
 const expr = `(async () => {\n${src}\nreturn ${MODE}(...${JSON.stringify(args)});\n})()`;
 
 async function viaChromium(channel) {
   const { chromium } = await import(process.env.PW ?? 'playwright-core');
-  const browser = await chromium.launch(channel ? { channel } : {});
+  // Playwright's own Chromium on Linux hints glyphs to whole-pixel advances
+  // (17px Inter "a" 10px, 9.42px without hinting): no width is measurable so
+  const browser = await chromium.launch(channel ? { channel } : { args: ['--font-render-hinting=none'] });
   try {
     const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
     await page.goto('https://www.apple.com/', { waitUntil: 'load', timeout: 120000 });
@@ -71,4 +78,4 @@ if (!run) throw new Error(`BROWSER must be safari, ios or chrome, not ${BROWSER}
 const { label, result } = await run();
 mkdirSync(new URL('./results/', import.meta.url), { recursive: true });
 writeFileSync(new URL(`./results/${BROWSER}-${MODE}.json`, import.meta.url), JSON.stringify({ browser: label, date: new Date().toISOString(), ...result }, null, 1));
-process.exit((MODE === 'measure' ? analyze : analyzeVerify)(label, result) ? 0 : 1);
+process.exit({ measure: analyze, verify: analyzeVerify, inter: analyzeInter }[MODE](label, result) ? 0 : 1);
