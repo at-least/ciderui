@@ -1,12 +1,12 @@
 # ciderui: its design
 
-ciderui is apple.com's look for websites: a Tailwind CSS v4 theme on a small token contract, apple.com's parts as CSS classes (`cui-btn`, `cui-field`, `cui-tile`, …), and a Rust crate that writes their markup with hypertext and carries the stylesheets. It is vpkit's architecture (`../vpkit`) with apple.com where vpkit has VitePress. This documents what is decided, before any component exists: what the standard is, what a component is, the rules every one follows, the token contract, the type, the catalogue, the crate, how a component is proven, and the decisions behind them.
+ciderui is apple.com's look for websites: a Tailwind CSS v4 theme on a small token contract, apple.com's parts as CSS classes (`cui-btn`, `cui-field`, `cui-tile`, …), and a Rust crate that writes their markup with hypertext and carries the stylesheets; and, as a product of its own, Apple's documentation layout for a docs theme, on which ciderui-zola, a Zola theme in a repository of its own, is built. It is vpkit's architecture (`../vpkit`, `../vpkit-zola`) with apple.com where vpkit has VitePress. This documents what is decided, before any component exists: what the standard is, what a component is, the rules every one follows, the token contract, the type, the catalogue, the crate, how a component is proven, and the decisions behind them.
 
 A value called *measured* here was read off apple.com's live pages or a browser on 2026-10-19 and is in `reference/` with its probe, page, browser and date; *stated* is the owner's; *guessed* is nobody's measurement.
 
 ## Who it is for
 
-The owner's websites, and nobody else's: ciderui is not public (stated). The sites are in English (stated), and they are both kinds of apple.com: marketing pages (a product, its story, its tiles) and the store (product cards, options to choose, a bag, sign-in and other forms) (stated). They render their pages in Rust with hypertext and build their CSS with the Tailwind CLI, as the owner's vpkit apps do (stated: "類似 ../vpkit，也要提供 rust hypertext 的 component"). With no consumer outside, a component takes the best shape and the sites follow it (decision 1).
+The owner's websites, and nobody else's: ciderui is not public (stated). The sites are in English (stated), and they are both kinds of apple.com: marketing pages (a product, its story, its tiles) and the store (product cards, options to choose, a bag, sign-in and other forms) (stated). They render their pages in Rust with hypertext and build their CSS with the Tailwind CLI, as the owner's vpkit apps do (stated: "類似 ../vpkit，也要提供 rust hypertext 的 component"). Their static sites, and ciderui's own documentation, are built with ciderui-zola, as vpkit's are with vpkit-zola (stated: "也做一個 ciderui-zola"). With no consumer outside, a component takes the best shape and the sites follow it (decision 1).
 
 ## The standard: apple.com, measured
 
@@ -42,7 +42,7 @@ Every component follows these.
 
 7. **Tokens: only the contract's.** A component reads tokens.css's colors and its non-color tokens and no literal color; the token test holds every stylesheet to it.
 
-8. **apple.com's control sizes, not one height.** apple.com's pill comes in four heights, measured: 24px (`data-size="sm"`, 12px text), 36px (the default, 14px), 44px (`lg`, 17px), 56px (`xl`, 17px); a field is 56px; the store's form button 56px. Where apple.com steps a control at a breakpoint (its marketing pages' buttons are 44px from 735px and 36px below), the component carries the step as a size of its own. This is where ciderui departs from vpkit's one control height (decision 7).
+8. **apple.com's control sizes, not one height.** apple.com's pill comes in four heights, measured: 24px (`data-size="sm"`, 12px text), 36px (the default, 14px: the store's shared button styles' default and most of the store's buttons), 44px (`lg`, 17px), 56px (`xl`, 17px); and its marketing pages' tile buttons step at 735px, 36px below and 44px from it, which is `data-size="cta"`, a hero's call to action. A field is 56px; the store's form button 56px. This is where ciderui departs from vpkit's one control height (decision 7; the default is ciderui's recommendation, the owner deferring to it).
 
 9. **One focus ring.** `base.css` draws `:focus-visible { outline: 2px solid var(--cui-c-accent); outline-offset: 3px }` on every element, apple.com's on every control it was read on (the home page's buttons, the store's, the bag's form buttons, the buy page's options); a text field restates it at `outline-offset: 1px`, as apple.com's does. A component draws no ring of its own; it restates the ring only to move it.
 
@@ -79,7 +79,7 @@ Every component follows these.
 
 Their contrast, computed (WCAG 2): `text` 16.8:1 on `bg` and 15.5:1 on `bg-alt` (dark: 19.3:1, 15.5:1); `text-2` 5.1:1 and 4.7:1 (dark: 5.8:1, 4.7:1); `link` 5.6:1 and 5.1:1 (dark: 7.0:1, 5.6:1); white on `accent` 4.7:1, on `accent-hover` 4.5:1, on `accent-active` 4.9:1; `border` 3.6:1 on `bg` and 3.3:1 on `bg-alt` (dark: 4.1:1, 3.3:1); `tag` 5.5:1. apple.com's dark secondary text, `#6e6e73` (the product page's stat captions), is 4.1:1 on black and 3.3:1 on `#1d1d1f`, below 4.5:1, so the contract's dark `text-2` is `#86868b` (5.8:1 and 4.7:1) and apple.com's `#6e6e73` is dark `text-3` and `border` (decision 6). The token test holds these minimums on both sides: body and secondary text 4.5:1 on `bg` and `bg-alt`, `text-3` and `border` 3:1, white 4.5:1 on the accent's three grounds.
 
-There is no theme gallery: apple.com has one palette. A site that redefines `accent` and its two steps (and `link`) supplies values already fitted: the token test fails a fill that does not take white at 4.5:1, and apple.com's own hover ground is at 4.51:1, so a color picked by eye will usually fail; ciderui has no fitter (vpkit's `fit-stock`) until a site needs one.
+The palette is fixed: no site redefines a color, and there are no themes (stated: "顏色不能換"); apple.com has one palette. The token test holds tokens.css to the values above.
 
 Not themed, in tokens.css too:
 
@@ -166,6 +166,8 @@ What apple.com's pages are made of, from the measurements, as the components to 
 | `cui-footer` | the footer: its directory, its rules, its legal line | `home:footer*` |
 | `cui-price`, `cui-stat`, `cui-footnote` | a price, a stat, a footnote's mark | `buy:price`, `product:stat*`, `product:footnote` |
 
+The docs theme's parts, from support.apple.com's user guides, measured when the docs theme is built: the guide's contents (a sidebar of topics, collapsing), the topic's article (its type, figures, notes, tables, code), the topic's footer (the previous and next topic, whether it helped); and the markdown, `prose.css`, the article's look for what Zola's markdown writes.
+
 Not measured yet: the modals, the search field open, the checkout's forms (not reachable without a bag), a touch screen's hover. When a part is built, its probes are added where the inventory's are not enough (rule 14: a component's test names its probes).
 
 ## The crate
@@ -207,10 +209,11 @@ The kit needs `light-dark()` (vpkit's floor: Chrome 123, Safari 17.5, Firefox 12
 11. **No JavaScript**: HTML's own elements for behavior.
 12. **Icons are inline SVG**, no icon font.
 13. **The crate carries the CSS**, one pin for a site's markup and its stylesheets.
-14. **One product** (proposed; the owner has not decided). No docs theme (apple.com has no docs layout to port); ciderui's own documentation is a site built on ciderui.
+14. **Two products and a theme**, as vpkit's: the site kit at the root; `docs-theme/`, Apple's documentation layout, for a docs theme; ciderui-zola, the Zola theme built on both, in a repository of its own, which ciderui's documentation is built with (stated). The docs layout's standard is support.apple.com's user guides (the guide's contents beside its topic, under apple.com's own global nav and footer, served as HTML a probe can read; developer.apple.com's documentation is an app its script draws, under a nav of its own): ciderui's recommendation, measured as apple.com's pages are when the docs theme is built.
+15. **The palette is fixed** (stated): no site color, no themes.
 
 ## Assumptions
 
 - Measured: apple.com's values in `reference/apple.com/` (seven pages, 2026-10-19); the system font's tracking and its fix (`reference/tracking/`); the stack's fonts and fetching (`reference/stack/`); a section's color scheme (`reference/scheme/`); the palette's contrast, computed from the measured values.
-- Stated by the owner: the sites are the owner's alone, in English, marketing and store; hypertext and the Tailwind CLI; Inter where SF is not; the prefix `cui`.
+- Stated by the owner: the sites are the owner's alone, in English, marketing and store; hypertext and the Tailwind CLI; Inter where SF is not; the prefix `cui`; ciderui-zola; the palette fixed; `cui-btn`'s default left to ciderui's recommendation.
 - Guessed: that apple.com's look holds still long enough for its measurements to stay the standard; the dark `divider`, `neutral`, `field` and `tag`; that the global nav's dark bar is its stylesheet's `rgba(22,22,23,.8)`; that iOS 27 on a phone behaves as the iOS 26.5 simulator; that Firefox behaves as the others.
