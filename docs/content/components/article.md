@@ -45,6 +45,8 @@ The text is 653px wide from 1069px, 576px from 735px, and below that 87.5% of th
 | `table`, `hr` | rows and a rule in the divider’s color |
 | `figure`, `figcaption` | the figures’ column; the caption in the text’s, 12px at 600 |
 
+A word too long for its line, an import in code, a bare URL, a hash in a table’s cell, breaks where it must, so it stays in the column; apple.com’s copy, prose with no such word, breaks none.
+
 `cui-article-footnotes` is the notes’ section at the end, 12px in the secondary text, numbered. The elements apple.com’s copy has none of (h3 to h6, code, a quotation, a table, a rule) are ciderui’s. A component inside the copy, any element with a `cui-` class, keeps its own look: the copy’s rules match plain elements alone.
 
 The crate writes it with `Article`, its copy the page’s; ciderui-zola writes a page’s markdown into it.

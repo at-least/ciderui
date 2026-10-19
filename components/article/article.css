@@ -57,7 +57,10 @@
  *
  * apple.com's: the columns, the rhythm, the type, the colors, the figure,
  * the list's indent, the footnotes. ciderui's: the letter-spacing
- * (tokens.css); h3 to h6, code, blockquote, table and hr, which Newsroom's
+ * (tokens.css); a word too long for its line broken where it must, so an
+ * import in code, a bare URL or a hash in a table stays in the column
+ * (overflow-wrap: anywhere: apple.com's breaks none, its prose having no
+ * such word); h3 to h6, code, blockquote, table and hr, which Newsroom's
  * copy has none of (h3 a related story's title, 19/23 at 700); a list at
  * the copy's size (apple.com's small print's 14px, its indent the same
  * 1.1765em); a footnote's mark that links to its note, in the copy's color
@@ -70,6 +73,10 @@
   .cui-article {
     --cui-article-band: min(100%, 414px);
     --cui-article-text: calc(min(100%, 414px) * 0.875);
+
+    /* a long word breaks inside its line, a table's cell's too (break-word
+       would keep the cell's word whole, and the table past the column) */
+    overflow-wrap: anywhere;
 
     @media (width >= 735px) {
       --cui-article-band: 692px;

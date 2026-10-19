@@ -610,5 +610,19 @@
  "dark | .cui-article-category | 390 | color": "rgb(134, 134, 139)",
  "dark | .cui-article-body > p a | 390 | color": "rgb(41, 151, 255)",
  "dark | .cui-article-body > pre | 390 | background-color": "rgb(29, 29, 31)",
- "dark | .cui-article-body th | 390 | border-bottom-color": "rgb(66, 66, 69)"
+ "dark | .cui-article-body th | 390 | border-bottom-color": "rgb(66, 66, 69)",
+ "long | .cui-article | 1600 | overflow-wrap": "anywhere",
+ "long | .cui-article-body > p code | 1600 | box-width": "538.140625px",
+ "long | .cui-article-body > p code | 1600 | box-left": "530.921875px",
+ "long | .cui-article-body > p a | 1600 | box-width": "635.828125px",
+ "long | .cui-article-body > p a | 1600 | box-left": "473.5px",
+ "long | .cui-article-body > table | 1600 | box-width": "653px",
+ "long | .cui-article-body > table | 1600 | box-left": "473.5px",
+ "long | .cui-article | 390 | overflow-wrap": "anywhere",
+ "long | .cui-article-body > p code | 390 | box-width": "339.828125px",
+ "long | .cui-article-body > p code | 390 | box-left": "24.375px",
+ "long | .cui-article-body > p a | 390 | box-width": "335.546875px",
+ "long | .cui-article-body > p a | 390 | box-left": "24.375px",
+ "long | .cui-article-body > table | 390 | box-width": "341.25px",
+ "long | .cui-article-body > table | 390 | box-left": "24.375px"
 }

@@ -87,4 +87,20 @@ export const cases = [
       { target: '.cui-article-body th', props: ['border-bottom-color'], golden: 'the dark divider (#424245)' },
     ],
   },
+  {
+    // words too long for a line, which markdown's copy has and Newsroom's
+    // prose does not: an import in inline code, a bare URL as a link, a
+    // hash in a table's cell
+    name: 'long',
+    html: `<article class="cui-article"><header class="cui-article-header"><h1 class="cui-article-headline">ciderui</h1></header><div class="cui-article-body">
+<p>Import <code>@import "../target/ciderui/components/button/button.css";</code> first.</p>
+<p><a href="#">https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/</a></p>
+<table><thead><tr><th>file</th><th>its hash</th></tr></thead><tbody><tr><td>logo.svg</td><td><code>PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgwIg==</code></td></tr></tbody></table>
+</div></article>`,
+    widths: [1600, 390],
+    checks: [
+      { target: '.cui-article', props: ['overflow-wrap'], golden: 'a word too long for its line breaks where it must, in the copy, a table\'s cell and the header (anywhere: break-word keeps a cell\'s word whole and the table runs past the column): apple.com\'s breaks none (newsroom-article:copy, headline, … overflow-wrap normal), its prose having no such word' },
+      ...['.cui-article-body > p code', '.cui-article-body > p a', '.cui-article-body > table'].map(target => ({ target, props: ['box-width', 'box-left'], golden: 'within the text\'s column: a long word broken in it' })),
+    ],
+  },
 ];
