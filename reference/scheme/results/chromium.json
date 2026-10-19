@@ -1,0 +1,23 @@
+{
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T03:16:57.972Z",
+ "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+ "got": {
+  "page": [
+   "rgb(29, 29, 31)",
+   "rgb(255, 255, 255)"
+  ],
+  "dark": [
+   "rgb(245, 245, 247)",
+   "rgb(0, 0, 0)"
+  ],
+  "in-dark": [
+   "rgb(245, 245, 247)",
+   "rgb(0, 0, 0)"
+  ],
+  "back": [
+   "rgb(29, 29, 31)",
+   "rgb(255, 255, 255)"
+  ]
+ }
+}

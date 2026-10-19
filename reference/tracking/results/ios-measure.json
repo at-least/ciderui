@@ -1,6 +1,6 @@
 {
  "browser": "safari 26.5 on iOS 26.5",
- "date": "2026-10-19T02:37:07.370Z",
+ "date": "2026-10-19T03:17:39.569Z",
  "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Mobile/15E148 Safari/604.1",
  "faces": {
   "SF Pro Display 600": "SF Pro Display 600 loaded",
@@ -162,6 +162,48 @@
    "weight": 600,
    "sys": 1625.234619140625,
    "text": 1771.2734375
+  },
+  {
+   "size": 64,
+   "display": 1747.21875,
+   "weight": 400,
+   "sys": 1759.90625,
+   "text": 1946.09375
+  },
+  {
+   "size": 64,
+   "display": 1833.21875,
+   "weight": 600,
+   "sys": 1850.1610107421875,
+   "text": 2024.3125
+  },
+  {
+   "size": 80,
+   "display": 2184.0234375,
+   "weight": 400,
+   "sys": 2184.0234375,
+   "text": 2432.6171875
+  },
+  {
+   "size": 80,
+   "display": 2291.5234375,
+   "weight": 600,
+   "sys": 2296.842041015625,
+   "text": 2530.390625
+  },
+  {
+   "size": 96,
+   "display": 2620.828125,
+   "weight": 400,
+   "sys": 2620.828125,
+   "text": 2919.140625
+  },
+  {
+   "size": 96,
+   "display": 2749.828125,
+   "weight": 600,
+   "sys": 2756.210205078125,
+   "text": 3036.46875
   }
  ]
 }

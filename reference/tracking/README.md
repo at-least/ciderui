@@ -17,10 +17,13 @@ The probe behind ciderui's letter-spacing. ciderui cannot ship SF Pro, so its te
 | 21px | Display | +0.0110 | +0.0160 / +0.0160 / +0.0160 | +0.0158 / +0.0158 / +0.0158 | −0.0049 |
 | 24px | Display | +0.0090 | +0.0127 / +0.0126 / +0.0127 | +0.0134 / +0.0134 / +0.0134 | −0.0040 |
 | 28px | Display | +0.0070 | +0.0137 / +0.0137 / +0.0137 | +0.0148 / +0.0149 / +0.0148 | −0.0073 |
-| 32px | Display | +0.0020 | +0.0127 / +0.0127 / +0.0127 | +0.0138 / +0.0139 / +0.0138 | −0.0113 |
+| 32px | Display | +0.0040 | +0.0127 / +0.0127 / +0.0127 | +0.0138 / +0.0139 / +0.0138 | −0.0093 |
 | 40px | Display | +0.0000 | +0.0093 / +0.0093 / +0.0093 | +0.0104 / +0.0105 / +0.0104 | −0.0099 |
-| 48px | Display | −0.0020 | +0.0073 / +0.0073 / +0.0073 | +0.0085 / +0.0085 / +0.0085 | −0.0099 |
+| 48px | Display | −0.0030 | +0.0073 / +0.0073 / +0.0073 | +0.0085 / +0.0085 / +0.0085 | −0.0109 |
 | 56px | Display | −0.0050 | +0.0054 / +0.0054 / +0.0054 | +0.0065 / +0.0066 / +0.0065 | −0.0110 |
+| 64px | Display | −0.0090 | +0.0034 / +0.0034 / +0.0034 | +0.0046 / +0.0046 / +0.0046 | −0.0130 |
+| 80px | Display | −0.0150 | +0.0000 / +0.0000 / +0.0000 | +0.0011 / +0.0012 / +0.0011 | −0.0156 |
+| 96px | Display | −0.0150 | +0.0000 / +0.0000 / +0.0000 | +0.0011 / +0.0012 / +0.0011 | −0.0156 |
 
 Measured 2026-10-19 in Safari 27.0.1 on macOS 27.0.1, Google Chrome 155.0.8059.80 on the same Mac, and Safari 26.5 in the iOS 26.5 simulator. Safari and Chrome are at most 0.00005em apart; iOS is macOS's Safari to the fourth decimal.
 
@@ -46,21 +49,24 @@ Where the system font is not SF, ciderui's text is Inter (4.001, the variable fo
 | 21px | +0.0243 | +0.0149 | −0.0292 | −0.0198 |
 | 24px | +0.0202 | +0.0120 | −0.0242 | −0.0160 |
 | 28px | +0.0097 | +0.0030 | −0.0170 | −0.0103 |
-| 32px | +0.0014 | −0.0038 | −0.0127 | −0.0075 |
+| 32px | +0.0014 | −0.0038 | −0.0107 | −0.0055 |
 | 40px | +0.0048 | −0.0004 | −0.0147 | −0.0095 |
-| 48px | +0.0068 | +0.0016 | −0.0167 | −0.0115 |
+| 48px | +0.0068 | +0.0016 | −0.0177 | −0.0125 |
 | 56px | +0.0087 | +0.0035 | −0.0197 | −0.0145 |
+| 64px | +0.0107 | +0.0055 | −0.0237 | −0.0185 |
+| 80px | +0.0141 | +0.0089 | −0.0297 | −0.0245 |
+| 96px | +0.0141 | +0.0089 | −0.0297 | −0.0245 |
 
-Inter at 400 runs wider than apple.com's text by up to 0.0243em a character (21px), 0.0208em at 17px: a 60-character line of body text about 21px wider. Measured 2026-10-19 in Safari 27.0.1 (the table), Chrome 155 on macOS and Chromium 151 on Linux, the three within 0.00006em of each other (`results/*-inter.json`); Inter is added to apple.com's page from its bytes (`inter.js`), `fonts/inter-roman-latin.woff2`.
+Inter at 400 runs wider than apple.com's text by up to 0.0243em a character (21px), 0.0208em at 17px: a 60-character line of body text about 21px wider; 0.0141em at 80px and 96px. Measured 2026-10-19 in Safari 27.0.1 (the table), Chrome 155 on macOS and Chromium 151 on Linux, the three within 0.00006em of each other (`results/*-inter.json`); Inter is added to apple.com's page from its bytes (`inter.js`), `fonts/inter-roman-latin.woff2`.
 
 ## The method
 
 On https://www.apple.com/, where apple.com's webfonts are already declared, each face measured is loaded with `document.fonts.load()` and must come back `loaded`. Then one 58-character string, `Sphinx of black quartz judge my vow 0123456789 AVATAR Wave`, is set in a hidden span, `white-space: nowrap`, at each of apple.com's sizes and at 400 and 600, and its width read:
 
 - `measure.js`: in `"SF Pro Text"`, in `"SF Pro Display"` and in `system-ui`, all at `letter-spacing: 0`. It passes only if `system-ui` is within 0.003em a character of apple.com's cut at every size (apple.com's smallest nonzero letter-spacing is 0.002em); it fails on every platform, which is the finding.
-- `verify.js`: apple.com's cut at apple.com's letter-spacing against `system-ui`, `-apple-system` and `BlinkMacSystemFont` at ciderui's. It passes if `system-ui` is within 0.0015em a character everywhere (0.08px a character at 56px), a tolerance set before the run: the table averages two weights.
+- `verify.js`: apple.com's cut at apple.com's letter-spacing against `system-ui`, `-apple-system` and `BlinkMacSystemFont` at ciderui's. It passes if `system-ui` is within 0.0015em a character everywhere (0.14px a character at 96px), a tolerance set before the run: the table averages two weights.
 
-The sizes, the cut apple.com sets at each and its letter-spacing (`analyze.mjs`'s `SCALE`) are its stylesheets' typography rules, read 2026-10-19: SF Pro Text up to 17px, SF Pro Display from 19px.
+The sizes, the cut apple.com sets at each and its letter-spacing (`analyze.mjs`'s `SCALE`) are its pages' computed type (`../apple.com/`, 2026-10-19): the store's `t-` ladder and the home page's 56px, SF Pro Text up to 17px, SF Pro Display from 19px. Where apple.com tunes a size two ways the store's and the product page's is taken: 32px at +0.004em and 48px at −0.003em (the home page sets +0.002em and −0.002em).
 
 ## Running it
 
@@ -71,6 +77,7 @@ BROWSER=safari MODE=measure node run.mjs   # safaridriver; Safari's "Allow remot
 BROWSER=ios    MODE=measure node run.mjs   # safaridriver on an iPhone simulator (Xcode)
 BROWSER=chrome MODE=measure node run.mjs   # playwright-core, the installed Google Chrome
 node derive.mjs
+node tables.mjs                            # this README's tables
 BROWSER=safari MODE=verify node run.mjs    # and ios, chrome
 BROWSER=safari MODE=inter node run.mjs     # and chrome, chromium; INTER names another font file
 PW=…/playwright-chromium/index.mjs BROWSER=chromium MODE=measure node run.mjs   # the Linux control

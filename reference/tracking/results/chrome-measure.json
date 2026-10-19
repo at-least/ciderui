@@ -1,6 +1,6 @@
 {
  "browser": "chrome 155.0.8059.80 on darwin",
- "date": "2026-10-19T02:36:58.153Z",
+ "date": "2026-10-19T03:17:30.318Z",
  "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
  "faces": {
   "SF Pro Text 400": "SF Pro Text 400 loaded",
@@ -162,6 +162,48 @@
    "text": 1771.28125,
    "display": 1604.078125,
    "sys": 1625.390625
+  },
+  {
+   "size": 64,
+   "weight": 400,
+   "text": 1946.09375,
+   "display": 1747.21875,
+   "sys": 1759.90625
+  },
+  {
+   "size": 64,
+   "weight": 600,
+   "text": 2024.3125,
+   "display": 1833.21875,
+   "sys": 1850.328125
+  },
+  {
+   "size": 80,
+   "weight": 400,
+   "text": 2432.625,
+   "display": 2184.03125,
+   "sys": 2184.03125
+  },
+  {
+   "size": 80,
+   "weight": 600,
+   "text": 2530.390625,
+   "display": 2291.53125,
+   "sys": 2297.046875
+  },
+  {
+   "size": 96,
+   "weight": 400,
+   "text": 2919.140625,
+   "display": 2620.828125,
+   "sys": 2620.828125
+  },
+  {
+   "size": 96,
+   "weight": 600,
+   "text": 3036.46875,
+   "display": 2749.828125,
+   "sys": 2756.453125
   }
  ]
 }

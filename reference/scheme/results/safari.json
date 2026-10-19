@@ -1,0 +1,23 @@
+{
+ "browser": "safari 27.0.1 on macOS 27.0.1",
+ "date": "2026-10-19T03:17:00.722Z",
+ "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0.1 Safari/605.1.15",
+ "got": {
+  "page": [
+   "rgb(29, 29, 31)",
+   "rgb(255, 255, 255)"
+  ],
+  "dark": [
+   "rgb(245, 245, 247)",
+   "rgb(0, 0, 0)"
+  ],
+  "in-dark": [
+   "rgb(245, 245, 247)",
+   "rgb(0, 0, 0)"
+  ],
+  "back": [
+   "rgb(29, 29, 31)",
+   "rgb(255, 255, 255)"
+  ]
+ }
+}

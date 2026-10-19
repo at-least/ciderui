@@ -1,0 +1,23 @@
+{
+ "browser": "safari 26.5 on iOS 26.5",
+ "date": "2026-10-19T03:17:12.100Z",
+ "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Mobile/15E148 Safari/604.1",
+ "got": {
+  "page": [
+   "rgb(29, 29, 31)",
+   "rgb(255, 255, 255)"
+  ],
+  "dark": [
+   "rgb(245, 245, 247)",
+   "rgb(0, 0, 0)"
+  ],
+  "in-dark": [
+   "rgb(245, 245, 247)",
+   "rgb(0, 0, 0)"
+  ],
+  "back": [
+   "rgb(29, 29, 31)",
+   "rgb(255, 255, 255)"
+  ]
+ }
+}

@@ -1,9 +1,12 @@
-// apple.com's scale (grepped from its stylesheets, 2026-10-19): the size, the
-// cut it sets at that size, and its letter-spacing in em.
+// apple.com's scale (measured, ../apple.com/: the store's t- ladder and the
+// home page's 56px, 2026-10-19): the size, the cut it sets at that size, and
+// its letter-spacing in em. 32px and 48px are the store's and the product
+// page's (+0.004em, -0.003em), not the home page's (+0.002em, -0.002em).
 export const SCALE = {
   12: ['Text', -0.01], 14: ['Text', -0.016], 17: ['Text', -0.022],
   19: ['Display', 0.012], 21: ['Display', 0.011], 24: ['Display', 0.009], 28: ['Display', 0.007],
-  32: ['Display', 0.002], 40: ['Display', 0], 48: ['Display', -0.002], 56: ['Display', -0.005],
+  32: ['Display', 0.004], 40: ['Display', 0], 48: ['Display', -0.003], 56: ['Display', -0.005],
+  64: ['Display', -0.009], 80: ['Display', -0.015], 96: ['Display', -0.015],
 };
 export const WEIGHTS = [400, 600];
 export const SAMPLE = 'Sphinx of black quartz judge my vow 0123456789 AVATAR Wave';

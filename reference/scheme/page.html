@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>scheme</title>
+<style>
+  :root { color-scheme: light; --text: light-dark(rgb(29, 29, 31), rgb(245, 245, 247)); --bg: light-dark(rgb(255, 255, 255), rgb(0, 0, 0)); }
+  .dark { color-scheme: dark; }
+  .light { color-scheme: light; }
+  p, section { color: var(--text); background-color: var(--bg); }
+</style>
+<p id="page">page</p>
+<section id="dark" class="dark"><p id="in-dark">in a dark section</p>
+  <div class="light"><p id="back">light inside dark</p></div>
+</section>

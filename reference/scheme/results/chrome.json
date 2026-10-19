@@ -1,0 +1,23 @@
+{
+ "browser": "chrome 155.0.8059.80 on darwin",
+ "date": "2026-10-19T03:17:02.598Z",
+ "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+ "got": {
+  "page": [
+   "rgb(29, 29, 31)",
+   "rgb(255, 255, 255)"
+  ],
+  "dark": [
+   "rgb(245, 245, 247)",
+   "rgb(0, 0, 0)"
+  ],
+  "in-dark": [
+   "rgb(245, 245, 247)",
+   "rgb(0, 0, 0)"
+  ],
+  "back": [
+   "rgb(29, 29, 31)",
+   "rgb(255, 255, 255)"
+  ]
+ }
+}
