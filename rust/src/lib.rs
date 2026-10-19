@@ -17,8 +17,10 @@
 pub mod css;
 pub mod icon;
 mod link;
+mod section;
 
 pub use link::MoreLink;
+pub use section::{Ground, Rhythm, Section, SectionHeader};
 
 #[cfg(test)]
 mod example;

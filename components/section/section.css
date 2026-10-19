@@ -1,0 +1,136 @@
+/* ciderui — the section: a band of the page, its ground and its rhythm, its
+ * content's width, and its header (a headline, the links beside it).
+ *
+ * From apple.com's pages (reference/apple.com/): iphone:section.* (the
+ * iPhone page's rhythm, its alternate ground), product:section.* (iPhone 18
+ * Pro's: its larger rhythm, its dark and dark alternate grounds, its header),
+ * *:content (the content's width).
+ *
+ *   <section class="cui-section" data-variant="alt">
+ *     <div class="cui-section-content">
+ *       <header class="cui-section-header">
+ *         <h2 class="cui-section-headline">Get the highlights.</h2>
+ *         <ul class="cui-section-links"><li>(a more link)</li></ul>
+ *       </header>
+ *       …
+ *     </div>
+ *   </section>
+ *
+ * The markup is the crate's Section and SectionHeader.
+ *
+ * data-variant   (none) no ground of its own, the page's; alt, the
+ *                alternate ground (#f5f5f7, #1d1d1f in a dark block)
+ * data-size      (none) the iPhone page's rhythm, 56px above and below,
+ *                96px from 735px, 112px from 1069px; lg, iPhone 18 Pro's,
+ *                112px, 120px, 144px
+ * cui-dark       on the section, a dark band (base.css)
+ * cui-section-content  87.5% of the window, at most 420px below 735px and
+ *                1260px from it, centered
+ * cui-section-header   the headline and its links, a row from 735px (the
+ *                headline's and the links' last baselines aligned, 80px
+ *                apart), a column below; 32px, 40px, 48px above the content
+ * cui-section-headline 32px, 40px from 735px, 48px from 1069px, 600
+ * cui-section-links    the links beside it, a wrapping row, 17px (14px
+ *                below 735px)
+ *
+ * apple.com's: all of it; apple.com tunes its rhythm and headers page by
+ * page, and these are the two pages named. The padding and the header's
+ * margin are the section's own: a page joining two sections takes one away
+ * with a utility (pt-0). ciderui's: the letter-spacing (tokens.css). */
+
+@layer components {
+  .cui-section {
+    padding-block: 56px;
+
+    @media (width >= 735px) {
+      padding-block: 96px;
+    }
+
+    @media (width >= 1069px) {
+      padding-block: 112px;
+    }
+  }
+
+  .cui-section[data-size="lg"] {
+    padding-block: 112px;
+
+    @media (width >= 735px) {
+      padding-block: 120px;
+    }
+
+    @media (width >= 1069px) {
+      padding-block: 144px;
+    }
+  }
+
+  .cui-section[data-variant="alt"] {
+    background-color: var(--cui-c-bg-alt);
+  }
+
+  .cui-section-content {
+    width: 87.5%;
+    max-width: 420px;
+    margin-inline: auto;
+
+    @media (width >= 735px) {
+      max-width: 1260px;
+    }
+  }
+
+  .cui-section-header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 32px;
+
+    @media (width >= 735px) {
+      flex-direction: row;
+      align-items: last baseline;
+      gap: 20px 80px;
+      margin-bottom: 40px;
+    }
+
+    @media (width >= 1069px) {
+      margin-bottom: 48px;
+    }
+  }
+
+  .cui-section-headline {
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-32);
+
+    @media (width >= 735px) {
+      font-size: 40px;
+      line-height: 44px;
+      letter-spacing: var(--cui-tracking-40);
+    }
+
+    @media (width >= 1069px) {
+      font-size: 48px;
+      line-height: 52px;
+      letter-spacing: var(--cui-tracking-48);
+    }
+  }
+
+  .cui-section-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 28px;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: var(--cui-tracking-14);
+
+    @media (width >= 735px) {
+      gap: 6px 34px;
+      font-size: 17px;
+      line-height: 21px;
+      letter-spacing: var(--cui-tracking-17);
+    }
+  }
+}

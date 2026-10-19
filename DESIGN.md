@@ -152,7 +152,7 @@ What apple.com's pages are made of, from the measurements, as the components to 
 | --- | --- | --- |
 | `cui-btn` (built) | the pill: five sizes (`data-size` sm, lg, xl, cta), the accent, secondary and neutral (`data-variant`), on light and in a dark block, disabled; 12px corners (`cui-btn-rect`; with `data-size="xl"` the store's form button) and the block (`cui-btn-block`), orthogonal classes | `store:button*`, `home:button*`, `home:tile.dark-button*`, `home:gallery.button-neutral`, `bag:form-button*` |
 | `cui-link` (built) | a link in running text (underlined at rest, as apple.com's own `a` is), and the more link (`data-variant="more"`, its text underlined hovered, its chevron, the crate's `MoreLink` and `icon::MORE`) | `iphone:link.*`, `product:link.*`; the chevron `reference/icons/` |
-| `cui-section` | a section's ground, alternate or dark, and its content's width | `product:section*`, `product:content` |
+| `cui-section` (built) | a band: its ground (`data-variant="alt"`, dark with `cui-dark`), its rhythm (the iPhone page's, `data-size="lg"` iPhone 18 Pro's), its content's width (`cui-section-content`), its header, headline and links (the crate's `Section`, `SectionHeader`) | `iphone:section.*`, `product:section.*`, `*:content` |
 | `cui-globalnav` | the bar (44px, 48px below 834px) and its material, its links, its menu on a phone, its curtain | `home:nav*`, `product:nav*` |
 | `cui-localnav` | the floating local nav: the bar, its product name, its pill buttons | `product:localnav*` |
 | `cui-ribbon` | the message above the content | `bag:ribbon` |

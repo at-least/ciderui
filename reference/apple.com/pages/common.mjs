@@ -11,3 +11,5 @@ export const FOCUS = ['outline-style', 'outline-color', 'outline-width', 'outlin
 export const PAGE = [...TYPE, 'background-color', '-webkit-font-smoothing', 'font-synthesis', 'text-rendering'];
 // a control's text: how it sits, wraps and shows a link
 export const TEXT = ['display', 'text-align', 'white-space', 'text-decoration-line', 'cursor', 'vertical-align', 'opacity'];
+// a flex or grid box's own layout
+export const FLEX = ['display', 'flex-direction', 'flex-wrap', 'align-items', 'justify-content', 'row-gap', 'column-gap'];

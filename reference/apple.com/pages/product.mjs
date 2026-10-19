@@ -4,7 +4,7 @@
 // its header, a dark and an alternate section, a rounded tile, the gallery's
 // paddles, the "more" link, a stat, a footnote, and the floating local nav,
 // which shows once the page is scrolled past its hero.
-import { TYPE, BOX, MOTION, BLUR, LINK, PAGE } from './common.mjs';
+import { TYPE, BOX, MOTION, BLUR, LINK, PAGE, FLEX } from './common.mjs';
 const TYPOGRAPHY = ['headline-super', 'headline-elevated', 'headline', 'headline-reduced', 'eyebrow-super',
   'intro-elevated', 'intro', 'body', 'body-reduced', 'body-reduced-tight', 'callout-super', 'callout-elevated',
   'callout-base', 'callout-cta', 'caption-elevated', 'caption', 'caption-cta', 'caption-sosumi',
@@ -24,7 +24,11 @@ export default {
     { name: 'section', select: 'main section.section:not(.theme-dark):not(.background-alt)', props: [...BOX, 'padding-top', 'padding-bottom'], box: true },
     { name: 'section.dark', select: 'main section.section.theme-dark', props: [...TYPE, 'background-color'] },
     { name: 'section.alt', select: 'main .background-alt', props: [...TYPE, 'background-color'] },
-    { name: 'section.header', select: 'main .section-header', props: [...BOX, 'display', 'align-items', 'justify-content'], box: true },
+    { name: 'section.header', select: 'main .section-header', props: [...BOX, ...FLEX], box: true },
+    { name: 'section.header-links', select: 'main .section-header-cta-list', props: [...TYPE, ...BOX, ...FLEX, 'list-style-type'] },
+    // a section's padding: the highlights' (dark, alternate), the battery's (dark)
+    { name: 'section.highlights', select: 'main section.section-highlights', props: BOX },
+    { name: 'section.battery', select: 'main section.section-battery', props: BOX },
     { name: 'section.headline', select: 'main .section-header-headline', props: [...TYPE, 'margin-bottom'] },
     { name: 'section.header-link', select: 'main .section-header-cta-list a', props: [...TYPE, ...LINK], states: ['hover'] },
     { name: 'tile.rounded', select: 'main .tile.tile-rounded', props: [...BOX, 'overflow'], box: true },

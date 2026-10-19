@@ -1,7 +1,7 @@
 // The iPhone page, a light one: its links (the "more" link, its copy and its
 // chevron; a section header's link) and its ribbon, the message above the
 // content.
-import { TYPE, BOX, LINK, PAGE, TEXT } from './common.mjs';
+import { TYPE, BOX, LINK, PAGE, TEXT, FLEX } from './common.mjs';
 export default {
   url: 'https://www.apple.com/iphone/',
   probes: [
@@ -13,6 +13,12 @@ export default {
     // a link in running text: apple.com's own `a`, on markup added to the page
     { name: 'link.inline', inject: '<p>Text with <a href="#cui">a link</a> in it.</p>', into: 'main', select: 'a', props: [...TYPE, ...LINK], states: ['hover', 'focus-visible', 'active'] },
     { name: 'link.section-header', select: 'main a.section-header-cta-link', props: [...TYPE, ...LINK], states: ['hover'] },
+    // the content's width; a section's padding (light, alternate), its header
+    { name: 'content', select: 'main .viewport-content', props: ['width', 'max-width', 'margin-left', 'margin-right', 'padding-left', 'padding-right'], box: true },
+    { name: 'section.incentive', select: 'main section.section-incentive', props: BOX },
+    { name: 'section.image-accordion', select: 'main section.section-image-accordion', props: BOX },
+    { name: 'section.header', select: 'main .section-header', props: [...BOX, ...FLEX], box: true },
+    { name: 'section.headline', select: 'main .section-header-headline', props: [...TYPE, 'margin-bottom'] },
     { name: 'ribbon', select: '.ribbon', props: [...TYPE, ...BOX], box: true },
     { name: 'ribbon.content', select: '.ribbon .ribbon-content', props: [...TYPE, ...BOX, 'text-align'], box: true },
     { name: 'ribbon.link', select: '.ribbon .ribbon-link', props: [...TYPE, ...LINK], states: ['hover'] },

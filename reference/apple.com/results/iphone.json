@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/iphone/",
  "finalUrl": "https://www.apple.com/iphone/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T04:30:58.914Z",
+ "date": "2026-10-19T04:39:28.100Z",
  "widths": {
   "390": {
    "page.body": {
@@ -214,6 +214,113 @@
      }
     }
    },
+   "content": {
+    "html": "<div class=\"viewport-content\">\n\t\t\t\t\t<div class=\"page-header-headline\" data-staggered-item=\"\" style=\"\">\n\t\t\t\t\t\t<h1 class=\"page-header-title typography-page-header-title\">iPhone</h1>\n\t\t\t\t\t</div>\n\t\t\t\t</div>",
+    "styles": {
+     "width": "341.25px",
+     "max-width": "420px",
+     "margin-left": "24.375px",
+     "margin-right": "24.375px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 52
+    }
+   },
+   "section.incentive": {
+    "html": "<section class=\"section section-incentive background-alt staggered-start\" data-anim-scroll-group=\"Incentive\" data-aap-hide-kf=\"{&quot;start&quot;: &quot;a0t - 75vh&quot;, &quot;end&quot;: &quot;a0b - 75vh&quot;, &quot;anchors&quot;: [&quot;",
+    "styles": {
+     "padding-top": "56px",
+     "padding-right": "0px",
+     "padding-bottom": "56px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    }
+   },
+   "section.image-accordion": {
+    "html": "<section class=\"section section-image-accordion staggered-start\" data-anim-scroll-group=\"Image Accordion\" data-analytics-section-engagement=\"name:iphone compatibility\" data-component-list=\"StaggeredFadeIn\">\n\t\t\t<div class=\"viewport-content\">",
+    "styles": {
+     "padding-top": "56px",
+     "padding-right": "0px",
+     "padding-bottom": "56px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    }
+   },
+   "section.header": {
+    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\">Switch to iPhone.</h2>\n\t\t\t\t</header>",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "32px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "flex-wrap": "wrap",
+     "align-items": "normal",
+     "justify-content": "space-between",
+     "row-gap": "8px",
+     "column-gap": "8px"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    }
+   },
+   "section.headline": {
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\">Switch to iPhone.</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-bottom": "0px"
+    }
+   },
    "ribbon": {
     "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\">\n\t\t\t<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div cl",
     "styles": {
@@ -278,7 +385,7 @@
     },
     "box": {
      "width": 324.984375,
-     "height": 40
+     "height": 39.99999237060547
     }
    },
    "ribbon.link": {
@@ -517,6 +624,113 @@
       "text-decoration-color": "rgb(0, 102, 204)",
       "text-underline-offset": "auto"
      }
+    }
+   },
+   "content": {
+    "html": "<div class=\"viewport-content\">\n\t\t\t\t\t<div class=\"page-header-headline\" data-staggered-item=\"\" style=\"\">\n\t\t\t\t\t\t<h1 class=\"page-header-title typography-page-header-title\">iPhone</h1>\n\t\t\t\t\t</div>\n\t\t\t\t</div>",
+    "styles": {
+     "width": "787.5px",
+     "max-width": "1260px",
+     "margin-left": "56.25px",
+     "margin-right": "56.25px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 787.5,
+     "height": 68
+    }
+   },
+   "section.incentive": {
+    "html": "<section class=\"section section-incentive background-alt staggered-start\" data-anim-scroll-group=\"Incentive\" data-aap-hide-kf=\"{&quot;start&quot;: &quot;a0t - 75vh&quot;, &quot;end&quot;: &quot;a0b - 75vh&quot;, &quot;anchors&quot;: [&quot;",
+    "styles": {
+     "padding-top": "96px",
+     "padding-right": "0px",
+     "padding-bottom": "96px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    }
+   },
+   "section.image-accordion": {
+    "html": "<section class=\"section section-image-accordion staggered-start\" data-anim-scroll-group=\"Image Accordion\" data-analytics-section-engagement=\"name:iphone compatibility\" data-component-list=\"StaggeredFadeIn\">\n\t\t\t<div class=\"viewport-content\">",
+    "styles": {
+     "padding-top": "96px",
+     "padding-right": "0px",
+     "padding-bottom": "96px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    }
+   },
+   "section.header": {
+    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\">Switch to iPhone.</h2>\n\t\t\t\t</header>",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "48px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "wrap",
+     "align-items": "flex-end",
+     "justify-content": "space-between",
+     "row-gap": "20px",
+     "column-gap": "80px"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    }
+   },
+   "section.headline": {
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\">Switch to iPhone.</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "font-weight": "600",
+     "letter-spacing": "-0.144px",
+     "color": "rgb(29, 29, 31)",
+     "margin-bottom": "0px"
     }
    },
    "ribbon": {
@@ -824,6 +1038,113 @@
      }
     }
    },
+   "content": {
+    "html": "<div class=\"viewport-content\">\n\t\t\t\t\t<div class=\"page-header-headline\" data-staggered-item=\"\" style=\"\">\n\t\t\t\t\t\t<h1 class=\"page-header-title typography-page-header-title\">iPhone</h1>\n\t\t\t\t\t</div>\n\t\t\t\t</div>",
+    "styles": {
+     "width": "1050px",
+     "max-width": "1260px",
+     "margin-left": "75px",
+     "margin-right": "75px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 1050,
+     "height": 84
+    }
+   },
+   "section.incentive": {
+    "html": "<section class=\"section section-incentive background-alt staggered-start\" data-anim-scroll-group=\"Incentive\" data-aap-hide-kf=\"{&quot;start&quot;: &quot;a0t - 75vh&quot;, &quot;end&quot;: &quot;a0b - 75vh&quot;, &quot;anchors&quot;: [&quot;",
+    "styles": {
+     "padding-top": "112px",
+     "padding-right": "0px",
+     "padding-bottom": "112px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    }
+   },
+   "section.image-accordion": {
+    "html": "<section class=\"section section-image-accordion staggered-start\" data-anim-scroll-group=\"Image Accordion\" data-analytics-section-engagement=\"name:iphone compatibility\" data-component-list=\"StaggeredFadeIn\">\n\t\t\t<div class=\"viewport-content\">",
+    "styles": {
+     "padding-top": "112px",
+     "padding-right": "0px",
+     "padding-bottom": "112px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    }
+   },
+   "section.header": {
+    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\">Switch to iPhone.</h2>\n\t\t\t\t</header>",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "48px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "wrap",
+     "align-items": "flex-end",
+     "justify-content": "space-between",
+     "row-gap": "20px",
+     "column-gap": "80px"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    }
+   },
+   "section.headline": {
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\">Switch to iPhone.</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "56px",
+     "line-height": "60px",
+     "font-weight": "600",
+     "letter-spacing": "-0.28px",
+     "color": "rgb(29, 29, 31)",
+     "margin-bottom": "0px"
+    }
+   },
    "ribbon": {
     "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\">\n\t\t\t<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div cl",
     "styles": {
@@ -1127,6 +1448,113 @@
       "text-decoration-color": "rgb(0, 102, 204)",
       "text-underline-offset": "auto"
      }
+    }
+   },
+   "content": {
+    "html": "<div class=\"viewport-content\">\n\t\t\t\t\t<div class=\"page-header-headline\" data-staggered-item=\"\" style=\"transform: matrix(1, 0, 0, 1, 0, 0); opacity: 0.997748;\">\n\t\t\t\t\t\t<h1 class=\"page-header-title typography-page-header-title\">iPhone</h1>\n\t\t\t\t\t",
+    "styles": {
+     "width": "1260px",
+     "max-width": "1260px",
+     "margin-left": "170px",
+     "margin-right": "170px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 1260,
+     "height": 84
+    }
+   },
+   "section.incentive": {
+    "html": "<section class=\"section section-incentive background-alt staggered-start\" data-anim-scroll-group=\"Incentive\" data-aap-hide-kf=\"{&quot;start&quot;: &quot;a0t - 75vh&quot;, &quot;end&quot;: &quot;a0b - 75vh&quot;, &quot;anchors&quot;: [&quot;",
+    "styles": {
+     "padding-top": "112px",
+     "padding-right": "0px",
+     "padding-bottom": "112px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    }
+   },
+   "section.image-accordion": {
+    "html": "<section class=\"section section-image-accordion staggered-start\" data-anim-scroll-group=\"Image Accordion\" data-analytics-section-engagement=\"name:iphone compatibility\" data-component-list=\"StaggeredFadeIn\">\n\t\t\t<div class=\"viewport-content\">",
+    "styles": {
+     "padding-top": "112px",
+     "padding-right": "0px",
+     "padding-bottom": "112px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    }
+   },
+   "section.header": {
+    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"transform: matrix(1, 0, 0, 1, 0, 0); opacity: 0.99999;\">Switch to iP",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "48px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "wrap",
+     "align-items": "flex-end",
+     "justify-content": "space-between",
+     "row-gap": "20px",
+     "column-gap": "80px"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    }
+   },
+   "section.headline": {
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"transform: matrix(1, 0, 0, 1, 0, 0); opacity: 0.99999;\">Switch to iPhone.</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "56px",
+     "line-height": "60px",
+     "font-weight": "600",
+     "letter-spacing": "-0.28px",
+     "color": "rgb(29, 29, 31)",
+     "margin-bottom": "0px"
     }
    },
    "ribbon": {
