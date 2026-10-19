@@ -32,6 +32,7 @@ async function viaPlaywright(channel, url) {
       label: `${channel ?? 'chromium'} ${browser.version()} on ${process.platform}`,
       run: (expr) => page.evaluate(expr),
       close: () => browser.close(),
+      page, // Playwright's, for a probe that resizes the viewport or forces states
     };
   } catch (e) {
     await browser.close();

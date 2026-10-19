@@ -1,0 +1,376 @@
+{
+ "url": "https://www.apple.com/",
+ "finalUrl": "https://www.apple.com/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T03:10:28.617Z",
+ "widths": {
+  "733": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "32px",
+     "line-height": "36px",
+     "letter-spacing": "0.064px",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "48px",
+     "--r-globalnav-height": "48px"
+    },
+    "box": {
+     "width": 733,
+     "height": 48
+    }
+   }
+  },
+  "734": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "32px",
+     "line-height": "36px",
+     "letter-spacing": "0.064px",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "48px",
+     "--r-globalnav-height": "48px"
+    },
+    "box": {
+     "width": 734,
+     "height": 48
+    }
+   }
+  },
+  "735": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "40px",
+     "line-height": "44px",
+     "letter-spacing": "normal",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "48px",
+     "--r-globalnav-height": "48px"
+    },
+    "box": {
+     "width": 735,
+     "height": 48
+    }
+   }
+  },
+  "736": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "40px",
+     "line-height": "44px",
+     "letter-spacing": "normal",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "48px",
+     "--r-globalnav-height": "48px"
+    },
+    "box": {
+     "width": 736,
+     "height": 48
+    }
+   }
+  },
+  "832": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "40px",
+     "line-height": "44px",
+     "letter-spacing": "normal",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "48px",
+     "--r-globalnav-height": "48px"
+    },
+    "box": {
+     "width": 832,
+     "height": 48
+    }
+   }
+  },
+  "833": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "40px",
+     "line-height": "44px",
+     "letter-spacing": "normal",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "48px",
+     "--r-globalnav-height": "48px"
+    },
+    "box": {
+     "width": 833,
+     "height": 48
+    }
+   }
+  },
+  "834": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "40px",
+     "line-height": "44px",
+     "letter-spacing": "normal",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "--r-globalnav-height": "44px"
+    },
+    "box": {
+     "width": 834,
+     "height": 44
+    }
+   }
+  },
+  "835": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "40px",
+     "line-height": "44px",
+     "letter-spacing": "normal",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "--r-globalnav-height": "44px"
+    },
+    "box": {
+     "width": 835,
+     "height": 44
+    }
+   }
+  },
+  "1067": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "40px",
+     "line-height": "44px",
+     "letter-spacing": "normal",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "--r-globalnav-height": "44px"
+    },
+    "box": {
+     "width": 1067,
+     "height": 44
+    }
+   }
+  },
+  "1068": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "40px",
+     "line-height": "44px",
+     "letter-spacing": "normal",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "--r-globalnav-height": "44px"
+    },
+    "box": {
+     "width": 1068,
+     "height": 44
+    }
+   }
+  },
+  "1069": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "letter-spacing": "-0.096px",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "--r-globalnav-height": "44px"
+    },
+    "box": {
+     "width": 1069,
+     "height": 44
+    }
+   }
+  },
+  "1070": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "letter-spacing": "-0.096px",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "--r-globalnav-height": "44px"
+    },
+    "box": {
+     "width": 1070,
+     "height": 44
+    }
+   }
+  },
+  "1439": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "letter-spacing": "-0.096px",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "--r-globalnav-height": "44px"
+    },
+    "box": {
+     "width": 1439,
+     "height": 44
+    }
+   }
+  },
+  "1440": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "letter-spacing": "-0.096px",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "--r-globalnav-height": "44px"
+    },
+    "box": {
+     "width": 1440,
+     "height": 44
+    }
+   }
+  },
+  "1441": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "letter-spacing": "-0.096px",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "--r-globalnav-height": "44px"
+    },
+    "box": {
+     "width": 1441,
+     "height": 44
+    }
+   }
+  },
+  "1442": {
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Headline</p>",
+    "styles": {
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "letter-spacing": "-0.096px",
+     "font-weight": "600",
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+   },
+   "globalnav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "--r-globalnav-height": "44px"
+    },
+    "box": {
+     "width": 1442,
+     "height": 44
+    }
+   }
+  }
+ }
+}

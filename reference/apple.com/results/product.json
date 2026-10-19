@@ -1,0 +1,3532 @@
+{
+ "url": "https://www.apple.com/iphone-18-pro/",
+ "finalUrl": "https://www.apple.com/iphone-18-pro/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T03:13:03.806Z",
+ "widths": {
+  "390": {
+   "type.none": {
+    "html": "<p>Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline-super": {
+    "html": "<p class=\"typography-headline-super\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline-elevated": {
+    "html": "<p class=\"typography-headline-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "44px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline-reduced": {
+    "html": "<p class=\"typography-headline-reduced\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.eyebrow-super": {
+    "html": "<p class=\"typography-eyebrow-super\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.intro-elevated": {
+    "html": "<p class=\"typography-intro-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.intro": {
+    "html": "<p class=\"typography-intro\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "27.0009px",
+     "font-weight": "400",
+     "letter-spacing": "0.228px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.body": {
+    "html": "<p class=\"typography-body\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.body-reduced": {
+    "html": "<p class=\"typography-body-reduced\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.body-reduced-tight": {
+    "html": "<p class=\"typography-body-reduced-tight\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-super": {
+    "html": "<p class=\"typography-callout-super\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-elevated": {
+    "html": "<p class=\"typography-callout-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "23px",
+     "font-weight": "600",
+     "letter-spacing": "0.228px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-base": {
+    "html": "<p class=\"typography-callout-base\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-cta": {
+    "html": "<p class=\"typography-callout-cta\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-elevated": {
+    "html": "<p class=\"typography-caption-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption": {
+    "html": "<p class=\"typography-caption\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-cta": {
+    "html": "<p class=\"typography-caption-cta\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-sosumi": {
+    "html": "<p class=\"typography-caption-sosumi\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-elevated-sosumi": {
+    "html": "<p class=\"typography-caption-elevated-sosumi\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.label": {
+    "html": "<p class=\"typography-label\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.section-header-eyebrow": {
+    "html": "<p class=\"typography-section-header-eyebrow\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "17px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.section-header-headline": {
+    "html": "<p class=\"typography-section-header-headline\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.section-header-link": {
+    "html": "<p class=\"typography-section-header-link\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "page.body": {
+    "html": "<body class=\"page-overview globalheader-dark\" data-component-list=\"AutoARQL FocusManager MediaHero DeepLink\" data-anim-scroll-group=\"body\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-r",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(0, 0, 0)"
+    }
+   },
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    }
+   },
+   "nav.link": {
+    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"Store menu\" class=\"globalnav-link globalnav-",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(232, 232, 237)"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "28px",
+      "line-height": "28px",
+      "font-weight": "600",
+      "letter-spacing": "0.196px",
+      "color": "rgb(255, 255, 255)"
+     }
+    }
+   },
+   "content": {
+    "html": "<div class=\"viewport-content\">\n\t\t\t\t<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>\n\t\t\t\t\t<div class=\"section-header-cta-",
+    "styles": {
+     "width": "341.25px",
+     "max-width": "420px",
+     "margin-left": "24.375px",
+     "margin-right": "24.375px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 70
+    }
+   },
+   "section": {
+    "html": "<section class=\"section section-media-hero section-media-hero no-pad  media-layout-background ribbon-full-width\" data-anim-scroll-group=\"Media Hero\" data-analytics-section-engagement=\"name:hero\" data-ric-section=\"\">\n\t\t\t\t<div class=\"section-",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "-72px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 390,
+     "height": 696
+    }
+   },
+   "section.dark": {
+    "html": "<section id=\"highlights\" class=\"section section-highlights theme-dark background-alt staggered-end\" data-anim-scroll-group=\"Highlights\" data-deep-link=\"highlights\" data-analytics-section-engagement=\"name:highlights\" data-component-list=\"Sta",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(245, 245, 247)",
+     "background-color": "rgb(29, 29, 31)"
+    }
+   },
+   "section.alt": {
+    "html": "<section id=\"highlights\" class=\"section section-highlights theme-dark background-alt staggered-end\" data-anim-scroll-group=\"Highlights\" data-deep-link=\"highlights\" data-analytics-section-engagement=\"name:highlights\" data-component-list=\"Sta",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(245, 245, 247)",
+     "background-color": "rgb(29, 29, 31)"
+    }
+   },
+   "section.header": {
+    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>\n\t\t\t\t\t<div class=\"section-header-cta-list-wrapper\">\n\t\t\t\t\t\t<ul class=\"sec",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "32px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "align-items": "normal",
+     "justify-content": "space-between"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 70
+    }
+   },
+   "section.headline": {
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(245, 245, 247)",
+     "margin-bottom": "0px"
+    }
+   },
+   "section.header-link": {
+    "html": "<a href=\"/105/media/us/iphone-18-pro/2026/591df885-5ee2-4173-86e6-401021249f7c/films/product/iphone-18-pro-product-tpl-us-2026_16x9.m3u8\" data-analytics-title=\"watch the film - iphone 18 pro\" data-analytics-id=\"film-iphone-18-pro\" aria-labe",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(41, 151, 255)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(41, 151, 255)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18.0008px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "tile.rounded": {
+    "html": "<div class=\"card tile tile-rounded\">\n\t\t\t\t\t\t\t\t\t<div class=\"caption-container large-pin-top-center\" role=\"none\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"caption-animation-container pin-offset\" data-headline=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<p class=\"caption typography-media-car",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "28px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "overflow": "clip"
+    },
+    "box": {
+     "width": 321.25,
+     "height": 480
+    }
+   },
+   "tile.rounded-light": {
+    "html": "<div class=\"card tile card-hover tile-rounded\" data-component-list=\"Card WillChange\" style=\"--card-element-scale: 1.023076923076923;\">\n\t\t\t\t\t\t\t\t\t<div class=\"feature-card-content image-inline\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"feature-card-copy-containe",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "28px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "255px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 260,
+     "height": 392
+    }
+   },
+   "paddle": {
+    "html": "<button aria-label=\"Previous item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&q",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "-18px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(255, 255, 255, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(255, 255, 255, 0.8)",
+     "border-top-left-radius": "36px",
+     "background-color": "rgba(66, 66, 69, 0.72)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "36px",
+     "height": "36px",
+     "color": "rgba(255, 255, 255, 0.8)",
+     "opacity": "0.36",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "transition-property": "background, color, opacity",
+     "transition-duration": "0.1s, 0.1s, 0.1s",
+     "transition-timing-function": "linear, linear, linear"
+    },
+    "box": {
+     "width": 36,
+     "height": 36
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "-18px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(255, 255, 255)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(255, 255, 255)",
+      "border-top-left-radius": "36px",
+      "background-color": "rgba(73, 73, 76, 0.725)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "36px",
+      "height": "36px",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "0.36",
+      "backdrop-filter": "none",
+      "-webkit-backdrop-filter": "",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "active": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "-18px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(255, 255, 255)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(255, 255, 255)",
+      "border-top-left-radius": "36px",
+      "background-color": "rgba(57, 57, 60, 0.74)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "36px",
+      "height": "36px",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "0.36",
+      "backdrop-filter": "none",
+      "-webkit-backdrop-filter": "",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "paddle.icon": {
+    "html": "<svg class=\"icon-control icon-control-chevronleft\" viewBox=\"0 0 36 36\">\n                        \t\t\t\t\t      <path d=\"m20 25c-.3838 0-.7676-.1465-1.0605-.4395l-5.5-5.5c-.5859-.5854-.5859-1.5356 0-2.1211l5.5-5.5c.5859-.5859 1.5352-.5859 2.1211",
+    "styles": {
+     "width": "36px",
+     "height": "36px",
+     "fill": "rgb(0, 0, 0)",
+     "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "box": {
+     "width": 36,
+     "height": 36
+    }
+   },
+   "link.more": {
+    "html": "<a href=\"/us/shop/goto/apple_upgrade\" data-analytics-title=\"learn more - apple upgrade\" aria-label=\"Learn more, Apple Upgrade\" class=\"icon-wrapper ribbon-link\"><span class=\"icon-copy\">Learn more</span><span class=\"icon icon-after more\" aria",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(41, 151, 255)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(41, 151, 255)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.more-icon": {
+    "html": "<span class=\"icon icon-after more\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "font-family": "\"SF Pro Icons\"",
+     "font-size": "14px",
+     "color": "rgb(41, 151, 255)",
+     "padding-left": "3.36px",
+     "margin-left": "0px",
+     "top": "0px",
+     "position": "static",
+     "content": "\"\" / \"\""
+    }
+   },
+   "stat.value": {
+    "html": "<span class=\"stat-value\">25 more hours</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(245, 245, 247)"
+    }
+   },
+   "stat.caption": {
+    "html": "<span class=\"stat-caption\">Up to</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "footnote": {
+    "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a></sup>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)",
+     "vertical-align": "baseline",
+     "top": "0px",
+     "position": "relative"
+    }
+   },
+   "localnav": {
+    "html": "<div id=\"localnav-container\" class=\"localnav-container theme-dark theme-reveal-on-scroll loaded reveal\" data-reveal=\".section-media-hero .marquee-detail\" data-reveal-keyframe=\"a0b\" data-toggle-theme=\".section-incentive\" data-toggle-theme-al",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "10px",
+     "padding-bottom": "0px",
+     "padding-left": "10px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "52px",
+     "max-width": "none",
+     "position": "relative",
+     "top": "0px",
+     "bottom": "0px",
+     "left": "0px",
+     "width": "390px",
+     "height": "63.5px",
+     "z-index": "9998",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 390,
+     "height": 63.5
+    }
+   },
+   "localnav.wrap": {
+    "html": "<div class=\"localnav-wrap\">\n\t\t\t\t<div class=\"content-collapsed-wrap\" data-analytics-activitymap-region-id=\"local nav\">\n\t\t\t\t\t<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">",
+    "styles": {
+     "padding-top": "12px",
+     "padding-right": "0px",
+     "padding-bottom": "12px",
+     "padding-left": "0px",
+     "margin-top": "10px",
+     "margin-bottom": "2px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "18px",
+     "background-color": "rgba(18, 18, 18, 0.8)",
+     "box-shadow": "rgb(40, 40, 40) 0px 0px 0px 1px",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "1024px",
+     "height": "51.5px",
+     "backdrop-filter": "blur(20px)",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 370,
+     "height": 51.5
+    }
+   },
+   "localnav.product": {
+    "html": "<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">iPhone&nbsp;18&nbsp;Pro</a>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "23px",
+     "font-weight": "600",
+     "letter-spacing": "0.228px",
+     "color": "rgba(0, 0, 0, 0)"
+    }
+   },
+   "localnav.explore": {
+    "html": "<button class=\"typography-caption cta explore\" data-analytics-title=\"explore | open modal\" data-analytics-click=\"prop3:explore | open modal\" aria-label=\"Explore iPhone 18 Pro\" data-analytics-intrapage-link=\"\" style=\"--buy-button-width: 41px",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(245, 245, 247)",
+     "padding-top": "6px",
+     "padding-right": "10px",
+     "padding-bottom": "6px",
+     "padding-left": "10px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "120px",
+     "background-color": "rgba(18, 18, 18, 0.8)",
+     "box-shadow": "rgb(110, 110, 115) 0px 0px 0px 1px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 61,
+     "height": 28
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(245, 245, 247)",
+      "padding-top": "6px",
+      "padding-right": "10px",
+      "padding-bottom": "6px",
+      "padding-left": "10px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(245, 245, 247)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(245, 245, 247)",
+      "border-top-left-radius": "120px",
+      "background-color": "rgb(29, 29, 31)",
+      "box-shadow": "rgb(110, 110, 115) 0px 0px 0px 1px",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none"
+     }
+    }
+   },
+   "localnav.buy": {
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_18_pro\" aria-label=\"Buy, iPhone 18 Pro\" class=\"typography-caption cta buy\" data-analytics-title=\"buy - iphone 18 pro\">\n\t\t\t\t\t\t\t\tBuy\n\t\t\t\t\t\t\t</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0)",
+     "padding-top": "6px",
+     "padding-right": "10px",
+     "padding-bottom": "6px",
+     "padding-left": "10px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "120px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 41.046875,
+     "height": 28
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0)",
+      "padding-top": "6px",
+      "padding-right": "10px",
+      "padding-bottom": "6px",
+      "padding-left": "10px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgba(0, 0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "120px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none"
+     }
+    }
+   }
+  },
+  "900": {
+   "type.none": {
+    "html": "<p>Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline-super": {
+    "html": "<p class=\"typography-headline-super\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline-elevated": {
+    "html": "<p class=\"typography-headline-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "font-weight": "600",
+     "letter-spacing": "-0.144px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline-reduced": {
+    "html": "<p class=\"typography-headline-reduced\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.eyebrow-super": {
+    "html": "<p class=\"typography-eyebrow-super\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.intro-elevated": {
+    "html": "<p class=\"typography-intro-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.intro": {
+    "html": "<p class=\"typography-intro\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "29.001px",
+     "font-weight": "400",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.body": {
+    "html": "<p class=\"typography-body\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.body-reduced": {
+    "html": "<p class=\"typography-body-reduced\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.body-reduced-tight": {
+    "html": "<p class=\"typography-body-reduced-tight\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-super": {
+    "html": "<p class=\"typography-callout-super\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-elevated": {
+    "html": "<p class=\"typography-callout-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-base": {
+    "html": "<p class=\"typography-callout-base\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-cta": {
+    "html": "<p class=\"typography-callout-cta\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-elevated": {
+    "html": "<p class=\"typography-caption-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption": {
+    "html": "<p class=\"typography-caption\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-cta": {
+    "html": "<p class=\"typography-caption-cta\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-sosumi": {
+    "html": "<p class=\"typography-caption-sosumi\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-elevated-sosumi": {
+    "html": "<p class=\"typography-caption-elevated-sosumi\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.label": {
+    "html": "<p class=\"typography-label\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.section-header-eyebrow": {
+    "html": "<p class=\"typography-section-header-eyebrow\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "19px",
+     "font-weight": "600",
+     "letter-spacing": "0.228px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.section-header-headline": {
+    "html": "<p class=\"typography-section-header-headline\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "44px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.section-header-link": {
+    "html": "<p class=\"typography-section-header-link\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "page.body": {
+    "html": "<body class=\"page-overview globalheader-dark\" data-component-list=\"AutoARQL FocusManager MediaHero DeepLink\" data-anim-scroll-group=\"body\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-r",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(0, 0, 0)"
+    }
+   },
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    }
+   },
+   "nav.link": {
+    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"Store\" class=\"globalnav-link globalnav-subme",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "12px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "12px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(255, 255, 255)"
+     }
+    }
+   },
+   "content": {
+    "html": "<div class=\"viewport-content\">\n\t\t\t\t<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>\n\t\t\t\t\t<div class=\"section-header-cta-",
+    "styles": {
+     "width": "787.5px",
+     "max-width": "1260px",
+     "margin-left": "56.25px",
+     "margin-right": "56.25px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 787.5,
+     "height": 44
+    }
+   },
+   "section": {
+    "html": "<section class=\"section section-media-hero section-media-hero no-pad  media-layout-background ribbon-full-width\" data-anim-scroll-group=\"Media Hero\" data-analytics-section-engagement=\"name:hero\" data-ric-section=\"\">\n\t\t\t\t<div class=\"section-",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "-72px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 900,
+     "height": 714
+    }
+   },
+   "section.dark": {
+    "html": "<section id=\"highlights\" class=\"section section-highlights theme-dark background-alt staggered-end\" data-anim-scroll-group=\"Highlights\" data-deep-link=\"highlights\" data-analytics-section-engagement=\"name:highlights\" data-component-list=\"Sta",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(245, 245, 247)",
+     "background-color": "rgb(29, 29, 31)"
+    }
+   },
+   "section.alt": {
+    "html": "<section id=\"highlights\" class=\"section section-highlights theme-dark background-alt staggered-end\" data-anim-scroll-group=\"Highlights\" data-deep-link=\"highlights\" data-analytics-section-engagement=\"name:highlights\" data-component-list=\"Sta",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(245, 245, 247)",
+     "background-color": "rgb(29, 29, 31)"
+    }
+   },
+   "section.header": {
+    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>\n\t\t\t\t\t<div class=\"section-header-cta-list-wrapper\">\n\t\t\t\t\t\t<ul class=\"sec",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "40px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "align-items": "last baseline",
+     "justify-content": "space-between"
+    },
+    "box": {
+     "width": 787.5,
+     "height": 44
+    }
+   },
+   "section.headline": {
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "44px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(245, 245, 247)",
+     "margin-bottom": "0px"
+    }
+   },
+   "section.header-link": {
+    "html": "<a href=\"/105/media/us/iphone-18-pro/2026/591df885-5ee2-4173-86e6-401021249f7c/films/product/iphone-18-pro-product-tpl-us-2026_16x9.m3u8\" data-analytics-title=\"watch the film - iphone 18 pro\" data-analytics-id=\"film-iphone-18-pro\" aria-labe",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(41, 151, 255)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(41, 151, 255)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "tile.rounded": {
+    "html": "<div class=\"card tile tile-rounded\">\n\t\t\t\t\t\t\t\t\t<div class=\"caption-container large-pin-top-center\" role=\"none\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"caption-animation-container pin-offset\" data-headline=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<p class=\"caption typography-media-car",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "28px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "overflow": "clip"
+    },
+    "box": {
+     "width": 787.5,
+     "height": 576
+    }
+   },
+   "tile.rounded-light": {
+    "html": "<div class=\"card tile card-hover tile-rounded\" data-component-list=\"Card WillChange\" style=\"--card-element-scale: 1.0174418604651163;\">\n\t\t\t\t\t\t\t\t\t<div class=\"feature-card-content image-inline\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"feature-card-copy-contain",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "28px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "356px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 344,
+     "height": 453
+    }
+   },
+   "paddle": {
+    "html": "<button aria-label=\"Previous item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&q",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "-18px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(255, 255, 255, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(255, 255, 255, 0.8)",
+     "border-top-left-radius": "36px",
+     "background-color": "rgba(66, 66, 69, 0.72)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "36px",
+     "height": "36px",
+     "color": "rgba(255, 255, 255, 0.8)",
+     "opacity": "0.36",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "transition-property": "background, color, opacity",
+     "transition-duration": "0.1s, 0.1s, 0.1s",
+     "transition-timing-function": "linear, linear, linear"
+    },
+    "box": {
+     "width": 36,
+     "height": 36
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "-18px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(255, 255, 255)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(255, 255, 255)",
+      "border-top-left-radius": "36px",
+      "background-color": "rgba(73, 73, 76, 0.725)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "36px",
+      "height": "36px",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "0.36",
+      "backdrop-filter": "none",
+      "-webkit-backdrop-filter": "",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "active": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "-18px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(255, 255, 255)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(255, 255, 255)",
+      "border-top-left-radius": "36px",
+      "background-color": "rgba(57, 57, 60, 0.74)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "36px",
+      "height": "36px",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "0.36",
+      "backdrop-filter": "none",
+      "-webkit-backdrop-filter": "",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "paddle.icon": {
+    "html": "<svg class=\"icon-control icon-control-chevronleft\" viewBox=\"0 0 36 36\">\n                        \t\t\t\t\t      <path d=\"m20 25c-.3838 0-.7676-.1465-1.0605-.4395l-5.5-5.5c-.5859-.5854-.5859-1.5356 0-2.1211l5.5-5.5c.5859-.5859 1.5352-.5859 2.1211",
+    "styles": {
+     "width": "36px",
+     "height": "36px",
+     "fill": "rgb(0, 0, 0)",
+     "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "box": {
+     "width": 36,
+     "height": 36
+    }
+   },
+   "link.more": {
+    "html": "<a href=\"/us/shop/goto/apple_upgrade\" data-analytics-title=\"learn more - apple upgrade\" aria-label=\"Learn more, Apple Upgrade\" class=\"icon-wrapper ribbon-link\"><span class=\"icon-copy\">Learn more</span><span class=\"icon icon-after more\" aria",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(41, 151, 255)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(41, 151, 255)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.more-icon": {
+    "html": "<span class=\"icon icon-after more\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "font-family": "\"SF Pro Icons\"",
+     "font-size": "14px",
+     "color": "rgb(41, 151, 255)",
+     "padding-left": "3.36px",
+     "margin-left": "0px",
+     "top": "0px",
+     "position": "static",
+     "content": "\"\" / \"\""
+    }
+   },
+   "stat.value": {
+    "html": "<span class=\"stat-value\">25 more hours</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(245, 245, 247)"
+    }
+   },
+   "stat.caption": {
+    "html": "<span class=\"stat-caption\">Up to</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "footnote": {
+    "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a></sup>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)",
+     "vertical-align": "baseline",
+     "top": "0px",
+     "position": "relative"
+    }
+   },
+   "localnav": {
+    "html": "<div id=\"localnav-container\" class=\"localnav-container theme-dark theme-reveal-on-scroll loaded reveal\" data-reveal=\".section-media-hero .marquee-detail\" data-reveal-keyframe=\"a0b\" data-toggle-theme=\".section-incentive\" data-toggle-theme-al",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "10px",
+     "padding-bottom": "0px",
+     "padding-left": "10px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "52px",
+     "max-width": "none",
+     "position": "relative",
+     "top": "0px",
+     "bottom": "0px",
+     "left": "0px",
+     "width": "900px",
+     "height": "63.5px",
+     "z-index": "9998",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 900,
+     "height": 63.5
+    }
+   },
+   "localnav.wrap": {
+    "html": "<div class=\"localnav-wrap\">\n\t\t\t\t<div class=\"content-collapsed-wrap\" data-analytics-activitymap-region-id=\"local nav\">\n\t\t\t\t\t<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">",
+    "styles": {
+     "padding-top": "12px",
+     "padding-right": "0px",
+     "padding-bottom": "12px",
+     "padding-left": "0px",
+     "margin-top": "10px",
+     "margin-bottom": "2px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "18px",
+     "background-color": "rgba(18, 18, 18, 0.8)",
+     "box-shadow": "rgb(40, 40, 40) 0px 0px 0px 1px",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "1024px",
+     "height": "51.5px",
+     "backdrop-filter": "blur(20px)",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 880,
+     "height": 51.5
+    }
+   },
+   "localnav.product": {
+    "html": "<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">iPhone&nbsp;18&nbsp;Pro</a>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "23px",
+     "font-weight": "600",
+     "letter-spacing": "0.228px",
+     "color": "rgba(0, 0, 0, 0)"
+    }
+   },
+   "localnav.explore": {
+    "html": "<button class=\"typography-caption cta explore\" data-analytics-title=\"explore | open modal\" data-analytics-click=\"prop3:explore | open modal\" aria-label=\"Explore iPhone 18 Pro\" data-analytics-intrapage-link=\"\" style=\"--buy-button-width: 41px",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(245, 245, 247)",
+     "padding-top": "6px",
+     "padding-right": "10px",
+     "padding-bottom": "6px",
+     "padding-left": "10px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "120px",
+     "background-color": "rgba(18, 18, 18, 0.8)",
+     "box-shadow": "rgb(110, 110, 115) 0px 0px 0px 1px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 61,
+     "height": 28
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(245, 245, 247)",
+      "padding-top": "6px",
+      "padding-right": "10px",
+      "padding-bottom": "6px",
+      "padding-left": "10px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(245, 245, 247)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(245, 245, 247)",
+      "border-top-left-radius": "120px",
+      "background-color": "rgb(29, 29, 31)",
+      "box-shadow": "rgb(110, 110, 115) 0px 0px 0px 1px",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none"
+     }
+    }
+   },
+   "localnav.buy": {
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_18_pro\" aria-label=\"Buy, iPhone 18 Pro\" class=\"typography-caption cta buy\" data-analytics-title=\"buy - iphone 18 pro\">\n\t\t\t\t\t\t\t\tBuy\n\t\t\t\t\t\t\t</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0)",
+     "padding-top": "6px",
+     "padding-right": "10px",
+     "padding-bottom": "6px",
+     "padding-left": "10px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "120px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 41.046875,
+     "height": 28
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0)",
+      "padding-top": "6px",
+      "padding-right": "10px",
+      "padding-bottom": "6px",
+      "padding-left": "10px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgba(0, 0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "120px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none"
+     }
+    }
+   }
+  },
+  "1200": {
+   "type.none": {
+    "html": "<p>Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline-super": {
+    "html": "<p class=\"typography-headline-super\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline-elevated": {
+    "html": "<p class=\"typography-headline-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "64px",
+     "line-height": "68px",
+     "font-weight": "600",
+     "letter-spacing": "-0.576px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline-reduced": {
+    "html": "<p class=\"typography-headline-reduced\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.eyebrow-super": {
+    "html": "<p class=\"typography-eyebrow-super\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.intro-elevated": {
+    "html": "<p class=\"typography-intro-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.intro": {
+    "html": "<p class=\"typography-intro\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "29.001px",
+     "font-weight": "400",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.body": {
+    "html": "<p class=\"typography-body\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.body-reduced": {
+    "html": "<p class=\"typography-body-reduced\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.body-reduced-tight": {
+    "html": "<p class=\"typography-body-reduced-tight\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-super": {
+    "html": "<p class=\"typography-callout-super\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-elevated": {
+    "html": "<p class=\"typography-callout-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-base": {
+    "html": "<p class=\"typography-callout-base\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-cta": {
+    "html": "<p class=\"typography-callout-cta\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-elevated": {
+    "html": "<p class=\"typography-caption-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption": {
+    "html": "<p class=\"typography-caption\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-cta": {
+    "html": "<p class=\"typography-caption-cta\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-sosumi": {
+    "html": "<p class=\"typography-caption-sosumi\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-elevated-sosumi": {
+    "html": "<p class=\"typography-caption-elevated-sosumi\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.label": {
+    "html": "<p class=\"typography-label\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.section-header-eyebrow": {
+    "html": "<p class=\"typography-section-header-eyebrow\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "21px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.section-header-headline": {
+    "html": "<p class=\"typography-section-header-headline\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "font-weight": "600",
+     "letter-spacing": "-0.144px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.section-header-link": {
+    "html": "<p class=\"typography-section-header-link\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "page.body": {
+    "html": "<body class=\"page-overview globalheader-dark\" data-component-list=\"AutoARQL FocusManager MediaHero DeepLink\" data-anim-scroll-group=\"body\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-r",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(0, 0, 0)"
+    }
+   },
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    }
+   },
+   "nav.link": {
+    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"Store\" class=\"globalnav-link globalnav-subme",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "12px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "12px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(255, 255, 255)"
+     }
+    }
+   },
+   "content": {
+    "html": "<div class=\"viewport-content\">\n\t\t\t\t<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>\n\t\t\t\t\t<div class=\"section-header-cta-",
+    "styles": {
+     "width": "1050px",
+     "max-width": "1260px",
+     "margin-left": "75px",
+     "margin-right": "75px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 1050,
+     "height": 52
+    }
+   },
+   "section": {
+    "html": "<section class=\"section section-media-hero section-media-hero no-pad  media-layout-background ribbon-full-width\" data-anim-scroll-group=\"Media Hero\" data-analytics-section-engagement=\"name:hero\" data-ric-section=\"\">\n\t\t\t\t<div class=\"section-",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "-72px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 1200,
+     "height": 780
+    }
+   },
+   "section.dark": {
+    "html": "<section id=\"highlights\" class=\"section section-highlights theme-dark background-alt staggered-end\" data-anim-scroll-group=\"Highlights\" data-deep-link=\"highlights\" data-analytics-section-engagement=\"name:highlights\" data-component-list=\"Sta",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(245, 245, 247)",
+     "background-color": "rgb(29, 29, 31)"
+    }
+   },
+   "section.alt": {
+    "html": "<section id=\"highlights\" class=\"section section-highlights theme-dark background-alt staggered-end\" data-anim-scroll-group=\"Highlights\" data-deep-link=\"highlights\" data-analytics-section-engagement=\"name:highlights\" data-component-list=\"Sta",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(245, 245, 247)",
+     "background-color": "rgb(29, 29, 31)"
+    }
+   },
+   "section.header": {
+    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>\n\t\t\t\t\t<div class=\"section-header-cta-list-wrapper\">\n\t\t\t\t\t\t<ul class=\"sec",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "48px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "align-items": "last baseline",
+     "justify-content": "space-between"
+    },
+    "box": {
+     "width": 1050,
+     "height": 52
+    }
+   },
+   "section.headline": {
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "font-weight": "600",
+     "letter-spacing": "-0.144px",
+     "color": "rgb(245, 245, 247)",
+     "margin-bottom": "0px"
+    }
+   },
+   "section.header-link": {
+    "html": "<a href=\"/105/media/us/iphone-18-pro/2026/591df885-5ee2-4173-86e6-401021249f7c/films/product/iphone-18-pro-product-tpl-us-2026_16x9.m3u8\" data-analytics-title=\"watch the film - iphone 18 pro\" data-analytics-id=\"film-iphone-18-pro\" aria-labe",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(41, 151, 255)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(41, 151, 255)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "tile.rounded": {
+    "html": "<div class=\"card tile tile-rounded\">\n\t\t\t\t\t\t\t\t\t<div class=\"caption-container large-pin-top-center\" role=\"none\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"caption-animation-container pin-offset\" data-headline=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<p class=\"caption typography-media-car",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "28px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "overflow": "clip"
+    },
+    "box": {
+     "width": 1050,
+     "height": 612
+    }
+   },
+   "tile.rounded-light": {
+    "html": "<div class=\"card tile card-hover tile-rounded\" data-component-list=\"Card WillChange\" style=\"--card-element-scale: 1.0161290322580645;\">\n\t\t\t\t\t\t\t\t\t<div class=\"feature-card-content image-inline\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"feature-card-copy-contain",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "28px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "387px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 372,
+     "height": 516
+    }
+   },
+   "paddle": {
+    "html": "<button aria-label=\"Previous item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&q",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "-18px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(255, 255, 255, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(255, 255, 255, 0.8)",
+     "border-top-left-radius": "36px",
+     "background-color": "rgba(66, 66, 69, 0.72)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "36px",
+     "height": "36px",
+     "color": "rgba(255, 255, 255, 0.8)",
+     "opacity": "0.36",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "transition-property": "background, color, opacity",
+     "transition-duration": "0.1s, 0.1s, 0.1s",
+     "transition-timing-function": "linear, linear, linear"
+    },
+    "box": {
+     "width": 36,
+     "height": 36
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "-18px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(255, 255, 255)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(255, 255, 255)",
+      "border-top-left-radius": "36px",
+      "background-color": "rgba(73, 73, 76, 0.725)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "36px",
+      "height": "36px",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "0.36",
+      "backdrop-filter": "none",
+      "-webkit-backdrop-filter": "",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "active": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "-18px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(255, 255, 255)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(255, 255, 255)",
+      "border-top-left-radius": "36px",
+      "background-color": "rgba(57, 57, 60, 0.74)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "36px",
+      "height": "36px",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "0.36",
+      "backdrop-filter": "none",
+      "-webkit-backdrop-filter": "",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "paddle.icon": {
+    "html": "<svg class=\"icon-control icon-control-chevronleft\" viewBox=\"0 0 36 36\">\n                        \t\t\t\t\t      <path d=\"m20 25c-.3838 0-.7676-.1465-1.0605-.4395l-5.5-5.5c-.5859-.5854-.5859-1.5356 0-2.1211l5.5-5.5c.5859-.5859 1.5352-.5859 2.1211",
+    "styles": {
+     "width": "36px",
+     "height": "36px",
+     "fill": "rgb(0, 0, 0)",
+     "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "box": {
+     "width": 36,
+     "height": 36
+    }
+   },
+   "link.more": {
+    "html": "<a href=\"/us/shop/goto/apple_upgrade\" data-analytics-title=\"learn more - apple upgrade\" aria-label=\"Learn more, Apple Upgrade\" class=\"icon-wrapper ribbon-link\"><span class=\"icon-copy\">Learn more</span><span class=\"icon icon-after more\" aria",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(41, 151, 255)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(41, 151, 255)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.more-icon": {
+    "html": "<span class=\"icon icon-after more\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "font-family": "\"SF Pro Icons\"",
+     "font-size": "14px",
+     "color": "rgb(41, 151, 255)",
+     "padding-left": "3.36px",
+     "margin-left": "0px",
+     "top": "0px",
+     "position": "static",
+     "content": "\"\" / \"\""
+    }
+   },
+   "stat.value": {
+    "html": "<span class=\"stat-value\">25 more hours</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(245, 245, 247)"
+    }
+   },
+   "stat.caption": {
+    "html": "<span class=\"stat-caption\">Up to</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "footnote": {
+    "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a></sup>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)",
+     "vertical-align": "baseline",
+     "top": "0px",
+     "position": "relative"
+    }
+   },
+   "localnav": {
+    "html": "<div id=\"localnav-container\" class=\"localnav-container theme-dark theme-reveal-on-scroll loaded reveal\" data-reveal=\".section-media-hero .marquee-detail\" data-reveal-keyframe=\"a0b\" data-toggle-theme=\".section-incentive\" data-toggle-theme-al",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "10px",
+     "padding-bottom": "0px",
+     "padding-left": "10px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "52px",
+     "max-width": "none",
+     "position": "relative",
+     "top": "0px",
+     "bottom": "0px",
+     "left": "0px",
+     "width": "1044px",
+     "height": "63.5px",
+     "z-index": "9998",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 1044,
+     "height": 63.5
+    }
+   },
+   "localnav.wrap": {
+    "html": "<div class=\"localnav-wrap\">\n\t\t\t\t<div class=\"content-collapsed-wrap\" data-analytics-activitymap-region-id=\"local nav\">\n\t\t\t\t\t<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">",
+    "styles": {
+     "padding-top": "12px",
+     "padding-right": "0px",
+     "padding-bottom": "12px",
+     "padding-left": "0px",
+     "margin-top": "10px",
+     "margin-bottom": "2px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "18px",
+     "background-color": "rgba(18, 18, 18, 0.8)",
+     "box-shadow": "rgb(40, 40, 40) 0px 0px 0px 1px",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "1024px",
+     "height": "51.5px",
+     "backdrop-filter": "blur(20px)",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 1024,
+     "height": 51.5
+    }
+   },
+   "localnav.product": {
+    "html": "<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">iPhone&nbsp;18&nbsp;Pro</a>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "23px",
+     "font-weight": "600",
+     "letter-spacing": "0.228px",
+     "color": "rgba(0, 0, 0, 0)"
+    }
+   },
+   "localnav.explore": {
+    "html": "<button class=\"typography-caption cta explore\" data-analytics-title=\"explore | open modal\" data-analytics-click=\"prop3:explore | open modal\" aria-label=\"Explore iPhone 18 Pro\" data-analytics-intrapage-link=\"\" style=\"--buy-button-width: 41px",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(245, 245, 247)",
+     "padding-top": "6px",
+     "padding-right": "10px",
+     "padding-bottom": "6px",
+     "padding-left": "10px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "120px",
+     "background-color": "rgba(18, 18, 18, 0.8)",
+     "box-shadow": "rgb(110, 110, 115) 0px 0px 0px 1px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 61,
+     "height": 28
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(245, 245, 247)",
+      "padding-top": "6px",
+      "padding-right": "10px",
+      "padding-bottom": "6px",
+      "padding-left": "10px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(245, 245, 247)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(245, 245, 247)",
+      "border-top-left-radius": "120px",
+      "background-color": "rgb(29, 29, 31)",
+      "box-shadow": "rgb(110, 110, 115) 0px 0px 0px 1px",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none"
+     }
+    }
+   },
+   "localnav.buy": {
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_18_pro\" aria-label=\"Buy, iPhone 18 Pro\" class=\"typography-caption cta buy\" data-analytics-title=\"buy - iphone 18 pro\">\n\t\t\t\t\t\t\t\tBuy\n\t\t\t\t\t\t\t</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0)",
+     "padding-top": "6px",
+     "padding-right": "10px",
+     "padding-bottom": "6px",
+     "padding-left": "10px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "120px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 41.046875,
+     "height": 28
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0)",
+      "padding-top": "6px",
+      "padding-right": "10px",
+      "padding-bottom": "6px",
+      "padding-left": "10px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgba(0, 0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "120px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none"
+     }
+    }
+   }
+  },
+  "1600": {
+   "type.none": {
+    "html": "<p>Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline-super": {
+    "html": "<p class=\"typography-headline-super\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline-elevated": {
+    "html": "<p class=\"typography-headline-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "64px",
+     "line-height": "68px",
+     "font-weight": "600",
+     "letter-spacing": "-0.576px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline": {
+    "html": "<p class=\"typography-headline\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.headline-reduced": {
+    "html": "<p class=\"typography-headline-reduced\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.eyebrow-super": {
+    "html": "<p class=\"typography-eyebrow-super\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.intro-elevated": {
+    "html": "<p class=\"typography-intro-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.intro": {
+    "html": "<p class=\"typography-intro\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "29.001px",
+     "font-weight": "400",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.body": {
+    "html": "<p class=\"typography-body\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.body-reduced": {
+    "html": "<p class=\"typography-body-reduced\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.body-reduced-tight": {
+    "html": "<p class=\"typography-body-reduced-tight\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-super": {
+    "html": "<p class=\"typography-callout-super\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-elevated": {
+    "html": "<p class=\"typography-callout-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-base": {
+    "html": "<p class=\"typography-callout-base\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.callout-cta": {
+    "html": "<p class=\"typography-callout-cta\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-elevated": {
+    "html": "<p class=\"typography-caption-elevated\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption": {
+    "html": "<p class=\"typography-caption\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-cta": {
+    "html": "<p class=\"typography-caption-cta\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-sosumi": {
+    "html": "<p class=\"typography-caption-sosumi\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.caption-elevated-sosumi": {
+    "html": "<p class=\"typography-caption-elevated-sosumi\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.label": {
+    "html": "<p class=\"typography-label\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.section-header-eyebrow": {
+    "html": "<p class=\"typography-section-header-eyebrow\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "21px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.section-header-headline": {
+    "html": "<p class=\"typography-section-header-headline\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "font-weight": "600",
+     "letter-spacing": "-0.144px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.section-header-link": {
+    "html": "<p class=\"typography-section-header-link\">Sample text</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "page.body": {
+    "html": "<body class=\"page-overview globalheader-dark\" data-component-list=\"AutoARQL FocusManager MediaHero DeepLink\" data-anim-scroll-group=\"body\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-r",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(0, 0, 0)"
+    }
+   },
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    }
+   },
+   "nav.link": {
+    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"Store\" class=\"globalnav-link globalnav-subme",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "12px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "12px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(255, 255, 255)"
+     }
+    }
+   },
+   "content": {
+    "html": "<div class=\"viewport-content\">\n\t\t\t\t<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"transform: matrix(1, 0, 0, 1, 0, 30); opacity: 0;\">Get the high",
+    "styles": {
+     "width": "1260px",
+     "max-width": "1260px",
+     "margin-left": "170px",
+     "margin-right": "170px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 1260,
+     "height": 52
+    }
+   },
+   "section": {
+    "html": "<section class=\"section section-media-hero section-media-hero no-pad  media-layout-background ribbon-full-width\" data-anim-scroll-group=\"Media Hero\" data-analytics-section-engagement=\"name:hero\" data-ric-section=\"\">\n\t\t\t\t<div class=\"section-",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "-72px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 1600,
+     "height": 860
+    }
+   },
+   "section.dark": {
+    "html": "<section id=\"highlights\" class=\"section section-highlights theme-dark background-alt staggered-start\" data-anim-scroll-group=\"Highlights\" data-deep-link=\"highlights\" data-analytics-section-engagement=\"name:highlights\" data-component-list=\"S",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(245, 245, 247)",
+     "background-color": "rgb(29, 29, 31)"
+    }
+   },
+   "section.alt": {
+    "html": "<section id=\"highlights\" class=\"section section-highlights theme-dark background-alt staggered-start\" data-anim-scroll-group=\"Highlights\" data-deep-link=\"highlights\" data-analytics-section-engagement=\"name:highlights\" data-component-list=\"S",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(245, 245, 247)",
+     "background-color": "rgb(29, 29, 31)"
+    }
+   },
+   "section.header": {
+    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"transform: matrix(1, 0, 0, 1, 0, 30); opacity: 0;\">Get the highlights.</h2>\n\t\t\t\t\t<div class=\"secti",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "48px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "align-items": "last baseline",
+     "justify-content": "space-between"
+    },
+    "box": {
+     "width": 1260,
+     "height": 52
+    }
+   },
+   "section.headline": {
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"transform: matrix(1, 0, 0, 1, 0, 30); opacity: 0;\">Get the highlights.</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "font-weight": "600",
+     "letter-spacing": "-0.144px",
+     "color": "rgb(245, 245, 247)",
+     "margin-bottom": "0px"
+    }
+   },
+   "section.header-link": {
+    "html": "<a href=\"/105/media/us/iphone-18-pro/2026/591df885-5ee2-4173-86e6-401021249f7c/films/product/iphone-18-pro-product-tpl-us-2026_16x9.m3u8\" data-analytics-title=\"watch the film - iphone 18 pro\" data-analytics-id=\"film-iphone-18-pro\" aria-labe",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(41, 151, 255)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(41, 151, 255)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "tile.rounded": {
+    "html": "<div class=\"card tile tile-rounded\">\n\t\t\t\t\t\t\t\t\t<div class=\"caption-container large-pin-top-center\" role=\"none\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"caption-animation-container pin-offset\" data-headline=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<p class=\"caption typography-media-car",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "28px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "overflow": "clip"
+    },
+    "box": {
+     "width": 1260,
+     "height": 612
+    }
+   },
+   "tile.rounded-light": {
+    "html": "<div class=\"card tile card-hover tile-rounded\" data-component-list=\"Card WillChange\" style=\"--card-element-scale: 1.0161290322580645;\">\n\t\t\t\t\t\t\t\t\t<div class=\"feature-card-content image-inline\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"feature-card-copy-contain",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "28px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "387px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 372,
+     "height": 516
+    }
+   },
+   "paddle": {
+    "html": "<button aria-label=\"Previous item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&q",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "-18px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(255, 255, 255, 0.8)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(255, 255, 255, 0.8)",
+     "border-top-left-radius": "36px",
+     "background-color": "rgba(66, 66, 69, 0.72)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "36px",
+     "height": "36px",
+     "color": "rgba(255, 255, 255, 0.8)",
+     "opacity": "0.36",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "transition-property": "background, color, opacity",
+     "transition-duration": "0.1s, 0.1s, 0.1s",
+     "transition-timing-function": "linear, linear, linear"
+    },
+    "box": {
+     "width": 36,
+     "height": 36
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "-18px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(255, 255, 255)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(255, 255, 255)",
+      "border-top-left-radius": "36px",
+      "background-color": "rgba(73, 73, 76, 0.725)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "36px",
+      "height": "36px",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "0.36",
+      "backdrop-filter": "none",
+      "-webkit-backdrop-filter": "",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "active": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "-18px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(255, 255, 255)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(255, 255, 255)",
+      "border-top-left-radius": "36px",
+      "background-color": "rgba(57, 57, 60, 0.74)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "36px",
+      "height": "36px",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "0.36",
+      "backdrop-filter": "none",
+      "-webkit-backdrop-filter": "",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "paddle.icon": {
+    "html": "<svg class=\"icon-control icon-control-chevronleft\" viewBox=\"0 0 36 36\">\n                        \t\t\t\t\t      <path d=\"m20 25c-.3838 0-.7676-.1465-1.0605-.4395l-5.5-5.5c-.5859-.5854-.5859-1.5356 0-2.1211l5.5-5.5c.5859-.5859 1.5352-.5859 2.1211",
+    "styles": {
+     "width": "36px",
+     "height": "36px",
+     "fill": "rgb(0, 0, 0)",
+     "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "box": {
+     "width": 36,
+     "height": 36
+    }
+   },
+   "link.more": {
+    "html": "<a href=\"/us/shop/goto/apple_upgrade\" data-analytics-title=\"learn more - apple upgrade\" aria-label=\"Learn more, Apple Upgrade\" class=\"icon-wrapper ribbon-link\"><span class=\"icon-copy\">Learn more</span><span class=\"icon icon-after more\" aria",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(41, 151, 255)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(41, 151, 255)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.more-icon": {
+    "html": "<span class=\"icon icon-after more\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "font-family": "\"SF Pro Icons\"",
+     "font-size": "14px",
+     "color": "rgb(41, 151, 255)",
+     "padding-left": "3.36px",
+     "margin-left": "0px",
+     "top": "0px",
+     "position": "static",
+     "content": "\"\" / \"\""
+    }
+   },
+   "stat.value": {
+    "html": "<span class=\"stat-value\">25 more hours</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(245, 245, 247)"
+    }
+   },
+   "stat.caption": {
+    "html": "<span class=\"stat-caption\">Up to</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "footnote": {
+    "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a></sup>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)",
+     "vertical-align": "baseline",
+     "top": "0px",
+     "position": "relative"
+    }
+   },
+   "localnav": {
+    "html": "<div id=\"localnav-container\" class=\"localnav-container theme-dark theme-reveal-on-scroll loaded sticky reveal\" data-reveal=\".section-media-hero .marquee-detail\" data-reveal-keyframe=\"a0b\" data-toggle-theme=\".section-incentive\" data-toggle-t",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "10px",
+     "padding-bottom": "0px",
+     "padding-left": "10px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "52px",
+     "max-width": "none",
+     "position": "relative",
+     "top": "0px",
+     "bottom": "0px",
+     "left": "0px",
+     "width": "1044px",
+     "height": "63.5px",
+     "z-index": "9998",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 1044,
+     "height": 63.5
+    }
+   },
+   "localnav.wrap": {
+    "html": "<div class=\"localnav-wrap\">\n\t\t\t\t<div class=\"content-collapsed-wrap\" data-analytics-activitymap-region-id=\"local nav\">\n\t\t\t\t\t<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">",
+    "styles": {
+     "padding-top": "12px",
+     "padding-right": "0px",
+     "padding-bottom": "12px",
+     "padding-left": "0px",
+     "margin-top": "10px",
+     "margin-bottom": "2px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "18px",
+     "background-color": "rgba(18, 18, 18, 0.8)",
+     "box-shadow": "rgb(40, 40, 40) 0px 0px 0px 1px",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "1024px",
+     "height": "51.5px",
+     "backdrop-filter": "blur(20px)",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 1024,
+     "height": 51.5
+    }
+   },
+   "localnav.product": {
+    "html": "<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">iPhone&nbsp;18&nbsp;Pro</a>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "23px",
+     "font-weight": "600",
+     "letter-spacing": "0.228px",
+     "color": "rgba(0, 0, 0, 0)"
+    }
+   },
+   "localnav.explore": {
+    "html": "<button class=\"typography-caption cta explore\" data-analytics-title=\"explore | open modal\" data-analytics-click=\"prop3:explore | open modal\" aria-label=\"Explore iPhone 18 Pro\" data-analytics-intrapage-link=\"\" style=\"--buy-button-width: 41px",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(245, 245, 247)",
+     "padding-top": "6px",
+     "padding-right": "10px",
+     "padding-bottom": "6px",
+     "padding-left": "10px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "120px",
+     "background-color": "rgba(18, 18, 18, 0.8)",
+     "box-shadow": "rgb(110, 110, 115) 0px 0px 0px 1px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 61,
+     "height": 28
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(245, 245, 247)",
+      "padding-top": "6px",
+      "padding-right": "10px",
+      "padding-bottom": "6px",
+      "padding-left": "10px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(245, 245, 247)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(245, 245, 247)",
+      "border-top-left-radius": "120px",
+      "background-color": "rgb(29, 29, 31)",
+      "box-shadow": "rgb(110, 110, 115) 0px 0px 0px 1px",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none"
+     }
+    }
+   },
+   "localnav.buy": {
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_18_pro\" aria-label=\"Buy, iPhone 18 Pro\" class=\"typography-caption cta buy\" data-analytics-title=\"buy - iphone 18 pro\">\n\t\t\t\t\t\t\t\tBuy\n\t\t\t\t\t\t\t</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0)",
+     "padding-top": "6px",
+     "padding-right": "10px",
+     "padding-bottom": "6px",
+     "padding-left": "10px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "120px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 41.046875,
+     "height": 28
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0)",
+      "padding-top": "6px",
+      "padding-right": "10px",
+      "padding-bottom": "6px",
+      "padding-left": "10px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgba(0, 0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "120px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none"
+     }
+    }
+   }
+  }
+ }
+}

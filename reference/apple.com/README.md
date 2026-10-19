@@ -1,0 +1,102 @@
+# apple.com, measured
+
+What ciderui's tokens and components are held to: apple.com's computed styles, read off its live pages in a browser. Not its stylesheets: apple.com's CSS is Apple's, unlicensed and unversioned (its files carry cache hashes, not versions), so none of it is in this repository; what is recorded is what an element computes to (a color, a size, a radius), with the page, the element and the date beside it.
+
+Measured 2026-10-19 in Playwright's Chromium 151 on Linux, with `--font-render-hinting=none` (`../browsers.mjs`; without it Linux hints every glyph to a whole pixel, `../tracking/`); apple.com draws its own SF Pro webfonts there (`../stack/`), so text-sized boxes are the Mac's.
+
+## The pages
+
+| spec | page | what |
+| --- | --- | --- |
+| `breakpoints` | https://www.apple.com/ | a headline and the global nav stepped across each boundary, 733 to 1442px |
+| `home` | https://www.apple.com/ | the type its stylesheets define, the page, the global nav, the hero and its buttons, light and dark tiles, the gallery's dots, the footer |
+| `product` | https://www.apple.com/iphone-18-pro/ | a dark page: the base type scale, the content's width, sections light, dark and alternate, a rounded tile, the paddles, the "more" link, a stat, the floating local nav |
+| `store` | https://www.apple.com/store | the store's own type scale (`t-`), its shared buttons (`common-css@1.3.3`), the header, quick links, product nav, shelves, a card and its hover |
+| `buy` | https://www.apple.com/shop/buy-iphone/iphone-18-pro | the option tiles (rest, focused, checked), the color swatches, a price |
+| `bag` | https://www.apple.com/shop/bag | the empty bag, its form buttons, the ribbon, an accordion |
+| `signin` | https://secure.store.apple.com/shop/account/home | Apple Account's sign-in widget (its iframe, idmsa.apple.com): a text field and its floating label, a checkbox, a link |
+
+Each is read at 1600, 1200, 900 and 390px wide (one width inside each of apple.com's bands), `breakpoints` at the boundaries.
+
+## What it showed
+
+**Breakpoints** (`breakpoints`). The content changes at 734/735 and 1068/1069: a headline is 32px to 734px, 40px from 735px, 48px from 1069px; nothing it sets changes at 1440/1441. The global nav has its own: 48px tall to 833px, 44px from 834px.
+
+**The palette** (every color the probes read; the probe beside it):
+
+| color | value | where |
+| --- | --- | --- |
+| text | `#1d1d1f` | every page's body |
+| secondary text | `#6e6e73` | `home:hero.callout`, `store:shelf.subheader` |
+| tertiary, a control's edge | `#86868b` | `buy:option` border, `signin:field.input` border, `signin:checkbox` |
+| page | `#ffffff` | the store's, the bag's body |
+| alternate ground | `#f5f5f7` | `home:hero.tile`, `home:footer`, `bag:ribbon` |
+| divider | `#d2d2d7` | `bag:accordion.item` |
+| accent fill | `#0071e3`, hover `#0076df`, pressed `#006edb` | every primary button |
+| link | `#0066cc` | `home:button.secondary`, `bag:form-button.secondary` |
+| neutral fill | `#1d1d1f`, hover `#272729`, pressed `#18181a` | `store:button.neutral` |
+| field ground | `rgba(255,255,255,.8)` | `buy:option`, `signin:field.input`; the field's text `#494949` |
+| dark page | `#000000` | `product:page.body`, `home:tile.dark` |
+| dark alternate | `#1d1d1f` | `product:section.dark` (`.theme-dark.background-alt`) |
+| dark text | `#f5f5f7` | `home:tile.dark-headline`, `product:section.dark` |
+| dark link | `#2997ff` | `home:tile.dark-button-secondary`, `product:section.header-link` |
+| tag | `#b64400` | `store:card.eyebrow` ("NEW", "PRE-ORDER NOW") |
+
+apple.com has no dark mode: none of the 21 stylesheets these pages load reads `prefers-color-scheme`; dark is a section's (`.theme-dark`) or a page's.
+
+**The type.** Two systems, each defined page by page:
+
+- The marketing pages' `typography-*` classes, three tiers (to 734px, from 735px, from 1069px), each page defining its own subset and tuning it: `typography-headline` is 32/40/48px on the home page and not defined on the product page; `headline-elevated` is not defined on the home page and 40/48/64px on the product page. A class a page does not define reads as an unclassed paragraph does (`type.none`, the control every spec carries).
+- The store's `t-*` classes, two tiers (to 734px, from 735px), one ladder: `headline-standalone` 96/100, `headline-super` 80/84, `headline-elevated` 64/68, `headline` 48/52, `headline-reduced` 40/44, `eyebrow-super` 32/36, `eyebrow-elevated` 28/32, `eyebrow` 24/28, `eyebrow-reduced` 21/25, `intro-elevated` 24/32 and `intro` 21/29 at 400, `body-tight` 17/21, `body-reduced` 14/20, `body-reduced-tight` 14/18, `caption` 12/16, `label` 24/28, `callout` 32/36, `tout` 19/23, `quote` 40/48, `manifesto` 32/40 (`store:type.*`).
+
+Across both, a size has one line height and one letter-spacing, the cut following the size (SF Pro Text to 17px, SF Pro Display from 19px): 12/16 −0.01em, 14/20 (or 18) −0.016em, 17/25 (or 21) −0.022em, 19/23 +0.012em, 21/25 +0.011em, 24/28 +0.009em, 28/32 +0.007em, 32/36 +0.004em, 40/44 0, 48/52 −0.003em, 56/60 −0.005em, 64/68 −0.009em, 80/84 −0.015em, 96/100 −0.015em, at 600 from 19px for headlines and 400 for intros and body. Two sizes are tuned two ways: the home page sets 32px at +0.002em and 48px at −0.002em (`home:type.headline`, `home:type.callout`), the product page and the store +0.004em and −0.003em.
+
+**The page's width.** The marketing pages' newer content is 87.5% of the window up to 1260px (`product:content`; 420px at most to 734px); the footer and the global nav keep the older 980px and 1024px (`home:footer.content`, `home:nav.content`), 22px from the edge (16px to 734px). The home page's promo grid is two columns from 735px with a 12px gap (`home:promo.section`).
+
+**The global nav** (`home:nav`). 44px (48px to 833px), `rgba(255,255,255,.8)` under `backdrop-filter: saturate(1.8) blur(20px)`; links 12px, `rgba(0,0,0,.8)`, `#000` hovered, color in 0.32s `cubic-bezier(.4,0,.6,1)`; an open menu's curtain `rgba(232,232,237,.4)` under `blur(20px)`. On a dark page (`product:nav`) the bar is clear and its links `rgba(255,255,255,.8)`, `#fff` hovered.
+
+**Buttons.** The pill, `border-radius: 980px`, a 1px transparent border:
+
+| size | type | padding | height | where |
+| --- | --- | --- | --- | --- |
+| reduced | 12/16 | 3px 10px | 24px | `store:button.reduced` |
+| default | 14/18 | 8px 15px | 36px | `store:button`, the marketing buttons to 734px |
+| elevated | 17/20 | 11px 21px | 44px | `store:button.elevated`, the marketing buttons from 735px (`home:button`) |
+| super | 17/20 | 17px 30px | 56px | `store:button.super` |
+
+The fills are the accent's and the neutral's (above); a secondary button is the fill's color as its text and border on no ground, filled with the hovered fill when hovered (`home:button.secondary`, `store:button.secondary-neutral`); on a dark ground the secondary is the dark link `#2997ff` (`home:tile.dark-button-secondary`). The store's form buttons are rounded rectangles, `border-radius: 12px`, 17px text, 17px 30px, 56px tall (`bag:form-button`); `button-block` is the full width at `border-radius: 8px` (`store:button.block`). No button transitions its colors (0s).
+
+**The focus ring** (`home:button`, `store:button`, `bag:form-button`, `buy:option.focus`): `outline: 2px solid #0071e3; outline-offset: 3px`; a text field's at `outline-offset: 1px` (`signin:field.input`).
+
+**Fields** (`signin:field.*`). 56px tall, `border-radius: 12px`, a 1px `#86868b` border on `rgba(255,255,255,.8)`, 17px text, 16px in from the left; focused, a 2px `#0071e3` border (15px in, the box unchanged). The label is the placeholder at 17px `#6e6e73` until the field is focused, then 12px at the field's top (`top` 18px to 10px, in 0.125s). The checkbox is 16px, a 1px `#86868b` border, `border-radius: 3px`.
+
+**Option tiles and swatches** (`buy:*`). An option is a label on a radio: `border-radius: 12px`, a 1px `#86868b` border, 15px in, on `rgba(255,255,255,.8)`; checked, a 2px `#0071e3` border, 14px in, the box unchanged; focused, the focus ring. A color swatch is a 28px circle in a 36px ring, 2px of `#0071e3` when checked.
+
+**Tiles and cards.** The home page's tiles are square-cornered, on `#f5f5f7` or `#000` (`home:hero.tile`, `home:tile.dark`), 692px tall from 1069px; the product page's rounded tiles `border-radius: 28px` (`product:tile.rounded`); the store's cards `border-radius: 18px` with `box-shadow: 2px 4px 12px rgba(0,0,0,.08)`, hovered `2px 4px 16px rgba(0,0,0,.16)` and `scale(1.01)` in 0.3s (`store:card`).
+
+**Materials.** The global nav's (above); the product page's floating local nav, a bar `border-radius: 18px`, `rgba(18,18,18,.8)` under `blur(20px)` with a 1px `#282828` ring, 51.5px tall, its buttons 12px pills ringed in `#6e6e73` (`product:localnav.*`).
+
+**Paddles and dots.** A gallery's paddles are circles, 36px on the product page (`rgba(66,66,69,.72)` on dark, hovered `rgba(73,73,76,.725)`, pressed `rgba(57,57,60,.74)`, in 0.1s linear), 56px on the store's shelves (`rgba(210,210,215,.64)` on light); a gallery's dots are 8px, the current one a 32px pill (`home:gallery.*`).
+
+**The footer** (`home:footer.*`). `#f5f5f7`, 12/16 text at `rgba(0,0,0,.56)`, its links `.72` (underlined hovered), its column titles 600 at `.88`, its rules `rgba(0,0,0,.16)`.
+
+**Accordions** (`bag:accordion.*`). A 1px `#d2d2d7` rule above each item; the question 32px from it (24px to 734px).
+
+## Running it
+
+```sh
+PW=…/playwright-chromium/index.mjs PAGE=home node measure.mjs   # results/home.json
+node report.mjs home [probe-prefix]                               # its values across the widths
+```
+
+`pages/<name>.mjs` is a page's spec: its URL and its probes. A probe selects an element of the page or adds markup to it (for a class the page defines but may not use), and reads the properties it names, its box, and with `states` the same again with each pseudo-class forced through the DevTools protocol. `measure.mjs` records a probe that matches nothing as null and fails the run, and records each element's markup without query strings (the store's carry session ids).
+
+What the harness had to learn, each a reading that was wrong before it:
+
+- A typography class a page does not define reads as body text; every spec carries the unclassed control `type.none`, and `report.mjs` prints such a class as not defined.
+- Forcing a state off and re-enabling transitions in one frame starts a transition a later probe reads in flight (a paddle's icon read white instead of `rgba(255,255,255,.8)`); the harness flushes styles before transitions return.
+- The sign-in field is focused on load, so its rest is read blurred (`blur`).
+- The store's elements rename after hydration (`rf-ccard-content-eyebrow` in the served HTML is `rf-ccard-content-header-eyebrow` in the page).
+- The sign-in widget's iframe shares the page's process here, so its elements are reached through the page's own DevTools session.
+
+Not measured: a touch screen's hover, the global nav on a dark page once scrolled, the modals, the checkout, the search field open, and every page in Safari.

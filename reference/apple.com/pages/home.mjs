@@ -1,0 +1,53 @@
+// apple.com's home page: the type scale (every typography class its stylesheets
+// define, added to the page), the page, the global nav, the hero and its
+// buttons, a light and a dark promo tile, the gallery's dots, the footer.
+import { TYPE, BOX, MOTION, BLUR, LINK, FOCUS } from './common.mjs';
+const TYPOGRAPHY = ['headline-super', 'headline-elevated', 'headline', 'headline-reduced', 'intro-elevated', 'intro',
+  'body', 'body-reduced', 'callout', 'caption', 'cta-medium', 'tile-headline', 'tile-subhead', 'tile-callout',
+  'promo-headline', 'promo-subhead', 'promo-callout'];
+const STATES = ['hover', 'active', 'focus-visible'];
+export default {
+  url: 'https://www.apple.com/',
+  probes: [
+    // a class the page does not define reads as this paragraph does
+    { name: 'type.none', inject: '<p>Sample text</p>', into: 'main', props: TYPE },
+    ...TYPOGRAPHY.map(c => ({ name: `type.${c}`, inject: `<p class="typography-${c}">Sample text</p>`, into: 'main', props: TYPE })),
+    { name: 'page.html', select: 'html', props: ['background-color', 'color-scheme'] },
+    { name: 'page.body', select: 'body', props: [...TYPE, 'background-color'] },
+    { name: 'nav', select: '#globalnav', props: ['height', 'background-color', ...BLUR], vars: ['--globalnav-background', '--globalnav-backdrop-filter'], box: true },
+    { name: 'nav.curtain', select: '#globalnav-curtain', props: ['background-color', ...BLUR] },
+    { name: 'nav.content', select: '#globalnav .globalnav-content', props: ['height', 'max-width', 'padding-left', 'padding-right', 'background-color', ...BLUR], box: true },
+    { name: 'nav.link', select: '#globalnav .globalnav-item:not(.globalnav-item-apple) .globalnav-link', props: [...TYPE, 'opacity', ...MOTION], states: ['hover'] },
+    { name: 'nav.link-text', select: '#globalnav .globalnav-link-text', props: TYPE },
+    { name: 'hero.section', select: '.section-hero', props: BOX, box: true },
+    { name: 'hero.tile', select: '.section-hero .tile-wrapper', props: BOX, box: true },
+    { name: 'hero.content', select: '.section-hero .tile-content', props: [...BOX, 'text-align'], box: true },
+    { name: 'hero.headline', select: '.section-hero .tile-headline', props: [...TYPE, 'margin-bottom'] },
+    { name: 'hero.subhead', select: '.section-hero .tile-subhead', props: [...TYPE, 'margin-top'] },
+    { name: 'hero.callout', select: '.section-hero .tile-callout', props: [...TYPE, 'margin-top'] },
+    { name: 'hero.ctas', select: '.section-hero .tile-ctas', props: ['display', 'gap', 'column-gap', 'justify-content', 'margin-top'] },
+    { name: 'button', select: '.section-hero .tile-ctas .button:not(.button-secondary)', props: [...TYPE, ...BOX, 'display', 'cursor', ...FOCUS, ...MOTION], box: true, states: STATES },
+    { name: 'button.secondary', select: '.section-hero .tile-ctas .button-secondary', props: [...TYPE, ...BOX, 'display', ...FOCUS, ...MOTION], box: true, states: STATES },
+    { name: 'promo.section', select: '.section-promo', props: [...BOX, 'display', 'gap', 'grid-template-columns'], box: true },
+    { name: 'tile.light', select: '.section-promo .tile-wrapper:not(.theme-dark)', props: BOX, box: true },
+    { name: 'tile.light-headline', select: '.section-promo .tile-wrapper:not(.theme-dark) .tile-headline', props: TYPE },
+    { name: 'tile.light-subhead', select: '.section-promo .tile-wrapper:not(.theme-dark) .tile-subhead', props: TYPE },
+    { name: 'tile.dark', select: '.tile-wrapper.theme-dark', props: BOX, box: true },
+    { name: 'tile.dark-headline', select: '.tile-wrapper.theme-dark .tile-headline', props: TYPE },
+    { name: 'tile.dark-subhead', select: '.tile-wrapper.theme-dark .tile-subhead', props: TYPE },
+    { name: 'tile.dark-button', select: '.tile-wrapper.theme-dark .button:not(.button-secondary)', props: [...TYPE, ...BOX], states: ['hover'] },
+    { name: 'tile.dark-button-secondary', select: '.tile-wrapper.theme-dark .button-secondary', props: [...TYPE, ...BOX], states: ['hover'] },
+    { name: 'gallery.dot', select: '.dotnav-item:not(.current) .dotnav-link', props: [...BOX, 'width', 'height', 'opacity'], box: true, states: ['hover'] },
+    { name: 'gallery.dot-current', select: '.dotnav-item.current .dotnav-link', props: [...BOX, 'width', 'height', 'opacity'], box: true },
+    { name: 'gallery.button-neutral', select: '.button.button-neutral', props: [...TYPE, ...BOX], box: true, states: ['hover'] },
+    { name: 'footer', select: '#ac-globalfooter', props: [...TYPE, 'background-color'] },
+    { name: 'footer.content', select: '#ac-globalfooter .ac-gf-content', props: ['max-width', 'padding-left', 'padding-right', 'margin-left', 'margin-right'], box: true },
+    { name: 'footer.sosumi', select: '#ac-globalfooter .ac-gf-sosumi', props: [...TYPE, ...BOX] },
+    { name: 'footer.title', select: '.ac-gf-directory-column-section-title-text', props: TYPE },
+    { name: 'footer.link', select: '.ac-gf-directory-column-section-link', props: [...TYPE, ...LINK], states: ['hover'] },
+    { name: 'footer.shop', select: '.ac-gf-footer-shop', props: [...TYPE, ...BOX] },
+    { name: 'footer.legal', select: '.ac-gf-footer-legal', props: [...TYPE, ...BOX] },
+    { name: 'footer.legal-link', select: '.ac-gf-footer-legal-link', props: [...TYPE, ...LINK, 'border-right-color', 'border-right-width', 'padding-right', 'margin-right'], states: ['hover'] },
+    { name: 'footer.copyright', select: '.ac-gf-footer-legal-copyright', props: TYPE },
+  ],
+};
