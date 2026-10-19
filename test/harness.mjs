@@ -15,9 +15,10 @@
 //            `wait` ms (0 reads its start)
 // A check:
 //   target   a selector in the case's markup; props, the values read (a
-//            property, the box: box-height, box-width, box-top, box-left,
-//            box-x, box-y, or `focused`, test/browser.mjs); state, the
-//            pseudo-classes forced on it (or on `on`)
+//            property, the box: box-height, box-width, box-top, box-left, box-right,
+//            box-x, box-y, or `focused`, test/browser.mjs), of its `pseudo`
+//            element (::after) if it names one; state, the pseudo-classes
+//            forced on it (or on `on`)
 //   apple    [page, probe, state?]: each value equals apple.com's measured
 //            one (reference/apple.com/results/<page>.json) at the same
 //            width, or at `at[width]` for a width the reference was not read

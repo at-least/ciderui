@@ -1,0 +1,364 @@
+/* ciderui — the local nav: apple.com's bar under the global nav on a
+ * product's pages, on a <nav>: the product's name, its pages' links (the
+ * current one marked) and a button (Buy), stuck to the top of the window as
+ * the page scrolls; to 833px its links fold into a menu its chevron opens
+ * below the bar, with no script.
+ *
+ * From apple.com's local nav, the one most product pages carry
+ * (reference/apple.com/): localnav:* (MacBook Air's, light), localnav-dark:*
+ * (MacBook Pro's); its chevron ciderui's own (reference/icons/).
+ *
+ *   <nav class="cui-localnav" aria-label="Local">
+ *     <div class="cui-localnav-content">
+ *       <a class="cui-localnav-title" href="/macbook-air/">MacBook Air</a>
+ *       <input class="cui-localnav-toggle" type="checkbox" id="cui-localnav-menu" aria-label="Menu">
+ *       <div class="cui-localnav-menu">
+ *         <ul class="cui-localnav-list">
+ *           <li><a class="cui-localnav-link" href="/macbook-air/" aria-current="page">Overview</a></li>
+ *           <li><a class="cui-localnav-link" href="/macbook-air/specs/">Tech Specs</a></li>
+ *         </ul>
+ *       </div>
+ *       <div class="cui-localnav-actions">
+ *         <label class="cui-localnav-menubutton" for="cui-localnav-menu" aria-hidden="true">(icon::CHEVRON)</label>
+ *         <a class="cui-btn" data-size="sm" href="/buy">Buy</a>
+ *       </div>
+ *     </div>
+ *   </nav>
+ *
+ * The menu is apple.com's own way, a checkbox: the chevron is its label, the
+ * checkbox (visually hidden) takes the focus and the space bar, its focus
+ * ring drawn on the chevron; checked, the menu opens below the bar on the
+ * menu's ground, its rows coming in, the chevron turned up. The checkbox
+ * comes before the menu in the markup, so that opened, the next stop is the
+ * first link; closed, the menu's links are hidden, not merely clipped, and
+ * so out of the focus order.
+ *
+ * cui-localnav              the bar: 48px, 52px from 834px, sticky at the
+ *                           top, on its material (dark in a dark block,
+ *                           cui-dark on the nav), a rule along its foot
+ * cui-localnav-content      980px at most, 16px in, 22px from 834px
+ * cui-localnav-title        the product's name, a link: 19px, 21px from 834px
+ * cui-localnav-menu         the links' place: in the bar from 834px, below it
+ *                           to 833px
+ * cui-localnav-link         a link: 12px in the bar, a 34px row of 14px in
+ *                           the menu; aria-current="page" marks the current
+ *                           page (a line under it in the bar, beside it in
+ *                           the menu)
+ * cui-localnav-toggle       the menu's checkbox, to 833px
+ * cui-localnav-menubutton   its label, the chevron
+ * cui-localnav-actions      the chevron and the button (a cui-btn,
+ *                           data-size="sm": apple.com's local nav button is
+ *                           its 24px pill)
+ *
+ * apple.com's: every size, color, the material, the rule, the motion, the
+ * stickiness (every local nav measured sticks) and its stacking (9997, under
+ * the global nav's 9999). ciderui's: the letter-spacing (tokens.css); the
+ * product's name and the menu's rows in a color with its opacity in it
+ * (on-bar-2; apple.com's black at .88, white at .92 dark, an opacity no
+ * color scheme can switch); the material at the top of the page as stuck
+ * (apple.com's dark one is clear until its script sees it stick); the
+ * material in the bar alone (apple.com's reaches up behind its global nav);
+ * the menu closes by its chevron alone (apple.com's script also closes it on
+ * a click elsewhere); its rows fade out in its 0.32s (apple.com's in 0.38s
+ * and 0.4s). */
+
+@layer components {
+  .cui-localnav {
+    --cui-localnav-ease: cubic-bezier(0.4, 0, 0.6, 1);
+
+    position: sticky;
+    top: 0;
+    z-index: 9997;
+    height: 48px;
+    background-color: var(--cui-c-bar-2);
+    backdrop-filter: saturate(1.8) blur(20px);
+    transition-property: background, backdrop-filter;
+    transition-duration: 0.24s;
+    transition-timing-function: cubic-bezier(0.28, 0.11, 0.32, 1);
+
+    /* the rule along its foot */
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      background-color: var(--cui-c-separator);
+    }
+
+    @media (width >= 834px) {
+      height: 52px;
+    }
+  }
+
+  .cui-localnav-content {
+    display: flex;
+    align-items: center;
+    box-sizing: content-box;
+    max-width: 980px;
+    height: 100%;
+    margin-inline: auto;
+    padding-inline: 16px;
+
+    @media (width >= 834px) {
+      padding-inline: 22px;
+    }
+  }
+
+  .cui-localnav-title {
+    margin-right: auto;
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-19);
+    color: var(--cui-c-on-bar-2);
+    text-decoration-line: none;
+    transition: color 0.24s cubic-bezier(0.28, 0.11, 0.32, 1);
+
+    @media (width >= 834px) {
+      font-size: 21px;
+      letter-spacing: var(--cui-tracking-21);
+    }
+  }
+
+  /* to 833px: the links' place is below the bar, a menu on the menu's ground
+     that opens to its rows' height */
+  .cui-localnav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: grid;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    background-color: var(--cui-c-menu);
+    transition: grid-template-rows 0.32s var(--cui-localnav-ease), visibility 0s;
+  }
+
+  .cui-localnav-list {
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+
+    /* each row 34px, the first 10px below the bar, 27px below the last */
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+    }
+
+    &::before {
+      height: 10px;
+    }
+
+    &::after {
+      height: 27px;
+    }
+  }
+
+  .cui-localnav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 34px;
+    margin-inline: 32px;
+    font-size: 14px;
+    line-height: 18.2px;
+    letter-spacing: var(--cui-tracking-14);
+    color: var(--cui-c-on-bar-hover);
+    text-decoration-line: none;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.32s var(--cui-localnav-ease), transform 0.32s var(--cui-localnav-ease);
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    /* the current page: in the menu, a short line before it */
+    &[aria-current="page"] {
+      cursor: default;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 11px;
+        left: -16px;
+        width: 1.2px;
+        height: 12px;
+        border-radius: 1.2px;
+        background-color: currentColor;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  /* opened (to 833px): the bar and the menu on the menu's ground, the menu
+     at its rows' height, the rule along its foot, its rows coming in 20ms
+     apart, the chevron turned up */
+  @media (width < 834px) {
+    .cui-localnav:has(.cui-localnav-toggle:checked) {
+      background-color: var(--cui-c-menu);
+      transition-duration: 0.32s;
+      transition-timing-function: var(--cui-localnav-ease);
+
+      &::after {
+        content: none;
+      }
+
+      .cui-localnav-menu {
+        grid-template-rows: 1fr;
+        visibility: visible;
+        box-shadow: inset 0 -1px var(--cui-c-separator);
+      }
+
+      .cui-localnav-link {
+        opacity: 0.8;
+        transform: none;
+        transition-delay: 0.28s;
+
+        @media (hover: hover) {
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+        &[aria-current="page"] {
+          opacity: 1;
+        }
+      }
+
+      li:first-child > .cui-localnav-link { transition-delay: 0.26s; }
+      li:nth-child(3) > .cui-localnav-link { transition-delay: 0.3s; }
+      li:nth-child(4) > .cui-localnav-link { transition-delay: 0.32s; }
+      li:nth-child(5) > .cui-localnav-link { transition-delay: 0.34s; }
+      li:nth-child(n + 6) > .cui-localnav-link { transition-delay: 0.36s; }
+
+      .cui-localnav-menubutton svg {
+        transform: scaleY(-1);
+      }
+    }
+  }
+
+  /* the checkbox, out of sight but in the focus order; its ring on the
+     chevron */
+  .cui-localnav-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    &:focus-visible ~ .cui-localnav-actions .cui-localnav-menubutton {
+      outline: var(--cui-focus-ring);
+      outline-offset: var(--cui-focus-ring-offset);
+    }
+  }
+
+  .cui-localnav-actions {
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+  }
+
+  .cui-localnav-menubutton {
+    display: block;
+    align-self: flex-start;
+    width: 40px;
+    height: 30px;
+    margin-top: 14px;
+    margin-right: -12px;
+    color: var(--cui-c-on-bar-hover);
+    opacity: 0.8;
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    svg {
+      display: block;
+      margin: 6px auto 0;
+      transition: transform 0.32s var(--cui-localnav-ease);
+    }
+  }
+
+  .cui-localnav-actions > .cui-btn {
+    margin-left: 16px;
+  }
+
+  /* from 834px: the links in the bar, after the name, the button after them */
+  @media (width >= 834px) {
+    .cui-localnav-toggle,
+    .cui-localnav-menubutton {
+      display: none;
+    }
+
+    .cui-localnav .cui-localnav-menu {
+      position: static;
+      display: block;
+      visibility: visible;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    .cui-localnav .cui-localnav-list {
+      display: flex;
+      overflow: visible;
+
+      &::before,
+      &::after {
+        content: none;
+      }
+
+      > li {
+        display: flex;
+        margin-left: 24px;
+      }
+    }
+
+    .cui-localnav .cui-localnav-link {
+      display: inline-block;
+      height: auto;
+      margin-inline: 0;
+      font-size: 12px;
+      line-height: 22px;
+      letter-spacing: var(--cui-tracking-12);
+      opacity: 0.8;
+      transform: none;
+      transition: none;
+
+      @media (hover: hover) {
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &[aria-current="page"] {
+        opacity: 1;
+
+        /* the current page: in the bar, a line under it along the bar's foot */
+        &::after {
+          top: 36px;
+          right: 0;
+          left: 0;
+          width: auto;
+          height: 1px;
+          border-radius: 1px;
+        }
+      }
+    }
+
+    .cui-localnav-actions > .cui-btn {
+      margin-left: 24px;
+    }
+  }
+}

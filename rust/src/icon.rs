@@ -146,6 +146,17 @@ pub const MENU: Icon = Icon {
     inner: r#"<path d="M2 5H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 12H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>"#,
 };
 
+/// The local nav's chevron (`cui-localnav-menubutton`), as apple.com's: a
+/// line through (15.265, 0.835), (8, 8.167) and (0.735, 0.835) in 16 by 9,
+/// 1.2 thick, round; `localnav.css` turns it up while the menu is open, which
+/// is the line apple.com's animation ends on (`reference/icons/`).
+pub const CHEVRON: Icon = Icon {
+    width: "16",
+    height: "9",
+    view_box: "0 0 16 9",
+    inner: r#"<path d="M15.265.835 8 8.167.735.835" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>"#,
+};
+
 #[cfg(test)]
 mod tests {
     use super::*;

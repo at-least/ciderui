@@ -8,7 +8,7 @@
 // protocol's touch emulation is what makes (hover: none) match (Chromium
 // ignores an emulated hover feature); the page refuses to open otherwise.
 // Besides a property, a check reads `box-height` and `box-width`, the
-// element's box, `box-top` and `box-left`, its place in the window,
+// element's box, `box-top`, `box-left` and `box-right`, its place in the window,
 // `box-x` and `box-y`, its place in its parent's box (a line in its SVG),
 // and `focused`, whether it has the focus.
 
@@ -43,7 +43,7 @@ export async function open(css, html, { width = 1200, height = 800, reducedMotio
       const cs = getComputedStyle(el, pseudo ?? null);
       const box = el.getBoundingClientRect();
       const parent = () => el.parentElement.getBoundingClientRect();
-      const BOX = { 'box-height': () => box.height, 'box-width': () => box.width, 'box-top': () => box.top, 'box-left': () => box.left,
+      const BOX = { 'box-height': () => box.height, 'box-width': () => box.width, 'box-top': () => box.top, 'box-left': () => box.left, 'box-right': () => box.right,
         'box-x': () => box.left - parent().left, 'box-y': () => box.top - parent().top };
       return Object.fromEntries(props.map(p => [p, p in BOX ? `${BOX[p]()}px` : p === 'focused' ? String(document.activeElement === el) : cs.getPropertyValue(p)]));
     }, [selector, props, pseudo]);

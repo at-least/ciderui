@@ -41,6 +41,12 @@ const channels = (value) => {
   if (!c) throw new Error(`not a #rrggbb or rgb(r g b / a) color: ${value}`);
   return [+c[1], +c[2], +c[3], +c[4]];
 };
+// a computed rgb()/rgba() as the rgb(r g b / a) channels() reads
+const computedToSpace = (value) => {
+  const m = value.match(/^rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)$/);
+  if (!m) throw new Error(`not a computed rgb color: ${value}`);
+  return `rgb(${m[1]} ${m[2]} ${m[3]} / ${m[4] ?? 1})`;
+};
 // as the browser computes it
 const rgb = (value) => {
   const [r, g, b, a] = channels(value);
@@ -48,7 +54,9 @@ const rgb = (value) => {
 };
 
 // the contract: each color's light and dark side and where apple.com shows it
-// ([page, probe, width, property, state?]), or `fitted` with why
+// ([page, probe, width, property, state?, opacity?]: with `opacity`, the color
+// at the element's opacity, as apple.com draws a title in black at .88), or
+// `fitted` with why
 const W = 1200;
 const CONTRACT = {
   '--cui-c-bg': [['home', 'page.body', W, 'background-color'], ['product', 'page.body', W, 'background-color']],
@@ -74,6 +82,10 @@ const CONTRACT = {
   '--cui-c-on-bar-hover': [['home', 'nav.link', W, 'color', 'hover'], ['newsroom', 'nav.link', W, 'color', 'hover']],
   '--cui-c-menu': [['home', 'menu.content', 390, 'background-color'], ['newsroom', 'menu.content', 390, 'background-color']],
   '--cui-c-on-menu': [['home', 'menu.link', 390, 'color'], ['newsroom', 'menu.link', 390, 'color']],
+  // the local nav's: MacBook Air's, light, and MacBook Pro's, dark
+  '--cui-c-bar-2': [['localnav', 'localnav.background', W, 'background-color'], ['localnav-dark', 'localnav.background', W, 'background-color']],
+  '--cui-c-on-bar-2': [['localnav', 'localnav.title', W, 'color', undefined, 'opacity'], ['localnav-dark', 'localnav.title', W, 'color', undefined, 'opacity']],
+  '--cui-c-separator': [['localnav', 'localnav.rule', W, 'background-color'], ['localnav-dark', 'localnav.rule', W, 'background-color']],
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-'));
@@ -84,8 +96,14 @@ for (const [name, [light, dark]] of Object.entries(CONTRACT)) {
   for (const [side, value, source] of [['light', l, light], ['dark', d, dark]]) {
     if (typeof source === 'string') continue; // fitted: held by the contrast checks
     // a ring drawn as a box-shadow reads as its color first
-    const want = ref(...source).match(/rgba?\([^)]*\)/)[0];
-    check(`${name} ${side} is apple.com's ${source.slice(0, 2).join(':')}${source[4] ? ':' + source[4] : ''} ${source[3]}`, rgb(value), want);
+    let want = ref(...source.slice(0, 5)).match(/rgba?\([^)]*\)/)[0];
+    if (source[5]) {
+      // the color at the element's opacity
+      const [r, g, b, a] = channels(computedToSpace(want));
+      const alpha = +(a * Number(ref(source[0], source[1], source[2], source[5], source[4]))).toFixed(4);
+      want = alpha === 1 ? `rgb(${r}, ${g}, ${b})` : `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+    check(`${name} ${side} is apple.com's ${source.slice(0, 2).join(':')}${source[4] ? ':' + source[4] : ''} ${source[3]}${source[5] ? ' at its ' + source[5] : ''}`, rgb(value), want);
   }
 }
 
@@ -124,11 +142,11 @@ for (const [on, fills] of [['--cui-c-on-accent', ['--cui-c-accent', '--cui-c-acc
 }
 // the nav's text on its bar, the bar over the page's grounds (what scrolls
 // under it is the page's)
-for (const on of ['--cui-c-on-bar', '--cui-c-on-bar-hover']) {
+for (const [on, bar] of [['--cui-c-on-bar', '--cui-c-bar'], ['--cui-c-on-bar-hover', '--cui-c-bar'], ['--cui-c-on-bar', '--cui-c-bar-2'], ['--cui-c-on-bar-2', '--cui-c-bar-2']]) {
   for (const bg of ['--cui-c-bg', '--cui-c-bg-alt']) {
     for (const i of [0, 1]) {
-      const ground = over(sides('--cui-c-bar')[i], sides(bg)[i]);
-      check(`${on} on --cui-c-bar over ${bg}, ${['light', 'dark'][i]}, at least 4.5:1`, ratio(over(sides(on)[i], ground), ground) >= 4.5, true);
+      const ground = over(sides(bar)[i], sides(bg)[i]);
+      check(`${on} on ${bar} over ${bg}, ${['light', 'dark'][i]}, at least 4.5:1`, ratio(over(sides(on)[i], ground), ground) >= 4.5, true);
     }
   }
 }

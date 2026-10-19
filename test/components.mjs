@@ -54,8 +54,8 @@ for (const name of names) {
           await page.page.waitForTimeout(c.wait ?? (c.reducedMotion ? 100 : 1000));
         }
         for (const k of c.checks) {
-          const label = `${name} ${c.name}: ${k.target}${k.state ? ':' + k.state : ''} at ${width}px`;
-          const got = await page.read(k.target, k.props, { state: k.state, on: k.on });
+          const label = `${name} ${c.name}: ${k.target}${k.pseudo ?? ''}${k.state ? ':' + k.state : ''} at ${width}px`;
+          const got = await page.read(k.target, k.props, { state: k.state, on: k.on, pseudo: k.pseudo });
           if (k.apple) {
             const [p, probe, state] = k.apple;
             const at = k.at?.[width] ?? width;
@@ -69,14 +69,14 @@ for (const name of names) {
             }
           } else if (k.golden) {
             for (const prop of k.props) {
-              const key = `${c.name} | ${k.target}${k.state ? ':' + k.state : ''} | ${width} | ${prop}`;
+              const key = `${c.name} | ${k.target}${k.pseudo ?? ''}${k.state ? ':' + k.state : ''} | ${width} | ${prop}`;
               used.add(key);
               if (UPDATE) written[key] = got[prop];
               else if (!(key in golden)) check(`${label} ${prop} has a golden value (UPDATE_GOLDEN=1)`, 'none', 'recorded');
               else check(`${label} ${prop} is golden (${k.golden})`, got[prop], golden[key]);
             }
           } else if (k.rest) {
-            const rest = await page.read(k.target, k.props);
+            const rest = await page.read(k.target, k.props, { pseudo: k.pseudo });
             for (const prop of k.props) check(`${label} ${prop} is its own at rest (${k.rest})`, got[prop], rest[prop]);
           } else {
             throw new Error(`${label}: a check is apple, golden or rest`);

@@ -21,8 +21,8 @@ export function ref(name, probe, width, prop, state) {
   if (!p) throw new Error(`reference ${name}:${probe} has nothing at ${width}px`);
   // the box, as the probe recorded it (at rest), and its place in the window
   // where the probe recorded that (`position`)
-  if (['box-height', 'box-width', 'box-top', 'box-left'].includes(prop)) {
-    const v = p.box?.[prop.slice(4)];
+  if (['box-height', 'box-width', 'box-top', 'box-left', 'box-right'].includes(prop)) {
+    const v = prop === 'box-right' && p.box?.left !== undefined ? p.box.left + p.box.width : p.box?.[prop.slice(4)];
     if (state || v === undefined) throw new Error(`reference ${name}:${probe} has no ${state ? state + ' ' : ''}${prop} at ${width}px`);
     return `${v}px`;
   }

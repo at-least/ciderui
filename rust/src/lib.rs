@@ -18,10 +18,12 @@ pub mod css;
 mod globalnav;
 pub mod icon;
 mod link;
+mod localnav;
 mod section;
 
 pub use globalnav::GlobalNav;
 pub use link::MoreLink;
+pub use localnav::LocalNav;
 pub use section::{Ground, Rhythm, Section, SectionHeader};
 
 #[cfg(test)]
