@@ -51,3 +51,7 @@ PW=…/playwright-chromium/index.mjs node localnav.mjs   # the local nav's chevr
 ```
 
 `glyph.js` runs on apple.com's page, where its icon font is declared: it loads the face, draws the character on a canvas, reads the numbers off the ink, draws the chevron they describe on another, and compares the two. `nav.mjs` reads the nav's SVG off the page and compares on a blank one. The browsers are `../browsers.mjs`'s.
+
+## A gallery's paddles
+
+apple.com's 36px paddles draw a chevron in a 36 by 36 SVG (`icon-control-chevronleft` and `-right`, the iPhone page's and iPhone 18 Pro's): the outline of a line 3 thick, round at its ends and its corner, its ink 14.5 to 23 across and 11 to 25 down (the next; the previous mirrored, 13 to 21.5 across). ciderui's `PADDLE_NEXT` is that line through (16, 12.5), (21.5, 18) and (16, 23.5), `PADDLE_PREVIOUS` through (20, 12.5), (14.5, 18) and (20, 23.5): they share 0.9993 and 0.9995 of their ink with apple.com's (intersection over union; `paddle.mjs` fails below 0.85, and holds each drawing to the gallery's example). The store's 56px paddles draw a longer one (its ink 9.35 to 26.5 down), which ciderui does not: its large paddle is the 36px chevron, larger. Measured 2026-10-19 on https://www.apple.com/iphone/ in Chromium 151 on Linux (`results/paddle.json`).

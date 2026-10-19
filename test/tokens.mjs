@@ -93,6 +93,15 @@ const CONTRACT = {
   '--cui-c-on-card': [['store', 'card.header', W, 'color'], ['store', 'card.dark-header', W, 'color']],
   '--cui-c-eyebrow': [['store', 'card.eyebrow', W, 'color'], ['store', 'card.dark-eyebrow', W, 'color']],
   '--cui-c-tag': [['store', 'card.tag', W, 'color'], ['store', 'card.dark-tag', W, 'color']],
+  // a gallery's: the iPhone page's paddles and dots, light, and iPhone 18
+  // Pro's, dark (its first paddle disabled, the next read)
+  '--cui-c-paddle': [['iphone', 'paddle', W, 'background-color'], ['product', 'paddle.next', W, 'background-color']],
+  '--cui-c-paddle-hover': [['iphone', 'paddle', W, 'background-color', 'hover'], ['product', 'paddle.next', W, 'background-color', 'hover']],
+  '--cui-c-paddle-active': [['iphone', 'paddle', W, 'background-color', 'active'], ['product', 'paddle.next', W, 'background-color', 'active']],
+  '--cui-c-on-paddle': [['iphone', 'paddle', W, 'color'], ['product', 'paddle.next', W, 'color']],
+  '--cui-c-on-paddle-hover': [['iphone', 'paddle', W, 'color', 'hover'], ['product', 'paddle.next', W, 'color', 'hover']],
+  '--cui-c-dot': [['iphone', 'gallery.dot', W, 'background-color'], ['product', 'gallery.dot', W, 'background-color']],
+  '--cui-c-dot-hover': [['iphone', 'gallery.dot', W, 'background-color', 'hover'], ['product', 'gallery.dot', W, 'background-color', 'hover']],
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-'));
@@ -159,6 +168,17 @@ for (const [on, bar] of [['--cui-c-on-bar', '--cui-c-bar'], ['--cui-c-on-bar-hov
     for (const i of [0, 1]) {
       const ground = over(sides(bar)[i], sides(bg)[i]);
       check(`${on} on ${bar} over ${bg}, ${['light', 'dark'][i]}, at least 4.5:1`, ratio(over(sides(on)[i], ground), ground) >= 4.5, true);
+    }
+  }
+}
+
+// a gallery's marks, 3:1 (WCAG 2's for what is not text): a paddle's chevron
+// on its paddle, the paddle over the page's grounds; a dot on them
+for (const [mark, layers] of [['--cui-c-on-paddle', ['--cui-c-paddle']], ['--cui-c-on-paddle-hover', ['--cui-c-paddle-hover']], ['--cui-c-on-paddle-hover', ['--cui-c-paddle-active']], ['--cui-c-dot', []], ['--cui-c-dot-hover', []]]) {
+  for (const bg of ['--cui-c-bg', '--cui-c-bg-alt']) {
+    for (const i of [0, 1]) {
+      const ground = over(...layers.map(l => sides(l)[i]), sides(bg)[i]);
+      check(`${mark}${layers.length ? ' on ' + layers[0] : ''} over ${bg}, ${['light', 'dark'][i]}, at least 3:1`, ratio(over(sides(mark)[i], ground), ground) >= 3, true);
     }
   }
 }

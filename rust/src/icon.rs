@@ -157,6 +157,26 @@ pub const CHEVRON: Icon = Icon {
     inner: r#"<path d="M15.265.835 8 8.167.735.835" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>"#,
 };
 
+/// A gallery's previous paddle's chevron (`cui-gallery-paddle`), in place of
+/// apple.com's 36 by 36 SVG: a line through (20, 12.5), (14.5, 18) and
+/// (20, 23.5), 3 thick, round; 0.9995 of its ink apple.com's
+/// (`reference/icons/`). Its size the paddle's (`gallery.css`).
+pub const PADDLE_PREVIOUS: Icon = Icon {
+    width: "36",
+    height: "36",
+    view_box: "0 0 36 36",
+    inner: r#"<path d="M20 12.5 14.5 18 20 23.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>"#,
+};
+
+/// A gallery's next paddle's chevron: [`PADDLE_PREVIOUS`] turned, through
+/// (16, 12.5), (21.5, 18) and (16, 23.5); 0.9993 of its ink apple.com's.
+pub const PADDLE_NEXT: Icon = Icon {
+    width: "36",
+    height: "36",
+    view_box: "0 0 36 36",
+    inner: r#"<path d="M16 12.5 21.5 18 16 23.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>"#,
+};
+
 #[cfg(test)]
 mod tests {
     use super::*;

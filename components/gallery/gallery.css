@@ -1,0 +1,181 @@
+/* ciderui — the gallery: a product page's row of items across the window,
+ * each snapping into place where the content starts; below it its paddles
+ * at the content's right edge and its dots, which show the state the page
+ * sets: its script scrolls the row, disables the paddle at an end and marks
+ * the current dot, as it opens a dialog (no script, no paddles: the row
+ * still scrolls by touch, trackpad and keys, and each dot is a link to its
+ * item).
+ *
+ * From apple.com (reference/apple.com/): product:gallery.* (iPhone 18 Pro's
+ * first scroll gallery: its scroller, items, paddles' row and dots, a dark
+ * page), product:paddle* (its paddles), iphone:paddle* and iphone:gallery.*
+ * (a light page's paddles and dots), store:shelf.paddle (the store's 56px
+ * paddle); its chevrons ciderui's own (reference/icons/).
+ *
+ *   <div class="cui-gallery">
+ *     <ul class="cui-gallery-scroller" id="gallery">
+ *       <li id="gallery-1">…</li>
+ *     </ul>
+ *     <div class="cui-gallery-nav">
+ *       <button class="cui-gallery-paddle" type="button" aria-controls="gallery" aria-label="Previous" disabled>(icon::PADDLE_PREVIOUS)</button>
+ *       <button class="cui-gallery-paddle" type="button" aria-controls="gallery" aria-label="Next">(icon::PADDLE_NEXT)</button>
+ *     </div>
+ *     <ul class="cui-gallery-dots">
+ *       <li><a class="cui-gallery-dot" href="#gallery-1" aria-label="Item 1" aria-current="true"></a></li>
+ *     </ul>
+ *   </div>
+ *
+ * cui-gallery            the gallery, dark in a dark block (cui-dark)
+ * cui-gallery-scroller   its items, each snapping at its start where the
+ *                        content does (87.5% of the window, 1260px at most,
+ *                        420px below 735px), 20px apart; its scrollbar
+ *                        hidden; room above and below them for a shadow
+ * cui-gallery-nav        its paddles' row, at the content's right edge
+ * cui-gallery-paddle     a 36px paddle, translucent over the page, its
+ *                        chevron; disabled at an end
+ *   data-size="lg"       56px, the store's
+ * cui-gallery-dots       its dots' row, centered
+ * cui-gallery-dot        an item's dot, a link to it: 8px; the current one
+ *                        (aria-current="true") a pill, 48px (32px below
+ *                        735px)
+ *
+ * apple.com's: the inset, the gaps, the room, the snapping, the paddles'
+ * sizes, colors and motion, the dots'. ciderui's: no script, the page's
+ * own; one disabled paddle's opacity, .42 (apple.com's dark page's .36),
+ * a disabled button's (cui-btn); the paddles' row in the gallery's flow
+ * (apple.com's placed below its scroller); the current dot's pill without a
+ * timer's fill (apple.com's fills it as its item shows, the gallery playing
+ * on its own); a large paddle's colors and chevron the 36px paddle's
+ * (apple.com's store draws its chevron white, 1.35:1 on its ground, and
+ * longer). */
+
+@layer components {
+  .cui-gallery-scroller {
+    /* where the content starts: apple.com's own expression */
+    --cui-gallery-inset: calc(50% - (0.5 * min(420px, 87.5%)));
+
+    display: flex;
+    gap: 20px;
+    margin: -10px 0 -30px;
+    padding: 10px var(--cui-gallery-inset) 30px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--cui-gallery-inset);
+    scrollbar-width: none;
+    list-style: none;
+
+    /* Safari before 18.2 */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > li {
+      flex: none;
+      scroll-snap-align: start;
+    }
+
+    @media (width >= 735px) {
+      --cui-gallery-inset: calc(50% - (0.5 * min(1260px, 87.5%)));
+    }
+  }
+
+  /* the paddles, at the content's right edge, 24px below the items */
+  .cui-gallery-nav {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    column-gap: 18px;
+    box-sizing: content-box;
+    width: min(420px, 87.5%);
+    height: 44px;
+    margin-inline: auto;
+    padding-top: 24px;
+
+    @media (width >= 735px) {
+      width: min(1260px, 87.5%);
+    }
+  }
+
+  .cui-gallery-paddle {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 0;
+    border-radius: 36px;
+    color: var(--cui-c-on-paddle);
+    background-color: var(--cui-c-paddle);
+    cursor: pointer;
+    transition: background 0.1s linear, color 0.1s linear, opacity 0.1s linear;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--cui-c-on-paddle-hover);
+        background-color: var(--cui-c-paddle-hover);
+      }
+    }
+
+    &:active {
+      color: var(--cui-c-on-paddle-hover);
+      background-color: var(--cui-c-paddle-active);
+    }
+
+    &:disabled {
+      opacity: 0.42;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    &[data-size="lg"] {
+      width: 56px;
+      height: 56px;
+      border-radius: 56px;
+    }
+  }
+
+  .cui-gallery-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+      margin: 0 8px;
+    }
+  }
+
+  .cui-gallery-dot {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: var(--cui-c-dot);
+    transition: background-color 0.25s linear;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--cui-c-dot-hover);
+      }
+    }
+
+    &[aria-current="true"] {
+      width: 32px;
+
+      @media (width >= 735px) {
+        width: 48px;
+      }
+    }
+  }
+}
