@@ -4,15 +4,19 @@
  * in as the header.
  *
  * From apple.com's store (reference/apple.com/): store:shelf* (the shelf
- * of its 400px cards).
+ * of its 400px cards; its paddles store:shelf.paddle*).
  *
  *   <div class="cui-shelf">
  *     <div class="cui-shelf-header">
  *       <h2 class="cui-shelf-headline">The latest.</h2> <span class="cui-shelf-subhead">Take a look at what's new.</span>
  *     </div>
- *     <ul class="cui-shelf-scroller">
- *       <li><div class="cui-card">…</div></li>
- *     </ul>
+ *     <div class="cui-shelf-row">
+ *       <ul class="cui-shelf-scroller" id="shelf">
+ *         <li><div class="cui-card">…</div></li>
+ *       </ul>
+ *       <button class="cui-gallery-paddle cui-shelf-paddle" data-size="lg" type="button" aria-controls="shelf" aria-label="Previous" disabled>(icon::PADDLE_PREVIOUS)</button>
+ *       <button class="cui-gallery-paddle cui-shelf-paddle" data-size="lg" type="button" aria-controls="shelf" aria-label="Next">(icon::PADDLE_NEXT)</button>
+ *     </div>
  *   </div>
  *
  * cui-shelf            the row, 46px below it (28px below 735px); its
@@ -22,17 +26,27 @@
  *                      (87.5% of the window wide below 735px)
  * cui-shelf-headline   28px at 600 (24px below 735px), the text's color
  * cui-shelf-subhead    the same in the secondary text, after a space
+ * cui-shelf-row        its scroller and its paddles
  * cui-shelf-scroller   a list of its items (cards), each snapping at its
  *                      start, 16px of room above them and 22px below
+ * cui-shelf-paddle     a gallery's large paddle (cui-gallery-paddle,
+ *                      data-size="lg", gallery.css) at a side, over the
+ *                      scroller: the previous first, the next second; the
+ *                      one at an end (disabled) hidden; none on a touch
+ *                      screen. The page's script scrolls the row and
+ *                      disables the one at an end, as a gallery's does
  *
  * apple.com's: the inset, the gaps, the room, the type, the colors, the
- * snapping. ciderui's: the letter-spacing (tokens.css); its scrollbar hidden
+ * snapping, the paddles' places and motion. ciderui's: the letter-spacing
+ * (tokens.css); its scrollbar hidden
  * by scrollbar-width (apple.com's crop clips it, and the 18px of its
  * scroller's foot under it: ciderui's foot is the 22px in sight); its cards
  * as far in by the scroller's padding and its scroll padding (apple.com's
  * items are translated so far, the last padded at its end); the steps at
- * 735px by the window (apple.com's by a phone's screen); no paddles here
- * (a gallery's). */
+ * 735px by the window (apple.com's by a phone's screen); its paddles' look
+ * the gallery's (its large paddle's chevron and colors, gallery.css); no
+ * paddles on a screen with no hover (apple.com's draws none on a touch
+ * screen). */
 
 @layer components {
   .cui-shelf {
@@ -101,6 +115,43 @@
     > li {
       flex: none;
       scroll-snap-align: start;
+    }
+  }
+
+  .cui-shelf-row {
+    position: relative;
+  }
+
+  /* over the gallery's paddle, whatever order a site imports the two in */
+  .cui-shelf-row > .cui-shelf-paddle {
+    position: absolute;
+    top: 49%;
+    margin-top: -28px;
+    transition: transform 0.5s ease-in, opacity 0.7s cubic-bezier(0.15, 0, 0.2, 1) 0.1s;
+
+    &:first-of-type {
+      inset-inline-start: 18px;
+    }
+
+    &:last-of-type {
+      inset-inline-end: 18px;
+    }
+
+    /* shown, in 0.5s; the one at an end hidden, smaller (over the
+       gallery's disabled paddle) */
+    &:not(:disabled) {
+      opacity: 1;
+      transform: scale(1);
+      transition-duration: 0.5s;
+    }
+
+    &:disabled {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    @media (hover: none) {
+      display: none;
     }
   }
 }

@@ -3,9 +3,11 @@
 // colors, its scroller (its overflow and snapping, the room above and
 // below its cards in sight, its inset at each end, its gap), its items'
 // snapping, the first two cards' places; scrolled 300px, the second card
-// snapped to the inset; scrolled to its end, the last card as far in.
-// Golden, with their why: the letter-spacing, the header's box, the foot in
-// sight, the scrollbar hidden, the last card's place at the end.
+// snapped to the inset; scrolled to its end, the last card as far in; its
+// paddles (store:shelf.paddle*: their places over the scroller, the next
+// shown, the previous hidden, their motion). Golden, with their why: the
+// letter-spacing, the header's box, the foot in sight, the scrollbar hidden,
+// the last card's place at the end, no paddles on a touch screen.
 
 import { examples } from '../../test/harness.mjs';
 
@@ -51,6 +53,23 @@ export const cases = [
     scroll: [SCROLLER, 300],
     checks: [
       { target: card(2), props: ['box-left'], apple: ['store', 'shelf.card'] },
+    ],
+  },
+  {
+    name: 'paddles',
+    html: ex('paddles'),
+    checks: [
+      { target: '.cui-shelf-paddle:not(:disabled)', props: ['position', 'top', 'right', 'margin-top', 'opacity', 'transform', 'transition-property', 'transition-duration', 'transition-timing-function', 'box-height'], apple: ['store', 'shelf.paddle'] },
+      { target: '.cui-shelf-paddle:disabled', props: ['position', 'top', 'left', 'margin-top', 'opacity', 'transform', 'transition-property', 'transition-duration', 'transition-timing-function'], apple: ['store', 'shelf.paddle-previous'] },
+      { target: '.cui-shelf-row', props: ['position', 'box-height'], apple: ['store', 'shelf.paddles'] },
+    ],
+  },
+  {
+    name: 'paddles-touch',
+    html: ex('paddles'),
+    touch: true,
+    checks: [
+      { target: '.cui-shelf-paddle:not(:disabled)', props: ['display'], golden: 'none on a touch screen: apple.com\'s draws no paddles there (an emulated iPhone 13)' },
     ],
   },
   {
