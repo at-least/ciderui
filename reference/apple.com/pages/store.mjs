@@ -15,6 +15,8 @@ const STATES = ['hover', 'active', 'focus-visible'];
 const LIGHT = '.rf-ccard-40.rf-card-msgtag-orange:not(.rf-ccard-darkbg):not(.rf-ccard-withvideo)';
 const DARK = '.rf-ccard-40.rf-ccard-darkbg.rf-card-msgtag-orange:not(.rf-ccard-withvideo)';
 const PLAIN = '.rf-ccard:not([class*="msgtag"]):not(.rf-ccard-darkbg):not(.rf-ccard-withvideo)';
+// the shelf of those cards
+const SHELF = '.rs-cardsshelf:has(.rf-ccard-40)';
 export default {
   url: 'https://www.apple.com/store',
   probes: [
@@ -30,8 +32,20 @@ export default {
     { name: 'quicklink', select: '.rs-quicklinks-button', props: [...TYPE, ...BOX], box: true, states: ['hover'] },
     { name: 'productnav.title', select: '.rf-productnav-card-title', props: TYPE },
     { name: 'productnav.image', select: '.rf-productnav-card-image img', props: ['width', 'height'], box: true },
-    { name: 'shelf.header', select: '.rs-cards-shelf-mainheader', props: TYPE },
-    { name: 'shelf.subheader', select: '.rs-cards-shelf-secondaryheader', props: TYPE },
+    // a shelf of cards, the one holding the 400px cards: its header (its
+    // headline and the secondary text after it), its scroller (in a crop that
+    // hides its scrollbar), its items, the room around them
+    { name: 'shelf', select: SHELF, props: ['padding-top', 'padding-bottom', 'position', 'background-color'], box: true },
+    { name: 'shelf.header', select: `${SHELF} .rs-cards-shelf-header`, props: ['margin-left', 'margin-right', 'padding-top', 'padding-bottom'], box: true, position: true },
+    { name: 'shelf.mainheader', select: `${SHELF} .rs-cards-shelf-mainheader`, props: [...TYPE, 'display', 'margin-top', 'margin-bottom'] },
+    { name: 'shelf.subheader', select: `${SHELF} .rs-cards-shelf-secondaryheader`, props: [...TYPE, 'display'] },
+    { name: 'shelf.crop', select: `${SHELF} .rf-cards-scroller-crop`, props: ['overflow-x', 'overflow-y', 'padding-bottom', 'height'], box: true },
+    { name: 'shelf.scroller', select: `${SHELF} .rf-cards-scroller-content`, props: ['overflow-x', 'overflow-y', 'scroll-snap-type', 'overscroll-behavior-x'], box: true },
+    { name: 'shelf.platter', select: `${SHELF} .rf-cards-scroller-platter`, props: ['display', 'padding-top', 'padding-bottom'], box: true },
+    { name: 'shelf.item', select: `${SHELF} [data-core-scroller-item]`, props: ['scroll-snap-align', 'scroll-snap-stop'], box: true },
+    { name: 'shelf.card', select: `${SHELF} .rf-cards-scroller-itemview`, props: ['margin-right', 'transform'], box: true, position: true },
+    { name: 'shelf.card-second', select: `${SHELF} [data-core-scroller-item]:nth-child(2) .rf-cards-scroller-itemview`, props: ['transform'], box: true, position: true },
+    { name: 'shelf.card-last', select: `${SHELF} [data-core-scroller-item]:last-child .rf-cards-scroller-itemview`, props: ['margin-right', 'padding-right', 'transform'], box: true },
     // the cards: a light one with a tag (rf-card-msgtag-orange: "NEW"), its
     // picture filling it, its info over the picture; a dark one
     // (rf-ccard-darkbg); a light one with a plain eyebrow ("APPLE
