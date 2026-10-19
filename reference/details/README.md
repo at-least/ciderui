@@ -13,4 +13,5 @@ Run 2026-10-19 (`results/`); Safari on the Mac clicks the question as Chrome doe
 
 ```sh
 node page.mjs && PW=…/playwright-chromium/index.mjs BROWSER=chromium node run.mjs
+BROWSER=safari node run.mjs      # Safari quit first (../browsers.mjs); and ios, chrome
 ```

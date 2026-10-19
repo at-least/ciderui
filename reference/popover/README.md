@@ -30,7 +30,7 @@ Measured 2026-10-19 (`results/`). On the iOS simulator the buttons are clicked b
 ## Running it
 
 ```sh
-BROWSER=safari node run.mjs      # and ios, chrome
+BROWSER=safari node run.mjs      # Safari quit first (../browsers.mjs); and ios, chrome
 PW=…/playwright-chromium/index.mjs BROWSER=chromium node run.mjs
 ```
 
