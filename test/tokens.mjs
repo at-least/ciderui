@@ -6,7 +6,7 @@
 // probe holds (reference/stack/); the focus ring apple.com's; and no other
 // stylesheet with a color of its own.
 
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { ROOT } from './compile.mjs';
 import { ref } from './reference.mjs';
@@ -41,8 +41,14 @@ const CONTRACT = {
   '--cui-c-border': [['buy', 'option', W, 'border-top-color'], ['product', 'localnav.explore', W, 'box-shadow']],
   '--cui-c-accent': [['home', 'button', W, 'background-color'], ['home', 'tile.dark-button', W, 'background-color']],
   '--cui-c-accent-hover': [['home', 'button', W, 'background-color', 'hover'], ['home', 'tile.dark-button', W, 'background-color', 'hover']],
-  '--cui-c-accent-active': [['home', 'button', W, 'background-color', 'active'], ['home', 'button', W, 'background-color', 'active']],
+  '--cui-c-accent-active': [['home', 'button', W, 'background-color', 'active'], ['home', 'tile.dark-button', W, 'background-color', 'active']],
+  '--cui-c-on-accent': [['home', 'button', W, 'color'], ['home', 'tile.dark-button', W, 'color']],
   '--cui-c-link': [['home', 'button.secondary', W, 'color'], ['home', 'tile.dark-button-secondary', W, 'color']],
+  // the neutral in a dark block: a gallery item's (li.media-gallery-item.theme-dark)
+  '--cui-c-neutral': [['store', 'button.neutral', W, 'background-color'], ['home', 'gallery.button-neutral', W, 'background-color']],
+  '--cui-c-neutral-hover': [['store', 'button.neutral', W, 'background-color', 'hover'], ['home', 'gallery.button-neutral', W, 'background-color', 'hover']],
+  '--cui-c-neutral-active': [['store', 'button.neutral', W, 'background-color', 'active'], ['home', 'gallery.button-neutral', W, 'background-color', 'active']],
+  '--cui-c-on-neutral': [['store', 'button.neutral', W, 'color'], ['home', 'gallery.button-neutral', W, 'color']],
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-'));
@@ -80,8 +86,10 @@ for (const [fg, grounds, min] of MIN) {
     }
   }
 }
-for (const fill of ['--cui-c-accent', '--cui-c-accent-hover', '--cui-c-accent-active']) {
-  check(`white on ${fill} at least 4.5:1`, ratio('#ffffff', sides(fill)[0]) >= 4.5, true);
+for (const [on, fills] of [['--cui-c-on-accent', ['--cui-c-accent', '--cui-c-accent-hover', '--cui-c-accent-active']], ['--cui-c-on-neutral', ['--cui-c-neutral', '--cui-c-neutral-hover', '--cui-c-neutral-active']]]) {
+  for (const fill of fills) {
+    for (const i of [0, 1]) check(`${on} on ${fill}, ${['light', 'dark'][i]}, at least 4.5:1`, ratio(sides(on)[i], sides(fill)[i]) >= 4.5, true);
+  }
 }
 
 // the letter-spacing per size
@@ -98,10 +106,16 @@ check('the focus ring is apple.com\'s color', rgb(sides('--cui-c-accent')[0]), r
 check('--cui-focus-ring-offset is apple.com\'s', vars['--cui-focus-ring-offset'], ref('home', 'button', W, 'outline-offset', 'focus-visible'));
 check('--cui-focus-ring-offset-field is apple.com\'s', vars['--cui-focus-ring-offset-field'], ref('signin', 'field.input', W, 'outline-offset', 'focus-visible'));
 
-// no stylesheet but tokens.css writes a color
-for (const file of ['theme.css', 'base.css', 'type.css', 'index.css']) {
+// no stylesheet but tokens.css writes a color: not by value, not by name
+// (transparent, currentColor and inherit are not a color of its own)
+const NAMED = /\b(white|black|red|green|blue|gray|grey|silver|yellow|orange|purple|pink|navy|teal|aqua|fuchsia|lime|maroon|olive)\b/i;
+const sheets = ['theme.css', 'base.css', 'type.css', 'index.css',
+  ...readdirSync(join(ROOT, 'components'), { recursive: true }).filter(f => f.endsWith('.css')).map(f => join('components', f))];
+for (const file of sheets) {
   const text = readFileSync(join(ROOT, file), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
-  const literal = text.match(/#[0-9a-f]{3,8}\b|rgba?\(|hsla?\(|oklch\(/i);
+  // a value is what follows a colon up to its semicolon or brace
+  const values = [...text.matchAll(/:\s*([^;{}]+)[;}]/g)].map(m => m[1]).join(' ; ');
+  const literal = values.match(/#[0-9a-f]{3,8}\b|rgba?\(|hsla?\(|oklch\(/i) ?? values.match(NAMED);
   check(`${file} writes no color of its own`, literal?.[0] ?? 'none', 'none');
 }
 

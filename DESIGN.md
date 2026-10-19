@@ -71,13 +71,14 @@ Every component follows these.
 | `divider` | `#d2d2d7` | `#424245` (guessed) | a rule between things: an accordion's items |
 | `accent`, `accent-hover`, `accent-active` | `#0071e3`, `#0076df`, `#006edb` | the same | the primary fill, white on it; the focus ring; a checked option's edge |
 | `link` | `#0066cc` | `#2997ff` | a link; a secondary button's text and edge |
-| `neutral`, `neutral-hover`, `neutral-active` | `#1d1d1f`, `#272729`, `#18181a` | guessed (`#f5f5f7` and its steps) | the neutral fill |
+| `neutral`, `neutral-hover`, `neutral-active` | `#1d1d1f`, `#272729`, `#18181a` | `#f5f5f7`, `#ffffff`, `#ededf2` (a dark gallery item's, `home:gallery.button-neutral`) | the neutral fill |
+| `on-accent`, `on-neutral` | `#ffffff`, `#ffffff` | `#ffffff`, `#000000` | text on the accent's and the neutral's fills |
 | `field` | `rgba(255,255,255,.8)` | guessed | a field's and an option's ground |
 | `tag` | `#b64400` | guessed | a card's tag ("NEW") |
 | `bar` | `rgba(255,255,255,.8)` | `rgba(22,22,23,.8)` (read from the global nav's stylesheet, not seen live) | the global nav's ground, under its material |
 | `paddle`, `-hover`, `-active` | `rgba(210,210,215,.64)`, `rgba(222,222,227,.698)`, `rgba(194,194,199,.655)` | `rgba(66,66,69,.72)`, `rgba(73,73,76,.725)`, `rgba(57,57,60,.74)` | a gallery's paddles |
 
-tokens.css holds the slots measured on both sides (`bg`, `bg-alt`, `text`, `text-2`, `text-3`, `border`, the accent's three, `link`); a slot with a guessed side enters with the first component that reads it, that side measured then, so no stylesheet ever reads a guess. `test/tokens.mjs` holds each to the probe beside it.
+tokens.css holds the slots measured on both sides (`bg`, `bg-alt`, `text`, `text-2`, `text-3`, `border`, the accent's three and `on-accent`, `link`, the neutral's three and `on-neutral`); a slot with a guessed side enters with the first component that reads it, that side measured then, so no stylesheet ever reads a guess. `test/tokens.mjs` holds each to the probe beside it.
 
 Their contrast, computed (WCAG 2): `text` 16.8:1 on `bg` and 15.5:1 on `bg-alt` (dark: 19.3:1, 15.5:1); `text-2` 5.1:1 and 4.7:1 (dark: 5.8:1, 4.7:1); `link` 5.6:1 and 5.1:1 (dark: 7.0:1, 5.6:1); white on `accent` 4.7:1, on `accent-hover` 4.5:1, on `accent-active` 4.9:1; `border` 3.6:1 on `bg` and 3.3:1 on `bg-alt` (dark: 4.1:1, 3.3:1); `tag` 5.5:1. apple.com's dark secondary text, `#6e6e73` (the product page's stat captions), is 4.1:1 on black and 3.3:1 on `#1d1d1f`, below 4.5:1, so the contract's dark `text-2` is `#86868b` (5.8:1 and 4.7:1) and apple.com's `#6e6e73` is dark `text-3` and `border` (decision 6). The token test holds these minimums on both sides: body and secondary text 4.5:1 on `bg` and `bg-alt`, `text-3` and `border` 3:1, white 4.5:1 on the accent's three grounds.
 
@@ -149,7 +150,7 @@ What apple.com's pages are made of, from the measurements, as the components to 
 
 | component | apple.com's | from |
 | --- | --- | --- |
-| `cui-btn` | the pill: four sizes, the accent, secondary, neutral and secondary-neutral, on light and dark; the store's form button (12px corners, 56px) and block (8px) as variants | `home:button*`, `store:button*`, `bag:form-button*`, `home:tile.dark-button*` |
+| `cui-btn` (built) | the pill: five sizes (`data-size` sm, lg, xl, cta), the accent, secondary and neutral (`data-variant`), on light and in a dark block, disabled; the store's form button's corners (`cui-btn-rect`) and the block (`cui-btn-block`), orthogonal classes | `store:button*`, `home:button*`, `home:tile.dark-button*`, `home:gallery.button-neutral`, `bag:form-button*` |
 | `cui-link` | a link, and the "more" link with its chevron | `product:link.more*`, `product:section.header-link` |
 | `cui-section` | a section's ground, alternate or dark, and its content's width | `product:section*`, `product:content` |
 | `cui-globalnav` | the bar (44px, 48px below 834px) and its material, its links, its menu on a phone, its curtain | `home:nav*`, `product:nav*` |
@@ -218,4 +219,4 @@ The kit needs `light-dark()` (vpkit's floor: Chrome 123, Safari 17.5, Firefox 12
 
 - Measured: apple.com's values in `reference/apple.com/` (seven pages, 2026-10-19); the system font's tracking and its fix (`reference/tracking/`); the stack's fonts and fetching (`reference/stack/`); a section's color scheme (`reference/scheme/`); the palette's contrast, computed from the measured values.
 - Stated by the owner: the sites are the owner's alone, in English, marketing and store; hypertext and the Tailwind CLI; Inter where SF is not; the prefix `cui`; ciderui-zola; the palette fixed; `cui-btn`'s default left to ciderui's recommendation.
-- Guessed: that apple.com's look holds still long enough for its measurements to stay the standard; the dark `divider`, `neutral`, `field` and `tag`; that the global nav's dark bar is its stylesheet's `rgba(22,22,23,.8)`; that iOS 27 on a phone behaves as the iOS 26.5 simulator; that Firefox behaves as the others.
+- Guessed: that apple.com's look holds still long enough for its measurements to stay the standard; the dark `divider`, `field` and `tag`; that the global nav's dark bar is its stylesheet's `rgba(22,22,23,.8)`; that iOS 27 on a phone behaves as the iOS 26.5 simulator; that Firefox behaves as the others.

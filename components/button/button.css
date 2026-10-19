@@ -1,0 +1,132 @@
+/* ciderui — the button: apple.com's pill, on <a href> or <button>.
+ *
+ * From apple.com's shared button styles (the store's `button`, common-css
+ * 1.3.3) and its pages' (reference/apple.com/): store:button* (the sizes,
+ * the variants, disabled), home:button* (the call to action, the focus
+ * ring), home:tile.dark-button* and home:gallery.button-neutral (in a dark
+ * block), bag:form-button (the rectangle), store:button.block (the block).
+ *
+ *   <a class="cui-btn" href="/buy">Buy</a>
+ *   <button class="cui-btn" data-variant="secondary" data-size="lg">Learn more</button>
+ *
+ * data-variant  (none) the accent's fill; secondary, the link's color as
+ *               text and edge on no ground, filled with the accent hovered;
+ *               neutral, the neutral's fill (near-black, near-white in a
+ *               dark block)
+ * data-size     sm 24px (12px text); (none) 36px (14px); lg 44px (17px);
+ *               xl 56px (17px); cta, a hero's call to action, 36px below
+ *               735px and 44px from it (apple.com's tile buttons)
+ * cui-btn-rect  the store's form button's 12px corners, its text wrapping
+ * cui-btn-block a block, 8px corners
+ * :disabled     dimmed to 0.42, no hover, no press
+ *
+ * apple.com's: every color, size, corner, the dimming. ciderui's: the
+ * letter-spacing (the system font's fitted value for the size, tokens.css);
+ * a disabled button keeping its ground under the pointer, where apple.com's
+ * changes it (a hover answering a control that cannot be used); no width:
+ * the page's. Not yet: the store's secondary-neutral (its quick links), its
+ * dark side unmeasured. */
+
+@layer components {
+  .cui-btn {
+    --cui-btn-bg: var(--cui-c-accent);
+    --cui-btn-bg-hover: var(--cui-c-accent-hover);
+    --cui-btn-bg-active: var(--cui-c-accent-active);
+    --cui-btn-color: var(--cui-c-on-accent);
+    --cui-btn-color-hover: var(--cui-c-on-accent);
+    --cui-btn-border: transparent;
+    --cui-btn-border-hover: transparent;
+
+    display: inline-block;
+    min-width: 28px;
+    padding: 8px 15px;
+    border: 1px solid var(--cui-btn-border);
+    border-radius: 980px;
+    background-color: var(--cui-btn-bg);
+    color: var(--cui-btn-color);
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-14);
+    text-align: center;
+    white-space: nowrap;
+    text-decoration-line: none;
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:not(:disabled):hover {
+        border-color: var(--cui-btn-border-hover);
+        background-color: var(--cui-btn-bg-hover);
+        color: var(--cui-btn-color-hover);
+      }
+    }
+
+    /* pressed keeps its edge, as apple.com's does; hovered and pressed, the
+       hover's rule has cleared it */
+    &:not(:disabled):active {
+      background-color: var(--cui-btn-bg-active);
+      color: var(--cui-btn-color-hover);
+    }
+
+    &:disabled {
+      opacity: 0.42;
+      cursor: default;
+    }
+  }
+
+  .cui-btn[data-variant="secondary"] {
+    --cui-btn-bg: transparent;
+    --cui-btn-color: var(--cui-c-link);
+    --cui-btn-border: var(--cui-c-link);
+  }
+
+  .cui-btn[data-variant="neutral"] {
+    --cui-btn-bg: var(--cui-c-neutral);
+    --cui-btn-bg-hover: var(--cui-c-neutral-hover);
+    --cui-btn-bg-active: var(--cui-c-neutral-active);
+    --cui-btn-color: var(--cui-c-on-neutral);
+    --cui-btn-color-hover: var(--cui-c-on-neutral);
+  }
+
+  .cui-btn[data-size="sm"] {
+    min-width: 23px;
+    padding: 3px 10px;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: var(--cui-tracking-12);
+  }
+
+  .cui-btn[data-size="lg"],
+  .cui-btn[data-size="xl"] {
+    min-width: 26px;
+    padding: 11px 21px;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: var(--cui-tracking-17);
+  }
+
+  .cui-btn[data-size="xl"] {
+    min-width: 28px;
+    padding: 17px 30px;
+  }
+
+  .cui-btn[data-size="cta"] {
+    @media (width >= 735px) {
+      min-width: 26px;
+      padding: 11px 21px;
+      font-size: 17px;
+      line-height: 20px;
+      letter-spacing: var(--cui-tracking-17);
+    }
+  }
+
+  .cui-btn-rect {
+    border-radius: 12px;
+    white-space: normal;
+  }
+
+  .cui-btn-block {
+    display: block;
+    border-radius: 8px;
+  }
+}

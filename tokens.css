@@ -16,8 +16,12 @@
  *   text, text-2, text-3    body, secondary and muted text (muted at 3:1,
  *                           never body)
  *   border                  a control's edge (a field, an option)
- *   accent, -hover, -active the primary fill, white on it; the focus ring
+ *   accent, -hover, -active the primary fill; the focus ring
+ *   on-accent               text on the accent's fills
  *   link                    a link; a secondary button's text and edge
+ *   neutral, -hover, -active the neutral fill: near-black on a light page,
+ *                           near-white in a dark block
+ *   on-neutral              text on the neutral's fills
  *
  * The rest is not themed: the font stack, the letter-spacing per size, the
  * radii, the focus ring. */
@@ -32,7 +36,12 @@
   --cui-c-accent: #0071e3;
   --cui-c-accent-hover: #0076df;
   --cui-c-accent-active: #006edb;
+  --cui-c-on-accent: #ffffff;
   --cui-c-link: light-dark(#0066cc, #2997ff);
+  --cui-c-neutral: light-dark(#1d1d1f, #f5f5f7);
+  --cui-c-neutral-hover: light-dark(#272729, #ffffff);
+  --cui-c-neutral-active: light-dark(#18181a, #ededf2);
+  --cui-c-on-neutral: light-dark(#ffffff, #000000);
 
   /* SF on Apple's platforms by its two Apple-only names (-apple-system
      Safari's, BlinkMacSystemFont Chrome's; system-ui would be a font

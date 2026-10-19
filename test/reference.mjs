@@ -19,6 +19,11 @@ export function ref(name, probe, width, prop, state) {
   if (!at) throw new Error(`reference ${name} has no width ${width}`);
   const p = at[probe];
   if (!p) throw new Error(`reference ${name}:${probe} has nothing at ${width}px`);
+  // the box, as the probe recorded it (at rest)
+  if (prop === 'box-height' || prop === 'box-width') {
+    if (state || !p.box) throw new Error(`reference ${name}:${probe} has no ${state ? state + ' ' : ''}box at ${width}px`);
+    return `${p.box[prop.slice(4)]}px`;
+  }
   const styles = state ? p.states?.[state] : p.styles;
   if (!styles || !(prop in styles)) throw new Error(`reference ${name}:${probe}${state ? ':' + state : ''} has no ${prop} at ${width}px`);
   return styles[prop];

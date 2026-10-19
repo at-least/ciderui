@@ -4,14 +4,22 @@
 // a check sets, its states forced through the DevTools protocol with
 // transitions off and styles flushed before they return
 // (reference/apple.com/: a state's last change must land while they are off).
+// `touch` emulates a touch screen, as vpkit's runner does: the DevTools
+// protocol's touch emulation is what makes (hover: none) match (Chromium
+// ignores an emulated hover feature); the page refuses to open otherwise.
+// Besides a property, a check reads `box-height` and `box-width`, the
+// element's box.
 
 import { chromium } from 'playwright-chromium';
 
-export async function open(css, html, { width = 1200, reducedMotion, colorScheme } = {}) {
+export async function open(css, html, { width = 1200, reducedMotion, colorScheme, touch } = {}) {
   const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
   const page = await browser.newPage({ viewport: { width, height: 800 }, reducedMotion, colorScheme });
-  await page.setContent(`<!doctype html><html lang="en"><head><meta charset="utf-8"><style>${css}</style></head><body>${html}</body></html>`);
   const cdp = await page.context().newCDPSession(page);
+  if (touch) await cdp.send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
+  await page.setContent(`<!doctype html><html lang="en"><head><meta charset="utf-8"><style>${css}</style></head><body>${html}</body></html>`);
+  const hover = await page.evaluate(() => matchMedia('(hover: hover)').matches);
+  if (hover === Boolean(touch)) throw new Error(`(hover: hover) is ${hover} on a ${touch ? 'touch' : 'desktop'} page`);
   await cdp.send('DOM.enable');
   await cdp.send('CSS.enable');
 
@@ -31,7 +39,8 @@ export async function open(css, html, { width = 1200, reducedMotion, colorScheme
       const el = document.querySelector(selector);
       if (!el) throw new Error(`no element for ${selector}`);
       const cs = getComputedStyle(el, pseudo ?? null);
-      return Object.fromEntries(props.map(p => [p, cs.getPropertyValue(p)]));
+      const box = el.getBoundingClientRect();
+      return Object.fromEntries(props.map(p => [p, p === 'box-height' ? `${box.height}px` : p === 'box-width' ? `${box.width}px` : cs.getPropertyValue(p)]));
     }, [selector, props, pseudo]);
     if (state) {
       await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] });

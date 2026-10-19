@@ -9,3 +9,5 @@ export const LINK = ['text-decoration-line', 'text-decoration-color', 'text-unde
 export const FOCUS = ['outline-style', 'outline-color', 'outline-width', 'outline-offset'];
 // the page's own: its text, its ground, how its text is drawn
 export const PAGE = [...TYPE, 'background-color', '-webkit-font-smoothing', 'font-synthesis', 'text-rendering'];
+// a control's text: how it sits, wraps and shows a link
+export const TEXT = ['display', 'text-align', 'white-space', 'text-decoration-line', 'cursor', 'vertical-align', 'opacity'];
