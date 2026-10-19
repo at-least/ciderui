@@ -1,0 +1,20 @@
+[package]
+name = "ciderui"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "ciderui's components as hypertext components: the markup of the cui-* classes, its icons as inline SVG, and, with the css feature, its stylesheets embedded, for a site that renders with hypertext"
+license = "MIT"
+publish = false
+
+[features]
+# the kit's stylesheets embedded (ciderui::css), for a site's CSS build
+css = []
+
+[dependencies]
+hypertext = "0.12.1"
+
+[[bin]]
+name = "ciderui-css"
+path = "src/bin/ciderui-css.rs"
+required-features = ["css"]

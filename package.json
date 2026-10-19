@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "node test/tokens.mjs && node test/type.mjs && node test/page.mjs && node test/components.mjs"
+    "test": "node test/tokens.mjs && node test/type.mjs && node test/page.mjs && node test/components.mjs && node test/rust.mjs"
   },
   "devDependencies": {
     "@tailwindcss/cli": "4.3.3",
