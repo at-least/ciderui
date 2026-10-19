@@ -3,7 +3,7 @@
 // press(key), close() }, where run evaluates an expression whose value is a
 // promise and hands back what it resolves to, and click and press are the
 // browser's own input (a trusted click on the element, a key pressed: the
-// WebDriver key's name, as Escape).
+// WebDriver key's name, as Escape, or keys held together, as Alt+Tab).
 //   safari    Safari through safaridriver, raw WebDriver over HTTP (Safari's
 //             "Allow remote automation" on); a Safari the run launches is quit
 //             when it closes, one running before it is left as it is (one macOS
@@ -48,7 +48,7 @@ async function viaPlaywright(channel, url) {
 }
 
 // WebDriver's code points for the keys a probe presses
-const KEYS = { Escape: '\uE00C' };
+const KEYS = { Tab: '\uE004', Enter: '\uE006', Escape: '\uE00C', Alt: '\uE00A' };
 
 async function viaSafariDriver(capabilities, url) {
   const port = 4473;
@@ -105,10 +105,14 @@ async function viaSafariDriver(capabilities, url) {
         const el = await wd('POST', `/session/${id}/element`, { using: 'css selector', value: selector });
         await wd('POST', `/session/${id}/element/${Object.values(el)[0]}/click`, {});
       },
+      // a key, or keys held together as Playwright writes them (Alt+Tab)
       press: async (key) => {
-        const value = KEYS[key];
-        if (!value) throw new Error(`no WebDriver key for ${key}`);
-        await wd('POST', `/session/${id}/actions`, { actions: [{ type: 'key', id: 'keyboard', actions: [{ type: 'keyDown', value }, { type: 'keyUp', value }] }] });
+        const values = key.split('+').map(k => {
+          if (!KEYS[k]) throw new Error(`no WebDriver key for ${k}`);
+          return KEYS[k];
+        });
+        const actions = [...values.map(value => ({ type: 'keyDown', value })), ...values.toReversed().map(value => ({ type: 'keyUp', value }))];
+        await wd('POST', `/session/${id}/actions`, { actions: [{ type: 'key', id: 'keyboard', actions }] });
       },
       close,
     };

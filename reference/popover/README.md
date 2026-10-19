@@ -9,7 +9,7 @@ The probe behind `cui-globalnav`'s phone menu, which works without a script. The
 5. the page is held while it is open (`:has()` on the root, `overflow: hidden`, as apple.com sets);
 6. the focus is on its close button (`autofocus`, which a popover's opening honors);
 7. the close button's lines turn from two lines into an X (a frame with a line under 1px tall, `@starting-style`; then each line's box 11.5 by 11.5 from (3.5, 3.5) in its 18px SVG, each turned, moved and stretched by CSS transforms about its middle: apple.com's X, `../icons/`);
-8. Tab goes from the close button to the first link;
+8. Tab goes from the close button to the first link (Option-Tab in Safari on the Mac, whose Tab skips links);
 9. the close button closes it at once (every frame 48px: the transitions are declared on the open state alone, so nothing runs back);
 10. the focus is back on the button;
 11. Escape closes it, the focus back on the button.
@@ -21,10 +21,11 @@ The menu's button was first inside the list, so that one button would be on top 
 | browser | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Chrome 155.0.8059.80, macOS 27.0.1 | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok |
+| Safari 27.0.1, macOS 27.0.1, by its keyboard | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok |
 | Safari 26.5, iOS 26.5 simulator | ok | ok | ok | ok | ok | ok | ok | not run | ok | not run | not run |
 | Chromium 151, Linux | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok |
 
-Measured 2026-10-19 (`results/`). On the iOS simulator the buttons are clicked by the page's script (`click()`, the activation a tap's click runs): safaridriver's taps there reached a button as `pointerdown` and `touchstart` and never a click, and its element click as nothing; a phone has no Tab or Escape. Not yet run: Safari on macOS, whose automation session timed out finding a Safari to drive (safaridriver: "waiting for its RWIApplication to appear"); not measured: Firefox.
+Measured 2026-10-19 (`results/`). On the iOS simulator the buttons are clicked by the page's script (`click()`, the activation a tap's click runs): safaridriver's taps there reached a button as `pointerdown` and `touchstart` and never a click, and its element click as nothing; a phone has no Tab or Escape. Safari on the Mac is used as its keyboard user uses it: each button focused and Return pressed, Option-Tab for Tab. A click there focuses no button and clears the focus a field had (WebDriver's click on a button: the body focused after it either way), so a menu a click opened has no button to give the focus back to: clicked as Chrome is, the X and Escape closed it with the focus on the body and on the hidden X (10 and 11), and Tab, which skips links there, left the focus on the X (8). Safari on the Mac was first not run for want of a Tab key in `../browsers.mjs`, not, as said then, for a session that timed out (Safari's log has that run's session created); not measured: Firefox.
 
 ## Running it
 
