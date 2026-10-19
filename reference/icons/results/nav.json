@@ -1,6 +1,6 @@
 {
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T05:10:47.125Z",
+ "date": "2026-10-19T05:26:37.275Z",
  "ours": {
   "search": "<svg viewBox=\"0 0 15 44\"><circle cx=\"5.95\" cy=\"19.95\" r=\"4.96\" fill=\"none\" stroke=\"#000\" stroke-width=\"1.08\"/><path d=\"M9.46 23.46 13.74 27.74\" fill=\"none\" stroke=\"#000\" stroke-width=\"1.52\" stroke-linecap=\"round\"/></svg>",
   "bag": "<svg viewBox=\"0 0 14 44\"><rect x=\"1.1\" y=\"16.55\" width=\"11.8\" height=\"10.9\" rx=\"1.5\" fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\"/><path d=\"M4.55 16.55V16.05a2.45 2.45 0 0 1 4.9 0v.5\" fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\"/></svg>",
@@ -178,7 +178,7 @@
   "iou": 0.9908
  },
  "openPoints": [
-  "globalnav-menutrigger-bread-bottom: 3.5 15, 15 3.5",
-  "globalnav-menutrigger-bread-top: 3.5 3.5, 15 15"
+  "globalnav-menutrigger-bread-bottom: 3.5 15, 15 3.5 in 0.24s",
+  "globalnav-menutrigger-bread-top: 3.5 3.5, 15 15 in 0.24s"
  ]
 }

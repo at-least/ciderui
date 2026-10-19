@@ -32,9 +32,10 @@ try {
     // that starts from its closed points
     const menu = document.querySelector('#globalnav-menutrigger-button svg').cloneNode(true);
     for (const line of menu.querySelectorAll('polyline')) {
-      const opening = [...line.querySelectorAll('animate')].map(a => a.getAttribute('values').split(';').map(v => v.trim()))
-        .find(v => v[0] === line.getAttribute('points'));
-      line.dataset.open = opening.at(-1);
+      const values = (a) => a.getAttribute('values').split(';').map(v => v.trim());
+      const opening = [...line.querySelectorAll('animate')].find(a => values(a)[0] === line.getAttribute('points'));
+      line.dataset.open = values(opening).at(-1);
+      line.dataset.dur = opening.getAttribute('dur');
       line.querySelectorAll('animate').forEach(a => a.remove());
     }
     const closed = menu.outerHTML;
@@ -43,7 +44,7 @@ try {
       search: svg('.globalnav-link-search .globalnav-image-regular svg'), bag: svg('.globalnav-link-bag .globalnav-image-regular svg'),
       'search-compact': svg('.globalnav-link-search .globalnav-image-compact svg'), 'bag-compact': svg('.globalnav-link-bag .globalnav-image-compact svg'),
       menu: closed, 'menu-open': menu.outerHTML,
-      openPoints: [...menu.querySelectorAll('polyline')].map(l => l.id + ': ' + l.getAttribute('points')),
+      openPoints: [...menu.querySelectorAll('polyline')].map(l => l.id + ': ' + l.getAttribute('points') + ' in ' + l.dataset.dur),
     };
   })()`);
   console.log('apple.com\'s menu lines, open:', apple.openPoints.join('; '));

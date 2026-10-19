@@ -25,7 +25,7 @@ apple.com's nav draws its icons as inline SVG, a regular one in the bar from 834
 | search, 17 by 48 | 0.45 to 16.5, 15.45 to 31.5; the ring 1.2 to 1.25 thick (its middle at 1.075 and 12.8 across, 16.075 and 27.8 down), the handle's run 2.55 across, 1.8 thick | a circle at (6.94, 21.94), radius 5.86, stroke 1.22; the handle from (11.08, 26.08), the ring's middle at 45°, to (15.6, 30.6), stroke 1.8, round |
 | bag, 17 by 48 | 0.95 to 16.05, 13.45 to 31.05; the body's sides 1.2 thick, its outer corner meeting the side 2.6 from it; the handle's legs 1.25 thick, their middles at 5.375 and 11.625 | a rectangle from (1.55, 17.5), 13.9 by 12.95, corners 2, stroke 1.2; the handle an arc of radius 3.125 on legs from the body's top edge |
 | the menu, 18 by 18 | two lines across, 2 to 16, at 5 and 12 down, 1.2 thick, round ends | the same two lines |
-| the menu, open | the same lines from (3.5, 3.5) to (15, 15) and from (3.5, 15) to (15, 3.5): the end of the animation apple.com runs on them | each closed line turned 45° about its middle, moved to (9.25, 9.25) and stretched to the X's length (1.1617 times: 16.26 against 14) |
+| the menu, open | the same lines from (3.5, 3.5) to (15, 15) and from (3.5, 15) to (15, 3.5): the end of the animation apple.com runs on them, in 0.24s | each closed line turned 45° about its middle, moved to (9.25, 9.25) and stretched to the X's length (1.1617 times: 16.26 against 14) |
 
 | icon | shared ink |
 | --- | --- |

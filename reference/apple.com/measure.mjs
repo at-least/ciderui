@@ -17,9 +17,12 @@
 // clicks that element first (a menu's button: the page stays so for the
 // probes after it at that width, so a spec puts such probes last);
 // `position` adds the box's top and left in the window (where the window is
-// what it is placed in: an open menu's rows). A probe that matches nothing is
-// recorded as null, printed, and fails the run. The result is
-// results/<name>.json.
+// what it is placed in: an open menu's rows); `animations`, with `click`,
+// records every animation and transition the click starts on an element
+// inside that selector, each frame for the wait after it (what it animates,
+// on what, its duration, delay and timing, its first and last values). A
+// probe that matches nothing is recorded as null, printed, and fails the run.
+// The result is results/<name>.json.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 
@@ -62,6 +65,32 @@ const place = async (probe) => {
   // without the probe's tags, and without query strings (the store's carry
   // session ids)
   return el.outerHTML.replace(/ data-cui-[a-z]+=""/g, '').replace(/(href|src|srcset)="([^"?]*)\?[^"]*"/g, '$1="$2?…"').slice(0, 240);
+};
+
+// in the frame: from now on, each frame, describe every animation not seen
+// yet whose element is inside `within`
+const watchAnimations = (within) => {
+  const seen = new Set();
+  window.cuiAnimations = [];
+  const name = (e) => `${e.tagName.toLowerCase()}${e.id ? '#' + e.id : ''}${[...e.classList].slice(0, 3).map(c => '.' + c).join('')}`;
+  const look = () => {
+    for (const a of document.getAnimations()) {
+      const target = a.effect?.target;
+      if (seen.has(a) || !target?.closest?.(within)) continue;
+      seen.add(a);
+      const timing = a.effect.getTiming();
+      const frames = a.effect.getKeyframes();
+      const what = a.transitionProperty ?? a.animationName;
+      const prop = Object.keys(frames[0] ?? {}).find(k => !['offset', 'computedOffset', 'easing', 'composite'].includes(k));
+      window.cuiAnimations.push({
+        kind: a.constructor.name, what, on: name(target), duration: timing.duration, delay: Math.round(timing.delay * 100) / 100,
+        // a transition's timing is its effect's, an animation's its keyframes'
+        easing: a.transitionProperty ? timing.easing : frames[0]?.easing,
+        from: prop ? frames[0][prop] : null, to: prop ? frames.at(-1)[prop] : null,
+      });
+    }
+  };
+  window.cuiWatch = setInterval(look, 4);
 };
 
 const read = (probe) => {
@@ -120,6 +149,7 @@ try {
       if (probe.widths && !probe.widths.includes(width)) continue;
       const frame = frameOf(probe);
       if (probe.click) {
+        if (probe.animations) await frame.evaluate(watchAnimations, probe.animations);
         await frame.click(probe.click);
         await pw.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 900)))));
       }
@@ -132,6 +162,7 @@ try {
         continue;
       }
       at[probe.name] = { html, ...(await frame.evaluate(read, probe)) };
+      if (probe.click && probe.animations) at[probe.name].animations = await frame.evaluate(() => { clearInterval(window.cuiWatch); return window.cuiAnimations; });
       if (probe.states?.length) {
         const nodeId = await stateNode(frame);
         if (!nodeId) throw new Error(`${probe.name}: the DevTools session does not see the tagged element`);
