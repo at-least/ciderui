@@ -1,8 +1,8 @@
 {
  "url": "https://secure.store.apple.com/shop/account/home",
- "finalUrl": "https://secure6.store.apple.com/shop/signIn/account",
+ "finalUrl": "https://secure11.store.apple.com/shop/signIn/account",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T03:12:23.062Z",
+ "date": "2026-10-19T08:18:11.826Z",
  "widths": {
   "390": {
    "title": {
@@ -251,7 +251,13 @@
      "max-width": "none",
      "width": "14px",
      "height": "14px",
-     "position": "absolute"
+     "position": "absolute",
+     "top": "2px",
+     "left": "0px",
+     "display": "block",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
     },
     "box": {
      "width": 16,
@@ -266,7 +272,147 @@
      "line-height": "25px",
      "font-weight": "400",
      "letter-spacing": "-0.374px",
-     "color": "rgb(29, 29, 31)"
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "1px",
+     "padding-left": "26px",
+     "position": "relative",
+     "display": "inline"
+    }
+   },
+   "checkbox.box": {
+    "html": "<div class=\"form-checkbox\">\n        <input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\">\n        <label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \">\n          <span class=",
+    "styles": {
+     "position": "relative",
+     "margin-bottom": "11px"
+    },
+    "box": {
+     "width": 137.671875,
+     "height": 25
+    }
+   },
+   "checkbox.input": {
+    "html": "<input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\">",
+    "styles": {
+     "position": "absolute",
+     "top": "3px",
+     "left": "0px",
+     "width": "16px",
+     "height": "16px",
+     "opacity": "0",
+     "margin-top": "0px",
+     "margin-left": "0px"
+    }
+   },
+   "checkbox.checked": {
+    "html": "<span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(0, 113, 227)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(0, 113, 227)",
+     "border-top-left-radius": "3px",
+     "background-color": "rgb(0, 113, 227)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "color": "rgb(255, 255, 255)",
+     "outline-style": "none",
+     "outline-color": "rgb(255, 255, 255)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "focus-visible": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(0, 113, 227)",
+      "border-top-left-radius": "3px",
+      "background-color": "rgb(0, 113, 227)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     },
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(0, 113, 227)",
+      "border-top-left-radius": "3px",
+      "background-color": "rgb(0, 113, 227)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
+    }
+   },
+   "checkbox.check": {
+    "html": "<span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "content": "\"\"",
+     "font-family": "\"SF Pro Icons\"",
+     "font-size": "18px",
+     "line-height": "28px",
+     "position": "absolute",
+     "top": "-7px",
+     "left": "0.5px",
+     "width": "13.7188px",
+     "height": "28px",
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "checkbox.unchecked-focus": {
+    "html": "<span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "outline-style": "none",
+     "outline-color": "rgb(29, 29, 31)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "focus-visible": {
+      "outline-style": "none",
+      "outline-color": "rgb(29, 29, 31)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
     }
    },
    "continue": {
@@ -652,7 +798,13 @@
      "max-width": "none",
      "width": "14px",
      "height": "14px",
-     "position": "absolute"
+     "position": "absolute",
+     "top": "2px",
+     "left": "0px",
+     "display": "block",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
     },
     "box": {
      "width": 16,
@@ -667,7 +819,147 @@
      "line-height": "25px",
      "font-weight": "400",
      "letter-spacing": "-0.374px",
-     "color": "rgb(29, 29, 31)"
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "1px",
+     "padding-left": "26px",
+     "position": "relative",
+     "display": "inline"
+    }
+   },
+   "checkbox.box": {
+    "html": "<div class=\"form-checkbox\">\n        <input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\">\n        <label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \">\n          <span class=",
+    "styles": {
+     "position": "relative",
+     "margin-bottom": "11px"
+    },
+    "box": {
+     "width": 137.671875,
+     "height": 25
+    }
+   },
+   "checkbox.input": {
+    "html": "<input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\">",
+    "styles": {
+     "position": "absolute",
+     "top": "3px",
+     "left": "0px",
+     "width": "16px",
+     "height": "16px",
+     "opacity": "0",
+     "margin-top": "0px",
+     "margin-left": "0px"
+    }
+   },
+   "checkbox.checked": {
+    "html": "<span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(0, 113, 227)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(0, 113, 227)",
+     "border-top-left-radius": "3px",
+     "background-color": "rgb(0, 113, 227)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "color": "rgb(255, 255, 255)",
+     "outline-style": "none",
+     "outline-color": "rgb(255, 255, 255)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "focus-visible": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(0, 113, 227)",
+      "border-top-left-radius": "3px",
+      "background-color": "rgb(0, 113, 227)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     },
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(0, 113, 227)",
+      "border-top-left-radius": "3px",
+      "background-color": "rgb(0, 113, 227)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
+    }
+   },
+   "checkbox.check": {
+    "html": "<span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "content": "\"\"",
+     "font-family": "\"SF Pro Icons\"",
+     "font-size": "18px",
+     "line-height": "28px",
+     "position": "absolute",
+     "top": "-7px",
+     "left": "0.5px",
+     "width": "13.7188px",
+     "height": "28px",
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "checkbox.unchecked-focus": {
+    "html": "<span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "outline-style": "none",
+     "outline-color": "rgb(29, 29, 31)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "focus-visible": {
+      "outline-style": "none",
+      "outline-color": "rgb(29, 29, 31)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
     }
    },
    "continue": {
@@ -1053,7 +1345,13 @@
      "max-width": "none",
      "width": "14px",
      "height": "14px",
-     "position": "absolute"
+     "position": "absolute",
+     "top": "2px",
+     "left": "0px",
+     "display": "block",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
     },
     "box": {
      "width": 16,
@@ -1068,7 +1366,147 @@
      "line-height": "25px",
      "font-weight": "400",
      "letter-spacing": "-0.374px",
-     "color": "rgb(29, 29, 31)"
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "1px",
+     "padding-left": "26px",
+     "position": "relative",
+     "display": "inline"
+    }
+   },
+   "checkbox.box": {
+    "html": "<div class=\"form-checkbox\">\n        <input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\">\n        <label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \">\n          <span class=",
+    "styles": {
+     "position": "relative",
+     "margin-bottom": "11px"
+    },
+    "box": {
+     "width": 137.671875,
+     "height": 25
+    }
+   },
+   "checkbox.input": {
+    "html": "<input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\">",
+    "styles": {
+     "position": "absolute",
+     "top": "3px",
+     "left": "0px",
+     "width": "16px",
+     "height": "16px",
+     "opacity": "0",
+     "margin-top": "0px",
+     "margin-left": "0px"
+    }
+   },
+   "checkbox.checked": {
+    "html": "<span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(0, 113, 227)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(0, 113, 227)",
+     "border-top-left-radius": "3px",
+     "background-color": "rgb(0, 113, 227)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "color": "rgb(255, 255, 255)",
+     "outline-style": "none",
+     "outline-color": "rgb(255, 255, 255)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "focus-visible": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(0, 113, 227)",
+      "border-top-left-radius": "3px",
+      "background-color": "rgb(0, 113, 227)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     },
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(0, 113, 227)",
+      "border-top-left-radius": "3px",
+      "background-color": "rgb(0, 113, 227)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
+    }
+   },
+   "checkbox.check": {
+    "html": "<span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "content": "\"\"",
+     "font-family": "\"SF Pro Icons\"",
+     "font-size": "18px",
+     "line-height": "28px",
+     "position": "absolute",
+     "top": "-7px",
+     "left": "0.5px",
+     "width": "13.7188px",
+     "height": "28px",
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "checkbox.unchecked-focus": {
+    "html": "<span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "outline-style": "none",
+     "outline-color": "rgb(29, 29, 31)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "focus-visible": {
+      "outline-style": "none",
+      "outline-color": "rgb(29, 29, 31)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
     }
    },
    "continue": {
@@ -1454,7 +1892,13 @@
      "max-width": "none",
      "width": "14px",
      "height": "14px",
-     "position": "absolute"
+     "position": "absolute",
+     "top": "2px",
+     "left": "0px",
+     "display": "block",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
     },
     "box": {
      "width": 16,
@@ -1469,7 +1913,147 @@
      "line-height": "25px",
      "font-weight": "400",
      "letter-spacing": "-0.374px",
-     "color": "rgb(29, 29, 31)"
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "1px",
+     "padding-left": "26px",
+     "position": "relative",
+     "display": "inline"
+    }
+   },
+   "checkbox.box": {
+    "html": "<div class=\"form-checkbox\">\n        <input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\">\n        <label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \">\n          <span class=",
+    "styles": {
+     "position": "relative",
+     "margin-bottom": "11px"
+    },
+    "box": {
+     "width": 137.671875,
+     "height": 25
+    }
+   },
+   "checkbox.input": {
+    "html": "<input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\">",
+    "styles": {
+     "position": "absolute",
+     "top": "3px",
+     "left": "0px",
+     "width": "16px",
+     "height": "16px",
+     "opacity": "0",
+     "margin-top": "0px",
+     "margin-left": "0px"
+    }
+   },
+   "checkbox.checked": {
+    "html": "<span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(0, 113, 227)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(0, 113, 227)",
+     "border-top-left-radius": "3px",
+     "background-color": "rgb(0, 113, 227)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "color": "rgb(255, 255, 255)",
+     "outline-style": "none",
+     "outline-color": "rgb(255, 255, 255)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "focus-visible": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(0, 113, 227)",
+      "border-top-left-radius": "3px",
+      "background-color": "rgb(0, 113, 227)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     },
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(0, 113, 227)",
+      "border-top-left-radius": "3px",
+      "background-color": "rgb(0, 113, 227)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
+    }
+   },
+   "checkbox.check": {
+    "html": "<span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "content": "\"\"",
+     "font-family": "\"SF Pro Icons\"",
+     "font-size": "18px",
+     "line-height": "28px",
+     "position": "absolute",
+     "top": "-7px",
+     "left": "0.5px",
+     "width": "13.7188px",
+     "height": "28px",
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "checkbox.unchecked-focus": {
+    "html": "<span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "outline-style": "none",
+     "outline-color": "rgb(29, 29, 31)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "focus-visible": {
+      "outline-style": "none",
+      "outline-color": "rgb(29, 29, 31)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
     }
    },
    "continue": {
