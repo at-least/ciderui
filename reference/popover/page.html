@@ -6,49 +6,57 @@
 <title>A nav's list as its own menu</title>
 <style>
   /* globalnav.css's techniques at their smallest: the list is a popover the
-     page shows closed, as the bar's row; its button, inside it, opens it
-     into a sheet over the window, its rows coming in, its lines turning into
-     an X */
+     page shows closed, as the bar's row, beside the button that opens it;
+     opened, it is a sheet over the window with a close button of its own,
+     whose lines turn into an X, its rows coming in */
   html, body { margin: 0; }
   body { height: 3000px; font: 17px/25px system-ui; -webkit-text-size-adjust: 100%; }
   nav { height: 48px; background-color: rgb(255 255 255 / 0.8); }
+  .content { display: flex; height: 100%; }
   #list {
     position: static; inset: auto; width: auto; height: 48px; margin: 0; padding: 0; border: 0;
     overflow: visible; color: inherit; background-color: transparent;
-    display: flex; flex-flow: row wrap; list-style: none;
+    display: flex; flex: 1; flex-wrap: wrap; list-style: none;
   }
   #list > li { height: 48px; }
-  #list > .row { display: none; flex-basis: 100%; height: auto; }
+  #list > .logo { margin-right: auto; }
+  #list > .close, #list > .row { display: none; }
+  #list > .row { flex-basis: 100%; height: auto; }
   #list:popover-open {
-    position: fixed; inset: 0; height: 100%; overflow-y: auto; overscroll-behavior: contain;
+    position: fixed; inset: 0; align-content: flex-start; height: 100%; overflow-y: auto; overscroll-behavior: contain;
     background-color: #fafafc;
     transition: height 450ms cubic-bezier(0.4, 0, 0.6, 1), background-color 450ms cubic-bezier(0.4, 0, 0.6, 1);
   }
+  #list:popover-open > .logo { order: -2; }
+  #list:popover-open > .close { display: block; order: -1; }
   #list:popover-open > .row {
     display: block;
     transition: opacity 240ms cubic-bezier(0.4, 0, 0.6, 1) 200ms, transform 240ms cubic-bezier(0.4, 0, 0.6, 1) 200ms;
   }
   @starting-style {
     #list:popover-open > .row { opacity: 0; transform: translateY(-8px); }
+    #list:popover-open .close path { transform: none; }
   }
   html:has(#list:popover-open) { overflow: hidden; }
-  #button { margin-left: auto; width: 48px; height: 48px; padding: 0; border: 0; background: none; display: flex; align-items: center; justify-content: center; color: #000; }
-  #button path { transition: transform 240ms cubic-bezier(0.4, 0, 0.6, 1); }
-  #button path:first-child { transform-origin: 9px 5px; }
-  #button path:last-child { transform-origin: 9px 12px; }
-  #list:popover-open #button path:first-child { transform: translate(0.25px, 4.25px) rotate(45deg) scaleX(1.16168); }
-  #list:popover-open #button path:last-child { transform: translate(0.25px, -2.75px) rotate(-45deg) scaleX(1.16168); }
+  button { width: 48px; height: 48px; padding: 0; border: 0; background: none; display: flex; align-items: center; justify-content: center; color: #000; }
+  .close path { transition: transform 240ms cubic-bezier(0.4, 0, 0.6, 1); }
+  .close path:first-child { transform-origin: 9px 5px; transform: translate(0.25px, 4.25px) rotate(45deg) scaleX(1.16168); }
+  .close path:last-child { transform-origin: 9px 12px; transform: translate(0.25px, -2.75px) rotate(-45deg) scaleX(1.16168); }
 </style>
 </head>
 <body>
+<a id="before" href="#before">Before</a>
 <nav>
-  <ul id="list" popover>
-    <li><a href="#home">Logo</a></li>
-    <li><button id="button" popovertarget="list" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 12H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></button></li>
-    <li class="row"><a href="#one">One</a></li>
-    <li class="row"><a href="#two">Two</a></li>
-  </ul>
+  <div class="content">
+    <ul id="list" popover>
+      <li class="logo"><a id="logo" href="#home">Logo</a></li>
+      <li class="close"><button class="close" id="close" popovertarget="list" popovertargetaction="hide" aria-label="Close" autofocus><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 12H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></button></li>
+      <li class="row"><a id="one" href="#one">One</a></li>
+      <li class="row"><a id="two" href="#two">Two</a></li>
+    </ul>
+    <button id="button" popovertarget="list" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 12H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></button>
+  </div>
 </nav>
-<p>The page.</p>
+<p><a id="after" href="#after">After</a></p>
 </body>
 </html>

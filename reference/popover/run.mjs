@@ -1,15 +1,18 @@
 // BROWSER=safari|ios|chrome|chromium node run.mjs
 // Does a nav's list work as its own menu, as globalnav.css makes it one?
-// Serves page.html on 127.0.0.1 (the browsers: ../browsers.mjs), clicks the
-// list's button with the browser's own input and reads (popover.js): shown
-// closed by the page's CSS; opened by its button inside it into a sheet over
-// the window, growing and its rows coming in (sampled each frame), the page
-// held, the lines an X; closed by the same button at once (no transition back);
-// opened and closed by Escape. On the iOS simulator the button is clicked by
-// the page's script (its click(), the activation a tap's click runs) and no
-// key is pressed: safaridriver's taps there reach the button as pointerdown
-// and touchstart and never a click, its element click as nothing, and the
-// phone has no Escape. The result is results/<browser>.json.
+// Serves page.html on 127.0.0.1 (the browsers: ../browsers.mjs), clicks with
+// the browser's own input and reads (popover.js): shown closed by the page's
+// CSS; opened by the button beside it into a sheet over the window, growing
+// and its rows coming in (sampled each frame), the page held, the focus on
+// the sheet's close button (autofocus), whose lines turn into an X; Tab from
+// it to the first link (a popover's own button inside it, opening it, held
+// the focus on itself: Chromium 151's Tab went nowhere); closed by the X at
+// once (no transition back), the focus back on the button; opened and closed
+// by Escape, the same. On the iOS simulator the buttons are clicked by the
+// page's script (its click(), the activation a tap's click runs) and no key
+// is pressed: safaridriver's taps there reach a button as pointerdown and
+// touchstart and never a click, its element click as nothing, and the phone
+// has no Tab or Escape. The result is results/<browser>.json.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
@@ -32,7 +35,12 @@ try {
   await click('#button');
   await page.run(wait(900));
   got.opened = await page.run(call('state()'));
-  await click('#button');
+  if (!IOS) {
+    await page.press('Tab');
+    got.tabbed = await page.run(call('state()'));
+    await page.run(`Promise.resolve((document.querySelector('#close').focus(), true))`);
+  }
+  await click('#close');
   got.closedAgain = await page.run(call('state()'));
   if (!IOS) {
     await page.run(wait(800));
@@ -58,11 +66,13 @@ const claims = [
   ['it grows from the bar: a frame between 48px and the window', open1?.to === 'open' && open1.frames.some(([, h]) => h > 48.5 && h < got.opened.windowHeight - 0.5)],
   ['its rows come in from transparent', open1.frames[0][2] === 0 && got.opened.rowOpacity === 1],
   ['the page is held while it is open', got.opened.rootOverflow === 'hidden' && got.closedAgain.rootOverflow !== 'hidden'],
-  ['the lines are an X, each 11.5 by 11.5 from 3.5, 3.5', got.opened.lines.every((l, i) => l.every((v, j) => near(v, X[i][j])))],
-  ['the same button closes it at once', got.closedAgain.open === false && got.closedAgain.position === 'static' && got.closedAgain.height === 48 && close1?.to === 'closed' && close1.frames.every(([, h]) => h === 48)],
-  ...(IOS ? [] : [['Escape closes it', got.afterEscape.open === false]]),
+  ['the focus is on its close button', got.opened.focus === 'close'],
+  ['the close button\'s lines turn from two lines (a frame with a line under 1px tall) into an X, each 11.5 by 11.5 from 3.5, 3.5', open1.frames.some(f => f[3] !== null && f[3] < 1) && got.opened.lines.every((l, i) => l.every((v, j) => near(v, X[i][j])))],
+  ...(IOS ? [] : [['Tab goes from the close button to the first link', got.tabbed.focus === 'one']]),
+  ['the close button closes it at once', got.closedAgain.open === false && got.closedAgain.position === 'static' && got.closedAgain.height === 48 && close1?.to === 'closed' && close1.frames.every(([, h]) => h === 48)],
+  ...(IOS ? [] : [['the focus is back on the button', got.closedAgain.focus === 'button'], ['Escape closes it, the focus back on the button', got.afterEscape.open === false && got.afterEscape.focus === 'button']]),
 ];
-console.log(page.label + (IOS ? ' (clicked by script; no Escape)' : ''));
+console.log(page.label + (IOS ? ' (clicked by script; no Tab, no Escape)' : ''));
 let pass = true;
 for (const [claim, ok] of claims) {
   pass &&= ok;
