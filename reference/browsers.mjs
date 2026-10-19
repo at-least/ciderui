@@ -1,9 +1,13 @@
 // The browsers the reference probes run in, behind one interface:
 // open(name, url) loads the page and gives { label, run(expr), click(selector),
-// press(key), close() }, where run evaluates an expression whose value is a
-// promise and hands back what it resolves to, and click and press are the
-// browser's own input (a trusted click on the element, a key pressed: the
-// WebDriver key's name, as Escape, or keys held together, as Alt+Tab).
+// press(key), go(url), size(width, height), close() }, where run evaluates an
+// expression whose value is a promise and hands back what it resolves to,
+// click and press are
+// the browser's own input (a trusted click on the element, a key pressed: the
+// WebDriver key's name, as Escape, or keys held together, as Alt+Tab), go
+// loads another page in the same window, waiting for its load, and size sets
+// the window's size (Playwright's viewport; Safari's window, its frame
+// included).
 //   safari    Safari through safaridriver, raw WebDriver over HTTP (Safari's
 //             "Allow remote automation" on), in a Safari the run launches and
 //             quits when it closes: Safari 27 takes no session in one it did
@@ -38,6 +42,8 @@ async function viaPlaywright(channel, url) {
       run: (expr) => page.evaluate(expr),
       click: (selector) => page.click(selector),
       press: (key) => page.keyboard.press(key),
+      go: (to) => page.goto(to, { waitUntil: 'load', timeout: 120000 }),
+      size: (width, height) => page.setViewportSize({ width, height }),
       close: () => browser.close(),
       page, // Playwright's, for a probe that resizes the viewport or forces states
     };
@@ -117,6 +123,8 @@ async function viaSafariDriver(capabilities, url) {
         const actions = [...values.map(value => ({ type: 'keyDown', value })), ...values.toReversed().map(value => ({ type: 'keyUp', value }))];
         await wd('POST', `/session/${id}/actions`, { actions: [{ type: 'key', id: 'keyboard', actions }] });
       },
+      go: (to) => wd('POST', `/session/${id}/url`, { url: to }),
+      size: (width, height) => wd('POST', `/session/${id}/window/rect`, { width, height }),
       close,
     };
   } catch (e) {

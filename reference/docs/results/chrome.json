@@ -1,0 +1,1326 @@
+{
+ "pages": {
+  "/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/components/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/components/accordion/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "Two questions, the first open",
+     "height": 848,
+     "content": 848,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "A large question",
+     "height": 159,
+     "content": 159,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/article/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "An article",
+     "height": 1528,
+     "content": 1528,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/button/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A button",
+     "height": 84,
+     "content": 84,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "The four variants",
+     "height": 84,
+     "content": 84,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "sm, the default, lg and xl",
+     "height": 104,
+     "content": 104,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "A hero's calls to action",
+     "height": 92,
+     "content": 92,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "Buttons in a dark block",
+     "height": 92,
+     "content": 92,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "The form buttons",
+     "height": 104,
+     "content": 104,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "A block button",
+     "height": 84,
+     "content": 84,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "Disabled buttons",
+     "height": 84,
+     "content": 84,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/card/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A card with a tag",
+     "height": 548,
+     "content": 548,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "A card with an eyebrow",
+     "height": 548,
+     "content": 548,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/checkbox/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A checkbox",
+     "height": 73,
+     "content": 73,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "A checked checkbox",
+     "height": 73,
+     "content": 73,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/field/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "An empty field",
+     "height": 104,
+     "content": 104,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "A filled field",
+     "height": 104,
+     "content": 104,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/footer/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A footer",
+     "height": 375,
+     "content": 375,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/footnote/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A footnote's mark",
+     "height": 73,
+     "content": 73,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/gallery/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A gallery of cards",
+     "height": 592,
+     "content": 592,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/globalnav/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A global nav",
+     "height": 44,
+     "content": 44,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/link/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A link in a sentence",
+     "height": 73,
+     "content": 73,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "A more link",
+     "height": 73,
+     "content": 73,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/localnav/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A local nav",
+     "height": 52,
+     "content": 52,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/option/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "An option with a price",
+     "height": 131,
+     "content": 131,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "A checked option with a detail",
+     "height": 131,
+     "content": 131,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/posts/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A month of the archive",
+     "height": 701,
+     "content": 701,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "Related stories",
+     "height": 396,
+     "content": 396,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/price/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A price",
+     "height": 73,
+     "content": 73,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/productnav/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A product nav",
+     "height": 248,
+     "content": 248,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/quicklinks/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "Quick links",
+     "height": 122,
+     "content": 122,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/ribbon/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A ribbon",
+     "height": 52,
+     "content": 52,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "An announcing ribbon",
+     "height": 52,
+     "content": 52,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/section/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A section",
+     "height": 217,
+     "content": 217,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "A section's header",
+     "height": 132,
+     "content": 132,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/shelf/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A shelf of cards",
+     "height": 625,
+     "content": 625,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "A shelf with paddles",
+     "height": 625,
+     "content": 625,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/stat/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A stat",
+     "height": 116,
+     "content": 116,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "A large stat",
+     "height": 160,
+     "content": 160,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/stories/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "The latest stories",
+     "height": 1193,
+     "content": 1193,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/swatch/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "Three finishes, the first chosen",
+     "height": 84,
+     "content": 84,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/components/tile/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A promo tile",
+     "height": 490,
+     "content": 490,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "A full-width tile",
+     "height": 650,
+     "content": 650,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/foundations/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A dark block",
+     "height": 309,
+     "content": 309,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
+     "title": "The type's classes",
+     "height": 589,
+     "content": 589,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    }
+   ]
+  },
+  "/get-started/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/news/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/news/archive/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/news/catalogue/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/news/newsroom/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/news/safari/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/news/zola/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/rust/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/components/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/components/accordion/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "Two questions, the first open",
+     "height": 852,
+     "content": 852,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "A large question",
+     "height": 142,
+     "content": 142,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/article/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "An article",
+     "height": 1414,
+     "content": 1414,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/button/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A button",
+     "height": 84,
+     "content": 84,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "The four variants",
+     "height": 84,
+     "content": 84,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "sm, the default, lg and xl",
+     "height": 104,
+     "content": 104,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "A hero's calls to action",
+     "height": 84,
+     "content": 84,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "Buttons in a dark block",
+     "height": 84,
+     "content": 84,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "The form buttons",
+     "height": 104,
+     "content": 104,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "A block button",
+     "height": 84,
+     "content": 84,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "Disabled buttons",
+     "height": 84,
+     "content": 84,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/card/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A card with a tag",
+     "height": 498,
+     "content": 498,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "A card with an eyebrow",
+     "height": 498,
+     "content": 498,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/checkbox/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A checkbox",
+     "height": 73,
+     "content": 73,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "A checked checkbox",
+     "height": 73,
+     "content": 73,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/field/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "An empty field",
+     "height": 104,
+     "content": 104,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "A filled field",
+     "height": 104,
+     "content": 104,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/footer/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A footer",
+     "height": 297,
+     "content": 297,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/footnote/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A footnote's mark",
+     "height": 73,
+     "content": 73,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/gallery/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A gallery of cards",
+     "height": 542,
+     "content": 542,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/globalnav/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A global nav",
+     "height": 48,
+     "content": 48,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/link/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A link in a sentence",
+     "height": 73,
+     "content": 73,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "A more link",
+     "height": 73,
+     "content": 73,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/localnav/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A local nav",
+     "height": 48,
+     "content": 48,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/option/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "An option with a price",
+     "height": 131,
+     "content": 131,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "A checked option with a detail",
+     "height": 131,
+     "content": 131,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/posts/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A month of the archive",
+     "height": 474,
+     "content": 474,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "Related stories",
+     "height": 353,
+     "content": 353,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/price/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A price",
+     "height": 64,
+     "content": 64,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/productnav/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A product nav",
+     "height": 194,
+     "content": 194,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/quicklinks/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "Quick links",
+     "height": 136,
+     "content": 136,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/ribbon/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A ribbon",
+     "height": 72,
+     "content": 72,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "An announcing ribbon",
+     "height": 72,
+     "content": 72,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/section/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A section",
+     "height": 137,
+     "content": 137,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "A section's header",
+     "height": 150,
+     "content": 150,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/shelf/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A shelf of cards",
+     "height": 584,
+     "content": 584,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "A shelf with paddles",
+     "height": 584,
+     "content": 584,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/stat/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A stat",
+     "height": 116,
+     "content": 116,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "A large stat",
+     "height": 142,
+     "content": 142,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/stories/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "The latest stories",
+     "height": 2269,
+     "content": 2269,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/swatch/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "Three finishes, the first chosen",
+     "height": 84,
+     "content": 84,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/components/tile/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A promo tile",
+     "height": 500,
+     "content": 500,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "A full-width tile",
+     "height": 500,
+     "content": 500,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/foundations/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": [
+    {
+     "title": "A dark block",
+     "height": 211,
+     "content": 211,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
+     "title": "The type's classes",
+     "height": 469,
+     "content": 469,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    }
+   ]
+  },
+  "/get-started/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/news/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/news/archive/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/news/catalogue/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/news/newsroom/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/news/safari/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/news/zola/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
+  "/rust/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  }
+ },
+ "frames": {
+  "gallery at 1440": {
+   "scroll": 804,
+   "previous": false,
+   "shown": true,
+   "current": 2
+  },
+  "shelf at 1440": {
+   "scroll": 726,
+   "previous": false,
+   "shown": true,
+   "current": -1
+  },
+  "gallery at 700": {
+   "scroll": 329,
+   "previous": false,
+   "shown": true,
+   "current": 1
+  },
+  "shelf at 700": {
+   "scroll": 329,
+   "previous": false,
+   "shown": true,
+   "current": -1
+  },
+  "globalnav menu at 700": {
+   "closed": 48,
+   "open": true,
+   "height": 852,
+   "top": 48,
+   "window": 900,
+   "bar": 48
+  },
+  "localnav menu at 700": {
+   "bar": 48,
+   "checked": true,
+   "bottom": 221,
+   "height": 221
+  }
+ },
+ "browser": "chrome 155.0.8059.80 on darwin",
+ "fails": []
+}
