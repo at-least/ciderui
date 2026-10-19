@@ -70,6 +70,11 @@ export default {
     { name: 'card.dark-link', select: `${DARK} .rf-ccard-content-headerlink`, props: ['color'] },
     { name: 'card.dark-desc', select: `${DARK} .rf-ccard-content-desc`, props: ['color'] },
     { name: 'card.dark-price', select: `${DARK} .rf-ccard-content-descprice`, props: ['color'] },
-    { name: 'shelf.paddle', select: '.rf-cards-scroller .paddlenav-arrow-next', props: [...BOX, 'width', 'height', 'color', 'opacity'], box: true, states: ['hover', 'active'] },
+    // the shelf's paddles, at its sides over its scroller: the next one (the
+    // previous disabled at the start), its place and motion; the previous
+    // hidden
+    { name: 'shelf.paddle', select: `${SHELF} .paddlenav-arrow-next`, props: [...BOX, 'width', 'height', 'color', 'opacity', 'transform', 'position', 'top', 'right', ...MOTION], box: true, position: true, states: ['hover', 'active'] },
+    { name: 'shelf.paddle-previous', select: `${SHELF} .paddlenav-arrow-previous`, props: ['opacity', 'transform', 'position', 'left', 'top', 'margin-top', ...MOTION], box: true, position: true },
+    { name: 'shelf.paddles', select: `${SHELF} .rf-cards-scroller`, props: ['position'], box: true, position: true },
   ],
 };
