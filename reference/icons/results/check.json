@@ -1,0 +1,18 @@
+{
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T08:23:06.587Z",
+ "ours": "<svg viewBox=\"0 0 14 14\"><path d=\"M3.3 7.65 6.25 11.35 11.15 3.7\" fill=\"none\" stroke=\"#000\" stroke-width=\"1.35\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+ "appleBox": {
+  "left": 2.65,
+  "right": 11.85,
+  "top": 2.95,
+  "bottom": 11.9
+ },
+ "oursBox": {
+  "left": 2.65,
+  "right": 11.85,
+  "top": 3.05,
+  "bottom": 12.05
+ },
+ "iou": 0.9603
+}

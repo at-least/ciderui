@@ -14,6 +14,7 @@
 #![warn(missing_docs)]
 
 mod card;
+mod checkbox;
 #[cfg(feature = "css")]
 pub mod css;
 mod field;
@@ -28,6 +29,7 @@ mod shelf;
 mod tile;
 
 pub use card::Card;
+pub use checkbox::Checkbox;
 pub use field::Field;
 pub use gallery::Gallery;
 pub use globalnav::GlobalNav;

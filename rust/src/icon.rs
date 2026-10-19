@@ -177,6 +177,17 @@ pub const PADDLE_NEXT: Icon = Icon {
     inner: r#"<path d="M16 12.5 21.5 18 16 23.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>"#,
 };
 
+/// A checkbox's check (`cui-checkbox-indicator`), in place of apple.com's SF
+/// Pro Icons glyph: a line through (3.3, 7.65), (6.25, 11.35) and
+/// (11.15, 3.7) in the box's 14 by 14, 1.35 thick, round; 0.96 of its ink
+/// apple.com's (`reference/icons/`).
+pub const CHECK: Icon = Icon {
+    width: "14",
+    height: "14",
+    view_box: "0 0 14 14",
+    inner: r#"<path d="M3.3 7.65 6.25 11.35 11.15 3.7" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>"#,
+};
+
 #[cfg(test)]
 mod tests {
     use super::*;
