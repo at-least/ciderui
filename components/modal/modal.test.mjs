@@ -59,9 +59,10 @@ export const cases = [
     ],
   },
   {
-    // its fade's first frame
+    // its fade's first frame: held there, as a fade with no delay can move
+    // before it is read (0.50 of the way once, the suite's run busy)
     name: 'fade',
-    html: MODAL,
+    html: `<style>.cui-modal { transition-delay: 10s !important; }</style>${MODAL}`,
     click: OPENER,
     wait: 0,
     widths: [1600],

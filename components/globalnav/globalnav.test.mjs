@@ -63,6 +63,8 @@ const SCLOSE = `${FLY} .cui-globalnav-closebutton`;
 const WIDE = [1600, 1200, 900, 834];
 const NARROW = [833, 390];
 const SEARCHING = { click: SBUTTON, height: 900 };
+// the search's motion held at its start, for a case that reads its start
+const HOLD = '<style>.cui-globalnav-search, .cui-globalnav-search * { transition-delay: 10s !important; }</style>';
 const TYPE = ['font-size', 'line-height', 'font-weight', 'color'];
 // apple.com's places in the window are below its locale banner (70px from
 // 834px, 135px to 833px): a place here is the same distance from the bar
@@ -394,10 +396,12 @@ export const cases = [
     ],
   },
   {
-    // read at its start: apple.com's from (search:nav's animations); the
-    // panel and the curtain move at once, so here they wait, to be read
+    // read at its start: apple.com's from (search:nav's animations); held
+    // there, as what moves can move before it is read (the panel and the
+    // curtain at once, the field and its rows after 200ms, which a busy run
+    // has passed)
     name: 'search-start',
-    html: `<style>.cui-globalnav-searchpanel, .cui-globalnav-curtain { transition-delay: 10s !important; }</style>${SEARCH_NAV}`,
+    html: `${HOLD}${SEARCH_NAV}`,
     ...SEARCHING,
     widths: [1600],
     wait: 0,
@@ -410,7 +414,7 @@ export const cases = [
   },
   {
     name: 'search-start-phone',
-    html: `<style>.cui-globalnav-search { transition-delay: 10s !important; }</style>${SEARCH_NAV}`,
+    html: `${HOLD}${SEARCH_NAV}`,
     ...SEARCHING,
     widths: [390],
     wait: 0,
