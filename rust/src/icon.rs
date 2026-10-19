@@ -188,6 +188,17 @@ pub const CHECK: Icon = Icon {
     inner: r#"<path d="M3.3 7.65 6.25 11.35 11.15 3.7" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>"#,
 };
 
+/// An accordion's chevron (`cui-accordion-question`), as apple.com's: a line
+/// through (15, 1.13), (8.5, 7.72) and (2, 1.13) in 17 by 8.85, 2.25 thick,
+/// round (`reference/icons/`); its box square, the line in its middle, sized
+/// by `accordion.css`, which turns it up while its answer is open.
+pub const DISCLOSURE: Icon = Icon {
+    width: "17",
+    height: "17",
+    view_box: "0 0 17 8.85",
+    inner: r#"<path d="M15 1.13 8.5 7.72 2 1.13" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>"#,
+};
+
 #[cfg(test)]
 mod tests {
     use super::*;

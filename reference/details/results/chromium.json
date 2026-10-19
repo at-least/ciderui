@@ -1,0 +1,23 @@
+{
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T08:50:57.214Z",
+ "closed": {
+  "open": false,
+  "item": 56,
+  "answer": 61.59375,
+  "chevron": "none"
+ },
+ "opening": {
+  "open": true,
+  "item": 70.28125,
+  "answer": 61.59375,
+  "chevron": "matrix(1, 0, 0, 0.579022, 0, 0)"
+ },
+ "opened": {
+  "open": true,
+  "item": 117.59375,
+  "answer": 61.59375,
+  "chevron": "matrix(1, 0, 0, -1, 0, 0)"
+ },
+ "interpolateSize": true
+}

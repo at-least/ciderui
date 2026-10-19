@@ -1,0 +1,143 @@
+/* ciderui — the accordion: apple.com's FAQ, questions under rules, each
+ * opening its answer below it with no script (<details>), its chevron at
+ * the end turning up.
+ *
+ * From apple.com's bag (reference/apple.com/): bag:accordion.item (its
+ * rule), bag-accordion:* (opened: its outer item, a large title; its
+ * compact items, the questions; the first opened, its answer).
+ *
+ *   <div class="cui-accordion">
+ *     <details class="cui-accordion-item">
+ *       <summary class="cui-accordion-question">When will I get my items?(icon::DISCLOSURE)</summary>
+ *       <div class="cui-accordion-answer"><p>…</p></div>
+ *     </details>
+ *   </div>
+ *
+ * cui-accordion           the questions
+ *   data-size="lg"        a large question (the bag's outer one): 32px
+ *                         (24px below 735px), 32px from its rule (24px)
+ * cui-accordion-item      a question and its answer, a rule above it
+ * cui-accordion-question  the question: 17px at 600 (14px below 735px), 17px
+ *                         from the rule, its chevron at its end in the muted
+ *                         text, the secondary hovered; open, turned up
+ * cui-accordion-answer    the answer: 14px, 13.6px below the question, 28px
+ *                         above the next rule, 35px short of its end from
+ *                         735px; it opens to its height in 0.3s
+ *
+ * apple.com's: the rule, the type, the room, the chevron's colors and its
+ * line, the motion's time. ciderui's: the letter-spacing (tokens.css);
+ * <details> with no script (apple.com's buttons and script); the chevron
+ * turned with a transform in 0.32s (apple.com's line moved point by point
+ * through a flat one); its height moves where the browser can move to auto
+ * (interpolate-size: Chromium 151, Chrome 155), and opens at once where it
+ * cannot (Safari 26.5 on iOS: reference/details/). */
+
+@layer components {
+  .cui-accordion {
+    interpolate-size: allow-keywords;
+  }
+
+  .cui-accordion-item {
+    border-top: 1px solid var(--cui-c-divider);
+
+    &::details-content {
+      height: 0;
+      overflow: clip;
+      transition: height 0.3s ease-in-out, content-visibility 0.3s ease-in-out allow-discrete;
+    }
+
+    &[open]::details-content {
+      height: auto;
+    }
+  }
+
+  .cui-accordion-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 17px 0;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-14);
+    color: var(--cui-c-text);
+    list-style: none;
+    cursor: pointer;
+
+    /* Safari's own marker */
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    /* in the middle of a 32px column at its end, as apple.com's */
+    svg {
+      flex: none;
+      width: 14px;
+      height: 14px;
+      margin: 0 9px 0 12px;
+      color: var(--cui-c-text-3);
+      transition: color 0.1s linear, transform 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+    }
+
+    @media (hover: hover) {
+      &:hover svg {
+        color: var(--cui-c-text-2);
+      }
+    }
+
+    @media (width >= 735px) {
+      font-size: 17px;
+      line-height: 21px;
+      letter-spacing: var(--cui-tracking-17);
+
+      svg {
+        width: 17px;
+        height: 17px;
+        margin-right: 7.5px;
+      }
+    }
+  }
+
+  .cui-accordion-item[open] > .cui-accordion-question svg {
+    transform: scaleY(-1);
+  }
+
+  .cui-accordion-answer {
+    padding: 13.6px 0 28px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-14);
+    color: var(--cui-c-text);
+
+    @media (width >= 735px) {
+      padding-right: 35px;
+    }
+  }
+
+  /* the bag's outer question */
+  .cui-accordion[data-size="lg"] .cui-accordion-question {
+    padding: 24px 0;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: var(--cui-tracking-24);
+
+    svg {
+      width: 24px;
+      height: 35px;
+      margin-right: 4px;
+    }
+
+    @media (width >= 735px) {
+      padding: 32px 0;
+      font-size: 32px;
+      line-height: 36px;
+      letter-spacing: var(--cui-tracking-32);
+
+      svg {
+        width: 32px;
+        margin-right: 0;
+      }
+    }
+  }
+}

@@ -105,6 +105,9 @@ const CONTRACT = {
   // apple.com's own field (the retail page's form-textbox), and in a dark
   // color scheme
   '--cui-c-field': [['retail', 'field.input', W, 'background-color'], ['retail-dark', 'field.input', W, 'background-color']],
+  // the bag's accordion's rule, and a rule between copy blocks on iPhone 18
+  // Pro's dark page
+  '--cui-c-divider': [['bag', 'accordion.item', W, 'border-top-color'], ['product', 'divider', W, 'border-top-color']],
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-'));

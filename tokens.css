@@ -42,6 +42,8 @@
  *   paddle, -hover, -active a gallery's paddle, translucent over the page
  *   on-paddle, -hover       its chevron, and hovered or pressed
  *   dot, dot-hover          a gallery's dots, and hovered
+ *   divider                 a rule between items on the page (an
+ *                           accordion's)
  *   field                   a field's ground, translucent; one value: a
  *                           field keeps its light look in a dark block, as
  *                           apple.com's does in a dark color scheme
@@ -85,6 +87,7 @@
   --cui-c-dot: light-dark(rgb(29 29 31 / 0.6), rgb(255 255 255 / 0.36));
   --cui-c-dot-hover: light-dark(rgb(0 0 0 / 0.54), rgb(255 255 255 / 0.48));
   --cui-c-field: rgb(255 255 255 / 0.8);
+  --cui-c-divider: light-dark(#d2d2d7, #424245);
 
   /* SF on Apple's platforms by its two Apple-only names (-apple-system
      Safari's, BlinkMacSystemFont Chrome's; system-ui would be a font

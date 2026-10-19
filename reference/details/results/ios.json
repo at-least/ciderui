@@ -1,0 +1,23 @@
+{
+ "browser": "safari 26.5 on iOS 26.5",
+ "date": "2026-10-19T08:51:01.652Z",
+ "closed": {
+  "answer": 61.59375,
+  "open": false,
+  "item": 53,
+  "chevron": "none"
+ },
+ "opening": {
+  "answer": 61.59375,
+  "open": true,
+  "item": 114.59375,
+  "chevron": "matrix(1, 0, 0, 0.29671, 0, 0)"
+ },
+ "opened": {
+  "answer": 61.59375,
+  "open": true,
+  "item": 114.59375,
+  "chevron": "matrix(1, 0, 0, -1, 0, 0)"
+ },
+ "interpolateSize": false
+}
