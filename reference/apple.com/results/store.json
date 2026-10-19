@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/store",
  "finalUrl": "https://www.apple.com/store",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T04:16:49.198Z",
+ "date": "2026-10-19T07:05:31.353Z",
  "widths": {
   "390": {
    "type.none": {
@@ -2369,6 +2369,105 @@
     }
    },
    "card": {
+    "html": "<div class=\"rf-ccard-content rf-ccard-content-withfullimg\"><div class=\"rf-ccard-img-full-wrapper\"><div></div></div><div class=\"rf-ccard-content-info\"><h3 class=\"rf-ccard-content-header-eyebrow\">PRE-ORDER NOW </h3><div class=\"rf-ccard-conten",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "18px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "rgba(0, 0, 0, 0.08) 2px 4px 12px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "transform": "none",
+     "overflow": "hidden",
+     "display": "flex",
+     "flex-direction": "row",
+     "position": "relative",
+     "color": "rgb(29, 29, 31)",
+     "cursor": "pointer",
+     "transition-property": "all",
+     "transition-duration": "0.3s",
+     "transition-timing-function": "cubic-bezier(0, 0, 0.5, 1)"
+    },
+    "box": {
+     "width": 309,
+     "height": 450
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(29, 29, 31)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(29, 29, 31)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "rgba(0, 0, 0, 0.16) 2px 4px 16px 0px",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "transform": "matrix3d(1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1)",
+      "overflow": "hidden",
+      "display": "flex",
+      "flex-direction": "row",
+      "position": "relative",
+      "color": "rgb(29, 29, 31)",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-within": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(29, 29, 31)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(29, 29, 31)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "rgba(0, 0, 0, 0.16) 2px 4px 16px 0px",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "transform": "matrix3d(1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1)",
+      "overflow": "hidden",
+      "display": "flex",
+      "flex-direction": "row",
+      "position": "relative",
+      "color": "rgb(29, 29, 31)",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "card.dark": {
     "html": "<div class=\"rf-ccard-content rf-ccard-content-withfullimg\"><div class=\"rf-ccard-img-full-wrapper\"><picture><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-iphone-18-pro-202609?…\" type=\"image/we",
     "styles": {
      "padding-top": "0px",
@@ -2390,10 +2489,7 @@
      "min-height": "0px",
      "max-width": "none",
      "transform": "none",
-     "overflow": "hidden",
-     "transition-property": "all",
-     "transition-duration": "0.3s",
-     "transition-timing-function": "cubic-bezier(0, 0, 0.5, 1)"
+     "overflow": "hidden"
     },
     "box": {
      "width": 309,
@@ -2420,37 +2516,146 @@
       "min-height": "0px",
       "max-width": "none",
       "transform": "matrix3d(1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1)",
-      "overflow": "hidden",
-      "transition-property": "none",
-      "transition-duration": "0s",
-      "transition-timing-function": "ease"
+      "overflow": "hidden"
      }
     }
    },
-   "card.eyebrow": {
-    "html": "<p class=\"rf-ccard-content-header-eyebrow\">PRE-ORDER NOW</p>",
+   "card.info": {
+    "html": "<div class=\"rf-ccard-content-info\"><h3 class=\"rf-ccard-content-header-eyebrow\">PRE-ORDER NOW </h3><div class=\"rf-ccard-content-header\"><a href=\"/shop/buy-home/apple-homeview\" data-relatedlink=\"_r_o__link\" data-slot-name=\"Shelf-1\" data-displ",
+    "styles": {
+     "padding-top": "28px",
+     "padding-right": "28px",
+     "padding-bottom": "28px",
+     "padding-left": "28px",
+     "position": "absolute"
+    },
+    "box": {
+     "width": 309,
+     "height": 152,
+     "top": 699,
+     "left": 680
+    }
+   },
+   "card.tag": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">PRE-ORDER NOW </h3>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
      "line-height": "16.0005px",
      "font-weight": "600",
      "letter-spacing": "-0.12px",
-     "color": "rgb(182, 68, 0)"
+     "color": "rgb(182, 68, 0)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "7px",
+     "text-transform": "none"
+    }
+   },
+   "card.eyebrow": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">APPLE SPECIALIST </h3>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(66, 66, 69)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "7px",
+     "text-transform": "none"
     }
    },
    "card.header": {
-    "html": "<div class=\"rf-ccard-content-header\" id=\"_r_m__rf-ccard-content-header\"><span><a href=\"/shop/iphone/family/iphone-duo\" data-slot-name=\"shelf-2\" data-feature-name=\"Astro Link\" data-display-name=\"AOS: home/shop_iphone/family/iphone_duo\" class",
+    "html": "<div class=\"rf-ccard-content-header\"><a href=\"/shop/buy-home/apple-homeview\" data-relatedlink=\"_r_o__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"3\" data-trigger-stoppropagation=\"true\" class=\"rf-ccard-content-headerl",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
      "line-height": "25px",
      "font-weight": "600",
      "letter-spacing": "0.231px",
-     "color": "rgb(29, 29, 31)"
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    }
+   },
+   "card.header-first": {
+    "html": "<div class=\"rf-ccard-content-header\"><a href=\"https://www.apple.com/shop/buy-iphone/iphone-17\" data-relatedlink=\"_r_11__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"12\" data-trigger-stoppropagation=\"true\" class=\"rf-c",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "23px"
+    }
+   },
+   "card.link": {
+    "html": "<a href=\"/shop/buy-home/apple-homeview\" data-relatedlink=\"_r_o__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"3\" data-trigger-stoppropagation=\"true\" class=\"rf-ccard-content-headerlink\">Apple&nbsp;HomeView  </a>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "display": "inline-block",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto",
+     "cursor": "pointer"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "21px",
+      "line-height": "25px",
+      "font-weight": "600",
+      "letter-spacing": "0.231px",
+      "color": "rgb(29, 29, 31)",
+      "display": "inline-block",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(29, 29, 31)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     }
     }
    },
    "card.desc": {
-    "html": "<div class=\"rf-ccard-content-desc\"><span class=\"typography-body-tight rf-ccard-content-desccontent\">\n    Hello, hello.\n</span>\n<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    From $1999\n    <span> or <span class=",
+    "html": "<div class=\"rf-ccard-content-desc\"><span class=\"typography-body-tight rf-ccard-content-desccontent\">\n\tDesigned for life at home. \n</span>\n<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    <span class=\"current_price",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "padding-top": "6px",
+     "padding-bottom": "0px"
+    }
+   },
+   "card.description": {
+    "html": "<span class=\"typography-body-tight rf-ccard-content-desccontent\">\n\tDesigned for life at home. \n</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "padding-top": "0px",
+     "padding-bottom": "6px"
+    }
+   },
+   "card.price": {
+    "html": "<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    <span class=\"current_price\" data-autom=\"price\">$299.00</span>\n</span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2458,6 +2663,42 @@
      "font-weight": "400",
      "letter-spacing": "-0.224px",
      "color": "rgb(29, 29, 31)"
+    }
+   },
+   "card.dark-tag": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">NEW </h3>",
+    "styles": {
+     "color": "rgb(255, 121, 27)"
+    }
+   },
+   "card.dark-eyebrow": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">Apple Specialist</h3>",
+    "styles": {
+     "color": "rgb(245, 245, 247)"
+    }
+   },
+   "card.dark-header": {
+    "html": "<div class=\"rf-ccard-content-header\"><a href=\"https://www.apple.com/shop/buy-iphone/iphone-18-pro\" data-relatedlink=\"_r_n__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"2\" data-trigger-stoppropagation=\"true\" class=\"rf",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "card.dark-link": {
+    "html": "<a href=\"https://www.apple.com/shop/buy-iphone/iphone-18-pro\" data-relatedlink=\"_r_n__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"2\" data-trigger-stoppropagation=\"true\" class=\"rf-ccard-content-headerlink\">iPhone&nbs",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "card.dark-desc": {
+    "html": "<div class=\"rf-ccard-content-desc\"><span class=\"typography-body-tight rf-ccard-content-desccontent\">\n    The ultimate performance and camera of any iPhone, with exceptional battery life. \n</span>\n<span class=\"typography-body-reduced-tight r",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "card.dark-price": {
+    "html": "<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    From $1199 <span> or <span class=\"nowrap\">$49.95<span aria-hidden=\"true\">/mo.</span><span class=\"visuallyhidden\"> per month</span></span> <span class=\"nowrap acinst",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
     }
    },
    "shelf.paddle": {
@@ -4907,6 +5148,105 @@
     }
    },
    "card": {
+    "html": "<div class=\"rf-ccard-content rf-ccard-content-withfullimg\"><div class=\"rf-ccard-img-full-wrapper\"><picture><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-home-view-202610?…\" type=\"image/webp\">",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "18px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "rgba(0, 0, 0, 0.08) 2px 4px 12px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "transform": "none",
+     "overflow": "hidden",
+     "display": "flex",
+     "flex-direction": "row",
+     "position": "relative",
+     "color": "rgb(29, 29, 31)",
+     "cursor": "pointer",
+     "transition-property": "all",
+     "transition-duration": "0.3s",
+     "transition-timing-function": "cubic-bezier(0, 0, 0.5, 1)"
+    },
+    "box": {
+     "width": 400,
+     "height": 500
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(29, 29, 31)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(29, 29, 31)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "rgba(0, 0, 0, 0.16) 2px 4px 16px 0px",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "transform": "matrix3d(1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1)",
+      "overflow": "hidden",
+      "display": "flex",
+      "flex-direction": "row",
+      "position": "relative",
+      "color": "rgb(29, 29, 31)",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-within": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(29, 29, 31)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(29, 29, 31)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "rgba(0, 0, 0, 0.16) 2px 4px 16px 0px",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "transform": "matrix3d(1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1)",
+      "overflow": "hidden",
+      "display": "flex",
+      "flex-direction": "row",
+      "position": "relative",
+      "color": "rgb(29, 29, 31)",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "card.dark": {
     "html": "<div class=\"rf-ccard-content rf-ccard-content-withfullimg\"><div class=\"rf-ccard-img-full-wrapper\"><picture><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-iphone-18-pro-202609?…\" type=\"image/we",
     "styles": {
      "padding-top": "0px",
@@ -4928,10 +5268,7 @@
      "min-height": "0px",
      "max-width": "none",
      "transform": "none",
-     "overflow": "hidden",
-     "transition-property": "all",
-     "transition-duration": "0.3s",
-     "transition-timing-function": "cubic-bezier(0, 0, 0.5, 1)"
+     "overflow": "hidden"
     },
     "box": {
      "width": 400,
@@ -4958,37 +5295,158 @@
       "min-height": "0px",
       "max-width": "none",
       "transform": "matrix3d(1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1)",
-      "overflow": "hidden",
-      "transition-property": "none",
-      "transition-duration": "0s",
-      "transition-timing-function": "ease"
+      "overflow": "hidden"
      }
     }
    },
-   "card.eyebrow": {
-    "html": "<p class=\"rf-ccard-content-header-eyebrow\">PRE-ORDER NOW</p>",
+   "card.media": {
+    "html": "<img width=\"400\" height=\"500\" alt=\"\" class=\"rf-ccard-img-full\" src=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-home-view-202610?…\">",
+    "styles": {
+     "display": "block",
+     "object-fit": "cover",
+     "position": "static"
+    },
+    "box": {
+     "width": 400,
+     "height": 500
+    }
+   },
+   "card.info": {
+    "html": "<div class=\"rf-ccard-content-info\"><h3 class=\"rf-ccard-content-header-eyebrow\">PRE-ORDER NOW </h3><div class=\"rf-ccard-content-header\"><a href=\"/shop/buy-home/apple-homeview\" data-relatedlink=\"_r_o__link\" data-slot-name=\"Shelf-1\" data-displ",
+    "styles": {
+     "padding-top": "28px",
+     "padding-right": "28px",
+     "padding-bottom": "28px",
+     "padding-left": "28px",
+     "position": "absolute"
+    },
+    "box": {
+     "width": 396,
+     "height": 164,
+     "top": 655,
+     "left": 862
+    }
+   },
+   "card.tag": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">PRE-ORDER NOW </h3>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
      "line-height": "16.0005px",
      "font-weight": "600",
      "letter-spacing": "-0.12px",
-     "color": "rgb(182, 68, 0)"
+     "color": "rgb(182, 68, 0)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "8px",
+     "text-transform": "none"
+    }
+   },
+   "card.eyebrow": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">APPLE SPECIALIST </h3>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(66, 66, 69)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "8px",
+     "text-transform": "none"
     }
    },
    "card.header": {
-    "html": "<div class=\"rf-ccard-content-header\" id=\"_r_m__rf-ccard-content-header\"><span><a href=\"/shop/iphone/family/iphone-duo\" data-slot-name=\"shelf-2\" data-feature-name=\"Astro Link\" data-display-name=\"AOS: home/shop_iphone/family/iphone_duo\" class",
+    "html": "<div class=\"rf-ccard-content-header\"><a href=\"/shop/buy-home/apple-homeview\" data-relatedlink=\"_r_o__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"3\" data-trigger-stoppropagation=\"true\" class=\"rf-ccard-content-headerl",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
      "line-height": "32px",
      "font-weight": "600",
      "letter-spacing": "0.196px",
-     "color": "rgb(29, 29, 31)"
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    }
+   },
+   "card.header-first": {
+    "html": "<div class=\"rf-ccard-content-header\"><a href=\"https://www.apple.com/shop/buy-iphone/iphone-17\" data-relatedlink=\"_r_11__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"12\" data-trigger-stoppropagation=\"true\" class=\"rf-c",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "24px"
+    }
+   },
+   "card.link": {
+    "html": "<a href=\"/shop/buy-home/apple-homeview\" data-relatedlink=\"_r_o__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"3\" data-trigger-stoppropagation=\"true\" class=\"rf-ccard-content-headerlink\">Apple&nbsp;HomeView  </a>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "display": "inline-block",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto",
+     "cursor": "pointer"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "28px",
+      "line-height": "32px",
+      "font-weight": "600",
+      "letter-spacing": "0.196px",
+      "color": "rgb(29, 29, 31)",
+      "display": "inline-block",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(29, 29, 31)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     }
     }
    },
    "card.desc": {
-    "html": "<div class=\"rf-ccard-content-desc\"><span class=\"typography-body-tight rf-ccard-content-desccontent\">\n    Hello, hello.\n</span>\n<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    From $1999\n    <span> or <span class=",
+    "html": "<div class=\"rf-ccard-content-desc\"><span class=\"typography-body-tight rf-ccard-content-desccontent\">\n\tDesigned for life at home. \n</span>\n<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    <span class=\"current_price",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "padding-top": "10px",
+     "padding-bottom": "0px"
+    }
+   },
+   "card.description": {
+    "html": "<span class=\"typography-body-tight rf-ccard-content-desccontent\">\n\tDesigned for life at home. \n</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "padding-top": "0px",
+     "padding-bottom": "6px"
+    }
+   },
+   "card.price": {
+    "html": "<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    <span class=\"current_price\" data-autom=\"price\">$299.00</span>\n</span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -4996,6 +5454,42 @@
      "font-weight": "400",
      "letter-spacing": "-0.224px",
      "color": "rgb(29, 29, 31)"
+    }
+   },
+   "card.dark-tag": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">NEW </h3>",
+    "styles": {
+     "color": "rgb(255, 121, 27)"
+    }
+   },
+   "card.dark-eyebrow": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">Apple Specialist</h3>",
+    "styles": {
+     "color": "rgb(245, 245, 247)"
+    }
+   },
+   "card.dark-header": {
+    "html": "<div class=\"rf-ccard-content-header\"><a href=\"https://www.apple.com/shop/buy-iphone/iphone-18-pro\" data-relatedlink=\"_r_n__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"2\" data-trigger-stoppropagation=\"true\" class=\"rf",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "card.dark-link": {
+    "html": "<a href=\"https://www.apple.com/shop/buy-iphone/iphone-18-pro\" data-relatedlink=\"_r_n__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"2\" data-trigger-stoppropagation=\"true\" class=\"rf-ccard-content-headerlink\">iPhone&nbs",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "card.dark-desc": {
+    "html": "<div class=\"rf-ccard-content-desc\"><span class=\"typography-body-tight rf-ccard-content-desccontent\">\n    The ultimate performance and camera of any iPhone, with exceptional battery life. \n</span>\n<span class=\"typography-body-reduced-tight r",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "card.dark-price": {
+    "html": "<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    From $1199 <span> or <span class=\"nowrap\">$49.95<span aria-hidden=\"true\">/mo.</span><span class=\"visuallyhidden\"> per month</span></span> <span class=\"nowrap acinst",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
     }
    },
    "shelf.paddle": {
@@ -7445,6 +7939,105 @@
     }
    },
    "card": {
+    "html": "<div class=\"rf-ccard-content rf-ccard-content-withfullimg\"><div class=\"rf-ccard-img-full-wrapper\"><picture><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-home-view-202610?…\" type=\"image/webp\">",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "18px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "rgba(0, 0, 0, 0.08) 2px 4px 12px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "transform": "none",
+     "overflow": "hidden",
+     "display": "flex",
+     "flex-direction": "row",
+     "position": "relative",
+     "color": "rgb(29, 29, 31)",
+     "cursor": "pointer",
+     "transition-property": "all",
+     "transition-duration": "0.3s",
+     "transition-timing-function": "cubic-bezier(0, 0, 0.5, 1)"
+    },
+    "box": {
+     "width": 400.00006103515625,
+     "height": 500
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(29, 29, 31)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(29, 29, 31)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "rgba(0, 0, 0, 0.16) 2px 4px 16px 0px",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "transform": "matrix3d(1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1)",
+      "overflow": "hidden",
+      "display": "flex",
+      "flex-direction": "row",
+      "position": "relative",
+      "color": "rgb(29, 29, 31)",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-within": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(29, 29, 31)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(29, 29, 31)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "rgba(0, 0, 0, 0.16) 2px 4px 16px 0px",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "transform": "matrix3d(1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1)",
+      "overflow": "hidden",
+      "display": "flex",
+      "flex-direction": "row",
+      "position": "relative",
+      "color": "rgb(29, 29, 31)",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "card.dark": {
     "html": "<div class=\"rf-ccard-content rf-ccard-content-withfullimg\"><div class=\"rf-ccard-img-full-wrapper\"><picture><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-iphone-18-pro-202609?…\" type=\"image/we",
     "styles": {
      "padding-top": "0px",
@@ -7466,10 +8059,7 @@
      "min-height": "0px",
      "max-width": "none",
      "transform": "none",
-     "overflow": "hidden",
-     "transition-property": "all",
-     "transition-duration": "0.3s",
-     "transition-timing-function": "cubic-bezier(0, 0, 0.5, 1)"
+     "overflow": "hidden"
     },
     "box": {
      "width": 400,
@@ -7496,37 +8086,158 @@
       "min-height": "0px",
       "max-width": "none",
       "transform": "matrix3d(1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1)",
-      "overflow": "hidden",
-      "transition-property": "none",
-      "transition-duration": "0s",
-      "transition-timing-function": "ease"
+      "overflow": "hidden"
      }
     }
    },
-   "card.eyebrow": {
-    "html": "<p class=\"rf-ccard-content-header-eyebrow\">PRE-ORDER NOW</p>",
+   "card.media": {
+    "html": "<img width=\"400\" height=\"500\" alt=\"\" class=\"rf-ccard-img-full\" src=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-home-view-202610?…\">",
+    "styles": {
+     "display": "block",
+     "object-fit": "cover",
+     "position": "static"
+    },
+    "box": {
+     "width": 400.00006103515625,
+     "height": 500
+    }
+   },
+   "card.info": {
+    "html": "<div class=\"rf-ccard-content-info\"><h3 class=\"rf-ccard-content-header-eyebrow\">PRE-ORDER NOW </h3><div class=\"rf-ccard-content-header\"><a href=\"/shop/buy-home/apple-homeview\" data-relatedlink=\"_r_o__link\" data-slot-name=\"Shelf-1\" data-displ",
+    "styles": {
+     "padding-top": "28px",
+     "padding-right": "28px",
+     "padding-bottom": "28px",
+     "padding-left": "28px",
+     "position": "absolute"
+    },
+    "box": {
+     "width": 396.00006103515625,
+     "height": 164,
+     "top": 655,
+     "left": 911.9230346679688
+    }
+   },
+   "card.tag": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">PRE-ORDER NOW </h3>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
      "line-height": "16.0005px",
      "font-weight": "600",
      "letter-spacing": "-0.12px",
-     "color": "rgb(182, 68, 0)"
+     "color": "rgb(182, 68, 0)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "8px",
+     "text-transform": "none"
+    }
+   },
+   "card.eyebrow": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">APPLE SPECIALIST </h3>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(66, 66, 69)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "8px",
+     "text-transform": "none"
     }
    },
    "card.header": {
-    "html": "<div class=\"rf-ccard-content-header\" id=\"_r_m__rf-ccard-content-header\"><span><a href=\"/shop/iphone/family/iphone-duo\" data-slot-name=\"shelf-2\" data-feature-name=\"Astro Link\" data-display-name=\"AOS: home/shop_iphone/family/iphone_duo\" class",
+    "html": "<div class=\"rf-ccard-content-header\"><a href=\"/shop/buy-home/apple-homeview\" data-relatedlink=\"_r_o__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"3\" data-trigger-stoppropagation=\"true\" class=\"rf-ccard-content-headerl",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
      "line-height": "32px",
      "font-weight": "600",
      "letter-spacing": "0.196px",
-     "color": "rgb(29, 29, 31)"
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    }
+   },
+   "card.header-first": {
+    "html": "<div class=\"rf-ccard-content-header\"><a href=\"https://www.apple.com/shop/buy-iphone/iphone-17\" data-relatedlink=\"_r_11__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"12\" data-trigger-stoppropagation=\"true\" class=\"rf-c",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "24px"
+    }
+   },
+   "card.link": {
+    "html": "<a href=\"/shop/buy-home/apple-homeview\" data-relatedlink=\"_r_o__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"3\" data-trigger-stoppropagation=\"true\" class=\"rf-ccard-content-headerlink\">Apple&nbsp;HomeView  </a>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "display": "inline-block",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto",
+     "cursor": "pointer"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "28px",
+      "line-height": "32px",
+      "font-weight": "600",
+      "letter-spacing": "0.196px",
+      "color": "rgb(29, 29, 31)",
+      "display": "inline-block",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(29, 29, 31)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     }
     }
    },
    "card.desc": {
-    "html": "<div class=\"rf-ccard-content-desc\"><span class=\"typography-body-tight rf-ccard-content-desccontent\">\n    Hello, hello.\n</span>\n<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    From $1999\n    <span> or <span class=",
+    "html": "<div class=\"rf-ccard-content-desc\"><span class=\"typography-body-tight rf-ccard-content-desccontent\">\n\tDesigned for life at home. \n</span>\n<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    <span class=\"current_price",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "padding-top": "10px",
+     "padding-bottom": "0px"
+    }
+   },
+   "card.description": {
+    "html": "<span class=\"typography-body-tight rf-ccard-content-desccontent\">\n\tDesigned for life at home. \n</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "padding-top": "0px",
+     "padding-bottom": "6px"
+    }
+   },
+   "card.price": {
+    "html": "<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    <span class=\"current_price\" data-autom=\"price\">$299.00</span>\n</span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -7534,6 +8245,42 @@
      "font-weight": "400",
      "letter-spacing": "-0.224px",
      "color": "rgb(29, 29, 31)"
+    }
+   },
+   "card.dark-tag": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">NEW </h3>",
+    "styles": {
+     "color": "rgb(255, 121, 27)"
+    }
+   },
+   "card.dark-eyebrow": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">Apple Specialist</h3>",
+    "styles": {
+     "color": "rgb(245, 245, 247)"
+    }
+   },
+   "card.dark-header": {
+    "html": "<div class=\"rf-ccard-content-header\"><a href=\"https://www.apple.com/shop/buy-iphone/iphone-18-pro\" data-relatedlink=\"_r_n__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"2\" data-trigger-stoppropagation=\"true\" class=\"rf",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "card.dark-link": {
+    "html": "<a href=\"https://www.apple.com/shop/buy-iphone/iphone-18-pro\" data-relatedlink=\"_r_n__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"2\" data-trigger-stoppropagation=\"true\" class=\"rf-ccard-content-headerlink\">iPhone&nbs",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "card.dark-desc": {
+    "html": "<div class=\"rf-ccard-content-desc\"><span class=\"typography-body-tight rf-ccard-content-desccontent\">\n    The ultimate performance and camera of any iPhone, with exceptional battery life. \n</span>\n<span class=\"typography-body-reduced-tight r",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "card.dark-price": {
+    "html": "<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    From $1199 <span> or <span class=\"nowrap\">$49.95<span aria-hidden=\"true\">/mo.</span><span class=\"visuallyhidden\"> per month</span></span> <span class=\"nowrap acinst",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
     }
    },
    "shelf.paddle": {
@@ -9983,6 +10730,105 @@
     }
    },
    "card": {
+    "html": "<div class=\"rf-ccard-content rf-ccard-content-withfullimg\"><div class=\"rf-ccard-img-full-wrapper\"><picture><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-home-view-202610?…\" type=\"image/webp\">",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "18px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "rgba(0, 0, 0, 0.08) 2px 4px 12px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "transform": "none",
+     "overflow": "hidden",
+     "display": "flex",
+     "flex-direction": "row",
+     "position": "relative",
+     "color": "rgb(29, 29, 31)",
+     "cursor": "pointer",
+     "transition-property": "all",
+     "transition-duration": "0.3s",
+     "transition-timing-function": "cubic-bezier(0, 0, 0.5, 1)"
+    },
+    "box": {
+     "width": 400,
+     "height": 500
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(29, 29, 31)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(29, 29, 31)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "rgba(0, 0, 0, 0.16) 2px 4px 16px 0px",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "transform": "matrix3d(1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1)",
+      "overflow": "hidden",
+      "display": "flex",
+      "flex-direction": "row",
+      "position": "relative",
+      "color": "rgb(29, 29, 31)",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-within": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(29, 29, 31)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(29, 29, 31)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "rgba(0, 0, 0, 0.16) 2px 4px 16px 0px",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "transform": "matrix3d(1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1)",
+      "overflow": "hidden",
+      "display": "flex",
+      "flex-direction": "row",
+      "position": "relative",
+      "color": "rgb(29, 29, 31)",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "card.dark": {
     "html": "<div class=\"rf-ccard-content rf-ccard-content-withfullimg\"><div class=\"rf-ccard-img-full-wrapper\"><picture><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-iphone-18-pro-202609?…\" type=\"image/we",
     "styles": {
      "padding-top": "0px",
@@ -10004,10 +10850,7 @@
      "min-height": "0px",
      "max-width": "none",
      "transform": "none",
-     "overflow": "hidden",
-     "transition-property": "all",
-     "transition-duration": "0.3s",
-     "transition-timing-function": "cubic-bezier(0, 0, 0.5, 1)"
+     "overflow": "hidden"
     },
     "box": {
      "width": 400,
@@ -10034,37 +10877,158 @@
       "min-height": "0px",
       "max-width": "none",
       "transform": "matrix3d(1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1.01, 0, 0, 0, 0, 1)",
-      "overflow": "hidden",
-      "transition-property": "none",
-      "transition-duration": "0s",
-      "transition-timing-function": "ease"
+      "overflow": "hidden"
      }
     }
    },
-   "card.eyebrow": {
-    "html": "<p class=\"rf-ccard-content-header-eyebrow\">PRE-ORDER NOW</p>",
+   "card.media": {
+    "html": "<img width=\"400\" height=\"500\" alt=\"\" class=\"rf-ccard-img-full\" src=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-home-view-202610?…\">",
+    "styles": {
+     "display": "block",
+     "object-fit": "cover",
+     "position": "static"
+    },
+    "box": {
+     "width": 400,
+     "height": 500
+    }
+   },
+   "card.info": {
+    "html": "<div class=\"rf-ccard-content-info\"><h3 class=\"rf-ccard-content-header-eyebrow\">PRE-ORDER NOW </h3><div class=\"rf-ccard-content-header\"><a href=\"/shop/buy-home/apple-homeview\" data-relatedlink=\"_r_o__link\" data-slot-name=\"Shelf-1\" data-displ",
+    "styles": {
+     "padding-top": "28px",
+     "padding-right": "28px",
+     "padding-bottom": "28px",
+     "padding-left": "28px",
+     "position": "absolute"
+    },
+    "box": {
+     "width": 396,
+     "height": 164,
+     "top": 655,
+     "left": 980
+    }
+   },
+   "card.tag": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">PRE-ORDER NOW </h3>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
      "line-height": "16.0005px",
      "font-weight": "600",
      "letter-spacing": "-0.12px",
-     "color": "rgb(182, 68, 0)"
+     "color": "rgb(182, 68, 0)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "8px",
+     "text-transform": "none"
+    }
+   },
+   "card.eyebrow": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">APPLE SPECIALIST </h3>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(66, 66, 69)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "8px",
+     "text-transform": "none"
     }
    },
    "card.header": {
-    "html": "<div class=\"rf-ccard-content-header\" id=\"_r_m__rf-ccard-content-header\"><span><a href=\"/shop/iphone/family/iphone-duo\" data-slot-name=\"shelf-2\" data-feature-name=\"Astro Link\" data-display-name=\"AOS: home/shop_iphone/family/iphone_duo\" class",
+    "html": "<div class=\"rf-ccard-content-header\"><a href=\"/shop/buy-home/apple-homeview\" data-relatedlink=\"_r_o__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"3\" data-trigger-stoppropagation=\"true\" class=\"rf-ccard-content-headerl",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
      "line-height": "32px",
      "font-weight": "600",
      "letter-spacing": "0.196px",
-     "color": "rgb(29, 29, 31)"
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    }
+   },
+   "card.header-first": {
+    "html": "<div class=\"rf-ccard-content-header\"><a href=\"https://www.apple.com/shop/buy-iphone/iphone-17\" data-relatedlink=\"_r_11__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"12\" data-trigger-stoppropagation=\"true\" class=\"rf-c",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "24px"
+    }
+   },
+   "card.link": {
+    "html": "<a href=\"/shop/buy-home/apple-homeview\" data-relatedlink=\"_r_o__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"3\" data-trigger-stoppropagation=\"true\" class=\"rf-ccard-content-headerlink\">Apple&nbsp;HomeView  </a>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "display": "inline-block",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto",
+     "cursor": "pointer"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "28px",
+      "line-height": "32px",
+      "font-weight": "600",
+      "letter-spacing": "0.196px",
+      "color": "rgb(29, 29, 31)",
+      "display": "inline-block",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(29, 29, 31)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     }
     }
    },
    "card.desc": {
-    "html": "<div class=\"rf-ccard-content-desc\"><span class=\"typography-body-tight rf-ccard-content-desccontent\">\n    Hello, hello.\n</span>\n<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    From $1999\n    <span> or <span class=",
+    "html": "<div class=\"rf-ccard-content-desc\"><span class=\"typography-body-tight rf-ccard-content-desccontent\">\n\tDesigned for life at home. \n</span>\n<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    <span class=\"current_price",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "padding-top": "10px",
+     "padding-bottom": "0px"
+    }
+   },
+   "card.description": {
+    "html": "<span class=\"typography-body-tight rf-ccard-content-desccontent\">\n\tDesigned for life at home. \n</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "padding-top": "0px",
+     "padding-bottom": "6px"
+    }
+   },
+   "card.price": {
+    "html": "<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    <span class=\"current_price\" data-autom=\"price\">$299.00</span>\n</span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -10072,6 +11036,42 @@
      "font-weight": "400",
      "letter-spacing": "-0.224px",
      "color": "rgb(29, 29, 31)"
+    }
+   },
+   "card.dark-tag": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">NEW </h3>",
+    "styles": {
+     "color": "rgb(255, 121, 27)"
+    }
+   },
+   "card.dark-eyebrow": {
+    "html": "<h3 class=\"rf-ccard-content-header-eyebrow\">Apple Specialist</h3>",
+    "styles": {
+     "color": "rgb(245, 245, 247)"
+    }
+   },
+   "card.dark-header": {
+    "html": "<div class=\"rf-ccard-content-header\"><a href=\"https://www.apple.com/shop/buy-iphone/iphone-18-pro\" data-relatedlink=\"_r_n__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"2\" data-trigger-stoppropagation=\"true\" class=\"rf",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "card.dark-link": {
+    "html": "<a href=\"https://www.apple.com/shop/buy-iphone/iphone-18-pro\" data-relatedlink=\"_r_n__link\" data-slot-name=\"Shelf-1\" data-display-name=\"AOS: \" data-index=\"2\" data-trigger-stoppropagation=\"true\" class=\"rf-ccard-content-headerlink\">iPhone&nbs",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "card.dark-desc": {
+    "html": "<div class=\"rf-ccard-content-desc\"><span class=\"typography-body-tight rf-ccard-content-desccontent\">\n    The ultimate performance and camera of any iPhone, with exceptional battery life. \n</span>\n<span class=\"typography-body-reduced-tight r",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
+    }
+   },
+   "card.dark-price": {
+    "html": "<span class=\"typography-body-reduced-tight rf-ccard-content-descprice\">\n    From $1199 <span> or <span class=\"nowrap\">$49.95<span aria-hidden=\"true\">/mo.</span><span class=\"visuallyhidden\"> per month</span></span> <span class=\"nowrap acinst",
+    "styles": {
+     "color": "rgb(255, 255, 255)"
     }
    },
    "shelf.paddle": {
