@@ -1,0 +1,213 @@
+/* ciderui — the tile: apple.com's home page tile, a block of its own ground
+ * with a headline, a subhead, a callout and buttons centered at its top and
+ * its picture filling it; the whole tile a link, its buttons above it.
+ *
+ * From apple.com's home page (reference/apple.com/): home:tile.* (the
+ * promo tiles, two to a row from 735px), home:hero.* and home:tile.dark (the
+ * full-width tiles), home:type.tile-* and home:type.promo-* (their type);
+ * product:tile.rounded* (the product page's rounded tiles).
+ *
+ *   <div class="cui-tile" data-size="lg">
+ *     <img class="cui-tile-media" src="/hero.jpg" alt="">
+ *     <a class="cui-tile-link" href="/iphone/" aria-label="iPhone"></a>
+ *     <div class="cui-tile-content">
+ *       <h2 class="cui-tile-headline">iPhone</h2>
+ *       <p class="cui-tile-subhead">Hello, hello.</p>
+ *       <p class="cui-tile-callout">Available starting 10.23</p>
+ *       <div class="cui-tile-ctas"><a class="cui-btn" data-size="cta" href="/iphone/">Learn more</a></div>
+ *     </div>
+ *   </div>
+ *
+ * cui-tile             the ground (the alternate's, black in a dark block),
+ *                      580px tall at least from 1069px, 490px from 735px,
+ *                      500px below; its content at its top, centered
+ *   data-size="lg"     a full-width tile: 692px, 650px, 500px, its type a
+ *                      step larger
+ * cui-tile-rounded     28px corners (the product page's)
+ * cui-tile-media       its picture, filling it
+ * cui-tile-link        the whole tile a link (named by its aria-label)
+ * cui-tile-content     the headline, subhead, callout and buttons
+ * cui-tile-headline    40px, 32px below 1069px (lg: 56px, 48px, 32px)
+ * cui-tile-subhead     21px, 19px (lg: 28px, 24px, 19px)
+ * cui-tile-callout     14px in the secondary text (lg: 19px, 17px, 14px)
+ * cui-tile-ctas        its buttons in a row, above the tile's link (a
+ *                      promo tile's cui-btn, a full one's data-size="cta")
+ *
+ * apple.com's: the grounds, the sizes, the padding, the type, the spacing.
+ * ciderui's: the letter-spacing (tokens.css); a default tile's callout 8px
+ * below its subhead at every width (apple.com's promo tiles measured have
+ * none; a full tile's is 8px below 735px); the buttons a flex row (apple.com's
+ * a grid of the same gaps); the layers' order its own (picture, content,
+ * link, buttons: apple.com's numbers them 1 to 4). */
+
+@layer components {
+  .cui-tile {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 500px;
+    padding: 39px 0 43px;
+    overflow: clip;
+    color: var(--cui-c-text);
+    background-color: var(--cui-c-tile);
+    text-align: center;
+
+    @media (width >= 735px) {
+      min-height: 490px;
+      padding: 44px 0 48px;
+    }
+
+    @media (width >= 1069px) {
+      min-height: 580px;
+      padding: 53px 0 60px;
+    }
+  }
+
+  .cui-tile[data-size="lg"] {
+    @media (width >= 735px) {
+      min-height: 650px;
+      padding: 61px 0 69px;
+    }
+
+    @media (width >= 1069px) {
+      min-height: 692px;
+      padding: 56px 0 63px;
+    }
+  }
+
+  .cui-tile-rounded {
+    border-radius: 28px;
+  }
+
+  .cui-tile-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cui-tile-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .cui-tile-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cui-tile-headline {
+    margin: 0;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-32);
+
+    @media (width >= 1069px) {
+      font-size: 40px;
+      line-height: 44px;
+      letter-spacing: var(--cui-tracking-40);
+    }
+  }
+
+  .cui-tile-subhead {
+    margin: 4px 0 0;
+    font-size: 19px;
+    line-height: 23px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-19);
+
+    @media (width >= 1069px) {
+      margin-top: 3px;
+      font-size: 21px;
+      line-height: 25px;
+      letter-spacing: var(--cui-tracking-21);
+    }
+  }
+
+  .cui-tile-callout {
+    margin: 8px 0 0;
+    color: var(--cui-c-text-2);
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-14);
+  }
+
+  .cui-tile-ctas {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 11px;
+
+    @media (width >= 735px) {
+      margin-top: 12px;
+    }
+  }
+
+  /* a full-width tile's type and spacing, a step larger from 735px */
+  :where(.cui-tile[data-size="lg"]) {
+    .cui-tile-headline {
+      @media (width >= 735px) {
+        font-size: 48px;
+        line-height: 52px;
+        letter-spacing: var(--cui-tracking-48);
+      }
+
+      @media (width >= 1069px) {
+        font-size: 56px;
+        line-height: 60px;
+        letter-spacing: var(--cui-tracking-56);
+      }
+    }
+
+    .cui-tile-subhead {
+      @media (width >= 735px) {
+        margin-top: 4px;
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: var(--cui-tracking-24);
+      }
+
+      @media (width >= 1069px) {
+        margin-top: 6px;
+        font-size: 28px;
+        line-height: 32px;
+        letter-spacing: var(--cui-tracking-28);
+      }
+    }
+
+    .cui-tile-callout {
+      @media (width >= 735px) {
+        margin-top: 12px;
+        font-size: 17px;
+        line-height: 21px;
+        letter-spacing: var(--cui-tracking-17);
+      }
+
+      @media (width >= 1069px) {
+        margin-top: 9px;
+        font-size: 19px;
+        line-height: 23px;
+        letter-spacing: var(--cui-tracking-19);
+      }
+    }
+
+    .cui-tile-ctas {
+      @media (width >= 735px) {
+        gap: 17px;
+        margin-top: 16px;
+      }
+
+      @media (width >= 1069px) {
+        margin-top: 17px;
+      }
+    }
+  }
+}

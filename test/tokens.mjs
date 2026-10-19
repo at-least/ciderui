@@ -86,6 +86,8 @@ const CONTRACT = {
   '--cui-c-bar-2': [['localnav', 'localnav.background', W, 'background-color'], ['localnav-dark', 'localnav.background', W, 'background-color']],
   '--cui-c-on-bar-2': [['localnav', 'localnav.title', W, 'color', undefined, 'opacity'], ['localnav-dark', 'localnav.title', W, 'color', undefined, 'opacity']],
   '--cui-c-separator': [['localnav', 'localnav.rule', W, 'background-color'], ['localnav-dark', 'localnav.rule', W, 'background-color']],
+  // the home page's tiles: the hero's, light, and a dark one (.tile-wrapper.theme-dark)
+  '--cui-c-tile': [['home', 'hero.tile', W, 'background-color'], ['home', 'tile.dark', W, 'background-color']],
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-'));
@@ -120,8 +122,9 @@ const lum = (value) => channels(value).slice(0, 3).map(v => v / 255).map(v => v 
   .reduce((s, v, i) => s + v * [0.2126, 0.7152, 0.0722][i], 0);
 const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
 const MIN = [
-  ['--cui-c-text', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
-  ['--cui-c-text-2', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
+  ['--cui-c-text', ['--cui-c-bg', '--cui-c-bg-alt', '--cui-c-tile'], 4.5],
+  ['--cui-c-text-2', ['--cui-c-bg', '--cui-c-bg-alt', '--cui-c-tile'], 4.5],
+  ['--cui-c-link', ['--cui-c-tile'], 4.5],
   ['--cui-c-link', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
   ['--cui-c-text-3', ['--cui-c-bg', '--cui-c-bg-alt'], 3],
   ['--cui-c-border', ['--cui-c-bg', '--cui-c-bg-alt'], 3],
