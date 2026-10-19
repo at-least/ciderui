@@ -38,11 +38,16 @@ apple.com's nav draws its icons as inline SVG, a regular one in the bar from 834
 
 Intersection over union; the probe fails below 0.85, a mark set before the run. Measured 2026-10-19 on https://www.apple.com/ in Chromium 151 on Linux (`results/nav.json`). The open X is ciderui's lines as `globalnav.css` turns them, written here as SVG transforms with the same numbers; the component's test holds the rendered button to the same place (each line's box 11.5 by 11.5 from 3.5, 3.5).
 
+## The local nav's chevron
+
+`localnav.mjs` reads it off MacBook Air's page: a polyline in 16 by 9 through (15.265, 0.835), (8, 8.167) and (0.735, 0.835), 1.2 thick, round at the ends and the join; opened, apple.com's animation ends on the same line upside down, (15.265, 8.165), (8, 0.835), (0.735, 8.165), in 320ms, through a straight line at 4.5. ciderui's `CHEVRON` is that line; `localnav.css` turns it up with `scaleY(-1)` about its middle, which passes through the same straight line. Shared ink: 1 closed, 0.996 open (`results/localnav.json`, 2026-10-19, Chromium 151).
+
 ## Running it
 
 ```sh
 PW=…/playwright-chromium/index.mjs node run.mjs   # the "more" chevron
 PW=…/playwright-chromium/index.mjs node nav.mjs   # the global nav's icons
+PW=…/playwright-chromium/index.mjs node localnav.mjs   # the local nav's chevron
 ```
 
 `glyph.js` runs on apple.com's page, where its icon font is declared: it loads the face, draws the character on a canvas, reads the numbers off the ink, draws the chevron they describe on another, and compares the two. `nav.mjs` reads the nav's SVG off the page and compares on a blank one. The browsers are `../browsers.mjs`'s.

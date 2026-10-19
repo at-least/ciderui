@@ -1,0 +1,40 @@
+{
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T06:37:19.904Z",
+ "ours": {
+  "chevron": "<svg viewBox=\"0 0 16 9\"><path d=\"M15.265.835 8 8.167.735.835\" fill=\"none\" stroke=\"#000\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "chevron-open": "<svg viewBox=\"0 0 16 9\"><path d=\"M15.265.835 8 8.167.735.835\" fill=\"none\" stroke=\"#000\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"translate(0 9) scale(1 -1)\"/></svg>"
+ },
+ "chevron": {
+  "appleBox": {
+   "left": 0.15,
+   "right": 15.85,
+   "top": 0.25,
+   "bottom": 8.75
+  },
+  "oursBox": {
+   "left": 0.15,
+   "right": 15.85,
+   "top": 0.25,
+   "bottom": 8.75
+  },
+  "iou": 1
+ },
+ "chevron-open": {
+  "appleBox": {
+   "left": 0.15,
+   "right": 15.85,
+   "top": 0.25,
+   "bottom": 8.75
+  },
+  "oursBox": {
+   "left": 0.15,
+   "right": 15.85,
+   "top": 0.25,
+   "bottom": 8.75
+  },
+  "iou": 0.996
+ },
+ "open": "15.265 8.165 8 .835 .735 8.165",
+ "dur": "320ms"
+}
