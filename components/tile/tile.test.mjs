@@ -12,7 +12,7 @@ import { examples, PADDING } from '../../test/harness.mjs';
 const ex = examples(import.meta.url);
 const TYPE = ['font-size', 'line-height', 'font-weight'];
 const PAD = ['padding-top', 'padding-bottom'];
-const media = (html) => html.replace('<a class="cui-tile-link"', '<img class="cui-tile-media" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><a class="cui-tile-link"');
+const media = (html) => html.replace('<a class="cui-tile-link"', '<img class="cui-tile-media" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjcyMCIvPg==" alt=""><a class="cui-tile-link"');
 const dark = (html) => html.replace('class="cui-tile"', 'class="cui-tile cui-dark"');
 const promoCallout = ex('tile').replace('<div class="cui-tile-ctas">', '<p class="cui-tile-callout">Trade in your iPhone.</p><div class="cui-tile-ctas">');
 

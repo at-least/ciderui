@@ -15,7 +15,7 @@ const TYPE = ['font-size', 'line-height', 'font-weight'];
 const LIFT = ['box-shadow', 'transform'];
 const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
 const dark = (html) => html.replace('class="cui-card"', 'class="cui-card cui-dark"');
-const media = (html) => html.replace('<div class="cui-card">', '<div class="cui-card"><img class="cui-card-media" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">');
+const media = (html) => html.replace('<div class="cui-card">', '<div class="cui-card"><img class="cui-card-media" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjcyMCIvPg==" alt="">');
 const headlineFirst = ex('card').replace(/\s*<p class="cui-card-eyebrow"[^\n]*/, '');
 
 export const cases = [

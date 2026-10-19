@@ -96,7 +96,7 @@ mod tests {
             <ProductNav id="products" label="Products" paddles=false class="">
                 @for (href, name) in items {
                     <ProductNavItem href=(href) name=(name)>
-                        <img class="cui-productnav-image" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="200" height="130" alt="">
+                        <img class="cui-productnav-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTMwIi8+" width="200" height="130" alt="">
                     </ProductNavItem>
                 }
             </ProductNav>

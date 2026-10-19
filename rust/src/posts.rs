@@ -114,7 +114,7 @@ mod tests {
     use super::*;
     use crate::example::example;
 
-    const GIF: &str = "data:image/gif;base64,R0lGODlhAQABAAAAACw=";
+    const PICTURE: &str = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjcyMCIvPg==";
 
     #[test]
     fn renders_the_examples() {
@@ -174,7 +174,7 @@ mod tests {
             let html = rsx! {
                 <Posts size=(size) heading=(heading) class="">
                     @for (href, category, datetime, date, headline) in rows {
-                        <li><Post href=(href) media=(rsx! { <img class="cui-post-media" src=(GIF) alt="" width="1280" height="720"> }) category=(category) datetime=(datetime) date=(date) headline=(headline) /></li>
+                        <li><Post href=(href) media=(rsx! { <img class="cui-post-media" src=(PICTURE) alt="" width="1280" height="720"> }) category=(category) datetime=(datetime) date=(date) headline=(headline) /></li>
                     }
                 </Posts>
             }
