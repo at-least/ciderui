@@ -8,13 +8,14 @@
 // protocol's touch emulation is what makes (hover: none) match (Chromium
 // ignores an emulated hover feature); the page refuses to open otherwise.
 // Besides a property, a check reads `box-height` and `box-width`, the
-// element's box.
+// element's box, `box-top` and `box-left`, its place in the window, and
+// `box-x` and `box-y`, its place in its parent's box (a line in its SVG).
 
 import { chromium } from 'playwright-chromium';
 
-export async function open(css, html, { width = 1200, reducedMotion, colorScheme, touch } = {}) {
+export async function open(css, html, { width = 1200, height = 800, reducedMotion, colorScheme, touch } = {}) {
   const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
-  const page = await browser.newPage({ viewport: { width, height: 800 }, reducedMotion, colorScheme });
+  const page = await browser.newPage({ viewport: { width, height }, reducedMotion, colorScheme });
   const cdp = await page.context().newCDPSession(page);
   if (touch) await cdp.send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
   await page.setContent(`<!doctype html><html lang="en"><head><meta charset="utf-8"><style>${css}</style></head><body>${html}</body></html>`);
@@ -40,7 +41,10 @@ export async function open(css, html, { width = 1200, reducedMotion, colorScheme
       if (!el) throw new Error(`no element for ${selector}`);
       const cs = getComputedStyle(el, pseudo ?? null);
       const box = el.getBoundingClientRect();
-      return Object.fromEntries(props.map(p => [p, p === 'box-height' ? `${box.height}px` : p === 'box-width' ? `${box.width}px` : cs.getPropertyValue(p)]));
+      const parent = () => el.parentElement.getBoundingClientRect();
+      const BOX = { 'box-height': () => box.height, 'box-width': () => box.width, 'box-top': () => box.top, 'box-left': () => box.left,
+        'box-x': () => box.left - parent().left, 'box-y': () => box.top - parent().top };
+      return Object.fromEntries(props.map(p => [p, p in BOX ? `${BOX[p]()}px` : cs.getPropertyValue(p)]));
     }, [selector, props, pseudo]);
     if (state) {
       await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] });
@@ -49,6 +53,6 @@ export async function open(css, html, { width = 1200, reducedMotion, colorScheme
     return values;
   };
 
-  const resize = (w) => page.setViewportSize({ width: w, height: 800 });
+  const resize = (w) => page.setViewportSize({ width: w, height });
   return { page, read, resize, close: () => browser.close() };
 }

@@ -19,14 +19,32 @@ const vars = Object.fromEntries([...css.matchAll(/^\s*(--cui-[a-z0-9-]+):\s*([^;
 const sides = (name) => {
   const v = vars[name];
   if (v === undefined) throw new Error(`tokens.css has no ${name}`);
-  const m = v.match(/^light-dark\(\s*([^,]+?)\s*,\s*([^)]+?)\s*\)$/);
-  return m ? [m[1], m[2]] : [v, v];
+  if (!v.startsWith('light-dark(')) return [v, v];
+  // the comma between the two sides is the one outside any parentheses
+  const inner = v.slice('light-dark('.length, -1);
+  let depth = 0;
+  for (let i = 0; i < inner.length; i++) {
+    if (inner[i] === '(') depth++;
+    else if (inner[i] === ')') depth--;
+    else if (inner[i] === ',' && depth === 0) return [inner.slice(0, i).trim(), inner.slice(i + 1).trim()];
+  }
+  throw new Error(`${name}: no two sides in ${v}`);
 };
-const rgb = (hex) => {
-  const h = hex.match(/^#([0-9a-f]{6})$/i);
-  if (!h) throw new Error(`not a #rrggbb color: ${hex}`);
-  const n = parseInt(h[1], 16);
-  return `rgb(${n >> 16}, ${(n >> 8) & 255}, ${n & 255})`;
+// a side as its channels, [r, g, b, alpha]: #rrggbb, or rgb(r g b / a)
+const channels = (value) => {
+  const h = value.match(/^#([0-9a-f]{6})$/i);
+  if (h) {
+    const n = parseInt(h[1], 16);
+    return [n >> 16, (n >> 8) & 255, n & 255, 1];
+  }
+  const c = value.match(/^rgb\((\d+) (\d+) (\d+) \/ ([\d.]+)\)$/);
+  if (!c) throw new Error(`not a #rrggbb or rgb(r g b / a) color: ${value}`);
+  return [+c[1], +c[2], +c[3], +c[4]];
+};
+// as the browser computes it
+const rgb = (value) => {
+  const [r, g, b, a] = channels(value);
+  return a === 1 ? `rgb(${r}, ${g}, ${b})` : `rgba(${r}, ${g}, ${b}, ${a})`;
 };
 
 // the contract: each color's light and dark side and where apple.com shows it
@@ -49,6 +67,13 @@ const CONTRACT = {
   '--cui-c-neutral-hover': [['store', 'button.neutral', W, 'background-color', 'hover'], ['home', 'gallery.button-neutral', W, 'background-color', 'hover']],
   '--cui-c-neutral-active': [['store', 'button.neutral', W, 'background-color', 'active'], ['home', 'gallery.button-neutral', W, 'background-color', 'active']],
   '--cui-c-on-neutral': [['store', 'button.neutral', W, 'color'], ['home', 'gallery.button-neutral', W, 'color']],
+  // the global nav's: the home page's, light, and the Newsroom's, a dark nav;
+  // its menu opened on a phone
+  '--cui-c-bar': [['home', 'nav', W, 'background-color'], ['newsroom', 'nav', W, 'background-color']],
+  '--cui-c-on-bar': [['home', 'nav.link', W, 'color'], ['newsroom', 'nav.link', W, 'color']],
+  '--cui-c-on-bar-hover': [['home', 'nav.link', W, 'color', 'hover'], ['newsroom', 'nav.link', W, 'color', 'hover']],
+  '--cui-c-menu': [['home', 'menu.content', 390, 'background-color'], ['newsroom', 'menu.content', 390, 'background-color']],
+  '--cui-c-on-menu': [['home', 'menu.link', 390, 'color'], ['newsroom', 'menu.link', 390, 'color']],
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-'));
@@ -64,12 +89,17 @@ for (const [name, [light, dark]] of Object.entries(CONTRACT)) {
   }
 }
 
-// contrast: WCAG 2, each color's job on both sides
-const lum = (hex) => {
-  const n = parseInt(hex.slice(1), 16);
-  return [n >> 16, (n >> 8) & 255, n & 255].map(v => v / 255).map(v => v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4)
-    .reduce((s, v, i) => s + v * [0.2126, 0.7152, 0.0722][i], 0);
-};
+// contrast: WCAG 2, each color's job on both sides. A translucent color is
+// what it draws over the color under it: `over` lays each side in turn on
+// the next (the nav's text on its bar on the page)
+const over = (...layers) => layers.reduceRight((under, top) => {
+  const [r, g, b, a] = channels(top);
+  const [ur, ug, ub] = channels(under);
+  const mix = (t, u) => Math.round(t * a + u * (1 - a));
+  return `#${[mix(r, ur), mix(g, ug), mix(b, ub)].map(v => v.toString(16).padStart(2, '0')).join('')}`;
+});
+const lum = (value) => channels(value).slice(0, 3).map(v => v / 255).map(v => v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4)
+  .reduce((s, v, i) => s + v * [0.2126, 0.7152, 0.0722][i], 0);
 const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
 const MIN = [
   ['--cui-c-text', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
@@ -86,9 +116,20 @@ for (const [fg, grounds, min] of MIN) {
     }
   }
 }
-for (const [on, fills] of [['--cui-c-on-accent', ['--cui-c-accent', '--cui-c-accent-hover', '--cui-c-accent-active']], ['--cui-c-on-neutral', ['--cui-c-neutral', '--cui-c-neutral-hover', '--cui-c-neutral-active']]]) {
+for (const [on, fills] of [['--cui-c-on-accent', ['--cui-c-accent', '--cui-c-accent-hover', '--cui-c-accent-active']], ['--cui-c-on-neutral', ['--cui-c-neutral', '--cui-c-neutral-hover', '--cui-c-neutral-active']],
+  ['--cui-c-on-menu', ['--cui-c-menu']], ['--cui-c-on-bar-hover', ['--cui-c-menu']]]) {
   for (const fill of fills) {
     for (const i of [0, 1]) check(`${on} on ${fill}, ${['light', 'dark'][i]}, at least 4.5:1`, ratio(sides(on)[i], sides(fill)[i]) >= 4.5, true);
+  }
+}
+// the nav's text on its bar, the bar over the page's grounds (what scrolls
+// under it is the page's)
+for (const on of ['--cui-c-on-bar', '--cui-c-on-bar-hover']) {
+  for (const bg of ['--cui-c-bg', '--cui-c-bg-alt']) {
+    for (const i of [0, 1]) {
+      const ground = over(sides('--cui-c-bar')[i], sides(bg)[i]);
+      check(`${on} on --cui-c-bar over ${bg}, ${['light', 'dark'][i]}, at least 4.5:1`, ratio(over(sides(on)[i], ground), ground) >= 4.5, true);
+    }
   }
 }
 

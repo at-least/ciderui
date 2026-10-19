@@ -1,10 +1,11 @@
 //! Icons as inline SVG, ciderui's own, each drawn from the numbers of the
 //! glyph or the drawing apple.com uses in its place (`reference/icons/`): its
-//! box in em, the ink's place in it, the strokes' thickness; not Apple's
-//! outlines. Each is sized in em by its own attributes, so it takes the
-//! text's size, and drawn in `currentColor`, so it takes the text's color; a
-//! component's class (`cui-link-icon`) places it. Inline, so a page whose
-//! Content-Security-Policy refuses `data:` images draws it too.
+//! box, the ink's place in it, the strokes' thickness; not Apple's outlines.
+//! Each is sized by its own attributes: in em where it sits in text, so it
+//! takes the text's size ([`MORE`]), in pixels where it sits in the global
+//! nav's bar, as apple.com's do; and drawn in `currentColor`, so it takes the
+//! text's color. A component's class (`cui-link-icon`) places it. Inline, so
+//! a page whose Content-Security-Policy refuses `data:` images draws it too.
 //!
 //! ```
 //! use hypertext::prelude::*;
@@ -87,6 +88,61 @@ pub const MORE: Icon = Icon {
     height: "0.54em",
     view_box: "0 0 442 540",
     inner: r#"<path d="M107.7 47.7 332.3 272.5 107.7 497.3" fill="none" stroke="currentColor" stroke-width="67.9" stroke-linecap="round" stroke-linejoin="round"/>"#,
+};
+
+/// The global nav's search from 834px (`cui-globalnav-image` in a
+/// `cui-globalnav-icon`), in place of apple.com's 15 by 44 SVG: a ring at
+/// (5.95, 19.95), radius 4.96, 1.08 thick, and its handle from the ring at
+/// 45° to (13.74, 27.74), 1.52 thick, round; 0.927 of its ink apple.com's.
+pub const SEARCH: Icon = Icon {
+    width: "15",
+    height: "44",
+    view_box: "0 0 15 44",
+    inner: r#"<circle cx="5.95" cy="19.95" r="4.96" fill="none" stroke="currentColor" stroke-width="1.08"/><path d="M9.46 23.46 13.74 27.74" fill="none" stroke="currentColor" stroke-width="1.52" stroke-linecap="round"/>"#,
+};
+
+/// The global nav's search to 833px (`cui-globalnav-image-compact`), in
+/// place of apple.com's 17 by 48 SVG: a ring at (6.94, 21.94), radius 5.86,
+/// 1.22 thick, and its handle to (15.6, 30.6), 1.8 thick, round; 0.972 of
+/// its ink apple.com's.
+pub const SEARCH_COMPACT: Icon = Icon {
+    width: "17",
+    height: "48",
+    view_box: "0 0 17 48",
+    inner: r#"<circle cx="6.94" cy="21.94" r="5.86" fill="none" stroke="currentColor" stroke-width="1.22"/><path d="M11.08 26.08 15.6 30.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>"#,
+};
+
+/// The global nav's bag from 834px (`cui-globalnav-image`), in place of
+/// apple.com's 14 by 44 SVG: a body 11.8 by 10.9 from (1.1, 16.55), corners
+/// 1.5, and its handle an arc of radius 2.45, both 1.1 thick; 0.948 of its
+/// ink apple.com's.
+pub const BAG: Icon = Icon {
+    width: "14",
+    height: "44",
+    view_box: "0 0 14 44",
+    inner: r#"<rect x="1.1" y="16.55" width="11.8" height="10.9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M4.55 16.55V16.05a2.45 2.45 0 0 1 4.9 0v.5" fill="none" stroke="currentColor" stroke-width="1.1"/>"#,
+};
+
+/// The global nav's bag to 833px (`cui-globalnav-image-compact`), in place
+/// of apple.com's 17 by 48 SVG: a body 13.9 by 12.95 from (1.55, 17.5),
+/// corners 2, and its handle an arc of radius 3.125, both 1.2 thick; 0.981
+/// of its ink apple.com's.
+pub const BAG_COMPACT: Icon = Icon {
+    width: "17",
+    height: "48",
+    view_box: "0 0 17 48",
+    inner: r#"<rect x="1.55" y="17.5" width="13.9" height="12.95" rx="2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M5.375 17.5V17.175a3.125 3.125 0 0 1 6.25 0v.325" fill="none" stroke="currentColor" stroke-width="1.2"/>"#,
+};
+
+/// The global nav's menu button's lines (`cui-globalnav-menubutton`), as
+/// apple.com's: two lines across 18 by 18, from 2 to 16 at 5 and 12 down,
+/// 1.2 thick, round; `globalnav.css` turns them into its X while the menu is
+/// open (from (3.5, 3.5) to (15, 15) and from (3.5, 15) to (15, 3.5)).
+pub const MENU: Icon = Icon {
+    width: "18",
+    height: "18",
+    view_box: "0 0 18 18",
+    inner: r#"<path d="M2 5H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 12H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>"#,
 };
 
 #[cfg(test)]

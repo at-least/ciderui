@@ -15,10 +15,12 @@
 
 #[cfg(feature = "css")]
 pub mod css;
+mod globalnav;
 pub mod icon;
 mod link;
 mod section;
 
+pub use globalnav::GlobalNav;
 pub use link::MoreLink;
 pub use section::{Ground, Rhythm, Section, SectionHeader};
 

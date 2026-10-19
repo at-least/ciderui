@@ -75,12 +75,14 @@ Every component follows these.
 | `on-accent`, `on-neutral` | `#ffffff`, `#ffffff` | `#ffffff`, `#000000` | text on the accent's and the neutral's fills |
 | `field` | `rgba(255,255,255,.8)` | guessed | a field's and an option's ground |
 | `tag` | `#b64400` | guessed | a card's tag ("NEW") |
-| `bar` | `rgba(255,255,255,.8)` | `rgba(22,22,23,.8)` (read from the global nav's stylesheet, not seen live) | the global nav's ground, under its material |
+| `bar` | `rgba(255,255,255,.8)` | `rgba(0,0,0,.8)` (the Newsroom's dark nav, `newsroom:nav`) | the global nav's ground, under its material |
+| `on-bar`, `on-bar-hover` | `rgba(0,0,0,.8)`, `#000000` | `rgba(255,255,255,.8)`, `#ffffff` | the nav's links and icons, and hovered; the menu's button is `on-bar-hover` at 0.8 opacity |
+| `menu`, `on-menu` | `#fafafc`, `#333336` | `#161617`, `#e8e8ed` | the nav's menu opened over the window on a phone, and its links |
 | `paddle`, `-hover`, `-active` | `rgba(210,210,215,.64)`, `rgba(222,222,227,.698)`, `rgba(194,194,199,.655)` | `rgba(66,66,69,.72)`, `rgba(73,73,76,.725)`, `rgba(57,57,60,.74)` | a gallery's paddles |
 
-tokens.css holds the slots measured on both sides (`bg`, `bg-alt`, `text`, `text-2`, `text-3`, `border`, the accent's three and `on-accent`, `link`, the neutral's three and `on-neutral`); a slot with a guessed side enters with the first component that reads it, that side measured then, so no stylesheet ever reads a guess. `test/tokens.mjs` holds each to the probe beside it.
+tokens.css holds the slots measured on both sides (`bg`, `bg-alt`, `text`, `text-2`, `text-3`, `border`, the accent's three and `on-accent`, `link`, the neutral's three and `on-neutral`, `bar`, `on-bar`, `on-bar-hover`, `menu`, `on-menu`); a slot with a guessed side enters with the first component that reads it, that side measured then, so no stylesheet ever reads a guess. `test/tokens.mjs` holds each to the probe beside it.
 
-Their contrast, computed (WCAG 2): `text` 16.8:1 on `bg` and 15.5:1 on `bg-alt` (dark: 19.3:1, 15.5:1); `text-2` 5.1:1 and 4.7:1 (dark: 5.8:1, 4.7:1); `link` 5.6:1 and 5.1:1 (dark: 7.0:1, 5.6:1); white on `accent` 4.7:1, on `accent-hover` 4.5:1, on `accent-active` 4.9:1; `border` 3.6:1 on `bg` and 3.3:1 on `bg-alt` (dark: 4.1:1, 3.3:1); `tag` 5.5:1. apple.com's dark secondary text, `#6e6e73` (the product page's stat captions), is 4.1:1 on black and 3.3:1 on `#1d1d1f`, below 4.5:1, so the contract's dark `text-2` is `#86868b` (5.8:1 and 4.7:1) and apple.com's `#6e6e73` is dark `text-3` and `border` (decision 6). The token test holds these minimums on both sides: body and secondary text 4.5:1 on `bg` and `bg-alt`, `text-3` and `border` 3:1, white 4.5:1 on the accent's three grounds.
+Their contrast, computed (WCAG 2): `text` 16.8:1 on `bg` and 15.5:1 on `bg-alt` (dark: 19.3:1, 15.5:1); `text-2` 5.1:1 and 4.7:1 (dark: 5.8:1, 4.7:1); `link` 5.6:1 and 5.1:1 (dark: 7.0:1, 5.6:1); white on `accent` 4.7:1, on `accent-hover` 4.5:1, on `accent-active` 4.9:1; `border` 3.6:1 on `bg` and 3.3:1 on `bg-alt` (dark: 4.1:1, 3.3:1); `tag` 5.5:1; `on-bar` on the bar over `bg` 12.6:1 and over `bg-alt` 12.4:1 (dark: 13.1:1, 12.7:1), a translucent color counted as what it draws over the one under it; `on-menu` on `menu` 12.1:1 (dark: 14.8:1). apple.com's dark secondary text, `#6e6e73` (the product page's stat captions), is 4.1:1 on black and 3.3:1 on `#1d1d1f`, below 4.5:1, so the contract's dark `text-2` is `#86868b` (5.8:1 and 4.7:1) and apple.com's `#6e6e73` is dark `text-3` and `border` (decision 6). The token test holds these minimums on both sides: body and secondary text 4.5:1 on `bg` and `bg-alt`, `text-3` and `border` 3:1, white 4.5:1 on the accent's three grounds, the nav's text 4.5:1 on its bar over both grounds and on its menu.
 
 The palette is fixed: no site redefines a color, and there are no themes (stated: "顏色不能換"); apple.com has one palette. The token test holds tokens.css to the values above.
 
@@ -146,14 +148,14 @@ Where apple.com tunes a size two ways, the store's is taken (32px +0.004em, 48px
 
 ## The catalogue
 
-What apple.com's pages are made of, from the measurements, as the components to build; none exists yet. Each is held to the probes named (`reference/apple.com/results/<page>.json`):
+What apple.com's pages are made of, from the measurements, as the components to build, "(built)" beside each that is. Each is held to the probes named (`reference/apple.com/results/<page>.json`):
 
 | component | apple.com's | from |
 | --- | --- | --- |
 | `cui-btn` (built) | the pill: five sizes (`data-size` sm, lg, xl, cta), the accent, secondary and neutral (`data-variant`), on light and in a dark block, disabled; 12px corners (`cui-btn-rect`; with `data-size="xl"` the store's form button) and the block (`cui-btn-block`), orthogonal classes | `store:button*`, `home:button*`, `home:tile.dark-button*`, `home:gallery.button-neutral`, `bag:form-button*` |
 | `cui-link` (built) | a link in running text (underlined at rest, as apple.com's own `a` is), and the more link (`data-variant="more"`, its text underlined hovered, its chevron, the crate's `MoreLink` and `icon::MORE`) | `iphone:link.*`, `product:link.*`; the chevron `reference/icons/` |
 | `cui-section` (built) | a band: its ground (`data-variant="alt"`, dark with `cui-dark`), its rhythm (the iPhone page's, `data-size="lg"` iPhone 18 Pro's), its content's width (`cui-section-content`), its header, headline and links (the crate's `Section`, `SectionHeader`) | `iphone:section.*`, `product:section.*`, `*:content` |
-| `cui-globalnav` | the bar (44px, 48px below 834px) and its material, its links, its menu on a phone, its curtain | `home:nav*`, `product:nav*` |
+| `cui-globalnav` (built) | the bar (44px, 48px below 834px) on its material, light, dark (`cui-dark`) or clear (`data-variant="clear"`); the site's logo, its links, its search and bag (`icon::SEARCH`, `icon::BAG` and their compact forms); below 834px its menu, the list a popover its button opens over the window, the button's lines an X (`icon::MENU`; the crate's `GlobalNav`); not placed on the page (a site adds `sticky top-0`); no flyouts, so no curtain | `home:nav*`, `home:menu*`, `newsroom:nav*`, `newsroom:menu*`, `product:nav`; the icons `reference/icons/`; the menu `reference/popover/` |
 | `cui-localnav` | the floating local nav: the bar, its product name, its pill buttons | `product:localnav*` |
 | `cui-ribbon` | the message above the content | `bag:ribbon` |
 | `cui-tile` | a tile, square on `bg-alt` or dark, rounded (28px); its headline in three tiers, subhead, callout, buttons | `home:hero.*`, `home:tile.*`, `product:tile.rounded*` |
@@ -189,13 +191,14 @@ Not measured yet: the modals, the search field open, the checkout's forms (not r
 - **The fonts differ between the two sides.** apple.com's values were read with its SF Pro webfonts; ciderui's cases render on Linux in Inter (the stack falls through). So an `apple.com` check compares what does not depend on the text's width (the type's own values, colors, borders, radii, padding, heights where the line height fixes them), and a box that depends on the text's width is a `reference` or `golden` check.
 - **Transitions.** A state is forced with transitions off, and styles are flushed before they return, or a later read lands in flight.
 - **States the protocol cannot force.** `:checked` is not a pseudo-class DevTools forces, so a checked state is proven by an example with `checked` in its markup, against the probe that measured apple.com's classes on a checked copy (`buy:option.checked`); such a probe says so in its name and its spec.
-- **What only Safari or iOS can answer** (the system font's tracking, a section's color scheme, the stack's fetching) is measured on the Mac (`reference/browsers.mjs`'s `safari`, `ios`, `chrome`), not assumed from Chromium.
+- **What only Safari or iOS can answer** (the system font's tracking, a section's color scheme, the stack's fetching, the nav's popover menu) is measured on the Mac (`reference/browsers.mjs`'s `safari`, `ios`, `chrome`), not assumed from Chromium.
+- **States a click makes.** `:popover-open` is not forced either: a case clicks the element that makes it (`click`, the nav's menu button), then moves the pointer off, which a click leaves over what it clicked, hovered.
 
 The token test holds the contract (every component reads only it) and its contrast minimums; the Rust test holds the crate to `cargo fmt`, clippy with warnings as errors, its tests and its documentation, as vpkit's does.
 
 ## Browsers
 
-The kit needs `light-dark()` (vpkit's floor: Chrome 123, Safari 17.5, Firefox 120, stated there). ciderui's claims are measured in Safari 27.0.1 on macOS 27.0.1, Safari 26.5 on the iOS 26.5 simulator, Chrome 155 on macOS and Chromium 151 on Linux; not in Firefox, not on a real iPhone, not on Windows or Android.
+The kit needs `light-dark()` (vpkit's floor: Chrome 123, Safari 17.5, Firefox 120, stated there); the global nav's menu needs `popover`, `:has()` and `@starting-style` besides (measured in the browsers below, `reference/popover/`). ciderui's claims are measured in Safari 27.0.1 on macOS 27.0.1, Safari 26.5 on the iOS 26.5 simulator, Chrome 155 on macOS and Chromium 151 on Linux; not in Firefox, not on a real iPhone, not on Windows or Android.
 
 ## Decisions
 
@@ -217,6 +220,6 @@ The kit needs `light-dark()` (vpkit's floor: Chrome 123, Safari 17.5, Firefox 12
 
 ## Assumptions
 
-- Measured: apple.com's values in `reference/apple.com/` (seven pages, 2026-10-19); the system font's tracking and its fix (`reference/tracking/`); the stack's fonts and fetching (`reference/stack/`); a section's color scheme (`reference/scheme/`); the palette's contrast, computed from the measured values.
+- Measured: apple.com's values in `reference/apple.com/` (eight pages, 2026-10-19); the system font's tracking and its fix (`reference/tracking/`); the stack's fonts and fetching (`reference/stack/`); a section's color scheme (`reference/scheme/`); the palette's contrast, computed from the measured values.
 - Stated by the owner: the sites are the owner's alone, in English, marketing and store; hypertext and the Tailwind CLI; Inter where SF is not; the prefix `cui`; ciderui-zola; the palette fixed; `cui-btn`'s default left to ciderui's recommendation.
-- Guessed: that apple.com's look holds still long enough for its measurements to stay the standard; the dark `divider`, `field` and `tag`; that the global nav's dark bar is its stylesheet's `rgba(22,22,23,.8)`; that iOS 27 on a phone behaves as the iOS 26.5 simulator; that Firefox behaves as the others.
+- Guessed: that apple.com's look holds still long enough for its measurements to stay the standard; the dark `divider`, `field` and `tag`; that Safari on macOS runs the nav's popover menu as Chrome and iOS's Safari do (its automation session would not start for that probe, `reference/popover/`); that a tap opens the menu on an iPhone as a script's click does on the simulator; that iOS 27 on a phone behaves as the iOS 26.5 simulator; that Firefox behaves as the others.

@@ -68,6 +68,15 @@ mkdirSync(new URL('./results/', import.meta.url), { recursive: true });
 writeFileSync(new URL('./results/nav.json', import.meta.url), JSON.stringify({ browser: page.label, date: new Date().toISOString(), ours: OURS, ...result }, null, 1));
 console.log(page.label);
 console.log(JSON.stringify(result, null, 1));
-const pass = Object.keys(OURS).every(k => result[k].iou >= 0.85);
+// the icons compared are the ones the kit ships: each drawing (but the open
+// X, which globalnav.css turns) is in the nav's example, in currentColor
+const example = readFileSync(new URL('../../components/globalnav/examples/globalnav.html', import.meta.url), 'utf8');
+const shipped = Object.entries(OURS).filter(([k]) => k !== 'menu-open').map(([k, svg]) => {
+  const inner = svg.replace(/^<svg[^>]*>|<\/svg>$/g, '').replaceAll('stroke="#000"', 'stroke="currentColor"');
+  const ok = example.includes(inner);
+  console.log(`${ok ? 'ok  ' : 'FAIL'} ${k} is the example's`);
+  return ok;
+});
+const pass = Object.keys(OURS).every(k => result[k].iou >= 0.85) && shipped.every(Boolean);
 console.log(pass ? 'PASS: each shares at least 0.85 of its ink with apple.com\'s' : 'FAIL: below 0.85');
 process.exit(pass ? 0 : 1);

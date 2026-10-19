@@ -37,10 +37,21 @@ for (const name of names) {
 
   for (const c of cases) {
     if (PICK && !PICK.test(c.name)) continue;
-    const page = await open(css, c.html, { touch: c.touch, reducedMotion: c.reducedMotion });
+    const page = await open(css, c.html, { touch: c.touch, reducedMotion: c.reducedMotion, height: c.height });
+    const widths = c.widths ?? WIDTHS;
     try {
-      for (const width of c.widths ?? WIDTHS) {
+      for (const width of widths) {
         await page.resize(width);
+        // the case's clicks, once, at its first width (a menu stays open across
+        // the widths after it); then the pointer leaves for the window's
+        // bottom corner (a click leaves it over what it clicked, hovered: a
+        // state the checks force when they mean it) and the motion runs to
+        // its end
+        if (c.click && width === widths[0]) {
+          for (const selector of [].concat(c.click)) await page.page.click(selector);
+          await page.page.mouse.move(0, (c.height ?? 800) - 1);
+          await page.page.waitForTimeout(c.reducedMotion ? 100 : 1000);
+        }
         for (const k of c.checks) {
           const label = `${name} ${c.name}: ${k.target}${k.state ? ':' + k.state : ''} at ${width}px`;
           const got = await page.read(k.target, k.props, { state: k.state, on: k.on });

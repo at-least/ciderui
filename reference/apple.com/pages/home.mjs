@@ -22,17 +22,17 @@ export default {
     // the bar's parts: its list, a link's box, the logo's, the search's and the bag's and their images
     { name: 'nav.list', select: '#globalnav .globalnav-list', props: [...BOX, ...FLEX, 'margin-left', 'margin-right', 'padding-left', 'padding-right', 'height'], box: true },
     { name: 'nav.link-box', select: '#globalnav .globalnav-item-mac .globalnav-link', props: [...BOX, ...FLEX, 'padding-left', 'padding-right', 'height', 'text-decoration-line'], box: true },
-    { name: 'nav.logo', select: '#globalnav .globalnav-link-apple', props: [...BOX, ...FLEX, 'padding-left', 'padding-right', 'height', 'color', ...MOTION], box: true, states: ['hover'] },
+    { name: 'nav.logo', select: '#globalnav .globalnav-link-apple', props: [...BOX, ...FLEX, 'padding-left', 'padding-right', 'height', 'color', ...MOTION], box: true, position: true, states: ['hover'] },
     { name: 'nav.logo-image', select: '#globalnav .globalnav-link-apple .globalnav-link-image:not([style*="none"]) svg', props: ['width', 'height', 'fill'], box: true },
-    { name: 'nav.search', select: '#globalnav .globalnav-link-search', props: [...BOX, ...FLEX, 'padding-left', 'padding-right', 'height', 'color', ...MOTION], box: true, states: ['hover'] },
+    { name: 'nav.search', select: '#globalnav .globalnav-link-search', props: [...BOX, ...FLEX, 'padding-left', 'padding-right', 'height', 'color', ...MOTION], box: true, position: true, states: ['hover'] },
     { name: 'nav.search-image', select: '#globalnav .globalnav-link-search svg', props: ['width', 'height', 'fill'], box: true },
-    { name: 'nav.bag', select: '#globalnav .globalnav-link-bag', props: [...BOX, ...FLEX, 'padding-left', 'padding-right', 'height', 'color'], box: true, states: ['hover'] },
+    { name: 'nav.bag', select: '#globalnav .globalnav-link-bag', props: [...BOX, ...FLEX, 'padding-left', 'padding-right', 'height', 'color'], box: true, position: true, states: ['hover'] },
     { name: 'nav.bag-image', select: '#globalnav .globalnav-link-bag svg', props: ['width', 'height', 'fill'], box: true },
     // the phone's images: the compact logo, search and bag (17 by 48), and the menu's button
     { name: 'nav.logo-compact', select: '#globalnav .globalnav-link-apple .globalnav-image-compact svg', props: ['width', 'height'], box: true, widths: [390] },
     { name: 'nav.search-compact', select: '#globalnav .globalnav-link-search .globalnav-image-compact svg', props: ['width', 'height'], box: true, widths: [390] },
     { name: 'nav.bag-compact', select: '#globalnav .globalnav-link-bag .globalnav-image-compact svg', props: ['width', 'height'], box: true, widths: [390] },
-    { name: 'nav.menutrigger', select: '#globalnav .globalnav-menutrigger-button', props: [...BOX, ...FLEX, 'width', 'height', 'color', 'opacity', 'cursor', ...MOTION], box: true, widths: [900, 390], states: ['hover'] },
+    { name: 'nav.menutrigger', select: '#globalnav .globalnav-menutrigger-button', props: [...BOX, ...FLEX, 'width', 'height', 'color', 'opacity', 'cursor', ...MOTION], box: true, position: true, widths: [900, 390], states: ['hover'] },
     // its two lines are an SVG's polylines (reference/icons/ reads their points); their box
     { name: 'nav.menutrigger-bread', select: '#globalnav .globalnav-menutrigger-bread-top', props: ['stroke-width'], box: true, widths: [390] },
     { name: 'hero.section', select: '.section-hero', props: BOX, box: true },

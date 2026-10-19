@@ -22,6 +22,12 @@
  *   neutral, -hover, -active the neutral fill: near-black on a light page,
  *                           near-white in a dark block
  *   on-neutral              text on the neutral's fills
+ *   bar                     the global nav's material, translucent over
+ *                           the page under a blur
+ *   on-bar, on-bar-hover    the nav's links and icons, and hovered (the
+ *                           menu's button is on-bar-hover at 0.8 opacity)
+ *   menu, on-menu           the nav's menu opened over the window on a
+ *                           phone, and its links (hovered, on-bar-hover)
  *
  * The rest is not themed: the font stack, the letter-spacing per size, the
  * radii, the focus ring. */
@@ -42,6 +48,11 @@
   --cui-c-neutral-hover: light-dark(#272729, #ffffff);
   --cui-c-neutral-active: light-dark(#18181a, #ededf2);
   --cui-c-on-neutral: light-dark(#ffffff, #000000);
+  --cui-c-bar: light-dark(rgb(255 255 255 / 0.8), rgb(0 0 0 / 0.8));
+  --cui-c-on-bar: light-dark(rgb(0 0 0 / 0.8), rgb(255 255 255 / 0.8));
+  --cui-c-on-bar-hover: light-dark(#000000, #ffffff);
+  --cui-c-menu: light-dark(#fafafc, #161617);
+  --cui-c-on-menu: light-dark(#333336, #e8e8ed);
 
   /* SF on Apple's platforms by its two Apple-only names (-apple-system
      Safari's, BlinkMacSystemFont Chrome's; system-ui would be a font
