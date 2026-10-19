@@ -1,0 +1,73 @@
+/* ciderui — the ribbon: apple.com's message above a page's content, a band
+ * on the alternate ground, its text centered, a more link after it.
+ *
+ * From apple.com's ribbons (reference/apple.com/): ribbon:* (the iPhone
+ * page's, which drops in blue and turns gray), bag:ribbon (the bag's, still).
+ *
+ *   <div class="cui-ribbon" data-variant="announce">
+ *     <div class="cui-ribbon-content">
+ *       <p>Pre-order now. <a class="cui-link" data-variant="more" href="/buy">…Check out now…</a></p>
+ *     </div>
+ *   </div>
+ *
+ * cui-ribbon                 the band, clipping its content as it drops
+ *   data-variant="announce"  as the page shows it, it drops in on the
+ *                            accent, then turns to its ground
+ * cui-ribbon-content         its ground: 16px above and below, the message
+ *                            within 83.33% of the window, centered
+ *
+ * apple.com's: the ground, the type, the padding, the width, the motion (a
+ * drop in 0.8s, the colors 1.6s on in 0.8s, both ease-in-out). ciderui's:
+ * the letter-spacing (tokens.css); the text on the accent the accent's own
+ * white (apple.com's #f5f5f7 for those 1.6s); the link keeps its color
+ * hovered (apple.com's hover stops the link's animation, and its color falls
+ * back to the #f5f5f7 it started from, on the #f5f5f7 ground). */
+
+@layer components {
+  .cui-ribbon {
+    overflow: hidden;
+  }
+
+  .cui-ribbon-content {
+    padding: 16px 8.3333%;
+    color: var(--cui-c-text);
+    background-color: var(--cui-c-bg-alt);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: var(--cui-tracking-14);
+    text-align: center;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .cui-ribbon[data-variant="announce"] {
+    .cui-ribbon-content {
+      animation: cui-ribbon-drop 0.8s ease-in-out both, cui-ribbon-announce 0.8s ease-in-out 1.6s both;
+    }
+
+    .cui-link {
+      animation: cui-ribbon-announce-link 0.8s ease-in-out 1.6s both;
+    }
+  }
+
+  @keyframes cui-ribbon-drop {
+    from {
+      transform: translateY(-100%);
+    }
+  }
+
+  @keyframes cui-ribbon-announce {
+    from {
+      color: var(--cui-c-on-accent);
+      background-color: var(--cui-c-accent);
+    }
+  }
+
+  @keyframes cui-ribbon-announce-link {
+    from {
+      color: var(--cui-c-on-accent);
+    }
+  }
+}

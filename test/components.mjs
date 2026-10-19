@@ -47,9 +47,9 @@ for (const name of names) {
         // bottom corner (a click leaves it over what it clicked, hovered: a
         // state the checks force when they mean it), its keys are pressed,
         // and the motion runs to its end, or for `wait` ms (0: its start)
-        if (c.click && width === widths[0]) {
-          for (const selector of [].concat(c.click)) await page.page.click(selector);
-          await page.page.mouse.move(0, (c.height ?? 800) - 1);
+        if ((c.click || c.wait !== undefined) && width === widths[0]) {
+          for (const selector of [].concat(c.click ?? [])) await page.page.click(selector);
+          if (c.click) await page.page.mouse.move(0, (c.height ?? 800) - 1);
           for (const key of [].concat(c.press ?? [])) await page.page.keyboard.press(key);
           await page.page.waitForTimeout(c.wait ?? (c.reducedMotion ? 100 : 1000));
         }

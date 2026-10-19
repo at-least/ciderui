@@ -12,7 +12,8 @@
 //   click    a selector (or several) clicked in turn once, at the first
 //            width, before its checks (a menu's button), then the keys in
 //            `press` pressed in turn, its motion then run to its end, or for
-//            `wait` ms (0 reads its start)
+//            `wait` ms (0 reads its start); `wait` alone waits so long once
+//            the page shows (a motion that runs as it loads)
 // A check:
 //   target   a selector in the case's markup; props, the values read (a
 //            property, the box: box-height, box-width, box-top, box-left, box-right,
