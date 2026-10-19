@@ -1,0 +1,30 @@
+/* ciderui — the footnote's mark: a link to its note at the text's size and
+ * on its baseline, underlined in the text's color, its digits the font's
+ * numerators (small and raised, drawn by the font: SF's and Inter's).
+ *
+ * From apple.com's product pages (reference/apple.com/): product:footnote*
+ * (iPhone 18 Pro's, a dark page), airpods:footnote* (AirPods Pro's, a light
+ * page). The notes themselves are the footer's (cui-footer-notes).
+ *
+ *   <p>Up to 25 hours of video playback<sup class="cui-footnote"><a href="#footnote-1" aria-label="Footnote 1">1</a></sup></p>
+ *
+ * cui-footnote  on a <sup>, its link within it
+ *
+ * apple.com's: the size, the baseline, the numerators, the underline, the
+ * color. ciderui's: nothing but the letter-spacing, the text's. */
+
+@layer components {
+  .cui-footnote {
+    position: relative;
+    top: 0;
+    font-size: inherit;
+    line-height: inherit;
+    vertical-align: baseline;
+    font-feature-settings: "numr";
+
+    a {
+      color: inherit;
+      text-decoration-line: underline;
+    }
+  }
+}

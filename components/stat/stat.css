@@ -1,0 +1,92 @@
+/* ciderui — the stat: a product page's number, a caption above it and one
+ * below, in the secondary text.
+ *
+ * From apple.com's product pages (reference/apple.com/): product:stat.*
+ * (iPhone 18 Pro's, a dark page), airpods:stat.* (AirPods Pro's, a large
+ * one, a light page).
+ *
+ *   <p class="cui-stat">
+ *     <span class="cui-stat-caption">Up to</span>
+ *     <span class="cui-stat-value">25 more hours</span>
+ *     <span class="cui-stat-caption">of video playback</span>
+ *   </p>
+ *
+ * cui-stat           2px in above and below
+ *   data-size="lg"   a large one: 4px in above
+ * cui-stat-caption   12px on 16px at 600, the secondary text (lg: 19px,
+ *                    17px below 1069px, 14px below 735px)
+ * cui-stat-value     28px on 28px at 600, 2px from its captions (lg: 80px,
+ *                    64px, 48px, no gap)
+ *
+ * apple.com's: the type, the gaps, the colors on a light page. ciderui's:
+ * the letter-spacing (tokens.css); the dark captions the contract's dark
+ * secondary text, #86868b (apple.com's #6e6e73, 4.1:1 on black: decision
+ * 6); no margin around it (apple.com's large one's 20px and 40px, the
+ * page's). */
+
+@layer components {
+  .cui-stat {
+    margin: 0;
+    padding: 2px 0;
+  }
+
+  .cui-stat-caption {
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-12);
+    color: var(--cui-c-text-2);
+  }
+
+  .cui-stat-value {
+    display: block;
+    margin: 2px 0;
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-28);
+    color: var(--cui-c-text);
+  }
+
+  .cui-stat[data-size="lg"] {
+    padding-top: 4px;
+
+    .cui-stat-caption {
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: var(--cui-tracking-14);
+
+      @media (width >= 735px) {
+        font-size: 17px;
+        line-height: 21px;
+        letter-spacing: var(--cui-tracking-17);
+      }
+
+      @media (width >= 1069px) {
+        font-size: 19px;
+        line-height: 23px;
+        letter-spacing: var(--cui-tracking-19);
+      }
+    }
+
+    .cui-stat-value {
+      margin: 0;
+      font-size: 48px;
+      line-height: 48px;
+      letter-spacing: var(--cui-tracking-48);
+
+      @media (width >= 735px) {
+        font-size: 64px;
+        line-height: 64px;
+        letter-spacing: var(--cui-tracking-64);
+      }
+
+      @media (width >= 1069px) {
+        font-size: 80px;
+        line-height: 80px;
+        letter-spacing: var(--cui-tracking-80);
+      }
+    }
+  }
+}

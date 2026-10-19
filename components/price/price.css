@@ -1,0 +1,37 @@
+/* ciderui — the price: the buy page's price under its title, its amounts
+ * kept whole.
+ *
+ * From apple.com's buy page (reference/apple.com/): buy:price.header (iPhone
+ * 18 Pro's), buy:price.amount (an amount).
+ *
+ *   <p class="cui-price">From <span class="cui-price-amount">$1099</span> or <span class="cui-price-amount">$45.79/mo.</span> for 24 mo.</p>
+ *
+ * cui-price         17px on 25px at 600 (12px on 16px below 735px), the
+ *                   text's color
+ * cui-price-amount  an amount, never broken across lines
+ *
+ * apple.com's: the type, the color, the amounts whole. ciderui's: the
+ * letter-spacing (tokens.css); its step at 735px by the window (apple.com's
+ * store's by a phone's screen: 12px in a 735px window on a 735px screen). */
+
+@layer components {
+  .cui-price {
+    margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-12);
+    color: var(--cui-c-text);
+
+    @media (width >= 735px) {
+      font-size: 17px;
+      line-height: 25px;
+      letter-spacing: var(--cui-tracking-17);
+    }
+  }
+
+  .cui-price-amount {
+    display: inline-block;
+    white-space: nowrap;
+  }
+}

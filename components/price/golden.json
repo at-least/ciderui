@@ -1,0 +1,7 @@
+{
+ "price | .cui-price | 1600 | letter-spacing": "0.0493px",
+ "price | .cui-price | 1200 | letter-spacing": "0.0493px",
+ "price | .cui-price | 900 | letter-spacing": "0.0493px",
+ "price | .cui-price | 390 | letter-spacing": "-0.126px",
+ "price-step | .cui-price | 735 | font-size": "17px"
+}

@@ -1,0 +1,14 @@
+{
+ "footnote | .cui-footnote | 1600 | font-size": "17px",
+ "footnote | .cui-footnote | 1200 | font-size": "17px",
+ "footnote | .cui-footnote | 900 | font-size": "17px",
+ "footnote | .cui-footnote | 390 | font-size": "17px",
+ "dark | .cui-footnote a | 1600 | color": "rgb(245, 245, 247)",
+ "dark | .cui-footnote a | 1600 | text-decoration-line": "underline",
+ "dark | .cui-footnote a | 1200 | color": "rgb(245, 245, 247)",
+ "dark | .cui-footnote a | 1200 | text-decoration-line": "underline",
+ "dark | .cui-footnote a | 900 | color": "rgb(245, 245, 247)",
+ "dark | .cui-footnote a | 900 | text-decoration-line": "underline",
+ "dark | .cui-footnote a | 390 | color": "rgb(245, 245, 247)",
+ "dark | .cui-footnote a | 390 | text-decoration-line": "underline"
+}
