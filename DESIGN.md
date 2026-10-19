@@ -52,7 +52,7 @@ Every component follows these.
 
 12. **Icons are inline SVG**, from the crate, in `currentColor`. apple.com draws its chevrons and plus signs with its own icon font (`SF Pro Icons`: `product:link.more-icon`, `buy:accordion.icon`), which is Apple's; ciderui draws them as SVG, so a page needs no font and no `data:` image for them (vpkit's decision 13).
 
-13. **Proof.** A check's source is `apple.com` (its computed value equals the one `reference/apple.com/results/` records for the probe it names, at the width it names, for what is meant to be apple.com's: the colors at rest, hovered and pressed, the type, the borders, the radii, the padding, the heights, the motion), `reference` (another rendering of ciderui: inside a dark section against alone, a touch screen's hover against rest) or `golden` (equal to `golden.json`: a part apple.com has no instance of, or a departure from it, with the check's `why`). No list of known differences: every departure is a golden check with its reason beside it.
+13. **Proof.** A check's source is `apple.com` (its computed value equals the one `reference/apple.com/results/` records for the probe it names, at the width it names, for what is meant to be apple.com's: the colors at rest, hovered and pressed, the type, the borders, the radii, the padding, the heights, the motion), `rest` (a touch screen's hovered element against itself at rest) or `golden` (equal to `golden.json`: a part apple.com has no instance of, or a departure from it, with the check's `why`); a source comparing one rendering of ciderui with another (inside a dark block against alone) is added with the first component that needs it. No list of known differences: every departure is a golden check with its reason beside it.
 
 14. **Ships complete.** The stylesheet with its header (what it is, from which page and probe, the markup, the attributes and parts, what is apple.com's and what is ciderui's), its examples, its test with its golden values, and the crate's component where its markup is more than one element. One commit per component, and one per step of any change, each with the tests green.
 
@@ -150,7 +150,7 @@ What apple.com's pages are made of, from the measurements, as the components to 
 
 | component | apple.com's | from |
 | --- | --- | --- |
-| `cui-btn` (built) | the pill: five sizes (`data-size` sm, lg, xl, cta), the accent, secondary and neutral (`data-variant`), on light and in a dark block, disabled; the store's form button's corners (`cui-btn-rect`) and the block (`cui-btn-block`), orthogonal classes | `store:button*`, `home:button*`, `home:tile.dark-button*`, `home:gallery.button-neutral`, `bag:form-button*` |
+| `cui-btn` (built) | the pill: five sizes (`data-size` sm, lg, xl, cta), the accent, secondary and neutral (`data-variant`), on light and in a dark block, disabled; 12px corners (`cui-btn-rect`; with `data-size="xl"` the store's form button) and the block (`cui-btn-block`), orthogonal classes | `store:button*`, `home:button*`, `home:tile.dark-button*`, `home:gallery.button-neutral`, `bag:form-button*` |
 | `cui-link` | a link, and the "more" link with its chevron | `product:link.more*`, `product:section.header-link` |
 | `cui-section` | a section's ground, alternate or dark, and its content's width | `product:section*`, `product:content` |
 | `cui-globalnav` | the bar (44px, 48px below 834px) and its material, its links, its menu on a phone, its curtain | `home:nav*`, `product:nav*` |

@@ -16,7 +16,8 @@
  * data-size     sm 24px (12px text); (none) 36px (14px); lg 44px (17px);
  *               xl 56px (17px); cta, a hero's call to action, 36px below
  *               735px and 44px from it (apple.com's tile buttons)
- * cui-btn-rect  the store's form button's 12px corners, its text wrapping
+ * cui-btn-rect  12px corners, its text wrapping: with data-size="xl", the
+ *               store's form button (56px)
  * cui-btn-block a block, 8px corners
  * :disabled     dimmed to 0.42, no hover, no press
  *

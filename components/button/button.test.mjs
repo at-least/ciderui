@@ -94,7 +94,8 @@ export const cases = [
       ...[['', 'button.disabled'], ['secondary', 'button.secondary.disabled'], ['neutral', 'button.neutral.disabled']].flatMap(([v, probe]) => {
         const target = v ? `.cui-btn[data-variant="${v}"]` : '.cui-btn:not([data-variant])';
         return [
-          { target, props: [...COLORS, 'opacity', 'cursor'], apple: ['store', probe] },
+          // a <button>: the class over the preflight's reset of the element
+          { target, props: [...LOOK, ...COLORS], apple: ['store', probe] },
           { target, state: 'hover', props: COLORS, golden: 'a disabled button keeps its ground under the pointer, where apple.com\'s changes it' },
         ];
       }),
