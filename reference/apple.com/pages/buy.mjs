@@ -29,6 +29,13 @@ export default {
     { name: 'swatch.checked', inject: SWATCH, into: '.colornav-items, .rc-dimension-colornav ul, .rc-dimension-colornav', select: '.colornav-swatch', props: [...BOX, 'width', 'height', 'outline-color', 'outline-width', 'outline-offset'], box: true },
     { name: 'swatch.checked-link', inject: SWATCH, into: '.colornav-items, .rc-dimension-colornav ul, .rc-dimension-colornav', select: '.colornav-link', props: [...BOX, 'width', 'height'], box: true },
     { name: 'swatch.label', select: '.colornav-label', props: [...TYPE, 'display'] },
+    // the swatches' list and an item's parts: the radio over the ring, the
+    // color's name (hidden but read), the ring focused (on the copy)
+    { name: 'swatch.list', select: '.colornav-items', props: ['display', 'flex-wrap', 'padding-top', 'padding-bottom', 'margin-left', 'margin-right'], box: true },
+    { name: 'swatch.item', select: '.colornav-item:not([data-cui-injected])', props: ['margin-top', 'margin-right', 'margin-bottom', 'margin-left'], box: true },
+    { name: 'swatch.input', select: '.colornav-item:not([data-cui-injected]) .colornav-value', props: ['position', 'top', 'left', 'width', 'height', 'opacity', 'margin-top'], box: true },
+    { name: 'swatch.name', select: '.colornav-item:not([data-cui-injected]) .colornav-label', props: ['position', 'width', 'height', 'clip', 'clip-path', 'overflow'] },
+    { name: 'swatch.focus', inject: SWATCH, into: '.colornav-items, .rc-dimension-colornav ul, .rc-dimension-colornav', select: '.colornav-link', stateOn: '#cui-swatch', props: ['outline-style', 'outline-width', 'outline-color', 'outline-offset', 'border-top-color'], states: ['focus-visible'] },
     { name: 'accordion.item', select: '.rc-accordion-item', props: BOX, box: true },
     { name: 'accordion.button', select: '.rc-accordion-button', props: [...TYPE, ...BOX, 'width'], box: true, states: ['hover', 'focus-visible'] },
     { name: 'accordion.title', select: '.rc-accordion-title', props: TYPE },
