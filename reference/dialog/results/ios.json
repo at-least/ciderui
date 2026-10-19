@@ -1,0 +1,289 @@
+{
+ "browser": "safari 26.5 on iOS 26.5",
+ "date": "2026-10-19T14:30:10.645Z",
+ "closed": {
+  "left": 0,
+  "scrolls": null,
+  "hit": null,
+  "position": "fixed",
+  "width": 0,
+  "windowHeight": 714,
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "open": false,
+  "rootOverflow": "visible",
+  "height": 0,
+  "focus": "BODY",
+  "command": true,
+  "windowWidth": 402,
+  "modal": false,
+  "top": 0
+ },
+ "opened": {
+  "left": 0,
+  "scrolls": true,
+  "hit": "modal",
+  "position": "fixed",
+  "width": 402,
+  "windowHeight": 714,
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "open": true,
+  "rootOverflow": "hidden",
+  "height": 714,
+  "focus": "close",
+  "command": true,
+  "windowWidth": 402,
+  "modal": true,
+  "top": 0
+ },
+ "closedAgain": {
+  "left": 0,
+  "scrolls": null,
+  "hit": null,
+  "position": "fixed",
+  "width": 0,
+  "windowHeight": 714,
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "open": false,
+  "rootOverflow": "visible",
+  "height": 0,
+  "focus": "BODY",
+  "command": true,
+  "windowWidth": 402,
+  "modal": false,
+  "top": 0
+ },
+ "samples": [
+  {
+   "frames": [
+    [
+     0,
+     1,
+     1,
+     false
+    ],
+    [
+     1,
+     1,
+     1,
+     false
+    ],
+    [
+     23,
+     0.00483,
+     0.001724,
+     true
+    ],
+    [
+     49,
+     0.187396,
+     0.187396,
+     true
+    ],
+    [
+     51,
+     0.21352,
+     0.21352,
+     true
+    ],
+    [
+     76,
+     0.619198,
+     0.619198,
+     true
+    ],
+    [
+     84,
+     0.758857,
+     0.758857,
+     true
+    ],
+    [
+     101,
+     0.934249,
+     0.934249,
+     true
+    ],
+    [
+     118,
+     0.99981,
+     0.99981,
+     true
+    ],
+    [
+     135,
+     1,
+     1,
+     true
+    ],
+    [
+     151,
+     1,
+     1,
+     true
+    ],
+    [
+     168,
+     1,
+     1,
+     true
+    ],
+    [
+     184,
+     1,
+     1,
+     true
+    ],
+    [
+     201,
+     1,
+     1,
+     true
+    ],
+    [
+     218,
+     1,
+     1,
+     true
+    ],
+    [
+     234,
+     1,
+     1,
+     true
+    ],
+    [
+     251,
+     1,
+     1,
+     true
+    ],
+    [
+     268,
+     1,
+     1,
+     true
+    ],
+    [
+     284,
+     1,
+     1,
+     true
+    ],
+    [
+     301,
+     1,
+     1,
+     true
+    ],
+    [
+     318,
+     1,
+     1,
+     true
+    ],
+    [
+     334,
+     1,
+     1,
+     true
+    ],
+    [
+     351,
+     1,
+     1,
+     true
+    ],
+    [
+     368,
+     1,
+     1,
+     true
+    ],
+    [
+     386,
+     1,
+     1,
+     true
+    ],
+    [
+     401,
+     1,
+     1,
+     true
+    ],
+    [
+     418,
+     1,
+     1,
+     true
+    ],
+    [
+     434,
+     1,
+     1,
+     true
+    ],
+    [
+     451,
+     1,
+     1,
+     true
+    ],
+    [
+     468,
+     1,
+     1,
+     true
+    ],
+    [
+     484,
+     1,
+     1,
+     true
+    ],
+    [
+     501,
+     1,
+     1,
+     true
+    ],
+    [
+     518,
+     1,
+     1,
+     true
+    ],
+    [
+     534,
+     1,
+     1,
+     true
+    ],
+    [
+     551,
+     1,
+     1,
+     true
+    ],
+    [
+     568,
+     1,
+     1,
+     true
+    ],
+    [
+     584,
+     1,
+     1,
+     true
+    ],
+    [
+     601,
+     1,
+     1,
+     true
+    ]
+   ]
+  }
+ ]
+}

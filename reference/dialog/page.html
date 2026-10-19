@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A dialog as the store's overlay</title>
+<style>
+  /* the modal's techniques at their smallest: a <dialog> the page's button
+     opens with no script (command="show-modal"), the layer over the window
+     that scrolls a panel taller than it, the page dimmed under it
+     (::backdrop) and held, fading in; a close button that is a form's
+     (method="dialog") */
+  html, body { margin: 0; }
+  body { height: 3000px; font: 17px/25px system-ui; -webkit-text-size-adjust: 100%; }
+  #modal {
+    position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none;
+    margin: 0; padding: 0; border: 0; background: none; overflow-y: auto; overscroll-behavior: contain; outline: none;
+  }
+  #modal::backdrop { background-color: rgb(0 0 0 / 0.48); }
+  #modal[open], #modal[open]::backdrop { transition: opacity 100ms ease-in-out; }
+  @starting-style {
+    #modal[open], #modal[open]::backdrop { opacity: 0; }
+  }
+  html:has(#modal:modal) { overflow: hidden; }
+  .panel { box-sizing: border-box; width: 100%; max-width: 816px; margin: 40px auto; padding: 0 76px 60px; border-radius: 18px; background: #fff; }
+  .panel form { display: flex; justify-content: flex-end; margin: 0 -56px 12px 0; padding-top: 20px; }
+  #close { width: 44px; height: 44px; padding: 0; border: 0; background: none; }
+  .tall { height: 2000px; }
+</style>
+</head>
+<body>
+<p><a id="before" href="#before">Before</a></p>
+<button id="button" commandfor="modal" command="show-modal">Show more</button>
+<dialog id="modal" aria-labelledby="title">
+  <div class="panel">
+    <form method="dialog"><button id="close" aria-label="Close">×</button></form>
+    <h2 id="title">Which model is right for you?</h2>
+    <p><a id="first" href="#first">A link</a></p>
+    <div class="tall"></div>
+  </div>
+</dialog>
+<p><a id="after" href="#after">After</a></p>
+</body>
+</html>
