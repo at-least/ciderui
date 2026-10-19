@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/iphone-18-pro/",
  "finalUrl": "https://www.apple.com/iphone-18-pro/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T04:10:28.616Z",
+ "date": "2026-10-19T04:30:59.360Z",
  "widths": {
   "390": {
    "type.none": {
@@ -621,6 +621,44 @@
     "box": {
      "width": 36,
      "height": 36
+    }
+   },
+   "link.inline": {
+    "html": "<a href=\"#cui\">a link</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(41, 151, 255)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(41, 151, 255)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     },
+     "active": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     }
     }
    },
    "link.more": {
@@ -1518,6 +1556,44 @@
      "height": 36
     }
    },
+   "link.inline": {
+    "html": "<a href=\"#cui\">a link</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(41, 151, 255)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(41, 151, 255)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     },
+     "active": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
    "link.more": {
     "html": "<a href=\"/us/shop/goto/apple_upgrade\" data-analytics-title=\"learn more - apple upgrade\" aria-label=\"Learn more, Apple Upgrade\" class=\"icon-wrapper ribbon-link\"><span class=\"icon-copy\">Learn more</span><span class=\"icon icon-after more\" aria",
     "styles": {
@@ -2413,6 +2489,44 @@
      "height": 36
     }
    },
+   "link.inline": {
+    "html": "<a href=\"#cui\">a link</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(41, 151, 255)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(41, 151, 255)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     },
+     "active": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
    "link.more": {
     "html": "<a href=\"/us/shop/goto/apple_upgrade\" data-analytics-title=\"learn more - apple upgrade\" aria-label=\"Learn more, Apple Upgrade\" class=\"icon-wrapper ribbon-link\"><span class=\"icon-copy\">Learn more</span><span class=\"icon icon-after more\" aria",
     "styles": {
@@ -3306,6 +3420,44 @@
     "box": {
      "width": 36,
      "height": 36
+    }
+   },
+   "link.inline": {
+    "html": "<a href=\"#cui\">a link</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(41, 151, 255)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(41, 151, 255)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     },
+     "active": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(41, 151, 255)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(41, 151, 255)",
+      "text-underline-offset": "auto"
+     }
     }
    },
    "link.more": {

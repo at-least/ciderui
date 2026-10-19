@@ -1,0 +1,1228 @@
+{
+ "url": "https://www.apple.com/iphone/",
+ "finalUrl": "https://www.apple.com/iphone/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T04:30:58.914Z",
+ "widths": {
+  "390": {
+   "page.body": {
+    "html": "<body class=\"page-overview \" data-component-list=\"FocusManager DeepLink\" data-anim-scroll-group=\"body\" style=\"transition: opacity 0.5s; opacity: 1;\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-act",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "link.more": {
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_duo\" class=\"icon-wrapper\" data-analytics-title=\"pre-order - iphone duo\" aria-label=\"Pre-order, iPhone Duo\">\n                                                        <span class=\"icon-copy\">Pre-order</",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "display": "block",
+     "text-align": "center",
+     "white-space": "normal",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "display": "block",
+      "text-align": "center",
+      "white-space": "normal",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "display": "block",
+      "text-align": "center",
+      "white-space": "normal",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1"
+     }
+    }
+   },
+   "link.more-copy": {
+    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.more-icon": {
+    "html": "<span inert=\"\" aria-hidden=\"true\" class=\"icon icon-after more\"></span>",
+    "styles": {
+     "display": "inline",
+     "font-size": "14px",
+     "line-height": "18px",
+     "padding-left": "0px",
+     "margin-left": "0px",
+     "vertical-align": "baseline",
+     "position": "static",
+     "top": "auto"
+    },
+    "box": {
+     "width": 9.1875,
+     "height": 16
+    }
+   },
+   "link.more-glyph": {
+    "html": "<span inert=\"\" aria-hidden=\"true\" class=\"icon icon-after more\"></span>",
+    "styles": {
+     "content": "\"\"",
+     "font-family": "\"SF Pro Icons\"",
+     "font-size": "14px",
+     "line-height": "14px",
+     "font-weight": "400",
+     "display": "inline",
+     "padding-left": "3.36px",
+     "margin-left": "0px",
+     "top": "0px",
+     "position": "static",
+     "vertical-align": "baseline",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none"
+    }
+   },
+   "link.inline": {
+    "html": "<a href=\"#cui\">a link</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     },
+     "active": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.section-header": {
+    "html": "<a href=\"/iphone/compare/\" data-analytics-title=\"compare all models\" class=\"action-handler icon-wrapper section-header-cta-link\"><span class=\"icon-copy\">Compare all&nbsp;models</span><span class=\"icon icon-after more\" aria-hidden=\"true\"></s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "ribbon": {
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\">\n\t\t\t<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div cl",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 390,
+     "height": 72
+    }
+   },
+   "ribbon.content": {
+    "html": "<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "320px",
+     "min-height": "0px",
+     "max-width": "none",
+     "text-align": "center"
+    },
+    "box": {
+     "width": 324.984375,
+     "height": 40
+    }
+   },
+   "ribbon.link": {
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(245, 245, 247)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(245, 245, 247)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(245, 245, 247)",
+      "text-underline-offset": "auto"
+     }
+    }
+   }
+  },
+  "900": {
+   "page.body": {
+    "html": "<body class=\"page-overview \" data-component-list=\"FocusManager DeepLink\" data-anim-scroll-group=\"body\" style=\"transition: opacity 0.5s; opacity: 1;\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-act",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "link.more": {
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_duo\" class=\"icon-wrapper\" data-analytics-title=\"pre-order - iphone duo\" aria-label=\"Pre-order, iPhone Duo\">\n                                                        <span class=\"icon-copy\">Pre-order</",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "display": "block",
+     "text-align": "center",
+     "white-space": "normal",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "display": "block",
+      "text-align": "center",
+      "white-space": "normal",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "display": "block",
+      "text-align": "center",
+      "white-space": "normal",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1"
+     }
+    }
+   },
+   "link.more-copy": {
+    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.more-icon": {
+    "html": "<span inert=\"\" aria-hidden=\"true\" class=\"icon icon-after more\"></span>",
+    "styles": {
+     "display": "inline",
+     "font-size": "14px",
+     "line-height": "18px",
+     "padding-left": "0px",
+     "margin-left": "0px",
+     "vertical-align": "baseline",
+     "position": "static",
+     "top": "auto"
+    },
+    "box": {
+     "width": 9.1875,
+     "height": 16
+    }
+   },
+   "link.more-glyph": {
+    "html": "<span inert=\"\" aria-hidden=\"true\" class=\"icon icon-after more\"></span>",
+    "styles": {
+     "content": "\"\"",
+     "font-family": "\"SF Pro Icons\"",
+     "font-size": "14px",
+     "line-height": "14px",
+     "font-weight": "400",
+     "display": "inline",
+     "padding-left": "3.36px",
+     "margin-left": "0px",
+     "top": "0px",
+     "position": "static",
+     "vertical-align": "baseline",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none"
+    }
+   },
+   "link.inline": {
+    "html": "<a href=\"#cui\">a link</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     },
+     "active": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.section-header": {
+    "html": "<a href=\"/iphone/compare/\" data-analytics-title=\"compare all models\" class=\"action-handler icon-wrapper section-header-cta-link\"><span class=\"icon-copy\">Compare all&nbsp;models</span><span class=\"icon icon-after more\" aria-hidden=\"true\"></s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "ribbon": {
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\">\n\t\t\t<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div cl",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 900,
+     "height": 52
+    }
+   },
+   "ribbon.content": {
+    "html": "<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "320px",
+     "min-height": "0px",
+     "max-width": "none",
+     "text-align": "center"
+    },
+    "box": {
+     "width": 749.984375,
+     "height": 20
+    }
+   },
+   "ribbon.link": {
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(245, 245, 247)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(245, 245, 247)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(245, 245, 247)",
+      "text-underline-offset": "auto"
+     }
+    }
+   }
+  },
+  "1200": {
+   "page.body": {
+    "html": "<body class=\"page-overview \" data-component-list=\"FocusManager DeepLink\" data-anim-scroll-group=\"body\" style=\"transition: opacity 0.5s; opacity: 1;\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-act",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "link.more": {
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_duo\" class=\"icon-wrapper\" data-analytics-title=\"pre-order - iphone duo\" aria-label=\"Pre-order, iPhone Duo\">\n                                                        <span class=\"icon-copy\">Pre-order</",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "20px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "display": "block",
+     "text-align": "center",
+     "white-space": "normal",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "20px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "display": "block",
+      "text-align": "center",
+      "white-space": "normal",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "20px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "display": "block",
+      "text-align": "center",
+      "white-space": "normal",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1"
+     }
+    }
+   },
+   "link.more-copy": {
+    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "20px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "20px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.more-icon": {
+    "html": "<span inert=\"\" aria-hidden=\"true\" class=\"icon icon-after more\"></span>",
+    "styles": {
+     "display": "inline",
+     "font-size": "17px",
+     "line-height": "20px",
+     "padding-left": "0px",
+     "margin-left": "0px",
+     "vertical-align": "baseline",
+     "position": "static",
+     "top": "auto"
+    },
+    "box": {
+     "width": 11.21875,
+     "height": 20
+    }
+   },
+   "link.more-glyph": {
+    "html": "<span inert=\"\" aria-hidden=\"true\" class=\"icon icon-after more\"></span>",
+    "styles": {
+     "content": "\"\"",
+     "font-family": "\"SF Pro Icons\"",
+     "font-size": "17px",
+     "line-height": "17px",
+     "font-weight": "400",
+     "display": "inline",
+     "padding-left": "4.08px",
+     "margin-left": "0px",
+     "top": "0px",
+     "position": "static",
+     "vertical-align": "baseline",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none"
+    }
+   },
+   "link.inline": {
+    "html": "<a href=\"#cui\">a link</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     },
+     "active": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.section-header": {
+    "html": "<a href=\"/iphone/compare/\" data-analytics-title=\"compare all models\" class=\"action-handler icon-wrapper section-header-cta-link\"><span class=\"icon-copy\">Compare all&nbsp;models</span><span class=\"icon icon-after more\" aria-hidden=\"true\"></s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "ribbon": {
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\">\n\t\t\t<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div cl",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 1200,
+     "height": 52
+    }
+   },
+   "ribbon.content": {
+    "html": "<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "320px",
+     "min-height": "0px",
+     "max-width": "none",
+     "text-align": "center"
+    },
+    "box": {
+     "width": 999.984375,
+     "height": 20
+    }
+   },
+   "ribbon.link": {
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(245, 245, 247)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(245, 245, 247)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(245, 245, 247)",
+      "text-underline-offset": "auto"
+     }
+    }
+   }
+  },
+  "1600": {
+   "page.body": {
+    "html": "<body class=\"page-overview \" data-component-list=\"FocusManager DeepLink\" data-anim-scroll-group=\"body\" style=\"transition: opacity 0.5s; opacity: 1;\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-act",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "link.more": {
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_duo\" class=\"icon-wrapper\" data-analytics-title=\"pre-order - iphone duo\" aria-label=\"Pre-order, iPhone Duo\">\n                                                        <span class=\"icon-copy\">Pre-order</",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "20px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "display": "block",
+     "text-align": "center",
+     "white-space": "normal",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "20px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "display": "block",
+      "text-align": "center",
+      "white-space": "normal",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "20px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "display": "block",
+      "text-align": "center",
+      "white-space": "normal",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1"
+     }
+    }
+   },
+   "link.more-copy": {
+    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "20px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "20px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.more-icon": {
+    "html": "<span inert=\"\" aria-hidden=\"true\" class=\"icon icon-after more\"></span>",
+    "styles": {
+     "display": "inline",
+     "font-size": "17px",
+     "line-height": "20px",
+     "padding-left": "0px",
+     "margin-left": "0px",
+     "vertical-align": "baseline",
+     "position": "static",
+     "top": "auto"
+    },
+    "box": {
+     "width": 11.21875,
+     "height": 20
+    }
+   },
+   "link.more-glyph": {
+    "html": "<span inert=\"\" aria-hidden=\"true\" class=\"icon icon-after more\"></span>",
+    "styles": {
+     "content": "\"\"",
+     "font-family": "\"SF Pro Icons\"",
+     "font-size": "17px",
+     "line-height": "17px",
+     "font-weight": "400",
+     "display": "inline",
+     "padding-left": "4.08px",
+     "margin-left": "0px",
+     "top": "0px",
+     "position": "static",
+     "vertical-align": "baseline",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none"
+    }
+   },
+   "link.inline": {
+    "html": "<a href=\"#cui\">a link</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     },
+     "active": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.section-header": {
+    "html": "<a href=\"/iphone/compare/\" data-analytics-title=\"compare all models\" class=\"action-handler icon-wrapper section-header-cta-link\"><span class=\"icon-copy\">Compare all&nbsp;models</span><span class=\"icon icon-after more\" aria-hidden=\"true\"></s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "ribbon": {
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\">\n\t\t\t<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div cl",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 1600,
+     "height": 52
+    }
+   },
+   "ribbon.content": {
+    "html": "<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(245, 245, 247)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(245, 245, 247)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "320px",
+     "min-height": "0px",
+     "max-width": "none",
+     "text-align": "center"
+    },
+    "box": {
+     "width": 1333.328125,
+     "height": 20
+    }
+   },
+   "ribbon.link": {
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(245, 245, 247)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(245, 245, 247)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(245, 245, 247)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(245, 245, 247)",
+      "text-underline-offset": "auto"
+     }
+    }
+   }
+  }
+ }
+}

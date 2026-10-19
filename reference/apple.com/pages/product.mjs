@@ -31,6 +31,8 @@ export default {
     { name: 'tile.rounded-light', select: 'main .theme-light .tile.tile-rounded, main .tile.tile-rounded:not(.theme-dark *)', props: [...BOX], box: true },
     { name: 'paddle', select: 'main .paddlenav-arrow', props: [...BOX, 'width', 'height', 'color', 'opacity', ...BLUR, ...MOTION], box: true, states: ['hover', 'active'] },
     { name: 'paddle.icon', select: 'main .paddlenav-arrow svg', props: ['width', 'height', 'fill', 'color'], box: true },
+    // a link in running text in a dark section: apple.com's own `a`, on markup added to it
+    { name: 'link.inline', inject: '<p>Text with <a href="#cui">a link</a> in it.</p>', into: 'main section.section.theme-dark', select: 'a', props: [...TYPE, ...LINK], states: ['hover', 'active'] },
     { name: 'link.more', select: 'main a.icon-wrapper', props: [...TYPE, ...LINK], states: ['hover'] },
     { name: 'link.more-icon', select: 'main a.icon-wrapper .icon-after', props: ['font-family', 'font-size', 'color', 'padding-left', 'margin-left', 'top', 'position', 'content'], pseudo: '::after' },
     { name: 'stat.value', select: 'main .stat-value', props: TYPE },

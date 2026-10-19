@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/",
  "finalUrl": "https://www.apple.com/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T04:18:21.063Z",
+ "date": "2026-10-19T04:30:18.523Z",
  "widths": {
   "390": {
    "type.none": {
@@ -1245,6 +1245,33 @@
      "min-width": "0px",
      "min-height": "0px",
      "max-width": "none"
+    }
+   },
+   "footer.sosumi-link": {
+    "html": "<a href=\"/HRAccuracy/\">apple.com/HRAccuracy</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.72)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0.72)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+      "text-underline-offset": "auto"
+     }
     }
    },
    "footer.title": {
@@ -2633,6 +2660,33 @@
      "max-width": "none"
     }
    },
+   "footer.sosumi-link": {
+    "html": "<a href=\"/HRAccuracy/\">apple.com/HRAccuracy</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.72)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0.72)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
    "footer.title": {
     "html": "<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>",
     "styles": {
@@ -3171,7 +3225,7 @@
     }
    },
    "hero.subhead": {
-    "html": "<p class=\"tile-subhead typography-tile-subhead\"><span class=\"visuallyhidden\">Hello, hello.</span><span class=\"subhead-left\" aria-hidden=\"true\" style=\"transform: matrix(1, 0, 0, 1, 0, 0);\"><span class=\"subhead-end\" style=\"opacity: 1;\">Hello,",
+    "html": "<p class=\"tile-subhead typography-tile-subhead\"><span class=\"visuallyhidden\">Hello, hello.</span><span class=\"subhead-left\" aria-hidden=\"true\" style=\"transform: matrix(1, 0, 0, 1, 10.249, 0);\"><span class=\"subhead-end\" style=\"opacity: 0.452",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -4017,6 +4071,33 @@
      "min-width": "0px",
      "min-height": "0px",
      "max-width": "none"
+    }
+   },
+   "footer.sosumi-link": {
+    "html": "<a href=\"/HRAccuracy/\">apple.com/HRAccuracy</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.72)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0.72)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+      "text-underline-offset": "auto"
+     }
     }
    },
    "footer.title": {
@@ -5403,6 +5484,33 @@
      "min-width": "0px",
      "min-height": "0px",
      "max-width": "none"
+    }
+   },
+   "footer.sosumi-link": {
+    "html": "<a href=\"/HRAccuracy/\">apple.com/HRAccuracy</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgba(0, 0, 0, 0.72)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgba(0, 0, 0, 0.72)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgba(0, 0, 0, 0.72)",
+      "text-underline-offset": "auto"
+     }
     }
    },
    "footer.title": {

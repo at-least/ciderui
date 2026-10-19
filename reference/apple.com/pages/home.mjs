@@ -44,6 +44,8 @@ export default {
     { name: 'footer', select: '#ac-globalfooter', props: [...TYPE, 'background-color'] },
     { name: 'footer.content', select: '#ac-globalfooter .ac-gf-content', props: ['max-width', 'padding-left', 'padding-right', 'margin-left', 'margin-right'], box: true },
     { name: 'footer.sosumi', select: '#ac-globalfooter .ac-gf-sosumi', props: [...TYPE, ...BOX] },
+    // a link in running text: a footnote's
+    { name: 'footer.sosumi-link', select: '#ac-globalfooter .ac-gf-sosumi a', props: [...TYPE, ...LINK], states: ['hover'] },
     { name: 'footer.title', select: '.ac-gf-directory-column-section-title-text', props: TYPE },
     { name: 'footer.link', select: '.ac-gf-directory-column-section-link', props: [...TYPE, ...LINK], states: ['hover'] },
     { name: 'footer.shop', select: '.ac-gf-footer-shop', props: [...TYPE, ...BOX] },
