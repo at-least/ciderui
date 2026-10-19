@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/store",
  "finalUrl": "https://www.apple.com/store",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T07:58:17.882Z",
+ "date": "2026-10-19T08:57:37.871Z",
  "widths": {
   "390": {
    "type.none": {
@@ -2324,6 +2324,83 @@
      }
     }
    },
+   "quicklinks": {
+    "html": "<div class=\"rs-quicklinks\">\n    <h2 class=\"rs-quicklinks-title\">Quick Links</h2>\n    <div class=\"rs-quicklinks-items\">\n        <nav aria-label=\"Quick Links\">\n            <ul class=\"rs-quicklinks-list\" data-autom=\"quickLinks\" role=\"list\">\n  ",
+    "styles": {
+     "margin-left": "0px",
+     "margin-right": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    },
+    "box": {
+     "width": 390,
+     "height": 136,
+     "top": 4807,
+     "left": 0
+    }
+   },
+   "quicklinks.title": {
+    "html": "<h2 class=\"rs-quicklinks-title\">Quick Links</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-left": "22px",
+     "margin-right": "22px",
+     "padding-bottom": "15px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 346,
+     "height": 40
+    }
+   },
+   "quicklinks.list": {
+    "html": "<ul class=\"rs-quicklinks-list\" data-autom=\"quickLinks\" role=\"list\">\n                        <li class=\"rs-quicklinks-item\">\n<a href=\"https://www.apple.com/retail\" data-slot-name=\"generic-5\" data-display-name=\"Find a Store\" class=\"rs-quickli",
+    "styles": {
+     "display": "flex",
+     "flex-wrap": "wrap",
+     "padding-top": "0px",
+     "padding-right": "22px",
+     "padding-bottom": "0px",
+     "padding-left": "22px",
+     "margin-top": "0px"
+    },
+    "box": {
+     "width": 390,
+     "height": 96
+    }
+   },
+   "quicklinks.item": {
+    "html": "<li class=\"rs-quicklinks-item\">\n<a href=\"https://www.apple.com/retail\" data-slot-name=\"generic-5\" data-display-name=\"Find a Store\" class=\"rs-quicklinks-button button button-secondary-neutral\" target=\"_blank\" data-autom=\"quickLinks-0\">Find a",
+    "styles": {
+     "display": "block",
+     "padding-top": "5px",
+     "padding-right": "8px",
+     "padding-bottom": "5px",
+     "padding-left": "0px"
+    },
+    "box": {
+     "width": 116.453125,
+     "height": 48
+    }
+   },
+   "quicklinks.item-second": {
+    "html": "<li class=\"rs-quicklinks-item\">\n<a href=\"https://secure.store.apple.com/shop/order/list\" data-slot-name=\"generic-5\" data-display-name=\"Order Status\" class=\"rs-quicklinks-button button button-secondary-neutral\" target=\"_blank\" data-autom=\"qu",
+    "styles": {
+     "display": "block"
+    },
+    "box": {
+     "width": 121.421875,
+     "height": 48,
+     "top": 4847,
+     "left": 138.453125
+    }
+   },
    "productnav.title": {
     "html": "<a class=\"rf-productnav-card-title\" href=\"/shop/buy-mac\" data-relatedlink=\"_r_b__link\" data-slot-name=\"Shelf-0\" data-display-name=\"AOS: home/shop_mac\" data-autom=\"AOS: home/shop_mac\" data-index=\"1\" data-trigger-stoppropagation=\"true\">Mac </",
     "styles": {
@@ -2332,7 +2409,9 @@
      "line-height": "20.0003px",
      "font-weight": "600",
      "letter-spacing": "-0.224px",
-     "color": "rgb(29, 29, 31)"
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "text-align": "center"
     }
    },
    "productnav.image": {
@@ -2344,6 +2423,77 @@
     "box": {
      "width": 92.296875,
      "height": 60
+    }
+   },
+   "productnav": {
+    "html": "<div class=\"rs-cardsshelf rs-productnav-cardsshelf\">\n        <div id=\"shelf-1\"><div data-analytics-region=\"Shelf-0\" data-analytics-section=\"Shelf-0\" id=\"shelf-1_section\"><div class=\"rf-cards-scroller\"><div class=\"rf-cards-scroller-crop\"><di",
+    "styles": {
+     "padding-top": "0px",
+     "padding-bottom": "30px"
+    },
+    "box": {
+     "width": 390,
+     "height": 193
+    }
+   },
+   "productnav.crop": {
+    "html": "<div class=\"rf-cards-scroller-crop\"><div data-core-scroller=\"\" class=\"rf-cards-scroller-content\" style=\"overflow-x: scroll;\"><div data-core-scroller-platter=\"\" class=\"rf-cards-scroller-platter\" role=\"list\" aria-label=\"Product\"><div data-cor",
+    "styles": {
+     "height": "148px",
+     "padding-bottom": "15px"
+    },
+    "box": {
+     "width": 390,
+     "height": 163
+    }
+   },
+   "productnav.card": {
+    "html": "<div class=\"rf-cards-scroller-itemview\"><div class=\"rf-productnav-card as-util-relatedlink\" data-trigger-click=\"click [data-relatedlink='_r_b__link']\"><div class=\"rf-productnav-card-content\"><div class=\"rf-productnav-card-image\"><picture><s",
+    "styles": {
+     "margin-right": "10px",
+     "transform": "matrix(1, 0, 0, 1, 22, 0)"
+    },
+    "box": {
+     "width": 100.296875,
+     "height": 148,
+     "top": 440,
+     "left": 22
+    }
+   },
+   "productnav.card-second": {
+    "html": "<div class=\"rf-cards-scroller-itemview\"><div class=\"rf-productnav-card as-util-relatedlink\" data-trigger-click=\"click [data-relatedlink='_r_c__link']\"><div class=\"rf-productnav-card-content\"><div class=\"rf-productnav-card-image\"><picture><s",
+    "styles": {
+     "transform": "matrix(1, 0, 0, 1, 22, 0)"
+    },
+    "box": {
+     "width": 100.296875,
+     "height": 148,
+     "top": 440,
+     "left": 132.296875
+    }
+   },
+   "productnav.content": {
+    "html": "<div class=\"rf-productnav-card-content\"><div class=\"rf-productnav-card-image\"><picture><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-mac-nav-202603?…\" type=\"image/webp\"><source srcset=\"https:",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "4px",
+     "padding-bottom": "16px",
+     "padding-left": "4px"
+    },
+    "box": {
+     "width": 100.296875,
+     "height": 124
+    }
+   },
+   "productnav.image-box": {
+    "html": "<div class=\"rf-productnav-card-image\"><picture><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-mac-nav-202603?…\" type=\"image/webp\"><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-i",
+    "styles": {
+     "padding-bottom": "12px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 92.296875,
+     "height": 72
     }
    },
    "shelf": {
@@ -5276,6 +5426,83 @@
      }
     }
    },
+   "quicklinks": {
+    "html": "<div class=\"rs-quicklinks\">\n    <h2 class=\"rs-quicklinks-title\">Quick Links</h2>\n    <div class=\"rs-quicklinks-items\">\n        <nav aria-label=\"Quick Links\">\n            <ul class=\"rs-quicklinks-list\" data-autom=\"quickLinks\" role=\"list\">\n  ",
+    "styles": {
+     "margin-left": "22px",
+     "margin-right": "22px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 122,
+     "top": 4973,
+     "left": 22
+    }
+   },
+   "quicklinks.title": {
+    "html": "<h2 class=\"rs-quicklinks-title\">Quick Links</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-left": "0px",
+     "margin-right": "0px",
+     "padding-bottom": "15px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 47
+    }
+   },
+   "quicklinks.list": {
+    "html": "<ul class=\"rs-quicklinks-list\" data-autom=\"quickLinks\" role=\"list\">\n                        <li class=\"rs-quicklinks-item\">\n<a href=\"https://www.apple.com/retail\" data-slot-name=\"generic-5\" data-display-name=\"Find a Store\" class=\"rs-quickli",
+    "styles": {
+     "display": "block",
+     "flex-wrap": "nowrap",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "27px",
+     "padding-left": "0px",
+     "margin-top": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 75
+    }
+   },
+   "quicklinks.item": {
+    "html": "<li class=\"rs-quicklinks-item\">\n<a href=\"https://www.apple.com/retail\" data-slot-name=\"generic-5\" data-display-name=\"Find a Store\" class=\"rs-quicklinks-button button button-secondary-neutral\" target=\"_blank\" data-autom=\"quickLinks-0\">Find a",
+    "styles": {
+     "display": "inline-block",
+     "padding-top": "5px",
+     "padding-right": "8px",
+     "padding-bottom": "5px",
+     "padding-left": "0px"
+    },
+    "box": {
+     "width": 116.453125,
+     "height": 48
+    }
+   },
+   "quicklinks.item-second": {
+    "html": "<li class=\"rs-quicklinks-item\">\n<a href=\"https://secure.store.apple.com/shop/order/list\" data-slot-name=\"generic-5\" data-display-name=\"Order Status\" class=\"rs-quicklinks-button button button-secondary-neutral\" target=\"_blank\" data-autom=\"qu",
+    "styles": {
+     "display": "inline-block"
+    },
+    "box": {
+     "width": 121.421875,
+     "height": 48,
+     "top": 5020,
+     "left": 142.875
+    }
+   },
    "productnav.title": {
     "html": "<a class=\"rf-productnav-card-title\" href=\"/shop/buy-mac\" data-relatedlink=\"_r_b__link\" data-slot-name=\"Shelf-0\" data-display-name=\"AOS: home/shop_mac\" data-autom=\"AOS: home/shop_mac\" data-index=\"1\" data-trigger-stoppropagation=\"true\">Mac </",
     "styles": {
@@ -5284,7 +5511,9 @@
      "line-height": "20.0003px",
      "font-weight": "600",
      "letter-spacing": "-0.224px",
-     "color": "rgb(29, 29, 31)"
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "text-align": "center"
     }
    },
    "productnav.image": {
@@ -5296,6 +5525,77 @@
     "box": {
      "width": 120,
      "height": 78
+    }
+   },
+   "productnav": {
+    "html": "<div class=\"rs-cardsshelf rs-productnav-cardsshelf\">\n        <div id=\"shelf-1\"><div data-analytics-region=\"Shelf-0\" data-analytics-section=\"Shelf-0\" id=\"shelf-1_section\"><div class=\"rf-cards-scroller\"><div class=\"rf-cards-scroller-crop\"><di",
+    "styles": {
+     "padding-top": "0px",
+     "padding-bottom": "62px"
+    },
+    "box": {
+     "width": 1024,
+     "height": 248
+    }
+   },
+   "productnav.crop": {
+    "html": "<div class=\"rf-cards-scroller-crop\"><div data-core-scroller=\"\" class=\"rf-cards-scroller-content\" style=\"overflow-x: scroll;\"><div data-core-scroller-platter=\"\" class=\"rf-cards-scroller-platter\" role=\"list\" aria-label=\"Product\"><div data-cor",
+    "styles": {
+     "height": "148px",
+     "padding-bottom": "38px"
+    },
+    "box": {
+     "width": 1024,
+     "height": 186
+    }
+   },
+   "productnav.card": {
+    "html": "<div class=\"rf-cards-scroller-itemview\"><div class=\"rf-productnav-card as-util-relatedlink\" data-trigger-click=\"click [data-relatedlink='_r_b__link']\"><div class=\"rf-productnav-card-content\"><div class=\"rf-productnav-card-image\"><picture><s",
+    "styles": {
+     "margin-right": "10px",
+     "transform": "matrix(1, 0, 0, 1, 22, 0)"
+    },
+    "box": {
+     "width": 136,
+     "height": 148,
+     "top": 366,
+     "left": 22
+    }
+   },
+   "productnav.card-second": {
+    "html": "<div class=\"rf-cards-scroller-itemview\"><div class=\"rf-productnav-card as-util-relatedlink\" data-trigger-click=\"click [data-relatedlink='_r_c__link']\"><div class=\"rf-productnav-card-content\"><div class=\"rf-productnav-card-image\"><picture><s",
+    "styles": {
+     "transform": "matrix(1, 0, 0, 1, 22, 0)"
+    },
+    "box": {
+     "width": 136,
+     "height": 148,
+     "top": 366,
+     "left": 168
+    }
+   },
+   "productnav.content": {
+    "html": "<div class=\"rf-productnav-card-content\"><div class=\"rf-productnav-card-image\"><picture><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-mac-nav-202603?…\" type=\"image/webp\"><source srcset=\"https:",
+    "styles": {
+     "padding-top": "18px",
+     "padding-right": "8px",
+     "padding-bottom": "16px",
+     "padding-left": "8px"
+    },
+    "box": {
+     "width": 136,
+     "height": 148
+    }
+   },
+   "productnav.image-box": {
+    "html": "<div class=\"rf-productnav-card-image\"><picture><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-mac-nav-202603?…\" type=\"image/webp\"><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-i",
+    "styles": {
+     "padding-bottom": "16px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 120,
+     "height": 94
     }
    },
    "shelf": {
@@ -8240,6 +8540,83 @@
      }
     }
    },
+   "quicklinks": {
+    "html": "<div class=\"rs-quicklinks\">\n    <h2 class=\"rs-quicklinks-title\">Quick Links</h2>\n    <div class=\"rs-quicklinks-items\">\n        <nav aria-label=\"Quick Links\">\n            <ul class=\"rs-quicklinks-list\" data-autom=\"quickLinks\" role=\"list\">\n  ",
+    "styles": {
+     "margin-left": "71.923px",
+     "margin-right": "22px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 122,
+     "top": 4973,
+     "left": 71.921875
+    }
+   },
+   "quicklinks.title": {
+    "html": "<h2 class=\"rs-quicklinks-title\">Quick Links</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-left": "0px",
+     "margin-right": "0px",
+     "padding-bottom": "15px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 47
+    }
+   },
+   "quicklinks.list": {
+    "html": "<ul class=\"rs-quicklinks-list\" data-autom=\"quickLinks\" role=\"list\">\n                        <li class=\"rs-quicklinks-item\">\n<a href=\"https://www.apple.com/retail\" data-slot-name=\"generic-5\" data-display-name=\"Find a Store\" class=\"rs-quickli",
+    "styles": {
+     "display": "block",
+     "flex-wrap": "nowrap",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "27px",
+     "padding-left": "0px",
+     "margin-top": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 75
+    }
+   },
+   "quicklinks.item": {
+    "html": "<li class=\"rs-quicklinks-item\">\n<a href=\"https://www.apple.com/retail\" data-slot-name=\"generic-5\" data-display-name=\"Find a Store\" class=\"rs-quicklinks-button button button-secondary-neutral\" target=\"_blank\" data-autom=\"quickLinks-0\">Find a",
+    "styles": {
+     "display": "inline-block",
+     "padding-top": "5px",
+     "padding-right": "8px",
+     "padding-bottom": "5px",
+     "padding-left": "0px"
+    },
+    "box": {
+     "width": 116.453125,
+     "height": 48
+    }
+   },
+   "quicklinks.item-second": {
+    "html": "<li class=\"rs-quicklinks-item\">\n<a href=\"https://secure.store.apple.com/shop/order/list\" data-slot-name=\"generic-5\" data-display-name=\"Order Status\" class=\"rs-quicklinks-button button button-secondary-neutral\" target=\"_blank\" data-autom=\"qu",
+    "styles": {
+     "display": "inline-block"
+    },
+    "box": {
+     "width": 121.421875,
+     "height": 48,
+     "top": 5020,
+     "left": 192.796875
+    }
+   },
    "productnav.title": {
     "html": "<a class=\"rf-productnav-card-title\" href=\"/shop/buy-mac\" data-relatedlink=\"_r_b__link\" data-slot-name=\"Shelf-0\" data-display-name=\"AOS: home/shop_mac\" data-autom=\"AOS: home/shop_mac\" data-index=\"1\" data-trigger-stoppropagation=\"true\">Mac </",
     "styles": {
@@ -8248,7 +8625,9 @@
      "line-height": "20.0003px",
      "font-weight": "600",
      "letter-spacing": "-0.224px",
-     "color": "rgb(29, 29, 31)"
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "text-align": "center"
     }
    },
    "productnav.image": {
@@ -8260,6 +8639,77 @@
     "box": {
      "width": 120,
      "height": 78
+    }
+   },
+   "productnav": {
+    "html": "<div class=\"rs-cardsshelf rs-productnav-cardsshelf\">\n        <div id=\"shelf-1\"><div data-analytics-region=\"Shelf-0\" data-analytics-section=\"Shelf-0\" id=\"shelf-1_section\"><div class=\"rf-cards-scroller\"><div class=\"rf-cards-scroller-crop\"><di",
+    "styles": {
+     "padding-top": "0px",
+     "padding-bottom": "62px"
+    },
+    "box": {
+     "width": 1200,
+     "height": 248
+    }
+   },
+   "productnav.crop": {
+    "html": "<div class=\"rf-cards-scroller-crop\"><div data-core-scroller=\"\" class=\"rf-cards-scroller-content\" style=\"overflow-x: scroll;\"><div data-core-scroller-platter=\"\" class=\"rf-cards-scroller-platter\" role=\"list\" aria-label=\"Product\"><div data-cor",
+    "styles": {
+     "height": "148px",
+     "padding-bottom": "38px"
+    },
+    "box": {
+     "width": 1200,
+     "height": 186
+    }
+   },
+   "productnav.card": {
+    "html": "<div class=\"rf-cards-scroller-itemview\"><div class=\"rf-productnav-card as-util-relatedlink\" data-trigger-click=\"click [data-relatedlink='_r_b__link']\"><div class=\"rf-productnav-card-content\"><div class=\"rf-productnav-card-image\"><picture><s",
+    "styles": {
+     "margin-right": "10px",
+     "transform": "matrix(1, 0, 0, 1, 71.923, 0)"
+    },
+    "box": {
+     "width": 136,
+     "height": 148,
+     "top": 366,
+     "left": 71.92301940917969
+    }
+   },
+   "productnav.card-second": {
+    "html": "<div class=\"rf-cards-scroller-itemview\"><div class=\"rf-productnav-card as-util-relatedlink\" data-trigger-click=\"click [data-relatedlink='_r_c__link']\"><div class=\"rf-productnav-card-content\"><div class=\"rf-productnav-card-image\"><picture><s",
+    "styles": {
+     "transform": "matrix(1, 0, 0, 1, 71.923, 0)"
+    },
+    "box": {
+     "width": 136.00001525878906,
+     "height": 148,
+     "top": 366,
+     "left": 217.9230194091797
+    }
+   },
+   "productnav.content": {
+    "html": "<div class=\"rf-productnav-card-content\"><div class=\"rf-productnav-card-image\"><picture><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-mac-nav-202603?…\" type=\"image/webp\"><source srcset=\"https:",
+    "styles": {
+     "padding-top": "18px",
+     "padding-right": "8px",
+     "padding-bottom": "16px",
+     "padding-left": "8px"
+    },
+    "box": {
+     "width": 136,
+     "height": 148
+    }
+   },
+   "productnav.image-box": {
+    "html": "<div class=\"rf-productnav-card-image\"><picture><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-mac-nav-202603?…\" type=\"image/webp\"><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-i",
+    "styles": {
+     "padding-bottom": "16px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 120,
+     "height": 94
     }
    },
    "shelf": {
@@ -11204,6 +11654,83 @@
      }
     }
    },
+   "quicklinks": {
+    "html": "<div class=\"rs-quicklinks\">\n    <h2 class=\"rs-quicklinks-title\">Quick Links</h2>\n    <div class=\"rs-quicklinks-items\">\n        <nav aria-label=\"Quick Links\">\n            <ul class=\"rs-quicklinks-list\" data-autom=\"quickLinks\" role=\"list\">\n  ",
+    "styles": {
+     "margin-left": "140px",
+     "margin-right": "22px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 122,
+     "top": 4973,
+     "left": 140
+    }
+   },
+   "quicklinks.title": {
+    "html": "<h2 class=\"rs-quicklinks-title\">Quick Links</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-left": "0px",
+     "margin-right": "0px",
+     "padding-bottom": "15px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 47
+    }
+   },
+   "quicklinks.list": {
+    "html": "<ul class=\"rs-quicklinks-list\" data-autom=\"quickLinks\" role=\"list\">\n                        <li class=\"rs-quicklinks-item\">\n<a href=\"https://www.apple.com/retail\" data-slot-name=\"generic-5\" data-display-name=\"Find a Store\" class=\"rs-quickli",
+    "styles": {
+     "display": "block",
+     "flex-wrap": "nowrap",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "27px",
+     "padding-left": "0px",
+     "margin-top": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 75
+    }
+   },
+   "quicklinks.item": {
+    "html": "<li class=\"rs-quicklinks-item\">\n<a href=\"https://www.apple.com/retail\" data-slot-name=\"generic-5\" data-display-name=\"Find a Store\" class=\"rs-quicklinks-button button button-secondary-neutral\" target=\"_blank\" data-autom=\"quickLinks-0\">Find a",
+    "styles": {
+     "display": "inline-block",
+     "padding-top": "5px",
+     "padding-right": "8px",
+     "padding-bottom": "5px",
+     "padding-left": "0px"
+    },
+    "box": {
+     "width": 116.453125,
+     "height": 48
+    }
+   },
+   "quicklinks.item-second": {
+    "html": "<li class=\"rs-quicklinks-item\">\n<a href=\"https://secure.store.apple.com/shop/order/list\" data-slot-name=\"generic-5\" data-display-name=\"Order Status\" class=\"rs-quicklinks-button button button-secondary-neutral\" target=\"_blank\" data-autom=\"qu",
+    "styles": {
+     "display": "inline-block"
+    },
+    "box": {
+     "width": 121.421875,
+     "height": 48,
+     "top": 5020,
+     "left": 260.875
+    }
+   },
    "productnav.title": {
     "html": "<a class=\"rf-productnav-card-title\" href=\"/shop/buy-mac\" data-relatedlink=\"_r_b__link\" data-slot-name=\"Shelf-0\" data-display-name=\"AOS: home/shop_mac\" data-autom=\"AOS: home/shop_mac\" data-index=\"1\" data-trigger-stoppropagation=\"true\">Mac </",
     "styles": {
@@ -11212,7 +11739,9 @@
      "line-height": "20.0003px",
      "font-weight": "600",
      "letter-spacing": "-0.224px",
-     "color": "rgb(29, 29, 31)"
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "text-align": "center"
     }
    },
    "productnav.image": {
@@ -11224,6 +11753,77 @@
     "box": {
      "width": 120,
      "height": 78
+    }
+   },
+   "productnav": {
+    "html": "<div class=\"rs-cardsshelf rs-productnav-cardsshelf\">\n        <div id=\"shelf-1\"><div data-analytics-region=\"Shelf-0\" data-analytics-section=\"Shelf-0\" id=\"shelf-1_section\"><div class=\"rf-cards-scroller\"><div class=\"rf-cards-scroller-crop\"><di",
+    "styles": {
+     "padding-top": "0px",
+     "padding-bottom": "62px"
+    },
+    "box": {
+     "width": 1600,
+     "height": 248
+    }
+   },
+   "productnav.crop": {
+    "html": "<div class=\"rf-cards-scroller-crop\"><div data-core-scroller=\"\" class=\"rf-cards-scroller-content\" style=\"overflow-x: scroll;\"><div data-core-scroller-platter=\"\" class=\"rf-cards-scroller-platter\" role=\"list\" aria-label=\"Product\"><div data-cor",
+    "styles": {
+     "height": "148px",
+     "padding-bottom": "38px"
+    },
+    "box": {
+     "width": 1600,
+     "height": 186
+    }
+   },
+   "productnav.card": {
+    "html": "<div class=\"rf-cards-scroller-itemview\"><div class=\"rf-productnav-card as-util-relatedlink\" data-trigger-click=\"click [data-relatedlink='_r_b__link']\"><div class=\"rf-productnav-card-content\"><div class=\"rf-productnav-card-image\"><picture><s",
+    "styles": {
+     "margin-right": "10px",
+     "transform": "matrix(1, 0, 0, 1, 140, 0)"
+    },
+    "box": {
+     "width": 136,
+     "height": 148,
+     "top": 366,
+     "left": 140
+    }
+   },
+   "productnav.card-second": {
+    "html": "<div class=\"rf-cards-scroller-itemview\"><div class=\"rf-productnav-card as-util-relatedlink\" data-trigger-click=\"click [data-relatedlink='_r_c__link']\"><div class=\"rf-productnav-card-content\"><div class=\"rf-productnav-card-image\"><picture><s",
+    "styles": {
+     "transform": "matrix(1, 0, 0, 1, 140, 0)"
+    },
+    "box": {
+     "width": 136,
+     "height": 148,
+     "top": 366,
+     "left": 286
+    }
+   },
+   "productnav.content": {
+    "html": "<div class=\"rf-productnav-card-content\"><div class=\"rf-productnav-card-image\"><picture><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-mac-nav-202603?…\" type=\"image/webp\"><source srcset=\"https:",
+    "styles": {
+     "padding-top": "18px",
+     "padding-right": "8px",
+     "padding-bottom": "16px",
+     "padding-left": "8px"
+    },
+    "box": {
+     "width": 136,
+     "height": 148
+    }
+   },
+   "productnav.image-box": {
+    "html": "<div class=\"rf-productnav-card-image\"><picture><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-mac-nav-202603?…\" type=\"image/webp\"><source srcset=\"https://store.storeimages.cdn-apple.com/1/as-i",
+    "styles": {
+     "padding-bottom": "16px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 120,
+     "height": 94
     }
    },
    "shelf": {

@@ -30,8 +30,22 @@ export default {
     { name: 'header', select: 'h1.rs-shop-header', props: [...TYPE, 'margin-top', 'margin-bottom'] },
     { name: 'header.tagline', select: '.rs-shop-header + *, .rs-shop-subheader', props: TYPE },
     { name: 'quicklink', select: '.rs-quicklinks-button', props: [...TYPE, ...BOX], box: true, states: ['hover'] },
-    { name: 'productnav.title', select: '.rf-productnav-card-title', props: TYPE },
+    // the quick links: their place (the shelf's inset), title, list and items
+    { name: 'quicklinks', select: '.rs-quicklinks', props: ['margin-left', 'margin-right', 'padding-top', 'padding-bottom'], box: true, position: true },
+    { name: 'quicklinks.title', select: '.rs-quicklinks-title', props: [...TYPE, 'margin-left', 'margin-right', 'padding-bottom', 'margin-top', 'margin-bottom'], box: true },
+    { name: 'quicklinks.list', select: '.rs-quicklinks-list', props: ['display', 'flex-wrap', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left', 'margin-top'], box: true },
+    { name: 'quicklinks.item', select: '.rs-quicklinks-item', props: ['display', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left'], box: true },
+    { name: 'quicklinks.item-second', select: '.rs-quicklinks-item:nth-child(2)', props: ['display'], box: true, position: true },
+    { name: 'productnav.title', select: '.rf-productnav-card-title', props: [...TYPE, 'display', 'text-align'] },
     { name: 'productnav.image', select: '.rf-productnav-card-image img', props: ['width', 'height'], box: true },
+    // the product nav: a shelf of small cards (the store's own shelf: its
+    // inset, its snapping), each its image above its name
+    { name: 'productnav', select: '.rs-productnav-cardsshelf', props: ['padding-top', 'padding-bottom'], box: true },
+    { name: 'productnav.crop', select: '.rs-productnav-cardsshelf .rf-cards-scroller-crop', props: ['height', 'padding-bottom'], box: true },
+    { name: 'productnav.card', select: '.rs-productnav-cardsshelf .rf-cards-scroller-itemview', props: ['margin-right', 'transform'], box: true, position: true },
+    { name: 'productnav.card-second', select: '.rs-productnav-cardsshelf [data-core-scroller-item]:nth-child(2) .rf-cards-scroller-itemview', props: ['transform'], box: true, position: true },
+    { name: 'productnav.content', select: '.rs-productnav-cardsshelf .rf-productnav-card-content', props: ['padding-top', 'padding-right', 'padding-bottom', 'padding-left'], box: true },
+    { name: 'productnav.image-box', select: '.rs-productnav-cardsshelf .rf-productnav-card-image', props: ['padding-bottom', 'text-align'], box: true },
     // a shelf of cards, the one holding the 400px cards: its header (its
     // headline and the secondary text after it), its scroller (in a crop that
     // hides its scrollbar), its items, the room around them
