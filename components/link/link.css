@@ -41,8 +41,10 @@
     }
   }
 
-  /* the glyph's own box sits 0.01em below the baseline (the icon's view box) */
+  /* on its text's line (Tailwind's preflight draws an svg as a block), its
+     box 0.01em below the baseline, as the glyph's (the icon's view box) */
   .cui-link-icon {
+    display: inline;
     margin-left: 0.24em;
     vertical-align: -0.01em;
   }

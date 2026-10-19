@@ -44,6 +44,8 @@ export const cases = [
     checks: [
       ...more('iphone', 'link.more-glyph'),
       { target: '.cui-link-icon', props: ['box-width', 'box-height', 'vertical-align'], golden: 'the chevron\'s box: apple.com\'s glyph\'s advance, 0.4419em, by 0.54em, 0.01em below the baseline (reference/icons/)' },
+      { target: '.cui-link-icon', props: ['display'], golden: 'inline, on its text\'s line: Tailwind\'s preflight draws an svg as a block' },
+      { target: 'p', props: ['box-height'], golden: 'one line, the chevron after the text: the paragraph\'s 25px line' },
     ],
   },
   {

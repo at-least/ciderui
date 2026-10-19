@@ -4,5 +4,9 @@
  "more | .cui-link-icon | 1600 | vertical-align": "-0.17px",
  "more | .cui-link-icon | 1200 | box-width": "7.5px",
  "more | .cui-link-icon | 1200 | box-height": "9.171875px",
- "more | .cui-link-icon | 1200 | vertical-align": "-0.17px"
+ "more | .cui-link-icon | 1200 | vertical-align": "-0.17px",
+ "more | .cui-link-icon | 1600 | display": "inline",
+ "more | p | 1600 | box-height": "25px",
+ "more | .cui-link-icon | 1200 | display": "inline",
+ "more | p | 1200 | box-height": "25px"
 }
