@@ -1,0 +1,414 @@
+/* ciderui — the article: apple.com's Newsroom story, its header (an eyebrow,
+ * its headline, a subhead) over its copy, the copy's column narrower than
+ * its figures', its footnotes at its end; the copy's plain elements styled
+ * as they come, so markdown's HTML reads as Newsroom's.
+ *
+ * From apple.com's Newsroom (reference/apple.com/): newsroom-article:*
+ * (a press release: the column, the header, the copy, a figure, a list,
+ * the footnotes).
+ *
+ *   <article class="cui-article">
+ *     <header class="cui-article-header">
+ *       <p class="cui-article-eyebrow"><span class="cui-article-category">Update</span><time class="cui-article-date" datetime="2026-10-19">October 19, 2026</time></p>
+ *       <h1 class="cui-article-headline">ciderui 1.0</h1>
+ *       <p class="cui-article-subhead">apple.com's look, for every site.</p>
+ *     </header>
+ *     <div class="cui-article-body">
+ *       <p>…</p> <h2>…</h2> <ul>…</ul> <figure><img …><figcaption>…</figcaption></figure>
+ *       <section class="cui-article-footnotes"><ol><li>…</li></ol></section>
+ *     </div>
+ *   </article>
+ *
+ * cui-article           its columns: the text 653px from 1069px, 576px from
+ *                       735px, below 87.5% of 414px at most; its figures
+ *                       980px, 692px, 414px at most; centered
+ * cui-article-header    52px down (40px from 735px, 32px below), in the
+ *                       text's column
+ * cui-article-eyebrow   its category (cui-article-category, 12px at 700,
+ *                       uppercase) over its date (cui-article-date, 14px at
+ *                       600, 4px down), the secondary text, 20px over the
+ *                       headline
+ * cui-article-headline  48px at 700 (40px from 735px, 32px below)
+ * cui-article-subhead   24px at 500 (21px below 1069px), 20px down (16px)
+ * cui-article-body      44px under the header (36px from 735px, 32px
+ *                       below); each child in the text's column, a figure
+ *                       in the figures'
+ *   p                   19px on 27px (17px on 25px below 1069px), 1.4211em
+ *                       of it apart (27px, 24.16px); a list, a quotation,
+ *                       code, a table as far under
+ *   h2                  24px at 700 (21px), 52px under the copy (48px,
+ *                       44px), 16px over its own
+ *   h3                  19px at 700 (17px), 32px down, 8px over its own
+ *   h4, h5, h6          the copy's size at 700
+ *   ul, ol              the copy, its marks outside, 1.1765em in
+ *   a                   the link's color, underlined, hovered alike
+ *   strong, b           700
+ *   sup                 a footnote's mark: 0.6em on the line, raised 0.3em
+ *   code                the mono font, 0.85em; pre, a block of it on the
+ *                       alternate ground
+ *   blockquote          the copy indented, the secondary text
+ *   table, hr           rows and a rule in the divider's color
+ *   figure, figcaption  the figures' column, 44px apart (36px, 32px); its
+ *                       caption in the text's column, 12px at 600, the
+ *                       secondary text, 16px under the picture (12px)
+ * cui-article-footnotes 12px on 16px, the secondary text, numbered 12px in,
+ *                       their links the text's color, underlined; 44px down
+ *                       (36px, 32px)
+ *
+ * apple.com's: the columns, the rhythm, the type, the colors, the figure,
+ * the list's indent, the footnotes. ciderui's: the letter-spacing
+ * (tokens.css); h3 to h6, code, blockquote, table and hr, which Newsroom's
+ * copy has none of (h3 a related story's title, 19/23 at 700); a list at
+ * the copy's size (apple.com's small print's 14px, its indent the same
+ * 1.1765em); a footnote's mark that links to its note, in the copy's color
+ * (apple.com's is no link); the children's own margins, so an element
+ * markdown writes needs no class. A component inside the copy (a class
+ * named cui-*) keeps its own look: the copy's rules match plain elements
+ * alone. */
+
+@layer components {
+  .cui-article {
+    --cui-article-band: min(100%, 414px);
+    --cui-article-text: calc(min(100%, 414px) * 0.875);
+
+    @media (width >= 735px) {
+      --cui-article-band: 692px;
+      --cui-article-text: 576px;
+    }
+
+    @media (width >= 1069px) {
+      --cui-article-band: 980px;
+      --cui-article-text: 653px;
+    }
+  }
+
+  .cui-article-header {
+    width: var(--cui-article-text);
+    margin-inline: auto;
+    padding-top: 32px;
+
+    @media (width >= 735px) {
+      padding-top: 40px;
+    }
+
+    @media (width >= 1069px) {
+      padding-top: 52px;
+    }
+  }
+
+  .cui-article-eyebrow {
+    margin: 0 0 20px;
+    color: var(--cui-c-text-2);
+  }
+
+  .cui-article-category {
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: var(--cui-tracking-12);
+    text-transform: uppercase;
+  }
+
+  .cui-article-date {
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-14);
+  }
+
+  .cui-article-headline {
+    margin: 0;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 700;
+    letter-spacing: var(--cui-tracking-32);
+    color: var(--cui-c-text);
+
+    @media (width >= 735px) {
+      font-size: 40px;
+      line-height: 44px;
+      letter-spacing: var(--cui-tracking-40);
+    }
+
+    @media (width >= 1069px) {
+      font-size: 48px;
+      line-height: 52px;
+      letter-spacing: var(--cui-tracking-48);
+    }
+  }
+
+  .cui-article-subhead {
+    margin: 16px 0 0;
+    font-size: 21px;
+    line-height: 25px;
+    font-weight: 500;
+    letter-spacing: var(--cui-tracking-21);
+    color: var(--cui-c-text);
+
+    @media (width >= 1069px) {
+      margin-top: 20px;
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing: var(--cui-tracking-24);
+    }
+  }
+
+  /* the copy: its size and color, each child in its column */
+  .cui-article-body {
+    /* a paragraph's room under it, 1.4211em of the copy (apple.com's), for
+       what follows the copy whatever its own size */
+    --cui-article-gap: 24.1587px;
+
+    margin-top: 32px;
+    font-size: 17px;
+    line-height: 25px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-17);
+    color: var(--cui-c-text);
+
+    @media (width >= 735px) {
+      margin-top: 36px;
+    }
+
+    @media (width >= 1069px) {
+      --cui-article-gap: 27.0009px;
+
+      margin-top: 44px;
+      font-size: 19px;
+      line-height: 27px;
+      letter-spacing: var(--cui-tracking-19);
+    }
+
+    > :where(*) {
+      width: var(--cui-article-text);
+      margin-inline: auto;
+    }
+
+    > :where(p:not([class*="cui-"])) {
+      margin-top: 0;
+      margin-bottom: var(--cui-article-gap);
+    }
+
+    > :where(h2:not([class*="cui-"])) {
+      margin-top: 44px;
+      margin-bottom: 16px;
+      font-size: 21px;
+      line-height: 25px;
+      font-weight: 700;
+      letter-spacing: var(--cui-tracking-21);
+
+      @media (width >= 735px) {
+        margin-top: 48px;
+      }
+
+      @media (width >= 1069px) {
+        margin-top: 52px;
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: var(--cui-tracking-24);
+      }
+    }
+
+    > :where(h3:not([class*="cui-"])) {
+      margin-top: 32px;
+      margin-bottom: 8px;
+      font-size: 17px;
+      line-height: 21px;
+      font-weight: 700;
+      letter-spacing: var(--cui-tracking-17);
+
+      @media (width >= 1069px) {
+        font-size: 19px;
+        line-height: 23px;
+        letter-spacing: var(--cui-tracking-19);
+      }
+    }
+
+    > :where(h4, h5, h6):where(:not([class*="cui-"])) {
+      margin-top: var(--cui-article-gap);
+      margin-bottom: 0;
+      font-size: inherit;
+      line-height: inherit;
+      font-weight: 700;
+    }
+
+    > :where(ul, ol):where(:not([class*="cui-"])) {
+      margin-top: 0;
+      margin-bottom: var(--cui-article-gap);
+      padding-left: 1.1765em;
+      list-style-position: outside;
+    }
+
+    > :where(ul:not([class*="cui-"])) {
+      list-style-type: disc;
+    }
+
+    > :where(ol:not([class*="cui-"])) {
+      list-style-type: decimal;
+    }
+
+    > :where(blockquote:not([class*="cui-"])) {
+      margin-top: 0;
+      margin-bottom: var(--cui-article-gap);
+      padding-left: 1.1765em;
+      color: var(--cui-c-text-2);
+    }
+
+    > :where(pre:not([class*="cui-"])) {
+      margin-top: 0;
+      margin-bottom: var(--cui-article-gap);
+      padding: 16px 20px;
+      overflow-x: auto;
+      border-radius: 12px;
+      font-family: var(--cui-font-mono);
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: normal;
+      background-color: var(--cui-c-bg-alt);
+    }
+
+    > :where(table:not([class*="cui-"])) {
+      margin-top: 0;
+      margin-bottom: var(--cui-article-gap);
+      border-collapse: collapse;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: var(--cui-tracking-14);
+    }
+
+    > :where(hr:not([class*="cui-"])) {
+      margin-top: 44px;
+      margin-bottom: 44px;
+      border: 0;
+      border-top: 1px solid var(--cui-c-divider);
+    }
+
+    > :where(figure:not([class*="cui-"])) {
+      width: var(--cui-article-band);
+      margin-top: 32px;
+      margin-bottom: 32px;
+
+      @media (width >= 735px) {
+        margin-top: 36px;
+        margin-bottom: 36px;
+      }
+
+      @media (width >= 1069px) {
+        margin-top: 44px;
+        margin-bottom: 44px;
+      }
+    }
+
+    :where(li > ul, li > ol, li > p) {
+      margin: 0;
+    }
+
+    :where(a:not([class*="cui-"])) {
+      color: var(--cui-c-link);
+      text-decoration-line: underline;
+    }
+
+    :where(strong, b) {
+      font-weight: 700;
+    }
+
+    :where(sup:not([class*="cui-"])) {
+      position: relative;
+      top: -0.5em;
+      font-size: 0.6em;
+      line-height: 1;
+      vertical-align: baseline;
+
+      a {
+        color: inherit;
+        text-decoration-line: none;
+      }
+    }
+
+    :where(code:not([class*="cui-"])) {
+      font-family: var(--cui-font-mono);
+      font-size: 0.85em;
+    }
+
+    :where(pre code) {
+      font-size: inherit;
+    }
+
+    :where(th, td) {
+      padding: 12px 24px 12px 0;
+      border-bottom: 1px solid var(--cui-c-divider);
+      text-align: start;
+      vertical-align: top;
+    }
+
+    :where(th) {
+      font-weight: 600;
+    }
+
+    :where(figure:not([class*="cui-"])) {
+      img,
+      video,
+      picture {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    :where(figcaption) {
+      width: var(--cui-article-text);
+      margin: 12px auto 0;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+      letter-spacing: var(--cui-tracking-12);
+      color: var(--cui-c-text-2);
+
+      @media (width >= 1069px) {
+        margin-top: 16px;
+      }
+    }
+
+    :where(p > img) {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .cui-article-footnotes {
+    margin-top: 32px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-12);
+    color: var(--cui-c-text-2);
+
+    @media (width >= 735px) {
+      margin-top: 36px;
+    }
+
+    @media (width >= 1069px) {
+      margin-top: 44px;
+    }
+
+    ol {
+      margin: 0;
+      padding-left: 12px;
+      list-style-type: decimal;
+    }
+
+    li,
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: var(--cui-c-text);
+      text-decoration-line: underline;
+    }
+  }
+}

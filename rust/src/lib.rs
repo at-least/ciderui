@@ -14,6 +14,7 @@
 #![warn(missing_docs)]
 
 mod accordion;
+mod article;
 mod card;
 mod checkbox;
 #[cfg(feature = "css")]
@@ -37,6 +38,7 @@ mod swatch;
 mod tile;
 
 pub use accordion::{Accordion, AccordionItem};
+pub use article::Article;
 pub use card::Card;
 pub use checkbox::Checkbox;
 pub use field::Field;

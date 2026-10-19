@@ -216,6 +216,7 @@ for (const [size, em] of Object.entries(table)) check(`--cui-tracking-${size}`, 
 
 // the font stack and the focus ring
 check('--cui-font', vars['--cui-font'], '-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif');
+check('--cui-font-mono', vars['--cui-font-mono'], 'ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace');
 check('--cui-focus-ring', vars['--cui-focus-ring'], '2px solid var(--cui-c-accent)');
 check('the focus ring is apple.com\'s width', ref('home', 'button', W, 'outline-width', 'focus-visible'), '2px');
 check('the focus ring is apple.com\'s color', rgb(sides('--cui-c-accent')[0]), ref('home', 'button', W, 'outline-color', 'focus-visible'));

@@ -103,6 +103,11 @@
      fetched only there (reference/stack/) */
   --cui-font: -apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+  /* code's, which apple.com's pages show none of: SF Mono on Apple's
+     platforms (ui-monospace, Safari's; Menlo, Chrome's there), the
+     platform's own elsewhere; no font is shipped for it */
+  --cui-font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
   /* the letter-spacing per size: apple.com's minus the system font's own
      tracking, which apple.com's SF Pro webfonts do not carry
      (reference/tracking/cui-tracking.json; within 0.0006em of apple.com's
