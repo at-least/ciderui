@@ -1,6 +1,7 @@
 // PAGE=<name> node measure.mjs
 // Opens pages/<name>.mjs's url in Playwright's Chromium (../browsers.mjs) and
-// at each of its widths reads every probe's computed styles. A probe either
+// at each of its widths (after `settle` ms, 800 unless the spec says; `wait`
+// ms more once, after the load) reads every probe's computed styles. A probe either
 // selects an element of the page (`select`) or adds markup to it (`inject`,
 // into `into` or the body; `select` then picks the element inside it) for a
 // class the page defines but may not use, and reads `props`, `vars` (custom
@@ -20,9 +21,11 @@
 // what it is placed in: an open menu's rows); `animations`, with `click`,
 // records every animation and transition the click starts on an element
 // inside that selector, each frame for the wait after it (what it animates,
-// on what, its duration, delay and timing, its first and last values). A
-// probe that matches nothing is recorded as null, printed, and fails the run.
-// The result is results/<name>.json.
+// on what, its duration, delay and timing, its first and last values);
+// `keyframes` records the @keyframes its animation-name names (read from
+// the page's own stylesheets; one the page's CSS does not hold is null and
+// fails the run). A probe that matches nothing is recorded as null, printed,
+// and fails the run. The result is results/<name>.json.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 
@@ -99,6 +102,20 @@ const read = (probe) => {
   const out = { styles: {} };
   for (const p of probe.props ?? []) out.styles[p] = cs.getPropertyValue(p);
   for (const v of probe.vars ?? []) out.styles[v] = cs.getPropertyValue(v).trim();
+  if (probe.keyframes) {
+    out.keyframes = {};
+    for (const name of cs.animationName.split(',').map(n => n.trim()).filter(n => n !== 'none')) {
+      let rule = null;
+      for (const sheet of document.styleSheets) {
+        // a stylesheet from another origin cannot be read: the rule, if it is
+        // there, stays not found, and the run fails
+        let rules;
+        try { rules = sheet.cssRules; } catch { continue; }
+        rule = [...rules].find(r => r.type === CSSRule.KEYFRAMES_RULE && r.name === name) ?? rule;
+      }
+      out.keyframes[name] = rule && [...rule.cssRules].map(k => ({ at: k.keyText, style: k.style.cssText }));
+    }
+  }
   if (probe.box) {
     const r = el.getBoundingClientRect();
     out.box = { width: r.width, height: r.height, ...(probe.position ? { top: r.top, left: r.left } : {}) };
@@ -143,7 +160,7 @@ try {
   if (spec.wait) await pw.waitForTimeout(spec.wait);
   for (const width of widths) {
     await pw.setViewportSize({ width, height: 900 });
-    await pw.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 800)))));
+    await pw.evaluate((ms) => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, ms)))), spec.settle ?? 800);
     const at = (result.widths[width] = {});
     for (const probe of spec.probes) {
       if (probe.widths && !probe.widths.includes(width)) continue;
@@ -162,6 +179,7 @@ try {
         continue;
       }
       at[probe.name] = { html, ...(await frame.evaluate(read, probe)) };
+      for (const [k, v] of Object.entries(at[probe.name].keyframes ?? {})) if (!v) nulls.push(`${width} ${probe.name} @keyframes ${k}`);
       if (probe.click && probe.animations) at[probe.name].animations = await frame.evaluate(() => { clearInterval(window.cuiWatch); return window.cuiAnimations; });
       if (probe.states?.length) {
         const nodeId = await stateNode(frame);

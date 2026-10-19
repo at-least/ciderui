@@ -1,0 +1,804 @@
+{
+ "url": "https://www.apple.com/iphone/",
+ "finalUrl": "https://www.apple.com/iphone/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T06:40:54.808Z",
+ "widths": {
+  "390": {
+   "ribbon": {
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\">\n\t\t\t<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div cl",
+    "styles": {
+     "overflow": "hidden",
+     "height": "72px"
+    },
+    "box": {
+     "width": 390,
+     "height": 72
+    }
+   },
+   "ribbon.drop": {
+    "html": "<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone sav",
+    "styles": {
+     "animation-name": "ribbon-drop",
+     "animation-duration": "0.8s",
+     "animation-delay": "0s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "keyframes": {
+     "ribbon-drop": [
+      {
+       "at": "0%",
+       "style": "transform: translateY(-100%);"
+      },
+      {
+       "at": "100%",
+       "style": "transform: translateY(0px);"
+      }
+     ]
+    }
+   },
+   "ribbon.ground": {
+    "html": "<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-lin",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "16px",
+     "padding-right": "0px",
+     "padding-bottom": "16px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "text-align": "center",
+     "animation-name": "ribbon-animate-background",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1",
+     "--ribbon-background-color-initial": "rgb(0,113,227)",
+     "--ribbon-background-color": "rgb(245,245,247)",
+     "--ribbon-text-color-initial": "rgb(245,245,247)",
+     "--ribbon-text-color": "rgb(29,29,31)",
+     "--ribbon-link-color-initial": "rgb(245,245,247)",
+     "--ribbon-link-color": "rgb(0,102,204)"
+    },
+    "keyframes": {
+     "ribbon-animate-background": [
+      {
+       "at": "0%",
+       "style": "background-color: var(--ribbon-background-color-initial);"
+      },
+      {
+       "at": "100%",
+       "style": "background-color: var(--ribbon-background-color);"
+      }
+     ]
+    },
+    "box": {
+     "width": 390,
+     "height": 72
+    }
+   },
+   "ribbon.content": {
+    "html": "<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "width": "324.984px",
+     "max-width": "none",
+     "margin-left": "32.5px",
+     "margin-right": "32.5156px",
+     "animation-name": "ribbon-animate-text-color",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "keyframes": {
+     "ribbon-animate-text-color": [
+      {
+       "at": "0%",
+       "style": "color: var(--ribbon-text-color-initial);"
+      },
+      {
+       "at": "100%",
+       "style": "color: var(--ribbon-text-color);"
+      }
+     ]
+    },
+    "box": {
+     "width": 324.984375,
+     "height": 40
+    }
+   },
+   "ribbon.text": {
+    "html": "<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out ",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 324.984375,
+     "height": 40
+    }
+   },
+   "ribbon.link": {
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "animation-name": "ribbon-animate-link-color",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "keyframes": {
+     "ribbon-animate-link-color": [
+      {
+       "at": "0%",
+       "style": "color: var(--ribbon-link-color-initial);"
+      },
+      {
+       "at": "100%",
+       "style": "color: var(--ribbon-link-color);"
+      }
+     ]
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(245, 245, 247)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(245, 245, 247)",
+      "text-underline-offset": "auto",
+      "animation-name": "none",
+      "animation-duration": "0s",
+      "animation-delay": "0s",
+      "animation-timing-function": "ease",
+      "animation-fill-mode": "none",
+      "animation-iteration-count": "1"
+     }
+    }
+   }
+  },
+  "900": {
+   "ribbon": {
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\">\n\t\t\t<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div cl",
+    "styles": {
+     "overflow": "hidden",
+     "height": "52px"
+    },
+    "box": {
+     "width": 900,
+     "height": 52
+    }
+   },
+   "ribbon.drop": {
+    "html": "<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone sav",
+    "styles": {
+     "animation-name": "ribbon-drop",
+     "animation-duration": "0.8s",
+     "animation-delay": "0s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "keyframes": {
+     "ribbon-drop": [
+      {
+       "at": "0%",
+       "style": "transform: translateY(-100%);"
+      },
+      {
+       "at": "100%",
+       "style": "transform: translateY(0px);"
+      }
+     ]
+    }
+   },
+   "ribbon.ground": {
+    "html": "<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-lin",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "16px",
+     "padding-right": "0px",
+     "padding-bottom": "16px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "text-align": "center",
+     "animation-name": "ribbon-animate-background",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1",
+     "--ribbon-background-color-initial": "rgb(0,113,227)",
+     "--ribbon-background-color": "rgb(245,245,247)",
+     "--ribbon-text-color-initial": "rgb(245,245,247)",
+     "--ribbon-text-color": "rgb(29,29,31)",
+     "--ribbon-link-color-initial": "rgb(245,245,247)",
+     "--ribbon-link-color": "rgb(0,102,204)"
+    },
+    "keyframes": {
+     "ribbon-animate-background": [
+      {
+       "at": "0%",
+       "style": "background-color: var(--ribbon-background-color-initial);"
+      },
+      {
+       "at": "100%",
+       "style": "background-color: var(--ribbon-background-color);"
+      }
+     ]
+    },
+    "box": {
+     "width": 900,
+     "height": 52
+    }
+   },
+   "ribbon.content": {
+    "html": "<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "width": "749.984px",
+     "max-width": "none",
+     "margin-left": "75px",
+     "margin-right": "75.0156px",
+     "animation-name": "ribbon-animate-text-color",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "keyframes": {
+     "ribbon-animate-text-color": [
+      {
+       "at": "0%",
+       "style": "color: var(--ribbon-text-color-initial);"
+      },
+      {
+       "at": "100%",
+       "style": "color: var(--ribbon-text-color);"
+      }
+     ]
+    },
+    "box": {
+     "width": 749.984375,
+     "height": 20
+    }
+   },
+   "ribbon.text": {
+    "html": "<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out ",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 567.953125,
+     "height": 20
+    }
+   },
+   "ribbon.link": {
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "animation-name": "ribbon-animate-link-color",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "keyframes": {
+     "ribbon-animate-link-color": [
+      {
+       "at": "0%",
+       "style": "color: var(--ribbon-link-color-initial);"
+      },
+      {
+       "at": "100%",
+       "style": "color: var(--ribbon-link-color);"
+      }
+     ]
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(245, 245, 247)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(245, 245, 247)",
+      "text-underline-offset": "auto",
+      "animation-name": "none",
+      "animation-duration": "0s",
+      "animation-delay": "0s",
+      "animation-timing-function": "ease",
+      "animation-fill-mode": "none",
+      "animation-iteration-count": "1"
+     }
+    }
+   }
+  },
+  "1200": {
+   "ribbon": {
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\">\n\t\t\t<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div cl",
+    "styles": {
+     "overflow": "hidden",
+     "height": "52px"
+    },
+    "box": {
+     "width": 1200,
+     "height": 52
+    }
+   },
+   "ribbon.drop": {
+    "html": "<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone sav",
+    "styles": {
+     "animation-name": "ribbon-drop",
+     "animation-duration": "0.8s",
+     "animation-delay": "0s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "keyframes": {
+     "ribbon-drop": [
+      {
+       "at": "0%",
+       "style": "transform: translateY(-100%);"
+      },
+      {
+       "at": "100%",
+       "style": "transform: translateY(0px);"
+      }
+     ]
+    }
+   },
+   "ribbon.ground": {
+    "html": "<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-lin",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "16px",
+     "padding-right": "0px",
+     "padding-bottom": "16px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "text-align": "center",
+     "animation-name": "ribbon-animate-background",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1",
+     "--ribbon-background-color-initial": "rgb(0,113,227)",
+     "--ribbon-background-color": "rgb(245,245,247)",
+     "--ribbon-text-color-initial": "rgb(245,245,247)",
+     "--ribbon-text-color": "rgb(29,29,31)",
+     "--ribbon-link-color-initial": "rgb(245,245,247)",
+     "--ribbon-link-color": "rgb(0,102,204)"
+    },
+    "keyframes": {
+     "ribbon-animate-background": [
+      {
+       "at": "0%",
+       "style": "background-color: var(--ribbon-background-color-initial);"
+      },
+      {
+       "at": "100%",
+       "style": "background-color: var(--ribbon-background-color);"
+      }
+     ]
+    },
+    "box": {
+     "width": 1200,
+     "height": 52
+    }
+   },
+   "ribbon.content": {
+    "html": "<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "width": "999.984px",
+     "max-width": "none",
+     "margin-left": "100px",
+     "margin-right": "100.016px",
+     "animation-name": "ribbon-animate-text-color",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "keyframes": {
+     "ribbon-animate-text-color": [
+      {
+       "at": "0%",
+       "style": "color: var(--ribbon-text-color-initial);"
+      },
+      {
+       "at": "100%",
+       "style": "color: var(--ribbon-text-color);"
+      }
+     ]
+    },
+    "box": {
+     "width": 999.984375,
+     "height": 20
+    }
+   },
+   "ribbon.text": {
+    "html": "<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out ",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 567.953125,
+     "height": 20
+    }
+   },
+   "ribbon.link": {
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "animation-name": "ribbon-animate-link-color",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "keyframes": {
+     "ribbon-animate-link-color": [
+      {
+       "at": "0%",
+       "style": "color: var(--ribbon-link-color-initial);"
+      },
+      {
+       "at": "100%",
+       "style": "color: var(--ribbon-link-color);"
+      }
+     ]
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(245, 245, 247)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(245, 245, 247)",
+      "text-underline-offset": "auto",
+      "animation-name": "none",
+      "animation-duration": "0s",
+      "animation-delay": "0s",
+      "animation-timing-function": "ease",
+      "animation-fill-mode": "none",
+      "animation-iteration-count": "1"
+     }
+    }
+   }
+  },
+  "1600": {
+   "ribbon": {
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\">\n\t\t\t<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div cl",
+    "styles": {
+     "overflow": "hidden",
+     "height": "52px"
+    },
+    "box": {
+     "width": 1600,
+     "height": 52
+    }
+   },
+   "ribbon.drop": {
+    "html": "<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone sav",
+    "styles": {
+     "animation-name": "ribbon-drop",
+     "animation-duration": "0.8s",
+     "animation-delay": "0s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "keyframes": {
+     "ribbon-drop": [
+      {
+       "at": "0%",
+       "style": "transform: translateY(-100%);"
+      },
+      {
+       "at": "100%",
+       "style": "transform: translateY(0px);"
+      }
+     ]
+    }
+   },
+   "ribbon.ground": {
+    "html": "<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-lin",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "16px",
+     "padding-right": "0px",
+     "padding-bottom": "16px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "text-align": "center",
+     "animation-name": "ribbon-animate-background",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1",
+     "--ribbon-background-color-initial": "rgb(0,113,227)",
+     "--ribbon-background-color": "rgb(245,245,247)",
+     "--ribbon-text-color-initial": "rgb(245,245,247)",
+     "--ribbon-text-color": "rgb(29,29,31)",
+     "--ribbon-link-color-initial": "rgb(245,245,247)",
+     "--ribbon-link-color": "rgb(0,102,204)"
+    },
+    "keyframes": {
+     "ribbon-animate-background": [
+      {
+       "at": "0%",
+       "style": "background-color: var(--ribbon-background-color-initial);"
+      },
+      {
+       "at": "100%",
+       "style": "background-color: var(--ribbon-background-color);"
+      }
+     ]
+    },
+    "box": {
+     "width": 1600,
+     "height": 52
+    }
+   },
+   "ribbon.content": {
+    "html": "<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "width": "1333.33px",
+     "max-width": "none",
+     "margin-left": "133.328px",
+     "margin-right": "133.344px",
+     "animation-name": "ribbon-animate-text-color",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "keyframes": {
+     "ribbon-animate-text-color": [
+      {
+       "at": "0%",
+       "style": "color: var(--ribbon-text-color-initial);"
+      },
+      {
+       "at": "100%",
+       "style": "color: var(--ribbon-text-color);"
+      }
+     ]
+    },
+    "box": {
+     "width": 1333.328125,
+     "height": 20
+    }
+   },
+   "ribbon.text": {
+    "html": "<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out ",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 567.953125,
+     "height": 20
+    }
+   },
+   "ribbon.link": {
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "animation-name": "ribbon-animate-link-color",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "keyframes": {
+     "ribbon-animate-link-color": [
+      {
+       "at": "0%",
+       "style": "color: var(--ribbon-link-color-initial);"
+      },
+      {
+       "at": "100%",
+       "style": "color: var(--ribbon-link-color);"
+      }
+     ]
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(245, 245, 247)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(245, 245, 247)",
+      "text-underline-offset": "auto",
+      "animation-name": "none",
+      "animation-duration": "0s",
+      "animation-delay": "0s",
+      "animation-timing-function": "ease",
+      "animation-fill-mode": "none",
+      "animation-iteration-count": "1"
+     }
+    }
+   }
+  }
+ }
+}

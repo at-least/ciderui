@@ -13,3 +13,5 @@ export const PAGE = [...TYPE, 'background-color', '-webkit-font-smoothing', 'fon
 export const TEXT = ['display', 'text-align', 'white-space', 'text-decoration-line', 'cursor', 'vertical-align', 'opacity'];
 // a flex or grid box's own layout
 export const FLEX = ['display', 'flex-direction', 'flex-wrap', 'align-items', 'justify-content', 'row-gap', 'column-gap'];
+// an element's CSS animation, as it names it
+export const ANIMATION = ['animation-name', 'animation-duration', 'animation-delay', 'animation-timing-function', 'animation-fill-mode', 'animation-iteration-count'];
