@@ -194,6 +194,10 @@ Not measured yet: the modals, the search field open, the checkout's forms (not r
 - `icon`: the icons as inline SVG in `currentColor` (rule 12).
 - `css` (a feature): every stylesheet embedded, written out by `ciderui-css`, so a site's cargo dependency at a commit is the one pin for its markup and its CSS (vpkit's decision 8). The font files are not embedded; `fonts.css` reads them beside the compiled stylesheet.
 
+## The documentation
+
+`docs/` is ciderui's documentation, a site built with ciderui-zola (decision 14): getting started, the foundations, the crate, a page for each component with each of its examples live in a frame of its own over its markup, and news in the Newsroom's look (`docs/README.md`). `npm test` holds it to the kit: the examples' copies and the frames' stylesheet are this commit's (`scripts/build-docs.mjs --check`), and `test/docs.mjs` wants a page for every component showing every one of its examples, the frames' stylesheet holding every rule the examples' classes have, and, the site built with zola, every page at 1440 and 390px in Chromium with no error, no missing file or dead link and no sideways scroll, each frame as tall as its content with every picture loaded. Its pictures are ciderui drawn by itself (`scripts/docs-pictures.mjs`).
+
 ## How a component is proven
 
 `test/components.mjs` renders each case in headless Chromium and compares computed styles by the check's source (rule 13). What the measurements taught the harness, which it keeps:

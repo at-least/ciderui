@@ -1,0 +1,30 @@
+{#- cui_example: a live example, for a page's markdown: a component's
+    example file (components/<name>/examples/<id>.html, copied into
+    docs/examples/ by scripts/build-docs.mjs, since zola reads only inside
+    the site), shown in a frame of its own, the article's figure, over the
+    same markup as code.
+
+      {{ <cui_example file="button/variants" title="The button's variants" pad={true} /> }}
+
+    The frame is a page of its own, as a site's is: Tailwind's preflight,
+    ciderui and its components (static/example.css, from
+    scripts/build-docs.mjs), with none of the article's styles, which would
+    restyle an example's paragraphs, lists and links; and the theme's
+    script, so a gallery's paddles and dots work as on a site.
+    static/example.js keeps it as tall as its content. file: the example,
+    <name>/<id>; title: the frame's name for assistive technology; pad:
+    24px around the example, for a part that is not a band of the page (a
+    button, a field, a card). A blank line would end the raw HTML in the
+    markdown, so srcdoc carries the line breaks as &#10;. -#}
+{% component cui_example(file, title, pad=false) -%}
+{%- if not title %}{{ throw(message="ciderui docs: a cui_example needs a title, the frame's name") }}{% endif -%}
+{%- set newline = `
+` -%}
+{%- set markup = load_data(path="examples/" ~ file ~ ".html", format="plain") | trim -%}
+{%- set frame = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="` ~ get_url(path="example.css", cachebust=true) ~ `"><script src="` ~ get_url(path="example.js", cachebust=true) ~ `"></script><script src="` ~ get_url(path="ciderui-zola.js", cachebust=true) ~ `" defer></script></head><body` ~ (` style="padding:24px"` if pad else ``) ~ `>` ~ markup ~ `</body></html>` -%}
+<figure><iframe class="cz-example" title="{{ title }}" srcdoc="{{ frame | escape | replace(from=newline, to=`&#10;`) }}" style="display:block;box-sizing:content-box;width:calc(100% - 2px);height:150px;border:1px solid var(--cui-c-divider);border-radius:18px"></iframe></figure>
+
+```html
+{{ markup | safe }}
+```
+{%- endcomponent cui_example %}

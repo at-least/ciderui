@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{#- The documentation's home: a tile (its picture ciderui's parts as a
+    shelf of cards, drawn by scripts/docs-pictures.mjs), the newest three
+    stories of its news, as the news' index lays them out, and a section's
+    header, its headline and more links ([extra] closing, links); then the
+    home's own markdown, if any. -#}
+{% block description %}{{ section.description or config.description }}{% endblock description %}
+{% block content -%}
+<div class="cui-tile" data-size="lg">
+<img class="cui-tile-media" src="{{ get_url(path='pictures/home.png') }}" alt="">
+<div class="cui-tile-content">
+<h1 class="cui-tile-headline">{{ config.title }}</h1>
+<p class="cui-tile-subhead">{{ section.extra.subhead }}</p>
+<p class="cui-tile-callout">{{ section.extra.callout }}</p>
+<div class="cui-tile-ctas"><a class="cui-btn" data-size="cta" href="{{ get_url(path='@/get-started.md') }}">Get started</a><a class="cui-btn" data-size="cta" data-variant="secondary" href="{{ get_url(path='@/components/_index.md') }}">See the components</a></div>
+</div>
+</div>
+{%- set news = get_section(path="news/_index.md") %}
+{% <cui_stories heading="Latest News"> %}
+{%- for p in news.pages[:3] -%}
+{%- set media -%}{{ <cui_page_media page={p} class="cui-story-media" width={1280} /> }}{%- endset -%}
+<li>{{ <cui_story size={"lg" if loop.first else "md"} href={p.permalink} media={media} category={p.extra.category | default(value="")} datetime={p.date or ""} date={p.date | date(format="%B %-d, %Y") if p.date else ""} headline={p.title} /> }}</li>
+{%- endfor -%}
+{% </cui_stories> %}
+{% <cui_section> %}<header class="cui-section-header"><h2 class="cui-section-headline">{{ section.extra.closing }}</h2><ul class="cui-section-links">
+{%- for link in section.extra.links %}<li>{{ <cui_more_link href={get_url(path=link.href)} text={link.text} /> }}</li>{% endfor -%}
+</ul></header>{% </cui_section> %}
+{{ <cui_markdown html={section.content} /> }}
+{%- endblock content %}

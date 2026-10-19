@@ -1,0 +1,47 @@
+# ciderui's documentation, a site built with ciderui-zola, the Zola theme on
+# ciderui (README.md): zola serve here. base_url is a name for no host: the
+# site is not published.
+base_url = "https://ciderui.test"
+title = "ciderui"
+description = "apple.com's look for websites: a Tailwind CSS v4 theme, apple.com's parts as classes, and a Rust crate that writes their markup."
+theme = "ciderui-zola"
+compile_sass = false
+build_search_index = false
+
+# what the theme reads Zola's markdown with (ciderui-zola's base.html
+# refuses a site without them)
+[markdown]
+bottom_footnotes = true
+insert_anchor_links = "none"
+github_alerts = false
+
+[markdown.highlighting]
+style = "inline"
+light_theme = "github-light"
+dark_theme = "github-dark"
+
+[extra]
+logo = "static/logo.svg"
+nav = [
+  { text = "Get Started", href = "/get-started/" },
+  { text = "Foundations", href = "/foundations/" },
+  { text = "Components", href = "/components/" },
+  { text = "Rust", href = "/rust/" },
+  { text = "News", href = "/news/" },
+]
+head = [{ tag = "link", attrs = { rel = "icon", type = "image/svg+xml", href = "/logo.svg" } }]
+
+[extra.footer]
+notes = "<p>apple.com’s values are read off its live pages and recorded with the probe that read them; none of apple.com’s stylesheets is copied. Apple, iPhone and Mac are trademarks of Apple Inc.; ciderui is not Apple’s.</p>"
+directory = [
+  [
+    { id = "footer-docs", title = "Documentation", links = [{ text = "Get Started", href = "/get-started/" }, { text = "Foundations", href = "/foundations/" }, { text = "Rust", href = "/rust/" }] },
+  ],
+  [
+    { id = "footer-components", title = "Components", links = [{ text = "All Components", href = "/components/" }, { text = "Button", href = "/components/button/" }, { text = "Global Nav", href = "/components/globalnav/" }, { text = "Article", href = "/components/article/" }] },
+  ],
+  [
+    { id = "footer-news", title = "News", links = [{ text = "Latest News", href = "/news/" }, { text = "Archive", href = "/news/archive/" }] },
+  ],
+]
+copyright = "Copyright © 2026 newlix. Released under the MIT License."
