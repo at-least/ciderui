@@ -12,7 +12,9 @@
  * data-variant  (none) the accent's fill; secondary, the link's color as
  *               text and edge on no ground, filled with the accent hovered;
  *               neutral, the neutral's fill (near-black, near-white in a
- *               dark block)
+ *               dark block); secondary-neutral, the neutral's color as text
+ *               and edge on no ground, filled with the neutral hovered (the
+ *               store's quick links)
  * data-size     sm 24px (12px text); (none) 36px (14px); lg 44px (17px);
  *               xl 56px (17px); cta, a hero's call to action, 36px below
  *               735px and 44px from it (apple.com's tile buttons)
@@ -25,8 +27,9 @@
  * letter-spacing (the system font's fitted value for the size, tokens.css);
  * a disabled button keeping its ground under the pointer, where apple.com's
  * changes it (a hover answering a control that cannot be used); no width:
- * the page's. Not yet: the store's secondary-neutral (its quick links), its
- * dark side unmeasured. */
+ * the page's; a secondary-neutral button in a dark block the neutral's dark
+ * side (near-white, filled white hovered: apple.com's dark one not
+ * measured). */
 
 @layer components {
   .cui-btn {
@@ -79,6 +82,15 @@
     --cui-btn-bg: transparent;
     --cui-btn-color: var(--cui-c-link);
     --cui-btn-border: var(--cui-c-link);
+  }
+
+  .cui-btn[data-variant="secondary-neutral"] {
+    --cui-btn-bg: transparent;
+    --cui-btn-bg-hover: var(--cui-c-neutral-hover);
+    --cui-btn-bg-active: var(--cui-c-neutral-active);
+    --cui-btn-color: var(--cui-c-neutral);
+    --cui-btn-color-hover: var(--cui-c-on-neutral);
+    --cui-btn-border: var(--cui-c-neutral);
   }
 
   .cui-btn[data-variant="neutral"] {

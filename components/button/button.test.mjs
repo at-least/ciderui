@@ -1,5 +1,6 @@
 // The button against apple.com: each size against its shared button
-// (store:button*), the call to action against the home page's tile buttons
+// (store:button*), the variants (store:button.secondary, .neutral,
+// .secondary-neutral), the call to action against the home page's tile buttons
 // across 735px (home:button*), the variants on light and in a dark block
 // (home:tile.dark-button*, home:gallery.button-neutral), disabled
 // (store:button*.disabled), the rectangle (bag:form-button*), the block
@@ -72,6 +73,9 @@ export const cases = [
       ...states('.cui-btn[data-variant="secondary"]', ['store', 'button.secondary']),
       { target: '.cui-btn[data-variant="neutral"]', props: [...LOOK, ...COLORS], apple: ['store', 'button.neutral'] },
       ...states('.cui-btn[data-variant="neutral"]', ['store', 'button.neutral']),
+      { target: '.cui-btn[data-variant="secondary-neutral"]', props: [...LOOK, ...COLORS], apple: ['store', 'button.secondary-neutral'] },
+      ...states('.cui-btn[data-variant="secondary-neutral"]', ['store', 'button.secondary-neutral']),
+      { target: '.cui-btn[data-variant="secondary-neutral"]', state: 'focus-visible', props: OUTLINE, apple: ['store', 'button.secondary-neutral', 'focus-visible'] },
     ],
   },
   {
