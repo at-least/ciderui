@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/shop/buy-iphone/iphone-18-pro",
  "finalUrl": "https://www.apple.com/shop/buy-iphone/iphone-18-pro",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T04:10:29.646Z",
+ "date": "2026-10-19T08:25:46.718Z",
  "widths": {
   "390": {
    "page.body": {
@@ -32,7 +32,7 @@
     }
    },
    "option": {
-    "html": "<label for=\"_r_22_\" class=\"form-selector-label\" id=\"_r_22__label\"><span class=\"row\"><span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small",
+    "html": "<label for=\"_r_2c_\" class=\"form-selector-label\" id=\"_r_2c__label\"><span class=\"row\"><span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -99,7 +99,7 @@
     }
    },
    "option.focus": {
-    "html": "<label for=\"_r_22_\" class=\"form-selector-label\" id=\"_r_22__label\"><span class=\"row\"><span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small",
+    "html": "<label for=\"_r_2c_\" class=\"form-selector-label\" id=\"_r_2c__label\"><span class=\"row\"><span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small",
     "styles": {
      "padding-top": "15px",
      "padding-right": "15px",
@@ -197,6 +197,111 @@
      "color": "rgb(29, 29, 31)"
     }
    },
+   "option.box": {
+    "html": "<div class=\"rc-dimension-selector-row form-selector\"><input class=\"form-selector-input\" id=\"_r_2c_\" aria-labelledby=\"_r_2c__label\" data-autom=\"dimensionScreensize6_3inch\" type=\"radio\" value=\"6_3inch\" name=\"dimensionScreensize\"><label for=\"_",
+    "styles": {
+     "display": "flex",
+     "position": "relative",
+     "margin-top": "14px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 142
+    }
+   },
+   "option.input": {
+    "html": "<input class=\"form-selector-input\" id=\"_r_2c_\" aria-labelledby=\"_r_2c__label\" data-autom=\"dimensionScreensize6_3inch\" type=\"radio\" value=\"6_3inch\" name=\"dimensionScreensize\">",
+    "styles": {
+     "position": "absolute",
+     "top": "0px",
+     "left": "0px",
+     "opacity": "0",
+     "margin-top": "0px",
+     "margin-left": "0px",
+     "display": "block"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 142
+    }
+   },
+   "option.label": {
+    "html": "<label for=\"_r_2c_\" class=\"form-selector-label\" id=\"_r_2c__label\"><span class=\"row\"><span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small",
+    "styles": {
+     "display": "flex",
+     "flex-direction": "column",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-align": "center"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 142
+    }
+   },
+   "option.left": {
+    "html": "<span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small\">6.3-inch display<as-footnote data-id=\"8054edc379d142293eb3940b1a8ea8d1\" data-assig",
+    "styles": {
+     "align-self": "center",
+     "padding-right": "9.26562px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 185.546875,
+     "height": 41,
+     "top": 1036.5,
+     "left": 40.375
+    }
+   },
+   "option.detail": {
+    "html": "<span class=\"form-label-small\">6.3-inch display<as-footnote data-id=\"8054edc379d142293eb3940b1a8ea8d1\" data-assigned=\"true\"><sup data-autom=\"footnote-sub\" class=\"as-footnote footnote footnote-number\"><span class=\"visuallyhidden\">&nbsp;Footn",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "margin-top": "4px"
+    }
+   },
+   "option.right": {
+    "html": "<span class=\"column form-selector-right-col rf-bfe-selector-right-col\"><span data-autom=\"pricedimensionScreensize6_3inch\" class=\"form-label-small\"> <span class=\"price-point price-point-fullPrice\">Buy from <span class=\"nowrap\">$1199</span></",
+    "styles": {
+     "align-self": "center",
+     "text-align": "end"
+    },
+    "box": {
+     "width": 123.6875,
+     "height": 110,
+     "top": 1002,
+     "left": 225.9375
+    }
+   },
+   "option.price": {
+    "html": "<span data-autom=\"pricedimensionScreensize6_3inch\" class=\"form-label-small\"> <span class=\"price-point price-point-fullPrice\">Buy from <span class=\"nowrap\">$1199</span></span> <span class=\"price-point price-point-acmiPrice\"><span> or <span c",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "margin-top": "4px",
+     "text-align": "end"
+    },
+    "box": {
+     "width": 123.6875,
+     "height": 106,
+     "top": 1006,
+     "left": 225.9375
+    }
+   },
    "option.checked": {
     "html": "<label for=\"cui-option\" class=\"form-selector-label\"><span class=\"row\"><span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone 18 Pro <span class=\"form-label-small\">6.3-inch display</span",
     "styles": {
@@ -260,7 +365,7 @@
     }
    },
    "swatch.link": {
-    "html": "<label for=\"_r_25_\" class=\"colornav-link rc-dimension-colornav-link rf-bfe-product-dimension-colornav-label\"><img alt=\"\" class=\"colornav-swatch\" src=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-burg",
+    "html": "<label for=\"_r_2f_\" class=\"colornav-link rc-dimension-colornav-link rf-bfe-product-dimension-colornav-label\"><img alt=\"\" class=\"colornav-swatch\" src=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-burg",
     "styles": {
      "padding-top": "2px",
      "padding-right": "2px",
@@ -374,7 +479,7 @@
     }
    },
    "swatch.label": {
-    "html": "<span id=\"_r_25__label\" class=\"colornav-label\">Burgundy</span>",
+    "html": "<span id=\"_r_2f__label\" class=\"colornav-label\">Burgundy</span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -812,6 +917,111 @@
      "font-weight": "400",
      "letter-spacing": "-0.12px",
      "color": "rgb(29, 29, 31)"
+    }
+   },
+   "option.box": {
+    "html": "<div class=\"rc-dimension-selector-row form-selector\"><input class=\"form-selector-input\" id=\"_r_a_\" aria-labelledby=\"_r_a__label\" data-autom=\"dimensionScreensize6_3inch\" type=\"radio\" value=\"6_3inch\" name=\"dimensionScreensize\"><label for=\"_r_",
+    "styles": {
+     "display": "flex",
+     "position": "relative",
+     "margin-top": "14px"
+    },
+    "box": {
+     "width": 328,
+     "height": 142
+    }
+   },
+   "option.input": {
+    "html": "<input class=\"form-selector-input\" id=\"_r_a_\" aria-labelledby=\"_r_a__label\" data-autom=\"dimensionScreensize6_3inch\" type=\"radio\" value=\"6_3inch\" name=\"dimensionScreensize\">",
+    "styles": {
+     "position": "absolute",
+     "top": "0px",
+     "left": "0px",
+     "opacity": "0",
+     "margin-top": "0px",
+     "margin-left": "0px",
+     "display": "block"
+    },
+    "box": {
+     "width": 328,
+     "height": 142
+    }
+   },
+   "option.label": {
+    "html": "<label for=\"_r_a_\" class=\"form-selector-label\" id=\"_r_a__label\"><span class=\"row\"><span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small\">",
+    "styles": {
+     "display": "flex",
+     "flex-direction": "column",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-align": "center"
+    },
+    "box": {
+     "width": 328,
+     "height": 142
+    }
+   },
+   "option.left": {
+    "html": "<span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small\">6.3-inch display<as-footnote data-id=\"8054edc379d142293eb3940b1a8ea8d1\" data-assig",
+    "styles": {
+     "align-self": "center",
+     "padding-right": "8.875px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 177.59375,
+     "height": 41,
+     "top": 690,
+     "left": 690
+    }
+   },
+   "option.detail": {
+    "html": "<span class=\"form-label-small\">6.3-inch display<as-footnote data-id=\"8054edc379d142293eb3940b1a8ea8d1\" data-assigned=\"true\"><sup data-autom=\"footnote-sub\" class=\"as-footnote footnote footnote-number\"><span class=\"visuallyhidden\">&nbsp;Footn",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "margin-top": "4px"
+    }
+   },
+   "option.right": {
+    "html": "<span class=\"column form-selector-right-col rf-bfe-selector-right-col\"><span data-autom=\"pricedimensionScreensize6_3inch\" class=\"form-label-small\"> <span class=\"price-point price-point-fullPrice\">Buy from <span class=\"nowrap\">$1199</span></",
+    "styles": {
+     "align-self": "center",
+     "text-align": "end"
+    },
+    "box": {
+     "width": 118.390625,
+     "height": 110,
+     "top": 655.5,
+     "left": 867.609375
+    }
+   },
+   "option.price": {
+    "html": "<span data-autom=\"pricedimensionScreensize6_3inch\" class=\"form-label-small\"> <span class=\"price-point price-point-fullPrice\">Buy from <span class=\"nowrap\">$1199</span></span> <span class=\"price-point price-point-acmiPrice\"><span> or <span c",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "margin-top": "4px",
+     "text-align": "end"
+    },
+    "box": {
+     "width": 118.390625,
+     "height": 106,
+     "top": 659.5,
+     "left": 867.609375
     }
    },
    "option.checked": {
@@ -1431,6 +1641,111 @@
      "color": "rgb(29, 29, 31)"
     }
    },
+   "option.box": {
+    "html": "<div class=\"rc-dimension-selector-row form-selector\"><input class=\"form-selector-input\" id=\"_r_a_\" aria-labelledby=\"_r_a__label\" data-autom=\"dimensionScreensize6_3inch\" type=\"radio\" value=\"6_3inch\" name=\"dimensionScreensize\"><label for=\"_r_",
+    "styles": {
+     "display": "flex",
+     "position": "relative",
+     "margin-top": "14px"
+    },
+    "box": {
+     "width": 328,
+     "height": 142
+    }
+   },
+   "option.input": {
+    "html": "<input class=\"form-selector-input\" id=\"_r_a_\" aria-labelledby=\"_r_a__label\" data-autom=\"dimensionScreensize6_3inch\" type=\"radio\" value=\"6_3inch\" name=\"dimensionScreensize\">",
+    "styles": {
+     "position": "absolute",
+     "top": "0px",
+     "left": "0px",
+     "opacity": "0",
+     "margin-top": "0px",
+     "margin-left": "0px",
+     "display": "block"
+    },
+    "box": {
+     "width": 328,
+     "height": 142
+    }
+   },
+   "option.label": {
+    "html": "<label for=\"_r_a_\" class=\"form-selector-label\" id=\"_r_a__label\"><span class=\"row\"><span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small\">",
+    "styles": {
+     "display": "flex",
+     "flex-direction": "column",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-align": "center"
+    },
+    "box": {
+     "width": 328,
+     "height": 142
+    }
+   },
+   "option.left": {
+    "html": "<span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small\">6.3-inch display<as-footnote data-id=\"8054edc379d142293eb3940b1a8ea8d1\" data-assig",
+    "styles": {
+     "align-self": "center",
+     "padding-right": "8.875px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 177.59375,
+     "height": 41,
+     "top": 690,
+     "left": 813
+    }
+   },
+   "option.detail": {
+    "html": "<span class=\"form-label-small\">6.3-inch display<as-footnote data-id=\"8054edc379d142293eb3940b1a8ea8d1\" data-assigned=\"true\"><sup data-autom=\"footnote-sub\" class=\"as-footnote footnote footnote-number\"><span class=\"visuallyhidden\">&nbsp;Footn",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "margin-top": "4px"
+    }
+   },
+   "option.right": {
+    "html": "<span class=\"column form-selector-right-col rf-bfe-selector-right-col\"><span data-autom=\"pricedimensionScreensize6_3inch\" class=\"form-label-small\"> <span class=\"price-point price-point-fullPrice\">Buy from <span class=\"nowrap\">$1199</span></",
+    "styles": {
+     "align-self": "center",
+     "text-align": "end"
+    },
+    "box": {
+     "width": 118.390625,
+     "height": 110,
+     "top": 655.5,
+     "left": 990.609375
+    }
+   },
+   "option.price": {
+    "html": "<span data-autom=\"pricedimensionScreensize6_3inch\" class=\"form-label-small\"> <span class=\"price-point price-point-fullPrice\">Buy from <span class=\"nowrap\">$1199</span></span> <span class=\"price-point price-point-acmiPrice\"><span> or <span c",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "margin-top": "4px",
+     "text-align": "end"
+    },
+    "box": {
+     "width": 118.390625,
+     "height": 106,
+     "top": 659.5,
+     "left": 990.609375
+    }
+   },
    "option.checked": {
     "html": "<label for=\"cui-option\" class=\"form-selector-label\"><span class=\"row\"><span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone 18 Pro <span class=\"form-label-small\">6.3-inch display</span",
     "styles": {
@@ -2046,6 +2361,111 @@
      "font-weight": "400",
      "letter-spacing": "-0.12px",
      "color": "rgb(29, 29, 31)"
+    }
+   },
+   "option.box": {
+    "html": "<div class=\"rc-dimension-selector-row form-selector\"><input class=\"form-selector-input\" id=\"_r_a_\" aria-labelledby=\"_r_a__label\" data-autom=\"dimensionScreensize6_3inch\" type=\"radio\" value=\"6_3inch\" name=\"dimensionScreensize\"><label for=\"_r_",
+    "styles": {
+     "display": "flex",
+     "position": "relative",
+     "margin-top": "14px"
+    },
+    "box": {
+     "width": 328,
+     "height": 142
+    }
+   },
+   "option.input": {
+    "html": "<input class=\"form-selector-input\" id=\"_r_a_\" aria-labelledby=\"_r_a__label\" data-autom=\"dimensionScreensize6_3inch\" type=\"radio\" value=\"6_3inch\" name=\"dimensionScreensize\">",
+    "styles": {
+     "position": "absolute",
+     "top": "0px",
+     "left": "0px",
+     "opacity": "0",
+     "margin-top": "0px",
+     "margin-left": "0px",
+     "display": "block"
+    },
+    "box": {
+     "width": 328,
+     "height": 142
+    }
+   },
+   "option.label": {
+    "html": "<label for=\"_r_a_\" class=\"form-selector-label\" id=\"_r_a__label\"><span class=\"row\"><span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small\">",
+    "styles": {
+     "display": "flex",
+     "flex-direction": "column",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-align": "center"
+    },
+    "box": {
+     "width": 328,
+     "height": 142
+    }
+   },
+   "option.left": {
+    "html": "<span class=\"column form-selector-left-col rf-bfe-selector-left-col\"><span class=\"form-selector-title\">iPhone&nbsp;18&nbsp;Pro\n<span class=\"form-label-small\">6.3-inch display<as-footnote data-id=\"8054edc379d142293eb3940b1a8ea8d1\" data-assig",
+    "styles": {
+     "align-self": "center",
+     "padding-right": "8.875px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 177.59375,
+     "height": 41,
+     "top": 690,
+     "left": 1188
+    }
+   },
+   "option.detail": {
+    "html": "<span class=\"form-label-small\">6.3-inch display<as-footnote data-id=\"8054edc379d142293eb3940b1a8ea8d1\" data-assigned=\"true\"><sup data-autom=\"footnote-sub\" class=\"as-footnote footnote footnote-number\"><span class=\"visuallyhidden\">&nbsp;Footn",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "margin-top": "4px"
+    }
+   },
+   "option.right": {
+    "html": "<span class=\"column form-selector-right-col rf-bfe-selector-right-col\"><span data-autom=\"pricedimensionScreensize6_3inch\" class=\"form-label-small\"> <span class=\"price-point price-point-fullPrice\">Buy from <span class=\"nowrap\">$1199</span></",
+    "styles": {
+     "align-self": "center",
+     "text-align": "end"
+    },
+    "box": {
+     "width": 118.390625,
+     "height": 110,
+     "top": 655.5,
+     "left": 1365.609375
+    }
+   },
+   "option.price": {
+    "html": "<span data-autom=\"pricedimensionScreensize6_3inch\" class=\"form-label-small\"> <span class=\"price-point price-point-fullPrice\">Buy from <span class=\"nowrap\">$1199</span></span> <span class=\"price-point price-point-acmiPrice\"><span> or <span c",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block",
+     "margin-top": "4px",
+     "text-align": "end"
+    },
+    "box": {
+     "width": 118.390625,
+     "height": 106,
+     "top": 659.5,
+     "left": 1365.609375
     }
    },
    "option.checked": {
