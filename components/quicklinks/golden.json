@@ -1,0 +1,16 @@
+{
+ "quicklinks-phone | .cui-quicklinks | 390 | margin-left": "22px",
+ "quicklinks-phone | .cui-quicklinks | 390 | margin-right": "22px",
+ "quicklinks | .cui-quicklinks-list li:nth-child(2) | 1600 | box-x": "115.296875px",
+ "quicklinks | .cui-quicklinks | 1600 | box-width": "980px",
+ "quicklinks | .cui-quicklinks-title | 1600 | letter-spacing": "-0.2044px",
+ "quicklinks | .cui-quicklinks-list li:nth-child(2) | 1200 | box-x": "115.296875px",
+ "quicklinks | .cui-quicklinks | 1200 | box-width": "980px",
+ "quicklinks | .cui-quicklinks-title | 1200 | letter-spacing": "-0.2044px",
+ "quicklinks | .cui-quicklinks-list li:nth-child(2) | 900 | box-x": "115.296875px",
+ "quicklinks | .cui-quicklinks | 900 | box-width": "856px",
+ "quicklinks | .cui-quicklinks-title | 900 | letter-spacing": "-0.2044px",
+ "quicklinks | .cui-quicklinks-list li:nth-child(2) | 390 | box-x": "115.296875px",
+ "quicklinks | .cui-quicklinks | 390 | box-width": "346px",
+ "quicklinks | .cui-quicklinks-title | 390 | letter-spacing": "-0.1029px"
+}
