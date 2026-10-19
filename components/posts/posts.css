@@ -1,0 +1,261 @@
+/* ciderui — the posts: apple.com's Newsroom archive, a heading over ruled
+ * rows, each row a link: its picture before its category, its headline and
+ * its date; smaller, the related stories under an article.
+ *
+ * From apple.com's Newsroom (reference/apple.com/): newsroom-archive:* (a
+ * month and its rows), newsroom-article:related.* (the related stories).
+ *
+ *   <section class="cui-posts">
+ *     <h2 class="cui-posts-heading">October 2026</h2>
+ *     <ul class="cui-posts-list">
+ *       <li><a class="cui-post" href="/news/zola/">
+ *         <img class="cui-post-media" src="…" alt="" width="1280" height="720">
+ *         <div class="cui-post-content">
+ *           <p class="cui-post-category">Update</p>
+ *           <h3 class="cui-post-headline">ciderui comes to Zola</h3>
+ *           <time class="cui-post-date" datetime="2026-10-19">October 19, 2026</time>
+ *         </div>
+ *       </a></li>
+ *     </ul>
+ *   </section>
+ *
+ * cui-posts           980px, 692px from 735px, 87.5% below; centered
+ *   data-size="sm"    the related stories: an article's text column (653px,
+ *                     576px, 87.5% of 414px at most), 52px down (48px from
+ *                     735px, 28px below)
+ * cui-posts-heading   28px at 700 (24px from 735px, 21px below), 52px down
+ *                     (48px, 44px), 16px over its rows (sm: 24px, 21px
+ *                     below 1069px, no room around it)
+ * cui-post            a row, a link, a rule above it in the divider's color,
+ *                     40px in above and below (32px from 735px, 28px below);
+ *                     its picture beside its text, centered (at their top
+ *                     below 735px); no hover; the last no room below (sm: a
+ *                     rule below it, 32px, 28px below 735px)
+ * cui-post-media      295px by 166px (264px by 148.5px from 735px, 105px by
+ *                     59px below), covering, 32px before its text (24px,
+ *                     16px) (sm: 171px by 96px, 93px square below 735px, 24px
+ *                     before its text, 16px)
+ * cui-post-category   14px at 700 (12px below 1069px), the secondary text,
+ *                     uppercase (sm: 12px at 600, 4px over the headline)
+ * cui-post-headline   24px at 700 (21px from 735px, 17px below), 8px down
+ *                     (sm: 19px, 17px below 1069px)
+ * cui-post-date       14px on 20px at 600 (on 18px below 735px), the
+ *                     secondary text, 12px down (sm: 14px on 18px, 8px down)
+ *
+ * apple.com's: all of it. ciderui's: the letter-spacing (tokens.css); the
+ * picture an <img> (apple.com's a picture element); the archive's month
+ * and the related stories' heading one part, sized apart. */
+
+@layer components {
+  .cui-posts {
+    width: 87.5%;
+    margin-inline: auto;
+    color: var(--cui-c-text);
+
+    @media (width >= 735px) {
+      width: 692px;
+    }
+
+    @media (width >= 1069px) {
+      width: 980px;
+    }
+
+    &[data-size="sm"] {
+      width: calc(min(100%, 414px) * 0.875);
+      padding-top: 28px;
+
+      @media (width >= 735px) {
+        width: 576px;
+        padding-top: 48px;
+      }
+
+      @media (width >= 1069px) {
+        width: 653px;
+        padding-top: 52px;
+      }
+    }
+  }
+
+  .cui-posts-heading {
+    margin: 44px 0 16px;
+    font-size: 21px;
+    line-height: 25px;
+    font-weight: 700;
+    letter-spacing: var(--cui-tracking-21);
+
+    @media (width >= 735px) {
+      margin-top: 48px;
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing: var(--cui-tracking-24);
+    }
+
+    @media (width >= 1069px) {
+      margin-top: 52px;
+      font-size: 28px;
+      line-height: 32px;
+      letter-spacing: var(--cui-tracking-28);
+    }
+
+    .cui-posts[data-size="sm"] & {
+      margin: 0;
+      font-size: 21px;
+      line-height: 25px;
+      letter-spacing: var(--cui-tracking-21);
+
+      @media (width >= 1069px) {
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: var(--cui-tracking-24);
+      }
+    }
+  }
+
+  .cui-posts-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    /* a month's last row has no room below it: the next month's heading
+       has its own */
+    .cui-posts:not([data-size]) & > li:last-child > .cui-post {
+      padding-bottom: 0;
+    }
+  }
+
+  .cui-post {
+    display: flex;
+    align-items: flex-start;
+    padding: 28px 0;
+    border-top: 1px solid var(--cui-c-divider);
+    color: var(--cui-c-text);
+    text-decoration-line: none;
+
+    @media (width >= 735px) {
+      align-items: center;
+      padding: 32px 0;
+    }
+
+    @media (width >= 1069px) {
+      padding: 40px 0;
+    }
+
+    .cui-posts[data-size="sm"] & {
+      align-items: normal;
+      border-top: 0;
+      border-bottom: 1px solid var(--cui-c-divider);
+
+      @media (width >= 735px) {
+        padding: 32px 0;
+      }
+    }
+  }
+
+  .cui-post-media {
+    flex-shrink: 0;
+    width: 105px;
+    height: 59.0625px;
+    margin-right: 16px;
+    object-fit: cover;
+
+    @media (width >= 735px) {
+      width: 264px;
+      height: 148.5px;
+      margin-right: 24px;
+    }
+
+    @media (width >= 1069px) {
+      width: 295px;
+      height: 165.9375px;
+      margin-right: 32px;
+    }
+
+    .cui-posts[data-size="sm"] & {
+      width: 93px;
+      height: 93px;
+      margin-right: 16px;
+
+      @media (width >= 735px) {
+        width: 171px;
+        height: 96.1875px;
+        margin-right: 24px;
+      }
+    }
+  }
+
+  .cui-post-category {
+    margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: var(--cui-tracking-12);
+    text-transform: uppercase;
+    color: var(--cui-c-text-2);
+
+    @media (width >= 1069px) {
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: var(--cui-tracking-14);
+    }
+
+    .cui-posts[data-size="sm"] & {
+      margin-bottom: 4px;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+      letter-spacing: var(--cui-tracking-12);
+    }
+  }
+
+  .cui-post-headline {
+    margin: 8px 0 0;
+    font-size: 17px;
+    line-height: 21px;
+    font-weight: 700;
+    letter-spacing: var(--cui-tracking-17);
+
+    @media (width >= 735px) {
+      font-size: 21px;
+      line-height: 25px;
+      letter-spacing: var(--cui-tracking-21);
+    }
+
+    @media (width >= 1069px) {
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing: var(--cui-tracking-24);
+    }
+
+    .cui-posts[data-size="sm"] & {
+      margin-top: 0;
+      font-size: 17px;
+      line-height: 21px;
+      letter-spacing: var(--cui-tracking-17);
+
+      @media (width >= 1069px) {
+        font-size: 19px;
+        line-height: 23px;
+        letter-spacing: var(--cui-tracking-19);
+      }
+    }
+  }
+
+  .cui-post-date {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-14);
+    color: var(--cui-c-text-2);
+
+    @media (width >= 735px) {
+      line-height: 20px;
+    }
+
+    .cui-posts[data-size="sm"] & {
+      margin-top: 8px;
+      line-height: 18px;
+    }
+  }
+}
