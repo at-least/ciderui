@@ -1,0 +1,101 @@
+/* ciderui — the option: apple.com's buy page's choice, a tile on a radio,
+ * its title (and a detail under it) at one side and a price at the other;
+ * checked, its edge the accent.
+ *
+ * From apple.com's buy page (reference/apple.com/): buy:option* (iPhone 18
+ * Pro's: at rest, focused; checked, apple.com's classes on a checked copy the
+ * probe adds; its parts).
+ *
+ *   <div class="cui-option">
+ *     <input class="cui-option-input" type="radio" id="model-pro" name="model" value="pro" checked>
+ *     <label class="cui-option-label" for="model-pro">
+ *       <span class="cui-option-title">iPhone 18 Pro<span class="cui-option-detail">6.3-inch display</span></span>
+ *       <span class="cui-option-price">From $1099</span>
+ *     </label>
+ *   </div>
+ *
+ * cui-option          the option, on its own light ground in any block
+ * cui-option-input    the radio itself, over the whole tile, transparent: it
+ *                     takes the click, the focus and the arrow keys
+ * cui-option-label    the tile: 83px tall at least, 15px in, its 1px edge,
+ *                     12px corners, on the field's ground; checked, a 2px
+ *                     accent edge (14px in, the box unchanged); focused from
+ *                     the keyboard, the focus ring
+ * cui-option-title    17px at 600, at its start, centered down it
+ * cui-option-detail   in the title, under it: 12px, 4px down
+ * cui-option-price    12px at its end, 40% of it, 4px down
+ *
+ * apple.com's: the sizes, the edges, the ground, the type, the places. ciderui's:
+ * the letter-spacing (tokens.css); the tile one row of its title and price
+ * (apple.com's a flex column holding the row); the title the rest of the
+ * row when there is no price (apple.com's 60%); light in a dark block, on a
+ * light ground of its own, as a field (apple.com shows options on light
+ * pages alone); no margin above it (apple.com's 14px, the form's
+ * spacing). */
+
+@layer components {
+  .cui-option {
+    position: relative;
+    color-scheme: light;
+    border-radius: 12px;
+    background-color: var(--cui-c-bg);
+  }
+
+  .cui-option-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+  }
+
+  .cui-option-label {
+    display: flex;
+    align-items: center;
+    min-height: 83px;
+    padding: 15px;
+    border: 1px solid var(--cui-c-border);
+    border-radius: 12px;
+    font-size: 17px;
+    line-height: 21px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-17);
+    color: var(--cui-c-text);
+    background-color: var(--cui-c-field);
+  }
+
+  .cui-option-input:checked + .cui-option-label {
+    padding: 14px;
+    border-width: 2px;
+    border-color: var(--cui-c-accent);
+  }
+
+  .cui-option-input:focus-visible + .cui-option-label {
+    outline: var(--cui-focus-ring);
+    outline-offset: var(--cui-focus-ring-offset);
+  }
+
+  /* 60% of the row with a price, 3% of it before the price */
+  .cui-option-title {
+    flex: 1;
+    padding-right: 3%;
+    font-weight: 600;
+  }
+
+  .cui-option-detail,
+  .cui-option-price {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-12);
+  }
+
+  .cui-option-price {
+    flex: 0 0 40%;
+    text-align: end;
+  }
+}
