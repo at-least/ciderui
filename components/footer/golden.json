@@ -1,0 +1,15 @@
+{
+ "footer | .cui-footer-links > li:first-child::after | 1600 | width": "1px",
+ "footer | .cui-footer | 1600 | letter-spacing": "-0.126px",
+ "footer | .cui-footer-links > li:first-child::after | 1200 | width": "1px",
+ "footer | .cui-footer | 1200 | letter-spacing": "-0.126px",
+ "footer | .cui-footer-links > li:first-child::after | 900 | width": "1px",
+ "footer | .cui-footer | 900 | letter-spacing": "-0.126px",
+ "footer | .cui-footer-links > li:first-child::after | 390 | width": "1px",
+ "footer | .cui-footer | 390 | letter-spacing": "-0.126px",
+ "footer-wide | .cui-footer-column:first-child .cui-footer-section:first-child .cui-footer-toggle | 1600 | display": "none",
+ "footer-wide | .cui-footer-column:first-child .cui-footer-section:first-child .cui-footer-toggle | 1200 | display": "none",
+ "footer-wide | .cui-footer-column:first-child .cui-footer-section:first-child .cui-footer-toggle | 900 | display": "none",
+ "footer-phone | .cui-footer-column:first-child .cui-footer-section:first-child .cui-footer-list | 390 | display": "none",
+ "footer-open | .cui-footer-column:first-child .cui-footer-section:first-child .cui-footer-title svg | 390 | transform": "matrix(1, 0, 0, -1, 0, 0)"
+}

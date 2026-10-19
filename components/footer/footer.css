@@ -1,0 +1,312 @@
+/* ciderui — the footer: apple.com's, on the alternate ground: its
+ * footnotes, its directory of links in columns (to 833px a column of
+ * sections that open one by one, with no script), the shop line and the
+ * legal row; light on a dark page too, as apple.com's is.
+ *
+ * From apple.com's home page (reference/apple.com/): home:footer* (its
+ * colors, type, layout; on a phone its sections), home-footer:* (a phone's
+ * section opened), product:footer* (on a dark page).
+ *
+ *   <footer class="cui-footer">
+ *     <div class="cui-footer-content">
+ *       <section class="cui-footer-notes" aria-label="Footnotes"><p>…</p></section>
+ *       <nav class="cui-footer-directory" aria-label="Directory">
+ *         <div class="cui-footer-column">
+ *           <div class="cui-footer-section">
+ *             <input class="cui-footer-toggle" type="checkbox" id="footer-shop">
+ *             <h3 class="cui-footer-title"><label for="footer-shop">Shop and Learn(icon::FOOTER_CHEVRON)</label></h3>
+ *             <ul class="cui-footer-list"><li><a href="/store/">Store</a></li></ul>
+ *           </div>
+ *         </div>
+ *       </nav>
+ *       <div class="cui-footer-legal">
+ *         <p class="cui-footer-shop">More ways to shop: <a href="/retail/">Find a store</a>.</p>
+ *         <div class="cui-footer-row">
+ *           <p class="cui-footer-copyright">Copyright © 2026 Example Inc. All rights reserved.</p>
+ *           <ul class="cui-footer-links"><li><a href="/privacy/">Privacy Policy</a></li></ul>
+ *           <a class="cui-footer-locale" href="/choose-country/">United States</a>
+ *         </div>
+ *       </div>
+ *     </div>
+ *   </footer>
+ *
+ * cui-footer           the footer: the alternate ground, 12px on 16px, its
+ *                      text, links and titles in their colors, light in a
+ *                      dark block
+ * cui-footer-content   980px at most, 22px in (16px to 833px)
+ * cui-footer-notes     its footnotes, a rule under them; their links
+ *                      underlined
+ * cui-footer-directory a row of columns (cui-footer-column, a quarter of
+ *                      the row at most), 20px down
+ * cui-footer-section   a title (cui-footer-title, at 600) over its links
+ *                      (cui-footer-list), sections 24px apart; to 833px a
+ *                      36px row over a rule, opened by its title (the
+ *                      checkbox cui-footer-toggle before it and its label),
+ *                      its links 28px rows
+ * cui-footer-legal     the last rows: the shop line (cui-footer-shop) over a
+ *                      rule, the legal row (cui-footer-row): the copyright,
+ *                      the legal links (cui-footer-links) 9px either side of
+ *                      a short rule, the locale at its end
+ *
+ * apple.com's: the colors, the type, the widths, the gaps, the rules, the
+ * step at 833/834px, the phone's rows. ciderui's: the letter-spacing
+ * (tokens.css); a section opens by a checkbox and its label (apple.com's
+ * button and script; the local nav's way), at once (apple.com's list moves
+ * in 0.3s), its chevron turned. */
+
+@layer components {
+  .cui-footer {
+    color-scheme: light;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: var(--cui-tracking-12);
+    color: var(--cui-c-on-footer);
+    background-color: var(--cui-c-bg-alt);
+
+    a {
+      color: var(--cui-c-on-footer-link);
+      text-decoration-line: none;
+
+      @media (hover: hover) {
+        &:hover {
+          text-decoration-line: underline;
+        }
+      }
+    }
+
+  }
+
+  .cui-footer-content {
+    max-width: 980px;
+    margin-inline: auto;
+    padding-inline: 16px;
+
+    @media (width >= 834px) {
+      padding-inline: 22px;
+    }
+  }
+
+  .cui-footer-notes {
+    padding: 17px 0 11px;
+    border-bottom: 1px solid var(--cui-c-separator);
+
+    a {
+      text-decoration-line: underline;
+    }
+  }
+
+  .cui-footer-directory {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+
+    @media (width >= 834px) {
+      flex-direction: row;
+    }
+  }
+
+  .cui-footer-column {
+    @media (width >= 834px) {
+      flex: 0 1 25%;
+    }
+  }
+
+  .cui-footer-title {
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: 400;
+    color: var(--cui-c-on-footer-title);
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      cursor: pointer;
+    }
+
+    svg {
+      flex: none;
+      margin-top: 5px;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  /* the checkbox, out of sight but in the focus order; its ring on the title */
+  .cui-footer-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    &:focus-visible + .cui-footer-title label {
+      outline: var(--cui-focus-ring);
+      outline-offset: var(--cui-focus-ring-offset);
+    }
+  }
+
+  /* to 833px: a row over a rule, its list shown as it is checked */
+  .cui-footer-section {
+    position: relative;
+    margin-left: -4px;
+    padding: 0 4px 1px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 4px;
+      bottom: 0;
+      left: 4px;
+      height: 1px;
+      background-color: var(--cui-c-separator);
+    }
+  }
+
+  .cui-footer-list {
+    display: none;
+    padding: 5px 0 16px;
+
+    a {
+      display: block;
+      padding: 6px 14px;
+    }
+  }
+
+  .cui-footer-toggle:checked ~ .cui-footer-list {
+    display: block;
+  }
+
+  .cui-footer-toggle:checked + .cui-footer-title svg {
+    transform: scaleY(-1);
+  }
+
+  /* from 834px: the titles at 600 over their lists, always shown */
+  @media (width >= 834px) {
+    .cui-footer-section {
+      margin-left: 0;
+      padding: 0;
+
+      &::after {
+        content: none;
+      }
+
+      & + & {
+        padding-top: 24px;
+      }
+    }
+
+    .cui-footer-toggle {
+      display: none;
+    }
+
+    .cui-footer-title {
+      margin: 0 20px 9.6px 0;
+      font-weight: 600;
+
+      label {
+        display: block;
+        padding: 0;
+        cursor: auto;
+      }
+
+      svg {
+        display: none;
+      }
+    }
+
+    .cui-footer-list {
+      display: block;
+      margin-right: 20px;
+      padding: 0;
+
+      li:not(:last-child) {
+        margin-bottom: 9.6px;
+      }
+
+      a {
+        display: inline;
+        padding: 0;
+      }
+    }
+  }
+
+  .cui-footer-legal {
+    padding: 17px 0 9px;
+
+    @media (width >= 834px) {
+      padding: 37px 0 11px;
+    }
+  }
+
+  .cui-footer-shop {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+
+    @media (width >= 834px) {
+      margin-bottom: 17px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--cui-c-separator);
+    }
+
+    @media (width >= 1069px) {
+      margin-bottom: 16px;
+      padding-bottom: 19px;
+    }
+  }
+
+  .cui-footer-row {
+    @media (width >= 834px) {
+      display: flex;
+    }
+  }
+
+  .cui-footer-copyright {
+    margin-top: 5px;
+
+    @media (width >= 834px) {
+      margin-right: 30px;
+    }
+  }
+
+  .cui-footer-links {
+    margin-top: 5px;
+
+    > li {
+      position: relative;
+      display: inline-block;
+      margin: 5px 6px 0 0;
+
+      a {
+        margin-left: -9px;
+        padding: 0 9px;
+      }
+
+      /* the rule after each but the last */
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -1px;
+        width: 1px;
+        height: 10px;
+        margin-top: 3px;
+        background-color: var(--cui-c-footer-rule);
+      }
+    }
+
+    @media (width >= 834px) {
+      margin-right: 30px;
+    }
+  }
+
+  .cui-footer-locale {
+    display: block;
+    margin-top: 5px;
+
+    @media (width >= 834px) {
+      margin-left: auto;
+    }
+  }
+}

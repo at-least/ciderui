@@ -199,6 +199,17 @@ pub const DISCLOSURE: Icon = Icon {
     inner: r#"<path d="M15 1.13 8.5 7.72 2 1.13" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>"#,
 };
 
+/// The footer's chevron (`cui-footer-title`, to 833px), as apple.com's: a
+/// line through (10.075, 0.675), (5.5, 5.323) and (0.925, 0.675) in 11 by
+/// 6, 1 thick, round (`reference/icons/`); `footer.css` turns it up while
+/// its section is open, the line apple.com's animation ends on.
+pub const FOOTER_CHEVRON: Icon = Icon {
+    width: "11",
+    height: "6",
+    view_box: "0 0 11 6",
+    inner: r#"<path d="M10.075.675 5.5 5.323.925.675" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>"#,
+};
+
 #[cfg(test)]
 mod tests {
     use super::*;

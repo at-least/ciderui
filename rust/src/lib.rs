@@ -19,6 +19,7 @@ mod checkbox;
 #[cfg(feature = "css")]
 pub mod css;
 mod field;
+mod footer;
 mod gallery;
 mod globalnav;
 pub mod icon;
@@ -37,6 +38,7 @@ pub use accordion::{Accordion, AccordionItem};
 pub use card::Card;
 pub use checkbox::Checkbox;
 pub use field::Field;
+pub use footer::{Footer, FooterSection};
 pub use gallery::Gallery;
 pub use globalnav::GlobalNav;
 pub use link::MoreLink;

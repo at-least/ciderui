@@ -44,6 +44,10 @@
  *   dot, dot-hover          a gallery's dots, and hovered
  *   divider                 a rule between items on the page (an
  *                           accordion's)
+ *   on-footer, -link, -title the footer's text, links and titles, on the
+ *                           alternate ground; footer-rule, its legal links'
+ *                           separators. One value each: the footer is light
+ *                           on a dark page too, as apple.com's is
  *   field                   a field's ground, translucent; one value: a
  *                           field keeps its light look in a dark block, as
  *                           apple.com's does in a dark color scheme
@@ -88,6 +92,10 @@
   --cui-c-dot-hover: light-dark(rgb(0 0 0 / 0.54), rgb(255 255 255 / 0.48));
   --cui-c-field: rgb(255 255 255 / 0.8);
   --cui-c-divider: light-dark(#d2d2d7, #424245);
+  --cui-c-on-footer: rgb(0 0 0 / 0.56);
+  --cui-c-on-footer-link: rgb(0 0 0 / 0.72);
+  --cui-c-on-footer-title: rgb(0 0 0 / 0.88);
+  --cui-c-footer-rule: rgb(0 0 0 / 0.48);
 
   /* SF on Apple's platforms by its two Apple-only names (-apple-system
      Safari's, BlinkMacSystemFont Chrome's; system-ui would be a font

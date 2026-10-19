@@ -59,3 +59,8 @@ apple.com's 36px paddles draw a chevron in a 36 by 36 SVG (`icon-control-chevron
 ## The checkbox's check
 
 apple.com's sign-in widget draws its check as an SF Pro Icons glyph (`.form-checkbox-indicator::after`, 18px on 28px, white on the checked box). `check.mjs` captures the checked box at 20 pixels to the unit and reads its white ink inside the 14 by 14 content box: 2.65 to 11.85 across, 2.95 to 11.9 down, its strokes about 1.33 thick (a row's run across the long arm 1.55 at 58°, across the short one 1.7 at 53°). ciderui's `CHECK` is a line 1.35 thick, round at its ends and its corner, through (3.3, 7.65), (6.25, 11.35) and (11.15, 3.7), the best of a small grid of points about those the ink gives: it shares 0.9603 of its ink with apple.com's (intersection over union; the probe fails below 0.85, and holds the drawing to the checkbox's example). Measured 2026-10-19 on https://secure.store.apple.com/shop/account/home in Chromium 151 on Linux (`results/check.json`).
+
+## The accordion's and the footer's chevrons
+
+Both are apple.com's lines, drawn as its pages draw them: the bag's accordion's a polyline through (15, 1.13), (8.5, 7.72) and (2, 1.13) in 17 by 8.85, 2.25 thick, round (`DISCLOSURE`); a phone's footer section's through (10.075, 0.675), (5.5, 5.323) and (0.925, 0.675) in 11 by 6, 1 thick, round (`FOOTER_CHEVRON`). Turned up, each is the line its animation ends on (the same points mirrored). `lines.mjs` reads both live and holds ciderui's to them: 1 and 1 of the ink shared (fails below 0.85), each in its component's example. Measured 2026-10-19 in Chromium 151 on Linux (`results/lines.json`).
+

@@ -108,6 +108,11 @@ const CONTRACT = {
   // the bag's accordion's rule, and a rule between copy blocks on iPhone 18
   // Pro's dark page
   '--cui-c-divider': [['bag', 'accordion.item', W, 'border-top-color'], ['product', 'divider', W, 'border-top-color']],
+  // the footer: the home page's, and the dark product page's, light as well
+  '--cui-c-on-footer': [['home', 'footer', W, 'color'], ['product', 'footer', W, 'color']],
+  '--cui-c-on-footer-link': [['home', 'footer.link', W, 'color'], ['product', 'footer.link', W, 'color']],
+  '--cui-c-on-footer-title': [['home', 'footer.title', W, 'color'], ['product', 'footer.title', W, 'color']],
+  '--cui-c-footer-rule': [['home', 'footer.legal-rule', W, 'background-color'], ['home', 'footer.legal-rule', 390, 'background-color']],
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-'));
@@ -183,6 +188,13 @@ for (const [on, bar] of [['--cui-c-on-bar', '--cui-c-bar'], ['--cui-c-on-bar-hov
 for (const fg of ['--cui-c-text', '--cui-c-text-2']) {
   const ground = over(sides('--cui-c-field')[0], sides('--cui-c-bg')[0]);
   check(`${fg} on --cui-c-field over --cui-c-bg, light, at least 4.5:1`, ratio(sides(fg)[0], ground) >= 4.5, true);
+}
+
+// the footer's text on its ground, the alternate (light: the footer keeps
+// its light look)
+for (const fg of ['--cui-c-on-footer', '--cui-c-on-footer-link', '--cui-c-on-footer-title']) {
+  const ground = sides('--cui-c-bg-alt')[0];
+  check(`${fg} on --cui-c-bg-alt, light, at least 4.5:1`, ratio(over(sides(fg)[0], ground), ground) >= 4.5, true);
 }
 
 // a gallery's marks, 3:1 (WCAG 2's for what is not text): a paddle's chevron
