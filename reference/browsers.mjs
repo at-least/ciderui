@@ -5,10 +5,10 @@
 // browser's own input (a trusted click on the element, a key pressed: the
 // WebDriver key's name, as Escape, or keys held together, as Alt+Tab).
 //   safari    Safari through safaridriver, raw WebDriver over HTTP (Safari's
-//             "Allow remote automation" on); a Safari the run launches is quit
-//             when it closes, one running before it is left as it is (one macOS
-//             had reopened offered itself to no session, twice on 2026-10-19:
-//             quit Safari before the run)
+//             "Allow remote automation" on), in a Safari the run launches and
+//             quits when it closes: Safari 27 takes no session in one it did
+//             not launch ("Safari was not launched for automation"), so quit
+//             Safari before the run
 //   ios       the same on an iPhone simulator (Xcode), whichever safaridriver finds
 //   chrome    the installed Google Chrome through playwright-core
 //   chromium  Playwright's own Chromium (PW names the module when it is not
@@ -56,8 +56,11 @@ async function viaSafariDriver(capabilities, url) {
   // On the Mac a Safari the run launches is quit when it closes. Left with no
   // window, macOS quits it under memory pressure and still counts it as running
   // (automatic termination): safaridriver then waits for it and launches no
-  // other ("waiting for its RWIApplication"), and the Safari macOS reopened
-  // later offered itself to no session either (twice, 2026-10-19).
+  // other ("waiting for its RWIApplication"). A Safari running before the run
+  // is left as it is, and takes no session unless safaridriver launched it:
+  // one opened by LaunchServices rejects it ("Safari was not launched for
+  // automation"), and the one macOS reopens after quitting it does not even
+  // connect (2026-10-19).
   const mac = !capabilities['safari:useSimulator'];
   const running = () => spawnSync('pgrep', ['-x', 'Safari']).status === 0;
   const launched = mac && !running();
