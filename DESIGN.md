@@ -228,7 +228,7 @@ The kit needs `light-dark()` (vpkit's floor: Chrome 123, Safari 17.5, Firefox 12
 11. **No JavaScript**: HTML's own elements for behavior.
 12. **Icons are inline SVG**, no icon font.
 13. **The crate carries the CSS**, one pin for a site's markup and its stylesheets.
-14. **One product and a theme**: the site kit at the root; ciderui-zola, the Zola theme built on it, in a repository of its own, which ciderui's documentation is built with (stated). No docs theme, where vpkit has `docs-theme/` (stated, 2026-10-19: 「docs-theme 不做」).
+14. **One product and a theme**: the site kit at the root; ciderui-zola, the Zola theme built on it, in a repository of its own, which ciderui's documentation is built with (stated). No docs theme, where vpkit has `docs-theme/` (stated, 2026-10-19: 「docs-theme 不做」). ciderui-zola's first site is ciderui's documentation, with news in apple.com's Newsroom's look (`cui-article`, `cui-stories`, `cui-posts`), and it ships the one script the gallery's and the shelf's paddles and dots need, which ciderui leaves to the page; its repository is local, beside this one (stated, 2026-10-19, `../ciderui-zola/DESIGN.md`).
 15. **The palette is fixed** (stated): no site color, no themes.
 16. **apple.com's look as it is, not iOS 26's** (stated, 2026-10-19: asked about iOS 26's style without its glass, the owner answered 「維持 ios 18」): the bar translucent under a blur and the pill, as apple.com shows them measured today; no Liquid Glass and no iOS 26 shapes.
 
