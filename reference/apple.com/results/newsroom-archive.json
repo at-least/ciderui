@@ -1,0 +1,1912 @@
+{
+ "url": "https://www.apple.com/newsroom/archive/",
+ "finalUrl": "https://www.apple.com/newsroom/archive/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T12:24:00.980Z",
+ "widths": {
+  "390": {
+   "results": {
+    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "styles": {
+     "width": "341.25px",
+     "max-width": "none",
+     "margin-left": "24.375px",
+     "margin-right": "24.375px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 1814
+    }
+   },
+   "month": {
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    }
+   },
+   "month.title": {
+    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "44px",
+     "margin-bottom": "16px"
+    }
+   },
+   "row": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "styles": {
+     "padding-top": "28px",
+     "padding-right": "0px",
+     "padding-bottom": "28px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "flex-start",
+     "justify-content": "flex-start",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 174
+    },
+    "states": {
+     "hover": {
+      "padding-top": "28px",
+      "padding-right": "0px",
+      "padding-bottom": "28px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "flex-start",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     },
+     "focus-visible": {
+      "padding-top": "28px",
+      "padding-right": "0px",
+      "padding-bottom": "28px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "flex-start",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     }
+    }
+   },
+   "row.last": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "styles": {
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "padding-bottom": "0px"
+    }
+   },
+   "row.img": {
+    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "styles": {
+     "width": "105px",
+     "height": "59.0625px",
+     "aspect-ratio": "auto",
+     "border-top-left-radius": "0px",
+     "overflow": "visible",
+     "margin-right": "0px",
+     "flex-shrink": "0"
+    },
+    "box": {
+     "width": 105,
+     "height": 59.0625
+    }
+   },
+   "row.copy": {
+    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "styles": {
+     "padding-left": "0px",
+     "margin-left": "16px",
+     "flex-grow": "0",
+     "flex-basis": "auto"
+    },
+    "box": {
+     "width": 220.25,
+     "height": 117
+    }
+   },
+   "row.category": {
+    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "uppercase"
+    }
+   },
+   "row.headline": {
+    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "700",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "700",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "margin-top": "8px",
+      "margin-bottom": "0px"
+     }
+    }
+   },
+   "row.date": {
+    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   }
+  },
+  "734": {
+   "results": {
+    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "styles": {
+     "width": "642.25px",
+     "max-width": "none",
+     "margin-left": "45.875px",
+     "margin-right": "45.875px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    },
+    "box": {
+     "width": 642.25,
+     "height": 1520
+    }
+   },
+   "month": {
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    }
+   },
+   "month.title": {
+    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "44px",
+     "margin-bottom": "16px"
+    }
+   },
+   "row": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "styles": {
+     "padding-top": "28px",
+     "padding-right": "0px",
+     "padding-bottom": "28px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "flex-start",
+     "justify-content": "flex-start",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 642.25,
+     "height": 132
+    },
+    "states": {
+     "hover": {
+      "padding-top": "28px",
+      "padding-right": "0px",
+      "padding-bottom": "28px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "flex-start",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     },
+     "focus-visible": {
+      "padding-top": "28px",
+      "padding-right": "0px",
+      "padding-bottom": "28px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "flex-start",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     }
+    }
+   },
+   "row.last": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "styles": {
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "padding-bottom": "0px"
+    }
+   },
+   "row.img": {
+    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "styles": {
+     "width": "105px",
+     "height": "59.0625px",
+     "aspect-ratio": "auto",
+     "border-top-left-radius": "0px",
+     "overflow": "visible",
+     "margin-right": "0px",
+     "flex-shrink": "0"
+    },
+    "box": {
+     "width": 105,
+     "height": 59.0625
+    }
+   },
+   "row.copy": {
+    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "styles": {
+     "padding-left": "0px",
+     "margin-left": "16px",
+     "flex-grow": "0",
+     "flex-basis": "auto"
+    },
+    "box": {
+     "width": 366.3125,
+     "height": 75
+    }
+   },
+   "row.category": {
+    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "uppercase"
+    }
+   },
+   "row.headline": {
+    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "700",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "700",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "margin-top": "8px",
+      "margin-bottom": "0px"
+     }
+    }
+   },
+   "row.date": {
+    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   }
+  },
+  "735": {
+   "results": {
+    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "styles": {
+     "width": "692px",
+     "max-width": "none",
+     "margin-left": "21.5px",
+     "margin-right": "21.5px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    },
+    "box": {
+     "width": 692,
+     "height": 2232
+    }
+   },
+   "month": {
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    }
+   },
+   "month.title": {
+    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "700",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "48px",
+     "margin-bottom": "16px"
+    }
+   },
+   "row": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "styles": {
+     "padding-top": "32px",
+     "padding-right": "0px",
+     "padding-bottom": "32px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "flex-start",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 692,
+     "height": 213.5
+    },
+    "states": {
+     "hover": {
+      "padding-top": "32px",
+      "padding-right": "0px",
+      "padding-bottom": "32px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     },
+     "focus-visible": {
+      "padding-top": "32px",
+      "padding-right": "0px",
+      "padding-bottom": "32px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     }
+    }
+   },
+   "row.last": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "styles": {
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "padding-bottom": "0px"
+    }
+   },
+   "row.img": {
+    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "styles": {
+     "width": "264px",
+     "height": "148.5px",
+     "aspect-ratio": "auto",
+     "border-top-left-radius": "0px",
+     "overflow": "visible",
+     "margin-right": "0px",
+     "flex-shrink": "0"
+    },
+    "box": {
+     "width": 264,
+     "height": 148.5
+    }
+   },
+   "row.copy": {
+    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "styles": {
+     "padding-left": "0px",
+     "margin-left": "24px",
+     "flex-grow": "0",
+     "flex-basis": "auto"
+    },
+    "box": {
+     "width": 404,
+     "height": 106
+    }
+   },
+   "row.category": {
+    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "uppercase"
+    }
+   },
+   "row.headline": {
+    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "21px",
+      "line-height": "25px",
+      "font-weight": "700",
+      "letter-spacing": "0.231px",
+      "color": "rgb(29, 29, 31)",
+      "margin-top": "8px",
+      "margin-bottom": "0px"
+     }
+    }
+   },
+   "row.date": {
+    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   }
+  },
+  "900": {
+   "results": {
+    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "styles": {
+     "width": "692px",
+     "max-width": "none",
+     "margin-left": "104px",
+     "margin-right": "104px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    },
+    "box": {
+     "width": 692,
+     "height": 2232
+    }
+   },
+   "month": {
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    }
+   },
+   "month.title": {
+    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "700",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "48px",
+     "margin-bottom": "16px"
+    }
+   },
+   "row": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "styles": {
+     "padding-top": "32px",
+     "padding-right": "0px",
+     "padding-bottom": "32px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "flex-start",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 692,
+     "height": 213.5
+    },
+    "states": {
+     "hover": {
+      "padding-top": "32px",
+      "padding-right": "0px",
+      "padding-bottom": "32px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     },
+     "focus-visible": {
+      "padding-top": "32px",
+      "padding-right": "0px",
+      "padding-bottom": "32px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     }
+    }
+   },
+   "row.last": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "styles": {
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "padding-bottom": "0px"
+    }
+   },
+   "row.img": {
+    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "styles": {
+     "width": "264px",
+     "height": "148.5px",
+     "aspect-ratio": "auto",
+     "border-top-left-radius": "0px",
+     "overflow": "visible",
+     "margin-right": "0px",
+     "flex-shrink": "0"
+    },
+    "box": {
+     "width": 264,
+     "height": 148.5
+    }
+   },
+   "row.copy": {
+    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "styles": {
+     "padding-left": "0px",
+     "margin-left": "24px",
+     "flex-grow": "0",
+     "flex-basis": "auto"
+    },
+    "box": {
+     "width": 404,
+     "height": 106
+    }
+   },
+   "row.category": {
+    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "uppercase"
+    }
+   },
+   "row.headline": {
+    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "21px",
+      "line-height": "25px",
+      "font-weight": "700",
+      "letter-spacing": "0.231px",
+      "color": "rgb(29, 29, 31)",
+      "margin-top": "8px",
+      "margin-bottom": "0px"
+     }
+    }
+   },
+   "row.date": {
+    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   }
+  },
+  "1068": {
+   "results": {
+    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "styles": {
+     "width": "692px",
+     "max-width": "none",
+     "margin-left": "188px",
+     "margin-right": "188px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    },
+    "box": {
+     "width": 692,
+     "height": 2232
+    }
+   },
+   "month": {
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    }
+   },
+   "month.title": {
+    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "700",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "48px",
+     "margin-bottom": "16px"
+    }
+   },
+   "row": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "styles": {
+     "padding-top": "32px",
+     "padding-right": "0px",
+     "padding-bottom": "32px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "flex-start",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 692,
+     "height": 213.5
+    },
+    "states": {
+     "hover": {
+      "padding-top": "32px",
+      "padding-right": "0px",
+      "padding-bottom": "32px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     },
+     "focus-visible": {
+      "padding-top": "32px",
+      "padding-right": "0px",
+      "padding-bottom": "32px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     }
+    }
+   },
+   "row.last": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "styles": {
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "padding-bottom": "0px"
+    }
+   },
+   "row.img": {
+    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "styles": {
+     "width": "264px",
+     "height": "148.5px",
+     "aspect-ratio": "auto",
+     "border-top-left-radius": "0px",
+     "overflow": "visible",
+     "margin-right": "0px",
+     "flex-shrink": "0"
+    },
+    "box": {
+     "width": 264,
+     "height": 148.5
+    }
+   },
+   "row.copy": {
+    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "styles": {
+     "padding-left": "0px",
+     "margin-left": "24px",
+     "flex-grow": "0",
+     "flex-basis": "auto"
+    },
+    "box": {
+     "width": 404,
+     "height": 106
+    }
+   },
+   "row.category": {
+    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "uppercase"
+    }
+   },
+   "row.headline": {
+    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "21px",
+      "line-height": "25px",
+      "font-weight": "700",
+      "letter-spacing": "0.231px",
+      "color": "rgb(29, 29, 31)",
+      "margin-top": "8px",
+      "margin-bottom": "0px"
+     }
+    }
+   },
+   "row.date": {
+    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   }
+  },
+  "1069": {
+   "results": {
+    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "styles": {
+     "width": "980px",
+     "max-width": "none",
+     "margin-left": "44.5px",
+     "margin-right": "44.5px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 2570.375
+    }
+   },
+   "month": {
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    }
+   },
+   "month.title": {
+    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "700",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "52px",
+     "margin-bottom": "16px"
+    }
+   },
+   "row": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "styles": {
+     "padding-top": "40px",
+     "padding-right": "0px",
+     "padding-bottom": "40px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "flex-start",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 980,
+     "height": 246.9375
+    },
+    "states": {
+     "hover": {
+      "padding-top": "40px",
+      "padding-right": "0px",
+      "padding-bottom": "40px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     },
+     "focus-visible": {
+      "padding-top": "40px",
+      "padding-right": "0px",
+      "padding-bottom": "40px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     }
+    }
+   },
+   "row.last": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "styles": {
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "padding-bottom": "0px"
+    }
+   },
+   "row.img": {
+    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "styles": {
+     "width": "295px",
+     "height": "165.938px",
+     "aspect-ratio": "auto",
+     "border-top-left-radius": "0px",
+     "overflow": "visible",
+     "margin-right": "0px",
+     "flex-shrink": "0"
+    },
+    "box": {
+     "width": 295,
+     "height": 165.9375
+    }
+   },
+   "row.copy": {
+    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "styles": {
+     "padding-left": "0px",
+     "margin-left": "32px",
+     "flex-grow": "0",
+     "flex-basis": "auto"
+    },
+    "box": {
+     "width": 495.75,
+     "height": 86
+    }
+   },
+   "row.category": {
+    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "700",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "uppercase"
+    }
+   },
+   "row.headline": {
+    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "700",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "24px",
+      "line-height": "28px",
+      "font-weight": "700",
+      "letter-spacing": "0.216px",
+      "color": "rgb(29, 29, 31)",
+      "margin-top": "8px",
+      "margin-bottom": "0px"
+     }
+    }
+   },
+   "row.date": {
+    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   }
+  },
+  "1200": {
+   "results": {
+    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "styles": {
+     "width": "980px",
+     "max-width": "none",
+     "margin-left": "110px",
+     "margin-right": "110px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 2570.375
+    }
+   },
+   "month": {
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    }
+   },
+   "month.title": {
+    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "700",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "52px",
+     "margin-bottom": "16px"
+    }
+   },
+   "row": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "styles": {
+     "padding-top": "40px",
+     "padding-right": "0px",
+     "padding-bottom": "40px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "flex-start",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 980,
+     "height": 246.9375
+    },
+    "states": {
+     "hover": {
+      "padding-top": "40px",
+      "padding-right": "0px",
+      "padding-bottom": "40px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     },
+     "focus-visible": {
+      "padding-top": "40px",
+      "padding-right": "0px",
+      "padding-bottom": "40px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     }
+    }
+   },
+   "row.last": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "styles": {
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "padding-bottom": "0px"
+    }
+   },
+   "row.img": {
+    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "styles": {
+     "width": "295px",
+     "height": "165.938px",
+     "aspect-ratio": "auto",
+     "border-top-left-radius": "0px",
+     "overflow": "visible",
+     "margin-right": "0px",
+     "flex-shrink": "0"
+    },
+    "box": {
+     "width": 295,
+     "height": 165.9375
+    }
+   },
+   "row.copy": {
+    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "styles": {
+     "padding-left": "0px",
+     "margin-left": "32px",
+     "flex-grow": "0",
+     "flex-basis": "auto"
+    },
+    "box": {
+     "width": 495.75,
+     "height": 86
+    }
+   },
+   "row.category": {
+    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "700",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "uppercase"
+    }
+   },
+   "row.headline": {
+    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "700",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "24px",
+      "line-height": "28px",
+      "font-weight": "700",
+      "letter-spacing": "0.216px",
+      "color": "rgb(29, 29, 31)",
+      "margin-top": "8px",
+      "margin-bottom": "0px"
+     }
+    }
+   },
+   "row.date": {
+    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   }
+  },
+  "1600": {
+   "results": {
+    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "styles": {
+     "width": "980px",
+     "max-width": "none",
+     "margin-left": "310px",
+     "margin-right": "310px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 2570.375
+    }
+   },
+   "month": {
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "padding-top": "0px",
+     "padding-bottom": "0px"
+    }
+   },
+   "month.title": {
+    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "700",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "52px",
+     "margin-bottom": "16px"
+    }
+   },
+   "row": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "styles": {
+     "padding-top": "40px",
+     "padding-right": "0px",
+     "padding-bottom": "40px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "flex-start",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 980,
+     "height": 246.9375
+    },
+    "states": {
+     "hover": {
+      "padding-top": "40px",
+      "padding-right": "0px",
+      "padding-bottom": "40px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     },
+     "focus-visible": {
+      "padding-top": "40px",
+      "padding-right": "0px",
+      "padding-bottom": "40px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(210, 210, 215)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "0px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "center",
+      "justify-content": "flex-start",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto",
+      "cursor": "pointer"
+     }
+    }
+   },
+   "row.last": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "styles": {
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "padding-bottom": "0px"
+    }
+   },
+   "row.img": {
+    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "styles": {
+     "width": "295px",
+     "height": "165.938px",
+     "aspect-ratio": "auto",
+     "border-top-left-radius": "0px",
+     "overflow": "visible",
+     "margin-right": "0px",
+     "flex-shrink": "0"
+    },
+    "box": {
+     "width": 295,
+     "height": 165.9375
+    }
+   },
+   "row.copy": {
+    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "styles": {
+     "padding-left": "0px",
+     "margin-left": "32px",
+     "flex-grow": "0",
+     "flex-basis": "auto"
+    },
+    "box": {
+     "width": 495.75,
+     "height": 86
+    }
+   },
+   "row.category": {
+    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "700",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "uppercase"
+    }
+   },
+   "row.headline": {
+    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "700",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "24px",
+      "line-height": "28px",
+      "font-weight": "700",
+      "letter-spacing": "0.216px",
+      "color": "rgb(29, 29, 31)",
+      "margin-top": "8px",
+      "margin-bottom": "0px"
+     }
+    }
+   },
+   "row.date": {
+    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   }
+  }
+ }
+}

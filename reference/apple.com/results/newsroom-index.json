@@ -1,0 +1,4464 @@
+{
+ "url": "https://www.apple.com/newsroom/",
+ "finalUrl": "https://www.apple.com/newsroom/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T12:23:52.303Z",
+ "widths": {
+  "390": {
+   "feed": {
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "styles": {
+     "padding-top": "32px",
+     "padding-right": "0px",
+     "padding-bottom": "40px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "2000px",
+     "max-width": "none"
+    }
+   },
+   "feed.content": {
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-t",
+    "styles": {
+     "width": "341.25px",
+     "max-width": "366px",
+     "margin-left": "24.375px",
+     "margin-right": "24.375px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 2319.0625
+    }
+   },
+   "feed.head": {
+    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "700",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "16px"
+    }
+   },
+   "tiles": {
+    "html": "<ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero t",
+    "styles": {
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "wrap",
+     "align-items": "stretch",
+     "justify-content": "space-between",
+     "row-gap": "24px",
+     "column-gap": "24px",
+     "grid-template-columns": "repeat(12, 1fr)",
+     "list-style-type": "none",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 2275.0625
+    }
+   },
+   "tiles.item": {
+    "html": "<li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new ",
+    "styles": {
+     "grid-column-start": "1",
+     "grid-column-end": "span 6",
+     "display": "list-item",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "flex-basis": "auto",
+     "width": "341.25px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 343.953125
+    }
+   },
+   "tile.first": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "24px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "grid-template-columns": "453px 1fr",
+     "column-gap": "normal",
+     "transform": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 343.953125
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "24px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "453px 1fr",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     },
+     "focus-visible": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "24px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "453px 1fr",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.first-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.landing-regula",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 191.953125
+    }
+   },
+   "tile.first-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__description-content\"><div class=\"tile__head\"><div class=\"tile__hero--eyebrow\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 152
+    }
+   },
+   "tile.first-eyebrow": {
+    "html": "<div class=\"tile__hero--eyebrow\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.first-headline": {
+    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.first-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third": {
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "24px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "347px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 347
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "24px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "347px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "column",
+      "transform": "none",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.third-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/app-store-indie-games-week-kicks-off-today/tile/Apple-App-Store-Indie-Games-Week-01-lp.jpg.la",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 191.953125
+    }
+   },
+   "tile.third-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 155.046875
+    }
+   },
+   "tile.third-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.third-headline": {
+    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "24px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 372.953125
+    }
+   },
+   "tile.fourth-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/tile/Apple-x-Kings-Trust-C",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 191.953125
+    }
+   },
+   "tile.fourth-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 181
+    }
+   },
+   "tile.fourth-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.fourth-headline": {
+    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.link": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    }
+   }
+  },
+  "734": {
+   "feed": {
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "styles": {
+     "padding-top": "32px",
+     "padding-right": "0px",
+     "padding-bottom": "40px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "2000px",
+     "max-width": "none"
+    }
+   },
+   "feed.content": {
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-t",
+    "styles": {
+     "width": "366px",
+     "max-width": "366px",
+     "margin-left": "0px",
+     "margin-right": "0px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 366,
+     "height": 2385.375
+    }
+   },
+   "feed.head": {
+    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "700",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "16px"
+    }
+   },
+   "tiles": {
+    "html": "<ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero t",
+    "styles": {
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "wrap",
+     "align-items": "stretch",
+     "justify-content": "space-between",
+     "row-gap": "24px",
+     "column-gap": "24px",
+     "grid-template-columns": "repeat(12, 1fr)",
+     "list-style-type": "none",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 366,
+     "height": 2341.375
+    }
+   },
+   "tiles.item": {
+    "html": "<li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new ",
+    "styles": {
+     "grid-column-start": "1",
+     "grid-column-end": "span 6",
+     "display": "list-item",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "flex-basis": "auto",
+     "width": "366px"
+    },
+    "box": {
+     "width": 366,
+     "height": 357.875
+    }
+   },
+   "tile.first": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "24px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "grid-template-columns": "453px 1fr",
+     "column-gap": "normal",
+     "transform": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 366,
+     "height": 357.875
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "24px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "453px 1fr",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     },
+     "focus-visible": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "24px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "flex",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "453px 1fr",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.first-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.landing-regula",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 366,
+     "height": 205.875
+    }
+   },
+   "tile.first-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__description-content\"><div class=\"tile__head\"><div class=\"tile__hero--eyebrow\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between"
+    },
+    "box": {
+     "width": 366,
+     "height": 152
+    }
+   },
+   "tile.first-eyebrow": {
+    "html": "<div class=\"tile__hero--eyebrow\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.first-headline": {
+    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.first-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third": {
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "24px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "347px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 366,
+     "height": 357.875
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "24px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "347px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "column",
+      "transform": "none",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.third-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/app-store-indie-games-week-kicks-off-today/tile/Apple-App-Store-Indie-Games-Week-01-lp.jpg.la",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 366,
+     "height": 205.875
+    }
+   },
+   "tile.third-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 366,
+     "height": 152
+    }
+   },
+   "tile.third-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.third-headline": {
+    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "24px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 366,
+     "height": 386.875
+    }
+   },
+   "tile.fourth-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/tile/Apple-x-Kings-Trust-C",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 366,
+     "height": 205.875
+    }
+   },
+   "tile.fourth-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 366,
+     "height": 181
+    }
+   },
+   "tile.fourth-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.fourth-headline": {
+    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.link": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    }
+   }
+  },
+  "735": {
+   "feed": {
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "styles": {
+     "padding-top": "40px",
+     "padding-right": "0px",
+     "padding-bottom": "64px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "1000px",
+     "max-width": "none"
+    }
+   },
+   "feed.content": {
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to",
+    "styles": {
+     "width": "692px",
+     "max-width": "none",
+     "margin-left": "21.5px",
+     "margin-right": "21.5px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 692,
+     "height": 1155.5
+    }
+   },
+   "feed.head": {
+    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "700",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "16px"
+    }
+   },
+   "tiles": {
+    "html": "<ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=",
+    "styles": {
+     "display": "grid",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "24px",
+     "column-gap": "24px",
+     "grid-template-columns": "35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px",
+     "list-style-type": "none",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 692,
+     "height": 1107.5
+    }
+   },
+   "tiles.item": {
+    "html": "<li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"Open up to new possibilities with iPh",
+    "styles": {
+     "grid-column-start": "1",
+     "grid-column-end": "span 6",
+     "display": "list-item",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "flex-basis": "auto",
+     "width": "334px"
+    },
+    "box": {
+     "width": 334,
+     "height": 336.5
+    }
+   },
+   "tile.first": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"open up to new possib",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "24px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "328px",
+     "max-width": "none",
+     "display": "flex",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "grid-template-columns": "none",
+     "column-gap": "normal",
+     "transform": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 328,
+     "height": 336.5
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "24px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "328px",
+      "max-width": "none",
+      "display": "flex",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "none",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     },
+     "focus-visible": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "24px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "328px",
+      "max-width": "none",
+      "display": "flex",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "none",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.first-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.landing-regula",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 328,
+     "height": 184.5
+    }
+   },
+   "tile.first-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div></div><div class=\"tile__timestamp",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between"
+    },
+    "box": {
+     "width": 328,
+     "height": 152
+    }
+   },
+   "tile.first-eyebrow": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.first-headline": {
+    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.first-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third": {
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "24px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "328px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 328,
+     "height": 361.5
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "24px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "328px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "column",
+      "transform": "none",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.third-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/app-store-indie-games-week-kicks-off-today/tile/Apple-App-Store-Indie-Games-Week-01-lp.jpg.la",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 328,
+     "height": 184.5
+    }
+   },
+   "tile.third-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 328,
+     "height": 177
+    }
+   },
+   "tile.third-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.third-headline": {
+    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "24px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "328px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 328,
+     "height": 361.5
+    }
+   },
+   "tile.fourth-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/tile/Apple-x-Kings-Trust-C",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 328,
+     "height": 184.5
+    }
+   },
+   "tile.fourth-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 328,
+     "height": 177
+    }
+   },
+   "tile.fourth-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.fourth-headline": {
+    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.link": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    }
+   }
+  },
+  "900": {
+   "feed": {
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "styles": {
+     "padding-top": "40px",
+     "padding-right": "0px",
+     "padding-bottom": "64px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "1000px",
+     "max-width": "none"
+    }
+   },
+   "feed.content": {
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to",
+    "styles": {
+     "width": "692px",
+     "max-width": "none",
+     "margin-left": "104px",
+     "margin-right": "104px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 692,
+     "height": 1155.5
+    }
+   },
+   "feed.head": {
+    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "700",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "16px"
+    }
+   },
+   "tiles": {
+    "html": "<ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=",
+    "styles": {
+     "display": "grid",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "24px",
+     "column-gap": "24px",
+     "grid-template-columns": "35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px",
+     "list-style-type": "none",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 692,
+     "height": 1107.5
+    }
+   },
+   "tiles.item": {
+    "html": "<li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"Open up to new possibilities with iPh",
+    "styles": {
+     "grid-column-start": "1",
+     "grid-column-end": "span 6",
+     "display": "list-item",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "flex-basis": "auto",
+     "width": "334px"
+    },
+    "box": {
+     "width": 334,
+     "height": 336.5
+    }
+   },
+   "tile.first": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"open up to new possib",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "24px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "328px",
+     "max-width": "none",
+     "display": "flex",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "grid-template-columns": "none",
+     "column-gap": "normal",
+     "transform": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 328,
+     "height": 336.5
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "24px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "328px",
+      "max-width": "none",
+      "display": "flex",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "none",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     },
+     "focus-visible": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "24px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "328px",
+      "max-width": "none",
+      "display": "flex",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "none",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.first-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.landing-regula",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 328,
+     "height": 184.5
+    }
+   },
+   "tile.first-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div></div><div class=\"tile__timestamp",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between"
+    },
+    "box": {
+     "width": 328,
+     "height": 152
+    }
+   },
+   "tile.first-eyebrow": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.first-headline": {
+    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.first-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third": {
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "24px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "328px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 328,
+     "height": 361.5
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "24px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "328px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "column",
+      "transform": "none",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.third-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/app-store-indie-games-week-kicks-off-today/tile/Apple-App-Store-Indie-Games-Week-01-lp.jpg.la",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 328,
+     "height": 184.5
+    }
+   },
+   "tile.third-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 328,
+     "height": 177
+    }
+   },
+   "tile.third-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.third-headline": {
+    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "24px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "328px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 328,
+     "height": 361.5
+    }
+   },
+   "tile.fourth-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/tile/Apple-x-Kings-Trust-C",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 328,
+     "height": 184.5
+    }
+   },
+   "tile.fourth-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 328,
+     "height": 177
+    }
+   },
+   "tile.fourth-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.fourth-headline": {
+    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.link": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    }
+   }
+  },
+  "1068": {
+   "feed": {
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "styles": {
+     "padding-top": "40px",
+     "padding-right": "0px",
+     "padding-bottom": "64px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "1000px",
+     "max-width": "none"
+    }
+   },
+   "feed.content": {
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to",
+    "styles": {
+     "width": "692px",
+     "max-width": "none",
+     "margin-left": "0px",
+     "margin-right": "0px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 692,
+     "height": 1155.5
+    }
+   },
+   "feed.head": {
+    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "700",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "16px"
+    }
+   },
+   "tiles": {
+    "html": "<ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=",
+    "styles": {
+     "display": "grid",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "24px",
+     "column-gap": "24px",
+     "grid-template-columns": "35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px 35.6562px",
+     "list-style-type": "none",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 692,
+     "height": 1107.5
+    }
+   },
+   "tiles.item": {
+    "html": "<li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"Open up to new possibilities with iPh",
+    "styles": {
+     "grid-column-start": "1",
+     "grid-column-end": "span 6",
+     "display": "list-item",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "flex-basis": "auto",
+     "width": "334px"
+    },
+    "box": {
+     "width": 334,
+     "height": 336.5
+    }
+   },
+   "tile.first": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"open up to new possib",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "24px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "328px",
+     "max-width": "none",
+     "display": "flex",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "grid-template-columns": "none",
+     "column-gap": "normal",
+     "transform": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 328,
+     "height": 336.5
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "24px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "328px",
+      "max-width": "none",
+      "display": "flex",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "none",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     },
+     "focus-visible": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "24px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "328px",
+      "max-width": "none",
+      "display": "flex",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "none",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.first-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.landing-regula",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 328,
+     "height": 184.5
+    }
+   },
+   "tile.first-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div></div><div class=\"tile__timestamp",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between"
+    },
+    "box": {
+     "width": 328,
+     "height": 152
+    }
+   },
+   "tile.first-eyebrow": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.first-headline": {
+    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.first-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third": {
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "24px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "328px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 328,
+     "height": 361.5
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "24px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "328px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "column",
+      "transform": "none",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.third-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/app-store-indie-games-week-kicks-off-today/tile/Apple-App-Store-Indie-Games-Week-01-lp.jpg.la",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 328,
+     "height": 184.5
+    }
+   },
+   "tile.third-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 328,
+     "height": 177
+    }
+   },
+   "tile.third-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.third-headline": {
+    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "24px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "328px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 328,
+     "height": 361.5
+    }
+   },
+   "tile.fourth-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/tile/Apple-x-Kings-Trust-C",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 328,
+     "height": 184.5
+    }
+   },
+   "tile.fourth-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 328,
+     "height": 177
+    }
+   },
+   "tile.fourth-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.fourth-headline": {
+    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.link": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    }
+   }
+  },
+  "1069": {
+   "feed": {
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "styles": {
+     "padding-top": "52px",
+     "padding-right": "0px",
+     "padding-bottom": "80px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "1000px",
+     "max-width": "none"
+    }
+   },
+   "feed.content": {
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-t",
+    "styles": {
+     "width": "980px",
+     "max-width": "none",
+     "margin-left": "44.5px",
+     "margin-right": "44.5px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 1313.4375
+    }
+   },
+   "feed.head": {
+    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "700",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "24px"
+    }
+   },
+   "tiles": {
+    "html": "<ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero t",
+    "styles": {
+     "display": "grid",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "36px",
+     "column-gap": "36px",
+     "grid-template-columns": "48.6562px 48.6562px 48.6562px 48.6562px 48.6719px 48.6719px 48.6562px 48.6562px 48.6562px 48.6562px 48.6562px 48.6562px",
+     "list-style-type": "none",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 1253.4375
+    }
+   },
+   "tiles.item": {
+    "html": "<li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new ",
+    "styles": {
+     "grid-column-start": "1",
+     "grid-column-end": "-1",
+     "display": "list-item",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "flex-basis": "auto",
+     "width": "980px"
+    },
+    "box": {
+     "width": 980,
+     "height": 362
+    }
+   },
+   "tile.first": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "32px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "grid",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "grid-template-columns": "643px 337px",
+     "column-gap": "normal",
+     "transform": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 980,
+     "height": 362
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "32px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "grid",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "643px 337px",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     },
+     "focus-visible": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "32px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "grid",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "643px 337px",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.first-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.landing-regula",
+    "styles": {
+     "aspect-ratio": "auto",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 643,
+     "height": 362
+    }
+   },
+   "tile.first-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__description-content\"><div class=\"tile__head\"><div class=\"tile__hero--eyebrow\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div",
+    "styles": {
+     "padding-top": "32px",
+     "padding-right": "32px",
+     "padding-bottom": "32px",
+     "padding-left": "32px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between"
+    },
+    "box": {
+     "width": 337,
+     "height": 362
+    }
+   },
+   "tile.first-eyebrow": {
+    "html": "<div class=\"tile__hero--eyebrow\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "700",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.first-headline": {
+    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "700",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.first-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third": {
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "32px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "472px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 470,
+     "height": 472
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "32px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "472px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "column",
+      "transform": "none",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.third-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/app-store-indie-games-week-kicks-off-today/tile/Apple-App-Store-Indie-Games-Week-01-lp.jpg.la",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 470,
+     "height": 264.375
+    }
+   },
+   "tile.third-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "styles": {
+     "padding-top": "32px",
+     "padding-right": "32px",
+     "padding-bottom": "32px",
+     "padding-left": "32px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 470,
+     "height": 207.625
+    }
+   },
+   "tile.third-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "700",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.third-headline": {
+    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "700",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "32px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 303,
+     "height": 347.4375
+    }
+   },
+   "tile.fourth-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/tile/Apple-x-Kings-Trust-C",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 303,
+     "height": 170.4375
+    }
+   },
+   "tile.fourth-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 303,
+     "height": 177
+    }
+   },
+   "tile.fourth-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.fourth-headline": {
+    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.link": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    }
+   }
+  },
+  "1200": {
+   "feed": {
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "styles": {
+     "padding-top": "52px",
+     "padding-right": "0px",
+     "padding-bottom": "80px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "1000px",
+     "max-width": "none"
+    }
+   },
+   "feed.content": {
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-t",
+    "styles": {
+     "width": "980px",
+     "max-width": "none",
+     "margin-left": "110px",
+     "margin-right": "110px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 1313.4375
+    }
+   },
+   "feed.head": {
+    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "700",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "24px"
+    }
+   },
+   "tiles": {
+    "html": "<ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero t",
+    "styles": {
+     "display": "grid",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "36px",
+     "column-gap": "36px",
+     "grid-template-columns": "48.6562px 48.6562px 48.6562px 48.6562px 48.6719px 48.6719px 48.6562px 48.6562px 48.6562px 48.6562px 48.6562px 48.6562px",
+     "list-style-type": "none",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 1253.4375
+    }
+   },
+   "tiles.item": {
+    "html": "<li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new ",
+    "styles": {
+     "grid-column-start": "1",
+     "grid-column-end": "-1",
+     "display": "list-item",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "flex-basis": "auto",
+     "width": "980px"
+    },
+    "box": {
+     "width": 980,
+     "height": 362
+    }
+   },
+   "tile.first": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "32px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "grid",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "grid-template-columns": "643px 337px",
+     "column-gap": "normal",
+     "transform": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 980,
+     "height": 362
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "32px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "grid",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "643px 337px",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     },
+     "focus-visible": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "32px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "grid",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "643px 337px",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.first-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.landing-regula",
+    "styles": {
+     "aspect-ratio": "auto",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 643,
+     "height": 362
+    }
+   },
+   "tile.first-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__description-content\"><div class=\"tile__head\"><div class=\"tile__hero--eyebrow\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div",
+    "styles": {
+     "padding-top": "32px",
+     "padding-right": "32px",
+     "padding-bottom": "32px",
+     "padding-left": "32px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between"
+    },
+    "box": {
+     "width": 337,
+     "height": 362
+    }
+   },
+   "tile.first-eyebrow": {
+    "html": "<div class=\"tile__hero--eyebrow\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "700",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.first-headline": {
+    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "700",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.first-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third": {
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "32px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "472px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 470,
+     "height": 472
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "32px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "472px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "column",
+      "transform": "none",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.third-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/app-store-indie-games-week-kicks-off-today/tile/Apple-App-Store-Indie-Games-Week-01-lp.jpg.la",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 470,
+     "height": 264.375
+    }
+   },
+   "tile.third-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "styles": {
+     "padding-top": "32px",
+     "padding-right": "32px",
+     "padding-bottom": "32px",
+     "padding-left": "32px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 470,
+     "height": 207.625
+    }
+   },
+   "tile.third-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "700",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.third-headline": {
+    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "700",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "32px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 303,
+     "height": 347.4375
+    }
+   },
+   "tile.fourth-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/tile/Apple-x-Kings-Trust-C",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 303,
+     "height": 170.4375
+    }
+   },
+   "tile.fourth-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 303,
+     "height": 177
+    }
+   },
+   "tile.fourth-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.fourth-headline": {
+    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.link": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    }
+   }
+  },
+  "1600": {
+   "feed": {
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "styles": {
+     "padding-top": "52px",
+     "padding-right": "0px",
+     "padding-bottom": "80px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "1000px",
+     "max-width": "none"
+    }
+   },
+   "feed.content": {
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-t",
+    "styles": {
+     "width": "980px",
+     "max-width": "none",
+     "margin-left": "310px",
+     "margin-right": "310px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 1313.4375
+    }
+   },
+   "feed.head": {
+    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "700",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "24px"
+    }
+   },
+   "tiles": {
+    "html": "<ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero t",
+    "styles": {
+     "display": "grid",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "36px",
+     "column-gap": "36px",
+     "grid-template-columns": "48.6562px 48.6562px 48.6562px 48.6562px 48.6719px 48.6719px 48.6562px 48.6562px 48.6562px 48.6562px 48.6562px 48.6562px",
+     "list-style-type": "none",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 1253.4375
+    }
+   },
+   "tiles.item": {
+    "html": "<li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new ",
+    "styles": {
+     "grid-column-start": "1",
+     "grid-column-end": "-1",
+     "display": "list-item",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "flex-basis": "auto",
+     "width": "980px"
+    },
+    "box": {
+     "width": 980,
+     "height": 362
+    }
+   },
+   "tile.first": {
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "32px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "grid",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "grid-template-columns": "643px 337px",
+     "column-gap": "normal",
+     "transform": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 980,
+     "height": 362
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "32px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "grid",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "643px 337px",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     },
+     "focus-visible": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "32px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "display": "grid",
+      "text-align": "start",
+      "white-space": "normal",
+      "text-decoration-line": "none",
+      "cursor": "pointer",
+      "vertical-align": "baseline",
+      "opacity": "1",
+      "grid-template-columns": "643px 337px",
+      "column-gap": "normal",
+      "transform": "none",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.first-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.landing-regula",
+    "styles": {
+     "aspect-ratio": "auto",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 643,
+     "height": 362
+    }
+   },
+   "tile.first-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__description-content\"><div class=\"tile__head\"><div class=\"tile__hero--eyebrow\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div",
+    "styles": {
+     "padding-top": "32px",
+     "padding-right": "32px",
+     "padding-bottom": "32px",
+     "padding-left": "32px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between"
+    },
+    "box": {
+     "width": 337,
+     "height": 362
+    }
+   },
+   "tile.first-eyebrow": {
+    "html": "<div class=\"tile__hero--eyebrow\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "700",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.first-headline": {
+    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "700",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.first-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third": {
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "32px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "472px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 470,
+     "height": 472
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 102, 204)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 102, 204)",
+      "border-top-left-radius": "32px",
+      "background-color": "rgb(255, 255, 255)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "472px",
+      "max-width": "none",
+      "display": "flex",
+      "flex-direction": "column",
+      "transform": "none",
+      "overflow": "hidden"
+     }
+    }
+   },
+   "tile.third-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/app-store-indie-games-week-kicks-off-today/tile/Apple-App-Store-Indie-Games-Week-01-lp.jpg.la",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 470,
+     "height": 264.375
+    }
+   },
+   "tile.third-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "styles": {
+     "padding-top": "32px",
+     "padding-right": "32px",
+     "padding-bottom": "32px",
+     "padding-left": "32px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "justify-content": "space-between",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 470,
+     "height": 207.625
+    }
+   },
+   "tile.third-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "700",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.third-headline": {
+    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "700",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.third-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "32px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "column",
+     "transform": "none",
+     "overflow": "hidden"
+    },
+    "box": {
+     "width": 303,
+     "height": 347.4375
+    }
+   },
+   "tile.fourth-media": {
+    "html": "<div class=\"tile__media\" aria-hidden=\"true\"><picture class=\"viewport-picture \"><source media=\"(max-width: 734px)\" srcset=\"/newsroom/images/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/tile/Apple-x-Kings-Trust-C",
+    "styles": {
+     "aspect-ratio": "16 / 9",
+     "overflow": "hidden",
+     "border-top-left-radius": "0px",
+     "border-bottom-left-radius": "0px"
+    },
+    "box": {
+     "width": 303,
+     "height": 170.4375
+    }
+   },
+   "tile.fourth-description": {
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "styles": {
+     "padding-top": "24px",
+     "padding-right": "24px",
+     "padding-bottom": "24px",
+     "padding-left": "24px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 102, 204)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 102, 204)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "flex-grow": "1"
+    },
+    "box": {
+     "width": 303,
+     "height": 177
+    }
+   },
+   "tile.fourth-category": {
+    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "700",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "display": "block",
+     "text-align": "start",
+     "white-space": "normal",
+     "text-decoration-line": "none",
+     "cursor": "pointer",
+     "vertical-align": "baseline",
+     "opacity": "1",
+     "text-transform": "none"
+    }
+   },
+   "tile.fourth-headline": {
+    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "700",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.fourth-date": {
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)",
+     "margin-top": "12px",
+     "margin-bottom": "0px"
+    }
+   },
+   "tile.link": {
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "styles": {
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    }
+   }
+  }
+ }
+}
