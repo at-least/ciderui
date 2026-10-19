@@ -76,4 +76,4 @@ BROWSER=safari MODE=inter node run.mjs     # and chrome, chromium; INTER names a
 PW=…/playwright-chromium/index.mjs BROWSER=chromium MODE=measure node run.mjs   # the Linux control
 ```
 
-On the Mac it runs from a copy of this directory with `playwright-core` installed beside it (`npm i playwright-core`, no browser download: Chrome is the installed one), and `INTER` naming the copied font file. `safari:deviceType: iPhone` takes whichever iPhone simulator safaridriver finds. The `chromium` runs pass `--font-render-hinting=none`.
+The browsers are `../browsers.mjs`'s. On the Mac it runs from a copy of the repository with `playwright-core` in a `node_modules` above it (`npm i playwright-core`, no browser download: Chrome is the installed one). `safari:deviceType: iPhone` takes whichever iPhone simulator safaridriver finds. The `chromium` runs pass `--font-render-hinting=none`.

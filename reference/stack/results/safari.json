@@ -1,0 +1,35 @@
+{
+ "browser": "safari 27.0.1 on macOS 27.0.1",
+ "date": "2026-10-19T02:50:58.313Z",
+ "expect": "sf",
+ "stackWidth": 491.89599609375,
+ "systemWidth": 491.89599609375,
+ "interWidth": 512.8449096679688,
+ "before": {
+  "fetched": [],
+  "inter": [
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded"
+  ]
+ },
+ "after": {
+  "fetched": [
+   "inter-roman-latin.woff2"
+  ]
+ },
+ "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0.1 Safari/605.1.15"
+}

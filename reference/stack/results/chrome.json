@@ -1,0 +1,35 @@
+{
+ "browser": "chrome 155.0.8059.80 on darwin",
+ "date": "2026-10-19T02:51:00.789Z",
+ "expect": "sf",
+ "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+ "before": {
+  "fetched": [],
+  "inter": [
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded"
+  ]
+ },
+ "stackWidth": 491.90625,
+ "systemWidth": 491.90625,
+ "interWidth": 512.859375,
+ "after": {
+  "fetched": [
+   "inter-roman-latin.woff2"
+  ]
+ }
+}
