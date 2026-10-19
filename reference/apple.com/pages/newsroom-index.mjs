@@ -34,9 +34,9 @@ export default {
     { name: 'tile.third-headline', select: '.everydayfeed li:nth-child(3) > a .tile__headline', props: [...TYPE, 'margin-top', 'margin-bottom'] },
     { name: 'tile.third-date', select: '.everydayfeed li:nth-child(3) > a .tile__timestamp', props: [...TYPE, 'margin-top', 'margin-bottom'] },
     // the fourth: three across
-    { name: 'tile.fourth', select: '.everydayfeed li:nth-child(4) > a', props: [...BOX, 'display', 'flex-direction', 'transform', 'overflow'], box: true },
+    { name: 'tile.fourth', select: '.everydayfeed li:nth-child(4) > a', props: [...BOX, 'display', 'flex-direction', 'transform', 'overflow'], box: true, states: ['hover'] },
     { name: 'tile.fourth-media', select: '.everydayfeed li:nth-child(4) > a .tile__media', props: MEDIA, box: true },
-    { name: 'tile.fourth-description', select: '.everydayfeed li:nth-child(4) > a .tile__description', props: [...BOX, 'padding-left', 'padding-right', 'flex-grow'], box: true },
+    { name: 'tile.fourth-description', select: '.everydayfeed li:nth-child(4) > a .tile__description', props: [...BOX, 'padding-left', 'padding-right', 'display', 'flex-direction', 'justify-content', 'flex-grow'], box: true },
     { name: 'tile.fourth-category', select: '.everydayfeed li:nth-child(4) > a .tile__category', props: [...TYPE, ...TEXT, 'text-transform'] },
     { name: 'tile.fourth-headline', select: '.everydayfeed li:nth-child(4) > a .tile__headline', props: [...TYPE, 'margin-top', 'margin-bottom'] },
     { name: 'tile.fourth-date', select: '.everydayfeed li:nth-child(4) > a .tile__timestamp', props: [...TYPE, 'margin-top', 'margin-bottom'] },
