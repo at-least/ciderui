@@ -21,6 +21,7 @@ Measured 2026-10-19 in Playwright's Chromium 151 on Linux, with `--font-render-h
 | `localnav-dark` | https://www.apple.com/macbook-pro/ | the same, dark |
 | `retail` | https://www.apple.com/retail/ | apple.com's own text field (its form-textbox, the store's forms'): the page's store search, a plain field the probe adds with its classes, at rest, hovered, focused, its label floated and the field filled (the classes its script sets, on copies the probe adds) |
 | `retail-dark` | https://www.apple.com/retail/ | the same field in a dark color scheme |
+| `bag-accordion` | https://www.apple.com/shop/bag | the bag's accordion opened (clicked once, so a spec of its own): its outer item and chevron, its compact items, the first opened |
 | `ribbon` | https://www.apple.com/iphone/ | the ribbon, the message above the content: its ground, type, padding and width, its link, its motion (the animations and their keyframes), read once it has run at each width |
 
 Each is read at 1600, 1200, 900 and 390px wide (one width inside each of apple.com's bands), `breakpoints` at the boundaries.
@@ -97,7 +98,7 @@ The fills are the accent's and the neutral's (above); a secondary button is the 
 
 **The footer** (`home:footer.*`). `#f5f5f7`, 12/16 text at `rgba(0,0,0,.56)`, its links `.72` (underlined hovered), its column titles 600 at `.88`, its rules `rgba(0,0,0,.16)`.
 
-**Accordions** (`bag:accordion.*`). A 1px `#d2d2d7` rule above each item; the question 32px from it (24px to 734px).
+**Accordions** (`bag:accordion.*`, `bag-accordion:*`). A 1px `#d2d2d7` rule above each item. The bag's outer item: its title 32/36 at 600 (24/28 on a phone) 32px from the rule and from its foot (24px), its chevron at the end (a 32 by 35 box, the line 2.25 thick, round). Opened, its compact items, the FAQ: each 56px, the question 17/21 at 600 (14/18 on a phone) 17px from the rule, a 17px chevron at its end (14px), `#86868b`, `#6e6e73` with the question hovered (in 0.1s linear); opened, the answer 13.6px below the question, 14/20, 28px above the next rule, 35px short of the end (none on a phone); each panel's height in 0.3s ease-in-out; the chevron turned up as it opens, through a flat line (its points, in 320ms). The rule between copy blocks on iPhone 18 Pro's dark page is `#424245` (`product:divider`).
 
 ## Running it
 

@@ -1,0 +1,832 @@
+{
+ "url": "https://www.apple.com/shop/bag",
+ "finalUrl": "https://www.apple.com/shop/bag",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-19T08:43:19.032Z",
+ "widths": {
+  "390": {
+   "accordion.title": {
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">Questions About Buying</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "accordion.icon": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)",
+     "margin-left": "12.4375px",
+     "transition-property": "color",
+     "transition-duration": "0.1s",
+     "transition-timing-function": "linear"
+    },
+    "box": {
+     "width": 32,
+     "height": 35
+    }
+   },
+   "accordion.svg": {
+    "html": "<svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5",
+    "styles": {
+     "width": "24px",
+     "height": "35px"
+    },
+    "box": {
+     "width": 24,
+     "height": 35
+    }
+   },
+   "accordion.line": {
+    "html": "<polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5 7.72 2 1.13\"><animate data-accordion-animate=\"expand\" attributeName=\"points\" val",
+    "styles": {
+     "stroke-width": "2.25px",
+     "stroke-linecap": "round",
+     "stroke-linejoin": "round"
+    }
+   },
+   "accordion.open": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "accordion.panel": {
+    "html": "<div data-core-height-transition-wrapper=\"\" class=\"r-height-transition-enter-done\" style=\"\"><div data-core-height-transition-content=\"\"><div data-core-accordion-content=\"\" id=\"content-_r_0_-0\" class=\"as-l-container\"><div class=\"rc-accordion",
+    "styles": {
+     "transition-property": "height",
+     "transition-duration": "0.3s",
+     "transition-timing-function": "ease-in-out",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 390,
+     "height": 464.59375
+    }
+   },
+   "compact.item": {
+    "html": "<li data-core-accordion-item=\"\" class=\"rc-accordion-item\" role=\"listitem\" data-core-accordion-item-expanded=\"\"><h3><span class=\"visuallyhidden\">&nbsp;</span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"true\" aria-contr",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 234.59375
+    }
+   },
+   "compact.button": {
+    "html": "<button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"true\" aria-controls=\"content-faq-question-0\" id=\"title-faq-question-0\" class=\"rc-accordion-button\" data-core-accordion-button-expanded=\"\"><span class=\"typography-callout\"></",
+    "styles": {
+     "padding-top": "17px",
+     "padding-bottom": "17px",
+     "display": "flex",
+     "text-align": "center",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 52
+    }
+   },
+   "compact.title": {
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">When will I get my items?</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "600",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "compact.icon": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)",
+     "transition-property": "color",
+     "transition-duration": "0.1s",
+     "transition-timing-function": "linear"
+    },
+    "box": {
+     "width": 32,
+     "height": 14
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(134, 134, 139)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "compact.icon-hover": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(110, 110, 115)"
+     }
+    }
+   },
+   "compact.svg": {
+    "html": "<svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5",
+    "styles": {
+     "width": "14px",
+     "height": "14px"
+    },
+    "box": {
+     "width": 14,
+     "height": 14
+    }
+   },
+   "compact.line": {
+    "html": "<polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5 7.72 2 1.13\"><animate data-accordion-animate=\"expand\" attributeName=\"points\" val",
+    "styles": {
+     "stroke-width": "2.25px",
+     "stroke-linecap": "round",
+     "stroke-linejoin": "round"
+    }
+   },
+   "compact.open": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "compact.panel": {
+    "html": "<div data-core-height-transition-wrapper=\"\" class=\"r-height-transition-enter-done\" style=\"\"><div data-core-height-transition-content=\"\"><div data-core-accordion-content=\"\" id=\"content-faq-question-0\"><div class=\"rc-accordion-content large-1",
+    "styles": {
+     "margin-top": "13.6px",
+     "transition-property": "height",
+     "transition-duration": "0.3s",
+     "transition-timing-function": "ease-in-out"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 168
+    }
+   },
+   "compact.answer": {
+    "html": "<div class=\"rc-accordion-content large-10\"><div>By entering a zip code, you’ll get estimated delivery and pickup dates for your items. You’ll get a final delivery date after you place your order. Delivery estimates are based on item availab",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "28px",
+     "padding-left": "0px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 168
+    }
+   }
+  },
+  "900": {
+   "accordion.title": {
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">Questions About Buying</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "accordion.icon": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)",
+     "margin-left": "65.6719px",
+     "transition-property": "color",
+     "transition-duration": "0.1s",
+     "transition-timing-function": "linear"
+    },
+    "box": {
+     "width": 32,
+     "height": 35
+    }
+   },
+   "accordion.svg": {
+    "html": "<svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5",
+    "styles": {
+     "width": "32px",
+     "height": "35px"
+    },
+    "box": {
+     "width": 32,
+     "height": 35
+    }
+   },
+   "accordion.line": {
+    "html": "<polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5 7.72 2 1.13\"><animate data-accordion-animate=\"expand\" attributeName=\"points\" val",
+    "styles": {
+     "stroke-width": "2.25px",
+     "stroke-linecap": "round",
+     "stroke-linejoin": "round"
+    }
+   },
+   "accordion.open": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "accordion.panel": {
+    "html": "<div data-core-height-transition-wrapper=\"\" class=\"r-height-transition-enter-done\" style=\"\"><div data-core-height-transition-content=\"\"><div data-core-accordion-content=\"\" id=\"content-_r_0_-0\" class=\"as-l-container\"><div class=\"rc-accordion",
+    "styles": {
+     "transition-property": "height",
+     "transition-duration": "0.3s",
+     "transition-timing-function": "ease-in-out",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 1024,
+     "height": 381.59375
+    }
+   },
+   "compact.item": {
+    "html": "<li data-core-accordion-item=\"\" class=\"rc-accordion-item\" role=\"listitem\" data-core-accordion-item-expanded=\"\"><h3><span class=\"visuallyhidden\">&nbsp;</span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"true\" aria-contr",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 980,
+     "height": 157.59375
+    }
+   },
+   "compact.button": {
+    "html": "<button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"true\" aria-controls=\"content-faq-question-0\" id=\"title-faq-question-0\" class=\"rc-accordion-button\" data-core-accordion-button-expanded=\"\"><span class=\"typography-callout\"></",
+    "styles": {
+     "padding-top": "17px",
+     "padding-bottom": "17px",
+     "display": "flex",
+     "text-align": "center",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 980,
+     "height": 55
+    }
+   },
+   "compact.title": {
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">When will I get my items?</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "compact.icon": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)",
+     "transition-property": "color",
+     "transition-duration": "0.1s",
+     "transition-timing-function": "linear"
+    },
+    "box": {
+     "width": 32,
+     "height": 17
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(134, 134, 139)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "compact.icon-hover": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(110, 110, 115)"
+     }
+    }
+   },
+   "compact.svg": {
+    "html": "<svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5",
+    "styles": {
+     "width": "17px",
+     "height": "17px"
+    },
+    "box": {
+     "width": 17,
+     "height": 17
+    }
+   },
+   "compact.line": {
+    "html": "<polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5 7.72 2 1.13\"><animate data-accordion-animate=\"expand\" attributeName=\"points\" val",
+    "styles": {
+     "stroke-width": "2.25px",
+     "stroke-linecap": "round",
+     "stroke-linejoin": "round"
+    }
+   },
+   "compact.open": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "compact.panel": {
+    "html": "<div data-core-height-transition-wrapper=\"\" class=\"r-height-transition-enter-done\" style=\"\"><div data-core-height-transition-content=\"\"><div data-core-accordion-content=\"\" id=\"content-faq-question-0\"><div class=\"rc-accordion-content large-1",
+    "styles": {
+     "margin-top": "13.6px",
+     "transition-property": "height",
+     "transition-duration": "0.3s",
+     "transition-timing-function": "ease-in-out"
+    },
+    "box": {
+     "width": 980,
+     "height": 88
+    }
+   },
+   "compact.answer": {
+    "html": "<div class=\"rc-accordion-content large-10\"><div>By entering a zip code, you’ll get estimated delivery and pickup dates for your items. You’ll get a final delivery date after you place your order. Delivery estimates are based on item availab",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "35px",
+     "padding-bottom": "28px",
+     "padding-left": "0px"
+    },
+    "box": {
+     "width": 851.65625,
+     "height": 88
+    }
+   }
+  },
+  "1200": {
+   "accordion.title": {
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">Questions About Buying</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "accordion.icon": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)",
+     "margin-left": "65.6719px",
+     "transition-property": "color",
+     "transition-duration": "0.1s",
+     "transition-timing-function": "linear"
+    },
+    "box": {
+     "width": 32,
+     "height": 35
+    }
+   },
+   "accordion.svg": {
+    "html": "<svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5",
+    "styles": {
+     "width": "32px",
+     "height": "35px"
+    },
+    "box": {
+     "width": 32,
+     "height": 35
+    }
+   },
+   "accordion.line": {
+    "html": "<polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5 7.72 2 1.13\"><animate data-accordion-animate=\"expand\" attributeName=\"points\" val",
+    "styles": {
+     "stroke-width": "2.25px",
+     "stroke-linecap": "round",
+     "stroke-linejoin": "round"
+    }
+   },
+   "accordion.open": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "accordion.panel": {
+    "html": "<div data-core-height-transition-wrapper=\"\" class=\"r-height-transition-enter-done\" style=\"\"><div data-core-height-transition-content=\"\"><div data-core-accordion-content=\"\" id=\"content-_r_0_-0\" class=\"as-l-container\"><div class=\"rc-accordion",
+    "styles": {
+     "transition-property": "height",
+     "transition-duration": "0.3s",
+     "transition-timing-function": "ease-in-out",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 1200,
+     "height": 381.59375
+    }
+   },
+   "compact.item": {
+    "html": "<li data-core-accordion-item=\"\" class=\"rc-accordion-item\" role=\"listitem\" data-core-accordion-item-expanded=\"\"><h3><span class=\"visuallyhidden\">&nbsp;</span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"true\" aria-contr",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 980,
+     "height": 157.59375
+    }
+   },
+   "compact.button": {
+    "html": "<button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"true\" aria-controls=\"content-faq-question-0\" id=\"title-faq-question-0\" class=\"rc-accordion-button\" data-core-accordion-button-expanded=\"\"><span class=\"typography-callout\"></",
+    "styles": {
+     "padding-top": "17px",
+     "padding-bottom": "17px",
+     "display": "flex",
+     "text-align": "center",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 980,
+     "height": 55
+    }
+   },
+   "compact.title": {
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">When will I get my items?</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "compact.icon": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)",
+     "transition-property": "color",
+     "transition-duration": "0.1s",
+     "transition-timing-function": "linear"
+    },
+    "box": {
+     "width": 32,
+     "height": 17
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(134, 134, 139)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "compact.icon-hover": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(110, 110, 115)"
+     }
+    }
+   },
+   "compact.svg": {
+    "html": "<svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5",
+    "styles": {
+     "width": "17px",
+     "height": "17px"
+    },
+    "box": {
+     "width": 17,
+     "height": 17
+    }
+   },
+   "compact.line": {
+    "html": "<polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5 7.72 2 1.13\"><animate data-accordion-animate=\"expand\" attributeName=\"points\" val",
+    "styles": {
+     "stroke-width": "2.25px",
+     "stroke-linecap": "round",
+     "stroke-linejoin": "round"
+    }
+   },
+   "compact.open": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "compact.panel": {
+    "html": "<div data-core-height-transition-wrapper=\"\" class=\"r-height-transition-enter-done\" style=\"\"><div data-core-height-transition-content=\"\"><div data-core-accordion-content=\"\" id=\"content-faq-question-0\"><div class=\"rc-accordion-content large-1",
+    "styles": {
+     "margin-top": "13.6px",
+     "transition-property": "height",
+     "transition-duration": "0.3s",
+     "transition-timing-function": "ease-in-out"
+    },
+    "box": {
+     "width": 980,
+     "height": 88
+    }
+   },
+   "compact.answer": {
+    "html": "<div class=\"rc-accordion-content large-10\"><div>By entering a zip code, you’ll get estimated delivery and pickup dates for your items. You’ll get a final delivery date after you place your order. Delivery estimates are based on item availab",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "35px",
+     "padding-bottom": "28px",
+     "padding-left": "0px"
+    },
+    "box": {
+     "width": 851.65625,
+     "height": 88
+    }
+   }
+  },
+  "1600": {
+   "accordion.title": {
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">Questions About Buying</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "accordion.icon": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)",
+     "margin-left": "65.6719px",
+     "transition-property": "color",
+     "transition-duration": "0.1s",
+     "transition-timing-function": "linear"
+    },
+    "box": {
+     "width": 32,
+     "height": 35
+    }
+   },
+   "accordion.svg": {
+    "html": "<svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5",
+    "styles": {
+     "width": "32px",
+     "height": "35px"
+    },
+    "box": {
+     "width": 32,
+     "height": 35
+    }
+   },
+   "accordion.line": {
+    "html": "<polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5 7.72 2 1.13\"><animate data-accordion-animate=\"expand\" attributeName=\"points\" val",
+    "styles": {
+     "stroke-width": "2.25px",
+     "stroke-linecap": "round",
+     "stroke-linejoin": "round"
+    }
+   },
+   "accordion.open": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "accordion.panel": {
+    "html": "<div data-core-height-transition-wrapper=\"\" class=\"r-height-transition-enter-done\" style=\"\"><div data-core-height-transition-content=\"\"><div data-core-accordion-content=\"\" id=\"content-_r_0_-0\" class=\"as-l-container\"><div class=\"rc-accordion",
+    "styles": {
+     "transition-property": "height",
+     "transition-duration": "0.3s",
+     "transition-timing-function": "ease-in-out",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 1600,
+     "height": 280
+    }
+   },
+   "compact.item": {
+    "html": "<li data-core-accordion-item=\"\" class=\"rc-accordion-item\" role=\"listitem\"><h3><span class=\"visuallyhidden\">&nbsp;</span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"false\" aria-controls=\"content-faq-question-0\" id=\"tit",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 980,
+     "height": 56
+    }
+   },
+   "compact.button": {
+    "html": "<button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"false\" aria-controls=\"content-faq-question-0\" id=\"title-faq-question-0\" class=\"rc-accordion-button\"><span class=\"typography-callout\"></span><span class=\"rc-accordion-title l",
+    "styles": {
+     "padding-top": "17px",
+     "padding-bottom": "17px",
+     "display": "flex",
+     "text-align": "center",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 980,
+     "height": 55
+    }
+   },
+   "compact.title": {
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">When will I get my items?</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "compact.icon": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)",
+     "transition-property": "color",
+     "transition-duration": "0.1s",
+     "transition-timing-function": "linear"
+    },
+    "box": {
+     "width": 32,
+     "height": 17
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(134, 134, 139)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "compact.icon-hover": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(110, 110, 115)"
+     }
+    }
+   },
+   "compact.svg": {
+    "html": "<svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5",
+    "styles": {
+     "width": "17px",
+     "height": "17px"
+    },
+    "box": {
+     "width": 17,
+     "height": 17
+    }
+   },
+   "compact.line": {
+    "html": "<polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\" fill-rule=\"evenodd\" points=\"15 1.13 8.5 7.72 2 1.13\"><animate data-accordion-animate=\"expand\" attributeName=\"points\" val",
+    "styles": {
+     "stroke-width": "2.25px",
+     "stroke-linecap": "round",
+     "stroke-linejoin": "round"
+    }
+   },
+   "compact.open": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "compact.panel": {
+    "html": "<div data-core-height-transition-wrapper=\"\" class=\"r-height-transition-enter-done\" style=\"\"><div data-core-height-transition-content=\"\"><div data-core-accordion-content=\"\" id=\"content-faq-question-0\"><div class=\"rc-accordion-content large-1",
+    "styles": {
+     "margin-top": "13.6px",
+     "transition-property": "height",
+     "transition-duration": "0.3s",
+     "transition-timing-function": "ease-in-out"
+    },
+    "box": {
+     "width": 980,
+     "height": 88
+    }
+   },
+   "compact.answer": {
+    "html": "<div class=\"rc-accordion-content large-10\"><div>By entering a zip code, you’ll get estimated delivery and pickup dates for your items. You’ll get a final delivery date after you place your order. Delivery estimates are based on item availab",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "35px",
+     "padding-bottom": "28px",
+     "padding-left": "0px"
+    },
+    "box": {
+     "width": 851.65625,
+     "height": 88
+    }
+   }
+  }
+ }
+}

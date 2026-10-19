@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/iphone-18-pro/",
  "finalUrl": "https://www.apple.com/iphone-18-pro/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T07:43:35.409Z",
+ "date": "2026-10-19T08:41:08.883Z",
  "widths": {
   "390": {
    "type.none": {
@@ -709,6 +709,14 @@
     "box": {
      "width": 36,
      "height": 36
+    }
+   },
+   "divider": {
+    "html": "<div class=\"callout-subsection-copy-block keyline typography-callout-elevated\">\n\t\t\t\t\t\t\t<p>More power for all your AI tasks. And faster Apple&nbsp;Intelligence thanks to new Neural Accelerators, a Dual 16‑core Neural&nbsp;Engine, and 50&nbsp",
+    "styles": {
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(66, 66, 69)"
     }
    },
    "gallery.scroller": {
@@ -2057,6 +2065,14 @@
      "height": 36
     }
    },
+   "divider": {
+    "html": "<div class=\"callout-subsection-copy-block keyline typography-callout-elevated\">\n\t\t\t\t\t\t\t<p>More power for all your AI tasks. And faster Apple&nbsp;Intelligence thanks to new Neural Accelerators, a Dual 16‑core Neural&nbsp;Engine, and 50&nbsp",
+    "styles": {
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(66, 66, 69)"
+    }
+   },
    "gallery.scroller": {
     "html": "<div class=\"scroll-container\" tabindex=\"-1\">\n\t\t\t\t\t\t<div class=\"item-container\">\n\t\t\t\t\t\t\t<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\">\n\t\t\t\t\t\t\t\t<li class=\"card-container ",
     "styles": {
@@ -3359,6 +3375,14 @@
      "height": 36
     }
    },
+   "divider": {
+    "html": "<div class=\"callout-subsection-copy-block keyline typography-callout-elevated\">\n\t\t\t\t\t\t\t<p>More power for all your AI tasks. And faster Apple&nbsp;Intelligence thanks to new Neural Accelerators, a Dual 16‑core Neural&nbsp;Engine, and 50&nbsp",
+    "styles": {
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(66, 66, 69)"
+    }
+   },
    "gallery.scroller": {
     "html": "<div class=\"scroll-container\" tabindex=\"-1\">\n\t\t\t\t\t\t<div class=\"item-container\">\n\t\t\t\t\t\t\t<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\">\n\t\t\t\t\t\t\t\t<li class=\"card-container ",
     "styles": {
@@ -4646,6 +4670,14 @@
     "box": {
      "width": 36,
      "height": 36
+    }
+   },
+   "divider": {
+    "html": "<div class=\"callout-subsection-copy-block keyline typography-callout-elevated\">\n\t\t\t\t\t\t\t<p>More power for all your AI tasks. And faster Apple&nbsp;Intelligence thanks to new Neural Accelerators, a Dual 16‑core Neural&nbsp;Engine, and 50&nbsp",
+    "styles": {
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(66, 66, 69)"
     }
    },
    "gallery.scroller": {

@@ -35,6 +35,8 @@ export default {
     { name: 'tile.rounded-light', select: 'main .theme-light .tile.tile-rounded, main .tile.tile-rounded:not(.theme-dark *)', props: [...BOX], box: true },
     { name: 'paddle', select: 'main .paddlenav-arrow', props: [...BOX, 'width', 'height', 'color', 'opacity', ...BLUR, ...MOTION], box: true, states: ['hover', 'active'] },
     { name: 'paddle.icon', select: 'main .paddlenav-arrow svg', props: ['width', 'height', 'fill', 'color'], box: true },
+    // a rule between copy blocks on the dark page: the divider's dark side
+    { name: 'divider', select: 'main .callout-subsection-copy-block.keyline', props: ['border-top-width', 'border-top-style', 'border-top-color'] },
     // a gallery (the first scroll gallery, the camera system's): its scroller,
     // its items' inset and gap, an item's snapping, its paddles' row below
     // it and an enabled paddle (the next: the first, the previous, is

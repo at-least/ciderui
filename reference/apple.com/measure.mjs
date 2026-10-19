@@ -16,8 +16,10 @@
 // `blur` takes the focus off the element that has it (a field the page
 // focuses on load) before reading; `frame` reads in the frame whose URL holds
 // that text; `widths` reads at those of the spec's widths alone; `click`
-// clicks that element first (a menu's button: the page stays so for the
-// probes after it at that width, so a spec puts such probes last);
+// clicks that element first, once, at the first width the probe is read (a
+// menu's button, an accordion's: the page stays so for the probes after it
+// and at the widths after, so a spec puts such probes last, or in a spec of
+// their own; the pointer then leaves for the window's bottom corner);
 // `position` adds the box's top and left in the window (where the window is
 // what it is placed in: an open menu's rows); `animations`, with `click`,
 // records every animation and transition the click starts on an element
@@ -160,6 +162,7 @@ const frameOf = (probe) => {
 };
 
 const final = new URL(pw.url());
+const clicked = new Set();
 const result = { url: spec.url, finalUrl: final.origin + final.pathname, browser: page.label, date: new Date().toISOString(), widths: {} };
 const nulls = [];
 const used = new Set();
@@ -172,9 +175,16 @@ try {
     for (const probe of spec.probes) {
       if (probe.widths && !probe.widths.includes(width)) continue;
       const frame = frameOf(probe);
-      if (probe.click) {
+      // a click once, at the first width the probe is read: what it opens
+      // stays so as the window narrows
+      const clicking = probe.click && !clicked.has(probe.name);
+      if (clicking) {
+        clicked.add(probe.name);
         if (probe.animations) await frame.evaluate(watchAnimations, probe.animations);
         await frame.click(probe.click);
+        // the pointer off what it clicked, which it would leave hovered, to the
+        // window's bottom corner
+        await pw.mouse.move(0, 899);
         await pw.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 900)))));
       }
       used.add(frame);
@@ -187,7 +197,7 @@ try {
       }
       at[probe.name] = { html, ...(await frame.evaluate(read, probe)) };
       for (const [k, v] of Object.entries(at[probe.name].keyframes ?? {})) if (!v) nulls.push(`${width} ${probe.name} @keyframes ${k}`);
-      if (probe.click && probe.animations) at[probe.name].animations = await frame.evaluate(() => { clearInterval(window.cuiWatch); return window.cuiAnimations; });
+      if (clicking && probe.animations) at[probe.name].animations = await frame.evaluate(() => { clearInterval(window.cuiWatch); return window.cuiAnimations; });
       if (probe.states?.length) {
         const nodeId = await stateNode(frame);
         if (!nodeId) throw new Error(`${probe.name}: the DevTools session does not see the tagged element`);

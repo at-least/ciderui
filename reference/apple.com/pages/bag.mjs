@@ -1,5 +1,6 @@
 // The empty bag: its header and message, its two buttons (the store's form
-// buttons), the ribbon above it.
+// buttons), the ribbon above it, its accordion's first item (closed: opened in
+// bag-accordion.mjs).
 import { TYPE, BOX, MOTION, FOCUS, PAGE, TEXT } from './common.mjs';
 const STATES = ['hover', 'active', 'focus-visible'];
 export default {
