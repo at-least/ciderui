@@ -10,13 +10,14 @@
 //            1600, 1200, 900 and 390px); height, the window's (800px);
 //            touch, reducedMotion as the page's
 //   click    a selector (or several) clicked in turn once, at the first
-//            width, before its checks (a menu's button), its motion then
-//            run to its end
+//            width, before its checks (a menu's button), then the keys in
+//            `press` pressed in turn, its motion then run to its end, or for
+//            `wait` ms (0 reads its start)
 // A check:
 //   target   a selector in the case's markup; props, the values read (a
-//            property, or the box: box-height, box-width, box-top, box-left,
-//            box-x, box-y, test/browser.mjs); state, the pseudo-classes
-//            forced on it (or on `on`)
+//            property, the box: box-height, box-width, box-top, box-left,
+//            box-x, box-y, or `focused`, test/browser.mjs); state, the
+//            pseudo-classes forced on it (or on `on`)
 //   apple    [page, probe, state?]: each value equals apple.com's measured
 //            one (reference/apple.com/results/<page>.json) at the same
 //            width, or at `at[width]` for a width the reference was not read

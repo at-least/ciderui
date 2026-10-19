@@ -2,11 +2,13 @@
 // height, material, content, row, links, logo and icons), the phone's bar
 // (the same probes at 390px: the logo, the compact icons, the menu's
 // button, their places), the phone's menu opened by its button (home:menu*:
-// the sheet, its rows, the faded logo and search, the X, the page held) and
-// its motion, a dark nav (newsroom:nav*, newsroom:menu*), a clear one
-// (product:nav), a touch screen. Golden, with their why: the letter-spacing,
-// the images' widths (apple.com's SVG boxes), the X's lines (apple.com's end
-// points, reference/icons/), and where ciderui's markup differs from
+// the sheet, its rows, the faded logo and search, the X, the page held), its
+// motion and its start, the keys (the focus on the X, Tab to the first link,
+// Escape back to the button: reference/popover/), a dark nav
+// (newsroom:nav*, newsroom:menu*), a clear one (product:nav), a touch
+// screen. Golden, with their why: the letter-spacing, the images' widths
+// (apple.com's SVG boxes), the X's lines (apple.com's end points,
+// reference/icons/), the focus, and where ciderui's markup differs from
 // apple.com's with the same picture.
 
 import { examples, PADDING } from '../../test/harness.mjs';
@@ -23,12 +25,14 @@ const INLINE = ['padding-left', 'padding-right'];
 const LIST = '.cui-globalnav-list';
 const LOGO = '.cui-globalnav-logo';
 const BUTTON = '.cui-globalnav-menubutton';
+const CLOSE = '.cui-globalnav-closebutton';
 // the first and second links (Store, Mac), the search and the bag
 const LINK = `${LIST} > li:nth-child(3) > .cui-globalnav-link`;
 const LINK2 = `${LIST} > li:nth-child(4) > .cui-globalnav-link`;
 const SEARCH = `${LIST} > li:nth-child(7) > .cui-globalnav-icon`;
 const BAG = `${LIST} > li:nth-child(8) > .cui-globalnav-icon`;
-const LINES = [`${BUTTON} path:first-child`, `${BUTTON} path:last-child`];
+const BARS = [`${BUTTON} path:first-child`, `${BUTTON} path:last-child`];
+const X = [`${CLOSE} path:first-child`, `${CLOSE} path:last-child`];
 // apple.com reads its menu's button at 900 and 390px alone
 const TRIGGER_AT = { 1600: 900, 1200: 900 };
 // apple.com's phone bar draws its ground on its content, ciderui's on the
@@ -83,8 +87,9 @@ export const cases = [
       { target: BUTTON, props: [...FLEX, 'box-height', 'box-left', 'color', 'opacity', 'cursor', ...MOTION], apple: ['home', 'nav.menutrigger'] },
       { target: BUTTON, state: 'hover', props: ['opacity'], apple: ['home', 'nav.menutrigger', 'hover'] },
       { target: BUTTON, props: ['box-width'], golden: 'apple.com\'s 48px square (home:nav.menutrigger at 390px)' },
-      { target: LINES[0], props: ['stroke-width'], apple: ['home', 'nav.menutrigger-bread'] },
-      ...LINES.map(target => ({ target, props: ['box-x', 'box-y', 'box-width', 'box-height'], golden: 'apple.com\'s two lines, 2 to 16 across at 5 and 12 down in 18 by 18 (reference/icons/)' })),
+      { target: BARS[0], props: ['stroke-width'], apple: ['home', 'nav.menutrigger-bread'] },
+      ...BARS.map(target => ({ target, props: ['box-x', 'box-y', 'box-width', 'box-height'], golden: 'apple.com\'s two lines, 2 to 16 across at 5 and 12 down in 18 by 18 (reference/icons/)' })),
+      { target: `${LIST} > li:nth-child(2)`, props: ['box-height'], golden: 'the close button is the opened menu\'s' },
       { target: LINK, props: ['box-height'], golden: 'to 833px the links are the menu\'s rows, not the bar\'s: apple.com\'s bar holds the logo, the search, the bag and the button' },
     ],
   },
@@ -104,9 +109,10 @@ export const cases = [
       // apple.com fades the links themselves; ciderui their items
       { target: `${LIST} > li:nth-child(1)`, props: ['opacity', 'visibility'], apple: ['home', 'menu.logo'] },
       { target: `${LIST} > li:nth-child(7)`, props: ['opacity', 'visibility'], apple: ['home', 'menu.search'] },
-      { target: BUTTON, props: ['color', 'opacity'], apple: ['home', 'menu.trigger'] },
-      { target: LINES[0], props: ['box-height'], apple: ['home', 'menu.trigger-bread-top'] },
-      ...LINES.map(target => ({ target, props: ['box-x', 'box-y', 'box-width', 'box-height'], golden: 'apple.com\'s X: its lines from (3.5, 3.5) to (15, 15) and from (3.5, 15) to (15, 3.5), the end of its animation (reference/icons/)' })),
+      { target: CLOSE, props: ['color', 'opacity', 'box-height', 'box-left', 'box-top'], apple: ['home', 'menu.trigger'] },
+      { target: CLOSE, props: ['box-width'], golden: 'apple.com\'s 48px square, where the menu\'s button is (home:nav.menutrigger at 390px)' },
+      { target: X[0], props: ['box-height'], apple: ['home', 'menu.trigger-bread-top'] },
+      ...X.map(target => ({ target, props: ['box-x', 'box-y', 'box-width', 'box-height'], golden: 'apple.com\'s X: its lines from (3.5, 3.5) to (15, 15) and from (3.5, 15) to (15, 3.5), the end of its animation (reference/icons/)' })),
       { target: 'html', props: ['overflow-y'], apple: ['home', 'menu.root'] },
     ],
   },
@@ -120,14 +126,14 @@ export const cases = [
       { target: `${LIST} > li:nth-child(4)`, props: ['transition-duration', 'transition-delay'], apple: ['home', 'menu.row-second'] },
       { target: `${LIST} > li:nth-child(3)`, props: ['transition-property', 'transition-timing-function'], golden: 'apple.com\'s rows also turn visible (its rows are hidden closed, ciderui\'s not displayed); their opacity and transform as apple.com\'s' },
       { target: LIST, props: MOTION, golden: 'apple.com\'s ground and height in 450ms (home:menu.open\'s animations; its computed transition names its ground alone, its height\'s declared in a state between)' },
-      { target: LINES[0], props: MOTION, golden: 'apple.com\'s lines turn in 0.24s (their SVG animation, reference/icons/)' },
+      { target: X[0], props: MOTION, golden: 'apple.com\'s lines turn in 0.24s (their SVG animation, reference/icons/)' },
     ],
   },
   {
     name: 'menu-closed',
     html: NAV,
     ...OPEN,
-    click: [BUTTON, BUTTON],
+    click: [BUTTON, CLOSE],
     reducedMotion: 'reduce',
     checks: [
       { target: LIST, props: ['box-height'], apple: ['home', 'nav.list'] },
@@ -145,7 +151,49 @@ export const cases = [
     reducedMotion: 'reduce',
     checks: [
       { target: LINK2, props: ['font-size', 'box-top'], golden: 'opened, the menu is a sheet at any width: its rows' },
-      { target: BUTTON, props: ['box-height', 'opacity'], golden: 'opened, the menu is a sheet at any width: its button, the X' },
+      { target: CLOSE, props: ['box-height', 'opacity'], golden: 'opened, the menu is a sheet at any width: its close button' },
+    ],
+  },
+  {
+    // read at its start: the rows still transparent and 8px up (@starting-style
+    // through the compiled stylesheet), apple.com's from (home:menu.open's
+    // animations), 200ms before they move
+    name: 'menu-start',
+    html: NAV,
+    ...OPEN,
+    wait: 0,
+    checks: [
+      { target: `${LIST} > li:nth-child(3)`, props: ['opacity', 'transform'], golden: 'apple.com\'s rows start transparent, 8px up (home:menu.open\'s animations)' },
+    ],
+  },
+  {
+    name: 'menu-focus',
+    html: NAV,
+    ...OPEN,
+    reducedMotion: 'reduce',
+    checks: [
+      { target: CLOSE, props: ['focused'], golden: 'opened, the focus is on the X (autofocus; reference/popover/)' },
+    ],
+  },
+  {
+    name: 'menu-tab',
+    html: NAV,
+    ...OPEN,
+    press: 'Tab',
+    reducedMotion: 'reduce',
+    checks: [
+      { target: LINK, props: ['focused'], golden: 'Tab goes from the X to the first link, not back to a button (reference/popover/)' },
+    ],
+  },
+  {
+    name: 'menu-escape',
+    html: NAV,
+    ...OPEN,
+    press: 'Escape',
+    reducedMotion: 'reduce',
+    checks: [
+      { target: LIST, props: ['position'], golden: 'Escape closes it' },
+      { target: BUTTON, props: ['focused'], golden: 'the focus back on the menu\'s button (reference/popover/)' },
     ],
   },
   {
@@ -178,7 +226,7 @@ export const cases = [
       { target: LIST, props: ['background-color'], apple: ['newsroom', 'menu.content'] },
       { target: LINK2, props: ['color'], apple: ['newsroom', 'menu.link'] },
       { target: LINK2, state: 'hover', props: ['color'], apple: ['newsroom', 'menu.link', 'hover'] },
-      { target: BUTTON, props: ['color', 'opacity'], apple: ['newsroom', 'menu.trigger'] },
+      { target: CLOSE, props: ['color', 'opacity'], apple: ['newsroom', 'menu.trigger'] },
     ],
   },
   {

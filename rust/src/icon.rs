@@ -136,8 +136,9 @@ pub const BAG_COMPACT: Icon = Icon {
 
 /// The global nav's menu button's lines (`cui-globalnav-menubutton`), as
 /// apple.com's: two lines across 18 by 18, from 2 to 16 at 5 and 12 down,
-/// 1.2 thick, round; `globalnav.css` turns them into its X while the menu is
-/// open (from (3.5, 3.5) to (15, 15) and from (3.5, 15) to (15, 3.5)).
+/// 1.2 thick, round; in the opened menu's close button
+/// (`cui-globalnav-closebutton`) `globalnav.css` turns them into its X (from
+/// (3.5, 3.5) to (15, 15) and from (3.5, 15) to (15, 3.5)).
 pub const MENU: Icon = Icon {
     width: "18",
     height: "18",

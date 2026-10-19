@@ -8,8 +8,9 @@ const MENU_ID: &str = "cui-globalnav-menu";
 /// `cui-globalnav` (`components/globalnav`): the bar across the top of the
 /// page, the site's logo, its links and its search and bag; to 833px the
 /// links are a menu its button opens over the window, with no script (the
-/// list a popover, the button inside it). Not placed on the page: a site
-/// adds `sticky top-0` (its `class`) where the nav stays.
+/// list a popover beside the button, with a close button of its own that
+/// takes the focus). Not placed on the page: a site adds `sticky top-0` (its
+/// `class`) where the nav stays.
 ///
 /// ```
 /// use hypertext::{Raw, prelude::*};
@@ -67,7 +68,7 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
                 <div class="cui-globalnav-content">
                     <ul class="cui-globalnav-list" id=(MENU_ID) popover>
                         <li><a class="cui-globalnav-logo" href=(self.home) aria-label=(self.name)>(self.logo)</a></li>
-                        <li><button class="cui-globalnav-menubutton" popovertarget=(MENU_ID) aria-label="Menu">(MENU)</button></li>
+                        <li><button class="cui-globalnav-closebutton" popovertarget=(MENU_ID) popovertargetaction="hide" aria-label="Close" autofocus>(MENU)</button></li>
                         @for (text, href) in self.links {
                             <li><a class="cui-globalnav-link" href=(href)>(text)</a></li>
                         }
@@ -78,6 +79,7 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
                             <li><a class="cui-globalnav-icon" href=(href) aria-label="Bag">(BAG.class("cui-globalnav-image"))(BAG_COMPACT.class("cui-globalnav-image-compact"))</a></li>
                         }
                     </ul>
+                    <button class="cui-globalnav-menubutton" popovertarget=(MENU_ID) aria-label="Menu">(MENU)</button>
                 </div>
             </nav>
         }

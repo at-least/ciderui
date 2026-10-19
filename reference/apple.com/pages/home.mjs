@@ -83,7 +83,7 @@ export default {
     { name: 'menu.link', select: '#globalnav .globalnav-item-mac .globalnav-link', props: [...TYPE, ...BOX, 'padding-left', 'padding-right', 'height', 'display'], box: true, position: true, widths: [390], states: ['hover'] },
     { name: 'menu.link-first', select: '#globalnav .globalnav-item-store .globalnav-link', props: ['padding-top', 'margin-bottom'], box: true, position: true, widths: [390] },
     { name: 'menu.item', select: '#globalnav .globalnav-item-mac', props: [...BOX, 'height'], box: true, position: true, widths: [390] },
-    { name: 'menu.trigger', select: '#globalnav .globalnav-menutrigger-button', props: ['color', 'opacity'], widths: [390] },
+    { name: 'menu.trigger', select: '#globalnav .globalnav-menutrigger-button', props: ['color', 'opacity'], box: true, position: true, widths: [390] },
     { name: 'menu.trigger-bread-top', select: '#globalnav .globalnav-menutrigger-bread-top', props: ['stroke-width'], box: true, widths: [390] },
     { name: 'menu.trigger-bread-bottom', select: '#globalnav .globalnav-menutrigger-bread-bottom', props: ['stroke-width'], box: true, widths: [390] },
   ],

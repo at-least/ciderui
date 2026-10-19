@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/",
  "finalUrl": "https://www.apple.com/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T05:30:01.372Z",
+ "date": "2026-10-19T05:52:14.072Z",
  "widths": {
   "390": {
    "type.none": {
@@ -2819,6 +2819,12 @@
     "styles": {
      "color": "rgb(0, 0, 0)",
      "opacity": "0.8"
+    },
+    "box": {
+     "width": 48,
+     "height": 48,
+     "top": 0,
+     "left": 342
     }
    },
    "menu.trigger-bread-top": {
@@ -5389,7 +5395,7 @@
     }
    },
    "hero.subhead": {
-    "html": "<p class=\"tile-subhead typography-tile-subhead\"><span class=\"visuallyhidden\">Hello, hello.</span><span class=\"subhead-left\" aria-hidden=\"true\" style=\"transform: matrix(1, 0, 0, 1, 1.60062, 0);\"><span class=\"subhead-end\" style=\"opacity: 1;\">",
+    "html": "<p class=\"tile-subhead typography-tile-subhead\"><span class=\"visuallyhidden\">Hello, hello.</span><span class=\"subhead-left\" aria-hidden=\"true\" style=\"transform: matrix(1, 0, 0, 1, 0, 0);\"><span class=\"subhead-end\" style=\"opacity: 1;\">Hello,",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",

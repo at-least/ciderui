@@ -12,34 +12,38 @@
  *     <div class="cui-globalnav-content">
  *       <ul class="cui-globalnav-list" id="cui-globalnav-menu" popover>
  *         <li><a class="cui-globalnav-logo" href="/" aria-label="Site">(the site's logo)</a></li>
- *         <li><button class="cui-globalnav-menubutton" popovertarget="cui-globalnav-menu" aria-label="Menu">(icon::MENU)</button></li>
+ *         <li><button class="cui-globalnav-closebutton" popovertarget="cui-globalnav-menu" popovertargetaction="hide" aria-label="Close" autofocus>(icon::MENU)</button></li>
  *         <li><a class="cui-globalnav-link" href="/store">Store</a></li>
  *         <li><a class="cui-globalnav-icon" href="/search" aria-label="Search">(icon::SEARCH, icon::SEARCH_COMPACT)</a></li>
  *       </ul>
+ *       <button class="cui-globalnav-menubutton" popovertarget="cui-globalnav-menu" aria-label="Menu">(icon::MENU)</button>
  *     </div>
  *   </nav>
  *
- * The list is the menu: a popover the page shows closed, as the bar's row.
- * Its button is inside it, so opened into the top layer, a sheet over the
- * window, the list keeps the button on top as its X; the same button closes
- * it, as does Escape. In the markup the logo comes first and the button
- * second, so that opened, the next stop after the button is the first link;
- * to 833px the button is drawn last, after the icons.
+ * The list is the menu: a popover the page shows closed, as the bar's row,
+ * beside the menu's button. Opened into the top layer, a sheet over the
+ * window, it shows its own close button where the menu's button is, the two
+ * lines turning into an X, and the focus moves to it (autofocus); Tab goes
+ * on to the links; the X or Escape closes it, the focus back on the menu's
+ * button. The menu's button is beside the list, not in it: a popover opened
+ * by a button inside it holds the focus on that button (Chromium 151,
+ * reference/popover/). In the markup the logo comes first and the close
+ * button second, so that the next stop after the X is the first link.
  *
- * cui-globalnav            the bar: 48px, 44px from 834px, on the bar's
- *                          material, translucent under a blur (dark in a
- *                          dark block, cui-dark on the nav)
- *   data-variant="clear"   no ground and no blur: over a hero, with a nav
- *                          that scrolls away with it
- * cui-globalnav-content    1024px at most, 22px in from 834px
- * cui-globalnav-list       the row (closed), the menu (opened)
- * cui-globalnav-logo       the site's logo, a link; its image the site's
- * cui-globalnav-link       a link: 12px in the bar, a 28px row in the menu
- * cui-globalnav-icon       an icon link: cui-globalnav-image from 834px
- *                          (15 or 14 by 44), cui-globalnav-image-compact to
- *                          833px (17 by 48)
- * cui-globalnav-menubutton the menu's button, to 833px: two lines, an X
- *                          while the menu is open
+ * cui-globalnav             the bar: 48px, 44px from 834px, on the bar's
+ *                           material, translucent under a blur (dark in a
+ *                           dark block, cui-dark on the nav)
+ *   data-variant="clear"    no ground and no blur: over a hero, with a nav
+ *                           that scrolls away with it
+ * cui-globalnav-content     1024px at most, 22px in from 834px
+ * cui-globalnav-list        the row (closed), the menu (opened)
+ * cui-globalnav-logo        the site's logo, a link; its image the site's
+ * cui-globalnav-link        a link: 12px in the bar, a 28px row in the menu
+ * cui-globalnav-icon        an icon link: cui-globalnav-image from 834px
+ *                           (15 or 14 by 44), cui-globalnav-image-compact to
+ *                           833px (17 by 48)
+ * cui-globalnav-menubutton  the menu's button, to 833px: two lines
+ * cui-globalnav-closebutton the opened menu's: an X
  *
  * apple.com's: every size, color, the material, the motion. ciderui's: the
  * letter-spacing (tokens.css); no place on the page: apple.com fixes its nav
@@ -47,11 +51,12 @@
  * product:nav, newsroom:nav absolute, scrolling away), so a site adds
  * `sticky top-0` and its stacking where the nav stays; opened, the menu is a
  * sheet at any width (a tablet turned with it open keeps it until closed);
- * the X's lines turn as they move (apple.com's fold into one line, then
- * turn) and their round ends are stretched with them (0.05px further); the
- * menu closes at once, its list leaving the top layer when it closes
- * (apple.com's runs its motion back); no flyouts (a desktop's menus under a
- * link) and no search field. */
+ * Tab past its last link leaves it for the page under it (no script holds
+ * the focus in it, as apple.com's does); the X's lines turn as they move
+ * (apple.com's fold into one line, then turn) and their round ends are
+ * stretched with them (0.05px further); the menu closes at once, its list
+ * leaving the top layer when it closes (apple.com's runs its motion back);
+ * no flyouts (a desktop's menus under a link) and no search field. */
 
 @layer components {
   .cui-globalnav {
@@ -73,6 +78,7 @@
   }
 
   .cui-globalnav-content {
+    display: flex;
     max-width: 1024px;
     height: 100%;
     margin-inline: auto;
@@ -82,14 +88,15 @@
     }
   }
 
-  /* to 833px, and opened at any width: one row, the logo at the start, the
-     icons and the button at the end; the links are the menu's rows */
+  /* to 833px: the logo at the start, the icons at the end, the menu's
+     button after them; the links are the menu's rows */
   .cui-globalnav-list {
     /* the browser's own style for a popover, undone: closed, the list is the
        bar's row */
     position: static;
     inset: auto;
     display: flex;
+    flex: 1;
     flex-wrap: wrap;
     width: auto;
     height: 48px;
@@ -102,20 +109,15 @@
     list-style: none;
 
     > li:has(> .cui-globalnav-logo) {
-      order: -3;
       margin-right: auto;
     }
 
-    > li:has(> .cui-globalnav-icon) {
-      order: -2;
-    }
-
-    > li:has(> .cui-globalnav-menubutton) {
-      order: -1;
+    > li:has(> .cui-globalnav-closebutton),
+    > li:has(> .cui-globalnav-link) {
+      display: none;
     }
 
     > li:has(> .cui-globalnav-link) {
-      display: none;
       flex-basis: 100%;
     }
   }
@@ -166,7 +168,8 @@
     color: var(--cui-c-on-menu);
   }
 
-  .cui-globalnav-menubutton {
+  .cui-globalnav-menubutton,
+  .cui-globalnav-closebutton {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -185,22 +188,26 @@
         opacity: 1;
       }
     }
-
-    /* its two lines turn about their middles into an X (reference/icons/) */
-    path {
-      transition: transform 0.24s var(--cui-globalnav-ease);
-    }
-
-    path:first-child {
-      transform-origin: 9px 5px;
-    }
-
-    path:last-child {
-      transform-origin: 9px 12px;
-    }
   }
 
-  /* opened: a sheet over the window, the bar's row on top, its rows below */
+  /* the close button's lines: the menu's two lines, each turned about its
+     middle into apple.com's X (reference/icons/) as the button shows */
+  .cui-globalnav-closebutton path {
+    transition: transform 0.24s var(--cui-globalnav-ease);
+  }
+
+  .cui-globalnav-closebutton path:first-child {
+    transform-origin: 9px 5px;
+    transform: translate(0.25px, 4.25px) rotate(45deg) scaleX(1.16168);
+  }
+
+  .cui-globalnav-closebutton path:last-child {
+    transform-origin: 9px 12px;
+    transform: translate(0.25px, -2.75px) rotate(-45deg) scaleX(1.16168);
+  }
+
+  /* opened: a sheet over the window, the bar's row on top (the logo, the
+     icons, the X where the menu's button is), its rows below */
   .cui-globalnav-list:popover-open {
     position: fixed;
     inset: 0;
@@ -211,6 +218,19 @@
     overscroll-behavior: contain;
     background-color: var(--cui-c-menu);
     transition: height 0.45s var(--cui-globalnav-ease), background-color 0.45s var(--cui-globalnav-ease);
+
+    > li:has(> .cui-globalnav-logo) {
+      order: -3;
+    }
+
+    > li:has(> .cui-globalnav-icon) {
+      order: -2;
+    }
+
+    > li:has(> .cui-globalnav-closebutton) {
+      display: block;
+      order: -1;
+    }
 
     > li:has(> .cui-globalnav-logo),
     > li:has(> .cui-globalnav-icon) {
@@ -241,20 +261,16 @@
     > li:has(> .cui-globalnav-link):nth-child(11) { transition-delay: 0.36s; }
     > li:has(> .cui-globalnav-link):nth-child(12) { transition-delay: 0.38s; }
     > li:has(> .cui-globalnav-link):nth-child(n + 13) { transition-delay: 0.4s; }
-
-    .cui-globalnav-menubutton path:first-child {
-      transform: translate(0.25px, 4.25px) rotate(45deg) scaleX(1.16168);
-    }
-
-    .cui-globalnav-menubutton path:last-child {
-      transform: translate(0.25px, -2.75px) rotate(-45deg) scaleX(1.16168);
-    }
   }
 
   @starting-style {
     .cui-globalnav-list:popover-open > li:has(> .cui-globalnav-link) {
       opacity: 0;
       transform: translateY(-8px);
+    }
+
+    .cui-globalnav-list:popover-open .cui-globalnav-closebutton path {
+      transform: none;
     }
   }
 
@@ -265,24 +281,23 @@
 
   /* from 834px, closed: one row of everything, spread across the bar */
   @media (width >= 834px) {
+    .cui-globalnav-menubutton {
+      display: none;
+    }
+
     .cui-globalnav-list:not(:popover-open) {
       flex-wrap: nowrap;
       justify-content: space-between;
       height: 44px;
       margin-inline: -8px;
 
-      > li {
-        order: 0;
+      > li:has(> .cui-globalnav-logo) {
         margin-right: 0;
       }
 
       > li:has(> .cui-globalnav-link) {
         display: block;
         flex-basis: auto;
-      }
-
-      > li:has(> .cui-globalnav-menubutton) {
-        display: none;
       }
 
       .cui-globalnav-logo,
