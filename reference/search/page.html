@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A popover as the global nav's search</title>
+<style>
+  /* the search's techniques at their smallest: a bar (sticky, under a
+     banner, a blur on it as the nav's) whose list is a closed popover shown
+     as its row; in it a button opening another popover, the flyout, with no
+     script: placed from the bar's bottom by anchor positioning, its panel
+     with a field (autofocus) in a GET form, and under the panel the curtain,
+     a button that closes it, blurring the page; a click on the bar is outside
+     it and dismisses it. On html.sheet (the server's, for ?sheet) the flyout
+     is a sheet over the window, the bar too, with its own close button, the
+     page held */
+  html, body { margin: 0; }
+  body { font: 17px/25px system-ui; -webkit-text-size-adjust: 100%; }
+  #banner { height: 70px; background: #fff; }
+  #bar { position: sticky; top: 0; z-index: 1; height: 44px; background: rgb(200 220 240); backdrop-filter: blur(20px); anchor-name: --bar; }
+  #menu { position: static; inset: auto; display: flex; gap: 16px; align-items: center; width: auto; height: 44px; margin: 0; padding: 0 22px; border: 0; overflow: visible; color: inherit; background: none; list-style: none; }
+  #search { width: 44px; height: 44px; padding: 0; border: 0; background: none; font: inherit; }
+  #flyout { position: fixed; position-anchor: --bar; top: anchor(bottom); right: 0; bottom: 0; left: 0; width: auto; height: auto; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; overflow: hidden; color: inherit; background: none; }
+  #flyout:popover-open { display: flex; flex-direction: column; }
+  .panel { position: relative; flex: none; box-sizing: border-box; height: 344px; padding: 32px 22px 80px; background: #fafafc; }
+  #input { box-sizing: border-box; width: 100%; height: 40px; border: 0; outline: none; background: none; font: 600 24px/24px system-ui; -webkit-appearance: none; appearance: none; }
+  #curtain { display: block; flex: 1; width: 100%; margin: 0; padding: 0; border: 0; background: rgb(232 232 237 / 0.4); backdrop-filter: blur(20px); cursor: default; }
+  #close { display: none; }
+  html.sheet #flyout { top: 0; }
+  html.sheet .panel { flex: 1; padding: 54px 48px; }
+  html.sheet #curtain { display: none; }
+  html.sheet #close { display: block; position: absolute; top: 0; right: 0; width: 48px; height: 48px; padding: 0; border: 0; background: none; font: inherit; }
+  :root.sheet:has(#flyout:popover-open) { overflow: hidden; }
+  main { position: relative; height: 3000px; background: repeating-linear-gradient(90deg, #000 0 4px, #fff 4px 8px); }
+  #under { position: absolute; top: 300px; right: 0; left: 0; height: 800px; }
+</style>
+</head>
+<body>
+<div id="banner">A banner above the bar</div>
+<nav id="bar" aria-label="Global">
+  <ul id="menu" popover>
+    <li><a id="link" href="#link">Store</a></li>
+    <li><button id="search" popovertarget="flyout" aria-label="Search">⌕</button></li>
+  </ul>
+  <div id="flyout" popover>
+    <div class="panel">
+      <form action="/search" method="get" role="search"><input id="input" type="text" name="q" placeholder="Search" aria-label="Search" autocomplete="off" autofocus></form>
+      <p><a id="quick" href="#quick">Find a Store</a></p>
+      <button id="close" popovertarget="flyout" popovertargetaction="hide" aria-label="Close">×</button>
+    </div>
+    <button id="curtain" popovertarget="flyout" popovertargetaction="hide" tabindex="-1" aria-hidden="true"></button>
+  </div>
+</nav>
+<main><a id="under" href="#under" aria-label="Under the curtain"></a></main>
+</body>
+</html>

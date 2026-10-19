@@ -1,0 +1,411 @@
+{
+ "browser": "safari 26.5 on iOS 26.5",
+ "date": "2026-10-19T15:15:04.135Z",
+ "closed": {
+  "pageWidth": 402,
+  "bar": {
+   "height": 44,
+   "top": 70,
+   "width": 402,
+   "left": 0,
+   "bottom": 114
+  },
+  "anchors": true,
+  "display": "none",
+  "scrollY": 0,
+  "curtain": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "windowHeight": 714,
+  "curtainHit": null,
+  "at": "/",
+  "menuDisplay": "flex",
+  "rootOverflow": "visible",
+  "open": false,
+  "focus": "BODY",
+  "barHit": "link",
+  "backdropPointer": null,
+  "panel": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "flyout": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "windowWidth": 402,
+  "clicks": {
+   "link": 0,
+   "under": 0
+  }
+ },
+ "closedPixels": {
+  "mean": 126.9,
+  "panel": [
+   255,
+   255,
+   255
+  ],
+  "bar": [
+   200,
+   220,
+   240
+  ],
+  "offset": 62,
+  "scale": 3,
+  "spread": 127.35
+ },
+ "opened": {
+  "pageWidth": 402,
+  "bar": {
+   "height": 44,
+   "top": 70,
+   "width": 402,
+   "left": 0,
+   "bottom": 114
+  },
+  "anchors": true,
+  "display": "flex",
+  "scrollY": 0,
+  "curtain": {
+   "height": 256,
+   "top": 458,
+   "width": 402,
+   "left": 0,
+   "bottom": 714
+  },
+  "windowHeight": 714,
+  "curtainHit": "curtain",
+  "at": "/",
+  "menuDisplay": "flex",
+  "rootOverflow": "visible",
+  "open": true,
+  "focus": "input",
+  "barHit": "link",
+  "backdropPointer": "none",
+  "panel": {
+   "height": 344,
+   "top": 114,
+   "width": 402,
+   "left": 0,
+   "bottom": 458
+  },
+  "flyout": {
+   "height": 600,
+   "top": 114,
+   "width": 402,
+   "left": 0,
+   "bottom": 714
+  },
+  "windowWidth": 402,
+  "clicks": {
+   "link": 0,
+   "under": 0
+  }
+ },
+ "openedPixels": {
+  "mean": 170.3,
+  "panel": [
+   250,
+   250,
+   252
+  ],
+  "bar": [
+   200,
+   220,
+   240
+  ],
+  "offset": 62,
+  "scale": 3,
+  "spread": 1.03
+ },
+ "scrolled": {
+  "pageWidth": 402,
+  "bar": {
+   "height": 44,
+   "top": 0,
+   "width": 402,
+   "left": 0,
+   "bottom": 44
+  },
+  "anchors": true,
+  "display": "flex",
+  "scrollY": 200,
+  "curtain": {
+   "height": 326,
+   "top": 388,
+   "width": 402,
+   "left": 0,
+   "bottom": 714
+  },
+  "windowHeight": 714,
+  "curtainHit": "curtain",
+  "at": "/",
+  "menuDisplay": "flex",
+  "rootOverflow": "visible",
+  "open": true,
+  "focus": "input",
+  "barHit": "link",
+  "backdropPointer": "none",
+  "panel": {
+   "height": 344,
+   "top": 44,
+   "width": 402,
+   "left": 0,
+   "bottom": 388
+  },
+  "flyout": {
+   "height": 670,
+   "top": 44,
+   "width": 402,
+   "left": 0,
+   "bottom": 714
+  },
+  "windowWidth": 402,
+  "clicks": {
+   "link": 0,
+   "under": 0
+  }
+ },
+ "afterCurtain": {
+  "pageWidth": 402,
+  "bar": {
+   "height": 44,
+   "top": 70,
+   "width": 402,
+   "left": 0,
+   "bottom": 114
+  },
+  "anchors": true,
+  "display": "none",
+  "scrollY": 0,
+  "curtain": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "windowHeight": 714,
+  "curtainHit": null,
+  "at": "/",
+  "menuDisplay": "flex",
+  "rootOverflow": "visible",
+  "open": false,
+  "focus": "BODY",
+  "barHit": "link",
+  "backdropPointer": null,
+  "panel": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "flyout": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "windowWidth": 402,
+  "clicks": {
+   "link": 0,
+   "under": 0
+  }
+ },
+ "afterToggle": {
+  "pageWidth": 402,
+  "bar": {
+   "height": 44,
+   "top": 70,
+   "width": 402,
+   "left": 0,
+   "bottom": 114
+  },
+  "anchors": true,
+  "display": "none",
+  "scrollY": 0,
+  "curtain": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "windowHeight": 714,
+  "curtainHit": null,
+  "at": "/",
+  "menuDisplay": "flex",
+  "rootOverflow": "visible",
+  "open": false,
+  "focus": "BODY",
+  "barHit": "link",
+  "backdropPointer": null,
+  "panel": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "flyout": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "windowWidth": 402,
+  "clicks": {
+   "link": 0,
+   "under": 0
+  }
+ },
+ "sheetClosed": {
+  "pageWidth": 402,
+  "bar": {
+   "height": 44,
+   "top": 70,
+   "width": 402,
+   "left": 0,
+   "bottom": 114
+  },
+  "anchors": true,
+  "display": "none",
+  "scrollY": 0,
+  "curtain": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "windowHeight": 714,
+  "curtainHit": null,
+  "at": "/?sheet",
+  "menuDisplay": "flex",
+  "rootOverflow": "visible",
+  "open": false,
+  "focus": "BODY",
+  "barHit": "link",
+  "backdropPointer": null,
+  "panel": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "flyout": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "windowWidth": 402,
+  "clicks": null
+ },
+ "sheet": {
+  "pageWidth": 402,
+  "bar": {
+   "height": 44,
+   "top": 70,
+   "width": 402,
+   "left": 0,
+   "bottom": 114
+  },
+  "anchors": true,
+  "display": "flex",
+  "scrollY": 0,
+  "curtain": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "windowHeight": 714,
+  "curtainHit": null,
+  "at": "/?sheet",
+  "menuDisplay": "flex",
+  "rootOverflow": "hidden",
+  "open": true,
+  "focus": "input",
+  "barHit": "panel",
+  "backdropPointer": "none",
+  "panel": {
+   "height": 714,
+   "top": 0,
+   "width": 402,
+   "left": 0,
+   "bottom": 714
+  },
+  "flyout": {
+   "height": 714,
+   "top": 0,
+   "width": 402,
+   "left": 0,
+   "bottom": 714
+  },
+  "windowWidth": 402,
+  "clicks": null
+ },
+ "sheetAfterClose": {
+  "pageWidth": 402,
+  "bar": {
+   "height": 44,
+   "top": 70,
+   "width": 402,
+   "left": 0,
+   "bottom": 114
+  },
+  "anchors": true,
+  "display": "none",
+  "scrollY": 0,
+  "curtain": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "windowHeight": 714,
+  "curtainHit": null,
+  "at": "/?sheet",
+  "menuDisplay": "flex",
+  "rootOverflow": "visible",
+  "open": false,
+  "focus": "BODY",
+  "barHit": "link",
+  "backdropPointer": null,
+  "panel": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "flyout": {
+   "height": 0,
+   "top": 0,
+   "width": 0,
+   "left": 0,
+   "bottom": 0
+  },
+  "windowWidth": 402,
+  "clicks": null
+ }
+}

@@ -1,13 +1,14 @@
 // The browsers the reference probes run in, behind one interface:
 // open(name, url) loads the page and gives { label, run(expr), click(selector),
-// press(key), go(url), size(width, height), close() }, where run evaluates an
+// press(key), go(url), size(width, height), shot(), close() }, where run evaluates an
 // expression whose value is a promise and hands back what it resolves to,
 // click and press are
 // the browser's own input (a trusted click on the element, a key pressed: the
 // WebDriver key's name, as Escape, or keys held together, as Alt+Tab), go
 // loads another page in the same window, waiting for its load, and size sets
 // the window's size (Playwright's viewport; Safari's window, its frame
-// included).
+// included), and shot takes a picture of what the window shows, a PNG in
+// base64 (at the screen's pixels: the window's width times its pixel ratio).
 //   safari    Safari through safaridriver, raw WebDriver over HTTP (Safari's
 //             "Allow remote automation" on), in a Safari the run launches and
 //             quits when it closes: Safari 27 takes no session in one it did
@@ -44,6 +45,7 @@ async function viaPlaywright(channel, url) {
       press: (key) => page.keyboard.press(key),
       go: (to) => page.goto(to, { waitUntil: 'load', timeout: 120000 }),
       size: (width, height) => page.setViewportSize({ width, height }),
+      shot: async () => (await page.screenshot()).toString('base64'),
       close: () => browser.close(),
       page, // Playwright's, for a probe that resizes the viewport or forces states
     };
@@ -125,6 +127,7 @@ async function viaSafariDriver(capabilities, url) {
       },
       go: (to) => wd('POST', `/session/${id}/url`, { url: to }),
       size: (width, height) => wd('POST', `/session/${id}/window/rect`, { width, height }),
+      shot: () => wd('GET', `/session/${id}/screenshot`),
       close,
     };
   } catch (e) {
