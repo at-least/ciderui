@@ -48,7 +48,7 @@ pub use field::{Field, Select, TextArea};
 pub use footer::{Footer, FooterSection};
 pub use footnote::Footnote;
 pub use gallery::Gallery;
-pub use globalnav::{GlobalNav, Search};
+pub use globalnav::{FlyoutGroup, GlobalNav, NavLink, Search};
 pub use link::MoreLink;
 pub use localnav::LocalNav;
 pub use modal::{Modal, ModalButton};

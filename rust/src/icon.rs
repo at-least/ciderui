@@ -238,6 +238,41 @@ pub const MENU: Icon = Icon {
     inner: r#"<path d="M2 5H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 12H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>"#,
 };
 
+/// The chevron of a flyout's button from 834px (`cui-globalnav-image` in a
+/// `cui-globalnav-flyoutbutton`), shown when it has the focus from the
+/// keyboard, in place of apple.com's 10 by 10 SVG: a line through (2.33,
+/// 3.66), (5, 6.34) and (7.67, 3.66), 0.88 thick, round; 0.99 of its ink
+/// apple.com's (`reference/icons/`).
+pub const FLYOUT: Icon = Icon {
+    width: "10",
+    height: "10",
+    view_box: "0 0 10 10",
+    inner: r#"<path d="M2.33 3.66 5 6.34 7.67 3.66" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width=".88"/>"#,
+};
+
+/// The same button's chevron to 833px (`cui-globalnav-image-compact`), at
+/// the end of the menu's row, shown hovered, in place of apple.com's 9 by 48
+/// SVG: a line through (1.3, 17.21), (8.3, 24.07) and (1.3, 30.79), 1.2
+/// thick, round; 0.9968 of its ink apple.com's, and 0.9962 of the chevron a
+/// hovered row of apple.com's shows (`reference/icons/`).
+pub const FLYOUT_COMPACT: Icon = Icon {
+    width: "9",
+    height: "48",
+    view_box: "0 0 9 48",
+    inner: r#"<path d="M1.3 17.21 8.3 24.07 1.3 30.79" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>"#,
+};
+
+/// A flyout's back button to 833px (`cui-globalnav-backbutton`), in place of
+/// apple.com's 9 by 48 SVG: [`FLYOUT_COMPACT`] turned, through (7.7, 17.21),
+/// (0.7, 24.07) and (7.7, 30.79); 0.9962 of its ink apple.com's
+/// (`reference/icons/`).
+pub const FLYOUT_BACK: Icon = Icon {
+    width: "9",
+    height: "48",
+    view_box: "0 0 9 48",
+    inner: r#"<path d="M7.7 17.21 .7 24.07 7.7 30.79" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>"#,
+};
+
 /// The local nav's chevron (`cui-localnav-menubutton`), as apple.com's: a
 /// line through (15.265, 0.835), (8, 8.167) and (0.735, 0.835) in 16 by 9,
 /// 1.2 thick, round; `localnav.css` turns it up while the menu is open, which

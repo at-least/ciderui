@@ -53,6 +53,20 @@ for (const name of names) {
           for (const key of [].concat(c.press ?? [])) await page.page.keyboard.press(key);
           await page.page.waitForTimeout(c.wait ?? (c.reducedMotion ? 100 : 1000));
         }
+        // `hover`: the pointer off to the window's bottom corner, then moved
+        // onto each element (its middle) or point ([x, y]) in turn in steps,
+        // as a hand moves it, at every width (what it shows a resize may
+        // hide), and the motion run to its end, or for `wait` ms
+        if (c.hover) {
+          await page.page.mouse.move(0, (c.height ?? 800) - 1);
+          await page.page.waitForTimeout(c.reducedMotion ? 100 : 1000);
+          for (const to of [].concat(c.hover.length === 2 && typeof c.hover[0] === 'number' ? [c.hover] : c.hover)) {
+            const r = Array.isArray(to) ? null : await page.page.locator(to).boundingBox();
+            if (!Array.isArray(to) && !r) throw new Error(`${name} ${c.name}: ${to} has no box to hover`);
+            await page.page.mouse.move(...(r ? [r.x + r.width / 2, r.y + r.height / 2] : to), { steps: 8 });
+            await page.page.waitForTimeout(c.wait ?? (c.reducedMotion ? 100 : 1000));
+          }
+        }
         // `scroll`: [selector, x], that element scrolled to x (snapping where
         // it snaps) at every width, before the checks
         if (c.scroll) {

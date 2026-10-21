@@ -15,7 +15,10 @@
 //            `wait` ms (0 reads its start); `wait` alone waits so long once
 //            the page shows (a motion that runs as it loads); scroll,
 //            [selector, x]: that element scrolled to x at every width
-//            before its checks (a scroller, snapping where it snaps)
+//            before its checks (a scroller, snapping where it snaps);
+//            hover, a selector or a point ([x, y]), or several: the pointer
+//            moved onto each in turn in steps at every width, its motion run
+//            to its end (a flyout the pointer shows)
 // A check:
 //   target   a selector in the case's markup; props, the values read (a
 //            property, the box: box-height, box-width, box-top, box-left, box-right,

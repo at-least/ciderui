@@ -1,17 +1,19 @@
 /* ciderui — the global nav: apple.com's bar across the top of the page, on
  * a <nav>: the site's logo, its links and its icon links (a search, a bag)
- * spread across 1024px at most; to 833px the links fold into a menu that the
- * bar's button opens over the window, with no script.
+ * spread across 1024px at most, a link perhaps opening a flyout under the
+ * bar; to 833px the links fold into a menu that the bar's button opens over
+ * the window, with no script.
  *
  * From apple.com's global nav (reference/apple.com/): home:nav* (the bar,
  * light), home:menu* (the phone's menu, opened), newsroom:nav* and
  * newsroom:menu* (a dark nav), product:nav (a clear one), search:*,
  * search-dark:*, search-text:* (its search, opened, with text in it),
- * search-suggestions:*, search-suggestions-dark:* (showing suggestions) and
- * search-typed:* (typed into: its motion between results); its
- * icons ciderui's own
- * (reference/icons/), its menu and its search popovers (reference/popover/,
- * reference/search/).
+ * search-suggestions:*, search-suggestions-dark:* (showing suggestions),
+ * search-typed:* (typed into: its motion between results), flyout:*,
+ * flyout-dark:*, flyout-phone:* and tap-flyout:* (a link's flyout); its
+ * icons ciderui's own (reference/icons/), its menu, its search and its
+ * flyouts popovers (reference/popover/, reference/search/,
+ * reference/flyout/).
  *
  *   <nav class="cui-globalnav" aria-label="Global">
  *     <div class="cui-globalnav-content">
@@ -87,6 +89,48 @@
  * Rows written once something is typed fade in where they are, the heading
  * from 40ms, each row 20ms after the one above from 60ms, in 0.32s.
  *
+ * A link may open a flyout, a menu under the bar, its button and the
+ * flyout (a popover) after it in its item:
+ *
+ *         <li>
+ *           <a class="cui-globalnav-link" href="/mac">Mac</a>
+ *           <button class="cui-globalnav-flyoutbutton" popovertarget="cui-globalnav-flyout-1" aria-label="Mac menu">(icon::FLYOUT, icon::FLYOUT_COMPACT)</button>
+ *           <div class="cui-globalnav-flyout" id="cui-globalnav-flyout-1" popover>
+ *             <div class="cui-globalnav-flyoutpanel">
+ *               <button class="cui-globalnav-backbutton" popovertarget="cui-globalnav-flyout-1" popovertargetaction="hide" aria-label="Main menu">(icon::FLYOUT_BACK)</button>
+ *               <button class="cui-globalnav-closebutton" popovertarget="cui-globalnav-menu" popovertargetaction="hide" aria-label="Close">(icon::MENU)</button>
+ *               <div class="cui-globalnav-flyoutgroup">
+ *                 <h2 class="cui-globalnav-flyoutheading" id="cui-globalnav-flyout-1-1">Explore Mac</h2>
+ *                 <ul class="cui-globalnav-flyoutlinks" aria-labelledby="cui-globalnav-flyout-1-1">
+ *                   <li><a class="cui-globalnav-flyoutlink" data-size="lg" href="/mac">Explore All Mac</a></li>
+ *                   <li><a class="cui-globalnav-flyoutlink" href="/mac/compare">Compare Mac</a></li>
+ *                 </ul>
+ *               </div>
+ *             </div>
+ *             <button class="cui-globalnav-curtain" popovertarget="cui-globalnav-flyout-1" popovertargetaction="hide" tabindex="-1" aria-hidden="true"></button>
+ *           </div>
+ *         </li>
+ *
+ * From 834px with a pointer, no popover open, the pointer resting 120ms on
+ * the link shows the flyout, the closed popover shown by the page: from the
+ * nav's top, behind the bar's links (closed, hidden and the bar's height),
+ * its panel revealed down from the bar,
+ * its headings and rows coming in; under it the list's curtain (its ::after),
+ * fixed over the window, blurring the page and taking no pointer; the bar's
+ * blur off while it shows (kept on, the curtain would not reach the page).
+ * The pointer moved on along the bar shows the next link's, the one left
+ * kept until the next has grown; the pointer off the bar and the flyout
+ * hides it. The button, at the link's end, draws its chevron only with the
+ * focus from the keyboard; it opens the flyout as a popover, from the bar's
+ * bottom (anchor positioning), over its own curtain, a button that closes
+ * it; Tab goes into it, Escape closes it, the focus back on the button. On a
+ * screen with no hover the button lies over the link: a tap on the link
+ * opens the flyout. To 833px the button lies over the menu's row, its
+ * chevron at the row's end, hovered; it opens the flyout over the open menu
+ * (a popover inside it), a sheet with its back button, which closes the
+ * flyout, and its X, which closes the menu and the flyout with it; the
+ * menu's rows slide back and out behind it.
+ *
  * cui-globalnav             the bar: 48px, 44px from 834px, on the bar's
  *                           material, translucent under a blur (dark in a
  *                           dark block, cui-dark on the nav)
@@ -117,7 +161,33 @@
  *                           its image (9 by 16; 13 by 25): an arrow, a
  *                           suggested search's magnifier; a suggestion's
  *                           text in a span, the typed part a mark
- * cui-globalnav-curtain     the curtain under the flyout, from 834px
+ * cui-globalnav-curtain     the curtain under the search's flyout, and
+ *                           under a flyout its button opens, from 834px
+ * cui-globalnav-flyoutbutton a flyout's button, after its link: from 834px
+ *                           22 by 44 at the link's end, its chevron
+ *                           (cui-globalnav-image, icon::FLYOUT, 10 by 10)
+ *                           shown with the focus from the keyboard; over
+ *                           the link on a screen with no hover; to 833px
+ *                           over the row, its chevron (-compact,
+ *                           icon::FLYOUT_COMPACT, 9 by 48) at its end,
+ *                           hovered
+ * cui-globalnav-flyout      a link's flyout: from 834px under the bar,
+ *                           from the nav's top (the pointer's) or from the
+ *                           bar's bottom (opened); to 833px a sheet over
+ *                           the menu
+ * cui-globalnav-flyoutpanel its ground, #fafafc, and its room
+ * cui-globalnav-flyoutgroup a group: a heading over its links; in a row
+ *                           from 834px, a group of large links half the
+ *                           content at most and 88px before the next, the
+ *                           others a quarter and 44px
+ * cui-globalnav-flyoutheading its heading, 12px (17px to 833px), which names
+ *                           its list; none shown to 833px for a group of
+ *                           large links
+ * cui-globalnav-flyoutlinks its rows, each a cui-globalnav-flyoutlink, 12px
+ *                           at 600 (17px to 833px)
+ *   data-size="lg"          a large link, first in its group: 24px (28px)
+ * cui-globalnav-backbutton  the sheet's back button, to 833px
+ *                           (icon::FLYOUT_BACK, 9 by 48)
  *
  * apple.com's: every size, color, the material, the motion. ciderui's: the
  * letter-spacing (tokens.css); no place on the page: apple.com fixes its nav
@@ -130,7 +200,35 @@
  * (apple.com's fold into one line, then turn) and their round ends are
  * stretched with them (0.05px further); the menu closes at once, its list
  * leaving the top layer when it closes (apple.com's runs its motion back);
- * no flyouts (a desktop's menus under a link). The search: its flyout
+ * the bar is the containing block and the stacking context of a flyout
+ * the pointer shows (`position: relative`, `isolation: isolate`: a site's
+ * sticky replaces the position, and its z-index puts the nav and its
+ * flyouts over its page). A flyout: shown by the pointer's resting on its
+ * link through a transition's delay, so that with reduced motion, which
+ * takes every delay, a pointer passing over the bar shows the flyouts it
+ * passes; revealed down from the bar (apple.com's grows its height from
+ * the bar's in half its content's height in ms: 240ms here, its least and
+ * most flyouts', with Mac's 254ms); its headings and rows come in 120ms
+ * later than apple.com's, the pointer's rest first, as apple.com's script
+ * waits it out before it adds its classes; moved on along the bar, the one
+ * left kept until the next has grown over it, where apple.com crossfades
+ * them in 120ms, their height between; the curtain the list's, which
+ * takes no pointer (apple.com's takes it, its script closing the flyout as
+ * the pointer leaves the nav), so a click on the page as the flyout goes
+ * reaches it; the bar's blur back 0.45s after it goes, the curtain gone (as
+ * apple.com's, 0.4 to 0.53s: scouted, each frame, 2026-10-21); the button
+ * from 8px before the link's end to 14px past it, over its room and not its
+ * text (apple.com's from 15px before it, over its text's end, where a click
+ * opens the flyout instead of following the link); opened by its button,
+ * the flyout hangs from the bar's bottom, as the search does, and closes at
+ * once; on a screen with no hover the button over the whole link, so a tap
+ * on the link opens the flyout and a second tap on it closes it (apple.com's
+ * follows the link then: tap-flyout); its chevron to 833px goes as it
+ * came, sliding back (apple.com's scales down to 0.8); the menu's rows
+ * come back with their own motion when the sheet closes (apple.com's in
+ * 240ms from 160ms); a pointer on the bar while a popover is open (the
+ * search, a flyout its button opened) shows no flyout (apple.com's opens
+ * the flyout in the search's place). The search: its flyout
  * starts under the bar, revealed from its top (apple.com's grows from
  * behind the bar's links, from the nav's top), and closes at once; the bar
  * while it is open shows the flyout's ground, unblurred, as apple.com's
@@ -169,11 +267,18 @@
     --cui-globalnav-ease: cubic-bezier(0.4, 0, 0.6, 1);
 
     /* its own height: the bar keeps it while the list is opened out of it;
-       the anchor the search hangs from */
+       the anchor the search and a flyout opened by its button hang from; the
+       containing block and the stacking context of a flyout the pointer
+       shows (a site's sticky replaces the position) */
+    position: relative;
+    isolation: isolate;
     height: 48px;
     anchor-name: --cui-globalnav;
     background-color: var(--cui-c-bar);
     backdrop-filter: saturate(1.8) blur(20px);
+    /* its blur back once a flyout's or the search's curtain has gone, as
+       apple.com's (taken off while one shows) */
+    transition: backdrop-filter 0s 0.45s;
 
     @media (width >= 834px) {
       height: 44px;
@@ -228,11 +333,20 @@
     > li:has(> .cui-globalnav-link) {
       flex-basis: 100%;
     }
+
+    /* a link and its flyout's button in one cell */
+    > li > .cui-globalnav-link,
+    > li > .cui-globalnav-flyoutbutton {
+      grid-area: 1 / 1;
+    }
   }
 
+  /* over a flyout the pointer shows, which runs from the nav's top */
   .cui-globalnav-logo,
   .cui-globalnav-icon,
   .cui-globalnav-link {
+    position: relative;
+    z-index: 2;
     display: flex;
     color: var(--cui-c-on-bar);
     text-decoration-line: none;
@@ -354,7 +468,7 @@
     /* each row 47px down, then 46px below the one above (each 53px tall, 7px
        over the next), coming in 20ms after it */
     > li:has(> .cui-globalnav-link) {
-      display: block;
+      display: grid;
       margin-top: -1px;
       margin-bottom: -6px;
       transition-property: opacity, transform;
@@ -808,7 +922,7 @@
       }
 
       > li:has(> .cui-globalnav-link) {
-        display: block;
+        display: grid;
         flex-basis: auto;
       }
 
@@ -843,6 +957,523 @@
       .cui-globalnav-image-compact {
         display: none;
       }
+    }
+  }
+
+  /* a link's flyout (flyout:*): its button, after the link in the link's
+     cell; to 833px over the whole row, its chevron at the row's end, shown
+     hovered, sliding in */
+  .cui-globalnav-flyoutbutton {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 2px 19px 0 0;
+    border: 0;
+    color: var(--cui-c-on-menu);
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .cui-globalnav-flyoutbutton > .cui-globalnav-image-compact {
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.24s var(--cui-globalnav-ease), transform 0.24s var(--cui-globalnav-ease);
+  }
+
+  .cui-globalnav-flyoutbutton:focus-visible > .cui-globalnav-image-compact {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (hover: hover) {
+    .cui-globalnav-flyoutbutton:hover > .cui-globalnav-image-compact {
+      opacity: 1;
+      transform: none;
+    }
+
+    .cui-globalnav-list > li:has(> .cui-globalnav-flyoutbutton:hover) > .cui-globalnav-link {
+      color: var(--cui-c-on-bar-hover);
+    }
+  }
+
+  /* the flyout: closed, not shown (the browser's own style for a popover,
+     undone but its display); to 833px a sheet over the open menu, its
+     groups one under another, sliding in from 8px on */
+  .cui-globalnav-flyout {
+    inset: auto;
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: visible;
+    color: inherit;
+    background-color: transparent;
+
+    /* each group's place in the motion, and each row's */
+    .cui-globalnav-flyoutgroup { --cui-globalnav-group: 0.08s; }
+    .cui-globalnav-flyoutgroup:nth-of-type(2) { --cui-globalnav-group: 0.16s; }
+    .cui-globalnav-flyoutgroup:nth-of-type(3) { --cui-globalnav-group: 0.2s; }
+    .cui-globalnav-flyoutgroup:nth-of-type(n + 4) { --cui-globalnav-group: 0.24s; }
+    .cui-globalnav-flyoutlinks > li { --cui-globalnav-row: 0; }
+    .cui-globalnav-flyoutlinks > li:nth-child(2) { --cui-globalnav-row: 1; }
+    .cui-globalnav-flyoutlinks > li:nth-child(3) { --cui-globalnav-row: 2; }
+    .cui-globalnav-flyoutlinks > li:nth-child(4) { --cui-globalnav-row: 3; }
+    .cui-globalnav-flyoutlinks > li:nth-child(5) { --cui-globalnav-row: 4; }
+    .cui-globalnav-flyoutlinks > li:nth-child(6) { --cui-globalnav-row: 5; }
+    .cui-globalnav-flyoutlinks > li:nth-child(7) { --cui-globalnav-row: 6; }
+    .cui-globalnav-flyoutlinks > li:nth-child(8) { --cui-globalnav-row: 7; }
+    .cui-globalnav-flyoutlinks > li:nth-child(9) { --cui-globalnav-row: 8; }
+    .cui-globalnav-flyoutlinks > li:nth-child(10) { --cui-globalnav-row: 9; }
+    .cui-globalnav-flyoutlinks > li:nth-child(11) { --cui-globalnav-row: 10; }
+    .cui-globalnav-flyoutlinks > li:nth-child(n + 12) { --cui-globalnav-row: 11; }
+  }
+
+  .cui-globalnav-flyout:popover-open {
+    position: fixed;
+    inset: 0;
+    height: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background-color: var(--cui-c-menu);
+    transition: opacity 0.24s var(--cui-globalnav-ease) 0.16s, transform 0.24s var(--cui-globalnav-ease) 0.16s;
+  }
+
+  .cui-globalnav-flyoutpanel {
+    position: relative;
+    z-index: 1;
+    padding: 50px 48px 0;
+  }
+
+  .cui-globalnav-flyoutgroup {
+    padding-bottom: 52px;
+  }
+
+  .cui-globalnav-flyoutheading {
+    margin: 0;
+    font-size: 17px;
+    line-height: 21px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-17);
+    color: var(--cui-c-text-2);
+  }
+
+  /* a group of large links (apple.com's elevated one) shows no heading to
+     833px: the heading still names its list */
+  .cui-globalnav-flyoutgroup:has(> .cui-globalnav-flyoutlinks > li > .cui-globalnav-flyoutlink[data-size="lg"]) > .cui-globalnav-flyoutheading {
+    display: none;
+  }
+
+  .cui-globalnav-flyoutlinks {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    /* a row's type its own, its link's line on it, as apple.com's */
+    > li {
+      margin-inline: -11px;
+      font-size: 17px;
+      line-height: 25px;
+      font-weight: 600;
+      letter-spacing: var(--cui-tracking-17);
+    }
+
+    > li:has(> .cui-globalnav-flyoutlink[data-size="lg"]) {
+      font-size: 28px;
+      line-height: 32px;
+      letter-spacing: var(--cui-tracking-28);
+    }
+
+    > li:first-child {
+      margin-top: 14px;
+    }
+
+    > li:has(> .cui-globalnav-flyoutlink[data-size="lg"]):first-child {
+      margin-top: -3px;
+    }
+
+    > li:has(> .cui-globalnav-flyoutlink[data-size="lg"]) + li:not(:has(> .cui-globalnav-flyoutlink[data-size="lg"])) {
+      margin-top: 17px;
+    }
+  }
+
+  /* a link 11px in on either side, its text its own width; large, a group's
+     first links (apple.com's elevated) */
+  .cui-globalnav-flyoutlink {
+    display: flex;
+    max-width: max-content;
+    margin-bottom: -5px;
+    padding: 8px 11px 7px;
+    color: var(--cui-c-on-menu);
+    text-decoration-line: none;
+    transition: color 0.32s var(--cui-globalnav-ease);
+
+    &:focus-visible {
+      color: var(--cui-c-on-bar-hover);
+      outline-offset: -7px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--cui-c-on-bar-hover);
+      }
+    }
+  }
+
+  .cui-globalnav-flyoutlink[data-size="lg"] {
+    margin-bottom: -7px;
+    padding: 11px;
+  }
+
+  /* to 833px the sheet's back button at the bar's start, coming in from 4px
+     on; its X at the bar's end, the menu's own (closing the menu, and the
+     flyout with it) */
+  .cui-globalnav-backbutton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    padding: 0 0 0 19px;
+    border: 0;
+    color: var(--cui-c-on-menu);
+    background-color: transparent;
+    cursor: pointer;
+    transition: color 0.32s var(--cui-globalnav-ease), opacity 0.24s var(--cui-globalnav-ease) 0.16s, transform 0.24s var(--cui-globalnav-ease) 0.16s;
+
+    &:focus-visible {
+      outline-offset: -7px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--cui-c-on-bar-hover);
+      }
+    }
+  }
+
+  .cui-globalnav-flyout .cui-globalnav-closebutton {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  /* the menu's rows behind the open sheet: 8px back and out */
+  .cui-globalnav-list:popover-open:has(> li > .cui-globalnav-flyout:popover-open) > li {
+    opacity: 0;
+    transform: translateX(-8px);
+    transition-delay: 0s;
+  }
+
+  @media (width < 834px) {
+    @starting-style {
+      .cui-globalnav-flyout:popover-open {
+        opacity: 0;
+        transform: translateX(8px);
+      }
+
+      .cui-globalnav-flyout:popover-open .cui-globalnav-backbutton {
+        opacity: 0;
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  /* from 834px: the button 22 by 44 at the link's end and 14px past it
+     (over its room, not its text), drawing its chevron only with the focus
+     from the keyboard, its ring 7px in; on a screen with no hover over the
+     whole link, so a tap on the link opens the flyout (apple.com's script
+     opens it so on a touch screen: tap-flyout) */
+  @media (width >= 834px) {
+    .cui-globalnav-flyoutbutton {
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      color: var(--cui-c-on-bar);
+
+      &:focus-visible {
+        outline-offset: -7px;
+      }
+    }
+
+    .cui-globalnav-flyoutbutton > .cui-globalnav-image {
+      margin-top: 2px;
+      opacity: 0;
+      transition: opacity 0.24s var(--cui-globalnav-ease);
+    }
+
+    .cui-globalnav-flyoutbutton:focus-visible > .cui-globalnav-image {
+      margin-top: 1px;
+      opacity: 1;
+    }
+
+    /* opened by its button: from the bar's bottom to the window's, its panel
+       revealed from its top, its groups in a row, the curtain behind it */
+    .cui-globalnav-flyout:popover-open {
+      position-anchor: --cui-globalnav;
+      top: anchor(bottom);
+      bottom: 0;
+      height: auto;
+      overflow: hidden;
+      background-color: transparent;
+      transition: none;
+    }
+
+    /* the content 980px at most (apple.com's 1024px, 22px in) */
+    .cui-globalnav-flyoutpanel {
+      display: flex;
+      padding: 40px max(22px, (100% - 980px) / 2) 84px;
+      background-color: var(--cui-c-menu);
+      clip-path: inset(0);
+    }
+
+    .cui-globalnav-flyout:popover-open .cui-globalnav-flyoutpanel {
+      transition: clip-path 0.24s var(--cui-globalnav-ease), background-color 0.24s var(--cui-globalnav-ease);
+    }
+
+    .cui-globalnav-flyoutgroup {
+      flex: 0 1 auto;
+      box-sizing: border-box;
+      max-width: 25%;
+      margin-bottom: -4px;
+      padding: 0 44px 0 0;
+    }
+
+    .cui-globalnav-flyoutgroup:has(> .cui-globalnav-flyoutlinks > li > .cui-globalnav-flyoutlink[data-size="lg"]) {
+      max-width: 50%;
+      padding-right: 88px;
+
+      > .cui-globalnav-flyoutheading {
+        display: block;
+      }
+    }
+
+    .cui-globalnav-flyoutheading {
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: var(--cui-tracking-12);
+    }
+
+    .cui-globalnav-flyoutlinks {
+      > li {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: var(--cui-tracking-12);
+      }
+
+      > li:has(> .cui-globalnav-flyoutlink[data-size="lg"]) {
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: var(--cui-tracking-24);
+      }
+
+      > li:first-child {
+        margin-top: 10px;
+      }
+
+      > li:has(> .cui-globalnav-flyoutlink[data-size="lg"]):first-child {
+        margin-top: 6px;
+      }
+
+      > li:has(> .cui-globalnav-flyoutlink[data-size="lg"]) + li:not(:has(> .cui-globalnav-flyoutlink[data-size="lg"])) {
+        margin-top: 14px;
+      }
+    }
+
+    .cui-globalnav-flyoutlink {
+      display: inline-block;
+      max-width: none;
+      margin-bottom: -6px;
+      padding: 7px 11px;
+    }
+
+    .cui-globalnav-flyoutlink[data-size="lg"] {
+      margin-bottom: -6px;
+      padding: 9px 11px 7px;
+    }
+
+    .cui-globalnav-backbutton,
+    .cui-globalnav-flyout .cui-globalnav-closebutton {
+      display: none;
+    }
+
+    /* its headings and rows in from 4px up, a group's heading from 80ms
+       (160ms, 200ms, 240ms for the groups after it) and its rows 40ms after
+       it, 20ms apart */
+    .cui-globalnav-flyout:popover-open {
+      .cui-globalnav-flyoutheading,
+      .cui-globalnav-flyoutlinks > li {
+        transition-property: opacity, transform;
+        transition-duration: 0.32s;
+        transition-timing-function: ease;
+      }
+
+      .cui-globalnav-flyoutheading {
+        transition-delay: var(--cui-globalnav-group);
+      }
+
+      .cui-globalnav-flyoutlinks > li {
+        transition-delay: calc(var(--cui-globalnav-group) + 0.04s + 0.02s * var(--cui-globalnav-row));
+      }
+    }
+
+    @starting-style {
+      .cui-globalnav-flyout:popover-open {
+        .cui-globalnav-flyoutpanel {
+          clip-path: inset(0 0 100% 0);
+          background-color: var(--cui-c-bar);
+        }
+
+        .cui-globalnav-flyoutheading,
+        .cui-globalnav-flyoutlinks > li {
+          opacity: 0;
+          transform: translateY(-4px);
+        }
+      }
+    }
+
+    /* while one is open the bar shows its ground, unblurred, and its link is
+       hovered's */
+    .cui-globalnav:has(.cui-globalnav-flyout:popover-open) {
+      background-color: var(--cui-c-menu);
+      backdrop-filter: none;
+    }
+
+    .cui-globalnav-list > li:has(> .cui-globalnav-flyout:popover-open) > .cui-globalnav-link {
+      color: var(--cui-c-on-bar-hover);
+    }
+  }
+
+  @media (width >= 834px) and (hover: hover) {
+    .cui-globalnav-flyoutbutton {
+      justify-self: end;
+      width: 22px;
+      height: 44px;
+      margin-right: -14px;
+    }
+
+    /* from 834px with a pointer, no popover open: the pointer resting 120ms
+       on a link shows its flyout, the closed popover shown by the page from
+       the nav's top behind the bar's links, its panel revealed down from the
+       bar, its headings and rows coming in, the list's curtain fixed over the
+       window under it, blurring the page and taking no pointer (the pointer
+       on it is off the link), the bar's blur off; the pointer moved on along
+       the bar keeps the one it left until the next has grown; the pointer off
+       the bar and the flyout hides it, its rows going at once, its panel
+       back to the bar from 120ms, the curtain out from 80ms
+       (reference/flyout/) */
+    .cui-globalnav:not(:has(:popover-open)) {
+      /* closed, the bar's height, so that no hidden flyout is laid out below
+         the bar (a page shorter than one would scroll to its foot): its
+         height flipped with its visibility */
+      .cui-globalnav-flyout {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        display: block;
+        height: 44px;
+        overflow: hidden;
+        visibility: hidden;
+        transition: visibility 0s 0.36s, height 0s 0.36s;
+        transition-behavior: allow-discrete;
+
+        .cui-globalnav-flyoutpanel {
+          padding-top: 84px;
+          clip-path: inset(0 0 calc(100% - 44px));
+          background-color: var(--cui-c-bar);
+          transition: clip-path 0.24s var(--cui-globalnav-ease) 0.12s, background-color 0.24s var(--cui-globalnav-ease) 0.12s;
+        }
+
+        .cui-globalnav-curtain {
+          display: none;
+        }
+
+        /* the rows going, each from a group's fifth on 20ms shorter */
+        .cui-globalnav-flyoutheading,
+        .cui-globalnav-flyoutlinks > li {
+          opacity: 0;
+          transform: translateY(-4px);
+          transition-property: opacity, transform;
+          transition-duration: 0.24s;
+          transition-timing-function: ease;
+        }
+
+        .cui-globalnav-flyoutlinks > li {
+          transition-duration: clamp(0.14s, 0.24s - 0.02s * (var(--cui-globalnav-row) - 3), 0.24s);
+        }
+      }
+
+      .cui-globalnav-list > li:hover > .cui-globalnav-flyout {
+        z-index: 1;
+        height: auto;
+        visibility: visible;
+        transition-delay: 0.12s;
+
+        .cui-globalnav-flyoutpanel {
+          clip-path: inset(0);
+          background-color: var(--cui-c-menu);
+        }
+
+        .cui-globalnav-flyoutheading,
+        .cui-globalnav-flyoutlinks > li {
+          opacity: 1;
+          transform: none;
+          transition-duration: 0.32s;
+        }
+
+        .cui-globalnav-flyoutheading {
+          transition-delay: calc(0.12s + var(--cui-globalnav-group));
+        }
+
+        .cui-globalnav-flyoutlinks > li {
+          transition-delay: calc(0.12s + var(--cui-globalnav-group) + 0.04s + 0.02s * var(--cui-globalnav-row));
+        }
+      }
+
+      .cui-globalnav-list:hover > li:not(:hover) > .cui-globalnav-flyout {
+        transition-delay: 0.6s;
+
+        .cui-globalnav-flyoutpanel {
+          transition-delay: 0.36s;
+        }
+      }
+
+      .cui-globalnav-list > li:has(> .cui-globalnav-flyout):hover > .cui-globalnav-link {
+        color: var(--cui-c-on-bar-hover);
+      }
+
+      .cui-globalnav-list::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-color: var(--cui-c-curtain);
+        backdrop-filter: blur(20px);
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.32s var(--cui-globalnav-ease) 0.08s, visibility 0s 0.4s;
+      }
+
+      .cui-globalnav-list:has(> li:hover > .cui-globalnav-flyout)::after {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.32s var(--cui-globalnav-ease) 0.2s, visibility 0s 0.12s;
+      }
+    }
+
+    .cui-globalnav:not(:has(:popover-open)):has(.cui-globalnav-list > li:hover > .cui-globalnav-flyout) {
+      backdrop-filter: none;
+      transition-delay: 0.12s;
     }
   }
 }

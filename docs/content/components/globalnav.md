@@ -1,6 +1,6 @@
 +++
 title = "Global Nav"
-description = "apple.com’s bar across the top: a logo, its links, a search and a bag, a menu below 834px."
+description = "apple.com’s bar across the top: a logo, its links and their flyouts, a search and a bag, a menu below 834px."
 
 [extra]
 category = "Navigation"
@@ -49,4 +49,20 @@ Its suggestions are a site’s script’s, as apple.com’s are (its script asks
 
 {{ <cui_example file="globalnav/suggestions" title="A global nav and its search’s suggestions" /> }}
 
-The nav has no place on the page of its own: a site that keeps it at the top adds `sticky top-0`. The crate writes it with `GlobalNav`, its search `Search::Link` or `Search::Flyout`, its icons `icon::SEARCH`, `icon::BAG` and `icon::MENU`, their compact forms, and the search’s `icon::SEARCHFIELD`, `icon::ARROW`, `icon::CLEAR` and `icon::SUGGESTION`.
+A link can open a flyout, a menu under the bar, as apple.com’s do, with no script: in the link’s item, after the link, its button and the flyout, another popover. From 834px, with a pointer, the pointer resting on the link shows it, a panel from the bar down across the window, its groups in a row, the page under it blurred; moved on along the bar, the next link’s replaces it, and off the bar and the flyout, it goes. Under 120ms on a link shows nothing, so a pointer passing over the bar opens no flyout. The button, at the link’s end, shows its chevron only with the focus from the keyboard: Return opens the flyout, Tab goes into it, Escape closes it, the focus back on the button. On a screen with no hover the button lies over the link, so a tap on the link opens the flyout, as apple.com’s script makes it. Below 834px the menu’s row is the button: a tap opens the flyout over the menu, a sheet with a back button, which goes back to the menu, and an X, which closes both. The pointer shows the example’s flyouts where its frame is 834px wide or more.
+
+{{ <cui_example file="globalnav/flyout" title="A global nav with flyouts" /> }}
+
+| class | what |
+| --- | --- |
+| `cui-globalnav-flyoutbutton` | after the link: `popovertarget`, `aria-label` its link’s and “menu”; its chevron `icon::FLYOUT` from 834px, `icon::FLYOUT_COMPACT` below, at the row’s end, hovered |
+| `cui-globalnav-flyout` | the flyout, after the button: `id` and `popover` |
+| `cui-globalnav-flyoutpanel` | its ground and its room: the sheet’s back button and X, then its groups |
+| `cui-globalnav-flyoutgroup` | a group: a heading over its links, in a row from 834px, one under another below |
+| `cui-globalnav-flyoutheading` | a group’s heading, which names its list; a group of large links shows none below 834px |
+| `cui-globalnav-flyoutlinks` | its rows, each a `cui-globalnav-flyoutlink`; `data-size="lg"` a large one (24px, 28px below 834px), first in its group |
+| `cui-globalnav-backbutton` | the sheet’s back button below 834px, at the bar’s start: `popovertargetaction="hide"`, its chevron `icon::FLYOUT_BACK` |
+| `cui-globalnav-closebutton` | the sheet’s X below 834px, hiding the menu, and the flyout with it |
+| `cui-globalnav-curtain` | the curtain under the flyout its button opens, from 834px; the pointer’s flyout has the list’s own, which takes no click |
+
+The nav has no place on the page of its own: a site that keeps it at the top adds `sticky top-0`, and a `z-index` over its page’s, which its flyouts are drawn in. The crate writes it with `GlobalNav`, its links `NavLink`, a flyout’s groups `FlyoutGroup`, its search `Search::Link` or `Search::Flyout`, its icons `icon::SEARCH`, `icon::BAG` and `icon::MENU`, their compact forms, the search’s `icon::SEARCHFIELD`, `icon::ARROW`, `icon::CLEAR` and `icon::SUGGESTION`, and a flyout’s `icon::FLYOUT`, `icon::FLYOUT_COMPACT` and `icon::FLYOUT_BACK`.

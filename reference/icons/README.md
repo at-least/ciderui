@@ -66,6 +66,26 @@ The global nav's search, opened, draws four more SVGs, each a regular one from 8
 
 Intersection over union; the probe fails below 0.85, a mark set before the run, or if the search's examples (`components/globalnav/examples/search.html`, `suggestions.html`) draw others. Measured 2026-10-19 on https://www.apple.com/ in Chromium 151 on Linux, the clear mark and a suggested search's magnifier 2026-10-21 (`results/searchfield.json`).
 
+## The flyouts' chevrons
+
+A link's flyout in the global nav (`../apple.com/`, `flyout:*`) draws three more SVGs: the chevron of the button beside the link, from 834px (shown when the button has the focus from the keyboard), the same button's on a phone, and the back button's on a phone. `flyout.mjs` reads them off the home page (the flyouts' markup is in the page closed), and the chevron a hovered row of the phone's menu shows, apple.com's drawn pointing back and turned by its stylesheet (`scaleX(-1)`, read at 390px), turned here the same:
+
+| icon | apple.com's ink | ciderui's |
+| --- | --- | --- |
+| the button's chevron, 10 by 10 | the outline of a line 0.89 thick, round at its ends and its corner: 1.9 to 8.1 across, 3.25 to 6.75 down; its ends' middles at (2.33, 3.66) and (7.67, 3.66), its corner's at (5, 6.34) (its outer edge at 6.775, its inner at 5.725 down) | a line through (2.33, 3.66), (5, 6.34) and (7.67, 3.66), 0.88 thick, round |
+| the button's chevron on a phone, 9 by 48 | the outline of a line 1.2 thick, round: 0.7 to 8.9 across, 16.6 to 31.4 down; its ends' middles at (1.3, 17.21) and (1.3, 30.79), its corner's at (8.3, 24.07) | a line through those three, 1.2 thick, round |
+| the back button's, 9 by 48 | the same turned: its ends' middles at (7.7, 17.21) and (7.7, 30.79), its corner's at (0.7, 24.07) | a line through those three, 1.2 thick, round |
+| a hovered row's, 9 by 48, turned | the back button's line, `scaleX(-1)` | the button's chevron on a phone |
+
+| icon | shared ink |
+| --- | --- |
+| the button's chevron (`FLYOUT`) | 0.99 |
+| on a phone (`FLYOUT_COMPACT`) | 0.9968 |
+| the back button's (`FLYOUT_BACK`) | 0.9962 |
+| a hovered row's (`FLYOUT_COMPACT`) | 0.9962 |
+
+Intersection over union; `flyout.mjs` fails below 0.85, a mark set before the run, or if the flyout's example (`components/globalnav/examples/flyout.html`) draws others. Measured 2026-10-21 on https://www.apple.com/ in Chromium 151 on Linux (`results/flyout.json`).
+
 ## The field's icons
 
 `form.mjs` reads the store's two form icons. The error's mark before a field's message is an SF Pro Icons glyph, U+F312, read as the "more" chevron is (drawn at 400px on the gift card's page, where the font is declared): its advance 1.1709em, its ink 0.0875 to 1.0825em across and 0.85 to −0.145em about the baseline; a ring, its rows' runs 0.0825em thick; in it a stem 0.265 to 0.605em up, 0.04 to 0.085em wide (tapering), and a dot 0.1075 to 0.2075em up. In the page's message row (12px, at four device pixels to the CSS pixel) its ink is 1.75 to 13.73px across and 2.75 to 14.73px down the 16px row. The dropdown's chevron is an SVG its background draws, 21 by 21 at 25px: a line 1.45 thick (its rows' runs 2 to 2.1 across at 45°), its ink 5.3 to 15.7 across and 8.55 to 14.45 down, in `#6e6e73`.
@@ -88,6 +108,7 @@ PW=…/playwright-chromium/index.mjs node run.mjs   # the "more" chevron
 PW=…/playwright-chromium/index.mjs node nav.mjs   # the global nav's icons
 PW=…/playwright-chromium/index.mjs node localnav.mjs   # the local nav's chevron
 PW=…/playwright-chromium/index.mjs node searchfield.mjs   # the search's magnifier and arrow
+PW=…/playwright-chromium/index.mjs node flyout.mjs   # the flyouts' chevrons
 PW=…/playwright-chromium/index.mjs node form.mjs   # the field's error mark and the dropdown's chevron
 ```
 

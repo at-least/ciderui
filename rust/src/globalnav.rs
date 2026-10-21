@@ -1,15 +1,71 @@
 use hypertext::{Buffer, prelude::*};
 
 use crate::icon::{
-    ARROW, ARROW_COMPACT, BAG, BAG_COMPACT, CLEAR, CLEAR_COMPACT, MENU, SEARCH, SEARCH_COMPACT,
-    SEARCHFIELD, SEARCHFIELD_COMPACT,
+    ARROW, ARROW_COMPACT, BAG, BAG_COMPACT, CLEAR, CLEAR_COMPACT, FLYOUT, FLYOUT_BACK,
+    FLYOUT_COMPACT, MENU, SEARCH, SEARCH_COMPACT, SEARCHFIELD, SEARCHFIELD_COMPACT,
 };
 
 // the list's id, which its button opens, and the search's: a page has one
-// global nav
+// global nav; a flyout's is `cui-globalnav-flyout-<n>`, n its link's place
 const MENU_ID: &str = "cui-globalnav-menu";
 const SEARCH_ID: &str = "cui-globalnav-search";
 const HEADING_ID: &str = "cui-globalnav-searchheading";
+
+/// A link of the global nav ([`GlobalNav`]'s `links`): its text, where it
+/// goes, and the groups of the flyout it opens, if it opens one: from 834px
+/// a menu under the bar, which the pointer resting on the link shows, its
+/// button (the keyboard's, and on a screen with no hover a tap on the link)
+/// opens; to 833px the menu's row opens it over the menu.
+///
+/// ```
+/// use ciderui::{FlyoutGroup, NavLink};
+///
+/// const MAC: &[FlyoutGroup] = &[FlyoutGroup { heading: "Explore Mac", large: &[("Explore All Mac", "/mac")], links: &[("Compare Mac", "/mac/compare")] }];
+/// let links = [NavLink::new("Store", "/store"), NavLink::new("Mac", "/mac").flyout(MAC)];
+/// assert!(links[1].flyout.len() == 1);
+/// ```
+#[derive(Clone, Copy, Debug)]
+pub struct NavLink<'a> {
+    /// Its text. Required.
+    pub text: &'a str,
+    /// Where it goes. Required.
+    pub href: &'a str,
+    /// Its flyout's groups, in order; `&[]` for no flyout.
+    pub flyout: &'a [FlyoutGroup<'a>],
+}
+
+impl<'a> NavLink<'a> {
+    /// A link with no flyout.
+    pub const fn new(text: &'a str, href: &'a str) -> Self {
+        NavLink {
+            text,
+            href,
+            flyout: &[],
+        }
+    }
+
+    /// The same link opening a flyout of these groups.
+    pub const fn flyout(self, groups: &'a [FlyoutGroup<'a>]) -> Self {
+        NavLink {
+            flyout: groups,
+            ..self
+        }
+    }
+}
+
+/// A group of a flyout ([`NavLink`]'s `flyout`): a heading over its links,
+/// (text, href) each; its large links first (apple.com's elevated group, the
+/// flyout's first: 24px from 834px, 28px to 833px, where its heading is not
+/// shown), then its small ones.
+#[derive(Clone, Copy, Debug)]
+pub struct FlyoutGroup<'a> {
+    /// Its heading, which names its list. Required.
+    pub heading: &'a str,
+    /// Its large links; `&[]` for none.
+    pub large: &'a [(&'a str, &'a str)],
+    /// Its small links, after the large ones; `&[]` for none.
+    pub links: &'a [(&'a str, &'a str)],
+}
 
 /// The global nav's search ([`GlobalNav`]'s `search`).
 pub enum Search<'a> {
@@ -33,20 +89,21 @@ pub enum Search<'a> {
 /// page, the site's logo, its links and its search and bag; to 833px the
 /// links are a menu its button opens over the window, with no script (the
 /// list a popover beside the button, with a close button of its own that
-/// takes the focus). Not placed on the page: a site adds `sticky top-0` (its
-/// `class`) where the nav stays.
+/// takes the focus); a link may open a flyout ([`NavLink`]). Not placed on
+/// the page: a site adds `sticky top-0` and a `z-index` over its page's own
+/// (its `class`) where the nav stays.
 ///
 /// ```
 /// use hypertext::{Raw, prelude::*};
-/// use ciderui::GlobalNav;
+/// use ciderui::{GlobalNav, NavLink};
 ///
 /// let logo = Raw::<_>::dangerously_create(r#"<img src="/logo.svg" alt="" width="14" height="44">"#);
 /// let html = rsx! {
-///     <GlobalNav logo=(logo) home="/" name="Cider" links=(&[("Store", "/store")]) search=None bag=None dark=false clear=false class="sticky top-0" />
+///     <GlobalNav logo=(logo) home="/" name="Cider" links=(&[NavLink::new("Store", "/store")]) search=None bag=None dark=false clear=false class="sticky top-0 z-10" />
 /// }
 /// .render();
 /// assert!(html.as_inner().starts_with(concat!(
-///     r#"<nav class="cui-globalnav sticky top-0" aria-label="Global"><div class="cui-globalnav-content">"#,
+///     r#"<nav class="cui-globalnav sticky top-0 z-10" aria-label="Global"><div class="cui-globalnav-content">"#,
 ///     r#"<ul class="cui-globalnav-list" id="cui-globalnav-menu" popover>"#,
 /// )));
 /// ```
@@ -58,9 +115,9 @@ pub struct GlobalNav<'a, L: Renderable> {
     pub home: &'a str,
     /// The site's name, the logo link's accessible name. Required.
     pub name: &'a str,
-    /// The links, (text, href) each, in order. At least one: a menu of
-    /// nothing panics.
-    pub links: &'a [(&'a str, &'a str)],
+    /// The links, in order, each perhaps opening a flyout. At least one: a
+    /// menu of nothing panics.
+    pub links: &'a [NavLink<'a>],
     /// The site's search, if it has one ([`SEARCH`]): a link to its page,
     /// or the search opened over the page ([`Search`]).
     pub search: Option<Search<'a>>,
@@ -80,6 +137,18 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
         assert!(!self.home.is_empty(), "ciderui::GlobalNav needs a home");
         assert!(!self.name.is_empty(), "ciderui::GlobalNav needs a name");
         assert!(!self.links.is_empty(), "ciderui::GlobalNav needs links");
+        for link in self.links {
+            assert!(
+                !link.text.is_empty() && !link.href.is_empty(),
+                "ciderui::GlobalNav's links need their text and href"
+            );
+            for group in link.flyout {
+                assert!(
+                    !group.heading.is_empty(),
+                    "ciderui::GlobalNav's flyout groups need their heading"
+                );
+            }
+        }
         if let Some(Search::Flyout { action, .. }) = self.search {
             assert!(
                 !action.is_empty(),
@@ -100,8 +169,12 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
                     <ul class="cui-globalnav-list" id=(MENU_ID) popover>
                         <li><a class="cui-globalnav-logo" href=(self.home) aria-label=(self.name)>(self.logo)</a></li>
                         <li><button class="cui-globalnav-closebutton" popovertarget=(MENU_ID) popovertargetaction="hide" aria-label="Close" autofocus>(MENU)</button></li>
-                        @for (text, href) in self.links {
-                            <li><a class="cui-globalnav-link" href=(href)>(text)</a></li>
+                        @for (n, link) in self.links.iter().enumerate() {
+                            @if link.flyout.is_empty() {
+                                <li><a class="cui-globalnav-link" href=(link.href)>(link.text)</a></li>
+                            } @else {
+                                <li>(Flyout { link, n: n + 1 })</li>
+                            }
                         }
                         @if let Some(Search::Link(href)) = self.search {
                             <li><a class="cui-globalnav-icon" href=(href) aria-label="Search">(SEARCH.class("cui-globalnav-image"))(SEARCH_COMPACT.class("cui-globalnav-image-compact"))</a></li>
@@ -142,6 +215,47 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
     }
 }
 
+// a link with its flyout, the `n`th link: the link, the flyout's button, the
+// flyout (a popover) with its panel (the sheet's back button and X, its
+// groups) and its curtain
+struct Flyout<'a> {
+    link: &'a NavLink<'a>,
+    n: usize,
+}
+
+impl Renderable for Flyout<'_> {
+    fn render_to(&self, buffer: &mut Buffer) {
+        let id = format!("cui-globalnav-flyout-{}", self.n);
+        let label = format!("{} menu", self.link.text);
+        rsx! {
+            <a class="cui-globalnav-link" href=(self.link.href)>(self.link.text)</a>
+            <button class="cui-globalnav-flyoutbutton" popovertarget=(id) aria-label=(label)>(FLYOUT.class("cui-globalnav-image"))(FLYOUT_COMPACT.class("cui-globalnav-image-compact"))</button>
+            <div class="cui-globalnav-flyout" id=(id) popover>
+                <div class="cui-globalnav-flyoutpanel">
+                    <button class="cui-globalnav-backbutton" popovertarget=(id) popovertargetaction="hide" aria-label="Main menu">(FLYOUT_BACK)</button>
+                    <button class="cui-globalnav-closebutton" popovertarget=(MENU_ID) popovertargetaction="hide" aria-label="Close">(MENU)</button>
+                    @for (g, group) in self.link.flyout.iter().enumerate() {
+                        @let heading = format!("{id}-{}", g + 1);
+                        <div class="cui-globalnav-flyoutgroup">
+                            <h2 class="cui-globalnav-flyoutheading" id=(heading)>(group.heading)</h2>
+                            <ul class="cui-globalnav-flyoutlinks" aria-labelledby=(heading)>
+                                @for (text, href) in group.large {
+                                    <li><a class="cui-globalnav-flyoutlink" data-size="lg" href=(href)>(text)</a></li>
+                                }
+                                @for (text, href) in group.links {
+                                    <li><a class="cui-globalnav-flyoutlink" href=(href)>(text)</a></li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </div>
+                <button class="cui-globalnav-curtain" popovertarget=(id) popovertargetaction="hide" tabindex="-1" aria-hidden="true"></button>
+            </div>
+        }
+        .render_to(buffer);
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -149,11 +263,11 @@ mod tests {
     use crate::icon::{Icon, SUGGESTION, SUGGESTION_COMPACT};
     use hypertext::Raw;
 
-    const LINKS: &[(&str, &str)] = &[
-        ("Store", "/store"),
-        ("Mac", "/mac"),
-        ("iPad", "/ipad"),
-        ("Support", "/support"),
+    const LINKS: &[NavLink] = &[
+        NavLink::new("Store", "/store"),
+        NavLink::new("Mac", "/mac"),
+        NavLink::new("iPad", "/ipad"),
+        NavLink::new("Support", "/support"),
     ];
 
     fn logo() -> Raw<&'static str> {
@@ -172,6 +286,80 @@ mod tests {
             *html.as_inner(),
             example(include_str!(
                 "../../components/globalnav/examples/globalnav.html"
+            ))
+        );
+    }
+
+    const STORE: &[FlyoutGroup] = &[
+        FlyoutGroup {
+            heading: "Shop",
+            large: &[
+                ("Shop the Latest", "/store"),
+                ("Mac", "/shop/mac"),
+                ("iPad", "/shop/ipad"),
+                ("iPhone", "/shop/iphone"),
+            ],
+            links: &[("Accessories", "/shop/accessories")],
+        },
+        FlyoutGroup {
+            heading: "Quick Links",
+            large: &[],
+            links: &[
+                ("Find a Store", "/retail"),
+                ("Order Status", "/shop/orders"),
+                ("Apple Trade In", "/shop/trade-in"),
+            ],
+        },
+    ];
+
+    const MAC: &[FlyoutGroup] = &[
+        FlyoutGroup {
+            heading: "Explore Mac",
+            large: &[
+                ("Explore All Mac", "/mac"),
+                ("MacBook Air", "/macbook-air"),
+                ("MacBook Pro", "/macbook-pro"),
+                ("iMac", "/imac"),
+            ],
+            links: &[("Compare Mac", "/mac/compare")],
+        },
+        FlyoutGroup {
+            heading: "Shop Mac",
+            large: &[],
+            links: &[
+                ("Shop Mac", "/shop/mac"),
+                ("Mac Accessories", "/shop/mac/accessories"),
+                ("Financing", "/shop/financing"),
+            ],
+        },
+        FlyoutGroup {
+            heading: "More from Mac",
+            large: &[],
+            links: &[
+                ("Mac Support", "/support/mac"),
+                ("macOS", "/macos"),
+                ("Continuity", "/continuity"),
+            ],
+        },
+    ];
+
+    const FLYOUTS: &[NavLink] = &[
+        NavLink::new("Store", "/store").flyout(STORE),
+        NavLink::new("Mac", "/mac").flyout(MAC),
+        NavLink::new("iPad", "/ipad"),
+        NavLink::new("Support", "/support"),
+    ];
+
+    #[test]
+    fn renders_the_flyout_example() {
+        let html = rsx! {
+            <GlobalNav logo=(logo()) home="/" name="Cider" links=(FLYOUTS) search=(Some(Search::Link("/search"))) bag=(Some("/bag")) dark=false clear=false class="" />
+        }
+        .render();
+        assert_eq!(
+            *html.as_inner(),
+            example(include_str!(
+                "../../components/globalnav/examples/flyout.html"
             ))
         );
     }
@@ -280,7 +468,7 @@ mod tests {
     #[test]
     fn escapes_its_text() {
         let html = rsx! {
-            <GlobalNav logo=(logo()) home="/?a&b" name="A \"B\"" links=(&[("<b>", "/x")]) search=None bag=None dark=false clear=false class="" />
+            <GlobalNav logo=(logo()) home="/?a&b" name="A \"B\"" links=(&[NavLink::new("<b>", "/x")]) search=None bag=None dark=false clear=false class="" />
         }
         .render();
         assert!(
