@@ -50,6 +50,17 @@ export const cases = [
     ],
   },
   {
+    // the bag's structure: the compact FAQ as the large question's answer
+    name: 'nested',
+    html: ex('large').replace('<details class="cui-accordion-item">', '<details class="cui-accordion-item" open>').replace('<p>Answers to the most asked questions.</p>', ex('accordion')),
+    checks: [
+      { target: `.cui-accordion[data-size="lg"] > ${ITEM} > ${Q}`, props: TYPE, apple: ['bag-accordion', 'accordion.title'] },
+      { target: `.cui-accordion:not([data-size]) > ${CLOSED} > ${Q}`, props: ['padding-top', 'padding-bottom'], apple: ['bag-accordion', 'compact.button'] },
+      { target: `.cui-accordion:not([data-size]) > ${CLOSED} > ${Q}`, props: TYPE, apple: ['bag-accordion', 'compact.title'] },
+      { target: `.cui-accordion:not([data-size]) > ${CLOSED} > ${Q} svg`, props: ['box-height'], apple: ['bag-accordion', 'compact.svg'] },
+    ],
+  },
+  {
     // the second question clicked: its answer opens, its chevron turns
     name: 'click',
     html: ex('accordion'),
