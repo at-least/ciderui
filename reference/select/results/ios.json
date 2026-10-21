@@ -1,0 +1,341 @@
+{
+ "browser": "Safari 26.5, iOS 26.5 simulator (iPhone 17), XCUITest's taps",
+ "date": "2026-10-21T19:54:48.892Z",
+ "tip": "closed",
+ "plainOpened": {
+  "n": 1,
+  "open": true,
+  "moreOpen": false,
+  "focus": "input",
+  "value": "",
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "selection": "",
+  "userSelect": {
+   "bar": [
+    "",
+    "text"
+   ],
+   "link": [
+    "",
+    "text"
+   ],
+   "explore": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "text"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ]
+ },
+ "plainTyped": {
+  "n": 2,
+  "open": true,
+  "moreOpen": false,
+  "focus": "input",
+  "value": "mac",
+  "fieldSelection": [
+   3,
+   3
+  ],
+  "selection": "",
+  "userSelect": {
+   "bar": [
+    "",
+    "text"
+   ],
+   "link": [
+    "",
+    "text"
+   ],
+   "explore": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "text"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ]
+ },
+ "plainMore": {
+  "n": 3,
+  "open": false,
+  "moreOpen": true,
+  "focus": "BODY",
+  "value": "mac",
+  "fieldSelection": [
+   3,
+   3
+  ],
+  "selection": "",
+  "userSelect": {
+   "bar": [
+    "",
+    "text"
+   ],
+   "link": [
+    "",
+    "text"
+   ],
+   "explore": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "text"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ]
+ },
+ "plainExplore": {
+  "n": 4,
+  "open": false,
+  "moreOpen": true,
+  "focus": "BODY",
+  "value": "mac",
+  "fieldSelection": [
+   3,
+   3
+  ],
+  "selection": "Explore",
+  "userSelect": {
+   "bar": [
+    "",
+    "text"
+   ],
+   "link": [
+    "",
+    "text"
+   ],
+   "explore": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "text"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ]
+ },
+ "opened": {
+  "n": 1,
+  "open": true,
+  "moreOpen": false,
+  "focus": "input",
+  "value": "",
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "selection": "",
+  "userSelect": {
+   "bar": [
+    "",
+    "none"
+   ],
+   "link": [
+    "",
+    "none"
+   ],
+   "explore": [
+    "",
+    "none"
+   ],
+   "heading": [
+    "",
+    "none"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ]
+ },
+ "typed": {
+  "n": 2,
+  "open": true,
+  "moreOpen": false,
+  "focus": "input",
+  "value": "mac",
+  "fieldSelection": [
+   3,
+   3
+  ],
+  "selection": "",
+  "userSelect": {
+   "bar": [
+    "",
+    "none"
+   ],
+   "link": [
+    "",
+    "none"
+   ],
+   "explore": [
+    "",
+    "none"
+   ],
+   "heading": [
+    "",
+    "none"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ]
+ },
+ "more": {
+  "n": 3,
+  "open": false,
+  "moreOpen": true,
+  "focus": "BODY",
+  "value": "mac",
+  "fieldSelection": [
+   3,
+   3
+  ],
+  "selection": "",
+  "userSelect": {
+   "bar": [
+    "",
+    "none"
+   ],
+   "link": [
+    "",
+    "none"
+   ],
+   "explore": [
+    "",
+    "none"
+   ],
+   "heading": [
+    "",
+    "none"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ]
+ },
+ "explore": {
+  "n": 4,
+  "open": false,
+  "moreOpen": true,
+  "focus": "BODY",
+  "value": "mac",
+  "fieldSelection": [
+   3,
+   3
+  ],
+  "selection": "",
+  "userSelect": {
+   "bar": [
+    "",
+    "none"
+   ],
+   "link": [
+    "",
+    "none"
+   ],
+   "explore": [
+    "",
+    "none"
+   ],
+   "heading": [
+    "",
+    "none"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ]
+ }
+}

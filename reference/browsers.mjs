@@ -1,10 +1,12 @@
 // The browsers the reference probes run in, behind one interface:
 // open(name, url, options) loads the page and gives { label, run(expr), click(selector),
-// press(key), move(x, y, ms), go(url), size(width, height), shot(), close() },
-// where run evaluates an expression whose value is a promise and hands back
-// what it resolves to, click, press and move are the browser's own input (a
-// trusted click on the element; a key pressed: the WebDriver key's name, as
-// Escape, or keys held together, as Alt+Tab; the pointer moved to a point of
+// dblclick(selector), press(key), type(text), move(x, y, ms), go(url), size(width, height),
+// shot(), close() }, where run evaluates an expression whose value is a promise and hands back
+// what it resolves to, click, dblclick, press, type and move are the browser's own input (a
+// trusted click on the element; two at its middle, a double-click; a key pressed: the
+// WebDriver key's name, as Escape, a character, or keys held together, as Alt+Tab or
+// ControlOrMeta+a, the platform's command key with another; text typed a key at a time,
+// into what has the focus; the pointer moved to a point of
 // the window over ms milliseconds, as a hand moves it: WebDriver's pointer
 // move of that duration, Playwright's in a step a frame, none on the
 // simulator, which has no pointer), go loads another page in the same window,
@@ -63,7 +65,9 @@ async function viaPlaywright(engine, channel, url, options) {
       label: `${channel ?? engine} ${browser.version()} on ${process.platform}`,
       run: (expr) => page.evaluate(expr),
       click: (selector) => page.click(selector),
+      dblclick: (selector) => page.dblclick(selector),
       press: (key) => page.keyboard.press(key),
+      type: (text) => page.keyboard.type(text),
       move: (x, y, ms) => page.mouse.move(x, y, { steps: Math.max(1, Math.round(ms / 16)) }),
       go: (to) => page.goto(to, { waitUntil: 'load', timeout: 120000 }),
       size: (width, height) => page.setViewportSize({ width, height }),
@@ -123,8 +127,9 @@ async function xvfb() {
   };
 }
 
-// WebDriver's code points for the keys a probe presses
-const KEYS = { Tab: '\uE004', Enter: '\uE006', Escape: '\uE00C', Alt: '\uE00A', Shift: '\uE008' };
+// WebDriver's code points for the keys a probe presses (ControlOrMeta is
+// Meta: safaridriver is the Mac's); a character is its own
+const KEYS = { Tab: '\uE004', Enter: '\uE006', Escape: '\uE00C', Alt: '\uE00A', Shift: '\uE008', Meta: '\uE03D', ControlOrMeta: '\uE03D' };
 
 async function viaSafariDriver(capabilities, url) {
   const port = 4473;
@@ -186,13 +191,27 @@ async function viaSafariDriver(capabilities, url) {
         const el = await wd('POST', `/session/${id}/element`, { using: 'css selector', value: selector });
         await wd('POST', `/session/${id}/element/${Object.values(el)[0]}/click`, {});
       },
+      // two clicks at the element's middle, at once: the pointer jumps there
+      dblclick: async (selector) => {
+        const script = 'const r = document.querySelector(arguments[0]).getBoundingClientRect(); return [Math.round(r.left + r.width / 2), Math.round(r.top + r.height / 2)];';
+        const [x, y] = await wd('POST', `/session/${id}/execute/sync`, { script, args: [selector] });
+        const actions = [{ type: 'pointerMove', duration: 0, origin: 'viewport', x, y },
+          ...Array.from({ length: 2 }, () => [{ type: 'pointerDown', button: 0 }, { type: 'pointerUp', button: 0 }]).flat()];
+        await wd('POST', `/session/${id}/actions`, { actions: [{ type: 'pointer', id: 'mouse', parameters: { pointerType: 'mouse' }, actions }] });
+        pointer = [x, y];
+      },
       // a key, or keys held together as Playwright writes them (Alt+Tab)
       press: async (key) => {
         const values = key.split('+').map(k => {
+          if (k.length === 1) return k;
           if (!KEYS[k]) throw new Error(`no WebDriver key for ${k}`);
           return KEYS[k];
         });
         const actions = [...values.map(value => ({ type: 'keyDown', value })), ...values.toReversed().map(value => ({ type: 'keyUp', value }))];
+        await wd('POST', `/session/${id}/actions`, { actions: [{ type: 'key', id: 'keyboard', actions }] });
+      },
+      type: async (text) => {
+        const actions = [...text].flatMap(value => [{ type: 'keyDown', value }, { type: 'keyUp', value }]);
         await wd('POST', `/session/${id}/actions`, { actions: [{ type: 'key', id: 'keyboard', actions }] });
       },
       // a move of a duration is one jump at its end in Safari 27 (one

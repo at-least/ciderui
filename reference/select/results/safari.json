@@ -1,0 +1,496 @@
+{
+ "browser": "safari 27.0.1 on macOS 27.0.1",
+ "date": "2026-10-21T19:55:09.663Z",
+ "plainAll": {
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "focus": "BODY",
+  "open": false,
+  "selection": "Store\nMore\nSearch\nSelectable\n\nready",
+  "userSelect": {
+   "link": [
+    "",
+    "text"
+   ],
+   "explore": [
+    "",
+    "text"
+   ],
+   "bar": [
+    "",
+    "text"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "text"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ],
+  "value": "",
+  "moreOpen": false
+ },
+ "plainExplore": {
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "focus": "BODY",
+  "open": false,
+  "selection": "Explore",
+  "userSelect": {
+   "link": [
+    "",
+    "text"
+   ],
+   "explore": [
+    "",
+    "text"
+   ],
+   "bar": [
+    "",
+    "text"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "text"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ],
+  "value": "",
+  "moreOpen": true
+ },
+ "plainHeading": {
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "focus": "BODY",
+  "open": true,
+  "selection": "Shortcuts",
+  "userSelect": {
+   "link": [
+    "",
+    "text"
+   ],
+   "explore": [
+    "",
+    "text"
+   ],
+   "bar": [
+    "",
+    "text"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "text"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ],
+  "value": "",
+  "moreOpen": false
+ },
+ "rest": {
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "focus": "BODY",
+  "open": false,
+  "selection": "",
+  "userSelect": {
+   "link": [
+    "",
+    "none"
+   ],
+   "explore": [
+    "",
+    "none"
+   ],
+   "bar": [
+    "",
+    "none"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "none"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ],
+  "value": "",
+  "moreOpen": false
+ },
+ "all": {
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "focus": "BODY",
+  "open": false,
+  "selection": "Selectable\n\nready",
+  "userSelect": {
+   "link": [
+    "",
+    "none"
+   ],
+   "explore": [
+    "",
+    "none"
+   ],
+   "bar": [
+    "",
+    "none"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "none"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ],
+  "value": "",
+  "moreOpen": false
+ },
+ "more": {
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "focus": "more",
+  "open": false,
+  "selection": "",
+  "userSelect": {
+   "link": [
+    "",
+    "none"
+   ],
+   "explore": [
+    "",
+    "none"
+   ],
+   "bar": [
+    "",
+    "none"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "none"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ],
+  "value": "",
+  "moreOpen": true
+ },
+ "explore": {
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "focus": "BODY",
+  "open": false,
+  "selection": "",
+  "userSelect": {
+   "link": [
+    "",
+    "none"
+   ],
+   "explore": [
+    "",
+    "none"
+   ],
+   "bar": [
+    "",
+    "none"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "none"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ],
+  "value": "",
+  "moreOpen": true
+ },
+ "opened": {
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "focus": "input",
+  "open": true,
+  "selection": "",
+  "userSelect": {
+   "link": [
+    "",
+    "none"
+   ],
+   "explore": [
+    "",
+    "none"
+   ],
+   "bar": [
+    "",
+    "none"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "none"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ],
+  "value": "",
+  "moreOpen": false
+ },
+ "heading": {
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "focus": "BODY",
+  "open": true,
+  "selection": "",
+  "userSelect": {
+   "link": [
+    "",
+    "none"
+   ],
+   "explore": [
+    "",
+    "none"
+   ],
+   "bar": [
+    "",
+    "none"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "none"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ],
+  "value": "",
+  "moreOpen": false
+ },
+ "focused": {
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "focus": "input",
+  "open": true,
+  "selection": "",
+  "userSelect": {
+   "link": [
+    "",
+    "none"
+   ],
+   "explore": [
+    "",
+    "none"
+   ],
+   "bar": [
+    "",
+    "none"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "none"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ],
+  "value": "",
+  "moreOpen": false
+ },
+ "typed": {
+  "fieldSelection": [
+   3,
+   3
+  ],
+  "focus": "input",
+  "open": true,
+  "selection": "",
+  "userSelect": {
+   "link": [
+    "",
+    "none"
+   ],
+   "explore": [
+    "",
+    "none"
+   ],
+   "bar": [
+    "",
+    "none"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "none"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ],
+  "value": "mac",
+  "moreOpen": false
+ },
+ "selectedAll": {
+  "fieldSelection": [
+   0,
+   3
+  ],
+  "focus": "input",
+  "open": true,
+  "selection": "mac",
+  "userSelect": {
+   "link": [
+    "",
+    "none"
+   ],
+   "explore": [
+    "",
+    "none"
+   ],
+   "bar": [
+    "",
+    "none"
+   ],
+   "input": [
+    "",
+    "text"
+   ],
+   "heading": [
+    "",
+    "none"
+   ],
+   "page": [
+    "",
+    "text"
+   ]
+  },
+  "supports": [
+   false,
+   true
+  ],
+  "value": "mac",
+  "moreOpen": false
+ }
+}

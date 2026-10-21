@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What of the nav can be selected</title>
+<style>
+  /* the global nav's selection at its smallest: a bar that cannot be
+     selected (user-select: none, as globalnav.css compiles it, apple.com's
+     #globalnav's), its list a closed popover shown as its row, a link, a
+     button opening a link's flyout (another popover, a heading in it) and
+     one opening the search (a heading and a text field, autofocus); the
+     page's own text under them. On html.plain (the server's, for ?plain)
+     the bar can be selected. Each word is its box's width, so that its
+     middle is on it */
+  html, body { margin: 0; }
+  body { font: 17px/25px system-ui; -webkit-text-size-adjust: 100%; }
+  #bar { position: sticky; top: 0; z-index: 1; height: 44px; background: rgb(200 220 240); -webkit-user-select: none; user-select: none; }
+  html.plain #bar { -webkit-user-select: auto; user-select: auto; }
+  #menu { position: static; inset: auto; display: flex; gap: 16px; align-items: center; width: auto; height: 44px; margin: 0; padding: 0 22px; border: 0; overflow: visible; color: inherit; background: none; list-style: none; }
+  #more, #search { height: 44px; padding: 0 8px; border: 0; background: none; font: inherit; }
+  .flyout { position: fixed; top: 44px; right: 0; bottom: auto; left: 0; width: auto; height: auto; max-width: none; margin: 0; padding: 24px 22px; border: 0; color: inherit; background: #fafafc; }
+  #explore, #heading { width: max-content; margin: 0 0 16px; font: 600 24px/28px system-ui; }
+  #input { box-sizing: border-box; width: 100%; height: 40px; border: 0; outline: none; background: none; font: 600 24px/24px system-ui; -webkit-appearance: none; appearance: none; }
+  main { padding: 200px 22px 0; }
+  #page { width: max-content; margin: 0 0 24px; font: 600 24px/28px system-ui; }
+</style>
+</head>
+<body>
+<nav id="bar" aria-label="Global">
+  <ul id="menu" popover>
+    <li><a id="link" href="#link">Store</a></li>
+    <li><button id="more" popovertarget="more-flyout">More</button></li>
+    <li><button id="search" popovertarget="flyout">Search</button></li>
+  </ul>
+  <div class="flyout" id="more-flyout" popover>
+    <h2 id="explore">Explore</h2>
+  </div>
+  <div class="flyout" id="flyout" popover>
+    <h2 id="heading">Shortcuts</h2>
+    <input id="input" type="text" aria-label="Search field" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" autofocus>
+  </div>
+</nav>
+<main>
+  <p id="page">Selectable</p>
+  <p id="status">ready</p>
+</main>
+<script>
+  // the link followed nowhere
+  document.getElementById('link').addEventListener('click', (e) => e.preventDefault());
+  // what the page is now: the flyouts open or not, the focus, the field's
+  // text and what of it is selected, the text selected on the page, what
+  // each element computes for user-select and -webkit-user-select (a
+  // property the browser does not have computes ''), and which of the two
+  // the browser has
+  const field = document.getElementById('input');
+  window.cuiState = () => {
+    const userSelect = {};
+    for (const id of ['bar', 'link', 'explore', 'heading', 'input', 'page']) {
+      const cs = getComputedStyle(document.getElementById(id));
+      userSelect[id] = [cs.getPropertyValue('user-select'), cs.getPropertyValue('-webkit-user-select')];
+    }
+    return {
+      open: document.getElementById('flyout').matches(':popover-open'),
+      moreOpen: document.getElementById('more-flyout').matches(':popover-open'),
+      focus: document.activeElement?.id || document.activeElement?.tagName,
+      value: field.value, fieldSelection: [field.selectionStart, field.selectionEnd],
+      selection: getSelection().toString(), userSelect,
+      supports: [CSS.supports('user-select', 'none'), CSS.supports('-webkit-user-select', 'none')],
+    };
+  };
+  // for XCUITest (../xcuitest.mjs): 1s after the last of a step's touches
+  // or keys (a tap's pointerup, a long press's pointerup or pointercancel,
+  // the input a key makes), what it left, sent to the server (/report), then
+  // "reported N" shown, which the one tapping waits for
+  let n = 0;
+  let timer;
+  const report = async () => {
+    const r = { n: ++n, ...window.cuiState() };
+    await fetch('/report', { method: 'POST', body: JSON.stringify(r) });
+    document.getElementById('status').textContent = `reported ${n}`;
+  };
+  for (const type of ['pointerup', 'pointercancel', 'input']) addEventListener(type, () => { clearTimeout(timer); timer = setTimeout(report, 1000); }, true);
+</script>
+</body>
+</html>

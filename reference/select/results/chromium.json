@@ -1,0 +1,496 @@
+{
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-21T19:50:37.551Z",
+ "plainAll": {
+  "open": false,
+  "moreOpen": false,
+  "focus": "BODY",
+  "value": "",
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "selection": "Store\nMore\nSearch\nSelectable\n\nready",
+  "userSelect": {
+   "bar": [
+    "auto",
+    "auto"
+   ],
+   "link": [
+    "auto",
+    "auto"
+   ],
+   "explore": [
+    "auto",
+    "auto"
+   ],
+   "heading": [
+    "auto",
+    "auto"
+   ],
+   "input": [
+    "auto",
+    "auto"
+   ],
+   "page": [
+    "auto",
+    "auto"
+   ]
+  },
+  "supports": [
+   true,
+   true
+  ]
+ },
+ "plainExplore": {
+  "open": false,
+  "moreOpen": true,
+  "focus": "BODY",
+  "value": "",
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "selection": "Explore",
+  "userSelect": {
+   "bar": [
+    "auto",
+    "auto"
+   ],
+   "link": [
+    "auto",
+    "auto"
+   ],
+   "explore": [
+    "auto",
+    "auto"
+   ],
+   "heading": [
+    "auto",
+    "auto"
+   ],
+   "input": [
+    "auto",
+    "auto"
+   ],
+   "page": [
+    "auto",
+    "auto"
+   ]
+  },
+  "supports": [
+   true,
+   true
+  ]
+ },
+ "plainHeading": {
+  "open": true,
+  "moreOpen": false,
+  "focus": "BODY",
+  "value": "",
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "selection": "Shortcuts",
+  "userSelect": {
+   "bar": [
+    "auto",
+    "auto"
+   ],
+   "link": [
+    "auto",
+    "auto"
+   ],
+   "explore": [
+    "auto",
+    "auto"
+   ],
+   "heading": [
+    "auto",
+    "auto"
+   ],
+   "input": [
+    "auto",
+    "auto"
+   ],
+   "page": [
+    "auto",
+    "auto"
+   ]
+  },
+  "supports": [
+   true,
+   true
+  ]
+ },
+ "rest": {
+  "open": false,
+  "moreOpen": false,
+  "focus": "BODY",
+  "value": "",
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "selection": "",
+  "userSelect": {
+   "bar": [
+    "none",
+    "none"
+   ],
+   "link": [
+    "none",
+    "none"
+   ],
+   "explore": [
+    "none",
+    "none"
+   ],
+   "heading": [
+    "none",
+    "none"
+   ],
+   "input": [
+    "none",
+    "none"
+   ],
+   "page": [
+    "auto",
+    "auto"
+   ]
+  },
+  "supports": [
+   true,
+   true
+  ]
+ },
+ "all": {
+  "open": false,
+  "moreOpen": false,
+  "focus": "BODY",
+  "value": "",
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "selection": "Selectable\n\nready",
+  "userSelect": {
+   "bar": [
+    "none",
+    "none"
+   ],
+   "link": [
+    "none",
+    "none"
+   ],
+   "explore": [
+    "none",
+    "none"
+   ],
+   "heading": [
+    "none",
+    "none"
+   ],
+   "input": [
+    "none",
+    "none"
+   ],
+   "page": [
+    "auto",
+    "auto"
+   ]
+  },
+  "supports": [
+   true,
+   true
+  ]
+ },
+ "more": {
+  "open": false,
+  "moreOpen": true,
+  "focus": "more",
+  "value": "",
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "selection": "",
+  "userSelect": {
+   "bar": [
+    "none",
+    "none"
+   ],
+   "link": [
+    "none",
+    "none"
+   ],
+   "explore": [
+    "none",
+    "none"
+   ],
+   "heading": [
+    "none",
+    "none"
+   ],
+   "input": [
+    "none",
+    "none"
+   ],
+   "page": [
+    "auto",
+    "auto"
+   ]
+  },
+  "supports": [
+   true,
+   true
+  ]
+ },
+ "explore": {
+  "open": false,
+  "moreOpen": true,
+  "focus": "BODY",
+  "value": "",
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "selection": "",
+  "userSelect": {
+   "bar": [
+    "none",
+    "none"
+   ],
+   "link": [
+    "none",
+    "none"
+   ],
+   "explore": [
+    "none",
+    "none"
+   ],
+   "heading": [
+    "none",
+    "none"
+   ],
+   "input": [
+    "none",
+    "none"
+   ],
+   "page": [
+    "auto",
+    "auto"
+   ]
+  },
+  "supports": [
+   true,
+   true
+  ]
+ },
+ "opened": {
+  "open": true,
+  "moreOpen": false,
+  "focus": "input",
+  "value": "",
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "selection": "",
+  "userSelect": {
+   "bar": [
+    "none",
+    "none"
+   ],
+   "link": [
+    "none",
+    "none"
+   ],
+   "explore": [
+    "none",
+    "none"
+   ],
+   "heading": [
+    "none",
+    "none"
+   ],
+   "input": [
+    "none",
+    "none"
+   ],
+   "page": [
+    "auto",
+    "auto"
+   ]
+  },
+  "supports": [
+   true,
+   true
+  ]
+ },
+ "heading": {
+  "open": true,
+  "moreOpen": false,
+  "focus": "BODY",
+  "value": "",
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "selection": "",
+  "userSelect": {
+   "bar": [
+    "none",
+    "none"
+   ],
+   "link": [
+    "none",
+    "none"
+   ],
+   "explore": [
+    "none",
+    "none"
+   ],
+   "heading": [
+    "none",
+    "none"
+   ],
+   "input": [
+    "none",
+    "none"
+   ],
+   "page": [
+    "auto",
+    "auto"
+   ]
+  },
+  "supports": [
+   true,
+   true
+  ]
+ },
+ "focused": {
+  "open": true,
+  "moreOpen": false,
+  "focus": "input",
+  "value": "",
+  "fieldSelection": [
+   0,
+   0
+  ],
+  "selection": "",
+  "userSelect": {
+   "bar": [
+    "none",
+    "none"
+   ],
+   "link": [
+    "none",
+    "none"
+   ],
+   "explore": [
+    "none",
+    "none"
+   ],
+   "heading": [
+    "none",
+    "none"
+   ],
+   "input": [
+    "none",
+    "none"
+   ],
+   "page": [
+    "auto",
+    "auto"
+   ]
+  },
+  "supports": [
+   true,
+   true
+  ]
+ },
+ "typed": {
+  "open": true,
+  "moreOpen": false,
+  "focus": "input",
+  "value": "mac",
+  "fieldSelection": [
+   3,
+   3
+  ],
+  "selection": "",
+  "userSelect": {
+   "bar": [
+    "none",
+    "none"
+   ],
+   "link": [
+    "none",
+    "none"
+   ],
+   "explore": [
+    "none",
+    "none"
+   ],
+   "heading": [
+    "none",
+    "none"
+   ],
+   "input": [
+    "none",
+    "none"
+   ],
+   "page": [
+    "auto",
+    "auto"
+   ]
+  },
+  "supports": [
+   true,
+   true
+  ]
+ },
+ "selectedAll": {
+  "open": true,
+  "moreOpen": false,
+  "focus": "input",
+  "value": "mac",
+  "fieldSelection": [
+   0,
+   3
+  ],
+  "selection": "mac",
+  "userSelect": {
+   "bar": [
+    "none",
+    "none"
+   ],
+   "link": [
+    "none",
+    "none"
+   ],
+   "explore": [
+    "none",
+    "none"
+   ],
+   "heading": [
+    "none",
+    "none"
+   ],
+   "input": [
+    "none",
+    "none"
+   ],
+   "page": [
+    "auto",
+    "auto"
+   ]
+  },
+  "supports": [
+   true,
+   true
+  ]
+ }
+}
