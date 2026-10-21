@@ -18,7 +18,9 @@
 // modal.css's page variant makes it: its ::backdrop's blur, the page blurred
 // and dimmed under it in a picture of the window, its scrim coming in
 // (sampled each frame), its close button stuck at the window's top as the
-// panel scrolls, closed by it. The result is results/<browser>.json.
+// panel scrolls, closed by it; and its dark one (color-scheme: dark on the
+// dialog), its panel and close button from the root's light-dark() pairs, its
+// panel black in a picture. The result is results/<browser>.json.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
@@ -63,6 +65,7 @@ try {
   await click('#page-button');
   await page.run(wait(1300));
   got.page = await page.run(call('pageState()'));
+  got.pageColors = await page.run(call(`colors('page')`));
   got.pageOpenPixels = await page.run(call(`pixels(${JSON.stringify(await page.shot())}, ${got.pageClosedPixels.offset})`));
   got.pageFrames = await page.run('Promise.resolve(window.cuiPage)');
   await page.run(`Promise.resolve((document.querySelector('#page .panel').append(Object.assign(document.createElement('div'), { className: 'tall' })), document.querySelector('#page').scrollTop = 400, true))`);
@@ -71,6 +74,14 @@ try {
   await click('#page-close');
   await page.run(wait(300));
   got.pageClosed = await page.run(call('pageState()'));
+  // its dark one: opened, its colors, a picture; closed by its button
+  await click('#dark-button');
+  await page.run(wait(1300));
+  got.dark = await page.run(call(`colors('dark')`));
+  got.darkPixels = await page.run(call(`pixels(${JSON.stringify(await page.shot())}, ${got.pageClosedPixels.offset})`));
+  await click('#dark-close');
+  await page.run(wait(300));
+  got.darkClosed = await page.run(call(`colors('dark')`));
 } finally {
   await page?.close();
   server.close();
@@ -101,6 +112,10 @@ const claims = [
   ['its scrim comes in: a frame whose blur is between 0 and 20px', got.pageFrames.some(([, f]) => { const v = parseFloat(f.match(/blur\(([\d.]+)px\)/)?.[1]); return v > 0 && v < 20; })],
   ['scrolled 400px, its close button stays 20px from the window\'s top (sticky, its top the layer\'s room taken back)', got.pageScrolled.close === 20 && got.pageScrolled.panel < 0],
   ['its close button closes it', got.pageClosed.open === false],
+  ['its dark one (color-scheme: dark on the dialog) opens, its panel black, its text #f5f5f7, its close button #f5f5f7 with a black X, from the root\'s light-dark() pairs; the light one\'s panel white, its text #1d1d1f, from the same', got.dark.modal === true && got.dark.scheme === 'dark' && got.dark.panel === 'rgb(0, 0, 0)' && got.dark.text === 'rgb(245, 245, 247)' && got.dark.close === 'rgb(245, 245, 247)' && got.dark.x === 'rgb(0, 0, 0)' && got.pageColors.scheme === 'light' && got.pageColors.panel === 'rgb(255, 255, 255)' && got.pageColors.text === 'rgb(29, 29, 31)'],
+  ['its scrim the light one\'s', got.dark.backdrop === 'rgba(0, 0, 0, 0.48)' && got.pageColors.backdrop === got.dark.backdrop],
+  ['in the picture its panel is black, the light one\'s white', got.darkPixels.panel.every(v => v <= 2) && got.pageOpenPixels.panel.every(v => v >= 253)],
+  ['its close button closes it', got.darkClosed.open === false],
 ];
 console.log(page.label + (IOS ? ' (clicked by script; no Escape)' : KEYBOARD ? ' (by its keyboard: Return)' : ''));
 let pass = true;

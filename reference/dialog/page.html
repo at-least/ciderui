@@ -32,18 +32,26 @@
      window's top as the panel scrolls (its top the layer's room taken back) */
   #band { height: 60px; background: rgb(200 220 240); }
   main { height: 3000px; background: repeating-linear-gradient(90deg, #000 0 4px, #fff 4px 8px); }
-  #page { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; box-sizing: border-box;
+  #page, #dark { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; box-sizing: border-box;
     margin: 0; padding: 28px 10px; border: 0; background: none; overflow-y: auto; overscroll-behavior: contain; }
-  #page[open] { display: flex; }
-  #page::backdrop { background-color: rgb(0 0 0 / 0.48); backdrop-filter: blur(20px); }
+  #page[open], #dark[open] { display: flex; }
+  #page::backdrop, #dark::backdrop { background-color: rgb(0 0 0 / 0.48); backdrop-filter: blur(20px); }
   #page[open]::backdrop { transition: background-color 0.75s, backdrop-filter 0.75s; }
   @starting-style {
     #page[open]::backdrop { background-color: transparent; backdrop-filter: blur(0); }
   }
-  html:has(#page:modal) { overflow: hidden; }
-  #page .panel { margin: auto; max-width: 480px; padding: 76px 30px 60px; border-radius: 28px; }
-  #page form { position: sticky; top: -28px; z-index: 1; display: flex; justify-content: flex-end; height: 0; margin: -76px -10px 76px 0; padding: 0; }
-  #page-close { margin-top: 20px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: #1d1d1f; color: #fff; }
+  html:has(#page:modal), html:has(#dark:modal) { overflow: hidden; }
+  #page .panel, #dark .panel { margin: auto; max-width: 480px; padding: 76px 30px 60px; border-radius: 28px; }
+  #page form, #dark form { position: sticky; top: -28px; z-index: 1; display: flex; justify-content: flex-end; height: 0; margin: -76px -10px 76px 0; padding: 0; }
+  #page-close, #dark-close { margin-top: 20px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: #1d1d1f; color: #fff; }
+  /* its dark one, as modal.css's cui-dark on the dialog makes it: the
+     dialogs light, this one dark (color-scheme), its panel and close button
+     in pairs declared once on the root (light-dark(), tokens.css's) */
+  :root { --bg: light-dark(#fff, #000); --text: light-dark(#1d1d1f, #f5f5f7); --neutral: light-dark(#1d1d1f, #f5f5f7); --on-neutral: light-dark(#fff, #000); }
+  dialog { color-scheme: light; }
+  #dark.dark { color-scheme: dark; }
+  #page .panel, #dark .panel { color: var(--text); background: var(--bg); }
+  #dark-close { color: var(--on-neutral); background: var(--neutral); }
 </style>
 </head>
 <body>
@@ -64,6 +72,13 @@
   <div class="panel">
     <form method="dialog"><button id="page-close" aria-label="Close">×</button></form>
     <h2 id="page-title">Trade in your device for credit.</h2>
+  </div>
+</dialog>
+<button id="dark-button" commandfor="dark" command="show-modal">Explore the chips</button>
+<dialog id="dark" class="dark" aria-labelledby="dark-title">
+  <div class="panel">
+    <form method="dialog"><button id="dark-close" aria-label="Close">×</button></form>
+    <h2 id="dark-title">The M5 family of chips.</h2>
   </div>
 </dialog>
 <main></main>

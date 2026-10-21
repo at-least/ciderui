@@ -24,16 +24,23 @@ And the marketing pages' modal, as `modal.css`'s page variant makes it (`../appl
 17. made taller than the window and scrolled 400px, its close button stays 20px from the window's top;
 18. its close button closes it.
 
+And its dark one, as `cui-dark` on the dialog makes it (`ricmodal-dark:*`): the dialogs light (`color-scheme: light`), this one dark, its panel's ground and text and its close button's fill and X pairs declared once on the root (`light-dark()`, as `tokens.css`'s), which `../scheme/` resolves in a dark section; here in a dialog in the top layer:
+
+19. its button opens it, its panel black, its text `#f5f5f7`, its close button `#f5f5f7` with a black X; the light one's panel white, its text `#1d1d1f`, from the same pairs;
+20. its scrim the light one's (`rgba(0,0,0,.48)`, one value);
+21. in a picture of the window its panel is black, the light one's white;
+22. its close button closes it.
+
 ## The result
 
-| browser | 1–10 | 11 | 12 | 13–18 |
-| --- | --- | --- | --- | --- |
-| Safari 27.0.1, macOS 27.0.1, by its keyboard | ok | ok | ok | ok |
-| Safari 26.5, iOS 26.5 simulator | ok | not run | not run | ok |
-| Chrome 155.0.8059.85, macOS 27.0.1 | ok | ok | ok | ok |
-| Chromium 151, Linux | ok | ok | ok | ok |
+| browser | 1–10 | 11 | 12 | 13–18 | 19–22 |
+| --- | --- | --- | --- | --- | --- |
+| Safari 27.0.1, macOS 27.0.1, by its keyboard | ok | ok | ok | ok | ok |
+| Safari 26.5, iOS 26.5 simulator | ok | not run | not run | ok | ok |
+| Chrome 155.0.8059.85, macOS 27.0.1 | ok | ok | ok | ok | ok |
+| Chromium 151, Linux | ok | ok | ok | ok | ok |
 
-Measured 2026-10-19, claims 13 to 18 and the rows of the iOS simulator, Chrome and Chromium again on 2026-10-21 (`results/`), at 1440 by 900 (the simulator's phone at its own 402 by 714); Safari on the Mac's row on 2026-10-21 too, the owner's Safari quit first with their leave and the one the run launched quit after. The pictures are read as `../search/` reads its own: the page's place in the picture found from a band's color with the modal closed (62px down on the simulator, under its status bar). The first version of claim 15 read the row with a panel taller than the window over it, its white raising the row's spread (88.9 of 127.5): the panel is now opened short, then made tall for claim 17. Clicked as `../popover/` clicks: by the page's script on the iOS simulator (safaridriver's taps never click there), so its opener is never focused and there is no focus to give back, and no key is pressed; by the keyboard in Safari on the Mac (the button focused, Return); by Playwright elsewhere. The first version read claim 7 at the window's left edge, which below 816px is inside the panel (it is the window's width there): it read the panel on the iOS simulator. Not measured: Firefox, a real iPhone; a click on the layer, which closes apple.com's overlay by its script and nothing here.
+Measured 2026-10-19, claims 13 to 18 on 2026-10-21 (Safari on the Mac's run: the owner's Safari quit first with their leave), and every row again with claims 19 to 22 later that day (`results/`; Safari not running before that run), at 1440 by 900 (the simulator's phone at its own 402 by 714); the Safari each run launched quit after it. The dark one's `color-scheme: dark` taken off fails 19 and 21. The pictures are read as `../search/` reads its own: the page's place in the picture found from a band's color with the modal closed (62px down on the simulator, under its status bar). The first version of claim 15 read the row with a panel taller than the window over it, its white raising the row's spread (88.9 of 127.5): the panel is now opened short, then made tall for claim 17. Clicked as `../popover/` clicks: by the page's script on the iOS simulator (safaridriver's taps never click there), so its opener is never focused and there is no focus to give back, and no key is pressed; by the keyboard in Safari on the Mac (the button focused, Return); by Playwright elsewhere. The first version read claim 7 at the window's left edge, which below 816px is inside the panel (it is the window's width there): it read the panel on the iOS simulator. Not measured: Firefox, a real iPhone; a click on the layer, which closes apple.com's overlay by its script and nothing here.
 
 ## Running it
 

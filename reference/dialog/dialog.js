@@ -38,7 +38,8 @@ function watch() {
 // pixels(png, offset): from a picture of the window (base64), where the page
 // starts in it (found from the band's color, or given), the band's color at
 // a point, and the spread and mean of the brightness along a row 100px above
-// the window's bottom (the page's stripes, under the scrim when it is open).
+// the window's bottom (the page's stripes, under the scrim when it is open),
+// and an open dialog's panel's color.
 function pageState() {
   const d = document.querySelector('#page');
   const b = getComputedStyle(d, '::backdrop');
@@ -49,6 +50,18 @@ function pageState() {
     below: Math.round(innerHeight - document.querySelector('#page .panel').getBoundingClientRect().bottom),
     rootOverflow: getComputedStyle(document.documentElement).overflowY,
     focus: document.activeElement.id || document.activeElement.tagName,
+  };
+}
+// colors(id): a dialog's color scheme, its panel's ground and text, its close
+// button's fill and X, its ::backdrop's color.
+function colors(id) {
+  const d = document.getElementById(id);
+  const panel = getComputedStyle(d.querySelector('.panel'));
+  const close = getComputedStyle(d.querySelector('form button'));
+  return {
+    open: d.open, modal: d.matches(':modal'), scheme: getComputedStyle(d).colorScheme,
+    panel: panel.backgroundColor, text: panel.color, close: close.backgroundColor, x: close.color,
+    backdrop: getComputedStyle(d, '::backdrop').backgroundColor,
   };
 }
 function watchPage() {
@@ -90,5 +103,8 @@ async function pixels(png, offset) {
   for (let i = 0; i < row.length; i += 4) light.push((row[i] + row[i + 1] + row[i + 2]) / 3);
   const mean = light.reduce((a, b) => a + b, 0) / light.length;
   const spread = Math.sqrt(light.reduce((a, b) => a + (b - mean) ** 2, 0) / light.length);
-  return { scale, offset, spread: +spread.toFixed(2), mean: +mean.toFixed(1) };
+  // an open dialog's panel: its color at its middle, 20px above its foot
+  const open = document.querySelector('dialog[open] .panel')?.getBoundingClientRect();
+  const panel = open ? [...g.getImageData(Math.round((open.left + open.width / 2) * scale), Math.round((open.bottom - 20 + offset) * scale), 1, 1).data.slice(0, 3)] : null;
+  return { scale, offset, spread: +spread.toFixed(2), mean: +mean.toFixed(1), panel };
 }
