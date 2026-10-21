@@ -28,10 +28,19 @@ Measured 2026-10-19 in Playwright's Chromium 151 on Linux, with `--font-render-h
 | `newsroom-article` | https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/ | a Newsroom press release: the article's column and rhythm, its header (eyebrow, headline, subhead), its copy and what markdown writes in it (a paragraph, a link, a footnote's mark, a subhead, a list), a figure and its caption, its footnotes, the related stories' rows, Newsroom's own local nav |
 | `newsroom-index` | https://www.apple.com/newsroom/ | the latest stories: the feed's ground, its heading, the grid, its tiles one, two and three across (picked by their place: the page's script reclasses them by the window) |
 | `newsroom-archive` | https://www.apple.com/newsroom/archive/ | the archive: a month's heading over ruled rows, each a link with its picture, category, headline and date |
-| `search-text` | https://www.apple.com/ | the search opened with text in it (`set`, nothing typed): the text, the clear button, the magnifier's button |
+| `overlay` | https://www.apple.com/shop/buy-iphone/iphone-18-pro | the store's overlay, opened by its first "Show more": the layer that dims the page and scrolls the dialog, its white panel and its room, its close button hovered and focused, the page held; at 1600, 1200, 900, 816, 737, 736, 735, 734, 640 and 390px (its own steps are at 736/737) |
+| `search` | https://www.apple.com/ | the global nav's search, opened: its flyout (a sheet to 833px), its field, its quick links, the curtain, the bar while it is open; at 1600, 1200, 900, 834, 833 and 390px |
+| `search-dark` | https://www.apple.com/newsroom/ | the same on the Newsroom's dark nav; at 1600 and 390px |
+| `search-text` | https://www.apple.com/ | the search opened with text in it (`set`, nothing typed): the text, the clear button, the magnifier's button; at `search`'s widths |
+| `giftcard` | https://www.apple.com/shop/buy-giftcard/giftcard | the store's form parts a bag is not needed for: its fields disabled before their choices, the amount's field with its currency, a plain field, an empty required field the focus has left (its error and message); nothing typed, nothing sent |
+| `tradein` | https://www.apple.com/shop/buy-iphone/iphone-18-pro | the store's dropdown, its trade-in's model: empty, hovered and focused, and a copy with a model chosen (the classes its script sets) |
+| `feedback` | https://www.apple.com/feedback/iphone/ | the multi-line field (its form-textarea) at rest, its text field's label beside it |
+| `feedback-states` | https://www.apple.com/feedback/iphone/ | the same field focused, then left empty (its error and message); at 1600 and 390px |
+| `ricmodal` | https://www.apple.com/iphone/ | the marketing pages' modal, "Read more about Apple Trade In" opened: the layer and its scrim (a dimming and a blur), the page held, the panel centered, its corners and room, its close button at rest, hovered, pressed and focused, the animations its click starts; at 1600, 1200, 1069, 1068, 900, 735, 734, 640 and 390px |
+| `ricmodal-dark` | https://www.apple.com/macbook-pro/ | a dark one, "Explore the M5 family of chips": its scrim, its panel's ground and text, a heading, its close button at rest, hovered, pressed and focused; at 1600 and 390px |
 | `touch-home`, `touch-iphone`, `touch-store`, `touch-localnav`, `touch-bag-accordion`, `touch-overlay`, `touch-ricmodal`, `touch-search` | those specs' pages | their probes of what hovers, read again on a touch screen (`touch`), hovered (the store's card with the focus in it too) |
 
-Each is read at 1600, 1200, 900 and 390px wide (one width inside each of apple.com's bands), `breakpoints` at the boundaries, the Newsroom's at both (and 1069/1068, 735/734).
+Each is read at 1600, 1200, 900 and 390px wide (one width inside each of apple.com's bands) unless its row names its own, `breakpoints` at the boundaries, the Newsroom's at both (and 1069/1068, 735/734).
 
 ## What it showed
 
