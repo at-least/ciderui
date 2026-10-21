@@ -19,7 +19,7 @@
 // site's search page (?q=modal) listing the pages its script finds in
 // Zola's index, the modal's page first, its field holding the query; the
 // global nav's search suggesting the modal's page first as "mo" is put in
-// its field, its row muted and "Mo" marked, at once; in a
+// its field, its row muted and "Mo" marked, fading in; in a
 // window narrower than
 // 834px the global nav's menu opens over its frame, grown to the window's
 // height under the page's local nav and scrolled there, and the local nav's
@@ -155,8 +155,8 @@ const behave = async (width) => {
   // search opened by the page's script, "mo" put in its field and an input
   // event sent, as typing sends one; read in the frame its status line first
   // says what they hold: the modal's page the first suggested link, its row
-  // muted and what was typed marked in the rows' color, at once (the
-  // opening's motion is the empty field's)
+  // muted and what was typed marked in the rows' color, fading in (still
+  // transparent, in 0.32s from 60ms), and 600ms on in full
   {
     await page.go(`${ORIGIN}/`);
     await page.run(wait(700));
@@ -177,14 +177,18 @@ const behave = async (width) => {
           heading: document.querySelector('body > .cui-globalnav .cui-globalnav-searchheading')?.textContent ?? null,
           link: row ? new URL(row.href).pathname : null, marked: mark?.textContent ?? null,
           color: row ? getComputedStyle(row).color : null, markColor: mark ? getComputedStyle(mark).color : null, markGround: mark ? getComputedStyle(mark).backgroundColor : null,
-          opacity: row ? getComputedStyle(row.parentElement).opacity : null,
+          opacity: row ? +getComputedStyle(row.parentElement).opacity : null,
+          transition: row ? [getComputedStyle(row.parentElement).transitionProperty, getComputedStyle(row.parentElement).transitionDuration, getComputedStyle(row.parentElement).transitionDelay].join(' ') : null,
         });
       };
       read();
     })`);
+    await page.run(wait(600));
+    r.later = await page.run(`Promise.resolve(+getComputedStyle(document.querySelector('body > .cui-globalnav .cui-globalnav-searchlinks > li')).opacity)`);
     got.frames[`suggestions at ${width}`] = r;
-    claim(`the global nav's search at ${width}px suggests the modal's page first as "mo" is typed, its row #6e6e73 and "Mo" marked #333336 on no ground, at once`,
-      r.heading === 'Suggested Links' && r.link === '/components/modal/' && r.marked === 'Mo' && r.color === 'rgb(110, 110, 115)' && r.markColor === 'rgb(51, 51, 54)' && r.markGround === 'rgba(0, 0, 0, 0)' && r.opacity === '1', r);
+    claim(`the global nav's search at ${width}px suggests the modal's page first as "mo" is typed, its row #6e6e73 and "Mo" marked #333336 on no ground, fading in (0.32s from 60ms), 600ms on in full`,
+      r.heading === 'Suggested Links' && r.link === '/components/modal/' && r.marked === 'Mo' && r.color === 'rgb(110, 110, 115)' && r.markColor === 'rgb(51, 51, 54)' && r.markGround === 'rgba(0, 0, 0, 0)'
+      && r.opacity < 1 && r.transition === 'opacity 0.32s 0.06s' && r.later === 1, r);
   }
   // the dropdown, with no script: empty, its label the placeholder and its
   // own text not shown; a choice made (its value set, as a pick sets it),

@@ -1527,10 +1527,12 @@
    "color": "rgb(110, 110, 115)",
    "markColor": "rgb(51, 51, 54)",
    "markGround": "rgba(0, 0, 0, 0)",
-   "ms": 29,
+   "ms": 23,
+   "transition": "opacity 0.32s 0.06s",
    "link": "/components/modal/",
    "heading": "Suggested Links",
-   "opacity": "1"
+   "opacity": 0,
+   "later": 1
   },
   "dropdown at 1440": {
    "empty": {
@@ -1603,10 +1605,12 @@
    "color": "rgb(110, 110, 115)",
    "markColor": "rgb(51, 51, 54)",
    "markGround": "rgba(0, 0, 0, 0)",
-   "ms": 21,
+   "ms": 23,
+   "transition": "opacity 0.32s 0.06s",
    "link": "/components/modal/",
    "heading": "Suggested Links",
-   "opacity": "1"
+   "opacity": 0,
+   "later": 1
   },
   "dropdown at 700": {
    "empty": {

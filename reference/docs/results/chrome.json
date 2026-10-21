@@ -19,8 +19,8 @@
    "frames": [
     {
      "title": "Two questions, the first open",
-     "height": 232,
-     "content": 232,
+     "height": 260,
+     "content": 260,
      "css": true,
      "images": [],
      "width": 980,
@@ -1523,14 +1523,16 @@
   },
   "suggestions at 1440": {
    "status": "1 Suggested Links and 3 Suggested Searches available",
-   "ms": 26,
+   "ms": 20,
    "heading": "Suggested Links",
    "link": "/components/modal/",
    "marked": "Mo",
    "color": "rgb(110, 110, 115)",
    "markColor": "rgb(51, 51, 54)",
    "markGround": "rgba(0, 0, 0, 0)",
-   "opacity": "1"
+   "opacity": 0,
+   "transition": "opacity 0.32s 0.06s",
+   "later": 1
   },
   "dropdown at 1440": {
    "empty": {
@@ -1599,14 +1601,16 @@
   },
   "suggestions at 700": {
    "status": "1 Suggested Links and 3 Suggested Searches available",
-   "ms": 20,
+   "ms": 12,
    "heading": "Suggested Links",
    "link": "/components/modal/",
    "marked": "Mo",
    "color": "rgb(110, 110, 115)",
    "markColor": "rgb(51, 51, 54)",
    "markGround": "rgba(0, 0, 0, 0)",
-   "opacity": "1"
+   "opacity": 0,
+   "transition": "opacity 0.32s 0.06s",
+   "later": 1
   },
   "dropdown at 700": {
    "empty": {

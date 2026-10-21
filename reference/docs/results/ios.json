@@ -784,10 +784,12 @@
    "color": "rgb(110, 110, 115)",
    "markColor": "rgb(51, 51, 54)",
    "markGround": "rgba(0, 0, 0, 0)",
-   "ms": 22,
+   "ms": 33,
+   "transition": "opacity 0.32s 0.06s",
    "link": "/components/modal/",
    "heading": "Suggested Links",
-   "opacity": "1"
+   "opacity": 0,
+   "later": 1
   },
   "dropdown at 402": {
    "empty": {

@@ -28,8 +28,8 @@
     },
     {
      "title": "A large question",
-     "height": 187,
-     "content": 187,
+     "height": 159,
+     "content": 159,
      "css": true,
      "images": [],
      "width": 980,
@@ -771,8 +771,8 @@
     },
     {
      "title": "A large question",
-     "height": 142,
-     "content": 142,
+     "height": 170,
+     "content": 170,
      "css": true,
      "images": [],
      "width": 414,
@@ -1523,14 +1523,16 @@
   },
   "suggestions at 1440": {
    "status": "1 Suggested Links and 3 Suggested Searches available",
-   "ms": 27,
+   "ms": 29,
    "heading": "Suggested Links",
    "link": "/components/modal/",
    "marked": "Mo",
    "color": "rgb(110, 110, 115)",
    "markColor": "rgb(51, 51, 54)",
    "markGround": "rgba(0, 0, 0, 0)",
-   "opacity": "1"
+   "opacity": 0,
+   "transition": "opacity 0.32s 0.06s",
+   "later": 1
   },
   "dropdown at 1440": {
    "empty": {
@@ -1599,14 +1601,16 @@
   },
   "suggestions at 700": {
    "status": "1 Suggested Links and 3 Suggested Searches available",
-   "ms": 4,
+   "ms": 19,
    "heading": "Suggested Links",
    "link": "/components/modal/",
    "marked": "Mo",
    "color": "rgb(110, 110, 115)",
    "markColor": "rgb(51, 51, 54)",
    "markGround": "rgba(0, 0, 0, 0)",
-   "opacity": "1"
+   "opacity": 0,
+   "transition": "opacity 0.32s 0.06s",
+   "later": 1
   },
   "dropdown at 700": {
    "empty": {
