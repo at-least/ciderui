@@ -1039,7 +1039,7 @@ export const cases = [
       { target: MAC_BUTTON, props: ['box-left', 'box-width', 'box-height'], golden: 'over the whole link' },
       { target: MAC_LINK, props: ['hit'], golden: 'what a tap on the link finds is its button' },
       { target: MAC_FLY, props: ['display'], golden: 'not shown by the pointer: a touch screen has none that hovers' },
-      { target: MAC_BUTTON, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5)' },
+      { target: MAC_LINK, on: MAC_BUTTON, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5): its link not recolored by a tap on its button (the button\'s own color no hover changes)' },
       { target: CHEVRON, props: ['opacity'], golden: 'its chevron not drawn' },
     ],
   },
@@ -1197,7 +1197,7 @@ export const cases = [
     height: 900,
     reducedMotion: 'reduce',
     checks: [
-      { target: MAC_BUTTON, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5)' },
+      { target: MAC_LINK, on: MAC_BUTTON, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5): its link not recolored by a tap on its button (the button\'s own color no hover changes)' },
       { target: CHEVRON_COMPACT, state: 'hover', on: MAC_BUTTON, props: ['opacity'], rest: 'its chevron not shown by a tap (rule 5), where apple.com\'s shows on a hovered row' },
     ],
   },
