@@ -8,7 +8,8 @@ use crate::icon::{CLOSE, CLOSE_SMALL};
 /// panel with a close button at its corner (a form's, `method="dialog"`),
 /// which and Escape close it with no script; or, `page`, the marketing
 /// pages' modal, centered over the page dimmed and blurred, its close
-/// button the neutral fill. A [`ModalButton`] opens it.
+/// button the neutral fill; `cui-dark` in its `class`, its dark one. A
+/// [`ModalButton`] opens it.
 ///
 /// ```
 /// use hypertext::prelude::*;
@@ -34,7 +35,8 @@ pub struct Modal<'a, R: Renderable> {
     /// Whether it is the marketing pages' modal (`data-variant="page"`), not
     /// the store's.
     pub page: bool,
-    /// The page's utilities on the dialog; `""` for none.
+    /// The page's utilities on the dialog (`cui-dark` with `page`, the dark
+    /// one); `""` for none.
     pub class: &'a str,
     /// The panel's content, after its close button.
     pub children: R,
@@ -138,6 +140,16 @@ mod tests {
             *html.as_inner(),
             example(include_str!("../../components/modal/examples/page.html"))
         );
+    }
+
+    #[test]
+    fn its_dark_one_takes_cui_dark() {
+        let html =
+            rsx! { <Modal id="m5" labelledby="m5-title" page=true class="cui-dark">"x"</Modal> }
+                .render();
+        assert!(html.as_inner().starts_with(
+            r#"<dialog class="cui-modal cui-dark" data-variant="page" id="m5" aria-labelledby="m5-title">"#
+        ));
     }
 
     #[test]

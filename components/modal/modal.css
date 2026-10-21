@@ -46,7 +46,10 @@
  *                    up below); its close button the neutral fill with a
  *                    white X (icon::CLOSE_SMALL), 20px in, staying at the
  *                    top as the panel scrolls; the scrim in over 0.75s, the
- *                    panel from 0.25s
+ *                    panel from 0.25s; cui-dark on the dialog, dark
+ *                    (ricmodal-dark:*): its panel black, its text #f5f5f7,
+ *                    its close button the light neutral, #f5f5f7 with a
+ *                    black X
  *
  * apple.com's: the scrim, the fade, the panel's widths, corners, ground and
  * room, the close button's sizes, places, colors and motion, the page held.
@@ -65,8 +68,10 @@
  * in 0.5s from 0.25s, each cubic-bezier(.4,0,.6,1), where apple.com's run
  * from its script's start, about 0.1s later); the focus on the close button
  * (apple.com's on the panel); the close button's target around its circle
- * (apple.com's to its right and below it); light in a dark block (apple.com
- * has a dark one, its close button the light neutral, not read). */
+ * (apple.com's to its right and below it); light in a dark block, dark with
+ * cui-dark on the dialog (apple.com's theme-dark on its modal); its scrim
+ * the light one's in the dark one (apple.com's dark theme sets none; MacBook
+ * Pro's dark modal has its own, #1d1d1f at .48). */
 
 @layer components {
   .cui-modal {
@@ -180,6 +185,13 @@
       @media (width >= 735px) {
         padding: 40px 0;
       }
+    }
+
+    /* dark with cui-dark on the dialog, as apple.com's theme-dark one: its
+       panel black, its close button the light neutral (tokens.css's dark
+       side); the modal is light otherwise, here beating base.css's cui-dark */
+    &.cui-dark {
+      color-scheme: dark;
     }
 
     &::backdrop {

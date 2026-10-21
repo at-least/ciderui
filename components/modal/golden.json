@@ -311,5 +311,11 @@
  "page-dark | .cui-modal-panel | 1600 | background-color": "rgb(255, 255, 255)",
  "page-dark | .cui-modal-panel | 1600 | color": "rgb(29, 29, 31)",
  "page-dark | .cui-modal-close | 1600 | background-color": "rgb(29, 29, 31)",
- "page-dark | .cui-modal-close | 1600 | color": "rgb(255, 255, 255)"
+ "page-dark | .cui-modal-close | 1600 | color": "rgb(255, 255, 255)",
+ "page-own-dark | .cui-modal | 1600 | background-color": "rgba(0, 0, 0, 0)",
+ "page-own-dark | .cui-modal::backdrop | 1600 | background-color": "rgba(0, 0, 0, 0.48)",
+ "page-own-dark | .cui-modal::backdrop | 1600 | backdrop-filter": "blur(20px)",
+ "page-own-dark | .cui-modal | 390 | background-color": "rgba(0, 0, 0, 0)",
+ "page-own-dark | .cui-modal::backdrop | 390 | background-color": "rgba(0, 0, 0, 0.48)",
+ "page-own-dark | .cui-modal::backdrop | 390 | backdrop-filter": "blur(20px)"
 }

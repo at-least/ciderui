@@ -11,7 +11,9 @@
 // its blurred scrim, the page held, the panel centered at its widths, its
 // corners and room, the close button's circle at rest, hovered, pressed and
 // focused, sticking at the top as the panel scrolls; its motion, fitted to
-// apple.com's script's frames, and its start.
+// apple.com's script's frames, and its start; and its dark one, cui-dark on
+// the dialog (ricmodal-dark:*): its panel, its heading, its close button at
+// rest, hovered, pressed and focused.
 
 import { examples, PADDING } from '../../test/harness.mjs';
 
@@ -28,6 +30,8 @@ const OPEN = { click: OPENER, height: 900 };
 const PAGE = ex('page');
 const PAGE_OPEN = { click: OPENER, height: 900 };
 const PAGE_WIDTHS = [1600, 1200, 1069, 1068, 900, 735, 734, 640, 390];
+// its dark one, cui-dark on the dialog (ricmodal-dark:*)
+const PAGE_DARK = PAGE.replace('class="cui-modal"', 'class="cui-modal cui-dark"');
 const CLOSE = '.cui-modal-close';
 const BOX = 'the layer the window\'s box, the panel the window\'s width up to its own (816px, 640px below 735px), centered: an apple.com check reads no width';
 
@@ -187,8 +191,24 @@ export const cases = [
     ...PAGE_OPEN,
     widths: [1600],
     checks: [
-      { target: '.cui-modal-panel', props: ['background-color', 'color'], golden: 'light in a dark block, as the store\'s modal (apple.com\'s dark one not read)' },
+      { target: '.cui-modal-panel', props: ['background-color', 'color'], golden: 'light in a dark block, as the store\'s modal: dark only with cui-dark on itself (page-own-dark)' },
       { target: CLOSE, props: ['background-color', 'color'], golden: 'the close button\'s dark circle in a dark block, the modal light' },
+    ],
+  },
+  {
+    name: 'page-own-dark',
+    html: PAGE_DARK,
+    ...PAGE_OPEN,
+    widths: [1600, 390],
+    checks: [
+      { target: '.cui-modal-panel', props: ['background-color', 'color'], apple: ['ricmodal-dark', 'content'] },
+      { target: '.cui-modal-panel h2', props: ['color'], apple: ['ricmodal-dark', 'heading'] },
+      { target: CLOSE, props: ['background-color', 'color', 'border-top-left-radius'], apple: ['ricmodal-dark', 'close.icon'] },
+      { target: CLOSE, state: 'hover', props: ['background-color', 'color'], apple: ['ricmodal-dark', 'close.icon-states', 'hover'] },
+      { target: CLOSE, state: 'active', props: ['background-color', 'color'], apple: ['ricmodal-dark', 'close.icon-states', 'active'] },
+      { target: CLOSE, state: 'focus-visible', props: ['outline-style', 'outline-color', 'outline-width', 'outline-offset'], apple: ['ricmodal-dark', 'close.icon-states', 'focus-visible'] },
+      { target: '.cui-modal', props: ['background-color'], golden: 'the layer clear, over the scrim: cui-dark\'s ground is the panel\'s' },
+      { target: '.cui-modal', pseudo: '::backdrop', props: ['background-color', 'backdrop-filter'], golden: 'the scrim the light one\'s, rgba(0,0,0,.48) blurred 20px: apple.com\'s dark theme sets none (MacBook Pro\'s dark modal\'s #1d1d1f fill its own, ricmodal-dark:modal; AirPods Max\'s dark story\'s black, reference/apple.com/README.md)' },
     ],
   },
   {
