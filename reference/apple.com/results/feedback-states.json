@@ -1,0 +1,214 @@
+{
+ "url": "https://www.apple.com/feedback/iphone/",
+ "finalUrl": "https://www.apple.com/feedback/iphone/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-21T01:23:59.505Z",
+ "widths": {
+  "390": {
+   "error": {
+    "html": "<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
+    "styles": {
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-bottom-width": "1px",
+     "border-top-left-radius": "12px",
+     "background-color": "rgb(255, 242, 244)",
+     "margin-bottom": "0px",
+     "height": "99.9531px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 99.953125
+    }
+   },
+   "error.label": {
+    "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\">Comments*</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(227, 0, 0)",
+     "top": "17.9999px",
+     "left": "17px"
+    }
+   },
+   "error.wrapper": {
+    "html": "<div class=\"form-message-wrapper\" id=\"feedback_comment_error\">\n\t\t\t\t\t\t\t\t\t<span class=\"visuallyhidden\">Error:</span>\n\t\t\t\t\t\t\t\t\t<span class=\"form-message\">Enter a comment.</span>\n\t\t\t\t\t\t\t\t</div>",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "8.00003px",
+     "margin-bottom": "12px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(227, 0, 0)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 16,
+     "top": 954.546875,
+     "left": 24.375
+    }
+   },
+   "error.message": {
+    "html": "<span class=\"form-message\">Enter a comment.</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0004px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(227, 0, 0)"
+    }
+   }
+  },
+  "1600": {
+   "focused": {
+    "html": "<div class=\"form-textarea focused\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\" dat",
+    "styles": {
+     "padding-top": "32px",
+     "padding-right": "2.99999px",
+     "padding-bottom": "2.99999px",
+     "padding-left": "2.99999px",
+     "margin-top": "0px",
+     "margin-bottom": "14px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(0, 113, 227)",
+     "border-bottom-width": "1px",
+     "border-top-left-radius": "12px",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "outline-style": "none",
+     "height": "99.9531px"
+    },
+    "box": {
+     "width": 490,
+     "height": 99.953125
+    }
+   },
+   "focused.input": {
+    "html": "<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\" data-focus-method=\"mouse\"></textarea>",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "13.0001px",
+     "padding-bottom": "0px",
+     "padding-left": "13.0001px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "height": "62.9844px"
+    },
+    "box": {
+     "width": 482.03125,
+     "height": 62.984375,
+     "top": 897.578125,
+     "left": 313.984375
+    }
+   },
+   "focused.label": {
+    "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\">Comments*</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0004px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "top": "10.0001px",
+     "left": "17px"
+    },
+    "box": {
+     "width": 65.53125,
+     "height": 16,
+     "top": 874.59375,
+     "left": 327
+    }
+   },
+   "error": {
+    "html": "<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
+    "styles": {
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-bottom-width": "1px",
+     "border-top-left-radius": "12px",
+     "background-color": "rgb(255, 242, 244)",
+     "margin-bottom": "0px",
+     "height": "99.9531px"
+    },
+    "box": {
+     "width": 490,
+     "height": 99.953125
+    }
+   },
+   "error.label": {
+    "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\">Comments*</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0004px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "top": "10.0001px",
+     "left": "17px"
+    }
+   },
+   "error.wrapper": {
+    "html": "<div class=\"form-message-wrapper\" id=\"feedback_comment_error\">\n\t\t\t\t\t\t\t\t\t<span class=\"visuallyhidden\">Error:</span>\n\t\t\t\t\t\t\t\t\t<span class=\"form-message\">Enter a comment.</span>\n\t\t\t\t\t\t\t\t</div>",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "8.00003px",
+     "margin-bottom": "12px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(227, 0, 0)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex"
+    },
+    "box": {
+     "width": 490,
+     "height": 16,
+     "top": 972.546875,
+     "left": 310
+    }
+   },
+   "error.message": {
+    "html": "<span class=\"form-message\">Enter a comment.</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0004px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(227, 0, 0)"
+    }
+   }
+  }
+ }
+}

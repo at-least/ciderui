@@ -10,6 +10,11 @@ const FIELD = (id, labelClass = '', inputClass = '') => `<div class="form-textbo
 // focus has left (giftcard:error*): its classes, its message and its icon
 const ERROR = `<div class="form-textbox is-error"><input type="text" class="form-textbox-input" id="cui-error" aria-invalid="true" value=""><label class="form-textbox-label" for="cui-error">Email</label><div><div class="is-error"><div class="form-message-wrapper" id="cui-error-message"><span class="form-message">Please enter a valid email.</span></div></div></div></div>`;
 const DISABLED = `<div class="form-textbox"><input type="text" class="form-textbox-input" id="cui-disabled" disabled value=""><label class="form-textbox-label" for="cui-disabled">Email</label></div>`;
+// the multi-line field, the feedback form's markup (feedback:textarea*: a
+// bordered box, its textarea in it, its label after it), with the store's
+// stylesheet here: at rest, focused and in error (the classes apple.com's
+// script sets: the box's focused, the label's eyebrow, the field's is-error)
+const AREA = (cls = '', box = '', label = '') => `<div class="form-textbox${cls}"><div class="form-textarea${box}"><textarea id="cui-area" aria-labelledby="cui-area-label"></textarea></div><span class="form-textbox-label${label}" id="cui-area-label">Comments</span></div>`;
 export const probes = [
   { name: 'field.search', select: '#store-search-input', props: ['padding-top', 'padding-right', 'padding-bottom', 'padding-left', 'height'], box: true },
   { name: 'field', inject: FIELD('cui-field'), into: 'main', props: ['position', 'height'], box: true },
@@ -22,6 +27,15 @@ export const probes = [
   { name: 'field.error-icon', inject: ERROR, into: 'main', select: '.form-message-wrapper', pseudo: '::before', props: ['content', 'font-family', 'font-size', 'line-height', 'color', 'padding-right', 'display'] },
   { name: 'field.disabled', inject: DISABLED, into: 'main', select: 'input', props: ['color', 'background-color', 'border-top-color', 'opacity', 'cursor'] },
   { name: 'field.disabled-label', inject: DISABLED, into: 'main', select: 'label', props: ['color', 'opacity'] },
+  { name: 'textarea', inject: AREA(), into: 'main', select: '.form-textarea', props: [...TYPE, ...BOX, 'height', 'box-sizing', 'display', 'border-top-width', 'border-top-style', 'border-top-color', 'border-top-left-radius', 'outline-style', ...MOTION], box: true },
+  { name: 'textarea.input', inject: AREA(), into: 'main', select: 'textarea', props: [...TYPE, ...BOX, 'height', 'min-height', 'box-sizing', 'resize', 'outline-style', 'border-top-width', 'border-top-style'], box: true },
+  { name: 'textarea.label', inject: AREA(), into: 'main', select: '.form-textbox-label', props: [...TYPE, 'position', 'top', 'left', 'pointer-events', 'white-space', ...MOTION] },
+  { name: 'textarea.focused', inject: AREA('', ' focused', ' form-textbox-eyebrow-label'), into: 'main', select: '.form-textarea', props: [...BOX, 'height', 'border-top-width', 'border-top-color', 'outline-style'], box: true },
+  { name: 'textarea.label-floated', inject: AREA('', ' focused', ' form-textbox-eyebrow-label'), into: 'main', select: '.form-textbox-label', props: [...TYPE, 'top', 'left'] },
+  { name: 'textarea.error', inject: AREA(' is-error'), into: 'main', select: '.form-textarea', props: ['color', 'background-color', 'border-top-color', 'border-top-width'] },
+  { name: 'textarea.error-label', inject: AREA(' is-error'), into: 'main', select: '.form-textbox-label', props: ['color'] },
+  { name: 'textarea.disabled', inject: AREA('', ' disabled'), into: 'main', select: '.form-textarea', props: ['color', 'background-color', 'border-top-color'] },
+  { name: 'textarea.disabled-input', inject: AREA('', ' disabled'), into: 'main', select: 'textarea', props: ['color', '-webkit-text-fill-color'] },
   { name: 'field.input-filled', inject: FIELD('cui-field', ' form-textbox-eyebrow-label', ' form-textbox-entered'), into: 'main', select: 'input', props: [...TYPE, ...BOX] },
 ];
 export default {

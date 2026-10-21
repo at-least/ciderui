@@ -1,0 +1,548 @@
+{
+ "url": "https://www.apple.com/feedback/iphone/",
+ "finalUrl": "https://www.apple.com/feedback/iphone/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-21T01:23:52.651Z",
+ "widths": {
+  "390": {
+   "textarea.box": {
+    "html": "<div class=\"form-textbox\">\n\t\t\t\t\t\t\t\t<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment require",
+    "styles": {
+     "position": "relative",
+     "height": "99.9531px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 99.953125
+    }
+   },
+   "textarea": {
+    "html": "<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "32px",
+     "padding-right": "2.99999px",
+     "padding-bottom": "2.99999px",
+     "padding-left": "2.99999px",
+     "margin-top": "0px",
+     "margin-bottom": "14px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "1px",
+     "border-top-left-radius": "12px",
+     "display": "flex",
+     "height": "99.9531px",
+     "box-sizing": "border-box",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "outline-style": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 99.953125,
+     "top": 846.59375,
+     "left": 24.375
+    }
+   },
+   "textarea.input": {
+    "html": "<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "13.0001px",
+     "padding-bottom": "0px",
+     "padding-left": "13.0001px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-top-left-radius": "0px",
+     "height": "62.9844px",
+     "min-height": "auto",
+     "width": "333.281px",
+     "box-sizing": "border-box",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "resize": "vertical",
+     "outline-style": "none",
+     "overflow-y": "auto"
+    },
+    "box": {
+     "width": 333.28125,
+     "height": 62.984375,
+     "top": 879.578125,
+     "left": 28.359375
+    }
+   },
+   "textarea.label": {
+    "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\">Comments*</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(134, 134, 139)",
+     "position": "absolute",
+     "top": "17.9999px",
+     "left": "17px",
+     "pointer-events": "none",
+     "white-space": "nowrap",
+     "transition-property": "all",
+     "transition-duration": "0.125s",
+     "transition-timing-function": "ease-in"
+    },
+    "box": {
+     "width": 91,
+     "height": 21,
+     "top": 864.578125,
+     "left": 41.375
+    }
+   },
+   "field.label": {
+    "html": "<span class=\"form-textbox-label\" id=\"customer_name_label\" aria-hidden=\"true\">Name*</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "field.input": {
+    "html": "<input type=\"text\" class=\"form-textbox-input\" id=\"customer_name\" name=\"customer_name\" aria-labelledby=\"customer_name_label\" maxlength=\"255\" data-validate=\"name required\" aria-required=\"true\">",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-top-color": "rgb(210, 210, 215)",
+     "background-color": "rgba(255, 255, 255, 0.8)"
+    }
+   }
+  },
+  "900": {
+   "textarea.box": {
+    "html": "<div class=\"form-textbox\">\n\t\t\t\t\t\t\t\t<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment require",
+    "styles": {
+     "position": "relative",
+     "height": "99.9531px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 346,
+     "height": 99.953125
+    }
+   },
+   "textarea": {
+    "html": "<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "32px",
+     "padding-right": "2.99999px",
+     "padding-bottom": "2.99999px",
+     "padding-left": "2.99999px",
+     "margin-top": "0px",
+     "margin-bottom": "14px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "1px",
+     "border-top-left-radius": "12px",
+     "display": "flex",
+     "height": "99.9531px",
+     "box-sizing": "border-box",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "outline-style": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 346,
+     "height": 99.953125,
+     "top": 886.59375,
+     "left": 104
+    }
+   },
+   "textarea.input": {
+    "html": "<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "13.0001px",
+     "padding-bottom": "0px",
+     "padding-left": "13.0001px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-top-left-radius": "0px",
+     "height": "62.9844px",
+     "min-height": "auto",
+     "width": "338.031px",
+     "box-sizing": "border-box",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "resize": "vertical",
+     "outline-style": "none",
+     "overflow-y": "auto"
+    },
+    "box": {
+     "width": 338.03125,
+     "height": 62.984375,
+     "top": 919.578125,
+     "left": 107.984375
+    }
+   },
+   "textarea.label": {
+    "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\">Comments*</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(134, 134, 139)",
+     "position": "absolute",
+     "top": "17.9999px",
+     "left": "17px",
+     "pointer-events": "none",
+     "white-space": "nowrap",
+     "transition-property": "all",
+     "transition-duration": "0.125s",
+     "transition-timing-function": "ease-in"
+    },
+    "box": {
+     "width": 91,
+     "height": 21,
+     "top": 904.578125,
+     "left": 121
+    }
+   },
+   "field.label": {
+    "html": "<span class=\"form-textbox-label\" id=\"customer_name_label\" aria-hidden=\"true\">Name*</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "field.input": {
+    "html": "<input type=\"text\" class=\"form-textbox-input\" id=\"customer_name\" name=\"customer_name\" aria-labelledby=\"customer_name_label\" maxlength=\"255\" data-validate=\"name required\" aria-required=\"true\">",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-top-color": "rgb(210, 210, 215)",
+     "background-color": "rgba(255, 255, 255, 0.8)"
+    }
+   }
+  },
+  "1200": {
+   "textarea.box": {
+    "html": "<div class=\"form-textbox\">\n\t\t\t\t\t\t\t\t<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment require",
+    "styles": {
+     "position": "relative",
+     "height": "99.9531px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 490,
+     "height": 99.953125
+    }
+   },
+   "textarea": {
+    "html": "<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "32px",
+     "padding-right": "2.99999px",
+     "padding-bottom": "2.99999px",
+     "padding-left": "2.99999px",
+     "margin-top": "0px",
+     "margin-bottom": "14px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "1px",
+     "border-top-left-radius": "12px",
+     "display": "flex",
+     "height": "99.9531px",
+     "box-sizing": "border-box",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "outline-style": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 490,
+     "height": 99.953125,
+     "top": 864.59375,
+     "left": 110
+    }
+   },
+   "textarea.input": {
+    "html": "<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "13.0001px",
+     "padding-bottom": "0px",
+     "padding-left": "13.0001px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-top-left-radius": "0px",
+     "height": "62.9844px",
+     "min-height": "auto",
+     "width": "482.031px",
+     "box-sizing": "border-box",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "resize": "vertical",
+     "outline-style": "none",
+     "overflow-y": "auto"
+    },
+    "box": {
+     "width": 482.03125,
+     "height": 62.984375,
+     "top": 897.578125,
+     "left": 113.984375
+    }
+   },
+   "textarea.label": {
+    "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\">Comments*</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(134, 134, 139)",
+     "position": "absolute",
+     "top": "17.9999px",
+     "left": "17px",
+     "pointer-events": "none",
+     "white-space": "nowrap",
+     "transition-property": "all",
+     "transition-duration": "0.125s",
+     "transition-timing-function": "ease-in"
+    },
+    "box": {
+     "width": 91,
+     "height": 21,
+     "top": 882.578125,
+     "left": 127
+    }
+   },
+   "field.label": {
+    "html": "<span class=\"form-textbox-label\" id=\"customer_name_label\" aria-hidden=\"true\">Name*</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "field.input": {
+    "html": "<input type=\"text\" class=\"form-textbox-input\" id=\"customer_name\" name=\"customer_name\" aria-labelledby=\"customer_name_label\" maxlength=\"255\" data-validate=\"name required\" aria-required=\"true\">",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-top-color": "rgb(210, 210, 215)",
+     "background-color": "rgba(255, 255, 255, 0.8)"
+    }
+   }
+  },
+  "1600": {
+   "textarea.box": {
+    "html": "<div class=\"form-textbox\">\n\t\t\t\t\t\t\t\t<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment require",
+    "styles": {
+     "position": "relative",
+     "height": "99.9531px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 490,
+     "height": 99.953125
+    }
+   },
+   "textarea": {
+    "html": "<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "32px",
+     "padding-right": "2.99999px",
+     "padding-bottom": "2.99999px",
+     "padding-left": "2.99999px",
+     "margin-top": "0px",
+     "margin-bottom": "14px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "1px",
+     "border-top-left-radius": "12px",
+     "display": "flex",
+     "height": "99.9531px",
+     "box-sizing": "border-box",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "outline-style": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 490,
+     "height": 99.953125,
+     "top": 864.59375,
+     "left": 310
+    }
+   },
+   "textarea.input": {
+    "html": "<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "13.0001px",
+     "padding-bottom": "0px",
+     "padding-left": "13.0001px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-top-left-radius": "0px",
+     "height": "62.9844px",
+     "min-height": "auto",
+     "width": "482.031px",
+     "box-sizing": "border-box",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "resize": "vertical",
+     "outline-style": "none",
+     "overflow-y": "auto"
+    },
+    "box": {
+     "width": 482.03125,
+     "height": 62.984375,
+     "top": 897.578125,
+     "left": 313.984375
+    }
+   },
+   "textarea.label": {
+    "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\">Comments*</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(134, 134, 139)",
+     "position": "absolute",
+     "top": "17.9999px",
+     "left": "17px",
+     "pointer-events": "none",
+     "white-space": "nowrap",
+     "transition-property": "all",
+     "transition-duration": "0.125s",
+     "transition-timing-function": "ease-in"
+    },
+    "box": {
+     "width": 91,
+     "height": 21,
+     "top": 882.578125,
+     "left": 327
+    }
+   },
+   "field.label": {
+    "html": "<span class=\"form-textbox-label\" id=\"customer_name_label\" aria-hidden=\"true\">Name*</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "field.input": {
+    "html": "<input type=\"text\" class=\"form-textbox-input\" id=\"customer_name\" name=\"customer_name\" aria-labelledby=\"customer_name_label\" maxlength=\"255\" data-validate=\"name required\" aria-required=\"true\">",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0011px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-top-color": "rgb(210, 210, 215)",
+     "background-color": "rgba(255, 255, 255, 0.8)"
+    }
+   }
+  }
+ }
+}

@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/retail/",
  "finalUrl": "https://www.apple.com/retail/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T21:49:41.000Z",
+ "date": "2026-10-21T01:24:47.252Z",
  "widths": {
   "390": {
    "field.search": {
@@ -301,6 +301,174 @@
     "styles": {
      "color": "rgb(110, 110, 115)",
      "opacity": "1"
+    }
+   },
+   "textarea": {
+    "html": "<div class=\"form-textarea\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "23px",
+     "padding-right": "3px",
+     "padding-bottom": "3px",
+     "padding-left": "3px",
+     "margin-top": "0px",
+     "margin-bottom": "14px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(134, 134, 139)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(134, 134, 139)",
+     "border-top-left-radius": "12px",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "height": "95px",
+     "box-sizing": "border-box",
+     "display": "flex",
+     "outline-style": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 390,
+     "height": 95
+    }
+   },
+   "textarea.input": {
+    "html": "<textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "2px",
+     "padding-right": "2px",
+     "padding-bottom": "2px",
+     "padding-left": "13px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "25px",
+     "max-width": "none",
+     "height": "63px",
+     "box-sizing": "content-box",
+     "resize": "vertical",
+     "outline-style": "none"
+    },
+    "box": {
+     "width": 382,
+     "height": 67
+    }
+   },
+   "textarea.label": {
+    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\">Comments</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(110, 110, 115)",
+     "position": "absolute",
+     "top": "18px",
+     "left": "17px",
+     "pointer-events": "auto",
+     "white-space": "nowrap",
+     "transition-property": "all",
+     "transition-duration": "0.125s",
+     "transition-timing-function": "ease-in"
+    }
+   },
+   "textarea.focused": {
+    "html": "<div class=\"form-textarea focused\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "padding-top": "22px",
+     "padding-right": "2px",
+     "padding-bottom": "2px",
+     "padding-left": "2px",
+     "margin-top": "0px",
+     "margin-bottom": "14px",
+     "border-top-width": "2px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(0, 113, 227)",
+     "border-bottom-width": "2px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(0, 113, 227)",
+     "border-top-left-radius": "12px",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "height": "95px",
+     "outline-style": "none"
+    },
+    "box": {
+     "width": 390,
+     "height": 95
+    }
+   },
+   "textarea.label-floated": {
+    "html": "<span class=\"form-textbox-label form-textbox-eyebrow-label\" id=\"cui-area-label\">Comments</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "top": "10px",
+     "left": "17px"
+    }
+   },
+   "textarea.error": {
+    "html": "<div class=\"form-textarea\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 242, 244)",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-top-width": "1px"
+    }
+   },
+   "textarea.error-label": {
+    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\">Comments</span>",
+    "styles": {
+     "color": "rgb(227, 0, 0)"
+    }
+   },
+   "textarea.disabled": {
+    "html": "<div class=\"form-textarea disabled\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "background-color": "rgba(0, 0, 0, 0.01)",
+     "border-top-color": "rgba(134, 134, 139, 0.42)"
+    }
+   },
+   "textarea.disabled-input": {
+    "html": "<textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea>",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "-webkit-text-fill-color": "rgb(110, 110, 115)"
     }
    },
    "field.input-filled": {
@@ -632,6 +800,174 @@
      "opacity": "1"
     }
    },
+   "textarea": {
+    "html": "<div class=\"form-textarea\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "23px",
+     "padding-right": "3px",
+     "padding-bottom": "3px",
+     "padding-left": "3px",
+     "margin-top": "0px",
+     "margin-bottom": "14px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(134, 134, 139)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(134, 134, 139)",
+     "border-top-left-radius": "12px",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "height": "95px",
+     "box-sizing": "border-box",
+     "display": "flex",
+     "outline-style": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 900,
+     "height": 95
+    }
+   },
+   "textarea.input": {
+    "html": "<textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "2px",
+     "padding-right": "2px",
+     "padding-bottom": "2px",
+     "padding-left": "13px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "25px",
+     "max-width": "none",
+     "height": "63px",
+     "box-sizing": "content-box",
+     "resize": "vertical",
+     "outline-style": "none"
+    },
+    "box": {
+     "width": 892,
+     "height": 67
+    }
+   },
+   "textarea.label": {
+    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\">Comments</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(110, 110, 115)",
+     "position": "absolute",
+     "top": "18px",
+     "left": "17px",
+     "pointer-events": "auto",
+     "white-space": "nowrap",
+     "transition-property": "all",
+     "transition-duration": "0.125s",
+     "transition-timing-function": "ease-in"
+    }
+   },
+   "textarea.focused": {
+    "html": "<div class=\"form-textarea focused\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "padding-top": "22px",
+     "padding-right": "2px",
+     "padding-bottom": "2px",
+     "padding-left": "2px",
+     "margin-top": "0px",
+     "margin-bottom": "14px",
+     "border-top-width": "2px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(0, 113, 227)",
+     "border-bottom-width": "2px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(0, 113, 227)",
+     "border-top-left-radius": "12px",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "height": "95px",
+     "outline-style": "none"
+    },
+    "box": {
+     "width": 900,
+     "height": 95
+    }
+   },
+   "textarea.label-floated": {
+    "html": "<span class=\"form-textbox-label form-textbox-eyebrow-label\" id=\"cui-area-label\">Comments</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "top": "10px",
+     "left": "17px"
+    }
+   },
+   "textarea.error": {
+    "html": "<div class=\"form-textarea\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 242, 244)",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-top-width": "1px"
+    }
+   },
+   "textarea.error-label": {
+    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\">Comments</span>",
+    "styles": {
+     "color": "rgb(227, 0, 0)"
+    }
+   },
+   "textarea.disabled": {
+    "html": "<div class=\"form-textarea disabled\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "background-color": "rgba(0, 0, 0, 0.01)",
+     "border-top-color": "rgba(134, 134, 139, 0.42)"
+    }
+   },
+   "textarea.disabled-input": {
+    "html": "<textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea>",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "-webkit-text-fill-color": "rgb(110, 110, 115)"
+    }
+   },
    "field.input-filled": {
     "html": "<input type=\"text\" class=\"form-textbox-input form-textbox-entered\" id=\"cui-field\" required=\"\" value=\"\">",
     "styles": {
@@ -961,6 +1297,174 @@
      "opacity": "1"
     }
    },
+   "textarea": {
+    "html": "<div class=\"form-textarea\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "23px",
+     "padding-right": "3px",
+     "padding-bottom": "3px",
+     "padding-left": "3px",
+     "margin-top": "0px",
+     "margin-bottom": "14px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(134, 134, 139)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(134, 134, 139)",
+     "border-top-left-radius": "12px",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "height": "95px",
+     "box-sizing": "border-box",
+     "display": "flex",
+     "outline-style": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 1200,
+     "height": 95
+    }
+   },
+   "textarea.input": {
+    "html": "<textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "2px",
+     "padding-right": "2px",
+     "padding-bottom": "2px",
+     "padding-left": "13px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "25px",
+     "max-width": "none",
+     "height": "63px",
+     "box-sizing": "content-box",
+     "resize": "vertical",
+     "outline-style": "none"
+    },
+    "box": {
+     "width": 1192,
+     "height": 67
+    }
+   },
+   "textarea.label": {
+    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\">Comments</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(110, 110, 115)",
+     "position": "absolute",
+     "top": "18px",
+     "left": "17px",
+     "pointer-events": "auto",
+     "white-space": "nowrap",
+     "transition-property": "all",
+     "transition-duration": "0.125s",
+     "transition-timing-function": "ease-in"
+    }
+   },
+   "textarea.focused": {
+    "html": "<div class=\"form-textarea focused\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "padding-top": "22px",
+     "padding-right": "2px",
+     "padding-bottom": "2px",
+     "padding-left": "2px",
+     "margin-top": "0px",
+     "margin-bottom": "14px",
+     "border-top-width": "2px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(0, 113, 227)",
+     "border-bottom-width": "2px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(0, 113, 227)",
+     "border-top-left-radius": "12px",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "height": "95px",
+     "outline-style": "none"
+    },
+    "box": {
+     "width": 1200,
+     "height": 95
+    }
+   },
+   "textarea.label-floated": {
+    "html": "<span class=\"form-textbox-label form-textbox-eyebrow-label\" id=\"cui-area-label\">Comments</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "top": "10px",
+     "left": "17px"
+    }
+   },
+   "textarea.error": {
+    "html": "<div class=\"form-textarea\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 242, 244)",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-top-width": "1px"
+    }
+   },
+   "textarea.error-label": {
+    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\">Comments</span>",
+    "styles": {
+     "color": "rgb(227, 0, 0)"
+    }
+   },
+   "textarea.disabled": {
+    "html": "<div class=\"form-textarea disabled\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "background-color": "rgba(0, 0, 0, 0.01)",
+     "border-top-color": "rgba(134, 134, 139, 0.42)"
+    }
+   },
+   "textarea.disabled-input": {
+    "html": "<textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea>",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "-webkit-text-fill-color": "rgb(110, 110, 115)"
+    }
+   },
    "field.input-filled": {
     "html": "<input type=\"text\" class=\"form-textbox-input form-textbox-entered\" id=\"cui-field\" required=\"\" value=\"\">",
     "styles": {
@@ -1288,6 +1792,174 @@
     "styles": {
      "color": "rgb(110, 110, 115)",
      "opacity": "1"
+    }
+   },
+   "textarea": {
+    "html": "<div class=\"form-textarea\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "23px",
+     "padding-right": "3px",
+     "padding-bottom": "3px",
+     "padding-left": "3px",
+     "margin-top": "0px",
+     "margin-bottom": "14px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(134, 134, 139)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(134, 134, 139)",
+     "border-top-left-radius": "12px",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "height": "95px",
+     "box-sizing": "border-box",
+     "display": "flex",
+     "outline-style": "none",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 1600,
+     "height": 95
+    }
+   },
+   "textarea.input": {
+    "html": "<textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "2px",
+     "padding-right": "2px",
+     "padding-bottom": "2px",
+     "padding-left": "13px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "25px",
+     "max-width": "none",
+     "height": "63px",
+     "box-sizing": "content-box",
+     "resize": "vertical",
+     "outline-style": "none"
+    },
+    "box": {
+     "width": 1592,
+     "height": 67
+    }
+   },
+   "textarea.label": {
+    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\">Comments</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(110, 110, 115)",
+     "position": "absolute",
+     "top": "18px",
+     "left": "17px",
+     "pointer-events": "auto",
+     "white-space": "nowrap",
+     "transition-property": "all",
+     "transition-duration": "0.125s",
+     "transition-timing-function": "ease-in"
+    }
+   },
+   "textarea.focused": {
+    "html": "<div class=\"form-textarea focused\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "padding-top": "22px",
+     "padding-right": "2px",
+     "padding-bottom": "2px",
+     "padding-left": "2px",
+     "margin-top": "0px",
+     "margin-bottom": "14px",
+     "border-top-width": "2px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(0, 113, 227)",
+     "border-bottom-width": "2px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(0, 113, 227)",
+     "border-top-left-radius": "12px",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "height": "95px",
+     "outline-style": "none"
+    },
+    "box": {
+     "width": 1600,
+     "height": 95
+    }
+   },
+   "textarea.label-floated": {
+    "html": "<span class=\"form-textbox-label form-textbox-eyebrow-label\" id=\"cui-area-label\">Comments</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "top": "10px",
+     "left": "17px"
+    }
+   },
+   "textarea.error": {
+    "html": "<div class=\"form-textarea\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 242, 244)",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-top-width": "1px"
+    }
+   },
+   "textarea.error-label": {
+    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\">Comments</span>",
+    "styles": {
+     "color": "rgb(227, 0, 0)"
+    }
+   },
+   "textarea.disabled": {
+    "html": "<div class=\"form-textarea disabled\"><textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea></div>",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "background-color": "rgba(0, 0, 0, 0.01)",
+     "border-top-color": "rgba(134, 134, 139, 0.42)"
+    }
+   },
+   "textarea.disabled-input": {
+    "html": "<textarea id=\"cui-area\" aria-labelledby=\"cui-area-label\"></textarea>",
+    "styles": {
+     "color": "rgb(110, 110, 115)",
+     "-webkit-text-fill-color": "rgb(110, 110, 115)"
     }
    },
    "field.input-filled": {
