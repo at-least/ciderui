@@ -1,0 +1,1602 @@
+{
+ "url": "https://www.apple.com/newsroom/",
+ "finalUrl": "https://www.apple.com/newsroom/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-21T04:07:05.108Z",
+ "widths": {
+  "390": {
+   "nav.phone": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "48px",
+     "position": "absolute",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(0, 0, 0, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 390,
+     "height": 48,
+     "top": 135,
+     "left": 0
+    },
+    "animations": [
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "background-color",
+      "on": "div.globalnav-content",
+      "duration": 450,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgba(0, 0, 0, 0.8)",
+      "to": "rgb(22, 22, 23)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "height",
+      "on": "div.globalnav-content",
+      "duration": 450,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "100%",
+      "to": "765px"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "a.globalnav-link.globalnav-link-apple",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "1",
+      "to": "0"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "a.globalnav-link.globalnav-link-apple",
+      "duration": 240,
+      "delay": 0,
+      "easing": "steps(1)",
+      "from": "visible",
+      "to": "hidden"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "a#globalnav-menubutton-link-search.globalnav-link.globalnav-link-search",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "1",
+      "to": "0"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "a#globalnav-menubutton-link-search.globalnav-link.globalnav-link-search",
+      "duration": 240,
+      "delay": 0,
+      "easing": "steps(1)",
+      "from": "visible",
+      "to": "hidden"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "color",
+      "on": "a.globalnav-searchresults-list-link",
+      "duration": 20,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgb(134, 134, 139)",
+      "to": "rgb(232, 232, 237)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "color",
+      "on": "span.globalnav-searchresults-list-icon",
+      "duration": 20,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgb(134, 134, 139)",
+      "to": "rgb(232, 232, 237)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "color",
+      "on": "a.globalnav-searchresults-list-link",
+      "duration": 20,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgb(134, 134, 139)",
+      "to": "rgb(232, 232, 237)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "color",
+      "on": "span.globalnav-searchresults-list-icon",
+      "duration": 20,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgb(134, 134, 139)",
+      "to": "rgb(232, 232, 237)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "color",
+      "on": "a.globalnav-searchresults-list-link",
+      "duration": 20,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgb(134, 134, 139)",
+      "to": "rgb(232, 232, 237)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "color",
+      "on": "span.globalnav-searchresults-list-icon",
+      "duration": 20,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgb(134, 134, 139)",
+      "to": "rgb(232, 232, 237)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "color",
+      "on": "a.globalnav-searchresults-list-link",
+      "duration": 20,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgb(134, 134, 139)",
+      "to": "rgb(232, 232, 237)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "color",
+      "on": "span.globalnav-searchresults-list-icon",
+      "duration": 20,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgb(134, 134, 139)",
+      "to": "rgb(232, 232, 237)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "color",
+      "on": "a.globalnav-searchresults-list-link",
+      "duration": 20,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgb(134, 134, 139)",
+      "to": "rgb(232, 232, 237)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "color",
+      "on": "span.globalnav-searchresults-list-icon",
+      "duration": 20,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgb(134, 134, 139)",
+      "to": "rgb(232, 232, 237)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "div.globalnav-bag-wrapper",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "1",
+      "to": "0"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "div.globalnav-bag-wrapper",
+      "duration": 240,
+      "delay": 0,
+      "easing": "steps(1)",
+      "from": "visible",
+      "to": "hidden"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "a#globalnav-menubutton-link-bag.globalnav-link.globalnav-link-bag",
+      "duration": 240,
+      "delay": 0,
+      "easing": "steps(1)",
+      "from": "visible",
+      "to": "hidden"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-input-intro",
+      "on": "div.globalnav-searchfield-wrapper",
+      "duration": 240,
+      "delay": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "h2.globalnav-searchresults-header",
+      "duration": 320,
+      "delay": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 220,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 240,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 260,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 280,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 0,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 100,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 200,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 300,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 400,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 500,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 600,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 700,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     }
+    ]
+   },
+   "search": {
+    "html": "<li data-topnav-flyout-label=\"Search apple.com\" class=\"globalnav-item globalnav-search globalnav-item-flyout-open shift-0-1 globalnav-search-with-results\" data-globalnav-iconflyout-enabled=\"true\" data-analytics-region=\"search\"><a role=\"butt",
+    "styles": {
+     "display": "list-item"
+    }
+   },
+   "current": {
+    "html": "<div class=\"globalnav-searchresults-current\" hidden=\"\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"globalnav-searchresults-header\"",
+    "styles": {
+     "display": "none"
+    }
+   },
+   "field": {
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" spellcheck=\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "height": "40px"
+    },
+    "box": {
+     "width": 294,
+     "height": 40,
+     "top": 189,
+     "left": 48
+    }
+   },
+   "results": {
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\" hidden=\"\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 c",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "49px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 294,
+     "height": 0,
+     "top": 278,
+     "left": 48
+    }
+   },
+   "links": {
+    "html": "<div class=\"globalnav-searchresults-container\"><h2 class=\"globalnav-searchresults-header\">Suggested Links</h2><ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globa",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 294,
+     "height": 102,
+     "top": 278,
+     "left": 48
+    }
+   },
+   "searches": {
+    "html": "<div class=\"globalnav-searchresults-container\"><h2 class=\"globalnav-searchresults-header\">Suggested Searches</h2><ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"gl",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "48px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 294,
+     "height": 102,
+     "top": 428,
+     "left": 48
+    }
+   },
+   "links.header": {
+    "html": "<h2 class=\"globalnav-searchresults-header\">Suggested Links</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(134, 134, 139)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "opacity": "1"
+    },
+    "box": {
+     "width": 294,
+     "height": 21,
+     "top": 278,
+     "left": 48
+    }
+   },
+   "searches.header": {
+    "html": "<h2 class=\"globalnav-searchresults-header\">Suggested Searches</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(134, 134, 139)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "opacity": "1"
+    },
+    "box": {
+     "width": 294,
+     "height": 21,
+     "top": 428,
+     "left": 48
+    }
+   },
+   "links.list": {
+    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globalnav-searchresults-list-link\" href=\"#iphone-18-pro\"><span class=\"globalnav-searchresults-list-icon\"><span clas",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "list-style-type": "none"
+    },
+    "box": {
+     "width": 294,
+     "height": 72,
+     "top": 308,
+     "left": 48
+    }
+   },
+   "links.item": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globalnav-searchresults-list-link\" href=\"#iphone-18-pro\"><span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "9px",
+     "margin-right": "-12px",
+     "margin-bottom": "0px",
+     "margin-left": "-12px",
+     "display": "flex",
+     "opacity": "1"
+    },
+    "box": {
+     "width": 318,
+     "height": 33,
+     "top": 308,
+     "left": 36
+    }
+   },
+   "links.item2": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globalnav-searchresults-list-link\" href=\"#iphone-air\"><span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg wi",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "6px",
+     "margin-right": "-12px",
+     "margin-bottom": "0px",
+     "margin-left": "-12px"
+    },
+    "box": {
+     "width": 318,
+     "height": 33,
+     "top": 347,
+     "left": 36
+    }
+   },
+   "searches.item": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globalnav-searchresults-list-link\" href=\"#search-iphone\"><span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "9px",
+     "margin-right": "-12px",
+     "margin-bottom": "0px",
+     "margin-left": "-12px"
+    },
+    "box": {
+     "width": 318,
+     "height": 33,
+     "top": 458,
+     "left": 36
+    }
+   },
+   "searches.item2": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globalnav-searchresults-list-link\" href=\"#search-iphone-case\"><span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "6px",
+     "margin-right": "-12px",
+     "margin-bottom": "0px",
+     "margin-left": "-12px"
+    },
+    "box": {
+     "width": 318,
+     "height": 33,
+     "top": 497,
+     "left": 36
+    }
+   },
+   "link": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"#iphone-18-pro\"><span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg width=\"9\" height=\"16\" viewBox=\"0 0 9 16\"></svg></span><span c",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(134, 134, 139)",
+     "padding-top": "4px",
+     "padding-right": "12px",
+     "padding-bottom": "3px",
+     "padding-left": "12px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "align-items": "flex-start",
+     "text-decoration-line": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "6px",
+     "transition-property": "color, background-color, fill",
+     "transition-duration": "0.02s, 0.02s, 0.02s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 318,
+     "height": 33,
+     "top": 308,
+     "left": 36
+    }
+   },
+   "text": {
+    "html": "<span class=\"globalnav-searchresults-list-text\"><span class=\"globalnav-searchresults-list-text-highlight\">iPh</span>one 18 Pro</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(134, 134, 139)"
+    },
+    "box": {
+     "width": 109.5625,
+     "height": 26,
+     "top": 312,
+     "left": 75
+    }
+   },
+   "highlight": {
+    "html": "<span class=\"globalnav-searchresults-list-text-highlight\">iPh</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(232, 232, 237)",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "display": "inline",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 25.203125,
+     "height": 20,
+     "top": 315,
+     "left": 75
+    }
+   },
+   "links.icon": {
+    "html": "<span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg width=\"9\" height=\"16\" viewBox=\"0 0 9 16\"></svg></span><span class=\"globalnav-image-compact globalnav-link-image\"><svg width=\"13\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "14px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "fill": "rgb(134, 134, 139)"
+    },
+    "box": {
+     "width": 13,
+     "height": 25,
+     "top": 312,
+     "left": 48
+    }
+   },
+   "searches.icon": {
+    "html": "<span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg width=\"9\" height=\"16\" viewBox=\"0 0 9 16\"></svg></span><span class=\"globalnav-image-compact globalnav-link-image\"><svg width=\"13\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "14px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "fill": "rgb(134, 134, 139)"
+    },
+    "box": {
+     "width": 13,
+     "height": 25,
+     "top": 462,
+     "left": 48
+    }
+   },
+   "searches.image-compact": {
+    "html": "<svg width=\"13\" height=\"25\" viewBox=\"0 0 13 25\"></svg>",
+    "styles": {
+     "width": "13px",
+     "height": "25px",
+     "fill": "rgb(134, 134, 139)",
+     "display": "block"
+    },
+    "box": {
+     "width": 13,
+     "height": 25,
+     "top": 462,
+     "left": 48
+    }
+   },
+   "link.states": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"#iphone-18-pro\"><span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg width=\"9\" height=\"16\" viewBox=\"0 0 9 16\"></svg></span><span c",
+    "styles": {
+     "color": "rgb(134, 134, 139)",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "outline-style": "none",
+     "outline-color": "rgb(134, 134, 139)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(255, 255, 255)",
+      "background-color": "rgb(29, 29, 31)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     },
+     "focus-visible": {
+      "color": "rgb(255, 255, 255)",
+      "background-color": "rgb(29, 29, 31)",
+      "outline-style": "solid",
+      "outline-color": "rgb(0, 113, 227)",
+      "outline-width": "2px",
+      "outline-offset": "1px"
+     }
+    }
+   },
+   "highlight.states": {
+    "html": "<span class=\"globalnav-searchresults-list-text-highlight\">iPh</span>",
+    "styles": {
+     "color": "rgb(232, 232, 237)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(232, 232, 237)"
+     },
+     "focus-visible": {
+      "color": "rgb(232, 232, 237)"
+     }
+    }
+   },
+   "searches.icon-states": {
+    "html": "<span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg width=\"9\" height=\"16\" viewBox=\"0 0 9 16\"></svg></span><span class=\"globalnav-image-compact globalnav-link-image\"><svg width=\"13\"",
+    "styles": {
+     "fill": "rgb(134, 134, 139)"
+    },
+    "states": {
+     "hover": {
+      "fill": "rgb(255, 255, 255)"
+     },
+     "focus-visible": {
+      "fill": "rgb(255, 255, 255)"
+     }
+    }
+   }
+  },
+  "1600": {
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "position": "absolute",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(0, 0, 0, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 1600,
+     "height": 44,
+     "top": 70,
+     "left": 0
+    },
+    "animations": [
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "h2.globalnav-searchresults-header",
+      "duration": 320,
+      "delay": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 220,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 240,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 260,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 280,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "color",
+      "on": "a#globalnav-menubutton-link-search.globalnav-link.globalnav-link-search",
+      "duration": 320,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgba(255, 255, 255, 0.8)",
+      "to": "rgb(255, 255, 255)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "background-color",
+      "on": "div#globalnav-submenu-search.globalnav-flyout.globalnav-submenu",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgba(0, 0, 0, 0.8)",
+      "to": "rgb(22, 22, 23)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "height",
+      "on": "div#globalnav-submenu-search.globalnav-flyout.globalnav-submenu",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "44px",
+      "to": "388px"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "div#globalnav-submenu-search.globalnav-flyout.globalnav-submenu",
+      "duration": 240,
+      "delay": 0,
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-input-intro",
+      "on": "div.globalnav-searchfield-wrapper",
+      "duration": 240,
+      "delay": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "h2.globalnav-searchresults-header",
+      "duration": 320,
+      "delay": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 220,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 240,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 260,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 280,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 0,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 100,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 200,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 300,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 400,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 500,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 600,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 700,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     }
+    ]
+   },
+   "search": {
+    "html": "<li data-topnav-flyout-label=\"Search apple.com\" class=\"globalnav-item globalnav-search globalnav-item-flyout-open shift-0-1 globalnav-search-with-results\" data-globalnav-iconflyout-enabled=\"true\" data-analytics-region=\"search\"><a role=\"butt",
+    "styles": {
+     "display": "list-item"
+    }
+   },
+   "current": {
+    "html": "<div class=\"globalnav-searchresults-current\" hidden=\"\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"globalnav-searchresults-header\"",
+    "styles": {
+     "display": "none"
+    }
+   },
+   "field": {
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" sp",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "height": "40px"
+    },
+    "box": {
+     "width": 980,
+     "height": 40,
+     "top": 146,
+     "left": 310
+    }
+   },
+   "results": {
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\" hidden=\"\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 c",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "32px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 0,
+     "top": 218,
+     "left": 310
+    }
+   },
+   "links": {
+    "html": "<div class=\"globalnav-searchresults-container\"><h2 class=\"globalnav-searchresults-header\">Suggested Links</h2><ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globa",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 76,
+     "top": 218,
+     "left": 310
+    }
+   },
+   "searches": {
+    "html": "<div class=\"globalnav-searchresults-container\"><h2 class=\"globalnav-searchresults-header\">Suggested Searches</h2><ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"gl",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "34px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 76,
+     "top": 328,
+     "left": 310
+    }
+   },
+   "links.header": {
+    "html": "<h2 class=\"globalnav-searchresults-header\">Suggested Links</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(134, 134, 139)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "opacity": "1"
+    },
+    "box": {
+     "width": 980,
+     "height": 16,
+     "top": 218,
+     "left": 310
+    }
+   },
+   "searches.header": {
+    "html": "<h2 class=\"globalnav-searchresults-header\">Suggested Searches</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(134, 134, 139)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "opacity": "1"
+    },
+    "box": {
+     "width": 980,
+     "height": 16,
+     "top": 328,
+     "left": 310
+    }
+   },
+   "links.list": {
+    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globalnav-searchresults-list-link\" href=\"#iphone-18-pro\"><span class=\"globalnav-searchresults-list-icon\"><span clas",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "list-style-type": "none"
+    },
+    "box": {
+     "width": 980,
+     "height": 52,
+     "top": 242,
+     "left": 310
+    }
+   },
+   "links.item": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globalnav-searchresults-list-link\" href=\"#iphone-18-pro\"><span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "8px",
+     "margin-right": "-8px",
+     "margin-bottom": "0px",
+     "margin-left": "-8px",
+     "display": "flex",
+     "opacity": "1"
+    },
+    "box": {
+     "width": 996,
+     "height": 24,
+     "top": 242,
+     "left": 302
+    }
+   },
+   "links.item2": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globalnav-searchresults-list-link\" href=\"#iphone-air\"><span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg wi",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "4px",
+     "margin-right": "-8px",
+     "margin-bottom": "0px",
+     "margin-left": "-8px"
+    },
+    "box": {
+     "width": 996,
+     "height": 24,
+     "top": 270,
+     "left": 302
+    }
+   },
+   "searches.item": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globalnav-searchresults-list-link\" href=\"#search-iphone\"><span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "8px",
+     "margin-right": "-8px",
+     "margin-bottom": "0px",
+     "margin-left": "-8px"
+    },
+    "box": {
+     "width": 996,
+     "height": 24,
+     "top": 352,
+     "left": 302
+    }
+   },
+   "searches.item2": {
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globalnav-searchresults-list-link\" href=\"#search-iphone-case\"><span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "4px",
+     "margin-right": "-8px",
+     "margin-bottom": "0px",
+     "margin-left": "-8px"
+    },
+    "box": {
+     "width": 996,
+     "height": 24,
+     "top": 380,
+     "left": 302
+    }
+   },
+   "link": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"#iphone-18-pro\"><span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg width=\"9\" height=\"16\" viewBox=\"0 0 9 16\"></svg></span><span c",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(134, 134, 139)",
+     "padding-top": "4px",
+     "padding-right": "8px",
+     "padding-bottom": "4px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "align-items": "flex-start",
+     "text-decoration-line": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "5px",
+     "transition-property": "color, background-color, fill",
+     "transition-duration": "0.02s, 0.02s, 0.02s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 996,
+     "height": 24,
+     "top": 242,
+     "left": 302
+    }
+   },
+   "text": {
+    "html": "<span class=\"globalnav-searchresults-list-text\"><span class=\"globalnav-searchresults-list-text-highlight\">iPh</span>one 18 Pro</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(134, 134, 139)"
+    },
+    "box": {
+     "width": 79.234375,
+     "height": 16,
+     "top": 246,
+     "left": 330
+    }
+   },
+   "highlight": {
+    "html": "<span class=\"globalnav-searchresults-list-text-highlight\">iPh</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(232, 232, 237)",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "display": "inline",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 18.234375,
+     "height": 14,
+     "top": 247,
+     "left": 330
+    }
+   },
+   "links.icon": {
+    "html": "<span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg width=\"9\" height=\"16\" viewBox=\"0 0 9 16\"></svg></span><span class=\"globalnav-image-compact globalnav-link-image\"><svg width=\"13\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "11px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "fill": "rgb(134, 134, 139)"
+    },
+    "box": {
+     "width": 9,
+     "height": 16,
+     "top": 246,
+     "left": 310
+    }
+   },
+   "searches.icon": {
+    "html": "<span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg width=\"9\" height=\"16\" viewBox=\"0 0 9 16\"></svg></span><span class=\"globalnav-image-compact globalnav-link-image\"><svg width=\"13\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "11px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "fill": "rgb(134, 134, 139)"
+    },
+    "box": {
+     "width": 9,
+     "height": 16,
+     "top": 356,
+     "left": 310
+    }
+   },
+   "searches.image": {
+    "html": "<svg width=\"9\" height=\"16\" viewBox=\"0 0 9 16\"></svg>",
+    "styles": {
+     "width": "9px",
+     "height": "16px",
+     "fill": "rgb(134, 134, 139)",
+     "display": "block"
+    },
+    "box": {
+     "width": 9,
+     "height": 16,
+     "top": 356,
+     "left": 310
+    }
+   },
+   "link.states": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"#iphone-18-pro\"><span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg width=\"9\" height=\"16\" viewBox=\"0 0 9 16\"></svg></span><span c",
+    "styles": {
+     "color": "rgb(134, 134, 139)",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "outline-style": "none",
+     "outline-color": "rgb(134, 134, 139)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(255, 255, 255)",
+      "background-color": "rgb(29, 29, 31)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     },
+     "focus-visible": {
+      "color": "rgb(255, 255, 255)",
+      "background-color": "rgb(29, 29, 31)",
+      "outline-style": "solid",
+      "outline-color": "rgb(0, 113, 227)",
+      "outline-width": "2px",
+      "outline-offset": "1px"
+     }
+    }
+   },
+   "highlight.states": {
+    "html": "<span class=\"globalnav-searchresults-list-text-highlight\">iPh</span>",
+    "styles": {
+     "color": "rgb(232, 232, 237)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(232, 232, 237)"
+     },
+     "focus-visible": {
+      "color": "rgb(232, 232, 237)"
+     }
+    }
+   },
+   "searches.icon-states": {
+    "html": "<span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg width=\"9\" height=\"16\" viewBox=\"0 0 9 16\"></svg></span><span class=\"globalnav-image-compact globalnav-link-image\"><svg width=\"13\"",
+    "styles": {
+     "fill": "rgb(134, 134, 139)"
+    },
+    "states": {
+     "hover": {
+      "fill": "rgb(255, 255, 255)"
+     },
+     "focus-visible": {
+      "fill": "rgb(255, 255, 255)"
+     }
+    }
+   }
+  }
+ }
+}

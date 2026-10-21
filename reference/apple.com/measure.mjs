@@ -17,7 +17,7 @@
 // focuses on load) before reading; `set`, [[selector, name, value], …], gives
 // the page's elements what its script would before reading (an attribute
 // set, or removed with null; `value` an input's value, set with no event, so
-// the page's script hears nothing), then waits for what that moves (its
+// the page's script hears nothing; `classList` a class added), then waits for what that moves (its
 // transitions), and they keep it for the probes after; `frame` reads in the frame whose URL holds
 // that text; `widths` reads at those of the spec's widths alone; `click`
 // clicks that element first, once, at the first width the probe is read (a
@@ -59,6 +59,7 @@ const place = async (probe) => {
     const target = document.querySelector(selector);
     if (!target) return null;
     if (name === 'value') target.value = value;
+    else if (name === 'classList') target.classList.add(value);
     else if (value === null) target.removeAttribute(name);
     else target.setAttribute(name, value);
   }
