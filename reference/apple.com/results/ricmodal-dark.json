@@ -2,14 +2,28 @@
  "url": "https://www.apple.com/macbook-pro/",
  "finalUrl": "https://www.apple.com/macbook-pro/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-21T02:33:47.376Z",
+ "date": "2026-10-21T02:40:29.355Z",
  "widths": {
   "390": {
    "modal": {
     "html": "<div data-component-list=\"Modal\" class=\"ric-modal ric-modal-scrim ric-modal-scrim-blur l2-modal ric-modal-page-overlay inner-container-modal performance-modal theme-dark ric-modal-enhanced-animation ric-modal-open ric-modal-scrollable\" data",
     "styles": {
      "position": "fixed",
-     "color-scheme": "normal"
+     "color-scheme": "normal",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "background-image": "linear-gradient(rgba(29, 29, 31, 0.48), rgba(29, 29, 31, 0.48))",
+     "backdrop-filter": "blur(20px)",
+     "-webkit-backdrop-filter": ""
+    }
+   },
+   "scrim": {
+    "html": "<div data-component-list=\"Modal\" class=\"ric-modal ric-modal-scrim ric-modal-scrim-blur l2-modal ric-modal-page-overlay inner-container-modal performance-modal theme-dark ric-modal-enhanced-animation ric-modal-open ric-modal-scrollable\" data",
+    "styles": {
+     "background-color": "rgba(0, 0, 0, 0)",
+     "background-image": "none",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "opacity": "1"
     }
    },
    "content": {
@@ -76,7 +90,21 @@
     "html": "<div data-component-list=\"Modal\" class=\"ric-modal ric-modal-scrim ric-modal-scrim-blur l2-modal ric-modal-page-overlay inner-container-modal performance-modal theme-dark ric-modal-enhanced-animation ric-modal-open ric-modal-scrollable\" data",
     "styles": {
      "position": "fixed",
-     "color-scheme": "normal"
+     "color-scheme": "normal",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "background-image": "linear-gradient(rgba(29, 29, 31, 0.48), rgba(29, 29, 31, 0.48))",
+     "backdrop-filter": "blur(20px)",
+     "-webkit-backdrop-filter": ""
+    }
+   },
+   "scrim": {
+    "html": "<div data-component-list=\"Modal\" class=\"ric-modal ric-modal-scrim ric-modal-scrim-blur l2-modal ric-modal-page-overlay inner-container-modal performance-modal theme-dark ric-modal-enhanced-animation ric-modal-open ric-modal-scrollable\" data",
+    "styles": {
+     "background-color": "rgba(0, 0, 0, 0)",
+     "background-image": "none",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "opacity": "1"
     }
    },
    "content": {
