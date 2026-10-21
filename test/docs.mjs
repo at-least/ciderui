@@ -16,8 +16,9 @@
 // nav's menu opens over its frame, grown to the window's height, and the
 // local nav's below its bar, the frame grown to hold it; an example's link
 // leaves the frame where it is. The site's own search: the page's global
-// nav's search sends what is typed to the search page, which lists the
-// pages holding it, the component's page first.
+// nav's search suggests the component's page first as its name is typed,
+// and sends it to the search page, which lists the pages holding it, the
+// component's page first.
 //
 //   node test/docs.mjs
 //
@@ -198,6 +199,9 @@ for (const width of [1440, 390]) {
     await page.click('body > .cui-globalnav [popovertarget="cui-globalnav-search"]');
     await settle(page.mainFrame());
     await page.fill('body > .cui-globalnav .cui-globalnav-searchinput', 'modal');
+    await page.waitForFunction(() => document.querySelector('.cz-status')?.textContent);
+    const suggested = await page.evaluate(() => [...document.querySelectorAll('body > .cui-globalnav .cui-globalnav-searchlinks:first-of-type .cui-globalnav-searchlink')].map((a) => `${a.pathname} ${a.querySelector('mark')?.textContent}`));
+    check(`at ${width}px its nav's search suggests the modal's page first as "modal" is typed, what was typed marked`, suggested[0], '/components/modal/ Modal');
     await page.press('body > .cui-globalnav .cui-globalnav-searchinput', 'Enter');
     await page.waitForURL(`${ORIGIN}/search/?q=modal`);
     await page.waitForSelector('.cz-main > .cui-posts');

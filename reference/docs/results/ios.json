@@ -331,6 +331,15 @@
      "width": 402,
      "css": true,
      "page": 402
+    },
+    {
+     "height": 48,
+     "content": 48,
+     "images": [],
+     "title": "A global nav and its search’s suggestions",
+     "width": 402,
+     "css": true,
+     "page": 402
     }
    ]
   },
@@ -768,6 +777,17 @@
    "rows": [
     "/components/modal/"
    ]
+  },
+  "suggestions at 402": {
+   "status": "1 Suggested Links and 3 Suggested Searches available",
+   "marked": "Mo",
+   "color": "rgb(110, 110, 115)",
+   "markColor": "rgb(51, 51, 54)",
+   "markGround": "rgba(0, 0, 0, 0)",
+   "ms": 22,
+   "link": "/components/modal/",
+   "heading": "Suggested Links",
+   "opacity": "1"
   },
   "dropdown at 402": {
    "empty": {
