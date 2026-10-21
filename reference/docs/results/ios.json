@@ -233,6 +233,15 @@
      "page": 402
     },
     {
+     "height": 143,
+     "content": 143,
+     "images": [],
+     "title": "A message of several lines",
+     "width": 402,
+     "css": true,
+     "page": 402
+    },
+    {
      "height": 104,
      "content": 104,
      "images": [],
@@ -748,6 +757,26 @@
     "top": "10px",
     "size": "12px",
     "text": "rgb(29, 29, 31)"
+   }
+  },
+  "textarea at 402": {
+   "rest": {
+    "size": "17px",
+    "top": "18px",
+    "edge": "1px",
+    "color": "rgb(134, 134, 139)"
+   },
+   "focused": {
+    "size": "12px",
+    "top": "10px",
+    "edge": "2px",
+    "color": "rgb(0, 113, 227)"
+   },
+   "filled": {
+    "size": "12px",
+    "top": "10px",
+    "edge": "1px",
+    "color": "rgb(134, 134, 139)"
    }
   },
   "globalnav menu at 402": {

@@ -24,6 +24,12 @@
  *   with a currency before it, after its label:
  *     <span class="cui-field-prefix" id="amount-currency">$</span>
  *
+ *   a message of several lines, its textarea in a box:
+ *   <div class="cui-field">
+ *     <div class="cui-field-box"><textarea class="cui-field-textarea" id="comments" name="comments" placeholder=" "></textarea></div>
+ *     <label class="cui-field-label" for="comments">Comments</label>
+ *   </div>
+ *
  *   the dropdown, its empty choice first:
  *   <div class="cui-field">
  *     <select class="cui-field-input" id="model" name="model">
@@ -47,6 +53,13 @@
  * cui-field-label    after the input: 17px in the secondary text, 18px
  *                    down, as its placeholder; with the field focused or
  *                    filled, 12px at its top, in 0.125s
+ * cui-field-box      a textarea's box, with the field's edge, corners and
+ *                    ground: 95px, its label in its top 23px, which grows
+ *                    as the textarea is made taller; focused, its 2px
+ *                    accent edge; in error and disabled, as the input
+ * cui-field-textarea in the box: 63px (3 lines), at least 25px, taller or
+ *                    shorter by its handle, 13px in; aria-invalid and
+ *                    disabled as the input's
  * cui-field-prefix   after the label: a currency or a country code at the
  *                    field's start, on its own faint ground, a rule after it
  * cui-field-chevron  a select's chevron (icon::DROPDOWN), at its end
@@ -71,7 +84,9 @@
  * block (apple.com's is below 4.5:1 on black: tokens.css); a select in
  * error or disabled as the field (apple.com's dropdown was not seen so); the
  * prefix's width its text's, the input's and the label's room for one
- * character (apple.com's onedigit field's). */
+ * character (apple.com's onedigit field's); the textarea's box focused by
+ * its textarea's focus, with no script (apple.com's script sets a class);
+ * no counter (apple.com's stylesheet defines one, which no page read shows). */
 
 @layer components {
   .cui-field {
@@ -170,6 +185,68 @@
     font-size: 17px;
     line-height: 21px;
     letter-spacing: var(--cui-tracking-17);
+  }
+
+  /* a textarea's box: the input's edge, corners and ground, the label in its
+     top 23px; the textarea in it scrolls under that room, not under the
+     label */
+  .cui-field-box {
+    display: flex;
+    padding: 23px 3px 3px;
+    border: 1px solid var(--cui-c-border);
+    border-radius: 12px;
+    background-color: var(--cui-c-field);
+
+    &:focus-within {
+      padding: 22px 2px 2px;
+      border-width: 2px;
+      border-color: var(--cui-c-accent);
+    }
+
+    &:has(> [aria-invalid="true"]):not(:focus-within) {
+      border-color: var(--cui-c-error);
+      background-color: var(--cui-c-field-error);
+    }
+
+    &:has(> :disabled) {
+      border-color: var(--cui-c-border-disabled);
+      background-color: var(--cui-c-field-disabled);
+    }
+  }
+
+  .cui-field-textarea {
+    box-sizing: content-box;
+    width: 100%;
+    height: 63px;
+    min-height: 25px;
+    margin: 0;
+    padding: 2px 2px 2px 13px;
+    border: 0;
+    font-size: 17px;
+    line-height: 21px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-17);
+    color: var(--cui-c-text);
+    background-color: transparent;
+    outline: none;
+    resize: vertical;
+
+    &:disabled {
+      color: var(--cui-c-text-2);
+      cursor: default;
+    }
+  }
+
+  .cui-field-box:focus-within + .cui-field-label,
+  .cui-field-box:has(> .cui-field-textarea:not(:placeholder-shown)) + .cui-field-label {
+    top: 10px;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: var(--cui-tracking-12);
+  }
+
+  .cui-field-box:has(> [aria-invalid="true"]) + .cui-field-label {
+    color: var(--cui-c-error);
   }
 
   .cui-field-chevron {

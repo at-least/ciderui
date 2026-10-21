@@ -233,6 +233,15 @@
      "page": 1440
     },
     {
+     "title": "A message of several lines",
+     "height": 143,
+     "content": 143,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
+    },
+    {
      "title": "A dropdown, nothing chosen",
      "height": 104,
      "content": 104,
@@ -943,6 +952,15 @@
      "page": 700
     },
     {
+     "title": "A message of several lines",
+     "height": 143,
+     "content": 143,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
+    },
+    {
      "title": "A dropdown, nothing chosen",
      "height": 104,
      "content": 104,
@@ -1460,6 +1478,26 @@
     "text": "rgb(29, 29, 31)"
    }
   },
+  "textarea at 1440": {
+   "rest": {
+    "top": "18px",
+    "size": "17px",
+    "edge": "1px",
+    "color": "rgb(134, 134, 139)"
+   },
+   "focused": {
+    "top": "10px",
+    "size": "12px",
+    "edge": "2px",
+    "color": "rgb(0, 113, 227)"
+   },
+   "filled": {
+    "top": "10px",
+    "size": "12px",
+    "edge": "1px",
+    "color": "rgb(134, 134, 139)"
+   }
+  },
   "gallery at 700": {
    "scroll": 329,
    "previous": false,
@@ -1498,6 +1536,26 @@
     "text": "rgb(29, 29, 31)"
    }
   },
+  "textarea at 700": {
+   "rest": {
+    "top": "18px",
+    "size": "17px",
+    "edge": "1px",
+    "color": "rgb(134, 134, 139)"
+   },
+   "focused": {
+    "top": "10px",
+    "size": "12px",
+    "edge": "2px",
+    "color": "rgb(0, 113, 227)"
+   },
+   "filled": {
+    "top": "10px",
+    "size": "12px",
+    "edge": "1px",
+    "color": "rgb(134, 134, 139)"
+   }
+  },
   "globalnav menu at 700": {
    "closed": 48,
    "open": true,
@@ -1513,6 +1571,6 @@
    "height": 221
   }
  },
- "browser": "chrome 155.0.8059.80 on darwin",
+ "browser": "chrome 155.0.8059.85 on darwin",
  "fails": []
 }

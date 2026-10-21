@@ -14,7 +14,9 @@
 // where the frame is 834px wide or more, a sheet where it is narrower,
 // and its curtain or its X closes it; the dropdown's label the placeholder
 // while it is empty and at its top once a choice is made, its text shown
-// then, with no script; in a window narrower than
+// then, with no script; the textarea's box focused by its textarea's
+// focus and its label floated, focused or filled, with no script; in a
+// window narrower than
 // 834px the global nav's menu opens over its frame, grown to the window's
 // height under the page's local nav and scrolled there, and the local nav's
 // menu below its bar, the frame grown to hold it. On a phone at its width;
@@ -151,6 +153,31 @@ const behave = async (width) => {
     got.frames[`dropdown at ${width}`] = { empty, chosen };
     claim(`the dropdown at ${width}px: empty, its label the placeholder and its text not shown; chosen, its label at its top and its text shown`,
       empty.top === '18px' && empty.size === '17px' && empty.text === 'rgba(0, 0, 0, 0)' && chosen.top === '10px' && chosen.size === '12px' && chosen.text === 'rgb(29, 29, 31)', { empty, chosen });
+  }
+  // the textarea, with no script: at rest its label the placeholder; its
+  // textarea focused (by the page's script), its box's edge 2px and its
+  // label at its top; then blurred and filled (its value set), the label at
+  // its top still and the edge 1px
+  {
+    const title = 'A message of several lines';
+    await page.go(`${ORIGIN}/components/field/`);
+    await page.run(wait(700));
+    const look = `Promise.resolve((() => {
+      const d = ${frame(title)}.contentDocument;
+      const label = getComputedStyle(d.querySelector('.cui-field-label')), box = getComputedStyle(d.querySelector('.cui-field-box'));
+      return { top: label.top, size: label.fontSize, edge: box.borderTopWidth, color: box.borderTopColor };
+    })())`;
+    const area = (call) => page.run(`Promise.resolve((() => { const t = ${frame(title)}.contentDocument.querySelector('textarea'); ${call}; return true; })())`);
+    const rest = await page.run(look);
+    await area('t.focus()');
+    await page.run(wait(400));
+    const focused = await page.run(look);
+    await area("t.blur(); t.value = 'A message.'; t.dispatchEvent(new Event('input', { bubbles: true }))");
+    await page.run(wait(400));
+    const filled = await page.run(look);
+    got.frames[`textarea at ${width}`] = { rest, focused, filled };
+    claim(`the textarea at ${width}px: at rest its label the placeholder; focused, its box's edge 2px of the accent and its label at its top; filled, its label at its top and its edge 1px`,
+      rest.top === '18px' && rest.size === '17px' && rest.edge === '1px' && focused.top === '10px' && focused.size === '12px' && focused.edge === '2px' && focused.color === 'rgb(0, 113, 227)' && filled.top === '10px' && filled.edge === '1px', { rest, focused, filled });
   }
   // an example's link, clicked
   await page.go(`${ORIGIN}/components/link/`);

@@ -92,5 +92,21 @@
  "select-dark | .cui-field-input | 1200 | color": "rgb(29, 29, 31)",
  "select-dark | .cui-field-input | 1200 | background-color": "rgba(255, 255, 255, 0.8)",
  "select-dark | .cui-field-input | 1200 | border-top-color": "rgb(134, 134, 139)",
- "select-dark | .cui-field-chevron | 1200 | color": "rgb(110, 110, 115)"
+ "select-dark | .cui-field-chevron | 1200 | color": "rgb(110, 110, 115)",
+ "textarea | .cui-field-box | 1600 | margin-bottom": "0px",
+ "textarea | .cui-field-textarea | 1600 | letter-spacing": "0.0493px",
+ "textarea | .cui-field-box | 1200 | margin-bottom": "0px",
+ "textarea | .cui-field-textarea | 1200 | letter-spacing": "0.0493px",
+ "textarea | .cui-field-box | 900 | margin-bottom": "0px",
+ "textarea | .cui-field-textarea | 900 | letter-spacing": "0.0493px",
+ "textarea | .cui-field-box | 390 | margin-bottom": "0px",
+ "textarea | .cui-field-textarea | 390 | letter-spacing": "0.0493px",
+ "textarea-focused | .cui-field-textarea | 1200 | focused": "true",
+ "textarea-focused | .cui-field-textarea | 390 | focused": "true",
+ "textarea-taller | .cui-field-box | 1200 | box-height": "152px",
+ "textarea-error-focused | .cui-field-label | 1200 | color": "rgb(227, 0, 0)",
+ "textarea-disabled | .cui-field-textarea | 1600 | cursor": "default",
+ "textarea-disabled | .cui-field-textarea | 1200 | cursor": "default",
+ "textarea-disabled | .cui-field-textarea | 900 | cursor": "default",
+ "textarea-disabled | .cui-field-textarea | 390 | cursor": "default"
 }

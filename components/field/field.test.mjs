@@ -8,7 +8,9 @@
 // focused in error; disabled (giftcard:field.disabled, retail:field.disabled*,
 // retail-dark:field.disabled*); with a currency before it
 // (giftcard:prefix*); the dropdown, empty, hovered, focused and chosen
-// (tradein:dropdown*). Golden, with their why: the letter-spacing, the
+// (tradein:dropdown*); the textarea in its box, at rest, focused, filled, in
+// error, disabled and in a dark block (retail:textarea*, retail-dark:textarea*,
+// the store's stylesheet on the feedback form's markup). Golden, with their why: the letter-spacing, the
 // field's own ground, no margin below, the message's mark and its dark red,
 // the prefix's width, the chevron's place and color, and the states
 // apple.com was not seen in.
@@ -28,6 +30,9 @@ const MARK = `${MESSAGE} svg`;
 const PREFIX = '.cui-field-prefix';
 const CHEVRON = '.cui-field-chevron';
 const FONT = ['font-size', 'line-height'];
+const BOX = '.cui-field-box';
+const AREA = '.cui-field-textarea';
+const area = (attrs = '', text = '') => ex('textarea').replace('placeholder=" "></textarea>', `placeholder=" "${attrs}>${text}</textarea>`);
 
 export const cases = [
   {
@@ -168,6 +173,91 @@ export const cases = [
     checks: [
       { target: INPUT, props: ['color', 'background-color', 'border-top-color'], golden: 'light in a dark block, as a field (retail-dark:field.input)' },
       { target: CHEVRON, props: ['color'], golden: 'light in a dark block, as a field' },
+    ],
+  },
+  {
+    name: 'textarea',
+    html: ex('textarea'),
+    checks: [
+      { target: BOX, props: [...PAD, ...EDGE, 'border-bottom-style', 'background-color', 'display', 'box-height', 'outline-style'], apple: ['retail', 'textarea'] },
+      { target: BOX, props: ['margin-bottom'], golden: 'no margin of its own: apple.com\'s 14px is the form\'s spacing, the page\'s (retail:textarea)' },
+      { target: AREA, props: [...TYPE, 'color', ...PAD, 'height', 'min-height', 'box-sizing', 'resize', 'outline-style', 'border-top-width', 'border-top-style', 'background-color', 'box-height'], apple: ['retail', 'textarea.input'] },
+      { target: AREA, props: ['letter-spacing'], golden: TRACKING },
+      { target: LABEL, props: [...TYPE, 'color', 'position', 'top', 'left', 'white-space', 'pointer-events', 'transition-property', 'transition-duration', 'transition-timing-function'], apple: ['retail', 'textarea.label'] },
+    ],
+  },
+  {
+    // clicked: the box focused by its textarea's focus, with no script
+    name: 'textarea-focused',
+    html: ex('textarea'),
+    click: AREA,
+    widths: [1200, 390],
+    checks: [
+      { target: BOX, props: [...PAD, 'border-top-width', 'border-top-color', 'border-bottom-width', 'outline-style', 'box-height'], apple: ['retail', 'textarea.focused'] },
+      { target: LABEL, props: [...TYPE, 'color', 'top', 'left'], apple: ['retail', 'textarea.label-floated'] },
+      { target: AREA, props: ['focused'], golden: 'the textarea has the focus, its box shows it' },
+    ],
+  },
+  {
+    name: 'textarea-filled',
+    html: area('', 'A message of a few words.'),
+    checks: [
+      { target: LABEL, props: [...TYPE, 'color', 'top', 'left'], apple: ['retail', 'textarea.label-floated'] },
+      { target: BOX, props: ['border-top-width', 'border-top-color'], apple: ['retail', 'textarea'] },
+    ],
+  },
+  {
+    // made taller by its handle (its height set, as dragging sets it): the box
+    // grows with it
+    name: 'textarea-taller',
+    html: area(' style="height: 120px"'),
+    widths: [1200],
+    checks: [
+      { target: BOX, props: ['box-height'], golden: 'the box around the textarea made taller: 120px and its room, 2 and 2px in it, 23 and 3px in the box, 1px edges' },
+    ],
+  },
+  {
+    name: 'textarea-error',
+    html: area(' aria-invalid="true"'),
+    checks: [
+      { target: BOX, props: ['background-color', 'border-top-color', 'border-top-width'], apple: ['retail', 'textarea.error'] },
+      { target: AREA, props: ['color'], apple: ['retail', 'textarea.error'] },
+      { target: LABEL, props: ['color'], apple: ['retail', 'textarea.error-label'] },
+    ],
+  },
+  {
+    name: 'textarea-error-focused',
+    html: area(' aria-invalid="true"'),
+    click: AREA,
+    widths: [1200],
+    checks: [
+      { target: BOX, props: ['border-top-width', 'border-top-color', 'background-color'], apple: ['retail', 'textarea.focused'] },
+      { target: LABEL, props: ['color'], golden: 'its label red focused too, as the field\'s' },
+    ],
+  },
+  {
+    name: 'textarea-disabled',
+    html: area(' disabled'),
+    checks: [
+      { target: BOX, props: ['background-color', 'border-top-color'], apple: ['retail', 'textarea.disabled'] },
+      { target: AREA, props: ['color', '-webkit-text-fill-color'], apple: ['retail', 'textarea.disabled-input'] },
+      { target: AREA, props: ['cursor'], golden: 'no pointer of its own, as the field disabled (retail:field.disabled)' },
+    ],
+  },
+  {
+    name: 'textarea-dark',
+    html: dark(ex('textarea')),
+    checks: [
+      { target: BOX, props: ['border-top-color', 'background-color'], apple: ['retail-dark', 'textarea'] },
+      { target: AREA, props: ['color'], apple: ['retail-dark', 'textarea'] },
+      { target: LABEL, props: ['color'], apple: ['retail-dark', 'textarea.label'] },
+    ],
+  },
+  {
+    name: 'textarea-dark-error',
+    html: dark(area(' aria-invalid="true"')),
+    checks: [
+      { target: BOX, props: ['background-color', 'border-top-color'], apple: ['retail-dark', 'textarea.error'] },
     ],
   },
 ];

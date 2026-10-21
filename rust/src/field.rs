@@ -142,6 +142,56 @@ impl Renderable for Select<'_> {
     }
 }
 
+/// `cui-field` on a `textarea` (`components/field`): a message of several
+/// lines, its textarea in the field's box (`cui-field-box`), 3 lines tall
+/// and taller by its handle, its label the placeholder until it is focused
+/// or filled.
+///
+/// ```
+/// use hypertext::prelude::*;
+/// use ciderui::TextArea;
+///
+/// let html = rsx! {
+///     <TextArea id="comments" name="comments" label="Comments" value="" error="" disabled=false class="" />
+/// }
+/// .render();
+/// assert!(html.as_inner().contains(r#"<div class="cui-field-box"><textarea class="cui-field-textarea" id="comments" name="comments" placeholder=" "></textarea></div>"#));
+/// ```
+pub struct TextArea<'a> {
+    /// The textarea's id, its label's `for`. Required: an empty one panics.
+    pub id: &'a str,
+    /// The textarea's name.
+    pub name: &'a str,
+    /// The label. Required: an empty one panics.
+    pub label: &'a str,
+    /// Its text; `""` for an empty one.
+    pub value: &'a str,
+    /// Its error, the message under it; `""` for none.
+    pub error: &'a str,
+    /// Whether it is disabled.
+    pub disabled: bool,
+    /// The page's utilities on the field; `""` for none.
+    pub class: &'a str,
+}
+
+impl Renderable for TextArea<'_> {
+    fn render_to(&self, buffer: &mut Buffer) {
+        assert!(!self.id.is_empty(), "ciderui::TextArea needs an id");
+        assert!(!self.label.is_empty(), "ciderui::TextArea needs a label");
+        let message = format!("{}-message", self.id);
+        rsx! {
+            <div class=(Class("cui-field", self.class))>
+                <div class="cui-field-box"><textarea class="cui-field-textarea" id=(self.id) name=(self.name) placeholder=" " aria-invalid="true"[!self.error.is_empty()] aria-describedby=(&message)[!self.error.is_empty()] disabled[self.disabled]>(self.value)</textarea></div>
+                <label class="cui-field-label" for=(self.id)>(self.label)</label>
+            </div>
+            @if !self.error.is_empty() {
+                <p class="cui-field-message" id=(message)>(ALERT)(self.error)</p>
+            }
+        }
+        .render_to(buffer);
+    }
+}
+
 // the ids that describe a field, in order, space-separated
 fn described(prefix: Option<&str>, message: Option<&str>) -> String {
     [prefix, message]
@@ -194,6 +244,13 @@ mod tests {
                 include_str!("../../components/field/examples/selected.html"),
             ),
         ];
+        let textarea = rsx! { <TextArea id="comments" name="comments" label="Comments" value="" error="" disabled=false class="" /> }.render();
+        assert_eq!(
+            *textarea.as_inner(),
+            example(include_str!(
+                "../../components/field/examples/textarea.html"
+            ))
+        );
         for (html, file) in cases {
             assert_eq!(*html.as_inner(), example(file));
         }
@@ -237,6 +294,24 @@ mod tests {
             r#"<select class="cui-field-input" id="state" name="state" aria-invalid="true" aria-describedby="state-message" disabled>"#
         ));
         assert!(html.as_inner().ends_with(r#"Please choose a state.</p>"#));
+    }
+
+    #[test]
+    fn a_textareas_text_error_and_disabled() {
+        let html = rsx! {
+            <TextArea id="note" name="note" label="Message" value="Happy <birthday> & more" error="Please enter a message." disabled=true class="mt-4" />
+        }
+        .render();
+        assert_eq!(
+            *html.as_inner(),
+            concat!(
+                r#"<div class="cui-field mt-4"><div class="cui-field-box"><textarea class="cui-field-textarea" id="note" name="note" placeholder=" " aria-invalid="true" aria-describedby="note-message" disabled>Happy &lt;birthday&gt; &amp; more</textarea></div>"#,
+                r#"<label class="cui-field-label" for="note">Message</label></div><p class="cui-field-message" id="note-message">"#,
+            )
+            .to_owned()
+                + &ALERT.render().into_inner()
+                + "Please enter a message.</p>"
+        );
     }
 
     #[test]
