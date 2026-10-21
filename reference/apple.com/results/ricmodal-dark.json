@@ -1,0 +1,142 @@
+{
+ "url": "https://www.apple.com/macbook-pro/",
+ "finalUrl": "https://www.apple.com/macbook-pro/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-21T02:33:47.376Z",
+ "widths": {
+  "390": {
+   "modal": {
+    "html": "<div data-component-list=\"Modal\" class=\"ric-modal ric-modal-scrim ric-modal-scrim-blur l2-modal ric-modal-page-overlay inner-container-modal performance-modal theme-dark ric-modal-enhanced-animation ric-modal-open ric-modal-scrollable\" data",
+    "styles": {
+     "position": "fixed",
+     "color-scheme": "normal"
+    }
+   },
+   "content": {
+    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"chips performance modal\" data-modal-scroll-group-name=\"Product Story - Performance Modal\">\n\t\t\t\t\t\t\t<div class=\"ric-modal-viewport-cont",
+    "styles": {
+     "background-color": "rgb(0, 0, 0)",
+     "color": "rgb(245, 245, 247)"
+    }
+   },
+   "heading": {
+    "html": "<h2 class=\"typography-eyebrow\">Performance</h2>",
+    "styles": {
+     "color": "rgb(245, 245, 247)"
+    }
+   },
+   "close.icon": {
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                                    <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                                        <p",
+    "styles": {
+     "background-color": "rgb(245, 245, 247)",
+     "color": "rgb(0, 0, 0)",
+     "border-top-left-radius": "50%"
+    }
+   },
+   "close.icon-states": {
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                                    <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                                        <p",
+    "styles": {
+     "background-color": "rgb(245, 245, 247)",
+     "color": "rgb(0, 0, 0)",
+     "outline-style": "none",
+     "outline-color": "rgb(0, 0, 0)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "hover": {
+      "background-color": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     },
+     "active": {
+      "background-color": "rgb(237, 237, 242)",
+      "color": "rgb(0, 0, 0)",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     },
+     "focus-visible": {
+      "background-color": "rgb(245, 245, 247)",
+      "color": "rgb(0, 0, 0)",
+      "outline-style": "solid",
+      "outline-color": "rgb(0, 113, 227)",
+      "outline-width": "2px",
+      "outline-offset": "3px"
+     }
+    }
+   }
+  },
+  "1600": {
+   "modal": {
+    "html": "<div data-component-list=\"Modal\" class=\"ric-modal ric-modal-scrim ric-modal-scrim-blur l2-modal ric-modal-page-overlay inner-container-modal performance-modal theme-dark ric-modal-enhanced-animation ric-modal-open ric-modal-scrollable\" data",
+    "styles": {
+     "position": "fixed",
+     "color-scheme": "normal"
+    }
+   },
+   "content": {
+    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"chips performance modal\" data-modal-scroll-group-name=\"Product Story - Performance Modal\">\n\t\t\t\t\t\t\t<div class=\"ric-modal-viewport-cont",
+    "styles": {
+     "background-color": "rgb(0, 0, 0)",
+     "color": "rgb(245, 245, 247)"
+    }
+   },
+   "heading": {
+    "html": "<h2 class=\"typography-eyebrow\">Performance</h2>",
+    "styles": {
+     "color": "rgb(245, 245, 247)"
+    }
+   },
+   "close.icon": {
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                                    <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                                        <p",
+    "styles": {
+     "background-color": "rgb(245, 245, 247)",
+     "color": "rgb(0, 0, 0)",
+     "border-top-left-radius": "50%"
+    }
+   },
+   "close.icon-states": {
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                                    <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                                        <p",
+    "styles": {
+     "background-color": "rgb(245, 245, 247)",
+     "color": "rgb(0, 0, 0)",
+     "outline-style": "none",
+     "outline-color": "rgb(0, 0, 0)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "hover": {
+      "background-color": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     },
+     "active": {
+      "background-color": "rgb(237, 237, 242)",
+      "color": "rgb(0, 0, 0)",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     },
+     "focus-visible": {
+      "background-color": "rgb(245, 245, 247)",
+      "color": "rgb(0, 0, 0)",
+      "outline-style": "solid",
+      "outline-color": "rgb(0, 113, 227)",
+      "outline-width": "2px",
+      "outline-offset": "3px"
+     }
+    }
+   }
+  }
+ }
+}
