@@ -94,6 +94,8 @@ const TYPE = ['font-size', 'line-height', 'font-weight', 'color'];
 
 // a link's flyout: the example with Store's and Mac's
 const FLYOUT_NAV = ex('flyout');
+// the local nav's example, under the bar
+const LOCALNAV = examples(new URL('../localnav/', import.meta.url))('localnav');
 const FLYOUT_DARK = FLYOUT_NAV.replace('class="cui-globalnav"', 'class="cui-globalnav cui-dark"');
 const STORE_ITEM = `${LIST} > li:nth-child(3)`;
 const MAC_ITEM = `${LIST} > li:nth-child(4)`;
@@ -835,7 +837,7 @@ export const cases = [
     html: FLYOUT_NAV,
     ...HOVERING,
     checks: [
-      { target: '.cui-globalnav', props: ['background-color', 'backdrop-filter'], apple: ['flyout', 'nav'] },
+      { target: '.cui-globalnav', props: ['background-color', 'backdrop-filter', 'z-index'], apple: ['flyout', 'nav'] },
       { target: '.cui-globalnav', props: ['position', 'isolation'], golden: 'the containing block and the stacking context of a flyout the pointer shows (a site\'s sticky replaces the position)' },
       { target: MAC_LINK, props: ['color', ...MOTION], apple: ['flyout', 'link.open'] },
       { target: IPAD_LINK, props: ['color'], apple: ['flyout', 'link.other'] },
@@ -877,6 +879,15 @@ export const cases = [
       { target: CHEVRON, props: ['opacity', 'margin-top', 'color', 'box-height', ...MOTION], apple: ['flyout', 'trigger.icon'] },
       { target: CHEVRON, state: 'focus-visible', on: MAC_BUTTON, props: ['opacity', 'margin-top'], apple: ['flyout', 'trigger.icon', 'focus-visible'] },
       { target: CHEVRON, props: ['box-width'], golden: 'apple.com\'s chevron, 10 by 10 (flyout:trigger.icon)' },
+    ],
+  },
+  {
+    // a local nav under the bar, as a product page's
+    name: 'flyout-localnav',
+    html: `${FLYOUT_NAV}\n${LOCALNAV}`,
+    ...HOVERING,
+    checks: [
+      { target: FHEAD1, props: ['hit'], golden: 'over the local nav under the bar, as apple.com\'s (its nav\'s z-index 9999 over its local nav\'s 9997: flyout:nav, localnav:localnav): what the pointer finds at its first heading is the heading' },
     ],
   },
   {

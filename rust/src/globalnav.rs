@@ -139,8 +139,9 @@ pub struct BagLink<'a> {
 /// links are a menu its button opens over the window, with no script (the
 /// list a popover beside the button, with a close button of its own that
 /// takes the focus); a link may open a flyout ([`NavLink`]). Not placed on
-/// the page: a site adds `sticky top-0` and a `z-index` over its page's own
-/// (its `class`) where the nav stays.
+/// the page: a site adds `sticky top-0` (its `class`) where the nav stays;
+/// its `z-index`, apple.com's 9999, is the nav's own, over the page and a
+/// local nav (a `z-*` utility in its `class` would replace it).
 ///
 /// ```
 /// use hypertext::{Raw, prelude::*};
@@ -148,11 +149,11 @@ pub struct BagLink<'a> {
 ///
 /// let logo = Raw::<_>::dangerously_create(r#"<img src="/logo.svg" alt="" width="14" height="44">"#);
 /// let html = rsx! {
-///     <GlobalNav logo=(logo) home="/" name="Cider" links=(&[NavLink::new("Store", "/store")]) search=None bag=None dark=false clear=false class="sticky top-0 z-10" />
+///     <GlobalNav logo=(logo) home="/" name="Cider" links=(&[NavLink::new("Store", "/store")]) search=None bag=None dark=false clear=false class="sticky top-0" />
 /// }
 /// .render();
 /// assert!(html.as_inner().starts_with(concat!(
-///     r#"<nav class="cui-globalnav sticky top-0 z-10" aria-label="Global"><div class="cui-globalnav-content">"#,
+///     r#"<nav class="cui-globalnav sticky top-0" aria-label="Global"><div class="cui-globalnav-content">"#,
 ///     r#"<ul class="cui-globalnav-list" id="cui-globalnav-menu" popover>"#,
 /// )));
 /// ```

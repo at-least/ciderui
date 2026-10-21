@@ -237,7 +237,7 @@
  * letter-spacing (tokens.css); no place on the page: apple.com fixes its nav
  * to the top of its home page alone (home:nav `position: fixed`;
  * product:nav, newsroom:nav absolute, scrolling away), so a site adds
- * `sticky top-0` and its stacking where the nav stays; opened, the menu is a
+ * `sticky top-0` where the nav stays; opened, the menu is a
  * sheet at any width (a tablet turned with it open keeps it until closed);
  * Tab past its last link leaves it for the page under it (no script holds
  * the focus in it, as apple.com's does); the X's lines turn as they move
@@ -245,9 +245,11 @@
  * stretched with them (0.05px further); the menu closes at once, its list
  * leaving the top layer when it closes (apple.com's runs its motion back);
  * the bar is the containing block and the stacking context of a flyout
- * the pointer shows (`position: relative`, `isolation: isolate`: a site's
- * sticky replaces the position, and its z-index puts the nav and its
- * flyouts over its page). A flyout: shown by the pointer's resting on its
+ * the pointer shows (`position: relative`, `isolation: isolate`, a site's
+ * sticky replacing the position), its `z-index` apple.com's 9999 (flyout:nav),
+ * so that the nav and its flyouts are over the page, a tile's link and a
+ * local nav's 9997 too, whether the nav stays or scrolls away (a site's own
+ * z-index on it, a utility, wins). A flyout: shown by the pointer's resting on its
  * link through a transition's delay, so that with reduced motion, which
  * takes every delay, a pointer passing over the bar shows the flyouts it
  * passes; revealed down from the bar (apple.com's grows its height from
@@ -321,9 +323,11 @@
     /* its own height: the bar keeps it while the list is opened out of it;
        the anchor the search and a flyout opened by its button hang from; the
        containing block and the stacking context of a flyout the pointer
-       shows (a site's sticky replaces the position) */
+       shows (a site's sticky replaces the position), over the page, a local
+       nav's 9997 too, as apple.com's 9999 (flyout:nav) */
     position: relative;
     isolation: isolate;
+    z-index: 9999;
     height: 48px;
     anchor-name: --cui-globalnav;
     background-color: var(--cui-c-bar);
