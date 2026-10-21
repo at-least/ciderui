@@ -384,6 +384,103 @@ pub const CLOSE_SMALL: Icon = Icon {
     inner: r#"<path d="M5.5 5.5 14.5 14.5M14.5 5.5 5.5 14.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>"#,
 };
 
+/// A bag's profile link to its orders (`cui-globalnav-baglink`, from 834px), in
+/// place of apple.com's 11 by 16 SVG, a box: a hexagon through (5.511, 2.548),
+/// (9.738, 4.933), (9.738, 9.684), (5.511, 12.068), (1.285, 9.684) and (1.285,
+/// 4.933), its corners rounded 1.0625, the top's lower edges meeting at (5.511,
+/// 7.375) over a line down to its foot, and a band across its top from (3.849,
+/// 3.988) to (7.254, 5.878), 0.875 thick; 0.9915 of its ink apple.com's
+/// (`reference/icons/`).
+pub const ORDERS: Icon = Icon {
+    width: "11",
+    height: "16",
+    view_box: "0 0 11 16",
+    inner: r#"<path d="M6.033 2.843 9.198 4.628A1.0625 1.0625 0 0 1 9.738 5.553V9.063A1.0625 1.0625 0 0 1 9.198 9.989L6.033 11.774A1.0625 1.0625 0 0 1 4.989 11.774L1.825 9.989A1.0625 1.0625 0 0 1 1.285 9.063V5.553A1.0625 1.0625 0 0 1 1.825 4.628L4.989 2.843A1.0625 1.0625 0 0 1 6.033 2.843ZM1.43 5.018 5.511 7.375 9.593 5.018M5.511 7.375V11.91" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width=".875"/><path d="M3.849 3.988 7.254 5.878" fill="none" stroke="currentColor" stroke-width=".875"/>"#,
+};
+
+/// The orders' box to 833px, in place of apple.com's 16 by 25 SVG: the same
+/// hexagon through (8, 5.74), (14, 9.125), (14, 15.875), (8, 19.259), (2, 15.875)
+/// and (2, 9.125), its corners rounded 1.7, the top's edges meeting at (8,
+/// 12.594), the band from (5.561, 7.806) to (10.456, 10.522), 1.2 thick; 0.9851
+/// of its ink apple.com's (`reference/icons/`).
+pub const ORDERS_COMPACT: Icon = Icon {
+    width: "16",
+    height: "25",
+    view_box: "0 0 16 25",
+    inner: r#"<path d="M8.835 6.211 13.135 8.637A1.7 1.7 0 0 1 14 10.118V14.882A1.7 1.7 0 0 1 13.135 16.363L8.835 18.788A1.7 1.7 0 0 1 7.165 18.788L2.865 16.363A1.7 1.7 0 0 1 2 14.882V10.118A1.7 1.7 0 0 1 2.865 8.637L7.165 6.211A1.7 1.7 0 0 1 8.835 6.211ZM2.232 9.26 8 12.594 13.768 9.26M8 12.594V19.007" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/><path d="M5.561 7.806 10.456 10.522" fill="none" stroke="currentColor" stroke-width="1.2"/>"#,
+};
+
+/// A bag's profile link to its saved items (`cui-globalnav-baglink`, from
+/// 834px), in place of apple.com's 11 by 16 SVG, a bookmark: its sides at 2.719
+/// and 8.281 from 2.789 down to 11.97, its top corners rounded 1.184, its foot
+/// a notch up to (5.5, 9.3), 0.82 thick, round; 0.9518 of its ink apple.com's
+/// (`reference/icons/`).
+pub const SAVES: Icon = Icon {
+    width: "11",
+    height: "16",
+    view_box: "0 0 11 16",
+    inner: r#"<path d="M2.719 11.97V3.972A1.184 1.184 0 0 1 3.903 2.789H7.097A1.184 1.184 0 0 1 8.281 3.972V11.97L5.5 9.3Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width=".82"/>"#,
+};
+
+/// The saved items' bookmark to 833px, in place of apple.com's 16 by 25 SVG:
+/// its sides at 4 and 12 from 5.75 down to 19.25, its top corners rounded 1.7,
+/// the notch up to (8, 15.75), 1.2 thick, round; 0.9723 of its ink apple.com's
+/// (`reference/icons/`).
+pub const SAVES_COMPACT: Icon = Icon {
+    width: "16",
+    height: "25",
+    view_box: "0 0 16 25",
+    inner: r#"<path d="M4 19.25V7.45A1.7 1.7 0 0 1 5.7 5.75H10.3A1.7 1.7 0 0 1 12 7.45V19.25L8 15.75Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>"#,
+};
+
+/// A bag's profile link to the account (`cui-globalnav-baglink`, from 834px),
+/// in place of apple.com's 11 by 16 SVG, a gear: a ring at (5.5, 7.25), radius
+/// 4.05, 0.79 thick, a hub of radius 0.9, 0.65 thick, three spokes from 1.2
+/// to 3.7 out at 0°, 120° and 240°, 0.69 thick, and 18 teeth from 4.4 to 4.82
+/// out, 0.68 thick, round; 0.9387 of its ink apple.com's (`reference/icons/`).
+pub const ACCOUNT: Icon = Icon {
+    width: "11",
+    height: "16",
+    view_box: "0 0 11 16",
+    inner: r#"<circle cx="5.5" cy="7.25" r="4.05" fill="none" stroke="currentColor" stroke-width=".79"/><circle cx="5.5" cy="7.25" r=".9" fill="none" stroke="currentColor" stroke-width=".65"/><path d="M6.7 7.25H9.2M4.9 8.289 3.65 10.454M4.9 6.211 3.65 4.046" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width=".69"/><path d="M9.9 7.25H10.32M9.635 8.755 10.029 8.899M8.871 10.078 9.192 10.348M7.7 11.061 7.91 11.424M6.264 11.583 6.337 11.997M4.736 11.583 4.663 11.997M3.3 11.061 3.09 11.424M2.129 10.078 1.808 10.348M1.365 8.755 .971 8.899M1.1 7.25H.68M1.365 5.745 .971 5.601M2.129 4.422 1.808 4.152M3.3 3.439 3.09 3.076M4.736 2.917 4.663 2.503M6.264 2.917 6.337 2.503M7.7 3.439 7.91 3.076M8.871 4.422 9.192 4.152M9.635 5.745 10.029 5.601" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width=".68"/>"#,
+};
+
+/// The account's gear to 833px, in place of apple.com's 16 by 25 SVG: a ring
+/// at (8, 12.5), radius 6.1, 1.28 thick, a hub of radius 1.42, 1.25 thick, the
+/// spokes from 2 to 5.5 out, 1.21 thick, the teeth from 6.7 to 7.15 out, 1.05
+/// thick, round; 0.9675 of its ink apple.com's (`reference/icons/`).
+pub const ACCOUNT_COMPACT: Icon = Icon {
+    width: "16",
+    height: "25",
+    view_box: "0 0 16 25",
+    inner: r#"<circle cx="8" cy="12.5" r="6.1" fill="none" stroke="currentColor" stroke-width="1.28"/><circle cx="8" cy="12.5" r="1.42" fill="none" stroke="currentColor" stroke-width="1.25"/><path d="M10 12.5H13.5M7 14.232 5.25 17.263M7 10.768 5.25 7.737" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.21"/><path d="M14.7 12.5H15.15M14.296 14.792 14.719 14.945M13.132 16.807 13.477 17.096M11.35 18.302 11.575 18.692M9.163 19.098 9.242 19.541M6.837 19.098 6.758 19.541M4.65 18.302 4.425 18.692M2.868 16.807 2.523 17.096M1.704 14.792 1.281 14.945M1.3 12.5H.85M1.704 10.208 1.281 10.055M2.868 8.193 2.523 7.904M4.65 6.698 4.425 6.308M6.837 5.902 6.758 5.459M9.163 5.902 9.242 5.459M11.35 6.698 11.575 6.308M13.132 8.193 13.477 7.904M14.296 10.208 14.719 10.055" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.05"/>"#,
+};
+
+/// A bag's profile link to sign in (`cui-globalnav-baglink`, from 834px), in
+/// place of apple.com's 11 by 16 SVG, a person in a circle: a ring at (5.5,
+/// 7.633), radius 4.287, 0.887 thick; a head, an ellipse at (5.5, 6.71), 1.605
+/// by 1.69; the shoulders filled from (2.62, 10.163) up an arc of radius 3.898
+/// to (8.38, 10.163) and back along the ring's inside; 0.972 of its ink
+/// apple.com's (`reference/icons/`).
+pub const SIGN_IN: Icon = Icon {
+    width: "11",
+    height: "16",
+    view_box: "0 0 11 16",
+    inner: r#"<circle cx="5.5" cy="7.633" r="4.287" fill="none" stroke="currentColor" stroke-width=".887"/><ellipse cx="5.5" cy="6.71" rx="1.605" ry="1.69" fill="currentColor"/><path d="M2.62 10.163A3.898 3.898 0 0 1 8.38 10.163 3.844 3.844 0 0 1 2.62 10.163Z" fill="currentColor"/>"#,
+};
+
+/// The sign-in's person to 833px, in place of apple.com's 16 by 25 SVG: a
+/// ring at (7.99, 12.5), radius 6.495, 1.21 thick; the head at (7.99, 11), 2.475
+/// by 2.6; the shoulders from (3.529, 16.347) up an arc of radius 6.77 to
+/// (12.452, 16.347) and back along the ring's inside; 0.986 of its ink
+/// apple.com's (`reference/icons/`).
+pub const SIGN_IN_COMPACT: Icon = Icon {
+    width: "16",
+    height: "25",
+    view_box: "0 0 16 25",
+    inner: r#"<circle cx="7.99" cy="12.5" r="6.495" fill="none" stroke="currentColor" stroke-width="1.21"/><ellipse cx="7.99" cy="11" rx="2.475" ry="2.6" fill="currentColor"/><path d="M3.529 16.347A6.77 6.77 0 0 1 12.452 16.347 5.89 5.89 0 0 1 3.529 16.347Z" fill="currentColor"/>"#,
+};
+
 #[cfg(test)]
 mod tests {
     use super::*;

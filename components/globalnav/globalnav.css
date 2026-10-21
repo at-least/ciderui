@@ -10,7 +10,8 @@
  * (what of it can be selected: none of it), search:*,
  * search-dark:*, search-text:* (its search, opened, with text in it),
  * search-suggestions:*, search-suggestions-dark:* (showing suggestions),
- * search-typed:* (typed into: its motion between results), flyout:*,
+ * search-typed:* (typed into: its motion between results), bag-flyout:*,
+ * bag-flyout-dark:* (its bag, opened, an empty bag's), flyout:*,
  * flyout-dark:*, flyout-phone:* and tap-flyout:* (a link's flyout); its
  * icons ciderui's own (reference/icons/), its menu, its search and its
  * flyouts popovers (reference/popover/, reference/search/,
@@ -91,6 +92,31 @@
  * Rows written once something is typed fade in where they are, the heading
  * from 40ms, each row 20ms after the one above from 60ms, in 0.32s.
  *
+ * The bag is a link to the site's bag page (above), or a button opening
+ * the bag, another popover, after the search's, an empty bag's:
+ *
+ *         <li><button class="cui-globalnav-icon" popovertarget="cui-globalnav-bag" aria-label="Bag">(icon::BAG, icon::BAG_COMPACT)</button></li>
+ *       …
+ *       <div class="cui-globalnav-bag" id="cui-globalnav-bag" popover>
+ *         <div class="cui-globalnav-bagpanel">
+ *           <h2 class="cui-globalnav-bagmessage">Your Bag is empty.</h2>
+ *           <p class="cui-globalnav-bagtext"><a href="/signin">Sign in</a> to see if you have any saved items</p>
+ *           <h3 class="cui-globalnav-bagheading" id="cui-globalnav-bagheading">My Profile</h3>
+ *           <ul class="cui-globalnav-baglinks" aria-labelledby="cui-globalnav-bagheading">
+ *             <li><a class="cui-globalnav-baglink" href="/orders">(icon::ORDERS, icon::ORDERS_COMPACT)Orders</a></li>
+ *           </ul>
+ *           <button class="cui-globalnav-closebutton" popovertarget="cui-globalnav-bag" popovertargetaction="hide" aria-label="Close" autofocus>(icon::MENU)</button>
+ *         </div>
+ *         <button class="cui-globalnav-curtain" popovertarget="cui-globalnav-bag" popovertargetaction="hide" tabindex="-1" aria-hidden="true"></button>
+ *       </div>
+ *
+ * It opens and closes as the search does, from 834px a flyout from the
+ * bar's bottom over its curtain, to 833px a sheet over the window, the page
+ * held; it has no field, so to 833px its X takes the focus (autofocus), and
+ * from 834px, where its X is not shown, the focus stays on its button, Tab
+ * going on into it. Its message, line, heading and rows come in from above,
+ * from 80ms, each 20ms after the one before.
+ *
  * A link may open a flyout, a menu under the bar, its button and the
  * flyout (a popover) after it in its item:
  *
@@ -163,8 +189,21 @@
  *                           its image (9 by 16; 13 by 25): an arrow, a
  *                           suggested search's magnifier; a suggestion's
  *                           text in a span, the typed part a mark
- * cui-globalnav-curtain     the curtain under the search's flyout, and
- *                           under a flyout its button opens, from 834px
+ * cui-globalnav-bag         the bag, opened: a flyout under the bar from
+ *                           834px, a sheet over the window to 833px
+ * cui-globalnav-bagpanel    its ground, #fafafc, and its room
+ * cui-globalnav-bagmessage  its message: 24px at 600, 28px to 833px
+ * cui-globalnav-bagtext     a line under it, 12px (17px), its link the
+ *                           link's color, underlined
+ * cui-globalnav-bagheading  the heading over its links, 12px (17px)
+ * cui-globalnav-baglinks    its rows, each a cui-globalnav-baglink, 12px at
+ *                           600 (17px), its icon before its text in the
+ *                           secondary text's color (cui-globalnav-image, 11
+ *                           by 16, 1px in, the text 24px in;
+ *                           -compact, 16 by 25, the text 30px in)
+ * cui-globalnav-curtain     the curtain under the search's flyout, the
+ *                           bag's, and under a flyout its button opens,
+ *                           from 834px
  * cui-globalnav-flyoutbutton a flyout's button, after its link: from 834px
  *                           22 by 44 at the link's end, its chevron
  *                           (cui-globalnav-image, icon::FLYOUT, 10 by 10)
@@ -265,7 +304,15 @@
  * menu's; opened on a phone the bar's logo, search and bag are under the
  * sheet at once (apple.com's fade in 240ms); a window widened or narrowed
  * with it open keeps it, as the other layout (apple.com's closes it at
- * 833px). */
+ * 833px). The bag: opened by its button alone, as apple.com's, and closed
+ * as the search, where apple.com's script closes it too as the pointer
+ * leaves it for the curtain (bag-flyout:left); its markup the page's
+ * (apple.com's script fetches it, showing a spinner until it comes); an
+ * empty bag's alone (a bag with something in it, and the count on the bag's
+ * icon, are not measured: DESIGN.md); from the bar's bottom, revealed from
+ * its top, as the search; to 833px its X takes the focus; a link's text and
+ * icon hovered together (apple.com's text by its own hover too); the kit's
+ * ring 3px out (apple.com's 1px). */
 
 @layer components {
   .cui-globalnav {
@@ -515,9 +562,10 @@
     overflow: hidden;
   }
 
-  /* the search: closed, not shown (the browser's own style for a popover,
-     undone but its display) */
-  .cui-globalnav-search {
+  /* the search and the bag: closed, not shown (the browser's own style for
+     a popover, undone but its display) */
+  .cui-globalnav-search,
+  .cui-globalnav-bag {
     inset: auto;
     width: auto;
     height: auto;
@@ -533,7 +581,8 @@
 
   /* opened, to 833px: a sheet over the window, the bar too, growing from the
      bar's height and ground to the window's and the menu's, as the menu */
-  .cui-globalnav-search:popover-open {
+  .cui-globalnav-search:popover-open,
+  .cui-globalnav-bag:popover-open {
     position: fixed;
     inset: 0 0 auto;
     height: 100%;
@@ -549,7 +598,8 @@
   }
 
   /* the sheet's X, where the menu's button is */
-  .cui-globalnav-search .cui-globalnav-closebutton {
+  .cui-globalnav-search .cui-globalnav-closebutton,
+  .cui-globalnav-bag .cui-globalnav-closebutton {
     position: absolute;
     top: 0;
     right: 0;
@@ -718,6 +768,112 @@
     margin-top: 48px;
   }
 
+  /* the bag (bag-flyout:*): its message over a line, its heading over its
+     links, each after its icon, the text 30px in */
+  .cui-globalnav-bagpanel {
+    position: relative;
+    padding: 50px 48px 84px;
+  }
+
+  .cui-globalnav-bagmessage {
+    margin: 0 0 30px;
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-28);
+    color: var(--cui-c-on-menu);
+  }
+
+  .cui-globalnav-bagtext {
+    margin: 0;
+    font-size: 17px;
+    line-height: 21px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-17);
+    color: var(--cui-c-text-2);
+  }
+
+  /* its link, underlined, as apple.com's */
+  :where(.cui-globalnav-bagtext) a {
+    color: var(--cui-c-link);
+    text-decoration-line: underline;
+  }
+
+  .cui-globalnav-bagheading {
+    margin: 56px 0 0;
+    padding-bottom: 7px;
+    font-size: 17px;
+    line-height: 21px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-17);
+    color: var(--cui-c-text-2);
+  }
+
+  /* a row its link's line, the link 7px in it above and below */
+  .cui-globalnav-baglinks {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+      font-size: 17px;
+      line-height: 25px;
+    }
+  }
+
+  /* its icon before its text, in the secondary text's color, the link's
+     own hovered */
+  .cui-globalnav-baglink {
+    display: inline-flex;
+    align-items: flex-start;
+    margin: 7px 0;
+    vertical-align: top;
+    font-size: 17px;
+    line-height: 25px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-17);
+    color: var(--cui-c-on-menu);
+    text-decoration-line: none;
+
+    > svg {
+      flex: none;
+      margin-right: 14px;
+      color: var(--cui-c-text-2);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--cui-c-on-bar-hover);
+
+        > svg {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  /* its message, line, heading and rows in from above, each 20ms after the
+     one before, from 80ms */
+  .cui-globalnav-bag:popover-open {
+    .cui-globalnav-bagmessage,
+    .cui-globalnav-bagtext,
+    .cui-globalnav-bagheading,
+    .cui-globalnav-baglinks > li {
+      transition-property: opacity, transform;
+      transition-duration: 0.32s;
+      transition-timing-function: var(--cui-globalnav-ease);
+      transition-delay: 0.08s;
+    }
+
+    .cui-globalnav-bagtext { transition-delay: 0.1s; }
+    .cui-globalnav-bagheading { transition-delay: 0.12s; }
+    .cui-globalnav-baglinks > li:nth-child(1) { transition-delay: 0.14s; }
+    .cui-globalnav-baglinks > li:nth-child(2) { transition-delay: 0.16s; }
+    .cui-globalnav-baglinks > li:nth-child(3) { transition-delay: 0.18s; }
+    .cui-globalnav-baglinks > li:nth-child(4) { transition-delay: 0.2s; }
+    .cui-globalnav-baglinks > li:nth-child(n + 5) { transition-delay: 0.22s; }
+  }
+
   /* the curtain is the flyout's, from 834px */
   .cui-globalnav-curtain {
     display: none;
@@ -772,18 +928,33 @@
         transform: none;
       }
     }
+
+    .cui-globalnav-bag:popover-open {
+      .cui-globalnav-bagmessage,
+      .cui-globalnav-bagtext,
+      .cui-globalnav-bagheading,
+      .cui-globalnav-baglinks > li {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+
+      .cui-globalnav-closebutton path {
+        transform: none;
+      }
+    }
   }
 
   @media (width < 834px) {
     @starting-style {
-      .cui-globalnav-search:popover-open {
+      .cui-globalnav-search:popover-open,
+      .cui-globalnav-bag:popover-open {
         height: 48px;
         background-color: var(--cui-c-bar);
       }
     }
 
     /* the page under the sheet holds still, as apple.com's does */
-    :root:has(.cui-globalnav-search:popover-open) {
+    :root:has(:is(.cui-globalnav-search, .cui-globalnav-bag):popover-open) {
       overflow: hidden;
     }
   }
@@ -791,7 +962,8 @@
   /* from 834px: the flyout, from the bar's bottom to the window's, its panel
      and the curtain behind it */
   @media (width >= 834px) {
-    .cui-globalnav-search:popover-open {
+    .cui-globalnav-search:popover-open,
+    .cui-globalnav-bag:popover-open {
       position-anchor: --cui-globalnav;
       top: anchor(bottom);
       bottom: 0;
@@ -813,11 +985,14 @@
     }
 
     .cui-globalnav-search .cui-globalnav-closebutton,
-    .cui-globalnav-search .cui-globalnav-image-compact {
+    .cui-globalnav-search .cui-globalnav-image-compact,
+    .cui-globalnav-bag .cui-globalnav-closebutton,
+    .cui-globalnav-bag .cui-globalnav-image-compact {
       display: none;
     }
 
-    .cui-globalnav-search .cui-globalnav-image {
+    .cui-globalnav-search .cui-globalnav-image,
+    .cui-globalnav-bag .cui-globalnav-image {
       display: block;
     }
 
@@ -869,6 +1044,56 @@
       }
     }
 
+    /* the bag's content 980px at most (apple.com's 1024px, 22px in), 40px
+       down, 84px room below; the type a size down, the text 24px in */
+    .cui-globalnav-bagpanel {
+      z-index: 1;
+      padding: 40px max(22px, (100% - 980px) / 2) 84px;
+      background-color: var(--cui-c-menu);
+      clip-path: inset(0);
+    }
+
+    .cui-globalnav-bag:popover-open .cui-globalnav-bagpanel {
+      transition: clip-path 0.24s var(--cui-globalnav-ease), background-color 0.24s var(--cui-globalnav-ease);
+    }
+
+    .cui-globalnav-bagmessage {
+      margin-bottom: 24px;
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing: var(--cui-tracking-24);
+    }
+
+    .cui-globalnav-bagtext {
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: var(--cui-tracking-12);
+    }
+
+    .cui-globalnav-bagheading {
+      margin-top: 36px;
+      padding-bottom: 6px;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: var(--cui-tracking-12);
+    }
+
+    .cui-globalnav-baglinks > li {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .cui-globalnav-baglink {
+      margin: 6px 0;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: var(--cui-tracking-12);
+
+      > svg {
+        margin: 0 12px 0 1px;
+      }
+    }
+
     /* over the page under the flyout, a button that closes it */
     .cui-globalnav-curtain {
       position: absolute;
@@ -901,17 +1126,36 @@
           opacity: 0;
         }
       }
+
+      .cui-globalnav-bag:popover-open {
+        .cui-globalnav-bagpanel {
+          clip-path: inset(0 0 100% 0);
+          background-color: var(--cui-c-bar);
+        }
+
+        .cui-globalnav-bagmessage,
+        .cui-globalnav-bagtext,
+        .cui-globalnav-bagheading,
+        .cui-globalnav-baglinks > li {
+          transform: translateY(-4px);
+        }
+
+        .cui-globalnav-curtain {
+          opacity: 0;
+        }
+      }
     }
 
-    /* while it is open the bar shows the flyout's ground, unblurred, and its
-       search button is hovered's */
-    .cui-globalnav:has(.cui-globalnav-search:popover-open) {
+    /* while one is open the bar shows the flyout's ground, unblurred, and
+       its button is hovered's */
+    .cui-globalnav:has(:is(.cui-globalnav-search, .cui-globalnav-bag):popover-open) {
       background-color: var(--cui-c-menu);
       backdrop-filter: none;
+    }
 
-      .cui-globalnav-icon[popovertarget] {
-        color: var(--cui-c-on-bar-hover);
-      }
+    .cui-globalnav:has(.cui-globalnav-search:popover-open) .cui-globalnav-icon[popovertarget="cui-globalnav-search"],
+    .cui-globalnav:has(.cui-globalnav-bag:popover-open) .cui-globalnav-icon[popovertarget="cui-globalnav-bag"] {
+      color: var(--cui-c-on-bar-hover);
     }
   }
 

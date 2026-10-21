@@ -49,6 +49,21 @@ Its suggestions are a site’s script’s, as apple.com’s are (its script asks
 
 {{ <cui_example file="globalnav/suggestions" title="A global nav and its search’s suggestions" /> }}
 
+The bag can open over the page too, as apple.com’s does, where it would lead to the site’s bag: its icon is then a button opening another popover, the bag, with no script, an empty bag’s. Its message, a line under it beginning with a link (to sign in), and its links under a heading, each after its icon: the orders, the saved items, the account, signing in. It opens and closes as the search does: Escape, its button again, a click on the curtain or on the bar. From 834px it hangs from the bar’s bottom over a curtain that blurs the page, the focus staying on its button, Tab going on into it; below 834px it is a sheet over the window, its X taking the focus, the page held. What apple.com’s bag shows with something in it could not be read (its store refuses a headless browser’s Add to Bag), so the kit has the empty bag’s alone. In a narrow window the example’s bag opens over its frame.
+
+{{ <cui_example file="globalnav/bag" title="A global nav and its bag" /> }}
+
+| class | what |
+| --- | --- |
+| `cui-globalnav-bag` | the bag, after the menu’s button (and the search’s): `id` and `popover`; a flyout under the bar from 834px, a sheet over the window below |
+| `cui-globalnav-bagpanel` | its ground and its room: its message, line, heading and links, and the sheet’s X |
+| `cui-globalnav-bagmessage` | its message, an `h2` |
+| `cui-globalnav-bagtext` | a line under it, its link underlined |
+| `cui-globalnav-bagheading` | the heading over its links, an `h3`, which names their list |
+| `cui-globalnav-baglinks` | its rows, each a `cui-globalnav-baglink` after its icon: `icon::ORDERS`, `icon::SAVES`, `icon::ACCOUNT` or `icon::SIGN_IN` (their compact forms below 834px) |
+| `cui-globalnav-closebutton` | the sheet’s X below 834px, `autofocus` |
+| `cui-globalnav-curtain` | the curtain under the flyout from 834px, a button that closes it |
+
 A link can open a flyout, a menu under the bar, as apple.com’s do, with no script: in the link’s item, after the link, its button and the flyout, another popover. From 834px, with a pointer, the pointer resting on the link shows it, a panel from the bar down across the window, its groups in a row, the page under it blurred; moved on along the bar, the next link’s replaces it, and off the bar and the flyout, it goes. Under 120ms on a link shows nothing, so a pointer passing over the bar opens no flyout. The button, at the link’s end, shows its chevron only with the focus from the keyboard: Return opens the flyout, Tab goes into it, Escape closes it, the focus back on the button. On a screen with no hover the button lies over the link, so a tap on the link opens the flyout, as apple.com’s script makes it. Below 834px the menu’s row is the button: a tap opens the flyout over the menu, a sheet with a back button, which goes back to the menu, and an X, which closes both. The pointer shows the example’s flyouts where its frame is 834px wide or more.
 
 {{ <cui_example file="globalnav/flyout" title="A global nav with flyouts" /> }}
@@ -65,4 +80,4 @@ A link can open a flyout, a menu under the bar, as apple.com’s do, with no scr
 | `cui-globalnav-closebutton` | the sheet’s X below 834px, hiding the menu, and the flyout with it |
 | `cui-globalnav-curtain` | the curtain under the flyout its button opens, from 834px; the pointer’s flyout has the list’s own, which takes no click |
 
-The nav has no place on the page of its own: a site that keeps it at the top adds `sticky top-0`, and a `z-index` over its page’s, which its flyouts are drawn in. The crate writes it with `GlobalNav`, its links `NavLink`, a flyout’s groups `FlyoutGroup`, its search `Search::Link` or `Search::Flyout`, its icons `icon::SEARCH`, `icon::BAG` and `icon::MENU`, their compact forms, the search’s `icon::SEARCHFIELD`, `icon::ARROW`, `icon::CLEAR` and `icon::SUGGESTION`, and a flyout’s `icon::FLYOUT`, `icon::FLYOUT_COMPACT` and `icon::FLYOUT_BACK`.
+The nav has no place on the page of its own: a site that keeps it at the top adds `sticky top-0`, and a `z-index` over its page’s, which its flyouts are drawn in. The crate writes it with `GlobalNav`, its links `NavLink`, a flyout’s groups `FlyoutGroup`, its search `Search::Link` or `Search::Flyout`, its bag `Bag::Link` or `Bag::Flyout`, a bag’s links `BagLink`, its icons `icon::SEARCH`, `icon::BAG` and `icon::MENU`, their compact forms, the search’s `icon::SEARCHFIELD`, `icon::ARROW`, `icon::CLEAR` and `icon::SUGGESTION`, the bag’s `icon::ORDERS`, `icon::SAVES`, `icon::ACCOUNT` and `icon::SIGN_IN`, and a flyout’s `icon::FLYOUT`, `icon::FLYOUT_COMPACT` and `icon::FLYOUT_BACK`.

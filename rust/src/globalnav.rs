@@ -2,7 +2,7 @@ use hypertext::{Buffer, prelude::*};
 
 use crate::icon::{
     ARROW, ARROW_COMPACT, BAG, BAG_COMPACT, CLEAR, CLEAR_COMPACT, FLYOUT, FLYOUT_BACK,
-    FLYOUT_COMPACT, MENU, SEARCH, SEARCH_COMPACT, SEARCHFIELD, SEARCHFIELD_COMPACT,
+    FLYOUT_COMPACT, Icon, MENU, SEARCH, SEARCH_COMPACT, SEARCHFIELD, SEARCHFIELD_COMPACT,
 };
 
 // the list's id, which its button opens, and the search's: a page has one
@@ -10,6 +10,8 @@ use crate::icon::{
 const MENU_ID: &str = "cui-globalnav-menu";
 const SEARCH_ID: &str = "cui-globalnav-search";
 const HEADING_ID: &str = "cui-globalnav-searchheading";
+const BAG_ID: &str = "cui-globalnav-bag";
+const BAG_HEADING_ID: &str = "cui-globalnav-bagheading";
 
 /// A link of the global nav ([`GlobalNav`]'s `links`): its text, where it
 /// goes, and the groups of the flyout it opens, if it opens one: from 834px
@@ -85,6 +87,53 @@ pub enum Search<'a> {
     },
 }
 
+/// The global nav's bag ([`GlobalNav`]'s `bag`).
+pub enum Bag<'a> {
+    /// A link to the site's bag.
+    Link(&'a str),
+    /// A button opening the bag with no script, an empty bag's, as
+    /// apple.com's: its message, a line under it (a link, then the rest of
+    /// its sentence), and its links under their heading, each after its
+    /// icons ([`BagLink`]); from 834px a flyout under the bar, to 833px a
+    /// sheet over the window.
+    Flyout {
+        /// Its message (`Your Bag is empty.`). Required: an empty one panics.
+        message: &'a str,
+        /// The line under it: a link's text and where it goes, then the rest
+        /// of its sentence (`("Sign in", "/signin", " to see if you have any
+        /// saved items")`); `None` for none.
+        line: Option<(&'a str, &'a str, &'a str)>,
+        /// The heading over its links (`My Profile`), which names their list.
+        /// Required where there are links.
+        heading: &'a str,
+        /// Its links, in order; `&[]` for none, and no heading.
+        links: &'a [BagLink<'a>],
+    },
+}
+
+/// A link of the bag's flyout ([`Bag::Flyout`]'s `links`): its icons, the
+/// one from 834px and the one to 833px (apple.com's, the crate's
+/// [`ORDERS`](crate::icon::ORDERS), [`SAVES`](crate::icon::SAVES),
+/// [`ACCOUNT`](crate::icon::ACCOUNT), [`SIGN_IN`](crate::icon::SIGN_IN) and
+/// each one's `_COMPACT`), its text and where it goes.
+///
+/// ```
+/// use ciderui::BagLink;
+/// use ciderui::icon::{ORDERS, ORDERS_COMPACT};
+///
+/// let orders = BagLink { icons: (ORDERS, ORDERS_COMPACT), text: "Orders", href: "/orders" };
+/// assert_eq!(orders.text, "Orders");
+/// ```
+#[derive(Clone, Copy, Debug)]
+pub struct BagLink<'a> {
+    /// Its icon from 834px and its icon to 833px.
+    pub icons: (Icon, Icon),
+    /// Its text. Required.
+    pub text: &'a str,
+    /// Where it goes. Required.
+    pub href: &'a str,
+}
+
 /// `cui-globalnav` (`components/globalnav`): the bar across the top of the
 /// page, the site's logo, its links and its search and bag; to 833px the
 /// links are a menu its button opens over the window, with no script (the
@@ -121,8 +170,9 @@ pub struct GlobalNav<'a, L: Renderable> {
     /// The site's search, if it has one ([`SEARCH`]): a link to its page,
     /// or the search opened over the page ([`Search`]).
     pub search: Option<Search<'a>>,
-    /// The site's bag, if it has one ([`BAG`]).
-    pub bag: Option<&'a str>,
+    /// The site's bag, if it has one ([`BAG`]): a link to its page, or the
+    /// bag opened over the page ([`Bag`]).
+    pub bag: Option<Bag<'a>>,
     /// Whether the nav is dark (`cui-dark`): the dark bar and menu.
     pub dark: bool,
     /// Whether the bar is clear (`data-variant="clear"`): no ground and no
@@ -155,6 +205,34 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
                 "ciderui::GlobalNav's search needs its page (action)"
             );
         }
+        if let Some(Bag::Flyout {
+            message,
+            line,
+            heading,
+            links,
+        }) = self.bag
+        {
+            assert!(
+                !message.is_empty(),
+                "ciderui::GlobalNav's bag needs its message"
+            );
+            if let Some((text, href, _)) = line {
+                assert!(
+                    !text.is_empty() && !href.is_empty(),
+                    "ciderui::GlobalNav's bag's line needs its link's text and href"
+                );
+            }
+            assert!(
+                links.is_empty() || !heading.is_empty(),
+                "ciderui::GlobalNav's bag's links need their heading"
+            );
+            for link in links {
+                assert!(
+                    !link.text.is_empty() && !link.href.is_empty(),
+                    "ciderui::GlobalNav's bag's links need their text and href"
+                );
+            }
+        }
         let mut class = String::from("cui-globalnav");
         if self.dark {
             class.push_str(" cui-dark");
@@ -182,8 +260,11 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
                         @if let Some(Search::Flyout { .. }) = self.search {
                             <li><button class="cui-globalnav-icon" popovertarget=(SEARCH_ID) aria-label="Search">(SEARCH.class("cui-globalnav-image"))(SEARCH_COMPACT.class("cui-globalnav-image-compact"))</button></li>
                         }
-                        @if let Some(href) = self.bag {
+                        @if let Some(Bag::Link(href)) = self.bag {
                             <li><a class="cui-globalnav-icon" href=(href) aria-label="Bag">(BAG.class("cui-globalnav-image"))(BAG_COMPACT.class("cui-globalnav-image-compact"))</a></li>
+                        }
+                        @if let Some(Bag::Flyout { .. }) = self.bag {
+                            <li><button class="cui-globalnav-icon" popovertarget=(BAG_ID) aria-label="Bag">(BAG.class("cui-globalnav-image"))(BAG_COMPACT.class("cui-globalnav-image-compact"))</button></li>
                         }
                     </ul>
                     <button class="cui-globalnav-menubutton" popovertarget=(MENU_ID) aria-label="Menu">(MENU)</button>
@@ -206,6 +287,26 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
                                 <button class="cui-globalnav-closebutton" popovertarget=(SEARCH_ID) popovertargetaction="hide" aria-label="Close">(MENU)</button>
                             </div>
                             <button class="cui-globalnav-curtain" popovertarget=(SEARCH_ID) popovertargetaction="hide" tabindex="-1" aria-hidden="true"></button>
+                        </div>
+                    }
+                    @if let Some(Bag::Flyout { message, line, heading, links }) = self.bag {
+                        <div class="cui-globalnav-bag" id=(BAG_ID) popover>
+                            <div class="cui-globalnav-bagpanel">
+                                <h2 class="cui-globalnav-bagmessage">(message)</h2>
+                                @if let Some((text, href, rest)) = line {
+                                    <p class="cui-globalnav-bagtext"><a href=(href)>(text)</a>(rest)</p>
+                                }
+                                @if !links.is_empty() {
+                                    <h3 class="cui-globalnav-bagheading" id=(BAG_HEADING_ID)>(heading)</h3>
+                                    <ul class="cui-globalnav-baglinks" aria-labelledby=(BAG_HEADING_ID)>
+                                        @for link in links {
+                                            <li><a class="cui-globalnav-baglink" href=(link.href)>(link.icons.0.class("cui-globalnav-image"))(link.icons.1.class("cui-globalnav-image-compact"))(link.text)</a></li>
+                                        }
+                                    </ul>
+                                }
+                                <button class="cui-globalnav-closebutton" popovertarget=(BAG_ID) popovertargetaction="hide" aria-label="Close" autofocus>(MENU)</button>
+                            </div>
+                            <button class="cui-globalnav-curtain" popovertarget=(BAG_ID) popovertargetaction="hide" tabindex="-1" aria-hidden="true"></button>
                         </div>
                     }
                 </div>
@@ -260,7 +361,10 @@ impl Renderable for Flyout<'_> {
 mod tests {
     use super::*;
     use crate::example::example;
-    use crate::icon::{Icon, SUGGESTION, SUGGESTION_COMPACT};
+    use crate::icon::{
+        ACCOUNT, ACCOUNT_COMPACT, Icon, ORDERS, ORDERS_COMPACT, SAVES, SAVES_COMPACT, SIGN_IN,
+        SIGN_IN_COMPACT, SUGGESTION, SUGGESTION_COMPACT,
+    };
     use hypertext::Raw;
 
     const LINKS: &[NavLink] = &[
@@ -279,7 +383,7 @@ mod tests {
     #[test]
     fn renders_the_example() {
         let html = rsx! {
-            <GlobalNav logo=(logo()) home="/" name="Cider" links=(LINKS) search=(Some(Search::Link("/search"))) bag=(Some("/bag")) dark=false clear=false class="" />
+            <GlobalNav logo=(logo()) home="/" name="Cider" links=(LINKS) search=(Some(Search::Link("/search"))) bag=(Some(Bag::Link("/bag"))) dark=false clear=false class="" />
         }
         .render();
         assert_eq!(
@@ -353,7 +457,7 @@ mod tests {
     #[test]
     fn renders_the_flyout_example() {
         let html = rsx! {
-            <GlobalNav logo=(logo()) home="/" name="Cider" links=(FLYOUTS) search=(Some(Search::Link("/search"))) bag=(Some("/bag")) dark=false clear=false class="" />
+            <GlobalNav logo=(logo()) home="/" name="Cider" links=(FLYOUTS) search=(Some(Search::Link("/search"))) bag=(Some(Bag::Link("/bag"))) dark=false clear=false class="" />
         }
         .render();
         assert_eq!(
@@ -361,6 +465,48 @@ mod tests {
             example(include_str!(
                 "../../components/globalnav/examples/flyout.html"
             ))
+        );
+    }
+
+    const BAG_LINKS: &[BagLink] = &[
+        BagLink {
+            icons: (ORDERS, ORDERS_COMPACT),
+            text: "Orders",
+            href: "/orders",
+        },
+        BagLink {
+            icons: (SAVES, SAVES_COMPACT),
+            text: "Your Saves",
+            href: "/saves",
+        },
+        BagLink {
+            icons: (ACCOUNT, ACCOUNT_COMPACT),
+            text: "Account",
+            href: "/account",
+        },
+        BagLink {
+            icons: (SIGN_IN, SIGN_IN_COMPACT),
+            text: "Sign in",
+            href: "/signin",
+        },
+    ];
+
+    const EMPTY_BAG: Bag = Bag::Flyout {
+        message: "Your Bag is empty.",
+        line: Some(("Sign in", "/signin", " to see if you have any saved items")),
+        heading: "My Profile",
+        links: BAG_LINKS,
+    };
+
+    #[test]
+    fn renders_the_bag_example() {
+        let html = rsx! {
+            <GlobalNav logo=(logo()) home="/" name="Cider" links=(LINKS) search=(Some(Search::Link("/search"))) bag=(Some(EMPTY_BAG)) dark=false clear=false class="" />
+        }
+        .render();
+        assert_eq!(
+            *html.as_inner(),
+            example(include_str!("../../components/globalnav/examples/bag.html"))
         );
     }
 
@@ -375,7 +521,7 @@ mod tests {
     #[test]
     fn renders_the_search_example() {
         let html = rsx! {
-            <GlobalNav logo=(logo()) home="/" name="Cider" links=(LINKS) search=(Some(Search::Flyout { action: "/search", links: QUICK })) bag=(Some("/bag")) dark=false clear=false class="" />
+            <GlobalNav logo=(logo()) home="/" name="Cider" links=(LINKS) search=(Some(Search::Flyout { action: "/search", links: QUICK })) bag=(Some(Bag::Link("/bag"))) dark=false clear=false class="" />
         }
         .render();
         assert_eq!(
@@ -392,7 +538,7 @@ mod tests {
     #[test]
     fn the_suggestions_example_is_the_search_with_its_sections() {
         let search = rsx! {
-            <GlobalNav logo=(logo()) home="/" name="Cider" links=(LINKS) search=(Some(Search::Flyout { action: "/search", links: QUICK })) bag=(Some("/bag")) dark=false clear=false class="" />
+            <GlobalNav logo=(logo()) home="/" name="Cider" links=(LINKS) search=(Some(Search::Flyout { action: "/search", links: QUICK })) bag=(Some(Bag::Link("/bag"))) dark=false clear=false class="" />
         }
         .render();
         let search = search.as_inner();

@@ -110,6 +110,7 @@ PW=…/playwright-chromium/index.mjs node localnav.mjs   # the local nav's chevr
 PW=…/playwright-chromium/index.mjs node searchfield.mjs   # the search's magnifier and arrow
 PW=…/playwright-chromium/index.mjs node flyout.mjs   # the flyouts' chevrons
 PW=…/playwright-chromium/index.mjs node form.mjs   # the field's error mark and the dropdown's chevron
+PW=…/playwright-chromium/index.mjs node bag.mjs   # the bag's profile icons
 ```
 
 `glyph.js` runs on apple.com's page, where its icon font is declared: it loads the face, draws the character on a canvas, reads the numbers off the ink, draws the chevron they describe on another, and compares the two. `nav.mjs` reads the nav's SVG off the page and compares on a blank one. The browsers are `../browsers.mjs`'s.
@@ -132,3 +133,31 @@ Both are apple.com's lines, drawn as its pages draw them: the bag's accordion's 
 The store's overlay draws its close button's X as a 20px SVG with no view box (`.rc-overlay-close svg`, its units the button's pixels), the outline of two lines 3 thick, round at their ends: its ink 3.35 to 16.7 across and 3.3 to 16.6 down, each round end's middle at 4.88 and 15.12 (the arcs' points, `a1.5 1.5` between them). ciderui's `CLOSE` is those two lines, from (4.88, 4.88) to (15.12, 15.12) and from (15.12, 4.88) to (4.88, 15.12), 3 thick, round, in 20 by 20: it shares 0.9927 of its ink with apple.com's (intersection over union; `close.mjs` fails below 0.85, and holds the drawing to the modal's example), the runs across its middle and its arms the same to the twentieth of a unit. Measured 2026-10-19 on iPhone 18 Pro's buy page, its first "Show more" opened, in Chromium 151 on Linux (`results/close.json`).
 
 The marketing pages' modal (the iPhone page's trade-in modal, `ric-modal`) draws its X white in a 36 by 36 SVG over its circle: one path, its ink 12 to 24 across and down, the same strokes as the store's (3 thick, the runs across its middle 15.85 to 20.15, as `CLOSE`'s drawn in the box's middle), each arm 0.6 shorter at its ends. `CLOSE` drawn there shares 0.8875 of its ink with it (its ink 11.4 to 24.6); ciderui's `CLOSE_SMALL` is the same two lines from (5.5, 5.5) to (14.5, 14.5) and from (14.5, 5.5) to (5.5, 14.5) in 20 by 20, and shares 0.9994 (`close.mjs` reads it too, and holds the drawing to the page modal's example). Measured 2026-10-21 in Chromium 151 on Linux (`results/close.json`'s `marketing`).
+
+## The bag's profile icons
+
+The global nav's bag, opened (`../apple.com/`, `bag-flyout:*`), draws an icon before each of its four profile links, a regular SVG from 834px (11 by 16) and a compact one to 833px (16 by 25), in its markup its script fetches: a box (`shippingbox`, Orders), a bookmark (Your Saves), a gear (Account) and a person in a circle (Sign in). Their fill, `6E6E73` without its `#`, is no color: the link's color draws them. `bag.mjs` reads them off the home page with the bag opened and compares as `nav.mjs` does; the box's, the bookmark's and the person's numbers are read off the outlines' points and arcs (the edges' slope, a stroke's two edges, a corner's radius), the gear's off its ink in rings about its middle (its ring's, hub's, spokes' and teeth's radii, their share of each ring, the teeth's places every 20°):
+
+| icon | apple.com's | ciderui's |
+| --- | --- | --- |
+| the box, 11 by 16 | a hexagon 0.875 thick, its edges at 29.43°, its corners 1.5 round outside; its top face's lower edges meeting at 7.375 down over a line to its foot; a band across its top face from its upper left edge, 0.875 thick, cut square at its end | a hexagon through (5.511, 2.548), (9.738, 4.933), (9.738, 9.684), (5.511, 12.068), (1.285, 9.684) and (1.285, 4.933), its corners rounded 1.0625; the top face's edges from the side corners' arcs, (1.43, 5.018) and (9.593, 5.018), to (5.511, 7.375), and the line down to 11.91, the bottom corner's arc; the band from (3.849, 3.988) to (7.254, 5.878), square ends; 0.875 thick, round |
+| the box, 16 by 25 | the same, 1.2 thick, its corners about 2.3 round outside | through (8, 5.74), (14, 9.125), (14, 15.875), (8, 19.259), (2, 15.875) and (2, 9.125), corners 1.7; the edges from (2.232, 9.26) and (13.768, 9.26) to (8, 12.594), the line to 19.007; the band from (5.561, 7.806) to (10.456, 10.522); 1.2 thick |
+| the bookmark, 11 by 16 | its sides 0.82 thick (2.31 to 3.13 and 7.87 to 8.69), its top 0.73, its outer corners 1.59 round and inner 0.78; its notch 0.875 thick at 45°, its outer point at (5.5, 9.94), its legs' round ends 12.38 down | a line from (2.719, 11.97) up to 2.789, its corners rounded 1.184, across to 8.281 and down to 11.97, then up to (5.5, 9.3) and back, 0.82 thick, round |
+| the bookmark, 16 by 25 | its sides and top 1.2 thick, its corners 2.3 round outside and 1.1 inside; its notch's points at 16.34 outside and 15.15 inside | the same from (4, 19.25) to 5.75, corners 1.7, across to 12, the notch up to (8, 15.75), 1.2 thick |
+| the gear, 11 by 16 | about (5.5, 7.25): a hub 0.6 to 1.2 out, three spokes about 0.69 thick at 0°, 120° and 240°, a ring 3.66 to 4.45 out, 18 teeth every 20° to 5.2 out, about 0.7 wide | a hub circle of radius 0.9, 0.65 thick; the spokes from 1.2 to 3.7 out, 0.69 thick; a ring of radius 4.05, 0.79 thick; the teeth from 4.4 to 4.82 out, 0.68 thick, round |
+| the gear, 16 by 25 | about (8, 12.5): a hub 0.8 to 2.05 out, the spokes about 1.21 thick, a ring 5.45 to 6.75, the teeth to 7.7, about 1.07 wide | a hub of radius 1.42, 1.25 thick; the spokes from 2 to 5.5, 1.21 thick; a ring of radius 6.1, 1.28 thick; the teeth from 6.7 to 7.15, 1.05 thick |
+| the person, 11 by 16 | a ring about (5.5, 7.633), 4.731 out and 3.844 in; a head, an ellipse about (5.5, 6.71), 1.605 by 1.69; shoulders filled under an arc of radius 3.898 from (2.62, 10.163) to (8.38, 10.163) | a ring of radius 4.287, 0.887 thick; the head; the shoulders from (2.62, 10.163) up the arc to (8.38, 10.163) and back along the ring's inside, filled |
+| the person, 16 by 25 | a ring about (7.99, 12.5), 7.1 out and 5.89 in; a head about (7.99, 11), 2.475 by 2.6; shoulders under curves from (3.529, 16.347) to (12.452, 16.347) through (7.99, 14.669) | a ring of radius 6.495, 1.21 thick; the head; the shoulders under an arc of radius 6.77 through the same points, filled |
+
+| icon | shared ink |
+| --- | --- |
+| the box | 0.9915 |
+| the box, compact | 0.9851 |
+| the bookmark | 0.9518 |
+| the bookmark, compact | 0.9723 |
+| the gear | 0.9387 |
+| the gear, compact | 0.9675 |
+| the person | 0.972 |
+| the person, compact | 0.986 |
+
+Intersection over union; the probe fails below 0.85, a mark set before the run, or if the bag's example (`components/globalnav/examples/bag.html`) draws others. Measured 2026-10-22 on https://www.apple.com/ in Chromium 151 on Linux (`results/bag.json`).

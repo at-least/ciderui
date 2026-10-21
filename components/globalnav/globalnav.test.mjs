@@ -128,6 +128,33 @@ const FPLACE = 'the same distance from the nav\'s top as apple.com\'s (flyout:*,
 // 834px, 135px to 833px): a place here is the same distance from the bar
 const PLACE = 'the same distance from the bar as apple.com\'s (search:*, its locale banner above its nav)';
 
+// the bag: the example with its button opening its flyout, an empty bag's
+const BAG_NAV = ex('bag');
+const BAG_DARK = BAG_NAV.replace('class="cui-globalnav"', 'class="cui-globalnav cui-dark"');
+const BBUTTON = `${LIST} > li:nth-child(8) > .cui-globalnav-icon`;
+const BFLY = '.cui-globalnav-bag';
+const BPANEL = '.cui-globalnav-bagpanel';
+const BMESSAGE = '.cui-globalnav-bagmessage';
+const BTEXT = '.cui-globalnav-bagtext';
+const BTEXTLINK = `${BTEXT} > a`;
+const BHEADING = '.cui-globalnav-bagheading';
+const BROW = '.cui-globalnav-baglinks > li:first-child';
+const BROW2 = '.cui-globalnav-baglinks > li:nth-child(2)';
+const BLINK = `${BROW} > .cui-globalnav-baglink`;
+const BCURTAIN = `${BFLY} > .cui-globalnav-curtain`;
+const BCLOSE = `${BFLY} .cui-globalnav-closebutton`;
+const BAGGING = { click: BBUTTON, height: 900 };
+// the bag's motion held at its start, for a case that reads its start
+const BHOLD = '<style>.cui-globalnav-bag, .cui-globalnav-bag * { transition-delay: 10s !important; }</style>';
+// the flyouts' example with the bag's flyout in the bag link's place: what
+// the crate writes for both
+const FLYOUT_BAG = FLYOUT_NAV
+  .replace(/<li><a class="cui-globalnav-icon" href="\/bag"[^\n]*<\/a><\/li>/, BAG_NAV.match(/<li><button class="cui-globalnav-icon" popovertarget="cui-globalnav-bag"[^\n]*<\/button><\/li>/)[0])
+  .replace(/(<button class="cui-globalnav-menubutton"[^\n]*<\/button>)/, (m) => `${m}\n${BAG_NAV.slice(BAG_NAV.indexOf('<div class="cui-globalnav-bag"'), BAG_NAV.lastIndexOf('</div>\n</nav>'))}`);
+// apple.com's bag is read below its locale banner (70px from 834px, 135px
+// to 833px): a place here is the same distance from the bar
+const BPLACE = 'the same distance from the bar as apple.com\'s (bag-flyout:*, its locale banner above its nav)';
+
 export const cases = [
   {
     name: 'bar',
@@ -1162,4 +1189,265 @@ export const cases = [
       { target: CHEVRON_COMPACT, state: 'hover', on: MAC_BUTTON, props: ['opacity'], rest: 'its chevron not shown by a tap (rule 5), where apple.com\'s shows on a hovered row' },
     ],
   },
+  // the bag (bag-flyout:*): opened by its button, from 834px a flyout from
+  // the bar's bottom over its curtain, to 833px a sheet over the window
+  {
+    name: 'bag',
+    html: BAG_NAV,
+    ...BAGGING,
+    widths: WIDE,
+    reducedMotion: 'reduce',
+    checks: [
+      // the bar over it, its button, the page not held
+      { target: '.cui-globalnav', props: ['backdrop-filter'], apple: ['bag-flyout', 'nav'] },
+      { target: '.cui-globalnav', props: ['background-color'], apple: ['bag-flyout', 'flyout'] },
+      { target: '.cui-globalnav', props: ['background-image'], golden: 'the flyout\'s ground alone: apple.com\'s flyout runs from the nav\'s top (bag-flyout:flyout, margin-top -44px) over the nav\'s own ground' },
+      { target: BBUTTON, props: ['color'], apple: ['bag-flyout', 'link.bag'] },
+      { target: BBUTTON, props: ['focused'], golden: 'opened by its button, the focus stays on it: its X (autofocus) is not shown from 834px' },
+      { target: 'html', props: ['overflow-y'], apple: ['bag-flyout', 'root'] },
+      // the flyout from the bar's bottom, its panel, the curtain behind it
+      { target: BFLY, props: ['box-top', 'box-left', 'box-height'], golden: 'from the bar\'s bottom (anchor positioning) to the window\'s, across it, as the search\'s (reference/search/)' },
+      { target: BPANEL, props: ['background-color'], apple: ['bag-flyout', 'flyout'] },
+      { target: BPANEL, props: ['padding-top', 'padding-bottom'], apple: ['bag-flyout', 'flyout.content'] },
+      { target: BPANEL, props: ['box-height'], apple: ['bag-flyout', 'flyout.scroll'] },
+      { target: BPANEL, props: ['box-top'], golden: 'from the bar\'s bottom, where apple.com\'s flyout\'s room starts (bag-flyout:flyout.scroll, 44px into its nav)' },
+      { target: BCURTAIN, props: ['background-color', 'backdrop-filter', 'opacity'], apple: ['bag-flyout', 'curtain'] },
+      { target: BCURTAIN, props: ['box-top', 'box-height', 'hit'], golden: 'behind the panel from the bar\'s bottom to the window\'s, a button: what the pointer finds under the panel (apple.com\'s curtain is the window\'s, under its flyout)' },
+      { target: BCLOSE, props: ['display'], golden: 'the sheet\'s X, not shown from 834px' },
+      // its message, its line, its heading
+      { target: BMESSAGE, props: [...TYPE, 'margin-bottom', 'box-height', 'box-left'], apple: ['bag-flyout', 'bag.header'] },
+      { target: BMESSAGE, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: BMESSAGE, props: ['box-top'], golden: `40px below the bar, ${BPLACE}` },
+      { target: BTEXT, props: [...TYPE, 'box-height', 'box-left'], apple: ['bag-flyout', 'bag.subheader'] },
+      { target: BTEXT, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: BTEXT, props: ['box-top'], golden: `24px below the message, ${BPLACE}` },
+      { target: BTEXTLINK, props: ['color', 'text-decoration-line'], apple: ['bag-flyout', 'bag.subheader-link'] },
+      { target: BTEXTLINK, state: 'focus-visible', props: ['outline-style', 'outline-color', 'outline-width'], apple: ['bag-flyout', 'bag.subheader-link', 'focus-visible'] },
+      { target: BTEXTLINK, state: 'focus-visible', props: ['outline-offset'], golden: 'the kit\'s one ring, 3px out (base.css), where apple.com\'s is 1px out (bag-flyout:bag.subheader-link)' },
+      { target: BHEADING, props: [...TYPE, 'margin-top', 'padding-bottom', 'box-height', 'box-left'], apple: ['bag-flyout', 'bag.nav-header'] },
+      { target: BHEADING, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: BHEADING, props: ['box-top'], golden: `36px below the line, ${BPLACE}` },
+      // its links: a 28px row each, its icon before its text
+      { target: BROW, props: ['box-height'], apple: ['bag-flyout', 'bag.nav-item'] },
+      { target: BROW2, props: ['box-top'], golden: `28px below the first, ${BPLACE}` },
+      { target: BLINK, props: ['font-size', 'line-height', 'font-weight', 'margin-top', 'margin-bottom', 'display', 'text-decoration-line', 'background-color', 'box-height', 'box-left'], apple: ['bag-flyout', 'bag.nav-link'] },
+      { target: BLINK, props: ['color'], apple: ['bag-flyout', 'bag.nav-text'] },
+      { target: BLINK, state: 'hover', props: ['color'], apple: ['bag-flyout', 'bag.nav-text', 'hover'] },
+      { target: BLINK, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: BLINK, props: ['transition-property', 'transition-duration'], apple: ['bag-flyout', 'bag.nav-link'] },
+      { target: BLINK, state: 'focus-visible', props: ['outline-style', 'outline-color', 'outline-width'], apple: ['bag-flyout', 'bag.nav-link', 'focus-visible'] },
+      { target: BLINK, state: 'focus-visible', props: ['color', 'outline-offset'], golden: 'the kit\'s one ring, 3px out (base.css), where apple.com\'s is 1px out, its color the link\'s (bag-flyout:bag.nav-link)' },
+      { target: `${BLINK} .cui-globalnav-image`, props: ['box-height', 'box-left', 'color'], apple: ['bag-flyout', 'bag.nav-image-regular'] },
+      { target: `${BLINK} .cui-globalnav-image`, state: 'hover', on: BLINK, props: ['color'], apple: ['bag-flyout', 'bag.nav-icon', 'hover'] },
+      { target: `${BLINK} .cui-globalnav-image`, props: ['box-width', 'margin-right'], golden: 'apple.com\'s 11 by 16 icon, 1px in, the text 24px in after it (bag-flyout:bag.nav-image-regular, bag.nav-text\'s padding-left)' },
+      { target: `${BLINK} .cui-globalnav-image-compact`, props: ['display'], golden: 'the phone\'s icon, not drawn from 834px' },
+    ],
+  },
+  {
+    name: 'bag-phone',
+    html: BAG_NAV,
+    ...BAGGING,
+    widths: NARROW,
+    reducedMotion: 'reduce',
+    checks: [
+      { target: BFLY, props: ['background-color'], apple: ['bag-flyout', 'nav.content'] },
+      { target: BFLY, props: ['box-top', 'box-left', 'box-height'], golden: 'a sheet over the window, the bar too (apple.com\'s, bag-flyout:nav.content, from its nav\'s top below its locale banner)' },
+      { target: 'html', props: ['overflow-y'], apple: ['bag-flyout', 'root'] },
+      { target: BPANEL, props: ['padding-top', 'padding-left', 'padding-right'], apple: ['bag-flyout', 'flyout.content'] },
+      { target: BPANEL, props: ['padding-bottom'], apple: ['bag-flyout', 'flyout.scroll'] },
+      { target: BCURTAIN, props: ['display'], golden: 'no curtain: the sheet is over the window (apple.com\'s, under it, is not seen)' },
+      { target: BMESSAGE, props: [...TYPE, 'margin-bottom', 'box-height', 'box-left'], apple: ['bag-flyout', 'bag.header'] },
+      { target: BMESSAGE, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: BMESSAGE, props: ['box-top'], golden: `50px down the sheet, ${BPLACE}` },
+      { target: BTEXT, props: [...TYPE, 'box-left'], apple: ['bag-flyout', 'bag.subheader'] },
+      { target: BTEXTLINK, props: ['color', 'text-decoration-line'], apple: ['bag-flyout', 'bag.subheader-link'] },
+      { target: BHEADING, props: [...TYPE, 'margin-top', 'padding-bottom', 'box-height', 'box-left'], apple: ['bag-flyout', 'bag.nav-header'] },
+      { target: BROW, props: ['box-height'], apple: ['bag-flyout', 'bag.nav-item'] },
+      { target: BLINK, props: ['font-size', 'line-height', 'font-weight', 'margin-top', 'margin-bottom', 'display', 'box-height', 'box-left'], apple: ['bag-flyout', 'bag.nav-link'] },
+      { target: BLINK, props: ['color'], apple: ['bag-flyout', 'bag.nav-text'] },
+      { target: BLINK, state: 'hover', props: ['color'], apple: ['bag-flyout', 'bag.nav-text', 'hover'] },
+      { target: `${BLINK} .cui-globalnav-image-compact`, props: ['box-height', 'box-left', 'color'], apple: ['bag-flyout', 'bag.nav-image-compact'] },
+      { target: `${BLINK} .cui-globalnav-image-compact`, state: 'hover', on: BLINK, props: ['color'], apple: ['bag-flyout', 'bag.nav-icon-compact', 'hover'] },
+      { target: `${BLINK} .cui-globalnav-image-compact`, props: ['box-width', 'margin-right'], golden: 'apple.com\'s 16 by 25 icon, the text 30px in after it (bag-flyout:bag.nav-image-compact, bag.nav-text\'s padding-left)' },
+      { target: `${BLINK} .cui-globalnav-image`, props: ['display'], golden: 'the wide icon, not drawn to 833px' },
+      { target: BCLOSE, props: ['color', 'opacity'], apple: ['bag-flyout', 'menutrigger'] },
+      { target: BCLOSE, props: ['box-top', 'box-left', 'box-width', 'box-height'], golden: 'apple.com\'s X where the menu\'s button is, its Close (bag-flyout:menutrigger: the menu\'s button turned, 48px at the right)' },
+      { target: BCLOSE, props: ['focused'], golden: 'opened, the focus on its X (autofocus), as the menu\'s' },
+    ],
+  },
+  {
+    name: 'bag-motion',
+    html: BAG_NAV,
+    ...BAGGING,
+    widths: [1600, 390],
+    checks: [
+      { target: BMESSAGE, props: [...MOTION, 'transition-delay'], golden: 'apple.com\'s rows in 0.32s from 80ms (bag-flyout:bag.header: opacity and transform, cubic-bezier(.4,0,.6,1))' },
+      { target: BTEXT, props: ['transition-delay'], golden: 'apple.com\'s line 20ms after the message (bag-flyout:bag.subheader)' },
+      { target: BHEADING, props: ['transition-delay'], golden: 'apple.com\'s heading 20ms after the line (bag-flyout:bag.nav-header)' },
+      { target: BROW, props: ['transition-delay'], golden: 'apple.com\'s first row 20ms after the heading (bag-flyout:bag.nav-item)' },
+      { target: BROW2, props: ['transition-delay'], golden: 'apple.com\'s rows 20ms after the one above (bag-flyout:bag.nav-item2)' },
+      { target: BFLY, props: MOTION, golden: 'the sheet\'s height and ground in 450ms to 833px (bag-flyout:nav.phone\'s animations on its content); no motion of its own from 834px' },
+      { target: BPANEL, props: MOTION, golden: 'from 834px revealed down and from the bar\'s ground in 0.24s, apple.com\'s flyout\'s height and ground (bag-flyout:nav\'s animations)' },
+      { target: BCURTAIN, props: MOTION, golden: 'apple.com\'s curtain in 0.32s (bag-flyout:curtain), from 834px' },
+    ],
+  },
+  {
+    // read at its start, held there: apple.com's from (the link flyouts'
+    // rule, globalnav-flyout-item, on its rows)
+    name: 'bag-start',
+    html: `${BHOLD}${BAG_NAV}`,
+    ...BAGGING,
+    widths: [1600],
+    wait: 0,
+    checks: [
+      { target: BMESSAGE, props: ['opacity', 'transform'], golden: 'each row from transparent, 4px up (globalheader.css\'s globalnav-flyout-item, bag-flyout:bag.header\'s transition)' },
+      { target: BROW, props: ['opacity', 'transform'], golden: 'each row from transparent, 4px up' },
+      { target: BPANEL, props: ['clip-path', 'background-color'], golden: 'the panel hidden down from the bar, on its ground: apple.com\'s flyout 44px tall, the bar\'s ground (bag-flyout:nav\'s animations)' },
+      { target: BCURTAIN, props: ['opacity'], golden: 'the curtain from transparent (bag-flyout:curtain\'s transition)' },
+    ],
+  },
+  {
+    name: 'bag-start-phone',
+    html: `${BHOLD}${BAG_NAV}`,
+    ...BAGGING,
+    widths: [390],
+    wait: 0,
+    checks: [
+      { target: BFLY, props: ['height', 'background-color'], golden: 'the sheet from the bar\'s height and ground (bag-flyout:nav.phone\'s animations on its content)' },
+      { target: BMESSAGE, props: ['opacity', 'transform'], golden: 'each row from transparent, 8px up (globalheader.css\'s globalnav-flyout-item to 833px)' },
+    ],
+  },
+  {
+    name: 'bag-tab',
+    html: BAG_NAV,
+    ...BAGGING,
+    widths: [1600],
+    press: 'Tab',
+    reducedMotion: 'reduce',
+    checks: [{ target: BTEXTLINK, props: ['focused'], golden: 'Tab goes from its button into it, to its line\'s link' }],
+  },
+  {
+    name: 'bag-escape',
+    html: BAG_NAV,
+    ...BAGGING,
+    widths: [1600, 390],
+    press: 'Escape',
+    reducedMotion: 'reduce',
+    checks: [
+      { target: BFLY, props: ['display'], golden: 'Escape closes it' },
+      { target: BBUTTON, props: ['focused'], golden: 'the focus back on its button' },
+      { target: 'html', props: ['overflow-y'], golden: 'the page scrolls again' },
+    ],
+  },
+  {
+    name: 'bag-curtain',
+    html: BAG_NAV,
+    click: [BBUTTON, BCURTAIN],
+    height: 900,
+    widths: [1600],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: BFLY, props: ['display'], golden: 'a click on the curtain closes it, as the search\'s (reference/search/)' },
+      { target: '.cui-globalnav', props: ['background-color', 'backdrop-filter'], apple: ['home', 'nav'] },
+    ],
+  },
+  {
+    name: 'bag-again',
+    html: BAG_NAV,
+    click: [BBUTTON, BBUTTON],
+    height: 900,
+    widths: [1600],
+    reducedMotion: 'reduce',
+    checks: [{ target: BFLY, props: ['display'], golden: 'its button closes it again' }],
+  },
+  {
+    // its links to fragments here, as a click on the bar's middle is on one
+    name: 'bag-bar',
+    html: BAG_NAV.replaceAll('href="/', 'href="#/'),
+    click: [BBUTTON, '.cui-globalnav'],
+    height: 900,
+    widths: [1600],
+    reducedMotion: 'reduce',
+    checks: [{ target: BFLY, props: ['display'], golden: 'a click on the bar, outside it, closes it, as the search\'s (reference/search/)' }],
+  },
+  {
+    name: 'bag-close',
+    html: BAG_NAV,
+    click: [BBUTTON, BCLOSE],
+    height: 900,
+    widths: [390],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: BFLY, props: ['display'], golden: 'the sheet\'s X closes it' },
+      { target: 'html', props: ['overflow-y'], golden: 'the page scrolls again' },
+    ],
+  },
+  {
+    // the pointer on a link with a flyout while the bag is open shows none
+    name: 'bag-pointer',
+    html: FLYOUT_BAG,
+    ...BAGGING,
+    hover: MAC_LINK,
+    widths: [1600],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: MAC_FLY, props: ['display'], golden: 'no flyout by the pointer while the bag is open, its popover closed and not shown by the page (apple.com\'s opens the link\'s in the bag\'s place)' },
+      { target: BFLY, props: ['display'], golden: 'the bag still open' },
+    ],
+  },
+  {
+    name: 'bag-dark',
+    html: BAG_DARK,
+    ...BAGGING,
+    widths: [1600, 390],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: BMESSAGE, props: ['color'], apple: ['bag-flyout-dark', 'bag.header'] },
+      { target: BTEXT, props: ['color'], apple: ['bag-flyout-dark', 'bag.subheader'] },
+      { target: BTEXTLINK, props: ['color', 'text-decoration-line'], apple: ['bag-flyout-dark', 'bag.subheader-link'] },
+      { target: BHEADING, props: ['color'], apple: ['bag-flyout-dark', 'bag.nav-header'] },
+      { target: BLINK, props: ['color'], apple: ['bag-flyout-dark', 'bag.nav-text'] },
+      { target: BLINK, state: 'hover', props: ['color'], apple: ['bag-flyout-dark', 'bag.nav-text', 'hover'] },
+    ],
+  },
+  {
+    name: 'bag-dark-flyout',
+    html: BAG_DARK,
+    ...BAGGING,
+    widths: [1600],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: BPANEL, props: ['background-color'], apple: ['bag-flyout-dark', 'flyout'] },
+      { target: BCURTAIN, props: ['background-color', 'backdrop-filter'], apple: ['bag-flyout-dark', 'curtain'] },
+      { target: BBUTTON, props: ['color'], apple: ['bag-flyout-dark', 'link.bag'] },
+      { target: `${BLINK} .cui-globalnav-image`, props: ['color'], apple: ['bag-flyout-dark', 'bag.nav-icon'] },
+      { target: `${BLINK} .cui-globalnav-image`, state: 'hover', on: BLINK, props: ['color'], apple: ['bag-flyout-dark', 'bag.nav-icon', 'hover'] },
+    ],
+  },
+  {
+    name: 'bag-dark-sheet',
+    html: BAG_DARK,
+    ...BAGGING,
+    widths: [390],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: BFLY, props: ['background-color'], apple: ['bag-flyout-dark', 'nav.content'] },
+      { target: BCLOSE, props: ['color'], apple: ['bag-flyout-dark', 'menutrigger'] },
+      { target: `${BLINK} .cui-globalnav-image-compact`, props: ['color'], apple: ['bag-flyout-dark', 'bag.nav-icon-compact'] },
+      { target: `${BLINK} .cui-globalnav-image-compact`, state: 'hover', on: BLINK, props: ['color'], apple: ['bag-flyout-dark', 'bag.nav-icon-compact', 'hover'] },
+    ],
+  },
+  {
+    name: 'bag-touch',
+    html: BAG_NAV,
+    ...BAGGING,
+    touch: true,
+    widths: [1200, 390],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: BLINK, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps its links\' (touch-*:*)' },
+      { target: `${BLINK} .cui-globalnav-image`, state: 'hover', on: BLINK, props: ['color'], rest: 'nor its icon\'s (rule 5)' },
+    ],
+  },
+
 ];
