@@ -71,8 +71,8 @@ export const cases = [
     html: ex('gallery'),
     touch: true,
     checks: [
-      { target: NEXT, state: 'hover', props: ['background-color', 'color'], rest: 'a touch screen\'s paddle does not change hovered' },
-      { target: DOT, state: 'hover', props: ['background-color'], rest: 'nor a dot' },
+      { target: NEXT, state: 'hover', props: ['background-color', 'color'], rest: 'a touch screen\'s paddle does not change hovered (rule 5), where apple.com\'s does (touch-iphone:paddle)' },
+      { target: DOT, state: 'hover', props: ['background-color'], rest: 'nor a dot, where apple.com\'s does (touch-iphone:gallery.dot)' },
     ],
   },
   {

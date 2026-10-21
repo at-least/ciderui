@@ -68,6 +68,6 @@ export const cases = [
     html: `<p>${ex('more')}</p>`,
     touch: true,
     widths: [390],
-    checks: [{ target: '.cui-link-text', on: '.cui-link', state: 'hover', props: ['text-decoration-line'], rest: 'a touch screen keeps no hover' }],
+    checks: [{ target: '.cui-link-text', on: '.cui-link', state: 'hover', props: ['text-decoration-line'], rest: 'a touch screen keeps no hover (rule 5), where apple.com\'s more link underlines (touch-iphone:link.more-copy)' }],
   },
 ];

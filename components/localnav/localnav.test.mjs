@@ -161,8 +161,15 @@ export const cases = [
     touch: true,
     widths: [1200, 390],
     checks: [
-      { target: LINK, state: 'hover', props: ['opacity'], rest: 'no hover on a touch screen (rule 5)' },
-      { target: CHEVRON, state: 'hover', props: ['opacity'], rest: 'no hover on a touch screen (rule 5)' },
+      { target: LINK, state: 'hover', props: ['opacity'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-localnav:localnav.link)' },
+      { target: CHEVRON, state: 'hover', props: ['opacity'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-localnav:localnav.chevron-image)' },
     ],
+  },
+  {
+    name: 'touch-tray',
+    html: NAV,
+    touch: true,
+    ...OPEN,
+    checks: [{ target: LINK, state: 'hover', props: ['opacity'], rest: 'nor in the opened tray, where apple.com\'s keeps it (touch-localnav:tray.link)' }],
   },
 ];

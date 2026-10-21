@@ -4,7 +4,8 @@
 // spacing), hovered and with the focus in it (store:card's hover and
 // focus-within), a plain eyebrow (store:card.eyebrow), a headline with no
 // eyebrow above it (store:card.header-first), a dark card
-// (store:card.dark*), its picture (store:card.media). Golden, with their
+// (store:card.dark*), its picture (store:card.media); on a touch screen, not
+// lifting, hovered or with the focus in it (touch-store:card). Golden, with their
 // why: the letter-spacing, the widths, what moves, the whole card its link,
 // the layers.
 
@@ -70,8 +71,9 @@ export const cases = [
     html: ex('card'),
     touch: true,
     checks: [
-      { target: '.cui-card', state: 'hover', props: LIFT, rest: 'a touch screen\'s card does not lift (apple.com\'s lifts with no touch)' },
-      { target: '.cui-card', state: 'focus-within', props: LIFT, rest: 'nor with the focus in it' },
+      // apple.com's lifts only with no touch (html.no-touch, its script's)
+      { target: '.cui-card', state: 'hover', props: LIFT, apple: ['touch-store', 'card', 'hover'] },
+      { target: '.cui-card', state: 'focus-within', props: LIFT, apple: ['touch-store', 'card', 'focus-within'] },
     ],
   },
   {

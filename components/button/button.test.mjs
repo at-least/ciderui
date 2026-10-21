@@ -5,7 +5,8 @@
 // (home:tile.dark-button*, home:gallery.button-neutral), disabled
 // (store:button*.disabled), the rectangle (bag:form-button*), the block
 // (store:button.block); golden: the letter-spacing, the font, a disabled
-// button under the pointer; a touch screen's hover is rest.
+// button under the pointer; a touch screen's hover is rest, where apple.com's
+// is its hover (touch-store:button*).
 
 import { examples, SIZE, PADDING, BORDER, RADIUS, COLORS, TEXT, OUTLINE } from '../../test/harness.mjs';
 
@@ -129,6 +130,6 @@ export const cases = [
     touch: true,
     widths: [390],
     checks: ['.cui-btn:not([data-variant])', '.cui-btn[data-variant="secondary"]', '.cui-btn[data-variant="neutral"]']
-      .map(target => ({ target, state: 'hover', props: COLORS, rest: 'a touch screen keeps no hover' })),
+      .map(target => ({ target, state: 'hover', props: COLORS, rest: 'a touch screen keeps no hover (rule 5), where apple.com\'s buttons keep theirs (touch-store:button, button.secondary, button.neutral)' })),
   },
 ];

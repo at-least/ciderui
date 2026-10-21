@@ -36,7 +36,7 @@ Every component follows these.
 
 4. **Rules for what is inside sit behind `:where()`**, adding no specificity, so a component placed inside another keeps its own look.
 
-5. **Hover is `@media (hover: hover) { &:hover }`**, so a tapped element does not keep its hover.
+5. **Hover is `@media (hover: hover) { &:hover }`**, so a tapped element does not keep its hover. Here ciderui departs from apple.com, whose hover stays on a touch screen nearly everywhere (`touch-*:*`, an emulated one: its nav's, buttons', links', paddles', dots' and close buttons' hovers all match there), its store's card's lift alone off (`html.no-touch`, its script's): each component's touch case reads its hover against its rest, its why naming apple.com's, and the card's against apple.com's.
 
 6. **Size and placement are the page's**: no width, no margin, no position, with two kinds of exception, each named in its stylesheet's header: the type, whose classes carry their small-screen step (the type, below), and the sizes apple.com fixes (a control's height, a field's 56px, a tile's minimum height). Utilities remove them.
 
@@ -193,7 +193,7 @@ What apple.com's pages are made of, from the measurements, as the components to 
 
 No docs theme (decision 14): support.apple.com's user guides are not measured.
 
-Not measured yet: the search field with text in it (apple.com's suggestions and clear button), the checkout's own pages (not reachable without a bag: its form parts were read on the gift card's, the trade-in's and the feedback form's pages), a touch screen's hover. When a part is built, its probes are added where the inventory's are not enough (rule 14: a component's test names its probes).
+Not measured yet: the search field with text in it (apple.com's suggestions and clear button), the checkout's own pages (not reachable without a bag: its form parts were read on the gift card's, the trade-in's and the feedback form's pages), what a real touch screen's tap leaves hovered (the touch screen is emulated, its `:hover` forced). When a part is built, its probes are added where the inventory's are not enough (rule 14: a component's test names its probes).
 
 ## The crate
 

@@ -65,7 +65,7 @@ export const cases = [
     html: ex('accordion'),
     touch: true,
     checks: [
-      { target: `${CLOSED} > ${Q} svg`, on: `${CLOSED} > ${Q}`, state: 'hover', props: ['color'], rest: 'a touch screen\'s chevron does not change hovered' },
+      { target: `${CLOSED} > ${Q} svg`, on: `${CLOSED} > ${Q}`, state: 'hover', props: ['color'], rest: 'a touch screen\'s chevron does not change hovered (rule 5), where apple.com\'s does (touch-bag-accordion:compact.icon-hover)' },
     ],
   },
 ];

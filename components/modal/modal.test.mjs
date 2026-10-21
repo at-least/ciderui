@@ -217,6 +217,14 @@ export const cases = [
     ...PAGE_OPEN,
     touch: true,
     widths: [1200, 390],
-    checks: [{ target: CLOSE, state: 'hover', props: ['background-color'], rest: 'no hover on a touch screen (rule 5)' }],
+    checks: [{ target: CLOSE, state: 'hover', props: ['background-color', 'color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-ricmodal:close.icon-states)' }],
+  },
+  {
+    name: 'touch',
+    html: MODAL,
+    ...OPEN,
+    touch: true,
+    widths: [1200, 390],
+    checks: [{ target: CLOSE, state: 'hover', props: ['background-color', 'color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-overlay:close.circle-hover)' }],
   },
 ];

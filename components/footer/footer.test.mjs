@@ -3,7 +3,8 @@
 // directory (a row of columns, a title and its list, the gaps) from 834px;
 // to 833px its sections, rows over rules, one opened (home-footer:*); the
 // shop line, the legal row and its links' rules, the locale; on a dark page
-// light (product:footer*). Golden, with their why: the letter-spacing, a
+// light (product:footer*); a touch screen's links not underlined hovered
+// (rule 5, where apple.com's are: touch-home:footer.*). Golden, with their why: the letter-spacing, a
 // section's toggle, its motion, the chevron turned.
 
 import { examples } from '../../test/harness.mjs';
@@ -96,6 +97,19 @@ export const cases = [
       { target: `${SECTION} .cui-footer-title`, props: ['color'], apple: ['product', 'footer.title'] },
       { target: `${SECTION} .cui-footer-list a`, props: ['color'], apple: ['product', 'footer.link'] },
       { target: '.cui-footer-shop', props: ['border-bottom-color'], apple: ['product', 'footer.shop'] },
+    ],
+  },
+  {
+    // a touch screen's links underline on no hover (rule 5), where apple.com's
+    // do (touch-home:footer.link, footer.legal-link, footer.locale-link)
+    name: 'touch',
+    html: ex('footer'),
+    touch: true,
+    widths: [1200, 390],
+    checks: [
+      { target: `${SECTION} .cui-footer-list a`, state: 'hover', props: ['text-decoration-line'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s underlines (touch-home:footer.link)' },
+      { target: '.cui-footer-links > li:first-child a', state: 'hover', props: ['text-decoration-line'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s underlines (touch-home:footer.legal-link)' },
+      { target: '.cui-footer-locale', state: 'hover', props: ['text-decoration-line'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s underlines (touch-home:footer.locale-link)' },
     ],
   },
 ];

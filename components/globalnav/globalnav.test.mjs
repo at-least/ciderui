@@ -285,9 +285,10 @@ export const cases = [
     touch: true,
     widths: [1200, 390],
     checks: [
-      { target: SEARCH, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5)' },
-      { target: LOGO, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5)' },
-      { target: BUTTON, state: 'hover', props: ['opacity'], rest: 'no hover on a touch screen (rule 5)' },
+      { target: SEARCH, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-home:nav.search)' },
+      { target: LOGO, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-home:nav.logo)' },
+      { target: BAG, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-home:nav.bag)' },
+      { target: BUTTON, state: 'hover', props: ['opacity'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-home:nav.menutrigger)' },
     ],
   },
   {
@@ -295,7 +296,7 @@ export const cases = [
     html: NAV,
     touch: true,
     widths: [1200],
-    checks: [{ target: LINK, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5)' }],
+    checks: [{ target: LINK, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-home:nav.link)' }],
   },
   {
     name: 'search',
@@ -531,7 +532,7 @@ export const cases = [
     touch: true,
     widths: [1200, 390],
     reducedMotion: 'reduce',
-    checks: [{ target: QLINK, state: 'hover', props: ['color', 'background-color'], rest: 'no hover on a touch screen (rule 5)' }],
+    checks: [{ target: QLINK, state: 'hover', props: ['color', 'background-color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-search:results.link)' }],
   },
   {
     name: 'touch-menu',
@@ -539,6 +540,6 @@ export const cases = [
     touch: true,
     ...OPEN,
     reducedMotion: 'reduce',
-    checks: [{ target: LINK2, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5)' }],
+    checks: [{ target: LINK2, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-home:menu.link)' }],
   },
 ];
