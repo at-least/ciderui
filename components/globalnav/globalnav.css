@@ -1637,8 +1637,9 @@
         height: 44px;
         overflow: hidden;
         visibility: hidden;
-        transition: visibility 0s 0.36s, height 0s 0.36s;
-        transition-behavior: allow-discrete;
+        /* allow-discrete in the shorthand: a transition-behavior after it,
+           the minifier writes before it, where the shorthand resets it */
+        transition: visibility 0s 0.36s allow-discrete, height 0s 0.36s allow-discrete;
 
         .cui-globalnav-flyoutpanel {
           padding-top: 84px;

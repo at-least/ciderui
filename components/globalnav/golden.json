@@ -563,6 +563,7 @@
  "flyout-closing | .cui-globalnav-list > li:nth-child(4) > .cui-globalnav-flyout | 1600 | transition-property": "visibility, height",
  "flyout-closing | .cui-globalnav-list > li:nth-child(4) > .cui-globalnav-flyout | 1600 | transition-duration": "0s, 0s",
  "flyout-closing | .cui-globalnav-list > li:nth-child(4) > .cui-globalnav-flyout | 1600 | transition-delay": "0.36s, 0.36s",
+ "flyout-closing | .cui-globalnav-list > li:nth-child(4) > .cui-globalnav-flyout | 1600 | transition-behavior": "allow-discrete, allow-discrete",
  "flyout-closing | .cui-globalnav-list > li:nth-child(4) > .cui-globalnav-flyout > .cui-globalnav-flyoutpanel | 1600 | transition-property": "clip-path, background-color",
  "flyout-closing | .cui-globalnav-list > li:nth-child(4) > .cui-globalnav-flyout > .cui-globalnav-flyoutpanel | 1600 | transition-duration": "0.24s, 0.24s",
  "flyout-closing | .cui-globalnav-list > li:nth-child(4) > .cui-globalnav-flyout > .cui-globalnav-flyoutpanel | 1600 | transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)",

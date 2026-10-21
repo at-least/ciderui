@@ -924,6 +924,7 @@ export const cases = [
     widths: [1600],
     checks: [
       { target: MAC_FLY, props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'hidden at the end of its going (apple.com\'s flyout hidden at its height\'s end: flyout:close\'s animations, 240ms from 120ms)' },
+      { target: MAC_FLY, props: ['transition-behavior'], golden: 'its height, which does not interpolate, flipped with its visibility at that end: allow-discrete in the compiled stylesheet too (written inside the shorthand: the minifier moves a transition-behavior written after the shorthand before it, where the shorthand resets it)' },
       { target: FPANEL, props: ITEM_MOTION, golden: 'back to the bar and its ground in 240ms from 120ms (flyout:close\'s animations)' },
       { target: FHEAD1, props: ITEM_MOTION, golden: 'its headings back to 4px up and transparent at once in 240ms (flyout:close\'s animations)' },
       { target: ROW_LG, props: ['transition-duration', 'transition-delay'], golden: 'its rows the same, a group\'s first five (its heading the first) in 240ms (flyout:close\'s animations)' },
