@@ -204,6 +204,51 @@
      "width": 402,
      "css": true,
      "page": 402
+    },
+    {
+     "height": 128,
+     "content": 128,
+     "images": [],
+     "title": "A field in error and its message",
+     "width": 402,
+     "css": true,
+     "page": 402
+    },
+    {
+     "height": 104,
+     "content": 104,
+     "images": [],
+     "title": "A disabled field",
+     "width": 402,
+     "css": true,
+     "page": 402
+    },
+    {
+     "height": 104,
+     "content": 104,
+     "images": [],
+     "title": "A field with a currency before it",
+     "width": 402,
+     "css": true,
+     "page": 402
+    },
+    {
+     "height": 104,
+     "content": 104,
+     "images": [],
+     "title": "A dropdown, nothing chosen",
+     "width": 402,
+     "css": true,
+     "page": 402
+    },
+    {
+     "height": 104,
+     "content": 104,
+     "images": [],
+     "title": "A dropdown with a choice made",
+     "width": 402,
+     "css": true,
+     "page": 402
     }
    ]
   },
@@ -692,6 +737,18 @@
    "height": 666,
    "window": 714,
    "bar": 48
+  },
+  "dropdown at 402": {
+   "empty": {
+    "top": "18px",
+    "size": "17px",
+    "text": "rgba(0, 0, 0, 0)"
+   },
+   "chosen": {
+    "top": "10px",
+    "size": "12px",
+    "text": "rgb(29, 29, 31)"
+   }
   },
   "globalnav menu at 402": {
    "closed": 48,
