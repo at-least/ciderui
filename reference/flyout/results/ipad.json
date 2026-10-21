@@ -1,0 +1,195 @@
+{
+ "browser": "Safari 26.5, iOS 26.5 simulator (iPad Pro 13-inch (M5)), XCUITest's taps",
+ "date": "2026-10-21T10:59:01.921Z",
+ "tip": "none",
+ "reports": [
+  {
+   "n": 1,
+   "media": {
+    "hover": false,
+    "coarse": true,
+    "anchors": true
+   },
+   "window": {
+    "width": 1032,
+    "height": 1290,
+    "page": 1032
+   },
+   "bar": {
+    "top": 70,
+    "left": 0,
+    "width": 1032,
+    "height": 44,
+    "bottom": 114,
+    "right": 1032
+   },
+   "barFilter": "none",
+   "curtain": {
+    "opacity": "1",
+    "visibility": "visible",
+    "position": "static"
+   },
+   "menu": false,
+   "store": {
+    "open": true,
+    "shown": true,
+    "box": {
+     "top": 114,
+     "left": 0,
+     "width": 1032,
+     "height": 1176,
+     "bottom": 1290,
+     "right": 1032
+    },
+    "panel": {
+     "top": 114,
+     "left": 0,
+     "width": 1032,
+     "height": 214,
+     "bottom": 328,
+     "right": 1032
+    },
+    "curtain": {
+     "top": 328,
+     "left": 0,
+     "width": 1032,
+     "height": 962,
+     "bottom": 1290,
+     "right": 1032
+    },
+    "curtainOpacity": "1"
+   },
+   "mac": {
+    "open": false,
+    "shown": false,
+    "box": {
+     "top": 0,
+     "left": 0,
+     "width": 0,
+     "height": 0,
+     "bottom": 0,
+     "right": 0
+    },
+    "panel": {
+     "top": 0,
+     "left": 0,
+     "width": 0,
+     "height": 0,
+     "bottom": 0,
+     "right": 0
+    },
+    "curtain": {
+     "top": 0,
+     "left": 0,
+     "width": 0,
+     "height": 0,
+     "bottom": 0,
+     "right": 0
+    },
+    "curtainOpacity": "1"
+   },
+   "macHit": "mac-button",
+   "pageHit": "store-curtain",
+   "focus": "BODY",
+   "hash": "",
+   "clicks": {
+    "under": 0,
+    "followed": 0
+   }
+  },
+  {
+   "n": 2,
+   "media": {
+    "hover": false,
+    "coarse": true,
+    "anchors": true
+   },
+   "window": {
+    "width": 1032,
+    "height": 1290,
+    "page": 1032
+   },
+   "bar": {
+    "top": 70,
+    "left": 0,
+    "width": 1032,
+    "height": 44,
+    "bottom": 114,
+    "right": 1032
+   },
+   "barFilter": "blur(20px)",
+   "curtain": {
+    "opacity": "1",
+    "visibility": "visible",
+    "position": "static"
+   },
+   "menu": false,
+   "store": {
+    "open": false,
+    "shown": false,
+    "box": {
+     "top": 0,
+     "left": 0,
+     "width": 0,
+     "height": 0,
+     "bottom": 0,
+     "right": 0
+    },
+    "panel": {
+     "top": 0,
+     "left": 0,
+     "width": 0,
+     "height": 0,
+     "bottom": 0,
+     "right": 0
+    },
+    "curtain": {
+     "top": 0,
+     "left": 0,
+     "width": 0,
+     "height": 0,
+     "bottom": 0,
+     "right": 0
+    },
+    "curtainOpacity": "1"
+   },
+   "mac": {
+    "open": false,
+    "shown": false,
+    "box": {
+     "top": 0,
+     "left": 0,
+     "width": 0,
+     "height": 0,
+     "bottom": 0,
+     "right": 0
+    },
+    "panel": {
+     "top": 0,
+     "left": 0,
+     "width": 0,
+     "height": 0,
+     "bottom": 0,
+     "right": 0
+    },
+    "curtain": {
+     "top": 0,
+     "left": 0,
+     "width": 0,
+     "height": 0,
+     "bottom": 0,
+     "right": 0
+    },
+    "curtainOpacity": "1"
+   },
+   "macHit": "mac-button",
+   "pageHit": "under",
+   "focus": "BODY",
+   "hash": "",
+   "clicks": {
+    "under": 0,
+    "followed": 0
+   }
+  }
+ ]
+}

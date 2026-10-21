@@ -1,14 +1,17 @@
 // The browsers the reference probes run in, behind one interface:
 // open(name, url) loads the page and gives { label, run(expr), click(selector),
-// press(key), go(url), size(width, height), shot(), close() }, where run evaluates an
-// expression whose value is a promise and hands back what it resolves to,
-// click and press are
-// the browser's own input (a trusted click on the element, a key pressed: the
-// WebDriver key's name, as Escape, or keys held together, as Alt+Tab), go
-// loads another page in the same window, waiting for its load, and size sets
-// the window's size (Playwright's viewport; Safari's window, its frame
-// included), and shot takes a picture of what the window shows, a PNG in
-// base64 (at the screen's pixels: the window's width times its pixel ratio).
+// press(key), move(x, y, ms), go(url), size(width, height), shot(), close() },
+// where run evaluates an expression whose value is a promise and hands back
+// what it resolves to, click, press and move are the browser's own input (a
+// trusted click on the element; a key pressed: the WebDriver key's name, as
+// Escape, or keys held together, as Alt+Tab; the pointer moved to a point of
+// the window over ms milliseconds, as a hand moves it: WebDriver's pointer
+// move of that duration, Playwright's in a step a frame, none on the
+// simulator, which has no pointer), go loads another page in the same window,
+// waiting for its load, size sets the window's size (Playwright's viewport;
+// Safari's window, its frame included), and shot takes a picture of what the
+// window shows, a PNG in base64 (at the screen's pixels: the window's width
+// times its pixel ratio).
 //   safari    Safari through safaridriver, raw WebDriver over HTTP (Safari's
 //             "Allow remote automation" on), in a Safari the run launches and
 //             quits when it closes: Safari 27 takes no session in one it did
@@ -43,6 +46,7 @@ async function viaPlaywright(channel, url) {
       run: (expr) => page.evaluate(expr),
       click: (selector) => page.click(selector),
       press: (key) => page.keyboard.press(key),
+      move: (x, y, ms) => page.mouse.move(x, y, { steps: Math.max(1, Math.round(ms / 16)) }),
       go: (to) => page.goto(to, { waitUntil: 'load', timeout: 120000 }),
       size: (width, height) => page.setViewportSize({ width, height }),
       shot: async () => (await page.screenshot()).toString('base64'),
@@ -80,6 +84,8 @@ async function viaSafariDriver(capabilities, url) {
     return json.value;
   };
   let session;
+  // where the pointer is: WebDriver's starts at the window's corner
+  let pointer = [0, 0];
   const close = async () => {
     if (session) await wd('DELETE', `/session/${session.sessionId}`).catch(e => console.error('delete session:', e.message));
     driver.kill();
@@ -124,6 +130,17 @@ async function viaSafariDriver(capabilities, url) {
         });
         const actions = [...values.map(value => ({ type: 'keyDown', value })), ...values.toReversed().map(value => ({ type: 'keyUp', value }))];
         await wd('POST', `/session/${id}/actions`, { actions: [{ type: 'key', id: 'keyboard', actions }] });
+      },
+      // a move of a duration is one jump at its end in Safari 27 (one
+      // pointermove, 2026-10-21): it is moved a step a frame, from where it was
+      move: async (x, y, ms) => {
+        if (capabilities['safari:useSimulator']) throw new Error('the simulator has no pointer to move');
+        const steps = Math.max(1, Math.round(ms / 16));
+        const [x0, y0] = pointer;
+        const actions = Array.from({ length: steps }, (_, i) => ({ type: 'pointerMove', duration: Math.round(ms / steps), origin: 'viewport',
+          x: Math.round(x0 + (x - x0) * (i + 1) / steps), y: Math.round(y0 + (y - y0) * (i + 1) / steps) }));
+        await wd('POST', `/session/${id}/actions`, { actions: [{ type: 'pointer', id: 'mouse', parameters: { pointerType: 'mouse' }, actions }] });
+        pointer = [x, y];
       },
       go: (to) => wd('POST', `/session/${id}/url`, { url: to }),
       size: (width, height) => wd('POST', `/session/${id}/window/rect`, { width, height }),

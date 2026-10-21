@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A nav's flyouts</title>
+<style>
+  /* the flyouts' techniques at their smallest: a bar (sticky over the page,
+     under a banner, its blur as the nav's) whose list is a closed popover
+     shown as its row; in it two links with a flyout each (a popover beside
+     the link, after its button) and one without. From 834px with a pointer
+     (hover: hover) the pointer resting 120ms on a link shows its flyout, no
+     popover opened: the closed popover shown by the page, from the bar's top
+     behind its links, its panel revealed down from the bar, and under it the
+     list's curtain (its ::after) fixed over the window, blurring the page,
+     which takes no pointer, the bar's blur off while it shows; the pointer
+     moved on along
+     the bar keeps the flyout it left until the next is shown, and the
+     pointer leaving the bar and the flyout hides it. The link's button opens
+     it as a popover, from the bar's bottom (anchor positioning), its curtain
+     a button that closes it; on a screen with no hover the button lies over
+     the link. To 833px the list is the menu, a sheet its button opens, and a
+     row's button opens the row's flyout over it, a sheet with a back button
+     and a close button of its own. The curtain is named here (aria-label),
+     where the kit hides it (aria-hidden), for XCUITest to find it */
+  html, body { margin: 0; }
+  body { font: 17px/25px system-ui; -webkit-text-size-adjust: 100%; }
+  #banner { height: 70px; background: #fff; }
+  #bar { position: sticky; top: 0; z-index: 1; display: flex; height: 44px; background: rgb(200 220 240); backdrop-filter: blur(20px); anchor-name: --bar; transition: backdrop-filter 0s 0.45s; }
+  #menu-button, #menu-close { display: none; width: 48px; height: 44px; padding: 0; border: 0; background: none; font: inherit; }
+  #menu { position: static; inset: auto; display: flex; flex: 1; gap: 16px; align-items: center; width: auto; height: 44px; margin: 0; padding: 0 22px; border: 0; overflow: visible; color: inherit; background: none; list-style: none; }
+  #menu > li { display: grid; }
+  #menu > li > .link, #menu > li > .button { grid-area: 1 / 1; }
+  .link { position: relative; z-index: 2; display: flex; align-items: center; height: 44px; padding: 0 8px; font-size: 12px; color: #000; text-decoration: none; }
+  .button { position: relative; z-index: 2; justify-self: end; width: 22px; height: 44px; margin-right: -7px; padding: 0; border: 0; background: none; font: inherit; color: #000; opacity: 0; }
+  .button:focus-visible { opacity: 1; }
+  .fly { inset: auto; width: auto; height: auto; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; overflow: visible; color: inherit; background: none; }
+  .panel { position: relative; box-sizing: border-box; padding: 40px 22px 84px; background: #fafafc; }
+  .panel a { display: block; padding: 7px 0; font: 600 12px/16px system-ui; color: #333336; text-decoration: none; }
+  .back, .close { display: none; }
+  .curtain { display: block; width: 100%; margin: 0; padding: 0; border: 0; background: rgb(232 232 237 / 0.4); backdrop-filter: blur(20px); cursor: default; }
+
+  @media (width >= 834px) and (hover: hover) {
+    .fly:not(:popover-open) { display: block; position: absolute; top: 0; right: 0; left: 0; visibility: hidden; transition: visibility 0s 0.36s; }
+    .fly:not(:popover-open) .panel { padding-top: 84px; clip-path: inset(0 0 calc(100% - 44px)); background: rgb(200 220 240); transition: clip-path 0.24s 0.12s, background-color 0.24s 0.12s; }
+    .fly:not(:popover-open) .curtain { display: none; }
+    #menu > li:hover > .fly:not(:popover-open) { z-index: 1; visibility: visible; transition-delay: 0.12s; }
+    #menu > li:hover > .fly:not(:popover-open) .panel { clip-path: inset(0); background: #fafafc; }
+    /* the pointer moved on along the bar: the flyout it left stays until
+       the next one is shown */
+    #menu:hover > li:not(:hover) > .fly:not(:popover-open) { transition-delay: 0.6s; }
+    #menu:hover > li:not(:hover) > .fly:not(:popover-open) .panel { transition-delay: 0.36s; }
+    /* one curtain for them all, the list's: over the window under the bar,
+       blurring the page, taking no pointer */
+    #menu::after { content: ""; position: fixed; inset: 0; z-index: -1; background: rgb(232 232 237 / 0.4); backdrop-filter: blur(20px); pointer-events: none; opacity: 0; visibility: hidden; transition: opacity 0.32s 0.08s, visibility 0s 0.4s; }
+    #menu:has(> li:hover > .fly:not(:popover-open))::after { opacity: 1; visibility: visible; transition: opacity 0.32s 0.2s, visibility 0s 0.12s; }
+    #bar:has(#menu > li:hover > .fly:not(:popover-open)) { backdrop-filter: none; transition-delay: 0.12s; }
+  }
+
+  @media (width >= 834px) {
+    .fly:popover-open { position: fixed; position-anchor: --bar; top: anchor(bottom); right: 0; bottom: 0; left: 0; display: flex; flex-direction: column; overflow: hidden; }
+    .fly:popover-open .panel { flex: none; }
+    .fly:popover-open .curtain { flex: 1; }
+    #bar:has(.fly:popover-open) { background: #fafafc; backdrop-filter: none; transition: none; }
+  }
+
+  @media (width >= 834px) and (hover: none) {
+    .button { justify-self: stretch; width: auto; margin: 0; }
+  }
+
+  @media (width < 834px) {
+    #menu-button { display: block; margin-left: auto; }
+    #menu:not(:popover-open) > li { display: none; }
+    #menu:popover-open { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: stretch; gap: 0; height: 100%; padding: 48px 0 0; background: #fafafc; }
+    #menu:popover-open > li:first-child { position: absolute; top: 0; right: 0; }
+    #menu-close { display: block; height: 48px; }
+    #menu > li > .link { height: 53px; padding: 0 48px; font: 600 28px/28px system-ui; }
+    .button { justify-self: stretch; width: auto; margin: 0; }
+    .fly:popover-open { position: fixed; inset: 0; overflow-y: auto; background: #fafafc; }
+    .fly .panel { padding: 50px 48px; }
+    .back, .close { position: absolute; top: 0; display: block; width: 48px; height: 48px; padding: 0; border: 0; background: none; font: inherit; }
+    .back { left: 0; }
+    .close { right: 0; }
+    .fly .curtain { display: none; }
+  }
+
+  main { position: relative; height: 3000px; background: repeating-linear-gradient(90deg, #000 0 4px, #fff 4px 8px); }
+  #under { position: absolute; top: 300px; right: 0; left: 0; height: 800px; }
+  #status { position: fixed; bottom: 0; left: 0; margin: 0; padding: 4px; background: #fff; }
+</style>
+</head>
+<body>
+<div id="banner">A banner above the bar</div>
+<nav id="bar" aria-label="Global">
+  <ul id="menu" popover>
+    <li><button id="menu-close" popovertarget="menu" popovertargetaction="hide" aria-label="Close">×</button></li>
+    <li id="store-item">
+      <a class="link" id="store" href="#followed">Store</a>
+      <button class="button" id="store-button" popovertarget="store-fly" aria-label="Store menu">⌄</button>
+      <div class="fly" id="store-fly" popover>
+        <div class="panel">
+          <button class="back" popovertarget="store-fly" popovertargetaction="hide" aria-label="Back">‹</button>
+          <button class="close" popovertarget="menu" popovertargetaction="hide" aria-label="Close all">×</button>
+          <a id="store-first" href="#store-first">Shop the Latest</a>
+          <a href="#store-mac">Mac</a>
+          <a href="#store-ipad">iPad</a>
+        </div>
+        <button class="curtain" id="store-curtain" popovertarget="store-fly" popovertargetaction="hide" tabindex="-1" aria-label="Store curtain"></button>
+      </div>
+    </li>
+    <li id="mac-item">
+      <a class="link" id="mac" href="#followed">Mac</a>
+      <button class="button" id="mac-button" popovertarget="mac-fly" aria-label="Mac menu">⌄</button>
+      <div class="fly" id="mac-fly" popover>
+        <div class="panel">
+          <button class="back" id="mac-back" popovertarget="mac-fly" popovertargetaction="hide" aria-label="Back">‹</button>
+          <button class="close" id="mac-close" popovertarget="menu" popovertargetaction="hide" aria-label="Close all">×</button>
+          <a id="mac-first" href="#mac-first">Explore All Mac</a>
+          <a href="#mac-air">MacBook Air</a>
+          <a href="#mac-pro">MacBook Pro</a>
+        </div>
+        <button class="curtain" id="mac-curtain" popovertarget="mac-fly" popovertargetaction="hide" tabindex="-1" aria-label="Mac curtain"></button>
+      </div>
+    </li>
+    <li id="search-item"><a class="link" id="search" href="#followed">Search</a></li>
+  </ul>
+  <button id="menu-button" popovertarget="menu" aria-label="Menu">≡</button>
+</nav>
+<main><a id="under" href="#under" aria-label="Under"></a></main>
+<p id="status">ready</p>
+<script>
+  // what the probe reads (window.probe), and, for XCUITest's taps on the
+  // simulator, 800ms after each pointerup what the tap left, sent to the
+  // server (/report), then "reported N" shown, which the test waits for
+  const box = (e) => { const r = e.getBoundingClientRect(); return { top: r.top, left: r.left, width: r.width, height: r.height, bottom: r.bottom, right: r.right }; };
+  const hit = (x, y) => { const e = document.elementFromPoint(x, y); return e ? e.id || e.className || e.tagName : null; };
+  const clicks = { under: 0, followed: 0 };
+  document.getElementById('under').addEventListener('click', (e) => { e.preventDefault(); clicks.under++; });
+  for (const id of ['store', 'mac', 'search']) document.getElementById(id).addEventListener('click', () => { clicks.followed++; });
+  const fly = (id) => {
+    const f = document.getElementById(`${id}-fly`);
+    const cs = getComputedStyle(f);
+    return {
+      open: f.matches(':popover-open'), shown: cs.display !== 'none' && cs.visibility === 'visible',
+      box: box(f), panel: box(f.querySelector('.panel')), curtain: box(f.querySelector('.curtain')),
+      curtainOpacity: getComputedStyle(f.querySelector('.curtain')).opacity,
+    };
+  };
+  const state = () => {
+    const bar = document.getElementById('bar');
+    const mac = box(document.getElementById('mac'));
+    return {
+      media: { hover: matchMedia('(hover: hover)').matches, coarse: matchMedia('(pointer: coarse)').matches, anchors: CSS.supports('top: anchor(bottom)') },
+      window: { width: innerWidth, height: innerHeight, page: document.documentElement.clientWidth },
+      bar: box(bar), barFilter: getComputedStyle(bar).backdropFilter,
+      curtain: (({ opacity, visibility, position }) => ({ opacity, visibility, position }))(getComputedStyle(document.getElementById('menu'), '::after')),
+      menu: document.getElementById('menu').matches(':popover-open'),
+      store: fly('store'), mac: fly('mac'),
+      macHit: hit(mac.left + mac.width / 2, mac.top + mac.height / 2),
+      pageHit: hit(innerWidth / 2, innerHeight - 100),
+      focus: document.activeElement.id || document.activeElement.tagName,
+      hash: location.hash, clicks: { ...clicks },
+    };
+  };
+  // how far down the window a shown flyout's panel reaches, its clip taken
+  // off (its revealed ground's bottom)
+  const reach = (id) => {
+    const panel = document.getElementById(`${id}-fly`).querySelector('.panel');
+    const clip = getComputedStyle(panel).clipPath;
+    // its sides, split at the spaces outside a calc() (mid-transition the
+    // bottom is one, its percentage the panel's height), the bottom resolved
+    // as a height in the panel
+    const sides = [];
+    let depth = 0, side = '';
+    for (const ch of clip === 'none' ? '0px' : clip.slice(clip.indexOf('(') + 1, -1)) {
+      if (ch === ' ' && depth === 0) { sides.push(side); side = ''; continue; }
+      depth += ch === '(' ? 1 : ch === ')' ? -1 : 0;
+      side += ch;
+    }
+    sides.push(side);
+    const t = document.createElement('div');
+    t.style.cssText = `position: absolute; top: 0; left: 0; width: 0; height: ${sides[2] ?? sides[0]}`;
+    panel.append(t);
+    const bottom = t.getBoundingClientRect().height;
+    t.remove();
+    return panel.getBoundingClientRect().bottom - bottom;
+  };
+  // each frame from now: which flyouts show and how far down the lowest
+  // reaches, and when the pointer entered a link's item (its time in ms from
+  // the start)
+  let watching = null;
+  const watch = () => {
+    const t0 = performance.now();
+    const w = watching = { frames: [], entered: [] };
+    for (const id of ['store', 'mac', 'search']) document.getElementById(`${id}-item`).onpointerover = () => { if (watching === w) w.entered.push([id, Math.round(performance.now() - t0)]); };
+    const frame = () => {
+      if (watching !== w) return;
+      const shown = ['store', 'mac'].filter(id => fly(id).shown);
+      w.frames.push([Math.round(performance.now() - t0), shown, Math.max(0, ...shown.map(reach))]);
+      requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+    return true;
+  };
+  const stop = () => { const w = watching; watching = null; return w; };
+  // from a picture of the window (base64): where the page starts in it (from
+  // the bar's color, or given), the bar's color at a point, and the spread
+  // of the brightness along a row 100px above the window's bottom (the
+  // page's stripes, under the curtain when it shows)
+  const pixels = async (png, offset) => {
+    const img = new Image();
+    img.src = `data:image/png;base64,${png}`;
+    await img.decode();
+    const scale = img.width / innerWidth;
+    const c = document.createElement('canvas');
+    c.width = img.width;
+    c.height = img.height;
+    const g = c.getContext('2d', { willReadFrequently: true });
+    g.drawImage(img, 0, 0);
+    const bar = document.getElementById('bar').getBoundingClientRect();
+    const x = innerWidth - 40;
+    if (offset === undefined) {
+      offset = null;
+      for (let y = 0; y < img.height; y++) {
+        const [r, gr, b] = g.getImageData(Math.round(x * scale), y, 1, 1).data;
+        if (Math.abs(r - 200) <= 2 && Math.abs(gr - 220) <= 2 && Math.abs(b - 240) <= 2) { offset = y / scale - bar.top; break; }
+      }
+      if (offset === null) return { scale, offset };
+    }
+    const at = (x, y) => [...g.getImageData(Math.round(x * scale), Math.round((y + offset) * scale), 1, 1).data.slice(0, 3)];
+    const row = g.getImageData(0, Math.round((innerHeight - 100 + offset) * scale), img.width, 1).data;
+    const light = [];
+    for (let i = 0; i < row.length; i += 4) light.push((row[i] + row[i + 1] + row[i + 2]) / 3);
+    const mean = light.reduce((a, b) => a + b, 0) / light.length;
+    const spread = Math.sqrt(light.reduce((a, b) => a + (b - mean) ** 2, 0) / light.length);
+    return { scale, offset, bar: at(x, bar.top + bar.height / 2), spread: +spread.toFixed(2) };
+  };
+  window.probe = { state, watch, stop, pixels };
+  let n = 0;
+  let pending = false;
+  addEventListener('pointerup', () => {
+    if (pending) return;
+    pending = true;
+    setTimeout(async () => {
+      const report = { n: ++n, ...state() };
+      await fetch('/report', { method: 'POST', body: JSON.stringify(report) });
+      document.getElementById('status').textContent = `reported ${n}`;
+      pending = false;
+    }, 800);
+  }, true);
+</script>
+</body>
+</html>

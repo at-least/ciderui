@@ -1,0 +1,2846 @@
+{
+ "browser": "safari 27.0.1 on macOS 27.0.1",
+ "date": "2026-10-21T10:53:01.048Z",
+ "closed": {
+  "hash": "",
+  "bar": {
+   "left": 0,
+   "height": 44,
+   "top": 70,
+   "width": 1423,
+   "right": 1423,
+   "bottom": 114
+  },
+  "barFilter": "blur(20px)",
+  "mac": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  },
+  "curtain": {
+   "opacity": "0",
+   "visibility": "hidden",
+   "position": "fixed"
+  },
+  "window": {
+   "width": 1440,
+   "height": 848,
+   "page": 1423
+  },
+  "focus": "BODY",
+  "menu": false,
+  "macHit": "mac",
+  "media": {
+   "hover": true,
+   "coarse": false,
+   "anchors": true
+  },
+  "pageHit": "under",
+  "clicks": {
+   "under": 0,
+   "followed": 0
+  },
+  "store": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  }
+ },
+ "closedPixels": {
+  "scale": 2,
+  "bar": [
+   200,
+   220,
+   240
+  ],
+  "offset": 0,
+  "spread": 127.26
+ },
+ "hovered": {
+  "hash": "",
+  "bar": {
+   "left": 0,
+   "height": 44,
+   "top": 70,
+   "width": 1423,
+   "right": 1423,
+   "bottom": 114
+  },
+  "barFilter": "none",
+  "mac": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  },
+  "curtain": {
+   "opacity": "1",
+   "visibility": "visible",
+   "position": "fixed"
+  },
+  "window": {
+   "width": 1440,
+   "height": 848,
+   "page": 1423
+  },
+  "focus": "BODY",
+  "menu": false,
+  "macHit": "mac",
+  "media": {
+   "hover": true,
+   "coarse": false,
+   "anchors": true
+  },
+  "pageHit": "under",
+  "clicks": {
+   "under": 0,
+   "followed": 0
+  },
+  "store": {
+   "shown": true,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  }
+ },
+ "hoveredWatch": {
+  "entered": [
+   [
+    "store",
+    157
+   ]
+  ],
+  "frames": [
+   [
+    1,
+    [],
+    0
+   ],
+   [
+    17,
+    [],
+    0
+   ],
+   [
+    34,
+    [],
+    0
+   ],
+   [
+    52,
+    [],
+    0
+   ],
+   [
+    68,
+    [],
+    0
+   ],
+   [
+    85,
+    [],
+    0
+   ],
+   [
+    105,
+    [],
+    0
+   ],
+   [
+    120,
+    [],
+    0
+   ],
+   [
+    134,
+    [],
+    0
+   ],
+   [
+    151,
+    [],
+    0
+   ],
+   [
+    168,
+    [],
+    0
+   ],
+   [
+    184,
+    [],
+    0
+   ],
+   [
+    201,
+    [],
+    0
+   ],
+   [
+    217,
+    [],
+    0
+   ],
+   [
+    234,
+    [],
+    0
+   ],
+   [
+    251,
+    [],
+    0
+   ],
+   [
+    268,
+    [],
+    0
+   ],
+   [
+    293,
+    [
+     "store"
+    ],
+    122.8125
+   ],
+   [
+    315,
+    [
+     "store"
+    ],
+    155.546875
+   ],
+   [
+    318,
+    [
+     "store"
+    ],
+    161.234375
+   ],
+   [
+    334,
+    [
+     "store"
+    ],
+    193.453125
+   ],
+   [
+    351,
+    [
+     "store"
+    ],
+    225.609375
+   ],
+   [
+    368,
+    [
+     "store"
+    ],
+    250.71875
+   ],
+   [
+    384,
+    [
+     "store"
+    ],
+    271.890625
+   ],
+   [
+    401,
+    [
+     "store"
+    ],
+    288.328125
+   ],
+   [
+    418,
+    [
+     "store"
+    ],
+    300.296875
+   ],
+   [
+    434,
+    [
+     "store"
+    ],
+    310.015625
+   ],
+   [
+    451,
+    [
+     "store"
+    ],
+    317.21875
+   ],
+   [
+    468,
+    [
+     "store"
+    ],
+    322.0625
+   ],
+   [
+    484,
+    [
+     "store"
+    ],
+    325.5
+   ],
+   [
+    501,
+    [
+     "store"
+    ],
+    327.40625
+   ],
+   [
+    518,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    535,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    551,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    567,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    584,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    604,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    618,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    634,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    651,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    668,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    685,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    701,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    718,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    734,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    751,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    767,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    784,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    800,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    817,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    834,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    851,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    868,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    884,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    900,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    918,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    934,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    951,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    968,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    984,
+    [
+     "store"
+    ],
+    328
+   ]
+  ]
+ },
+ "hoveredPixels": {
+  "scale": 2,
+  "bar": [
+   250,
+   250,
+   252
+  ],
+  "offset": 0,
+  "spread": 8.4
+ },
+ "switched": {
+  "hash": "",
+  "bar": {
+   "left": 0,
+   "height": 44,
+   "top": 70,
+   "width": 1423,
+   "right": 1423,
+   "bottom": 114
+  },
+  "barFilter": "none",
+  "mac": {
+   "shown": true,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  },
+  "curtain": {
+   "opacity": "1",
+   "visibility": "visible",
+   "position": "fixed"
+  },
+  "window": {
+   "width": 1440,
+   "height": 848,
+   "page": 1423
+  },
+  "focus": "BODY",
+  "menu": false,
+  "macHit": "mac",
+  "media": {
+   "hover": true,
+   "coarse": false,
+   "anchors": true
+  },
+  "pageHit": "under",
+  "clicks": {
+   "under": 0,
+   "followed": 0
+  },
+  "store": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  }
+ },
+ "switchedWatch": {
+  "entered": [
+   [
+    "store",
+    27
+   ],
+   [
+    "store",
+    79
+   ],
+   [
+    "mac",
+    96
+   ]
+  ],
+  "frames": [
+   [
+    7,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    24,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    40,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    57,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    74,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    90,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    107,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    124,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    140,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    157,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    174,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    190,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    206,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    224,
+    [
+     "store"
+    ],
+    328
+   ],
+   [
+    240,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    257,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    273,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    290,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    307,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    324,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    341,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    357,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    374,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    391,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    407,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    424,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    441,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    458,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    474,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    491,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    508,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    524,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    541,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    557,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    574,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    591,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    607,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    624,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    641,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    657,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    674,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    691,
+    [
+     "store",
+     "mac"
+    ],
+    328
+   ],
+   [
+    708,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    724,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    741,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    757,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    774,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    790,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    807,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    824,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    841,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    857,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    874,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    891,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    907,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    924,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    940,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    957,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    974,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    991,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    1007,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    1024,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    1041,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    1058,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    1074,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    1091,
+    [
+     "mac"
+    ],
+    328
+   ]
+  ]
+ },
+ "left": {
+  "hash": "",
+  "bar": {
+   "left": 0,
+   "height": 44,
+   "top": 70,
+   "width": 1423,
+   "right": 1423,
+   "bottom": 114
+  },
+  "barFilter": "blur(20px)",
+  "mac": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  },
+  "curtain": {
+   "opacity": "0",
+   "visibility": "hidden",
+   "position": "fixed"
+  },
+  "window": {
+   "width": 1440,
+   "height": 848,
+   "page": 1423
+  },
+  "focus": "BODY",
+  "menu": false,
+  "macHit": "mac",
+  "media": {
+   "hover": true,
+   "coarse": false,
+   "anchors": true
+  },
+  "pageHit": "under",
+  "clicks": {
+   "under": 0,
+   "followed": 0
+  },
+  "store": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  }
+ },
+ "leftWatch": {
+  "entered": [
+   [
+    "mac",
+    12
+   ],
+   [
+    "mac",
+    30
+   ]
+  ],
+  "frames": [
+   [
+    4,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    21,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    37,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    54,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    71,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    88,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    107,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    122,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    138,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    157,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    171,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    187,
+    [
+     "mac"
+    ],
+    328
+   ],
+   [
+    204,
+    [
+     "mac"
+    ],
+    320.09375
+   ],
+   [
+    222,
+    [
+     "mac"
+    ],
+    298.71875
+   ],
+   [
+    238,
+    [
+     "mac"
+    ],
+    266.859375
+   ],
+   [
+    255,
+    [
+     "mac"
+    ],
+    234.75
+   ],
+   [
+    272,
+    [
+     "mac"
+    ],
+    204.765625
+   ],
+   [
+    288,
+    [
+     "mac"
+    ],
+    181.9375
+   ],
+   [
+    305,
+    [
+     "mac"
+    ],
+    162.84375
+   ],
+   [
+    321,
+    [
+     "mac"
+    ],
+    148.078125
+   ],
+   [
+    338,
+    [
+     "mac"
+    ],
+    137.375
+   ],
+   [
+    355,
+    [
+     "mac"
+    ],
+    128.75
+   ],
+   [
+    371,
+    [
+     "mac"
+    ],
+    122.46875
+   ],
+   [
+    388,
+    [
+     "mac"
+    ],
+    118.34375
+   ],
+   [
+    405,
+    [
+     "mac"
+    ],
+    115.5625
+   ],
+   [
+    421,
+    [
+     "mac"
+    ],
+    114.21875
+   ],
+   [
+    438,
+    [],
+    0
+   ],
+   [
+    454,
+    [],
+    0
+   ],
+   [
+    472,
+    [],
+    0
+   ],
+   [
+    488,
+    [],
+    0
+   ],
+   [
+    504,
+    [],
+    0
+   ],
+   [
+    521,
+    [],
+    0
+   ],
+   [
+    537,
+    [],
+    0
+   ],
+   [
+    554,
+    [],
+    0
+   ],
+   [
+    571,
+    [],
+    0
+   ],
+   [
+    588,
+    [],
+    0
+   ],
+   [
+    604,
+    [],
+    0
+   ],
+   [
+    621,
+    [],
+    0
+   ],
+   [
+    638,
+    [],
+    0
+   ],
+   [
+    654,
+    [],
+    0
+   ],
+   [
+    671,
+    [],
+    0
+   ],
+   [
+    688,
+    [],
+    0
+   ],
+   [
+    704,
+    [],
+    0
+   ],
+   [
+    720,
+    [],
+    0
+   ],
+   [
+    738,
+    [],
+    0
+   ],
+   [
+    753,
+    [],
+    0
+   ],
+   [
+    771,
+    [],
+    0
+   ],
+   [
+    787,
+    [],
+    0
+   ],
+   [
+    803,
+    [],
+    0
+   ],
+   [
+    821,
+    [],
+    0
+   ],
+   [
+    838,
+    [],
+    0
+   ],
+   [
+    854,
+    [],
+    0
+   ],
+   [
+    871,
+    [],
+    0
+   ],
+   [
+    888,
+    [],
+    0
+   ],
+   [
+    904,
+    [],
+    0
+   ],
+   [
+    921,
+    [],
+    0
+   ],
+   [
+    937,
+    [],
+    0
+   ],
+   [
+    954,
+    [],
+    0
+   ],
+   [
+    971,
+    [],
+    0
+   ],
+   [
+    988,
+    [],
+    0
+   ],
+   [
+    1004,
+    [],
+    0
+   ],
+   [
+    1020,
+    [],
+    0
+   ],
+   [
+    1037,
+    [],
+    0
+   ],
+   [
+    1054,
+    [],
+    0
+   ],
+   [
+    1070,
+    [],
+    0
+   ]
+  ]
+ },
+ "swept": {
+  "hash": "",
+  "bar": {
+   "left": 0,
+   "height": 44,
+   "top": 70,
+   "width": 1423,
+   "right": 1423,
+   "bottom": 114
+  },
+  "barFilter": "blur(20px)",
+  "mac": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  },
+  "curtain": {
+   "opacity": "0",
+   "visibility": "hidden",
+   "position": "fixed"
+  },
+  "window": {
+   "width": 1440,
+   "height": 848,
+   "page": 1423
+  },
+  "focus": "BODY",
+  "menu": false,
+  "macHit": "mac",
+  "media": {
+   "hover": true,
+   "coarse": false,
+   "anchors": true
+  },
+  "pageHit": "under",
+  "clicks": {
+   "under": 0,
+   "followed": 0
+  },
+  "store": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  }
+ },
+ "sweptWatch": {
+  "entered": [
+   [
+    "store",
+    5
+   ],
+   [
+    "mac",
+    38
+   ],
+   [
+    "search",
+    54
+   ]
+  ],
+  "frames": [
+   [
+    0,
+    [],
+    0
+   ],
+   [
+    6,
+    [],
+    0
+   ],
+   [
+    25,
+    [],
+    0
+   ],
+   [
+    39,
+    [],
+    0
+   ],
+   [
+    55,
+    [],
+    0
+   ],
+   [
+    75,
+    [],
+    0
+   ],
+   [
+    88,
+    [],
+    0
+   ],
+   [
+    108,
+    [],
+    0
+   ],
+   [
+    125,
+    [],
+    0
+   ],
+   [
+    138,
+    [],
+    0
+   ],
+   [
+    155,
+    [],
+    0
+   ],
+   [
+    172,
+    [],
+    0
+   ],
+   [
+    188,
+    [],
+    0
+   ],
+   [
+    205,
+    [],
+    0
+   ],
+   [
+    221,
+    [],
+    0
+   ],
+   [
+    238,
+    [],
+    0
+   ],
+   [
+    254,
+    [],
+    0
+   ],
+   [
+    271,
+    [],
+    0
+   ],
+   [
+    288,
+    [],
+    0
+   ],
+   [
+    305,
+    [],
+    0
+   ],
+   [
+    322,
+    [],
+    0
+   ],
+   [
+    338,
+    [],
+    0
+   ],
+   [
+    354,
+    [],
+    0
+   ],
+   [
+    372,
+    [],
+    0
+   ],
+   [
+    388,
+    [],
+    0
+   ],
+   [
+    405,
+    [],
+    0
+   ],
+   [
+    421,
+    [],
+    0
+   ],
+   [
+    438,
+    [],
+    0
+   ],
+   [
+    454,
+    [],
+    0
+   ],
+   [
+    472,
+    [],
+    0
+   ],
+   [
+    488,
+    [],
+    0
+   ],
+   [
+    505,
+    [],
+    0
+   ],
+   [
+    522,
+    [],
+    0
+   ],
+   [
+    538,
+    [],
+    0
+   ],
+   [
+    555,
+    [],
+    0
+   ],
+   [
+    571,
+    [],
+    0
+   ],
+   [
+    588,
+    [],
+    0
+   ],
+   [
+    604,
+    [],
+    0
+   ],
+   [
+    622,
+    [],
+    0
+   ],
+   [
+    638,
+    [],
+    0
+   ],
+   [
+    655,
+    [],
+    0
+   ],
+   [
+    672,
+    [],
+    0
+   ],
+   [
+    688,
+    [],
+    0
+   ],
+   [
+    705,
+    [],
+    0
+   ],
+   [
+    722,
+    [],
+    0
+   ],
+   [
+    738,
+    [],
+    0
+   ],
+   [
+    755,
+    [],
+    0
+   ],
+   [
+    772,
+    [],
+    0
+   ],
+   [
+    788,
+    [],
+    0
+   ],
+   [
+    805,
+    [],
+    0
+   ],
+   [
+    822,
+    [],
+    0
+   ],
+   [
+    838,
+    [],
+    0
+   ],
+   [
+    855,
+    [],
+    0
+   ],
+   [
+    871,
+    [],
+    0
+   ],
+   [
+    888,
+    [],
+    0
+   ],
+   [
+    905,
+    [],
+    0
+   ],
+   [
+    921,
+    [],
+    0
+   ],
+   [
+    938,
+    [],
+    0
+   ],
+   [
+    955,
+    [],
+    0
+   ],
+   [
+    972,
+    [],
+    0
+   ]
+  ]
+ },
+ "popover": {
+  "hash": "",
+  "bar": {
+   "left": 0,
+   "height": 44,
+   "top": 70,
+   "width": 1423,
+   "right": 1423,
+   "bottom": 114
+  },
+  "barFilter": "none",
+  "mac": {
+   "shown": true,
+   "box": {
+    "left": 0,
+    "height": 734,
+    "top": 114,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 848
+   },
+   "panel": {
+    "left": 0,
+    "height": 214,
+    "top": 114,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 520,
+    "top": 328,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 848
+   },
+   "open": true,
+   "curtainOpacity": "1"
+  },
+  "curtain": {
+   "opacity": "0",
+   "visibility": "hidden",
+   "position": "fixed"
+  },
+  "window": {
+   "width": 1440,
+   "height": 848,
+   "page": 1423
+  },
+  "focus": "mac-button",
+  "menu": false,
+  "macHit": "mac",
+  "media": {
+   "hover": true,
+   "coarse": false,
+   "anchors": true
+  },
+  "pageHit": "mac-curtain",
+  "clicks": {
+   "under": 0,
+   "followed": 0
+  },
+  "store": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  }
+ },
+ "tabbed": {
+  "hash": "",
+  "bar": {
+   "left": 0,
+   "height": 44,
+   "top": 70,
+   "width": 1423,
+   "right": 1423,
+   "bottom": 114
+  },
+  "barFilter": "none",
+  "mac": {
+   "shown": true,
+   "box": {
+    "left": 0,
+    "height": 734,
+    "top": 114,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 848
+   },
+   "panel": {
+    "left": 0,
+    "height": 214,
+    "top": 114,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 520,
+    "top": 328,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 848
+   },
+   "open": true,
+   "curtainOpacity": "1"
+  },
+  "curtain": {
+   "opacity": "0",
+   "visibility": "hidden",
+   "position": "fixed"
+  },
+  "window": {
+   "width": 1440,
+   "height": 848,
+   "page": 1423
+  },
+  "focus": "mac-first",
+  "menu": false,
+  "macHit": "mac",
+  "media": {
+   "hover": true,
+   "coarse": false,
+   "anchors": true
+  },
+  "pageHit": "mac-curtain",
+  "clicks": {
+   "under": 0,
+   "followed": 0
+  },
+  "store": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  }
+ },
+ "escaped": {
+  "hash": "",
+  "bar": {
+   "left": 0,
+   "height": 44,
+   "top": 70,
+   "width": 1423,
+   "right": 1423,
+   "bottom": 114
+  },
+  "barFilter": "blur(0px)",
+  "mac": {
+   "shown": true,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  },
+  "curtain": {
+   "opacity": "0",
+   "visibility": "visible",
+   "position": "fixed"
+  },
+  "window": {
+   "width": 1440,
+   "height": 848,
+   "page": 1423
+  },
+  "focus": "mac-button",
+  "menu": false,
+  "macHit": "mac",
+  "media": {
+   "hover": true,
+   "coarse": false,
+   "anchors": true
+  },
+  "pageHit": "under",
+  "clicks": {
+   "under": 0,
+   "followed": 0
+  },
+  "store": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  }
+ },
+ "curtained": {
+  "hash": "",
+  "bar": {
+   "left": 0,
+   "height": 44,
+   "top": 70,
+   "width": 1423,
+   "right": 1423,
+   "bottom": 114
+  },
+  "barFilter": "blur(0px)",
+  "mac": {
+   "shown": true,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  },
+  "curtain": {
+   "opacity": "0",
+   "visibility": "visible",
+   "position": "fixed"
+  },
+  "window": {
+   "width": 1440,
+   "height": 848,
+   "page": 1423
+  },
+  "focus": "mac-button",
+  "menu": false,
+  "macHit": "mac",
+  "media": {
+   "hover": true,
+   "coarse": false,
+   "anchors": true
+  },
+  "pageHit": "under",
+  "clicks": {
+   "under": 0,
+   "followed": 0
+  },
+  "store": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "panel": {
+    "left": 0,
+    "height": 258,
+    "top": 70,
+    "width": 1423,
+    "right": 1423,
+    "bottom": 328
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  }
+ },
+ "phoneMenu": {
+  "hash": "",
+  "bar": {
+   "left": 0,
+   "height": 44,
+   "top": 70,
+   "width": 683,
+   "right": 683,
+   "bottom": 114
+  },
+  "barFilter": "blur(20px)",
+  "mac": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "panel": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  },
+  "curtain": {
+   "opacity": "1",
+   "visibility": "visible",
+   "position": "static"
+  },
+  "window": {
+   "width": 700,
+   "height": 848,
+   "page": 683
+  },
+  "focus": "menu-button",
+  "menu": true,
+  "macHit": "mac-button",
+  "media": {
+   "hover": true,
+   "coarse": false,
+   "anchors": true
+  },
+  "pageHit": "menu",
+  "clicks": {
+   "under": 0,
+   "followed": 0
+  },
+  "store": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "panel": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  }
+ },
+ "phoneFlyout": {
+  "hash": "",
+  "bar": {
+   "left": 0,
+   "height": 44,
+   "top": 70,
+   "width": 683,
+   "right": 683,
+   "bottom": 114
+  },
+  "barFilter": "blur(20px)",
+  "mac": {
+   "shown": true,
+   "box": {
+    "left": 0,
+    "height": 848,
+    "top": 0,
+    "width": 683,
+    "right": 683,
+    "bottom": 848
+   },
+   "panel": {
+    "left": 0,
+    "height": 190,
+    "top": 0,
+    "width": 683,
+    "right": 683,
+    "bottom": 190
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": true,
+   "curtainOpacity": "1"
+  },
+  "curtain": {
+   "opacity": "1",
+   "visibility": "visible",
+   "position": "static"
+  },
+  "window": {
+   "width": 700,
+   "height": 848,
+   "page": 683
+  },
+  "focus": "mac-button",
+  "menu": true,
+  "macHit": "A",
+  "media": {
+   "hover": true,
+   "coarse": false,
+   "anchors": true
+  },
+  "pageHit": "mac-fly",
+  "clicks": {
+   "under": 0,
+   "followed": 0
+  },
+  "store": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "panel": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  }
+ },
+ "phoneBack": {
+  "hash": "",
+  "bar": {
+   "left": 0,
+   "height": 44,
+   "top": 70,
+   "width": 683,
+   "right": 683,
+   "bottom": 114
+  },
+  "barFilter": "blur(20px)",
+  "mac": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "panel": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  },
+  "curtain": {
+   "opacity": "1",
+   "visibility": "visible",
+   "position": "static"
+  },
+  "window": {
+   "width": 700,
+   "height": 848,
+   "page": 683
+  },
+  "focus": "BODY",
+  "menu": true,
+  "macHit": "mac-button",
+  "media": {
+   "hover": true,
+   "coarse": false,
+   "anchors": true
+  },
+  "pageHit": "menu",
+  "clicks": {
+   "under": 0,
+   "followed": 0
+  },
+  "store": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "panel": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  }
+ },
+ "phoneClosed": {
+  "hash": "",
+  "bar": {
+   "left": 0,
+   "height": 44,
+   "top": 70,
+   "width": 683,
+   "right": 683,
+   "bottom": 114
+  },
+  "barFilter": "blur(20px)",
+  "mac": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "panel": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  },
+  "curtain": {
+   "opacity": "1",
+   "visibility": "visible",
+   "position": "static"
+  },
+  "window": {
+   "width": 700,
+   "height": 848,
+   "page": 683
+  },
+  "focus": "menu-button",
+  "menu": false,
+  "macHit": "banner",
+  "media": {
+   "hover": true,
+   "coarse": false,
+   "anchors": true
+  },
+  "pageHit": "under",
+  "clicks": {
+   "under": 0,
+   "followed": 0
+  },
+  "store": {
+   "shown": false,
+   "box": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "panel": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "curtain": {
+    "left": 0,
+    "height": 0,
+    "top": 0,
+    "width": 0,
+    "right": 0,
+    "bottom": 0
+   },
+   "open": false,
+   "curtainOpacity": "1"
+  }
+ }
+}

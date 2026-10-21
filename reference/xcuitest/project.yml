@@ -1,6 +1,6 @@
-# XcodeGen's spec of the iOS taps (../run.mjs generates the project from it
-# into a directory of its own): a host app, which a UI test needs, and the UI
-# test, which drives Safari.
+# XcodeGen's spec of the iOS taps (../xcuitest.mjs generates the project from
+# it into a directory of its own): a host app, which a UI test needs, and the
+# UI test, which drives Safari.
 name: Tap
 options:
   bundleIdPrefix: dev.ciderui.tap
