@@ -1,0 +1,48 @@
+{
+ "url": "https://www.apple.com/shop/bag",
+ "finalUrl": "https://www.apple.com/shop/bag",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-21T07:12:12.139Z",
+ "widths": {
+  "390": {
+   "accordion": {
+    "html": "<button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"true\" aria-controls=\"content-_r_0_-0\" id=\"title-_r_0_-0\" class=\"rc-accordion-button\" data-autom=\"faq-button\" data-core-accordion-button-expanded=\"\"><span class=\"typography-c",
+    "styles": {
+     "cursor": "pointer"
+    },
+    "matches": {
+     ":hover": true,
+     ":focus-visible": false
+    }
+   },
+   "compact": {
+    "html": "<button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"true\" aria-controls=\"content-faq-question-0\" id=\"title-faq-question-0\" class=\"rc-accordion-button\" data-core-accordion-button-expanded=\"\"><span class=\"typography-callout\"></",
+    "styles": {
+     "cursor": "pointer"
+    },
+    "matches": {
+     ":hover": true,
+     ":active": false,
+     ":focus": true,
+     ":focus-visible": false
+    }
+   },
+   "compact.icon": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "compact.panel": {
+    "html": "<div data-core-height-transition-wrapper=\"\" class=\"r-height-transition-enter-done\" style=\"\"><div data-core-height-transition-content=\"\"><div data-core-accordion-content=\"\" id=\"content-faq-question-0\"><div class=\"rc-accordion-content large-1",
+    "styles": {
+     "height": "168px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 168
+    }
+   }
+  }
+ }
+}

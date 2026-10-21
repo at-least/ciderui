@@ -1,0 +1,37 @@
+{
+ "url": "https://www.apple.com/iphone/",
+ "finalUrl": "https://www.apple.com/iphone/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-21T07:13:33.503Z",
+ "widths": {
+  "390": {
+   "gallery.current-before": {
+    "html": "<li class=\"product-tile product-tile-iphone-duo gallery-item grid-item current\" role=\"listitem\" data-analytics-gallery-item-id=\"iphone duo\" id=\"gallery-item-1\" data-ac-gallery-item=\"gallery-item-1\" data-staggered-item=\"\" tabindex=\"-1\" style",
+    "styles": {
+     "display": "grid"
+    }
+   },
+   "paddle": {
+    "html": "<button aria-label=\"Next item in Explore the lineup gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
+    "styles": {
+     "background-color": "rgba(223, 223, 227, 0.698)",
+     "color": "rgba(0, 0, 0, 0.64)",
+     "border-top-color": "rgba(0, 0, 0, 0.64)",
+     "opacity": "1"
+    },
+    "matches": {
+     ":hover": true,
+     ":active": false,
+     ":focus": false,
+     ":focus-visible": false
+    }
+   },
+   "gallery.current": {
+    "html": "<li class=\"product-tile product-tile-iphone-18-pro gallery-item grid-item current\" role=\"listitem\" data-analytics-gallery-item-id=\"iphone 18 pro\" id=\"gallery-item-2\" data-ac-gallery-item=\"gallery-item-2\" data-staggered-item=\"\" tabindex=\"-1\"",
+    "styles": {
+     "display": "grid"
+    }
+   }
+  }
+ }
+}

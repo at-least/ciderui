@@ -29,7 +29,14 @@
 // leaving it closes it); `type` presses those keys, once, at the first
 // width the probe is read, into what has the focus (a field: typed one key
 // after another, 150ms apart, then `typed` ms, 2500 unless it says, for what
-// the page answers), and, with `animations`, records what they start;
+// the page answers), and, with `animations`, records what they start; `tap`
+// taps that element, once, at the first width the probe is read, on a touch
+// spec alone: scrolled to the window's middle, its middle touched and let go
+// through the DevTools protocol's touch events, which Chromium's gesture
+// recognizer makes a tap of, as a touch screen's (its pointer events `touch`
+// and trusted, the mouse events and the click after them; a page scrolled
+// after it keeps what it hovered); `matches` records whether the element
+// matches each of those selectors (':hover', what a tap left);
 // `position` adds the box's top and left in the window (where the window is
 // what it is placed in: an open menu's rows); `animations`, with `click`,
 // records every animation and transition the click starts on an element
@@ -146,6 +153,7 @@ const read = (probe) => {
     }
   }
   if (probe.text) out.text = el.textContent.replace(/\s+/g, ' ').trim();
+  if (probe.matches) out.matches = Object.fromEntries(probe.matches.map(s => [s, el.matches(s)]));
   if (probe.box) {
     const r = el.getBoundingClientRect();
     out.box = { width: r.width, height: r.height, ...(probe.position ? { top: r.top, left: r.left } : {}) };
@@ -209,8 +217,21 @@ try {
       const frame = frameOf(probe);
       // a click once, at the first width the probe is read: what it opens
       // stays so as the window narrows
-      const clicking = (probe.click || probe.type) && !clicked.has(probe.name);
-      if (clicking && probe.type) {
+      const clicking = (probe.click || probe.type || probe.tap) && !clicked.has(probe.name);
+      const settle = () => pw.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 900)))));
+      if (clicking && probe.tap) {
+        if (!spec.touch) throw new Error(`${probe.name}: a tap on a spec that is not touch`);
+        clicked.add(probe.name);
+        if (probe.animations) await frame.evaluate(watchAnimations, probe.animations);
+        const target = frame.locator(probe.tap).first();
+        await target.evaluate(e => e.scrollIntoView({ block: 'center' }));
+        await settle();
+        const r = await target.boundingBox();
+        if (!r?.width || !r.height) throw new Error(`${probe.name}: ${probe.tap} has no box to tap`);
+        await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: r.x + r.width / 2, y: r.y + r.height / 2 }] });
+        await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+        await settle();
+      } else if (clicking && probe.type) {
         clicked.add(probe.name);
         if (probe.animations) await frame.evaluate(watchAnimations, probe.animations);
         for (const key of probe.type) {
@@ -222,7 +243,6 @@ try {
         clicked.add(probe.name);
         if (probe.animations) await frame.evaluate(watchAnimations, probe.animations);
         await frame.click(probe.click);
-        const settle = () => pw.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 900)))));
         // the pointer off what it clicked, which it would leave hovered, to the
         // window's bottom corner; or, once what the click opened has opened, to
         // `pointer`, a point inside it, which the pointer leaving would close

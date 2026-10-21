@@ -1,0 +1,29 @@
+{
+ "url": "https://www.apple.com/",
+ "finalUrl": "https://www.apple.com/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-21T07:13:46.064Z",
+ "widths": {
+  "390": {
+   "menutrigger": {
+    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"Close\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-butto",
+    "styles": {
+     "color": "rgb(0, 0, 0)",
+     "opacity": "1"
+    },
+    "matches": {
+     ":hover": true,
+     ":active": false,
+     ":focus": false,
+     ":focus-visible": false
+    }
+   },
+   "root": {
+    "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\" prefix=\"og: http://ogp.me/ns#\" class=\"js touch progressive-image enhanced no-reduced-motion no-desktop no-retina tablet no-windows no-android no-safari chrome no-firef",
+    "styles": {
+     "overflow-y": "hidden"
+    }
+   }
+  }
+ }
+}
