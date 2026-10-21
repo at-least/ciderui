@@ -35,7 +35,14 @@
 // through the DevTools protocol's touch events, which Chromium's gesture
 // recognizer makes a tap of, as a touch screen's (its pointer events `touch`
 // and trusted, the mouse events and the click after them; a page scrolled
-// after it keeps what it hovered); `matches` records whether the element
+// after it keeps what it hovered); `hover` moves the pointer there, at each
+// width the probe is read, on a spec that is not touch: to that element's
+// middle (or a point, [x, y], or what a function of the width gives) in
+// twelve steps, as a hand does (apple.com's script opens a flyout on its own
+// mouseover, 120ms on), then `hovered` ms, 1500 unless it says, and then, with
+// `pointer`, on to that point in six steps (a menu's own room, where the
+// pointer hovers nothing); with `animations` it records what they start at
+// the first width; `matches` records whether the element
 // matches each of those selectors (':hover', what a tap left);
 // `position` adds the box's top and left in the window (where the window is
 // what it is placed in: an open menu's rows); `animations`, with `click`,
@@ -203,6 +210,8 @@ const frameOf = (probe) => {
 
 const final = new URL(pw.url());
 const clicked = new Set();
+// a point a probe names: [x, y], or a function of the window's width giving one
+const point = (p, width) => typeof p === 'function' ? p(width) : p;
 const result = { url: spec.url, finalUrl: final.origin + final.pathname, browser: page.label, date: new Date().toISOString(), widths: {} };
 const nulls = [];
 const used = new Set();
@@ -217,9 +226,26 @@ try {
       const frame = frameOf(probe);
       // a click once, at the first width the probe is read: what it opens
       // stays so as the window narrows
-      const clicking = (probe.click || probe.type || probe.tap) && !clicked.has(probe.name);
+      const clicking = (probe.click || probe.type || probe.tap || probe.hover) && !clicked.has(probe.name);
       const settle = () => pw.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 900)))));
-      if (clicking && probe.tap) {
+      if (probe.hover) {
+        // at every width: what the pointer opens a window's resize may close
+        if (spec.touch) throw new Error(`${probe.name}: a hover on a touch spec`);
+        clicked.add(probe.name);
+        if (clicking && probe.animations) await frame.evaluate(watchAnimations, probe.animations);
+        let to = point(probe.hover, width);
+        if (!Array.isArray(to)) {
+          const r = await frame.locator(probe.hover).first().boundingBox();
+          if (!r?.width || !r.height) throw new Error(`${probe.name}: ${probe.hover} has no box to hover`);
+          to = [r.x + r.width / 2, r.y + r.height / 2];
+        }
+        await pw.mouse.move(...to, { steps: 12 });
+        await pw.waitForTimeout(probe.hovered ?? 1500);
+        if (probe.pointer) {
+          await pw.mouse.move(...point(probe.pointer, width), { steps: 6 });
+          await settle();
+        }
+      } else if (clicking && probe.tap) {
         if (!spec.touch) throw new Error(`${probe.name}: a tap on a spec that is not touch`);
         clicked.add(probe.name);
         if (probe.animations) await frame.evaluate(watchAnimations, probe.animations);
@@ -248,18 +274,21 @@ try {
         // `pointer`, a point inside it, which the pointer leaving would close
         // (moved at once, it lands beyond what is still growing)
         if (probe.pointer) await settle();
-        await pw.mouse.move(...(probe.pointer ?? [0, 899]));
+        await pw.mouse.move(...(point(probe.pointer, width) ?? [0, 899]));
         await settle();
       }
       used.add(frame);
-      const html = await frame.evaluate(place, probe);
+      // what the page is handed of the probe: its data, not its functions (a
+      // point given by the width)
+      const data = JSON.parse(JSON.stringify(probe));
+      const html = await frame.evaluate(place, data);
       if (html === null) {
         at[probe.name] = null;
         nulls.push(`${width} ${probe.name}`);
         console.log(`NULL ${width}px ${probe.name}: ${probe.select ?? ''} ${probe.inject ?? ''} ${probe.into ?? ''} ${probe.stateOn ?? ''}`);
         continue;
       }
-      at[probe.name] = { html, ...(await frame.evaluate(read, probe)) };
+      at[probe.name] = { html, ...(await frame.evaluate(read, data)) };
       for (const [k, v] of Object.entries(at[probe.name].keyframes ?? {})) if (!v) nulls.push(`${width} ${probe.name} @keyframes ${k}`);
       if (clicking && probe.animations) at[probe.name].animations = await frame.evaluate(() => { clearInterval(window.cuiWatch); return window.cuiAnimations; });
       if (probe.states?.length) {
@@ -271,7 +300,7 @@ try {
         for (const state of probe.states) {
           // a state may be several at once: 'focus+focus-visible'
           await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: state.split('+') });
-          at[probe.name].states[state] = (await frame.evaluate(read, probe)).styles;
+          at[probe.name].states[state] = (await frame.evaluate(read, data)).styles;
           await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] });
         }
         // the state's last change must land while transitions are still off, or

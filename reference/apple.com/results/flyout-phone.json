@@ -1,0 +1,2229 @@
+{
+ "url": "https://www.apple.com/",
+ "finalUrl": "https://www.apple.com/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-21T10:33:08.019Z",
+ "widths": {
+  "390": {
+   "menu": {
+    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"Menu\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback",
+    "styles": {
+     "background-color": "rgb(250, 250, 252)",
+     "height": "900px"
+    },
+    "box": {
+     "width": 390,
+     "height": 900
+    }
+   },
+   "row.chevron": {
+    "html": "<span class=\"globalnav-link-chevron\" aria-hidden=\"true\"><svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.1155 30.358a.6.6 0 1 1 -.831.8653l-7-6.7242a.6.6 0 0 1 -.0045-.8613l7-6.8569a.6.6 0 1 1 .84",
+    "styles": {
+     "display": "block",
+     "width": "9px",
+     "height": "47px",
+     "padding-top": "0px",
+     "padding-right": "19px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "-1px",
+     "margin-right": "-48px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "color": "rgb(51, 51, 54)",
+     "opacity": "1",
+     "visibility": "visible",
+     "transform": "matrix(1, 0, 0, 1, 0, 0)",
+     "animation-name": "globalnav-chevron-slide-in-hover",
+     "animation-duration": "0.24s",
+     "animation-delay": "0s",
+     "animation-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)",
+     "animation-fill-mode": "both",
+     "animation-iteration-count": "1",
+     "transition-property": "visibility",
+     "transition-duration": "0.24s",
+     "transition-timing-function": "steps(1, start)"
+    },
+    "keyframes": {
+     "globalnav-chevron-slide-in-hover": [
+      {
+       "at": "0%",
+       "style": "opacity: 0; transform: translate(-4px);"
+      },
+      {
+       "at": "100%",
+       "style": "opacity: 1; transform: translate(0px);"
+      }
+     ]
+    },
+    "box": {
+     "width": 28,
+     "height": 47,
+     "top": 95,
+     "left": 362
+    },
+    "animations": [
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "color",
+      "on": "a.globalnav-link.globalnav-submenu-trigger-link.globalnav-link-mac",
+      "duration": 320,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgb(51, 51, 54)",
+      "to": "rgb(0, 0, 0)",
+      "seen": 213
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible",
+      "seen": 213
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-slide-in-hover",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-4px)",
+      "to": "translate(0px)",
+      "seen": 213
+     }
+    ]
+   },
+   "row.chevron-image": {
+    "html": "<svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.1155 30.358a.6.6 0 1 1 -.831.8653l-7-6.7242a.6.6 0 0 1 -.0045-.8613l7-6.8569a.6.6 0 1 1 .84.8574l-6.5582 6.4238z\"></path></svg>",
+    "styles": {
+     "width": "9px",
+     "height": "48px",
+     "transform": "matrix(-1, 0, 0, 1, 0, 0)"
+    },
+    "box": {
+     "width": 9,
+     "height": 48,
+     "top": 95,
+     "left": 362
+    }
+   },
+   "row.text": {
+    "html": "<span class=\"globalnav-link-text\">Mac</span>",
+    "styles": {
+     "color": "rgb(0, 0, 0)",
+     "opacity": "1",
+     "visibility": "visible",
+     "transform": "none"
+    },
+    "box": {
+     "width": 53.71875,
+     "height": 43,
+     "top": 96,
+     "left": 48
+    }
+   },
+   "row.other-chevron": {
+    "html": "<span class=\"globalnav-link-chevron\" aria-hidden=\"true\"><svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.1155 30.358a.6.6 0 1 1 -.831.8653l-7-6.7242a.6.6 0 0 1 -.0045-.8613l7-6.8569a.6.6 0 1 1 .84",
+    "styles": {
+     "opacity": "0",
+     "visibility": "hidden",
+     "transform": "matrix(0.8, 0, 0, 0.8, 0, 0)",
+     "animation-name": "globalnav-chevron-hover-off",
+     "animation-duration": "0.24s",
+     "animation-delay": "0s",
+     "animation-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)",
+     "animation-fill-mode": "both",
+     "animation-iteration-count": "1"
+    },
+    "keyframes": {
+     "globalnav-chevron-hover-off": [
+      {
+       "at": "0%",
+       "style": "opacity: 1; transform: scale(1);"
+      },
+      {
+       "at": "100%",
+       "style": "opacity: 0; transform: scale(0.8);"
+      }
+     ]
+    }
+   },
+   "flyout": {
+    "html": "<div id=\"globalnav-submenu-link-mac\" class=\"globalnav-flyout globalnav-submenu\" style=\"--r-globalnav-flyout-item-total: 0; --r-globalnav-flyout-group-number: 0; --r-globalnav-flyout-height: 552px; --r-globalnav-flyout-rate: 254ms;\"><div cla",
+    "styles": {
+     "position": "absolute",
+     "top": "0px",
+     "left": "0px",
+     "height": "900px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "overflow-y": "visible",
+     "z-index": "auto",
+     "opacity": "1",
+     "visibility": "visible",
+     "transform": "none",
+     "animation-name": "none",
+     "animation-duration": "0s",
+     "animation-delay": "0s",
+     "animation-timing-function": "ease",
+     "animation-fill-mode": "none",
+     "animation-iteration-count": "1"
+    },
+    "keyframes": {},
+    "box": {
+     "width": 390,
+     "height": 900,
+     "top": 0,
+     "left": 0
+    },
+    "animations": [
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-slide-in-hover",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-4px)",
+      "to": "translate(0px)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "h2.globalnav-searchresults-header",
+      "duration": 320,
+      "delay": 200,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 220,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 240,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)",
+      "seen": 5
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 260,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)",
+      "seen": 5
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 280,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)",
+      "seen": 5
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 300,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)",
+      "seen": 5
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 5
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 100,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 5
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 200,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 5
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 300,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 5
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 400,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 5
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 500,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 5
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 600,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 5
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 700,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 5
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "div.globalnav-item.globalnav-menuback",
+      "duration": 240,
+      "delay": 160,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "1",
+      "seen": 46
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "div.globalnav-item.globalnav-menuback",
+      "duration": 240,
+      "delay": 160,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(4px) scale(1)",
+      "to": "translate(0px) scale(1)",
+      "seen": 46
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "div.globalnav-item.globalnav-menuback",
+      "duration": 240,
+      "delay": 160,
+      "direction": "normal",
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible",
+      "seen": 46
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "color",
+      "on": "a.globalnav-link.globalnav-submenu-trigger-link.globalnav-link-mac",
+      "duration": 320,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgb(0, 0, 0)",
+      "to": "rgb(51, 51, 54)",
+      "seen": 46
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "steps(1)",
+      "from": "visible",
+      "to": "hidden",
+      "seen": 46
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-forward-previous",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(0px)",
+      "to": "translate(-8px)",
+      "seen": 46
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-forward-previous",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(0px)",
+      "to": "translate(-8px)",
+      "seen": 46
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 46
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-forward-next",
+      "on": "div#globalnav-submenu-link-mac.globalnav-flyout.globalnav-submenu",
+      "duration": 240,
+      "delay": 160,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(8px)",
+      "to": "translate(0px)",
+      "seen": 46
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-forward-previous",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(0px)",
+      "to": "translate(-8px)",
+      "seen": 46
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-forward-previous",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(0px)",
+      "to": "translate(-8px)",
+      "seen": 46
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-forward-previous",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(0px)",
+      "to": "translate(-8px)",
+      "seen": 46
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-forward-previous",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(0px)",
+      "to": "translate(-8px)",
+      "seen": 46
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-forward-previous",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(0px)",
+      "to": "translate(-8px)",
+      "seen": 46
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-forward-previous",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(0px)",
+      "to": "translate(-8px)",
+      "seen": 46
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-forward-previous",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(0px)",
+      "to": "translate(-8px)",
+      "seen": 46
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-forward-previous",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(0px)",
+      "to": "translate(-8px)",
+      "seen": 46
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-forward-previous",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(0px)",
+      "to": "translate(-8px)",
+      "seen": 46
+     }
+    ]
+   },
+   "flyout.scroll": {
+    "html": "<div class=\"globalnav-flyout-scroll-container\"><div class=\"globalnav-flyout-content globalnav-submenu-content\" style=\"--r-globalnav-flyout-elevated-group-count: 1; --r-globalnav-flyout-group-total: 2; --r-globalnav-flyout-item-total: 31;\"><",
+    "styles": {
+     "height": "1406px",
+     "overflow-y": "visible",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 390,
+     "height": 1406,
+     "top": 0,
+     "left": 0
+    }
+   },
+   "flyout.content": {
+    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\" style=\"--r-globalnav-flyout-elevated-group-count: 1; --r-globalnav-flyout-group-total: 2; --r-globalnav-flyout-item-total: 31;\"><div class=\"globalnav-submenu-group globalnav-su",
+    "styles": {
+     "padding-top": "50px",
+     "padding-right": "48px",
+     "padding-bottom": "0px",
+     "padding-left": "48px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "flex-direction": "column"
+    },
+    "box": {
+     "width": 390,
+     "height": 1406,
+     "top": 0,
+     "left": 0
+    }
+   },
+   "content": {
+    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"Mac menu\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menu",
+    "styles": {
+     "background-color": "rgb(250, 250, 252)",
+     "overflow-y": "scroll",
+     "height": "900px"
+    },
+    "box": {
+     "width": 390,
+     "height": 900
+    }
+   },
+   "group.elevated": {
+    "html": "<div class=\"globalnav-submenu-group globalnav-submenu-group-elevated\" data-analytics-region=\"explore mac\" style=\"--r-globalnav-flyout-group-number: 0;\"><h2 class=\"globalnav-submenu-header\" id=\"3ded287d\" style=\"--r-globalnav-flyout-item-numb",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "52px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 294,
+     "height": 512,
+     "top": 50,
+     "left": 48
+    }
+   },
+   "group": {
+    "html": "<div class=\"globalnav-submenu-group \" data-analytics-region=\"shop mac\" style=\"--r-globalnav-flyout-group-number: 1;\"><h2 class=\"globalnav-submenu-header\" id=\"92e74133\" style=\"--r-globalnav-flyout-item-number: 12;\">Shop Mac</h2><ul class=\"gl",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "52px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 294,
+     "height": 332,
+     "top": 562,
+     "left": 48
+    }
+   },
+   "header.elevated": {
+    "html": "<h2 class=\"globalnav-submenu-header\" id=\"3ded287d\" style=\"--r-globalnav-flyout-item-number: 1;\">Explore Mac</h2>",
+    "styles": {
+     "display": "none"
+    }
+   },
+   "header": {
+    "html": "<h2 class=\"globalnav-submenu-header\" id=\"92e74133\" style=\"--r-globalnav-flyout-item-number: 12;\">Shop Mac</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(110, 110, 115)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "opacity": "1",
+     "visibility": "visible",
+     "transform": "none"
+    },
+    "box": {
+     "width": 294,
+     "height": 21,
+     "top": 562,
+     "left": 48
+    }
+   },
+   "item.elevated": {
+    "html": "<li class=\"globalnav-submenu-list-item-elevated\" style=\"--r-globalnav-flyout-item-number: 2;\"><a href=\"/mac/\" class=\"globalnav-submenu-link\" data-analytics-title=\"explore all mac\" data-focus-method=\"mouse\">Explore All Mac</a></li>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "-3px",
+     "margin-right": "-11px",
+     "margin-bottom": "0px",
+     "margin-left": "-11px",
+     "opacity": "1",
+     "visibility": "visible",
+     "transform": "none",
+     "transition-delay": "0s"
+    },
+    "box": {
+     "width": 316,
+     "height": 54,
+     "top": 47,
+     "left": 37
+    }
+   },
+   "item.elevated2": {
+    "html": "<li class=\"globalnav-submenu-list-item-elevated\" style=\"--r-globalnav-flyout-item-number: 3;\"><a href=\"/macbook-neo/\" class=\"globalnav-submenu-link\" data-analytics-title=\"macbook neo\">MacBook Neo</a></li>",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "-11px",
+     "margin-bottom": "0px",
+     "margin-left": "-11px"
+    },
+    "box": {
+     "width": 316,
+     "height": 54,
+     "top": 94,
+     "left": 37
+    }
+   },
+   "item.after": {
+    "html": "<li class=\"globalnav-submenu-list-item\" style=\"--r-globalnav-flyout-item-number: 10;\"><a href=\"/mac/compare/\" class=\"globalnav-submenu-link\" data-analytics-title=\"compare mac\">Compare Mac</a></li>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "17px",
+     "margin-right": "-11px",
+     "margin-bottom": "0px",
+     "margin-left": "-11px"
+    },
+    "box": {
+     "width": 316,
+     "height": 40,
+     "top": 440,
+     "left": 37
+    }
+   },
+   "item": {
+    "html": "<li class=\"globalnav-submenu-list-item\" style=\"--r-globalnav-flyout-item-number: 13;\"><a href=\"/us/shop/goto/buy_mac\" class=\"globalnav-submenu-link\" data-analytics-title=\"shop mac\">Shop Mac</a></li>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "14px",
+     "margin-right": "-11px",
+     "margin-bottom": "0px",
+     "margin-left": "-11px"
+    },
+    "box": {
+     "width": 316,
+     "height": 40,
+     "top": 597,
+     "left": 37
+    }
+   },
+   "item2": {
+    "html": "<li class=\"globalnav-submenu-list-item\" style=\"--r-globalnav-flyout-item-number: 14;\"><a href=\"/mac/best-mac/\" class=\"globalnav-submenu-link\" data-analytics-title=\"help me choose\">Help Me Choose</a></li>",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "-11px",
+     "margin-bottom": "0px",
+     "margin-left": "-11px"
+    },
+    "box": {
+     "width": 316,
+     "height": 40,
+     "top": 632,
+     "left": 37
+    }
+   },
+   "link.elevated": {
+    "html": "<a href=\"/mac/\" class=\"globalnav-submenu-link\" data-analytics-title=\"explore all mac\" data-focus-method=\"mouse\">Explore All Mac</a>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "11px",
+     "padding-right": "11px",
+     "padding-bottom": "11px",
+     "padding-left": "11px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "-7px",
+     "margin-left": "0px",
+     "display": "flex",
+     "max-width": "max-content",
+     "outline-style": "none",
+     "outline-color": "rgb(51, 51, 54)",
+     "outline-width": "3px",
+     "outline-offset": "0px",
+     "transition-property": "color",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 213.234375,
+     "height": 54,
+     "top": 47,
+     "left": 37
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "28px",
+      "line-height": "32px",
+      "font-weight": "600",
+      "letter-spacing": "0.196px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "11px",
+      "padding-right": "11px",
+      "padding-bottom": "11px",
+      "padding-left": "11px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "-7px",
+      "margin-left": "0px",
+      "display": "flex",
+      "max-width": "max-content",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "28px",
+      "line-height": "32px",
+      "font-weight": "600",
+      "letter-spacing": "0.196px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "11px",
+      "padding-right": "11px",
+      "padding-bottom": "11px",
+      "padding-left": "11px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "-7px",
+      "margin-left": "0px",
+      "display": "flex",
+      "max-width": "max-content",
+      "outline-style": "solid",
+      "outline-color": "rgb(0, 113, 227)",
+      "outline-width": "2px",
+      "outline-offset": "-7px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "link": {
+    "html": "<a href=\"/us/shop/goto/buy_mac\" class=\"globalnav-submenu-link\" data-analytics-title=\"shop mac\">Shop Mac</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "8px",
+     "padding-right": "11px",
+     "padding-bottom": "7px",
+     "padding-left": "11px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "-5px",
+     "margin-left": "0px",
+     "display": "flex",
+     "max-width": "max-content",
+     "transition-property": "color",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 101.1875,
+     "height": 40,
+     "top": 597,
+     "left": 37
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "600",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "8px",
+      "padding-right": "11px",
+      "padding-bottom": "7px",
+      "padding-left": "11px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "-5px",
+      "margin-left": "0px",
+      "display": "flex",
+      "max-width": "max-content",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "back": {
+    "html": "<div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://www.w3.org/2",
+    "styles": {
+     "position": "absolute",
+     "top": "0px",
+     "left": "0px",
+     "right": "342px",
+     "width": "48px",
+     "height": "48px",
+     "z-index": "3",
+     "opacity": "1",
+     "visibility": "visible",
+     "transform": "matrix(1, 0, 0, 1, 0, 0)",
+     "transition-delay": "0.16s, 0.16s, 0.16s",
+     "transition-property": "opacity, transform, visibility",
+     "transition-duration": "0.24s, 0.24s, 0.24s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), steps(1, start)"
+    },
+    "box": {
+     "width": 48,
+     "height": 48,
+     "top": 0,
+     "left": 0
+    }
+   },
+   "back.button": {
+    "html": "<button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m1.5618 24.0621 6.5581-6.4238",
+    "styles": {
+     "width": "48px",
+     "height": "48px",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "color": "rgb(51, 51, 54)",
+     "opacity": "1",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "cursor": "pointer",
+     "outline-style": "none",
+     "outline-color": "rgb(51, 51, 54)",
+     "outline-width": "3px",
+     "outline-offset": "-7px",
+     "transition-property": "color",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 48,
+     "height": 48,
+     "top": 0,
+     "left": 0
+    },
+    "states": {
+     "hover": {
+      "width": "48px",
+      "height": "48px",
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "cursor": "pointer",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "-7px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-visible": {
+      "width": "48px",
+      "height": "48px",
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "color": "rgb(51, 51, 54)",
+      "opacity": "1",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "cursor": "pointer",
+      "outline-style": "solid",
+      "outline-color": "rgb(0, 113, 227)",
+      "outline-width": "2px",
+      "outline-offset": "-7px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "back.image": {
+    "html": "<svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m1.5618 24.0621 6.5581-6.4238c.2368-.2319.2407-.6118.0088-.8486-.2324-.2373-.6123-.2407-.8486-.0088l-7 6.8569c-.1157.1138-.1807.2695-.1802.4316.001.16",
+    "styles": {
+     "width": "9px",
+     "height": "48px",
+     "transform": "none"
+    },
+    "box": {
+     "width": 9,
+     "height": 48,
+     "top": 0,
+     "left": 19
+    }
+   },
+   "close": {
+    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"Close\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-butto",
+    "styles": {
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0.8"
+    },
+    "box": {
+     "width": 48,
+     "height": 48,
+     "top": 0,
+     "left": 342
+    }
+   },
+   "row.away": {
+    "html": "<span class=\"globalnav-link-text\">Mac</span>",
+    "styles": {
+     "opacity": "1",
+     "visibility": "hidden",
+     "transform": "none"
+    },
+    "box": {
+     "width": 53.71875,
+     "height": 43,
+     "top": 50,
+     "left": 40
+    }
+   },
+   "back.clicked": {
+    "html": "<div id=\"globalnav-submenu-link-mac\" class=\"globalnav-flyout globalnav-submenu\" style=\"--r-globalnav-flyout-item-total: 0; --r-globalnav-flyout-group-number: 0; --r-globalnav-flyout-height: 552px; --r-globalnav-flyout-rate: 254ms;\"><div cla",
+    "styles": {
+     "opacity": "0",
+     "visibility": "hidden",
+     "transform": "none",
+     "animation-name": "none",
+     "animation-duration": "0s",
+     "animation-delay": "0s",
+     "animation-timing-function": "ease",
+     "animation-fill-mode": "none",
+     "animation-iteration-count": "1"
+    },
+    "box": {
+     "width": 0,
+     "height": 0,
+     "top": 0,
+     "left": 0
+    },
+    "animations": [
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "h2.globalnav-searchresults-header",
+      "duration": 320,
+      "delay": 200,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 220,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 240,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 260,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 280,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 300,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)",
+      "seen": 4
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "div.globalnav-item.globalnav-menuback",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "1",
+      "to": "0",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "div.globalnav-item.globalnav-menuback",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(0px) scale(1)",
+      "to": "translate(0px) scale(0.8)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "div.globalnav-item.globalnav-menuback",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "steps(1)",
+      "from": "visible",
+      "to": "hidden",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "1",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "1",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "1",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "1",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "1",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "1",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "1",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "1",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "1",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "1",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "1",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "ul.globalnav-submenu-trigger-group",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible",
+      "seen": 53
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-back-next",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 160,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-back-next",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 160,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-back-previous",
+      "on": "div#globalnav-submenu-link-mac.globalnav-flyout.globalnav-submenu",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(0px)",
+      "to": "translate(8px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-back-next",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 160,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-back-next",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 160,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-back-next",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 160,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 53
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-back-next",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 160,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 54
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-back-next",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 160,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 54
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-back-next",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 160,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 54
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-back-next",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 160,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 54
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-back-next",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 160,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 54
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-flyout-slide-back-next",
+      "on": "span.globalnav-link-text",
+      "duration": 240,
+      "delay": 160,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(-8px)",
+      "to": "translate(0px)",
+      "seen": 54
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 54
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 100,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 54
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 200,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 54
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 300,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 54
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 400,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 54
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 500,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 54
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 600,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 54
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 700,
+      "direction": "normal",
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2",
+      "seen": 54
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "div.globalnav-item.globalnav-menuback",
+      "duration": 240,
+      "delay": 0,
+      "direction": "normal",
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate(0px) scale(0.8)",
+      "to": "translate(4px) scale(1)",
+      "seen": 472
+     }
+    ]
+   },
+   "back.row": {
+    "html": "<span class=\"globalnav-link-text\">Mac</span>",
+    "styles": {
+     "opacity": "1",
+     "visibility": "visible",
+     "transform": "none"
+    },
+    "box": {
+     "width": 53.71875,
+     "height": 43,
+     "top": 96,
+     "left": 48
+    }
+   },
+   "back.gone": {
+    "html": "<div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://www.w3.org/2",
+    "styles": {
+     "opacity": "0",
+     "visibility": "hidden",
+     "transform": "matrix(1, 0, 0, 1, 4, 0)"
+    }
+   },
+   "keyframes": {
+    "html": "<div style=\"animation-name: globalnav-flyout-slide-forward-previous, globalnav-flyout-slide-forward-next, globalnav-flyout-slide-back-previous, globalnav-flyout-slide-back-next\"></div>",
+    "styles": {
+     "animation-name": "globalnav-flyout-slide-forward-previous, globalnav-flyout-slide-forward-next, globalnav-flyout-slide-back-previous, globalnav-flyout-slide-back-next"
+    },
+    "keyframes": {
+     "globalnav-flyout-slide-forward-previous": [
+      {
+       "at": "0%",
+       "style": "opacity: 1; transform: translate(0px);"
+      },
+      {
+       "at": "100%",
+       "style": "opacity: 0; transform: translate(-8px);"
+      }
+     ],
+     "globalnav-flyout-slide-forward-next": [
+      {
+       "at": "0%",
+       "style": "opacity: 0; transform: translate(8px);"
+      },
+      {
+       "at": "100%",
+       "style": "opacity: 1; transform: translate(0px);"
+      }
+     ],
+     "globalnav-flyout-slide-back-previous": [
+      {
+       "at": "0%",
+       "style": "opacity: 1; transform: translate(0px);"
+      },
+      {
+       "at": "100%",
+       "style": "opacity: 0; transform: translate(8px);"
+      }
+     ],
+     "globalnav-flyout-slide-back-next": [
+      {
+       "at": "0%",
+       "style": "opacity: 0; transform: translate(-8px);"
+      },
+      {
+       "at": "100%",
+       "style": "opacity: 1; transform: translate(0px);"
+      }
+     ]
+    }
+   }
+  }
+ }
+}

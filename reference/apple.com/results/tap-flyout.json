@@ -1,0 +1,54 @@
+{
+ "url": "https://www.apple.com/",
+ "finalUrl": "https://www.apple.com/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-21T10:33:16.864Z",
+ "widths": {
+  "1024": {
+   "link": {
+    "html": "<a href=\"/mac/\" data-globalnav-item-name=\"mac\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"mac\" data-analytics-element-engagement=\"hover - mac\" aria-label=\"Mac\" class=\"globalnav-link globalnav-submenu-trigger-link global",
+    "styles": {
+     "color": "rgb(0, 0, 0)"
+    },
+    "matches": {
+     ":hover": true,
+     ":focus": true,
+     ":focus-visible": false
+    }
+   },
+   "flyout": {
+    "html": "<div id=\"globalnav-submenu-link-mac\" class=\"globalnav-flyout globalnav-submenu\" style=\"--r-globalnav-flyout-item-total: 0; --r-globalnav-flyout-group-number: 0; --r-globalnav-flyout-height: 552px; --r-globalnav-flyout-rate: 254ms; --r-globa",
+    "styles": {
+     "height": "552px",
+     "visibility": "visible",
+     "background-color": "rgb(250, 250, 252)"
+    },
+    "box": {
+     "width": 1024,
+     "height": 552
+    }
+   },
+   "trigger": {
+    "html": "<button id=\"globalnav-menubutton-link-mac\" class=\"globalnav-submenu-trigger-button\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu-link-mac\" aria-label=\"Mac menu\" data-topnav-flyout-trigger-regular=\"true\"><span class=\"globalnav-image",
+    "styles": {
+     "display": "flex"
+    },
+    "box": {
+     "width": 22,
+     "height": 44
+    }
+   },
+   "curtain": {
+    "html": "<div id=\"globalnav-curtain\" class=\"globalnav-curtain\"></div>",
+    "styles": {
+     "opacity": "1",
+     "visibility": "visible"
+    }
+   },
+   "page": {
+    "html": "<link rel=\"canonical\" href=\"https://www.apple.com/\">",
+    "styles": {}
+   }
+  }
+ }
+}
