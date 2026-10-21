@@ -78,6 +78,7 @@ export const cases = [
       { target: '.cui-tile-media', props: ['position', 'top', 'left', 'box-height'], apple: ['home', 'tile.media'] },
       { target: '.cui-tile-media', props: ['box-width'], golden: 'the picture across the whole tile, its own cut (apple.com\'s, home:tile.media)' },
       { target: '.cui-tile-link', props: ['z-index', 'box-width'], golden: 'the link over the picture and the copy, the whole tile (apple.com\'s at 3, its copy at 2, home:tile.link)' },
+      { target: '.cui-tile-link', state: 'focus-visible', props: ['outline-offset'], golden: 'the one ring moved in, 3px inside the tile\'s edge: the link, the whole tile, takes the focus (apple.com\'s none, tabindex="-1": home:tile.link), and the tile clips what is outside it (overflow: clip, apple.com\'s)' },
       { target: '.cui-tile-ctas', props: ['position', 'z-index'], golden: 'the buttons over the link (apple.com\'s at 3 and 4)' },
     ],
   },
@@ -87,6 +88,7 @@ export const cases = [
     widths: [1200, 390],
     checks: [
       { target: '.cui-tile', props: ['border-top-left-radius', 'overflow'], apple: ['product', 'tile.rounded'] },
+      { target: '.cui-tile-link', props: ['border-top-left-radius'], golden: 'the tile\'s corners, which its ring, moved in, follows' },
     ],
   },
 ];

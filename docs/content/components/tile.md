@@ -21,7 +21,7 @@ A tile of apple.com’s home page: a block of its own ground with a headline, a 
 | `cui-tile` | the tile, on the alternate ground (black in a dark block): 580px tall at least from 1069px, 490px from 735px, 500px below |
 | `cui-tile-rounded` | 28px corners, the product page’s |
 | `cui-tile-media` | its picture, filling it |
-| `cui-tile-link` | the whole tile a link, named by its `aria-label` |
+| `cui-tile-link` | the whole tile a link, named by its `aria-label`; focused, its ring drawn inside the tile’s edge, which clips what is outside it |
 | `cui-tile-content` | the text and buttons |
 | `cui-tile-headline` | 40px (32px below 1069px) |
 | `cui-tile-subhead` | 21px (19px) |

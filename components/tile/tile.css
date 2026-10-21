@@ -38,7 +38,10 @@
  * below its subhead at every width (apple.com's promo tiles measured have
  * none; a full tile's is 8px below 735px); the buttons a flex row (apple.com's
  * a grid of the same gaps); the layers' order its own (picture, content,
- * link, buttons: apple.com's numbers them 1 to 4). */
+ * link, buttons: apple.com's numbers them 1 to 4); its link takes the
+ * focus (apple.com's is out of the tab order, tabindex="-1"), so its ring,
+ * the one ring, is moved in, 3px inside the tile's edge and along its
+ * corners: the tile clips what is outside it (overflow: clip, apple.com's). */
 
 @layer components {
   .cui-tile {
@@ -91,6 +94,13 @@
     position: absolute;
     inset: 0;
     z-index: 1;
+    border-radius: inherit;
+
+    /* the one ring moved in, 3px inside the tile's edge, which clips what
+       is outside it */
+    &:focus-visible {
+      outline-offset: -5px;
+    }
   }
 
   .cui-tile-content {

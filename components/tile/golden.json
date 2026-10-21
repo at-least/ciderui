@@ -18,11 +18,15 @@
  "layers | .cui-tile-media | 1200 | box-width": "1200px",
  "layers | .cui-tile-link | 1200 | z-index": "1",
  "layers | .cui-tile-link | 1200 | box-width": "1200px",
+ "layers | .cui-tile-link:focus-visible | 1200 | outline-offset": "-5px",
  "layers | .cui-tile-ctas | 1200 | position": "relative",
  "layers | .cui-tile-ctas | 1200 | z-index": "2",
  "layers | .cui-tile-media | 390 | box-width": "390px",
  "layers | .cui-tile-link | 390 | z-index": "1",
  "layers | .cui-tile-link | 390 | box-width": "390px",
+ "layers | .cui-tile-link:focus-visible | 390 | outline-offset": "-5px",
  "layers | .cui-tile-ctas | 390 | position": "relative",
- "layers | .cui-tile-ctas | 390 | z-index": "2"
+ "layers | .cui-tile-ctas | 390 | z-index": "2",
+ "rounded | .cui-tile-link | 1200 | border-top-left-radius": "28px",
+ "rounded | .cui-tile-link | 390 | border-top-left-radius": "28px"
 }
