@@ -682,18 +682,28 @@ export const cases = [
     ],
   },
   {
-    // with text in the field, a row the site's script writes comes in at
-    // once: read 150ms after the click, inside the opening's 200ms delay
-    // (HOLD would hold every element: a 0s transition delayed 10s holds its
-    // start too)
+    // with text in the field, a row the site's script writes fades in where
+    // it is, as apple.com's new results do (search-typed:ip, a section to
+    // a section: its rows before fade out under them, here gone); read 150ms
+    // after the click, inside the opening's 200ms delay
     name: 'search-suggestions-rows',
     html: `${SUGGESTING}${LATER}`,
     ...SEARCHING,
     wait: 150,
     widths: [1600, 390],
     checks: [
-      { target: '.cui-globalnav-searchlinks > li:first-child', props: ['opacity', 'transform', 'transition-property', 'transition-duration'], golden: 'opened with text in its field, its rows at once: the opening\'s motion is the empty field\'s' },
-      { target: '.cui-globalnav-searchlinks > li:nth-child(3)', props: ['opacity', 'transform', 'transition-property', 'transition-duration'], golden: 'a row written once it is open, with text in its field, at once (apple.com\'s script runs a motion of its own between its results, not read: it needs typing)' },
+      { target: SHEAD, props: ['transition-property', 'transition-duration', 'transition-timing-function', 'transition-delay'], golden: 'apple.com\'s new heading in 320ms from 40ms, its opacity alone (search-typed:ip, globalnav-search-fade: in place)' },
+      ...[[1, 60], [2, 80], [3, 100]].map(([n, ms]) => ({ target: `.cui-globalnav-searchlinks > li:nth-child(${n})`, props: ['transition-property', 'transition-duration', 'transition-delay'], golden: `apple.com's new rows in 320ms, each 20ms after the one above: the ${['first', 'second', 'third'][n - 1]} from ${ms}ms (search-typed:ip)${n === 3 ? ', written once the search was open' : ''}` })),
+    ],
+  },
+  {
+    // read at its start, any motion held there: from transparent, in place
+    name: 'search-suggestions-start',
+    html: `${HOLD}${SUGGESTING}${LATER}`,
+    ...SEARCHING,
+    widths: [1600],
+    checks: [
+      { target: '.cui-globalnav-searchlinks > li:nth-child(3)', props: ['opacity', 'transform'], golden: 'a row written once something is typed from transparent, where it is (search-typed:ip\'s keyframes: opacity 0 to 1, translateY(0px))' },
     ],
   },
   {

@@ -6,8 +6,9 @@
  * From apple.com's global nav (reference/apple.com/): home:nav* (the bar,
  * light), home:menu* (the phone's menu, opened), newsroom:nav* and
  * newsroom:menu* (a dark nav), product:nav (a clear one), search:*,
- * search-dark:*, search-text:* (its search, opened, with text in it) and
- * search-suggestions:*, search-suggestions-dark:* (showing suggestions); its
+ * search-dark:*, search-text:* (its search, opened, with text in it),
+ * search-suggestions:*, search-suggestions-dark:* (showing suggestions) and
+ * search-typed:* (typed into: its motion between results); its
  * icons ciderui's own
  * (reference/icons/), its menu and its search popovers (reference/popover/,
  * reference/search/).
@@ -83,6 +84,8 @@
  *
  * While a row marks what was typed, each row is muted and its marked part
  * the rows' color; a section after another is 34px below it (48px to 833px).
+ * Rows written once something is typed fade in where they are, the heading
+ * from 40ms, each row 20ms after the one above from 60ms, in 0.32s.
  *
  * cui-globalnav             the bar: 48px, 44px from 834px, on the bar's
  *                           material, translucent under a blur (dark in a
@@ -141,13 +144,16 @@
  * Chrome, Chromium: reference/search/; apple.com's script puts it in the
  * field), the kit's ring 3px out (apple.com's 1px); its suggestions the
  * site's script's to write (apple.com's asks its service for them as one
- * types), muted while a row marks what was typed (apple.com's script marks
- * the search while it shows more than one section), a suggestion's text in
- * a span (a row is a flex box: its text and mark would be boxes of their
- * own, the spaces between them dropped), and rows written once something is
- * typed come in at once, the opening's motion the empty field's, which needs
- * its placeholder (apple.com's script runs a motion of its own between its
- * results, not read: it needs typing); the field's
+ * types), muted while a row marks what was typed (apple.com's script mutes
+ * them from two typed characters, a row marked or not: search-typed:*), a
+ * suggestion's text in a span (a row is a flex box: its text and mark would
+ * be boxes of their own, the spaces between them dropped); rows written once
+ * something is typed fade in where they are, as apple.com's new results do,
+ * and the opening's motion is the empty field's, which needs its
+ * placeholder; the rows they replace go at once (apple.com's fade out under
+ * them), a section kept does not slide to its new place (apple.com's does),
+ * and the panel takes its new height at once (apple.com's flyout grows in
+ * 269ms and shrinks in 320ms after 120ms: search-typed:*); the field's
  * magnifier is an image, not a disabled submit button (a disabled default
  * button keeps Return from sending the form), darker with text in the
  * field, as apple.com's, but never hovered (apple.com's is a button then); a focused link has the focus ring with its hovered look (apple.com
@@ -593,8 +599,7 @@
   }
 
   /* the field and each row in from above, 20ms after the one before, from
-     200ms, as the search opens with its field empty: a row a site's script
-     writes once something is typed comes in at once */
+     200ms, as the search opens with its field empty */
   .cui-globalnav-search:popover-open:has(.cui-globalnav-searchinput:placeholder-shown) {
     .cui-globalnav-searchfield,
     .cui-globalnav-searchheading,
@@ -611,6 +616,22 @@
     .cui-globalnav-searchlinks > li:nth-child(3) { transition-delay: 0.26s; }
     .cui-globalnav-searchlinks > li:nth-child(4) { transition-delay: 0.28s; }
     .cui-globalnav-searchlinks > li:nth-child(n + 5) { transition-delay: 0.3s; }
+  }
+
+  /* once something is typed, a heading and rows a site's script writes fade
+     in where they are, as apple.com's new results do: the heading from 40ms,
+     each row 20ms after the one above from 60ms */
+  .cui-globalnav-search:popover-open:has(.cui-globalnav-searchinput:not(:placeholder-shown)) {
+    .cui-globalnav-searchheading,
+    .cui-globalnav-searchlinks > li {
+      transition: opacity 0.32s var(--cui-globalnav-ease) 0.04s;
+    }
+
+    .cui-globalnav-searchlinks > li:nth-child(1) { transition-delay: 0.06s; }
+    .cui-globalnav-searchlinks > li:nth-child(2) { transition-delay: 0.08s; }
+    .cui-globalnav-searchlinks > li:nth-child(3) { transition-delay: 0.1s; }
+    .cui-globalnav-searchlinks > li:nth-child(4) { transition-delay: 0.12s; }
+    .cui-globalnav-searchlinks > li:nth-child(n + 5) { transition-delay: 0.14s; }
   }
 
   @starting-style {
