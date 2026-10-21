@@ -1,0 +1,637 @@
+{
+ "date": "2026-10-21T21:05:54.552Z",
+ "browser": "safari 27.0.1 on macOS 27.0.1",
+ "front": {
+  "textarea": {
+   "active": true,
+   "frameHasFocus": true,
+   "focus": true,
+   "now": 1231,
+   "edge": "2px",
+   "pageHasFocus": true,
+   "label": "10px",
+   "seen": [
+    [
+     "blur",
+     "visible",
+     824
+    ]
+   ],
+   "visibility": "visible"
+  },
+  "shelf": {
+   "pageHasFocus": true,
+   "visibility": "visible",
+   "now": 2257,
+   "scroll": 412,
+   "clicked": 1052,
+   "rows": [
+    [
+     1102,
+     146,
+     "visible"
+    ],
+    [
+     1152,
+     320,
+     "visible"
+    ],
+    [
+     1202,
+     393,
+     "visible"
+    ],
+    [
+     1252,
+     412,
+     "visible"
+    ],
+    [
+     1303,
+     412,
+     "visible"
+    ],
+    [
+     1354,
+     412,
+     "visible"
+    ],
+    [
+     1406,
+     412,
+     "visible"
+    ],
+    [
+     1458,
+     412,
+     "visible"
+    ],
+    [
+     1510,
+     412,
+     "visible"
+    ],
+    [
+     1561,
+     412,
+     "visible"
+    ],
+    [
+     1614,
+     412,
+     "visible"
+    ],
+    [
+     1665,
+     412,
+     "visible"
+    ],
+    [
+     1717,
+     412,
+     "visible"
+    ],
+    [
+     1770,
+     412,
+     "visible"
+    ],
+    [
+     1822,
+     412,
+     "visible"
+    ],
+    [
+     1874,
+     412,
+     "visible"
+    ],
+    [
+     1926,
+     412,
+     "visible"
+    ],
+    [
+     1978,
+     412,
+     "visible"
+    ],
+    [
+     2029,
+     412,
+     "visible"
+    ],
+    [
+     2082,
+     412,
+     "visible"
+    ],
+    [
+     2134,
+     412,
+     "visible"
+    ],
+    [
+     2186,
+     412,
+     "visible"
+    ],
+    [
+     2238,
+     412,
+     "visible"
+    ]
+   ],
+   "seen": []
+  }
+ },
+ "window": {
+  "made": "window",
+  "textarea": {
+   "active": true,
+   "frameHasFocus": false,
+   "focus": false,
+   "now": 1166,
+   "edge": "1px",
+   "pageHasFocus": false,
+   "label": "18px",
+   "seen": [
+    [
+     "blur",
+     "visible",
+     760
+    ]
+   ],
+   "visibility": "visible"
+  },
+  "shelf": {
+   "pageHasFocus": false,
+   "visibility": "visible",
+   "now": 2256,
+   "scroll": 412,
+   "clicked": 1050,
+   "rows": [
+    [
+     1101,
+     129,
+     "visible"
+    ],
+    [
+     1152,
+     312,
+     "visible"
+    ],
+    [
+     1203,
+     389,
+     "visible"
+    ],
+    [
+     1254,
+     412,
+     "visible"
+    ],
+    [
+     1305,
+     412,
+     "visible"
+    ],
+    [
+     1356,
+     412,
+     "visible"
+    ],
+    [
+     1406,
+     412,
+     "visible"
+    ],
+    [
+     1459,
+     412,
+     "visible"
+    ],
+    [
+     1510,
+     412,
+     "visible"
+    ],
+    [
+     1562,
+     412,
+     "visible"
+    ],
+    [
+     1614,
+     412,
+     "visible"
+    ],
+    [
+     1667,
+     412,
+     "visible"
+    ],
+    [
+     1719,
+     412,
+     "visible"
+    ],
+    [
+     1771,
+     412,
+     "visible"
+    ],
+    [
+     1823,
+     412,
+     "visible"
+    ],
+    [
+     1875,
+     412,
+     "visible"
+    ],
+    [
+     1927,
+     412,
+     "visible"
+    ],
+    [
+     1979,
+     412,
+     "visible"
+    ],
+    [
+     2031,
+     412,
+     "visible"
+    ],
+    [
+     2082,
+     412,
+     "visible"
+    ],
+    [
+     2135,
+     412,
+     "visible"
+    ],
+    [
+     2187,
+     412,
+     "visible"
+    ],
+    [
+     2239,
+     412,
+     "visible"
+    ]
+   ],
+   "seen": []
+  }
+ },
+ "again": {
+  "textarea": {
+   "active": true,
+   "frameHasFocus": true,
+   "focus": true,
+   "now": 1159,
+   "edge": "2px",
+   "pageHasFocus": true,
+   "label": "10px",
+   "seen": [
+    [
+     "blur",
+     "visible",
+     753
+    ]
+   ],
+   "visibility": "visible"
+  },
+  "shelf": {
+   "pageHasFocus": true,
+   "visibility": "visible",
+   "now": 2258,
+   "scroll": 412,
+   "clicked": 1054,
+   "rows": [
+    [
+     1104,
+     89,
+     "visible"
+    ],
+    [
+     1155,
+     290,
+     "visible"
+    ],
+    [
+     1206,
+     381,
+     "visible"
+    ],
+    [
+     1257,
+     410,
+     "visible"
+    ],
+    [
+     1308,
+     412,
+     "visible"
+    ],
+    [
+     1358,
+     412,
+     "visible"
+    ],
+    [
+     1410,
+     412,
+     "visible"
+    ],
+    [
+     1461,
+     412,
+     "visible"
+    ],
+    [
+     1514,
+     412,
+     "visible"
+    ],
+    [
+     1566,
+     412,
+     "visible"
+    ],
+    [
+     1617,
+     412,
+     "visible"
+    ],
+    [
+     1669,
+     412,
+     "visible"
+    ],
+    [
+     1722,
+     412,
+     "visible"
+    ],
+    [
+     1774,
+     412,
+     "visible"
+    ],
+    [
+     1826,
+     412,
+     "visible"
+    ],
+    [
+     1877,
+     412,
+     "visible"
+    ],
+    [
+     1930,
+     412,
+     "visible"
+    ],
+    [
+     1982,
+     412,
+     "visible"
+    ],
+    [
+     2034,
+     412,
+     "visible"
+    ],
+    [
+     2086,
+     412,
+     "visible"
+    ],
+    [
+     2137,
+     412,
+     "visible"
+    ],
+    [
+     2190,
+     412,
+     "visible"
+    ],
+    [
+     2242,
+     412,
+     "visible"
+    ]
+   ],
+   "seen": []
+  }
+ },
+ "hidden": {
+  "shelf": {
+   "made": "tab",
+   "pageHasFocus": true,
+   "visibility": "visible",
+   "now": 2359,
+   "scroll": 73,
+   "after": {
+    "pageHasFocus": true,
+    "visibility": "visible",
+    "now": 3563,
+    "scroll": 73
+   },
+   "clicked": 1048,
+   "rows": [
+    [
+     1099,
+     0,
+     "visible"
+    ],
+    [
+     1150,
+     73,
+     "hidden"
+    ],
+    [
+     1201,
+     73,
+     "hidden"
+    ],
+    [
+     1252,
+     73,
+     "hidden"
+    ],
+    [
+     1302,
+     73,
+     "hidden"
+    ],
+    [
+     1353,
+     73,
+     "hidden"
+    ],
+    [
+     1595,
+     73,
+     "hidden"
+    ],
+    [
+     2337,
+     73,
+     "visible"
+    ],
+    [
+     2389,
+     73,
+     "visible"
+    ],
+    [
+     2440,
+     73,
+     "visible"
+    ],
+    [
+     2493,
+     73,
+     "visible"
+    ],
+    [
+     2545,
+     73,
+     "visible"
+    ],
+    [
+     2597,
+     73,
+     "visible"
+    ],
+    [
+     2649,
+     73,
+     "visible"
+    ],
+    [
+     2701,
+     73,
+     "visible"
+    ],
+    [
+     2753,
+     73,
+     "visible"
+    ],
+    [
+     2805,
+     73,
+     "visible"
+    ],
+    [
+     2856,
+     73,
+     "visible"
+    ],
+    [
+     2909,
+     73,
+     "visible"
+    ],
+    [
+     2960,
+     73,
+     "visible"
+    ],
+    [
+     3013,
+     73,
+     "visible"
+    ],
+    [
+     3065,
+     73,
+     "visible"
+    ],
+    [
+     3117,
+     73,
+     "visible"
+    ],
+    [
+     3168,
+     73,
+     "visible"
+    ],
+    [
+     3221,
+     73,
+     "visible"
+    ],
+    [
+     3273,
+     73,
+     "visible"
+    ],
+    [
+     3325,
+     73,
+     "visible"
+    ],
+    [
+     3377,
+     73,
+     "visible"
+    ],
+    [
+     3429,
+     73,
+     "visible"
+    ],
+    [
+     3480,
+     73,
+     "visible"
+    ],
+    [
+     3533,
+     73,
+     "visible"
+    ]
+   ],
+   "seen": [
+    [
+     "blur",
+     "hidden",
+     1127
+    ],
+    [
+     "visibilitychange",
+     "hidden",
+     1127
+    ],
+    [
+     "focus",
+     "visible",
+     2336
+    ],
+    [
+     "focus",
+     "visible",
+     2336
+    ],
+    [
+     "visibilitychange",
+     "visible",
+     2337
+    ]
+   ]
+  }
+ }
+}

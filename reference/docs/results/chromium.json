@@ -780,8 +780,8 @@
    "frames": [
     {
      "title": "Two questions, the first open",
-     "height": 254,
-     "content": 254,
+     "height": 226,
+     "content": 226,
      "css": true,
      "images": [],
      "width": 414,
@@ -789,8 +789,8 @@
     },
     {
      "title": "A large question",
-     "height": 170,
-     "content": 170,
+     "height": 142,
+     "content": 142,
      "css": true,
      "images": [],
      "width": 414,
@@ -1528,13 +1528,19 @@
    "scroll": 804,
    "previous": false,
    "shown": true,
-   "current": 2
+   "current": 2,
+   "seen": [
+    "visible"
+   ]
   },
   "shelf at 1440": {
    "scroll": 726,
    "previous": false,
    "shown": true,
-   "current": -1
+   "current": -1,
+   "seen": [
+    "visible"
+   ]
   },
   "globalnav search at 1440": {
    "closed": 44,
@@ -1559,7 +1565,7 @@
   },
   "suggestions at 1440": {
    "status": "1 Suggested Links and 3 Suggested Searches available",
-   "ms": 39,
+   "ms": 31,
    "heading": "Suggested Links",
    "link": "/components/modal/",
    "marked": "Mo",
@@ -1587,19 +1593,22 @@
     "top": "18px",
     "size": "17px",
     "edge": "1px",
-    "color": "rgb(134, 134, 139)"
+    "color": "rgb(134, 134, 139)",
+    "hasFocus": true
    },
    "focused": {
     "top": "10px",
     "size": "12px",
     "edge": "2px",
-    "color": "rgb(0, 113, 227)"
+    "color": "rgb(0, 113, 227)",
+    "hasFocus": true
    },
    "filled": {
     "top": "10px",
     "size": "12px",
     "edge": "1px",
-    "color": "rgb(134, 134, 139)"
+    "color": "rgb(134, 134, 139)",
+    "hasFocus": true
    }
   },
   "globalnav flyout at 1440": {
@@ -1732,13 +1741,19 @@
    "scroll": 329,
    "previous": false,
    "shown": true,
-   "current": 1
+   "current": 1,
+   "seen": [
+    "visible"
+   ]
   },
   "shelf at 700": {
    "scroll": 329,
    "previous": false,
    "shown": true,
-   "current": -1
+   "current": -1,
+   "seen": [
+    "visible"
+   ]
   },
   "globalnav search at 700": {
    "closed": 48,
@@ -1763,7 +1778,7 @@
   },
   "suggestions at 700": {
    "status": "1 Suggested Links and 3 Suggested Searches available",
-   "ms": 15,
+   "ms": 17,
    "heading": "Suggested Links",
    "link": "/components/modal/",
    "marked": "Mo",
@@ -1791,19 +1806,22 @@
     "top": "18px",
     "size": "17px",
     "edge": "1px",
-    "color": "rgb(134, 134, 139)"
+    "color": "rgb(134, 134, 139)",
+    "hasFocus": true
    },
    "focused": {
     "top": "10px",
     "size": "12px",
     "edge": "2px",
-    "color": "rgb(0, 113, 227)"
+    "color": "rgb(0, 113, 227)",
+    "hasFocus": true
    },
    "filled": {
     "top": "10px",
     "size": "12px",
     "edge": "1px",
-    "color": "rgb(134, 134, 139)"
+    "color": "rgb(134, 134, 139)",
+    "hasFocus": true
    }
   },
   "globalnav flyout at 700": {
@@ -1921,2637 +1939,2637 @@
   {
    "what": "/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615458576
+   "at": 1792616808457
   },
   {
    "what": "/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615458576
+   "at": 1792616808457
   },
   {
    "what": "/components/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615459537
+   "at": 1792616809203
   },
   {
    "what": "/components/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615459537
+   "at": 1792616809203
   },
   {
    "what": "/components/accordion/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615460386
+   "at": 1792616809958
   },
   {
    "what": "/components/accordion/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615460386
+   "at": 1792616809958
   },
   {
    "what": "/components/accordion/ at 1440px, \"Two questions, the first open\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615460386
+   "at": 1792616809958
   },
   {
    "what": "/components/accordion/ at 1440px, \"Two questions, the first open\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615460386
+   "at": 1792616809958
   },
   {
    "what": "/components/accordion/ at 1440px, \"Two questions, the first open\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615460386
+   "at": 1792616809958
   },
   {
    "what": "/components/accordion/ at 1440px, \"A large question\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615460386
+   "at": 1792616809958
   },
   {
    "what": "/components/accordion/ at 1440px, \"A large question\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615460386
+   "at": 1792616809958
   },
   {
    "what": "/components/accordion/ at 1440px, \"A large question\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615460386
+   "at": 1792616809958
   },
   {
    "what": "/components/article/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615461188
+   "at": 1792616810698
   },
   {
    "what": "/components/article/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615461188
+   "at": 1792616810698
   },
   {
    "what": "/components/article/ at 1440px, \"An article\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615461188
+   "at": 1792616810698
   },
   {
    "what": "/components/article/ at 1440px, \"An article\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615461188
+   "at": 1792616810698
   },
   {
    "what": "/components/article/ at 1440px, \"An article\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615461188
+   "at": 1792616810698
   },
   {
    "what": "/components/button/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"A button\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"A button\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"A button\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"The four variants\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"The four variants\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"The four variants\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"sm, the default, lg and xl\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"sm, the default, lg and xl\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"sm, the default, lg and xl\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"A hero's calls to action\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"A hero's calls to action\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"A hero's calls to action\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"Buttons in a dark block\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"Buttons in a dark block\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"Buttons in a dark block\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"The form buttons\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"The form buttons\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"The form buttons\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"A block button\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"A block button\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"A block button\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"Disabled buttons\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"Disabled buttons\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/button/ at 1440px, \"Disabled buttons\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615462239
+   "at": 1792616811463
   },
   {
    "what": "/components/card/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615463088
+   "at": 1792616812196
   },
   {
    "what": "/components/card/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615463088
+   "at": 1792616812196
   },
   {
    "what": "/components/card/ at 1440px, \"A card with a tag\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615463088
+   "at": 1792616812196
   },
   {
    "what": "/components/card/ at 1440px, \"A card with a tag\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615463088
+   "at": 1792616812196
   },
   {
    "what": "/components/card/ at 1440px, \"A card with a tag\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615463088
+   "at": 1792616812196
   },
   {
    "what": "/components/card/ at 1440px, \"A card with an eyebrow\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615463088
+   "at": 1792616812196
   },
   {
    "what": "/components/card/ at 1440px, \"A card with an eyebrow\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615463088
+   "at": 1792616812196
   },
   {
    "what": "/components/card/ at 1440px, \"A card with an eyebrow\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615463088
+   "at": 1792616812196
   },
   {
    "what": "/components/checkbox/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615463905
+   "at": 1792616812926
   },
   {
    "what": "/components/checkbox/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615463905
+   "at": 1792616812926
   },
   {
    "what": "/components/checkbox/ at 1440px, \"A checkbox\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615463905
+   "at": 1792616812926
   },
   {
    "what": "/components/checkbox/ at 1440px, \"A checkbox\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615463905
+   "at": 1792616812926
   },
   {
    "what": "/components/checkbox/ at 1440px, \"A checkbox\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615463905
+   "at": 1792616812926
   },
   {
    "what": "/components/checkbox/ at 1440px, \"A checked checkbox\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615463905
+   "at": 1792616812926
   },
   {
    "what": "/components/checkbox/ at 1440px, \"A checked checkbox\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615463905
+   "at": 1792616812926
   },
   {
    "what": "/components/checkbox/ at 1440px, \"A checked checkbox\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615463905
+   "at": 1792616812926
   },
   {
    "what": "/components/field/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"An empty field\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"An empty field\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"An empty field\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A filled field\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A filled field\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A filled field\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A field in error and its message\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A field in error and its message\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A field in error and its message\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A disabled field\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A disabled field\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A disabled field\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A field with a currency before it\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A field with a currency before it\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A field with a currency before it\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A message of several lines\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A message of several lines\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A message of several lines\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A dropdown, nothing chosen\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A dropdown, nothing chosen\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A dropdown, nothing chosen\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A dropdown with a choice made\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A dropdown with a choice made\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/field/ at 1440px, \"A dropdown with a choice made\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615464904
+   "at": 1792616813695
   },
   {
    "what": "/components/footer/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615465658
+   "at": 1792616814428
   },
   {
    "what": "/components/footer/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615465658
+   "at": 1792616814428
   },
   {
    "what": "/components/footer/ at 1440px, \"A footer\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615465658
+   "at": 1792616814428
   },
   {
    "what": "/components/footer/ at 1440px, \"A footer\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615465658
+   "at": 1792616814428
   },
   {
    "what": "/components/footer/ at 1440px, \"A footer\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615465658
+   "at": 1792616814428
   },
   {
    "what": "/components/footnote/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615466505
+   "at": 1792616815152
   },
   {
    "what": "/components/footnote/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615466505
+   "at": 1792616815152
   },
   {
    "what": "/components/footnote/ at 1440px, \"A footnote's mark\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615466505
+   "at": 1792616815152
   },
   {
    "what": "/components/footnote/ at 1440px, \"A footnote's mark\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615466505
+   "at": 1792616815152
   },
   {
    "what": "/components/footnote/ at 1440px, \"A footnote's mark\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615466505
+   "at": 1792616815152
   },
   {
    "what": "/components/gallery/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615467321
+   "at": 1792616815884
   },
   {
    "what": "/components/gallery/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615467321
+   "at": 1792616815884
   },
   {
    "what": "/components/gallery/ at 1440px, \"A gallery of cards\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615467321
+   "at": 1792616815884
   },
   {
    "what": "/components/gallery/ at 1440px, \"A gallery of cards\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615467321
+   "at": 1792616815884
   },
   {
    "what": "/components/gallery/ at 1440px, \"A gallery of cards\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615467321
+   "at": 1792616815884
   },
   {
    "what": "/components/globalnav/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px, \"A global nav\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px, \"A global nav\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px, \"A global nav\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px, \"A global nav and its search\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px, \"A global nav and its search\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px, \"A global nav and its search\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px, \"A global nav and its search’s suggestions\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px, \"A global nav and its search’s suggestions\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px, \"A global nav and its search’s suggestions\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px, \"A global nav and its bag\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px, \"A global nav and its bag\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px, \"A global nav and its bag\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px, \"A global nav with flyouts\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px, \"A global nav with flyouts\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/globalnav/ at 1440px, \"A global nav with flyouts\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615468263
+   "at": 1792616816680
   },
   {
    "what": "/components/link/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615469101
+   "at": 1792616817412
   },
   {
    "what": "/components/link/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615469101
+   "at": 1792616817412
   },
   {
    "what": "/components/link/ at 1440px, \"A link in a sentence\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615469101
+   "at": 1792616817412
   },
   {
    "what": "/components/link/ at 1440px, \"A link in a sentence\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615469101
+   "at": 1792616817412
   },
   {
    "what": "/components/link/ at 1440px, \"A link in a sentence\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615469101
+   "at": 1792616817412
   },
   {
    "what": "/components/link/ at 1440px, \"A more link\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615469101
+   "at": 1792616817412
   },
   {
    "what": "/components/link/ at 1440px, \"A more link\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615469101
+   "at": 1792616817412
   },
   {
    "what": "/components/link/ at 1440px, \"A more link\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615469101
+   "at": 1792616817412
   },
   {
    "what": "/components/localnav/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615469845
+   "at": 1792616818138
   },
   {
    "what": "/components/localnav/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615469845
+   "at": 1792616818138
   },
   {
    "what": "/components/localnav/ at 1440px, \"A local nav\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615469845
+   "at": 1792616818138
   },
   {
    "what": "/components/localnav/ at 1440px, \"A local nav\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615469845
+   "at": 1792616818138
   },
   {
    "what": "/components/localnav/ at 1440px, \"A local nav\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615469845
+   "at": 1792616818138
   },
   {
    "what": "/components/modal/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615470701
+   "at": 1792616818874
   },
   {
    "what": "/components/modal/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615470701
+   "at": 1792616818874
   },
   {
    "what": "/components/modal/ at 1440px, \"A modal and the button that opens it\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615470701
+   "at": 1792616818874
   },
   {
    "what": "/components/modal/ at 1440px, \"A modal and the button that opens it\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615470701
+   "at": 1792616818874
   },
   {
    "what": "/components/modal/ at 1440px, \"A modal and the button that opens it\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615470701
+   "at": 1792616818874
   },
   {
    "what": "/components/modal/ at 1440px, \"A product page’s modal and the button that opens it\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615470701
+   "at": 1792616818874
   },
   {
    "what": "/components/modal/ at 1440px, \"A product page’s modal and the button that opens it\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615470701
+   "at": 1792616818874
   },
   {
    "what": "/components/modal/ at 1440px, \"A product page’s modal and the button that opens it\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615470701
+   "at": 1792616818874
   },
   {
    "what": "/components/option/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615471506
+   "at": 1792616819604
   },
   {
    "what": "/components/option/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615471506
+   "at": 1792616819604
   },
   {
    "what": "/components/option/ at 1440px, \"An option with a price\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615471506
+   "at": 1792616819604
   },
   {
    "what": "/components/option/ at 1440px, \"An option with a price\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615471506
+   "at": 1792616819604
   },
   {
    "what": "/components/option/ at 1440px, \"An option with a price\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615471506
+   "at": 1792616819604
   },
   {
    "what": "/components/option/ at 1440px, \"A checked option with a detail\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615471506
+   "at": 1792616819604
   },
   {
    "what": "/components/option/ at 1440px, \"A checked option with a detail\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615471506
+   "at": 1792616819604
   },
   {
    "what": "/components/option/ at 1440px, \"A checked option with a detail\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615471506
+   "at": 1792616819604
   },
   {
    "what": "/components/posts/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615472251
+   "at": 1792616820341
   },
   {
    "what": "/components/posts/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615472251
+   "at": 1792616820341
   },
   {
    "what": "/components/posts/ at 1440px, \"A month of the archive\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615472251
+   "at": 1792616820341
   },
   {
    "what": "/components/posts/ at 1440px, \"A month of the archive\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615472251
+   "at": 1792616820341
   },
   {
    "what": "/components/posts/ at 1440px, \"A month of the archive\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615472251
+   "at": 1792616820341
   },
   {
    "what": "/components/posts/ at 1440px, \"Related stories\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615472251
+   "at": 1792616820341
   },
   {
    "what": "/components/posts/ at 1440px, \"Related stories\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615472251
+   "at": 1792616820341
   },
   {
    "what": "/components/posts/ at 1440px, \"Related stories\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615472251
+   "at": 1792616820341
   },
   {
    "what": "/components/price/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615473056
+   "at": 1792616821063
   },
   {
    "what": "/components/price/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615473056
+   "at": 1792616821063
   },
   {
    "what": "/components/price/ at 1440px, \"A price\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615473056
+   "at": 1792616821063
   },
   {
    "what": "/components/price/ at 1440px, \"A price\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615473056
+   "at": 1792616821063
   },
   {
    "what": "/components/price/ at 1440px, \"A price\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615473056
+   "at": 1792616821063
   },
   {
    "what": "/components/productnav/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615473849
+   "at": 1792616821786
   },
   {
    "what": "/components/productnav/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615473849
+   "at": 1792616821786
   },
   {
    "what": "/components/productnav/ at 1440px, \"A product nav\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615473849
+   "at": 1792616821786
   },
   {
    "what": "/components/productnav/ at 1440px, \"A product nav\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615473849
+   "at": 1792616821786
   },
   {
    "what": "/components/productnav/ at 1440px, \"A product nav\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615473849
+   "at": 1792616821786
   },
   {
    "what": "/components/quicklinks/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615474600
+   "at": 1792616822510
   },
   {
    "what": "/components/quicklinks/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615474600
+   "at": 1792616822510
   },
   {
    "what": "/components/quicklinks/ at 1440px, \"Quick links\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615474600
+   "at": 1792616822510
   },
   {
    "what": "/components/quicklinks/ at 1440px, \"Quick links\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615474600
+   "at": 1792616822510
   },
   {
    "what": "/components/quicklinks/ at 1440px, \"Quick links\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615474600
+   "at": 1792616822510
   },
   {
    "what": "/components/ribbon/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615475565
+   "at": 1792616823239
   },
   {
    "what": "/components/ribbon/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615475565
+   "at": 1792616823239
   },
   {
    "what": "/components/ribbon/ at 1440px, \"A ribbon\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615475565
+   "at": 1792616823239
   },
   {
    "what": "/components/ribbon/ at 1440px, \"A ribbon\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615475565
+   "at": 1792616823239
   },
   {
    "what": "/components/ribbon/ at 1440px, \"A ribbon\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615475565
+   "at": 1792616823239
   },
   {
    "what": "/components/ribbon/ at 1440px, \"An announcing ribbon\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615475565
+   "at": 1792616823239
   },
   {
    "what": "/components/ribbon/ at 1440px, \"An announcing ribbon\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615475565
+   "at": 1792616823239
   },
   {
    "what": "/components/ribbon/ at 1440px, \"An announcing ribbon\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615475565
+   "at": 1792616823239
   },
   {
    "what": "/components/section/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615476566
+   "at": 1792616823976
   },
   {
    "what": "/components/section/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615476566
+   "at": 1792616823976
   },
   {
    "what": "/components/section/ at 1440px, \"A section\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615476566
+   "at": 1792616823976
   },
   {
    "what": "/components/section/ at 1440px, \"A section\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615476566
+   "at": 1792616823976
   },
   {
    "what": "/components/section/ at 1440px, \"A section\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615476566
+   "at": 1792616823976
   },
   {
    "what": "/components/section/ at 1440px, \"A section's header\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615476566
+   "at": 1792616823976
   },
   {
    "what": "/components/section/ at 1440px, \"A section's header\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615476566
+   "at": 1792616823976
   },
   {
    "what": "/components/section/ at 1440px, \"A section's header\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615476566
+   "at": 1792616823976
   },
   {
    "what": "/components/shelf/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615477332
+   "at": 1792616824728
   },
   {
    "what": "/components/shelf/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615477332
+   "at": 1792616824728
   },
   {
    "what": "/components/shelf/ at 1440px, \"A shelf of cards\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615477332
+   "at": 1792616824728
   },
   {
    "what": "/components/shelf/ at 1440px, \"A shelf of cards\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615477332
+   "at": 1792616824728
   },
   {
    "what": "/components/shelf/ at 1440px, \"A shelf of cards\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615477332
+   "at": 1792616824728
   },
   {
    "what": "/components/shelf/ at 1440px, \"A shelf with paddles\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615477332
+   "at": 1792616824728
   },
   {
    "what": "/components/shelf/ at 1440px, \"A shelf with paddles\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615477332
+   "at": 1792616824728
   },
   {
    "what": "/components/shelf/ at 1440px, \"A shelf with paddles\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615477332
+   "at": 1792616824728
   },
   {
    "what": "/components/stat/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615478100
+   "at": 1792616825479
   },
   {
    "what": "/components/stat/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615478100
+   "at": 1792616825479
   },
   {
    "what": "/components/stat/ at 1440px, \"A stat\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615478100
+   "at": 1792616825479
   },
   {
    "what": "/components/stat/ at 1440px, \"A stat\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615478100
+   "at": 1792616825479
   },
   {
    "what": "/components/stat/ at 1440px, \"A stat\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615478100
+   "at": 1792616825479
   },
   {
    "what": "/components/stat/ at 1440px, \"A large stat\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615478100
+   "at": 1792616825479
   },
   {
    "what": "/components/stat/ at 1440px, \"A large stat\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615478100
+   "at": 1792616825479
   },
   {
    "what": "/components/stat/ at 1440px, \"A large stat\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615478100
+   "at": 1792616825479
   },
   {
    "what": "/components/stories/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615478875
+   "at": 1792616826263
   },
   {
    "what": "/components/stories/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615478875
+   "at": 1792616826263
   },
   {
    "what": "/components/stories/ at 1440px, \"The latest stories\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615478875
+   "at": 1792616826263
   },
   {
    "what": "/components/stories/ at 1440px, \"The latest stories\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615478875
+   "at": 1792616826263
   },
   {
    "what": "/components/stories/ at 1440px, \"The latest stories\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615478875
+   "at": 1792616826263
   },
   {
    "what": "/components/swatch/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615479751
+   "at": 1792616827003
   },
   {
    "what": "/components/swatch/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615479751
+   "at": 1792616827003
   },
   {
    "what": "/components/swatch/ at 1440px, \"Three finishes, the first chosen\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615479751
+   "at": 1792616827003
   },
   {
    "what": "/components/swatch/ at 1440px, \"Three finishes, the first chosen\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615479751
+   "at": 1792616827003
   },
   {
    "what": "/components/swatch/ at 1440px, \"Three finishes, the first chosen\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615479751
+   "at": 1792616827003
   },
   {
    "what": "/components/tile/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615480518
+   "at": 1792616827747
   },
   {
    "what": "/components/tile/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615480518
+   "at": 1792616827747
   },
   {
    "what": "/components/tile/ at 1440px, \"A promo tile\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615480518
+   "at": 1792616827747
   },
   {
    "what": "/components/tile/ at 1440px, \"A promo tile\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615480518
+   "at": 1792616827747
   },
   {
    "what": "/components/tile/ at 1440px, \"A promo tile\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615480518
+   "at": 1792616827747
   },
   {
    "what": "/components/tile/ at 1440px, \"A full-width tile\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615480518
+   "at": 1792616827747
   },
   {
    "what": "/components/tile/ at 1440px, \"A full-width tile\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615480518
+   "at": 1792616827747
   },
   {
    "what": "/components/tile/ at 1440px, \"A full-width tile\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615480518
+   "at": 1792616827747
   },
   {
    "what": "/foundations/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615481359
+   "at": 1792616828558
   },
   {
    "what": "/foundations/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615481359
+   "at": 1792616828558
   },
   {
    "what": "/foundations/ at 1440px, \"A dark block\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615481359
+   "at": 1792616828558
   },
   {
    "what": "/foundations/ at 1440px, \"A dark block\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615481359
+   "at": 1792616828558
   },
   {
    "what": "/foundations/ at 1440px, \"A dark block\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615481359
+   "at": 1792616828558
   },
   {
    "what": "/foundations/ at 1440px, \"The type's classes\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615481359
+   "at": 1792616828558
   },
   {
    "what": "/foundations/ at 1440px, \"The type's classes\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615481359
+   "at": 1792616828558
   },
   {
    "what": "/foundations/ at 1440px, \"The type's classes\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615481359
+   "at": 1792616828558
   },
   {
    "what": "/get-started/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615482178
+   "at": 1792616829306
   },
   {
    "what": "/get-started/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615482178
+   "at": 1792616829306
   },
   {
    "what": "/news/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615483006
+   "at": 1792616830030
   },
   {
    "what": "/news/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615483006
+   "at": 1792616830030
   },
   {
    "what": "/news/archive/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615483824
+   "at": 1792616830761
   },
   {
    "what": "/news/archive/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615483824
+   "at": 1792616830761
   },
   {
    "what": "/news/catalogue/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615484574
+   "at": 1792616831482
   },
   {
    "what": "/news/catalogue/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615484574
+   "at": 1792616831482
   },
   {
    "what": "/news/newsroom/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615485349
+   "at": 1792616832204
   },
   {
    "what": "/news/newsroom/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615485349
+   "at": 1792616832204
   },
   {
    "what": "/news/safari/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615486208
+   "at": 1792616832925
   },
   {
    "what": "/news/safari/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615486208
+   "at": 1792616832925
   },
   {
    "what": "/news/zola/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615487061
+   "at": 1792616833648
   },
   {
    "what": "/news/zola/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615487061
+   "at": 1792616833648
   },
   {
    "what": "/rust/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615488048
+   "at": 1792616834368
   },
   {
    "what": "/rust/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615488048
+   "at": 1792616834368
   },
   {
    "what": "/search/ at 1440px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615488907
+   "at": 1792616835082
   },
   {
    "what": "/search/ at 1440px: every picture loads",
    "ok": true,
-   "at": 1792615488907
+   "at": 1792616835082
   },
   {
    "what": "gallery's Next scrolls its row on in its frame at 1440px, the previous paddle enabled",
    "ok": true,
-   "at": 1792615491143
+   "at": 1792616837321
   },
   {
    "what": "shelf's Next scrolls its row on in its frame at 1440px, the previous paddle enabled",
    "ok": true,
-   "at": 1792615493392
+   "at": 1792616839567
   },
   {
    "what": "the global nav's search opens in its frame at 1440px, its field focused, the frame the window's height under the local nav",
    "ok": true,
-   "at": 1792615495401
+   "at": 1792616841572
   },
   {
    "what": "in its 978px frame it hangs from the bar's bottom, the curtain to the frame's bottom",
    "ok": true,
-   "at": 1792615495401
+   "at": 1792616841572
   },
   {
    "what": "its curtain closes it at 1440px, its frame the bar's height again",
    "ok": true,
-   "at": 1792615496109
+   "at": 1792616842278
   },
   {
    "what": "the site's search page at 1440px lists the pages holding \"modal\", the modal's page first, its field holding the query",
    "ok": true,
-   "at": 1792615497341
+   "at": 1792616843504
   },
   {
    "what": "the global nav's search at 1440px suggests the modal's page first as \"mo\" is typed, its row #6e6e73 and \"Mo\" marked #333336 on no ground, fading in (0.32s from 60ms), 600ms on in full",
    "ok": true,
-   "at": 1792615499925
+   "at": 1792616846065
   },
   {
    "what": "the dropdown at 1440px: empty, its label the placeholder and its text not shown; chosen, its label at its top and its text shown",
    "ok": true,
-   "at": 1792615501211
+   "at": 1792616847339
   },
   {
    "what": "the textarea at 1440px: at rest its label the placeholder; focused, its box's edge 2px of the accent and its label at its top; filled, its label at its top and its edge 1px",
    "ok": true,
-   "at": 1792615503313
+   "at": 1792616848921
   },
   {
    "what": "a link in an example leaves its frame where it is at 1440px",
    "ok": true,
-   "at": 1792615505280
+   "at": 1792616850354
   },
   {
    "what": "the pointer on Mac's link shows its flyout in its 978px frame at 1440px, the frame grown to hold it",
    "ok": true,
-   "at": 1792615509265
+   "at": 1792616853373
   },
   {
    "what": "the pointer off the frame hides it at 1440px, the frame the bar's height again",
    "ok": true,
-   "at": 1792615510597
+   "at": 1792616854705
   },
   {
    "what": "its button opens it in its frame at 1440px, a popover, the frame the window's height under the local nav",
    "ok": true,
-   "at": 1792615511822
+   "at": 1792616855913
   },
   {
    "what": "its curtain closes it at 1440px, its frame the bar's height again",
    "ok": true,
-   "at": 1792615512534
+   "at": 1792616856620
   },
   {
    "what": "the global nav's bag opens in its frame at 1440px by its keyboard (Return), the frame the window's height under the local nav",
    "ok": true,
-   "at": 1792615515386
+   "at": 1792616859163
   },
   {
    "what": "in its 978px frame it hangs from the bar's bottom, the curtain to the frame's bottom, the focus kept on its button",
    "ok": true,
-   "at": 1792615515386
+   "at": 1792616859163
   },
   {
    "what": "Tab goes from its button into it, to its line's link, at 1440px",
    "ok": true,
-   "at": 1792615515692
+   "at": 1792616859468
   },
   {
    "what": "Escape closes it at 1440px, the focus back on its button, its frame the bar's height again",
    "ok": true,
-   "at": 1792615516512
+   "at": 1792616860274
   },
   {
    "what": "/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615517826
+   "at": 1792616861048
   },
   {
    "what": "/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615517826
+   "at": 1792616861048
   },
   {
    "what": "/components/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615519051
+   "at": 1792616861788
   },
   {
    "what": "/components/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615519051
+   "at": 1792616861788
   },
   {
    "what": "/components/accordion/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615519853
+   "at": 1792616862514
   },
   {
    "what": "/components/accordion/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615519853
+   "at": 1792616862514
   },
   {
    "what": "/components/accordion/ at 700px, \"Two questions, the first open\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615519853
+   "at": 1792616862514
   },
   {
    "what": "/components/accordion/ at 700px, \"Two questions, the first open\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615519853
+   "at": 1792616862514
   },
   {
    "what": "/components/accordion/ at 700px, \"Two questions, the first open\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615519853
+   "at": 1792616862514
   },
   {
    "what": "/components/accordion/ at 700px, \"A large question\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615519853
+   "at": 1792616862514
   },
   {
    "what": "/components/accordion/ at 700px, \"A large question\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615519853
+   "at": 1792616862514
   },
   {
    "what": "/components/accordion/ at 700px, \"A large question\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615519853
+   "at": 1792616862514
   },
   {
    "what": "/components/article/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615520620
+   "at": 1792616863242
   },
   {
    "what": "/components/article/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615520620
+   "at": 1792616863242
   },
   {
    "what": "/components/article/ at 700px, \"An article\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615520620
+   "at": 1792616863242
   },
   {
    "what": "/components/article/ at 700px, \"An article\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615520620
+   "at": 1792616863242
   },
   {
    "what": "/components/article/ at 700px, \"An article\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615520620
+   "at": 1792616863242
   },
   {
    "what": "/components/button/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"A button\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"A button\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"A button\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"The four variants\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"The four variants\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"The four variants\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"sm, the default, lg and xl\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"sm, the default, lg and xl\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"sm, the default, lg and xl\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"A hero's calls to action\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"A hero's calls to action\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"A hero's calls to action\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"Buttons in a dark block\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"Buttons in a dark block\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"Buttons in a dark block\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"The form buttons\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"The form buttons\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"The form buttons\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"A block button\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"A block button\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"A block button\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"Disabled buttons\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"Disabled buttons\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/button/ at 700px, \"Disabled buttons\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615521446
+   "at": 1792616864009
   },
   {
    "what": "/components/card/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615522182
+   "at": 1792616864745
   },
   {
    "what": "/components/card/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615522182
+   "at": 1792616864745
   },
   {
    "what": "/components/card/ at 700px, \"A card with a tag\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615522182
+   "at": 1792616864745
   },
   {
    "what": "/components/card/ at 700px, \"A card with a tag\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615522182
+   "at": 1792616864745
   },
   {
    "what": "/components/card/ at 700px, \"A card with a tag\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615522182
+   "at": 1792616864745
   },
   {
    "what": "/components/card/ at 700px, \"A card with an eyebrow\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615522182
+   "at": 1792616864745
   },
   {
    "what": "/components/card/ at 700px, \"A card with an eyebrow\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615522182
+   "at": 1792616864745
   },
   {
    "what": "/components/card/ at 700px, \"A card with an eyebrow\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615522182
+   "at": 1792616864745
   },
   {
    "what": "/components/checkbox/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615522917
+   "at": 1792616865478
   },
   {
    "what": "/components/checkbox/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615522917
+   "at": 1792616865478
   },
   {
    "what": "/components/checkbox/ at 700px, \"A checkbox\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615522917
+   "at": 1792616865478
   },
   {
    "what": "/components/checkbox/ at 700px, \"A checkbox\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615522917
+   "at": 1792616865478
   },
   {
    "what": "/components/checkbox/ at 700px, \"A checkbox\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615522917
+   "at": 1792616865478
   },
   {
    "what": "/components/checkbox/ at 700px, \"A checked checkbox\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615522917
+   "at": 1792616865478
   },
   {
    "what": "/components/checkbox/ at 700px, \"A checked checkbox\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615522917
+   "at": 1792616865478
   },
   {
    "what": "/components/checkbox/ at 700px, \"A checked checkbox\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615522917
+   "at": 1792616865478
   },
   {
    "what": "/components/field/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"An empty field\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"An empty field\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"An empty field\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A filled field\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A filled field\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A filled field\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A field in error and its message\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A field in error and its message\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A field in error and its message\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A disabled field\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A disabled field\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A disabled field\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A field with a currency before it\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A field with a currency before it\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A field with a currency before it\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A message of several lines\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A message of several lines\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A message of several lines\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A dropdown, nothing chosen\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A dropdown, nothing chosen\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A dropdown, nothing chosen\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A dropdown with a choice made\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A dropdown with a choice made\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/field/ at 700px, \"A dropdown with a choice made\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615523780
+   "at": 1792616866246
   },
   {
    "what": "/components/footer/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615524532
+   "at": 1792616866980
   },
   {
    "what": "/components/footer/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615524532
+   "at": 1792616866980
   },
   {
    "what": "/components/footer/ at 700px, \"A footer\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615524532
+   "at": 1792616866980
   },
   {
    "what": "/components/footer/ at 700px, \"A footer\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615524532
+   "at": 1792616866980
   },
   {
    "what": "/components/footer/ at 700px, \"A footer\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615524532
+   "at": 1792616866980
   },
   {
    "what": "/components/footnote/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615525289
+   "at": 1792616867705
   },
   {
    "what": "/components/footnote/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615525289
+   "at": 1792616867705
   },
   {
    "what": "/components/footnote/ at 700px, \"A footnote's mark\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615525289
+   "at": 1792616867705
   },
   {
    "what": "/components/footnote/ at 700px, \"A footnote's mark\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615525289
+   "at": 1792616867705
   },
   {
    "what": "/components/footnote/ at 700px, \"A footnote's mark\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615525289
+   "at": 1792616867705
   },
   {
    "what": "/components/gallery/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615526106
+   "at": 1792616868433
   },
   {
    "what": "/components/gallery/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615526106
+   "at": 1792616868433
   },
   {
    "what": "/components/gallery/ at 700px, \"A gallery of cards\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615526106
+   "at": 1792616868433
   },
   {
    "what": "/components/gallery/ at 700px, \"A gallery of cards\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615526106
+   "at": 1792616868433
   },
   {
    "what": "/components/gallery/ at 700px, \"A gallery of cards\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615526106
+   "at": 1792616868433
   },
   {
    "what": "/components/globalnav/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px, \"A global nav\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px, \"A global nav\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px, \"A global nav\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px, \"A global nav and its search\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px, \"A global nav and its search\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px, \"A global nav and its search\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px, \"A global nav and its search’s suggestions\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px, \"A global nav and its search’s suggestions\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px, \"A global nav and its search’s suggestions\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px, \"A global nav and its bag\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px, \"A global nav and its bag\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px, \"A global nav and its bag\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px, \"A global nav with flyouts\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px, \"A global nav with flyouts\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/globalnav/ at 700px, \"A global nav with flyouts\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615527133
+   "at": 1792616869226
   },
   {
    "what": "/components/link/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615527927
+   "at": 1792616869979
   },
   {
    "what": "/components/link/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615527927
+   "at": 1792616869979
   },
   {
    "what": "/components/link/ at 700px, \"A link in a sentence\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615527927
+   "at": 1792616869979
   },
   {
    "what": "/components/link/ at 700px, \"A link in a sentence\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615527927
+   "at": 1792616869979
   },
   {
    "what": "/components/link/ at 700px, \"A link in a sentence\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615527927
+   "at": 1792616869979
   },
   {
    "what": "/components/link/ at 700px, \"A more link\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615527927
+   "at": 1792616869979
   },
   {
    "what": "/components/link/ at 700px, \"A more link\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615527927
+   "at": 1792616869979
   },
   {
    "what": "/components/link/ at 700px, \"A more link\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615527927
+   "at": 1792616869979
   },
   {
    "what": "/components/localnav/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615528783
+   "at": 1792616870709
   },
   {
    "what": "/components/localnav/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615528783
+   "at": 1792616870709
   },
   {
    "what": "/components/localnav/ at 700px, \"A local nav\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615528783
+   "at": 1792616870709
   },
   {
    "what": "/components/localnav/ at 700px, \"A local nav\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615528783
+   "at": 1792616870709
   },
   {
    "what": "/components/localnav/ at 700px, \"A local nav\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615528783
+   "at": 1792616870709
   },
   {
    "what": "/components/modal/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615529621
+   "at": 1792616871441
   },
   {
    "what": "/components/modal/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615529621
+   "at": 1792616871441
   },
   {
    "what": "/components/modal/ at 700px, \"A modal and the button that opens it\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615529621
+   "at": 1792616871441
   },
   {
    "what": "/components/modal/ at 700px, \"A modal and the button that opens it\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615529621
+   "at": 1792616871441
   },
   {
    "what": "/components/modal/ at 700px, \"A modal and the button that opens it\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615529621
+   "at": 1792616871441
   },
   {
    "what": "/components/modal/ at 700px, \"A product page’s modal and the button that opens it\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615529621
+   "at": 1792616871441
   },
   {
    "what": "/components/modal/ at 700px, \"A product page’s modal and the button that opens it\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615529621
+   "at": 1792616871441
   },
   {
    "what": "/components/modal/ at 700px, \"A product page’s modal and the button that opens it\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615529621
+   "at": 1792616871441
   },
   {
    "what": "/components/option/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615530436
+   "at": 1792616872172
   },
   {
    "what": "/components/option/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615530436
+   "at": 1792616872172
   },
   {
    "what": "/components/option/ at 700px, \"An option with a price\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615530436
+   "at": 1792616872172
   },
   {
    "what": "/components/option/ at 700px, \"An option with a price\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615530436
+   "at": 1792616872172
   },
   {
    "what": "/components/option/ at 700px, \"An option with a price\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615530436
+   "at": 1792616872172
   },
   {
    "what": "/components/option/ at 700px, \"A checked option with a detail\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615530436
+   "at": 1792616872172
   },
   {
    "what": "/components/option/ at 700px, \"A checked option with a detail\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615530436
+   "at": 1792616872172
   },
   {
    "what": "/components/option/ at 700px, \"A checked option with a detail\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615530436
+   "at": 1792616872172
   },
   {
    "what": "/components/posts/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615531281
+   "at": 1792616872910
   },
   {
    "what": "/components/posts/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615531281
+   "at": 1792616872910
   },
   {
    "what": "/components/posts/ at 700px, \"A month of the archive\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615531281
+   "at": 1792616872910
   },
   {
    "what": "/components/posts/ at 700px, \"A month of the archive\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615531281
+   "at": 1792616872910
   },
   {
    "what": "/components/posts/ at 700px, \"A month of the archive\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615531281
+   "at": 1792616872910
   },
   {
    "what": "/components/posts/ at 700px, \"Related stories\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615531281
+   "at": 1792616872910
   },
   {
    "what": "/components/posts/ at 700px, \"Related stories\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615531281
+   "at": 1792616872910
   },
   {
    "what": "/components/posts/ at 700px, \"Related stories\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615531281
+   "at": 1792616872910
   },
   {
    "what": "/components/price/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615532021
+   "at": 1792616873637
   },
   {
    "what": "/components/price/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615532021
+   "at": 1792616873637
   },
   {
    "what": "/components/price/ at 700px, \"A price\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615532021
+   "at": 1792616873637
   },
   {
    "what": "/components/price/ at 700px, \"A price\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615532021
+   "at": 1792616873637
   },
   {
    "what": "/components/price/ at 700px, \"A price\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615532021
+   "at": 1792616873637
   },
   {
    "what": "/components/productnav/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615532888
+   "at": 1792616874358
   },
   {
    "what": "/components/productnav/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615532888
+   "at": 1792616874358
   },
   {
    "what": "/components/productnav/ at 700px, \"A product nav\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615532888
+   "at": 1792616874358
   },
   {
    "what": "/components/productnav/ at 700px, \"A product nav\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615532888
+   "at": 1792616874358
   },
   {
    "what": "/components/productnav/ at 700px, \"A product nav\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615532888
+   "at": 1792616874358
   },
   {
    "what": "/components/quicklinks/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615533661
+   "at": 1792616875084
   },
   {
    "what": "/components/quicklinks/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615533661
+   "at": 1792616875084
   },
   {
    "what": "/components/quicklinks/ at 700px, \"Quick links\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615533661
+   "at": 1792616875084
   },
   {
    "what": "/components/quicklinks/ at 700px, \"Quick links\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615533661
+   "at": 1792616875084
   },
   {
    "what": "/components/quicklinks/ at 700px, \"Quick links\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615533661
+   "at": 1792616875084
   },
   {
    "what": "/components/ribbon/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615534530
+   "at": 1792616875813
   },
   {
    "what": "/components/ribbon/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615534530
+   "at": 1792616875813
   },
   {
    "what": "/components/ribbon/ at 700px, \"A ribbon\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615534530
+   "at": 1792616875813
   },
   {
    "what": "/components/ribbon/ at 700px, \"A ribbon\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615534530
+   "at": 1792616875813
   },
   {
    "what": "/components/ribbon/ at 700px, \"A ribbon\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615534530
+   "at": 1792616875813
   },
   {
    "what": "/components/ribbon/ at 700px, \"An announcing ribbon\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615534530
+   "at": 1792616875813
   },
   {
    "what": "/components/ribbon/ at 700px, \"An announcing ribbon\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615534530
+   "at": 1792616875813
   },
   {
    "what": "/components/ribbon/ at 700px, \"An announcing ribbon\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615534530
+   "at": 1792616875813
   },
   {
    "what": "/components/section/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615535290
+   "at": 1792616876542
   },
   {
    "what": "/components/section/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615535290
+   "at": 1792616876542
   },
   {
    "what": "/components/section/ at 700px, \"A section\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615535290
+   "at": 1792616876542
   },
   {
    "what": "/components/section/ at 700px, \"A section\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615535290
+   "at": 1792616876542
   },
   {
    "what": "/components/section/ at 700px, \"A section\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615535290
+   "at": 1792616876542
   },
   {
    "what": "/components/section/ at 700px, \"A section's header\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615535290
+   "at": 1792616876542
   },
   {
    "what": "/components/section/ at 700px, \"A section's header\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615535290
+   "at": 1792616876542
   },
   {
    "what": "/components/section/ at 700px, \"A section's header\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615535290
+   "at": 1792616876542
   },
   {
    "what": "/components/shelf/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615536190
+   "at": 1792616877281
   },
   {
    "what": "/components/shelf/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615536190
+   "at": 1792616877281
   },
   {
    "what": "/components/shelf/ at 700px, \"A shelf of cards\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615536190
+   "at": 1792616877281
   },
   {
    "what": "/components/shelf/ at 700px, \"A shelf of cards\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615536190
+   "at": 1792616877281
   },
   {
    "what": "/components/shelf/ at 700px, \"A shelf of cards\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615536190
+   "at": 1792616877281
   },
   {
    "what": "/components/shelf/ at 700px, \"A shelf with paddles\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615536190
+   "at": 1792616877281
   },
   {
    "what": "/components/shelf/ at 700px, \"A shelf with paddles\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615536190
+   "at": 1792616877281
   },
   {
    "what": "/components/shelf/ at 700px, \"A shelf with paddles\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615536190
+   "at": 1792616877281
   },
   {
    "what": "/components/stat/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615536955
+   "at": 1792616878019
   },
   {
    "what": "/components/stat/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615536955
+   "at": 1792616878019
   },
   {
    "what": "/components/stat/ at 700px, \"A stat\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615536955
+   "at": 1792616878019
   },
   {
    "what": "/components/stat/ at 700px, \"A stat\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615536955
+   "at": 1792616878019
   },
   {
    "what": "/components/stat/ at 700px, \"A stat\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615536955
+   "at": 1792616878019
   },
   {
    "what": "/components/stat/ at 700px, \"A large stat\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615536955
+   "at": 1792616878019
   },
   {
    "what": "/components/stat/ at 700px, \"A large stat\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615536955
+   "at": 1792616878019
   },
   {
    "what": "/components/stat/ at 700px, \"A large stat\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615536955
+   "at": 1792616878019
   },
   {
    "what": "/components/stories/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615537738
+   "at": 1792616878746
   },
   {
    "what": "/components/stories/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615537738
+   "at": 1792616878746
   },
   {
    "what": "/components/stories/ at 700px, \"The latest stories\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615537738
+   "at": 1792616878746
   },
   {
    "what": "/components/stories/ at 700px, \"The latest stories\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615537738
+   "at": 1792616878746
   },
   {
    "what": "/components/stories/ at 700px, \"The latest stories\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615537738
+   "at": 1792616878746
   },
   {
    "what": "/components/swatch/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615538503
+   "at": 1792616879477
   },
   {
    "what": "/components/swatch/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615538503
+   "at": 1792616879477
   },
   {
    "what": "/components/swatch/ at 700px, \"Three finishes, the first chosen\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615538503
+   "at": 1792616879477
   },
   {
    "what": "/components/swatch/ at 700px, \"Three finishes, the first chosen\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615538503
+   "at": 1792616879477
   },
   {
    "what": "/components/swatch/ at 700px, \"Three finishes, the first chosen\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615538503
+   "at": 1792616879477
   },
   {
    "what": "/components/tile/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615539320
+   "at": 1792616880215
   },
   {
    "what": "/components/tile/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615539320
+   "at": 1792616880215
   },
   {
    "what": "/components/tile/ at 700px, \"A promo tile\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615539320
+   "at": 1792616880215
   },
   {
    "what": "/components/tile/ at 700px, \"A promo tile\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615539320
+   "at": 1792616880215
   },
   {
    "what": "/components/tile/ at 700px, \"A promo tile\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615539320
+   "at": 1792616880215
   },
   {
    "what": "/components/tile/ at 700px, \"A full-width tile\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615539320
+   "at": 1792616880215
   },
   {
    "what": "/components/tile/ at 700px, \"A full-width tile\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615539320
+   "at": 1792616880215
   },
   {
    "what": "/components/tile/ at 700px, \"A full-width tile\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615539320
+   "at": 1792616880215
   },
   {
    "what": "/foundations/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615540172
+   "at": 1792616880947
   },
   {
    "what": "/foundations/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615540172
+   "at": 1792616880947
   },
   {
    "what": "/foundations/ at 700px, \"A dark block\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615540172
+   "at": 1792616880947
   },
   {
    "what": "/foundations/ at 700px, \"A dark block\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615540172
+   "at": 1792616880947
   },
   {
    "what": "/foundations/ at 700px, \"A dark block\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615540172
+   "at": 1792616880947
   },
   {
    "what": "/foundations/ at 700px, \"The type's classes\": its frame loads its stylesheet and its pictures",
    "ok": true,
-   "at": 1792615540172
+   "at": 1792616880947
   },
   {
    "what": "/foundations/ at 700px, \"The type's classes\": its frame is no wider than the page",
    "ok": true,
-   "at": 1792615540172
+   "at": 1792616880947
   },
   {
    "what": "/foundations/ at 700px, \"The type's classes\": its frame is as tall as its content",
    "ok": true,
-   "at": 1792615540172
+   "at": 1792616880947
   },
   {
    "what": "/get-started/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615540951
+   "at": 1792616881670
   },
   {
    "what": "/get-started/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615540951
+   "at": 1792616881670
   },
   {
    "what": "/news/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615541740
+   "at": 1792616882392
   },
   {
    "what": "/news/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615541740
+   "at": 1792616882392
   },
   {
    "what": "/news/archive/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615542476
+   "at": 1792616883113
   },
   {
    "what": "/news/archive/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615542476
+   "at": 1792616883113
   },
   {
    "what": "/news/catalogue/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615543235
+   "at": 1792616883835
   },
   {
    "what": "/news/catalogue/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615543235
+   "at": 1792616883835
   },
   {
    "what": "/news/newsroom/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615543975
+   "at": 1792616884553
   },
   {
    "what": "/news/newsroom/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615543975
+   "at": 1792616884553
   },
   {
    "what": "/news/safari/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615544750
+   "at": 1792616885274
   },
   {
    "what": "/news/safari/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615544750
+   "at": 1792616885274
   },
   {
    "what": "/news/zola/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615545525
+   "at": 1792616885997
   },
   {
    "what": "/news/zola/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615545525
+   "at": 1792616885997
   },
   {
    "what": "/rust/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615546392
+   "at": 1792616886715
   },
   {
    "what": "/rust/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615546392
+   "at": 1792616886715
   },
   {
    "what": "/search/ at 700px: nothing scrolls sideways",
    "ok": true,
-   "at": 1792615547122
+   "at": 1792616887432
   },
   {
    "what": "/search/ at 700px: every picture loads",
    "ok": true,
-   "at": 1792615547122
+   "at": 1792616887432
   },
   {
    "what": "gallery's Next scrolls its row on in its frame at 700px, the previous paddle enabled",
    "ok": true,
-   "at": 1792615549552
+   "at": 1792616889668
   },
   {
    "what": "shelf's Next scrolls its row on in its frame at 700px, the previous paddle enabled",
    "ok": true,
-   "at": 1792615552078
+   "at": 1792616891917
   },
   {
    "what": "the global nav's search opens in its frame at 700px, its field focused, the frame the window's height under the local nav",
    "ok": true,
-   "at": 1792615554338
+   "at": 1792616893907
   },
   {
    "what": "in its 412px frame it is a sheet over the frame",
    "ok": true,
-   "at": 1792615554338
+   "at": 1792616893907
   },
   {
    "what": "its X closes it at 700px, its frame the bar's height again",
    "ok": true,
-   "at": 1792615555057
+   "at": 1792616894614
   },
   {
    "what": "the site's search page at 700px lists the pages holding \"modal\", the modal's page first, its field holding the query",
    "ok": true,
-   "at": 1792615556326
+   "at": 1792616895860
   },
   {
    "what": "the global nav's search at 700px suggests the modal's page first as \"mo\" is typed, its row #6e6e73 and \"Mo\" marked #333336 on no ground, fading in (0.32s from 60ms), 600ms on in full",
    "ok": true,
-   "at": 1792615558916
+   "at": 1792616898403
   },
   {
    "what": "the dropdown at 700px: empty, its label the placeholder and its text not shown; chosen, its label at its top and its text shown",
    "ok": true,
-   "at": 1792615560281
+   "at": 1792616899671
   },
   {
    "what": "the textarea at 700px: at rest its label the placeholder; focused, its box's edge 2px of the accent and its label at its top; filled, its label at its top and its edge 1px",
    "ok": true,
-   "at": 1792615562026
+   "at": 1792616901250
   },
   {
    "what": "a link in an example leaves its frame where it is at 700px",
    "ok": true,
-   "at": 1792615563549
+   "at": 1792616902688
   },
   {
    "what": "at 700px the menu's row opens its flyout over the open menu, the frame the window's height under the local nav, or its content's where taller",
    "ok": true,
-   "at": 1792615566865
+   "at": 1792616905993
   },
   {
    "what": "its back button closes it at 700px, the menu still open over the frame, at least the window's height under the local nav",
    "ok": true,
-   "at": 1792615567670
+   "at": 1792616906799
   },
   {
    "what": "its X closes both at 700px, the frame the bar's height again",
    "ok": true,
-   "at": 1792615569482
+   "at": 1792616908610
   },
   {
    "what": "the global nav's bag opens in its frame at 700px by its keyboard (Return), the frame the window's height under the local nav",
    "ok": true,
-   "at": 1792615571997
+   "at": 1792616911140
   },
   {
    "what": "in its 412px frame it is a sheet over the frame, its X focused",
    "ok": true,
-   "at": 1792615571997
+   "at": 1792616911140
   },
   {
    "what": "Escape closes it at 700px, the focus back on its button, its frame the bar's height again",
    "ok": true,
-   "at": 1792615572803
+   "at": 1792616911946
   },
   {
    "what": "the global nav's menu opens in its frame at 700px, the frame the window's height under the local nav, scrolled there",
    "ok": true,
-   "at": 1792615574619
+   "at": 1792616913747
   },
   {
    "what": "closed again, its frame is the bar's height at 700px",
    "ok": true,
-   "at": 1792615575324
+   "at": 1792616914457
   },
   {
    "what": "the local nav's menu opens below its bar at 700px, its frame grown to hold it",
    "ok": true,
-   "at": 1792615577086
+   "at": 1792616916226
   }
  ],
  "browser": "chromium 151.0.7922.34 on linux",

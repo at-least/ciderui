@@ -30,8 +30,12 @@
 // elsewhere in a window 1440px wide, then 700px (Safari's window, its frame
 // included, so its page a little narrower). Each claim is recorded with
 // when it was read (got.claims: ms since 1970, a clock to set beside a log
-// of the Mac's front app, as a Safari run's window can lose its focus). The
-// result is results/<browser>.json; exits 1 if a claim does not hold.
+// of the Mac's front app, as a Safari run's window can lose its focus), the
+// textarea's reads with document.hasFocus() and a row's with the page's
+// visibility from its click: in Safari a window that is not its key window
+// matches no :focus, and a page hidden stops a smooth scroll where it is,
+// not going on once it is shown (inactive.mjs). The result is
+// results/<browser>.json; exits 1 if a claim does not hold.
 import { createServer } from 'node:http';
 import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { extname, join, relative } from 'node:path';
@@ -103,18 +107,20 @@ const read = async (width) => {
 const behave = async (width) => {
   // a row's Next paddle, clicked: the row scrolled on, the previous paddle
   // enabled. Its frame in the window first, as it is under a hand: Firefox
-  // runs no smooth scroll in a frame out of the window until it comes in
+  // runs no smooth scroll in a frame out of the window until it comes in.
+  // The page's visibility kept from the click (seen)
   for (const [path, title, row] of [['/components/gallery/', 'A gallery of cards', 'gallery'], ['/components/shelf/', 'A shelf with paddles', 'shelf']]) {
     await page.go(ORIGIN + path);
     await page.run(wait(700));
     await page.run(`Promise.resolve((${frame(title)}.scrollIntoView({ block: 'center' }), true))`);
     await page.run(wait(300));
+    await page.run(`Promise.resolve((window.seen = [document.visibilityState], document.addEventListener('visibilitychange', () => seen.push(document.visibilityState)), true))`);
     await page.run(inFrame(title, `[aria-controls="${row}"][aria-label="Next"]`, 'click'));
     await page.run(wait(1200));
     const r = await page.run(`Promise.resolve((() => {
       const d = ${frame(title)}.contentDocument;
       const paddles = [...d.querySelectorAll('[aria-controls="${row}"]')];
-      return { scroll: d.getElementById('${row}').scrollLeft, previous: paddles[0].disabled, shown: getComputedStyle(paddles[1]).display !== 'none', current: [...d.querySelectorAll('.cui-gallery-dot')].findIndex((a) => a.getAttribute('aria-current') === 'true') };
+      return { scroll: d.getElementById('${row}').scrollLeft, previous: paddles[0].disabled, shown: getComputedStyle(paddles[1]).display !== 'none', current: [...d.querySelectorAll('.cui-gallery-dot')].findIndex((a) => a.getAttribute('aria-current') === 'true'), seen };
     })())`);
     got.frames[`${row} at ${width}`] = r;
     claim(`${row}'s Next scrolls its row on in its frame at ${width}px, the previous paddle enabled`, r.scroll > 0 && !r.previous && (row !== 'gallery' || r.current > 0), r);
@@ -226,7 +232,7 @@ const behave = async (width) => {
   // the textarea, with no script: at rest its label the placeholder; its
   // textarea focused (by the page's script), its box's edge 2px and its
   // label at its top; then blurred and filled (its value set), the label at
-  // its top still and the edge 1px
+  // its top still and the edge 1px. Each read with document.hasFocus()
   {
     const title = 'A message of several lines';
     await page.go(`${ORIGIN}/components/field/`);
@@ -234,7 +240,7 @@ const behave = async (width) => {
     const look = `Promise.resolve((() => {
       const d = ${frame(title)}.contentDocument;
       const label = getComputedStyle(d.querySelector('.cui-field-label')), box = getComputedStyle(d.querySelector('.cui-field-box'));
-      return { top: label.top, size: label.fontSize, edge: box.borderTopWidth, color: box.borderTopColor };
+      return { top: label.top, size: label.fontSize, edge: box.borderTopWidth, color: box.borderTopColor, hasFocus: document.hasFocus() };
     })())`;
     const area = (call) => page.run(`Promise.resolve((() => { const t = ${frame(title)}.contentDocument.querySelector('textarea'); ${call}; return true; })())`);
     const rest = await page.run(look);

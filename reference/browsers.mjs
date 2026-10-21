@@ -1,7 +1,7 @@
 // The browsers the reference probes run in, behind one interface:
 // open(name, url, options) loads the page and gives { label, run(expr), click(selector),
 // dblclick(selector), press(key), type(text), move(x, y, ms), go(url), size(width, height),
-// shot(), close() }, where run evaluates an expression whose value is a promise and hands back
+// behind(type), shot(), close() }, where run evaluates an expression whose value is a promise and hands back
 // what it resolves to, click, dblclick, press, type and move are the browser's own input (a
 // trusted click on the element; two at its middle, a double-click; a key pressed: the
 // WebDriver key's name, as Escape, a character, or keys held together, as Alt+Tab or
@@ -13,7 +13,13 @@
 // waiting for its load, size sets the window's size (Playwright's viewport;
 // Safari's window, its frame included), and shot takes a picture of what the
 // window shows, a PNG in base64 (at the screen's pixels: the window's width
-// times its pixel ratio).
+// times its pixel ratio). In Safari, behind('window') opens a second window
+// of its own in front of the page's, which is then not its key window, the
+// commands still the page's, and behind('tab') a tab of its own in the page's
+// window, selected, which hides the page, the commands the tab's (WebDriver's
+// New Window, its type a hint: it hands back the type Safari made; a tab it
+// makes is not selected, a switch to it selects it); behind(false) closes it,
+// the page in front again, the commands its own.
 //   safari    Safari through safaridriver, raw WebDriver over HTTP (Safari's
 //             "Allow remote automation" on), in a Safari the run launches and
 //             quits when it closes: Safari 27 takes no session in one it did
@@ -71,6 +77,7 @@ async function viaPlaywright(engine, channel, url, options) {
       move: (x, y, ms) => page.mouse.move(x, y, { steps: Math.max(1, Math.round(ms / 16)) }),
       go: (to) => page.goto(to, { waitUntil: 'load', timeout: 120000 }),
       size: (width, height) => page.setViewportSize({ width, height }),
+      behind: () => { throw new Error(`nothing in front of the page in ${channel ?? engine}: Safari's alone`); },
       shot: screen ? () => screen.shot(page) : async () => (await page.screenshot()).toString('base64'),
       close: async () => {
         try {
@@ -179,6 +186,8 @@ async function viaSafariDriver(capabilities, url) {
     console.log('capabilities:', JSON.stringify(c));
     await wd('POST', `/session/${id}/timeouts`, { script: 120000, pageLoad: 180000 });
     await wd('POST', `/session/${id}/url`, { url });
+    const home = await wd('GET', `/session/${id}/window`);
+    let other = null;
     return {
       label: `safari ${c.browserVersion} on ${c.platformName} ${c['safari:platformVersion'] ?? ''}`.trim(),
       run: async (expr) => {
@@ -227,6 +236,20 @@ async function viaSafariDriver(capabilities, url) {
       },
       go: (to) => wd('POST', `/session/${id}/url`, { url: to }),
       size: (width, height) => wd('POST', `/session/${id}/window/rect`, { width, height }),
+      behind: async (type) => {
+        if (type) {
+          if (other) throw new Error('a window or tab is in front already');
+          const made = await wd('POST', `/session/${id}/window/new`, { type });
+          other = made.handle;
+          if (made.type === 'tab') await wd('POST', `/session/${id}/window`, { handle: other });
+          return made.type;
+        } else {
+          await wd('POST', `/session/${id}/window`, { handle: other });
+          await wd('DELETE', `/session/${id}/window`);
+          await wd('POST', `/session/${id}/window`, { handle: home });
+          other = null;
+        }
+      },
       shot: () => wd('GET', `/session/${id}/screenshot`),
       close,
     };
