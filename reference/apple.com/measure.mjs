@@ -5,7 +5,8 @@
 // selects an element of the page (`select`) or adds markup to it (`inject`,
 // into `into` or the body; `select` then picks the element inside it) for a
 // class the page defines but may not use, and reads `props`, `vars` (custom
-// properties) and `pseudo`'s, its box with `box`, and with `states` the same
+// properties) and `pseudo`'s, its text with `text` (its spaces collapsed),
+// its box with `box`, and with `states` the same
 // again with each pseudo-class (or several, 'focus+focus-visible') forced
 // through the DevTools protocol on the
 // element itself or on `stateOn` (an input whose label is read), transitions
@@ -25,12 +26,16 @@
 // and at the widths after, so a spec puts such probes last, or in a spec of
 // their own; the pointer then leaves for the window's bottom corner, or, once
 // what the click opened has opened, for `pointer`, [x, y], inside it, when
-// leaving it closes it);
+// leaving it closes it); `type` presses those keys, once, at the first
+// width the probe is read, into what has the focus (a field: typed one key
+// after another, 150ms apart, then `typed` ms, 2500 unless it says, for what
+// the page answers), and, with `animations`, records what they start;
 // `position` adds the box's top and left in the window (where the window is
 // what it is placed in: an open menu's rows); `animations`, with `click`,
 // records every animation and transition the click starts on an element
 // inside that selector, each frame for the wait after it (what it animates,
-// on what, its duration, delay and timing, its first and last values);
+// on what, its duration, delay, direction and timing, its first and last values, and
+// when it was first seen, in ms from the click or the first key);
 // `keyframes` records the @keyframes its animation-name names (read from
 // the page's own stylesheets; one the page's CSS does not hold is null and
 // fails the run). A spec's `colorScheme` reads the page in that color scheme
@@ -96,6 +101,7 @@ const place = async (probe) => {
 // yet whose element is inside `within`
 const watchAnimations = (within) => {
   const seen = new Set();
+  const t0 = performance.now();
   window.cuiAnimations = [];
   const name = (e) => `${e.tagName.toLowerCase()}${e.id ? '#' + e.id : ''}${[...e.classList].slice(0, 3).map(c => '.' + c).join('')}`;
   const look = () => {
@@ -108,10 +114,11 @@ const watchAnimations = (within) => {
       const what = a.transitionProperty ?? a.animationName;
       const prop = Object.keys(frames[0] ?? {}).find(k => !['offset', 'computedOffset', 'easing', 'composite'].includes(k));
       window.cuiAnimations.push({
-        kind: a.constructor.name, what, on: name(target), duration: timing.duration, delay: Math.round(timing.delay * 100) / 100,
+        kind: a.constructor.name, what, on: name(target), duration: timing.duration, delay: Math.round(timing.delay * 100) / 100, direction: timing.direction,
         // a transition's timing is its effect's, an animation's its keyframes'
         easing: a.transitionProperty ? timing.easing : frames[0]?.easing,
         from: prop ? frames[0][prop] : null, to: prop ? frames.at(-1)[prop] : null,
+        seen: Math.round(performance.now() - t0),
       });
     }
   };
@@ -138,6 +145,7 @@ const read = (probe) => {
       out.keyframes[name] = rule && [...rule.cssRules].map(k => ({ at: k.keyText, style: k.style.cssText }));
     }
   }
+  if (probe.text) out.text = el.textContent.replace(/\s+/g, ' ').trim();
   if (probe.box) {
     const r = el.getBoundingClientRect();
     out.box = { width: r.width, height: r.height, ...(probe.position ? { top: r.top, left: r.left } : {}) };
@@ -201,8 +209,16 @@ try {
       const frame = frameOf(probe);
       // a click once, at the first width the probe is read: what it opens
       // stays so as the window narrows
-      const clicking = probe.click && !clicked.has(probe.name);
-      if (clicking) {
+      const clicking = (probe.click || probe.type) && !clicked.has(probe.name);
+      if (clicking && probe.type) {
+        clicked.add(probe.name);
+        if (probe.animations) await frame.evaluate(watchAnimations, probe.animations);
+        for (const key of probe.type) {
+          await pw.keyboard.press(key);
+          await pw.waitForTimeout(150);
+        }
+        await pw.waitForTimeout(probe.typed ?? 2500);
+      } else if (clicking) {
         clicked.add(probe.name);
         if (probe.animations) await frame.evaluate(watchAnimations, probe.animations);
         await frame.click(probe.click);
