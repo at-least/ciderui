@@ -4,10 +4,25 @@
 // height, its first row's opacity and the close button's first line's box
 // every frame for 700ms, into window.cuiSamples.
 const linesOf = () => {
-  const svg = document.querySelector('#close svg').getBoundingClientRect();
+  // the line's geometry box (getBBox: the same in every browser, the stroke
+  // excluded) mapped through its CSS transform about its origin. The probe
+  // reads no getBoundingClientRect: that box includes the stroke and, on a
+  // stroked <path>, Firefox pads it by about twice the stroke-width a side
+  // where Chromium gives the bare geometry, so it reads differently per
+  // browser (the svg's user space is 1:1 with its px: viewBox 0 0 18 18 at
+  // 18 by 18, as the claim's numbers are).
   return [...document.querySelectorAll('#close path')].map(p => {
-    const b = p.getBoundingClientRect();
-    return [b.left - svg.left, b.top - svg.top, b.width, b.height].map(v => +v.toFixed(3));
+    const cs = getComputedStyle(p);
+    const m = cs.transform === 'none' ? new DOMMatrixReadOnly() : new DOMMatrixReadOnly(cs.transform);
+    const o = cs.transformOrigin.split(' ').map(parseFloat);
+    const b = p.getBBox();
+    const xs = [], ys = [];
+    for (const [x, y] of [[b.x, b.y], [b.x + b.width, b.y], [b.x, b.y + b.height], [b.x + b.width, b.y + b.height]]) {
+      const qx = x - o[0], qy = y - o[1];
+      xs.push(m.a * qx + m.c * qy + m.e + o[0]);
+      ys.push(m.b * qx + m.d * qy + m.f + o[1]);
+    }
+    return [Math.min(...xs), Math.min(...ys), Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys)].map(v => +v.toFixed(3));
   });
 };
 function state() {

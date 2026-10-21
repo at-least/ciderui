@@ -1,4 +1,4 @@
-// BROWSER=safari|ios|chrome|chromium node run.mjs
+// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs
 // Can a popover be the global nav's search with no script, as globalnav.css
 // makes it one? Serves page.html on 127.0.0.1 (the browsers: ../browsers.mjs;
 // ?sheet the same page as a sheet), clicks and presses, and reads (search.js)

@@ -28,8 +28,8 @@
     },
     {
      "title": "A large question",
-     "height": 159,
-     "content": 159,
+     "height": 187,
+     "content": 187,
      "css": true,
      "images": [],
      "width": 980,
@@ -1541,7 +1541,7 @@
   },
   "suggestions at 1440": {
    "status": "1 Suggested Links and 3 Suggested Searches available",
-   "ms": 25,
+   "ms": 27,
    "heading": "Suggested Links",
    "link": "/components/modal/",
    "marked": "Mo",
@@ -1701,7 +1701,7 @@
   },
   "suggestions at 700": {
    "status": "1 Suggested Links and 3 Suggested Searches available",
-   "ms": 11,
+   "ms": 18,
    "heading": "Suggested Links",
    "link": "/components/modal/",
    "marked": "Mo",

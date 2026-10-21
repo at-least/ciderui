@@ -1,4 +1,4 @@
-// BROWSER=safari|ios|chrome|chromium node run.mjs
+// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs
 // Does light-dark() follow the color-scheme a section sets, and back again
 // inside it? Serves page.html on 127.0.0.1 (the browsers: ../browsers.mjs);
 // the result is results/<browser>.json.

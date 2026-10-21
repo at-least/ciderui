@@ -1,4 +1,4 @@
-// BROWSER=safari|ios|chrome|chromium MODE=measure|verify|inter node run.mjs
+// BROWSER=safari|ios|chrome|chromium|firefox MODE=measure|verify|inter node run.mjs
 // The page is https://www.apple.com/ (the browsers: ../browsers.mjs); the
 // result is results/<browser>-<mode>.json.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';

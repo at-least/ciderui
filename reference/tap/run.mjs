@@ -1,4 +1,4 @@
-// BROWSER=chromium|chrome|ios node run.mjs
+// BROWSER=chromium|chrome|firefox|ios node run.mjs
 // What does a tap leave? Serves page.html on 127.0.0.1 and taps, one after
 // another, a button whose hover is a rule of its own (apple.com's), one whose
 // hover is behind (hover: hover) (ciderui's, decision 5), somewhere else, the
@@ -8,7 +8,9 @@
 // Each tap a touch screen's, never a script's click: in Chromium and Chrome
 // (../browsers.mjs) the DevTools protocol's touch events on a touch screen
 // emulated from the load, which Chromium's gesture recognizer makes a tap of;
-// on the iOS simulator XCUITest's taps (../xcuitest.mjs), touches of the
+// in Firefox, which has no DevTools protocol in Playwright, Playwright's
+// touchscreen taps on a page with a touch screen from the load (hasTouch:
+// Gecko's own touch emulation); on the iOS simulator XCUITest's taps (../xcuitest.mjs), touches of the
 // simulator's screen through its HID, as a finger's, on an iPhone simulator
 // of the run's own, created and deleted (the booted ones are others';
 // Safari's tip over the page closed first, recorded as `tip`). The result is
@@ -37,6 +39,14 @@ const server = createServer((req, res) => {
 await new Promise(r => server.listen(0, '127.0.0.1', r));
 const url = `http://127.0.0.1:${server.address().port}/`;
 
+// the page's report of the i-th tap
+const reported = async (i, id) => {
+  for (let t = 0; reports.length < i + 1; t++) {
+    if (t === 100) throw new Error(`no report 10s after tapping ${id}`);
+    await new Promise(r => setTimeout(r, 100));
+  }
+};
+
 async function viaDevTools() {
   const page = await open(BROWSER, url);
   try {
@@ -49,12 +59,24 @@ async function viaDevTools() {
       const r = await pw.locator(`#${id}`).boundingBox();
       await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: r.x + r.width / 2, y: r.y + r.height / 2 }] });
       await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
-      for (let t = 0; reports.length < i + 1; t++) {
-        if (t === 100) throw new Error(`no report 10s after tapping ${id}`);
-        await new Promise(r => setTimeout(r, 100));
-      }
+      await reported(i, id);
     }
     return `${page.label}, the DevTools protocol's touch events`;
+  } finally {
+    await page.close();
+  }
+}
+
+async function viaTouchscreen() {
+  const page = await open(BROWSER, url, { viewport: { width: 390, height: 844 }, hasTouch: true });
+  try {
+    const pw = page.page;
+    for (const [i, [id]] of STEPS.entries()) {
+      const r = await pw.locator(`#${id}`).boundingBox();
+      await pw.touchscreen.tap(r.x + r.width / 2, r.y + r.height / 2);
+      await reported(i, id);
+    }
+    return `${page.label}, Playwright's touchscreen taps`;
   } finally {
     await page.close();
   }
@@ -64,6 +86,7 @@ let label;
 let tip;
 try {
   if (BROWSER === 'ios') ({ label, tip } = await taps(url, STEPS.map(([, label]) => label)));
+  else if (BROWSER === 'firefox') label = await viaTouchscreen();
   else label = await viaDevTools();
 } finally {
   server.close();

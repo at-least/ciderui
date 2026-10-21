@@ -1,0 +1,37 @@
+{
+ "browser": "firefox 153.0 on linux",
+ "date": "2026-10-21T17:35:05.878Z",
+ "expect": "inter",
+ "ua": "Mozilla/5.0 (X11; Linux x86_64; rv:153.0) Gecko/20100101 Firefox/153.0",
+ "before": {
+  "fetched": [
+   "inter-roman-latin.woff2"
+  ],
+  "inter": [
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "unloaded",
+   "loaded",
+   "unloaded"
+  ]
+ },
+ "stackWidth": 512.816650390625,
+ "systemWidth": 520.3499755859375,
+ "interWidth": 512.816650390625,
+ "after": {
+  "fetched": [
+   "inter-roman-latin.woff2"
+  ]
+ }
+}

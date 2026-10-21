@@ -1,4 +1,4 @@
-// BROWSER=safari|ios|chrome|chromium EXPECT=sf|inter node run.mjs
+// BROWSER=safari|ios|chrome|chromium|firefox EXPECT=sf|inter node run.mjs
 // Serves the repository on 127.0.0.1 and opens page.html (the browsers:
 // ../browsers.mjs). EXPECT=sf: the stack draws the system font and no Inter
 // face was fetched; EXPECT=inter: the stack draws Inter, and its Latin face

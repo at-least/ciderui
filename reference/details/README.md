@@ -8,10 +8,11 @@ Does `cui-accordion` open with no script, and does its answer's height move? `pa
 | Chrome 155 on macOS | ok | ok | moves |
 | Safari 27.0.1 on macOS 27.0.1 | ok | ok | at once: no `interpolate-size` (56px, its full 117.6px at 120ms) |
 | Safari 26.5 on the iOS 26.5 simulator | ok | ok | at once: no `interpolate-size` (its full height at 120ms) |
+| Firefox 153.0 (Playwright's) on Linux | ok | ok | at once: no `interpolate-size` (56px, its full 117.6px at 120ms) |
 
-Run 2026-10-19 (`results/`); Safari on the Mac clicks the question as Chrome does: unlike `../popover/`'s, these claims read no focus.
+Run 2026-10-19 (`results/`), Firefox 2026-10-22 (Playwright's build, Gecko with its automation patched in, in its window on a virtual X display: `../browsers.mjs`); Safari on the Mac clicks the question as Chrome does: unlike `../popover/`'s, these claims read no focus.
 
 ```sh
 node page.mjs && PW=…/playwright-chromium/index.mjs BROWSER=chromium node run.mjs
-BROWSER=safari node run.mjs      # Safari quit first (../browsers.mjs); and ios, chrome
+BROWSER=safari node run.mjs      # Safari quit first (../browsers.mjs); and ios, chrome, firefox
 ```

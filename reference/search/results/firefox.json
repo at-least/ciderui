@@ -1,0 +1,824 @@
+{
+ "browser": "firefox 153.0 on linux",
+ "date": "2026-10-21T17:33:43.066Z",
+ "closed": {
+  "anchors": true,
+  "open": false,
+  "display": "none",
+  "flyout": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "bar": {
+   "top": 70,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 114
+  },
+  "curtain": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "panel": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 0,
+  "barHit": "link",
+  "curtainHit": null,
+  "focus": "BODY",
+  "rootOverflow": "visible",
+  "menuDisplay": "flex",
+  "backdropPointer": null,
+  "clicks": {
+   "link": 0,
+   "under": 0
+  },
+  "value": "",
+  "reset": "hidden",
+  "at": "/"
+ },
+ "closedPixels": {
+  "scale": 1,
+  "offset": 0,
+  "bar": [
+   200,
+   220,
+   240
+  ],
+  "panel": [
+   0,
+   0,
+   0
+  ],
+  "spread": 127.5,
+  "mean": 127.5
+ },
+ "opened": {
+  "anchors": true,
+  "open": true,
+  "display": "flex",
+  "flyout": {
+   "top": 114,
+   "left": 0,
+   "width": 1440,
+   "height": 786,
+   "bottom": 900
+  },
+  "bar": {
+   "top": 70,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 114
+  },
+  "curtain": {
+   "top": 458,
+   "left": 0,
+   "width": 1440,
+   "height": 442,
+   "bottom": 900
+  },
+  "panel": {
+   "top": 114,
+   "left": 0,
+   "width": 1440,
+   "height": 344,
+   "bottom": 458
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 0,
+  "barHit": "link",
+  "curtainHit": "curtain",
+  "focus": "input",
+  "rootOverflow": "visible",
+  "menuDisplay": "flex",
+  "backdropPointer": "none",
+  "clicks": {
+   "link": 0,
+   "under": 0
+  },
+  "value": "",
+  "reset": "hidden",
+  "at": "/"
+ },
+ "openedPixels": {
+  "scale": 1,
+  "offset": 0,
+  "bar": [
+   200,
+   220,
+   240
+  ],
+  "panel": [
+   250,
+   250,
+   252
+  ],
+  "spread": 0,
+  "mean": 169.7
+ },
+ "scrolled": {
+  "anchors": true,
+  "open": true,
+  "display": "flex",
+  "flyout": {
+   "top": 44,
+   "left": 0,
+   "width": 1440,
+   "height": 656,
+   "bottom": 700
+  },
+  "bar": {
+   "top": 0,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 44
+  },
+  "curtain": {
+   "top": 388,
+   "left": 0,
+   "width": 1440,
+   "height": 312,
+   "bottom": 700
+  },
+  "panel": {
+   "top": 44,
+   "left": 0,
+   "width": 1440,
+   "height": 344,
+   "bottom": 388
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 200,
+  "barHit": "link",
+  "curtainHit": "curtain",
+  "focus": "input",
+  "rootOverflow": "visible",
+  "menuDisplay": "flex",
+  "backdropPointer": "none",
+  "clicks": {
+   "link": 0,
+   "under": 0
+  },
+  "value": "",
+  "reset": "hidden",
+  "at": "/"
+ },
+ "afterLink": {
+  "anchors": true,
+  "open": false,
+  "display": "none",
+  "flyout": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "bar": {
+   "top": 70,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 114
+  },
+  "curtain": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "panel": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 0,
+  "barHit": "link",
+  "curtainHit": null,
+  "focus": "link",
+  "rootOverflow": "visible",
+  "menuDisplay": "flex",
+  "backdropPointer": null,
+  "clicks": {
+   "link": 1,
+   "under": 0
+  },
+  "value": "",
+  "reset": "hidden",
+  "at": "/"
+ },
+ "afterCurtain": {
+  "anchors": true,
+  "open": false,
+  "display": "none",
+  "flyout": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "bar": {
+   "top": 70,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 114
+  },
+  "curtain": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "panel": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 0,
+  "barHit": "link",
+  "curtainHit": null,
+  "focus": "search",
+  "rootOverflow": "visible",
+  "menuDisplay": "flex",
+  "backdropPointer": null,
+  "clicks": {
+   "link": 1,
+   "under": 0
+  },
+  "value": "",
+  "reset": "hidden",
+  "at": "/"
+ },
+ "afterEscape": {
+  "anchors": true,
+  "open": false,
+  "display": "none",
+  "flyout": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "bar": {
+   "top": 70,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 114
+  },
+  "curtain": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "panel": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 0,
+  "barHit": "link",
+  "curtainHit": null,
+  "focus": "search",
+  "rootOverflow": "visible",
+  "menuDisplay": "flex",
+  "backdropPointer": null,
+  "clicks": {
+   "link": 1,
+   "under": 0
+  },
+  "value": "",
+  "reset": "hidden",
+  "at": "/"
+ },
+ "afterToggle": {
+  "anchors": true,
+  "open": false,
+  "display": "none",
+  "flyout": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "bar": {
+   "top": 70,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 114
+  },
+  "curtain": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "panel": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 0,
+  "barHit": "link",
+  "curtainHit": null,
+  "focus": "search",
+  "rootOverflow": "visible",
+  "menuDisplay": "flex",
+  "backdropPointer": null,
+  "clicks": {
+   "link": 1,
+   "under": 0
+  },
+  "value": "",
+  "reset": "hidden",
+  "at": "/"
+ },
+ "empty": {
+  "anchors": true,
+  "open": true,
+  "display": "flex",
+  "flyout": {
+   "top": 114,
+   "left": 0,
+   "width": 1440,
+   "height": 786,
+   "bottom": 900
+  },
+  "bar": {
+   "top": 70,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 114
+  },
+  "curtain": {
+   "top": 458,
+   "left": 0,
+   "width": 1440,
+   "height": 442,
+   "bottom": 900
+  },
+  "panel": {
+   "top": 114,
+   "left": 0,
+   "width": 1440,
+   "height": 344,
+   "bottom": 458
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 0,
+  "barHit": "link",
+  "curtainHit": "curtain",
+  "focus": "input",
+  "rootOverflow": "visible",
+  "menuDisplay": "flex",
+  "backdropPointer": "none",
+  "clicks": {
+   "link": 1,
+   "under": 0
+  },
+  "value": "",
+  "reset": "hidden",
+  "at": "/"
+ },
+ "typed": {
+  "anchors": true,
+  "open": true,
+  "display": "flex",
+  "flyout": {
+   "top": 114,
+   "left": 0,
+   "width": 1440,
+   "height": 786,
+   "bottom": 900
+  },
+  "bar": {
+   "top": 70,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 114
+  },
+  "curtain": {
+   "top": 458,
+   "left": 0,
+   "width": 1440,
+   "height": 442,
+   "bottom": 900
+  },
+  "panel": {
+   "top": 114,
+   "left": 0,
+   "width": 1440,
+   "height": 344,
+   "bottom": 458
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 0,
+  "barHit": "link",
+  "curtainHit": "curtain",
+  "focus": "input",
+  "rootOverflow": "visible",
+  "menuDisplay": "flex",
+  "backdropPointer": "none",
+  "clicks": {
+   "link": 1,
+   "under": 0
+  },
+  "value": "iphone",
+  "reset": "visible",
+  "at": "/"
+ },
+ "cleared": {
+  "anchors": true,
+  "open": true,
+  "display": "flex",
+  "flyout": {
+   "top": 114,
+   "left": 0,
+   "width": 1440,
+   "height": 786,
+   "bottom": 900
+  },
+  "bar": {
+   "top": 70,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 114
+  },
+  "curtain": {
+   "top": 458,
+   "left": 0,
+   "width": 1440,
+   "height": 442,
+   "bottom": 900
+  },
+  "panel": {
+   "top": 114,
+   "left": 0,
+   "width": 1440,
+   "height": 344,
+   "bottom": 458
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 0,
+  "barHit": "link",
+  "curtainHit": "curtain",
+  "focus": "BODY",
+  "rootOverflow": "visible",
+  "menuDisplay": "flex",
+  "backdropPointer": "none",
+  "clicks": {
+   "link": 1,
+   "under": 0
+  },
+  "value": "",
+  "reset": "hidden",
+  "at": "/"
+ },
+ "clearedBack": {
+  "anchors": true,
+  "open": true,
+  "display": "flex",
+  "flyout": {
+   "top": 114,
+   "left": 0,
+   "width": 1440,
+   "height": 786,
+   "bottom": 900
+  },
+  "bar": {
+   "top": 70,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 114
+  },
+  "curtain": {
+   "top": 458,
+   "left": 0,
+   "width": 1440,
+   "height": 442,
+   "bottom": 900
+  },
+  "panel": {
+   "top": 114,
+   "left": 0,
+   "width": 1440,
+   "height": 344,
+   "bottom": 458
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 0,
+  "barHit": "link",
+  "curtainHit": "curtain",
+  "focus": "input",
+  "rootOverflow": "visible",
+  "menuDisplay": "flex",
+  "backdropPointer": "none",
+  "clicks": {
+   "link": 1,
+   "under": 0
+  },
+  "value": "",
+  "reset": "hidden",
+  "at": "/"
+ },
+ "clearedEscape": {
+  "anchors": true,
+  "open": false,
+  "display": "none",
+  "flyout": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "bar": {
+   "top": 70,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 114
+  },
+  "curtain": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "panel": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 0,
+  "barHit": "link",
+  "curtainHit": null,
+  "focus": "search",
+  "rootOverflow": "visible",
+  "menuDisplay": "flex",
+  "backdropPointer": null,
+  "clicks": {
+   "link": 1,
+   "under": 0
+  },
+  "value": "",
+  "reset": "hidden",
+  "at": "/"
+ },
+ "sent": {
+  "anchors": true,
+  "open": false,
+  "display": "none",
+  "flyout": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "bar": {
+   "top": 70,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 114
+  },
+  "curtain": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "panel": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 0,
+  "barHit": "link",
+  "curtainHit": null,
+  "focus": "BODY",
+  "rootOverflow": "visible",
+  "menuDisplay": "flex",
+  "backdropPointer": null,
+  "clicks": null,
+  "value": "",
+  "reset": "hidden",
+  "at": "/search?q=iphone"
+ },
+ "sheetClosed": {
+  "anchors": true,
+  "open": false,
+  "display": "none",
+  "flyout": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "bar": {
+   "top": 70,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 114
+  },
+  "curtain": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "panel": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 0,
+  "barHit": "link",
+  "curtainHit": null,
+  "focus": "BODY",
+  "rootOverflow": "visible",
+  "menuDisplay": "flex",
+  "backdropPointer": null,
+  "clicks": null,
+  "value": "",
+  "reset": "hidden",
+  "at": "/?sheet"
+ },
+ "sheet": {
+  "anchors": true,
+  "open": true,
+  "display": "flex",
+  "flyout": {
+   "top": 0,
+   "left": 0,
+   "width": 1440,
+   "height": 900,
+   "bottom": 900
+  },
+  "bar": {
+   "top": 70,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 114
+  },
+  "curtain": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "panel": {
+   "top": 0,
+   "left": 0,
+   "width": 1440,
+   "height": 900,
+   "bottom": 900
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 0,
+  "barHit": "panel",
+  "curtainHit": null,
+  "focus": "input",
+  "rootOverflow": "hidden",
+  "menuDisplay": "flex",
+  "backdropPointer": "none",
+  "clicks": null,
+  "value": "",
+  "reset": "hidden",
+  "at": "/?sheet"
+ },
+ "sheetAfterClose": {
+  "anchors": true,
+  "open": false,
+  "display": "none",
+  "flyout": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "bar": {
+   "top": 70,
+   "left": 0,
+   "width": 1440,
+   "height": 44,
+   "bottom": 114
+  },
+  "curtain": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "panel": {
+   "top": 0,
+   "left": 0,
+   "width": 0,
+   "height": 0,
+   "bottom": 0
+  },
+  "windowWidth": 1440,
+  "pageWidth": 1440,
+  "windowHeight": 900,
+  "scrollY": 0,
+  "barHit": "link",
+  "curtainHit": null,
+  "focus": "search",
+  "rootOverflow": "visible",
+  "menuDisplay": "flex",
+  "backdropPointer": null,
+  "clicks": null,
+  "value": "",
+  "reset": "hidden",
+  "at": "/?sheet"
+ }
+}

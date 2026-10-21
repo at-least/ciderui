@@ -1,6 +1,6 @@
 {
  "browser": "chromium 151.0.7922.34 on linux, the DevTools protocol's touch events",
- "date": "2026-10-21T07:52:24.884Z",
+ "date": "2026-10-21T14:19:18.728Z",
  "reports": [
   {
    "n": 1,
@@ -11,63 +11,63 @@
      "pointer": "touch",
      "trusted": true,
      "on": "plain",
-     "t": 149
+     "t": 61
     },
     {
      "type": "touchstart",
      "pointer": null,
      "trusted": true,
      "on": "plain",
-     "t": 149
+     "t": 61
     },
     {
      "type": "pointerup",
      "pointer": "touch",
      "trusted": true,
      "on": "plain",
-     "t": 150
+     "t": 70
     },
     {
      "type": "touchend",
      "pointer": null,
      "trusted": true,
      "on": "plain",
-     "t": 150
+     "t": 70
     },
     {
      "type": "mouseover",
      "pointer": null,
      "trusted": true,
      "on": "plain",
-     "t": 150
+     "t": 72
     },
     {
      "type": "mousemove",
      "pointer": null,
      "trusted": true,
      "on": "plain",
-     "t": 150
+     "t": 72
     },
     {
      "type": "mousedown",
      "pointer": null,
      "trusted": true,
      "on": "plain",
-     "t": 150
+     "t": 72
     },
     {
      "type": "mouseup",
      "pointer": null,
      "trusted": true,
      "on": "plain",
-     "t": 150
+     "t": 72
     },
     {
      "type": "click",
      "pointer": "touch",
      "trusted": true,
      "on": "plain",
-     "t": 150
+     "t": 72
     }
    ],
    "media": {
@@ -103,63 +103,63 @@
      "pointer": "touch",
      "trusted": true,
      "on": "gated",
-     "t": 1058
+     "t": 888
     },
     {
      "type": "touchstart",
      "pointer": null,
      "trusted": true,
      "on": "gated",
-     "t": 1058
+     "t": 888
     },
     {
      "type": "pointerup",
      "pointer": "touch",
      "trusted": true,
      "on": "gated",
-     "t": 1066
+     "t": 903
     },
     {
      "type": "touchend",
      "pointer": null,
      "trusted": true,
      "on": "gated",
-     "t": 1066
+     "t": 903
     },
     {
      "type": "mouseover",
      "pointer": null,
      "trusted": true,
      "on": "gated",
-     "t": 1066
+     "t": 904
     },
     {
      "type": "mousemove",
      "pointer": null,
      "trusted": true,
      "on": "gated",
-     "t": 1066
+     "t": 904
     },
     {
      "type": "mousedown",
      "pointer": null,
      "trusted": true,
      "on": "gated",
-     "t": 1066
+     "t": 904
     },
     {
      "type": "mouseup",
      "pointer": null,
      "trusted": true,
      "on": "gated",
-     "t": 1066
+     "t": 904
     },
     {
      "type": "click",
      "pointer": "touch",
      "trusted": true,
      "on": "gated",
-     "t": 1066
+     "t": 904
     }
    ],
    "media": {
@@ -195,63 +195,63 @@
      "pointer": "touch",
      "trusted": true,
      "on": "elsewhere",
-     "t": 1882
+     "t": 1734
     },
     {
      "type": "touchstart",
      "pointer": null,
      "trusted": true,
      "on": "elsewhere",
-     "t": 1883
+     "t": 1734
     },
     {
      "type": "pointerup",
      "pointer": "touch",
      "trusted": true,
      "on": "elsewhere",
-     "t": 1899
+     "t": 1737
     },
     {
      "type": "touchend",
      "pointer": null,
      "trusted": true,
      "on": "elsewhere",
-     "t": 1899
+     "t": 1739
     },
     {
      "type": "mouseover",
      "pointer": null,
      "trusted": true,
      "on": "elsewhere",
-     "t": 1899
+     "t": 1741
     },
     {
      "type": "mousemove",
      "pointer": null,
      "trusted": true,
      "on": "elsewhere",
-     "t": 1899
+     "t": 1741
     },
     {
      "type": "mousedown",
      "pointer": null,
      "trusted": true,
      "on": "elsewhere",
-     "t": 1899
+     "t": 1741
     },
     {
      "type": "mouseup",
      "pointer": null,
      "trusted": true,
      "on": "elsewhere",
-     "t": 1900
+     "t": 1741
     },
     {
      "type": "click",
      "pointer": "touch",
      "trusted": true,
      "on": "elsewhere",
-     "t": 1900
+     "t": 1741
     }
    ],
    "media": {
@@ -287,63 +287,63 @@
      "pointer": "touch",
      "trusted": true,
      "on": "menu-button",
-     "t": 2716
+     "t": 2587
     },
     {
      "type": "touchstart",
      "pointer": null,
      "trusted": true,
      "on": "menu-button",
-     "t": 2716
+     "t": 2587
     },
     {
      "type": "pointerup",
      "pointer": "touch",
      "trusted": true,
      "on": "menu-button",
-     "t": 2732
+     "t": 2606
     },
     {
      "type": "touchend",
      "pointer": null,
      "trusted": true,
      "on": "menu-button",
-     "t": 2732
+     "t": 2606
     },
     {
      "type": "mouseover",
      "pointer": null,
      "trusted": true,
      "on": "menu-button",
-     "t": 2733
+     "t": 2606
     },
     {
      "type": "mousemove",
      "pointer": null,
      "trusted": true,
      "on": "menu-button",
-     "t": 2733
+     "t": 2606
     },
     {
      "type": "mousedown",
      "pointer": null,
      "trusted": true,
      "on": "menu-button",
-     "t": 2733
+     "t": 2606
     },
     {
      "type": "mouseup",
      "pointer": null,
      "trusted": true,
      "on": "menu-button",
-     "t": 2733
+     "t": 2606
     },
     {
      "type": "click",
      "pointer": "touch",
      "trusted": true,
      "on": "menu-button",
-     "t": 2733
+     "t": 2606
     }
    ],
    "media": {
@@ -379,63 +379,63 @@
      "pointer": "touch",
      "trusted": true,
      "on": "menu-close",
-     "t": 3549
+     "t": 3420
     },
     {
      "type": "touchstart",
      "pointer": null,
      "trusted": true,
      "on": "menu-close",
-     "t": 3549
+     "t": 3420
     },
     {
      "type": "pointerup",
      "pointer": "touch",
      "trusted": true,
      "on": "menu-close",
-     "t": 3566
+     "t": 3450
     },
     {
      "type": "touchend",
      "pointer": null,
      "trusted": true,
      "on": "menu-close",
-     "t": 3566
+     "t": 3450
     },
     {
      "type": "mouseover",
      "pointer": null,
      "trusted": true,
      "on": "menu-close",
-     "t": 3566
+     "t": 3450
     },
     {
      "type": "mousemove",
      "pointer": null,
      "trusted": true,
      "on": "menu-close",
-     "t": 3566
+     "t": 3450
     },
     {
      "type": "mousedown",
      "pointer": null,
      "trusted": true,
      "on": "menu-close",
-     "t": 3566
+     "t": 3450
     },
     {
      "type": "mouseup",
      "pointer": null,
      "trusted": true,
      "on": "menu-close",
-     "t": 3566
+     "t": 3450
     },
     {
      "type": "click",
      "pointer": "touch",
      "trusted": true,
      "on": "menu-close",
-     "t": 3566
+     "t": 3450
     }
    ],
    "media": {

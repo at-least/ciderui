@@ -12,8 +12,9 @@ Why these two names and not `system-ui`: `system-ui` is a font on every platform
 | Chrome 155.0.8059.80, macOS 27.0.1 | nothing; Inter's 16 faces `unloaded` | 491.906px | 491.906px | 512.859px | the system font |
 | Safari 26.5, iOS 26.5 simulator | nothing; Inter's 16 faces `unloaded` | 491.896px | 491.896px | 512.845px | the system font |
 | Chromium 151, Linux | `inter-roman-latin.woff2` alone | 512.813px | 504.797px | 512.813px | Inter |
+| Firefox 153.0 (Playwright's), Linux | `inter-roman-latin.woff2` alone | 512.817px | 504.617px | 512.817px | Inter |
 
-Measured 2026-10-19 (`results/`). Not measured: Firefox, Windows, Android, a real iPhone.
+Measured 2026-10-19 (`results/`), Firefox on 2026-10-22 (Playwright's build, Gecko with its automation patched in, in its window on a virtual X display: `../browsers.mjs`). Not measured: Firefox on macOS (Playwright's does not run on the Mac over SSH), Windows, Android, a real iPhone.
 
 iOS Safari's text autosizing drew the stack's line 1.31 times as wide (645.435px) until the page had `-webkit-text-size-adjust: 100%`, which Tailwind's preflight (4.3.3) sets on every ciderui page; `page.html` sets it as the preflight does.
 
@@ -24,6 +25,7 @@ iOS Safari's text autosizing drew the stack's line 1.31 times as wide (645.435px
 ```sh
 BROWSER=safari EXPECT=sf node run.mjs      # and ios, chrome
 PW=…/playwright-chromium/index.mjs BROWSER=chromium EXPECT=inter node run.mjs
+BROWSER=firefox EXPECT=inter node run.mjs   # Playwright's Firefox: playwright-core install firefox
 ```
 
 `EXPECT=sf` passes if the line is the system font's width and not Inter's, no Inter face was fetched and every one is still `unloaded`; `EXPECT=inter` if the line is Inter's width and not the system font's, and Inter's Latin face was fetched. The browsers are `../browsers.mjs`'s; on the Mac it runs from a copy of the repository with `playwright-core` in a `node_modules` above it.

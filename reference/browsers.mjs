@@ -23,40 +23,91 @@
 //             playwright-core), with --font-render-hinting=none: on Linux it
 //             hints every glyph to a whole-pixel advance otherwise, and no text
 //             width measured there means anything
+//   firefox   Playwright's own Firefox (`playwright-core install firefox`):
+//             Gecko with Playwright's automation patched in, not Mozilla's
+//             release build; with its window, on a virtual X display of the
+//             run's own (Xvfb), its pictures that display's pixels
+//             (ImageMagick's import): Playwright's picture of a Firefox page
+//             leaves backdrop-filter out, headless or not, which Firefox
+//             paints on the display (2026-10-22)
 import { execFileSync, spawn, spawnSync } from 'node:child_process';
 
-export function open(name, url) {
+// options: Playwright's page options (a touch screen: hasTouch), for its
+// browsers only
+export function open(name, url, options) {
+  if (options && ['safari', 'ios'].includes(name)) throw new Error(`no page options in ${name}`);
   switch (name) {
-    case 'chrome': return viaPlaywright('chrome', url);
-    case 'chromium': return viaPlaywright(undefined, url);
+    case 'chrome': return viaPlaywright('chromium', 'chrome', url, options);
+    case 'chromium': return viaPlaywright('chromium', undefined, url, options);
+    case 'firefox': return viaPlaywright('firefox', undefined, url, options);
     case 'safari': return viaSafariDriver({ browserName: 'safari' }, url);
     case 'ios': return viaSafariDriver({ browserName: 'safari', platformName: 'iOS', 'safari:useSimulator': true, 'safari:deviceType': 'iPhone' }, url);
-    default: throw new Error(`no browser ${name}: safari, ios, chrome or chromium`);
+    default: throw new Error(`no browser ${name}: safari, ios, chrome, chromium or firefox`);
   }
 }
 
-async function viaPlaywright(channel, url) {
-  const { chromium } = await import(process.env.PW ?? 'playwright-core');
-  const browser = await chromium.launch(channel ? { channel } : { args: ['--font-render-hinting=none'] });
+async function viaPlaywright(engine, channel, url, options) {
+  const playwright = await import(process.env.PW ?? 'playwright-core');
+  const screen = engine === 'firefox' ? await xvfb() : undefined;
+  let browser;
   try {
-    const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+    browser = await playwright[engine].launch(screen ? { headless: false, env: screen.env } : channel ? { channel } : { args: ['--font-render-hinting=none'] });
+  } catch (e) {
+    screen?.close();
+    throw e;
+  }
+  try {
+    const page = await browser.newPage({ viewport: { width: 1440, height: 900 }, ...options });
     await page.goto(url, { waitUntil: 'load', timeout: 120000 });
     return {
-      label: `${channel ?? 'chromium'} ${browser.version()} on ${process.platform}`,
+      label: `${channel ?? engine} ${browser.version()} on ${process.platform}`,
       run: (expr) => page.evaluate(expr),
       click: (selector) => page.click(selector),
       press: (key) => page.keyboard.press(key),
       move: (x, y, ms) => page.mouse.move(x, y, { steps: Math.max(1, Math.round(ms / 16)) }),
       go: (to) => page.goto(to, { waitUntil: 'load', timeout: 120000 }),
       size: (width, height) => page.setViewportSize({ width, height }),
-      shot: async () => (await page.screenshot()).toString('base64'),
-      close: () => browser.close(),
+      shot: screen ? () => screen.shot(page) : async () => (await page.screenshot()).toString('base64'),
+      close: async () => {
+        await browser.close();
+        screen?.close();
+      },
       page, // Playwright's, for a probe that resizes the viewport or forces states
     };
   } catch (e) {
     await browser.close();
+    screen?.close();
     throw e;
   }
+}
+
+// a virtual X display of the run's own, on a number Xvfb finds free
+// (-displayfd); shot(page) crops the page out of the display's pixels, where
+// Firefox says its page is (mozInnerScreenX, mozInnerScreenY)
+async function xvfb() {
+  const server = spawn('Xvfb', ['-displayfd', '3', '-screen', '0', '2560x1600x24', '-nolisten', 'tcp'], { stdio: ['ignore', 'ignore', 'pipe', 'pipe'] });
+  let log = '';
+  server.stderr.on('data', (c) => { log += c; });
+  const display = await new Promise((resolve, reject) => {
+    let out = '';
+    server.stdio[3].on('data', (c) => {
+      out += c;
+      if (out.includes('\n')) resolve(`:${out.trim()}`);
+    });
+    server.on('error', reject);
+    server.on('exit', (code) => reject(new Error(`Xvfb exited ${code}: ${log}`)));
+  });
+  // Firefox on X, not on the desktop's Wayland
+  const env = { ...process.env, DISPLAY: display, GDK_BACKEND: 'x11', MOZ_ENABLE_WAYLAND: '0' };
+  delete env.WAYLAND_DISPLAY;
+  return {
+    env,
+    shot: async (page) => {
+      const [x, y, w, h] = await page.evaluate(() => [mozInnerScreenX, mozInnerScreenY, innerWidth, innerHeight].map((v) => Math.round(v * devicePixelRatio)));
+      return execFileSync('import', ['-display', display, '-window', 'root', '-crop', `${w}x${h}+${x}+${y}`, '+repage', 'png:-'], { maxBuffer: 1 << 28 }).toString('base64');
+    },
+    close: () => server.kill(),
+  };
 }
 
 // WebDriver's code points for the keys a probe presses

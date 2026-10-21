@@ -19,8 +19,8 @@
    "frames": [
     {
      "title": "Two questions, the first open",
-     "height": 260,
-     "content": 260,
+     "height": 232,
+     "content": 232,
      "css": true,
      "images": [],
      "width": 980,
@@ -1541,7 +1541,7 @@
   },
   "suggestions at 1440": {
    "status": "1 Suggested Links and 3 Suggested Searches available",
-   "ms": 30,
+   "ms": 11,
    "heading": "Suggested Links",
    "link": "/components/modal/",
    "marked": "Mo",
@@ -1701,7 +1701,7 @@
   },
   "suggestions at 700": {
    "status": "1 Suggested Links and 3 Suggested Searches available",
-   "ms": 19,
+   "ms": 22,
    "heading": "Suggested Links",
    "link": "/components/modal/",
    "marked": "Mo",

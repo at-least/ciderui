@@ -1,0 +1,671 @@
+{
+ "browser": "firefox 153.0 on linux",
+ "date": "2026-10-21T17:33:14.164Z",
+ "pageClosedPixels": {
+  "scale": 1,
+  "offset": 0,
+  "spread": 127.5,
+  "mean": 127.5,
+  "panel": null
+ },
+ "closed": {
+  "open": false,
+  "modal": false,
+  "position": "fixed",
+  "top": 0,
+  "left": 0,
+  "width": 0,
+  "height": 0,
+  "windowWidth": 1440,
+  "windowHeight": 900,
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "scrolls": null,
+  "rootOverflow": "visible",
+  "hit": null,
+  "focus": "BODY",
+  "command": true
+ },
+ "opened": {
+  "open": true,
+  "modal": true,
+  "position": "fixed",
+  "top": 0,
+  "left": 0,
+  "width": 1440,
+  "height": 900,
+  "windowWidth": 1440,
+  "windowHeight": 900,
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "scrolls": true,
+  "rootOverflow": "hidden",
+  "hit": "modal",
+  "focus": "close",
+  "command": true
+ },
+ "closedAgain": {
+  "open": false,
+  "modal": false,
+  "position": "fixed",
+  "top": 0,
+  "left": 0,
+  "width": 0,
+  "height": 0,
+  "windowWidth": 1440,
+  "windowHeight": 900,
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "scrolls": null,
+  "rootOverflow": "visible",
+  "hit": null,
+  "focus": "button",
+  "command": true
+ },
+ "afterEscape": {
+  "open": false,
+  "modal": false,
+  "position": "fixed",
+  "top": 0,
+  "left": 0,
+  "width": 0,
+  "height": 0,
+  "windowWidth": 1440,
+  "windowHeight": 900,
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "scrolls": null,
+  "rootOverflow": "visible",
+  "hit": null,
+  "focus": "button",
+  "command": true
+ },
+ "samples": [
+  {
+   "frames": [
+    [
+     0,
+     1,
+     1,
+     false
+    ],
+    [
+     0,
+     1,
+     1,
+     false
+    ],
+    [
+     1,
+     1,
+     1,
+     false
+    ],
+    [
+     19,
+     1,
+     1,
+     false
+    ],
+    [
+     34,
+     1,
+     1,
+     false
+    ],
+    [
+     51,
+     1,
+     1,
+     false
+    ],
+    [
+     68,
+     1,
+     1,
+     false
+    ],
+    [
+     85,
+     0,
+     0,
+     true
+    ],
+    [
+     103,
+     0.0589636,
+     0.0589636,
+     true
+    ],
+    [
+     120,
+     0.243208,
+     0.243208,
+     true
+    ],
+    [
+     140,
+     0.521028,
+     0.521028,
+     true
+    ],
+    [
+     153,
+     0.776933,
+     0.776933,
+     true
+    ],
+    [
+     170,
+     0.950807,
+     0.950807,
+     true
+    ],
+    [
+     187,
+     1,
+     1,
+     true
+    ],
+    [
+     204,
+     1,
+     1,
+     true
+    ],
+    [
+     220,
+     1,
+     1,
+     true
+    ],
+    [
+     238,
+     1,
+     1,
+     true
+    ],
+    [
+     255,
+     1,
+     1,
+     true
+    ],
+    [
+     272,
+     1,
+     1,
+     true
+    ],
+    [
+     290,
+     1,
+     1,
+     true
+    ],
+    [
+     305,
+     1,
+     1,
+     true
+    ],
+    [
+     322,
+     1,
+     1,
+     true
+    ],
+    [
+     339,
+     1,
+     1,
+     true
+    ],
+    [
+     357,
+     1,
+     1,
+     true
+    ],
+    [
+     373,
+     1,
+     1,
+     true
+    ],
+    [
+     390,
+     1,
+     1,
+     true
+    ],
+    [
+     407,
+     1,
+     1,
+     true
+    ],
+    [
+     424,
+     1,
+     1,
+     true
+    ],
+    [
+     441,
+     1,
+     1,
+     true
+    ],
+    [
+     457,
+     1,
+     1,
+     true
+    ],
+    [
+     475,
+     1,
+     1,
+     true
+    ],
+    [
+     492,
+     1,
+     1,
+     true
+    ],
+    [
+     508,
+     1,
+     1,
+     true
+    ],
+    [
+     526,
+     1,
+     1,
+     true
+    ],
+    [
+     543,
+     1,
+     1,
+     true
+    ],
+    [
+     560,
+     1,
+     1,
+     true
+    ],
+    [
+     577,
+     1,
+     1,
+     true
+    ],
+    [
+     593,
+     1,
+     1,
+     true
+    ],
+    [
+     610,
+     1,
+     1,
+     true
+    ]
+   ]
+  }
+ ],
+ "page": {
+  "open": true,
+  "modal": true,
+  "filter": "blur(20px)",
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "close": 379,
+  "panel": 359,
+  "below": 359,
+  "rootOverflow": "hidden",
+  "focus": "page-close"
+ },
+ "pageColors": {
+  "open": true,
+  "modal": true,
+  "scheme": "light",
+  "panel": "rgb(255, 255, 255)",
+  "text": "rgb(29, 29, 31)",
+  "close": "rgb(29, 29, 31)",
+  "x": "rgb(255, 255, 255)",
+  "backdrop": "rgba(0, 0, 0, 0.48)"
+ },
+ "pageOpenPixels": {
+  "scale": 1,
+  "offset": 0,
+  "spread": 0,
+  "mean": 66,
+  "panel": [
+   255,
+   255,
+   255
+  ]
+ },
+ "pageFrames": [
+  [
+   0,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   11,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   28,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   47,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   63,
+   "blur(0px)",
+   "rgba(0, 0, 0, 0)"
+  ],
+  [
+   79,
+   "blur(0.23427px)",
+   "rgba(0, 0, 0, 0.006)"
+  ],
+  [
+   96,
+   "blur(0.579048px)",
+   "rgba(0, 0, 0, 0.014)"
+  ],
+  [
+   120,
+   "blur(1.04342px)",
+   "rgba(0, 0, 0, 0.025)"
+  ],
+  [
+   138,
+   "blur(1.6335px)",
+   "rgba(0, 0, 0, 0.04)"
+  ],
+  [
+   156,
+   "blur(2.34859px)",
+   "rgba(0, 0, 0, 0.056)"
+  ],
+  [
+   180,
+   "blur(3.12792px)",
+   "rgba(0, 0, 0, 0.075)"
+  ],
+  [
+   214,
+   "blur(5.0436px)",
+   "rgba(0, 0, 0, 0.12)"
+  ],
+  [
+   304,
+   "blur(10.9346px)",
+   "rgba(0, 0, 0, 0.262)"
+  ],
+  [
+   325,
+   "blur(11.7512px)",
+   "rgba(0, 0, 0, 0.282)"
+  ],
+  [
+   351,
+   "blur(13.2123px)",
+   "rgba(0, 0, 0, 0.317)"
+  ],
+  [
+   369,
+   "blur(13.8698px)",
+   "rgba(0, 0, 0, 0.333)"
+  ],
+  [
+   400,
+   "blur(14.4428px)",
+   "rgba(0, 0, 0, 0.347)"
+  ],
+  [
+   401,
+   "blur(15.0154px)",
+   "rgba(0, 0, 0, 0.36)"
+  ],
+  [
+   437,
+   "blur(16.0081px)",
+   "rgba(0, 0, 0, 0.384)"
+  ],
+  [
+   453,
+   "blur(16.4456px)",
+   "rgba(0, 0, 0, 0.395)"
+  ],
+  [
+   468,
+   "blur(16.8246px)",
+   "rgba(0, 0, 0, 0.404)"
+  ],
+  [
+   486,
+   "blur(17.1949px)",
+   "rgba(0, 0, 0, 0.41)"
+  ],
+  [
+   502,
+   "blur(17.5341px)",
+   "rgba(0, 0, 0, 0.42)"
+  ],
+  [
+   519,
+   "blur(17.8441px)",
+   "rgba(0, 0, 0, 0.428)"
+  ],
+  [
+   537,
+   "blur(18.127px)",
+   "rgba(0, 0, 0, 0.435)"
+  ],
+  [
+   554,
+   "blur(18.3845px)",
+   "rgba(0, 0, 0, 0.44)"
+  ],
+  [
+   571,
+   "blur(18.618px)",
+   "rgba(0, 0, 0, 0.447)"
+  ],
+  [
+   588,
+   "blur(18.8291px)",
+   "rgba(0, 0, 0, 0.45)"
+  ],
+  [
+   604,
+   "blur(19.0084px)",
+   "rgba(0, 0, 0, 0.456)"
+  ],
+  [
+   621,
+   "blur(19.1794px)",
+   "rgba(0, 0, 0, 0.46)"
+  ],
+  [
+   639,
+   "blur(19.3315px)",
+   "rgba(0, 0, 0, 0.464)"
+  ],
+  [
+   655,
+   "blur(19.4657px)",
+   "rgba(0, 0, 0, 0.467)"
+  ],
+  [
+   672,
+   "blur(19.5829px)",
+   "rgba(0, 0, 0, 0.47)"
+  ],
+  [
+   689,
+   "blur(19.6839px)",
+   "rgba(0, 0, 0, 0.47)"
+  ],
+  [
+   707,
+   "blur(19.7697px)",
+   "rgba(0, 0, 0, 0.474)"
+  ],
+  [
+   724,
+   "blur(19.8408px)",
+   "rgba(0, 0, 0, 0.476)"
+  ],
+  [
+   740,
+   "blur(19.895px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   757,
+   "blur(19.9397px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   774,
+   "blur(19.9717px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   791,
+   "blur(19.9915px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   808,
+   "blur(19.9997px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   825,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   843,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   859,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   875,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   892,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   910,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   926,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   943,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   961,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   978,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   994,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   1012,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ]
+ ],
+ "pageScrolled": {
+  "open": true,
+  "modal": true,
+  "filter": "blur(20px)",
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "close": 20,
+  "panel": -372,
+  "below": -910,
+  "rootOverflow": "hidden",
+  "focus": "page-close"
+ },
+ "pageClosed": {
+  "open": false,
+  "modal": false,
+  "filter": "blur(20px)",
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "close": 0,
+  "panel": 0,
+  "below": 900,
+  "rootOverflow": "visible",
+  "focus": "page-button"
+ },
+ "dark": {
+  "open": true,
+  "modal": true,
+  "scheme": "dark",
+  "panel": "rgb(0, 0, 0)",
+  "text": "rgb(245, 245, 247)",
+  "close": "rgb(245, 245, 247)",
+  "x": "rgb(0, 0, 0)",
+  "backdrop": "rgba(0, 0, 0, 0.48)"
+ },
+ "darkPixels": {
+  "scale": 1,
+  "offset": 0,
+  "spread": 0,
+  "mean": 66,
+  "panel": [
+   0,
+   0,
+   0
+  ]
+ },
+ "darkClosed": {
+  "open": false,
+  "modal": false,
+  "scheme": "dark",
+  "panel": "rgb(0, 0, 0)",
+  "text": "rgb(245, 245, 247)",
+  "close": "rgb(245, 245, 247)",
+  "x": "rgb(0, 0, 0)",
+  "backdrop": "rgba(0, 0, 0, 0.48)"
+ }
+}

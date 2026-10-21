@@ -1,4 +1,4 @@
-// BROWSER=safari|ios|chrome|chromium node run.mjs
+// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs
 // Can a <dialog> be the store's overlay with no script, as modal.css makes
 // it one? Serves page.html on 127.0.0.1 (the browsers: ../browsers.mjs),
 // clicks and presses, and reads (dialog.js): the page's button opens it as a

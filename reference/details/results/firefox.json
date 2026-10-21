@@ -1,0 +1,23 @@
+{
+ "browser": "firefox 153.0 on linux",
+ "date": "2026-10-21T17:34:52.838Z",
+ "closed": {
+  "open": false,
+  "item": 56,
+  "answer": 61.59999084472656,
+  "chevron": "none"
+ },
+ "opening": {
+  "open": true,
+  "item": 117.59999084472656,
+  "answer": 61.59999084472656,
+  "chevron": "matrix(1, 0, 0, -0.433576, 0, 0)"
+ },
+ "opened": {
+  "open": true,
+  "item": 117.59999084472656,
+  "answer": 61.59999084472656,
+  "chevron": "matrix(1, 0, 0, -1, 0, 0)"
+ },
+ "interpolateSize": false
+}

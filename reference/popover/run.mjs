@@ -1,4 +1,4 @@
-// BROWSER=safari|ios|chrome|chromium node run.mjs
+// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs
 // Does a nav's list work as its own menu, as globalnav.css makes it one?
 // Serves page.html on 127.0.0.1 (the browsers: ../browsers.mjs), clicks with
 // the browser's own input and reads (popover.js): shown closed by the page's

@@ -1,4 +1,4 @@
-// BROWSER=safari|ios|chrome|chromium SITE=<dir> node run.mjs
+// BROWSER=safari|ios|chrome|chromium|firefox SITE=<dir> node run.mjs
 // Does ciderui's documentation (docs/, built with ciderui-zola) work in this
 // browser as test/docs.mjs holds it to in Chromium? SITE is the site built
 // for http://127.0.0.1:8737 (README.md), served there (the browsers:
@@ -94,10 +94,14 @@ const read = async (width) => {
   }
 };
 const behave = async (width) => {
-  // a row's Next paddle, clicked: the row scrolled on, the previous paddle enabled
+  // a row's Next paddle, clicked: the row scrolled on, the previous paddle
+  // enabled. Its frame in the window first, as it is under a hand: Firefox
+  // runs no smooth scroll in a frame out of the window until it comes in
   for (const [path, title, row] of [['/components/gallery/', 'A gallery of cards', 'gallery'], ['/components/shelf/', 'A shelf with paddles', 'shelf']]) {
     await page.go(ORIGIN + path);
     await page.run(wait(700));
+    await page.run(`Promise.resolve((${frame(title)}.scrollIntoView({ block: 'center' }), true))`);
+    await page.run(wait(300));
     await page.run(inFrame(title, `[aria-controls="${row}"][aria-label="Next"]`, 'click'));
     await page.run(wait(1200));
     const r = await page.run(`Promise.resolve((() => {

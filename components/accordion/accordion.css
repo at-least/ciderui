@@ -30,7 +30,8 @@
  * turned with a transform in 0.32s (apple.com's line moved point by point
  * through a flat one); its height moves where the browser can move to auto
  * (interpolate-size: Chromium 151, Chrome 155), and opens at once where it
- * cannot (Safari 26.5 on iOS: reference/details/). */
+ * cannot (Safari 27.0.1 on macOS and 26.5 on iOS, Firefox 153:
+ * reference/details/). */
 
 @layer components {
   .cui-accordion {

@@ -34,7 +34,7 @@ What else it showed:
 - **Safari's font loading.** On apple.com, `document.fonts.ready` never settles in Safari 27 (some of its icon faces stay loading), so the probe loads each face it measures explicitly and fails if one is not `loaded`.
 - **Linux's hinting.** Playwright's Chromium on Linux hints every glyph to a whole-pixel advance (100 of Inter's 17px "a" are 1000px; 942.141px with `--font-render-hinting=none`), so no width measured there means anything without that flag, which `run.mjs` passes. With it, Linux's widths are the Mac's: the Inter runs below agree with Chrome's and Safari's on macOS within 0.00006em a character.
 
-Not measured: a real iPhone (the simulator's iOS 26.5, not iOS 27), weights other than 400 and 600, Firefox, and the platforms where `system-ui` is not SF.
+Not measured: a real iPhone (the simulator's iOS 26.5, not iOS 27), weights other than 400 and 600, Firefox on macOS (SF in Firefox: Playwright's Firefox does not run on the Mac over SSH; on Linux only Inter is measured in it), and the platforms where `system-ui` is not SF.
 
 ## Inter, where the system font is not SF
 
@@ -57,7 +57,7 @@ Where the system font is not SF, ciderui's text is Inter (4.001, the variable fo
 | 80px | +0.0141 | +0.0089 | −0.0297 | −0.0245 |
 | 96px | +0.0141 | +0.0089 | −0.0297 | −0.0245 |
 
-Inter at 400 runs wider than apple.com's text by up to 0.0243em a character (21px), 0.0208em at 17px: a 60-character line of body text about 21px wider; 0.0141em at 80px and 96px. Measured 2026-10-19 in Safari 27.0.1 (the table), Chrome 155 on macOS and Chromium 151 on Linux, the three within 0.00006em of each other (`results/*-inter.json`); Inter is added to apple.com's page from its bytes (`inter.js`), `fonts/inter-roman-latin.woff2`.
+Inter at 400 runs wider than apple.com's text by up to 0.0243em a character (21px), 0.0208em at 17px: a 60-character line of body text about 21px wider; 0.0141em at 80px and 96px. Measured 2026-10-19 in Safari 27.0.1 (the table), Chrome 155 on macOS and Chromium 151 on Linux, the three within 0.00006em of each other (`results/*-inter.json`); on 2026-10-22 in Playwright's Firefox 153 on Linux (in its window on a virtual X display: `../browsers.mjs`), within 0.0011em of Safari's, its worst 0.0244em; Inter is added to apple.com's page from its bytes (`inter.js`), `fonts/inter-roman-latin.woff2`.
 
 ## The method
 
@@ -79,7 +79,7 @@ BROWSER=chrome MODE=measure node run.mjs   # playwright-core, the installed Goog
 node derive.mjs
 node tables.mjs                            # this README's tables
 BROWSER=safari MODE=verify node run.mjs    # and ios, chrome
-BROWSER=safari MODE=inter node run.mjs     # and chrome, chromium; INTER names another font file
+BROWSER=safari MODE=inter node run.mjs     # and chrome, chromium, firefox (Playwright's); INTER names another font file
 PW=…/playwright-chromium/index.mjs BROWSER=chromium MODE=measure node run.mjs   # the Linux control
 ```
 

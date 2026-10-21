@@ -46,20 +46,21 @@ On the iPhone, by XCUITest's taps, claims 18 to 21.
 | Safari 27.0.1, macOS 27.0.1, its buttons by its keyboard | ok |
 | Chrome 156.0.8078.48, macOS 27.0.1 | ok |
 | Chromium 151, Linux | ok |
+| Firefox 153.0 (Playwright's), Linux, in its window on a virtual X display | ok |
 
 | browser | iPad 1–4 | 18–21 |
 | --- | --- | --- |
 | Safari 26.5, iOS 26.5 simulator (iPad Pro 13-inch (M5)), XCUITest's taps | ok | |
 | Safari 26.5, iOS 26.5 simulator (iPhone 17), XCUITest's taps | | ok |
 
-Measured 2026-10-21 (`results/`; first with the closed flyouts at their full height, hidden, and claims 3 and 12 added once their height was flipped, every claim again in each browser), at 1440 by 900 (Safari's window, its frame included: its page 812px tall) and 700 by 900 for a phone's layout (Safari's window goes no narrower), the simulators at their own sizes. The flyout showed 127ms after the pointer reached its link in Safari, 148ms in Chrome, 133ms in Chromium (a frame's time read each frame, from the item's `pointerover`); closed, and again once the pointer had left, each was 44px, the bar's height, open 258px. Under the curtain the stripes' spread fell from 127.3 to 8.4 in Safari, from 127.5 to 0 in Chrome and 1.1 in Chromium. In Chromium, with the dwell's delay taken off claims 4 and 13 fail (shown at 0ms, and in the sweep), with the longer delay on the list's `:hover` taken off claim 10 (the lowest reach fell to 237px of 328px as the one left shrank before the next had grown), with the bar's blur kept on claims 7 and 8, with the bar's links under the flyouts claims 6 and 9, with the closed flyout's height taken off claims 3 and 12, and with its flip's `allow-discrete` taken off claim 10 (its height flipped at once, the one left cut to the bar before the next had grown). The iPad's Safari matches `(pointer: coarse)` and no hover, so the page's hover rules never apply there; it put no tip over the page (`tip: "none"`), the iPhone's did and the test closed it (`tip: "closed"`, `../tap/`).
+Measured 2026-10-21 (`results/`; first with the closed flyouts at their full height, hidden, and claims 3 and 12 added once their height was flipped, every claim again in each browser), at 1440 by 900 (Safari's window, its frame included: its page 812px tall) and 700 by 900 for a phone's layout (Safari's window goes no narrower), the simulators at their own sizes. The flyout showed 127ms after the pointer reached its link in Safari, 148ms in Chrome, 133ms in Chromium, 136ms in Firefox (2026-10-22) (a frame's time read each frame, from the item's `pointerover`); closed, and again once the pointer had left, each was 44px, the bar's height, open 258px. Under the curtain the stripes' spread fell from 127.3 to 8.4 in Safari, from 127.5 to 0 in Chrome and Firefox, 1.1 in Chromium; in Firefox the pictures are the virtual display's pixels (`../browsers.mjs`), as Playwright's picture of a Firefox page leaves the curtain's blur out (the spread 76.5 under it, the stripes sharp: claim 8 failed so in the first run, 2026-10-21, the bar's `#fafafc` in it all the same). In Chromium, with the dwell's delay taken off claims 4 and 13 fail (shown at 0ms, and in the sweep), with the longer delay on the list's `:hover` taken off claim 10 (the lowest reach fell to 237px of 328px as the one left shrank before the next had grown), with the bar's blur kept on claims 7 and 8, with the bar's links under the flyouts claims 6 and 9, with the closed flyout's height taken off claims 3 and 12, and with its flip's `allow-discrete` taken off claim 10 (its height flipped at once, the one left cut to the bar before the next had grown). The iPad's Safari matches `(pointer: coarse)` and no hover, so the page's hover rules never apply there; it put no tip over the page (`tip: "none"`), the iPhone's did and the test closed it (`tip: "closed"`, `../tap/`).
 
 What the probe found:
 
 - **Safari's pointer moves.** safaridriver's pointer move of a duration is one jump at its end (one `pointermove`), so a sweep passed over no link; `../browsers.mjs`'s `move` gives it a move a frame. A move outside the page (below its 812px) does nothing at all, not even an error.
 - **The bar's blur.** Kept on while a flyout shows, in Chromium, the curtain does not reach the page at all: the stripes' spread under it stayed 127.5, its tint not drawn there either, the curtain held to the bar (`backdrop-filter` makes the bar the containing block of its fixed descendants; it would be the backdrop root of the curtain's own blur too). So the bar drops it while a flyout shows, and takes it back 0.45s after one stops showing, the curtain gone by then.
 
-Not measured: Firefox, a real iPhone or iPad; an iPad with a trackpad or mouse (its pointer hovers: the page's hover rules would apply); the flyouts' motion (the component's tests read it in Chromium).
+Not measured: Firefox on macOS, a real iPhone or iPad; an iPad with a trackpad or mouse (its pointer hovers: the page's hover rules would apply); the flyouts' motion (the component's tests read it in Chromium).
 
 ## Running it
 
@@ -67,6 +68,7 @@ Not measured: Firefox, a real iPhone or iPad; an iPad with a trackpad or mouse (
 BROWSER=safari node run.mjs      # Safari quit first (../browsers.mjs); and chrome
 BROWSER=ipad node run.mjs        # on the Mac: Xcode, XcodeGen (Homebrew); and iphone
 PW=…/playwright-chromium/index.mjs BROWSER=chromium node run.mjs
+BROWSER=firefox node run.mjs     # Playwright's Firefox (playwright-core install firefox), Xvfb and ImageMagick
 ```
 
 `run.mjs` serves `page.html` on 127.0.0.1, moves the pointer, clicks and presses through `../browsers.mjs` (Safari's buttons by its keyboard: focused, Return, Option-Tab for Tab), takes its pictures (`shot()`), or taps through XCUITest on a simulator of its own (`../xcuitest.mjs`: an iPad Pro 13-inch or an iPhone 17, created and deleted, the booted ones left alone), and fails if a claim does not hold.

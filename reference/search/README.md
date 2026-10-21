@@ -37,6 +37,7 @@ The probe behind the global nav's search, apple.com's flyout under the bar and i
 | Safari 26.5, iOS 26.5 simulator | ok | not run | ok, by script | not run | ok | not run | ok | not run | ok | ok, by script | not run |
 | Chrome 155.0.8059.85, macOS 27.0.1 | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok |
 | Chromium 151, Linux | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok |
+| Firefox 153.0 (Playwright's), Linux, in its window on a virtual X display | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok |
 
 Measured 2026-10-21 (`results/`; 1 to 21 first on 2026-10-19, in Chrome 155.0.8059.80), at 1440 by 900 (the simulator's phone at its own 402 by 714). Clicked as `../popover/` clicks: on the iOS simulator by the page's script (safaridriver's taps never click there), so there is no click outside the flyout and no key, and its button is never focused to give the focus back to; in Safari on the Mac its buttons by the keyboard (a button focused, Return), the bar's link and the curtain by its own click; by Playwright elsewhere.
 
@@ -48,13 +49,16 @@ What the probe found:
 - Safari on the Mac draws a 17px scrollbar: the flyout is the page's width (`clientWidth`), not the window's.
 - The simulator's picture has the phone's status bar above the page (62px): the page's place in it is found from the bar's color with the flyout closed.
 
-Not measured: Firefox, a real iPhone or iPad; a tap outside the flyout on a phone (no tap clicks on the simulator); the flyout's motion (the component's tests read it in Chromium).
+In Firefox (2026-10-22) the pictures are the virtual display's pixels (`../browsers.mjs`): Playwright's picture of a Firefox page leaves the curtain's blur out (the stripes' spread 76.5 under it, its ground drawn, the stripes sharp), so claim 9 failed in the first run, 2026-10-21; read from the display the spread is 0, from 127.5 closed.
+
+Not measured: Firefox on macOS, a real iPhone or iPad; a tap outside the flyout on a phone (no tap clicks on the simulator); the flyout's motion (the component's tests read it in Chromium).
 
 ## Running it
 
 ```sh
 BROWSER=safari node run.mjs      # Safari quit first (../browsers.mjs); and ios, chrome
 PW=…/playwright-chromium/index.mjs BROWSER=chromium node run.mjs
+BROWSER=firefox node run.mjs     # Playwright's Firefox (playwright-core install firefox), Xvfb and ImageMagick
 ```
 
 `run.mjs` serves `page.html` on 127.0.0.1 (`?sheet` the same page as a sheet), clicks and presses through `../browsers.mjs`, takes its pictures (`shot()`) and fails if a claim does not hold.

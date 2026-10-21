@@ -1,4 +1,4 @@
-// BROWSER=safari|ios|chrome|chromium node run.mjs: does cui-accordion's
+// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs: does cui-accordion's
 // <details> open with no script, its answer shown and its chevron turned, and
 // does its height move as it opens? Serves page.html (the accordion's
 // example on the kit's compiled CSS, `node page.mjs` writes it) on
