@@ -233,6 +233,15 @@
      "page": 1423
     },
     {
+     "height": 143,
+     "content": 143,
+     "images": [],
+     "title": "A message of several lines",
+     "width": 980,
+     "css": true,
+     "page": 1423
+    },
+    {
      "height": 104,
      "content": 104,
      "images": [],
@@ -376,6 +385,15 @@
      "content": 84,
      "images": [],
      "title": "A modal and the button that opens it",
+     "width": 980,
+     "css": true,
+     "page": 1423
+    },
+    {
+     "height": 84,
+     "content": 84,
+     "images": [],
+     "title": "A product page’s modal and the button that opens it",
      "width": 980,
      "css": true,
      "page": 1423
@@ -943,6 +961,15 @@
      "page": 683
     },
     {
+     "height": 143,
+     "content": 143,
+     "images": [],
+     "title": "A message of several lines",
+     "width": 414,
+     "css": true,
+     "page": 683
+    },
+    {
      "height": 104,
      "content": 104,
      "images": [],
@@ -1086,6 +1113,15 @@
      "content": 84,
      "images": [],
      "title": "A modal and the button that opens it",
+     "width": 414,
+     "css": true,
+     "page": 683
+    },
+    {
+     "height": 84,
+     "content": 84,
+     "images": [],
+     "title": "A product page’s modal and the button that opens it",
      "width": 414,
      "css": true,
      "page": 683
@@ -1460,6 +1496,26 @@
     "text": "rgb(29, 29, 31)"
    }
   },
+  "textarea at 1440": {
+   "rest": {
+    "size": "17px",
+    "top": "18px",
+    "edge": "1px",
+    "color": "rgb(134, 134, 139)"
+   },
+   "focused": {
+    "size": "12px",
+    "top": "10px",
+    "edge": "2px",
+    "color": "rgb(0, 113, 227)"
+   },
+   "filled": {
+    "size": "12px",
+    "top": "10px",
+    "edge": "1px",
+    "color": "rgb(134, 134, 139)"
+   }
+  },
   "gallery at 700": {
    "previous": false,
    "shown": true,
@@ -1496,6 +1552,26 @@
     "top": "10px",
     "size": "12px",
     "text": "rgb(29, 29, 31)"
+   }
+  },
+  "textarea at 700": {
+   "rest": {
+    "size": "17px",
+    "top": "18px",
+    "edge": "1px",
+    "color": "rgb(134, 134, 139)"
+   },
+   "focused": {
+    "size": "12px",
+    "top": "10px",
+    "edge": "2px",
+    "color": "rgb(0, 113, 227)"
+   },
+   "filled": {
+    "size": "12px",
+    "top": "10px",
+    "edge": "1px",
+    "color": "rgb(134, 134, 139)"
    }
   },
   "globalnav menu at 700": {

@@ -1,20 +1,26 @@
 {
  "browser": "safari 27.0.1 on macOS 27.0.1",
- "date": "2026-10-19T14:30:32.190Z",
+ "date": "2026-10-21T02:21:57.118Z",
+ "pageClosedPixels": {
+  "mean": 128.8,
+  "scale": 2,
+  "offset": 0.5,
+  "spread": 127.31
+ },
  "closed": {
   "left": 0,
   "scrolls": null,
   "hit": null,
   "position": "fixed",
   "width": 0,
-  "windowHeight": 600,
+  "windowHeight": 848,
   "backdrop": "rgba(0, 0, 0, 0.48)",
   "open": false,
   "rootOverflow": "visible",
   "height": 0,
   "focus": "BODY",
   "command": true,
-  "windowWidth": 800,
+  "windowWidth": 1440,
   "modal": false,
   "top": 0
  },
@@ -23,15 +29,15 @@
   "scrolls": true,
   "hit": "modal",
   "position": "fixed",
-  "width": 800,
-  "windowHeight": 600,
+  "width": 1440,
+  "windowHeight": 848,
   "backdrop": "rgba(0, 0, 0, 0.48)",
   "open": true,
   "rootOverflow": "hidden",
-  "height": 600,
+  "height": 848,
   "focus": "close",
   "command": true,
-  "windowWidth": 800,
+  "windowWidth": 1440,
   "modal": true,
   "top": 0
  },
@@ -41,14 +47,14 @@
   "hit": null,
   "position": "fixed",
   "width": 0,
-  "windowHeight": 600,
+  "windowHeight": 848,
   "backdrop": "rgba(0, 0, 0, 0.48)",
   "open": false,
   "rootOverflow": "visible",
   "height": 0,
   "focus": "button",
   "command": true,
-  "windowWidth": 800,
+  "windowWidth": 1440,
   "modal": false,
   "top": 0
  },
@@ -58,14 +64,14 @@
   "hit": null,
   "position": "fixed",
   "width": 0,
-  "windowHeight": 600,
+  "windowHeight": 848,
   "backdrop": "rgba(0, 0, 0, 0.48)",
   "open": false,
   "rootOverflow": "visible",
   "height": 0,
   "focus": "button",
   "command": true,
-  "windowWidth": 800,
+  "windowWidth": 1440,
   "modal": false,
   "top": 0
  },
@@ -79,228 +85,590 @@
      false
     ],
     [
-     8,
+     0,
      1,
      1,
      false
     ],
     [
-     22,
-     1,
-     1,
-     false
-    ],
-    [
-     52,
-     0.009547,
-     0.009547,
+     19,
+     0.000763,
+     0.001724,
      true
     ],
     [
-     68,
-     0.099342,
-     0.099342,
+     33,
+     0.051616,
+     0.051616,
      true
     ],
     [
-     72,
-     0.139969,
-     0.139969,
+     49,
+     0.21352,
+     0.21352,
      true
     ],
     [
-     89,
-     0.380802,
-     0.380802,
+     66,
+     0.482763,
+     0.482763,
      true
     ],
     [
-     113,
-     0.77285,
-     0.77285,
+     82,
+     0.744515,
+     0.744515,
      true
     ],
     [
-     123,
-     0.891156,
-     0.891156,
+     99,
+     0.934249,
+     0.934249,
      true
     ],
     [
-     152,
-     1,
-     1,
+     115,
+     0.999237,
+     0.999237,
      true
     ],
     [
-     169,
+     132,
      1,
      1,
      true
     ],
     [
-     179,
+     149,
      1,
      1,
      true
     ],
     [
-     201,
+     165,
      1,
      1,
      true
     ],
     [
-     208,
+     182,
      1,
      1,
      true
     ],
     [
-     224,
+     199,
      1,
      1,
      true
     ],
     [
-     240,
+     216,
      1,
      1,
      true
     ],
     [
-     256,
+     232,
      1,
      1,
      true
     ],
     [
-     273,
+     249,
      1,
      1,
      true
     ],
     [
-     290,
+     266,
      1,
      1,
      true
     ],
     [
-     306,
+     283,
      1,
      1,
      true
     ],
     [
-     323,
+     299,
      1,
      1,
      true
     ],
     [
-     339,
+     316,
      1,
      1,
      true
     ],
     [
-     357,
+     333,
      1,
      1,
      true
     ],
     [
-     373,
+     349,
      1,
      1,
      true
     ],
     [
-     389,
+     366,
      1,
      1,
      true
     ],
     [
-     406,
+     382,
      1,
      1,
      true
     ],
     [
-     423,
+     399,
      1,
      1,
      true
     ],
     [
-     440,
+     416,
      1,
      1,
      true
     ],
     [
-     457,
+     432,
      1,
      1,
      true
     ],
     [
-     473,
+     449,
      1,
      1,
      true
     ],
     [
-     490,
+     466,
      1,
      1,
      true
     ],
     [
-     506,
+     482,
      1,
      1,
      true
     ],
     [
-     523,
+     499,
      1,
      1,
      true
     ],
     [
-     540,
+     515,
      1,
      1,
      true
     ],
     [
-     557,
+     533,
      1,
      1,
      true
     ],
     [
-     573,
+     549,
      1,
      1,
      true
     ],
     [
-     590,
+     566,
      1,
      1,
      true
     ],
     [
-     607,
+     582,
+     1,
+     1,
+     true
+    ],
+    [
+     599,
+     1,
+     1,
+     true
+    ],
+    [
+     615,
      1,
      1,
      true
     ]
    ]
   }
- ]
+ ],
+ "page": {
+  "filter": "blur(20px)",
+  "focus": "page-close",
+  "open": true,
+  "panel": 333,
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "below": 333,
+  "close": 353,
+  "modal": true,
+  "rootOverflow": "hidden"
+ },
+ "pageOpenPixels": {
+  "mean": 66.5,
+  "scale": 2,
+  "offset": 0.5,
+  "spread": 0.77
+ },
+ "pageFrames": [
+  [
+   0,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   0,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   2,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   19,
+   "blur(0px)",
+   "rgba(0, 0, 0, 0)"
+  ],
+  [
+   36,
+   "blur(0.232469px)",
+   "rgba(0, 0, 0, 0.004)"
+  ],
+  [
+   53,
+   "blur(0.574217px)",
+   "rgba(0, 0, 0, 0.01)"
+  ],
+  [
+   69,
+   "blur(1.003979px)",
+   "rgba(0, 0, 0, 0.024)"
+  ],
+  [
+   86,
+   "blur(1.581094px)",
+   "rgba(0, 0, 0, 0.04)"
+  ],
+  [
+   103,
+   "blur(2.282368px)",
+   "rgba(0, 0, 0, 0.055)"
+  ],
+  [
+   119,
+   "blur(3.048472px)",
+   "rgba(0, 0, 0, 0.075)"
+  ],
+  [
+   136,
+   "blur(3.958254px)",
+   "rgba(0, 0, 0, 0.094)"
+  ],
+  [
+   152,
+   "blur(4.941014px)",
+   "rgba(0, 0, 0, 0.118)"
+  ],
+  [
+   169,
+   "blur(5.904887px)",
+   "rgba(0, 0, 0, 0.14)"
+  ],
+  [
+   186,
+   "blur(6.940972px)",
+   "rgba(0, 0, 0, 0.165)"
+  ],
+  [
+   203,
+   "blur(7.963371px)",
+   "rgba(0, 0, 0, 0.192)"
+  ],
+  [
+   219,
+   "blur(8.895126px)",
+   "rgba(0, 0, 0, 0.21)"
+  ],
+  [
+   245,
+   "blur(10.318721px)",
+   "rgba(0, 0, 0, 0.247)"
+  ],
+  [
+   267,
+   "blur(11.421769px)",
+   "rgba(0, 0, 0, 0.275)"
+  ],
+  [
+   269,
+   "blur(11.517246px)",
+   "rgba(0, 0, 0, 0.275)"
+  ],
+  [
+   286,
+   "blur(12.296638px)",
+   "rgba(0, 0, 0, 0.294)"
+  ],
+  [
+   303,
+   "blur(13.019658px)",
+   "rgba(0, 0, 0, 0.31)"
+  ],
+  [
+   319,
+   "blur(13.65081px)",
+   "rgba(0, 0, 0, 0.325)"
+  ],
+  [
+   335,
+   "blur(14.236629px)",
+   "rgba(0, 0, 0, 0.34)"
+  ],
+  [
+   352,
+   "blur(14.81234px)",
+   "rgba(0, 0, 0, 0.353)"
+  ],
+  [
+   369,
+   "blur(15.343025px)",
+   "rgba(0, 0, 0, 0.37)"
+  ],
+  [
+   386,
+   "blur(15.831758px)",
+   "rgba(0, 0, 0, 0.38)"
+  ],
+  [
+   402,
+   "blur(16.25602px)",
+   "rgba(0, 0, 0, 0.39)"
+  ],
+  [
+   419,
+   "blur(16.671419px)",
+   "rgba(0, 0, 0, 0.4)"
+  ],
+  [
+   436,
+   "blur(17.052822px)",
+   "rgba(0, 0, 0, 0.408)"
+  ],
+  [
+   452,
+   "blur(17.382793px)",
+   "rgba(0, 0, 0, 0.416)"
+  ],
+  [
+   469,
+   "blur(17.704586px)",
+   "rgba(0, 0, 0, 0.424)"
+  ],
+  [
+   486,
+   "blur(17.998596px)",
+   "rgba(0, 0, 0, 0.43)"
+  ],
+  [
+   502,
+   "blur(18.266584px)",
+   "rgba(0, 0, 0, 0.435)"
+  ],
+  [
+   519,
+   "blur(18.496481px)",
+   "rgba(0, 0, 0, 0.443)"
+  ],
+  [
+   536,
+   "blur(18.718426px)",
+   "rgba(0, 0, 0, 0.447)"
+  ],
+  [
+   553,
+   "blur(18.918697px)",
+   "rgba(0, 0, 0, 0.45)"
+  ],
+  [
+   569,
+   "blur(19.088501px)",
+   "rgba(0, 0, 0, 0.455)"
+  ],
+  [
+   586,
+   "blur(19.250143px)",
+   "rgba(0, 0, 0, 0.46)"
+  ],
+  [
+   602,
+   "blur(19.38553px)",
+   "rgba(0, 0, 0, 0.463)"
+  ],
+  [
+   619,
+   "blur(19.512508px)",
+   "rgba(0, 0, 0, 0.467)"
+  ],
+  [
+   636,
+   "blur(19.622974px)",
+   "rgba(0, 0, 0, 0.47)"
+  ],
+  [
+   653,
+   "blur(19.717756px)",
+   "rgba(0, 0, 0, 0.47)"
+  ],
+  [
+   669,
+   "blur(19.793322px)",
+   "rgba(0, 0, 0, 0.475)"
+  ],
+  [
+   686,
+   "blur(19.859791px)",
+   "rgba(0, 0, 0, 0.475)"
+  ],
+  [
+   703,
+   "blur(19.912668px)",
+   "rgba(0, 0, 0, 0.475)"
+  ],
+  [
+   720,
+   "blur(19.952568px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   736,
+   "blur(19.980061px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   753,
+   "blur(19.995081px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   770,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   786,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   803,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   819,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   836,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   853,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   869,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   886,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   902,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   919,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   936,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   953,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   969,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   994,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   1002,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ]
+ ],
+ "pageScrolled": {
+  "filter": "blur(20px)",
+  "focus": "page-close",
+  "open": true,
+  "panel": -372,
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "below": -962,
+  "close": 20,
+  "modal": true,
+  "rootOverflow": "hidden"
+ },
+ "pageClosed": {
+  "filter": "blur(20px)",
+  "focus": "page-button",
+  "open": false,
+  "panel": 0,
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "below": 848,
+  "close": 0,
+  "modal": false,
+  "rootOverflow": "visible"
+ }
 }
