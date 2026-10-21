@@ -10,7 +10,8 @@
 // (giftcard:prefix*); the dropdown, empty, hovered, focused and chosen
 // (tradein:dropdown*); the textarea in its box, at rest, focused, filled, in
 // error, disabled and in a dark block (retail:textarea*, retail-dark:textarea*,
-// the store's stylesheet on the feedback form's markup). Golden, with their why: the letter-spacing, the
+// the store's stylesheet on the feedback form's markup); the dropdown in error
+// and disabled (retail:dropdown.*, retail-dark:dropdown.*). Golden, with their why: the letter-spacing, the
 // field's own ground, no margin below, the message's mark and its dark red,
 // the prefix's width, the chevron's place and color, and the states
 // apple.com was not seen in.
@@ -258,6 +259,32 @@ export const cases = [
     html: dark(area(' aria-invalid="true"')),
     checks: [
       { target: BOX, props: ['background-color', 'border-top-color'], apple: ['retail-dark', 'textarea.error'] },
+    ],
+  },
+  {
+    name: 'select-error',
+    html: ex('select').replace('name="model">', 'name="model" aria-invalid="true">'),
+    checks: [
+      { target: INPUT, props: ['background-color', 'border-top-color', 'border-top-width', 'cursor'], apple: ['retail', 'dropdown.error'] },
+      { target: INPUT, state: 'focus', props: ['background-color', 'border-top-color', 'border-top-width'], apple: ['retail', 'dropdown.error', 'focus'] },
+      { target: LABEL, props: ['color'], apple: ['retail', 'dropdown.error-label'] },
+    ],
+  },
+  {
+    name: 'select-disabled',
+    html: ex('select').replace('name="model">', 'name="model" disabled>'),
+    checks: [
+      { target: INPUT, props: ['color', 'background-color', 'border-top-color', 'cursor', 'opacity'], apple: ['retail', 'dropdown.disabled'] },
+      { target: LABEL, props: ['color'], apple: ['retail', 'dropdown.disabled-label'] },
+      { target: CHEVRON, props: ['opacity'], apple: ['retail', 'dropdown.disabled-chevron'] },
+    ],
+  },
+  {
+    name: 'select-states-dark',
+    html: dark(`${ex('select').replace('name="model">', 'name="model" aria-invalid="true">')}${ex('select').replaceAll('id="model"', 'id="model2"').replace('for="model"', 'for="model2"').replace('name="model">', 'name="model" disabled>')}`),
+    checks: [
+      { target: '#model', props: ['background-color', 'border-top-color', 'border-top-width'], apple: ['retail-dark', 'dropdown.error'] },
+      { target: '#model2', props: ['color', 'background-color', 'border-top-color', 'cursor'], apple: ['retail-dark', 'dropdown.disabled'] },
     ],
   },
 ];

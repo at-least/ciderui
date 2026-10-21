@@ -10,7 +10,8 @@
  * (the same in a dark color scheme), giftcard:* (the gift card's buy page:
  * an empty required field the focus left, its message, a disabled field,
  * the currency field), tradein:dropdown* (iPhone 18 Pro's trade-in, the
- * store's dropdown); its icons ciderui's own (reference/icons/).
+ * store's dropdown), retail:dropdown.* (in error and disabled, copies); its
+ * icons ciderui's own (reference/icons/).
  *
  *   <div class="cui-field">
  *     <input class="cui-field-input" id="email" type="email" name="email" placeholder=" " autocomplete="email">
@@ -82,7 +83,7 @@
  * apple.com's script checks the field as the focus leaves it); the
  * message's red is apple.com's on a light page and a fitted one in a dark
  * block (apple.com's is below 4.5:1 on black: tokens.css); a select in
- * error or disabled as the field (apple.com's dropdown was not seen so); the
+ * error or disabled as the field, as apple.com's stylesheet draws it; the
  * prefix's width its text's, the input's and the label's room for one
  * character (apple.com's onedigit field's); the textarea's box focused by
  * its textarea's focus, with no script (apple.com's script sets a class);
@@ -255,6 +256,10 @@
     right: 11px;
     color: var(--cui-c-text-2);
     pointer-events: none;
+  }
+
+  select.cui-field-input:disabled ~ .cui-field-chevron {
+    opacity: 0.42;
   }
 
   /* a currency or a country code at the field's start, 1px down it: the
