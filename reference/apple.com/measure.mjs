@@ -30,7 +30,10 @@
 // `keyframes` records the @keyframes its animation-name names (read from
 // the page's own stylesheets; one the page's CSS does not hold is null and
 // fails the run). A spec's `colorScheme` reads the page in that color scheme
-// (`prefers-color-scheme`, emulated before a reload). A probe that matches nothing is recorded as null, printed,
+// (`prefers-color-scheme`, emulated before a reload); its `touch` on a touch
+// screen (the DevTools protocol's touch emulation before a reload, which
+// makes (hover: none) match, the page's script finding touch; the run fails
+// if (hover: hover) still matches). A probe that matches nothing is recorded as null, printed,
 // and fails the run. The result is results/<name>.json.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
@@ -137,6 +140,12 @@ if (spec.colorScheme) {
   await pw.reload({ waitUntil: 'load' });
 }
 const cdp = await pw.context().newCDPSession(pw);
+// `touch`: the page read on a touch screen, from its load
+if (spec.touch) {
+  await cdp.send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
+  await pw.reload({ waitUntil: 'load' });
+  if (await pw.evaluate(() => matchMedia('(hover: hover)').matches)) throw new Error('(hover: hover) matches on the emulated touch screen');
+}
 await cdp.send('DOM.enable');
 await cdp.send('CSS.enable');
 // the DevTools node of the element tagged data-cui-state in this frame: a

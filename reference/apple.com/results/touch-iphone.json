@@ -1,0 +1,608 @@
+{
+ "url": "https://www.apple.com/iphone/",
+ "finalUrl": "https://www.apple.com/iphone/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-21T02:49:11.724Z",
+ "widths": {
+  "390": {
+   "link.more-copy": {
+    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.inline": {
+    "html": "<a href=\"#cui\">a link</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "paddle": {
+    "html": "<button aria-label=\"Next item in Explore the lineup gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "-18px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.56)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.56)",
+     "border-top-left-radius": "36px",
+     "background-color": "rgba(210, 210, 215, 0.64)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "36px",
+     "height": "36px",
+     "color": "rgba(0, 0, 0, 0.56)",
+     "opacity": "1",
+     "cursor": "pointer",
+     "transition-property": "background, color, opacity",
+     "transition-duration": "0.1s, 0.1s, 0.1s",
+     "transition-timing-function": "linear, linear, linear"
+    },
+    "box": {
+     "width": 36,
+     "height": 36
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "-18px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgba(0, 0, 0, 0.64)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgba(0, 0, 0, 0.64)",
+      "border-top-left-radius": "36px",
+      "background-color": "rgba(223, 223, 227, 0.698)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "36px",
+      "height": "36px",
+      "color": "rgba(0, 0, 0, 0.64)",
+      "opacity": "1",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "gallery.dot": {
+    "html": "<a id=\"media-card-gallery-item-2-trigger\" data-focus-expression=\"{&quot;expression&quot;: &quot;a0t - 100vh + a0h + var(--global-section-aap-padding) * .5&quot;, &quot;anchors&quot;: [&quot;[data-media-card-gallery]&quot;], &quot;focus-dela",
+    "styles": {
+     "width": "8px",
+     "height": "8px",
+     "background-color": "rgba(29, 29, 31, 0.6)",
+     "border-top-left-radius": "10px",
+     "padding-top": "0px",
+     "transition-property": "background-color",
+     "transition-duration": "0.25s",
+     "transition-timing-function": "linear"
+    },
+    "box": {
+     "width": 8,
+     "height": 8
+    },
+    "states": {
+     "hover": {
+      "width": "8px",
+      "height": "8px",
+      "background-color": "rgba(0, 0, 0, 0.54)",
+      "border-top-left-radius": "10px",
+      "padding-top": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   }
+  },
+  "900": {
+   "link.more-copy": {
+    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.inline": {
+    "html": "<a href=\"#cui\">a link</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "paddle": {
+    "html": "<button aria-label=\"Next item in Explore the lineup gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "-18px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.56)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.56)",
+     "border-top-left-radius": "36px",
+     "background-color": "rgba(210, 210, 215, 0.64)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "36px",
+     "height": "36px",
+     "color": "rgba(0, 0, 0, 0.56)",
+     "opacity": "1",
+     "cursor": "pointer",
+     "transition-property": "background, color, opacity",
+     "transition-duration": "0.1s, 0.1s, 0.1s",
+     "transition-timing-function": "linear, linear, linear"
+    },
+    "box": {
+     "width": 36,
+     "height": 36
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "-18px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgba(0, 0, 0, 0.64)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgba(0, 0, 0, 0.64)",
+      "border-top-left-radius": "36px",
+      "background-color": "rgba(223, 223, 227, 0.698)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "36px",
+      "height": "36px",
+      "color": "rgba(0, 0, 0, 0.64)",
+      "opacity": "1",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "gallery.dot": {
+    "html": "<a id=\"media-card-gallery-item-2-trigger\" data-focus-expression=\"{&quot;expression&quot;: &quot;a0t - 100vh + a0h + var(--global-section-aap-padding) * .5&quot;, &quot;anchors&quot;: [&quot;[data-media-card-gallery]&quot;], &quot;focus-dela",
+    "styles": {
+     "width": "8px",
+     "height": "8px",
+     "background-color": "rgba(29, 29, 31, 0.6)",
+     "border-top-left-radius": "10px",
+     "padding-top": "0px",
+     "transition-property": "background-color",
+     "transition-duration": "0.25s",
+     "transition-timing-function": "linear"
+    },
+    "box": {
+     "width": 8,
+     "height": 8
+    },
+    "states": {
+     "hover": {
+      "width": "8px",
+      "height": "8px",
+      "background-color": "rgba(0, 0, 0, 0.54)",
+      "border-top-left-radius": "10px",
+      "padding-top": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   }
+  },
+  "1200": {
+   "link.more-copy": {
+    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "20px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "20px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.inline": {
+    "html": "<a href=\"#cui\">a link</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "paddle": {
+    "html": "<button aria-label=\"Next item in Explore the lineup gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "-18px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.56)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.56)",
+     "border-top-left-radius": "36px",
+     "background-color": "rgba(210, 210, 215, 0.64)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "36px",
+     "height": "36px",
+     "color": "rgba(0, 0, 0, 0.56)",
+     "opacity": "1",
+     "cursor": "pointer",
+     "transition-property": "background, color, opacity",
+     "transition-duration": "0.1s, 0.1s, 0.1s",
+     "transition-timing-function": "linear, linear, linear"
+    },
+    "box": {
+     "width": 36,
+     "height": 36
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "-18px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgba(0, 0, 0, 0.64)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgba(0, 0, 0, 0.64)",
+      "border-top-left-radius": "36px",
+      "background-color": "rgba(223, 223, 227, 0.698)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "36px",
+      "height": "36px",
+      "color": "rgba(0, 0, 0, 0.64)",
+      "opacity": "1",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "gallery.dot": {
+    "html": "<a id=\"media-card-gallery-item-2-trigger\" data-focus-expression=\"{&quot;expression&quot;: &quot;a0t - 100vh + a0h + var(--global-section-aap-padding) * .5&quot;, &quot;anchors&quot;: [&quot;[data-media-card-gallery]&quot;], &quot;focus-dela",
+    "styles": {
+     "width": "8px",
+     "height": "8px",
+     "background-color": "rgba(29, 29, 31, 0.6)",
+     "border-top-left-radius": "10px",
+     "padding-top": "0px",
+     "transition-property": "background-color",
+     "transition-duration": "0.25s",
+     "transition-timing-function": "linear"
+    },
+    "box": {
+     "width": 8,
+     "height": 8
+    },
+    "states": {
+     "hover": {
+      "width": "8px",
+      "height": "8px",
+      "background-color": "rgba(0, 0, 0, 0.54)",
+      "border-top-left-radius": "10px",
+      "padding-top": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   }
+  },
+  "1600": {
+   "link.more-copy": {
+    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "20px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "20px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "link.inline": {
+    "html": "<a href=\"#cui\">a link</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "paddle": {
+    "html": "<button aria-label=\"Next item in Explore the lineup gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "-18px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(0, 0, 0, 0.56)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(0, 0, 0, 0.56)",
+     "border-top-left-radius": "36px",
+     "background-color": "rgba(210, 210, 215, 0.64)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "36px",
+     "height": "36px",
+     "color": "rgba(0, 0, 0, 0.56)",
+     "opacity": "1",
+     "cursor": "pointer",
+     "transition-property": "background, color, opacity",
+     "transition-duration": "0.1s, 0.1s, 0.1s",
+     "transition-timing-function": "linear, linear, linear"
+    },
+    "box": {
+     "width": 36,
+     "height": 36
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "-18px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgba(0, 0, 0, 0.64)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgba(0, 0, 0, 0.64)",
+      "border-top-left-radius": "36px",
+      "background-color": "rgba(223, 223, 227, 0.698)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "36px",
+      "height": "36px",
+      "color": "rgba(0, 0, 0, 0.64)",
+      "opacity": "1",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "gallery.dot": {
+    "html": "<a id=\"media-card-gallery-item-2-trigger\" data-focus-expression=\"{&quot;expression&quot;: &quot;a0t - 100vh + a0h + var(--global-section-aap-padding) * .5&quot;, &quot;anchors&quot;: [&quot;[data-media-card-gallery]&quot;], &quot;focus-dela",
+    "styles": {
+     "width": "8px",
+     "height": "8px",
+     "background-color": "rgba(29, 29, 31, 0.6)",
+     "border-top-left-radius": "10px",
+     "padding-top": "0px",
+     "transition-property": "background-color",
+     "transition-duration": "0.25s",
+     "transition-timing-function": "linear"
+    },
+    "box": {
+     "width": 8,
+     "height": 8
+    },
+    "states": {
+     "hover": {
+      "width": "8px",
+      "height": "8px",
+      "background-color": "rgba(0, 0, 0, 0.54)",
+      "border-top-left-radius": "10px",
+      "padding-top": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   }
+  }
+ }
+}

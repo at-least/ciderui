@@ -1,0 +1,899 @@
+{
+ "url": "https://www.apple.com/macbook-air/",
+ "finalUrl": "https://www.apple.com/macbook-air/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-21T02:49:25.687Z",
+ "widths": {
+  "390": {
+   "localnav.link": {
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.2px",
+     "font-weight": "400",
+     "letter-spacing": "-0.28px",
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0",
+     "text-decoration-line": "none",
+     "display": "flex",
+     "cursor": "pointer",
+     "transition-property": "transform, opacity, -webkit-transform",
+     "transition-duration": "0.38s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 326,
+     "height": 34,
+     "top": 88,
+     "left": 32
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18.2px",
+      "font-weight": "400",
+      "letter-spacing": "-0.28px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "text-decoration-line": "none",
+      "display": "flex",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "localnav.button": {
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(255, 255, 255)",
+     "padding-top": "3px",
+     "padding-right": "10px",
+     "padding-bottom": "3px",
+     "padding-left": "10px",
+     "margin-top": "-1px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "980px",
+     "background-color": "rgb(0, 113, 227)",
+     "box-shadow": "none",
+     "min-width": "23px",
+     "min-height": "0px",
+     "max-width": "none",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 45,
+     "height": 24,
+     "top": 12,
+     "left": 329
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(255, 255, 255)",
+      "padding-top": "3px",
+      "padding-right": "10px",
+      "padding-bottom": "3px",
+      "padding-left": "10px",
+      "margin-top": "-1px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgba(0, 0, 0, 0)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "980px",
+      "background-color": "rgb(0, 118, 223)",
+      "box-shadow": "none",
+      "min-width": "23px",
+      "min-height": "0px",
+      "max-width": "none",
+      "cursor": "pointer"
+     }
+    }
+   },
+   "localnav.chevron-image": {
+    "html": "<span class=\"ac-ln-menucta-chevron\">\n<svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\">\n\t<polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" ve",
+    "styles": {
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0.8",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "flex-start",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal"
+    },
+    "box": {
+     "width": 40,
+     "height": 30
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "flex-start",
+      "justify-content": "center",
+      "row-gap": "normal",
+      "column-gap": "normal"
+     }
+    }
+   },
+   "tray.open": {
+    "html": "<div class=\"ac-ln-menu-tray\" id=\"ac-ln-menustate-tray\" style=\"--r-localnav-menu-tray-natural-height: 197px;\">\n\t\t\t\t\t\t<ul class=\"ac-ln-menu-items\">\n\t\t\t\t\t\t\t<li class=\"ac-ln-menu-item\">\n\t\t\t\t\t\t\t\t<span class=\"ac-ln-menu-link current\" role=\"link\" ",
+    "styles": {
+     "visibility": "visible",
+     "max-height": "197px",
+     "transition-property": "max-height, visibility",
+     "transition-duration": "0.32s, 0s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), linear"
+    },
+    "box": {
+     "width": 358,
+     "height": 197,
+     "top": 24,
+     "left": 16
+    },
+    "animations": [
+     {
+      "kind": "CSSTransition",
+      "what": "background-color",
+      "on": "div.ac-ln-background",
+      "duration": 320,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgba(250, 250, 252, 0.8)",
+      "to": "rgb(250, 250, 252)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "max-height",
+      "on": "div#ac-ln-menustate-tray.ac-ln-menu-tray",
+      "duration": 320,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0px",
+      "to": "197px"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "span.ac-ln-menu-link.current",
+      "duration": 320,
+      "delay": 260,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "0.8"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "span.ac-ln-menu-link.current",
+      "duration": 320,
+      "delay": 260,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate3d(0px, -4px, 0px)",
+      "to": "translate3d(0px, 0px, 0px)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "a.ac-ln-menu-link",
+      "duration": 320,
+      "delay": 280,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "0.8"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "a.ac-ln-menu-link",
+      "duration": 320,
+      "delay": 280,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate3d(0px, -4px, 0px)",
+      "to": "translate3d(0px, 0px, 0px)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "a.ac-ln-menu-link",
+      "duration": 320,
+      "delay": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "0.8"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "a.ac-ln-menu-link",
+      "duration": 320,
+      "delay": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate3d(0px, -4px, 0px)",
+      "to": "translate3d(0px, 0px, 0px)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "a.ac-ln-menu-link",
+      "duration": 320,
+      "delay": 320,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0",
+      "to": "0.8"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "transform",
+      "on": "a.ac-ln-menu-link",
+      "duration": 320,
+      "delay": 320,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translate3d(0px, -4px, 0px)",
+      "to": "translate3d(0px, 0px, 0px)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "span.ac-ln-menu-link.current",
+      "duration": 320,
+      "delay": 260,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "0.8",
+      "to": "1"
+     }
+    ]
+   },
+   "tray.link": {
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.2px",
+     "font-weight": "400",
+     "letter-spacing": "-0.28px",
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0.8",
+     "display": "flex",
+     "align-items": "center",
+     "transform": "matrix(1, 0, 0, 1, 0, 0)",
+     "transition-property": "transform, opacity, -webkit-transform",
+     "transition-duration": "0.32s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 326,
+     "height": 34,
+     "top": 92,
+     "left": 32
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18.2px",
+      "font-weight": "400",
+      "letter-spacing": "-0.28px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "display": "flex",
+      "align-items": "center",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   }
+  },
+  "833": {
+   "localnav.link": {
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.2px",
+     "font-weight": "400",
+     "letter-spacing": "-0.28px",
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0",
+     "text-decoration-line": "none",
+     "display": "flex",
+     "cursor": "pointer",
+     "transition-property": "transform, opacity, -webkit-transform",
+     "transition-duration": "0.38s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 769,
+     "height": 34,
+     "top": 88,
+     "left": 32
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18.2px",
+      "font-weight": "400",
+      "letter-spacing": "-0.28px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "text-decoration-line": "none",
+      "display": "flex",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "localnav.button": {
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(255, 255, 255)",
+     "padding-top": "3px",
+     "padding-right": "10px",
+     "padding-bottom": "3px",
+     "padding-left": "10px",
+     "margin-top": "-1px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "980px",
+     "background-color": "rgb(0, 113, 227)",
+     "box-shadow": "none",
+     "min-width": "23px",
+     "min-height": "0px",
+     "max-width": "none",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 45,
+     "height": 24,
+     "top": 12,
+     "left": 772
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(255, 255, 255)",
+      "padding-top": "3px",
+      "padding-right": "10px",
+      "padding-bottom": "3px",
+      "padding-left": "10px",
+      "margin-top": "-1px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgba(0, 0, 0, 0)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "980px",
+      "background-color": "rgb(0, 118, 223)",
+      "box-shadow": "none",
+      "min-width": "23px",
+      "min-height": "0px",
+      "max-width": "none",
+      "cursor": "pointer"
+     }
+    }
+   },
+   "localnav.chevron-image": {
+    "html": "<span class=\"ac-ln-menucta-chevron\">\n<svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\">\n\t<polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" ve",
+    "styles": {
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0.8",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "flex-start",
+     "justify-content": "center",
+     "row-gap": "normal",
+     "column-gap": "normal"
+    },
+    "box": {
+     "width": 40,
+     "height": 30
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "display": "flex",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "flex-start",
+      "justify-content": "center",
+      "row-gap": "normal",
+      "column-gap": "normal"
+     }
+    }
+   }
+  },
+  "834": {
+   "localnav.link": {
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "22px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0.8",
+     "text-decoration-line": "none",
+     "display": "inline-block",
+     "cursor": "pointer",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 64.0625,
+     "height": 22,
+     "top": 15,
+     "left": 453.84375
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "22px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "text-decoration-line": "none",
+      "display": "inline-block",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "localnav.button": {
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(255, 255, 255)",
+     "padding-top": "3px",
+     "padding-right": "10px",
+     "padding-bottom": "3px",
+     "padding-left": "10px",
+     "margin-top": "-1px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "980px",
+     "background-color": "rgb(0, 113, 227)",
+     "box-shadow": "none",
+     "min-width": "23px",
+     "min-height": "0px",
+     "max-width": "none",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 45,
+     "height": 24,
+     "top": 14,
+     "left": 767
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(255, 255, 255)",
+      "padding-top": "3px",
+      "padding-right": "10px",
+      "padding-bottom": "3px",
+      "padding-left": "10px",
+      "margin-top": "-1px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgba(0, 0, 0, 0)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "980px",
+      "background-color": "rgb(0, 118, 223)",
+      "box-shadow": "none",
+      "min-width": "23px",
+      "min-height": "0px",
+      "max-width": "none",
+      "cursor": "pointer"
+     }
+    }
+   }
+  },
+  "900": {
+   "localnav.link": {
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "22px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0.8",
+     "text-decoration-line": "none",
+     "display": "inline-block",
+     "cursor": "pointer",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 64.0625,
+     "height": 22,
+     "top": 15,
+     "left": 519.84375
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "22px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "text-decoration-line": "none",
+      "display": "inline-block",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "localnav.button": {
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(255, 255, 255)",
+     "padding-top": "3px",
+     "padding-right": "10px",
+     "padding-bottom": "3px",
+     "padding-left": "10px",
+     "margin-top": "-1px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "980px",
+     "background-color": "rgb(0, 113, 227)",
+     "box-shadow": "none",
+     "min-width": "23px",
+     "min-height": "0px",
+     "max-width": "none",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 45,
+     "height": 24,
+     "top": 14,
+     "left": 833
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(255, 255, 255)",
+      "padding-top": "3px",
+      "padding-right": "10px",
+      "padding-bottom": "3px",
+      "padding-left": "10px",
+      "margin-top": "-1px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgba(0, 0, 0, 0)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "980px",
+      "background-color": "rgb(0, 118, 223)",
+      "box-shadow": "none",
+      "min-width": "23px",
+      "min-height": "0px",
+      "max-width": "none",
+      "cursor": "pointer"
+     }
+    }
+   }
+  },
+  "1200": {
+   "localnav.link": {
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "22px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0.8",
+     "text-decoration-line": "none",
+     "display": "inline-block",
+     "cursor": "pointer",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 64.0625,
+     "height": 22,
+     "top": 15,
+     "left": 731.84375
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "22px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "text-decoration-line": "none",
+      "display": "inline-block",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "localnav.button": {
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(255, 255, 255)",
+     "padding-top": "3px",
+     "padding-right": "10px",
+     "padding-bottom": "3px",
+     "padding-left": "10px",
+     "margin-top": "-1px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "980px",
+     "background-color": "rgb(0, 113, 227)",
+     "box-shadow": "none",
+     "min-width": "23px",
+     "min-height": "0px",
+     "max-width": "none",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 45,
+     "height": 24,
+     "top": 14,
+     "left": 1045
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(255, 255, 255)",
+      "padding-top": "3px",
+      "padding-right": "10px",
+      "padding-bottom": "3px",
+      "padding-left": "10px",
+      "margin-top": "-1px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgba(0, 0, 0, 0)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "980px",
+      "background-color": "rgb(0, 118, 223)",
+      "box-shadow": "none",
+      "min-width": "23px",
+      "min-height": "0px",
+      "max-width": "none",
+      "cursor": "pointer"
+     }
+    }
+   }
+  },
+  "1600": {
+   "localnav.link": {
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "22px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0.8",
+     "text-decoration-line": "none",
+     "display": "inline-block",
+     "cursor": "pointer",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 64.0625,
+     "height": 22,
+     "top": 15,
+     "left": 931.84375
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "22px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "text-decoration-line": "none",
+      "display": "inline-block",
+      "cursor": "pointer",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "localnav.button": {
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(255, 255, 255)",
+     "padding-top": "3px",
+     "padding-right": "10px",
+     "padding-bottom": "3px",
+     "padding-left": "10px",
+     "margin-top": "-1px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "980px",
+     "background-color": "rgb(0, 113, 227)",
+     "box-shadow": "none",
+     "min-width": "23px",
+     "min-height": "0px",
+     "max-width": "none",
+     "cursor": "pointer"
+    },
+    "box": {
+     "width": 45,
+     "height": 24,
+     "top": 14,
+     "left": 1245
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "400",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(255, 255, 255)",
+      "padding-top": "3px",
+      "padding-right": "10px",
+      "padding-bottom": "3px",
+      "padding-left": "10px",
+      "margin-top": "-1px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgba(0, 0, 0, 0)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "980px",
+      "background-color": "rgb(0, 118, 223)",
+      "box-shadow": "none",
+      "min-width": "23px",
+      "min-height": "0px",
+      "max-width": "none",
+      "cursor": "pointer"
+     }
+    }
+   }
+  }
+ }
+}

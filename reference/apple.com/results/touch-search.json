@@ -1,0 +1,1134 @@
+{
+ "url": "https://www.apple.com/",
+ "finalUrl": "https://www.apple.com/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-21T02:50:17.337Z",
+ "widths": {
+  "390": {
+   "nav.phone": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "48px",
+     "position": "fixed",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(255, 255, 255, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 390,
+     "height": 48,
+     "top": 135,
+     "left": 0
+    }
+   },
+   "results.link": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"quicklinks\" data-items=\"5\" data-index=\"0\" data-label=\"Find a Store\" data-analytics-click=\"eVar23: {data-query} | {data-s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "4px",
+     "padding-right": "12px",
+     "padding-bottom": "3px",
+     "padding-left": "12px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "align-items": "flex-start",
+     "text-decoration-line": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "6px",
+     "outline-style": "none",
+     "outline-color": "rgb(51, 51, 54)",
+     "outline-width": "3px",
+     "outline-offset": "0px",
+     "transition-property": "color, background-color, fill",
+     "transition-duration": "0.02s, 0.02s, 0.02s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 318,
+     "height": 33,
+     "top": 308,
+     "left": 36
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "26px",
+      "font-weight": "600",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "12px",
+      "padding-bottom": "3px",
+      "padding-left": "12px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "border-top-left-radius": "6px",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   }
+  },
+  "833": {
+   "nav.phone": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "48px",
+     "position": "fixed",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(255, 255, 255, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 833,
+     "height": 48,
+     "top": 135,
+     "left": 0
+    },
+    "animations": [
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-chevron-hover-off",
+      "on": "span.globalnav-link-chevron",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "scale(1)",
+      "to": "scale(0.8)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "background-color",
+      "on": "div.globalnav-content",
+      "duration": 450,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgba(255, 255, 255, 0.8)",
+      "to": "rgb(250, 250, 252)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "height",
+      "on": "div.globalnav-content",
+      "duration": 450,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "100%",
+      "to": "765px"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "a.globalnav-link.globalnav-link-apple",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "1",
+      "to": "0"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "a.globalnav-link.globalnav-link-apple",
+      "duration": 240,
+      "delay": 0,
+      "easing": "steps(1)",
+      "from": "visible",
+      "to": "hidden"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "a#globalnav-menubutton-link-search.globalnav-link.globalnav-link-search",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "1",
+      "to": "0"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "a#globalnav-menubutton-link-search.globalnav-link.globalnav-link-search",
+      "duration": 240,
+      "delay": 0,
+      "easing": "steps(1)",
+      "from": "visible",
+      "to": "hidden"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "opacity",
+      "on": "div.globalnav-bag-wrapper",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "1",
+      "to": "0"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "div.globalnav-bag-wrapper",
+      "duration": 240,
+      "delay": 0,
+      "easing": "steps(1)",
+      "from": "visible",
+      "to": "hidden"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "a#globalnav-menubutton-link-bag.globalnav-link.globalnav-link-bag",
+      "duration": 240,
+      "delay": 0,
+      "easing": "steps(1)",
+      "from": "visible",
+      "to": "hidden"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-input-intro",
+      "on": "div.globalnav-searchfield-wrapper",
+      "duration": 240,
+      "delay": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "h2.globalnav-searchresults-header",
+      "duration": 320,
+      "delay": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 220,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 240,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 260,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 280,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-8px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 0,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 100,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 200,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 300,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 400,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 500,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 600,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 700,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     }
+    ]
+   },
+   "results.link": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"quicklinks\" data-items=\"5\" data-index=\"0\" data-label=\"Find a Store\" data-analytics-click=\"eVar23: {data-query} | {data-s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "4px",
+     "padding-right": "12px",
+     "padding-bottom": "3px",
+     "padding-left": "12px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "align-items": "flex-start",
+     "text-decoration-line": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "6px",
+     "outline-style": "none",
+     "outline-color": "rgb(51, 51, 54)",
+     "outline-width": "3px",
+     "outline-offset": "0px",
+     "transition-property": "color, background-color, fill",
+     "transition-duration": "0.02s, 0.02s, 0.02s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 761,
+     "height": 33,
+     "top": 308,
+     "left": 36
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "26px",
+      "font-weight": "600",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "12px",
+      "padding-bottom": "3px",
+      "padding-left": "12px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "border-top-left-radius": "6px",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   }
+  },
+  "834": {
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "position": "fixed",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(255, 255, 255, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 834,
+     "height": 44,
+     "top": 70,
+     "left": 0
+    }
+   },
+   "results.link": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"quicklinks\" data-items=\"5\" data-index=\"0\" data-label=\"Find a Store\" data-analytics-click=\"eVar23: {data-query} | {data-s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "4px",
+     "padding-right": "8px",
+     "padding-bottom": "4px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "align-items": "flex-start",
+     "text-decoration-line": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "5px",
+     "outline-style": "none",
+     "outline-color": "rgb(51, 51, 54)",
+     "outline-width": "3px",
+     "outline-offset": "0px",
+     "transition-property": "color, background-color, fill",
+     "transition-duration": "0.02s, 0.02s, 0.02s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 806,
+     "height": 24,
+     "top": 242,
+     "left": 14
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "600",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "8px",
+      "padding-bottom": "4px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "border-top-left-radius": "5px",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   }
+  },
+  "900": {
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "position": "fixed",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(255, 255, 255, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 900,
+     "height": 44,
+     "top": 70,
+     "left": 0
+    }
+   },
+   "results.link": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"quicklinks\" data-items=\"5\" data-index=\"0\" data-label=\"Find a Store\" data-analytics-click=\"eVar23: {data-query} | {data-s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "4px",
+     "padding-right": "8px",
+     "padding-bottom": "4px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "align-items": "flex-start",
+     "text-decoration-line": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "5px",
+     "outline-style": "none",
+     "outline-color": "rgb(51, 51, 54)",
+     "outline-width": "3px",
+     "outline-offset": "0px",
+     "transition-property": "color, background-color, fill",
+     "transition-duration": "0.02s, 0.02s, 0.02s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 872,
+     "height": 24,
+     "top": 242,
+     "left": 14
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "600",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "8px",
+      "padding-bottom": "4px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "border-top-left-radius": "5px",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   }
+  },
+  "1200": {
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "position": "fixed",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(255, 255, 255, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 1200,
+     "height": 44,
+     "top": 70,
+     "left": 0
+    }
+   },
+   "results.link": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"quicklinks\" data-items=\"5\" data-index=\"0\" data-label=\"Find a Store\" data-analytics-click=\"eVar23: {data-query} | {data-s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "4px",
+     "padding-right": "8px",
+     "padding-bottom": "4px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "align-items": "flex-start",
+     "text-decoration-line": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "5px",
+     "outline-style": "none",
+     "outline-color": "rgb(51, 51, 54)",
+     "outline-width": "3px",
+     "outline-offset": "0px",
+     "transition-property": "color, background-color, fill",
+     "transition-duration": "0.02s, 0.02s, 0.02s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 996,
+     "height": 24,
+     "top": 242,
+     "left": 102
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "600",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "8px",
+      "padding-bottom": "4px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "border-top-left-radius": "5px",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   }
+  },
+  "1600": {
+   "nav": {
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "styles": {
+     "height": "44px",
+     "position": "fixed",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": "",
+     "--globalnav-background": "rgba(255, 255, 255, .8)",
+     "--globalnav-backdrop-filter": "saturate(180%) blur(20px)"
+    },
+    "box": {
+     "width": 1600,
+     "height": 44,
+     "top": 70,
+     "left": 0
+    },
+    "animations": [
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "h2.globalnav-searchresults-header",
+      "duration": 320,
+      "delay": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 220,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 240,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 260,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 280,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "color",
+      "on": "a#globalnav-menubutton-link-search.globalnav-link.globalnav-link-search",
+      "duration": 320,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgba(0, 0, 0, 0.8)",
+      "to": "rgb(0, 0, 0)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "background-color",
+      "on": "div#globalnav-submenu-search.globalnav-flyout.globalnav-submenu",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "rgba(255, 255, 255, 0.8)",
+      "to": "rgb(250, 250, 252)"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "height",
+      "on": "div#globalnav-submenu-search.globalnav-flyout.globalnav-submenu",
+      "duration": 240,
+      "delay": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "44px",
+      "to": "388px"
+     },
+     {
+      "kind": "CSSTransition",
+      "what": "visibility",
+      "on": "div#globalnav-submenu-search.globalnav-flyout.globalnav-submenu",
+      "duration": 240,
+      "delay": 0,
+      "easing": "steps(1, start)",
+      "from": "hidden",
+      "to": "visible"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-input-intro",
+      "on": "div.globalnav-searchfield-wrapper",
+      "duration": 240,
+      "delay": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "h2.globalnav-searchresults-header",
+      "duration": 320,
+      "delay": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 220,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 240,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 260,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 280,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "globalnav-search-fade-and-slide",
+      "on": "li.globalnav-searchresults-list-item",
+      "duration": 320,
+      "delay": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "from": "translateY(-4px)",
+      "to": "translateY(0px)"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 0,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 100,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 200,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 300,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 400,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 500,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 600,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     },
+     {
+      "kind": "CSSAnimation",
+      "what": "progress-indicator-animating",
+      "on": "path.progress-indicator-spoke",
+      "duration": 800,
+      "delay": 700,
+      "easing": "cubic-bezier(1, 0.1, 0, 0.3)",
+      "from": "1",
+      "to": "0.2"
+     }
+    ]
+   },
+   "results.link": {
+    "html": "<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"quicklinks\" data-items=\"5\" data-index=\"0\" data-label=\"Find a Store\" data-analytics-click=\"eVar23: {data-query} | {data-s",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(51, 51, 54)",
+     "padding-top": "4px",
+     "padding-right": "8px",
+     "padding-bottom": "4px",
+     "padding-left": "8px",
+     "margin-top": "0px",
+     "margin-right": "0px",
+     "margin-bottom": "0px",
+     "margin-left": "0px",
+     "display": "flex",
+     "align-items": "flex-start",
+     "text-decoration-line": "none",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "5px",
+     "outline-style": "none",
+     "outline-color": "rgb(51, 51, 54)",
+     "outline-width": "3px",
+     "outline-offset": "0px",
+     "transition-property": "color, background-color, fill",
+     "transition-duration": "0.02s, 0.02s, 0.02s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    "box": {
+     "width": 996,
+     "height": 24,
+     "top": 242,
+     "left": 302
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "12px",
+      "line-height": "16.0005px",
+      "font-weight": "600",
+      "letter-spacing": "-0.12px",
+      "color": "rgb(0, 0, 0)",
+      "padding-top": "4px",
+      "padding-right": "8px",
+      "padding-bottom": "4px",
+      "padding-left": "8px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "display": "flex",
+      "align-items": "flex-start",
+      "text-decoration-line": "none",
+      "background-color": "rgb(245, 245, 247)",
+      "border-top-left-radius": "5px",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   }
+  }
+ }
+}

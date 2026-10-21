@@ -1,0 +1,387 @@
+{
+ "url": "https://www.apple.com/iphone/",
+ "finalUrl": "https://www.apple.com/iphone/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-21T02:50:03.540Z",
+ "widths": {
+  "390": {
+   "modal": {
+    "html": "<div data-component-list=\"Modal\" aria-modal=\"true\" tabindex=\"-1\" class=\"ric-modal ric-modal-scrim ric-modal-scrim-blur ric-modal-page-overlay utility-modal ric-modal-open\" data-modal-container=\"\" data-modal-close=\"\" id=\"trade-in-modal\" styl",
+    "styles": {
+     "position": "fixed",
+     "top": "0px",
+     "left": "0px",
+     "right": "0px",
+     "bottom": "0px",
+     "overflow-y": "auto",
+     "z-index": "11000",
+     "opacity": "1",
+     "display": "block",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 390,
+     "height": 900
+    }
+   },
+   "close.icon-states": {
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "styles": {
+     "background-color": "rgb(29, 29, 31)",
+     "color": "rgb(255, 255, 255)",
+     "outline-style": "none",
+     "outline-color": "rgb(255, 255, 255)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "hover": {
+      "background-color": "rgb(39, 39, 41)",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
+    }
+   }
+  },
+  "640": {
+   "modal": {
+    "html": "<div data-component-list=\"Modal\" aria-modal=\"true\" tabindex=\"-1\" class=\"ric-modal ric-modal-scrim ric-modal-scrim-blur ric-modal-page-overlay utility-modal ric-modal-open\" data-modal-container=\"\" data-modal-close=\"\" id=\"trade-in-modal\" styl",
+    "styles": {
+     "position": "fixed",
+     "top": "0px",
+     "left": "0px",
+     "right": "0px",
+     "bottom": "0px",
+     "overflow-y": "auto",
+     "z-index": "11000",
+     "opacity": "1",
+     "display": "block",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 640,
+     "height": 900
+    }
+   },
+   "close.icon-states": {
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "styles": {
+     "background-color": "rgb(29, 29, 31)",
+     "color": "rgb(255, 255, 255)",
+     "outline-style": "none",
+     "outline-color": "rgb(255, 255, 255)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "hover": {
+      "background-color": "rgb(39, 39, 41)",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
+    }
+   }
+  },
+  "734": {
+   "modal": {
+    "html": "<div data-component-list=\"Modal\" aria-modal=\"true\" tabindex=\"-1\" class=\"ric-modal ric-modal-scrim ric-modal-scrim-blur ric-modal-page-overlay utility-modal ric-modal-open\" data-modal-container=\"\" data-modal-close=\"\" id=\"trade-in-modal\" styl",
+    "styles": {
+     "position": "fixed",
+     "top": "0px",
+     "left": "0px",
+     "right": "0px",
+     "bottom": "0px",
+     "overflow-y": "auto",
+     "z-index": "11000",
+     "opacity": "1",
+     "display": "block",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 734,
+     "height": 900
+    }
+   },
+   "close.icon-states": {
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "styles": {
+     "background-color": "rgb(29, 29, 31)",
+     "color": "rgb(255, 255, 255)",
+     "outline-style": "none",
+     "outline-color": "rgb(255, 255, 255)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "hover": {
+      "background-color": "rgb(39, 39, 41)",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
+    }
+   }
+  },
+  "735": {
+   "modal": {
+    "html": "<div data-component-list=\"Modal\" aria-modal=\"true\" tabindex=\"-1\" class=\"ric-modal ric-modal-scrim ric-modal-scrim-blur ric-modal-page-overlay utility-modal ric-modal-open\" data-modal-container=\"\" data-modal-close=\"\" id=\"trade-in-modal\" styl",
+    "styles": {
+     "position": "fixed",
+     "top": "0px",
+     "left": "0px",
+     "right": "0px",
+     "bottom": "0px",
+     "overflow-y": "auto",
+     "z-index": "11000",
+     "opacity": "1",
+     "display": "block",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 735,
+     "height": 900
+    }
+   },
+   "close.icon-states": {
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "styles": {
+     "background-color": "rgb(29, 29, 31)",
+     "color": "rgb(255, 255, 255)",
+     "outline-style": "none",
+     "outline-color": "rgb(255, 255, 255)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "hover": {
+      "background-color": "rgb(39, 39, 41)",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
+    }
+   }
+  },
+  "900": {
+   "modal": {
+    "html": "<div data-component-list=\"Modal\" aria-modal=\"true\" tabindex=\"-1\" class=\"ric-modal ric-modal-scrim ric-modal-scrim-blur ric-modal-page-overlay utility-modal ric-modal-open\" data-modal-container=\"\" data-modal-close=\"\" id=\"trade-in-modal\" styl",
+    "styles": {
+     "position": "fixed",
+     "top": "0px",
+     "left": "0px",
+     "right": "0px",
+     "bottom": "0px",
+     "overflow-y": "auto",
+     "z-index": "11000",
+     "opacity": "1",
+     "display": "block",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 900,
+     "height": 900
+    }
+   },
+   "close.icon-states": {
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "styles": {
+     "background-color": "rgb(29, 29, 31)",
+     "color": "rgb(255, 255, 255)",
+     "outline-style": "none",
+     "outline-color": "rgb(255, 255, 255)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "hover": {
+      "background-color": "rgb(39, 39, 41)",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
+    }
+   }
+  },
+  "1068": {
+   "modal": {
+    "html": "<div data-component-list=\"Modal\" aria-modal=\"true\" tabindex=\"-1\" class=\"ric-modal ric-modal-scrim ric-modal-scrim-blur ric-modal-page-overlay utility-modal ric-modal-open\" data-modal-container=\"\" data-modal-close=\"\" id=\"trade-in-modal\" styl",
+    "styles": {
+     "position": "fixed",
+     "top": "0px",
+     "left": "0px",
+     "right": "0px",
+     "bottom": "0px",
+     "overflow-y": "auto",
+     "z-index": "11000",
+     "opacity": "1",
+     "display": "block",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 1068,
+     "height": 900
+    }
+   },
+   "close.icon-states": {
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "styles": {
+     "background-color": "rgb(29, 29, 31)",
+     "color": "rgb(255, 255, 255)",
+     "outline-style": "none",
+     "outline-color": "rgb(255, 255, 255)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "hover": {
+      "background-color": "rgb(39, 39, 41)",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
+    }
+   }
+  },
+  "1069": {
+   "modal": {
+    "html": "<div data-component-list=\"Modal\" aria-modal=\"true\" tabindex=\"-1\" class=\"ric-modal ric-modal-scrim ric-modal-scrim-blur ric-modal-page-overlay utility-modal ric-modal-open\" data-modal-container=\"\" data-modal-close=\"\" id=\"trade-in-modal\" styl",
+    "styles": {
+     "position": "fixed",
+     "top": "0px",
+     "left": "0px",
+     "right": "0px",
+     "bottom": "0px",
+     "overflow-y": "auto",
+     "z-index": "11000",
+     "opacity": "1",
+     "display": "block",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 1069,
+     "height": 900
+    }
+   },
+   "close.icon-states": {
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "styles": {
+     "background-color": "rgb(29, 29, 31)",
+     "color": "rgb(255, 255, 255)",
+     "outline-style": "none",
+     "outline-color": "rgb(255, 255, 255)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "hover": {
+      "background-color": "rgb(39, 39, 41)",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
+    }
+   }
+  },
+  "1200": {
+   "modal": {
+    "html": "<div data-component-list=\"Modal\" aria-modal=\"true\" tabindex=\"-1\" class=\"ric-modal ric-modal-scrim ric-modal-scrim-blur ric-modal-page-overlay utility-modal ric-modal-open\" data-modal-container=\"\" data-modal-close=\"\" id=\"trade-in-modal\" styl",
+    "styles": {
+     "position": "fixed",
+     "top": "0px",
+     "left": "0px",
+     "right": "0px",
+     "bottom": "0px",
+     "overflow-y": "auto",
+     "z-index": "11000",
+     "opacity": "1",
+     "display": "block",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 1200,
+     "height": 900
+    }
+   },
+   "close.icon-states": {
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "styles": {
+     "background-color": "rgb(29, 29, 31)",
+     "color": "rgb(255, 255, 255)",
+     "outline-style": "none",
+     "outline-color": "rgb(255, 255, 255)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "hover": {
+      "background-color": "rgb(39, 39, 41)",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
+    }
+   }
+  },
+  "1600": {
+   "modal": {
+    "html": "<div data-component-list=\"Modal\" aria-modal=\"true\" tabindex=\"-1\" class=\"ric-modal ric-modal-scrim ric-modal-scrim-blur ric-modal-page-overlay utility-modal ric-modal-open\" data-modal-container=\"\" data-modal-close=\"\" id=\"trade-in-modal\" styl",
+    "styles": {
+     "position": "fixed",
+     "top": "0px",
+     "left": "0px",
+     "right": "0px",
+     "bottom": "0px",
+     "overflow-y": "auto",
+     "z-index": "11000",
+     "opacity": "1",
+     "display": "block",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 1600,
+     "height": 900
+    },
+    "animations": []
+   },
+   "close.icon-states": {
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "styles": {
+     "background-color": "rgb(29, 29, 31)",
+     "color": "rgb(255, 255, 255)",
+     "outline-style": "none",
+     "outline-color": "rgb(255, 255, 255)",
+     "outline-width": "3px",
+     "outline-offset": "0px"
+    },
+    "states": {
+     "hover": {
+      "background-color": "rgb(39, 39, 41)",
+      "color": "rgb(255, 255, 255)",
+      "outline-style": "none",
+      "outline-color": "rgb(255, 255, 255)",
+      "outline-width": "3px",
+      "outline-offset": "0px"
+     }
+    }
+   }
+  }
+ }
+}

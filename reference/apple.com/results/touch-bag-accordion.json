@@ -1,0 +1,84 @@
+{
+ "url": "https://www.apple.com/shop/bag",
+ "finalUrl": "https://www.apple.com/shop/bag",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-21T02:49:36.335Z",
+ "widths": {
+  "390": {
+   "accordion.open": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "compact.icon-hover": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(110, 110, 115)"
+     }
+    }
+   }
+  },
+  "900": {
+   "accordion.open": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "compact.icon-hover": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(110, 110, 115)"
+     }
+    }
+   }
+  },
+  "1200": {
+   "accordion.open": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "compact.icon-hover": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(110, 110, 115)"
+     }
+    }
+   }
+  },
+  "1600": {
+   "accordion.open": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    }
+   },
+   "compact.icon-hover": {
+    "html": "<span class=\"rc-accordion-chevrondown rc-accordion-collapse-icon\"><svg class=\"accordion-icon-svg\" viewBox=\"0 0 17 8.85\" height=\"35px\" width=\"35px\"><polyline data-accordion-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-li",
+    "styles": {
+     "color": "rgb(134, 134, 139)"
+    },
+    "states": {
+     "hover": {
+      "color": "rgb(110, 110, 115)"
+     }
+    }
+   }
+  }
+ }
+}

@@ -15,3 +15,13 @@ export const TEXT = ['display', 'text-align', 'white-space', 'text-decoration-li
 export const FLEX = ['display', 'flex-direction', 'flex-wrap', 'align-items', 'justify-content', 'row-gap', 'column-gap'];
 // an element's CSS animation, as it names it
 export const ANIMATION = ['animation-name', 'animation-duration', 'animation-delay', 'animation-timing-function', 'animation-fill-mode', 'animation-iteration-count'];
+
+// a spec read again on a touch screen (`touch`): its probes of these names,
+// in its order (a probe that clicks is named with the ones after it), each
+// with states forcing these alone (:hover)
+export const touched = (spec, names, states = ['hover']) => {
+  const probes = spec.probes.filter(p => names.includes(p.name));
+  const missing = names.filter(n => !probes.some(p => p.name === n));
+  if (missing.length) throw new Error(`no probe ${missing.join(', ')} in ${spec.url}'s spec`);
+  return { ...spec, touch: true, probes: probes.map(p => p.states ? { ...p, states: p.states.filter(s => states.includes(s)) } : p) };
+};
