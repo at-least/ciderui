@@ -52,6 +52,8 @@ Each is read at 1600, 1200, 900 and 390px wide (one width inside each of apple.c
 
 ## What it showed
 
+**The text's smoothing.** `home:page.body` reads `-webkit-font-smoothing: antialiased`; beside it apple.com declares Firefox's `-moz-osx-font-smoothing: grayscale`, which Chromium drops and so no probe here reads: `body,input,textarea,select,button{font-synthesis:none;-moz-font-feature-settings:"kern";-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}` in the home page's `/v/homepage/a/styles/main.built.css` and `/autopush/us/fam-gallery/styles/home-gallery.built.css`, and under `#ac-globalfooter` in `/ac/globalfooter/8/en_US/styles/ac-globalfooter.built.css` (their text read 2026-10-21). Only Firefox on macOS knows the property (Firefox 153 on Linux: `CSS.supports` false).
+
 **Breakpoints** (`breakpoints`). The content changes at 734/735 and 1068/1069: a headline is 32px to 734px, 40px from 735px, 48px from 1069px; nothing it sets changes at 1440/1441. The global nav has its own: 48px tall to 833px, 44px from 834px.
 
 **The palette** (every color the probes read; the probe beside it):
