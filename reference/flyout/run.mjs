@@ -178,6 +178,7 @@ if (BROWSER === 'ipad') {
   claims = [
     ['the browser has anchor positioning and a pointer that hovers', closed.media.anchors && closed.media.hover],
     ['closed, no flyout shows, the curtain is hidden, the bar blurred', !closed.store.shown && !closed.mac.shown && closed.curtain.visibility === 'hidden' && closed.barFilter !== 'none'],
+    ['closed, each flyout is the bar\'s height, nothing of it laid out below the bar', near(closed.store.box.height, closed.bar.height) && near(closed.mac.box.height, closed.bar.height)],
     [`the pointer resting on Store's link shows its flyout, no popover opened, 100 to 250ms after it reached the link (${after}ms)`, hovered.store.shown && !hovered.store.open && after >= 100 && after <= 250],
     ['it hangs from the bar\'s top, across the window', near(hovered.store.box.top, hovered.bar.top) && hovered.store.box.left === 0 && near(hovered.store.box.width, hovered.window.page)],
     ['the bar\'s links are over it', hovered.macHit === 'mac'],
@@ -186,6 +187,7 @@ if (BROWSER === 'ipad') {
     ['the pointer moved on to Mac\'s link shows Mac\'s flyout and not Store\'s', switched.mac.shown && !switched.store.shown],
     ['and in every frame between, a flyout shows to its full height (the one left kept until the next is shown)', got.switchedWatch.frames.every(([, ids, reach]) => ids.length > 0 && reach >= switched.mac.panel.bottom - 0.5)],
     ['the pointer off the bar to the page hides it, the curtain hidden, the bar blurred again', !left.store.shown && !left.mac.shown && left.curtain.visibility === 'hidden' && left.barFilter !== 'none'],
+    ['and it is the bar\'s height again', near(left.mac.box.height, left.bar.height)],
     [`swept along the bar past its links (${got.sweptWatch.entered.map(([id]) => id).join(', ')} entered), no flyout shows in any frame`, got.sweptWatch.entered.length >= 2 && got.sweptWatch.frames.every(([, ids]) => ids.length === 0) && !swept.store.shown && !swept.mac.shown],
     ['Mac\'s button opens its flyout as a popover, from the bar\'s bottom, its curtain to the window\'s bottom', popover.mac.open && near(popover.mac.box.top, popover.bar.bottom) && near(popover.mac.curtain.bottom, popover.window.height) && popover.mac.curtainOpacity === '1'],
     ['Tab takes the focus to its first link', tabbed.focus === 'mac-first'],

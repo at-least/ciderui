@@ -11,7 +11,10 @@
      the link, after its button) and one without. From 834px with a pointer
      (hover: hover) the pointer resting 120ms on a link shows its flyout, no
      popover opened: the closed popover shown by the page, from the bar's top
-     behind its links, its panel revealed down from the bar, and under it the
+     behind its links (closed, the bar's height, so that no hidden flyout is
+     laid out below the bar: its height flipped as its visibility is,
+     transition-behavior: allow-discrete), its panel revealed down from the
+     bar, and under it the
      list's curtain (its ::after) fixed over the window, blurring the page,
      which takes no pointer, the bar's blur off while it shows; the pointer
      moved on along
@@ -41,10 +44,10 @@
   .curtain { display: block; width: 100%; margin: 0; padding: 0; border: 0; background: rgb(232 232 237 / 0.4); backdrop-filter: blur(20px); cursor: default; }
 
   @media (width >= 834px) and (hover: hover) {
-    .fly:not(:popover-open) { display: block; position: absolute; top: 0; right: 0; left: 0; visibility: hidden; transition: visibility 0s 0.36s; }
+    .fly:not(:popover-open) { display: block; position: absolute; top: 0; right: 0; left: 0; height: 44px; overflow: hidden; visibility: hidden; transition: visibility 0s 0.36s, height 0s 0.36s; transition-behavior: allow-discrete; }
     .fly:not(:popover-open) .panel { padding-top: 84px; clip-path: inset(0 0 calc(100% - 44px)); background: rgb(200 220 240); transition: clip-path 0.24s 0.12s, background-color 0.24s 0.12s; }
     .fly:not(:popover-open) .curtain { display: none; }
-    #menu > li:hover > .fly:not(:popover-open) { z-index: 1; visibility: visible; transition-delay: 0.12s; }
+    #menu > li:hover > .fly:not(:popover-open) { z-index: 1; height: auto; visibility: visible; transition-delay: 0.12s; }
     #menu > li:hover > .fly:not(:popover-open) .panel { clip-path: inset(0); background: #fafafc; }
     /* the pointer moved on along the bar: the flyout it left stays until
        the next one is shown */
@@ -162,10 +165,11 @@
       hash: location.hash, clicks: { ...clicks },
     };
   };
-  // how far down the window a shown flyout's panel reaches, its clip taken
-  // off (its revealed ground's bottom)
+  // how far down the window a shown flyout's panel reaches, its clip and
+  // the flyout's own box taken off (its revealed ground's bottom)
   const reach = (id) => {
-    const panel = document.getElementById(`${id}-fly`).querySelector('.panel');
+    const f = document.getElementById(`${id}-fly`);
+    const panel = f.querySelector('.panel');
     const clip = getComputedStyle(panel).clipPath;
     // its sides, split at the spaces outside a calc() (mid-transition the
     // bottom is one, its percentage the panel's height), the bottom resolved
@@ -183,7 +187,7 @@
     panel.append(t);
     const bottom = t.getBoundingClientRect().height;
     t.remove();
-    return panel.getBoundingClientRect().bottom - bottom;
+    return Math.min(panel.getBoundingClientRect().bottom - bottom, f.getBoundingClientRect().bottom);
   };
   // each frame from now: which flyouts show and how far down the lowest
   // reaches, and when the pointer entered a link's item (its time in ms from
