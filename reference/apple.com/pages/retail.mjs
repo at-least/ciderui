@@ -15,6 +15,10 @@ const DISABLED = `<div class="form-textbox"><input type="text" class="form-textb
 // stylesheet here: at rest, focused and in error (the classes apple.com's
 // script sets: the box's focused, the label's eyebrow, the field's is-error)
 const AREA = (cls = '', box = '', label = '') => `<div class="form-textbox${cls}"><div class="form-textarea${box}"><textarea id="cui-area" aria-labelledby="cui-area-label"></textarea></div><span class="form-textbox-label${label}" id="cui-area-label">Comments</span></div>`;
+// the store's dropdown (tradein:dropdown*), in error and disabled: the
+// trade-in's markup, nothing chosen, with the class apple.com's script sets
+// (is-error, as the feedback form's empty required dropdowns get it)
+const DROPDOWN = (cls = '', attrs = '') => `<div class="form-dropdown${cls}"><label class="form-dropdown-label form-dropdown-label-placeholder" for="cui-dd">Choose your model</label><select id="cui-dd" class="form-dropdown-select form-dropdown-selectnone"${attrs}><option value="">Select</option></select><span class="form-dropdown-chevron" aria-hidden="true"></span></div>`;
 export const probes = [
   { name: 'field.search', select: '#store-search-input', props: ['padding-top', 'padding-right', 'padding-bottom', 'padding-left', 'height'], box: true },
   { name: 'field', inject: FIELD('cui-field'), into: 'main', props: ['position', 'height'], box: true },
@@ -36,6 +40,11 @@ export const probes = [
   { name: 'textarea.error-label', inject: AREA(' is-error'), into: 'main', select: '.form-textbox-label', props: ['color'] },
   { name: 'textarea.disabled', inject: AREA('', ' disabled'), into: 'main', select: '.form-textarea', props: ['color', 'background-color', 'border-top-color'] },
   { name: 'textarea.disabled-input', inject: AREA('', ' disabled'), into: 'main', select: 'textarea', props: ['color', '-webkit-text-fill-color'] },
+  { name: 'dropdown.error', inject: DROPDOWN(' is-error'), into: 'main', select: 'select', props: ['background-color', 'border-top-color', 'border-top-width', 'cursor'], states: ['focus'] },
+  { name: 'dropdown.error-label', inject: DROPDOWN(' is-error'), into: 'main', select: 'label', props: ['color'] },
+  { name: 'dropdown.disabled', inject: DROPDOWN('', ' disabled'), into: 'main', select: 'select', props: ['color', 'background-color', 'border-top-color', 'cursor', 'opacity'] },
+  { name: 'dropdown.disabled-label', inject: DROPDOWN('', ' disabled'), into: 'main', select: 'label', props: ['color'] },
+  { name: 'dropdown.disabled-chevron', inject: DROPDOWN('', ' disabled'), into: 'main', select: '.form-dropdown-chevron', props: ['opacity'] },
   { name: 'field.input-filled', inject: FIELD('cui-field', ' form-textbox-eyebrow-label', ' form-textbox-entered'), into: 'main', select: 'input', props: [...TYPE, ...BOX] },
 ];
 export default {

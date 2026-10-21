@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/retail/",
  "finalUrl": "https://www.apple.com/retail/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-21T01:24:47.252Z",
+ "date": "2026-10-21T02:28:51.789Z",
  "widths": {
   "390": {
    "field.search": {
@@ -469,6 +469,51 @@
     "styles": {
      "color": "rgb(110, 110, 115)",
      "-webkit-text-fill-color": "rgb(110, 110, 115)"
+    }
+   },
+   "dropdown.error": {
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\"><option value=\"\">Select</option></select>",
+    "styles": {
+     "background-color": "rgb(255, 242, 244)",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-top-width": "1px",
+     "cursor": "pointer"
+    },
+    "states": {
+     "focus": {
+      "background-color": "rgba(255, 255, 255, 0.8)",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-top-width": "2px",
+      "cursor": "pointer"
+     }
+    }
+   },
+   "dropdown.error-label": {
+    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"cui-dd\">Choose your model</label>",
+    "styles": {
+     "color": "rgb(227, 0, 0)"
+    }
+   },
+   "dropdown.disabled": {
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\" disabled=\"\"><option value=\"\">Select</option></select>",
+    "styles": {
+     "color": "rgba(0, 0, 0, 0)",
+     "background-color": "rgba(0, 0, 0, 0.01)",
+     "border-top-color": "rgba(134, 134, 139, 0.42)",
+     "cursor": "default",
+     "opacity": "1"
+    }
+   },
+   "dropdown.disabled-label": {
+    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"cui-dd\">Choose your model</label>",
+    "styles": {
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "dropdown.disabled-chevron": {
+    "html": "<span class=\"form-dropdown-chevron\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "opacity": "0.42"
     }
    },
    "field.input-filled": {
@@ -968,6 +1013,51 @@
      "-webkit-text-fill-color": "rgb(110, 110, 115)"
     }
    },
+   "dropdown.error": {
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\"><option value=\"\">Select</option></select>",
+    "styles": {
+     "background-color": "rgb(255, 242, 244)",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-top-width": "1px",
+     "cursor": "pointer"
+    },
+    "states": {
+     "focus": {
+      "background-color": "rgba(255, 255, 255, 0.8)",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-top-width": "2px",
+      "cursor": "pointer"
+     }
+    }
+   },
+   "dropdown.error-label": {
+    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"cui-dd\">Choose your model</label>",
+    "styles": {
+     "color": "rgb(227, 0, 0)"
+    }
+   },
+   "dropdown.disabled": {
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\" disabled=\"\"><option value=\"\">Select</option></select>",
+    "styles": {
+     "color": "rgba(0, 0, 0, 0)",
+     "background-color": "rgba(0, 0, 0, 0.01)",
+     "border-top-color": "rgba(134, 134, 139, 0.42)",
+     "cursor": "default",
+     "opacity": "1"
+    }
+   },
+   "dropdown.disabled-label": {
+    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"cui-dd\">Choose your model</label>",
+    "styles": {
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "dropdown.disabled-chevron": {
+    "html": "<span class=\"form-dropdown-chevron\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "opacity": "0.42"
+    }
+   },
    "field.input-filled": {
     "html": "<input type=\"text\" class=\"form-textbox-input form-textbox-entered\" id=\"cui-field\" required=\"\" value=\"\">",
     "styles": {
@@ -1465,6 +1555,51 @@
      "-webkit-text-fill-color": "rgb(110, 110, 115)"
     }
    },
+   "dropdown.error": {
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\"><option value=\"\">Select</option></select>",
+    "styles": {
+     "background-color": "rgb(255, 242, 244)",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-top-width": "1px",
+     "cursor": "pointer"
+    },
+    "states": {
+     "focus": {
+      "background-color": "rgba(255, 255, 255, 0.8)",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-top-width": "2px",
+      "cursor": "pointer"
+     }
+    }
+   },
+   "dropdown.error-label": {
+    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"cui-dd\">Choose your model</label>",
+    "styles": {
+     "color": "rgb(227, 0, 0)"
+    }
+   },
+   "dropdown.disabled": {
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\" disabled=\"\"><option value=\"\">Select</option></select>",
+    "styles": {
+     "color": "rgba(0, 0, 0, 0)",
+     "background-color": "rgba(0, 0, 0, 0.01)",
+     "border-top-color": "rgba(134, 134, 139, 0.42)",
+     "cursor": "default",
+     "opacity": "1"
+    }
+   },
+   "dropdown.disabled-label": {
+    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"cui-dd\">Choose your model</label>",
+    "styles": {
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "dropdown.disabled-chevron": {
+    "html": "<span class=\"form-dropdown-chevron\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "opacity": "0.42"
+    }
+   },
    "field.input-filled": {
     "html": "<input type=\"text\" class=\"form-textbox-input form-textbox-entered\" id=\"cui-field\" required=\"\" value=\"\">",
     "styles": {
@@ -1960,6 +2095,51 @@
     "styles": {
      "color": "rgb(110, 110, 115)",
      "-webkit-text-fill-color": "rgb(110, 110, 115)"
+    }
+   },
+   "dropdown.error": {
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\"><option value=\"\">Select</option></select>",
+    "styles": {
+     "background-color": "rgb(255, 242, 244)",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-top-width": "1px",
+     "cursor": "pointer"
+    },
+    "states": {
+     "focus": {
+      "background-color": "rgba(255, 255, 255, 0.8)",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-top-width": "2px",
+      "cursor": "pointer"
+     }
+    }
+   },
+   "dropdown.error-label": {
+    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"cui-dd\">Choose your model</label>",
+    "styles": {
+     "color": "rgb(227, 0, 0)"
+    }
+   },
+   "dropdown.disabled": {
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\" disabled=\"\"><option value=\"\">Select</option></select>",
+    "styles": {
+     "color": "rgba(0, 0, 0, 0)",
+     "background-color": "rgba(0, 0, 0, 0.01)",
+     "border-top-color": "rgba(134, 134, 139, 0.42)",
+     "cursor": "default",
+     "opacity": "1"
+    }
+   },
+   "dropdown.disabled-label": {
+    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"cui-dd\">Choose your model</label>",
+    "styles": {
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "dropdown.disabled-chevron": {
+    "html": "<span class=\"form-dropdown-chevron\" aria-hidden=\"true\"></span>",
+    "styles": {
+     "opacity": "0.42"
     }
    },
    "field.input-filled": {
