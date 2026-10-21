@@ -325,7 +325,8 @@ export const cases = [
     checks: [
       // the bar over it, its button, the page not held
       { target: '.cui-globalnav', props: ['backdrop-filter'], apple: ['search', 'nav'] },
-      { target: '.cui-globalnav', props: ['background-color', 'background-image'], golden: 'its ground over the flyout\'s, as apple.com\'s bar (search:nav, rgba(255,255,255,.8)) is over its flyout\'s #fafafc' },
+      { target: '.cui-globalnav', props: ['background-color'], apple: ['search', 'flyout'] },
+      { target: '.cui-globalnav', props: ['background-image'], golden: 'the flyout\'s ground alone: apple.com\'s flyout runs from the nav\'s top (search:flyout, margin-top -44px) over the nav\'s own ground, its #fafafc at the bar (a pixel read 2026-10-21)' },
       { target: SBUTTON, props: ['color'], apple: ['search', 'search'] },
       { target: 'html', props: ['overflow-y'], apple: ['search', 'root'] },
       // the flyout from the bar's bottom, its panel, the curtain behind it

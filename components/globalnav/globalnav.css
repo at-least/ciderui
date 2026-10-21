@@ -132,9 +132,10 @@
  * leaving the top layer when it closes (apple.com's runs its motion back);
  * no flyouts (a desktop's menus under a link). The search: its flyout
  * starts under the bar, revealed from its top (apple.com's grows from
- * behind the bar, the bar's ground over its own), and closes at once; the
- * bar while it is open draws its ground over the flyout's, unblurred, as
- * apple.com's flyout is under it; one placeholder, Search (apple.com's
+ * behind the bar's links, from the nav's top), and closes at once; the bar
+ * while it is open shows the flyout's ground, unblurred, as apple.com's
+ * shows its flyout's, drawn over the nav's own (#fafafc at the bar); one
+ * placeholder, Search (apple.com's
  * script writes Search apple.com from 834px); its quick links' heading is
  * Quick Links, apple.com's; its clear button shown by the field's text with
  * no script (apple.com's script enables it as one types), a reset button,
@@ -778,11 +779,10 @@
       }
     }
 
-    /* while it is open the bar draws its ground over the flyout's, unblurred,
-       and its search button is hovered's */
+    /* while it is open the bar shows the flyout's ground, unblurred, and its
+       search button is hovered's */
     .cui-globalnav:has(.cui-globalnav-search:popover-open) {
       background-color: var(--cui-c-menu);
-      background-image: linear-gradient(var(--cui-c-bar), var(--cui-c-bar));
       backdrop-filter: none;
 
       .cui-globalnav-icon[popovertarget] {
