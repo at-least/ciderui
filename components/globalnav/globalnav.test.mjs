@@ -65,6 +65,19 @@ const MAGNIFIER = `${FIELD} > .cui-globalnav-image`;
 // with text in its field, as apple.com's was read (search-text:*): typed,
 // its value, not its value attribute, which is what a reset gives it back
 const SEARCH_TEXT = `${SEARCH_NAV}<script>document.querySelector('.cui-globalnav-searchinput').value = 'iPhone';</script>`;
+// showing suggestions, as a site's script leaves it once ma is typed
+// (search-suggestions:*): the field's value, its two sections, each row's
+// typed part marked
+const SUGGESTING = `${ex('suggestions')}<script>document.querySelector('.cui-globalnav-searchinput').value = 'ma';</script>`;
+const SUGGESTING_DARK = SUGGESTING.replace('class="cui-globalnav"', 'class="cui-globalnav cui-dark"');
+const LHEAD = `${PANEL} > .cui-globalnav-searchheading:first-of-type`;
+const SHEAD = `${PANEL} > .cui-globalnav-searchheading:last-of-type`;
+const LROW = `${PANEL} > .cui-globalnav-searchlinks:first-of-type > li:first-child > .cui-globalnav-searchlink`;
+const LROW2 = `${PANEL} > .cui-globalnav-searchlinks:first-of-type > li:last-child > .cui-globalnav-searchlink`;
+const SROW = `${PANEL} > .cui-globalnav-searchlinks:last-of-type > li:first-child > .cui-globalnav-searchlink`;
+const MARK = `${LROW} mark`;
+// a row the site's script writes once the search is open, after a frame
+const LATER = `<script>document.querySelector('.cui-globalnav-search').addEventListener('toggle', (e) => { if (e.newState === 'open') requestAnimationFrame(() => requestAnimationFrame(() => { const list = document.querySelector('.cui-globalnav-searchlinks'); list.append(list.firstElementChild.cloneNode(true)); })); });</script>`;
 const WIDE = [1600, 1200, 900, 834];
 const NARROW = [833, 390];
 const SEARCHING = { click: SBUTTON, height: 900 };
@@ -590,6 +603,97 @@ export const cases = [
     checks: [
       { target: RESET, props: ['opacity', 'visibility'], apple: ['search', 'field.reset'] },
       { target: `${FIELD} > .cui-globalnav-image-compact`, props: ['color'], as: { color: 'fill' }, apple: ['search', 'field.submit-compact'] },
+    ],
+  },
+  {
+    // its suggestions: two sections, the quick links' type and rows, each
+    // row's typed part marked
+    name: 'search-suggestions',
+    html: SUGGESTING,
+    ...SEARCHING,
+    widths: WIDE,
+    reducedMotion: 'reduce',
+    checks: [
+      { target: LHEAD, props: [...TYPE, 'box-height'], apple: ['search-suggestions', 'links.header'] },
+      { target: SHEAD, props: [...TYPE, 'box-height'], apple: ['search-suggestions', 'searches.header'] },
+      { target: LHEAD, props: ['box-top'], golden: `32px below the field, ${PLACE}` },
+      { target: SHEAD, props: ['box-top'], golden: `34px below the first section's last row, ${PLACE}` },
+      { target: LROW, props: [...TYPE, ...PADDING, 'display', 'align-items', 'text-decoration-line', 'background-color', 'border-top-left-radius', 'box-height'], apple: ['search-suggestions', 'link'] },
+      { target: `${LROW} > span`, props: TYPE, apple: ['search-suggestions', 'text'] },
+      { target: MARK, props: [...TYPE, 'background-color', 'display'], apple: ['search-suggestions', 'highlight'] },
+      { target: LROW, state: 'hover', props: ['color', 'background-color'], apple: ['search-suggestions', 'link.states', 'hover'] },
+      { target: LROW, state: 'focus-visible', props: ['color', 'background-color', 'outline-style', 'outline-color', 'outline-width'], apple: ['search-suggestions', 'link.states', 'focus-visible'] },
+      { target: MARK, state: 'hover', on: LROW, props: ['color'], apple: ['search-suggestions', 'highlight.states', 'hover'] },
+      { target: MARK, state: 'focus-visible', on: LROW, props: ['color'], apple: ['search-suggestions', 'highlight.states', 'focus-visible'] },
+      { target: LROW, props: ['box-top', 'box-left'], golden: `8px below its heading, 8px out from the field's start, ${PLACE}` },
+      { target: LROW2, props: ['box-top'], golden: `4px below the first, ${PLACE}` },
+      { target: SROW, props: ['box-top'], golden: `8px below its heading, ${PLACE}` },
+      { target: `${LROW} > .cui-globalnav-image`, props: ['color'], as: { color: 'fill' }, apple: ['search-suggestions', 'links.icon'] },
+      { target: `${SROW} > .cui-globalnav-image`, props: ['box-height', 'color'], as: { color: 'fill' }, apple: ['search-suggestions', 'searches.image'] },
+      { target: `${SROW} > .cui-globalnav-image`, props: ['margin-right'], apple: ['search-suggestions', 'searches.icon'] },
+      { target: `${SROW} > .cui-globalnav-image`, state: 'hover', on: SROW, props: ['color'], as: { color: 'fill' }, apple: ['search-suggestions', 'searches.icon-states', 'hover'] },
+      { target: `${SROW} > .cui-globalnav-image`, props: ['box-width'], golden: 'apple.com\'s magnifier, 9 by 16 (search-suggestions:searches.image)' },
+      { target: `${SROW} > .cui-globalnav-image-compact`, props: ['box-height'], golden: 'the phone\'s magnifier, not drawn from 834px' },
+    ],
+  },
+  {
+    name: 'search-suggestions-phone',
+    html: SUGGESTING,
+    ...SEARCHING,
+    widths: NARROW,
+    reducedMotion: 'reduce',
+    checks: [
+      { target: LHEAD, props: [...TYPE, 'box-height'], apple: ['search-suggestions', 'links.header'] },
+      { target: SHEAD, props: [...TYPE, 'box-height'], apple: ['search-suggestions', 'searches.header'] },
+      { target: SHEAD, props: ['box-top'], golden: `48px below the first section's last row, ${PLACE}` },
+      { target: LROW, props: [...TYPE, ...PADDING, 'background-color', 'border-top-left-radius', 'box-height'], apple: ['search-suggestions', 'link'] },
+      { target: MARK, props: [...TYPE, 'background-color'], apple: ['search-suggestions', 'highlight'] },
+      { target: LROW, state: 'hover', props: ['color', 'background-color'], apple: ['search-suggestions', 'link.states', 'hover'] },
+      { target: MARK, state: 'hover', on: LROW, props: ['color'], apple: ['search-suggestions', 'highlight.states', 'hover'] },
+      { target: SROW, props: ['box-top'], golden: `9px below its heading, ${PLACE}` },
+      { target: `${SROW} > .cui-globalnav-image-compact`, props: ['box-height', 'color'], as: { color: 'fill' }, apple: ['search-suggestions', 'searches.image-compact'] },
+      { target: `${SROW} > .cui-globalnav-image-compact`, props: ['margin-right'], apple: ['search-suggestions', 'searches.icon'] },
+      { target: `${SROW} > .cui-globalnav-image-compact`, props: ['box-width'], golden: 'apple.com\'s magnifier, 13 by 25 (search-suggestions:searches.image-compact)' },
+    ],
+  },
+  {
+    name: 'search-suggestions-dark',
+    html: SUGGESTING_DARK,
+    ...SEARCHING,
+    widths: [1600, 390],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: LHEAD, props: ['color'], apple: ['search-suggestions-dark', 'links.header'] },
+      { target: LROW, props: ['color', 'background-color'], apple: ['search-suggestions-dark', 'link'] },
+      { target: MARK, props: ['color', 'background-color'], apple: ['search-suggestions-dark', 'highlight'] },
+      { target: LROW, state: 'hover', props: ['color', 'background-color'], apple: ['search-suggestions-dark', 'link.states', 'hover'] },
+      { target: MARK, state: 'hover', on: LROW, props: ['color'], apple: ['search-suggestions-dark', 'highlight.states', 'hover'] },
+    ],
+  },
+  {
+    name: 'search-suggestions-dark-flyout',
+    html: SUGGESTING_DARK,
+    ...SEARCHING,
+    widths: [1600],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: `${SROW} > .cui-globalnav-image`, props: ['color'], as: { color: 'fill' }, apple: ['search-suggestions-dark', 'searches.image'] },
+      { target: `${SROW} > .cui-globalnav-image`, state: 'hover', on: SROW, props: ['color'], as: { color: 'fill' }, apple: ['search-suggestions-dark', 'searches.icon-states', 'hover'] },
+    ],
+  },
+  {
+    // with text in the field, a row the site's script writes comes in at
+    // once: read 150ms after the click, inside the opening's 200ms delay
+    // (HOLD would hold every element: a 0s transition delayed 10s holds its
+    // start too)
+    name: 'search-suggestions-rows',
+    html: `${SUGGESTING}${LATER}`,
+    ...SEARCHING,
+    wait: 150,
+    widths: [1600, 390],
+    checks: [
+      { target: '.cui-globalnav-searchlinks > li:first-child', props: ['opacity', 'transform', 'transition-property', 'transition-duration'], golden: 'opened with text in its field, its rows at once: the opening\'s motion is the empty field\'s' },
+      { target: '.cui-globalnav-searchlinks > li:nth-child(3)', props: ['opacity', 'transform', 'transition-property', 'transition-duration'], golden: 'a row written once it is open, with text in its field, at once (apple.com\'s script runs a motion of its own between its results, not read: it needs typing)' },
     ],
   },
   {

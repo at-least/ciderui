@@ -39,10 +39,14 @@ The search can open over the page instead of leading to the site’s search page
 | `cui-globalnav-searchfield` | the form, `role="search"`: its magnifier and its input |
 | `cui-globalnav-searchinput` | the field, `autofocus`: `type="text"`, as with `type="search"` Escape in it leaves the search open in Safari |
 | `cui-globalnav-searchreset` | after the field: its clear button, `type="reset"`, its mark `icon::CLEAR` (`icon::CLEAR_COMPACT` below 834px); shown while the field holds text |
-| `cui-globalnav-searchheading` | the quick links’ heading, which names their list |
-| `cui-globalnav-searchlinks` | the quick links, each a `cui-globalnav-searchlink` after its arrow, on a ground hovered and focused |
+| `cui-globalnav-searchheading` | a section’s heading, which names its list: the quick links’, a suggestions’ section’s |
+| `cui-globalnav-searchlinks` | its rows, each a `cui-globalnav-searchlink` after its image, on a ground hovered and focused |
 | `cui-globalnav-curtain` | the curtain under the flyout from 834px, a button that closes it (`popovertargetaction="hide"`, out of the tab order) |
 
-The clear button resets the form, so it gives the field back its `value` attribute: a page that fills the field with its query leaves the attribute out, or the button brings the query back. Clicked, the button hides itself and the focus is left on the page, where apple.com’s script puts it back in the field; Shift+Tab takes it there. Its suggestions, which apple.com’s script asks its service for as one types, a site adds with a script of its own.
+The clear button resets the form, so it gives the field back its `value` attribute: a page that fills the field with its query leaves the attribute out, or the button brings the query back. Clicked, the button hides itself and the focus is left on the page, where apple.com’s script puts it back in the field; Shift+Tab takes it there.
 
-The nav has no place on the page of its own: a site that keeps it at the top adds `sticky top-0`. The crate writes it with `GlobalNav`, its search `Search::Link` or `Search::Flyout`, its icons `icon::SEARCH`, `icon::BAG` and `icon::MENU`, their compact forms, and the search’s `icon::SEARCHFIELD`, `icon::ARROW` and `icon::CLEAR`.
+Its suggestions are a site’s script’s, as apple.com’s are (its script asks its service for them as one types): in the quick links’ place it writes sections, each a heading and its rows, a suggestion’s text in a `span` with what was typed in a `mark`. While a row marks what was typed, every row is muted and its marked part takes the rows’ color, hovered too; a section after another is 34px below it (48px below 834px). A suggested link keeps the arrow, a suggested search has a magnifier, `icon::SUGGESTION`. Rows the script writes once something is typed come in at once; the search’s opening motion is its empty field’s. The example is the search as a script leaves it once “ma” is typed: what was typed is the field’s value, which the markup does not hold.
+
+{{ <cui_example file="globalnav/suggestions" title="A global nav and its search’s suggestions" /> }}
+
+The nav has no place on the page of its own: a site that keeps it at the top adds `sticky top-0`. The crate writes it with `GlobalNav`, its search `Search::Link` or `Search::Flyout`, its icons `icon::SEARCH`, `icon::BAG` and `icon::MENU`, their compact forms, and the search’s `icon::SEARCHFIELD`, `icon::ARROW`, `icon::CLEAR` and `icon::SUGGESTION`.

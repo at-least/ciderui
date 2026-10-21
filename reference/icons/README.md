@@ -40,7 +40,7 @@ Intersection over union; the probe fails below 0.85, a mark set before the run. 
 
 ## The search's icons
 
-The global nav's search, opened, draws three more SVGs, each a regular one from 834px and a compact one below: the field's magnifier, the arrow before each quick link, and the clear button's mark (shown once the field holds text). `searchfield.mjs` reads them off the home page (the flyout's markup is in the page closed) and compares them as `nav.mjs` does:
+The global nav's search, opened, draws four more SVGs, each a regular one from 834px and a compact one below: the field's magnifier, the arrow before each quick link, the clear button's mark (shown once the field holds text), and the magnifier before each suggested search (shown as one types). `searchfield.mjs` reads the first three off the home page (the flyout's markup is in the page closed) and the last off the page's settings for its script (its `suggestedSearches` images, in a script of the page's own; its suggested links have the quick links' arrow), and compares them as `nav.mjs` does:
 
 | icon | apple.com's ink | ciderui's |
 | --- | --- | --- |
@@ -50,6 +50,8 @@ The global nav's search, opened, draws three more SVGs, each a regular one from 
 | the arrow, 13 by 25 | 0.45 to 12.55, 7.95 to 18.05; the shaft at 13 down, 1.3 thick; the head's strokes 1.7 across (1.2 thick), meeting at (11.93, 13) | the shaft from (1.1, 13), stroke 1.3; the head from (7.48, 8.55) to (11.93, 13) to (7.48, 17.45), stroke 1.2, round |
 | the clear mark, 14 by 14 | a filled disc 0.05 to 13.95 (radius 6.9661 at (7, 7)), an X cut out of it: its outline's strokes 1.1 thick (half-round ends of radius 0.55, `a.55.55`, whose middles are at 4.591 and 9.409), meeting 0.778 from the middle; the runs across its middle 0.05 to 6.2 and 7.8 to 13.95 | the disc, and the X's outline cut out of it (`fill-rule="evenodd"`): ends' middles at (4.591, 4.591), (9.409, 9.409), (9.409, 4.591), (4.591, 9.409), half-width 0.55, one path |
 | the clear mark, 16 by 16 | a disc 0 to 16 (radius about 8), the X's strokes about 1.34 thick, its ends drawn as curves (radius about 0.67), their middles about 2.81 from the disc's | the disc, radius 8, the X's outline: ends' middles 2.81 from (8, 8) along the diagonals, half-width 0.67 |
+| a suggested search's magnifier, 9 by 16 | 0.2 to 8.75 across, 3.4 to 12.15 down; the ring 0.2 to 7.15 across and 3.45 to 10.35 down, 0.7 thick (its middle at (3.675, 6.9)); the handle's run 1.55 across at 45° (1.1 thick, `a.55.55`), its middle on y = x + 3.381, its round end at 8.75, 12.15 | a circle at (3.675, 6.9), radius 3.125, stroke 0.7; the handle from (6, 9.381), where its round end stays out of the ring's hole, to (8.2, 11.581), stroke 1.1, round |
+| the magnifier, 13 by 25 | 0.5 to 12.6, 6.8 to 19.15; the ring 0.55 to 10.3 across, 6.85 to 16.6 down, 0.9 thick (its middle at (5.425, 11.725)); the handle's run 2.25 across (1.6 thick), its middle on y = x + 6.55 | a circle at (5.425, 11.725), radius 4.425, stroke 0.9; the handle from (8.692, 15.242) to (11.8, 18.35), stroke 1.6, round |
 
 | icon | shared ink |
 | --- | --- |
@@ -59,8 +61,10 @@ The global nav's search, opened, draws three more SVGs, each a regular one from 
 | the arrow, compact | 0.9952 |
 | the clear mark | 0.9995 |
 | the clear mark, compact | 0.9928 |
+| a suggested search's magnifier | 0.9639 |
+| the magnifier, compact | 0.9792 |
 
-Intersection over union; the probe fails below 0.85, a mark set before the run, or if the search's example (`components/globalnav/examples/search.html`) draws others. Measured 2026-10-19 on https://www.apple.com/ in Chromium 151 on Linux, the clear mark 2026-10-21 (`results/searchfield.json`).
+Intersection over union; the probe fails below 0.85, a mark set before the run, or if the search's examples (`components/globalnav/examples/search.html`, `suggestions.html`) draw others. Measured 2026-10-19 on https://www.apple.com/ in Chromium 151 on Linux, the clear mark and a suggested search's magnifier 2026-10-21 (`results/searchfield.json`).
 
 ## The field's icons
 

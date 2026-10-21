@@ -5,8 +5,10 @@
  *
  * From apple.com's global nav (reference/apple.com/): home:nav* (the bar,
  * light), home:menu* (the phone's menu, opened), newsroom:nav* and
- * newsroom:menu* (a dark nav), product:nav (a clear one), search:* and
- * search-dark:* (its search, opened); its icons ciderui's own
+ * newsroom:menu* (a dark nav), product:nav (a clear one), search:*,
+ * search-dark:*, search-text:* (its search, opened, with text in it) and
+ * search-suggestions:*, search-suggestions-dark:* (showing suggestions); its
+ * icons ciderui's own
  * (reference/icons/), its menu and its search popovers (reference/popover/,
  * reference/search/).
  *
@@ -65,6 +67,23 @@
  * is, the page held. Its field is a text field: with type="search" Escape in
  * it leaves it open in Safari 27 (reference/search/).
  *
+ * Its suggestions are the site's script's: as something is typed, it writes
+ * sections in the quick links' place, each a heading and its rows, a
+ * suggestion's text in a span with the typed part in a mark, after its
+ * section's image (a link's arrow, a suggested search's magnifier):
+ *
+ *           <h2 class="cui-globalnav-searchheading" id="suggested-links">Suggested Links</h2>
+ *           <ul class="cui-globalnav-searchlinks" aria-labelledby="suggested-links">
+ *             <li><a class="cui-globalnav-searchlink" href="/mac">(icon::ARROW, icon::ARROW_COMPACT)<span><mark>Ma</mark>c</span></a></li>
+ *           </ul>
+ *           <h2 class="cui-globalnav-searchheading" id="suggested-searches">Suggested Searches</h2>
+ *           <ul class="cui-globalnav-searchlinks" aria-labelledby="suggested-searches">
+ *             <li><a class="cui-globalnav-searchlink" href="/search?q=mac">(icon::SUGGESTION, icon::SUGGESTION_COMPACT)<span><mark>ma</mark>c</span></a></li>
+ *           </ul>
+ *
+ * While a row marks what was typed, each row is muted and its marked part
+ * the rows' color; a section after another is 34px below it (48px to 833px).
+ *
  * cui-globalnav             the bar: 48px, 44px from 834px, on the bar's
  *                           material, translucent under a blur (dark in a
  *                           dark block, cui-dark on the nav)
@@ -89,9 +108,12 @@
  *                           shown while it holds text, the magnifier then
  *                           darker; clicked, the field empty (its mark
  *                           icon::CLEAR, 14px; -compact, 16px)
- * cui-globalnav-searchheading the quick links' heading
- * cui-globalnav-searchlinks the quick links, each a cui-globalnav-searchlink
- *                           after its arrow (9 by 16; 13 by 25)
+ * cui-globalnav-searchheading a section's heading: the quick links', a
+ *                           suggestions' section's
+ * cui-globalnav-searchlinks its rows, each a cui-globalnav-searchlink after
+ *                           its image (9 by 16; 13 by 25): an arrow, a
+ *                           suggested search's magnifier; a suggestion's
+ *                           text in a span, the typed part a mark
  * cui-globalnav-curtain     the curtain under the flyout, from 834px
  *
  * apple.com's: every size, color, the material, the motion. ciderui's: the
@@ -117,8 +139,15 @@
  * field with its query leaves the attribute out: the button would bring it
  * back), and leaves the focus on the page, the button hidden (Safari,
  * Chrome, Chromium: reference/search/; apple.com's script puts it in the
- * field), the kit's ring 3px out (apple.com's 1px); no suggestions
- * (apple.com's script asks its service for them as one types); the field's
+ * field), the kit's ring 3px out (apple.com's 1px); its suggestions the
+ * site's script's to write (apple.com's asks its service for them as one
+ * types), muted while a row marks what was typed (apple.com's script marks
+ * the search while it shows more than one section), a suggestion's text in
+ * a span (a row is a flex box: its text and mark would be boxes of their
+ * own, the spaces between them dropped), and rows written once something is
+ * typed come in at once, the opening's motion the empty field's, which needs
+ * its placeholder (apple.com's script runs a motion of its own between its
+ * results, not read: it needs typing); the field's
  * magnifier is an image, not a disabled submit button (a disabled default
  * button keeps Return from sending the form), darker with text in the
  * field, as apple.com's, but never hovered (apple.com's is a button then); a focused link has the focus ring with its hovered look (apple.com
@@ -542,14 +571,31 @@
     }
   }
 
+  /* its suggestions, the site's script's: while a row marks what was typed
+     (mark), each row muted and its marked part the rows' color, hovered and
+     focused too; a section after another 48px below it */
+  :where(.cui-globalnav-searchpanel:has(.cui-globalnav-searchlink mark)) .cui-globalnav-searchlink {
+    color: var(--cui-c-text-2);
+  }
+
+  .cui-globalnav-searchlink mark {
+    color: var(--cui-c-on-menu);
+    background: none;
+  }
+
+  .cui-globalnav-searchlinks + .cui-globalnav-searchheading {
+    margin-top: 48px;
+  }
+
   /* the curtain is the flyout's, from 834px */
   .cui-globalnav-curtain {
     display: none;
   }
 
   /* the field and each row in from above, 20ms after the one before, from
-     200ms */
-  .cui-globalnav-search:popover-open {
+     200ms, as the search opens with its field empty: a row a site's script
+     writes once something is typed comes in at once */
+  .cui-globalnav-search:popover-open:has(.cui-globalnav-searchinput:placeholder-shown) {
     .cui-globalnav-searchfield,
     .cui-globalnav-searchheading,
     .cui-globalnav-searchlinks > li {
@@ -658,6 +704,10 @@
     .cui-globalnav-searchlinks {
       gap: 4px;
       margin-top: 8px;
+    }
+
+    .cui-globalnav-searchlinks + .cui-globalnav-searchheading {
+      margin-top: 34px;
     }
 
     .cui-globalnav-searchlink {

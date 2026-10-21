@@ -146,6 +146,7 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
 mod tests {
     use super::*;
     use crate::example::example;
+    use crate::icon::{Icon, SUGGESTION, SUGGESTION_COMPACT};
     use hypertext::Raw;
 
     const LINKS: &[(&str, &str)] = &[
@@ -195,6 +196,51 @@ mod tests {
                 "../../components/globalnav/examples/search.html"
             ))
         );
+    }
+
+    // the suggestions' example is the search's as a site's script leaves it,
+    // its sections in the quick links' place, each row after the crate's
+    // icons: a link's arrow, a suggested search's magnifier
+    #[test]
+    fn the_suggestions_example_is_the_search_with_its_sections() {
+        let search = rsx! {
+            <GlobalNav logo=(logo()) home="/" name="Cider" links=(LINKS) search=(Some(Search::Flyout { action: "/search", links: QUICK })) bag=(Some("/bag")) dark=false clear=false class="" />
+        }
+        .render();
+        let search = search.as_inner();
+        let suggestions = example(include_str!(
+            "../../components/globalnav/examples/suggestions.html"
+        ));
+        // from the first heading to the last list's end
+        let sections = |html: &str| {
+            let start = html
+                .find(r#"<h2 class="cui-globalnav-searchheading""#)
+                .unwrap();
+            (start, html.rfind("</ul>").unwrap() + "</ul>".len())
+        };
+        let ((a, b), (c, d)) = (sections(search), sections(&suggestions));
+        assert_eq!(
+            format!(
+                "{}{}{}",
+                &suggestions[..c],
+                &search[a..b],
+                &suggestions[d..]
+            ),
+            *search
+        );
+        let images = |regular: Icon, compact: Icon| {
+            rsx! { (regular.class("cui-globalnav-image"))(compact.class("cui-globalnav-image-compact")) }
+                .render()
+                .into_inner()
+        };
+        assert!(suggestions.contains(&format!(
+            r#"href="/mac">{}<span><mark>Ma</mark>c</span>"#,
+            images(ARROW, ARROW_COMPACT)
+        )));
+        assert!(suggestions.contains(&format!(
+            r#"href="/search?q=mac">{}<span><mark>ma</mark>c</span>"#,
+            images(SUGGESTION, SUGGESTION_COMPACT)
+        )));
     }
 
     #[test]

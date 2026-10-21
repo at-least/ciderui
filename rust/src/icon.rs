@@ -179,6 +179,29 @@ pub const ARROW_COMPACT: Icon = Icon {
     inner: r#"<path d="M1.1 13H11.93" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7.48 8.55 11.93 13 7.48 17.45" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>"#,
 };
 
+/// A suggested search's magnifier from 834px (`cui-globalnav-image` in a
+/// `cui-globalnav-searchlink`, where a quick link has its arrow), in place of
+/// apple.com's 9 by 16 SVG: a ring at (3.675, 6.9), radius 3.125, 0.7 thick,
+/// and its handle at 45° from just inside the ring to (8.2, 11.581), 1.1
+/// thick, round; 0.964 of its ink apple.com's.
+pub const SUGGESTION: Icon = Icon {
+    width: "9",
+    height: "16",
+    view_box: "0 0 9 16",
+    inner: r#"<circle cx="3.675" cy="6.9" r="3.125" fill="none" stroke="currentColor" stroke-width="0.7"/><path d="M6 9.381 8.2 11.581" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>"#,
+};
+
+/// A suggested search's magnifier to 833px (`cui-globalnav-image-compact`),
+/// in place of apple.com's 13 by 25 SVG: a ring at (5.425, 11.725), radius
+/// 4.425, 0.9 thick, and its handle to (11.8, 18.35), 1.6 thick, round; 0.979
+/// of its ink apple.com's.
+pub const SUGGESTION_COMPACT: Icon = Icon {
+    width: "13",
+    height: "25",
+    view_box: "0 0 13 25",
+    inner: r#"<circle cx="5.425" cy="11.725" r="4.425" fill="none" stroke="currentColor" stroke-width="0.9"/><path d="M8.692 15.242 11.8 18.35" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>"#,
+};
+
 /// The search field's clear mark from 834px (`cui-globalnav-image` in a
 /// `cui-globalnav-searchreset`), in place of apple.com's 14 by 14 SVG: a disc
 /// at (7, 7), radius 6.9661, and cut out of it an X, two strokes 1.1 thick
