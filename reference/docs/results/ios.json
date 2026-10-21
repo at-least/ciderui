@@ -388,6 +388,15 @@
      "width": 402,
      "css": true,
      "page": 402
+    },
+    {
+     "height": 84,
+     "content": 84,
+     "images": [],
+     "title": "A product page’s modal and the button that opens it",
+     "width": 402,
+     "css": true,
+     "page": 402
     }
    ]
   },
@@ -718,6 +727,12 @@
    "width": 402,
    "images": [],
    "frames": []
+  },
+  "/search/ at 402": {
+   "sideways": 0,
+   "width": 402,
+   "images": [],
+   "frames": []
   }
  },
  "frames": {
@@ -746,6 +761,13 @@
    "height": 666,
    "window": 714,
    "bar": 48
+  },
+  "search at 402": {
+   "q": "modal",
+   "heading": "Results for “modal”",
+   "rows": [
+    "/components/modal/"
+   ]
   },
   "dropdown at 402": {
    "empty": {

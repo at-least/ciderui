@@ -15,7 +15,9 @@
 // search the same, its field focused, Escape closing it; at 390px the global
 // nav's menu opens over its frame, grown to the window's height, and the
 // local nav's below its bar, the frame grown to hold it; an example's link
-// leaves the frame where it is.
+// leaves the frame where it is. The site's own search: the page's global
+// nav's search sends what is typed to the search page, which lists the
+// pages holding it, the component's page first.
 //
 //   node test/docs.mjs
 //
@@ -34,7 +36,7 @@ import { check, done } from './check.mjs';
 
 const DOCS = join(ROOT, 'docs');
 const ORIGIN = 'https://ciderui.test';
-const TYPES = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain' };
+const TYPES = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.json': 'application/json', '.txt': 'text/plain' };
 
 // the pages: one for each component, its examples all shown
 const components = readdirSync(join(ROOT, 'components')).sort();
@@ -189,6 +191,19 @@ for (const width of [1440, 390]) {
     await inner.press('.cui-globalnav-searchinput', 'Escape');
     await settle(inner);
     check(`at ${width}px Escape closes it, its frame the bar's height again`, await height(handle), closed);
+  }
+  {
+    errors = [];
+    await page.goto(`${ORIGIN}/`, { waitUntil: 'load' });
+    await page.click('body > .cui-globalnav [popovertarget="cui-globalnav-search"]');
+    await settle(page.mainFrame());
+    await page.fill('body > .cui-globalnav .cui-globalnav-searchinput', 'modal');
+    await page.press('body > .cui-globalnav .cui-globalnav-searchinput', 'Enter');
+    await page.waitForURL(`${ORIGIN}/search/?q=modal`);
+    await page.waitForSelector('.cz-main > .cui-posts');
+    const rows = await page.evaluate(() => [...document.querySelectorAll('.cz-main > .cui-posts .cui-post')].map((a) => a.pathname));
+    check(`at ${width}px the site's search, from its nav, lists the pages holding "modal", the modal's page first`, rows[0], '/components/modal/');
+    check(`at ${width}px no page error on the search page`, errors.join(' | '), '');
   }
   if (width === 390) {
     {

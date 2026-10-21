@@ -6,7 +6,12 @@ title = "ciderui"
 description = "apple.com's look for websites: a Tailwind CSS v4 theme, apple.com's parts as classes, and a Rust crate that writes their markup."
 theme = "ciderui-zola"
 compile_sass = false
-build_search_index = false
+build_search_index = true
+
+# the search page's index (ciderui-zola's search.html reads it as JSON)
+[search]
+index_format = "fuse_json"
+include_description = true
 
 # what the theme reads Zola's markdown with (ciderui-zola's base.html
 # refuses a site without them)
@@ -28,6 +33,14 @@ nav = [
   { text = "Components", href = "/components/" },
   { text = "Rust", href = "/rust/" },
   { text = "News", href = "/news/" },
+]
+search = "/search/"
+search_flyout = true
+search_links = [
+  { text = "Get Started", href = "/get-started/" },
+  { text = "All Components", href = "/components/" },
+  { text = "Foundations", href = "/foundations/" },
+  { text = "Rust", href = "/rust/" },
 ]
 head = [{ tag = "link", attrs = { rel = "icon", type = "image/svg+xml", href = "/logo.svg" } }]
 

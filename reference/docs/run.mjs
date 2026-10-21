@@ -15,7 +15,9 @@
 // and its curtain or its X closes it; the dropdown's label the placeholder
 // while it is empty and at its top once a choice is made, its text shown
 // then, with no script; the textarea's box focused by its textarea's
-// focus and its label floated, focused or filled, with no script; in a
+// focus and its label floated, focused or filled, with no script; the
+// site's search page (?q=modal) listing the pages its script finds in
+// Zola's index, the modal's page first, its field holding the query; in a
 // window narrower than
 // 834px the global nav's menu opens over its frame, grown to the window's
 // height under the page's local nav and scrolled there, and the local nav's
@@ -32,7 +34,7 @@ const BROWSER = process.env.BROWSER;
 const SITE = process.env.SITE;
 if (!SITE || !existsSync(join(SITE, 'index.html'))) throw new Error('SITE=<the docs built for http://127.0.0.1:8737> (README.md)');
 const ORIGIN = 'http://127.0.0.1:8737';
-const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain' };
+const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain', '.json': 'application/json' };
 const server = createServer((req, res) => {
   let f = join(SITE, decodeURIComponent(new URL(req.url, ORIGIN).pathname));
   if (existsSync(f) && statSync(f).isDirectory()) f = join(f, 'index.html');
@@ -133,6 +135,19 @@ const behave = async (width) => {
     await page.run(wait(700));
     const again = await page.run(`Promise.resolve(${frame(title)}.clientHeight)`);
     claim(`${flyout ? 'its curtain' : 'its X'} closes it at ${width}px, its frame the bar's height again`, again === closed, { closed, again });
+  }
+  // the site's own search page, its query in its address as the nav's search
+  // form sends it: its field holding it, the rows the theme's script finds
+  {
+    await page.go(`${ORIGIN}/search/?q=modal`);
+    await page.run(wait(1200));
+    const r = await page.run(`Promise.resolve({
+      q: document.querySelector('.cz-search input').value,
+      heading: document.querySelector('.cz-main > .cui-posts .cui-posts-heading')?.textContent ?? null,
+      rows: [...document.querySelectorAll('.cz-main > .cui-posts .cui-post')].map((a) => new URL(a.href).pathname),
+    })`);
+    got.frames[`search at ${width}`] = r;
+    claim(`the site's search page at ${width}px lists the pages holding "modal", the modal's page first, its field holding the query`, r.q === 'modal' && r.heading === 'Results for “modal”' && r.rows[0] === '/components/modal/', r);
   }
   // the dropdown, with no script: empty, its label the placeholder and its
   // own text not shown; a choice made (its value set, as a pick sets it),

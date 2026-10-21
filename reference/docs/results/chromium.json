@@ -19,8 +19,8 @@
    "frames": [
     {
      "title": "Two questions, the first open",
-     "height": 232,
-     "content": 232,
+     "height": 260,
+     "content": 260,
      "css": true,
      "images": [],
      "width": 980,
@@ -28,8 +28,8 @@
     },
     {
      "title": "A large question",
-     "height": 159,
-     "content": 159,
+     "height": 187,
+     "content": 187,
      "css": true,
      "images": [],
      "width": 980,
@@ -388,6 +388,15 @@
      "images": [],
      "width": 980,
      "page": 1440
+    },
+    {
+     "title": "A product page’s modal and the button that opens it",
+     "height": 84,
+     "content": 84,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
     }
    ]
   },
@@ -719,6 +728,12 @@
    "images": [],
    "frames": []
   },
+  "/search/ at 1440": {
+   "width": 1440,
+   "sideways": 0,
+   "images": [],
+   "frames": []
+  },
   "/ at 700": {
    "width": 700,
    "sideways": 0,
@@ -747,8 +762,8 @@
     },
     {
      "title": "A large question",
-     "height": 142,
-     "content": 142,
+     "height": 170,
+     "content": 170,
      "css": true,
      "images": [],
      "width": 414,
@@ -1107,6 +1122,15 @@
      "images": [],
      "width": 414,
      "page": 700
+    },
+    {
+     "title": "A product page’s modal and the button that opens it",
+     "height": 84,
+     "content": 84,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
     }
    ]
   },
@@ -1437,6 +1461,12 @@
    "sideways": 0,
    "images": [],
    "frames": []
+  },
+  "/search/ at 700": {
+   "width": 700,
+   "sideways": 0,
+   "images": [],
+   "frames": []
   }
  },
  "frames": {
@@ -1465,6 +1495,13 @@
    "height": 848,
    "window": 900,
    "bar": 52
+  },
+  "search at 1440": {
+   "q": "modal",
+   "heading": "Results for “modal”",
+   "rows": [
+    "/components/modal/"
+   ]
   },
   "dropdown at 1440": {
    "empty": {
@@ -1523,6 +1560,13 @@
    "height": 852,
    "window": 900,
    "bar": 48
+  },
+  "search at 700": {
+   "q": "modal",
+   "heading": "Results for “modal”",
+   "rows": [
+    "/components/modal/"
+   ]
   },
   "dropdown at 700": {
    "empty": {

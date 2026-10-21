@@ -728,6 +728,12 @@
    "images": [],
    "frames": []
   },
+  "/search/ at 1440": {
+   "sideways": 0,
+   "width": 1440,
+   "images": [],
+   "frames": []
+  },
   "/ at 700": {
    "sideways": -17,
    "width": 700,
@@ -1455,6 +1461,12 @@
    "width": 700,
    "images": [],
    "frames": []
+  },
+  "/search/ at 700": {
+   "sideways": 0,
+   "width": 700,
+   "images": [],
+   "frames": []
   }
  },
  "frames": {
@@ -1483,6 +1495,13 @@
    "height": 796,
    "window": 848,
    "bar": 52
+  },
+  "search at 1440": {
+   "q": "modal",
+   "heading": "Results for “modal”",
+   "rows": [
+    "/components/modal/"
+   ]
   },
   "dropdown at 1440": {
    "empty": {
@@ -1541,6 +1560,13 @@
    "height": 800,
    "window": 848,
    "bar": 48
+  },
+  "search at 700": {
+   "q": "modal",
+   "heading": "Results for “modal”",
+   "rows": [
+    "/components/modal/"
+   ]
   },
   "dropdown at 700": {
    "empty": {
