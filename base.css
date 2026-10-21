@@ -4,7 +4,11 @@
  * home page, its store and a product page (reference/apple.com/,
  * `*:page.body`, `*:page.strong`): body text 17px on 25px, its text drawn
  * antialiased, no synthesized weight or style; its letter-spacing is the
- * system font's fitted value (tokens.css), not apple.com's.
+ * system font's fitted value (tokens.css), not apple.com's. Firefox on
+ * macOS takes its smoothing from `-moz-osx-font-smoothing`, which apple.com
+ * declares grayscale beside the antialiased (its stylesheets' text,
+ * reference/apple.com/): what it changes there is not measured, as no
+ * Firefox on macOS has run here.
  *
  * The focus ring is apple.com's, one for everything: `:focus-visible`
  * draws tokens.css's --cui-focus-ring, 2px of the accent 3px out, on a
@@ -37,6 +41,7 @@
     font-weight: 400;
     letter-spacing: var(--cui-tracking-17);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-synthesis: none;
   }
 

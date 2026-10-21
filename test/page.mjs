@@ -25,6 +25,8 @@ try {
   for (const prop of ['font-size', 'line-height', 'font-weight', 'color', 'background-color', '-webkit-font-smoothing', 'font-synthesis', 'text-rendering']) {
     check(`body ${prop} is apple.com's home:page.body`, body[prop], ref('home', 'page.body', W, prop));
   }
+  // Firefox's, on macOS: Chromium drops it, so the stylesheet is read
+  check('body declares -moz-osx-font-smoothing grayscale, as apple.com\'s stylesheets do', /(^|[}\s])body\{[^}]*-moz-osx-font-smoothing:grayscale/.test(css), true);
   check('body letter-spacing is the 17px fitted value', body['letter-spacing'], `${17 * 0.0029}px`, { tolerance: 0.001 });
   check('body font-family is the stack', body['font-family'], '-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif');
   check('strong is apple.com\'s store:page.strong weight', (await b.read('#strong', ['font-weight']))['font-weight'], ref('store', 'page.strong', W, 'font-weight'));
