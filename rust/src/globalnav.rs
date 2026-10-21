@@ -1,8 +1,8 @@
 use hypertext::{Buffer, prelude::*};
 
 use crate::icon::{
-    ARROW, ARROW_COMPACT, BAG, BAG_COMPACT, MENU, SEARCH, SEARCH_COMPACT, SEARCHFIELD,
-    SEARCHFIELD_COMPACT,
+    ARROW, ARROW_COMPACT, BAG, BAG_COMPACT, CLEAR, CLEAR_COMPACT, MENU, SEARCH, SEARCH_COMPACT,
+    SEARCHFIELD, SEARCHFIELD_COMPACT,
 };
 
 // the list's id, which its button opens, and the search's: a page has one
@@ -16,7 +16,8 @@ pub enum Search<'a> {
     /// A link to the site's search page.
     Link(&'a str),
     /// A button opening the search with no script: its field, focused, sent
-    /// as `q` (GET) to `action`, the site's search page, and under it the
+    /// as `q` (GET) to `action`, the site's search page, its clear button
+    /// shown while it holds text, and under it the
     /// quick links, (text, href) each, under the heading Quick Links (none,
     /// no heading); from 834px a flyout under the bar, to 833px a sheet over
     /// the window.
@@ -119,6 +120,7 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
                                 <form class="cui-globalnav-searchfield" action=(action) method="get" role="search">
                                     (SEARCHFIELD.class("cui-globalnav-image"))(SEARCHFIELD_COMPACT.class("cui-globalnav-image-compact"))
                                     <input class="cui-globalnav-searchinput" type="text" name="q" placeholder="Search" aria-label="Search" autocomplete="off" autocapitalize="off" autofocus>
+                                    <button class="cui-globalnav-searchreset" type="reset" aria-label="Clear search">(CLEAR.class("cui-globalnav-image"))(CLEAR_COMPACT.class("cui-globalnav-image-compact"))</button>
                                 </form>
                                 @if !links.is_empty() {
                                     <h2 class="cui-globalnav-searchheading" id=(HEADING_ID)>"Quick Links"</h2>

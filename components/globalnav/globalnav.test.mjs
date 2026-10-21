@@ -60,6 +60,11 @@ const QLINK = '.cui-globalnav-searchlinks > li:first-child > .cui-globalnav-sear
 const QLINK2 = '.cui-globalnav-searchlinks > li:nth-child(2) > .cui-globalnav-searchlink';
 const CURTAIN = '.cui-globalnav-curtain';
 const SCLOSE = `${FLY} .cui-globalnav-closebutton`;
+const RESET = '.cui-globalnav-searchreset';
+const MAGNIFIER = `${FIELD} > .cui-globalnav-image`;
+// with text in its field, as apple.com's was read (search-text:*): typed,
+// its value, not its value attribute, which is what a reset gives it back
+const SEARCH_TEXT = `${SEARCH_NAV}<script>document.querySelector('.cui-globalnav-searchinput').value = 'iPhone';</script>`;
 const WIDE = [1600, 1200, 900, 834];
 const NARROW = [833, 390];
 const SEARCHING = { click: SBUTTON, height: 900 };
@@ -328,6 +333,8 @@ export const cases = [
       { target: `${FIELD} .cui-globalnav-image`, props: ['box-width', 'box-top', 'box-left'], golden: 'apple.com\'s 30 by 32 magnifier, 6px out from the field\'s start, 0.5px up (search:field.submit-image)' },
       { target: `${FIELD} .cui-globalnav-image-compact`, props: ['box-height'], golden: 'the phone\'s magnifier, not drawn from 834px' },
       { target: INPUT, props: ['focused'], golden: 'opened, the focus is on its field (autofocus; reference/search/)' },
+      // empty, its clear button hidden
+      { target: RESET, props: ['opacity', 'visibility'], apple: ['search', 'field.reset'] },
       // the quick links
       { target: HEADING, props: [...TYPE], apple: ['search', 'results.header'] },
       { target: HEADING, props: ['box-height'], apple: ['search', 'results.header'] },
@@ -526,13 +533,76 @@ export const cases = [
     checks: [{ target: FLY, props: ['background-color'], apple: ['search-dark', 'content'] }],
   },
   {
+    // text in its field: the clear button shown, the magnifier darker
+    name: 'search-text',
+    html: SEARCH_TEXT,
+    ...SEARCHING,
+    widths: [...WIDE, ...NARROW],
+    checks: [
+      { target: INPUT, props: ['color'], apple: ['search-text', 'input'] },
+      { target: INPUT, props: ['padding-right'], golden: 'its text ending 31px before the field\'s end (25px from 834px), where apple.com\'s does, 3px before its clear button (its input 7px out and 38px in; 8px out, 34px in: search-text:input)' },
+      { target: RESET, props: ['opacity', 'visibility', 'display', 'align-items', 'justify-content', 'cursor', 'background-color', 'border-top-width', 'transition-duration', 'transition-timing-function'], apple: ['search-text', 'reset'] },
+      { target: RESET, props: ['color'], as: { color: 'fill' }, apple: ['search-text', 'reset'] },
+      { target: RESET, props: ['transition-property'], golden: 'apple.com\'s opacity and visibility (search-text:reset), and its mark\'s color where apple.com\'s fill moves' },
+      { target: RESET, props: ['box-width', 'box-height', 'box-top', 'box-right'], golden: 'apple.com\'s 30 by 36 button from 834px, 32 by 38 below, its mark centered on the field and ending at its end (1px in below 834px), the button 8px (7px) past it (search-text:reset, reset.image)' },
+      { target: `${RESET} .cui-globalnav-image`, props: ['box-width', 'box-height', 'display'], golden: 'apple.com\'s 14px mark from 834px (search-text:reset.image), not drawn below' },
+      { target: `${RESET} .cui-globalnav-image-compact`, props: ['box-width', 'box-height', 'display'], golden: 'apple.com\'s 16px mark to 833px (search-text:reset.image-compact), not drawn from 834px' },
+      { target: RESET, state: 'hover', props: ['color'], as: { color: 'fill' }, apple: ['search-text', 'reset.states', 'hover'] },
+      { target: RESET, state: 'focus-visible', props: ['color'], as: { color: 'fill' }, apple: ['search-text', 'reset.states', 'focus-visible'] },
+      { target: RESET, state: 'focus-visible', props: ['outline-style', 'outline-color', 'outline-width'], apple: ['search-text', 'reset.states', 'focus-visible'] },
+      { target: RESET, state: 'focus-visible', props: ['outline-offset'], golden: 'the kit\'s one ring, 3px out (base.css), where apple.com\'s is 1px out (search-text:reset.states)' },
+      { target: MAGNIFIER, props: ['color'], as: { color: 'fill' }, apple: ['search-text', 'submit'] },
+      { target: MAGNIFIER, props: ['transition-duration', 'transition-timing-function'], apple: ['search-text', 'submit'] },
+      { target: MAGNIFIER, state: 'hover', on: FIELD, props: ['color'], golden: 'an image, not a button: no hover (apple.com\'s magnifier is a submit button while the field holds text, #000 hovered: search-text:submit.states); Return sends the form' },
+    ],
+  },
+  {
+    // its clear button clicked: the field empty, the button hidden again
+    name: 'search-clear',
+    html: SEARCH_TEXT,
+    click: [SBUTTON, RESET],
+    height: 900,
+    widths: [1600],
+    checks: [
+      { target: RESET, props: ['opacity', 'visibility', 'transition-duration', 'transition-timing-function'], apple: ['search', 'field.reset'] },
+      { target: MAGNIFIER, props: ['color'], as: { color: 'fill' }, apple: ['search', 'field.submit-image'] },
+      { target: FLY, props: ['display'], golden: 'still open: the clear button is in it (reference/search/)' },
+      { target: INPUT, props: ['focused'], golden: 'the focus on the page, the button it was on hidden (Safari, Chrome, Chromium: reference/search/), where apple.com\'s script puts it back in the field; Shift+Tab takes it there' },
+    ],
+  },
+  {
+    // a field the page fills (value=): the reset gives that back
+    name: 'search-clear-value',
+    html: SEARCH_NAV.replace('<input class="cui-globalnav-searchinput"', '<input class="cui-globalnav-searchinput" value="iPhone"'),
+    click: [SBUTTON, RESET],
+    height: 900,
+    widths: [1600],
+    checks: [
+      { target: RESET, props: ['visibility'], golden: 'a reset button gives the field back its value attribute, not an empty one: a page that fills the field with its query has the clear button bring the query back, and leaves it out' },
+    ],
+  },
+  {
+    name: 'search-clear-phone',
+    html: SEARCH_TEXT,
+    click: [SBUTTON, RESET],
+    height: 900,
+    widths: [390],
+    checks: [
+      { target: RESET, props: ['opacity', 'visibility'], apple: ['search', 'field.reset'] },
+      { target: `${FIELD} > .cui-globalnav-image-compact`, props: ['color'], as: { color: 'fill' }, apple: ['search', 'field.submit-compact'] },
+    ],
+  },
+  {
     name: 'search-touch',
-    html: SEARCH_NAV,
+    html: SEARCH_TEXT,
     ...SEARCHING,
     touch: true,
     widths: [1200, 390],
     reducedMotion: 'reduce',
-    checks: [{ target: QLINK, state: 'hover', props: ['color', 'background-color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-search:results.link)' }],
+    checks: [
+      { target: QLINK, state: 'hover', props: ['color', 'background-color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-search:results.link)' },
+      { target: RESET, state: 'hover', props: ['color'], rest: 'nor its clear button (rule 5)' },
+    ],
   },
   {
     name: 'touch-menu',

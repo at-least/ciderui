@@ -179,6 +179,30 @@ pub const ARROW_COMPACT: Icon = Icon {
     inner: r#"<path d="M1.1 13H11.93" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7.48 8.55 11.93 13 7.48 17.45" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>"#,
 };
 
+/// The search field's clear mark from 834px (`cui-globalnav-image` in a
+/// `cui-globalnav-searchreset`), in place of apple.com's 14 by 14 SVG: a disc
+/// at (7, 7), radius 6.9661, and cut out of it an X, two strokes 1.1 thick
+/// between round ends whose middles are 2.409 from the disc's middle along
+/// each diagonal, drawn as one outline (evenodd); 0.9995 of its ink
+/// apple.com's.
+pub const CLEAR: Icon = Icon {
+    width: "14",
+    height: "14",
+    view_box: "0 0 14 14",
+    inner: r#"<path d="M7 .0339A6.9661 6.9661 0 1 0 7 13.9661 6.9661 6.9661 0 1 0 7 .0339ZM7.7778 7 9.798 9.0201A.55.55 0 0 1 9.0201 9.798L7 7.7778 4.9799 9.798A.55.55 0 0 1 4.2021 9.0201L6.2222 7 4.2021 4.9799A.55.55 0 0 1 4.9799 4.2021L7 6.2222 9.0201 4.2021A.55.55 0 0 1 9.798 4.9799Z" fill="currentColor" fill-rule="evenodd"/>"#,
+};
+
+/// The clear mark to 833px (`cui-globalnav-image-compact`), in place of
+/// apple.com's 16 by 16 SVG: a disc at (8, 8), radius 8, its X's strokes
+/// 1.34 thick, their round ends' middles 2.81 from the disc's middle; 0.9928
+/// of its ink apple.com's.
+pub const CLEAR_COMPACT: Icon = Icon {
+    width: "16",
+    height: "16",
+    view_box: "0 0 16 16",
+    inner: r#"<path d="M8 0A8 8 0 1 0 8 16 8 8 0 1 0 8 0ZM8.9475 8 11.2838 10.3362A.67.67 0 0 1 10.3362 11.2838L8 8.9475 5.6638 11.2838A.67.67 0 0 1 4.7162 10.3362L7.0525 8 4.7162 5.6638A.67.67 0 0 1 5.6638 4.7162L8 7.0525 10.3362 4.7162A.67.67 0 0 1 11.2838 5.6638Z" fill="currentColor" fill-rule="evenodd"/>"#,
+};
+
 /// The global nav's menu button's lines (`cui-globalnav-menubutton`), as
 /// apple.com's: two lines across 18 by 18, from 2 to 16 at 5 and 12 down,
 /// 1.2 thick, round; in the opened menu's close button

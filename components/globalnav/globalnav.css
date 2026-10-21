@@ -42,6 +42,7 @@
  *           <form class="cui-globalnav-searchfield" action="/search" method="get" role="search">
  *             (icon::SEARCHFIELD, icon::SEARCHFIELD_COMPACT)
  *             <input class="cui-globalnav-searchinput" type="text" name="q" placeholder="Search" aria-label="Search" autocomplete="off" autocapitalize="off" autofocus>
+ *             <button class="cui-globalnav-searchreset" type="reset" aria-label="Clear search">(icon::CLEAR, icon::CLEAR_COMPACT)</button>
  *           </form>
  *           <h2 class="cui-globalnav-searchheading" id="cui-globalnav-searchheading">Quick Links</h2>
  *           <ul class="cui-globalnav-searchlinks" aria-labelledby="cui-globalnav-searchheading">
@@ -84,6 +85,10 @@
  * cui-globalnav-searchfield the form: its magnifier (cui-globalnav-image,
  *                           30 by 32; -compact, 38 by 40) and its input
  * cui-globalnav-searchinput the field: 24px at 600, 28px to 833px
+ * cui-globalnav-searchreset its clear button, a reset button at its end,
+ *                           shown while it holds text, the magnifier then
+ *                           darker; clicked, the field empty (its mark
+ *                           icon::CLEAR, 14px; -compact, 16px)
  * cui-globalnav-searchheading the quick links' heading
  * cui-globalnav-searchlinks the quick links, each a cui-globalnav-searchlink
  *                           after its arrow (9 by 16; 13 by 25)
@@ -106,10 +111,17 @@
  * bar while it is open draws its ground over the flyout's, unblurred, as
  * apple.com's flyout is under it; one placeholder, Search (apple.com's
  * script writes Search apple.com from 834px); its quick links' heading is
- * Quick Links, apple.com's; no clear button (apple.com's script shows one
- * once there is text); the field's magnifier is an image, not a disabled
- * submit button (a disabled default button keeps Return from sending the
- * form); a focused link has the focus ring with its hovered look (apple.com
+ * Quick Links, apple.com's; its clear button shown by the field's text with
+ * no script (apple.com's script enables it as one types), a reset button,
+ * which gives the field back its value attribute (a page that fills the
+ * field with its query leaves the attribute out: the button would bring it
+ * back), and leaves the focus on the page, the button hidden (Safari,
+ * Chrome, Chromium: reference/search/; apple.com's script puts it in the
+ * field), the kit's ring 3px out (apple.com's 1px); no suggestions
+ * (apple.com's script asks its service for them as one types); the field's
+ * magnifier is an image, not a disabled submit button (a disabled default
+ * button keeps Return from sending the form), darker with text in the
+ * field, as apple.com's, but never hovered (apple.com's is a button then); a focused link has the focus ring with its hovered look (apple.com
  * forced into focus-visible draws no outline); the sheet's X turns as the
  * menu's; opened on a phone the bar's logo, search and bag are under the
  * sheet at once (apple.com's fade in 240ms); a window widened or narrowed
@@ -390,13 +402,15 @@
     margin: 0;
   }
 
-  /* its magnifier, an image over the input's start */
+  /* its magnifier, an image over the input's start, darker while the field
+     holds text */
   .cui-globalnav-searchfield > svg {
     position: absolute;
     top: -8px;
     left: -8px;
     color: var(--cui-c-text-2);
     pointer-events: none;
+    transition: color 0.32s var(--cui-globalnav-ease);
   }
 
   /* the caret shows the focus: apple.com's field has no outline, focused too */
@@ -404,7 +418,7 @@
     width: 100%;
     height: 40px;
     margin: 0;
-    padding: 0 0 0 34px;
+    padding: 0 31px 0 34px;
     border: 0;
     border-radius: 0;
     outline: none;
@@ -420,6 +434,51 @@
     &::placeholder {
       color: var(--cui-c-text-2);
       opacity: 1;
+    }
+  }
+
+  /* its clear button, a reset button at its end, its mark centered on the
+     field and ending 1px in from its end (from 834px at it), hidden while
+     the field is empty */
+  .cui-globalnav-searchreset {
+    position: absolute;
+    top: 1px;
+    right: -7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 38px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: var(--cui-c-text-2);
+    background: none;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.32s var(--cui-globalnav-ease), color 0.32s var(--cui-globalnav-ease), visibility 0.32s steps(1);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--cui-c-on-menu);
+      }
+    }
+
+    &:focus-visible {
+      color: var(--cui-c-on-menu);
+    }
+  }
+
+  .cui-globalnav-searchfield:has(> .cui-globalnav-searchinput:not(:placeholder-shown)) {
+    > svg {
+      color: var(--cui-c-on-menu);
+    }
+
+    .cui-globalnav-searchreset {
+      opacity: 1;
+      visibility: visible;
+      transition-timing-function: var(--cui-globalnav-ease), var(--cui-globalnav-ease), steps(1, start);
     }
   }
 
@@ -575,8 +634,15 @@
       left: -6px;
     }
 
+    .cui-globalnav-searchreset {
+      top: 2px;
+      right: -8px;
+      width: 30px;
+      height: 36px;
+    }
+
     .cui-globalnav-searchinput {
-      padding: 1px 0 0 28px;
+      padding: 1px 25px 0 28px;
       font-size: 24px;
       line-height: 24px;
       letter-spacing: var(--cui-tracking-24);
