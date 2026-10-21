@@ -1,5 +1,5 @@
 // The browsers the reference probes run in, behind one interface:
-// open(name, url) loads the page and gives { label, run(expr), click(selector),
+// open(name, url, options) loads the page and gives { label, run(expr), click(selector),
 // press(key), move(x, y, ms), go(url), size(width, height), shot(), close() },
 // where run evaluates an expression whose value is a promise and hands back
 // what it resolves to, click, press and move are the browser's own input (a
@@ -69,14 +69,20 @@ async function viaPlaywright(engine, channel, url, options) {
       size: (width, height) => page.setViewportSize({ width, height }),
       shot: screen ? () => screen.shot(page) : async () => (await page.screenshot()).toString('base64'),
       close: async () => {
-        await browser.close();
-        screen?.close();
+        try {
+          await browser.close();
+        } finally {
+          screen?.close();
+        }
       },
       page, // Playwright's, for a probe that resizes the viewport or forces states
     };
   } catch (e) {
-    await browser.close();
-    screen?.close();
+    try {
+      await browser.close();
+    } finally {
+      screen?.close();
+    }
     throw e;
   }
 }
@@ -90,12 +96,16 @@ async function xvfb() {
   server.stderr.on('data', (c) => { log += c; });
   const display = await new Promise((resolve, reject) => {
     let out = '';
+    const timer = setTimeout(() => reject(new Error(`Xvfb named no display in 10s: ${log}`)), 10000);
     server.stdio[3].on('data', (c) => {
       out += c;
-      if (out.includes('\n')) resolve(`:${out.trim()}`);
+      if (out.includes('\n')) {
+        clearTimeout(timer);
+        resolve(`:${out.trim()}`);
+      }
     });
-    server.on('error', reject);
-    server.on('exit', (code) => reject(new Error(`Xvfb exited ${code}: ${log}`)));
+    server.on('error', (e) => { clearTimeout(timer); reject(e); });
+    server.on('exit', (code) => { clearTimeout(timer); reject(new Error(`Xvfb exited ${code}: ${log}`)); });
   });
   // Firefox on X, not on the desktop's Wayland
   const env = { ...process.env, DISPLAY: display, GDK_BACKEND: 'x11', MOZ_ENABLE_WAYLAND: '0' };
