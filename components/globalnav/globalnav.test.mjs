@@ -17,7 +17,8 @@
 // link's button and its chevron), its motion, the pointer off the bar and on
 // to another link, opened by its button (the keys), on a touch screen its
 // button over the link; to 833px over the open menu, its back button and X,
-// a row hovered; a dark nav's (reference/flyout/). Golden, with their why: the letter-spacing, the images'
+// a row hovered; a dark nav's (reference/flyout/). What can be selected
+// (nav-select:*): none of it, its search's field too. Golden, with their why: the letter-spacing, the images'
 // widths (apple.com's SVG boxes), the X's lines (apple.com's end points,
 // reference/icons/), the focus, the places apple.com's recorded with its
 // locale banner above them, and where ciderui's markup differs from
@@ -178,6 +179,41 @@ export const cases = [
       ...BARS.map(target => ({ target, props: ['box-x', 'box-y', 'box-width', 'box-height'], golden: 'apple.com\'s two lines, 2 to 16 across at 5 and 12 down in 18 by 18 (reference/icons/)' })),
       { target: `${LIST} > li:nth-child(2)`, props: ['box-height'], golden: 'the close button is the opened menu\'s' },
       { target: LINK, props: ['box-height'], golden: 'to 833px the links are the menu\'s rows, not the bar\'s: apple.com\'s bar holds the logo, the search, the bag and the button' },
+    ],
+  },
+  // nothing in the nav can be selected, as apple.com's (nav-select:*): the
+  // bar, its list, logo, links, icons and button, a closed flyout, and the
+  // search's field (reference/select/: it still takes text)
+  {
+    name: 'select',
+    html: FLYOUT_NAV,
+    widths: [1600, 390],
+    checks: [
+      { target: '.cui-globalnav', props: ['user-select'], apple: ['nav-select', 'nav'] },
+      { target: LIST, props: ['user-select'], apple: ['nav-select', 'list'] },
+      { target: LOGO, props: ['user-select'], apple: ['nav-select', 'logo'] },
+      { target: MAC_LINK, props: ['user-select'], apple: ['nav-select', 'link'] },
+      { target: BAG, props: ['user-select'], apple: ['nav-select', 'bag'] },
+      { target: BUTTON, props: ['user-select'], apple: ['nav-select', 'menutrigger'], at: { 1600: 390 } },
+      { target: MAC_FLY, props: ['user-select'], apple: ['nav-select', 'flyout'] },
+    ],
+  },
+  {
+    name: 'select-search',
+    html: SEARCH_NAV,
+    widths: [1600],
+    ...SEARCHING,
+    checks: [
+      { target: INPUT, props: ['user-select'], apple: ['nav-select', 'search.field'] },
+    ],
+  },
+  {
+    name: 'select-search-phone',
+    html: SEARCH_NAV,
+    widths: [390],
+    ...SEARCHING,
+    checks: [
+      { target: INPUT, props: ['user-select'], apple: ['nav-select', 'search.field-phone'] },
     ],
   },
   {

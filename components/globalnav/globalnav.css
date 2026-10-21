@@ -6,14 +6,16 @@
  *
  * From apple.com's global nav (reference/apple.com/): home:nav* (the bar,
  * light), home:menu* (the phone's menu, opened), newsroom:nav* and
- * newsroom:menu* (a dark nav), product:nav (a clear one), search:*,
+ * newsroom:menu* (a dark nav), product:nav (a clear one), nav-select:*
+ * (what of it can be selected: none of it), search:*,
  * search-dark:*, search-text:* (its search, opened, with text in it),
  * search-suggestions:*, search-suggestions-dark:* (showing suggestions),
  * search-typed:* (typed into: its motion between results), flyout:*,
  * flyout-dark:*, flyout-phone:* and tap-flyout:* (a link's flyout); its
  * icons ciderui's own (reference/icons/), its menu, its search and its
  * flyouts popovers (reference/popover/, reference/search/,
- * reference/flyout/).
+ * reference/flyout/), its search's field taking text in a nav none of
+ * which can be selected (reference/select/).
  *
  *   <nav class="cui-globalnav" aria-label="Global">
  *     <div class="cui-globalnav-content">
@@ -189,7 +191,10 @@
  * cui-globalnav-backbutton  the sheet's back button, to 833px
  *                           (icon::FLYOUT_BACK, 9 by 48)
  *
- * apple.com's: every size, color, the material, the motion. ciderui's: the
+ * apple.com's: every size, color, the material, the motion, and that
+ * none of it can be selected (`user-select: none` on the nav, its field
+ * not excepted, as apple.com's: in Safari, macOS's and iOS's, an editable
+ * field computes `text` there). ciderui's: the
  * letter-spacing (tokens.css); no place on the page: apple.com fixes its nav
  * to the top of its home page alone (home:nav `position: fixed`;
  * product:nav, newsroom:nav absolute, scrolling away), so a site adds
@@ -279,6 +284,11 @@
     /* its blur back once a flyout's or the search's curtain has gone, as
        apple.com's (taken off while one shows) */
     transition: backdrop-filter 0s 0.45s;
+    /* none of it can be selected, as apple.com's, its search's field still
+       taking text (reference/select/); Safari has the prefixed property
+       alone, written here for a site whose build adds no prefixes */
+    -webkit-user-select: none;
+    user-select: none;
 
     @media (width >= 834px) {
       height: 44px;
