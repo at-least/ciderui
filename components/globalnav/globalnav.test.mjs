@@ -1339,6 +1339,15 @@ export const cases = [
     checks: [{ target: BTEXTLINK, props: ['focused'], golden: 'Tab goes from its button into it, to its line\'s link' }],
   },
   {
+    name: 'bag-tab-phone',
+    html: BAG_NAV,
+    ...BAGGING,
+    widths: [390],
+    press: 'Tab',
+    reducedMotion: 'reduce',
+    checks: [{ target: BTEXTLINK, props: ['focused'], golden: 'Tab goes from its X, which takes the focus, into it, to its line\'s link: its X first in it, as the menu\'s (after the X the browser goes on past the popover, to what follows its button)' }],
+  },
+  {
     name: 'bag-escape',
     html: BAG_NAV,
     ...BAGGING,

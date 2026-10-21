@@ -56,7 +56,7 @@ The bag can open over the page too, as apple.com’s does, where it would lead t
 | class | what |
 | --- | --- |
 | `cui-globalnav-bag` | the bag, after the menu’s button (and the search’s): `id` and `popover`; a flyout under the bar from 834px, a sheet over the window below |
-| `cui-globalnav-bagpanel` | its ground and its room: its message, line, heading and links, and the sheet’s X |
+| `cui-globalnav-bagpanel` | its ground and its room: the sheet’s X first, then its message, line, heading and links |
 | `cui-globalnav-bagmessage` | its message, an `h2` |
 | `cui-globalnav-bagtext` | a line under it, its link underlined |
 | `cui-globalnav-bagheading` | the heading over its links, an `h3`, which names their list |

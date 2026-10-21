@@ -293,6 +293,7 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
                     @if let Some(Bag::Flyout { message, line, heading, links }) = self.bag {
                         <div class="cui-globalnav-bag" id=(BAG_ID) popover>
                             <div class="cui-globalnav-bagpanel">
+                                <button class="cui-globalnav-closebutton" popovertarget=(BAG_ID) popovertargetaction="hide" aria-label="Close" autofocus>(MENU)</button>
                                 <h2 class="cui-globalnav-bagmessage">(message)</h2>
                                 @if let Some((text, href, rest)) = line {
                                     <p class="cui-globalnav-bagtext"><a href=(href)>(text)</a>(rest)</p>
@@ -305,7 +306,6 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
                                         }
                                     </ul>
                                 }
-                                <button class="cui-globalnav-closebutton" popovertarget=(BAG_ID) popovertargetaction="hide" aria-label="Close" autofocus>(MENU)</button>
                             </div>
                             <button class="cui-globalnav-curtain" popovertarget=(BAG_ID) popovertargetaction="hide" tabindex="-1" aria-hidden="true"></button>
                         </div>

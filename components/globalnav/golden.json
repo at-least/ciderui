@@ -867,6 +867,7 @@
  "bag-start-phone | .cui-globalnav-bagmessage | 390 | opacity": "0",
  "bag-start-phone | .cui-globalnav-bagmessage | 390 | transform": "matrix(1, 0, 0, 1, 0, -8)",
  "bag-tab | .cui-globalnav-bagtext > a | 1600 | focused": "true",
+ "bag-tab-phone | .cui-globalnav-bagtext > a | 390 | focused": "true",
  "bag-escape | .cui-globalnav-bag | 1600 | display": "none",
  "bag-escape | .cui-globalnav-list > li:nth-child(8) > .cui-globalnav-icon | 1600 | focused": "true",
  "bag-escape | html | 1600 | overflow-y": "visible",
