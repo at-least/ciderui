@@ -96,7 +96,10 @@ async function xvfb() {
   server.stderr.on('data', (c) => { log += c; });
   const display = await new Promise((resolve, reject) => {
     let out = '';
-    const timer = setTimeout(() => reject(new Error(`Xvfb named no display in 10s: ${log}`)), 10000);
+    const timer = setTimeout(() => {
+      server.kill();
+      reject(new Error(`Xvfb named no display in 10s: ${log}`));
+    }, 10000);
     server.stdio[3].on('data', (c) => {
       out += c;
       if (out.includes('\n')) {
