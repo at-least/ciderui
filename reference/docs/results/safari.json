@@ -340,6 +340,15 @@
      "width": 980,
      "css": true,
      "page": 1423
+    },
+    {
+     "height": 44,
+     "content": 44,
+     "images": [],
+     "title": "A global nav with flyouts",
+     "width": 980,
+     "css": true,
+     "page": 1423
     }
    ]
   },
@@ -1083,6 +1092,15 @@
      "width": 414,
      "css": true,
      "page": 683
+    },
+    {
+     "height": 48,
+     "content": 48,
+     "images": [],
+     "title": "A global nav with flyouts",
+     "width": 414,
+     "css": true,
+     "page": 683
     }
    ]
   },
@@ -1527,7 +1545,7 @@
    "color": "rgb(110, 110, 115)",
    "markColor": "rgb(51, 51, 54)",
    "markGround": "rgba(0, 0, 0, 0)",
-   "ms": 23,
+   "ms": 14,
    "transition": "opacity 0.32s 0.06s",
    "link": "/components/modal/",
    "heading": "Suggested Links",
@@ -1564,6 +1582,88 @@
     "top": "10px",
     "edge": "1px",
     "color": "rgb(134, 134, 139)"
+   }
+  },
+  "globalnav flyout at 1440": {
+   "closed": {
+    "height": 44,
+    "bottom": 44,
+    "inner": 978,
+    "open": false,
+    "shown": false,
+    "content": 376,
+    "menu": false,
+    "link": [
+     555.3671875,
+     422.875
+    ],
+    "left": 221.5,
+    "window": 848,
+    "bar": 52
+   },
+   "hovered": {
+    "height": 376,
+    "bottom": 376,
+    "inner": 978,
+    "open": false,
+    "shown": true,
+    "content": 376,
+    "menu": false,
+    "link": [
+     555.3671875,
+     422.875
+    ],
+    "left": 221.5,
+    "window": 848,
+    "bar": 52
+   },
+   "left": {
+    "height": 44,
+    "bottom": 44,
+    "inner": 978,
+    "open": false,
+    "shown": false,
+    "content": 376,
+    "menu": false,
+    "link": [
+     555.3671875,
+     422.875
+    ],
+    "left": 221.5,
+    "window": 848,
+    "bar": 52
+   },
+   "opened": {
+    "height": 796,
+    "bottom": 796,
+    "inner": 978,
+    "open": true,
+    "shown": true,
+    "content": 376,
+    "menu": false,
+    "link": [
+     555.3671875,
+     73.875
+    ],
+    "left": 221.5,
+    "window": 848,
+    "bar": 52
+   },
+   "curtained": {
+    "height": 44,
+    "bottom": 44,
+    "inner": 978,
+    "open": false,
+    "shown": false,
+    "content": 376,
+    "menu": false,
+    "link": [
+     555.3671875,
+     73.875
+    ],
+    "left": 221.5,
+    "window": 848,
+    "bar": 52
    }
   },
   "gallery at 700": {
@@ -1605,7 +1705,7 @@
    "color": "rgb(110, 110, 115)",
    "markColor": "rgb(51, 51, 54)",
    "markGround": "rgba(0, 0, 0, 0)",
-   "ms": 23,
+   "ms": 28,
    "transition": "opacity 0.32s 0.06s",
    "link": "/components/modal/",
    "heading": "Suggested Links",
@@ -1642,6 +1742,72 @@
     "top": "10px",
     "edge": "1px",
     "color": "rgb(134, 134, 139)"
+   }
+  },
+  "globalnav flyout at 700": {
+   "closed": {
+    "height": 48,
+    "bottom": 0,
+    "inner": 412,
+    "open": false,
+    "shown": false,
+    "content": 0,
+    "menu": false,
+    "link": [
+     134.5,
+     399.484375
+    ],
+    "left": 134.5,
+    "window": 848,
+    "bar": 48
+   },
+   "opened": {
+    "height": 800,
+    "bottom": 800,
+    "inner": 412,
+    "open": true,
+    "shown": true,
+    "content": 723,
+    "menu": true,
+    "link": [
+     332.5,
+     167.984375
+    ],
+    "left": 134.5,
+    "window": 848,
+    "bar": 48
+   },
+   "back": {
+    "height": 800,
+    "bottom": 0,
+    "inner": 412,
+    "open": false,
+    "shown": false,
+    "content": 0,
+    "menu": true,
+    "link": [
+     340.5,
+     167.984375
+    ],
+    "left": 134.5,
+    "window": 848,
+    "bar": 48
+   },
+   "both": {
+    "height": 48,
+    "bottom": 0,
+    "inner": 412,
+    "open": false,
+    "shown": false,
+    "content": 0,
+    "menu": false,
+    "link": [
+     134.5,
+     48.484375
+    ],
+    "left": 134.5,
+    "window": 848,
+    "bar": 48
    }
   },
   "globalnav menu at 700": {

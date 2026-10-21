@@ -340,6 +340,15 @@
      "images": [],
      "width": 980,
      "page": 1440
+    },
+    {
+     "title": "A global nav with flyouts",
+     "height": 44,
+     "content": 44,
+     "css": true,
+     "images": [],
+     "width": 980,
+     "page": 1440
     }
    ]
   },
@@ -1083,6 +1092,15 @@
      "images": [],
      "width": 414,
      "page": 700
+    },
+    {
+     "title": "A global nav with flyouts",
+     "height": 48,
+     "content": 48,
+     "css": true,
+     "images": [],
+     "width": 414,
+     "page": 700
     }
    ]
   },
@@ -1523,7 +1541,7 @@
   },
   "suggestions at 1440": {
    "status": "1 Suggested Links and 3 Suggested Searches available",
-   "ms": 20,
+   "ms": 30,
    "heading": "Suggested Links",
    "link": "/components/modal/",
    "marked": "Mo",
@@ -1566,6 +1584,88 @@
     "color": "rgb(134, 134, 139)"
    }
   },
+  "globalnav flyout at 1440": {
+   "closed": {
+    "inner": 978,
+    "height": 44,
+    "open": false,
+    "shown": false,
+    "bottom": 44,
+    "content": 376,
+    "menu": false,
+    "link": [
+     563.8671875,
+     449
+    ],
+    "left": 230,
+    "window": 900,
+    "bar": 52
+   },
+   "hovered": {
+    "inner": 978,
+    "height": 376,
+    "open": false,
+    "shown": true,
+    "bottom": 376,
+    "content": 376,
+    "menu": false,
+    "link": [
+     563.8671875,
+     449
+    ],
+    "left": 230,
+    "window": 900,
+    "bar": 52
+   },
+   "left": {
+    "inner": 978,
+    "height": 44,
+    "open": false,
+    "shown": false,
+    "bottom": 44,
+    "content": 376,
+    "menu": false,
+    "link": [
+     563.8671875,
+     449
+    ],
+    "left": 230,
+    "window": 900,
+    "bar": 52
+   },
+   "opened": {
+    "inner": 978,
+    "height": 848,
+    "open": true,
+    "shown": true,
+    "bottom": 848,
+    "content": 376,
+    "menu": false,
+    "link": [
+     563.8671875,
+     74
+    ],
+    "left": 230,
+    "window": 900,
+    "bar": 52
+   },
+   "curtained": {
+    "inner": 978,
+    "height": 44,
+    "open": false,
+    "shown": false,
+    "bottom": 44,
+    "content": 376,
+    "menu": false,
+    "link": [
+     563.8671875,
+     74
+    ],
+    "left": 230,
+    "window": 900,
+    "bar": 52
+   }
+  },
   "gallery at 700": {
    "scroll": 329,
    "previous": false,
@@ -1601,7 +1701,7 @@
   },
   "suggestions at 700": {
    "status": "1 Suggested Links and 3 Suggested Searches available",
-   "ms": 12,
+   "ms": 19,
    "heading": "Suggested Links",
    "link": "/components/modal/",
    "marked": "Mo",
@@ -1644,6 +1744,72 @@
     "color": "rgb(134, 134, 139)"
    }
   },
+  "globalnav flyout at 700": {
+   "closed": {
+    "inner": 412,
+    "height": 48,
+    "open": false,
+    "shown": false,
+    "bottom": 0,
+    "content": 0,
+    "menu": false,
+    "link": [
+     143,
+     425.25
+    ],
+    "left": 143,
+    "window": 900,
+    "bar": 48
+   },
+   "opened": {
+    "inner": 412,
+    "height": 852,
+    "open": true,
+    "shown": true,
+    "bottom": 852,
+    "content": 723,
+    "menu": true,
+    "link": [
+     341,
+     167.75
+    ],
+    "left": 143,
+    "window": 900,
+    "bar": 48
+   },
+   "back": {
+    "inner": 412,
+    "height": 852,
+    "open": false,
+    "shown": false,
+    "bottom": 0,
+    "content": 0,
+    "menu": true,
+    "link": [
+     349,
+     167.75
+    ],
+    "left": 143,
+    "window": 900,
+    "bar": 48
+   },
+   "both": {
+    "inner": 412,
+    "height": 48,
+    "open": false,
+    "shown": false,
+    "bottom": 0,
+    "content": 0,
+    "menu": false,
+    "link": [
+     143,
+     48.25
+    ],
+    "left": 143,
+    "window": 900,
+    "bar": 48
+   }
+  },
   "globalnav menu at 700": {
    "closed": 48,
    "open": true,
@@ -1659,6 +1825,6 @@
    "height": 221
   }
  },
- "browser": "chrome 155.0.8059.85 on darwin",
+ "browser": "chrome 156.0.8078.48 on darwin",
  "fails": []
 }

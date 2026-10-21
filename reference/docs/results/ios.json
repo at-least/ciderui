@@ -340,6 +340,15 @@
      "width": 402,
      "css": true,
      "page": 402
+    },
+    {
+     "height": 48,
+     "content": 48,
+     "images": [],
+     "title": "A global nav with flyouts",
+     "width": 402,
+     "css": true,
+     "page": 402
     }
    ]
   },
@@ -821,6 +830,72 @@
     "top": "10px",
     "edge": "1px",
     "color": "rgb(134, 134, 139)"
+   }
+  },
+  "globalnav flyout at 402": {
+   "closed": {
+    "height": 48,
+    "bottom": 0,
+    "inner": 400,
+    "open": false,
+    "shown": false,
+    "content": 0,
+    "menu": false,
+    "link": [
+     0,
+     332.40625
+    ],
+    "left": 0,
+    "window": 714,
+    "bar": 48
+   },
+   "opened": {
+    "height": 723,
+    "bottom": 723,
+    "inner": 400,
+    "open": true,
+    "shown": true,
+    "content": 723,
+    "menu": true,
+    "link": [
+     192,
+     167.90625
+    ],
+    "left": 0,
+    "window": 714,
+    "bar": 48
+   },
+   "back": {
+    "height": 723,
+    "bottom": 0,
+    "inner": 400,
+    "open": false,
+    "shown": false,
+    "content": 0,
+    "menu": true,
+    "link": [
+     200,
+     167.90625
+    ],
+    "left": 0,
+    "window": 714,
+    "bar": 48
+   },
+   "both": {
+    "height": 48,
+    "bottom": 0,
+    "inner": 400,
+    "open": false,
+    "shown": false,
+    "content": 0,
+    "menu": false,
+    "link": [
+     0,
+     48.40625
+    ],
+    "left": 0,
+    "window": 714,
+    "bar": 48
    }
   },
   "globalnav menu at 402": {

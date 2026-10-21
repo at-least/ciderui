@@ -19,7 +19,9 @@
 // site's search page (?q=modal) listing the pages its script finds in
 // Zola's index, the modal's page first, its field holding the query; the
 // global nav's search suggesting the modal's page first as "mo" is put in
-// its field, its row muted and "Mo" marked, fading in; in a
+// its field, its row muted and "Mo" marked, fading in; a link's flyout in
+// its frame, shown by the pointer and opened by its button from 834px,
+// over the menu below (flyouts()); in a
 // window narrower than
 // 834px the global nav's menu opens over its frame, grown to the window's
 // height under the page's local nav and scrolled there, and the local nav's
@@ -275,6 +277,83 @@ const menus = async (width) => {
   claim(`the local nav's menu opens below its bar at ${width}px, its frame grown to hold it`, menu.checked && menu.bottom > bar && menu.height >= menu.bottom, { bar, ...menu });
 };
 
+// a link's flyout in the global nav's frame (Mac's, the second link's). In a
+// frame 834px wide or more: the pointer moved onto its link (with a pointer:
+// not on the simulator) shows it in the frame, the frame grown to hold it,
+// and off the frame hides it, the frame the bar's height again; its button
+// (clicked by the page's script) opens it as a popover, the frame the
+// window's height under the local nav, and its curtain closes it. Narrower:
+// the menu opened, the row's button opens the flyout over the menu, the
+// frame the window's height under the local nav, or as tall as the
+// flyout's content where that is taller (the frame never scrolls; in a
+// window of its own the flyout scrolls itself), its back button closes it,
+// the menu still open over the frame, its X closes both
+const flyouts = async (width) => {
+  const title = 'A global nav with flyouts';
+  const FLY = '#cui-globalnav-flyout-2';
+  await page.go(`${ORIGIN}/components/globalnav/`);
+  await page.run(wait(700));
+  await page.run(`Promise.resolve((${frame(title)}.scrollIntoView({ block: 'center' }), true))`);
+  await page.run(wait(500));
+  const state = () => page.run(`Promise.resolve((() => {
+    const f = ${frame(title)};
+    const d = f.contentDocument;
+    const fly = d.querySelector('${FLY}');
+    const cs = getComputedStyle(fly);
+    const link = d.querySelector('[popovertarget="${FLY.slice(1)}"]').previousElementSibling.getBoundingClientRect();
+    const frameBox = f.getBoundingClientRect();
+    return {
+      inner: f.contentWindow.innerWidth, height: f.clientHeight, open: fly.matches(':popover-open'), shown: cs.display !== 'none' && cs.visibility === 'visible',
+      bottom: Math.ceil(fly.getBoundingClientRect().bottom), content: Math.ceil(fly.querySelector('.cui-globalnav-flyoutpanel').getBoundingClientRect().bottom), menu: d.querySelector('.cui-globalnav-list').matches(':popover-open'),
+      link: [frameBox.left + link.left + link.width / 2, frameBox.top + link.top + link.height / 2], left: frameBox.left,
+      window: innerHeight, bar: document.querySelector('.cui-localnav').getBoundingClientRect().height,
+    };
+  })())`);
+  const closed = await state();
+  const record = {};
+  if (closed.inner >= 834) {
+    if (BROWSER !== 'ios') {
+      const [x, y] = closed.link;
+      await page.move(closed.left / 2, y, 100);
+      await page.run(wait(300));
+      await page.move(x, y, 150);
+      await page.run(wait(1200));
+      record.hovered = await state();
+      claim(`the pointer on Mac's link shows its flyout in its ${closed.inner}px frame at ${width}px, the frame grown to hold it`, record.hovered.shown && !record.hovered.open && record.hovered.height >= record.hovered.bottom && record.hovered.height > closed.height, { closed, ...record });
+      await page.move(closed.left / 2, y, 150);
+      await page.run(wait(1200));
+      record.left = await state();
+      claim(`the pointer off the frame hides it at ${width}px, the frame the bar's height again`, !record.left.shown && record.left.height === closed.height, { closed, ...record });
+    }
+    await page.run(inFrame(title, `[popovertarget="${FLY.slice(1)}"]`, 'click'));
+    await page.run(wait(1200));
+    record.opened = await state();
+    claim(`its button opens it in its frame at ${width}px, a popover, the frame the window's height under the local nav`, record.opened.open && Math.abs(record.opened.height - (record.opened.window - record.opened.bar)) <= 1, { closed, ...record });
+    await page.run(inFrame(title, `${FLY} > .cui-globalnav-curtain`, 'click'));
+    await page.run(wait(700));
+    record.curtained = await state();
+    claim(`its curtain closes it at ${width}px, its frame the bar's height again`, !record.curtained.open && record.curtained.height === closed.height, { closed, ...record });
+  } else {
+    await page.run(inFrame(title, '.cui-globalnav-menubutton', 'click'));
+    await page.run(wait(1000));
+    await page.run(inFrame(title, `[popovertarget="${FLY.slice(1)}"]`, 'click'));
+    await page.run(wait(1000));
+    record.opened = await state();
+    claim(`at ${width}px the menu's row opens its flyout over the open menu, the frame the window's height under the local nav, or its content's where taller`, record.opened.open && record.opened.menu && Math.abs(record.opened.height - Math.max(record.opened.window - record.opened.bar, record.opened.content)) <= 1, { closed, ...record });
+    await page.run(inFrame(title, `${FLY} .cui-globalnav-backbutton`, 'click'));
+    await page.run(wait(800));
+    record.back = await state();
+    claim(`its back button closes it at ${width}px, the menu still open over the frame, at least the window's height under the local nav`, !record.back.open && record.back.menu && record.back.height >= record.back.window - record.back.bar - 1, { closed, ...record });
+    await page.run(inFrame(title, `[popovertarget="${FLY.slice(1)}"]`, 'click'));
+    await page.run(wait(1000));
+    await page.run(inFrame(title, `${FLY} .cui-globalnav-closebutton`, 'click'));
+    await page.run(wait(800));
+    record.both = await state();
+    claim(`its X closes both at ${width}px, the frame the bar's height again`, !record.both.open && !record.both.menu && record.both.height === closed.height, { closed, ...record });
+  }
+  got.frames[`globalnav flyout at ${width}`] = { closed, ...record };
+};
+
 try {
   page = await open(BROWSER, `${ORIGIN}/`);
   got.browser = page.label;
@@ -284,6 +363,7 @@ try {
     const width = await page.run('Promise.resolve(innerWidth)');
     await read(width);
     await behave(width);
+    await flyouts(width);
     if (width < 834) await menus(width);
   }
 } finally {
