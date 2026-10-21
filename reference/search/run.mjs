@@ -11,7 +11,10 @@
 // curtain closes it and reaches nothing under it; Escape closes it, the
 // focus back on the button; the button closes it again; Return in the field
 // sends the form, GET, to the site's search page. As a sheet: over the
-// window and the bar, the page held, its close button closing it. Clicked
+// window and the bar, the page held, its close button closing it. Its
+// field's clear button, a reset button: hidden while the field is empty,
+// shown with text in it; clicked, the field empty and the button hidden, the
+// flyout still open, Shift+Tab back to the field, Escape closing it. Clicked
 // as ../popover/ clicks: by the page's script on the iOS simulator (its taps
 // never click there; no key, no click outside, no focus to give back), by
 // the keyboard in Safari on the Mac for the buttons (a button focused,
@@ -78,6 +81,25 @@ try {
   await press('#search');
   await page.run(wait(400));
   got.afterToggle = await state();
+  // text in its field (set by the page's script: what the CSS reads is the
+  // value), then its clear button clicked
+  await opened();
+  got.empty = await state();
+  await page.run(`Promise.resolve((document.querySelector('#input').value = 'iphone', true))`);
+  await page.run(wait(400));
+  got.typed = await state();
+  await click('#reset');
+  await page.run(wait(400));
+  got.cleared = await state();
+  if (!IOS) {
+    // the focus's way back to the field: Shift+Tab, from where it was
+    await page.press('Shift+Tab');
+    await page.run(wait(200));
+    got.clearedBack = await state();
+    await page.press('Escape');
+    await page.run(wait(400));
+    got.clearedEscape = await state();
+  }
   if (!IOS) {
     await opened();
     await page.run(`Promise.resolve((document.querySelector('#input').value = 'iphone', true))`);
@@ -126,6 +148,13 @@ const claims = [
   ['as a sheet the page is held while it is open, and not after', s.rootOverflow === 'hidden' && got.sheetClosed.rootOverflow !== 'hidden' && got.sheetAfterClose.rootOverflow !== 'hidden'],
   ['as a sheet its close button closes it', got.sheetAfterClose.open === false],
   ...(IOS ? [] : [['as a sheet the focus is back on the search button', got.sheetAfterClose.focus === 'search']]),
+  ['empty, its field\'s clear button is hidden', got.empty.reset === 'hidden' && got.empty.value === ''],
+  ['with text in the field, its clear button shows, with no script', got.typed.reset === 'visible'],
+  [`its clear button (a reset button) clicked${IOS ? ' (by script)' : ''} empties the field and hides itself, the flyout still open`, got.cleared.value === '' && got.cleared.reset === 'hidden' && got.cleared.open === true],
+  ...(IOS ? [] : [
+    ['then Shift+Tab takes the focus back to the field', got.clearedBack.focus === 'input'],
+    ['and Escape still closes it', got.clearedEscape.open === false],
+  ]),
 ];
 console.log(page.label + (IOS ? ' (clicked by script; no key, no click outside)' : KEYBOARD ? ' (its buttons by its keyboard: Return)' : ''));
 let pass = true;

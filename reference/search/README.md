@@ -22,23 +22,29 @@ The probe behind the global nav's search, apple.com's flyout under the bar and i
 18. as a sheet the focus is on its field;
 19. as a sheet the page is held while it is open, and not after;
 20. as a sheet its close button closes it;
-21. as a sheet the focus is back on the search button.
+21. as a sheet the focus is back on the search button;
+22. empty, its field's clear button is hidden (`visibility: hidden`);
+23. with text in the field, its clear button shows, with no script (`:has(input:not(:placeholder-shown))`; the text set by the page's script, as the CSS reads the value);
+24. its clear button, a reset button (`type="reset"`), clicked empties the field and hides itself, the flyout still open;
+25. then Shift+Tab takes the focus back to the field;
+26. and Escape still closes it.
 
 ## The result
 
-| browser | 1–11 | 12 | 13 | 14 | 15 | 16 | 17–20 | 21 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Safari 27.0.1, macOS 27.0.1, its buttons by its keyboard | ok | ok | ok | ok | ok | ok | ok | ok |
-| Safari 26.5, iOS 26.5 simulator | ok | not run | ok, by script | not run | ok | not run | ok | not run |
-| Chrome 155.0.8059.80, macOS 27.0.1 | ok | ok | ok | ok | ok | ok | ok | ok |
-| Chromium 151, Linux | ok | ok | ok | ok | ok | ok | ok | ok |
+| browser | 1–11 | 12 | 13 | 14 | 15 | 16 | 17–20 | 21 | 22–23 | 24 | 25–26 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Safari 27.0.1, macOS 27.0.1, its buttons by its keyboard | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok |
+| Safari 26.5, iOS 26.5 simulator | ok | not run | ok, by script | not run | ok | not run | ok | not run | ok | ok, by script | not run |
+| Chrome 155.0.8059.85, macOS 27.0.1 | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok |
+| Chromium 151, Linux | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok | ok |
 
-Measured 2026-10-19 (`results/`), at 1440 by 900 (the simulator's phone at its own 402 by 714). Clicked as `../popover/` clicks: on the iOS simulator by the page's script (safaridriver's taps never click there), so there is no click outside the flyout and no key, and its button is never focused to give the focus back to; in Safari on the Mac its buttons by the keyboard (a button focused, Return), the bar's link and the curtain by its own click; by Playwright elsewhere.
+Measured 2026-10-21 (`results/`; 1 to 21 first on 2026-10-19, in Chrome 155.0.8059.80), at 1440 by 900 (the simulator's phone at its own 402 by 714). Clicked as `../popover/` clicks: on the iOS simulator by the page's script (safaridriver's taps never click there), so there is no click outside the flyout and no key, and its button is never focused to give the focus back to; in Safari on the Mac its buttons by the keyboard (a button focused, Return), the bar's link and the curtain by its own click; by Playwright elsewhere.
 
 What the probe found:
 
 - **The field is a text field, not a search field.** With `type="search"` Escape in the focused field leaves the flyout open in Safari 27 on the Mac (twice, the focus still in the field; claims 14 to 16 failed, the last two because it was still open), and closes it in Chrome and Chromium; with `type="text"` Escape closes it in all three. apple.com's field has no type.
 - **The curtain is not the popover's `::backdrop`.** A popover's backdrop has `pointer-events: none` from the browser's own stylesheet (claim 11, in all four), which the page cannot override: a click on it closes the flyout and goes on to whatever is under it (in Chromium 151 with `pointer-events: auto !important` on the backdrop too, a link under it was followed). apple.com's curtain takes the click. So the flyout runs to the window's bottom, its panel at the top and the curtain, a button that hides it, under the panel; the bar, above the flyout, is outside it, and a click there both closes it and reaches the bar's link.
+- **The clear button leaves the focus on the page.** Clicked (the browser's own click), the focused button hides itself, and the focus goes to the document (`BODY`) in Safari 27, Chrome and Chromium, where apple.com's script puts it back in the field; Shift+Tab from there is the field again (claim 25), the place it left kept, and Escape still closes the flyout. Clicked by script on the simulator, the focus stays in the field.
 - Safari on the Mac draws a 17px scrollbar: the flyout is the page's width (`clientWidth`), not the window's.
 - The simulator's picture has the phone's status bar above the page (62px): the page's place in it is found from the bar's color with the flyout closed.
 

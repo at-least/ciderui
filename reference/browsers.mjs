@@ -56,7 +56,7 @@ async function viaPlaywright(channel, url) {
 }
 
 // WebDriver's code points for the keys a probe presses
-const KEYS = { Tab: '\uE004', Enter: '\uE006', Escape: '\uE00C', Alt: '\uE00A' };
+const KEYS = { Tab: '\uE004', Enter: '\uE006', Escape: '\uE00C', Alt: '\uE00A', Shift: '\uE008' };
 
 async function viaSafariDriver(capabilities, url) {
   const port = 4473;
