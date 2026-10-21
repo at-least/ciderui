@@ -6,7 +6,12 @@
 // (reference/dialog/), and a modal in a dark block. Golden, with their why:
 // the layer's and the panel's boxes (an apple.com check reads no width), the
 // close button's place and its X's size, the store's step at 736/737px where
-// ciderui's is at 735, the focus, and the modal light in a dark block.
+// ciderui's is at 735, the focus, and the modal light in a dark block. The
+// marketing pages' modal, data-variant="page" (ricmodal:*): the layer and
+// its blurred scrim, the page held, the panel centered at its widths, its
+// corners and room, the close button's circle at rest, hovered, pressed and
+// focused, sticking at the top as the panel scrolls; its motion, fitted to
+// apple.com's script's frames, and its start.
 
 import { examples, PADDING } from '../../test/harness.mjs';
 
@@ -19,6 +24,11 @@ const MOTION = ['transition-property', 'transition-duration', 'transition-timing
 const WIDTHS = [1600, 1200, 900, 816, 737, 734, 640, 390];
 const STEP = [736, 735];
 const OPEN = { click: OPENER, height: 900 };
+// the marketing pages' modal, opened at the widths its reference was read at
+const PAGE = ex('page');
+const PAGE_OPEN = { click: OPENER, height: 900 };
+const PAGE_WIDTHS = [1600, 1200, 1069, 1068, 900, 735, 734, 640, 390];
+const CLOSE = '.cui-modal-close';
 const BOX = 'the layer the window\'s box, the panel the window\'s width up to its own (816px, 640px below 735px), centered: an apple.com check reads no width';
 
 export const cases = [
@@ -101,5 +111,92 @@ export const cases = [
       { target: '.cui-modal-panel', props: ['background-color', 'color'], golden: 'light in a dark block, as a field: apple.com\'s store has no dark overlay' },
       { target: '.cui-modal-close', props: ['background-color', 'color'], golden: 'the close button\'s light colors in a dark block' },
     ],
+  },
+  {
+    name: 'page-open',
+    html: PAGE,
+    ...PAGE_OPEN,
+    widths: PAGE_WIDTHS,
+    checks: [
+      { target: '.cui-modal', props: ['position', 'top', 'left', 'overflow-y'], apple: ['ricmodal', 'modal'] },
+      { target: '.cui-modal', props: [...PADDING, 'display'], apple: ['ricmodal', 'container'] },
+      { target: '.cui-modal', props: ['align-items'], golden: 'the panel centered by its auto margins in the flex layer, where apple.com\'s container centers it (align-items: center, ricmodal:container): when the panel is taller, it scrolls from its top' },
+      { target: '.cui-modal', pseudo: '::backdrop', props: ['backdrop-filter'], apple: ['ricmodal', 'scrim'] },
+      { target: '.cui-modal', pseudo: '::backdrop', props: ['background-color'], golden: 'apple.com\'s scrim, rgba(0,0,0,.48) (ricmodal:scrim, drawn there as a gradient), the store\'s too (scrim)' },
+      { target: 'html', props: ['overflow-y'], apple: ['ricmodal', 'root'] },
+      { target: '.cui-modal-panel', props: ['border-top-left-radius', 'border-bottom-right-radius'], apple: ['ricmodal', 'overlay'] },
+      { target: '.cui-modal-panel', props: ['background-color', 'padding-top', 'padding-bottom'], apple: ['ricmodal', 'content'] },
+      { target: '.cui-modal-panel', props: ['padding-left', 'padding-right'], apple: ['ricmodal', 'viewport'] },
+      { target: '.cui-modal-panel', props: ['box-width', 'box-left'], golden: 'apple.com\'s panel, 816px from 1069px, 692px from 735px, 480px at most below, 10px from the window\'s sides, centered (ricmodal:overlay): an apple.com check reads no width' },
+      { target: CLOSE, props: ['background-color', 'color', 'border-top-left-radius', 'transition-property', 'transition-duration', 'transition-timing-function'], apple: ['ricmodal', 'close.icon'] },
+      { target: CLOSE, props: ['box-width', 'box-height', 'box-top', 'box-right'], golden: 'apple.com\'s 36px circle 20px in from the panel\'s top right corner (ricmodal:close.icon, its 44px button 20px down and 12px from the end)' },
+      { target: `${CLOSE} svg`, props: ['box-width', 'box-height'], golden: 'its X drawn in 20 by 20 in the circle\'s middle, its ink 12px as apple.com\'s (icon::CLOSE_SMALL, reference/icons/close.mjs)' },
+      { target: CLOSE, props: ['focused'], golden: 'opened, the focus is on its close button, the dialog\'s first control (apple.com\'s script focuses the panel)' },
+      { target: 'form:has(> .cui-modal-close)', props: ['position', 'top', 'box-height'], golden: 'the close button\'s form sticks at the top as the panel scrolls, 0px tall, as apple.com\'s button\'s box (ricmodal:close.wrapper); its top the layer\'s room above the panel taken back, 40px (28px below 735px), so it sticks at the window\'s top' },
+    ],
+  },
+  {
+    name: 'page-states',
+    html: PAGE,
+    ...PAGE_OPEN,
+    widths: [1600, 390],
+    checks: [
+      { target: CLOSE, state: 'hover', props: ['background-color', 'color'], apple: ['ricmodal', 'close.icon-states', 'hover'] },
+      { target: CLOSE, state: 'active', props: ['background-color', 'color'], apple: ['ricmodal', 'close.icon-states', 'active'] },
+      { target: CLOSE, state: 'focus-visible', props: ['outline-style', 'outline-color', 'outline-width', 'outline-offset'], apple: ['ricmodal', 'close.icon-states', 'focus-visible'] },
+    ],
+  },
+  {
+    // a panel taller than the window, scrolled 400px: its close button stays
+    // at the top
+    name: 'page-scrolled',
+    html: `${PAGE.replace('</p>\n  </div>', '</p><div style="height: 1400px"></div>\n  </div>')}<script>document.addEventListener('click', () => setTimeout(() => { document.querySelector('.cui-modal').scrollTop = 400; }, 50));</script>`,
+    ...PAGE_OPEN,
+    widths: [1200, 390],
+    checks: [
+      { target: CLOSE, props: ['box-top'], golden: 'the panel scrolled 400px, its close button 20px from the window\'s top, stuck there (apple.com\'s sticky button, ricmodal:close.wrapper)' },
+      { target: '.cui-modal-panel', props: ['box-top'], golden: 'the panel taller than the window scrolled from its top: 400px up from its 40px (28px below 735px) of room' },
+    ],
+  },
+  {
+    // its motion's start, held there to be read
+    name: 'page-start',
+    html: `<style>.cui-modal::backdrop, .cui-modal-panel { transition-delay: 10s !important; }</style>${PAGE}`,
+    click: OPENER,
+    wait: 0,
+    widths: [1600],
+    checks: [
+      { target: '.cui-modal', pseudo: '::backdrop', props: ['background-color', 'backdrop-filter'], golden: 'the scrim from clear and unblurred, apple.com\'s from (its frames sampled: its darkness and blur from 0)' },
+      { target: '.cui-modal-panel', props: ['opacity'], golden: 'the panel from transparent, apple.com\'s from (its frames sampled)' },
+      { target: '.cui-modal', props: ['opacity'], golden: 'the layer itself not fading: its scrim and its panel do' },
+    ],
+  },
+  {
+    name: 'page-motion',
+    html: PAGE,
+    ...PAGE_OPEN,
+    widths: [1600],
+    checks: [
+      { target: '.cui-modal', pseudo: '::backdrop', props: MOTION, golden: 'its darkness and blur together in 0.75s, cubic-bezier(.4,0,.6,1), fitted to apple.com\'s script\'s frames (from 0.15s to 0.9s after its click, the script\'s start 0.1s in)' },
+      { target: '.cui-modal-panel', props: [...MOTION, 'transition-delay'], golden: 'the panel in 0.5s from 0.25s, cubic-bezier(.4,0,.6,1), fitted to apple.com\'s frames (from about 0.35s to 0.85s)' },
+    ],
+  },
+  {
+    name: 'page-dark',
+    html: `<section class="cui-dark">${PAGE}</section>`,
+    ...PAGE_OPEN,
+    widths: [1600],
+    checks: [
+      { target: '.cui-modal-panel', props: ['background-color', 'color'], golden: 'light in a dark block, as the store\'s modal (apple.com\'s dark one not read)' },
+      { target: CLOSE, props: ['background-color', 'color'], golden: 'the close button\'s dark circle in a dark block, the modal light' },
+    ],
+  },
+  {
+    name: 'page-touch',
+    html: PAGE,
+    ...PAGE_OPEN,
+    touch: true,
+    widths: [1200, 390],
+    checks: [{ target: CLOSE, state: 'hover', props: ['background-color'], rest: 'no hover on a touch screen (rule 5)' }],
   },
 ];

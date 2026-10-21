@@ -1,6 +1,12 @@
 {
- "browser": "chrome 155.0.8059.80 on darwin",
- "date": "2026-10-19T14:30:05.176Z",
+ "browser": "chrome 155.0.8059.85 on darwin",
+ "date": "2026-10-21T01:50:13.792Z",
+ "pageClosedPixels": {
+  "scale": 1,
+  "offset": 0,
+  "spread": 127.5,
+  "mean": 127.5
+ },
  "closed": {
   "open": false,
   "modal": false,
@@ -85,193 +91,199 @@
      false
     ],
     [
-     7,
+     5,
      1,
      1,
      false
     ],
     [
-     24,
+     25,
      1,
      1,
      false
     ],
     [
-     40,
+     39,
      1,
      1,
      false
     ],
     [
-     57,
+     56,
      1,
      1,
      false
     ],
     [
-     76,
-     1,
-     1,
-     false
-    ],
-    [
-     126,
+     102,
      0,
      0,
      true
     ],
     [
-     127,
+     103,
      0,
      0,
      true
     ],
     [
-     142,
-     0.0562993,
-     0.0562993,
+     107,
+     0,
+     0,
      true
     ],
     [
-     159,
-     0.231185,
-     0.231185,
+     123,
+     0.0560709,
+     0.0560709,
      true
     ],
     [
-     176,
-     0.499845,
-     0.499845,
+     139,
+     0.232119,
+     0.232119,
      true
     ],
     [
-     193,
-     0.76717,
-     0.76717,
+     156,
+     0.499276,
+     0.499276,
      true
     ],
     [
-     208,
-     0.944268,
-     0.944268,
+     172,
+     0.768104,
+     0.768104,
      true
     ],
     [
-     226,
-     1,
-     1,
+     189,
+     0.94404,
+     0.94404,
      true
     ],
     [
-     243,
-     1,
-     1,
-     true
-    ],
-    [
-     257,
+     205,
      1,
      1,
      true
     ],
     [
-     276,
+     223,
      1,
      1,
      true
     ],
     [
-     292,
+     239,
      1,
      1,
      true
     ],
     [
-     308,
+     255,
      1,
      1,
      true
     ],
     [
-     325,
+     272,
      1,
      1,
      true
     ],
     [
-     343,
+     289,
      1,
      1,
      true
     ],
     [
-     360,
+     306,
      1,
      1,
      true
     ],
     [
-     376,
+     323,
      1,
      1,
      true
     ],
     [
-     393,
+     340,
      1,
      1,
      true
     ],
     [
-     410,
+     355,
      1,
      1,
      true
     ],
     [
-     427,
+     372,
      1,
      1,
      true
     ],
     [
-     441,
+     389,
      1,
      1,
      true
     ],
     [
-     460,
+     406,
      1,
      1,
      true
     ],
     [
-     475,
+     422,
      1,
      1,
      true
     ],
     [
-     492,
+     439,
      1,
      1,
      true
     ],
     [
-     509,
+     456,
      1,
      1,
      true
     ],
     [
-     524,
+     473,
      1,
      1,
      true
     ],
     [
-     543,
+     489,
+     1,
+     1,
+     true
+    ],
+    [
+     506,
+     1,
+     1,
+     true
+    ],
+    [
+     522,
+     1,
+     1,
+     true
+    ],
+    [
+     539,
      1,
      1,
      true
@@ -283,24 +295,115 @@
      true
     ],
     [
-     576,
+     573,
      1,
      1,
      true
     ],
     [
-     591,
+     589,
      1,
      1,
      true
     ],
     [
-     608,
+     607,
      1,
      1,
      true
     ]
    ]
   }
- ]
+ ],
+ "page": {
+  "open": true,
+  "modal": true,
+  "filter": "blur(20px)",
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "close": 379,
+  "panel": 359,
+  "below": 359,
+  "rootOverflow": "hidden",
+  "focus": "page-close"
+ },
+ "pageOpenPixels": {
+  "scale": 1,
+  "offset": 0,
+  "spread": 0,
+  "mean": 67
+ },
+ "pageFrames": [
+  [
+   0,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   1,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   8,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   24,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   43,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ],
+  [
+   58,
+   "blur(0px)",
+   "rgba(0, 0, 0, 0)"
+  ],
+  [
+   75,
+   "blur(0.226949px)",
+   "rgba(0, 0, 0, 0.004)"
+  ],
+  [
+   91,
+   "blur(0.557165px)",
+   "rgba(0, 0, 0, 0.01)"
+  ],
+  [
+   108,
+   "blur(1.0061px)",
+   "rgba(0, 0, 0, 0.024)"
+  ],
+  [
+   1031,
+   "blur(20px)",
+   "rgba(0, 0, 0, 0.48)"
+  ]
+ ],
+ "pageScrolled": {
+  "open": true,
+  "modal": true,
+  "filter": "blur(20px)",
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "close": 20,
+  "panel": -372,
+  "below": -910,
+  "rootOverflow": "hidden",
+  "focus": "page-close"
+ },
+ "pageClosed": {
+  "open": false,
+  "modal": false,
+  "filter": "blur(20px)",
+  "backdrop": "rgba(0, 0, 0, 0.48)",
+  "close": 0,
+  "panel": 0,
+  "below": 900,
+  "rootOverflow": "visible",
+  "focus": "page-button"
+ }
 }

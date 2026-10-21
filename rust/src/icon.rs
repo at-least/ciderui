@@ -290,6 +290,18 @@ pub const CLOSE: Icon = Icon {
     inner: r#"<path d="M4.88 4.88 15.12 15.12M15.12 4.88 4.88 15.12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>"#,
 };
 
+/// The marketing pages' modal's X (`cui-modal-close` in a
+/// `data-variant="page"` modal), in place of its SVG: [`CLOSE`]'s strokes,
+/// each arm 0.62 shorter at its ends, from (5.5, 5.5) to (14.5, 14.5) and
+/// from (14.5, 5.5) to (5.5, 14.5); 0.9994 of its ink apple.com's
+/// (`reference/icons/`).
+pub const CLOSE_SMALL: Icon = Icon {
+    width: "20",
+    height: "20",
+    view_box: "0 0 20 20",
+    inner: r#"<path d="M5.5 5.5 14.5 14.5M14.5 5.5 5.5 14.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>"#,
+};
+
 #[cfg(test)]
 mod tests {
     use super::*;

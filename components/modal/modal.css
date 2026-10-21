@@ -37,6 +37,17 @@
  *                    circle 24px in (a 44px target, 20px in), its X 20px
  *                    (icon::CLOSE); hovered and pressed, darker, in 0.1s
  *
+ *   data-variant="page"  the marketing pages' modal (apple.com's product
+ *                    pages', ricmodal:*): the page under it dimmed and
+ *                    blurred, the panel centered, 28px corners, 816px from
+ *                    1069px, 692px from 735px, 480px at most below (10px
+ *                    from the window's sides), its content 76px in (6.25%
+ *                    of the panel below 735px) and 76px down and up (60px
+ *                    up below); its close button the neutral fill with a
+ *                    white X (icon::CLOSE_SMALL), 20px in, staying at the
+ *                    top as the panel scrolls; the scrim in over 0.75s, the
+ *                    panel from 0.25s
+ *
  * apple.com's: the scrim, the fade, the panel's widths, corners, ground and
  * room, the close button's sizes, places, colors and motion, the page held.
  * ciderui's: the dialog element, opened and closed with no script (apple.com's
@@ -48,7 +59,14 @@
  * click on the scrim closes nothing (apple.com's script closes it); it closes
  * at once (apple.com's fades out); the close button's target its ::before
  * (apple.com's a 44px button holding the circle); its place on the page,
- * fixed over the window, a dialog's, where rule 6 leaves a component none. */
+ * fixed over the window, a dialog's, where rule 6 leaves a component none.
+ * The page variant's: apple.com's script's motion as CSS transitions, fitted
+ * to its frames (its scrim's darkness and blur together in 0.75s, its panel
+ * in 0.5s from 0.25s, each cubic-bezier(.4,0,.6,1), where apple.com's run
+ * from its script's start, about 0.1s later); the focus on the close button
+ * (apple.com's on the panel); the close button's target around its circle
+ * (apple.com's to its right and below it); light in a dark block (apple.com
+ * has a dark one, its close button the light neutral, not read). */
 
 @layer components {
   .cui-modal {
@@ -146,6 +164,106 @@
     &:active {
       color: var(--cui-c-on-close);
       background-color: var(--cui-c-close-active);
+    }
+  }
+
+  /* the marketing pages' modal: the panel centered over the page dimmed and
+     blurred; it holds no motion of its own, its scrim and panel have */
+  .cui-modal[data-variant="page"] {
+    --cui-modal-ease: cubic-bezier(0.4, 0, 0.6, 1);
+
+    &[open] {
+      display: flex;
+      padding: 28px 10px;
+      transition: none;
+
+      @media (width >= 735px) {
+        padding: 40px 0;
+      }
+    }
+
+    &::backdrop {
+      backdrop-filter: blur(20px);
+    }
+
+    &[open]::backdrop {
+      transition: background-color 0.75s var(--cui-modal-ease), backdrop-filter 0.75s var(--cui-modal-ease);
+    }
+
+    /* centered: its auto margins in the flex layer, which scrolls it from
+       its top when it is taller than the window */
+    .cui-modal-panel {
+      max-width: 480px;
+      margin: auto;
+      padding: 76px min(6.25%, 30px) 60px;
+      border-radius: 28px;
+
+      @media (width >= 735px) {
+        max-width: 692px;
+        padding: 76px;
+      }
+
+      @media (width >= 1069px) {
+        max-width: 816px;
+      }
+    }
+
+    &[open] .cui-modal-panel {
+      transition: opacity 0.5s var(--cui-modal-ease) 0.25s;
+    }
+
+    /* its close button stays at the top as the panel scrolls: its form
+       sticky, 0px tall, at the panel's top (76px up), its end 20px in from
+       the panel's (the panel's room below 735px is 1/14 of the form's
+       width, 6.25% of the panel's); stuck at the window's top, the layer's
+       room above it taken back (a sticky box sticks inside its scroller's
+       padding) */
+    .cui-modal-panel > form:has(> .cui-modal-close) {
+      position: sticky;
+      top: -28px;
+      z-index: 1;
+      display: flex;
+      justify-content: flex-end;
+      height: 0;
+      margin: -76px calc(20px - 100% / 14) 76px 0;
+
+      @media (width >= 735px) {
+        top: -40px;
+        margin-right: -56px;
+      }
+    }
+
+    .cui-modal-close {
+      position: relative;
+      top: auto;
+      right: auto;
+      flex: none;
+      margin-top: 20px;
+      color: var(--cui-c-on-neutral);
+      background-color: var(--cui-c-neutral);
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--cui-c-on-neutral);
+          background-color: var(--cui-c-neutral-hover);
+        }
+      }
+
+      &:active {
+        color: var(--cui-c-on-neutral);
+        background-color: var(--cui-c-neutral-active);
+      }
+    }
+  }
+
+  @starting-style {
+    .cui-modal[data-variant="page"][open]::backdrop {
+      background-color: transparent;
+      backdrop-filter: blur(0);
+    }
+
+    .cui-modal[data-variant="page"][open] .cui-modal-panel {
+      opacity: 0;
     }
   }
 }

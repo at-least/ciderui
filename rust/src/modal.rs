@@ -1,12 +1,14 @@
 use hypertext::{Buffer, Raw, prelude::*};
 
 use crate::Class;
-use crate::icon::CLOSE;
+use crate::icon::{CLOSE, CLOSE_SMALL};
 
 /// `cui-modal` (`components/modal`): apple.com's store overlay on a
 /// `<dialog>`, the page dimmed and held under it, its content in a white
 /// panel with a close button at its corner (a form's, `method="dialog"`),
-/// which and Escape close it with no script. A [`ModalButton`] opens it.
+/// which and Escape close it with no script; or, `page`, the marketing
+/// pages' modal, centered over the page dimmed and blurred, its close
+/// button the neutral fill. A [`ModalButton`] opens it.
 ///
 /// ```
 /// use hypertext::prelude::*;
@@ -14,7 +16,7 @@ use crate::icon::CLOSE;
 ///
 /// let html = rsx! {
 ///     <ModalButton modal="models" class="cui-btn">"Show more"</ModalButton>
-///     <Modal id="models" labelledby="models-title" class="">
+///     <Modal id="models" labelledby="models-title" page=false class="">
 ///         <h2 id="models-title">"Which model is right for you?"</h2>
 ///     </Modal>
 /// }
@@ -29,6 +31,9 @@ pub struct Modal<'a, R: Renderable> {
     /// The id of its headline, which names it (`aria-labelledby`).
     /// Required: an empty one panics.
     pub labelledby: &'a str,
+    /// Whether it is the marketing pages' modal (`data-variant="page"`), not
+    /// the store's.
+    pub page: bool,
     /// The page's utilities on the dialog; `""` for none.
     pub class: &'a str,
     /// The panel's content, after its close button.
@@ -43,9 +48,9 @@ impl<R: Renderable> Renderable for Modal<'_, R> {
             "ciderui::Modal needs the id of its headline (labelledby)"
         );
         rsx! {
-            <dialog class=(Class("cui-modal", self.class)) id=(self.id) aria-labelledby=(self.labelledby)>
+            <dialog class=(Class("cui-modal", self.class)) data-variant="page"[self.page] id=(self.id) aria-labelledby=(self.labelledby)>
                 <div class="cui-modal-panel">
-                    <form method="dialog"><button class="cui-modal-close" aria-label="Close">(CLOSE)</button></form>
+                    <form method="dialog"><button class="cui-modal-close" aria-label="Close">(if self.page { CLOSE_SMALL } else { CLOSE })</button></form>
                     (self.children)
                 </div>
             </dialog>
@@ -106,7 +111,7 @@ mod tests {
     fn renders_the_example() {
         let html = rsx! {
             <ModalButton modal="models" class="cui-btn">"Show more"</ModalButton>
-            <Modal id="models" labelledby="models-title" class="">
+            <Modal id="models" labelledby="models-title" page=false class="">
                 <h2 class="cui-headline" id="models-title">"Which model is right for you?"</h2>
                 <p class="cui-body">"Both have the same chip and the same cameras. The larger one has a larger display and the longest battery life."</p>
             </Modal>
@@ -115,6 +120,23 @@ mod tests {
         assert_eq!(
             *html.as_inner(),
             example(include_str!("../../components/modal/examples/modal.html"))
+        );
+    }
+
+    #[test]
+    fn renders_the_page_example() {
+        let html = rsx! {
+            <ModalButton modal="trade-in" class="cui-btn">"Read more about Apple Trade In"</ModalButton>
+            <Modal id="trade-in" labelledby="trade-in-title" page=true class="">
+                <p class="cui-eyebrow">"Apple Trade In"</p>
+                <h2 class="cui-headline" id="trade-in-title">"Trade in your eligible device for credit."</h2>
+                <p class="cui-body">"Just add a trade-in when you choose a new product. Once your device has been received and verified, we credit its value to your payment method."</p>
+            </Modal>
+        }
+        .render();
+        assert_eq!(
+            *html.as_inner(),
+            example(include_str!("../../components/modal/examples/page.html"))
         );
     }
 
@@ -130,13 +152,13 @@ mod tests {
     #[test]
     #[should_panic(expected = "needs an id")]
     fn an_empty_id_panics() {
-        let _ = rsx! { <Modal id="" labelledby="t" class="">"x"</Modal> }.render();
+        let _ = rsx! { <Modal id="" labelledby="t" page=false class="">"x"</Modal> }.render();
     }
 
     #[test]
     #[should_panic(expected = "labelledby")]
     fn no_headline_panics() {
-        let _ = rsx! { <Modal id="m" labelledby="" class="">"x"</Modal> }.render();
+        let _ = rsx! { <Modal id="m" labelledby="" page=false class="">"x"</Modal> }.render();
     }
 
     #[test]

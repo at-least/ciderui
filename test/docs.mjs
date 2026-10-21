@@ -9,8 +9,9 @@
 // example frame loads its stylesheet, draws every picture it has, is no
 // wider than the page and as tall as its content, so it never scrolls.
 // And what the frames do: the theme's script moves a gallery's row; a
-// modal opens in its frame by its button, the frame grown to the window under
-// the page's local nav, and its close button closes it; the global nav's
+// modal, the store's and a product page's, opens in its frame by its button,
+// the frame grown to the window under the page's local nav, and its close
+// button closes it; the global nav's
 // search the same, its field focused, Escape closing it; at 390px the global
 // nav's menu opens over its frame, grown to the window's height, and the
 // local nav's below its bar, the frame grown to hold it; an example's link
@@ -163,14 +164,14 @@ for (const width of [1440, 390]) {
     await settle(inner);
     check(`a link in an example leaves its frame where it is at ${width}px`, await inner.evaluate(() => location.href), 'about:srcdoc');
   }
-  {
-    const { handle, inner } = await frame('/components/modal/', 'A modal and the button that opens it');
+  for (const title of ['A modal and the button that opens it', 'A product page’s modal and the button that opens it']) {
+    const { handle, inner } = await frame('/components/modal/', title);
     const closed = await height(handle);
     await inner.click('[command="show-modal"]');
     await settle(inner);
     const open = await inner.evaluate(() => document.querySelector('.cui-modal').matches(':modal'));
     const below = await page.evaluate(() => innerHeight - document.querySelector('.cui-localnav').getBoundingClientRect().height);
-    check(`at ${width}px a modal opens in its frame by its button, with no script`, open, true);
+    check(`at ${width}px "${title}" opens in its frame by its button, with no script`, open, true);
     check(`at ${width}px its frame grows to the window's height below the page's local nav (${closed}px closed)`, await height(handle), below);
     await inner.click('.cui-modal-close');
     await settle(inner);

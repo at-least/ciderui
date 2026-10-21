@@ -1,7 +1,8 @@
 {
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T14:41:12.524Z",
+ "date": "2026-10-21T01:44:22.748Z",
  "ours": "<svg viewBox=\"0 0 20 20\"><path d=\"M4.88 4.88 15.12 15.12M15.12 4.88 4.88 15.12\" fill=\"none\" stroke=\"#000\" stroke-width=\"3\" stroke-linecap=\"round\"/></svg>",
+ "small": "<svg viewBox=\"0 0 20 20\"><path d=\"M5.5 5.5 14.5 14.5M14.5 5.5 5.5 14.5\" fill=\"none\" stroke=\"#000\" stroke-width=\"3\" stroke-linecap=\"round\"/></svg>",
  "appleBox": {
   "left": 3.35,
   "right": 16.7,
@@ -77,5 +78,60 @@
     ]
    ]
   ]
- ]
+ ],
+ "marketing": {
+  "appleBox": {
+   "left": 12,
+   "right": 24,
+   "top": 12,
+   "bottom": 24
+  },
+  "oursBox": {
+   "left": 12,
+   "right": 24,
+   "top": 12,
+   "bottom": 24
+  },
+  "iou": 0.9994,
+  "rows": [
+   [
+    18,
+    [
+     [
+      15.85,
+      20.15
+     ]
+    ],
+    [
+     [
+      15.85,
+      20.15
+     ]
+    ]
+   ],
+   [
+    14,
+    [
+     [
+      12.1,
+      16.15
+     ],
+     [
+      19.85,
+      23.9
+     ]
+    ],
+    [
+     [
+      12.1,
+      16.15
+     ],
+     [
+      19.85,
+      23.9
+     ]
+    ]
+   ]
+  ]
+ }
 }

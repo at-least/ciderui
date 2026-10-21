@@ -26,9 +26,28 @@
   .panel form { display: flex; justify-content: flex-end; margin: 0 -56px 12px 0; padding-top: 20px; }
   #close { width: 44px; height: 44px; padding: 0; border: 0; background: none; }
   .tall { height: 2000px; }
+  /* the marketing pages' modal: the page under it dimmed and blurred (its
+     ::backdrop, in over 0.75s from clear), the panel centered (auto
+     margins in the flex layer), its close button's form sticky at the
+     window's top as the panel scrolls (its top the layer's room taken back) */
+  #band { height: 60px; background: rgb(200 220 240); }
+  main { height: 3000px; background: repeating-linear-gradient(90deg, #000 0 4px, #fff 4px 8px); }
+  #page { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; box-sizing: border-box;
+    margin: 0; padding: 28px 10px; border: 0; background: none; overflow-y: auto; overscroll-behavior: contain; }
+  #page[open] { display: flex; }
+  #page::backdrop { background-color: rgb(0 0 0 / 0.48); backdrop-filter: blur(20px); }
+  #page[open]::backdrop { transition: background-color 0.75s, backdrop-filter 0.75s; }
+  @starting-style {
+    #page[open]::backdrop { background-color: transparent; backdrop-filter: blur(0); }
+  }
+  html:has(#page:modal) { overflow: hidden; }
+  #page .panel { margin: auto; max-width: 480px; padding: 76px 30px 60px; border-radius: 28px; }
+  #page form { position: sticky; top: -28px; z-index: 1; display: flex; justify-content: flex-end; height: 0; margin: -76px -10px 76px 0; padding: 0; }
+  #page-close { margin-top: 20px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: #1d1d1f; color: #fff; }
 </style>
 </head>
 <body>
+<div id="band"></div>
 <p><a id="before" href="#before">Before</a></p>
 <button id="button" commandfor="modal" command="show-modal">Show more</button>
 <dialog id="modal" aria-labelledby="title">
@@ -40,5 +59,13 @@
   </div>
 </dialog>
 <p><a id="after" href="#after">After</a></p>
+<button id="page-button" commandfor="page" command="show-modal">Read more</button>
+<dialog id="page" aria-labelledby="page-title">
+  <div class="panel">
+    <form method="dialog"><button id="page-close" aria-label="Close">×</button></form>
+    <h2 id="page-title">Trade in your device for credit.</h2>
+  </div>
+</dialog>
+<main></main>
 </body>
 </html>

@@ -14,7 +14,11 @@
 // script on the iOS simulator (its taps never click there), by the keyboard
 // in Safari on the Mac (a button focused, Return), by Playwright elsewhere;
 // on the simulator no key, and no focus to give back (a script's click, as a
-// tap there, focuses no button). The result is results/<browser>.json.
+// tap there, focuses no button). And the marketing pages' modal, as
+// modal.css's page variant makes it: its ::backdrop's blur, the page blurred
+// and dimmed under it in a picture of the window, its scrim coming in
+// (sampled each frame), its close button stuck at the window's top as the
+// panel scrolls, closed by it. The result is results/<browser>.json.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
@@ -34,6 +38,9 @@ const script = (selector, call) => page.run(`Promise.resolve((document.querySele
 const click = (selector) => IOS ? script(selector, 'click') : KEYBOARD ? script(selector, 'focus').then(() => page.press('Enter')) : page.click(selector);
 try {
   page = await open(BROWSER, `http://127.0.0.1:${server.address().port}/`);
+  if (!IOS) await page.size(1440, 900);
+  await page.run(wait(300));
+  got.pageClosedPixels = await page.run(call(`pixels(${JSON.stringify(await page.shot())})`));
   got.closed = await page.run(call('state()'));
   await page.run(call('watch()'));
   await click('#button');
@@ -50,6 +57,20 @@ try {
     got.afterEscape = await page.run(call('state()'));
   }
   got.samples = await page.run('Promise.resolve(window.cuiSamples)');
+  // the marketing modal: opened, its scrim sampled each frame, a picture;
+  // made taller than the window and scrolled 400px; closed by its button
+  await page.run(call('watchPage()'));
+  await click('#page-button');
+  await page.run(wait(1300));
+  got.page = await page.run(call('pageState()'));
+  got.pageOpenPixels = await page.run(call(`pixels(${JSON.stringify(await page.shot())}, ${got.pageClosedPixels.offset})`));
+  got.pageFrames = await page.run('Promise.resolve(window.cuiPage)');
+  await page.run(`Promise.resolve((document.querySelector('#page .panel').append(Object.assign(document.createElement('div'), { className: 'tall' })), document.querySelector('#page').scrollTop = 400, true))`);
+  await page.run(wait(300));
+  got.pageScrolled = await page.run(call('pageState()'));
+  await click('#page-close');
+  await page.run(wait(300));
+  got.pageClosed = await page.run(call('pageState()'));
 } finally {
   await page?.close();
   server.close();
@@ -74,6 +95,12 @@ const claims = [
     ['the focus is back on the button that opened it', got.closedAgain.focus === 'button'],
     ['Escape closes it, the focus back on the button', got.afterEscape.open === false && got.afterEscape.focus === 'button'],
   ]),
+  ['the marketing modal\'s button opens it, its ::backdrop blur(20px)', got.page.modal === true && got.page.filter === 'blur(20px)'],
+  ['its panel centered: as far from the window\'s top as from its foot', Math.abs(got.page.panel - got.page.below) <= 1 && got.page.panel > 28],
+  ['in the picture the page under it is blurred and dimmed (the stripes\' spread under a fifth of theirs closed, their brightness 30 lower)', got.pageClosedPixels.spread > 60 && got.pageOpenPixels.spread < got.pageClosedPixels.spread / 5 && got.pageOpenPixels.mean < got.pageClosedPixels.mean - 30],
+  ['its scrim comes in: a frame whose blur is between 0 and 20px', got.pageFrames.some(([, f]) => { const v = parseFloat(f.match(/blur\(([\d.]+)px\)/)?.[1]); return v > 0 && v < 20; })],
+  ['scrolled 400px, its close button stays 20px from the window\'s top (sticky, its top the layer\'s room taken back)', got.pageScrolled.close === 20 && got.pageScrolled.panel < 0],
+  ['its close button closes it', got.pageClosed.open === false],
 ];
 console.log(page.label + (IOS ? ' (clicked by script; no Escape)' : KEYBOARD ? ' (by its keyboard: Return)' : ''));
 let pass = true;
