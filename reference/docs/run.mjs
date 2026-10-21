@@ -21,14 +21,17 @@
 // global nav's search suggesting the modal's page first as "mo" is put in
 // its field, its row muted and "Mo" marked, fading in; a link's flyout in
 // its frame, shown by the pointer and opened by its button from 834px,
-// over the menu below (flyouts()); in a
+// over the menu below (flyouts()); the global nav's bag in its frame,
+// opened by its button, by the keyboard where there is one (bag()); in a
 // window narrower than
 // 834px the global nav's menu opens over its frame, grown to the window's
 // height under the page's local nav and scrolled there, and the local nav's
 // menu below its bar, the frame grown to hold it. On a phone at its width;
 // elsewhere in a window 1440px wide, then 700px (Safari's window, its frame
-// included, so its page a little narrower). The result is
-// results/<browser>.json; exits 1 if a claim does not hold.
+// included, so its page a little narrower). Each claim is recorded with
+// when it was read (got.claims: ms since 1970, a clock to set beside a log
+// of the Mac's front app, as a Safari run's window can lose its focus). The
+// result is results/<browser>.json; exits 1 if a claim does not hold.
 import { createServer } from 'node:http';
 import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { extname, join, relative } from 'node:path';
@@ -74,9 +77,13 @@ const INSPECT = `(async () => {
 const frame = (title) => `document.querySelector('iframe[title=${JSON.stringify(title)}]')`;
 const inFrame = (title, selector, call) => `Promise.resolve((${frame(title)}.contentDocument.querySelector(${JSON.stringify(selector)}).${call}(), true))`;
 
-const got = { pages: {}, frames: {} };
+const got = { pages: {}, frames: {}, claims: [] };
 const fails = [];
-const claim = (what, ok, value) => { if (!ok) fails.push(`${what}: ${JSON.stringify(value)}`); return ok; };
+const claim = (what, ok, value) => {
+  got.claims.push({ what, ok, at: Date.now() });
+  if (!ok) fails.push(`${what}: ${JSON.stringify(value)}`);
+  return ok;
+};
 let page;
 const read = async (width) => {
   for (const path of paths) {
@@ -358,6 +365,68 @@ const flyouts = async (width) => {
   got.frames[`globalnav flyout at ${width}`] = { closed, ...record };
 };
 
+// the global nav's bag in its frame (an empty bag's). Where there is a
+// keyboard its button focused and Return opening it, else its click() (the
+// simulator, which presses no key); the frame the window's height under the
+// local nav. In a frame 834px wide or more it hangs from the bar's bottom,
+// its curtain to the frame's bottom, the focus kept on its button, Tab going
+// on into it, to its line's link (Option-Tab in Safari, whose Tab skips
+// links), and Escape closing it, the focus back on
+// its button; narrower it is a sheet over the frame, its X focused
+// (autofocus), and Escape, or on the simulator its X, closes it; closed, the
+// frame the bar's height again
+const bag = async (width) => {
+  const title = 'A global nav and its bag';
+  const BUTTON = '[popovertarget="cui-globalnav-bag"]';
+  const keys = BROWSER !== 'ios';
+  await page.go(`${ORIGIN}/components/globalnav/`);
+  await page.run(wait(700));
+  await page.run(`Promise.resolve((${frame(title)}.scrollIntoView({ block: 'center' }), true))`);
+  await page.run(wait(500));
+  const state = () => page.run(`Promise.resolve((() => {
+    const f = ${frame(title)};
+    const d = f.contentDocument, w = f.contentWindow;
+    const box = (s) => d.querySelector(s).getBoundingClientRect();
+    const focus = d.activeElement;
+    return {
+      inner: w.innerWidth, frameHeight: w.innerHeight, height: f.clientHeight, open: d.querySelector('.cui-globalnav-bag').matches(':popover-open'),
+      focus: focus.className || focus.tagName, focusText: focus.textContent.trim().slice(0, 20),
+      nav: box('.cui-globalnav').bottom, bag: box('.cui-globalnav-bag').top, bagHeight: box('.cui-globalnav-bag').height, curtain: box('.cui-globalnav-bag .cui-globalnav-curtain').bottom,
+      window: innerHeight, bar: document.querySelector('.cui-localnav').getBoundingClientRect().height,
+    };
+  })())`);
+  const closed = await state();
+  const record = {};
+  if (keys) {
+    await page.run(inFrame(title, BUTTON, 'focus'));
+    await page.press('Enter');
+  } else {
+    await page.run(inFrame(title, BUTTON, 'click'));
+  }
+  await page.run(wait(1200));
+  const r = record.opened = await state();
+  const flyout = r.inner >= 834;
+  claim(`the global nav's bag opens in its frame at ${width}px${keys ? ' by its keyboard (Return)' : ''}, the frame the window's height under the local nav`, r.open && Math.abs(r.height - (r.window - r.bar)) <= 1, { closed, ...record });
+  claim(flyout ? `in its ${r.inner}px frame it hangs from the bar's bottom, the curtain to the frame's bottom${keys ? ', the focus kept on its button' : ''}` : `in its ${r.inner}px frame it is a sheet over the frame, its X focused`,
+    flyout ? Math.abs(r.bag - r.nav) <= 0.5 && Math.abs(r.curtain - r.frameHeight) <= 0.5 && (!keys || r.focus === 'cui-globalnav-icon') : r.bag === 0 && Math.abs(r.bagHeight - r.frameHeight) <= 0.5 && r.focus === 'cui-globalnav-closebutton', { closed, ...record });
+  if (keys && flyout) {
+    // Safari's Tab skips links (its default): Option-Tab, as ../popover/
+    await page.press(BROWSER === 'safari' ? 'Alt+Tab' : 'Tab');
+    await page.run(wait(300));
+    record.tabbed = await state();
+    claim(`Tab goes from its button into it, to its line's link, at ${width}px`, record.tabbed.open && record.tabbed.focus === 'A' && record.tabbed.focusText === 'Sign in', { closed, ...record });
+  }
+  if (keys) {
+    await page.press('Escape');
+  } else {
+    await page.run(inFrame(title, flyout ? '.cui-globalnav-bag .cui-globalnav-curtain' : '.cui-globalnav-bag .cui-globalnav-closebutton', 'click'));
+  }
+  await page.run(wait(800));
+  record.closed = await state();
+  claim(`${keys ? 'Escape' : flyout ? 'its curtain' : 'its X'} closes it at ${width}px, ${keys ? 'the focus back on its button, ' : ''}its frame the bar's height again`, !record.closed.open && (!keys || record.closed.focus === 'cui-globalnav-icon') && record.closed.height === closed.height, { closed, ...record });
+  got.frames[`globalnav bag at ${width}`] = { closed, ...record };
+};
+
 try {
   page = await open(BROWSER, `${ORIGIN}/`);
   got.browser = page.label;
@@ -368,6 +437,7 @@ try {
     await read(width);
     await behave(width);
     await flyouts(width);
+    await bag(width);
     if (width < 834) await menus(width);
   }
 } finally {
