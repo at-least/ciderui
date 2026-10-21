@@ -1,0 +1,466 @@
+{
+ "browser": "chromium 151.0.7922.34 on linux, the DevTools protocol's touch events",
+ "date": "2026-10-21T07:52:24.884Z",
+ "reports": [
+  {
+   "n": 1,
+   "after": "plain",
+   "events": [
+    {
+     "type": "pointerdown",
+     "pointer": "touch",
+     "trusted": true,
+     "on": "plain",
+     "t": 149
+    },
+    {
+     "type": "touchstart",
+     "pointer": null,
+     "trusted": true,
+     "on": "plain",
+     "t": 149
+    },
+    {
+     "type": "pointerup",
+     "pointer": "touch",
+     "trusted": true,
+     "on": "plain",
+     "t": 150
+    },
+    {
+     "type": "touchend",
+     "pointer": null,
+     "trusted": true,
+     "on": "plain",
+     "t": 150
+    },
+    {
+     "type": "mouseover",
+     "pointer": null,
+     "trusted": true,
+     "on": "plain",
+     "t": 150
+    },
+    {
+     "type": "mousemove",
+     "pointer": null,
+     "trusted": true,
+     "on": "plain",
+     "t": 150
+    },
+    {
+     "type": "mousedown",
+     "pointer": null,
+     "trusted": true,
+     "on": "plain",
+     "t": 150
+    },
+    {
+     "type": "mouseup",
+     "pointer": null,
+     "trusted": true,
+     "on": "plain",
+     "t": 150
+    },
+    {
+     "type": "click",
+     "pointer": "touch",
+     "trusted": true,
+     "on": "plain",
+     "t": 150
+    }
+   ],
+   "media": {
+    "hover": false,
+    "coarse": true
+   },
+   "plain": {
+    "hover": true,
+    "focus": true,
+    "focusVisible": false,
+    "background": "rgb(0, 118, 223)"
+   },
+   "gated": {
+    "hover": false,
+    "focus": false,
+    "focusVisible": false,
+    "background": "rgb(0, 113, 227)"
+   },
+   "menuButton": {
+    "hover": false,
+    "focus": false,
+    "focusVisible": false,
+    "background": "rgb(0, 113, 227)"
+   },
+   "menuOpen": false
+  },
+  {
+   "n": 2,
+   "after": "gated",
+   "events": [
+    {
+     "type": "pointerdown",
+     "pointer": "touch",
+     "trusted": true,
+     "on": "gated",
+     "t": 1058
+    },
+    {
+     "type": "touchstart",
+     "pointer": null,
+     "trusted": true,
+     "on": "gated",
+     "t": 1058
+    },
+    {
+     "type": "pointerup",
+     "pointer": "touch",
+     "trusted": true,
+     "on": "gated",
+     "t": 1066
+    },
+    {
+     "type": "touchend",
+     "pointer": null,
+     "trusted": true,
+     "on": "gated",
+     "t": 1066
+    },
+    {
+     "type": "mouseover",
+     "pointer": null,
+     "trusted": true,
+     "on": "gated",
+     "t": 1066
+    },
+    {
+     "type": "mousemove",
+     "pointer": null,
+     "trusted": true,
+     "on": "gated",
+     "t": 1066
+    },
+    {
+     "type": "mousedown",
+     "pointer": null,
+     "trusted": true,
+     "on": "gated",
+     "t": 1066
+    },
+    {
+     "type": "mouseup",
+     "pointer": null,
+     "trusted": true,
+     "on": "gated",
+     "t": 1066
+    },
+    {
+     "type": "click",
+     "pointer": "touch",
+     "trusted": true,
+     "on": "gated",
+     "t": 1066
+    }
+   ],
+   "media": {
+    "hover": false,
+    "coarse": true
+   },
+   "plain": {
+    "hover": false,
+    "focus": false,
+    "focusVisible": false,
+    "background": "rgb(0, 113, 227)"
+   },
+   "gated": {
+    "hover": true,
+    "focus": true,
+    "focusVisible": false,
+    "background": "rgb(0, 113, 227)"
+   },
+   "menuButton": {
+    "hover": false,
+    "focus": false,
+    "focusVisible": false,
+    "background": "rgb(0, 113, 227)"
+   },
+   "menuOpen": false
+  },
+  {
+   "n": 3,
+   "after": "elsewhere",
+   "events": [
+    {
+     "type": "pointerdown",
+     "pointer": "touch",
+     "trusted": true,
+     "on": "elsewhere",
+     "t": 1882
+    },
+    {
+     "type": "touchstart",
+     "pointer": null,
+     "trusted": true,
+     "on": "elsewhere",
+     "t": 1883
+    },
+    {
+     "type": "pointerup",
+     "pointer": "touch",
+     "trusted": true,
+     "on": "elsewhere",
+     "t": 1899
+    },
+    {
+     "type": "touchend",
+     "pointer": null,
+     "trusted": true,
+     "on": "elsewhere",
+     "t": 1899
+    },
+    {
+     "type": "mouseover",
+     "pointer": null,
+     "trusted": true,
+     "on": "elsewhere",
+     "t": 1899
+    },
+    {
+     "type": "mousemove",
+     "pointer": null,
+     "trusted": true,
+     "on": "elsewhere",
+     "t": 1899
+    },
+    {
+     "type": "mousedown",
+     "pointer": null,
+     "trusted": true,
+     "on": "elsewhere",
+     "t": 1899
+    },
+    {
+     "type": "mouseup",
+     "pointer": null,
+     "trusted": true,
+     "on": "elsewhere",
+     "t": 1900
+    },
+    {
+     "type": "click",
+     "pointer": "touch",
+     "trusted": true,
+     "on": "elsewhere",
+     "t": 1900
+    }
+   ],
+   "media": {
+    "hover": false,
+    "coarse": true
+   },
+   "plain": {
+    "hover": false,
+    "focus": false,
+    "focusVisible": false,
+    "background": "rgb(0, 113, 227)"
+   },
+   "gated": {
+    "hover": false,
+    "focus": false,
+    "focusVisible": false,
+    "background": "rgb(0, 113, 227)"
+   },
+   "menuButton": {
+    "hover": false,
+    "focus": false,
+    "focusVisible": false,
+    "background": "rgb(0, 113, 227)"
+   },
+   "menuOpen": false
+  },
+  {
+   "n": 4,
+   "after": "menu-button",
+   "events": [
+    {
+     "type": "pointerdown",
+     "pointer": "touch",
+     "trusted": true,
+     "on": "menu-button",
+     "t": 2716
+    },
+    {
+     "type": "touchstart",
+     "pointer": null,
+     "trusted": true,
+     "on": "menu-button",
+     "t": 2716
+    },
+    {
+     "type": "pointerup",
+     "pointer": "touch",
+     "trusted": true,
+     "on": "menu-button",
+     "t": 2732
+    },
+    {
+     "type": "touchend",
+     "pointer": null,
+     "trusted": true,
+     "on": "menu-button",
+     "t": 2732
+    },
+    {
+     "type": "mouseover",
+     "pointer": null,
+     "trusted": true,
+     "on": "menu-button",
+     "t": 2733
+    },
+    {
+     "type": "mousemove",
+     "pointer": null,
+     "trusted": true,
+     "on": "menu-button",
+     "t": 2733
+    },
+    {
+     "type": "mousedown",
+     "pointer": null,
+     "trusted": true,
+     "on": "menu-button",
+     "t": 2733
+    },
+    {
+     "type": "mouseup",
+     "pointer": null,
+     "trusted": true,
+     "on": "menu-button",
+     "t": 2733
+    },
+    {
+     "type": "click",
+     "pointer": "touch",
+     "trusted": true,
+     "on": "menu-button",
+     "t": 2733
+    }
+   ],
+   "media": {
+    "hover": false,
+    "coarse": true
+   },
+   "plain": {
+    "hover": false,
+    "focus": false,
+    "focusVisible": false,
+    "background": "rgb(0, 113, 227)"
+   },
+   "gated": {
+    "hover": false,
+    "focus": false,
+    "focusVisible": false,
+    "background": "rgb(0, 113, 227)"
+   },
+   "menuButton": {
+    "hover": true,
+    "focus": true,
+    "focusVisible": false,
+    "background": "rgb(0, 113, 227)"
+   },
+   "menuOpen": true
+  },
+  {
+   "n": 5,
+   "after": "menu-close",
+   "events": [
+    {
+     "type": "pointerdown",
+     "pointer": "touch",
+     "trusted": true,
+     "on": "menu-close",
+     "t": 3549
+    },
+    {
+     "type": "touchstart",
+     "pointer": null,
+     "trusted": true,
+     "on": "menu-close",
+     "t": 3549
+    },
+    {
+     "type": "pointerup",
+     "pointer": "touch",
+     "trusted": true,
+     "on": "menu-close",
+     "t": 3566
+    },
+    {
+     "type": "touchend",
+     "pointer": null,
+     "trusted": true,
+     "on": "menu-close",
+     "t": 3566
+    },
+    {
+     "type": "mouseover",
+     "pointer": null,
+     "trusted": true,
+     "on": "menu-close",
+     "t": 3566
+    },
+    {
+     "type": "mousemove",
+     "pointer": null,
+     "trusted": true,
+     "on": "menu-close",
+     "t": 3566
+    },
+    {
+     "type": "mousedown",
+     "pointer": null,
+     "trusted": true,
+     "on": "menu-close",
+     "t": 3566
+    },
+    {
+     "type": "mouseup",
+     "pointer": null,
+     "trusted": true,
+     "on": "menu-close",
+     "t": 3566
+    },
+    {
+     "type": "click",
+     "pointer": "touch",
+     "trusted": true,
+     "on": "menu-close",
+     "t": 3566
+    }
+   ],
+   "media": {
+    "hover": false,
+    "coarse": true
+   },
+   "plain": {
+    "hover": false,
+    "focus": false,
+    "focusVisible": false,
+    "background": "rgb(0, 113, 227)"
+   },
+   "gated": {
+    "hover": false,
+    "focus": false,
+    "focusVisible": false,
+    "background": "rgb(0, 113, 227)"
+   },
+   "menuButton": {
+    "hover": false,
+    "focus": true,
+    "focusVisible": false,
+    "background": "rgb(0, 113, 227)"
+   },
+   "menuOpen": false
+  }
+ ]
+}

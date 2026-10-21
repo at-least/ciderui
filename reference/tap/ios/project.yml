@@ -1,0 +1,33 @@
+# XcodeGen's spec of the iOS taps (../run.mjs generates the project from it
+# into a directory of its own): a host app, which a UI test needs, and the UI
+# test, which drives Safari.
+name: Tap
+options:
+  bundleIdPrefix: dev.ciderui.tap
+  deploymentTarget:
+    iOS: "26.0"
+settings:
+  base:
+    GENERATE_INFOPLIST_FILE: YES
+    SWIFT_VERSION: "5.0"
+targets:
+  TapHost:
+    type: application
+    platform: iOS
+    sources: [Host]
+    settings:
+      base:
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+  TapUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [UITests]
+    dependencies:
+      - target: TapHost
+schemes:
+  TapUITests:
+    build:
+      targets:
+        TapUITests: all
+    test:
+      targets: [TapUITests]

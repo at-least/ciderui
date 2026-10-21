@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A tap's hover</title>
+<style>
+  /* what a tap leaves, at its smallest: a button whose hover is a rule of its
+     own (apple.com's), one whose hover is behind (hover: hover) (ciderui's,
+     decision 5), somewhere else to tap, and the nav's menu, a popover its
+     button opens from beside it with a close button inside */
+  html, body { margin: 0; }
+  body { padding: 24px; font: 17px/25px system-ui; -webkit-text-size-adjust: 100%; }
+  button { display: block; width: 240px; height: 56px; margin: 0 0 24px; padding: 0; border: 0; border-radius: 12px; font: inherit; color: #fff; background: #0071e3; }
+  #plain:hover { background: #0076df; }
+  @media (hover: hover) {
+    #gated:hover { background: #0076df; }
+  }
+  #elsewhere { height: 96px; margin: 0 0 24px; background: #f5f5f7; }
+  #menu { width: 280px; padding: 24px; border: 0; border-radius: 18px; background: #fafafc; }
+  #menu button { margin: 0; }
+</style>
+</head>
+<body>
+<button id="plain">Plain</button>
+<button id="gated">Gated</button>
+<div id="elsewhere">Elsewhere</div>
+<button id="menu-button" popovertarget="menu">Menu</button>
+<div id="menu" popover><button id="menu-close" popovertarget="menu" popovertargetaction="hide">Close</button></div>
+<p id="status">ready</p>
+<script>
+  // every input event (its time in ms from the page's start), and 800ms after each pointerup (a tap's end) what the
+  // tap left, sent to the server (/report), then "reported N" shown, which
+  // the one tapping waits for
+  const events = [];
+  for (const type of ['pointerdown', 'pointerup', 'touchstart', 'touchend', 'mouseover', 'mousemove', 'mousedown', 'mouseup', 'click']) {
+    addEventListener(type, (e) => events.push({ type, pointer: e.pointerType ?? null, trusted: e.isTrusted, on: e.target.id || e.target.tagName?.toLowerCase(), t: Math.round(performance.now()) }), true);
+  }
+  const state = (id) => {
+    const e = document.getElementById(id);
+    return { hover: e.matches(':hover'), focus: e.matches(':focus'), focusVisible: e.matches(':focus-visible'), background: getComputedStyle(e).backgroundColor };
+  };
+  let n = 0;
+  let pending = false;
+  addEventListener('pointerup', (e) => {
+    if (pending) return;
+    pending = true;
+    const after = e.target.id;
+    setTimeout(async () => {
+      const report = {
+        n: ++n, after, events: events.splice(0),
+        media: { hover: matchMedia('(hover: hover)').matches, coarse: matchMedia('(pointer: coarse)').matches },
+        plain: state('plain'), gated: state('gated'), menuButton: state('menu-button'),
+        menuOpen: document.getElementById('menu').matches(':popover-open'),
+      };
+      await fetch('/report', { method: 'POST', body: JSON.stringify(report) });
+      document.getElementById('status').textContent = `reported ${n}`;
+      pending = false;
+    }, 800);
+  }, true);
+</script>
+</body>
+</html>
