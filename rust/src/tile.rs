@@ -21,7 +21,7 @@ pub enum TileSize {
 ///
 /// let none = ();
 /// let html = rsx! {
-///     <Tile size=(TileSize::Large) rounded=false dark=true link=(Some(("/iphone/", "iPhone"))) media=none headline="iPhone" subhead="Hello." callout="">
+///     <Tile size=(TileSize::Large) rounded=false dark=true link=(Some(("/iphone/", "iPhone"))) media=none headline="iPhone" subhead="Hello." callout="" class="">
 ///         <a class="cui-btn" data-size="cta" href="/iphone/">"Learn more"</a>
 ///     </Tile>
 /// }
@@ -45,6 +45,9 @@ pub struct Tile<'a, M: Renderable, C: Renderable> {
     pub subhead: &'a str,
     /// The callout, in the secondary text; `""` for none.
     pub callout: &'a str,
+    /// The page's utilities on the tile (its minimum height removed:
+    /// `min-h-0`); `""` for none.
+    pub class: &'a str,
     /// The buttons (`cui-btn`, `data-size="cta"` in a large tile).
     pub children: C,
 }
@@ -58,6 +61,10 @@ impl<M: Renderable, C: Renderable> Renderable for Tile<'_, M, C> {
         }
         if self.dark {
             class.push_str(" cui-dark");
+        }
+        if !self.class.is_empty() {
+            class.push(' ');
+            class.push_str(self.class);
         }
         let large = self.size == TileSize::Large;
         rsx! {
@@ -91,7 +98,7 @@ mod tests {
     fn renders_the_examples() {
         let none = ();
         let tile = rsx! {
-            <Tile size=(TileSize::Default) rounded=false dark=false link=(Some(("/upgrade/", "Apple Upgrade"))) media=none headline="Apple Upgrade" subhead="Get the latest iPhone." callout="">
+            <Tile size=(TileSize::Default) rounded=false dark=false link=(Some(("/upgrade/", "Apple Upgrade"))) media=none headline="Apple Upgrade" subhead="Get the latest iPhone." callout="" class="">
                 <a class="cui-btn" href="/upgrade/">"Learn more"</a>
             </Tile>
         }
@@ -101,7 +108,7 @@ mod tests {
             example(include_str!("../../components/tile/examples/tile.html"))
         );
         let hero = rsx! {
-            <Tile size=(TileSize::Large) rounded=false dark=false link=(Some(("/iphone/", "iPhone Duo"))) media=none headline="iPhone Duo" subhead="Hello, hello." callout="Available starting 10.23">
+            <Tile size=(TileSize::Large) rounded=false dark=false link=(Some(("/iphone/", "iPhone Duo"))) media=none headline="iPhone Duo" subhead="Hello, hello." callout="Available starting 10.23" class="">
                 <a class="cui-btn" data-size="cta" href="/iphone/">"Learn more"</a>
                 <a class="cui-btn" data-size="cta" data-variant="secondary" href="/buy/">"Pre-order"</a>
             </Tile>
@@ -118,8 +125,21 @@ mod tests {
     fn an_empty_headline_panics() {
         let none = ();
         let _ = rsx! {
-            <Tile size=(TileSize::Default) rounded=true dark=false link=None media=none headline="" subhead="" callout="">"x"</Tile>
+            <Tile size=(TileSize::Default) rounded=true dark=false link=None media=none headline="" subhead="" callout="" class="">"x"</Tile>
         }
         .render();
+    }
+
+    #[test]
+    fn takes_the_pages_utilities() {
+        let none = ();
+        let html = rsx! {
+            <Tile size=(TileSize::Default) rounded=true dark=false link=None media=none headline="x" subhead="" callout="" class="min-h-0">"x"</Tile>
+        }
+        .render();
+        assert!(
+            html.as_inner()
+                .starts_with(r#"<div class="cui-tile cui-tile-rounded min-h-0">"#)
+        );
     }
 }

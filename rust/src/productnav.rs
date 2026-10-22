@@ -12,7 +12,7 @@ use crate::{Class, icon};
 ///
 /// let html = rsx! {
 ///     <ProductNav id="products" label="Products" paddles=false class="">
-///         <ProductNavItem href="/shop/buy-mac" name="Mac">
+///         <ProductNavItem href="/shop/buy-mac" name="Mac" class="">
 ///             <img class="cui-productnav-image" src="/mac.png" width="200" height="130" alt="">
 ///         </ProductNavItem>
 ///     </ProductNav>
@@ -59,6 +59,8 @@ pub struct ProductNavItem<'a, M: Renderable> {
     pub href: &'a str,
     /// The product's name. Required: an empty one panics.
     pub name: &'a str,
+    /// The page's utilities on its root, the `<li>`; `""` for none.
+    pub class: &'a str,
     /// Its image, `cui-productnav-image` on an `<img>` (with its width and
     /// height: its shape sets its width).
     pub children: M,
@@ -71,7 +73,7 @@ impl<M: Renderable> Renderable for ProductNavItem<'_, M> {
             "ciderui::ProductNavItem needs a name"
         );
         rsx! {
-            <li><a class="cui-productnav-item" href=(self.href)>(self.children)<span class="cui-productnav-name">(self.name)</span></a></li>
+            <li class=(self.class)[!self.class.is_empty()]><a class="cui-productnav-item" href=(self.href)>(self.children)<span class="cui-productnav-name">(self.name)</span></a></li>
         }
         .render_to(buffer);
     }
@@ -95,7 +97,7 @@ mod tests {
         let html = rsx! {
             <ProductNav id="products" label="Products" paddles=false class="">
                 @for (href, name) in items {
-                    <ProductNavItem href=(href) name=(name)>
+                    <ProductNavItem href=(href) name=(name) class="">
                         <img class="cui-productnav-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTMwIi8+" width="200" height="130" alt="">
                     </ProductNavItem>
                 }
@@ -113,6 +115,16 @@ mod tests {
     #[test]
     #[should_panic(expected = "needs a name")]
     fn an_empty_name_panics() {
-        let _ = rsx! { <ProductNavItem href="/x" name="">"x"</ProductNavItem> }.render();
+        let _ = rsx! { <ProductNavItem href="/x" name="" class="">"x"</ProductNavItem> }.render();
+    }
+
+    #[test]
+    fn an_item_takes_the_pages_utilities() {
+        let html = rsx! { <ProductNavItem href="/x" name="x" class="hidden">"x"</ProductNavItem> }
+            .render();
+        assert!(
+            html.as_inner()
+                .starts_with(r#"<li class="hidden"><a class="cui-productnav-item""#)
+        );
     }
 }

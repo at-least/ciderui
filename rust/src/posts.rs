@@ -61,7 +61,7 @@ impl<R: Renderable> Renderable for Posts<'_, R> {
 ///
 /// let none = ();
 /// let html = rsx! {
-///     <Post href="/news/zola/" media=none category="Update" datetime="2026-10-19" date="October 19, 2026" headline="ciderui comes to Zola" />
+///     <Post href="/news/zola/" media=none category="Update" datetime="2026-10-19" date="October 19, 2026" headline="ciderui comes to Zola" class="" />
 /// }
 /// .render();
 /// assert!(html.as_inner().starts_with(r#"<a class="cui-post" href="/news/zola/"><div class="cui-post-content"><p class="cui-post-category">Update</p>"#));
@@ -81,6 +81,8 @@ pub struct Post<'a, M: Renderable> {
     pub date: &'a str,
     /// Its headline, an `<h3>`. Required: an empty one panics.
     pub headline: &'a str,
+    /// The page's utilities on its root; `""` for none.
+    pub class: &'a str,
 }
 
 impl<M: Renderable> Renderable for Post<'_, M> {
@@ -92,7 +94,7 @@ impl<M: Renderable> Renderable for Post<'_, M> {
             "ciderui::Post's date needs its datetime"
         );
         rsx! {
-            <a class="cui-post" href=(self.href)>
+            <a class=(crate::Class("cui-post", self.class)) href=(self.href)>
                 (self.media)
                 <div class="cui-post-content">
                     @if !self.category.is_empty() {
@@ -174,7 +176,7 @@ mod tests {
             let html = rsx! {
                 <Posts size=(size) heading=(heading) class="">
                     @for (href, category, datetime, date, headline) in rows {
-                        <li><Post href=(href) media=(rsx! { <img class="cui-post-media" src=(PICTURE) alt="" width="1280" height="720"> }) category=(category) datetime=(datetime) date=(date) headline=(headline) /></li>
+                        <li><Post href=(href) media=(rsx! { <img class="cui-post-media" src=(PICTURE) alt="" width="1280" height="720"> }) category=(category) datetime=(datetime) date=(date) headline=(headline) class="" /></li>
                     }
                 </Posts>
             }
@@ -188,7 +190,7 @@ mod tests {
     fn a_date_with_no_datetime_panics() {
         let none = ();
         let _ = rsx! {
-            <Post href="/x/" media=none category="" datetime="" date="Today" headline="x" />
+            <Post href="/x/" media=none category="" datetime="" date="Today" headline="x" class="" />
         }
         .render();
     }
@@ -197,5 +199,15 @@ mod tests {
     #[should_panic(expected = "Posts needs a heading")]
     fn an_empty_heading_panics() {
         let _ = rsx! { <Posts size=(PostSize::Default) heading="" class="">""</Posts> }.render();
+    }
+
+    #[test]
+    fn a_post_takes_the_pages_utilities() {
+        let none = ();
+        let html = rsx! {
+            <Post href="/x/" media=none category="" datetime="" date="" headline="x" class="hidden" />
+        }
+        .render();
+        assert!(html.as_inner().starts_with(r#"<a class="cui-post hidden""#));
     }
 }

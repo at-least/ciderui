@@ -12,7 +12,7 @@ use crate::{Class, icon};
 ///
 /// let html = rsx! {
 ///     <Accordion large=false class="">
-///         <AccordionItem question="When will I get my items?" open=false>
+///         <AccordionItem question="When will I get my items?" open=false class="">
 ///             <p>"Enter a ZIP code to see when your items arrive."</p>
 ///         </AccordionItem>
 ///     </Accordion>
@@ -44,6 +44,8 @@ pub struct AccordionItem<'a, R: Renderable> {
     pub question: &'a str,
     /// Whether its answer is open.
     pub open: bool,
+    /// The page's utilities on its root; `""` for none.
+    pub class: &'a str,
     /// The answer.
     pub children: R,
 }
@@ -55,7 +57,7 @@ impl<R: Renderable> Renderable for AccordionItem<'_, R> {
             "ciderui::AccordionItem needs a question"
         );
         rsx! {
-            <details class="cui-accordion-item" open[self.open]>
+            <details class=(crate::Class("cui-accordion-item", self.class)) open[self.open]>
                 <summary class="cui-accordion-question">(self.question)(icon::DISCLOSURE)</summary>
                 <div class="cui-accordion-answer">(self.children)</div>
             </details>
@@ -73,10 +75,10 @@ mod tests {
     fn renders_the_examples() {
         let accordion = rsx! {
             <Accordion large=false class="">
-                <AccordionItem question="When will I get my items?" open=true>
+                <AccordionItem question="When will I get my items?" open=true class="">
                     <p>"Enter a ZIP code to see when your items arrive."</p>
                 </AccordionItem>
-                <AccordionItem question="Can I pick up my items at an Apple Store?" open=false>
+                <AccordionItem question="Can I pick up my items at an Apple Store?" open=false class="">
                     <p>"Yes. Choose a store at checkout."</p>
                 </AccordionItem>
             </Accordion>
@@ -90,7 +92,7 @@ mod tests {
         );
         let large = rsx! {
             <Accordion large=true class="">
-                <AccordionItem question="Questions About Buying" open=false>
+                <AccordionItem question="Questions About Buying" open=false class="">
                     <p>"Answers to the most asked questions."</p>
                 </AccordionItem>
             </Accordion>
@@ -107,6 +109,18 @@ mod tests {
     #[test]
     #[should_panic(expected = "needs a question")]
     fn an_empty_question_panics() {
-        let _ = rsx! { <AccordionItem question="" open=false>"x"</AccordionItem> }.render();
+        let _ =
+            rsx! { <AccordionItem question="" open=false class="">"x"</AccordionItem> }.render();
+    }
+
+    #[test]
+    fn an_item_takes_the_pages_utilities() {
+        let html =
+            rsx! { <AccordionItem question="x" open=false class="hidden">"x"</AccordionItem> }
+                .render();
+        assert!(
+            html.as_inner()
+                .starts_with(r#"<details class="cui-accordion-item hidden">"#)
+        );
     }
 }

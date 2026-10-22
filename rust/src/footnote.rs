@@ -8,7 +8,7 @@ use hypertext::{Buffer, prelude::*};
 /// use hypertext::prelude::*;
 /// use ciderui::Footnote;
 ///
-/// let html = rsx! { <p>"25 hours"<Footnote href="#footnote-1" mark="1" /></p> }.render();
+/// let html = rsx! { <p>"25 hours"<Footnote href="#footnote-1" mark="1" class="" /></p> }.render();
 /// assert_eq!(html.as_inner(), r##"<p>25 hours<sup class="cui-footnote"><a href="#footnote-1" aria-label="Footnote 1">1</a></sup></p>"##);
 /// ```
 pub struct Footnote<'a> {
@@ -17,6 +17,8 @@ pub struct Footnote<'a> {
     /// The mark: a number, or a symbol (◊, ※). Required: an empty one
     /// panics.
     pub mark: &'a str,
+    /// The page's utilities on its root; `""` for none.
+    pub class: &'a str,
 }
 
 impl Renderable for Footnote<'_> {
@@ -24,7 +26,7 @@ impl Renderable for Footnote<'_> {
         assert!(!self.mark.is_empty(), "ciderui::Footnote needs a mark");
         let label = format!("Footnote {}", self.mark);
         rsx! {
-            <sup class="cui-footnote"><a href=(self.href) aria-label=(label)>(self.mark)</a></sup>
+            <sup class=(crate::Class("cui-footnote", self.class))><a href=(self.href) aria-label=(label)>(self.mark)</a></sup>
         }
         .render_to(buffer);
     }
@@ -38,7 +40,7 @@ mod tests {
     #[test]
     fn renders_the_example() {
         let html = rsx! {
-            <p class="cui-body">"Up to 25 hours of video playback"<Footnote href="#footnote-1" mark="1" /></p>
+            <p class="cui-body">"Up to 25 hours of video playback"<Footnote href="#footnote-1" mark="1" class="" /></p>
         }
         .render();
         assert_eq!(
@@ -52,6 +54,15 @@ mod tests {
     #[test]
     #[should_panic(expected = "needs a mark")]
     fn an_empty_mark_panics() {
-        let _ = rsx! { <Footnote href="#f" mark="" /> }.render();
+        let _ = rsx! { <Footnote href="#f" mark="" class="" /> }.render();
+    }
+
+    #[test]
+    fn takes_the_pages_utilities() {
+        let html = rsx! { <Footnote href="#f" mark="1" class="ml-1" /> }.render();
+        assert!(
+            html.as_inner()
+                .starts_with(r#"<sup class="cui-footnote ml-1">"#)
+        );
     }
 }

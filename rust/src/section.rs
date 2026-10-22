@@ -86,7 +86,7 @@ impl<R: Renderable> Renderable for Section<'_, R> {
 /// use hypertext::prelude::*;
 /// use ciderui::SectionHeader;
 ///
-/// let html = rsx! { <SectionHeader headline="Get the highlights." links=(&[("Watch the film", "/film")]) /> }.render();
+/// let html = rsx! { <SectionHeader headline="Get the highlights." links=(&[("Watch the film", "/film")]) class="" /> }.render();
 /// assert!(html.as_inner().starts_with(
 ///     r#"<header class="cui-section-header"><h2 class="cui-section-headline">Get the highlights.</h2><ul class="cui-section-links"><li><a class="cui-link" data-variant="more" href="/film">"#,
 /// ));
@@ -96,6 +96,8 @@ pub struct SectionHeader<'a> {
     pub headline: &'a str,
     /// The links beside it, (text, href) each; none, no list.
     pub links: &'a [(&'a str, &'a str)],
+    /// The page's utilities on its root; `""` for none.
+    pub class: &'a str,
 }
 
 impl Renderable for SectionHeader<'_> {
@@ -105,7 +107,7 @@ impl Renderable for SectionHeader<'_> {
             "ciderui::SectionHeader needs a headline"
         );
         rsx! {
-            <header class="cui-section-header">
+            <header class=(crate::Class("cui-section-header", self.class))>
                 <h2 class="cui-section-headline">(self.headline)</h2>
                 @if !self.links.is_empty() {
                     <ul class="cui-section-links">
@@ -144,7 +146,7 @@ mod tests {
     #[test]
     fn renders_the_header_example() {
         let html = rsx! {
-            <SectionHeader headline="Get the highlights." links=(&[("Watch the film", "#film"), ("Watch the event", "#event")]) />
+            <SectionHeader headline="Get the highlights." links=(&[("Watch the film", "#film"), ("Watch the event", "#event")]) class="" />
         }
         .render();
         assert_eq!(
@@ -157,7 +159,7 @@ mod tests {
 
     #[test]
     fn a_header_without_links_has_no_list() {
-        let html = rsx! { <SectionHeader headline="Values" links=(&[]) /> }.render();
+        let html = rsx! { <SectionHeader headline="Values" links=(&[]) class="" /> }.render();
         assert_eq!(
             html.as_inner(),
             r#"<header class="cui-section-header"><h2 class="cui-section-headline">Values</h2></header>"#
@@ -178,6 +180,15 @@ mod tests {
     #[test]
     #[should_panic(expected = "needs a headline")]
     fn an_empty_headline_panics() {
-        let _ = rsx! { <SectionHeader headline="" links=(&[]) /> }.render();
+        let _ = rsx! { <SectionHeader headline="" links=(&[]) class="" /> }.render();
+    }
+
+    #[test]
+    fn a_header_takes_the_pages_utilities() {
+        let html = rsx! { <SectionHeader headline="x" links=(&[]) class="mb-0" /> }.render();
+        assert!(
+            html.as_inner()
+                .starts_with(r#"<header class="cui-section-header mb-0">"#)
+        );
     }
 }

@@ -63,7 +63,7 @@ impl<R: Renderable> Renderable for Stories<'_, R> {
 ///
 /// let media = rsx! { <img class="cui-story-media" src="/zola.jpg" alt=""> };
 /// let html = rsx! {
-///     <Story size=(StorySize::Large) href="/news/zola/" media=(media) category="Update" datetime="2026-10-19" date="October 19, 2026" headline="ciderui comes to Zola" />
+///     <Story size=(StorySize::Large) href="/news/zola/" media=(media) category="Update" datetime="2026-10-19" date="October 19, 2026" headline="ciderui comes to Zola" class="" />
 /// }
 /// .render();
 /// assert!(html.as_inner().starts_with(r#"<a class="cui-story" data-size="lg" href="/news/zola/"><img class="cui-story-media""#));
@@ -85,6 +85,8 @@ pub struct Story<'a, M: Renderable> {
     pub date: &'a str,
     /// Its headline, an `<h3>`. Required: an empty one panics.
     pub headline: &'a str,
+    /// The page's utilities on its root; `""` for none.
+    pub class: &'a str,
 }
 
 impl<M: Renderable> Renderable for Story<'_, M> {
@@ -101,7 +103,7 @@ impl<M: Renderable> Renderable for Story<'_, M> {
             StorySize::Large => Some("lg"),
         };
         rsx! {
-            <a class="cui-story" data-size=(size.unwrap_or_default())[size.is_some()] href=(self.href)>
+            <a class=(crate::Class("cui-story", self.class)) data-size=(size.unwrap_or_default())[size.is_some()] href=(self.href)>
                 (self.media)
                 <div class="cui-story-content">
                     <div class="cui-story-head">
@@ -182,7 +184,7 @@ mod tests {
         let html = rsx! {
             <Stories heading="Latest News" class="">
                 @for (size, href, category, datetime, date, headline) in stories {
-                    <li><Story size=(size) href=(href) media=(rsx! { <img class="cui-story-media" src=(PICTURE) alt="" width="1280" height="720"> }) category=(category) datetime=(datetime) date=(date) headline=(headline) /></li>
+                    <li><Story size=(size) href=(href) media=(rsx! { <img class="cui-story-media" src=(PICTURE) alt="" width="1280" height="720"> }) category=(category) datetime=(datetime) date=(date) headline=(headline) class="" /></li>
                 }
             </Stories>
         }
@@ -199,7 +201,7 @@ mod tests {
     fn no_category_no_date_no_picture() {
         let none = ();
         let html = rsx! {
-            <Story size=(StorySize::Default) href="/x/" media=none category="" datetime="" date="" headline="x" />
+            <Story size=(StorySize::Default) href="/x/" media=none category="" datetime="" date="" headline="x" class="" />
         }
         .render();
         assert_eq!(
@@ -213,7 +215,7 @@ mod tests {
     fn a_date_with_no_datetime_panics() {
         let none = ();
         let _ = rsx! {
-            <Story size=(StorySize::Default) href="/x/" media=none category="" datetime="" date="Today" headline="x" />
+            <Story size=(StorySize::Default) href="/x/" media=none category="" datetime="" date="Today" headline="x" class="" />
         }
         .render();
     }
@@ -222,5 +224,18 @@ mod tests {
     #[should_panic(expected = "Stories needs a heading")]
     fn an_empty_heading_panics() {
         let _ = rsx! { <Stories heading="" class="">""</Stories> }.render();
+    }
+
+    #[test]
+    fn a_story_takes_the_pages_utilities() {
+        let none = ();
+        let html = rsx! {
+            <Story size=(StorySize::Default) href="/x/" media=none category="" datetime="" date="" headline="x" class="hidden" />
+        }
+        .render();
+        assert!(
+            html.as_inner()
+                .starts_with(r#"<a class="cui-story hidden""#)
+        );
     }
 }
