@@ -19,7 +19,7 @@
 // result is results/<browser>.json.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { open } from '../browsers.mjs';
+import { open, wait } from '../browsers.mjs';
 
 const BROWSER = process.env.BROWSER;
 const html = readFileSync(new URL('./page.html', import.meta.url));
@@ -27,13 +27,11 @@ const server = createServer((req, res) => { res.writeHead(200, { 'content-type':
 await new Promise(r => server.listen(0, '127.0.0.1', r));
 const src = readFileSync(new URL('./popover.js', import.meta.url), 'utf8');
 const call = (fn) => `(async () => {\n${src}\nreturn ${fn};\n})()`;
-const wait = (ms) => `new Promise(r => setTimeout(() => r(true), ${ms}))`;
 let page;
 const got = {};
 const IOS = BROWSER === 'ios';
 const KEYBOARD = BROWSER === 'safari';
-const script = (selector, call) => page.run(`Promise.resolve((document.querySelector(${JSON.stringify(selector)}).${call}(), true))`);
-const click = (selector) => IOS ? script(selector, 'click') : KEYBOARD ? script(selector, 'focus').then(() => page.press('Enter')) : page.click(selector);
+const click = (selector) => IOS ? page.script(selector, 'click') : KEYBOARD ? page.script(selector, 'focus').then(() => page.press('Enter')) : page.click(selector);
 try {
   page = await open(BROWSER, `http://127.0.0.1:${server.address().port}/`);
   await page.run(call('arm()'));
@@ -44,7 +42,7 @@ try {
   if (!IOS) {
     await page.press(KEYBOARD ? 'Alt+Tab' : 'Tab');
     got.tabbed = await page.run(call('state()'));
-    await script('#close', 'focus');
+    await page.script('#close', 'focus');
   }
   await click('#close');
   got.closedAgain = await page.run(call('state()'));

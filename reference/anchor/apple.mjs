@@ -13,10 +13,9 @@
 // result is results/apple.json; it records what each page does, and fails
 // only where a page has no mark, note or nav to read.
 import { mkdirSync, writeFileSync } from 'node:fs';
-import { open } from '../browsers.mjs';
+import { open, wait } from '../browsers.mjs';
 
 const PAGES = ['iphone-18-pro', 'macbook-air', 'airpods-pro'];
-const wait = (ms) => `new Promise((r) => setTimeout(() => r(true), ${ms}))`;
 // the rules that set the note's scroll-margin-top, through grouping rules
 // (@media, @supports, @layer)
 const RULES = `(note) => {

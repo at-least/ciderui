@@ -1,8 +1,10 @@
 // The browsers the reference probes run in, behind one interface:
-// open(name, url, options) loads the page and gives { label, run(expr), click(selector),
+// open(name, url, options) loads the page and gives { label, run(expr), script(selector, call), click(selector),
 // dblclick(selector), press(key), type(text), move(x, y, ms), go(url), size(width, height),
 // behind(type), shot(), close() }, where run evaluates an expression whose value is a promise and hands back
-// what it resolves to, click, dblclick, press, type and move are the browser's own input (a
+// what it resolves to, script calls an element's method from the page's script (its
+// click(), the activation a tap's click runs, or its focus()), click, dblclick, press,
+// type and move are the browser's own input (a
 // trusted click on the element; two at its middle, a double-click; a key pressed: the
 // WebDriver key's name, as Escape, a character, or keys held together, as Alt+Tab or
 // ControlOrMeta+a, the platform's command key with another; text typed a key at a time,
@@ -45,8 +47,18 @@ import { execFileSync, spawn, spawnSync } from 'node:child_process';
 
 // options: Playwright's page options (a touch screen: hasTouch), for its
 // browsers only
-export function open(name, url, options) {
+export async function open(name, url, options) {
   if (options && ['safari', 'ios'].includes(name)) throw new Error(`no page options in ${name}`);
+  const page = await launch(name, url, options);
+  page.script = (selector, call) => page.run(`Promise.resolve((document.querySelector(${JSON.stringify(selector)}).${call}(), true))`);
+  return page;
+}
+
+// an expression for run(): a promise that resolves to true ms milliseconds
+// on, by the page's own clock
+export const wait = (ms) => `new Promise(r => setTimeout(() => r(true), ${ms}))`;
+
+function launch(name, url, options) {
   switch (name) {
     case 'chrome': return viaPlaywright('chromium', 'chrome', url, options);
     case 'chromium': return viaPlaywright('chromium', undefined, url, options);

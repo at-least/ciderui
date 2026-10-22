@@ -20,7 +20,7 @@
 // results/<browser>.json.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { open } from '../browsers.mjs';
+import { open, wait } from '../browsers.mjs';
 
 const BROWSER = process.env.BROWSER;
 const html = readFileSync(new URL('./page.html', import.meta.url));
@@ -35,7 +35,6 @@ const RINGS = {
   link: 'main > .cui-accordion:not([data-size]) .cui-accordion-answer a',
 };
 const read = `Promise.resolve((() => { const d = document.querySelector('${ITEM}'); return { open: d.open, item: d.getBoundingClientRect().height, answer: d.querySelector('.cui-accordion-answer').getBoundingClientRect().height, chevron: getComputedStyle(d.querySelector('svg')).transform }; })())`;
-const wait = (ms) => `new Promise(r => setTimeout(() => r(true), ${ms}))`;
 let page;
 // the window in front, where Safari matches :focus and a click reaches the
 // page: an app of the owner's took the Mac's front by itself during a run,

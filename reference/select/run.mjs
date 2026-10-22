@@ -20,7 +20,7 @@
 // The result is results/<browser>.json.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { open } from '../browsers.mjs';
+import { open, wait } from '../browsers.mjs';
 import { taps } from '../xcuitest.mjs';
 
 const BROWSER = process.env.BROWSER;
@@ -39,7 +39,6 @@ const server = createServer((req, res) => {
 });
 await new Promise(r => server.listen(0, '127.0.0.1', r));
 const origin = `http://127.0.0.1:${server.address().port}`;
-const wait = (ms) => `new Promise(r => setTimeout(() => r(true), ${ms}))`;
 
 const got = {};
 let label;

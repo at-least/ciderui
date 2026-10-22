@@ -41,7 +41,7 @@
 import { createServer } from 'node:http';
 import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { extname, join, relative } from 'node:path';
-import { open } from '../browsers.mjs';
+import { open, wait } from '../browsers.mjs';
 
 const BROWSER = process.env.BROWSER;
 const SITE = process.env.SITE;
@@ -62,7 +62,6 @@ const pages = (dir) => readdirSync(dir).flatMap((f) => {
 });
 const paths = pages(SITE).map((f) => `/${relative(SITE, f).replace(/index\.html$/, '')}`).sort();
 
-const wait = (ms) => `new Promise((r) => setTimeout(() => r(true), ${ms}))`;
 // a page as it settles: the fonts, the frames' sizes a frame after theirs
 const INSPECT = `(async () => {
   await document.fonts.ready;

@@ -22,7 +22,7 @@
 // curtain in Safari too). The result is results/<browser>.json.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { open } from '../browsers.mjs';
+import { open, wait } from '../browsers.mjs';
 
 const BROWSER = process.env.BROWSER;
 const html = readFileSync(new URL('./page.html', import.meta.url), 'utf8');
@@ -34,16 +34,14 @@ await new Promise(r => server.listen(0, '127.0.0.1', r));
 const origin = `http://127.0.0.1:${server.address().port}`;
 const src = readFileSync(new URL('./search.js', import.meta.url), 'utf8');
 const call = (fn) => `(async () => {\n${src}\nreturn ${fn};\n})()`;
-const wait = (ms) => `new Promise(r => setTimeout(() => r(true), ${ms}))`;
 let page;
 const got = {};
 const IOS = BROWSER === 'ios';
 const KEYBOARD = BROWSER === 'safari';
-const script = (selector, call) => page.run(`Promise.resolve((document.querySelector(${JSON.stringify(selector)}).${call}(), true))`);
 // a button: by script on the simulator, by Return in Safari, else clicked
-const press = (selector) => IOS ? script(selector, 'click') : KEYBOARD ? script(selector, 'focus').then(() => page.press('Enter')) : page.click(selector);
+const press = (selector) => IOS ? page.script(selector, 'click') : KEYBOARD ? page.script(selector, 'focus').then(() => page.press('Enter')) : page.click(selector);
 // a click anywhere else: the browser's own, but on the simulator
-const click = (selector) => IOS ? script(selector, 'click') : page.click(selector);
+const click = (selector) => IOS ? page.script(selector, 'click') : page.click(selector);
 const state = () => page.run(call('state()'));
 const pixels = async (offset) => page.run(call(`pixels(${JSON.stringify(await page.shot())}, ${offset})`));
 const opened = async () => { await press('#search'); await page.run(wait(900)); };
