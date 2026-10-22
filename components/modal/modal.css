@@ -118,6 +118,10 @@
     box-sizing: border-box;
     width: 100%;
     max-width: 640px;
+    /* below 735px it runs on to the layer's foot, however short its
+       content: apple.com's least height (overlay:panel, the window's less
+       its 20px above) */
+    min-height: calc(100vh - 20px);
     margin: 20px auto 0;
     padding: 76px 6.25% 60px;
     border-radius: 18px 18px 0 0;
@@ -129,6 +133,7 @@
 
     @media (width >= 735px) {
       max-width: 816px;
+      min-height: 0;
       margin-block: 40px;
       padding-inline: 76px;
       border-radius: 18px;
@@ -206,6 +211,7 @@
        its top when it is taller than the window */
     .cui-modal-panel {
       max-width: 480px;
+      min-height: auto;
       margin: auto;
       padding: 76px min(6.25%, 30px) 60px;
       border-radius: 28px;

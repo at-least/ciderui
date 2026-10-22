@@ -48,7 +48,7 @@ export const cases = [
       { target: 'html', props: ['overflow-x', 'overflow-y'], apple: ['overlay', 'root'] },
       { target: '.cui-modal', props: ['box-width', 'box-height', 'box-top', 'box-left'], golden: BOX },
       // the panel and its content's room (apple.com's content box, inside its panel)
-      { target: '.cui-modal-panel', props: ['background-color', 'border-top-left-radius', 'border-top-right-radius', 'border-bottom-left-radius', 'border-bottom-right-radius', 'margin-top', 'margin-bottom'], apple: ['overlay', 'panel'] },
+      { target: '.cui-modal-panel', props: ['background-color', 'border-top-left-radius', 'border-top-right-radius', 'border-bottom-left-radius', 'border-bottom-right-radius', 'margin-top', 'margin-bottom', 'min-height'], apple: ['overlay', 'panel'] },
       { target: '.cui-modal-panel', props: PADDING, apple: ['overlay', 'content'] },
       { target: '.cui-modal-panel', props: ['box-width', 'box-left', 'box-top'], golden: BOX },
       // the close button: its circle, hovered and pressed
