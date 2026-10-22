@@ -205,6 +205,13 @@
       backdrop-filter: blur(20px);
     }
 
+    /* backdrop-filter alone, which the build does not prefix here (the
+       var()): Safari 17.5 and 17.6, whose declarations take
+       -webkit-backdrop-filter alone, move the blur all the same, by
+       WebKit's source at Safari 17.5's branch (618.2.12.11): a transition
+       takes the name with the property off, and blends the value both
+       names set; blur(0), built as blur(), parses there as a 0px blur.
+       Read, not run: no Safari 17 here */
     &[open]::backdrop {
       transition: background-color 0.75s var(--cui-modal-ease), backdrop-filter 0.75s var(--cui-modal-ease);
     }
