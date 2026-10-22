@@ -188,6 +188,13 @@
     letter-spacing: var(--cui-tracking-17);
   }
 
+  /* its label, over it, passes the pointer to it, as apple.com's
+     (tradein:dropdown.label): a click on the label opens its list, where the
+     label's own click would only focus it */
+  select.cui-field-input + .cui-field-label {
+    pointer-events: none;
+  }
+
   /* a textarea's box: the input's edge, corners and ground, the label in its
      top 23px; the textarea in it scrolls under that room, not under the
      label */

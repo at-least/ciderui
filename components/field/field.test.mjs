@@ -152,7 +152,7 @@ export const cases = [
       { target: INPUT, props: [...TYPE, 'color', ...PAD, ...EDGE, 'background-color', 'height', 'box-sizing', 'appearance', '-webkit-appearance', 'cursor', 'text-overflow', 'outline-style'], apple: ['tradein', 'dropdown.select'] },
       { target: INPUT, state: 'hover', props: ['color', 'background-color', 'border-top-color', 'border-top-width'], apple: ['tradein', 'dropdown.select', 'hover'] },
       { target: INPUT, state: 'focus', props: [...PAD, 'border-top-width', 'border-top-color', 'background-color', 'outline-style'], apple: ['tradein', 'dropdown.select', 'focus'] },
-      { target: LABEL, props: [...TYPE, 'color', 'position', 'top', 'left', 'white-space', 'transition-property', 'transition-duration', 'transition-timing-function'], apple: ['tradein', 'dropdown.label'] },
+      { target: LABEL, props: [...TYPE, 'color', 'position', 'top', 'left', 'white-space', 'transition-property', 'transition-duration', 'transition-timing-function', 'pointer-events'], apple: ['tradein', 'dropdown.label'] },
       { target: LABEL, on: INPUT, state: 'focus', props: [...TYPE, 'top'], golden: 'empty, its label the placeholder focused too: the select\'s text is not shown until a choice is made (apple.com\'s class, set by its script on a choice)' },
       { target: CHEVRON, props: ['position', 'top', 'right', 'pointer-events'], apple: ['tradein', 'dropdown.chevron'] },
       { target: CHEVRON, props: ['box-width', 'box-height', 'color'], golden: 'apple.com\'s 25px chevron in #6e6e73 (its SVG\'s fill, tradein:dropdown.chevron), drawn as ciderui\'s DROPDOWN (reference/icons/form.mjs)' },
