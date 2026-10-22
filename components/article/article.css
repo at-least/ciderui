@@ -404,18 +404,17 @@
       margin-top: 44px;
     }
 
-    ol {
+    :where(ol:not([class*="cui-"])) {
       margin: 0;
       padding-left: 12px;
       list-style-type: decimal;
     }
 
-    li,
-    p {
+    :where(li, p):where(:not([class*="cui-"])) {
       margin: 0;
     }
 
-    a {
+    :where(a:not([class*="cui-"])) {
       color: var(--cui-c-text);
       text-decoration-line: underline;
     }

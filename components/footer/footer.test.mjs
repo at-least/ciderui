@@ -17,6 +17,16 @@ const SECTION = '.cui-footer-column:first-child .cui-footer-section:first-child'
 
 export const cases = [
   {
+    // a link and a button in the footer's notes keep their own look (rule 4)
+    name: 'footer-parts',
+    html: ex('footer').replace('<section class="cui-footer-notes" aria-label="Footnotes">', '<section class="cui-footer-notes" aria-label="Footnotes"><p>See <a class="cui-link" href="#guide">the guide</a> <a class="cui-btn" href="#buy">Buy</a></p>'),
+    widths: [1200],
+    checks: [
+      { target: '.cui-footer-notes .cui-link', props: ['color', 'text-decoration-line'], golden: 'a link in the footer\'s notes the kit\'s link still, not the footer\'s (rule 4)' },
+      { target: '.cui-footer-notes .cui-btn', props: ['color', 'background-color', 'text-decoration-line'], golden: 'a button in the footer\'s notes the kit\'s button still (rule 4)' },
+    ],
+  },
+  {
     name: 'footer',
     html: ex('footer'),
     checks: [

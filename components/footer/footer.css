@@ -63,7 +63,8 @@
     color: var(--cui-c-on-footer);
     background-color: var(--cui-c-bg-alt);
 
-    a {
+    /* its links, its own and a page's, not a component's in it (rule 4) */
+    :where(a:not([class*="cui-"]), .cui-footer-locale) {
       color: var(--cui-c-on-footer-link);
       text-decoration-line: none;
 
@@ -90,7 +91,7 @@
     padding: 17px 0 11px;
     border-bottom: 1px solid var(--cui-c-separator);
 
-    a {
+    :where(a:not([class*="cui-"])) {
       text-decoration-line: underline;
     }
   }
@@ -168,7 +169,7 @@
     display: none;
     padding: 5px 0 16px;
 
-    a {
+    :where(a:not([class*="cui-"])) {
       display: block;
       padding: 6px 14px;
     }
@@ -225,7 +226,7 @@
         margin-bottom: 9.6px;
       }
 
-      a {
+      :where(a:not([class*="cui-"])) {
         display: inline;
         padding: 0;
       }
@@ -278,7 +279,7 @@
       display: inline-block;
       margin: 5px 6px 0 0;
 
-      a {
+      :where(a:not([class*="cui-"])) {
         margin-left: -9px;
         padding: 0 9px;
       }

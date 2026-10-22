@@ -119,4 +119,14 @@ export const cases = [
       { target: '.cui-article-body > ol pre', props: ['background-color', 'padding-left', 'overflow-x'], golden: `a code block in a list item the copy's, scrolling in its column (${NONE})` },
     ],
   },
+  {
+    // a link and a button in a footnote keep their own look (rule 4)
+    name: 'footnote-parts',
+    html: ex('article').replace(/(<section class="cui-article-footnotes">\s*<ol>)/, '$1<li><p>See <a class="cui-link" href="#guide">the guide</a> <a class="cui-btn" href="#buy">Buy</a></p></li>'),
+    widths: [1200],
+    checks: [
+      { target: '.cui-article-footnotes .cui-link', props: ['color', 'text-decoration-line'], golden: 'a link in a footnote the kit\'s link still, not the footnotes\' (rule 4)' },
+      { target: '.cui-article-footnotes .cui-btn', props: ['color', 'background-color', 'text-decoration-line'], golden: 'a button in a footnote the kit\'s button still (rule 4)' },
+    ],
+  },
 ];
