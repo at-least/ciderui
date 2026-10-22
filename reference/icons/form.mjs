@@ -88,6 +88,10 @@ try {
         const i = (y * img.width + x) * 4;
         if (d[i] - d[i + 1] > 60) { l = Math.min(l, x); r = Math.max(r, x); t = Math.min(t, y); b = Math.max(b, y); }
       }
+      // no red ink left of the text is no mark found, not a box: a box read
+      // so would be inside out (its left past its right), which the check
+      // below took as a place
+      if (r < l || b < t) throw new Error('no red ink left of the message\'s text: the mark is not where it was read');
       return { scale: k, ink: { left: l / k, right: (r + 1) / k, top: t / k, bottom: (b + 1) / k }, textLeft: textLeft.at };
     }, [png, { row: box.width, at: text.x - box.x }]);
     result.alertPlace.rowHeight = box.height;

@@ -1,6 +1,6 @@
 {
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T21:59:57.227Z",
+ "date": "2026-10-22T06:26:12.181Z",
  "ours": {
   "alert": "<circle cx=\"585\" cy=\"497.5\" r=\"456.25\" fill=\"none\" stroke=\"#000\" stroke-width=\"82.5\"/><path d=\"M584 280V550\" fill=\"none\" stroke=\"#000\" stroke-width=\"70\" stroke-linecap=\"round\"/><circle cx=\"585\" cy=\"692.5\" r=\"50\" fill=\"#000\"/>",
   "dropdown": "<svg viewBox=\"0 0 21 21\"><path d=\"M6.075 9.275 10.5 13.7 14.925 9.275\" fill=\"none\" stroke=\"#000\" stroke-width=\"1.45\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
