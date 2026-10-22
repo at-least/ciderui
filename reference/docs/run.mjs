@@ -68,12 +68,16 @@ const INSPECT = `(async () => {
   const broken = (doc) => [...doc.images].filter((i) => !i.complete || !i.naturalWidth).map((i) => i.getAttribute('src').slice(0, 48));
   return {
     width: innerWidth,
-    sideways: document.documentElement.scrollWidth - innerWidth,
+    // against the root's width, not the window's, which holds a scrollbar
+    // in Safari (17px wide), as much as a page could overflow unseen
+    sideways: document.documentElement.scrollWidth - document.documentElement.clientWidth,
     images: broken(document),
     frames: [...document.querySelectorAll('iframe.cz-example')].map((f) => {
       const d = f.contentDocument;
       const sheet = [...d.styleSheets].find((s) => s.href && s.href.includes('/example.css'));
-      return { title: f.title, height: f.clientHeight, content: d.documentElement.scrollHeight, css: Boolean(sheet && sheet.cssRules.length), images: broken(d), width: f.getBoundingClientRect().width, page: document.documentElement.clientWidth };
+      // its content's height, the root's box: its scroll height is never
+      // less than the frame's, which a frame too tall would hide
+      return { title: f.title, height: f.clientHeight, content: Math.ceil(d.documentElement.getBoundingClientRect().height), scrollDown: d.documentElement.scrollHeight - d.documentElement.clientHeight, css: Boolean(sheet && sheet.cssRules.length), images: broken(d), width: f.getBoundingClientRect().width, page: document.documentElement.clientWidth };
     }),
   };
 })()`;
@@ -101,6 +105,7 @@ const read = async (width) => {
       claim(`${where}, "${f.title}": its frame loads its stylesheet and its pictures`, f.css && f.images.length === 0, f);
       claim(`${where}, "${f.title}": its frame is no wider than the page`, f.width <= f.page, f);
       claim(`${where}, "${f.title}": its frame is as tall as its content`, f.height === f.content, f);
+      claim(`${where}, "${f.title}": its frame does not scroll down`, f.scrollDown === 0, f);
     }
   }
 };
@@ -120,10 +125,14 @@ const behave = async (width) => {
     const r = await page.run(`Promise.resolve((() => {
       const d = ${frame(title)}.contentDocument;
       const paddles = [...d.querySelectorAll('[aria-controls="${row}"]')];
-      return { scroll: d.getElementById('${row}').scrollLeft, previous: paddles[0].disabled, shown: getComputedStyle(paddles[1]).display !== 'none', current: [...d.querySelectorAll('.cui-gallery-dot')].findIndex((a) => a.getAttribute('aria-current') === 'true'), seen };
+      const r = d.getElementById('${row}');
+      return { scroll: r.scrollLeft, width: r.clientWidth, max: r.scrollWidth - r.clientWidth, previous: paddles[0].disabled, shown: getComputedStyle(paddles[1]).display !== 'none', current: [...d.querySelectorAll('.cui-gallery-dot')].findIndex((a) => a.getAttribute('aria-current') === 'true'), seen };
     })())`);
     got.frames[`${row} at ${width}`] = r;
-    claim(`${row}'s Next scrolls its row on in its frame at ${width}px, the previous paddle enabled`, r.scroll > 0 && !r.previous && (row !== 'gallery' || r.current > 0), r);
+    // on a step: half its width at least, or to its end (the theme's step its
+    // width, snapped to an item's start), where a scroll stopped short (37px
+    // on, once in Safari) is not one
+    claim(`${row}'s Next scrolls its row on a step in its frame at ${width}px, the previous paddle enabled`, r.scroll >= Math.min(r.width / 2, r.max - 1) && !r.previous && (row !== 'gallery' || r.current > 0), r);
   }
   // the global nav's search, opened by its button: in a frame 834px wide or
   // more the flyout hung from the bar's bottom, the curtain to the frame's
