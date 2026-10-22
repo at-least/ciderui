@@ -18,7 +18,7 @@ The bar most of apple.com’s product pages carry under the global nav, on a `<n
 
 | class | what |
 | --- | --- |
-| `cui-localnav` | the bar: 52px, 48px below 834px, sticky, on its material with a rule along its foot; `cui-dark` on it, a dark bar |
+| `cui-localnav` | the bar: 52px, 48px below 834px, sticky, on its material with a rule along its foot; `cui-dark` on it, a dark bar. A link to a place on the page (a footnote’s mark) lands its target at the bar’s foot, not under it |
 | `cui-localnav-content` | 980px at most |
 | `cui-localnav-title` | the product’s name, a link: 21px, 19px below 834px |
 | `cui-localnav-toggle` | the menu’s checkbox, before the menu, so the next stop opened is the first link |

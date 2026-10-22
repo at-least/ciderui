@@ -1,0 +1,142 @@
+{
+ "date": "2026-10-22T09:30:53.607Z",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "iphone-18-pro at 1440": {
+  "href": "#footnote-3",
+  "hash": "#footnote-3",
+  "nav": {
+   "id": "localnav",
+   "position": "sticky",
+   "height": 72,
+   "bottom": 72
+  },
+  "note": 71.94,
+  "end": false,
+  "rootScrollPaddingTop": "auto",
+  "noteScrollMarginTop": "72px",
+  "noteInlineScrollMarginTop": "",
+  "rules": {
+   "found": [
+    {
+     "selector": ":target",
+     "value": "var(--localnav-total-height,0)",
+     "sheet": "https://www.apple.com/v/iphone-18-pro/c/built/styles/overview.built.css"
+    }
+   ],
+   "unreadable": 0
+  },
+  "noteScrollMarginTopBefore": "0px",
+  "lands": "at the nav's foot"
+ },
+ "iphone-18-pro at 390": {
+  "href": "#footnote-3",
+  "hash": "#footnote-3",
+  "nav": {
+   "id": "localnav",
+   "position": "sticky",
+   "height": 72,
+   "bottom": 72
+  },
+  "note": 72.27,
+  "end": false,
+  "rootScrollPaddingTop": "auto",
+  "noteScrollMarginTop": "72px",
+  "noteInlineScrollMarginTop": "",
+  "rules": {
+   "found": [
+    {
+     "selector": ":target",
+     "value": "var(--localnav-total-height,0)",
+     "sheet": "https://www.apple.com/v/iphone-18-pro/c/built/styles/overview.built.css"
+    }
+   ],
+   "unreadable": 0
+  },
+  "noteScrollMarginTopBefore": "0px",
+  "lands": "at the nav's foot"
+ },
+ "macbook-air at 1440": {
+  "href": "#footnote-upgrade-2026",
+  "hash": "#footnote-upgrade-2026",
+  "nav": {
+   "id": "ac-localnav",
+   "position": "sticky",
+   "height": 52,
+   "bottom": 52
+  },
+  "note": 0.06,
+  "end": false,
+  "rootScrollPaddingTop": "auto",
+  "noteScrollMarginTop": "0px",
+  "noteInlineScrollMarginTop": "",
+  "rules": {
+   "found": [],
+   "unreadable": 0
+  },
+  "noteScrollMarginTopBefore": "0px",
+  "lands": "under the nav"
+ },
+ "macbook-air at 390": {
+  "href": "#footnote-upgrade-2026",
+  "hash": "#footnote-upgrade-2026",
+  "nav": {
+   "id": "ac-localnav",
+   "position": "sticky",
+   "height": 48,
+   "bottom": 48
+  },
+  "note": 0.38,
+  "end": false,
+  "rootScrollPaddingTop": "auto",
+  "noteScrollMarginTop": "0px",
+  "noteInlineScrollMarginTop": "",
+  "rules": {
+   "found": [],
+   "unreadable": 0
+  },
+  "noteScrollMarginTopBefore": "0px",
+  "lands": "under the nav"
+ },
+ "airpods-pro at 1440": {
+  "href": "#footnote-3",
+  "hash": "#footnote-3",
+  "nav": {
+   "id": "ac-localnav",
+   "position": "sticky",
+   "height": 52,
+   "bottom": 52
+  },
+  "note": 0.34,
+  "end": false,
+  "rootScrollPaddingTop": "auto",
+  "noteScrollMarginTop": "0px",
+  "noteInlineScrollMarginTop": "",
+  "rules": {
+   "found": [],
+   "unreadable": 0
+  },
+  "noteScrollMarginTopBefore": "0px",
+  "lands": "under the nav"
+ },
+ "airpods-pro at 390": {
+  "href": "#footnote-3",
+  "hash": "#footnote-3",
+  "nav": {
+   "id": "ac-localnav",
+   "position": "sticky",
+   "height": 48,
+   "bottom": 48
+  },
+  "note": -0.47,
+  "end": false,
+  "rootScrollPaddingTop": "auto",
+  "noteScrollMarginTop": "0px",
+  "noteInlineScrollMarginTop": "",
+  "rules": {
+   "found": [],
+   "unreadable": 0
+  },
+  "noteScrollMarginTopBefore": "0px",
+  "lands": "under the nav"
+ }
+}

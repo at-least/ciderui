@@ -60,7 +60,10 @@
  * material in the bar alone (apple.com's reaches up behind its global nav);
  * the menu closes by its chevron alone (apple.com's script also closes it on
  * a click elsewhere); its rows fade out in its 0.32s (apple.com's in 0.38s
- * and 0.4s). */
+ * and 0.4s); a link to a place on the page (a footnote's mark) lands its
+ * target at the bar's foot, as apple.com's iPhone 18 Pro page, with a newer
+ * local nav, lands a footnote's note at its nav's, where its MacBook Air's
+ * lands it under the bar (reference/anchor/). */
 
 @layer components {
   .cui-localnav {
@@ -89,6 +92,16 @@
 
     @media (width >= 834px) {
       height: 52px;
+    }
+  }
+
+  /* a link to a place on the page (a footnote's mark): its target lands at
+     the bar's foot, not under it */
+  :root:has(.cui-localnav) :target {
+    scroll-margin-top: 48px;
+
+    @media (width >= 834px) {
+      scroll-margin-top: 52px;
     }
   }
 

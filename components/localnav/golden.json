@@ -63,5 +63,9 @@
  "menu-focus | .cui-localnav-menubutton | 390 | outline-offset": "3px",
  "menu-focus | .cui-localnav-menu | 390 | visibility": "hidden",
  "dark | .cui-localnav-title | 1200 | color": "rgba(255, 255, 255, 0.92)",
- "dark | .cui-localnav-title | 1200 | opacity": "1"
+ "dark | .cui-localnav-title | 1200 | opacity": "1",
+ "target | #note | 834 | scroll-margin-top": "52px",
+ "target | #note | 834 | box-top": "52px",
+ "target-phone | #note | 833 | scroll-margin-top": "48px",
+ "target-phone | #note | 833 | box-top": "48px"
 }

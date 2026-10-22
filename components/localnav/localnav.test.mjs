@@ -25,6 +25,8 @@ const LINK = '.cui-localnav-list > li:nth-child(2) > .cui-localnav-link';
 const BUTTON = '.cui-localnav-actions > .cui-btn';
 const CHEVRON = '.cui-localnav-menubutton';
 const OPEN = { click: CHEVRON, widths: [390] };
+// a footnote's mark under the bar and its note far down the page
+const NOTE = `${NAV}<main><p><a href="#note">1</a></p><div style="height: 3000px"></div><p id="note">The note.</p><div style="height: 3000px"></div></main>`;
 
 export const cases = [
   {
@@ -182,5 +184,19 @@ export const cases = [
     touch: true,
     ...OPEN,
     checks: [{ target: LINK, state: 'hover', props: ['opacity'], rest: 'nor in the opened tray, where apple.com\'s keeps it (touch-localnav:tray.link)' }],
+  },
+  {
+    name: 'target',
+    html: NOTE,
+    widths: [834],
+    click: 'a[href="#note"]',
+    checks: [{ target: '#note', props: ['scroll-margin-top', 'box-top'], golden: 'a fragment\'s target lands at the bar\'s foot, 52px down, as apple.com\'s iPhone 18 Pro page lands a footnote\'s note at its local nav\'s; its MacBook Air\'s lands it under the bar (reference/anchor/)' }],
+  },
+  {
+    name: 'target-phone',
+    html: NOTE,
+    widths: [833],
+    click: 'a[href="#note"]',
+    checks: [{ target: '#note', props: ['scroll-margin-top', 'box-top'], golden: 'and at the phone\'s bar\'s foot, 48px down, to 833px' }],
   },
 ];

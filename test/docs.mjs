@@ -15,7 +15,9 @@
 // search the same, its field focused, Escape closing it; at 390px the global
 // nav's menu opens over its frame, grown to the window's height, and the
 // local nav's below its bar, the frame grown to hold it; an example's link
-// leaves the frame where it is. The site's own search: the page's global
+// leaves the frame where it is; a footnote's mark, an example's or a page's
+// own (the news article's), scrolls its note to below the page's local nav.
+// The site's own search: the page's global
 // nav's search suggests the component's page first as its name is typed,
 // and sends it to the search page, which lists the pages holding it, the
 // component's page first.
@@ -153,6 +155,12 @@ for (const width of [1440, 390]) {
   };
   const height = (handle) => handle.evaluate((f) => f.clientHeight);
   const settle = (inner) => inner.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 400)))));
+  // the page's scroll at rest: unchanged for 10 frames
+  const still = () => page.evaluate(() => new Promise((r) => {
+    let last = -1, same = 0;
+    const tick = () => { if (scrollY === last) same++; else { same = 0; last = scrollY; } if (same >= 10) r(); else requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }));
 
   {
     const { inner } = await frame('/components/gallery/', 'A gallery of cards');
@@ -210,17 +218,22 @@ for (const width of [1440, 390]) {
     // local nav, not under it
     const { inner } = await frame('/components/article/', 'An article');
     await inner.click('a[href="#fn-1"]');
-    await page.evaluate(() => new Promise((r) => {
-      let last = -1, same = 0;
-      const tick = () => { if (scrollY === last) same++; else { same = 0; last = scrollY; } if (same >= 10) r(); else requestAnimationFrame(tick); };
-      requestAnimationFrame(tick);
-    }));
+    await still();
     const at = await page.evaluate(() => {
       const f = document.querySelector('iframe[title="An article"]');
       const note = f.contentDocument.getElementById('fn-1').getBoundingClientRect();
       return { note: f.getBoundingClientRect().top + f.clientTop + note.top, nav: document.querySelector('.cui-localnav').getBoundingClientRect().bottom };
     });
     check(`at ${width}px a footnote's mark in an example scrolls its note to below the page's local nav (its top ${at.note.toFixed(2)}px, the nav's foot ${at.nav.toFixed(2)}px)`, at.note >= at.nav - 0.5, true);
+  }
+  {
+    // a page's own footnote (markdown's, the news article's): its mark
+    // clicked, its note lands below the page's local nav, not under it
+    await page.goto(`${ORIGIN}/news/zola/`, { waitUntil: 'load' });
+    await page.click('sup.footnote-reference a');
+    await still();
+    const at = await page.evaluate(() => ({ scroll: scrollY, note: document.getElementById('fn-zola').getBoundingClientRect().top, nav: document.querySelector('.cui-localnav').getBoundingClientRect().bottom }));
+    check(`at ${width}px a page's footnote mark scrolls its note to below its local nav (its top ${at.note.toFixed(2)}px, the nav's foot ${at.nav.toFixed(2)}px, ${at.scroll}px down)`, at.scroll > 0 && at.note >= at.nav - 0.5, true);
   }
   {
     errors = [];

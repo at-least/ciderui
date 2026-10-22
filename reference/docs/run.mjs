@@ -26,7 +26,9 @@
 // window narrower than
 // 834px the global nav's menu opens over its frame, grown to the window's
 // height under the page's local nav and scrolled there, and the local nav's
-// menu below its bar, the frame grown to hold it. On a phone at its width;
+// menu below its bar, the frame grown to hold it; a page's own footnote (the
+// news article's): its mark clicked, its note at the local nav's foot, or
+// below it where the page ends first. On a phone at its width;
 // elsewhere in a window 1440px wide, then 700px (Safari's window, its frame
 // included, so its page a little narrower). Each claim is recorded with
 // when it was read (got.claims: ms since 1970, a clock to set beside a log
@@ -270,6 +272,21 @@ const behave = async (width) => {
   await page.run(wait(700));
   const at = await page.run(`Promise.resolve(${frame('A more link')}.contentWindow.location.href)`);
   claim(`a link in an example leaves its frame where it is at ${width}px`, at === 'about:srcdoc', at);
+  // a page's own footnote (markdown's, the news article's): its mark
+  // clicked, its note lands at the local nav's foot, or below it where the
+  // page ends first, not under it; read once the page's scroll is at rest
+  // (unchanged for 10 frames)
+  await page.go(`${ORIGIN}/news/zola/`);
+  await page.run(wait(700));
+  await page.run(`Promise.resolve((document.querySelector('sup.footnote-reference a').click(), true))`);
+  const note = await page.run(`new Promise((done) => {
+    let last = -1, same = 0;
+    const tick = () => { if (scrollY === last) same++; else { same = 0; last = scrollY; } if (same < 10) return requestAnimationFrame(tick); done({ hash: location.hash, scroll: scrollY, max: document.documentElement.scrollHeight - innerHeight, note: document.getElementById('fn-zola').getBoundingClientRect().top, nav: document.querySelector('.cui-localnav').getBoundingClientRect().bottom }); };
+    requestAnimationFrame(tick);
+  })`);
+  got.frames[`footnote at ${width}`] = note;
+  claim(`a page's footnote mark lands its note at its local nav's foot at ${width}px, or below it where the page ends first, not under it`,
+    note.hash === '#fn-zola' && note.scroll > 0 && (Math.abs(note.note - note.nav) <= 1 || (note.scroll >= note.max - 1 && note.note > note.nav)), note);
 };
 const menus = async (width) => {
   await page.go(`${ORIGIN}/components/globalnav/`);
