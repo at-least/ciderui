@@ -99,7 +99,12 @@ impl<N: Renderable, S: Renderable> Renderable for Footer<'_, N, S> {
                             <p class="cui-footer-copyright">(self.copyright)</p>
                             @if !self.links.is_empty() {
                                 <ul class="cui-footer-links">
-                                    @for (text, href) in self.links {
+                                    @for (n, (text, href)) in self.links.iter().enumerate() {
+                                        // a space between them, as apple.com's: its
+                                        // inline items' gap is the space's too
+                                        @if n > 0 {
+                                            " "
+                                        }
                                         <li><a href=(href)>(text)</a></li>
                                     }
                                 </ul>
