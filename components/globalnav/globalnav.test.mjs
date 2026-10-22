@@ -1041,6 +1041,7 @@ export const cases = [
       { target: MAC_FLY, props: ['display'], golden: 'not shown by the pointer: a touch screen has none that hovers' },
       { target: MAC_LINK, on: MAC_BUTTON, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5): its link not recolored by a tap on its button (the button\'s own color no hover changes)' },
       { target: CHEVRON, props: ['opacity'], golden: 'its chevron not drawn' },
+      { target: CHEVRON, state: 'focus-visible', on: MAC_BUTTON, props: ['opacity', 'box-left'], golden: 'focused from the keyboard (a touch screen\'s, as an iPad\'s with one), its chevron drawn where a pointer\'s is, after the link\'s text, as apple.com\'s 22 by 44 button at the link\'s end draws it (flyout:trigger), not over that text' },
     ],
   },
   {

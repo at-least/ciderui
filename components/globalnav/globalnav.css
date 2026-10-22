@@ -209,7 +209,8 @@
  *                           22 by 44 at the link's end, its chevron
  *                           (cui-globalnav-image, icon::FLYOUT, 10 by 10)
  *                           shown with the focus from the keyboard; over
- *                           the link on a screen with no hover; to 833px
+ *                           the link on a screen with no hover, its
+ *                           chevron at the link's end still; to 833px
  *                           over the row, its chevron (-compact,
  *                           icon::FLYOUT_COMPACT, 9 by 48) at its end,
  *                           hovered
@@ -1608,6 +1609,20 @@
 
     .cui-globalnav-list > li:has(> .cui-globalnav-flyout:popover-open) > .cui-globalnav-link {
       color: var(--cui-c-on-bar-hover);
+    }
+  }
+
+  /* from 834px on a screen with no hover, the button over the whole link:
+     its chevron at its end, where a pointer's 22 by 44 button draws it,
+     after the link's text and not over it (a touch screen's keyboard, as an
+     iPad's) */
+  @media (width >= 834px) and (hover: none) {
+    .cui-globalnav-flyoutbutton {
+      justify-content: flex-end;
+    }
+
+    .cui-globalnav-flyoutbutton > .cui-globalnav-image {
+      margin-right: -8px;
     }
   }
 
