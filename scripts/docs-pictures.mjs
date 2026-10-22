@@ -11,14 +11,15 @@
 // A picture is what this Chromium drew, and another version draws other
 // bytes, so what is held is what it was drawn from: docs/pictures.json
 // records each picture's scene (its document, the examples' markup in it,
-// its size) and the stylesheet's digest, and --check fails when an example,
-// the stylesheet or a scene has changed since, or a picture is missing:
+// its size) and the stylesheet's and the fonts' digests, and --check fails
+// when an example, the stylesheet, a font or a scene has changed since, or a
+// picture is missing:
 //
 //   node scripts/docs-pictures.mjs           draw them
 //   node scripts/docs-pictures.mjs --check   fail if one was drawn from other inputs
 
 import { createHash } from 'node:crypto';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { ROOT } from '../test/compile.mjs';
 
@@ -79,6 +80,8 @@ const SCENES = [
 
 const css = readFileSync(join(DOCS, 'static/example.css'), 'utf8');
 const digest = (text) => createHash('sha256').update(text).digest('hex');
+// the fonts the pictures are drawn in (Inter, fonts/), each file's digest
+const fonts = readdirSync(join(ROOT, 'fonts')).sort().map((f) => `${f} ${digest(readFileSync(join(ROOT, 'fonts', f)))}`).join('\n');
 
 // each scene's size and the document drawn
 const scenes = SCENES.map((s) => {
@@ -92,17 +95,17 @@ const scenes = SCENES.map((s) => {
   };
 });
 // what each picture is drawn from
-const inputs = Object.fromEntries(scenes.map((s) => [s.name, digest(`${s.width}x${s.height}\n${s.html}\n${css}`)]));
+const inputs = Object.fromEntries(scenes.map((s) => [s.name, digest(`${s.width}x${s.height}\n${s.html}\n${css}\n${fonts}`)]));
 
 if (process.argv[2] === '--check') {
   const drawn = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, 'utf8')) : {};
   const stale = [
-    ...Object.keys(inputs).filter((n) => drawn[n] !== inputs[n]).map((n) => `docs/static/pictures/${n}.png was drawn from ${drawn[n] ? 'other examples or another stylesheet' : 'nothing recorded'}`),
+    ...Object.keys(inputs).filter((n) => drawn[n] !== inputs[n]).map((n) => `docs/static/pictures/${n}.png was drawn from ${drawn[n] ? 'other examples, another stylesheet or other fonts' : 'nothing recorded'}`),
     ...Object.keys(inputs).filter((n) => !existsSync(join(OUT, `${n}.png`))).map((n) => `docs/static/pictures/${n}.png is missing`),
     ...Object.keys(drawn).filter((n) => !(n in inputs)).map((n) => `docs/pictures.json records ${n}, which no scene draws`),
   ];
   for (const s of stale) console.log(s);
-  console.log(stale.length ? 'the pictures are stale: node scripts/docs-pictures.mjs' : `docs/static/pictures are drawn from these examples and this stylesheet (${scenes.length})`);
+  console.log(stale.length ? 'the pictures are stale: node scripts/docs-pictures.mjs' : `docs/static/pictures are drawn from these examples, this stylesheet and these fonts (${scenes.length})`);
   process.exit(stale.length ? 1 : 0);
 }
 
