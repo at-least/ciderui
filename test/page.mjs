@@ -3,7 +3,8 @@
 // apple.com's 600; the focus ring apple.com's button's; a dark block dark, a
 // light one inside it light again, a dark page dark; the dark variant on a
 // dark block and never on the OS's appearance; reduced motion stilling a
-// transition.
+// transition, and a <details>' content's (its ::details-content, a
+// pseudo-element `*` does not reach: the accordion's).
 
 import { compile } from './compile.mjs';
 import { open } from './browser.mjs';
@@ -14,7 +15,8 @@ const css = compile({ classes: 'dark:underline' });
 const html = `<p id="text">Text <strong id="strong">bold</strong></p><button id="button">Buy</button>
 <section id="dark" class="cui-dark"><p id="in-dark" class="dark:underline">in a dark block</p>
   <div id="light" class="cui-light"><p id="in-light">light inside dark</p></div></section>
-<p id="outside" class="dark:underline">outside</p><p id="moving" style="transition: color 1s">moving</p>`;
+<p id="outside" class="dark:underline">outside</p><p id="moving" style="transition: color 1s">moving</p>
+<style>#opening::details-content { transition: height 1s; }</style><details id="opening"><summary>a question</summary><p>its answer</p></details>`;
 const LIGHT = { color: 'rgb(29, 29, 31)', 'background-color': 'rgb(255, 255, 255)' };
 const DARK = { color: 'rgb(245, 245, 247)', 'background-color': 'rgb(0, 0, 0)' };
 const W = 1200;
@@ -44,6 +46,7 @@ try {
   check('dark: applies in a dark block', (await b.read('#in-dark', ['text-decoration-line']))['text-decoration-line'], 'underline');
   check('dark: does not apply outside', (await b.read('#outside', ['text-decoration-line']))['text-decoration-line'], 'none');
   check('a transition moves without the preference', (await b.read('#moving', ['transition-duration']))['transition-duration'], '1s');
+  check('a <details>\' content moves without the preference', (await b.read('#opening', ['transition-duration'], { pseudo: '::details-content' }))['transition-duration'], '1s');
 
   await b.page.evaluate(() => document.documentElement.classList.add('cui-dark'));
   const dark = await b.read('body', ['color', 'background-color']);
@@ -59,6 +62,7 @@ try {
   check('the OS\'s dark appearance leaves the page light', (await b.read('body', ['color']))['color'], LIGHT.color);
   check('dark: does not follow the OS\'s appearance', (await b.read('#outside', ['text-decoration-line']))['text-decoration-line'], 'none');
   check('reduced motion stills a transition', (await b.read('#moving', ['transition-duration']))['transition-duration'], '0s');
+  check('reduced motion stills a <details>\' content', (await b.read('#opening', ['transition-duration'], { pseudo: '::details-content' }))['transition-duration'], '0s');
 } finally {
   await b.close();
 }
