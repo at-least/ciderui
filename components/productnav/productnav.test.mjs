@@ -3,10 +3,9 @@
 // image and name, the first two cards' places. Golden, with their why: the
 // letter-spacing, a card's width, its foot on a phone, the card the link.
 
-import { examples } from '../../test/harness.mjs';
+import { examples, SIZE } from '../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const TYPE = ['font-size', 'line-height', 'font-weight'];
 const ITEM = '.cui-shelf-scroller > li:first-child .cui-productnav-item';
 const card = (n) => `.cui-shelf-scroller > li:nth-child(${n}) .cui-productnav-item`;
 
@@ -22,7 +21,7 @@ export const cases = [
       { target: card(2), props: ['box-left'], apple: ['store', 'productnav.card-second'] },
       { target: `${ITEM} .cui-productnav-image`, props: ['height', 'box-height'], apple: ['store', 'productnav.image'] },
       { target: `${ITEM} .cui-productnav-image`, props: ['margin-bottom'], as: { 'margin-bottom': 'padding-bottom' }, apple: ['store', 'productnav.image-box'] },
-      { target: `${ITEM} .cui-productnav-name`, props: [...TYPE, 'color', 'display', 'text-align'], apple: ['store', 'productnav.title'] },
+      { target: `${ITEM} .cui-productnav-name`, props: [...SIZE, 'color', 'display', 'text-align'], apple: ['store', 'productnav.title'] },
       { target: `${ITEM} .cui-productnav-image`, props: ['box-width'], golden: 'its own shape at its height: 120px, 92.3px for a 200 by 130 image (store:productnav.image)' },
       { target: ITEM, props: ['box-width'], golden: 'its image and its padding: apple.com\'s 136px, 100.3px (store:productnav.card)' },
       { target: '.cui-shelf-row', props: ['box-height'], golden: 'its row in sight: apple.com\'s crop, 186px, and 164px on a phone for apple.com\'s 163px, which cuts its row\'s last pixel (store:productnav.crop)' },

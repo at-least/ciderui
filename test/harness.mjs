@@ -50,6 +50,7 @@ export const SIZE = ['font-size', 'line-height', 'font-weight'];
 export const RADIUS = ['border-top-left-radius'];
 export const TEXT = ['display', 'text-align', 'white-space', 'text-decoration-line', 'cursor', 'vertical-align', 'opacity'];
 export const OUTLINE = ['outline-style', 'outline-color', 'outline-width', 'outline-offset'];
+export const MOTION = ['transition-property', 'transition-duration', 'transition-timing-function'];
 
 // a component's examples, read by its test file's URL (`const ex =
 // examples(import.meta.url)`): ex(id) is examples/<id>.html's markup

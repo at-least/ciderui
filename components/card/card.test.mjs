@@ -9,10 +9,9 @@
 // why: the letter-spacing, the widths, what moves, the whole card its link,
 // the layers.
 
-import { examples, PADDING } from '../../test/harness.mjs';
+import { examples, PADDING, SIZE } from '../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const TYPE = ['font-size', 'line-height', 'font-weight'];
 const LIFT = ['box-shadow', 'transform'];
 const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
 const dark = (html) => html.replace('class="cui-card"', 'class="cui-card cui-dark"');
@@ -29,14 +28,14 @@ export const cases = [
       { target: '.cui-card', props: ['box-width'], golden: 'apple.com\'s 400px, 309px on a phone (store:card\'s box): a width no text sets' },
       { target: '.cui-card-content', props: [...PADDING, 'box-height'], apple: ['store', 'card.info'] },
       { target: '.cui-card-content', props: ['box-width'], golden: 'apple.com\'s 396px, 340px and its padding, and on a phone the whole card (store:card.info\'s box)' },
-      { target: '.cui-card-eyebrow', props: [...TYPE, 'color', 'margin-top', 'margin-bottom', 'padding-top', 'padding-bottom', 'text-transform'], apple: ['store', 'card.tag'] },
-      { target: '.cui-card-headline', props: [...TYPE, 'color', 'margin-top', 'margin-bottom', 'padding-top', 'padding-bottom'], apple: ['store', 'card.header'] },
-      { target: '.cui-card-link', props: [...TYPE, 'color', 'display', 'text-decoration-line', 'cursor'], apple: ['store', 'card.link'] },
+      { target: '.cui-card-eyebrow', props: [...SIZE, 'color', 'margin-top', 'margin-bottom', 'padding-top', 'padding-bottom', 'text-transform'], apple: ['store', 'card.tag'] },
+      { target: '.cui-card-headline', props: [...SIZE, 'color', 'margin-top', 'margin-bottom', 'padding-top', 'padding-bottom'], apple: ['store', 'card.header'] },
+      { target: '.cui-card-link', props: [...SIZE, 'color', 'display', 'text-decoration-line', 'cursor'], apple: ['store', 'card.link'] },
       { target: '.cui-card-link', state: 'hover', props: ['color', 'text-decoration-line'], apple: ['store', 'card.link', 'hover'] },
-      { target: '.cui-card-description', props: [...TYPE, 'color', 'display'], apple: ['store', 'card.description'] },
+      { target: '.cui-card-description', props: [...SIZE, 'color', 'display'], apple: ['store', 'card.description'] },
       // apple.com's description is a block in its desc, which is 10px down
       { target: '.cui-card-description', props: ['margin-top'], as: { 'margin-top': 'padding-top' }, apple: ['store', 'card.desc'] },
-      { target: '.cui-card-price', props: [...TYPE, 'color'], apple: ['store', 'card.price'] },
+      { target: '.cui-card-price', props: [...SIZE, 'color'], apple: ['store', 'card.price'] },
       // apple.com's price is after its description's 6px
       { target: '.cui-card-price', props: ['margin-top'], as: { 'margin-top': 'padding-bottom' }, apple: ['store', 'card.description'] },
       { target: '.cui-card-eyebrow', props: ['letter-spacing'], golden: TRACKING },
@@ -80,14 +79,14 @@ export const cases = [
     name: 'headline-first',
     html: headlineFirst,
     checks: [
-      { target: '.cui-card-headline', props: [...TYPE, 'padding-top'], apple: ['store', 'card.header-first'] },
+      { target: '.cui-card-headline', props: [...SIZE, 'padding-top'], apple: ['store', 'card.header-first'] },
     ],
   },
   {
     name: 'eyebrow',
     html: ex('eyebrow'),
     checks: [
-      { target: '.cui-card-eyebrow', props: [...TYPE, 'color', 'margin-top', 'margin-bottom', 'padding-top', 'padding-bottom', 'text-transform'], apple: ['store', 'card.eyebrow'] },
+      { target: '.cui-card-eyebrow', props: [...SIZE, 'color', 'margin-top', 'margin-bottom', 'padding-top', 'padding-bottom', 'text-transform'], apple: ['store', 'card.eyebrow'] },
     ],
   },
   {

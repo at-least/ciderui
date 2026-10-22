@@ -24,7 +24,7 @@
 // locale banner above them, and where ciderui's markup differs from
 // apple.com's with the same picture.
 
-import { examples, OUTLINE, PADDING } from '../../test/harness.mjs';
+import { examples, MOTION, OUTLINE, PADDING, SIZE } from '../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const NAV = ex('globalnav');
@@ -33,7 +33,6 @@ const clear = (cls) => NAV.replace('class="cui-globalnav"', `class="${cls}" data
 
 const DESKTOP = [1600, 1200, 900];
 const FLEX = ['display', 'flex-direction', 'flex-wrap', 'align-items', 'justify-content'];
-const MOTION = ['transition-property', 'transition-duration', 'transition-timing-function'];
 const INLINE = ['padding-left', 'padding-right'];
 const LIST = '.cui-globalnav-list';
 const LOGO = '.cui-globalnav-logo';
@@ -90,7 +89,7 @@ const NARROW = [833, 390];
 const SEARCHING = { click: SBUTTON, height: 900 };
 // the search's motion held at its start, for a case that reads its start
 const HOLD = '<style>.cui-globalnav-search, .cui-globalnav-search * { transition-delay: 10s !important; }</style>';
-const TYPE = ['font-size', 'line-height', 'font-weight', 'color'];
+const TYPE = [...SIZE, 'color'];
 
 // a link's flyout: the example with Store's and Mac's
 const FLYOUT_NAV = ex('flyout');
@@ -122,7 +121,7 @@ const FCLOSE = `${FPANEL} > .cui-globalnav-closebutton`;
 const CHEVRON = `${MAC_BUTTON} > .cui-globalnav-image`;
 const CHEVRON_COMPACT = `${MAC_BUTTON} > .cui-globalnav-image-compact`;
 const HOVERING = { hover: MAC_LINK, widths: WIDE, height: 900 };
-const ITEM_MOTION = ['transition-property', 'transition-duration', 'transition-timing-function', 'transition-delay'];
+const ITEM_MOTION = [...MOTION, 'transition-delay'];
 // apple.com's flyout is read below its locale banner (70px from 834px): a
 // place here is the same distance from the nav's top
 const FPLACE = 'the same distance from the nav\'s top as apple.com\'s (flyout:*, its locale banner above its nav)';

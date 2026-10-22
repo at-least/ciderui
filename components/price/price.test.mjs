@@ -2,10 +2,9 @@
 // color; buy:price.amount, an amount kept whole). Golden, with its why: the
 // letter-spacing; at 735px, by the window.
 
-import { examples } from '../../test/harness.mjs';
+import { examples, SIZE } from '../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const TYPE = ['font-size', 'line-height', 'font-weight'];
 
 export const cases = [
   {
@@ -13,8 +12,8 @@ export const cases = [
     html: ex('price'),
     widths: [1600, 1200, 900, 390],
     checks: [
-      { target: '.cui-price', props: [...TYPE, 'color', 'display'], apple: ['buy', 'price.header'] },
-      { target: '.cui-price-amount', props: [...TYPE, 'white-space', 'display'], apple: ['buy', 'price.amount'] },
+      { target: '.cui-price', props: [...SIZE, 'color', 'display'], apple: ['buy', 'price.header'] },
+      { target: '.cui-price-amount', props: [...SIZE, 'white-space', 'display'], apple: ['buy', 'price.amount'] },
       { target: '.cui-price', props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
     ],
   },

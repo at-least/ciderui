@@ -5,10 +5,9 @@
 // the letter-spacing, the box's width, the check shown and hidden, the ring,
 // no margin below.
 
-import { examples } from '../../test/harness.mjs';
+import { examples, SIZE } from '../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const TYPE = ['font-size', 'line-height', 'font-weight'];
 const BOX = ['padding-top', 'padding-left', 'border-top-width', 'border-top-style', 'border-top-color', 'border-bottom-color', 'border-top-left-radius', 'background-color'];
 const INDICATOR = '.cui-checkbox-indicator';
 
@@ -19,7 +18,7 @@ export const cases = [
     checks: [
       { target: '.cui-checkbox', props: ['position', 'box-height'], apple: ['signin', 'checkbox.box'] },
       { target: '.cui-checkbox-input', props: ['position', 'top', 'left', 'height', 'opacity', 'margin-top', 'margin-left'], apple: ['signin', 'checkbox.input'] },
-      { target: '.cui-checkbox-label', props: [...TYPE, 'color', 'padding-top', 'padding-left', 'position', 'display'], apple: ['signin', 'checkbox.label'] },
+      { target: '.cui-checkbox-label', props: [...SIZE, 'color', 'padding-top', 'padding-left', 'position', 'display'], apple: ['signin', 'checkbox.label'] },
       { target: INDICATOR, props: [...BOX, 'position', 'top', 'left', 'display', 'box-height'], apple: ['signin', 'checkbox'] },
       { target: INDICATOR, props: ['box-width'], golden: 'apple.com\'s 16px box (signin:checkbox), a width no text sets' },
       { target: `${INDICATOR} svg`, props: ['visibility'], golden: 'its check hidden until it is checked' },

@@ -7,10 +7,9 @@
 // corners. Golden, with their why: the letter-spacing, a promo tile's
 // callout, the buttons' row, the layers' order.
 
-import { examples, PADDING } from '../../test/harness.mjs';
+import { examples, PADDING, SIZE } from '../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const TYPE = ['font-size', 'line-height', 'font-weight'];
 const PAD = ['padding-top', 'padding-bottom'];
 const media = (html) => html.replace('<a class="cui-tile-link"', '<img class="cui-tile-media" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjcyMCIvPg==" alt=""><a class="cui-tile-link"');
 const dark = (html) => html.replace('class="cui-tile"', 'class="cui-tile cui-dark"');
@@ -23,12 +22,12 @@ export const cases = [
     checks: [
       { target: '.cui-tile', props: ['background-color', 'min-height', ...PAD, 'display', 'justify-content', 'overflow', 'text-align', 'position'], apple: ['home', 'tile.light'] },
       { target: '.cui-tile-content', props: ['display', 'flex-direction', 'align-items'], apple: ['home', 'tile.promo-content'] },
-      { target: '.cui-tile-headline', props: [...TYPE, 'color', 'margin-top', 'margin-bottom'], apple: ['home', 'tile.promo-headline'] },
-      { target: '.cui-tile-headline', props: TYPE, apple: ['home', 'type.promo-headline'] },
-      { target: '.cui-tile-subhead', props: [...TYPE, 'color', 'margin-top'], apple: ['home', 'tile.promo-subhead'] },
-      { target: '.cui-tile-subhead', props: TYPE, apple: ['home', 'type.promo-subhead'] },
+      { target: '.cui-tile-headline', props: [...SIZE, 'color', 'margin-top', 'margin-bottom'], apple: ['home', 'tile.promo-headline'] },
+      { target: '.cui-tile-headline', props: SIZE, apple: ['home', 'type.promo-headline'] },
+      { target: '.cui-tile-subhead', props: [...SIZE, 'color', 'margin-top'], apple: ['home', 'tile.promo-subhead'] },
+      { target: '.cui-tile-subhead', props: SIZE, apple: ['home', 'type.promo-subhead'] },
       { target: '.cui-tile-ctas', props: ['column-gap', 'justify-content', 'margin-top'], apple: ['home', 'tile.promo-ctas'] },
-      { target: '.cui-tile-ctas .cui-btn', props: [...TYPE, 'padding-top', 'padding-left', 'min-width', 'box-height'], apple: ['home', 'tile.promo-button'] },
+      { target: '.cui-tile-ctas .cui-btn', props: [...SIZE, 'padding-top', 'padding-left', 'min-width', 'box-height'], apple: ['home', 'tile.promo-button'] },
       { target: '.cui-tile-link', props: ['position'], apple: ['home', 'tile.link'] },
       { target: '.cui-tile-link', props: ['box-height'], apple: ['home', 'tile.light'] },
       { target: '.cui-tile-headline', props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
@@ -39,7 +38,7 @@ export const cases = [
     name: 'promo-callout',
     html: promoCallout,
     checks: [
-      { target: '.cui-tile-callout', props: TYPE, apple: ['home', 'type.promo-callout'] },
+      { target: '.cui-tile-callout', props: SIZE, apple: ['home', 'type.promo-callout'] },
       { target: '.cui-tile-callout', props: ['color', 'margin-top'], golden: 'the secondary text, 8px below the subhead: apple.com\'s promo tiles measured carry no callout; a full tile\'s, below 735px (home:hero.callout)' },
     ],
   },
@@ -49,13 +48,13 @@ export const cases = [
     checks: [
       { target: '.cui-tile', props: ['background-color', 'min-height', ...PAD, 'box-height'], apple: ['home', 'hero.tile'] },
       { target: '.cui-tile-content', props: ['display', 'flex-direction', 'align-items', 'text-align'], apple: ['home', 'hero.content'] },
-      { target: '.cui-tile-headline', props: [...TYPE, 'color', 'margin-bottom'], apple: ['home', 'hero.headline'] },
-      { target: '.cui-tile-headline', props: TYPE, apple: ['home', 'type.tile-headline'] },
-      { target: '.cui-tile-subhead', props: [...TYPE, 'color', 'margin-top'], apple: ['home', 'hero.subhead'] },
-      { target: '.cui-tile-callout', props: [...TYPE, 'color', 'margin-top'], apple: ['home', 'hero.callout'] },
+      { target: '.cui-tile-headline', props: [...SIZE, 'color', 'margin-bottom'], apple: ['home', 'hero.headline'] },
+      { target: '.cui-tile-headline', props: SIZE, apple: ['home', 'type.tile-headline'] },
+      { target: '.cui-tile-subhead', props: [...SIZE, 'color', 'margin-top'], apple: ['home', 'hero.subhead'] },
+      { target: '.cui-tile-callout', props: [...SIZE, 'color', 'margin-top'], apple: ['home', 'hero.callout'] },
       { target: '.cui-tile-ctas', props: ['column-gap', 'justify-content', 'margin-top'], apple: ['home', 'hero.ctas'] },
-      { target: '.cui-tile-ctas .cui-btn', props: [...TYPE, ...PADDING, 'background-color', 'color', 'border-top-left-radius', 'box-height'], apple: ['home', 'button'] },
-      { target: '.cui-tile-ctas .cui-btn[data-variant="secondary"]', props: [...TYPE, ...PADDING, 'color', 'border-top-color', 'box-height'], apple: ['home', 'button.secondary'] },
+      { target: '.cui-tile-ctas .cui-btn', props: [...SIZE, ...PADDING, 'background-color', 'color', 'border-top-left-radius', 'box-height'], apple: ['home', 'button'] },
+      { target: '.cui-tile-ctas .cui-btn[data-variant="secondary"]', props: [...SIZE, ...PADDING, 'color', 'border-top-color', 'box-height'], apple: ['home', 'button.secondary'] },
     ],
   },
   {
@@ -63,8 +62,8 @@ export const cases = [
     html: dark(ex('hero')),
     checks: [
       { target: '.cui-tile', props: ['background-color', 'min-height', ...PAD], apple: ['home', 'tile.dark'] },
-      { target: '.cui-tile-headline', props: [...TYPE, 'color'], apple: ['home', 'tile.dark-headline'] },
-      { target: '.cui-tile-subhead', props: [...TYPE, 'color'], apple: ['home', 'tile.dark-subhead'] },
+      { target: '.cui-tile-headline', props: [...SIZE, 'color'], apple: ['home', 'tile.dark-headline'] },
+      { target: '.cui-tile-subhead', props: [...SIZE, 'color'], apple: ['home', 'tile.dark-subhead'] },
       { target: '.cui-tile-ctas .cui-btn', props: ['background-color', 'color'], apple: ['home', 'tile.dark-button'] },
       { target: '.cui-tile-ctas .cui-btn[data-variant="secondary"]', props: ['color', 'border-top-color'], apple: ['home', 'tile.dark-button-secondary'] },
     ],

@@ -9,10 +9,9 @@
 // letter-spacing, the header's box, the foot in sight, the scrollbar hidden,
 // the last card's place at the end, no paddles on a touch screen.
 
-import { examples } from '../../test/harness.mjs';
+import { examples, SIZE } from '../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const TYPE = ['font-size', 'line-height', 'font-weight'];
 const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
 const SCROLLER = '.cui-shelf-scroller';
 const card = (n) => `${SCROLLER} > li:nth-child(${n}) .cui-card`;
@@ -25,8 +24,8 @@ export const cases = [
       { target: '.cui-shelf', props: ['padding-top', 'padding-bottom', 'background-color'], apple: ['store', 'shelf'] },
       { target: '.cui-shelf-header', props: ['margin-left', 'padding-top', 'padding-bottom', 'box-left'], apple: ['store', 'shelf.header'] },
       { target: '.cui-shelf-header', props: ['box-width', 'box-height'], golden: 'apple.com\'s header\'s box (store:shelf.header: to the window\'s right, 87.5% of a phone\'s window), its lines Inter\'s here' },
-      { target: '.cui-shelf-headline', props: [...TYPE, 'color', 'display', 'margin-top', 'margin-bottom'], apple: ['store', 'shelf.mainheader'] },
-      { target: '.cui-shelf-subhead', props: [...TYPE, 'color', 'display'], apple: ['store', 'shelf.subheader'] },
+      { target: '.cui-shelf-headline', props: [...SIZE, 'color', 'display', 'margin-top', 'margin-bottom'], apple: ['store', 'shelf.mainheader'] },
+      { target: '.cui-shelf-subhead', props: [...SIZE, 'color', 'display'], apple: ['store', 'shelf.subheader'] },
       { target: '.cui-shelf-headline', props: ['letter-spacing'], golden: TRACKING },
       { target: '.cui-shelf-subhead', props: ['letter-spacing'], golden: TRACKING },
       { target: SCROLLER, props: ['overflow-x', 'overflow-y', 'scroll-snap-type', 'overscroll-behavior-x'], apple: ['store', 'shelf.scroller'] },

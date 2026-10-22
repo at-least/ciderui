@@ -4,10 +4,9 @@
 // question). Golden, with their why: the letter-spacing, the chevron's box
 // and turn, the height's motion, no marker.
 
-import { examples } from '../../test/harness.mjs';
+import { examples, SIZE } from '../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const TYPE = ['font-size', 'line-height', 'font-weight'];
 const ITEM = '.cui-accordion-item';
 const OPEN = '.cui-accordion-item[open]';
 const CLOSED = '.cui-accordion-item:not([open])';
@@ -21,13 +20,13 @@ export const cases = [
     checks: [
       { target: ITEM, props: ['border-top-width', 'border-top-style', 'border-top-color', 'padding-top', 'margin-top'], apple: ['bag', 'accordion.item'] },
       { target: `${CLOSED} > ${Q}`, props: ['padding-top', 'padding-bottom', 'display', 'cursor', 'box-height'], apple: ['bag-accordion', 'compact.button'] },
-      { target: `${CLOSED} > ${Q}`, props: [...TYPE, 'color'], apple: ['bag-accordion', 'compact.title'] },
+      { target: `${CLOSED} > ${Q}`, props: [...SIZE, 'color'], apple: ['bag-accordion', 'compact.title'] },
       { target: `${CLOSED} > ${Q} svg`, props: ['color'], apple: ['bag-accordion', 'compact.icon'] },
       { target: `${CLOSED} > ${Q} svg`, props: ['box-height'], apple: ['bag-accordion', 'compact.svg'] },
       { target: `${CLOSED} > ${Q} svg`, props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: 'its color in apple.com\'s 0.1s linear (bag-accordion:compact.icon), and its turn in 0.32s' },
       { target: `${CLOSED} > ${Q} svg`, on: `${CLOSED} > ${Q}`, state: 'hover', props: ['color'], apple: ['bag-accordion', 'compact.icon-hover', 'hover'] },
       { target: `${OPEN} > ${Q} svg`, props: ['color'], apple: ['bag-accordion', 'compact.open'] },
-      { target: `${OPEN} .cui-accordion-answer`, props: [...TYPE, 'color', 'padding-right', 'padding-bottom'], apple: ['bag-accordion', 'compact.answer'] },
+      { target: `${OPEN} .cui-accordion-answer`, props: [...SIZE, 'color', 'padding-right', 'padding-bottom'], apple: ['bag-accordion', 'compact.answer'] },
       { target: `${OPEN} .cui-accordion-answer`, props: ['padding-top'], as: { 'padding-top': 'margin-top' }, apple: ['bag-accordion', 'compact.panel'] },
       { target: `${OPEN} > ${Q} svg`, props: ['transform'], golden: 'open, turned up: apple.com\'s line moved to the same points, through a flat one, in 320ms' },
       { target: `${CLOSED} > ${Q} svg`, props: ['box-width', 'margin-right'], golden: 'apple.com\'s 17px chevron (14px) in the middle of its 32px column at the end (bag-accordion:compact.svg, .icon)' },
@@ -42,7 +41,7 @@ export const cases = [
     name: 'large',
     html: ex('large'),
     checks: [
-      { target: Q, props: TYPE, apple: ['bag-accordion', 'accordion.title'] },
+      { target: Q, props: SIZE, apple: ['bag-accordion', 'accordion.title'] },
       { target: `${Q} svg`, props: ['color'], apple: ['bag-accordion', 'accordion.icon'] },
       { target: `${Q} svg`, props: ['box-height'], apple: ['bag-accordion', 'accordion.svg'] },
       { target: Q, props: ['padding-top', 'padding-bottom'], apple: ['bag', 'accordion.button'] },
@@ -55,9 +54,9 @@ export const cases = [
     name: 'nested',
     html: ex('large').replace('<details class="cui-accordion-item">', '<details class="cui-accordion-item" open>').replace('<p>Answers to the most asked questions.</p>', ex('accordion')),
     checks: [
-      { target: `.cui-accordion[data-size="lg"] > ${ITEM} > ${Q}`, props: TYPE, apple: ['bag-accordion', 'accordion.title'] },
+      { target: `.cui-accordion[data-size="lg"] > ${ITEM} > ${Q}`, props: SIZE, apple: ['bag-accordion', 'accordion.title'] },
       { target: `.cui-accordion:not([data-size]) > ${CLOSED} > ${Q}`, props: ['padding-top', 'padding-bottom'], apple: ['bag-accordion', 'compact.button'] },
-      { target: `.cui-accordion:not([data-size]) > ${CLOSED} > ${Q}`, props: TYPE, apple: ['bag-accordion', 'compact.title'] },
+      { target: `.cui-accordion:not([data-size]) > ${CLOSED} > ${Q}`, props: SIZE, apple: ['bag-accordion', 'compact.title'] },
       { target: `.cui-accordion:not([data-size]) > ${CLOSED} > ${Q} svg`, props: ['box-height'], apple: ['bag-accordion', 'compact.svg'] },
     ],
   },

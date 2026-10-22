@@ -16,12 +16,10 @@
 // the prefix's width, the chevron's place and color, and the states
 // apple.com was not seen in.
 
-import { examples } from '../../test/harness.mjs';
+import { examples, PADDING, SIZE } from '../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const TYPE = ['font-size', 'line-height', 'font-weight'];
 const EDGE = ['border-top-width', 'border-top-style', 'border-top-color', 'border-bottom-width', 'border-bottom-color', 'border-top-left-radius'];
-const PAD = ['padding-top', 'padding-right', 'padding-bottom', 'padding-left'];
 const INPUT = '.cui-field-input';
 const LABEL = '.cui-field-label';
 const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
@@ -40,14 +38,14 @@ export const cases = [
     name: 'field',
     html: ex('field'),
     checks: [
-      { target: INPUT, props: [...TYPE, 'color', ...PAD, ...EDGE, 'background-color', 'height', 'box-sizing', 'box-height', 'transition-property', 'transition-duration', 'outline-style'], apple: ['retail', 'field.input'] },
+      { target: INPUT, props: [...SIZE, 'color', ...PADDING, ...EDGE, 'background-color', 'height', 'box-sizing', 'box-height', 'transition-property', 'transition-duration', 'outline-style'], apple: ['retail', 'field.input'] },
       { target: INPUT, state: 'hover', props: ['color', 'background-color', 'border-top-color'], apple: ['retail', 'field.input', 'hover'] },
-      { target: INPUT, state: 'focus', props: [...PAD, ...EDGE], apple: ['retail', 'field.input', 'focus'] },
+      { target: INPUT, state: 'focus', props: [...PADDING, ...EDGE], apple: ['retail', 'field.input', 'focus'] },
       // focused, its box apple.com's at rest: the 2px edge takes the padding's pixel
       { target: INPUT, state: 'focus', props: ['box-height'], apple: ['retail', 'field.input'] },
       { target: INPUT, state: ['focus', 'focus-visible'], props: ['padding-left', 'border-top-width', 'border-top-color', 'outline-style'], apple: ['retail', 'field.input', 'focus+focus-visible'] },
-      { target: LABEL, props: [...TYPE, 'color', 'position', 'top', 'left', 'white-space', 'transition-property', 'transition-duration', 'transition-timing-function'], apple: ['retail', 'field.label'] },
-      { target: LABEL, on: INPUT, state: 'focus', props: [...TYPE, 'color', 'top', 'left'], apple: ['retail', 'field.label-floated'] },
+      { target: LABEL, props: [...SIZE, 'color', 'position', 'top', 'left', 'white-space', 'transition-property', 'transition-duration', 'transition-timing-function'], apple: ['retail', 'field.label'] },
+      { target: LABEL, on: INPUT, state: 'focus', props: [...SIZE, 'color', 'top', 'left'], apple: ['retail', 'field.label-floated'] },
       { target: INPUT, props: ['letter-spacing'], golden: TRACKING },
       { target: LABEL, props: ['letter-spacing'], golden: TRACKING },
       { target: LABEL, on: INPUT, state: 'focus', props: ['letter-spacing'], golden: TRACKING },
@@ -59,8 +57,8 @@ export const cases = [
     name: 'filled',
     html: ex('filled'),
     checks: [
-      { target: INPUT, props: [...PAD, ...EDGE, 'color', 'background-color'], apple: ['retail', 'field.input-filled'] },
-      { target: LABEL, props: [...TYPE, 'color', 'top', 'left'], apple: ['retail', 'field.label-floated'] },
+      { target: INPUT, props: [...PADDING, ...EDGE, 'color', 'background-color'], apple: ['retail', 'field.input-filled'] },
+      { target: LABEL, props: [...SIZE, 'color', 'top', 'left'], apple: ['retail', 'field.label-floated'] },
     ],
   },
   {
@@ -75,11 +73,11 @@ export const cases = [
     name: 'error',
     html: ex('error'),
     checks: [
-      { target: INPUT, props: [...TYPE, 'color', 'height', 'border-top-width', 'border-top-color', 'border-bottom-color', 'background-color'], apple: ['giftcard', 'error'] },
-      { target: INPUT, state: 'focus', props: [...PAD, 'border-top-width', 'border-top-color', 'background-color'], apple: ['giftcard', 'error', 'focus'] },
-      { target: LABEL, props: [...TYPE, 'color', 'top', 'left'], apple: ['giftcard', 'error.label'] },
+      { target: INPUT, props: [...SIZE, 'color', 'height', 'border-top-width', 'border-top-color', 'border-bottom-color', 'background-color'], apple: ['giftcard', 'error'] },
+      { target: INPUT, state: 'focus', props: [...PADDING, 'border-top-width', 'border-top-color', 'background-color'], apple: ['giftcard', 'error', 'focus'] },
+      { target: LABEL, props: [...SIZE, 'color', 'top', 'left'], apple: ['giftcard', 'error.label'] },
       { target: LABEL, on: INPUT, state: 'focus', props: ['color'], golden: 'its label red focused too: apple.com\'s keeps the class that makes it so (giftcard:error.label), not read focused' },
-      { target: MESSAGE, props: [...TYPE, 'color'], apple: ['giftcard', 'error.message'] },
+      { target: MESSAGE, props: [...SIZE, 'color'], apple: ['giftcard', 'error.message'] },
       { target: MESSAGE, props: ['margin-top', 'display'], apple: ['giftcard', 'error.wrapper'] },
       { target: MESSAGE, props: ['margin-bottom'], golden: 'no margin below it: apple.com\'s 12px is the form\'s spacing, the page\'s (giftcard:error.wrapper)' },
       { target: MESSAGE, props: ['letter-spacing'], golden: TRACKING },
@@ -120,8 +118,8 @@ export const cases = [
     html: ex('disabled'),
     widths: [1600],
     checks: [
-      { target: INPUT, props: [...TYPE, 'color', 'background-color', 'border-top-color', 'border-top-width', 'cursor', 'height'], apple: ['giftcard', 'field.disabled'] },
-      { target: LABEL, props: [...TYPE, 'color'], apple: ['giftcard', 'label.disabled'] },
+      { target: INPUT, props: [...SIZE, 'color', 'background-color', 'border-top-color', 'border-top-width', 'cursor', 'height'], apple: ['giftcard', 'field.disabled'] },
+      { target: LABEL, props: [...SIZE, 'color'], apple: ['giftcard', 'label.disabled'] },
     ],
   },
   {
@@ -138,9 +136,9 @@ export const cases = [
     html: ex('prefix'),
     widths: [1600],
     checks: [
-      { target: INPUT, props: [...PAD, ...EDGE, 'height', 'background-color'], apple: ['giftcard', 'prefix.input'] },
+      { target: INPUT, props: [...PADDING, ...EDGE, 'height', 'background-color'], apple: ['giftcard', 'prefix.input'] },
       { target: INPUT, state: 'focus', props: ['padding-left', 'border-top-width', 'border-top-color'], apple: ['giftcard', 'prefix.input', 'focus'] },
-      { target: LABEL, props: [...TYPE, 'color', 'top', 'left', 'padding-left'], apple: ['giftcard', 'prefix.label'] },
+      { target: LABEL, props: [...SIZE, 'color', 'top', 'left', 'padding-left'], apple: ['giftcard', 'prefix.label'] },
       { target: PREFIX, props: [...FONT, 'color', 'padding-top', 'padding-left', 'padding-right', 'background-color', 'border-right-width', 'border-right-style', 'border-right-color', 'border-top-left-radius', 'border-bottom-left-radius', 'border-top-right-radius', 'position', 'top', 'left', 'height'], apple: ['giftcard', 'prefix.currency'] },
       { target: PREFIX, props: ['box-width', 'letter-spacing'], golden: 'its text\'s width and 16px either side, as apple.com\'s (43.34px in SF: giftcard:prefix.currency); the fitted letter-spacing' },
     ],
@@ -149,11 +147,11 @@ export const cases = [
     name: 'select',
     html: ex('select'),
     checks: [
-      { target: INPUT, props: [...TYPE, 'color', ...PAD, ...EDGE, 'background-color', 'height', 'box-sizing', 'appearance', '-webkit-appearance', 'cursor', 'text-overflow', 'outline-style'], apple: ['tradein', 'dropdown.select'] },
+      { target: INPUT, props: [...SIZE, 'color', ...PADDING, ...EDGE, 'background-color', 'height', 'box-sizing', 'appearance', '-webkit-appearance', 'cursor', 'text-overflow', 'outline-style'], apple: ['tradein', 'dropdown.select'] },
       { target: INPUT, state: 'hover', props: ['color', 'background-color', 'border-top-color', 'border-top-width'], apple: ['tradein', 'dropdown.select', 'hover'] },
-      { target: INPUT, state: 'focus', props: [...PAD, 'border-top-width', 'border-top-color', 'background-color', 'outline-style'], apple: ['tradein', 'dropdown.select', 'focus'] },
-      { target: LABEL, props: [...TYPE, 'color', 'position', 'top', 'left', 'white-space', 'transition-property', 'transition-duration', 'transition-timing-function', 'pointer-events'], apple: ['tradein', 'dropdown.label'] },
-      { target: LABEL, on: INPUT, state: 'focus', props: [...TYPE, 'top'], golden: 'empty, its label the placeholder focused too: the select\'s text is not shown until a choice is made (apple.com\'s class, set by its script on a choice)' },
+      { target: INPUT, state: 'focus', props: [...PADDING, 'border-top-width', 'border-top-color', 'background-color', 'outline-style'], apple: ['tradein', 'dropdown.select', 'focus'] },
+      { target: LABEL, props: [...SIZE, 'color', 'position', 'top', 'left', 'white-space', 'transition-property', 'transition-duration', 'transition-timing-function', 'pointer-events'], apple: ['tradein', 'dropdown.label'] },
+      { target: LABEL, on: INPUT, state: 'focus', props: [...SIZE, 'top'], golden: 'empty, its label the placeholder focused too: the select\'s text is not shown until a choice is made (apple.com\'s class, set by its script on a choice)' },
       { target: CHEVRON, props: ['position', 'top', 'right', 'pointer-events'], apple: ['tradein', 'dropdown.chevron'] },
       { target: CHEVRON, props: ['box-width', 'box-height', 'color'], golden: 'apple.com\'s 25px chevron in #6e6e73 (its SVG\'s fill, tradein:dropdown.chevron), drawn as ciderui\'s DROPDOWN (reference/icons/form.mjs)' },
       { target: INPUT, props: ['letter-spacing'], golden: TRACKING },
@@ -167,15 +165,15 @@ export const cases = [
     html: ex('select'),
     forcedColors: true,
     checks: [
-      { target: LABEL, props: [...TYPE, 'top'], golden: 'in forced colors an empty select\'s label at its top, its own text "Select" drawn below it, where as the placeholder it lay over that text (apple.com\'s the same: not measured there)' },
+      { target: LABEL, props: [...SIZE, 'top'], golden: 'in forced colors an empty select\'s label at its top, its own text "Select" drawn below it, where as the placeholder it lay over that text (apple.com\'s the same: not measured there)' },
     ],
   },
   {
     name: 'selected',
     html: ex('selected'),
     checks: [
-      { target: INPUT, props: [...TYPE, 'color', ...PAD, 'height'], apple: ['tradein', 'dropdown.chosen'] },
-      { target: LABEL, props: [...TYPE, 'color', 'top', 'left'], apple: ['tradein', 'dropdown.chosen-label'] },
+      { target: INPUT, props: [...SIZE, 'color', ...PADDING, 'height'], apple: ['tradein', 'dropdown.chosen'] },
+      { target: LABEL, props: [...SIZE, 'color', 'top', 'left'], apple: ['tradein', 'dropdown.chosen-label'] },
     ],
   },
   {
@@ -191,11 +189,11 @@ export const cases = [
     name: 'textarea',
     html: ex('textarea'),
     checks: [
-      { target: BOX, props: [...PAD, ...EDGE, 'border-bottom-style', 'background-color', 'display', 'box-height', 'outline-style'], apple: ['retail', 'textarea'] },
+      { target: BOX, props: [...PADDING, ...EDGE, 'border-bottom-style', 'background-color', 'display', 'box-height', 'outline-style'], apple: ['retail', 'textarea'] },
       { target: BOX, props: ['margin-bottom'], golden: 'no margin of its own: apple.com\'s 14px is the form\'s spacing, the page\'s (retail:textarea)' },
-      { target: AREA, props: [...TYPE, 'color', ...PAD, 'height', 'min-height', 'box-sizing', 'resize', 'outline-style', 'border-top-width', 'border-top-style', 'background-color', 'box-height'], apple: ['retail', 'textarea.input'] },
+      { target: AREA, props: [...SIZE, 'color', ...PADDING, 'height', 'min-height', 'box-sizing', 'resize', 'outline-style', 'border-top-width', 'border-top-style', 'background-color', 'box-height'], apple: ['retail', 'textarea.input'] },
       { target: AREA, props: ['letter-spacing'], golden: TRACKING },
-      { target: LABEL, props: [...TYPE, 'color', 'position', 'top', 'left', 'white-space', 'pointer-events', 'transition-property', 'transition-duration', 'transition-timing-function'], apple: ['retail', 'textarea.label'] },
+      { target: LABEL, props: [...SIZE, 'color', 'position', 'top', 'left', 'white-space', 'pointer-events', 'transition-property', 'transition-duration', 'transition-timing-function'], apple: ['retail', 'textarea.label'] },
     ],
   },
   {
@@ -205,8 +203,8 @@ export const cases = [
     click: AREA,
     widths: [1200, 390],
     checks: [
-      { target: BOX, props: [...PAD, 'border-top-width', 'border-top-color', 'border-bottom-width', 'outline-style', 'box-height'], apple: ['retail', 'textarea.focused'] },
-      { target: LABEL, props: [...TYPE, 'color', 'top', 'left'], apple: ['retail', 'textarea.label-floated'] },
+      { target: BOX, props: [...PADDING, 'border-top-width', 'border-top-color', 'border-bottom-width', 'outline-style', 'box-height'], apple: ['retail', 'textarea.focused'] },
+      { target: LABEL, props: [...SIZE, 'color', 'top', 'left'], apple: ['retail', 'textarea.label-floated'] },
       { target: AREA, props: ['focused'], golden: 'the textarea has the focus, its box shows it' },
     ],
   },
@@ -214,7 +212,7 @@ export const cases = [
     name: 'textarea-filled',
     html: area('', 'A message of a few words.'),
     checks: [
-      { target: LABEL, props: [...TYPE, 'color', 'top', 'left'], apple: ['retail', 'textarea.label-floated'] },
+      { target: LABEL, props: [...SIZE, 'color', 'top', 'left'], apple: ['retail', 'textarea.label-floated'] },
       { target: BOX, props: ['border-top-width', 'border-top-color'], apple: ['retail', 'textarea'] },
     ],
   },

@@ -5,10 +5,9 @@
 // timing), its link hovered. Golden, with their why: the letter-spacing, the
 // content's width (apple.com's 83.33%), the text on the accent.
 
-import { examples, PADDING } from '../../test/harness.mjs';
+import { examples, PADDING, SIZE } from '../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const TYPE = ['font-size', 'line-height', 'font-weight'];
 const ANIMATION = ['animation-duration', 'animation-delay', 'animation-timing-function', 'animation-fill-mode', 'animation-iteration-count'];
 const LINK = '.cui-ribbon .cui-link';
 
@@ -18,12 +17,12 @@ export const cases = [
     html: ex('ribbon'),
     checks: [
       { target: '.cui-ribbon', props: ['overflow', 'box-height'], apple: ['ribbon', 'ribbon'] },
-      { target: '.cui-ribbon-content', props: [...TYPE, 'color', 'background-color', 'padding-top', 'padding-bottom', 'text-align'], apple: ['ribbon', 'ribbon.ground'] },
+      { target: '.cui-ribbon-content', props: [...SIZE, 'color', 'background-color', 'padding-top', 'padding-bottom', 'text-align'], apple: ['ribbon', 'ribbon.ground'] },
       { target: '.cui-ribbon-content', props: ['background-color', 'padding-top', 'padding-bottom'], apple: ['bag', 'ribbon'] },
       { target: '.cui-ribbon-content', props: ['padding-left', 'padding-right'], golden: 'the message within 83.33% of the window, centered: apple.com\'s content\'s width (ribbon:ribbon.content)' },
       { target: '.cui-ribbon-content', props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
-      { target: '.cui-ribbon-content p', props: [...TYPE, 'margin-top', 'margin-bottom'], apple: ['ribbon', 'ribbon.text'] },
-      { target: LINK, props: [...TYPE, 'color', 'text-decoration-line'], apple: ['ribbon', 'ribbon.link'] },
+      { target: '.cui-ribbon-content p', props: [...SIZE, 'margin-top', 'margin-bottom'], apple: ['ribbon', 'ribbon.text'] },
+      { target: LINK, props: [...SIZE, 'color', 'text-decoration-line'], apple: ['ribbon', 'ribbon.link'] },
       { target: LINK, state: 'hover', props: ['color'], apple: ['ribbon', 'ribbon.link', 'hover'] },
       { target: `${LINK} .cui-link-text`, on: LINK, state: 'hover', props: ['text-decoration-line'], apple: ['ribbon', 'ribbon.link', 'hover'] },
     ],

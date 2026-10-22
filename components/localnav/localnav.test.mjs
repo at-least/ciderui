@@ -9,7 +9,7 @@
 // color (its opacity in it), the rows' delays (apple.com's recorded
 // animations), the chevron turned (reference/icons/).
 
-import { examples, PADDING } from '../../test/harness.mjs';
+import { examples, MOTION, PADDING, SIZE } from '../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const NAV = ex('localnav');
@@ -17,8 +17,6 @@ const dark = NAV.replace('class="cui-localnav"', 'class="cui-localnav cui-dark"'
 
 const DESKTOP = [1600, 1200, 900, 834];
 const PHONE = [833, 390];
-const MOTION = ['transition-property', 'transition-duration', 'transition-timing-function'];
-const TYPE = ['font-size', 'line-height', 'font-weight'];
 const TITLE = '.cui-localnav-title';
 const CURRENT = '.cui-localnav-list > li:nth-child(1) > .cui-localnav-link';
 const LINK = '.cui-localnav-list > li:nth-child(2) > .cui-localnav-link';
@@ -39,17 +37,17 @@ export const cases = [
       { target: '.cui-localnav', props: ['transition-property'], golden: 'apple.com\'s background and backdrop-filter (localnav:localnav.background); Tailwind\'s build names -webkit-backdrop-filter too' },
       { target: '.cui-localnav', pseudo: '::after', props: ['background-color', 'height', 'position', 'bottom'], apple: ['localnav', 'localnav.rule'] },
       { target: '.cui-localnav-content', props: ['max-width', 'padding-left', 'padding-right', 'margin-left', 'margin-right'], apple: ['localnav', 'localnav.content'] },
-      { target: TITLE, props: [...TYPE, 'text-decoration-line', ...MOTION, 'box-top', 'box-left', 'box-height'], apple: ['localnav', 'localnav.title'] },
+      { target: TITLE, props: [...SIZE, 'text-decoration-line', ...MOTION, 'box-top', 'box-left', 'box-height'], apple: ['localnav', 'localnav.title'] },
       { target: TITLE, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
       { target: TITLE, props: ['color', 'opacity'], golden: 'apple.com\'s black at opacity .88 (localnav:localnav.title), as one color, on-bar-2' },
       { target: '.cui-localnav-list > li:nth-child(2)', props: ['margin-left', 'margin-right'], apple: ['localnav', 'localnav.item'] },
-      { target: LINK, props: [...TYPE, 'color', 'opacity', 'text-decoration-line', 'box-top', 'box-height'], apple: ['localnav', 'localnav.link'] },
+      { target: LINK, props: [...SIZE, 'color', 'opacity', 'text-decoration-line', 'box-top', 'box-height'], apple: ['localnav', 'localnav.link'] },
       { target: LINK, props: ['display'], golden: 'a flex item, so block: apple.com\'s inline-block sits in a 12px line, ciderui\'s in its item (the same place, localnav:localnav.link)' },
       { target: LINK, state: 'hover', props: ['opacity'], apple: ['localnav', 'localnav.link', 'hover'] },
       { target: LINK, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
-      { target: CURRENT, props: [...TYPE, 'color', 'opacity', 'cursor', 'box-top'], apple: ['localnav', 'localnav.current'] },
+      { target: CURRENT, props: [...SIZE, 'color', 'opacity', 'cursor', 'box-top'], apple: ['localnav', 'localnav.current'] },
       { target: CURRENT, pseudo: '::after', props: ['background-color', 'opacity', 'height', 'top', 'left', 'border-top-left-radius', 'position'], apple: ['localnav', 'localnav.current-mark'] },
-      { target: BUTTON, props: [...TYPE, 'color', ...PADDING, 'border-top-left-radius', 'background-color', 'min-width', 'box-top', 'box-height'], apple: ['localnav', 'localnav.button'] },
+      { target: BUTTON, props: [...SIZE, 'color', ...PADDING, 'border-top-left-radius', 'background-color', 'min-width', 'box-top', 'box-height'], apple: ['localnav', 'localnav.button'] },
       { target: BUTTON, state: 'hover', props: ['background-color'], apple: ['localnav', 'localnav.button', 'hover'] },
       { target: BUTTON, state: 'active', props: ['background-color'], apple: ['localnav', 'localnav.button', 'active'] },
       { target: '.cui-localnav-actions', props: ['margin-left'], golden: 'the button\'s own 24px before it, apple.com\'s action\'s (localnav:localnav.action)' },
@@ -66,7 +64,7 @@ export const cases = [
       { target: '.cui-localnav', props: ['background-color', 'backdrop-filter'], apple: ['localnav', 'localnav.background'] },
       { target: '.cui-localnav', pseudo: '::after', props: ['background-color', 'height'], apple: ['localnav', 'localnav.rule'] },
       { target: '.cui-localnav-content', props: ['padding-left', 'padding-right'], apple: ['localnav', 'localnav.content'] },
-      { target: TITLE, props: [...TYPE, 'box-top', 'box-left', 'box-height'], apple: ['localnav', 'localnav.title'] },
+      { target: TITLE, props: [...SIZE, 'box-top', 'box-left', 'box-height'], apple: ['localnav', 'localnav.title'] },
       { target: CHEVRON, props: ['display', 'cursor', 'margin-right', 'box-top', 'box-height'], apple: ['localnav', 'localnav.chevron'] },
       { target: CHEVRON, props: ['box-width', 'box-left'], golden: 'apple.com\'s 40 by 30 chevron, 4px into the 16px before the button (localnav:localnav.chevron; its place follows the button\'s text)' },
       { target: CHEVRON, props: ['color', 'opacity'], apple: ['localnav', 'localnav.chevron-image'] },
@@ -86,9 +84,9 @@ export const cases = [
     checks: [
       { target: '.cui-localnav', props: ['background-color', 'backdrop-filter'], apple: ['localnav', 'tray.background'] },
       { target: '.cui-localnav-menu', props: ['visibility'], apple: ['localnav', 'tray.open'] },
-      { target: LINK, props: [...TYPE, 'color', 'opacity', 'display', 'align-items', 'box-top', 'box-left', 'box-height'], apple: ['localnav', 'tray.link'] },
+      { target: LINK, props: [...SIZE, 'color', 'opacity', 'display', 'align-items', 'box-top', 'box-left', 'box-height'], apple: ['localnav', 'tray.link'] },
       { target: LINK, state: 'hover', props: ['opacity'], apple: ['localnav', 'tray.link', 'hover'] },
-      { target: CURRENT, props: [...TYPE, 'color', 'opacity', 'box-top', 'box-left', 'box-height'], apple: ['localnav', 'tray.current'] },
+      { target: CURRENT, props: [...SIZE, 'color', 'opacity', 'box-top', 'box-left', 'box-height'], apple: ['localnav', 'tray.current'] },
       { target: CURRENT, pseudo: '::after', props: ['background-color', 'opacity', 'height', 'top', 'left', 'border-top-left-radius'], apple: ['localnav', 'tray.current-mark'] },
       { target: CURRENT, pseudo: '::after', props: ['width'], golden: 'apple.com\'s mark, 1.2px wide (localnav:tray.current-mark, 1.1875px as drawn)' },
       { target: '.cui-localnav-menu', props: ['box-top', 'box-height'], golden: 'the menu below the bar, its last row\'s foot 27px above its own at 221px, apple.com\'s (localnav:tray.open: from 24px, 197px)' },

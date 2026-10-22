@@ -15,12 +15,11 @@
 // the dialog (ricmodal-dark:*): its panel, its heading, its close button at
 // rest, hovered, pressed and focused.
 
-import { examples, PADDING } from '../../test/harness.mjs';
+import { examples, MOTION, PADDING } from '../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const MODAL = ex('modal');
 const OPENER = '[command="show-modal"]';
-const MOTION = ['transition-property', 'transition-duration', 'transition-timing-function'];
 // the overlay's widths but the two between ciderui's step (735) and the
 // store's (737), golden below
 const WIDTHS = [1600, 1200, 900, 816, 737, 734, 640, 390];
