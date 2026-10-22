@@ -1,0 +1,311 @@
+{
+ "browser": "Chrome/154.0.0.0",
+ "date": "2026-10-22T17:02:02.911Z",
+ "path": "/apps/<app>/analytics/overview",
+ "probes": {
+  "card.change": {
+   "box": { "height": 20.5, "width": 57.039 },
+   "html": "span {sc-krVzYl hgRwdd rt-Text--textStyle--$h4Medium}",
+   "styles": {
+    "color": "oklch(0.654 0.232 28.8)",
+    "font-family": "-system-ui, -apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+    "font-size": "18px",
+    "font-weight": "500",
+    "letter-spacing": "normal",
+    "line-height": "22px"
+   }
+  },
+  "card.info": {
+   "box": { "height": 18, "width": 19.828 },
+   "html": "button {sc-FpjRO jcPyKH rt-InfoSystemButton--focus--off}",
+   "styles": { "background-color": "rgba(0, 0, 0, 0)", "border-top-left-radius": "99999px", "color": "oklch(0 0 0 / 0.85)", "height": "18px", "width": "19.8281px" }
+  },
+  "card.info.icon": {
+   "box": { "height": 9.156, "width": 19.828 },
+   "html": "svg",
+   "styles": { "color": "oklch(0 0 0 / 0.85)", "fill": "rgb(0, 0, 0)", "height": "9.15625px", "width": "19.8281px" }
+  },
+  "card.title": {
+   "box": { "height": 18, "width": 162.492 },
+   "html": "p {sc-krVzYl gIhTEY rt-Text--textStyle--$bodyEmph}",
+   "styles": {
+    "color": "oklch(0 0 0 / 0.85)",
+    "font-family": "-system-ui, -apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+    "font-size": "13px",
+    "font-weight": "600",
+    "letter-spacing": "normal",
+    "line-height": "18px"
+   }
+  },
+  "card.value": {
+   "box": { "height": 45, "width": 109.414 },
+   "html": "h2 {sc-krVzYl jFQnuy rt-Text--textStyle--$h1PlusEmph}",
+   "styles": {
+    "color": "oklch(0 0 0 / 0.85)",
+    "font-family": "-system-ui, -apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+    "font-size": "41px",
+    "font-variant-numeric": "normal",
+    "font-weight": "700",
+    "letter-spacing": "normal",
+    "line-height": "45px"
+   }
+  },
+  "chart.bar": {
+   "box": { "height": 141.454, "width": 25 },
+   "html": "path",
+   "styles": { "fill": "url(\"#lg_:r1m:_0\")", "opacity": "1", "stroke": "none" }
+  },
+  "chart.bar.bottom": {
+   "html": "stop",
+   "styles": { "stop-color": "rgb(40, 133, 211)", "stop-opacity": "1" }
+  },
+  "chart.bar.top": {
+   "html": "stop",
+   "styles": { "stop-color": "rgb(66, 147, 217)", "stop-opacity": "1" }
+  },
+  "chart.grid": {
+   "box": { "height": 0, "width": 501 },
+   "html": "line",
+   "styles": { "opacity": "1", "stroke": "rgb(214, 214, 214)", "stroke-dasharray": "0px", "stroke-width": "1px" }
+  },
+  "chart.x": {
+   "box": { "height": 15, "width": 33.961 },
+   "html": "text",
+   "styles": {
+    "color": "oklch(0.359 0.012 285.8 / 0.48)",
+    "fill": "rgb(136, 136, 136)",
+    "font-family": "-system-ui, -apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+    "font-size": "13px",
+    "font-weight": "400",
+    "letter-spacing": "normal",
+    "line-height": "13px",
+    "text-anchor": "middle"
+   }
+  },
+  "chart.y": {
+   "box": { "height": 12.5, "width": 15.898 },
+   "html": "text",
+   "styles": {
+    "color": "oklch(0.359 0.012 285.8 / 0.48)",
+    "fill": "rgb(136, 136, 136)",
+    "font-family": "-system-ui, -apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+    "font-size": "11px",
+    "font-weight": "600",
+    "letter-spacing": "normal",
+    "line-height": "11px",
+    "text-anchor": "start"
+   }
+  },
+  "date.chevron": {
+   "box": { "height": 11, "width": 11 },
+   "html": "svg {sc-hjYznJ jZdXUf}",
+   "styles": { "color": "oklch(1 0 0)", "fill": "oklch(1 0 0)", "height": "11px", "width": "11px" }
+  },
+  "date.next": {
+   "box": { "height": 30, "width": 31 },
+   "html": "button {sc-dYjPD sc-bRRojc blpBH}",
+   "styles": {
+    "background-color": "oklch(0.542 0.162 251.9)",
+    "border-bottom-left-radius": "0px",
+    "border-bottom-right-radius": "15px",
+    "border-left-color": "rgb(0, 0, 0)",
+    "border-left-style": "none",
+    "border-left-width": "0px",
+    "border-top-left-radius": "0px",
+    "border-top-right-radius": "15px",
+    "color": "rgb(0, 0, 0)",
+    "height": "30px",
+    "margin-left": "0px",
+    "padding-left": "10px",
+    "padding-right": "10px"
+   }
+  },
+  "date.period": {
+   "box": { "height": 30, "width": 87.914 },
+   "html": "button {sc-dYjPD sc-edgaEG kUcTSi}",
+   "styles": {
+    "background-color": "oklch(0.542 0.162 251.9)",
+    "border-bottom-left-radius": "0px",
+    "border-bottom-right-radius": "0px",
+    "border-left-color": "rgb(0, 0, 0)",
+    "border-left-style": "none",
+    "border-left-width": "0px",
+    "border-top-left-radius": "0px",
+    "border-top-right-radius": "0px",
+    "color": "rgb(0, 0, 0)",
+    "height": "30px",
+    "margin-left": "0px",
+    "padding-left": "10px",
+    "padding-right": "10px"
+   }
+  },
+  "date.period.label": {
+   "box": { "height": 15, "width": 67.914 },
+   "html": "span {sc-krVzYl cFodJj rt-Text--textStyle--$bodyEmph}",
+   "styles": {
+    "color": "oklch(1 0 0)",
+    "font-family": "-system-ui, -apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+    "font-size": "13px",
+    "font-weight": "600",
+    "letter-spacing": "normal",
+    "line-height": "18px"
+   }
+  },
+  "date.previous": {
+   "box": { "height": 30, "width": 31 },
+   "html": "button {sc-dYjPD sc-bRRojc blpBH}",
+   "styles": {
+    "background-color": "oklch(0.542 0.162 251.9)",
+    "border-bottom-left-radius": "15px",
+    "border-bottom-right-radius": "0px",
+    "border-left-color": "rgb(0, 0, 0)",
+    "border-left-style": "none",
+    "border-left-width": "0px",
+    "border-top-left-radius": "15px",
+    "border-top-right-radius": "0px",
+    "color": "rgb(0, 0, 0)",
+    "height": "30px",
+    "margin-left": "0px",
+    "padding-left": "10px",
+    "padding-right": "10px"
+   }
+  },
+  "menu.current": {
+   "box": { "height": 36, "width": 225 },
+   "html": "a {sc-FBvLw gmHIun rt-Item--colorRole--neutral}",
+   "styles": {
+    "background-color": "oklch(0.575 0.012 286 / 0.08)",
+    "border-top-left-radius": "18px",
+    "color": "rgb(0, 0, 0)",
+    "column-gap": "normal",
+    "height": "36px",
+    "padding-left": "15px",
+    "padding-right": "15px"
+   }
+  },
+  "menu.current.label": {
+   "box": { "height": 18, "width": 162 },
+   "html": "div {sc-hhXYTC jQgsnT}",
+   "styles": {
+    "color": "oklch(0 0 0 / 0.85)",
+    "font-family": "-system-ui, -apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+    "font-size": "13px",
+    "font-weight": "500",
+    "letter-spacing": "normal",
+    "line-height": "18px"
+   }
+  },
+  "menu.icon": {
+   "box": { "height": 9.156, "width": 17.352 },
+   "html": "svg",
+   "styles": { "color": "oklch(0.359 0.012 285.8 / 0.6)", "fill": "rgb(0, 0, 0)", "height": "9.15625px", "width": "17.3516px" }
+  },
+  "menu.item": {
+   "box": { "height": 36, "width": 225 },
+   "html": "a {sc-FBvLw gmHIun rt-Item--colorRole--neutral}",
+   "styles": {
+    "background-color": "oklch(1 0 0 / 0)",
+    "border-top-left-radius": "18px",
+    "color": "rgb(0, 0, 0)",
+    "column-gap": "normal",
+    "height": "36px",
+    "padding-left": "48px",
+    "padding-right": "15px"
+   }
+  },
+  "menu.item.label": {
+   "box": { "height": 18, "width": 162 },
+   "html": "div {sc-hhXYTC jQgsnT}",
+   "styles": {
+    "color": "oklch(0 0 0 / 0.85)",
+    "font-family": "-system-ui, -apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+    "font-size": "13px",
+    "font-weight": "500",
+    "letter-spacing": "normal",
+    "line-height": "18px"
+   }
+  },
+  "menu.rule": {
+   "box": { "height": 0.5, "width": 195 },
+   "html": "hr {sc-otWXT hwWcbA rt-HR--backgroundColor--neutralBorder2}[role=separator]",
+   "styles": {
+    "background-color": "oklch(0.359 0.012 285.8 / 0.18)",
+    "border-top-style": "none",
+    "height": "0.5px",
+    "margin-bottom": "7px",
+    "margin-left": "15px",
+    "margin-right": "15px",
+    "margin-top": "7px"
+   }
+  },
+  "spark.area": {
+   "box": { "height": 83.046, "width": 352 },
+   "html": "path",
+   "styles": { "fill": "url(\"#linear_:r1j:\")", "fill-opacity": "1", "opacity": "1", "stroke": "none" }
+  },
+  "spark.bottom": {
+   "html": "stop",
+   "styles": { "stop-color": "rgb(249, 252, 255)", "stop-opacity": "1" }
+  },
+  "spark.line": {
+   "box": { "height": 79.587, "width": 352 },
+   "html": "path",
+   "styles": { "fill": "none", "opacity": "1", "stroke": "oklch(0.542 0.162 251.9)", "stroke-linecap": "round", "stroke-linejoin": "round", "stroke-width": "2px" }
+  },
+  "spark.top": {
+   "html": "stop",
+   "styles": { "stop-color": "rgb(192, 227, 255)", "stop-opacity": "1" }
+  },
+  "table.cell": {
+   "box": { "height": 57, "width": 350.344 },
+   "html": "td {sc-bQSAzj dGAmhL rt-TD--effect--default}",
+   "styles": {
+    "border-bottom-color": "oklch(0.359 0.012 285.8 / 0.13)",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "padding-bottom": "19px",
+    "padding-left": "0px",
+    "padding-right": "8px",
+    "padding-top": "19px",
+    "text-align": "left",
+    "vertical-align": "middle"
+   }
+  },
+  "table.figure": {
+   "box": { "height": 18, "width": 142.156 },
+   "html": "p {sc-krVzYl eEAxOE rt-Text--textStyle--$bodyRegular}",
+   "styles": {
+    "color": "oklch(0 0 0 / 0.85)",
+    "font-family": "-system-ui, -apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+    "font-size": "13px",
+    "font-variant-numeric": "normal",
+    "font-weight": "500",
+    "letter-spacing": "normal",
+    "line-height": "18px",
+    "text-align": "right"
+   }
+  },
+  "table.row": {
+   "box": { "height": 57, "width": 500.5 },
+   "html": "tr {sc-fXwuWv bIvmsr rt-TR--size--lg}",
+   "styles": { "background-color": "rgba(0, 0, 0, 0)", "border-bottom-color": "oklch(0 0 0 / 0.85)", "border-bottom-style": "none", "border-bottom-width": "0px", "height": "57px" }
+  },
+  "table.text": {
+   "box": { "height": 18, "width": 342.344 },
+   "html": "p {sc-krVzYl fPRAgr rt-Text--textStyle--$bodyRegular}",
+   "styles": {
+    "color": "oklch(0 0 0 / 0.85)",
+    "font-family": "-system-ui, -apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+    "font-size": "13px",
+    "font-weight": "400",
+    "letter-spacing": "normal",
+    "line-height": "18px",
+    "text-align": "left"
+   }
+  }
+ },
+ "probesDigest": [47, 224, 108, 220, 91, 139, 41, 210, 172, 193, 126, 242, 61, 163, 228, 175, 237, 123, 81, 179, 133, 54, 239, 9, 119, 21, 1, 244, 175, 117, 222, 84],
+ "readerDigest": [138, 144, 100, 105, 60, 82, 123, 90, 132, 236, 231, 73, 61, 240, 117, 187, 41, 119, 199, 254, 212, 130, 106, 226, 247, 204, 42, 95, 216, 46, 128, 91],
+ "window": [1920, 954, 2],
+ "sha256": [255, 133, 88, 104, 145, 238, 69, 215, 56, 22, 105, 65, 182, 217, 52, 76, 249, 39, 84, 201, 112, 140, 250, 188, 12, 55, 234, 28, 196, 186, 225, 128]
+}
