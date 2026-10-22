@@ -242,18 +242,20 @@
       font-weight: 700;
     }
 
-    > :where(ul, ol):where(:not([class*="cui-"])) {
+    /* a list and a code block wherever markdown puts them, in a list item
+       or a quotation too */
+    :where(ul, ol):where(:not([class*="cui-"])) {
       margin-top: 0;
       margin-bottom: var(--cui-article-gap);
       padding-left: 1.1765em;
       list-style-position: outside;
     }
 
-    > :where(ul:not([class*="cui-"])) {
+    :where(ul:not([class*="cui-"])) {
       list-style-type: disc;
     }
 
-    > :where(ol:not([class*="cui-"])) {
+    :where(ol:not([class*="cui-"])) {
       list-style-type: decimal;
     }
 
@@ -264,7 +266,7 @@
       color: var(--cui-c-text-2);
     }
 
-    > :where(pre:not([class*="cui-"])) {
+    :where(pre:not([class*="cui-"])) {
       margin-top: 0;
       margin-bottom: var(--cui-article-gap);
       padding: 16px 20px;

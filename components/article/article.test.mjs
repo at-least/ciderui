@@ -103,4 +103,20 @@ export const cases = [
       ...['.cui-article-body > p code', '.cui-article-body > p a', '.cui-article-body > table'].map(target => ({ target, props: ['box-width', 'box-left'], golden: 'within the text\'s column: a long word broken in it' })),
     ],
   },
+  {
+    // markdown's lists in a list item and in a quotation, and its code block
+    // in a list item (a step's command), as Zola writes them
+    name: 'nested',
+    html: `<article class="cui-article"><header class="cui-article-header"><h1 class="cui-article-headline">ciderui</h1></header><div class="cui-article-body">
+<ul><li>Outer<ul><li>Inner</li></ul></li></ul>
+<ol><li><p>Add the packages:</p><pre><code>npm install --save-dev @tailwindcss/cli tailwindcss</code></pre></li></ol>
+<blockquote><p>A quotation with a list:</p><ul><li>Quoted</li></ul></blockquote>
+</div></article>`,
+    widths: [1600, 390],
+    checks: [
+      { target: '.cui-article-body > ul ul', props: ['list-style-type', 'padding-left'], golden: `a list in a list item the copy's, its marker and its room (${NONE})` },
+      { target: '.cui-article-body > blockquote ul', props: ['list-style-type', 'padding-left'], golden: `a list in a quotation the copy's (${NONE})` },
+      { target: '.cui-article-body > ol pre', props: ['background-color', 'padding-left', 'overflow-x'], golden: `a code block in a list item the copy's, scrolling in its column (${NONE})` },
+    ],
+  },
 ];

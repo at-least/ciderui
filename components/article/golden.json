@@ -624,5 +624,19 @@
  "long | .cui-article-body > p a | 390 | box-width": "335.546875px",
  "long | .cui-article-body > p a | 390 | box-left": "24.375px",
  "long | .cui-article-body > table | 390 | box-width": "341.25px",
- "long | .cui-article-body > table | 390 | box-left": "24.375px"
+ "long | .cui-article-body > table | 390 | box-left": "24.375px",
+ "nested | .cui-article-body > ul ul | 1600 | list-style-type": "disc",
+ "nested | .cui-article-body > ul ul | 1600 | padding-left": "22.3535px",
+ "nested | .cui-article-body > blockquote ul | 1600 | list-style-type": "disc",
+ "nested | .cui-article-body > blockquote ul | 1600 | padding-left": "22.3535px",
+ "nested | .cui-article-body > ol pre | 1600 | background-color": "rgb(245, 245, 247)",
+ "nested | .cui-article-body > ol pre | 1600 | padding-left": "20px",
+ "nested | .cui-article-body > ol pre | 1600 | overflow-x": "auto",
+ "nested | .cui-article-body > ul ul | 390 | list-style-type": "disc",
+ "nested | .cui-article-body > ul ul | 390 | padding-left": "20.0005px",
+ "nested | .cui-article-body > blockquote ul | 390 | list-style-type": "disc",
+ "nested | .cui-article-body > blockquote ul | 390 | padding-left": "20.0005px",
+ "nested | .cui-article-body > ol pre | 390 | background-color": "rgb(245, 245, 247)",
+ "nested | .cui-article-body > ol pre | 390 | padding-left": "20px",
+ "nested | .cui-article-body > ol pre | 390 | overflow-x": "auto"
 }
