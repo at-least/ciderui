@@ -21,6 +21,8 @@ export async function open(css, html, { width = 1200, height = 800, reducedMotio
   const cdp = await page.context().newCDPSession(page);
   if (touch) await cdp.send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
   await page.setContent(`<!doctype html><html lang="en"><head><meta charset="utf-8"><style>${css}</style></head><body>${html}</body></html>`);
+  // the page's fonts loaded before anything is read (a case's Inter)
+  await page.evaluate(() => document.fonts.ready);
   const hover = await page.evaluate(() => matchMedia('(hover: hover)').matches);
   if (hover === Boolean(touch)) throw new Error(`(hover: hover) is ${hover} on a ${touch ? 'touch' : 'desktop'} page`);
   await cdp.send('DOM.enable');

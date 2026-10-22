@@ -1,7 +1,10 @@
 // Runs every components/<name>/<name>.test.mjs (its `cases`, test/harness.mjs
 // says what a case and a check are): each case rendered in headless Chromium
-// on the kit and every component's stylesheet, compiled as a site compiles
-// them, at each of its widths; each check's values against apple.com's
+// on the kit, its fonts and every component's stylesheet, compiled as a site
+// compiles them, at each of its widths, its text in Inter as a site that
+// imports fonts.css draws it where the system font is not SF (here, Linux:
+// without them the stack falls through to this host's Arial, Liberation
+// Sans); each check's values against apple.com's
 // measured ones, golden.json's or the element's own at rest. golden.json
 // beside a test holds its golden values; UPDATE_GOLDEN=1 rewrites them, and
 // an entry no check reads fails the run. CASES=<regex> runs the cases it
@@ -22,10 +25,16 @@ if (UPDATE && PICK) throw new Error('UPDATE_GOLDEN=1 runs every case: drop CASES
 
 const names = readdirSync(join(ROOT, 'components')).filter(n => existsSync(join(ROOT, 'components', n, `${n}.test.mjs`)));
 const sheets = names.map(n => `@import "components/${n}/${n}.css";`).join('\n');
+// the fonts' files inlined, as each case's page is set from no URL
+const inline = (css) => {
+  const inlined = css.replace(/url\(fonts\/([^)]+)\)/g, (_, f) => `url(data:font/woff2;base64,${readFileSync(join(ROOT, 'fonts', f)).toString('base64')})`);
+  if (inlined === css || /url\(["']?fonts\//.test(inlined)) throw new Error('fonts.css\'s url()s are not the form inlined here');
+  return inlined;
+};
 // Tailwind scans the components' directories, as a site's @source does: the
 // examples and the test files, whose cases write markup of their own (a type
 // class around an example)
-const css = compile({ css: `@import "index.css";\n${sheets}`, sources: ['components'] });
+const css = inline(compile({ css: `@import "fonts.css";\n@import "index.css";\n${sheets}`, sources: ['components'] }));
 
 for (const name of names) {
   const file = join(ROOT, 'components', name, `${name}.test.mjs`);

@@ -55,7 +55,7 @@
  "error-dark | .cui-field-message | 1200 | color": "rgb(255, 69, 58)",
  "error-dark | .cui-field-message | 900 | color": "rgb(255, 69, 58)",
  "error-dark | .cui-field-message | 390 | color": "rgb(255, 69, 58)",
- "prefix | .cui-field-prefix | 1600 | box-width": "42.515625px",
+ "prefix | .cui-field-prefix | 1600 | box-width": "43.890625px",
  "prefix | .cui-field-prefix | 1600 | letter-spacing": "0.0493px",
  "select | .cui-field-label:focus | 1600 | font-size": "17px",
  "select | .cui-field-label:focus | 1600 | line-height": "21px",
