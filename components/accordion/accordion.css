@@ -31,7 +31,8 @@
  * through a flat one); its height moves where the browser can move to auto
  * (interpolate-size: Chromium 151, Chrome 155), and opens at once where it
  * cannot (Safari 27.0.1 on macOS and 26.5 on iOS, Firefox 153:
- * reference/details/). */
+ * reference/details/), clipping its height as it moves and not its width, so
+ * that a focus ring in it shows whole (reference/details/). */
 
 @layer components {
   .cui-accordion {
@@ -41,9 +42,11 @@
   .cui-accordion-item {
     border-top: 1px solid var(--cui-c-divider);
 
+    /* its height clipped as it moves, not its width: the ring of what begins
+     * a line in it, drawn 3px outside it, shown whole */
     &::details-content {
       height: 0;
-      overflow: clip;
+      overflow: visible clip;
       transition: height 0.3s ease-in-out, content-visibility 0.3s ease-in-out allow-discrete;
     }
 

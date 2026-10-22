@@ -1,6 +1,6 @@
 {
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T08:50:57.214Z",
+ "date": "2026-10-22T04:19:41.051Z",
  "closed": {
   "open": false,
   "item": 56,
@@ -11,7 +11,7 @@
   "open": true,
   "item": 70.28125,
   "answer": 61.59375,
-  "chevron": "matrix(1, 0, 0, 0.579022, 0, 0)"
+  "chevron": "matrix(1, 0, 0, 0.578924, 0, 0)"
  },
  "opened": {
   "open": true,
@@ -19,5 +19,87 @@
   "answer": 61.59375,
   "chevron": "matrix(1, 0, 0, -1, 0, 0)"
  },
- "interpolateSize": true
+ "interpolateSize": true,
+ "held": {
+  "height": "10px",
+  "overflow": "visible clip",
+  "box": {
+   "top": 93.59,
+   "height": 20
+  },
+  "scale": 1,
+  "ink": 0
+ },
+ "held-visible": {
+  "height": "10px",
+  "overflow": "visible visible",
+  "box": {
+   "top": 93.59,
+   "height": 20
+  },
+  "scale": 1,
+  "ink": 723
+ },
+ "rings": {
+  "question at 1200": {
+   "focused": true,
+   "visible": true,
+   "outline": "2px solid rgb(0, 113, 227) 3px",
+   "box": {
+    "left": 24,
+    "right": 1141,
+    "top": 139.59,
+    "bottom": 194.59
+   },
+   "height": 55,
+   "scale": 1,
+   "left": 142,
+   "right": 142
+  },
+  "link at 1200": {
+   "focused": true,
+   "visible": true,
+   "outline": "2px solid rgb(0, 113, 227) 3px",
+   "box": {
+    "left": 24,
+    "right": 96.95,
+    "top": 411.78,
+    "bottom": 427.78
+   },
+   "height": 16,
+   "scale": 1,
+   "left": 64,
+   "right": 64
+  },
+  "question at 390": {
+   "focused": true,
+   "visible": true,
+   "outline": "2px solid rgb(0, 113, 227) 3px",
+   "box": {
+    "left": 24,
+    "right": 366,
+    "top": 122.59,
+    "bottom": 174.59
+   },
+   "height": 52,
+   "scale": 1,
+   "left": 136,
+   "right": 136
+  },
+  "link at 390": {
+   "focused": true,
+   "visible": true,
+   "outline": "2px solid rgb(0, 113, 227) 3px",
+   "box": {
+    "left": 24,
+    "right": 96.95,
+    "top": 385.78,
+    "bottom": 401.78
+   },
+   "height": 16,
+   "scale": 1,
+   "left": 64,
+   "right": 64
+  }
+ }
 }

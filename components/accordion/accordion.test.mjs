@@ -32,6 +32,7 @@ export const cases = [
       { target: `${OPEN} > ${Q} svg`, props: ['transform'], golden: 'open, turned up: apple.com\'s line moved to the same points, through a flat one, in 320ms' },
       { target: `${CLOSED} > ${Q} svg`, props: ['box-width', 'margin-right'], golden: 'apple.com\'s 17px chevron (14px) in the middle of its 32px column at the end (bag-accordion:compact.svg, .icon)' },
       { target: ITEM, pseudo: '::details-content', props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: 'its answer\'s height in apple.com\'s 0.3s ease-in-out (bag-accordion:compact.panel), where the browser can move a height to auto' },
+      { target: ITEM, pseudo: '::details-content', props: ['overflow-x', 'overflow-y'], golden: 'its answer\'s height clipped as it moves, not its width: the ring of what begins a line in it, a link or a question in the large one\'s answer, is drawn 3px outside it (reference/details/)' },
       { target: Q, props: ['list-style-type'], golden: 'no marker: the chevron is the question\'s' },
       { target: Q, props: ['letter-spacing'], golden: TRACKING },
       { target: `${OPEN} .cui-accordion-answer`, props: ['letter-spacing'], golden: TRACKING },
