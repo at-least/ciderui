@@ -1,13 +1,14 @@
 {
  "browser": "safari 27.0.1 on macOS 27.0.1",
- "date": "2026-10-19T03:17:52.833Z",
+ "date": "2026-10-22T08:21:59.381Z",
  "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0.1 Safari/605.1.15",
  "rows": [
   {
    "size": 12,
    "fams": {
-    "-apple-system": 357.58453369140625,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 357.58453369140625,
     "system-ui": 357.58453369140625,
+    "-apple-system": 357.58453369140625,
     "BlinkMacSystemFont": 313.9673767089844
    },
    "weight": 400,
@@ -16,8 +17,9 @@
   {
    "size": 12,
    "fams": {
-    "-apple-system": 372.9841003417969,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 372.9841003417969,
     "system-ui": 372.9841003417969,
+    "-apple-system": 372.9841003417969,
     "BlinkMacSystemFont": 328.1939392089844
    },
    "weight": 600,
@@ -26,8 +28,9 @@
   {
    "size": 14,
    "fams": {
-    "-apple-system": 412.27569580078125,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 412.27569580078125,
     "system-ui": 412.27569580078125,
+    "-apple-system": 412.27569580078125,
     "BlinkMacSystemFont": 370.11163330078125
    },
    "weight": 400,
@@ -36,8 +39,9 @@
   {
    "size": 14,
    "fams": {
-    "-apple-system": 430.2418212890625,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 430.2418212890625,
     "system-ui": 430.2418212890625,
+    "-apple-system": 430.2418212890625,
     "BlinkMacSystemFont": 386.70928955078125
    },
    "weight": 600,
@@ -46,8 +50,9 @@
   {
    "size": 17,
    "fams": {
-    "-apple-system": 494.7554016113281,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 494.7554016113281,
     "system-ui": 494.7554016113281,
+    "-apple-system": 494.7554016113281,
     "BlinkMacSystemFont": 457.9995422363281
    },
    "weight": 400,
@@ -56,8 +61,9 @@
   {
    "size": 17,
    "fams": {
-    "-apple-system": 516.5712890625,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 516.5712890625,
     "system-ui": 516.5712890625,
+    "-apple-system": 516.5712890625,
     "BlinkMacSystemFont": 478.1538391113281
    },
    "weight": 600,
@@ -66,8 +72,9 @@
   {
    "size": 19,
    "fams": {
-    "-apple-system": 532.3369750976562,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 532.3369750976562,
     "system-ui": 532.3369750976562,
+    "-apple-system": 532.3369750976562,
     "BlinkMacSystemFont": 494.47027587890625
    },
    "weight": 400,
@@ -76,8 +83,9 @@
   {
    "size": 19,
    "fams": {
-    "-apple-system": 556.9386596679688,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 556.9386596679688,
     "system-ui": 556.9386596679688,
+    "-apple-system": 556.9386596679688,
     "BlinkMacSystemFont": 516.9957275390625
    },
    "weight": 600,
@@ -86,8 +94,9 @@
   {
    "size": 21,
    "fams": {
-    "-apple-system": 586.8613891601562,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 586.8613891601562,
     "system-ui": 586.8613891601562,
+    "-apple-system": 586.8613891601562,
     "BlinkMacSystemFont": 556.2637329101562
    },
    "weight": 400,
@@ -96,8 +105,9 @@
   {
    "size": 21,
    "fams": {
-    "-apple-system": 614.8283081054688,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 614.8283081054688,
     "system-ui": 614.8283081054688,
+    "-apple-system": 614.8283081054688,
     "BlinkMacSystemFont": 581.1602172851562
    },
    "weight": 600,
@@ -106,8 +116,9 @@
   {
    "size": 24,
    "fams": {
-    "-apple-system": 667.2772216796875,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 667.2772216796875,
     "system-ui": 667.2772216796875,
+    "-apple-system": 667.2772216796875,
     "BlinkMacSystemFont": 636.9827880859375
    },
    "weight": 400,
@@ -116,8 +127,9 @@
   {
    "size": 24,
    "fams": {
-    "-apple-system": 700.5689086914062,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 700.5689086914062,
     "system-ui": 700.5689086914062,
+    "-apple-system": 700.5689086914062,
     "BlinkMacSystemFont": 665.4359130859375
    },
    "weight": 600,
@@ -126,8 +138,9 @@
   {
    "size": 28,
    "fams": {
-    "-apple-system": 774.756103515625,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 774.756103515625,
     "system-ui": 774.756103515625,
+    "-apple-system": 774.756103515625,
     "BlinkMacSystemFont": 737.787353515625
    },
    "weight": 400,
@@ -136,8 +149,9 @@
   {
    "size": 28,
    "fams": {
-    "-apple-system": 814.2425537109375,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 814.2425537109375,
     "system-ui": 814.2425537109375,
+    "-apple-system": 814.2425537109375,
     "BlinkMacSystemFont": 770.982666015625
    },
    "weight": 600,
@@ -146,8 +160,9 @@
   {
    "size": 32,
    "fams": {
-    "-apple-system": 879.9110107421875,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 879.9110107421875,
     "system-ui": 879.9110107421875,
+    "-apple-system": 879.9110107421875,
     "BlinkMacSystemFont": 839.4735107421875
    },
    "weight": 400,
@@ -156,8 +171,9 @@
   {
    "size": 32,
    "fams": {
-    "-apple-system": 925.0385131835938,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 925.0385131835938,
     "system-ui": 925.0385131835938,
+    "-apple-system": 925.0385131835938,
     "BlinkMacSystemFont": 877.410888671875
    },
    "weight": 600,
@@ -166,8 +182,9 @@
   {
    "size": 40,
    "fams": {
-    "-apple-system": 1090.567138671875,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1090.567138671875,
     "system-ui": 1090.567138671875,
+    "-apple-system": 1090.567138671875,
     "BlinkMacSystemFont": 1047.949951171875
    },
    "weight": 400,
@@ -176,8 +193,9 @@
   {
    "size": 40,
    "fams": {
-    "-apple-system": 1146.9764404296875,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1146.9764404296875,
     "system-ui": 1146.9764404296875,
+    "-apple-system": 1146.9764404296875,
     "BlinkMacSystemFont": 1095.371826171875
    },
    "weight": 600,
@@ -186,8 +204,9 @@
   {
    "size": 48,
    "fams": {
-    "-apple-system": 1300.4593505859375,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1300.4593505859375,
     "system-ui": 1300.4593505859375,
+    "-apple-system": 1300.4593505859375,
     "BlinkMacSystemFont": 1254.7562255859375
    },
    "weight": 400,
@@ -196,8 +215,9 @@
   {
    "size": 48,
    "fams": {
-    "-apple-system": 1368.1505126953125,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1368.1505126953125,
     "system-ui": 1368.1505126953125,
+    "-apple-system": 1368.1505126953125,
     "BlinkMacSystemFont": 1311.6624755859375
    },
    "weight": 600,
@@ -206,8 +226,9 @@
   {
    "size": 56,
    "fams": {
-    "-apple-system": 1510.5338134765625,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1510.5338134765625,
     "system-ui": 1510.5338134765625,
+    "-apple-system": 1510.5338134765625,
     "BlinkMacSystemFont": 1463.5572509765625
    },
    "weight": 400,
@@ -216,8 +237,9 @@
   {
    "size": 56,
    "fams": {
-    "-apple-system": 1589.507080078125,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1589.507080078125,
     "system-ui": 1589.507080078125,
+    "-apple-system": 1589.507080078125,
     "BlinkMacSystemFont": 1529.9478759765625
    },
    "weight": 600,
@@ -226,8 +248,9 @@
   {
    "size": 64,
    "fams": {
-    "-apple-system": 1711.6502685546875,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1711.6502685546875,
     "system-ui": 1711.6502685546875,
+    "-apple-system": 1711.6502685546875,
     "BlinkMacSystemFont": 1665.2127685546875
    },
    "weight": 400,
@@ -236,8 +259,9 @@
   {
    "size": 64,
    "fams": {
-    "-apple-system": 1801.9051513671875,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1801.9051513671875,
     "system-ui": 1801.9051513671875,
+    "-apple-system": 1801.9051513671875,
     "BlinkMacSystemFont": 1741.0877685546875
    },
    "weight": 600,
@@ -246,8 +270,9 @@
   {
    "size": 80,
    "fams": {
-    "-apple-system": 2111.6396484375,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 2111.6396484375,
     "system-ui": 2111.6396484375,
+    "-apple-system": 2111.6396484375,
     "BlinkMacSystemFont": 2069.4521484375
    },
    "weight": 400,
@@ -256,8 +281,9 @@
   {
    "size": 80,
    "fams": {
-    "-apple-system": 2224.45849609375,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 2224.45849609375,
     "system-ui": 2224.45849609375,
+    "-apple-system": 2224.45849609375,
     "BlinkMacSystemFont": 2164.2958984375
    },
    "weight": 600,
@@ -266,8 +292,9 @@
   {
    "size": 96,
    "fams": {
-    "-apple-system": 2533.96728515625,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 2533.96728515625,
     "system-ui": 2533.96728515625,
+    "-apple-system": 2533.96728515625,
     "BlinkMacSystemFont": 2483.342529296875
    },
    "weight": 400,
@@ -276,8 +303,9 @@
   {
    "size": 96,
    "fams": {
-    "-apple-system": 2669.349609375,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 2669.349609375,
     "system-ui": 2669.349609375,
+    "-apple-system": 2669.349609375,
     "BlinkMacSystemFont": 2597.155029296875
    },
    "weight": 600,

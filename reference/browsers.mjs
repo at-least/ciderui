@@ -25,7 +25,10 @@
 //             quits when it closes: Safari 27 takes no session in one it did
 //             not launch ("Safari was not launched for automation"), so quit
 //             Safari before the run
-//   ios       the same on an iPhone simulator (Xcode), whichever safaridriver finds
+//   ios       the same on an iPhone simulator (Xcode) of iOS 26.5 (IOS names
+//             another), whichever of its safaridriver finds: with no version it
+//             chose iOS 27.1's iPhone Duo too, whose Safari it could not reach
+//             ("session not created", 2026-10-22)
 //   chrome    the installed Google Chrome through playwright-core
 //   chromium  Playwright's own Chromium (PW names the module when it is not
 //             playwright-core), with --font-render-hinting=none: on Linux it
@@ -49,7 +52,7 @@ export function open(name, url, options) {
     case 'chromium': return viaPlaywright('chromium', undefined, url, options);
     case 'firefox': return viaPlaywright('firefox', undefined, url, options);
     case 'safari': return viaSafariDriver({ browserName: 'safari' }, url);
-    case 'ios': return viaSafariDriver({ browserName: 'safari', platformName: 'iOS', 'safari:useSimulator': true, 'safari:deviceType': 'iPhone' }, url);
+    case 'ios': return viaSafariDriver({ browserName: 'safari', platformName: 'iOS', 'safari:useSimulator': true, 'safari:deviceType': 'iPhone', 'safari:platformVersion': process.env.IOS ?? '26.5' }, url);
     default: throw new Error(`no browser ${name}: safari, ios, chrome, chromium or firefox`);
   }
 }
