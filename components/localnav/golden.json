@@ -54,6 +54,7 @@
  "menu-motion | .cui-localnav-list > li:nth-child(2) > .cui-localnav-link | 390 | transition-delay": "0.28s",
  "menu-motion | .cui-localnav-menu | 390 | transition-duration": "0.32s, 0s",
  "menu-motion | .cui-localnav-menu | 390 | transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), ease",
+ "menu-closing | .cui-localnav-menu | 390 | visibility": "visible",
  "menu-keys | .cui-localnav-list > li:nth-child(1) > .cui-localnav-link | 390 | focused": "true",
  "menu-keys | .cui-localnav-menu | 390 | visibility": "visible",
  "menu-focus | .cui-localnav-menubutton | 390 | outline-style": "solid",

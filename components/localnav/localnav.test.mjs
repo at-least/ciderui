@@ -107,6 +107,17 @@ export const cases = [
     ],
   },
   {
+    // opened and closed again by its chevron: read as it starts to close
+    name: 'menu-closing',
+    html: NAV,
+    click: [CHEVRON, CHEVRON],
+    widths: [390],
+    wait: 0,
+    checks: [
+      { target: '.cui-localnav-menu', props: ['visibility'], golden: 'closing, still shown, its rows fading out and the menu folding in its 0.32s, hidden at their end (apple.com\'s keeps its menu shown 1s as it closes: visibility 0s linear 1s, its stylesheet\'s)' },
+    ],
+  },
+  {
     // the focus from the bar's empty middle: the name, the checkbox, its space bar, the next stop
     name: 'menu-keys',
     html: NAV,

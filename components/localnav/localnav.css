@@ -133,7 +133,8 @@
     grid-template-rows: 0fr;
     visibility: hidden;
     background-color: var(--cui-c-menu);
-    transition: grid-template-rows 0.32s var(--cui-localnav-ease), visibility 0s;
+    /* closing, hidden at the end of its fold, its rows faded out */
+    transition: grid-template-rows 0.32s var(--cui-localnav-ease), visibility 0s 0.32s;
   }
 
   .cui-localnav-list {
@@ -215,6 +216,8 @@
         grid-template-rows: 1fr;
         visibility: visible;
         box-shadow: inset 0 -1px var(--cui-c-separator);
+        /* opening, shown at once */
+        transition-delay: 0s;
       }
 
       .cui-localnav-link {
@@ -308,6 +311,8 @@
       visibility: visible;
       background-color: transparent;
       box-shadow: none;
+      /* the bar's links, shown at once as the window widens */
+      transition: none;
     }
 
     .cui-localnav .cui-localnav-list {
