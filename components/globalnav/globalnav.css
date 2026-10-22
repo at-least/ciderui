@@ -1426,11 +1426,14 @@
     right: 0;
   }
 
-  /* the menu's rows behind the open sheet: 8px back and out */
-  .cui-globalnav-list:popover-open:has(> li > .cui-globalnav-flyout:popover-open) > li {
-    opacity: 0;
-    transform: translateX(-8px);
-    transition-delay: 0s;
+  /* the menu's rows behind the open sheet: 8px back and out; from 834px,
+     the menu open still as the window widens, they are the bar's links */
+  @media (width < 834px) {
+    .cui-globalnav-list:popover-open:has(> li > .cui-globalnav-flyout:popover-open) > li {
+      opacity: 0;
+      transform: translateX(-8px);
+      transition-delay: 0s;
+    }
   }
 
   @media (width < 834px) {

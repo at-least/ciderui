@@ -1077,6 +1077,19 @@ export const cases = [
     ],
   },
   {
+    // a flyout opened over the open menu, then the window widened past 834px:
+    // the bar's links shown again, the menu's rows out only below 834px
+    name: 'flyout-widened',
+    html: FLYOUT_NAV,
+    click: [BUTTON, MAC_BUTTON],
+    widths: [390, 900],
+    height: 900,
+    reducedMotion: 'reduce',
+    checks: [
+      { target: `${LIST} > li:nth-child(3)`, props: ['opacity', 'transform'], golden: 'the menu\'s rows 8px back and out behind the flyout\'s sheet below 834px; widened past it, the bar\'s links, shown, where they had stayed out and the bar showed nothing to close the flyout with' },
+    ],
+  },
+  {
     // to 833px: the menu opened, then Mac's row
     name: 'flyout-phone',
     html: FLYOUT_NAV,
