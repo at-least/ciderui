@@ -4,8 +4,11 @@
 // box against the origin and the baseline, its strokes' thickness. Then a
 // chevron of ciderui's own drawn from those numbers alone (two strokes from
 // the ink's corners to its middle, round caps and joins), and the share of
-// ink the two have in common (intersection over union).
-async function glyph(size) {
+// ink the two have in common (intersection over union); and, given
+// `shipped` ({ points: [[x, y], …], stroke }, in em from the origin and above
+// the baseline), the chevron the kit ships drawn the same way, and its share
+// (shippedIou).
+async function glyph(size, shipped) {
   const span = document.createElement('span');
   span.className = 'icon icon-after more';
   document.querySelector('main').append(span);
@@ -53,8 +56,17 @@ async function glyph(size) {
     ctx.lineWidth = t; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#000';
     ctx.beginPath(); ctx.moveTo(P.x0, P.y0); ctx.lineTo(P.x1, P.y1); ctx.lineTo(P.x0, P.y2); ctx.stroke();
   });
-  let both = 0, either = 0;
-  for (let i = 0; i < W * H; i++) { both += apple[i] & ours[i]; either += apple[i] | ours[i]; }
+  const share = (m) => {
+    let both = 0, either = 0;
+    for (let i = 0; i < W * H; i++) { both += apple[i] & m[i]; either += apple[i] | m[i]; }
+    return +(both / either).toFixed(4);
+  };
+  const kit = shipped && mask(ctx => {
+    ctx.lineWidth = shipped.stroke * size; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#000';
+    ctx.beginPath();
+    shipped.points.forEach(([x, y], i) => ctx[i ? 'lineTo' : 'moveTo'](X + x * size, BASE - y * size));
+    ctx.stroke();
+  });
   const em = v => +(v / size).toFixed(4);
   return {
     ua: navigator.userAgent, char: `U+${ch.codePointAt(0).toString(16).toUpperCase()}`, family, size,
@@ -62,6 +74,7 @@ async function glyph(size) {
     ink: { left: em(left - X), right: em(right + 1 - X), top: em(BASE - top), bottom: em(BASE - bottom - 1) },
     thickness: em(thickness),
     polyline: { x0: em(P.x0 - X), y0: em(BASE - P.y0), x1: em(P.x1 - X), y1: em(BASE - P.y1), y2: em(BASE - P.y2), stroke: em(t) },
-    iou: +(both / either).toFixed(4),
+    iou: share(ours),
+    ...(kit && { shippedIou: share(kit) }),
   };
 }

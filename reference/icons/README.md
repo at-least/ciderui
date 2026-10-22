@@ -12,7 +12,7 @@ The numbers ciderui's icons are drawn from. apple.com draws its small icons with
 | ink, above the baseline | −0.0025 to 0.5175 |
 | strokes' thickness | 0.0679 |
 
-ciderui's `MORE`: two strokes of that thickness, round at the ends and the join, from the ink's corners (inset by half the thickness) to its middle: (0.1077, 0.4823) to (0.3323, 0.2575) to (0.1077, 0.0327), above the baseline. Drawn on the same canvas at 400px, it shares 0.9481 of its ink with apple.com's glyph (intersection over union; the probe fails below 0.9, a mark set before the run). Measured 2026-10-19 on https://www.apple.com/iphone/ in Chromium 151 on Linux (`results/more.json`).
+ciderui's `MORE`: two strokes of that thickness, round at the ends and the join, from the ink's corners (inset by half the thickness) to its middle: (0.1077, 0.4823) to (0.3323, 0.2575) to (0.1077, 0.0327), above the baseline. Drawn on the same canvas at 400px, it shares 0.9481 of its ink with apple.com's glyph (intersection over union; the probe fails below 0.9, a mark set before the run). Measured 2026-10-19 on https://www.apple.com/iphone/ in Chromium 151 on Linux (`results/more.json`); again 2026-10-22, the chevron compared now the one the kit ships, read off the more link's example (`shippedIou`, 0.9481, the numbers' own the same), where the probe had compared one drawn from the numbers alone and passed whatever the kit shipped (its stroke halved in the example, the probe now fails: 0.447).
 
 ## The global nav's icons
 

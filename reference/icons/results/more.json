@@ -1,6 +1,6 @@
 {
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T04:32:01.308Z",
+ "date": "2026-10-22T06:27:34.979Z",
  "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
  "char": "U+F301",
  "family": "\"SF Pro Icons\"",
@@ -21,5 +21,6 @@
   "y2": 0.0327,
   "stroke": 0.0679
  },
- "iou": 0.9481
+ "iou": 0.9481,
+ "shippedIou": 0.9481
 }
