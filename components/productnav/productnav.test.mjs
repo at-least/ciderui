@@ -26,6 +26,7 @@ export const cases = [
       { target: `${ITEM} .cui-productnav-image`, props: ['box-width'], golden: 'its own shape at its height: 120px, 92.3px for a 200 by 130 image (store:productnav.image)' },
       { target: ITEM, props: ['box-width'], golden: 'its image and its padding: apple.com\'s 136px, 100.3px (store:productnav.card)' },
       { target: '.cui-shelf-row', props: ['box-height'], golden: 'its row in sight: apple.com\'s crop, 186px, and 164px on a phone for apple.com\'s 163px, which cuts its row\'s last pixel (store:productnav.crop)' },
+      { target: '.cui-shelf-scroller', props: ['padding-bottom'], golden: 'room under the cards for a focused card\'s ring, which the scroller clips (on a phone 5px, pulled back by its margin, none of it in sight: the row\'s crop above)' },
       { target: ITEM, props: ['text-decoration-line', 'display'], golden: 'the card is the link, no underline (apple.com\'s script follows its name\'s link)' },
       { target: `${ITEM} .cui-productnav-name`, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
     ],

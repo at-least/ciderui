@@ -24,7 +24,8 @@
  * letter-spacing (tokens.css); the card is the link (apple.com's script
  * follows its name's link from anywhere on it); its row's foot 16px above
  * and none below on a phone, as in sight (apple.com's crop cuts its row's
- * last pixel there). */
+ * last pixel there), the scroller's 5px under the cards there, for a focused
+ * card's ring, pulled back by its margin. */
 
 @layer components {
   .cui-shelf.cui-productnav {
@@ -35,13 +36,22 @@
     }
   }
 
+  /* on a phone 5px under the cards for a focused card's ring, which the
+     scroller clips, pulled back by its margin, so none of it is in sight
+     (the row a block of its own, which keeps the margin in it) */
   .cui-productnav .cui-shelf-scroller {
     gap: 10px;
-    padding-bottom: 0;
+    margin-bottom: -5px;
+    padding-bottom: 5px;
 
     @media (width >= 735px) {
+      margin-bottom: 0;
       padding-bottom: 22px;
     }
+  }
+
+  .cui-productnav .cui-shelf-row {
+    display: flow-root;
   }
 
   .cui-productnav-item {
