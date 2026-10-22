@@ -22,7 +22,7 @@ use crate::icon::{CLOSE, CLOSE_SMALL};
 ///     </Modal>
 /// }
 /// .render();
-/// assert!(html.as_inner().starts_with(r#"<button class="cui-btn" commandfor="models" command="show-modal">Show more</button>"#));
+/// assert!(html.as_inner().starts_with(r#"<button class="cui-btn" type="button" commandfor="models" command="show-modal">Show more</button>"#));
 /// assert!(html.as_inner().contains(r#"<dialog class="cui-modal" id="models" aria-labelledby="models-title"><div class="cui-modal-panel"><form method="dialog"><button class="cui-modal-close" aria-label="Close">"#));
 /// ```
 pub struct Modal<'a, R: Renderable> {
@@ -63,7 +63,9 @@ impl<R: Renderable> Renderable for Modal<'_, R> {
 
 /// The button that opens a [`Modal`] with no script: `commandfor` naming
 /// the dialog, `command="show-modal"` (attributes hypertext's `<button>` does
-/// not know, so written here), its class the page's (a `cui-btn`).
+/// not know, so written here), its class the page's (a `cui-btn`); its type
+/// `button`, so that in a form it opens the dialog, where a form's submit
+/// button does nothing with its command (`reference/dialog/`).
 pub struct ModalButton<'a, R: Renderable> {
     /// The id of the [`Modal`] it opens. Required: an empty one panics.
     pub modal: &'a str,
@@ -80,7 +82,7 @@ impl<R: Renderable> Renderable for ModalButton<'_, R> {
             "ciderui::ModalButton needs its modal's id"
         );
         Raw::<_>::dangerously_create(format!(
-            r#"<button class="{}" commandfor="{}" command="show-modal">"#,
+            r#"<button class="{}" type="button" commandfor="{}" command="show-modal">"#,
             attribute(self.class),
             attribute(self.modal)
         ))
@@ -157,7 +159,7 @@ mod tests {
         let html = rsx! { <ModalButton modal=r#"a"b"# class="x<y&z">"Open"</ModalButton> }.render();
         assert_eq!(
             html.as_inner(),
-            r#"<button class="x&lt;y&amp;z" commandfor="a&quot;b" command="show-modal">Open</button>"#
+            r#"<button class="x&lt;y&amp;z" type="button" commandfor="a&quot;b" command="show-modal">Open</button>"#
         );
     }
 

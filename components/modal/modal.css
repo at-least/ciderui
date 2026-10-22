@@ -8,7 +8,7 @@
  * its content's room, the close button hovered and pressed); its X
  * ciderui's own (reference/icons/); the dialog reference/dialog/.
  *
- *   <button class="cui-btn" commandfor="models" command="show-modal">Show more</button>
+ *   <button class="cui-btn" type="button" commandfor="models" command="show-modal">Show more</button>
  *   <dialog class="cui-modal" id="models" aria-labelledby="models-title">
  *     <div class="cui-modal-panel">
  *       <form method="dialog"><button class="cui-modal-close" aria-label="Close">(icon::CLOSE)</button></form>
@@ -16,12 +16,14 @@
  *     </div>
  *   </dialog>
  *
- * The page's button opens it (command="show-modal", commandfor naming it;
- * or the page's script, showModal()); it is the layer over the window,
- * which scrolls the panel when the panel is taller than the window, the page
- * under it dimmed (its ::backdrop) and held still, fading in; the focus on
- * its close button, its first control; the close button (a form's,
- * method="dialog") and Escape close it, the focus back on its opener.
+ * The page's button opens it (command="show-modal", commandfor naming it,
+ * its type button: in a form a submit button does nothing with its command,
+ * reference/dialog/; or the page's script, showModal()); it is the layer
+ * over the window, which scrolls the panel when the panel is taller than
+ * the window, the page under it dimmed (its ::backdrop) and held still,
+ * fading in; the focus on its close button, its first control; the close
+ * button (a form's, method="dialog") and Escape close it, the focus back on
+ * its opener.
  *
  * cui-modal          the <dialog>: the layer, fixed over the window, the
  *                    scrim under it, fading in in 0.1s; light in a dark

@@ -20,7 +20,11 @@
 // (sampled each frame), its close button stuck at the window's top as the
 // panel scrolls, closed by it; and its dark one (color-scheme: dark on the
 // dialog), its panel and close button from the root's light-dark() pairs, its
-// panel black in a picture. The result is results/<browser>.json.
+// panel black in a picture. And a button in a form: its type button, as the
+// crate's ModalButton writes it, it opens the dialog; with none, the form's
+// submit button, it does nothing at all, the dialog closed and the form not
+// sent (the control; a submit button with no command sends it). The result
+// is results/<browser>.json.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
@@ -82,6 +86,15 @@ try {
   await click('#dark-close');
   await page.run(wait(300));
   got.darkClosed = await page.run(call(`colors('dark')`));
+  const opened = `Promise.resolve({ open: document.querySelector('#modal').open, hash: location.hash })`;
+  await click('#form-button');
+  await page.run(wait(500));
+  got.formButton = await page.run(opened);
+  await click('#close');
+  await page.run(wait(300));
+  await click('#form-submit');
+  await page.run(wait(1000));
+  got.formSubmit = await page.run(opened);
 } finally {
   await page?.close();
   server.close();
@@ -116,6 +129,8 @@ const claims = [
   ['its scrim the light one\'s', got.dark.backdrop === 'rgba(0, 0, 0, 0.48)' && got.pageColors.backdrop === got.dark.backdrop],
   ['in the picture its panel is black, the light one\'s white', got.darkPixels.panel.every(v => v <= 2) && got.pageOpenPixels.panel.every(v => v >= 253)],
   ['its close button closes it', got.darkClosed.open === false],
+  ['a button in a form, its type button (the crate\'s ModalButton\'s), opens it, the form not sent', got.formButton.open === true && got.formButton.hash === ''],
+  ['a button in a form with no type does nothing, the dialog closed and the form not sent (the control)', got.formSubmit.open === false && got.formSubmit.hash === ''],
 ];
 console.log(page.label + (IOS ? ' (clicked by script; no Escape)' : KEYBOARD ? ' (by its keyboard: Return)' : ''));
 let pass = true;
