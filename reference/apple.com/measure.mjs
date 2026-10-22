@@ -10,7 +10,10 @@
 // again with each pseudo-class (or several, 'focus+focus-visible') forced
 // through the DevTools protocol on the
 // element itself or on `stateOn` (an input whose label is read), transitions
-// off while it is forced; a frame's element is found in the page's own
+// off while it is forced, its animations left as they run (ended, a filled
+// animation's value read as its base's, the state's own as it seemed, and
+// run again once the still style went: ribbon:ribbon.link, 2026-10-22); a
+// frame's element is found in the page's own
 // session, so only a frame in the page's process can have its states forced
 // (another fails the run). `scroll` scrolls the page to that many pixels first
 // (for what shows only once scrolled), every other probe reading at the top;
@@ -294,7 +297,7 @@ try {
       if (probe.states?.length) {
         const nodeId = await stateNode(frame);
         if (!nodeId) throw new Error(`${probe.name}: the DevTools session does not see the tagged element`);
-        await frame.addStyleTag({ content: '*, *::before, *::after { transition: none !important; animation: none !important; }' })
+        await frame.addStyleTag({ content: '*, *::before, *::after { transition: none !important; }' })
           .then(h => h.evaluate(e => e.setAttribute('data-cui-still', '')));
         at[probe.name].states = {};
         for (const state of probe.states) {

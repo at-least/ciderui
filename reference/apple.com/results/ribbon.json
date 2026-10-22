@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/iphone/",
  "finalUrl": "https://www.apple.com/iphone/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T06:40:54.808Z",
+ "date": "2026-10-22T06:09:36.079Z",
  "widths": {
   "390": {
    "ribbon": {
@@ -189,17 +189,35 @@
       "line-height": "20.0003px",
       "font-weight": "400",
       "letter-spacing": "-0.224px",
-      "color": "rgb(245, 245, 247)",
+      "color": "rgb(0, 102, 204)",
       "text-decoration-line": "underline",
-      "text-decoration-color": "rgb(245, 245, 247)",
+      "text-decoration-color": "rgb(0, 102, 204)",
       "text-underline-offset": "auto",
-      "animation-name": "none",
-      "animation-duration": "0s",
-      "animation-delay": "0s",
-      "animation-timing-function": "ease",
-      "animation-fill-mode": "none",
+      "animation-name": "ribbon-animate-link-color",
+      "animation-duration": "0.8s",
+      "animation-delay": "1.6s",
+      "animation-timing-function": "ease-in-out",
+      "animation-fill-mode": "forwards",
       "animation-iteration-count": "1"
      }
+    }
+   },
+   "ribbon.link-hovered": {
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "styles": {
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "animation-name": "ribbon-animate-link-color",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "matches": {
+     ":hover": true
     }
    }
   },
@@ -388,17 +406,35 @@
       "line-height": "20.0003px",
       "font-weight": "400",
       "letter-spacing": "-0.224px",
-      "color": "rgb(245, 245, 247)",
+      "color": "rgb(0, 102, 204)",
       "text-decoration-line": "underline",
-      "text-decoration-color": "rgb(245, 245, 247)",
+      "text-decoration-color": "rgb(0, 102, 204)",
       "text-underline-offset": "auto",
-      "animation-name": "none",
-      "animation-duration": "0s",
-      "animation-delay": "0s",
-      "animation-timing-function": "ease",
-      "animation-fill-mode": "none",
+      "animation-name": "ribbon-animate-link-color",
+      "animation-duration": "0.8s",
+      "animation-delay": "1.6s",
+      "animation-timing-function": "ease-in-out",
+      "animation-fill-mode": "forwards",
       "animation-iteration-count": "1"
      }
+    }
+   },
+   "ribbon.link-hovered": {
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "styles": {
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "animation-name": "ribbon-animate-link-color",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "matches": {
+     ":hover": true
     }
    }
   },
@@ -587,17 +623,35 @@
       "line-height": "20.0003px",
       "font-weight": "400",
       "letter-spacing": "-0.224px",
-      "color": "rgb(245, 245, 247)",
+      "color": "rgb(0, 102, 204)",
       "text-decoration-line": "underline",
-      "text-decoration-color": "rgb(245, 245, 247)",
+      "text-decoration-color": "rgb(0, 102, 204)",
       "text-underline-offset": "auto",
-      "animation-name": "none",
-      "animation-duration": "0s",
-      "animation-delay": "0s",
-      "animation-timing-function": "ease",
-      "animation-fill-mode": "none",
+      "animation-name": "ribbon-animate-link-color",
+      "animation-duration": "0.8s",
+      "animation-delay": "1.6s",
+      "animation-timing-function": "ease-in-out",
+      "animation-fill-mode": "forwards",
       "animation-iteration-count": "1"
      }
+    }
+   },
+   "ribbon.link-hovered": {
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "styles": {
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "animation-name": "ribbon-animate-link-color",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "matches": {
+     ":hover": true
     }
    }
   },
@@ -786,17 +840,35 @@
       "line-height": "20.0003px",
       "font-weight": "400",
       "letter-spacing": "-0.224px",
-      "color": "rgb(245, 245, 247)",
+      "color": "rgb(0, 102, 204)",
       "text-decoration-line": "underline",
-      "text-decoration-color": "rgb(245, 245, 247)",
+      "text-decoration-color": "rgb(0, 102, 204)",
       "text-underline-offset": "auto",
-      "animation-name": "none",
-      "animation-duration": "0s",
-      "animation-delay": "0s",
-      "animation-timing-function": "ease",
-      "animation-fill-mode": "none",
+      "animation-name": "ribbon-animate-link-color",
+      "animation-duration": "0.8s",
+      "animation-delay": "1.6s",
+      "animation-timing-function": "ease-in-out",
+      "animation-fill-mode": "forwards",
       "animation-iteration-count": "1"
      }
+    }
+   },
+   "ribbon.link-hovered": {
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "styles": {
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto",
+     "animation-name": "ribbon-animate-link-color",
+     "animation-duration": "0.8s",
+     "animation-delay": "1.6s",
+     "animation-timing-function": "ease-in-out",
+     "animation-fill-mode": "forwards",
+     "animation-iteration-count": "1"
+    },
+    "matches": {
+     ":hover": true
     }
    }
   }

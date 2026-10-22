@@ -16,5 +16,8 @@ export default {
     { name: 'ribbon.content', select: '.ribbon .ribbon-content', props: [...TYPE, 'width', 'max-width', 'margin-left', 'margin-right', ...ANIMATION], box: true, keyframes: true },
     { name: 'ribbon.text', select: '.ribbon .ribbon-content p', props: [...TYPE, 'margin-top', 'margin-bottom'], box: true },
     { name: 'ribbon.link', select: '.ribbon .ribbon-link', props: [...TYPE, ...LINK, ...ANIMATION], states: ['hover'], keyframes: true },
+    // the pointer on it, a hand's hover, against the forced one: last, as the
+    // page keeps it hovered
+    { name: 'ribbon.link-hovered', hover: '.ribbon .ribbon-link', select: '.ribbon .ribbon-link', props: ['color', ...LINK, ...ANIMATION], matches: [':hover'] },
   ],
 };

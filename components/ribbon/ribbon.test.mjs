@@ -2,8 +2,8 @@
 // its motion has run; the bag's, bag:ribbon): its ground, padding, type and
 // width, its message's height, its link; the announcing one's motion (its
 // start, on the accent, and its end, on the ground, and its animations'
-// timing). Golden, with their why: the letter-spacing, the content's width
-// (apple.com's 83.33%), the text on the accent, the link hovered.
+// timing), its link hovered. Golden, with their why: the letter-spacing, the
+// content's width (apple.com's 83.33%), the text on the accent.
 
 import { examples, PADDING } from '../../test/harness.mjs';
 
@@ -24,7 +24,7 @@ export const cases = [
       { target: '.cui-ribbon-content', props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
       { target: '.cui-ribbon-content p', props: [...TYPE, 'margin-top', 'margin-bottom'], apple: ['ribbon', 'ribbon.text'] },
       { target: LINK, props: [...TYPE, 'color', 'text-decoration-line'], apple: ['ribbon', 'ribbon.link'] },
-      { target: LINK, state: 'hover', props: ['color'], golden: 'hovered, the link keeps its blue: apple.com\'s hover stops its animation and its color falls back to #f5f5f7, on #f5f5f7 (ribbon:ribbon.link:hover)' },
+      { target: LINK, state: 'hover', props: ['color'], apple: ['ribbon', 'ribbon.link', 'hover'] },
       { target: `${LINK} .cui-link-text`, on: LINK, state: 'hover', props: ['text-decoration-line'], apple: ['ribbon', 'ribbon.link', 'hover'] },
     ],
   },
@@ -39,7 +39,7 @@ export const cases = [
       { target: LINK, props: ['color'], golden: 'the link as the text on the accent: apple.com\'s #f5f5f7 (--ribbon-link-color-initial)' },
       { target: '.cui-ribbon-content', props: ['animation-name'], golden: 'its drop and its colors\' turn, ciderui\'s names for apple.com\'s ribbon-drop and ribbon-animate-*' },
       { target: LINK, props: ANIMATION.filter(p => p !== 'animation-fill-mode'), apple: ['ribbon', 'ribbon.link'] },
-      { target: LINK, props: ['animation-fill-mode'], golden: 'both: its start shown through the delay and its end its own color; apple.com\'s forwards from a start that is its own color (which its hover falls back to)' },
+      { target: LINK, props: ['animation-fill-mode'], golden: 'both: its start shown through the delay and its end its own color; apple.com\'s forwards from a start that is its own color' },
     ],
   },
   {

@@ -17,11 +17,10 @@
  *                            within 83.33% of the window, centered
  *
  * apple.com's: the ground, the type, the padding, the width, the motion (a
- * drop in 0.8s, the colors 1.6s on in 0.8s, both ease-in-out). ciderui's:
+ * drop in 0.8s, the colors 1.6s on in 0.8s, both ease-in-out), the link's
+ * color hovered (ribbon:ribbon.link:hover, ribbon.link-hovered). ciderui's:
  * the letter-spacing (tokens.css); the text on the accent the accent's own
- * white (apple.com's #f5f5f7 for those 1.6s); the link keeps its color
- * hovered (apple.com's hover stops the link's animation, and its color falls
- * back to the #f5f5f7 it started from, on the #f5f5f7 ground). */
+ * white (apple.com's #f5f5f7 for those 1.6s). */
 
 @layer components {
   .cui-ribbon {
