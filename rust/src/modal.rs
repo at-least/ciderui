@@ -1,4 +1,4 @@
-use hypertext::{Buffer, Raw, prelude::*};
+use hypertext::{Buffer, prelude::*};
 
 use crate::Class;
 use crate::icon::{CLOSE, CLOSE_SMALL};
@@ -63,9 +63,10 @@ impl<R: Renderable> Renderable for Modal<'_, R> {
 
 /// The button that opens a [`Modal`] with no script: `commandfor` naming
 /// the dialog, `command="show-modal"` (attributes hypertext's `<button>` does
-/// not know, so written here), its class the page's (a `cui-btn`); its type
-/// `button`, so that in a form it opens the dialog, where a form's submit
-/// button does nothing with its command (`reference/dialog/`).
+/// not know, written by their names quoted, which it does not check), its
+/// class the page's (a `cui-btn`); its type `button`, so that in a form it
+/// opens the dialog, where a form's submit button does nothing with its
+/// command (`reference/dialog/`).
 pub struct ModalButton<'a, R: Renderable> {
     /// The id of the [`Modal`] it opens. Required: an empty one panics.
     pub modal: &'a str,
@@ -81,30 +82,11 @@ impl<R: Renderable> Renderable for ModalButton<'_, R> {
             !self.modal.is_empty(),
             "ciderui::ModalButton needs its modal's id"
         );
-        Raw::<_>::dangerously_create(format!(
-            r#"<button class="{}" type="button" commandfor="{}" command="show-modal">"#,
-            attribute(self.class),
-            attribute(self.modal)
-        ))
-        .render_to(buffer);
-        self.children.render_to(buffer);
-        Raw::<_>::dangerously_create("</button>").render_to(buffer);
-    }
-}
-
-// a value inside double quotes: its &, " and < escaped (a > needs none
-// there, where hypertext writes &gt;: both read the same)
-fn attribute(value: &str) -> String {
-    let mut out = String::with_capacity(value.len());
-    for ch in value.chars() {
-        match ch {
-            '&' => out.push_str("&amp;"),
-            '"' => out.push_str("&quot;"),
-            '<' => out.push_str("&lt;"),
-            _ => out.push(ch),
+        rsx! {
+            <button class=(self.class) type="button" "commandfor"=(self.modal) "command"="show-modal">(self.children)</button>
         }
+        .render_to(buffer);
     }
-    out
 }
 
 #[cfg(test)]
