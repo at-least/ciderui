@@ -10,6 +10,7 @@ image = "pictures/gallery.png"
 A product page’s gallery: a row of items across the whole window, each snapping into place where the content starts, 20px apart; below it its paddles at the content’s right edge, and its dots. The row scrolls with no script, by touch, trackpad and keys, and each dot is a link to its item; the paddles need the page’s script, which scrolls the row, disables the paddle at an end and marks the current dot, as it would open a dialog. The theme this documentation is built with ships that script, and it runs in the example below.
 
 ```css
+@import "ciderui/components/card/card.css";
 @import "ciderui/components/gallery/gallery.css";
 ```
 

@@ -10,6 +10,7 @@ image = "pictures/section.png"
 A band of an apple.com page: its ground, the room above and below it, and its content, 87.5% of the window, at most 420px below 735px and 1260px from it, centered.
 
 ```css
+@import "ciderui/components/link/link.css";
 @import "ciderui/components/section/section.css";
 ```
 

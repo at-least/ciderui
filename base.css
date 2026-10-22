@@ -12,8 +12,9 @@
  *
  * The focus ring is apple.com's, one for everything: `:focus-visible`
  * draws tokens.css's --cui-focus-ring, 2px of the accent 3px out, on a
- * button, a link, an option; a text field moves it to 1px out. A component
- * draws no ring of its own; `outline-none` on an element removes it.
+ * button, a link, an option; a text field (cui-field) sets it aside for
+ * its 2px accent edge. A component draws no ring of its own; `outline-none`
+ * on an element removes it.
  *
  * `cui-dark` on any element sets its color scheme dark, and every
  * light-dark() pair used inside it resolves dark; `cui-light` inside it

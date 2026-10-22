@@ -38,11 +38,12 @@ assert_eq!(
 | --- | --- |
 | `MoreLink` | a more link and its chevron |
 | `Section`, `SectionHeader` | a band and its header |
-| `GlobalNav`, `LocalNav` | the global nav, a product’s local nav |
+| `GlobalNav`, `NavLink`, `FlyoutGroup`, `Search`, `Bag`, `BagLink`, `LocalNav` | the global nav, its links, their flyouts, its search and its bag, a product’s local nav |
 | `Ribbon` | the message above a page |
 | `Tile`, `Card` | a home page tile, a store card |
 | `Shelf`, `Gallery` | a row of cards, a product page’s gallery |
-| `Field`, `Checkbox`, `OptionTile`, `Swatch` | a form’s controls |
+| `Field`, `Select`, `TextArea`, `Checkbox`, `OptionTile`, `Swatch` | a form’s controls |
+| `Modal`, `ModalButton` | the store’s overlay or a marketing page’s modal, and the button that opens it |
 | `Accordion`, `AccordionItem` | questions and answers |
 | `QuickLinks`, `ProductNav`, `ProductNavItem` | the store’s links and its products |
 | `Footer`, `FooterSection` | the footer |

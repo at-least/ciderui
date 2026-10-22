@@ -158,7 +158,7 @@ Where apple.com tunes a size two ways, the store's is taken (32px +0.004em, 48px
 
 ## The page
 
-**Breakpoints.** theme.css replaces Tailwind's with apple.com's, in pixels as apple.com's media queries are: `md` 735px, `lg` 1069px, `xl` 1441px (apple.com's stylesheets name 1441px; nothing measured changes there), and `nav` 834px, the global nav's. A component's step and a page's `md:` switch at the same width.
+**Breakpoints.** theme.css replaces Tailwind's with apple.com's, in pixels as apple.com's media queries are: `md` 735px, `lg` 1069px, `xl` 1441px (apple.com's stylesheets name 1441px; nothing measured changes there); the global nav's 834px is its stylesheet's own, no breakpoint. A component's step and a page's `md:` switch at the same width.
 
 **Sections.** A section is the page's ground (`bg`), the alternate (`bg-alt`) or dark (`cui-dark`, its alternate `bg-alt` dark: `#1d1d1f`, measured on the product page's highlights); its content is the newer width (87.5% to 1260px). Their padding is a section's own (apple.com's varies by section; measured per component).
 

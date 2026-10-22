@@ -92,7 +92,8 @@ impl<R: Renderable> Renderable for ModalButton<'_, R> {
     }
 }
 
-// a value inside double quotes, escaped as hypertext escapes an attribute's
+// a value inside double quotes: its &, " and < escaped (a > needs none
+// there, where hypertext writes &gt;: both read the same)
 fn attribute(value: &str) -> String {
     let mut out = String::with_capacity(value.len());
     for ch in value.chars() {

@@ -10,6 +10,7 @@ image = "pictures/localnav.png"
 The bar most of apple.com’s product pages carry under the global nav, on a `<nav>`: the product’s name, its pages’ links with the current one marked, and a button, stuck to the top of the window as the page scrolls. Below 834px the links fold into a menu its chevron opens below the bar, with no script: a checkbox and its label, apple.com’s own way. The bar over this page, “Components”, is one with its name alone.
 
 ```css
+@import "ciderui/components/button/button.css";
 @import "ciderui/components/localnav/localnav.css";
 ```
 

@@ -10,6 +10,7 @@ image = "pictures/modal.png"
 The store’s overlay, the one a buy page’s “Show more” opens: a layer over the window, the page dimmed and held under it, a white panel with 18px corners scrolling over it, a close button at its corner. It is HTML’s own `<dialog>`, so it opens and closes with no script: the page’s button opens it with `command="show-modal"` and `commandfor`, its close button is a form’s (`method="dialog"`), and Escape closes it too, the focus back on the button that opened it.
 
 ```css
+@import "ciderui/components/button/button.css";
 @import "ciderui/components/modal/modal.css";
 ```
 
