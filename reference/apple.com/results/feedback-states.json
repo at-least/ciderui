@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/feedback/iphone/",
  "finalUrl": "https://www.apple.com/feedback/iphone/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-21T01:23:59.505Z",
+ "date": "2026-10-22T06:20:47.746Z",
  "widths": {
   "390": {
    "error": {
@@ -159,12 +159,12 @@
     "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\">Comments*</span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
-     "font-size": "12px",
-     "line-height": "16.0004px",
+     "font-size": "17px",
+     "line-height": "21.0011px",
      "font-weight": "400",
-     "letter-spacing": "-0.12px",
-     "color": "rgb(110, 110, 115)",
-     "top": "10.0001px",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(227, 0, 0)",
+     "top": "17.9999px",
      "left": "17px"
     }
    },

@@ -18,7 +18,7 @@
 // (another fails the run). `scroll` scrolls the page to that many pixels first
 // (for what shows only once scrolled), every other probe reading at the top;
 // `blur` takes the focus off the element that has it (a field the page
-// focuses on load) before reading; `set`, [[selector, name, value], …], gives
+// focuses on load) before reading, then waits as `set` does; `set`, [[selector, name, value], …], gives
 // the page's elements what its script would before reading (an attribute
 // set, or removed with null; `value` an input's value, set with no event, so
 // the page's script hears nothing; `classList` a class added), then waits for what that moves (its
@@ -85,7 +85,9 @@ const place = async (probe) => {
     else if (value === null) target.removeAttribute(name);
     else target.setAttribute(name, value);
   }
-  if (probe.set) await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 900))));
+  // what a blur or a set moves (the page's script checking a field, a
+  // label's transition) settled before it is read
+  if (probe.blur || probe.set) await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 900))));
   document.querySelectorAll('[data-cui-probe]').forEach(e => e.removeAttribute('data-cui-probe'));
   document.querySelectorAll('[data-cui-state]').forEach(e => e.removeAttribute('data-cui-state'));
   document.querySelectorAll('[data-cui-injected]').forEach(e => e.remove());

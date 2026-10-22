@@ -44,8 +44,10 @@ export default {
     { name: 'prefix.label', select: `${PREFIX} .form-textbox-label`, props: [...TYPE, 'position', 'top', 'left', 'padding-left'], box: true, position: true, widths: [1600] },
     // an amount, which enables the delivery fields
     { name: 'choose.amount', click: AMOUNT, select: AMOUNT, props: ['opacity'] },
-    // a plain field, enabled
-    { name: 'field', select: `${NAME} .form-textbox-input`, props: [...TYPE, ...BOX, 'height', 'background-color', 'border-top-color', 'border-top-width'], box: true },
+    // a plain field, enabled (the first width alone: after it, the error
+    // below has the page's script mark the delivery fields invalid, and it
+    // read so at 1200, 900 and 390px, 2026-10-20)
+    { name: 'field', select: `${NAME} .form-textbox-input`, props: [...TYPE, ...BOX, 'height', 'background-color', 'border-top-color', 'border-top-width'], box: true, widths: [1600] },
     // an empty required field the focus left: clicked, then the focus taken off
     { name: 'error.focus', click: `${EMAIL} .form-textbox-input`, select: `${EMAIL} .form-textbox-input`, props: ['opacity'] },
     { name: 'error', blur: true, select: `${EMAIL} .form-textbox-input`, props: [...TYPE, ...BOX, 'height', 'background-color', 'border-top-color', 'border-top-width', ...FOCUS, ...MOTION], box: true, position: true, states: ['focus'] },

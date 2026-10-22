@@ -1,6 +1,7 @@
 // The iPhone page, a light one: its links (the "more" link, its copy and its
-// chevron; a section header's link) and its ribbon, the message above the
-// content.
+// chevron; a section header's link). Its ribbon is ribbon.mjs's, read once
+// its motion has run: read here 800ms in, it was mid-motion, and its three
+// probes are dropped from the record (2026-10-22).
 import { TYPE, BOX, LINK, PAGE, TEXT, FLEX, MOTION } from './common.mjs';
 export default {
   url: 'https://www.apple.com/iphone/',
@@ -19,9 +20,6 @@ export default {
     { name: 'section.image-accordion', select: 'main section.section-image-accordion', props: BOX },
     { name: 'section.header', select: 'main .section-header', props: [...BOX, ...FLEX], box: true },
     { name: 'section.headline', select: 'main .section-header-headline', props: [...TYPE, 'margin-bottom'] },
-    { name: 'ribbon', select: '.ribbon', props: [...TYPE, ...BOX], box: true },
-    { name: 'ribbon.content', select: '.ribbon .ribbon-content', props: [...TYPE, ...BOX, 'text-align'], box: true },
-    { name: 'ribbon.link', select: '.ribbon .ribbon-link', props: [...TYPE, ...LINK], states: ['hover'] },
     // a light page's gallery paddles (the first enabled one, and a disabled
     // one) and a media card gallery's dots
     { name: 'paddle', select: 'main .paddlenav-arrow-next:not([disabled])', props: [...BOX, 'width', 'height', 'color', 'opacity', 'cursor', ...MOTION], box: true, states: ['hover', 'active', 'focus-visible'] },

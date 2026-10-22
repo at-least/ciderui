@@ -2,7 +2,7 @@
  "url": "https://www.apple.com/shop/buy-giftcard/giftcard",
  "finalUrl": "https://www.apple.com/shop/buy-giftcard/giftcard",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-19T21:51:50.416Z",
+ "date": "2026-10-22T06:21:38.031Z",
  "widths": {
   "390": {
    "section": {
@@ -67,40 +67,6 @@
     "html": "<input class=\"form-selector-input\" id=\"_r_a_\" data-autom=\"choose-amount-50\" aria-invalid=\"false\" type=\"radio\" value=\"50\" name=\"giftcard-amount\">",
     "styles": {
      "opacity": "0"
-    }
-   },
-   "field": {
-    "html": "<input id=\"_r_k_\" class=\"form-textbox-input\" aria-labelledby=\"_r_k__label\" aria-invalid=\"true\" data-autom=\"toName\" aria-required=\"true\" type=\"text\" value=\"\" name=\"toName\" aria-describedby=\"_r_k__error \">",
-    "styles": {
-     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
-     "font-size": "17px",
-     "line-height": "21.0012px",
-     "font-weight": "400",
-     "letter-spacing": "-0.374px",
-     "color": "rgb(29, 29, 31)",
-     "padding-top": "18px",
-     "padding-right": "16px",
-     "padding-bottom": "0px",
-     "padding-left": "16px",
-     "margin-top": "0px",
-     "margin-bottom": "0px",
-     "border-top-width": "1px",
-     "border-top-style": "solid",
-     "border-top-color": "rgb(227, 0, 0)",
-     "border-bottom-width": "1px",
-     "border-bottom-style": "solid",
-     "border-bottom-color": "rgb(227, 0, 0)",
-     "border-top-left-radius": "12px",
-     "background-color": "rgb(255, 242, 244)",
-     "box-shadow": "none",
-     "min-width": "0px",
-     "min-height": "0px",
-     "max-width": "none",
-     "height": "56px"
-    },
-    "box": {
-     "width": 341.25,
-     "height": 56
     }
    },
    "error.focus": {
@@ -358,40 +324,6 @@
      "opacity": "0"
     }
    },
-   "field": {
-    "html": "<input id=\"_r_k_\" class=\"form-textbox-input\" aria-labelledby=\"_r_k__label\" aria-invalid=\"true\" data-autom=\"toName\" aria-required=\"true\" type=\"text\" value=\"\" name=\"toName\" aria-describedby=\"_r_k__error \">",
-    "styles": {
-     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
-     "font-size": "17px",
-     "line-height": "21.0012px",
-     "font-weight": "400",
-     "letter-spacing": "-0.374px",
-     "color": "rgb(29, 29, 31)",
-     "padding-top": "18px",
-     "padding-right": "16px",
-     "padding-bottom": "0px",
-     "padding-left": "16px",
-     "margin-top": "0px",
-     "margin-bottom": "0px",
-     "border-top-width": "1px",
-     "border-top-style": "solid",
-     "border-top-color": "rgb(227, 0, 0)",
-     "border-bottom-width": "1px",
-     "border-bottom-style": "solid",
-     "border-bottom-color": "rgb(227, 0, 0)",
-     "border-top-left-radius": "12px",
-     "background-color": "rgb(255, 242, 244)",
-     "box-shadow": "none",
-     "min-width": "0px",
-     "min-height": "0px",
-     "max-width": "none",
-     "height": "56px"
-    },
-    "box": {
-     "width": 408.328125,
-     "height": 56
-    }
-   },
    "error.focus": {
     "html": "<input id=\"_r_l_\" class=\"form-textbox-input\" aria-labelledby=\"_r_l__label\" aria-invalid=\"true\" maxsize=\"70\" data-autom=\"toEmail\" aria-required=\"true\" type=\"email\" value=\"\" name=\"toEmail\" aria-describedby=\"_r_l__error \">",
     "styles": {
@@ -645,40 +577,6 @@
     "html": "<input class=\"form-selector-input\" id=\"_r_a_\" data-autom=\"choose-amount-50\" aria-invalid=\"false\" type=\"radio\" value=\"50\" name=\"giftcard-amount\">",
     "styles": {
      "opacity": "0"
-    }
-   },
-   "field": {
-    "html": "<input id=\"_r_k_\" class=\"form-textbox-input\" aria-labelledby=\"_r_k__label\" aria-invalid=\"true\" data-autom=\"toName\" aria-required=\"true\" type=\"text\" value=\"\" name=\"toName\" aria-describedby=\"_r_k__error \">",
-    "styles": {
-     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
-     "font-size": "17px",
-     "line-height": "21.0012px",
-     "font-weight": "400",
-     "letter-spacing": "-0.374px",
-     "color": "rgb(29, 29, 31)",
-     "padding-top": "18px",
-     "padding-right": "16px",
-     "padding-bottom": "0px",
-     "padding-left": "16px",
-     "margin-top": "0px",
-     "margin-bottom": "0px",
-     "border-top-width": "1px",
-     "border-top-style": "solid",
-     "border-top-color": "rgb(227, 0, 0)",
-     "border-bottom-width": "1px",
-     "border-bottom-style": "solid",
-     "border-bottom-color": "rgb(227, 0, 0)",
-     "border-top-left-radius": "12px",
-     "background-color": "rgb(255, 242, 244)",
-     "box-shadow": "none",
-     "min-width": "0px",
-     "min-height": "0px",
-     "max-width": "none",
-     "height": "56px"
-    },
-    "box": {
-     "width": 408.328125,
-     "height": 56
     }
    },
    "error.focus": {
@@ -1175,7 +1073,7 @@
     }
    },
    "error": {
-    "html": "<input id=\"_r_l_\" class=\"form-textbox-input\" aria-labelledby=\"_r_l__label\" aria-invalid=\"false\" maxsize=\"70\" data-autom=\"toEmail\" aria-required=\"true\" type=\"email\" value=\"\" name=\"toEmail\">",
+    "html": "<input id=\"_r_l_\" class=\"form-textbox-input\" aria-labelledby=\"_r_l__label\" aria-invalid=\"true\" maxsize=\"70\" data-autom=\"toEmail\" aria-required=\"true\" type=\"email\" value=\"\" name=\"toEmail\" aria-describedby=\"_r_l__error \">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
