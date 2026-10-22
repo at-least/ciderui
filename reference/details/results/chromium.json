@@ -1,6 +1,6 @@
 {
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-22T04:39:49.897Z",
+ "date": "2026-10-22T05:35:59.525Z",
  "waited": {
   "click": 0,
   "question at 1200, 1": 0,
@@ -16,9 +16,9 @@
  },
  "opening": {
   "open": true,
-  "item": 70.296875,
+  "item": 70.28125,
   "answer": 61.59375,
-  "chevron": "matrix(1, 0, 0, 0.578718, 0, 0)"
+  "chevron": "matrix(1, 0, 0, 0.578883, 0, 0)"
  },
  "opened": {
   "open": true,
@@ -27,8 +27,10 @@
   "chevron": "matrix(1, 0, 0, -1, 0, 0)"
  },
  "interpolateSize": true,
+ "detailsContent": true,
  "held": {
   "height": "10px",
+  "laid": 10,
   "overflow": "visible clip",
   "box": {
    "top": 93.59,
@@ -39,6 +41,7 @@
  },
  "held-visible": {
   "height": "10px",
+  "laid": 10,
   "overflow": "visible visible",
   "box": {
    "top": 93.59,
@@ -46,6 +49,17 @@
   },
   "scale": 1,
   "ink": 723
+ },
+ "held-clip": {
+  "height": "10px",
+  "laid": 10,
+  "overflow": "clip clip",
+  "box": {
+   "top": 93.59,
+   "height": 20
+  },
+  "scale": 1,
+  "ink": 0
  },
  "rings": {
   "question at 1200": {

@@ -13,7 +13,9 @@
 // (ring.js): the accent's pixels in the 8px beside it, left and right, where
 // its ring's sides are drawn 3 to 5px out. And is its height clipped still?
 // held.html's answer held 10px tall: none of its text drawn, where
-// held-visible.html, clipping nothing, draws it. The click and each ring's
+// held-visible.html, clipping nothing, draws it, and held-clip.html, clipping
+// both axes, the kit's old rule, draws none (a browser that clips no
+// ::details-content draws it in all three). The click and each ring's
 // read wait for the window in front (front()). The result is
 // results/<browser>.json.
 import { createServer } from 'node:http';
@@ -22,7 +24,7 @@ import { open } from '../browsers.mjs';
 
 const BROWSER = process.env.BROWSER;
 const html = readFileSync(new URL('./page.html', import.meta.url));
-const PAGES = Object.fromEntries(['ring', 'held', 'held-visible'].map((name) => [`/${name}.html`, readFileSync(new URL(`./${name}.html`, import.meta.url))]));
+const PAGES = Object.fromEntries(['ring', 'held', 'held-visible', 'held-clip'].map((name) => [`/${name}.html`, readFileSync(new URL(`./${name}.html`, import.meta.url))]));
 const server = createServer((req, res) => { res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' }); res.end(PAGES[req.url] ?? html); });
 await new Promise(r => server.listen(0, '127.0.0.1', r));
 const ITEM = '.cui-accordion-item:nth-child(2)';
@@ -58,8 +60,9 @@ try {
   await page.run(wait(580));
   got.opened = await page.run(read);
   got.interpolateSize = await page.run(`Promise.resolve(CSS.supports('interpolate-size: allow-keywords'))`);
+  got.detailsContent = await page.run(`Promise.resolve(CSS.supports('selector(::details-content)'))`);
   const src = readFileSync(new URL('./ring.js', import.meta.url), 'utf8');
-  for (const name of ['held', 'held-visible']) {
+  for (const name of ['held', 'held-visible', 'held-clip']) {
     await page.go(`http://127.0.0.1:${server.address().port}/${name}.html`);
     await page.run(wait(300));
     got[name] = await page.run(`(async () => {\n${src}\nreturn held(${JSON.stringify(await page.shot())});\n})()`);
@@ -101,8 +104,14 @@ const claims = [
   [got.interpolateSize ? 'its height moves as it opens (a height between, 120ms on)' : 'it opens at once (no interpolate-size: its full height 120ms on)',
     got.interpolateSize ? opening.item > closed.item + 1 && opening.item < opened.item - 1 : opening.item === opened.item],
 ];
-claims.push(['its height clipped as it moves: an answer held 10px tall draws none of its text, which one clipping nothing draws',
-  got.held.height === '10px' && got.held.ink === 0 && got['held-visible'].height === '10px' && got['held-visible'].ink > 0]);
+// a browser that clips no ::details-content (held-clip, the kit's old rule,
+// draws its text too) moves no height either: nothing drawn outside the
+// answer as it opens
+claims.push(got['held-clip'].ink === 0
+  ? ['its height clipped as it moves: an answer held 10px tall draws none of its text, which one clipping nothing draws',
+    got.held.laid === 10 && got.held.ink === 0 && got['held-visible'].laid === 10 && got['held-visible'].ink > 0]
+  : ['it clips no ::details-content, overflow: clip neither (its text drawn held 10px tall, as with nothing clipped), and moves no height (no interpolate-size): nothing drawn outside the answer as it opens',
+    got.held.laid === 10 && got.held.ink > 0 && got['held-clip'].ink === got.held.ink && got['held-visible'].ink === got.held.ink && !got.interpolateSize]);
 // a side shown: at least a column of the screen's pixels the element's
 // height in the accent, beside it
 const shown = (r, side) => r.focused && r.visible && r[side] >= r.height * r.scale;

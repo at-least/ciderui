@@ -60,5 +60,8 @@ async function held(png) {
   const d = g.getImageData(x, y, Math.round(box.width * scale), Math.round(box.height * scale)).data;
   let ink = 0;
   for (let i = 0; i < d.length; i += 4) if ((d[i] + d[i + 1] + d[i + 2]) / 3 < 128) ink++;
-  return { height: content.height, overflow: `${content.overflowX} ${content.overflowY}`, box: { top: +box.top.toFixed(2), height: +box.height.toFixed(2) }, scale, ink };
+  // the content's height as laid out: the item's less its question's and
+  // its rule, where a browser's style of the pseudo-element is not its own
+  const laid = item.getBoundingClientRect().height - item.querySelector('summary').getBoundingClientRect().height - parseFloat(getComputedStyle(item).borderTopWidth);
+  return { height: content.height, laid: +laid.toFixed(2), overflow: `${content.overflowX} ${content.overflowY}`, box: { top: +box.top.toFixed(2), height: +box.height.toFixed(2) }, scale, ink };
 }

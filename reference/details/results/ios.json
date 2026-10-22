@@ -1,6 +1,9 @@
 {
  "browser": "safari 26.5 on iOS 26.5",
- "date": "2026-10-19T08:51:01.652Z",
+ "date": "2026-10-22T05:36:48.041Z",
+ "waited": {
+  "click": 0
+ },
  "closed": {
   "answer": 61.59375,
   "open": false,
@@ -11,7 +14,7 @@
   "answer": 61.59375,
   "open": true,
   "item": 114.59375,
-  "chevron": "matrix(1, 0, 0, 0.29671, 0, 0)"
+  "chevron": "matrix(1, 0, 0, 0.041652, 0, 0)"
  },
  "opened": {
   "answer": 61.59375,
@@ -19,5 +22,39 @@
   "item": 114.59375,
   "chevron": "matrix(1, 0, 0, -1, 0, 0)"
  },
- "interpolateSize": false
+ "interpolateSize": false,
+ "detailsContent": true,
+ "held": {
+  "box": {
+   "top": 90.59,
+   "height": 20
+  },
+  "scale": 3,
+  "laid": 10,
+  "height": "63px",
+  "overflow": "visible visible",
+  "ink": 571
+ },
+ "held-visible": {
+  "box": {
+   "top": 90.59,
+   "height": 20
+  },
+  "scale": 3,
+  "laid": 10,
+  "height": "63px",
+  "overflow": "visible visible",
+  "ink": 571
+ },
+ "held-clip": {
+  "box": {
+   "top": 90.59,
+   "height": 20
+  },
+  "scale": 3,
+  "laid": 10,
+  "height": "63px",
+  "overflow": "visible visible",
+  "ink": 571
+ }
 }

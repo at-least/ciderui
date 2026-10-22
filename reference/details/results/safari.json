@@ -1,6 +1,6 @@
 {
  "browser": "safari 27.0.1 on macOS 27.0.1",
- "date": "2026-10-22T04:40:06.280Z",
+ "date": "2026-10-22T05:36:26.119Z",
  "waited": {
   "click": 0,
   "question at 1200, 1": 0,
@@ -27,14 +27,16 @@
   "chevron": "matrix(1, 0, 0, -1, 0, 0)"
  },
  "interpolateSize": false,
+ "detailsContent": true,
  "held": {
   "box": {
    "top": 93.59,
    "height": 20
   },
   "scale": 2,
-  "overflow": "visible clip",
+  "laid": 10,
   "height": "10px",
+  "overflow": "visible clip",
   "ink": 0
  },
  "held-visible": {
@@ -43,9 +45,21 @@
    "height": 20
   },
   "scale": 2,
-  "overflow": "visible visible",
+  "laid": 10,
   "height": "10px",
+  "overflow": "visible visible",
   "ink": 2907
+ },
+ "held-clip": {
+  "box": {
+   "top": 93.59,
+   "height": 20
+  },
+  "scale": 2,
+  "laid": 10,
+  "height": "10px",
+  "overflow": "clip clip",
+  "ink": 0
  },
  "rings": {
   "question at 1200": {
