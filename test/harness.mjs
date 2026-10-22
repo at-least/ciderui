@@ -8,7 +8,7 @@
 //   html     ciderui's markup (an example, or markup written here)
 //   widths   the viewport widths it is read at (default: the reference's,
 //            1600, 1200, 900 and 390px); height, the window's (800px);
-//            touch, reducedMotion as the page's
+//            touch, reducedMotion, forcedColors as the page's
 //   click    a selector (or several) clicked in turn once, at the first
 //            width, before its checks (a menu's button), then the keys in
 //            `press` pressed in turn, its motion then run to its end, or for

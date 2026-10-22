@@ -7,6 +7,8 @@
 // `touch` emulates a touch screen, as vpkit's runner does: the DevTools
 // protocol's touch emulation is what makes (hover: none) match (Chromium
 // ignores an emulated hover feature); the page refuses to open otherwise.
+// `forcedColors` ('active') emulates forced colors (a high-contrast theme),
+// the page refusing to open unless (forced-colors: active) matches.
 // Besides a property, a check reads `box-height` and `box-width`, the
 // element's box, `box-top`, `box-left` and `box-right`, its place in the window,
 // `box-x` and `box-y`, its place in its parent's box (a line in its SVG),
@@ -15,9 +17,9 @@
 
 import { chromium } from 'playwright-chromium';
 
-export async function open(css, html, { width = 1200, height = 800, reducedMotion, colorScheme, touch } = {}) {
+export async function open(css, html, { width = 1200, height = 800, reducedMotion, colorScheme, touch, forcedColors } = {}) {
   const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
-  const page = await browser.newPage({ viewport: { width, height }, reducedMotion, colorScheme });
+  const page = await browser.newPage({ viewport: { width, height }, reducedMotion, colorScheme, forcedColors });
   const cdp = await page.context().newCDPSession(page);
   if (touch) await cdp.send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
   await page.setContent(`<!doctype html><html lang="en"><head><meta charset="utf-8"><style>${css}</style></head><body>${html}</body></html>`);
@@ -25,6 +27,8 @@ export async function open(css, html, { width = 1200, height = 800, reducedMotio
   await page.evaluate(() => document.fonts.ready);
   const hover = await page.evaluate(() => matchMedia('(hover: hover)').matches);
   if (hover === Boolean(touch)) throw new Error(`(hover: hover) is ${hover} on a ${touch ? 'touch' : 'desktop'} page`);
+  const forced = await page.evaluate(() => matchMedia('(forced-colors: active)').matches);
+  if (forced !== (forcedColors === 'active')) throw new Error(`(forced-colors: active) is ${forced} on a page whose forcedColors is ${forcedColors}`);
   await cdp.send('DOM.enable');
   await cdp.send('CSS.enable');
 

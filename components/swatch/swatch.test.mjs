@@ -30,6 +30,18 @@ export const cases = [
     ],
   },
   {
+    // forced colors (a high-contrast theme): a swatch shows its color, as a
+    // picture does, and its checked ring the accent, the others clear
+    name: 'forced',
+    html: ex('swatches'),
+    forcedColors: true,
+    checks: [
+      { target: `${CHECKED} .cui-swatch-ring`, props: ['forced-color-adjust', 'border-top-color'], golden: 'in forced colors the checked ring the accent still, its color unforced, where forced it is drawn as every other (apple.com\'s the same: not measured there)' },
+      { target: `${REST} .cui-swatch-ring`, props: ['border-top-color'], golden: 'in forced colors an unchecked ring clear still' },
+      { target: `${CHECKED} .cui-swatch-color`, props: ['background-color'], golden: 'in forced colors the swatch\'s color its own, where forced every swatch is the window\'s ground' },
+    ],
+  },
+  {
     // Tab from the page's start: the checked radio takes the focus
     name: 'focus',
     html: ex('swatches'),

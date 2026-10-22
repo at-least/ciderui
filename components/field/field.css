@@ -87,7 +87,10 @@
  * prefix's width its text's, the input's and the label's room for one
  * character (apple.com's onedigit field's); the textarea's box focused by
  * its textarea's focus, with no script (apple.com's script sets a class);
- * no counter (apple.com's stylesheet defines one, which no page read shows). */
+ * no counter (apple.com's stylesheet defines one, which no page read shows);
+ * in forced colors (a high-contrast theme) an empty select's label at its
+ * top, where Chromium draws its own text ("Select"), its color forced, under
+ * the label as the placeholder (apple.com's the same: reference/forced/). */
 
 @layer components {
   .cui-field {
@@ -186,6 +189,15 @@
     font-size: 17px;
     line-height: 21px;
     letter-spacing: var(--cui-tracking-17);
+
+    /* forced colors draw its own text, its color forced (Chromium's): the
+       label at its top, as a filled one's, not over that text */
+    @media (forced-colors: active) {
+      top: 10px;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: var(--cui-tracking-12);
+    }
   }
 
   /* its label, over it, passes the pointer to it, as apple.com's

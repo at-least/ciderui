@@ -30,7 +30,11 @@
  * its item 39px, the line's descent under it); the gaps the list's (apple.com's
  * each item's margins, 4px above and below the row too); focused from the
  * keyboard, the focus ring around the ring, as on an option (apple.com's
- * swatches take no keyboard focus until a model is chosen: not measured). */
+ * swatches take no keyboard focus until a model is chosen: not measured);
+ * in forced colors (a high-contrast theme) the ring and its color its own,
+ * as a picture's are (forced-color-adjust: none), where forced every ring
+ * is drawn alike and every color is the window's ground, the checked one
+ * not told (apple.com's the same: reference/forced/). */
 
 @layer components {
   .cui-swatches {
@@ -63,6 +67,8 @@
     padding: 2px;
     border: 2px solid transparent;
     border-radius: 50%;
+    /* a color shown, and which is checked, in forced colors too */
+    forced-color-adjust: none;
   }
 
   .cui-swatch-color {

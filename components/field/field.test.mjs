@@ -160,6 +160,17 @@ export const cases = [
     ],
   },
   {
+    // forced colors (a high-contrast theme), Chromium's: the empty select's
+    // own text, "Select", is drawn, its color forced, so its label is at its
+    // top as a filled one's, not over it
+    name: 'select-forced',
+    html: ex('select'),
+    forcedColors: true,
+    checks: [
+      { target: LABEL, props: [...TYPE, 'top'], golden: 'in forced colors an empty select\'s label at its top, its own text "Select" drawn below it, where as the placeholder it lay over that text (apple.com\'s the same: not measured there)' },
+    ],
+  },
+  {
     name: 'selected',
     html: ex('selected'),
     checks: [

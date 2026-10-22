@@ -47,7 +47,9 @@
  * timer's fill (apple.com's fills it as its item shows, the gallery playing
  * on its own); a large paddle's colors and chevron the 36px paddle's
  * (apple.com's store draws its chevron white, 1.35:1 on its ground, and
- * longer). */
+ * longer); in forced colors (a high-contrast theme) each dot a 4px edge in
+ * the theme's link color, where its ground alone, forced to the window's,
+ * drew nothing (apple.com's the same: reference/forced/). */
 
 @layer components {
   .cui-gallery-scroller {
@@ -163,6 +165,12 @@
     border-radius: 10px;
     background-color: var(--cui-c-dot);
     transition: background-color 0.25s linear;
+
+    /* forced colors draw no ground: the dot its edge, the current one's a
+       pill */
+    @media (forced-colors: active) {
+      border: 4px solid;
+    }
 
     @media (hover: hover) {
       &:hover {

@@ -1,0 +1,78 @@
+{
+ "date": "2026-10-22T05:00:17.390Z",
+ "forced": true,
+ "browser": "Chrome/151.0.7922.34",
+ "checked": [
+  true,
+  false,
+  false
+ ],
+ "rings": [
+  {
+   "checked": true,
+   "edge": "rgb(0,108,217) rgb(0,113,227) rgb(0,5,10) rgb(0,0,0)",
+   "color": "rgb(92,42,46)"
+  },
+  {
+   "checked": false,
+   "edge": "rgb(0,0,0) rgb(0,0,0) rgb(0,0,0) rgb(0,0,0)",
+   "color": "rgb(227,228,229)"
+  },
+  {
+   "checked": false,
+   "edge": "rgb(0,0,0) rgb(0,0,0) rgb(0,0,0) rgb(0,0,0)",
+   "color": "rgb(245,245,247)"
+  }
+ ],
+ "imgRings": [
+  {
+   "checked": true,
+   "edge": "rgb(0,108,217) rgb(0,113,227) rgb(0,5,10) rgb(0,0,0)",
+   "color": "rgb(92,42,46)"
+  },
+  {
+   "checked": false,
+   "edge": "rgb(0,0,0) rgb(0,0,0) rgb(0,0,0) rgb(0,0,0)",
+   "color": "rgb(227,228,229)"
+  },
+  {
+   "checked": false,
+   "edge": "rgb(0,0,0) rgb(0,0,0) rgb(0,0,0) rgb(0,0,0)",
+   "color": "rgb(94,176,229)"
+  }
+ ],
+ "options": [
+  "rgb(0,0,0)",
+  "rgb(255,255,255)"
+ ],
+ "checkboxesDiffer": 42,
+ "dotsInk": 560,
+ "dots": [
+  {
+   "current": true,
+   "ink": 380
+  },
+  {
+   "current": false,
+   "ink": 60
+  },
+  {
+   "current": false,
+   "ink": 60
+  },
+  {
+   "current": false,
+   "ink": 60
+  }
+ ],
+ "select": {
+  "n": 300,
+  "y0": 31,
+  "y1": 42
+ },
+ "selectShown": 300,
+ "label": {
+  "y0": 10,
+  "y1": 25
+ }
+}

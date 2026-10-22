@@ -76,6 +76,17 @@ export const cases = [
     ],
   },
   {
+    // forced colors (a high-contrast theme): the dots drawn, each a ring of
+    // the theme's text color, the current one a longer pill
+    name: 'forced',
+    html: ex('gallery'),
+    forcedColors: true,
+    checks: [
+      { target: DOT, props: ['border-top-width', 'border-top-style', 'border-top-color'], golden: 'in forced colors a dot drawn by a 4px edge in the theme\'s text color, where its ground alone, forced to the window\'s, drew nothing (apple.com\'s the same: not measured there)' },
+      { target: CURRENT, props: ['border-top-width', 'border-top-style', 'box-width'], golden: 'in forced colors the current dot a pill of the same edge, longer' },
+    ],
+  },
+  {
     // between the first item and the second, nearer the second (at 1600px
     // four cards scroll less than an item)
     name: 'snap',

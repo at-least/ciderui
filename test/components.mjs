@@ -46,7 +46,7 @@ for (const name of names) {
 
   for (const c of cases) {
     if (PICK && !PICK.test(c.name)) continue;
-    const page = await open(css, c.html, { touch: c.touch, reducedMotion: c.reducedMotion, height: c.height });
+    const page = await open(css, c.html, { touch: c.touch, reducedMotion: c.reducedMotion, forcedColors: c.forcedColors ? 'active' : undefined, height: c.height });
     const widths = c.widths ?? WIDTHS;
     try {
       for (const width of widths) {
