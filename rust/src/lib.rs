@@ -69,8 +69,8 @@ mod example;
 
 use hypertext::{AttributeBuffer, context::AttributeValue, prelude::*};
 
-/// A component's root class: its block, then the page's utilities (its
-/// `class` field), if any.
+/// A component's root class: its block (with its modifiers, `cui-dark`),
+/// then the page's utilities (its `class` field), if any.
 struct Class<'a>(&'static str, &'a str);
 
 impl Renderable<AttributeValue> for Class<'_> {

@@ -1,5 +1,7 @@
 use hypertext::{Buffer, prelude::*};
 
+use crate::Class;
+
 /// `cui-card` (`components/card`): the store's card, its picture filling it
 /// and its text at its top, an eyebrow (or a tag), its headline, a
 /// description and a price; the whole card its headline's link.
@@ -46,16 +48,13 @@ impl<M: Renderable> Renderable for Card<'_, M> {
             !self.tag || !self.eyebrow.is_empty(),
             "ciderui::Card's tag needs an eyebrow"
         );
-        let mut class = String::from("cui-card");
-        if self.dark {
-            class.push_str(" cui-dark");
-        }
-        if !self.class.is_empty() {
-            class.push(' ');
-            class.push_str(self.class);
-        }
+        let block = if self.dark {
+            "cui-card cui-dark"
+        } else {
+            "cui-card"
+        };
         rsx! {
-            <div class=(class)>
+            <div class=(Class(block, self.class))>
                 (self.media)
                 <div class="cui-card-content">
                     @if !self.eyebrow.is_empty() {
@@ -132,5 +131,18 @@ mod tests {
             <Card dark=false href="/x/" media=none eyebrow="" tag=true headline="x" description="" price="" class="" />
         }
         .render();
+    }
+
+    #[test]
+    fn dark_then_the_pages_utilities() {
+        let none = ();
+        let html = rsx! {
+            <Card dark=true href="/x/" media=none eyebrow="" tag=false headline="x" description="" price="" class="w-full" />
+        }
+        .render();
+        assert!(
+            html.as_inner()
+                .starts_with(r#"<div class="cui-card cui-dark w-full">"#)
+        );
     }
 }

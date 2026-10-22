@@ -1,5 +1,7 @@
 use hypertext::{Buffer, prelude::*};
 
+use crate::Class;
+
 /// A [`Tile`]'s size (`data-size`).
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
 pub enum TileSize {
@@ -55,20 +57,15 @@ pub struct Tile<'a, M: Renderable, C: Renderable> {
 impl<M: Renderable, C: Renderable> Renderable for Tile<'_, M, C> {
     fn render_to(&self, buffer: &mut Buffer) {
         assert!(!self.headline.is_empty(), "ciderui::Tile needs a headline");
-        let mut class = String::from("cui-tile");
-        if self.rounded {
-            class.push_str(" cui-tile-rounded");
-        }
-        if self.dark {
-            class.push_str(" cui-dark");
-        }
-        if !self.class.is_empty() {
-            class.push(' ');
-            class.push_str(self.class);
-        }
+        let block = match (self.rounded, self.dark) {
+            (false, false) => "cui-tile",
+            (true, false) => "cui-tile cui-tile-rounded",
+            (false, true) => "cui-tile cui-dark",
+            (true, true) => "cui-tile cui-tile-rounded cui-dark",
+        };
         let large = self.size == TileSize::Large;
         rsx! {
-            <div class=(class) data-size="lg"[large]>
+            <div class=(Class(block, self.class)) data-size="lg"[large]>
                 (self.media)
                 @if let Some((href, name)) = self.link {
                     <a class="cui-tile-link" href=(href) aria-label=(name)></a>
@@ -140,6 +137,19 @@ mod tests {
         assert!(
             html.as_inner()
                 .starts_with(r#"<div class="cui-tile cui-tile-rounded min-h-0">"#)
+        );
+    }
+
+    #[test]
+    fn rounded_dark_then_the_pages_utilities() {
+        let none = ();
+        let html = rsx! {
+            <Tile size=(TileSize::Default) rounded=true dark=true link=None media=none headline="x" subhead="" callout="" class="min-h-0">"x"</Tile>
+        }
+        .render();
+        assert!(
+            html.as_inner()
+                .starts_with(r#"<div class="cui-tile cui-tile-rounded cui-dark min-h-0">"#)
         );
     }
 }

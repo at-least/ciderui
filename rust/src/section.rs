@@ -1,6 +1,6 @@
 use hypertext::{Buffer, prelude::*};
 
-use crate::MoreLink;
+use crate::{Class, MoreLink};
 
 /// A [`Section`]'s ground (`data-variant`).
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
@@ -59,18 +59,15 @@ pub struct Section<'a, R: Renderable> {
 
 impl<R: Renderable> Renderable for Section<'_, R> {
     fn render_to(&self, buffer: &mut Buffer) {
-        let mut class = String::from("cui-section");
-        if self.dark {
-            class.push_str(" cui-dark");
-        }
-        if !self.class.is_empty() {
-            class.push(' ');
-            class.push_str(self.class);
-        }
+        let block = if self.dark {
+            "cui-section cui-dark"
+        } else {
+            "cui-section"
+        };
         let alt = self.ground == Ground::Alt;
         let large = self.rhythm == Rhythm::Large;
         rsx! {
-            <section class=(class) data-variant="alt"[alt] data-size="lg"[large]>
+            <section class=(Class(block, self.class)) data-variant="alt"[alt] data-size="lg"[large]>
                 <div class="cui-section-content">(self.children)</div>
             </section>
         }
@@ -107,7 +104,7 @@ impl Renderable for SectionHeader<'_> {
             "ciderui::SectionHeader needs a headline"
         );
         rsx! {
-            <header class=(crate::Class("cui-section-header", self.class))>
+            <header class=(Class("cui-section-header", self.class))>
                 <h2 class="cui-section-headline">(self.headline)</h2>
                 @if !self.links.is_empty() {
                     <ul class="cui-section-links">
@@ -189,6 +186,18 @@ mod tests {
         assert!(
             html.as_inner()
                 .starts_with(r#"<header class="cui-section-header mb-0">"#)
+        );
+    }
+
+    #[test]
+    fn dark_then_the_pages_utilities() {
+        let html = rsx! {
+            <Section ground=(Ground::Page) rhythm=(Rhythm::Default) dark=true class="pt-0">"x"</Section>
+        }
+        .render();
+        assert!(
+            html.as_inner()
+                .starts_with(r#"<section class="cui-section cui-dark pt-0">"#)
         );
     }
 }

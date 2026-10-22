@@ -1,6 +1,6 @@
 use hypertext::{Buffer, prelude::*};
 
-use crate::icon::CHEVRON;
+use crate::{Class, icon::CHEVRON};
 
 // the menu's checkbox: a page has one local nav
 const TOGGLE_ID: &str = "cui-localnav-menu";
@@ -45,17 +45,14 @@ impl Renderable for LocalNav<'_> {
     fn render_to(&self, buffer: &mut Buffer) {
         assert!(!self.title.is_empty(), "ciderui::LocalNav needs a title");
         assert!(!self.href.is_empty(), "ciderui::LocalNav needs an href");
-        let mut class = String::from("cui-localnav");
-        if self.dark {
-            class.push_str(" cui-dark");
-        }
-        if !self.class.is_empty() {
-            class.push(' ');
-            class.push_str(self.class);
-        }
+        let block = if self.dark {
+            "cui-localnav cui-dark"
+        } else {
+            "cui-localnav"
+        };
         let menu = !self.links.is_empty();
         rsx! {
-            <nav class=(class) aria-label="Local">
+            <nav class=(Class(block, self.class)) aria-label="Local">
                 <div class="cui-localnav-content">
                     <a class="cui-localnav-title" href=(self.href)>(self.title)</a>
                     @if menu {
@@ -140,5 +137,17 @@ mod tests {
             <LocalNav title="" href="/x/" links=(&[]) current="" button=None dark=false class="" />
         }
         .render();
+    }
+
+    #[test]
+    fn dark_then_the_pages_utilities() {
+        let html = rsx! {
+            <LocalNav title="x" href="/x/" links=(&[]) current="" button=None dark=true class="mt-0" />
+        }
+        .render();
+        assert!(
+            html.as_inner()
+                .starts_with(r#"<nav class="cui-localnav cui-dark mt-0" aria-label="Local">"#)
+        );
     }
 }

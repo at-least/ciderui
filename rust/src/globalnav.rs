@@ -1,5 +1,6 @@
 use hypertext::{Buffer, prelude::*};
 
+use crate::Class;
 use crate::icon::{
     ARROW, ARROW_COMPACT, BAG, BAG_COMPACT, CLEAR, CLEAR_COMPACT, FLYOUT, FLYOUT_BACK,
     FLYOUT_COMPACT, Icon, MENU, SEARCH, SEARCH_COMPACT, SEARCHFIELD, SEARCHFIELD_COMPACT,
@@ -234,16 +235,13 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
                 );
             }
         }
-        let mut class = String::from("cui-globalnav");
-        if self.dark {
-            class.push_str(" cui-dark");
-        }
-        if !self.class.is_empty() {
-            class.push(' ');
-            class.push_str(self.class);
-        }
+        let block = if self.dark {
+            "cui-globalnav cui-dark"
+        } else {
+            "cui-globalnav"
+        };
         rsx! {
-            <nav class=(class) data-variant="clear"[self.clear] aria-label="Global">
+            <nav class=(Class(block, self.class)) data-variant="clear"[self.clear] aria-label="Global">
                 <div class="cui-globalnav-content">
                     <ul class="cui-globalnav-list" id=(MENU_ID) popover>
                         <li><a class="cui-globalnav-logo" href=(self.home) aria-label=(self.name)>(self.logo)</a></li>
