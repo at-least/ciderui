@@ -1,0 +1,2209 @@
+{
+ "url": "https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report",
+ "finalUrl": "https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-22T22:45:35.191Z",
+ "widths": {
+  "390": {
+   "page": {
+    "html": "<body data-color-scheme=\"auto\">\n<template id=\"account-menu-authenticated-template\"><div class=\"account-menu-user-header\" role=\"banner\" aria-label=\"User information\" data-aria-label=\"userInformation\">\n<div class=\"account-menu-avatar\" data-sl",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "eyebrow": {
+    "html": "<span data-v-06effe08=\"\" class=\"eyebrow\">Article</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "23px",
+     "font-weight": "500",
+     "letter-spacing": "0.228px",
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "title": {
+    "html": "<h1 data-v-06effe08=\"\" class=\"title\"><span data-v-075e8b5e=\"\" data-v-06effe08=\"\">Examining the fields in a crash report</span></h1>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "700",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    }
+   },
+   "abstract": {
+    "html": "<div data-v-15d7e6ba=\"\" data-v-611b62f7=\"\" data-v-075e8b5e=\"\" class=\"abstract content\" data-v-975f0fc2=\"\">Understand the structure of a crash report and the information each field contains.</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "27.0009px",
+     "font-weight": "500",
+     "letter-spacing": "0.228px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "heading": {
+    "html": "<h2 data-v-220404f1=\"\" id=\"Overview\"><a data-v-220404f1=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report#Overview\" class=\"header-anchor\" data-after-text=\"in page link\">Overview<svg data-v-992f7eb0=\"\" data-v-220404f1=\"\" a",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    }
+   },
+   "text": {
+    "html": "<p>Each section of a crash report contains information to help you diagnose the source of a crash.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "13.6px"
+    }
+   },
+   "link": {
+    "html": "<a href=\"/documentation/bundleresources/information-property-list/cfbundleexecutable\" class=\"inline-link\"><code data-v-880086a2=\"\">CFBundle<wbr data-v-880086a2=\"\">Executable</code></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "code": {
+    "html": "<code data-v-880086a2=\"\" class=\"inline-code\">Incident Identifier</code>",
+    "styles": {
+     "font-family": "\"SF Mono\", SFMono-Regular, ui-monospace, Menlo, monospace",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "border-top-left-radius": "0px"
+    }
+   },
+   "listing": {
+    "html": "<div data-v-e6b18ca8=\"\" data-syntax=\"other\" class=\"code-listing\"><!----><div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(210, 210, 215)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "overflow-x": "hidden"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 391
+    }
+   },
+   "listing.scroller": {
+    "html": "<div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidd",
+    "styles": {
+     "display": "flex",
+     "overflow-x": "auto"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 391
+    }
+   },
+   "listing.pre": {
+    "html": "<pre data-v-e6b18ca8=\"\"><code data-v-b751a540=\"\" data-v-e6b18ca8=\"\" tabindex=\"0\" data-before-code=\"start of code block\" data-after-code=\"end of code block\"><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span",
+    "styles": {
+     "padding-top": "8px",
+     "padding-right": "14px",
+     "padding-bottom": "8px",
+     "padding-left": "14px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "white-space": "pre"
+    },
+    "box": {
+     "width": 1163.046875,
+     "height": 391
+    }
+   },
+   "listing.code": {
+    "html": "<code data-v-b751a540=\"\" data-v-e6b18ca8=\"\" tabindex=\"0\" data-before-code=\"start of code block\" data-after-code=\"end of code block\"><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data",
+    "styles": {
+     "font-family": "\"SF Mono\", SFMono-Regular, ui-monospace, Menlo, monospace",
+     "font-size": "15px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.405px",
+     "color": "rgb(0, 0, 0)",
+     "white-space": "pre",
+     "tab-size": "4"
+    }
+   },
+   "listing.line": {
+    "html": "<span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line\">Incident Identifier: 6156848E-344E-4D9E-84E0-87AFD0D0AE7B</span></span>",
+    "styles": {
+     "display": "inline-block",
+     "min-height": "0px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 1135.046875,
+     "height": 25
+    }
+   },
+   "copy": {
+    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
+    "styles": {
+     "padding-top": "4px",
+     "padding-right": "4px",
+     "padding-bottom": "4px",
+     "padding-left": "4px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 0, 0)",
+     "border-top-left-radius": "18px",
+     "background-color": "rgb(210, 210, 215)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "25.5px",
+     "height": "25.5px",
+     "position": "absolute",
+     "top": "3.4px",
+     "right": "3.4px",
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0",
+     "cursor": "pointer",
+     "outline-style": "none",
+     "outline-color": "rgb(0, 0, 0)",
+     "outline-width": "3px",
+     "outline-offset": "0px",
+     "transition-property": "all",
+     "transition-duration": "0.2s",
+     "transition-timing-function": "ease-in-out"
+    },
+    "box": {
+     "width": 33.5,
+     "height": 33.5
+    },
+    "states": {
+     "hover": {
+      "padding-top": "4px",
+      "padding-right": "4px",
+      "padding-bottom": "4px",
+      "padding-left": "4px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(29, 29, 31)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "25.5px",
+      "height": "25.5px",
+      "position": "absolute",
+      "top": "3.4px",
+      "right": "3.4px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "0",
+      "cursor": "pointer",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-visible": {
+      "padding-top": "4px",
+      "padding-right": "4px",
+      "padding-bottom": "4px",
+      "padding-left": "4px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(210, 210, 215)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "25.5px",
+      "height": "25.5px",
+      "position": "absolute",
+      "top": "3.4px",
+      "right": "3.4px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "0",
+      "cursor": "pointer",
+      "outline-style": "auto",
+      "outline-color": "rgb(16, 16, 16)",
+      "outline-width": "1px",
+      "outline-offset": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "copy.icon": {
+    "html": "<svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" class=\"svg-icon CopyIcon copy-icon\" viewBox=\"0 0 24 24\"><title data-v-65e0e28e=\"\"",
+    "styles": {
+     "width": "25.5px",
+     "height": "25.5px",
+     "color": "rgb(0, 0, 0)",
+     "fill": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 25.5,
+     "height": 25.5
+    }
+   },
+   "bar": {
+    "html": "<div data-v-9a67a202=\"\" class=\"nav__wrapper\"><div data-v-9a67a202=\"\" class=\"nav__background\"></div><!----><div data-v-9a67a202=\"\" class=\"nav-content\"><div data-v-420314e4=\"\" data-v-9a67a202=\"\" class=\"pre-title\"><div data-v-420314e4=\"\" data-",
+    "styles": {
+     "height": "48px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 390,
+     "height": 48
+    }
+   },
+   "bar.ground": {
+    "html": "<div data-v-9a67a202=\"\" class=\"nav__background\"></div>",
+    "styles": {
+     "background-color": "rgb(255, 255, 255)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "box-shadow": "none",
+     "opacity": "1",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 390,
+     "height": 48
+    }
+   },
+   "bar.title": {
+    "html": "<div data-v-9a67a202=\"\" class=\"nav-title\"><a data-v-cd2176b0=\"\" href=\"/documentation\" class=\"router-link-active nav-title\" data-v-9a67a202=\"\"> Documentation </a></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "17px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 328,
+     "height": 48
+    }
+   },
+   "bar.toggle": {
+    "html": "<button data-v-420314e4=\"\" data-v-9a67a202=\"\" aria-label=\"Open Documentation Navigator\" id=\"nav-open-navigator\" class=\"sidenav-toggle\"><span data-v-420314e4=\"\" data-v-9a67a202=\"\" class=\"sidenav-icon-wrapper\"><svg data-v-992f7eb0=\"\" data-v-4",
+    "styles": {
+     "width": "29px",
+     "height": "29px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 29,
+     "height": 29
+    }
+   },
+   "navigator": {
+    "html": "<nav data-v-d38be796=\"\" data-v-7dbb4eea=\"\" aria-labelledby=\"&lt;root&gt;\" class=\"navigator\" data-v-cccc97a2=\"\" style=\"display: none;\"><div data-v-9962ee18=\"\" data-v-3d9d262f=\"\" data-v-329861a7=\"\" data-v-d38be796=\"\" class=\"navigator-card fil",
+    "styles": {
+     "display": "none",
+     "width": "auto",
+     "border-right-width": "0px",
+     "border-right-style": "none",
+     "border-right-color": "rgb(29, 29, 31)",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    }
+   },
+   "navigator.item": {
+    "html": "<div data-v-7df597aa=\"\" data-v-2645ef6c=\"\" data-v-4a611512=\"\" data-v-3d9d262f=\"\" class=\"navigator-card-item\" data-nesting-index=\"0\" id=\"container--180975865\" style=\"--nesting-index: 0;\" aria-hidden=\"true\"><div data-v-7df597aa=\"\" class=\"head",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "height": "auto",
+     "padding-left": "20px",
+     "padding-right": "20px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "height": "auto",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "0px"
+     }
+    }
+   },
+   "navigator.link": {
+    "html": "<a data-v-2645ef6c=\"\" href=\"/documentation/xcode/adding-previews-to-your-interface-files\" class=\"leaf-link\" id=\"-180975865\" tabindex=\"-1\" aria-describedby=\"label--180975865 usage--180975865\" data-v-7df597aa=\"\"><p data-v-fc9a395c=\"\" data-v-2",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(29, 29, 31)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "navigator.current": {
+    "html": "<div data-v-7df597aa=\"\" data-v-2645ef6c=\"\" data-v-4a611512=\"\" data-v-3d9d262f=\"\" class=\"navigator-card-item expanded active\" data-nesting-index=\"2\" id=\"container-78862804\" style=\"--nesting-index: 2;\"><div data-v-7df597aa=\"\" class=\"head-wrap",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "height": "auto",
+     "padding-left": "20px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    }
+   },
+   "navigator.current.link": {
+    "html": "<a data-v-2645ef6c=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report\" class=\"leaf-link router-link-exact-active router-link-active bolded\" id=\"78862804\" tabindex=\"0\" aria-describedby=\"label-78862804 usage-78862804\" data-v",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto"
+    }
+   },
+   "note": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"note\" class=\"note\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C ",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(105, 105, 105)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(105, 105, 105)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "rgb(105, 105, 105) 0px 0px 1px 0px inset, rgb(105, 105, 105) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(105, 105, 105)",
+     "border-right-color": "rgb(105, 105, 105)"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 191.796875
+    }
+   },
+   "note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(105, 105, 105)",
+     "margin-bottom": "0px"
+    }
+   },
+   "note.text": {
+    "html": "<p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or C++. Crash reports record language exception information separately.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   }
+  },
+  "900": {
+   "page": {
+    "html": "<body data-color-scheme=\"auto\">\n<template id=\"account-menu-authenticated-template\"><div class=\"account-menu-user-header\" role=\"banner\" aria-label=\"User information\" data-aria-label=\"userInformation\">\n<div class=\"account-menu-avatar\" data-sl",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "eyebrow": {
+    "html": "<span data-v-06effe08=\"\" class=\"eyebrow\">Article</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "500",
+     "letter-spacing": "0.231px",
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "title": {
+    "html": "<h1 data-v-06effe08=\"\" class=\"title\"><span data-v-075e8b5e=\"\" data-v-06effe08=\"\">Examining the fields in a crash report</span></h1>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "700",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    }
+   },
+   "abstract": {
+    "html": "<div data-v-15d7e6ba=\"\" data-v-611b62f7=\"\" data-v-075e8b5e=\"\" class=\"abstract content\" data-v-975f0fc2=\"\">Understand the structure of a crash report and the information each field contains.</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "29.001px",
+     "font-weight": "500",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "heading": {
+    "html": "<h2 data-v-220404f1=\"\" id=\"Overview\"><a data-v-220404f1=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report#Overview\" class=\"header-anchor\" data-after-text=\"in page link\">Overview<svg data-v-992f7eb0=\"\" data-v-220404f1=\"\" a",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    }
+   },
+   "text": {
+    "html": "<p>Each section of a crash report contains information to help you diagnose the source of a crash.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "13.6px"
+    }
+   },
+   "link": {
+    "html": "<a href=\"/documentation/bundleresources/information-property-list/cfbundleexecutable\" class=\"inline-link\"><code data-v-880086a2=\"\">CFBundle<wbr data-v-880086a2=\"\">Executable</code></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "code": {
+    "html": "<code data-v-880086a2=\"\" class=\"inline-code\">Incident Identifier</code>",
+    "styles": {
+     "font-family": "\"SF Mono\", SFMono-Regular, ui-monospace, Menlo, monospace",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "border-top-left-radius": "0px"
+    }
+   },
+   "listing": {
+    "html": "<div data-v-e6b18ca8=\"\" data-syntax=\"other\" class=\"code-listing\"><!----><div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(210, 210, 215)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "overflow-x": "hidden"
+    },
+    "box": {
+     "width": 660,
+     "height": 391
+    }
+   },
+   "listing.scroller": {
+    "html": "<div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidd",
+    "styles": {
+     "display": "flex",
+     "overflow-x": "auto"
+    },
+    "box": {
+     "width": 660,
+     "height": 391
+    }
+   },
+   "listing.pre": {
+    "html": "<pre data-v-e6b18ca8=\"\"><code data-v-b751a540=\"\" data-v-e6b18ca8=\"\" tabindex=\"0\" data-before-code=\"start of code block\" data-after-code=\"end of code block\"><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span",
+    "styles": {
+     "padding-top": "8px",
+     "padding-right": "14px",
+     "padding-bottom": "8px",
+     "padding-left": "14px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "white-space": "pre"
+    },
+    "box": {
+     "width": 1163.046875,
+     "height": 391
+    }
+   },
+   "listing.code": {
+    "html": "<code data-v-b751a540=\"\" data-v-e6b18ca8=\"\" tabindex=\"0\" data-before-code=\"start of code block\" data-after-code=\"end of code block\"><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data",
+    "styles": {
+     "font-family": "\"SF Mono\", SFMono-Regular, ui-monospace, Menlo, monospace",
+     "font-size": "15px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.405px",
+     "color": "rgb(0, 0, 0)",
+     "white-space": "pre",
+     "tab-size": "4"
+    }
+   },
+   "listing.line": {
+    "html": "<span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line\">Incident Identifier: 6156848E-344E-4D9E-84E0-87AFD0D0AE7B</span></span>",
+    "styles": {
+     "display": "inline-block",
+     "min-height": "0px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 1135.046875,
+     "height": 25
+    }
+   },
+   "copy": {
+    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
+    "styles": {
+     "padding-top": "4px",
+     "padding-right": "4px",
+     "padding-bottom": "4px",
+     "padding-left": "4px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 0, 0)",
+     "border-top-left-radius": "18px",
+     "background-color": "rgb(210, 210, 215)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "25.5px",
+     "height": "25.5px",
+     "position": "absolute",
+     "top": "3.4px",
+     "right": "3.4px",
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0",
+     "cursor": "pointer",
+     "outline-style": "none",
+     "outline-color": "rgb(0, 0, 0)",
+     "outline-width": "3px",
+     "outline-offset": "0px",
+     "transition-property": "all",
+     "transition-duration": "0.2s",
+     "transition-timing-function": "ease-in-out"
+    },
+    "box": {
+     "width": 33.5,
+     "height": 33.5
+    },
+    "states": {
+     "hover": {
+      "padding-top": "4px",
+      "padding-right": "4px",
+      "padding-bottom": "4px",
+      "padding-left": "4px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(29, 29, 31)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "25.5px",
+      "height": "25.5px",
+      "position": "absolute",
+      "top": "3.4px",
+      "right": "3.4px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "0",
+      "cursor": "pointer",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-visible": {
+      "padding-top": "4px",
+      "padding-right": "4px",
+      "padding-bottom": "4px",
+      "padding-left": "4px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(210, 210, 215)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "25.5px",
+      "height": "25.5px",
+      "position": "absolute",
+      "top": "3.4px",
+      "right": "3.4px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "0",
+      "cursor": "pointer",
+      "outline-style": "auto",
+      "outline-color": "rgb(16, 16, 16)",
+      "outline-width": "1px",
+      "outline-offset": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "copy.icon": {
+    "html": "<svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" class=\"svg-icon CopyIcon copy-icon\" viewBox=\"0 0 24 24\"><title data-v-65e0e28e=\"\"",
+    "styles": {
+     "width": "25.5px",
+     "height": "25.5px",
+     "color": "rgb(0, 0, 0)",
+     "fill": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 25.5,
+     "height": 25.5
+    }
+   },
+   "bar": {
+    "html": "<div data-v-9a67a202=\"\" class=\"nav__wrapper\"><div data-v-9a67a202=\"\" class=\"nav__background\"></div><!----><div data-v-9a67a202=\"\" class=\"nav-content\"><div data-v-420314e4=\"\" data-v-9a67a202=\"\" class=\"pre-title\"><div data-v-420314e4=\"\" data-",
+    "styles": {
+     "height": "52px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 900,
+     "height": 52
+    }
+   },
+   "bar.ground": {
+    "html": "<div data-v-9a67a202=\"\" class=\"nav__background\"></div>",
+    "styles": {
+     "background-color": "rgb(255, 255, 255)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "box-shadow": "none",
+     "opacity": "1",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 900,
+     "height": 52
+    }
+   },
+   "bar.title": {
+    "html": "<div data-v-9a67a202=\"\" class=\"nav-title\"><a data-v-cd2176b0=\"\" href=\"/documentation\" class=\"router-link-active nav-title\" data-v-9a67a202=\"\"> Documentation </a></div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 826,
+     "height": 52
+    }
+   },
+   "navigator": {
+    "html": "<nav data-v-d38be796=\"\" data-v-7dbb4eea=\"\" aria-labelledby=\"&lt;root&gt;\" class=\"navigator\" data-v-cccc97a2=\"\" style=\"display: none;\"><div data-v-9962ee18=\"\" data-v-3d9d262f=\"\" data-v-329861a7=\"\" data-v-d38be796=\"\" class=\"navigator-card fil",
+    "styles": {
+     "display": "none",
+     "width": "auto",
+     "border-right-width": "0px",
+     "border-right-style": "none",
+     "border-right-color": "rgb(29, 29, 31)",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    }
+   },
+   "navigator.item": {
+    "html": "<div data-v-7df597aa=\"\" data-v-2645ef6c=\"\" data-v-4a611512=\"\" data-v-3d9d262f=\"\" class=\"navigator-card-item\" data-nesting-index=\"0\" id=\"container--180975865\" style=\"--nesting-index: 0;\" aria-hidden=\"true\"><div data-v-7df597aa=\"\" class=\"head",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "height": "auto",
+     "padding-left": "20px",
+     "padding-right": "20px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "height": "auto",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "0px"
+     }
+    }
+   },
+   "navigator.link": {
+    "html": "<a data-v-2645ef6c=\"\" href=\"/documentation/xcode/adding-previews-to-your-interface-files\" class=\"leaf-link\" id=\"-180975865\" tabindex=\"-1\" aria-describedby=\"label--180975865 usage--180975865\" data-v-7df597aa=\"\"><p data-v-fc9a395c=\"\" data-v-2",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(29, 29, 31)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "navigator.current": {
+    "html": "<div data-v-7df597aa=\"\" data-v-2645ef6c=\"\" data-v-4a611512=\"\" data-v-3d9d262f=\"\" class=\"navigator-card-item expanded active\" data-nesting-index=\"2\" id=\"container-78862804\" style=\"--nesting-index: 2;\"><div data-v-7df597aa=\"\" class=\"head-wrap",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "height": "auto",
+     "padding-left": "20px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    }
+   },
+   "navigator.current.link": {
+    "html": "<a data-v-2645ef6c=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report\" class=\"leaf-link router-link-exact-active router-link-active bolded\" id=\"78862804\" tabindex=\"0\" aria-describedby=\"label-78862804 usage-78862804\" data-v",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto"
+    }
+   },
+   "note": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"note\" class=\"note\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C ",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(105, 105, 105)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(105, 105, 105)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "rgb(105, 105, 105) 0px 0px 1px 0px inset, rgb(105, 105, 105) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(105, 105, 105)",
+     "border-right-color": "rgb(105, 105, 105)"
+    },
+    "box": {
+     "width": 660,
+     "height": 141.796875
+    }
+   },
+   "note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(105, 105, 105)",
+     "margin-bottom": "0px"
+    }
+   },
+   "note.text": {
+    "html": "<p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or C++. Crash reports record language exception information separately.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   }
+  },
+  "1200": {
+   "page": {
+    "html": "<body data-color-scheme=\"auto\">\n<template id=\"account-menu-authenticated-template\"><div class=\"account-menu-user-header\" role=\"banner\" aria-label=\"User information\" data-aria-label=\"userInformation\">\n<div class=\"account-menu-avatar\" data-sl",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "eyebrow": {
+    "html": "<span data-v-06effe08=\"\" class=\"eyebrow\">Article</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "500",
+     "letter-spacing": "0.231px",
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "title": {
+    "html": "<h1 data-v-06effe08=\"\" class=\"title\"><span data-v-075e8b5e=\"\" data-v-06effe08=\"\">Examining the fields in a crash report</span></h1>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "700",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    }
+   },
+   "abstract": {
+    "html": "<div data-v-15d7e6ba=\"\" data-v-611b62f7=\"\" data-v-075e8b5e=\"\" class=\"abstract content\" data-v-975f0fc2=\"\">Understand the structure of a crash report and the information each field contains.</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "29.001px",
+     "font-weight": "500",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "heading": {
+    "html": "<h2 data-v-220404f1=\"\" id=\"Overview\"><a data-v-220404f1=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report#Overview\" class=\"header-anchor\" data-after-text=\"in page link\">Overview<svg data-v-992f7eb0=\"\" data-v-220404f1=\"\" a",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    }
+   },
+   "text": {
+    "html": "<p>Each section of a crash report contains information to help you diagnose the source of a crash.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "13.6px"
+    }
+   },
+   "link": {
+    "html": "<a href=\"/documentation/bundleresources/information-property-list/cfbundleexecutable\" class=\"inline-link\"><code data-v-880086a2=\"\">CFBundle<wbr data-v-880086a2=\"\">Executable</code></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "code": {
+    "html": "<code data-v-880086a2=\"\" class=\"inline-code\">Incident Identifier</code>",
+    "styles": {
+     "font-family": "\"SF Mono\", SFMono-Regular, ui-monospace, Menlo, monospace",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "border-top-left-radius": "0px"
+    }
+   },
+   "listing": {
+    "html": "<div data-v-e6b18ca8=\"\" data-syntax=\"other\" class=\"code-listing\"><!----><div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(210, 210, 215)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "overflow-x": "hidden"
+    },
+    "box": {
+     "width": 584,
+     "height": 391
+    }
+   },
+   "listing.scroller": {
+    "html": "<div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidd",
+    "styles": {
+     "display": "flex",
+     "overflow-x": "auto"
+    },
+    "box": {
+     "width": 584,
+     "height": 391
+    }
+   },
+   "listing.pre": {
+    "html": "<pre data-v-e6b18ca8=\"\"><code data-v-b751a540=\"\" data-v-e6b18ca8=\"\" tabindex=\"0\" data-before-code=\"start of code block\" data-after-code=\"end of code block\"><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span",
+    "styles": {
+     "padding-top": "8px",
+     "padding-right": "14px",
+     "padding-bottom": "8px",
+     "padding-left": "14px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "white-space": "pre"
+    },
+    "box": {
+     "width": 1163.046875,
+     "height": 391
+    }
+   },
+   "listing.code": {
+    "html": "<code data-v-b751a540=\"\" data-v-e6b18ca8=\"\" tabindex=\"0\" data-before-code=\"start of code block\" data-after-code=\"end of code block\"><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data",
+    "styles": {
+     "font-family": "\"SF Mono\", SFMono-Regular, ui-monospace, Menlo, monospace",
+     "font-size": "15px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.405px",
+     "color": "rgb(0, 0, 0)",
+     "white-space": "pre",
+     "tab-size": "4"
+    }
+   },
+   "listing.line": {
+    "html": "<span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line\">Incident Identifier: 6156848E-344E-4D9E-84E0-87AFD0D0AE7B</span></span>",
+    "styles": {
+     "display": "inline-block",
+     "min-height": "0px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 1135.046875,
+     "height": 25
+    }
+   },
+   "copy": {
+    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
+    "styles": {
+     "padding-top": "4px",
+     "padding-right": "4px",
+     "padding-bottom": "4px",
+     "padding-left": "4px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 0, 0)",
+     "border-top-left-radius": "18px",
+     "background-color": "rgb(210, 210, 215)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "25.5px",
+     "height": "25.5px",
+     "position": "absolute",
+     "top": "3.4px",
+     "right": "3.4px",
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0",
+     "cursor": "pointer",
+     "outline-style": "none",
+     "outline-color": "rgb(0, 0, 0)",
+     "outline-width": "3px",
+     "outline-offset": "0px",
+     "transition-property": "all",
+     "transition-duration": "0.2s",
+     "transition-timing-function": "ease-in-out"
+    },
+    "box": {
+     "width": 33.5,
+     "height": 33.5
+    },
+    "states": {
+     "hover": {
+      "padding-top": "4px",
+      "padding-right": "4px",
+      "padding-bottom": "4px",
+      "padding-left": "4px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(29, 29, 31)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "25.5px",
+      "height": "25.5px",
+      "position": "absolute",
+      "top": "3.4px",
+      "right": "3.4px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "0",
+      "cursor": "pointer",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-visible": {
+      "padding-top": "4px",
+      "padding-right": "4px",
+      "padding-bottom": "4px",
+      "padding-left": "4px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(210, 210, 215)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "25.5px",
+      "height": "25.5px",
+      "position": "absolute",
+      "top": "3.4px",
+      "right": "3.4px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "0",
+      "cursor": "pointer",
+      "outline-style": "auto",
+      "outline-color": "rgb(16, 16, 16)",
+      "outline-width": "1px",
+      "outline-offset": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "copy.icon": {
+    "html": "<svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" class=\"svg-icon CopyIcon copy-icon\" viewBox=\"0 0 24 24\"><title data-v-65e0e28e=\"\"",
+    "styles": {
+     "width": "25.5px",
+     "height": "25.5px",
+     "color": "rgb(0, 0, 0)",
+     "fill": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 25.5,
+     "height": 25.5
+    }
+   },
+   "bar": {
+    "html": "<div data-v-9a67a202=\"\" class=\"nav__wrapper\"><div data-v-9a67a202=\"\" class=\"nav__background\"></div><!----><div data-v-9a67a202=\"\" class=\"nav-content\"><div data-v-420314e4=\"\" data-v-9a67a202=\"\" class=\"pre-title\"><div data-v-420314e4=\"\" data-",
+    "styles": {
+     "height": "52px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 1200,
+     "height": 52
+    }
+   },
+   "bar.ground": {
+    "html": "<div data-v-9a67a202=\"\" class=\"nav__background\"></div>",
+    "styles": {
+     "background-color": "rgb(255, 255, 255)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "box-shadow": "none",
+     "opacity": "1",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 1200,
+     "height": 52
+    }
+   },
+   "bar.title": {
+    "html": "<div data-v-9a67a202=\"\" class=\"nav-title\"><a data-v-cd2176b0=\"\" href=\"/documentation\" class=\"router-link-active nav-title\" data-v-9a67a202=\"\"> Documentation </a></div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 146.109375,
+     "height": 52
+    }
+   },
+   "navigator": {
+    "html": "<nav data-v-d38be796=\"\" data-v-7dbb4eea=\"\" aria-labelledby=\"&lt;root&gt;\" class=\"navigator\" data-v-cccc97a2=\"\"><div data-v-9962ee18=\"\" data-v-3d9d262f=\"\" data-v-329861a7=\"\" data-v-d38be796=\"\" class=\"navigator-card\" technologypath=\"/document",
+    "styles": {
+     "display": "flex",
+     "width": "455px",
+     "border-right-width": "0px",
+     "border-right-style": "none",
+     "border-right-color": "rgb(29, 29, 31)",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 455,
+     "height": 10803.4375
+    }
+   },
+   "navigator.item": {
+    "html": "<div data-v-7df597aa=\"\" data-v-2645ef6c=\"\" data-v-4a611512=\"\" data-v-3d9d262f=\"\" class=\"navigator-card-item\" data-nesting-index=\"0\" id=\"container--180975865\" style=\"--nesting-index: 0;\" aria-hidden=\"true\"><div data-v-7df597aa=\"\" class=\"head",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "height": "35px",
+     "padding-left": "20px",
+     "padding-right": "20px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 455,
+     "height": 35
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "height": "35px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "0px"
+     }
+    }
+   },
+   "navigator.link": {
+    "html": "<a data-v-2645ef6c=\"\" href=\"/documentation/xcode/adding-previews-to-your-interface-files\" class=\"leaf-link\" id=\"-180975865\" tabindex=\"-1\" aria-describedby=\"label--180975865 usage--180975865\" data-v-7df597aa=\"\"><p data-v-fc9a395c=\"\" data-v-2",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(29, 29, 31)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "navigator.current": {
+    "html": "<div data-v-7df597aa=\"\" data-v-2645ef6c=\"\" data-v-4a611512=\"\" data-v-3d9d262f=\"\" class=\"navigator-card-item expanded active\" data-nesting-index=\"2\" id=\"container-78862804\" style=\"--nesting-index: 2;\"><div data-v-7df597aa=\"\" class=\"head-wrap",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "height": "35px",
+     "padding-left": "20px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 455,
+     "height": 35
+    }
+   },
+   "navigator.current.link": {
+    "html": "<a data-v-2645ef6c=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report\" class=\"leaf-link router-link-exact-active router-link-active bolded\" id=\"78862804\" tabindex=\"0\" aria-describedby=\"label-78862804 usage-78862804\" data-v",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto"
+    }
+   },
+   "note": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"note\" class=\"note\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C ",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(105, 105, 105)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(105, 105, 105)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "rgb(105, 105, 105) 0px 0px 1px 0px inset, rgb(105, 105, 105) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(105, 105, 105)",
+     "border-right-color": "rgb(105, 105, 105)"
+    },
+    "box": {
+     "width": 584,
+     "height": 141.796875
+    }
+   },
+   "note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(105, 105, 105)",
+     "margin-bottom": "0px"
+    }
+   },
+   "note.text": {
+    "html": "<p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or C++. Crash reports record language exception information separately.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   }
+  },
+  "1600": {
+   "page": {
+    "html": "<body data-color-scheme=\"auto\">\n<template id=\"account-menu-authenticated-template\"><div class=\"account-menu-user-header\" role=\"banner\" aria-label=\"User information\" data-aria-label=\"userInformation\">\n<div class=\"account-menu-avatar\" data-sl",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "eyebrow": {
+    "html": "<span data-v-06effe08=\"\" class=\"eyebrow\">Article</span>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "500",
+     "letter-spacing": "0.231px",
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "title": {
+    "html": "<h1 data-v-06effe08=\"\" class=\"title\"><span data-v-075e8b5e=\"\" data-v-06effe08=\"\">Examining the fields in a crash report</span></h1>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "44px",
+     "font-weight": "700",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    }
+   },
+   "abstract": {
+    "html": "<div data-v-15d7e6ba=\"\" data-v-611b62f7=\"\" data-v-075e8b5e=\"\" class=\"abstract content\" data-v-975f0fc2=\"\">Understand the structure of a crash report and the information each field contains.</div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "29.001px",
+     "font-weight": "500",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "heading": {
+    "html": "<h2 data-v-220404f1=\"\" id=\"Overview\"><a data-v-220404f1=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report#Overview\" class=\"header-anchor\" data-after-text=\"in page link\">Overview<svg data-v-992f7eb0=\"\" data-v-220404f1=\"\" a",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    }
+   },
+   "text": {
+    "html": "<p>Each section of a crash report contains information to help you diagnose the source of a crash.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "13.6px"
+    }
+   },
+   "link": {
+    "html": "<a href=\"/documentation/bundleresources/information-property-list/cfbundleexecutable\" class=\"inline-link\"><code data-v-880086a2=\"\">CFBundle<wbr data-v-880086a2=\"\">Executable</code></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "code": {
+    "html": "<code data-v-880086a2=\"\" class=\"inline-code\">Incident Identifier</code>",
+    "styles": {
+     "font-family": "\"SF Mono\", SFMono-Regular, ui-monospace, Menlo, monospace",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "border-top-left-radius": "0px"
+    }
+   },
+   "listing": {
+    "html": "<div data-v-e6b18ca8=\"\" data-syntax=\"other\" class=\"code-listing\"><!----><div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(210, 210, 215)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "overflow-x": "hidden"
+    },
+    "box": {
+     "width": 920,
+     "height": 391
+    }
+   },
+   "listing.scroller": {
+    "html": "<div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidd",
+    "styles": {
+     "display": "flex",
+     "overflow-x": "auto"
+    },
+    "box": {
+     "width": 920,
+     "height": 391
+    }
+   },
+   "listing.pre": {
+    "html": "<pre data-v-e6b18ca8=\"\"><code data-v-b751a540=\"\" data-v-e6b18ca8=\"\" tabindex=\"0\" data-before-code=\"start of code block\" data-after-code=\"end of code block\"><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span",
+    "styles": {
+     "padding-top": "8px",
+     "padding-right": "14px",
+     "padding-bottom": "8px",
+     "padding-left": "14px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "white-space": "pre"
+    },
+    "box": {
+     "width": 1163.046875,
+     "height": 391
+    }
+   },
+   "listing.code": {
+    "html": "<code data-v-b751a540=\"\" data-v-e6b18ca8=\"\" tabindex=\"0\" data-before-code=\"start of code block\" data-after-code=\"end of code block\"><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data",
+    "styles": {
+     "font-family": "\"SF Mono\", SFMono-Regular, ui-monospace, Menlo, monospace",
+     "font-size": "15px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.405px",
+     "color": "rgb(0, 0, 0)",
+     "white-space": "pre",
+     "tab-size": "4"
+    }
+   },
+   "listing.line": {
+    "html": "<span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line\">Incident Identifier: 6156848E-344E-4D9E-84E0-87AFD0D0AE7B</span></span>",
+    "styles": {
+     "display": "inline-block",
+     "min-height": "0px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 1135.046875,
+     "height": 25
+    }
+   },
+   "copy": {
+    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
+    "styles": {
+     "padding-top": "4px",
+     "padding-right": "4px",
+     "padding-bottom": "4px",
+     "padding-left": "4px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(0, 0, 0)",
+     "border-top-left-radius": "18px",
+     "background-color": "rgb(210, 210, 215)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "25.5px",
+     "height": "25.5px",
+     "position": "absolute",
+     "top": "3.4px",
+     "right": "3.4px",
+     "color": "rgb(0, 0, 0)",
+     "opacity": "0",
+     "cursor": "pointer",
+     "outline-style": "none",
+     "outline-color": "rgb(0, 0, 0)",
+     "outline-width": "3px",
+     "outline-offset": "0px",
+     "transition-property": "all",
+     "transition-duration": "0.2s",
+     "transition-timing-function": "ease-in-out"
+    },
+    "box": {
+     "width": 33.5,
+     "height": 33.5
+    },
+    "states": {
+     "hover": {
+      "padding-top": "4px",
+      "padding-right": "4px",
+      "padding-bottom": "4px",
+      "padding-left": "4px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(29, 29, 31)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "25.5px",
+      "height": "25.5px",
+      "position": "absolute",
+      "top": "3.4px",
+      "right": "3.4px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "0",
+      "cursor": "pointer",
+      "outline-style": "none",
+      "outline-color": "rgb(0, 0, 0)",
+      "outline-width": "3px",
+      "outline-offset": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     },
+     "focus-visible": {
+      "padding-top": "4px",
+      "padding-right": "4px",
+      "padding-bottom": "4px",
+      "padding-left": "4px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "0px",
+      "border-top-style": "none",
+      "border-top-color": "rgb(0, 0, 0)",
+      "border-bottom-width": "0px",
+      "border-bottom-style": "none",
+      "border-bottom-color": "rgb(0, 0, 0)",
+      "border-top-left-radius": "18px",
+      "background-color": "rgb(210, 210, 215)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "width": "25.5px",
+      "height": "25.5px",
+      "position": "absolute",
+      "top": "3.4px",
+      "right": "3.4px",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "0",
+      "cursor": "pointer",
+      "outline-style": "auto",
+      "outline-color": "rgb(16, 16, 16)",
+      "outline-width": "1px",
+      "outline-offset": "0px",
+      "transition-property": "none",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease"
+     }
+    }
+   },
+   "copy.icon": {
+    "html": "<svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" class=\"svg-icon CopyIcon copy-icon\" viewBox=\"0 0 24 24\"><title data-v-65e0e28e=\"\"",
+    "styles": {
+     "width": "25.5px",
+     "height": "25.5px",
+     "color": "rgb(0, 0, 0)",
+     "fill": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 25.5,
+     "height": 25.5
+    }
+   },
+   "bar": {
+    "html": "<div data-v-9a67a202=\"\" class=\"nav__wrapper\"><div data-v-9a67a202=\"\" class=\"nav__background\"></div><!----><div data-v-9a67a202=\"\" class=\"nav-content\"><div data-v-420314e4=\"\" data-v-9a67a202=\"\" class=\"pre-title\"><div data-v-420314e4=\"\" data-",
+    "styles": {
+     "height": "52px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 1600,
+     "height": 52
+    }
+   },
+   "bar.ground": {
+    "html": "<div data-v-9a67a202=\"\" class=\"nav__background\"></div>",
+    "styles": {
+     "background-color": "rgb(255, 255, 255)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "box-shadow": "none",
+     "opacity": "1",
+     "backdrop-filter": "none",
+     "-webkit-backdrop-filter": ""
+    },
+    "box": {
+     "width": 1600,
+     "height": 52
+    }
+   },
+   "bar.title": {
+    "html": "<div data-v-9a67a202=\"\" class=\"nav-title\"><a data-v-cd2176b0=\"\" href=\"/documentation\" class=\"router-link-active nav-title\" data-v-9a67a202=\"\"> Documentation </a></div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 146.109375,
+     "height": 52
+    }
+   },
+   "navigator": {
+    "html": "<nav data-v-d38be796=\"\" data-v-7dbb4eea=\"\" aria-labelledby=\"&lt;root&gt;\" class=\"navigator\" data-v-cccc97a2=\"\"><div data-v-9962ee18=\"\" data-v-3d9d262f=\"\" data-v-329861a7=\"\" data-v-d38be796=\"\" class=\"navigator-card\" technologypath=\"/document",
+    "styles": {
+     "display": "flex",
+     "width": "455px",
+     "border-right-width": "0px",
+     "border-right-style": "none",
+     "border-right-color": "rgb(29, 29, 31)",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 455,
+     "height": 9014.125
+    }
+   },
+   "navigator.item": {
+    "html": "<div data-v-7df597aa=\"\" data-v-2645ef6c=\"\" data-v-4a611512=\"\" data-v-3d9d262f=\"\" class=\"navigator-card-item\" data-nesting-index=\"0\" id=\"container--180975865\" style=\"--nesting-index: 0;\" aria-hidden=\"true\"><div data-v-7df597aa=\"\" class=\"head",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "height": "35px",
+     "padding-left": "20px",
+     "padding-right": "20px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 455,
+     "height": 35
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "height": "35px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "0px"
+     }
+    }
+   },
+   "navigator.link": {
+    "html": "<a data-v-2645ef6c=\"\" href=\"/documentation/xcode/adding-previews-to-your-interface-files\" class=\"leaf-link\" id=\"-180975865\" tabindex=\"-1\" aria-describedby=\"label--180975865 usage--180975865\" data-v-7df597aa=\"\"><p data-v-fc9a395c=\"\" data-v-2",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(29, 29, 31)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "navigator.current": {
+    "html": "<div data-v-7df597aa=\"\" data-v-2645ef6c=\"\" data-v-4a611512=\"\" data-v-3d9d262f=\"\" class=\"navigator-card-item expanded active\" data-nesting-index=\"2\" id=\"container-78862804\" style=\"--nesting-index: 2;\"><div data-v-7df597aa=\"\" class=\"head-wrap",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "height": "35px",
+     "padding-left": "20px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 455,
+     "height": 35
+    }
+   },
+   "navigator.current.link": {
+    "html": "<a data-v-2645ef6c=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report\" class=\"leaf-link router-link-exact-active router-link-active bolded\" id=\"78862804\" tabindex=\"0\" aria-describedby=\"label-78862804 usage-78862804\" data-v",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto"
+    }
+   },
+   "note": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"note\" class=\"note\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C ",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(105, 105, 105)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(105, 105, 105)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(245, 245, 247)",
+     "box-shadow": "rgb(105, 105, 105) 0px 0px 1px 0px inset, rgb(105, 105, 105) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(105, 105, 105)",
+     "border-right-color": "rgb(105, 105, 105)"
+    },
+    "box": {
+     "width": 920,
+     "height": 116.796875
+    }
+   },
+   "note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(105, 105, 105)",
+     "margin-bottom": "0px"
+    }
+   },
+   "note.text": {
+    "html": "<p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or C++. Crash reports record language exception information separately.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   }
+  }
+ }
+}

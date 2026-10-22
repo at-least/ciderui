@@ -1,0 +1,800 @@
+{
+ "url": "https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report",
+ "finalUrl": "https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-22T22:43:45.804Z",
+ "widths": {
+  "390": {
+   "warning": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"warning\" class=\"warning\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Object",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(227, 0, 0)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(255, 242, 244)",
+     "box-shadow": "rgb(227, 0, 0) 0px 0px 1px 0px inset, rgb(227, 0, 0) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(227, 0, 0)",
+     "border-right-color": "rgb(227, 0, 0)"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 191.796875
+    }
+   },
+   "warning.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(227, 0, 0)",
+     "margin-bottom": "0px"
+    }
+   },
+   "tip": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"tip\" class=\"tip\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(61, 119, 125)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(61, 119, 125)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(250, 255, 255)",
+     "box-shadow": "rgb(61, 119, 125) 0px 0px 1px 0px inset, rgb(61, 119, 125) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(61, 119, 125)",
+     "border-right-color": "rgb(61, 119, 125)"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 191.796875
+    }
+   },
+   "tip.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(61, 119, 125)",
+     "margin-bottom": "0px"
+    }
+   },
+   "deprecated": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"deprecated\" class=\"deprecated\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(191, 72, 0)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(191, 72, 0)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(255, 249, 244)",
+     "box-shadow": "rgb(191, 72, 0) 0px 0px 1px 0px inset, rgb(191, 72, 0) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(191, 72, 0)",
+     "border-right-color": "rgb(191, 72, 0)"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 191.796875
+    }
+   },
+   "deprecated.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(191, 72, 0)",
+     "margin-bottom": "0px"
+    }
+   },
+   "experiment": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"experiment\" class=\"experiment\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(140, 40, 194)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(140, 40, 194)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(252, 248, 255)",
+     "box-shadow": "rgb(140, 40, 194) 0px 0px 1px 0px inset, rgb(140, 40, 194) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(140, 40, 194)",
+     "border-right-color": "rgb(140, 40, 194)"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 191.796875
+    }
+   },
+   "experiment.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(140, 40, 194)",
+     "margin-bottom": "0px"
+    }
+   }
+  },
+  "900": {
+   "warning": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"warning\" class=\"warning\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Object",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(227, 0, 0)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(255, 242, 244)",
+     "box-shadow": "rgb(227, 0, 0) 0px 0px 1px 0px inset, rgb(227, 0, 0) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(227, 0, 0)",
+     "border-right-color": "rgb(227, 0, 0)"
+    },
+    "box": {
+     "width": 660,
+     "height": 141.796875
+    }
+   },
+   "warning.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(227, 0, 0)",
+     "margin-bottom": "0px"
+    }
+   },
+   "tip": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"tip\" class=\"tip\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(61, 119, 125)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(61, 119, 125)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(250, 255, 255)",
+     "box-shadow": "rgb(61, 119, 125) 0px 0px 1px 0px inset, rgb(61, 119, 125) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(61, 119, 125)",
+     "border-right-color": "rgb(61, 119, 125)"
+    },
+    "box": {
+     "width": 660,
+     "height": 141.796875
+    }
+   },
+   "tip.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(61, 119, 125)",
+     "margin-bottom": "0px"
+    }
+   },
+   "deprecated": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"deprecated\" class=\"deprecated\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(191, 72, 0)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(191, 72, 0)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(255, 249, 244)",
+     "box-shadow": "rgb(191, 72, 0) 0px 0px 1px 0px inset, rgb(191, 72, 0) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(191, 72, 0)",
+     "border-right-color": "rgb(191, 72, 0)"
+    },
+    "box": {
+     "width": 660,
+     "height": 141.796875
+    }
+   },
+   "deprecated.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(191, 72, 0)",
+     "margin-bottom": "0px"
+    }
+   },
+   "experiment": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"experiment\" class=\"experiment\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(140, 40, 194)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(140, 40, 194)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(252, 248, 255)",
+     "box-shadow": "rgb(140, 40, 194) 0px 0px 1px 0px inset, rgb(140, 40, 194) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(140, 40, 194)",
+     "border-right-color": "rgb(140, 40, 194)"
+    },
+    "box": {
+     "width": 660,
+     "height": 141.796875
+    }
+   },
+   "experiment.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(140, 40, 194)",
+     "margin-bottom": "0px"
+    }
+   }
+  },
+  "1200": {
+   "warning": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"warning\" class=\"warning\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Object",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(227, 0, 0)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(255, 242, 244)",
+     "box-shadow": "rgb(227, 0, 0) 0px 0px 1px 0px inset, rgb(227, 0, 0) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(227, 0, 0)",
+     "border-right-color": "rgb(227, 0, 0)"
+    },
+    "box": {
+     "width": 584,
+     "height": 141.796875
+    }
+   },
+   "warning.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(227, 0, 0)",
+     "margin-bottom": "0px"
+    }
+   },
+   "tip": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"tip\" class=\"tip\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(61, 119, 125)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(61, 119, 125)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(250, 255, 255)",
+     "box-shadow": "rgb(61, 119, 125) 0px 0px 1px 0px inset, rgb(61, 119, 125) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(61, 119, 125)",
+     "border-right-color": "rgb(61, 119, 125)"
+    },
+    "box": {
+     "width": 584,
+     "height": 141.796875
+    }
+   },
+   "tip.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(61, 119, 125)",
+     "margin-bottom": "0px"
+    }
+   },
+   "deprecated": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"deprecated\" class=\"deprecated\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(191, 72, 0)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(191, 72, 0)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(255, 249, 244)",
+     "box-shadow": "rgb(191, 72, 0) 0px 0px 1px 0px inset, rgb(191, 72, 0) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(191, 72, 0)",
+     "border-right-color": "rgb(191, 72, 0)"
+    },
+    "box": {
+     "width": 584,
+     "height": 141.796875
+    }
+   },
+   "deprecated.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(191, 72, 0)",
+     "margin-bottom": "0px"
+    }
+   },
+   "experiment": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"experiment\" class=\"experiment\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(140, 40, 194)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(140, 40, 194)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(252, 248, 255)",
+     "box-shadow": "rgb(140, 40, 194) 0px 0px 1px 0px inset, rgb(140, 40, 194) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(140, 40, 194)",
+     "border-right-color": "rgb(140, 40, 194)"
+    },
+    "box": {
+     "width": 584,
+     "height": 141.796875
+    }
+   },
+   "experiment.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(140, 40, 194)",
+     "margin-bottom": "0px"
+    }
+   }
+  },
+  "1600": {
+   "warning": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"warning\" class=\"warning\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Object",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(227, 0, 0)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(227, 0, 0)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(255, 242, 244)",
+     "box-shadow": "rgb(227, 0, 0) 0px 0px 1px 0px inset, rgb(227, 0, 0) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(227, 0, 0)",
+     "border-right-color": "rgb(227, 0, 0)"
+    },
+    "box": {
+     "width": 920,
+     "height": 116.796875
+    }
+   },
+   "warning.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(227, 0, 0)",
+     "margin-bottom": "0px"
+    }
+   },
+   "tip": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"tip\" class=\"tip\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(61, 119, 125)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(61, 119, 125)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(250, 255, 255)",
+     "box-shadow": "rgb(61, 119, 125) 0px 0px 1px 0px inset, rgb(61, 119, 125) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(61, 119, 125)",
+     "border-right-color": "rgb(61, 119, 125)"
+    },
+    "box": {
+     "width": 920,
+     "height": 116.796875
+    }
+   },
+   "tip.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(61, 119, 125)",
+     "margin-bottom": "0px"
+    }
+   },
+   "deprecated": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"deprecated\" class=\"deprecated\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(191, 72, 0)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(191, 72, 0)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(255, 249, 244)",
+     "box-shadow": "rgb(191, 72, 0) 0px 0px 1px 0px inset, rgb(191, 72, 0) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(191, 72, 0)",
+     "border-right-color": "rgb(191, 72, 0)"
+    },
+    "box": {
+     "width": 920,
+     "height": 116.796875
+    }
+   },
+   "deprecated.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(191, 72, 0)",
+     "margin-bottom": "0px"
+    }
+   },
+   "experiment": {
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"experiment\" class=\"experiment\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "styles": {
+     "padding-top": "16px",
+     "padding-right": "16px",
+     "padding-bottom": "16px",
+     "padding-left": "16px",
+     "margin-top": "27.2px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(140, 40, 194)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(140, 40, 194)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgb(252, 248, 255)",
+     "box-shadow": "rgb(140, 40, 194) 0px 0px 1px 0px inset, rgb(140, 40, 194) 0px 0px 1px 0px",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "border-left-width": "1px",
+     "border-left-style": "solid",
+     "border-left-color": "rgb(140, 40, 194)",
+     "border-right-color": "rgb(140, 40, 194)"
+    },
+    "box": {
+     "width": 920,
+     "height": 116.796875
+    }
+   },
+   "experiment.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.0005px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(140, 40, 194)",
+     "margin-bottom": "0px"
+    }
+   }
+  }
+ }
+}

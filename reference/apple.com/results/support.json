@@ -1,0 +1,824 @@
+{
+ "url": "https://support.apple.com/en-us/100100",
+ "finalUrl": "https://support.apple.com/en-us/100100",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-22T22:44:32.516Z",
+ "widths": {
+  "390": {
+   "page": {
+    "html": "<body class=\"ac-gn-current-support js \">\n        \n\n\n        \n\n         <meta name=\"globalnav-store-key\" content=\"S2A49YFKJF2JAT22K\">\n<meta name=\"globalnav-search-field[name]\" content=\"q\">\n<meta name=\"globalnav-search-field[action]\" content=",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "title": {
+    "html": "<h1 class=\"gb-header\">Apple security releases</h1>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-bottom": "0px"
+    }
+   },
+   "subheader": {
+    "html": "<p class=\"subheader gb-subheader\">This document lists security updates for Apple software.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "27.0009px",
+     "font-weight": "400",
+     "letter-spacing": "0.228px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "text": {
+    "html": "<p class=\"gb-paragraph\">For the protection of our customers, Apple doesn't disclose, discuss, or confirm security issues until an investigation has occurred and patches or releases are generally available. This document lists recent release",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "14px"
+    }
+   },
+   "link": {
+    "html": "<a href=\"https://support.apple.com/en-us/102657\" class=\"gb-anchor\">Background Security Improvements</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "list": {
+    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\">The latest version of iOS and iPadOS is 27.0.1. Learn how to <a href=\"https://support.apple.com/en-us/118575\" class=\"gb-anchor\">update the",
+    "styles": {
+     "padding-left": "0px",
+     "margin-left": "20px",
+     "list-style-type": "disc"
+    }
+   },
+   "note": {
+    "html": "<div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "table.wrapper": {
+    "html": "<div class=\"table-wrapper gb-table\"><table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-tabl",
+    "styles": {
+     "overflow-x": "auto",
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 73418
+    }
+   },
+   "table": {
+    "html": "<table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-table-header-cell tablecell-align-left\" ",
+    "styles": {
+     "border-collapse": "collapse",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 489.921875,
+     "height": 73418
+    }
+   },
+   "table.head": {
+    "html": "<th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "14px",
+     "padding-right": "14px",
+     "padding-bottom": "14px",
+     "padding-left": "14px",
+     "text-align": "left",
+     "vertical-align": "top",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(221, 221, 221)"
+    },
+    "box": {
+     "width": 237.15625,
+     "height": 92.5
+    }
+   },
+   "table.cell": {
+    "html": "<td class=\"gb-table-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">iOS 27.0.1 and iPadOS 27.0.1</p><div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div></td>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "14px",
+     "padding-right": "14px",
+     "padding-bottom": "14px",
+     "padding-left": "14px",
+     "text-align": "left",
+     "vertical-align": "top",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(221, 221, 221)"
+    },
+    "box": {
+     "width": 237.15625,
+     "height": 568
+    }
+   },
+   "table.link": {
+    "html": "<a href=\"https://support.apple.com/en-us/149226\" class=\"gb-anchor\">iOS 26.7.1 and iPadOS 26.7.1</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   }
+  },
+  "900": {
+   "page": {
+    "html": "<body class=\"ac-gn-current-support js \">\n        \n\n\n        \n\n         <meta name=\"globalnav-store-key\" content=\"S2A49YFKJF2JAT22K\">\n<meta name=\"globalnav-search-field[name]\" content=\"q\">\n<meta name=\"globalnav-search-field[action]\" content=",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "title": {
+    "html": "<h1 class=\"gb-header\">Apple security releases</h1>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "44px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)",
+     "margin-bottom": "0px"
+    }
+   },
+   "subheader": {
+    "html": "<p class=\"subheader gb-subheader\">This document lists security updates for Apple software.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "29.001px",
+     "font-weight": "400",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "text": {
+    "html": "<p class=\"gb-paragraph\">For the protection of our customers, Apple doesn't disclose, discuss, or confirm security issues until an investigation has occurred and patches or releases are generally available. This document lists recent release",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "14px"
+    }
+   },
+   "link": {
+    "html": "<a href=\"https://support.apple.com/en-us/102657\" class=\"gb-anchor\">Background Security Improvements</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "list": {
+    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\">The latest version of iOS and iPadOS is 27.0.1. Learn how to <a href=\"https://support.apple.com/en-us/118575\" class=\"gb-anchor\">update the",
+    "styles": {
+     "padding-left": "0px",
+     "margin-left": "20px",
+     "list-style-type": "disc"
+    }
+   },
+   "note": {
+    "html": "<div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "table.wrapper": {
+    "html": "<div class=\"table-wrapper gb-table\"><table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-tabl",
+    "styles": {
+     "overflow-x": "auto",
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 692,
+     "height": 36564
+    }
+   },
+   "table": {
+    "html": "<table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-table-header-cell tablecell-align-left\" ",
+    "styles": {
+     "border-collapse": "collapse",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 692,
+     "height": 36564
+    }
+   },
+   "table.head": {
+    "html": "<th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "14px",
+     "padding-right": "14px",
+     "padding-bottom": "14px",
+     "padding-left": "14px",
+     "text-align": "left",
+     "vertical-align": "top",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(221, 221, 221)"
+    },
+    "box": {
+     "width": 262.3125,
+     "height": 67.5
+    }
+   },
+   "table.cell": {
+    "html": "<td class=\"gb-table-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">iOS 27.0.1 and iPadOS 27.0.1</p><div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div></td>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "14px",
+     "padding-right": "14px",
+     "padding-bottom": "14px",
+     "padding-left": "14px",
+     "text-align": "left",
+     "vertical-align": "top",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(221, 221, 221)"
+    },
+    "box": {
+     "width": 262.3125,
+     "height": 218
+    }
+   },
+   "table.link": {
+    "html": "<a href=\"https://support.apple.com/en-us/149226\" class=\"gb-anchor\">iOS 26.7.1 and iPadOS 26.7.1</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   }
+  },
+  "1200": {
+   "page": {
+    "html": "<body class=\"ac-gn-current-support js \">\n        \n\n\n        \n\n         <meta name=\"globalnav-store-key\" content=\"S2A49YFKJF2JAT22K\">\n<meta name=\"globalnav-search-field[name]\" content=\"q\">\n<meta name=\"globalnav-search-field[action]\" content=",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "title": {
+    "html": "<h1 class=\"gb-header\">Apple security releases</h1>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "font-weight": "600",
+     "letter-spacing": "-0.144px",
+     "color": "rgb(29, 29, 31)",
+     "margin-bottom": "0px"
+    }
+   },
+   "subheader": {
+    "html": "<p class=\"subheader gb-subheader\">This document lists security updates for Apple software.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "29.001px",
+     "font-weight": "400",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "text": {
+    "html": "<p class=\"gb-paragraph\">For the protection of our customers, Apple doesn't disclose, discuss, or confirm security issues until an investigation has occurred and patches or releases are generally available. This document lists recent release",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "14px"
+    }
+   },
+   "link": {
+    "html": "<a href=\"https://support.apple.com/en-us/102657\" class=\"gb-anchor\">Background Security Improvements</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "list": {
+    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\">The latest version of iOS and iPadOS is 27.0.1. Learn how to <a href=\"https://support.apple.com/en-us/118575\" class=\"gb-anchor\">update the",
+    "styles": {
+     "padding-left": "0px",
+     "margin-left": "20px",
+     "list-style-type": "disc"
+    }
+   },
+   "note": {
+    "html": "<div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "table.wrapper": {
+    "html": "<div class=\"table-wrapper gb-table\"><table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-tabl",
+    "styles": {
+     "overflow-x": "auto",
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 816.65625,
+     "height": 31663
+    }
+   },
+   "table": {
+    "html": "<table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-table-header-cell tablecell-align-left\" ",
+    "styles": {
+     "border-collapse": "collapse",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 816.65625,
+     "height": 31663
+    }
+   },
+   "table.head": {
+    "html": "<th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "14px",
+     "padding-right": "14px",
+     "padding-bottom": "14px",
+     "padding-left": "14px",
+     "text-align": "left",
+     "vertical-align": "top",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(221, 221, 221)"
+    },
+    "box": {
+     "width": 277.84375,
+     "height": 67.5
+    }
+   },
+   "table.cell": {
+    "html": "<td class=\"gb-table-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">iOS 27.0.1 and iPadOS 27.0.1</p><div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div></td>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "14px",
+     "padding-right": "14px",
+     "padding-bottom": "14px",
+     "padding-left": "14px",
+     "text-align": "left",
+     "vertical-align": "top",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(221, 221, 221)"
+    },
+    "box": {
+     "width": 277.84375,
+     "height": 168
+    }
+   },
+   "table.link": {
+    "html": "<a href=\"https://support.apple.com/en-us/149226\" class=\"gb-anchor\">iOS 26.7.1 and iPadOS 26.7.1</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   }
+  },
+  "1600": {
+   "page": {
+    "html": "<body class=\"ac-gn-current-support js \">\n        \n\n\n        \n\n         <meta name=\"globalnav-store-key\" content=\"S2A49YFKJF2JAT22K\">\n<meta name=\"globalnav-search-field[name]\" content=\"q\">\n<meta name=\"globalnav-search-field[action]\" content=",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "title": {
+    "html": "<h1 class=\"gb-header\">Apple security releases</h1>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "font-weight": "600",
+     "letter-spacing": "-0.144px",
+     "color": "rgb(29, 29, 31)",
+     "margin-bottom": "0px"
+    }
+   },
+   "subheader": {
+    "html": "<p class=\"subheader gb-subheader\">This document lists security updates for Apple software.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "29.001px",
+     "font-weight": "400",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "text": {
+    "html": "<p class=\"gb-paragraph\">For the protection of our customers, Apple doesn't disclose, discuss, or confirm security issues until an investigation has occurred and patches or releases are generally available. This document lists recent release",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "14px"
+    }
+   },
+   "link": {
+    "html": "<a href=\"https://support.apple.com/en-us/102657\" class=\"gb-anchor\">Background Security Improvements</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "list": {
+    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\">The latest version of iOS and iPadOS is 27.0.1. Learn how to <a href=\"https://support.apple.com/en-us/118575\" class=\"gb-anchor\">update the",
+    "styles": {
+     "padding-left": "0px",
+     "margin-left": "20px",
+     "list-style-type": "disc"
+    }
+   },
+   "note": {
+    "html": "<div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(110, 110, 115)"
+    }
+   },
+   "table.wrapper": {
+    "html": "<div class=\"table-wrapper gb-table\"><table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-tabl",
+    "styles": {
+     "overflow-x": "auto",
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 816.65625,
+     "height": 31663
+    }
+   },
+   "table": {
+    "html": "<table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-table-header-cell tablecell-align-left\" ",
+    "styles": {
+     "border-collapse": "collapse",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 816.65625,
+     "height": 31663
+    }
+   },
+   "table.head": {
+    "html": "<th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "14px",
+     "padding-right": "14px",
+     "padding-bottom": "14px",
+     "padding-left": "14px",
+     "text-align": "left",
+     "vertical-align": "top",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(221, 221, 221)"
+    },
+    "box": {
+     "width": 277.84375,
+     "height": 67.5
+    }
+   },
+   "table.cell": {
+    "html": "<td class=\"gb-table-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">iOS 27.0.1 and iPadOS 27.0.1</p><div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div></td>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "14px",
+     "padding-right": "14px",
+     "padding-bottom": "14px",
+     "padding-left": "14px",
+     "text-align": "left",
+     "vertical-align": "top",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(221, 221, 221)"
+    },
+    "box": {
+     "width": 277.84375,
+     "height": 168
+    }
+   },
+   "table.link": {
+    "html": "<a href=\"https://support.apple.com/en-us/149226\" class=\"gb-anchor\">iOS 26.7.1 and iPadOS 26.7.1</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   }
+  }
+ }
+}

@@ -50,6 +50,10 @@ Measured 2026-10-19 in Playwright's Chromium 151 on Linux, with `--font-render-h
 | `nav-select` | https://www.apple.com/ | what of the page can be selected (`user-select`): the global nav, its list, logo, a link and its text, the bag, the menu's button, a closed flyout, the page's text, the footer; the search opened and its field; at 1600 and 390px |
 | `bag-flyout` | https://www.apple.com/ | the global nav's bag, opened by its button (its markup fetched, an empty bag's): the flyout, its message, sign-in line, profile heading and links with their icons (hovered and focused), the bar, the button, the curtain, what the click starts; at 834px the pointer leaving for the curtain; a sheet to 833px; at `search`'s widths |
 | `bag-flyout-dark` | https://www.apple.com/iphone-18-pro/ | the same on a dark page; at 1600 and 390px |
+| `docc`, `docc-dark` | https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report | Apple's developer documentation (DocC), light and in the dark (`colorScheme`), read 2026-10-23: the page, its title block, a heading, text, a link and inline code; a code listing (its scroller, pre, code, a line) and its copy button, hovered and focused; the documentation's bar, its ground, its title and, at 390px, the button that opens the navigator; the navigator (an item and its link, hovered, the current one); a note |
+| `docc-important`, `docc-important-dark` | https://developer.apple.com/documentation/xcode/identifying-the-cause-of-common-crashes | an important aside, light and dark |
+| `docc-asides`, `docc-asides-dark` | `docc`'s | the article's first note, its class (and aria-label) set to warning, tip, deprecated and experiment in turn: DocC's stylesheets style each, no page read carries one; light and dark |
+| `support`, `support-dark` | https://support.apple.com/en-us/100100 | Apple Support's article with a long table, light and dark: its title, subheader, text, a link (hovered), a list, the small note; the table's wrapper, the table, a header cell, a cell and a link in it (hovered) |
 
 Each is read at 1600, 1200, 900 and 390px wide (one width inside each of apple.com's bands) unless its row names its own, `breakpoints` at the boundaries, the Newsroom's at both (and 1069/1068, 735/734).
 
@@ -170,6 +174,24 @@ Typed into (`search-typed:*`, read 2026-10-21 with the owner's leave to type on 
 - the same results ("ipho", back to "iph"): no motion.
 
 "xq" got Suggested Links of its own (the iPhone pages, none holding it). Its clear button empties the field and focuses it but leaves the suggestions shown, still muted, until something is typed: its `onSearchResetClick` asks for the quick links, and `setSearchResults` returns before drawing them, the cache it compares with emptied by `clearSearch()` (read in globalheader.umd.js).
+
+**Apple's developer documentation and Apple Support** (`docc*:*`, `support*:*`, read 2026-10-23 in Chromium 151, for a console, crashcart, at the owner's ask): Apple's pages that follow the system's dark, as apple.com's do not.
+
+- DocC's page is white, black in the dark; its text `rgb(29, 29, 31)` (dark `rgb(245, 245, 247)`), SF Pro Text 17/25 at -0.374px; links `rgb(0, 102, 204)` (`rgb(41, 151, 255)`), underlined. In SF Pro Display: the title 40/44 at 700 (32/36 at 1200 and 900px, 28/32 at 390px), the eyebrow 21/25 at 500 in `rgb(110, 110, 115)` (`rgb(134, 134, 139)`; 19/23 at 390px), the abstract 21/29 at 500, a section's heading 32/36 at 600 (28/32 at 1200 and 900px, 24/28 at 390px).
+- A code listing: `rgb(245, 245, 247)` (dark `rgb(51, 51, 54)`), 15px corners, its code SF Mono 15/25 at -0.405px, black (white), 8px by 14px in, `white-space: pre`, moved sideways inside the listing (`overflow-x: auto`): at 390px a 341px listing over a 1163px line. Inline code is SF Mono at the text's size and color, with no ground. The copy button: 33.5px, 18px corners, on `rgb(210, 210, 215)` (`rgb(66, 66, 69)`), 3.4px from the listing's corner, transparent at rest (neither its own hover nor its focus-visible shows it: what does is not read), `rgb(29, 29, 31)` hovered (`rgb(245, 245, 247)`).
+- Its bar is 52px (48px at 390px) on white (black), no edge read. The navigator is 455px, shown at 1200 and 1600px and hidden at 900 and 390px, where the bar holds a 29px button labelled to open it (not pressed); its items 35px, 20px in, at 17px, the current one at 600, on no ground.
+- Its asides: a 1px edge all round, 15px corners, 16px in, the label at 600 in the edge's color. note and important are the pages' own; warning, tip, deprecated and experiment the note with its class set:
+
+| aside | ground | edge and label | dark ground | dark edge and label |
+| --- | --- | --- | --- | --- |
+| note | `rgb(245, 245, 247)` | `rgb(105, 105, 105)` | `rgb(50, 50, 50)` | `rgb(154, 154, 158)` |
+| important | `rgb(255, 251, 242)` | `rgb(158, 103, 0)` | `rgb(43, 30, 0)` | `rgb(255, 181, 15)` |
+| warning | `rgb(255, 242, 244)` | `rgb(227, 0, 0)` | `rgb(51, 0, 0)` | `rgb(255, 48, 55)` |
+| tip | `rgb(250, 255, 255)` | `rgb(61, 119, 125)` | `rgb(0, 45, 43)` | `rgb(125, 255, 228)` |
+| deprecated | `rgb(255, 249, 244)` | `rgb(191, 72, 0)` | `rgb(41, 13, 0)` | `rgb(245, 99, 0)` |
+| experiment | `rgb(252, 248, 255)` | `rgb(140, 40, 194)` | `rgb(25, 3, 37)` | `rgb(169, 94, 210)` |
+
+- Apple Support's article is white (black), its text DocC's; its title 48/52 at 600 (40/44 at 900px, 32/36 at 390px); its small note 14/20 in `rgb(110, 110, 115)` (`rgb(134, 134, 139)`). Its table: collapsed, each cell 14px in and top-aligned at 17/25 (the header's at 600), a 1px `rgb(221, 221, 221)` rule under each, the same rule in the dark; at 390px the 490px table moves sideways inside its 341px wrapper (`overflow-x: auto`).
 
 ## Running it
 
