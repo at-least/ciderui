@@ -1,7 +1,7 @@
 {
- "browser": "chrome 155.0.8059.80 on darwin",
- "date": "2026-10-19T03:17:54.739Z",
- "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+ "browser": "chrome 156.0.8078.48 on darwin",
+ "date": "2026-10-22T06:29:57.037Z",
+ "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
  "rows": [
   {
    "size": 12,
@@ -10,7 +10,8 @@
    "fams": {
     "system-ui": 357.59375,
     "-apple-system": 313.109375,
-    "BlinkMacSystemFont": 357.59375
+    "BlinkMacSystemFont": 357.59375,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 357.59375
    }
   },
   {
@@ -20,7 +21,8 @@
    "fams": {
     "system-ui": 373.015625,
     "-apple-system": 327.328125,
-    "BlinkMacSystemFont": 373.015625
+    "BlinkMacSystemFont": 373.015625,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 373.015625
    }
   },
   {
@@ -30,7 +32,8 @@
    "fams": {
     "system-ui": 412.28125,
     "-apple-system": 369.109375,
-    "BlinkMacSystemFont": 412.28125
+    "BlinkMacSystemFont": 412.28125,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 412.28125
    }
   },
   {
@@ -40,7 +43,8 @@
    "fams": {
     "system-ui": 430.265625,
     "-apple-system": 385.703125,
-    "BlinkMacSystemFont": 430.265625
+    "BlinkMacSystemFont": 430.265625,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 430.265625
    }
   },
   {
@@ -50,7 +54,8 @@
    "fams": {
     "system-ui": 494.765625,
     "-apple-system": 456.78125,
-    "BlinkMacSystemFont": 494.765625
+    "BlinkMacSystemFont": 494.765625,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 494.765625
    }
   },
   {
@@ -60,7 +65,8 @@
    "fams": {
     "system-ui": 516.609375,
     "-apple-system": 476.9375,
-    "BlinkMacSystemFont": 516.609375
+    "BlinkMacSystemFont": 516.609375,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 516.609375
    }
   },
   {
@@ -70,7 +76,8 @@
    "fams": {
     "system-ui": 532.375,
     "-apple-system": 493.109375,
-    "BlinkMacSystemFont": 532.375
+    "BlinkMacSystemFont": 532.375,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 532.375
    }
   },
   {
@@ -80,7 +87,8 @@
    "fams": {
     "system-ui": 556.984375,
     "-apple-system": 515.625,
-    "BlinkMacSystemFont": 556.984375
+    "BlinkMacSystemFont": 556.984375,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 556.984375
    }
   },
   {
@@ -90,7 +98,8 @@
    "fams": {
     "system-ui": 586.890625,
     "-apple-system": 554.75,
-    "BlinkMacSystemFont": 586.890625
+    "BlinkMacSystemFont": 586.890625,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 586.890625
    }
   },
   {
@@ -100,7 +109,8 @@
    "fams": {
     "system-ui": 614.859375,
     "-apple-system": 579.65625,
-    "BlinkMacSystemFont": 614.859375
+    "BlinkMacSystemFont": 614.859375,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 614.859375
    }
   },
   {
@@ -110,7 +120,8 @@
    "fams": {
     "system-ui": 667.25,
     "-apple-system": 635.25,
-    "BlinkMacSystemFont": 667.25
+    "BlinkMacSystemFont": 667.25,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 667.25
    }
   },
   {
@@ -120,7 +131,8 @@
    "fams": {
     "system-ui": 700.515625,
     "-apple-system": 663.703125,
-    "BlinkMacSystemFont": 700.515625
+    "BlinkMacSystemFont": 700.515625,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 700.515625
    }
   },
   {
@@ -130,7 +142,8 @@
    "fams": {
     "system-ui": 774.765625,
     "-apple-system": 735.765625,
-    "BlinkMacSystemFont": 774.765625
+    "BlinkMacSystemFont": 774.765625,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 774.765625
    }
   },
   {
@@ -140,7 +153,8 @@
    "fams": {
     "system-ui": 814.328125,
     "-apple-system": 768.96875,
-    "BlinkMacSystemFont": 814.328125
+    "BlinkMacSystemFont": 814.328125,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 814.328125
    }
   },
   {
@@ -150,7 +164,8 @@
    "fams": {
     "system-ui": 879.921875,
     "-apple-system": 837.171875,
-    "BlinkMacSystemFont": 879.921875
+    "BlinkMacSystemFont": 879.921875,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 879.921875
    }
   },
   {
@@ -160,7 +175,8 @@
    "fams": {
     "system-ui": 925.125,
     "-apple-system": 875.109375,
-    "BlinkMacSystemFont": 925.125
+    "BlinkMacSystemFont": 925.125,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 925.125
    }
   },
   {
@@ -170,7 +186,8 @@
    "fams": {
     "system-ui": 1090.578125,
     "-apple-system": 1045.0625,
-    "BlinkMacSystemFont": 1090.578125
+    "BlinkMacSystemFont": 1090.578125,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1090.578125
    }
   },
   {
@@ -180,7 +197,8 @@
    "fams": {
     "system-ui": 1147.078125,
     "-apple-system": 1092.484375,
-    "BlinkMacSystemFont": 1147.078125
+    "BlinkMacSystemFont": 1147.078125,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1147.078125
    }
   },
   {
@@ -190,7 +208,8 @@
    "fams": {
     "system-ui": 1300.46875,
     "-apple-system": 1251.296875,
-    "BlinkMacSystemFont": 1300.46875
+    "BlinkMacSystemFont": 1300.46875,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1300.46875
    }
   },
   {
@@ -200,7 +219,8 @@
    "fams": {
     "system-ui": 1368.28125,
     "-apple-system": 1308.203125,
-    "BlinkMacSystemFont": 1368.28125
+    "BlinkMacSystemFont": 1368.28125,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1368.28125
    }
   },
   {
@@ -210,7 +230,8 @@
    "fams": {
     "system-ui": 1510.546875,
     "-apple-system": 1459.515625,
-    "BlinkMacSystemFont": 1510.546875
+    "BlinkMacSystemFont": 1510.546875,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1510.546875
    }
   },
   {
@@ -220,7 +241,8 @@
    "fams": {
     "system-ui": 1589.65625,
     "-apple-system": 1525.90625,
-    "BlinkMacSystemFont": 1589.65625
+    "BlinkMacSystemFont": 1589.65625,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1589.65625
    }
   },
   {
@@ -230,7 +252,8 @@
    "fams": {
     "system-ui": 1711.65625,
     "-apple-system": 1660.59375,
-    "BlinkMacSystemFont": 1711.65625
+    "BlinkMacSystemFont": 1711.65625,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1711.65625
    }
   },
   {
@@ -240,7 +263,8 @@
    "fams": {
     "system-ui": 1802.078125,
     "-apple-system": 1736.46875,
-    "BlinkMacSystemFont": 1802.078125
+    "BlinkMacSystemFont": 1802.078125,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 1802.078125
    }
   },
   {
@@ -250,7 +274,8 @@
    "fams": {
     "system-ui": 2111.640625,
     "-apple-system": 2063.671875,
-    "BlinkMacSystemFont": 2111.640625
+    "BlinkMacSystemFont": 2111.640625,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 2111.640625
    }
   },
   {
@@ -260,7 +285,8 @@
    "fams": {
     "system-ui": 2224.671875,
     "-apple-system": 2158.515625,
-    "BlinkMacSystemFont": 2224.671875
+    "BlinkMacSystemFont": 2224.671875,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 2224.671875
    }
   },
   {
@@ -270,7 +296,8 @@
    "fams": {
     "system-ui": 2533.96875,
     "-apple-system": 2476.40625,
-    "BlinkMacSystemFont": 2533.96875
+    "BlinkMacSystemFont": 2533.96875,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 2533.96875
    }
   },
   {
@@ -280,7 +307,8 @@
    "fams": {
     "system-ui": 2669.59375,
     "-apple-system": 2590.21875,
-    "BlinkMacSystemFont": 2669.59375
+    "BlinkMacSystemFont": 2669.59375,
+    "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif": 2669.59375
    }
   }
  ]

@@ -2,6 +2,8 @@
 // home page's 56px, 2026-10-19): the size, the cut it sets at that size, and
 // its letter-spacing in em. 32px and 48px are the store's and the product
 // page's (+0.004em, -0.003em), not the home page's (+0.002em, -0.002em).
+import { readFileSync } from 'node:fs';
+
 export const SCALE = {
   12: ['Text', -0.01], 14: ['Text', -0.016], 17: ['Text', -0.022],
   19: ['Display', 0.012], 21: ['Display', 0.011], 24: ['Display', 0.009], 28: ['Display', 0.007],
@@ -35,16 +37,20 @@ export function analyze(label, result) {
 export const measureCall = (src) =>
   `(async () => {\n${src}\nreturn measure(${JSON.stringify(Object.keys(SCALE).map(Number))}, ${JSON.stringify(WEIGHTS)}, ${JSON.stringify(SAMPLE)});\n})()`;
 
-// verify: decided before the run, system-ui at ciderui's letter-spacing within
-// 0.0015em per character of apple.com's text (the table averages two weights and
-// two browsers; at 56px 0.0015em is 0.08px a character)
+// verify: decided before the run, the kit's own font stack (tokens.css's
+// --cui-font, whichever of its names the browser has: -apple-system in
+// Safari, BlinkMacSystemFont in Chrome, which has no -apple-system) at
+// ciderui's letter-spacing within 0.0015em per character of apple.com's text
+// (the table averages two weights and two browsers; at 56px 0.0015em is 0.08px
+// a character); each name read beside it, system-ui too, which derived it
 export const VERIFY_TOLERANCE = 0.0015;
-export const FAMILIES = ['system-ui', '-apple-system', 'BlinkMacSystemFont'];
+export const STACK = readFileSync(new URL('../../tokens.css', import.meta.url), 'utf8').match(/--cui-font:\s*([^;]+);/)[1];
+export const FAMILIES = ['system-ui', '-apple-system', 'BlinkMacSystemFont', STACK];
 
 export function analyzeVerify(label, result) {
   console.log(`\n${label}\n${result.ua}`);
   console.log('Δ(name at ciderui ls − apple.com cut at apple.com ls), em per character');
-  console.log('size weight' + FAMILIES.map(x => x.padStart(20)).join(''));
+  console.log('size weight' + FAMILIES.map(x => (x === STACK ? 'the stack' : x).padStart(20)).join(''));
   let pass = true;
   const worst = Object.fromEntries(FAMILIES.map(x => [x, 0]));
   for (const r of result.rows) {
@@ -55,9 +61,9 @@ export function analyzeVerify(label, result) {
     });
     console.log(`${String(r.size).padStart(4)} ${String(r.weight).padStart(6)}${cells.join('')}`);
   }
-  for (const fam of FAMILIES) console.log(`worst |Δ| ${fam}: ${worst[fam].toFixed(4)}em ${worst[fam] < VERIFY_TOLERANCE ? 'within' : 'OUTSIDE'} ${VERIFY_TOLERANCE}`);
-  pass = worst['system-ui'] < VERIFY_TOLERANCE;
-  console.log(pass ? 'PASS: system-ui at ciderui\'s letter-spacing lands on apple.com\'s widths' : 'FAIL: system-ui at ciderui\'s letter-spacing misses apple.com\'s widths');
+  for (const fam of FAMILIES) console.log(`worst |Δ| ${fam === STACK ? `the stack (${STACK})` : fam}: ${worst[fam].toFixed(4)}em ${worst[fam] < VERIFY_TOLERANCE ? 'within' : 'OUTSIDE'} ${VERIFY_TOLERANCE}`);
+  pass = worst[STACK] < VERIFY_TOLERANCE;
+  console.log(pass ? 'PASS: the kit\'s font stack at ciderui\'s letter-spacing lands on apple.com\'s widths' : 'FAIL: the kit\'s font stack at ciderui\'s letter-spacing misses apple.com\'s widths');
   return pass;
 }
 
