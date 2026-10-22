@@ -1,6 +1,13 @@
 {
  "browser": "safari 27.0.1 on macOS 27.0.1",
- "date": "2026-10-19T10:03:39.449Z",
+ "date": "2026-10-22T04:40:06.280Z",
+ "waited": {
+  "click": 0,
+  "question at 1200, 1": 0,
+  "link at 1200, 1": 0,
+  "question at 390, 1": 0,
+  "link at 390, 1": 0
+ },
  "closed": {
   "answer": 61.59375,
   "open": false,
@@ -11,7 +18,7 @@
   "answer": 61.59375,
   "open": true,
   "item": 117.59375,
-  "chevron": "matrix(1, 0, 0, 0.383858, 0, 0)"
+  "chevron": "matrix(1, 0, 0, 0.421411, 0, 0)"
  },
  "opened": {
   "answer": 61.59375,
@@ -19,5 +26,91 @@
   "item": 117.59375,
   "chevron": "matrix(1, 0, 0, -1, 0, 0)"
  },
- "interpolateSize": false
+ "interpolateSize": false,
+ "held": {
+  "box": {
+   "top": 93.59,
+   "height": 20
+  },
+  "scale": 2,
+  "overflow": "visible clip",
+  "height": "10px",
+  "ink": 0
+ },
+ "held-visible": {
+  "box": {
+   "top": 93.59,
+   "height": 20
+  },
+  "scale": 2,
+  "overflow": "visible visible",
+  "height": "10px",
+  "ink": 2907
+ },
+ "rings": {
+  "question at 1200": {
+   "height": 55,
+   "box": {
+    "right": 1141,
+    "top": 139.59,
+    "left": 24,
+    "bottom": 194.59
+   },
+   "focused": true,
+   "visible": true,
+   "hasFocus": true,
+   "left": 568,
+   "outline": "2px solid rgb(0, 113, 227) 3px",
+   "right": 568,
+   "scale": 2
+  },
+  "link at 1200": {
+   "height": 16.49,
+   "box": {
+    "right": 98.7,
+    "top": 411.54,
+    "left": 24,
+    "bottom": 428.03
+   },
+   "focused": true,
+   "visible": true,
+   "hasFocus": true,
+   "left": 260,
+   "outline": "2px solid rgb(0, 113, 227) 3px",
+   "right": 260,
+   "scale": 2
+  },
+  "question at 390": {
+   "height": 52,
+   "box": {
+    "right": 366,
+    "top": 122.59,
+    "left": 24,
+    "bottom": 174.59
+   },
+   "focused": true,
+   "visible": true,
+   "hasFocus": true,
+   "left": 544,
+   "outline": "2px solid rgb(0, 113, 227) 3px",
+   "right": 544,
+   "scale": 2
+  },
+  "link at 390": {
+   "height": 16.49,
+   "box": {
+    "right": 98.7,
+    "top": 385.54,
+    "left": 24,
+    "bottom": 402.03
+   },
+   "focused": true,
+   "visible": true,
+   "hasFocus": true,
+   "left": 260,
+   "outline": "2px solid rgb(0, 113, 227) 3px",
+   "right": 260,
+   "scale": 2
+  }
+ }
 }

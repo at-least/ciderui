@@ -1,6 +1,13 @@
 {
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-22T04:19:41.051Z",
+ "date": "2026-10-22T04:39:49.897Z",
+ "waited": {
+  "click": 0,
+  "question at 1200, 1": 0,
+  "link at 1200, 1": 0,
+  "question at 390, 1": 0,
+  "link at 390, 1": 0
+ },
  "closed": {
   "open": false,
   "item": 56,
@@ -9,9 +16,9 @@
  },
  "opening": {
   "open": true,
-  "item": 70.28125,
+  "item": 70.296875,
   "answer": 61.59375,
-  "chevron": "matrix(1, 0, 0, 0.578924, 0, 0)"
+  "chevron": "matrix(1, 0, 0, 0.578718, 0, 0)"
  },
  "opened": {
   "open": true,
@@ -44,6 +51,7 @@
   "question at 1200": {
    "focused": true,
    "visible": true,
+   "hasFocus": true,
    "outline": "2px solid rgb(0, 113, 227) 3px",
    "box": {
     "left": 24,
@@ -59,6 +67,7 @@
   "link at 1200": {
    "focused": true,
    "visible": true,
+   "hasFocus": true,
    "outline": "2px solid rgb(0, 113, 227) 3px",
    "box": {
     "left": 24,
@@ -74,6 +83,7 @@
   "question at 390": {
    "focused": true,
    "visible": true,
+   "hasFocus": true,
    "outline": "2px solid rgb(0, 113, 227) 3px",
    "box": {
     "left": 24,
@@ -89,6 +99,7 @@
   "link at 390": {
    "focused": true,
    "visible": true,
+   "hasFocus": true,
    "outline": "2px solid rgb(0, 113, 227) 3px",
    "box": {
     "left": 24,

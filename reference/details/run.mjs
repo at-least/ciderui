@@ -13,7 +13,8 @@
 // (ring.js): the accent's pixels in the 8px beside it, left and right, where
 // its ring's sides are drawn 3 to 5px out. And is its height clipped still?
 // held.html's answer held 10px tall: none of its text drawn, where
-// held-visible.html, clipping nothing, draws it. The result is
+// held-visible.html, clipping nothing, draws it. The click and each ring's
+// read wait for the window in front (front()). The result is
 // results/<browser>.json.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -34,10 +35,22 @@ const RINGS = {
 const read = `Promise.resolve((() => { const d = document.querySelector('${ITEM}'); return { open: d.open, item: d.getBoundingClientRect().height, answer: d.querySelector('.cui-accordion-answer').getBoundingClientRect().height, chevron: getComputedStyle(d.querySelector('svg')).transform }; })())`;
 const wait = (ms) => `new Promise(r => setTimeout(() => r(true), ${ms}))`;
 let page;
-const got = {};
+// the window in front, where Safari matches :focus and a click reaches the
+// page: an app of the owner's took the Mac's front by itself during a run,
+// back and forth with Safari every second or two, no input (2026-10-22), so
+// what needs it waits for it, up to 10s, and names how long (null: never)
+const front = async () => {
+  for (let i = 0; i < 40; i++) {
+    if (await page.run('Promise.resolve(document.hasFocus())')) return i * 250;
+    await page.run(wait(250));
+  }
+  return null;
+};
+const got = { waited: {} };
 try {
   page = await open(BROWSER, `http://127.0.0.1:${server.address().port}/`);
   got.closed = await page.run(read);
+  got.waited.click = await front();
   if (BROWSER === 'ios') await page.run(`Promise.resolve((document.querySelector('${ITEM} > summary').click(), true))`);
   else await page.click(`${ITEM} > summary`);
   await page.run(wait(120));
@@ -65,7 +78,13 @@ try {
           focused = await page.run(`Promise.resolve(document.activeElement === document.querySelector(${JSON.stringify(target)}))`);
         }
         await page.run(wait(300));
-        got.rings[`${name} at ${width}`] = focused ? await page.run(`(async () => {\n${src}\nreturn ring(${JSON.stringify(target)}, ${JSON.stringify(await page.shot())});\n})()`) : { focused };
+        // read again, up to three times, if the window was behind as it was read
+        let r = { focused };
+        for (let tries = 0; focused && tries < 3 && !r.hasFocus; tries++) {
+          got.waited[`${name} at ${width}, ${tries + 1}`] = await front();
+          r = await page.run(`(async () => {\n${src}\nreturn ring(${JSON.stringify(target)}, ${JSON.stringify(await page.shot())});\n})()`);
+        }
+        got.rings[`${name} at ${width}`] = r;
       }
     }
   }

@@ -3,7 +3,8 @@
 // 8px left of its box and the 8px right of it, down the window's whole
 // height, where its ring's sides are drawn (2px of the accent 3px out:
 // tokens.css) and nothing else of the page is the accent. visible is
-// :focus-visible.
+// :focus-visible, hasFocus document.hasFocus(): false in a window that is not
+// in front, where Safari matches no :focus (../docs/).
 async function ring(selector, png) {
   const el = document.querySelector(selector);
   const box = el.getBoundingClientRect();
@@ -29,6 +30,7 @@ async function ring(selector, png) {
   return {
     focused: document.activeElement === el,
     visible: el.matches(':focus-visible'),
+    hasFocus: document.hasFocus(),
     outline: `${outline.outlineWidth} ${outline.outlineStyle} ${outline.outlineColor} ${outline.outlineOffset}`,
     box: { left: +box.left.toFixed(2), right: +box.right.toFixed(2), top: +box.top.toFixed(2), bottom: +box.bottom.toFixed(2) },
     height: +box.height.toFixed(2),
