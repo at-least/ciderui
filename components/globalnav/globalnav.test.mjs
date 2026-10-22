@@ -806,6 +806,9 @@ export const cases = [
     name: 'search-suggestions-start',
     html: `${HOLD}${SUGGESTING}${LATER}`,
     ...SEARCHING,
+    // read 1s in, its motion held at its start (HOLD): run to its end, it
+    // would be read 10s on, at its end
+    wait: 1000,
     widths: [1600],
     checks: [
       { target: '.cui-globalnav-searchlinks > li:nth-child(3)', props: ['opacity', 'transform'], golden: 'a row written once something is typed from transparent, where it is (search-typed:ip\'s keyframes: opacity 0 to 1, translateY(0px))' },

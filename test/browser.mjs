@@ -13,13 +13,22 @@
 // element's box, `box-top`, `box-left` and `box-right`, its place in the window,
 // `box-x` and `box-y`, its place in its parent's box (a line in its SVG),
 // `focused`, whether it has the focus, and `hit`, what the pointer finds at
-// five points of its box (a tenth in from each corner, and its middle).
+// five points of its box (a tenth in from each corner, and its middle). One
+// Chromium serves a run, each page in a context of its own (its close closes
+// that); quit() closes the browser, as a runner ends.
 
 import { chromium } from 'playwright-chromium';
 
+let browser;
+export const quit = async () => {
+  if (browser) await (await browser).close();
+  browser = undefined;
+};
+
 export async function open(css, html, { width = 1200, height = 800, reducedMotion, colorScheme, touch, forcedColors } = {}) {
-  const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
-  const page = await browser.newPage({ viewport: { width, height }, reducedMotion, colorScheme, forcedColors });
+  browser ??= chromium.launch({ args: ['--font-render-hinting=none'] });
+  const context = await (await browser).newContext({ viewport: { width, height }, reducedMotion, colorScheme, forcedColors });
+  const page = await context.newPage();
   const cdp = await page.context().newCDPSession(page);
   if (touch) await cdp.send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
   await page.setContent(`<!doctype html><html lang="en"><head><meta charset="utf-8"><style>${css}</style></head><body>${html}</body></html>`);
@@ -67,5 +76,15 @@ export async function open(css, html, { width = 1200, height = 800, reducedMotio
   };
 
   const resize = (w) => page.setViewportSize({ width: w, height });
-  return { page, read, resize, close: () => browser.close() };
+  // the page's motion run to its end: every animation and transition running
+  // (or waiting out its delay) finished, an endless one aside, two frames on;
+  // one cancelled on the way is done too
+  const settle = () => page.evaluate(async () => {
+    const frames = () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+    await frames();
+    const running = document.getAnimations().filter((a) => a.playState === 'running' && a.effect.getComputedTiming().endTime !== Infinity);
+    await Promise.all(running.map((a) => a.finished.catch(() => {})));
+    await frames();
+  });
+  return { page, read, resize, settle, close: () => context.close() };
 }

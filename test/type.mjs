@@ -8,7 +8,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { ROOT, compile } from './compile.mjs';
-import { open } from './browser.mjs';
+import { open, quit } from './browser.mjs';
 import { ref, WIDTHS } from './reference.mjs';
 import { check, done } from './check.mjs';
 
@@ -53,4 +53,5 @@ try {
   await b.close();
 }
 
+await quit();
 done('type');

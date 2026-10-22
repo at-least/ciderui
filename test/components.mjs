@@ -14,7 +14,7 @@ import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { ROOT, compile } from './compile.mjs';
-import { open } from './browser.mjs';
+import { open, quit } from './browser.mjs';
 import { ref, WIDTHS } from './reference.mjs';
 import { check, done } from './check.mjs';
 
@@ -60,7 +60,8 @@ for (const name of names) {
           for (const selector of [].concat(c.click ?? [])) await page.page.click(selector);
           if (c.click) await page.page.mouse.move(0, (c.height ?? 800) - 1);
           for (const key of [].concat(c.press ?? [])) await page.page.keyboard.press(key);
-          await page.page.waitForTimeout(c.wait ?? (c.reducedMotion ? 100 : 1000));
+          if (c.wait !== undefined) await page.page.waitForTimeout(c.wait);
+          else await page.settle();
         }
         // `hover`: the pointer off to the window's bottom corner, then moved
         // onto each element (its middle) or point ([x, y]) in turn in steps,
@@ -68,12 +69,13 @@ for (const name of names) {
         // hide), and the motion run to its end, or for `wait` ms
         if (c.hover) {
           await page.page.mouse.move(0, (c.height ?? 800) - 1);
-          await page.page.waitForTimeout(c.reducedMotion ? 100 : 1000);
+          await page.settle();
           for (const to of [].concat(c.hover.length === 2 && typeof c.hover[0] === 'number' ? [c.hover] : c.hover)) {
             const r = Array.isArray(to) ? null : await page.page.locator(to).boundingBox();
             if (!Array.isArray(to) && !r) throw new Error(`${name} ${c.name}: ${to} has no box to hover`);
             await page.page.mouse.move(...(r ? [r.x + r.width / 2, r.y + r.height / 2] : to), { steps: 8 });
-            await page.page.waitForTimeout(c.wait ?? (c.reducedMotion ? 100 : 1000));
+            if (c.wait !== undefined) await page.page.waitForTimeout(c.wait);
+            else await page.settle();
           }
         }
         // `scroll`: [selector, x], that element scrolled to x (snapping where
@@ -121,4 +123,5 @@ for (const name of names) {
   else if (!PICK) for (const key of Object.keys(golden)) check(`${name} golden.json's "${key}" is read by a check`, used.has(key), true);
 }
 
+await quit();
 done('components');

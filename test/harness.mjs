@@ -11,8 +11,10 @@
 //            touch, reducedMotion, forcedColors as the page's
 //   click    a selector (or several) clicked in turn once, at the first
 //            width, before its checks (a menu's button), then the keys in
-//            `press` pressed in turn, its motion then run to its end, or for
-//            `wait` ms (0 reads its start); `wait` alone waits so long once
+//            `press` pressed in turn, its motion then run to its end (every
+//            animation and transition finished: test/browser.mjs's settle),
+//            or for `wait` ms (0 reads its start; a motion held, a case's
+//            own long delay, is read in `wait`); `wait` alone waits so long once
 //            the page shows (a motion that runs as it loads); scroll,
 //            [selector, x]: that element scrolled to x at every width
 //            before its checks (a scroller, snapping where it snaps);
