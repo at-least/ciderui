@@ -75,12 +75,8 @@ for (const e of readdirSync(join(DOCS, 'examples'), { recursive: true, withFileT
 
 // the site, built
 const out = mkdtempSync(join(tmpdir(), 'ciderui-docs-'));
-try {
-  execFileSync('zola', ['--root', DOCS, 'build', '--output-dir', out, '--force'], { stdio: 'pipe' });
-} catch (e) {
-  console.log(`zola build docs/: ${e.stderr}`);
-  process.exit(1);
-}
+// its failure thrown as it is: zola's own words, or no zola (ENOENT)
+execFileSync('zola', ['--root', DOCS, 'build', '--output-dir', out, '--force'], { stdio: 'pipe' });
 const htmlPages = (dir) => readdirSync(dir).flatMap((f) => {
   const p = join(dir, f);
   return statSync(p).isDirectory() ? htmlPages(p) : f === 'index.html' ? [p] : [];
@@ -114,7 +110,7 @@ for (const width of [1440, 390]) {
     // the frames settle their height a frame after their content's
     await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 50)))));
     const got = await page.evaluate((origin) => ({
-      sideways: document.documentElement.scrollWidth - innerWidth,
+      sideways: document.documentElement.scrollWidth - document.documentElement.clientWidth,
       links: [...document.querySelectorAll('a[href]')].map((a) => a.href.split('#')[0]).filter((h) => h.startsWith(origin)),
       frames: [...document.querySelectorAll('iframe.cz-example')].map((f) => {
         const doc = f.contentDocument;
@@ -126,8 +122,11 @@ for (const width of [1440, 390]) {
           width: f.getBoundingClientRect().width,
           page: document.documentElement.clientWidth,
           height: f.clientHeight,
-          content: doc.documentElement.scrollHeight,
+          // its content's height, the root's box: its scroll height is
+          // never less than the frame's, which a frame too tall would hide
+          content: Math.ceil(doc.documentElement.getBoundingClientRect().height),
           scroll: doc.documentElement.scrollWidth - doc.documentElement.clientWidth,
+          scrollDown: doc.documentElement.scrollHeight - doc.documentElement.clientHeight,
         };
       }),
     }), ORIGIN);
@@ -141,6 +140,7 @@ for (const width of [1440, 390]) {
       check(`${where}, "${f.title}": its frame is no wider than the page`, f.width <= f.page, true);
       check(`${where}, "${f.title}": its frame is as tall as its content (${f.height}px, its content ${f.content}px)`, f.height === f.content, true);
       check(`${where}, "${f.title}": its frame does not scroll sideways`, f.scroll, 0);
+      check(`${where}, "${f.title}": its frame does not scroll down`, f.scrollDown, 0);
     }
   }
 
@@ -158,8 +158,10 @@ for (const width of [1440, 390]) {
     const { inner } = await frame('/components/gallery/', 'A gallery of cards');
     await inner.evaluate(() => document.querySelector('[aria-controls="gallery"][aria-label="Next"]').click());
     await settle(inner);
-    const row = await inner.evaluate(() => ({ scroll: document.getElementById('gallery').scrollLeft, previous: document.querySelector('[aria-controls="gallery"]').disabled }));
-    check(`the gallery's Next scrolls its row in its frame at ${width}px, its previous paddle enabled`, row.scroll > 0 && !row.previous, true);
+    const row = await inner.evaluate(() => { const r = document.getElementById('gallery'); return { scroll: r.scrollLeft, width: r.clientWidth, max: r.scrollWidth - r.clientWidth, previous: document.querySelector('[aria-controls="gallery"]').disabled }; });
+    // on a step: half its width at least, or to its end, not a scroll
+    // stopped short
+    check(`the gallery's Next scrolls its row on a step in its frame at ${width}px (${row.scroll}px of its ${row.width}), its previous paddle enabled`, row.scroll >= Math.min(row.width / 2, row.max - 1) && !row.previous, true);
   }
   {
     const { handle, inner } = await frame('/components/link/', 'A more link');
@@ -192,6 +194,33 @@ for (const width of [1440, 390]) {
     await inner.press('.cui-globalnav-searchinput', 'Escape');
     await settle(inner);
     check(`at ${width}px Escape closes it, its frame the bar's height again`, await height(handle), closed);
+    // its form sent (Return in its field): an example's form is the
+    // example's, not the documentation's search
+    await inner.click('[popovertarget="cui-globalnav-search"]');
+    await settle(inner);
+    await inner.fill('.cui-globalnav-searchinput', 'mac');
+    await inner.press('.cui-globalnav-searchinput', 'Enter');
+    // the frame's address, read from outside it: a frame sent away has no
+    // page left to read it in
+    await page.waitForTimeout(500);
+    check(`at ${width}px its search's form sent leaves its frame where it is`, inner.url(), 'about:srcdoc');
+  }
+  {
+    // a footnote's mark in an example: its note scrolled to below the page's
+    // local nav, not under it
+    const { inner } = await frame('/components/article/', 'An article');
+    await inner.click('a[href="#fn-1"]');
+    await page.evaluate(() => new Promise((r) => {
+      let last = -1, same = 0;
+      const tick = () => { if (scrollY === last) same++; else { same = 0; last = scrollY; } if (same >= 10) r(); else requestAnimationFrame(tick); };
+      requestAnimationFrame(tick);
+    }));
+    const at = await page.evaluate(() => {
+      const f = document.querySelector('iframe[title="An article"]');
+      const note = f.contentDocument.getElementById('fn-1').getBoundingClientRect();
+      return { note: f.getBoundingClientRect().top + f.clientTop + note.top, nav: document.querySelector('.cui-localnav').getBoundingClientRect().bottom };
+    });
+    check(`at ${width}px a footnote's mark in an example scrolls its note to below the page's local nav (its top ${at.note.toFixed(2)}px, the nav's foot ${at.nav.toFixed(2)}px)`, at.note >= at.nav - 0.5, true);
   }
   {
     errors = [];

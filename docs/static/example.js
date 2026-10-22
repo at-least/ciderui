@@ -9,8 +9,10 @@
  * element there. */
 const root = document.documentElement;
 let sheet = 0;
+// what is shown: not what is hidden, nor what a closed <details> holds
+// (its answer, laid out though not shown)
 const size = () => {
-  const bottoms = [...document.querySelectorAll('body *')].filter((e) => getComputedStyle(e).visibility !== 'hidden').map((e) => e.getBoundingClientRect().bottom);
+  const bottoms = [...document.querySelectorAll('body *')].filter((e) => getComputedStyle(e).visibility !== 'hidden' && !e.closest('details:not([open]) > :not(summary)')).map((e) => e.getBoundingClientRect().bottom);
   frameElement.style.height = `${Math.ceil(Math.max(sheet, root.getBoundingClientRect().height, ...bottoms))}px`;
 };
 const observer = new ResizeObserver(size);
@@ -47,13 +49,22 @@ new MutationObserver(() => cover(Boolean(document.querySelector('dialog:modal'))
 // an example's links are the example's, not pages of the documentation: a
 // srcdoc frame's base URL is the page's, so a click would load the page (a
 // link to #buy) or another one (/iphone/) into the frame. A link to an
-// element of the frame (a footnote's mark) scrolls to it; a gallery's dot is
-// the theme's script's, which has already handled it.
+// element of the frame (a footnote's mark) scrolls to it, below the page's
+// bars; a gallery's dot is the theme's script's, which has already handled
+// it.
 addEventListener('click', (e) => {
   const link = e.target.closest('a[href]');
   if (!link || e.defaultPrevented) return;
   e.preventDefault();
   const href = link.getAttribute('href');
   const target = href.startsWith('#') && document.getElementById(decodeURIComponent(href.slice(1)));
-  if (target) target.scrollIntoView();
+  if (target) {
+    target.style.scrollMarginTop = `${bars()}px`;
+    target.scrollIntoView();
+  }
+});
+// and its forms: sent, they would load the page they name (a search's, the
+// documentation's search page) into the frame; a dialog's closes it
+addEventListener('submit', (e) => {
+  if (e.target.method !== 'dialog') e.preventDefault();
 });
