@@ -59,11 +59,9 @@ try {
 // where the mark's ink sits in its message's row: the page at four device
 // pixels to the CSS pixel, an empty required field the focus left
 {
-  const { chromium } = await import(process.env.PW ?? 'playwright-core');
-  const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
+  const scaled = await open('chromium', 'https://www.apple.com/shop/buy-giftcard/giftcard', { viewport: { width: 1200, height: 900 }, deviceScaleFactor: 4 });
+  const p = scaled.page;
   try {
-    const p = await browser.newPage({ viewport: { width: 1200, height: 900 }, deviceScaleFactor: 4 });
-    await p.goto('https://www.apple.com/shop/buy-giftcard/giftcard', { waitUntil: 'load', timeout: 120000 });
     await p.waitForTimeout(2500);
     for (const s of ['input[name=dimensionGiftCardType][value=electronic]', 'input[name=dimensionGiftCardTheme]', '.rf-choose-amount-dimensions > div:nth-child(2) .form-selector-input']) {
       await p.click(s);
@@ -96,7 +94,7 @@ try {
     }, [png, { row: box.width, at: text.x - box.x }]);
     result.alertPlace.rowHeight = box.height;
   } finally {
-    await browser.close();
+    await scaled.close();
   }
 }
 
