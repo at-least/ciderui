@@ -216,7 +216,7 @@ const behave = async (width) => {
     r.later = await page.run(`Promise.resolve(+getComputedStyle(document.querySelector('body > .cui-globalnav .cui-globalnav-searchlinks > li')).opacity)`);
     got.frames[`suggestions at ${width}`] = r;
     claim(`the global nav's search at ${width}px suggests the modal's page first as "mo" is typed, its row #6e6e73 and "Mo" marked #333336 on no ground, fading in (0.32s from 60ms), 600ms on in full`,
-      r.heading === 'Suggested Links' && r.link === '/components/modal/' && r.marked === 'Mo' && r.color === 'rgb(110, 110, 115)' && r.markColor === 'rgb(51, 51, 54)' && r.markGround === 'rgba(0, 0, 0, 0)'
+      r.heading === 'Pages' && r.link === '/components/modal/' && r.marked === 'Mo' && r.color === 'rgb(110, 110, 115)' && r.markColor === 'rgb(51, 51, 54)' && r.markGround === 'rgba(0, 0, 0, 0)'
       && r.opacity < 1 && r.transition === 'opacity 0.32s 0.06s' && r.later === 1, r);
   }
   // the dropdown, with no script: empty, its label the placeholder and its
@@ -232,12 +232,14 @@ const behave = async (width) => {
       return { top: label.top, size: label.fontSize, text: getComputedStyle(d.querySelector('select')).color };
     })())`;
     const empty = await page.run(look);
-    await page.run(`Promise.resolve((() => { const s = ${frame(title)}.contentDocument.querySelector('select'); s.value = 'iphone-air'; s.dispatchEvent(new Event('change', { bubbles: true })); return true; })())`);
+    // a value no option has leaves none selected (selectedIndex -1), which
+    // also lifts the label: the claim holds the index of the option chosen
+    const index = await page.run(`Promise.resolve((() => { const s = ${frame(title)}.contentDocument.querySelector('select'); s.value = 'phone-3'; s.dispatchEvent(new Event('change', { bubbles: true })); return s.selectedIndex; })())`);
     await page.run(wait(500));
     const chosen = await page.run(look);
-    got.frames[`dropdown at ${width}`] = { empty, chosen };
+    got.frames[`dropdown at ${width}`] = { empty, index, chosen };
     claim(`the dropdown at ${width}px: empty, its label the placeholder and its text not shown; chosen, its label at its top and its text shown`,
-      empty.top === '18px' && empty.size === '17px' && empty.text === 'rgba(0, 0, 0, 0)' && chosen.top === '10px' && chosen.size === '12px' && chosen.text === 'rgb(29, 29, 31)', { empty, chosen });
+      empty.top === '18px' && empty.size === '17px' && empty.text === 'rgba(0, 0, 0, 0)' && index === 2 && chosen.top === '10px' && chosen.size === '12px' && chosen.text === 'rgb(29, 29, 31)', { empty, index, chosen });
   }
   // the textarea, with no script: at rest its label the placeholder; its
   // textarea focused (by the page's script), its box's edge 2px and its
