@@ -1,0 +1,860 @@
+{
+ "url": "https://developer.apple.com/news/releases/",
+ "finalUrl": "https://developer.apple.com/news/releases/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-23T00:28:15.118Z",
+ "widths": {
+  "390": {
+   "page": {
+    "html": "<body id=\"releases\" class=\"releases dmf theme-light no-in-wechat\" data-color-scheme=\"light\">\n\n\t<script>\n\t// Execute immediately to avoid UI flash\n\t(function () {\n\t\t// Prevent React dev mode from running this multiple times\n\t\tif (window.__di",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "entry": {
+    "html": "<article id=\"article-10222026a\" class=\"article thumbnail-layout\">\n\t\t\t\t\t\t<section class=\"row-full\">\n\t\t\t\t\t\t\t<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t",
+    "styles": {
+     "padding-top": "0px",
+     "padding-bottom": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 288.296875,
+     "height": 486.96875
+    }
+   },
+   "entry.picture": {
+    "html": "<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"article-image-wrapper\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img class=\"articl",
+    "styles": {
+     "width": "288.297px",
+     "padding-top": "51px",
+     "padding-right": "51px",
+     "padding-bottom": "0px",
+     "padding-left": "0px"
+    },
+    "box": {
+     "width": 288.296875,
+     "height": 203
+    }
+   },
+   "entry.image": {
+    "html": "<img class=\"article-image theme-light-image\" src=\"/assets/elements/icons/testflight-s/testflight-s-256x256_2x.png\" alt=\"TestFlight\" data-hires=\"false\">",
+    "styles": {
+     "width": "128px",
+     "height": "128px",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 128,
+     "height": 128
+    }
+   },
+   "entry.content": {
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href=\"/news/rel",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "25.5px",
+     "padding-bottom": "47.6px",
+     "padding-left": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 288.296875,
+     "height": 283.96875
+    }
+   },
+   "entry.title.link": {
+    "html": "<a class=\"article-title\" href=\"/news/releases/?…\"><h2>TestFlight 4.4.1</h2></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 51)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(51, 51, 51)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 136, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 136, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "entry.title": {
+    "html": "<h2>TestFlight 4.4.1</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "35px",
+     "font-weight": "500",
+     "letter-spacing": "0.196px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 262.796875,
+     "height": 35
+    }
+   },
+   "entry.date": {
+    "html": "<p class=\"lighter  article-date\">October 22, 2026</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14.875px",
+     "line-height": "21.875px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(102, 102, 102)",
+     "margin-top": "7.4375px",
+     "margin-bottom": "5.95px"
+    }
+   },
+   "entry.text": {
+    "html": "<span class=\"article-text\"><ul class=\"links-stacked\"><li><a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a></li><ul class=\"links-stacked\"><li><a href=\"https://developer.apple.com/help/app-store-",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "13.6px"
+    }
+   },
+   "entry.link": {
+    "html": "<a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "entry.share": {
+    "html": "<button class=\"icon icon-facebook social-icon\" data-href=\"https://developer.apple.com/news/releases/?…\" data-share-type=\"facebook\" aria-label=\"Share via Facebook\"> </button>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "17px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(102, 102, 102)",
+     "width": "25px",
+     "height": "25px",
+     "margin-right": "0px"
+    },
+    "box": {
+     "width": 25,
+     "height": 25
+    }
+   },
+   "next": {
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small divider-top\">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href",
+    "styles": {
+     "padding-top": "0px",
+     "margin-top": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)"
+    }
+   },
+   "rss": {
+    "html": "<a class=\"right rss-link\" href=\"feed://developer.apple.com/news/releases/rss/releases.rss\">RSS</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "17.6471px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "width": "22.0156px",
+     "height": "17.6406px"
+    },
+    "box": {
+     "width": 22.015625,
+     "height": 17.640625
+    }
+   }
+  },
+  "900": {
+   "page": {
+    "html": "<body id=\"releases\" class=\"releases dmf theme-light no-in-wechat\" data-color-scheme=\"light\">\n\n\t<script>\n\t// Execute immediately to avoid UI flash\n\t(function () {\n\t\t// Prevent React dev mode from running this multiple times\n\t\tif (window.__di",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "entry": {
+    "html": "<article id=\"article-10222026a\" class=\"article thumbnail-layout\">\n\t\t\t\t\t\t<section class=\"row-full\">\n\t\t\t\t\t\t\t<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t",
+    "styles": {
+     "padding-top": "0px",
+     "padding-bottom": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 734,
+     "height": 312.875
+    }
+   },
+   "entry.picture": {
+    "html": "<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"article-image-wrapper\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img class=\"articl",
+    "styles": {
+     "width": "183.5px",
+     "padding-top": "51px",
+     "padding-right": "51px",
+     "padding-bottom": "0px",
+     "padding-left": "0px"
+    },
+    "box": {
+     "width": 183.5,
+     "height": 312.875
+    }
+   },
+   "entry.image": {
+    "html": "<img class=\"article-image theme-light-image\" src=\"/assets/elements/icons/testflight-s/testflight-s-256x256_2x.png\" alt=\"TestFlight\" data-hires=\"false\">",
+    "styles": {
+     "width": "128px",
+     "height": "128px",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 128,
+     "height": 128
+    }
+   },
+   "entry.content": {
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href=\"/news/rel",
+    "styles": {
+     "padding-top": "51px",
+     "padding-right": "25.5px",
+     "padding-bottom": "25.5px",
+     "padding-left": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 550.5,
+     "height": 312.875
+    }
+   },
+   "entry.title.link": {
+    "html": "<a class=\"article-title\" href=\"/news/releases/?…\"><h2>TestFlight 4.4.1</h2></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 51)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(51, 51, 51)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 136, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 136, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "entry.title": {
+    "html": "<h2>TestFlight 4.4.1</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "35px",
+     "font-weight": "500",
+     "letter-spacing": "0.112px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 525,
+     "height": 35
+    }
+   },
+   "entry.date": {
+    "html": "<p class=\"lighter  article-date\">October 22, 2026</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14.875px",
+     "line-height": "21.875px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(102, 102, 102)",
+     "margin-top": "7.4375px",
+     "margin-bottom": "5.95px"
+    }
+   },
+   "entry.text": {
+    "html": "<span class=\"article-text\"><ul class=\"links-stacked\"><li><a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a></li><ul class=\"links-stacked\"><li><a href=\"https://developer.apple.com/help/app-store-",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "13.6px"
+    }
+   },
+   "entry.link": {
+    "html": "<a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "entry.share": {
+    "html": "<button class=\"icon icon-facebook social-icon\" data-href=\"https://developer.apple.com/news/releases/?…\" data-share-type=\"facebook\" aria-label=\"Share via Facebook\"> </button>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "17px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(102, 102, 102)",
+     "width": "25px",
+     "height": "25px",
+     "margin-right": "0px"
+    },
+    "box": {
+     "width": 25,
+     "height": 25
+    }
+   },
+   "next": {
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small divider-top\">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href",
+    "styles": {
+     "padding-top": "51px",
+     "margin-top": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(214, 214, 214)"
+    }
+   },
+   "rss": {
+    "html": "<a class=\"right rss-link\" href=\"feed://developer.apple.com/news/releases/rss/releases.rss\">RSS</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "17.6471px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "width": "22.0156px",
+     "height": "17.6406px"
+    },
+    "box": {
+     "width": 22.015625,
+     "height": 17.640625
+    }
+   }
+  },
+  "1200": {
+   "page": {
+    "html": "<body id=\"releases\" class=\"releases dmf theme-light no-in-wechat\" data-color-scheme=\"light\">\n\n\t<script>\n\t// Execute immediately to avoid UI flash\n\t(function () {\n\t\t// Prevent React dev mode from running this multiple times\n\t\tif (window.__di",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "entry": {
+    "html": "<article id=\"article-10222026a\" class=\"article thumbnail-layout\">\n\t\t\t\t\t\t<section class=\"row-full\">\n\t\t\t\t\t\t\t<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t",
+    "styles": {
+     "padding-top": "0px",
+     "padding-bottom": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 312.875
+    }
+   },
+   "entry.picture": {
+    "html": "<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"article-image-wrapper\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img class=\"articl",
+    "styles": {
+     "width": "245px",
+     "padding-top": "51px",
+     "padding-right": "51px",
+     "padding-bottom": "0px",
+     "padding-left": "0px"
+    },
+    "box": {
+     "width": 245,
+     "height": 312.875
+    }
+   },
+   "entry.image": {
+    "html": "<img class=\"article-image theme-light-image\" src=\"/assets/elements/icons/testflight-s/testflight-s-256x256_2x.png\" alt=\"TestFlight\" data-hires=\"false\">",
+    "styles": {
+     "width": "128px",
+     "height": "128px",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 128,
+     "height": 128
+    }
+   },
+   "entry.content": {
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href=\"/news/rel",
+    "styles": {
+     "padding-top": "51px",
+     "padding-right": "25.5px",
+     "padding-bottom": "25.5px",
+     "padding-left": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 735,
+     "height": 312.875
+    }
+   },
+   "entry.title.link": {
+    "html": "<a class=\"article-title\" href=\"/news/releases/?…\"><h2>TestFlight 4.4.1</h2></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 51)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(51, 51, 51)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 136, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 136, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "entry.title": {
+    "html": "<h2>TestFlight 4.4.1</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "35px",
+     "font-weight": "500",
+     "letter-spacing": "normal",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 709.5,
+     "height": 35
+    }
+   },
+   "entry.date": {
+    "html": "<p class=\"lighter  article-date\">October 22, 2026</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14.875px",
+     "line-height": "21.875px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(102, 102, 102)",
+     "margin-top": "7.4375px",
+     "margin-bottom": "5.95px"
+    }
+   },
+   "entry.text": {
+    "html": "<span class=\"article-text\"><ul class=\"links-stacked\"><li><a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a></li><ul class=\"links-stacked\"><li><a href=\"https://developer.apple.com/help/app-store-",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "13.6px"
+    }
+   },
+   "entry.link": {
+    "html": "<a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "entry.share": {
+    "html": "<button class=\"icon icon-facebook social-icon\" data-href=\"https://developer.apple.com/news/releases/?…\" data-share-type=\"facebook\" aria-label=\"Share via Facebook\"> </button>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "17px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(102, 102, 102)",
+     "width": "25px",
+     "height": "25px",
+     "margin-right": "0px"
+    },
+    "box": {
+     "width": 25,
+     "height": 25
+    }
+   },
+   "next": {
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small divider-top\">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href",
+    "styles": {
+     "padding-top": "51px",
+     "margin-top": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(214, 214, 214)"
+    }
+   },
+   "rss": {
+    "html": "<a class=\"right rss-link\" href=\"feed://developer.apple.com/news/releases/rss/releases.rss\">RSS</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "17.6471px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "width": "22.0156px",
+     "height": "17.6406px"
+    },
+    "box": {
+     "width": 22.015625,
+     "height": 17.640625
+    }
+   }
+  },
+  "1600": {
+   "page": {
+    "html": "<body id=\"releases\" class=\"releases dmf theme-light no-in-wechat\" data-color-scheme=\"light\">\n\n\t<script>\n\t// Execute immediately to avoid UI flash\n\t(function () {\n\t\t// Prevent React dev mode from running this multiple times\n\t\tif (window.__di",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "entry": {
+    "html": "<article id=\"article-10222026a\" class=\"article thumbnail-layout\">\n\t\t\t\t\t\t<section class=\"row-full\">\n\t\t\t\t\t\t\t<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t",
+    "styles": {
+     "padding-top": "0px",
+     "padding-bottom": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 312.875
+    }
+   },
+   "entry.picture": {
+    "html": "<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"article-image-wrapper\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img class=\"articl",
+    "styles": {
+     "width": "245px",
+     "padding-top": "51px",
+     "padding-right": "51px",
+     "padding-bottom": "0px",
+     "padding-left": "0px"
+    },
+    "box": {
+     "width": 245,
+     "height": 312.875
+    }
+   },
+   "entry.image": {
+    "html": "<img class=\"article-image theme-light-image\" src=\"/assets/elements/icons/testflight-s/testflight-s-256x256_2x.png\" alt=\"TestFlight\" data-hires=\"false\">",
+    "styles": {
+     "width": "128px",
+     "height": "128px",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 128,
+     "height": 128
+    }
+   },
+   "entry.content": {
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href=\"/news/rel",
+    "styles": {
+     "padding-top": "51px",
+     "padding-right": "25.5px",
+     "padding-bottom": "25.5px",
+     "padding-left": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 735,
+     "height": 312.875
+    }
+   },
+   "entry.title.link": {
+    "html": "<a class=\"article-title\" href=\"/news/releases/?…\"><h2>TestFlight 4.4.1</h2></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 51)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(51, 51, 51)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 136, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 136, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "entry.title": {
+    "html": "<h2>TestFlight 4.4.1</h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "35px",
+     "font-weight": "500",
+     "letter-spacing": "normal",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 709.5,
+     "height": 35
+    }
+   },
+   "entry.date": {
+    "html": "<p class=\"lighter  article-date\">October 22, 2026</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14.875px",
+     "line-height": "21.875px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(102, 102, 102)",
+     "margin-top": "7.4375px",
+     "margin-bottom": "5.95px"
+    }
+   },
+   "entry.text": {
+    "html": "<span class=\"article-text\"><ul class=\"links-stacked\"><li><a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a></li><ul class=\"links-stacked\"><li><a href=\"https://developer.apple.com/help/app-store-",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "13.6px"
+    }
+   },
+   "entry.link": {
+    "html": "<a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "entry.share": {
+    "html": "<button class=\"icon icon-facebook social-icon\" data-href=\"https://developer.apple.com/news/releases/?…\" data-share-type=\"facebook\" aria-label=\"Share via Facebook\"> </button>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "17px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(102, 102, 102)",
+     "width": "25px",
+     "height": "25px",
+     "margin-right": "0px"
+    },
+    "box": {
+     "width": 25,
+     "height": 25
+    }
+   },
+   "next": {
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small divider-top\">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href",
+    "styles": {
+     "padding-top": "51px",
+     "margin-top": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(214, 214, 214)"
+    }
+   },
+   "rss": {
+    "html": "<a class=\"right rss-link\" href=\"feed://developer.apple.com/news/releases/rss/releases.rss\">RSS</a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "17.6471px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "width": "22.0156px",
+     "height": "17.6406px"
+    },
+    "box": {
+     "width": 22.015625,
+     "height": 17.640625
+    }
+   }
+  }
+ }
+}

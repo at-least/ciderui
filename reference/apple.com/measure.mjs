@@ -55,7 +55,11 @@
 // when it was first seen, in ms from the click or the first key);
 // `keyframes` records the @keyframes its animation-name names (read from
 // the page's own stylesheets; one the page's CSS does not hold is null and
-// fails the run). A spec's `colorScheme` reads the page in that color scheme
+// fails the run). `image` reads those properties, each a base64 data: SVG
+// (a mark the page draws as a background), as what the picture draws (its
+// viewBox, each shape with the fill and stroke it is painted with), never
+// the picture itself, the page's asset; any other value fails the run.
+// A spec's `colorScheme` reads the page in that color scheme
 // (`prefers-color-scheme`, emulated before a reload); its `touch` on a touch
 // screen (the DevTools protocol's touch emulation before a reload, which
 // makes (hover: none) match, the page's script finding touch; the run fails
@@ -150,6 +154,13 @@ const read = (probe) => {
   const out = { styles: {} };
   for (const p of probe.props ?? []) out.styles[p] = cs.getPropertyValue(p);
   for (const v of probe.vars ?? []) out.styles[v] = cs.getPropertyValue(v).trim();
+  for (const p of probe.image ?? []) {
+    const m = cs.getPropertyValue(p).match(/^url\("data:image\/svg\+xml;base64,([A-Za-z0-9+/=]+)"\)$/);
+    if (!m) throw new Error(`${probe.name}: ${p} is not a base64 SVG`);
+    const svg = new DOMParser().parseFromString(atob(m[1]), 'image/svg+xml').documentElement;
+    const paint = (e, a) => e.closest(`[${a}]`)?.getAttribute(a) ?? null;
+    out.styles[p] = { viewBox: svg.getAttribute('viewBox'), shapes: [...svg.querySelectorAll('circle, ellipse, rect, path, polygon, polyline, line')].map(e => ({ shape: e.tagName, fill: paint(e, 'fill'), stroke: paint(e, 'stroke') })) };
+  }
   if (probe.keyframes) {
     out.keyframes = {};
     for (const name of cs.animationName.split(',').map(n => n.trim()).filter(n => n !== 'none')) {

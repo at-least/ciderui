@@ -54,6 +54,8 @@ Measured 2026-10-19 in Playwright's Chromium 151 on Linux, with `--font-render-h
 | `docc-important`, `docc-important-dark` | https://developer.apple.com/documentation/xcode/identifying-the-cause-of-common-crashes | an important aside, light and dark |
 | `docc-asides`, `docc-asides-dark` | `docc`'s | the article's first note, its class (and aria-label) set to warning, tip, deprecated and experiment in turn: DocC's stylesheets style each, no page read carries one; light and dark |
 | `support`, `support-dark` | https://support.apple.com/en-us/100100 | Apple Support's article with a long table, light and dark: its title, subheader, text, a link (hovered), a list, the small note; the table's wrapper, the table, a header cell, a cell and a link in it (hovered) |
+| `system-status`, `system-status-kinds` | https://developer.apple.com/system-status/ | Apple Developer's System Status, read 2026-10-23: the title, the legend (an item, its mark, its word), the services' table (a row, a cell, a service's mark and name, its link out), the links and the date under it; at 900 and 390px, where the table and legend give way to one line for all the services, that line (its mark, its words, its button, the toggle's glyph); `-kinds`, at 1600px, the legend's mark with its class set to the kinds the page shows only while a service has one (issue, outage, maintenance) and, at 390px, the toggle's glyph opened (`active`). Every mark read as what its picture draws (`image`) |
+| `releases` | https://developer.apple.com/news/releases/ | Apple Developer's releases list, read 2026-10-23: an entry (its picture's column and the picture, its title and the link around it, hovered, its date, its text and a link in it, hovered, the share buttons), the rule over the next entry, the RSS link |
 
 Each is read at 1600, 1200, 900 and 390px wide (one width inside each of apple.com's bands) unless its row names its own, `breakpoints` at the boundaries, the Newsroom's at both (and 1069/1068, 735/734).
 
@@ -193,6 +195,22 @@ Typed into (`search-typed:*`, read 2026-10-21 with the owner's leave to type on 
 
 - Apple Support's article is white (black), its text DocC's; its title 48/52 at 600 (40/44 at 900px, 32/36 at 390px); its small note 14/20 in `rgb(110, 110, 115)` (`rgb(134, 134, 139)`). Its table: collapsed, each cell 14px in and top-aligned at 17/25 (the header's at 600), a 1px `rgb(221, 221, 221)` rule under each, the same rule in the dark; at 390px the 490px table moves sideways inside its 341px wrapper (`overflow-x: auto`).
 
+**System Status and the releases list** (`system-status*:*`, `releases:*`, read 2026-10-23 in Chromium 151, light only, for crashcart's board and its releases, at the owner's ask: 「淺色，但找更多apple 網站」).
+
+- System Status is white, its text `rgb(51, 51, 51)` at 17/26; its title 40/42 at 500 (31/34 at 390px). The legend at 14/21 in `rgb(89, 88, 88)`, each mark 5px before its word. The services' table, two columns of 490px, collapsed: each cell 5px by 10px in, top-aligned, 14/21 in `rgb(51, 51, 51)`, a 1px `rgb(211, 211, 211)` rule above and below it, a row 32px; a service's mark 16px, 3px down and 10px before its name; its link out a 13px glyph in `#0070c9`. Under it the links and the date at 14/21, a link `rgb(0, 112, 201)`, underlined hovered, the date `rgb(89, 88, 88)` (`rgb(102, 102, 102)` at 390px). From 900px down the legend and the table give way to one line for every service: its mark, a button at 17/26 (inside a heading at 600), and a 20px toggle glyph (a white circle edged `#1b8cca` over `#bfbfbf` strokes).
+- Its marks are pictures, each a shape and a color, so a color never stands alone:
+
+| kind | shape | fill | box |
+| --- | --- | --- | --- |
+| available (and a resolved event's) | circle | `#28c940` | 16px |
+| issue | a path: a diamond | `#fee032` | 21px |
+| outage | a path: a triangle | `#f1271a` | 19 by 18px |
+| maintenance | a path: a square | `#b8b8b8` | 16px |
+
+  The fills, boxes and the circle are the reading; the other shapes were seen in a picture of the four (taken in a scratch run, not kept).
+
+- The releases list is white, its text `rgb(29, 29, 31)` at 17/25. An entry: its picture's column 245px (183.5px at 900px, above the text at 390px) holding a 128px picture 51px down; its title in SF Pro Display 28/35 at 500, `rgb(51, 51, 51)`, the link around it `rgb(0, 136, 204)` and underlined hovered; its date 14.875/21.875 in `rgb(102, 102, 102)`, 7.4px under the title; a link in its text `rgb(0, 102, 204)`, underlined hovered; its share buttons 25px glyphs in `rgb(102, 102, 102)`. Each entry after the first sits under a 1px `rgb(214, 214, 214)` rule, its title 51px below it (no rule at 390px).
+
 ## Running it
 
 ```sh
@@ -214,5 +232,6 @@ What the harness had to learn, each a reading that was wrong before it:
 - The iPhone page's gallery marks its current item once its script has run: read with no `wait`, it had none (`tap-iphone`).
 - apple.com's flyouts open on the pointer's own mouseover: a pointer moved onto a link in one jump opens none, two steps or more do (`hover` moves it in twelve); the Newsroom's nav opens none at all (`globalnav-submenus-disabled`), so the dark flyout is read on iPhone 18 Pro's page.
 - The still style that holds a forced state cancels the page's animations, and taking it off starts them again from their first frame: the search's heading and links, read after a forced state, were 4px up and transparent (their fill-mode `both`), so its spec forces states last.
+- A mark the page draws as a picture (a data: SVG background) is read as what it draws (`image`: its viewBox, each shape's fill and stroke), so a result holds the mark's colors, not the picture, the page's asset (System Status's).
 
 Not measured: what a tap leaves on apple.com on iOS (WebDriver's taps do not tap there, `../popover/`; XCUITest's, which do, `../tap/`, read none of its pages), the checkout (its bag refused to a headless browser), the bag's flyout, and every page in Safari.

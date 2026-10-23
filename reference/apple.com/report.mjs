@@ -34,7 +34,8 @@ for (const p of probes) {
       if (!v) return 'null';
       if (k.startsWith('box.')) return String(+v.box[k.slice(4)].toFixed(3));
       if (k.startsWith(':')) { const [s, prop] = k.slice(1).split(' '); return v.states?.[s]?.[prop] ?? '-'; }
-      return v.styles[k];
+      // a picture read as what it draws (`image`) prints as that
+      return typeof v.styles[k] === 'object' ? JSON.stringify(v.styles[k]) : v.styles[k];
     });
     const same = vals.every(v => v === vals[0]);
     console.log(`  ${k.padEnd(28)} ${same ? `all ${vals[0]}` : widths.map((w, i) => `${w}:${vals[i]}`).join('  ')}`);

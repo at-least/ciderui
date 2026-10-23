@@ -1,0 +1,1074 @@
+{
+ "url": "https://developer.apple.com/system-status/",
+ "finalUrl": "https://developer.apple.com/system-status/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-23T00:28:49.701Z",
+ "widths": {
+  "390": {
+   "page": {
+    "html": "<body class=\"dmf theme-light\" data-color-scheme=\"light\">\n\n\t<script>\n\t// Execute immediately to avoid UI flash\n\t(function () {\n\t\t// Prevent React dev mode from running this multiple times\n\t\tif (window.__didRunColorThemeScript) {\n\t\t\treturn;\n\t",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.001px",
+     "font-weight": "400",
+     "letter-spacing": "-0.357px",
+     "color": "rgb(51, 51, 51)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "title": {
+    "html": "<h1 class=\"section-headline\">System Status</h1>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "31px",
+     "line-height": "34.0079px",
+     "font-weight": "500",
+     "letter-spacing": "0.341px",
+     "color": "rgb(51, 51, 51)",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 34
+    }
+   },
+   "links": {
+    "html": "<p class=\"link-copy\"><!-- react-text: 1132 -->Looking for statuses of other Apple services and stores?<!-- /react-text --><!-- react-text: 1133 --> <!-- /react-text --><a href=\"https://www.apple.com/support/systemstatus/\"><span class=\"a11y\"",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(102, 102, 102)",
+     "margin-top": "0px"
+    }
+   },
+   "links.link": {
+    "html": "<a href=\"https://www.apple.com/support/systemstatus/\"><span class=\"a11y\">Status of other Apple services and stores -</span><span>Find them here</span></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(0, 112, 201)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 112, 201)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "21px",
+      "font-weight": "400",
+      "letter-spacing": "-0.14px",
+      "color": "rgb(0, 112, 201)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 112, 201)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "date": {
+    "html": "<p class=\"date-copy\">Last updated today, 8:28 AM Taiwan Standard Time.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(102, 102, 102)",
+     "margin-top": "10.5px"
+    }
+   },
+   "all": {
+    "html": "<div class=\"light-container\"><div class=\"light-content light-image\"><div class=\"light-available\"></div></div><div class=\"light-content light-name\"><h2><button id=\"lights-button-available\" aria-expanded=\"false\" aria-controls=\"lights-events-s",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "table",
+     "width": "331.25px"
+    },
+    "box": {
+     "width": 331.25,
+     "height": 26
+    }
+   },
+   "all.mark": {
+    "html": "<div class=\"light-available\"></div>",
+    "styles": {
+     "width": "16px",
+     "height": "16px",
+     "margin-right": "10px",
+     "position": "relative",
+     "top": "3px",
+     "left": "0px",
+     "vertical-align": "baseline",
+     "display": "block",
+     "background-size": "auto",
+     "background-repeat": "no-repeat",
+     "background-image": {
+      "viewBox": "0 0 16 16",
+      "shapes": [
+       {
+        "shape": "circle",
+        "fill": "#28c940",
+        "stroke": "none"
+       }
+      ]
+     }
+    },
+    "box": {
+     "width": 16,
+     "height": 16
+    }
+   },
+   "all.words": {
+    "html": "<h2><button id=\"lights-button-available\" aria-expanded=\"false\" aria-controls=\"lights-events-small-available\">All services are operating normally.</button></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 267.40625,
+     "height": 26
+    }
+   },
+   "all.button": {
+    "html": "<button id=\"lights-button-available\" aria-expanded=\"false\" aria-controls=\"lights-events-small-available\">All services are operating normally.</button>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.001px",
+     "font-weight": "400",
+     "letter-spacing": "-0.357px",
+     "color": "rgb(51, 51, 51)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "cursor": "pointer",
+     "text-align": "left"
+    },
+    "box": {
+     "width": 267.40625,
+     "height": 26
+    }
+   },
+   "all.toggle": {
+    "html": "<div class=\"light-toggle-icon\" id=\"lights-toggle-available\"></div>",
+    "styles": {
+     "width": "20px",
+     "height": "21px",
+     "margin-right": "0px",
+     "position": "relative",
+     "top": "3px",
+     "left": "0px",
+     "vertical-align": "baseline",
+     "display": "block",
+     "background-size": "21px 20px",
+     "background-repeat": "no-repeat",
+     "background-image": {
+      "viewBox": "-2 -2 25 24",
+      "shapes": [
+       {
+        "shape": "ellipse",
+        "fill": "white",
+        "stroke": "none"
+       },
+       {
+        "shape": "ellipse",
+        "fill": "none",
+        "stroke": "#1b8cca"
+       },
+       {
+        "shape": "rect",
+        "fill": "#bfbfbf",
+        "stroke": "none"
+       },
+       {
+        "shape": "rect",
+        "fill": "none",
+        "stroke": "#1b8cca"
+       },
+       {
+        "shape": "rect",
+        "fill": "#bfbfbf",
+        "stroke": "none"
+       },
+       {
+        "shape": "rect",
+        "fill": "none",
+        "stroke": "#1b8cca"
+       }
+      ]
+     }
+    },
+    "box": {
+     "width": 20,
+     "height": 21
+    }
+   }
+  },
+  "900": {
+   "page": {
+    "html": "<body class=\"dmf theme-light\" data-color-scheme=\"light\">\n\n\t<script>\n\t// Execute immediately to avoid UI flash\n\t(function () {\n\t\t// Prevent React dev mode from running this multiple times\n\t\tif (window.__didRunColorThemeScript) {\n\t\t\treturn;\n\t",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.001px",
+     "font-weight": "400",
+     "letter-spacing": "-0.357px",
+     "color": "rgb(51, 51, 51)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "title": {
+    "html": "<h1 class=\"section-headline\">System Status</h1>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "42px",
+     "font-weight": "500",
+     "letter-spacing": "0.32px",
+     "color": "rgb(51, 51, 51)",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 692,
+     "height": 42
+    }
+   },
+   "links": {
+    "html": "<p class=\"link-copy\"><!-- react-text: 1132 -->Looking for statuses of other Apple services and stores?<!-- /react-text --><!-- react-text: 1133 --> <!-- /react-text --><a href=\"https://www.apple.com/support/systemstatus/\"><span class=\"a11y\"",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "0px"
+    }
+   },
+   "links.link": {
+    "html": "<a href=\"https://www.apple.com/support/systemstatus/\"><span class=\"a11y\">Status of other Apple services and stores -</span><span>Find them here</span></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(0, 112, 201)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 112, 201)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "21px",
+      "font-weight": "400",
+      "letter-spacing": "-0.14px",
+      "color": "rgb(0, 112, 201)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 112, 201)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "date": {
+    "html": "<p class=\"date-copy\">Last updated today, 8:28 AM Taiwan Standard Time.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(89, 88, 88)",
+     "margin-top": "10.5px"
+    }
+   },
+   "all": {
+    "html": "<div class=\"light-container\"><div class=\"light-content light-image\"><div class=\"light-available\"></div></div><div class=\"light-content light-name\"><h2><button id=\"lights-button-available\" aria-expanded=\"false\" aria-controls=\"lights-events-s",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "table",
+     "width": "682px"
+    },
+    "box": {
+     "width": 682,
+     "height": 26
+    }
+   },
+   "all.mark": {
+    "html": "<div class=\"light-available\"></div>",
+    "styles": {
+     "width": "16px",
+     "height": "16px",
+     "margin-right": "10px",
+     "position": "relative",
+     "top": "3px",
+     "left": "0px",
+     "vertical-align": "baseline",
+     "display": "block",
+     "background-size": "auto",
+     "background-repeat": "no-repeat",
+     "background-image": {
+      "viewBox": "0 0 16 16",
+      "shapes": [
+       {
+        "shape": "circle",
+        "fill": "#28c940",
+        "stroke": "none"
+       }
+      ]
+     }
+    },
+    "box": {
+     "width": 16,
+     "height": 16
+    }
+   },
+   "all.words": {
+    "html": "<h2><button id=\"lights-button-available\" aria-expanded=\"false\" aria-controls=\"lights-events-small-available\">All services are operating normally.</button></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 267.40625,
+     "height": 26
+    }
+   },
+   "all.button": {
+    "html": "<button id=\"lights-button-available\" aria-expanded=\"false\" aria-controls=\"lights-events-small-available\">All services are operating normally.</button>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.001px",
+     "font-weight": "400",
+     "letter-spacing": "-0.357px",
+     "color": "rgb(51, 51, 51)",
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "cursor": "pointer",
+     "text-align": "left"
+    },
+    "box": {
+     "width": 267.40625,
+     "height": 26
+    }
+   },
+   "all.toggle": {
+    "html": "<div class=\"light-toggle-icon\" id=\"lights-toggle-available\"></div>",
+    "styles": {
+     "width": "20px",
+     "height": "21px",
+     "margin-right": "0px",
+     "position": "relative",
+     "top": "3px",
+     "left": "0px",
+     "vertical-align": "baseline",
+     "display": "block",
+     "background-size": "21px 20px",
+     "background-repeat": "no-repeat",
+     "background-image": {
+      "viewBox": "-2 -2 25 24",
+      "shapes": [
+       {
+        "shape": "ellipse",
+        "fill": "white",
+        "stroke": "none"
+       },
+       {
+        "shape": "ellipse",
+        "fill": "none",
+        "stroke": "#1b8cca"
+       },
+       {
+        "shape": "rect",
+        "fill": "#bfbfbf",
+        "stroke": "none"
+       },
+       {
+        "shape": "rect",
+        "fill": "none",
+        "stroke": "#1b8cca"
+       },
+       {
+        "shape": "rect",
+        "fill": "#bfbfbf",
+        "stroke": "none"
+       },
+       {
+        "shape": "rect",
+        "fill": "none",
+        "stroke": "#1b8cca"
+       }
+      ]
+     }
+    },
+    "box": {
+     "width": 20,
+     "height": 21
+    }
+   }
+  },
+  "1200": {
+   "page": {
+    "html": "<body class=\"dmf theme-light\" data-color-scheme=\"light\">\n\n\t<script>\n\t// Execute immediately to avoid UI flash\n\t(function () {\n\t\t// Prevent React dev mode from running this multiple times\n\t\tif (window.__didRunColorThemeScript) {\n\t\t\treturn;\n\t",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.001px",
+     "font-weight": "400",
+     "letter-spacing": "-0.357px",
+     "color": "rgb(51, 51, 51)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "title": {
+    "html": "<h1 class=\"section-headline\">System Status</h1>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "41.6668px",
+     "font-weight": "500",
+     "letter-spacing": "0.24px",
+     "color": "rgb(51, 51, 51)",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 41.65625
+    }
+   },
+   "legend": {
+    "html": "<section class=\"section-legend\" role=\"group\" aria-label=\"legend\"><ul class=\"light-content light-image\"><li><div class=\"light-available\"></div><span role=\"text\"><span class=\"a11y\"><!-- react-text: 20 -->Green Circle:<!-- /react-text --><!-- ",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(89, 88, 88)",
+     "margin-top": "0px",
+     "margin-bottom": "14px"
+    }
+   },
+   "legend.item": {
+    "html": "<li><div class=\"light-available\"></div><span role=\"text\"><span class=\"a11y\"><!-- react-text: 20 -->Green Circle:<!-- /react-text --><!-- react-text: 21 --> <!-- /react-text --></span><!-- react-text: 22 -->Available<!-- /react-text --></spa",
+    "styles": {
+     "display": "inline-block",
+     "margin-right": "0px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 78.125,
+     "height": 21
+    }
+   },
+   "legend.mark": {
+    "html": "<div class=\"light-available\"></div>",
+    "styles": {
+     "width": "16px",
+     "height": "16px",
+     "margin-right": "5px",
+     "position": "relative",
+     "top": "0px",
+     "left": "0px",
+     "vertical-align": "middle",
+     "display": "inline-block",
+     "background-size": "16px 16px",
+     "background-repeat": "no-repeat",
+     "background-image": {
+      "viewBox": "0 0 16 16",
+      "shapes": [
+       {
+        "shape": "circle",
+        "fill": "#28c940",
+        "stroke": "none"
+       }
+      ]
+     }
+    },
+    "box": {
+     "width": 16,
+     "height": 16
+    }
+   },
+   "legend.word": {
+    "html": "<span role=\"text\"><span class=\"a11y\"><!-- react-text: 20 -->Green Circle:<!-- /react-text --><!-- react-text: 21 --> <!-- /react-text --></span><!-- react-text: 22 -->Available<!-- /react-text --></span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(89, 88, 88)"
+    }
+   },
+   "table": {
+    "html": "<table id=\"ssp-lights-table\" role=\"presentation\"><tbody><tr><td id=\"info-tooltip-wrapper-0\" class=\"info-tooltip-wrapper\"><div class=\"light-container\"><div class=\"light-content light-image\"><div class=\"light-available\"></div></div><div class",
+    "styles": {
+     "border-collapse": "collapse",
+     "border-spacing": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 833
+    }
+   },
+   "row": {
+    "html": "<tr><td id=\"info-tooltip-wrapper-0\" class=\"info-tooltip-wrapper\"><div class=\"light-container\"><div class=\"light-content light-image\"><div class=\"light-available\"></div></div><div class=\"light-content light-name\"><span role=\"text\"><!-- react",
+    "styles": {
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)"
+    },
+    "box": {
+     "width": 980,
+     "height": 32
+    }
+   },
+   "cell": {
+    "html": "<td id=\"info-tooltip-wrapper-0\" class=\"info-tooltip-wrapper\"><div class=\"light-container\"><div class=\"light-content light-image\"><div class=\"light-available\"></div></div><div class=\"light-content light-name\"><span role=\"text\"><!-- react-tex",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(51, 51, 51)",
+     "padding-top": "5px",
+     "padding-right": "10px",
+     "padding-bottom": "5px",
+     "padding-left": "10px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(211, 211, 211)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(211, 211, 211)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "vertical-align": "top",
+     "text-align": "left"
+    },
+    "box": {
+     "width": 490,
+     "height": 32
+    }
+   },
+   "cell.mark": {
+    "html": "<div class=\"light-available\"></div>",
+    "styles": {
+     "width": "16px",
+     "height": "16px",
+     "margin-right": "10px",
+     "position": "relative",
+     "top": "3px",
+     "left": "0px",
+     "vertical-align": "baseline",
+     "display": "block",
+     "background-size": "auto",
+     "background-repeat": "no-repeat",
+     "background-image": {
+      "viewBox": "0 0 16 16",
+      "shapes": [
+       {
+        "shape": "circle",
+        "fill": "#28c940",
+        "stroke": "none"
+       }
+      ]
+     }
+    },
+    "box": {
+     "width": 16,
+     "height": 16
+    }
+   },
+   "cell.name": {
+    "html": "<span role=\"text\"><!-- react-text: 33 -->Account<!-- /react-text --><!-- react-text: 34 --> <!-- /react-text --><span class=\"a11y\">: available</span></span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(51, 51, 51)"
+    }
+   },
+   "cell.link": {
+    "html": "<a class=\"light-url-icon\" href=\"https://developer.apple.com/account/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"a11y\"><!-- react-text: 39 -->Account<!-- /react-text --><!-- react-text: 40 --> - (Opens in new window)<!-- /react-",
+    "styles": {
+     "width": "13px",
+     "height": "13px",
+     "display": "block",
+     "margin-left": "0px",
+     "background-size": "13px 13px",
+     "background-image": {
+      "viewBox": "711 90 18 18",
+      "shapes": [
+       {
+        "shape": "rect",
+        "fill": "white",
+        "stroke": "none"
+       },
+       {
+        "shape": "path",
+        "fill": "#0070c9",
+        "stroke": "none"
+       },
+       {
+        "shape": "path",
+        "fill": "#0070c9",
+        "stroke": "none"
+       }
+      ]
+     }
+    },
+    "box": {
+     "width": 13,
+     "height": 13
+    }
+   },
+   "links": {
+    "html": "<p class=\"link-copy\"><!-- react-text: 738 -->Looking for statuses of other Apple services and stores?<!-- /react-text --><!-- react-text: 739 --> <!-- /react-text --><a href=\"https://www.apple.com/support/systemstatus/\"><span class=\"a11y\">S",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "0px"
+    }
+   },
+   "links.link": {
+    "html": "<a href=\"https://www.apple.com/support/systemstatus/\"><span class=\"a11y\">Status of other Apple services and stores -</span><span>Find them here</span></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(0, 112, 201)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 112, 201)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "21px",
+      "font-weight": "400",
+      "letter-spacing": "-0.14px",
+      "color": "rgb(0, 112, 201)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 112, 201)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "date": {
+    "html": "<p class=\"date-copy\">Last updated today, 8:28 AM Taiwan Standard Time.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(89, 88, 88)",
+     "margin-top": "10.5px"
+    }
+   }
+  },
+  "1600": {
+   "page": {
+    "html": "<body class=\"dmf theme-light\" data-color-scheme=\"light\">\n\n\t<script>\n\t// Execute immediately to avoid UI flash\n\t(function () {\n\t\t// Prevent React dev mode from running this multiple times\n\t\tif (window.__didRunColorThemeScript) {\n\t\t\treturn;\n\t",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "26.001px",
+     "font-weight": "400",
+     "letter-spacing": "-0.357px",
+     "color": "rgb(51, 51, 51)",
+     "background-color": "rgb(255, 255, 255)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "none",
+     "text-rendering": "auto"
+    }
+   },
+   "title": {
+    "html": "<h1 class=\"section-headline\">System Status</h1>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "41.6668px",
+     "font-weight": "500",
+     "letter-spacing": "0.24px",
+     "color": "rgb(51, 51, 51)",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 41.65625
+    }
+   },
+   "legend": {
+    "html": "<section class=\"section-legend\" role=\"group\" aria-label=\"legend\"><ul class=\"light-content light-image\"><li><div class=\"light-available\"></div><span role=\"text\"><span class=\"a11y\"><!-- react-text: 20 -->Green Circle:<!-- /react-text --><!-- ",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(89, 88, 88)",
+     "margin-top": "0px",
+     "margin-bottom": "14px"
+    }
+   },
+   "legend.item": {
+    "html": "<li><div class=\"light-available\"></div><span role=\"text\"><span class=\"a11y\"><!-- react-text: 20 -->Green Circle:<!-- /react-text --><!-- react-text: 21 --> <!-- /react-text --></span><!-- react-text: 22 -->Available<!-- /react-text --></spa",
+    "styles": {
+     "display": "inline-block",
+     "margin-right": "0px",
+     "padding-left": "0px",
+     "padding-right": "0px"
+    },
+    "box": {
+     "width": 78.125,
+     "height": 21
+    }
+   },
+   "legend.mark": {
+    "html": "<div class=\"light-available\"></div>",
+    "styles": {
+     "width": "16px",
+     "height": "16px",
+     "margin-right": "5px",
+     "position": "relative",
+     "top": "0px",
+     "left": "0px",
+     "vertical-align": "middle",
+     "display": "inline-block",
+     "background-size": "16px 16px",
+     "background-repeat": "no-repeat",
+     "background-image": {
+      "viewBox": "0 0 16 16",
+      "shapes": [
+       {
+        "shape": "circle",
+        "fill": "#28c940",
+        "stroke": "none"
+       }
+      ]
+     }
+    },
+    "box": {
+     "width": 16,
+     "height": 16
+    }
+   },
+   "legend.word": {
+    "html": "<span role=\"text\"><span class=\"a11y\"><!-- react-text: 20 -->Green Circle:<!-- /react-text --><!-- react-text: 21 --> <!-- /react-text --></span><!-- react-text: 22 -->Available<!-- /react-text --></span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(89, 88, 88)"
+    }
+   },
+   "table": {
+    "html": "<table id=\"ssp-lights-table\" role=\"presentation\"><tbody><tr><td id=\"info-tooltip-wrapper-0\" class=\"info-tooltip-wrapper\"><div class=\"light-container\"><div class=\"light-content light-image\"><div class=\"light-available\"></div></div><div class",
+    "styles": {
+     "border-collapse": "collapse",
+     "border-spacing": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 833
+    }
+   },
+   "row": {
+    "html": "<tr><td id=\"info-tooltip-wrapper-0\" class=\"info-tooltip-wrapper\"><div class=\"light-container\"><div class=\"light-content light-image\"><div class=\"light-available\"></div></div><div class=\"light-content light-name\"><span role=\"text\"><!-- react",
+    "styles": {
+     "background-color": "rgba(0, 0, 0, 0)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)"
+    },
+    "box": {
+     "width": 980,
+     "height": 32
+    }
+   },
+   "cell": {
+    "html": "<td id=\"info-tooltip-wrapper-0\" class=\"info-tooltip-wrapper\"><div class=\"light-container\"><div class=\"light-content light-image\"><div class=\"light-available\"></div></div><div class=\"light-content light-name\"><span role=\"text\"><!-- react-tex",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(51, 51, 51)",
+     "padding-top": "5px",
+     "padding-right": "10px",
+     "padding-bottom": "5px",
+     "padding-left": "10px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(211, 211, 211)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(211, 211, 211)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "vertical-align": "top",
+     "text-align": "left"
+    },
+    "box": {
+     "width": 490,
+     "height": 32
+    }
+   },
+   "cell.mark": {
+    "html": "<div class=\"light-available\"></div>",
+    "styles": {
+     "width": "16px",
+     "height": "16px",
+     "margin-right": "10px",
+     "position": "relative",
+     "top": "3px",
+     "left": "0px",
+     "vertical-align": "baseline",
+     "display": "block",
+     "background-size": "auto",
+     "background-repeat": "no-repeat",
+     "background-image": {
+      "viewBox": "0 0 16 16",
+      "shapes": [
+       {
+        "shape": "circle",
+        "fill": "#28c940",
+        "stroke": "none"
+       }
+      ]
+     }
+    },
+    "box": {
+     "width": 16,
+     "height": 16
+    }
+   },
+   "cell.name": {
+    "html": "<span role=\"text\"><!-- react-text: 33 -->Account<!-- /react-text --><!-- react-text: 34 --> <!-- /react-text --><span class=\"a11y\">: available</span></span>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(51, 51, 51)"
+    }
+   },
+   "cell.link": {
+    "html": "<a class=\"light-url-icon\" href=\"https://developer.apple.com/account/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"a11y\"><!-- react-text: 39 -->Account<!-- /react-text --><!-- react-text: 40 --> - (Opens in new window)<!-- /react-",
+    "styles": {
+     "width": "13px",
+     "height": "13px",
+     "display": "block",
+     "margin-left": "0px",
+     "background-size": "13px 13px",
+     "background-image": {
+      "viewBox": "711 90 18 18",
+      "shapes": [
+       {
+        "shape": "rect",
+        "fill": "white",
+        "stroke": "none"
+       },
+       {
+        "shape": "path",
+        "fill": "#0070c9",
+        "stroke": "none"
+       },
+       {
+        "shape": "path",
+        "fill": "#0070c9",
+        "stroke": "none"
+       }
+      ]
+     }
+    },
+    "box": {
+     "width": 13,
+     "height": 13
+    }
+   },
+   "links": {
+    "html": "<p class=\"link-copy\"><!-- react-text: 738 -->Looking for statuses of other Apple services and stores?<!-- /react-text --><!-- react-text: 739 --> <!-- /react-text --><a href=\"https://www.apple.com/support/systemstatus/\"><span class=\"a11y\">S",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "0px"
+    }
+   },
+   "links.link": {
+    "html": "<a href=\"https://www.apple.com/support/systemstatus/\"><span class=\"a11y\">Status of other Apple services and stores -</span><span>Find them here</span></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(0, 112, 201)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 112, 201)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "21px",
+      "font-weight": "400",
+      "letter-spacing": "-0.14px",
+      "color": "rgb(0, 112, 201)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 112, 201)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "date": {
+    "html": "<p class=\"date-copy\">Last updated today, 8:28 AM Taiwan Standard Time.</p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "-0.14px",
+     "color": "rgb(89, 88, 88)",
+     "margin-top": "10.5px"
+    }
+   }
+  }
+ }
+}

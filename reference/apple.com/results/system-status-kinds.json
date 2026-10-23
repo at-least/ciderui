@@ -1,0 +1,153 @@
+{
+ "url": "https://developer.apple.com/system-status/",
+ "finalUrl": "https://developer.apple.com/system-status/",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-10-23T00:28:57.678Z",
+ "widths": {
+  "390": {
+   "toggle.active": {
+    "html": "<div class=\"light-toggle-icon active\" id=\"lights-toggle-available\"></div>",
+    "styles": {
+     "width": "20px",
+     "height": "21px",
+     "margin-right": "0px",
+     "position": "relative",
+     "top": "3px",
+     "left": "0px",
+     "vertical-align": "baseline",
+     "display": "block",
+     "background-size": "21px 20px",
+     "background-repeat": "no-repeat",
+     "background-image": {
+      "viewBox": "-2 -2 25 24",
+      "shapes": [
+       {
+        "shape": "circle",
+        "fill": "white",
+        "stroke": "none"
+       },
+       {
+        "shape": "circle",
+        "fill": "none",
+        "stroke": "#1b8cca"
+       },
+       {
+        "shape": "path",
+        "fill": "#bfbfbf",
+        "stroke": "none"
+       },
+       {
+        "shape": "path",
+        "fill": "none",
+        "stroke": "#1b8cca"
+       },
+       {
+        "shape": "path",
+        "fill": "#bfbfbf",
+        "stroke": "none"
+       },
+       {
+        "shape": "path",
+        "fill": "none",
+        "stroke": "#1b8cca"
+       }
+      ]
+     }
+    },
+    "box": {
+     "width": 20,
+     "height": 21
+    }
+   }
+  },
+  "1600": {
+   "issue": {
+    "html": "<div class=\"light-issue\"></div>",
+    "styles": {
+     "width": "21px",
+     "height": "21px",
+     "margin-right": "5px",
+     "position": "static",
+     "top": "auto",
+     "left": "auto",
+     "vertical-align": "middle",
+     "display": "inline-block",
+     "background-size": "21px 21px",
+     "background-repeat": "no-repeat",
+     "background-image": {
+      "viewBox": "0 0 23 23",
+      "shapes": [
+       {
+        "shape": "path",
+        "fill": "#fee032",
+        "stroke": "none"
+       }
+      ]
+     }
+    },
+    "box": {
+     "width": 21,
+     "height": 21
+    }
+   },
+   "outage": {
+    "html": "<div class=\"light-outage\"></div>",
+    "styles": {
+     "width": "19px",
+     "height": "18px",
+     "margin-right": "5px",
+     "position": "relative",
+     "top": "0px",
+     "left": "0px",
+     "vertical-align": "middle",
+     "display": "inline-block",
+     "background-size": "19px 18px",
+     "background-repeat": "no-repeat",
+     "background-image": {
+      "viewBox": "-2 -1 22 20",
+      "shapes": [
+       {
+        "shape": "path",
+        "fill": "#f1271a",
+        "stroke": "none"
+       }
+      ]
+     }
+    },
+    "box": {
+     "width": 19,
+     "height": 18
+    }
+   },
+   "maintenance": {
+    "html": "<div class=\"light-maintenance\"></div>",
+    "styles": {
+     "width": "16px",
+     "height": "16px",
+     "margin-right": "5px",
+     "position": "relative",
+     "top": "0px",
+     "left": "0px",
+     "vertical-align": "middle",
+     "display": "inline-block",
+     "background-size": "16px 16px",
+     "background-repeat": "no-repeat",
+     "background-image": {
+      "viewBox": "0 0 512 512",
+      "shapes": [
+       {
+        "shape": "path",
+        "fill": "#b8b8b8",
+        "stroke": "none"
+       }
+      ]
+     }
+    },
+    "box": {
+     "width": 16,
+     "height": 16
+    }
+   }
+  }
+ }
+}
