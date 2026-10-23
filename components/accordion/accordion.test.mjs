@@ -52,7 +52,7 @@ export const cases = [
   {
     // the bag's structure: the compact FAQ as the large question's answer
     name: 'nested',
-    html: ex('large').replace('<details class="cui-accordion-item">', '<details class="cui-accordion-item" open>').replace('<p>Answers to the most asked questions.</p>', ex('accordion')),
+    html: ex('large').replace('<details class="cui-accordion-item">', '<details class="cui-accordion-item" open>').replace('<p>What people ask most, answered.</p>', ex('accordion')),
     checks: [
       { target: `.cui-accordion[data-size="lg"] > ${ITEM} > ${Q}`, props: SIZE, apple: ['bag-accordion', 'accordion.title'] },
       { target: `.cui-accordion:not([data-size]) > ${CLOSED} > ${Q}`, props: ['padding-top', 'padding-bottom'], apple: ['bag-accordion', 'compact.button'] },

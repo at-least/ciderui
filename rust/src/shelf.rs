@@ -14,12 +14,12 @@ use crate::{Class, icon};
 ///
 /// let none = ();
 /// let html = rsx! {
-///     <Shelf id="latest" headline="The latest." subhead="Take a look at what's new." paddles=false class="">
+///     <Shelf id="latest" headline="New arrivals." subhead="See what just came in." paddles=false class="">
 ///         <li><Card dark=false href="/phone/" media=none eyebrow="" tag=false headline="Cider Phone" description="" price="From $799" class="" /></li>
 ///     </Shelf>
 /// }
 /// .render();
-/// assert!(html.as_inner().starts_with(r#"<div class="cui-shelf"><div class="cui-shelf-header"><h2 class="cui-shelf-headline">The latest.</h2> <span class="cui-shelf-subhead">"#));
+/// assert!(html.as_inner().starts_with(r#"<div class="cui-shelf"><div class="cui-shelf-header"><h2 class="cui-shelf-headline">New arrivals.</h2> <span class="cui-shelf-subhead">"#));
 /// ```
 pub struct Shelf<'a, R: Renderable> {
     /// The scroller's id, the paddles' `aria-controls`. Required: an empty
@@ -81,7 +81,7 @@ mod tests {
         ] {
             let none = ();
             let html = rsx! {
-                <Shelf id="shelf" headline="The latest." subhead="Take a look at what's new." paddles=(paddles) class="">
+                <Shelf id="shelf" headline="New arrivals." subhead="See what just came in." paddles=(paddles) class="">
                     <li><Card dark=false href="/phone/" media=none eyebrow="NEW" tag=true headline="Cider Phone 3" description="" price="From $1199" class="" /></li>
                     <li><Card dark=false href="/phone-fold/" media=none eyebrow="NEW" tag=true headline="Cider Phone Fold" description="" price="From $899" class="" /></li>
                     <li><Card dark=false href="/watch/" media=none eyebrow="" tag=false headline="Cider Watch" description="" price="From $399" class="" /></li>

@@ -7,7 +7,7 @@ category = "Page"
 image = "pictures/stat.png"
 +++
 
-A number on a product page, between two captions in the secondary text: “Up to / 25 more hours / of video playback”.
+A number on a product page, between two captions in the secondary text: “Up to / 2 days / on a single charge”.
 
 ```css
 @import "ciderui/components/stat/stat.css";

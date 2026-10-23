@@ -18,7 +18,7 @@ use crate::icon::{CLOSE, CLOSE_SMALL};
 /// let html = rsx! {
 ///     <ModalButton modal="models" class="cui-btn">"Show more"</ModalButton>
 ///     <Modal id="models" labelledby="models-title" page=false class="">
-///         <h2 id="models-title">"Which model is right for you?"</h2>
+///         <h2 id="models-title">"Not sure which size to get?"</h2>
 ///     </Modal>
 /// }
 /// .render();
@@ -99,8 +99,8 @@ mod tests {
         let html = rsx! {
             <ModalButton modal="models" class="cui-btn">"Show more"</ModalButton>
             <Modal id="models" labelledby="models-title" page=false class="">
-                <h2 class="cui-headline" id="models-title">"Which model is right for you?"</h2>
-                <p class="cui-body">"Both have the same chip and the same cameras. The larger one has a larger display and the longest battery life."</p>
+                <h2 class="cui-headline" id="models-title">"Not sure which size to get?"</h2>
+                <p class="cui-body">"The two sizes are the same inside. The bigger one has more screen and lasts longer on a charge."</p>
             </Modal>
         }
         .render();

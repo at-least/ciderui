@@ -220,7 +220,7 @@ mod tests {
                 include_str!("../../components/field/examples/field.html"),
             ),
             (
-                rsx! { <Field id="zip" kind="text" name="zip" label="ZIP Code" autocomplete="postal-code" value="95014" error="" disabled=false prefix="" class="" /> }.render(),
+                rsx! { <Field id="zip" kind="text" name="zip" label="ZIP Code" autocomplete="postal-code" value="10001" error="" disabled=false prefix="" class="" /> }.render(),
                 include_str!("../../components/field/examples/filled.html"),
             ),
             (

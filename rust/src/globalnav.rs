@@ -23,7 +23,7 @@ const BAG_HEADING_ID: &str = "cui-globalnav-bagheading";
 /// ```
 /// use ciderui::{FlyoutGroup, NavLink};
 ///
-/// const MAC: &[FlyoutGroup] = &[FlyoutGroup { heading: "Explore Laptops", large: &[("Explore All Laptops", "/laptops")], links: &[("Compare Laptops", "/laptops/compare")] }];
+/// const MAC: &[FlyoutGroup] = &[FlyoutGroup { heading: "Laptops", large: &[("All Laptops", "/laptops")], links: &[("Compare Models", "/laptops/compare")] }];
 /// let links = [NavLink::new("Store", "/store"), NavLink::new("Laptops", "/laptops").flyout(MAC)];
 /// assert!(links[1].flyout.len() == 1);
 /// ```
@@ -77,7 +77,7 @@ pub enum Search<'a> {
     /// A button opening the search with no script: its field, focused, sent
     /// as `q` (GET) to `action`, the site's search page, its clear button
     /// shown while it holds text, and under it the
-    /// quick links, (text, href) each, under the heading Quick Links (none,
+    /// quick links, (text, href) each, under the heading Shortcuts (none,
     /// no heading); from 834px a flyout under the bar, to 833px a sheet over
     /// the window.
     Flyout {
@@ -98,13 +98,13 @@ pub enum Bag<'a> {
     /// icons ([`BagLink`]); from 834px a flyout under the bar, to 833px a
     /// sheet over the window.
     Flyout {
-        /// Its message (`Your Bag is empty.`). Required: an empty one panics.
+        /// Its message (`Nothing here yet.`). Required: an empty one panics.
         message: &'a str,
         /// The line under it: a link's text and where it goes, then the rest
-        /// of its sentence (`("Sign in", "/signin", " to see if you have any
-        /// saved items")`); `None` for none.
+        /// of its sentence (`("Sign in", "/signin", " for items you saved
+        /// earlier")`); `None` for none.
         line: Option<(&'a str, &'a str, &'a str)>,
-        /// The heading over its links (`My Profile`), which names their list.
+        /// The heading over its links (`Account`), which names their list.
         /// Required where there are links.
         heading: &'a str,
         /// Its links, in order; `&[]` for none, and no heading.
@@ -276,7 +276,7 @@ impl<L: Renderable> Renderable for GlobalNav<'_, L> {
                                     <button class="cui-globalnav-searchreset" type="reset" aria-label="Clear search">(CLEAR.class("cui-globalnav-image"))(CLEAR_COMPACT.class("cui-globalnav-image-compact"))</button>
                                 </form>
                                 @if !links.is_empty() {
-                                    <h2 class="cui-globalnav-searchheading" id=(HEADING_ID)>"Quick Links"</h2>
+                                    <h2 class="cui-globalnav-searchheading" id=(HEADING_ID)>"Shortcuts"</h2>
                                     <ul class="cui-globalnav-searchlinks" aria-labelledby=(HEADING_ID)>
                                         @for (text, href) in links {
                                             <li><a class="cui-globalnav-searchlink" href=(href)>(ARROW.class("cui-globalnav-image"))(ARROW_COMPACT.class("cui-globalnav-image-compact"))(text)</a></li>
@@ -397,7 +397,7 @@ mod tests {
         FlyoutGroup {
             heading: "Shop",
             large: &[
-                ("Shop the Latest", "/store"),
+                ("New Arrivals", "/store"),
                 ("Laptops", "/shop/laptops"),
                 ("Tablets", "/shop/tablets"),
                 ("Phones", "/shop/phones"),
@@ -405,11 +405,11 @@ mod tests {
             links: &[("Accessories", "/shop/accessories")],
         },
         FlyoutGroup {
-            heading: "Quick Links",
+            heading: "Shortcuts",
             large: &[],
             links: &[
-                ("Find a Store", "/retail"),
-                ("Order Status", "/shop/orders"),
+                ("Visit a Store", "/retail"),
+                ("Track an Order", "/shop/orders"),
                 ("Trade In", "/shop/trade-in"),
             ],
         },
@@ -417,26 +417,26 @@ mod tests {
 
     const MAC: &[FlyoutGroup] = &[
         FlyoutGroup {
-            heading: "Explore Laptops",
+            heading: "Laptops",
             large: &[
-                ("Explore All Laptops", "/laptops"),
+                ("All Laptops", "/laptops"),
                 ("Cider Book 13", "/cider-book-13"),
                 ("Cider Book 15", "/cider-book-15"),
                 ("Cider Desk", "/cider-desk"),
             ],
-            links: &[("Compare Laptops", "/laptops/compare")],
+            links: &[("Compare Models", "/laptops/compare")],
         },
         FlyoutGroup {
-            heading: "Shop Laptops",
+            heading: "Buy",
             large: &[],
             links: &[
-                ("Shop Laptops", "/shop/laptops"),
+                ("Buy a Laptop", "/shop/laptops"),
                 ("Laptop Accessories", "/shop/laptops/accessories"),
                 ("Financing", "/shop/financing"),
             ],
         },
         FlyoutGroup {
-            heading: "More from Laptops",
+            heading: "More",
             large: &[],
             links: &[
                 ("Laptop Support", "/support/laptops"),
@@ -475,12 +475,12 @@ mod tests {
         },
         BagLink {
             icons: (SAVES, SAVES_COMPACT),
-            text: "Your Saves",
+            text: "Saved Items",
             href: "/saves",
         },
         BagLink {
             icons: (ACCOUNT, ACCOUNT_COMPACT),
-            text: "Account",
+            text: "Settings",
             href: "/account",
         },
         BagLink {
@@ -491,9 +491,9 @@ mod tests {
     ];
 
     const EMPTY_BAG: Bag = Bag::Flyout {
-        message: "Your Bag is empty.",
-        line: Some(("Sign in", "/signin", " to see if you have any saved items")),
-        heading: "My Profile",
+        message: "Nothing here yet.",
+        line: Some(("Sign in", "/signin", " for items you saved earlier")),
+        heading: "Account",
         links: BAG_LINKS,
     };
 
@@ -510,7 +510,7 @@ mod tests {
     }
 
     const QUICK: &[(&str, &str)] = &[
-        ("Find a Store", "/retail"),
+        ("Visit a Store", "/retail"),
         ("Laptops", "/laptops"),
         ("Tablets", "/tablets"),
         ("Gift Cards", "/gift-cards"),

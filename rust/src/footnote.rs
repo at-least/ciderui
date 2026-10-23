@@ -8,8 +8,8 @@ use hypertext::{Buffer, prelude::*};
 /// use hypertext::prelude::*;
 /// use ciderui::Footnote;
 ///
-/// let html = rsx! { <p>"25 hours"<Footnote href="#footnote-1" mark="1" class="" /></p> }.render();
-/// assert_eq!(html.as_inner(), r##"<p>25 hours<sup class="cui-footnote"><a href="#footnote-1" aria-label="Footnote 1">1</a></sup></p>"##);
+/// let html = rsx! { <p>"A full day"<Footnote href="#footnote-1" mark="1" class="" /></p> }.render();
+/// assert_eq!(html.as_inner(), r##"<p>A full day<sup class="cui-footnote"><a href="#footnote-1" aria-label="Footnote 1">1</a></sup></p>"##);
 /// ```
 pub struct Footnote<'a> {
     /// The note's link (`#footnote-1`).
@@ -40,7 +40,7 @@ mod tests {
     #[test]
     fn renders_the_example() {
         let html = rsx! {
-            <p class="cui-body">"Up to 25 hours of video playback"<Footnote href="#footnote-1" mark="1" class="" /></p>
+            <p class="cui-body">"A full day of battery life"<Footnote href="#footnote-1" mark="1" class="" /></p>
         }
         .render();
         assert_eq!(

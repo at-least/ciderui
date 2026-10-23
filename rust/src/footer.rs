@@ -129,14 +129,15 @@ mod tests {
     #[test]
     fn renders_the_example() {
         let notes = rsx! {
-            <p>"Trade-in values vary. See "<a href="/shop/trade-in/">"example.com/shop/trade-in"</a>" for details."</p>
+            <p>"Credit for a trade-in depends on the device. Details at "<a href="/shop/trade-in/">"example.com/shop/trade-in"</a>"."</p>
         };
-        let shop = rsx! { "More ways to shop: "<a href="/retail/">"Find a store"</a>" near you." };
+        let shop =
+            rsx! { "Want to see it first? "<a href="/retail/">"Visit a store"</a>" near you." };
         let directory: &[&[FooterSection]] = &[
             &[
                 FooterSection {
                     id: "footer-shop",
-                    title: "Shop and Learn",
+                    title: "Products",
                     links: &[
                         ("Store", "/store/"),
                         ("Laptops", "/laptops/"),
@@ -153,8 +154,8 @@ mod tests {
                 id: "footer-account",
                 title: "Account",
                 links: &[
-                    ("Manage Your Account", "/account/"),
-                    ("Store Account", "/shop/account/"),
+                    ("Your Account", "/account/"),
+                    ("Order History", "/shop/account/"),
                 ],
             }],
         ];

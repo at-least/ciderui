@@ -11,10 +11,10 @@ use crate::Class;
 /// use ciderui::QuickLinks;
 ///
 /// let html = rsx! {
-///     <QuickLinks id="quicklinks" title="Quick Links" links=(&[("Find a Store", "/retail/")]) class="" />
+///     <QuickLinks id="quicklinks" title="Shortcuts" links=(&[("Visit a Store", "/retail/")]) class="" />
 /// }
 /// .render();
-/// assert!(html.as_inner().contains(r#"<li><a class="cui-btn" data-variant="secondary-neutral" href="/retail/">Find a Store</a></li>"#));
+/// assert!(html.as_inner().contains(r#"<li><a class="cui-btn" data-variant="secondary-neutral" href="/retail/">Visit a Store</a></li>"#));
 /// ```
 pub struct QuickLinks<'a> {
     /// The title's id, the nav's `aria-labelledby` (`{id}-title`).
@@ -55,12 +55,12 @@ mod tests {
     #[test]
     fn renders_the_example() {
         let links = &[
-            ("Find a Store", "/retail/"),
-            ("Order Status", "/shop/order/list"),
-            ("Shopping Help", "/shop/help"),
+            ("Visit a Store", "/retail/"),
+            ("Track an Order", "/shop/order/list"),
+            ("Help with Buying", "/shop/help"),
         ];
         let html = rsx! {
-            <QuickLinks id="quicklinks" title="Quick Links" links=(links) class="" />
+            <QuickLinks id="quicklinks" title="Shortcuts" links=(links) class="" />
         }
         .render();
         assert_eq!(

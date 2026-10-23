@@ -91,7 +91,7 @@ mod tests {
             example(include_str!("../../components/card/examples/card.html"))
         );
         let eyebrow = rsx! {
-            <Card dark=false href="/shop/specialist/" media=none eyebrow="APPLE SPECIALIST" tag=false headline="Shop one on one with a Specialist." description="" price="" class="" />
+            <Card dark=false href="/shop/specialist/" media=none eyebrow="EXPERT HELP" tag=false headline="Talk it through with an expert." description="" price="" class="" />
         }
         .render();
         assert_eq!(

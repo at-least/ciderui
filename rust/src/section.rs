@@ -83,9 +83,9 @@ impl<R: Renderable> Renderable for Section<'_, R> {
 /// use hypertext::prelude::*;
 /// use ciderui::SectionHeader;
 ///
-/// let html = rsx! { <SectionHeader headline="Get the highlights." links=(&[("Watch the film", "/film")]) class="" /> }.render();
+/// let html = rsx! { <SectionHeader headline="See it in action." links=(&[("Watch the video", "/film")]) class="" /> }.render();
 /// assert!(html.as_inner().starts_with(
-///     r#"<header class="cui-section-header"><h2 class="cui-section-headline">Get the highlights.</h2><ul class="cui-section-links"><li><a class="cui-link" data-variant="more" href="/film">"#,
+///     r#"<header class="cui-section-header"><h2 class="cui-section-headline">See it in action.</h2><ul class="cui-section-links"><li><a class="cui-link" data-variant="more" href="/film">"#,
 /// ));
 /// ```
 pub struct SectionHeader<'a> {
@@ -143,7 +143,7 @@ mod tests {
     #[test]
     fn renders_the_header_example() {
         let html = rsx! {
-            <SectionHeader headline="Get the highlights." links=(&[("Watch the film", "#film"), ("Watch the event", "#event")]) class="" />
+            <SectionHeader headline="See it in action." links=(&[("Watch the video", "#film"), ("Take the tour", "#event")]) class="" />
         }
         .render();
         assert_eq!(

@@ -12,13 +12,13 @@ use crate::{Class, icon};
 ///
 /// let html = rsx! {
 ///     <Accordion large=false class="">
-///         <AccordionItem question="When will I get my items?" open=false class="">
-///             <p>"Enter a ZIP code to see when your items arrive."</p>
+///         <AccordionItem question="How long does delivery take?" open=false class="">
+///             <p>"Add your address at checkout to see a delivery date."</p>
 ///         </AccordionItem>
 ///     </Accordion>
 /// }
 /// .render();
-/// assert!(html.as_inner().starts_with(r#"<div class="cui-accordion"><details class="cui-accordion-item"><summary class="cui-accordion-question">When will I get my items?<svg"#));
+/// assert!(html.as_inner().starts_with(r#"<div class="cui-accordion"><details class="cui-accordion-item"><summary class="cui-accordion-question">How long does delivery take?<svg"#));
 /// ```
 pub struct Accordion<'a, R: Renderable> {
     /// Whether its questions are large (`data-size="lg"`, the bag's outer one).
@@ -75,11 +75,11 @@ mod tests {
     fn renders_the_examples() {
         let accordion = rsx! {
             <Accordion large=false class="">
-                <AccordionItem question="When will I get my items?" open=true class="">
-                    <p>"Enter a ZIP code to see when your items arrive."</p>
+                <AccordionItem question="How long does delivery take?" open=true class="">
+                    <p>"Add your address at checkout to see a delivery date."</p>
                 </AccordionItem>
-                <AccordionItem question="Can I pick up my items at a Cider Store?" open=false class="">
-                    <p>"Yes. Choose a store at checkout."</p>
+                <AccordionItem question="Can I collect my order in person?" open=false class="">
+                    <p>"Yes. Pick a store when you check out."</p>
                 </AccordionItem>
             </Accordion>
         }
@@ -92,8 +92,8 @@ mod tests {
         );
         let large = rsx! {
             <Accordion large=true class="">
-                <AccordionItem question="Questions About Buying" open=false class="">
-                    <p>"Answers to the most asked questions."</p>
+                <AccordionItem question="Before You Buy" open=false class="">
+                    <p>"What people ask most, answered."</p>
                 </AccordionItem>
             </Accordion>
         }

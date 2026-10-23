@@ -105,7 +105,7 @@ mod tests {
             example(include_str!("../../components/tile/examples/tile.html"))
         );
         let hero = rsx! {
-            <Tile size=(TileSize::Large) rounded=false dark=false link=(Some(("/phone-fold/", "Cider Phone Fold"))) media=none headline="Cider Phone Fold" subhead="Two screens, one phone." callout="Available starting 10.23" class="">
+            <Tile size=(TileSize::Large) rounded=false dark=false link=(Some(("/phone-fold/", "Cider Phone Fold"))) media=none headline="Cider Phone Fold" subhead="Two screens, one phone." callout="Ships October 30" class="">
                 <a class="cui-btn" data-size="cta" href="/phone-fold/">"Learn more"</a>
                 <a class="cui-btn" data-size="cta" data-variant="secondary" href="/buy/">"Pre-order"</a>
             </Tile>

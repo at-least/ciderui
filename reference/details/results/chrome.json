@@ -1,6 +1,6 @@
 {
- "browser": "chrome 156.0.8078.48 on darwin",
- "date": "2026-10-22T05:36:19.096Z",
+ "browser": "chrome 154.0.8037.57 on linux",
+ "date": "2026-10-23T01:54:24.505Z",
  "waited": {
   "click": 0,
   "question at 1200, 1": 0,
@@ -16,9 +16,9 @@
  },
  "opening": {
   "open": true,
-  "item": 75.375,
+  "item": 70.296875,
   "answer": 61.59375,
-  "chevron": "matrix(1, 0, 0, 0.433082, 0, 0)"
+  "chevron": "matrix(1, 0, 0, 0.578603, 0, 0)"
  },
  "opened": {
   "open": true,
@@ -48,7 +48,7 @@
    "height": 20
   },
   "scale": 1,
-  "ink": 685
+  "ink": 864
  },
  "held-clip": {
   "height": "10px",
@@ -85,14 +85,14 @@
    "outline": "2px solid rgb(0, 113, 227) 3px",
    "box": {
     "left": 24,
-    "right": 98.7,
-    "top": 410.78,
+    "right": 95.84,
+    "top": 411.78,
     "bottom": 427.78
    },
-   "height": 17,
+   "height": 16,
    "scale": 1,
-   "left": 66,
-   "right": 66
+   "left": 64,
+   "right": 64
   },
   "question at 390": {
    "focused": true,
@@ -117,14 +117,14 @@
    "outline": "2px solid rgb(0, 113, 227) 3px",
    "box": {
     "left": 24,
-    "right": 98.7,
-    "top": 384.78,
+    "right": 95.84,
+    "top": 385.78,
     "bottom": 401.78
    },
-   "height": 17,
+   "height": 16,
    "scale": 1,
-   "left": 66,
-   "right": 66
+   "left": 64,
+   "right": 64
   }
  }
 }

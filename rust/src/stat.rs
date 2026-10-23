@@ -9,8 +9,8 @@ use crate::Class;
 /// use hypertext::prelude::*;
 /// use ciderui::Stat;
 ///
-/// let html = rsx! { <Stat large=false before="Up to" value="25 more hours" after="of video playback" class="" /> }.render();
-/// assert!(html.as_inner().contains(r#"<span class="cui-stat-value">25 more hours</span>"#));
+/// let html = rsx! { <Stat large=false before="Up to" value="2 days" after="on a single charge" class="" /> }.render();
+/// assert!(html.as_inner().contains(r#"<span class="cui-stat-value">2 days</span>"#));
 /// ```
 pub struct Stat<'a> {
     /// Whether it is a large one (`data-size="lg"`).
@@ -50,12 +50,12 @@ mod tests {
 
     #[test]
     fn renders_the_examples() {
-        let stat = rsx! { <Stat large=false before="Up to" value="25 more hours" after="of video playback" class="" /> }.render();
+        let stat = rsx! { <Stat large=false before="Up to" value="2 days" after="on a single charge" class="" /> }.render();
         assert_eq!(
             *stat.as_inner(),
             example(include_str!("../../components/stat/examples/stat.html"))
         );
-        let large = rsx! { <Stat large=true before="Removes up to" value="2x more" after="unwanted noise" class="" /> }.render();
+        let large = rsx! { <Stat large=true before="Charges up to" value="3x faster" after="than before" class="" /> }.render();
         assert_eq!(
             *large.as_inner(),
             example(include_str!("../../components/stat/examples/large.html"))
