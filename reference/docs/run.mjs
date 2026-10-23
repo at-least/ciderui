@@ -319,7 +319,7 @@ const menus = async (width) => {
   claim(`the local nav's menu opens below its bar at ${width}px, its frame grown to hold it`, menu.checked && menu.bottom > bar && menu.height >= menu.bottom, { bar, ...menu });
 };
 
-// a link's flyout in the global nav's frame (Mac's, the second link's). In a
+// a link's flyout in the global nav's frame (the second link's). In a
 // frame 834px wide or more: the pointer moved onto its link (with a pointer:
 // not on the simulator) shows it in the frame, the frame grown to hold it,
 // and off the frame hides it, the frame the bar's height again; its button
@@ -361,7 +361,7 @@ const flyouts = async (width) => {
       await page.move(x, y, 150);
       await page.run(wait(1200));
       record.hovered = await state();
-      claim(`the pointer on Mac's link shows its flyout in its ${closed.inner}px frame at ${width}px, the frame grown to hold it`, record.hovered.shown && !record.hovered.open && record.hovered.height >= record.hovered.bottom && record.hovered.height > closed.height, { closed, ...record });
+      claim(`the pointer on the second link shows its flyout in its ${closed.inner}px frame at ${width}px, the frame grown to hold it`, record.hovered.shown && !record.hovered.open && record.hovered.height >= record.hovered.bottom && record.hovered.height > closed.height, { closed, ...record });
       await page.move(closed.left / 2, y, 150);
       await page.run(wait(1200));
       record.left = await state();
