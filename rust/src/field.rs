@@ -181,7 +181,7 @@ impl Renderable for TextArea<'_> {
         let message = format!("{}-message", self.id);
         rsx! {
             <div class=(Class("cui-field", self.class))>
-                <div class="cui-field-box"><textarea class="cui-field-textarea" id=(self.id) name=(self.name) placeholder=" " aria-invalid="true"[!self.error.is_empty()] aria-describedby=(&message)[!self.error.is_empty()] disabled[self.disabled]>(self.value)</textarea></div>
+                <div class="cui-field-box"><textarea class="cui-field-textarea" id=(self.id) name=(self.name) placeholder=" " aria-invalid="true"[!self.error.is_empty()] aria-describedby=(&message)[!self.error.is_empty()] disabled[self.disabled]>@if self.value.starts_with('\n') { "\n" }(self.value)</textarea></div>
                 <label class="cui-field-label" for=(self.id)>(self.label)</label>
             </div>
             @if !self.error.is_empty() {
@@ -312,6 +312,17 @@ mod tests {
                 + &ALERT.render().into_inner()
                 + "Please enter a message.</p>"
         );
+    }
+
+    // the parser drops one newline after <textarea>: a text starting with one
+    // keeps it only behind a second
+    #[test]
+    fn a_textareas_first_newline_kept() {
+        let html = rsx! {
+            <TextArea id="note" name="note" label="Message" value="\nSecond line" error="" disabled=false class="" />
+        }
+        .render();
+        assert!(html.as_inner().contains(">\n\nSecond line</textarea>"));
     }
 
     #[test]
