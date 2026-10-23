@@ -23,8 +23,8 @@ const BAG_HEADING_ID: &str = "cui-globalnav-bagheading";
 /// ```
 /// use ciderui::{FlyoutGroup, NavLink};
 ///
-/// const MAC: &[FlyoutGroup] = &[FlyoutGroup { heading: "Laptops", large: &[("All Laptops", "/laptops")], links: &[("Compare Models", "/laptops/compare")] }];
-/// let links = [NavLink::new("Store", "/store"), NavLink::new("Laptops", "/laptops").flyout(MAC)];
+/// const LAPTOPS: &[FlyoutGroup] = &[FlyoutGroup { heading: "Laptops", large: &[("All Laptops", "/laptops")], links: &[("Compare Models", "/laptops/compare")] }];
+/// let links = [NavLink::new("Store", "/store"), NavLink::new("Laptops", "/laptops").flyout(LAPTOPS)];
 /// assert!(links[1].flyout.len() == 1);
 /// ```
 #[derive(Clone, Copy, Debug)]
@@ -415,7 +415,7 @@ mod tests {
         },
     ];
 
-    const MAC: &[FlyoutGroup] = &[
+    const LAPTOPS: &[FlyoutGroup] = &[
         FlyoutGroup {
             heading: "Laptops",
             large: &[
@@ -448,7 +448,7 @@ mod tests {
 
     const FLYOUTS: &[NavLink] = &[
         NavLink::new("Store", "/store").flyout(STORE),
-        NavLink::new("Laptops", "/laptops").flyout(MAC),
+        NavLink::new("Laptops", "/laptops").flyout(LAPTOPS),
         NavLink::new("Tablets", "/tablets"),
         NavLink::new("Support", "/support"),
     ];

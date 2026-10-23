@@ -97,14 +97,14 @@ const FLYOUT_NAV = ex('flyout');
 const LOCALNAV = examples(new URL('../localnav/', import.meta.url))('localnav');
 const FLYOUT_DARK = FLYOUT_NAV.replace('class="cui-globalnav"', 'class="cui-globalnav cui-dark"');
 const STORE_ITEM = `${LIST} > li:nth-child(3)`;
-const MAC_ITEM = `${LIST} > li:nth-child(4)`;
+const LAPTOPS_ITEM = `${LIST} > li:nth-child(4)`;
 const STORE_LINK = `${STORE_ITEM} > .cui-globalnav-link`;
-const MAC_LINK = `${MAC_ITEM} > .cui-globalnav-link`;
-const IPAD_LINK = `${LIST} > li:nth-child(5) > .cui-globalnav-link`;
-const MAC_BUTTON = `${MAC_ITEM} > .cui-globalnav-flyoutbutton`;
+const LAPTOPS_LINK = `${LAPTOPS_ITEM} > .cui-globalnav-link`;
+const TABLETS_LINK = `${LIST} > li:nth-child(5) > .cui-globalnav-link`;
+const LAPTOPS_BUTTON = `${LAPTOPS_ITEM} > .cui-globalnav-flyoutbutton`;
 const STORE_FLY = `${STORE_ITEM} > .cui-globalnav-flyout`;
-const MAC_FLY = `${MAC_ITEM} > .cui-globalnav-flyout`;
-const FPANEL = `${MAC_FLY} > .cui-globalnav-flyoutpanel`;
+const LAPTOPS_FLY = `${LAPTOPS_ITEM} > .cui-globalnav-flyout`;
+const FPANEL = `${LAPTOPS_FLY} > .cui-globalnav-flyoutpanel`;
 const [GROUP1, GROUP2, GROUP3] = [1, 2, 3].map(n => `${FPANEL} > .cui-globalnav-flyoutgroup:nth-of-type(${n})`);
 const [FHEAD1, FHEAD2, FHEAD3] = [GROUP1, GROUP2, GROUP3].map(g => `${g} > .cui-globalnav-flyoutheading`);
 const FLIST2 = `${GROUP2} > .cui-globalnav-flyoutlinks`;
@@ -115,12 +115,12 @@ const ROW_AFTER = `${GROUP1} > .cui-globalnav-flyoutlinks > li:nth-child(5)`;
 const ROW = `${FLIST2} > li:nth-child(1)`;
 const ROW2 = `${FLIST2} > li:nth-child(2)`;
 const [LINK_LG, LINK_AFTER, FLINK] = [ROW_LG, ROW_AFTER, ROW].map(r => `${r} > .cui-globalnav-flyoutlink`);
-const MAC_CURTAIN = `${MAC_FLY} > .cui-globalnav-curtain`;
+const LAPTOPS_CURTAIN = `${LAPTOPS_FLY} > .cui-globalnav-curtain`;
 const BACK = `${FPANEL} > .cui-globalnav-backbutton`;
 const FCLOSE = `${FPANEL} > .cui-globalnav-closebutton`;
-const CHEVRON = `${MAC_BUTTON} > .cui-globalnav-image`;
-const CHEVRON_COMPACT = `${MAC_BUTTON} > .cui-globalnav-image-compact`;
-const HOVERING = { hover: MAC_LINK, widths: WIDE, height: 900 };
+const CHEVRON = `${LAPTOPS_BUTTON} > .cui-globalnav-image`;
+const CHEVRON_COMPACT = `${LAPTOPS_BUTTON} > .cui-globalnav-image-compact`;
+const HOVERING = { hover: LAPTOPS_LINK, widths: WIDE, height: 900 };
 const ITEM_MOTION = [...MOTION, 'transition-delay'];
 // apple.com's flyout is read below its locale banner (70px from 834px): a
 // place here is the same distance from the nav's top
@@ -220,10 +220,10 @@ export const cases = [
       { target: '.cui-globalnav', props: ['user-select'], apple: ['nav-select', 'nav'] },
       { target: LIST, props: ['user-select'], apple: ['nav-select', 'list'] },
       { target: LOGO, props: ['user-select'], apple: ['nav-select', 'logo'] },
-      { target: MAC_LINK, props: ['user-select'], apple: ['nav-select', 'link'] },
+      { target: LAPTOPS_LINK, props: ['user-select'], apple: ['nav-select', 'link'] },
       { target: BAG, props: ['user-select'], apple: ['nav-select', 'bag'] },
       { target: BUTTON, props: ['user-select'], apple: ['nav-select', 'menutrigger'], at: { 1600: 390 } },
-      { target: MAC_FLY, props: ['user-select'], apple: ['nav-select', 'flyout'] },
+      { target: LAPTOPS_FLY, props: ['user-select'], apple: ['nav-select', 'flyout'] },
     ],
   },
   {
@@ -841,10 +841,10 @@ export const cases = [
     checks: [
       { target: '.cui-globalnav', props: ['background-color', 'backdrop-filter', 'z-index'], apple: ['flyout', 'nav'] },
       { target: '.cui-globalnav', props: ['position', 'isolation'], golden: 'the containing block and the stacking context of a flyout the pointer shows (a site\'s sticky replaces the position)' },
-      { target: MAC_LINK, props: ['color', ...MOTION], apple: ['flyout', 'link.open'] },
-      { target: IPAD_LINK, props: ['color'], apple: ['flyout', 'link.other'] },
-      { target: MAC_FLY, props: ['position', 'visibility'], apple: ['flyout', 'flyout'] },
-      { target: MAC_FLY, props: ['box-top', 'box-left', 'box-width', 'height', 'overflow-y'], golden: 'from the nav\'s top across the window, as apple.com\'s (flyout:flyout, 44px down less 44px: at its nav\'s top, below its banner), its panel\'s height (apple.com\'s its own, its overflow hidden)' },
+      { target: LAPTOPS_LINK, props: ['color', ...MOTION], apple: ['flyout', 'link.open'] },
+      { target: TABLETS_LINK, props: ['color'], apple: ['flyout', 'link.other'] },
+      { target: LAPTOPS_FLY, props: ['position', 'visibility'], apple: ['flyout', 'flyout'] },
+      { target: LAPTOPS_FLY, props: ['box-top', 'box-left', 'box-width', 'height', 'overflow-y'], golden: 'from the nav\'s top across the window, as apple.com\'s (flyout:flyout, 44px down less 44px: at its nav\'s top, below its banner), its panel\'s height (apple.com\'s its own, its overflow hidden)' },
       { target: FPANEL, props: ['background-color'], apple: ['flyout', 'flyout'] },
       { target: FPANEL, props: ['padding-bottom'], apple: ['flyout', 'flyout.content'] },
       { target: FPANEL, props: ['padding-top', 'box-height', 'clip-path'], golden: 'its content 84px down from the nav\'s top, apple.com\'s 44px of bar (flyout:flyout.scroll\'s margin) and 40px (flyout.content\'s padding); revealed whole, its height its groups\' (apple.com\'s 552px for Mac\'s, its groups 388px)' },
@@ -875,11 +875,11 @@ export const cases = [
       { target: LIST, pseudo: '::after', props: ['position', 'top', 'background-color', 'backdrop-filter', 'opacity', 'visibility'], apple: ['flyout', 'curtain'] },
       { target: LIST, pseudo: '::after', props: ['z-index', 'pointer-events'], golden: 'under the bar\'s links and the flyout, in the nav (apple.com\'s under the nav, 9998 to its 9999); taking no pointer, so that the pointer on it is off the link (apple.com\'s takes it, its script closing the flyout as the pointer leaves the nav: reference/flyout/)' },
       // the link's button and its chevron
-      { target: MAC_BUTTON, props: ['box-height', 'cursor', 'color', 'display', 'align-items', 'justify-content', 'background-color', 'border-top-width'], apple: ['flyout', 'trigger'] },
-      { target: MAC_BUTTON, state: 'focus-visible', props: OUTLINE, apple: ['flyout', 'trigger', 'focus-visible'] },
-      { target: MAC_BUTTON, props: ['box-width', 'margin-right'], golden: 'apple.com\'s 22 by 44 (flyout:trigger), from 8px before the link\'s end to 14px past it, over its room, not its text (apple.com\'s from 15px before it, over its text\'s end, which a click there opens the flyout from)' },
+      { target: LAPTOPS_BUTTON, props: ['box-height', 'cursor', 'color', 'display', 'align-items', 'justify-content', 'background-color', 'border-top-width'], apple: ['flyout', 'trigger'] },
+      { target: LAPTOPS_BUTTON, state: 'focus-visible', props: OUTLINE, apple: ['flyout', 'trigger', 'focus-visible'] },
+      { target: LAPTOPS_BUTTON, props: ['box-width', 'margin-right'], golden: 'apple.com\'s 22 by 44 (flyout:trigger), from 8px before the link\'s end to 14px past it, over its room, not its text (apple.com\'s from 15px before it, over its text\'s end, which a click there opens the flyout from)' },
       { target: CHEVRON, props: ['opacity', 'margin-top', 'color', 'box-height', ...MOTION], apple: ['flyout', 'trigger.icon'] },
-      { target: CHEVRON, state: 'focus-visible', on: MAC_BUTTON, props: ['opacity', 'margin-top'], apple: ['flyout', 'trigger.icon', 'focus-visible'] },
+      { target: CHEVRON, state: 'focus-visible', on: LAPTOPS_BUTTON, props: ['opacity', 'margin-top'], apple: ['flyout', 'trigger.icon', 'focus-visible'] },
       { target: CHEVRON, props: ['box-width'], golden: 'apple.com\'s chevron, 10 by 10 (flyout:trigger.icon)' },
     ],
   },
@@ -898,7 +898,7 @@ export const cases = [
     ...HOVERING,
     widths: [1600],
     checks: [
-      { target: MAC_FLY, props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'shown once the pointer has rested 120ms on its link (apple.com\'s script\'s 120ms, read in globalheader.umd.js: flyout:*)' },
+      { target: LAPTOPS_FLY, props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'shown once the pointer has rested 120ms on its link (apple.com\'s script\'s 120ms, read in globalheader.umd.js: flyout:*)' },
       { target: FPANEL, props: ITEM_MOTION, golden: 'revealed down from the bar and from its ground in 240ms after those 120ms: apple.com\'s flyout\'s height and ground in half its content\'s height in ms, 240 at least (flyout:flyout, 254ms for Mac\'s; 240ms for seven of the eleven)' },
       { target: FHEAD1, props: ['transition-duration', 'transition-timing-function'], apple: ['flyout', 'header.elevated'] },
       { target: FHEAD1, props: ['transition-delay'], golden: 'apple.com\'s first heading from 80ms (flyout:header.elevated), after the 120ms' },
@@ -917,13 +917,13 @@ export const cases = [
     name: 'flyout-closed',
     html: FLYOUT_NAV,
     ...HOVERING,
-    hover: [MAC_LINK, [700, 890]],
+    hover: [LAPTOPS_LINK, [700, 890]],
     reducedMotion: 'reduce',
     checks: [
-      { target: MAC_FLY, props: ['visibility'], apple: ['flyout', 'close'] },
+      { target: LAPTOPS_FLY, props: ['visibility'], apple: ['flyout', 'close'] },
       { target: FPANEL, props: ['background-color'], apple: ['flyout', 'close'] },
       { target: FPANEL, props: ['clip-path'], golden: 'back to the bar: apple.com\'s flyout the bar\'s 44px again (flyout:close)' },
-      { target: MAC_FLY, props: ['height', 'box-height'], apple: ['flyout', 'close'] },
+      { target: LAPTOPS_FLY, props: ['height', 'box-height'], apple: ['flyout', 'close'] },
       { target: LIST, pseudo: '::after', props: ['opacity'], apple: ['flyout', 'close.curtain'] },
       { target: LIST, pseudo: '::after', props: ['visibility'], golden: 'the curtain hidden' },
       { target: '.cui-globalnav', props: ['background-color', 'backdrop-filter'], apple: ['flyout', 'close.nav'] },
@@ -933,11 +933,11 @@ export const cases = [
     name: 'flyout-closing',
     html: FLYOUT_NAV,
     ...HOVERING,
-    hover: [MAC_LINK, [700, 890]],
+    hover: [LAPTOPS_LINK, [700, 890]],
     widths: [1600],
     checks: [
-      { target: MAC_FLY, props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'hidden at the end of its going (apple.com\'s flyout hidden at its height\'s end: flyout:close\'s animations, 240ms from 120ms)' },
-      { target: MAC_FLY, props: ['transition-behavior'], golden: 'its height, which does not interpolate, flipped with its visibility at that end: allow-discrete in the compiled stylesheet too (written inside the shorthand: the minifier moves a transition-behavior written after the shorthand before it, where the shorthand resets it)' },
+      { target: LAPTOPS_FLY, props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'hidden at the end of its going (apple.com\'s flyout hidden at its height\'s end: flyout:close\'s animations, 240ms from 120ms)' },
+      { target: LAPTOPS_FLY, props: ['transition-behavior'], golden: 'its height, which does not interpolate, flipped with its visibility at that end: allow-discrete in the compiled stylesheet too (written inside the shorthand: the minifier moves a transition-behavior written after the shorthand before it, where the shorthand resets it)' },
       { target: FPANEL, props: ITEM_MOTION, golden: 'back to the bar and its ground in 240ms from 120ms (flyout:close\'s animations)' },
       { target: FHEAD1, props: ITEM_MOTION, golden: 'its headings back to 4px up and transparent at once in 240ms (flyout:close\'s animations)' },
       { target: ROW_LG, props: ['transition-duration', 'transition-delay'], golden: 'its rows the same, a group\'s first five (its heading the first) in 240ms (flyout:close\'s animations)' },
@@ -951,11 +951,11 @@ export const cases = [
     name: 'flyout-change',
     html: FLYOUT_NAV,
     ...HOVERING,
-    hover: [STORE_LINK, MAC_LINK],
+    hover: [STORE_LINK, LAPTOPS_LINK],
     reducedMotion: 'reduce',
     checks: [
-      { target: MAC_FLY, props: ['visibility'], apple: ['flyout', 'change'] },
-      { target: `${MAC_FLY} > .cui-globalnav-flyoutpanel`, props: ['background-color'], apple: ['flyout', 'change'] },
+      { target: LAPTOPS_FLY, props: ['visibility'], apple: ['flyout', 'change'] },
+      { target: `${LAPTOPS_FLY} > .cui-globalnav-flyoutpanel`, props: ['background-color'], apple: ['flyout', 'change'] },
       { target: STORE_FLY, props: ['visibility'], apple: ['flyout', 'change.previous'] },
       { target: STORE_LINK, props: ['color'], apple: ['flyout', 'change.link'] },
     ],
@@ -964,7 +964,7 @@ export const cases = [
     name: 'flyout-change-motion',
     html: FLYOUT_NAV,
     ...HOVERING,
-    hover: [STORE_LINK, MAC_LINK],
+    hover: [STORE_LINK, LAPTOPS_LINK],
     widths: [1600],
     checks: [
       { target: STORE_FLY, props: ['transition-delay'], golden: 'the one left shown 0.6s while the pointer is on the bar, until the next has grown (apple.com\'s keeps it until the next opens, then crossfades them in 120ms: flyout:change\'s animations); in every frame between, one shown to its full height (reference/flyout/)' },
@@ -975,21 +975,21 @@ export const cases = [
     // opened by its button: the keyboard's (a click here)
     name: 'flyout-button',
     html: FLYOUT_NAV,
-    click: MAC_BUTTON,
+    click: LAPTOPS_BUTTON,
     widths: WIDE,
     height: 900,
     reducedMotion: 'reduce',
     checks: [
-      { target: MAC_FLY, props: ['position', 'box-top', 'box-left', 'box-height'], golden: 'a popover from the bar\'s bottom (anchor positioning) to the window\'s, across it (reference/flyout/), where the one the pointer shows is from the nav\'s top: the same content in the same place' },
+      { target: LAPTOPS_FLY, props: ['position', 'box-top', 'box-left', 'box-height'], golden: 'a popover from the bar\'s bottom (anchor positioning) to the window\'s, across it (reference/flyout/), where the one the pointer shows is from the nav\'s top: the same content in the same place' },
       { target: FPANEL, props: ['background-color'], apple: ['flyout', 'flyout'] },
       { target: FPANEL, props: ['padding-top', 'padding-bottom'], apple: ['flyout', 'flyout.content'] },
       { target: GROUP1, props: ['max-width', 'padding-right', 'box-left'], apple: ['flyout', 'group.elevated'] },
       { target: LINK_LG, props: [...TYPE, 'box-height'], apple: ['flyout', 'link.elevated'] },
       { target: '.cui-globalnav', props: ['background-color'], apple: ['flyout', 'flyout'] },
       { target: '.cui-globalnav', props: ['backdrop-filter'], apple: ['flyout', 'nav'] },
-      { target: MAC_LINK, props: ['color'], apple: ['flyout', 'link.open'] },
-      { target: MAC_CURTAIN, props: ['background-color', 'backdrop-filter', 'opacity'], apple: ['flyout', 'curtain'] },
-      { target: MAC_CURTAIN, props: ['box-top', 'box-height', 'hit'], golden: 'behind the panel from the bar\'s bottom to the window\'s, a button: what the pointer finds under the panel (as the search\'s)' },
+      { target: LAPTOPS_LINK, props: ['color'], apple: ['flyout', 'link.open'] },
+      { target: LAPTOPS_CURTAIN, props: ['background-color', 'backdrop-filter', 'opacity'], apple: ['flyout', 'curtain'] },
+      { target: LAPTOPS_CURTAIN, props: ['box-top', 'box-height', 'hit'], golden: 'behind the panel from the bar\'s bottom to the window\'s, a button: what the pointer finds under the panel (as the search\'s)' },
       { target: BACK, props: ['display'], golden: 'the sheet\'s back button, none from 834px' },
       { target: FCLOSE, props: ['display'], golden: 'the sheet\'s X, none from 834px' },
     ],
@@ -997,7 +997,7 @@ export const cases = [
   {
     name: 'flyout-button-motion',
     html: FLYOUT_NAV,
-    click: MAC_BUTTON,
+    click: LAPTOPS_BUTTON,
     widths: [1600],
     height: 900,
     checks: [
@@ -1009,7 +1009,7 @@ export const cases = [
   {
     name: 'flyout-tab',
     html: FLYOUT_NAV,
-    click: MAC_BUTTON,
+    click: LAPTOPS_BUTTON,
     press: 'Tab',
     widths: [1200],
     height: 900,
@@ -1019,14 +1019,14 @@ export const cases = [
   {
     name: 'flyout-escape',
     html: FLYOUT_NAV,
-    click: MAC_BUTTON,
+    click: LAPTOPS_BUTTON,
     press: 'Escape',
     widths: [1200],
     height: 900,
     reducedMotion: 'reduce',
     checks: [
-      { target: MAC_BUTTON, props: ['focused'], golden: 'Escape closes it, the focus back on its button (reference/flyout/)' },
-      { target: MAC_FLY, props: ['position', 'visibility'], golden: 'closed, in the bar and hidden again' },
+      { target: LAPTOPS_BUTTON, props: ['focused'], golden: 'Escape closes it, the focus back on its button (reference/flyout/)' },
+      { target: LAPTOPS_FLY, props: ['position', 'visibility'], golden: 'closed, in the bar and hidden again' },
     ],
   },
   {
@@ -1038,12 +1038,12 @@ export const cases = [
     widths: WIDE,
     reducedMotion: 'reduce',
     checks: [
-      { target: MAC_BUTTON, props: ['box-left', 'box-width', 'box-height'], golden: 'over the whole link' },
-      { target: MAC_LINK, props: ['hit'], golden: 'what a tap on the link finds is its button' },
-      { target: MAC_FLY, props: ['display'], golden: 'not shown by the pointer: a touch screen has none that hovers' },
-      { target: MAC_LINK, on: MAC_BUTTON, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5): its link not recolored by a tap on its button (the button\'s own color no hover changes)' },
+      { target: LAPTOPS_BUTTON, props: ['box-left', 'box-width', 'box-height'], golden: 'over the whole link' },
+      { target: LAPTOPS_LINK, props: ['hit'], golden: 'what a tap on the link finds is its button' },
+      { target: LAPTOPS_FLY, props: ['display'], golden: 'not shown by the pointer: a touch screen has none that hovers' },
+      { target: LAPTOPS_LINK, on: LAPTOPS_BUTTON, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5): its link not recolored by a tap on its button (the button\'s own color no hover changes)' },
       { target: CHEVRON, props: ['opacity'], golden: 'its chevron not drawn' },
-      { target: CHEVRON, state: 'focus-visible', on: MAC_BUTTON, props: ['opacity', 'box-left'], golden: 'focused from the keyboard (a touch screen\'s, as an iPad\'s with one), its chevron drawn where a pointer\'s is, after the link\'s text, as apple.com\'s 22 by 44 button at the link\'s end draws it (flyout:trigger), not over that text' },
+      { target: CHEVRON, state: 'focus-visible', on: LAPTOPS_BUTTON, props: ['opacity', 'box-left'], golden: 'focused from the keyboard (a touch screen\'s, as an iPad\'s with one), its chevron drawn where a pointer\'s is, after the link\'s text, as apple.com\'s 22 by 44 button at the link\'s end draws it (flyout:trigger), not over that text' },
     ],
   },
   {
@@ -1051,13 +1051,13 @@ export const cases = [
     name: 'flyout-tap',
     html: FLYOUT_NAV,
     touch: true,
-    click: MAC_BUTTON,
+    click: LAPTOPS_BUTTON,
     widths: [1200],
     height: 900,
     reducedMotion: 'reduce',
     checks: [
       { target: FPANEL, props: ['background-color'], apple: ['tap-flyout', 'flyout'], at: { 1200: 1024 } },
-      { target: MAC_FLY, props: ['position', 'box-top'], golden: 'opened by the tap on its link as a popover from the bar\'s bottom, the link not followed (tap-flyout: apple.com\'s script opens it so)' },
+      { target: LAPTOPS_FLY, props: ['position', 'box-top'], golden: 'opened by the tap on its link as a popover from the bar\'s bottom, the link not followed (tap-flyout: apple.com\'s script opens it so)' },
       { target: FLINK, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it' },
     ],
   },
@@ -1074,7 +1074,7 @@ export const cases = [
       { target: FLINK, props: ['color'], apple: ['flyout-dark', 'link'] },
       { target: FLINK, state: 'hover', props: ['color'], apple: ['flyout-dark', 'link', 'hover'] },
       { target: FLINK, state: 'focus-visible', props: ['color'], apple: ['flyout-dark', 'link', 'focus-visible'] },
-      { target: MAC_LINK, props: ['color'], apple: ['flyout-dark', 'link.open'] },
+      { target: LAPTOPS_LINK, props: ['color'], apple: ['flyout-dark', 'link.open'] },
       { target: LIST, pseudo: '::after', props: ['background-color', 'backdrop-filter'], apple: ['flyout-dark', 'curtain'] },
     ],
   },
@@ -1083,7 +1083,7 @@ export const cases = [
     // the bar's links shown again, the menu's rows out only below 834px
     name: 'flyout-widened',
     html: FLYOUT_NAV,
-    click: [BUTTON, MAC_BUTTON],
+    click: [BUTTON, LAPTOPS_BUTTON],
     widths: [390, 900],
     height: 900,
     reducedMotion: 'reduce',
@@ -1095,12 +1095,12 @@ export const cases = [
     // to 833px: the menu opened, then Laptops' row
     name: 'flyout-phone',
     html: FLYOUT_NAV,
-    click: [BUTTON, MAC_BUTTON],
+    click: [BUTTON, LAPTOPS_BUTTON],
     widths: [390],
     height: 900,
     checks: [
-      { target: MAC_FLY, props: ['position', 'box-top', 'box-left', 'box-height', 'opacity', 'transform'], golden: 'a sheet over the open menu, the window\'s (flyout-phone:flyout over the menu\'s content)' },
-      { target: MAC_FLY, props: ['background-color'], apple: ['flyout-phone', 'content'] },
+      { target: LAPTOPS_FLY, props: ['position', 'box-top', 'box-left', 'box-height', 'opacity', 'transform'], golden: 'a sheet over the open menu, the window\'s (flyout-phone:flyout over the menu\'s content)' },
+      { target: LAPTOPS_FLY, props: ['background-color'], apple: ['flyout-phone', 'content'] },
       { target: FPANEL, props: ['padding-top', 'padding-left', 'padding-right'], apple: ['flyout-phone', 'flyout.content'] },
       { target: GROUP1, props: ['padding-bottom', 'max-width'], apple: ['flyout-phone', 'group.elevated'] },
       { target: GROUP2, props: ['padding-bottom', 'max-width'], apple: ['flyout-phone', 'group'] },
@@ -1130,11 +1130,11 @@ export const cases = [
   {
     name: 'flyout-phone-motion',
     html: FLYOUT_NAV,
-    click: [BUTTON, MAC_BUTTON],
+    click: [BUTTON, LAPTOPS_BUTTON],
     widths: [390],
     height: 900,
     checks: [
-      { target: MAC_FLY, props: ITEM_MOTION, golden: 'in from 8px on and transparent in 240ms from 160ms (flyout-phone:flyout\'s animations, globalnav-flyout-slide-forward-next)' },
+      { target: LAPTOPS_FLY, props: ITEM_MOTION, golden: 'in from 8px on and transparent in 240ms from 160ms (flyout-phone:flyout\'s animations, globalnav-flyout-slide-forward-next)' },
       { target: BACK, props: ITEM_MOTION, golden: 'its color in 0.32s (flyout-phone:back.button), in from 4px on and transparent in 240ms from 160ms (flyout-phone:back)' },
       { target: STORE_ITEM, props: ['transition-duration', 'transition-delay'], golden: 'the menu\'s rows out at once in 240ms (flyout-phone:flyout\'s animations, globalnav-flyout-slide-forward-previous)' },
     ],
@@ -1143,24 +1143,24 @@ export const cases = [
     // read at its start, its motion held there
     name: 'flyout-phone-start',
     html: `<style>.cui-globalnav-flyout, .cui-globalnav-flyout * { transition-delay: 10s !important; }</style>${FLYOUT_NAV}`,
-    click: [BUTTON, MAC_BUTTON],
+    click: [BUTTON, LAPTOPS_BUTTON],
     widths: [390],
     height: 900,
     wait: 0,
     checks: [
-      { target: MAC_FLY, props: ['opacity', 'transform'], golden: 'from transparent, 8px on (flyout-phone:keyframes, globalnav-flyout-slide-forward-next)' },
+      { target: LAPTOPS_FLY, props: ['opacity', 'transform'], golden: 'from transparent, 8px on (flyout-phone:keyframes, globalnav-flyout-slide-forward-next)' },
       { target: BACK, props: ['opacity', 'transform'], golden: 'from transparent, 4px on (flyout-phone:back\'s transition)' },
     ],
   },
   {
     name: 'flyout-phone-back',
     html: FLYOUT_NAV,
-    click: [BUTTON, MAC_BUTTON, BACK],
+    click: [BUTTON, LAPTOPS_BUTTON, BACK],
     widths: [390],
     height: 900,
     reducedMotion: 'reduce',
     checks: [
-      { target: MAC_FLY, props: ['display'], golden: 'its back button closes it (reference/flyout/)' },
+      { target: LAPTOPS_FLY, props: ['display'], golden: 'its back button closes it (reference/flyout/)' },
       { target: LIST, props: ['position'], golden: 'the menu still open (reference/flyout/)' },
       { target: STORE_ITEM, props: ['opacity', 'transform'], golden: 'its rows back' },
     ],
@@ -1168,12 +1168,12 @@ export const cases = [
   {
     name: 'flyout-phone-close',
     html: FLYOUT_NAV,
-    click: [BUTTON, MAC_BUTTON, FCLOSE],
+    click: [BUTTON, LAPTOPS_BUTTON, FCLOSE],
     widths: [390],
     height: 900,
     reducedMotion: 'reduce',
     checks: [
-      { target: MAC_FLY, props: ['display'], golden: 'its X closes it (reference/flyout/)' },
+      { target: LAPTOPS_FLY, props: ['display'], golden: 'its X closes it (reference/flyout/)' },
       { target: LIST, props: ['position'], golden: 'and the menu (reference/flyout/)' },
     ],
   },
@@ -1182,7 +1182,7 @@ export const cases = [
     name: 'flyout-phone-row',
     html: FLYOUT_NAV,
     click: BUTTON,
-    hover: MAC_BUTTON,
+    hover: LAPTOPS_BUTTON,
     widths: [390],
     height: 900,
     reducedMotion: 'reduce',
@@ -1190,7 +1190,7 @@ export const cases = [
       { target: CHEVRON_COMPACT, props: ['opacity', 'color'], apple: ['flyout-phone', 'row.chevron'] },
       { target: CHEVRON_COMPACT, props: ['box-height'], apple: ['flyout-phone', 'row.chevron-image'] },
       { target: CHEVRON_COMPACT, props: ['box-top', 'box-left', 'box-width', 'transform'], golden: 'apple.com\'s 9 by 48 chevron 19px in from the row\'s end, 2px down it (flyout-phone:row.chevron-image, its row 93px down)' },
-      { target: MAC_LINK, props: ['color'], apple: ['flyout-phone', 'row.text'] },
+      { target: LAPTOPS_LINK, props: ['color'], apple: ['flyout-phone', 'row.text'] },
     ],
   },
   {
@@ -1213,8 +1213,8 @@ export const cases = [
     height: 900,
     reducedMotion: 'reduce',
     checks: [
-      { target: MAC_LINK, on: MAC_BUTTON, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5): its link not recolored by a tap on its button (the button\'s own color no hover changes)' },
-      { target: CHEVRON_COMPACT, state: 'hover', on: MAC_BUTTON, props: ['opacity'], rest: 'its chevron not shown by a tap (rule 5), where apple.com\'s shows on a hovered row' },
+      { target: LAPTOPS_LINK, on: LAPTOPS_BUTTON, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5): its link not recolored by a tap on its button (the button\'s own color no hover changes)' },
+      { target: CHEVRON_COMPACT, state: 'hover', on: LAPTOPS_BUTTON, props: ['opacity'], rest: 'its chevron not shown by a tap (rule 5), where apple.com\'s shows on a hovered row' },
     ],
   },
   // the bag (bag-flyout:*): opened by its button, from 834px a flyout from
@@ -1424,11 +1424,11 @@ export const cases = [
     name: 'bag-pointer',
     html: FLYOUT_BAG,
     ...BAGGING,
-    hover: MAC_LINK,
+    hover: LAPTOPS_LINK,
     widths: [1600],
     reducedMotion: 'reduce',
     checks: [
-      { target: MAC_FLY, props: ['display'], golden: 'no flyout by the pointer while the bag is open, its popover closed and not shown by the page (apple.com\'s opens the link\'s in the bag\'s place)' },
+      { target: LAPTOPS_FLY, props: ['display'], golden: 'no flyout by the pointer while the bag is open, its popover closed and not shown by the page (apple.com\'s opens the link\'s in the bag\'s place)' },
       { target: BFLY, props: ['display'], golden: 'the bag still open' },
     ],
   },
