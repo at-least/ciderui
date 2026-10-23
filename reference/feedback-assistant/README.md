@@ -13,7 +13,9 @@ Chrome 154 on Linux, its window 1920 by 954 at 2 device pixels; read 2026-10-23 
 
 ## What it showed
 
-**Its own accent, a purple.** The actions button's text `rgb(109, 29, 169)`, the attach glyph the same; the status box's edge `rgb(215, 171, 236)`; the current item's card `rgb(246, 235, 250)`; the send button `rgb(177, 84, 224)`.
+**Light only.** With the system set to dark, the list page's 32 readable stylesheets hold no `prefers-color-scheme` rule (one more, from another origin, is unread). Read by a script in the page, not recorded in a result.
+
+**Its own accent, a purple.** The actions button's text `rgb(109, 29, 169)`, the attach glyph the same; the status box's edge `rgb(215, 171, 236)`; the current item's card `rgb(246, 235, 250)`. The send button, disabled while its field is empty, declares `rgb(177, 84, 224)` as its ground and is drawn at 0.3 opacity, so what shows is paler; its enabled look is unread.
 
 **Type.** SF Pro Text at 17/25 and -0.374px in `rgb(51, 51, 51)`; the title 24px on 35.3px at 600; a section's lead 21px on 30.9px; a section's label, a date and an attachment's line `rgb(135, 135, 135)` (the status's label `rgb(139, 135, 135)`); the name in the byline at 700; the date and the attachment's line 13.6px on 20px.
 
