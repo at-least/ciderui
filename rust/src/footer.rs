@@ -1,4 +1,4 @@
-use hypertext::{Buffer, prelude::*};
+use hypertext::{Buffer, RenderableExt, prelude::*};
 
 use crate::{Class, icon};
 
@@ -48,11 +48,6 @@ pub struct Footer<'a, N: Renderable, S: Renderable> {
     pub class: &'a str,
 }
 
-/// Whether a part was given: `()` renders nothing.
-fn given(part: &impl Renderable) -> bool {
-    !rsx! { (part) }.render().as_inner().is_empty()
-}
-
 impl<N: Renderable, S: Renderable> Renderable for Footer<'_, N, S> {
     fn render_to(&self, buffer: &mut Buffer) {
         assert!(
@@ -66,11 +61,15 @@ impl<N: Renderable, S: Renderable> Renderable for Footer<'_, N, S> {
                 "ciderui::FooterSection needs a title"
             );
         }
+        // rendered once: whether a part was given is whether it renders
+        // anything (`()` renders nothing)
+        let notes = self.notes.memoize();
+        let shop = self.shop.memoize();
         rsx! {
             <footer class=(Class("cui-footer", self.class))>
                 <div class="cui-footer-content">
-                    @if given(&self.notes) {
-                        <section class="cui-footer-notes" aria-label="Footnotes">(self.notes)</section>
+                    @if !notes.as_str().is_empty() {
+                        <section class="cui-footer-notes" aria-label="Footnotes">(notes)</section>
                     }
                     @if !self.directory.is_empty() {
                         <nav class="cui-footer-directory" aria-label="Directory">
@@ -92,8 +91,8 @@ impl<N: Renderable, S: Renderable> Renderable for Footer<'_, N, S> {
                         </nav>
                     }
                     <div class="cui-footer-legal">
-                        @if given(&self.shop) {
-                            <p class="cui-footer-shop">(self.shop)</p>
+                        @if !shop.as_str().is_empty() {
+                            <p class="cui-footer-shop">(shop)</p>
                         }
                         <div class="cui-footer-row">
                             <p class="cui-footer-copyright">(self.copyright)</p>
@@ -185,6 +184,27 @@ mod tests {
             *html.as_inner(),
             r#"<footer class="cui-footer"><div class="cui-footer-content"><div class="cui-footer-legal"><div class="cui-footer-row"><p class="cui-footer-copyright">© 2026</p></div></div></div></footer>"#
         );
+    }
+
+    // a part is a page's: it may cost to render, or render otherwise a
+    // second time
+    #[test]
+    fn its_notes_and_shop_rendered_once() {
+        struct Counted<'a>(&'a std::cell::Cell<u32>);
+        impl Renderable for Counted<'_> {
+            fn render_to(&self, buffer: &mut Buffer) {
+                self.0.set(self.0.get() + 1);
+                "x".render_to(buffer);
+            }
+        }
+        let notes = std::cell::Cell::new(0);
+        let shop = std::cell::Cell::new(0);
+        let (n, s) = (&notes, &shop);
+        let _ = rsx! {
+            <Footer notes=(Counted(n)) directory=(&[]) shop=(Counted(s)) copyright="©" links=(&[]) locale=None class="" />
+        }
+        .render();
+        assert_eq!((notes.get(), shop.get()), (1, 1));
     }
 
     #[test]
