@@ -188,7 +188,8 @@ comment carries only that.
 - `npm test`, run from the repository root, runs package.json's `test`,
   each step only after the one before passes: `node test/tokens.mjs`,
   `node test/type.mjs`, `node test/page.mjs`, `node test/components.mjs`,
-  `node test/rust.mjs`, `node scripts/build-docs.mjs --check`,
+  `node scripts/build-lucide.mjs --check`, `node test/rust.mjs`,
+  `node scripts/build-docs.mjs --check`,
   `node scripts/docs-pictures.mjs --check`, `node test/docs.mjs`.
 - It needs: `npm ci`; Playwright's Chromium at the revision
   playwright-chromium names (`npx playwright install --only-shell chromium`),

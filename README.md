@@ -1,6 +1,6 @@
 # ciderui
 
-apple.com's look for websites, built with Tailwind CSS v4: a small contract of variables (`--cui-*`: the colors, the sizes, the motion), the type as classes, and apple.com's parts as classes (`cui-btn`, `cui-globalnav`, `cui-tile`, …), each in a stylesheet of its own that a site imports when it uses the part; Inter for where the system font is not SF; and a Rust crate that writes the parts' markup with hypertext and carries the stylesheets. It has no JavaScript. [ciderui-zola](../ciderui-zola), a Zola theme, is built on it. Why it is built as it is: [DESIGN.md](DESIGN.md).
+apple.com's look for websites, built with Tailwind CSS v4: a small contract of variables (`--cui-*`: the colors, the sizes, the motion), the type as classes, and apple.com's parts as classes (`cui-btn`, `cui-globalnav`, `cui-tile`, …), each in a stylesheet of its own that a site imports when it uses the part; Inter for where the system font is not SF; and a Rust crate that writes the parts' markup with hypertext, carries the stylesheets and draws every [Lucide](https://lucide.dev) icon. It has no JavaScript. [ciderui-zola](../ciderui-zola), a Zola theme, is built on it. Why it is built as it is: [DESIGN.md](DESIGN.md).
 
 ## Use it
 
@@ -31,11 +31,11 @@ cd docs && zola serve
 | `reference/` | the measurements, each with its probe, page, browser and date |
 | `docs/` | the documentation's site |
 
-`npm test` runs every test: the variables, the type, the page, each part in headless Chromium against apple.com's measured values and its own goldens, the crate (formatted, clippy, its tests, its documentation's examples and its documentation), and the documentation (its examples' copies and pictures current, every page).
+`npm test` runs every test: the variables, the type, the page, each part in headless Chromium against apple.com's measured values and its own goldens, the crate (its Lucide icons lucide-static's, formatted, clippy, its tests, its documentation's examples and its documentation), and the documentation (its examples' copies and pictures current, every page).
 
 ## License
 
-MIT (`LICENSE`). Inter, in `fonts/`, is the Inter Project Authors', under the SIL Open Font License 1.1 (`LICENSE-Inter`).
+MIT (`LICENSE`). Inter, in `fonts/`, is the Inter Project Authors', under the SIL Open Font License 1.1 (`LICENSE-Inter`). Lucide's icons, in `rust/src/lucide.rs`, are Lucide Icons and Contributors', under the ISC License, those derived from Feather also Cole Bemis's, under the MIT License (`LICENSE-Lucide`).
 
 ## Apple
 

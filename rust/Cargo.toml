@@ -3,8 +3,8 @@ name = "ciderui"
 version = "0.1.0"
 edition = "2024"
 rust-version = "1.85"
-description = "ciderui's components as hypertext components: the markup of the cui-* classes, its icons as inline SVG, and, with the css feature, its stylesheets embedded, for a site that renders with hypertext"
-license = "MIT"
+description = "ciderui's components as hypertext components: the markup of the cui-* classes, its icons and Lucide's as inline SVG, and, with the css feature, its stylesheets embedded, for a site that renders with hypertext"
+license = "MIT AND ISC"
 publish = false
 
 [features]

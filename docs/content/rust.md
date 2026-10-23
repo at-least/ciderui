@@ -64,6 +64,16 @@ let html = rsx! { <a href="/iphone/">"Learn more"(MORE.class("cui-link-icon"))</
 assert!(html.as_inner().contains(r#"<svg class="cui-link-icon" aria-hidden="true""#));
 ```
 
+Every other icon is [Lucide](https://lucide.dev/icons/)’s: `ciderui::lucide` holds every one, named as Lucide names it, in capitals (`shopping-bag` is `SHOPPING_BAG`). Each is 1em square in `currentColor`, so it takes its text’s size and color; a utility on it sizes it otherwise. In a line of text, add `inline`: Tailwind’s preflight makes an `<svg>` a block. A part apple.com draws an icon in draws ciderui’s own.
+
+```rust
+use hypertext::prelude::*;
+use ciderui::lucide::HEART;
+
+let html = rsx! { <a href="/saved">(HEART.class("inline"))" Saved"</a> }.render();
+assert!(html.as_inner().starts_with(r#"<a href="/saved"><svg class="inline" aria-hidden="true" width="1em""#));
+```
+
 ## The stylesheets
 
 With the `css` feature the crate embeds every stylesheet, and writes them out in the kit’s layout before the site’s Tailwind build:

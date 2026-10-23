@@ -6,10 +6,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "node test/tokens.mjs && node test/type.mjs && node test/page.mjs && node test/components.mjs && node test/rust.mjs && node scripts/build-docs.mjs --check && node scripts/docs-pictures.mjs --check && node test/docs.mjs"
+    "test": "node test/tokens.mjs && node test/type.mjs && node test/page.mjs && node test/components.mjs && node scripts/build-lucide.mjs --check && node test/rust.mjs && node scripts/build-docs.mjs --check && node scripts/docs-pictures.mjs --check && node test/docs.mjs"
   },
   "devDependencies": {
     "@tailwindcss/cli": "4.3.3",
+    "lucide-static": "1.61.0",
     "playwright-chromium": "1.62.1",
     "tailwindcss": "4.3.3"
   }
