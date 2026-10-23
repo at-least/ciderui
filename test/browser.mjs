@@ -83,7 +83,7 @@ export async function open(css, html, { width = 1200, height = 800, reducedMotio
     const frames = () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
     await frames();
     const running = document.getAnimations().filter((a) => a.playState === 'running' && a.effect.getComputedTiming().endTime !== Infinity);
-    await Promise.all(running.map((a) => a.finished.catch(() => {})));
+    await Promise.all(running.map((a) => a.finished.catch((e) => { if (e.name !== 'AbortError') throw e; })));
     await frames();
   });
   return { page, read, resize, settle, close: () => context.close() };
