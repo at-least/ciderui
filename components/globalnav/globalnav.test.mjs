@@ -70,11 +70,11 @@ const RESET = '.cui-globalnav-searchreset';
 const MAGNIFIER = `${FIELD} > .cui-globalnav-image`;
 // with text in its field, as apple.com's was read (search-text:*): typed,
 // its value, not its value attribute, which is what a reset gives it back
-const SEARCH_TEXT = `${SEARCH_NAV}<script>document.querySelector('.cui-globalnav-searchinput').value = 'iPhone';</script>`;
-// showing suggestions, as a site's script leaves it once ma is typed
+const SEARCH_TEXT = `${SEARCH_NAV}<script>document.querySelector('.cui-globalnav-searchinput').value = 'phone';</script>`;
+// showing suggestions, as a site's script leaves it once la is typed
 // (search-suggestions:*): the field's value, its two sections, each row's
 // typed part marked
-const SUGGESTING = `${ex('suggestions')}<script>document.querySelector('.cui-globalnav-searchinput').value = 'ma';</script>`;
+const SUGGESTING = `${ex('suggestions')}<script>document.querySelector('.cui-globalnav-searchinput').value = 'la';</script>`;
 const SUGGESTING_DARK = SUGGESTING.replace('class="cui-globalnav"', 'class="cui-globalnav cui-dark"');
 const LHEAD = `${PANEL} > .cui-globalnav-searchheading:first-of-type`;
 const SHEAD = `${PANEL} > .cui-globalnav-searchheading:last-of-type`;
@@ -690,7 +690,7 @@ export const cases = [
   {
     // a field the page fills (value=): the reset gives that back
     name: 'search-clear-value',
-    html: SEARCH_NAV.replace('<input class="cui-globalnav-searchinput"', '<input class="cui-globalnav-searchinput" value="iPhone"'),
+    html: SEARCH_NAV.replace('<input class="cui-globalnav-searchinput"', '<input class="cui-globalnav-searchinput" value="phone"'),
     click: [SBUTTON, RESET],
     height: 900,
     widths: [1600],

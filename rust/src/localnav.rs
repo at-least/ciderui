@@ -16,10 +16,10 @@ const TOGGLE_ID: &str = "cui-localnav-menu";
 /// use ciderui::LocalNav;
 ///
 /// let html = rsx! {
-///     <LocalNav title="MacBook Air" href="/macbook-air/" links=(&[("Overview", "/macbook-air/")]) current="/macbook-air/" button=(Some(("Buy", "/buy/"))) dark=false class="" />
+///     <LocalNav title="Cider Book 13" href="/cider-book/" links=(&[("Overview", "/cider-book/")]) current="/cider-book/" button=(Some(("Buy", "/buy/"))) dark=false class="" />
 /// }
 /// .render();
-/// assert!(html.as_inner().contains(r#"<a class="cui-localnav-link" href="/macbook-air/" aria-current="page">Overview</a>"#));
+/// assert!(html.as_inner().contains(r#"<a class="cui-localnav-link" href="/cider-book/" aria-current="page">Overview</a>"#));
 /// assert!(html.as_inner().contains(r#"<a class="cui-btn" data-size="sm" href="/buy/">Buy</a>"#));
 /// ```
 pub struct LocalNav<'a> {
@@ -86,16 +86,16 @@ mod tests {
     use crate::example::example;
 
     const LINKS: &[(&str, &str)] = &[
-        ("Overview", "/macbook-air/"),
-        ("Tech Specs", "/macbook-air/specs/"),
-        ("Compare", "/macbook-air/compare/"),
-        ("Switch from PC to Mac", "/macbook-air/switch/"),
+        ("Overview", "/cider-book/"),
+        ("Tech Specs", "/cider-book/specs/"),
+        ("Compare", "/cider-book/compare/"),
+        ("Switch to Cider Book", "/cider-book/switch/"),
     ];
 
     #[test]
     fn renders_the_example() {
         let html = rsx! {
-            <LocalNav title="MacBook Air" href="/macbook-air/" links=(LINKS) current="/macbook-air/" button=(Some(("Buy", "/buy/macbook-air/"))) dark=false class="" />
+            <LocalNav title="Cider Book 13" href="/cider-book/" links=(LINKS) current="/cider-book/" button=(Some(("Buy", "/buy/cider-book/"))) dark=false class="" />
         }
         .render();
         assert_eq!(
@@ -124,7 +124,7 @@ mod tests {
     #[test]
     fn marks_no_link_without_a_current_page() {
         let html = rsx! {
-            <LocalNav title="MacBook Air" href="/macbook-air/" links=(LINKS) current="" button=None dark=false class="" />
+            <LocalNav title="Cider Book 13" href="/cider-book/" links=(LINKS) current="" button=None dark=false class="" />
         }
         .render();
         assert!(!html.as_inner().contains("aria-current"));

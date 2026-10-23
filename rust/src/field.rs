@@ -79,10 +79,10 @@ impl Renderable for Field<'_> {
 /// use ciderui::Select;
 ///
 /// let html = rsx! {
-///     <Select id="model" name="model" label="Choose your model" options=(&[("air", "iPhone Air")]) selected="" error="" disabled=false class="" />
+///     <Select id="model" name="model" label="Choose your model" options=(&[("phone-3", "Cider Phone 3")]) selected="" error="" disabled=false class="" />
 /// }
 /// .render();
-/// assert!(html.as_inner().contains(r#"<option value="" selected>Select</option><option value="air">iPhone Air</option>"#));
+/// assert!(html.as_inner().contains(r#"<option value="" selected>Select</option><option value="phone-3">Cider Phone 3</option>"#));
 /// ```
 pub struct Select<'a> {
     /// The select's id, its label's `for`. Required: an empty one panics.
@@ -207,9 +207,9 @@ mod tests {
     use crate::example::example;
 
     const MODELS: &[(&str, &str)] = &[
-        ("iphone-17-pro", "iPhone 17 Pro"),
-        ("iphone-air", "iPhone Air"),
-        ("iphone-16", "iPhone 16"),
+        ("phone-3-plus", "Cider Phone 3 Plus"),
+        ("phone-3", "Cider Phone 3"),
+        ("phone-2", "Cider Phone 2"),
     ];
 
     #[test]
@@ -240,7 +240,7 @@ mod tests {
                 include_str!("../../components/field/examples/select.html"),
             ),
             (
-                rsx! { <Select id="model" name="model" label="Choose your model" options=(MODELS) selected="iphone-air" error="" disabled=false class="" /> }.render(),
+                rsx! { <Select id="model" name="model" label="Choose your model" options=(MODELS) selected="phone-3" error="" disabled=false class="" /> }.render(),
                 include_str!("../../components/field/examples/selected.html"),
             ),
         ];
@@ -327,7 +327,7 @@ mod tests {
     #[should_panic(expected = "none of its options")]
     fn a_selected_value_no_option_has_panics() {
         let _ = rsx! {
-            <Select id="m" name="m" label="Model" options=(MODELS) selected="iphone-15" error="" disabled=false class="" />
+            <Select id="m" name="m" label="Model" options=(MODELS) selected="phone-1" error="" disabled=false class="" />
         }
         .render();
     }

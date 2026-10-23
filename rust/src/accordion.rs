@@ -78,7 +78,7 @@ mod tests {
                 <AccordionItem question="When will I get my items?" open=true class="">
                     <p>"Enter a ZIP code to see when your items arrive."</p>
                 </AccordionItem>
-                <AccordionItem question="Can I pick up my items at an Apple Store?" open=false class="">
+                <AccordionItem question="Can I pick up my items at a Cider Store?" open=false class="">
                     <p>"Yes. Choose a store at checkout."</p>
                 </AccordionItem>
             </Accordion>

@@ -12,13 +12,13 @@ use crate::{Class, icon};
 ///
 /// let html = rsx! {
 ///     <ProductNav id="products" label="Products" paddles=false class="">
-///         <ProductNavItem href="/shop/buy-mac" name="Mac" class="">
+///         <ProductNavItem href="/shop/laptops" name="Laptops" class="">
 ///             <img class="cui-productnav-image" src="/mac.png" width="200" height="130" alt="">
 ///         </ProductNavItem>
 ///     </ProductNav>
 /// }
 /// .render();
-/// assert!(html.as_inner().contains(r#"<span class="cui-productnav-name">Mac</span>"#));
+/// assert!(html.as_inner().contains(r#"<span class="cui-productnav-name">Laptops</span>"#));
 /// ```
 pub struct ProductNav<'a, R: Renderable> {
     /// The scroller's id, the paddles' `aria-controls`. Required: an empty
@@ -87,11 +87,11 @@ mod tests {
     #[test]
     fn renders_the_example() {
         let items = [
-            ("/shop/buy-mac", "Mac"),
-            ("/shop/buy-iphone", "iPhone"),
-            ("/shop/buy-ipad", "iPad"),
-            ("/shop/buy-watch", "Apple Watch"),
-            ("/shop/buy-airpods", "AirPods"),
+            ("/shop/laptops", "Laptops"),
+            ("/shop/phones", "Phones"),
+            ("/shop/tablets", "Tablets"),
+            ("/shop/watches", "Watches"),
+            ("/shop/audio", "Audio"),
             ("/shop/accessories", "Accessories"),
         ];
         let html = rsx! {

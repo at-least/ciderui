@@ -129,7 +129,7 @@ mod tests {
     #[test]
     fn renders_the_example() {
         let notes = rsx! {
-            <p>"Trade-in values vary. See "<a href="/shop/trade-in/">"apple.com/shop/trade-in"</a>" for details."</p>
+            <p>"Trade-in values vary. See "<a href="/shop/trade-in/">"example.com/shop/trade-in"</a>" for details."</p>
         };
         let shop = rsx! { "More ways to shop: "<a href="/retail/">"Find a store"</a>" near you." };
         let directory: &[&[FooterSection]] = &[
@@ -139,14 +139,14 @@ mod tests {
                     title: "Shop and Learn",
                     links: &[
                         ("Store", "/store/"),
-                        ("Mac", "/mac/"),
-                        ("iPhone", "/iphone/"),
+                        ("Laptops", "/laptops/"),
+                        ("Phones", "/phones/"),
                     ],
                 },
                 FooterSection {
                     id: "footer-wallet",
-                    title: "Apple Wallet",
-                    links: &[("Wallet", "/wallet/"), ("Apple Card", "/apple-card/")],
+                    title: "Payments",
+                    links: &[("Wallet", "/wallet/"), ("Cider Card", "/cider-card/")],
                 },
             ],
             &[FooterSection {

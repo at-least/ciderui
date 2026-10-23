@@ -75,7 +75,7 @@ mod tests {
             example(include_str!("../../components/option/examples/option.html"))
         );
         let checked = rsx! {
-            <OptionTile id="model-pro" name="model" value="pro" title="iPhone 18 Pro" detail="6.3-inch display" price="" checked=true class="" />
+            <OptionTile id="model-pro" name="model" value="pro" title="Cider Phone 3" detail="6.3-inch display" price="" checked=true class="" />
         }
         .render();
         assert_eq!(

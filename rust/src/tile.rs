@@ -23,12 +23,12 @@ pub enum TileSize {
 ///
 /// let none = ();
 /// let html = rsx! {
-///     <Tile size=(TileSize::Large) rounded=false dark=true link=(Some(("/iphone/", "iPhone"))) media=none headline="iPhone" subhead="Hello." callout="" class="">
-///         <a class="cui-btn" data-size="cta" href="/iphone/">"Learn more"</a>
+///     <Tile size=(TileSize::Large) rounded=false dark=true link=(Some(("/phone/", "Cider Phone"))) media=none headline="Cider Phone" subhead="Built for every day." callout="" class="">
+///         <a class="cui-btn" data-size="cta" href="/phone/">"Learn more"</a>
 ///     </Tile>
 /// }
 /// .render();
-/// assert!(html.as_inner().starts_with(r#"<div class="cui-tile cui-dark" data-size="lg"><a class="cui-tile-link" href="/iphone/" aria-label="iPhone"></a>"#));
+/// assert!(html.as_inner().starts_with(r#"<div class="cui-tile cui-dark" data-size="lg"><a class="cui-tile-link" href="/phone/" aria-label="Cider Phone"></a>"#));
 /// ```
 pub struct Tile<'a, M: Renderable, C: Renderable> {
     /// Its size.
@@ -95,7 +95,7 @@ mod tests {
     fn renders_the_examples() {
         let none = ();
         let tile = rsx! {
-            <Tile size=(TileSize::Default) rounded=false dark=false link=(Some(("/upgrade/", "Apple Upgrade"))) media=none headline="Apple Upgrade" subhead="Get the latest iPhone." callout="" class="">
+            <Tile size=(TileSize::Default) rounded=false dark=false link=(Some(("/upgrade/", "Upgrade Program"))) media=none headline="Upgrade Program" subhead="Get the latest phone every year." callout="" class="">
                 <a class="cui-btn" href="/upgrade/">"Learn more"</a>
             </Tile>
         }
@@ -105,8 +105,8 @@ mod tests {
             example(include_str!("../../components/tile/examples/tile.html"))
         );
         let hero = rsx! {
-            <Tile size=(TileSize::Large) rounded=false dark=false link=(Some(("/iphone/", "iPhone Duo"))) media=none headline="iPhone Duo" subhead="Hello, hello." callout="Available starting 10.23" class="">
-                <a class="cui-btn" data-size="cta" href="/iphone/">"Learn more"</a>
+            <Tile size=(TileSize::Large) rounded=false dark=false link=(Some(("/phone-fold/", "Cider Phone Fold"))) media=none headline="Cider Phone Fold" subhead="Two screens, one phone." callout="Available starting 10.23" class="">
+                <a class="cui-btn" data-size="cta" href="/phone-fold/">"Learn more"</a>
                 <a class="cui-btn" data-size="cta" data-variant="secondary" href="/buy/">"Pre-order"</a>
             </Tile>
         }

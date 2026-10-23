@@ -15,7 +15,7 @@ use crate::{Class, icon};
 /// let none = ();
 /// let html = rsx! {
 ///     <Shelf id="latest" headline="The latest." subhead="Take a look at what's new." paddles=false class="">
-///         <li><Card dark=false href="/iphone/" media=none eyebrow="" tag=false headline="iPhone" description="" price="From $799" class="" /></li>
+///         <li><Card dark=false href="/phone/" media=none eyebrow="" tag=false headline="Cider Phone" description="" price="From $799" class="" /></li>
 ///     </Shelf>
 /// }
 /// .render();
@@ -82,10 +82,10 @@ mod tests {
             let none = ();
             let html = rsx! {
                 <Shelf id="shelf" headline="The latest." subhead="Take a look at what's new." paddles=(paddles) class="">
-                    <li><Card dark=false href="/iphone-18-pro/" media=none eyebrow="NEW" tag=true headline="iPhone 18 Pro" description="" price="From $1199" class="" /></li>
-                    <li><Card dark=false href="/iphone-duo/" media=none eyebrow="NEW" tag=true headline="iPhone Duo" description="" price="From $899" class="" /></li>
-                    <li><Card dark=false href="/watch/" media=none eyebrow="" tag=false headline="Apple Watch" description="" price="From $399" class="" /></li>
-                    <li><Card dark=false href="/airpods/" media=none eyebrow="" tag=false headline="AirPods" description="" price="From $129" class="" /></li>
+                    <li><Card dark=false href="/phone/" media=none eyebrow="NEW" tag=true headline="Cider Phone 3" description="" price="From $1199" class="" /></li>
+                    <li><Card dark=false href="/phone-fold/" media=none eyebrow="NEW" tag=true headline="Cider Phone Fold" description="" price="From $899" class="" /></li>
+                    <li><Card dark=false href="/watch/" media=none eyebrow="" tag=false headline="Cider Watch" description="" price="From $399" class="" /></li>
+                    <li><Card dark=false href="/buds/" media=none eyebrow="" tag=false headline="Cider Buds" description="" price="From $129" class="" /></li>
                 </Shelf>
             }
             .render();

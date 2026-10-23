@@ -113,11 +113,11 @@ mod tests {
     #[test]
     fn renders_the_page_example() {
         let html = rsx! {
-            <ModalButton modal="trade-in" class="cui-btn">"Read more about Apple Trade In"</ModalButton>
+            <ModalButton modal="trade-in" class="cui-btn">"Read more about Cider Trade In"</ModalButton>
             <Modal id="trade-in" labelledby="trade-in-title" page=true class="">
-                <p class="cui-eyebrow">"Apple Trade In"</p>
-                <h2 class="cui-headline" id="trade-in-title">"Trade in your eligible device for credit."</h2>
-                <p class="cui-body">"Just add a trade-in when you choose a new product. Once your device has been received and verified, we credit its value to your payment method."</p>
+                <p class="cui-eyebrow">"Cider Trade In"</p>
+                <h2 class="cui-headline" id="trade-in-title">"Get credit for the device you have."</h2>
+                <p class="cui-body">"Add a trade-in when you choose something new. Once we have your device and have checked it, its value goes back to your payment method."</p>
             </Modal>
         }
         .render();

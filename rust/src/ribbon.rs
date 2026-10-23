@@ -57,7 +57,7 @@ mod tests {
         ] {
             let html = rsx! {
                 <Ribbon announce=(announce) class="">
-                    <p>"Pre-order iPhone Duo now. Already have an iPhone saved for pre-order? "<MoreLink href="#checkout" text="Check out now" .. /></p>
+                    <p>"Pre-order Cider Phone Fold now. Already have one saved for pre-order? "<MoreLink href="#checkout" text="Check out now" .. /></p>
                 </Ribbon>
             }
             .render();

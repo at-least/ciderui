@@ -23,8 +23,8 @@ const BAG_HEADING_ID: &str = "cui-globalnav-bagheading";
 /// ```
 /// use ciderui::{FlyoutGroup, NavLink};
 ///
-/// const MAC: &[FlyoutGroup] = &[FlyoutGroup { heading: "Explore Mac", large: &[("Explore All Mac", "/mac")], links: &[("Compare Mac", "/mac/compare")] }];
-/// let links = [NavLink::new("Store", "/store"), NavLink::new("Mac", "/mac").flyout(MAC)];
+/// const MAC: &[FlyoutGroup] = &[FlyoutGroup { heading: "Explore Laptops", large: &[("Explore All Laptops", "/laptops")], links: &[("Compare Laptops", "/laptops/compare")] }];
+/// let links = [NavLink::new("Store", "/store"), NavLink::new("Laptops", "/laptops").flyout(MAC)];
 /// assert!(links[1].flyout.len() == 1);
 /// ```
 #[derive(Clone, Copy, Debug)]
@@ -368,8 +368,8 @@ mod tests {
 
     const LINKS: &[NavLink] = &[
         NavLink::new("Store", "/store"),
-        NavLink::new("Mac", "/mac"),
-        NavLink::new("iPad", "/ipad"),
+        NavLink::new("Laptops", "/laptops"),
+        NavLink::new("Tablets", "/tablets"),
         NavLink::new("Support", "/support"),
     ];
 
@@ -398,9 +398,9 @@ mod tests {
             heading: "Shop",
             large: &[
                 ("Shop the Latest", "/store"),
-                ("Mac", "/shop/mac"),
-                ("iPad", "/shop/ipad"),
-                ("iPhone", "/shop/iphone"),
+                ("Laptops", "/shop/laptops"),
+                ("Tablets", "/shop/tablets"),
+                ("Phones", "/shop/phones"),
             ],
             links: &[("Accessories", "/shop/accessories")],
         },
@@ -410,46 +410,46 @@ mod tests {
             links: &[
                 ("Find a Store", "/retail"),
                 ("Order Status", "/shop/orders"),
-                ("Apple Trade In", "/shop/trade-in"),
+                ("Trade In", "/shop/trade-in"),
             ],
         },
     ];
 
     const MAC: &[FlyoutGroup] = &[
         FlyoutGroup {
-            heading: "Explore Mac",
+            heading: "Explore Laptops",
             large: &[
-                ("Explore All Mac", "/mac"),
-                ("MacBook Air", "/macbook-air"),
-                ("MacBook Pro", "/macbook-pro"),
-                ("iMac", "/imac"),
+                ("Explore All Laptops", "/laptops"),
+                ("Cider Book 13", "/cider-book-13"),
+                ("Cider Book 15", "/cider-book-15"),
+                ("Cider Desk", "/cider-desk"),
             ],
-            links: &[("Compare Mac", "/mac/compare")],
+            links: &[("Compare Laptops", "/laptops/compare")],
         },
         FlyoutGroup {
-            heading: "Shop Mac",
+            heading: "Shop Laptops",
             large: &[],
             links: &[
-                ("Shop Mac", "/shop/mac"),
-                ("Mac Accessories", "/shop/mac/accessories"),
+                ("Shop Laptops", "/shop/laptops"),
+                ("Laptop Accessories", "/shop/laptops/accessories"),
                 ("Financing", "/shop/financing"),
             ],
         },
         FlyoutGroup {
-            heading: "More from Mac",
+            heading: "More from Laptops",
             large: &[],
             links: &[
-                ("Mac Support", "/support/mac"),
-                ("macOS", "/macos"),
-                ("Continuity", "/continuity"),
+                ("Laptop Support", "/support/laptops"),
+                ("Cider OS", "/cider-os"),
+                ("Sync Across Devices", "/sync"),
             ],
         },
     ];
 
     const FLYOUTS: &[NavLink] = &[
         NavLink::new("Store", "/store").flyout(STORE),
-        NavLink::new("Mac", "/mac").flyout(MAC),
-        NavLink::new("iPad", "/ipad"),
+        NavLink::new("Laptops", "/laptops").flyout(MAC),
+        NavLink::new("Tablets", "/tablets"),
         NavLink::new("Support", "/support"),
     ];
 
@@ -511,8 +511,8 @@ mod tests {
 
     const QUICK: &[(&str, &str)] = &[
         ("Find a Store", "/retail"),
-        ("Mac", "/mac"),
-        ("iPad", "/ipad"),
+        ("Laptops", "/laptops"),
+        ("Tablets", "/tablets"),
         ("Gift Cards", "/gift-cards"),
         ("Support", "/support"),
     ];
@@ -567,11 +567,11 @@ mod tests {
                 .into_inner()
         };
         assert!(suggestions.contains(&format!(
-            r#"href="/mac">{}<span><mark>Ma</mark>c</span>"#,
+            r#"href="/laptops">{}<span><mark>La</mark>ptops</span>"#,
             images(ARROW, ARROW_COMPACT)
         )));
         assert!(suggestions.contains(&format!(
-            r#"href="/search?q=mac">{}<span><mark>ma</mark>c</span>"#,
+            r#"href="/search?q=laptop">{}<span><mark>la</mark>ptop</span>"#,
             images(SUGGESTION, SUGGESTION_COMPACT)
         )));
     }

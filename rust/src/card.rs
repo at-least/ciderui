@@ -12,7 +12,7 @@ use crate::Class;
 ///
 /// let none = ();
 /// let html = rsx! {
-///     <Card dark=true href="/iphone/" media=none eyebrow="NEW" tag=true headline="iPhone" description="" price="From $799" class="" />
+///     <Card dark=true href="/phone/" media=none eyebrow="NEW" tag=true headline="Cider Phone" description="" price="From $799" class="" />
 /// }
 /// .render();
 /// assert!(html.as_inner().starts_with(r#"<div class="cui-card cui-dark"><div class="cui-card-content"><p class="cui-card-eyebrow" data-variant="tag">NEW</p>"#));
@@ -83,7 +83,7 @@ mod tests {
     fn renders_the_examples() {
         let none = ();
         let card = rsx! {
-            <Card dark=false href="/iphone-18-pro/" media=none eyebrow="NEW" tag=true headline="iPhone 18 Pro" description="The ultimate iPhone." price="From $1199" class="" />
+            <Card dark=false href="/phone/" media=none eyebrow="NEW" tag=true headline="Cider Phone 3" description="Our most capable phone." price="From $1199" class="" />
         }
         .render();
         assert_eq!(
@@ -102,14 +102,14 @@ mod tests {
 
     #[test]
     fn writes_its_picture_and_the_pages_utilities() {
-        let media = rsx! { <img class="cui-card-media" src="/iphone.jpg" alt=""> };
+        let media = rsx! { <img class="cui-card-media" src="/phone.jpg" alt=""> };
         let html = rsx! {
-            <Card dark=false href="/iphone/" media=(media) eyebrow="" tag=false headline="iPhone" description="" price="" class="w-full" />
+            <Card dark=false href="/phone/" media=(media) eyebrow="" tag=false headline="Cider Phone" description="" price="" class="w-full" />
         }
         .render();
         assert_eq!(
             *html.as_inner(),
-            r#"<div class="cui-card w-full"><img class="cui-card-media" src="/iphone.jpg" alt=""><div class="cui-card-content"><h3 class="cui-card-headline"><a class="cui-card-link" href="/iphone/">iPhone</a></h3></div></div>"#
+            r#"<div class="cui-card w-full"><img class="cui-card-media" src="/phone.jpg" alt=""><div class="cui-card-content"><h3 class="cui-card-headline"><a class="cui-card-link" href="/phone/">Cider Phone</a></h3></div></div>"#
         );
     }
 
