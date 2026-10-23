@@ -6,9 +6,8 @@
 // A case:
 //   name     what it is; CASES=<regex> picks cases by it
 //   html     ciderui's markup (an example, or markup written here)
-//   widths   the viewport widths it is read at (default: the reference's,
-//            1600, 1200, 900 and 390px); height, the window's (800px);
-//            touch, reducedMotion, forcedColors as the page's
+//   widths   the viewport widths it is read at (default: WIDTHS); height,
+//            the window's; touch, reducedMotion, forcedColors as the page's
 //   click    a selector (or several) clicked in turn once, at the first
 //            width, before its checks (a menu's button), then the keys in
 //            `press` pressed in turn, its motion then run to its end (every
@@ -40,6 +39,11 @@
 //            rest (rule 5)
 
 import { readFileSync } from 'node:fs';
+
+// the keys above, all a case and a check may carry: test/components.mjs
+// throws on any other (a misspelt key would be ignored, the case run without it)
+export const CASE_KEYS = ['name', 'html', 'widths', 'height', 'touch', 'reducedMotion', 'forcedColors', 'click', 'press', 'wait', 'scroll', 'hover', 'checks'];
+export const CHECK_KEYS = ['target', 'props', 'pseudo', 'state', 'on', 'apple', 'at', 'as', 'golden', 'rest'];
 
 export const SIDES = ['top', 'right', 'bottom', 'left'];
 export const PADDING = SIDES.map(s => `padding-${s}`);

@@ -17,6 +17,7 @@ import { ROOT, compile } from './compile.mjs';
 import { open, quit } from './browser.mjs';
 import { ref, WIDTHS } from './reference.mjs';
 import { check, done } from './check.mjs';
+import { CASE_KEYS, CHECK_KEYS } from './harness.mjs';
 
 const UPDATE = process.env.UPDATE_GOLDEN === '1';
 const PICK = process.env.CASES ? new RegExp(process.env.CASES) : null;
@@ -45,6 +46,8 @@ for (const name of names) {
   const written = {};
 
   for (const c of cases) {
+    for (const key of Object.keys(c)) if (!CASE_KEYS.includes(key)) throw new Error(`${name} ${c.name}: a case has no key ${key}`);
+    for (const k of c.checks) for (const key of Object.keys(k)) if (!CHECK_KEYS.includes(key)) throw new Error(`${name} ${c.name}: ${k.target}: a check has no key ${key}`);
     if (PICK && !PICK.test(c.name)) continue;
     const page = await open(css, c.html, { touch: c.touch, reducedMotion: c.reducedMotion, forcedColors: c.forcedColors ? 'active' : undefined, height: c.height });
     const widths = c.widths ?? WIDTHS;
