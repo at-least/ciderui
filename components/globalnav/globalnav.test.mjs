@@ -429,7 +429,7 @@ export const cases = [
       // the bar over it, its button, the page not held
       { target: '.cui-globalnav', props: ['backdrop-filter'], apple: ['search', 'nav'] },
       { target: '.cui-globalnav', props: ['background-color'], apple: ['search', 'flyout'] },
-      { target: '.cui-globalnav', props: ['background-image'], golden: 'the flyout\'s ground alone: apple.com\'s flyout runs from the nav\'s top (search:flyout, margin-top -44px) over the nav\'s own ground, its #fafafc at the bar (a pixel read 2026-10-21)' },
+      { target: '.cui-globalnav', props: ['background-image'], golden: 'the flyout\'s ground alone: apple.com\'s flyout runs from the nav\'s top (search:flyout, margin-top -44px) over the nav\'s own ground, its #fafafc at the bar (a pixel read)' },
       { target: SBUTTON, props: ['color'], apple: ['search', 'search'] },
       { target: 'html', props: ['overflow-y'], apple: ['search', 'root'] },
       // the flyout from the bar's bottom, its panel, the curtain behind it
@@ -943,7 +943,7 @@ export const cases = [
       { target: ROW_LG, props: ['transition-duration', 'transition-delay'], golden: 'its rows the same, a group\'s first five (its heading the first) in 240ms (flyout:close\'s animations)' },
       { target: ROW_AFTER, props: ['transition-duration'], golden: 'and each after them 20ms shorter, its fifth row 220ms (flyout:close\'s animations)' },
       { target: LIST, pseudo: '::after', props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'the curtain out in 0.32s from 80ms, hidden at its end (flyout:close\'s animations)' },
-      { target: '.cui-globalnav', props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'its blur back 0.45s on, the curtain gone (apple.com\'s back 0.4 to 0.53s after a flyout or the search closed: scouted, each frame, 2026-10-21; kept on, the curtain would not reach the page: reference/flyout/)' },
+      { target: '.cui-globalnav', props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'its blur back 0.45s on, the curtain gone (apple.com\'s back 0.4 to 0.53s after a flyout or the search closed: scouted, each frame; kept on, the curtain would not reach the page: reference/flyout/)' },
     ],
   },
   {

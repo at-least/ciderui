@@ -264,7 +264,7 @@
  * takes no pointer (apple.com's takes it, its script closing the flyout as
  * the pointer leaves the nav), so a click on the page as the flyout goes
  * reaches it; the bar's blur back 0.45s after it goes, the curtain gone (as
- * apple.com's, 0.4 to 0.53s: scouted, each frame, 2026-10-21); the button
+ * apple.com's, 0.4 to 0.53s: scouted, each frame); the button
  * from 8px before the link's end to 14px past it, over its room and not its
  * text (apple.com's from 15px before it, over its text's end, where a click
  * opens the flyout instead of following the link); opened by its button,
