@@ -4,8 +4,9 @@
 // example file of its component's directory, so no example the crate's
 // tests render is missing from it; the frames' stylesheet styles every
 // class the examples write. Built with zola, every page at 1440 and 390px
-// in Chromium: no page error, nothing the page asks for missing, every
-// link within the site to a page that exists, no scrolling sideways; each
+// in Chromium: no page error, nothing the page asks for missing or of a
+// type TYPES has not, every link within the site to a page that exists, no
+// scrolling sideways; each
 // example frame loads its stylesheet, draws every picture it has, is no
 // wider than the page and as tall as its content, so it never scrolls.
 // And what the frames do: the theme's script moves a gallery's row; a

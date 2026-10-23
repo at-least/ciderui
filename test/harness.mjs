@@ -40,8 +40,8 @@
 
 import { readFileSync } from 'node:fs';
 
-// the keys above, all a case and a check may carry: test/components.mjs
-// throws on any other (a misspelt key would be ignored, the case run without it)
+// the keys above, all a case and a check may carry; any other throws
+// (a misspelt key would be ignored, the case run without it)
 export const CASE_KEYS = ['name', 'html', 'widths', 'height', 'touch', 'reducedMotion', 'forcedColors', 'click', 'press', 'wait', 'scroll', 'hover', 'checks'];
 export const CHECK_KEYS = ['target', 'props', 'pseudo', 'state', 'on', 'apple', 'at', 'as', 'golden', 'rest'];
 
