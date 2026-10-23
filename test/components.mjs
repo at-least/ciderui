@@ -48,6 +48,7 @@ for (const name of names) {
   for (const c of cases) {
     for (const key of Object.keys(c)) if (!CASE_KEYS.includes(key)) throw new Error(`${name} ${c.name}: a case has no key ${key}`);
     for (const k of c.checks) for (const key of Object.keys(k)) if (!CHECK_KEYS.includes(key)) throw new Error(`${name} ${c.name}: ${k.target}: a check has no key ${key}`);
+    for (const k of c.checks) if (k.on && !k.state) throw new Error(`${name} ${c.name}: ${k.target}: on needs a state (on is where the state is forced)`);
     if (PICK && !PICK.test(c.name)) continue;
     const page = await open(css, c.html, { touch: c.touch, reducedMotion: c.reducedMotion, forcedColors: c.forcedColors ? 'active' : undefined, height: c.height });
     const widths = c.widths ?? WIDTHS;
