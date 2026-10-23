@@ -1,0 +1,89 @@
+{
+ "browser": "Chrome/154.0.0.0",
+ "date": "2026-10-23T00:54:09.680Z",
+ "path": "/account/resources/authkeys/list",
+ "probes": {
+  "add": {
+   "box": { "height": 20, "width": 20 },
+   "html": "svg {SvgIcon__Icon-sc-194a9zm-0 dXmLbY}",
+   "styles": { "color": "rgb(0, 112, 201)", "fill": "rgb(0, 112, 201)", "height": "20px", "margin-left": "0px", "width": "20px" }
+  },
+  "cell": {
+   "box": { "height": 43, "width": 123.406 },
+   "html": "span[role=cell]",
+   "styles": { "border-bottom-color": "rgb(229, 229, 229)", "border-bottom-style": "solid", "border-bottom-width": "1px", "color": "rgb(51, 51, 51)", "font-family": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif", "font-size": "13px", "font-weight": "400", "letter-spacing": "-0.078px", "line-height": "20px", "padding-bottom": "10px", "padding-left": "0px", "padding-right": "0px", "padding-top": "10px", "vertical-align": "middle" }
+  },
+  "cell.glyph": {
+   "box": { "height": 16, "width": 11.141 },
+   "html": "img",
+   "styles": { "height": "16px", "vertical-align": "baseline", "width": "11.1406px" }
+  },
+  "column": {
+   "box": { "height": 40.5, "width": 150 },
+   "html": "span[role=columnheader]",
+   "styles": { "background-color": "rgb(255, 255, 255)", "border-bottom-color": "rgb(229, 229, 229)", "border-bottom-style": "solid", "border-bottom-width": "1px", "color": "rgb(102, 102, 102)", "font-family": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif", "font-size": "13px", "font-weight": "400", "letter-spacing": "-0.078px", "line-height": "20px", "padding-bottom": "10px", "padding-left": "0px", "padding-right": "0px", "padding-top": "10px", "text-align": "left" }
+  },
+  "column.sortable": {
+   "box": { "height": 40.5, "width": 123.406 },
+   "html": "span {sortable}[role=columnheader]",
+   "styles": { "color": "rgb(102, 102, 102)", "cursor": "pointer", "font-family": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif", "font-size": "13px", "font-weight": "400", "letter-spacing": "-0.078px", "line-height": "20px" }
+  },
+  "filter": {
+   "box": { "height": 18, "width": 90.102 },
+   "html": "button {Box-sc-18eybku-0 Link-sc-1tc8rtf-0 jijsjF}",
+   "styles": { "color": "rgb(0, 112, 201)", "cursor": "pointer", "font-family": "\"SF Pro Text\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif", "font-size": "16px", "font-weight": "400", "letter-spacing": "normal", "line-height": "18px" }
+  },
+  "filter.chevron": {
+   "box": { "height": 9.594, "width": 9.594 },
+   "html": "svg {SvgIcon__Icon-sc-194a9zm-0 fMDvKw}",
+   "styles": { "color": "rgb(0, 112, 201)", "fill": "rgb(0, 112, 201)", "height": "9.59375px", "margin-left": "6px", "width": "9.59375px" }
+  },
+  "header": {
+   "box": { "height": 51.5, "width": 1037 },
+   "html": "div {list-header}",
+   "styles": { "border-bottom-color": "rgb(229, 229, 229)", "border-bottom-style": "solid", "border-bottom-width": "1px", "height": "50.5px", "margin-bottom": "0px", "padding-bottom": "0px", "padding-left": "0px", "padding-right": "0px", "padding-top": "0px" }
+  },
+  "nav": {
+   "box": { "height": 664.5, "width": 183 },
+   "html": "nav {app-nav}",
+   "styles": { "margin-right": "0px", "width": "183px" }
+  },
+  "nav.current": {
+   "box": { "height": 26, "width": 170 },
+   "html": "li {active}",
+   "styles": { "background-color": "rgb(237, 237, 237)", "border-top-left-radius": "4px" }
+  },
+  "nav.current.word": {
+   "html": "span",
+   "styles": { "color": "rgb(51, 51, 51)", "font-family": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif", "font-size": "13px", "font-weight": "500", "letter-spacing": "-0.078px", "line-height": "20px", "padding-bottom": "3px", "padding-left": "7px", "padding-right": "7px", "padding-top": "3px" }
+  },
+  "nav.item": {
+   "box": { "height": 26, "width": 170 },
+   "html": "li",
+   "styles": { "background-color": "rgba(0, 0, 0, 0)", "border-top-left-radius": "0px", "height": "26px", "margin-bottom": "5px" }
+  },
+  "nav.word": {
+   "box": { "height": 26, "width": 170 },
+   "html": "span",
+   "styles": { "color": "rgb(51, 51, 51)", "font-family": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif", "font-size": "13px", "font-weight": "400", "letter-spacing": "-0.078px", "line-height": "20px", "padding-bottom": "3px", "padding-left": "7px", "padding-right": "7px", "padding-top": "3px" }
+  },
+  "page": {
+   "html": "div {main-wrapper main-list}",
+   "styles": { "color": "rgb(51, 51, 51)", "font-family": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif", "font-size": "13px", "font-weight": "400", "letter-spacing": "-0.078px", "line-height": "20px" }
+  },
+  "row": {
+   "box": { "height": 43, "width": 1037 },
+   "html": "div {row}[role=row]",
+   "styles": { "background-color": "rgba(0, 0, 0, 0)", "cursor": "auto", "height": "43px" }
+  },
+  "title": {
+   "box": { "height": 32.5, "width": 54.961 },
+   "html": "h2",
+   "styles": { "color": "rgb(17, 17, 17)", "font-family": "-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif", "font-size": "24px", "font-weight": "700", "letter-spacing": "0.36px", "line-height": "30px", "margin-bottom": "0px", "margin-top": "0px" }
+  }
+ },
+ "probesDigest": [103, 219, 143, 198, 46, 66, 18, 171, 88, 202, 254, 176, 40, 192, 136, 27, 133, 83, 87, 7, 77, 89, 184, 184, 184, 42, 47, 124, 222, 133, 201, 217],
+ "readerDigest": [138, 144, 100, 105, 60, 82, 123, 90, 132, 236, 231, 73, 61, 240, 117, 187, 41, 119, 199, 254, 212, 130, 106, 226, 247, 204, 42, 95, 216, 46, 128, 91],
+ "window": [1920, 898, 2],
+ "sha256": [4, 120, 165, 177, 1, 68, 89, 203, 197, 70, 122, 54, 1, 41, 164, 208, 80, 215, 254, 179, 162, 32, 218, 72, 149, 155, 147, 253, 45, 129, 198, 242]
+}
