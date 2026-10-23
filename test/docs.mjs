@@ -78,6 +78,8 @@ for (const e of readdirSync(join(DOCS, 'examples'), { recursive: true, withFileT
 
 // the site, built
 const out = mkdtempSync(join(tmpdir(), 'ciderui-docs-'));
+// removed however the run ends: a failure thrown below, or done()'s exit
+process.on('exit', () => rmSync(out, { recursive: true, force: true }));
 // its failure thrown as it is: zola's own words, or no zola (ENOENT)
 execFileSync('zola', ['--root', DOCS, 'build', '--output-dir', out, '--force'], { stdio: 'pipe' });
 const htmlPages = (dir) => readdirSync(dir).flatMap((f) => {
@@ -282,5 +284,4 @@ for (const width of [1440, 390]) {
   await page.close();
 }
 await browser.close();
-rmSync(out, { recursive: true, force: true });
 done(`docs: ${components.length} components, ${urls.length} pages`);
