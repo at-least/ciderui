@@ -72,7 +72,7 @@ const ruled = new Set([
 for (const e of readdirSync(join(DOCS, 'examples'), { recursive: true, withFileTypes: true }).filter((e) => e.isFile())) {
   const html = readFileSync(join(e.parentPath, e.name), 'utf8');
   for (const c of new Set([...html.matchAll(/\bclass="([^"]*)"/g)].flatMap((m) => m[1].split(/\s+/).filter((c) => ruled.has(c))))) {
-    check(`static/example.css styles .${c} (${relative(DOCS, join(e.parentPath, e.name))})`, css.includes(`.${c}`), true);
+    check(`static/example.css styles .${c} (${relative(DOCS, join(e.parentPath, e.name))})`, new RegExp(`\\.${c}(?![\\w-])`).test(css), true);
   }
 }
 
