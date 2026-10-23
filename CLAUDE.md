@@ -1,4 +1,13 @@
-# Global instructions
+# ciderui: agent instructions
+
+The owner's global instructions (their `~/.claude/CLAUDE.md`), copied for
+sessions that lack that file and adapted to this repository: "This
+repository's gate" replaces the global "Rust projects" section (its clippy
+rule kept), "Commits" is scoped to this repository's owner and gate, the
+Comments rule's rustdoc pointer names the gate, and the global "Docker"
+section is left out; what is left out concerns the owner's machines (their
+Rust toolchain and aliases, sccache, the Docker host). When the global file
+changes, copy its other sections here.
 
 1. Never state runtime behavior as fact until you have run something that
    could have proven it wrong. Otherwise prefix it `UNVERIFIED (reason)`.
@@ -137,7 +146,12 @@ comment carries only that.
 - Describe no code the comment does not sit beside (another file, repo or
   upstream): a reason that rests on code elsewhere drifts like any other
   claim. Point at it only where a broken pointer fails a check (rustdoc
-  intra-doc links); otherwise leave it out.
+  intra-doc links in what test/rust.mjs documents — the library's and the
+  bin's items, private ones too, built with `--no-deps --all-features
+  --document-private-items` and `RUSTDOCFLAGS='-D warnings'` — fail
+  `npm test`; a link in `#[cfg(test)]` code, on an item inside a function
+  body, in code compiled out under `--all-features`, or in rust/build.rs
+  is checked by nothing); otherwise leave it out.
 - A behavior or contract claim goes into the check that holds it (a test,
   golden or assert, with its reason beside it); where none can exist yet,
   keep the comment and say in the commit message that nothing tests it.
@@ -157,34 +171,48 @@ comment carries only that.
 
 ## Commits
 
-- In every repo, commit on your own at the end of each stage of a task,
-  without asking (user instruction, 2026-09-30). A stage ends when its part
-  is done and its checks pass (the repo's gates, or the Rust gate below).
-  Commit only that stage's files, never unrelated uncommitted changes.
-  Match the repo's commit message style. Pushing still waits for an
-  explicit ask.
+- The owner's sessions commit on their own at the end of each stage of a
+  task, without asking (the owner's instruction, 2026-09-30), as ciderui is
+  the owner's alone: DESIGN.md, "Who it is for": "The owner's websites, and
+  nobody else's: ciderui is not public (stated)." Any other session (a
+  fork, someone else's clone) asks before each commit.
+- A stage ends when its part is done and `npm test` passes ("This
+  repository's gate"). Where it cannot pass here, the stage has not ended:
+  report the step that could not run `UNVERIFIED (environment: ...)` and
+  ask before committing. Commit only that stage's files, never unrelated
+  uncommitted changes. Match the repo's commit message style. Pushing
+  still waits for an explicit ask.
 
-## Rust projects
+## This repository's gate
 
-Toolchain from dotfiles/setup-rust.sh: clippy, rustfmt, cargo-nextest,
-rust-analyzer, mold, sccache. Aliases in ~/.cargo/config.toml.
-
-- Fast loop while editing: `cargo check`, not `cargo build`.
-- A change is done only when all three are clean, in this order:
-  `cargo fmt`, `cargo lint` (clippy, all targets, warnings are errors),
-  `cargo nt` (nextest, no fail-fast so every failure shows at once).
-  Fall back to `cargo test --no-fail-fast` if nextest is missing.
+- `npm test`, run from the repository root, runs package.json's `test`,
+  each step only after the one before passes: `node test/tokens.mjs`,
+  `node test/type.mjs`, `node test/page.mjs`, `node test/components.mjs`,
+  `node test/rust.mjs`, `node scripts/build-docs.mjs --check`,
+  `node scripts/docs-pictures.mjs --check`, `node test/docs.mjs`.
+- It needs: `npm ci`; Playwright's Chromium at the revision
+  playwright-chromium names (`npx playwright install --only-shell chromium`),
+  for test/type.mjs, test/page.mjs, test/components.mjs and test/docs.mjs;
+  cargo with rustfmt and clippy, and cargo-nextest (where it is missing,
+  test/rust.mjs runs cargo test in its place and says so); zola, and
+  ciderui-zola checked out beside this repository (`../ciderui-zola`,
+  which docs/themes/ciderui-zola links to), for test/docs.mjs.
+- Where a tool is missing and cannot be installed, `npm test` stops at the
+  step that needs it: run each later step alone, and report the step that
+  could not run `UNVERIFIED (environment: <what is missing>)`. Never leave
+  it out silently.
+- The Rust part alone: `node test/rust.mjs`. It sets
+  `CARGO_TARGET_DIR=rust/target` and `RUSTDOCFLAGS='-D warnings'` and runs,
+  in order:
+  `cargo fmt --manifest-path rust/Cargo.toml --check`;
+  `cargo clippy --manifest-path rust/Cargo.toml --all-targets --all-features -- -D warnings`;
+  `cargo nextest run --manifest-path rust/Cargo.toml --all-features --no-fail-fast`,
+  or, where cargo-nextest is missing,
+  `cargo test --manifest-path rust/Cargo.toml --all-features --no-fail-fast --lib --bins --tests`;
+  `cargo test --manifest-path rust/Cargo.toml --all-features --doc`;
+  `cargo doc --manifest-path rust/Cargo.toml --no-deps --all-features --document-private-items`.
+- Fast loop while editing:
+  `cargo check --manifest-path rust/Cargo.toml --all-features`, not cargo
+  build. `cargo fmt --manifest-path rust/Cargo.toml` writes the formatting
+  the check wants.
 - Fix clippy findings as suggested; `#[allow]` only with a comment saying why.
-- sccache does not cache bin crates or incremental builds; do not "fix"
-  a 0% hit rate on a dev build.
-
-## Docker
-
-- When `DOCKER_HOST` is set (on the Mac it is `ssh://lab`), it means:
-  do not use local Docker. Do not start OrbStack, do not switch
-  `docker context`, do not override with `DOCKER_HOST=`.
-- Everything is on the remote host: containers, images, volumes, bind-mount
-  source paths (they must exist on lab, not on the Mac), and published
-  ports (reach them as `lab:<port>`, not `localhost`).
-- `docker build` sends the context over SSH; keep it small
-  (`.dockerignore`). lab is x86_64, so images build as amd64.
