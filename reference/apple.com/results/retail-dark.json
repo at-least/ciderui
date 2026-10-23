@@ -190,7 +190,7 @@
     }
    },
    "field.label": {
-    "html": "<label class=\"form-textbox-label\" for=\"cui-field\">Email</label>",
+    "html": "<label class=\"form-textbox-label\" for=\"cui-field\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -219,13 +219,13 @@
     }
    },
    "field.error-label": {
-    "html": "<label class=\"form-textbox-label\" for=\"cui-error\">Email</label>",
+    "html": "<label class=\"form-textbox-label\" for=\"cui-error\"></label>",
     "styles": {
      "color": "rgb(227, 0, 0)"
     }
    },
    "field.error-message": {
-    "html": "<span class=\"form-message\">Please enter a valid email.</span>",
+    "html": "<span class=\"form-message\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -236,7 +236,7 @@
     }
    },
    "field.error-icon": {
-    "html": "<div class=\"form-message-wrapper\" id=\"cui-error-message\"><span class=\"form-message\">Please enter a valid email.</span></div>",
+    "html": "<div class=\"form-message-wrapper\" id=\"cui-error-message\"><span class=\"form-message\"></span></div>",
     "styles": {
      "content": "none",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
@@ -258,7 +258,7 @@
     }
    },
    "field.disabled-label": {
-    "html": "<label class=\"form-textbox-label\" for=\"cui-disabled\">Email</label>",
+    "html": "<label class=\"form-textbox-label\" for=\"cui-disabled\"></label>",
     "styles": {
      "color": "rgb(110, 110, 115)",
      "opacity": "1"
@@ -305,7 +305,7 @@
     }
    },
    "textarea.label": {
-    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\">Comments</span>",
+    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -333,7 +333,7 @@
     }
    },
    "dropdown.error": {
-    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\"><option value=\"\">Select</option></select>",
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\"><option value=\"\"></option></select>",
     "styles": {
      "background-color": "rgb(255, 242, 244)",
      "border-top-color": "rgb(227, 0, 0)",
@@ -350,7 +350,7 @@
     }
    },
    "dropdown.disabled": {
-    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\" disabled=\"\"><option value=\"\">Select</option></select>",
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\" disabled=\"\"><option value=\"\"></option></select>",
     "styles": {
      "color": "rgba(0, 0, 0, 0)",
      "background-color": "rgba(0, 0, 0, 0.01)",
@@ -546,7 +546,7 @@
     }
    },
    "field.label": {
-    "html": "<label class=\"form-textbox-label\" for=\"cui-field\">Email</label>",
+    "html": "<label class=\"form-textbox-label\" for=\"cui-field\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -575,13 +575,13 @@
     }
    },
    "field.error-label": {
-    "html": "<label class=\"form-textbox-label\" for=\"cui-error\">Email</label>",
+    "html": "<label class=\"form-textbox-label\" for=\"cui-error\"></label>",
     "styles": {
      "color": "rgb(227, 0, 0)"
     }
    },
    "field.error-message": {
-    "html": "<span class=\"form-message\">Please enter a valid email.</span>",
+    "html": "<span class=\"form-message\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -592,7 +592,7 @@
     }
    },
    "field.error-icon": {
-    "html": "<div class=\"form-message-wrapper\" id=\"cui-error-message\"><span class=\"form-message\">Please enter a valid email.</span></div>",
+    "html": "<div class=\"form-message-wrapper\" id=\"cui-error-message\"><span class=\"form-message\"></span></div>",
     "styles": {
      "content": "none",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
@@ -614,7 +614,7 @@
     }
    },
    "field.disabled-label": {
-    "html": "<label class=\"form-textbox-label\" for=\"cui-disabled\">Email</label>",
+    "html": "<label class=\"form-textbox-label\" for=\"cui-disabled\"></label>",
     "styles": {
      "color": "rgb(110, 110, 115)",
      "opacity": "1"
@@ -661,7 +661,7 @@
     }
    },
    "textarea.label": {
-    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\">Comments</span>",
+    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -689,7 +689,7 @@
     }
    },
    "dropdown.error": {
-    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\"><option value=\"\">Select</option></select>",
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\"><option value=\"\"></option></select>",
     "styles": {
      "background-color": "rgb(255, 242, 244)",
      "border-top-color": "rgb(227, 0, 0)",
@@ -706,7 +706,7 @@
     }
    },
    "dropdown.disabled": {
-    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\" disabled=\"\"><option value=\"\">Select</option></select>",
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\" disabled=\"\"><option value=\"\"></option></select>",
     "styles": {
      "color": "rgba(0, 0, 0, 0)",
      "background-color": "rgba(0, 0, 0, 0.01)",
@@ -902,7 +902,7 @@
     }
    },
    "field.label": {
-    "html": "<label class=\"form-textbox-label\" for=\"cui-field\">Email</label>",
+    "html": "<label class=\"form-textbox-label\" for=\"cui-field\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -931,13 +931,13 @@
     }
    },
    "field.error-label": {
-    "html": "<label class=\"form-textbox-label\" for=\"cui-error\">Email</label>",
+    "html": "<label class=\"form-textbox-label\" for=\"cui-error\"></label>",
     "styles": {
      "color": "rgb(227, 0, 0)"
     }
    },
    "field.error-message": {
-    "html": "<span class=\"form-message\">Please enter a valid email.</span>",
+    "html": "<span class=\"form-message\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -948,7 +948,7 @@
     }
    },
    "field.error-icon": {
-    "html": "<div class=\"form-message-wrapper\" id=\"cui-error-message\"><span class=\"form-message\">Please enter a valid email.</span></div>",
+    "html": "<div class=\"form-message-wrapper\" id=\"cui-error-message\"><span class=\"form-message\"></span></div>",
     "styles": {
      "content": "none",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
@@ -970,7 +970,7 @@
     }
    },
    "field.disabled-label": {
-    "html": "<label class=\"form-textbox-label\" for=\"cui-disabled\">Email</label>",
+    "html": "<label class=\"form-textbox-label\" for=\"cui-disabled\"></label>",
     "styles": {
      "color": "rgb(110, 110, 115)",
      "opacity": "1"
@@ -1017,7 +1017,7 @@
     }
    },
    "textarea.label": {
-    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\">Comments</span>",
+    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1045,7 +1045,7 @@
     }
    },
    "dropdown.error": {
-    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\"><option value=\"\">Select</option></select>",
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\"><option value=\"\"></option></select>",
     "styles": {
      "background-color": "rgb(255, 242, 244)",
      "border-top-color": "rgb(227, 0, 0)",
@@ -1062,7 +1062,7 @@
     }
    },
    "dropdown.disabled": {
-    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\" disabled=\"\"><option value=\"\">Select</option></select>",
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\" disabled=\"\"><option value=\"\"></option></select>",
     "styles": {
      "color": "rgba(0, 0, 0, 0)",
      "background-color": "rgba(0, 0, 0, 0.01)",
@@ -1258,7 +1258,7 @@
     }
    },
    "field.label": {
-    "html": "<label class=\"form-textbox-label\" for=\"cui-field\">Email</label>",
+    "html": "<label class=\"form-textbox-label\" for=\"cui-field\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1287,13 +1287,13 @@
     }
    },
    "field.error-label": {
-    "html": "<label class=\"form-textbox-label\" for=\"cui-error\">Email</label>",
+    "html": "<label class=\"form-textbox-label\" for=\"cui-error\"></label>",
     "styles": {
      "color": "rgb(227, 0, 0)"
     }
    },
    "field.error-message": {
-    "html": "<span class=\"form-message\">Please enter a valid email.</span>",
+    "html": "<span class=\"form-message\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1304,7 +1304,7 @@
     }
    },
    "field.error-icon": {
-    "html": "<div class=\"form-message-wrapper\" id=\"cui-error-message\"><span class=\"form-message\">Please enter a valid email.</span></div>",
+    "html": "<div class=\"form-message-wrapper\" id=\"cui-error-message\"><span class=\"form-message\"></span></div>",
     "styles": {
      "content": "none",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
@@ -1326,7 +1326,7 @@
     }
    },
    "field.disabled-label": {
-    "html": "<label class=\"form-textbox-label\" for=\"cui-disabled\">Email</label>",
+    "html": "<label class=\"form-textbox-label\" for=\"cui-disabled\"></label>",
     "styles": {
      "color": "rgb(110, 110, 115)",
      "opacity": "1"
@@ -1373,7 +1373,7 @@
     }
    },
    "textarea.label": {
-    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\">Comments</span>",
+    "html": "<span class=\"form-textbox-label\" id=\"cui-area-label\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1401,7 +1401,7 @@
     }
    },
    "dropdown.error": {
-    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\"><option value=\"\">Select</option></select>",
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\"><option value=\"\"></option></select>",
     "styles": {
      "background-color": "rgb(255, 242, 244)",
      "border-top-color": "rgb(227, 0, 0)",
@@ -1418,7 +1418,7 @@
     }
    },
    "dropdown.disabled": {
-    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\" disabled=\"\"><option value=\"\">Select</option></select>",
+    "html": "<select id=\"cui-dd\" class=\"form-dropdown-select form-dropdown-selectnone\" disabled=\"\"><option value=\"\"></option></select>",
     "styles": {
      "color": "rgba(0, 0, 0, 0)",
      "background-color": "rgba(0, 0, 0, 0.01)",

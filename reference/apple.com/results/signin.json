@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "title": {
-    "html": "<h1 tabindex=\"-1\" class=\"si-container-title tk-label  \" id=\"contentheader\">\n            \n                    Sign in to Apple Store\n                \n        </h1>",
+    "html": "<h1 tabindex=\"-1\" class=\"si-container-title tk-label  \" id=\"contentheader\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -17,7 +17,7 @@
     }
    },
    "field": {
-    "html": "<div class=\" form-cell-wrapper form-textbox   \">\n            <input type=\"text\" id=\"account_name_text_field\" can-field=\"accountName\" aria-labelledby=\"apple_id_field_label\" autocorrect=\"off\" autocapitalize=\"off\" aria-required=\"true\" required",
+    "html": "<div class=\" form-cell-wrapper form-textbox   \"><input type=\"text\" id=\"account_name_text_field\" can-field=\"accountName\" aria-labelledby=\"apple_id_field_label\" autocorrect=\"off\" autocapitalize=\"off\" aria-required=\"true\" required",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -192,7 +192,7 @@
     }
    },
    "field.label": {
-    "html": "<span aria-hidden=\"true\" id=\"apple_id_field_label\" class=\" form-textbox-label  form-label-flyout\">             \n              Email or Phone Number\n            </span>",
+    "html": "<span aria-hidden=\"true\" id=\"apple_id_field_label\" class=\" form-textbox-label  form-label-flyout\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -265,7 +265,7 @@
     }
    },
    "checkbox.label": {
-    "html": "<label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \">\n          <span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>          Remember me\n        </label>",
+    "html": "<label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \"><span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -280,7 +280,7 @@
     }
    },
    "checkbox.box": {
-    "html": "<div class=\"form-checkbox\">\n        <input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\">\n        <label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \">\n          <span class=",
+    "html": "<div class=\"form-checkbox\"><input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\"><label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \"><span class=",
     "styles": {
      "position": "relative",
      "margin-bottom": "11px"
@@ -416,7 +416,7 @@
     }
    },
    "continue": {
-    "html": "<button id=\"sign-in\" ($click)=\"_verify($element)\" tabindex=\"0\" class=\"si-button btn  fed-ui   fed-ui-animation-show   disable   remember-me  \" aria-label=\"Continue\" aria-disabled=\"true\" disabled=\"\">\n          <i class=\"shared-icon icon_sign",
+    "html": "<button id=\"sign-in\" ($click)=\"_verify($element)\" tabindex=\"0\" class=\"si-button btn  fed-ui   fed-ui-animation-show   disable   remember-me  \" aria-label=\"…\" aria-disabled=\"true\" disabled=\"\"><i class=\"shared-icon icon_sign",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -524,7 +524,7 @@
     }
    },
    "link": {
-    "html": "<a id=\"iforgot-link\" class=\"si-link ax-outline lite-theme-override\" ($click)=\"iforgotLinkClickHandler($element)\" href=\"https://iforgot.apple.com/password/verify/appleid\" target=\"_blank\">\n        \n          Forgot <span class=\"no-wrap sk-ico",
+    "html": "<a id=\"iforgot-link\" class=\"si-link ax-outline lite-theme-override\" ($click)=\"iforgotLinkClickHandler($element)\" href=\"https://iforgot.apple.com/password/verify/appleid\" target=\"_blank\"><span class=\"no-wrap sk-ico",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -553,7 +553,7 @@
   },
   "900": {
    "title": {
-    "html": "<h1 tabindex=\"-1\" class=\"si-container-title tk-label  \" id=\"contentheader\">\n            \n                    Sign in to Apple Store\n                \n        </h1>",
+    "html": "<h1 tabindex=\"-1\" class=\"si-container-title tk-label  \" id=\"contentheader\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -564,7 +564,7 @@
     }
    },
    "field": {
-    "html": "<div class=\" form-cell-wrapper form-textbox   \">\n            <input type=\"text\" id=\"account_name_text_field\" can-field=\"accountName\" aria-labelledby=\"apple_id_field_label\" autocorrect=\"off\" autocapitalize=\"off\" aria-required=\"true\" required",
+    "html": "<div class=\" form-cell-wrapper form-textbox   \"><input type=\"text\" id=\"account_name_text_field\" can-field=\"accountName\" aria-labelledby=\"apple_id_field_label\" autocorrect=\"off\" autocapitalize=\"off\" aria-required=\"true\" required",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -739,7 +739,7 @@
     }
    },
    "field.label": {
-    "html": "<span aria-hidden=\"true\" id=\"apple_id_field_label\" class=\" form-textbox-label  form-label-flyout\">             \n              Email or Phone Number\n            </span>",
+    "html": "<span aria-hidden=\"true\" id=\"apple_id_field_label\" class=\" form-textbox-label  form-label-flyout\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -812,7 +812,7 @@
     }
    },
    "checkbox.label": {
-    "html": "<label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \">\n          <span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>          Remember me\n        </label>",
+    "html": "<label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \"><span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -827,7 +827,7 @@
     }
    },
    "checkbox.box": {
-    "html": "<div class=\"form-checkbox\">\n        <input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\">\n        <label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \">\n          <span class=",
+    "html": "<div class=\"form-checkbox\"><input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\"><label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \"><span class=",
     "styles": {
      "position": "relative",
      "margin-bottom": "11px"
@@ -963,7 +963,7 @@
     }
    },
    "continue": {
-    "html": "<button id=\"sign-in\" ($click)=\"_verify($element)\" tabindex=\"0\" class=\"si-button btn  fed-ui   fed-ui-animation-show   disable   remember-me  \" aria-label=\"Continue\" aria-disabled=\"true\" disabled=\"\">\n          <i class=\"shared-icon icon_sign",
+    "html": "<button id=\"sign-in\" ($click)=\"_verify($element)\" tabindex=\"0\" class=\"si-button btn  fed-ui   fed-ui-animation-show   disable   remember-me  \" aria-label=\"…\" aria-disabled=\"true\" disabled=\"\"><i class=\"shared-icon icon_sign",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1071,7 +1071,7 @@
     }
    },
    "link": {
-    "html": "<a id=\"iforgot-link\" class=\"si-link ax-outline lite-theme-override\" ($click)=\"iforgotLinkClickHandler($element)\" href=\"https://iforgot.apple.com/password/verify/appleid\" target=\"_blank\">\n        \n          Forgot <span class=\"no-wrap sk-ico",
+    "html": "<a id=\"iforgot-link\" class=\"si-link ax-outline lite-theme-override\" ($click)=\"iforgotLinkClickHandler($element)\" href=\"https://iforgot.apple.com/password/verify/appleid\" target=\"_blank\"><span class=\"no-wrap sk-ico",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1100,7 +1100,7 @@
   },
   "1200": {
    "title": {
-    "html": "<h1 tabindex=\"-1\" class=\"si-container-title tk-label  \" id=\"contentheader\">\n            \n                    Sign in to Apple Store\n                \n        </h1>",
+    "html": "<h1 tabindex=\"-1\" class=\"si-container-title tk-label  \" id=\"contentheader\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -1111,7 +1111,7 @@
     }
    },
    "field": {
-    "html": "<div class=\" form-cell-wrapper form-textbox   \">\n            <input type=\"text\" id=\"account_name_text_field\" can-field=\"accountName\" aria-labelledby=\"apple_id_field_label\" autocorrect=\"off\" autocapitalize=\"off\" aria-required=\"true\" required",
+    "html": "<div class=\" form-cell-wrapper form-textbox   \"><input type=\"text\" id=\"account_name_text_field\" can-field=\"accountName\" aria-labelledby=\"apple_id_field_label\" autocorrect=\"off\" autocapitalize=\"off\" aria-required=\"true\" required",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1286,7 +1286,7 @@
     }
    },
    "field.label": {
-    "html": "<span aria-hidden=\"true\" id=\"apple_id_field_label\" class=\" form-textbox-label  form-label-flyout\">             \n              Email or Phone Number\n            </span>",
+    "html": "<span aria-hidden=\"true\" id=\"apple_id_field_label\" class=\" form-textbox-label  form-label-flyout\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1359,7 +1359,7 @@
     }
    },
    "checkbox.label": {
-    "html": "<label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \">\n          <span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>          Remember me\n        </label>",
+    "html": "<label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \"><span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1374,7 +1374,7 @@
     }
    },
    "checkbox.box": {
-    "html": "<div class=\"form-checkbox\">\n        <input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\">\n        <label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \">\n          <span class=",
+    "html": "<div class=\"form-checkbox\"><input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\"><label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \"><span class=",
     "styles": {
      "position": "relative",
      "margin-bottom": "11px"
@@ -1510,7 +1510,7 @@
     }
    },
    "continue": {
-    "html": "<button id=\"sign-in\" ($click)=\"_verify($element)\" tabindex=\"0\" class=\"si-button btn  fed-ui   fed-ui-animation-show   disable   remember-me  \" aria-label=\"Continue\" aria-disabled=\"true\" disabled=\"\">\n          <i class=\"shared-icon icon_sign",
+    "html": "<button id=\"sign-in\" ($click)=\"_verify($element)\" tabindex=\"0\" class=\"si-button btn  fed-ui   fed-ui-animation-show   disable   remember-me  \" aria-label=\"…\" aria-disabled=\"true\" disabled=\"\"><i class=\"shared-icon icon_sign",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1618,7 +1618,7 @@
     }
    },
    "link": {
-    "html": "<a id=\"iforgot-link\" class=\"si-link ax-outline lite-theme-override\" ($click)=\"iforgotLinkClickHandler($element)\" href=\"https://iforgot.apple.com/password/verify/appleid\" target=\"_blank\">\n        \n          Forgot <span class=\"no-wrap sk-ico",
+    "html": "<a id=\"iforgot-link\" class=\"si-link ax-outline lite-theme-override\" ($click)=\"iforgotLinkClickHandler($element)\" href=\"https://iforgot.apple.com/password/verify/appleid\" target=\"_blank\"><span class=\"no-wrap sk-ico",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1647,7 +1647,7 @@
   },
   "1600": {
    "title": {
-    "html": "<h1 tabindex=\"-1\" class=\"si-container-title tk-label  \" id=\"contentheader\">\n            \n                    Sign in to Apple Store\n                \n        </h1>",
+    "html": "<h1 tabindex=\"-1\" class=\"si-container-title tk-label  \" id=\"contentheader\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -1658,7 +1658,7 @@
     }
    },
    "field": {
-    "html": "<div class=\" form-cell-wrapper form-textbox   \">\n            <input type=\"text\" id=\"account_name_text_field\" can-field=\"accountName\" aria-labelledby=\"apple_id_field_label\" autocorrect=\"off\" autocapitalize=\"off\" aria-required=\"true\" required",
+    "html": "<div class=\" form-cell-wrapper form-textbox   \"><input type=\"text\" id=\"account_name_text_field\" can-field=\"accountName\" aria-labelledby=\"apple_id_field_label\" autocorrect=\"off\" autocapitalize=\"off\" aria-required=\"true\" required",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1833,7 +1833,7 @@
     }
    },
    "field.label": {
-    "html": "<span aria-hidden=\"true\" id=\"apple_id_field_label\" class=\" form-textbox-label  form-label-flyout\">             \n              Email or Phone Number\n            </span>",
+    "html": "<span aria-hidden=\"true\" id=\"apple_id_field_label\" class=\" form-textbox-label  form-label-flyout\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1906,7 +1906,7 @@
     }
    },
    "checkbox.label": {
-    "html": "<label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \">\n          <span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span>          Remember me\n        </label>",
+    "html": "<label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \"><span class=\"form-checkbox-indicator\" aria-hidden=\"true\"></span></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1921,7 +1921,7 @@
     }
    },
    "checkbox.box": {
-    "html": "<div class=\"form-checkbox\">\n        <input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\">\n        <label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \">\n          <span class=",
+    "html": "<div class=\"form-checkbox\"><input type=\"checkbox\" id=\"remember-me\" {($checked)}=\"isRememberMeChecked\" class=\"form-checkbox-input\"><label id=\"remember-me-label\" for=\"remember-me\" class=\"form-label  \"><span class=",
     "styles": {
      "position": "relative",
      "margin-bottom": "11px"
@@ -2057,7 +2057,7 @@
     }
    },
    "continue": {
-    "html": "<button id=\"sign-in\" ($click)=\"_verify($element)\" tabindex=\"0\" class=\"si-button btn  fed-ui   fed-ui-animation-show   disable   remember-me  \" aria-label=\"Continue\" aria-disabled=\"true\" disabled=\"\">\n          <i class=\"shared-icon icon_sign",
+    "html": "<button id=\"sign-in\" ($click)=\"_verify($element)\" tabindex=\"0\" class=\"si-button btn  fed-ui   fed-ui-animation-show   disable   remember-me  \" aria-label=\"…\" aria-disabled=\"true\" disabled=\"\"><i class=\"shared-icon icon_sign",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2165,7 +2165,7 @@
     }
    },
    "link": {
-    "html": "<a id=\"iforgot-link\" class=\"si-link ax-outline lite-theme-override\" ($click)=\"iforgotLinkClickHandler($element)\" href=\"https://iforgot.apple.com/password/verify/appleid\" target=\"_blank\">\n        \n          Forgot <span class=\"no-wrap sk-ico",
+    "html": "<a id=\"iforgot-link\" class=\"si-link ax-outline lite-theme-override\" ($click)=\"iforgotLinkClickHandler($element)\" href=\"https://iforgot.apple.com/password/verify/appleid\" target=\"_blank\"><span class=\"no-wrap sk-ico",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",

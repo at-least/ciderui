@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "nav.phone": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "48px",
      "position": "absolute",
@@ -482,13 +482,13 @@
     }
    },
    "current": {
-    "html": "<div class=\"globalnav-searchresults-current\" hidden=\"\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"globalnav-searchresults-header\"",
+    "html": "<div class=\"globalnav-searchresults-current\" hidden=\"\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\"><h2 class=\"globalnav-searchresults-header\"",
     "styles": {
      "display": "none"
     }
    },
    "field": {
-    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" spellcheck=\"",
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" spellcheck=\"",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -508,7 +508,7 @@
     }
    },
    "results": {
-    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\" hidden=\"\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 c",
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\" hidden=\"\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\"><h2 c",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -527,7 +527,7 @@
     }
    },
    "links": {
-    "html": "<div class=\"globalnav-searchresults-container\"><h2 class=\"globalnav-searchresults-header\">Suggested Links</h2><ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globa",
+    "html": "<div class=\"globalnav-searchresults-container\"><h2 class=\"globalnav-searchresults-header\"></h2><ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globa",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -546,7 +546,7 @@
     }
    },
    "searches": {
-    "html": "<div class=\"globalnav-searchresults-container\"><h2 class=\"globalnav-searchresults-header\">Suggested Searches</h2><ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"gl",
+    "html": "<div class=\"globalnav-searchresults-container\"><h2 class=\"globalnav-searchresults-header\"></h2><ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"gl",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -565,7 +565,7 @@
     }
    },
    "links.header": {
-    "html": "<h2 class=\"globalnav-searchresults-header\">Suggested Links</h2>",
+    "html": "<h2 class=\"globalnav-searchresults-header\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -591,7 +591,7 @@
     }
    },
    "searches.header": {
-    "html": "<h2 class=\"globalnav-searchresults-header\">Suggested Searches</h2>",
+    "html": "<h2 class=\"globalnav-searchresults-header\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -748,7 +748,7 @@
     }
    },
    "text": {
-    "html": "<span class=\"globalnav-searchresults-list-text\"><span class=\"globalnav-searchresults-list-text-highlight\">iPh</span>one 18 Pro</span>",
+    "html": "<span class=\"globalnav-searchresults-list-text\"><span class=\"globalnav-searchresults-list-text-highlight\"></span></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -765,7 +765,7 @@
     }
    },
    "highlight": {
-    "html": "<span class=\"globalnav-searchresults-list-text-highlight\">iPh</span>",
+    "html": "<span class=\"globalnav-searchresults-list-text-highlight\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -873,7 +873,7 @@
     }
    },
    "highlight.states": {
-    "html": "<span class=\"globalnav-searchresults-list-text-highlight\">iPh</span>",
+    "html": "<span class=\"globalnav-searchresults-list-text-highlight\"></span>",
     "styles": {
      "color": "rgb(232, 232, 237)"
     },
@@ -903,7 +903,7 @@
   },
   "1600": {
    "nav": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "44px",
      "position": "absolute",
@@ -1179,13 +1179,13 @@
     }
    },
    "current": {
-    "html": "<div class=\"globalnav-searchresults-current\" hidden=\"\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"globalnav-searchresults-header\"",
+    "html": "<div class=\"globalnav-searchresults-current\" hidden=\"\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\"><h2 class=\"globalnav-searchresults-header\"",
     "styles": {
      "display": "none"
     }
    },
    "field": {
-    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" sp",
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" sp",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1205,7 +1205,7 @@
     }
    },
    "results": {
-    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\" hidden=\"\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 c",
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\" hidden=\"\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\"><h2 c",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1224,7 +1224,7 @@
     }
    },
    "links": {
-    "html": "<div class=\"globalnav-searchresults-container\"><h2 class=\"globalnav-searchresults-header\">Suggested Links</h2><ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globa",
+    "html": "<div class=\"globalnav-searchresults-container\"><h2 class=\"globalnav-searchresults-header\"></h2><ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"globa",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1243,7 +1243,7 @@
     }
    },
    "searches": {
-    "html": "<div class=\"globalnav-searchresults-container\"><h2 class=\"globalnav-searchresults-header\">Suggested Searches</h2><ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"gl",
+    "html": "<div class=\"globalnav-searchresults-container\"><h2 class=\"globalnav-searchresults-header\"></h2><ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\"><a class=\"gl",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1262,7 +1262,7 @@
     }
    },
    "links.header": {
-    "html": "<h2 class=\"globalnav-searchresults-header\">Suggested Links</h2>",
+    "html": "<h2 class=\"globalnav-searchresults-header\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1288,7 +1288,7 @@
     }
    },
    "searches.header": {
-    "html": "<h2 class=\"globalnav-searchresults-header\">Suggested Searches</h2>",
+    "html": "<h2 class=\"globalnav-searchresults-header\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1445,7 +1445,7 @@
     }
    },
    "text": {
-    "html": "<span class=\"globalnav-searchresults-list-text\"><span class=\"globalnav-searchresults-list-text-highlight\">iPh</span>one 18 Pro</span>",
+    "html": "<span class=\"globalnav-searchresults-list-text\"><span class=\"globalnav-searchresults-list-text-highlight\"></span></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1462,7 +1462,7 @@
     }
    },
    "highlight": {
-    "html": "<span class=\"globalnav-searchresults-list-text-highlight\">iPh</span>",
+    "html": "<span class=\"globalnav-searchresults-list-text-highlight\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1570,7 +1570,7 @@
     }
    },
    "highlight.states": {
-    "html": "<span class=\"globalnav-searchresults-list-text-highlight\">iPh</span>",
+    "html": "<span class=\"globalnav-searchresults-list-text-highlight\"></span>",
     "styles": {
      "color": "rgb(232, 232, 237)"
     },

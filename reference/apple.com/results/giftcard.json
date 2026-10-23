@@ -33,7 +33,7 @@
     }
    },
    "section.title": {
-    "html": "<h2 class=\"rf-choose-amount-section-title typography-body\">Choose an amount.</h2>",
+    "html": "<h2 class=\"rf-choose-amount-section-title typography-body\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -155,7 +155,7 @@
     }
    },
    "error.label": {
-    "html": "<label id=\"_r_l__label\" for=\"_r_l_\" class=\"form-textbox-label\">Recipient Email Address</label>",
+    "html": "<label id=\"_r_l__label\" for=\"_r_l_\" class=\"form-textbox-label\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -174,7 +174,7 @@
     }
    },
    "error.wrapper": {
-    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\">Please enter a valid Recipient Email.</span></div>",
+    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\"></span></div>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -205,7 +205,7 @@
     }
    },
    "error.message": {
-    "html": "<span class=\"form-message\">Please enter a valid Recipient Email.</span>",
+    "html": "<span class=\"form-message\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -242,7 +242,7 @@
     }
    },
    "error.icon": {
-    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\">Please enter a valid Recipient Email.</span></div>",
+    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\"></span></div>",
     "styles": {
      "content": "\"\" / \"\"",
      "font-family": "\"SF Pro Icons\"",
@@ -288,7 +288,7 @@
     }
    },
    "section.title": {
-    "html": "<h2 class=\"rf-choose-amount-section-title typography-body\">Choose an amount.</h2>",
+    "html": "<h2 class=\"rf-choose-amount-section-title typography-body\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -410,7 +410,7 @@
     }
    },
    "error.label": {
-    "html": "<label id=\"_r_l__label\" for=\"_r_l_\" class=\"form-textbox-label\">Recipient Email Address</label>",
+    "html": "<label id=\"_r_l__label\" for=\"_r_l_\" class=\"form-textbox-label\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -429,7 +429,7 @@
     }
    },
    "error.wrapper": {
-    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\">Please enter a valid Recipient Email.</span></div>",
+    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\"></span></div>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -460,7 +460,7 @@
     }
    },
    "error.message": {
-    "html": "<span class=\"form-message\">Please enter a valid Recipient Email.</span>",
+    "html": "<span class=\"form-message\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -497,7 +497,7 @@
     }
    },
    "error.icon": {
-    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\">Please enter a valid Recipient Email.</span></div>",
+    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\"></span></div>",
     "styles": {
      "content": "\"\" / \"\"",
      "font-family": "\"SF Pro Icons\"",
@@ -543,7 +543,7 @@
     }
    },
    "section.title": {
-    "html": "<h2 class=\"rf-choose-amount-section-title typography-body\">Choose an amount.</h2>",
+    "html": "<h2 class=\"rf-choose-amount-section-title typography-body\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -665,7 +665,7 @@
     }
    },
    "error.label": {
-    "html": "<label id=\"_r_l__label\" for=\"_r_l_\" class=\"form-textbox-label\">Recipient Email Address</label>",
+    "html": "<label id=\"_r_l__label\" for=\"_r_l_\" class=\"form-textbox-label\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -684,7 +684,7 @@
     }
    },
    "error.wrapper": {
-    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\">Please enter a valid Recipient Email.</span></div>",
+    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\"></span></div>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -715,7 +715,7 @@
     }
    },
    "error.message": {
-    "html": "<span class=\"form-message\">Please enter a valid Recipient Email.</span>",
+    "html": "<span class=\"form-message\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -752,7 +752,7 @@
     }
    },
    "error.icon": {
-    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\">Please enter a valid Recipient Email.</span></div>",
+    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\"></span></div>",
     "styles": {
      "content": "\"\" / \"\"",
      "font-family": "\"SF Pro Icons\"",
@@ -771,7 +771,7 @@
   },
   "1600": {
    "button.disabled": {
-    "html": "<button class=\"button button-block\" type=\"button\" disabled=\"\">Select</button>",
+    "html": "<button class=\"button button-block\" type=\"button\" disabled=\"\"></button>",
     "styles": {
      "background-color": "rgb(0, 113, 227)",
      "color": "rgb(255, 255, 255)",
@@ -808,7 +808,7 @@
     }
    },
    "section.title": {
-    "html": "<h2 class=\"rf-choose-amount-section-title typography-body\">Choose an amount.</h2>",
+    "html": "<h2 class=\"rf-choose-amount-section-title typography-body\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -844,7 +844,7 @@
     }
    },
    "label.disabled": {
-    "html": "<label id=\"_r_k__label\" for=\"_r_k_\" class=\"form-textbox-label\">Recipient Name</label>",
+    "html": "<label id=\"_r_k__label\" for=\"_r_k_\" class=\"form-textbox-label\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -868,7 +868,7 @@
     }
    },
    "prefix": {
-    "html": "<div class=\"form-textbox rf-custom-input form-textbox-with-countrycode-onedigit\"> <div class=\"form-textbox-countrycode\"><div class=\"visuallyhidden\" id=\"rf-custom-currency-a11y\">Currency USD</div><div translate=\"no\">$</div></div><label id=\"_",
+    "html": "<div class=\"form-textbox rf-custom-input form-textbox-with-countrycode-onedigit\"><div class=\"form-textbox-countrycode\"><div class=\"visuallyhidden\" id=\"rf-custom-currency-a11y\"></div><div translate=\"no\"></div></div><label id=\"_",
     "styles": {
      "position": "relative",
      "display": "block",
@@ -882,7 +882,7 @@
     }
    },
    "prefix.currency": {
-    "html": "<div class=\"form-textbox-countrycode\"><div class=\"visuallyhidden\" id=\"rf-custom-currency-a11y\">Currency USD</div><div translate=\"no\">$</div></div>",
+    "html": "<div class=\"form-textbox-countrycode\"><div class=\"visuallyhidden\" id=\"rf-custom-currency-a11y\"></div><div translate=\"no\"></div></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1006,7 +1006,7 @@
     }
    },
    "prefix.label": {
-    "html": "<label id=\"_r_d__label\" for=\"_r_d_\" class=\"form-textbox-label\">Other Amount</label>",
+    "html": "<label id=\"_r_d__label\" for=\"_r_d_\" class=\"form-textbox-label\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1152,7 +1152,7 @@
     }
    },
    "error.label": {
-    "html": "<label id=\"_r_l__label\" for=\"_r_l_\" class=\"form-textbox-label\">Recipient Email Address</label>",
+    "html": "<label id=\"_r_l__label\" for=\"_r_l_\" class=\"form-textbox-label\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1171,7 +1171,7 @@
     }
    },
    "error.wrapper": {
-    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\">Please enter a valid Recipient Email.</span></div>",
+    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\"></span></div>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1202,7 +1202,7 @@
     }
    },
    "error.message": {
-    "html": "<span class=\"form-message\">Please enter a valid Recipient Email.</span>",
+    "html": "<span class=\"form-message\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1239,7 +1239,7 @@
     }
    },
    "error.icon": {
-    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\">Please enter a valid Recipient Email.</span></div>",
+    "html": "<div aria-live=\"polite\" class=\"form-message-wrapper\" id=\"_r_l__error\"><span class=\"form-message\"></span></div>",
     "styles": {
      "content": "\"\" / \"\"",
      "font-family": "\"SF Pro Icons\"",

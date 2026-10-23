@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "results": {
-    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "html": "<div class=\"results__content\"><div class=\"result\" role=\"group\" aria-label=\"…\">",
     "styles": {
      "width": "341.25px",
      "max-width": "none",
@@ -23,7 +23,7 @@
     }
    },
    "month": {
-    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"…\"><h2 class=\"result__title\"></h2><a href=\"/new",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -32,7 +32,7 @@
     }
    },
    "month.title": {
-    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "html": "<h2 class=\"result__title\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -45,7 +45,7 @@
     }
    },
    "row": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"…\"><picture class=\"viewport-picture\">",
     "styles": {
      "padding-top": "28px",
      "padding-right": "0px",
@@ -147,7 +147,7 @@
     }
    },
    "row.last": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"…\">",
     "styles": {
      "border-bottom-width": "0px",
      "border-bottom-style": "none",
@@ -156,7 +156,7 @@
     }
    },
    "row.img": {
-    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "html": "<picture class=\"viewport-picture\"><img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
     "styles": {
      "width": "105px",
      "height": "59.0625px",
@@ -172,7 +172,7 @@
     }
    },
    "row.copy": {
-    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "html": "<div class=\"item__content\"><p class=\"item__category category_update\"></p><h3 class=\"item__headline\"></h3><p class=\"item__date\">",
     "styles": {
      "padding-left": "0px",
      "margin-left": "16px",
@@ -185,7 +185,7 @@
     }
    },
    "row.category": {
-    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "html": "<p class=\"item__category category_update\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -204,7 +204,7 @@
     }
    },
    "row.headline": {
-    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"item__headline\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -229,7 +229,7 @@
     }
    },
    "row.date": {
-    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "html": "<p class=\"item__date\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -244,7 +244,7 @@
   },
   "734": {
    "results": {
-    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "html": "<div class=\"results__content\"><div class=\"result\" role=\"group\" aria-label=\"…\">",
     "styles": {
      "width": "642.25px",
      "max-width": "none",
@@ -261,7 +261,7 @@
     }
    },
    "month": {
-    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"…\"><h2 class=\"result__title\"></h2><a href=\"/new",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -270,7 +270,7 @@
     }
    },
    "month.title": {
-    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "html": "<h2 class=\"result__title\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -283,7 +283,7 @@
     }
    },
    "row": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"…\"><picture class=\"viewport-picture\">",
     "styles": {
      "padding-top": "28px",
      "padding-right": "0px",
@@ -385,7 +385,7 @@
     }
    },
    "row.last": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"…\">",
     "styles": {
      "border-bottom-width": "0px",
      "border-bottom-style": "none",
@@ -394,7 +394,7 @@
     }
    },
    "row.img": {
-    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "html": "<picture class=\"viewport-picture\"><img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
     "styles": {
      "width": "105px",
      "height": "59.0625px",
@@ -410,7 +410,7 @@
     }
    },
    "row.copy": {
-    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "html": "<div class=\"item__content\"><p class=\"item__category category_update\"></p><h3 class=\"item__headline\"></h3><p class=\"item__date\">",
     "styles": {
      "padding-left": "0px",
      "margin-left": "16px",
@@ -423,7 +423,7 @@
     }
    },
    "row.category": {
-    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "html": "<p class=\"item__category category_update\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -442,7 +442,7 @@
     }
    },
    "row.headline": {
-    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"item__headline\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -467,7 +467,7 @@
     }
    },
    "row.date": {
-    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "html": "<p class=\"item__date\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -482,7 +482,7 @@
   },
   "735": {
    "results": {
-    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "html": "<div class=\"results__content\"><div class=\"result\" role=\"group\" aria-label=\"…\">",
     "styles": {
      "width": "692px",
      "max-width": "none",
@@ -499,7 +499,7 @@
     }
    },
    "month": {
-    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"…\"><h2 class=\"result__title\"></h2><a href=\"/new",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -508,7 +508,7 @@
     }
    },
    "month.title": {
-    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "html": "<h2 class=\"result__title\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -521,7 +521,7 @@
     }
    },
    "row": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"…\"><picture class=\"viewport-picture\">",
     "styles": {
      "padding-top": "32px",
      "padding-right": "0px",
@@ -623,7 +623,7 @@
     }
    },
    "row.last": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"…\">",
     "styles": {
      "border-bottom-width": "0px",
      "border-bottom-style": "none",
@@ -632,7 +632,7 @@
     }
    },
    "row.img": {
-    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "html": "<picture class=\"viewport-picture\"><img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
     "styles": {
      "width": "264px",
      "height": "148.5px",
@@ -648,7 +648,7 @@
     }
    },
    "row.copy": {
-    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "html": "<div class=\"item__content\"><p class=\"item__category category_update\"></p><h3 class=\"item__headline\"></h3><p class=\"item__date\">",
     "styles": {
      "padding-left": "0px",
      "margin-left": "24px",
@@ -661,7 +661,7 @@
     }
    },
    "row.category": {
-    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "html": "<p class=\"item__category category_update\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -680,7 +680,7 @@
     }
    },
    "row.headline": {
-    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"item__headline\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -705,7 +705,7 @@
     }
    },
    "row.date": {
-    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "html": "<p class=\"item__date\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -720,7 +720,7 @@
   },
   "900": {
    "results": {
-    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "html": "<div class=\"results__content\"><div class=\"result\" role=\"group\" aria-label=\"…\">",
     "styles": {
      "width": "692px",
      "max-width": "none",
@@ -737,7 +737,7 @@
     }
    },
    "month": {
-    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"…\"><h2 class=\"result__title\"></h2><a href=\"/new",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -746,7 +746,7 @@
     }
    },
    "month.title": {
-    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "html": "<h2 class=\"result__title\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -759,7 +759,7 @@
     }
    },
    "row": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"…\"><picture class=\"viewport-picture\">",
     "styles": {
      "padding-top": "32px",
      "padding-right": "0px",
@@ -861,7 +861,7 @@
     }
    },
    "row.last": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"…\">",
     "styles": {
      "border-bottom-width": "0px",
      "border-bottom-style": "none",
@@ -870,7 +870,7 @@
     }
    },
    "row.img": {
-    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "html": "<picture class=\"viewport-picture\"><img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
     "styles": {
      "width": "264px",
      "height": "148.5px",
@@ -886,7 +886,7 @@
     }
    },
    "row.copy": {
-    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "html": "<div class=\"item__content\"><p class=\"item__category category_update\"></p><h3 class=\"item__headline\"></h3><p class=\"item__date\">",
     "styles": {
      "padding-left": "0px",
      "margin-left": "24px",
@@ -899,7 +899,7 @@
     }
    },
    "row.category": {
-    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "html": "<p class=\"item__category category_update\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -918,7 +918,7 @@
     }
    },
    "row.headline": {
-    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"item__headline\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -943,7 +943,7 @@
     }
    },
    "row.date": {
-    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "html": "<p class=\"item__date\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -958,7 +958,7 @@
   },
   "1068": {
    "results": {
-    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "html": "<div class=\"results__content\"><div class=\"result\" role=\"group\" aria-label=\"…\">",
     "styles": {
      "width": "692px",
      "max-width": "none",
@@ -975,7 +975,7 @@
     }
    },
    "month": {
-    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"…\"><h2 class=\"result__title\"></h2><a href=\"/new",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -984,7 +984,7 @@
     }
    },
    "month.title": {
-    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "html": "<h2 class=\"result__title\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -997,7 +997,7 @@
     }
    },
    "row": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"…\"><picture class=\"viewport-picture\">",
     "styles": {
      "padding-top": "32px",
      "padding-right": "0px",
@@ -1099,7 +1099,7 @@
     }
    },
    "row.last": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"…\">",
     "styles": {
      "border-bottom-width": "0px",
      "border-bottom-style": "none",
@@ -1108,7 +1108,7 @@
     }
    },
    "row.img": {
-    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "html": "<picture class=\"viewport-picture\"><img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
     "styles": {
      "width": "264px",
      "height": "148.5px",
@@ -1124,7 +1124,7 @@
     }
    },
    "row.copy": {
-    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "html": "<div class=\"item__content\"><p class=\"item__category category_update\"></p><h3 class=\"item__headline\"></h3><p class=\"item__date\">",
     "styles": {
      "padding-left": "0px",
      "margin-left": "24px",
@@ -1137,7 +1137,7 @@
     }
    },
    "row.category": {
-    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "html": "<p class=\"item__category category_update\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1156,7 +1156,7 @@
     }
    },
    "row.headline": {
-    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"item__headline\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1181,7 +1181,7 @@
     }
    },
    "row.date": {
-    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "html": "<p class=\"item__date\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1196,7 +1196,7 @@
   },
   "1069": {
    "results": {
-    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "html": "<div class=\"results__content\"><div class=\"result\" role=\"group\" aria-label=\"…\">",
     "styles": {
      "width": "980px",
      "max-width": "none",
@@ -1213,7 +1213,7 @@
     }
    },
    "month": {
-    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"…\"><h2 class=\"result__title\"></h2><a href=\"/new",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -1222,7 +1222,7 @@
     }
    },
    "month.title": {
-    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "html": "<h2 class=\"result__title\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -1235,7 +1235,7 @@
     }
    },
    "row": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"…\"><picture class=\"viewport-picture\">",
     "styles": {
      "padding-top": "40px",
      "padding-right": "0px",
@@ -1337,7 +1337,7 @@
     }
    },
    "row.last": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"…\">",
     "styles": {
      "border-bottom-width": "0px",
      "border-bottom-style": "none",
@@ -1346,7 +1346,7 @@
     }
    },
    "row.img": {
-    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "html": "<picture class=\"viewport-picture\"><img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
     "styles": {
      "width": "295px",
      "height": "165.938px",
@@ -1362,7 +1362,7 @@
     }
    },
    "row.copy": {
-    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "html": "<div class=\"item__content\"><p class=\"item__category category_update\"></p><h3 class=\"item__headline\"></h3><p class=\"item__date\">",
     "styles": {
      "padding-left": "0px",
      "margin-left": "32px",
@@ -1375,7 +1375,7 @@
     }
    },
    "row.category": {
-    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "html": "<p class=\"item__category category_update\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1394,7 +1394,7 @@
     }
    },
    "row.headline": {
-    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"item__headline\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -1419,7 +1419,7 @@
     }
    },
    "row.date": {
-    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "html": "<p class=\"item__date\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1434,7 +1434,7 @@
   },
   "1200": {
    "results": {
-    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "html": "<div class=\"results__content\"><div class=\"result\" role=\"group\" aria-label=\"…\">",
     "styles": {
      "width": "980px",
      "max-width": "none",
@@ -1451,7 +1451,7 @@
     }
    },
    "month": {
-    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"…\"><h2 class=\"result__title\"></h2><a href=\"/new",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -1460,7 +1460,7 @@
     }
    },
    "month.title": {
-    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "html": "<h2 class=\"result__title\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -1473,7 +1473,7 @@
     }
    },
    "row": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"…\"><picture class=\"viewport-picture\">",
     "styles": {
      "padding-top": "40px",
      "padding-right": "0px",
@@ -1575,7 +1575,7 @@
     }
    },
    "row.last": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"…\">",
     "styles": {
      "border-bottom-width": "0px",
      "border-bottom-style": "none",
@@ -1584,7 +1584,7 @@
     }
    },
    "row.img": {
-    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "html": "<picture class=\"viewport-picture\"><img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
     "styles": {
      "width": "295px",
      "height": "165.938px",
@@ -1600,7 +1600,7 @@
     }
    },
    "row.copy": {
-    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "html": "<div class=\"item__content\"><p class=\"item__category category_update\"></p><h3 class=\"item__headline\"></h3><p class=\"item__date\">",
     "styles": {
      "padding-left": "0px",
      "margin-left": "32px",
@@ -1613,7 +1613,7 @@
     }
    },
    "row.category": {
-    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "html": "<p class=\"item__category category_update\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1632,7 +1632,7 @@
     }
    },
    "row.headline": {
-    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"item__headline\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -1657,7 +1657,7 @@
     }
    },
    "row.date": {
-    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "html": "<p class=\"item__date\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1672,7 +1672,7 @@
   },
   "1600": {
    "results": {
-    "html": "<div class=\"results__content\">\n\t                 \n                        \n                            \n                                \n                                    <div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n       ",
+    "html": "<div class=\"results__content\"><div class=\"result\" role=\"group\" aria-label=\"…\">",
     "styles": {
      "width": "980px",
      "max-width": "none",
@@ -1689,7 +1689,7 @@
     }
    },
    "month": {
-    "html": "<div class=\"result\" role=\"group\" aria-label=\"October 2026\">\n                                        <h2 class=\"result__title\">October 2026</h2>\n                                    \n                                    \n    \n    <a href=\"/new",
+    "html": "<div class=\"result\" role=\"group\" aria-label=\"…\"><h2 class=\"result__title\"></h2><a href=\"/new",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -1698,7 +1698,7 @@
     }
    },
    "month.title": {
-    "html": "<h2 class=\"result__title\">October 2026</h2>",
+    "html": "<h2 class=\"result__title\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -1711,7 +1711,7 @@
     }
    },
    "row": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n        <picture class=\"viewport-picture\">",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"result__item row-anchor\" aria-label=\"…\"><picture class=\"viewport-picture\">",
     "styles": {
      "padding-top": "40px",
      "padding-right": "0px",
@@ -1813,7 +1813,7 @@
     }
    },
    "row.last": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"October 7, 2026 - UPDATE - Apple, The King’s Trust launch initiative to empower young creatives\">\n  ",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"result__item row-anchor\" aria-label=\"…\">",
     "styles": {
      "border-bottom-width": "0px",
      "border-bottom-style": "none",
@@ -1822,7 +1822,7 @@
     }
    },
    "row.img": {
-    "html": "<picture class=\"viewport-picture\">\n            <img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
+    "html": "<picture class=\"viewport-picture\"><img class=\"viewport-image\" src=\"https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero-lp.jpg.archive.jpg\" srcset=\"https://www.ap",
     "styles": {
      "width": "295px",
      "height": "165.938px",
@@ -1838,7 +1838,7 @@
     }
    },
    "row.copy": {
-    "html": "<div class=\"item__content\">\n            <p class=\"item__category category_update\">UPDATE</p>\n            <h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>\n            \n                <p class=\"item__date\">Oc",
+    "html": "<div class=\"item__content\"><p class=\"item__category category_update\"></p><h3 class=\"item__headline\"></h3><p class=\"item__date\">",
     "styles": {
      "padding-left": "0px",
      "margin-left": "32px",
@@ -1851,7 +1851,7 @@
     }
    },
    "row.category": {
-    "html": "<p class=\"item__category category_update\">UPDATE</p>",
+    "html": "<p class=\"item__category category_update\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1870,7 +1870,7 @@
     }
    },
    "row.headline": {
-    "html": "<h3 class=\"item__headline\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"item__headline\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -1895,7 +1895,7 @@
     }
    },
    "row.date": {
-    "html": "<p class=\"item__date\">October 15, 2026</p>",
+    "html": "<p class=\"item__date\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",

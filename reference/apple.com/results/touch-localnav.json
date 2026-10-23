@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "localnav.link": {
-    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -47,7 +47,7 @@
     }
    },
    "localnav.button": {
-    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -112,7 +112,7 @@
     }
    },
    "localnav.chevron-image": {
-    "html": "<span class=\"ac-ln-menucta-chevron\">\n<svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\">\n\t<polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" ve",
+    "html": "<span class=\"ac-ln-menucta-chevron\"><svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\"><polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" ve",
     "styles": {
      "color": "rgb(0, 0, 0)",
      "opacity": "0.8",
@@ -149,7 +149,7 @@
     }
    },
    "tray.open": {
-    "html": "<div class=\"ac-ln-menu-tray\" id=\"ac-ln-menustate-tray\" style=\"--r-localnav-menu-tray-natural-height: 197px;\">\n\t\t\t\t\t\t<ul class=\"ac-ln-menu-items\">\n\t\t\t\t\t\t\t<li class=\"ac-ln-menu-item\">\n\t\t\t\t\t\t\t\t<span class=\"ac-ln-menu-link current\" role=\"link\" ",
+    "html": "<div class=\"ac-ln-menu-tray\" id=\"ac-ln-menustate-tray\" style=\"--r-localnav-menu-tray-natural-height: 197px;\"><ul class=\"ac-ln-menu-items\"><li class=\"ac-ln-menu-item\"><span class=\"ac-ln-menu-link current\" role=\"link\" ",
     "styles": {
      "visibility": "visible",
      "max-height": "197px",
@@ -277,7 +277,7 @@
     ]
    },
    "tray.link": {
-    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -320,7 +320,7 @@
   },
   "833": {
    "localnav.link": {
-    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -361,7 +361,7 @@
     }
    },
    "localnav.button": {
-    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -426,7 +426,7 @@
     }
    },
    "localnav.chevron-image": {
-    "html": "<span class=\"ac-ln-menucta-chevron\">\n<svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\">\n\t<polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" ve",
+    "html": "<span class=\"ac-ln-menucta-chevron\"><svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\"><polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" ve",
     "styles": {
      "color": "rgb(0, 0, 0)",
      "opacity": "0.8",
@@ -465,7 +465,7 @@
   },
   "834": {
    "localnav.link": {
-    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -506,7 +506,7 @@
     }
    },
    "localnav.button": {
-    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -573,7 +573,7 @@
   },
   "900": {
    "localnav.link": {
-    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -614,7 +614,7 @@
     }
    },
    "localnav.button": {
-    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -681,7 +681,7 @@
   },
   "1200": {
    "localnav.link": {
-    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -722,7 +722,7 @@
     }
    },
    "localnav.button": {
-    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -789,7 +789,7 @@
   },
   "1600": {
    "localnav.link": {
-    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -830,7 +830,7 @@
     }
    },
    "localnav.button": {
-    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",

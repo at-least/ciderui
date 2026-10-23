@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "page.body": {
-    "html": "<body class=\"page-overview \" data-component-list=\"FocusManager DeepLink\" data-anim-scroll-group=\"body\" style=\"transition: opacity 0.5s; opacity: 1;\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-act",
+    "html": "<body class=\"page-overview \" data-component-list=\"FocusManager DeepLink\" data-anim-scroll-group=\"body\" style=\"transition: opacity 0.5s; opacity: 1;\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-act",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -21,7 +21,7 @@
     }
    },
    "link.more": {
-    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_duo\" class=\"icon-wrapper\" data-analytics-title=\"pre-order - iphone duo\" aria-label=\"Pre-order, iPhone Duo\">\n                                                        <span class=\"icon-copy\">Pre-order</",
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_duo\" class=\"icon-wrapper\" data-analytics-title=\"pre-order - iphone duo\" aria-label=\"…\"><span class=\"icon-copy\"></",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -77,7 +77,7 @@
     }
    },
    "link.more-copy": {
-    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "html": "<span class=\"icon-copy\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -139,7 +139,7 @@
     }
    },
    "link.inline": {
-    "html": "<a href=\"#cui\">a link</a>",
+    "html": "<a href=\"#cui\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -188,7 +188,7 @@
     }
    },
    "link.section-header": {
-    "html": "<a href=\"/iphone/compare/\" data-analytics-title=\"compare all models\" class=\"action-handler icon-wrapper section-header-cta-link\"><span class=\"icon-copy\">Compare all&nbsp;models</span><span class=\"icon icon-after more\" aria-hidden=\"true\"></s",
+    "html": "<a href=\"/iphone/compare/\" data-analytics-title=\"compare all models\" class=\"action-handler icon-wrapper section-header-cta-link\"><span class=\"icon-copy\"></span><span class=\"icon icon-after more\" aria-hidden=\"true\"></s",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -215,7 +215,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"viewport-content\">\n\t\t\t\t\t<div class=\"page-header-headline\" data-staggered-item=\"\" style=\"\">\n\t\t\t\t\t\t<h1 class=\"page-header-title typography-page-header-title\">iPhone</h1>\n\t\t\t\t\t</div>\n\t\t\t\t</div>",
+    "html": "<div class=\"viewport-content\"><div class=\"page-header-headline\" data-staggered-item=\"\" style=\"\"><h1 class=\"page-header-title typography-page-header-title\"></h1></div></div>",
     "styles": {
      "width": "341.25px",
      "max-width": "420px",
@@ -253,7 +253,7 @@
     }
    },
    "section.image-accordion": {
-    "html": "<section class=\"section section-image-accordion staggered-start\" data-anim-scroll-group=\"Image Accordion\" data-analytics-section-engagement=\"name:iphone compatibility\" data-component-list=\"StaggeredFadeIn\">\n\t\t\t<div class=\"viewport-content\">",
+    "html": "<section class=\"section section-image-accordion staggered-start\" data-anim-scroll-group=\"Image Accordion\" data-analytics-section-engagement=\"name:iphone compatibility\" data-component-list=\"StaggeredFadeIn\"><div class=\"viewport-content\">",
     "styles": {
      "padding-top": "56px",
      "padding-right": "0px",
@@ -276,7 +276,7 @@
     }
    },
    "section.header": {
-    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\">Switch to iPhone.</h2>\n\t\t\t\t</header>",
+    "html": "<header class=\"section-header row\"><h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\"></h2></header>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -310,7 +310,7 @@
     }
    },
    "section.headline": {
-    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\">Switch to iPhone.</h2>",
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -322,7 +322,7 @@
     }
    },
    "paddle": {
-    "html": "<button aria-label=\"Next item in Explore the lineup gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -443,7 +443,7 @@
     }
    },
    "paddle.icon": {
-    "html": "<svg class=\"icon-control icon-control-chevronright\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                    \t\t\t\t\t      <path d=\"m22.5597 16.9375-5.5076-5.5c-.5854-.5854-1.5323-.5825-2.1157.0039-.5835.5869-.5815 1.5366.00",
+    "html": "<svg class=\"icon-control icon-control-chevronright\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><path d=\"m22.5597 16.9375-5.5076-5.5c-.5854-.5854-1.5323-.5825-2.1157.0039-.5835.5869-.5815 1.5366.00",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -456,7 +456,7 @@
     }
    },
    "paddle.disabled": {
-    "html": "<button aria-label=\"Previous item in Get to know iPhone gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;t - 50vh&quot;,&quot;tabindex&quot;:&quot;0&quot;}\" tabindex=\"0\" disabled",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;t - 50vh&quot;,&quot;tabindex&quot;:&quot;0&quot;}\" tabindex=\"0\" disabled",
     "styles": {
      "opacity": "0.42",
      "background-color": "rgba(210, 210, 215, 0.64)",
@@ -522,7 +522,7 @@
   },
   "900": {
    "page.body": {
-    "html": "<body class=\"page-overview \" data-component-list=\"FocusManager DeepLink\" data-anim-scroll-group=\"body\" style=\"transition: opacity 0.5s; opacity: 1;\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-act",
+    "html": "<body class=\"page-overview \" data-component-list=\"FocusManager DeepLink\" data-anim-scroll-group=\"body\" style=\"transition: opacity 0.5s; opacity: 1;\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-act",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -537,7 +537,7 @@
     }
    },
    "link.more": {
-    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_duo\" class=\"icon-wrapper\" data-analytics-title=\"pre-order - iphone duo\" aria-label=\"Pre-order, iPhone Duo\">\n                                                        <span class=\"icon-copy\">Pre-order</",
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_duo\" class=\"icon-wrapper\" data-analytics-title=\"pre-order - iphone duo\" aria-label=\"…\"><span class=\"icon-copy\"></",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -593,7 +593,7 @@
     }
    },
    "link.more-copy": {
-    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "html": "<span class=\"icon-copy\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -655,7 +655,7 @@
     }
    },
    "link.inline": {
-    "html": "<a href=\"#cui\">a link</a>",
+    "html": "<a href=\"#cui\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -704,7 +704,7 @@
     }
    },
    "link.section-header": {
-    "html": "<a href=\"/iphone/compare/\" data-analytics-title=\"compare all models\" class=\"action-handler icon-wrapper section-header-cta-link\"><span class=\"icon-copy\">Compare all&nbsp;models</span><span class=\"icon icon-after more\" aria-hidden=\"true\"></s",
+    "html": "<a href=\"/iphone/compare/\" data-analytics-title=\"compare all models\" class=\"action-handler icon-wrapper section-header-cta-link\"><span class=\"icon-copy\"></span><span class=\"icon icon-after more\" aria-hidden=\"true\"></s",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -731,7 +731,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"viewport-content\">\n\t\t\t\t\t<div class=\"page-header-headline\" data-staggered-item=\"\" style=\"\">\n\t\t\t\t\t\t<h1 class=\"page-header-title typography-page-header-title\">iPhone</h1>\n\t\t\t\t\t</div>\n\t\t\t\t</div>",
+    "html": "<div class=\"viewport-content\"><div class=\"page-header-headline\" data-staggered-item=\"\" style=\"\"><h1 class=\"page-header-title typography-page-header-title\"></h1></div></div>",
     "styles": {
      "width": "787.5px",
      "max-width": "1260px",
@@ -769,7 +769,7 @@
     }
    },
    "section.image-accordion": {
-    "html": "<section class=\"section section-image-accordion staggered-start\" data-anim-scroll-group=\"Image Accordion\" data-analytics-section-engagement=\"name:iphone compatibility\" data-component-list=\"StaggeredFadeIn\">\n\t\t\t<div class=\"viewport-content\">",
+    "html": "<section class=\"section section-image-accordion staggered-start\" data-anim-scroll-group=\"Image Accordion\" data-analytics-section-engagement=\"name:iphone compatibility\" data-component-list=\"StaggeredFadeIn\"><div class=\"viewport-content\">",
     "styles": {
      "padding-top": "96px",
      "padding-right": "0px",
@@ -792,7 +792,7 @@
     }
    },
    "section.header": {
-    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\">Switch to iPhone.</h2>\n\t\t\t\t</header>",
+    "html": "<header class=\"section-header row\"><h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\"></h2></header>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -826,7 +826,7 @@
     }
    },
    "section.headline": {
-    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\">Switch to iPhone.</h2>",
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "48px",
@@ -838,7 +838,7 @@
     }
    },
    "paddle": {
-    "html": "<button aria-label=\"Next item in Explore the lineup gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -959,7 +959,7 @@
     }
    },
    "paddle.icon": {
-    "html": "<svg class=\"icon-control icon-control-chevronright\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                    \t\t\t\t\t      <path d=\"m22.5597 16.9375-5.5076-5.5c-.5854-.5854-1.5323-.5825-2.1157.0039-.5835.5869-.5815 1.5366.00",
+    "html": "<svg class=\"icon-control icon-control-chevronright\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><path d=\"m22.5597 16.9375-5.5076-5.5c-.5854-.5854-1.5323-.5825-2.1157.0039-.5835.5869-.5815 1.5366.00",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -972,7 +972,7 @@
     }
    },
    "paddle.disabled": {
-    "html": "<button aria-label=\"Previous item in Get to know iPhone gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;t - 50vh&quot;,&quot;tabindex&quot;:&quot;0&quot;}\" tabindex=\"0\" disabled",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;t - 50vh&quot;,&quot;tabindex&quot;:&quot;0&quot;}\" tabindex=\"0\" disabled",
     "styles": {
      "opacity": "0.42",
      "background-color": "rgba(210, 210, 215, 0.64)",
@@ -1038,7 +1038,7 @@
   },
   "1200": {
    "page.body": {
-    "html": "<body class=\"page-overview \" data-component-list=\"FocusManager DeepLink\" data-anim-scroll-group=\"body\" style=\"transition: opacity 0.5s; opacity: 1;\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-act",
+    "html": "<body class=\"page-overview \" data-component-list=\"FocusManager DeepLink\" data-anim-scroll-group=\"body\" style=\"transition: opacity 0.5s; opacity: 1;\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-act",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1053,7 +1053,7 @@
     }
    },
    "link.more": {
-    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_duo\" class=\"icon-wrapper\" data-analytics-title=\"pre-order - iphone duo\" aria-label=\"Pre-order, iPhone Duo\">\n                                                        <span class=\"icon-copy\">Pre-order</",
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_duo\" class=\"icon-wrapper\" data-analytics-title=\"pre-order - iphone duo\" aria-label=\"…\"><span class=\"icon-copy\"></",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1109,7 +1109,7 @@
     }
    },
    "link.more-copy": {
-    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "html": "<span class=\"icon-copy\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1171,7 +1171,7 @@
     }
    },
    "link.inline": {
-    "html": "<a href=\"#cui\">a link</a>",
+    "html": "<a href=\"#cui\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1220,7 +1220,7 @@
     }
    },
    "link.section-header": {
-    "html": "<a href=\"/iphone/compare/\" data-analytics-title=\"compare all models\" class=\"action-handler icon-wrapper section-header-cta-link\"><span class=\"icon-copy\">Compare all&nbsp;models</span><span class=\"icon icon-after more\" aria-hidden=\"true\"></s",
+    "html": "<a href=\"/iphone/compare/\" data-analytics-title=\"compare all models\" class=\"action-handler icon-wrapper section-header-cta-link\"><span class=\"icon-copy\"></span><span class=\"icon icon-after more\" aria-hidden=\"true\"></s",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1247,7 +1247,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"viewport-content\">\n\t\t\t\t\t<div class=\"page-header-headline\" data-staggered-item=\"\" style=\"\">\n\t\t\t\t\t\t<h1 class=\"page-header-title typography-page-header-title\">iPhone</h1>\n\t\t\t\t\t</div>\n\t\t\t\t</div>",
+    "html": "<div class=\"viewport-content\"><div class=\"page-header-headline\" data-staggered-item=\"\" style=\"\"><h1 class=\"page-header-title typography-page-header-title\"></h1></div></div>",
     "styles": {
      "width": "1050px",
      "max-width": "1260px",
@@ -1285,7 +1285,7 @@
     }
    },
    "section.image-accordion": {
-    "html": "<section class=\"section section-image-accordion staggered-start\" data-anim-scroll-group=\"Image Accordion\" data-analytics-section-engagement=\"name:iphone compatibility\" data-component-list=\"StaggeredFadeIn\">\n\t\t\t<div class=\"viewport-content\">",
+    "html": "<section class=\"section section-image-accordion staggered-start\" data-anim-scroll-group=\"Image Accordion\" data-analytics-section-engagement=\"name:iphone compatibility\" data-component-list=\"StaggeredFadeIn\"><div class=\"viewport-content\">",
     "styles": {
      "padding-top": "112px",
      "padding-right": "0px",
@@ -1308,7 +1308,7 @@
     }
    },
    "section.header": {
-    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\">Switch to iPhone.</h2>\n\t\t\t\t</header>",
+    "html": "<header class=\"section-header row\"><h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\"></h2></header>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1342,7 +1342,7 @@
     }
    },
    "section.headline": {
-    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\">Switch to iPhone.</h2>",
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "56px",
@@ -1354,7 +1354,7 @@
     }
    },
    "paddle": {
-    "html": "<button aria-label=\"Next item in Explore the lineup gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1475,7 +1475,7 @@
     }
    },
    "paddle.icon": {
-    "html": "<svg class=\"icon-control icon-control-chevronright\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                    \t\t\t\t\t      <path d=\"m22.5597 16.9375-5.5076-5.5c-.5854-.5854-1.5323-.5825-2.1157.0039-.5835.5869-.5815 1.5366.00",
+    "html": "<svg class=\"icon-control icon-control-chevronright\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><path d=\"m22.5597 16.9375-5.5076-5.5c-.5854-.5854-1.5323-.5825-2.1157.0039-.5835.5869-.5815 1.5366.00",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -1488,7 +1488,7 @@
     }
    },
    "paddle.disabled": {
-    "html": "<button aria-label=\"Previous item in Get to know iPhone gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;t - 50vh&quot;,&quot;tabindex&quot;:&quot;0&quot;}\" tabindex=\"0\" disabled",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;t - 50vh&quot;,&quot;tabindex&quot;:&quot;0&quot;}\" tabindex=\"0\" disabled",
     "styles": {
      "opacity": "0.42",
      "background-color": "rgba(210, 210, 215, 0.64)",
@@ -1554,7 +1554,7 @@
   },
   "1600": {
    "page.body": {
-    "html": "<body class=\"page-overview \" data-component-list=\"FocusManager DeepLink\" data-anim-scroll-group=\"body\" style=\"transition: opacity 0.5s; opacity: 1;\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-act",
+    "html": "<body class=\"page-overview \" data-component-list=\"FocusManager DeepLink\" data-anim-scroll-group=\"body\" style=\"transition: opacity 0.5s; opacity: 1;\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-act",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1569,7 +1569,7 @@
     }
    },
    "link.more": {
-    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_duo\" class=\"icon-wrapper\" data-analytics-title=\"pre-order - iphone duo\" aria-label=\"Pre-order, iPhone Duo\">\n                                                        <span class=\"icon-copy\">Pre-order</",
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_duo\" class=\"icon-wrapper\" data-analytics-title=\"pre-order - iphone duo\" aria-label=\"…\"><span class=\"icon-copy\"></",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1625,7 +1625,7 @@
     }
    },
    "link.more-copy": {
-    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "html": "<span class=\"icon-copy\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1687,7 +1687,7 @@
     }
    },
    "link.inline": {
-    "html": "<a href=\"#cui\">a link</a>",
+    "html": "<a href=\"#cui\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1736,7 +1736,7 @@
     }
    },
    "link.section-header": {
-    "html": "<a href=\"/iphone/compare/\" data-analytics-title=\"compare all models\" class=\"action-handler icon-wrapper section-header-cta-link\"><span class=\"icon-copy\">Compare all&nbsp;models</span><span class=\"icon icon-after more\" aria-hidden=\"true\"></s",
+    "html": "<a href=\"/iphone/compare/\" data-analytics-title=\"compare all models\" class=\"action-handler icon-wrapper section-header-cta-link\"><span class=\"icon-copy\"></span><span class=\"icon icon-after more\" aria-hidden=\"true\"></s",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1763,7 +1763,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"viewport-content\">\n\t\t\t\t\t<div class=\"page-header-headline\" data-staggered-item=\"\" style=\"\">\n\t\t\t\t\t\t<h1 class=\"page-header-title typography-page-header-title\">iPhone</h1>\n\t\t\t\t\t</div>\n\t\t\t\t</div>",
+    "html": "<div class=\"viewport-content\"><div class=\"page-header-headline\" data-staggered-item=\"\" style=\"\"><h1 class=\"page-header-title typography-page-header-title\"></h1></div></div>",
     "styles": {
      "width": "1260px",
      "max-width": "1260px",
@@ -1801,7 +1801,7 @@
     }
    },
    "section.image-accordion": {
-    "html": "<section class=\"section section-image-accordion staggered-start\" data-anim-scroll-group=\"Image Accordion\" data-analytics-section-engagement=\"name:iphone compatibility\" data-component-list=\"StaggeredFadeIn\">\n\t\t\t<div class=\"viewport-content\">",
+    "html": "<section class=\"section section-image-accordion staggered-start\" data-anim-scroll-group=\"Image Accordion\" data-analytics-section-engagement=\"name:iphone compatibility\" data-component-list=\"StaggeredFadeIn\"><div class=\"viewport-content\">",
     "styles": {
      "padding-top": "112px",
      "padding-right": "0px",
@@ -1824,7 +1824,7 @@
     }
    },
    "section.header": {
-    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;\">Switch to iPhone.<",
+    "html": "<header class=\"section-header row\"><h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;\"><",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1858,7 +1858,7 @@
     }
    },
    "section.headline": {
-    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;\">Switch to iPhone.</h2>",
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" id=\"feature-card-gallery-alt\" style=\"transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "56px",
@@ -1870,7 +1870,7 @@
     }
    },
    "paddle": {
-    "html": "<button aria-label=\"Next item in Explore the lineup gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1991,7 +1991,7 @@
     }
    },
    "paddle.icon": {
-    "html": "<svg class=\"icon-control icon-control-chevronright\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                    \t\t\t\t\t      <path d=\"m22.5597 16.9375-5.5076-5.5c-.5854-.5854-1.5323-.5825-2.1157.0039-.5835.5869-.5815 1.5366.00",
+    "html": "<svg class=\"icon-control icon-control-chevronright\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><path d=\"m22.5597 16.9375-5.5076-5.5c-.5854-.5854-1.5323-.5825-2.1157.0039-.5835.5869-.5815 1.5366.00",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -2004,7 +2004,7 @@
     }
    },
    "paddle.disabled": {
-    "html": "<button aria-label=\"Previous item in Get to know iPhone gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;t - 50vh&quot;,&quot;tabindex&quot;:&quot;0&quot;}\" tabindex=\"0\" disabled",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;t - 50vh&quot;,&quot;tabindex&quot;:&quot;0&quot;}\" tabindex=\"0\" disabled",
     "styles": {
      "opacity": "0.42",
      "background-color": "rgba(210, 210, 215, 0.64)",

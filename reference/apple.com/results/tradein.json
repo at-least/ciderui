@@ -30,7 +30,7 @@
     }
    },
    "dropdown": {
-    "html": "<div class=\"form-dropdown\"><label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\">Choose your model</label><select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"mod",
+    "html": "<div class=\"form-dropdown\"><label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\"></label><select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"mod",
     "styles": {
      "position": "relative",
      "display": "block",
@@ -46,7 +46,7 @@
     }
    },
    "dropdown.select": {
-    "html": "<select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"model_desc\" data-autom=\"choose-tradein-model\"><option value=\"\">Select</option><option value=\"model_15087\">iPhone 17 Pro Max - Up to $88",
+    "html": "<select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"model_desc\" data-autom=\"choose-tradein-model\"><option value=\"\"></option><option value=\"model_15087\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -213,7 +213,7 @@
     }
    },
    "dropdown.label": {
-    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\">Choose your model</label>",
+    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -263,7 +263,7 @@
     }
    },
    "dropdown.chosen": {
-    "html": "<select id=\"cui-dropdown\" name=\"cui-dropdown\" class=\"form-dropdown-select\"><option>iPhone 17 Pro</option></select>",
+    "html": "<select id=\"cui-dropdown\" name=\"cui-dropdown\" class=\"form-dropdown-select\"><option></option></select>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -293,7 +293,7 @@
     }
    },
    "dropdown.chosen-label": {
-    "html": "<label class=\"form-dropdown-label\" for=\"cui-dropdown\">Choose your model</label>",
+    "html": "<label class=\"form-dropdown-label\" for=\"cui-dropdown\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -332,7 +332,7 @@
     }
    },
    "dropdown": {
-    "html": "<div class=\"form-dropdown\"><label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\">Choose your model</label><select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"mod",
+    "html": "<div class=\"form-dropdown\"><label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\"></label><select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"mod",
     "styles": {
      "position": "relative",
      "display": "block",
@@ -348,7 +348,7 @@
     }
    },
    "dropdown.select": {
-    "html": "<select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"model_desc\" data-autom=\"choose-tradein-model\"><option value=\"\">Select</option><option value=\"model_15087\">iPhone 17 Pro Max - Up to $88",
+    "html": "<select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"model_desc\" data-autom=\"choose-tradein-model\"><option value=\"\"></option><option value=\"model_15087\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -515,7 +515,7 @@
     }
    },
    "dropdown.label": {
-    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\">Choose your model</label>",
+    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -565,7 +565,7 @@
     }
    },
    "dropdown.chosen": {
-    "html": "<select id=\"cui-dropdown\" name=\"cui-dropdown\" class=\"form-dropdown-select\"><option>iPhone 17 Pro</option></select>",
+    "html": "<select id=\"cui-dropdown\" name=\"cui-dropdown\" class=\"form-dropdown-select\"><option></option></select>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -595,7 +595,7 @@
     }
    },
    "dropdown.chosen-label": {
-    "html": "<label class=\"form-dropdown-label\" for=\"cui-dropdown\">Choose your model</label>",
+    "html": "<label class=\"form-dropdown-label\" for=\"cui-dropdown\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -634,7 +634,7 @@
     }
    },
    "dropdown": {
-    "html": "<div class=\"form-dropdown\"><label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\">Choose your model</label><select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"mod",
+    "html": "<div class=\"form-dropdown\"><label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\"></label><select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"mod",
     "styles": {
      "position": "relative",
      "display": "block",
@@ -650,7 +650,7 @@
     }
    },
    "dropdown.select": {
-    "html": "<select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"model_desc\" data-autom=\"choose-tradein-model\"><option value=\"\">Select</option><option value=\"model_15087\">iPhone 17 Pro Max - Up to $88",
+    "html": "<select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"model_desc\" data-autom=\"choose-tradein-model\"><option value=\"\"></option><option value=\"model_15087\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -817,7 +817,7 @@
     }
    },
    "dropdown.label": {
-    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\">Choose your model</label>",
+    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -867,7 +867,7 @@
     }
    },
    "dropdown.chosen": {
-    "html": "<select id=\"cui-dropdown\" name=\"cui-dropdown\" class=\"form-dropdown-select\"><option>iPhone 17 Pro</option></select>",
+    "html": "<select id=\"cui-dropdown\" name=\"cui-dropdown\" class=\"form-dropdown-select\"><option></option></select>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -897,7 +897,7 @@
     }
    },
    "dropdown.chosen-label": {
-    "html": "<label class=\"form-dropdown-label\" for=\"cui-dropdown\">Choose your model</label>",
+    "html": "<label class=\"form-dropdown-label\" for=\"cui-dropdown\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -936,7 +936,7 @@
     }
    },
    "dropdown": {
-    "html": "<div class=\"form-dropdown\"><label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\">Choose your model</label><select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"mod",
+    "html": "<div class=\"form-dropdown\"><label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\"></label><select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"mod",
     "styles": {
      "position": "relative",
      "display": "block",
@@ -952,7 +952,7 @@
     }
    },
    "dropdown.select": {
-    "html": "<select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"model_desc\" data-autom=\"choose-tradein-model\"><option value=\"\">Select</option><option value=\"model_15087\">iPhone 17 Pro Max - Up to $88",
+    "html": "<select id=\"_r_3d_\" name=\"model\" class=\"form-dropdown-select form-dropdown-selectnone\" aria-describedby=\"model_desc\" data-autom=\"choose-tradein-model\"><option value=\"\"></option><option value=\"model_15087\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1119,7 +1119,7 @@
     }
    },
    "dropdown.label": {
-    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\">Choose your model</label>",
+    "html": "<label class=\"form-dropdown-label form-dropdown-label-placeholder\" for=\"_r_3d_\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1169,7 +1169,7 @@
     }
    },
    "dropdown.chosen": {
-    "html": "<select id=\"cui-dropdown\" name=\"cui-dropdown\" class=\"form-dropdown-select\"><option>iPhone 17 Pro</option></select>",
+    "html": "<select id=\"cui-dropdown\" name=\"cui-dropdown\" class=\"form-dropdown-select\"><option></option></select>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1199,7 +1199,7 @@
     }
    },
    "dropdown.chosen-label": {
-    "html": "<label class=\"form-dropdown-label\" for=\"cui-dropdown\">Choose your model</label>",
+    "html": "<label class=\"form-dropdown-label\" for=\"cui-dropdown\"></label>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",

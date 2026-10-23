@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "stat.content": {
-    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Removes up to</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-value\">2x more</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">unwanted noise than AirPods&nbsp;Pro&nbsp;2<sup class=\"footnote footnote-n",
+    "html": "<div class=\"stat-content\"><span class=\"stat-caption\"></span><span class=\"stat-value\"></span><span class=\"stat-caption\"><sup class=\"footnote footnote-n",
     "styles": {
      "padding-top": "4px",
      "padding-bottom": "2px",
@@ -15,7 +15,7 @@
     }
    },
    "stat.caption": {
-    "html": "<span class=\"stat-caption\">Removes up to</span>",
+    "html": "<span class=\"stat-caption\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -27,7 +27,7 @@
     }
    },
    "stat.value": {
-    "html": "<span class=\"stat-value\">2x more</span>",
+    "html": "<span class=\"stat-value\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "48px",
@@ -41,7 +41,7 @@
     }
    },
    "footnote": {
-    "html": "<sup class=\"footnote footnote-number\"><a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a></sup>",
+    "html": "<sup class=\"footnote footnote-number\"><a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a></sup>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
@@ -56,7 +56,7 @@
     }
    },
    "footnote.link": {
-    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a>",
+    "html": "<a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "color": "rgb(29, 29, 31)",
@@ -68,7 +68,7 @@
   },
   "900": {
    "stat.content": {
-    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Removes up to</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-value\">2x more</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">unwanted noise than AirPods&nbsp;Pro&nbsp;2<sup class=\"footnote footnote-n",
+    "html": "<div class=\"stat-content\"><span class=\"stat-caption\"></span><span class=\"stat-value\"></span><span class=\"stat-caption\"><sup class=\"footnote footnote-n",
     "styles": {
      "padding-top": "4px",
      "padding-bottom": "2px",
@@ -77,7 +77,7 @@
     }
    },
    "stat.caption": {
-    "html": "<span class=\"stat-caption\">Removes up to</span>",
+    "html": "<span class=\"stat-caption\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -89,7 +89,7 @@
     }
    },
    "stat.value": {
-    "html": "<span class=\"stat-value\">2x more</span>",
+    "html": "<span class=\"stat-value\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "64px",
@@ -103,7 +103,7 @@
     }
    },
    "footnote": {
-    "html": "<sup class=\"footnote footnote-number\"><a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a></sup>",
+    "html": "<sup class=\"footnote footnote-number\"><a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a></sup>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
@@ -118,7 +118,7 @@
     }
    },
    "footnote.link": {
-    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a>",
+    "html": "<a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "color": "rgb(29, 29, 31)",
@@ -130,7 +130,7 @@
   },
   "1200": {
    "stat.content": {
-    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Removes up to</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-value\">2x more</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">unwanted noise than AirPods&nbsp;Pro&nbsp;2<sup class=\"footnote footnote-n",
+    "html": "<div class=\"stat-content\"><span class=\"stat-caption\"></span><span class=\"stat-value\"></span><span class=\"stat-caption\"><sup class=\"footnote footnote-n",
     "styles": {
      "padding-top": "4px",
      "padding-bottom": "2px",
@@ -139,7 +139,7 @@
     }
    },
    "stat.caption": {
-    "html": "<span class=\"stat-caption\">Removes up to</span>",
+    "html": "<span class=\"stat-caption\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -151,7 +151,7 @@
     }
    },
    "stat.value": {
-    "html": "<span class=\"stat-value\">2x more</span>",
+    "html": "<span class=\"stat-value\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "80px",
@@ -165,7 +165,7 @@
     }
    },
    "footnote": {
-    "html": "<sup class=\"footnote footnote-number\"><a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a></sup>",
+    "html": "<sup class=\"footnote footnote-number\"><a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a></sup>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
@@ -180,7 +180,7 @@
     }
    },
    "footnote.link": {
-    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a>",
+    "html": "<a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "color": "rgb(29, 29, 31)",
@@ -192,7 +192,7 @@
   },
   "1600": {
    "stat.content": {
-    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Removes up to</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-value\">2x more</span>\n\t\t\t\t\t\t\t\t<span class=\"stat-caption\">unwanted noise than AirPods&nbsp;Pro&nbsp;2<sup class=\"footnote footnote-n",
+    "html": "<div class=\"stat-content\"><span class=\"stat-caption\"></span><span class=\"stat-value\"></span><span class=\"stat-caption\"><sup class=\"footnote footnote-n",
     "styles": {
      "padding-top": "4px",
      "padding-bottom": "2px",
@@ -201,7 +201,7 @@
     }
    },
    "stat.caption": {
-    "html": "<span class=\"stat-caption\">Removes up to</span>",
+    "html": "<span class=\"stat-caption\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -213,7 +213,7 @@
     }
    },
    "stat.value": {
-    "html": "<span class=\"stat-value\">2x more</span>",
+    "html": "<span class=\"stat-value\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "80px",
@@ -227,7 +227,7 @@
     }
    },
    "footnote": {
-    "html": "<sup class=\"footnote footnote-number\"><a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a></sup>",
+    "html": "<sup class=\"footnote footnote-number\"><a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a></sup>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
@@ -242,7 +242,7 @@
     }
    },
    "footnote.link": {
-    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote 1\" data-modal-close=\"\">1</a>",
+    "html": "<a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "color": "rgb(29, 29, 31)",

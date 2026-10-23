@@ -5,7 +5,8 @@
 // selects an element of the page (`select`) or adds markup to it (`inject`,
 // into `into` or the body; `select` then picks the element inside it) for a
 // class the page defines but may not use, and reads `props`, `vars` (custom
-// properties) and `pseudo`'s, its text with `text` (its spaces collapsed),
+// properties) and `pseudo`'s, with `sections`, [section, attribute, row],
+// each section in it by that attribute's value and the number of its rows,
 // its box with `box`, and with `states` the same
 // again with each pseudo-class (or several, 'focus+focus-visible') forced
 // through the DevTools protocol on the
@@ -120,6 +121,13 @@ const place = async (probe) => {
   return el.outerHTML.replace(/ data-cui-[a-z]+=""/g, '').replace(/(href|src|srcset)="([^"?]*)\?[^"]*"/g, '$1="$2?…"').slice(0, 240);
 };
 
+// the head as a result records it, without the page's words: its text, and
+// the values of the attributes that hold words (one the head cuts too), so a
+// result says where a value was read, not what the page says
+const strip = (head) => head
+  .replace(/>[^<]*/g, '>')
+  .replace(/ (aria-label|alt|title|placeholder)="[^"]+("|$)/g, ' $1="…$2');
+
 // in the frame: from now on, each frame, describe every animation not seen
 // yet whose element is inside `within`
 const watchAnimations = (within) => {
@@ -175,7 +183,10 @@ const read = (probe) => {
       out.keyframes[name] = rule && [...rule.cssRules].map(k => ({ at: k.keyText, style: k.style.cssText }));
     }
   }
-  if (probe.text) out.text = el.textContent.replace(/\s+/g, ' ').trim();
+  if (probe.sections) {
+    const [section, attribute, row] = probe.sections;
+    out.sections = [...el.querySelectorAll(section)].map(s => [s.getAttribute(attribute), s.querySelectorAll(row).length]);
+  }
   if (probe.matches) out.matches = Object.fromEntries(probe.matches.map(s => [s, el.matches(s)]));
   if (probe.box) {
     const r = el.getBoundingClientRect();
@@ -304,7 +315,7 @@ try {
         console.log(`NULL ${width}px ${probe.name}: ${probe.select ?? ''} ${probe.inject ?? ''} ${probe.into ?? ''} ${probe.stateOn ?? ''}`);
         continue;
       }
-      at[probe.name] = { html, ...(await frame.evaluate(read, data)) };
+      at[probe.name] = { html: strip(html), ...(await frame.evaluate(read, data)) };
       for (const [k, v] of Object.entries(at[probe.name].keyframes ?? {})) if (!v) nulls.push(`${width} ${probe.name} @keyframes ${k}`);
       if (clicking && probe.animations) at[probe.name].animations = await frame.evaluate(() => { clearInterval(window.cuiWatch); return window.cuiAnimations; });
       if (probe.states?.length) {

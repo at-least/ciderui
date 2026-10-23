@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "warning": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"warning\" class=\"warning\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Object",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"warning\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -43,7 +43,7 @@
     }
    },
    "warning.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -55,7 +55,7 @@
     }
    },
    "tip": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"tip\" class=\"tip\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"tip\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -92,7 +92,7 @@
     }
    },
    "tip.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -104,7 +104,7 @@
     }
    },
    "deprecated": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"deprecated\" class=\"deprecated\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"deprecated\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -141,7 +141,7 @@
     }
    },
    "deprecated.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -153,7 +153,7 @@
     }
    },
    "experiment": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"experiment\" class=\"experiment\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"experiment\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -190,7 +190,7 @@
     }
    },
    "experiment.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -204,7 +204,7 @@
   },
   "900": {
    "warning": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"warning\" class=\"warning\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Object",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"warning\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -241,7 +241,7 @@
     }
    },
    "warning.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -253,7 +253,7 @@
     }
    },
    "tip": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"tip\" class=\"tip\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"tip\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -290,7 +290,7 @@
     }
    },
    "tip.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -302,7 +302,7 @@
     }
    },
    "deprecated": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"deprecated\" class=\"deprecated\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"deprecated\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -339,7 +339,7 @@
     }
    },
    "deprecated.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -351,7 +351,7 @@
     }
    },
    "experiment": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"experiment\" class=\"experiment\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"experiment\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -388,7 +388,7 @@
     }
    },
    "experiment.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -402,7 +402,7 @@
   },
   "1200": {
    "warning": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"warning\" class=\"warning\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Object",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"warning\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -439,7 +439,7 @@
     }
    },
    "warning.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -451,7 +451,7 @@
     }
    },
    "tip": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"tip\" class=\"tip\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"tip\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -488,7 +488,7 @@
     }
    },
    "tip.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -500,7 +500,7 @@
     }
    },
    "deprecated": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"deprecated\" class=\"deprecated\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"deprecated\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -537,7 +537,7 @@
     }
    },
    "deprecated.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -549,7 +549,7 @@
     }
    },
    "experiment": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"experiment\" class=\"experiment\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"experiment\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -586,7 +586,7 @@
     }
    },
    "experiment.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -600,7 +600,7 @@
   },
   "1600": {
    "warning": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"warning\" class=\"warning\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Object",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"warning\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -637,7 +637,7 @@
     }
    },
    "warning.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -649,7 +649,7 @@
     }
    },
    "tip": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"tip\" class=\"tip\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"tip\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -686,7 +686,7 @@
     }
    },
    "tip.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -698,7 +698,7 @@
     }
    },
    "deprecated": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"deprecated\" class=\"deprecated\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"deprecated\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -735,7 +735,7 @@
     }
    },
    "deprecated.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -747,7 +747,7 @@
     }
    },
    "experiment": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"experiment\" class=\"experiment\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in ",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"experiment\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -784,7 +784,7 @@
     }
    },
    "experiment.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",

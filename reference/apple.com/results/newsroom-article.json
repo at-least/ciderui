@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "page.body": {
-    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\" style=\"\">\n\n\n\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"Choose cou",
+    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\" style=\"\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -21,7 +21,7 @@
     }
    },
    "column.header": {
-    "html": "<div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                ",
+    "html": "<div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "width": "341.25px",
      "max-width": "none",
@@ -36,7 +36,7 @@
     }
    },
    "column.copy": {
-    "html": "<div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\"",
+    "html": "<div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\"",
     "styles": {
      "width": "390px",
      "max-width": "none",
@@ -51,7 +51,7 @@
     }
    },
    "column.text": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "width": "341.25px",
      "max-width": "none",
@@ -66,7 +66,7 @@
     }
    },
    "column.figure": {
-    "html": "<div class=\"pagebody  text component\">\n    \n         <div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next gener",
+    "html": "<div class=\"pagebody  text component\"><div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span>",
     "styles": {
      "width": "390px",
      "max-width": "414px",
@@ -81,7 +81,7 @@
     }
    },
    "localnav": {
-    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"Newsroom\" data-analytics-region=\"local nav\" data-sticky=\"\">\n\t\n    \n    \n        \n\n\n<div cl",
+    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"…\" data-analytics-region=\"local nav\" data-sticky=\"\"><div cl",
     "styles": {
      "height": "48px",
      "position": "sticky",
@@ -102,7 +102,7 @@
     }
    },
    "localnav.content": {
-    "html": "<div class=\"ac-ln-content\">\n\t\t\n\t\t\n\t\t\t<span class=\"ac-ln-title\">\n\t\t\t\t<!--googleoff: all-->\n\t\t\t\t<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>\n\t\t\t\t<!--googleon: all-->\n\t\t\t</span>\n\t\t\n\n\t\t<div class=\"ac-ln-menu\">\n\t\t\t<div ",
+    "html": "<div class=\"ac-ln-content\"><span class=\"ac-ln-title\"><!--googleoff: all--><a href=\"/newsroom/\" data-analytics-title=\"product index\"></a><!--googleon: all--></span><div class=\"ac-ln-menu\"><div ",
     "styles": {
      "max-width": "980px",
      "padding-left": "16px",
@@ -114,7 +114,7 @@
     }
    },
    "localnav.title": {
-    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>",
+    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -141,7 +141,7 @@
     }
    },
    "header": {
-    "html": "<div class=\"article-header\">\n        \n\t\t\n        <div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <",
+    "html": "<div class=\"article-header\"><div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><",
     "styles": {
      "margin-top": "32px",
      "margin-bottom": "0px",
@@ -154,7 +154,7 @@
     }
    },
    "header.eyebrow": {
-    "html": "<div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_r",
+    "html": "<div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_r",
     "styles": {
      "margin-top": "32px",
      "margin-bottom": "20px",
@@ -167,7 +167,7 @@
     }
    },
    "header.headline": {
-    "html": "<div class=\"pagetitle component\">\n            <div class=\"component-content\">\n                \n                \n                \n                    <h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Appl",
+    "html": "<div class=\"pagetitle component\"><div class=\"component-content\"><h1 class=\"hero-headline\">",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -180,7 +180,7 @@
     }
    },
    "header.subhead": {
-    "html": "<div class=\"article-subhead component\">\n            <div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater se",
+    "html": "<div class=\"article-subhead component\"><div class=\"component-content\">",
     "styles": {
      "margin-top": "16px",
      "margin-bottom": "0px",
@@ -193,7 +193,7 @@
     }
    },
    "eyebrow": {
-    "html": "<div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                    \n                    \n                      ",
+    "html": "<div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -223,7 +223,7 @@
     }
    },
    "eyebrow.category": {
-    "html": "<span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>",
+    "html": "<span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -242,7 +242,7 @@
     }
    },
    "eyebrow.date": {
-    "html": "<span class=\"category-eyebrow__date\">October 13, 2026</span>",
+    "html": "<span class=\"category-eyebrow__date\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -261,7 +261,7 @@
     }
    },
    "headline": {
-    "html": "<h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Apple&nbsp;TV&nbsp;4K, supercharged by Siri&nbsp;AI\n    \n\n                    </h1>",
+    "html": "<h1 class=\"hero-headline\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -279,7 +279,7 @@
     }
    },
    "subhead": {
-    "html": "<div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater setup elevate the entertainment experience\n           ",
+    "html": "<div class=\"component-content\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -296,7 +296,7 @@
     }
    },
    "figure": {
-    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"Media, Apple TV 4K is pictured with the Siri Remote.\" style=\"--nr-animation-transform-y: 20%;\">\n        <div class=\"component-content\">",
+    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"…\" style=\"--nr-animation-transform-y: 20%;\"><div class=\"component-content\">",
     "styles": {
      "width": "390px",
      "max-width": "414px",
@@ -324,7 +324,7 @@
     }
    },
    "figure.caption": {
-    "html": "<div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies and TV shows; faster performance; and an even more immersive home theater exp",
+    "html": "<div class=\"image-caption\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -344,7 +344,7 @@
     }
    },
    "figure.description": {
-    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "html": "<div class=\"image-description\"><div class=\"image-caption\">",
     "styles": {
      "width": "341.25px",
      "max-width": "none",
@@ -360,7 +360,7 @@
     }
    },
    "figure.inline": {
-    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"Media, An iPhone 18 Pro screen shows Find My locating a Siri Remote, with the message “80 ft ahead.”\" style=\"--nr-animation",
+    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"…\" style=\"--nr-animation",
     "styles": {
      "width": "390px",
      "max-width": "414px",
@@ -377,7 +377,7 @@
     }
    },
    "copy": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -394,7 +394,7 @@
     }
    },
    "copy.p": {
-    "html": "<p>Sample text</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -407,7 +407,7 @@
     }
    },
    "copy.link": {
-    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>",
+    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -442,7 +442,7 @@
     }
    },
    "copy.sup": {
-    "html": "<sup>1</sup>",
+    "html": "<sup></sup>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "10.2px",
@@ -457,7 +457,7 @@
     }
    },
    "copy.strong": {
-    "html": "<strong>$299 </strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -468,7 +468,7 @@
     }
    },
    "h2": {
-    "html": "<h2 class=\"pagebody-header\"><strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>\n</h2>",
+    "html": "<h2 class=\"pagebody-header\"><strong></strong></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -485,7 +485,7 @@
     }
    },
    "h2.strong": {
-    "html": "<strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -496,7 +496,7 @@
     }
    },
    "list": {
-    "html": "<ul>\n<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with avai",
+    "html": "<ul><li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -507,7 +507,7 @@
     }
    },
    "list.li": {
-    "html": "<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with availabil",
+    "html": "<li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -520,7 +520,7 @@
     }
    },
    "list.link": {
-    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a>",
+    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -547,7 +547,7 @@
     }
    },
    "footnotes": {
-    "html": "<div class=\"sosumi text component\">\n    \n        <div class=\"component-content\">\n            <ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in ",
+    "html": "<div class=\"sosumi text component\"><div class=\"component-content\"><ol><li>",
     "styles": {
      "margin-top": "32px",
      "margin-bottom": "32px",
@@ -559,7 +559,7 @@
     }
    },
    "footnotes.ol": {
-    "html": "<ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelli",
+    "html": "<ol><li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -575,7 +575,7 @@
     }
    },
    "footnotes.li": {
-    "html": "<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelligence",
+    "html": "<li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -592,7 +592,7 @@
     }
    },
    "footnotes.link": {
-    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\">support.apple.com/148587</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -619,7 +619,7 @@
     }
    },
    "related.heading": {
-    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>",
+    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -633,7 +633,7 @@
     }
    },
    "related.list": {
-    "html": "<div class=\"article-list component-content\">\n\t\t\t<div class=\"section-headline-container\">\n\t\t\t\t<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>\n\t\t\t\t\n            </div>\n\t\t\t\n\t\t\t \n\t\t\t \n\t\t\t\t<div class=\"article-list",
+    "html": "<div class=\"article-list component-content\"><div class=\"section-headline-container\"><h2 id=\"latest-news\" class=\"article-list__heading\"></h2></div><div class=\"article-list",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -652,7 +652,7 @@
     }
    },
    "related.item": {
-    "html": "<div class=\"article-list__item\">\n\t\t\t\t\t<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t",
+    "html": "<div class=\"article-list__item\"><a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\">",
     "styles": {
      "padding-top": "28px",
      "padding-right": "0px",
@@ -679,7 +679,7 @@
     }
    },
    "related.link": {
-    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t\t\t\t<div class=\"article-list__item__img",
+    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\"><div class=\"article-list__item__img",
     "styles": {
      "display": "flex",
      "flex-direction": "row",
@@ -714,7 +714,7 @@
     }
    },
    "related.img": {
-    "html": "<div class=\"article-list__item__img-wrapper\">\n\t\t\t\t\t\t\t<picture class=\"no-dl\" aria-hidden=\"true\">\n\t\t\t\t\t\t\t\t<source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
+    "html": "<div class=\"article-list__item__img-wrapper\"><picture class=\"no-dl\" aria-hidden=\"true\"><source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
     "styles": {
      "padding-top": "0px",
      "padding-right": "16px",
@@ -744,7 +744,7 @@
     }
    },
    "related.category": {
-    "html": "<div class=\"article-list__item__category \">UPDATE</div>",
+    "html": "<div class=\"article-list__item__category \"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -764,7 +764,7 @@
     }
    },
    "related.title": {
-    "html": "<h3 class=\"article-list__item__title\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"article-list__item__title\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -795,7 +795,7 @@
     }
    },
    "related.date": {
-    "html": "<div class=\"article-list__item__date\">October 15, 2026</div>",
+    "html": "<div class=\"article-list__item__date\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -807,7 +807,7 @@
     }
    },
    "footertile": {
-    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\"><a class=\"block\" href=\"/newsroom/\"><div class=\"footertile-copy\"><figure class=\"footertile-copy-image\"><svg class",
     "styles": {
      "margin-top": "52px",
      "margin-bottom": "0px"
@@ -816,7 +816,7 @@
   },
   "734": {
    "page.body": {
-    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\" style=\"\">\n\n\n\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"Choose cou",
+    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\" style=\"\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -831,7 +831,7 @@
     }
    },
    "column.header": {
-    "html": "<div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                ",
+    "html": "<div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "width": "362.25px",
      "max-width": "none",
@@ -846,7 +846,7 @@
     }
    },
    "column.copy": {
-    "html": "<div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\"",
+    "html": "<div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\"",
     "styles": {
      "width": "414px",
      "max-width": "none",
@@ -861,7 +861,7 @@
     }
    },
    "column.text": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "width": "362.25px",
      "max-width": "none",
@@ -876,7 +876,7 @@
     }
    },
    "column.figure": {
-    "html": "<div class=\"pagebody  text component\">\n    \n         <div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next gener",
+    "html": "<div class=\"pagebody  text component\"><div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span>",
     "styles": {
      "width": "414px",
      "max-width": "414px",
@@ -891,7 +891,7 @@
     }
    },
    "localnav": {
-    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"Newsroom\" data-analytics-region=\"local nav\" data-sticky=\"\">\n\t\n    \n    \n        \n\n\n<div cl",
+    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"…\" data-analytics-region=\"local nav\" data-sticky=\"\"><div cl",
     "styles": {
      "height": "48px",
      "position": "sticky",
@@ -912,7 +912,7 @@
     }
    },
    "localnav.content": {
-    "html": "<div class=\"ac-ln-content\">\n\t\t\n\t\t\n\t\t\t<span class=\"ac-ln-title\">\n\t\t\t\t<!--googleoff: all-->\n\t\t\t\t<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>\n\t\t\t\t<!--googleon: all-->\n\t\t\t</span>\n\t\t\n\n\t\t<div class=\"ac-ln-menu\">\n\t\t\t<div ",
+    "html": "<div class=\"ac-ln-content\"><span class=\"ac-ln-title\"><!--googleoff: all--><a href=\"/newsroom/\" data-analytics-title=\"product index\"></a><!--googleon: all--></span><div class=\"ac-ln-menu\"><div ",
     "styles": {
      "max-width": "980px",
      "padding-left": "16px",
@@ -924,7 +924,7 @@
     }
    },
    "localnav.title": {
-    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>",
+    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -951,7 +951,7 @@
     }
    },
    "header": {
-    "html": "<div class=\"article-header\">\n        \n\t\t\n        <div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <",
+    "html": "<div class=\"article-header\"><div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><",
     "styles": {
      "margin-top": "32px",
      "margin-bottom": "0px",
@@ -964,7 +964,7 @@
     }
    },
    "header.eyebrow": {
-    "html": "<div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_r",
+    "html": "<div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_r",
     "styles": {
      "margin-top": "32px",
      "margin-bottom": "20px",
@@ -977,7 +977,7 @@
     }
    },
    "header.headline": {
-    "html": "<div class=\"pagetitle component\">\n            <div class=\"component-content\">\n                \n                \n                \n                    <h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Appl",
+    "html": "<div class=\"pagetitle component\"><div class=\"component-content\"><h1 class=\"hero-headline\">",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -990,7 +990,7 @@
     }
    },
    "header.subhead": {
-    "html": "<div class=\"article-subhead component\">\n            <div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater se",
+    "html": "<div class=\"article-subhead component\"><div class=\"component-content\">",
     "styles": {
      "margin-top": "16px",
      "margin-bottom": "0px",
@@ -1003,7 +1003,7 @@
     }
    },
    "eyebrow": {
-    "html": "<div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                    \n                    \n                      ",
+    "html": "<div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1033,7 +1033,7 @@
     }
    },
    "eyebrow.category": {
-    "html": "<span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>",
+    "html": "<span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1052,7 +1052,7 @@
     }
    },
    "eyebrow.date": {
-    "html": "<span class=\"category-eyebrow__date\">October 13, 2026</span>",
+    "html": "<span class=\"category-eyebrow__date\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1071,7 +1071,7 @@
     }
    },
    "headline": {
-    "html": "<h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Apple&nbsp;TV&nbsp;4K, supercharged by Siri&nbsp;AI\n    \n\n                    </h1>",
+    "html": "<h1 class=\"hero-headline\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -1089,7 +1089,7 @@
     }
    },
    "subhead": {
-    "html": "<div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater setup elevate the entertainment experience\n           ",
+    "html": "<div class=\"component-content\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1106,7 +1106,7 @@
     }
    },
    "figure": {
-    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"Media, Apple TV 4K is pictured with the Siri Remote.\" style=\"--nr-animation-transform-y: 20%;\">\n        <div class=\"component-content\">",
+    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"…\" style=\"--nr-animation-transform-y: 20%;\"><div class=\"component-content\">",
     "styles": {
      "width": "414px",
      "max-width": "414px",
@@ -1134,7 +1134,7 @@
     }
    },
    "figure.caption": {
-    "html": "<div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies and TV shows; faster performance; and an even more immersive home theater exp",
+    "html": "<div class=\"image-caption\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1154,7 +1154,7 @@
     }
    },
    "figure.description": {
-    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "html": "<div class=\"image-description\"><div class=\"image-caption\">",
     "styles": {
      "width": "362.25px",
      "max-width": "none",
@@ -1170,7 +1170,7 @@
     }
    },
    "figure.inline": {
-    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"Media, An iPhone 18 Pro screen shows Find My locating a Siri Remote, with the message “80 ft ahead.”\" style=\"--nr-animation",
+    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"…\" style=\"--nr-animation",
     "styles": {
      "width": "414px",
      "max-width": "414px",
@@ -1187,7 +1187,7 @@
     }
    },
    "copy": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1204,7 +1204,7 @@
     }
    },
    "copy.p": {
-    "html": "<p>Sample text</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1217,7 +1217,7 @@
     }
    },
    "copy.link": {
-    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>",
+    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1252,7 +1252,7 @@
     }
    },
    "copy.sup": {
-    "html": "<sup>1</sup>",
+    "html": "<sup></sup>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "10.2px",
@@ -1267,7 +1267,7 @@
     }
    },
    "copy.strong": {
-    "html": "<strong>$299 </strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1278,7 +1278,7 @@
     }
    },
    "h2": {
-    "html": "<h2 class=\"pagebody-header\"><strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>\n</h2>",
+    "html": "<h2 class=\"pagebody-header\"><strong></strong></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1295,7 +1295,7 @@
     }
    },
    "h2.strong": {
-    "html": "<strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1306,7 +1306,7 @@
     }
    },
    "list": {
-    "html": "<ul>\n<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with avai",
+    "html": "<ul><li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -1317,7 +1317,7 @@
     }
    },
    "list.li": {
-    "html": "<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with availabil",
+    "html": "<li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1330,7 +1330,7 @@
     }
    },
    "list.link": {
-    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a>",
+    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1357,7 +1357,7 @@
     }
    },
    "footnotes": {
-    "html": "<div class=\"sosumi text component\">\n    \n        <div class=\"component-content\">\n            <ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in ",
+    "html": "<div class=\"sosumi text component\"><div class=\"component-content\"><ol><li>",
     "styles": {
      "margin-top": "32px",
      "margin-bottom": "32px",
@@ -1369,7 +1369,7 @@
     }
    },
    "footnotes.ol": {
-    "html": "<ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelli",
+    "html": "<ol><li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1385,7 +1385,7 @@
     }
    },
    "footnotes.li": {
-    "html": "<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelligence",
+    "html": "<li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1402,7 +1402,7 @@
     }
    },
    "footnotes.link": {
-    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\">support.apple.com/148587</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1429,7 +1429,7 @@
     }
    },
    "related.heading": {
-    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>",
+    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1443,7 +1443,7 @@
     }
    },
    "related.list": {
-    "html": "<div class=\"article-list component-content\">\n\t\t\t<div class=\"section-headline-container\">\n\t\t\t\t<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>\n\t\t\t\t\n            </div>\n\t\t\t\n\t\t\t \n\t\t\t \n\t\t\t\t<div class=\"article-list",
+    "html": "<div class=\"article-list component-content\"><div class=\"section-headline-container\"><h2 id=\"latest-news\" class=\"article-list__heading\"></h2></div><div class=\"article-list",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -1462,7 +1462,7 @@
     }
    },
    "related.item": {
-    "html": "<div class=\"article-list__item\">\n\t\t\t\t\t<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t",
+    "html": "<div class=\"article-list__item\"><a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\">",
     "styles": {
      "padding-top": "28px",
      "padding-right": "0px",
@@ -1489,7 +1489,7 @@
     }
    },
    "related.link": {
-    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t\t\t\t<div class=\"article-list__item__img",
+    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\"><div class=\"article-list__item__img",
     "styles": {
      "display": "flex",
      "flex-direction": "row",
@@ -1524,7 +1524,7 @@
     }
    },
    "related.img": {
-    "html": "<div class=\"article-list__item__img-wrapper\">\n\t\t\t\t\t\t\t<picture class=\"no-dl\" aria-hidden=\"true\">\n\t\t\t\t\t\t\t\t<source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
+    "html": "<div class=\"article-list__item__img-wrapper\"><picture class=\"no-dl\" aria-hidden=\"true\"><source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
     "styles": {
      "padding-top": "0px",
      "padding-right": "16px",
@@ -1554,7 +1554,7 @@
     }
    },
    "related.category": {
-    "html": "<div class=\"article-list__item__category \">UPDATE</div>",
+    "html": "<div class=\"article-list__item__category \"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1574,7 +1574,7 @@
     }
    },
    "related.title": {
-    "html": "<h3 class=\"article-list__item__title\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"article-list__item__title\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1605,7 +1605,7 @@
     }
    },
    "related.date": {
-    "html": "<div class=\"article-list__item__date\">October 15, 2026</div>",
+    "html": "<div class=\"article-list__item__date\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1617,7 +1617,7 @@
     }
    },
    "footertile": {
-    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\"><a class=\"block\" href=\"/newsroom/\"><div class=\"footertile-copy\"><figure class=\"footertile-copy-image\"><svg class",
     "styles": {
      "margin-top": "52px",
      "margin-bottom": "0px"
@@ -1626,7 +1626,7 @@
   },
   "735": {
    "page.body": {
-    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\" style=\"\">\n\n\n\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"Choose cou",
+    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\" style=\"\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1641,7 +1641,7 @@
     }
    },
    "column.header": {
-    "html": "<div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                ",
+    "html": "<div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "width": "576px",
      "max-width": "none",
@@ -1656,7 +1656,7 @@
     }
    },
    "column.copy": {
-    "html": "<div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\"",
+    "html": "<div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\"",
     "styles": {
      "width": "576px",
      "max-width": "none",
@@ -1671,7 +1671,7 @@
     }
    },
    "column.text": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "width": "576px",
      "max-width": "none",
@@ -1686,7 +1686,7 @@
     }
    },
    "column.figure": {
-    "html": "<div class=\"pagebody  text component\">\n    \n         <div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next gener",
+    "html": "<div class=\"pagebody  text component\"><div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span>",
     "styles": {
      "width": "692px",
      "max-width": "none",
@@ -1701,7 +1701,7 @@
     }
    },
    "localnav": {
-    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"Newsroom\" data-analytics-region=\"local nav\" data-sticky=\"\">\n\t\n    \n    \n        \n\n\n<div cl",
+    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"…\" data-analytics-region=\"local nav\" data-sticky=\"\"><div cl",
     "styles": {
      "height": "48px",
      "position": "sticky",
@@ -1722,7 +1722,7 @@
     }
    },
    "localnav.content": {
-    "html": "<div class=\"ac-ln-content\">\n\t\t\n\t\t\n\t\t\t<span class=\"ac-ln-title\">\n\t\t\t\t<!--googleoff: all-->\n\t\t\t\t<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>\n\t\t\t\t<!--googleon: all-->\n\t\t\t</span>\n\t\t\n\n\t\t<div class=\"ac-ln-menu\">\n\t\t\t<div ",
+    "html": "<div class=\"ac-ln-content\"><span class=\"ac-ln-title\"><!--googleoff: all--><a href=\"/newsroom/\" data-analytics-title=\"product index\"></a><!--googleon: all--></span><div class=\"ac-ln-menu\"><div ",
     "styles": {
      "max-width": "980px",
      "padding-left": "16px",
@@ -1734,7 +1734,7 @@
     }
    },
    "localnav.title": {
-    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>",
+    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -1761,7 +1761,7 @@
     }
    },
    "header": {
-    "html": "<div class=\"article-header\">\n        \n\t\t\n        <div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <",
+    "html": "<div class=\"article-header\"><div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><",
     "styles": {
      "margin-top": "40px",
      "margin-bottom": "0px",
@@ -1774,7 +1774,7 @@
     }
    },
    "header.eyebrow": {
-    "html": "<div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_r",
+    "html": "<div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_r",
     "styles": {
      "margin-top": "40px",
      "margin-bottom": "20px",
@@ -1787,7 +1787,7 @@
     }
    },
    "header.headline": {
-    "html": "<div class=\"pagetitle component\">\n            <div class=\"component-content\">\n                \n                \n                \n                    <h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Appl",
+    "html": "<div class=\"pagetitle component\"><div class=\"component-content\"><h1 class=\"hero-headline\">",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -1800,7 +1800,7 @@
     }
    },
    "header.subhead": {
-    "html": "<div class=\"article-subhead component\">\n            <div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater se",
+    "html": "<div class=\"article-subhead component\"><div class=\"component-content\">",
     "styles": {
      "margin-top": "16px",
      "margin-bottom": "0px",
@@ -1813,7 +1813,7 @@
     }
    },
    "eyebrow": {
-    "html": "<div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                    \n                    \n                      ",
+    "html": "<div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1843,7 +1843,7 @@
     }
    },
    "eyebrow.category": {
-    "html": "<span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>",
+    "html": "<span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1862,7 +1862,7 @@
     }
    },
    "eyebrow.date": {
-    "html": "<span class=\"category-eyebrow__date\">October 13, 2026</span>",
+    "html": "<span class=\"category-eyebrow__date\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1881,7 +1881,7 @@
     }
    },
    "headline": {
-    "html": "<h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Apple&nbsp;TV&nbsp;4K, supercharged by Siri&nbsp;AI\n    \n\n                    </h1>",
+    "html": "<h1 class=\"hero-headline\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "40px",
@@ -1899,7 +1899,7 @@
     }
    },
    "subhead": {
-    "html": "<div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater setup elevate the entertainment experience\n           ",
+    "html": "<div class=\"component-content\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1916,7 +1916,7 @@
     }
    },
    "figure": {
-    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"Media, Apple TV 4K is pictured with the Siri Remote.\" style=\"--nr-animation-transform-y: 20%;\">\n        <div class=\"component-content\">",
+    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"…\" style=\"--nr-animation-transform-y: 20%;\"><div class=\"component-content\">",
     "styles": {
      "width": "692px",
      "max-width": "none",
@@ -1944,7 +1944,7 @@
     }
    },
    "figure.caption": {
-    "html": "<div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies and TV shows; faster performance; and an even more immersive home theater exp",
+    "html": "<div class=\"image-caption\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1964,7 +1964,7 @@
     }
    },
    "figure.description": {
-    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "html": "<div class=\"image-description\"><div class=\"image-caption\">",
     "styles": {
      "width": "576px",
      "max-width": "none",
@@ -1980,7 +1980,7 @@
     }
    },
    "figure.inline": {
-    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"Media, An iPhone 18 Pro screen shows Find My locating a Siri Remote, with the message “80 ft ahead.”\" style=\"--nr-animation",
+    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"…\" style=\"--nr-animation",
     "styles": {
      "width": "692px",
      "max-width": "none",
@@ -1997,7 +1997,7 @@
     }
    },
    "copy": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2014,7 +2014,7 @@
     }
    },
    "copy.p": {
-    "html": "<p>Sample text</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2027,7 +2027,7 @@
     }
    },
    "copy.link": {
-    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>",
+    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2062,7 +2062,7 @@
     }
    },
    "copy.sup": {
-    "html": "<sup>1</sup>",
+    "html": "<sup></sup>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "10.2px",
@@ -2077,7 +2077,7 @@
     }
    },
    "copy.strong": {
-    "html": "<strong>$299 </strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2088,7 +2088,7 @@
     }
    },
    "h2": {
-    "html": "<h2 class=\"pagebody-header\"><strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>\n</h2>",
+    "html": "<h2 class=\"pagebody-header\"><strong></strong></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2105,7 +2105,7 @@
     }
    },
    "h2.strong": {
-    "html": "<strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2116,7 +2116,7 @@
     }
    },
    "list": {
-    "html": "<ul>\n<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with avai",
+    "html": "<ul><li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -2127,7 +2127,7 @@
     }
    },
    "list.li": {
-    "html": "<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with availabil",
+    "html": "<li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2140,7 +2140,7 @@
     }
    },
    "list.link": {
-    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a>",
+    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2167,7 +2167,7 @@
     }
    },
    "footnotes": {
-    "html": "<div class=\"sosumi text component\">\n    \n        <div class=\"component-content\">\n            <ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in ",
+    "html": "<div class=\"sosumi text component\"><div class=\"component-content\"><ol><li>",
     "styles": {
      "margin-top": "36px",
      "margin-bottom": "36px",
@@ -2179,7 +2179,7 @@
     }
    },
    "footnotes.ol": {
-    "html": "<ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelli",
+    "html": "<ol><li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2195,7 +2195,7 @@
     }
    },
    "footnotes.li": {
-    "html": "<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelligence",
+    "html": "<li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2212,7 +2212,7 @@
     }
    },
    "footnotes.link": {
-    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\">support.apple.com/148587</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2239,7 +2239,7 @@
     }
    },
    "related.heading": {
-    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>",
+    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2253,7 +2253,7 @@
     }
    },
    "related.list": {
-    "html": "<div class=\"article-list component-content\">\n\t\t\t<div class=\"section-headline-container\">\n\t\t\t\t<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>\n\t\t\t\t\n            </div>\n\t\t\t\n\t\t\t \n\t\t\t \n\t\t\t\t<div class=\"article-list",
+    "html": "<div class=\"article-list component-content\"><div class=\"section-headline-container\"><h2 id=\"latest-news\" class=\"article-list__heading\"></h2></div><div class=\"article-list",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -2272,7 +2272,7 @@
     }
    },
    "related.item": {
-    "html": "<div class=\"article-list__item\">\n\t\t\t\t\t<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t",
+    "html": "<div class=\"article-list__item\"><a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\">",
     "styles": {
      "padding-top": "32px",
      "padding-right": "0px",
@@ -2299,7 +2299,7 @@
     }
    },
    "related.link": {
-    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t\t\t\t<div class=\"article-list__item__img",
+    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\"><div class=\"article-list__item__img",
     "styles": {
      "display": "flex",
      "flex-direction": "row",
@@ -2334,7 +2334,7 @@
     }
    },
    "related.img": {
-    "html": "<div class=\"article-list__item__img-wrapper\">\n\t\t\t\t\t\t\t<picture class=\"no-dl\" aria-hidden=\"true\">\n\t\t\t\t\t\t\t\t<source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
+    "html": "<div class=\"article-list__item__img-wrapper\"><picture class=\"no-dl\" aria-hidden=\"true\"><source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
     "styles": {
      "padding-top": "0px",
      "padding-right": "24px",
@@ -2364,7 +2364,7 @@
     }
    },
    "related.category": {
-    "html": "<div class=\"article-list__item__category \">UPDATE</div>",
+    "html": "<div class=\"article-list__item__category \"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2384,7 +2384,7 @@
     }
    },
    "related.title": {
-    "html": "<h3 class=\"article-list__item__title\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"article-list__item__title\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2415,7 +2415,7 @@
     }
    },
    "related.date": {
-    "html": "<div class=\"article-list__item__date\">October 15, 2026</div>",
+    "html": "<div class=\"article-list__item__date\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2427,7 +2427,7 @@
     }
    },
    "footertile": {
-    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\"><a class=\"block\" href=\"/newsroom/\"><div class=\"footertile-copy\"><figure class=\"footertile-copy-image\"><svg class",
     "styles": {
      "margin-top": "64px",
      "margin-bottom": "0px"
@@ -2436,7 +2436,7 @@
   },
   "900": {
    "page.body": {
-    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\">\n\n\n\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"Choose country or r",
+    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2451,7 +2451,7 @@
     }
    },
    "column.header": {
-    "html": "<div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                ",
+    "html": "<div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "width": "576px",
      "max-width": "none",
@@ -2466,7 +2466,7 @@
     }
    },
    "column.copy": {
-    "html": "<div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\"",
+    "html": "<div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\"",
     "styles": {
      "width": "576px",
      "max-width": "none",
@@ -2481,7 +2481,7 @@
     }
    },
    "column.text": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "width": "576px",
      "max-width": "none",
@@ -2496,7 +2496,7 @@
     }
    },
    "column.figure": {
-    "html": "<div class=\"pagebody  text component\">\n    \n         <div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next gener",
+    "html": "<div class=\"pagebody  text component\"><div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span>",
     "styles": {
      "width": "692px",
      "max-width": "none",
@@ -2511,7 +2511,7 @@
     }
    },
    "localnav": {
-    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"Newsroom\" data-analytics-region=\"local nav\" data-sticky=\"\">\n\t\n    \n    \n        \n\n\n<div cl",
+    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"…\" data-analytics-region=\"local nav\" data-sticky=\"\"><div cl",
     "styles": {
      "height": "52px",
      "position": "sticky",
@@ -2532,7 +2532,7 @@
     }
    },
    "localnav.content": {
-    "html": "<div class=\"ac-ln-content\">\n\t\t\n\t\t\n\t\t\t<span class=\"ac-ln-title\">\n\t\t\t\t<!--googleoff: all-->\n\t\t\t\t<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>\n\t\t\t\t<!--googleon: all-->\n\t\t\t</span>\n\t\t\n\n\t\t<div class=\"ac-ln-menu\">\n\t\t\t<div ",
+    "html": "<div class=\"ac-ln-content\"><span class=\"ac-ln-title\"><!--googleoff: all--><a href=\"/newsroom/\" data-analytics-title=\"product index\"></a><!--googleon: all--></span><div class=\"ac-ln-menu\"><div ",
     "styles": {
      "max-width": "980px",
      "padding-left": "22px",
@@ -2544,7 +2544,7 @@
     }
    },
    "localnav.title": {
-    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>",
+    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2571,7 +2571,7 @@
     }
    },
    "header": {
-    "html": "<div class=\"article-header\">\n        \n\t\t\n        <div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <",
+    "html": "<div class=\"article-header\"><div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><",
     "styles": {
      "margin-top": "40px",
      "margin-bottom": "0px",
@@ -2584,7 +2584,7 @@
     }
    },
    "header.eyebrow": {
-    "html": "<div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_r",
+    "html": "<div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_r",
     "styles": {
      "margin-top": "40px",
      "margin-bottom": "20px",
@@ -2597,7 +2597,7 @@
     }
    },
    "header.headline": {
-    "html": "<div class=\"pagetitle component\">\n            <div class=\"component-content\">\n                \n                \n                \n                    <h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Appl",
+    "html": "<div class=\"pagetitle component\"><div class=\"component-content\"><h1 class=\"hero-headline\">",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -2610,7 +2610,7 @@
     }
    },
    "header.subhead": {
-    "html": "<div class=\"article-subhead component\">\n            <div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater se",
+    "html": "<div class=\"article-subhead component\"><div class=\"component-content\">",
     "styles": {
      "margin-top": "16px",
      "margin-bottom": "0px",
@@ -2623,7 +2623,7 @@
     }
    },
    "eyebrow": {
-    "html": "<div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                    \n                    \n                      ",
+    "html": "<div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2653,7 +2653,7 @@
     }
    },
    "eyebrow.category": {
-    "html": "<span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>",
+    "html": "<span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2672,7 +2672,7 @@
     }
    },
    "eyebrow.date": {
-    "html": "<span class=\"category-eyebrow__date\">October 13, 2026</span>",
+    "html": "<span class=\"category-eyebrow__date\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2691,7 +2691,7 @@
     }
    },
    "headline": {
-    "html": "<h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Apple&nbsp;TV&nbsp;4K, supercharged by Siri&nbsp;AI\n    \n\n                    </h1>",
+    "html": "<h1 class=\"hero-headline\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "40px",
@@ -2709,7 +2709,7 @@
     }
    },
    "subhead": {
-    "html": "<div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater setup elevate the entertainment experience\n           ",
+    "html": "<div class=\"component-content\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2726,7 +2726,7 @@
     }
    },
    "figure": {
-    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"Media, Apple TV 4K is pictured with the Siri Remote.\" style=\"--nr-animation-transform-y: 20%;\">\n        <div class=\"component-content\">",
+    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"…\" style=\"--nr-animation-transform-y: 20%;\"><div class=\"component-content\">",
     "styles": {
      "width": "692px",
      "max-width": "none",
@@ -2754,7 +2754,7 @@
     }
    },
    "figure.caption": {
-    "html": "<div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies and TV shows; faster performance; and an even more immersive home theater exp",
+    "html": "<div class=\"image-caption\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2774,7 +2774,7 @@
     }
    },
    "figure.description": {
-    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "html": "<div class=\"image-description\"><div class=\"image-caption\">",
     "styles": {
      "width": "576px",
      "max-width": "none",
@@ -2790,7 +2790,7 @@
     }
    },
    "figure.inline": {
-    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"Media, An iPhone 18 Pro screen shows Find My locating a Siri Remote, with the message “80 ft ahead.”\" style=\"--nr-animation",
+    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"…\" style=\"--nr-animation",
     "styles": {
      "width": "692px",
      "max-width": "none",
@@ -2807,7 +2807,7 @@
     }
    },
    "copy": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2824,7 +2824,7 @@
     }
    },
    "copy.p": {
-    "html": "<p>Sample text</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2837,7 +2837,7 @@
     }
    },
    "copy.link": {
-    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>",
+    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2872,7 +2872,7 @@
     }
    },
    "copy.sup": {
-    "html": "<sup>1</sup>",
+    "html": "<sup></sup>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "10.2px",
@@ -2887,7 +2887,7 @@
     }
    },
    "copy.strong": {
-    "html": "<strong>$299 </strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2898,7 +2898,7 @@
     }
    },
    "h2": {
-    "html": "<h2 class=\"pagebody-header\"><strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>\n</h2>",
+    "html": "<h2 class=\"pagebody-header\"><strong></strong></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2915,7 +2915,7 @@
     }
    },
    "h2.strong": {
-    "html": "<strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2926,7 +2926,7 @@
     }
    },
    "list": {
-    "html": "<ul>\n<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with avai",
+    "html": "<ul><li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -2937,7 +2937,7 @@
     }
    },
    "list.li": {
-    "html": "<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with availabil",
+    "html": "<li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2950,7 +2950,7 @@
     }
    },
    "list.link": {
-    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a>",
+    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2977,7 +2977,7 @@
     }
    },
    "footnotes": {
-    "html": "<div class=\"sosumi text component\">\n    \n        <div class=\"component-content\">\n            <ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in ",
+    "html": "<div class=\"sosumi text component\"><div class=\"component-content\"><ol><li>",
     "styles": {
      "margin-top": "36px",
      "margin-bottom": "36px",
@@ -2989,7 +2989,7 @@
     }
    },
    "footnotes.ol": {
-    "html": "<ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelli",
+    "html": "<ol><li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3005,7 +3005,7 @@
     }
    },
    "footnotes.li": {
-    "html": "<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelligence",
+    "html": "<li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3022,7 +3022,7 @@
     }
    },
    "footnotes.link": {
-    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\">support.apple.com/148587</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3049,7 +3049,7 @@
     }
    },
    "related.heading": {
-    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>",
+    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -3063,7 +3063,7 @@
     }
    },
    "related.list": {
-    "html": "<div class=\"article-list component-content\">\n\t\t\t<div class=\"section-headline-container\">\n\t\t\t\t<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>\n\t\t\t\t\n            </div>\n\t\t\t\n\t\t\t \n\t\t\t \n\t\t\t\t<div class=\"article-list",
+    "html": "<div class=\"article-list component-content\"><div class=\"section-headline-container\"><h2 id=\"latest-news\" class=\"article-list__heading\"></h2></div><div class=\"article-list",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -3082,7 +3082,7 @@
     }
    },
    "related.item": {
-    "html": "<div class=\"article-list__item\">\n\t\t\t\t\t<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t",
+    "html": "<div class=\"article-list__item\"><a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\">",
     "styles": {
      "padding-top": "32px",
      "padding-right": "0px",
@@ -3109,7 +3109,7 @@
     }
    },
    "related.link": {
-    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t\t\t\t<div class=\"article-list__item__img",
+    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\"><div class=\"article-list__item__img",
     "styles": {
      "display": "flex",
      "flex-direction": "row",
@@ -3144,7 +3144,7 @@
     }
    },
    "related.img": {
-    "html": "<div class=\"article-list__item__img-wrapper\">\n\t\t\t\t\t\t\t<picture class=\"no-dl\" aria-hidden=\"true\">\n\t\t\t\t\t\t\t\t<source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
+    "html": "<div class=\"article-list__item__img-wrapper\"><picture class=\"no-dl\" aria-hidden=\"true\"><source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
     "styles": {
      "padding-top": "0px",
      "padding-right": "24px",
@@ -3174,7 +3174,7 @@
     }
    },
    "related.category": {
-    "html": "<div class=\"article-list__item__category \">UPDATE</div>",
+    "html": "<div class=\"article-list__item__category \"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3194,7 +3194,7 @@
     }
    },
    "related.title": {
-    "html": "<h3 class=\"article-list__item__title\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"article-list__item__title\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -3225,7 +3225,7 @@
     }
    },
    "related.date": {
-    "html": "<div class=\"article-list__item__date\">October 15, 2026</div>",
+    "html": "<div class=\"article-list__item__date\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -3237,7 +3237,7 @@
     }
    },
    "footertile": {
-    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\"><a class=\"block\" href=\"/newsroom/\"><div class=\"footertile-copy\"><figure class=\"footertile-copy-image\"><svg class",
     "styles": {
      "margin-top": "64px",
      "margin-bottom": "0px"
@@ -3246,7 +3246,7 @@
   },
   "1068": {
    "page.body": {
-    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\">\n\n\n\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"Choose country or r",
+    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -3261,7 +3261,7 @@
     }
    },
    "column.header": {
-    "html": "<div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                ",
+    "html": "<div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "width": "576px",
      "max-width": "none",
@@ -3276,7 +3276,7 @@
     }
    },
    "column.copy": {
-    "html": "<div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\"",
+    "html": "<div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\"",
     "styles": {
      "width": "576px",
      "max-width": "none",
@@ -3291,7 +3291,7 @@
     }
    },
    "column.text": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "width": "576px",
      "max-width": "none",
@@ -3306,7 +3306,7 @@
     }
    },
    "column.figure": {
-    "html": "<div class=\"pagebody  text component\">\n    \n         <div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next gener",
+    "html": "<div class=\"pagebody  text component\"><div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span>",
     "styles": {
      "width": "692px",
      "max-width": "none",
@@ -3321,7 +3321,7 @@
     }
    },
    "localnav": {
-    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"Newsroom\" data-analytics-region=\"local nav\" data-sticky=\"\">\n\t\n    \n    \n        \n\n\n<div cl",
+    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"…\" data-analytics-region=\"local nav\" data-sticky=\"\"><div cl",
     "styles": {
      "height": "52px",
      "position": "sticky",
@@ -3342,7 +3342,7 @@
     }
    },
    "localnav.content": {
-    "html": "<div class=\"ac-ln-content\">\n\t\t\n\t\t\n\t\t\t<span class=\"ac-ln-title\">\n\t\t\t\t<!--googleoff: all-->\n\t\t\t\t<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>\n\t\t\t\t<!--googleon: all-->\n\t\t\t</span>\n\t\t\n\n\t\t<div class=\"ac-ln-menu\">\n\t\t\t<div ",
+    "html": "<div class=\"ac-ln-content\"><span class=\"ac-ln-title\"><!--googleoff: all--><a href=\"/newsroom/\" data-analytics-title=\"product index\"></a><!--googleon: all--></span><div class=\"ac-ln-menu\"><div ",
     "styles": {
      "max-width": "980px",
      "padding-left": "22px",
@@ -3354,7 +3354,7 @@
     }
    },
    "localnav.title": {
-    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>",
+    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -3381,7 +3381,7 @@
     }
    },
    "header": {
-    "html": "<div class=\"article-header\">\n        \n\t\t\n        <div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <",
+    "html": "<div class=\"article-header\"><div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><",
     "styles": {
      "margin-top": "40px",
      "margin-bottom": "0px",
@@ -3394,7 +3394,7 @@
     }
    },
    "header.eyebrow": {
-    "html": "<div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_r",
+    "html": "<div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_r",
     "styles": {
      "margin-top": "40px",
      "margin-bottom": "20px",
@@ -3407,7 +3407,7 @@
     }
    },
    "header.headline": {
-    "html": "<div class=\"pagetitle component\">\n            <div class=\"component-content\">\n                \n                \n                \n                    <h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Appl",
+    "html": "<div class=\"pagetitle component\"><div class=\"component-content\"><h1 class=\"hero-headline\">",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -3420,7 +3420,7 @@
     }
    },
    "header.subhead": {
-    "html": "<div class=\"article-subhead component\">\n            <div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater se",
+    "html": "<div class=\"article-subhead component\"><div class=\"component-content\">",
     "styles": {
      "margin-top": "16px",
      "margin-bottom": "0px",
@@ -3433,7 +3433,7 @@
     }
    },
    "eyebrow": {
-    "html": "<div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                    \n                    \n                      ",
+    "html": "<div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3463,7 +3463,7 @@
     }
    },
    "eyebrow.category": {
-    "html": "<span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>",
+    "html": "<span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3482,7 +3482,7 @@
     }
    },
    "eyebrow.date": {
-    "html": "<span class=\"category-eyebrow__date\">October 13, 2026</span>",
+    "html": "<span class=\"category-eyebrow__date\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -3501,7 +3501,7 @@
     }
    },
    "headline": {
-    "html": "<h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Apple&nbsp;TV&nbsp;4K, supercharged by Siri&nbsp;AI\n    \n\n                    </h1>",
+    "html": "<h1 class=\"hero-headline\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "40px",
@@ -3519,7 +3519,7 @@
     }
    },
    "subhead": {
-    "html": "<div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater setup elevate the entertainment experience\n           ",
+    "html": "<div class=\"component-content\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -3536,7 +3536,7 @@
     }
    },
    "figure": {
-    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"Media, Apple TV 4K is pictured with the Siri Remote.\" style=\"--nr-animation-transform-y: 20%;\">\n        <div class=\"component-content\">",
+    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"…\" style=\"--nr-animation-transform-y: 20%;\"><div class=\"component-content\">",
     "styles": {
      "width": "692px",
      "max-width": "none",
@@ -3564,7 +3564,7 @@
     }
    },
    "figure.caption": {
-    "html": "<div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies and TV shows; faster performance; and an even more immersive home theater exp",
+    "html": "<div class=\"image-caption\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3584,7 +3584,7 @@
     }
    },
    "figure.description": {
-    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "html": "<div class=\"image-description\"><div class=\"image-caption\">",
     "styles": {
      "width": "576px",
      "max-width": "none",
@@ -3600,7 +3600,7 @@
     }
    },
    "figure.inline": {
-    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"Media, An iPhone 18 Pro screen shows Find My locating a Siri Remote, with the message “80 ft ahead.”\" style=\"--nr-animation",
+    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"…\" style=\"--nr-animation",
     "styles": {
      "width": "692px",
      "max-width": "none",
@@ -3617,7 +3617,7 @@
     }
    },
    "copy": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -3634,7 +3634,7 @@
     }
    },
    "copy.p": {
-    "html": "<p>Sample text</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -3647,7 +3647,7 @@
     }
    },
    "copy.link": {
-    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>",
+    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -3682,7 +3682,7 @@
     }
    },
    "copy.sup": {
-    "html": "<sup>1</sup>",
+    "html": "<sup></sup>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "10.2px",
@@ -3697,7 +3697,7 @@
     }
    },
    "copy.strong": {
-    "html": "<strong>$299 </strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -3708,7 +3708,7 @@
     }
    },
    "h2": {
-    "html": "<h2 class=\"pagebody-header\"><strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>\n</h2>",
+    "html": "<h2 class=\"pagebody-header\"><strong></strong></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -3725,7 +3725,7 @@
     }
    },
    "h2.strong": {
-    "html": "<strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -3736,7 +3736,7 @@
     }
    },
    "list": {
-    "html": "<ul>\n<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with avai",
+    "html": "<ul><li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -3747,7 +3747,7 @@
     }
    },
    "list.li": {
-    "html": "<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with availabil",
+    "html": "<li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -3760,7 +3760,7 @@
     }
    },
    "list.link": {
-    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a>",
+    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -3787,7 +3787,7 @@
     }
    },
    "footnotes": {
-    "html": "<div class=\"sosumi text component\">\n    \n        <div class=\"component-content\">\n            <ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in ",
+    "html": "<div class=\"sosumi text component\"><div class=\"component-content\"><ol><li>",
     "styles": {
      "margin-top": "36px",
      "margin-bottom": "36px",
@@ -3799,7 +3799,7 @@
     }
    },
    "footnotes.ol": {
-    "html": "<ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelli",
+    "html": "<ol><li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3815,7 +3815,7 @@
     }
    },
    "footnotes.li": {
-    "html": "<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelligence",
+    "html": "<li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3832,7 +3832,7 @@
     }
    },
    "footnotes.link": {
-    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\">support.apple.com/148587</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3859,7 +3859,7 @@
     }
    },
    "related.heading": {
-    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>",
+    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -3873,7 +3873,7 @@
     }
    },
    "related.list": {
-    "html": "<div class=\"article-list component-content\">\n\t\t\t<div class=\"section-headline-container\">\n\t\t\t\t<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>\n\t\t\t\t\n            </div>\n\t\t\t\n\t\t\t \n\t\t\t \n\t\t\t\t<div class=\"article-list",
+    "html": "<div class=\"article-list component-content\"><div class=\"section-headline-container\"><h2 id=\"latest-news\" class=\"article-list__heading\"></h2></div><div class=\"article-list",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -3892,7 +3892,7 @@
     }
    },
    "related.item": {
-    "html": "<div class=\"article-list__item\">\n\t\t\t\t\t<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t",
+    "html": "<div class=\"article-list__item\"><a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\">",
     "styles": {
      "padding-top": "32px",
      "padding-right": "0px",
@@ -3919,7 +3919,7 @@
     }
    },
    "related.link": {
-    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t\t\t\t<div class=\"article-list__item__img",
+    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\"><div class=\"article-list__item__img",
     "styles": {
      "display": "flex",
      "flex-direction": "row",
@@ -3954,7 +3954,7 @@
     }
    },
    "related.img": {
-    "html": "<div class=\"article-list__item__img-wrapper\">\n\t\t\t\t\t\t\t<picture class=\"no-dl\" aria-hidden=\"true\">\n\t\t\t\t\t\t\t\t<source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
+    "html": "<div class=\"article-list__item__img-wrapper\"><picture class=\"no-dl\" aria-hidden=\"true\"><source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
     "styles": {
      "padding-top": "0px",
      "padding-right": "24px",
@@ -3984,7 +3984,7 @@
     }
    },
    "related.category": {
-    "html": "<div class=\"article-list__item__category \">UPDATE</div>",
+    "html": "<div class=\"article-list__item__category \"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4004,7 +4004,7 @@
     }
    },
    "related.title": {
-    "html": "<h3 class=\"article-list__item__title\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"article-list__item__title\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4035,7 +4035,7 @@
     }
    },
    "related.date": {
-    "html": "<div class=\"article-list__item__date\">October 15, 2026</div>",
+    "html": "<div class=\"article-list__item__date\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -4047,7 +4047,7 @@
     }
    },
    "footertile": {
-    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\"><a class=\"block\" href=\"/newsroom/\"><div class=\"footertile-copy\"><figure class=\"footertile-copy-image\"><svg class",
     "styles": {
      "margin-top": "64px",
      "margin-bottom": "0px"
@@ -4056,7 +4056,7 @@
   },
   "1069": {
    "page.body": {
-    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\">\n\n\n\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"Choose country or r",
+    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4071,7 +4071,7 @@
     }
    },
    "column.header": {
-    "html": "<div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                ",
+    "html": "<div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "width": "653px",
      "max-width": "none",
@@ -4086,7 +4086,7 @@
     }
    },
    "column.copy": {
-    "html": "<div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\"",
+    "html": "<div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\"",
     "styles": {
      "width": "653px",
      "max-width": "none",
@@ -4101,7 +4101,7 @@
     }
    },
    "column.text": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "width": "653px",
      "max-width": "none",
@@ -4116,7 +4116,7 @@
     }
    },
    "column.figure": {
-    "html": "<div class=\"pagebody  text component\">\n    \n         <div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next gener",
+    "html": "<div class=\"pagebody  text component\"><div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span>",
     "styles": {
      "width": "980px",
      "max-width": "none",
@@ -4131,7 +4131,7 @@
     }
    },
    "localnav": {
-    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"Newsroom\" data-analytics-region=\"local nav\" data-sticky=\"\">\n\t\n    \n    \n        \n\n\n<div cl",
+    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"…\" data-analytics-region=\"local nav\" data-sticky=\"\"><div cl",
     "styles": {
      "height": "52px",
      "position": "sticky",
@@ -4152,7 +4152,7 @@
     }
    },
    "localnav.content": {
-    "html": "<div class=\"ac-ln-content\">\n\t\t\n\t\t\n\t\t\t<span class=\"ac-ln-title\">\n\t\t\t\t<!--googleoff: all-->\n\t\t\t\t<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>\n\t\t\t\t<!--googleon: all-->\n\t\t\t</span>\n\t\t\n\n\t\t<div class=\"ac-ln-menu\">\n\t\t\t<div ",
+    "html": "<div class=\"ac-ln-content\"><span class=\"ac-ln-title\"><!--googleoff: all--><a href=\"/newsroom/\" data-analytics-title=\"product index\"></a><!--googleon: all--></span><div class=\"ac-ln-menu\"><div ",
     "styles": {
      "max-width": "980px",
      "padding-left": "22px",
@@ -4164,7 +4164,7 @@
     }
    },
    "localnav.title": {
-    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>",
+    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -4191,7 +4191,7 @@
     }
    },
    "header": {
-    "html": "<div class=\"article-header\">\n        \n\t\t\n        <div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <",
+    "html": "<div class=\"article-header\"><div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><",
     "styles": {
      "margin-top": "52px",
      "margin-bottom": "0px",
@@ -4204,7 +4204,7 @@
     }
    },
    "header.eyebrow": {
-    "html": "<div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_r",
+    "html": "<div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_r",
     "styles": {
      "margin-top": "52px",
      "margin-bottom": "20px",
@@ -4217,7 +4217,7 @@
     }
    },
    "header.headline": {
-    "html": "<div class=\"pagetitle component\">\n            <div class=\"component-content\">\n                \n                \n                \n                    <h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Appl",
+    "html": "<div class=\"pagetitle component\"><div class=\"component-content\"><h1 class=\"hero-headline\">",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -4230,7 +4230,7 @@
     }
    },
    "header.subhead": {
-    "html": "<div class=\"article-subhead component\">\n            <div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater se",
+    "html": "<div class=\"article-subhead component\"><div class=\"component-content\">",
     "styles": {
      "margin-top": "20px",
      "margin-bottom": "0px",
@@ -4243,7 +4243,7 @@
     }
    },
    "eyebrow": {
-    "html": "<div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                    \n                    \n                      ",
+    "html": "<div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -4273,7 +4273,7 @@
     }
    },
    "eyebrow.category": {
-    "html": "<span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>",
+    "html": "<span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4292,7 +4292,7 @@
     }
    },
    "eyebrow.date": {
-    "html": "<span class=\"category-eyebrow__date\">October 13, 2026</span>",
+    "html": "<span class=\"category-eyebrow__date\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -4311,7 +4311,7 @@
     }
    },
    "headline": {
-    "html": "<h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Apple&nbsp;TV&nbsp;4K, supercharged by Siri&nbsp;AI\n    \n\n                    </h1>",
+    "html": "<h1 class=\"hero-headline\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "48px",
@@ -4329,7 +4329,7 @@
     }
    },
    "subhead": {
-    "html": "<div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater setup elevate the entertainment experience\n           ",
+    "html": "<div class=\"component-content\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -4346,7 +4346,7 @@
     }
    },
    "figure": {
-    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"Media, Apple TV 4K is pictured with the Siri Remote.\" style=\"--nr-animation-transform-y: 20%;\">\n        <div class=\"component-content\">",
+    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"…\" style=\"--nr-animation-transform-y: 20%;\"><div class=\"component-content\">",
     "styles": {
      "width": "980px",
      "max-width": "none",
@@ -4374,7 +4374,7 @@
     }
    },
    "figure.caption": {
-    "html": "<div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies and TV shows; faster performance; and an even more immersive home theater exp",
+    "html": "<div class=\"image-caption\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4394,7 +4394,7 @@
     }
    },
    "figure.description": {
-    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "html": "<div class=\"image-description\"><div class=\"image-caption\">",
     "styles": {
      "width": "653px",
      "max-width": "none",
@@ -4410,7 +4410,7 @@
     }
    },
    "figure.inline": {
-    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"Media, An iPhone 18 Pro screen shows Find My locating a Siri Remote, with the message “80 ft ahead.”\" style=\"--nr-animation",
+    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"…\" style=\"--nr-animation",
     "styles": {
      "width": "980px",
      "max-width": "none",
@@ -4427,7 +4427,7 @@
     }
    },
    "copy": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -4444,7 +4444,7 @@
     }
    },
    "copy.p": {
-    "html": "<p>Sample text</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -4457,7 +4457,7 @@
     }
    },
    "copy.link": {
-    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>",
+    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -4492,7 +4492,7 @@
     }
    },
    "copy.sup": {
-    "html": "<sup>1</sup>",
+    "html": "<sup></sup>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "11.4px",
@@ -4507,7 +4507,7 @@
     }
    },
    "copy.strong": {
-    "html": "<strong>$299 </strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -4518,7 +4518,7 @@
     }
    },
    "h2": {
-    "html": "<h2 class=\"pagebody-header\"><strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>\n</h2>",
+    "html": "<h2 class=\"pagebody-header\"><strong></strong></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -4535,7 +4535,7 @@
     }
    },
    "h2.strong": {
-    "html": "<strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -4546,7 +4546,7 @@
     }
    },
    "list": {
-    "html": "<ul>\n<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with avai",
+    "html": "<ul><li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -4557,7 +4557,7 @@
     }
    },
    "list.li": {
-    "html": "<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with availabil",
+    "html": "<li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -4570,7 +4570,7 @@
     }
    },
    "list.link": {
-    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a>",
+    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -4597,7 +4597,7 @@
     }
    },
    "footnotes": {
-    "html": "<div class=\"sosumi text component\">\n    \n        <div class=\"component-content\">\n            <ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in ",
+    "html": "<div class=\"sosumi text component\"><div class=\"component-content\"><ol><li>",
     "styles": {
      "margin-top": "44px",
      "margin-bottom": "44px",
@@ -4609,7 +4609,7 @@
     }
    },
    "footnotes.ol": {
-    "html": "<ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelli",
+    "html": "<ol><li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4625,7 +4625,7 @@
     }
    },
    "footnotes.li": {
-    "html": "<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelligence",
+    "html": "<li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4642,7 +4642,7 @@
     }
    },
    "footnotes.link": {
-    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\">support.apple.com/148587</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4669,7 +4669,7 @@
     }
    },
    "related.heading": {
-    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>",
+    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -4683,7 +4683,7 @@
     }
    },
    "related.list": {
-    "html": "<div class=\"article-list component-content\">\n\t\t\t<div class=\"section-headline-container\">\n\t\t\t\t<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>\n\t\t\t\t\n            </div>\n\t\t\t\n\t\t\t \n\t\t\t \n\t\t\t\t<div class=\"article-list",
+    "html": "<div class=\"article-list component-content\"><div class=\"section-headline-container\"><h2 id=\"latest-news\" class=\"article-list__heading\"></h2></div><div class=\"article-list",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -4702,7 +4702,7 @@
     }
    },
    "related.item": {
-    "html": "<div class=\"article-list__item\">\n\t\t\t\t\t<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t",
+    "html": "<div class=\"article-list__item\"><a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\">",
     "styles": {
      "padding-top": "32px",
      "padding-right": "0px",
@@ -4729,7 +4729,7 @@
     }
    },
    "related.link": {
-    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t\t\t\t<div class=\"article-list__item__img",
+    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\"><div class=\"article-list__item__img",
     "styles": {
      "display": "flex",
      "flex-direction": "row",
@@ -4764,7 +4764,7 @@
     }
    },
    "related.img": {
-    "html": "<div class=\"article-list__item__img-wrapper\">\n\t\t\t\t\t\t\t<picture class=\"no-dl\" aria-hidden=\"true\">\n\t\t\t\t\t\t\t\t<source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
+    "html": "<div class=\"article-list__item__img-wrapper\"><picture class=\"no-dl\" aria-hidden=\"true\"><source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
     "styles": {
      "padding-top": "0px",
      "padding-right": "24px",
@@ -4794,7 +4794,7 @@
     }
    },
    "related.category": {
-    "html": "<div class=\"article-list__item__category \">UPDATE</div>",
+    "html": "<div class=\"article-list__item__category \"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4814,7 +4814,7 @@
     }
    },
    "related.title": {
-    "html": "<h3 class=\"article-list__item__title\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"article-list__item__title\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -4845,7 +4845,7 @@
     }
    },
    "related.date": {
-    "html": "<div class=\"article-list__item__date\">October 15, 2026</div>",
+    "html": "<div class=\"article-list__item__date\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -4857,7 +4857,7 @@
     }
    },
    "footertile": {
-    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\"><a class=\"block\" href=\"/newsroom/\"><div class=\"footertile-copy\"><figure class=\"footertile-copy-image\"><svg class",
     "styles": {
      "margin-top": "80px",
      "margin-bottom": "0px"
@@ -4866,7 +4866,7 @@
   },
   "1200": {
    "page.body": {
-    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\">\n\n\n\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"Choose country or r",
+    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4881,7 +4881,7 @@
     }
    },
    "column.header": {
-    "html": "<div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                ",
+    "html": "<div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "width": "653px",
      "max-width": "none",
@@ -4896,7 +4896,7 @@
     }
    },
    "column.copy": {
-    "html": "<div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\"",
+    "html": "<div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\"",
     "styles": {
      "width": "653px",
      "max-width": "none",
@@ -4911,7 +4911,7 @@
     }
    },
    "column.text": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "width": "653px",
      "max-width": "none",
@@ -4926,7 +4926,7 @@
     }
    },
    "column.figure": {
-    "html": "<div class=\"pagebody  text component\">\n    \n         <div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next gener",
+    "html": "<div class=\"pagebody  text component\"><div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span>",
     "styles": {
      "width": "980px",
      "max-width": "none",
@@ -4941,7 +4941,7 @@
     }
    },
    "localnav": {
-    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"Newsroom\" data-analytics-region=\"local nav\" data-sticky=\"\">\n\t\n    \n    \n        \n\n\n<div cl",
+    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"…\" data-analytics-region=\"local nav\" data-sticky=\"\"><div cl",
     "styles": {
      "height": "52px",
      "position": "sticky",
@@ -4962,7 +4962,7 @@
     }
    },
    "localnav.content": {
-    "html": "<div class=\"ac-ln-content\">\n\t\t\n\t\t\n\t\t\t<span class=\"ac-ln-title\">\n\t\t\t\t<!--googleoff: all-->\n\t\t\t\t<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>\n\t\t\t\t<!--googleon: all-->\n\t\t\t</span>\n\t\t\n\n\t\t<div class=\"ac-ln-menu\">\n\t\t\t<div ",
+    "html": "<div class=\"ac-ln-content\"><span class=\"ac-ln-title\"><!--googleoff: all--><a href=\"/newsroom/\" data-analytics-title=\"product index\"></a><!--googleon: all--></span><div class=\"ac-ln-menu\"><div ",
     "styles": {
      "max-width": "980px",
      "padding-left": "22px",
@@ -4974,7 +4974,7 @@
     }
    },
    "localnav.title": {
-    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>",
+    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -5001,7 +5001,7 @@
     }
    },
    "header": {
-    "html": "<div class=\"article-header\">\n        \n\t\t\n        <div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <",
+    "html": "<div class=\"article-header\"><div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><",
     "styles": {
      "margin-top": "52px",
      "margin-bottom": "0px",
@@ -5014,7 +5014,7 @@
     }
    },
    "header.eyebrow": {
-    "html": "<div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_r",
+    "html": "<div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_r",
     "styles": {
      "margin-top": "52px",
      "margin-bottom": "20px",
@@ -5027,7 +5027,7 @@
     }
    },
    "header.headline": {
-    "html": "<div class=\"pagetitle component\">\n            <div class=\"component-content\">\n                \n                \n                \n                    <h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Appl",
+    "html": "<div class=\"pagetitle component\"><div class=\"component-content\"><h1 class=\"hero-headline\">",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -5040,7 +5040,7 @@
     }
    },
    "header.subhead": {
-    "html": "<div class=\"article-subhead component\">\n            <div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater se",
+    "html": "<div class=\"article-subhead component\"><div class=\"component-content\">",
     "styles": {
      "margin-top": "20px",
      "margin-bottom": "0px",
@@ -5053,7 +5053,7 @@
     }
    },
    "eyebrow": {
-    "html": "<div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                    \n                    \n                      ",
+    "html": "<div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -5083,7 +5083,7 @@
     }
    },
    "eyebrow.category": {
-    "html": "<span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>",
+    "html": "<span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -5102,7 +5102,7 @@
     }
    },
    "eyebrow.date": {
-    "html": "<span class=\"category-eyebrow__date\">October 13, 2026</span>",
+    "html": "<span class=\"category-eyebrow__date\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -5121,7 +5121,7 @@
     }
    },
    "headline": {
-    "html": "<h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Apple&nbsp;TV&nbsp;4K, supercharged by Siri&nbsp;AI\n    \n\n                    </h1>",
+    "html": "<h1 class=\"hero-headline\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "48px",
@@ -5139,7 +5139,7 @@
     }
    },
    "subhead": {
-    "html": "<div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater setup elevate the entertainment experience\n           ",
+    "html": "<div class=\"component-content\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -5156,7 +5156,7 @@
     }
    },
    "figure": {
-    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"Media, Apple TV 4K is pictured with the Siri Remote.\" style=\"--nr-animation-transform-y: 20%;\">\n        <div class=\"component-content\">",
+    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"…\" style=\"--nr-animation-transform-y: 20%;\"><div class=\"component-content\">",
     "styles": {
      "width": "980px",
      "max-width": "none",
@@ -5184,7 +5184,7 @@
     }
    },
    "figure.caption": {
-    "html": "<div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies and TV shows; faster performance; and an even more immersive home theater exp",
+    "html": "<div class=\"image-caption\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -5204,7 +5204,7 @@
     }
    },
    "figure.description": {
-    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "html": "<div class=\"image-description\"><div class=\"image-caption\">",
     "styles": {
      "width": "653px",
      "max-width": "none",
@@ -5220,7 +5220,7 @@
     }
    },
    "figure.inline": {
-    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"Media, An iPhone 18 Pro screen shows Find My locating a Siri Remote, with the message “80 ft ahead.”\" style=\"--nr-animation",
+    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"…\" style=\"--nr-animation",
     "styles": {
      "width": "980px",
      "max-width": "none",
@@ -5237,7 +5237,7 @@
     }
    },
    "copy": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -5254,7 +5254,7 @@
     }
    },
    "copy.p": {
-    "html": "<p>Sample text</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -5267,7 +5267,7 @@
     }
    },
    "copy.link": {
-    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>",
+    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -5302,7 +5302,7 @@
     }
    },
    "copy.sup": {
-    "html": "<sup>1</sup>",
+    "html": "<sup></sup>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "11.4px",
@@ -5317,7 +5317,7 @@
     }
    },
    "copy.strong": {
-    "html": "<strong>$299 </strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -5328,7 +5328,7 @@
     }
    },
    "h2": {
-    "html": "<h2 class=\"pagebody-header\"><strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>\n</h2>",
+    "html": "<h2 class=\"pagebody-header\"><strong></strong></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -5345,7 +5345,7 @@
     }
    },
    "h2.strong": {
-    "html": "<strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -5356,7 +5356,7 @@
     }
    },
    "list": {
-    "html": "<ul>\n<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with avai",
+    "html": "<ul><li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -5367,7 +5367,7 @@
     }
    },
    "list.li": {
-    "html": "<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with availabil",
+    "html": "<li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -5380,7 +5380,7 @@
     }
    },
    "list.link": {
-    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a>",
+    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -5407,7 +5407,7 @@
     }
    },
    "footnotes": {
-    "html": "<div class=\"sosumi text component\">\n    \n        <div class=\"component-content\">\n            <ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in ",
+    "html": "<div class=\"sosumi text component\"><div class=\"component-content\"><ol><li>",
     "styles": {
      "margin-top": "44px",
      "margin-bottom": "44px",
@@ -5419,7 +5419,7 @@
     }
    },
    "footnotes.ol": {
-    "html": "<ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelli",
+    "html": "<ol><li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -5435,7 +5435,7 @@
     }
    },
    "footnotes.li": {
-    "html": "<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelligence",
+    "html": "<li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -5452,7 +5452,7 @@
     }
    },
    "footnotes.link": {
-    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\">support.apple.com/148587</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -5479,7 +5479,7 @@
     }
    },
    "related.heading": {
-    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>",
+    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -5493,7 +5493,7 @@
     }
    },
    "related.list": {
-    "html": "<div class=\"article-list component-content\">\n\t\t\t<div class=\"section-headline-container\">\n\t\t\t\t<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>\n\t\t\t\t\n            </div>\n\t\t\t\n\t\t\t \n\t\t\t \n\t\t\t\t<div class=\"article-list",
+    "html": "<div class=\"article-list component-content\"><div class=\"section-headline-container\"><h2 id=\"latest-news\" class=\"article-list__heading\"></h2></div><div class=\"article-list",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -5512,7 +5512,7 @@
     }
    },
    "related.item": {
-    "html": "<div class=\"article-list__item\">\n\t\t\t\t\t<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t",
+    "html": "<div class=\"article-list__item\"><a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\">",
     "styles": {
      "padding-top": "32px",
      "padding-right": "0px",
@@ -5539,7 +5539,7 @@
     }
    },
    "related.link": {
-    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t\t\t\t<div class=\"article-list__item__img",
+    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\"><div class=\"article-list__item__img",
     "styles": {
      "display": "flex",
      "flex-direction": "row",
@@ -5574,7 +5574,7 @@
     }
    },
    "related.img": {
-    "html": "<div class=\"article-list__item__img-wrapper\">\n\t\t\t\t\t\t\t<picture class=\"no-dl\" aria-hidden=\"true\">\n\t\t\t\t\t\t\t\t<source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
+    "html": "<div class=\"article-list__item__img-wrapper\"><picture class=\"no-dl\" aria-hidden=\"true\"><source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
     "styles": {
      "padding-top": "0px",
      "padding-right": "24px",
@@ -5604,7 +5604,7 @@
     }
    },
    "related.category": {
-    "html": "<div class=\"article-list__item__category \">UPDATE</div>",
+    "html": "<div class=\"article-list__item__category \"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -5624,7 +5624,7 @@
     }
    },
    "related.title": {
-    "html": "<h3 class=\"article-list__item__title\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"article-list__item__title\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -5655,7 +5655,7 @@
     }
    },
    "related.date": {
-    "html": "<div class=\"article-list__item__date\">October 15, 2026</div>",
+    "html": "<div class=\"article-list__item__date\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -5667,7 +5667,7 @@
     }
    },
    "footertile": {
-    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\"><a class=\"block\" href=\"/newsroom/\"><div class=\"footertile-copy\"><figure class=\"footertile-copy-image\"><svg class",
     "styles": {
      "margin-top": "80px",
      "margin-bottom": "0px"
@@ -5676,7 +5676,7 @@
   },
   "1600": {
    "page.body": {
-    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\">\n\n\n\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"Choose country or r",
+    "html": "<body class=\"page-article\" data-anim-scroll-group=\"body\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"ltr\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -5691,7 +5691,7 @@
     }
    },
    "column.header": {
-    "html": "<div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                ",
+    "html": "<div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "width": "653px",
      "max-width": "none",
@@ -5706,7 +5706,7 @@
     }
    },
    "column.copy": {
-    "html": "<div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\"",
+    "html": "<div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\"",
     "styles": {
      "width": "653px",
      "max-width": "none",
@@ -5721,7 +5721,7 @@
     }
    },
    "column.text": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "width": "653px",
      "max-width": "none",
@@ -5736,7 +5736,7 @@
     }
    },
    "column.figure": {
-    "html": "<div class=\"pagebody  text component\">\n    \n         <div class=\"component-content\">\n             \n                 <div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next gener",
+    "html": "<div class=\"pagebody  text component\"><div class=\"component-content\"><div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span>",
     "styles": {
      "width": "980px",
      "max-width": "none",
@@ -5751,7 +5751,7 @@
     }
    },
    "localnav": {
-    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"Newsroom\" data-analytics-region=\"local nav\" data-sticky=\"\">\n\t\n    \n    \n        \n\n\n<div cl",
+    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions\" lang=\"en-US\" role=\"navigation\" aria-label=\"…\" data-analytics-region=\"local nav\" data-sticky=\"\"><div cl",
     "styles": {
      "height": "52px",
      "position": "sticky",
@@ -5772,7 +5772,7 @@
     }
    },
    "localnav.content": {
-    "html": "<div class=\"ac-ln-content\">\n\t\t\n\t\t\n\t\t\t<span class=\"ac-ln-title\">\n\t\t\t\t<!--googleoff: all-->\n\t\t\t\t<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>\n\t\t\t\t<!--googleon: all-->\n\t\t\t</span>\n\t\t\n\n\t\t<div class=\"ac-ln-menu\">\n\t\t\t<div ",
+    "html": "<div class=\"ac-ln-content\"><span class=\"ac-ln-title\"><!--googleoff: all--><a href=\"/newsroom/\" data-analytics-title=\"product index\"></a><!--googleon: all--></span><div class=\"ac-ln-menu\"><div ",
     "styles": {
      "max-width": "980px",
      "padding-left": "22px",
@@ -5784,7 +5784,7 @@
     }
    },
    "localnav.title": {
-    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\">Newsroom</a>",
+    "html": "<a href=\"/newsroom/\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -5811,7 +5811,7 @@
     }
    },
    "header": {
-    "html": "<div class=\"article-header\">\n        \n\t\t\n        <div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <",
+    "html": "<div class=\"article-header\"><div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><",
     "styles": {
      "margin-top": "52px",
      "margin-bottom": "0px",
@@ -5824,7 +5824,7 @@
     }
    },
    "header.eyebrow": {
-    "html": "<div class=\"category component\">\n            <div class=\"component-content\">\n                <div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_r",
+    "html": "<div class=\"category component\"><div class=\"component-content\"><div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_r",
     "styles": {
      "margin-top": "52px",
      "margin-bottom": "20px",
@@ -5837,7 +5837,7 @@
     }
    },
    "header.headline": {
-    "html": "<div class=\"pagetitle component\">\n            <div class=\"component-content\">\n                \n                \n                \n                    <h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Appl",
+    "html": "<div class=\"pagetitle component\"><div class=\"component-content\"><h1 class=\"hero-headline\">",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -5850,7 +5850,7 @@
     }
    },
    "header.subhead": {
-    "html": "<div class=\"article-subhead component\">\n            <div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater se",
+    "html": "<div class=\"article-subhead component\"><div class=\"component-content\">",
     "styles": {
      "margin-top": "20px",
      "margin-bottom": "0px",
@@ -5863,7 +5863,7 @@
     }
    },
    "eyebrow": {
-    "html": "<div class=\"category-eyebrow\">\n                    \n                    \n                        <span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>\n                    \n                    \n                      ",
+    "html": "<div class=\"category-eyebrow\"><span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -5893,7 +5893,7 @@
     }
    },
    "eyebrow.category": {
-    "html": "<span class=\"category-eyebrow__category category_release\">PRESS RELEASE</span>",
+    "html": "<span class=\"category-eyebrow__category category_release\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -5912,7 +5912,7 @@
     }
    },
    "eyebrow.date": {
-    "html": "<span class=\"category-eyebrow__date\">October 13, 2026</span>",
+    "html": "<span class=\"category-eyebrow__date\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -5931,7 +5931,7 @@
     }
    },
    "headline": {
-    "html": "<h1 class=\"hero-headline\">\n                        \n    \n        Apple unveils the new Apple&nbsp;TV&nbsp;4K, supercharged by Siri&nbsp;AI\n    \n\n                    </h1>",
+    "html": "<h1 class=\"hero-headline\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "48px",
@@ -5949,7 +5949,7 @@
     }
    },
    "subhead": {
-    "html": "<div class=\"component-content\">\n                \n                \n                    A more capable and conversational Siri, faster performance, and an even more immersive home theater setup elevate the entertainment experience\n           ",
+    "html": "<div class=\"component-content\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -5966,7 +5966,7 @@
     }
    },
    "figure": {
-    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"Media, Apple TV 4K is pictured with the Siri Remote.\" style=\"--nr-animation-transform-y: 20%;\">\n        <div class=\"component-content\">",
+    "html": "<figure class=\"image component image-big image-fullbleed body-copy-wide nr-scroll-animation\" aria-label=\"…\" style=\"--nr-animation-transform-y: 20%;\"><div class=\"component-content\">",
     "styles": {
      "width": "980px",
      "max-width": "none",
@@ -5994,7 +5994,7 @@
     }
    },
    "figure.caption": {
-    "html": "<div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies and TV shows; faster performance; and an even more immersive home theater exp",
+    "html": "<div class=\"image-caption\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -6014,7 +6014,7 @@
     }
    },
    "figure.description": {
-    "html": "<div class=\"image-description\">\n             \n              \n              <div class=\"image-caption\">\n                The new Apple TV 4K features Siri AI, which transforms how users search for, discover, and enjoy their favorite movies an",
+    "html": "<div class=\"image-description\"><div class=\"image-caption\">",
     "styles": {
      "width": "653px",
      "max-width": "none",
@@ -6030,7 +6030,7 @@
     }
    },
    "figure.inline": {
-    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"Media, An iPhone 18 Pro screen shows Find My locating a Siri Remote, with the message “80 ft ahead.”\" style=\"--nr-animation",
+    "html": "<figure class=\"image component image-inline body-copy-wide nr-scroll-animation nr-scroll-animation--off\" aria-label=\"…\" style=\"--nr-animation",
     "styles": {
      "width": "980px",
      "max-width": "none",
@@ -6047,7 +6047,7 @@
     }
    },
    "copy": {
-    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\">CUPERTINO, CALIFORNIA</span> Apple today announced the next generation of <a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>, delivering its most immersive",
+    "html": "<div class=\"pagebody-copy\"><span class=\"pagebody-location\"></span><a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -6064,7 +6064,7 @@
     }
    },
    "copy.p": {
-    "html": "<p>Sample text</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -6077,7 +6077,7 @@
     }
    },
    "copy.link": {
-    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\">Apple TV 4K</a>",
+    "html": "<a href=\"https://www.apple.com/apple-tv-4k/\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -6112,7 +6112,7 @@
     }
    },
    "copy.sup": {
-    "html": "<sup>1</sup>",
+    "html": "<sup></sup>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "11.4px",
@@ -6127,7 +6127,7 @@
     }
    },
    "copy.strong": {
-    "html": "<strong>$299 </strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -6138,7 +6138,7 @@
     }
    },
    "h2": {
-    "html": "<h2 class=\"pagebody-header\"><strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>\n</h2>",
+    "html": "<h2 class=\"pagebody-header\"><strong></strong></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -6155,7 +6155,7 @@
     }
    },
    "h2.strong": {
-    "html": "<strong>An Entirely New Version of Siri Powered by Apple&nbsp;Intelligence</strong>",
+    "html": "<strong></strong>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -6166,7 +6166,7 @@
     }
    },
    "list": {
-    "html": "<ul>\n<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with avai",
+    "html": "<ul><li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -6177,7 +6177,7 @@
     }
    },
    "list.li": {
-    "html": "<li>Customers in the U.S. and 29 other countries and regions can pre-order Apple TV 4K (4th generation) starting today from <a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a> and in the Apple Store app, with availabil",
+    "html": "<li><a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -6190,7 +6190,7 @@
     }
    },
    "list.link": {
-    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\">apple.com/store</a>",
+    "html": "<a href=\"https://www.apple.com/store\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -6217,7 +6217,7 @@
     }
    },
    "footnotes": {
-    "html": "<div class=\"sosumi text component\">\n    \n        <div class=\"component-content\">\n            <ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in ",
+    "html": "<div class=\"sosumi text component\"><div class=\"component-content\"><ol><li>",
     "styles": {
      "margin-top": "44px",
      "margin-bottom": "44px",
@@ -6229,7 +6229,7 @@
     }
    },
    "footnotes.ol": {
-    "html": "<ol>\n<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelli",
+    "html": "<ol><li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -6245,7 +6245,7 @@
     }
    },
    "footnotes.li": {
-    "html": "<li>Some features may not be available in all regions or languages. Some devices may not be available in all regions. Siri AI is available in beta in tvOS 27.2 and requires the owner of the home in the Home app to have an Apple Intelligence",
+    "html": "<li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -6262,7 +6262,7 @@
     }
    },
    "footnotes.link": {
-    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\">support.apple.com/148587</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/148587\" target=\"_blank\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -6289,7 +6289,7 @@
     }
    },
    "related.heading": {
-    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>",
+    "html": "<h2 id=\"latest-news\" class=\"article-list__heading\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -6303,7 +6303,7 @@
     }
    },
    "related.list": {
-    "html": "<div class=\"article-list component-content\">\n\t\t\t<div class=\"section-headline-container\">\n\t\t\t\t<h2 id=\"latest-news\" class=\"article-list__heading\">More from Apple Newsroom</h2>\n\t\t\t\t\n            </div>\n\t\t\t\n\t\t\t \n\t\t\t \n\t\t\t\t<div class=\"article-list",
+    "html": "<div class=\"article-list component-content\"><div class=\"section-headline-container\"><h2 id=\"latest-news\" class=\"article-list__heading\"></h2></div><div class=\"article-list",
     "styles": {
      "margin-top": "0px",
      "margin-bottom": "0px",
@@ -6322,7 +6322,7 @@
     }
    },
    "related.item": {
-    "html": "<div class=\"article-list__item\">\n\t\t\t\t\t<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t",
+    "html": "<div class=\"article-list__item\"><a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\">",
     "styles": {
      "padding-top": "32px",
      "padding-right": "0px",
@@ -6349,7 +6349,7 @@
     }
    },
    "related.link": {
-    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"October 15, 2026 - UPDATE - Open up to new possibilities with iPhone&nbsp;Duo\">\n\t\t\t\t\t\t<div class=\"article-list__item__img",
+    "html": "<a class=\"article-list__item__link\" href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" aria-label=\"…\"><div class=\"article-list__item__img",
     "styles": {
      "display": "flex",
      "flex-direction": "row",
@@ -6384,7 +6384,7 @@
     }
    },
    "related.img": {
-    "html": "<div class=\"article-list__item__img-wrapper\">\n\t\t\t\t\t\t\t<picture class=\"no-dl\" aria-hidden=\"true\">\n\t\t\t\t\t\t\t\t<source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
+    "html": "<div class=\"article-list__item__img-wrapper\"><picture class=\"no-dl\" aria-hidden=\"true\"><source media=\"(max-width: 734px)\" src=\"/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/tile/Apple-iPhone-Duo-hero",
     "styles": {
      "padding-top": "0px",
      "padding-right": "24px",
@@ -6414,7 +6414,7 @@
     }
    },
    "related.category": {
-    "html": "<div class=\"article-list__item__category \">UPDATE</div>",
+    "html": "<div class=\"article-list__item__category \"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -6434,7 +6434,7 @@
     }
    },
    "related.title": {
-    "html": "<h3 class=\"article-list__item__title\">Open up to new possibilities with iPhone&nbsp;Duo</h3>",
+    "html": "<h3 class=\"article-list__item__title\"></h3>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -6465,7 +6465,7 @@
     }
    },
    "related.date": {
-    "html": "<div class=\"article-list__item__date\">October 15, 2026</div>",
+    "html": "<div class=\"article-list__item__date\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -6477,7 +6477,7 @@
     }
    },
    "footertile": {
-    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\">\n\t\n    \n  \t\t<a class=\"block\" href=\"/newsroom/\">\n    \n\t<div class=\"footertile-copy\">\n\t\t<figure class=\"footertile-copy-image\"><svg class",
+    "html": "<aside class=\"footertile\" data-analytics-activitymap-region-id=\"router\" aria-labelledby=\"footertile-name\"><a class=\"block\" href=\"/newsroom/\"><div class=\"footertile-copy\"><figure class=\"footertile-copy-image\"><svg class",
     "styles": {
      "margin-top": "80px",
      "margin-bottom": "0px"

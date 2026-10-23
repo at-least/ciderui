@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "page": {
-    "html": "<body id=\"releases\" class=\"releases dmf theme-light no-in-wechat\" data-color-scheme=\"light\">\n\n\t<script>\n\t// Execute immediately to avoid UI flash\n\t(function () {\n\t\t// Prevent React dev mode from running this multiple times\n\t\tif (window.__di",
+    "html": "<body id=\"releases\" class=\"releases dmf theme-light no-in-wechat\" data-color-scheme=\"light\"><script>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -21,7 +21,7 @@
     }
    },
    "entry": {
-    "html": "<article id=\"article-10222026a\" class=\"article thumbnail-layout\">\n\t\t\t\t\t\t<section class=\"row-full\">\n\t\t\t\t\t\t\t<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t",
+    "html": "<article id=\"article-10222026a\" class=\"article thumbnail-layout\"><section class=\"row-full\"><section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">",
     "styles": {
      "padding-top": "0px",
      "padding-bottom": "0px",
@@ -34,7 +34,7 @@
     }
    },
    "entry.picture": {
-    "html": "<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"article-image-wrapper\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img class=\"articl",
+    "html": "<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \"><div class=\"article-image-wrapper\"><img class=\"articl",
     "styles": {
      "width": "288.297px",
      "padding-top": "51px",
@@ -48,7 +48,7 @@
     }
    },
    "entry.image": {
-    "html": "<img class=\"article-image theme-light-image\" src=\"/assets/elements/icons/testflight-s/testflight-s-256x256_2x.png\" alt=\"TestFlight\" data-hires=\"false\">",
+    "html": "<img class=\"article-image theme-light-image\" src=\"/assets/elements/icons/testflight-s/testflight-s-256x256_2x.png\" alt=\"…\" data-hires=\"false\">",
     "styles": {
      "width": "128px",
      "height": "128px",
@@ -60,7 +60,7 @@
     }
    },
    "entry.content": {
-    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href=\"/news/rel",
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small \"><a class=\"article-title\" href=\"/news/rel",
     "styles": {
      "padding-top": "0px",
      "padding-right": "25.5px",
@@ -76,7 +76,7 @@
     }
    },
    "entry.title.link": {
-    "html": "<a class=\"article-title\" href=\"/news/releases/?…\"><h2>TestFlight 4.4.1</h2></a>",
+    "html": "<a class=\"article-title\" href=\"/news/releases/?…\"><h2></h2></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -103,7 +103,7 @@
     }
    },
    "entry.title": {
-    "html": "<h2>TestFlight 4.4.1</h2>",
+    "html": "<h2></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -120,7 +120,7 @@
     }
    },
    "entry.date": {
-    "html": "<p class=\"lighter  article-date\">October 22, 2026</p>",
+    "html": "<p class=\"lighter  article-date\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14.875px",
@@ -133,7 +133,7 @@
     }
    },
    "entry.text": {
-    "html": "<span class=\"article-text\"><ul class=\"links-stacked\"><li><a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a></li><ul class=\"links-stacked\"><li><a href=\"https://developer.apple.com/help/app-store-",
+    "html": "<span class=\"article-text\"><ul class=\"links-stacked\"><li><a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\"></a></li><ul class=\"links-stacked\"><li><a href=\"https://developer.apple.com/help/app-store-",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -145,7 +145,7 @@
     }
    },
    "entry.link": {
-    "html": "<a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a>",
+    "html": "<a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -172,7 +172,7 @@
     }
    },
    "entry.share": {
-    "html": "<button class=\"icon icon-facebook social-icon\" data-href=\"https://developer.apple.com/news/releases/?…\" data-share-type=\"facebook\" aria-label=\"Share via Facebook\"> </button>",
+    "html": "<button class=\"icon icon-facebook social-icon\" data-href=\"https://developer.apple.com/news/releases/?…\" data-share-type=\"facebook\" aria-label=\"…\"></button>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -190,7 +190,7 @@
     }
    },
    "next": {
-    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small divider-top\">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href",
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small divider-top\"><a class=\"article-title\" href",
     "styles": {
      "padding-top": "0px",
      "margin-top": "0px",
@@ -200,7 +200,7 @@
     }
    },
    "rss": {
-    "html": "<a class=\"right rss-link\" href=\"feed://developer.apple.com/news/releases/rss/releases.rss\">RSS</a>",
+    "html": "<a class=\"right rss-link\" href=\"feed://developer.apple.com/news/releases/rss/releases.rss\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -219,7 +219,7 @@
   },
   "900": {
    "page": {
-    "html": "<body id=\"releases\" class=\"releases dmf theme-light no-in-wechat\" data-color-scheme=\"light\">\n\n\t<script>\n\t// Execute immediately to avoid UI flash\n\t(function () {\n\t\t// Prevent React dev mode from running this multiple times\n\t\tif (window.__di",
+    "html": "<body id=\"releases\" class=\"releases dmf theme-light no-in-wechat\" data-color-scheme=\"light\"><script>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -234,7 +234,7 @@
     }
    },
    "entry": {
-    "html": "<article id=\"article-10222026a\" class=\"article thumbnail-layout\">\n\t\t\t\t\t\t<section class=\"row-full\">\n\t\t\t\t\t\t\t<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t",
+    "html": "<article id=\"article-10222026a\" class=\"article thumbnail-layout\"><section class=\"row-full\"><section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">",
     "styles": {
      "padding-top": "0px",
      "padding-bottom": "0px",
@@ -247,7 +247,7 @@
     }
    },
    "entry.picture": {
-    "html": "<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"article-image-wrapper\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img class=\"articl",
+    "html": "<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \"><div class=\"article-image-wrapper\"><img class=\"articl",
     "styles": {
      "width": "183.5px",
      "padding-top": "51px",
@@ -261,7 +261,7 @@
     }
    },
    "entry.image": {
-    "html": "<img class=\"article-image theme-light-image\" src=\"/assets/elements/icons/testflight-s/testflight-s-256x256_2x.png\" alt=\"TestFlight\" data-hires=\"false\">",
+    "html": "<img class=\"article-image theme-light-image\" src=\"/assets/elements/icons/testflight-s/testflight-s-256x256_2x.png\" alt=\"…\" data-hires=\"false\">",
     "styles": {
      "width": "128px",
      "height": "128px",
@@ -273,7 +273,7 @@
     }
    },
    "entry.content": {
-    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href=\"/news/rel",
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small \"><a class=\"article-title\" href=\"/news/rel",
     "styles": {
      "padding-top": "51px",
      "padding-right": "25.5px",
@@ -289,7 +289,7 @@
     }
    },
    "entry.title.link": {
-    "html": "<a class=\"article-title\" href=\"/news/releases/?…\"><h2>TestFlight 4.4.1</h2></a>",
+    "html": "<a class=\"article-title\" href=\"/news/releases/?…\"><h2></h2></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -316,7 +316,7 @@
     }
    },
    "entry.title": {
-    "html": "<h2>TestFlight 4.4.1</h2>",
+    "html": "<h2></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -333,7 +333,7 @@
     }
    },
    "entry.date": {
-    "html": "<p class=\"lighter  article-date\">October 22, 2026</p>",
+    "html": "<p class=\"lighter  article-date\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14.875px",
@@ -346,7 +346,7 @@
     }
    },
    "entry.text": {
-    "html": "<span class=\"article-text\"><ul class=\"links-stacked\"><li><a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a></li><ul class=\"links-stacked\"><li><a href=\"https://developer.apple.com/help/app-store-",
+    "html": "<span class=\"article-text\"><ul class=\"links-stacked\"><li><a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\"></a></li><ul class=\"links-stacked\"><li><a href=\"https://developer.apple.com/help/app-store-",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -358,7 +358,7 @@
     }
    },
    "entry.link": {
-    "html": "<a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a>",
+    "html": "<a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -385,7 +385,7 @@
     }
    },
    "entry.share": {
-    "html": "<button class=\"icon icon-facebook social-icon\" data-href=\"https://developer.apple.com/news/releases/?…\" data-share-type=\"facebook\" aria-label=\"Share via Facebook\"> </button>",
+    "html": "<button class=\"icon icon-facebook social-icon\" data-href=\"https://developer.apple.com/news/releases/?…\" data-share-type=\"facebook\" aria-label=\"…\"></button>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -403,7 +403,7 @@
     }
    },
    "next": {
-    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small divider-top\">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href",
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small divider-top\"><a class=\"article-title\" href",
     "styles": {
      "padding-top": "51px",
      "margin-top": "0px",
@@ -413,7 +413,7 @@
     }
    },
    "rss": {
-    "html": "<a class=\"right rss-link\" href=\"feed://developer.apple.com/news/releases/rss/releases.rss\">RSS</a>",
+    "html": "<a class=\"right rss-link\" href=\"feed://developer.apple.com/news/releases/rss/releases.rss\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -432,7 +432,7 @@
   },
   "1200": {
    "page": {
-    "html": "<body id=\"releases\" class=\"releases dmf theme-light no-in-wechat\" data-color-scheme=\"light\">\n\n\t<script>\n\t// Execute immediately to avoid UI flash\n\t(function () {\n\t\t// Prevent React dev mode from running this multiple times\n\t\tif (window.__di",
+    "html": "<body id=\"releases\" class=\"releases dmf theme-light no-in-wechat\" data-color-scheme=\"light\"><script>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -447,7 +447,7 @@
     }
    },
    "entry": {
-    "html": "<article id=\"article-10222026a\" class=\"article thumbnail-layout\">\n\t\t\t\t\t\t<section class=\"row-full\">\n\t\t\t\t\t\t\t<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t",
+    "html": "<article id=\"article-10222026a\" class=\"article thumbnail-layout\"><section class=\"row-full\"><section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">",
     "styles": {
      "padding-top": "0px",
      "padding-bottom": "0px",
@@ -460,7 +460,7 @@
     }
    },
    "entry.picture": {
-    "html": "<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"article-image-wrapper\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img class=\"articl",
+    "html": "<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \"><div class=\"article-image-wrapper\"><img class=\"articl",
     "styles": {
      "width": "245px",
      "padding-top": "51px",
@@ -474,7 +474,7 @@
     }
    },
    "entry.image": {
-    "html": "<img class=\"article-image theme-light-image\" src=\"/assets/elements/icons/testflight-s/testflight-s-256x256_2x.png\" alt=\"TestFlight\" data-hires=\"false\">",
+    "html": "<img class=\"article-image theme-light-image\" src=\"/assets/elements/icons/testflight-s/testflight-s-256x256_2x.png\" alt=\"…\" data-hires=\"false\">",
     "styles": {
      "width": "128px",
      "height": "128px",
@@ -486,7 +486,7 @@
     }
    },
    "entry.content": {
-    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href=\"/news/rel",
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small \"><a class=\"article-title\" href=\"/news/rel",
     "styles": {
      "padding-top": "51px",
      "padding-right": "25.5px",
@@ -502,7 +502,7 @@
     }
    },
    "entry.title.link": {
-    "html": "<a class=\"article-title\" href=\"/news/releases/?…\"><h2>TestFlight 4.4.1</h2></a>",
+    "html": "<a class=\"article-title\" href=\"/news/releases/?…\"><h2></h2></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -529,7 +529,7 @@
     }
    },
    "entry.title": {
-    "html": "<h2>TestFlight 4.4.1</h2>",
+    "html": "<h2></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -546,7 +546,7 @@
     }
    },
    "entry.date": {
-    "html": "<p class=\"lighter  article-date\">October 22, 2026</p>",
+    "html": "<p class=\"lighter  article-date\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14.875px",
@@ -559,7 +559,7 @@
     }
    },
    "entry.text": {
-    "html": "<span class=\"article-text\"><ul class=\"links-stacked\"><li><a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a></li><ul class=\"links-stacked\"><li><a href=\"https://developer.apple.com/help/app-store-",
+    "html": "<span class=\"article-text\"><ul class=\"links-stacked\"><li><a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\"></a></li><ul class=\"links-stacked\"><li><a href=\"https://developer.apple.com/help/app-store-",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -571,7 +571,7 @@
     }
    },
    "entry.link": {
-    "html": "<a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a>",
+    "html": "<a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -598,7 +598,7 @@
     }
    },
    "entry.share": {
-    "html": "<button class=\"icon icon-facebook social-icon\" data-href=\"https://developer.apple.com/news/releases/?…\" data-share-type=\"facebook\" aria-label=\"Share via Facebook\"> </button>",
+    "html": "<button class=\"icon icon-facebook social-icon\" data-href=\"https://developer.apple.com/news/releases/?…\" data-share-type=\"facebook\" aria-label=\"…\"></button>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -616,7 +616,7 @@
     }
    },
    "next": {
-    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small divider-top\">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href",
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small divider-top\"><a class=\"article-title\" href",
     "styles": {
      "padding-top": "51px",
      "margin-top": "0px",
@@ -626,7 +626,7 @@
     }
    },
    "rss": {
-    "html": "<a class=\"right rss-link\" href=\"feed://developer.apple.com/news/releases/rss/releases.rss\">RSS</a>",
+    "html": "<a class=\"right rss-link\" href=\"feed://developer.apple.com/news/releases/rss/releases.rss\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -645,7 +645,7 @@
   },
   "1600": {
    "page": {
-    "html": "<body id=\"releases\" class=\"releases dmf theme-light no-in-wechat\" data-color-scheme=\"light\">\n\n\t<script>\n\t// Execute immediately to avoid UI flash\n\t(function () {\n\t\t// Prevent React dev mode from running this multiple times\n\t\tif (window.__di",
+    "html": "<body id=\"releases\" class=\"releases dmf theme-light no-in-wechat\" data-color-scheme=\"light\"><script>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -660,7 +660,7 @@
     }
    },
    "entry": {
-    "html": "<article id=\"article-10222026a\" class=\"article thumbnail-layout\">\n\t\t\t\t\t\t<section class=\"row-full\">\n\t\t\t\t\t\t\t<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t",
+    "html": "<article id=\"article-10222026a\" class=\"article thumbnail-layout\"><section class=\"row-full\"><section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">",
     "styles": {
      "padding-top": "0px",
      "padding-bottom": "0px",
@@ -673,7 +673,7 @@
     }
    },
    "entry.picture": {
-    "html": "<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"article-image-wrapper\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img class=\"articl",
+    "html": "<section class=\"article-image-container column large-3 medium-3 small-12 padding-right padding-top no-padding-bottom text-right \"><div class=\"article-image-wrapper\"><img class=\"articl",
     "styles": {
      "width": "245px",
      "padding-top": "51px",
@@ -687,7 +687,7 @@
     }
    },
    "entry.image": {
-    "html": "<img class=\"article-image theme-light-image\" src=\"/assets/elements/icons/testflight-s/testflight-s-256x256_2x.png\" alt=\"TestFlight\" data-hires=\"false\">",
+    "html": "<img class=\"article-image theme-light-image\" src=\"/assets/elements/icons/testflight-s/testflight-s-256x256_2x.png\" alt=\"…\" data-hires=\"false\">",
     "styles": {
      "width": "128px",
      "height": "128px",
@@ -699,7 +699,7 @@
     }
    },
    "entry.content": {
-    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small \">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href=\"/news/rel",
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small \"><a class=\"article-title\" href=\"/news/rel",
     "styles": {
      "padding-top": "51px",
      "padding-right": "25.5px",
@@ -715,7 +715,7 @@
     }
    },
    "entry.title.link": {
-    "html": "<a class=\"article-title\" href=\"/news/releases/?…\"><h2>TestFlight 4.4.1</h2></a>",
+    "html": "<a class=\"article-title\" href=\"/news/releases/?…\"><h2></h2></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -742,7 +742,7 @@
     }
    },
    "entry.title": {
-    "html": "<h2>TestFlight 4.4.1</h2>",
+    "html": "<h2></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -759,7 +759,7 @@
     }
    },
    "entry.date": {
-    "html": "<p class=\"lighter  article-date\">October 22, 2026</p>",
+    "html": "<p class=\"lighter  article-date\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14.875px",
@@ -772,7 +772,7 @@
     }
    },
    "entry.text": {
-    "html": "<span class=\"article-text\"><ul class=\"links-stacked\"><li><a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a></li><ul class=\"links-stacked\"><li><a href=\"https://developer.apple.com/help/app-store-",
+    "html": "<span class=\"article-text\"><ul class=\"links-stacked\"><li><a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\"></a></li><ul class=\"links-stacked\"><li><a href=\"https://developer.apple.com/help/app-store-",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -784,7 +784,7 @@
     }
    },
    "entry.link": {
-    "html": "<a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\">Download the app</a>",
+    "html": "<a href=\"https://apps.apple.com/us/app/testflight/id899247664\" class=\"more\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -811,7 +811,7 @@
     }
    },
    "entry.share": {
-    "html": "<button class=\"icon icon-facebook social-icon\" data-href=\"https://developer.apple.com/news/releases/?…\" data-share-type=\"facebook\" aria-label=\"Share via Facebook\"> </button>",
+    "html": "<button class=\"icon icon-facebook social-icon\" data-href=\"https://developer.apple.com/news/releases/?…\" data-share-type=\"facebook\" aria-label=\"…\"></button>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -829,7 +829,7 @@
     }
    },
    "next": {
-    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small divider-top\">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"article-title\" href",
+    "html": "<section class=\"article-content-container column large-9 medium-9 small-12 no-padding-left padding-right-small padding-top sv-no-padding-top padding-bottom-small divider-top\"><a class=\"article-title\" href",
     "styles": {
      "padding-top": "51px",
      "margin-top": "0px",
@@ -839,7 +839,7 @@
     }
    },
    "rss": {
-    "html": "<a class=\"right rss-link\" href=\"feed://developer.apple.com/news/releases/rss/releases.rss\">RSS</a>",
+    "html": "<a class=\"right rss-link\" href=\"feed://developer.apple.com/news/releases/rss/releases.rss\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",

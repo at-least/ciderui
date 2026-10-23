@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "accordion.title": {
-    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">Questions About Buying</span>",
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -69,7 +69,7 @@
     }
    },
    "compact.item": {
-    "html": "<li data-core-accordion-item=\"\" class=\"rc-accordion-item\" role=\"listitem\" data-core-accordion-item-expanded=\"\"><h3><span class=\"visuallyhidden\">&nbsp;</span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"true\" aria-contr",
+    "html": "<li data-core-accordion-item=\"\" class=\"rc-accordion-item\" role=\"listitem\" data-core-accordion-item-expanded=\"\"><h3><span class=\"visuallyhidden\"></span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"true\" aria-contr",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -110,7 +110,7 @@
     }
    },
    "compact.title": {
-    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">When will I get my items?</span>",
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -191,7 +191,7 @@
     }
    },
    "compact.answer": {
-    "html": "<div class=\"rc-accordion-content large-10\"><div>By entering a zip code, you’ll get estimated delivery and pickup dates for your items. You’ll get a final delivery date after you place your order. Delivery estimates are based on item availab",
+    "html": "<div class=\"rc-accordion-content large-10\"><div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -212,7 +212,7 @@
   },
   "900": {
    "accordion.title": {
-    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">Questions About Buying</span>",
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -275,7 +275,7 @@
     }
    },
    "compact.item": {
-    "html": "<li data-core-accordion-item=\"\" class=\"rc-accordion-item\" role=\"listitem\" data-core-accordion-item-expanded=\"\"><h3><span class=\"visuallyhidden\">&nbsp;</span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"true\" aria-contr",
+    "html": "<li data-core-accordion-item=\"\" class=\"rc-accordion-item\" role=\"listitem\" data-core-accordion-item-expanded=\"\"><h3><span class=\"visuallyhidden\"></span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"true\" aria-contr",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -316,7 +316,7 @@
     }
    },
    "compact.title": {
-    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">When will I get my items?</span>",
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -397,7 +397,7 @@
     }
    },
    "compact.answer": {
-    "html": "<div class=\"rc-accordion-content large-10\"><div>By entering a zip code, you’ll get estimated delivery and pickup dates for your items. You’ll get a final delivery date after you place your order. Delivery estimates are based on item availab",
+    "html": "<div class=\"rc-accordion-content large-10\"><div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -418,7 +418,7 @@
   },
   "1200": {
    "accordion.title": {
-    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">Questions About Buying</span>",
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -481,7 +481,7 @@
     }
    },
    "compact.item": {
-    "html": "<li data-core-accordion-item=\"\" class=\"rc-accordion-item\" role=\"listitem\" data-core-accordion-item-expanded=\"\"><h3><span class=\"visuallyhidden\">&nbsp;</span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"true\" aria-contr",
+    "html": "<li data-core-accordion-item=\"\" class=\"rc-accordion-item\" role=\"listitem\" data-core-accordion-item-expanded=\"\"><h3><span class=\"visuallyhidden\"></span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"true\" aria-contr",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -522,7 +522,7 @@
     }
    },
    "compact.title": {
-    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">When will I get my items?</span>",
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -603,7 +603,7 @@
     }
    },
    "compact.answer": {
-    "html": "<div class=\"rc-accordion-content large-10\"><div>By entering a zip code, you’ll get estimated delivery and pickup dates for your items. You’ll get a final delivery date after you place your order. Delivery estimates are based on item availab",
+    "html": "<div class=\"rc-accordion-content large-10\"><div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -624,7 +624,7 @@
   },
   "1600": {
    "accordion.title": {
-    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">Questions About Buying</span>",
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -687,7 +687,7 @@
     }
    },
    "compact.item": {
-    "html": "<li data-core-accordion-item=\"\" class=\"rc-accordion-item\" role=\"listitem\"><h3><span class=\"visuallyhidden\">&nbsp;</span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"false\" aria-controls=\"content-faq-question-0\" id=\"tit",
+    "html": "<li data-core-accordion-item=\"\" class=\"rc-accordion-item\" role=\"listitem\"><h3><span class=\"visuallyhidden\"></span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"false\" aria-controls=\"content-faq-question-0\" id=\"tit",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -728,7 +728,7 @@
     }
    },
    "compact.title": {
-    "html": "<span class=\"rc-accordion-title large-10 typography-callout\">When will I get my items?</span>",
+    "html": "<span class=\"rc-accordion-title large-10 typography-callout\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -809,7 +809,7 @@
     }
    },
    "compact.answer": {
-    "html": "<div class=\"rc-accordion-content large-10\"><div>By entering a zip code, you’ll get estimated delivery and pickup dates for your items. You’ll get a final delivery date after you place your order. Delivery estimates are based on item availab",
+    "html": "<div class=\"rc-accordion-content large-10\"><div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",

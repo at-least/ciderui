@@ -27,20 +27,20 @@
     }
    },
    "content": {
-    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"chips performance modal\" data-modal-scroll-group-name=\"Product Story - Performance Modal\">\n\t\t\t\t\t\t\t<div class=\"ric-modal-viewport-cont",
+    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"chips performance modal\" data-modal-scroll-group-name=\"Product Story - Performance Modal\"><div class=\"ric-modal-viewport-cont",
     "styles": {
      "background-color": "rgb(0, 0, 0)",
      "color": "rgb(245, 245, 247)"
     }
    },
    "heading": {
-    "html": "<h2 class=\"typography-eyebrow\">Performance</h2>",
+    "html": "<h2 class=\"typography-eyebrow\"></h2>",
     "styles": {
      "color": "rgb(245, 245, 247)"
     }
    },
    "close.icon": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                                    <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                                        <p",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><p",
     "styles": {
      "background-color": "rgb(245, 245, 247)",
      "color": "rgb(0, 0, 0)",
@@ -48,7 +48,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                                    <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                                        <p",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><p",
     "styles": {
      "background-color": "rgb(245, 245, 247)",
      "color": "rgb(0, 0, 0)",
@@ -108,20 +108,20 @@
     }
    },
    "content": {
-    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"chips performance modal\" data-modal-scroll-group-name=\"Product Story - Performance Modal\">\n\t\t\t\t\t\t\t<div class=\"ric-modal-viewport-cont",
+    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"chips performance modal\" data-modal-scroll-group-name=\"Product Story - Performance Modal\"><div class=\"ric-modal-viewport-cont",
     "styles": {
      "background-color": "rgb(0, 0, 0)",
      "color": "rgb(245, 245, 247)"
     }
    },
    "heading": {
-    "html": "<h2 class=\"typography-eyebrow\">Performance</h2>",
+    "html": "<h2 class=\"typography-eyebrow\"></h2>",
     "styles": {
      "color": "rgb(245, 245, 247)"
     }
    },
    "close.icon": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                                    <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                                        <p",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><p",
     "styles": {
      "background-color": "rgb(245, 245, 247)",
      "color": "rgb(0, 0, 0)",
@@ -129,7 +129,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                                    <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                                        <p",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><p",
     "styles": {
      "background-color": "rgb(245, 245, 247)",
      "color": "rgb(0, 0, 0)",

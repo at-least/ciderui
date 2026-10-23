@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "page": {
-    "html": "<body data-color-scheme=\"auto\">\n<template id=\"account-menu-authenticated-template\"><div class=\"account-menu-user-header\" role=\"banner\" aria-label=\"User information\" data-aria-label=\"userInformation\">\n<div class=\"account-menu-avatar\" data-sl",
+    "html": "<body data-color-scheme=\"auto\"><template id=\"account-menu-authenticated-template\"><div class=\"account-menu-user-header\" role=\"banner\" aria-label=\"…\" data-aria-label=\"userInformation\"><div class=\"account-menu-avatar\" data-sl",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -21,7 +21,7 @@
     }
    },
    "eyebrow": {
-    "html": "<span data-v-06effe08=\"\" class=\"eyebrow\">Article</span>",
+    "html": "<span data-v-06effe08=\"\" class=\"eyebrow\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -32,7 +32,7 @@
     }
    },
    "title": {
-    "html": "<h1 data-v-06effe08=\"\" class=\"title\"><span data-v-075e8b5e=\"\" data-v-06effe08=\"\">Examining the fields in a crash report</span></h1>",
+    "html": "<h1 data-v-06effe08=\"\" class=\"title\"><span data-v-075e8b5e=\"\" data-v-06effe08=\"\"></span></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -45,7 +45,7 @@
     }
    },
    "abstract": {
-    "html": "<div data-v-15d7e6ba=\"\" data-v-611b62f7=\"\" data-v-075e8b5e=\"\" class=\"abstract content\" data-v-975f0fc2=\"\">Understand the structure of a crash report and the information each field contains.</div>",
+    "html": "<div data-v-15d7e6ba=\"\" data-v-611b62f7=\"\" data-v-075e8b5e=\"\" class=\"abstract content\" data-v-975f0fc2=\"\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -56,7 +56,7 @@
     }
    },
    "heading": {
-    "html": "<h2 data-v-220404f1=\"\" id=\"Overview\"><a data-v-220404f1=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report#Overview\" class=\"header-anchor\" data-after-text=\"in page link\">Overview<svg data-v-992f7eb0=\"\" data-v-220404f1=\"\" a",
+    "html": "<h2 data-v-220404f1=\"\" id=\"Overview\"><a data-v-220404f1=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report#Overview\" class=\"header-anchor\" data-after-text=\"in page link\"><svg data-v-992f7eb0=\"\" data-v-220404f1=\"\" a",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -69,7 +69,7 @@
     }
    },
    "text": {
-    "html": "<p>Each section of a crash report contains information to help you diagnose the source of a crash.</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -81,7 +81,7 @@
     }
    },
    "link": {
-    "html": "<a href=\"/documentation/bundleresources/information-property-list/cfbundleexecutable\" class=\"inline-link\"><code data-v-880086a2=\"\">CFBundle<wbr data-v-880086a2=\"\">Executable</code></a>",
+    "html": "<a href=\"/documentation/bundleresources/information-property-list/cfbundleexecutable\" class=\"inline-link\"><code data-v-880086a2=\"\"><wbr data-v-880086a2=\"\"></code></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -108,7 +108,7 @@
     }
    },
    "code": {
-    "html": "<code data-v-880086a2=\"\" class=\"inline-code\">Incident Identifier</code>",
+    "html": "<code data-v-880086a2=\"\" class=\"inline-code\"></code>",
     "styles": {
      "font-family": "\"SF Mono\", SFMono-Regular, ui-monospace, Menlo, monospace",
      "font-size": "17px",
@@ -123,7 +123,7 @@
     }
    },
    "listing": {
-    "html": "<div data-v-e6b18ca8=\"\" data-syntax=\"other\" class=\"code-listing\"><!----><div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"",
+    "html": "<div data-v-e6b18ca8=\"\" data-syntax=\"other\" class=\"code-listing\"><!----><div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -152,7 +152,7 @@
     }
    },
    "listing.scroller": {
-    "html": "<div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidd",
+    "html": "<div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidd",
     "styles": {
      "display": "flex",
      "overflow-x": "auto"
@@ -192,7 +192,7 @@
     }
    },
    "listing.line": {
-    "html": "<span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line\">Incident Identifier: 6156848E-344E-4D9E-84E0-87AFD0D0AE7B</span></span>",
+    "html": "<span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line\"></span></span>",
     "styles": {
      "display": "inline-block",
      "min-height": "0px",
@@ -206,7 +206,7 @@
     }
    },
    "copy": {
-    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
+    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
     "styles": {
      "padding-top": "4px",
      "padding-right": "4px",
@@ -366,7 +366,7 @@
     }
    },
    "bar.title": {
-    "html": "<div data-v-9a67a202=\"\" class=\"nav-title\"><a data-v-cd2176b0=\"\" href=\"/documentation\" class=\"router-link-active nav-title\" data-v-9a67a202=\"\"> Documentation </a></div>",
+    "html": "<div data-v-9a67a202=\"\" class=\"nav-title\"><a data-v-cd2176b0=\"\" href=\"/documentation\" class=\"router-link-active nav-title\" data-v-9a67a202=\"\"></a></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -381,7 +381,7 @@
     }
    },
    "bar.toggle": {
-    "html": "<button data-v-420314e4=\"\" data-v-9a67a202=\"\" aria-label=\"Open Documentation Navigator\" id=\"nav-open-navigator\" class=\"sidenav-toggle\"><span data-v-420314e4=\"\" data-v-9a67a202=\"\" class=\"sidenav-icon-wrapper\"><svg data-v-992f7eb0=\"\" data-v-4",
+    "html": "<button data-v-420314e4=\"\" data-v-9a67a202=\"\" aria-label=\"…\" id=\"nav-open-navigator\" class=\"sidenav-toggle\"><span data-v-420314e4=\"\" data-v-9a67a202=\"\" class=\"sidenav-icon-wrapper\"><svg data-v-992f7eb0=\"\" data-v-4",
     "styles": {
      "width": "29px",
      "height": "29px",
@@ -504,7 +504,7 @@
     }
    },
    "note": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"note\" class=\"note\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C ",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"note\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -541,7 +541,7 @@
     }
    },
    "note.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -553,7 +553,7 @@
     }
    },
    "note.text": {
-    "html": "<p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or C++. Crash reports record language exception information separately.</p>",
+    "html": "<p data-v-5ed0444c=\"\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -566,7 +566,7 @@
   },
   "900": {
    "page": {
-    "html": "<body data-color-scheme=\"auto\">\n<template id=\"account-menu-authenticated-template\"><div class=\"account-menu-user-header\" role=\"banner\" aria-label=\"User information\" data-aria-label=\"userInformation\">\n<div class=\"account-menu-avatar\" data-sl",
+    "html": "<body data-color-scheme=\"auto\"><template id=\"account-menu-authenticated-template\"><div class=\"account-menu-user-header\" role=\"banner\" aria-label=\"…\" data-aria-label=\"userInformation\"><div class=\"account-menu-avatar\" data-sl",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -581,7 +581,7 @@
     }
    },
    "eyebrow": {
-    "html": "<span data-v-06effe08=\"\" class=\"eyebrow\">Article</span>",
+    "html": "<span data-v-06effe08=\"\" class=\"eyebrow\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -592,7 +592,7 @@
     }
    },
    "title": {
-    "html": "<h1 data-v-06effe08=\"\" class=\"title\"><span data-v-075e8b5e=\"\" data-v-06effe08=\"\">Examining the fields in a crash report</span></h1>",
+    "html": "<h1 data-v-06effe08=\"\" class=\"title\"><span data-v-075e8b5e=\"\" data-v-06effe08=\"\"></span></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -605,7 +605,7 @@
     }
    },
    "abstract": {
-    "html": "<div data-v-15d7e6ba=\"\" data-v-611b62f7=\"\" data-v-075e8b5e=\"\" class=\"abstract content\" data-v-975f0fc2=\"\">Understand the structure of a crash report and the information each field contains.</div>",
+    "html": "<div data-v-15d7e6ba=\"\" data-v-611b62f7=\"\" data-v-075e8b5e=\"\" class=\"abstract content\" data-v-975f0fc2=\"\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -616,7 +616,7 @@
     }
    },
    "heading": {
-    "html": "<h2 data-v-220404f1=\"\" id=\"Overview\"><a data-v-220404f1=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report#Overview\" class=\"header-anchor\" data-after-text=\"in page link\">Overview<svg data-v-992f7eb0=\"\" data-v-220404f1=\"\" a",
+    "html": "<h2 data-v-220404f1=\"\" id=\"Overview\"><a data-v-220404f1=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report#Overview\" class=\"header-anchor\" data-after-text=\"in page link\"><svg data-v-992f7eb0=\"\" data-v-220404f1=\"\" a",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -629,7 +629,7 @@
     }
    },
    "text": {
-    "html": "<p>Each section of a crash report contains information to help you diagnose the source of a crash.</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -641,7 +641,7 @@
     }
    },
    "link": {
-    "html": "<a href=\"/documentation/bundleresources/information-property-list/cfbundleexecutable\" class=\"inline-link\"><code data-v-880086a2=\"\">CFBundle<wbr data-v-880086a2=\"\">Executable</code></a>",
+    "html": "<a href=\"/documentation/bundleresources/information-property-list/cfbundleexecutable\" class=\"inline-link\"><code data-v-880086a2=\"\"><wbr data-v-880086a2=\"\"></code></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -668,7 +668,7 @@
     }
    },
    "code": {
-    "html": "<code data-v-880086a2=\"\" class=\"inline-code\">Incident Identifier</code>",
+    "html": "<code data-v-880086a2=\"\" class=\"inline-code\"></code>",
     "styles": {
      "font-family": "\"SF Mono\", SFMono-Regular, ui-monospace, Menlo, monospace",
      "font-size": "17px",
@@ -683,7 +683,7 @@
     }
    },
    "listing": {
-    "html": "<div data-v-e6b18ca8=\"\" data-syntax=\"other\" class=\"code-listing\"><!----><div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"",
+    "html": "<div data-v-e6b18ca8=\"\" data-syntax=\"other\" class=\"code-listing\"><!----><div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -712,7 +712,7 @@
     }
    },
    "listing.scroller": {
-    "html": "<div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidd",
+    "html": "<div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidd",
     "styles": {
      "display": "flex",
      "overflow-x": "auto"
@@ -752,7 +752,7 @@
     }
    },
    "listing.line": {
-    "html": "<span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line\">Incident Identifier: 6156848E-344E-4D9E-84E0-87AFD0D0AE7B</span></span>",
+    "html": "<span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line\"></span></span>",
     "styles": {
      "display": "inline-block",
      "min-height": "0px",
@@ -766,7 +766,7 @@
     }
    },
    "copy": {
-    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
+    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
     "styles": {
      "padding-top": "4px",
      "padding-right": "4px",
@@ -926,7 +926,7 @@
     }
    },
    "bar.title": {
-    "html": "<div data-v-9a67a202=\"\" class=\"nav-title\"><a data-v-cd2176b0=\"\" href=\"/documentation\" class=\"router-link-active nav-title\" data-v-9a67a202=\"\"> Documentation </a></div>",
+    "html": "<div data-v-9a67a202=\"\" class=\"nav-title\"><a data-v-cd2176b0=\"\" href=\"/documentation\" class=\"router-link-active nav-title\" data-v-9a67a202=\"\"></a></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1051,7 +1051,7 @@
     }
    },
    "note": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"note\" class=\"note\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C ",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"note\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -1088,7 +1088,7 @@
     }
    },
    "note.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1100,7 +1100,7 @@
     }
    },
    "note.text": {
-    "html": "<p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or C++. Crash reports record language exception information separately.</p>",
+    "html": "<p data-v-5ed0444c=\"\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1113,7 +1113,7 @@
   },
   "1200": {
    "page": {
-    "html": "<body data-color-scheme=\"auto\">\n<template id=\"account-menu-authenticated-template\"><div class=\"account-menu-user-header\" role=\"banner\" aria-label=\"User information\" data-aria-label=\"userInformation\">\n<div class=\"account-menu-avatar\" data-sl",
+    "html": "<body data-color-scheme=\"auto\"><template id=\"account-menu-authenticated-template\"><div class=\"account-menu-user-header\" role=\"banner\" aria-label=\"…\" data-aria-label=\"userInformation\"><div class=\"account-menu-avatar\" data-sl",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1128,7 +1128,7 @@
     }
    },
    "eyebrow": {
-    "html": "<span data-v-06effe08=\"\" class=\"eyebrow\">Article</span>",
+    "html": "<span data-v-06effe08=\"\" class=\"eyebrow\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1139,7 +1139,7 @@
     }
    },
    "title": {
-    "html": "<h1 data-v-06effe08=\"\" class=\"title\"><span data-v-075e8b5e=\"\" data-v-06effe08=\"\">Examining the fields in a crash report</span></h1>",
+    "html": "<h1 data-v-06effe08=\"\" class=\"title\"><span data-v-075e8b5e=\"\" data-v-06effe08=\"\"></span></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -1152,7 +1152,7 @@
     }
    },
    "abstract": {
-    "html": "<div data-v-15d7e6ba=\"\" data-v-611b62f7=\"\" data-v-075e8b5e=\"\" class=\"abstract content\" data-v-975f0fc2=\"\">Understand the structure of a crash report and the information each field contains.</div>",
+    "html": "<div data-v-15d7e6ba=\"\" data-v-611b62f7=\"\" data-v-075e8b5e=\"\" class=\"abstract content\" data-v-975f0fc2=\"\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1163,7 +1163,7 @@
     }
    },
    "heading": {
-    "html": "<h2 data-v-220404f1=\"\" id=\"Overview\"><a data-v-220404f1=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report#Overview\" class=\"header-anchor\" data-after-text=\"in page link\">Overview<svg data-v-992f7eb0=\"\" data-v-220404f1=\"\" a",
+    "html": "<h2 data-v-220404f1=\"\" id=\"Overview\"><a data-v-220404f1=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report#Overview\" class=\"header-anchor\" data-after-text=\"in page link\"><svg data-v-992f7eb0=\"\" data-v-220404f1=\"\" a",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -1176,7 +1176,7 @@
     }
    },
    "text": {
-    "html": "<p>Each section of a crash report contains information to help you diagnose the source of a crash.</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1188,7 +1188,7 @@
     }
    },
    "link": {
-    "html": "<a href=\"/documentation/bundleresources/information-property-list/cfbundleexecutable\" class=\"inline-link\"><code data-v-880086a2=\"\">CFBundle<wbr data-v-880086a2=\"\">Executable</code></a>",
+    "html": "<a href=\"/documentation/bundleresources/information-property-list/cfbundleexecutable\" class=\"inline-link\"><code data-v-880086a2=\"\"><wbr data-v-880086a2=\"\"></code></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1215,7 +1215,7 @@
     }
    },
    "code": {
-    "html": "<code data-v-880086a2=\"\" class=\"inline-code\">Incident Identifier</code>",
+    "html": "<code data-v-880086a2=\"\" class=\"inline-code\"></code>",
     "styles": {
      "font-family": "\"SF Mono\", SFMono-Regular, ui-monospace, Menlo, monospace",
      "font-size": "17px",
@@ -1230,7 +1230,7 @@
     }
    },
    "listing": {
-    "html": "<div data-v-e6b18ca8=\"\" data-syntax=\"other\" class=\"code-listing\"><!----><div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"",
+    "html": "<div data-v-e6b18ca8=\"\" data-syntax=\"other\" class=\"code-listing\"><!----><div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1259,7 +1259,7 @@
     }
    },
    "listing.scroller": {
-    "html": "<div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidd",
+    "html": "<div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidd",
     "styles": {
      "display": "flex",
      "overflow-x": "auto"
@@ -1299,7 +1299,7 @@
     }
    },
    "listing.line": {
-    "html": "<span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line\">Incident Identifier: 6156848E-344E-4D9E-84E0-87AFD0D0AE7B</span></span>",
+    "html": "<span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line\"></span></span>",
     "styles": {
      "display": "inline-block",
      "min-height": "0px",
@@ -1313,7 +1313,7 @@
     }
    },
    "copy": {
-    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
+    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
     "styles": {
      "padding-top": "4px",
      "padding-right": "4px",
@@ -1473,7 +1473,7 @@
     }
    },
    "bar.title": {
-    "html": "<div data-v-9a67a202=\"\" class=\"nav-title\"><a data-v-cd2176b0=\"\" href=\"/documentation\" class=\"router-link-active nav-title\" data-v-9a67a202=\"\"> Documentation </a></div>",
+    "html": "<div data-v-9a67a202=\"\" class=\"nav-title\"><a data-v-cd2176b0=\"\" href=\"/documentation\" class=\"router-link-active nav-title\" data-v-9a67a202=\"\"></a></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1598,7 +1598,7 @@
     }
    },
    "note": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"note\" class=\"note\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C ",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"note\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -1635,7 +1635,7 @@
     }
    },
    "note.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1647,7 +1647,7 @@
     }
    },
    "note.text": {
-    "html": "<p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or C++. Crash reports record language exception information separately.</p>",
+    "html": "<p data-v-5ed0444c=\"\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1660,7 +1660,7 @@
   },
   "1600": {
    "page": {
-    "html": "<body data-color-scheme=\"auto\">\n<template id=\"account-menu-authenticated-template\"><div class=\"account-menu-user-header\" role=\"banner\" aria-label=\"User information\" data-aria-label=\"userInformation\">\n<div class=\"account-menu-avatar\" data-sl",
+    "html": "<body data-color-scheme=\"auto\"><template id=\"account-menu-authenticated-template\"><div class=\"account-menu-user-header\" role=\"banner\" aria-label=\"…\" data-aria-label=\"userInformation\"><div class=\"account-menu-avatar\" data-sl",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1675,7 +1675,7 @@
     }
    },
    "eyebrow": {
-    "html": "<span data-v-06effe08=\"\" class=\"eyebrow\">Article</span>",
+    "html": "<span data-v-06effe08=\"\" class=\"eyebrow\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1686,7 +1686,7 @@
     }
    },
    "title": {
-    "html": "<h1 data-v-06effe08=\"\" class=\"title\"><span data-v-075e8b5e=\"\" data-v-06effe08=\"\">Examining the fields in a crash report</span></h1>",
+    "html": "<h1 data-v-06effe08=\"\" class=\"title\"><span data-v-075e8b5e=\"\" data-v-06effe08=\"\"></span></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "40px",
@@ -1699,7 +1699,7 @@
     }
    },
    "abstract": {
-    "html": "<div data-v-15d7e6ba=\"\" data-v-611b62f7=\"\" data-v-075e8b5e=\"\" class=\"abstract content\" data-v-975f0fc2=\"\">Understand the structure of a crash report and the information each field contains.</div>",
+    "html": "<div data-v-15d7e6ba=\"\" data-v-611b62f7=\"\" data-v-075e8b5e=\"\" class=\"abstract content\" data-v-975f0fc2=\"\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1710,7 +1710,7 @@
     }
    },
    "heading": {
-    "html": "<h2 data-v-220404f1=\"\" id=\"Overview\"><a data-v-220404f1=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report#Overview\" class=\"header-anchor\" data-after-text=\"in page link\">Overview<svg data-v-992f7eb0=\"\" data-v-220404f1=\"\" a",
+    "html": "<h2 data-v-220404f1=\"\" id=\"Overview\"><a data-v-220404f1=\"\" href=\"/documentation/xcode/examining-the-fields-in-a-crash-report#Overview\" class=\"header-anchor\" data-after-text=\"in page link\"><svg data-v-992f7eb0=\"\" data-v-220404f1=\"\" a",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -1723,7 +1723,7 @@
     }
    },
    "text": {
-    "html": "<p>Each section of a crash report contains information to help you diagnose the source of a crash.</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1735,7 +1735,7 @@
     }
    },
    "link": {
-    "html": "<a href=\"/documentation/bundleresources/information-property-list/cfbundleexecutable\" class=\"inline-link\"><code data-v-880086a2=\"\">CFBundle<wbr data-v-880086a2=\"\">Executable</code></a>",
+    "html": "<a href=\"/documentation/bundleresources/information-property-list/cfbundleexecutable\" class=\"inline-link\"><code data-v-880086a2=\"\"><wbr data-v-880086a2=\"\"></code></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1762,7 +1762,7 @@
     }
    },
    "code": {
-    "html": "<code data-v-880086a2=\"\" class=\"inline-code\">Incident Identifier</code>",
+    "html": "<code data-v-880086a2=\"\" class=\"inline-code\"></code>",
     "styles": {
      "font-family": "\"SF Mono\", SFMono-Regular, ui-monospace, Menlo, monospace",
      "font-size": "17px",
@@ -1777,7 +1777,7 @@
     }
    },
    "listing": {
-    "html": "<div data-v-e6b18ca8=\"\" data-syntax=\"other\" class=\"code-listing\"><!----><div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"",
+    "html": "<div data-v-e6b18ca8=\"\" data-syntax=\"other\" class=\"code-listing\"><!----><div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1806,7 +1806,7 @@
     }
    },
    "listing.scroller": {
-    "html": "<div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidd",
+    "html": "<div data-v-e6b18ca8=\"\" class=\"container-general\"><button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidd",
     "styles": {
      "display": "flex",
      "overflow-x": "auto"
@@ -1846,7 +1846,7 @@
     }
    },
    "listing.line": {
-    "html": "<span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line\">Incident Identifier: 6156848E-344E-4D9E-84E0-87AFD0D0AE7B</span></span>",
+    "html": "<span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line-container\"><!----><span data-v-e6b18ca8=\"\" data-v-b751a540=\"\" class=\"code-line\"></span></span>",
     "styles": {
      "display": "inline-block",
      "min-height": "0px",
@@ -1860,7 +1860,7 @@
     }
    },
    "copy": {
-    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"Copy code to clipboard\" title=\"Copy code to clipboard\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
+    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
     "styles": {
      "padding-top": "4px",
      "padding-right": "4px",
@@ -2020,7 +2020,7 @@
     }
    },
    "bar.title": {
-    "html": "<div data-v-9a67a202=\"\" class=\"nav-title\"><a data-v-cd2176b0=\"\" href=\"/documentation\" class=\"router-link-active nav-title\" data-v-9a67a202=\"\"> Documentation </a></div>",
+    "html": "<div data-v-9a67a202=\"\" class=\"nav-title\"><a data-v-cd2176b0=\"\" href=\"/documentation\" class=\"router-link-active nav-title\" data-v-9a67a202=\"\"></a></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2145,7 +2145,7 @@
     }
    },
    "note": {
-    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"note\" class=\"note\"><p data-v-5ed0444c=\"\" class=\"label\">Note</p><p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C ",
+    "html": "<aside data-v-5ed0444c=\"\" aria-label=\"…\" class=\"note\"><p data-v-5ed0444c=\"\" class=\"label\"></p><p data-v-5ed0444c=\"\">",
     "styles": {
      "padding-top": "16px",
      "padding-right": "16px",
@@ -2182,7 +2182,7 @@
     }
    },
    "note.label": {
-    "html": "<p data-v-5ed0444c=\"\" class=\"label\">Note</p>",
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2194,7 +2194,7 @@
     }
    },
    "note.text": {
-    "html": "<p data-v-5ed0444c=\"\">This exception information doesn’t refer to language exceptions thrown by an API or language features in Objective-C or C++. Crash reports record language exception information separately.</p>",
+    "html": "<p data-v-5ed0444c=\"\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", system-ui, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",

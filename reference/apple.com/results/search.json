@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "nav.phone": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "48px",
      "position": "fixed",
@@ -24,7 +24,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"Search apple.com\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"global",
+    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"…\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"…\" class=\"global",
     "styles": {
      "position": "absolute",
      "top": "0px",
@@ -51,13 +51,13 @@
     }
    },
    "body": {
-    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\">\n\t\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
+    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
     "styles": {
      "overflow-y": "hidden"
     }
    },
    "search": {
-    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"…\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
     "styles": {
      "opacity": "0",
      "visibility": "hidden",
@@ -120,7 +120,7 @@
     }
    },
    "flyout.content": {
-    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search\" aria-label=\"Search apple.com\" autoco",
+    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autoco",
     "styles": {
      "max-width": "1024px",
      "padding-top": "54px",
@@ -140,7 +140,7 @@
     }
    },
    "field": {
-    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globa",
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globa",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -160,7 +160,7 @@
     }
    },
    "field.wrapper": {
-    "html": "<div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\"><input id=\"globalna",
+    "html": "<div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\"><input id=\"globalna",
     "styles": {
      "animation-name": "globalnav-search-input-intro",
      "animation-duration": "0.24s",
@@ -185,7 +185,7 @@
     }
    },
    "field.input": {
-    "html": "<input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -220,7 +220,7 @@
     }
    },
    "field.placeholder": {
-    "html": "<input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "color": "rgb(110, 110, 115)",
      "font-weight": "600",
@@ -228,7 +228,7 @@
     }
    },
    "field.submit": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
+    "html": "<button aria-label=\"…\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -274,7 +274,7 @@
     }
    },
    "field.reset": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
+    "html": "<button aria-label=\"…\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
     "styles": {
      "opacity": "0",
      "visibility": "hidden",
@@ -292,7 +292,7 @@
     }
    },
    "results": {
-    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"glob",
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\"><h2 class=\"glob",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -311,7 +311,7 @@
     }
    },
    "results.header": {
-    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\">Quick Links</h2>",
+    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -356,7 +356,7 @@
     }
    },
    "results.list": {
-    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\">\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"ht",
+    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\"><a class=\"globalnav-searchresults-list-link\" href=\"ht",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -376,7 +376,7 @@
     }
    },
    "results.item": {
-    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\"><a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -396,7 +396,7 @@
     }
    },
    "results.item2": {
-    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\"><a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -415,7 +415,7 @@
     }
    },
    "results.icon": {
-    "html": "<span class=\"globalnav-searchresults-list-icon\">\n\n\t\t\t\t\t\t\t\t\t\t<span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
+    "html": "<span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -450,7 +450,7 @@
     }
    },
    "results.text": {
-    "html": "<span class=\"globalnav-searchresults-list-text\">Find a Store</span>",
+    "html": "<span class=\"globalnav-searchresults-list-text\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -592,7 +592,7 @@
     }
    },
    "field.focus": {
-    "html": "<input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "outline-style": "none",
      "outline-color": "rgb(51, 51, 54)",
@@ -617,7 +617,7 @@
   },
   "833": {
    "nav.phone": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "48px",
      "position": "fixed",
@@ -987,7 +987,7 @@
     ]
    },
    "content": {
-    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"Search apple.com\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"global",
+    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"…\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"…\" class=\"global",
     "styles": {
      "position": "absolute",
      "top": "0px",
@@ -1014,13 +1014,13 @@
     }
    },
    "body": {
-    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\">\n\t\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
+    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
     "styles": {
      "overflow-y": "hidden"
     }
    },
    "search": {
-    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"…\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
     "styles": {
      "opacity": "0",
      "visibility": "hidden",
@@ -1083,7 +1083,7 @@
     }
    },
    "flyout.content": {
-    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search\" aria-label=\"Search apple.com\" autoco",
+    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autoco",
     "styles": {
      "max-width": "1024px",
      "padding-top": "54px",
@@ -1103,7 +1103,7 @@
     }
    },
    "field": {
-    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globa",
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globa",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1123,7 +1123,7 @@
     }
    },
    "field.wrapper": {
-    "html": "<div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\"><input id=\"globalna",
+    "html": "<div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\"><input id=\"globalna",
     "styles": {
      "animation-name": "globalnav-search-input-intro",
      "animation-duration": "0.24s",
@@ -1148,7 +1148,7 @@
     }
    },
    "field.input": {
-    "html": "<input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -1183,7 +1183,7 @@
     }
    },
    "field.placeholder": {
-    "html": "<input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "color": "rgb(110, 110, 115)",
      "font-weight": "600",
@@ -1191,7 +1191,7 @@
     }
    },
    "field.submit": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
+    "html": "<button aria-label=\"…\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1237,7 +1237,7 @@
     }
    },
    "field.reset": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
+    "html": "<button aria-label=\"…\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
     "styles": {
      "opacity": "0",
      "visibility": "hidden",
@@ -1255,7 +1255,7 @@
     }
    },
    "results": {
-    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"glob",
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\"><h2 class=\"glob",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1274,7 +1274,7 @@
     }
    },
    "results.header": {
-    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\">Quick Links</h2>",
+    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1319,7 +1319,7 @@
     }
    },
    "results.list": {
-    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\">\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"ht",
+    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\"><a class=\"globalnav-searchresults-list-link\" href=\"ht",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1339,7 +1339,7 @@
     }
    },
    "results.item": {
-    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\"><a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1359,7 +1359,7 @@
     }
    },
    "results.item2": {
-    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\"><a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1378,7 +1378,7 @@
     }
    },
    "results.icon": {
-    "html": "<span class=\"globalnav-searchresults-list-icon\">\n\n\t\t\t\t\t\t\t\t\t\t<span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
+    "html": "<span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1413,7 +1413,7 @@
     }
    },
    "results.text": {
-    "html": "<span class=\"globalnav-searchresults-list-text\">Find a Store</span>",
+    "html": "<span class=\"globalnav-searchresults-list-text\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1555,7 +1555,7 @@
     }
    },
    "field.focus": {
-    "html": "<input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "outline-style": "none",
      "outline-color": "rgb(51, 51, 54)",
@@ -1580,7 +1580,7 @@
   },
   "834": {
    "nav": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "44px",
      "position": "fixed",
@@ -1598,7 +1598,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"globalnav-content\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width",
+    "html": "<div class=\"globalnav-content\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"…\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width",
     "styles": {
      "position": "static",
      "top": "auto",
@@ -1625,13 +1625,13 @@
     }
    },
    "body": {
-    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\">\n\t\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
+    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
     "styles": {
      "overflow-y": "visible"
     }
    },
    "search": {
-    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"…\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
     "styles": {
      "opacity": "1",
      "visibility": "visible",
@@ -1694,7 +1694,7 @@
     }
    },
    "flyout.content": {
-    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.c",
+    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…",
     "styles": {
      "max-width": "1024px",
      "padding-top": "32px",
@@ -1714,7 +1714,7 @@
     }
    },
    "field": {
-    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" cl",
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" cl",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1734,7 +1734,7 @@
     }
    },
    "field.wrapper": {
-    "html": "<div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\"><input id",
+    "html": "<div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\"><input id",
     "styles": {
      "animation-name": "globalnav-search-input-intro",
      "animation-duration": "0.24s",
@@ -1759,7 +1759,7 @@
     }
    },
    "field.input": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -1794,7 +1794,7 @@
     }
    },
    "field.placeholder": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "color": "rgb(110, 110, 115)",
      "font-weight": "600",
@@ -1802,7 +1802,7 @@
     }
    },
    "field.submit": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
+    "html": "<button aria-label=\"…\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
     "styles": {
      "padding-top": "2px",
      "padding-right": "0px",
@@ -1848,7 +1848,7 @@
     }
    },
    "field.reset": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
+    "html": "<button aria-label=\"…\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
     "styles": {
      "opacity": "0",
      "visibility": "hidden",
@@ -1866,7 +1866,7 @@
     }
    },
    "results": {
-    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"glob",
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\"><h2 class=\"glob",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1885,7 +1885,7 @@
     }
    },
    "results.header": {
-    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\">Quick Links</h2>",
+    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1930,7 +1930,7 @@
     }
    },
    "results.list": {
-    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\">\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"ht",
+    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\"><a class=\"globalnav-searchresults-list-link\" href=\"ht",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1950,7 +1950,7 @@
     }
    },
    "results.item": {
-    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\"><a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1970,7 +1970,7 @@
     }
    },
    "results.item2": {
-    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\"><a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1989,7 +1989,7 @@
     }
    },
    "results.icon": {
-    "html": "<span class=\"globalnav-searchresults-list-icon\">\n\n\t\t\t\t\t\t\t\t\t\t<span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
+    "html": "<span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2010,7 +2010,7 @@
     }
    },
    "results.text": {
-    "html": "<span class=\"globalnav-searchresults-list-text\">Find a Store</span>",
+    "html": "<span class=\"globalnav-searchresults-list-text\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2152,7 +2152,7 @@
     }
    },
    "field.focus": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "outline-style": "none",
      "outline-color": "rgb(51, 51, 54)",
@@ -2204,7 +2204,7 @@
   },
   "900": {
    "nav": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "44px",
      "position": "fixed",
@@ -2222,7 +2222,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"globalnav-content\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width",
+    "html": "<div class=\"globalnav-content\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"…\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width",
     "styles": {
      "position": "static",
      "top": "auto",
@@ -2249,13 +2249,13 @@
     }
    },
    "body": {
-    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\">\n\t\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
+    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
     "styles": {
      "overflow-y": "visible"
     }
    },
    "search": {
-    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"…\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
     "styles": {
      "opacity": "1",
      "visibility": "visible",
@@ -2318,7 +2318,7 @@
     }
    },
    "flyout.content": {
-    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.c",
+    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…",
     "styles": {
      "max-width": "1024px",
      "padding-top": "32px",
@@ -2338,7 +2338,7 @@
     }
    },
    "field": {
-    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" cl",
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" cl",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2358,7 +2358,7 @@
     }
    },
    "field.wrapper": {
-    "html": "<div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\"><input id",
+    "html": "<div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\"><input id",
     "styles": {
      "animation-name": "globalnav-search-input-intro",
      "animation-duration": "0.24s",
@@ -2383,7 +2383,7 @@
     }
    },
    "field.input": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -2418,7 +2418,7 @@
     }
    },
    "field.placeholder": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "color": "rgb(110, 110, 115)",
      "font-weight": "600",
@@ -2426,7 +2426,7 @@
     }
    },
    "field.submit": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
+    "html": "<button aria-label=\"…\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
     "styles": {
      "padding-top": "2px",
      "padding-right": "0px",
@@ -2472,7 +2472,7 @@
     }
    },
    "field.reset": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
+    "html": "<button aria-label=\"…\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
     "styles": {
      "opacity": "0",
      "visibility": "hidden",
@@ -2490,7 +2490,7 @@
     }
    },
    "results": {
-    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"glob",
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\"><h2 class=\"glob",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2509,7 +2509,7 @@
     }
    },
    "results.header": {
-    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\">Quick Links</h2>",
+    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2554,7 +2554,7 @@
     }
    },
    "results.list": {
-    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\">\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"ht",
+    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\"><a class=\"globalnav-searchresults-list-link\" href=\"ht",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2574,7 +2574,7 @@
     }
    },
    "results.item": {
-    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\"><a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2594,7 +2594,7 @@
     }
    },
    "results.item2": {
-    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\"><a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2613,7 +2613,7 @@
     }
    },
    "results.icon": {
-    "html": "<span class=\"globalnav-searchresults-list-icon\">\n\n\t\t\t\t\t\t\t\t\t\t<span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
+    "html": "<span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2634,7 +2634,7 @@
     }
    },
    "results.text": {
-    "html": "<span class=\"globalnav-searchresults-list-text\">Find a Store</span>",
+    "html": "<span class=\"globalnav-searchresults-list-text\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2776,7 +2776,7 @@
     }
    },
    "field.focus": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "outline-style": "none",
      "outline-color": "rgb(51, 51, 54)",
@@ -2828,7 +2828,7 @@
   },
   "1200": {
    "nav": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "44px",
      "position": "fixed",
@@ -2846,7 +2846,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"globalnav-content\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width",
+    "html": "<div class=\"globalnav-content\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"…\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width",
     "styles": {
      "position": "static",
      "top": "auto",
@@ -2873,13 +2873,13 @@
     }
    },
    "body": {
-    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\">\n\t\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
+    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
     "styles": {
      "overflow-y": "visible"
     }
    },
    "search": {
-    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"…\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
     "styles": {
      "opacity": "1",
      "visibility": "visible",
@@ -2942,7 +2942,7 @@
     }
    },
    "flyout.content": {
-    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.c",
+    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…",
     "styles": {
      "max-width": "1024px",
      "padding-top": "32px",
@@ -2962,7 +2962,7 @@
     }
    },
    "field": {
-    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" cl",
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" cl",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2982,7 +2982,7 @@
     }
    },
    "field.wrapper": {
-    "html": "<div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\"><input id",
+    "html": "<div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\"><input id",
     "styles": {
      "animation-name": "globalnav-search-input-intro",
      "animation-duration": "0.24s",
@@ -3007,7 +3007,7 @@
     }
    },
    "field.input": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -3042,7 +3042,7 @@
     }
    },
    "field.placeholder": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "color": "rgb(110, 110, 115)",
      "font-weight": "600",
@@ -3050,7 +3050,7 @@
     }
    },
    "field.submit": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
+    "html": "<button aria-label=\"…\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
     "styles": {
      "padding-top": "2px",
      "padding-right": "0px",
@@ -3096,7 +3096,7 @@
     }
    },
    "field.reset": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
+    "html": "<button aria-label=\"…\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
     "styles": {
      "opacity": "0",
      "visibility": "hidden",
@@ -3114,7 +3114,7 @@
     }
    },
    "results": {
-    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"glob",
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\"><h2 class=\"glob",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3133,7 +3133,7 @@
     }
    },
    "results.header": {
-    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\">Quick Links</h2>",
+    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3178,7 +3178,7 @@
     }
    },
    "results.list": {
-    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\">\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"ht",
+    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\"><a class=\"globalnav-searchresults-list-link\" href=\"ht",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3198,7 +3198,7 @@
     }
    },
    "results.item": {
-    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\"><a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3218,7 +3218,7 @@
     }
    },
    "results.item2": {
-    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\"><a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3237,7 +3237,7 @@
     }
    },
    "results.icon": {
-    "html": "<span class=\"globalnav-searchresults-list-icon\">\n\n\t\t\t\t\t\t\t\t\t\t<span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
+    "html": "<span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3258,7 +3258,7 @@
     }
    },
    "results.text": {
-    "html": "<span class=\"globalnav-searchresults-list-text\">Find a Store</span>",
+    "html": "<span class=\"globalnav-searchresults-list-text\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3400,7 +3400,7 @@
     }
    },
    "field.focus": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "outline-style": "none",
      "outline-color": "rgb(51, 51, 54)",
@@ -3452,7 +3452,7 @@
   },
   "1600": {
    "nav": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "44px",
      "position": "fixed",
@@ -3722,7 +3722,7 @@
     ]
    },
    "content": {
-    "html": "<div class=\"globalnav-content\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width",
+    "html": "<div class=\"globalnav-content\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"…\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width",
     "styles": {
      "position": "static",
      "top": "auto",
@@ -3749,13 +3749,13 @@
     }
    },
    "body": {
-    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\">\n\t\t<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
+    "html": "<body class=\"ac-nav-overlap globalheader-light globalnav-scrim\" data-anim-scroll-group=\"body\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-region-id=\"locale switcher\" lang=\"zh-TW\" dir=\"",
     "styles": {
      "overflow-y": "visible"
     }
    },
    "search": {
-    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"…\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu",
     "styles": {
      "opacity": "1",
      "visibility": "visible",
@@ -3818,7 +3818,7 @@
     }
    },
    "flyout.content": {
-    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.c",
+    "html": "<div class=\"globalnav-flyout-content globalnav-submenu-content\"><form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…",
     "styles": {
      "max-width": "1024px",
      "padding-top": "32px",
@@ -3838,7 +3838,7 @@
     }
    },
    "field": {
-    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" cl",
+    "html": "<form action=\"/us/search\" method=\"get\" class=\"globalnav-searchfield\"><div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" cl",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3858,7 +3858,7 @@
     }
    },
    "field.wrapper": {
-    "html": "<div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\"><input id",
+    "html": "<div class=\"globalnav-searchfield-wrapper\"><input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\"><input id",
     "styles": {
      "animation-name": "globalnav-search-input-intro",
      "animation-duration": "0.24s",
@@ -3883,7 +3883,7 @@
     }
    },
    "field.input": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -3918,7 +3918,7 @@
     }
    },
    "field.placeholder": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "color": "rgb(110, 110, 115)",
      "font-weight": "600",
@@ -3926,7 +3926,7 @@
     }
    },
    "field.submit": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
+    "html": "<button aria-label=\"…\" tabindex=\"-1\" aria-hidden=\"true\" type=\"submit\" class=\"globalnav-searchfield-submit\" disabled=\"\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmln",
     "styles": {
      "padding-top": "2px",
      "padding-right": "0px",
@@ -3972,7 +3972,7 @@
     }
    },
    "field.reset": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
+    "html": "<button aria-label=\"…\" tabindex=\"-1\" type=\"button\" class=\"globalnav-searchfield-reset\" disabled=\"\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=",
     "styles": {
      "opacity": "0",
      "visibility": "hidden",
@@ -3990,7 +3990,7 @@
     }
    },
    "results": {
-    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\">\n\t\t\t\t\t<h2 class=\"glob",
+    "html": "<div class=\"globalnav-searchresults\"><div class=\"globalnav-searchresults-current\"><div class=\"globalnav-searchresults-container\" data-analytics-region=\"defaultlinks search\" style=\"--r-globalnav-flyout-group-number: 0;\"><h2 class=\"glob",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -4009,7 +4009,7 @@
     }
    },
    "results.header": {
-    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\">Quick Links</h2>",
+    "html": "<h2 class=\"globalnav-searchresults-header\" style=\"--r-globalnav-flyout-item-number: 0;\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4054,7 +4054,7 @@
     }
    },
    "results.list": {
-    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\">\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"ht",
+    "html": "<ul class=\"globalnav-searchresults-list\" role=\"list\"><li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\"><a class=\"globalnav-searchresults-list-link\" href=\"ht",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -4074,7 +4074,7 @@
     }
    },
    "results.item": {
-    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 1;\"><a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/retail/\" data-query=\"no keyword\" data-section=\"qui",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -4094,7 +4094,7 @@
     }
    },
    "results.item2": {
-    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\">\n\t\t\t\t\t\t\t\t\t<a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
+    "html": "<li class=\"globalnav-searchresults-list-item\" role=\"listitem\" style=\"--r-globalnav-flyout-item-number: 2;\"><a class=\"globalnav-searchresults-list-link\" href=\"https://www.apple.com/apple-vision-pro/\" data-query=\"no keyword\" data-se",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -4113,7 +4113,7 @@
     }
    },
    "results.icon": {
-    "html": "<span class=\"globalnav-searchresults-list-icon\">\n\n\t\t\t\t\t\t\t\t\t\t<span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
+    "html": "<span class=\"globalnav-searchresults-list-icon\"><span class=\"globalnav-image-regular globalnav-link-image\"><svg height=\"16\" viewBox=\"0 0 9 16\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m8.6124 8.1035-2.99 2.99a.5.5 0",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -4134,7 +4134,7 @@
     }
    },
    "results.text": {
-    "html": "<span class=\"globalnav-searchresults-list-text\">Find a Store</span>",
+    "html": "<span class=\"globalnav-searchresults-list-text\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4276,7 +4276,7 @@
     }
    },
    "field.focus": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "outline-style": "none",
      "outline-color": "rgb(51, 51, 54)",

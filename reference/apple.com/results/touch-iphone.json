@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "link.more-copy": {
-    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "html": "<span class=\"icon-copy\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -33,7 +33,7 @@
     }
    },
    "link.inline": {
-    "html": "<a href=\"#cui\">a link</a>",
+    "html": "<a href=\"#cui\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -60,7 +60,7 @@
     }
    },
    "paddle": {
-    "html": "<button aria-label=\"Next item in Explore the lineup gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -156,7 +156,7 @@
   },
   "900": {
    "link.more-copy": {
-    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "html": "<span class=\"icon-copy\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -183,7 +183,7 @@
     }
    },
    "link.inline": {
-    "html": "<a href=\"#cui\">a link</a>",
+    "html": "<a href=\"#cui\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -210,7 +210,7 @@
     }
    },
    "paddle": {
-    "html": "<button aria-label=\"Next item in Explore the lineup gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -306,7 +306,7 @@
   },
   "1200": {
    "link.more-copy": {
-    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "html": "<span class=\"icon-copy\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -333,7 +333,7 @@
     }
    },
    "link.inline": {
-    "html": "<a href=\"#cui\">a link</a>",
+    "html": "<a href=\"#cui\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -360,7 +360,7 @@
     }
    },
    "paddle": {
-    "html": "<button aria-label=\"Next item in Explore the lineup gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -456,7 +456,7 @@
   },
   "1600": {
    "link.more-copy": {
-    "html": "<span class=\"icon-copy\">Pre-order</span>",
+    "html": "<span class=\"icon-copy\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -483,7 +483,7 @@
     }
    },
    "link.inline": {
-    "html": "<a href=\"#cui\">a link</a>",
+    "html": "<a href=\"#cui\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -510,7 +510,7 @@
     }
    },
    "paddle": {
-    "html": "<button aria-label=\"Next item in Explore the lineup gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;a0t - (50vh - 50a0h)&quot;,&quot;anchors-closest&quot;:[&quot;.gallery&quot;],&qu",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",

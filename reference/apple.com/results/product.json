@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "type.none": {
-    "html": "<p>Sample text</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -17,7 +17,7 @@
     }
    },
    "type.headline-super": {
-    "html": "<p class=\"typography-headline-super\">Sample text</p>",
+    "html": "<p class=\"typography-headline-super\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -28,7 +28,7 @@
     }
    },
    "type.headline-elevated": {
-    "html": "<p class=\"typography-headline-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-headline-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "40px",
@@ -39,7 +39,7 @@
     }
    },
    "type.headline": {
-    "html": "<p class=\"typography-headline\">Sample text</p>",
+    "html": "<p class=\"typography-headline\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -50,7 +50,7 @@
     }
    },
    "type.headline-reduced": {
-    "html": "<p class=\"typography-headline-reduced\">Sample text</p>",
+    "html": "<p class=\"typography-headline-reduced\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -61,7 +61,7 @@
     }
    },
    "type.eyebrow-super": {
-    "html": "<p class=\"typography-eyebrow-super\">Sample text</p>",
+    "html": "<p class=\"typography-eyebrow-super\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -72,7 +72,7 @@
     }
    },
    "type.intro-elevated": {
-    "html": "<p class=\"typography-intro-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-intro-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -83,7 +83,7 @@
     }
    },
    "type.intro": {
-    "html": "<p class=\"typography-intro\">Sample text</p>",
+    "html": "<p class=\"typography-intro\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -94,7 +94,7 @@
     }
    },
    "type.body": {
-    "html": "<p class=\"typography-body\">Sample text</p>",
+    "html": "<p class=\"typography-body\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -105,7 +105,7 @@
     }
    },
    "type.body-reduced": {
-    "html": "<p class=\"typography-body-reduced\">Sample text</p>",
+    "html": "<p class=\"typography-body-reduced\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -116,7 +116,7 @@
     }
    },
    "type.body-reduced-tight": {
-    "html": "<p class=\"typography-body-reduced-tight\">Sample text</p>",
+    "html": "<p class=\"typography-body-reduced-tight\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -127,7 +127,7 @@
     }
    },
    "type.callout-super": {
-    "html": "<p class=\"typography-callout-super\">Sample text</p>",
+    "html": "<p class=\"typography-callout-super\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -138,7 +138,7 @@
     }
    },
    "type.callout-elevated": {
-    "html": "<p class=\"typography-callout-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-callout-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -149,7 +149,7 @@
     }
    },
    "type.callout-base": {
-    "html": "<p class=\"typography-callout-base\">Sample text</p>",
+    "html": "<p class=\"typography-callout-base\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -160,7 +160,7 @@
     }
    },
    "type.callout-cta": {
-    "html": "<p class=\"typography-callout-cta\">Sample text</p>",
+    "html": "<p class=\"typography-callout-cta\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -171,7 +171,7 @@
     }
    },
    "type.caption-elevated": {
-    "html": "<p class=\"typography-caption-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-caption-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -182,7 +182,7 @@
     }
    },
    "type.caption": {
-    "html": "<p class=\"typography-caption\">Sample text</p>",
+    "html": "<p class=\"typography-caption\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -193,7 +193,7 @@
     }
    },
    "type.caption-cta": {
-    "html": "<p class=\"typography-caption-cta\">Sample text</p>",
+    "html": "<p class=\"typography-caption-cta\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -204,7 +204,7 @@
     }
    },
    "type.caption-sosumi": {
-    "html": "<p class=\"typography-caption-sosumi\">Sample text</p>",
+    "html": "<p class=\"typography-caption-sosumi\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -215,7 +215,7 @@
     }
    },
    "type.caption-elevated-sosumi": {
-    "html": "<p class=\"typography-caption-elevated-sosumi\">Sample text</p>",
+    "html": "<p class=\"typography-caption-elevated-sosumi\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -226,7 +226,7 @@
     }
    },
    "type.label": {
-    "html": "<p class=\"typography-label\">Sample text</p>",
+    "html": "<p class=\"typography-label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -237,7 +237,7 @@
     }
    },
    "type.section-header-eyebrow": {
-    "html": "<p class=\"typography-section-header-eyebrow\">Sample text</p>",
+    "html": "<p class=\"typography-section-header-eyebrow\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -248,7 +248,7 @@
     }
    },
    "type.section-header-headline": {
-    "html": "<p class=\"typography-section-header-headline\">Sample text</p>",
+    "html": "<p class=\"typography-section-header-headline\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -259,7 +259,7 @@
     }
    },
    "type.section-header-link": {
-    "html": "<p class=\"typography-section-header-link\">Sample text</p>",
+    "html": "<p class=\"typography-section-header-link\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -270,7 +270,7 @@
     }
    },
    "page.body": {
-    "html": "<body class=\"page-overview globalheader-dark\" data-component-list=\"AutoARQL FocusManager MediaHero DeepLink\" data-anim-scroll-group=\"body\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-r",
+    "html": "<body class=\"page-overview globalheader-dark\" data-component-list=\"AutoARQL FocusManager MediaHero DeepLink\" data-anim-scroll-group=\"body\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-r",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -285,7 +285,7 @@
     }
    },
    "page.strong": {
-    "html": "<strong class=\"has-dynamic-content\"><span class=\"dynamic-pricing-product\" data-pricing-product=\"iphone-18-pro\" data-product-template=\"${price.display.from} \" data-acmi-idx=\"0\" data-display-style=\"\" data-pricing-loaded=\"\">From $1199 </span>\n",
+    "html": "<strong class=\"has-dynamic-content\"><span class=\"dynamic-pricing-product\" data-pricing-product=\"iphone-18-pro\" data-product-template=\"${price.display.from} \" data-acmi-idx=\"0\" data-display-style=\"\" data-pricing-loaded=\"\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -296,7 +296,7 @@
     }
    },
    "nav": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "position": "absolute",
      "background-color": "rgba(0, 0, 0, 0)",
@@ -305,7 +305,7 @@
     }
    },
    "nav.link": {
-    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"Store menu\" class=\"globalnav-link globalnav-",
+    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"…\" class=\"globalnav-link globalnav-",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -326,7 +326,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"viewport-content\">\n\t\t\t\t<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>\n\t\t\t\t\t<div class=\"section-header-cta-",
+    "html": "<div class=\"viewport-content\"><header class=\"section-header row\"><h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\"></h2><div class=\"section-header-cta-",
     "styles": {
      "width": "341.25px",
      "max-width": "420px",
@@ -341,7 +341,7 @@
     }
    },
    "section": {
-    "html": "<section class=\"section section-media-hero section-media-hero no-pad  media-layout-background ribbon-full-width\" data-anim-scroll-group=\"Media Hero\" data-analytics-section-engagement=\"name:hero\" data-ric-section=\"\">\n\t\t\t\t<div class=\"section-",
+    "html": "<section class=\"section section-media-hero section-media-hero no-pad  media-layout-background ribbon-full-width\" data-anim-scroll-group=\"Media Hero\" data-analytics-section-engagement=\"name:hero\" data-ric-section=\"\"><div class=\"section-",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -392,7 +392,7 @@
     }
    },
    "section.header": {
-    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>\n\t\t\t\t\t<div class=\"section-header-cta-list-wrapper\">\n\t\t\t\t\t\t<ul class=\"sec",
+    "html": "<header class=\"section-header row\"><h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\"></h2><div class=\"section-header-cta-list-wrapper\"><ul class=\"sec",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -426,7 +426,7 @@
     }
    },
    "section.header-links": {
-    "html": "<ul class=\"section-header-cta-list typography-section-header-link column\">\n\t\t\t\t\t\t\t<li class=\"section-header-cta-item section-header-cta-item-link1\" data-staggered-item=\"\" style=\"\">\n\t\t\t\t\t\t\t\t<a href=\"/105/media/us/iphone-18-pro/2026/591df885-",
+    "html": "<ul class=\"section-header-cta-list typography-section-header-link column\"><li class=\"section-header-cta-item section-header-cta-item-link1\" data-staggered-item=\"\" style=\"\"><a href=\"/105/media/us/iphone-18-pro/2026/591df885-",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -486,7 +486,7 @@
     }
    },
    "section.battery": {
-    "html": "<section id=\"battery\" class=\"section section-battery section-product-story preserve-pad-bottom theme-dark\" data-anim-scroll-group=\"Battery\" data-deep-link=\"battery\" data-ric-section=\"\">\n\t\t\t<div class=\"viewport-content\">\n\t\t\t\t<div class=\"ric-",
+    "html": "<section id=\"battery\" class=\"section section-battery section-product-story preserve-pad-bottom theme-dark\" data-anim-scroll-group=\"Battery\" data-deep-link=\"battery\" data-ric-section=\"\"><div class=\"viewport-content\"><div class=\"ric-",
     "styles": {
      "padding-top": "112px",
      "padding-right": "0px",
@@ -509,7 +509,7 @@
     }
    },
    "section.headline": {
-    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>",
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -548,7 +548,7 @@
     }
    },
    "tile.rounded": {
-    "html": "<div class=\"card tile tile-rounded\">\n\t\t\t\t\t\t\t\t\t<div class=\"caption-container large-pin-top-center\" role=\"none\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"caption-animation-container pin-offset\" data-headline=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<p class=\"caption typography-media-car",
+    "html": "<div class=\"card tile tile-rounded\"><div class=\"caption-container large-pin-top-center\" role=\"none\"><div class=\"caption-animation-container pin-offset\" data-headline=\"\"><p class=\"caption typography-media-car",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -576,7 +576,7 @@
     }
    },
    "tile.rounded-light": {
-    "html": "<div class=\"card tile card-hover tile-rounded\" data-component-list=\"Card WillChange\" style=\"--card-element-scale: 1.023076923076923;\">\n\t\t\t\t\t\t\t\t\t<div class=\"feature-card-content image-inline\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"feature-card-copy-containe",
+    "html": "<div class=\"card tile card-hover tile-rounded\" data-component-list=\"Card WillChange\" style=\"--card-element-scale: 1.023076923076923;\"><div class=\"feature-card-content image-inline\"><div class=\"feature-card-copy-containe",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -603,7 +603,7 @@
     }
    },
    "paddle": {
-    "html": "<button aria-label=\"Previous item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&q",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&q",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -699,7 +699,7 @@
     }
    },
    "paddle.icon": {
-    "html": "<svg class=\"icon-control icon-control-chevronleft\" viewBox=\"0 0 36 36\">\n                        \t\t\t\t\t      <path d=\"m20 25c-.3838 0-.7676-.1465-1.0605-.4395l-5.5-5.5c-.5859-.5854-.5859-1.5356 0-2.1211l5.5-5.5c.5859-.5859 1.5352-.5859 2.1211",
+    "html": "<svg class=\"icon-control icon-control-chevronleft\" viewBox=\"0 0 36 36\"><path d=\"m20 25c-.3838 0-.7676-.1465-1.0605-.4395l-5.5-5.5c-.5859-.5854-.5859-1.5356 0-2.1211l5.5-5.5c.5859-.5859 1.5352-.5859 2.1211",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -712,7 +712,7 @@
     }
    },
    "footer": {
-    "html": "<footer id=\"ac-globalfooter\" class=\"js\" lang=\"en-US\" dir=\"ltr\" data-analytics-region=\"global footer\" role=\"contentinfo\" aria-labelledby=\"ac-gf-label\">\n\t\t<div class=\"ac-gf-content\" data-nosnippet=\"\">\n\t\t\t<h2 class=\"ac-gf-label\" id=\"ac-gf-labe",
+    "html": "<footer id=\"ac-globalfooter\" class=\"js\" lang=\"en-US\" dir=\"ltr\" data-analytics-region=\"global footer\" role=\"contentinfo\" aria-labelledby=\"ac-gf-label\"><div class=\"ac-gf-content\" data-nosnippet=\"\"><h2 class=\"ac-gf-label\" id=\"ac-gf-labe",
     "styles": {
      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -724,7 +724,7 @@
     }
    },
    "footer.title": {
-    "html": "<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>",
+    "html": "<span class=\"ac-gf-directory-column-section-title-text\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -735,7 +735,7 @@
     }
    },
    "footer.link": {
-    "html": "<a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\">Store</a>",
+    "html": "<a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -762,13 +762,13 @@
     }
    },
    "footer.shop": {
-    "html": "<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\">\n\t\tMore ways to shop: <a href=\"/retail/\" data-analytics-title=\"find an apple store\">Find an Apple Store</a> or <a href=\"https://locate.apple.com/\" data-analytics-title=\"other retai",
+    "html": "<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\"><a href=\"/retail/\" data-analytics-title=\"find an apple store\"></a><a href=\"https://locate.apple.com/\" data-analytics-title=\"other retai",
     "styles": {
      "border-bottom-color": "rgba(0, 0, 0, 0.56)"
     }
    },
    "divider": {
-    "html": "<div class=\"callout-subsection-copy-block keyline typography-callout-elevated\">\n\t\t\t\t\t\t\t<p>More power for all your AI tasks. And faster Apple&nbsp;Intelligence thanks to new Neural Accelerators, a Dual 16‑core Neural&nbsp;Engine, and 50&nbsp",
+    "html": "<div class=\"callout-subsection-copy-block keyline typography-callout-elevated\"><p>",
     "styles": {
      "border-top-width": "1px",
      "border-top-style": "solid",
@@ -776,7 +776,7 @@
     }
    },
    "gallery.scroller": {
-    "html": "<div class=\"scroll-container\" tabindex=\"-1\">\n\t\t\t\t\t\t<div class=\"item-container\">\n\t\t\t\t\t\t\t<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\">\n\t\t\t\t\t\t\t\t<li class=\"card-container ",
+    "html": "<div class=\"scroll-container\" tabindex=\"-1\"><div class=\"item-container\"><ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\"><li class=\"card-container ",
     "styles": {
      "overflow-x": "scroll",
      "overflow-y": "auto",
@@ -794,7 +794,7 @@
     }
    },
    "gallery.items": {
-    "html": "<div class=\"item-container\">\n\t\t\t\t\t\t\t<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\">\n\t\t\t\t\t\t\t\t<li class=\"card-container caption-tile gallery-item wide current\" data-analyt",
+    "html": "<div class=\"item-container\"><ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\"><li class=\"card-container caption-tile gallery-item wide current\" data-analyt",
     "styles": {
      "padding-left": "24.375px",
      "padding-right": "24.375px"
@@ -805,7 +805,7 @@
     }
    },
    "gallery.set": {
-    "html": "<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\">\n\t\t\t\t\t\t\t\t<li class=\"card-container caption-tile gallery-item wide current\" data-analytics-gallery-item-id=\"pro controls\" d",
+    "html": "<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\"><li class=\"card-container caption-tile gallery-item wide current\" data-analytics-gallery-item-id=\"pro controls\" d",
     "styles": {
      "display": "grid",
      "column-gap": "20px"
@@ -843,7 +843,7 @@
     }
    },
    "gallery.nav-list": {
-    "html": "<ul>\n\t\t\t\t\t\t\t<li class=\"left-item\"><button aria-label=\"Previous item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quo",
+    "html": "<ul><li class=\"left-item\"><button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quo",
     "styles": {
      "display": "flex",
      "column-gap": "18px",
@@ -855,7 +855,7 @@
     }
    },
    "paddle.next": {
-    "html": "<button aria-label=\"Next item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&quot;.gal",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&quot;.gal",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -950,7 +950,7 @@
     }
    },
    "gallery.dots": {
-    "html": "<ul role=\"tablist\" aria-label=\"Highlights tablist\" class=\"dotnav-items\" style=\"--dotnav-count: 5\">\n\t\t\t\t\t\t\t\t\t\t<li role=\"presentation\" class=\"dotnav-item current aap-media-card-gallery__dotnav-item\" style=\"--item-index: 0;\">\n\t\t\t\t\t\t\t\t\t\t\t<a id=",
+    "html": "<ul role=\"tablist\" aria-label=\"…\" class=\"dotnav-items\" style=\"--dotnav-count: 5\"><li role=\"presentation\" class=\"dotnav-item current aap-media-card-gallery__dotnav-item\" style=\"--item-index: 0;\"><a id=",
     "styles": {
      "display": "flex",
      "flex-direction": "row",
@@ -966,7 +966,7 @@
     }
    },
    "gallery.dot-item": {
-    "html": "<li role=\"presentation\" class=\"dotnav-item aap-media-card-gallery__dotnav-item\" style=\"--item-index: 1;\">\n\t\t\t\t\t\t\t\t\t\t\t<a id=\"highlights gallery-item-2-trigger\" data-focus-expression=\"{&quot;expression&quot;: &quot;a0t - 100vh + a0h + var(--g",
+    "html": "<li role=\"presentation\" class=\"dotnav-item aap-media-card-gallery__dotnav-item\" style=\"--item-index: 1;\"><a id=\"highlights gallery-item-2-trigger\" data-focus-expression=\"{&quot;expression&quot;: &quot;a0t - 100vh + a0h + var(--g",
     "styles": {
      "margin-left": "8px",
      "margin-right": "8px",
@@ -1033,7 +1033,7 @@
     }
    },
    "link.inline": {
-    "html": "<a href=\"#cui\">a link</a>",
+    "html": "<a href=\"#cui\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1071,7 +1071,7 @@
     }
    },
    "link.more": {
-    "html": "<a href=\"/us/shop/goto/apple_upgrade\" data-analytics-title=\"learn more - apple upgrade\" aria-label=\"Learn more, Apple Upgrade\" class=\"icon-wrapper ribbon-link\"><span class=\"icon-copy\">Learn more</span><span class=\"icon icon-after more\" aria",
+    "html": "<a href=\"/us/shop/goto/apple_upgrade\" data-analytics-title=\"learn more - apple upgrade\" aria-label=\"…\" class=\"icon-wrapper ribbon-link\"><span class=\"icon-copy\"></span><span class=\"icon icon-after more\" aria",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1111,7 +1111,7 @@
     }
    },
    "stat.content": {
-    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Up to</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-value\">25 more hours</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">video playback on <br class=\"small-hide\">iPhone&nbsp;18&nbsp;Pro&nb",
+    "html": "<div class=\"stat-content\"><span class=\"stat-caption\"></span><span class=\"stat-value\"></span><span class=\"stat-caption\"><br class=\"small-hide\">",
     "styles": {
      "padding-top": "2px",
      "padding-bottom": "2px",
@@ -1120,7 +1120,7 @@
     }
    },
    "footnote.link": {
-    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a>",
+    "html": "<a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "color": "rgb(245, 245, 247)",
@@ -1130,7 +1130,7 @@
     }
    },
    "stat.value": {
-    "html": "<span class=\"stat-value\">25 more hours</span>",
+    "html": "<span class=\"stat-value\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -1144,7 +1144,7 @@
     }
    },
    "stat.caption": {
-    "html": "<span class=\"stat-caption\">Up to</span>",
+    "html": "<span class=\"stat-caption\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1156,7 +1156,7 @@
     }
    },
    "footnote": {
-    "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a></sup>",
+    "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a></sup>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
@@ -1207,7 +1207,7 @@
     }
    },
    "localnav.wrap": {
-    "html": "<div class=\"localnav-wrap\">\n\t\t\t\t<div class=\"content-collapsed-wrap\" data-analytics-activitymap-region-id=\"local nav\">\n\t\t\t\t\t<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">",
+    "html": "<div class=\"localnav-wrap\"><div class=\"content-collapsed-wrap\" data-analytics-activitymap-region-id=\"local nav\"><a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">",
     "styles": {
      "padding-top": "12px",
      "padding-right": "0px",
@@ -1237,7 +1237,7 @@
     }
    },
    "localnav.product": {
-    "html": "<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">iPhone&nbsp;18&nbsp;Pro</a>",
+    "html": "<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -1248,7 +1248,7 @@
     }
    },
    "localnav.explore": {
-    "html": "<button class=\"typography-caption cta explore\" data-analytics-title=\"explore | open modal\" data-analytics-click=\"prop3:explore | open modal\" aria-label=\"Explore iPhone 18 Pro\" data-analytics-intrapage-link=\"\" style=\"--buy-button-width: 41px",
+    "html": "<button class=\"typography-caption cta explore\" data-analytics-title=\"explore | open modal\" data-analytics-click=\"prop3:explore | open modal\" aria-label=\"…\" data-analytics-intrapage-link=\"\" style=\"--buy-button-width: 41px",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1309,7 +1309,7 @@
     }
    },
    "localnav.buy": {
-    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_18_pro\" aria-label=\"Buy, iPhone 18 Pro\" class=\"typography-caption cta buy\" data-analytics-title=\"buy - iphone 18 pro\">\n\t\t\t\t\t\t\t\tBuy\n\t\t\t\t\t\t\t</a>",
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_18_pro\" aria-label=\"…\" class=\"typography-caption cta buy\" data-analytics-title=\"buy - iphone 18 pro\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1370,7 +1370,7 @@
     }
    },
    "nav.search": {
-    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"false\" aria-controls=\"globalnav-submen",
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"…\" aria-expanded=\"false\" aria-controls=\"globalnav-submen",
     "styles": {
      "color": "rgba(255, 255, 255, 0.8)"
     },
@@ -1381,7 +1381,7 @@
     }
    },
    "nav.menutrigger": {
-    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"Menu\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-button",
+    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"…\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-button",
     "styles": {
      "color": "rgb(255, 255, 255)",
      "opacity": "0.8"
@@ -1394,7 +1394,7 @@
     }
    },
    "menu.open": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "background-color": "rgba(0, 0, 0, 0)",
      "backdrop-filter": "none",
@@ -1402,7 +1402,7 @@
     }
    },
    "menu.content": {
-    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"Menu\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback",
+    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"…\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"…\" class=\"globalnav-menuback",
     "styles": {
      "background-color": "rgb(22, 22, 23)",
      "backdrop-filter": "none",
@@ -1410,7 +1410,7 @@
     }
    },
    "menu.link": {
-    "html": "<a href=\"/mac/\" data-globalnav-item-name=\"mac\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"mac\" data-analytics-element-engagement=\"hover - mac\" aria-label=\"Mac menu\" class=\"globalnav-link globalnav-submenu-trigger-link g",
+    "html": "<a href=\"/mac/\" data-globalnav-item-name=\"mac\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"mac\" data-analytics-element-engagement=\"hover - mac\" aria-label=\"…\" class=\"globalnav-link globalnav-submenu-trigger-link g",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -1431,7 +1431,7 @@
     }
    },
    "menu.trigger": {
-    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"Close\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-butto",
+    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"…\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-butto",
     "styles": {
      "color": "rgb(255, 255, 255)",
      "opacity": "0.8"
@@ -1440,7 +1440,7 @@
   },
   "900": {
    "type.none": {
-    "html": "<p>Sample text</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1451,7 +1451,7 @@
     }
    },
    "type.headline-super": {
-    "html": "<p class=\"typography-headline-super\">Sample text</p>",
+    "html": "<p class=\"typography-headline-super\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1462,7 +1462,7 @@
     }
    },
    "type.headline-elevated": {
-    "html": "<p class=\"typography-headline-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-headline-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "48px",
@@ -1473,7 +1473,7 @@
     }
    },
    "type.headline": {
-    "html": "<p class=\"typography-headline\">Sample text</p>",
+    "html": "<p class=\"typography-headline\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1484,7 +1484,7 @@
     }
    },
    "type.headline-reduced": {
-    "html": "<p class=\"typography-headline-reduced\">Sample text</p>",
+    "html": "<p class=\"typography-headline-reduced\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1495,7 +1495,7 @@
     }
    },
    "type.eyebrow-super": {
-    "html": "<p class=\"typography-eyebrow-super\">Sample text</p>",
+    "html": "<p class=\"typography-eyebrow-super\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -1506,7 +1506,7 @@
     }
    },
    "type.intro-elevated": {
-    "html": "<p class=\"typography-intro-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-intro-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1517,7 +1517,7 @@
     }
    },
    "type.intro": {
-    "html": "<p class=\"typography-intro\">Sample text</p>",
+    "html": "<p class=\"typography-intro\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1528,7 +1528,7 @@
     }
    },
    "type.body": {
-    "html": "<p class=\"typography-body\">Sample text</p>",
+    "html": "<p class=\"typography-body\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1539,7 +1539,7 @@
     }
    },
    "type.body-reduced": {
-    "html": "<p class=\"typography-body-reduced\">Sample text</p>",
+    "html": "<p class=\"typography-body-reduced\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1550,7 +1550,7 @@
     }
    },
    "type.body-reduced-tight": {
-    "html": "<p class=\"typography-body-reduced-tight\">Sample text</p>",
+    "html": "<p class=\"typography-body-reduced-tight\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1561,7 +1561,7 @@
     }
    },
    "type.callout-super": {
-    "html": "<p class=\"typography-callout-super\">Sample text</p>",
+    "html": "<p class=\"typography-callout-super\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -1572,7 +1572,7 @@
     }
    },
    "type.callout-elevated": {
-    "html": "<p class=\"typography-callout-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-callout-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1583,7 +1583,7 @@
     }
    },
    "type.callout-base": {
-    "html": "<p class=\"typography-callout-base\">Sample text</p>",
+    "html": "<p class=\"typography-callout-base\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1594,7 +1594,7 @@
     }
    },
    "type.callout-cta": {
-    "html": "<p class=\"typography-callout-cta\">Sample text</p>",
+    "html": "<p class=\"typography-callout-cta\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1605,7 +1605,7 @@
     }
    },
    "type.caption-elevated": {
-    "html": "<p class=\"typography-caption-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-caption-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1616,7 +1616,7 @@
     }
    },
    "type.caption": {
-    "html": "<p class=\"typography-caption\">Sample text</p>",
+    "html": "<p class=\"typography-caption\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1627,7 +1627,7 @@
     }
    },
    "type.caption-cta": {
-    "html": "<p class=\"typography-caption-cta\">Sample text</p>",
+    "html": "<p class=\"typography-caption-cta\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1638,7 +1638,7 @@
     }
    },
    "type.caption-sosumi": {
-    "html": "<p class=\"typography-caption-sosumi\">Sample text</p>",
+    "html": "<p class=\"typography-caption-sosumi\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1649,7 +1649,7 @@
     }
    },
    "type.caption-elevated-sosumi": {
-    "html": "<p class=\"typography-caption-elevated-sosumi\">Sample text</p>",
+    "html": "<p class=\"typography-caption-elevated-sosumi\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1660,7 +1660,7 @@
     }
    },
    "type.label": {
-    "html": "<p class=\"typography-label\">Sample text</p>",
+    "html": "<p class=\"typography-label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1671,7 +1671,7 @@
     }
    },
    "type.section-header-eyebrow": {
-    "html": "<p class=\"typography-section-header-eyebrow\">Sample text</p>",
+    "html": "<p class=\"typography-section-header-eyebrow\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -1682,7 +1682,7 @@
     }
    },
    "type.section-header-headline": {
-    "html": "<p class=\"typography-section-header-headline\">Sample text</p>",
+    "html": "<p class=\"typography-section-header-headline\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "40px",
@@ -1693,7 +1693,7 @@
     }
    },
    "type.section-header-link": {
-    "html": "<p class=\"typography-section-header-link\">Sample text</p>",
+    "html": "<p class=\"typography-section-header-link\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1704,7 +1704,7 @@
     }
    },
    "page.body": {
-    "html": "<body class=\"page-overview globalheader-dark\" data-component-list=\"AutoARQL FocusManager MediaHero DeepLink\" data-anim-scroll-group=\"body\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-r",
+    "html": "<body class=\"page-overview globalheader-dark\" data-component-list=\"AutoARQL FocusManager MediaHero DeepLink\" data-anim-scroll-group=\"body\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-r",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1719,7 +1719,7 @@
     }
    },
    "page.strong": {
-    "html": "<strong class=\"has-dynamic-content\"><span class=\"dynamic-pricing-product\" data-pricing-product=\"iphone-18-pro\" data-product-template=\"${price.display.from} \" data-acmi-idx=\"0\" data-display-style=\"\" data-pricing-loaded=\"\">From $1199 </span>\n",
+    "html": "<strong class=\"has-dynamic-content\"><span class=\"dynamic-pricing-product\" data-pricing-product=\"iphone-18-pro\" data-product-template=\"${price.display.from} \" data-acmi-idx=\"0\" data-display-style=\"\" data-pricing-loaded=\"\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1730,7 +1730,7 @@
     }
    },
    "nav": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "position": "absolute",
      "background-color": "rgba(0, 0, 0, 0)",
@@ -1739,7 +1739,7 @@
     }
    },
    "nav.link": {
-    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"Store\" class=\"globalnav-link globalnav-subme",
+    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"…\" class=\"globalnav-link globalnav-subme",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1760,7 +1760,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"viewport-content\">\n\t\t\t\t<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>\n\t\t\t\t\t<div class=\"section-header-cta-",
+    "html": "<div class=\"viewport-content\"><header class=\"section-header row\"><h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\"></h2><div class=\"section-header-cta-",
     "styles": {
      "width": "787.5px",
      "max-width": "1260px",
@@ -1775,7 +1775,7 @@
     }
    },
    "section": {
-    "html": "<section class=\"section section-media-hero section-media-hero no-pad  media-layout-background ribbon-full-width\" data-anim-scroll-group=\"Media Hero\" data-analytics-section-engagement=\"name:hero\" data-ric-section=\"\">\n\t\t\t\t<div class=\"section-",
+    "html": "<section class=\"section section-media-hero section-media-hero no-pad  media-layout-background ribbon-full-width\" data-anim-scroll-group=\"Media Hero\" data-analytics-section-engagement=\"name:hero\" data-ric-section=\"\"><div class=\"section-",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1826,7 +1826,7 @@
     }
    },
    "section.header": {
-    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>\n\t\t\t\t\t<div class=\"section-header-cta-list-wrapper\">\n\t\t\t\t\t\t<ul class=\"sec",
+    "html": "<header class=\"section-header row\"><h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\"></h2><div class=\"section-header-cta-list-wrapper\"><ul class=\"sec",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1860,7 +1860,7 @@
     }
    },
    "section.header-links": {
-    "html": "<ul class=\"section-header-cta-list typography-section-header-link column\">\n\t\t\t\t\t\t\t<li class=\"section-header-cta-item section-header-cta-item-link1\" data-staggered-item=\"\" style=\"\">\n\t\t\t\t\t\t\t\t<a href=\"/105/media/us/iphone-18-pro/2026/591df885-",
+    "html": "<ul class=\"section-header-cta-list typography-section-header-link column\"><li class=\"section-header-cta-item section-header-cta-item-link1\" data-staggered-item=\"\" style=\"\"><a href=\"/105/media/us/iphone-18-pro/2026/591df885-",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1920,7 +1920,7 @@
     }
    },
    "section.battery": {
-    "html": "<section id=\"battery\" class=\"section section-battery section-product-story preserve-pad-bottom theme-dark\" data-anim-scroll-group=\"Battery\" data-deep-link=\"battery\" data-ric-section=\"\">\n\t\t\t<div class=\"viewport-content\">\n\t\t\t\t<div class=\"ric-",
+    "html": "<section id=\"battery\" class=\"section section-battery section-product-story preserve-pad-bottom theme-dark\" data-anim-scroll-group=\"Battery\" data-deep-link=\"battery\" data-ric-section=\"\"><div class=\"viewport-content\"><div class=\"ric-",
     "styles": {
      "padding-top": "120px",
      "padding-right": "0px",
@@ -1943,7 +1943,7 @@
     }
    },
    "section.headline": {
-    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>",
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "40px",
@@ -1982,7 +1982,7 @@
     }
    },
    "tile.rounded": {
-    "html": "<div class=\"card tile tile-rounded\">\n\t\t\t\t\t\t\t\t\t<div class=\"caption-container large-pin-top-center\" role=\"none\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"caption-animation-container pin-offset\" data-headline=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<p class=\"caption typography-media-car",
+    "html": "<div class=\"card tile tile-rounded\"><div class=\"caption-container large-pin-top-center\" role=\"none\"><div class=\"caption-animation-container pin-offset\" data-headline=\"\"><p class=\"caption typography-media-car",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2010,7 +2010,7 @@
     }
    },
    "tile.rounded-light": {
-    "html": "<div class=\"card tile card-hover tile-rounded\" data-component-list=\"Card WillChange\" style=\"--card-element-scale: 1.0174418604651163;\">\n\t\t\t\t\t\t\t\t\t<div class=\"feature-card-content image-inline\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"feature-card-copy-contain",
+    "html": "<div class=\"card tile card-hover tile-rounded\" data-component-list=\"Card WillChange\" style=\"--card-element-scale: 1.0174418604651163;\"><div class=\"feature-card-content image-inline\"><div class=\"feature-card-copy-contain",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2037,7 +2037,7 @@
     }
    },
    "paddle": {
-    "html": "<button aria-label=\"Previous item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&q",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&q",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2133,7 +2133,7 @@
     }
    },
    "paddle.icon": {
-    "html": "<svg class=\"icon-control icon-control-chevronleft\" viewBox=\"0 0 36 36\">\n                        \t\t\t\t\t      <path d=\"m20 25c-.3838 0-.7676-.1465-1.0605-.4395l-5.5-5.5c-.5859-.5854-.5859-1.5356 0-2.1211l5.5-5.5c.5859-.5859 1.5352-.5859 2.1211",
+    "html": "<svg class=\"icon-control icon-control-chevronleft\" viewBox=\"0 0 36 36\"><path d=\"m20 25c-.3838 0-.7676-.1465-1.0605-.4395l-5.5-5.5c-.5859-.5854-.5859-1.5356 0-2.1211l5.5-5.5c.5859-.5859 1.5352-.5859 2.1211",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -2146,7 +2146,7 @@
     }
    },
    "footer": {
-    "html": "<footer id=\"ac-globalfooter\" class=\"js\" lang=\"en-US\" dir=\"ltr\" data-analytics-region=\"global footer\" role=\"contentinfo\" aria-labelledby=\"ac-gf-label\">\n\t\t<div class=\"ac-gf-content\" data-nosnippet=\"\">\n\t\t\t<h2 class=\"ac-gf-label\" id=\"ac-gf-labe",
+    "html": "<footer id=\"ac-globalfooter\" class=\"js\" lang=\"en-US\" dir=\"ltr\" data-analytics-region=\"global footer\" role=\"contentinfo\" aria-labelledby=\"ac-gf-label\"><div class=\"ac-gf-content\" data-nosnippet=\"\"><h2 class=\"ac-gf-label\" id=\"ac-gf-labe",
     "styles": {
      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2158,7 +2158,7 @@
     }
    },
    "footer.title": {
-    "html": "<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>",
+    "html": "<span class=\"ac-gf-directory-column-section-title-text\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2169,7 +2169,7 @@
     }
    },
    "footer.link": {
-    "html": "<a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\">Store</a>",
+    "html": "<a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2196,13 +2196,13 @@
     }
    },
    "footer.shop": {
-    "html": "<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\">\n\t\tMore ways to shop: <a href=\"/retail/\" data-analytics-title=\"find an apple store\">Find an Apple Store</a> or <a href=\"https://locate.apple.com/\" data-analytics-title=\"other retai",
+    "html": "<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\"><a href=\"/retail/\" data-analytics-title=\"find an apple store\"></a><a href=\"https://locate.apple.com/\" data-analytics-title=\"other retai",
     "styles": {
      "border-bottom-color": "rgba(0, 0, 0, 0.16)"
     }
    },
    "divider": {
-    "html": "<div class=\"callout-subsection-copy-block keyline typography-callout-elevated\">\n\t\t\t\t\t\t\t<p>More power for all your AI tasks. And faster Apple&nbsp;Intelligence thanks to new Neural Accelerators, a Dual 16‑core Neural&nbsp;Engine, and 50&nbsp",
+    "html": "<div class=\"callout-subsection-copy-block keyline typography-callout-elevated\"><p>",
     "styles": {
      "border-top-width": "1px",
      "border-top-style": "solid",
@@ -2210,7 +2210,7 @@
     }
    },
    "gallery.scroller": {
-    "html": "<div class=\"scroll-container\" tabindex=\"-1\">\n\t\t\t\t\t\t<div class=\"item-container\">\n\t\t\t\t\t\t\t<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\">\n\t\t\t\t\t\t\t\t<li class=\"card-container ",
+    "html": "<div class=\"scroll-container\" tabindex=\"-1\"><div class=\"item-container\"><ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\"><li class=\"card-container ",
     "styles": {
      "overflow-x": "scroll",
      "overflow-y": "auto",
@@ -2228,7 +2228,7 @@
     }
    },
    "gallery.items": {
-    "html": "<div class=\"item-container\">\n\t\t\t\t\t\t\t<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\">\n\t\t\t\t\t\t\t\t<li class=\"card-container caption-tile gallery-item wide current\" data-analyt",
+    "html": "<div class=\"item-container\"><ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\"><li class=\"card-container caption-tile gallery-item wide current\" data-analyt",
     "styles": {
      "padding-left": "56.25px",
      "padding-right": "56.25px"
@@ -2239,7 +2239,7 @@
     }
    },
    "gallery.set": {
-    "html": "<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\">\n\t\t\t\t\t\t\t\t<li class=\"card-container caption-tile gallery-item wide current\" data-analytics-gallery-item-id=\"pro controls\" d",
+    "html": "<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\"><li class=\"card-container caption-tile gallery-item wide current\" data-analytics-gallery-item-id=\"pro controls\" d",
     "styles": {
      "display": "grid",
      "column-gap": "20px"
@@ -2277,7 +2277,7 @@
     }
    },
    "gallery.nav-list": {
-    "html": "<ul>\n\t\t\t\t\t\t\t<li class=\"left-item\"><button aria-label=\"Previous item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quo",
+    "html": "<ul><li class=\"left-item\"><button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quo",
     "styles": {
      "display": "flex",
      "column-gap": "18px",
@@ -2289,7 +2289,7 @@
     }
    },
    "paddle.next": {
-    "html": "<button aria-label=\"Next item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&quot;.gal",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&quot;.gal",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2384,7 +2384,7 @@
     }
    },
    "gallery.dots": {
-    "html": "<ul role=\"tablist\" aria-label=\"Highlights tablist\" class=\"dotnav-items\" style=\"--dotnav-count: 5\">\n\t\t\t\t\t\t\t\t\t\t<li role=\"presentation\" class=\"dotnav-item current aap-media-card-gallery__dotnav-item\" style=\"--item-index: 0;\">\n\t\t\t\t\t\t\t\t\t\t\t<a id=",
+    "html": "<ul role=\"tablist\" aria-label=\"…\" class=\"dotnav-items\" style=\"--dotnav-count: 5\"><li role=\"presentation\" class=\"dotnav-item current aap-media-card-gallery__dotnav-item\" style=\"--item-index: 0;\"><a id=",
     "styles": {
      "display": "flex",
      "flex-direction": "row",
@@ -2400,7 +2400,7 @@
     }
    },
    "gallery.dot-item": {
-    "html": "<li role=\"presentation\" class=\"dotnav-item aap-media-card-gallery__dotnav-item\" style=\"--item-index: 1;\">\n\t\t\t\t\t\t\t\t\t\t\t<a id=\"highlights gallery-item-2-trigger\" data-focus-expression=\"{&quot;expression&quot;: &quot;a0t - 100vh + a0h + var(--g",
+    "html": "<li role=\"presentation\" class=\"dotnav-item aap-media-card-gallery__dotnav-item\" style=\"--item-index: 1;\"><a id=\"highlights gallery-item-2-trigger\" data-focus-expression=\"{&quot;expression&quot;: &quot;a0t - 100vh + a0h + var(--g",
     "styles": {
      "margin-left": "8px",
      "margin-right": "8px",
@@ -2467,7 +2467,7 @@
     }
    },
    "link.inline": {
-    "html": "<a href=\"#cui\">a link</a>",
+    "html": "<a href=\"#cui\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2505,7 +2505,7 @@
     }
    },
    "link.more": {
-    "html": "<a href=\"/us/shop/goto/apple_upgrade\" data-analytics-title=\"learn more - apple upgrade\" aria-label=\"Learn more, Apple Upgrade\" class=\"icon-wrapper ribbon-link\"><span class=\"icon-copy\">Learn more</span><span class=\"icon icon-after more\" aria",
+    "html": "<a href=\"/us/shop/goto/apple_upgrade\" data-analytics-title=\"learn more - apple upgrade\" aria-label=\"…\" class=\"icon-wrapper ribbon-link\"><span class=\"icon-copy\"></span><span class=\"icon icon-after more\" aria",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2545,7 +2545,7 @@
     }
    },
    "stat.content": {
-    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Up to</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-value\">25 more hours</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">video playback on <br class=\"small-hide\">iPhone&nbsp;18&nbsp;Pro&nb",
+    "html": "<div class=\"stat-content\"><span class=\"stat-caption\"></span><span class=\"stat-value\"></span><span class=\"stat-caption\"><br class=\"small-hide\">",
     "styles": {
      "padding-top": "2px",
      "padding-bottom": "2px",
@@ -2554,7 +2554,7 @@
     }
    },
    "footnote.link": {
-    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a>",
+    "html": "<a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "color": "rgb(245, 245, 247)",
@@ -2564,7 +2564,7 @@
     }
    },
    "stat.value": {
-    "html": "<span class=\"stat-value\">25 more hours</span>",
+    "html": "<span class=\"stat-value\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -2578,7 +2578,7 @@
     }
    },
    "stat.caption": {
-    "html": "<span class=\"stat-caption\">Up to</span>",
+    "html": "<span class=\"stat-caption\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2590,7 +2590,7 @@
     }
    },
    "footnote": {
-    "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a></sup>",
+    "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a></sup>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
@@ -2641,7 +2641,7 @@
     }
    },
    "localnav.wrap": {
-    "html": "<div class=\"localnav-wrap\">\n\t\t\t\t<div class=\"content-collapsed-wrap\" data-analytics-activitymap-region-id=\"local nav\">\n\t\t\t\t\t<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">",
+    "html": "<div class=\"localnav-wrap\"><div class=\"content-collapsed-wrap\" data-analytics-activitymap-region-id=\"local nav\"><a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">",
     "styles": {
      "padding-top": "12px",
      "padding-right": "0px",
@@ -2671,7 +2671,7 @@
     }
    },
    "localnav.product": {
-    "html": "<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">iPhone&nbsp;18&nbsp;Pro</a>",
+    "html": "<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -2682,7 +2682,7 @@
     }
    },
    "localnav.explore": {
-    "html": "<button class=\"typography-caption cta explore\" data-analytics-title=\"explore | open modal\" data-analytics-click=\"prop3:explore | open modal\" aria-label=\"Explore iPhone 18 Pro\" data-analytics-intrapage-link=\"\" style=\"--buy-button-width: 41px",
+    "html": "<button class=\"typography-caption cta explore\" data-analytics-title=\"explore | open modal\" data-analytics-click=\"prop3:explore | open modal\" aria-label=\"…\" data-analytics-intrapage-link=\"\" style=\"--buy-button-width: 41px",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2743,7 +2743,7 @@
     }
    },
    "localnav.buy": {
-    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_18_pro\" aria-label=\"Buy, iPhone 18 Pro\" class=\"typography-caption cta buy\" data-analytics-title=\"buy - iphone 18 pro\">\n\t\t\t\t\t\t\t\tBuy\n\t\t\t\t\t\t\t</a>",
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_18_pro\" aria-label=\"…\" class=\"typography-caption cta buy\" data-analytics-title=\"buy - iphone 18 pro\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2804,7 +2804,7 @@
     }
    },
    "nav.search": {
-    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"false\" aria-controls=\"globalnav-submen",
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"…\" aria-expanded=\"false\" aria-controls=\"globalnav-submen",
     "styles": {
      "color": "rgba(255, 255, 255, 0.8)"
     },
@@ -2815,7 +2815,7 @@
     }
    },
    "nav.menutrigger": {
-    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"Menu\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-button",
+    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"…\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-button",
     "styles": {
      "color": "rgb(255, 255, 255)",
      "opacity": "0.8"
@@ -2830,7 +2830,7 @@
   },
   "1200": {
    "type.none": {
-    "html": "<p>Sample text</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2841,7 +2841,7 @@
     }
    },
    "type.headline-super": {
-    "html": "<p class=\"typography-headline-super\">Sample text</p>",
+    "html": "<p class=\"typography-headline-super\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2852,7 +2852,7 @@
     }
    },
    "type.headline-elevated": {
-    "html": "<p class=\"typography-headline-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-headline-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "64px",
@@ -2863,7 +2863,7 @@
     }
    },
    "type.headline": {
-    "html": "<p class=\"typography-headline\">Sample text</p>",
+    "html": "<p class=\"typography-headline\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2874,7 +2874,7 @@
     }
    },
    "type.headline-reduced": {
-    "html": "<p class=\"typography-headline-reduced\">Sample text</p>",
+    "html": "<p class=\"typography-headline-reduced\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2885,7 +2885,7 @@
     }
    },
    "type.eyebrow-super": {
-    "html": "<p class=\"typography-eyebrow-super\">Sample text</p>",
+    "html": "<p class=\"typography-eyebrow-super\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -2896,7 +2896,7 @@
     }
    },
    "type.intro-elevated": {
-    "html": "<p class=\"typography-intro-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-intro-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2907,7 +2907,7 @@
     }
    },
    "type.intro": {
-    "html": "<p class=\"typography-intro\">Sample text</p>",
+    "html": "<p class=\"typography-intro\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2918,7 +2918,7 @@
     }
    },
    "type.body": {
-    "html": "<p class=\"typography-body\">Sample text</p>",
+    "html": "<p class=\"typography-body\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2929,7 +2929,7 @@
     }
    },
    "type.body-reduced": {
-    "html": "<p class=\"typography-body-reduced\">Sample text</p>",
+    "html": "<p class=\"typography-body-reduced\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2940,7 +2940,7 @@
     }
    },
    "type.body-reduced-tight": {
-    "html": "<p class=\"typography-body-reduced-tight\">Sample text</p>",
+    "html": "<p class=\"typography-body-reduced-tight\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2951,7 +2951,7 @@
     }
    },
    "type.callout-super": {
-    "html": "<p class=\"typography-callout-super\">Sample text</p>",
+    "html": "<p class=\"typography-callout-super\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -2962,7 +2962,7 @@
     }
    },
    "type.callout-elevated": {
-    "html": "<p class=\"typography-callout-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-callout-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2973,7 +2973,7 @@
     }
    },
    "type.callout-base": {
-    "html": "<p class=\"typography-callout-base\">Sample text</p>",
+    "html": "<p class=\"typography-callout-base\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2984,7 +2984,7 @@
     }
    },
    "type.callout-cta": {
-    "html": "<p class=\"typography-callout-cta\">Sample text</p>",
+    "html": "<p class=\"typography-callout-cta\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2995,7 +2995,7 @@
     }
    },
    "type.caption-elevated": {
-    "html": "<p class=\"typography-caption-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-caption-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -3006,7 +3006,7 @@
     }
    },
    "type.caption": {
-    "html": "<p class=\"typography-caption\">Sample text</p>",
+    "html": "<p class=\"typography-caption\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3017,7 +3017,7 @@
     }
    },
    "type.caption-cta": {
-    "html": "<p class=\"typography-caption-cta\">Sample text</p>",
+    "html": "<p class=\"typography-caption-cta\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -3028,7 +3028,7 @@
     }
    },
    "type.caption-sosumi": {
-    "html": "<p class=\"typography-caption-sosumi\">Sample text</p>",
+    "html": "<p class=\"typography-caption-sosumi\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3039,7 +3039,7 @@
     }
    },
    "type.caption-elevated-sosumi": {
-    "html": "<p class=\"typography-caption-elevated-sosumi\">Sample text</p>",
+    "html": "<p class=\"typography-caption-elevated-sosumi\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3050,7 +3050,7 @@
     }
    },
    "type.label": {
-    "html": "<p class=\"typography-label\">Sample text</p>",
+    "html": "<p class=\"typography-label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -3061,7 +3061,7 @@
     }
    },
    "type.section-header-eyebrow": {
-    "html": "<p class=\"typography-section-header-eyebrow\">Sample text</p>",
+    "html": "<p class=\"typography-section-header-eyebrow\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -3072,7 +3072,7 @@
     }
    },
    "type.section-header-headline": {
-    "html": "<p class=\"typography-section-header-headline\">Sample text</p>",
+    "html": "<p class=\"typography-section-header-headline\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "48px",
@@ -3083,7 +3083,7 @@
     }
    },
    "type.section-header-link": {
-    "html": "<p class=\"typography-section-header-link\">Sample text</p>",
+    "html": "<p class=\"typography-section-header-link\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -3094,7 +3094,7 @@
     }
    },
    "page.body": {
-    "html": "<body class=\"page-overview globalheader-dark\" data-component-list=\"AutoARQL FocusManager MediaHero DeepLink\" data-anim-scroll-group=\"body\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-r",
+    "html": "<body class=\"page-overview globalheader-dark\" data-component-list=\"AutoARQL FocusManager MediaHero DeepLink\" data-anim-scroll-group=\"body\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-r",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -3109,7 +3109,7 @@
     }
    },
    "page.strong": {
-    "html": "<strong class=\"has-dynamic-content\"><span class=\"dynamic-pricing-product\" data-pricing-product=\"iphone-18-pro\" data-product-template=\"${price.display.from} \" data-acmi-idx=\"0\" data-display-style=\"\" data-pricing-loaded=\"\">From $1199 </span>\n",
+    "html": "<strong class=\"has-dynamic-content\"><span class=\"dynamic-pricing-product\" data-pricing-product=\"iphone-18-pro\" data-product-template=\"${price.display.from} \" data-acmi-idx=\"0\" data-display-style=\"\" data-pricing-loaded=\"\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -3120,7 +3120,7 @@
     }
    },
    "nav": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "position": "absolute",
      "background-color": "rgba(0, 0, 0, 0)",
@@ -3129,7 +3129,7 @@
     }
    },
    "nav.link": {
-    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"Store\" class=\"globalnav-link globalnav-subme",
+    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"…\" class=\"globalnav-link globalnav-subme",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3150,7 +3150,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"viewport-content\">\n\t\t\t\t<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>\n\t\t\t\t\t<div class=\"section-header-cta-",
+    "html": "<div class=\"viewport-content\"><header class=\"section-header row\"><h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\"></h2><div class=\"section-header-cta-",
     "styles": {
      "width": "1050px",
      "max-width": "1260px",
@@ -3165,7 +3165,7 @@
     }
    },
    "section": {
-    "html": "<section class=\"section section-media-hero section-media-hero no-pad  media-layout-background ribbon-full-width\" data-anim-scroll-group=\"Media Hero\" data-analytics-section-engagement=\"name:hero\" data-ric-section=\"\">\n\t\t\t\t<div class=\"section-",
+    "html": "<section class=\"section section-media-hero section-media-hero no-pad  media-layout-background ribbon-full-width\" data-anim-scroll-group=\"Media Hero\" data-analytics-section-engagement=\"name:hero\" data-ric-section=\"\"><div class=\"section-",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3216,7 +3216,7 @@
     }
    },
    "section.header": {
-    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>\n\t\t\t\t\t<div class=\"section-header-cta-list-wrapper\">\n\t\t\t\t\t\t<ul class=\"sec",
+    "html": "<header class=\"section-header row\"><h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\"></h2><div class=\"section-header-cta-list-wrapper\"><ul class=\"sec",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3250,7 +3250,7 @@
     }
    },
    "section.header-links": {
-    "html": "<ul class=\"section-header-cta-list typography-section-header-link column\">\n\t\t\t\t\t\t\t<li class=\"section-header-cta-item section-header-cta-item-link1\" data-staggered-item=\"\" style=\"\">\n\t\t\t\t\t\t\t\t<a href=\"/105/media/us/iphone-18-pro/2026/591df885-",
+    "html": "<ul class=\"section-header-cta-list typography-section-header-link column\"><li class=\"section-header-cta-item section-header-cta-item-link1\" data-staggered-item=\"\" style=\"\"><a href=\"/105/media/us/iphone-18-pro/2026/591df885-",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -3310,7 +3310,7 @@
     }
    },
    "section.battery": {
-    "html": "<section id=\"battery\" class=\"section section-battery section-product-story preserve-pad-bottom theme-dark\" data-anim-scroll-group=\"Battery\" data-deep-link=\"battery\" data-ric-section=\"\">\n\t\t\t<div class=\"viewport-content\">\n\t\t\t\t<div class=\"ric-",
+    "html": "<section id=\"battery\" class=\"section section-battery section-product-story preserve-pad-bottom theme-dark\" data-anim-scroll-group=\"Battery\" data-deep-link=\"battery\" data-ric-section=\"\"><div class=\"viewport-content\"><div class=\"ric-",
     "styles": {
      "padding-top": "144px",
      "padding-right": "0px",
@@ -3333,7 +3333,7 @@
     }
    },
    "section.headline": {
-    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\">Get the highlights.</h2>",
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "48px",
@@ -3372,7 +3372,7 @@
     }
    },
    "tile.rounded": {
-    "html": "<div class=\"card tile tile-rounded\">\n\t\t\t\t\t\t\t\t\t<div class=\"caption-container large-pin-top-center\" role=\"none\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"caption-animation-container pin-offset\" data-headline=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<p class=\"caption typography-media-car",
+    "html": "<div class=\"card tile tile-rounded\"><div class=\"caption-container large-pin-top-center\" role=\"none\"><div class=\"caption-animation-container pin-offset\" data-headline=\"\"><p class=\"caption typography-media-car",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3400,7 +3400,7 @@
     }
    },
    "tile.rounded-light": {
-    "html": "<div class=\"card tile card-hover tile-rounded\" data-component-list=\"Card WillChange\" style=\"--card-element-scale: 1.0161290322580645;\">\n\t\t\t\t\t\t\t\t\t<div class=\"feature-card-content image-inline\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"feature-card-copy-contain",
+    "html": "<div class=\"card tile card-hover tile-rounded\" data-component-list=\"Card WillChange\" style=\"--card-element-scale: 1.0161290322580645;\"><div class=\"feature-card-content image-inline\"><div class=\"feature-card-copy-contain",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3427,7 +3427,7 @@
     }
    },
    "paddle": {
-    "html": "<button aria-label=\"Previous item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&q",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&q",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3523,7 +3523,7 @@
     }
    },
    "paddle.icon": {
-    "html": "<svg class=\"icon-control icon-control-chevronleft\" viewBox=\"0 0 36 36\">\n                        \t\t\t\t\t      <path d=\"m20 25c-.3838 0-.7676-.1465-1.0605-.4395l-5.5-5.5c-.5859-.5854-.5859-1.5356 0-2.1211l5.5-5.5c.5859-.5859 1.5352-.5859 2.1211",
+    "html": "<svg class=\"icon-control icon-control-chevronleft\" viewBox=\"0 0 36 36\"><path d=\"m20 25c-.3838 0-.7676-.1465-1.0605-.4395l-5.5-5.5c-.5859-.5854-.5859-1.5356 0-2.1211l5.5-5.5c.5859-.5859 1.5352-.5859 2.1211",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -3536,7 +3536,7 @@
     }
    },
    "footer": {
-    "html": "<footer id=\"ac-globalfooter\" class=\"js\" lang=\"en-US\" dir=\"ltr\" data-analytics-region=\"global footer\" role=\"contentinfo\" aria-labelledby=\"ac-gf-label\">\n\t\t<div class=\"ac-gf-content\" data-nosnippet=\"\">\n\t\t\t<h2 class=\"ac-gf-label\" id=\"ac-gf-labe",
+    "html": "<footer id=\"ac-globalfooter\" class=\"js\" lang=\"en-US\" dir=\"ltr\" data-analytics-region=\"global footer\" role=\"contentinfo\" aria-labelledby=\"ac-gf-label\"><div class=\"ac-gf-content\" data-nosnippet=\"\"><h2 class=\"ac-gf-label\" id=\"ac-gf-labe",
     "styles": {
      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3548,7 +3548,7 @@
     }
    },
    "footer.title": {
-    "html": "<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>",
+    "html": "<span class=\"ac-gf-directory-column-section-title-text\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3559,7 +3559,7 @@
     }
    },
    "footer.link": {
-    "html": "<a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\">Store</a>",
+    "html": "<a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3586,13 +3586,13 @@
     }
    },
    "footer.shop": {
-    "html": "<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\">\n\t\tMore ways to shop: <a href=\"/retail/\" data-analytics-title=\"find an apple store\">Find an Apple Store</a> or <a href=\"https://locate.apple.com/\" data-analytics-title=\"other retai",
+    "html": "<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\"><a href=\"/retail/\" data-analytics-title=\"find an apple store\"></a><a href=\"https://locate.apple.com/\" data-analytics-title=\"other retai",
     "styles": {
      "border-bottom-color": "rgba(0, 0, 0, 0.16)"
     }
    },
    "divider": {
-    "html": "<div class=\"callout-subsection-copy-block keyline typography-callout-elevated\">\n\t\t\t\t\t\t\t<p>More power for all your AI tasks. And faster Apple&nbsp;Intelligence thanks to new Neural Accelerators, a Dual 16‑core Neural&nbsp;Engine, and 50&nbsp",
+    "html": "<div class=\"callout-subsection-copy-block keyline typography-callout-elevated\"><p>",
     "styles": {
      "border-top-width": "1px",
      "border-top-style": "solid",
@@ -3600,7 +3600,7 @@
     }
    },
    "gallery.scroller": {
-    "html": "<div class=\"scroll-container\" tabindex=\"-1\">\n\t\t\t\t\t\t<div class=\"item-container\">\n\t\t\t\t\t\t\t<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\">\n\t\t\t\t\t\t\t\t<li class=\"card-container ",
+    "html": "<div class=\"scroll-container\" tabindex=\"-1\"><div class=\"item-container\"><ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\"><li class=\"card-container ",
     "styles": {
      "overflow-x": "scroll",
      "overflow-y": "auto",
@@ -3618,7 +3618,7 @@
     }
    },
    "gallery.items": {
-    "html": "<div class=\"item-container\">\n\t\t\t\t\t\t\t<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\">\n\t\t\t\t\t\t\t\t<li class=\"card-container caption-tile gallery-item wide current\" data-analyt",
+    "html": "<div class=\"item-container\"><ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\"><li class=\"card-container caption-tile gallery-item wide current\" data-analyt",
     "styles": {
      "padding-left": "75px",
      "padding-right": "75px"
@@ -3629,7 +3629,7 @@
     }
    },
    "gallery.set": {
-    "html": "<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\">\n\t\t\t\t\t\t\t\t<li class=\"card-container caption-tile gallery-item wide current\" data-analytics-gallery-item-id=\"pro controls\" d",
+    "html": "<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\"><li class=\"card-container caption-tile gallery-item wide current\" data-analytics-gallery-item-id=\"pro controls\" d",
     "styles": {
      "display": "grid",
      "column-gap": "20px"
@@ -3667,7 +3667,7 @@
     }
    },
    "gallery.nav-list": {
-    "html": "<ul>\n\t\t\t\t\t\t\t<li class=\"left-item\"><button aria-label=\"Previous item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quo",
+    "html": "<ul><li class=\"left-item\"><button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quo",
     "styles": {
      "display": "flex",
      "column-gap": "18px",
@@ -3679,7 +3679,7 @@
     }
    },
    "paddle.next": {
-    "html": "<button aria-label=\"Next item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&quot;.gal",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&quot;.gal",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3774,7 +3774,7 @@
     }
    },
    "gallery.dots": {
-    "html": "<ul role=\"tablist\" aria-label=\"Highlights tablist\" class=\"dotnav-items\" style=\"--dotnav-count: 5\">\n\t\t\t\t\t\t\t\t\t\t<li role=\"presentation\" class=\"dotnav-item current aap-media-card-gallery__dotnav-item\" style=\"--item-index: 0;\">\n\t\t\t\t\t\t\t\t\t\t\t<a id=",
+    "html": "<ul role=\"tablist\" aria-label=\"…\" class=\"dotnav-items\" style=\"--dotnav-count: 5\"><li role=\"presentation\" class=\"dotnav-item current aap-media-card-gallery__dotnav-item\" style=\"--item-index: 0;\"><a id=",
     "styles": {
      "display": "flex",
      "flex-direction": "row",
@@ -3790,7 +3790,7 @@
     }
    },
    "gallery.dot-item": {
-    "html": "<li role=\"presentation\" class=\"dotnav-item aap-media-card-gallery__dotnav-item\" style=\"--item-index: 1;\">\n\t\t\t\t\t\t\t\t\t\t\t<a id=\"highlights gallery-item-2-trigger\" data-focus-expression=\"{&quot;expression&quot;: &quot;a0t - 100vh + a0h + var(--g",
+    "html": "<li role=\"presentation\" class=\"dotnav-item aap-media-card-gallery__dotnav-item\" style=\"--item-index: 1;\"><a id=\"highlights gallery-item-2-trigger\" data-focus-expression=\"{&quot;expression&quot;: &quot;a0t - 100vh + a0h + var(--g",
     "styles": {
      "margin-left": "8px",
      "margin-right": "8px",
@@ -3857,7 +3857,7 @@
     }
    },
    "link.inline": {
-    "html": "<a href=\"#cui\">a link</a>",
+    "html": "<a href=\"#cui\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -3895,7 +3895,7 @@
     }
    },
    "link.more": {
-    "html": "<a href=\"/us/shop/goto/apple_upgrade\" data-analytics-title=\"learn more - apple upgrade\" aria-label=\"Learn more, Apple Upgrade\" class=\"icon-wrapper ribbon-link\"><span class=\"icon-copy\">Learn more</span><span class=\"icon icon-after more\" aria",
+    "html": "<a href=\"/us/shop/goto/apple_upgrade\" data-analytics-title=\"learn more - apple upgrade\" aria-label=\"…\" class=\"icon-wrapper ribbon-link\"><span class=\"icon-copy\"></span><span class=\"icon icon-after more\" aria",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -3935,7 +3935,7 @@
     }
    },
    "stat.content": {
-    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Up to</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-value\">25 more hours</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">video playback on <br class=\"small-hide\">iPhone&nbsp;18&nbsp;Pro&nb",
+    "html": "<div class=\"stat-content\"><span class=\"stat-caption\"></span><span class=\"stat-value\"></span><span class=\"stat-caption\"><br class=\"small-hide\">",
     "styles": {
      "padding-top": "2px",
      "padding-bottom": "2px",
@@ -3944,7 +3944,7 @@
     }
    },
    "footnote.link": {
-    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a>",
+    "html": "<a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "color": "rgb(245, 245, 247)",
@@ -3954,7 +3954,7 @@
     }
    },
    "stat.value": {
-    "html": "<span class=\"stat-value\">25 more hours</span>",
+    "html": "<span class=\"stat-value\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -3968,7 +3968,7 @@
     }
    },
    "stat.caption": {
-    "html": "<span class=\"stat-caption\">Up to</span>",
+    "html": "<span class=\"stat-caption\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3980,7 +3980,7 @@
     }
    },
    "footnote": {
-    "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a></sup>",
+    "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a></sup>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
@@ -4031,7 +4031,7 @@
     }
    },
    "localnav.wrap": {
-    "html": "<div class=\"localnav-wrap\">\n\t\t\t\t<div class=\"content-collapsed-wrap\" data-analytics-activitymap-region-id=\"local nav\">\n\t\t\t\t\t<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">",
+    "html": "<div class=\"localnav-wrap\"><div class=\"content-collapsed-wrap\" data-analytics-activitymap-region-id=\"local nav\"><a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">",
     "styles": {
      "padding-top": "12px",
      "padding-right": "0px",
@@ -4061,7 +4061,7 @@
     }
    },
    "localnav.product": {
-    "html": "<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">iPhone&nbsp;18&nbsp;Pro</a>",
+    "html": "<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -4072,7 +4072,7 @@
     }
    },
    "localnav.explore": {
-    "html": "<button class=\"typography-caption cta explore\" data-analytics-title=\"explore | open modal\" data-analytics-click=\"prop3:explore | open modal\" aria-label=\"Explore iPhone 18 Pro\" data-analytics-intrapage-link=\"\" style=\"--buy-button-width: 41px",
+    "html": "<button class=\"typography-caption cta explore\" data-analytics-title=\"explore | open modal\" data-analytics-click=\"prop3:explore | open modal\" aria-label=\"…\" data-analytics-intrapage-link=\"\" style=\"--buy-button-width: 41px",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4133,7 +4133,7 @@
     }
    },
    "localnav.buy": {
-    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_18_pro\" aria-label=\"Buy, iPhone 18 Pro\" class=\"typography-caption cta buy\" data-analytics-title=\"buy - iphone 18 pro\">\n\t\t\t\t\t\t\t\tBuy\n\t\t\t\t\t\t\t</a>",
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_18_pro\" aria-label=\"…\" class=\"typography-caption cta buy\" data-analytics-title=\"buy - iphone 18 pro\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4194,7 +4194,7 @@
     }
    },
    "nav.search": {
-    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"false\" aria-controls=\"globalnav-submen",
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"…\" aria-expanded=\"false\" aria-controls=\"globalnav-submen",
     "styles": {
      "color": "rgba(255, 255, 255, 0.8)"
     },
@@ -4207,7 +4207,7 @@
   },
   "1600": {
    "type.none": {
-    "html": "<p>Sample text</p>",
+    "html": "<p></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4218,7 +4218,7 @@
     }
    },
    "type.headline-super": {
-    "html": "<p class=\"typography-headline-super\">Sample text</p>",
+    "html": "<p class=\"typography-headline-super\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4229,7 +4229,7 @@
     }
    },
    "type.headline-elevated": {
-    "html": "<p class=\"typography-headline-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-headline-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "64px",
@@ -4240,7 +4240,7 @@
     }
    },
    "type.headline": {
-    "html": "<p class=\"typography-headline\">Sample text</p>",
+    "html": "<p class=\"typography-headline\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4251,7 +4251,7 @@
     }
    },
    "type.headline-reduced": {
-    "html": "<p class=\"typography-headline-reduced\">Sample text</p>",
+    "html": "<p class=\"typography-headline-reduced\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4262,7 +4262,7 @@
     }
    },
    "type.eyebrow-super": {
-    "html": "<p class=\"typography-eyebrow-super\">Sample text</p>",
+    "html": "<p class=\"typography-eyebrow-super\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -4273,7 +4273,7 @@
     }
    },
    "type.intro-elevated": {
-    "html": "<p class=\"typography-intro-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-intro-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4284,7 +4284,7 @@
     }
    },
    "type.intro": {
-    "html": "<p class=\"typography-intro\">Sample text</p>",
+    "html": "<p class=\"typography-intro\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -4295,7 +4295,7 @@
     }
    },
    "type.body": {
-    "html": "<p class=\"typography-body\">Sample text</p>",
+    "html": "<p class=\"typography-body\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4306,7 +4306,7 @@
     }
    },
    "type.body-reduced": {
-    "html": "<p class=\"typography-body-reduced\">Sample text</p>",
+    "html": "<p class=\"typography-body-reduced\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -4317,7 +4317,7 @@
     }
    },
    "type.body-reduced-tight": {
-    "html": "<p class=\"typography-body-reduced-tight\">Sample text</p>",
+    "html": "<p class=\"typography-body-reduced-tight\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -4328,7 +4328,7 @@
     }
    },
    "type.callout-super": {
-    "html": "<p class=\"typography-callout-super\">Sample text</p>",
+    "html": "<p class=\"typography-callout-super\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -4339,7 +4339,7 @@
     }
    },
    "type.callout-elevated": {
-    "html": "<p class=\"typography-callout-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-callout-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -4350,7 +4350,7 @@
     }
    },
    "type.callout-base": {
-    "html": "<p class=\"typography-callout-base\">Sample text</p>",
+    "html": "<p class=\"typography-callout-base\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4361,7 +4361,7 @@
     }
    },
    "type.callout-cta": {
-    "html": "<p class=\"typography-callout-cta\">Sample text</p>",
+    "html": "<p class=\"typography-callout-cta\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4372,7 +4372,7 @@
     }
    },
    "type.caption-elevated": {
-    "html": "<p class=\"typography-caption-elevated\">Sample text</p>",
+    "html": "<p class=\"typography-caption-elevated\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -4383,7 +4383,7 @@
     }
    },
    "type.caption": {
-    "html": "<p class=\"typography-caption\">Sample text</p>",
+    "html": "<p class=\"typography-caption\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4394,7 +4394,7 @@
     }
    },
    "type.caption-cta": {
-    "html": "<p class=\"typography-caption-cta\">Sample text</p>",
+    "html": "<p class=\"typography-caption-cta\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4405,7 +4405,7 @@
     }
    },
    "type.caption-sosumi": {
-    "html": "<p class=\"typography-caption-sosumi\">Sample text</p>",
+    "html": "<p class=\"typography-caption-sosumi\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4416,7 +4416,7 @@
     }
    },
    "type.caption-elevated-sosumi": {
-    "html": "<p class=\"typography-caption-elevated-sosumi\">Sample text</p>",
+    "html": "<p class=\"typography-caption-elevated-sosumi\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4427,7 +4427,7 @@
     }
    },
    "type.label": {
-    "html": "<p class=\"typography-label\">Sample text</p>",
+    "html": "<p class=\"typography-label\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -4438,7 +4438,7 @@
     }
    },
    "type.section-header-eyebrow": {
-    "html": "<p class=\"typography-section-header-eyebrow\">Sample text</p>",
+    "html": "<p class=\"typography-section-header-eyebrow\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -4449,7 +4449,7 @@
     }
    },
    "type.section-header-headline": {
-    "html": "<p class=\"typography-section-header-headline\">Sample text</p>",
+    "html": "<p class=\"typography-section-header-headline\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "48px",
@@ -4460,7 +4460,7 @@
     }
    },
    "type.section-header-link": {
-    "html": "<p class=\"typography-section-header-link\">Sample text</p>",
+    "html": "<p class=\"typography-section-header-link\"></p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4471,7 +4471,7 @@
     }
    },
    "page.body": {
-    "html": "<body class=\"page-overview globalheader-dark\" data-component-list=\"AutoARQL FocusManager MediaHero DeepLink\" data-anim-scroll-group=\"body\">\n\t\n<aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-r",
+    "html": "<body class=\"page-overview globalheader-dark\" data-component-list=\"AutoARQL FocusManager MediaHero DeepLink\" data-anim-scroll-group=\"body\"><aside id=\"ac-localeswitcher\" data-analytics-region=\"locale switcher\" data-analytics-activitymap-r",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4486,7 +4486,7 @@
     }
    },
    "page.strong": {
-    "html": "<strong class=\"has-dynamic-content\"><span class=\"dynamic-pricing-product\" data-pricing-product=\"iphone-18-pro\" data-product-template=\"${price.display.from} \" data-acmi-idx=\"0\" data-display-style=\"\" data-pricing-loaded=\"\">From $1199 </span>\n",
+    "html": "<strong class=\"has-dynamic-content\"><span class=\"dynamic-pricing-product\" data-pricing-product=\"iphone-18-pro\" data-product-template=\"${price.display.from} \" data-acmi-idx=\"0\" data-display-style=\"\" data-pricing-loaded=\"\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -4497,7 +4497,7 @@
     }
    },
    "nav": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "position": "absolute",
      "background-color": "rgba(0, 0, 0, 0)",
@@ -4506,7 +4506,7 @@
     }
    },
    "nav.link": {
-    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"Store\" class=\"globalnav-link globalnav-subme",
+    "html": "<a href=\"/us/shop/goto/store\" data-globalnav-item-name=\"store\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"store\" data-analytics-element-engagement=\"hover - store\" aria-label=\"…\" class=\"globalnav-link globalnav-subme",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4527,7 +4527,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"viewport-content\">\n\t\t\t\t<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"transform: matrix(1, 0, 0, 1, 0, 30); opacity: 0;\">Get the high",
+    "html": "<div class=\"viewport-content\"><header class=\"section-header row\"><h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"transform: matrix(1, 0, 0, 1, 0, 30); opacity: 0;\">",
     "styles": {
      "width": "1260px",
      "max-width": "1260px",
@@ -4542,7 +4542,7 @@
     }
    },
    "section": {
-    "html": "<section class=\"section section-media-hero section-media-hero no-pad  media-layout-background ribbon-full-width\" data-anim-scroll-group=\"Media Hero\" data-analytics-section-engagement=\"name:hero\" data-ric-section=\"\">\n\t\t\t\t<div class=\"section-",
+    "html": "<section class=\"section section-media-hero section-media-hero no-pad  media-layout-background ribbon-full-width\" data-anim-scroll-group=\"Media Hero\" data-analytics-section-engagement=\"name:hero\" data-ric-section=\"\"><div class=\"section-",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -4593,7 +4593,7 @@
     }
    },
    "section.header": {
-    "html": "<header class=\"section-header row\">\n\t\t\t\t\t<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"transform: matrix(1, 0, 0, 1, 0, 30); opacity: 0;\">Get the highlights.</h2>\n\t\t\t\t\t<div class=\"secti",
+    "html": "<header class=\"section-header row\"><h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"transform: matrix(1, 0, 0, 1, 0, 30); opacity: 0;\"></h2><div class=\"secti",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -4627,7 +4627,7 @@
     }
    },
    "section.header-links": {
-    "html": "<ul class=\"section-header-cta-list typography-section-header-link column\">\n\t\t\t\t\t\t\t<li class=\"section-header-cta-item section-header-cta-item-link1\" data-staggered-item=\"\" style=\"transform: matrix(1, 0, 0, 1, 0, 30); opacity: 0;\">\n\t\t\t\t\t\t\t\t<a",
+    "html": "<ul class=\"section-header-cta-list typography-section-header-link column\"><li class=\"section-header-cta-item section-header-cta-item-link1\" data-staggered-item=\"\" style=\"transform: matrix(1, 0, 0, 1, 0, 30); opacity: 0;\"><a",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4687,7 +4687,7 @@
     }
    },
    "section.battery": {
-    "html": "<section id=\"battery\" class=\"section section-battery section-product-story preserve-pad-bottom theme-dark\" data-anim-scroll-group=\"Battery\" data-deep-link=\"battery\" data-ric-section=\"\">\n\t\t\t<div class=\"viewport-content\">\n\t\t\t\t<div class=\"ric-",
+    "html": "<section id=\"battery\" class=\"section section-battery section-product-story preserve-pad-bottom theme-dark\" data-anim-scroll-group=\"Battery\" data-deep-link=\"battery\" data-ric-section=\"\"><div class=\"viewport-content\"><div class=\"ric-",
     "styles": {
      "padding-top": "144px",
      "padding-right": "0px",
@@ -4710,7 +4710,7 @@
     }
    },
    "section.headline": {
-    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"transform: matrix(1, 0, 0, 1, 0, 30); opacity: 0;\">Get the highlights.</h2>",
+    "html": "<h2 class=\"section-header-headline typography-section-header-headline\" data-staggered-item=\"\" style=\"transform: matrix(1, 0, 0, 1, 0, 30); opacity: 0;\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "48px",
@@ -4749,7 +4749,7 @@
     }
    },
    "tile.rounded": {
-    "html": "<div class=\"card tile tile-rounded\">\n\t\t\t\t\t\t\t\t\t<div class=\"caption-container large-pin-top-center\" role=\"none\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"caption-animation-container pin-offset\" data-headline=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<p class=\"caption typography-media-car",
+    "html": "<div class=\"card tile tile-rounded\"><div class=\"caption-container large-pin-top-center\" role=\"none\"><div class=\"caption-animation-container pin-offset\" data-headline=\"\"><p class=\"caption typography-media-car",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -4777,7 +4777,7 @@
     }
    },
    "tile.rounded-light": {
-    "html": "<div class=\"card tile card-hover tile-rounded\" data-component-list=\"Card WillChange\" style=\"--card-element-scale: 1.0161290322580645;\">\n\t\t\t\t\t\t\t\t\t<div class=\"feature-card-content image-inline\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"feature-card-copy-contain",
+    "html": "<div class=\"card tile card-hover tile-rounded\" data-component-list=\"Card WillChange\" style=\"--card-element-scale: 1.0161290322580645;\"><div class=\"feature-card-content image-inline\"><div class=\"feature-card-copy-contain",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -4804,7 +4804,7 @@
     }
    },
    "paddle": {
-    "html": "<button aria-label=\"Previous item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&q",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&q",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -4900,7 +4900,7 @@
     }
    },
    "paddle.icon": {
-    "html": "<svg class=\"icon-control icon-control-chevronleft\" viewBox=\"0 0 36 36\">\n                        \t\t\t\t\t      <path d=\"m20 25c-.3838 0-.7676-.1465-1.0605-.4395l-5.5-5.5c-.5859-.5854-.5859-1.5356 0-2.1211l5.5-5.5c.5859-.5859 1.5352-.5859 2.1211",
+    "html": "<svg class=\"icon-control icon-control-chevronleft\" viewBox=\"0 0 36 36\"><path d=\"m20 25c-.3838 0-.7676-.1465-1.0605-.4395l-5.5-5.5c-.5859-.5854-.5859-1.5356 0-2.1211l5.5-5.5c.5859-.5859 1.5352-.5859 2.1211",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -4913,7 +4913,7 @@
     }
    },
    "footer": {
-    "html": "<footer id=\"ac-globalfooter\" class=\"js\" lang=\"en-US\" dir=\"ltr\" data-analytics-region=\"global footer\" role=\"contentinfo\" aria-labelledby=\"ac-gf-label\">\n\t\t<div class=\"ac-gf-content\" data-nosnippet=\"\">\n\t\t\t<h2 class=\"ac-gf-label\" id=\"ac-gf-labe",
+    "html": "<footer id=\"ac-globalfooter\" class=\"js\" lang=\"en-US\" dir=\"ltr\" data-analytics-region=\"global footer\" role=\"contentinfo\" aria-labelledby=\"ac-gf-label\"><div class=\"ac-gf-content\" data-nosnippet=\"\"><h2 class=\"ac-gf-label\" id=\"ac-gf-labe",
     "styles": {
      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4925,7 +4925,7 @@
     }
    },
    "footer.title": {
-    "html": "<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>",
+    "html": "<span class=\"ac-gf-directory-column-section-title-text\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4936,7 +4936,7 @@
     }
    },
    "footer.link": {
-    "html": "<a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\">Store</a>",
+    "html": "<a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4963,13 +4963,13 @@
     }
    },
    "footer.shop": {
-    "html": "<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\">\n\t\tMore ways to shop: <a href=\"/retail/\" data-analytics-title=\"find an apple store\">Find an Apple Store</a> or <a href=\"https://locate.apple.com/\" data-analytics-title=\"other retai",
+    "html": "<div class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\"><a href=\"/retail/\" data-analytics-title=\"find an apple store\"></a><a href=\"https://locate.apple.com/\" data-analytics-title=\"other retai",
     "styles": {
      "border-bottom-color": "rgba(0, 0, 0, 0.16)"
     }
    },
    "divider": {
-    "html": "<div class=\"callout-subsection-copy-block keyline typography-callout-elevated\">\n\t\t\t\t\t\t\t<p>More power for all your AI tasks. And faster Apple&nbsp;Intelligence thanks to new Neural Accelerators, a Dual 16‑core Neural&nbsp;Engine, and 50&nbsp",
+    "html": "<div class=\"callout-subsection-copy-block keyline typography-callout-elevated\"><p>",
     "styles": {
      "border-top-width": "1px",
      "border-top-style": "solid",
@@ -4977,7 +4977,7 @@
     }
    },
    "gallery.scroller": {
-    "html": "<div class=\"scroll-container\" tabindex=\"-1\">\n\t\t\t\t\t\t<div class=\"item-container\">\n\t\t\t\t\t\t\t<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\">\n\t\t\t\t\t\t\t\t<li class=\"card-container ",
+    "html": "<div class=\"scroll-container\" tabindex=\"-1\"><div class=\"item-container\"><ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\"><li class=\"card-container ",
     "styles": {
      "overflow-x": "scroll",
      "overflow-y": "auto",
@@ -4995,7 +4995,7 @@
     }
    },
    "gallery.items": {
-    "html": "<div class=\"item-container\">\n\t\t\t\t\t\t\t<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\">\n\t\t\t\t\t\t\t\t<li class=\"card-container caption-tile gallery-item wide current\" data-analyt",
+    "html": "<div class=\"item-container\"><ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\"><li class=\"card-container caption-tile gallery-item wide current\" data-analyt",
     "styles": {
      "padding-left": "170px",
      "padding-right": "170px"
@@ -5006,7 +5006,7 @@
     }
    },
    "gallery.set": {
-    "html": "<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\">\n\t\t\t\t\t\t\t\t<li class=\"card-container caption-tile gallery-item wide current\" data-analytics-gallery-item-id=\"pro controls\" d",
+    "html": "<ul class=\"card-set grid card-set-full-bleed caption-tile-set\" role=\"list\" aria-labelledby=\"control-gallery-headline\"><li class=\"card-container caption-tile gallery-item wide current\" data-analytics-gallery-item-id=\"pro controls\" d",
     "styles": {
      "display": "grid",
      "column-gap": "20px"
@@ -5044,7 +5044,7 @@
     }
    },
    "gallery.nav-list": {
-    "html": "<ul>\n\t\t\t\t\t\t\t<li class=\"left-item\"><button aria-label=\"Previous item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quo",
+    "html": "<ul><li class=\"left-item\"><button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-previous\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quo",
     "styles": {
      "display": "flex",
      "column-gap": "18px",
@@ -5056,7 +5056,7 @@
     }
    },
    "paddle.next": {
-    "html": "<button aria-label=\"Next item, Camera System gallery\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&quot;.gal",
+    "html": "<button aria-label=\"…\" class=\"paddlenav-arrow paddlenav-arrow-next\" data-focus-expression=\"{&quot;expression&quot;:&quot;max(a0t - (50vh - 50a0h), a0b - 100vh + h)&quot;,&quot;anchors-closest&quot;:[&quot;.gal",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -5151,7 +5151,7 @@
     }
    },
    "gallery.dots": {
-    "html": "<ul role=\"tablist\" aria-label=\"Highlights tablist\" class=\"dotnav-items\" style=\"--dotnav-count: 5\">\n\t\t\t\t\t\t\t\t\t\t<li role=\"presentation\" class=\"dotnav-item current aap-media-card-gallery__dotnav-item\" style=\"--item-index: 0;\">\n\t\t\t\t\t\t\t\t\t\t\t<a id=",
+    "html": "<ul role=\"tablist\" aria-label=\"…\" class=\"dotnav-items\" style=\"--dotnav-count: 5\"><li role=\"presentation\" class=\"dotnav-item current aap-media-card-gallery__dotnav-item\" style=\"--item-index: 0;\"><a id=",
     "styles": {
      "display": "flex",
      "flex-direction": "row",
@@ -5167,7 +5167,7 @@
     }
    },
    "gallery.dot-item": {
-    "html": "<li role=\"presentation\" class=\"dotnav-item aap-media-card-gallery__dotnav-item\" style=\"--item-index: 1;\">\n\t\t\t\t\t\t\t\t\t\t\t<a id=\"highlights gallery-item-2-trigger\" data-focus-expression=\"{&quot;expression&quot;: &quot;a0t - 100vh + a0h + var(--g",
+    "html": "<li role=\"presentation\" class=\"dotnav-item aap-media-card-gallery__dotnav-item\" style=\"--item-index: 1;\"><a id=\"highlights gallery-item-2-trigger\" data-focus-expression=\"{&quot;expression&quot;: &quot;a0t - 100vh + a0h + var(--g",
     "styles": {
      "margin-left": "8px",
      "margin-right": "8px",
@@ -5234,7 +5234,7 @@
     }
    },
    "link.inline": {
-    "html": "<a href=\"#cui\">a link</a>",
+    "html": "<a href=\"#cui\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -5272,7 +5272,7 @@
     }
    },
    "link.more": {
-    "html": "<a href=\"/us/shop/goto/apple_upgrade\" data-analytics-title=\"learn more - apple upgrade\" aria-label=\"Learn more, Apple Upgrade\" class=\"icon-wrapper ribbon-link\"><span class=\"icon-copy\">Learn more</span><span class=\"icon icon-after more\" aria",
+    "html": "<a href=\"/us/shop/goto/apple_upgrade\" data-analytics-title=\"learn more - apple upgrade\" aria-label=\"…\" class=\"icon-wrapper ribbon-link\"><span class=\"icon-copy\"></span><span class=\"icon icon-after more\" aria",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -5312,7 +5312,7 @@
     }
    },
    "stat.content": {
-    "html": "<div class=\"stat-content\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">Up to</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-value\">25 more hours</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"stat-caption\">video playback on <br class=\"small-hide\">iPhone&nbsp;18&nbsp;Pro&nb",
+    "html": "<div class=\"stat-content\"><span class=\"stat-caption\"></span><span class=\"stat-value\"></span><span class=\"stat-caption\"><br class=\"small-hide\">",
     "styles": {
      "padding-top": "2px",
      "padding-bottom": "2px",
@@ -5321,7 +5321,7 @@
     }
    },
    "footnote.link": {
-    "html": "<a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a>",
+    "html": "<a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "color": "rgb(245, 245, 247)",
@@ -5331,7 +5331,7 @@
     }
    },
    "stat.value": {
-    "html": "<span class=\"stat-value\">25 more hours</span>",
+    "html": "<span class=\"stat-value\"></span>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -5345,7 +5345,7 @@
     }
    },
    "stat.caption": {
-    "html": "<span class=\"stat-caption\">Up to</span>",
+    "html": "<span class=\"stat-caption\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -5357,7 +5357,7 @@
     }
    },
    "footnote": {
-    "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"Footnote ◊ symbol\" data-modal-close=\"\">◊</a></sup>",
+    "html": "<sup data-footnote=\"diamond-apple-upgrade\" class=\"footnote footnote-diamond\"><a href=\"#footnote-3\" aria-label=\"…\" data-modal-close=\"\"></a></sup>",
     "styles": {
      "font-feature-settings": "\"numr\"",
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
@@ -5408,7 +5408,7 @@
     }
    },
    "localnav.wrap": {
-    "html": "<div class=\"localnav-wrap\">\n\t\t\t\t<div class=\"content-collapsed-wrap\" data-analytics-activitymap-region-id=\"local nav\">\n\t\t\t\t\t<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">",
+    "html": "<div class=\"localnav-wrap\"><div class=\"content-collapsed-wrap\" data-analytics-activitymap-region-id=\"local nav\"><a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">",
     "styles": {
      "padding-top": "12px",
      "padding-right": "0px",
@@ -5438,7 +5438,7 @@
     }
    },
    "localnav.product": {
-    "html": "<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\">iPhone&nbsp;18&nbsp;Pro</a>",
+    "html": "<a href=\"/iphone-18-pro/\" class=\"product-name typography-localnav-product-name\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -5449,7 +5449,7 @@
     }
    },
    "localnav.explore": {
-    "html": "<button class=\"typography-caption cta explore\" data-analytics-title=\"explore | open modal\" data-analytics-click=\"prop3:explore | open modal\" aria-label=\"Explore iPhone 18 Pro\" data-analytics-intrapage-link=\"\" style=\"--buy-button-width: 41px",
+    "html": "<button class=\"typography-caption cta explore\" data-analytics-title=\"explore | open modal\" data-analytics-click=\"prop3:explore | open modal\" aria-label=\"…\" data-analytics-intrapage-link=\"\" style=\"--buy-button-width: 41px",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -5510,7 +5510,7 @@
     }
    },
    "localnav.buy": {
-    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_18_pro\" aria-label=\"Buy, iPhone 18 Pro\" class=\"typography-caption cta buy\" data-analytics-title=\"buy - iphone 18 pro\">\n\t\t\t\t\t\t\t\tBuy\n\t\t\t\t\t\t\t</a>",
+    "html": "<a href=\"/us/shop/goto/buy_iphone/iphone_18_pro\" aria-label=\"…\" class=\"typography-caption cta buy\" data-analytics-title=\"buy - iphone 18 pro\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -5571,7 +5571,7 @@
     }
    },
    "nav.search": {
-    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"Search apple.com\" aria-expanded=\"false\" aria-controls=\"globalnav-submen",
+    "html": "<a role=\"button\" id=\"globalnav-menubutton-link-search\" href=\"/us/search\" data-topnav-flyout-trigger-regular=\"true\" data-topnav-flyout-trigger-compact=\"true\" aria-label=\"…\" aria-expanded=\"false\" aria-controls=\"globalnav-submen",
     "styles": {
      "color": "rgba(255, 255, 255, 0.8)"
     },

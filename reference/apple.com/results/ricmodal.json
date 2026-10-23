@@ -51,7 +51,7 @@
     }
    },
    "container": {
-    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
+    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\"><div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
     "styles": {
      "padding-top": "28px",
      "padding-right": "10px",
@@ -73,7 +73,7 @@
     }
    },
    "overlay": {
-    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-content-wrapper\" data-modal-content-",
+    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\"><div class=\"ric-modal-content-wrapper\" data-modal-content-",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -106,7 +106,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"modal-header\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\"><div class=\"modal-header\"><div class=\"ric-modal-viewport-content\">",
     "styles": {
      "padding-top": "76px",
      "padding-right": "0px",
@@ -128,7 +128,7 @@
     }
    },
    "viewport": {
-    "html": "<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\">Apple&nbsp;Trade&nbsp;In</h2>\n\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-viewport-content\"><h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\"></h2>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "23.125px",
@@ -147,7 +147,7 @@
     }
    },
    "close.wrapper": {
-    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t       ",
+    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\"><button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">",
     "styles": {
      "position": "sticky",
      "top": "0px",
@@ -171,7 +171,7 @@
     }
    },
    "close": {
-    "html": "<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t                                      <span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n ",
+    "html": "<button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\"><span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">",
     "styles": {
      "width": "44px",
      "height": "44px",
@@ -202,7 +202,7 @@
     }
    },
    "close.icon": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -224,7 +224,7 @@
     }
    },
    "close.svg": {
-    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t\t\t                                              <path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
+    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -239,7 +239,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -323,7 +323,7 @@
     }
    },
    "container": {
-    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
+    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\"><div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
     "styles": {
      "padding-top": "28px",
      "padding-right": "10px",
@@ -345,7 +345,7 @@
     }
    },
    "overlay": {
-    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-content-wrapper\" data-modal-content-",
+    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\"><div class=\"ric-modal-content-wrapper\" data-modal-content-",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -378,7 +378,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"modal-header\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\"><div class=\"modal-header\"><div class=\"ric-modal-viewport-content\">",
     "styles": {
      "padding-top": "76px",
      "padding-right": "0px",
@@ -400,7 +400,7 @@
     }
    },
    "viewport": {
-    "html": "<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\">Apple&nbsp;Trade&nbsp;In</h2>\n\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-viewport-content\"><h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\"></h2>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "30px",
@@ -419,7 +419,7 @@
     }
    },
    "close.wrapper": {
-    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t       ",
+    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\"><button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">",
     "styles": {
      "position": "sticky",
      "top": "0px",
@@ -443,7 +443,7 @@
     }
    },
    "close": {
-    "html": "<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t                                      <span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n ",
+    "html": "<button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\"><span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">",
     "styles": {
      "width": "44px",
      "height": "44px",
@@ -474,7 +474,7 @@
     }
    },
    "close.icon": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -496,7 +496,7 @@
     }
    },
    "close.svg": {
-    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t\t\t                                              <path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
+    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -511,7 +511,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -595,7 +595,7 @@
     }
    },
    "container": {
-    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
+    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\"><div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
     "styles": {
      "padding-top": "28px",
      "padding-right": "10px",
@@ -617,7 +617,7 @@
     }
    },
    "overlay": {
-    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-content-wrapper\" data-modal-content-",
+    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\"><div class=\"ric-modal-content-wrapper\" data-modal-content-",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -650,7 +650,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"modal-header\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\"><div class=\"modal-header\"><div class=\"ric-modal-viewport-content\">",
     "styles": {
      "padding-top": "76px",
      "padding-right": "0px",
@@ -672,7 +672,7 @@
     }
    },
    "viewport": {
-    "html": "<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\">Apple&nbsp;Trade&nbsp;In</h2>\n\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-viewport-content\"><h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\"></h2>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "30px",
@@ -691,7 +691,7 @@
     }
    },
    "close.wrapper": {
-    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t       ",
+    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\"><button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">",
     "styles": {
      "position": "sticky",
      "top": "0px",
@@ -715,7 +715,7 @@
     }
    },
    "close": {
-    "html": "<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t                                      <span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n ",
+    "html": "<button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\"><span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">",
     "styles": {
      "width": "44px",
      "height": "44px",
@@ -746,7 +746,7 @@
     }
    },
    "close.icon": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -768,7 +768,7 @@
     }
    },
    "close.svg": {
-    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t\t\t                                              <path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
+    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -783,7 +783,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -867,7 +867,7 @@
     }
    },
    "container": {
-    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
+    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\"><div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
     "styles": {
      "padding-top": "40px",
      "padding-right": "0px",
@@ -889,7 +889,7 @@
     }
    },
    "overlay": {
-    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-content-wrapper\" data-modal-content-",
+    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\"><div class=\"ric-modal-content-wrapper\" data-modal-content-",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -922,7 +922,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"modal-header\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\"><div class=\"modal-header\"><div class=\"ric-modal-viewport-content\">",
     "styles": {
      "padding-top": "76px",
      "padding-right": "0px",
@@ -944,7 +944,7 @@
     }
    },
    "viewport": {
-    "html": "<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\">Apple&nbsp;Trade&nbsp;In</h2>\n\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-viewport-content\"><h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\"></h2>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "76px",
@@ -963,7 +963,7 @@
     }
    },
    "close.wrapper": {
-    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t       ",
+    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\"><button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">",
     "styles": {
      "position": "sticky",
      "top": "0px",
@@ -987,7 +987,7 @@
     }
    },
    "close": {
-    "html": "<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t                                      <span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n ",
+    "html": "<button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\"><span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">",
     "styles": {
      "width": "44px",
      "height": "44px",
@@ -1018,7 +1018,7 @@
     }
    },
    "close.icon": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -1040,7 +1040,7 @@
     }
    },
    "close.svg": {
-    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t\t\t                                              <path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
+    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -1055,7 +1055,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -1139,7 +1139,7 @@
     }
    },
    "container": {
-    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
+    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\"><div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
     "styles": {
      "padding-top": "40px",
      "padding-right": "0px",
@@ -1161,7 +1161,7 @@
     }
    },
    "overlay": {
-    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-content-wrapper\" data-modal-content-",
+    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\"><div class=\"ric-modal-content-wrapper\" data-modal-content-",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1194,7 +1194,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"modal-header\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\"><div class=\"modal-header\"><div class=\"ric-modal-viewport-content\">",
     "styles": {
      "padding-top": "76px",
      "padding-right": "0px",
@@ -1216,7 +1216,7 @@
     }
    },
    "viewport": {
-    "html": "<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\">Apple&nbsp;Trade&nbsp;In</h2>\n\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-viewport-content\"><h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\"></h2>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "76px",
@@ -1235,7 +1235,7 @@
     }
    },
    "close.wrapper": {
-    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t       ",
+    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\"><button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">",
     "styles": {
      "position": "sticky",
      "top": "0px",
@@ -1259,7 +1259,7 @@
     }
    },
    "close": {
-    "html": "<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t                                      <span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n ",
+    "html": "<button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\"><span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">",
     "styles": {
      "width": "44px",
      "height": "44px",
@@ -1290,7 +1290,7 @@
     }
    },
    "close.icon": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -1312,7 +1312,7 @@
     }
    },
    "close.svg": {
-    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t\t\t                                              <path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
+    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -1327,7 +1327,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -1411,7 +1411,7 @@
     }
    },
    "container": {
-    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
+    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\"><div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
     "styles": {
      "padding-top": "40px",
      "padding-right": "0px",
@@ -1433,7 +1433,7 @@
     }
    },
    "overlay": {
-    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-content-wrapper\" data-modal-content-",
+    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\"><div class=\"ric-modal-content-wrapper\" data-modal-content-",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1466,7 +1466,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"modal-header\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\"><div class=\"modal-header\"><div class=\"ric-modal-viewport-content\">",
     "styles": {
      "padding-top": "76px",
      "padding-right": "0px",
@@ -1488,7 +1488,7 @@
     }
    },
    "viewport": {
-    "html": "<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\">Apple&nbsp;Trade&nbsp;In</h2>\n\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-viewport-content\"><h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\"></h2>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "76px",
@@ -1507,7 +1507,7 @@
     }
    },
    "close.wrapper": {
-    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t       ",
+    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\"><button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">",
     "styles": {
      "position": "sticky",
      "top": "0px",
@@ -1531,7 +1531,7 @@
     }
    },
    "close": {
-    "html": "<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t                                      <span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n ",
+    "html": "<button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\"><span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">",
     "styles": {
      "width": "44px",
      "height": "44px",
@@ -1562,7 +1562,7 @@
     }
    },
    "close.icon": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -1584,7 +1584,7 @@
     }
    },
    "close.svg": {
-    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t\t\t                                              <path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
+    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -1599,7 +1599,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -1683,7 +1683,7 @@
     }
    },
    "container": {
-    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
+    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\"><div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
     "styles": {
      "padding-top": "40px",
      "padding-right": "0px",
@@ -1705,7 +1705,7 @@
     }
    },
    "overlay": {
-    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-content-wrapper\" data-modal-content-",
+    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\"><div class=\"ric-modal-content-wrapper\" data-modal-content-",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1738,7 +1738,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"modal-header\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\"><div class=\"modal-header\"><div class=\"ric-modal-viewport-content\">",
     "styles": {
      "padding-top": "76px",
      "padding-right": "0px",
@@ -1760,7 +1760,7 @@
     }
    },
    "viewport": {
-    "html": "<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\">Apple&nbsp;Trade&nbsp;In</h2>\n\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-viewport-content\"><h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\"></h2>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "76px",
@@ -1779,7 +1779,7 @@
     }
    },
    "close.wrapper": {
-    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t       ",
+    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\"><button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">",
     "styles": {
      "position": "sticky",
      "top": "0px",
@@ -1803,7 +1803,7 @@
     }
    },
    "close": {
-    "html": "<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t                                      <span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n ",
+    "html": "<button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\"><span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">",
     "styles": {
      "width": "44px",
      "height": "44px",
@@ -1834,7 +1834,7 @@
     }
    },
    "close.icon": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -1856,7 +1856,7 @@
     }
    },
    "close.svg": {
-    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t\t\t                                              <path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
+    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -1871,7 +1871,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -1955,7 +1955,7 @@
     }
    },
    "container": {
-    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
+    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\"><div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
     "styles": {
      "padding-top": "40px",
      "padding-right": "0px",
@@ -1977,7 +1977,7 @@
     }
    },
    "overlay": {
-    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-content-wrapper\" data-modal-content-",
+    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\"><div class=\"ric-modal-content-wrapper\" data-modal-content-",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2010,7 +2010,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"modal-header\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\"><div class=\"modal-header\"><div class=\"ric-modal-viewport-content\">",
     "styles": {
      "padding-top": "76px",
      "padding-right": "0px",
@@ -2032,7 +2032,7 @@
     }
    },
    "viewport": {
-    "html": "<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\">Apple&nbsp;Trade&nbsp;In</h2>\n\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-viewport-content\"><h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\"></h2>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "76px",
@@ -2051,7 +2051,7 @@
     }
    },
    "close.wrapper": {
-    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t       ",
+    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\"><button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">",
     "styles": {
      "position": "sticky",
      "top": "0px",
@@ -2075,7 +2075,7 @@
     }
    },
    "close": {
-    "html": "<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t                                      <span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n ",
+    "html": "<button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\"><span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">",
     "styles": {
      "width": "44px",
      "height": "44px",
@@ -2106,7 +2106,7 @@
     }
    },
    "close.icon": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -2128,7 +2128,7 @@
     }
    },
    "close.svg": {
-    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t\t\t                                              <path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
+    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -2143,7 +2143,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -2228,7 +2228,7 @@
     }
    },
    "container": {
-    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
+    "html": "<div class=\"ric-modal-overlay-container\" data-modal-overlay-container=\"\" data-modal-close=\"\"><div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opaci",
     "styles": {
      "padding-top": "40px",
      "padding-right": "0px",
@@ -2250,7 +2250,7 @@
     }
    },
    "overlay": {
-    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-content-wrapper\" data-modal-content-",
+    "html": "<div class=\"ric-modal-overlay\" data-modal-overlay=\"\" role=\"dialog\" aria-labelledby=\"trade-in-modal-headline\" tabindex=\"-1\" style=\"opacity: 1;\" data-focus-method=\"mouse\"><div class=\"ric-modal-content-wrapper\" data-modal-content-",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2283,7 +2283,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"modal-header\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-content-wrapper\" data-modal-content-wrapper=\"\" data-analytics-activitymap-region-id=\"apple trade in modal\"><div class=\"modal-header\"><div class=\"ric-modal-viewport-content\">",
     "styles": {
      "padding-top": "76px",
      "padding-right": "0px",
@@ -2305,7 +2305,7 @@
     }
    },
    "viewport": {
-    "html": "<div class=\"ric-modal-viewport-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\">Apple&nbsp;Trade&nbsp;In</h2>\n\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "html": "<div class=\"ric-modal-viewport-content\"><h2 class=\"typography-modal-header-topic-label modal-header-topic-label\" data-modal-dialog-labelledby-target=\"\" id=\"trade-in-modal-headline\"></h2>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "76px",
@@ -2324,7 +2324,7 @@
     }
    },
    "close.wrapper": {
-    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t       ",
+    "html": "<div class=\"ric-modal-close-button-wrapper\" data-modal-close-button-wrapper=\"\"><button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">",
     "styles": {
      "position": "sticky",
      "top": "0px",
@@ -2348,7 +2348,7 @@
     }
    },
    "close": {
-    "html": "<button aria-label=\"Close trade in modal\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\">\n                \t\t\t                                      <span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n ",
+    "html": "<button aria-label=\"…\" class=\"ric-modal-close-button\" data-modal-close-button=\"\" data-modal-close=\"\"><span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">",
     "styles": {
      "width": "44px",
      "height": "44px",
@@ -2379,7 +2379,7 @@
     }
    },
    "close.icon": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -2401,7 +2401,7 @@
     }
    },
    "close.svg": {
-    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t\t\t                                              <path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
+    "html": "<svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><path d=\"m20.1211 18 3.4395-3.4395c.5859-.5854.5859-1.5356 0-2.1211-.5859-",
     "styles": {
      "width": "36px",
      "height": "36px",
@@ -2416,7 +2416,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",

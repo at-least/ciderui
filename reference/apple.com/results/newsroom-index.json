@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "feed": {
-    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\">",
     "styles": {
      "padding-top": "32px",
      "padding-right": "0px",
@@ -29,7 +29,7 @@
     }
    },
    "feed.content": {
-    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-t",
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-t",
     "styles": {
      "width": "341.25px",
      "max-width": "366px",
@@ -44,7 +44,7 @@
     }
    },
    "feed.head": {
-    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "html": "<h2 class=\"section-head\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -78,7 +78,7 @@
     }
    },
    "tiles.item": {
-    "html": "<li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new ",
+    "html": "<li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"…",
     "styles": {
      "grid-column-start": "1",
      "grid-column-end": "span 6",
@@ -94,7 +94,7 @@
     }
    },
    "tile.first": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"…\" data-analytics-title=\"",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -215,7 +215,7 @@
     }
    },
    "tile.first-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__description-content\"><div class=\"tile__head\"><div class=\"tile__hero--eyebrow\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__description-content\"><div class=\"tile__head\"><div class=\"tile__hero--eyebrow\"></div><div class=\"tile__headline\"></div",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -245,7 +245,7 @@
     }
    },
    "tile.first-eyebrow": {
-    "html": "<div class=\"tile__hero--eyebrow\">UPDATE</div>",
+    "html": "<div class=\"tile__hero--eyebrow\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -264,7 +264,7 @@
     }
    },
    "tile.first-headline": {
-    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -277,7 +277,7 @@
     }
    },
    "tile.first-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -290,7 +290,7 @@
     }
    },
    "tile.third": {
-    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"…\" data-analytics-title=\"app store indie games week kic",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -360,7 +360,7 @@
     }
    },
    "tile.third-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div class=\"tile__timestamp icon i",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -391,7 +391,7 @@
     }
    },
    "tile.third-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -410,7 +410,7 @@
     }
    },
    "tile.third-headline": {
-    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -423,7 +423,7 @@
     }
    },
    "tile.third-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -436,7 +436,7 @@
     }
    },
    "tile.fourth": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"…\" dat",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -506,7 +506,7 @@
     }
    },
    "tile.fourth-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div cla",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -537,7 +537,7 @@
     }
    },
    "tile.fourth-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -556,7 +556,7 @@
     }
    },
    "tile.fourth-headline": {
-    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -569,7 +569,7 @@
     }
    },
    "tile.fourth-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -582,7 +582,7 @@
     }
    },
    "tile.link": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"…\" dat",
     "styles": {
      "text-decoration-line": "none",
      "text-decoration-color": "rgb(0, 102, 204)",
@@ -592,7 +592,7 @@
   },
   "734": {
    "feed": {
-    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\">",
     "styles": {
      "padding-top": "32px",
      "padding-right": "0px",
@@ -615,7 +615,7 @@
     }
    },
    "feed.content": {
-    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-t",
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-t",
     "styles": {
      "width": "366px",
      "max-width": "366px",
@@ -630,7 +630,7 @@
     }
    },
    "feed.head": {
-    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "html": "<h2 class=\"section-head\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -664,7 +664,7 @@
     }
    },
    "tiles.item": {
-    "html": "<li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new ",
+    "html": "<li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"…",
     "styles": {
      "grid-column-start": "1",
      "grid-column-end": "span 6",
@@ -680,7 +680,7 @@
     }
    },
    "tile.first": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"…\" data-analytics-title=\"",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -801,7 +801,7 @@
     }
    },
    "tile.first-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__description-content\"><div class=\"tile__head\"><div class=\"tile__hero--eyebrow\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__description-content\"><div class=\"tile__head\"><div class=\"tile__hero--eyebrow\"></div><div class=\"tile__headline\"></div",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -831,7 +831,7 @@
     }
    },
    "tile.first-eyebrow": {
-    "html": "<div class=\"tile__hero--eyebrow\">UPDATE</div>",
+    "html": "<div class=\"tile__hero--eyebrow\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -850,7 +850,7 @@
     }
    },
    "tile.first-headline": {
-    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -863,7 +863,7 @@
     }
    },
    "tile.first-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -876,7 +876,7 @@
     }
    },
    "tile.third": {
-    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"…\" data-analytics-title=\"app store indie games week kic",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -946,7 +946,7 @@
     }
    },
    "tile.third-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div class=\"tile__timestamp icon i",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -977,7 +977,7 @@
     }
    },
    "tile.third-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -996,7 +996,7 @@
     }
    },
    "tile.third-headline": {
-    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1009,7 +1009,7 @@
     }
    },
    "tile.third-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1022,7 +1022,7 @@
     }
    },
    "tile.fourth": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"…\" dat",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1092,7 +1092,7 @@
     }
    },
    "tile.fourth-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div cla",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -1123,7 +1123,7 @@
     }
    },
    "tile.fourth-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1142,7 +1142,7 @@
     }
    },
    "tile.fourth-headline": {
-    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1155,7 +1155,7 @@
     }
    },
    "tile.fourth-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1168,7 +1168,7 @@
     }
    },
    "tile.link": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"…\" dat",
     "styles": {
      "text-decoration-line": "none",
      "text-decoration-color": "rgb(0, 102, 204)",
@@ -1178,7 +1178,7 @@
   },
   "735": {
    "feed": {
-    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\">",
     "styles": {
      "padding-top": "40px",
      "padding-right": "0px",
@@ -1201,7 +1201,7 @@
     }
    },
    "feed.content": {
-    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to",
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to",
     "styles": {
      "width": "692px",
      "max-width": "none",
@@ -1216,7 +1216,7 @@
     }
    },
    "feed.head": {
-    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "html": "<h2 class=\"section-head\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -1250,7 +1250,7 @@
     }
    },
    "tiles.item": {
-    "html": "<li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"Open up to new possibilities with iPh",
+    "html": "<li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"…",
     "styles": {
      "grid-column-start": "1",
      "grid-column-end": "span 6",
@@ -1266,7 +1266,7 @@
     }
    },
    "tile.first": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"open up to new possib",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"…\" data-analytics-title=\"open up to new possib",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1387,7 +1387,7 @@
     }
    },
    "tile.first-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div></div><div class=\"tile__timestamp",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div class=\"tile__timestamp",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -1417,7 +1417,7 @@
     }
    },
    "tile.first-eyebrow": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1436,7 +1436,7 @@
     }
    },
    "tile.first-headline": {
-    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1449,7 +1449,7 @@
     }
    },
    "tile.first-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1462,7 +1462,7 @@
     }
    },
    "tile.third": {
-    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"…\" data-analytics-title=\"app store indie games week kic",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1532,7 +1532,7 @@
     }
    },
    "tile.third-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div class=\"tile__timestamp icon i",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -1563,7 +1563,7 @@
     }
    },
    "tile.third-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1582,7 +1582,7 @@
     }
    },
    "tile.third-headline": {
-    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1595,7 +1595,7 @@
     }
    },
    "tile.third-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1608,7 +1608,7 @@
     }
    },
    "tile.fourth": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"…\" dat",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1678,7 +1678,7 @@
     }
    },
    "tile.fourth-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div cla",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -1709,7 +1709,7 @@
     }
    },
    "tile.fourth-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1728,7 +1728,7 @@
     }
    },
    "tile.fourth-headline": {
-    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1741,7 +1741,7 @@
     }
    },
    "tile.fourth-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1754,7 +1754,7 @@
     }
    },
    "tile.link": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"…\" dat",
     "styles": {
      "text-decoration-line": "none",
      "text-decoration-color": "rgb(0, 102, 204)",
@@ -1764,7 +1764,7 @@
   },
   "900": {
    "feed": {
-    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\">",
     "styles": {
      "padding-top": "40px",
      "padding-right": "0px",
@@ -1787,7 +1787,7 @@
     }
    },
    "feed.content": {
-    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to",
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to",
     "styles": {
      "width": "692px",
      "max-width": "none",
@@ -1802,7 +1802,7 @@
     }
    },
    "feed.head": {
-    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "html": "<h2 class=\"section-head\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -1836,7 +1836,7 @@
     }
    },
    "tiles.item": {
-    "html": "<li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"Open up to new possibilities with iPh",
+    "html": "<li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"…",
     "styles": {
      "grid-column-start": "1",
      "grid-column-end": "span 6",
@@ -1852,7 +1852,7 @@
     }
    },
    "tile.first": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"open up to new possib",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"…\" data-analytics-title=\"open up to new possib",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1973,7 +1973,7 @@
     }
    },
    "tile.first-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div></div><div class=\"tile__timestamp",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div class=\"tile__timestamp",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -2003,7 +2003,7 @@
     }
    },
    "tile.first-eyebrow": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2022,7 +2022,7 @@
     }
    },
    "tile.first-headline": {
-    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2035,7 +2035,7 @@
     }
    },
    "tile.first-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2048,7 +2048,7 @@
     }
    },
    "tile.third": {
-    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"…\" data-analytics-title=\"app store indie games week kic",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2118,7 +2118,7 @@
     }
    },
    "tile.third-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div class=\"tile__timestamp icon i",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -2149,7 +2149,7 @@
     }
    },
    "tile.third-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2168,7 +2168,7 @@
     }
    },
    "tile.third-headline": {
-    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2181,7 +2181,7 @@
     }
    },
    "tile.third-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2194,7 +2194,7 @@
     }
    },
    "tile.fourth": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"…\" dat",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2264,7 +2264,7 @@
     }
    },
    "tile.fourth-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div cla",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -2295,7 +2295,7 @@
     }
    },
    "tile.fourth-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2314,7 +2314,7 @@
     }
    },
    "tile.fourth-headline": {
-    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2327,7 +2327,7 @@
     }
    },
    "tile.fourth-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2340,7 +2340,7 @@
     }
    },
    "tile.link": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"…\" dat",
     "styles": {
      "text-decoration-line": "none",
      "text-decoration-color": "rgb(0, 102, 204)",
@@ -2350,7 +2350,7 @@
   },
   "1068": {
    "feed": {
-    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\">",
     "styles": {
      "padding-top": "40px",
      "padding-right": "0px",
@@ -2373,7 +2373,7 @@
     }
    },
    "feed.content": {
-    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to",
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to",
     "styles": {
      "width": "692px",
      "max-width": "none",
@@ -2388,7 +2388,7 @@
     }
    },
    "feed.head": {
-    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "html": "<h2 class=\"section-head\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -2422,7 +2422,7 @@
     }
    },
    "tiles.item": {
-    "html": "<li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"Open up to new possibilities with iPh",
+    "html": "<li role=\"listitem\" class=\"tile-item item-2up\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"…",
     "styles": {
      "grid-column-start": "1",
      "grid-column-end": "span 6",
@@ -2438,7 +2438,7 @@
     }
    },
    "tile.first": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"open up to new possib",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-2up\" aria-label=\"…\" data-analytics-title=\"open up to new possib",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2559,7 +2559,7 @@
     }
    },
    "tile.first-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div></div><div class=\"tile__timestamp",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div class=\"tile__timestamp",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -2589,7 +2589,7 @@
     }
    },
    "tile.first-eyebrow": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2608,7 +2608,7 @@
     }
    },
    "tile.first-headline": {
-    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2621,7 +2621,7 @@
     }
    },
    "tile.first-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2634,7 +2634,7 @@
     }
    },
    "tile.third": {
-    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"…\" data-analytics-title=\"app store indie games week kic",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2704,7 +2704,7 @@
     }
    },
    "tile.third-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div class=\"tile__timestamp icon i",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -2735,7 +2735,7 @@
     }
    },
    "tile.third-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2754,7 +2754,7 @@
     }
    },
    "tile.third-headline": {
-    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2767,7 +2767,7 @@
     }
    },
    "tile.third-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2780,7 +2780,7 @@
     }
    },
    "tile.fourth": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"…\" dat",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2850,7 +2850,7 @@
     }
    },
    "tile.fourth-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div cla",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -2881,7 +2881,7 @@
     }
    },
    "tile.fourth-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -2900,7 +2900,7 @@
     }
    },
    "tile.fourth-headline": {
-    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -2913,7 +2913,7 @@
     }
    },
    "tile.fourth-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -2926,7 +2926,7 @@
     }
    },
    "tile.link": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-2up\" aria-label=\"…\" dat",
     "styles": {
      "text-decoration-line": "none",
      "text-decoration-color": "rgb(0, 102, 204)",
@@ -2936,7 +2936,7 @@
   },
   "1069": {
    "feed": {
-    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\">",
     "styles": {
      "padding-top": "52px",
      "padding-right": "0px",
@@ -2959,7 +2959,7 @@
     }
    },
    "feed.content": {
-    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-t",
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-t",
     "styles": {
      "width": "980px",
      "max-width": "none",
@@ -2974,7 +2974,7 @@
     }
    },
    "feed.head": {
-    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "html": "<h2 class=\"section-head\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -3008,7 +3008,7 @@
     }
    },
    "tiles.item": {
-    "html": "<li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new ",
+    "html": "<li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"…",
     "styles": {
      "grid-column-start": "1",
      "grid-column-end": "-1",
@@ -3024,7 +3024,7 @@
     }
    },
    "tile.first": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"…\" data-analytics-title=\"",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3145,7 +3145,7 @@
     }
    },
    "tile.first-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__description-content\"><div class=\"tile__head\"><div class=\"tile__hero--eyebrow\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__description-content\"><div class=\"tile__head\"><div class=\"tile__hero--eyebrow\"></div><div class=\"tile__headline\"></div",
     "styles": {
      "padding-top": "32px",
      "padding-right": "32px",
@@ -3175,7 +3175,7 @@
     }
    },
    "tile.first-eyebrow": {
-    "html": "<div class=\"tile__hero--eyebrow\">UPDATE</div>",
+    "html": "<div class=\"tile__hero--eyebrow\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -3194,7 +3194,7 @@
     }
    },
    "tile.first-headline": {
-    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -3207,7 +3207,7 @@
     }
    },
    "tile.first-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -3220,7 +3220,7 @@
     }
    },
    "tile.third": {
-    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"…\" data-analytics-title=\"app store indie games week kic",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3290,7 +3290,7 @@
     }
    },
    "tile.third-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div class=\"tile__timestamp icon i",
     "styles": {
      "padding-top": "32px",
      "padding-right": "32px",
@@ -3321,7 +3321,7 @@
     }
    },
    "tile.third-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -3340,7 +3340,7 @@
     }
    },
    "tile.third-headline": {
-    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -3353,7 +3353,7 @@
     }
    },
    "tile.third-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -3366,7 +3366,7 @@
     }
    },
    "tile.fourth": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"…\" dat",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3436,7 +3436,7 @@
     }
    },
    "tile.fourth-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div cla",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -3467,7 +3467,7 @@
     }
    },
    "tile.fourth-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -3486,7 +3486,7 @@
     }
    },
    "tile.fourth-headline": {
-    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -3499,7 +3499,7 @@
     }
    },
    "tile.fourth-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -3512,7 +3512,7 @@
     }
    },
    "tile.link": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"…\" dat",
     "styles": {
      "text-decoration-line": "none",
      "text-decoration-color": "rgb(0, 102, 204)",
@@ -3522,7 +3522,7 @@
   },
   "1200": {
    "feed": {
-    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\">",
     "styles": {
      "padding-top": "52px",
      "padding-right": "0px",
@@ -3545,7 +3545,7 @@
     }
    },
    "feed.content": {
-    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-t",
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-t",
     "styles": {
      "width": "980px",
      "max-width": "none",
@@ -3560,7 +3560,7 @@
     }
    },
    "feed.head": {
-    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "html": "<h2 class=\"section-head\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -3594,7 +3594,7 @@
     }
    },
    "tiles.item": {
-    "html": "<li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new ",
+    "html": "<li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"…",
     "styles": {
      "grid-column-start": "1",
      "grid-column-end": "-1",
@@ -3610,7 +3610,7 @@
     }
    },
    "tile.first": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"…\" data-analytics-title=\"",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3731,7 +3731,7 @@
     }
    },
    "tile.first-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__description-content\"><div class=\"tile__head\"><div class=\"tile__hero--eyebrow\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__description-content\"><div class=\"tile__head\"><div class=\"tile__hero--eyebrow\"></div><div class=\"tile__headline\"></div",
     "styles": {
      "padding-top": "32px",
      "padding-right": "32px",
@@ -3761,7 +3761,7 @@
     }
    },
    "tile.first-eyebrow": {
-    "html": "<div class=\"tile__hero--eyebrow\">UPDATE</div>",
+    "html": "<div class=\"tile__hero--eyebrow\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -3780,7 +3780,7 @@
     }
    },
    "tile.first-headline": {
-    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -3793,7 +3793,7 @@
     }
    },
    "tile.first-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -3806,7 +3806,7 @@
     }
    },
    "tile.third": {
-    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"…\" data-analytics-title=\"app store indie games week kic",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -3876,7 +3876,7 @@
     }
    },
    "tile.third-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div class=\"tile__timestamp icon i",
     "styles": {
      "padding-top": "32px",
      "padding-right": "32px",
@@ -3907,7 +3907,7 @@
     }
    },
    "tile.third-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -3926,7 +3926,7 @@
     }
    },
    "tile.third-headline": {
-    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -3939,7 +3939,7 @@
     }
    },
    "tile.third-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -3952,7 +3952,7 @@
     }
    },
    "tile.fourth": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"…\" dat",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -4022,7 +4022,7 @@
     }
    },
    "tile.fourth-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div cla",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -4053,7 +4053,7 @@
     }
    },
    "tile.fourth-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4072,7 +4072,7 @@
     }
    },
    "tile.fourth-headline": {
-    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -4085,7 +4085,7 @@
     }
    },
    "tile.fourth-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -4098,7 +4098,7 @@
     }
    },
    "tile.link": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"…\" dat",
     "styles": {
      "text-decoration-line": "none",
      "text-decoration-color": "rgb(0, 102, 204)",
@@ -4108,7 +4108,7 @@
   },
   "1600": {
    "feed": {
-    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\">",
+    "html": "<section id=\"everydayfeed\" class=\"everydayfeed\" data-analytics-section-engagement=\"name:everyday\" data-anim-scroll-group=\"everyday\"><div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\">",
     "styles": {
      "padding-top": "52px",
      "padding-right": "0px",
@@ -4131,7 +4131,7 @@
     }
    },
    "feed.content": {
-    "html": "<div class=\"section-content\"><h2 class=\"section-head\">Latest News</h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-t",
+    "html": "<div class=\"section-content\"><h2 class=\"section-head\"></h2><ul role=\"list\" class=\"section-tiles\"><li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-t",
     "styles": {
      "width": "980px",
      "max-width": "none",
@@ -4146,7 +4146,7 @@
     }
    },
    "feed.head": {
-    "html": "<h2 class=\"section-head\">Latest News</h2>",
+    "html": "<h2 class=\"section-head\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -4180,7 +4180,7 @@
     }
    },
    "tiles.item": {
-    "html": "<li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new ",
+    "html": "<li role=\"listitem\" class=\"tile-item item-hero\" data-analytics-activitymap-region-id=\"everyday\"><a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"…",
     "styles": {
      "grid-column-start": "1",
      "grid-column-end": "-1",
@@ -4196,7 +4196,7 @@
     }
    },
    "tile.first": {
-    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"Open up to new possibilities with iPhone&nbsp;Duo - UPDATE - Posted on October 15, 2026\" data-analytics-title=\"",
+    "html": "<a href=\"/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/\" class=\"tile tile-1up tile-hero tile-hero \" aria-label=\"…\" data-analytics-title=\"",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -4317,7 +4317,7 @@
     }
    },
    "tile.first-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__description-content\"><div class=\"tile__head\"><div class=\"tile__hero--eyebrow\">UPDATE</div><div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__description-content\"><div class=\"tile__head\"><div class=\"tile__hero--eyebrow\"></div><div class=\"tile__headline\"></div",
     "styles": {
      "padding-top": "32px",
      "padding-right": "32px",
@@ -4347,7 +4347,7 @@
     }
    },
    "tile.first-eyebrow": {
-    "html": "<div class=\"tile__hero--eyebrow\">UPDATE</div>",
+    "html": "<div class=\"tile__hero--eyebrow\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -4366,7 +4366,7 @@
     }
    },
    "tile.first-headline": {
-    "html": "<div class=\"tile__headline\">Open up to new possibilities with iPhone&nbsp;Duo</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -4379,7 +4379,7 @@
     }
    },
    "tile.first-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\">3 days ago</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock\" data-ts=\"2026-10-15T12:59:28.566Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4392,7 +4392,7 @@
     }
    },
    "tile.third": {
-    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"App Store Indie Games Week kicks off today - UPDATE - Posted on October 12, 2026\" data-analytics-title=\"app store indie games week kic",
+    "html": "<a href=\"/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/\" class=\"tile tile-2up\" aria-label=\"…\" data-analytics-title=\"app store indie games week kic",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -4462,7 +4462,7 @@
     }
    },
    "tile.third-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">App Store Indie Games Week kicks off today</div></div><div class=\"tile__timestamp icon i",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div class=\"tile__timestamp icon i",
     "styles": {
      "padding-top": "32px",
      "padding-right": "32px",
@@ -4493,7 +4493,7 @@
     }
    },
    "tile.third-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -4512,7 +4512,7 @@
     }
    },
    "tile.third-headline": {
-    "html": "<div class=\"tile__headline\">App Store Indie Games Week kicks off today</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -4525,7 +4525,7 @@
     }
    },
    "tile.third-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\">October 12, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-12T13:59:49.734Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -4538,7 +4538,7 @@
     }
    },
    "tile.fourth": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"…\" dat",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -4608,7 +4608,7 @@
     }
    },
    "tile.fourth-description": {
-    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\">UPDATE</div><div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div></div><div cla",
+    "html": "<div class=\"tile__description\" aria-hidden=\"true\"><div class=\"tile__head\"><div class=\"tile__category undefined\"></div><div class=\"tile__headline\"></div></div><div cla",
     "styles": {
      "padding-top": "24px",
      "padding-right": "24px",
@@ -4639,7 +4639,7 @@
     }
    },
    "tile.fourth-category": {
-    "html": "<div class=\"tile__category undefined\">UPDATE</div>",
+    "html": "<div class=\"tile__category undefined\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -4658,7 +4658,7 @@
     }
    },
    "tile.fourth-headline": {
-    "html": "<div class=\"tile__headline\">Apple, The King’s Trust launch initiative to empower young creatives</div>",
+    "html": "<div class=\"tile__headline\"></div>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -4671,7 +4671,7 @@
     }
    },
    "tile.fourth-date": {
-    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\">October 7, 2026</div>",
+    "html": "<div class=\"tile__timestamp icon icon-before icon-clock icon-hide\" data-ts=\"2026-10-07T21:01:58.215Z\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -4684,7 +4684,7 @@
     }
    },
    "tile.link": {
-    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"Apple, The King’s Trust launch initiative to empower young creatives - UPDATE - Posted on October 7, 2026\" dat",
+    "html": "<a href=\"/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/\" class=\"tile tile-3up\" aria-label=\"…\" dat",
     "styles": {
      "text-decoration-line": "none",
      "text-decoration-color": "rgb(0, 102, 204)",

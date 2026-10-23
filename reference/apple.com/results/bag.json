@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "page.body": {
-    "html": "<body id=\"body-main\">\n\n    <div class=\"metrics\">\n            <noscript>\n        <img src=\"https://securemetrics.apple.com/b/ss/applestoreww/1/H.8--NS/0?…\" height=\"1\" width=\"1\" alt=\"\"/>\n    </noscript>\n\n\n        \n        \t\n\n\n        \n       ",
+    "html": "<body id=\"body-main\"><div class=\"metrics\"><noscript><img src=\"https://securemetrics.apple.com/b/ss/applestoreww/1/H.8--NS/0?…\" height=\"1\" width=\"1\" alt=\"\"/></noscript>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -21,7 +21,7 @@
     }
    },
    "header": {
-    "html": "<h1 class=\"rs-bag-header\" tabindex=\"-1\">Your bag is empty.</h1>",
+    "html": "<h1 class=\"rs-bag-header\" tabindex=\"-1\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -33,7 +33,7 @@
     }
    },
    "message": {
-    "html": "<div class=\"rs-bagempty-message\">Sign in to see if you have any saved items. Or continue shopping.</div>",
+    "html": "<div class=\"rs-bagempty-message\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -44,7 +44,7 @@
     }
    },
    "form-button": {
-    "html": "<a class=\"form-button\" href=\"https://secure.store.apple.com/shop/signIn?…\" data-evar1=\"Bag|Sign in|\" data-s-object-id=\"f226f4f3963d867dbe34ce2c3fa52d57\" data-autom=\"bag-empty-signin-button\">Sign In</a>",
+    "html": "<a class=\"form-button\" href=\"https://secure.store.apple.com/shop/signIn?…\" data-evar1=\"Bag|Sign in|\" data-s-object-id=\"f226f4f3963d867dbe34ce2c3fa52d57\" data-autom=\"bag-empty-signin-button\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -217,7 +217,7 @@
     }
    },
    "form-button.disabled": {
-    "html": "<button class=\"form-button\" disabled=\"\">Sign In</button>",
+    "html": "<button class=\"form-button\" disabled=\"\"></button>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -292,7 +292,7 @@
     }
    },
    "form-button.secondary": {
-    "html": "<a href=\"/store\" class=\"form-button form-button-secondary\" data-evar1=\"Bag|Continue Shopping|\" data-s-object-id=\"9010d407f13c8c1e4cabed85d8b04f9b\" data-autom=\"bag-empty-continueshopping-button\">Continue Shopping</a>",
+    "html": "<a href=\"/store\" class=\"form-button form-button-secondary\" data-evar1=\"Bag|Continue Shopping|\" data-s-object-id=\"9010d407f13c8c1e4cabed85d8b04f9b\" data-autom=\"bag-empty-continueshopping-button\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -504,7 +504,7 @@
     }
    },
    "accordion.item": {
-    "html": "<div data-core-accordion-item=\"\" class=\"rc-accordion-item\"><h2 class=\"as-l-container\"><span class=\"visuallyhidden\">&nbsp;</span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"false\" aria-controls=\"content-_r_0_-0\" id=\"ti",
+    "html": "<div data-core-accordion-item=\"\" class=\"rc-accordion-item\"><h2 class=\"as-l-container\"><span class=\"visuallyhidden\"></span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"false\" aria-controls=\"content-_r_0_-0\" id=\"ti",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -531,7 +531,7 @@
     }
    },
    "ribbon": {
-    "html": "<div class=\"ribbon-content-wrapper dd-fill-tertiary\">\n    <div class=\"ribbon-content row justify-content-center large-align-items-center small-align-items-center\">\n        <div class=\"column large-4 small-7\">\n        <p>\n             \n     ",
+    "html": "<div class=\"ribbon-content-wrapper dd-fill-tertiary\"><div class=\"ribbon-content row justify-content-center large-align-items-center small-align-items-center\"><div class=\"column large-4 small-7\"><p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -566,7 +566,7 @@
   },
   "900": {
    "page.body": {
-    "html": "<body id=\"body-main\">\n\n    <div class=\"metrics\">\n            <noscript>\n        <img src=\"https://securemetrics.apple.com/b/ss/applestoreww/1/H.8--NS/0?…\" height=\"1\" width=\"1\" alt=\"\"/>\n    </noscript>\n\n\n        \n        \t\n\n\n        \n       ",
+    "html": "<body id=\"body-main\"><div class=\"metrics\"><noscript><img src=\"https://securemetrics.apple.com/b/ss/applestoreww/1/H.8--NS/0?…\" height=\"1\" width=\"1\" alt=\"\"/></noscript>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -581,7 +581,7 @@
     }
    },
    "header": {
-    "html": "<h1 class=\"rs-bag-header\" tabindex=\"-1\">Your bag is empty.</h1>",
+    "html": "<h1 class=\"rs-bag-header\" tabindex=\"-1\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "40px",
@@ -593,7 +593,7 @@
     }
    },
    "message": {
-    "html": "<div class=\"rs-bagempty-message\">Sign in to see if you have any saved items. Or continue shopping.</div>",
+    "html": "<div class=\"rs-bagempty-message\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -604,7 +604,7 @@
     }
    },
    "form-button": {
-    "html": "<a class=\"form-button\" href=\"https://secure.store.apple.com/shop/signIn?…\" data-evar1=\"Bag|Sign in|\" data-s-object-id=\"f226f4f3963d867dbe34ce2c3fa52d57\" data-autom=\"bag-empty-signin-button\">Sign In</a>",
+    "html": "<a class=\"form-button\" href=\"https://secure.store.apple.com/shop/signIn?…\" data-evar1=\"Bag|Sign in|\" data-s-object-id=\"f226f4f3963d867dbe34ce2c3fa52d57\" data-autom=\"bag-empty-signin-button\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -777,7 +777,7 @@
     }
    },
    "form-button.disabled": {
-    "html": "<button class=\"form-button\" disabled=\"\">Sign In</button>",
+    "html": "<button class=\"form-button\" disabled=\"\"></button>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -852,7 +852,7 @@
     }
    },
    "form-button.secondary": {
-    "html": "<a href=\"/store\" class=\"form-button form-button-secondary\" data-evar1=\"Bag|Continue Shopping|\" data-s-object-id=\"9010d407f13c8c1e4cabed85d8b04f9b\" data-autom=\"bag-empty-continueshopping-button\">Continue Shopping</a>",
+    "html": "<a href=\"/store\" class=\"form-button form-button-secondary\" data-evar1=\"Bag|Continue Shopping|\" data-s-object-id=\"9010d407f13c8c1e4cabed85d8b04f9b\" data-autom=\"bag-empty-continueshopping-button\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1064,7 +1064,7 @@
     }
    },
    "accordion.item": {
-    "html": "<div data-core-accordion-item=\"\" class=\"rc-accordion-item\"><h2 class=\"as-l-container\"><span class=\"visuallyhidden\">&nbsp;</span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"false\" aria-controls=\"content-_r_0_-0\" id=\"ti",
+    "html": "<div data-core-accordion-item=\"\" class=\"rc-accordion-item\"><h2 class=\"as-l-container\"><span class=\"visuallyhidden\"></span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"false\" aria-controls=\"content-_r_0_-0\" id=\"ti",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1091,7 +1091,7 @@
     }
    },
    "ribbon": {
-    "html": "<div class=\"ribbon-content-wrapper dd-fill-tertiary\">\n    <div class=\"ribbon-content row justify-content-center large-align-items-center small-align-items-center\">\n        <div class=\"column large-4 small-7\">\n        <p>\n             \n     ",
+    "html": "<div class=\"ribbon-content-wrapper dd-fill-tertiary\"><div class=\"ribbon-content row justify-content-center large-align-items-center small-align-items-center\"><div class=\"column large-4 small-7\"><p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1126,7 +1126,7 @@
   },
   "1200": {
    "page.body": {
-    "html": "<body id=\"body-main\">\n\n    <div class=\"metrics\">\n            <noscript>\n        <img src=\"https://securemetrics.apple.com/b/ss/applestoreww/1/H.8--NS/0?…\" height=\"1\" width=\"1\" alt=\"\"/>\n    </noscript>\n\n\n        \n        \t\n\n\n        \n       ",
+    "html": "<body id=\"body-main\"><div class=\"metrics\"><noscript><img src=\"https://securemetrics.apple.com/b/ss/applestoreww/1/H.8--NS/0?…\" height=\"1\" width=\"1\" alt=\"\"/></noscript>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1141,7 +1141,7 @@
     }
    },
    "header": {
-    "html": "<h1 class=\"rs-bag-header\" tabindex=\"-1\">Your bag is empty.</h1>",
+    "html": "<h1 class=\"rs-bag-header\" tabindex=\"-1\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "40px",
@@ -1153,7 +1153,7 @@
     }
    },
    "message": {
-    "html": "<div class=\"rs-bagempty-message\">Sign in to see if you have any saved items. Or continue shopping.</div>",
+    "html": "<div class=\"rs-bagempty-message\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1164,7 +1164,7 @@
     }
    },
    "form-button": {
-    "html": "<a class=\"form-button\" href=\"https://secure.store.apple.com/shop/signIn?…\" data-evar1=\"Bag|Sign in|\" data-s-object-id=\"f226f4f3963d867dbe34ce2c3fa52d57\" data-autom=\"bag-empty-signin-button\">Sign In</a>",
+    "html": "<a class=\"form-button\" href=\"https://secure.store.apple.com/shop/signIn?…\" data-evar1=\"Bag|Sign in|\" data-s-object-id=\"f226f4f3963d867dbe34ce2c3fa52d57\" data-autom=\"bag-empty-signin-button\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1337,7 +1337,7 @@
     }
    },
    "form-button.disabled": {
-    "html": "<button class=\"form-button\" disabled=\"\">Sign In</button>",
+    "html": "<button class=\"form-button\" disabled=\"\"></button>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1412,7 +1412,7 @@
     }
    },
    "form-button.secondary": {
-    "html": "<a href=\"/store\" class=\"form-button form-button-secondary\" data-evar1=\"Bag|Continue Shopping|\" data-s-object-id=\"9010d407f13c8c1e4cabed85d8b04f9b\" data-autom=\"bag-empty-continueshopping-button\">Continue Shopping</a>",
+    "html": "<a href=\"/store\" class=\"form-button form-button-secondary\" data-evar1=\"Bag|Continue Shopping|\" data-s-object-id=\"9010d407f13c8c1e4cabed85d8b04f9b\" data-autom=\"bag-empty-continueshopping-button\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1624,7 +1624,7 @@
     }
    },
    "accordion.item": {
-    "html": "<div data-core-accordion-item=\"\" class=\"rc-accordion-item\"><h2 class=\"as-l-container\"><span class=\"visuallyhidden\">&nbsp;</span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"false\" aria-controls=\"content-_r_0_-0\" id=\"ti",
+    "html": "<div data-core-accordion-item=\"\" class=\"rc-accordion-item\"><h2 class=\"as-l-container\"><span class=\"visuallyhidden\"></span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"false\" aria-controls=\"content-_r_0_-0\" id=\"ti",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -1651,7 +1651,7 @@
     }
    },
    "ribbon": {
-    "html": "<div class=\"ribbon-content-wrapper dd-fill-tertiary\">\n    <div class=\"ribbon-content row justify-content-center large-align-items-center small-align-items-center\">\n        <div class=\"column large-4 small-7\">\n        <p>\n             \n     ",
+    "html": "<div class=\"ribbon-content-wrapper dd-fill-tertiary\"><div class=\"ribbon-content row justify-content-center large-align-items-center small-align-items-center\"><div class=\"column large-4 small-7\"><p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -1686,7 +1686,7 @@
   },
   "1600": {
    "page.body": {
-    "html": "<body id=\"body-main\">\n\n    <div class=\"metrics\">\n            <noscript>\n        <img src=\"https://securemetrics.apple.com/b/ss/applestoreww/1/H.8--NS/0?…\" height=\"1\" width=\"1\" alt=\"\"/>\n    </noscript>\n\n\n        \n        \t\n\n\n        \n       ",
+    "html": "<body id=\"body-main\"><div class=\"metrics\"><noscript><img src=\"https://securemetrics.apple.com/b/ss/applestoreww/1/H.8--NS/0?…\" height=\"1\" width=\"1\" alt=\"\"/></noscript>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1701,7 +1701,7 @@
     }
    },
    "header": {
-    "html": "<h1 class=\"rs-bag-header\" tabindex=\"-1\">Your bag is empty.</h1>",
+    "html": "<h1 class=\"rs-bag-header\" tabindex=\"-1\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "40px",
@@ -1713,7 +1713,7 @@
     }
    },
    "message": {
-    "html": "<div class=\"rs-bagempty-message\">Sign in to see if you have any saved items. Or continue shopping.</div>",
+    "html": "<div class=\"rs-bagempty-message\"></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1724,7 +1724,7 @@
     }
    },
    "form-button": {
-    "html": "<a class=\"form-button\" href=\"https://secure.store.apple.com/shop/signIn?…\" data-evar1=\"Bag|Sign in|\" data-s-object-id=\"f226f4f3963d867dbe34ce2c3fa52d57\" data-autom=\"bag-empty-signin-button\">Sign In</a>",
+    "html": "<a class=\"form-button\" href=\"https://secure.store.apple.com/shop/signIn?…\" data-evar1=\"Bag|Sign in|\" data-s-object-id=\"f226f4f3963d867dbe34ce2c3fa52d57\" data-autom=\"bag-empty-signin-button\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1897,7 +1897,7 @@
     }
    },
    "form-button.disabled": {
-    "html": "<button class=\"form-button\" disabled=\"\">Sign In</button>",
+    "html": "<button class=\"form-button\" disabled=\"\"></button>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1972,7 +1972,7 @@
     }
    },
    "form-button.secondary": {
-    "html": "<a href=\"/store\" class=\"form-button form-button-secondary\" data-evar1=\"Bag|Continue Shopping|\" data-s-object-id=\"9010d407f13c8c1e4cabed85d8b04f9b\" data-autom=\"bag-empty-continueshopping-button\">Continue Shopping</a>",
+    "html": "<a href=\"/store\" class=\"form-button form-button-secondary\" data-evar1=\"Bag|Continue Shopping|\" data-s-object-id=\"9010d407f13c8c1e4cabed85d8b04f9b\" data-autom=\"bag-empty-continueshopping-button\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -2184,7 +2184,7 @@
     }
    },
    "accordion.item": {
-    "html": "<div data-core-accordion-item=\"\" class=\"rc-accordion-item\"><h2 class=\"as-l-container\"><span class=\"visuallyhidden\">&nbsp;</span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"false\" aria-controls=\"content-_r_0_-0\" id=\"ti",
+    "html": "<div data-core-accordion-item=\"\" class=\"rc-accordion-item\"><h2 class=\"as-l-container\"><span class=\"visuallyhidden\"></span><button type=\"button\" data-core-accordion-button=\"\" aria-expanded=\"false\" aria-controls=\"content-_r_0_-0\" id=\"ti",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -2211,7 +2211,7 @@
     }
    },
    "ribbon": {
-    "html": "<div class=\"ribbon-content-wrapper dd-fill-tertiary\">\n    <div class=\"ribbon-content row justify-content-center large-align-items-center small-align-items-center\">\n        <div class=\"column large-4 small-7\">\n        <p>\n             \n     ",
+    "html": "<div class=\"ribbon-content-wrapper dd-fill-tertiary\"><div class=\"ribbon-content row justify-content-center large-align-items-center small-align-items-center\"><div class=\"column large-4 small-7\"><p>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",

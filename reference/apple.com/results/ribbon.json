@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "ribbon": {
-    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\">\n\t\t\t<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div cl",
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div cl",
     "styles": {
      "overflow": "hidden",
      "height": "72px"
@@ -17,7 +17,7 @@
     }
    },
    "ribbon.drop": {
-    "html": "<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone sav",
+    "html": "<div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p>",
     "styles": {
      "animation-name": "ribbon-drop",
      "animation-duration": "0.8s",
@@ -40,7 +40,7 @@
     }
    },
    "ribbon.ground": {
-    "html": "<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-lin",
+    "html": "<div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-lin",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -98,7 +98,7 @@
     }
    },
    "ribbon.content": {
-    "html": "<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "html": "<div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -135,7 +135,7 @@
     }
    },
    "ribbon.text": {
-    "html": "<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out ",
+    "html": "<p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -152,7 +152,7 @@
     }
    },
    "ribbon.link": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -203,7 +203,7 @@
     }
    },
    "ribbon.link-hovered": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
     "styles": {
      "color": "rgb(0, 102, 204)",
      "text-decoration-line": "underline",
@@ -223,7 +223,7 @@
   },
   "900": {
    "ribbon": {
-    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\">\n\t\t\t<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div cl",
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div cl",
     "styles": {
      "overflow": "hidden",
      "height": "52px"
@@ -234,7 +234,7 @@
     }
    },
    "ribbon.drop": {
-    "html": "<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone sav",
+    "html": "<div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p>",
     "styles": {
      "animation-name": "ribbon-drop",
      "animation-duration": "0.8s",
@@ -257,7 +257,7 @@
     }
    },
    "ribbon.ground": {
-    "html": "<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-lin",
+    "html": "<div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-lin",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -315,7 +315,7 @@
     }
    },
    "ribbon.content": {
-    "html": "<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "html": "<div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -352,7 +352,7 @@
     }
    },
    "ribbon.text": {
-    "html": "<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out ",
+    "html": "<p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -369,7 +369,7 @@
     }
    },
    "ribbon.link": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -420,7 +420,7 @@
     }
    },
    "ribbon.link-hovered": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
     "styles": {
      "color": "rgb(0, 102, 204)",
      "text-decoration-line": "underline",
@@ -440,7 +440,7 @@
   },
   "1200": {
    "ribbon": {
-    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\">\n\t\t\t<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div cl",
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div cl",
     "styles": {
      "overflow": "hidden",
      "height": "52px"
@@ -451,7 +451,7 @@
     }
    },
    "ribbon.drop": {
-    "html": "<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone sav",
+    "html": "<div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p>",
     "styles": {
      "animation-name": "ribbon-drop",
      "animation-duration": "0.8s",
@@ -474,7 +474,7 @@
     }
    },
    "ribbon.ground": {
-    "html": "<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-lin",
+    "html": "<div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-lin",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -532,7 +532,7 @@
     }
    },
    "ribbon.content": {
-    "html": "<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "html": "<div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -569,7 +569,7 @@
     }
    },
    "ribbon.text": {
-    "html": "<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out ",
+    "html": "<p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -586,7 +586,7 @@
     }
    },
    "ribbon.link": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -637,7 +637,7 @@
     }
    },
    "ribbon.link-hovered": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
     "styles": {
      "color": "rgb(0, 102, 204)",
      "text-decoration-line": "underline",
@@ -657,7 +657,7 @@
   },
   "1600": {
    "ribbon": {
-    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\">\n\t\t\t<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div cl",
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div cl",
     "styles": {
      "overflow": "hidden",
      "height": "52px"
@@ -668,7 +668,7 @@
     }
    },
    "ribbon.drop": {
-    "html": "<div class=\"ribbon-drop-wrapper\">\n\t\t\t\t<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone sav",
+    "html": "<div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p>",
     "styles": {
      "animation-name": "ribbon-drop",
      "animation-duration": "0.8s",
@@ -691,7 +691,7 @@
     }
    },
    "ribbon.ground": {
-    "html": "<div class=\"ribbon-content-wrapper\">\n\t\t\t\t\t<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-lin",
+    "html": "<div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-lin",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -749,7 +749,7 @@
     }
    },
    "ribbon.content": {
-    "html": "<div class=\"ribbon-content row\">\n\t\t\t\t\t\t<div class=\"column small-12 large-centered\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "html": "<div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -786,7 +786,7 @@
     }
    },
    "ribbon.text": {
-    "html": "<p>\n\t\t\t\t\t\t\t\tPre-order iPhone&nbsp;Duo now. Already have an iPhone saved for pre-order? <a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out ",
+    "html": "<p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -803,7 +803,7 @@
     }
    },
    "ribbon.link": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -854,7 +854,7 @@
     }
    },
    "ribbon.link-hovered": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"Check out now, iPhone Duo pre-order\">Check out now</a>",
+    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
     "styles": {
      "color": "rgb(0, 102, 204)",
      "text-decoration-line": "underline",

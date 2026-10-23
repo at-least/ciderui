@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "textarea.box": {
-    "html": "<div class=\"form-textbox\">\n\t\t\t\t\t\t\t\t<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment require",
+    "html": "<div class=\"form-textbox\"><div class=\"form-textarea\"><textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment require",
     "styles": {
      "position": "relative",
      "height": "99.9531px",
@@ -18,7 +18,7 @@
     }
    },
    "textarea": {
-    "html": "<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
+    "html": "<div class=\"form-textarea\"><textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -90,7 +90,7 @@
     }
    },
    "textarea.label": {
-    "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\">Comments*</span>",
+    "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -115,7 +115,7 @@
     }
    },
    "field.label": {
-    "html": "<span class=\"form-textbox-label\" id=\"customer_name_label\" aria-hidden=\"true\">Name*</span>",
+    "html": "<span class=\"form-textbox-label\" id=\"customer_name_label\" aria-hidden=\"true\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -141,7 +141,7 @@
   },
   "900": {
    "textarea.box": {
-    "html": "<div class=\"form-textbox\">\n\t\t\t\t\t\t\t\t<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment require",
+    "html": "<div class=\"form-textbox\"><div class=\"form-textarea\"><textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment require",
     "styles": {
      "position": "relative",
      "height": "99.9531px",
@@ -153,7 +153,7 @@
     }
    },
    "textarea": {
-    "html": "<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
+    "html": "<div class=\"form-textarea\"><textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -225,7 +225,7 @@
     }
    },
    "textarea.label": {
-    "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\">Comments*</span>",
+    "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -250,7 +250,7 @@
     }
    },
    "field.label": {
-    "html": "<span class=\"form-textbox-label\" id=\"customer_name_label\" aria-hidden=\"true\">Name*</span>",
+    "html": "<span class=\"form-textbox-label\" id=\"customer_name_label\" aria-hidden=\"true\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -276,7 +276,7 @@
   },
   "1200": {
    "textarea.box": {
-    "html": "<div class=\"form-textbox\">\n\t\t\t\t\t\t\t\t<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment require",
+    "html": "<div class=\"form-textbox\"><div class=\"form-textarea\"><textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment require",
     "styles": {
      "position": "relative",
      "height": "99.9531px",
@@ -288,7 +288,7 @@
     }
    },
    "textarea": {
-    "html": "<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
+    "html": "<div class=\"form-textarea\"><textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -360,7 +360,7 @@
     }
    },
    "textarea.label": {
-    "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\">Comments*</span>",
+    "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -385,7 +385,7 @@
     }
    },
    "field.label": {
-    "html": "<span class=\"form-textbox-label\" id=\"customer_name_label\" aria-hidden=\"true\">Name*</span>",
+    "html": "<span class=\"form-textbox-label\" id=\"customer_name_label\" aria-hidden=\"true\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -411,7 +411,7 @@
   },
   "1600": {
    "textarea.box": {
-    "html": "<div class=\"form-textbox\">\n\t\t\t\t\t\t\t\t<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment require",
+    "html": "<div class=\"form-textbox\"><div class=\"form-textarea\"><textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment require",
     "styles": {
      "position": "relative",
      "height": "99.9531px",
@@ -423,7 +423,7 @@
     }
    },
    "textarea": {
-    "html": "<div class=\"form-textarea\">\n\t\t\t\t\t\t\t\t\t<textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
+    "html": "<div class=\"form-textarea\"><textarea type=\"textarea\" id=\"feedback_comment\" name=\"feedback_comment\" aria-labelledby=\"feedback_comment_label\" maxlength=\"800\" data-validate=\"feedback_comment required\" aria-required=\"true\"></textarea>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -495,7 +495,7 @@
     }
    },
    "textarea.label": {
-    "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\">Comments*</span>",
+    "html": "<span class=\"form-textbox-label\" id=\"feedback_comment_label\" aria-hidden=\"true\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -520,7 +520,7 @@
     }
    },
    "field.label": {
-    "html": "<span class=\"form-textbox-label\" id=\"customer_name_label\" aria-hidden=\"true\">Name*</span>",
+    "html": "<span class=\"form-textbox-label\" id=\"customer_name_label\" aria-hidden=\"true\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",

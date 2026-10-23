@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "page": {
-    "html": "<body class=\"ac-gn-current-support js \">\n        \n\n\n        \n\n         <meta name=\"globalnav-store-key\" content=\"S2A49YFKJF2JAT22K\">\n<meta name=\"globalnav-search-field[name]\" content=\"q\">\n<meta name=\"globalnav-search-field[action]\" content=",
+    "html": "<body class=\"ac-gn-current-support js \"><meta name=\"globalnav-store-key\" content=\"S2A49YFKJF2JAT22K\"><meta name=\"globalnav-search-field[name]\" content=\"q\"><meta name=\"globalnav-search-field[action]\" content=",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -21,7 +21,7 @@
     }
    },
    "title": {
-    "html": "<h1 class=\"gb-header\">Apple security releases</h1>",
+    "html": "<h1 class=\"gb-header\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "32px",
@@ -33,7 +33,7 @@
     }
    },
    "subheader": {
-    "html": "<p class=\"subheader gb-subheader\">This document lists security updates for Apple software.</p>",
+    "html": "<p class=\"subheader gb-subheader\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -44,7 +44,7 @@
     }
    },
    "text": {
-    "html": "<p class=\"gb-paragraph\">For the protection of our customers, Apple doesn't disclose, discuss, or confirm security issues until an investigation has occurred and patches or releases are generally available. This document lists recent release",
+    "html": "<p class=\"gb-paragraph\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -56,7 +56,7 @@
     }
    },
    "link": {
-    "html": "<a href=\"https://support.apple.com/en-us/102657\" class=\"gb-anchor\">Background Security Improvements</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/102657\" class=\"gb-anchor\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -83,7 +83,7 @@
     }
    },
    "list": {
-    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\">The latest version of iOS and iPadOS is 27.0.1. Learn how to <a href=\"https://support.apple.com/en-us/118575\" class=\"gb-anchor\">update the",
+    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"><a href=\"https://support.apple.com/en-us/118575\" class=\"gb-anchor\">",
     "styles": {
      "padding-left": "0px",
      "margin-left": "20px",
@@ -91,7 +91,7 @@
     }
    },
    "note": {
-    "html": "<div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div>",
+    "html": "<div class=\"note gb-note\"><p class=\"gb-paragraph\"></p></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -102,7 +102,7 @@
     }
    },
    "table.wrapper": {
-    "html": "<div class=\"table-wrapper gb-table\"><table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-tabl",
+    "html": "<div class=\"table-wrapper gb-table\"><table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p></th><th class=\"gb-tabl",
     "styles": {
      "overflow-x": "auto",
      "margin-top": "14px",
@@ -114,7 +114,7 @@
     }
    },
    "table": {
-    "html": "<table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-table-header-cell tablecell-align-left\" ",
+    "html": "<table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p></th><th class=\"gb-table-header-cell tablecell-align-left\" ",
     "styles": {
      "border-collapse": "collapse",
      "background-color": "rgba(0, 0, 0, 0)"
@@ -125,7 +125,7 @@
     }
    },
    "table.head": {
-    "html": "<th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th>",
+    "html": "<th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p></th>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -153,7 +153,7 @@
     }
    },
    "table.cell": {
-    "html": "<td class=\"gb-table-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">iOS 27.0.1 and iPadOS 27.0.1</p><div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div></td>",
+    "html": "<td class=\"gb-table-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p><div class=\"note gb-note\"><p class=\"gb-paragraph\"></p></div></td>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -181,7 +181,7 @@
     }
    },
    "table.link": {
-    "html": "<a href=\"https://support.apple.com/en-us/149226\" class=\"gb-anchor\">iOS 26.7.1 and iPadOS 26.7.1</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/149226\" class=\"gb-anchor\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -210,7 +210,7 @@
   },
   "900": {
    "page": {
-    "html": "<body class=\"ac-gn-current-support js \">\n        \n\n\n        \n\n         <meta name=\"globalnav-store-key\" content=\"S2A49YFKJF2JAT22K\">\n<meta name=\"globalnav-search-field[name]\" content=\"q\">\n<meta name=\"globalnav-search-field[action]\" content=",
+    "html": "<body class=\"ac-gn-current-support js \"><meta name=\"globalnav-store-key\" content=\"S2A49YFKJF2JAT22K\"><meta name=\"globalnav-search-field[name]\" content=\"q\"><meta name=\"globalnav-search-field[action]\" content=",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -225,7 +225,7 @@
     }
    },
    "title": {
-    "html": "<h1 class=\"gb-header\">Apple security releases</h1>",
+    "html": "<h1 class=\"gb-header\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "40px",
@@ -237,7 +237,7 @@
     }
    },
    "subheader": {
-    "html": "<p class=\"subheader gb-subheader\">This document lists security updates for Apple software.</p>",
+    "html": "<p class=\"subheader gb-subheader\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -248,7 +248,7 @@
     }
    },
    "text": {
-    "html": "<p class=\"gb-paragraph\">For the protection of our customers, Apple doesn't disclose, discuss, or confirm security issues until an investigation has occurred and patches or releases are generally available. This document lists recent release",
+    "html": "<p class=\"gb-paragraph\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -260,7 +260,7 @@
     }
    },
    "link": {
-    "html": "<a href=\"https://support.apple.com/en-us/102657\" class=\"gb-anchor\">Background Security Improvements</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/102657\" class=\"gb-anchor\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -287,7 +287,7 @@
     }
    },
    "list": {
-    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\">The latest version of iOS and iPadOS is 27.0.1. Learn how to <a href=\"https://support.apple.com/en-us/118575\" class=\"gb-anchor\">update the",
+    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"><a href=\"https://support.apple.com/en-us/118575\" class=\"gb-anchor\">",
     "styles": {
      "padding-left": "0px",
      "margin-left": "20px",
@@ -295,7 +295,7 @@
     }
    },
    "note": {
-    "html": "<div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div>",
+    "html": "<div class=\"note gb-note\"><p class=\"gb-paragraph\"></p></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -306,7 +306,7 @@
     }
    },
    "table.wrapper": {
-    "html": "<div class=\"table-wrapper gb-table\"><table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-tabl",
+    "html": "<div class=\"table-wrapper gb-table\"><table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p></th><th class=\"gb-tabl",
     "styles": {
      "overflow-x": "auto",
      "margin-top": "14px",
@@ -318,7 +318,7 @@
     }
    },
    "table": {
-    "html": "<table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-table-header-cell tablecell-align-left\" ",
+    "html": "<table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p></th><th class=\"gb-table-header-cell tablecell-align-left\" ",
     "styles": {
      "border-collapse": "collapse",
      "background-color": "rgba(0, 0, 0, 0)"
@@ -329,7 +329,7 @@
     }
    },
    "table.head": {
-    "html": "<th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th>",
+    "html": "<th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p></th>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -357,7 +357,7 @@
     }
    },
    "table.cell": {
-    "html": "<td class=\"gb-table-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">iOS 27.0.1 and iPadOS 27.0.1</p><div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div></td>",
+    "html": "<td class=\"gb-table-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p><div class=\"note gb-note\"><p class=\"gb-paragraph\"></p></div></td>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -385,7 +385,7 @@
     }
    },
    "table.link": {
-    "html": "<a href=\"https://support.apple.com/en-us/149226\" class=\"gb-anchor\">iOS 26.7.1 and iPadOS 26.7.1</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/149226\" class=\"gb-anchor\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -414,7 +414,7 @@
   },
   "1200": {
    "page": {
-    "html": "<body class=\"ac-gn-current-support js \">\n        \n\n\n        \n\n         <meta name=\"globalnav-store-key\" content=\"S2A49YFKJF2JAT22K\">\n<meta name=\"globalnav-search-field[name]\" content=\"q\">\n<meta name=\"globalnav-search-field[action]\" content=",
+    "html": "<body class=\"ac-gn-current-support js \"><meta name=\"globalnav-store-key\" content=\"S2A49YFKJF2JAT22K\"><meta name=\"globalnav-search-field[name]\" content=\"q\"><meta name=\"globalnav-search-field[action]\" content=",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -429,7 +429,7 @@
     }
    },
    "title": {
-    "html": "<h1 class=\"gb-header\">Apple security releases</h1>",
+    "html": "<h1 class=\"gb-header\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "48px",
@@ -441,7 +441,7 @@
     }
    },
    "subheader": {
-    "html": "<p class=\"subheader gb-subheader\">This document lists security updates for Apple software.</p>",
+    "html": "<p class=\"subheader gb-subheader\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -452,7 +452,7 @@
     }
    },
    "text": {
-    "html": "<p class=\"gb-paragraph\">For the protection of our customers, Apple doesn't disclose, discuss, or confirm security issues until an investigation has occurred and patches or releases are generally available. This document lists recent release",
+    "html": "<p class=\"gb-paragraph\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -464,7 +464,7 @@
     }
    },
    "link": {
-    "html": "<a href=\"https://support.apple.com/en-us/102657\" class=\"gb-anchor\">Background Security Improvements</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/102657\" class=\"gb-anchor\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -491,7 +491,7 @@
     }
    },
    "list": {
-    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\">The latest version of iOS and iPadOS is 27.0.1. Learn how to <a href=\"https://support.apple.com/en-us/118575\" class=\"gb-anchor\">update the",
+    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"><a href=\"https://support.apple.com/en-us/118575\" class=\"gb-anchor\">",
     "styles": {
      "padding-left": "0px",
      "margin-left": "20px",
@@ -499,7 +499,7 @@
     }
    },
    "note": {
-    "html": "<div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div>",
+    "html": "<div class=\"note gb-note\"><p class=\"gb-paragraph\"></p></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -510,7 +510,7 @@
     }
    },
    "table.wrapper": {
-    "html": "<div class=\"table-wrapper gb-table\"><table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-tabl",
+    "html": "<div class=\"table-wrapper gb-table\"><table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p></th><th class=\"gb-tabl",
     "styles": {
      "overflow-x": "auto",
      "margin-top": "14px",
@@ -522,7 +522,7 @@
     }
    },
    "table": {
-    "html": "<table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-table-header-cell tablecell-align-left\" ",
+    "html": "<table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p></th><th class=\"gb-table-header-cell tablecell-align-left\" ",
     "styles": {
      "border-collapse": "collapse",
      "background-color": "rgba(0, 0, 0, 0)"
@@ -533,7 +533,7 @@
     }
    },
    "table.head": {
-    "html": "<th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th>",
+    "html": "<th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p></th>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -561,7 +561,7 @@
     }
    },
    "table.cell": {
-    "html": "<td class=\"gb-table-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">iOS 27.0.1 and iPadOS 27.0.1</p><div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div></td>",
+    "html": "<td class=\"gb-table-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p><div class=\"note gb-note\"><p class=\"gb-paragraph\"></p></div></td>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -589,7 +589,7 @@
     }
    },
    "table.link": {
-    "html": "<a href=\"https://support.apple.com/en-us/149226\" class=\"gb-anchor\">iOS 26.7.1 and iPadOS 26.7.1</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/149226\" class=\"gb-anchor\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -618,7 +618,7 @@
   },
   "1600": {
    "page": {
-    "html": "<body class=\"ac-gn-current-support js \">\n        \n\n\n        \n\n         <meta name=\"globalnav-store-key\" content=\"S2A49YFKJF2JAT22K\">\n<meta name=\"globalnav-search-field[name]\" content=\"q\">\n<meta name=\"globalnav-search-field[action]\" content=",
+    "html": "<body class=\"ac-gn-current-support js \"><meta name=\"globalnav-store-key\" content=\"S2A49YFKJF2JAT22K\"><meta name=\"globalnav-search-field[name]\" content=\"q\"><meta name=\"globalnav-search-field[action]\" content=",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -633,7 +633,7 @@
     }
    },
    "title": {
-    "html": "<h1 class=\"gb-header\">Apple security releases</h1>",
+    "html": "<h1 class=\"gb-header\"></h1>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "48px",
@@ -645,7 +645,7 @@
     }
    },
    "subheader": {
-    "html": "<p class=\"subheader gb-subheader\">This document lists security updates for Apple software.</p>",
+    "html": "<p class=\"subheader gb-subheader\"></p>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -656,7 +656,7 @@
     }
    },
    "text": {
-    "html": "<p class=\"gb-paragraph\">For the protection of our customers, Apple doesn't disclose, discuss, or confirm security issues until an investigation has occurred and patches or releases are generally available. This document lists recent release",
+    "html": "<p class=\"gb-paragraph\">",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -668,7 +668,7 @@
     }
    },
    "link": {
-    "html": "<a href=\"https://support.apple.com/en-us/102657\" class=\"gb-anchor\">Background Security Improvements</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/102657\" class=\"gb-anchor\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -695,7 +695,7 @@
     }
    },
    "list": {
-    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\">The latest version of iOS and iPadOS is 27.0.1. Learn how to <a href=\"https://support.apple.com/en-us/118575\" class=\"gb-anchor\">update the",
+    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"><a href=\"https://support.apple.com/en-us/118575\" class=\"gb-anchor\">",
     "styles": {
      "padding-left": "0px",
      "margin-left": "20px",
@@ -703,7 +703,7 @@
     }
    },
    "note": {
-    "html": "<div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div>",
+    "html": "<div class=\"note gb-note\"><p class=\"gb-paragraph\"></p></div>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -714,7 +714,7 @@
     }
    },
    "table.wrapper": {
-    "html": "<div class=\"table-wrapper gb-table\"><table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-tabl",
+    "html": "<div class=\"table-wrapper gb-table\"><table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p></th><th class=\"gb-tabl",
     "styles": {
      "overflow-x": "auto",
      "margin-top": "14px",
@@ -726,7 +726,7 @@
     }
    },
    "table": {
-    "html": "<table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th><th class=\"gb-table-header-cell tablecell-align-left\" ",
+    "html": "<table class=\"gb-table\"><tbody><tr><th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p></th><th class=\"gb-table-header-cell tablecell-align-left\" ",
     "styles": {
      "border-collapse": "collapse",
      "background-color": "rgba(0, 0, 0, 0)"
@@ -737,7 +737,7 @@
     }
    },
    "table.head": {
-    "html": "<th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">Name&nbsp;and&nbsp;information&nbsp;link</p></th>",
+    "html": "<th class=\"gb-table-header-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p></th>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -765,7 +765,7 @@
     }
    },
    "table.cell": {
-    "html": "<td class=\"gb-table-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\">iOS 27.0.1 and iPadOS 27.0.1</p><div class=\"note gb-note\"><p class=\"gb-paragraph\">This update has no published CVE entries.</p></div></td>",
+    "html": "<td class=\"gb-table-cell tablecell-align-left\" colspan=\"1\" rowspan=\"1\"><p class=\"gb-paragraph\"></p><div class=\"note gb-note\"><p class=\"gb-paragraph\"></p></div></td>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -793,7 +793,7 @@
     }
    },
    "table.link": {
-    "html": "<a href=\"https://support.apple.com/en-us/149226\" class=\"gb-anchor\">iOS 26.7.1 and iPadOS 26.7.1</a>",
+    "html": "<a href=\"https://support.apple.com/en-us/149226\" class=\"gb-anchor\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",

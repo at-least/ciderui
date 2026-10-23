@@ -6,7 +6,7 @@
  "widths": {
   "1024": {
    "link": {
-    "html": "<a href=\"/mac/\" data-globalnav-item-name=\"mac\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"mac\" data-analytics-element-engagement=\"hover - mac\" aria-label=\"Mac\" class=\"globalnav-link globalnav-submenu-trigger-link global",
+    "html": "<a href=\"/mac/\" data-globalnav-item-name=\"mac\" data-topnav-flyout-trigger-compact=\"true\" data-analytics-title=\"mac\" data-analytics-element-engagement=\"hover - mac\" aria-label=\"…\" class=\"globalnav-link globalnav-submenu-trigger-link global",
     "styles": {
      "color": "rgb(0, 0, 0)"
     },
@@ -29,7 +29,7 @@
     }
    },
    "trigger": {
-    "html": "<button id=\"globalnav-menubutton-link-mac\" class=\"globalnav-submenu-trigger-button\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu-link-mac\" aria-label=\"Mac menu\" data-topnav-flyout-trigger-regular=\"true\"><span class=\"globalnav-image",
+    "html": "<button id=\"globalnav-menubutton-link-mac\" class=\"globalnav-submenu-trigger-button\" aria-expanded=\"true\" aria-controls=\"globalnav-submenu-link-mac\" aria-label=\"…\" data-topnav-flyout-trigger-regular=\"true\"><span class=\"globalnav-image",
     "styles": {
      "display": "flex"
     },

@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "section.open": {
-    "html": "<div class=\"ac-gf-directory-column-section ac-gf-directory-column-expanded\">\n\t\t\t\t<h3 class=\"ac-gf-directory-column-section-title\">\n\t\t\t\t\t<span class=\"ac-gf-directory-column-section-title-text\">Shop and Learn</span>\n\t\t\t\t\t<button class=\"ac-gf-",
+    "html": "<div class=\"ac-gf-directory-column-section ac-gf-directory-column-expanded\"><h3 class=\"ac-gf-directory-column-section-title\"><span class=\"ac-gf-directory-column-section-title-text\"></span><button class=\"ac-gf-",
     "styles": {
      "padding-bottom": "1px"
     },
@@ -16,7 +16,7 @@
     }
    },
    "list.open": {
-    "html": "<ul id=\"footer-directory-column-section-products\" class=\"ac-gf-directory-column-section-list\" role=\"list\">\n\t\t\t\t\t<li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/go",
+    "html": "<ul id=\"footer-directory-column-section-products\" class=\"ac-gf-directory-column-section-list\" role=\"list\"><li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/go",
     "styles": {
      "visibility": "visible",
      "padding-top": "5px",
@@ -31,7 +31,7 @@
     }
    },
    "item.open": {
-    "html": "<li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\">Store</a></li>",
+    "html": "<li class=\"ac-gf-directory-column-section-item\" role=\"listitem\"><a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\"></a></li>",
     "styles": {
      "margin-bottom": "0px",
      "padding-top": "0px"
@@ -42,7 +42,7 @@
     }
    },
    "link.open": {
-    "html": "<a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\">Store</a>",
+    "html": "<a class=\"ac-gf-directory-column-section-link\" href=\"/us/shop/goto/store\" data-analytics-title=\"store\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"Myriad Set Pro\", \"SF Pro Icons\", \"Apple Legacy Chevron\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -65,7 +65,7 @@
     }
    },
    "icon.open": {
-    "html": "<span class=\"ac-gf-directory-column-section-title-icon\" aria-hidden=\"true\"><svg class=\"footer-icon-svg\" width=\"11\" height=\"6\" viewBox=\"0 0 11 6\">\n\t<polyline data-footer-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linej",
+    "html": "<span class=\"ac-gf-directory-column-section-title-icon\" aria-hidden=\"true\"><svg class=\"footer-icon-svg\" width=\"11\" height=\"6\" viewBox=\"0 0 11 6\"><polyline data-footer-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linej",
     "styles": {
      "color": "rgba(0, 0, 0, 0.88)",
      "transform": "none"

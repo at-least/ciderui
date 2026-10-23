@@ -25,7 +25,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -67,7 +67,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -109,7 +109,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -151,7 +151,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -193,7 +193,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -235,7 +235,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -277,7 +277,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -319,7 +319,7 @@
     }
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",
@@ -362,7 +362,7 @@
     "animations": []
    },
    "close.icon-states": {
-    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\">\n                \t\t\t                                          <svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">\n                \t",
+    "html": "<span class=\"ric-modal-close-icon\" data-modal-close-icon=\"\"><svg class=\"icon-control icon-control-close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\">",
     "styles": {
      "background-color": "rgb(29, 29, 31)",
      "color": "rgb(255, 255, 255)",

@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "nav.phone": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "48px",
      "position": "fixed",
@@ -24,7 +24,7 @@
     }
    },
    "input": {
-    "html": "<input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -52,7 +52,7 @@
     }
    },
    "reset": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -104,7 +104,7 @@
     }
    },
    "submit": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -141,7 +141,7 @@
     }
    },
    "reset.states": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
     "styles": {
      "fill": "rgb(110, 110, 115)",
      "outline-style": "none",
@@ -167,7 +167,7 @@
     }
    },
    "submit.states": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
     "styles": {
      "fill": "rgb(51, 51, 54)",
      "outline-style": "none",
@@ -195,7 +195,7 @@
   },
   "833": {
    "nav.phone": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "48px",
      "position": "fixed",
@@ -565,7 +565,7 @@
     ]
    },
    "input": {
-    "html": "<input placeholder=\"Search\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -593,7 +593,7 @@
     }
    },
    "reset": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -645,7 +645,7 @@
     }
    },
    "submit": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -682,7 +682,7 @@
     }
    },
    "reset.states": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
     "styles": {
      "fill": "rgb(110, 110, 115)",
      "outline-style": "none",
@@ -708,7 +708,7 @@
     }
    },
    "submit.states": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
     "styles": {
      "fill": "rgb(51, 51, 54)",
      "outline-style": "none",
@@ -736,7 +736,7 @@
   },
   "834": {
    "nav": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "44px",
      "position": "fixed",
@@ -754,7 +754,7 @@
     }
    },
    "input": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -782,7 +782,7 @@
     }
    },
    "reset": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
     "styles": {
      "padding-top": "2px",
      "padding-right": "0px",
@@ -834,7 +834,7 @@
     }
    },
    "submit": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
     "styles": {
      "padding-top": "2px",
      "padding-right": "0px",
@@ -871,7 +871,7 @@
     }
    },
    "reset.states": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
     "styles": {
      "fill": "rgb(110, 110, 115)",
      "outline-style": "none",
@@ -897,7 +897,7 @@
     }
    },
    "submit.states": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
     "styles": {
      "fill": "rgb(51, 51, 54)",
      "outline-style": "none",
@@ -925,7 +925,7 @@
   },
   "900": {
    "nav": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "44px",
      "position": "fixed",
@@ -943,7 +943,7 @@
     }
    },
    "input": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -971,7 +971,7 @@
     }
    },
    "reset": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
     "styles": {
      "padding-top": "2px",
      "padding-right": "0px",
@@ -1023,7 +1023,7 @@
     }
    },
    "submit": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
     "styles": {
      "padding-top": "2px",
      "padding-right": "0px",
@@ -1060,7 +1060,7 @@
     }
    },
    "reset.states": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
     "styles": {
      "fill": "rgb(110, 110, 115)",
      "outline-style": "none",
@@ -1086,7 +1086,7 @@
     }
    },
    "submit.states": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
     "styles": {
      "fill": "rgb(51, 51, 54)",
      "outline-style": "none",
@@ -1114,7 +1114,7 @@
   },
   "1200": {
    "nav": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "44px",
      "position": "fixed",
@@ -1132,7 +1132,7 @@
     }
    },
    "input": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -1160,7 +1160,7 @@
     }
    },
    "reset": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
     "styles": {
      "padding-top": "2px",
      "padding-right": "0px",
@@ -1212,7 +1212,7 @@
     }
    },
    "submit": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
     "styles": {
      "padding-top": "2px",
      "padding-right": "0px",
@@ -1249,7 +1249,7 @@
     }
    },
    "reset.states": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
     "styles": {
      "fill": "rgb(110, 110, 115)",
      "outline-style": "none",
@@ -1275,7 +1275,7 @@
     }
    },
    "submit.states": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
     "styles": {
      "fill": "rgb(51, 51, 54)",
      "outline-style": "none",
@@ -1303,7 +1303,7 @@
   },
   "1600": {
    "nav": {
-    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"Global\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
+    "html": "<nav id=\"globalnav\" lang=\"en-US\" dir=\"ltr\" aria-label=\"…\" data-analytics-element-engagement-start=\"globalnav:onFlyoutOpen\" data-analytics-element-engagement-end=\"globalnav:onFlyoutClose\" data-store-api=\"/[storefront]/shop/bag/status\" d",
     "styles": {
      "height": "44px",
      "position": "fixed",
@@ -1573,7 +1573,7 @@
     ]
    },
    "input": {
-    "html": "<input placeholder=\"Search apple.com\" aria-label=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
+    "html": "<input placeholder=\"…\" aria-label=\"…\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" class=\"globalnav-searchfield-input\" data-focus-method=\"mouse\">",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "24px",
@@ -1601,7 +1601,7 @@
     }
    },
    "reset": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
     "styles": {
      "padding-top": "2px",
      "padding-right": "0px",
@@ -1653,7 +1653,7 @@
     }
    },
    "submit": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
     "styles": {
      "padding-top": "2px",
      "padding-right": "0px",
@@ -1690,7 +1690,7 @@
     }
    },
    "reset.states": {
-    "html": "<button aria-label=\"Clear search\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"button\" class=\"globalnav-searchfield-reset\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"14\" viewBox=\"0 0 14 14\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\"><pa",
     "styles": {
      "fill": "rgb(110, 110, 115)",
      "outline-style": "none",
@@ -1716,7 +1716,7 @@
     }
    },
    "submit.states": {
-    "html": "<button aria-label=\"Submit search\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
+    "html": "<button aria-label=\"…\" tabindex=\"0\" type=\"submit\" class=\"globalnav-searchfield-submit\"><span aria-hidden=\"true\" class=\"globalnav-image-regular\"><svg height=\"32\" viewBox=\"0 0 30 32\" width=\"30\" xmlns=\"http://www.w3.org/2000/svg\"><",
     "styles": {
      "fill": "rgb(51, 51, 54)",
      "outline-style": "none",

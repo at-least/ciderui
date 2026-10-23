@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "localnav": {
-    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions ac-ln-sticking\" lang=\"en-US\" dir=\"ltr\" data-sticky=\"\" data-analytics-activitymap-region-id=\"local nav\" role=\"navigation\" aria-label=\"Local\" tabind",
+    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions ac-ln-sticking\" lang=\"en-US\" dir=\"ltr\" data-sticky=\"\" data-analytics-activitymap-region-id=\"local nav\" role=\"navigation\" aria-label=\"…\" tabind",
     "styles": {
      "position": "sticky",
      "top": "0px",
@@ -48,7 +48,7 @@
     }
    },
    "localnav.content": {
-    "html": "<div class=\"ac-ln-content\">\n\t\t\t\t<div class=\"ac-ln-title\">\n\t\t\t\t\t<a href=\"/macbook-air/\" data-analytics-title=\"product index\">\n\t\t\t\t\t\t\t\t\tMacBook&nbsp;Air\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ac-ln-menu\">\n\t\t\t\t\t<a href=\"#ac-ln-menustate\" clas",
+    "html": "<div class=\"ac-ln-content\"><div class=\"ac-ln-title\"><a href=\"/macbook-air/\" data-analytics-title=\"product index\"></a></div><div class=\"ac-ln-menu\"><a href=\"#ac-ln-menustate\" clas",
     "styles": {
      "max-width": "980px",
      "padding-left": "16px",
@@ -63,7 +63,7 @@
     }
    },
    "localnav.title": {
-    "html": "<a href=\"/macbook-air/\" data-analytics-title=\"product index\">\n\t\t\t\t\t\t\t\t\tMacBook&nbsp;Air\n\t\t\t\t\t\t\t\t</a>",
+    "html": "<a href=\"/macbook-air/\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -102,7 +102,7 @@
     }
    },
    "localnav.item": {
-    "html": "<li class=\"ac-ln-menu-item\">\n\t\t\t\t\t\t\t\t<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>\n\t\t\t\t\t\t\t</li>",
+    "html": "<li class=\"ac-ln-menu-item\"><a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a></li>",
     "styles": {
      "margin-left": "0px",
      "margin-right": "0px",
@@ -110,7 +110,7 @@
     }
    },
    "localnav.link": {
-    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -151,7 +151,7 @@
     }
    },
    "localnav.current": {
-    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\">Overview</span>",
+    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -171,7 +171,7 @@
     }
    },
    "localnav.current-mark": {
-    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\">Overview</span>",
+    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\"></span>",
     "styles": {
      "background-color": "rgb(0, 0, 0)",
      "opacity": "0.8",
@@ -185,14 +185,14 @@
     }
    },
    "localnav.action": {
-    "html": "<div class=\"ac-ln-action ac-ln-action-button\">\n\t\t\t\t\t\t\t<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span>",
+    "html": "<div class=\"ac-ln-action ac-ln-action-button\"><a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span>",
     "styles": {
      "margin-left": "16px",
      "margin-top": "-3px"
     }
    },
    "localnav.button": {
-    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -284,7 +284,7 @@
     }
    },
    "localnav.chevron": {
-    "html": "<label for=\"ac-ln-menustate\" class=\"ac-ln-menucta\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"ac-ln-menucta-chevron\">\n<svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\">\n\t<polyline shape-rendering=\"geometricPrecision\" data-chev",
+    "html": "<label for=\"ac-ln-menustate\" class=\"ac-ln-menucta\"><span class=\"ac-ln-menucta-chevron\"><svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\"><polyline shape-rendering=\"geometricPrecision\" data-chev",
     "styles": {
      "width": "40px",
      "height": "30px",
@@ -300,7 +300,7 @@
     }
    },
    "localnav.chevron-image": {
-    "html": "<span class=\"ac-ln-menucta-chevron\">\n<svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\">\n\t<polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" ve",
+    "html": "<span class=\"ac-ln-menucta-chevron\"><svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\"><polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" ve",
     "styles": {
      "color": "rgb(0, 0, 0)",
      "opacity": "0.8",
@@ -337,7 +337,7 @@
     }
    },
    "localnav.chevron-svg": {
-    "html": "<svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\">\n\t<polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" vector-effect=\"non-scaling-stroke\" stro",
+    "html": "<svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\"><polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" vector-effect=\"non-scaling-stroke\" stro",
     "styles": {
      "width": "16px",
      "height": "9px",
@@ -351,7 +351,7 @@
     }
    },
    "localnav.tray": {
-    "html": "<div class=\"ac-ln-menu-tray\" id=\"ac-ln-menustate-tray\" style=\"--r-localnav-menu-tray-natural-height: 197px;\" aria-hidden=\"true\" inert=\"true\">\n\t\t\t\t\t\t<ul class=\"ac-ln-menu-items\">\n\t\t\t\t\t\t\t<li class=\"ac-ln-menu-item\">\n\t\t\t\t\t\t\t\t<span class=\"ac-ln",
+    "html": "<div class=\"ac-ln-menu-tray\" id=\"ac-ln-menustate-tray\" style=\"--r-localnav-menu-tray-natural-height: 197px;\" aria-hidden=\"true\" inert=\"true\"><ul class=\"ac-ln-menu-items\"><li class=\"ac-ln-menu-item\"><span class=\"ac-ln",
     "styles": {
      "visibility": "hidden",
      "max-height": "0px",
@@ -366,7 +366,7 @@
     }
    },
    "tray.open": {
-    "html": "<div class=\"ac-ln-menu-tray\" id=\"ac-ln-menustate-tray\" style=\"--r-localnav-menu-tray-natural-height: 197px;\">\n\t\t\t\t\t\t<ul class=\"ac-ln-menu-items\">\n\t\t\t\t\t\t\t<li class=\"ac-ln-menu-item\">\n\t\t\t\t\t\t\t\t<span class=\"ac-ln-menu-link current\" role=\"link\" ",
+    "html": "<div class=\"ac-ln-menu-tray\" id=\"ac-ln-menustate-tray\" style=\"--r-localnav-menu-tray-natural-height: 197px;\"><ul class=\"ac-ln-menu-items\"><li class=\"ac-ln-menu-item\"><span class=\"ac-ln-menu-link current\" role=\"link\" ",
     "styles": {
      "visibility": "visible",
      "max-height": "197px",
@@ -517,7 +517,7 @@
     }
    },
    "tray.items": {
-    "html": "<ul class=\"ac-ln-menu-items\">\n\t\t\t\t\t\t\t<li class=\"ac-ln-menu-item\">\n\t\t\t\t\t\t\t\t<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\">Overview</span>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t<li class=\"ac-ln-menu-item\">\n\t\t\t\t\t\t\t\t<a",
+    "html": "<ul class=\"ac-ln-menu-items\"><li class=\"ac-ln-menu-item\"><span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\"></span></li><li class=\"ac-ln-menu-item\"><a",
     "styles": {
      "padding-top": "34px",
      "padding-right": "16px",
@@ -546,7 +546,7 @@
     }
    },
    "tray.link": {
-    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -587,7 +587,7 @@
     }
    },
    "tray.current": {
-    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\">Overview</span>",
+    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -605,7 +605,7 @@
     }
    },
    "tray.current-mark": {
-    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\">Overview</span>",
+    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\"></span>",
     "styles": {
      "background-color": "rgb(0, 0, 0)",
      "opacity": "0.8",
@@ -617,7 +617,7 @@
     }
    },
    "tray.chevron-svg": {
-    "html": "<svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\">\n\t<polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" vector-effect=\"non-scaling-stroke\" stro",
+    "html": "<svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\"><polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" vector-effect=\"non-scaling-stroke\" stro",
     "styles": {
      "transform": "matrix(1, 0, 0, 1, 0, 6)"
     }
@@ -625,7 +625,7 @@
   },
   "833": {
    "localnav": {
-    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions ac-ln-sticking\" lang=\"en-US\" dir=\"ltr\" data-sticky=\"\" data-analytics-activitymap-region-id=\"local nav\" role=\"navigation\" aria-label=\"Local\" tabind",
+    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions ac-ln-sticking\" lang=\"en-US\" dir=\"ltr\" data-sticky=\"\" data-analytics-activitymap-region-id=\"local nav\" role=\"navigation\" aria-label=\"…\" tabind",
     "styles": {
      "position": "sticky",
      "top": "0px",
@@ -667,7 +667,7 @@
     }
    },
    "localnav.content": {
-    "html": "<div class=\"ac-ln-content\">\n\t\t\t\t<div class=\"ac-ln-title\">\n\t\t\t\t\t<a href=\"/macbook-air/\" data-analytics-title=\"product index\">\n\t\t\t\t\t\t\t\t\tMacBook&nbsp;Air\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ac-ln-menu\">\n\t\t\t\t\t<a href=\"#ac-ln-menustate\" clas",
+    "html": "<div class=\"ac-ln-content\"><div class=\"ac-ln-title\"><a href=\"/macbook-air/\" data-analytics-title=\"product index\"></a></div><div class=\"ac-ln-menu\"><a href=\"#ac-ln-menustate\" clas",
     "styles": {
      "max-width": "980px",
      "padding-left": "16px",
@@ -682,7 +682,7 @@
     }
    },
    "localnav.title": {
-    "html": "<a href=\"/macbook-air/\" data-analytics-title=\"product index\">\n\t\t\t\t\t\t\t\t\tMacBook&nbsp;Air\n\t\t\t\t\t\t\t\t</a>",
+    "html": "<a href=\"/macbook-air/\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "19px",
@@ -721,7 +721,7 @@
     }
    },
    "localnav.item": {
-    "html": "<li class=\"ac-ln-menu-item\">\n\t\t\t\t\t\t\t\t<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>\n\t\t\t\t\t\t\t</li>",
+    "html": "<li class=\"ac-ln-menu-item\"><a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a></li>",
     "styles": {
      "margin-left": "0px",
      "margin-right": "0px",
@@ -729,7 +729,7 @@
     }
    },
    "localnav.link": {
-    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -770,7 +770,7 @@
     }
    },
    "localnav.current": {
-    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\">Overview</span>",
+    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -790,7 +790,7 @@
     }
    },
    "localnav.current-mark": {
-    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\">Overview</span>",
+    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\"></span>",
     "styles": {
      "background-color": "rgb(0, 0, 0)",
      "opacity": "0.8",
@@ -804,14 +804,14 @@
     }
    },
    "localnav.action": {
-    "html": "<div class=\"ac-ln-action ac-ln-action-button\">\n\t\t\t\t\t\t\t<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span>",
+    "html": "<div class=\"ac-ln-action ac-ln-action-button\"><a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span>",
     "styles": {
      "margin-left": "16px",
      "margin-top": "-3px"
     }
    },
    "localnav.button": {
-    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -903,7 +903,7 @@
     }
    },
    "localnav.chevron": {
-    "html": "<label for=\"ac-ln-menustate\" class=\"ac-ln-menucta\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"ac-ln-menucta-chevron\">\n<svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\">\n\t<polyline shape-rendering=\"geometricPrecision\" data-chev",
+    "html": "<label for=\"ac-ln-menustate\" class=\"ac-ln-menucta\"><span class=\"ac-ln-menucta-chevron\"><svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\"><polyline shape-rendering=\"geometricPrecision\" data-chev",
     "styles": {
      "width": "40px",
      "height": "30px",
@@ -919,7 +919,7 @@
     }
    },
    "localnav.chevron-image": {
-    "html": "<span class=\"ac-ln-menucta-chevron\">\n<svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\">\n\t<polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" ve",
+    "html": "<span class=\"ac-ln-menucta-chevron\"><svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\"><polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" ve",
     "styles": {
      "color": "rgb(0, 0, 0)",
      "opacity": "0.8",
@@ -956,7 +956,7 @@
     }
    },
    "localnav.chevron-svg": {
-    "html": "<svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\">\n\t<polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" vector-effect=\"non-scaling-stroke\" stro",
+    "html": "<svg viewBox=\"0 0 16 9\" data-chevron-icon=\"\" xmlns=\"http://www.w3.org/2000/svg\"><polyline shape-rendering=\"geometricPrecision\" data-chevron-icon-shape=\"\" stroke=\"currentColor\" stroke-linecap=\"round\" vector-effect=\"non-scaling-stroke\" stro",
     "styles": {
      "width": "16px",
      "height": "9px",
@@ -970,7 +970,7 @@
     }
    },
    "localnav.tray": {
-    "html": "<div class=\"ac-ln-menu-tray\" id=\"ac-ln-menustate-tray\" style=\"--r-localnav-menu-tray-natural-height: 197px;\" aria-hidden=\"true\" inert=\"true\">\n\t\t\t\t\t\t<ul class=\"ac-ln-menu-items\">\n\t\t\t\t\t\t\t<li class=\"ac-ln-menu-item\">\n\t\t\t\t\t\t\t\t<span class=\"ac-ln",
+    "html": "<div class=\"ac-ln-menu-tray\" id=\"ac-ln-menustate-tray\" style=\"--r-localnav-menu-tray-natural-height: 197px;\" aria-hidden=\"true\" inert=\"true\"><ul class=\"ac-ln-menu-items\"><li class=\"ac-ln-menu-item\"><span class=\"ac-ln",
     "styles": {
      "visibility": "hidden",
      "max-height": "0px",
@@ -987,7 +987,7 @@
   },
   "834": {
    "localnav": {
-    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions ac-ln-sticking\" lang=\"en-US\" dir=\"ltr\" data-sticky=\"\" data-analytics-activitymap-region-id=\"local nav\" role=\"navigation\" aria-label=\"Local\" tabind",
+    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions ac-ln-sticking\" lang=\"en-US\" dir=\"ltr\" data-sticky=\"\" data-analytics-activitymap-region-id=\"local nav\" role=\"navigation\" aria-label=\"…\" tabind",
     "styles": {
      "position": "sticky",
      "top": "0px",
@@ -1029,7 +1029,7 @@
     }
    },
    "localnav.content": {
-    "html": "<div class=\"ac-ln-content\">\n\t\t\t\t<div class=\"ac-ln-title\">\n\t\t\t\t\t<a href=\"/macbook-air/\" data-analytics-title=\"product index\">\n\t\t\t\t\t\t\t\t\tMacBook&nbsp;Air\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ac-ln-menu\">\n\t\t\t\t\t<a href=\"#ac-ln-menustate\" clas",
+    "html": "<div class=\"ac-ln-content\"><div class=\"ac-ln-title\"><a href=\"/macbook-air/\" data-analytics-title=\"product index\"></a></div><div class=\"ac-ln-menu\"><a href=\"#ac-ln-menustate\" clas",
     "styles": {
      "max-width": "980px",
      "padding-left": "22px",
@@ -1044,7 +1044,7 @@
     }
    },
    "localnav.title": {
-    "html": "<a href=\"/macbook-air/\" data-analytics-title=\"product index\">\n\t\t\t\t\t\t\t\t\tMacBook&nbsp;Air\n\t\t\t\t\t\t\t\t</a>",
+    "html": "<a href=\"/macbook-air/\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1083,7 +1083,7 @@
     }
    },
    "localnav.item": {
-    "html": "<li class=\"ac-ln-menu-item\">\n\t\t\t\t\t\t\t\t<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>\n\t\t\t\t\t\t\t</li>",
+    "html": "<li class=\"ac-ln-menu-item\"><a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a></li>",
     "styles": {
      "margin-left": "24px",
      "margin-right": "0px",
@@ -1091,7 +1091,7 @@
     }
    },
    "localnav.link": {
-    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1132,7 +1132,7 @@
     }
    },
    "localnav.current": {
-    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\">Overview</span>",
+    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1152,7 +1152,7 @@
     }
    },
    "localnav.current-mark": {
-    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\">Overview</span>",
+    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\"></span>",
     "styles": {
      "background-color": "rgb(0, 0, 0)",
      "opacity": "0.8",
@@ -1166,14 +1166,14 @@
     }
    },
    "localnav.action": {
-    "html": "<div class=\"ac-ln-action ac-ln-action-button\">\n\t\t\t\t\t\t\t<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span>",
+    "html": "<div class=\"ac-ln-action ac-ln-action-button\"><a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span>",
     "styles": {
      "margin-left": "24px",
      "margin-top": "0px"
     }
    },
    "localnav.button": {
-    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1267,7 +1267,7 @@
   },
   "900": {
    "localnav": {
-    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions ac-ln-sticking\" lang=\"en-US\" dir=\"ltr\" data-sticky=\"\" data-analytics-activitymap-region-id=\"local nav\" role=\"navigation\" aria-label=\"Local\" tabind",
+    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions ac-ln-sticking\" lang=\"en-US\" dir=\"ltr\" data-sticky=\"\" data-analytics-activitymap-region-id=\"local nav\" role=\"navigation\" aria-label=\"…\" tabind",
     "styles": {
      "position": "sticky",
      "top": "0px",
@@ -1309,7 +1309,7 @@
     }
    },
    "localnav.content": {
-    "html": "<div class=\"ac-ln-content\">\n\t\t\t\t<div class=\"ac-ln-title\">\n\t\t\t\t\t<a href=\"/macbook-air/\" data-analytics-title=\"product index\">\n\t\t\t\t\t\t\t\t\tMacBook&nbsp;Air\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ac-ln-menu\">\n\t\t\t\t\t<a href=\"#ac-ln-menustate\" clas",
+    "html": "<div class=\"ac-ln-content\"><div class=\"ac-ln-title\"><a href=\"/macbook-air/\" data-analytics-title=\"product index\"></a></div><div class=\"ac-ln-menu\"><a href=\"#ac-ln-menustate\" clas",
     "styles": {
      "max-width": "980px",
      "padding-left": "22px",
@@ -1324,7 +1324,7 @@
     }
    },
    "localnav.title": {
-    "html": "<a href=\"/macbook-air/\" data-analytics-title=\"product index\">\n\t\t\t\t\t\t\t\t\tMacBook&nbsp;Air\n\t\t\t\t\t\t\t\t</a>",
+    "html": "<a href=\"/macbook-air/\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1363,7 +1363,7 @@
     }
    },
    "localnav.item": {
-    "html": "<li class=\"ac-ln-menu-item\">\n\t\t\t\t\t\t\t\t<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>\n\t\t\t\t\t\t\t</li>",
+    "html": "<li class=\"ac-ln-menu-item\"><a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a></li>",
     "styles": {
      "margin-left": "24px",
      "margin-right": "0px",
@@ -1371,7 +1371,7 @@
     }
    },
    "localnav.link": {
-    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1412,7 +1412,7 @@
     }
    },
    "localnav.current": {
-    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\">Overview</span>",
+    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1432,7 +1432,7 @@
     }
    },
    "localnav.current-mark": {
-    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\">Overview</span>",
+    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\"></span>",
     "styles": {
      "background-color": "rgb(0, 0, 0)",
      "opacity": "0.8",
@@ -1446,14 +1446,14 @@
     }
    },
    "localnav.action": {
-    "html": "<div class=\"ac-ln-action ac-ln-action-button\">\n\t\t\t\t\t\t\t<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span>",
+    "html": "<div class=\"ac-ln-action ac-ln-action-button\"><a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span>",
     "styles": {
      "margin-left": "24px",
      "margin-top": "0px"
     }
    },
    "localnav.button": {
-    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1547,7 +1547,7 @@
   },
   "1200": {
    "localnav": {
-    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions ac-ln-sticking\" lang=\"en-US\" dir=\"ltr\" data-sticky=\"\" data-analytics-activitymap-region-id=\"local nav\" role=\"navigation\" aria-label=\"Local\" tabind",
+    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions ac-ln-sticking\" lang=\"en-US\" dir=\"ltr\" data-sticky=\"\" data-analytics-activitymap-region-id=\"local nav\" role=\"navigation\" aria-label=\"…\" tabind",
     "styles": {
      "position": "sticky",
      "top": "0px",
@@ -1589,7 +1589,7 @@
     }
    },
    "localnav.content": {
-    "html": "<div class=\"ac-ln-content\">\n\t\t\t\t<div class=\"ac-ln-title\">\n\t\t\t\t\t<a href=\"/macbook-air/\" data-analytics-title=\"product index\">\n\t\t\t\t\t\t\t\t\tMacBook&nbsp;Air\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ac-ln-menu\">\n\t\t\t\t\t<a href=\"#ac-ln-menustate\" clas",
+    "html": "<div class=\"ac-ln-content\"><div class=\"ac-ln-title\"><a href=\"/macbook-air/\" data-analytics-title=\"product index\"></a></div><div class=\"ac-ln-menu\"><a href=\"#ac-ln-menustate\" clas",
     "styles": {
      "max-width": "980px",
      "padding-left": "22px",
@@ -1604,7 +1604,7 @@
     }
    },
    "localnav.title": {
-    "html": "<a href=\"/macbook-air/\" data-analytics-title=\"product index\">\n\t\t\t\t\t\t\t\t\tMacBook&nbsp;Air\n\t\t\t\t\t\t\t\t</a>",
+    "html": "<a href=\"/macbook-air/\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1643,7 +1643,7 @@
     }
    },
    "localnav.item": {
-    "html": "<li class=\"ac-ln-menu-item\">\n\t\t\t\t\t\t\t\t<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>\n\t\t\t\t\t\t\t</li>",
+    "html": "<li class=\"ac-ln-menu-item\"><a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a></li>",
     "styles": {
      "margin-left": "24px",
      "margin-right": "0px",
@@ -1651,7 +1651,7 @@
     }
    },
    "localnav.link": {
-    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1692,7 +1692,7 @@
     }
    },
    "localnav.current": {
-    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\">Overview</span>",
+    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1712,7 +1712,7 @@
     }
    },
    "localnav.current-mark": {
-    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\">Overview</span>",
+    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\"></span>",
     "styles": {
      "background-color": "rgb(0, 0, 0)",
      "opacity": "0.8",
@@ -1726,14 +1726,14 @@
     }
    },
    "localnav.action": {
-    "html": "<div class=\"ac-ln-action ac-ln-action-button\">\n\t\t\t\t\t\t\t<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span>",
+    "html": "<div class=\"ac-ln-action ac-ln-action-button\"><a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span>",
     "styles": {
      "margin-left": "24px",
      "margin-top": "0px"
     }
    },
    "localnav.button": {
-    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1827,7 +1827,7 @@
   },
   "1600": {
    "localnav": {
-    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions ac-ln-sticking\" lang=\"en-US\" dir=\"ltr\" data-sticky=\"\" data-analytics-activitymap-region-id=\"local nav\" role=\"navigation\" aria-label=\"Local\" tabind",
+    "html": "<nav id=\"ac-localnav\" class=\"ac-localnav-scrim js no-touch css-sticky ac-ln-allow-transitions ac-ln-sticking\" lang=\"en-US\" dir=\"ltr\" data-sticky=\"\" data-analytics-activitymap-region-id=\"local nav\" role=\"navigation\" aria-label=\"…\" tabind",
     "styles": {
      "position": "sticky",
      "top": "0px",
@@ -1869,7 +1869,7 @@
     }
    },
    "localnav.content": {
-    "html": "<div class=\"ac-ln-content\">\n\t\t\t\t<div class=\"ac-ln-title\">\n\t\t\t\t\t<a href=\"/macbook-air/\" data-analytics-title=\"product index\">\n\t\t\t\t\t\t\t\t\tMacBook&nbsp;Air\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ac-ln-menu\">\n\t\t\t\t\t<a href=\"#ac-ln-menustate\" clas",
+    "html": "<div class=\"ac-ln-content\"><div class=\"ac-ln-title\"><a href=\"/macbook-air/\" data-analytics-title=\"product index\"></a></div><div class=\"ac-ln-menu\"><a href=\"#ac-ln-menustate\" clas",
     "styles": {
      "max-width": "980px",
      "padding-left": "22px",
@@ -1884,7 +1884,7 @@
     }
    },
    "localnav.title": {
-    "html": "<a href=\"/macbook-air/\" data-analytics-title=\"product index\">\n\t\t\t\t\t\t\t\t\tMacBook&nbsp;Air\n\t\t\t\t\t\t\t\t</a>",
+    "html": "<a href=\"/macbook-air/\" data-analytics-title=\"product index\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "21px",
@@ -1923,7 +1923,7 @@
     }
    },
    "localnav.item": {
-    "html": "<li class=\"ac-ln-menu-item\">\n\t\t\t\t\t\t\t\t<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>\n\t\t\t\t\t\t\t</li>",
+    "html": "<li class=\"ac-ln-menu-item\"><a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a></li>",
     "styles": {
      "margin-left": "24px",
      "margin-right": "0px",
@@ -1931,7 +1931,7 @@
     }
    },
    "localnav.link": {
-    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\">Tech Specs</a>",
+    "html": "<a href=\"/macbook-air/specs/\" class=\"ac-ln-menu-link\" data-analytics-title=\"tech specs\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1972,7 +1972,7 @@
     }
    },
    "localnav.current": {
-    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\">Overview</span>",
+    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\"></span>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",
@@ -1992,7 +1992,7 @@
     }
    },
    "localnav.current-mark": {
-    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\">Overview</span>",
+    "html": "<span class=\"ac-ln-menu-link current\" role=\"link\" aria-disabled=\"true\" aria-current=\"page\"></span>",
     "styles": {
      "background-color": "rgb(0, 0, 0)",
      "opacity": "0.8",
@@ -2006,14 +2006,14 @@
     }
    },
    "localnav.action": {
-    "html": "<div class=\"ac-ln-action ac-ln-action-button\">\n\t\t\t\t\t\t\t<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span>",
+    "html": "<div class=\"ac-ln-action ac-ln-action-button\"><a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span>",
     "styles": {
      "margin-left": "24px",
      "margin-top": "0px"
     }
    },
    "localnav.button": {
-    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\">\n\t\t\t\t\t\t\t\tBuy<span class=\"ac-ln-action-product\">MacBook Air</span></a>",
+    "html": "<a class=\"ac-ln-button\" href=\"/us/shop/goto/buy_mac/macbook_air\" data-analytics-title=\"buy - macbook air 13 and 15 inch\"><span class=\"ac-ln-action-product\"></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "12px",

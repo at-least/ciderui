@@ -6,7 +6,7 @@
  "widths": {
   "390": {
    "menu": {
-    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"Menu\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback",
+    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"…\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"…\" class=\"globalnav-menuback",
     "styles": {
      "background-color": "rgb(250, 250, 252)",
      "height": "900px"
@@ -128,7 +128,7 @@
     }
    },
    "row.text": {
-    "html": "<span class=\"globalnav-link-text\">Mac</span>",
+    "html": "<span class=\"globalnav-link-text\"></span>",
     "styles": {
      "color": "rgb(0, 0, 0)",
      "opacity": "1",
@@ -757,7 +757,7 @@
     }
    },
    "content": {
-    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"Mac menu\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menu",
+    "html": "<div class=\"globalnav-content\" style=\"--r-globalnav-flyout-rate: 450ms;\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-label=\"…\"><div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"…\" class=\"globalnav-menu",
     "styles": {
      "background-color": "rgb(250, 250, 252)",
      "overflow-y": "scroll",
@@ -789,7 +789,7 @@
     }
    },
    "group": {
-    "html": "<div class=\"globalnav-submenu-group \" data-analytics-region=\"shop mac\" style=\"--r-globalnav-flyout-group-number: 1;\"><h2 class=\"globalnav-submenu-header\" id=\"92e74133\" style=\"--r-globalnav-flyout-item-number: 12;\">Shop Mac</h2><ul class=\"gl",
+    "html": "<div class=\"globalnav-submenu-group \" data-analytics-region=\"shop mac\" style=\"--r-globalnav-flyout-group-number: 1;\"><h2 class=\"globalnav-submenu-header\" id=\"92e74133\" style=\"--r-globalnav-flyout-item-number: 12;\"></h2><ul class=\"gl",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -809,13 +809,13 @@
     }
    },
    "header.elevated": {
-    "html": "<h2 class=\"globalnav-submenu-header\" id=\"3ded287d\" style=\"--r-globalnav-flyout-item-number: 1;\">Explore Mac</h2>",
+    "html": "<h2 class=\"globalnav-submenu-header\" id=\"3ded287d\" style=\"--r-globalnav-flyout-item-number: 1;\"></h2>",
     "styles": {
      "display": "none"
     }
    },
    "header": {
-    "html": "<h2 class=\"globalnav-submenu-header\" id=\"92e74133\" style=\"--r-globalnav-flyout-item-number: 12;\">Shop Mac</h2>",
+    "html": "<h2 class=\"globalnav-submenu-header\" id=\"92e74133\" style=\"--r-globalnav-flyout-item-number: 12;\"></h2>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -843,7 +843,7 @@
     }
    },
    "item.elevated": {
-    "html": "<li class=\"globalnav-submenu-list-item-elevated\" style=\"--r-globalnav-flyout-item-number: 2;\"><a href=\"/mac/\" class=\"globalnav-submenu-link\" data-analytics-title=\"explore all mac\" data-focus-method=\"mouse\">Explore All Mac</a></li>",
+    "html": "<li class=\"globalnav-submenu-list-item-elevated\" style=\"--r-globalnav-flyout-item-number: 2;\"><a href=\"/mac/\" class=\"globalnav-submenu-link\" data-analytics-title=\"explore all mac\" data-focus-method=\"mouse\"></a></li>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -872,7 +872,7 @@
     }
    },
    "item.elevated2": {
-    "html": "<li class=\"globalnav-submenu-list-item-elevated\" style=\"--r-globalnav-flyout-item-number: 3;\"><a href=\"/macbook-neo/\" class=\"globalnav-submenu-link\" data-analytics-title=\"macbook neo\">MacBook Neo</a></li>",
+    "html": "<li class=\"globalnav-submenu-list-item-elevated\" style=\"--r-globalnav-flyout-item-number: 3;\"><a href=\"/macbook-neo/\" class=\"globalnav-submenu-link\" data-analytics-title=\"macbook neo\"></a></li>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -891,7 +891,7 @@
     }
    },
    "item.after": {
-    "html": "<li class=\"globalnav-submenu-list-item\" style=\"--r-globalnav-flyout-item-number: 10;\"><a href=\"/mac/compare/\" class=\"globalnav-submenu-link\" data-analytics-title=\"compare mac\">Compare Mac</a></li>",
+    "html": "<li class=\"globalnav-submenu-list-item\" style=\"--r-globalnav-flyout-item-number: 10;\"><a href=\"/mac/compare/\" class=\"globalnav-submenu-link\" data-analytics-title=\"compare mac\"></a></li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -916,7 +916,7 @@
     }
    },
    "item": {
-    "html": "<li class=\"globalnav-submenu-list-item\" style=\"--r-globalnav-flyout-item-number: 13;\"><a href=\"/us/shop/goto/buy_mac\" class=\"globalnav-submenu-link\" data-analytics-title=\"shop mac\">Shop Mac</a></li>",
+    "html": "<li class=\"globalnav-submenu-list-item\" style=\"--r-globalnav-flyout-item-number: 13;\"><a href=\"/us/shop/goto/buy_mac\" class=\"globalnav-submenu-link\" data-analytics-title=\"shop mac\"></a></li>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -941,7 +941,7 @@
     }
    },
    "item2": {
-    "html": "<li class=\"globalnav-submenu-list-item\" style=\"--r-globalnav-flyout-item-number: 14;\"><a href=\"/mac/best-mac/\" class=\"globalnav-submenu-link\" data-analytics-title=\"help me choose\">Help Me Choose</a></li>",
+    "html": "<li class=\"globalnav-submenu-list-item\" style=\"--r-globalnav-flyout-item-number: 14;\"><a href=\"/mac/best-mac/\" class=\"globalnav-submenu-link\" data-analytics-title=\"help me choose\"></a></li>",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -960,7 +960,7 @@
     }
    },
    "link.elevated": {
-    "html": "<a href=\"/mac/\" class=\"globalnav-submenu-link\" data-analytics-title=\"explore all mac\" data-focus-method=\"mouse\">Explore All Mac</a>",
+    "html": "<a href=\"/mac/\" class=\"globalnav-submenu-link\" data-analytics-title=\"explore all mac\" data-focus-method=\"mouse\"></a>",
     "styles": {
      "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "28px",
@@ -1046,7 +1046,7 @@
     }
    },
    "link": {
-    "html": "<a href=\"/us/shop/goto/buy_mac\" class=\"globalnav-submenu-link\" data-analytics-title=\"shop mac\">Shop Mac</a>",
+    "html": "<a href=\"/us/shop/goto/buy_mac\" class=\"globalnav-submenu-link\" data-analytics-title=\"shop mac\"></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "17px",
@@ -1099,7 +1099,7 @@
     }
    },
    "back": {
-    "html": "<div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://www.w3.org/2",
+    "html": "<div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"…\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://www.w3.org/2",
     "styles": {
      "position": "absolute",
      "top": "0px",
@@ -1124,7 +1124,7 @@
     }
    },
    "back.button": {
-    "html": "<button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m1.5618 24.0621 6.5581-6.4238",
+    "html": "<button aria-label=\"…\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m1.5618 24.0621 6.5581-6.4238",
     "styles": {
      "width": "48px",
      "height": "48px",
@@ -1218,7 +1218,7 @@
     }
    },
    "close": {
-    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"Close\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-butto",
+    "html": "<button id=\"globalnav-menutrigger-button\" aria-controls=\"globalnav-list\" aria-label=\"…\" data-topnav-menu-label-open=\"Menu\" data-topnav-menu-label-close=\"Close\" data-topnav-flyout-trigger-compact=\"menu\" class=\"globalnav-menutrigger-butto",
     "styles": {
      "color": "rgb(0, 0, 0)",
      "opacity": "0.8"
@@ -1231,7 +1231,7 @@
     }
    },
    "row.away": {
-    "html": "<span class=\"globalnav-link-text\">Mac</span>",
+    "html": "<span class=\"globalnav-link-text\"></span>",
     "styles": {
      "opacity": "1",
      "visibility": "hidden",
@@ -2155,7 +2155,7 @@
     ]
    },
    "back.row": {
-    "html": "<span class=\"globalnav-link-text\">Mac</span>",
+    "html": "<span class=\"globalnav-link-text\"></span>",
     "styles": {
      "opacity": "1",
      "visibility": "visible",
@@ -2169,7 +2169,7 @@
     }
    },
    "back.gone": {
-    "html": "<div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"Main menu\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://www.w3.org/2",
+    "html": "<div class=\"globalnav-item globalnav-menuback\"><button aria-label=\"…\" class=\"globalnav-menuback-button\"><span aria-hidden=\"true\" class=\"globalnav-chevron-icon\"><svg height=\"48\" viewBox=\"0 0 9 48\" width=\"9\" xmlns=\"http://www.w3.org/2",
     "styles": {
      "opacity": "0",
      "visibility": "hidden",
