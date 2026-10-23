@@ -1,0 +1,105 @@
+{
+ "browser": "Chrome/154.0.0.0",
+ "date": "2026-10-23T00:49:30.459Z",
+ "path": "/account/manage",
+ "probes": {
+  "card": {
+   "box": { "height": 124, "width": 315 },
+   "html": "div {card card-theme-module card-border}",
+   "styles": { "background-color": "rgb(255, 255, 255)", "border-left-color": "rgba(210, 210, 215, 0.63)", "border-top-color": "rgba(210, 210, 215, 0.63)", "border-top-left-radius": "11px", "border-top-style": "solid", "border-top-width": "1px", "box-shadow": "none", "height": "124px", "width": "315px" }
+  },
+  "card.button": {
+   "box": { "height": 126, "width": 317 },
+   "html": "button {button button-bare button-expand}",
+   "styles": { "background-color": "rgba(0, 0, 0, 0)", "border-top-color": "rgba(0, 0, 0, 0)", "border-top-left-radius": "0px", "border-top-style": "solid", "border-top-width": "1px", "box-shadow": "none", "cursor": "pointer", "height": "124px", "padding-bottom": "0px", "padding-left": "0px", "padding-right": "0px", "padding-top": "0px", "width": "315px" }
+  },
+  "card.glyph": {
+   "box": { "height": 40, "width": 40 },
+   "html": "svg {amk-icon}",
+   "styles": { "color": "rgb(29, 29, 31)", "fill": "rgb(0, 113, 227)", "height": "40px", "width": "40px" }
+  },
+  "card.line": {
+   "box": { "height": 30, "width": 215 },
+   "html": "div {card-line}",
+   "styles": { "color": "rgb(110, 110, 115)", "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif", "font-size": "14px", "font-weight": "400", "letter-spacing": "-0.224px", "line-height": "20.0003px", "margin-top": "-10px" }
+  },
+  "card.title": {
+   "box": { "height": 38, "width": 215 },
+   "html": "h3 {card-title}",
+   "styles": { "color": "rgb(29, 29, 31)", "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif", "font-size": "19px", "font-weight": "600", "letter-spacing": "0.228px", "line-height": "23px", "margin-bottom": "0px", "margin-top": "-10px" }
+  },
+  "card.top": {
+   "box": { "height": 88, "width": 215 },
+   "html": "div {card-top}",
+   "styles": { "margin-top": "0px", "padding-bottom": "0px", "padding-left": "0px", "padding-right": "0px", "padding-top": "0px" }
+  },
+  "column": {
+   "box": { "height": 146, "width": 335 },
+   "html": "div {column large-6 medium-12}",
+   "styles": { "margin-bottom": "0px", "padding-bottom": "0px", "padding-left": "0px", "padding-right": "0px", "padding-top": "0px", "width": "335px" }
+  },
+  "description": {
+   "box": { "height": 40, "width": 650 },
+   "html": "div {page-description}",
+   "styles": { "color": "rgb(66, 66, 69)", "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif", "font-size": "14px", "font-weight": "400", "letter-spacing": "-0.224px", "line-height": "20.0003px", "margin-top": "15px" }
+  },
+  "header": {
+   "box": { "height": 87, "width": 650 },
+   "html": "header {page-header}",
+   "styles": { "margin-bottom": "40px", "padding-bottom": "0px", "padding-left": "0px", "padding-right": "0px", "padding-top": "0px" }
+  },
+  "list": {
+   "box": { "height": 224, "width": 250 },
+   "html": "ul {side-nav__list}",
+   "styles": { "margin-top": "-3px", "padding-bottom": "0px", "padding-left": "0px", "padding-right": "0px", "padding-top": "0px" }
+  },
+  "list.current": {
+   "box": { "height": 32, "width": 250 },
+   "html": "a {side-nav__link}",
+   "styles": { "color": "rgb(0, 113, 227)", "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif", "font-size": "17px", "font-weight": "700", "letter-spacing": "-0.374px", "line-height": "25px", "padding-bottom": "4px", "padding-left": "0px", "padding-right": "0px", "padding-top": "3px", "text-decoration-color": "rgb(0, 113, 227)", "text-decoration-line": "none", "text-underline-offset": "auto" }
+  },
+  "list.item": {
+   "box": { "height": 32, "width": 250 },
+   "html": "li {side-nav__item}",
+   "styles": { "height": "32px", "margin-bottom": "0px", "padding-bottom": "0px", "padding-left": "0px", "padding-right": "0px", "padding-top": "0px" }
+  },
+  "list.link": {
+   "box": { "height": 32, "width": 250 },
+   "html": "a {side-nav__link}",
+   "styles": { "color": "rgb(29, 29, 31)", "display": "block", "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif", "font-size": "17px", "font-weight": "400", "letter-spacing": "-0.374px", "line-height": "25px", "padding-bottom": "4px", "padding-left": "0px", "padding-right": "0px", "padding-top": "3px", "text-decoration-color": "rgb(29, 29, 31)", "text-decoration-line": "none", "text-underline-offset": "auto" }
+  },
+  "nav": {
+   "box": { "height": 565, "width": 290 },
+   "html": "div {layout__nav}",
+   "styles": { "padding-bottom": "0px", "padding-left": "0px", "padding-right": "0px", "padding-top": "0px", "width": "290px" }
+  },
+  "page": {
+   "html": "body {localnav-overlap}",
+   "styles": { "-webkit-font-smoothing": "antialiased", "background-color": "rgb(255, 255, 255)", "color": "rgb(29, 29, 31)", "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif", "font-size": "17px", "font-synthesis": "none", "font-weight": "400", "letter-spacing": "-0.374px", "line-height": "25px", "text-rendering": "auto" }
+  },
+  "person.line": {
+   "box": { "height": 20, "width": 250 },
+   "html": "div {person-info__email}",
+   "styles": { "color": "rgb(110, 110, 115)", "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif", "font-size": "14px", "font-weight": "400", "letter-spacing": "-0.224px", "line-height": "20.0003px" }
+  },
+  "person.picture": {
+   "box": { "height": 80, "width": 80 },
+   "html": "svg[role=img]",
+   "styles": { "height": "80px", "margin-bottom": "0px", "width": "80px" }
+  },
+  "person.title": {
+   "box": { "height": 23, "width": 250 },
+   "html": "div {person-info__name}",
+   "styles": { "color": "rgb(29, 29, 31)", "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif", "font-size": "19px", "font-weight": "600", "letter-spacing": "0.228px", "line-height": "23px", "margin-top": "0px" }
+  },
+  "title": {
+   "box": { "height": 32, "width": 650 },
+   "html": "h1 {page-title}",
+   "styles": { "color": "rgb(29, 29, 31)", "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif", "font-size": "28px", "font-weight": "700", "letter-spacing": "0.196px", "line-height": "32px", "margin-bottom": "0px", "margin-top": "0px" }
+  }
+ },
+ "probesDigest": [250, 50, 222, 115, 184, 128, 155, 87, 138, 36, 110, 150, 136, 143, 74, 28, 133, 182, 159, 62, 98, 101, 7, 96, 11, 57, 238, 93, 122, 79, 11, 115],
+ "readerDigest": [138, 144, 100, 105, 60, 82, 123, 90, 132, 236, 231, 73, 61, 240, 117, 187, 41, 119, 199, 254, 212, 130, 106, 226, 247, 204, 42, 95, 216, 46, 128, 91],
+ "window": [1920, 898, 2],
+ "sha256": [133, 158, 207, 27, 250, 153, 254, 84, 218, 128, 130, 35, 143, 20, 41, 205, 5, 53, 235, 176, 208, 237, 213, 110, 212, 228, 221, 2, 60, 116, 14, 25]
+}
