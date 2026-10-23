@@ -6,7 +6,7 @@
 // "ip", "i" and the field empty; "x" and "q" (two characters no name of its
 // starts with); and the clear button clicked. At each step, every animation
 // and transition its script starts in the nav (`animations`, each first seen
-// in ms from the key: one seen within 15ms is still held from a step before,
+// in ms from the key: one seen within 20ms is still held from a step before,
 // a filled animation staying among the document's), the search's classes
 // (its shift-<sections before>-<after> and with-results), the flyout's
 // height, the results now (each section by its analytics region, and the
