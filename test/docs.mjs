@@ -93,7 +93,7 @@ const file = (url) => {
 const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
 for (const width of [1440, 390]) {
   const page = await browser.newPage({ viewport: { width, height: 900 } });
-  let missing = [], errors = [];
+  let missing = [], untyped = [], errors = [];
   page.on('pageerror', (e) => errors.push(String(e)));
   await page.route(`${ORIGIN}/**`, (route) => {
     const f = file(route.request().url());
@@ -101,10 +101,12 @@ for (const width of [1440, 390]) {
       missing.push(route.request().url());
       return route.fulfill({ status: 404, body: '' });
     }
-    route.fulfill({ body: readFileSync(f), contentType: TYPES[extname(f)] ?? 'application/octet-stream' });
+    if (!TYPES[extname(f)]) untyped.push(route.request().url());
+    route.fulfill({ body: readFileSync(f), contentType: TYPES[extname(f)] });
   });
   for (const url of urls) {
     missing = [];
+    untyped = [];
     errors = [];
     const where = `${url.slice(ORIGIN.length)} at ${width}px`;
     await page.goto(url, { waitUntil: 'load' });
@@ -134,6 +136,7 @@ for (const width of [1440, 390]) {
     }), ORIGIN);
     check(`${where}: no page error`, errors.join(' | '), '');
     check(`${where}: nothing it asks for is missing`, missing.join(' '), '');
+    check(`${where}: everything it asks for has its type in TYPES`, untyped.join(' '), '');
     check(`${where}: no scrolling sideways`, got.sideways, 0);
     for (const link of new Set(got.links)) check(`${where}: its link ${link} is a page of the site`, Boolean(file(link)), true);
     for (const f of got.frames) {
