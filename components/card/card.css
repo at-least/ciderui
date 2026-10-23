@@ -7,11 +7,11 @@
  * with a tag, a dark one, one with a plain eyebrow; their parts, hovered).
  *
  *   <div class="cui-card">
- *     <img class="cui-card-media" src="/iphone.jpg" alt="">
+ *     <img class="cui-card-media" src="/phone.jpg" alt="">
  *     <div class="cui-card-content">
  *       <p class="cui-card-eyebrow" data-variant="tag">NEW</p>
- *       <h3 class="cui-card-headline"><a class="cui-card-link" href="/iphone/">iPhone 18 Pro</a></h3>
- *       <p class="cui-card-description">The ultimate iPhone.</p>
+ *       <h3 class="cui-card-headline"><a class="cui-card-link" href="/phone/">Cider Phone 3</a></h3>
+ *       <p class="cui-card-description">Our most capable phone.</p>
  *       <p class="cui-card-price">From $1199</p>
  *     </div>
  *   </div>

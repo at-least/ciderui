@@ -1,7 +1,7 @@
 // BROWSER=safari|chrome|chromium|firefox|ipad|iphone node run.mjs
 // Can the global nav's flyouts open with no script, as globalnav.css opens
-// them? Serves page.html on 127.0.0.1. In Safari, Chrome and Chromium
-// (../browsers.mjs), at 1440 by 900: the pointer moved as a hand moves it
+// them? Serves page.html on 127.0.0.1. In Safari, Chrome, Chromium and
+// Firefox (../browsers.mjs), at 1440 by 900: the pointer moved as a hand moves it
 // (`move`, the browser's own input) to a link, along the bar to the next, off
 // the bar to the page, and swept along the bar quicker than the flyouts
 // open, each recording which flyouts show every frame (page.html's

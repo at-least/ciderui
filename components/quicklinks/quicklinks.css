@@ -7,9 +7,9 @@
  * (components/button).
  *
  *   <nav class="cui-quicklinks" aria-labelledby="quicklinks-title">
- *     <h2 class="cui-quicklinks-title" id="quicklinks-title">Quick Links</h2>
+ *     <h2 class="cui-quicklinks-title" id="quicklinks-title">Shortcuts</h2>
  *     <ul class="cui-quicklinks-list">
- *       <li><a class="cui-btn" data-variant="secondary-neutral" href="/retail/">Find a Store</a></li>
+ *       <li><a class="cui-btn" data-variant="secondary-neutral" href="/retail/">Visit a Store</a></li>
  *     </ul>
  *   </nav>
  *

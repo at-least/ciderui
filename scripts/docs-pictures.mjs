@@ -10,8 +10,8 @@
 //
 // A picture is what this Chromium drew, and another version draws other
 // bytes, so what is held is what it was drawn from: docs/pictures.json
-// records each picture's scene (its document, the examples' markup in it,
-// its size) and the stylesheet's and the fonts' digests, and --check fails
+// records, for each picture, one digest of its scene (its document, the
+// examples' markup in it, its size), the stylesheet and the fonts, and --check fails
 // when an example, the stylesheet, a font or a scene has changed since, or a
 // picture is missing:
 //
@@ -30,7 +30,7 @@ const example = (id) => readFileSync(join(ROOT, 'components', id.replace('/', '/
 
 // ciderui's own parts as a shelf of the store's cards, each its name, its
 // kind and what it is, for the home's tile and the catalogue's story: the
-// examples' cards name apple.com's products
+// examples' cards name a store's products
 const card = (kind, name, what) => `<li><div class="cui-card"><div class="cui-card-content"><p class="cui-card-eyebrow">${kind}</p><h3 class="cui-card-headline"><a class="cui-card-link" href="#">${name}</a></h3><p class="cui-card-description">${what}</p></div></div></li>`;
 const PARTS = `<div class="cui-shelf"><div class="cui-shelf-row"><ul class="cui-shelf-scroller">${[
   card('Navigation', 'Global Nav', 'The bar across the top, its menu a popover.'),

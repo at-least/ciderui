@@ -38,7 +38,7 @@ const LIST = '.cui-globalnav-list';
 const LOGO = '.cui-globalnav-logo';
 const BUTTON = '.cui-globalnav-menubutton';
 const CLOSE = '.cui-globalnav-closebutton';
-// the first and second links (Store, Mac), the search and the bag
+// the first and second links (Store, Laptops), the search and the bag
 const LINK = `${LIST} > li:nth-child(3) > .cui-globalnav-link`;
 const LINK2 = `${LIST} > li:nth-child(4) > .cui-globalnav-link`;
 const SEARCH = `${LIST} > li:nth-child(7) > .cui-globalnav-icon`;
@@ -91,7 +91,7 @@ const SEARCHING = { click: SBUTTON, height: 900 };
 const HOLD = '<style>.cui-globalnav-search, .cui-globalnav-search * { transition-delay: 10s !important; }</style>';
 const TYPE = [...SIZE, 'color'];
 
-// a link's flyout: the example with Store's and Mac's
+// a link's flyout: the example with Store's and Laptops'
 const FLYOUT_NAV = ex('flyout');
 // the local nav's example, under the bar
 const LOCALNAV = examples(new URL('../localnav/', import.meta.url))('localnav');
@@ -834,7 +834,7 @@ export const cases = [
     checks: [{ target: LINK2, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-home:menu.link)' }],
   },
   {
-    // shown by the pointer resting on Mac's link
+    // shown by the pointer resting on Laptops' link
     name: 'flyout',
     html: FLYOUT_NAV,
     ...HOVERING,
@@ -947,7 +947,7 @@ export const cases = [
     ],
   },
   {
-    // the pointer on along the bar from Store's link to Mac's
+    // the pointer on along the bar from Store's link to Laptops'
     name: 'flyout-change',
     html: FLYOUT_NAV,
     ...HOVERING,
@@ -1092,7 +1092,7 @@ export const cases = [
     ],
   },
   {
-    // to 833px: the menu opened, then Mac's row
+    // to 833px: the menu opened, then Laptops' row
     name: 'flyout-phone',
     html: FLYOUT_NAV,
     click: [BUTTON, MAC_BUTTON],

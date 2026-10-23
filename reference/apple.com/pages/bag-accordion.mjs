@@ -10,7 +10,7 @@ export default {
   probes: [
     // the accordion, its parts: the outer item (the bag's questions, a large
     // title) and, opened, its compact items (a question, its chevron), the
-    // first of those opened (its answer, the chevron turned)
+    // first of those opened (its answer, the chevron's color)
     { name: 'accordion.title', select: '.rc-accordion-item > h2 .rc-accordion-title', props: TYPE },
     { name: 'accordion.icon', select: '.rc-accordion-item > h2 .rc-accordion-chevrondown', props: ['color', 'margin-left', ...MOTION], box: true },
     { name: 'accordion.svg', select: '.rc-accordion-item > h2 .accordion-icon-svg', props: ['width', 'height'], box: true },

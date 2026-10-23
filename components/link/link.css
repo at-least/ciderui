@@ -7,7 +7,7 @@
  * chevron); the chevron's numbers, reference/icons/.
  *
  *   <p>Read the <a class="cui-link" href="/guide">guide</a> first.</p>
- *   <a class="cui-link" data-variant="more" href="/iphone/"><span class="cui-link-text">Learn more</span><svg class="cui-link-icon" …></svg></a>
+ *   <a class="cui-link" data-variant="more" href="#learn"><span class="cui-link-text">Learn more</span><svg class="cui-link-icon" …></svg></a>
  *
  * The more link's markup is the crate's MoreLink (the chevron is
  * ciderui::icon::MORE), on one line: a space between its text and its

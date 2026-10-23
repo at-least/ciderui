@@ -3,7 +3,7 @@
 // and -right), rasterized at 20 pixels to the unit on a blank page (svg.js),
 // and ciderui's own drawn from their numbers: the share of ink each pair has
 // in common. Fails below 0.85 (intersection over union), a mark set before the
-// run. The result is results/paddle.json.
+// run, or if the gallery's example draws others. The result is results/paddle.json.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 

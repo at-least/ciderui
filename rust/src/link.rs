@@ -11,9 +11,9 @@ use crate::{Class, icon::MORE};
 /// use hypertext::prelude::*;
 /// use ciderui::MoreLink;
 ///
-/// let html = rsx! { <MoreLink href="/iphone/" text="Learn more" .. /> }.render();
+/// let html = rsx! { <MoreLink href="#learn" text="Learn more" .. /> }.render();
 /// assert!(html.as_inner().starts_with(
-///     r#"<a class="cui-link" data-variant="more" href="/iphone/"><span class="cui-link-text">Learn more</span><svg class="cui-link-icon""#,
+///     r##"<a class="cui-link" data-variant="more" href="#learn"><span class="cui-link-text">Learn more</span><svg class="cui-link-icon""##,
 /// ));
 /// ```
 #[derive(Default)]

@@ -67,7 +67,7 @@
  *                           apple.com's store has no dark overlay
  *
  * The rest is not themed: the font stack, the letter-spacing per size, the
- * radii, the focus ring, the shadows. */
+ * focus ring, the shadows. */
 
 :root {
   --cui-c-bg: light-dark(#ffffff, #000000);

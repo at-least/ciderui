@@ -14,13 +14,13 @@
  *         <div class="cui-footer-column">
  *           <div class="cui-footer-section">
  *             <input class="cui-footer-toggle" type="checkbox" id="footer-shop">
- *             <h3 class="cui-footer-title"><label for="footer-shop">Shop and Learn(icon::FOOTER_CHEVRON)</label></h3>
+ *             <h3 class="cui-footer-title"><label for="footer-shop">Products(icon::FOOTER_CHEVRON)</label></h3>
  *             <ul class="cui-footer-list"><li><a href="/store/">Store</a></li></ul>
  *           </div>
  *         </div>
  *       </nav>
  *       <div class="cui-footer-legal">
- *         <p class="cui-footer-shop">More ways to shop: <a href="/retail/">Find a store</a>.</p>
+ *         <p class="cui-footer-shop">Want to see it first? <a href="/retail/">Visit a store</a> near you.</p>
  *         <div class="cui-footer-row">
  *           <p class="cui-footer-copyright">Copyright © 2026 Example Inc. All rights reserved.</p>
  *           <ul class="cui-footer-links"><li><a href="/privacy/">Privacy Policy</a></li></ul>

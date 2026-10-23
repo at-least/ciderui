@@ -23,7 +23,7 @@
  *   <p class="cui-field-message" id="email-message">(icon::ALERT)Please enter a valid email address.</p>
  *
  *   with a currency before it, after its label:
- *     <span class="cui-field-prefix" id="amount-currency">$</span>
+ *     <span class="cui-field-prefix" id="amount-prefix">$</span>
  *
  *   a message of several lines, its textarea in a box:
  *   <div class="cui-field">
@@ -35,7 +35,7 @@
  *   <div class="cui-field">
  *     <select class="cui-field-input" id="model" name="model">
  *       <option value="">Select</option>
- *       <option>iPhone 17 Pro</option>
+ *       <option value="phone-3">Cider Phone 3</option>
  *     </select>
  *     <label class="cui-field-label" for="model">Choose your model</label>
  *     (icon::DROPDOWN, class cui-field-chevron)

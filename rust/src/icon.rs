@@ -2,8 +2,8 @@
 //! glyph or the drawing apple.com uses in its place (`reference/icons/`): its
 //! box, the ink's place in it, the strokes' thickness; not Apple's outlines.
 //! Each is sized by its own attributes: in em where it sits in text, so it
-//! takes the text's size ([`MORE`]), in pixels where it sits in the global
-//! nav's bar, as apple.com's do; and drawn in `currentColor`, so it takes the
+//! takes the text's size ([`MORE`]), in pixels elsewhere (the global nav, a
+//! gallery's paddles, a modal's X), as apple.com's do; and drawn in `currentColor`, so it takes the
 //! text's color. A component's class (`cui-link-icon`) places it. Inline, so
 //! a page whose Content-Security-Policy refuses `data:` images draws it too.
 //!
@@ -11,12 +11,12 @@
 //! use hypertext::prelude::*;
 //! use ciderui::icon::MORE;
 //!
-//! let html = rsx! { <a href="/iphone/">"Learn more"(MORE.class("cui-link-icon"))</a> }.render();
+//! let html = rsx! { <a href="#learn">"Learn more"(MORE.class("cui-link-icon"))</a> }.render();
 //! assert!(html.as_inner().contains(r#"<svg class="cui-link-icon" aria-hidden="true""#));
 //! ```
 use hypertext::{Buffer, Raw, prelude::*};
 
-/// An icon: its box in em, its view box, and what is drawn in it.
+/// An icon: its box (in em or pixels), its view box, and what is drawn in it.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct Icon {
     width: &'static str,

@@ -4,8 +4,9 @@
 // to 833px its sections, rows over rules, one opened (home-footer:*); the
 // shop line, the legal row and its links' rules, the locale; on a dark page
 // light (product:footer*); a touch screen's links not underlined hovered
-// (rule 5, where apple.com's are: touch-home:footer.*). Golden, with their why: the letter-spacing, a
-// section's toggle, its motion, the chevron turned.
+// (rule 5, where apple.com's are: touch-home:footer.*). Golden, with their why: the letter-spacing, the
+// legal row's rule, a section's toggle and closed list, the chevron turned, the
+// notes' link and button (rule 4).
 
 import { examples, SIZE } from '../../test/harness.mjs';
 

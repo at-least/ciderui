@@ -1,7 +1,7 @@
 // apple.com's local nav, the one most product pages carry under the global
 // nav (MacBook Air's, light): the bar, sticky, its material and its rule,
 // the product's name, its links (the current page's marked), its Buy
-// button, and to 734px its menu, opened by its chevron. Everything is read
+// button, and to 833px its menu, opened by its chevron. Everything is read
 // with the page scrolled (the bar stuck to the top), but `*.top`, at the top;
 // the menu is the bar to 833px, from 834px (the global nav's step).
 import { TYPE, BOX, MOTION, BLUR, FLEX } from './common.mjs';

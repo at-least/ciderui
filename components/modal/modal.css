@@ -12,7 +12,7 @@
  *   <dialog class="cui-modal" id="models" aria-labelledby="models-title">
  *     <div class="cui-modal-panel">
  *       <form method="dialog"><button class="cui-modal-close" aria-label="Close">(icon::CLOSE)</button></form>
- *       <h2 id="models-title">Which model is right for you?</h2>
+ *       <h2 class="cui-headline" id="models-title">Not sure which size to get?</h2>
  *     </div>
  *   </dialog>
  *

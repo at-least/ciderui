@@ -13,7 +13,7 @@ use crate::{Class, icon};
 /// let html = rsx! {
 ///     <ProductNav id="products" label="Products" paddles=false class="">
 ///         <ProductNavItem href="/shop/laptops" name="Laptops" class="">
-///             <img class="cui-productnav-image" src="/mac.png" width="200" height="130" alt="">
+///             <img class="cui-productnav-image" src="/laptops.png" width="200" height="130" alt="">
 ///         </ProductNavItem>
 ///     </ProductNav>
 /// }

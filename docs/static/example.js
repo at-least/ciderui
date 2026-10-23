@@ -48,7 +48,7 @@ new MutationObserver(() => cover(Boolean(document.querySelector('dialog:modal'))
 
 // an example's links are the example's, not pages of the documentation: a
 // srcdoc frame's base URL is the page's, so a click would load the page (a
-// link to #buy) or another one (/iphone/) into the frame. A link to an
+// link to #buy) or another one (/phone/) into the frame. A link to an
 // element of the frame (a footnote's mark) scrolls to it, below the page's
 // bars; a gallery's dot is the theme's script's, which has already handled
 // it.

@@ -51,7 +51,7 @@
 // `position` adds the box's top and left in the window (where the window is
 // what it is placed in: an open menu's rows); `animations`, with `click`,
 // records every animation and transition the click starts on an element
-// inside that selector, each frame for the wait after it (what it animates,
+// inside that selector, every 4ms for the wait after it (what it animates,
 // on what, its duration, delay, direction and timing, its first and last values, and
 // when it was first seen, in ms from the click or the first key);
 // `keyframes` records the @keyframes its animation-name names (read from
@@ -128,7 +128,7 @@ const strip = (head) => head
   .replace(/>[^<]*/g, '>')
   .replace(/ (aria-label|alt|title|placeholder)="[^"]+("|$)/g, ' $1="…$2');
 
-// in the frame: from now on, each frame, describe every animation not seen
+// in the frame: from now on, every 4ms, describe every animation not seen
 // yet whose element is inside `within`
 const watchAnimations = (within) => {
   const seen = new Set();

@@ -1,4 +1,4 @@
-// The global nav's search typed into, read 2026-10-21 with the owner's leave
+// The global nav's search typed into, read 2026-10-21 and again 2026-10-23 (the results' run) with the owner's leave
 // to type on apple.com: the home page's search opened as search.mjs opens
 // it, then one key at a time into its field (`type`), nothing sent: "i"
 // (one character, the quick links), "p" (its service asked: one section,

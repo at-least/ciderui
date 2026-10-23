@@ -5,7 +5,8 @@
 // 44) and on a phone (17 by 48, apple.com's compact images), the menu's
 // button closed and open (its two lines' points, open, are the end of the
 // animation apple.com runs on them). Fails below 0.85 (intersection over
-// union), a mark set before the run. The result is results/nav.json.
+// union), a mark set before the run, or if the nav's example draws others.
+// The result is results/nav.json.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 

@@ -4,7 +4,7 @@
 // to the unit on a blank page (svg.js), against ciderui's own (icon::CHEVRON,
 // in the local nav's example) and the same turned upside down about its
 // middle, as localnav.css turns it. Fails below 0.85 (intersection over
-// union). The result is results/localnav.json.
+// union), or if the local nav's example draws another. The result is results/localnav.json.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 
