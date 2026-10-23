@@ -24,6 +24,7 @@
 // matches nothing is null and fails --check.
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
+import { fileURLToPath } from 'node:url';
 
 export const READER = async function reader(probes) {
   const canon = (x) => Array.isArray(x) ? `[${x.map(canon).join(',')}]`
@@ -72,23 +73,30 @@ const canon = (x) => Array.isArray(x) ? `[${x.map(canon).join(',')}]`
 const sha = (s) => [...createHash('sha256').update(s).digest()];
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
-const [flag, name] = process.argv[2] === '--check' ? ['--check', process.argv[3]] : [null, process.argv[2]];
-const spec = (await import(`./pages/${name}.mjs`)).default;
-if (!flag) {
-  console.log(`await (${READER.toString()})(${JSON.stringify(spec.probes)})`);
-  process.exit(0);
+// The command line over root's pages/ and results/: read.mjs's own folder
+// when it is run, another site's when that site's folder calls cli with its
+// own, so every signed-in site is read and checked by the one READER.
+export async function cli(root) {
+  const [flag, name] = process.argv[2] === '--check' ? ['--check', process.argv[3]] : [null, process.argv[2]];
+  const spec = (await import(new URL(`pages/${name}.mjs`, root))).default;
+  if (!flag) {
+    console.log(`await (${READER.toString()})(${JSON.stringify(spec.probes)})`);
+    process.exit(0);
+  }
+  const text = readFileSync(new URL(`results/${name}.json`, root), 'utf8');
+  const { sha256, ...result } = JSON.parse(text);
+  const fails = [];
+  if (!same(sha(canon(result)), sha256)) fails.push('the result is not what the page handed back (its digest differs)');
+  if (!same(result.probesDigest, sha(canon(spec.probes)))) fails.push(`the page was given other probes than pages/${name}.mjs's`);
+  if (!same(result.readerDigest, sha(READER.toString()))) fails.push('the page ran another reader than READER');
+  if (result.path !== spec.path) fails.push(`read on ${result.path}, not ${spec.path}`);
+  for (const [k, v] of Object.entries(result.probes)) if (v === null) fails.push(`${k} matched nothing`);
+  // nothing of the account in what was read: no id (six digits or more, not
+  // a fraction's; a UUID), no address
+  if (/(?<![\d.])\d{6,}|[0-9a-f]{8}-[0-9a-f]{4}-|@/.test(result.path + JSON.stringify(result.probes))) fails.push('it holds what may be the account\'s: an id or an address');
+  for (const f of fails) console.log(`FAIL ${name}: ${f}`);
+  if (!fails.length) console.log(`ok ${name}: ${Object.keys(result.probes).length} probes, ${result.path}, ${result.browser}, ${result.window.join(' x ')}, ${result.date}`);
+  process.exit(fails.length ? 1 : 0);
 }
-const text = readFileSync(new URL(`./results/${name}.json`, import.meta.url), 'utf8');
-const { sha256, ...result } = JSON.parse(text);
-const fails = [];
-if (!same(sha(canon(result)), sha256)) fails.push('the result is not what the page handed back (its digest differs)');
-if (!same(result.probesDigest, sha(canon(spec.probes)))) fails.push(`the page was given other probes than pages/${name}.mjs's`);
-if (!same(result.readerDigest, sha(READER.toString()))) fails.push('the page ran another reader than READER');
-if (result.path !== spec.path) fails.push(`read on ${result.path}, not ${spec.path}`);
-for (const [k, v] of Object.entries(result.probes)) if (v === null) fails.push(`${k} matched nothing`);
-// nothing of the account in what was read: no id (six digits or more, not
-// a fraction's; a UUID), no address
-if (/(?<![\d.])\d{6,}|[0-9a-f]{8}-[0-9a-f]{4}-|@/.test(result.path + JSON.stringify(result.probes))) fails.push('it holds what may be the account\'s: an id or an address');
-for (const f of fails) console.log(`FAIL ${name}: ${f}`);
-if (!fails.length) console.log(`ok ${name}: ${Object.keys(result.probes).length} probes, ${result.path}, ${result.browser}, ${result.window.join(' x ')}, ${result.date}`);
-process.exit(fails.length ? 1 : 0);
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) await cli(new URL('.', import.meta.url));
