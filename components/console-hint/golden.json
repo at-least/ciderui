@@ -29,7 +29,7 @@
  "hint open | .cui-console-hint-popover | 1200 | box-top": "50px",
  "hint open | .cui-console-hint-popover | 1200 | box-left": "64.046875px",
  "hint open phone | .cui-console-hint-popover | 390 | box-width": "331.5px",
- "hint open phone | .cui-console-hint-popover | 390 | box-left": "8.25px",
+ "hint open phone | .cui-console-hint-popover | 390 | box-left": "16px",
  "hint dark | .cui-console-hint | 1200 | color": "oklch(0.879 0.015 286.1 / 0.6)",
  "hint dark | .cui-console-hint::before | 1200 | background-color": "oklch(0.71 0.019 285.9 / 0.12)",
  "hint dark | .cui-console-hint-popover | 1200 | background-color": "oklch(0 0 0)",

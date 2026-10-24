@@ -52,7 +52,7 @@ export const cases = [
     widths: [390],
     checks: [
       { target: POP, props: ['border-top-left-radius'], tb: [`${P}-variant-pageScale-mobile-borderRadius`] },
-      { target: POP, props: ['box-width', 'box-left'], golden: 'on a phone, at most 85% of the window, kept inside it' },
+      { target: POP, props: ['box-width', 'box-left'], golden: 'on a phone, at most 85% of the window, 16px inside its edge' },
     ],
   },
   {
