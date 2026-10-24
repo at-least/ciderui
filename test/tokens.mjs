@@ -169,8 +169,9 @@ for (const [name, [light, dark]] of Object.entries(CONTRACT)) {
 // (--tb-color-role-<name>, reference/asc/results/tokens.json) on the light
 // side; on the dark side, which the toolkit does not ship, that role's step
 // of its dark palette at the role's alpha, the step being the light
-// palette's of the same lightness, chroma and hue, black and white each
-// other's (DESIGN.md, decision 18: derived, not measured)
+// palette's of the same lightness, chroma and hue (for a role that is no
+// step, the step of the nearest hue's ramp nearest its lightness), black
+// and white each other's (DESIGN.md, decision 18: derived, not measured)
 const palette = Object.entries(tbTokens).filter(([k]) => k.startsWith('--tb-color-palette-light-'));
 const darkOf = (light) => {
   const m = light.match(/^oklch\(([\d.]+)% ([\d.]+) ([\d.]+)(?: \/ ([\d.]+))?\)$/);
@@ -179,8 +180,18 @@ const darkOf = (light) => {
   const opaque = `oklch(${m[1]}% ${m[2]} ${m[3]})`;
   if (+m[1] === 0 && +m[2] === 0) return `oklch(100.0% 0.000 0${alpha})`;
   if (+m[1] === 100 && +m[2] === 0) return `oklch(0.0% 0.000 0${alpha})`;
-  const steps = palette.filter(([, v]) => v === opaque || v.replace(/ 0\.0\)$/, ' 0)') === opaque.replace(/ 0\.0\)$/, ' 0)'));
-  if (steps.length === 0) throw new Error(`no step of the light palette is ${opaque}`);
+  let steps = palette.filter(([, v]) => v === opaque || v.replace(/ 0\.0\)$/, ' 0)') === opaque.replace(/ 0\.0\)$/, ' 0)'));
+  // a role that is no step (the theme's brand blue): in the ramp whose 500
+  // step's hue is nearest its hue, the step nearest its lightness
+  if (steps.length === 0) {
+    const lch = (v) => v.match(/^oklch\(([\d.]+)% ([\d.]+) ([\d.]+)/).slice(1).map(Number);
+    const [l, , h] = lch(opaque);
+    const turn = (a, b) => Math.min(Math.abs(a - b), 360 - Math.abs(a - b));
+    const ramps = [...new Set(palette.map(([k]) => k.match(/-palette-light-([a-zA-Z]+)-/)[1]))].filter((r) => lch(tbTokens[`--tb-color-palette-light-${r}-500`])[1] > 0.05);
+    const ramp = ramps.reduce((a, b) => (turn(lch(tbTokens[`--tb-color-palette-light-${b}-500`])[2], h) < turn(lch(tbTokens[`--tb-color-palette-light-${a}-500`])[2], h) ? b : a));
+    const inRamp = palette.filter(([k]) => k.startsWith(`--tb-color-palette-light-${ramp}-`));
+    steps = [inRamp.reduce((a, b) => (Math.abs(lch(b[1])[0] - l) < Math.abs(lch(a[1])[0] - l) ? b : a))];
+  }
   const darks = new Set(steps.map(([k]) => tbTokens[k.replace('-palette-light-', '-palette-dark-')]));
   if (darks.size !== 1) throw new Error(`${opaque} is light steps with different dark ones: ${[...darks].join(', ')}`);
   return [...darks][0].replace(/\)$/, `${alpha})`);

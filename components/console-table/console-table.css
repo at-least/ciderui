@@ -1,0 +1,145 @@
+/* ciderui — the console's table: App Store Connect's newer look's, rows
+ * between hairlines, its header's labels small and secondary, a row that is
+ * a link filling faintly under the pointer.
+ *
+ * From the toolkit's table (reference/asc/results/tokens.json,
+ * --tb-component-Table-*) and the analytics overview's plain table
+ * (analytics:table.*, hover-row:table.*).
+ *
+ *   <table class="cui-console-table">
+ *     <thead>
+ *       <tr><th scope="col">Version</th><th scope="col" class="cui-console-table-figure">Crashes</th></tr>
+ *     </thead>
+ *     <tbody>
+ *       <tr>
+ *         <td><a href="/v/2025.10.16">2025.10.16</a><span class="cui-console-table-subtitle">iOS</span></td>
+ *         <td class="cui-console-table-figure">86</td>
+ *       </tr>
+ *     </tbody>
+ *   </table>
+ *
+ * cui-console-table            the table: the full width, 13px on 18px (16px
+ *                              on 21px below 640px), the label
+ *   data-size="sm" | "lg"      its rows 32px or 56px (the default 48px): its
+ *                              cells 7px, 15px or 19px above and below
+ * a header cell (th in thead)  34px, 8px in, 12px on 16px at 600 (15px on 20px
+ *                              at 500 below 640px), the secondary label
+ * a cell (td)                  8px in, a 1px tertiary border under it; the
+ *                              first none at its start, the last none at its
+ *                              end; centered on its row
+ * a row with a link            hovered, the neutral fill at 0.03; its link
+ *   cui-console-table-link     the whole row (its ::after over the row,
+ *                              which holds it: position relative)
+ * aria-selected="true" on a row  the brand's fill at 0.08
+ * cui-console-table-figure     a number's cell: at its end, at 500
+ * cui-console-table-subtitle   a line under a cell's text, 12px on 16px, the
+ *                              secondary label
+ *
+ * The toolkit's: the sizes, the type, the colors (light; dark derived:
+ * tokens.css), the fills, the analytics table's flush first cell and its
+ * figure at 500, no rule under the header (its tokens name none).
+ * ciderui's: the last cell flush at its end as the first is at its start, the subtitle (the
+ * toolkit's display list's subtitle at the table's size), a selected row
+ * square (the toolkit rounds it 12px, set out 12px, which a table's row
+ * cannot draw), the secondary label's alpha (tokens.css). */
+
+@layer components {
+  .cui-console-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+    letter-spacing: normal;
+
+    @media (width >= 640px) {
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    :where(thead th) {
+      height: 2.125rem;
+      padding: 0.5625rem 0.5rem;
+      color: var(--cui-c-console-neutral-label-secondary);
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: 500;
+      text-align: left;
+      vertical-align: middle;
+
+      @media (width >= 640px) {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 600;
+      }
+    }
+
+    :where(td, tbody th) {
+      padding: 0.9375rem 0.5rem;
+      border-bottom: 1px solid var(--cui-c-console-neutral-border-tertiary);
+      text-align: left;
+      vertical-align: middle;
+      font-weight: inherit;
+    }
+
+    :where(th, td):first-child {
+      padding-inline-start: 0;
+    }
+
+    :where(th, td):last-child {
+      padding-inline-end: 0;
+    }
+
+    &[data-size="sm"] :where(td, tbody th) {
+      padding-block: 0.4375rem;
+    }
+
+    &[data-size="lg"] :where(td, tbody th) {
+      padding-block: 1.1875rem;
+    }
+
+    :where(tbody tr:has(.cui-console-table-link)) {
+      position: relative;
+      cursor: pointer;
+    }
+
+    @media (hover: hover) {
+      :where(tbody tr:has(a[href])):hover {
+        background-color: var(--cui-c-console-neutral-fill-quinary);
+      }
+    }
+
+    :where(tbody tr[aria-selected="true"]) {
+      background-color: var(--cui-c-console-brand-fill-quaternary);
+    }
+
+    :where(a) {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  .cui-console-table-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  .cui-console-table-figure {
+    text-align: right;
+
+    &:where(td) {
+      font-weight: 500;
+    }
+  }
+
+  .cui-console-table-subtitle {
+    display: block;
+    color: var(--cui-c-console-neutral-label-secondary);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+  }
+}
