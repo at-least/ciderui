@@ -1,0 +1,181 @@
+/* ciderui — the console's fields: App Store Connect's newer look's text
+ * field, its dropdown and its multi-line field, each a rounded rectangle on
+ * white inside an edge, and the label over one, the help under it, the
+ * error in its place.
+ *
+ * From the toolkit's text input, label, help text, input error and form
+ * field (reference/asc/results/tokens.json, --tb-component-TextInput-*,
+ * -Label-*, -HelpText-*, -InputError-*, -FormField-*: stroked, md).
+ *
+ *   <div class="cui-console-form-field">
+ *     <label class="cui-console-label" for="name">Name</label>
+ *     <input class="cui-console-field" id="name" aria-describedby="name-help">
+ *     <p class="cui-console-help" id="name-help">Shown on every page.</p>
+ *   </div>
+ *   <span class="cui-console-select">
+ *     <select class="cui-console-field">…</select>
+ *     <svg class="cui-console-select-chevron" …></svg>
+ *   </span>
+ *   <textarea class="cui-console-field" rows="3"></textarea>
+ *
+ * cui-console-field       an <input>, <select> or <textarea>, as wide as its
+ *                         box (a form's column; a utility narrows it): 30px, 8px in,
+ *                         10px corners, a 1px edge, white, 13px on 18px, the
+ *                         label; its placeholder the secondary label;
+ *                         focused, its edge the label's black and a 3px halo
+ *                         of it at 0.15; aria-invalid="true", a red edge on
+ *                         its red at 0.12 (white again focused, the halo
+ *                         red); disabled, the neutral at 0.03 under the
+ *                         disabled label
+ *   data-size="sm"|"lg"|"xl"  22px (5px in, 8px corners, 11px on 13px), 40px
+ *                         (10px, 12px, 16px on 21px), 50px (15px, 14px)
+ *   a <textarea>          its height its rows', 6px above and below
+ * cui-console-select      a dropdown's box: its <select> (room for the
+ *                         chevron at its end) and its chevron
+ *                         (cui-console-select-chevron, a Lucide icon), the
+ *                         secondary label, 8px in
+ * cui-console-label       a field's label, 13px on 18px at 500, 5px over it
+ * cui-console-help        a line under a field, 13px, the secondary label,
+ *                         3px under it
+ * cui-console-error       a field's error, the same, red
+ * cui-console-form-field  a label, its field and its lines, in a column
+ *
+ * The toolkit's: the sizes, room, corners, type, the focused and error
+ * states, the label's, help's and form field's type and gaps. ciderui's:
+ * the edge (decision 21: the toolkit's, the secondary border at 0.18, is
+ * 1.4:1 on white; a control's edge is 3:1, coolGray-800 at 0.58, 0.42
+ * dark), the placeholder the secondary label (the toolkit's, at 0.39, is
+ * 2.1:1), the help the fitted secondary label, the red the fitted red
+ * label (red-700); the chevron. A text field shows its focus by its edge
+ * and halo, not base.css's ring (rule 9). */
+
+@layer components {
+  .cui-console-field {
+    box-sizing: border-box;
+    width: 100%;
+    height: 1.875rem;
+    padding: 0 0.5rem;
+    border: 1px solid var(--cui-c-console-field-border);
+    border-radius: 10px;
+    background-color: var(--cui-c-console-neutral-background-primary);
+    color: var(--cui-c-console-neutral-label-primary);
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: normal;
+    appearance: none;
+
+    &::placeholder {
+      color: var(--cui-c-console-neutral-label-secondary);
+      opacity: 1;
+    }
+
+    &:focus,
+    &:focus-visible {
+      border-color: var(--cui-c-console-neutral-accent-primary);
+      outline: 3px solid var(--cui-c-console-neutral-accent-quaternary);
+      outline-offset: 0;
+    }
+
+    &[aria-invalid="true"] {
+      border-color: var(--cui-c-console-error-label-primary);
+      background-color: var(--cui-c-console-error-fill-tertiary);
+
+      &:focus,
+      &:focus-visible {
+        border-color: var(--cui-c-console-error-label-primary);
+        background-color: var(--cui-c-console-neutral-background-primary);
+        outline-color: var(--cui-c-console-error-accent-quaternary);
+      }
+    }
+
+    &:disabled {
+      background-color: var(--cui-c-console-neutral-fill-quinary);
+      color: var(--cui-c-console-neutral-label-disabled);
+      cursor: default;
+    }
+
+    &:is(textarea) {
+      height: auto;
+      padding-block: 6px;
+      resize: vertical;
+    }
+
+    &[data-size="sm"] {
+      height: 1.375rem;
+      padding-inline: 0.3125rem;
+      border-radius: 8px;
+      font-size: 11px;
+      line-height: 13px;
+    }
+
+    &[data-size="lg"] {
+      height: 2.5rem;
+      padding-inline: 0.625rem;
+      border-radius: 12px;
+      font-size: 16px;
+      line-height: 21px;
+    }
+
+    &[data-size="xl"] {
+      height: 3.125rem;
+      padding-inline: 0.9375rem;
+      border-radius: 14px;
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+
+  .cui-console-select {
+    position: relative;
+    display: inline-grid;
+    min-width: 0;
+
+    & > :where(select) {
+      padding-inline-end: 1.75rem;
+    }
+  }
+
+  .cui-console-select-chevron {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    width: 13px;
+    height: 13px;
+    translate: 0 -50%;
+    color: var(--cui-c-console-neutral-label-secondary);
+    pointer-events: none;
+  }
+
+  .cui-console-label {
+    display: block;
+    margin: 0 0 5px;
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    letter-spacing: normal;
+  }
+
+  .cui-console-help,
+  .cui-console-error {
+    margin: 3px 0 0;
+    color: var(--cui-c-console-neutral-label-secondary);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: normal;
+  }
+
+  .cui-console-error {
+    color: var(--cui-c-console-error-label-primary);
+  }
+
+  .cui-console-form-field {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+  }
+}

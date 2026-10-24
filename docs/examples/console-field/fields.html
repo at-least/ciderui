@@ -1,0 +1,24 @@
+<div class="grid max-w-80 gap-4">
+  <div class="cui-console-form-field">
+    <label class="cui-console-label" for="project">Project Name</label>
+    <input class="cui-console-field" id="project" value="Shop" aria-describedby="project-help">
+    <p class="cui-console-help" id="project-help">Shown in alerts and on every page.</p>
+  </div>
+  <div class="cui-console-form-field">
+    <label class="cui-console-label" for="search">Search</label>
+    <input class="cui-console-field" id="search" placeholder="is:unresolved level:error">
+  </div>
+  <div class="cui-console-form-field">
+    <label class="cui-console-label" for="url">Webhook URL</label>
+    <input class="cui-console-field" id="url" value="htp:/example" aria-invalid="true" aria-describedby="url-error">
+    <p class="cui-console-error" id="url-error">Enter a URL that starts with https://.</p>
+  </div>
+  <div class="cui-console-form-field">
+    <label class="cui-console-label" for="dsn">DSN</label>
+    <input class="cui-console-field" id="dsn" value="https://key@crashcart.test/1" disabled>
+  </div>
+  <div class="cui-console-form-field">
+    <label class="cui-console-label" for="note">Note</label>
+    <textarea class="cui-console-field" id="note" rows="3" placeholder="What did you decide?"></textarea>
+  </div>
+</div>

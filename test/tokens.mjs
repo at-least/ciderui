@@ -192,6 +192,7 @@ const SOURCES = {
   '--cui-c-console-error-label-hover': 'component-Button-variant-colorRole-error-effect-hover-variant-gray-color',
   '--cui-c-console-error-label-press': 'component-Button-variant-colorRole-error-effect-press-variant-gray-color',
   '--cui-c-console-card': 'color-v2-bgPlaceholder',
+  '--cui-c-console-field-border': 'component-TextInput-variant-colorRole-neutral-focus-off-variant-stroked-border-color',
   '--cui-c-console-brand-label-on-fill': 'component-Tabs-variant-colorRole-brand-variant-filledGray-anatomy-Tab-variant-effect-default-isActive-false-color',
 };
 const sourceOf = (name) => `--tb-${SOURCES[name] ?? `color-role-${name.slice('--cui-c-console-'.length).replace('on-accent', 'onAccent')}`}`;
@@ -234,6 +235,7 @@ const FITTED = {
   '--cui-c-console-brand-fill-press': { dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the derived blue-600 is 2.7:1' },
   '--cui-c-console-brand-label-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(62.4% 0.206 255.5)', why: 'the toolkit\'s lighter blue is 3.5:1 on white, its derived dark 3.5:1 on black' },
   '--cui-c-console-error-accent-primary': { light: 'oklch(49.5% 0.190 31.5)', dark: 'oklch(50.0% 0.186 31.4)', why: 'white on the toolkit\'s red is 3.3:1' },
+  '--cui-c-console-field-border': { light: 'oklch(35.9% 0.012 285.8 / 0.58)', dark: 'oklch(87.9% 0.015 286.1 / 0.42)', why: 'a field\'s edge, at the toolkit\'s 0.18, is 1.4:1 on white; a control\'s edge is held to 3:1' },
   '--cui-c-console-brand-label-on-fill': { light: 'oklch(49.7% 0.209 260.5)', why: 'the brand\'s label on the gray fill is 4.4:1' },
   '--cui-c-console-info-label-primary': { light: 'oklch(49.7% 0.209 260.5)', why: 'the toolkit\'s info blue is 4.0:1 on white' },
   '--cui-c-console-success-label-primary': { light: 'oklch(50.4% 0.125 152.9)', why: 'the toolkit\'s green is 2.2:1 on white' },
@@ -323,6 +325,12 @@ const CONSOLE_MIN = [
   // a gray button's red label: on the page and on its gray
   ...['--cui-c-console-error-label-primary', '--cui-c-console-error-label-hover', '--cui-c-console-error-label-press'].map((fg) => [fg, [[PAGE], ...GRAY.map((g) => [g, PAGE])], 4.5]),
 ];
+CONSOLE_MIN.push(
+  // a field's edge and its red edge in error: 3:1 on the page and on a card
+  ...['--cui-c-console-field-border', '--cui-c-console-error-label-primary'].map((fg) => [fg, [[PAGE], ['--cui-c-console-card', PAGE]], 3]),
+  // its text, its placeholder (the secondary label) on its white
+  ['--cui-c-console-neutral-label-secondary', [[PAGE], ['--cui-c-console-card', PAGE]], 4.5],
+);
 for (const [fg, grounds, min] of CONSOLE_MIN) {
   for (const layers of grounds) {
     for (const i of [0, 1]) {

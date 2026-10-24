@@ -142,6 +142,7 @@
   --cui-c-console-neutral-fill-quaternary: light-dark(oklch(57.5% 0.012 286.0 / 0.08), oklch(71.0% 0.019 285.9 / 0.08));
   --cui-c-console-neutral-border-secondary: light-dark(oklch(35.9% 0.012 285.8 / 0.18), oklch(87.9% 0.015 286.1 / 0.18));
   --cui-c-console-neutral-border-tertiary: light-dark(oklch(35.9% 0.012 285.8 / 0.13), oklch(87.9% 0.015 286.1 / 0.13));
+  --cui-c-console-field-border: light-dark(oklch(35.9% 0.012 285.8 / 0.58), oklch(87.9% 0.015 286.1 / 0.42));
   --cui-c-console-neutral-fill-quinary: light-dark(oklch(57.5% 0.012 286.0 / 0.03), oklch(71.0% 0.019 285.9 / 0.03));
   --cui-c-console-brand-fill-quaternary: light-dark(oklch(54.2% 0.162 251.9 / 0.08), oklch(68.3% 0.167 256.6 / 0.08));
   --cui-c-console-brand-accent-primary: light-dark(oklch(54.2% 0.162 251.9), oklch(51.2% 0.203 260.5));
@@ -167,6 +168,7 @@
   --cui-c-console-error-fill-press: light-dark(oklch(37.8% 0.147 29.3), oklch(40.9% 0.152 29.5));
   --cui-c-console-error-label-hover: light-dark(oklch(49.5% 0.190 31.5), oklch(70.6% 0.184 29.4));
   --cui-c-console-error-label-press: light-dark(oklch(49.5% 0.190 31.5), oklch(65.4% 0.232 28.8));
+  --cui-c-console-neutral-accent-primary: light-dark(oklch(0.0% 0.000 0), oklch(100.0% 0.000 0));
   --cui-c-console-neutral-accent-quaternary: light-dark(oklch(0.0% 0.000 0.0 / 0.15), oklch(100.0% 0.000 0 / 0.15));
   --cui-c-console-brand-accent-quaternary: light-dark(oklch(54.2% 0.162 251.9 / 0.15), oklch(68.3% 0.167 256.6 / 0.15));
   --cui-c-console-info-accent-quaternary: light-dark(oklch(60.3% 0.218 257.4 / 0.15), oklch(62.4% 0.206 255.5 / 0.15));
