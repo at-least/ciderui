@@ -166,15 +166,20 @@
     font-weight: 400;
   }
 
+  /* the header row group sticks, not each cell: the toolkit's shadow, its
+     spread negative, drawn per cell left a gap at every column's edge */
   .cui-console-table[data-sticky] {
     --cui-console-table-sticky-top: 0px;
 
-    :where(thead th) {
+    :where(thead) {
       position: sticky;
       top: var(--cui-console-table-sticky-top);
       z-index: 1;
-      background-color: var(--cui-c-console-table-sticky);
       box-shadow: var(--cui-console-shadow-table-sticky);
+    }
+
+    :where(thead th) {
+      background-color: var(--cui-c-console-table-sticky);
     }
   }
 

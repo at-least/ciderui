@@ -75,8 +75,9 @@ export const cases = [
     html: ex('sticky'),
     widths: [1200, 390],
     checks: [
-      { target: 'thead th:nth-child(2)', props: ['background-color', 'box-shadow'], tb: [`${T}-anatomy-TH-stickyBackgroundColor`, `${T}-anatomy-TH-stickyBoxShadow`] },
-      { target: 'thead th:nth-child(2)', props: ['position', 'top', 'z-index'], golden: 'a sticky header sticks to the top of its scroll container, at --cui-console-table-sticky-top (0 unless the page sets it), over the rows' },
+      { target: 'thead th:nth-child(2)', props: ['background-color'], tb: [`${T}-anatomy-TH-stickyBackgroundColor`] },
+      { target: 'thead', props: ['box-shadow'], tb: [`${T}-anatomy-TH-stickyBoxShadow`] },
+      { target: 'thead', props: ['position', 'top', 'z-index'], golden: 'a sticky header sticks to the top of its scroll container, at --cui-console-table-sticky-top (0 unless the page sets it), over the rows: the row group, so its shadow runs under every column (drawn per cell, its negative spread left a gap at each column\'s edge)' },
       { target: '.cui-console-table-scroll', props: ['overflow-x'], golden: 'a table wider than its place scrolls sideways in its box' },
       { target: 'th[aria-sort="none"] > .cui-console-table-sort', props: ['color', 'text-decoration-line'], golden: `an unsorted header's label a header's, ${FITTED}; no underline` },
       { target: 'th[aria-sort="none"] > .cui-console-table-sort', props: ['color'], state: 'hover', golden: 'hovered, the label\'s color' },
