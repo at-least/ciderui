@@ -191,7 +191,7 @@ const SOURCES = {
   '--cui-c-console-error-fill-press': 'component-Button-variant-colorRole-error-effect-press-variant-filled-backgroundColor',
   '--cui-c-console-error-label-hover': 'component-Button-variant-colorRole-error-effect-hover-variant-gray-color',
   '--cui-c-console-error-label-press': 'component-Button-variant-colorRole-error-effect-press-variant-gray-color',
-  '--cui-c-console-brand-label-on-gray': 'component-Tabs-variant-colorRole-brand-variant-filledGray-anatomy-Tab-variant-effect-default-isActive-false-color',
+  '--cui-c-console-brand-label-on-fill': 'component-Tabs-variant-colorRole-brand-variant-filledGray-anatomy-Tab-variant-effect-default-isActive-false-color',
 };
 const sourceOf = (name) => `--tb-${SOURCES[name] ?? `color-role-${name.slice('--cui-c-console-'.length).replace('on-accent', 'onAccent')}`}`;
 const lch = (v) => {
@@ -233,7 +233,10 @@ const FITTED = {
   '--cui-c-console-brand-fill-press': { dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the derived blue-600 is 2.7:1' },
   '--cui-c-console-brand-label-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(62.4% 0.206 255.5)', why: 'the toolkit\'s lighter blue is 3.5:1 on white, its derived dark 3.5:1 on black' },
   '--cui-c-console-error-accent-primary': { light: 'oklch(49.5% 0.190 31.5)', dark: 'oklch(50.0% 0.186 31.4)', why: 'white on the toolkit\'s red is 3.3:1' },
-  '--cui-c-console-brand-label-on-gray': { light: 'oklch(49.7% 0.209 260.5)', why: 'the brand\'s label on the gray fill is 4.4:1' },
+  '--cui-c-console-brand-label-on-fill': { light: 'oklch(49.7% 0.209 260.5)', why: 'the brand\'s label on the gray fill is 4.4:1' },
+  '--cui-c-console-info-label-primary': { light: 'oklch(49.7% 0.209 260.5)', why: 'the toolkit\'s info blue is 4.0:1 on white' },
+  '--cui-c-console-success-label-primary': { light: 'oklch(50.4% 0.125 152.9)', why: 'the toolkit\'s green is 2.2:1 on white' },
+  '--cui-c-console-warning-label-primary': { light: 'oklch(48.6% 0.112 61.8)', why: 'the toolkit\'s yellow is 1.6:1 on white' },
   '--cui-c-console-error-label-primary': { light: 'oklch(49.5% 0.190 31.5)', why: 'the toolkit\'s red is 3.6:1 on white, red-600 4.2:1 on a gray button' },
   '--cui-c-console-error-fill-hover': { light: 'oklch(37.8% 0.147 29.3)', dark: 'oklch(40.9% 0.152 29.5)', why: 'white on the toolkit\'s lighter red is 3.0:1' },
   '--cui-c-console-error-fill-press': { light: 'oklch(37.8% 0.147 29.3)', dark: 'oklch(40.9% 0.152 29.5)', why: 'white on the toolkit\'s red is 3.5:1' },
@@ -304,8 +307,11 @@ const CONSOLE_MIN = [
   ['--cui-c-console-brand-label-on-accent-primary', [...ON_FILLS.map((f) => [f]), ['--cui-c-console-brand-fill-press'], ['--cui-c-console-error-fill-press']], 4.5],
   ['--cui-c-console-on-accent-press', [['--cui-c-console-brand-fill-press'], ['--cui-c-console-error-fill-press']], 4.5],
   ['--cui-c-console-neutral-label-hover', [['--cui-c-console-gray-fill-hover', PAGE]], 4.5],
+  // a badge's label on the page, on its own tint and on the gray fill
+  ...['brand', 'info', 'success', 'warning', 'error'].map((role) => [role === 'brand' ? '--cui-c-console-brand-label-on-fill' : `--cui-c-console-${role}-label-primary`, [[PAGE], [`--cui-c-console-${role}-accent-quaternary`, PAGE], ['--cui-c-console-neutral-fill-tertiary', PAGE]], 4.5]),
+  ['--cui-c-console-neutral-label-primary', [['--cui-c-console-neutral-accent-quaternary', PAGE]], 4.5],
   // a gray segment's blue label, at rest and hovered, on its gray
-  ...['--cui-c-console-brand-label-on-gray', '--cui-c-console-brand-label-hover'].map((fg) => [fg, GRAY.map((g) => [g, PAGE]), 4.5]),
+  ...['--cui-c-console-brand-label-on-fill', '--cui-c-console-brand-label-hover'].map((fg) => [fg, GRAY.map((g) => [g, PAGE]), 4.5]),
   // a plain button's, a link's: on the page
   ...['--cui-c-console-brand-label-primary', '--cui-c-console-brand-label-hover', '--cui-c-console-brand-label-press'].map((fg) => [fg, [[PAGE]], 4.5]),
   // a gray button's red label: on the page and on its gray

@@ -139,7 +139,7 @@
       --cui-console-tab-fill: var(--cui-c-console-neutral-fill-tertiary);
       --cui-console-tab-fill-hover: var(--cui-c-console-gray-fill-hover);
       --cui-console-tab-fill-press: var(--cui-c-console-gray-fill-press);
-      --cui-console-tab-label: var(--cui-c-console-brand-label-on-gray);
+      --cui-console-tab-label: var(--cui-c-console-brand-label-on-fill);
 
       padding-inline: 12px;
       border-bottom: 0;

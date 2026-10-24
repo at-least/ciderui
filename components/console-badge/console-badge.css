@@ -1,0 +1,106 @@
+/* ciderui — the console's badge: App Store Connect's newer look's, a short
+ * word on a pill tinted in its color (a level, a status, a count), or on
+ * the gray fill, or plain, its color alone; a dot before it where a mark
+ * says more than a fill.
+ *
+ * From the toolkit's badge (reference/asc/results/tokens.json,
+ * --tb-component-Badge-*: its tinted, gray and plain variants, each color).
+ *
+ *   <span class="cui-console-badge" data-color="error">Fatal</span>
+ *   <span class="cui-console-badge" data-color="success" data-variant="plain">
+ *     <span class="cui-console-badge-dot"></span>Resolved
+ *   </span>
+ *
+ * cui-console-badge         20px, 6.5px in, a capsule (15px corners, the
+ *                           toolkit's control capsule), 13px on 18px at 600;
+ *                           tinted: its color at 0.15 under its label
+ *   data-color              neutral (the default), brand, info, success,
+ *                           warning, error
+ *   data-variant="gray"     the gray fill under its colored label
+ *   data-variant="plain"    no fill, no room at its sides
+ *   data-size="sm"          18px, 5px in, 11px on 13px at 600
+ * cui-console-badge-dot     a dot before the label, 0.5em, in its color
+ *
+ * The toolkit's: the sizes, the capsule, the type, the fills (light; dark
+ * derived: tokens.css). ciderui's: the labels fitted to 4.5:1 on the page,
+ * on their tint and on the gray (decision 21: the toolkit's info, green and
+ * yellow are 4.0:1, 2.2:1 and 1.6:1 on white; they are its blue-600,
+ * green-800 and yellow-900); the dot (the toolkit's badge has none; a
+ * level's mark in a list). */
+
+@layer components {
+  .cui-console-badge {
+    --cui-console-badge-fill: var(--cui-c-console-neutral-accent-quaternary);
+    --cui-console-badge-label: var(--cui-c-console-neutral-label-primary);
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    height: 20px;
+    padding: 0 6.5px;
+    border-radius: 15px;
+    background-color: var(--cui-console-badge-fill);
+    color: var(--cui-console-badge-label);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+    letter-spacing: normal;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  .cui-console-badge[data-color="brand"] {
+    --cui-console-badge-fill: var(--cui-c-console-brand-accent-quaternary);
+    --cui-console-badge-label: var(--cui-c-console-brand-label-on-fill);
+  }
+
+  .cui-console-badge[data-color="info"] {
+    --cui-console-badge-fill: var(--cui-c-console-info-accent-quaternary);
+    --cui-console-badge-label: var(--cui-c-console-info-label-primary);
+  }
+
+  .cui-console-badge[data-color="success"] {
+    --cui-console-badge-fill: var(--cui-c-console-success-accent-quaternary);
+    --cui-console-badge-label: var(--cui-c-console-success-label-primary);
+  }
+
+  .cui-console-badge[data-color="warning"] {
+    --cui-console-badge-fill: var(--cui-c-console-warning-accent-quaternary);
+    --cui-console-badge-label: var(--cui-c-console-warning-label-primary);
+  }
+
+  .cui-console-badge[data-color="error"] {
+    --cui-console-badge-fill: var(--cui-c-console-error-accent-quaternary);
+    --cui-console-badge-label: var(--cui-c-console-error-label-primary);
+  }
+
+  .cui-console-badge[data-variant="gray"] {
+    background-color: var(--cui-c-console-neutral-fill-tertiary);
+  }
+
+  .cui-console-badge[data-variant="plain"] {
+    padding-inline: 0;
+    background-color: transparent;
+  }
+
+  .cui-console-badge[data-size="sm"] {
+    gap: 0.1875rem;
+    height: 18px;
+    padding-inline: 5px;
+    border-radius: 11px;
+    font-size: 11px;
+    line-height: 13px;
+
+    &[data-variant="plain"] {
+      padding-inline: 0;
+    }
+  }
+
+  .cui-console-badge-dot {
+    flex: none;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background-color: currentColor;
+  }
+}

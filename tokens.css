@@ -148,7 +148,7 @@
   --cui-c-console-brand-label-primary: light-dark(oklch(54.2% 0.162 251.9), oklch(68.3% 0.167 256.6));
   --cui-c-console-brand-label-secondary: light-dark(oklch(54.2% 0.162 251.9 / 0.60), oklch(68.3% 0.167 256.6 / 0.60));
   --cui-c-console-brand-label-on-accent-primary: light-dark(oklch(100.0% 0.000 0.0 / 0.95), oklch(100.0% 0.000 0.0 / 0.95));
-  --cui-c-console-brand-label-on-gray: light-dark(oklch(49.7% 0.209 260.5), oklch(68.3% 0.167 256.6));
+  --cui-c-console-brand-label-on-fill: light-dark(oklch(49.7% 0.209 260.5), oklch(68.3% 0.167 256.6));
   --cui-c-console-brand-fill-hover: light-dark(oklch(49.7% 0.209 260.5), oklch(43.6% 0.171 260.6));
   --cui-c-console-brand-fill-press: light-dark(oklch(52.2% 0.156 251.8), oklch(43.6% 0.171 260.6));
   --cui-c-console-brand-label-hover: light-dark(oklch(49.7% 0.209 260.5), oklch(62.4% 0.206 255.5));
@@ -166,6 +166,15 @@
   --cui-c-console-error-fill-press: light-dark(oklch(37.8% 0.147 29.3), oklch(40.9% 0.152 29.5));
   --cui-c-console-error-label-hover: light-dark(oklch(49.5% 0.190 31.5), oklch(70.6% 0.184 29.4));
   --cui-c-console-error-label-press: light-dark(oklch(49.5% 0.190 31.5), oklch(65.4% 0.232 28.8));
+  --cui-c-console-neutral-accent-quaternary: light-dark(oklch(0.0% 0.000 0.0 / 0.15), oklch(100.0% 0.000 0 / 0.15));
+  --cui-c-console-brand-accent-quaternary: light-dark(oklch(54.2% 0.162 251.9 / 0.15), oklch(68.3% 0.167 256.6 / 0.15));
+  --cui-c-console-info-accent-quaternary: light-dark(oklch(60.3% 0.218 257.4 / 0.15), oklch(62.4% 0.206 255.5 / 0.15));
+  --cui-c-console-info-label-primary: light-dark(oklch(49.7% 0.209 260.5), oklch(62.4% 0.206 255.5));
+  --cui-c-console-success-accent-quaternary: light-dark(oklch(73.0% 0.194 147.4 / 0.15), oklch(75.6% 0.208 146.9 / 0.15));
+  --cui-c-console-success-label-primary: light-dark(oklch(50.4% 0.125 152.9), oklch(75.6% 0.208 146.9));
+  --cui-c-console-warning-accent-quaternary: light-dark(oklch(86.5% 0.177 90.4 / 0.15), oklch(88.5% 0.181 94.8 / 0.15));
+  --cui-c-console-warning-label-primary: light-dark(oklch(48.6% 0.112 61.8), oklch(88.5% 0.181 94.8));
+  --cui-c-console-error-accent-quaternary: light-dark(oklch(65.4% 0.232 28.8 / 0.15), oklch(65.4% 0.232 28.8 / 0.15));
 
   /* SF on Apple's platforms by its two Apple-only names (-apple-system
      Safari's, BlinkMacSystemFont Chrome's; system-ui would be a font
