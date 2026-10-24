@@ -16,7 +16,8 @@
  *   </div>
  *
  * cui-console-tabs        the bar, a row; underlined: 12px between tabs, a
- *                         0.5px secondary hairline under it
+ *                         0.5px secondary hairline under it; below 640px
+ *                         one row that scrolls sideways when too wide
  *   data-variant="filled" 8px between pills, no hairline
  *   data-size="sm"|"lg"|"xl"  22px (11px on 13px), 40px or 50px (18px on 22px)
  * cui-console-tab         a tab: 30px, 14px on 19px at 500, the brand's
@@ -34,7 +35,8 @@
  * the colors a contrast check found short, fitted (decision 21: the blue
  * label on the gray pill, and hovered, blue-600; an underlined tab hovered
  * the button's hovered blue, where the toolkit's is a lighter one, 4.1:1);
- * the focus ring base.css's (rule 9). */
+ * the focus ring base.css's (rule 9), inside the tab where a phone's
+ * bar scrolls; the phone's one scrolling row. */
 
 @layer components {
   .cui-console-tabs {
@@ -47,6 +49,25 @@
     &[data-variant="filled"] {
       gap: 8px;
       border-bottom: 0;
+    }
+
+    /* a phone: an underlined bar too wide scrolls sideways, not onto a
+       second row (which drew the hairline under each row); its focus
+       ring inside the tab, where the scroll box would clip it */
+    &:not([data-variant="filled"]) {
+      @media (width < 640px) {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+
+        & > .cui-console-tab {
+          flex-shrink: 0;
+        }
+
+        & > .cui-console-tab:focus-visible {
+          outline-offset: -2px;
+        }
+      }
     }
 
     &[data-size="lg"]:not([data-variant="filled"]),

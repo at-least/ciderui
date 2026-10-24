@@ -35,6 +35,24 @@ export const cases = [
     ],
   },
   {
+    name: 'tabs many on a phone',
+    html: ex('many'),
+    widths: [375],
+    checks: [
+      { target: '.cui-console-tabs', props: ['flex-wrap', 'overflow-x', 'box-height'], golden: 'a phone: one row (no second hairline), scrolling sideways' },
+      { target: '.cui-console-tab[href="#settings"]', props: ['outline-offset'], state: 'focus-visible', golden: 'its focus ring inside the tab, where the scroll box would clip it' },
+    ],
+  },
+  {
+    name: 'tabs many wide',
+    html: ex('many'),
+    widths: [1200],
+    checks: [
+      { target: '.cui-console-tabs', props: ['flex-wrap', 'overflow-x'], golden: 'wide, the bar as the toolkit draws it' },
+      { target: '.cui-console-tab[href="#settings"]', props: ['outline-offset'], state: 'focus-visible', golden: 'wide, base.css\'s ring outside the tab' },
+    ],
+  },
+  {
     name: 'filled',
     html: ex('filled'),
     widths: [1200, 390],

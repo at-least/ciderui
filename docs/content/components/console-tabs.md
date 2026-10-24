@@ -7,13 +7,15 @@ category = "Console"
 image = "pictures/console-tabs.png"
 +++
 
-App Store Connect’s tab bar, in its two forms: underlined, a page’s sections, the current one on a rule; filled, a choice of a few (a chart’s period), each a pill, the chosen one filled. Each tab is the page’s own link.
+App Store Connect’s tab bar, in its two forms: underlined, a page’s sections, the current one on a rule; filled, a choice of a few (a chart’s period), each a pill, the chosen one filled. Each tab is the page’s own link. On a phone, an underlined bar too wide for the screen stays one row and scrolls sideways.
 
 ```css
 @import "ciderui/components/console-tabs/console-tabs.css";
 ```
 
 {{ <cui_example file="console-tabs/tabs" title="Underlined tabs" pad={true} /> }}
+
+{{ <cui_example file="console-tabs/many" title="A project's six sections: one scrolling row on a phone" pad={true} /> }}
 
 | class or attribute | what |
 | --- | --- |
