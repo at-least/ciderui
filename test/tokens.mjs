@@ -227,7 +227,7 @@ const darkOf = (name, light) => {
   return withAlpha(tbTokens[stepOf(light, 'light')[0].replace('-palette-light-', '-palette-dark-')], alpha);
 };
 const FITTED = {
-  '--cui-c-console-neutral-label-secondary': { light: 'oklch(35.9% 0.012 285.8 / 0.73)', why: 'the toolkit\'s 0.60 is 3.4:1 on white' },
+  '--cui-c-console-neutral-label-secondary': { light: 'oklch(35.9% 0.012 285.8 / 0.74)', why: 'the toolkit\'s 0.60 is 3.4:1 on white' },
   '--cui-c-console-brand-accent-primary': { dark: 'oklch(51.2% 0.203 260.5)', why: 'white on the derived blue-600 is 2.7:1' },
   '--cui-c-console-brand-fill-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the toolkit\'s lighter blue is 3.9:1' },
   '--cui-c-console-brand-fill-press': { dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the derived blue-600 is 2.7:1' },
@@ -310,6 +310,9 @@ const CONSOLE_MIN = [
   // a badge's label on the page, on its own tint and on the gray fill
   ...['brand', 'info', 'success', 'warning', 'error'].map((role) => [role === 'brand' ? '--cui-c-console-brand-label-on-fill' : `--cui-c-console-${role}-label-primary`, [[PAGE], [`--cui-c-console-${role}-accent-quaternary`, PAGE], ['--cui-c-console-neutral-fill-tertiary', PAGE]], 4.5]),
   ['--cui-c-console-neutral-label-primary', [['--cui-c-console-neutral-accent-quaternary', PAGE]], 4.5],
+  // a banner's text, its caption and its icon on its tint
+  ...['--cui-c-console-neutral-label-primary', '--cui-c-console-neutral-label-secondary'].map((fg) => [fg, ['info', 'success', 'warning', 'error'].map((role) => [`--cui-c-console-${role}-fill-tertiary`, PAGE]), 4.5]),
+  ...['info', 'success', 'warning', 'error'].map((role) => [`--cui-c-console-${role}-label-primary`, [[`--cui-c-console-${role}-fill-tertiary`, PAGE]], 4.5]),
   // a gray segment's blue label, at rest and hovered, on its gray
   ...['--cui-c-console-brand-label-on-fill', '--cui-c-console-brand-label-hover'].map((fg) => [fg, GRAY.map((g) => [g, PAGE]), 4.5]),
   // a plain button's, a link's: on the page

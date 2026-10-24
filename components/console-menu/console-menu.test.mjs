@@ -14,7 +14,7 @@ const PHONE = [639, 390];
 const ITEM = ['box-height', 'background-color', 'border-top-left-radius', 'padding-left', 'padding-right'];
 const LABEL = ['font-size', 'line-height', 'font-weight', 'letter-spacing', 'color'];
 const MENU = 'component-DisplayList-variant-pageScale';
-const FITTED = 'the secondary label fitted to 0.73 (tokens.css, decision 21): the toolkit\'s 0.60 is 3.4:1 on white';
+const FITTED = 'the secondary label fitted to 0.74 (tokens.css, decision 21): the toolkit\'s 0.60 is 3.4:1 on white';
 const CURRENT = '.cui-console-menu > [aria-current="page"]';
 const SUB = '.cui-console-menu-group[open] > a[href]';
 const PLAIN = '.cui-console-menu > a[href="#shop"]';

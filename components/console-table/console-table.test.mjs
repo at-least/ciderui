@@ -10,7 +10,7 @@ import { examples } from '../../test/harness.mjs';
 const ex = examples(import.meta.url);
 const DESKTOP = [1600, 1200, 640];
 const T = 'component-Table';
-const FITTED = 'the secondary label fitted to 0.73 (tokens.css, decision 21): the toolkit\'s 0.60 is 3.4:1 on white';
+const FITTED = 'the secondary label fitted to 0.74 (tokens.css, decision 21): the toolkit\'s 0.60 is 3.4:1 on white';
 
 export const cases = [
   {

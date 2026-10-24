@@ -118,7 +118,10 @@ for (const name of names) {
             if (k.tb.length !== k.props.length) throw new Error(`${label}: tb names a token for each of props`);
             const want = await page.page.evaluate(([selector, pairs]) => {
               const el = document.querySelector(selector);
-              const probe = document.createElement('div');
+              // an element no component's selector matches (a div would be
+              // a banner's > div), a block where nothing sets its display
+              const probe = document.createElement('cui-tb-probe');
+              probe.style.display = 'block';
               el.parentElement.append(probe);
               const out = pairs.map(([prop, value]) => {
                 const css = prop.startsWith('box-') ? prop.slice(4) : prop;

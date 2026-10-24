@@ -1,0 +1,149 @@
+/* ciderui — the console's banner: App Store Connect's newer look's, a
+ * message on a rounded panel tinted in its color: an icon at its start, a
+ * title, a line or two under it, its actions, a button that closes it.
+ *
+ * From the toolkit's banner (reference/asc/results/tokens.json,
+ * --tb-component-Banner-*: inline, its tinted and gray variants).
+ *
+ *   <div class="cui-console-banner" data-color="warning" role="status">
+ *     <svg class="cui-console-banner-icon" …></svg>
+ *     <div>
+ *       <p class="cui-console-banner-title">Symbols are missing</p>
+ *       <p class="cui-console-banner-body">Upload a dSYM to see function names.</p>
+ *       <p class="cui-console-banner-actions"><a class="cui-console-btn" data-size="sm" href="/upload">Upload</a></p>
+ *     </div>
+ *     <button class="cui-console-btn cui-console-btn-icon cui-console-banner-dismiss" data-variant="plain" data-size="sm" aria-label="Close">…</button>
+ *   </div>
+ *
+ * cui-console-banner          the panel: 24px corners, 12px above and below,
+ *                             14px at its start, 30px at its end (room for
+ *                             its close button), 40px at least; the gray
+ *                             fill at 0.08, 13px on 18px, the label
+ *   data-color                info, success, warning, error: its color at
+ *                             0.12, its icon in its color
+ * cui-console-banner-icon     its icon (a Lucide icon), 20px in a 32px column
+ * cui-console-banner-title    13px on 18px at 500
+ * cui-console-banner-body     a line under it, 8px down
+ * cui-console-banner-caption  a small line, 12px on 16px, secondary
+ * cui-console-banner-actions  its buttons, 9px apart, 8px down
+ * cui-console-banner-dismiss  its close button, 8px in from its top end
+ *
+ * Below 640px, the toolkit's mobile page scale: the title 16px on 21px at
+ * 600, a caption 15px on 20px, 45px at its end, 46px at least, the body
+ * 10px down.
+ *
+ * The toolkit's: the corners, the room, the type, the tints (light; dark
+ * derived), the icon's column, the close button's place. ciderui's: the
+ * icon 20px at any width (the toolkit's is 30px below 640px, SF Symbols'
+ * size, where a Lucide icon at 30px outweighs its 16px title); its color
+ * the fitted label of its color (tokens.css, decision 21); the actions 8px
+ * down, as the body. */
+
+@layer components {
+  .cui-console-banner {
+    --cui-console-banner-fill: var(--cui-c-console-neutral-fill-quaternary);
+    --cui-console-banner-icon: var(--cui-c-console-neutral-label-secondary);
+
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    min-height: 46px;
+    padding: 0.75rem 45px 0.75rem 14px;
+    border-radius: 24px;
+    background-color: var(--cui-console-banner-fill);
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: normal;
+
+    @media (width >= 640px) {
+      min-height: 40px;
+      padding-inline-end: 30px;
+    }
+
+    & > :where(div) {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  .cui-console-banner[data-color="info"] {
+    --cui-console-banner-fill: var(--cui-c-console-info-fill-tertiary);
+    --cui-console-banner-icon: var(--cui-c-console-info-label-primary);
+  }
+
+  .cui-console-banner[data-color="success"] {
+    --cui-console-banner-fill: var(--cui-c-console-success-fill-tertiary);
+    --cui-console-banner-icon: var(--cui-c-console-success-label-primary);
+  }
+
+  .cui-console-banner[data-color="warning"] {
+    --cui-console-banner-fill: var(--cui-c-console-warning-fill-tertiary);
+    --cui-console-banner-icon: var(--cui-c-console-warning-label-primary);
+  }
+
+  .cui-console-banner[data-color="error"] {
+    --cui-console-banner-fill: var(--cui-c-console-error-fill-tertiary);
+    --cui-console-banner-icon: var(--cui-c-console-error-label-primary);
+  }
+
+  .cui-console-banner-icon {
+    flex: none;
+    width: 32px;
+    height: 20px;
+    margin-block-start: -1px;
+    color: var(--cui-console-banner-icon);
+  }
+
+  .cui-console-banner-title {
+    margin: 0;
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 600;
+
+    @media (width >= 640px) {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 500;
+    }
+  }
+
+  .cui-console-banner-body {
+    margin: 0;
+
+    :where(.cui-console-banner-title) + & {
+      margin-top: 0.625rem;
+
+      @media (width >= 640px) {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  .cui-console-banner-caption {
+    margin: 0;
+    color: var(--cui-c-console-neutral-label-secondary);
+    font-size: 15px;
+    line-height: 20px;
+
+    @media (width >= 640px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  .cui-console-banner-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 0.5rem 0 0;
+  }
+
+  .cui-console-banner-dismiss {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
