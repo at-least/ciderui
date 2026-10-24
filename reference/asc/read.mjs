@@ -67,6 +67,52 @@ export const READER = async function reader(probes) {
   return { result, sha256: await sha(canon(result)) };
 };
 
+// TOKENS reads App Store Connect's toolkit's tokens (the custom properties
+// its newer look declares on :root, --tb-…) a spec names by `tokens`: those
+// whose name begins with one of its prefixes and matches none of its
+// excludes, each as the page computes it (getComputedStyle on the root: every
+// var() in it substituted), never the declaration as written. Too long for
+// the tool's output, the result is handed back as a file the page downloads,
+// results/<spec>.json as it is to be written; its digests are READER's.
+export const TOKENS = async function tokens(spec, file) {
+  const canon = (x) => Array.isArray(x) ? `[${x.map(canon).join(',')}]`
+    : x && typeof x === 'object' ? `{${Object.keys(x).sort().map((k) => `${JSON.stringify(k)}:${canon(x[k])}`).join(',')}}`
+    : JSON.stringify(x);
+  const sha = async (s) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s)))];
+  const names = new Set();
+  const walk = (rules) => {
+    for (const r of rules) {
+      if (r.cssRules) walk(r.cssRules);
+      if (r.selectorText === ':root') for (const p of r.style) if (p.startsWith('--tb-')) names.add(p);
+    }
+  };
+  for (const s of document.styleSheets) walk(s.cssRules);
+  const excludes = spec.exclude.map((e) => new RegExp(e));
+  const root = getComputedStyle(document.documentElement);
+  const read = {};
+  for (const n of [...names].sort()) {
+    if (!spec.prefixes.some((p) => n.startsWith(p)) || excludes.some((e) => e.test(n))) continue;
+    read[n] = root.getPropertyValue(n).trim();
+  }
+  const result = {
+    path: location.pathname.replace(/\d{6,}/g, '<app>').replace(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/g, '<team>'),
+    window: [innerWidth, innerHeight, devicePixelRatio],
+    browser: navigator.userAgent.match(/Chrome\/[\d.]+/)[0],
+    date: new Date().toISOString(),
+    tokens: read,
+    probesDigest: await sha(canon(spec)),
+    readerDigest: await sha(tokens.toString()),
+  };
+  const text = JSON.stringify({ ...result, sha256: await sha(canon(result)) }, null, 1) + '\n';
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
+  a.download = file;
+  document.body.append(a);
+  a.click();
+  a.remove();
+  return { count: Object.keys(read).length, bytes: text.length };
+};
+
 const canon = (x) => Array.isArray(x) ? `[${x.map(canon).join(',')}]`
   : x && typeof x === 'object' ? `{${Object.keys(x).sort().map((k) => `${JSON.stringify(k)}:${canon(x[k])}`).join(',')}}`
   : JSON.stringify(x);
@@ -80,22 +126,25 @@ export async function cli(root) {
   const [flag, name] = process.argv[2] === '--check' ? ['--check', process.argv[3]] : [null, process.argv[2]];
   const spec = (await import(new URL(`pages/${name}.mjs`, root))).default;
   if (!flag) {
-    console.log(`await (${READER.toString()})(${JSON.stringify(spec.probes)})`);
+    if (spec.tokens) console.log(`await (${TOKENS.toString()})(${JSON.stringify(spec.tokens)}, ${JSON.stringify(`${name}.json`)})`);
+    else console.log(`await (${READER.toString()})(${JSON.stringify(spec.probes)})`);
     process.exit(0);
   }
   const text = readFileSync(new URL(`results/${name}.json`, root), 'utf8');
   const { sha256, ...result } = JSON.parse(text);
   const fails = [];
   if (!same(sha(canon(result)), sha256)) fails.push('the result is not what the page handed back (its digest differs)');
-  if (!same(result.probesDigest, sha(canon(spec.probes)))) fails.push(`the page was given other probes than pages/${name}.mjs's`);
-  if (!same(result.readerDigest, sha(READER.toString()))) fails.push('the page ran another reader than READER');
+  const [given, reader, read] = spec.tokens ? [spec.tokens, TOKENS, result.tokens] : [spec.probes, READER, result.probes];
+  if (!same(result.probesDigest, sha(canon(given)))) fails.push(`the page was given other ${spec.tokens ? 'tokens' : 'probes'} than pages/${name}.mjs's`);
+  if (!same(result.readerDigest, sha(reader.toString()))) fails.push(`the page ran another reader than ${spec.tokens ? 'TOKENS' : 'READER'}`);
   if (result.path !== spec.path) fails.push(`read on ${result.path}, not ${spec.path}`);
-  for (const [k, v] of Object.entries(result.probes)) if (v === null) fails.push(`${k} matched nothing`);
+  for (const [k, v] of Object.entries(read)) if (v === null || v === '') fails.push(`${k} matched nothing`);
+  if (spec.tokens) for (const p of spec.tokens.prefixes) if (!Object.keys(read).some((k) => k.startsWith(p))) fails.push(`no token begins ${p}`);
   // nothing of the account in what was read: no id (six digits or more, not
   // a fraction's; a UUID), no address
-  if (/(?<![\d.])\d{6,}|[0-9a-f]{8}-[0-9a-f]{4}-|@/.test(result.path + JSON.stringify(result.probes))) fails.push('it holds what may be the account\'s: an id or an address');
+  if (/(?<![\d.])\d{6,}|[0-9a-f]{8}-[0-9a-f]{4}-|@/.test(result.path + JSON.stringify(read))) fails.push('it holds what may be the account\'s: an id or an address');
   for (const f of fails) console.log(`FAIL ${name}: ${f}`);
-  if (!fails.length) console.log(`ok ${name}: ${Object.keys(result.probes).length} probes, ${result.path}, ${result.browser}, ${result.window.join(' x ')}, ${result.date}`);
+  if (!fails.length) console.log(`ok ${name}: ${Object.keys(read).length} ${spec.tokens ? 'tokens' : 'probes'}, ${result.path}, ${result.browser}, ${result.window.join(' x ')}, ${result.date}`);
   process.exit(fails.length ? 1 : 0);
 }
 

@@ -1,0 +1,322 @@
+{
+ "path": "/apps/<app>/analytics/overview",
+ "window": [
+  1920,
+  898,
+  2
+ ],
+ "browser": "Chrome/154.0.0.0",
+ "date": "2026-10-24T03:29:24.773Z",
+ "probes": {
+  "card": {
+   "html": "a {sc-dYjPD hXVaWi}",
+   "styles": {
+    "padding-top": "15px",
+    "padding-right": "0px",
+    "padding-bottom": "0px",
+    "padding-left": "0px",
+    "margin-top": "0px",
+    "margin-bottom": "0px",
+    "border-top-width": "0px",
+    "border-top-style": "none",
+    "border-top-color": "rgb(0, 0, 0)",
+    "border-bottom-width": "0px",
+    "border-bottom-style": "none",
+    "border-bottom-color": "rgb(0, 0, 0)",
+    "border-top-left-radius": "10px",
+    "background-color": "oklch(0.968 0.001 286.4)",
+    "box-shadow": "none",
+    "min-width": "0px",
+    "min-height": "179px",
+    "max-width": "none",
+    "overflow": "hidden"
+   },
+   "box": {
+    "width": 352.328,
+    "height": 183
+   }
+  },
+  "section.heading": {
+   "html": "p {sc-krVzYl dzJudq rt-Text--textStyle--$h4Emph}",
+   "styles": {
+    "font-family": "-system-ui, -apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+    "font-size": "18px",
+    "line-height": "22px",
+    "font-weight": "600",
+    "letter-spacing": "normal",
+    "color": "oklch(0 0 0 / 0.85)",
+    "margin-top": "-4px",
+    "margin-bottom": "-5px"
+   },
+   "box": {
+    "width": 945.086,
+    "height": 22
+   }
+  },
+  "section.link": {
+   "html": "a {sc-bqqMSY kzoyth rt-Link--colorRole--brand}",
+   "styles": {
+    "font-family": "-system-ui, -apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+    "font-size": "13px",
+    "line-height": "18px",
+    "font-weight": "400",
+    "letter-spacing": "normal",
+    "color": "oklch(0.542 0.162 251.9)",
+    "text-decoration-line": "none",
+    "text-decoration-color": "oklch(0.542 0.162 251.9)",
+    "text-underline-offset": "auto",
+    "cursor": "pointer"
+   },
+   "box": {
+    "width": 40.477,
+    "height": 18
+   }
+  },
+  "menu": {
+   "html": "nav {sc-hmrndy dCBacs rt-DisplayList--variant--menu}",
+   "styles": {
+    "padding-top": "0px",
+    "padding-right": "0px",
+    "padding-bottom": "0px",
+    "padding-left": "0px",
+    "margin-top": "0px",
+    "margin-bottom": "0px",
+    "border-top-width": "0px",
+    "border-top-style": "none",
+    "border-top-color": "rgb(0, 0, 0)",
+    "border-bottom-width": "0px",
+    "border-bottom-style": "none",
+    "border-bottom-color": "rgb(0, 0, 0)",
+    "border-top-left-radius": "25px",
+    "background-color": "rgba(0, 0, 0, 0)",
+    "box-shadow": "none",
+    "min-width": "0px",
+    "min-height": "0px",
+    "max-width": "none",
+    "row-gap": "0px",
+    "display": "flex"
+   },
+   "box": {
+    "width": 225,
+    "height": 468.5
+   }
+  },
+  "group.button": {
+   "html": "button {sc-FBvLw gmHIun rt-Item--colorRole--neutral}",
+   "styles": {
+    "height": "36px",
+    "background-color": "oklch(1 0 0 / 0)",
+    "border-top-left-radius": "18px",
+    "padding-left": "15px",
+    "padding-right": "15px",
+    "column-gap": "normal",
+    "color": "rgb(0, 0, 0)",
+    "opacity": "1",
+    "cursor": "pointer"
+   },
+   "box": {
+    "width": 225,
+    "height": 36
+   }
+  },
+  "group.button.label": {
+   "html": "div {sc-hhXYTC jQgsnT}",
+   "styles": {
+    "font-family": "-system-ui, -apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+    "font-size": "13px",
+    "line-height": "18px",
+    "font-weight": "500",
+    "letter-spacing": "normal",
+    "color": "oklch(0 0 0 / 0.85)"
+   },
+   "box": {
+    "width": 139,
+    "height": 18
+   }
+  },
+  "group.chevron": {
+   "html": "svg",
+   "styles": {
+    "width": "14.3203px",
+    "height": "9.15625px",
+    "color": "oklch(0.359 0.012 285.8 / 0.6)",
+    "fill": "rgb(0, 0, 0)",
+    "transform": "none"
+   },
+   "box": {
+    "width": 14.32,
+    "height": 9.156
+   }
+  },
+  "group.item": {
+   "html": "a {sc-FBvLw gmHIun rt-Item--colorRole--neutral}",
+   "styles": {
+    "height": "36px",
+    "background-color": "oklch(1 0 0 / 0)",
+    "border-top-left-radius": "18px",
+    "padding-left": "48px",
+    "padding-right": "15px",
+    "column-gap": "normal",
+    "color": "rgb(0, 0, 0)",
+    "opacity": "1",
+    "cursor": "pointer"
+   },
+   "box": {
+    "width": 225,
+    "height": 36
+   }
+  },
+  "group.item.label": {
+   "html": "div {sc-hhXYTC jQgsnT}",
+   "styles": {
+    "font-family": "-system-ui, -apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+    "font-size": "13px",
+    "line-height": "18px",
+    "font-weight": "500",
+    "letter-spacing": "normal",
+    "color": "oklch(0 0 0 / 0.85)",
+    "margin-left": "0px",
+    "padding-left": "0px"
+   },
+   "box": {
+    "width": 162,
+    "height": 18
+   }
+  },
+  "item.disabled": {
+   "html": "a {sc-FBvLw gmHIun rt-Item--colorRole--neutral}",
+   "styles": {
+    "height": "36px",
+    "background-color": "rgba(0, 0, 0, 0)",
+    "border-top-left-radius": "18px",
+    "padding-left": "48px",
+    "padding-right": "15px",
+    "column-gap": "normal",
+    "color": "rgb(0, 0, 0)",
+    "opacity": "1",
+    "cursor": "default"
+   },
+   "box": {
+    "width": 225,
+    "height": 36
+   }
+  },
+  "item.disabled.label": {
+   "html": "div {sc-hhXYTC jQgsnT}",
+   "styles": {
+    "font-family": "-system-ui, -apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+    "font-size": "13px",
+    "line-height": "18px",
+    "font-weight": "500",
+    "letter-spacing": "normal",
+    "color": "oklch(0.359 0.012 285.8 / 0.39)"
+   },
+   "box": {
+    "width": 162,
+    "height": 18
+   }
+  }
+ },
+ "probesDigest": [
+  234,
+  193,
+  128,
+  51,
+  74,
+  167,
+  102,
+  254,
+  4,
+  34,
+  179,
+  17,
+  184,
+  41,
+  239,
+  36,
+  119,
+  223,
+  121,
+  181,
+  38,
+  25,
+  28,
+  145,
+  238,
+  127,
+  129,
+  123,
+  90,
+  161,
+  153,
+  126
+ ],
+ "readerDigest": [
+  138,
+  144,
+  100,
+  105,
+  60,
+  82,
+  123,
+  90,
+  132,
+  236,
+  231,
+  73,
+  61,
+  240,
+  117,
+  187,
+  41,
+  119,
+  199,
+  254,
+  212,
+  130,
+  106,
+  226,
+  247,
+  204,
+  42,
+  95,
+  216,
+  46,
+  128,
+  91
+ ],
+ "sha256": [
+  111,
+  77,
+  152,
+  129,
+  197,
+  156,
+  120,
+  95,
+  76,
+  217,
+  186,
+  164,
+  164,
+  184,
+  97,
+  96,
+  195,
+  168,
+  22,
+  202,
+  197,
+  37,
+  111,
+  87,
+  160,
+  154,
+  143,
+  98,
+  46,
+  24,
+  247,
+  197
+ ]
+}
