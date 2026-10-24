@@ -1,0 +1,16 @@
+{
+ "dialog | .cui-console-dialog | 1200 | padding-top": "24px",
+ "dialog | .cui-console-dialog | 1200 | padding-left": "24px",
+ "dialog | .cui-console-dialog | 1200 | border-top-width": "1px",
+ "dialog | .cui-console-dialog-title | 1200 | font-size": "18px",
+ "dialog | .cui-console-dialog-title | 1200 | line-height": "22px",
+ "dialog | .cui-console-dialog-title | 1200 | font-weight": "600",
+ "dialog | .cui-console-dialog-title | 1200 | margin-bottom": "12px",
+ "dialog | .cui-console-dialog-actions | 1200 | justify-content": "flex-end",
+ "dialog | .cui-console-dialog-actions | 1200 | column-gap": "9px",
+ "dialog | .cui-console-dialog-actions | 1200 | margin-top": "24px",
+ "dialog phone | .cui-console-dialog | 390 | box-width": "368px",
+ "dialog dark | .cui-console-dialog | 1200 | background-color": "oklch(0 0 0)",
+ "dialog dark | .cui-console-dialog | 1200 | border-top-color": "oklch(0.402 0 0)",
+ "dialog dark | .cui-console-dialog | 1200 | color": "oklch(1 0 0 / 0.85)"
+}
