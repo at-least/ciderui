@@ -1,0 +1,11 @@
+{
+ "dl | dt:first-of-type | 1200 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "dl | .cui-console-dl | 1200 | grid-template-columns": "76.8281px 1115.17px",
+ "dl | dd:last-of-type | 1200 | overflow-wrap": "anywhere",
+ "dl | dt:first-of-type | 640 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "dl | .cui-console-dl | 640 | grid-template-columns": "76.8281px 555.172px",
+ "dl | dd:last-of-type | 640 | overflow-wrap": "anywhere",
+ "dl vertical strong | .cui-console-dl | 1200 | display": "block",
+ "dl dark | dt:first-of-type | 1200 | color": "oklch(0.879 0.015 286.1 / 0.6)",
+ "dl dark | dd:first-of-type | 1200 | color": "oklch(1 0 0 / 0.85)"
+}

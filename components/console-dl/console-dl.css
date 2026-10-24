@@ -1,0 +1,71 @@
+/* ciderui — the console's description list: App Store Connect's newer
+ * look's, an item's facts, each a label and its value side by side (a
+ * label column as wide as its longest), or each label over its value.
+ *
+ * From the toolkit's description list (reference/asc/results/tokens.json,
+ * --tb-component-DL-*: horizontal and vertical, muted and strong labels).
+ *
+ *   <dl class="cui-console-dl">
+ *     <dt>Release</dt><dd>2.4.1</dd>
+ *     <dt>Device</dt><dd>iPhone 16</dd>
+ *   </dl>
+ *
+ * cui-console-dl                the list: a label column as wide as its
+ *                               longest, its values in the rest, 8px between
+ *                               the columns and between the rows (16px and
+ *                               12px below 640px); a label (dt) 13px on 18px,
+ *                               the secondary label; a value (dd) 13px on
+ *                               18px, the label, broken anywhere it must
+ *                               (16px on 21px below 640px)
+ *   data-orientation="vertical" each label over its value, 24px under a
+ *                               value
+ *   data-variant="strong"       its labels the label's color at 600
+ *
+ * The toolkit's: the gaps, the type of both, the colors (light; dark
+ * derived: tokens.css), the vertical value's room under it. ciderui's: the
+ * muted label's alpha (fitted, decision 21: the toolkit's 0.60 is 3.4:1 on
+ * white); a value breaking anywhere (an id, a URL). */
+
+@layer components {
+  .cui-console-dl {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    align-items: baseline;
+    gap: 0.5rem;
+    margin: 0;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: normal;
+
+    @media (width < 640px) {
+      gap: 0.75rem 1rem;
+      font-size: 16px;
+      line-height: 21px;
+    }
+
+    & > :where(dt) {
+      color: var(--cui-c-console-neutral-label-secondary);
+      font-weight: 400;
+    }
+
+    & > :where(dd) {
+      margin: 0;
+      color: var(--cui-c-console-neutral-label-primary);
+      font-weight: 400;
+      overflow-wrap: anywhere;
+    }
+
+    &[data-variant="strong"] > :where(dt) {
+      color: var(--cui-c-console-neutral-label-primary);
+      font-weight: 600;
+    }
+
+    &[data-orientation="vertical"] {
+      display: block;
+
+      & > :where(dd) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
