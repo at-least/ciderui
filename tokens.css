@@ -184,6 +184,7 @@
   --cui-c-console-success-fill-tertiary: light-dark(oklch(73.0% 0.194 147.4 / 0.12), oklch(75.6% 0.208 146.9 / 0.12));
   --cui-c-console-warning-fill-tertiary: light-dark(oklch(86.5% 0.177 90.4 / 0.12), oklch(88.5% 0.181 94.8 / 0.12));
   --cui-c-console-error-fill-tertiary: light-dark(oklch(65.4% 0.232 28.8 / 0.12), oklch(65.4% 0.232 28.8 / 0.12));
+  --cui-c-console-neutral-fill-primary: light-dark(oklch(57.5% 0.012 286.0 / 0.20), oklch(71.0% 0.019 285.9 / 0.20));
 
   /* SF on Apple's platforms by its two Apple-only names (-apple-system
      Safari's, BlinkMacSystemFont Chrome's; system-ui would be a font

@@ -1,0 +1,81 @@
+/* ciderui — the console's progress bar: App Store Connect's newer look's,
+ * how much of a whole a value is (a share, a task done so far).
+ *
+ * From the toolkit's progress bar (reference/asc/results/tokens.json,
+ * --tb-component-Progress-*: horizontalRounded, its three heights, brand
+ * and neutral).
+ *
+ *   <progress class="cui-console-progress" value="42" max="100">42%</progress>
+ *
+ * cui-console-progress     the native <progress>: the column's width, 4px
+ *                          high, fully rounded, its track the neutral
+ *                          primary fill, the done part the blue; no value
+ *                          (indeterminate), the track alone
+ *   data-size="sm" | "lg"  3px | 5px high
+ *   data-color="neutral"   the done part the label's black (white in dark)
+ *
+ * The toolkit's: the heights, the rounding, the track's and the fills'
+ * colors (light; dark derived: tokens.css). ciderui's: the native element
+ * (its value is read out; the page gives aria-hidden when the figure is
+ * already in text beside it); an indeterminate bar drawing no motion (the
+ * toolkit has none). */
+
+@layer components {
+  .cui-console-progress {
+    --cui-console-progress-fill: var(--cui-c-console-brand-accent-primary);
+
+    appearance: none;
+    display: block;
+    width: 100%;
+    height: 0.25rem;
+    margin: 0;
+    border: 0;
+    border-radius: 9999px;
+    overflow: hidden;
+    color: var(--cui-console-progress-fill);
+    background-color: var(--cui-c-console-neutral-fill-primary);
+    vertical-align: middle;
+
+    &::-webkit-progress-bar {
+      background-color: transparent;
+    }
+
+    &::-webkit-progress-value {
+      border-radius: 9999px;
+      background-color: var(--cui-console-progress-fill);
+    }
+
+    &::-moz-progress-bar {
+      border-radius: 9999px;
+      background-color: var(--cui-console-progress-fill);
+    }
+
+    &:indeterminate::-moz-progress-bar {
+      background-color: transparent;
+    }
+
+    &[data-size="sm"] {
+      height: 0.1875rem;
+    }
+
+    &[data-size="lg"] {
+      height: 0.3125rem;
+    }
+
+    &[data-color="neutral"] {
+      --cui-console-progress-fill: var(--cui-c-console-neutral-accent-primary);
+    }
+
+    @media (forced-colors: active) {
+      outline: 1px solid CanvasText;
+
+      &::-webkit-progress-value {
+        background-color: Highlight;
+      }
+
+      &::-moz-progress-bar {
+        background-color: Highlight;
+      }
+    }
+  }
+}
