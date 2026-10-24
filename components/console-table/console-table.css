@@ -41,6 +41,11 @@
  *                              page sets it, under its own bar): the
  *                              toolkit's sticky header, white at 0.80 under
  *                              a 3px shadow
+ * data-stack                   below 640px each row a block of label and
+ *                              value lines (a cell's data-label before its
+ *                              value, 13px at 500, secondary; a cell with
+ *                              none, its value alone), 12px above and below,
+ *                              the header hidden
  * cui-console-table-scroll     a box around a table wider than its place,
  *                              which scrolls sideways
  * cui-console-table-sort       a header's label that sorts (a link; its th
@@ -57,8 +62,8 @@
  * toolkit's display list's subtitle at the table's size), a selected row
  * square (the toolkit rounds it 12px, set out 12px, which a table's row
  * cannot draw), a checked row selected, the secondary label's alpha
- * (tokens.css), the sort control (the toolkit's tokens name none) and the
- * scroll box. */
+ * (tokens.css), the sort control (the toolkit's tokens name none), the
+ * scroll box and the stacked rows of a phone. */
 
 @layer components {
   .cui-console-table {
@@ -199,5 +204,46 @@
     flex: none;
     width: 12px;
     height: 12px;
+  }
+
+  .cui-console-table[data-stack] {
+    @media (width < 640px) {
+      &,
+      :where(tbody, tr, td) {
+        display: block;
+      }
+
+      :where(thead) {
+        display: none;
+      }
+
+      :where(tbody tr) {
+        padding-block: 12px;
+        border-bottom: 1px solid var(--cui-c-console-neutral-border-tertiary);
+      }
+
+      :where(td) {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 2px 0;
+        border-bottom: 0;
+        text-align: left;
+      }
+
+      :where(td)::before {
+        content: attr(data-label);
+        flex: none;
+        color: var(--cui-c-console-neutral-label-secondary);
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: 500;
+      }
+
+      :where(td:not([data-label]), td[data-label=""])::before {
+        content: none;
+      }
+    }
   }
 }

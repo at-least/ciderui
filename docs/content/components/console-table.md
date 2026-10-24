@@ -25,6 +25,7 @@ App Store Connect’s table, as its analytics pages draw one: rows between hairl
 | `cui-console-table-subtitle` | a line under a cell’s text, 12px, secondary |
 | a checked `cui-console-checkbox` in a row | the row selected, as `aria-selected` |
 | `data-sticky` | its header sticks to the top of its scroll container, at `--cui-console-table-sticky-top` |
+| `data-stack` | below 640px each row a block of lines, a cell’s `data-label` before its value |
 | `cui-console-table-scroll` | a box that scrolls a wide table sideways |
 | `cui-console-table-sort` | a header’s label that sorts, a link; its `th` carries `aria-sort`, the sorted one’s label darker with its arrow (`cui-console-table-sort-icon`) |
 
@@ -39,3 +40,9 @@ App Store Connect’s table, as its analytics pages draw one: rows between hairl
 A long list’s table: its header sticks under the page’s bar (`data-sticky`), its labels sort the list, a row’s checkbox selects it.
 
 {{ <cui_example file="console-table/sticky" title="A sticky console table" pad={true} /> }}
+
+## Stacked on a phone
+
+`data-stack`: below 640px a row is a block, each cell a line of its `data-label` and its value.
+
+{{ <cui_example file="console-table/stack" title="A stacking console table" pad={true} /> }}

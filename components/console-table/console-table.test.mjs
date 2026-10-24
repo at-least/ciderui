@@ -86,6 +86,26 @@ export const cases = [
     ],
   },
   {
+    name: 'table stacked',
+    html: ex('stack'),
+    widths: [639, 390],
+    checks: [
+      { target: 'tbody tr:first-child', props: ['display', 'padding-top', 'padding-bottom', 'border-bottom-width'], golden: 'below 640px a row is a block, 12px above and below, its hairline under it' },
+      { target: 'thead', props: ['display'], golden: 'the header hidden: each value says its own label' },
+      { target: 'tbody tr:first-child td:nth-child(2)', props: ['display', 'justify-content', 'padding-top', 'border-bottom-width'], golden: 'a cell a line, its label at its start, its value at its end, 2px above and below' },
+      { target: 'tbody tr:first-child td:nth-child(2)', pseudo: '::before', props: ['content', 'color', 'font-size', 'font-weight'], golden: 'its label, the cell\'s data-label, 13px at 500, the secondary label' },
+      { target: 'tbody tr:first-child td:first-child', pseudo: '::before', props: ['content'], golden: 'a cell with no data-label, its value alone' },
+    ],
+  },
+  {
+    name: 'table stacked desktop',
+    html: ex('stack'),
+    widths: [1200],
+    checks: [
+      { target: 'tbody tr:first-child td:nth-child(2)', props: ['display'], golden: 'from 640px a stacking table is a table' },
+    ],
+  },
+  {
     name: 'table dark',
     html: `<div class="cui-dark">${ex('table')}</div>`,
     widths: [1200],
