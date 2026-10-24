@@ -1,0 +1,132 @@
+/* ciderui — the console's empty state: App Store Connect's newer look's,
+ * centered where a list or a chart has nothing to show: an icon, a heading,
+ * a line saying what to do next, its action.
+ *
+ * From the toolkit's empty state (reference/asc/results/tokens.json,
+ * --tb-component-EmptyState-*: its three sizes, backed or not).
+ *
+ *   <div class="cui-console-empty">
+ *     <svg class="cui-console-empty-icon" …></svg>
+ *     <p class="cui-console-empty-heading">No Issues</p>
+ *     <p class="cui-console-empty-caption">When your app reports a crash, it shows here.</p>
+ *     <p class="cui-console-empty-actions"><a class="cui-console-btn" href="/setup">Set Up</a></p>
+ *   </div>
+ *
+ * cui-console-empty           a column, centered, 32px above and below
+ *   data-size="sm" | "lg"     16px or 48px (the default md)
+ *   data-variant="backed"     on the neutral fill at 0.03, 32px corners
+ * cui-console-empty-icon      its icon (a Lucide icon), 32px (24px, 40px),
+ *                             the secondary label, 10px over the heading
+ *                             (6px, 16px)
+ * cui-console-empty-heading   18px on 22px at 600 (14px on 19px at 600;
+ *                             26px on 30px at 700), 288px at most (216px,
+ *                             392px), 2px over the caption (2px, 6px)
+ * cui-console-empty-caption   13px on 18px (11px on 13px; 15px on 20px), the
+ *                             secondary label, as wide, 10px over the actions
+ *                             (8px, 12px)
+ * cui-console-empty-actions   its buttons, 9px apart
+ *
+ * The toolkit's: every size, room and width, the type, the colors (light;
+ * dark derived), the backed fill and corners. ciderui's: the secondary
+ * label's alpha (tokens.css, decision 21); the actions' gap, the banner's. */
+
+@layer components {
+  .cui-console-empty {
+    --cui-console-empty-measure: 288px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 2rem;
+    text-align: center;
+    color: var(--cui-c-console-neutral-label-primary);
+    letter-spacing: normal;
+  }
+
+  .cui-console-empty[data-variant="backed"] {
+    border-radius: 32px;
+    background-color: var(--cui-c-console-neutral-fill-quinary);
+  }
+
+  .cui-console-empty-icon {
+    flex: none;
+    width: 32px;
+    height: 32px;
+    margin-bottom: 0.625rem;
+    color: var(--cui-c-console-neutral-label-secondary);
+  }
+
+  .cui-console-empty-heading {
+    max-width: var(--cui-console-empty-measure);
+    margin: 0 0 0.125rem;
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+
+  .cui-console-empty-caption {
+    max-width: var(--cui-console-empty-measure);
+    margin: 0 0 0.625rem;
+    color: var(--cui-c-console-neutral-label-secondary);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+  }
+
+  .cui-console-empty-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 9px;
+    margin: 0;
+  }
+
+  .cui-console-empty[data-size="sm"] {
+    --cui-console-empty-measure: 216px;
+
+    padding-block: 1rem;
+
+    .cui-console-empty-icon {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 0.375rem;
+    }
+
+    .cui-console-empty-heading {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    .cui-console-empty-caption {
+      margin-bottom: 0.5rem;
+      font-size: 11px;
+      line-height: 13px;
+    }
+  }
+
+  .cui-console-empty[data-size="lg"] {
+    --cui-console-empty-measure: 392px;
+
+    padding-block: 3rem;
+
+    .cui-console-empty-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 1rem;
+    }
+
+    .cui-console-empty-heading {
+      margin-bottom: 0.375rem;
+      font-size: 26px;
+      line-height: 30px;
+      font-weight: 700;
+    }
+
+    .cui-console-empty-caption {
+      margin-bottom: 0.75rem;
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+}

@@ -20,6 +20,7 @@ mod card;
 mod checkbox;
 mod console_badge;
 mod console_banner;
+mod console_empty;
 mod console_menu;
 #[cfg(feature = "css")]
 pub mod css;
@@ -51,6 +52,7 @@ pub use card::Card;
 pub use checkbox::Checkbox;
 pub use console_badge::{ConsoleBadge, ConsoleBadgeVariant, ConsoleColor};
 pub use console_banner::ConsoleBanner;
+pub use console_empty::{ConsoleEmpty, ConsoleEmptySize};
 pub use console_menu::{ConsoleMenu, ConsoleMenuGroup, ConsoleMenuItem};
 pub use field::{Field, Select, TextArea};
 pub use footer::{Footer, FooterSection};

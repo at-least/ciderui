@@ -1,0 +1,20 @@
+{
+ "empty | .cui-console-empty-caption | 1200 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "empty | .cui-console-empty-icon | 1200 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "empty | .cui-console-empty | 1200 | background-color": "rgba(0, 0, 0, 0)",
+ "empty | .cui-console-empty-actions | 1200 | column-gap": "9px",
+ "empty | .cui-console-empty | 1200 | text-align": "center",
+ "empty | .cui-console-empty | 1200 | align-items": "center",
+ "empty | .cui-console-empty-caption | 390 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "empty | .cui-console-empty-icon | 390 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "empty | .cui-console-empty | 390 | background-color": "rgba(0, 0, 0, 0)",
+ "empty | .cui-console-empty-actions | 390 | column-gap": "9px",
+ "empty | .cui-console-empty | 390 | text-align": "center",
+ "empty | .cui-console-empty | 390 | align-items": "center",
+ "empty small | .cui-console-empty-caption | 1200 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "empty small | .cui-console-empty-icon | 1200 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "empty large | .cui-console-empty-caption | 1200 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "empty large | .cui-console-empty-icon | 1200 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "empty dark | .cui-console-empty | 1200 | background-color": "oklch(0.71 0.019 285.9 / 0.03)",
+ "empty dark | .cui-console-empty | 1200 | color": "oklch(1 0 0 / 0.85)"
+}
