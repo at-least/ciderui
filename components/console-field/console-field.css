@@ -40,6 +40,9 @@
  * cui-console-error       a field's error, the same, red
  * cui-console-form-field  a label, its field and its lines, in a column
  *
+ * Below 640px, the toolkit's mobile page scale: a field's text 16px on 21px
+ * (the sizes keep theirs), where iOS stops zooming into a focused field.
+ *
  * The toolkit's: the sizes, room, corners, type, the focused and error
  * states, the label's, help's and form field's type and gaps. ciderui's:
  * the edge (decision 21: the toolkit's, the secondary border at 0.18, is
@@ -65,6 +68,13 @@
     font-weight: 400;
     letter-spacing: normal;
     appearance: none;
+
+    /* below 640px the page's mobile scale, 16px on 21px: iOS zooms the
+       page into a field whose text is smaller than 16px */
+    @media (width < 640px) {
+      font-size: 16px;
+      line-height: 21px;
+    }
 
     &::placeholder {
       color: var(--cui-c-console-neutral-label-secondary);

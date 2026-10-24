@@ -20,7 +20,7 @@ export const cases = [
   {
     name: 'fields',
     html: ex('fields'),
-    widths: [1200, 390],
+    widths: [1200],
     checks: [
       { target: NAME, props: SIZE, tb: size('md') },
       { target: NAME, props: ['background-color', 'border-top-width', 'border-top-style', 'color'], tb: [`${T}-colorRole-neutral-variant-stroked-backgroundColor`, `${T}-colorRole-neutral-focus-off-variant-stroked-border-width`, `${T}-colorRole-neutral-focus-off-variant-stroked-border-style`, 'component-TextInput-anatomy-input-variant-effect-default-color'] },
@@ -38,6 +38,15 @@ export const cases = [
       { target: '.cui-console-error', props: ['font-size', 'line-height', 'font-weight'], tb: ['component-InputError-variant-controlSize-md-textStyle-fontSize', 'component-InputError-variant-controlSize-md-textStyle-lineHeight', 'component-InputError-variant-controlSize-md-textStyle-fontWeight'] },
       { target: '.cui-console-error', props: ['color'], golden: `red-700, the red label: the toolkit's red is 3.6:1 on white, ${FITTED}` },
       { target: '#note', props: ['padding-top', 'padding-bottom', 'resize'], golden: 'a multi-line field: its height its rows\', 6px above and below, taller by its handle' },
+    ],
+  },
+  {
+    name: 'fields phone',
+    html: ex('fields'),
+    widths: [639, 390],
+    checks: [
+      { target: NAME, props: ['font-size', 'line-height'], tb: ['typography-textStyle-bodyMobileRegular-fontSize', 'typography-textStyle-bodyMobileRegular-lineHeight'] },
+      { target: NAME, props: ['box-height'], tb: [`${T}-controlSize-md-blockSize`] },
     ],
   },
   {
