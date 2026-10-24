@@ -71,6 +71,21 @@ export const cases = [
     ],
   },
   {
+    name: 'table sticky',
+    html: ex('sticky'),
+    widths: [1200, 390],
+    checks: [
+      { target: 'thead th:nth-child(2)', props: ['background-color', 'box-shadow'], tb: [`${T}-anatomy-TH-stickyBackgroundColor`, `${T}-anatomy-TH-stickyBoxShadow`] },
+      { target: 'thead th:nth-child(2)', props: ['position', 'top', 'z-index'], golden: 'a sticky header sticks to the top of its scroll container, at --cui-console-table-sticky-top (0 unless the page sets it), over the rows' },
+      { target: '.cui-console-table-scroll', props: ['overflow-x'], golden: 'a table wider than its place scrolls sideways in its box' },
+      { target: 'th[aria-sort="none"] > .cui-console-table-sort', props: ['color', 'text-decoration-line'], golden: `an unsorted header's label a header's, ${FITTED}; no underline` },
+      { target: 'th[aria-sort="none"] > .cui-console-table-sort', props: ['color'], state: 'hover', golden: 'hovered, the label\'s color' },
+      { target: 'th[aria-sort="descending"] > .cui-console-table-sort', props: ['color'], golden: 'the sorted column\'s label the label\'s color' },
+      { target: '.cui-console-table-sort-icon', props: ['box-width', 'box-height'], golden: 'its arrow, Lucide\'s, 12px: the toolkit names no sort control' },
+      { target: 'tbody tr:first-child', props: ['background-color'], golden: 'a row whose checkbox is checked is selected: the brand\'s fill at 0.08, as aria-selected' },
+    ],
+  },
+  {
     name: 'table dark',
     html: `<div class="cui-dark">${ex('table')}</div>`,
     widths: [1200],

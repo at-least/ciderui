@@ -34,14 +34,31 @@
  * cui-console-table-figure     a number's cell: at its end, at 500
  * cui-console-table-subtitle   a line under a cell's text, 12px on 16px, the
  *                              secondary label
+ * a row whose console checkbox is checked  the selected row's fill
+ * data-sticky                  its header sticks to the top of its scroll
+ *                              container (the page, or a scroll box), at
+ *                              --cui-console-table-sticky-top (0 unless the
+ *                              page sets it, under its own bar): the
+ *                              toolkit's sticky header, white at 0.80 under
+ *                              a 3px shadow
+ * cui-console-table-scroll     a box around a table wider than its place,
+ *                              which scrolls sideways
+ * cui-console-table-sort       a header's label that sorts (a link; its th
+ *                              aria-sort): the secondary label, the label's
+ *                              own hovered; on the sorted column the label's,
+ *                              its arrow (cui-console-table-sort-icon, a
+ *                              Lucide arrow, 12px) after it
  *
  * The toolkit's: the sizes, the type, the colors (light; dark derived:
  * tokens.css), the fills, the analytics table's flush first cell and its
  * figure at 500, no rule under the header (its tokens name none).
- * ciderui's: the last cell flush at its end as the first is at its start, the subtitle (the
+ * The toolkit's too: the sticky header's ground and shadow. ciderui's: the
+ * last cell flush at its end as the first is at its start, the subtitle (the
  * toolkit's display list's subtitle at the table's size), a selected row
  * square (the toolkit rounds it 12px, set out 12px, which a table's row
- * cannot draw), the secondary label's alpha (tokens.css). */
+ * cannot draw), a checked row selected, the secondary label's alpha
+ * (tokens.css), the sort control (the toolkit's tokens name none) and the
+ * scroll box. */
 
 @layer components {
   .cui-console-table {
@@ -111,7 +128,8 @@
       }
     }
 
-    :where(tbody tr[aria-selected="true"]) {
+    :where(tbody tr[aria-selected="true"]),
+    :where(tbody tr:has(.cui-console-checkbox-input:checked)) {
       background-color: var(--cui-c-console-brand-fill-quaternary);
     }
 
@@ -141,5 +159,45 @@
     font-size: 12px;
     line-height: 16px;
     font-weight: 400;
+  }
+
+  .cui-console-table[data-sticky] {
+    --cui-console-table-sticky-top: 0px;
+
+    :where(thead th) {
+      position: sticky;
+      top: var(--cui-console-table-sticky-top);
+      z-index: 1;
+      background-color: var(--cui-c-console-table-sticky);
+      box-shadow: var(--cui-console-shadow-table-sticky);
+    }
+  }
+
+  .cui-console-table-scroll {
+    overflow-x: auto;
+  }
+
+  .cui-console-table-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: inherit;
+    text-decoration: none;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--cui-c-console-neutral-label-primary);
+      }
+    }
+  }
+
+  :is(th[aria-sort="ascending"], th[aria-sort="descending"]) > .cui-console-table-sort {
+    color: var(--cui-c-console-neutral-label-primary);
+  }
+
+  .cui-console-table-sort-icon {
+    flex: none;
+    width: 12px;
+    height: 12px;
   }
 }

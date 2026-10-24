@@ -194,6 +194,7 @@ const SOURCES = {
   '--cui-c-console-card': 'color-v2-bgPlaceholder',
   '--cui-c-console-field-border': 'component-TextInput-variant-colorRole-neutral-focus-off-variant-stroked-border-color',
   '--cui-c-console-brand-label-on-fill': 'component-Tabs-variant-colorRole-brand-variant-filledGray-anatomy-Tab-variant-effect-default-isActive-false-color',
+  '--cui-c-console-table-sticky': 'component-Table-anatomy-TH-stickyBackgroundColor',
 };
 const sourceOf = (name) => `--tb-${SOURCES[name] ?? `color-role-${name.slice('--cui-c-console-'.length).replace('on-accent', 'onAccent')}`}`;
 const lch = (v) => {
@@ -406,6 +407,7 @@ check('--cui-focus-ring-offset is apple.com\'s', vars['--cui-focus-ring-offset']
 
 // a console sheet's shadow: the toolkit's opaque sidebar's
 check('--cui-console-shadow-sidebar is App Store Connect\'s --tb-component-Sidebar-variant-variant-opaque-boxShadow', vars['--cui-console-shadow-sidebar'], tbTokens['--tb-component-Sidebar-variant-variant-opaque-boxShadow']);
+check('--cui-console-shadow-table-sticky is App Store Connect\'s --tb-component-Table-anatomy-TH-stickyBoxShadow', vars['--cui-console-shadow-table-sticky'], tbTokens['--tb-component-Table-anatomy-TH-stickyBoxShadow']);
 
 // the card's shadows, as the browser computes one: its color first, then its
 // lengths (the spread 0px where none is written)
