@@ -1,0 +1,68 @@
+/* ciderui — the console's thumbnail: a screenshot shown small, a link to
+ * itself whole, App Store Connect's App Previews and Screenshots'.
+ *
+ * From the version page's screenshots (reference/asc/results/media.json:
+ * thumb.img, thumb.frame, thumb.item).
+ *
+ *   <div class="cui-console-thumbs">
+ *     <figure class="cui-console-thumb">
+ *       <a href="/shot.png"><img src="/shot.png" alt="checkout.png"></a>
+ *       <figcaption class="cui-console-thumb-caption">checkout.png</figcaption>
+ *     </figure>
+ *   </div>
+ *
+ * cui-console-thumbs         a wrapping row, 12px between thumbnails
+ * cui-console-thumb          the figure; its link and image 240px tall,
+ *                            as wide as the image's shape (at most the row),
+ *                            12px corners, on the gray while it loads
+ * cui-console-thumb-caption  its name under it, 11px on 13px, the
+ *                            secondary label, 5px under
+ *
+ * App Store Connect's: the 240px, the 12px corners, the 12px between (6px
+ * either side of each), no edge or shadow, unchanged hovered. ciderui's:
+ * the gray the console card's, where App Store Connect's older look wrote
+ * rgb(242, 242, 242); the width the image's own (App Store Connect's
+ * frames are a device's shape); the caption (the status's line's type). */
+
+@layer components {
+  .cui-console-thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .cui-console-thumb {
+    margin: 0;
+    min-width: 0;
+
+    & > a {
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    & img {
+      display: block;
+      height: 240px;
+      width: auto;
+      max-width: 100%;
+      object-fit: cover;
+      border: none;
+      border-radius: 12px;
+      background-color: var(--cui-c-console-card);
+    }
+  }
+
+  .cui-console-thumb-caption {
+    margin-top: 5px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: normal;
+    color: var(--cui-c-console-neutral-label-secondary);
+  }
+}

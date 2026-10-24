@@ -1,0 +1,53 @@
+/* ciderui — the console's pager: under a long list, a line saying what it
+ * shows and the buttons to the pages either side.
+ *
+ * App Store Connect pages no list it showed this account and its toolkit
+ * has no pager; this one is a toolkit control row
+ * (reference/asc/results/controlrow.json: --tb-component-ControlRow-*, md)
+ * of the console's buttons, its line the body text style
+ * (tokens.json: --tb-typography-textStyle-bodyRegular-*).
+ *
+ *   <nav class="cui-console-pager" aria-label="Issue pages">
+ *     <p class="cui-console-pager-summary">1–50 of 230</p>
+ *     <div class="cui-console-pager-actions">
+ *       <a class="cui-console-btn" href="?page=1">Previous</a>
+ *       <a class="cui-console-btn" href="?page=3">Next</a>
+ *     </div>
+ *   </nav>
+ *
+ * cui-console-pager          one line: the summary at its start, the
+ *                            buttons at its end, 24px between them at least
+ *                            (a control row's section); wrapping on a phone
+ * cui-console-pager-summary  13px on 18px, the secondary label
+ * cui-console-pager-actions  the buttons (cui-console-btn; a disabled one
+ *                            where there is no page that way), 8px apart (a
+ *                            control row's md button)
+ *
+ * The toolkit's: the 24px and the 8px (read off the page's root, not the
+ * token pass: controlrow.json), the body's type. ciderui's: the summary's
+ * secondary label (fitted, tokens.css), the line's layout. */
+
+@layer components {
+  .cui-console-pager {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 24px;
+  }
+
+  .cui-console-pager-summary {
+    margin: 0;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: normal;
+    color: var(--cui-c-console-neutral-label-secondary);
+  }
+
+  .cui-console-pager-actions {
+    display: flex;
+    gap: 8px;
+    margin-inline-start: auto;
+  }
+}

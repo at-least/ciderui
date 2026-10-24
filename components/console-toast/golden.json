@@ -1,0 +1,16 @@
+{
+ "toast | .cui-console-toast | 1200 | position": "fixed",
+ "toast | .cui-console-toast | 1200 | opacity": "1",
+ "toast | .cui-console-toast | 1200 | color": "oklch(0 0 0 / 0.85)",
+ "toast | .cui-console-toast | 1200 | z-index": "900",
+ "toast | .cui-console-toast | 390 | position": "fixed",
+ "toast | .cui-console-toast | 390 | opacity": "1",
+ "toast | .cui-console-toast | 390 | color": "oklch(0 0 0 / 0.85)",
+ "toast | .cui-console-toast | 390 | z-index": "900",
+ "toast hidden | .cui-console-toast | 1200 | opacity": "0",
+ "toast hidden | .cui-console-toast | 1200 | pointer-events": "none",
+ "toast hidden | .cui-console-toast | 1200 | transition-duration": "0.2s",
+ "toast reduced motion | .cui-console-toast | 1200 | transition-duration": "0s",
+ "toast dark | .cui-console-toast | 1200 | background-color": "oklch(0 0 0)",
+ "toast dark | .cui-console-toast | 1200 | color": "oklch(1 0 0 / 0.85)"
+}

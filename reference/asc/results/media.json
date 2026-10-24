@@ -1,0 +1,166 @@
+{
+ "path": "/apps/<app>/distribution/ios/version/inflight",
+ "window": [
+  1920,
+  954,
+  2
+ ],
+ "browser": "Chrome/154.0.0.0",
+ "date": "2026-10-24T17:09:26.664Z",
+ "probes": {
+  "thumb.frame": {
+   "box": {
+    "height": 240,
+    "width": 111
+   },
+   "html": "div {Box-sc-18eybku-0 cRElWs}",
+   "styles": {
+    "background-color": "rgb(242, 242, 242)",
+    "border-top-left-radius": "12px",
+    "border-top-style": "none",
+    "border-top-width": "0px",
+    "box-shadow": "none",
+    "cursor": "pointer",
+    "object-fit": "fill"
+   }
+  },
+  "thumb.img": {
+   "box": {
+    "height": 240,
+    "width": 111
+   },
+   "html": "img {Img-sc-1c8rnk5-0 bgYzCm}",
+   "styles": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "border-top-left-radius": "12px",
+    "border-top-style": "none",
+    "border-top-width": "0px",
+    "box-shadow": "none",
+    "cursor": "pointer",
+    "object-fit": "fill"
+   }
+  },
+  "thumb.item": {
+   "box": {
+    "height": 240,
+    "width": 111
+   },
+   "html": "div {Box-sc-18eybku-0 gnVbrw}[role=button]",
+   "styles": {
+    "cursor": "grab",
+    "margin-left": "6px",
+    "margin-right": "6px"
+   }
+  },
+  "thumb.row": {
+   "html": "ul {Box-sc-18eybku-0 sc-cMa-dbN gEdxcW}",
+   "styles": {
+    "display": "flex",
+    "gap": "normal",
+    "margin-top": "20px"
+   }
+  }
+ },
+ "probesDigest": [
+  228,
+  168,
+  165,
+  167,
+  129,
+  168,
+  91,
+  69,
+  76,
+  19,
+  74,
+  184,
+  204,
+  176,
+  196,
+  216,
+  206,
+  249,
+  220,
+  12,
+  152,
+  3,
+  142,
+  76,
+  132,
+  101,
+  204,
+  86,
+  103,
+  216,
+  122,
+  138
+ ],
+ "readerDigest": [
+  138,
+  144,
+  100,
+  105,
+  60,
+  82,
+  123,
+  90,
+  132,
+  236,
+  231,
+  73,
+  61,
+  240,
+  117,
+  187,
+  41,
+  119,
+  199,
+  254,
+  212,
+  130,
+  106,
+  226,
+  247,
+  204,
+  42,
+  95,
+  216,
+  46,
+  128,
+  91
+ ],
+ "sha256": [
+  53,
+  31,
+  233,
+  89,
+  224,
+  130,
+  152,
+  143,
+  198,
+  55,
+  176,
+  37,
+  244,
+  135,
+  210,
+  238,
+  112,
+  113,
+  215,
+  59,
+  32,
+  23,
+  57,
+  140,
+  146,
+  165,
+  252,
+  134,
+  4,
+  12,
+  77,
+  58
+ ]
+}

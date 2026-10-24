@@ -1,0 +1,15 @@
+{
+ "pager | .cui-console-pager-summary | 1200 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "pager | .cui-console-pager-actions | 1200 | column-gap": "8px",
+ "pager | .cui-console-pager | 1200 | column-gap": "24px",
+ "pager | .cui-console-pager | 1200 | justify-content": "space-between",
+ "pager | .cui-console-pager | 1200 | flex-wrap": "wrap",
+ "pager | .cui-console-pager-actions .cui-console-btn[href] | 1200 | box-height": "30px",
+ "pager | .cui-console-pager-summary | 390 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "pager | .cui-console-pager-actions | 390 | column-gap": "8px",
+ "pager | .cui-console-pager | 390 | column-gap": "24px",
+ "pager | .cui-console-pager | 390 | justify-content": "space-between",
+ "pager | .cui-console-pager | 390 | flex-wrap": "wrap",
+ "pager | .cui-console-pager-actions .cui-console-btn[href] | 390 | box-height": "30px",
+ "pager dark | .cui-console-pager-summary | 1200 | color": "oklch(0.879 0.015 286.1 / 0.6)"
+}
