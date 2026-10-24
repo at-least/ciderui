@@ -226,6 +226,8 @@
   --cui-console-shadow-sidebar: 0px 0px 25px 0px oklch(0.0% 0.000 0 / 0.1),0px 0px 0px 1px inset oklch(100.0% 0.000 0 / 0.10),0px 0px 10px 0px inset oklch(100.0% 0.000 0 / 0.05),0px 0px 24px 0px inset oklch(100.0% 0.000 0 / 0.05);
   /* a sticky table header's shadow: the toolkit's */
   --cui-console-shadow-table-sticky: 0 3px 10px -10px oklch(0.0% 0.000 0 / 0.50);
+  /* a chosen radio's shadow: the toolkit's */
+  --cui-console-shadow-radio: 0 1px 5px -2px oklch(54.2% 0.162 251.9 / 0.30);
   /* a dialog's shadow: the toolkit's modal's */
   --cui-console-shadow-dialog: 0px 16px 35px oklch(0.0% 0.000 0.0 / 0.04);
 

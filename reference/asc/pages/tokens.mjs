@@ -5,7 +5,8 @@
 // a console color is its light role's step of the dark palette, so the
 // light palette names the step and the dark one gives the value); its
 // v2 colors (a metric's card's ground is v2-bgPlaceholder); and the
-// components ciderui builds a console part from, without the variants it
+// components ciderui builds a console part from (Radio and Alert read
+// with the third pass, for the choice and the toast), without the variants it
 // builds none of (a display list's grouped and plain lists; a tab bar's
 // elevated, filled, tinted and gray-plain ones).
 export default {
@@ -18,7 +19,7 @@ export default {
       '--tb-color-role-', '--tb-color-palette-', '--tb-color-system-', '--tb-color-effect-', '--tb-color-v2-', '--tb-color-black', '--tb-color-white', '--tb-color-transparent',
       ...['Sidebar', 'DisplayList', 'Content', 'Table', 'Badge', 'Banner', 'Tabs', 'EmptyState', 'Popover', 'Modal', 'Button', 'InfoSystemButton',
         'TextInput', 'Select', 'TextArea', 'FileUpload', 'Checkbox', 'Toggle', 'Label', 'HelpText', 'InputError', 'FormField',
-        'Chip', 'DL', 'Progress', 'Text', 'Link'].map((c) => `--tb-component-${c}-`),
+        'Chip', 'DL', 'Progress', 'Text', 'Link', 'Radio', 'Alert'].map((c) => `--tb-component-${c}-`),
     ],
     exclude: [
       '^--tb-component-DisplayList-.*-(grouped|groupedGray|plain)-',

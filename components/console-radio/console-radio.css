@@ -1,0 +1,89 @@
+/* ciderui — the console's radio: App Store Connect's newer look's, a 15px
+ * circle before its label, a 1.5px edge; chosen, the brand's blue with a
+ * white mark at its center. The input itself, drawn: it takes the focus,
+ * the click and the arrow keys as a radio does. A line under the label
+ * says what the choice means.
+ *
+ * From the toolkit's radio and label (reference/asc/results/tokens.json,
+ * --tb-component-Radio-*: brand, md; --tb-component-Label-*).
+ *
+ *   <label class="cui-console-radio">
+ *     <input class="cui-console-radio-input" type="radio" name="kind" value="service" checked>
+ *     Service
+ *     <span class="cui-console-radio-caption">A backend or a server.</span>
+ *   </label>
+ *
+ * cui-console-radio          the radio and its label (a <label>), its label
+ *                            9px after the circle, 13px on 18px, the label;
+ *                            disabled, the disabled label
+ * cui-console-radio-input    the input: 15px, round, a 1.5px edge, white;
+ *                            chosen, the brand's blue and its shadow, a
+ *                            6.43px white mark; disabled, a fainter edge on
+ *                            the gray fill, its mark the disabled label;
+ *                            focused from the keyboard, base.css's ring
+ * cui-console-radio-caption  a line under the label, 13px, the secondary
+ *                            label
+ *
+ * The toolkit's: the size, the edge's width, the mark's size and color,
+ * the chosen shadow, the disabled edge and mark, the label's type.
+ * ciderui's: the edge, the field's (decision 21: the toolkit's 0.18 is
+ * 1.4:1; a control's edge is 3:1); chosen, the brand's flat blue (the
+ * toolkit's is a gradient around it); the gap to the label, the
+ * checkbox's (the toolkit's label names none for a radio); the caption;
+ * the focus ring base.css's (rule 9). */
+
+@layer components {
+  .cui-console-radio {
+    display: inline-grid;
+    grid-template-columns: 15px auto;
+    align-items: start;
+    column-gap: 0.5625rem;
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: normal;
+    cursor: pointer;
+
+    &:has(> .cui-console-radio-input:disabled) {
+      color: var(--cui-c-console-neutral-label-disabled);
+      cursor: default;
+    }
+  }
+
+  .cui-console-radio-input {
+    box-sizing: border-box;
+    width: 15px;
+    height: 15px;
+    margin: 1.5px 0 0;
+    border: 1.5px solid var(--cui-c-console-field-border);
+    border-radius: 50%;
+    background-color: var(--cui-c-console-neutral-background-primary);
+    appearance: none;
+    cursor: inherit;
+
+    &:checked {
+      border-color: transparent;
+      background-color: var(--cui-c-console-brand-accent-primary);
+      background-image: radial-gradient(circle, var(--cui-c-console-brand-label-on-accent-primary) 3.215px, transparent 3.715px);
+      box-shadow: var(--cui-console-shadow-radio);
+    }
+
+    &:disabled {
+      border-color: var(--cui-c-console-neutral-border-tertiary);
+      background-color: var(--cui-c-console-neutral-fill-tertiary);
+      box-shadow: none;
+
+      &:checked {
+        background-image: radial-gradient(circle, var(--cui-c-console-neutral-label-disabled) 3.215px, transparent 3.715px);
+      }
+    }
+  }
+
+  .cui-console-radio-caption {
+    grid-column: 2;
+    color: var(--cui-c-console-neutral-label-secondary);
+    font-size: 13px;
+    line-height: 18px;
+  }
+}

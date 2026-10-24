@@ -70,6 +70,7 @@ const SCENES = [
   { name: 'console-sidebar', html: `<div class="cui-console-page" style="height:640px;display:flex;padding:8px 0">${example('console-sidebar/sidebar')}</div>`, zoom: 1.1, center: true, window: 1280 },
   { name: 'console-table', html: `<div class="cui-console-page" style="width:520px;padding:24px">${example('console-table/table')}</div>`, zoom: 1.6, center: true },
   { name: 'console-page', files: ['console-page/page'], zoom: 2, width: 560, center: true },
+  { name: 'console-radio', html: `<div class="cui-console-page" style="width:420px;padding:24px">${example('console-radio/radios')}</div>`, zoom: 2, center: true },
   { name: 'footer', files: ['footer/footer'], zoom: 1.4, width: 914 },
   { name: 'footnote', files: ['footnote/footnote'], zoom: 3, center: true },
   { name: 'gallery', files: ['gallery/gallery'], zoom: 1, width: 1280 },
