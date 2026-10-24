@@ -1,0 +1,88 @@
+/* ciderui — the console's chip: App Store Connect's newer look's, a small
+ * label on the gray fill with 5px corners: a filter in force (its key, its
+ * value, a control that removes it) or a tag that is a link.
+ *
+ * From the toolkit's chip (reference/asc/results/tokens.json,
+ * --tb-component-Chip-*: md, its gray variant, neutral).
+ *
+ *   <span class="cui-console-chip">
+ *     <span class="cui-console-chip-key">level</span>error
+ *     <a class="cui-console-chip-remove" href="/issues" aria-label="Remove level: error"><svg …></svg></a>
+ *   </span>
+ *   <a class="cui-console-chip" href="/events?os=iOS"><span class="cui-console-chip-key">os</span>iOS</a>
+ *
+ * cui-console-chip         the chip, a <span> or a link: 2px above and below,
+ *                          4px at its sides, 4px between its parts, 5px
+ *                          corners, 13px on 18px at 400, the label on the
+ *                          neutral fill at 0.12; a link hovered and pressed,
+ *                          the gray button's fills (the toolkit's chip's are
+ *                          the same colors)
+ * cui-console-chip-key     its key, before its value, the secondary label
+ * cui-console-chip-remove  the control that removes a filter (a link or a
+ *                          button), its × (a Lucide x) 12px, the secondary
+ *                          label, the label's own hovered
+ *
+ * The toolkit's: the room, the corners, the gap, the type, the fill and
+ * the label, a link's hovered and pressed fills (light; dark derived:
+ * tokens.css). ciderui's: the key in the secondary label (the toolkit's
+ * art color, fitted: tokens.css, decision 21), the remove control (the
+ * toolkit's art button draws an SF Symbol), the focus ring base.css's
+ * (rule 9). */
+
+@layer components {
+  .cui-console-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    box-sizing: border-box;
+    padding: 2px 4px;
+    border-radius: 5px;
+    background-color: var(--cui-c-console-neutral-fill-tertiary);
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: normal;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+
+    &:where(a) {
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--cui-c-console-gray-fill-hover);
+        }
+      }
+
+      &:active {
+        background-color: var(--cui-c-console-gray-fill-press);
+      }
+    }
+  }
+
+  .cui-console-chip-key {
+    color: var(--cui-c-console-neutral-label-secondary);
+  }
+
+  .cui-console-chip-remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--cui-c-console-neutral-label-secondary);
+    cursor: pointer;
+
+    & > svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--cui-c-console-neutral-label-primary);
+      }
+    }
+  }
+}

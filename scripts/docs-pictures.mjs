@@ -56,6 +56,7 @@ const SCENES = [
   { name: 'checkbox', files: ['checkbox/checked'], zoom: 3, center: true },
   { name: 'field', files: ['field/filled'], zoom: 2, width: 400, center: true },
   { name: 'console-badge', html: `<div class="cui-console-page" style="width:480px;padding:24px;display:grid;gap:20px">${example('console-badge/badges')}${example('console-badge/plain')}</div>`, zoom: 2, center: true },
+  { name: 'console-chip', html: `<div class="cui-console-page" style="width:420px;padding:24px">${example('console-chip/chips')}</div>`, zoom: 2, center: true },
   { name: 'console-banner', html: `<div class="cui-console-page" style="width:560px;padding:24px">${example('console-banner/banner')}</div>`, zoom: 1.8, center: true },
   { name: 'console-btn', html: `<div class="cui-console-page" style="padding:24px">${example('console-btn/variants')}</div>`, zoom: 2, width: 560, center: true },
   { name: 'console-card', html: `<div class="cui-console-page" style="width:900px;padding:24px">${example('console-card/metrics')}</div>`, zoom: 1.2, center: true },
