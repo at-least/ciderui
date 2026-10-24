@@ -33,6 +33,14 @@
 //            ciderui's here is Inter); `as` maps a property to apple.com's
 //            that does the same (an icon's margin-left to its glyph's
 //            padding-left)
+//   asc      [page, probe]: each value equals App Store Connect's measured
+//            one (reference/asc/results/<page>.json, read at 1920px), at
+//            every width; never a width (its text was SF)
+//   tb       a token of App Store Connect's toolkit for each of props, in
+//            its order, by its name without --tb- (reference/asc/results/
+//            tokens.json): the value equals the token as the page computes
+//            it beside the target (box-height and box-width as the height
+//            and width it sets)
 //   golden   why it is ciderui's: the value equals golden.json's, which
 //            UPDATE_GOLDEN=1 rewrites
 //   rest     a touch screen's hovered or pressed element equals itself at
@@ -43,7 +51,7 @@ import { readFileSync } from 'node:fs';
 // the keys above, all a case and a check may carry; any other throws
 // (a misspelt key would be ignored, the case run without it)
 export const CASE_KEYS = ['name', 'html', 'widths', 'height', 'touch', 'reducedMotion', 'forcedColors', 'click', 'press', 'wait', 'scroll', 'hover', 'checks'];
-export const CHECK_KEYS = ['target', 'props', 'pseudo', 'state', 'on', 'apple', 'at', 'as', 'golden', 'rest'];
+export const CHECK_KEYS = ['target', 'props', 'pseudo', 'state', 'on', 'apple', 'at', 'as', 'asc', 'tb', 'golden', 'rest'];
 
 export const SIDES = ['top', 'right', 'bottom', 'left'];
 export const PADDING = SIDES.map(s => `padding-${s}`);

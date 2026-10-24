@@ -13,6 +13,7 @@ import { ref } from './reference.mjs';
 import { check, done } from './check.mjs';
 
 const css = readFileSync(join(ROOT, 'tokens.css'), 'utf8');
+const tbTokens = JSON.parse(readFileSync(join(ROOT, 'reference/asc/results/tokens.json'), 'utf8')).tokens;
 const vars = Object.fromEntries([...css.matchAll(/^\s*(--cui-[a-z0-9-]+):\s*([^;]+);/gm)].map(m => [m[1], m[2].trim()]));
 
 // a token's two sides: light-dark(a, b), or one value for both
@@ -37,10 +38,20 @@ const channels = (value) => {
     const n = parseInt(h[1], 16);
     return [n >> 16, (n >> 8) & 255, n & 255, 1];
   }
+  const o = value.match(/^oklch\(([\d.]+)% ([\d.]+) ([\d.]+)(?: \/ ([\d.]+))?\)$/);
+  if (o) return [...oklchToSrgb(+o[1] / 100, +o[2], +o[3]), o[4] === undefined ? 1 : +o[4]];
   const c = value.match(/^rgb\((\d+) (\d+) (\d+) \/ ([\d.]+)\)$/);
-  if (!c) throw new Error(`not a #rrggbb or rgb(r g b / a) color: ${value}`);
+  if (!c) throw new Error(`not a #rrggbb, rgb(r g b / a) or oklch(l% c h / a) color: ${value}`);
   return [+c[1], +c[2], +c[3], +c[4]];
 };
+// oklch to sRGB's 0-255 channels, unrounded and clipped to the gamut, by
+// CSS Color 4's matrices (OKLab to linear sRGB)
+function oklchToSrgb(l, c, h) {
+  const a = c * Math.cos(h * Math.PI / 180), b = c * Math.sin(h * Math.PI / 180);
+  const [l_, m_, s_] = [l + 0.3963377774 * a + 0.2158037573 * b, l - 0.1055613458 * a - 0.0638541728 * b, l - 0.0894841775 * a - 1.2914855480 * b].map(v => v ** 3);
+  const lin = [4.0767416621 * l_ - 3.3077115913 * m_ + 0.2309699292 * s_, -1.2684380046 * l_ + 2.6097574011 * m_ - 0.3413193965 * s_, -0.0041960863 * l_ - 0.7034186147 * m_ + 1.7076147010 * s_];
+  return lin.map(v => Math.min(1, Math.max(0, v))).map(v => (v <= 0.0031308 ? 12.92 * v : 1.055 * v ** (1 / 2.4) - 0.055) * 255);
+}
 // a computed rgb()/rgba() as the rgb(r g b / a) channels() reads
 const computedToSpace = (value) => {
   const m = value.match(/^rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)$/);
@@ -134,7 +145,7 @@ const CONTRACT = {
   '--cui-c-on-close-hover': [['overlay', 'close.circle-hover', W, 'color', 'hover'], ['overlay', 'close.circle-hover', 390, 'color', 'hover']],
 };
 
-const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-'));
+const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-') && !k.startsWith('--cui-c-console-'));
 check('the contract\'s colors are tokens.css\'s', colors.join(' '), Object.keys(CONTRACT).join(' '));
 
 for (const [name, [light, dark]] of Object.entries(CONTRACT)) {
@@ -151,6 +162,36 @@ for (const [name, [light, dark]] of Object.entries(CONTRACT)) {
     }
     check(`${name} ${side} is apple.com's ${source.slice(0, 2).join(':')}${source[4] ? ':' + source[4] : ''} ${source[3]}${source[5] ? ' at its ' + source[5] : ''}`, rgb(value), want);
   }
+}
+
+// the console's colors (--cui-c-console-*, the console parts'): each App
+// Store Connect's toolkit's color role of the same name
+// (--tb-color-role-<name>, reference/asc/results/tokens.json) on the light
+// side; on the dark side, which the toolkit does not ship, that role's step
+// of its dark palette at the role's alpha, the step being the light
+// palette's of the same lightness, chroma and hue, black and white each
+// other's (DESIGN.md, decision 18: derived, not measured)
+const palette = Object.entries(tbTokens).filter(([k]) => k.startsWith('--tb-color-palette-light-'));
+const darkOf = (light) => {
+  const m = light.match(/^oklch\(([\d.]+)% ([\d.]+) ([\d.]+)(?: \/ ([\d.]+))?\)$/);
+  if (!m) throw new Error(`a role that is not an oklch() color: ${light}`);
+  const alpha = m[4] === undefined ? '' : ` / ${m[4]}`;
+  const opaque = `oklch(${m[1]}% ${m[2]} ${m[3]})`;
+  if (+m[1] === 0 && +m[2] === 0) return `oklch(100.0% 0.000 0${alpha})`;
+  if (+m[1] === 100 && +m[2] === 0) return `oklch(0.0% 0.000 0${alpha})`;
+  const steps = palette.filter(([, v]) => v === opaque || v.replace(/ 0\.0\)$/, ' 0)') === opaque.replace(/ 0\.0\)$/, ' 0)'));
+  if (steps.length === 0) throw new Error(`no step of the light palette is ${opaque}`);
+  const darks = new Set(steps.map(([k]) => tbTokens[k.replace('-palette-light-', '-palette-dark-')]));
+  if (darks.size !== 1) throw new Error(`${opaque} is light steps with different dark ones: ${[...darks].join(', ')}`);
+  return [...darks][0].replace(/\)$/, `${alpha})`);
+};
+const consoleColors = Object.keys(vars).filter(k => k.startsWith('--cui-c-console-'));
+for (const name of consoleColors) {
+  const role = `--tb-color-role-${name.slice('--cui-c-console-'.length)}`;
+  if (!(role in tbTokens)) throw new Error(`${name}: the toolkit has no ${role}`);
+  const [l, d] = sides(name);
+  check(`${name} light is App Store Connect's ${role}`, l, tbTokens[role]);
+  check(`${name} dark is ${role}'s step of the dark palette`, d, darkOf(tbTokens[role]));
 }
 
 // contrast: WCAG 2, each color's job on both sides. A translucent color is
@@ -184,6 +225,18 @@ for (const [fg, grounds, min] of MIN) {
     for (const i of [0, 1]) {
       const r = ratio(sides(fg)[i], sides(bg)[i]);
       check(`${fg} on ${bg}, ${['light', 'dark'][i]}, at least ${min}:1`, r >= min, true);
+    }
+  }
+}
+// a console part's text on the console's grounds
+const CONSOLE_MIN = [
+  ['--cui-c-console-neutral-label-primary', ['--cui-c-console-neutral-background-primary'], 4.5],
+];
+for (const [fg, grounds, min] of CONSOLE_MIN) {
+  for (const bg of grounds) {
+    for (const i of [0, 1]) {
+      const ground = over(sides(bg)[i], ['#ffffff', '#000000'][i]);
+      check(`${fg} on ${bg}, ${['light', 'dark'][i]}, at least ${min}:1`, ratio(over(sides(fg)[i], ground), ground) >= min, true);
     }
   }
 }

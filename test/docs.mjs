@@ -61,13 +61,14 @@ for (const name of pages.filter((p) => !components.includes(p))) check(`docs/con
 
 // the frames' stylesheet has ciderui's rules for every class the examples
 // write: a component's (its stylesheet names it), a block's (base.css:
-// cui-dark, cui-light) or a type utility (type.css);
+// cui-dark, cui-light) or a type utility (type.css's, a component's own:
+// the console's);
 // a class ciderui has no rule for (a part's box that needs none,
 // cui-post-content) is the markup's alone
 const css = readFileSync(join(DOCS, 'static/example.css'), 'utf8');
 const ruled = new Set([
   ...[...components.map((c) => `components/${c}/${c}.css`), 'base.css'].flatMap((f) => [...readFileSync(join(ROOT, f), 'utf8').matchAll(/\.(cui-[a-z0-9-]+)/g)].map((m) => m[1])),
-  ...[...readFileSync(join(ROOT, 'type.css'), 'utf8').matchAll(/@utility ([a-z0-9-]+)/g)].map((m) => m[1]),
+  ...['type.css', ...components.map((c) => `components/${c}/${c}.css`)].flatMap((f) => [...readFileSync(join(ROOT, f), 'utf8').matchAll(/@utility ([a-z0-9-]+)/g)].map((m) => m[1])),
 ]);
 for (const e of readdirSync(join(DOCS, 'examples'), { recursive: true, withFileTypes: true }).filter((e) => e.isFile())) {
   const html = readFileSync(join(e.parentPath, e.name), 'utf8');

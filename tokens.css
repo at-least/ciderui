@@ -66,6 +66,15 @@
  *                           each: a modal is light in a dark block too, as
  *                           apple.com's store has no dark overlay
  *
+ * The console's colors (--cui-c-console-*), the console parts' (cui-console-*):
+ * App Store Connect's newer look's color roles, one slot per role a part
+ * reads, named by the role (--cui-c-console-neutral-label-primary is its
+ * --tb-color-role-neutral-label-primary; reference/asc/results/tokens.json),
+ * light as its page computes it; dark, which it does not ship, the role's
+ * step of its dark palette at the role's alpha, black and white each
+ * other's (DESIGN.md, decision 18: derived). They are not apple.com's
+ * colors: a console part reads these alone.
+ *
  * The rest is not themed: the font stack, the letter-spacing per size, the
  * focus ring, the shadows. */
 
@@ -122,6 +131,9 @@
   --cui-c-close-active: #dfdfe4;
   --cui-c-on-close: #6e6e73;
   --cui-c-on-close-hover: rgb(0 0 0 / 0.72);
+
+  --cui-c-console-neutral-label-primary: light-dark(oklch(0.0% 0.000 0.0 / 0.85), oklch(100.0% 0.000 0 / 0.85));
+  --cui-c-console-neutral-background-primary: light-dark(oklch(100.0% 0.000 0), oklch(0.0% 0.000 0));
 
   /* SF on Apple's platforms by its two Apple-only names (-apple-system
      Safari's, BlinkMacSystemFont Chrome's; system-ui would be a font

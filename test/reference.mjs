@@ -32,3 +32,33 @@ export function ref(name, probe, width, prop, state) {
 }
 
 export const WIDTHS = [1600, 1200, 900, 390];
+
+// App Store Connect's (reference/asc/results/<page>.json, read at one width,
+// 1920px): asc('analytics', 'menu.current', 'height') is that probe's height
+// there, `box-height` and `box-width` its box. A probe or a property the
+// record lacks throws.
+const ascPages = new Map();
+const ascPage = (name) => {
+  if (!ascPages.has(name)) ascPages.set(name, JSON.parse(readFileSync(join(ROOT, 'reference/asc/results', `${name}.json`), 'utf8')));
+  return ascPages.get(name);
+};
+export function asc(name, probe, prop) {
+  const p = ascPage(name).probes[probe];
+  if (!p) throw new Error(`reference asc ${name} has no probe ${probe}`);
+  if (prop === 'box-height' || prop === 'box-width') {
+    if (!p.box) throw new Error(`reference asc ${name}:${probe} has no box`);
+    return `${p.box[prop.slice(4)]}px`;
+  }
+  if (!(prop in p.styles)) throw new Error(`reference asc ${name}:${probe} has no ${prop}`);
+  return p.styles[prop];
+}
+
+// App Store Connect's toolkit's token (reference/asc/results/tokens.json), as
+// its page computed it, by its name without --tb-: tb('size-control-md') is
+// "1.875rem". A token the record lacks throws.
+export function tb(name) {
+  const tokens = ascPage('tokens').tokens;
+  const v = tokens[`--tb-${name}`];
+  if (v === undefined) throw new Error(`reference asc tokens has no --tb-${name}`);
+  return v;
+}

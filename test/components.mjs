@@ -15,7 +15,7 @@ import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { ROOT, compile } from './compile.mjs';
 import { open, quit } from './browser.mjs';
-import { ref, WIDTHS } from './reference.mjs';
+import { ref, asc, tb, WIDTHS } from './reference.mjs';
 import { check, done } from './check.mjs';
 import { CASE_KEYS, CHECK_KEYS } from './harness.mjs';
 
@@ -102,6 +102,35 @@ for (const name of names) {
               const theirs = k.as?.[prop] ?? prop;
               check(`${label} ${prop} is apple.com's ${p}:${probe}${state ? ':' + state : ''} ${theirs} at ${at}px`, got[prop], ref(p, probe, at, theirs, state));
             }
+          } else if (k.asc) {
+            // App Store Connect's, read at 1920px: a value that does not
+            // move with the window's width (a console part's own sizes)
+            const [p, probe] = k.asc;
+            for (const prop of k.props) {
+              if (prop === 'width' || prop === 'box-width') throw new Error(`${label}: an asc check reads no width (${prop})`);
+              check(`${label} ${prop} is App Store Connect's ${p}:${probe} ${prop}`, got[prop], asc(p, probe, prop));
+            }
+          } else if (k.tb) {
+            // a token of App Store Connect's toolkit, one per property, as
+            // this page computes it where the target is (beside it, so a
+            // length in em is its parent's): a box's height or width as the
+            // height or width it sets
+            if (k.tb.length !== k.props.length) throw new Error(`${label}: tb names a token for each of props`);
+            const want = await page.page.evaluate(([selector, pairs]) => {
+              const el = document.querySelector(selector);
+              const probe = document.createElement('div');
+              el.parentElement.append(probe);
+              const out = pairs.map(([prop, value]) => {
+                const css = prop.startsWith('box-') ? prop.slice(4) : prop;
+                probe.style.setProperty(css, value);
+                const v = getComputedStyle(probe).getPropertyValue(css);
+                probe.style.removeProperty(css);
+                return v;
+              });
+              probe.remove();
+              return out;
+            }, [k.target, k.props.map((prop, i) => [prop, tb(k.tb[i])])]);
+            k.props.forEach((prop, i) => check(`${label} ${prop} is App Store Connect's --tb-${k.tb[i]}`, got[prop], want[i]));
           } else if (k.golden) {
             for (const prop of k.props) {
               const key = `${c.name} | ${k.target}${k.pseudo ?? ''}${k.state ? ':' + k.state : ''} | ${width} | ${prop}`;
@@ -114,7 +143,7 @@ for (const name of names) {
             const rest = await page.read(k.target, k.props, { pseudo: k.pseudo });
             for (const prop of k.props) check(`${label} ${prop} is its own at rest (${k.rest})`, got[prop], rest[prop]);
           } else {
-            throw new Error(`${label}: a check is apple, golden or rest`);
+            throw new Error(`${label}: a check is apple, asc, tb, golden or rest`);
           }
         }
       }

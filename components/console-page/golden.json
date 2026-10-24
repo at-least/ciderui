@@ -1,0 +1,10 @@
+{
+ "page | .cui-console-page | 1600 | font-family": "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+ "page | .cui-console-page | 1200 | font-family": "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+ "page | .cui-console-page | 900 | font-family": "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+ "page | .cui-console-page | 640 | font-family": "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+ "page dark | .cui-console-page | 1200 | color": "oklch(1 0 0 / 0.85)",
+ "page dark | .cui-console-page | 1200 | background-color": "oklch(0 0 0)",
+ "type | .cui-console-mono | 1200 | font-family": "ui-monospace, \"SF Mono\", Menlo, Consolas, \"Liberation Mono\", monospace",
+ "type | .cui-console-mono | 390 | font-family": "ui-monospace, \"SF Mono\", Menlo, Consolas, \"Liberation Mono\", monospace"
+}
