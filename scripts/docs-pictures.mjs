@@ -59,6 +59,7 @@ const SCENES = [
   { name: 'console-banner', html: `<div class="cui-console-page" style="width:560px;padding:24px">${example('console-banner/banner')}</div>`, zoom: 1.8, center: true },
   { name: 'console-btn', html: `<div class="cui-console-page" style="padding:24px">${example('console-btn/variants')}</div>`, zoom: 2, width: 560, center: true },
   { name: 'console-card', html: `<div class="cui-console-page" style="width:900px;padding:24px">${example('console-card/metrics')}</div>`, zoom: 1.2, center: true },
+  { name: 'console-checkbox', html: `<div class="cui-console-page" style="padding:24px">${example('console-checkbox/checkbox')}</div>`, zoom: 2.4, center: true },
   { name: 'console-empty', html: `<div class="cui-console-page" style="width:520px;padding:24px">${example('console-empty/empty')}</div>`, zoom: 1.8, center: true },
   { name: 'console-field', html: `<div class="cui-console-page" style="width:380px;padding:24px">${example('console-field/fields')}</div>`, zoom: 1.4, center: true },
   { name: 'console-link', files: ['console-link/link'], zoom: 2, width: 560, center: true },

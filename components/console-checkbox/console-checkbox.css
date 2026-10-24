@@ -1,0 +1,110 @@
+/* ciderui — the console's checkbox: App Store Connect's newer look's, a
+ * 15px rounded box before its label, the input itself kept (transparent,
+ * over the box) so it takes the focus, the click and the space bar;
+ * checked, the brand's blue with a white check.
+ *
+ * From the toolkit's checkbox and label (reference/asc/results/
+ * tokens.json, --tb-component-Checkbox-*, -Label-*: brand, md).
+ *
+ *   <label class="cui-console-checkbox">
+ *     <input class="cui-console-checkbox-input" type="checkbox" name="mute">
+ *     <span class="cui-console-checkbox-box" aria-hidden="true"><svg …></svg></span>
+ *     Mute this issue
+ *   </label>
+ *
+ * cui-console-checkbox        the checkbox and its label (a <label>, or a
+ *                             <span> where the input has an aria-label: a
+ *                             table row's): 9px between box and label, 13px
+ *                             on 18px
+ * cui-console-checkbox-input  the input, transparent, over the box
+ * cui-console-checkbox-box    the box: 15px, 4px corners, a 1px edge, white;
+ *                             checked, the brand's blue, its check (a Lucide
+ *                             check, white) shown; indeterminate, a white
+ *                             dash; disabled, the gray fill under a fainter
+ *                             edge, its label the disabled label; focused
+ *                             from the keyboard, base.css's ring on the box
+ *
+ * The toolkit's: the size, the corners, the edge's width, the gap, the
+ * label's type, the disabled fill. ciderui's: the edge, the field's
+ * (decision 21: the toolkit's 0.18 is 1.4:1; a control's edge is 3:1);
+ * checked, the brand's flat blue (the toolkit's is a gradient around it,
+ * oklch(60.1% 0.144 247.6) to oklch(48.2% 0.143 251.5), under a shadow);
+ * the check and the dash Lucide's (the toolkit's are its own images); the
+ * focus ring base.css's, moved onto the box (rule 9). */
+
+@layer components {
+  .cui-console-checkbox {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5625rem;
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: normal;
+    vertical-align: middle;
+
+    &:has(> .cui-console-checkbox-input:disabled) {
+      color: var(--cui-c-console-neutral-label-disabled);
+    }
+  }
+
+  .cui-console-checkbox-input {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    margin: -7.5px 0 0;
+    opacity: 0;
+    cursor: pointer;
+
+    &:disabled {
+      cursor: default;
+    }
+  }
+
+  .cui-console-checkbox-box {
+    display: inline-grid;
+    flex: none;
+    place-items: center;
+    box-sizing: border-box;
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--cui-c-console-field-border);
+    border-radius: 4px;
+    background-color: var(--cui-c-console-neutral-background-primary);
+    color: var(--cui-c-console-brand-label-on-accent-primary);
+    pointer-events: none;
+
+    & > :where(svg) {
+      grid-area: 1 / 1;
+      width: 11px;
+      height: 11px;
+      visibility: hidden;
+    }
+
+    :where(.cui-console-checkbox-input:checked) + &,
+    :where(.cui-console-checkbox-input:indeterminate) + & {
+      border-color: transparent;
+      background-color: var(--cui-c-console-brand-accent-primary);
+    }
+
+    :where(.cui-console-checkbox-input:checked:not(:indeterminate)) + & > :where(svg:first-child),
+    :where(.cui-console-checkbox-input:indeterminate) + & > :where(svg:last-child) {
+      visibility: visible;
+    }
+
+    :where(.cui-console-checkbox-input:disabled) + & {
+      border-color: var(--cui-c-console-neutral-border-tertiary);
+      background-color: var(--cui-c-console-neutral-fill-tertiary);
+      color: var(--cui-c-console-neutral-label-disabled);
+    }
+
+    :where(.cui-console-checkbox-input:focus-visible) + & {
+      outline: var(--cui-focus-ring);
+      outline-offset: var(--cui-focus-ring-offset);
+    }
+  }
+}
