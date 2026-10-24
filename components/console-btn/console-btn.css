@@ -40,10 +40,10 @@
 @layer components {
   .cui-console-btn {
     --cui-console-btn-fill: var(--cui-c-console-neutral-fill-tertiary);
-    --cui-console-btn-fill-hover: var(--cui-c-console-button-gray-fill-hover);
-    --cui-console-btn-fill-press: var(--cui-c-console-button-gray-fill-press);
+    --cui-console-btn-fill-hover: var(--cui-c-console-gray-fill-hover);
+    --cui-console-btn-fill-press: var(--cui-c-console-gray-fill-press);
     --cui-console-btn-label: var(--cui-c-console-neutral-label-primary);
-    --cui-console-btn-label-hover: var(--cui-c-console-button-neutral-label-hover);
+    --cui-console-btn-label-hover: var(--cui-c-console-neutral-label-hover);
     --cui-console-btn-label-press: var(--cui-c-console-neutral-label-primary);
     --cui-console-btn-label-disabled: var(--cui-c-console-neutral-label-disabled);
     --cui-console-btn-fill-disabled: var(--cui-c-console-neutral-fill-tertiary);
@@ -96,25 +96,25 @@
 
   .cui-console-btn[data-color="error"] {
     --cui-console-btn-label: var(--cui-c-console-error-label-primary);
-    --cui-console-btn-label-hover: var(--cui-c-console-button-error-label-hover);
-    --cui-console-btn-label-press: var(--cui-c-console-button-error-label-press);
+    --cui-console-btn-label-hover: var(--cui-c-console-error-label-hover);
+    --cui-console-btn-label-press: var(--cui-c-console-error-label-press);
     --cui-console-btn-label-disabled: var(--cui-c-console-error-label-secondary);
   }
 
   .cui-console-btn[data-variant="filled"] {
     --cui-console-btn-fill: var(--cui-c-console-brand-accent-primary);
-    --cui-console-btn-fill-hover: var(--cui-c-console-button-brand-fill-hover);
-    --cui-console-btn-fill-press: var(--cui-c-console-button-brand-fill-press);
+    --cui-console-btn-fill-hover: var(--cui-c-console-brand-fill-hover);
+    --cui-console-btn-fill-press: var(--cui-c-console-brand-fill-press);
     --cui-console-btn-fill-disabled: var(--cui-c-console-brand-accent-tertiary);
     --cui-console-btn-label: var(--cui-c-console-brand-label-on-accent-primary);
     --cui-console-btn-label-hover: var(--cui-c-console-brand-label-on-accent-primary);
-    --cui-console-btn-label-press: var(--cui-c-console-button-on-accent-press);
+    --cui-console-btn-label-press: var(--cui-c-console-on-accent-press);
     --cui-console-btn-label-disabled: var(--cui-c-console-brand-label-on-accent-primary);
 
     &[data-color="error"] {
       --cui-console-btn-fill: var(--cui-c-console-error-accent-primary);
-      --cui-console-btn-fill-hover: var(--cui-c-console-button-error-fill-hover);
-      --cui-console-btn-fill-press: var(--cui-c-console-button-error-fill-press);
+      --cui-console-btn-fill-hover: var(--cui-c-console-error-fill-hover);
+      --cui-console-btn-fill-press: var(--cui-c-console-error-fill-press);
       --cui-console-btn-fill-disabled: var(--cui-c-console-error-accent-tertiary);
     }
   }
@@ -125,8 +125,8 @@
     --cui-console-btn-fill-press: transparent;
     --cui-console-btn-fill-disabled: transparent;
     --cui-console-btn-label: var(--cui-c-console-brand-label-primary);
-    --cui-console-btn-label-hover: var(--cui-c-console-button-brand-label-hover);
-    --cui-console-btn-label-press: var(--cui-c-console-button-brand-label-press);
+    --cui-console-btn-label-hover: var(--cui-c-console-brand-label-hover);
+    --cui-console-btn-label-press: var(--cui-c-console-brand-label-press);
     --cui-console-btn-label-disabled: var(--cui-c-console-brand-label-secondary);
 
     min-width: 0;
@@ -134,8 +134,8 @@
 
     &[data-color="error"] {
       --cui-console-btn-label: var(--cui-c-console-error-label-primary);
-      --cui-console-btn-label-hover: var(--cui-c-console-button-error-label-hover);
-      --cui-console-btn-label-press: var(--cui-c-console-button-error-label-press);
+      --cui-console-btn-label-hover: var(--cui-c-console-error-label-hover);
+      --cui-console-btn-label-press: var(--cui-c-console-error-label-press);
       --cui-console-btn-label-disabled: var(--cui-c-console-error-label-secondary);
     }
   }

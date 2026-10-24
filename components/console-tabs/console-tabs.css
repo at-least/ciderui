@@ -1,0 +1,173 @@
+/* ciderui — the console's tabs: App Store Connect's newer look's tab bar,
+ * in its two forms: underlined (a page's sections, the current one on a
+ * 2px rule, a hairline under the bar) and filled (a choice of a few, each a
+ * pill, the chosen one filled: a chart's period).
+ *
+ * From the toolkit's tab bar (reference/asc/results/tokens.json,
+ * --tb-component-Tabs-*: its underlined and filled-gray variants, brand).
+ *
+ *   <nav class="cui-console-tabs" aria-label="Project">
+ *     <a class="cui-console-tab" href="/overview" aria-current="page">Overview</a>
+ *     <a class="cui-console-tab" href="/issues">Issues</a>
+ *   </nav>
+ *   <div class="cui-console-tabs" data-variant="filled" role="group" aria-label="Period">
+ *     <a class="cui-console-tab" href="?win=24h">24h</a>
+ *     <a class="cui-console-tab" href="?win=7d" aria-current="true">7d</a>
+ *   </div>
+ *
+ * cui-console-tabs        the bar, a row; underlined: 12px between tabs, a
+ *                         0.5px secondary hairline under it
+ *   data-variant="filled" 8px between pills, no hairline
+ *   data-size="sm"|"lg"|"xl"  22px (11px on 13px), 40px or 50px (18px on 22px)
+ * cui-console-tab         a tab: 30px, 14px on 19px at 500, the brand's
+ *                         label; underlined, no room at its sides; filled, a
+ *                         pill 12px in on the gray fill, its label the blue
+ *                         fitted to it
+ *   aria-current (not "false"), aria-selected="true"  the current one:
+ *                         underlined, on a 2px rule in its label's color;
+ *                         filled, the brand's fill, the label white
+ *   aria-disabled="true"  its disabled label, no pointer
+ *
+ * Hovered and pressed, the toolkit's (the brand's label a step darker
+ * hovered, fitted: tokens.css). The toolkit's: the sizes, gaps, type, the
+ * rule, the hairline, the capsule, the colors (light; dark derived). ciderui's:
+ * the colors a contrast check found short, fitted (decision 21: the blue
+ * label on the gray pill, and hovered, blue-600; an underlined tab hovered
+ * the button's hovered blue, where the toolkit's is a lighter one, 4.1:1);
+ * the focus ring base.css's (rule 9). */
+
+@layer components {
+  .cui-console-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 0.5px solid var(--cui-c-console-neutral-border-secondary);
+
+    &[data-variant="filled"] {
+      gap: 8px;
+      border-bottom: 0;
+    }
+
+    &[data-size="lg"]:not([data-variant="filled"]),
+    &[data-size="xl"]:not([data-variant="filled"]) {
+      gap: 16px;
+    }
+
+    &[data-size="lg"][data-variant="filled"],
+    &[data-size="xl"][data-variant="filled"] {
+      gap: 12px;
+    }
+  }
+
+  .cui-console-tab {
+    --cui-console-tab-fill: transparent;
+    --cui-console-tab-fill-hover: transparent;
+    --cui-console-tab-fill-press: transparent;
+    --cui-console-tab-label: var(--cui-c-console-brand-label-primary);
+    --cui-console-tab-label-hover: var(--cui-c-console-brand-label-hover);
+    --cui-console-tab-label-press: var(--cui-c-console-brand-label-press);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    box-sizing: border-box;
+    height: 1.875rem;
+    min-width: 1.875rem;
+    padding: 0;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background-color: var(--cui-console-tab-fill);
+    color: var(--cui-console-tab-label);
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 500;
+    letter-spacing: normal;
+    text-decoration: none;
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--cui-console-tab-fill-hover);
+        color: var(--cui-console-tab-label-hover);
+      }
+    }
+
+    &:active {
+      background-color: var(--cui-console-tab-fill-press);
+      color: var(--cui-console-tab-label-press);
+    }
+
+    &:is([aria-current]:not([aria-current="false"]), [aria-selected="true"]) {
+      --cui-console-tab-label-hover: var(--cui-c-console-brand-label-primary);
+      --cui-console-tab-label-press: var(--cui-c-console-brand-label-primary);
+
+      border-bottom-color: currentColor;
+    }
+
+    &[aria-disabled="true"] {
+      color: var(--cui-c-console-brand-label-secondary);
+      background-color: var(--cui-console-tab-fill);
+      cursor: default;
+    }
+
+    :where(.cui-console-tabs[data-size="sm"]) > & {
+      gap: 0.1875rem;
+      height: 1.375rem;
+      min-width: 1.375rem;
+      font-size: 11px;
+      line-height: 13px;
+    }
+
+    :where(.cui-console-tabs:is([data-size="lg"], [data-size="xl"])) > & {
+      gap: 0.3125rem;
+      height: 2.5rem;
+      min-width: 2.5rem;
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    :where(.cui-console-tabs[data-size="xl"]) > & {
+      gap: 0.5rem;
+      height: 3.125rem;
+      min-width: 3.125rem;
+    }
+
+    :where(.cui-console-tabs[data-variant="filled"]) > & {
+      --cui-console-tab-fill: var(--cui-c-console-neutral-fill-tertiary);
+      --cui-console-tab-fill-hover: var(--cui-c-console-gray-fill-hover);
+      --cui-console-tab-fill-press: var(--cui-c-console-gray-fill-press);
+      --cui-console-tab-label: var(--cui-c-console-brand-label-on-gray);
+
+      padding-inline: 12px;
+      border-bottom: 0;
+      border-radius: 15px;
+
+      &:is([aria-current]:not([aria-current="false"]), [aria-selected="true"]) {
+        --cui-console-tab-fill: var(--cui-c-console-brand-accent-primary);
+        --cui-console-tab-fill-hover: var(--cui-c-console-brand-fill-hover);
+        --cui-console-tab-fill-press: var(--cui-c-console-brand-fill-press);
+        --cui-console-tab-label: var(--cui-c-console-brand-label-on-accent-primary);
+        --cui-console-tab-label-hover: var(--cui-c-console-brand-label-on-accent-primary);
+        --cui-console-tab-label-press: var(--cui-c-console-on-accent-press);
+      }
+    }
+
+    :where(.cui-console-tabs[data-variant="filled"][data-size="sm"]) > & {
+      padding-inline: 5px;
+      border-radius: 11px;
+    }
+
+    :where(.cui-console-tabs[data-variant="filled"][data-size="lg"]) > & {
+      padding-inline: 19px;
+      border-radius: 20px;
+    }
+
+    :where(.cui-console-tabs[data-variant="filled"][data-size="xl"]) > & {
+      padding-inline: 26px;
+      border-radius: 25px;
+    }
+  }
+}

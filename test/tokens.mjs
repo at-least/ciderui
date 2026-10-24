@@ -179,18 +179,19 @@ for (const [name, [light, dark]] of Object.entries(CONTRACT)) {
 // the same ramp (or the same step at another alpha), held below by the
 // contrast checks.
 const SOURCES = {
-  '--cui-c-console-button-brand-fill-hover': 'component-Button-variant-colorRole-brand-effect-hover-variant-filled-backgroundColor',
-  '--cui-c-console-button-brand-fill-press': 'component-Button-variant-colorRole-brand-effect-press-variant-filled-backgroundColor',
-  '--cui-c-console-button-brand-label-hover': 'component-Button-variant-colorRole-brand-effect-hover-variant-gray-color',
-  '--cui-c-console-button-brand-label-press': 'component-Button-variant-colorRole-brand-effect-press-variant-plain-color',
-  '--cui-c-console-button-on-accent-press': 'component-Button-variant-colorRole-brand-effect-press-variant-filled-color',
-  '--cui-c-console-button-gray-fill-hover': 'component-Button-variant-colorRole-neutral-effect-hover-variant-gray-backgroundColor',
-  '--cui-c-console-button-gray-fill-press': 'component-Button-variant-colorRole-neutral-effect-press-variant-gray-backgroundColor',
-  '--cui-c-console-button-neutral-label-hover': 'component-Button-variant-colorRole-neutral-effect-hover-variant-gray-color',
-  '--cui-c-console-button-error-fill-hover': 'component-Button-variant-colorRole-error-effect-hover-variant-filled-backgroundColor',
-  '--cui-c-console-button-error-fill-press': 'component-Button-variant-colorRole-error-effect-press-variant-filled-backgroundColor',
-  '--cui-c-console-button-error-label-hover': 'component-Button-variant-colorRole-error-effect-hover-variant-gray-color',
-  '--cui-c-console-button-error-label-press': 'component-Button-variant-colorRole-error-effect-press-variant-gray-color',
+  '--cui-c-console-brand-fill-hover': 'component-Button-variant-colorRole-brand-effect-hover-variant-filled-backgroundColor',
+  '--cui-c-console-brand-fill-press': 'component-Button-variant-colorRole-brand-effect-press-variant-filled-backgroundColor',
+  '--cui-c-console-brand-label-hover': 'component-Button-variant-colorRole-brand-effect-hover-variant-gray-color',
+  '--cui-c-console-brand-label-press': 'component-Button-variant-colorRole-brand-effect-press-variant-plain-color',
+  '--cui-c-console-on-accent-press': 'component-Button-variant-colorRole-brand-effect-press-variant-filled-color',
+  '--cui-c-console-gray-fill-hover': 'component-Button-variant-colorRole-neutral-effect-hover-variant-gray-backgroundColor',
+  '--cui-c-console-gray-fill-press': 'component-Button-variant-colorRole-neutral-effect-press-variant-gray-backgroundColor',
+  '--cui-c-console-neutral-label-hover': 'component-Button-variant-colorRole-neutral-effect-hover-variant-gray-color',
+  '--cui-c-console-error-fill-hover': 'component-Button-variant-colorRole-error-effect-hover-variant-filled-backgroundColor',
+  '--cui-c-console-error-fill-press': 'component-Button-variant-colorRole-error-effect-press-variant-filled-backgroundColor',
+  '--cui-c-console-error-label-hover': 'component-Button-variant-colorRole-error-effect-hover-variant-gray-color',
+  '--cui-c-console-error-label-press': 'component-Button-variant-colorRole-error-effect-press-variant-gray-color',
+  '--cui-c-console-brand-label-on-gray': 'component-Tabs-variant-colorRole-brand-variant-filledGray-anatomy-Tab-variant-effect-default-isActive-false-color',
 };
 const sourceOf = (name) => `--tb-${SOURCES[name] ?? `color-role-${name.slice('--cui-c-console-'.length).replace('on-accent', 'onAccent')}`}`;
 const lch = (v) => {
@@ -228,15 +229,16 @@ const darkOf = (name, light) => {
 const FITTED = {
   '--cui-c-console-neutral-label-secondary': { light: 'oklch(35.9% 0.012 285.8 / 0.73)', why: 'the toolkit\'s 0.60 is 3.4:1 on white' },
   '--cui-c-console-brand-accent-primary': { dark: 'oklch(51.2% 0.203 260.5)', why: 'white on the derived blue-600 is 2.7:1' },
-  '--cui-c-console-button-brand-fill-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the toolkit\'s lighter blue is 3.9:1' },
-  '--cui-c-console-button-brand-fill-press': { dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the derived blue-600 is 2.7:1' },
-  '--cui-c-console-button-brand-label-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(62.4% 0.206 255.5)', why: 'the toolkit\'s lighter blue is 3.5:1 on white, its derived dark 3.5:1 on black' },
+  '--cui-c-console-brand-fill-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the toolkit\'s lighter blue is 3.9:1' },
+  '--cui-c-console-brand-fill-press': { dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the derived blue-600 is 2.7:1' },
+  '--cui-c-console-brand-label-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(62.4% 0.206 255.5)', why: 'the toolkit\'s lighter blue is 3.5:1 on white, its derived dark 3.5:1 on black' },
   '--cui-c-console-error-accent-primary': { light: 'oklch(49.5% 0.190 31.5)', dark: 'oklch(50.0% 0.186 31.4)', why: 'white on the toolkit\'s red is 3.3:1' },
+  '--cui-c-console-brand-label-on-gray': { light: 'oklch(49.7% 0.209 260.5)', why: 'the brand\'s label on the gray fill is 4.4:1' },
   '--cui-c-console-error-label-primary': { light: 'oklch(49.5% 0.190 31.5)', why: 'the toolkit\'s red is 3.6:1 on white, red-600 4.2:1 on a gray button' },
-  '--cui-c-console-button-error-fill-hover': { light: 'oklch(37.8% 0.147 29.3)', dark: 'oklch(40.9% 0.152 29.5)', why: 'white on the toolkit\'s lighter red is 3.0:1' },
-  '--cui-c-console-button-error-fill-press': { light: 'oklch(37.8% 0.147 29.3)', dark: 'oklch(40.9% 0.152 29.5)', why: 'white on the toolkit\'s red is 3.5:1' },
-  '--cui-c-console-button-error-label-hover': { light: 'oklch(49.5% 0.190 31.5)', dark: 'oklch(70.6% 0.184 29.4)', why: 'the toolkit\'s lighter red is 2.9:1 on white, its derived dark 4.3:1 on a gray button' },
-  '--cui-c-console-button-error-label-press': { light: 'oklch(49.5% 0.190 31.5)', why: 'the toolkit\'s red is 3.8:1 on white' },
+  '--cui-c-console-error-fill-hover': { light: 'oklch(37.8% 0.147 29.3)', dark: 'oklch(40.9% 0.152 29.5)', why: 'white on the toolkit\'s lighter red is 3.0:1' },
+  '--cui-c-console-error-fill-press': { light: 'oklch(37.8% 0.147 29.3)', dark: 'oklch(40.9% 0.152 29.5)', why: 'white on the toolkit\'s red is 3.5:1' },
+  '--cui-c-console-error-label-hover': { light: 'oklch(49.5% 0.190 31.5)', dark: 'oklch(70.6% 0.184 29.4)', why: 'the toolkit\'s lighter red is 2.9:1 on white, its derived dark 4.3:1 on a gray button' },
+  '--cui-c-console-error-label-press': { light: 'oklch(49.5% 0.190 31.5)', why: 'the toolkit\'s red is 3.8:1 on white' },
 };
 for (const name of Object.keys(vars).filter(k => k.startsWith('--cui-c-console-'))) {
   const source = sourceOf(name);
@@ -292,20 +294,22 @@ for (const [fg, grounds, min] of MIN) {
 // a console part's text on the console's grounds: each ground the layers
 // named, over the page (white light, black dark)
 const PAGE = '--cui-c-console-neutral-background-primary';
-const ON_FILLS = ['--cui-c-console-brand-accent-primary', '--cui-c-console-button-brand-fill-hover', '--cui-c-console-error-accent-primary', '--cui-c-console-button-error-fill-hover'];
-const GRAY = ['--cui-c-console-neutral-fill-tertiary', '--cui-c-console-button-gray-fill-hover', '--cui-c-console-button-gray-fill-press'];
+const ON_FILLS = ['--cui-c-console-brand-accent-primary', '--cui-c-console-brand-fill-hover', '--cui-c-console-error-accent-primary', '--cui-c-console-error-fill-hover'];
+const GRAY = ['--cui-c-console-neutral-fill-tertiary', '--cui-c-console-gray-fill-hover', '--cui-c-console-gray-fill-press'];
 const CONSOLE_MIN = [
   ['--cui-c-console-neutral-label-primary', [[PAGE], ['--cui-c-console-neutral-fill-quaternary', PAGE], ...GRAY.map((g) => [g, PAGE])], 4.5],
   // the secondary label on a fill too: a current menu item's
   ['--cui-c-console-neutral-label-secondary', [[PAGE], ['--cui-c-console-neutral-fill-quaternary', PAGE]], 4.5],
   // a button's label on its fill, at rest, hovered and pressed
-  ['--cui-c-console-brand-label-on-accent-primary', [...ON_FILLS.map((f) => [f]), ['--cui-c-console-button-brand-fill-press'], ['--cui-c-console-button-error-fill-press']], 4.5],
-  ['--cui-c-console-button-on-accent-press', [['--cui-c-console-button-brand-fill-press'], ['--cui-c-console-button-error-fill-press']], 4.5],
-  ['--cui-c-console-button-neutral-label-hover', [['--cui-c-console-button-gray-fill-hover', PAGE]], 4.5],
+  ['--cui-c-console-brand-label-on-accent-primary', [...ON_FILLS.map((f) => [f]), ['--cui-c-console-brand-fill-press'], ['--cui-c-console-error-fill-press']], 4.5],
+  ['--cui-c-console-on-accent-press', [['--cui-c-console-brand-fill-press'], ['--cui-c-console-error-fill-press']], 4.5],
+  ['--cui-c-console-neutral-label-hover', [['--cui-c-console-gray-fill-hover', PAGE]], 4.5],
+  // a gray segment's blue label, at rest and hovered, on its gray
+  ...['--cui-c-console-brand-label-on-gray', '--cui-c-console-brand-label-hover'].map((fg) => [fg, GRAY.map((g) => [g, PAGE]), 4.5]),
   // a plain button's, a link's: on the page
-  ...['--cui-c-console-brand-label-primary', '--cui-c-console-button-brand-label-hover', '--cui-c-console-button-brand-label-press'].map((fg) => [fg, [[PAGE]], 4.5]),
+  ...['--cui-c-console-brand-label-primary', '--cui-c-console-brand-label-hover', '--cui-c-console-brand-label-press'].map((fg) => [fg, [[PAGE]], 4.5]),
   // a gray button's red label: on the page and on its gray
-  ...['--cui-c-console-error-label-primary', '--cui-c-console-button-error-label-hover', '--cui-c-console-button-error-label-press'].map((fg) => [fg, [[PAGE], ...GRAY.map((g) => [g, PAGE])], 4.5]),
+  ...['--cui-c-console-error-label-primary', '--cui-c-console-error-label-hover', '--cui-c-console-error-label-press'].map((fg) => [fg, [[PAGE], ...GRAY.map((g) => [g, PAGE])], 4.5]),
 ];
 for (const [fg, grounds, min] of CONSOLE_MIN) {
   for (const layers of grounds) {
@@ -403,7 +407,7 @@ const sheets = ['theme.css', 'base.css', 'type.css', 'index.css',
 for (const file of sheets) {
   const text = readFileSync(join(ROOT, file), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
   // a value is what follows a colon up to its semicolon or brace
-  // a custom property's name is no color (--cui-c-console-button-gray-fill-hover)
+  // a custom property's name is no color (--cui-c-console-gray-fill-hover)
   const values = [...text.matchAll(/:\s*([^;{}]+)[;}]/g)].map(m => m[1]).join(' ; ').replace(/--[\w-]+/g, '');
   const literal = values.match(/#[0-9a-f]{3,8}\b|\b(rgba?|hsla?|hwb|lab|lch|oklab|oklch|color)\(/i) ?? values.match(NAMED);
   check(`${file} writes no color of its own`, literal?.[0] ?? 'none', 'none');
