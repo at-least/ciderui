@@ -1,0 +1,99 @@
+/* ciderui — the console's list: App Store Connect's newer look's grouped
+ * list, rows on the card's gray, a hairline between them from 16px in.
+ *
+ * From the toolkit's display list (reference/asc/results/tokens.json,
+ * --tb-component-DisplayList-*: groupedGray, its item's label, secondary
+ * and pressed fill; the row height its sidebar items').
+ *
+ *   <div class="cui-console-list">
+ *     <a class="cui-console-list-item" href="/p/shop">
+ *       <span class="cui-console-list-label">shop</span>
+ *       <span class="cui-console-list-secondary">8 open issues</span>
+ *     </a>
+ *     <div class="cui-console-list-item">…</div>
+ *   </div>
+ *
+ * cui-console-list           the group: the card's gray, its 10px corners
+ * cui-console-list-item      a row: at least 44px, 7px above and below its
+ *                            content, 16px either side; a 0.5px secondary
+ *                            hairline over each row after the first, from
+ *                            16px in; a row that is a link fills with the
+ *                            neutral fill at 0.08 hovered and pressed
+ * cui-console-list-label     a row's title, 13px on 18px at 500, the label
+ *                            (16px on 21px below 640px)
+ * cui-console-list-secondary what follows it, the secondary label
+ *
+ * The toolkit's: the 16px in, the label's type, its color, the pressed
+ * fill, the row height. ciderui's: the secondary label's alpha (fitted,
+ * tokens.css); the hairline (the toolkit's table row's); the hovered fill
+ * the pressed one; the group's corners and gray the console card's. */
+
+@layer components {
+  .cui-console-list {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--cui-c-console-card);
+  }
+
+  .cui-console-list-item {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    min-height: 44px;
+    padding: 0.4375rem 1rem;
+    color: var(--cui-c-console-neutral-label-primary);
+    text-decoration: none;
+
+    & + &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 1rem;
+      height: 0.5px;
+      background-color: var(--cui-c-console-neutral-border-secondary);
+    }
+  }
+
+  a.cui-console-list-item {
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--cui-c-console-neutral-fill-quaternary);
+      }
+    }
+
+    &:active {
+      background-color: var(--cui-c-console-neutral-fill-quaternary);
+    }
+
+    &:focus-visible {
+      outline-offset: -2px;
+    }
+  }
+
+  .cui-console-list-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    color: var(--cui-c-console-neutral-label-primary);
+    overflow-wrap: anywhere;
+
+    @media (width < 640px) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+
+  .cui-console-list-secondary {
+    display: block;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--cui-c-console-neutral-label-secondary);
+    overflow-wrap: anywhere;
+  }
+}
