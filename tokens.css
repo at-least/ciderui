@@ -218,6 +218,11 @@
   --cui-focus-ring: 2px solid var(--cui-c-accent);
   --cui-focus-ring-offset: 3px;
 
+  /* a console sheet's shadow (a sidebar opened over the page below 1024px):
+     App Store Connect's toolkit's opaque sidebar's, an outer shadow and an
+     inner glow (reference/asc/results/tokens.json) */
+  --cui-console-shadow-sidebar: 0px 0px 25px 0px oklch(0.0% 0.000 0 / 0.1),0px 0px 0px 1px inset oklch(100.0% 0.000 0 / 0.10),0px 0px 10px 0px inset oklch(100.0% 0.000 0 / 0.05),0px 0px 24px 0px inset oklch(100.0% 0.000 0 / 0.05);
+
   /* a card's shadow, and hovered: apple.com's store cards', a dark card's the
      same */
   --cui-shadow-card: 2px 4px 12px rgb(0 0 0 / 0.08);

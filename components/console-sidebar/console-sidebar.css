@@ -1,0 +1,281 @@
+/* ciderui — the console's sidebar: App Store Connect's newer look's app
+ * sidebar, a column down the page's left: the product's wordmark at its
+ * top, its list (44px items, 15px, the current one filled), headings and
+ * rules between runs, the account at its foot. From 1024px it stands in
+ * the page; below, it is a sheet over the page, its corners 26px, 11px in
+ * from the window's edges, which the page's button opens and closes as a
+ * popover, with no script.
+ *
+ * From the toolkit's sidebar and its display list's sidebar variant
+ * (reference/asc/results/tokens.json, --tb-component-Sidebar-*,
+ * --tb-component-DisplayList-*sidebar*; its plain variant standing, its
+ * opaque one as a sheet).
+ *
+ *   <nav class="cui-console-sidebar" id="sidebar" popover aria-label="CrashCart">
+ *     <div class="cui-console-sidebar-header">
+ *       <a class="cui-console-sidebar-wordmark" href="/">CrashCart</a>
+ *       <button class="cui-console-btn cui-console-btn-icon cui-console-sidebar-close" data-variant="plain" popovertarget="sidebar" popovertargetaction="hide" aria-label="Close">…</button>
+ *     </div>
+ *     <div class="cui-console-sidebar-body">
+ *       <a class="cui-console-sidebar-item" href="/issues" aria-current="page">
+ *         <svg class="cui-console-sidebar-icon" …></svg>
+ *         <span class="cui-console-sidebar-label">Issues</span>
+ *         <span class="cui-console-sidebar-secondary">8</span>
+ *       </a>
+ *       <p class="cui-console-sidebar-heading">Projects</p>
+ *       <hr class="cui-console-sidebar-rule">
+ *     </div>
+ *     <div class="cui-console-sidebar-footer">
+ *       <a class="cui-console-sidebar-account" href="/account"><svg class="cui-console-sidebar-avatar" …></svg>Mengyi Chen</a>
+ *     </div>
+ *   </nav>
+ *   <button class="cui-console-btn cui-console-btn-icon cui-console-sidebar-open" data-variant="plain" popovertarget="sidebar" aria-label="Menu">…</button>
+ *
+ * cui-console-sidebar           the column, 248px (the toolkit's sidebar
+ *                               width), the label; a popover attribute makes
+ *                               it a sheet below 1024px
+ * cui-console-sidebar-header    the wordmark's row: 30px at least, 11px in,
+ *                               12px under it; cui-console-sidebar-wordmark,
+ *                               6px in, 17px at 600;
+ *                               cui-console-sidebar-close, its close button
+ *                               at its end, shown below 1024px
+ * cui-console-sidebar-body      the list, 11px in
+ * cui-console-sidebar-item      a page: 44px at least, 13px in, 22px corners,
+ *                               15px on 20px, 11.5px between icon and
+ *                               label; hovered, the neutral fill at 0.03;
+ *                               aria-current="page", at 0.08 and at 500
+ * cui-console-sidebar-icon      its icon (a Lucide icon), 20px in 24px
+ * cui-console-sidebar-label     its label, cut with an ellipsis
+ * cui-console-sidebar-secondary a count at its end, 13px at 500, secondary
+ * cui-console-sidebar-heading   a heading over a run, 13px at 500,
+ *                               secondary, 12px above
+ * cui-console-sidebar-rule      a rule between runs, 0.5px, 13px in
+ * cui-console-sidebar-footer    the account's place at its foot, 48px above
+ * cui-console-sidebar-account   the account: 44px, 22px corners, 9px in,
+ *                               16px on 21px at 500, its avatar
+ *                               (cui-console-sidebar-avatar, 32px, the
+ *                               brand's blue) 10px before its name
+ * cui-console-sidebar-open      the page's button that opens the sheet,
+ *                               hidden from 1024px
+ *
+ * Below 640px, the toolkit's mobile page scale: items 48px, 15px in, 24px
+ * corners, 18px on 22px.
+ *
+ * The toolkit's: the width, the room, the gaps, the corners, the type, the
+ * fills, the sheet's corners, inset, ground and shadow
+ * (--cui-console-shadow-sidebar), the 1024px step (its lg). ciderui's: the
+ * wordmark's type (the toolkit's is a picture); the icons Lucide's at 20px
+ * (the toolkit draws SF Symbols at its text's size); a pressed item filled
+ * as a hovered one (its pressed fill is no palette step); the secondary
+ * label's alpha (tokens.css). */
+
+@layer components {
+  .cui-console-sidebar {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 15.5rem;
+    color: var(--cui-c-console-neutral-label-primary);
+    letter-spacing: normal;
+
+    &[popover] {
+      /* the base rule's display beats the browser's own hiding of a closed
+         popover (an author's style wins over the browser's at any
+         specificity), so a closed sheet says it again */
+      @media (width < 1024px) {
+        position: fixed;
+        inset: 11px auto 11px 11px;
+        width: min(15.5rem, calc(100vw - 22px));
+        height: auto;
+        max-height: none;
+        margin: 0;
+        padding: 0;
+        overflow-y: auto;
+        border: 0;
+        border-radius: 26px;
+        background-color: var(--cui-c-console-neutral-background-primary);
+        box-shadow: var(--cui-console-shadow-sidebar);
+
+        &:not(:popover-open) {
+          display: none;
+        }
+      }
+
+      @media (width >= 1024px) {
+        position: static;
+        display: flex;
+        inset: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+        border: 0;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .cui-console-sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 1.875rem;
+    padding: 11px 11px 12px;
+  }
+
+  .cui-console-sidebar-wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-inline-start: 6px;
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .cui-console-sidebar-close {
+    margin-inline: auto 6px;
+
+    @media (width >= 1024px) {
+      display: none;
+    }
+  }
+
+  .cui-console-sidebar-open {
+    @media (width >= 1024px) {
+      display: none;
+    }
+  }
+
+  .cui-console-sidebar-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-inline: 11px;
+  }
+
+  .cui-console-sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 11.5px;
+    box-sizing: border-box;
+    min-height: 3rem;
+    min-width: 0;
+    padding: 0.5rem 15px;
+    border-radius: 24px;
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+
+    @media (width >= 640px) {
+      min-height: 44px;
+      padding: 0.4375rem 13px;
+      border-radius: 22px;
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--cui-c-console-neutral-fill-quinary);
+      }
+    }
+
+    &:active {
+      background-color: var(--cui-c-console-neutral-fill-quinary);
+    }
+
+    &[aria-current="page"] {
+      background-color: var(--cui-c-console-neutral-fill-quaternary);
+      font-weight: 500;
+    }
+  }
+
+  .cui-console-sidebar-icon {
+    flex: none;
+    width: 24px;
+    height: 20px;
+  }
+
+  .cui-console-sidebar-label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .cui-console-sidebar-secondary {
+    flex: none;
+    color: var(--cui-c-console-neutral-label-secondary);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+  }
+
+  .cui-console-sidebar-heading {
+    margin: 0.75rem 0 0;
+    padding: 4.5px 15px 6.5px;
+    color: var(--cui-c-console-neutral-label-secondary);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+
+    @media (width >= 640px) {
+      padding: 6.5px 13px 4.5px;
+    }
+  }
+
+  .cui-console-sidebar-rule {
+    height: 0.5px;
+    margin: 0.3125rem 15px;
+    border: 0;
+    background-color: var(--cui-c-console-neutral-border-secondary);
+
+    @media (width >= 640px) {
+      margin-inline: 13px;
+    }
+  }
+
+  .cui-console-sidebar-footer {
+    margin-top: auto;
+    padding: 3rem 0 9px;
+  }
+
+  .cui-console-sidebar-account {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    margin-inline: 9px;
+    padding: 0 13px 0 6px;
+    border-radius: 22px;
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+    text-decoration: none;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--cui-c-console-neutral-fill-quinary);
+      }
+    }
+
+    &[aria-current="page"] {
+      background-color: var(--cui-c-console-neutral-fill-quaternary);
+    }
+  }
+
+  .cui-console-sidebar-avatar {
+    flex: none;
+    width: 32px;
+    height: 32px;
+    color: var(--cui-c-console-brand-label-primary);
+  }
+}

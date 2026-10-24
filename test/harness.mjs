@@ -39,8 +39,8 @@
 //   tb       a token of App Store Connect's toolkit for each of props, in
 //            its order, by its name without --tb- (reference/asc/results/
 //            tokens.json): the value equals the token as the page computes
-//            it beside the target (box-height and box-width as the height
-//            and width it sets)
+//            it beside the target (a box read, box-height, box-left, …, as
+//            the height or width it sets)
 //   golden   why it is ciderui's: the value equals golden.json's, which
 //            UPDATE_GOLDEN=1 rewrites
 //   rest     a touch screen's hovered or pressed element equals itself at

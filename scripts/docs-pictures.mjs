@@ -65,6 +65,7 @@ const SCENES = [
   { name: 'console-link', files: ['console-link/link'], zoom: 2, width: 560, center: true },
   { name: 'console-menu', html: `<div class="cui-console-page" style="width:260px;padding:16px">${example('console-menu/menu')}</div>`, zoom: 1.6, center: true },
   { name: 'console-tabs', html: `<div class="cui-console-page" style="width:440px;padding:24px;display:grid;gap:32px">${example('console-tabs/tabs')}${example('console-tabs/filled')}</div>`, zoom: 2, center: true },
+  { name: 'console-sidebar', html: `<div class="cui-console-page" style="height:640px;display:flex;padding:8px 0">${example('console-sidebar/sidebar')}</div>`, zoom: 1.1, center: true, window: 1280 },
   { name: 'console-table', html: `<div class="cui-console-page" style="width:520px;padding:24px">${example('console-table/table')}</div>`, zoom: 1.6, center: true },
   { name: 'console-page', files: ['console-page/page'], zoom: 2, width: 560, center: true },
   { name: 'footer', files: ['footer/footer'], zoom: 1.4, width: 914 },

@@ -25,6 +25,7 @@ mod console_checkbox;
 mod console_empty;
 mod console_field;
 mod console_menu;
+mod console_sidebar;
 #[cfg(feature = "css")]
 pub mod css;
 mod field;
@@ -60,6 +61,7 @@ pub use console_checkbox::ConsoleCheckboxBox;
 pub use console_empty::{ConsoleEmpty, ConsoleEmptySize};
 pub use console_field::ConsoleSelect;
 pub use console_menu::{ConsoleMenu, ConsoleMenuGroup, ConsoleMenuItem};
+pub use console_sidebar::{ConsoleSidebar, ConsoleSidebarItem};
 pub use field::{Field, Select, TextArea};
 pub use footer::{Footer, FooterSection};
 pub use footnote::Footnote;

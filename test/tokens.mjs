@@ -404,6 +404,9 @@ check('the focus ring is apple.com\'s width', ref('home', 'button', W, 'outline-
 check('the focus ring is apple.com\'s color', rgb(sides('--cui-c-accent')[0]), ref('home', 'button', W, 'outline-color', 'focus-visible'));
 check('--cui-focus-ring-offset is apple.com\'s', vars['--cui-focus-ring-offset'], ref('home', 'button', W, 'outline-offset', 'focus-visible'));
 
+// a console sheet's shadow: the toolkit's opaque sidebar's
+check('--cui-console-shadow-sidebar is App Store Connect\'s --tb-component-Sidebar-variant-variant-opaque-boxShadow', vars['--cui-console-shadow-sidebar'], tbTokens['--tb-component-Sidebar-variant-variant-opaque-boxShadow']);
+
 // the card's shadows, as the browser computes one: its color first, then its
 // lengths (the spread 0px where none is written)
 const shadow = (value) => {

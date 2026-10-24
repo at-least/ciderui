@@ -113,8 +113,7 @@ for (const name of names) {
           } else if (k.tb) {
             // a token of App Store Connect's toolkit, one per property, as
             // this page computes it where the target is (beside it, so a
-            // length in em is its parent's): a box's height or width as the
-            // height or width it sets
+            // length in em is its parent's)
             if (k.tb.length !== k.props.length) throw new Error(`${label}: tb names a token for each of props`);
             const want = await page.page.evaluate(([selector, pairs]) => {
               const el = document.querySelector(selector);
@@ -124,7 +123,9 @@ for (const name of names) {
               probe.style.display = 'block';
               el.parentElement.append(probe);
               const out = pairs.map(([prop, value]) => {
-                const css = prop.startsWith('box-') ? prop.slice(4) : prop;
+                // the harness's box reads (test/browser.mjs) are lengths: a
+                // token for one is read as a height or a width
+                const css = prop === 'box-height' ? 'height' : ['box-width', 'box-top', 'box-left', 'box-right', 'box-x', 'box-y'].includes(prop) ? 'width' : prop;
                 probe.style.setProperty(css, value);
                 const v = getComputedStyle(probe).getPropertyValue(css);
                 probe.style.removeProperty(css);
