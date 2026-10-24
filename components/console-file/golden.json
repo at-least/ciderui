@@ -1,0 +1,16 @@
+{
+ "file | #dsym::file-selector-button | 1200 | background-color": "rgba(0, 0, 0, 0)",
+ "file | #dsym::file-selector-button | 1200 | border-top-width": "0px",
+ "file | #dsym::file-selector-button | 1200 | margin-right": "8px",
+ "file | #dsym | 1200 | border-top-color": "oklch(0.359 0.012 285.8 / 0.58)",
+ "file | #dsym | 1200 | border-top-width": "1px",
+ "file | #off | 1200 | border-top-color": "oklch(0.359 0.012 285.8 / 0.13)",
+ "file focus | #dsym | 1200 | border-top-color": "oklch(0 0 0)",
+ "file focus | #dsym | 1200 | outline-width": "3px",
+ "file focus | #dsym | 1200 | outline-style": "solid",
+ "file focus | #dsym | 1200 | outline-color": "oklch(0 0 0 / 0.15)",
+ "file dark | #dsym | 1200 | background-color": "oklch(0 0 0)",
+ "file dark | #dsym | 1200 | border-top-color": "oklch(0.879 0.015 286.1 / 0.42)",
+ "file dark | #dsym | 1200 | color": "oklch(1 0 0 / 0.85)",
+ "file dark | #dsym::file-selector-button | 1200 | color": "oklch(0.683 0.167 256.6)"
+}
