@@ -1,0 +1,180 @@
+/* ciderui — the console's menu: App Store Connect's newer look's list of a
+ * section's pages down its left side (its analytics pages'), each a pill
+ * that fills hovered and where the page is the current one; a heading over
+ * a run of them, a rule between runs, a group that opens to show its own,
+ * set in from the left.
+ *
+ * From the toolkit's display list's menu (reference/asc/results/
+ * tokens.json, --tb-component-DisplayList-*menu*) and the analytics pages'
+ * menu (analytics:menu.*, analytics-page:group.*, item.disabled.*,
+ * hover-menu:menu.item).
+ *
+ *   <nav class="cui-console-menu" aria-label="Analytics">
+ *     <a class="cui-console-menu-item" href="/overview" aria-current="page">
+ *       <svg class="cui-console-menu-icon" …></svg>
+ *       <span class="cui-console-menu-label">Overview</span>
+ *     </a>
+ *     <details class="cui-console-menu-group" open>
+ *       <summary class="cui-console-menu-item">
+ *         <svg class="cui-console-menu-icon" …></svg>
+ *         <span class="cui-console-menu-label">Acquisition</span>
+ *         <svg class="cui-console-menu-chevron" …></svg>
+ *       </summary>
+ *       <a class="cui-console-menu-item" href="/sources">…</a>
+ *     </details>
+ *     <hr class="cui-console-menu-rule">
+ *     <p class="cui-console-menu-heading">Projects</p>
+ *     <a class="cui-console-menu-item" href="/p/shop">
+ *       <span class="cui-console-menu-label">Shop</span>
+ *       <span class="cui-console-menu-secondary">8</span>
+ *     </a>
+ *   </nav>
+ *
+ * cui-console-menu            the list, a column
+ * cui-console-menu-item       a page (an <a>; a group's <summary>): 36px, 15px
+ *                             in, 18px corners, 13px on 18px at 500, the
+ *                             label; hovered, the neutral fill at 0.08;
+ *                             aria-current="page", the same fill;
+ *                             aria-disabled="true", its label the disabled
+ *                             label, no fill, no pointer
+ * cui-console-menu-icon       its icon (a Lucide icon from the crate), 25px
+ *                             wide, the secondary label, 8px before the label
+ * cui-console-menu-label      its label, cut with an ellipsis
+ * cui-console-menu-secondary  what follows it at its end (a count), the
+ *                             secondary label
+ * cui-console-menu-group      a group (<details>): its <summary> an item with
+ *                             a chevron (cui-console-menu-chevron) at its
+ *                             end, the secondary label, turned down open;
+ *                             its items 48px in
+ * cui-console-menu-heading    a heading over a run of items, 13px at 500, the
+ *                             secondary label
+ * cui-console-menu-rule       a rule between runs (<hr>), 0.5px, the
+ *                             secondary border, 15px in, 7px above and below
+ *
+ * Below 640px, the toolkit's mobile page scale: items 37px, 10px in, 9px
+ * between icon and label, 16px on 21px; headings 14px on 19px.
+ *
+ * The toolkit's: the sizes, the type, the colors (light; dark derived:
+ * tokens.css), the fills, the 48px a group's items are in, the disabled
+ * label. ciderui's: the secondary label's alpha (fitted, tokens.css); a
+ * pressed item filled as a hovered one (the toolkit's pressed fill,
+ * oklch(55.4% 0.012 286 / 0.08), is no step of its palette, so it has no
+ * dark side to derive); the chevron Lucide's chevron-right, where the
+ * toolkit draws an SF Symbol; the focus ring base.css's (rule 9). The
+ * width is the page's. */
+
+@layer components {
+  .cui-console-menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cui-console-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5625rem;
+    min-width: 0;
+    padding: 0.5rem 0.625rem;
+    border-radius: 18.5px;
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+    letter-spacing: normal;
+    text-decoration: none;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    @media (width >= 640px) {
+      gap: 0.5rem;
+      padding: 0.5625rem 0.9375rem;
+      border-radius: 18px;
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--cui-c-console-neutral-fill-quaternary);
+      }
+    }
+
+    &:active,
+    &[aria-current="page"] {
+      background-color: var(--cui-c-console-neutral-fill-quaternary);
+    }
+
+    &[aria-disabled="true"] {
+      color: var(--cui-c-console-neutral-label-disabled);
+      background-color: transparent;
+      cursor: default;
+    }
+  }
+
+  .cui-console-menu-icon {
+    flex: none;
+    width: 25px;
+    height: 1em;
+    margin-inline-start: -2.34px;
+    color: var(--cui-c-console-neutral-label-secondary);
+  }
+
+  .cui-console-menu-label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .cui-console-menu-secondary {
+    flex: none;
+    color: var(--cui-c-console-neutral-label-secondary);
+  }
+
+  .cui-console-menu-chevron {
+    flex: none;
+    width: 1em;
+    height: 1em;
+    color: var(--cui-c-console-neutral-label-secondary);
+
+    :where(.cui-console-menu-group[open]) > :where(summary) > & {
+      rotate: 90deg;
+    }
+  }
+
+  :where(.cui-console-menu-group) > .cui-console-menu-item:not(summary) {
+    padding-inline-start: 48px;
+  }
+
+  .cui-console-menu-heading {
+    margin: 0;
+    padding: 4.5px 0.625rem 6.5px;
+    color: var(--cui-c-console-neutral-label-secondary);
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 500;
+    letter-spacing: normal;
+
+    @media (width >= 640px) {
+      padding: 6.5px 0.9375rem 4.5px;
+      font-size: 13px;
+      line-height: 18px;
+    }
+  }
+
+  .cui-console-menu-rule {
+    height: 0.5px;
+    margin: 0.4375rem 0.625rem;
+    border: 0;
+    background-color: var(--cui-c-console-neutral-border-secondary);
+
+    @media (width >= 640px) {
+      margin-inline: 0.9375rem;
+    }
+  }
+}

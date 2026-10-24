@@ -72,7 +72,9 @@
  * --tb-color-role-neutral-label-primary; reference/asc/results/tokens.json),
  * light as its page computes it; dark, which it does not ship, the role's
  * step of its dark palette at the role's alpha, black and white each
- * other's (DESIGN.md, decision 18: derived). They are not apple.com's
+ * other's (DESIGN.md, decision 18: derived). The light secondary label is
+ * fitted: the toolkit's, at 0.60, is 3.4:1 on white, so it is the same step
+ * at 0.73, 4.5:1 on a fill over white (decision 21). They are not apple.com's
  * colors: a console part reads these alone.
  *
  * The rest is not themed: the font stack, the letter-spacing per size, the
@@ -134,6 +136,10 @@
 
   --cui-c-console-neutral-label-primary: light-dark(oklch(0.0% 0.000 0.0 / 0.85), oklch(100.0% 0.000 0 / 0.85));
   --cui-c-console-neutral-background-primary: light-dark(oklch(100.0% 0.000 0), oklch(0.0% 0.000 0));
+  --cui-c-console-neutral-label-secondary: light-dark(oklch(35.9% 0.012 285.8 / 0.73), oklch(87.9% 0.015 286.1 / 0.60));
+  --cui-c-console-neutral-label-disabled: light-dark(oklch(35.9% 0.012 285.8 / 0.39), oklch(87.9% 0.015 286.1 / 0.39));
+  --cui-c-console-neutral-fill-quaternary: light-dark(oklch(57.5% 0.012 286.0 / 0.08), oklch(71.0% 0.019 285.9 / 0.08));
+  --cui-c-console-neutral-border-secondary: light-dark(oklch(35.9% 0.012 285.8 / 0.18), oklch(87.9% 0.015 286.1 / 0.18));
 
   /* SF on Apple's platforms by its two Apple-only names (-apple-system
      Safari's, BlinkMacSystemFont Chrome's; system-ui would be a font

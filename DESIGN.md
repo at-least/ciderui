@@ -123,6 +123,10 @@ A console part reads `--cui-c-console-*` alone, never the apple.com slots above,
 | --- | --- | --- | --- |
 | `console-neutral-label-primary` | `oklch(0% 0 0 / .85)` | `oklch(100% 0 0 / .85)` | a console page's text |
 | `console-neutral-background-primary` | `oklch(100% 0 0)` | `oklch(0% 0 0)` | a console page's ground |
+| `console-neutral-label-secondary` | `oklch(35.9% .012 285.8 / .73)` (fitted, decision 21) | `oklch(87.9% .015 286.1 / .6)` | secondary text: a menu's heading, icons, counts |
+| `console-neutral-label-disabled` | `oklch(35.9% .012 285.8 / .39)` | `oklch(87.9% .015 286.1 / .39)` | a disabled item's label |
+| `console-neutral-fill-quaternary` | `oklch(57.5% .012 286 / .08)` | `oklch(71% .019 285.9 / .08)` | a current or hovered item's fill |
+| `console-neutral-border-secondary` | `oklch(35.9% .012 285.8 / .18)` | `oklch(87.9% .015 286.1 / .18)` | a rule between runs of items |
 
 ## The type
 
@@ -207,6 +211,7 @@ The console parts, App Store Connect's newer look's (`reference/asc/`), each hel
 | component | App Store Connect's | from |
 | --- | --- | --- |
 | `cui-console-page` (built) | the page: its ground and text (`console-neutral-background-primary`, `-label-primary`), 13px on 18px, 16px on 21px below 640px (the toolkit's mobile page scale); its text styles as utilities, `cui-console-h1-plus` to `cui-console-xs`, plain, `-medium` and `-emph` as the toolkit has them, and `cui-console-mono`; `letter-spacing: normal`, the toolkit's (the system font tracks itself) | `tb`: `typography-textStyle-*`, `color-role-neutral-*`; `asc`: `analytics-page:section.heading`, `analytics:card.value` |
+| `cui-console-menu` (built) | the list of a section's pages down its left side: items 36px, 15px in, 18px corners, 13px at 500, an icon 25px wide before the label (a Lucide icon), a count at the end; the current one (`aria-current="page"`) and a hovered one on the neutral fill at 0.08, a pressed one too; a disabled one (`aria-disabled`) its label the disabled label; a heading over a run, a 0.5px rule between runs; a group on `<details>`, its chevron turned down open, its items 48px in; below 640px 37px at 16px (the crate's `ConsoleMenu`, `ConsoleMenuItem`, `ConsoleMenuGroup`) | `asc`: `analytics:menu.*`, `analytics-page:group.*`, `item.disabled*`, `hover-menu:*`; `tb`: `component-DisplayList-*menu*` |
 
 No docs theme (decision 14): support.apple.com's user guides are not measured.
 
@@ -268,6 +273,7 @@ The components' values are read in Chromium (`test/`). Read once in Firefox 153 
 18. **A console's dark is derived** (stated, 2026-10-24, choosing it over a console light only: 「用 tb 深色色板推算」): App Store Connect ships its roles light only; each `--cui-c-console-*` slot's dark side is its role's step of the toolkit's dark palette (the light palette's step of the same lightness, chroma and hue), at the role's alpha, black and white each other's. The values are Apple's; the mapping is ciderui's, and the one place a stylesheet reads what nobody measured; the token test holds the mapping and the contrast.
 19. **The console's parts are one family, `cui-console-*`** (stated, 2026-10-24: 「統一 cui-console-*」), its colors `--cui-c-console-*`: one grep separates them from apple.com's parts, and apple.com's (`cui-btn`, `cui-field`) are untouched.
 20. **The console steps at the toolkit's 640px** (stated, 2026-10-24: 「tb 自己的 640/1024px」), its page scale's (desktop from 640px, mobile below), inside each part, as the global nav's 834px is its own.
+21. **The console's secondary text is fitted** (my recommendation, decision 6 applied to the console): the toolkit's secondary label, coolGray-800 at 0.60, is 3.4:1 on white, below 4.5:1, so its light side is the same step at 0.73 (4.5:1 on the neutral fill over white); its dark side, at 0.60, is 5.4:1 on black and stays the derived one.
 
 ## Assumptions
 

@@ -185,12 +185,18 @@ const darkOf = (light) => {
   if (darks.size !== 1) throw new Error(`${opaque} is light steps with different dark ones: ${[...darks].join(', ')}`);
   return [...darks][0].replace(/\)$/, `${alpha})`);
 };
+// fitted: a light side the toolkit's step at another alpha, where its own
+// falls below its job's contrast (decision 21), held by the contrast checks
+const FITTED = {
+  '--cui-c-console-neutral-label-secondary': ['0.73', 'the toolkit\'s 0.60 is 3.4:1 on white, below 4.5:1'],
+};
 const consoleColors = Object.keys(vars).filter(k => k.startsWith('--cui-c-console-'));
 for (const name of consoleColors) {
   const role = `--tb-color-role-${name.slice('--cui-c-console-'.length)}`;
   if (!(role in tbTokens)) throw new Error(`${name}: the toolkit has no ${role}`);
   const [l, d] = sides(name);
-  check(`${name} light is App Store Connect's ${role}`, l, tbTokens[role]);
+  if (FITTED[name]) check(`${name} light is App Store Connect's ${role} at ${FITTED[name][0]} (fitted: ${FITTED[name][1]})`, l, tbTokens[role].replace(/\/ [\d.]+\)$/, `/ ${FITTED[name][0]})`));
+  else check(`${name} light is App Store Connect's ${role}`, l, tbTokens[role]);
   check(`${name} dark is ${role}'s step of the dark palette`, d, darkOf(tbTokens[role]));
 }
 
@@ -230,7 +236,11 @@ for (const [fg, grounds, min] of MIN) {
 }
 // a console part's text on the console's grounds
 const CONSOLE_MIN = [
+  // the secondary label on a fill too: a current menu item's, a card's
   ['--cui-c-console-neutral-label-primary', ['--cui-c-console-neutral-background-primary'], 4.5],
+  ['--cui-c-console-neutral-label-secondary', ['--cui-c-console-neutral-background-primary'], 4.5],
+  ['--cui-c-console-neutral-label-primary', ['--cui-c-console-neutral-fill-quaternary'], 4.5],
+  ['--cui-c-console-neutral-label-secondary', ['--cui-c-console-neutral-fill-quaternary'], 4.5],
 ];
 for (const [fg, grounds, min] of CONSOLE_MIN) {
   for (const bg of grounds) {
