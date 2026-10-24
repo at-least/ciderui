@@ -1,0 +1,31 @@
+/* ciderui — the console's inline code: App Store Connect's newer look's
+ * monospaced body, on the gray fill, for a key, an id or a word to type
+ * (a project's public key, its slug).
+ *
+ * From the toolkit's monoBodyRegular text style
+ * (reference/asc/results/tokens.json, --tb-typography-textStyle-monoBodyRegular-*).
+ *
+ *   <p>Type <code class="cui-console-code">shop</code> to confirm.</p>
+ *
+ * cui-console-code   13px on 18px at 400, monospaced, the label's color on
+ *                    the neutral fill at 0.12, 4px in, 4px corners
+ *
+ * The toolkit's: the size, the line, the weight. ciderui's: the font
+ * (--cui-font-mono: the toolkit's "SF Mono", monospace names a font only
+ * Apple's platforms have), the fill (the gray badge's), the 4px in and the
+ * 4px corners (the toolkit's text style has no ground; its smallest rounded
+ * rectangle, 8px, would round an 18px line nearly to a capsule). */
+
+@layer components {
+  .cui-console-code {
+    padding: 0 4px;
+    border-radius: 4px;
+    font-family: var(--cui-font-mono);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: normal;
+    color: var(--cui-c-console-neutral-label-primary);
+    background-color: var(--cui-c-console-neutral-fill-tertiary);
+  }
+}

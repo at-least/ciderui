@@ -1,0 +1,36 @@
+/* ciderui — the console's skip link: the first stop of the keyboard, hidden
+ * until it is focused, then the console's filled button at the window's
+ * top left corner, past the sidebar to the page.
+ *
+ * App Store Connect's toolkit has no skip link; this one is its filled
+ * button (cui-console-btn data-variant="filled") placed at its page margin
+ * (reference/asc/results/tokens.json, --tb-space-pageMarginSm).
+ *
+ *   <a class="cui-console-skip cui-console-btn" data-variant="filled" href="#main">Skip to Content</a>
+ *
+ * cui-console-skip   unseen until focused (clipped to nothing, still in the
+ *                    tab order and the accessibility tree); focused, fixed
+ *                    16px from the window's top and left, over the page
+ *
+ * The toolkit's: the 16px, its small page margin. ciderui's: the link, its
+ * place, over everything (z-index 1000, over the sidebar's sheet). */
+
+@layer components {
+  .cui-console-skip {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1000;
+
+    &:not(:focus) {
+      width: 1px;
+      min-width: 0;
+      height: 1px;
+      min-height: 0;
+      padding: 0;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+  }
+}

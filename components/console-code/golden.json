@@ -1,0 +1,16 @@
+{
+ "code | p:first-child .cui-console-code | 1200 | font-family": "ui-monospace, \"SF Mono\", Menlo, Consolas, \"Liberation Mono\", monospace",
+ "code | p:first-child .cui-console-code | 1200 | color": "oklch(0 0 0 / 0.85)",
+ "code | p:first-child .cui-console-code | 1200 | background-color": "oklch(0.575 0.012 286 / 0.12)",
+ "code | p:first-child .cui-console-code | 1200 | padding-left": "4px",
+ "code | p:first-child .cui-console-code | 1200 | padding-right": "4px",
+ "code | p:first-child .cui-console-code | 1200 | border-top-left-radius": "4px",
+ "code | p:first-child .cui-console-code | 390 | font-family": "ui-monospace, \"SF Mono\", Menlo, Consolas, \"Liberation Mono\", monospace",
+ "code | p:first-child .cui-console-code | 390 | color": "oklch(0 0 0 / 0.85)",
+ "code | p:first-child .cui-console-code | 390 | background-color": "oklch(0.575 0.012 286 / 0.12)",
+ "code | p:first-child .cui-console-code | 390 | padding-left": "4px",
+ "code | p:first-child .cui-console-code | 390 | padding-right": "4px",
+ "code | p:first-child .cui-console-code | 390 | border-top-left-radius": "4px",
+ "code dark | p:first-child .cui-console-code | 1200 | color": "oklch(1 0 0 / 0.85)",
+ "code dark | p:first-child .cui-console-code | 1200 | background-color": "oklch(0.71 0.019 285.9 / 0.12)"
+}

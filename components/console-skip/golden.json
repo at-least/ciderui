@@ -1,0 +1,20 @@
+{
+ "skip link | .cui-console-skip | 1200 | box-width": "1px",
+ "skip link | .cui-console-skip | 1200 | box-height": "1px",
+ "skip link | .cui-console-skip | 1200 | clip-path": "inset(50%)",
+ "skip link | .cui-console-skip:focus | 1200 | box-height": "30px",
+ "skip link | .cui-console-skip:focus | 1200 | clip-path": "none",
+ "skip link | .cui-console-skip:focus | 1200 | position": "fixed",
+ "skip link | .cui-console-skip:focus | 1200 | z-index": "1000",
+ "skip link | .cui-console-skip:focus | 1200 | background-color": "oklch(0.542 0.162 251.9)",
+ "skip link | .cui-console-skip:focus | 1200 | color": "oklch(1 0 0 / 0.95)",
+ "skip link | .cui-console-skip | 390 | box-width": "1px",
+ "skip link | .cui-console-skip | 390 | box-height": "1px",
+ "skip link | .cui-console-skip | 390 | clip-path": "inset(50%)",
+ "skip link | .cui-console-skip:focus | 390 | box-height": "30px",
+ "skip link | .cui-console-skip:focus | 390 | clip-path": "none",
+ "skip link | .cui-console-skip:focus | 390 | position": "fixed",
+ "skip link | .cui-console-skip:focus | 390 | z-index": "1000",
+ "skip link | .cui-console-skip:focus | 390 | background-color": "oklch(0.542 0.162 251.9)",
+ "skip link | .cui-console-skip:focus | 390 | color": "oklch(1 0 0 / 0.95)"
+}
