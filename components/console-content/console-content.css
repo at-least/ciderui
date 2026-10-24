@@ -1,0 +1,64 @@
+/* ciderui — the console's content column: App Store Connect's page, one
+ * column at most 1440px wide in the middle of the window, its side room
+ * growing with the window; from 1024px a sidebar in it stands in a 225px
+ * column at its start, 30px before the page, the way the analytics pages
+ * hold their menu.
+ *
+ * From the toolkit's content, its legacy variant (reference/asc/results/
+ * tokens.json, --tb-component-Content-legacy-*, its breakpoints) and the
+ * analytics overview's menu (analytics: menu.item, 225px; its 30px the
+ * toolkit's spacer-30, read off the page's stylesheet by a script).
+ *
+ *   <div class="cui-console-content">
+ *     <nav class="cui-console-sidebar" id="sidebar" popover aria-label="Main">…</nav>
+ *     <main>…</main>
+ *   </div>
+ *
+ * cui-console-content   at most 1440px, centered; 16px at its sides, 24px
+ *                       from 640px, 40px from 1024px; from 1024px, with a
+ *                       cui-console-sidebar as a child, two columns: the
+ *                       sidebar's 225px, 30px, the rest
+ * a cui-console-sidebar in it, from 1024px: no room at its sides (its
+ *                       items flush with the column, as the menu's are)
+ *
+ * The toolkit's: the 1440px, the sides at each step, the steps, the 30px.
+ * App Store Connect's: the 225px. ciderui's: the sidebar's room dropped in
+ * the column (the toolkit's sidebar stands at the window's edge). */
+
+@layer components {
+  .cui-console-content {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+
+    @media (width >= 640px) {
+      padding-inline: 1.5rem;
+    }
+
+    @media (width >= 1024px) {
+      padding-inline: 2.5rem;
+
+      &:has(> .cui-console-sidebar) {
+        display: grid;
+        grid-template-columns: 225px minmax(0, 1fr);
+        column-gap: 1.875rem;
+        align-items: start;
+      }
+
+      & > .cui-console-sidebar {
+        width: auto;
+
+        & .cui-console-sidebar-header,
+        & .cui-console-sidebar-body {
+          padding-inline: 0;
+        }
+
+        & .cui-console-sidebar-account {
+          margin-inline: 0;
+        }
+      }
+    }
+  }
+}

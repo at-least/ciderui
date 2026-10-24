@@ -1,0 +1,19 @@
+{
+ "content wide | .cui-console-content | 1920 | box-left": "240px",
+ "content wide | .cui-console-content | 1920 | grid-template-columns": "225px 1105px",
+ "content wide | .cui-console-content .cui-console-sidebar-item[aria-current] | 1920 | box-left": "280px",
+ "content wide | .cui-console-content .cui-console-sidebar-item[aria-current] | 1920 | box-width": "225px",
+ "content wide | .cui-console-content main | 1920 | box-left": "535px",
+ "content wide | .cui-console-content | 1440 | box-left": "0px",
+ "content wide | .cui-console-content | 1440 | grid-template-columns": "225px 1105px",
+ "content wide | .cui-console-content .cui-console-sidebar-item[aria-current] | 1440 | box-left": "40px",
+ "content wide | .cui-console-content .cui-console-sidebar-item[aria-current] | 1440 | box-width": "225px",
+ "content wide | .cui-console-content main | 1440 | box-left": "295px",
+ "content wide | .cui-console-content | 1024 | box-left": "0px",
+ "content wide | .cui-console-content | 1024 | grid-template-columns": "225px 689px",
+ "content wide | .cui-console-content .cui-console-sidebar-item[aria-current] | 1024 | box-left": "40px",
+ "content wide | .cui-console-content .cui-console-sidebar-item[aria-current] | 1024 | box-width": "225px",
+ "content wide | .cui-console-content main | 1024 | box-left": "295px",
+ "content tablet | .cui-console-content | 800 | display": "block",
+ "content tablet | .cui-console-content .cui-console-sidebar | 800 | display": "none"
+}
