@@ -136,6 +136,7 @@
 
   --cui-c-console-neutral-label-primary: light-dark(oklch(0.0% 0.000 0.0 / 0.85), oklch(100.0% 0.000 0 / 0.85));
   --cui-c-console-neutral-background-primary: light-dark(oklch(100.0% 0.000 0), oklch(0.0% 0.000 0));
+  --cui-c-console-card: light-dark(oklch(96.8% 0.001 286.4), oklch(22.7% 0.004 286.1));
   --cui-c-console-neutral-label-secondary: light-dark(oklch(35.9% 0.012 285.8 / 0.74), oklch(87.9% 0.015 286.1 / 0.60));
   --cui-c-console-neutral-label-disabled: light-dark(oklch(35.9% 0.012 285.8 / 0.39), oklch(87.9% 0.015 286.1 / 0.39));
   --cui-c-console-neutral-fill-quaternary: light-dark(oklch(57.5% 0.012 286.0 / 0.08), oklch(71.0% 0.019 285.9 / 0.08));

@@ -191,6 +191,7 @@ const SOURCES = {
   '--cui-c-console-error-fill-press': 'component-Button-variant-colorRole-error-effect-press-variant-filled-backgroundColor',
   '--cui-c-console-error-label-hover': 'component-Button-variant-colorRole-error-effect-hover-variant-gray-color',
   '--cui-c-console-error-label-press': 'component-Button-variant-colorRole-error-effect-press-variant-gray-color',
+  '--cui-c-console-card': 'color-v2-bgPlaceholder',
   '--cui-c-console-brand-label-on-fill': 'component-Tabs-variant-colorRole-brand-variant-filledGray-anatomy-Tab-variant-effect-default-isActive-false-color',
 };
 const sourceOf = (name) => `--tb-${SOURCES[name] ?? `color-role-${name.slice('--cui-c-console-'.length).replace('on-accent', 'onAccent')}`}`;
@@ -313,6 +314,8 @@ const CONSOLE_MIN = [
   // a banner's text, its caption and its icon on its tint
   ...['--cui-c-console-neutral-label-primary', '--cui-c-console-neutral-label-secondary'].map((fg) => [fg, ['info', 'success', 'warning', 'error'].map((role) => [`--cui-c-console-${role}-fill-tertiary`, PAGE]), 4.5]),
   ...['info', 'success', 'warning', 'error'].map((role) => [`--cui-c-console-${role}-label-primary`, [[`--cui-c-console-${role}-fill-tertiary`, PAGE]], 4.5]),
+  // a card's text on its ground: its title, value, caption, a change up or down
+  ...['--cui-c-console-neutral-label-primary', '--cui-c-console-neutral-label-secondary', '--cui-c-console-success-label-primary', '--cui-c-console-error-label-primary'].map((fg) => [fg, [['--cui-c-console-card', PAGE]], 4.5]),
   // a gray segment's blue label, at rest and hovered, on its gray
   ...['--cui-c-console-brand-label-on-fill', '--cui-c-console-brand-label-hover'].map((fg) => [fg, GRAY.map((g) => [g, PAGE]), 4.5]),
   // a plain button's, a link's: on the page

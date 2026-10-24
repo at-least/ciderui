@@ -1,0 +1,102 @@
+/* ciderui — the console's card: App Store Connect's newer look's analytics
+ * card, a gray rounded panel on the page: a metric (its title, its value, a
+ * change up or down, a caption), or a section's list or chart under its
+ * header.
+ *
+ * From the analytics overview (reference/asc/results/analytics-page.json's
+ * card, analytics.json's card.title, card.value, card.change) and the
+ * toolkit's tokens (its v2 ground, its type).
+ *
+ *   <div class="cui-console-card">
+ *     <p class="cui-console-card-title">Crash-Free Sessions</p>
+ *     <p class="cui-console-card-figure">
+ *       <span class="cui-console-card-value">99.2%</span>
+ *       <span class="cui-console-card-change" data-color="success">+0.4%</span>
+ *     </p>
+ *     <p class="cui-console-card-caption">Latest release, 2.4.1</p>
+ *   </div>
+ *
+ * cui-console-card          10px corners, 15px in, its ground the toolkit's
+ *                           v2-bgPlaceholder (--cui-c-console-card), what
+ *                           overflows it cut
+ * cui-console-card-header   a row: its title at its start, a link or button
+ *                           at its end
+ * cui-console-card-title    13px on 18px at 600
+ * cui-console-card-figure   a row on the baseline: a value and its change,
+ *                           6px apart
+ * cui-console-card-value    41px on 45px at 700
+ * cui-console-card-change   18px on 22px at 500, the secondary label;
+ *   data-color="success" | "error"  green up, red down
+ * cui-console-card-caption  12px on 16px, the secondary label
+ *
+ * App Store Connect's: the ground, the corners, the room above, the clip,
+ * the type. ciderui's: the room at its sides and foot (the analytics card's
+ * chart runs to its edges; a card's text is 15px in as its title is); the
+ * change's colors, the fitted labels (tokens.css, decision 21: the
+ * toolkit's red there is 3.6:1 on white); the caption, the header, the
+ * figure's row and its gap. */
+
+@layer components {
+  .cui-console-card {
+    min-width: 0;
+    padding: 15px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: var(--cui-c-console-card);
+    color: var(--cui-c-console-neutral-label-primary);
+    letter-spacing: normal;
+  }
+
+  .cui-console-card-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .cui-console-card-title {
+    margin: 0;
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+  }
+
+  .cui-console-card-figure {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 0.375rem;
+    margin: 0;
+  }
+
+  .cui-console-card-value {
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 41px;
+    line-height: 45px;
+    font-weight: 700;
+  }
+
+  .cui-console-card-change {
+    color: var(--cui-c-console-neutral-label-secondary);
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+
+    &[data-color="success"] {
+      color: var(--cui-c-console-success-label-primary);
+    }
+
+    &[data-color="error"] {
+      color: var(--cui-c-console-error-label-primary);
+    }
+  }
+
+  .cui-console-card-caption {
+    margin: 0;
+    color: var(--cui-c-console-neutral-label-secondary);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+  }
+}

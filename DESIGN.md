@@ -123,6 +123,7 @@ A console part reads `--cui-c-console-*` alone, never the apple.com slots above,
 | --- | --- | --- | --- |
 | `console-neutral-label-primary` | `oklch(0% 0 0 / .85)` | `oklch(100% 0 0 / .85)` | a console page's text |
 | `console-neutral-background-primary` | `oklch(100% 0 0)` | `oklch(0% 0 0)` | a console page's ground |
+| `console-card` | `oklch(96.8% .001 286.4)`, the toolkit's v2-bgPlaceholder, the analytics card's | `oklch(22.7% .004 286.1)` (coolGray-50's) | a card's ground |
 | `console-neutral-label-secondary` | `oklch(35.9% .012 285.8 / .74)` (fitted, decision 21) | `oklch(87.9% .015 286.1 / .6)` | secondary text: a menu's heading, icons, counts |
 | `console-neutral-label-disabled` | `oklch(35.9% .012 285.8 / .39)` | `oklch(87.9% .015 286.1 / .39)` | a disabled item's label |
 | `console-neutral-fill-quaternary` | `oklch(57.5% .012 286 / .08)` | `oklch(71% .019 285.9 / .08)` | a current or hovered item's fill |
@@ -226,6 +227,7 @@ The console parts, App Store Connect's newer look's (`reference/asc/`), each hel
 | `cui-console-badge` (built) | a short word on a capsule tinted in its color (its color at 0.15), 20px, 13px at 600; `data-color` neutral, brand, info, success, warning, error; `data-variant="gray"` (the gray fill) or `"plain"` (its color alone); `data-size="sm"`, 18px at 11px; a dot before the word (`cui-console-badge-dot`); its labels fitted to 4.5:1 on the page, its tint and the gray (the crate's `ConsoleBadge`, `ConsoleColor`, `ConsoleBadgeVariant`) | `tb`: `component-Badge-*` |
 | `cui-console-banner` (built) | a message on a rounded panel (24px corners, 12px and 14px in, 30px at its end, 40px at least) on the gray fill at 0.08, or tinted in its color at 0.12 (`data-color` info, success, warning, error); an icon (a Lucide icon, 20px in a 32px column, in its color); a title 13px at 500, a body 8px under it, a caption 12px secondary, its actions 9px apart; a close button 8px in from its top end; below 640px its title 16px at 600 (the crate's `ConsoleBanner`) | `tb`: `component-Banner-*` |
 | `cui-console-empty` (built) | centered where a list or a chart has nothing to show: an icon (32px, the secondary label), a heading (18px at 600, 288px at most), a caption (13px, secondary), its actions; `data-size="sm"` (a card's: 24px icon, 14px heading, 11px caption, 216px) or `"lg"` (a page's: 40px, 26px at 700, 15px, 392px); `data-variant="backed"`, on the neutral fill at 0.03 with 32px corners (the crate's `ConsoleEmpty`, `ConsoleEmptySize`) | `tb`: `component-EmptyState-*` |
+| `cui-console-card` (built) | the analytics card, a gray rounded panel (10px corners, 15px in, the toolkit's v2-bgPlaceholder ground, what overflows it cut): a metric (its title 13px at 600, its value 41px at 700, a change 18px at 500 beside it, green up or red down, a caption 12px secondary) or a section's list or chart under its header (the crate's `ConsoleMetric`; a card of anything else is the page's own `<div>`) | `asc`: `analytics-page:card`, `analytics:card.*`; `tb`: `color-v2-bgPlaceholder` |
 
 No docs theme (decision 14): support.apple.com's user guides are not measured.
 
