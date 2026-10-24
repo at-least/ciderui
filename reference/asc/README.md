@@ -15,6 +15,7 @@ Chrome 154 on Linux, its window 1920 by 954 at 2 device pixels; read 2026-10-23 
 | `version` | `/apps/<app>/distribution/ios/version/inflight` | the tabs (links, and the media's buttons), the header's buttons (primary, neutral, disabled), a help button, a field and a disabled one, a label, a multi-line field and its count, the checkbox and the radio |
 | `tokens` | `/apps/<app>/analytics/overview` | the newer look's toolkit's tokens (`--tb-…`, on `:root`), each as the page computes it: the type, sizes, spaces, radii, borders, shadows, timing, breakpoints, every color role and both palettes, and the components the console parts are built from (their names in `pages/tokens.mjs`) |
 | `analytics-page` | `/apps/<app>/analytics/overview` | what `analytics` left: a metric's card, a section's heading and its See All link, the menu's box, a group's button and chevron, an item in the open group, a disabled item |
+| `button`, `hover-button` | `/apps/<app>/analytics/acquisition/sources` | the toolkit's gray button (its rounded rectangle, 30px, 13px at 500) at rest and with the pointer resting on it |
 | `hover-menu`, `hover-row`, `hover-link`, `hover-date` | `/apps/<app>/analytics/overview` | each with the pointer resting on it (Claude in Chrome's hover): a menu item that is not the current one, the plain table's row, a See All link, the date control's period |
 
 ## What it showed

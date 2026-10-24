@@ -55,6 +55,7 @@ const SCENES = [
   { name: 'card', files: ['card/card'], zoom: 1.2, width: 400, center: true },
   { name: 'checkbox', files: ['checkbox/checked'], zoom: 3, center: true },
   { name: 'field', files: ['field/filled'], zoom: 2, width: 400, center: true },
+  { name: 'console-btn', html: `<div class="cui-console-page" style="padding:24px">${example('console-btn/variants')}</div>`, zoom: 2, width: 560, center: true },
   { name: 'console-menu', html: `<div class="cui-console-page" style="width:260px;padding:16px">${example('console-menu/menu')}</div>`, zoom: 1.6, center: true },
   { name: 'console-table', html: `<div class="cui-console-page" style="width:520px;padding:24px">${example('console-table/table')}</div>`, zoom: 1.6, center: true },
   { name: 'console-page', files: ['console-page/page'], zoom: 2, width: 560, center: true },

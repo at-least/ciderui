@@ -165,51 +165,95 @@ for (const [name, [light, dark]] of Object.entries(CONTRACT)) {
 }
 
 // the console's colors (--cui-c-console-*, the console parts'): each App
-// Store Connect's toolkit's color role of the same name
-// (--tb-color-role-<name>, reference/asc/results/tokens.json) on the light
-// side; on the dark side, which the toolkit does not ship, that role's step
-// of its dark palette at the role's alpha, the step being the light
-// palette's of the same lightness, chroma and hue (for a role that is no
-// step, the step of the nearest hue's ramp nearest its lightness), black
-// and white each other's (DESIGN.md, decision 18: derived, not measured)
-const palette = Object.entries(tbTokens).filter(([k]) => k.startsWith('--tb-color-palette-light-'));
-const darkOf = (light) => {
-  const m = light.match(/^oklch\(([\d.]+)% ([\d.]+) ([\d.]+)(?: \/ ([\d.]+))?\)$/);
-  if (!m) throw new Error(`a role that is not an oklch() color: ${light}`);
-  const alpha = m[4] === undefined ? '' : ` / ${m[4]}`;
-  const opaque = `oklch(${m[1]}% ${m[2]} ${m[3]})`;
-  if (+m[1] === 0 && +m[2] === 0) return `oklch(100.0% 0.000 0${alpha})`;
-  if (+m[1] === 100 && +m[2] === 0) return `oklch(0.0% 0.000 0${alpha})`;
-  let steps = palette.filter(([, v]) => v === opaque || v.replace(/ 0\.0\)$/, ' 0)') === opaque.replace(/ 0\.0\)$/, ' 0)'));
-  // a role that is no step (the theme's brand blue): in the ramp whose 500
-  // step's hue is nearest its hue, the step nearest its lightness
-  if (steps.length === 0) {
-    const lch = (v) => v.match(/^oklch\(([\d.]+)% ([\d.]+) ([\d.]+)/).slice(1).map(Number);
-    const [l, , h] = lch(opaque);
-    const turn = (a, b) => Math.min(Math.abs(a - b), 360 - Math.abs(a - b));
-    const ramps = [...new Set(palette.map(([k]) => k.match(/-palette-light-([a-zA-Z]+)-/)[1]))].filter((r) => lch(tbTokens[`--tb-color-palette-light-${r}-500`])[1] > 0.05);
-    const ramp = ramps.reduce((a, b) => (turn(lch(tbTokens[`--tb-color-palette-light-${b}-500`])[2], h) < turn(lch(tbTokens[`--tb-color-palette-light-${a}-500`])[2], h) ? b : a));
-    const inRamp = palette.filter(([k]) => k.startsWith(`--tb-color-palette-light-${ramp}-`));
-    steps = [inRamp.reduce((a, b) => (Math.abs(lch(b[1])[0] - l) < Math.abs(lch(a[1])[0] - l) ? b : a))];
+// Store Connect's toolkit's color (reference/asc/results/tokens.json) on
+// the light side, the role of the slot's name (--cui-c-console-brand-label-
+// on-accent-primary is --tb-color-role-brand-label-onAccent-primary) or, a
+// part's own state color, the token SOURCES names; on the dark side, which
+// the toolkit does not ship, that color's step of its dark palette at its
+// alpha: the light palette's step of the same lightness, chroma and hue, or,
+// for a color that is no step, the step nearest its lightness in the ramp
+// nearest its hue (the gray ramps for a gray, chroma under 0.05); black and
+// white each other's, and white on an accent (on-accent) white still
+// (DESIGN.md, decision 18: derived, not measured). A side its job's
+// contrast finds short is fitted (decision 21): FITTED's value, a step of
+// the same ramp (or the same step at another alpha), held below by the
+// contrast checks.
+const SOURCES = {
+  '--cui-c-console-button-brand-fill-hover': 'component-Button-variant-colorRole-brand-effect-hover-variant-filled-backgroundColor',
+  '--cui-c-console-button-brand-fill-press': 'component-Button-variant-colorRole-brand-effect-press-variant-filled-backgroundColor',
+  '--cui-c-console-button-brand-label-hover': 'component-Button-variant-colorRole-brand-effect-hover-variant-gray-color',
+  '--cui-c-console-button-brand-label-press': 'component-Button-variant-colorRole-brand-effect-press-variant-plain-color',
+  '--cui-c-console-button-on-accent-press': 'component-Button-variant-colorRole-brand-effect-press-variant-filled-color',
+  '--cui-c-console-button-gray-fill-hover': 'component-Button-variant-colorRole-neutral-effect-hover-variant-gray-backgroundColor',
+  '--cui-c-console-button-gray-fill-press': 'component-Button-variant-colorRole-neutral-effect-press-variant-gray-backgroundColor',
+  '--cui-c-console-button-neutral-label-hover': 'component-Button-variant-colorRole-neutral-effect-hover-variant-gray-color',
+  '--cui-c-console-button-error-fill-hover': 'component-Button-variant-colorRole-error-effect-hover-variant-filled-backgroundColor',
+  '--cui-c-console-button-error-fill-press': 'component-Button-variant-colorRole-error-effect-press-variant-filled-backgroundColor',
+  '--cui-c-console-button-error-label-hover': 'component-Button-variant-colorRole-error-effect-hover-variant-gray-color',
+  '--cui-c-console-button-error-label-press': 'component-Button-variant-colorRole-error-effect-press-variant-gray-color',
+};
+const sourceOf = (name) => `--tb-${SOURCES[name] ?? `color-role-${name.slice('--cui-c-console-'.length).replace('on-accent', 'onAccent')}`}`;
+const lch = (v) => {
+  const m = v.match(/^oklch\(([\d.]+)% ([\d.]+) ([\d.]+)(?: \/ ([\d.]+))?\)$/);
+  if (!m) throw new Error(`not an oklch() color: ${v}`);
+  return { l: +m[1], c: +m[2], h: +m[3], alpha: m[4], opaque: `oklch(${m[1]}% ${m[2]} ${m[3]})` };
+};
+const steps = (side) => Object.entries(tbTokens).filter(([k]) => k.startsWith(`--tb-color-palette-${side}-`));
+const sameColor = (a, b) => a.replace(/ 0\.0\)$/, ' 0)') === b.replace(/ 0\.0\)$/, ' 0)');
+const rampName = (k) => k.match(/-palette-(?:light|dark)-([a-zA-Z]+)-/)[1];
+// a color's step of a palette side: [token, ramp]
+const stepOf = (value, side) => {
+  const { l, c, h, opaque } = lch(value);
+  const exact = steps(side).filter(([, v]) => sameColor(v, opaque));
+  if (exact.length) {
+    const ramps = new Set(exact.map(([k]) => rampName(k)));
+    if (ramps.size !== 1) throw new Error(`${opaque} is a step of more than one ramp: ${[...ramps].join(', ')}`);
+    return exact[0];
   }
-  const darks = new Set(steps.map(([k]) => tbTokens[k.replace('-palette-light-', '-palette-dark-')]));
-  if (darks.size !== 1) throw new Error(`${opaque} is light steps with different dark ones: ${[...darks].join(', ')}`);
-  return [...darks][0].replace(/\)$/, `${alpha})`);
+  const turn = (a, b) => Math.min(Math.abs(a - b), 360 - Math.abs(a - b));
+  const at500 = (r) => lch(tbTokens[`--tb-color-palette-${side}-${r}-500`]);
+  const gray = c < 0.05;
+  const ramps = [...new Set(steps(side).map(([k]) => rampName(k)))].filter((r) => (at500(r).c < 0.05) === gray);
+  const ramp = ramps.reduce((a, b) => (turn(at500(b).h, h) < turn(at500(a).h, h) ? b : a));
+  return steps(side).filter(([k]) => rampName(k) === ramp).reduce((a, b) => (Math.abs(lch(b[1]).l - l) < Math.abs(lch(a[1]).l - l) ? b : a));
 };
-// fitted: a light side the toolkit's step at another alpha, where its own
-// falls below its job's contrast (decision 21), held by the contrast checks
+const withAlpha = (opaque, alpha) => (alpha === undefined ? opaque : opaque.replace(/\)$/, ` / ${alpha})`));
+const darkOf = (name, light) => {
+  const { l, c, alpha } = lch(light);
+  if (name.includes('on-accent')) return light;
+  if (l === 0 && c === 0) return withAlpha('oklch(100.0% 0.000 0)', alpha);
+  if (l === 100 && c === 0) return withAlpha('oklch(0.0% 0.000 0)', alpha);
+  return withAlpha(tbTokens[stepOf(light, 'light')[0].replace('-palette-light-', '-palette-dark-')], alpha);
+};
 const FITTED = {
-  '--cui-c-console-neutral-label-secondary': ['0.73', 'the toolkit\'s 0.60 is 3.4:1 on white, below 4.5:1'],
+  '--cui-c-console-neutral-label-secondary': { light: 'oklch(35.9% 0.012 285.8 / 0.73)', why: 'the toolkit\'s 0.60 is 3.4:1 on white' },
+  '--cui-c-console-brand-accent-primary': { dark: 'oklch(51.2% 0.203 260.5)', why: 'white on the derived blue-600 is 2.7:1' },
+  '--cui-c-console-button-brand-fill-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the toolkit\'s lighter blue is 3.9:1' },
+  '--cui-c-console-button-brand-fill-press': { dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the derived blue-600 is 2.7:1' },
+  '--cui-c-console-button-brand-label-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(62.4% 0.206 255.5)', why: 'the toolkit\'s lighter blue is 3.5:1 on white, its derived dark 3.5:1 on black' },
+  '--cui-c-console-error-accent-primary': { light: 'oklch(49.5% 0.190 31.5)', dark: 'oklch(50.0% 0.186 31.4)', why: 'white on the toolkit\'s red is 3.3:1' },
+  '--cui-c-console-error-label-primary': { light: 'oklch(49.5% 0.190 31.5)', why: 'the toolkit\'s red is 3.6:1 on white, red-600 4.2:1 on a gray button' },
+  '--cui-c-console-button-error-fill-hover': { light: 'oklch(37.8% 0.147 29.3)', dark: 'oklch(40.9% 0.152 29.5)', why: 'white on the toolkit\'s lighter red is 3.0:1' },
+  '--cui-c-console-button-error-fill-press': { light: 'oklch(37.8% 0.147 29.3)', dark: 'oklch(40.9% 0.152 29.5)', why: 'white on the toolkit\'s red is 3.5:1' },
+  '--cui-c-console-button-error-label-hover': { light: 'oklch(49.5% 0.190 31.5)', dark: 'oklch(70.6% 0.184 29.4)', why: 'the toolkit\'s lighter red is 2.9:1 on white, its derived dark 4.3:1 on a gray button' },
+  '--cui-c-console-button-error-label-press': { light: 'oklch(49.5% 0.190 31.5)', why: 'the toolkit\'s red is 3.8:1 on white' },
 };
-const consoleColors = Object.keys(vars).filter(k => k.startsWith('--cui-c-console-'));
-for (const name of consoleColors) {
-  const role = `--tb-color-role-${name.slice('--cui-c-console-'.length)}`;
-  if (!(role in tbTokens)) throw new Error(`${name}: the toolkit has no ${role}`);
+for (const name of Object.keys(vars).filter(k => k.startsWith('--cui-c-console-'))) {
+  const source = sourceOf(name);
+  if (!(source in tbTokens)) throw new Error(`${name}: the toolkit has no ${source}`);
   const [l, d] = sides(name);
-  if (FITTED[name]) check(`${name} light is App Store Connect's ${role} at ${FITTED[name][0]} (fitted: ${FITTED[name][1]})`, l, tbTokens[role].replace(/\/ [\d.]+\)$/, `/ ${FITTED[name][0]})`));
-  else check(`${name} light is App Store Connect's ${role}`, l, tbTokens[role]);
-  check(`${name} dark is ${role}'s step of the dark palette`, d, darkOf(tbTokens[role]));
+  const fit = FITTED[name] ?? {};
+  const derived = darkOf(name, tbTokens[source]);
+  if (fit.light) {
+    check(`${name} light, fitted (${fit.why}), is a step of ${source}'s ramp`, rampName(stepOf(fit.light, 'light')[0]), rampName(stepOf(tbTokens[source], 'light')[0]));
+    check(`${name} light is its fitted value`, l, fit.light);
+  } else check(`${name} light is App Store Connect's ${source}`, l, tbTokens[source]);
+  if (fit.dark) {
+    check(`${name} dark, fitted (${fit.why}), is a step of its derived step's ramp`, rampName(stepOf(fit.dark, 'dark')[0]), rampName(stepOf(derived, 'dark')[0]));
+    check(`${name} dark is its fitted value`, d, fit.dark);
+  } else check(`${name} dark is ${source}'s step of the dark palette`, d, derived);
 }
+for (const name of Object.keys(FITTED)) if (!(name in vars)) throw new Error(`FITTED names ${name}, which tokens.css has not`);
 
 // contrast: WCAG 2, each color's job on both sides. A translucent color is
 // what it draws over the color under it: `over` lays each side in turn on
@@ -245,19 +289,29 @@ for (const [fg, grounds, min] of MIN) {
     }
   }
 }
-// a console part's text on the console's grounds
+// a console part's text on the console's grounds: each ground the layers
+// named, over the page (white light, black dark)
+const PAGE = '--cui-c-console-neutral-background-primary';
+const ON_FILLS = ['--cui-c-console-brand-accent-primary', '--cui-c-console-button-brand-fill-hover', '--cui-c-console-error-accent-primary', '--cui-c-console-button-error-fill-hover'];
+const GRAY = ['--cui-c-console-neutral-fill-tertiary', '--cui-c-console-button-gray-fill-hover', '--cui-c-console-button-gray-fill-press'];
 const CONSOLE_MIN = [
-  // the secondary label on a fill too: a current menu item's, a card's
-  ['--cui-c-console-neutral-label-primary', ['--cui-c-console-neutral-background-primary'], 4.5],
-  ['--cui-c-console-neutral-label-secondary', ['--cui-c-console-neutral-background-primary'], 4.5],
-  ['--cui-c-console-neutral-label-primary', ['--cui-c-console-neutral-fill-quaternary'], 4.5],
-  ['--cui-c-console-neutral-label-secondary', ['--cui-c-console-neutral-fill-quaternary'], 4.5],
+  ['--cui-c-console-neutral-label-primary', [[PAGE], ['--cui-c-console-neutral-fill-quaternary', PAGE], ...GRAY.map((g) => [g, PAGE])], 4.5],
+  // the secondary label on a fill too: a current menu item's
+  ['--cui-c-console-neutral-label-secondary', [[PAGE], ['--cui-c-console-neutral-fill-quaternary', PAGE]], 4.5],
+  // a button's label on its fill, at rest, hovered and pressed
+  ['--cui-c-console-brand-label-on-accent-primary', [...ON_FILLS.map((f) => [f]), ['--cui-c-console-button-brand-fill-press'], ['--cui-c-console-button-error-fill-press']], 4.5],
+  ['--cui-c-console-button-on-accent-press', [['--cui-c-console-button-brand-fill-press'], ['--cui-c-console-button-error-fill-press']], 4.5],
+  ['--cui-c-console-button-neutral-label-hover', [['--cui-c-console-button-gray-fill-hover', PAGE]], 4.5],
+  // a plain button's, a link's: on the page
+  ...['--cui-c-console-brand-label-primary', '--cui-c-console-button-brand-label-hover', '--cui-c-console-button-brand-label-press'].map((fg) => [fg, [[PAGE]], 4.5]),
+  // a gray button's red label: on the page and on its gray
+  ...['--cui-c-console-error-label-primary', '--cui-c-console-button-error-label-hover', '--cui-c-console-button-error-label-press'].map((fg) => [fg, [[PAGE], ...GRAY.map((g) => [g, PAGE])], 4.5]),
 ];
 for (const [fg, grounds, min] of CONSOLE_MIN) {
-  for (const bg of grounds) {
+  for (const layers of grounds) {
     for (const i of [0, 1]) {
-      const ground = over(sides(bg)[i], ['#ffffff', '#000000'][i]);
-      check(`${fg} on ${bg}, ${['light', 'dark'][i]}, at least ${min}:1`, ratio(over(sides(fg)[i], ground), ground) >= min, true);
+      const ground = over(...layers.map((l) => sides(l)[i]), ['#ffffff', '#000000'][i]);
+      check(`${fg} on ${layers.join(' over ')}, ${['light', 'dark'][i]}, at least ${min}:1`, ratio(over(sides(fg)[i], ground), ground) >= min, true);
     }
   }
 }
@@ -349,7 +403,8 @@ const sheets = ['theme.css', 'base.css', 'type.css', 'index.css',
 for (const file of sheets) {
   const text = readFileSync(join(ROOT, file), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
   // a value is what follows a colon up to its semicolon or brace
-  const values = [...text.matchAll(/:\s*([^;{}]+)[;}]/g)].map(m => m[1]).join(' ; ');
+  // a custom property's name is no color (--cui-c-console-button-gray-fill-hover)
+  const values = [...text.matchAll(/:\s*([^;{}]+)[;}]/g)].map(m => m[1]).join(' ; ').replace(/--[\w-]+/g, '');
   const literal = values.match(/#[0-9a-f]{3,8}\b|\b(rgba?|hsla?|hwb|lab|lch|oklab|oklch|color)\(/i) ?? values.match(NAMED);
   check(`${file} writes no color of its own`, literal?.[0] ?? 'none', 'none');
 }

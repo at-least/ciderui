@@ -143,6 +143,28 @@
   --cui-c-console-neutral-border-tertiary: light-dark(oklch(35.9% 0.012 285.8 / 0.13), oklch(87.9% 0.015 286.1 / 0.13));
   --cui-c-console-neutral-fill-quinary: light-dark(oklch(57.5% 0.012 286.0 / 0.03), oklch(71.0% 0.019 285.9 / 0.03));
   --cui-c-console-brand-fill-quaternary: light-dark(oklch(54.2% 0.162 251.9 / 0.08), oklch(68.3% 0.167 256.6 / 0.08));
+  --cui-c-console-brand-accent-primary: light-dark(oklch(54.2% 0.162 251.9), oklch(51.2% 0.203 260.5));
+  --cui-c-console-brand-accent-tertiary: light-dark(oklch(54.2% 0.162 251.9 / 0.30), oklch(68.3% 0.167 256.6 / 0.30));
+  --cui-c-console-brand-label-primary: light-dark(oklch(54.2% 0.162 251.9), oklch(68.3% 0.167 256.6));
+  --cui-c-console-brand-label-secondary: light-dark(oklch(54.2% 0.162 251.9 / 0.60), oklch(68.3% 0.167 256.6 / 0.60));
+  --cui-c-console-brand-label-on-accent-primary: light-dark(oklch(100.0% 0.000 0.0 / 0.95), oklch(100.0% 0.000 0.0 / 0.95));
+  --cui-c-console-button-brand-fill-hover: light-dark(oklch(49.7% 0.209 260.5), oklch(43.6% 0.171 260.6));
+  --cui-c-console-button-brand-fill-press: light-dark(oklch(52.2% 0.156 251.8), oklch(43.6% 0.171 260.6));
+  --cui-c-console-button-brand-label-hover: light-dark(oklch(49.7% 0.209 260.5), oklch(62.4% 0.206 255.5));
+  --cui-c-console-button-brand-label-press: light-dark(oklch(46.2% 0.136 251.3), oklch(68.3% 0.167 256.6));
+  --cui-c-console-button-on-accent-press: light-dark(oklch(96.2% 0.000 0.0 / 0.95), oklch(96.2% 0.000 0.0 / 0.95));
+  --cui-c-console-neutral-fill-tertiary: light-dark(oklch(57.5% 0.012 286.0 / 0.12), oklch(71.0% 0.019 285.9 / 0.12));
+  --cui-c-console-button-gray-fill-hover: light-dark(oklch(68.7% 0.009 286.2 / 0.12), oklch(64.8% 0.007 286.2 / 0.12));
+  --cui-c-console-button-gray-fill-press: light-dark(oklch(55.4% 0.012 286.0 / 0.12), oklch(71.0% 0.019 285.9 / 0.12));
+  --cui-c-console-button-neutral-label-hover: light-dark(oklch(37.1% 0.000 0.0 / 0.85), oklch(87.9% 0.000 0 / 0.85));
+  --cui-c-console-error-accent-primary: light-dark(oklch(49.5% 0.190 31.5), oklch(50.0% 0.186 31.4));
+  --cui-c-console-error-accent-tertiary: light-dark(oklch(65.4% 0.232 28.8 / 0.30), oklch(65.4% 0.232 28.8 / 0.30));
+  --cui-c-console-error-label-primary: light-dark(oklch(49.5% 0.190 31.5), oklch(65.4% 0.232 28.8));
+  --cui-c-console-error-label-secondary: light-dark(oklch(65.4% 0.232 28.8 / 0.60), oklch(65.4% 0.232 28.8 / 0.60));
+  --cui-c-console-button-error-fill-hover: light-dark(oklch(37.8% 0.147 29.3), oklch(40.9% 0.152 29.5));
+  --cui-c-console-button-error-fill-press: light-dark(oklch(37.8% 0.147 29.3), oklch(40.9% 0.152 29.5));
+  --cui-c-console-button-error-label-hover: light-dark(oklch(49.5% 0.190 31.5), oklch(70.6% 0.184 29.4));
+  --cui-c-console-button-error-label-press: light-dark(oklch(49.5% 0.190 31.5), oklch(65.4% 0.232 28.8));
 
   /* SF on Apple's platforms by its two Apple-only names (-apple-system
      Safari's, BlinkMacSystemFont Chrome's; system-ui would be a font

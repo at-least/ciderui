@@ -1,0 +1,186 @@
+/* ciderui — the console's button: App Store Connect's newer look's, a
+ * rounded rectangle, gray by default, filled for the page's one main action,
+ * plain as a link is, red where it destroys.
+ *
+ * From the toolkit's button (reference/asc/results/tokens.json,
+ * --tb-component-Button-*) and the analytics sources page's gray button
+ * (button:button, hover-button:button).
+ *
+ *   <button class="cui-console-btn" type="button">Compare</button>
+ *   <button class="cui-console-btn" data-variant="filled" type="submit">Save</button>
+ *   <a class="cui-console-btn" data-variant="plain" href="/all">See All</a>
+ *   <button class="cui-console-btn" data-color="error" type="button">Delete</button>
+ *   <button class="cui-console-btn cui-console-btn-icon" aria-label="Copy"><svg …></svg></button>
+ *
+ * cui-console-btn          30px, 11px in, 10px corners, 13px on 18px at 500;
+ *                          gray: the neutral fill at 0.12 under the label
+ *   data-variant="filled"  the brand's fill, the label white
+ *   data-variant="plain"   no fill, no room at its sides, the brand's label
+ *   data-color="error"     red: a gray one's label, a filled one's fill, a
+ *                          plain one's label
+ *   data-size="sm"|"lg"|"xl"  22px (8px in, 8px corners, 11px on 13px),
+ *                          40px (15px in, 12px corners), 50px (22px in, 14px
+ *                          corners), each 18px on 22px
+ *   disabled, aria-disabled="true"  its disabled label (a filled one its
+ *                          fill at 0.30), no pointer
+ * cui-console-btn-icon     an icon alone: square, its icon 16px (13px small,
+ *                          20px large), its label its aria-label
+ * an <svg> in it           an icon before or after the label, 1em
+ *
+ * Hovered and pressed, each variant's own colors. The toolkit's: the sizes,
+ * the corners (its rounded rectangle, the analytics page's, where its
+ * default is a capsule), the gaps, the md type (the analytics page's), the
+ * colors (light; dark derived: tokens.css), no motion. ciderui's: the
+ * colors a contrast check found short, fitted (tokens.css, decision 21:
+ * the filled blue hovered and the red, as fill and as label, a step
+ * darker); the sm, lg and xl type, the toolkit's tab bar's at the same
+ * sizes (its button names none); the focus ring base.css's (rule 9; the
+ * toolkit's is 3px of its accent at 0.15). */
+
+@layer components {
+  .cui-console-btn {
+    --cui-console-btn-fill: var(--cui-c-console-neutral-fill-tertiary);
+    --cui-console-btn-fill-hover: var(--cui-c-console-button-gray-fill-hover);
+    --cui-console-btn-fill-press: var(--cui-c-console-button-gray-fill-press);
+    --cui-console-btn-label: var(--cui-c-console-neutral-label-primary);
+    --cui-console-btn-label-hover: var(--cui-c-console-button-neutral-label-hover);
+    --cui-console-btn-label-press: var(--cui-c-console-neutral-label-primary);
+    --cui-console-btn-label-disabled: var(--cui-c-console-neutral-label-disabled);
+    --cui-console-btn-fill-disabled: var(--cui-c-console-neutral-fill-tertiary);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    height: 1.875rem;
+    min-width: 1.875rem;
+    padding: 0 0.6875rem;
+    border: 0;
+    border-radius: 10px;
+    background-color: var(--cui-console-btn-fill);
+    color: var(--cui-console-btn-label);
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    letter-spacing: normal;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    & > svg {
+      flex: none;
+      width: 1em;
+      height: 1em;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--cui-console-btn-fill-hover);
+        color: var(--cui-console-btn-label-hover);
+      }
+    }
+
+    &:active {
+      background-color: var(--cui-console-btn-fill-press);
+      color: var(--cui-console-btn-label-press);
+    }
+
+    &:disabled,
+    &[aria-disabled="true"] {
+      background-color: var(--cui-console-btn-fill-disabled);
+      color: var(--cui-console-btn-label-disabled);
+      cursor: default;
+    }
+  }
+
+  .cui-console-btn[data-color="error"] {
+    --cui-console-btn-label: var(--cui-c-console-error-label-primary);
+    --cui-console-btn-label-hover: var(--cui-c-console-button-error-label-hover);
+    --cui-console-btn-label-press: var(--cui-c-console-button-error-label-press);
+    --cui-console-btn-label-disabled: var(--cui-c-console-error-label-secondary);
+  }
+
+  .cui-console-btn[data-variant="filled"] {
+    --cui-console-btn-fill: var(--cui-c-console-brand-accent-primary);
+    --cui-console-btn-fill-hover: var(--cui-c-console-button-brand-fill-hover);
+    --cui-console-btn-fill-press: var(--cui-c-console-button-brand-fill-press);
+    --cui-console-btn-fill-disabled: var(--cui-c-console-brand-accent-tertiary);
+    --cui-console-btn-label: var(--cui-c-console-brand-label-on-accent-primary);
+    --cui-console-btn-label-hover: var(--cui-c-console-brand-label-on-accent-primary);
+    --cui-console-btn-label-press: var(--cui-c-console-button-on-accent-press);
+    --cui-console-btn-label-disabled: var(--cui-c-console-brand-label-on-accent-primary);
+
+    &[data-color="error"] {
+      --cui-console-btn-fill: var(--cui-c-console-error-accent-primary);
+      --cui-console-btn-fill-hover: var(--cui-c-console-button-error-fill-hover);
+      --cui-console-btn-fill-press: var(--cui-c-console-button-error-fill-press);
+      --cui-console-btn-fill-disabled: var(--cui-c-console-error-accent-tertiary);
+    }
+  }
+
+  .cui-console-btn[data-variant="plain"] {
+    --cui-console-btn-fill: transparent;
+    --cui-console-btn-fill-hover: transparent;
+    --cui-console-btn-fill-press: transparent;
+    --cui-console-btn-fill-disabled: transparent;
+    --cui-console-btn-label: var(--cui-c-console-brand-label-primary);
+    --cui-console-btn-label-hover: var(--cui-c-console-button-brand-label-hover);
+    --cui-console-btn-label-press: var(--cui-c-console-button-brand-label-press);
+    --cui-console-btn-label-disabled: var(--cui-c-console-brand-label-secondary);
+
+    min-width: 0;
+    padding-inline: 0;
+
+    &[data-color="error"] {
+      --cui-console-btn-label: var(--cui-c-console-error-label-primary);
+      --cui-console-btn-label-hover: var(--cui-c-console-button-error-label-hover);
+      --cui-console-btn-label-press: var(--cui-c-console-button-error-label-press);
+      --cui-console-btn-label-disabled: var(--cui-c-console-error-label-secondary);
+    }
+  }
+
+  .cui-console-btn[data-size="sm"] {
+    gap: 0.1875rem;
+    height: 1.375rem;
+    min-width: 1.375rem;
+    padding-inline: 0.5rem;
+    border-radius: 8px;
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  .cui-console-btn[data-size="lg"] {
+    gap: 0.3125rem;
+    height: 2.5rem;
+    min-width: 2.5rem;
+    padding-inline: 0.9375rem;
+    border-radius: 12px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .cui-console-btn[data-size="xl"] {
+    gap: 0.5rem;
+    height: 3.125rem;
+    min-width: 3.125rem;
+    padding-inline: 1.375rem;
+    border-radius: 14px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .cui-console-btn.cui-console-btn-icon {
+    padding-inline: 0;
+    font-size: 16px;
+
+    &[data-size="sm"] {
+      font-size: 13px;
+    }
+
+    &[data-size="lg"],
+    &[data-size="xl"] {
+      font-size: 20px;
+    }
+  }
+}
