@@ -1,0 +1,9 @@
+{
+ "link | [data-variant=\"label\"]:hover | 1200 | text-decoration-line": "none",
+ "link | [aria-disabled=\"true\"]:hover | 1200 | cursor": "default",
+ "link | [aria-disabled=\"true\"]:hover | 1200 | text-decoration-line": "none",
+ "link | [data-variant=\"label\"]:hover | 390 | text-decoration-line": "none",
+ "link | [aria-disabled=\"true\"]:hover | 390 | cursor": "default",
+ "link | [aria-disabled=\"true\"]:hover | 390 | text-decoration-line": "none",
+ "link dark | .cui-console-link:not([data-variant]):not([aria-disabled]) | 1200 | color": "oklch(0.683 0.167 256.6)"
+}
