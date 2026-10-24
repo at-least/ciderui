@@ -411,6 +411,7 @@ check('--cui-console-shadow-sidebar is App Store Connect\'s --tb-component-Sideb
 check('--cui-console-shadow-table-sticky is App Store Connect\'s --tb-component-Table-anatomy-TH-stickyBoxShadow', vars['--cui-console-shadow-table-sticky'], tbTokens['--tb-component-Table-anatomy-TH-stickyBoxShadow']);
 check('--cui-console-shadow-dialog is App Store Connect\'s --tb-component-Modal-variant-variant-modal-boxShadow', vars['--cui-console-shadow-dialog'], tbTokens['--tb-component-Modal-variant-variant-modal-boxShadow']);
 check('--cui-console-shadow-radio is App Store Connect\'s --tb-component-Radio-variant-colorRole-brand-effect-default-state-on-boxShadow', vars['--cui-console-shadow-radio'], tbTokens['--tb-component-Radio-variant-colorRole-brand-effect-default-state-on-boxShadow']);
+check('--cui-console-shadow-popover is App Store Connect\'s --tb-component-Popover-variant-variant-stroked-boxShadow', vars['--cui-console-shadow-popover'], tbTokens['--tb-component-Popover-variant-variant-stroked-boxShadow']);
 
 // the card's shadows, as the browser computes one: its color first, then its
 // lengths (the spread 0px where none is written)

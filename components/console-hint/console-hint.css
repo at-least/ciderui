@@ -1,0 +1,148 @@
+/* ciderui — the console's hint: App Store Connect's newer look's info
+ * button, a small "i" in a gray circle beside a word (a metric's title, a
+ * column's heading) that opens a popover saying what the word means.
+ *
+ * From the toolkit's info button and popover (reference/asc/results/
+ * tokens.json, --tb-component-InfoSystemButton-*, --tb-component-Popover-*:
+ * stroked) and the analytics pages' card info button (analytics:card.info).
+ *
+ *   <button type="button" class="cui-console-hint" popovertarget="hint-trend"
+ *           aria-label="What Trend means">i</button>
+ *   <span class="cui-console-hint-popover" id="hint-trend" popover>
+ *     Events per day over the last 7 days.
+ *   </span>
+ *
+ * cui-console-hint          the button: 18px high, 20px wide, a 17px circle
+ *                           of the neutral tertiary fill behind its "i"
+ *                           (12px at 600, the secondary label), 4px after the
+ *                           word; hovered and
+ *                           pressed, the toolkit's fills and labels; focused,
+ *                           a 3px halo 1px out
+ * cui-console-hint-popover  what the word means (a [popover], opened by the
+ *                           button's popovertarget; Escape or a click
+ *                           elsewhere closes it): white, a 0.5px edge in its
+ *                           shadow, 25px corners (14px below 640px), 16px in,
+ *                           13px on 18px, the label; 240px to 350px wide;
+ *                           8px under the button, centered on it, above it
+ *                           where there is no room below
+ *
+ * The toolkit's: the button's fills and labels, its rounding and halo; the
+ * popover's ground, shadow, corners, its narrowest and its widest on a
+ * phone (85vw); App Store Connect's (measured on its analytics overview):
+ * the button's 18px, the popover's 16px in, its type, its 350px, its
+ * centering. ciderui's: the 4px before it; the "i" a letter, where App Store Connect draws an
+ * SF Symbol; the secondary label's alpha (fitted, tokens.css); no caret
+ * (App Store Connect's sits in the 14px between, ciderui keeps 8px); a
+ * browser without anchor positioning shows the popover centered on the
+ * page. */
+
+@layer components {
+  .cui-console-hint {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    width: 1.25rem;
+    height: 18px;
+    margin: 0 0 0 4px;
+    border: 0;
+    border-radius: 99999px;
+    padding: 0;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: none;
+    color: var(--cui-c-console-neutral-label-secondary);
+    background-color: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      width: 17px;
+      height: 17px;
+      border-radius: 99999px;
+      background-color: var(--cui-c-console-neutral-fill-tertiary);
+      transform: translate(-50%, -50%);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--cui-c-console-neutral-label-hover);
+
+        &::before {
+          background-color: var(--cui-c-console-gray-fill-hover);
+        }
+      }
+    }
+
+    &:active {
+      color: var(--cui-c-console-neutral-label-primary);
+
+      &::before {
+        background-color: var(--cui-c-console-gray-fill-press);
+      }
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--cui-c-console-neutral-accent-quaternary);
+      outline-offset: 0.0625rem;
+    }
+
+    @media (forced-colors: active) {
+      &::before {
+        border: 1px solid ButtonText;
+      }
+    }
+  }
+
+  .cui-console-hint-popover {
+    box-sizing: border-box;
+    width: max-content;
+    min-width: 240px;
+    max-width: min(350px, 85vw);
+    margin: auto;
+    border: 0;
+    border-radius: calc(3.125rem / 2);
+    padding: 16px;
+    font-family: var(--cui-font);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: normal;
+    text-align: left;
+    text-transform: none;
+    white-space: normal;
+    color: var(--cui-c-console-neutral-label-primary);
+    background-color: var(--cui-c-console-neutral-background-primary);
+    box-shadow: var(--cui-console-shadow-popover);
+
+    &:popover-open {
+      display: block;
+    }
+
+    @media (width < 640px) {
+      border-radius: 14px;
+    }
+
+    @media (forced-colors: active) {
+      border: 1px solid CanvasText;
+    }
+  }
+
+  @supports (position-area: bottom) {
+    .cui-console-hint-popover {
+      inset: auto;
+      margin: 8px 0;
+      position-area: bottom;
+      position-try-fallbacks: flip-block;
+    }
+  }
+}

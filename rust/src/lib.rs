@@ -26,6 +26,7 @@ mod console_chip;
 mod console_dialog;
 mod console_empty;
 mod console_field;
+mod console_hint;
 mod console_menu;
 mod console_sidebar;
 #[cfg(feature = "css")]
@@ -64,6 +65,7 @@ pub use console_chip::ConsoleChip;
 pub use console_dialog::ConsoleDialog;
 pub use console_empty::{ConsoleEmpty, ConsoleEmptySize};
 pub use console_field::ConsoleSelect;
+pub use console_hint::ConsoleHint;
 pub use console_menu::{ConsoleMenu, ConsoleMenuGroup, ConsoleMenuItem};
 pub use console_sidebar::{ConsoleSidebar, ConsoleSidebarItem};
 pub use field::{Field, Select, TextArea};

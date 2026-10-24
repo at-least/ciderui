@@ -64,6 +64,7 @@ const SCENES = [
   { name: 'console-checkbox', html: `<div class="cui-console-page" style="padding:24px">${example('console-checkbox/checkbox')}</div>`, zoom: 2.4, center: true },
   { name: 'console-empty', html: `<div class="cui-console-page" style="width:520px;padding:24px">${example('console-empty/empty')}</div>`, zoom: 1.8, center: true },
   { name: 'console-file', html: `<div class="cui-console-page" style="width:420px;padding:24px">${example('console-file/file')}</div>`, zoom: 2, center: true },
+  { name: 'console-hint', html: `<div class="cui-console-page" style="width:460px;height:200px;padding:24px">${example('console-hint/hint').replace(' popover>', ' popover style="display:block;position:static;inset:auto;margin:8px 0 0">')}</div>`, zoom: 2, center: true },
   { name: 'console-progress', html: `<div class="cui-console-page" style="width:420px;padding:24px">${example('console-progress/progress')}</div>`, zoom: 2, center: true },
   { name: 'console-dl', html: `<div class="cui-console-page" style="width:420px;padding:24px">${example('console-dl/dl')}</div>`, zoom: 2, center: true },
   { name: 'console-field', html: `<div class="cui-console-page" style="width:380px;padding:24px">${example('console-field/fields')}</div>`, zoom: 1.4, center: true },

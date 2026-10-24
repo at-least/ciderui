@@ -231,6 +231,8 @@
   --cui-console-shadow-radio: 0 1px 5px -2px oklch(54.2% 0.162 251.9 / 0.30);
   /* a dialog's shadow: the toolkit's modal's */
   --cui-console-shadow-dialog: 0px 16px 35px oklch(0.0% 0.000 0.0 / 0.04);
+  /* a popover's shadow: the toolkit's stroked popover's, its 0.5px edge in it */
+  --cui-console-shadow-popover: 0px 16px 35px oklch(0.0% 0.000 0.0 / 0.04),0px 0px 0px 0.5px oklch(0.0% 0.000 0.0 / 0.15),0px 1px 1px -1px inset oklch(100.0% 0.000 0.0 / 0.24);
 
   /* a card's shadow, and hovered: apple.com's store cards', a dark card's the
      same */
