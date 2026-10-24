@@ -17,7 +17,7 @@ A message on a rounded panel tinted in its color: an icon at its start, a title,
 
 | class or attribute | what |
 | --- | --- |
-| `cui-console-banner` | the panel, `role="status"`; the gray fill |
+| `cui-console-banner` | the panel, `role="status"` (an error one `role="alert"`); the gray fill |
 | `data-color` | `info`, `success`, `warning`, `error`: tinted in its color |
 | `cui-console-banner-icon` | its icon, a Lucide icon |
 | `cui-console-banner-title` | its title, 13px at 500 |

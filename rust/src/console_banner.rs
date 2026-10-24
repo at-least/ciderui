@@ -7,7 +7,8 @@ use crate::{Class, ConsoleColor, lucide};
 /// newer look's banner, a message on a rounded panel tinted in its color:
 /// its icon, its title, what the page gives it under the title (a
 /// `<p class="cui-console-banner-body">`, a caption, its actions), and a
-/// button that closes it, which the page's script wires.
+/// button that closes it, which the page's script wires. An error banner is
+/// `role="alert"`, any other `role="status"`.
 ///
 /// ```
 /// use hypertext::prelude::*;
@@ -42,8 +43,14 @@ impl<R: Renderable> Renderable for ConsoleBanner<'_, R> {
             "ciderui::ConsoleBanner has no brand color"
         );
         let color = self.color.attribute();
+        // an error interrupts: a screen reader announces it at once
+        let role = if self.color == ConsoleColor::Error {
+            "alert"
+        } else {
+            "status"
+        };
         rsx! {
-            <div class=(Class("cui-console-banner", self.class)) data-color=(color.unwrap_or(""))[color.is_some()] role="status">
+            <div class=(Class("cui-console-banner", self.class)) data-color=(color.unwrap_or(""))[color.is_some()] role=(role)>
                 @if let Some(icon) = self.icon {
                     (icon.class("cui-console-banner-icon"))
                 }
