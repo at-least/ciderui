@@ -185,19 +185,25 @@ comment carries only that.
 
 ## This repository's gate
 
-- `npm test`, run from the repository root, runs package.json's `test`,
-  each step only after the one before passes: `node test/tokens.mjs`,
+- `npm test`, run from the repository root, runs package.json's `test`:
+  `node scripts/docker.mjs`, which runs in test/Dockerfile's image, each
+  step only after the one before passes, `node test/tokens.mjs`,
   `node test/type.mjs`, `node test/page.mjs`, `node test/components.mjs`,
-  `node scripts/build-lucide.mjs --check`, `node test/rust.mjs`,
+  `node scripts/build-lucide.mjs --check`,
   `node scripts/build-docs.mjs --check`,
-  `node scripts/docs-pictures.mjs --check`, `node test/docs.mjs`.
-- It needs: `npm ci`; Playwright's Chromium at the revision
-  playwright-chromium names (`npx playwright install --only-shell chromium`),
-  for test/type.mjs, test/page.mjs, test/components.mjs and test/docs.mjs;
-  cargo with rustfmt and clippy, and cargo-nextest (where it is missing,
-  test/rust.mjs runs cargo test in its place and says so); zola, and
-  ciderui-zola checked out beside this repository (`../ciderui-zola`,
-  which docs/themes/ciderui-zola links to), for test/docs.mjs.
+  `node scripts/docs-pictures.mjs --check`, `node test/docs.mjs`; then
+  `node test/rust.mjs` on the machine.
+- The browser starts only in that image (test/chromium.mjs throws
+  elsewhere): its Chromium and its fonts are the same on every machine, so
+  a check's value and a picture are too. Every step that opens a page runs
+  through `node scripts/docker.mjs <command>`: one component's cases
+  (`CASES=<regex> node scripts/docker.mjs node test/components.mjs`),
+  goldens (`UPDATE_GOLDEN=1 node scripts/docker.mjs node test/components.mjs`),
+  the pictures (`node scripts/docker.mjs node scripts/docs-pictures.mjs`).
+- It needs: docker; ciderui-zola checked out beside this repository
+  (`../ciderui-zola`, which docs/themes/ciderui-zola links to), mounted
+  into the image; cargo with rustfmt and clippy, and cargo-nextest (where
+  it is missing, test/rust.mjs runs cargo test in its place and says so).
 - Where a tool is missing and cannot be installed, `npm test` stops at the
   step that needs it: run each later step alone, and report the step that
   could not run `UNVERIFIED (environment: <what is missing>)`. Never leave

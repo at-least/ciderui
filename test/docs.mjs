@@ -34,7 +34,7 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, statSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { extname, join, relative } from 'node:path';
-import { chromium } from 'playwright-chromium';
+import { launch } from './chromium.mjs';
 import { ROOT } from './compile.mjs';
 import { check, done } from './check.mjs';
 
@@ -94,7 +94,7 @@ const file = (url) => {
   return existsSync(f) ? f : null;
 };
 
-const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
+const browser = await launch();
 for (const width of [1440, 390]) {
   const page = await browser.newPage({ viewport: { width, height: 900 } });
   let missing = [], untyped = [], errors = [];

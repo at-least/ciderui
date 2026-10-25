@@ -31,7 +31,7 @@ cd docs && zola serve
 | `reference/` | the measurements, each with its probe, page, browser and date |
 | `docs/` | the documentation's site |
 
-`npm test` runs every test: the variables, the type, the page, each part in headless Chromium against apple.com's measured values and its own goldens, the crate (its Lucide icons lucide-static's, formatted, clippy, its tests, its documentation's examples and its documentation), and the documentation (its examples' copies and pictures current, every page).
+`npm test` runs every test, the browser's in one Docker image (`test/Dockerfile`, `scripts/docker.mjs`): the variables, the type, the page, each part in headless Chromium against apple.com's measured values and its own goldens, the crate (its Lucide icons lucide-static's, formatted, clippy, its tests, its documentation's examples and its documentation), and the documentation (its examples' copies and pictures current, every page).
 
 ## License
 

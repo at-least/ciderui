@@ -1,6 +1,5 @@
-// A page in Playwright's Chromium with ciderui's compiled CSS, for the
-// checks: launched with --font-render-hinting=none (on Linux it hints every
-// glyph to a whole-pixel advance otherwise; reference/tracking/), at a width
+// A page in Playwright's Chromium (test/chromium.mjs: the image's, hinting
+// off) with ciderui's compiled CSS, for the checks, at a width
 // a check sets, its states forced through the DevTools protocol with
 // transitions off and styles flushed before they return
 // (reference/apple.com/: a state's last change must land while they are off).
@@ -17,7 +16,7 @@
 // Chromium serves a run, each page in a context of its own (its close closes
 // that); quit() closes the browser, as a runner ends.
 
-import { chromium } from 'playwright-chromium';
+import { launch } from './chromium.mjs';
 
 let browser;
 export const quit = async () => {
@@ -26,7 +25,7 @@ export const quit = async () => {
 };
 
 export async function open(css, html, { width = 1200, height = 800, reducedMotion, colorScheme, touch, forcedColors } = {}) {
-  browser ??= chromium.launch({ args: ['--font-render-hinting=none'] });
+  browser ??= launch();
   const context = await (await browser).newContext({ viewport: { width, height }, reducedMotion, colorScheme, forcedColors });
   const page = await context.newPage();
   const cdp = await page.context().newCDPSession(page);

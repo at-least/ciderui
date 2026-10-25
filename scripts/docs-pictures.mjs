@@ -137,8 +137,8 @@ if (process.argv[2] === '--check') {
   process.exit(stale.length ? 1 : 0);
 }
 
-const { chromium } = await import('playwright-chromium');
-const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
+const { launch } = await import('../test/chromium.mjs');
+const browser = await launch();
 const page = await browser.newPage();
 let current = '';
 await page.route('https://pictures.test/**', (route) => {
