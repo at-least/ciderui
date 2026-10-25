@@ -109,7 +109,7 @@ mod tests {
     #[test]
     fn renders_the_example() {
         let account = rsx! {
-            <a class="cui-console-sidebar-account" href="#account">(lucide::CIRCLE_USER.class("cui-console-sidebar-avatar"))"Mengyi Chen"</a>
+            <a class="cui-console-sidebar-account" href="#account">(lucide::CIRCLE_USER.class("cui-console-sidebar-avatar"))"Alex Morgan"</a>
         };
         let sidebar = rsx! {
             <ConsoleSidebar id="sidebar" label="CrashCart" home="#home" wordmark="CrashCart" close="Close" class="" footer=account>
