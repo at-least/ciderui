@@ -20,6 +20,10 @@
  *                         one row that scrolls sideways when too wide
  *   data-variant="filled" 8px between pills, no hairline
  *   data-size="sm"|"lg"|"xl"  22px (11px on 13px), 40px or 50px (18px on 22px)
+ *   data-overflow / -start / -end  the host's script marks the bar's
+ *                                  scroll state; the side still hiding
+ *                                  content fades (the phone row has no
+ *                                  scrollbar)
  * cui-console-tab         a tab: 30px, 14px on 19px at 500, the brand's
  *                         label; underlined, no room at its sides; filled, a
  *                         pill 12px in on the gray fill, its label the blue
@@ -66,6 +70,25 @@
 
         & > .cui-console-tab:focus-visible {
           outline-offset: -2px;
+        }
+
+        /* a row too wide scrolls with no scrollbar: the side still
+           hiding content fades, so a clipped label reads as "more to
+           scroll", not as a clipped render. The host's script sets the
+           three states on load, scroll and resize; without them (no-JS)
+           the row renders as before, unfaded. The stops are currentColor:
+           a mask reads only the color's alpha, and not black — tokens.mjs
+           refuses a color literal in a component's stylesheet. */
+        &[data-overflow]:not([data-overflow-end]) {
+          mask-image: linear-gradient(to right, currentColor calc(100% - 24px), transparent);
+        }
+
+        &[data-overflow]:not([data-overflow-start]) {
+          mask-image: linear-gradient(to right, transparent, currentColor 24px);
+        }
+
+        &[data-overflow]:not([data-overflow-start]):not([data-overflow-end]) {
+          mask-image: linear-gradient(to right, transparent, currentColor 24px, currentColor calc(100% - 24px), transparent);
         }
       }
     }

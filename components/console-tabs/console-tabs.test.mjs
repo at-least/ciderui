@@ -40,7 +40,32 @@ export const cases = [
     widths: [375],
     checks: [
       { target: '.cui-console-tabs', props: ['flex-wrap', 'overflow-x', 'box-height'], golden: 'a phone: one row (no second hairline), scrolling sideways' },
+      { target: '.cui-console-tabs', props: ['mask-image'], golden: 'no overflow state from the host (no-JS among it), the row unfaded' },
       { target: '.cui-console-tab[href="#settings"]', props: ['outline-offset'], state: 'focus-visible', golden: 'its focus ring inside the tab, where the scroll box would clip it' },
+    ],
+  },
+  {
+    name: 'tabs overflow fade start',
+    html: ex('many').replace('cui-console-tabs"', 'cui-console-tabs" data-overflow data-overflow-start'),
+    widths: [375],
+    checks: [
+      { target: '.cui-console-tabs', props: ['mask-image'], golden: 'scrolled to its start, the right edge fades over the content still hidden; the left edge stays clear' },
+    ],
+  },
+  {
+    name: 'tabs overflow fade end',
+    html: ex('many').replace('cui-console-tabs"', 'cui-console-tabs" data-overflow data-overflow-end'),
+    widths: [375],
+    checks: [
+      { target: '.cui-console-tabs', props: ['mask-image'], golden: 'scrolled to its end, the left edge fades over the sections clipped behind; the right edge stays clear' },
+    ],
+  },
+  {
+    name: 'tabs overflow fade middle and desktop',
+    html: ex('many').replace('cui-console-tabs"', 'cui-console-tabs" data-overflow'),
+    widths: [375, 1200],
+    checks: [
+      { target: '.cui-console-tabs', props: ['mask-image'], golden: 'between the ends, both edges fade; the fade is the phone row\'s — wide, none' },
     ],
   },
   {
