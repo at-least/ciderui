@@ -63,6 +63,10 @@
         flex-wrap: nowrap;
         overflow-x: auto;
         scrollbar-width: none;
+        /* a focused tab brought in clear of the edge fade: a browser's
+           focus scrolls only a tab it judges out of view, and without this
+           one 3px in the row was left there (reference/console/) */
+        scroll-padding-inline: 24px;
 
         & > .cui-console-tab {
           flex-shrink: 0;

@@ -11,12 +11,9 @@
 //    edge fades and the left is solid, scrolled to its end the left fades
 //    and the right is solid, between them both fade — the fade at the box's
 //    edges once scrolled, not moved with its content;
-// 3. the row's last tab, its start inside the row, focused by script: its
-//    ring inside the tab where :focus-visible matches; how much of it the
-//    row then shows is recorded (got.observed), not held: the browser's
-//    focus scrolls only a tab it judges out of view (Chromium 151 left one
-//    3px in view where it was; Firefox 153 brought it in; both left one 43px
-//    in view clipped);
+// 3. the row's last tab, its start a sliver inside the row (Linux's Inter:
+//    3px), focused by script: brought in whole (within 1px), its ring inside
+//    the tab where :focus-visible matches;
 // 4. the thumbnails 240px tall at their own aspect, a wider one than a
 //    phone's column narrowed to it, still 240px;
 // 5. the pager: on one line, its actions 24px at least after its summary,
@@ -160,9 +157,8 @@ try {
     const b = bar.getBoundingClientRect();
     return { focused: w.document.activeElement === tab, focusVisible: tab.matches(':focus-visible'), outlineOffset: w.getComputedStyle(tab).outlineOffset, scrollLeft: bar.scrollLeft, tab: [t.left - b.left, t.right - b.left], row: b.width };
   })()`);
-  claim('3 a tab focused by script: its ring inside where :focus-visible matches', focus.focused && (!focus.focusVisible || focus.outlineOffset === '-2px'), focus);
-  got.observed = { focusShown: Math.min(focus.tab[1], focus.row) - Math.max(focus.tab[0], 0), focusWidth: focus.tab[1] - focus.tab[0] };
-  console.log('observed', JSON.stringify(got.observed));
+  focus.shown = Math.min(focus.tab[1], focus.row) - Math.max(focus.tab[0], 0);
+  claim('3 a tab focused by script: brought in whole, its ring inside where :focus-visible matches', focus.focused && focus.shown >= focus.tab[1] - focus.tab[0] - 1 && (!focus.focusVisible || focus.outlineOffset === '-2px'), focus);
 
   // 4
   for (const id of ['thumbs-375', 'thumbs-1200']) {

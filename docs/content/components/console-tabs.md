@@ -7,7 +7,7 @@ category = "Console"
 image = "pictures/console-tabs.png"
 +++
 
-App Store Connect’s tab bar, in its two forms: underlined, a page’s sections, the current one on a rule; filled, a choice of a few (a chart’s period), each a pill, the chosen one filled. Each tab is the page’s own link. On a phone, an underlined bar too wide for the screen stays one row and scrolls sideways, the side still hiding content fading.
+App Store Connect’s tab bar, in its two forms: underlined, a page’s sections, the current one on a rule; filled, a choice of a few (a chart’s period), each a pill, the chosen one filled. Each tab is the page’s own link. On a phone, an underlined bar too wide for the screen stays one row and scrolls sideways, the side still hiding content fading; a tab focused near its end is brought in clear of the fade.
 
 ```css
 @import "ciderui/components/console-tabs/console-tabs.css";

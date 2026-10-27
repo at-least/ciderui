@@ -19,6 +19,8 @@
  "tabs many on a phone | .cui-console-tabs | 375 | box-height": "31px",
  "tabs many on a phone | .cui-console-tabs | 375 | mask-image": "none",
  "tabs many on a phone | .cui-console-tab[href=\"#settings\"]:focus-visible | 375 | outline-offset": "-2px",
+ "tabs many on a phone | .cui-console-tabs | 375 | scroll-padding-left": "24px",
+ "tabs many on a phone | .cui-console-tabs | 375 | scroll-padding-right": "24px",
  "tabs overflow fade start | .cui-console-tabs | 375 | mask-image": "linear-gradient(90deg, rgb(29, 29, 31) calc(100% - 24px), rgba(0, 0, 0, 0))",
  "tabs overflow fade end | .cui-console-tabs | 375 | mask-image": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(29, 29, 31) 24px)",
  "tabs overflow fade middle and desktop | .cui-console-tabs | 375 | mask-image": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(29, 29, 31) 24px, rgb(29, 29, 31) calc(100% - 24px), rgba(0, 0, 0, 0))",

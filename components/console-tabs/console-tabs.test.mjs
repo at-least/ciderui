@@ -42,6 +42,7 @@ export const cases = [
       { target: '.cui-console-tabs', props: ['flex-wrap', 'overflow-x', 'box-height'], golden: 'a phone: one row (no second hairline), scrolling sideways' },
       { target: '.cui-console-tabs', props: ['mask-image'], golden: 'no overflow state from the host (no-JS among it), the row unfaded' },
       { target: '.cui-console-tab[href="#settings"]', props: ['outline-offset'], state: 'focus-visible', golden: 'its focus ring inside the tab, where the scroll box would clip it' },
+      { target: '.cui-console-tabs', props: ['scroll-padding-left', 'scroll-padding-right'], golden: 'a focused tab is brought in clear of the 24px fade: a browser\'s focus scrolls only a tab it judges out of view, and Chromium 151 left one 3px in view where it was (reference/console/)' },
     ],
   },
   {

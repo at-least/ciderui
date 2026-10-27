@@ -77,18 +77,19 @@
     }
    }
   },
-  "3 a tab focused by script: its ring inside where :focus-visible matches": {
+  "3 a tab focused by script: brought in whole, its ring inside where :focus-visible matches": {
    "ok": true,
    "value": {
     "focused": true,
     "focusVisible": true,
     "outlineOffset": "-2px",
-    "scrollLeft": 0,
+    "scrollLeft": 52,
     "tab": [
-     316.625,
-     371.546875
+     264.625,
+     319.546875
     ],
-    "row": 320
+    "row": 320,
+    "shown": 54.921875
    }
   },
   "4 thumbnails at 375: 240px tall, their aspect, no wider than the column": {
@@ -243,112 +244,108 @@
     "shownFound": false,
     "frames": [
      [
-      10,
+      7,
       0
      ],
      [
-      27,
-      0.0708817
+      23,
+      0.070942
      ],
      [
-      44,
-      0.221158
+      40,
+      0.221255
      ],
      [
-      60,
-      0.408268
+      57,
+      0.408367
      ],
      [
-      77,
-      0.575963
+      73,
+      0.576044
      ],
      [
-      93,
-      0.705911
+      90,
+      0.7053
      ],
      [
-      110,
-      0.802294
+      107,
+      0.802339
      ],
      [
-      127,
-      0.873218
+      124,
+      0.873613
      ],
      [
-      143,
-      0.924939
+      140,
+      0.924705
      ],
      [
-      160,
-      0.960421
+      157,
+      0.960436
      ],
      [
-      177,
-      0.983381
+      173,
+      0.983495
      ],
      [
-      193,
-      0.996118
+      190,
+      0.996122
      ],
      [
-      210,
+      207,
       1
      ],
      [
-      227,
+      223,
       1
      ],
      [
-      243,
+      240,
       1
      ],
      [
-      260,
+      257,
       1
      ],
      [
-      277,
+      273,
       1
      ],
      [
-      293,
+      290,
       1
      ],
      [
-      310,
+      307,
       1
      ],
      [
-      327,
+      323,
       1
      ],
      [
-      343,
+      340,
       1
      ],
      [
-      360,
+      357,
       1
      ],
      [
-      377,
+      373,
       1
      ],
      [
-      394,
+      390,
       1
      ],
      [
-      410,
+      407,
       1
      ]
     ]
    }
   }
  },
- "label": "chromium 151.0.7922.34 on linux",
- "observed": {
-  "focusShown": 3.375,
-  "focusWidth": 54.921875
- }
+ "label": "chromium 151.0.7922.34 on linux"
 }
