@@ -1,0 +1,354 @@
+{
+ "browser": "chromium",
+ "claims": {
+  "1 tabs one row, scrolling sideways": {
+   "ok": true,
+   "value": {
+    "wrap": "nowrap",
+    "scrollHeight": 30,
+    "clientHeight": 30,
+    "offsetHeight": 31,
+    "scrollWidth": 372,
+    "clientWidth": 320
+   }
+  },
+  "2 tabs fade at the start: the right edge": {
+   "ok": true,
+   "value": {
+    "left": 0,
+    "right": 320,
+    "top": 0,
+    "ratio": 1,
+    "scrollLeft": 0,
+    "attrs": [
+     "data-overflow",
+     "data-overflow-start"
+    ],
+    "mask": "linear-gradient(90deg, rgb(29, 29, 31) calc(100% - 24px), rgba(0, 0, 0, 0))",
+    "red": {
+     "left2": 0,
+     "left12": 0,
+     "right12": 133,
+     "right2": 239,
+     "middle": 0
+    }
+   }
+  },
+  "2 tabs fade at the end: the left edge": {
+   "ok": true,
+   "value": {
+    "left": 0,
+    "right": 320,
+    "top": 0,
+    "ratio": 1,
+    "scrollLeft": 52,
+    "attrs": [
+     "data-overflow",
+     "data-overflow-end"
+    ],
+    "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(29, 29, 31) 24px)",
+    "red": {
+     "left2": 228,
+     "left12": 122,
+     "right12": 0,
+     "right2": 0,
+     "middle": 0
+    }
+   }
+  },
+  "2 tabs fade between: both edges": {
+   "ok": true,
+   "value": {
+    "left": 0,
+    "right": 320,
+    "top": 0,
+    "ratio": 1,
+    "scrollLeft": 26,
+    "attrs": [
+     "data-overflow"
+    ],
+    "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(29, 29, 31) 24px, rgb(29, 29, 31) calc(100% - 24px), rgba(0, 0, 0, 0))",
+    "red": {
+     "left2": 228,
+     "left12": 122,
+     "right12": 133,
+     "right2": 239,
+     "middle": 0
+    }
+   }
+  },
+  "3 a tab focused by script: its ring inside where :focus-visible matches": {
+   "ok": true,
+   "value": {
+    "focused": true,
+    "focusVisible": true,
+    "outlineOffset": "-2px",
+    "scrollLeft": 0,
+    "tab": [
+     316.625,
+     371.546875
+    ],
+    "row": 320
+   }
+  },
+  "4 thumbnails at 375: 240px tall, their aspect, no wider than the column": {
+   "ok": true,
+   "value": {
+    "column": 375,
+    "imgs": [
+     {
+      "natural": [
+       111,
+       240
+      ],
+      "box": [
+       111,
+       240
+      ]
+     },
+     {
+      "natural": [
+       111,
+       240
+      ],
+      "box": [
+       111,
+       240
+      ]
+     },
+     {
+      "natural": [
+       600,
+       240
+      ],
+      "box": [
+       375,
+       240
+      ]
+     }
+    ]
+   }
+  },
+  "4 thumbnails at 1200: 240px tall, their aspect, no wider than the column": {
+   "ok": true,
+   "value": {
+    "column": 1200,
+    "imgs": [
+     {
+      "natural": [
+       111,
+       240
+      ],
+      "box": [
+       111,
+       240
+      ]
+     },
+     {
+      "natural": [
+       111,
+       240
+      ],
+      "box": [
+       111,
+       240
+      ]
+     },
+     {
+      "natural": [
+       600,
+       240
+      ],
+      "box": [
+       600,
+       240
+      ]
+     }
+    ]
+   }
+  },
+  "5 pager at 375: one line, 24px at least after the summary, buttons 8px apart": {
+   "ok": true,
+   "value": {
+    "summaryRight": 71.78125,
+    "summaryTop": 6,
+    "firstLeft": 239.96875,
+    "firstTop": 0,
+    "between": 8
+   }
+  },
+  "5 pager at 1200: one line, 24px at least after the summary, buttons 8px apart": {
+   "ok": true,
+   "value": {
+    "summaryRight": 71.78125,
+    "summaryTop": 6,
+    "firstLeft": 1064.96875,
+    "firstTop": 0,
+    "between": 8
+   }
+  },
+  "6 page column at 900: one column": {
+   "ok": true,
+   "value": {
+    "display": "block",
+    "columns": "none",
+    "contentLeft": 0,
+    "contentWidth": 900,
+    "sidebarLeft": 0,
+    "sidebarWidth": 0,
+    "mainLeft": 24,
+    "header": "11px",
+    "body": "11px"
+   }
+  },
+  "6 page column at 1200: the sidebar 225px, 40px in, the page 30px past it, no room at its sides": {
+   "ok": true,
+   "value": {
+    "display": "grid",
+    "columns": "225px 865px",
+    "contentLeft": 0,
+    "contentWidth": 1200,
+    "sidebarLeft": 40,
+    "sidebarWidth": 225,
+    "mainLeft": 295,
+    "header": "0px",
+    "body": "0px"
+   }
+  },
+  "6 page column at 1920: 1440px, centered, the sidebar 240px in": {
+   "ok": true,
+   "value": {
+    "display": "grid",
+    "columns": "225px 1105px",
+    "contentLeft": 240,
+    "contentWidth": 1440,
+    "sidebarLeft": 280,
+    "sidebarWidth": 225,
+    "mainLeft": 535,
+    "header": "0px",
+    "body": "0px"
+   }
+  },
+  "7 toast: 16px from the right and bottom, never hit, fading in": {
+   "ok": true,
+   "value": {
+    "right": 16,
+    "bottom": 16,
+    "innerHeight": 900,
+    "visualHeight": 900,
+    "rest": {
+     "opacity": "0",
+     "found": false
+    },
+    "shownFound": false,
+    "frames": [
+     [
+      10,
+      0
+     ],
+     [
+      27,
+      0.0708817
+     ],
+     [
+      44,
+      0.221158
+     ],
+     [
+      60,
+      0.408268
+     ],
+     [
+      77,
+      0.575963
+     ],
+     [
+      93,
+      0.705911
+     ],
+     [
+      110,
+      0.802294
+     ],
+     [
+      127,
+      0.873218
+     ],
+     [
+      143,
+      0.924939
+     ],
+     [
+      160,
+      0.960421
+     ],
+     [
+      177,
+      0.983381
+     ],
+     [
+      193,
+      0.996118
+     ],
+     [
+      210,
+      1
+     ],
+     [
+      227,
+      1
+     ],
+     [
+      243,
+      1
+     ],
+     [
+      260,
+      1
+     ],
+     [
+      277,
+      1
+     ],
+     [
+      293,
+      1
+     ],
+     [
+      310,
+      1
+     ],
+     [
+      327,
+      1
+     ],
+     [
+      343,
+      1
+     ],
+     [
+      360,
+      1
+     ],
+     [
+      377,
+      1
+     ],
+     [
+      394,
+      1
+     ],
+     [
+      410,
+      1
+     ]
+    ]
+   }
+  }
+ },
+ "label": "chromium 151.0.7922.34 on linux",
+ "observed": {
+  "focusShown": 3.375,
+  "focusWidth": 54.921875
+ }
+}
