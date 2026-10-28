@@ -38,6 +38,26 @@ export const cases = [
     ],
   },
   {
+    name: 'card link',
+    html: ex('link'),
+    widths: [1200],
+    checks: [
+      { target: 'a.cui-console-card', props: ['display', 'color', 'text-decoration-line', 'background-image'], golden: 'a card that is a link: a block, the card\'s text, not underlined, no fill at rest' },
+      { target: 'a.cui-console-card', props: ['background-image'], state: 'hover', golden: 'hovered, App Store Connect\'s hovered table row\'s fill, the neutral at 0.03 (hover-row: table.row), over the card\'s ground' },
+      { target: 'a.cui-console-card', props: ['background-image'], state: 'active', golden: 'pressed, the toolkit\'s pressed list item\'s, the neutral at 0.08' },
+      { target: 'a.cui-console-card', props: ['background-color'], state: 'hover', golden: 'its ground the card\'s still' },
+    ],
+  },
+  {
+    name: 'card link touch',
+    html: ex('link'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: 'a.cui-console-card', props: ['background-image'], state: 'hover', rest: 'a tapped card keeps no fill (rule 5)' },
+    ],
+  },
+  {
     name: 'card dark',
     html: `<div class="cui-dark">${ex('metrics')}</div>`,
     widths: [1200],

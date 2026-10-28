@@ -28,13 +28,20 @@
  * cui-console-card-change   18px on 22px at 500, the secondary label;
  *   data-color="success" | "error"  green up, red down
  * cui-console-card-caption  12px on 16px, the secondary label
+ * a.cui-console-card        a card that is a link, all of it, to what it
+ *                           counts: its text the card's, not underlined;
+ *                           hovered, the neutral fill at 0.03 over its
+ *                           ground; pressed, at 0.08
  *
  * App Store Connect's: the ground, the corners, the room above, the clip,
  * the type. ciderui's: the room at its sides and foot (the analytics card's
  * chart runs to its edges; a card's text is 15px in as its title is); the
  * change's colors, the fitted labels (tokens.css, decision 21: the
  * toolkit's red there is 3.6:1 on white); the caption, the header, the
- * figure's row and its gap. */
+ * figure's row and its gap; a card that is a link (Apple Account's cards
+ * are each one target, reference/apple-account/; no Apple card's hover was
+ * read): App Store Connect's hovered table row's fill (hover-row:
+ * table.row), the toolkit's pressed list item's (the console list's). */
 
 @layer components {
   .cui-console-card {
@@ -98,5 +105,21 @@
     font-size: 12px;
     line-height: 16px;
     font-weight: 400;
+  }
+
+  a.cui-console-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+
+    @media (hover: hover) {
+      &:hover {
+        background-image: linear-gradient(var(--cui-c-console-neutral-fill-quinary), var(--cui-c-console-neutral-fill-quinary));
+      }
+    }
+
+    &:active {
+      background-image: linear-gradient(var(--cui-c-console-neutral-fill-quaternary), var(--cui-c-console-neutral-fill-quaternary));
+    }
   }
 }

@@ -24,9 +24,14 @@ The analytics card: a gray rounded panel on the page holding a metric (its title
 | `cui-console-card-value` | the value, 41px at 700 |
 | `cui-console-card-change` | the change; `data-color="success"` up, `"error"` down |
 | `cui-console-card-caption` | a line under it |
+| `a.cui-console-card` | a card that is a link, all of it: a faint fill hovered |
 
 ## A list in a card
 
 {{ <cui_example file="console-card/list" title="A card holding a table" pad={true} /> }}
+
+## A card that is a link
+
+{{ <cui_example file="console-card/link" title="A card that opens what it counts" pad={true} /> }}
 
 The crate writes a metric’s card with `ConsoleMetric`.

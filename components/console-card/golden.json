@@ -28,6 +28,13 @@
  "card list | .cui-console-card-header | 1200 | display": "flex",
  "card list | .cui-console-card-header | 1200 | justify-content": "space-between",
  "card list | .cui-console-card-header | 1200 | align-items": "baseline",
+ "card link | a.cui-console-card | 1200 | display": "block",
+ "card link | a.cui-console-card | 1200 | color": "rgb(29, 29, 31)",
+ "card link | a.cui-console-card | 1200 | text-decoration-line": "none",
+ "card link | a.cui-console-card | 1200 | background-image": "none",
+ "card link | a.cui-console-card:hover | 1200 | background-image": "linear-gradient(oklch(0.575 0.012 286 / 0.03), oklch(0.575 0.012 286 / 0.03))",
+ "card link | a.cui-console-card:active | 1200 | background-image": "linear-gradient(oklch(0.575 0.012 286 / 0.08), oklch(0.575 0.012 286 / 0.08))",
+ "card link | a.cui-console-card:hover | 1200 | background-color": "oklch(0.968 0.001 286.4)",
  "card dark | .cui-console-card | 1200 | background-color": "oklch(0.227 0.004 286.1)",
  "card dark | .cui-console-card-change[data-color=\"error\"] | 1200 | color": "oklch(0.654 0.232 28.8)"
 }
