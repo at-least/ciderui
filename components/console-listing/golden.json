@@ -1,0 +1,16 @@
+{
+ "listing | .cui-console-listing | 1200 | font-size": "13px",
+ "listing | .cui-console-listing | 1200 | line-height": "22px",
+ "listing | .cui-console-listing | 1200 | font-weight": "400",
+ "listing | .cui-console-listing | 1200 | background-color": "oklch(0.968 0.001 286.4)",
+ "listing | .cui-console-listing | 1200 | color": "oklch(0 0 0 / 0.85)",
+ "listing | .cui-console-listing | 1200 | overflow-x": "auto",
+ "listing | .cui-console-listing | 390 | font-size": "13px",
+ "listing | .cui-console-listing | 390 | line-height": "22px",
+ "listing | .cui-console-listing | 390 | font-weight": "400",
+ "listing | .cui-console-listing | 390 | background-color": "oklch(0.968 0.001 286.4)",
+ "listing | .cui-console-listing | 390 | color": "oklch(0 0 0 / 0.85)",
+ "listing | .cui-console-listing | 390 | overflow-x": "auto",
+ "listing dark | .cui-console-listing | 1200 | background-color": "oklch(0.227 0.004 286.1)",
+ "listing dark | .cui-console-listing | 1200 | color": "oklch(1 0 0 / 0.85)"
+}
