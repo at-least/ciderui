@@ -1,0 +1,177 @@
+/* ciderui — the console's chart: App Store Connect's analytics charts, a
+ * bar chart's plot, its scale, its axis and its legend, and a sparkline.
+ * The page draws the data (its SVG, its marks' fills, a series' colors);
+ * this draws what is around it.
+ *
+ * From the analytics overview (reference/asc/results/analytics.json:
+ * chart.grid, chart.x, chart.y, spark.line, spark.area) and the HIG's
+ * charts (Best practices, Color, Accessibility; read 2026-10-29):
+ *
+ *   <figure class="cui-console-chart">
+ *     <div class="cui-console-chart-plot">
+ *       <span class="cui-console-chart-scale" aria-hidden="true">peak 24</span>
+ *       <span class="cui-console-chart-scale" data-at="half" aria-hidden="true">12</span>
+ *       <svg class="cui-console-chart-svg" viewBox="0 0 600 140" height="140"
+ *            preserveAspectRatio="none" role="img" aria-label="…">
+ *         <line class="cui-console-chart-grid" …/>
+ *         <g class="cui-console-chart-bar"><title>…</title>
+ *           <rect class="cui-console-chart-mark" fill="var(--a-series)" …/>
+ *         </g>
+ *       </svg>
+ *     </div>
+ *     <div class="cui-console-chart-axis" aria-hidden="true"><span>Oct 22</span><span>Oct 28</span></div>
+ *     <div class="cui-console-chart-legend">…cui-console-status…</div>
+ *   </figure>
+ *
+ * cui-console-chart         the chart, the ground its marks are cut from
+ *                           (--cui-console-chart-ground: the page's, a
+ *                           card's inside a card)
+ * cui-console-chart-plot    the plot's box, its scale placed in it
+ * cui-console-chart-svg     the plot: as wide as its box, its height the
+ *                           page's (the svg's height)
+ * cui-console-chart-grid    a gridline: 1px, the tertiary hairline
+ * cui-console-chart-bar     a bar's group: its title, its marks
+ * cui-console-chart-mark    a mark, its fill the page's, a 1px line of the
+ *                           ground round it, so stacked marks and bars
+ *                           stand apart; its bar hovered, at 0.85
+ * cui-console-chart-scale   the top gridline's value at the plot's top
+ *                           end, data-at="half" the middle one's: 11px at
+ *                           600, the secondary label, on the ground
+ * cui-console-chart-empty   what the plot has none of, centered on it,
+ *                           13px, the secondary label
+ * cui-console-chart-axis    the first and the last bucket's labels under
+ *                           the plot, 6px under it: 13px, the secondary label
+ * cui-console-chart-legend  the series, each a cui-console-status, 8px under
+ *                           the axis, 4px by 12px apart
+ * cui-console-chart-sparkline  a small line chart (an svg): its line
+ *                           (cui-console-chart-sparkline-line) 2px, round at its
+ *                           ends and joins, in --cui-console-chart-sparkline-color
+ *                           (the brand's blue); its area
+ *                           (cui-console-chart-sparkline-area) in
+ *                           --cui-console-chart-sparkline-fill (the blue's tint)
+ *
+ * App Store Connect's: the gridline's 1px, the side labels' 11px at 600,
+ * the foot's 13px at 400, the sparkline's 2px round line in the blue.
+ * ciderui's: the gridline the tertiary hairline (App Store Connect's
+ * rgb(214, 214, 214)), the labels the fitted secondary label (its
+ * rgb(136, 136, 136) is 3.5:1 on white, decision 21), the sparkline's area
+ * a flat tint (its is a gradient, rgb(192, 227, 255) to rgb(249, 252,
+ * 255), which CSS cannot give an SVG fill); the scale at the plot's
+ * trailing end (App Store Connect's at its start: the HIG's alignment
+ * keeps the leading edge clean); the line round each mark (the HIG's
+ * separation of contiguous color); the empty note, the legend, the axis's
+ * two labels. The plot's own text is for sight alone: the svg's label
+ * carries the values, and the axis and scale are aria-hidden in the
+ * markup (the HIG hides axis and tick labels from assistive technology). */
+
+@layer components {
+  .cui-console-chart {
+    --cui-console-chart-ground: var(--cui-c-console-neutral-background-primary);
+    margin: 0;
+  }
+
+  :where(.cui-console-card) .cui-console-chart {
+    --cui-console-chart-ground: var(--cui-c-console-card);
+  }
+
+  .cui-console-chart-plot {
+    position: relative;
+  }
+
+  .cui-console-chart-svg {
+    display: block;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .cui-console-chart-grid {
+    stroke: var(--cui-c-console-neutral-border-tertiary);
+    stroke-width: 1px;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .cui-console-chart-mark {
+    stroke: var(--cui-console-chart-ground);
+    stroke-width: 1px;
+    vector-effect: non-scaling-stroke;
+  }
+
+  @media (hover: hover) {
+    .cui-console-chart-bar:hover .cui-console-chart-mark {
+      opacity: 0.85;
+    }
+  }
+
+  .cui-console-chart-scale {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: 4px;
+    padding: 0 4px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 13px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: normal;
+    color: var(--cui-c-console-neutral-label-secondary);
+    background-color: var(--cui-console-chart-ground);
+    pointer-events: none;
+
+    &[data-at="half"] {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .cui-console-chart-empty {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--cui-c-console-neutral-label-secondary);
+    pointer-events: none;
+  }
+
+  .cui-console-chart-axis {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: normal;
+    color: var(--cui-c-console-neutral-label-secondary);
+  }
+
+  .cui-console-chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin-top: 8px;
+  }
+
+  .cui-console-chart-sparkline {
+    --cui-console-chart-sparkline-color: var(--cui-c-console-brand-accent-primary);
+    --cui-console-chart-sparkline-fill: var(--cui-c-console-brand-accent-quaternary);
+    display: block;
+    overflow: visible;
+  }
+
+  .cui-console-chart-sparkline-line {
+    fill: none;
+    stroke: var(--cui-console-chart-sparkline-color);
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .cui-console-chart-sparkline-area {
+    fill: var(--cui-console-chart-sparkline-fill);
+  }
+}
