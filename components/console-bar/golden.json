@@ -1,0 +1,11 @@
+{
+ "bar | .cui-console-bar | 1200 | background-color": "oklch(0.968 0.001 286.4)",
+ "bar | .cui-console-bar | 1200 | column-gap": "8px",
+ "bar | .cui-console-bar | 1200 | align-items": "center",
+ "bar narrow | .cui-console-bar | 900 | padding-left": "24px",
+ "bar narrow | .cui-console-bar | 900 | box-height": "50px",
+ "bar narrow | .cui-console-bar | 390 | padding-left": "16px",
+ "bar narrow | .cui-console-bar | 390 | box-height": "50px",
+ "bar dark | .cui-console-bar | 1200 | background-color": "oklch(0.227 0.004 286.1)",
+ "bar dark | .cui-console-bar | 1200 | color": "oklch(1 0 0 / 0.85)"
+}

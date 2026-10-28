@@ -1,0 +1,45 @@
+/* ciderui — the console's bar: the band across the top of a console's
+ * page, its wordmark and a few controls (the sidebar's button on a narrow
+ * screen, a sign-in or sign-out button).
+ *
+ * App Store Connect's bar (reference/asc/results/apps.json: nav, read on
+ * the apps page at 1920px):
+ *
+ *   <header class="cui-console-bar">
+ *     <button class="cui-console-btn cui-console-btn-icon cui-console-sidebar-open" …>…</button>
+ *     <a class="cui-console-sidebar-wordmark" href="/">CrashCart</a>
+ *   </header>
+ *
+ * cui-console-bar  a row, 50px, its parts centered on it 8px apart, 40px
+ *                  in from 1024px, 24px from 640px, 16px below, on the
+ *                  console card's gray, no edge; its place the page's (a
+ *                  site adds sticky top-0)
+ *
+ * App Store Connect's: the 50px, the 40px in, the gray with no edge or
+ * shadow. ciderui's: the gray the console card's (oklch 96.8%, near
+ * rgb(245, 245, 247)) where App Store Connect's is rgb(241, 241, 241), the
+ * nearest the contract holds; the narrower screens' room the console
+ * column's (cui-console-content: 16px, 24px from 640px), where App Store
+ * Connect was read at 1920px alone; the 8px between its parts (a control
+ * row's md button's, reference/asc/results/controlrow.json). */
+
+@layer components {
+  .cui-console-bar {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 50px;
+    padding-inline: 16px;
+    color: var(--cui-c-console-neutral-label-primary);
+    background-color: var(--cui-c-console-card);
+
+    @media (width >= 640px) {
+      padding-inline: 24px;
+    }
+
+    @media (width >= 1024px) {
+      padding-inline: 40px;
+    }
+  }
+}
