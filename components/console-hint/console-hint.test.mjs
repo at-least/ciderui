@@ -11,7 +11,7 @@ const ex = examples(import.meta.url);
 const I = 'component-InfoSystemButton';
 const P = 'component-Popover';
 const B = '.cui-console-hint';
-const POP = '.cui-console-hint-popover';
+const POP = '.cui-console-popover';
 // the example set where the popover has room below it, and room either side
 const page = (html) => `<div style="padding:24px 160px 240px">${html}</div>`;
 

@@ -1,0 +1,84 @@
+/* ciderui — the console's popover: a small panel a button opens over the
+ * page, a few related controls (a time to pause until and its button) or
+ * a line of text (the hint's).
+ *
+ * App Store Connect's newer look's stroked popover (reference/asc/results/
+ * tokens.json, --tb-component-Popover-*) and its analytics overview's info
+ * popover (analytics:card.info):
+ *
+ *   <button class="cui-console-btn" popovertarget="pause-job">Pause Until…</button>
+ *   <form class="cui-console-popover" id="pause-job" popover>
+ *     <input class="cui-console-field" name="until" aria-label="Pause until">
+ *     <button class="cui-console-btn" data-variant="filled">Pause</button>
+ *   </form>
+ *
+ * cui-console-popover  a [popover], opened by its button's popovertarget;
+ *                      Escape or a click elsewhere closes it: white, a
+ *                      0.5px edge in its shadow, 25px corners (14px below
+ *                      640px), 16px in, 13px on 18px, the label; 240px to
+ *                      350px wide (85% of the window at most), 435px tall
+ *                      at most, scrolling past it; its parts stacked 8px
+ *                      apart; 8px under its button, centered on it, above
+ *                      it where there is no room below, 16px inside the
+ *                      window's edges
+ *
+ * The toolkit's: the ground, the shadow, the corners, the narrowest, the
+ * widest on a phone, the tallest. App Store Connect's (its analytics
+ * overview's info popover): the 16px in, the type, the 350px, the
+ * centering. ciderui's: the 8px between its parts (a control row's md
+ * button's, reference/asc/results/controlrow.json: the toolkit names no
+ * gap for a stack); no caret (App Store Connect's sits in the 14px between
+ * the popover and its button, which ciderui keeps 8px; the HIG's popover
+ * points its arrow at the element that revealed it); a browser without
+ * anchor positioning shows it centered on the page. */
+
+@layer components {
+  .cui-console-popover {
+    box-sizing: border-box;
+    width: max-content;
+    min-width: 240px;
+    max-width: min(350px, 85vw);
+    max-height: 435px;
+    margin: auto;
+    border: 0;
+    border-radius: calc(3.125rem / 2);
+    padding: 16px;
+    overflow: auto;
+    font-family: var(--cui-font);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: normal;
+    text-align: left;
+    text-transform: none;
+    white-space: normal;
+    color: var(--cui-c-console-neutral-label-primary);
+    background-color: var(--cui-c-console-neutral-background-primary);
+    box-shadow: var(--cui-console-shadow-popover);
+
+    &:popover-open {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    @media (width < 640px) {
+      border-radius: 14px;
+    }
+
+    @media (forced-colors: active) {
+      border: 1px solid CanvasText;
+    }
+  }
+
+  @supports (position-area: bottom) {
+    .cui-console-popover {
+      inset: auto;
+      /* the 16px either side keeps it off the window's edges where it is
+         moved to fit */
+      margin: 8px 16px;
+      position-area: bottom;
+      position-try-fallbacks: flip-block;
+    }
+  }
+}

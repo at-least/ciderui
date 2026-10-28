@@ -11,6 +11,7 @@ A small “i” in a gray circle beside a word — a metric’s title, a column�
 
 ```css
 @import "ciderui/components/console-hint/console-hint.css";
+@import "ciderui/components/console-popover/console-popover.css";
 ```
 
 {{ <cui_example file="console-hint/hint" title="Console hint" pad={true} /> }}
@@ -18,6 +19,6 @@ A small “i” in a gray circle beside a word — a metric’s title, a column�
 | class | what |
 | --- | --- |
 | `cui-console-hint` | the `<button>` with `popovertarget` and an `aria-label` saying what it is about |
-| `cui-console-hint-popover` | the `popover` it opens: 16px in, 13px, 240px to 350px wide, under the button |
+| `cui-console-popover` | the `popover` it opens (Console Popover): 16px in, 13px, 240px to 350px wide, under the button |
 
 The crate’s `ConsoleHint` renders both.

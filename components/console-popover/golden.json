@@ -1,0 +1,20 @@
+{
+ "popover | .cui-console-popover | 1200 | display": "none",
+ "popover open | .cui-console-popover | 1200 | padding-top": "16px",
+ "popover open | .cui-console-popover | 1200 | padding-left": "16px",
+ "popover open | .cui-console-popover | 1200 | font-size": "13px",
+ "popover open | .cui-console-popover | 1200 | line-height": "18px",
+ "popover open | .cui-console-popover | 1200 | font-weight": "400",
+ "popover open | .cui-console-popover | 1200 | color": "oklch(0 0 0 / 0.85)",
+ "popover open | .cui-console-popover | 1200 | max-width": "350px",
+ "popover open | .cui-console-popover | 1200 | display": "flex",
+ "popover open | .cui-console-popover | 1200 | flex-direction": "column",
+ "popover open | .cui-console-popover | 1200 | row-gap": "8px",
+ "popover open | .cui-console-popover | 1200 | box-top": "62px",
+ "popover open | .cui-console-popover | 1200 | box-left": "474px",
+ "popover open | .cui-console-popover | 1200 | box-width": "252px",
+ "popover open phone | .cui-console-popover | 390 | box-left": "46px",
+ "popover open phone | .cui-console-popover | 390 | box-width": "298px",
+ "popover dark | .cui-console-popover | 1200 | background-color": "oklch(0 0 0)",
+ "popover dark | .cui-console-popover | 1200 | color": "oklch(1 0 0 / 0.85)"
+}

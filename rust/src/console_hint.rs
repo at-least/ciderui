@@ -33,7 +33,7 @@ impl Renderable for ConsoleHint<'_> {
         // <div> would close the <p>
         rsx! {
             <button type="button" class="cui-console-hint" "popovertarget"=(self.id) aria-label=(self.label)>"i"</button>
-            <span class="cui-console-hint-popover" id=(self.id) "popover">(self.hint)</span>
+            <span class="cui-console-popover" id=(self.id) "popover">(self.hint)</span>
         }
         .render_to(buffer);
     }

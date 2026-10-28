@@ -1,14 +1,16 @@
 /* ciderui — the console's hint: App Store Connect's newer look's info
  * button, a small "i" in a gray circle beside a word (a metric's title, a
- * column's heading) that opens a popover saying what the word means.
+ * column's heading) that opens a popover saying what the word means
+ * (cui-console-popover, components/console-popover, which a page importing
+ * this one imports too).
  *
- * From the toolkit's info button and popover (reference/asc/results/
- * tokens.json, --tb-component-InfoSystemButton-*, --tb-component-Popover-*:
- * stroked) and the analytics pages' card info button (analytics:card.info).
+ * From the toolkit's info button (reference/asc/results/tokens.json,
+ * --tb-component-InfoSystemButton-*) and the analytics pages' card info
+ * button (analytics:card.info).
  *
  *   <button type="button" class="cui-console-hint" popovertarget="hint-trend"
  *           aria-label="What Trend means">i</button>
- *   <span class="cui-console-hint-popover" id="hint-trend" popover>
+ *   <span class="cui-console-popover" id="hint-trend" popover>
  *     Events per day over the last 7 days.
  *   </span>
  *
@@ -19,24 +21,14 @@
  *                           pressed, the toolkit's fills and labels; focused,
  *                           a 3px halo 1px out; its target (::after) 20px
  *                           square, 32px by 44px on a touch screen
- * cui-console-hint-popover  what the word means (a [popover], opened by the
- *                           button's popovertarget; Escape or a click
- *                           elsewhere closes it): white, a 0.5px edge in its
- *                           shadow, 25px corners (14px below 640px), 16px in,
- *                           13px on 18px, the label; 240px to 350px wide;
- *                           8px under the button, centered on it, above it
- *                           where there is no room below, 16px inside the
- *                           window's edges
+ * the popover               what the word means, a cui-console-popover
+ *                           opened by the button's popovertarget
  *
- * The toolkit's: the button's fills and labels, its rounding and halo; the
- * popover's ground, shadow, corners, its narrowest and its widest on a
- * phone (85vw); App Store Connect's (measured on its analytics overview):
- * the button's 18px, the popover's 16px in, its type, its 350px, its
- * centering. ciderui's: the 4px before it; the "i" a letter, where App Store Connect draws an
- * SF Symbol; the secondary label's alpha (fitted, tokens.css); no caret
- * (App Store Connect's sits in the 14px between, ciderui keeps 8px); a
- * browser without anchor positioning shows the popover centered on the
- * page. The target: the HIG's minimum control sizes (Accessibility,
+ * The toolkit's: the button's fills and labels, its rounding and halo; App
+ * Store Connect's (measured on its analytics overview): the button's 18px.
+ * ciderui's: the 4px before it; the "i" a letter, where App Store Connect
+ * draws an SF Symbol; the secondary label's alpha (fitted, tokens.css). The
+ * target: the HIG's minimum control sizes (Accessibility,
  * Mobility: 20x20pt on macOS, 28x28pt on iOS, 44x44pt its default there),
  * drawn round the circle as apple.com's modal's close button is (its 36px
  * circle in a 44px button, overlay:close). Not 44px wide on a touch screen:
@@ -124,51 +116,6 @@
       &::before {
         border: 1px solid ButtonText;
       }
-    }
-  }
-
-  .cui-console-hint-popover {
-    box-sizing: border-box;
-    width: max-content;
-    min-width: 240px;
-    max-width: min(350px, 85vw);
-    margin: auto;
-    border: 0;
-    border-radius: calc(3.125rem / 2);
-    padding: 16px;
-    font-family: var(--cui-font);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 18px;
-    letter-spacing: normal;
-    text-align: left;
-    text-transform: none;
-    white-space: normal;
-    color: var(--cui-c-console-neutral-label-primary);
-    background-color: var(--cui-c-console-neutral-background-primary);
-    box-shadow: var(--cui-console-shadow-popover);
-
-    &:popover-open {
-      display: block;
-    }
-
-    @media (width < 640px) {
-      border-radius: 14px;
-    }
-
-    @media (forced-colors: active) {
-      border: 1px solid CanvasText;
-    }
-  }
-
-  @supports (position-area: bottom) {
-    .cui-console-hint-popover {
-      inset: auto;
-      /* the 16px either side keeps it off the window's edges where it is
-         moved to fit */
-      margin: 8px 16px;
-      position-area: bottom;
-      position-try-fallbacks: flip-block;
     }
   }
 }
