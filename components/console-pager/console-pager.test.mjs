@@ -32,6 +32,14 @@ export const cases = [
     ],
   },
   {
+    name: 'pager later',
+    html: ex('later'),
+    widths: [1200],
+    checks: [
+      { target: `${N} .cui-console-btn:not(.cui-console-btn-icon)`, props: ['box-height', 'box-right'], golden: 'a list paged by a cursor past its first page: the forums\' First button (pager.json page-3), a text button 10px before the next one, no summary' },
+    ],
+  },
+  {
     name: 'pager dark',
     html: `<div class="cui-dark">${ex('pager')}</div>`,
     widths: [1200],

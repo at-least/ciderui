@@ -1,5 +1,7 @@
 use hypertext::{Buffer, prelude::*};
 
+use crate::Class;
+
 /// `cui-console-tabs` (`components/console-tabs`): a row of tabs, each a
 /// link to a page.
 ///
@@ -11,7 +13,7 @@ use hypertext::{Buffer, prelude::*};
 ///     ConsoleTab { label: "Unresolved", href: Some("?status=unresolved"), current: true },
 ///     ConsoleTab { label: "Resolved", href: Some("?status=resolved"), current: false },
 /// ];
-/// let html = rsx! { <ConsoleTabs label="Status" variant=(ConsoleTabsVariant::Filled) tabs=(&tabs) /> }.render();
+/// let html = rsx! { <ConsoleTabs label="Status" variant=(ConsoleTabsVariant::Filled) tabs=(&tabs) class="" /> }.render();
 /// assert!(html.as_inner().contains(r#"aria-current="true""#));
 /// ```
 pub struct ConsoleTabs<'a> {
@@ -22,6 +24,8 @@ pub struct ConsoleTabs<'a> {
     pub variant: ConsoleTabsVariant,
     /// The tabs, in order.
     pub tabs: &'a [ConsoleTab<'a>],
+    /// The page's utilities on the row; `""` for none.
+    pub class: &'a str,
 }
 
 /// What a row of tabs is for, which sets its look and its markup.
@@ -65,11 +69,11 @@ impl Renderable for ConsoleTabs<'_> {
         };
         match self.variant {
             ConsoleTabsVariant::Underlined => rsx! {
-                <nav class="cui-console-tabs" aria-label=(self.label)>(tabs)</nav>
+                <nav class=(Class("cui-console-tabs", self.class)) aria-label=(self.label)>(tabs)</nav>
             }
             .render_to(buffer),
             ConsoleTabsVariant::Filled => rsx! {
-                <div class="cui-console-tabs" data-variant="filled" role="group" aria-label=(self.label)>(tabs)</div>
+                <div class=(Class("cui-console-tabs", self.class)) data-variant="filled" role="group" aria-label=(self.label)>(tabs)</div>
             }
             .render_to(buffer),
         }
@@ -121,7 +125,7 @@ mod tests {
                 current: false,
             },
         ];
-        let html = rsx! { <ConsoleTabs label="Project" variant=(ConsoleTabsVariant::Underlined) tabs=(&underlined) /> }.render();
+        let html = rsx! { <ConsoleTabs label="Project" variant=(ConsoleTabsVariant::Underlined) tabs=(&underlined) class="" /> }.render();
         assert_eq!(
             *html.as_inner(),
             example(include_str!(
@@ -134,7 +138,7 @@ mod tests {
             tab("30d", "#30d", false),
             tab("90d", "#90d", false),
         ];
-        let html = rsx! { <ConsoleTabs label="Period" variant=(ConsoleTabsVariant::Filled) tabs=(&filled) /> }.render();
+        let html = rsx! { <ConsoleTabs label="Period" variant=(ConsoleTabsVariant::Filled) tabs=(&filled) class="" /> }.render();
         assert_eq!(
             *html.as_inner(),
             example(include_str!(
@@ -147,6 +151,6 @@ mod tests {
     #[should_panic(expected = "one current tab at most")]
     fn two_current_tabs_panic() {
         let tabs = [tab("A", "#a", true), tab("B", "#b", true)];
-        let _ = rsx! { <ConsoleTabs label="X" variant=(ConsoleTabsVariant::Underlined) tabs=(&tabs) /> }.render();
+        let _ = rsx! { <ConsoleTabs label="X" variant=(ConsoleTabsVariant::Underlined) tabs=(&tabs) class="" /> }.render();
     }
 }

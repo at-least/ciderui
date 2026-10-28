@@ -17,5 +17,7 @@
  "pager | .cui-console-pager .cui-console-btn[href] | 390 | box-width": "30px",
  "pager first | .cui-console-pager-summary | 1200 | box-left": "529.109375px",
  "pager first | .cui-console-pager .cui-console-btn | 1200 | box-left": "640.890625px",
+ "pager later | .cui-console-pager .cui-console-btn:not(.cui-console-btn-icon) | 1200 | box-height": "30px",
+ "pager later | .cui-console-pager .cui-console-btn:not(.cui-console-btn-icon) | 1200 | box-right": "604.6875px",
  "pager dark | .cui-console-pager-summary | 1200 | color": "oklch(1 0 0 / 0.85)"
 }

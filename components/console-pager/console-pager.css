@@ -18,10 +18,12 @@
  * a cui-console-btn-icon     the previous and the next page, a chevron
  *                            named by its aria-label; a direction with no
  *                            page is left out, not disabled
+ * a cui-console-btn          the first page, "First" (aria-label "First
+ *                            page"), before the previous one
  *
  * The forums': the row centered, its 10px, the summary's 15px either side
- * and its color the text's, the buttons icons alone with their names, a
- * missing direction left out. ciderui's: the console's own gray button
+ * and its color the text's, the buttons icons alone with their names, the
+ * First button a word, a missing direction left out. ciderui's: the console's own gray button
  * (the forums' neutral one is near-black), its 30px and corners, Lucide's
  * chevrons where the forums draw SF Pro Icons', the console's 13px body
  * type where the forums' text is 15px. */

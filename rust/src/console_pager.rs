@@ -1,18 +1,18 @@
 use hypertext::{Buffer, prelude::*};
 
-use crate::lucide;
+use crate::{Class, lucide};
 
 /// `cui-console-pager` (`components/console-pager`): under a long list,
 /// the buttons to the pages either side of a line saying what it shows,
 /// as Apple Developer Forums' pager draws them: a chevron alone, named
-/// "Previous page" or "Next page", and no button at all for a direction
-/// with no page.
+/// "Previous page" or "Next page", a "First" button before them, and no
+/// button at all for a direction with no page.
 ///
 /// ```
 /// use hypertext::prelude::*;
 /// use ciderui::ConsolePager;
 ///
-/// let html = rsx! { <ConsolePager label="Issue pages" summary="1–50 of 230" previous=None next=(Some("?page=2")) /> }.render();
+/// let html = rsx! { <ConsolePager label="Issue pages" summary="1–50 of 230" first=None previous=None next=(Some("?page=2")) class="" /> }.render();
 /// assert!(html.as_inner().contains(r#"aria-label="Next page""#));
 /// assert!(!html.as_inner().contains("Previous page"));
 /// ```
@@ -21,12 +21,19 @@ pub struct ConsolePager<'a> {
     /// pages"), so a page with two lists names each. Required: an empty one
     /// panics.
     pub label: &'a str,
-    /// What the list shows ("51–100 of 230"). Required: an empty one panics.
+    /// What the list shows ("51–100 of 230"); `""` for none (a list paged
+    /// by a cursor knows nothing to say past its first page).
     pub summary: &'a str,
+    /// The first page's URL, a "First" button; `None` where there is none
+    /// or where the previous page is the first. A list paged by a cursor,
+    /// which cannot step back one page, gives this and no `previous`.
+    pub first: Option<&'a str>,
     /// The previous page's URL; `None` where there is none.
     pub previous: Option<&'a str>,
     /// The next page's URL; `None` where there is none.
     pub next: Option<&'a str>,
+    /// The page's utilities on the `<nav>`; `""` for none.
+    pub class: &'a str,
 }
 
 impl Renderable for ConsolePager<'_> {
@@ -36,15 +43,23 @@ impl Renderable for ConsolePager<'_> {
             "ciderui::ConsolePager needs a label"
         );
         assert!(
-            !self.summary.is_empty(),
-            "ciderui::ConsolePager needs a summary"
+            !self.summary.is_empty()
+                || self.first.is_some()
+                || self.previous.is_some()
+                || self.next.is_some(),
+            "ciderui::ConsolePager needs a summary or a page to go to"
         );
         rsx! {
-            <nav class="cui-console-pager" aria-label=(self.label)>
+            <nav class=(Class("cui-console-pager", self.class)) aria-label=(self.label)>
+                @if let Some(href) = self.first {
+                    <a class="cui-console-btn" href=(href) aria-label="First page">"First"</a>
+                }
                 @if let Some(href) = self.previous {
                     <a class="cui-console-btn cui-console-btn-icon" href=(href) aria-label="Previous page">(lucide::CHEVRON_LEFT)</a>
                 }
-                <p class="cui-console-pager-summary">(self.summary)</p>
+                @if !self.summary.is_empty() {
+                    <p class="cui-console-pager-summary">(self.summary)</p>
+                }
                 @if let Some(href) = self.next {
                     <a class="cui-console-btn cui-console-btn-icon" href=(href) aria-label="Next page">(lucide::CHEVRON_RIGHT)</a>
                 }
@@ -63,7 +78,7 @@ mod tests {
     fn renders_the_examples() {
         let pager = rsx! {
             <div class="cui-console-page">
-                <ConsolePager label="Issue pages" summary="51–100 of 230" previous=(Some("#page-1")) next=(Some("#page-3")) />
+                <ConsolePager label="Issue pages" summary="51–100 of 230" first=None previous=(Some("#page-1")) next=(Some("#page-3")) class="" />
             </div>
         }
         .render();
@@ -75,7 +90,7 @@ mod tests {
         );
         let first = rsx! {
             <div class="cui-console-page">
-                <ConsolePager label="Issue pages" summary="1–50 of 230" previous=None next=(Some("#page-2")) />
+                <ConsolePager label="Issue pages" summary="1–50 of 230" first=None previous=None next=(Some("#page-2")) class="" />
             </div>
         }
         .render();
@@ -88,8 +103,24 @@ mod tests {
     }
 
     #[test]
-    #[should_panic(expected = "needs a summary")]
-    fn an_empty_summary_panics() {
-        let _ = rsx! { <ConsolePager label="Pages" summary="" previous=None next=None /> }.render();
+    fn a_later_page_of_a_cursor_list() {
+        let later = rsx! {
+            <div class="cui-console-page">
+                <ConsolePager label="Timeline pages" summary="" first=(Some("#newest")) previous=None next=(Some("#older")) class="" />
+            </div>
+        }
+        .render();
+        assert_eq!(
+            *later.as_inner(),
+            example(include_str!(
+                "../../components/console-pager/examples/later.html"
+            ))
+        );
+    }
+
+    #[test]
+    #[should_panic(expected = "needs a summary or a page to go to")]
+    fn nothing_to_show_panics() {
+        let _ = rsx! { <ConsolePager label="Pages" summary="" first=None previous=None next=None class="" /> }.render();
     }
 }
