@@ -1,53 +1,46 @@
-/* ciderui — the console's pager: under a long list, a line saying what it
- * shows and the buttons to the pages either side.
+/* ciderui — the console's pager: under a long list, the buttons to the
+ * pages either side of a line saying what it shows.
  *
- * App Store Connect pages no list it showed this account and its toolkit
- * has no pager; this one is a toolkit control row
- * (reference/asc/results/controlrow.json: --tb-component-ControlRow-*, md)
- * of the console's buttons, its line the body text style
- * (tokens.json: --tb-typography-textStyle-bodyRegular-*).
+ * Apple Developer Forums' pager (reference/developer-forums/: its post
+ * lists, where App Store Connect paged no list this account showed):
  *
  *   <nav class="cui-console-pager" aria-label="Issue pages">
- *     <p class="cui-console-pager-summary">1–50 of 230</p>
- *     <div class="cui-console-pager-actions">
- *       <a class="cui-console-btn" href="?page=1">Previous</a>
- *       <a class="cui-console-btn" href="?page=3">Next</a>
- *     </div>
+ *     <a class="cui-console-btn cui-console-btn-icon" href="?page=1"
+ *        aria-label="Previous page"><svg …></svg></a>
+ *     <p class="cui-console-pager-summary">51–100 of 230</p>
+ *     <a class="cui-console-btn cui-console-btn-icon" href="?page=3"
+ *        aria-label="Next page"><svg …></svg></a>
  *   </nav>
  *
- * cui-console-pager          one line: the summary at its start, the
- *                            buttons at its end, 24px between them at least
- *                            (a control row's section); wrapping on a phone
- * cui-console-pager-summary  13px on 18px, the secondary label
- * cui-console-pager-actions  the buttons (cui-console-btn; a disabled one
- *                            where there is no page that way), 8px apart (a
- *                            control row's md button)
+ * cui-console-pager          one centered row, 10px between its parts
+ * cui-console-pager-summary  what the list shows, 13px on 18px, the label,
+ *                            15px either side
+ * a cui-console-btn-icon     the previous and the next page, a chevron
+ *                            named by its aria-label; a direction with no
+ *                            page is left out, not disabled
  *
- * The toolkit's: the 24px and the 8px (read off the page's root, not the
- * token pass: controlrow.json), the body's type. ciderui's: the summary's
- * secondary label (fitted, tokens.css), the line's layout. */
+ * The forums': the row centered, its 10px, the summary's 15px either side
+ * and its color the text's, the buttons icons alone with their names, a
+ * missing direction left out. ciderui's: the console's own gray button
+ * (the forums' neutral one is near-black), its 30px and corners, Lucide's
+ * chevrons where the forums draw SF Pro Icons', the console's 13px body
+ * type where the forums' text is 15px. */
 
 @layer components {
   .cui-console-pager {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    gap: 8px 24px;
+    justify-content: center;
+    gap: 10px;
   }
 
   .cui-console-pager-summary {
     margin: 0;
+    padding-inline: 15px;
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
     letter-spacing: normal;
-    color: var(--cui-c-console-neutral-label-secondary);
-  }
-
-  .cui-console-pager-actions {
-    display: flex;
-    gap: 8px;
-    margin-inline-start: auto;
+    color: var(--cui-c-console-neutral-label-primary);
   }
 }

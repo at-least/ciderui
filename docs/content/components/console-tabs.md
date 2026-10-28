@@ -7,7 +7,7 @@ category = "Console"
 image = "pictures/console-tabs.png"
 +++
 
-App Store Connect’s tab bar, in its two forms: underlined, a page’s sections, the current one on a rule; filled, a choice of a few (a chart’s period), each a pill, the chosen one filled. Each tab is the page’s own link. On a phone, an underlined bar too wide for the screen stays one row and scrolls sideways, the side still hiding content fading; a tab focused near its end is brought in clear of the fade.
+App Store Connect’s tab bar, in its two forms: underlined, a page’s sections, the current one on a rule; filled, a choice of a few views of one thing (a chart’s period, a list’s status), each a pill, the chosen one filled, as Apple Developer Forums’ Topics and All Posts and the HIG’s segmented control. Each tab is the page’s own link. On a phone, an underlined bar too wide for the screen stays one row and scrolls sideways, the side still hiding content fading; a tab focused near its end is brought in clear of the fade.
 
 ```css
 @import "ciderui/components/console-tabs/console-tabs.css";
@@ -34,3 +34,5 @@ App Store Connect’s tab bar, in its two forms: underlined, a page’s sections
 ## Large
 
 {{ <cui_example file="console-tabs/large" title="Large tabs" pad={true} /> }}
+
+The crate writes either with `ConsoleTabs` and its `ConsoleTab`s.

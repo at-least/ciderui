@@ -16,8 +16,8 @@
 //    the tab where :focus-visible matches;
 // 4. the thumbnails 240px tall at their own aspect, a wider one than a
 //    phone's column narrowed to it, still 240px;
-// 5. the pager: on one line, its actions 24px at least after its summary,
-//    its buttons 8px apart (375 and 1200);
+// 5. the pager: one centered row, its previous button, summary and next
+//    button on one line, 10px between them (375 and 1200);
 // 6. the page column: one column at 900; at 1200 the sidebar's 225px
 //    column 30px before the page, 40px in, its header and body with no room
 //    at their sides; at 1920 the column 1440px wide, centered (240px in);
@@ -175,11 +175,11 @@ try {
   for (const id of ['pager-375', 'pager-1200']) {
     const p = await page.run(`(async () => {
       const d = ${frame(id)}.document;
-      const s = d.querySelector('.cui-console-pager-summary').getBoundingClientRect();
-      const [a, b] = [...d.querySelectorAll('.cui-console-pager-actions > *')].map((e) => e.getBoundingClientRect());
-      return { summaryRight: s.right, summaryTop: s.top, firstLeft: a.left, firstTop: a.top, between: b.left - a.right };
+      const n = d.querySelector('.cui-console-pager').getBoundingClientRect();
+      const [a, s, b] = [...d.querySelectorAll('.cui-console-pager > *')].map((e) => e.getBoundingClientRect());
+      return { gaps: [s.left - a.right, b.left - s.right], tops: [a.top + a.height / 2, s.top + s.height / 2, b.top + b.height / 2], offCenter: (a.left + b.right) / 2 - (n.left + n.right) / 2 };
     })()`);
-    claim(`5 pager at ${id.split('-')[1]}: one line, 24px at least after the summary, buttons 8px apart`, Math.abs(p.firstTop - p.summaryTop) < 20 && p.firstLeft - p.summaryRight >= 24 && Math.abs(p.between - 8) < 0.01, p);
+    claim(`5 pager at ${id.split('-')[1]}: one centered row, 10px between its parts`, p.gaps.every((g) => Math.abs(g - 10) < 0.01) && Math.max(...p.tops) - Math.min(...p.tops) < 1 && Math.abs(p.offCenter) < 1, p);
   }
 
   // 6

@@ -28,7 +28,9 @@ mod console_empty;
 mod console_field;
 mod console_hint;
 mod console_menu;
+mod console_pager;
 mod console_sidebar;
+mod console_tabs;
 #[cfg(feature = "css")]
 pub mod css;
 mod field;
@@ -64,10 +66,14 @@ pub use console_checkbox::ConsoleCheckboxBox;
 pub use console_chip::ConsoleChip;
 pub use console_dialog::ConsoleDialog;
 pub use console_empty::{ConsoleEmpty, ConsoleEmptySize};
-pub use console_field::ConsoleSelect;
+pub use console_field::{
+    ConsoleError, ConsoleFormField, ConsoleHelp, ConsoleSelect, console_error_id, console_help_id,
+};
 pub use console_hint::ConsoleHint;
 pub use console_menu::{ConsoleMenu, ConsoleMenuGroup, ConsoleMenuItem};
+pub use console_pager::ConsolePager;
 pub use console_sidebar::{ConsoleSidebar, ConsoleSidebarItem};
+pub use console_tabs::{ConsoleTab, ConsoleTabs, ConsoleTabsVariant};
 pub use field::{Field, Select, TextArea};
 pub use footer::{Footer, FooterSection};
 pub use footnote::Footnote;

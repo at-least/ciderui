@@ -12,7 +12,7 @@ Do the console parts crashcart drew last (the tabs' phone row and its edge fade,
 
 Claim 3 failed first in Chromium: the last tab, 3.4px of it in the row, focused by script, was left where it was (3.375px of 54.9px shown); Firefox 153 brought it in. A browser's focus scrolls only a tab it judges out of view: with the row scrolled 0, 20 and 40px (the tab's start 3, 23 and 43px inside the row's end), both browsers left the 23px and 43px ones clipped. The phone row's `scroll-padding-inline: 24px` (the fade's width) made both bring in the 3px and 23px ones whole; the 43px one, its start outside the padding, they still leave clipped by 12px, which the host's script brings in: crashcart's, on focus, `scrollIntoView` to the nearest edge (its e2e/layout.mjs: each of six tabs whole once focused, the row at either end, in Chromium). Here the 43px one so scrolled lands whole at the row's end (Chromium and Firefox: the row scrolled to its end, 52px and 51px), the side the row's end state leaves unfaded.
 
-Measured 2026-10-28 (`results/`).
+Measured 2026-10-28 (`results/`). The pager redrawn after Apple Developer Forums' (2026-10-29, `../developer-forums/`): claim 5 now holds it to one centered row, 10px between its parts, rerun in Chromium 151 alone (`ok` at 375 and 1200); its Firefox cell is the old claim's.
 
 ## Running it
 

@@ -35,4 +35,4 @@ App Store Connect’s fields: a text field, a dropdown and a multi-line field, e
 
 {{ <cui_example file="console-field/sizes" title="Console field sizes" pad={true} /> }}
 
-The crate writes a dropdown’s box with `ConsoleSelect`.
+The crate writes a dropdown’s box with `ConsoleSelect`, and a field’s box, label, help and error with `ConsoleFormField`, `ConsoleHelp` and `ConsoleError`.

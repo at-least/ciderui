@@ -168,24 +168,34 @@
     ]
    }
   },
-  "5 pager at 375: one line, 24px at least after the summary, buttons 8px apart": {
+  "5 pager at 375: one centered row, 10px between its parts": {
    "ok": true,
    "value": {
-    "summaryRight": 71.78125,
-    "summaryTop": 6,
-    "firstLeft": 239.96875,
-    "firstTop": 0,
-    "between": 8
+    "gaps": [
+     10,
+     10
+    ],
+    "tops": [
+     15,
+     15,
+     15
+    ],
+    "offCenter": 0
    }
   },
-  "5 pager at 1200: one line, 24px at least after the summary, buttons 8px apart": {
+  "5 pager at 1200: one centered row, 10px between its parts": {
    "ok": true,
    "value": {
-    "summaryRight": 71.78125,
-    "summaryTop": 6,
-    "firstLeft": 1064.96875,
-    "firstTop": 0,
-    "between": 8
+    "gaps": [
+     10,
+     10
+    ],
+    "tops": [
+     15,
+     15,
+     15
+    ],
+    "offCenter": 0
    }
   },
   "6 page column at 900: one column": {
@@ -244,103 +254,103 @@
     "shownFound": false,
     "frames": [
      [
-      7,
+      1,
       0
      ],
      [
-      23,
-      0.070942
+      17,
+      0.0711296
      ],
      [
-      40,
-      0.221255
+      34,
+      0.220475
      ],
      [
-      57,
-      0.408367
+      51,
+      0.408676
      ],
      [
-      73,
-      0.576044
+      68,
+      0.576293
      ],
      [
-      90,
-      0.7053
+      84,
+      0.705488
      ],
      [
-      107,
-      0.802339
+      101,
+      0.802478
      ],
      [
-      124,
-      0.873613
+      118,
+      0.873352
      ],
      [
-      140,
-      0.924705
+      134,
+      0.924777
      ],
      [
-      157,
-      0.960436
+      151,
+      0.960485
      ],
      [
-      173,
-      0.983495
+      168,
+      0.983525
      ],
      [
-      190,
-      0.996122
+      184,
+      0.996087
      ],
      [
-      207,
+      201,
       1
      ],
      [
-      223,
+      218,
       1
      ],
      [
-      240,
+      234,
       1
      ],
      [
-      257,
+      251,
       1
      ],
      [
-      273,
+      268,
       1
      ],
      [
-      290,
+      284,
       1
      ],
      [
-      307,
+      301,
       1
      ],
      [
-      323,
+      317,
       1
      ],
      [
-      340,
+      334,
       1
      ],
      [
-      357,
+      351,
       1
      ],
      [
-      373,
+      368,
       1
      ],
      [
-      390,
+      384,
       1
      ],
      [
-      407,
+      401,
       1
      ]
     ]
