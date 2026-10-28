@@ -1,0 +1,18 @@
+{
+ "disclosure | .cui-console-disclosure:not([open]) > summary | 1200 | list-style-type": "none",
+ "disclosure | .cui-console-disclosure:not([open]) > summary | 1200 | display": "inline-flex",
+ "disclosure | .cui-console-disclosure:not([open]) > summary | 1200 | column-gap": "4px",
+ "disclosure | .cui-console-disclosure:not([open]) > summary | 1200 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "disclosure | .cui-console-disclosure:not([open]) > summary | 1200 | cursor": "pointer",
+ "disclosure | .cui-console-disclosure:not([open]) > summary:hover | 1200 | color": "oklch(0 0 0 / 0.85)",
+ "disclosure | .cui-console-disclosure:not([open]) .cui-console-disclosure-chevron | 1200 | rotate": "none",
+ "disclosure | .cui-console-disclosure:not([open]) .cui-console-disclosure-chevron | 1200 | box-width": "13px",
+ "disclosure | .cui-console-disclosure:not([open]) .cui-console-disclosure-chevron | 1200 | box-height": "13px",
+ "disclosure | .cui-console-disclosure:not([open]) .cui-console-disclosure-chevron | 1200 | box-left": "0px",
+ "disclosure | .cui-console-disclosure[open] .cui-console-disclosure-chevron | 1200 | rotate": "90deg",
+ "disclosure touch | .cui-console-disclosure:not([open]) > summary::after | 390 | height": "44px",
+ "disclosure button | .cui-console-disclosure:not([open]) > summary | 1200 | list-style-type": "none",
+ "disclosure button | .cui-console-disclosure:not([open]) .cui-console-disclosure-chevron | 1200 | rotate": "none",
+ "disclosure button | .cui-console-disclosure[open] .cui-console-disclosure-chevron | 1200 | rotate": "180deg",
+ "disclosure dark | .cui-console-disclosure:not([open]) > summary | 1200 | color": "oklch(0.879 0.015 286.1 / 0.6)"
+}

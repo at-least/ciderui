@@ -58,6 +58,7 @@ const SCENES = [
   { name: 'console-badge', html: `<div class="cui-console-page" style="width:480px;padding:24px;display:grid;gap:20px">${example('console-badge/badges')}${example('console-badge/plain')}</div>`, zoom: 2, center: true },
   { name: 'console-chip', html: `<div class="cui-console-page" style="width:420px;padding:24px">${example('console-chip/chips')}</div>`, zoom: 2, center: true },
   { name: 'console-dialog', html: `<div class="cui-console-page" style="width:640px;height:300px;padding:24px;display:grid;place-items:center">${example('console-dialog/dialog').replace(' aria-labelledby="ignore-title">', ' aria-labelledby="ignore-title" open>')}</div>`, zoom: 1.4, center: true },
+  { name: 'console-disclosure', html: `<div class="cui-console-page" style="width:420px;padding:24px">${example('console-disclosure/disclosure')}</div>`, zoom: 2, center: true },
   { name: 'console-banner', html: `<div class="cui-console-page" style="width:560px;padding:24px">${example('console-banner/banner')}</div>`, zoom: 1.8, center: true },
   { name: 'console-bar', html: `<div class="cui-console-page" style="width:520px;padding:24px">${example('console-bar/bar')}</div>`, zoom: 2, center: true },
   { name: 'console-btn', html: `<div class="cui-console-page" style="padding:24px">${example('console-btn/variants')}</div>`, zoom: 2, width: 560, center: true },

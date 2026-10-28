@@ -1,0 +1,96 @@
+/* ciderui — the console's disclosure: a <details> that hides what is not
+ * needed yet (a stack's system frames, a frame's source, a phone's
+ * filters) behind a line or a button that says what it hides.
+ *
+ * The HIG's disclosure controls (read 2026-10-29): a triangle at the
+ * label's leading edge pointing inward while what it hides is hidden and
+ * down while it shows; a disclosure button pointing down while hidden and
+ * up while shown; a label that says what is disclosed. Drawn as App Store
+ * Connect's menu group draws its chevron (components/console-menu: Lucide's
+ * chevron-right, 1em, the secondary label, turned 90deg open):
+ *
+ *   <details class="cui-console-disclosure">
+ *     <summary class="cui-console-disclosure-summary">
+ *       <svg class="cui-console-disclosure-chevron" …chevron-right…></svg>
+ *       12 system frames
+ *     </summary>
+ *     …
+ *   </details>
+ *
+ *   <details class="cui-console-disclosure" data-variant="button">
+ *     <summary class="cui-console-btn">
+ *       Filters <svg class="cui-console-disclosure-chevron" …chevron-down…></svg>
+ *     </summary>
+ *     …
+ *   </details>
+ *
+ * cui-console-disclosure          the <details>; data-variant="button" when
+ *                                 its summary is a console button
+ * cui-console-disclosure-summary  the line: its chevron 4px before its label,
+ *                                 the text's size, the secondary label, the
+ *                                 label's own hovered; no marker of the
+ *                                 browser's; on a touch screen a target 44px
+ *                                 tall at least
+ * cui-console-disclosure-chevron  Lucide's chevron-right before the label,
+ *                                 turned down (90deg) open; in a button,
+ *                                 chevron-down after the label, turned up
+ *                                 (180deg) open
+ *
+ * The HIG's: the triangle's place and turns, the button's turns. App Store
+ * Connect's menu group's: the chevron's size and color. ciderui's: the 4px
+ * between chevron and label; no motion (the toolkit's controls draw none).
+ * The page writes the icons (the crate's lucide::CHEVRON_RIGHT and
+ * CHEVRON_DOWN), as a menu group's. */
+
+@layer components {
+  .cui-console-disclosure > :where(summary) {
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  .cui-console-disclosure-summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--cui-c-console-neutral-label-secondary);
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--cui-c-console-neutral-label-primary);
+      }
+    }
+
+    /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility) */
+    @media (pointer: coarse) {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: max(100%, 44px);
+        height: max(100%, 44px);
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .cui-console-disclosure-chevron {
+    flex: none;
+    width: 1em;
+    height: 1em;
+
+    :where(.cui-console-disclosure[open]) > :where(summary) > & {
+      rotate: 90deg;
+    }
+
+    :where(.cui-console-disclosure[data-variant="button"][open]) > :where(summary) > & {
+      rotate: 180deg;
+    }
+  }
+}
