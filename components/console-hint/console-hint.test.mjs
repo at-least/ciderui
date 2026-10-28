@@ -32,6 +32,7 @@ export const cases = [
       { target: B, props: ['color'], state: 'active', tb: [`${I}-variant-effect-press-color`] },
       { target: B, props: ['outline-width', 'outline-style', 'outline-color', 'outline-offset'], state: 'focus-visible', tb: [`${I}-variant-focus-on-outline-width`, `${I}-variant-focus-on-outline-style`, `${I}-variant-focus-on-outline-color`, `${I}-outlineOffset`] },
       { target: POP, props: ['display'], golden: 'closed until its button opens it' },
+      { target: B, pseudo: '::after', props: ['width', 'height'], golden: 'its target 20px square, the HIG\'s macOS minimum (Accessibility, Mobility), round the 20 by 18px button' },
     ],
   },
   {
@@ -62,6 +63,7 @@ export const cases = [
     widths: [390],
     checks: [
       { target: B, props: ['color'], state: 'hover', rest: 'a tapped hint keeps no hover (rule 5)' },
+      { target: B, pseudo: '::after', props: ['width', 'height'], golden: 'its target on a touch screen 32 by 44px: the HIG\'s 44pt height, over its 28pt minimum across, no wider so it leaves the control beside the word' },
     ],
   },
   {
