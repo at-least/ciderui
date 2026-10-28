@@ -51,6 +51,16 @@ export const cases = [
     ],
   },
   {
+    name: 'checkbox touch',
+    html: ex('checkbox'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: `${OFF} .cui-console-checkbox-input`, props: ['box-width', 'box-height'], golden: 'the transparent input 44px square on a touch screen, the HIG\'s 44pt (Accessibility, Mobility)' },
+      { target: `${OFF} .cui-console-checkbox-box`, props: ['box-width', 'box-height'], golden: 'the box drawn as before, 15px' },
+    ],
+  },
+  {
     name: 'checkbox dark',
     html: `<div class="cui-dark">${ex('checkbox')}</div>`,
     widths: [1200],

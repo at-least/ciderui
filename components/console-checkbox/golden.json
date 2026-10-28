@@ -38,6 +38,10 @@
  "checkbox indeterminate | [name=\"all\"] + .cui-console-checkbox-box | 1200 | background-color": "oklch(0.542 0.162 251.9)",
  "checkbox indeterminate | [name=\"all\"] + .cui-console-checkbox-box svg:last-child | 1200 | visibility": "visible",
  "checkbox indeterminate | [name=\"all\"] + .cui-console-checkbox-box svg:first-child | 1200 | visibility": "hidden",
+ "checkbox touch | label:nth-child(1) .cui-console-checkbox-input | 390 | box-width": "44px",
+ "checkbox touch | label:nth-child(1) .cui-console-checkbox-input | 390 | box-height": "44px",
+ "checkbox touch | label:nth-child(1) .cui-console-checkbox-box | 390 | box-width": "15px",
+ "checkbox touch | label:nth-child(1) .cui-console-checkbox-box | 390 | box-height": "15px",
  "checkbox dark | label:nth-child(1) .cui-console-checkbox-box | 1200 | border-top-color": "oklch(0.879 0.015 286.1 / 0.42)",
  "checkbox dark | label:nth-child(1) .cui-console-checkbox-box | 1200 | background-color": "oklch(0 0 0)",
  "checkbox dark | label:nth-child(2) .cui-console-checkbox-box | 1200 | background-color": "oklch(0.512 0.203 260.5)"

@@ -15,7 +15,8 @@
  *
  * cui-console-radio          the radio and its label (a <label>), its label
  *                            9px after the circle, 13px on 18px, the label;
- *                            disabled, the disabled label
+ *                            disabled, the disabled label; on a touch
+ *                            screen 44px tall at least
  * cui-console-radio-input    the input: 15px, round, a 1.5px edge, white;
  *                            chosen, the brand's blue and its shadow, a
  *                            6.43px white mark; disabled, a fainter edge on
@@ -49,7 +50,16 @@
       color: var(--cui-c-console-neutral-label-disabled);
       cursor: default;
     }
+
+    /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility): the
+       label 44px tall at least, its content centered in it. Not a larger
+       target drawn round it: stacked 12px apart, it reached the radio above */
+    @media (pointer: coarse) {
+      min-height: 44px;
+      align-content: center;
+    }
   }
+
 
   .cui-console-radio-input {
     box-sizing: border-box;

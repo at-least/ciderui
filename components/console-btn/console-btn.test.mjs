@@ -101,6 +101,25 @@ export const cases = [
     ],
   },
   {
+    name: 'touch target',
+    html: ex('icon'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: '.cui-console-btn-icon', pseudo: '::after', props: ['width', 'height'], golden: 'a 30px icon button\'s target 44px square on a touch screen, the HIG\'s 44pt (Accessibility, Mobility)' },
+      { target: '.cui-console-btn:not(.cui-console-btn-icon)', pseudo: '::after', props: ['width', 'height'], golden: 'a labelled button\'s target its width by 44px, the HIG\'s 44pt (Accessibility, Mobility)' },
+      { target: '.cui-console-btn-icon', props: ['position', 'box-height'], golden: 'positioned for its target, its look unchanged: 30px' },
+    ],
+  },
+  {
+    name: 'no target off touch',
+    html: ex('icon'),
+    widths: [1200],
+    checks: [
+      { target: '.cui-console-btn-icon', pseudo: '::after', props: ['content'], golden: 'a pointer is exact: no larger target, App Store Connect\'s 30px' },
+    ],
+  },
+  {
     name: 'dark',
     html: `<div class="cui-dark">${ex('variants')}</div>`,
     widths: [1200],

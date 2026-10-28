@@ -26,6 +26,7 @@
  * cui-console-btn-icon     an icon alone: square, its icon 16px (13px small,
  *                          20px large), its label its aria-label
  * an <svg> in it           an icon before or after the label, 1em
+ * on a touch screen        its target (::after) 44px at least each way
  *
  * Hovered and pressed, each variant's own colors. The toolkit's: the sizes,
  * the corners (its rounded rectangle, the analytics page's, where its
@@ -181,6 +182,25 @@
     &[data-size="lg"],
     &[data-size="xl"] {
       font-size: 20px;
+    }
+  }
+
+  /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility), round
+     the button as the hint's is; the button positioned at no specificity, so
+     a part that places it (the skip link, fixed) keeps its place */
+  @media (pointer: coarse) {
+    :where(.cui-console-btn) {
+      position: relative;
+    }
+
+    .cui-console-btn::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: max(100%, 44px);
+      height: max(100%, 44px);
+      transform: translate(-50%, -50%);
     }
   }
 }

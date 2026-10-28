@@ -38,6 +38,8 @@
  "table | .cui-console-table-subtitle | 640 | display": "block",
  "table | tbody tr:first-child | 640 | cursor": "pointer",
  "table | tbody tr:first-child td:first-child | 640 | hit": "a.cui-console-table-link a.cui-console-table-link a.cui-console-table-link a.cui-console-table-link a.cui-console-table-link",
+ "table sort touch | .cui-console-table-sort::after | 390 | width": "44px",
+ "table sort touch | .cui-console-table-sort::after | 390 | height": "44px",
  "table sticky | thead | 1200 | position": "sticky",
  "table sticky | thead | 1200 | top": "0px",
  "table sticky | thead | 1200 | z-index": "1",

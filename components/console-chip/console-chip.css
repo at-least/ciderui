@@ -21,6 +21,8 @@
  * cui-console-chip-remove  the control that removes a filter (a link or a
  *                          button), its × (a Lucide x) 12px, the secondary
  *                          label, the label's own hovered
+ * on a touch screen        a chip that is a link and a remove control: a
+ *                          target (::after) 44px at least each way
  *
  * The toolkit's: the room, the corners, the gap, the type, the fill and
  * the label, a link's hovered and pressed fills (light; dark derived:
@@ -83,6 +85,24 @@
       &:hover {
         color: var(--cui-c-console-neutral-label-primary);
       }
+    }
+  }
+
+  /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility),
+     round a chip that is a link and round a remove control's × */
+  @media (pointer: coarse) {
+    :where(a.cui-console-chip, button.cui-console-chip, .cui-console-chip-remove) {
+      position: relative;
+    }
+
+    :is(a.cui-console-chip, button.cui-console-chip, .cui-console-chip-remove)::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: max(100%, 44px);
+      height: max(100%, 44px);
+      transform: translate(-50%, -50%);
     }
   }
 }

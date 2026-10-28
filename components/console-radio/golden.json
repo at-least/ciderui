@@ -28,6 +28,9 @@
  "radios focus | label:nth-of-type(1) .cui-console-radio-input | 1200 | outline-style": "solid",
  "radios focus | label:nth-of-type(1) .cui-console-radio-input | 1200 | outline-width": "2px",
  "radios focus | label:nth-of-type(1) .cui-console-radio-input | 1200 | outline-color": "rgb(0, 113, 227)",
+ "radios touch | label:nth-of-type(3) | 390 | box-height": "44px",
+ "radios touch | label:nth-of-type(3) .cui-console-radio-input | 390 | box-width": "15px",
+ "radios touch | label:nth-of-type(3) .cui-console-radio-input | 390 | box-height": "15px",
  "radios dark | label:nth-of-type(2) .cui-console-radio-input | 1200 | border-top-color": "oklch(0.879 0.015 286.1 / 0.42)",
  "radios dark | label:nth-of-type(2) .cui-console-radio-input | 1200 | background-color": "oklch(0 0 0)",
  "radios dark | label:nth-of-type(1) .cui-console-radio-input | 1200 | background-color": "oklch(0.512 0.203 260.5)"

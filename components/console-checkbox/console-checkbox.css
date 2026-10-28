@@ -16,7 +16,8 @@
  *                             <span> where the input has an aria-label: a
  *                             table row's): 9px between box and label, 13px
  *                             on 18px
- * cui-console-checkbox-input  the input, transparent, over the box
+ * cui-console-checkbox-input  the input, transparent, over the box; on a
+ *                             touch screen 44px square, centered on it
  * cui-console-checkbox-box    the box: 15px, 4px corners, a 1px edge, white;
  *                             checked, the brand's blue, its check (a Lucide
  *                             check, white) shown; indeterminate, a white
@@ -62,6 +63,15 @@
 
     &:disabled {
       cursor: default;
+    }
+
+    /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility):
+       the transparent input 44px square, centered on the box */
+    @media (pointer: coarse) {
+      left: -14.5px;
+      width: 44px;
+      height: 44px;
+      margin-top: -22px;
     }
   }
 

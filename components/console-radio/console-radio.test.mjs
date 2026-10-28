@@ -42,6 +42,16 @@ export const cases = [
     ],
   },
   {
+    name: 'radios touch',
+    html: ex('radios'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: DISABLED, props: ['box-height'], golden: 'a radio with no caption 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility); 18px with a pointer' },
+      { target: `${DISABLED} .cui-console-radio-input`, props: ['box-width', 'box-height'], golden: 'the radio drawn as before, 15px' },
+    ],
+  },
+  {
     name: 'radios dark',
     html: `<div class="cui-dark">${ex('radios')}</div>`,
     widths: [1200],

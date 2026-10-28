@@ -33,6 +33,8 @@ export const cases = [
     widths: [390],
     checks: [
       { target: TAG, props: ['background-color'], state: 'hover', rest: 'a tapped chip keeps no hovered fill (rule 5)' },
+      { target: TAG, pseudo: '::after', props: ['width', 'height'], golden: 'a chip that is a link: its target its width by 44px on a touch screen, the HIG\'s 44pt (Accessibility, Mobility)' },
+      { target: '.cui-console-chip-remove', pseudo: '::after', props: ['width', 'height'], golden: 'the 12px ×: its target 44px square on a touch screen, the HIG\'s 44pt (Accessibility, Mobility)' },
     ],
   },
   {

@@ -71,6 +71,15 @@ export const cases = [
     ],
   },
   {
+    name: 'table sort touch',
+    html: ex('sticky'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: '.cui-console-table-sort', pseudo: '::after', props: ['width', 'height'], golden: 'a header\'s sort link: its target 44px at least each way on a touch screen, the HIG\'s 44pt (Accessibility, Mobility)' },
+    ],
+  },
+  {
     name: 'table sticky',
     html: ex('sticky'),
     widths: [1200, 390],
