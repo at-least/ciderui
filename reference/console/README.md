@@ -6,7 +6,7 @@ Do the console parts crashcart drew last (the tabs' phone row and its edge fade,
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Chromium 151 on Linux | ok | ok (the edge 2px in: red 239 and 228; 12px in: 133 and 122) | ok (54.9px of 54.9px) | ok | ok | ok | ok (0.07 at 27ms, 1 at 213ms) |
 | Firefox 153.0 (Playwright's) on Linux | ok | ok (the same reds) | ok (54.5px of 54.9px) | ok | ok | ok | ok (0.07 at 29ms, 1 at 215ms) |
-| Safari 27, macOS | not run: the Mac did not answer (ping and ssh, 2026-10-28) | | | | | | |
+| Safari 27.0, macOS 27.0 (a tester VM, `../vm.mjs`, 2026-10-29) | ok | ok (the edge 2px in: red 229 at the end) | ok (54.5px of 54.9px) | ok (the 375 column 358px wide, the window's frame) | ok (0.008px off center) | ok | ok |
 | Safari 26.5, iOS simulator | not run: the same | | | | | | |
 | Chrome 156, macOS | not run: the same | | | | | | |
 
@@ -20,5 +20,6 @@ Measured 2026-10-28 (`results/`). The pager redrawn after Apple Developer Forums
 node build.mjs /tmp/ciderui-console
 PW=…/playwright-chromium/index.mjs BROWSER=chromium SITE=/tmp/ciderui-console node run.mjs
 BROWSER=firefox SITE=/tmp/ciderui-console node run.mjs   # Playwright's Firefox, Xvfb
-BROWSER=safari SITE=/tmp/ciderui-console node run.mjs    # on the Mac, Safari quit first (../browsers.mjs); and ios, chrome
+BROWSER=safari SITE=/tmp/ciderui-console node ../vm.mjs node run.mjs   # in a tester VM of its own (../vm.mjs)
+BROWSER=ios SITE=/tmp/ciderui-console node run.mjs     # on a Mac with Xcode; and chrome
 ```
