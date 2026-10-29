@@ -1,0 +1,6 @@
+# test/Dockerfile's context: the image needs the lock file alone (the
+# repository reaches a container through scripts/docker.mjs's docker cp).
+*
+!package.json
+!package-lock.json
+!test/Dockerfile

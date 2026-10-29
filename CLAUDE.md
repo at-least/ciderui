@@ -200,9 +200,11 @@ comment carries only that.
   (`CASES=<regex> node scripts/docker.mjs node test/components.mjs`),
   goldens (`UPDATE_GOLDEN=1 node scripts/docker.mjs node test/components.mjs`),
   the pictures (`node scripts/docker.mjs node scripts/docs-pictures.mjs`).
-- It needs: docker; ciderui-zola checked out beside this repository
-  (`../ciderui-zola`, which docs/themes/ciderui-zola links to), mounted
-  into the image; cargo with rustfmt and clippy, and cargo-nextest (where
+- It needs: docker, local or remote (`DOCKER_HOST=ssh://…`: the
+  repository is copied into the container and what a step writes copied
+  back, nothing bind-mounted); ciderui-zola checked out beside this
+  repository (`../ciderui-zola`, which docs/themes/ciderui-zola links to),
+  copied in beside it; cargo with rustfmt and clippy, and cargo-nextest (where
   it is missing, test/rust.mjs runs cargo test in its place and says so).
 - Where a tool is missing and cannot be installed, `npm test` stops at the
   step that needs it: run each later step alone, and report the step that
