@@ -18,7 +18,10 @@ import { join } from 'node:path';
 import { ROOT } from '../test/compile.mjs';
 
 const IMAGE = 'ciderui-test';
-execFileSync('docker', ['build', '-q', '-t', IMAGE, '-f', join(ROOT, 'test/Dockerfile'), ROOT], { stdio: ['ignore', 'ignore', 'inherit'] });
+// run by the ID this build gives, not by the tag: lab's daemon serves every
+// Mac and checkout, and another's build can move the tag meanwhile
+const image = execFileSync('docker', ['build', '-q', '-t', IMAGE, '-f', join(ROOT, 'test/Dockerfile'), ROOT], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'inherit'] }).trim();
+if (!/^sha256:[0-9a-f]{64}$/.test(image)) throw new Error(`docker build -q gave no image ID: ${image}`);
 
 const STEPS = 'node test/tokens.mjs && node test/type.mjs && node test/page.mjs && node test/components.mjs && node scripts/build-lucide.mjs --check && node scripts/build-docs.mjs --check && node scripts/docs-pictures.mjs --check && node test/docs.mjs';
 const command = process.argv.length > 2 ? process.argv.slice(2) : ['sh', '-c', STEPS];
@@ -31,7 +34,7 @@ const pass = ['CASES', 'UPDATE_GOLDEN'].filter((k) => process.env[k] !== undefin
 const wrap = 'touch /tmp/stamp && "$@"; status=$?; find . -type f -newer /tmp/stamp -not -path "./node_modules/*" > /tmp/written && tar -cf /tmp/written.tar -T /tmp/written; exit $status';
 const id = execFileSync('docker', [
   'create', '--init', '--ipc=host', ...pass,
-  IMAGE, 'sh', '-c', wrap, 'run', ...command,
+  image, 'sh', '-c', wrap, 'run', ...command,
 ], { encoding: 'utf8' }).trim();
 const q = (s) => `'${s.replaceAll("'", "'\\''")}'`;
 // no extended attributes (docker cp refuses macOS's com.apple.provenance,
