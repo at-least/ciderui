@@ -45,7 +45,9 @@
  *                              value lines (a cell's data-label before its
  *                              value, 13px at 500, secondary; a cell with
  *                              none, its value alone), 12px above and below,
- *                              the header hidden
+ *                              the header hidden; a cell with data-empty (a
+ *                              dash, a zero that says nothing) left out of
+ *                              the block, its column kept from 640px
  * cui-console-table-scroll     a box around a table wider than its place,
  *                              which scrolls sideways
  * cui-console-table-sort       a header's label that sorts (a link; its th
@@ -250,6 +252,12 @@
 
       :where(td:not([data-label]), td[data-label=""])::before {
         content: none;
+      }
+
+      /* after :where(td)'s display, which it overrides at the same
+         specificity */
+      :where(td[data-empty]) {
+        display: none;
       }
     }
   }

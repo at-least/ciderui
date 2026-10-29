@@ -105,6 +105,8 @@ export const cases = [
       { target: 'tbody tr:first-child td:nth-child(2)', props: ['display', 'justify-content', 'padding-top', 'border-bottom-width'], golden: 'a cell a line, its label at its start, its value at its end, 2px above and below' },
       { target: 'tbody tr:first-child td:nth-child(2)', pseudo: '::before', props: ['content', 'color', 'font-size', 'font-weight'], golden: 'its label, the cell\'s data-label, 13px at 500, the secondary label' },
       { target: 'tbody tr:first-child td:first-child', pseudo: '::before', props: ['content'], golden: 'a cell with no data-label, its value alone' },
+      { target: 'tbody tr:first-child td[data-empty]', props: ['display'], golden: 'a cell that says nothing (data-empty) left out of the block' },
+      { target: 'tbody tr:last-child td:last-child', props: ['display'], golden: 'the same column with a value, a line' },
     ],
   },
   {
@@ -113,6 +115,7 @@ export const cases = [
     widths: [1200],
     checks: [
       { target: 'tbody tr:first-child td:nth-child(2)', props: ['display'], golden: 'from 640px a stacking table is a table' },
+      { target: 'tbody tr:first-child td[data-empty]', props: ['display'], golden: 'from 640px an empty cell keeps its column' },
     ],
   },
   {
