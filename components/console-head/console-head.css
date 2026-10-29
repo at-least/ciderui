@@ -1,0 +1,75 @@
+/* ciderui — the console's head: what a page belongs to (an app, a
+ * project) by name, its tabs beside the name, at the top of the page.
+ *
+ * App Store Connect's app head (reference/asc/results/head.json, an app's
+ * analytics overview, read 2026-10-29):
+ *
+ *   <div class="cui-console-head">
+ *     <a class="cui-console-head-name" href="/p/shop">Shop</a>
+ *     <nav class="cui-console-tabs" aria-label="Project">
+ *       <a class="cui-console-tab" href="/p/shop" aria-current="page">Overview</a>
+ *       <a class="cui-console-tab" href="/p/shop/issues">Issues</a>
+ *     </nav>
+ *   </div>
+ *
+ * cui-console-head       a row, the name then the tabs 19px after it,
+ *                        centered on it, 53px tall at least, 24px above
+ *                        what follows; below 640px the tabs on a row of
+ *                        their own
+ * cui-console-head-name  the name: 34px on 41px at 700, the label, no
+ *                        underline; cut with an ellipsis where the row has
+ *                        no room
+ * the tabs in it         console tabs, underlined, as the app's: 20px on
+ *                        22px, 52px tall, 23px apart, no hairline under
+ *                        them
+ *
+ * App Store Connect's: the row, centered, 53px; the name's size, height
+ * and weight; the tabs' size, height, weight, 2px rule and 23px apart, no
+ * rule under the row; 19px between the name and the tabs (their places, read
+ * before the probes: the name 272px to 499px, the tabs at 518px); 24px to
+ * the content (the row ending at 145px, the content at 169px). ciderui's:
+ * the label's color where the app head's is rgb(17, 17, 17) and the console
+ * blue for the tabs where theirs is rgb(0, 112, 201) (the older look's); the
+ * font tracking itself (theirs SF's 0.374px and -0.5px); no app icon or
+ * name menu (a console's sidebar switches what the page belongs to); the
+ * phone's row of tabs (App Store Connect's phone was not read). */
+
+@layer components {
+  .cui-console-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 19px;
+    min-height: 53px;
+    margin-bottom: 24px;
+
+    & > .cui-console-tabs {
+      gap: 23px;
+      border-bottom: 0;
+
+      @media (width < 640px) {
+        flex-basis: 100%;
+      }
+    }
+
+    & > .cui-console-tabs > .cui-console-tab {
+      height: 52px;
+      font-size: 20px;
+      line-height: 22px;
+    }
+  }
+
+  .cui-console-head-name {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    font-size: 34px;
+    line-height: 41px;
+    font-weight: 700;
+    letter-spacing: normal;
+    color: var(--cui-c-console-neutral-label-primary);
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
