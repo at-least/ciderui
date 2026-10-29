@@ -81,6 +81,7 @@ const SCENES = [
   { name: 'console-thumb', html: `<div class="cui-console-page" style="width:360px;padding:24px">${example('console-thumb/thumbs')}</div>`, zoom: 1.6, center: true },
   { name: 'console-content', html: `<div style="width:1280px">${example('console-content/content')}</div>`, zoom: 1, center: true, window: 1280 },
   { name: 'console-link', files: ['console-link/link'], zoom: 2, width: 560, center: true },
+  { name: 'console-copy', html: `<div class="cui-console-page" style="width:560px;padding:24px">${example('console-copy/copy')}</div>`, zoom: 2, center: true },
   { name: 'console-listing', html: `<div class="cui-console-page" style="width:640px;padding:24px">${example('console-listing/listing')}</div>`, zoom: 2, center: true },
   { name: 'console-menu', html: `<div class="cui-console-page" style="width:260px;padding:16px">${example('console-menu/menu')}</div>`, zoom: 1.6, center: true },
   { name: 'console-tabs', html: `<div class="cui-console-page" style="width:440px;padding:24px;display:grid;gap:32px">${example('console-tabs/tabs')}${example('console-tabs/filled')}</div>`, zoom: 2, center: true },
