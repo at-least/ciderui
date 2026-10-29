@@ -34,12 +34,16 @@ const id = execFileSync('docker', [
   IMAGE, 'sh', '-c', wrap, 'run', ...command,
 ], { encoding: 'utf8' }).trim();
 const q = (s) => `'${s.replaceAll("'", "'\\''")}'`;
+// no extended attributes (docker cp refuses macOS's com.apple.provenance,
+// "operation not supported", on a file that carries it), no AppleDouble
+// ._ files
+const TAR_ENV = { ...process.env, COPYFILE_DISABLE: '1' };
 
 let status = 1;
 try {
   const exclude = '--exclude ./node_modules --exclude ./rust/target --exclude ./.git';
-  execSync(`tar -c -C ${q(ROOT)} ${exclude} . | docker cp - ${id}:/src/ciderui`, { stdio: ['ignore', 'ignore', 'inherit'] });
-  execSync(`tar -c -C ${q(theme)} --exclude ./.git . | docker cp - ${id}:/src/ciderui-zola`, { stdio: ['ignore', 'ignore', 'inherit'] });
+  execSync(`tar -c --no-xattrs -C ${q(ROOT)} ${exclude} . | docker cp - ${id}:/src/ciderui`, { env: TAR_ENV, stdio: ['ignore', 'ignore', 'inherit'] });
+  execSync(`tar -c --no-xattrs -C ${q(theme)} --exclude ./.git . | docker cp - ${id}:/src/ciderui-zola`, { env: TAR_ENV, stdio: ['ignore', 'ignore', 'inherit'] });
   try {
     execFileSync('docker', ['start', '-a', id], { stdio: 'inherit' });
     status = 0;
