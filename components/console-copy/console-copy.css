@@ -14,8 +14,9 @@
  *   </div>
  *
  * cui-console-copy         the listing and its button side by side, on the
- *                          listing's gray and corners; the listing scrolls
- *                          beside the button
+ *                          listing's gray and corners (in a console card,
+ *                          the page's ground); the listing scrolls beside
+ *                          the button
  * cui-console-copy-button  a 28px circle 5px in from the top and the end,
  *                          centered on the first line: its icon the
  *                          label on a gray fill; hovered, the page's ground
@@ -61,6 +62,12 @@
       padding-inline-end: 9px;
       background-color: transparent;
     }
+  }
+
+  /* in a console card, whose gray is the listing's, the page's ground:
+     gray on gray drew no panel, the text 14px in from nothing */
+  :where(.cui-console-card) .cui-console-copy {
+    background-color: var(--cui-c-console-neutral-background-primary);
   }
 
   .cui-console-copy-button {

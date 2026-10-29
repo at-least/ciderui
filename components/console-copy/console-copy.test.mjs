@@ -33,6 +33,14 @@ export const cases = [
     ],
   },
   {
+    name: 'copy in a card',
+    html: ex('card'),
+    widths: [1200],
+    checks: [
+      { target: `${IDLE}`, props: ['background-color'], golden: 'in a console card, whose gray is the listing\'s, the page\'s white: gray on gray drew no panel' },
+    ],
+  },
+  {
     name: 'copy touch',
     html: ex('copy'),
     touch: true,

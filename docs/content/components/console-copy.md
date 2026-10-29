@@ -7,7 +7,7 @@ category = "Console"
 image = "pictures/console-copy.png"
 +++
 
-A value to copy — a command, a URL, a key — in a code listing, with a round copy button in its top-right corner, as Apple’s developer documentation puts one on its code listings. The button is always shown, so a touch screen can use it. The page’s script copies the value: while the button has `data-state="copied"` it shows a check, and its name should read “Copied”.
+A value to copy — a command, a URL, a key — in a code listing, with a round copy button in its top-right corner, as Apple’s developer documentation puts one on its code listings. The button is always shown, so a touch screen can use it. In a console card, whose gray is the listing’s, the copy takes the page’s white. The page’s script copies the value: while the button has `data-state="copied"` it shows a check, and its name should read “Copied”.
 
 ```css
 @import "ciderui/components/console-listing/console-listing.css";
@@ -23,3 +23,7 @@ A value to copy — a command, a URL, a key — in a code listing, with a round 
 | `cui-console-copy-idle` | Lucide’s `copy`, shown before a copy |
 | `cui-console-copy-done` | Lucide’s `check`, shown while copied |
 | `data-state="copied"` | on the button, after a copy |
+
+## In a card
+
+{{ <cui_example file="console-copy/card" title="In a console card, on the page’s white" pad={true} /> }}

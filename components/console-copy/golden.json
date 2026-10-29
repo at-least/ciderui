@@ -41,6 +41,7 @@
  "copy | .cui-console-copy:last-child .cui-console-copy-button > .cui-console-copy-idle | 390 | display": "none",
  "copy | .cui-console-copy:last-child .cui-console-copy-button > .cui-console-copy-done | 390 | display": "block",
  "copy | .cui-console-copy:last-child .cui-console-copy-button > .cui-console-copy-done | 390 | box-width": "16px",
+ "copy in a card | .cui-console-copy:first-child | 1200 | background-color": "oklch(1 0 0)",
  "copy touch | .cui-console-copy:first-child .cui-console-copy-button::after | 390 | width": "44px",
  "copy touch | .cui-console-copy:first-child .cui-console-copy-button::after | 390 | height": "44px",
  "copy dark | .cui-console-copy:first-child .cui-console-copy-button | 1200 | color": "oklch(1 0 0 / 0.85)",
