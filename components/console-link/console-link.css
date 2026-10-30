@@ -11,13 +11,14 @@
  *
  * cui-console-link        the brand's blue, no underline; hovered,
  *                         underlined; aria-disabled="true", the blue at 0.60,
- *                         no pointer, no underline
+ *                         no pointer, no underline; on a touch screen a
+ *                         target 44px square at least, centered on it
  *   data-variant="label"  the label's color (a name that is a link: an
  *                         issue's title); hovered, the brand's blue
  *
  * The toolkit's, and the analytics page's: the colors, the underline
  * hovered. ciderui's: the focus ring base.css's (rule 9); the type, the
- * text's around it. */
+ * text's around it; the touch target, the HIG's 44pt. */
 
 @layer components {
   .cui-console-link {
@@ -46,6 +47,21 @@
       color: var(--cui-c-console-brand-label-secondary);
       text-decoration-line: none;
       cursor: default;
+    }
+
+    /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility) */
+    @media (pointer: coarse) {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: max(100%, 44px);
+        height: max(100%, 44px);
+        transform: translate(-50%, -50%);
+      }
     }
   }
 }

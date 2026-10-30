@@ -2,8 +2,12 @@
  "link | [data-variant=\"label\"]:hover | 1200 | text-decoration-line": "none",
  "link | [aria-disabled=\"true\"]:hover | 1200 | cursor": "default",
  "link | [aria-disabled=\"true\"]:hover | 1200 | text-decoration-line": "none",
+ "link | .cui-console-link:not([data-variant]):not([aria-disabled])::after | 1200 | content": "none",
  "link | [data-variant=\"label\"]:hover | 390 | text-decoration-line": "none",
  "link | [aria-disabled=\"true\"]:hover | 390 | cursor": "default",
  "link | [aria-disabled=\"true\"]:hover | 390 | text-decoration-line": "none",
+ "link | .cui-console-link:not([data-variant]):not([aria-disabled])::after | 390 | content": "none",
+ "link touch | .cui-console-link:not([data-variant]):not([aria-disabled])::after | 390 | width": "61.0781px",
+ "link touch | .cui-console-link:not([data-variant]):not([aria-disabled])::after | 390 | height": "44px",
  "link dark | .cui-console-link:not([data-variant]):not([aria-disabled]) | 1200 | color": "oklch(0.683 0.167 256.6)"
 }

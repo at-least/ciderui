@@ -25,6 +25,7 @@ export const cases = [
       { target: LABEL, props: ['text-decoration-line'], state: 'hover', golden: 'a name that is a link turns blue hovered, not underlined' },
       { target: '[aria-disabled="true"]', props: ['color'], tb: [`${L}-disabled-variant-inline-color`] },
       { target: '[aria-disabled="true"]', props: ['cursor', 'text-decoration-line'], state: 'hover', golden: 'no pointer, no underline over a disabled link' },
+      { target: INLINE, pseudo: '::after', props: ['content'], golden: 'with a mouse, no target drawn: none' },
     ],
   },
   {
@@ -34,6 +35,7 @@ export const cases = [
     widths: [390],
     checks: [
       { target: INLINE, props: ['text-decoration-line'], state: 'hover', rest: 'a tapped link keeps no underline (rule 5)' },
+      { target: INLINE, pseudo: '::after', props: ['width', 'height'], golden: 'a touch screen\'s target 44px square at least, the HIG\'s 44pt (crashcart\'s HIG pass: its See All and Open issue links, 13px tall, were the only controls without one)' },
     ],
   },
   {
