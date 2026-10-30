@@ -23,7 +23,14 @@ A value to copy — a command, a URL, a key — in a code listing, with a round 
 | `cui-console-copy-idle` | Lucide’s `copy`, shown before a copy |
 | `cui-console-copy-done` | Lucide’s `check`, shown while copied |
 | `data-state="copied"` | on the button, after a copy |
+| `cui-console-copy-inline` | a copy button in a line of text, after the value it copies |
 
 ## In a card
 
 {{ <cui_example file="console-copy/card" title="In a console card, on the page’s white" pad={true} /> }}
+
+## In a line of text
+
+A value inside a sentence — an issue’s ID, an event’s — takes a small copy button after it instead: its icon in the secondary color, a hit area that leaves the line’s height as it was, and a 44 pt target on a touch screen.
+
+{{ <cui_example file="console-copy/inline" title="An issue ID to copy, an event ID just copied" pad={true} /> }}

@@ -22,9 +22,16 @@
  *                          label on a gray fill; hovered, the page's ground
  *                          on the label's solid; on a touch screen a target
  *                          44px square at least
+ * cui-console-copy-inline  a copy button inside a line of text, after the
+ *                          value it copies (an issue's ID): its 16px icon
+ *                          in the secondary label, the label hovered, a
+ *                          26px hit area that leaves the line's height as
+ *                          it was (5px around the icon, taken back by its
+ *                          margin), 44px on a touch screen
  * cui-console-copy-idle    the icon before a copy (Lucide's copy)
  * cui-console-copy-done    the icon while the button has
- *                          data-state="copied" (Lucide's check); the page's
+ *                          data-state="copied" (Lucide's check), in either
+ *                          button; the page's
  *                          script copies, sets and clears it, and names the
  *                          button "Copied" meanwhile
  *
@@ -114,11 +121,47 @@
     }
   }
 
+  .cui-console-copy-inline {
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+    margin: -5px;
+    border: 0;
+    padding: 5px;
+    color: var(--cui-c-console-neutral-label-secondary);
+    background: none;
+    cursor: pointer;
+
+    & > svg {
+      flex: none;
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--cui-c-console-neutral-label-primary);
+      }
+    }
+
+    @media (pointer: coarse) {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 44px;
+        height: 44px;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
   .cui-console-copy-done {
     display: none;
   }
 
-  .cui-console-copy-button[data-state="copied"] {
+  :is(.cui-console-copy-button, .cui-console-copy-inline)[data-state="copied"] {
     & > .cui-console-copy-idle {
       display: none;
     }

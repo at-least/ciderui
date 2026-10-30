@@ -41,6 +41,28 @@ export const cases = [
     ],
   },
   {
+    name: 'copy inline',
+    html: ex('inline'),
+    widths: [1200],
+    checks: [
+      { target: 'p:first-child .cui-console-copy-inline', props: ['box-width', 'box-height', 'margin-top', 'padding-top', 'color', 'background-color'], golden: 'a 16px icon with 5px around it (26px to hit), the margin taking it back from the line; the secondary label, no ground' },
+      { target: 'p:first-child', props: ['box-height'], golden: 'the line as tall as the same line with no button (the last): the button grows nothing' },
+      { target: 'p:last-child', props: ['box-height'], golden: 'the same line with no button: its mono value 20px, the button\'s line no taller' },
+      { target: 'p:first-child .cui-console-copy-inline', props: ['color'], state: 'hover', golden: 'hovered, the label' },
+      { target: 'p:nth-child(2) .cui-console-copy-inline > .cui-console-copy-done', props: ['display'], golden: 'copied: the check' },
+      { target: 'p:nth-child(2) .cui-console-copy-inline > .cui-console-copy-idle', props: ['display'], golden: 'copied: the copy icon hidden' },
+    ],
+  },
+  {
+    name: 'copy inline touch',
+    html: ex('inline'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: 'p:first-child .cui-console-copy-inline', pseudo: '::after', props: ['width', 'height'], golden: 'a touch screen\'s target 44px square, the HIG\'s 44pt' },
+    ],
+  },
+  {
     name: 'copy touch',
     html: ex('copy'),
     touch: true,
