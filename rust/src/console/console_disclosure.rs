@@ -9,6 +9,9 @@ pub enum ConsoleDisclosureVariant {
     Line,
     /// A console button, the chevron after its label.
     Button,
+    /// A plain console button (`data-variant="plain"`: no fill, the brand's
+    /// label), the chevron after its label.
+    PlainButton,
 }
 
 /// `cui-console-disclosure` (`components/console/console-disclosure`): a
@@ -64,6 +67,13 @@ impl<R: Renderable> Renderable for ConsoleDisclosure<'_, R> {
                 </details>
             }
             .render_to(buffer),
+            ConsoleDisclosureVariant::PlainButton => rsx! {
+                <details class=(Class("cui-console-disclosure", self.class)) data-variant="button" open[self.open]>
+                    <summary class=(Class("cui-console-btn", self.summary_class)) data-variant="plain">(self.summary)(lucide::CHEVRON_DOWN.class(chevron))</summary>
+                    (self.children)
+                </details>
+            }
+            .render_to(buffer),
         }
     }
 }
@@ -107,6 +117,23 @@ mod tests {
             *buttons.as_inner(),
             example(include_str!(
                 "../../../components/console/console-disclosure/examples/button.html"
+            ))
+        );
+        let plain = rsx! {
+            <div class="cui-console-page grid gap-3">
+                <ConsoleDisclosure variant=(ConsoleDisclosureVariant::PlainButton) open=false summary="Edit" summary_class="" class="">
+                    <p>"Its name, its address and its digest."</p>
+                </ConsoleDisclosure>
+                <ConsoleDisclosure variant=(ConsoleDisclosureVariant::PlainButton) open=true summary="Edit" summary_class="" class="">
+                    <p>"Its name, its address and its digest."</p>
+                </ConsoleDisclosure>
+            </div>
+        }
+        .render();
+        assert_eq!(
+            *plain.as_inner(),
+            example(include_str!(
+                "../../../components/console/console-disclosure/examples/plain-button.html"
             ))
         );
     }

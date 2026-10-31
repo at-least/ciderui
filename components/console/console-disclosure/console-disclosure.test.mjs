@@ -44,6 +44,16 @@ export const cases = [
     ],
   },
   {
+    name: 'disclosure plain button',
+    html: ex('plain-button'),
+    widths: [1200],
+    checks: [
+      { target: `${CLOSED} > summary`, props: ['list-style-type', 'background-color', 'color'], golden: 'a plain console button as the summary: no marker of the browser\'s, no fill, the brand\'s label (the console button\'s plain look)' },
+      { target: `${CLOSED} .cui-console-disclosure-chevron`, props: ['rotate', 'color'], golden: 'closed, pointing down after the label (the HIG\'s disclosure button), in the button\'s label color as a gray button\'s' },
+      { target: `${OPEN} .cui-console-disclosure-chevron`, props: ['rotate'], golden: 'open, pointing up (the HIG\'s disclosure button): 180deg' },
+    ],
+  },
+  {
     name: 'disclosure dark',
     html: `<div class="cui-dark">${ex('disclosure')}</div>`,
     widths: [1200],

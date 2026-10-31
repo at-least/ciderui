@@ -20,10 +20,14 @@ A `<details>` that hides what is not needed yet — a stack’s system frames, a
 | `cui-console-disclosure` | the `<details>` |
 | `cui-console-disclosure-summary` | the line: its chevron, then its label |
 | `cui-console-disclosure-chevron` | the chevron: Lucide’s `chevron-right` before a line’s label, `chevron-down` after a button’s |
-| `data-variant="button"` | its summary a `cui-console-btn` |
+| `data-variant="button"` | its summary a `cui-console-btn`, gray or plain (`data-variant="plain"` on the summary) |
 
 ## A disclosure button
 
 {{ <cui_example file="console-disclosure/button" title="A disclosure button, closed and open" pad={true} /> }}
+
+A plain one, for an action among a row’s plain buttons:
+
+{{ <cui_example file="console-disclosure/plain-button" title="A plain disclosure button, closed and open" pad={true} /> }}
 
 The crate writes it with `ConsoleDisclosure` and `ConsoleDisclosureVariant`.
