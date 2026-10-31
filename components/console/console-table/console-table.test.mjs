@@ -98,6 +98,21 @@ export const cases = [
     ],
   },
   {
+    // a row's own checkbox selects it; one inside a form or a dialog in a
+    // cell (a row's editor: crashcart's alert routing, its channels
+    // checked) is that control's, and the row is not selected
+    name: 'table checkbox in a cell\'s dialog',
+    html: `<div class="cui-console-page"><table class="cui-console-table"><thead><tr><th scope="col">Project</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead><tbody>
+      <tr id="routed"><td>Shop App</td><td><form><button type="button" class="cui-console-btn" data-variant="plain">Edit…</button><dialog class="cui-console-dialog"><label class="cui-console-checkbox"><input class="cui-console-checkbox-input" type="checkbox" checked><span class="cui-console-checkbox-box" aria-hidden="true"></span>ops</label></dialog></form></td></tr>
+      <tr id="own"><td><span class="cui-console-checkbox"><input class="cui-console-checkbox-input" type="checkbox" checked aria-label="Select"><span class="cui-console-checkbox-box" aria-hidden="true"></span></span></td><td>Orders API</td></tr>
+    </tbody></table></div>`,
+    widths: [1200],
+    checks: [
+      { target: '#routed', props: ['background-color'], golden: 'a checkbox inside a cell\'s form or dialog is that control\'s, not the row\'s: no fill' },
+      { target: '#own', props: ['background-color'], golden: 'a checkbox that is the cell\'s own control selects its row: the brand\'s fill at 0.08' },
+    ],
+  },
+  {
     name: 'table checkbox touch',
     html: ex('sticky'),
     widths: [390],

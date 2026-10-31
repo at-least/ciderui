@@ -23,7 +23,7 @@ App Store Connect’s table, as its analytics pages draw one: rows between hairl
 | `aria-selected="true"` on a `<tr>` | a selected row, on the brand’s fill |
 | `cui-console-table-figure` | a number’s cell, at its end at 500 |
 | `cui-console-table-subtitle` | a line under a cell’s text, 12px, secondary |
-| a checked `cui-console-checkbox` in a row | the row selected, as `aria-selected` |
+| a checked `cui-console-checkbox` that is a cell’s own control | the row selected, as `aria-selected` (one inside a cell’s form or dialog is that control’s) |
 | `data-sticky` | its header sticks to the top of its scroll container, at `--cui-console-table-sticky-top` |
 | `data-stack` | below 640px each row a block of lines, a cell’s `data-label` before its value |
 | `cui-console-table-scroll` | a box that scrolls a wide table sideways |

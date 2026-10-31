@@ -36,7 +36,9 @@
  * cui-console-table-figure     a number's cell: at its end, at 500
  * cui-console-table-subtitle   a line under a cell's text, 12px on 16px, the
  *                              secondary label
- * a row whose console checkbox is checked  the selected row's fill
+ * a row whose own console checkbox is checked  the selected row's fill:
+ *                              a cell's own control, not one inside a
+ *                              cell's form or dialog (a row's editor)
  * data-sticky                  its header sticks to the top of its scroll
  *                              container (the page, or a scroll box), at
  *                              --cui-console-table-sticky-top (0 unless the
@@ -148,7 +150,7 @@
     }
 
     :where(tbody tr[aria-selected="true"]),
-    :where(tbody tr:has(.cui-console-checkbox-input:checked)) {
+    :where(tbody tr:has(> :is(td, th) > .cui-console-checkbox > .cui-console-checkbox-input:checked)) {
       background-color: var(--cui-c-console-brand-fill-quaternary);
     }
 
@@ -156,7 +158,7 @@
        leading edge the theme's highlight, on its first cell (a row draws
        no border apart from its cells'; a shadow is dropped too) */
     @media (forced-colors: active) {
-      :where(tbody tr[aria-selected="true"], tbody tr:has(.cui-console-checkbox-input:checked)) > :where(:first-child) {
+      :where(tbody tr[aria-selected="true"], tbody tr:has(> :is(td, th) > .cui-console-checkbox > .cui-console-checkbox-input:checked)) > :where(:first-child) {
         border-inline-start: 3px solid Highlight;
       }
     }
