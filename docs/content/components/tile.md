@@ -10,8 +10,8 @@ image = "pictures/tile.png"
 A tile of apple.com’s home page: a block of its own ground with a headline, a subhead, a callout and buttons centered at its top, its picture filling it. The whole tile is a link, its buttons above it.
 
 ```css
-@import "ciderui/components/button/button.css";
-@import "ciderui/components/tile/tile.css";
+@import "ciderui/components/site/button/button.css";
+@import "ciderui/components/site/tile/tile.css";
 ```
 
 {{ <cui_example file="tile/tile" title="A promo tile" /> }}

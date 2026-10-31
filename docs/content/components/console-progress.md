@@ -10,7 +10,7 @@ image = "pictures/console-progress.png"
 How much of a whole a value is: a share, or a task done so far. The native `<progress>`, drawn as a thin rounded bar.
 
 ```css
-@import "ciderui/components/console-progress/console-progress.css";
+@import "ciderui/components/console/console-progress/console-progress.css";
 ```
 
 {{ <cui_example file="console-progress/progress" title="Console progress bars" pad={true} /> }}

@@ -10,7 +10,7 @@ image = "pictures/console-status.png"
 A mark in the status’s color before its word, and a line under it that says more. The mark is never the only carrier: the word says the same.
 
 ```css
-@import "ciderui/components/console-status/console-status.css";
+@import "ciderui/components/console/console-status/console-status.css";
 ```
 
 {{ <cui_example file="console-status/status" title="Console statuses" pad={true} /> }}

@@ -10,8 +10,8 @@ image = "pictures/ribbon.png"
 apple.com’s message above a page’s content: a band on the alternate ground, its text centered within 83.33% of the window, a [more link](@/components/link.md) after it.
 
 ```css
-@import "ciderui/components/link/link.css";
-@import "ciderui/components/ribbon/ribbon.css";
+@import "ciderui/components/site/link/link.css";
+@import "ciderui/components/site/ribbon/ribbon.css";
 ```
 
 {{ <cui_example file="ribbon/ribbon" title="A ribbon" /> }}

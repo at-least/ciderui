@@ -1,7 +1,7 @@
 // Build what the documentation (docs/) generates:
 //
 // - docs/examples/<name>/<id>.html: a copy of every component's example
-//   (components/<name>/examples/<id>.html), for the pages' cui_example
+//   (components/<set>/<name>/examples/<id>.html), for the pages' cui_example
 //   component (docs/templates/cui-example.html), since zola's load_data
 //   reads only inside the site. Committed, like the stylesheet, so the site
 //   builds with zola alone. docs/examples/pages/ is not generated: the
@@ -19,15 +19,15 @@
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, relative } from 'node:path';
-import { ROOT, compile } from '../test/compile.mjs';
+import { COMPONENTS, ROOT, compile } from '../test/compile.mjs';
 
 const DOCS = join(ROOT, 'docs');
 
 // every component's examples, by their path under docs/examples
 function exampleFiles() {
   const out = new Map();
-  for (const name of readdirSync(join(ROOT, 'components')).sort()) {
-    const dir = join(ROOT, 'components', name, 'examples');
+  for (const { name, dir: componentDir } of COMPONENTS) {
+    const dir = join(ROOT, componentDir, 'examples');
     for (const f of readdirSync(dir).filter((f) => f.endsWith('.html')).sort()) out.set(`${name}/${f}`, readFileSync(join(dir, f), 'utf8'));
   }
   return out;
@@ -60,7 +60,7 @@ function build(out) {
     mkdirSync(join(examplesDir, path, '..'), { recursive: true });
     writeFileSync(join(examplesDir, path), html);
   }
-  const components = readdirSync(join(ROOT, 'components')).sort().map((c) => `@import "components/${c}/${c}.css";`).join('\n');
+  const components = COMPONENTS.map((c) => `@import "${c.dir}/${c.name}.css";`).join('\n');
   mkdirSync(join(out, 'static'), { recursive: true });
   writeFileSync(join(out, 'static/example.css'), compile({ css: `@import "fonts.css";\n@import "index.css";\n${components}`, classes: classes(examplesDir) }));
 }

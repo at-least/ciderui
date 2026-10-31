@@ -10,7 +10,7 @@ image = "pictures/console-badge.png"
 A short word on a pill tinted in its color: a level, a status, a count. Or on the gray fill, or plain, its color alone, with a dot before it where a mark says more than a fill.
 
 ```css
-@import "ciderui/components/console-badge/console-badge.css";
+@import "ciderui/components/console/console-badge/console-badge.css";
 ```
 
 {{ <cui_example file="console-badge/badges" title="Console badges" pad={true} /> }}

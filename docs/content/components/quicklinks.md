@@ -10,8 +10,8 @@ image = "pictures/quicklinks.png"
 The store’s quick links: a title over a row of pills, as far in as a shelf’s header. Each pill is a [Button](@/components/button.md), `data-variant="secondary-neutral"`, and the row wraps at every width.
 
 ```css
-@import "ciderui/components/button/button.css";
-@import "ciderui/components/quicklinks/quicklinks.css";
+@import "ciderui/components/site/button/button.css";
+@import "ciderui/components/site/quicklinks/quicklinks.css";
 ```
 
 {{ <cui_example file="quicklinks/quicklinks" title="Quick links" /> }}

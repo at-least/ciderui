@@ -1,0 +1,34 @@
+/* The site set: every part of apple.com's pages (its marketing pages,
+ * its store, its Newsroom), after index.css:
+ *
+ *   @import "ciderui";
+ *   @import "ciderui/site.css";
+ *
+ * One import per part, in the order of their names; a site that uses a few
+ * parts may import those alone (components/site/<name>/<name>.css). */
+
+@import "./components/site/accordion/accordion.css";
+@import "./components/site/article/article.css";
+@import "./components/site/button/button.css";
+@import "./components/site/card/card.css";
+@import "./components/site/checkbox/checkbox.css";
+@import "./components/site/field/field.css";
+@import "./components/site/footer/footer.css";
+@import "./components/site/footnote/footnote.css";
+@import "./components/site/gallery/gallery.css";
+@import "./components/site/globalnav/globalnav.css";
+@import "./components/site/link/link.css";
+@import "./components/site/localnav/localnav.css";
+@import "./components/site/modal/modal.css";
+@import "./components/site/option/option.css";
+@import "./components/site/posts/posts.css";
+@import "./components/site/price/price.css";
+@import "./components/site/productnav/productnav.css";
+@import "./components/site/quicklinks/quicklinks.css";
+@import "./components/site/ribbon/ribbon.css";
+@import "./components/site/section/section.css";
+@import "./components/site/shelf/shelf.css";
+@import "./components/site/stat/stat.css";
+@import "./components/site/stories/stories.css";
+@import "./components/site/swatch/swatch.css";
+@import "./components/site/tile/tile.css";

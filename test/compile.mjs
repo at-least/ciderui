@@ -4,12 +4,20 @@
 // a test names, so a test needs no file of its own.
 
 import { execFileSync } from 'node:child_process';
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+
+// every component: its set, its name and its directory
+// (components/<set>/<name>), in the order of their names across the sets,
+// the order the tests' and the docs' stylesheets import them in
+export const COMPONENTS = ['site', 'console']
+  .flatMap((set) => readdirSync(join(ROOT, 'components', set)).map((name) => ({ set, name, dir: `components/${set}/${name}` })))
+  .sort((a, b) => (a.name < b.name ? -1 : 1));
+export const componentDir = (name) => COMPONENTS.find((c) => c.name === name).dir;
 
 // css: the entry's text after Tailwind's import (paths relative to the
 // root); classes: the class strings Tailwind is to find; sources: files or

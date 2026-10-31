@@ -10,7 +10,7 @@ image = "pictures/console-pager.png"
 Under a long list: the buttons to the pages either side of a line saying what it shows, as Apple Developer Forums’ pager draws them. Each button is a chevron alone, named “Previous page” or “Next page”, after a “First” button where the first page is further back; a direction with no page has no button.
 
 ```css
-@import "ciderui/components/console-pager/console-pager.css";
+@import "ciderui/components/console/console-pager/console-pager.css";
 ```
 
 {{ <cui_example file="console-pager/pager" title="Console pager" pad={true} /> }}

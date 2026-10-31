@@ -10,7 +10,7 @@ image = "pictures/console-card.png"
 The analytics card: a gray rounded panel on the page holding a metric (its title, its value, a change up or down, a caption), or a section’s list or chart under its header.
 
 ```css
-@import "ciderui/components/console-card/console-card.css";
+@import "ciderui/components/console/console-card/console-card.css";
 ```
 
 {{ <cui_example file="console-card/metrics" title="Metric cards" pad={true} /> }}

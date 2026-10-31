@@ -10,7 +10,7 @@ image = "pictures/console-empty.png"
 Centered where a list or a chart has nothing to show: an icon, a heading, a line saying what to do next, its action.
 
 ```css
-@import "ciderui/components/console-empty/console-empty.css";
+@import "ciderui/components/console/console-empty/console-empty.css";
 ```
 
 {{ <cui_example file="console-empty/empty" title="A console empty state" pad={true} /> }}

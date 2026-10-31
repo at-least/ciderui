@@ -1,13 +1,13 @@
 /* ciderui — apple.com's look as a Tailwind CSS v4 theme and a kit of
  * components for websites.
  *
- * Import it after Tailwind; the components and the fonts (fonts.css) are
- * separate, optional imports:
+ * Import it after Tailwind; a set of components (site.css, console.css)
+ * and the fonts (fonts.css) are separate, optional imports:
  *
  *   @import "tailwindcss";
  *   @import "ciderui/fonts.css";
  *   @import "ciderui";
- *   @import "ciderui/components/button/button.css";
+ *   @import "ciderui/site.css";
  *
  * It is these four parts, which a project can also take one by one:
  *   theme.css   the breakpoints, the dark variant and the semantic utilities

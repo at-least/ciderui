@@ -10,7 +10,7 @@ image = "pictures/option.png"
 A choice on apple.com’s buy page: a tile 83px tall at least, 12px corners and a gray edge, its title (and a detail under it) at one side and a price at the other. It is a radio: the input lies over the whole tile, transparent, and takes the click, the focus and the arrow keys; checked, the tile’s edge is 2px of the accent; focused from the keyboard, the ring.
 
 ```css
-@import "ciderui/components/option/option.css";
+@import "ciderui/components/site/option/option.css";
 ```
 
 {{ <cui_example file="option/option" title="An option with a price" pad={true} /> }}

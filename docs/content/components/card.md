@@ -10,7 +10,7 @@ image = "pictures/card.png"
 The store’s card: 400 by 500px (309 by 450px below 735px) on the page’s ground, 18px corners and a soft shadow, its picture filling it and its text at its top. The whole card is its headline’s link, with no script: the link’s `::after` lies over the card. Hovered, or with the focus in it, its shadow deepens and it grows 1%, in 0.3s.
 
 ```css
-@import "ciderui/components/card/card.css";
+@import "ciderui/components/site/card/card.css";
 ```
 
 {{ <cui_example file="card/card" title="A card with a tag" pad={true} /> }}

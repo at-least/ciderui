@@ -1,0 +1,47 @@
+/* The console set: every cui-console-* part, App Store Connect's newer
+ * look's, after index.css (or its tokens.css, base.css and type.css):
+ *
+ *   @import "ciderui";
+ *   @import "ciderui/console.css";
+ *
+ * One import per part, in the order of their names: a part's rule over
+ * another's relies on it (the sidebar's close button hides at 1024px
+ * only after console-btn's display). */
+
+@import "./components/console/console-appearance/console-appearance.css";
+@import "./components/console/console-badge/console-badge.css";
+@import "./components/console/console-banner/console-banner.css";
+@import "./components/console/console-bar/console-bar.css";
+@import "./components/console/console-btn/console-btn.css";
+@import "./components/console/console-card/console-card.css";
+@import "./components/console/console-chart/console-chart.css";
+@import "./components/console/console-checkbox/console-checkbox.css";
+@import "./components/console/console-chip/console-chip.css";
+@import "./components/console/console-code/console-code.css";
+@import "./components/console/console-content/console-content.css";
+@import "./components/console/console-copy/console-copy.css";
+@import "./components/console/console-dialog/console-dialog.css";
+@import "./components/console/console-disclosure/console-disclosure.css";
+@import "./components/console/console-dl/console-dl.css";
+@import "./components/console/console-empty/console-empty.css";
+@import "./components/console/console-field/console-field.css";
+@import "./components/console/console-file/console-file.css";
+@import "./components/console/console-head/console-head.css";
+@import "./components/console/console-hint/console-hint.css";
+@import "./components/console/console-link/console-link.css";
+@import "./components/console/console-list/console-list.css";
+@import "./components/console/console-listing/console-listing.css";
+@import "./components/console/console-menu/console-menu.css";
+@import "./components/console/console-page/console-page.css";
+@import "./components/console/console-pager/console-pager.css";
+@import "./components/console/console-popover/console-popover.css";
+@import "./components/console/console-progress/console-progress.css";
+@import "./components/console/console-radio/console-radio.css";
+@import "./components/console/console-section-head/console-section-head.css";
+@import "./components/console/console-sidebar/console-sidebar.css";
+@import "./components/console/console-skip/console-skip.css";
+@import "./components/console/console-status/console-status.css";
+@import "./components/console/console-table/console-table.css";
+@import "./components/console/console-tabs/console-tabs.css";
+@import "./components/console/console-thumb/console-thumb.css";
+@import "./components/console/console-toast/console-toast.css";

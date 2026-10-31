@@ -10,7 +10,7 @@ image = "pictures/console-dl.png"
 An item’s facts: each label beside its value, the labels in a column as wide as the longest, or each label over its value.
 
 ```css
-@import "ciderui/components/console-dl/console-dl.css";
+@import "ciderui/components/console/console-dl/console-dl.css";
 ```
 
 {{ <cui_example file="console-dl/dl" title="Console description list" pad={true} /> }}

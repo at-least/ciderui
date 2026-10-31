@@ -10,7 +10,7 @@ image = "pictures/console-btn.png"
 App Store Connect’s button: a rounded rectangle, gray by default, filled for the page’s one main action, plain as a link is, red where it destroys. It is a class on the page’s own `<button>` or `<a>`.
 
 ```css
-@import "ciderui/components/console-btn/console-btn.css";
+@import "ciderui/components/console/console-btn/console-btn.css";
 ```
 
 {{ <cui_example file="console-btn/variants" title="Console buttons" pad={true} /> }}

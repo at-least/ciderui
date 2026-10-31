@@ -10,7 +10,7 @@ image = "pictures/console-dialog.png"
 A question over the page: its title, what it asks, its buttons at its end. A `<dialog>` the page opens with `showModal()`, so the browser keeps the focus inside it and Escape closes it.
 
 ```css
-@import "ciderui/components/console-dialog/console-dialog.css";
+@import "ciderui/components/console/console-dialog/console-dialog.css";
 ```
 
 {{ <cui_example file="console-dialog/dialog" title="A console dialog" pad={true} /> }}

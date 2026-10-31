@@ -23,15 +23,16 @@ ciderui is not published. A site takes it as a checkout beside its own, a file d
 
 ## The stylesheet
 
-Import it after Tailwind, its fonts first, then the components the site uses:
+Import it after Tailwind, its fonts first, then the set the site uses: `site.css`, apple.com’s parts, or `console.css`, the console’s:
 
 ```css
 @import "tailwindcss";
 @import "ciderui/fonts.css";
 @import "ciderui";
-@import "ciderui/components/globalnav/globalnav.css";
-@import "ciderui/components/button/button.css";
+@import "ciderui/site.css";
 ```
+
+A site that uses a few parts can import those alone, `ciderui/components/site/globalnav/globalnav.css` in place of `ciderui/site.css`.
 
 `ciderui` is four parts, which a project can also take one by one:
 

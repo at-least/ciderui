@@ -10,7 +10,7 @@ image = "pictures/console-banner.png"
 A message on a rounded panel tinted in its color: an icon at its start, a title, a line or two under it, its actions, a button that closes it (which the page’s script wires).
 
 ```css
-@import "ciderui/components/console-banner/console-banner.css";
+@import "ciderui/components/console/console-banner/console-banner.css";
 ```
 
 {{ <cui_example file="console-banner/banner" title="A console banner" pad={true} /> }}

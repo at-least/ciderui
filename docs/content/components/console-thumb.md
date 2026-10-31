@@ -10,7 +10,7 @@ image = "pictures/console-thumb.png"
 A screenshot shown small, a link to itself whole, its name under it.
 
 ```css
-@import "ciderui/components/console-thumb/console-thumb.css";
+@import "ciderui/components/console/console-thumb/console-thumb.css";
 ```
 
 {{ <cui_example file="console-thumb/thumbs" title="Console thumbnails" pad={true} /> }}

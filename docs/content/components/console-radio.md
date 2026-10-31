@@ -10,7 +10,7 @@ image = "pictures/console-radio.png"
 One choice of a few: a 15px circle before its label, a line under the label saying what the choice means. The input itself is drawn, so it takes the focus, the click and the arrow keys as a radio does.
 
 ```css
-@import "ciderui/components/console-radio/console-radio.css";
+@import "ciderui/components/console/console-radio/console-radio.css";
 ```
 
 {{ <cui_example file="console-radio/radios" title="Console radios" pad={true} /> }}

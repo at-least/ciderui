@@ -10,7 +10,7 @@ image = "pictures/footer.png"
 apple.com’s footer, on the alternate ground: its footnotes over a rule, its directory of links in columns, the shop line, and the legal row (the copyright, the legal links, the locale). It stays light on a dark page, as apple.com’s does. Below 834px the directory becomes a column of sections, each opened by its title with no script: a checkbox and its label, as the local nav’s menu. This page’s own footer is one.
 
 ```css
-@import "ciderui/components/footer/footer.css";
+@import "ciderui/components/site/footer/footer.css";
 ```
 
 {{ <cui_example file="footer/footer" title="A footer" /> }}

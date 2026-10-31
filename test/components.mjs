@@ -1,4 +1,4 @@
-// Runs every components/<name>/<name>.test.mjs (its `cases`, test/harness.mjs
+// Runs every components/<set>/<name>/<name>.test.mjs (its `cases`, test/harness.mjs
 // says what a case and a check are): each case rendered in headless Chromium
 // on the kit, its fonts and every component's stylesheet, compiled as a site
 // compiles them, at each of its widths, its text in Inter as a site that
@@ -10,10 +10,10 @@
 // an entry no check reads fails the run. CASES=<regex> runs the cases it
 // matches.
 
-import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { ROOT, compile } from './compile.mjs';
+import { COMPONENTS, ROOT, compile, componentDir } from './compile.mjs';
 import { open, quit } from './browser.mjs';
 import { ref, asc, tb, WIDTHS } from './reference.mjs';
 import { check, done } from './check.mjs';
@@ -24,8 +24,8 @@ const PICK = process.env.CASES ? new RegExp(process.env.CASES) : null;
 // rewriting golden.json from some cases would drop the others' values
 if (UPDATE && PICK) throw new Error('UPDATE_GOLDEN=1 runs every case: drop CASES');
 
-const names = readdirSync(join(ROOT, 'components')).filter(n => existsSync(join(ROOT, 'components', n, `${n}.test.mjs`)));
-const sheets = names.map(n => `@import "components/${n}/${n}.css";`).join('\n');
+const names = COMPONENTS.filter(c => existsSync(join(ROOT, c.dir, `${c.name}.test.mjs`))).map(c => c.name);
+const sheets = names.map(n => `@import "${componentDir(n)}/${n}.css";`).join('\n');
 // the fonts' files inlined, as each case's page is set from no URL
 const inline = (css) => {
   const inlined = css.replace(/url\(fonts\/([^)]+)\)/g, (_, f) => `url(data:font/woff2;base64,${readFileSync(join(ROOT, 'fonts', f)).toString('base64')})`);
@@ -38,9 +38,9 @@ const inline = (css) => {
 const css = inline(compile({ css: `@import "fonts.css";\n@import "index.css";\n${sheets}`, sources: ['components'] }));
 
 for (const name of names) {
-  const file = join(ROOT, 'components', name, `${name}.test.mjs`);
+  const file = join(ROOT, componentDir(name), `${name}.test.mjs`);
   const { cases } = await import(pathToFileURL(file));
-  const goldenFile = join(ROOT, 'components', name, 'golden.json');
+  const goldenFile = join(ROOT, componentDir(name), 'golden.json');
   const golden = existsSync(goldenFile) ? JSON.parse(readFileSync(goldenFile, 'utf8')) : {};
   const used = new Set();
   const written = {};

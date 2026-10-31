@@ -10,7 +10,7 @@ image = "pictures/field.png"
 apple.com’s own text field, the store’s: 56px, a 1px edge and 12px corners on a translucent white ground. Its label sits where a placeholder would, 17px in the secondary text, and moves to the field’s top at 12px as the field is focused or filled, in 0.125s, with no script.
 
 ```css
-@import "ciderui/components/field/field.css";
+@import "ciderui/components/site/field/field.css";
 ```
 
 {{ <cui_example file="field/field" title="An empty field" pad={true} /> }}

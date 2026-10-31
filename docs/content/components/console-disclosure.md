@@ -10,7 +10,7 @@ image = "pictures/console-disclosure.png"
 A `<details>` that hides what is not needed yet — a stack’s system frames, a frame’s source, a phone’s filters — behind a line or a button that says what it hides. As the HIG’s disclosure controls: a line’s chevron sits at its leading edge, pointing at the label while closed and down while open; a button’s points down while closed and up while open. No script: the browser opens and closes it.
 
 ```css
-@import "ciderui/components/console-disclosure/console-disclosure.css";
+@import "ciderui/components/console/console-disclosure/console-disclosure.css";
 ```
 
 {{ <cui_example file="console-disclosure/disclosure" title="Disclosure lines, closed and open" pad={true} /> }}

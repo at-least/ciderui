@@ -10,7 +10,7 @@ image = "pictures/console-code.png"
 A key, an id or a word to type, in the monospaced body on the gray fill.
 
 ```css
-@import "ciderui/components/console-code/console-code.css";
+@import "ciderui/components/console/console-code/console-code.css";
 ```
 
 {{ <cui_example file="console-code/code" title="Console code" pad={true} /> }}

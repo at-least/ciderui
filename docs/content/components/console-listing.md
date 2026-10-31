@@ -10,7 +10,7 @@ image = "pictures/console-listing.png"
 Lines of code or of a log — a crash’s backtrace, a job’s output — on a gray rounded panel, as Apple’s developer documentation shows a code listing, at the console’s size. A line too long for the panel moves sideways inside it. On a `<pre>` the lines stay as written; on another element, they wrap.
 
 ```css
-@import "ciderui/components/console-listing/console-listing.css";
+@import "ciderui/components/console/console-listing/console-listing.css";
 ```
 
 {{ <cui_example file="console-listing/listing" title="A backtrace" pad={true} /> }}

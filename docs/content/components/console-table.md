@@ -10,7 +10,7 @@ image = "pictures/console-table.png"
 App Store Connect’s table, as its analytics pages draw one: rows between hairlines, its header’s labels small and secondary, a figure at its end, a row that is a link filling faintly under the pointer. It is the page’s own `<table>` with the class.
 
 ```css
-@import "ciderui/components/console-table/console-table.css";
+@import "ciderui/components/console/console-table/console-table.css";
 ```
 
 {{ <cui_example file="console-table/table" title="A console table" pad={true} /> }}

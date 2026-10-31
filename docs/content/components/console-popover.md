@@ -10,7 +10,7 @@ image = "pictures/console-popover.png"
 App Store Connect’s popover: a small panel a button opens over the page, holding a few related controls or a line of text. It is the button’s `popovertarget`: a click or a tap opens it, Escape or a click elsewhere closes it, with no script. It opens under its button, centered on it, and above it where there is no room below.
 
 ```css
-@import "ciderui/components/console-popover/console-popover.css";
+@import "ciderui/components/console/console-popover/console-popover.css";
 ```
 
 {{ <cui_example file="console-popover/popover" title="Console popover" pad={true} /> }}

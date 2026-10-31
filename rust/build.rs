@@ -42,6 +42,8 @@ fn main() {
         "base.css",
         "type.css",
         "fonts.css",
+        "site.css",
+        "console.css",
     ] {
         files.push((name.to_string(), root.join(name)));
     }

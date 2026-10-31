@@ -10,7 +10,7 @@ image = "pictures/console-chip.png"
 A key and its value on the gray fill, with 5px corners: a filter in force, with a control that removes it, or a tag that is a link to the list it filters.
 
 ```css
-@import "ciderui/components/console-chip/console-chip.css";
+@import "ciderui/components/console/console-chip/console-chip.css";
 ```
 
 {{ <cui_example file="console-chip/chips" title="Console chips" pad={true} /> }}

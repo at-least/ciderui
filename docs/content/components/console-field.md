@@ -10,7 +10,7 @@ image = "pictures/console-field.png"
 App Store Connect’s fields: a text field, a dropdown and a multi-line field, each a rounded rectangle on white inside its edge; a label over one, help under it, an error in its place. Each is the page’s own `<input>`, `<select>` or `<textarea>` with the class.
 
 ```css
-@import "ciderui/components/console-field/console-field.css";
+@import "ciderui/components/console/console-field/console-field.css";
 ```
 
 {{ <cui_example file="console-field/fields" title="Console fields" pad={true} /> }}

@@ -1,6 +1,6 @@
-// What a component's test file (components/<name>/<name>.test.mjs) builds
+// What a component's test file (components/<set>/<name>/<name>.test.mjs) builds
 // its cases from: the property lists the checks share, and the component's
-// examples (components/<name>/examples/<id>.html), the markup the crate's
+// examples (components/<set>/<name>/examples/<id>.html), the markup the crate's
 // tests render and the cases measure.
 //
 // A case:

@@ -10,7 +10,7 @@ image = "pictures/console-chart.png"
 App Store Connect’s analytics charts. The page draws the data — its SVG, each mark’s fill, a series’ color — and these classes draw what is around it: the gridlines, the scale at the plot’s trailing end, the first and last labels under it, the legend, what the plot has none of, and a line round each mark so stacked marks stand apart. The svg’s `aria-label` says what it shows; the axis and the scale are `aria-hidden`, for sight alone.
 
 ```css
-@import "ciderui/components/console-chart/console-chart.css";
+@import "ciderui/components/console/console-chart/console-chart.css";
 ```
 
 {{ <cui_example file="console-chart/chart" title="A bar chart, two series stacked" pad={true} /> }}

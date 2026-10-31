@@ -10,7 +10,7 @@ image = "pictures/globalnav.png"
 apple.com’s bar across the top of every page, on a `<nav>`: the site’s logo, its links and its icon links (a search, a bag) spread across 1024px at most, on a translucent material under a blur. Below 834px the links fold into a menu, which the bar’s button opens over the window as a sheet, with no script: the list is a `popover`. This page’s own bar is one.
 
 ```css
-@import "ciderui/components/globalnav/globalnav.css";
+@import "ciderui/components/site/globalnav/globalnav.css";
 ```
 
 {{ <cui_example file="globalnav/globalnav" title="A global nav" /> }}

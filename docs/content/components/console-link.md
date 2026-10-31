@@ -10,7 +10,7 @@ image = "pictures/console-link.png"
 App Store Connect’s link: the brand’s blue with no underline, underlined under the pointer. A name that is a link (an issue’s title) keeps the label’s color and turns blue.
 
 ```css
-@import "ciderui/components/console-link/console-link.css";
+@import "ciderui/components/console/console-link/console-link.css";
 ```
 
 {{ <cui_example file="console-link/link" title="Console links" pad={true} /> }}

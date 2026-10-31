@@ -1,0 +1,89 @@
+/* ciderui — the product nav: the store's shelf of small cards, each a
+ * product's image above its name, a link to its products.
+ *
+ * From apple.com's store (reference/apple.com/): store:productnav* (the
+ * shelf's place and room, a card's size, padding, image and name). Built on
+ * the shelf (components/site/shelf: its row, its scroller, its paddles).
+ *
+ *   <nav class="cui-shelf cui-productnav" aria-label="Products">
+ *     <div class="cui-shelf-row">
+ *       <ul class="cui-shelf-scroller" id="products">
+ *         <li><a class="cui-productnav-item" href="/shop/laptops"><img class="cui-productnav-image" src="/laptops.png" width="200" height="130" alt=""><span class="cui-productnav-name">Laptops</span></a></li>
+ *       </ul>
+ *     </div>
+ *   </nav>
+ *
+ * cui-productnav         on a cui-shelf with no header: 62px below it (30px
+ *                        below 735px), its cards 10px apart
+ * cui-productnav-item    a card, a link: its image, 18px down and 8px in
+ *                        (16px, 4px), 16px above its name (12px)
+ * cui-productnav-image   78px tall (60px), as wide as its own shape makes it
+ * cui-productnav-name    14px on 20px at 600, centered
+ *
+ * apple.com's: the room, the gaps, the sizes, the type. ciderui's: the
+ * letter-spacing (tokens.css); the card is the link (apple.com's script
+ * follows its name's link from anywhere on it); its row's foot 16px above
+ * and none below on a phone, as in sight (apple.com's crop cuts its row's
+ * last pixel there), the scroller's 5px under the cards there, for a focused
+ * card's ring, pulled back by its margin. */
+
+@layer components {
+  .cui-shelf.cui-productnav {
+    padding-bottom: 30px;
+
+    @media (width >= 735px) {
+      padding-bottom: 62px;
+    }
+  }
+
+  /* on a phone 5px under the cards for a focused card's ring, which the
+     scroller clips, pulled back by its margin, so none of it is in sight
+     (the row a block of its own, which keeps the margin in it) */
+  .cui-productnav .cui-shelf-scroller {
+    gap: 10px;
+    margin-bottom: -5px;
+    padding-bottom: 5px;
+
+    @media (width >= 735px) {
+      margin-bottom: 0;
+      padding-bottom: 22px;
+    }
+  }
+
+  .cui-productnav .cui-shelf-row {
+    display: flow-root;
+  }
+
+  .cui-productnav-item {
+    display: block;
+    height: 148px;
+    padding: 16px 4px;
+    color: var(--cui-c-text);
+    text-decoration-line: none;
+
+    @media (width >= 735px) {
+      padding: 18px 8px 16px;
+    }
+  }
+
+  .cui-productnav-image {
+    display: block;
+    width: auto;
+    height: 60px;
+    margin-bottom: 12px;
+
+    @media (width >= 735px) {
+      height: 78px;
+      margin-bottom: 16px;
+    }
+  }
+
+  .cui-productnav-name {
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-14);
+    text-align: center;
+  }
+}

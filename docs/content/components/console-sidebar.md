@@ -10,7 +10,7 @@ image = "pictures/console-sidebar.png"
 The app’s sidebar, down the page’s left: the product’s wordmark at its top, its list (each page an item, the current one filled), headings and rules between runs, the account at its foot. From 1024px it stands in the page; below, it is a sheet over the page that the page’s button opens and its own button closes, as a popover, with no script. Where it stands is the page’s: a grid of the sidebar and the page’s content.
 
 ```css
-@import "ciderui/components/console-sidebar/console-sidebar.css";
+@import "ciderui/components/console/console-sidebar/console-sidebar.css";
 ```
 
 {{ <cui_example file="console-sidebar/sidebar" title="A console sidebar" pad={true} /> }}

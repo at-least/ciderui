@@ -1,4 +1,4 @@
-//! A component's example (`components/<name>/examples/<id>.html`), the
+//! A component's example (`components/<set>/<name>/examples/<id>.html`), the
 //! markup its tests measure, as hypertext renders the same elements: each
 //! line trimmed and the lines joined with nothing between them. The tests
 //! hold each component's output to its example, so the two cannot part.

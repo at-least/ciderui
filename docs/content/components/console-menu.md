@@ -10,7 +10,7 @@ image = "pictures/console-menu.png"
 The list of a section’s pages down the left of App Store Connect’s analytics: each page a pill, filled where the page is the current one and under the pointer; a heading over a run of them, a rule between runs, a group that opens with no script to show its own, set in from the left.
 
 ```css
-@import "ciderui/components/console-menu/console-menu.css";
+@import "ciderui/components/console/console-menu/console-menu.css";
 ```
 
 {{ <cui_example file="console-menu/menu" title="A console menu" pad={true} /> }}

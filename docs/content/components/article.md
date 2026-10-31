@@ -10,7 +10,7 @@ image = "pictures/article.png"
 The Newsroom’s story: a header (an eyebrow of its category over its date, the headline, a subhead) over its copy, the text in a column narrower than its figures, its footnotes at its end. The copy’s plain elements are styled as they come, so the HTML markdown writes reads as the Newsroom’s with no class on it: every page of this documentation is one.
 
 ```css
-@import "ciderui/components/article/article.css";
+@import "ciderui/components/site/article/article.css";
 ```
 
 {{ <cui_example file="article/article" title="An article" /> }}

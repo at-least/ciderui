@@ -10,7 +10,7 @@ image = "pictures/console-list.png"
 Rows grouped on the card’s gray, a hairline between them from 16px in. A row that is a link fills when hovered; any row can hold the page’s own content (its controls, a chart).
 
 ```css
-@import "ciderui/components/console-list/console-list.css";
+@import "ciderui/components/console/console-list/console-list.css";
 ```
 
 {{ <cui_example file="console-list/list" title="Console list" pad={true} /> }}

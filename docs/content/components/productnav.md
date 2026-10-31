@@ -10,8 +10,8 @@ image = "pictures/productnav.png"
 The row at the top of apple.com’s store: small cards, each a product’s picture above its name, the whole card a link to its products. It is a [Shelf](@/components/shelf.md) with no header, so it scrolls and snaps as one, its paddles the shelf’s.
 
 ```css
-@import "ciderui/components/shelf/shelf.css";
-@import "ciderui/components/productnav/productnav.css";
+@import "ciderui/components/site/shelf/shelf.css";
+@import "ciderui/components/site/productnav/productnav.css";
 ```
 
 {{ <cui_example file="productnav/productnav" title="A product nav" /> }}

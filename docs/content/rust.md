@@ -13,11 +13,11 @@ hypertext = "0.12.1"
 
 ## The components
 
-The crate holds a component for each part whose markup is more than a class on one element; a button, a link in running text or a price is a class string on the page’s own element. Each component’s fields are the part’s: its text, its links, its variant as an enum, and `class`, the page’s utilities on its root (`""` for none).
+The crate holds a component for each part whose markup is more than a class on one element, in its set’s module: `ciderui::site` for apple.com’s parts, `ciderui::console` for the console’s (`ConsoleBadge`, its name keeping `Console`); a button, a link in running text or a price is a class string on the page’s own element. Each component’s fields are the part’s: its text, its links, its variant as an enum, and `class`, the page’s utilities on its root (`""` for none).
 
 ```rust
 use hypertext::prelude::*;
-use ciderui::{Ground, Rhythm, Section};
+use ciderui::site::{Ground, Rhythm, Section};
 
 let html = rsx! {
     <Section ground=(Ground::Alt) rhythm=(Rhythm::Large) dark=true class="">
@@ -88,7 +88,7 @@ The site’s entry then imports from there:
 @import "tailwindcss";
 @import "../target/ciderui/fonts.css";
 @import "../target/ciderui/index.css";
-@import "../target/ciderui/components/button/button.css";
+@import "../target/ciderui/site.css";
 ```
 
 The binary `ciderui-css <dir>` does the same from a shell. The Inter files are not embedded: copy ciderui’s `fonts/` beside the compiled stylesheet once.

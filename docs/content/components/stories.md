@@ -10,7 +10,7 @@ image = "pictures/stories.png"
 The Newsroom’s index: a band on the alternate ground, its heading over a grid of stories, each a white tile rounded 32px, the whole of it its link: its picture, its category, its headline and its date. This documentation’s [News](@/news/_index.md) is one.
 
 ```css
-@import "ciderui/components/stories/stories.css";
+@import "ciderui/components/site/stories/stories.css";
 ```
 
 {{ <cui_example file="stories/stories" title="The latest stories" /> }}

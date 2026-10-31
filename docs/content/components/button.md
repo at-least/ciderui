@@ -10,7 +10,7 @@ image = "pictures/button.png"
 apple.com’s pill, from the store’s shared button styles and its marketing pages: a class on `<a href>` or `<button>`, its color a `data-variant`, its size a `data-size`.
 
 ```css
-@import "ciderui/components/button/button.css";
+@import "ciderui/components/site/button/button.css";
 ```
 
 {{ <cui_example file="button/default" title="A button" pad={true} /> }}

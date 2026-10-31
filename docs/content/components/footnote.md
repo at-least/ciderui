@@ -10,7 +10,7 @@ image = "pictures/footnote.png"
 A product page’s footnote mark: a `<sup>` holding a link to its note, at the text’s size and on its baseline, underlined in the text’s color, its digits drawn small and raised by the font itself (`font-feature-settings: "numr"`, which SF and Inter both have).
 
 ```css
-@import "ciderui/components/footnote/footnote.css";
+@import "ciderui/components/site/footnote/footnote.css";
 ```
 
 {{ <cui_example file="footnote/footnote" title="A footnote's mark" pad={true} /> }}

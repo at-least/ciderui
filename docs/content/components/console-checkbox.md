@@ -10,7 +10,7 @@ image = "pictures/console-checkbox.png"
 A 15px rounded box before its label, the input kept over it, transparent, so it takes the focus, the click and the space bar; checked, the brand’s blue with a white check. Where no label shows (a table row’s), the input carries an `aria-label`.
 
 ```css
-@import "ciderui/components/console-checkbox/console-checkbox.css";
+@import "ciderui/components/console/console-checkbox/console-checkbox.css";
 ```
 
 {{ <cui_example file="console-checkbox/checkbox" title="Console checkboxes" pad={true} /> }}

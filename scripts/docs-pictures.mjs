@@ -21,12 +21,13 @@
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { ROOT } from '../test/compile.mjs';
+import { ROOT, componentDir } from '../test/compile.mjs';
 
 const DOCS = join(ROOT, 'docs');
 const OUT = join(DOCS, 'static/pictures');
 const MANIFEST = join(DOCS, 'pictures.json');
-const example = (id) => readFileSync(join(ROOT, 'components', id.replace('/', '/examples/') + '.html'), 'utf8');
+// id: <name>/<example>
+const example = (id) => { const [name, file] = id.split('/'); return readFileSync(join(ROOT, componentDir(name), 'examples', `${file}.html`), 'utf8'); };
 
 // ciderui's own parts as a shelf of the store's cards, each its name, its
 // kind and what it is, for the home's tile and the catalogue's story: the

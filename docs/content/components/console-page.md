@@ -10,7 +10,7 @@ image = "pictures/console-page.png"
 The page of a site that is a console, as App Store Connect’s newer look draws one: its ground, its text at 13px on 18px, and its type. A console’s parts (`cui-console-*`) are App Store Connect’s, not apple.com’s: their colors are the console’s own (`--cui-c-console-*`), and dark is derived from the toolkit’s dark palette.
 
 ```css
-@import "ciderui/components/console-page/console-page.css";
+@import "ciderui/components/console/console-page/console-page.css";
 ```
 
 {{ <cui_example file="console-page/page" title="A console page" pad={true} /> }}

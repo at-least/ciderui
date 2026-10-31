@@ -10,7 +10,7 @@ image = "pictures/link.png"
 A link in running text is apple.com’s own `a`: the link’s color, underlined at rest and the same hovered. Its size is the text’s around it.
 
 ```css
-@import "ciderui/components/link/link.css";
+@import "ciderui/components/site/link/link.css";
 ```
 
 {{ <cui_example file="link/inline" title="A link in a sentence" pad={true} /> }}

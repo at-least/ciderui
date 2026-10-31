@@ -10,7 +10,7 @@ ciderui is not published: a site takes it as a checkout beside its own, `"cideru
 @import "tailwindcss";
 @import "ciderui/fonts.css";
 @import "ciderui";
-@import "ciderui/components/button/button.css";
+@import "ciderui/components/site/button/button.css";
 ```
 
 The documentation is `docs/`, a site built with ciderui-zola (checked out beside this repository): getting started, the foundations, the crate, and each part live over its markup.
@@ -26,7 +26,8 @@ cd docs && zola serve
 | --- | --- |
 | `index.css` | `theme.css`, `tokens.css`, `base.css` and `type.css`: the breakpoints and utilities, the variables, the page's base, the type |
 | `fonts.css`, `fonts/` | Inter |
-| `components/<name>/` | a part: its stylesheet, its examples (the markup the crate's tests render too) and its test |
+| `site.css`, `console.css` | a set's every part, one import each: the site set (apple.com's pages) and the console set (`cui-console-*`) |
+| `components/<set>/<name>/` | a part, in its set (`site` or `console`): its stylesheet, its examples (the markup the crate's tests render too) and its test |
 | `rust/` | the crate |
 | `reference/` | the measurements, each with its probe, page, browser and date |
 | `docs/` | the documentation's site |

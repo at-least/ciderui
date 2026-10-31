@@ -10,7 +10,7 @@ image = "pictures/accordion.png"
 apple.com’s FAQ, from its bag: questions under rules, each opening its answer below it, its chevron at its end turning up. It is HTML’s own `<details>`, so it opens with no script, from the keyboard too.
 
 ```css
-@import "ciderui/components/accordion/accordion.css";
+@import "ciderui/components/site/accordion/accordion.css";
 ```
 
 {{ <cui_example file="accordion/accordion" title="Two questions, the first open" pad={true} /> }}

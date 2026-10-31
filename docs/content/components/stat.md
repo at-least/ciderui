@@ -10,7 +10,7 @@ image = "pictures/stat.png"
 A number on a product page, between two captions in the secondary text: “Up to / 2 days / on a single charge”.
 
 ```css
-@import "ciderui/components/stat/stat.css";
+@import "ciderui/components/site/stat/stat.css";
 ```
 
 {{ <cui_example file="stat/stat" title="A stat" pad={true} /> }}

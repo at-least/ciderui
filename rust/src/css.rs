@@ -1,6 +1,7 @@
 //! The kit's stylesheets, embedded (the `css` feature): the root ones
-//! (`index.css` and its parts, `fonts.css`) and every
-//! `components/<name>/<name>.css`, by their paths in the kit. A site writes
+//! (`index.css` and its parts, `fonts.css`, the sets' `site.css` and
+//! `console.css`) and every `components/<set>/<name>/<name>.css`, by their
+//! paths in the kit. A site writes
 //! them out before its Tailwind build, so the crate's commit is the one pin
 //! for its markup and its CSS:
 //!
@@ -9,7 +10,7 @@
 //! ```
 //!
 //! and its entry imports from there (`@import "../target/ciderui/index.css";`,
-//! `@import "../target/ciderui/components/button/button.css";`). The Inter
+//! `@import "../target/ciderui/site.css";`). The Inter
 //! font files are not embedded: `fonts.css` refers to them as
 //! `url("fonts/…")`, relative to the compiled stylesheet, so a site copies
 //! the kit's `fonts/` directory beside its built CSS once.
@@ -45,7 +46,7 @@ mod tests {
             "tokens.css",
             "type.css",
             "fonts.css",
-            "components/button/button.css",
+            "components/site/button/button.css",
         ] {
             assert!(paths.contains(&want), "{want} is not embedded");
         }
@@ -53,11 +54,37 @@ mod tests {
         assert!(tokens.contains("--cui-c-accent:"));
     }
 
+    // a set's entry imports each of its parts once, in the order of their
+    // names, and no other set's
+    #[test]
+    fn each_set_imports_its_parts_in_order() {
+        for set in ["site", "console"] {
+            let (_, entry) = FILES
+                .iter()
+                .find(|(p, _)| *p == format!("{set}.css"))
+                .unwrap();
+            let imported: Vec<&str> = entry
+                .lines()
+                .filter_map(|l| l.strip_prefix("@import \"./"))
+                .map(|l| l.strip_suffix("\";").unwrap())
+                .collect();
+            let prefix = format!("components/{set}/");
+            let mut parts: Vec<&str> = FILES
+                .iter()
+                .map(|(p, _)| *p)
+                .filter(|p| p.starts_with(&prefix))
+                .collect();
+            parts.sort();
+            assert!(!parts.is_empty(), "{set}: no parts");
+            assert_eq!(imported, parts, "{set}.css");
+        }
+    }
+
     #[test]
     fn writes_the_kits_layout() {
         let dir = std::env::temp_dir().join(format!("ciderui-css-{}", std::process::id()));
         write(&dir).unwrap();
-        let button = fs::read_to_string(dir.join("components/button/button.css")).unwrap();
+        let button = fs::read_to_string(dir.join("components/site/button/button.css")).unwrap();
         assert!(button.contains(".cui-btn"));
         fs::remove_dir_all(&dir).unwrap();
     }

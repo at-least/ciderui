@@ -10,7 +10,7 @@ image = "pictures/posts.png"
 The Newsroom’s archive: a heading over ruled rows, each row a link holding its picture, its category, its headline and its date. This documentation’s [news archive](@/news/archive/_index.md) is a `cui-posts` for each month.
 
 ```css
-@import "ciderui/components/posts/posts.css";
+@import "ciderui/components/site/posts/posts.css";
 ```
 
 {{ <cui_example file="posts/archive" title="A month of the archive" /> }}

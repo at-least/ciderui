@@ -35,7 +35,7 @@ import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, statSync } 
 import { tmpdir } from 'node:os';
 import { extname, join, relative } from 'node:path';
 import { launch } from './chromium.mjs';
-import { ROOT } from './compile.mjs';
+import { COMPONENTS, ROOT, componentDir } from './compile.mjs';
 import { check, done } from './check.mjs';
 
 const DOCS = join(ROOT, 'docs');
@@ -43,14 +43,14 @@ const ORIGIN = 'https://ciderui.test';
 const TYPES = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.json': 'application/json', '.txt': 'text/plain' };
 
 // the pages: one for each component, its examples all shown
-const components = readdirSync(join(ROOT, 'components')).sort();
+const components = COMPONENTS.map((c) => c.name);
 const pages = readdirSync(join(DOCS, 'content/components')).filter((f) => f !== '_index.md').map((f) => f.replace(/\.md$/, ''));
 for (const name of components) {
   const file = join(DOCS, 'content/components', `${name}.md`);
   if (!check(`${name} has a page, docs/content/components/${name}.md`, existsSync(file), true)) continue;
   const md = readFileSync(file, 'utf8');
   const shown = [...md.matchAll(/<cui_example file="([^"]+)"/g)].map((m) => m[1]);
-  for (const f of readdirSync(join(ROOT, 'components', name, 'examples')).filter((f) => f.endsWith('.html'))) {
+  for (const f of readdirSync(join(ROOT, componentDir(name), 'examples')).filter((f) => f.endsWith('.html'))) {
     check(`docs/content/components/${name}.md shows ${name}/${f}`, shown.includes(`${name}/${f.replace(/\.html$/, '')}`), true);
   }
   check(`docs/content/components/${name}.md has its kind ([extra] category)`, /^category = "[^"]+"$/m.test(md), true);
@@ -67,8 +67,8 @@ for (const name of pages.filter((p) => !components.includes(p))) check(`docs/con
 // cui-post-content) is the markup's alone
 const css = readFileSync(join(DOCS, 'static/example.css'), 'utf8');
 const ruled = new Set([
-  ...[...components.map((c) => `components/${c}/${c}.css`), 'base.css'].flatMap((f) => [...readFileSync(join(ROOT, f), 'utf8').matchAll(/\.(cui-[a-z0-9-]+)/g)].map((m) => m[1])),
-  ...['type.css', ...components.map((c) => `components/${c}/${c}.css`)].flatMap((f) => [...readFileSync(join(ROOT, f), 'utf8').matchAll(/@utility ([a-z0-9-]+)/g)].map((m) => m[1])),
+  ...[...components.map((c) => `${componentDir(c)}/${c}.css`), 'base.css'].flatMap((f) => [...readFileSync(join(ROOT, f), 'utf8').matchAll(/\.(cui-[a-z0-9-]+)/g)].map((m) => m[1])),
+  ...['type.css', ...components.map((c) => `${componentDir(c)}/${c}.css`)].flatMap((f) => [...readFileSync(join(ROOT, f), 'utf8').matchAll(/@utility ([a-z0-9-]+)/g)].map((m) => m[1])),
 ]);
 for (const e of readdirSync(join(DOCS, 'examples'), { recursive: true, withFileTypes: true }).filter((e) => e.isFile())) {
   const html = readFileSync(join(e.parentPath, e.name), 'utf8');

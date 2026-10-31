@@ -10,8 +10,8 @@ image = "pictures/console-hint.png"
 A small “i” in a gray circle beside a word — a metric’s title, a column’s heading — that opens a popover saying what the word means. The popover is the button’s `popovertarget`: a click or a tap opens it, Escape or a click elsewhere closes it, with no script.
 
 ```css
-@import "ciderui/components/console-hint/console-hint.css";
-@import "ciderui/components/console-popover/console-popover.css";
+@import "ciderui/components/console/console-hint/console-hint.css";
+@import "ciderui/components/console/console-popover/console-popover.css";
 ```
 
 {{ <cui_example file="console-hint/hint" title="Console hint" pad={true} /> }}

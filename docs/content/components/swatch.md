@@ -10,7 +10,7 @@ image = "pictures/swatch.png"
 A finish on apple.com’s buy page: a 28px circle of the color in a 36px ring, on a radio; checked, the ring is the accent. The color’s name is hidden but read.
 
 ```css
-@import "ciderui/components/swatch/swatch.css";
+@import "ciderui/components/site/swatch/swatch.css";
 ```
 
 {{ <cui_example file="swatch/swatches" title="Three finishes, the first chosen" pad={true} /> }}

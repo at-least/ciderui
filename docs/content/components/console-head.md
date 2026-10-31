@@ -10,8 +10,8 @@ image = "pictures/console-head.png"
 The top of a page that belongs to something — an app, a project: its name, large, and its tabs on the same row, as App Store Connect heads an app’s pages. The tabs say which page this is, so the page needs no second title for it. On a phone the tabs take a row of their own under the name.
 
 ```css
-@import "ciderui/components/console-tabs/console-tabs.css";
-@import "ciderui/components/console-head/console-head.css";
+@import "ciderui/components/console/console-tabs/console-tabs.css";
+@import "ciderui/components/console/console-head/console-head.css";
 ```
 
 {{ <cui_example file="console-head/head" title="A project’s head, Issues current" pad={true} /> }}

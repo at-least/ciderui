@@ -14,85 +14,12 @@
 
 #![warn(missing_docs)]
 
-mod accordion;
-mod article;
-mod card;
-mod checkbox;
-mod console_badge;
-mod console_banner;
-mod console_card;
-mod console_checkbox;
-mod console_chip;
-mod console_dialog;
-mod console_empty;
-mod console_field;
-mod console_hint;
-mod console_menu;
-mod console_pager;
-mod console_sidebar;
-mod console_tabs;
+pub mod console;
 #[cfg(feature = "css")]
 pub mod css;
-mod field;
-mod footer;
-mod footnote;
-mod gallery;
-mod globalnav;
 pub mod icon;
-mod link;
-mod localnav;
 pub mod lucide;
-mod modal;
-mod option;
-mod posts;
-mod productnav;
-mod quicklinks;
-mod ribbon;
-mod section;
-mod shelf;
-mod stat;
-mod stories;
-mod swatch;
-mod tile;
-
-pub use accordion::{Accordion, AccordionItem};
-pub use article::Article;
-pub use card::Card;
-pub use checkbox::Checkbox;
-pub use console_badge::{ConsoleBadge, ConsoleBadgeVariant, ConsoleColor};
-pub use console_banner::ConsoleBanner;
-pub use console_card::ConsoleMetric;
-pub use console_checkbox::ConsoleCheckboxBox;
-pub use console_chip::ConsoleChip;
-pub use console_dialog::ConsoleDialog;
-pub use console_empty::{ConsoleEmpty, ConsoleEmptySize};
-pub use console_field::{
-    ConsoleError, ConsoleFormField, ConsoleHelp, ConsoleSelect, console_error_id, console_help_id,
-};
-pub use console_hint::ConsoleHint;
-pub use console_menu::{ConsoleMenu, ConsoleMenuGroup, ConsoleMenuItem};
-pub use console_pager::ConsolePager;
-pub use console_sidebar::{ConsoleSidebar, ConsoleSidebarItem};
-pub use console_tabs::{ConsoleTab, ConsoleTabs, ConsoleTabsVariant};
-pub use field::{Field, Select, TextArea};
-pub use footer::{Footer, FooterSection};
-pub use footnote::Footnote;
-pub use gallery::Gallery;
-pub use globalnav::{Bag, BagLink, FlyoutGroup, GlobalNav, NavLink, Search};
-pub use link::MoreLink;
-pub use localnav::LocalNav;
-pub use modal::{Modal, ModalButton};
-pub use option::OptionTile;
-pub use posts::{Post, PostSize, Posts};
-pub use productnav::{ProductNav, ProductNavItem};
-pub use quicklinks::QuickLinks;
-pub use ribbon::Ribbon;
-pub use section::{Ground, Rhythm, Section, SectionHeader};
-pub use shelf::Shelf;
-pub use stat::Stat;
-pub use stories::{Stories, Story, StorySize};
-pub use swatch::Swatch;
-pub use tile::{Tile, TileSize};
+pub mod site;
 
 #[cfg(test)]
 mod example;
