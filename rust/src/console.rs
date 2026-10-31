@@ -22,6 +22,7 @@ mod console_radio;
 mod console_sidebar;
 mod console_status;
 mod console_tabs;
+mod console_thumb;
 
 pub use console_appearance::{ConsoleAppearance, ConsoleAppearanceChoice};
 pub use console_badge::{ConsoleBadge, ConsoleBadgeVariant, ConsoleColor};
@@ -46,3 +47,4 @@ pub use console_radio::ConsoleRadio;
 pub use console_sidebar::{ConsoleSidebar, ConsoleSidebarItem};
 pub use console_status::ConsoleStatus;
 pub use console_tabs::{ConsoleTab, ConsoleTabs, ConsoleTabsVariant};
+pub use console_thumb::ConsoleThumb;
