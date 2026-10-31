@@ -93,6 +93,17 @@ export const cases = [
       { target: 'th[aria-sort="descending"] > .cui-console-table-sort', props: ['color'], golden: 'the sorted column\'s label the label\'s color' },
       { target: '.cui-console-table-sort-icon', props: ['box-width', 'box-height'], golden: 'its arrow, Lucide\'s, 12px: the toolkit names no sort control' },
       { target: 'tbody tr:first-child', props: ['background-color'], golden: 'a row whose checkbox is checked is selected: the brand\'s fill at 0.08, as aria-selected' },
+      { target: 'tbody tr:first-child .cui-console-checkbox-input', props: ['hit'], golden: 'the pointer finds a linked row\'s checkbox, not the row\'s link: the link\'s ::after covers the row and comes later in it, and took the checkbox\'s click' },
+      { target: 'tbody tr:first-child td:nth-child(3)', props: ['hit'], golden: 'elsewhere in the row the pointer still finds its link' },
+    ],
+  },
+  {
+    name: 'table checkbox touch',
+    html: ex('sticky'),
+    widths: [390],
+    touch: true,
+    checks: [
+      { target: 'tbody tr:first-child .cui-console-checkbox', props: ['hit'], golden: 'on a touch screen too a tap on a linked row\'s checkbox finds the checkbox, not the row\'s link' },
     ],
   },
   {
