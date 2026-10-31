@@ -34,3 +34,5 @@ A value to copy — a command, a URL, a key — in a code listing, with a round 
 A value inside a sentence — an issue’s ID, an event’s — takes a small copy button after it instead: its icon in the secondary color, a hit area that leaves the line’s height as it was, and a 44 pt target on a touch screen.
 
 {{ <cui_example file="console-copy/inline" title="An issue ID to copy, an event ID just copied" pad={true} /> }}
+
+The crate writes the button’s two icons with `ConsoleCopyIcons`; the button is the page’s own, with whatever its script reads.
