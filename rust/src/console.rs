@@ -12,6 +12,7 @@ mod console_field;
 mod console_hint;
 mod console_menu;
 mod console_pager;
+mod console_radio;
 mod console_sidebar;
 mod console_status;
 mod console_tabs;
@@ -29,6 +30,7 @@ pub use console_field::{
 pub use console_hint::ConsoleHint;
 pub use console_menu::{ConsoleMenu, ConsoleMenuGroup, ConsoleMenuItem};
 pub use console_pager::ConsolePager;
+pub use console_radio::ConsoleRadio;
 pub use console_sidebar::{ConsoleSidebar, ConsoleSidebarItem};
 pub use console_status::ConsoleStatus;
 pub use console_tabs::{ConsoleTab, ConsoleTabs, ConsoleTabsVariant};

@@ -20,3 +20,5 @@ One choice of a few: a 15px circle before its label, a line under the label sayi
 | `cui-console-radio` | the radio and its label, a `<label>`, 13px |
 | `cui-console-radio-input` | the `<input type="radio">`: 15px, a 1.5px edge; chosen, the blue with a white mark |
 | `cui-console-radio-caption` | a line under the label, secondary |
+
+The crate writes it with `ConsoleRadio`.
