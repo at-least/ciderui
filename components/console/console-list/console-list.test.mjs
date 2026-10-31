@@ -53,6 +53,15 @@ export const cases = [
     ],
   },
   {
+    name: 'list forced colors',
+    html: ex('list'),
+    widths: [1200],
+    forcedColors: true,
+    checks: [
+      { target: LINK, pseudo: '::before', props: ['background-color', 'height'], golden: 'the hairline between rows CanvasText: forced colors drew its fill in the ground\'s color, at its alpha' },
+    ],
+  },
+  {
     name: 'list dark',
     html: `<div class="cui-dark">${ex('list')}</div>`,
     widths: [1200],

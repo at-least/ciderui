@@ -61,7 +61,8 @@
  * oklch(55.4% 0.012 286 / 0.08), is no step of its palette, so it has no
  * dark side to derive); the chevron Lucide's chevron-right, where the
  * toolkit draws an SF Symbol; the focus ring base.css's (rule 9). The
- * width is the page's. */
+ * width is the page's. In forced colors (ciderui's), the current page the
+ * theme's highlight, the rule its text color. */
 
 @layer components {
   .cui-console-menu {
@@ -106,6 +107,15 @@
     &:active,
     &[aria-current="page"] {
       background-color: var(--cui-c-console-neutral-fill-quaternary);
+    }
+
+    /* forced colors drop the fill, the current page read as the others:
+       the theme's highlight */
+    &[aria-current="page"] {
+      @media (forced-colors: active) {
+        background-color: Highlight;
+        color: HighlightText;
+      }
     }
 
     &[aria-disabled="true"] {
@@ -172,6 +182,11 @@
     margin: 0.4375rem 0.625rem;
     border: 0;
     background-color: var(--cui-c-console-neutral-border-secondary);
+
+    /* forced colors draw the fill in the ground's color, at its alpha */
+    @media (forced-colors: active) {
+      background-color: CanvasText;
+    }
 
     @media (width >= 640px) {
       margin-inline: 0.9375rem;

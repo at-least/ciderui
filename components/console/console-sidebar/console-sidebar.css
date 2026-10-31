@@ -67,7 +67,8 @@
  * wordmark's type (the toolkit's is a picture); the icons Lucide's at 20px
  * (the toolkit draws SF Symbols at its text's size); a pressed item filled
  * as a hovered one (its pressed fill is no palette step); the secondary
- * label's alpha (tokens.css). */
+ * label's alpha (tokens.css); in forced colors the current page the
+ * theme's highlight, the rule its text color, the sheet a 1px edge. */
 
 @layer components {
   .cui-console-sidebar {
@@ -95,6 +96,11 @@
         border-radius: 26px;
         background-color: var(--cui-c-console-neutral-background-primary);
         box-shadow: var(--cui-console-shadow-sidebar);
+
+        /* forced colors drop the shadow, the sheet's ground the page's */
+        @media (forced-colors: active) {
+          border: 1px solid CanvasText;
+        }
 
         &:not(:popover-open) {
           display: none;
@@ -193,6 +199,13 @@
     &[aria-current="page"] {
       background-color: var(--cui-c-console-neutral-fill-quaternary);
       font-weight: 500;
+
+      /* forced colors drop the fill, the current page read as the others:
+         the theme's highlight */
+      @media (forced-colors: active) {
+        background-color: Highlight;
+        color: HighlightText;
+      }
     }
   }
 
@@ -237,6 +250,11 @@
     border: 0;
     background-color: var(--cui-c-console-neutral-border-secondary);
 
+    /* forced colors draw the fill in the ground's color, at its alpha */
+    @media (forced-colors: active) {
+      background-color: CanvasText;
+    }
+
     @media (width >= 640px) {
       margin-inline: 13px;
     }
@@ -269,6 +287,11 @@
 
     &[aria-current="page"] {
       background-color: var(--cui-c-console-neutral-fill-quaternary);
+
+      @media (forced-colors: active) {
+        background-color: Highlight;
+        color: HighlightText;
+      }
     }
   }
 

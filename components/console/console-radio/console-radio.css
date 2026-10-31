@@ -21,6 +21,8 @@
  *                            chosen, the brand's blue and its shadow, a
  *                            6.43px white mark; disabled, a fainter edge on
  *                            the gray fill, its mark the disabled label;
+ *                            in forced colors, chosen, its edge and mark
+ *                            the theme's highlight (disabled, its gray);
  *                            focused from the keyboard, base.css's ring
  * cui-console-radio-caption  a line under the label, 13px, the secondary
  *                            label
@@ -77,6 +79,16 @@
       background-color: var(--cui-c-console-brand-accent-primary);
       background-image: radial-gradient(circle, var(--cui-c-console-brand-label-on-accent-primary) 3.215px, transparent 3.715px);
       box-shadow: var(--cui-console-shadow-radio);
+
+      /* forced colors drop the gradient and the fill, the chosen radio
+         drawn as the others: its edge and its mark the theme's highlight */
+      @media (forced-colors: active) {
+        forced-color-adjust: none;
+        border-color: Highlight;
+        background-color: Canvas;
+        background-image: radial-gradient(circle, Highlight 3.215px, transparent 3.715px);
+        box-shadow: none;
+      }
     }
 
     &:disabled {
@@ -86,6 +98,12 @@
 
       &:checked {
         background-image: radial-gradient(circle, var(--cui-c-console-neutral-label-disabled) 3.215px, transparent 3.715px);
+
+        @media (forced-colors: active) {
+          border-color: GrayText;
+          background-color: Canvas;
+          background-image: radial-gradient(circle, GrayText 3.215px, transparent 3.715px);
+        }
       }
     }
   }

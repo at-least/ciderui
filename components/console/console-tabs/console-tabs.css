@@ -40,7 +40,8 @@
  * label on the gray pill, and hovered, blue-600; an underlined tab hovered
  * the button's hovered blue, where the toolkit's is a lighter one, 4.1:1);
  * the focus ring base.css's (rule 9), inside the tab where a phone's
- * bar scrolls; the phone's one scrolling row. */
+ * bar scrolls; the phone's one scrolling row; in forced colors the other
+ * tabs' rule the ground's, the chosen pill the theme's highlight. */
 
 @layer components {
   .cui-console-tabs {
@@ -128,6 +129,13 @@
     border-bottom: 2px solid transparent;
     background-color: var(--cui-console-tab-fill);
     color: var(--cui-console-tab-label);
+
+    /* forced colors draw even a transparent rule in the text's color,
+       every tab ruled as the current one: the others' in the ground's,
+       their 2px kept */
+    @media (forced-colors: active) {
+      border-bottom-color: Canvas;
+    }
     font-family: inherit;
     font-size: 14px;
     line-height: 19px;
@@ -200,6 +208,13 @@
         --cui-console-tab-label: var(--cui-c-console-brand-label-on-accent-primary);
         --cui-console-tab-label-hover: var(--cui-c-console-brand-label-on-accent-primary);
         --cui-console-tab-label-press: var(--cui-c-console-on-accent-press);
+
+        /* forced colors drop the fill, the chosen pill read as the others:
+           the theme's highlight */
+        @media (forced-colors: active) {
+          background-color: Highlight;
+          color: HighlightText;
+        }
       }
     }
 

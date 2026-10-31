@@ -26,7 +26,8 @@
  * The toolkit's: the 16px in, the label's type, its color, the pressed
  * fill, the row height. ciderui's: the secondary label's alpha (fitted,
  * tokens.css); the hairline (the toolkit's table row's); the hovered fill
- * the pressed one; the group's corners and gray the console card's. */
+ * the pressed one; the group's corners and gray the console card's; in
+ * forced colors the hairline the theme's text color. */
 
 @layer components {
   .cui-console-list {
@@ -56,6 +57,11 @@
       left: 1rem;
       height: 0.5px;
       background-color: var(--cui-c-console-neutral-border-secondary);
+
+      /* forced colors draw the fill in the ground's color, at its alpha */
+      @media (forced-colors: active) {
+        background-color: CanvasText;
+      }
     }
   }
 

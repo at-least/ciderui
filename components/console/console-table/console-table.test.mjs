@@ -119,6 +119,16 @@ export const cases = [
     ],
   },
   {
+    name: 'table forced colors',
+    html: ex('table'),
+    widths: [1200],
+    forcedColors: true,
+    checks: [
+      { target: 'tbody tr[aria-selected="true"] > :first-child', props: ['border-left-width', 'border-left-style', 'border-left-color'], golden: 'a selected row its leading edge, 3px of the theme\'s Highlight on its first cell: forced colors drop the fill, and the row read as the others' },
+      { target: 'tbody tr:not([aria-selected]) > :first-child', props: ['border-left-width'], golden: 'another row no edge' },
+    ],
+  },
+  {
     name: 'table dark',
     html: `<div class="cui-dark">${ex('table')}</div>`,
     widths: [1200],

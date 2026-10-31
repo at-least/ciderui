@@ -21,6 +21,8 @@
  "list | .cui-console-list | 640 | background-color": "oklch(0.968 0.001 286.4)",
  "list | .cui-console-list | 640 | border-top-left-radius": "10px",
  "list | div.cui-console-list-item:hover | 640 | background-color": "rgba(0, 0, 0, 0)",
+ "list forced colors | .cui-console-list-item[href=\"#api\"]::before | 1200 | background-color": "rgb(0, 0, 0)",
+ "list forced colors | .cui-console-list-item[href=\"#api\"]::before | 1200 | height": "0.5px",
  "list dark | .cui-console-list | 1200 | background-color": "oklch(0.227 0.004 286.1)",
  "list dark | .cui-console-list-item[href=\"#api\"] .cui-console-list-label | 1200 | color": "oklch(1 0 0 / 0.85)",
  "list dark | .cui-console-list-item[href=\"#api\"]::before | 1200 | background-color": "oklch(0.879 0.015 286.1 / 0.18)"

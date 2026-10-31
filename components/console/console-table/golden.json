@@ -96,6 +96,10 @@
  "table stacked | tbody tr:last-child td:last-child | 390 | display": "flex",
  "table stacked desktop | tbody tr:first-child td:nth-child(2) | 1200 | display": "table-cell",
  "table stacked desktop | tbody tr:first-child td[data-empty] | 1200 | display": "table-cell",
+ "table forced colors | tbody tr[aria-selected=\"true\"] > :first-child | 1200 | border-left-width": "3px",
+ "table forced colors | tbody tr[aria-selected=\"true\"] > :first-child | 1200 | border-left-style": "solid",
+ "table forced colors | tbody tr[aria-selected=\"true\"] > :first-child | 1200 | border-left-color": "rgba(5, 0, 73, 0.8)",
+ "table forced colors | tbody tr:not([aria-selected]) > :first-child | 1200 | border-left-width": "0px",
  "table dark | tbody td:nth-child(2) | 1200 | border-bottom-color": "oklch(0.879 0.015 286.1 / 0.13)",
  "table dark | tbody td:nth-child(2) | 1200 | color": "oklch(1 0 0 / 0.85)",
  "table dark | tbody tr[aria-selected=\"true\"] | 1200 | background-color": "oklch(0.683 0.167 256.6 / 0.08)"

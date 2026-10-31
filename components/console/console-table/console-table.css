@@ -67,7 +67,8 @@
  * square (the toolkit rounds it 12px, set out 12px, which a table's row
  * cannot draw), a checked row selected, the secondary label's alpha
  * (tokens.css), the sort control (the toolkit's tokens name none), the
- * scroll box and the stacked rows of a phone. */
+ * scroll box and the stacked rows of a phone; in forced colors a selected
+ * row's leading edge, 3px of the theme's highlight. */
 
 @layer components {
   .cui-console-table {
@@ -140,6 +141,15 @@
     :where(tbody tr[aria-selected="true"]),
     :where(tbody tr:has(.cui-console-checkbox-input:checked)) {
       background-color: var(--cui-c-console-brand-fill-quaternary);
+    }
+
+    /* forced colors drop the fill, a selected row read as the others: its
+       leading edge the theme's highlight, on its first cell (a row draws
+       no border apart from its cells'; a shadow is dropped too) */
+    @media (forced-colors: active) {
+      :where(tbody tr[aria-selected="true"], tbody tr:has(.cui-console-checkbox-input:checked)) > :where(:first-child) {
+        border-inline-start: 3px solid Highlight;
+      }
     }
 
     :where(a) {

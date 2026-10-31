@@ -52,6 +52,16 @@ export const cases = [
     ],
   },
   {
+    name: 'radios forced colors',
+    html: ex('radios'),
+    widths: [1200],
+    forcedColors: true,
+    checks: [
+      { target: `${ON} .cui-console-radio-input`, props: ['border-top-color', 'background-color', 'background-image', 'box-shadow'], golden: 'chosen, its edge and mark the theme\'s Highlight: forced colors drop the gradient and the fill, and the chosen radio read as the others' },
+      { target: `${OFF} .cui-console-radio-input`, props: ['border-top-color', 'background-image'], golden: 'not chosen, the forced edge and no mark' },
+    ],
+  },
+  {
     name: 'radios dark',
     html: `<div class="cui-dark">${ex('radios')}</div>`,
     widths: [1200],

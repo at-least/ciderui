@@ -31,6 +31,12 @@
  "radios touch | label:nth-of-type(3) | 390 | box-height": "44px",
  "radios touch | label:nth-of-type(3) .cui-console-radio-input | 390 | box-width": "15px",
  "radios touch | label:nth-of-type(3) .cui-console-radio-input | 390 | box-height": "15px",
+ "radios forced colors | label:nth-of-type(1) .cui-console-radio-input | 1200 | border-top-color": "rgba(5, 0, 73, 0.8)",
+ "radios forced colors | label:nth-of-type(1) .cui-console-radio-input | 1200 | background-color": "rgb(255, 255, 255)",
+ "radios forced colors | label:nth-of-type(1) .cui-console-radio-input | 1200 | background-image": "radial-gradient(circle, rgba(5, 0, 73, 0.8) 3.215px, rgba(0, 0, 0, 0) 3.715px)",
+ "radios forced colors | label:nth-of-type(1) .cui-console-radio-input | 1200 | box-shadow": "none",
+ "radios forced colors | label:nth-of-type(2) .cui-console-radio-input | 1200 | border-top-color": "rgb(0, 0, 0)",
+ "radios forced colors | label:nth-of-type(2) .cui-console-radio-input | 1200 | background-image": "none",
  "radios dark | label:nth-of-type(2) .cui-console-radio-input | 1200 | border-top-color": "oklch(0.879 0.015 286.1 / 0.42)",
  "radios dark | label:nth-of-type(2) .cui-console-radio-input | 1200 | background-color": "oklch(0 0 0)",
  "radios dark | label:nth-of-type(1) .cui-console-radio-input | 1200 | background-color": "oklch(0.512 0.203 260.5)"

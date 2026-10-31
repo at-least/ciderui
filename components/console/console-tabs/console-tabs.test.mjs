@@ -125,6 +125,26 @@ export const cases = [
     ],
   },
   {
+    name: 'tabs forced colors',
+    html: ex('tabs'),
+    widths: [1200],
+    forcedColors: true,
+    checks: [
+      { target: '.cui-console-tab[aria-current="page"]', props: ['border-bottom-color', 'border-bottom-width'], golden: 'the current tab\'s rule, in the forced text color' },
+      { target: REST, props: ['border-bottom-color', 'border-bottom-width'], golden: 'the others\' rule in the ground\'s color, its 2px kept: forced colors drew even the transparent rule in the text\'s color, every tab ruled as the current one' },
+    ],
+  },
+  {
+    name: 'filled forced colors',
+    html: ex('filled'),
+    widths: [1200],
+    forcedColors: true,
+    checks: [
+      { target: CHOSEN, props: ['background-color', 'color'], golden: 'the chosen pill the theme\'s Highlight under HighlightText: forced colors drop the fill, and it read as the others' },
+      { target: PILL, props: ['background-color'], golden: 'the others\' gray fill forced to the ground, at its alpha' },
+    ],
+  },
+  {
     name: 'tabs dark',
     html: `<div class="cui-dark">${ex('tabs')}${ex('filled')}</div>`,
     widths: [1200],

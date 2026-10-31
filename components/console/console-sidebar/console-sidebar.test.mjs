@@ -68,6 +68,27 @@ export const cases = [
     ],
   },
   {
+    name: 'sidebar forced colors',
+    html: PAGE(ex('sidebar')),
+    widths: [1200],
+    forcedColors: true,
+    checks: [
+      { target: CURRENT, props: ['background-color', 'color'], golden: 'the current page the theme\'s Highlight under HighlightText: forced colors drop the fill, and it read as the others' },
+      { target: ITEM, props: ['background-color'], golden: 'another item no ground' },
+      { target: '.cui-console-sidebar-rule', props: ['background-color'], golden: 'the rule CanvasText: forced colors drew its fill in the ground\'s color, at its alpha' },
+    ],
+  },
+  {
+    name: 'sidebar sheet forced colors',
+    html: PAGE(ex('open')),
+    widths: [390],
+    click: '.cui-console-sidebar-open',
+    forcedColors: true,
+    checks: [
+      { target: SIDEBAR, props: ['border-top-width', 'border-top-style', 'border-top-color', 'box-shadow'], golden: 'the sheet a 1px CanvasText edge, as the popover\'s and the toast\'s: forced colors drop its shadow, and its ground is the page\'s' },
+    ],
+  },
+  {
     name: 'sidebar dark',
     html: `<div class="cui-dark">${PAGE(ex('sidebar'))}</div>`,
     widths: [1200],
