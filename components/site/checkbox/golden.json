@@ -30,5 +30,10 @@
  "focus | .cui-checkbox-indicator | 1200 | outline-offset": "3px",
  "click | .cui-checkbox-input | 1200 | focused": "true",
  "click | .cui-checkbox-indicator | 1200 | outline-style": "none",
- "click | .cui-checkbox-indicator | 1200 | background-color": "rgb(0, 113, 227)"
+ "click | .cui-checkbox-indicator | 1200 | background-color": "rgb(0, 113, 227)",
+ "checkbox touch | .cui-checkbox-label | 390 | box-height": "44px",
+ "checkbox touch | .cui-checkbox-indicator | 390 | box-top": "14px",
+ "checkbox touch | .cui-checkbox-indicator | 390 | box-height": "16px",
+ "checkbox touch | .cui-checkbox-input | 390 | box-top": "14px",
+ "checkbox touch | .cui-checkbox-input | 390 | box-height": "16px"
 }

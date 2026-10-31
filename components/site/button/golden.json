@@ -90,5 +90,10 @@
  "disabled | .cui-btn[data-variant=\"neutral\"]:hover | 390 | color": "rgb(255, 255, 255)",
  "disabled | .cui-btn[data-variant=\"neutral\"]:hover | 390 | background-color": "rgb(29, 29, 31)",
  "disabled | .cui-btn[data-variant=\"neutral\"]:hover | 390 | border-top-color": "rgba(0, 0, 0, 0)",
- "disabled | .cui-btn[data-variant=\"neutral\"]:hover | 390 | border-bottom-color": "rgba(0, 0, 0, 0)"
+ "disabled | .cui-btn[data-variant=\"neutral\"]:hover | 390 | border-bottom-color": "rgba(0, 0, 0, 0)",
+ "touch target | .cui-btn[data-size=\"sm\"] | 390 | box-height": "24px",
+ "touch target | .cui-btn[data-size=\"sm\"]::after | 390 | width": "44px",
+ "touch target | .cui-btn[data-size=\"sm\"]::after | 390 | height": "44px",
+ "touch target | .cui-btn:not([data-size])::after | 390 | height": "44px",
+ "no touch target with a mouse | .cui-btn[data-size=\"sm\"]::after | 1200 | content": "none"
 }

@@ -16,14 +16,15 @@
  * (none)              the link's color, underlined: apple.com's in running
  *                     text, underlined at rest, unchanged hovered
  * data-variant="more" not underlined until hovered, then its text alone
- *                     (cui-link-text), not its chevron
+ *                     (cui-link-text), not its chevron; on a touch screen
+ *                     a transparent ::after 44px at least each way
  * cui-link-icon       the chevron, 0.24em after the text, as apple.com's
  *                     glyph is
  *
  * The size is the text's around it, as apple.com's links take theirs; the
  * focus ring is base.css's. apple.com's: the color, the underline, the
  * chevron's place. ciderui's: the chevron, drawn from apple.com's glyph's
- * numbers (the crate's icon). */
+ * numbers (the crate's icon); the more link's touch target (the HIG's). */
 
 @layer components {
   .cui-link {
@@ -47,5 +48,24 @@
     display: inline;
     margin-left: 0.24em;
     vertical-align: -0.01em;
+  }
+
+  /* a touch screen's target for the more link, a standalone control (a link
+     in running text is text, exempt): a transparent ::after 44px at least
+     each way, as the console's link draws one */
+  @media (pointer: coarse) {
+    :where(.cui-link[data-variant="more"]) {
+      position: relative;
+    }
+
+    .cui-link[data-variant="more"]::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: max(100%, 44px);
+      height: max(100%, 44px);
+      transform: translate(-50%, -50%);
+    }
   }
 }

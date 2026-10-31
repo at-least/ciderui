@@ -70,4 +70,23 @@ export const cases = [
     widths: [390],
     checks: [{ target: '.cui-link-text', on: '.cui-link', state: 'hover', props: ['text-decoration-line'], rest: 'a touch screen keeps no hover (rule 5), where apple.com\'s more link underlines (touch-iphone:link.more-copy)' }],
   },
+  {
+    name: 'more link touch target',
+    html: ex('more'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: '.cui-link', props: ['box-height'], golden: 'the more link drawn as before' },
+      { target: '.cui-link', pseudo: '::after', props: ['height'], golden: 'its target a transparent ::after 44px tall at least, the HIG\'s 44pt (Accessibility, Mobility; its 20px line is under the 28pt minimum), as the console\'s link draws one; a link in running text is text, and draws none' },
+    ],
+  },
+  {
+    name: 'inline link no touch target',
+    html: ex('inline'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: '.cui-link', pseudo: '::after', props: ['content'], golden: 'a link in running text no ::after on a touch screen (text, exempt from the HIG\'s control sizes)' },
+    ],
+  },
 ];

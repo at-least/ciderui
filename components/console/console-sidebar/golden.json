@@ -51,5 +51,7 @@
  "sidebar sheet forced colors | .cui-console-sidebar | 390 | border-top-color": "rgb(0, 0, 0)",
  "sidebar sheet forced colors | .cui-console-sidebar | 390 | box-shadow": "none",
  "sidebar dark | .cui-console-sidebar-item[aria-current=\"page\"] | 1200 | background-color": "oklch(0.71 0.019 285.9 / 0.08)",
- "sidebar dark | .cui-console-sidebar-item[aria-current=\"page\"] | 1200 | color": "oklch(1 0 0 / 0.85)"
+ "sidebar dark | .cui-console-sidebar-item[aria-current=\"page\"] | 1200 | color": "oklch(1 0 0 / 0.85)",
+ "wordmark touch | .cui-console-sidebar-wordmark | 1200 | box-height": "22px",
+ "wordmark touch | .cui-console-sidebar-wordmark::after | 1200 | height": "44px"
 }

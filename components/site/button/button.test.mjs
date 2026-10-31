@@ -132,4 +132,23 @@ export const cases = [
     checks: ['.cui-btn:not([data-variant])', '.cui-btn[data-variant="secondary"]', '.cui-btn[data-variant="neutral"]']
       .map(target => ({ target, state: 'hover', props: COLORS, rest: 'a touch screen keeps no hover (rule 5), where apple.com\'s buttons keep theirs (touch-store:button, button.secondary, button.neutral)' })),
   },
+  {
+    name: 'touch target',
+    html: ex('sizes'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: '.cui-btn[data-size="sm"]', props: ['box-height'], golden: 'the small pill drawn 24px on a touch screen too, apple.com\'s' },
+      { target: '.cui-btn[data-size="sm"]', pseudo: '::after', props: ['width', 'height'], golden: 'its target a transparent ::after 44px at least each way, the HIG\'s 44pt (Accessibility, Mobility; 24px is under its 28pt minimum), as the console\'s button draws one' },
+      { target: '.cui-btn:not([data-size])', pseudo: '::after', props: ['height'], golden: 'the 36px pill\'s target 44px tall' },
+    ],
+  },
+  {
+    name: 'no touch target with a mouse',
+    html: ex('sizes'),
+    widths: [1200],
+    checks: [
+      { target: '.cui-btn[data-size="sm"]', pseudo: '::after', props: ['content'], golden: 'with a mouse no ::after' },
+    ],
+  },
 ];

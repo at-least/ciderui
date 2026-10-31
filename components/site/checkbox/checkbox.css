@@ -13,7 +13,8 @@
  *
  * cui-checkbox            the checkbox and its label
  * cui-checkbox-input      the input, transparent, the box's size and place
- * cui-checkbox-label      its label, 17px, 26px in
+ * cui-checkbox-label      its label, 17px, 26px in; on a touch screen 44px
+ *                         tall at least, the box centered on it
  * cui-checkbox-indicator  the box: 16px, its edge, 3px corners, on the
  *                         field's ground; checked, the accent, its check
  *                         shown; focused from the keyboard, the focus ring
@@ -22,7 +23,8 @@
  * ring (its script's for the keyboard; a checkbox matches :focus-visible for
  * the keyboard alone, so no script here). ciderui's: the letter-spacing
  * (tokens.css); its check drawn as a line (apple.com's an icon font's
- * glyph); no margin below it (apple.com's 11px, the form's spacing). */
+ * glyph); no margin below it (apple.com's 11px, the form's spacing); the
+ * touch screen's 44px row (the HIG's). */
 
 @layer components {
   .cui-checkbox {
@@ -79,5 +81,24 @@
   .cui-checkbox-input:focus-visible + .cui-checkbox-label .cui-checkbox-indicator {
     outline: var(--cui-focus-ring);
     outline-offset: var(--cui-focus-ring-offset);
+  }
+
+  /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility): the
+     label, which takes the tap, 44px tall at least, its text, the box and
+     the input centered in it, as the console's radio. Not a larger target
+     drawn round it: stacked, it would reach the checkbox beside it */
+  @media (pointer: coarse) {
+    .cui-checkbox-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding-top: 0;
+    }
+
+    .cui-checkbox-input,
+    .cui-checkbox-indicator {
+      top: 50%;
+      margin-top: -8px;
+    }
   }
 }

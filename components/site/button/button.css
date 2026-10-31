@@ -22,6 +22,7 @@
  *               store's form button (56px)
  * cui-btn-block a block, 8px corners
  * :disabled     dimmed to 0.42, no hover, no press
+ * on a touch screen  a transparent ::after 44px at least each way round it
  *
  * apple.com's: every color, size, corner, the dimming. ciderui's: the
  * letter-spacing (the system font's fitted value for the size, tokens.css);
@@ -29,7 +30,8 @@
  * changes it (a hover answering a control that cannot be used); no width:
  * the page's; a secondary-neutral button in a dark block the neutral's dark
  * side (near-white, filled white hovered: apple.com's dark one not
- * measured). */
+ * measured); a touch screen's 44px target (the HIG's; apple.com's pill
+ * takes a tap at its drawn size). */
 
 @layer components {
   .cui-btn {
@@ -141,5 +143,24 @@
   .cui-btn-block {
     display: block;
     border-radius: 8px;
+  }
+
+  /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility): a
+     transparent ::after 44px at least each way, round the drawn pill, as the
+     console's button draws one; nothing drawn changes */
+  @media (pointer: coarse) {
+    :where(.cui-btn) {
+      position: relative;
+    }
+
+    .cui-btn::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: max(100%, 44px);
+      height: max(100%, 44px);
+      transform: translate(-50%, -50%);
+    }
   }
 }

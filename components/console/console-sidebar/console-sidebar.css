@@ -36,7 +36,8 @@
  *                               it a sheet below 1024px
  * cui-console-sidebar-header    the wordmark's row: 30px at least, 11px in,
  *                               12px under it; cui-console-sidebar-wordmark,
- *                               6px in, 17px at 600;
+ *                               6px in, 17px at 600, on a touch screen a
+ *                               44px target;
  *                               cui-console-sidebar-close, its close button
  *                               at its end, shown below 1024px
  * cui-console-sidebar-body      the list, 11px in
@@ -139,6 +140,22 @@
     line-height: 22px;
     font-weight: 600;
     text-decoration: none;
+
+    /* a touch screen's target, the HIG's 44pt: a transparent ::after 44px
+       at least each way, as the console's link draws one */
+    @media (pointer: coarse) {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: max(100%, 44px);
+        height: max(100%, 44px);
+        transform: translate(-50%, -50%);
+      }
+    }
   }
 
   .cui-console-sidebar-close {

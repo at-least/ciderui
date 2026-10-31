@@ -57,4 +57,15 @@ export const cases = [
       { target: INDICATOR, props: ['outline-style', 'background-color'], golden: 'checked by the click, and no ring: a click is not the keyboard\'s' },
     ],
   },
+  {
+    name: 'checkbox touch',
+    html: ex('checkbox'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: '.cui-checkbox-label', props: ['box-height'], golden: 'on a touch screen its label, which takes the tap, 44px tall at least, the HIG\'s 44pt (Accessibility, Mobility; the 16px box and its 21px line are under the 28pt minimum), as the console\'s radio' },
+      { target: INDICATOR, props: ['box-top', 'box-height'], golden: 'the box drawn as before, 16px, centered on the row' },
+      { target: '.cui-checkbox-input', props: ['box-top', 'box-height'], golden: 'the input where the box is' },
+    ],
+  },
 ];
