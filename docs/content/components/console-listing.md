@@ -34,3 +34,5 @@ Inside a card, or inside another listing, whose gray is its own, a listing takes
 {{ <cui_example file="console-listing/nested" title="A listing in a console card" pad={true} /> }}
 
 Inline code in a line of text is `cui-console-code`.
+
+The crate writes a listing with numbered lines with `ConsoleListing`.

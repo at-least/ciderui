@@ -13,6 +13,7 @@ mod console_empty;
 mod console_field;
 mod console_hint;
 mod console_list;
+mod console_listing;
 mod console_menu;
 mod console_pager;
 mod console_radio;
@@ -34,6 +35,7 @@ pub use console_field::{
 };
 pub use console_hint::ConsoleHint;
 pub use console_list::ConsoleListItem;
+pub use console_listing::ConsoleListing;
 pub use console_menu::{ConsoleMenu, ConsoleMenuGroup, ConsoleMenuItem};
 pub use console_pager::ConsolePager;
 pub use console_radio::ConsoleRadio;
