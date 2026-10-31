@@ -24,7 +24,7 @@ App Store Connect’s fields: a text field, a dropdown and a multi-line field, e
 | `cui-console-select` | a dropdown’s box, with its chevron (`cui-console-select-chevron`) |
 | `cui-console-label` | a field’s label |
 | `cui-console-help` | a line under a field, its `aria-describedby` |
-| `cui-console-error` | a field’s error, its `aria-describedby` |
+| `cui-console-error` | a field’s error, its `aria-describedby`; empty and hidden (`role="alert"`), the slot a script fills when a request fails |
 | `cui-console-form-field` | a label, its field and its lines |
 
 ## Dropdown

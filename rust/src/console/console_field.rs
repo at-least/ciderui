@@ -108,22 +108,32 @@ impl Renderable for ConsoleHelp<'_> {
 }
 
 /// `cui-console-error`: the line under a control saying what is wrong, its
-/// id [`console_error_id`] for the control's `aria-describedby`. Written
-/// only while there is an error.
+/// id [`console_error_id`] for the control's `aria-describedby`, written
+/// while there is an error; or, with no text, its slot, empty and hidden,
+/// which the page's script fills when a request fails (`role="alert"`: read
+/// out once it is filled).
 pub struct ConsoleError<'a> {
-    /// The control's id.
+    /// The control's id; `""` for a slot that is no one control's (a
+    /// form's). An error with a text needs it: it panics without.
     pub id: &'a str,
-    /// The error. Required: an empty one panics.
+    /// The error; `""` for the slot.
     pub text: &'a str,
+    /// The page's utilities on it; `""` for none.
+    pub class: &'a str,
 }
 
 impl Renderable for ConsoleError<'_> {
     fn render_to(&self, buffer: &mut Buffer) {
+        if self.text.is_empty() {
+            rsx! { <p class=(Class("cui-console-error", self.class)) id=(console_error_id(self.id))[!self.id.is_empty()] role="alert" hidden></p> }
+                .render_to(buffer);
+            return;
+        }
         assert!(
-            !self.text.is_empty(),
-            "ciderui::console::ConsoleError needs a text"
+            !self.id.is_empty(),
+            "ciderui::console::ConsoleError with a text needs its control's id"
         );
-        rsx! { <p class="cui-console-error" id=(console_error_id(self.id))>(self.text)</p> }
+        rsx! { <p class=(Class("cui-console-error", self.class)) id=(console_error_id(self.id))>(self.text)</p> }
             .render_to(buffer);
     }
 }
@@ -179,7 +189,7 @@ mod tests {
                 </ConsoleFormField>
                 <ConsoleFormField id="url" label="Webhook URL">
                     <input class="cui-console-field" id="url" value="htp:/example" aria-invalid="true" aria-describedby=(console_error_id("url"))>
-                    <ConsoleError id="url" text="Enter a URL that starts with https://." />
+                    <ConsoleError id="url" text="Enter a URL that starts with https://." class="" />
                 </ConsoleFormField>
                 <ConsoleFormField id="dsn" label="DSN">
                     <input class="cui-console-field" id="dsn" value="https://key@crashcart.test/1" disabled>
@@ -199,8 +209,24 @@ mod tests {
     }
 
     #[test]
-    #[should_panic(expected = "ConsoleError needs a text")]
-    fn an_empty_error_panics() {
-        let _ = rsx! { <ConsoleError id="a" text="" /> }.render();
+    fn no_text_is_the_hidden_slot_a_script_fills() {
+        assert_eq!(
+            rsx! { <ConsoleError id="" text="" class="mt-2" /> }
+                .render()
+                .as_inner(),
+            r#"<p class="cui-console-error mt-2" role="alert" hidden></p>"#
+        );
+        assert_eq!(
+            rsx! { <ConsoleError id="url" text="" class="" /> }
+                .render()
+                .as_inner(),
+            r#"<p class="cui-console-error" id="url-error" role="alert" hidden></p>"#
+        );
+    }
+
+    #[test]
+    #[should_panic(expected = "ConsoleError with a text needs its control's id")]
+    fn a_text_with_no_control_panics() {
+        let _ = rsx! { <ConsoleError id="" text="Enter a name." class="" /> }.render();
     }
 }
