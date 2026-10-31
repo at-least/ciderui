@@ -19,8 +19,10 @@
  *                     takes the click, the focus and the arrow keys
  * cui-option-label    the tile: 83px tall at least, 15px in, its 1px edge,
  *                     12px corners, on the field's ground; checked, a 2px
- *                     accent edge (14px in, the box unchanged); focused from
- *                     the keyboard, the focus ring
+ *                     accent edge (14px in, the box unchanged); disabled,
+ *                     dimmed to 0.42, its edge the rest one; focused from
+ *                     the keyboard, the focus ring; the pointer over it
+ *                     (disabled, the arrow)
  * cui-option-title    17px at 600, at its start, centered down it
  * cui-option-detail   in the title, under it: 12px, 4px down
  * cui-option-price    12px at its end, 40% of it, 4px down
@@ -49,6 +51,11 @@
     height: 100%;
     margin: 0;
     opacity: 0;
+    cursor: pointer;
+
+    &:disabled {
+      cursor: default;
+    }
   }
 
   .cui-option-label {
@@ -70,6 +77,13 @@
     padding: 14px;
     border-width: 2px;
     border-color: var(--cui-c-accent);
+  }
+
+  /* after the checked rule, so a chosen disabled tile's edge reads gray too,
+     as apple.com's rules are ordered */
+  .cui-option-input:disabled + .cui-option-label {
+    border-color: var(--cui-c-border);
+    opacity: 0.42;
   }
 
   .cui-option-input:focus-visible + .cui-option-label {

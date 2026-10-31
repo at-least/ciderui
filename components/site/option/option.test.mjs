@@ -46,4 +46,29 @@ export const cases = [
       { target: LABEL, props: ['color', 'background-color', 'border-top-color'], golden: 'light in a dark block, as a field (apple.com shows options on light pages alone)' },
     ],
   },
+  {
+    name: 'disabled',
+    html: ex('option').replace('value="256"', 'value="256" disabled'),
+    widths: [1200],
+    checks: [
+      { target: LABEL, props: ['opacity', 'border-top-color'], golden: 'disabled, dimmed to 0.42 with its rest edge: apple.com\'s buy page, read 2026-10-31 (its disabled tiles 0.42, the base rule; a whole disabled step keeps 1, the page\'s choice)' },
+      { target: INPUT, props: ['cursor'], golden: 'disabled, the arrow (apple.com\'s disabled tiles\' labels default)' },
+    ],
+  },
+  {
+    name: 'disabled checked',
+    html: ex('checked').replace(' checked', ' checked disabled'),
+    widths: [1200],
+    checks: [
+      { target: LABEL, props: ['opacity', 'border-top-color', 'border-top-width'], golden: 'chosen and disabled, dimmed, its 2px edge the rest one\'s gray: the disabled rule after the checked one, as apple.com\'s are ordered' },
+    ],
+  },
+  {
+    name: 'pointer',
+    html: ex('option'),
+    widths: [1200],
+    checks: [
+      { target: INPUT, props: ['cursor'], golden: 'the pointer over a tile, apple.com\'s (its enabled tiles\' labels and inputs pointer, read 2026-10-31); the input over the tile takes it' },
+    ],
+  },
 ];

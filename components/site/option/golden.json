@@ -46,5 +46,12 @@
  "dark | .cui-option-label | 900 | border-top-color": "rgb(134, 134, 139)",
  "dark | .cui-option-label | 390 | color": "rgb(29, 29, 31)",
  "dark | .cui-option-label | 390 | background-color": "rgba(255, 255, 255, 0.8)",
- "dark | .cui-option-label | 390 | border-top-color": "rgb(134, 134, 139)"
+ "dark | .cui-option-label | 390 | border-top-color": "rgb(134, 134, 139)",
+ "disabled | .cui-option-label | 1200 | opacity": "0.42",
+ "disabled | .cui-option-label | 1200 | border-top-color": "rgb(134, 134, 139)",
+ "disabled | .cui-option-input | 1200 | cursor": "default",
+ "disabled checked | .cui-option-label | 1200 | opacity": "0.42",
+ "disabled checked | .cui-option-label | 1200 | border-top-color": "rgb(134, 134, 139)",
+ "disabled checked | .cui-option-label | 1200 | border-top-width": "2px",
+ "pointer | .cui-option-input | 1200 | cursor": "pointer"
 }
