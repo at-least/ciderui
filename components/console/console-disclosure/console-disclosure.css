@@ -32,9 +32,11 @@
  *                                 browser's; on a touch screen 44px each way
  *                                 at least
  * cui-console-disclosure-chevron  Lucide's chevron-right before the label,
+ *                                 the secondary label whatever the label's
+ *                                 color (hovered, or a page's own on it),
  *                                 turned down (90deg) open; in a button,
- *                                 chevron-down after the label, turned up
- *                                 (180deg) open
+ *                                 chevron-down after the label, in the
+ *                                 button's color, turned up (180deg) open
  *
  * The HIG's: the triangle's place and turns, the button's turns. App Store
  * Connect's menu group's: the chevron's size and color. ciderui's: the 4px
@@ -78,6 +80,10 @@
     flex: none;
     width: 1em;
     height: 1em;
+
+    :where(.cui-console-disclosure-summary) > & {
+      color: var(--cui-c-console-neutral-label-secondary);
+    }
 
     :where(.cui-console-disclosure[open]) > :where(summary) > & {
       rotate: 90deg;

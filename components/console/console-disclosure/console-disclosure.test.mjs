@@ -18,7 +18,8 @@ export const cases = [
     checks: [
       { target: `${CLOSED} > summary`, props: ['list-style-type', 'display', 'column-gap', 'color', 'cursor'], golden: 'no marker of the browser\'s; its chevron 4px before its label; the secondary label (the menu group\'s chevron\'s)' },
       { target: `${CLOSED} > summary`, props: ['color'], state: 'hover', golden: 'hovered, the label' },
-      { target: `${CLOSED} .cui-console-disclosure-chevron`, props: ['rotate', 'box-width', 'box-height', 'box-left'], golden: 'closed, pointing inward at the label\'s leading edge (the HIG), 1em, Lucide\'s chevron-right as the menu group\'s' },
+      { target: `${CLOSED} .cui-console-disclosure-chevron`, props: ['rotate', 'box-width', 'box-height', 'box-left', 'color'], golden: 'closed, pointing inward at the label\'s leading edge (the HIG), 1em, Lucide\'s chevron-right and its secondary label as the menu group\'s' },
+      { target: `${CLOSED} .cui-console-disclosure-chevron`, props: ['color'], state: 'hover', on: `${CLOSED} > summary`, golden: 'the label hovered, the chevron still the secondary label, as the menu group\'s: its color its own, not the label\'s' },
       { target: `${OPEN} .cui-console-disclosure-chevron`, props: ['rotate'], golden: 'open, pointing down (the HIG): 90deg' },
     ],
   },

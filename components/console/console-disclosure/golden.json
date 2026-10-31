@@ -9,6 +9,8 @@
  "disclosure | .cui-console-disclosure:not([open]) .cui-console-disclosure-chevron | 1200 | box-width": "13px",
  "disclosure | .cui-console-disclosure:not([open]) .cui-console-disclosure-chevron | 1200 | box-height": "13px",
  "disclosure | .cui-console-disclosure:not([open]) .cui-console-disclosure-chevron | 1200 | box-left": "0px",
+ "disclosure | .cui-console-disclosure:not([open]) .cui-console-disclosure-chevron | 1200 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "disclosure | .cui-console-disclosure:not([open]) .cui-console-disclosure-chevron:hover | 1200 | color": "oklch(0.359 0.012 285.8 / 0.74)",
  "disclosure | .cui-console-disclosure[open] .cui-console-disclosure-chevron | 1200 | rotate": "90deg",
  "disclosure touch | .cui-console-disclosure:not([open]) > summary | 390 | box-height": "44px",
  "disclosure touch | .cui-console-disclosure:not([open]) > summary | 390 | min-width": "44px",
