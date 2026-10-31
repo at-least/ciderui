@@ -18,15 +18,16 @@
  *                           of the neutral tertiary fill behind its "i"
  *                           (12px at 600, the secondary label), 4px after the
  *                           word; hovered and
- *                           pressed, the toolkit's fills and labels; focused,
- *                           a 3px halo 1px out; its target (::after) 20px
+ *                           pressed, the toolkit's fills and labels; focused
+ *                           from the keyboard, base.css's ring; its target (::after) 20px
  *                           square, 32px by 44px on a touch screen
  * the popover               what the word means, a cui-console-popover
  *                           opened by the button's popovertarget
  *
- * The toolkit's: the button's fills and labels, its rounding and halo; App
+ * The toolkit's: the button's fills and labels, its rounding; App
  * Store Connect's (measured on its analytics overview): the button's 18px.
- * ciderui's: the 4px before it; the "i" a letter, where App Store Connect
+ * ciderui's: the 4px before it; the focus ring base.css's (rule 9: the
+ * toolkit's halo, 3px of black at 0.15, is 1.41:1 on white); the "i" a letter, where App Store Connect
  * draws an SF Symbol; the secondary label's alpha (fitted, tokens.css). The
  * target: the HIG's minimum control sizes (Accessibility,
  * Mobility: 20x20pt on macOS, 28x28pt on iOS, 44x44pt its default there),
@@ -105,11 +106,6 @@
       &::before {
         background-color: var(--cui-c-console-gray-fill-press);
       }
-    }
-
-    &:focus-visible {
-      outline: 3px solid var(--cui-c-console-neutral-accent-quaternary);
-      outline-offset: 0.0625rem;
     }
 
     @media (forced-colors: active) {

@@ -30,7 +30,7 @@ export const cases = [
       { target: B, props: ['color'], state: 'hover', tb: [`${I}-variant-effect-hover-color`] },
       { target: B, pseudo: '::before', props: ['background-color'], state: 'active', tb: [`${I}-variant-effect-press-backgroundColor`] },
       { target: B, props: ['color'], state: 'active', tb: [`${I}-variant-effect-press-color`] },
-      { target: B, props: ['outline-width', 'outline-style', 'outline-color', 'outline-offset'], state: 'focus-visible', tb: [`${I}-variant-focus-on-outline-width`, `${I}-variant-focus-on-outline-style`, `${I}-variant-focus-on-outline-color`, `${I}-outlineOffset`] },
+      { target: B, props: ['outline-width', 'outline-style', 'outline-color', 'outline-offset'], state: 'focus-visible', golden: 'focused from the keyboard, base.css\'s ring (rule 9): the toolkit\'s halo, 3px of black at 0.15 1px out, is 1.41:1 on white and 1.39:1 dark, a focus that cannot be seen' },
       { target: POP, props: ['display'], golden: 'closed until its button opens it' },
       { target: B, pseudo: '::after', props: ['width', 'height'], golden: 'its target 20px square, the HIG\'s macOS minimum (Accessibility, Mobility), round the 20 by 18px button' },
     ],
