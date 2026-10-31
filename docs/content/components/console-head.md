@@ -22,3 +22,5 @@ The top of a page that belongs to something — an app, a project: its name, lar
 | `cui-console-head-name` | the name, a link to the thing’s first page |
 
 The tabs are `cui-console-tabs`, underlined; in the head they take App Store Connect’s app tabs’ size.
+
+The crate writes it with `ConsoleHead`.

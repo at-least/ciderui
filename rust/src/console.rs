@@ -11,6 +11,7 @@ mod console_dialog;
 mod console_disclosure;
 mod console_empty;
 mod console_field;
+mod console_head;
 mod console_hint;
 mod console_list;
 mod console_listing;
@@ -33,6 +34,7 @@ pub use console_empty::{ConsoleEmpty, ConsoleEmptySize};
 pub use console_field::{
     ConsoleError, ConsoleFormField, ConsoleHelp, ConsoleSelect, console_error_id, console_help_id,
 };
+pub use console_head::ConsoleHead;
 pub use console_hint::ConsoleHint;
 pub use console_list::ConsoleListItem;
 pub use console_listing::ConsoleListing;
