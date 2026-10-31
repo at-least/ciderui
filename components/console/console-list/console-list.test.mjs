@@ -62,6 +62,14 @@ export const cases = [
     ],
   },
   {
+    name: 'list content',
+    html: ex('content'),
+    widths: [1200],
+    checks: [
+      { target: '#nightly-backup', props: ['padding-left', 'padding-top', 'min-height', 'background-color'], golden: 'a row holding the page\'s own content after its label: a row\'s 16px in, 7px above, 44px at least, no fill of its own' },
+    ],
+  },
+  {
     name: 'list dark',
     html: `<div class="cui-dark">${ex('list')}</div>`,
     widths: [1200],

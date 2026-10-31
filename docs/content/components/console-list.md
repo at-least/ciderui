@@ -22,4 +22,8 @@ Rows grouped on the card’s gray, a hairline between them from 16px in. A row t
 | `cui-console-list-label` | its title, 13px at 500 (16px on a phone) |
 | `cui-console-list-secondary` | what follows it, in the secondary label |
 
-The crate writes a row with `ConsoleListItem`; the group is the page’s own `<div>`.
+## A row with its own content
+
+{{ <cui_example file="console-list/content" title="A row holding the page’s own controls" pad={true} /> }}
+
+The crate writes a row with `ConsoleListItem`: its id, its label and what follows it, then what the page gives it; the group is the page’s own `<div>`.
