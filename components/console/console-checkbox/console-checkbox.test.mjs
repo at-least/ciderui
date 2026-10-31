@@ -58,6 +58,7 @@ export const cases = [
     checks: [
       { target: `${OFF} .cui-console-checkbox-input`, props: ['box-width', 'box-height'], golden: 'the transparent input 44px square on a touch screen, the HIG\'s 44pt (Accessibility, Mobility)' },
       { target: `${OFF} .cui-console-checkbox-box`, props: ['box-width', 'box-height'], golden: 'the box drawn as before, 15px' },
+      { target: OFF, props: ['box-height'], golden: 'a checkbox with its label 44px tall on a touch screen, as the radio, so its input\'s 44px fits its row: stacked 12px apart, the next one\'s reached 14px into it' },
     ],
   },
   {

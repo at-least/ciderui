@@ -15,7 +15,8 @@
  * cui-console-checkbox        the checkbox and its label (a <label>, or a
  *                             <span> where the input has an aria-label: a
  *                             table row's): 9px between box and label, 13px
- *                             on 18px
+ *                             on 18px; a <label>, on a touch screen 44px
+ *                             tall at least
  * cui-console-checkbox-input  the input, transparent, over the box; on a
  *                             touch screen 44px square, centered on it
  * cui-console-checkbox-box    the box: 15px, 4px corners, a 1px edge, white;
@@ -48,6 +49,16 @@
 
     &:has(> .cui-console-checkbox-input:disabled) {
       color: var(--cui-c-console-neutral-label-disabled);
+    }
+
+    /* a touch screen: a checkbox with its label (a <label>) 44px tall at
+       least, as the radio's, so its input's 44px fits its row: stacked 12px
+       apart, the next one's reached 14px into it and won the tap there. Not
+       a table row's <span>: its row is taller than the input already */
+    @media (pointer: coarse) {
+      &:where(label) {
+        min-height: 44px;
+      }
     }
   }
 

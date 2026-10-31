@@ -42,6 +42,7 @@
  "checkbox touch | label:nth-child(1) .cui-console-checkbox-input | 390 | box-height": "44px",
  "checkbox touch | label:nth-child(1) .cui-console-checkbox-box | 390 | box-width": "15px",
  "checkbox touch | label:nth-child(1) .cui-console-checkbox-box | 390 | box-height": "15px",
+ "checkbox touch | label:nth-child(1) | 390 | box-height": "44px",
  "checkbox dark | label:nth-child(1) .cui-console-checkbox-box | 1200 | border-top-color": "oklch(0.879 0.015 286.1 / 0.42)",
  "checkbox dark | label:nth-child(1) .cui-console-checkbox-box | 1200 | background-color": "oklch(0 0 0)",
  "checkbox dark | label:nth-child(2) .cui-console-checkbox-box | 1200 | background-color": "oklch(0.512 0.203 260.5)"

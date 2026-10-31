@@ -29,8 +29,8 @@
  * cui-console-disclosure-summary  the line: its chevron 4px before its label,
  *                                 the text's size, the secondary label, the
  *                                 label's own hovered; no marker of the
- *                                 browser's; on a touch screen a target 44px
- *                                 tall at least
+ *                                 browser's; on a touch screen 44px each way
+ *                                 at least
  * cui-console-disclosure-chevron  Lucide's chevron-right before the label,
  *                                 turned down (90deg) open; in a button,
  *                                 chevron-down after the label, turned up
@@ -64,19 +64,13 @@
       }
     }
 
-    /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility) */
+    /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility):
+       the line itself 44px each way at least, its content centered. Not a
+       larger target drawn round it: two summaries 15px apart shared a band
+       the lower one won, and the opened one's reached into its content */
     @media (pointer: coarse) {
-      position: relative;
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: max(100%, 44px);
-        height: max(100%, 44px);
-        transform: translateY(-50%);
-      }
+      min-width: 44px;
+      min-height: 44px;
     }
   }
 
