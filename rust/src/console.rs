@@ -1,6 +1,7 @@
 //! The console set: App Store Connect's newer look's parts, the
 //! `cui-console-*` classes (`components/console/`).
 
+mod console_appearance;
 mod console_badge;
 mod console_banner;
 mod console_card;
@@ -22,6 +23,7 @@ mod console_sidebar;
 mod console_status;
 mod console_tabs;
 
+pub use console_appearance::{ConsoleAppearance, ConsoleAppearanceChoice};
 pub use console_badge::{ConsoleBadge, ConsoleBadgeVariant, ConsoleColor};
 pub use console_banner::ConsoleBanner;
 pub use console_card::ConsoleMetric;
