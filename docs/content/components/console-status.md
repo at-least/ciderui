@@ -26,3 +26,5 @@ A mark in the status’s color before its word, and a line under it that says mo
 A chart’s key sets the mark to its series’ color with `--cui-console-status-color`.
 
 {{ <cui_example file="console-status/key" title="A chart’s key" pad={true} /> }}
+
+The crate writes it with `ConsoleStatus`.
