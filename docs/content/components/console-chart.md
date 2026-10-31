@@ -42,3 +42,5 @@ App Store Connect’s analytics charts. The page draws the data — its SVG, eac
 | `cui-console-chart-sparkline-line` | its line, 2px, round |
 | `cui-console-chart-sparkline-area` | its area |
 | `--cui-console-chart-sparkline-color`, `--cui-console-chart-sparkline-fill` | the line’s and the area’s colors: the brand’s blue and its tint |
+
+The crate writes what is around the plot with `ConsoleChart` (a legend’s series a `ConsoleChartSeries`), the plot being the page’s own svg, and a sparkline with `ConsoleSparkline`.
