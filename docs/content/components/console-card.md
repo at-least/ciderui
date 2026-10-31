@@ -34,4 +34,4 @@ The analytics card: a gray rounded panel on the page holding a metric (its title
 
 {{ <cui_example file="console-card/link" title="A card that opens what it counts" pad={true} /> }}
 
-The crate writes a metric’s card with `ConsoleMetric`.
+The crate writes a metric’s card with `ConsoleMetric`: its value text or markup, the whole card a link where it has an `href`.
