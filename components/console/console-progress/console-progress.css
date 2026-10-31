@@ -15,14 +15,18 @@
  *   data-color="neutral"   the done part the label's black (white in dark)
  *
  * The toolkit's: the heights, the rounding, the track's and the fills'
- * colors (light; dark derived: tokens.css). ciderui's: the native element
+ * colors (light; dark derived: tokens.css). ciderui's: the brand fill's
+ * dark side, the brand label's (fitted, decision 21); the native element
  * (its value is read out; the page gives aria-hidden when the figure is
  * already in text beside it); an indeterminate bar drawing no motion (the
  * toolkit has none). */
 
 @layer components {
   .cui-console-progress {
-    --cui-console-progress-fill: var(--cui-c-console-brand-accent-primary);
+    /* the brand's label's blue: light, the accent's; dark, a step lighter
+       (the accent's dark side, oklch(51.2% 0.203 260.5), is 2.74:1 on the
+       dark track, under a mark's 3:1) */
+    --cui-console-progress-fill: var(--cui-c-console-brand-label-primary);
 
     appearance: none;
     display: block;

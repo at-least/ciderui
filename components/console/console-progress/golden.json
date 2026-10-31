@@ -2,5 +2,5 @@
  "progress | .cui-console-progress:not([data-size]):not([data-color]) | 1200 | width": "320px",
  "progress | .cui-console-progress:not([data-size]):not([data-color]) | 390 | width": "320px",
  "progress dark | .cui-console-progress:not([data-size]):not([data-color]) | 1200 | background-color": "oklch(0.71 0.019 285.9 / 0.2)",
- "progress dark | .cui-console-progress:not([data-size]):not([data-color]) | 1200 | color": "oklch(0.512 0.203 260.5)"
+ "progress dark | .cui-console-progress:not([data-size]):not([data-color]) | 1200 | color": "oklch(0.683 0.167 256.6)"
 }

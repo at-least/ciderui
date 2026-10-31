@@ -28,7 +28,7 @@
  *                      numbered lines has no room at its sides, the numbers
  *                      give it
  *   data-highlighted   the line on the brand's quaternary fill, a 4px edge
- *                      in the brand's accent at its number
+ *                      in the brand's label's blue at its number
  *
  * DocC's: the corners, the room, the scroll, a line's height in proportion
  * to its size (25px on 15px); a number's place, width, room and its
@@ -40,7 +40,9 @@
  * the number in the secondary label, fitted to 4.5:1 (DocC's
  * rgb(110, 110, 115)); the highlight the brand's fill-quaternary (DocC's
  * rgb(234, 243, 255), and in the dark a gray, rgb(66, 66, 69)) and its edge
- * the brand's accent (DocC's rgb(76, 169, 255), rgb(125, 193, 255) dark);
+ * the brand label's blue, the accent's in light and a step lighter in the
+ * dark, where the accent's is under 3:1 (DocC's rgb(76, 169, 255),
+ * rgb(125, 193, 255) dark);
  * the page's ground nested. */
 
 @layer components {
@@ -87,7 +89,10 @@
       background-color: var(--cui-c-console-brand-fill-quaternary);
 
       &::before {
-        border-left: 4px solid var(--cui-c-console-brand-accent-primary);
+        /* the brand's label's blue: light, the accent's; dark, a step
+           lighter (the accent's dark side is 2.57:1 on the dark highlight,
+           under a mark's 3:1) */
+        border-left: 4px solid var(--cui-c-console-brand-label-primary);
         padding-left: 4px;
       }
     }

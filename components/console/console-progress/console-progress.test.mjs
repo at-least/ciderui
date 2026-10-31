@@ -31,7 +31,8 @@ export const cases = [
     html: `<div class="cui-dark">${ex('progress')}</div>`,
     widths: [1200],
     checks: [
-      { target: MD, props: ['background-color', 'color'], golden: 'the dark side derived (tokens.css, decision 18)' },
+      { target: MD, props: ['background-color'], golden: 'the dark side derived (tokens.css, decision 18)' },
+      { target: MD, props: ['color'], golden: 'the done part in the dark the brand label\'s blue, a step lighter than the accent, 5.66:1 on the dark track: the accent\'s dark side was 2.74:1, under a mark\'s 3:1 (decision 21)' },
     ],
   },
 ];
