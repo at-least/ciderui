@@ -21,3 +21,5 @@ Rows grouped on the card’s gray, a hairline between them from 16px in. A row t
 | `cui-console-list-item` | a row (`<a>` or any element): at least 44px, 16px in |
 | `cui-console-list-label` | its title, 13px at 500 (16px on a phone) |
 | `cui-console-list-secondary` | what follows it, in the secondary label |
+
+The crate writes a row with `ConsoleListItem`; the group is the page’s own `<div>`.
