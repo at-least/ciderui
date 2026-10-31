@@ -25,3 +25,5 @@ A `<details>` that hides what is not needed yet — a stack’s system frames, a
 ## A disclosure button
 
 {{ <cui_example file="console-disclosure/button" title="A disclosure button, closed and open" pad={true} /> }}
+
+The crate writes it with `ConsoleDisclosure` and `ConsoleDisclosureVariant`.

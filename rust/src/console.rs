@@ -7,6 +7,7 @@ mod console_card;
 mod console_checkbox;
 mod console_chip;
 mod console_dialog;
+mod console_disclosure;
 mod console_empty;
 mod console_field;
 mod console_hint;
@@ -23,6 +24,7 @@ pub use console_card::ConsoleMetric;
 pub use console_checkbox::ConsoleCheckboxBox;
 pub use console_chip::ConsoleChip;
 pub use console_dialog::ConsoleDialog;
+pub use console_disclosure::{ConsoleDisclosure, ConsoleDisclosureVariant};
 pub use console_empty::{ConsoleEmpty, ConsoleEmptySize};
 pub use console_field::{
     ConsoleError, ConsoleFormField, ConsoleHelp, ConsoleSelect, console_error_id, console_help_id,
