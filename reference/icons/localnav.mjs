@@ -51,7 +51,7 @@ mkdirSync(new URL('./results/', import.meta.url), { recursive: true });
 writeFileSync(new URL('./results/localnav.json', import.meta.url), JSON.stringify({ browser: page.label, date: new Date().toISOString(), ours: OURS, ...result }, null, 1));
 console.log(page.label);
 for (const k of Object.keys(OURS)) console.log(`${k}: iou ${result[k].iou}, apple.com's ink ${JSON.stringify(result[k].appleBox)}, ciderui's ${JSON.stringify(result[k].oursBox)}`);
-const example = readFileSync(new URL('../../components/localnav/examples/localnav.html', import.meta.url), 'utf8');
+const example = readFileSync(new URL('../../components/site/localnav/examples/localnav.html', import.meta.url), 'utf8');
 const inner = OURS.chevron.replace(/^<svg[^>]*>|<\/svg>$/g, '').replace('stroke="#000"', 'stroke="currentColor"');
 const shipped = example.includes(inner);
 console.log(`${shipped ? 'ok  ' : 'FAIL'} the chevron is the example's`);

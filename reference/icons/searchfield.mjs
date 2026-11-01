@@ -77,7 +77,7 @@ console.log(JSON.stringify(result, null, 1));
 // the icons compared are the ones the kit ships: each drawing is in the
 // search's examples (its suggestions' magnifier in the suggestions'), in
 // currentColor
-const example = ['search', 'suggestions'].map(n => readFileSync(new URL(`../../components/globalnav/examples/${n}.html`, import.meta.url), 'utf8')).join('\n');
+const example = ['search', 'suggestions'].map(n => readFileSync(new URL(`../../components/site/globalnav/examples/${n}.html`, import.meta.url), 'utf8')).join('\n');
 const shipped = Object.entries(OURS).map(([k, svg]) => {
   const inner = svg.replace(/^<svg[^>]*>|<\/svg>$/g, '').replaceAll('stroke="#000"', 'stroke="currentColor"').replaceAll('fill="#000"', 'fill="currentColor"');
   const ok = example.includes(inner);

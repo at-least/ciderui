@@ -71,7 +71,7 @@ console.log(page.label);
 console.log(JSON.stringify(result, null, 1));
 // the icons compared are the ones the kit ships: each drawing (but the open
 // X, which globalnav.css turns) is in the nav's example, in currentColor
-const example = readFileSync(new URL('../../components/globalnav/examples/globalnav.html', import.meta.url), 'utf8');
+const example = readFileSync(new URL('../../components/site/globalnav/examples/globalnav.html', import.meta.url), 'utf8');
 const shipped = Object.entries(OURS).filter(([k]) => k !== 'menu-open').map(([k, svg]) => {
   const inner = svg.replace(/^<svg[^>]*>|<\/svg>$/g, '').replaceAll('stroke="#000"', 'stroke="currentColor"');
   const ok = example.includes(inner);

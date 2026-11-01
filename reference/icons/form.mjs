@@ -119,7 +119,7 @@ console.log(page.label);
 console.log(JSON.stringify(result, null, 1));
 // the icons compared are the ones the kit ships, in the field's examples, in
 // currentColor
-const examples = ['error', 'select'].map(n => readFileSync(new URL(`../../components/field/examples/${n}.html`, import.meta.url), 'utf8')).join('\n');
+const examples = ['error', 'select'].map(n => readFileSync(new URL(`../../components/site/field/examples/${n}.html`, import.meta.url), 'utf8')).join('\n');
 const shipped = [['alert', ALERT], ['dropdown', DROPDOWN.replace(/^<svg[^>]*>|<\/svg>$/g, '')]].map(([k, inner]) => {
   const ok = examples.includes(inner.replaceAll('"#000"', '"currentColor"'));
   console.log(`${ok ? 'ok  ' : 'FAIL'} ${k} is the examples'`);

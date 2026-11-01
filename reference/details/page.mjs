@@ -9,8 +9,8 @@
 // the control.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { compile } from '../../test/compile.mjs';
-const css = compile({ css: '@import "index.css";\n@import "components/accordion/accordion.css";', sources: ['components'] });
-const example = (id) => readFileSync(new URL(`../../components/accordion/examples/${id}.html`, import.meta.url), 'utf8').trim();
+const css = compile({ css: '@import "index.css";\n@import "components/site/accordion/accordion.css";', sources: ['components'] });
+const example = (id) => readFileSync(new URL(`../../components/site/accordion/examples/${id}.html`, import.meta.url), 'utf8').trim();
 const page = (body, style = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><style>${css}</style>${style && `<style>${style}</style>`}</head><body>${body}</body></html>\n`;
 const html = example('accordion');
 writeFileSync(new URL('./page.html', import.meta.url), page(html));

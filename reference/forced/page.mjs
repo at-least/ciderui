@@ -10,8 +10,8 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { compile } from '../../test/compile.mjs';
 
 const NAMES = ['swatch', 'option', 'checkbox', 'gallery', 'field'];
-const css = compile({ css: `@import "index.css";\n${NAMES.map((n) => `@import "components/${n}/${n}.css";`).join('\n')}`, sources: ['components'] });
-const ex = (n, id) => readFileSync(new URL(`../../components/${n}/examples/${id}.html`, import.meta.url), 'utf8').trim();
+const css = compile({ css: `@import "index.css";\n${NAMES.map((n) => `@import "components/site/${n}/${n}.css";`).join('\n')}`, sources: ['components'] });
+const ex = (n, id) => readFileSync(new URL(`../../components/site/${n}/examples/${id}.html`, import.meta.url), 'utf8').trim();
 const swap = (s, a, b) => { if (!s.includes(a)) throw new Error(`not in the example: ${a}`); return s.replaceAll(a, b); };
 const svg = (c) => `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect width="28" height="28" fill="${c}"/></svg>`)}`;
 const imgs = swap(swap(swap(swap(ex('swatch', 'swatches'),

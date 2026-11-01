@@ -9,7 +9,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 const src = readFileSync(new URL('./glyph.js', import.meta.url), 'utf8');
 // the shipped chevron, read off the example: its path's points and stroke
-const example = readFileSync(new URL('../../components/link/examples/more.html', import.meta.url), 'utf8');
+const example = readFileSync(new URL('../../components/site/link/examples/more.html', import.meta.url), 'utf8');
 const [, d, width] = example.match(/<svg class="cui-link-icon"[^>]*>\s*<path d="M([\d. ]+)"[^>]*stroke-width="([\d.]+)"/) ?? [];
 if (!d) throw new Error('no chevron in the more link\'s example');
 const numbers = d.trim().split(/\s+/).map(Number);

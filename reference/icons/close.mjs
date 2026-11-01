@@ -66,12 +66,12 @@ writeFileSync(new URL('./results/close.json', import.meta.url), JSON.stringify({
 console.log(page.label);
 console.log(JSON.stringify(result, null, 1));
 // the X compared is the one the kit ships: the modal's example's, in currentColor
-const example = readFileSync(new URL('../../components/modal/examples/modal.html', import.meta.url), 'utf8');
+const example = readFileSync(new URL('../../components/site/modal/examples/modal.html', import.meta.url), 'utf8');
 const inner = OURS.replace(/^<svg[^>]*>|<\/svg>$/g, '').replaceAll('stroke="#000"', 'stroke="currentColor"');
 const shipped = example.includes(inner);
 console.log(`${shipped ? 'ok  ' : 'FAIL'} the X is the modal example's`);
 // and the marketing X, the marketing modal's example's
-const page2 = readFileSync(new URL('../../components/modal/examples/page.html', import.meta.url), 'utf8');
+const page2 = readFileSync(new URL('../../components/site/modal/examples/page.html', import.meta.url), 'utf8');
 const shipped2 = page2.includes(SMALL.replace(/^<svg[^>]*>|<\/svg>$/g, '').replaceAll('stroke="#000"', 'stroke="currentColor"'));
 console.log(`${shipped2 ? 'ok  ' : 'FAIL'} the marketing X is the marketing modal example's`);
 const pass = result.iou >= 0.85 && result.marketing.iou >= 0.85 && shipped && shipped2;

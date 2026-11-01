@@ -56,7 +56,7 @@ mkdirSync(new URL('./results/', import.meta.url), { recursive: true });
 writeFileSync(new URL('./results/check.json', import.meta.url), JSON.stringify({ browser: page.label, date: new Date().toISOString(), ours: OURS, ...result }, null, 1));
 console.log(page.label);
 console.log(JSON.stringify(result, null, 1));
-const example = readFileSync(new URL('../../components/checkbox/examples/checkbox.html', import.meta.url), 'utf8');
+const example = readFileSync(new URL('../../components/site/checkbox/examples/checkbox.html', import.meta.url), 'utf8');
 const inner = OURS.replace(/^<svg[^>]*>|<\/svg>$/g, '').replaceAll('stroke="#000"', 'stroke="currentColor"');
 const shipped = example.includes(inner);
 console.log(`${shipped ? 'ok  ' : 'FAIL'} the check is the example's`);

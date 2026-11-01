@@ -55,7 +55,7 @@ console.log(page.label);
 for (const [k, v] of Object.entries(result)) console.log(`${k.padEnd(18)} ${v.iou}  apple.com's ink ${JSON.stringify(v.appleBox)}, ciderui's ${JSON.stringify(v.oursBox)}`);
 // the icons compared are the ones the kit ships: each drawing is in the
 // bag's example, in currentColor
-const example = readFileSync(new URL('../../components/globalnav/examples/bag.html', import.meta.url), 'utf8');
+const example = readFileSync(new URL('../../components/site/globalnav/examples/bag.html', import.meta.url), 'utf8');
 const shipped = Object.entries(OURS).map(([k, svg]) => {
   const inner = svg.replace(/^<svg[^>]*>|<\/svg>$/g, '').replaceAll('stroke="#000"', 'stroke="currentColor"').replaceAll('fill="#000"', 'fill="currentColor"');
   const ok = example.includes(inner);
