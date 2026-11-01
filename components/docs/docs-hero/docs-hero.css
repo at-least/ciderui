@@ -72,6 +72,13 @@
     :where(a) {
       color: inherit;
       text-decoration-line: underline;
+
+      /* a touch screen's: 44px tall, the HIG's 44pt (Accessibility, Mobility), the row with it */
+      @media (pointer: coarse) {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.75rem;
+      }
     }
   }
 

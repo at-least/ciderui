@@ -318,4 +318,40 @@
       margin-left: auto;
     }
   }
+
+  /* a touch screen's: a link and a section's title 44px tall, the HIG's 44pt (Accessibility, Mobility), at any
+     width (a tablet's columns too), the lists' gaps in them */
+  @media (pointer: coarse) {
+    .cui-footer-list {
+      li:not(:last-child) {
+        margin-bottom: 0;
+      }
+
+      :where(a:not([class*="cui-"])) {
+        display: block;
+        padding-block: 14px;
+      }
+    }
+
+    .cui-footer-title label {
+      padding-block: 14px;
+    }
+
+    .cui-footer-locale {
+      padding-block: 14px;
+    }
+
+    .cui-footer-links > li {
+      :where(a:not([class*="cui-"])) {
+        display: inline-block;
+        padding-block: 14px;
+      }
+
+      /* the rule beside them at the line's middle, as before */
+      &:not(:last-child)::after {
+        top: 50%;
+        margin-top: -5px;
+      }
+    }
+  }
 }

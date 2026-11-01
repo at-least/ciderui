@@ -1,4 +1,5 @@
-// Every console part's example at 390px on an emulated touch screen
+// Every component's example at 390px on an emulated touch screen (SETS=…
+// for some of the sets)
 // (test/browser.mjs's `touch`): each control a finger can press, its box
 // and its target (hit-tested from its center, below), held to the HIG's
 // control sizes (Accessibility, Mobility: 44x44pt the default on iOS,
@@ -13,7 +14,7 @@ import { join } from 'node:path';
 import { COMPONENTS, ROOT, compile } from '../../test/compile.mjs';
 import { open, quit } from '../../test/browser.mjs';
 
-const parts = process.env.SETS ? COMPONENTS.filter((c) => process.env.SETS.split(',').includes(c.set)) : COMPONENTS.filter((c) => c.set === 'console');
+const parts = process.env.SETS ? COMPONENTS.filter((c) => process.env.SETS.split(',').includes(c.set)) : COMPONENTS;
 // an empty list would print "0 under 44pt" and pass having checked nothing
 if (!parts.length) throw new Error('no parts in COMPONENTS for these sets');
 const sheets = COMPONENTS.map((c) => `@import "${c.dir}/${c.name}.css";`).join('\n');

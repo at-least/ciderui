@@ -101,6 +101,11 @@
   .cui-docs-topics-link {
     display: inline-flex;
     padding-block: 5px;
+
+    /* a touch screen's: 44px tall, the HIG's 44pt (Accessibility, Mobility) */
+    @media (pointer: coarse) {
+      padding-block: 9.5px;
+    }
     color: var(--cui-c-link);
     text-decoration-line: none;
 

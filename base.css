@@ -79,11 +79,11 @@
      to the next covers the next one's. Positioned at no specificity, so a
      part that places the control keeps its place. */
   @media (pointer: coarse) {
-    :where(.cui-btn, .cui-link[data-variant="more"], .cui-console-link, .cui-console-copy-button, .cui-console-copy-inline, .cui-console-table-sort, .cui-docs-copy-button, .cui-docs-navigator-chevron, .cui-docs-page-close, .cui-docs-bar-toggle) {
+    :where(.cui-btn, .cui-link[data-variant="more"], .cui-console-link, .cui-console-copy-button, .cui-console-copy-inline, .cui-console-table-sort, .cui-docs-copy-button, .cui-docs-navigator-chevron, .cui-docs-page-close, .cui-docs-bar-toggle, .cui-gallery-dot) {
       position: relative;
     }
 
-    :where(.cui-btn, .cui-link[data-variant="more"], .cui-console-link, .cui-console-copy-button, .cui-console-copy-inline, .cui-console-table-sort, .cui-docs-copy-button, .cui-docs-navigator-chevron, .cui-docs-page-close, .cui-docs-bar-toggle)::after {
+    :where(.cui-btn, .cui-link[data-variant="more"], .cui-console-link, .cui-console-copy-button, .cui-console-copy-inline, .cui-console-table-sort, .cui-docs-copy-button, .cui-docs-navigator-chevron, .cui-docs-page-close, .cui-docs-bar-toggle, .cui-gallery-dot)::after {
       content: "";
       position: absolute;
       top: 50%;
