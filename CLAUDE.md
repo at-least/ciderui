@@ -193,7 +193,7 @@ comment carries only that.
   `node scripts/build-lucide.mjs --check`,
   `node scripts/build-docs.mjs --check`,
   `node scripts/docs-pictures.mjs --check`, `node test/docs.mjs`; then
-  `node test/rust.mjs` on the machine.
+  `node test/rust.mjs` and `node test/go.mjs` on the machine.
 - The browser starts only in that image (test/chromium.mjs throws
   elsewhere): its Chromium and its fonts are the same on every machine, so
   a check's value and a picture are too. Every step that opens a page runs
@@ -206,7 +206,9 @@ comment carries only that.
   back, nothing bind-mounted); ciderui-zola checked out beside this
   repository (`../ciderui-zola`, which docs/themes/ciderui-zola links to),
   copied in beside it; cargo with rustfmt and clippy, and cargo-nextest (where
-  it is missing, test/rust.mjs runs cargo test in its place and says so).
+  it is missing, test/rust.mjs runs cargo test in its place and says so); go
+  at go.mod's version or later (its tools, exhaustruct, are go.mod's `tool`
+  lines, fetched by `go tool`).
 - Where a tool is missing and cannot be installed, `npm test` stops at the
   step that needs it: run each later step alone, and report the step that
   could not run `UNVERIFIED (environment: <what is missing>)`. Never leave
@@ -226,3 +228,10 @@ comment carries only that.
   build. `cargo fmt --manifest-path rust/Cargo.toml` writes the formatting
   the check wants.
 - Fix clippy findings as suggested; `#[allow]` only with a comment saying why.
+- The Go part alone: `node test/go.mjs`. It runs, from the root, in order:
+  `gofmt -l` on each package's directory (any file listed fails); `go vet ./...`;
+  `go tool exhaustruct -i 'github.com/at-least/ciderui/.*' ./...` (a
+  struct literal of the module's types that leaves a field out fails: a
+  component's every field is written at every call, as hypertext's struct
+  literals were); `go test ./...`. A component's test holds its output to
+  its examples (go/internal/example).

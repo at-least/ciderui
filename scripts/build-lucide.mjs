@@ -1,4 +1,5 @@
-// Write rust/src/lucide.rs, the crate's Lucide icons, from lucide-static as
+// Write rust/src/lucide.rs, the crate's Lucide icons, and go/lucide/lucide.go,
+// the Go module's, from lucide-static as
 // node_modules holds it, which must be package.json's exact version: every
 // icon in its icon-nodes.json, which holds Lucide's names and not their
 // aliases (the files under icons/ carry both), as a const named by the name
@@ -6,13 +7,14 @@
 // which Icon::lucide writes on each.
 //
 //   node scripts/build-lucide.mjs           write it
-//   node scripts/build-lucide.mjs --check   fail if rust/src/lucide.rs differs from what it writes
+//   node scripts/build-lucide.mjs --check   fail if either file differs from what it writes
 
-import { readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
 import { ROOT } from '../test/compile.mjs';
 
 const OUT = join(ROOT, 'rust/src/lucide.rs');
+const GO_OUT = join(ROOT, 'go/lucide/lucide.go');
 const PACKAGE = join(ROOT, 'node_modules/lucide-static');
 
 // rustfmt's max_width: a const longer than this it breaks after `=` if the
@@ -89,11 +91,57 @@ pub(crate) const PAINT: &str = r#"${paint}"#;
   return out;
 }
 
-const text = source();
+// `shopping-bag` as ShoppingBag
+const goName = (name) => name.split('-').map((p) => p[0].toUpperCase() + p.slice(1)).join('');
+
+function goSource() {
+  const { version } = JSON.parse(readFileSync(join(PACKAGE, 'package.json'), 'utf8'));
+  const nodes = JSON.parse(readFileSync(join(PACKAGE, 'icon-nodes.json'), 'utf8'));
+  const { viewBox, paint } = file(Object.keys(nodes)[0]);
+  let out = `// Package lucide is every Lucide icon (https://lucide.dev/icons/; under its
+// license, the repository's LICENSE-Lucide), lucide-static ${version}'s, by its
+// name in Go's capitals: shopping-bag is [ShoppingBag]. Each is an [icon.Icon]
+// of Lucide's own elements in currentColor, 1em square, so it takes the text's
+// color and size; a utility on it sizes it otherwise. In a line of text a page
+// adds inline: Tailwind's preflight makes an <svg> a block. A part apple.com
+// draws an icon in draws ciderui's own (package icon), not Lucide's.
+//
+// Written by scripts/build-lucide.mjs from lucide-static's icon-nodes.json and
+// icons/, not by hand: npm test fails while this differs from what it writes.
+package lucide
+
+import "github.com/at-least/ciderui/go/icon"
+
+const (
+	viewBox = "${viewBox}"
+	paint   = \`${paint}\`
+)
+`;
+  const seen = new Map();
+  for (const [name, elements] of Object.entries(nodes)) {
+    const inner = elements.map(([tag, attributes]) => `<${tag}${Object.entries(attributes).map(([k, v]) => ` ${k}="${v}"`).join('')}/>`).join('');
+    if (inner.includes('`')) throw new Error(`${name}: its markup would end the raw string`);
+    const constant = goName(name);
+    if (seen.has(constant)) throw new Error(`${name} and ${seen.get(constant)} are both ${constant}`);
+    seen.set(constant, name);
+    out += `\n// ${constant} is [${name}](https://lucide.dev/icons/${name}).\nvar ${constant} = icon.Lucide(viewBox, paint, \`${inner}\`)\n`;
+  }
+  return out;
+}
+
+const outputs = [[OUT, source()], [GO_OUT, goSource()]];
 if (process.argv[2] === '--check') {
-  const stale = readFileSync(OUT, 'utf8') !== text;
-  console.log(stale ? 'rust/src/lucide.rs is stale: node scripts/build-lucide.mjs' : 'rust/src/lucide.rs is up to date');
+  let stale = false;
+  for (const [path, text] of outputs) {
+    const rel = path.slice(ROOT.length + 1);
+    const differs = readFileSync(path, 'utf8') !== text;
+    stale ||= differs;
+    console.log(differs ? `${rel} is stale: node scripts/build-lucide.mjs` : `${rel} is up to date`);
+  }
   process.exit(stale ? 1 : 0);
 } else {
-  writeFileSync(OUT, text);
+  for (const [path, text] of outputs) {
+    mkdirSync(dirname(path), { recursive: true });
+    writeFileSync(path, text);
+  }
 }
