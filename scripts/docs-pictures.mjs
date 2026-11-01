@@ -94,6 +94,7 @@ const SCENES = [
   { name: 'console-page', files: ['console-page/page'], zoom: 2, width: 560, center: true },
   { name: 'console-radio', html: `<div class="cui-console-page" style="width:420px;padding:24px">${example('console-radio/radios')}</div>`, zoom: 2, center: true },
   { name: 'docs-aside', html: `<div style="width:640px;padding:24px;display:grid;gap:16px;background-color:var(--cui-c-bg)">${example('docs-aside/note')}${example('docs-aside/kinds')}</div>`, zoom: 1, center: true },
+  { name: 'docs-hero', html: `<div style="width:720px;padding:0 32px;background-color:var(--cui-c-bg)">${example('docs-hero/hero')}</div>`, zoom: 1.6, center: true },
   { name: 'docs-content', html: `<div style="width:720px;padding:24px 32px;background-color:var(--cui-c-bg)">${example('docs-content/content')}</div>`, zoom: 1.6 },
   { name: 'footer', files: ['footer/footer'], zoom: 1.4, width: 914 },
   { name: 'footnote', files: ['footnote/footnote'], zoom: 3, center: true },
