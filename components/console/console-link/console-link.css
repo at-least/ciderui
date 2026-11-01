@@ -6,13 +6,18 @@
  * --tb-component-Link-*: brand, inline and label) and the analytics
  * overview's See All link (analytics-page:section.link, hover-link).
  *
- *   <p>Upload a dSYM from <a class="cui-console-link" href="/settings">Settings</a>.</p>
+ *   <a class="cui-console-link" href="/all">See All</a>
+ *   <p>Upload a dSYM from <a class="cui-console-link" data-variant="text" href="/settings">Settings</a>.</p>
  *   <a class="cui-console-link" data-variant="label" href="/p/shop">Shop</a>
  *
  * cui-console-link        the brand's blue, no underline; hovered,
  *                         underlined; aria-disabled="true", the blue at 0.60,
  *                         no pointer, no underline; on a touch screen a
  *                         target 44px square at least, centered on it
+ *   data-variant="text"   a link inside a sentence: underlined at rest, so
+ *                         told apart from the words around it by more than
+ *                         its color (WCAG 1.4.1: the brand's blue and a
+ *                         secondary caption measured 1.03:1)
  *   data-variant="label"  the label's color (a name that is a link: an
  *                         issue's title); hovered, the brand's blue
  *
@@ -30,6 +35,10 @@
       &:hover {
         text-decoration-line: underline;
       }
+    }
+
+    &[data-variant="text"] {
+      text-decoration-line: underline;
     }
 
     &[data-variant="label"] {

@@ -10,6 +10,7 @@ const ex = examples(import.meta.url);
 const L = 'component-Link-variant-colorRole-brand-effect';
 const INLINE = '.cui-console-link:not([data-variant]):not([aria-disabled])';
 const LABEL = '[data-variant="label"]';
+const TEXT = '[data-variant="text"]';
 
 export const cases = [
   {
@@ -26,6 +27,9 @@ export const cases = [
       { target: '[aria-disabled="true"]', props: ['color'], tb: [`${L}-disabled-variant-inline-color`] },
       { target: '[aria-disabled="true"]', props: ['cursor', 'text-decoration-line'], state: 'hover', golden: 'no pointer, no underline over a disabled link' },
       { target: INLINE, pseudo: '::after', props: ['content'], golden: 'with a mouse, no target drawn: none' },
+      { target: TEXT, props: ['color'], tb: [`${L}-default-variant-inline-color`] },
+      { target: TEXT, props: ['text-decoration-line'], golden: 'a link inside a sentence underlined at rest: told apart from the words around it by more than its color (WCAG 1.4.1; crashcart\'s links in a secondary caption measured 1.03:1 against it)' },
+      { target: TEXT, props: ['text-decoration-line'], state: 'hover', golden: 'hovered, still underlined' },
     ],
   },
   {
