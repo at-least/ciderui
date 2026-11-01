@@ -478,7 +478,7 @@ const docs = async (width) => {
   const place = () => page.run(`Promise.resolve((() => {
     const s = document.querySelector('.cui-docs-page-sidebar'), b = document.querySelector('.cui-docs-bar'), m = document.querySelector('.cui-docs-page-main');
     const sb = s.getBoundingClientRect(), bb = b.getBoundingClientRect();
-    return { shown: getComputedStyle(s).display !== 'none', open: s.matches(':popover-open'), left: sb.left, top: sb.top, width: sb.width, height: sb.height, main: m.getBoundingClientRect().left, bar: bb.top, barFoot: bb.bottom, window: [innerWidth, innerHeight], scroll: scrollY };
+    return { shown: getComputedStyle(s).display !== 'none', open: s.matches(':popover-open'), left: sb.left, top: sb.top, width: sb.width, height: sb.height, bottom: sb.bottom, main: m.getBoundingClientRect().left, bar: bb.top, barFoot: bb.bottom, window: [innerWidth, innerHeight], scroll: scrollY };
   })())`);
   const rest = await place();
   const record = { rest };
@@ -488,6 +488,7 @@ const docs = async (width) => {
     record.scrolled = await place();
     claim(`the navigator is a column of the page at ${width}px, 400px beside the content`, rest.shown && !rest.open && rest.left === 0 && rest.width === 400 && rest.main === 400, record);
     claim(`as the page scrolls at ${width}px, the bar sticks at the window's top and the navigator under it`, record.scrolled.scroll > 0 && record.scrolled.bar === 0 && Math.abs(record.scrolled.top - record.scrolled.barFoot) <= 0.5, record);
+    claim(`the navigator's column ends at the window's foot at ${width}px, the global nav over the bar and scrolled away (the theme's script)`, Math.abs(rest.bottom - rest.window[1]) <= 1 && Math.abs(record.scrolled.bottom - record.scrolled.window[1]) <= 1, record);
   } else {
     await page.run(`Promise.resolve((document.querySelector('.cui-docs-bar-toggle').click(), true))`);
     await page.run(wait(700));
@@ -514,6 +515,19 @@ const docs = async (width) => {
   await page.run(wait(300));
   record.again = await rows();
   claim(`a section's chevron hides its rows and shows them again at ${width}px, with no script`, record.open.checked && record.open.shown && !record.shut.checked && !record.shut.shown && record.again.checked && record.again.shown, record);
+  // the filter (the theme's script): "console b" put in it and an input
+  // event sent, as typing sends one
+  record.filter = await page.run(`Promise.resolve((() => {
+    const input = document.querySelector('.cui-docs-navigator-input');
+    input.value = 'console b';
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+    const shown = [...document.querySelectorAll('.cui-docs-navigator-item')].filter((e) => !e.closest('[hidden]') && e.getBoundingClientRect().height > 0);
+    return { shown: !document.querySelector('.cui-docs-navigator-filter').hidden, rows: shown.length, marks: document.querySelectorAll('.cui-docs-navigator-match').length, status: document.querySelector('.cui-docs-navigator-status').textContent };
+  })())`);
+  claim(`the navigator's filter, shown by the theme's script, keeps the rows whose names hold what is typed at ${width}px, marked, and says so`, record.filter.shown && record.filter.marks === 4 && record.filter.rows === 5 && record.filter.status === '4 items were found.', record);
+  // a code block's copy button, shown by the theme's script
+  record.copy = await page.run(`Promise.resolve((() => { const b = document.querySelector('.cui-docs-content .cui-docs-copy-button'); return { hidden: b.hidden, display: getComputedStyle(b).display }; })())`);
+  claim(`a code block's copy button is shown by the theme's script at ${width}px`, !record.copy.hidden && record.copy.display !== 'none', record);
   // a link to a heading: the address's #install on Get Started, read once
   // the page's scroll is at rest (unchanged for 10 frames)
   await page.go(`${ORIGIN}/get-started/#install`);

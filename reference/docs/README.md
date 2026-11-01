@@ -18,19 +18,22 @@ The probe behind the claim that ciderui's documentation (`docs/`, built with cid
 14. a page's own footnote, the news article's (markdown's): its mark clicked, its note lands at the local nav's foot, or below it where the page ends first, not under it (`../anchor/`).
 15. the docs layout, on a component's page: from 1024px the navigator a column 400px beside the content, and as the page scrolls the bar sticks at the window's top and the navigator under it; narrower, the navigator hidden, the bar's button (its `click()`) opens it as a sheet over the whole window, a popover, and its close button closes it, no script;
 16. a section's chevron in the navigator (its checkbox's label, its `click()`; in the sheet below 1024px) hides its rows, and again shows them;
-17. a docs page's heading reached by its address's fragment (Get Started's `#install`) lands at the bar's foot, or below it where the page ends first (the theme's stylesheet holding `cui-docs-page :target`).
+17. a docs page's heading reached by its address's fragment (Get Started's `#install`) lands at the bar's foot, or below it where the page ends first (the theme's stylesheet holding `cui-docs-page :target`);
+18. from 1024px the navigator's column ends at the window's foot, the global nav over the bar and scrolled away (the theme's script's `--cui-docs-page-top`);
+19. the navigator's filter, shown by the theme's script: "console b" put in it (an input event sent, as typing sends one) keeps the four Console B… rows and their Components row, each match marked, its status "4 items were found.";
+20. a code block's copy button is shown by the theme's script.
 
 The frames' elements are clicked by the page's script (`click()`, the activation a tap's click runs): safaridriver's taps on the iOS simulator never click (`../popover/`).
 
 ## The result
 
-Claims 15 to 17, and claims 5, 7, 12 and 13 read under the docs bar, with the documentation in the docs layout (ciderui 29efa07, ciderui-zola 9b7c72a), 2026-11-01:
+Claims 15 to 20, and claims 5, 7, 12 and 13 read under the docs bar, with the documentation in the docs layout, 2026-11-01 (claims 15 to 17 first on ciderui 29efa07 with ciderui-zola 9b7c72a, 81 pages; all again on ciderui bc6be96 with ciderui-zola 686554c, 82 pages):
 
-| browser | window | 1 to 14 | 15 | 16 | 17 |
-| --- | --- | --- | --- | --- | --- |
-| Chromium 151, Linux | 1440, 700 | ok (81 pages) | ok (the column 400px, 52px under the bar at 1500px down; the sheet 700 by 900) | ok | ok (51.78px under a 52px bar; 47.98 under 48) |
-| Firefox 153.0 (Playwright's), Linux, its window on a virtual X display | 1440, 700 | ok (81 pages) | ok | ok | ok |
-| Safari, the iOS simulator, Chrome on macOS | | not run: no Mac reachable from lab with a VM (`../vm.mjs`'s `tester` finds no `orchard`), Xcode or node (UNVERIFIED) | | | |
+| browser | window | 1 to 14 | 15 | 16 | 17 | 18 | 19 | 20 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Chromium 151, Linux | 1440, 700 | ok (82 pages) | ok (the column 400px, 52px under the bar at 1500px down; the sheet 700 by 900) | ok | ok (51.78px under a 52px bar; 47.98 under 48) | ok | ok | ok |
+| Firefox 153.0 (Playwright's), Linux, its window on a virtual X display | 1440, 700 | ok (82 pages) | ok | ok | ok | ok | ok | ok |
+| Safari, the iOS simulator, Chrome on macOS | | not run: no Mac reachable from lab with a VM (`../vm.mjs`'s `tester` finds no `orchard`), Xcode or node (UNVERIFIED) | | | | | | |
 
 The first Chromium run failed claim 17 (Get Started's `#install` at -0.22px under a 52px bar): the theme's prebuilt stylesheet was built before docs-page's `:target` rule (`build --check`: "differs"); rebuilt (ciderui-zola 9b7c72a), it holds, and `test/docs.mjs` now checks it in Chromium.
 
