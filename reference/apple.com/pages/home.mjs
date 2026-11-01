@@ -75,6 +75,8 @@ export default {
     { name: 'footer.title', select: '.ac-gf-directory-column-section-title-text', props: TYPE },
     { name: 'footer.link', select: '.ac-gf-directory-column-section-link', props: [...TYPE, ...LINK], states: ['hover'] },
     { name: 'footer.shop', select: '.ac-gf-footer-shop', props: [...TYPE, ...BOX] },
+    // a link in the shop line's sentence
+    { name: 'footer.shop-link', select: '.ac-gf-footer-shop a', props: [...TYPE, ...LINK] },
     { name: 'footer.legal', select: '.ac-gf-footer-legal', props: [...TYPE, ...BOX] },
     { name: 'footer.legal-link', select: '.ac-gf-footer-legal-link', props: [...TYPE, ...LINK, 'border-right-color', 'border-right-width', 'padding-right', 'margin-right'], states: ['hover'] },
     { name: 'footer.copyright', select: '.ac-gf-footer-legal-copyright', props: [...TYPE, 'margin-top', 'margin-right'] },

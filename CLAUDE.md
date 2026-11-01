@@ -189,7 +189,8 @@ comment carries only that.
   `node scripts/docker.mjs`, which runs in test/Dockerfile's image, each
   step only after the one before passes, `node test/tokens.mjs`,
   `node test/type.mjs`, `node test/page.mjs`, `node test/components.mjs`,
-  `node reference/touch/audit.mjs`, `node scripts/build-lucide.mjs --check`,
+  `node test/surfaces.mjs`, `node reference/touch/audit.mjs`,
+  `node scripts/build-lucide.mjs --check`,
   `node scripts/build-docs.mjs --check`,
   `node scripts/docs-pictures.mjs --check`, `node test/docs.mjs`; then
   `node test/rust.mjs` on the machine.

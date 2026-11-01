@@ -43,7 +43,8 @@
  *                      36px row over a rule, opened by its title (the
  *                      checkbox cui-footer-toggle before it and its label),
  *                      its links 28px rows
- * cui-footer-legal     the last rows: the shop line (cui-footer-shop) over a
+ * cui-footer-legal     the last rows: the shop line (cui-footer-shop, a
+ *                      link in it blue and underlined) over a
  *                      rule, the legal row (cui-footer-row): the copyright,
  *                      the legal links (cui-footer-links) 9px either side of
  *                      a short rule, the locale at its end
@@ -244,6 +245,13 @@
   .cui-footer-shop {
     margin-bottom: 8px;
     padding-bottom: 8px;
+
+    /* a link in its sentence: apple.com's blue, underlined, told apart from
+       the words around it by more than color (WCAG 1.4.1) */
+    :where(a:not([class*="cui-"])) {
+      color: var(--cui-c-link);
+      text-decoration-line: underline;
+    }
 
     @media (width >= 834px) {
       margin-bottom: 17px;

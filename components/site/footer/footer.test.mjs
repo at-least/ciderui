@@ -37,6 +37,7 @@ export const cases = [
       { target: '.cui-footer-notes a', state: 'hover', props: ['color', 'text-decoration-line'], apple: ['home', 'footer.sosumi-link', 'hover'] },
       { target: '.cui-footer-directory', props: ['display', 'flex-direction', 'flex-wrap', 'padding-top'], apple: ['home', 'footer.directory'] },
       { target: '.cui-footer-shop', props: [...SIZE, 'color'], apple: ['home', 'footer.shop'] },
+      { target: '.cui-footer-shop a', props: ['color', 'text-decoration-line', 'text-decoration-color'], golden: 'a link in the shop line\'s sentence: apple.com\'s blue, underlined (its footer\'s "Find an Apple Store", not yet in home.json\'s footer.shop): told apart from the words around it by more than color, as axe-core\'s link-in-text-block holds (test/surfaces.mjs)' },
       { target: '.cui-footer-legal', props: ['padding-top', 'padding-bottom'], apple: ['home', 'footer.footer'] },
       { target: '.cui-footer-row', props: ['display'], apple: ['home', 'footer.end'] },
       { target: '.cui-footer-copyright', props: [...SIZE, 'color', 'margin-top'], apple: ['home', 'footer.copyright'] },

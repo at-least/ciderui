@@ -13,11 +13,11 @@ import { join } from 'node:path';
 import { COMPONENTS, ROOT, compile } from '../../test/compile.mjs';
 import { open, quit } from '../../test/browser.mjs';
 
-const parts = COMPONENTS.filter((c) => c.set === 'console');
-// an empty list would print "0 under 28pt" and pass having checked nothing
-if (!parts.length) throw new Error('no console parts in COMPONENTS');
-const sheets = parts.map((c) => `@import "${c.dir}/${c.name}.css";`).join('\n');
-const css = compile({ css: `@import "index.css";\n${sheets}`, sources: ['components'] });
+const parts = process.env.SETS ? COMPONENTS.filter((c) => process.env.SETS.split(',').includes(c.set)) : COMPONENTS.filter((c) => c.set === 'console');
+// an empty list would print "0 under 44pt" and pass having checked nothing
+if (!parts.length) throw new Error('no parts in COMPONENTS for these sets');
+const sheets = COMPONENTS.map((c) => `@import "${c.dir}/${c.name}.css";`).join('\n');
+const css = compile({ css: `@import "fonts.css";\n@import "index.css";\n${sheets}`, sources: ['components'] });
 let short = 0;
 let controls = 0;
 for (const { name: part, dir: partDir } of parts) {
@@ -29,13 +29,27 @@ for (const { name: part, dir: partDir } of parts) {
     const page = await open(css, html, { width: 390, touch: true });
     const rows = await page.page.evaluate(() => {
       const sel = 'a[href], button, input:not([type=hidden]), select, textarea, summary, [role=button], [tabindex]:not([tabindex="-1"])';
-      return [...document.querySelectorAll(sel)].filter((e) => e.checkVisibility()).map((e) => {
+      return [...document.querySelectorAll(sel)]
+        // what a finger can tap now: shown, not disabled (a gallery's paddle
+        // at the row's end takes no pointer; a hidden toggle takes none
+        // either, its label taking the tap)
+        .filter((e) => e.checkVisibility({ visibilityProperty: true }) && !e.matches(':disabled') && (e.labels?.length || getComputedStyle(e).pointerEvents !== 'none')).map((e) => {
         const r = e.getBoundingClientRect();
-        // a native checkbox or radio inside a <label>: the label is its target
-        const label = (e.type === 'checkbox' || e.type === 'radio') && e.closest('label');
+        // a link inside a sentence: WCAG 2.5.8's inline exception, listed,
+        // not counted (its line's height is the text's)
+        let block = e.parentElement;
+        while (getComputedStyle(block).display === 'inline') block = block.parentElement;
+        const inText = e.tagName === 'A' && getComputedStyle(e).display === 'inline' && block.textContent.replace(e.textContent, '').trim() !== '';
+        // its labels (wrapping it or naming it by for=) are its target too: a
+        // tap on one acts on it (a hidden toggle's chevron, a floating label)
+        const labels = [...(e.labels ?? [])].filter((l) => l.checkVisibility());
+        const tiny = r.width <= 1 || r.height <= 1;
+        const label = labels.length && (tiny || e.type === 'checkbox' || e.type === 'radio')
+          ? labels.reduce((big, l) => (l.getBoundingClientRect().width * l.getBoundingClientRect().height > big.getBoundingClientRect().width * big.getBoundingClientRect().height ? l : big))
+          : null;
         const anchor = label || e;
         // a control hidden until it is focused (the skip link): read focused
-        if (!label && r.width <= 1 && r.height <= 1) e.focus();
+        if (!label && tiny) e.focus();
         anchor.scrollIntoView({ block: 'center', inline: 'center' });
         const a = anchor.getBoundingClientRect();
         const x = a.left + a.width / 2, y = a.top + a.height / 2;
@@ -47,7 +61,7 @@ for (const { name: part, dir: partDir } of parts) {
         const ours = (px, py) => {
           if (px < 0 || py < 0 || px >= innerWidth || py >= innerHeight) return false;
           const hit = document.elementFromPoint(px, py);
-          return Boolean(hit) && (hit === e || e.contains(hit) || anchor.contains(hit));
+          return Boolean(hit) && (e.contains(hit) || labels.some((l) => l.contains(hit)));
         };
         const reach = (dx, dy) => {
           let d = 0;
@@ -57,19 +71,19 @@ for (const { name: part, dir: partDir } of parts) {
         const w = ours(x, y) ? reach(-1, 0) + reach(1, 0) : 0;
         const h = ours(x, y) ? reach(0, -1) + reach(0, 1) : 0;
         const name = e.tagName.toLowerCase() + (e.className && typeof e.className === 'string' ? '.' + e.className.trim().split(/\s+/)[0] : '') + (e.type && e.tagName === 'INPUT' ? `[${e.type}]` : '');
-        return { name, box: [+r.width.toFixed(1), +r.height.toFixed(1)], target: [w, h] };
+        return { name, inText, box: [+r.width.toFixed(1), +r.height.toFixed(1)], target: [w, h] };
       });
     });
     await page.close();
     for (const r of rows) {
       const min = Math.min(...r.target);
-      const verdict = min >= 43 ? 'ok   ' : min >= 28 ? 'MIN  ' : 'SHORT';
-      if (min < 43) short += 1;
-      if (min < 43 || process.env.VERBOSE) console.log(`${verdict} ${part}/${file} ${r.name} box ${r.box.join('x')} target ${r.target.join('x')}`);
+      const verdict = r.inText ? 'text ' : min >= 43 ? 'ok   ' : min >= 28 ? 'MIN  ' : 'SHORT';
+      if (min < 43 && !r.inText) short += 1;
+      if ((min < 43 && !r.inText) || process.env.VERBOSE) console.log(`${verdict} ${part}/${file} ${r.name} box ${r.box.join('x')} target ${r.target.join('x')}`);
       controls += 1;
     }
   }
 }
 await quit();
-console.log(`touch: ${controls} console controls, ${short} under 44pt`);
+console.log(`touch: ${controls} controls, ${short} under 44pt`);
 process.exit(short ? 1 : 0);

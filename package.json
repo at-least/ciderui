@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@tailwindcss/cli": "4.3.3",
+    "axe-core": "4.14.0",
     "lucide-static": "1.61.0",
     "playwright-chromium": "1.62.1",
     "tailwindcss": "4.3.3"
