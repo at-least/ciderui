@@ -18,7 +18,9 @@
  *
  * cui-console-card          10px corners, 15px in, its ground the toolkit's
  *                           v2-bgPlaceholder (--cui-c-console-card), what
- *                           overflows it cut
+ *                           overflows it cut; it sets --cui-console-ground
+ *                           (its gray) and --cui-console-inset (the page's)
+ *                           for the parts inside it
  * cui-console-card-header   a row: its title at its start, a link or button
  *                           at its end
  * cui-console-card-title    13px on 18px at 600
@@ -52,6 +54,11 @@
     background-color: var(--cui-c-console-card);
     color: var(--cui-c-console-neutral-label-primary);
     letter-spacing: normal;
+    /* what a part inside it sits on (its gray), and the ground of a panel
+       set into it (a listing, a copy pair: the page's, as gray on gray drew
+       no panel) */
+    --cui-console-ground: var(--cui-c-console-card);
+    --cui-console-inset: var(--cui-c-console-neutral-background-primary);
   }
 
   .cui-console-card-header {

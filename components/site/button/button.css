@@ -144,23 +144,4 @@
     display: block;
     border-radius: 8px;
   }
-
-  /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility): a
-     transparent ::after 44px at least each way, round the drawn pill, as the
-     console's button draws one; nothing drawn changes */
-  @media (pointer: coarse) {
-    :where(.cui-btn) {
-      position: relative;
-    }
-
-    .cui-btn::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: max(100%, 44px);
-      height: max(100%, 44px);
-      transform: translate(-50%, -50%);
-    }
-  }
 }

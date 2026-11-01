@@ -32,7 +32,7 @@
  "listing lines | .cui-console-listing | 390 | padding-right": "0px",
  "listing lines | .cui-console-listing-line:not([data-highlighted]) | 390 | box-x": "0px",
  "listing nested | .cui-console-listing | 1200 | background-color": "oklch(1 0 0)",
- "listing lines dark | .cui-console-listing-line:not([data-highlighted])::before | 1200 | color": "oklch(0.879 0.015 286.1 / 0.6)",
+ "listing lines dark | .cui-console-listing-line:not([data-highlighted])::before | 1200 | color": "oklch(0.879 0.015 286.1 / 0.63)",
  "listing lines dark | .cui-console-listing-line[data-highlighted] | 1200 | background-color": "oklch(0.683 0.167 256.6 / 0.08)",
  "listing lines dark | .cui-console-listing-line[data-highlighted]::before | 1200 | border-left-color": "oklch(0.683 0.167 256.6)",
  "listing dark | .cui-console-listing | 1200 | background-color": "oklch(0.227 0.004 286.1)",

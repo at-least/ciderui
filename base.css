@@ -70,6 +70,29 @@
     outline: var(--cui-focus-ring);
     outline-offset: var(--cui-focus-ring-offset);
   }
+
+  /* the one touch target, the HIG's 44pt (Accessibility, Mobility): on a
+     touch screen a transparent ::after 44px at least each way, centered on
+     each control here, which keeps its drawn size (one in a line of text or
+     a corner). A control that grows to 44px itself (the console's buttons,
+     tabs, fields) is not listed: a target round a control closer than 44px
+     to the next covers the next one's. Positioned at no specificity, so a
+     part that places the control keeps its place. */
+  @media (pointer: coarse) {
+    :where(.cui-btn, .cui-link[data-variant="more"], .cui-console-link, .cui-console-copy-button, .cui-console-copy-inline, .cui-console-table-sort, .cui-docs-copy-button, .cui-docs-navigator-chevron, .cui-docs-page-close, .cui-docs-bar-toggle) {
+      position: relative;
+    }
+
+    :where(.cui-btn, .cui-link[data-variant="more"], .cui-console-link, .cui-console-copy-button, .cui-console-copy-inline, .cui-console-table-sort, .cui-docs-copy-button, .cui-docs-navigator-chevron, .cui-docs-page-close, .cui-docs-bar-toggle)::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: max(100%, 44px);
+      height: max(100%, 44px);
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 
 /* https://web.dev/articles/prefers-reduced-motion */

@@ -292,22 +292,4 @@
       }
     }
   }
-
-  /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility), round
-     a header's sort link */
-  @media (pointer: coarse) {
-    :where(.cui-console-table-sort) {
-      position: relative;
-    }
-
-    .cui-console-table-sort::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: max(100%, 44px);
-      height: max(100%, 44px);
-      transform: translate(-50%, -50%);
-    }
-  }
 }

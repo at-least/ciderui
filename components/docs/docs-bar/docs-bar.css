@@ -34,17 +34,26 @@
  * rule 6's containing block). */
 
 @layer components {
+  /* the bar's height, one value for the bar and for the page, whose sidebar
+     and linked-to places sit under it (cui-docs-page) */
+  :where(.cui-docs-page, .cui-docs-bar) {
+    --cui-docs-bar-height: 48px;
+
+    @media (width >= 768px) {
+      --cui-docs-bar-height: 52px;
+    }
+  }
+
   .cui-docs-bar {
     position: relative;
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    height: 48px;
+    height: var(--cui-docs-bar-height);
     padding-inline: 16px;
     background-color: var(--cui-c-bg);
 
     @media (width >= 768px) {
-      height: 52px;
       padding-inline: 22px;
     }
 
@@ -76,18 +85,6 @@
 
     @media (width >= 1024px) {
       display: none;
-    }
-
-    @media (pointer: coarse) {
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 44px;
-        height: 44px;
-        transform: translate(-50%, -50%);
-      }
     }
   }
 

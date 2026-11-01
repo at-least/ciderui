@@ -66,12 +66,8 @@
 
 @layer components {
   .cui-console-chart {
-    --cui-console-chart-ground: var(--cui-c-console-neutral-background-primary);
+    --cui-console-chart-ground: var(--cui-console-ground, var(--cui-c-console-neutral-background-primary));
     margin: 0;
-  }
-
-  :where(.cui-console-card) .cui-console-chart {
-    --cui-console-chart-ground: var(--cui-c-console-card);
   }
 
   .cui-console-chart-plot {

@@ -40,7 +40,7 @@
  "chart empty | .cui-console-chart-empty | 1200 | box-height": "140px",
  "sparkline | .cui-console-chart-sparkline-area | 1200 | fill": "oklch(0.542 0.162 251.9 / 0.15)",
  "chart dark | .cui-console-chart-grid | 1200 | stroke": "oklch(0.879 0.015 286.1 / 0.13)",
- "chart dark | .cui-console-chart-scale | 1200 | color": "oklch(0.879 0.015 286.1 / 0.6)",
+ "chart dark | .cui-console-chart-scale | 1200 | color": "oklch(0.879 0.015 286.1 / 0.63)",
  "chart dark | .cui-console-chart-scale | 1200 | background-color": "oklch(0 0 0)",
  "chart dark | .cui-console-chart-sparkline-line | 1200 | stroke": "oklch(0.512 0.203 260.5)"
 }

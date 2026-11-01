@@ -251,11 +251,11 @@ const darkOf = (name, light) => {
   return withAlpha(tbTokens[stepOf(light, 'light')[0].replace('-palette-light-', '-palette-dark-')], alpha);
 };
 const FITTED = {
-  '--cui-c-console-neutral-label-secondary': { light: 'oklch(35.9% 0.012 285.8 / 0.76)', why: 'the toolkit\'s 0.60 is 3.4:1 on white, 0.74 4.4:1 on a chip over a card' },
+  '--cui-c-console-neutral-label-secondary': { light: 'oklch(35.9% 0.012 285.8 / 0.76)', dark: 'oklch(87.9% 0.015 286.1 / 0.63)', why: 'the toolkit\'s 0.60 is 3.4:1 on white, 0.74 4.4:1 on a chip over a card; its dark 0.60 short of 4.5:1 on a success or warning banner\'s tint over a card (crashcart\'s demo has one)' },
   '--cui-c-console-brand-accent-primary': { dark: 'oklch(51.2% 0.203 260.5)', why: 'white on the derived blue-600 is 2.7:1' },
   '--cui-c-console-brand-fill-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the toolkit\'s lighter blue is 3.9:1' },
   '--cui-c-console-brand-fill-press': { dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the derived blue-600 is 2.7:1' },
-  '--cui-c-console-brand-label-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(62.4% 0.206 255.5)', why: 'the toolkit\'s lighter blue is 3.5:1 on white, its derived dark 3.5:1 on black' },
+  '--cui-c-console-brand-label-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(68.3% 0.167 256.6)', why: 'the toolkit\'s lighter blue is 3.5:1 on white, its derived dark 3.5:1 on black; dark-blue-500 short of 4.5:1 on a gray segment over a card' },
   '--cui-c-console-error-accent-primary': { light: 'oklch(49.5% 0.190 31.5)', dark: 'oklch(50.0% 0.186 31.4)', why: 'white on the toolkit\'s red is 3.3:1' },
   '--cui-c-console-field-border': { light: 'oklch(35.9% 0.012 285.8 / 0.58)', dark: 'oklch(87.9% 0.015 286.1 / 0.42)', why: 'a field\'s edge, at the toolkit\'s 0.18, is 1.4:1 on white; a control\'s edge is held to 3:1' },
   '--cui-c-console-brand-label-on-fill': { light: 'oklch(49.7% 0.209 260.5)', why: 'the brand\'s label on the gray fill is 4.4:1' },
@@ -331,54 +331,49 @@ for (const [fg, grounds, min] of MIN) {
     }
   }
 }
-// a console part's text on the console's grounds: each ground the layers
-// named, over the page (white light, black dark)
+// a console part's text on the console's grounds: each label on the fills
+// it is drawn on (the layers named, top first; [] the bare base), and each of
+// those over both bases a console part sits on, the page (white light,
+// black dark) and a card over the page: the pairs read on a card alone
+// before were found by a site's axe-core run, not here (69d2d21, af2467f)
 const PAGE = '--cui-c-console-neutral-background-primary';
 const CARD = '--cui-c-console-card';
+const BASES = [[PAGE], [CARD, PAGE]];
 const ON_FILLS = ['--cui-c-console-brand-accent-primary', '--cui-c-console-brand-fill-hover', '--cui-c-console-error-accent-primary', '--cui-c-console-error-fill-hover'];
 const GRAY = ['--cui-c-console-neutral-fill-tertiary', '--cui-c-console-gray-fill-hover', '--cui-c-console-gray-fill-press'];
+const ROLES = ['info', 'success', 'warning', 'error'];
+const BADGE_LABEL = (role) => (role === 'brand' ? '--cui-c-console-brand-label-on-fill' : `--cui-c-console-${role}-label-primary`);
 const CONSOLE_MIN = [
-  ['--cui-c-console-neutral-label-primary', [[PAGE], ['--cui-c-console-neutral-fill-quaternary', PAGE], ...GRAY.map((g) => [g, PAGE])], 4.5],
-  // the secondary label on a fill too: a current menu item's
-  ['--cui-c-console-neutral-label-secondary', [[PAGE], ['--cui-c-console-neutral-fill-quaternary', PAGE]], 4.5],
+  ['--cui-c-console-neutral-label-primary', [[], ['--cui-c-console-neutral-fill-quaternary'], ['--cui-c-console-neutral-accent-quaternary'], ...GRAY.map((g) => [g]), ...ROLES.map((role) => [`--cui-c-console-${role}-fill-tertiary`])], 4.5],
+  // the secondary label: a current menu item's, a chip's key and its remove
+  // control on its gray at rest, hovered and pressed, a banner's caption, a
+  // field's placeholder, a card's caption
+  ['--cui-c-console-neutral-label-secondary', [[], ['--cui-c-console-neutral-fill-quaternary'], ...GRAY.map((g) => [g]), ...ROLES.map((role) => [`--cui-c-console-${role}-fill-tertiary`])], 4.5],
   // a button's label on its fill, at rest, hovered and pressed
   ['--cui-c-console-brand-label-on-accent-primary', [...ON_FILLS.map((f) => [f]), ['--cui-c-console-brand-fill-press'], ['--cui-c-console-error-fill-press']], 4.5],
   ['--cui-c-console-on-accent-press', [['--cui-c-console-brand-fill-press'], ['--cui-c-console-error-fill-press']], 4.5],
-  ['--cui-c-console-neutral-label-hover', [['--cui-c-console-gray-fill-hover', PAGE]], 4.5],
-  // a badge's label on the page, on its own tint and on the gray fill
-  ...['brand', 'info', 'success', 'warning', 'error'].map((role) => [role === 'brand' ? '--cui-c-console-brand-label-on-fill' : `--cui-c-console-${role}-label-primary`, [[PAGE], [`--cui-c-console-${role}-accent-quaternary`, PAGE], ['--cui-c-console-neutral-fill-tertiary', PAGE]], 4.5]),
-  ['--cui-c-console-neutral-label-primary', [['--cui-c-console-neutral-accent-quaternary', PAGE]], 4.5],
-  // a banner's text, its caption and its icon on its tint
-  ...['--cui-c-console-neutral-label-primary', '--cui-c-console-neutral-label-secondary'].map((fg) => [fg, ['info', 'success', 'warning', 'error'].map((role) => [`--cui-c-console-${role}-fill-tertiary`, PAGE]), 4.5]),
-  ...['info', 'success', 'warning', 'error'].map((role) => [`--cui-c-console-${role}-label-primary`, [[`--cui-c-console-${role}-fill-tertiary`, PAGE]], 4.5]),
-  // a card's text on its ground: its title, value, caption, a change up or down
-  ...['--cui-c-console-neutral-label-primary', '--cui-c-console-neutral-label-secondary', '--cui-c-console-success-label-primary', '--cui-c-console-error-label-primary'].map((fg) => [fg, [['--cui-c-console-card', PAGE]], 4.5]),
+  ['--cui-c-console-neutral-label-hover', [['--cui-c-console-gray-fill-hover']], 4.5],
+  // a badge's label on the base, on its own tint and on the gray fill
+  ...['brand', ...ROLES].map((role) => [BADGE_LABEL(role), [[], [`--cui-c-console-${role}-accent-quaternary`], ['--cui-c-console-neutral-fill-tertiary']], 4.5]),
+  // a banner's icon on its tint; a card's change up or down
+  ...ROLES.map((role) => [`--cui-c-console-${role}-label-primary`, [[`--cui-c-console-${role}-fill-tertiary`]], 4.5]),
   // a gray segment's blue label, at rest and hovered, on its gray
-  ...['--cui-c-console-brand-label-on-fill', '--cui-c-console-brand-label-hover'].map((fg) => [fg, GRAY.map((g) => [g, PAGE]), 4.5]),
-  // a plain button's, a link's: on the page
-  ...['--cui-c-console-brand-label-primary', '--cui-c-console-brand-label-hover', '--cui-c-console-brand-label-press'].map((fg) => [fg, [[PAGE]], 4.5]),
-  // a gray button's red label: on the page and on its gray
-  ...['--cui-c-console-error-label-primary', '--cui-c-console-error-label-hover', '--cui-c-console-error-label-press'].map((fg) => [fg, [[PAGE], ...GRAY.map((g) => [g, PAGE])], 4.5]),
-  // the same on a card, whose ground is lighter than the page's in dark: a
-  // badge on its tint and on the gray fill, a gray button's labels on its
-  // gray (crashcart's badges and red buttons sit on cards)
-  ...['brand', 'info', 'success', 'warning', 'error'].map((role) => [role === 'brand' ? '--cui-c-console-brand-label-on-fill' : `--cui-c-console-${role}-label-primary`, [[`--cui-c-console-${role}-accent-quaternary`, CARD, PAGE], ['--cui-c-console-neutral-fill-tertiary', CARD, PAGE]], 4.5]),
-  ...['--cui-c-console-neutral-label-primary', '--cui-c-console-brand-label-on-fill', '--cui-c-console-error-label-primary', '--cui-c-console-error-label-hover', '--cui-c-console-error-label-press'].map((fg) => [fg, GRAY.map((g) => [g, CARD, PAGE]), 4.5]),
-  // a chip's key and its remove control on its gray, at rest and as a link
-  // hovered and pressed, on the page and on a card (crashcart's event tags)
-  ['--cui-c-console-neutral-label-secondary', [...GRAY.map((g) => [g, PAGE]), ...GRAY.map((g) => [g, CARD, PAGE])], 4.5],
+  ...['--cui-c-console-brand-label-on-fill', '--cui-c-console-brand-label-hover'].map((fg) => [fg, GRAY.map((g) => [g]), 4.5]),
+  // a plain button's, a link's
+  ...['--cui-c-console-brand-label-primary', '--cui-c-console-brand-label-hover', '--cui-c-console-brand-label-press'].map((fg) => [fg, [[]], 4.5]),
+  // a gray button's red label, on the base and on its gray
+  ...['--cui-c-console-error-label-primary', '--cui-c-console-error-label-hover', '--cui-c-console-error-label-press'].map((fg) => [fg, [[], ...GRAY.map((g) => [g])], 4.5]),
+  // a field's edge and its red edge in error
+  ...['--cui-c-console-field-border', '--cui-c-console-error-label-primary'].map((fg) => [fg, [[]], 3]),
 ];
-CONSOLE_MIN.push(
-  // a field's edge and its red edge in error: 3:1 on the page and on a card
-  ...['--cui-c-console-field-border', '--cui-c-console-error-label-primary'].map((fg) => [fg, [[PAGE], ['--cui-c-console-card', PAGE]], 3]),
-  // its text, its placeholder (the secondary label) on its white
-  ['--cui-c-console-neutral-label-secondary', [[PAGE], ['--cui-c-console-card', PAGE]], 4.5],
-);
-for (const [fg, grounds, min] of CONSOLE_MIN) {
-  for (const layers of grounds) {
-    for (const i of [0, 1]) {
-      const ground = over(...layers.map((l) => sides(l)[i]), ['#ffffff', '#000000'][i]);
-      check(`${fg} on ${layers.join(' over ')}, ${['light', 'dark'][i]}, at least ${min}:1`, ratio(over(sides(fg)[i], ground), ground) >= min, true);
+for (const [fg, fills, min] of CONSOLE_MIN) {
+  for (const fill of fills) {
+    for (const base of BASES) {
+      const layers = [...fill, ...base];
+      for (const i of [0, 1]) {
+        const ground = over(...layers.map((l) => sides(l)[i]), ['#ffffff', '#000000'][i]);
+        check(`${fg} on ${layers.join(' over ')}, ${['light', 'dark'][i]}, at least ${min}:1`, ratio(over(sides(fg)[i], ground), ground) >= min, true);
+      }
     }
   }
 }

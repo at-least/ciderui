@@ -31,7 +31,7 @@
  "status detail | .cui-console-status-detail | 1200 | padding-left": "18px",
  "status key | .cui-console-status-mark | 1200 | background-color": "oklch(0.542 0.162 251.9)",
  "statuses forced colors | .cui-console-status[data-color=\"error\"] .cui-console-status-mark | 1200 | background-color": "rgb(0, 0, 0)",
- "statuses dark | .cui-console-status:not([data-color]) .cui-console-status-mark | 1200 | background-color": "oklch(0.879 0.015 286.1 / 0.6)",
+ "statuses dark | .cui-console-status:not([data-color]) .cui-console-status-mark | 1200 | background-color": "oklch(0.879 0.015 286.1 / 0.63)",
  "statuses dark | .cui-console-status[data-color=\"brand\"] .cui-console-status-mark | 1200 | background-color": "oklch(0.683 0.167 256.6)",
  "statuses dark | .cui-console-status[data-color=\"info\"] .cui-console-status-mark | 1200 | background-color": "oklch(0.683 0.167 256.6)",
  "statuses dark | .cui-console-status[data-color=\"success\"] .cui-console-status-mark | 1200 | background-color": "oklch(0.756 0.208 146.9)",

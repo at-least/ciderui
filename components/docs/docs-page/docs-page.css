@@ -33,8 +33,8 @@
  *                        own scroll, the window's height under the bar
  *                        (--cui-docs-page-top, its top in the window, the
  *                        page's script's as the page scrolls: the global
- *                        nav over the bar until it scrolls away; 52px, the
- *                        bar's, without);
+ *                        nav over the bar until it scrolls away; the bar's
+ *                        height, --cui-docs-bar-height, without);
  *                        below, the sheet the bar's button opens, over the
  *                        window on the page's ground, its own scroll
  * cui-docs-page-close    the sheet's close button: 19px, its 19px glyph,
@@ -93,10 +93,10 @@
     @media (width >= 1024px) {
       position: sticky;
       inset: auto;
-      top: 52px;
+      top: var(--cui-docs-bar-height);
       display: block;
       align-self: start;
-      height: calc(100dvh - var(--cui-docs-page-top, 52px));
+      height: calc(100dvh - var(--cui-docs-page-top, var(--cui-docs-bar-height)));
       overscroll-behavior: contain;
       background-color: transparent;
     }
@@ -122,18 +122,6 @@
 
     @media (width >= 1024px) {
       display: none;
-    }
-
-    @media (pointer: coarse) {
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 44px;
-        height: 44px;
-        transform: translate(-50%, -50%);
-      }
     }
   }
 
@@ -168,10 +156,6 @@
   /* a link to a place on the page (a heading's, a footnote's) lands it under
      the bar, which sticks over it */
   .cui-docs-page :target {
-    scroll-margin-top: 48px;
-
-    @media (width >= 768px) {
-      scroll-margin-top: 52px;
-    }
+    scroll-margin-top: var(--cui-docs-bar-height);
   }
 }

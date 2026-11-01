@@ -59,11 +59,13 @@
     letter-spacing: normal;
     tab-size: 4;
     color: var(--cui-c-console-neutral-label-primary);
-    background-color: var(--cui-c-console-card);
+    /* the gray on the page; a card's inset ground inside one */
+    background-color: var(--cui-console-inset, var(--cui-c-console-card));
   }
 
-  :where(.cui-console-card, .cui-console-listing) .cui-console-listing {
-    background-color: var(--cui-c-console-neutral-background-primary);
+  /* a listing in a listing: the page's ground */
+  :where(.cui-console-listing) .cui-console-listing {
+    --cui-console-inset: var(--cui-c-console-neutral-background-primary);
   }
 
   .cui-console-listing:has(.cui-console-listing-line) {

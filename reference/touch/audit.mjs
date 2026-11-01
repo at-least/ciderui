@@ -2,8 +2,9 @@
 // (test/browser.mjs's `touch`): each control a finger can press, its box
 // and its target (hit-tested from its center, below), held to the HIG's
 // control sizes (Accessibility, Mobility: 44x44pt the default on iOS,
-// 28x28pt the minimum). Prints one line per control and exits 1 when a
-// target is under the default.
+// 28x28pt the minimum). Prints a line for each control under the default
+// (each control with VERBOSE=1) and exits 1 when there is one; a step of
+// npm test (scripts/docker.mjs).
 //
 //   node scripts/docker.mjs node reference/touch/audit.mjs
 
@@ -18,6 +19,7 @@ if (!parts.length) throw new Error('no console parts in COMPONENTS');
 const sheets = parts.map((c) => `@import "${c.dir}/${c.name}.css";`).join('\n');
 const css = compile({ css: `@import "index.css";\n${sheets}`, sources: ['components'] });
 let short = 0;
+let controls = 0;
 for (const { name: part, dir: partDir } of parts) {
   const dir = join(ROOT, partDir, 'examples');
   for (const file of readdirSync(dir).filter((f) => f.endsWith('.html')).sort()) {
@@ -63,10 +65,11 @@ for (const { name: part, dir: partDir } of parts) {
       const min = Math.min(...r.target);
       const verdict = min >= 43 ? 'ok   ' : min >= 28 ? 'MIN  ' : 'SHORT';
       if (min < 43) short += 1;
-      console.log(`${verdict} ${part}/${file} ${r.name} box ${r.box.join('x')} target ${r.target.join('x')}`);
+      if (min < 43 || process.env.VERBOSE) console.log(`${verdict} ${part}/${file} ${r.name} box ${r.box.join('x')} target ${r.target.join('x')}`);
+      controls += 1;
     }
   }
 }
 await quit();
-console.log(`${short} under 44pt`);
+console.log(`touch: ${controls} console controls, ${short} under 44pt`);
 process.exit(short ? 1 : 0);

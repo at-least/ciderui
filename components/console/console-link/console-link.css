@@ -57,20 +57,5 @@
       text-decoration-line: none;
       cursor: default;
     }
-
-    /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility) */
-    @media (pointer: coarse) {
-      position: relative;
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: max(100%, 44px);
-        height: max(100%, 44px);
-        transform: translate(-50%, -50%);
-      }
-    }
   }
 }

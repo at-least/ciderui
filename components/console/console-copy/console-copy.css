@@ -57,7 +57,7 @@
     display: flex;
     align-items: flex-start;
     border-radius: 15px;
-    background-color: var(--cui-c-console-card);
+    background-color: var(--cui-console-inset, var(--cui-c-console-card));
 
     /* not :where(): console-listing.css comes after this file and its
        equal selector would win */
@@ -69,12 +69,6 @@
       padding-inline-end: 9px;
       background-color: transparent;
     }
-  }
-
-  /* in a console card, whose gray is the listing's, the page's ground:
-     gray on gray drew no panel, the text 14px in from nothing */
-  :where(.cui-console-card) .cui-console-copy {
-    background-color: var(--cui-c-console-neutral-background-primary);
   }
 
   .cui-console-copy-button {
@@ -125,19 +119,6 @@
       flex: none;
       width: 16px;
       height: 16px;
-    }
-
-    /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility) */
-    @media (pointer: coarse) {
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 44px;
-        height: 44px;
-        transform: translate(-50%, -50%);
-      }
     }
   }
 

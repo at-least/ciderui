@@ -49,23 +49,4 @@
     margin-left: 0.24em;
     vertical-align: -0.01em;
   }
-
-  /* a touch screen's target for the more link, a standalone control (a link
-     in running text is text, exempt): a transparent ::after 44px at least
-     each way, as the console's link draws one */
-  @media (pointer: coarse) {
-    :where(.cui-link[data-variant="more"]) {
-      position: relative;
-    }
-
-    .cui-link[data-variant="more"]::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: max(100%, 44px);
-      height: max(100%, 44px);
-      transform: translate(-50%, -50%);
-    }
-  }
 }
