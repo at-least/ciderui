@@ -56,6 +56,15 @@ export const cases = [
     checks: ['sm', 'lg', 'xl'].map((s) => ({ target: `[data-size="${s}"]`, props: SIZE, tb: size(s) })),
   },
   {
+    name: 'field sizes touch',
+    html: ex('sizes'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: '[data-size="sm"]', props: ['box-height'], golden: 'the small field 28px tall on a touch screen, the HIG\'s minimum control size (Accessibility, Mobility): the toolkit\'s 22px is under it, and an <input> draws no ::after to reach it' },
+    ],
+  },
+  {
     name: 'select',
     html: ex('select'),
     widths: [1200],

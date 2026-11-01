@@ -24,7 +24,8 @@ for (const { name: part, dir: partDir } of parts) {
     const page = await open(css, readFileSync(join(dir, file), 'utf8'), { width: 390, touch: true });
     const rows = await page.page.evaluate(() => {
       const sel = 'a[href], button, input:not([type=hidden]), select, textarea, summary, [role=button], [tabindex]:not([tabindex="-1"])';
-      return [...document.querySelectorAll(sel)].filter((e) => e.getClientRects().length).map((e) => {
+      // an element's box, or a ::before or ::after it draws, whichever is larger
+      const target = (e) => {
         const r = e.getBoundingClientRect();
         let w = r.width, h = r.height;
         for (const p of ['::before', '::after']) {
@@ -33,9 +34,15 @@ for (const { name: part, dir: partDir } of parts) {
           w = Math.max(w, parseFloat(cs.width) || 0);
           h = Math.max(h, parseFloat(cs.height) || 0);
         }
-        // a native checkbox or radio inside a <label>: the label is its target
+        return [w, h];
+      };
+      return [...document.querySelectorAll(sel)].filter((e) => e.getClientRects().length).map((e) => {
+        const r = e.getBoundingClientRect();
+        let [w, h] = target(e);
+        // a native checkbox or radio inside a <label>: the label is its
+        // target, a ::after it draws too (console-appearance's choice)
         const label = (e.type === 'checkbox' || e.type === 'radio') && e.closest('label');
-        if (label) { const l = label.getBoundingClientRect(); w = Math.max(w, l.width); h = Math.max(h, l.height); }
+        if (label) { const [lw, lh] = target(label); w = Math.max(w, lw); h = Math.max(h, lh); }
         const name = e.tagName.toLowerCase() + (e.className && typeof e.className === 'string' ? '.' + e.className.trim().split(/\s+/)[0] : '') + (e.type && e.tagName === 'INPUT' ? `[${e.type}]` : '');
         return { name, box: [+r.width.toFixed(1), +r.height.toFixed(1)], target: [+w.toFixed(1), +h.toFixed(1)] };
       });
