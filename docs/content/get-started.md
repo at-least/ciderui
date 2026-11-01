@@ -23,7 +23,7 @@ ciderui is not published. A site takes it as a checkout beside its own, a file d
 
 ## The stylesheet
 
-Import it after Tailwind, its fonts first, then the set the site uses: `site.css`, apple.com’s parts, or `console.css`, the console’s:
+Import it after Tailwind, its fonts first, then the set the site uses: `site.css`, apple.com’s parts, `console.css`, the console’s, or `docs.css`, Apple’s developer documentation’s:
 
 ```css
 @import "tailwindcss";

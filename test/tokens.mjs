@@ -143,6 +143,10 @@ const CONTRACT = {
   '--cui-c-close-active': [['overlay', 'close.circle-hover', W, 'background-color', 'active'], ['overlay', 'close.circle-hover', 390, 'background-color', 'active']],
   '--cui-c-on-close': [['overlay', 'close.circle', W, 'color'], ['overlay', 'close.circle-hover', 390, 'color', 'active']],
   '--cui-c-on-close-hover': [['overlay', 'close.circle-hover', W, 'color', 'hover'], ['overlay', 'close.circle-hover', 390, 'color', 'hover']],
+  // the docs set's own (decision 23): Apple's developer documentation's code
+  // listing, light and in the dark, which DocC follows
+  '--cui-c-docs-listing': [['docc', 'listing', W, 'background-color'], ['docc-dark', 'listing', W, 'background-color']],
+  '--cui-c-docs-code': [['docc', 'listing.code', W, 'color'], ['docc-dark', 'listing.code', W, 'color']],
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-') && !k.startsWith('--cui-c-console-'));
@@ -290,6 +294,8 @@ const MIN = [
   ['--cui-c-on-card', ['--cui-c-bg'], 4.5],
   ['--cui-c-eyebrow', ['--cui-c-bg'], 4.5],
   ['--cui-c-tag', ['--cui-c-bg'], 4.5],
+  // a docs listing's code on its ground
+  ['--cui-c-docs-code', ['--cui-c-docs-listing'], 4.5],
 ];
 for (const [fg, grounds, min] of MIN) {
   for (const bg of grounds) {

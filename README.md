@@ -26,8 +26,8 @@ cd docs && zola serve
 | --- | --- |
 | `index.css` | `theme.css`, `tokens.css`, `base.css` and `type.css`: the breakpoints and utilities, the variables, the page's base, the type |
 | `fonts.css`, `fonts/` | Inter |
-| `site.css`, `console.css` | a set's every part, one import each: the site set (apple.com's pages) and the console set (`cui-console-*`) |
-| `components/<set>/<name>/` | a part, in its set (`site` or `console`): its stylesheet, its examples (the markup the crate's tests render too) and its test |
+| `site.css`, `console.css`, `docs.css` | a set's every part, one import each: the site set (apple.com's pages), the console set (`cui-console-*`) and the docs set (`cui-docs-*`, Apple's developer documentation) |
+| `components/<set>/<name>/` | a part, in its set (`site`, `console` or `docs`): its stylesheet, its examples (the markup the crate's tests render too) and its test |
 | `rust/` | the crate |
 | `reference/` | the measurements, each with its probe, page, browser and date |
 | `docs/` | the documentation's site |

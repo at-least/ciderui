@@ -1,0 +1,237 @@
+/* ciderui — the docs content: an article's prose in Apple's developer
+ * documentation, its plain elements styled as they come, so the HTML
+ * markdown writes reads as DocC's with no class on it.
+ *
+ * From Apple's developer documentation (DocC, reference/apple.com/):
+ * docc:* (the text, a section's heading, a link, inline code, a code
+ * listing), docc-page:content.* (h3, a list, an image, the room before a
+ * listing and a note), docc-technote:* (a table, a numbered list, a later
+ * section's heading, emphasis).
+ *
+ *   <div class="cui-docs-content">
+ *     <h2>Overview</h2> <p>…</p> <ul>…</ul> <h3>…</h3>
+ *     <pre><code>…</code></pre> <table>…</table>
+ *   </div>
+ *
+ * cui-docs-content     the text 17/25; its children's room, the first at
+ *                      its top
+ *   h2                 32/36 at 600 from 1251px (28/32 from 736px, 24/28
+ *                      below), 1.6em of its size under what is above it
+ *   h3                 28/32 at 600 (24/28, 21/25), 1.6em down
+ *   p, ul, ol          13.6px down
+ *   ul, ol             their marks outside, 20px in (21.25px to 735px), an
+ *                      item 13.6px under the one before
+ *   a                  the link's color, underlined
+ *   code               the mono face at the text's size and color
+ *   em                 italic
+ *   pre                a code listing: 15px corners on its gray, 8px by
+ *                      14px in, the mono face 15/25, a line too long for
+ *                      it moved sideways inside it; 27.2px down
+ *   table              collapsed, every cell 10px in, edged 1px all round
+ *                      in the divider's color, middle-aligned, a header
+ *                      cell at 600; moved sideways inside itself where
+ *                      the column is narrower; 27.2px down
+ *   aside, figure,     27.2px down; an image at its own size, centered
+ *   p's lone image
+ *
+ * DocC's: the type, the rhythm, the colors, the list's indent, the
+ * listing's corners, room and type, the table's cells. ciderui's: the
+ * letter-spacing (tokens.css); the listing's text at the mono face's own
+ * spacing (DocC sets −0.405px on its SF Mono webfont), as the console's
+ * listing; a table that scrolls by itself (DocC's sits in a wrapper that
+ * does: markdown writes none); h4 to h6 the text's size at 600, strong at
+ * 600, a quotation indented in the secondary text, a rule in the divider's
+ * color, an example's figure 27.2px down as an image (DocC's pages read
+ * show none); a word too long for its line broken where it must (DocC
+ * writes <wbr> into a long name; markdown does not). A component inside
+ * (a class named cui-*) keeps its own look: these rules match plain
+ * elements alone, but for the room above a child. */
+
+@layer components {
+  .cui-docs-content {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: var(--cui-tracking-17);
+    color: var(--cui-c-text);
+    overflow-wrap: anywhere;
+
+    > :where(p, ul, ol, blockquote, h4, h5, h6) {
+      margin-top: 13.6px;
+      margin-bottom: 0;
+    }
+
+    > :where(pre, table, aside, figure, p:has(> img:only-child)) {
+      margin-top: 27.2px;
+      margin-bottom: 0;
+    }
+
+    > :where(:first-child) {
+      margin-top: 0;
+    }
+
+    :where(h2:not([class*="cui-"])) {
+      margin-top: 1.6em;
+      margin-bottom: 0;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 28px;
+      letter-spacing: var(--cui-tracking-24);
+
+      @media (width >= 736px) {
+        font-size: 28px;
+        line-height: 32px;
+        letter-spacing: var(--cui-tracking-28);
+      }
+
+      @media (width >= 1251px) {
+        font-size: 32px;
+        line-height: 36px;
+        letter-spacing: var(--cui-tracking-32);
+      }
+    }
+
+    :where(h3:not([class*="cui-"])) {
+      margin-top: 1.6em;
+      margin-bottom: 0;
+      font-size: 21px;
+      font-weight: 600;
+      line-height: 25px;
+      letter-spacing: var(--cui-tracking-21);
+
+      @media (width >= 736px) {
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: var(--cui-tracking-24);
+      }
+
+      @media (width >= 1251px) {
+        font-size: 28px;
+        line-height: 32px;
+        letter-spacing: var(--cui-tracking-28);
+      }
+    }
+
+    :where(h4, h5, h6):where(:not([class*="cui-"])) {
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 25px;
+      letter-spacing: var(--cui-tracking-17);
+    }
+
+    > :where(h2, h3, h4, h5, h6):first-child {
+      margin-top: 0;
+    }
+
+    :where(ul, ol):where(:not([class*="cui-"])) {
+      margin-left: 21.25px;
+      padding: 0;
+      list-style-position: outside;
+
+      @media (width >= 736px) {
+        margin-left: 20px;
+      }
+    }
+
+    :where(ul:not([class*="cui-"])) {
+      list-style-type: disc;
+    }
+
+    :where(ol:not([class*="cui-"])) {
+      list-style-type: decimal;
+    }
+
+    :where(ul:not([class*="cui-"]), ol:not([class*="cui-"])) > :where(li + li) {
+      margin-top: 13.6px;
+    }
+
+    :where(li > p, th > p, td > p) {
+      margin: 0;
+    }
+
+    :where(li > ul, li > ol) {
+      margin-top: 0;
+    }
+
+    :where(li > pre) {
+      margin-top: 13.6px;
+    }
+
+    :where(a:not([class*="cui-"])) {
+      color: var(--cui-c-link);
+      text-decoration-line: underline;
+    }
+
+    :where(code:not([class*="cui-"])) {
+      font-family: var(--cui-font-mono);
+      font-size: 1em;
+      letter-spacing: normal;
+    }
+
+    :where(em) {
+      font-style: italic;
+    }
+
+    :where(strong, b) {
+      font-weight: 600;
+    }
+
+    :where(pre:not([class*="cui-"])) {
+      overflow-x: auto;
+      border-radius: 15px;
+      padding: 8px 14px;
+      font-family: var(--cui-font-mono);
+      font-size: 15px;
+      line-height: 25px;
+      letter-spacing: normal;
+      white-space: pre;
+      tab-size: 4;
+      overflow-wrap: normal;
+      color: var(--cui-c-docs-code);
+      background-color: var(--cui-c-docs-listing);
+    }
+
+    :where(pre code) {
+      font-size: inherit;
+    }
+
+    :where(table:not([class*="cui-"])) {
+      display: block;
+      width: max-content;
+      max-width: 100%;
+      overflow-x: auto;
+      border-collapse: collapse;
+      overflow-wrap: normal;
+    }
+
+    :where(table:not([class*="cui-"])) :where(th, td) {
+      padding: 10px;
+      border: 1px solid var(--cui-c-divider);
+      text-align: start;
+      vertical-align: middle;
+    }
+
+    :where(table:not([class*="cui-"])) :where(th) {
+      font-weight: 600;
+    }
+
+    :where(img:not([class*="cui-"])) {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-inline: auto;
+    }
+
+    :where(blockquote:not([class*="cui-"])) {
+      padding-left: 20px;
+      color: var(--cui-c-text-2);
+    }
+
+    > :where(hr:not([class*="cui-"])) {
+      margin-top: 27.2px;
+      margin-bottom: 0;
+      border: 0;
+      border-top: 1px solid var(--cui-c-divider);
+    }
+  }
+}

@@ -1,6 +1,6 @@
 //! The kit's stylesheets, embedded (the `css` feature): the root ones
-//! (`index.css` and its parts, `fonts.css`, the sets' `site.css` and
-//! `console.css`) and every `components/<set>/<name>/<name>.css`, by their
+//! (`index.css` and its parts, `fonts.css`, the sets' `site.css`,
+//! `console.css` and `docs.css`) and every `components/<set>/<name>/<name>.css`, by their
 //! paths in the kit. A site writes
 //! them out before its Tailwind build, so the crate's commit is the one pin
 //! for its markup and its CSS:
@@ -58,7 +58,7 @@ mod tests {
     // names, and no other set's
     #[test]
     fn each_set_imports_its_parts_in_order() {
-        for set in ["site", "console"] {
+        for set in ["site", "console", "docs"] {
             let (_, entry) = FILES
                 .iter()
                 .find(|(p, _)| *p == format!("{set}.css"))

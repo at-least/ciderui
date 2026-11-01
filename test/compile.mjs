@@ -14,7 +14,7 @@ export const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 // every component: its set, its name and its directory
 // (components/<set>/<name>), in the order of their names across the sets,
 // the order the tests' and the docs' stylesheets import them in
-export const COMPONENTS = ['site', 'console']
+export const COMPONENTS = ['site', 'console', 'docs']
   .flatMap((set) => readdirSync(join(ROOT, 'components', set)).map((name) => ({ set, name, dir: `components/${set}/${name}` })))
   .sort((a, b) => (a.name < b.name ? -1 : 1));
 export const componentDir = (name) => COMPONENTS.find((c) => c.name === name).dir;

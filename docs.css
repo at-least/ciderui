@@ -1,0 +1,9 @@
+/* The docs set: every cui-docs-* part, Apple's developer documentation's,
+ * after index.css (or its tokens.css, base.css and type.css):
+ *
+ *   @import "ciderui";
+ *   @import "ciderui/docs.css";
+ *
+ * One import per part, in the order of their names. */
+
+@import "./components/docs/docs-content/docs-content.css";

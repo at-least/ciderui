@@ -66,6 +66,12 @@
  *                           each: a modal is light in a dark block too, as
  *                           apple.com's store has no dark overlay
  *
+ * The docs set's own colors (--cui-c-docs-*), where Apple's developer
+ * documentation's are not apple.com's slots (DESIGN.md, decision 23),
+ * measured on both sides (reference/apple.com/'s docc, docc-dark):
+ *   docs-listing, docs-code a code listing's ground (the alternate ground in
+ *                           light alone) and its code (black, white dark)
+ *
  * The console's colors (--cui-c-console-*), the console parts' (cui-console-*):
  * App Store Connect's newer look's color roles, one slot per role a part
  * reads, named by the role (--cui-c-console-neutral-label-primary is its
@@ -133,6 +139,8 @@
   --cui-c-close-active: #dfdfe4;
   --cui-c-on-close: #6e6e73;
   --cui-c-on-close-hover: rgb(0 0 0 / 0.72);
+  --cui-c-docs-listing: light-dark(#f5f5f7, #333336);
+  --cui-c-docs-code: light-dark(#000000, #ffffff);
 
   --cui-c-console-neutral-label-primary: light-dark(oklch(0.0% 0.000 0.0 / 0.85), oklch(100.0% 0.000 0 / 0.85));
   --cui-c-console-neutral-background-primary: light-dark(oklch(100.0% 0.000 0), oklch(0.0% 0.000 0));
