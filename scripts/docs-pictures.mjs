@@ -98,6 +98,7 @@ const SCENES = [
   { name: 'docs-bar', html: `<div style="width:440px;padding-bottom:24px;background-color:var(--cui-c-bg)">${example('docs-bar/bar')}</div>`, zoom: 2, center: true, window: 1000, height: 562 },
   { name: 'docs-navigator', html: `<div style="width:400px;padding-bottom:10px;background-color:var(--cui-c-bg)">${example('docs-navigator/navigator')}</div>`, zoom: 1.5, center: true },
   { name: 'docs-topics', html: `<div style="width:640px;padding:0 32px;background-color:var(--cui-c-bg)">${example('docs-topics/topics')}</div>`, zoom: 1.4, center: true },
+  { name: 'docs-page', files: ['docs-page/page'], zoom: 1, width: 1280 },
   { name: 'docs-content', html: `<div style="width:720px;padding:24px 32px;background-color:var(--cui-c-bg)">${example('docs-content/content')}</div>`, zoom: 1.6 },
   { name: 'footer', files: ['footer/footer'], zoom: 1.4, width: 914 },
   { name: 'footnote', files: ['footnote/footnote'], zoom: 3, center: true },

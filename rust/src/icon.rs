@@ -595,6 +595,18 @@ pub const DOCS_COLLECTION: Icon = Icon {
     inner: r#"<circle cx="0.875" cy="2.81" r="0.86" fill="currentColor"/><circle cx="0.875" cy="7.01" r="0.86" fill="currentColor"/><circle cx="0.875" cy="11.21" r="0.86" fill="currentColor"/><path d="M3.94 2.81H13.44M3.94 7.01H13.44M3.94 11.21H13.44" fill="none" stroke="currentColor" stroke-width="1.125" stroke-linecap="round"/>"#,
 };
 
+/// Apple's developer documentation's button that closes the navigator's
+/// sheet (`cui-docs-page-close`), in place of DocC's 14 by 14 SVG drawn at
+/// 19px: two strokes 1.58 thick, from (1.79, 1.79) to (11.235, 11.235) and
+/// from (11.235, 1.79) to (1.79, 11.235), round; 0.9985 of its ink DocC's.
+pub const DOCS_CLOSE: Icon = Icon {
+    width: "19",
+    height: "19",
+    view_box: "0 0 14 14",
+    paint: "",
+    inner: r#"<path d="M1.79 1.79 11.235 11.235M11.235 1.79 1.79 11.235" fill="none" stroke="currentColor" stroke-width="1.58" stroke-linecap="round"/>"#,
+};
+
 #[cfg(test)]
 mod tests {
     use super::*;

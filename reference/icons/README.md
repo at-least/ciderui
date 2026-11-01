@@ -164,7 +164,7 @@ Intersection over union; the probe fails below 0.85, a mark set before the run, 
 
 ## Apple's developer documentation's icons
 
-DocC draws its icons as inline SVG in 14 by 14 view boxes: the bar's button that opens the navigator (at 19px), a navigator row's chevron (at 10px, turned a quarter open), and the glyphs before a navigator row (17px) and a See Also link (15px), an article's and a collection's. `docc.mjs` reads each off the crash report's article (https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report), rasterizes it at 40 pixels to the unit beside the drawing the kit ships (read out of `rust/src/icon.rs`) and reads their ink: its box, and its runs along rows and columns. ciderui's are drawn from those numbers, in the same view box:
+DocC draws its icons as inline SVG in 14 by 14 view boxes: the bar's button that opens the navigator (at 19px), a navigator row's chevron (at 10px, turned a quarter open), the glyphs before a navigator row (17px) and a See Also link (15px), an article's and a collection's, and the button that closes the navigator's sheet below 1024px (19px). `docc.mjs` reads each off the crash report's article (https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report), rasterizes it at 40 pixels to the unit beside the drawing the kit ships (read out of `rust/src/icon.rs`) and reads their ink: its box, and its runs along rows and columns. ciderui's are drawn from those numbers, in the same view box:
 
 | icon | DocC's ink | ciderui's (`icon.rs`) |
 | --- | --- | --- |
@@ -172,6 +172,7 @@ DocC draws its icons as inline SVG in 14 by 14 view boxes: the bar's button that
 | the chevron | 4 to 10.975 across, 1 to 13.125 down; its arms' runs 2.325 across at 45° | `DOCS_CHEVRON`: two strokes 1.63 thick, (4.81, 1.81) to (10.17, 7) to (4.81, 12.32), round |
 | an article | 1.6 to 12.6 across, 0 to 14 down, its sides 1.05 thick; its top right corner cut at 45° from 7.515 across the top to 5.085 down the side; the fold 0.975 thick at 7.09 across and 5.59 down; two lines 0.8 thick at 8.28 and 10.57 down | `DOCS_ARTICLE`: the page and its cut corner one stroke, corners 1.35; the fold a second, turning 0.69 round; the lines from 4.13 to 9.9, round |
 | a collection | three dots 1.7 across at 0.875 across, then lines from 3.375 to 14 across, each 1.125 thick, their middles 2.81, 7.01 and 11.21 down | `DOCS_COLLECTION`: the dots radius 0.86, the lines round |
+| the close button | an X from (1, 1) to (12.025, 12.025), its arms' runs 2.225 across at 45° | `DOCS_CLOSE`: two strokes 1.58 thick, (1.79, 1.79) to (11.235, 11.235) and (11.235, 1.79) to (1.79, 11.235), round |
 
 | icon | shared ink |
 | --- | --- |
@@ -179,5 +180,6 @@ DocC draws its icons as inline SVG in 14 by 14 view boxes: the bar's button that
 | the chevron | 0.9746 |
 | an article | 0.982 |
 | a collection | 0.992 |
+| the close button | 0.9985 |
 
 Intersection over union; the probe fails below 0.85, the global nav's mark. Measured 2026-11-01 in Chromium 151 on Linux (`results/docc.json`).

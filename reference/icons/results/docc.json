@@ -1,11 +1,12 @@
 {
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-11-01T02:52:26.136Z",
+ "date": "2026-11-01T03:21:14.523Z",
  "ours": {
   "sidebar": "<svg viewBox=\"0 0 14 14\"><rect x=\"1.1125\" y=\"2.4875\" width=\"11.775\" height=\"9.025\" rx=\"1.27\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"0.975\"/><path d=\"M5.3 2.4875V11.5125\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"0.95\"/><path d=\"M2.653 4.635H3.797M2.653 6.056H3.797M2.653 7.473H3.797\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"0.656\" stroke-linecap=\"round\"/></svg>",
   "chevron": "<svg viewBox=\"0 0 14 14\"><path d=\"M4.81 1.81 10.17 7 4.81 12.32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.63\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
   "article": "<svg viewBox=\"0 0 14 14\"><path d=\"M7.515 0.525H3.475A1.35 1.35 0 0 0 2.125 1.875V12.125A1.35 1.35 0 0 0 3.475 13.475H10.725A1.35 1.35 0 0 0 12.075 12.125V5.085Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.05\" stroke-linejoin=\"round\"/><path d=\"M7.09 0.6V4.9A0.69 0.69 0 0 0 7.78 5.59H12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"0.975\"/><path d=\"M4.53 8.28H9.5M4.53 10.57H9.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"0.8\" stroke-linecap=\"round\"/></svg>",
-  "collection": "<svg viewBox=\"0 0 14 14\"><circle cx=\"0.875\" cy=\"2.81\" r=\"0.86\" fill=\"currentColor\"/><circle cx=\"0.875\" cy=\"7.01\" r=\"0.86\" fill=\"currentColor\"/><circle cx=\"0.875\" cy=\"11.21\" r=\"0.86\" fill=\"currentColor\"/><path d=\"M3.94 2.81H13.44M3.94 7.01H13.44M3.94 11.21H13.44\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.125\" stroke-linecap=\"round\"/></svg>"
+  "collection": "<svg viewBox=\"0 0 14 14\"><circle cx=\"0.875\" cy=\"2.81\" r=\"0.86\" fill=\"currentColor\"/><circle cx=\"0.875\" cy=\"7.01\" r=\"0.86\" fill=\"currentColor\"/><circle cx=\"0.875\" cy=\"11.21\" r=\"0.86\" fill=\"currentColor\"/><path d=\"M3.94 2.81H13.44M3.94 7.01H13.44M3.94 11.21H13.44\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.125\" stroke-linecap=\"round\"/></svg>",
+  "close": "<svg viewBox=\"0 0 14 14\"><path d=\"M1.79 1.79 11.235 11.235M11.235 1.79 1.79 11.235\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.58\" stroke-linecap=\"round\"/></svg>"
  },
  "sidebar": {
   "appleBox": {
@@ -574,6 +575,79 @@
      [
       10.65,
       11.775
+     ]
+    ]
+   ]
+  ]
+ },
+ "close": {
+  "appleBox": {
+   "left": 1,
+   "right": 12.025,
+   "top": 1,
+   "bottom": 12.025
+  },
+  "oursBox": {
+   "left": 1,
+   "right": 12.025,
+   "top": 1,
+   "bottom": 12.025
+  },
+  "iou": 0.9985,
+  "runs": [
+   [
+    "row",
+    3.5,
+    [
+     [
+      2.4,
+      4.625
+     ],
+     [
+      8.4,
+      10.625
+     ]
+    ],
+    [
+     [
+      2.4,
+      4.625
+     ],
+     [
+      8.4,
+      10.625
+     ]
+    ]
+   ],
+   [
+    "row",
+    7,
+    [
+     [
+      4.9,
+      8.125
+     ]
+    ],
+    [
+     [
+      4.9,
+      8.125
+     ]
+    ]
+   ],
+   [
+    "col",
+    7,
+    [
+     [
+      4.9,
+      8.125
+     ]
+    ],
+    [
+     [
+      4.9,
+      8.125
      ]
     ]
    ]

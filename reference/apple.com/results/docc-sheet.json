@@ -1,0 +1,364 @@
+{
+ "url": "https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report",
+ "finalUrl": "https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-11-01T03:21:41.659Z",
+ "widths": {
+  "390": {
+   "bar.place": {
+    "html": "<nav data-v-9a67a202=\"\" data-v-420314e4=\"\" data-v-cd2176b0=\"\" data-v-7dbb4eea=\"\" role=\"navigation\" class=\"nav documentation-nav apple-documentation-nav nav--in-breakpoint-range nav--fullwidth-border nav--is-wide-format\" aria-label=\"…",
+    "styles": {
+     "position": "sticky",
+     "top": "0px",
+     "z-index": "9997"
+    }
+   },
+   "sheet": {
+    "html": "<div data-v-cccc97a2=\"\" class=\"aside show-on-mobile has-mobile-top-offset\" style=\"width: 390px; --top-offset-mobile: 44px; --app-height: 900px; --top-offset: 44px;\"><div data-v-7dbb4eea=\"\" data-v-cccc97a2=\"\" class=\"documentation-layout-asid",
+    "styles": {
+     "position": "fixed",
+     "top": "44px",
+     "left": "0px",
+     "width": "390px",
+     "height": "856px",
+     "z-index": "9998",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "transform": "matrix(1, 0, 0, 1, 0, 0)",
+     "transition-property": "transform",
+     "transition-duration": "0.15s",
+     "transition-timing-function": "ease-in"
+    },
+    "box": {
+     "width": 390,
+     "height": 857
+    }
+   },
+   "sheet.card": {
+    "html": "<div data-v-9962ee18=\"\" data-v-3d9d262f=\"\" data-v-329861a7=\"\" data-v-d38be796=\"\" class=\"navigator-card filter-on-top\" technologypath=\"/documentation/xcode\"><div data-v-9962ee18=\"\" class=\"navigator-card-full-height\"><div data-v-9962ee18=\"\" c",
+    "styles": {
+     "background-color": "rgb(255, 255, 255)",
+     "color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 390,
+     "height": 856,
+     "top": 45,
+     "left": 0
+    }
+   },
+   "sheet.close": {
+    "html": "<button data-v-9962ee18=\"\" id=\"navigator-hide-button\" aria-label=\"…\" class=\"close-card\"><svg data-v-992f7eb0=\"\" data-v-9962ee18=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "width": "19px",
+     "height": "19px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block"
+    },
+    "box": {
+     "width": 19,
+     "height": 19,
+     "top": 59.5,
+     "left": 351
+    }
+   },
+   "sheet.close.icon": {
+    "html": "<svg data-v-992f7eb0=\"\" data-v-9962ee18=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" class=\"svg-icon inline-close-icon icon-inline close-icon\" viewBox=\"0 0 14 14\"><path data-v-992f7eb0=",
+    "styles": {
+     "width": "19px",
+     "height": "19px",
+     "color": "rgb(29, 29, 31)",
+     "fill": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 19,
+     "height": 19
+    }
+   }
+  },
+  "767": {
+   "bar.place": {
+    "html": "<nav data-v-9a67a202=\"\" data-v-420314e4=\"\" data-v-cd2176b0=\"\" data-v-7dbb4eea=\"\" role=\"navigation\" class=\"nav documentation-nav apple-documentation-nav nav--in-breakpoint-range nav--fullwidth-border nav--is-wide-format\" aria-label=\"…",
+    "styles": {
+     "position": "sticky",
+     "top": "0px",
+     "z-index": "9997"
+    }
+   },
+   "sheet": {
+    "html": "<div data-v-cccc97a2=\"\" class=\"aside show-on-mobile has-mobile-top-offset\" style=\"width: 432px; --top-offset-mobile: 44px; --app-height: 900px; --top-offset: 44px;\"><div data-v-7dbb4eea=\"\" data-v-cccc97a2=\"\" class=\"documentation-layout-asid",
+    "styles": {
+     "position": "fixed",
+     "top": "44px",
+     "left": "0px",
+     "width": "767px",
+     "height": "856px",
+     "z-index": "9998",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "transform": "matrix(1, 0, 0, 1, 0, 0)",
+     "transition-property": "transform",
+     "transition-duration": "0.15s",
+     "transition-timing-function": "ease-in"
+    },
+    "box": {
+     "width": 767,
+     "height": 857
+    }
+   },
+   "sheet.card": {
+    "html": "<div data-v-9962ee18=\"\" data-v-3d9d262f=\"\" data-v-329861a7=\"\" data-v-d38be796=\"\" class=\"navigator-card filter-on-top\" technologypath=\"/documentation/xcode\"><div data-v-9962ee18=\"\" class=\"navigator-card-full-height\"><div data-v-9962ee18=\"\" c",
+    "styles": {
+     "background-color": "rgb(255, 255, 255)",
+     "color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 767,
+     "height": 856,
+     "top": 45,
+     "left": 0
+    }
+   },
+   "sheet.close": {
+    "html": "<button data-v-9962ee18=\"\" id=\"navigator-hide-button\" aria-label=\"…\" class=\"close-card\"><svg data-v-992f7eb0=\"\" data-v-9962ee18=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "width": "19px",
+     "height": "19px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block"
+    },
+    "box": {
+     "width": 19,
+     "height": 19,
+     "top": 59.5,
+     "left": 728
+    }
+   },
+   "sheet.close.icon": {
+    "html": "<svg data-v-992f7eb0=\"\" data-v-9962ee18=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" class=\"svg-icon inline-close-icon icon-inline close-icon\" viewBox=\"0 0 14 14\"><path data-v-992f7eb0=",
+    "styles": {
+     "width": "19px",
+     "height": "19px",
+     "color": "rgb(29, 29, 31)",
+     "fill": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 19,
+     "height": 19
+    }
+   }
+  },
+  "900": {
+   "bar.place": {
+    "html": "<nav data-v-9a67a202=\"\" data-v-420314e4=\"\" data-v-cd2176b0=\"\" data-v-7dbb4eea=\"\" role=\"navigation\" class=\"nav documentation-nav apple-documentation-nav nav--in-breakpoint-range nav--fullwidth-border nav--is-wide-format\" aria-label=\"…",
+    "styles": {
+     "position": "sticky",
+     "top": "0px",
+     "z-index": "9997"
+    }
+   },
+   "sheet": {
+    "html": "<div data-v-cccc97a2=\"\" class=\"aside show-on-mobile has-mobile-top-offset\" style=\"width: 432px; --top-offset-mobile: 44px; --app-height: 900px; --top-offset: 44px;\"><div data-v-7dbb4eea=\"\" data-v-cccc97a2=\"\" class=\"documentation-layout-asid",
+    "styles": {
+     "position": "fixed",
+     "top": "44px",
+     "left": "0px",
+     "width": "900px",
+     "height": "856px",
+     "z-index": "9998",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "transform": "matrix(1, 0, 0, 1, 0, 0)",
+     "transition-property": "transform",
+     "transition-duration": "0.15s",
+     "transition-timing-function": "ease-in"
+    },
+    "box": {
+     "width": 900,
+     "height": 857
+    }
+   },
+   "sheet.card": {
+    "html": "<div data-v-9962ee18=\"\" data-v-3d9d262f=\"\" data-v-329861a7=\"\" data-v-d38be796=\"\" class=\"navigator-card filter-on-top\" technologypath=\"/documentation/xcode\"><div data-v-9962ee18=\"\" class=\"navigator-card-full-height\"><div data-v-9962ee18=\"\" c",
+    "styles": {
+     "background-color": "rgb(255, 255, 255)",
+     "color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 900,
+     "height": 856,
+     "top": 45,
+     "left": 0
+    }
+   },
+   "sheet.close": {
+    "html": "<button data-v-9962ee18=\"\" id=\"navigator-hide-button\" aria-label=\"…\" class=\"close-card\"><svg data-v-992f7eb0=\"\" data-v-9962ee18=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "width": "19px",
+     "height": "25px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block"
+    },
+    "box": {
+     "width": 19,
+     "height": 25,
+     "top": 56.5,
+     "left": 861
+    }
+   },
+   "sheet.close.icon": {
+    "html": "<svg data-v-992f7eb0=\"\" data-v-9962ee18=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" class=\"svg-icon inline-close-icon icon-inline close-icon\" viewBox=\"0 0 14 14\"><path data-v-992f7eb0=",
+    "styles": {
+     "width": "19px",
+     "height": "19px",
+     "color": "rgb(29, 29, 31)",
+     "fill": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 19,
+     "height": 19
+    }
+   }
+  },
+  "1023": {
+   "bar.place": {
+    "html": "<nav data-v-9a67a202=\"\" data-v-420314e4=\"\" data-v-cd2176b0=\"\" data-v-7dbb4eea=\"\" role=\"navigation\" class=\"nav documentation-nav apple-documentation-nav nav--in-breakpoint-range nav--fullwidth-border nav--is-wide-format\" aria-label=\"…",
+    "styles": {
+     "position": "sticky",
+     "top": "0px",
+     "z-index": "9997"
+    }
+   },
+   "sheet": {
+    "html": "<div data-v-cccc97a2=\"\" class=\"aside show-on-mobile has-mobile-top-offset\" style=\"width: 432px; --top-offset-mobile: 44px; --app-height: 900px; --top-offset: 44px;\"><div data-v-7dbb4eea=\"\" data-v-cccc97a2=\"\" class=\"documentation-layout-asid",
+    "styles": {
+     "position": "fixed",
+     "top": "44px",
+     "left": "0px",
+     "width": "1023px",
+     "height": "856px",
+     "z-index": "9998",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "transform": "matrix(1, 0, 0, 1, 0, 0)",
+     "transition-property": "transform",
+     "transition-duration": "0.15s",
+     "transition-timing-function": "ease-in"
+    },
+    "box": {
+     "width": 1023,
+     "height": 857
+    }
+   },
+   "sheet.card": {
+    "html": "<div data-v-9962ee18=\"\" data-v-3d9d262f=\"\" data-v-329861a7=\"\" data-v-d38be796=\"\" class=\"navigator-card filter-on-top\" technologypath=\"/documentation/xcode\"><div data-v-9962ee18=\"\" class=\"navigator-card-full-height\"><div data-v-9962ee18=\"\" c",
+    "styles": {
+     "background-color": "rgb(255, 255, 255)",
+     "color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 1023,
+     "height": 856,
+     "top": 45,
+     "left": 0
+    }
+   },
+   "sheet.close": {
+    "html": "<button data-v-9962ee18=\"\" id=\"navigator-hide-button\" aria-label=\"…\" class=\"close-card\"><svg data-v-992f7eb0=\"\" data-v-9962ee18=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "width": "19px",
+     "height": "25px",
+     "color": "rgb(29, 29, 31)",
+     "display": "block"
+    },
+    "box": {
+     "width": 19,
+     "height": 25,
+     "top": 56.5,
+     "left": 984
+    }
+   },
+   "sheet.close.icon": {
+    "html": "<svg data-v-992f7eb0=\"\" data-v-9962ee18=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" class=\"svg-icon inline-close-icon icon-inline close-icon\" viewBox=\"0 0 14 14\"><path data-v-992f7eb0=",
+    "styles": {
+     "width": "19px",
+     "height": "19px",
+     "color": "rgb(29, 29, 31)",
+     "fill": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 19,
+     "height": 19
+    }
+   }
+  }
+ }
+}

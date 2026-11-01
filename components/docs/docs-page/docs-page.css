@@ -1,0 +1,161 @@
+/* ciderui — the docs page: a page of Apple's developer documentation, under
+ * the site's global nav: the documentation's bar across it, the navigator
+ * beside the content from 1024px, a sheet the bar's button opens below
+ * that, and the content's column, which the hero, the content and the
+ * topics sit in.
+ *
+ * From Apple's developer documentation (DocC, reference/apple.com/):
+ * docc-page:sidebar, content, container, primary (the navigator's column,
+ * the content's column at each of DocC's steps), docc-sheet:* (the bar's
+ * place; the sheet below 1024px, its card and its close button, and their
+ * -dark); the close button's glyph reference/icons/ (DocC's numbers,
+ * icon.rs's DOCS_CLOSE).
+ *
+ *   <div class="cui-docs-page">
+ *     <nav class="cui-docs-bar" aria-label="Documentation">… popovertarget="docs-navigator" …</nav>
+ *     <div class="cui-docs-page-sidebar" id="docs-navigator" popover>
+ *       <button class="cui-docs-page-close" type="button" popovertarget="docs-navigator" popovertargetaction="hide" aria-label="Close Navigator">(DOCS_CLOSE)</button>
+ *       <nav class="cui-docs-navigator" aria-label="Navigator">…</nav>
+ *     </div>
+ *     <main class="cui-docs-page-main">
+ *       <div class="cui-docs-page-column"><header class="cui-docs-hero">…</header></div>
+ *       <div class="cui-docs-page-column"><div class="cui-docs-content">…</div></div>
+ *       <div class="cui-docs-page-column"><section class="cui-docs-topics">…</section></div>
+ *     </main>
+ *   </div>
+ *
+ * cui-docs-page          its bar across the top, sticking at the window's
+ *                        top as the page scrolls, over its two columns from
+ *                        1024px (the navigator's 400px, the content's the
+ *                        rest), one below
+ * cui-docs-page-sidebar  the navigator's place, a popover: from 1024px
+ *                        always shown, a column sticking under the bar, its
+ *                        own scroll, the window's height under the bar;
+ *                        below, the sheet the bar's button opens, over the
+ *                        window on the page's ground, its own scroll
+ * cui-docs-page-close    the sheet's close button: 19px, its 19px glyph,
+ *                        24px down to its middle, 20px from the end; below
+ *                        1024px alone; a 44px target on a touch screen
+ * cui-docs-page-main     the content's side
+ * cui-docs-page-column   the content's column: 87.5% of the window to
+ *                        735px, centered; from 736px 80px in on either side
+ *                        within 820px at most (980px from 1251px, 1080px
+ *                        from 1500px), centered in what the navigator leaves
+ * cui-docs-content       40px under the hero (the content's top)
+ *
+ * DocC's: the columns, the steps, the bar sticking, the sheet's ground and
+ * its close button's size and place. ciderui's: the navigator's 400px (DocC's
+ * script's width at a fresh load up to 1300px wide, growing to 543px on a
+ * wider window: its stylesheet sets none); the sheet over the whole window,
+ * the global nav too (a popover is in the top layer; DocC's starts under its
+ * global nav, 44px down), shown at once (DocC's slides by a transform in
+ * 0.15s, from a place not read); the column under the bar the window's
+ * height less the bar's (DocC's script takes off the global nav's too, as
+ * it scrolls away); the close button's target. */
+
+@layer components {
+  .cui-docs-page {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    background-color: var(--cui-c-bg);
+
+    @media (width >= 1024px) {
+      grid-template-columns: 400px minmax(0, 1fr);
+    }
+
+    > .cui-docs-bar {
+      position: sticky;
+      z-index: 2;
+      top: 0;
+      grid-column: 1 / -1;
+    }
+  }
+
+  .cui-docs-page-sidebar {
+    position: fixed;
+    inset: 0;
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    overflow-y: auto;
+    color: var(--cui-c-text);
+    background-color: var(--cui-c-bg);
+
+    @media (width >= 1024px) {
+      position: sticky;
+      inset: auto;
+      top: 52px;
+      display: block;
+      align-self: start;
+      height: calc(100dvh - 52px);
+      overscroll-behavior: contain;
+      background-color: transparent;
+    }
+  }
+
+  .cui-docs-page-close {
+    position: absolute;
+    top: 14.5px;
+    right: 20px;
+    display: block;
+    width: 19px;
+    height: 19px;
+    border: 0;
+    padding: 0;
+    color: var(--cui-c-text);
+    background-color: transparent;
+    cursor: pointer;
+
+    @media (width >= 768px) {
+      top: 11.5px;
+      height: 25px;
+    }
+
+    @media (width >= 1024px) {
+      display: none;
+    }
+
+    @media (pointer: coarse) {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 44px;
+        height: 44px;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .cui-docs-page-main {
+    min-width: 0;
+  }
+
+  .cui-docs-page-column {
+    box-sizing: border-box;
+    width: 87.5%;
+    max-width: 820px;
+    margin-inline: auto;
+
+    @media (width >= 736px) {
+      width: auto;
+      padding-inline: 80px;
+    }
+
+    @media (width >= 1251px) {
+      max-width: 980px;
+    }
+
+    @media (width >= 1500px) {
+      max-width: 1080px;
+    }
+
+    > .cui-docs-content {
+      margin-top: 40px;
+    }
+  }
+}
