@@ -30,7 +30,11 @@
  *                        rest), one below
  * cui-docs-page-sidebar  the navigator's place, a popover: from 1024px
  *                        always shown, a column sticking under the bar, its
- *                        own scroll, the window's height under the bar;
+ *                        own scroll, the window's height under the bar
+ *                        (--cui-docs-page-top, its top in the window, the
+ *                        page's script's as the page scrolls: the global
+ *                        nav over the bar until it scrolls away; 52px, the
+ *                        bar's, without);
  *                        below, the sheet the bar's button opens, over the
  *                        window on the page's ground, its own scroll
  * cui-docs-page-close    the sheet's close button: 19px, its 19px glyph,
@@ -92,7 +96,7 @@
       top: 52px;
       display: block;
       align-self: start;
-      height: calc(100dvh - 52px);
+      height: calc(100dvh - var(--cui-docs-page-top, 52px));
       overscroll-behavior: contain;
       background-color: transparent;
     }

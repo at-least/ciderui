@@ -1,7 +1,7 @@
 use hypertext::{Buffer, prelude::*};
 
 use crate::Class;
-use crate::icon::{DOCS_ARTICLE, DOCS_CHEVRON, DOCS_COLLECTION};
+use crate::icon::{DOCS_ARTICLE, DOCS_CHEVRON, DOCS_COLLECTION, DOCS_FILTER};
 
 /// A row of the navigator: a group's title over the pages after it, or a
 /// page.
@@ -37,7 +37,10 @@ pub struct DocsNavigatorPage<'a> {
 /// Navigator (the bar's button's name): the documentation's title, a link
 /// to its first page, over its rows. A row
 /// with pages under it opens and closes by its chevron, a checkbox and its
-/// label (no script); the current page's row is marked.
+/// label (no script); the current page's row is marked. Under the rows, the
+/// line saying the filter matches nothing, the filter at the navigator's
+/// foot and a status read aloud, the first two hidden: the page's script
+/// shows the filter, filters the rows and says what it found.
 ///
 /// ```
 /// use hypertext::prelude::*;
@@ -145,6 +148,11 @@ impl Renderable for DocsNavigator<'_> {
             <nav class=(Class("cui-docs-navigator", self.class)) aria-label="Navigator">
                 <a class="cui-docs-navigator-title" href=(self.href)>(self.title)</a>
                 (Rows(self.items))
+                <p class="cui-docs-navigator-empty" hidden>"No results found."</p>
+                <div class="cui-docs-navigator-filter" role="search" hidden>
+                    <label class="cui-docs-navigator-field">(DOCS_FILTER.class("cui-docs-navigator-filter-icon"))<input class="cui-docs-navigator-input" type="search" placeholder="Filter" aria-label="Filter" autocomplete="off" spellcheck="false"></label>
+                </div>
+                <p class="cui-docs-navigator-status" aria-live="polite"></p>
             </nav>
         }
         .render_to(buffer);

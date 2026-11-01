@@ -632,6 +632,19 @@ pub const DOCS_COPIED: Icon = Icon {
     inner: r#"<path d="M4.1 12.7 9 17.6 20.3 6.3" fill="none" stroke="currentColor" stroke-width="1.98"/>"#,
 };
 
+/// Apple's developer documentation's navigator's filter's glyph
+/// (`cui-docs-navigator-filter-icon`), in place of DocC's 21 by 21 SVG
+/// drawn at 21px: three lines 1 thick, round, at 6.3, 10.5 and 14.7 down,
+/// from 2.75 to 18.3, 4.6 to 16.4 and 6.5 to 14.7 across; 0.9983 of its ink
+/// DocC's.
+pub const DOCS_FILTER: Icon = Icon {
+    width: "21",
+    height: "21",
+    view_box: "0 0 21 21",
+    paint: "",
+    inner: r#"<path d="M2.75 6.3H18.3M4.6 10.5H16.4M6.5 14.7H14.7" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>"#,
+};
+
 #[cfg(test)]
 mod tests {
     use super::*;

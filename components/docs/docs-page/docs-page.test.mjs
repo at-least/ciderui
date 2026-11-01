@@ -74,6 +74,16 @@ export const cases = [
     ],
   },
   {
+    // the page's script gives the column its top in the window, the global
+    // nav over the bar at first: the column the window's height under it
+    name: 'page top',
+    html: ex('page').replace('<div class="cui-docs-page-sidebar" id="docs-navigator" popover>', '<div class="cui-docs-page-sidebar" id="docs-navigator" popover style="--cui-docs-page-top: 96px">'),
+    widths: [1200],
+    checks: [
+      { target: SIDEBAR, props: ['box-height'], golden: 'the window\'s height (800px) less its top in the window (--cui-docs-page-top, 96px), so the navigator\'s foot, its filter, is at the window\'s foot (DocC\'s script takes its global nav off the same way)' },
+    ],
+  },
+  {
     name: 'page touch',
     html: ex('page'),
     widths: [390],

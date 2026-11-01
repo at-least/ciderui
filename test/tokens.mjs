@@ -158,6 +158,8 @@ const CONTRACT = {
   '--cui-c-docs-bar-rule': [['docc-page', 'bar.rule', W, 'background-color'], ['docc-page-dark', 'bar.rule', W, 'background-color']],
   // the navigator's current row
   '--cui-c-docs-current': [['docc-page', 'navigator.current.row', W, 'background-color'], ['docc-page-dark', 'navigator.current.row', W, 'background-color']],
+  // the words of a row its filter matches
+  '--cui-c-docs-match': [['docc-filter', 'match', W, 'background-color'], ['docc-filter-dark', 'match', W, 'background-color']],
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-') && !k.startsWith('--cui-c-console-'));
@@ -315,6 +317,8 @@ const MIN = [
   // the navigator's current row's words, and its glyph (a mark, 3:1)
   ['--cui-c-text', ['--cui-c-docs-current'], 4.5],
   ['--cui-c-text-2', ['--cui-c-docs-current'], 3],
+  // a row's matched words on their tint
+  ['--cui-c-text', ['--cui-c-docs-match'], 4.5],
 ];
 for (const [fg, grounds, min] of MIN) {
   for (const bg of grounds) {

@@ -164,7 +164,7 @@ Intersection over union; the probe fails below 0.85, a mark set before the run, 
 
 ## Apple's developer documentation's icons
 
-DocC draws its icons as inline SVG in 14 by 14 view boxes: the bar's button that opens the navigator (at 19px), a navigator row's chevron (at 10px, turned a quarter open), the glyphs before a navigator row (17px) and a See Also link (15px), an article's and a collection's, the button that closes the navigator's sheet below 1024px (19px), and a listing's copy button's glyph and its check once it has copied (24 by 24 view boxes, at 25.5px). `docc.mjs` reads each off the crash report's article (https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report), rasterizes it at 40 pixels to the unit beside the drawing the kit ships (read out of `rust/src/icon.rs`) and reads their ink: its box, and its runs along rows and columns. ciderui's are drawn from those numbers, in the same view box:
+DocC draws its icons as inline SVG in 14 by 14 view boxes: the bar's button that opens the navigator (at 19px), a navigator row's chevron (at 10px, turned a quarter open), the glyphs before a navigator row (17px) and a See Also link (15px), an article's and a collection's, the button that closes the navigator's sheet below 1024px (19px), a listing's copy button's glyph and its check once it has copied (24 by 24 view boxes, at 25.5px), and the navigator's filter's glyph (21 by 21, at 21px). `docc.mjs` reads each off the crash report's article (https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report), rasterizes it at 40 pixels to the unit beside the drawing the kit ships (read out of `rust/src/icon.rs`) and reads their ink: its box, and its runs along rows and columns. ciderui's are drawn from those numbers, in the same view box:
 
 | icon | DocC's ink | ciderui's (`icon.rs`) |
 | --- | --- | --- |
@@ -175,6 +175,7 @@ DocC draws its icons as inline SVG in 14 by 14 view boxes: the bar's button that
 | the close button | an X from (1, 1) to (12.025, 12.025), its arms' runs 2.225 across at 45° | `DOCS_CLOSE`: two strokes 1.58 thick, (1.79, 1.79) to (11.235, 11.235) and (11.235, 1.79) to (1.79, 11.235), round |
 | the copy button (24 by 24, at 25.5px) | a sheet behind, its top edge from 2 to 16 across at 1 to 3 down and its left edge 2 to 4 across down to 17, a round corner; a sheet in front from (6, 5) to (21, 23), its edges 2 thick, round outside | `DOCS_COPY`: the sheet behind one stroke 2 thick, (16, 2) to (3, 17) round a corner of 1; the front a rectangle (7, 6) to (20, 22), corners 1 |
 | copied (24 by 24, at 25.5px; the button clicked, the clipboard granted) | a check from 3.43 to 21 across, 5.61 to 18.99 down, its arms' runs 2.83 at 45° | `DOCS_COPIED`: two strokes 1.98 thick, square, (4.1, 12.7) to (9, 17.6) to (20.3, 6.3) |
+| the filter (21 by 21, at 21px) | three lines 1 thick, from 2.2 to 18.8 across at 5.8 to 6.8 down, 4.1 to 16.9 at 10 to 11, 6 to 15.2 at 14.2 to 15.2 | `DOCS_FILTER`: three strokes 1 thick, round, at 6.3, 10.5 and 14.7 down |
 
 | icon | shared ink |
 | --- | --- |
@@ -185,5 +186,6 @@ DocC draws its icons as inline SVG in 14 by 14 view boxes: the bar's button that
 | the close button | 0.9985 |
 | the copy button | 0.9997 |
 | copied | 0.9992 |
+| the filter | 0.9983 |
 
 Intersection over union; the probe fails below 0.85, the global nav's mark. Measured 2026-11-01 in Chromium 151 on Linux (`results/docc.json`).

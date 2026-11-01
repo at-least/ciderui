@@ -16,6 +16,8 @@ const NESTED = `${N} .cui-docs-navigator-list .cui-docs-navigator-list > .cui-do
 const CURRENT = '.cui-docs-navigator-row:has(> [aria-current="page"])';
 const WIDE = [1600, 1500, 1499, 1251, 1250, 1200, 1024];
 const LINK = ['text-decoration-line', 'text-decoration-color'];
+// the navigator as the page's script leaves it: its filter shown
+const FILTER = ex('navigator').replace('<div class="cui-docs-navigator-filter" role="search" hidden>', '<div class="cui-docs-navigator-filter" role="search">');
 
 export const cases = [
   {
@@ -86,6 +88,61 @@ export const cases = [
     touch: true,
     checks: [
       { target: '.cui-docs-navigator-chevron', pseudo: '::after', props: ['width', 'height'], golden: 'the 20px chevron\'s target 44px square on a touch screen, the HIG\'s 44pt' },
+    ],
+  },
+  {
+    // the filter, as the page's script shows it (docc-filter, at 1200px)
+    name: 'navigator filter',
+    html: FILTER,
+    widths: [1200],
+    checks: [
+      { target: '.cui-docs-navigator-filter', props: ['position', 'bottom', 'background-color'], apple: ['docc-filter', 'wrapper'] },
+      { target: '.cui-docs-navigator-filter', props: [...PADDING, 'border-top-width', 'border-top-style', 'border-top-color', 'display', 'box-height'], apple: ['docc-filter', 'bar'] },
+      { target: '.cui-docs-navigator-field', props: ['border-top-width', 'border-top-style', 'border-top-color', 'border-top-left-radius', 'background-color', 'box-height'], apple: ['docc-filter', 'field'] },
+      { target: '.cui-docs-navigator-filter-icon', props: ['margin-left', 'margin-right', 'display'], apple: ['docc-filter', 'glyph'] },
+      { target: '.cui-docs-navigator-filter-icon', props: ['height'], apple: ['docc-filter', 'glyph.svg'] },
+      { target: '.cui-docs-navigator-filter-icon', props: ['color'], as: { color: 'fill' }, apple: ['docc-filter', 'glyph.svg'] },
+      { target: '.cui-docs-navigator-input', props: [...SIZE, 'color', 'height', 'padding-left', 'background-color', 'border-top-width', 'caret-color'], apple: ['docc-filter', 'input'] },
+      { target: '.cui-docs-navigator-input', pseudo: '::placeholder', props: ['color'], apple: ['docc-filter', 'input.placeholder'] },
+      { target: '.cui-docs-navigator-field', state: 'focus-within', props: ['border-top-color'], apple: ['docc-filter', 'focused'] },
+      { target: '.cui-docs-navigator-field', state: 'focus-within', props: ['box-shadow'], golden: 'a text field\'s ring, its edge 2px of the accent (rule 9): DocC\'s 1px edge and a 4px glow, rgba(0, 125, 250, 0.6) (docc-filter:focused)' },
+      { target: '.cui-docs-navigator-input', props: ['letter-spacing', 'padding-right'], golden: 'the system font\'s fitted letter-spacing; 10px of room before the field\'s end (DocC\'s holds its clear button there)' },
+      { target: '.cui-docs-navigator-filter', props: ['box-y'], golden: 'at the navigator\'s foot, under its rows' },
+    ],
+  },
+  {
+    // a row the filter matched, and the line saying it matched nothing
+    name: 'navigator filtered',
+    html: FILTER.replace('>Reading a crash report</a>', '>Reading a <mark class="cui-docs-navigator-match">crash</mark> report</a>').replace('<p class="cui-docs-navigator-empty" hidden>', '<p class="cui-docs-navigator-empty">'),
+    widths: [1200],
+    checks: [
+      { target: '.cui-docs-navigator-match', props: [...SIZE, 'color', 'background-color', 'border-top-left-radius', 'padding-left', 'padding-right'], apple: ['docc-filter', 'match'] },
+      { target: '.cui-docs-navigator-empty', props: [...SIZE, 'padding-top', 'padding-left', 'margin-top', 'text-align'], apple: ['docc-filter', 'none'] },
+      { target: '.cui-docs-navigator-empty', props: ['color'], golden: 'the secondary text, 5.1:1: DocC\'s is the muted text, rgb(134, 134, 139), 3.5:1 on white (decision 6)' },
+      { target: '.cui-docs-navigator-status', props: ['position', 'width', 'height', 'overflow-x'], golden: 'read aloud, not shown: what the filter found (DocC\'s visually hidden live region)' },
+    ],
+  },
+  {
+    name: 'navigator filter dark',
+    html: `<div class="cui-dark">${FILTER.replace('>Reading a crash report</a>', '>Reading a <mark class="cui-docs-navigator-match">crash</mark> report</a>')}</div>`,
+    widths: [1200],
+    checks: [
+      { target: '.cui-docs-navigator-filter', props: ['background-color'], apple: ['docc-filter-dark', 'wrapper'] },
+      { target: '.cui-docs-navigator-filter', props: ['border-top-color'], apple: ['docc-filter-dark', 'bar'] },
+      { target: '.cui-docs-navigator-field', props: ['border-top-color', 'background-color'], apple: ['docc-filter-dark', 'field'] },
+      { target: '.cui-docs-navigator-input', props: ['color', 'caret-color'], apple: ['docc-filter-dark', 'input'] },
+      { target: '.cui-docs-navigator-input', pseudo: '::placeholder', props: ['color'], apple: ['docc-filter-dark', 'input.placeholder'] },
+      { target: '.cui-docs-navigator-match', props: ['color', 'background-color'], apple: ['docc-filter-dark', 'match'] },
+    ],
+  },
+  {
+    // with no script: no filter
+    name: 'navigator no script',
+    html: ex('navigator'),
+    widths: [1200],
+    checks: [
+      { target: '.cui-docs-navigator-filter', props: ['display'], golden: 'hidden until the page\'s script shows it and filters (Tailwind\'s preflight\'s [hidden])' },
+      { target: '.cui-docs-navigator-empty', props: ['display'], golden: 'hidden until the filter matches nothing' },
     ],
   },
   {

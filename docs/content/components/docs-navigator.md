@@ -24,5 +24,9 @@ The tree of a documentation’s pages, as Apple’s developer documentation show
 | `cui-docs-navigator-item` | a page: its checkbox (`cui-docs-navigator-toggle`) where it has pages under it, its row, and those pages |
 | `cui-docs-navigator-row` | the row: its chevron (`cui-docs-navigator-chevron`, the checkbox’s label), its glyph (`cui-docs-navigator-icon`) and its link (`cui-docs-navigator-link`), which takes the whole row |
 | `aria-current="page"` | on the current page’s link: its row on the navigator’s gray |
+| `cui-docs-navigator-filter` | the filter at the navigator’s foot, `hidden` until the page’s script shows it: its field (`cui-docs-navigator-field`), its glyph and its input (`cui-docs-navigator-input`) |
+| `cui-docs-navigator-match` | a `<mark>` around the part of a row’s name the filter matches |
+| `cui-docs-navigator-empty` | the line saying the filter matches nothing, `hidden` until then |
+| `cui-docs-navigator-status` | read aloud, not shown: what the filter found |
 
-Its width, its place beside the page and its scroll are the page’s. The crate writes the navigator, each page’s glyph and each chevron’s checkbox with `DocsNavigator`, its `DocsNavigatorItem`s and `DocsNavigatorPage`s.
+The filter is the page’s script’s: it hides the rows whose names do not hold what is typed, keeping the pages above a match open, and marks the match; ciderui-zola’s does. Its width, its place beside the page and its scroll are the page’s. The crate writes the navigator, each page’s glyph and each chevron’s checkbox with `DocsNavigator`, its `DocsNavigatorItem`s and `DocsNavigatorPage`s.

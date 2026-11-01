@@ -51,6 +51,23 @@
  *                      the secondary text
  *   aria-current="page"  the current page's link: its words at 600, its row
  *                      on the navigator's gray (docs-current), 6px corners
+ * cui-docs-navigator-filter  the filter, at the navigator's foot, sticking
+ *                      to its column's: a hairline over it in the divider's
+ *                      color, 15px above and below, 20px in, on the page's
+ *                      ground; its field (cui-docs-navigator-field) 40px,
+ *                      its edge the divider's, 12px corners, its glyph
+ *                      (cui-docs-navigator-filter-icon) 21px, 10px in and
+ *                      3px before the input (cui-docs-navigator-input),
+ *                      17/25, its placeholder the secondary text; focused,
+ *                      its edge the accent's, 2px; hidden until the page's
+ *                      script shows it and filters
+ * cui-docs-navigator-match  the part of a row's words the filter matches, at
+ *                      600 on its tint (docs-match)
+ * cui-docs-navigator-empty  the line saying the filter matches nothing, 14/20
+ *                      in the secondary text, 10px down, 20px in (hidden,
+ *                      the page's script's)
+ * cui-docs-navigator-status  read aloud, not shown: what the filter found
+ *                      (the page's script's)
  *
  * DocC's: the room, the type, the spacer's steps, the chevron's place and
  * turn, the glyphs' size and color, the current row's gray and corners.
@@ -59,11 +76,18 @@
  * fitted, DESIGN.md decision 6); a page opened by a checkbox and its label,
  * the footer's way, where DocC's chevron is its script's button; the
  * chevron's touch target; the title one link in the text's color (DocC's
- * link is the link's color around a heading in the text's). Its width, its
- * place and its scroll are the page's (cui-docs-page). */
+ * link is the link's color around a heading in the text's); the focused
+ * field's edge 2px of the accent, a text field's ring (rule 9; DocC's 1px
+ * and a 4px glow), the empty line in the secondary text (DocC's the muted,
+ * fitted); no tags or quick navigation beside the filter (DocC's). Its
+ * width, its place and its scroll are the page's (cui-docs-page). */
 
 @layer components {
   .cui-docs-navigator {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    min-height: 100%;
     padding-top: 10px;
     font-size: 17px;
     font-weight: 400;
@@ -205,5 +229,93 @@
 
   .cui-docs-navigator-row:has(> .cui-docs-navigator-link[aria-current="page"]) {
     background-color: var(--cui-c-docs-current);
+  }
+
+  .cui-docs-navigator-list:where(.cui-docs-navigator > *) {
+    flex-grow: 1;
+  }
+
+  .cui-docs-navigator-match {
+    font-weight: 600;
+    color: inherit;
+    background-color: var(--cui-c-docs-match);
+  }
+
+  .cui-docs-navigator-empty {
+    flex-grow: 1;
+    margin: 0;
+    padding: 10px 20px 0;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: var(--cui-tracking-14);
+    color: var(--cui-c-text-2);
+  }
+
+  .cui-docs-navigator-filter {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    border-top: 1px solid var(--cui-c-divider);
+    padding: 15px 20px;
+    background-color: var(--cui-c-bg);
+  }
+
+  .cui-docs-navigator-field {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    box-sizing: border-box;
+    height: 40px;
+    border: 1px solid var(--cui-c-divider);
+    border-radius: 12px;
+    background-color: var(--cui-c-bg);
+
+    &:focus-within {
+      border-color: var(--cui-c-accent);
+      box-shadow: 0 0 0 1px var(--cui-c-accent);
+    }
+  }
+
+  .cui-docs-navigator-filter-icon {
+    flex: none;
+    width: 21px;
+    height: 21px;
+    margin: 0 3px 0 10px;
+    color: var(--cui-c-text-2);
+  }
+
+  .cui-docs-navigator-input {
+    flex-grow: 1;
+    min-width: 0;
+    height: 22px;
+    border: 0;
+    padding: 0 10px 0 0;
+    font: inherit;
+    font-size: 17px;
+    line-height: 25px;
+    letter-spacing: var(--cui-tracking-17);
+    color: var(--cui-c-text);
+    background-color: transparent;
+    caret-color: var(--cui-c-text);
+    appearance: none;
+
+    &::placeholder {
+      color: var(--cui-c-text-2);
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .cui-docs-navigator-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 }
