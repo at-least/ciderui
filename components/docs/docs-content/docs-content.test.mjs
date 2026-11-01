@@ -123,11 +123,13 @@ export const cases = [
     html: `<div class="cui-docs-content">
 <ul><li>Outer<ul><li>Inner</li></ul></li></ul>
 <ol><li><p>Add the packages:</p><pre><code>npm install --save-dev @tailwindcss/cli tailwindcss</code></pre></li></ol>
+<ul><li><p>Then build:</p><div class="cui-docs-copy"><pre><code>npx @tailwindcss/cli -i app.css -o out.css</code></pre></div></li></ul>
 </div>`,
     widths: [1600, 390],
     checks: [
       { target: `${C} > ul ul`, props: ['list-style-type', 'margin-left', 'margin-top'], golden: `a list in a list item the content's list (${NONE})` },
       { target: `${C} > ol pre`, props: ['background-color', 'padding-left', 'overflow-x', 'margin-top'], golden: `a listing in a list item the content's, a paragraph's room above (${NONE})` },
+      { target: `${C} > ul .cui-docs-copy`, props: ['margin-top'], golden: `a listing with its copy button in a list item, a paragraph's room above, as a listing's (${NONE})` },
     ],
   },
   {

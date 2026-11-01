@@ -154,7 +154,7 @@
       margin-top: 0;
     }
 
-    :where(li > pre) {
+    :where(li > pre, li > .cui-docs-copy) {
       margin-top: 13.6px;
     }
 
