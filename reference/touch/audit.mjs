@@ -9,15 +9,17 @@
 
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { ROOT, compile } from '../../test/compile.mjs';
+import { COMPONENTS, ROOT, compile } from '../../test/compile.mjs';
 import { open, quit } from '../../test/browser.mjs';
 
-const parts = readdirSync(join(ROOT, 'components')).filter((d) => d.startsWith('console-')).sort();
-const sheets = parts.map((d) => `@import "components/${d}/${d}.css";`).join('\n');
+const parts = COMPONENTS.filter((c) => c.set === 'console');
+// an empty list would print "0 under 28pt" and pass having checked nothing
+if (!parts.length) throw new Error('no console parts in COMPONENTS');
+const sheets = parts.map((c) => `@import "${c.dir}/${c.name}.css";`).join('\n');
 const css = compile({ css: `@import "index.css";\n${sheets}`, sources: ['components'] });
 let short = 0;
-for (const part of parts) {
-  const dir = join(ROOT, 'components', part, 'examples');
+for (const { name: part, dir: partDir } of parts) {
+  const dir = join(ROOT, partDir, 'examples');
   for (const file of readdirSync(dir).filter((f) => f.endsWith('.html')).sort()) {
     const page = await open(css, readFileSync(join(dir, file), 'utf8'), { width: 390, touch: true });
     const rows = await page.page.evaluate(() => {

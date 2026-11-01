@@ -61,7 +61,7 @@ impl<V: Renderable> Renderable for ConsoleMetric<'_, V> {
             <p class="cui-console-card-figure">
                 <span class="cui-console-card-value">(value)</span>
                 @if !self.change.is_empty() {
-                    <span class="cui-console-card-change" data-color=(color.unwrap_or(""))[color.is_some()]>(self.change)</span>
+                    <span class="cui-console-card-change" data-color=[color]>(self.change)</span>
                 }
             </p>
             @if !self.caption.is_empty() {

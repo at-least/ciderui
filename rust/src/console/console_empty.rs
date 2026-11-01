@@ -58,7 +58,7 @@ impl<R: Renderable> Renderable for ConsoleEmpty<'_, R> {
             ConsoleEmptySize::Large => Some("lg"),
         };
         rsx! {
-            <div class=(Class("cui-console-empty", self.class)) data-size=(size.unwrap_or(""))[size.is_some()] data-variant="backed"[self.backed]>
+            <div class=(Class("cui-console-empty", self.class)) data-size=[size] data-variant="backed"[self.backed]>
                 @if let Some(icon) = self.icon {
                     (icon.class("cui-console-empty-icon"))
                 }

@@ -82,7 +82,7 @@ impl Renderable for ConsoleBadge<'_> {
             ConsoleBadgeVariant::Plain => Some("plain"),
         };
         rsx! {
-            <span class=(Class("cui-console-badge", self.class)) data-color=(self.color.attribute().unwrap_or(""))[self.color.attribute().is_some()] data-variant=(variant.unwrap_or(""))[variant.is_some()] data-size="sm"[self.small]>
+            <span class=(Class("cui-console-badge", self.class)) data-color=[self.color.attribute()] data-variant=[variant] data-size="sm"[self.small]>
                 @if self.dot {
                     <span class="cui-console-badge-dot"></span>
                 }

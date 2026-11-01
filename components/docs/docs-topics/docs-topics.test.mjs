@@ -4,18 +4,16 @@
 // abstract. Golden, with their why: the letter-spacing, the glyph's column
 // and color, a touch screen's hover.
 
-import { examples, SIZE } from '../../../test/harness.mjs';
+import { DOCC_STEPS, LINK, SIZE, examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const S = '.cui-docs-topics';
-const STEPS = [1600, 1500, 1499, 1251, 1250, 1200, 1024, 1023, 900, 768, 767, 736, 735, 390];
-const LINK = ['text-decoration-line', 'text-decoration-color'];
 
 export const cases = [
   {
     name: 'topics',
     html: ex('topics'),
-    widths: STEPS,
+    widths: DOCC_STEPS,
     checks: [
       { target: S, props: ['padding-bottom'], apple: ['docc-page', 'seealso.container'] },
       { target: '.cui-docs-topics-title', props: [...SIZE, 'color', 'padding-top', 'margin-top', 'margin-bottom'], apple: ['docc-page', 'seealso.title'] },

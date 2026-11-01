@@ -94,29 +94,10 @@
     background-color: var(--cui-c-console-neutral-fill-primary);
     cursor: pointer;
 
-    & > svg {
-      flex: none;
-      width: 16px;
-      height: 16px;
-    }
-
     @media (hover: hover) {
       &:hover {
         color: var(--cui-c-console-neutral-background-primary);
         background-color: var(--cui-c-console-neutral-accent-primary);
-      }
-    }
-
-    /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility) */
-    @media (pointer: coarse) {
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 44px;
-        height: 44px;
-        transform: translate(-50%, -50%);
       }
     }
   }
@@ -132,18 +113,21 @@
     background: none;
     cursor: pointer;
 
+    @media (hover: hover) {
+      &:hover {
+        color: var(--cui-c-console-neutral-label-primary);
+      }
+    }
+  }
+
+  :is(.cui-console-copy-button, .cui-console-copy-inline) {
     & > svg {
       flex: none;
       width: 16px;
       height: 16px;
     }
 
-    @media (hover: hover) {
-      &:hover {
-        color: var(--cui-c-console-neutral-label-primary);
-      }
-    }
-
+    /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility) */
     @media (pointer: coarse) {
       &::after {
         content: "";

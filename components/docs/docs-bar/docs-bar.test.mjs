@@ -4,20 +4,19 @@
 // light and dark. Golden, with their why: the letter-spacing, the button
 // gone from 1024px and the title's place, the button's touch target.
 
-import { examples, SIZE, PADDING } from '../../../test/harness.mjs';
+import { DOCC_STEPS, PADDING, SIZE, examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const B = '.cui-docs-bar';
 const T = '.cui-docs-bar-toggle';
 const TITLE = '.cui-docs-bar-title';
-const STEPS = [1600, 1500, 1499, 1251, 1250, 1200, 1024, 1023, 900, 768, 767, 736, 735, 390];
 const NARROW = [1023, 900, 768, 767, 736, 735, 390];
 
 export const cases = [
   {
     name: 'bar',
     html: ex('bar'),
-    widths: STEPS,
+    widths: DOCC_STEPS,
     checks: [
       { target: B, props: ['height', 'padding-left', 'padding-right', 'box-height'], apple: ['docc-page', 'bar.content'] },
       { target: B, pseudo: '::after', props: ['content', 'position', 'height', 'bottom', 'background-color'], apple: ['docc-page', 'bar.rule'] },

@@ -6,10 +6,9 @@
 // their why: the navigator's column, the columns' places, the sheet over the
 // whole window, the close button's place and target.
 
-import { examples, PADDING } from '../../../test/harness.mjs';
+import { DOCC_STEPS, PADDING, examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const STEPS = [1600, 1500, 1499, 1251, 1250, 1200, 1024, 1023, 900, 768, 767, 736, 735, 390];
 const NARROW = [1023, 900, 767, 390];
 const COLUMN = '.cui-docs-page-column:has(> .cui-docs-content)';
 const SIDEBAR = '.cui-docs-page-sidebar';
@@ -20,7 +19,7 @@ export const cases = [
   {
     name: 'page',
     html: ex('page'),
-    widths: STEPS,
+    widths: DOCC_STEPS,
     checks: [
       { target: COLUMN, props: ['padding-left', 'padding-right', 'max-width'], apple: ['docc-page', 'container'] },
       { target: `${COLUMN} > .cui-docs-content`, props: ['margin-top'], apple: ['docc-page', 'content.top'] },

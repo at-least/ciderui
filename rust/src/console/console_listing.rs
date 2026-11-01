@@ -53,6 +53,7 @@ impl<S: AsRef<str>> Renderable for ConsoleListing<'_, S> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::example::example;
 
     /// An example whose listing's lines are kept as written: the harness's
     /// `example` trims each line, which would drop the code's indent and
@@ -61,12 +62,11 @@ mod tests {
     fn example_with_pre(html: &str) -> String {
         let start = html.find("<pre").expect("the example has a <pre>");
         let end = html.find("</pre>").expect("the example closes its <pre>") + "</pre>".len();
-        let trim = |s: &str| s.lines().map(str::trim).collect::<String>();
         format!(
             "{}{}{}",
-            trim(&html[..start]),
+            example(&html[..start]),
             &html[start..end],
-            trim(&html[end..])
+            example(&html[end..])
         )
     }
 

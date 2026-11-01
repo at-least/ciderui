@@ -15,6 +15,8 @@
 //! let html = rsx! { <a href="#learn">"Learn more"(MORE.class("cui-link-icon"))</a> }.render();
 //! assert!(html.as_inner().contains(r#"<svg class="cui-link-icon" aria-hidden="true""#));
 //! ```
+use std::fmt::Write;
+
 use hypertext::{Buffer, Raw, prelude::*};
 
 /// An icon: its box (in em or pixels), its view box, the attributes on its
@@ -56,20 +58,15 @@ impl Icon {
         let mut svg = String::from("<svg");
         if let Some(class) = class {
             svg.push_str(" class=\"");
-            for ch in class.chars() {
-                match ch {
-                    '&' => svg.push_str("&amp;"),
-                    '"' => svg.push_str("&quot;"),
-                    '<' => svg.push_str("&lt;"),
-                    _ => svg.push(ch),
-                }
-            }
+            crate::escape_attribute(class, &mut svg);
             svg.push('"');
         }
-        svg.push_str(&format!(
+        write!(
+            svg,
             r#" aria-hidden="true" width="{}" height="{}" viewBox="{}""#,
             self.width, self.height, self.view_box
-        ));
+        )
+        .expect("a String takes any write");
         if !self.paint.is_empty() {
             svg.push(' ');
             svg.push_str(self.paint);

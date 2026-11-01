@@ -76,7 +76,7 @@ impl<R: Renderable> Renderable for DocsAside<'_, R> {
         let variant = self.variant.attribute();
         let label = self.variant.label();
         rsx! {
-            <aside class=(Class("cui-docs-aside", self.class)) data-variant=(variant.unwrap_or(""))[variant.is_some()] aria-label=(label)>
+            <aside class=(Class("cui-docs-aside", self.class)) data-variant=[variant] aria-label=(label)>
                 <p class="cui-docs-aside-label">(label)</p>
                 (self.children)
             </aside>

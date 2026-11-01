@@ -37,7 +37,7 @@ impl Renderable for ConsoleStatus<'_> {
             "ciderui::console::ConsoleStatus takes a color or a series, not both"
         );
         rsx! {
-            <span class=(Class("cui-console-status", self.class)) data-color=(self.color.attribute().unwrap_or(""))[self.color.attribute().is_some()]>
+            <span class=(Class("cui-console-status", self.class)) data-color=[self.color.attribute()]>
                 @if self.series.is_empty() {
                     <span class="cui-console-status-mark"></span>
                 } @else {

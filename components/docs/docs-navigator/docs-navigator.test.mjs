@@ -7,7 +7,7 @@
 // read, a group's title fitted, the whole row its link's, a closed page's
 // rows hidden, the chevron's focus ring and touch target, a long name.
 
-import { examples, SIZE, PADDING } from '../../../test/harness.mjs';
+import { LINK, PADDING, SIZE, examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const N = '.cui-docs-navigator';
@@ -15,7 +15,6 @@ const TOP = `${N} > .cui-docs-navigator-list > .cui-docs-navigator-item`;
 const NESTED = `${N} .cui-docs-navigator-list .cui-docs-navigator-list > .cui-docs-navigator-item`;
 const CURRENT = '.cui-docs-navigator-row:has(> [aria-current="page"])';
 const WIDE = [1600, 1500, 1499, 1251, 1250, 1200, 1024];
-const LINK = ['text-decoration-line', 'text-decoration-color'];
 // the navigator as the page's script leaves it: its filter shown
 const FILTER = ex('navigator').replace('<div class="cui-docs-navigator-filter" role="search" hidden>', '<div class="cui-docs-navigator-filter" role="search">');
 

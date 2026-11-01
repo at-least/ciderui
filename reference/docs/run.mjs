@@ -193,7 +193,7 @@ const behave = async (width) => {
   {
     await page.go(`${ORIGIN}/`);
     await page.run(wait(700));
-    await page.run(`Promise.resolve((document.querySelector('body > .cui-globalnav [popovertarget="cui-globalnav-search"]').click(), true))`);
+    await page.script('body > .cui-globalnav [popovertarget="cui-globalnav-search"]', 'click');
     await page.run(wait(1200));
     const r = await page.run(`new Promise((done) => {
       const input = document.querySelector('body > .cui-globalnav .cui-globalnav-searchinput');
@@ -283,7 +283,7 @@ const behave = async (width) => {
   // (unchanged for 10 frames)
   await page.go(`${ORIGIN}/news/zola/`);
   await page.run(wait(700));
-  await page.run(`Promise.resolve((document.querySelector('sup.footnote-reference a').click(), true))`);
+  await page.script('sup.footnote-reference a', 'click');
   const note = await page.run(`new Promise((done) => {
     let last = -1, same = 0;
     const tick = () => { if (scrollY === last) same++; else { same = 0; last = scrollY; } if (same < 10) return requestAnimationFrame(tick); done({ hash: location.hash, scroll: scrollY, max: document.documentElement.scrollHeight - innerHeight, note: document.getElementById('fn-zola').getBoundingClientRect().top, nav: document.querySelector('.cui-localnav').getBoundingClientRect().bottom }); };
@@ -492,28 +492,28 @@ const docs = async (width) => {
     claim(`as the page scrolls at ${width}px, the bar sticks at the window's top and the navigator under it`, record.scrolled.scroll > 0 && record.scrolled.bar === 0 && Math.abs(record.scrolled.top - record.scrolled.barFoot) <= 0.5, record);
     claim(`the navigator's column ends at the window's foot at ${width}px, the global nav over the bar and scrolled away (the theme's script)`, Math.abs(rest.bottom - rest.window[1]) <= 1 && Math.abs(record.scrolled.bottom - record.scrolled.window[1]) <= 1, record);
   } else {
-    await page.run(`Promise.resolve((document.querySelector('.cui-docs-bar-toggle').click(), true))`);
+    await page.script('.cui-docs-bar-toggle', 'click');
     await page.run(wait(700));
     record.opened = await place();
-    await page.run(`Promise.resolve((document.querySelector('.cui-docs-page-close').click(), true))`);
+    await page.script('.cui-docs-page-close', 'click');
     await page.run(wait(700));
     record.closed = await place();
     claim(`the navigator is hidden at ${width}px, and the bar's button opens it as a sheet over the window, with no script`, !rest.shown && record.opened.open && record.opened.left === 0 && record.opened.top === 0 && record.opened.width === record.opened.window[0] && record.opened.height === record.opened.window[1], record);
     claim(`its close button closes it at ${width}px`, !record.closed.open && !record.closed.shown, record);
     // the chevrons are the sheet's, opened for them
-    await page.run(`Promise.resolve((document.querySelector('.cui-docs-bar-toggle').click(), true))`);
+    await page.script('.cui-docs-bar-toggle', 'click');
     await page.run(wait(700));
   }
   const rows = () => page.run(`Promise.resolve((() => {
     const t = document.getElementById('docs-navigator-components');
     return { checked: t.checked, shown: getComputedStyle(t.parentElement.querySelector(':scope > .cui-docs-navigator-list')).display !== 'none' };
   })())`);
-  const chevron = `Promise.resolve((document.querySelector('label[for="docs-navigator-components"]').click(), true))`;
+  const chevron = () => page.script('label[for="docs-navigator-components"]', 'click');
   record.open = await rows();
-  await page.run(chevron);
+  await chevron();
   await page.run(wait(300));
   record.shut = await rows();
-  await page.run(chevron);
+  await chevron();
   await page.run(wait(300));
   record.again = await rows();
   claim(`a section's chevron hides its rows and shows them again at ${width}px, with no script`, record.open.checked && record.open.shown && !record.shut.checked && !record.shut.shown && record.again.checked && record.again.shown, record);

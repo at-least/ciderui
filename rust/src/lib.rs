@@ -40,3 +40,16 @@ impl Renderable<AttributeValue> for Class<'_> {
         }
     }
 }
+
+/// `value` into `out` as a double-quoted attribute's value, for the SVG
+/// written as a string (hypertext's rsx! knows no SVG element).
+fn escape_attribute(value: &str, out: &mut String) {
+    for ch in value.chars() {
+        match ch {
+            '&' => out.push_str("&amp;"),
+            '"' => out.push_str("&quot;"),
+            '<' => out.push_str("&lt;"),
+            _ => out.push(ch),
+        }
+    }
+}

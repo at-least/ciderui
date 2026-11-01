@@ -60,16 +60,9 @@ impl<R: Renderable> Renderable for ConsoleDisclosure<'_, R> {
                 </details>
             }
             .render_to(buffer),
-            ConsoleDisclosureVariant::Button => rsx! {
+            ConsoleDisclosureVariant::Button | ConsoleDisclosureVariant::PlainButton => rsx! {
                 <details class=(Class("cui-console-disclosure", self.class)) data-variant="button" open[self.open]>
-                    <summary class=(Class("cui-console-btn", self.summary_class))>(self.summary)(lucide::CHEVRON_DOWN.class(chevron))</summary>
-                    (self.children)
-                </details>
-            }
-            .render_to(buffer),
-            ConsoleDisclosureVariant::PlainButton => rsx! {
-                <details class=(Class("cui-console-disclosure", self.class)) data-variant="button" open[self.open]>
-                    <summary class=(Class("cui-console-btn", self.summary_class)) data-variant="plain">(self.summary)(lucide::CHEVRON_DOWN.class(chevron))</summary>
+                    <summary class=(Class("cui-console-btn", self.summary_class)) data-variant="plain"[self.variant == ConsoleDisclosureVariant::PlainButton]>(self.summary)(lucide::CHEVRON_DOWN.class(chevron))</summary>
                     (self.children)
                 </details>
             }

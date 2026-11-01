@@ -7,20 +7,18 @@
 // the letter-spacing, the crumbs wrapping and their separator read as
 // nothing, a hero with a part left out.
 
-import { examples, SIZE, PADDING } from '../../../test/harness.mjs';
+import { DOCC_STEPS, LINK, PADDING, SIZE, examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const H = '.cui-docs-hero';
 const CRUMBS = '.cui-docs-hero-crumbs';
-const LINK = ['text-decoration-line', 'text-decoration-color'];
-const STEPS = [1600, 1500, 1499, 1251, 1250, 1200, 1024, 1023, 900, 768, 767, 736, 735, 390];
 const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not DocC\'s';
 
 export const cases = [
   {
     name: 'hero',
     html: ex('hero'),
-    widths: STEPS,
+    widths: DOCC_STEPS,
     checks: [
       { target: H, props: ['padding-top', 'padding-bottom'], apple: ['docc-page', 'hero.content'] },
       { target: CRUMBS, props: [...SIZE, 'color', 'display', 'flex-direction', 'align-items', 'justify-content', 'margin-top', 'margin-bottom', ...PADDING], apple: ['docc-page', 'hierarchy'] },

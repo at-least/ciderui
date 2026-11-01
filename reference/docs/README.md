@@ -66,7 +66,7 @@ PW=…/playwright-chromium/index.mjs BROWSER=chromium SITE=/tmp/ciderui-docs nod
 BROWSER=firefox SITE=/tmp/ciderui-docs node run.mjs    # Playwright's Firefox (playwright-core install firefox), Xvfb
 ```
 
-Safari, the iOS simulator and Chrome run on the Mac, with the built site copied there; `run.mjs` fails if a claim does not hold, naming it. In Safari a log of the Mac's front app beside the run (`front.sh`, run on the Mac: `lsappinfo`'s front app each second, with the time) shows whether Safari was in front at each claim's time (`claims`); a textarea's read with `hasFocus` false or a row's with `hidden` in `seen` is a window behind another, not the kit (below).
+Safari runs in a tester VM (`../vm.mjs`), Chrome in Docker, the iOS simulator on a Mac with Xcode, with the built site copied there; `run.mjs` fails if a claim does not hold, naming it. In Safari a log of the Mac's front app beside the run (`front.sh`, run on the Mac: `lsappinfo`'s front app each second, with the time) shows whether Safari was in front at each claim's time (`claims`); a textarea's read with `hasFocus` false or a row's with `hidden` in `seen` is a window behind another, not the kit (below).
 
 ```sh
 sh front.sh > results/front-safari.log & BROWSER=safari SITE=/tmp/ciderui-docs node run.mjs; kill $!

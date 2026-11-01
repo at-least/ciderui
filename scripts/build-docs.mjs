@@ -26,9 +26,9 @@ const DOCS = join(ROOT, 'docs');
 // every component's examples, by their path under docs/examples
 function exampleFiles() {
   const out = new Map();
-  for (const { name, dir: componentDir } of COMPONENTS) {
-    const dir = join(ROOT, componentDir, 'examples');
-    for (const f of readdirSync(dir).filter((f) => f.endsWith('.html')).sort()) out.set(`${name}/${f}`, readFileSync(join(dir, f), 'utf8'));
+  for (const c of COMPONENTS) {
+    const dir = join(ROOT, c.dir, 'examples');
+    for (const f of readdirSync(dir).filter((f) => f.endsWith('.html')).sort()) out.set(`${c.name}/${f}`, readFileSync(join(dir, f), 'utf8'));
   }
   return out;
 }

@@ -9,11 +9,10 @@
 // example's figure, a list or a listing in a list item), a long word broken,
 // an image centered.
 
-import { examples, SIZE, PADDING } from '../../../test/harness.mjs';
+import { LINK, PADDING, SIZE, examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const C = '.cui-docs-content';
-const LINK = ['text-decoration-line', 'text-decoration-color'];
 const LIST = ['margin-top', 'margin-left', 'padding-left', 'padding-inline-start', 'list-style-type', 'list-style-position'];
 const CELL = [...PADDING, 'text-align', 'vertical-align', 'background-color',
   'border-top-width', 'border-top-style', 'border-top-color', 'border-bottom-width', 'border-bottom-style', 'border-bottom-color',

@@ -69,6 +69,10 @@ const rgb = (value) => {
 // at the element's opacity, as apple.com draws a title in black at .88), or
 // `fitted` with why
 const W = 1200;
+// the docs set's aside kinds, each with the DocC page its colors are read
+// from: the crash report's note, another article's important one, and the
+// note's class set to each other kind (docc-asides)
+const DOCS_ASIDES = [['note', 'docc'], ['important', 'docc-important'], ['warning', 'docc-asides'], ['tip', 'docc-asides'], ['deprecated', 'docc-asides'], ['experiment', 'docc-asides']];
 const CONTRACT = {
   '--cui-c-bg': [['home', 'page.body', W, 'background-color'], ['product', 'page.body', W, 'background-color']],
   '--cui-c-bg-alt': [['home', 'hero.tile', W, 'background-color'], ['product', 'section.dark', W, 'background-color']],
@@ -147,9 +151,8 @@ const CONTRACT = {
   // listing, light and in the dark, which DocC follows
   '--cui-c-docs-listing': [['docc', 'listing', W, 'background-color'], ['docc-dark', 'listing', W, 'background-color']],
   '--cui-c-docs-code': [['docc', 'listing.code', W, 'color'], ['docc-dark', 'listing.code', W, 'color']],
-  // its asides: the crash report's note, another article's important one,
-  // and the note's class set to each other kind (docc-asides)
-  ...Object.fromEntries([['note', 'docc'], ['important', 'docc-important'], ['warning', 'docc-asides'], ['tip', 'docc-asides'], ['deprecated', 'docc-asides'], ['experiment', 'docc-asides']]
+  // its asides
+  ...Object.fromEntries(DOCS_ASIDES
     .flatMap(([kind, page]) => [
       [`--cui-c-docs-${kind}`, [[page, kind, W, 'background-color'], [`${page}-dark`, kind, W, 'background-color']]],
       [`--cui-c-docs-${kind}-edge`, [[page, kind, W, 'border-top-color'], [`${page}-dark`, kind, W, 'border-top-color']]],
@@ -310,7 +313,7 @@ const MIN = [
   // a docs listing's code on its ground
   ['--cui-c-docs-code', ['--cui-c-docs-listing'], 4.5],
   // an aside's label (its edge's color) and its text on its ground
-  ...['note', 'important', 'warning', 'tip', 'deprecated', 'experiment'].flatMap(kind => [
+  ...DOCS_ASIDES.flatMap(([kind]) => [
     [`--cui-c-docs-${kind}-edge`, [`--cui-c-docs-${kind}`], 4.5],
     ['--cui-c-text', [`--cui-c-docs-${kind}`], 4.5],
   ]),

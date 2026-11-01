@@ -50,7 +50,7 @@ impl<R: Renderable> Renderable for ConsoleBanner<'_, R> {
             "status"
         };
         rsx! {
-            <div class=(Class("cui-console-banner", self.class)) data-color=(color.unwrap_or(""))[color.is_some()] role=(role)>
+            <div class=(Class("cui-console-banner", self.class)) data-color=[color] role=(role)>
                 @if let Some(icon) = self.icon {
                     (icon.class("cui-console-banner-icon"))
                 }

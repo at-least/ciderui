@@ -13,7 +13,7 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { COMPONENTS, ROOT, compile, componentDir } from './compile.mjs';
+import { COMPONENTS, ROOT, compile } from './compile.mjs';
 import { open, quit } from './browser.mjs';
 import { ref, asc, tb, WIDTHS } from './reference.mjs';
 import { check, done } from './check.mjs';
@@ -24,8 +24,8 @@ const PICK = process.env.CASES ? new RegExp(process.env.CASES) : null;
 // rewriting golden.json from some cases would drop the others' values
 if (UPDATE && PICK) throw new Error('UPDATE_GOLDEN=1 runs every case: drop CASES');
 
-const names = COMPONENTS.filter(c => existsSync(join(ROOT, c.dir, `${c.name}.test.mjs`))).map(c => c.name);
-const sheets = names.map(n => `@import "${componentDir(n)}/${n}.css";`).join('\n');
+const tested = COMPONENTS.filter(c => existsSync(join(ROOT, c.dir, `${c.name}.test.mjs`)));
+const sheets = tested.map(c => `@import "${c.dir}/${c.name}.css";`).join('\n');
 // the fonts' files inlined, as each case's page is set from no URL
 const inline = (css) => {
   const inlined = css.replace(/url\(fonts\/([^)]+)\)/g, (_, f) => `url(data:font/woff2;base64,${readFileSync(join(ROOT, 'fonts', f)).toString('base64')})`);
@@ -37,10 +37,10 @@ const inline = (css) => {
 // class around an example)
 const css = inline(compile({ css: `@import "fonts.css";\n@import "index.css";\n${sheets}`, sources: ['components'] }));
 
-for (const name of names) {
-  const file = join(ROOT, componentDir(name), `${name}.test.mjs`);
+for (const { name, dir } of tested) {
+  const file = join(ROOT, dir, `${name}.test.mjs`);
   const { cases } = await import(pathToFileURL(file));
-  const goldenFile = join(ROOT, componentDir(name), 'golden.json');
+  const goldenFile = join(ROOT, dir, 'golden.json');
   const golden = existsSync(goldenFile) ? JSON.parse(readFileSync(goldenFile, 'utf8')) : {};
   const used = new Set();
   const written = {};

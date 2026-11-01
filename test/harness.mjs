@@ -62,6 +62,9 @@ export const SIZE = ['font-size', 'line-height', 'font-weight'];
 export const RADIUS = ['border-top-left-radius'];
 export const TEXT = ['display', 'text-align', 'white-space', 'text-decoration-line', 'cursor', 'vertical-align', 'opacity'];
 export const OUTLINE = ['outline-style', 'outline-color', 'outline-width', 'outline-offset'];
+export const LINK = ['text-decoration-line', 'text-decoration-color'];
+// the widths DocC's layout steps at, each side of a step
+export const DOCC_STEPS = [1600, 1500, 1499, 1251, 1250, 1200, 1024, 1023, 900, 768, 767, 736, 735, 390];
 export const MOTION = ['transition-property', 'transition-duration', 'transition-timing-function'];
 
 // a component's examples, read by its test file's URL (`const ex =

@@ -4,19 +4,18 @@
 // console part from its example, each loaded in a frame of a set width by
 // index.html (run.mjs reads the frames), the toast a page of its own (it is
 // fixed to the window).
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { cpSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { ROOT, compile } from '../../test/compile.mjs';
+import { COMPONENTS, ROOT, compile, componentDir } from '../../test/compile.mjs';
 
 const OUT = process.argv[2];
 if (!OUT) throw new Error('node build.mjs <dir>');
 mkdirSync(OUT, { recursive: true });
-const names = readdirSync(join(ROOT, 'components')).filter((n) => existsSync(join(ROOT, 'components', n, `${n}.css`)));
-const sheets = names.map((n) => `@import "components/${n}/${n}.css";`).join('\n');
+const sheets = COMPONENTS.map((c) => `@import "${c.dir}/${c.name}.css";`).join('\n');
 writeFileSync(join(OUT, 'style.css'), compile({ css: `@import "fonts.css";\n@import "index.css";\n${sheets}`, sources: ['components'] }));
 cpSync(join(ROOT, 'fonts'), join(OUT, 'fonts'), { recursive: true });
 
-const ex = (component, name) => readFileSync(join(ROOT, 'components', component, 'examples', `${name}.html`), 'utf8');
+const ex = (component, name) => readFileSync(join(ROOT, componentDir(component), 'examples', `${name}.html`), 'utf8');
 const page = (body, head = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="style.css">${head}</head><body>${body}</body></html>\n`;
 
 // crashcart's syncTabs (its app.js): the bar's overflow state, marked on load
