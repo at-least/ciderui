@@ -21,9 +21,9 @@ import { isAbsolute, join, resolve } from 'node:path';
 const ROOT = resolve(new URL('..', import.meta.url).pathname);
 const command = process.argv.slice(2);
 if (!command.length) throw new Error('usage: node reference/vm.mjs <command> [args…]');
-if (process.env.BROWSER === 'ios') throw new Error('BROWSER=ios needs Xcode, which the VM has not: run it on a Mac');
-// the owner's: Chrome runs in Docker (scripts/docker.mjs), not in a VM
-if (process.env.BROWSER === 'chrome') throw new Error('BROWSER=chrome runs in Docker: see reference/docs/README.md');
+// the VM has Safari alone: Playwright's browsers are not pushed, and the
+// owner's call is that Chrome runs in Docker (scripts/docker.mjs)
+if (process.env.BROWSER !== undefined && process.env.BROWSER !== 'safari') throw new Error(`BROWSER=${process.env.BROWSER} does not run in the VM, which has Safari alone: Chrome, Chromium and Firefox run in Docker (reference/docs/README.md), the iOS simulator on a Mac with Xcode`);
 const cwd = process.cwd();
 if (!cwd.startsWith(ROOT)) throw new Error(`run it from inside the repository (${ROOT}), not ${cwd}`);
 

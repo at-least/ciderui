@@ -16,24 +16,15 @@
 // own log of its row and its visibility every 50ms from the click (its
 // timers run on hidden, if less often). The result is
 // results/inactive-<browser>.json.
-import { createServer } from 'node:http';
-import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
-import { extname, join } from 'node:path';
-import { open } from '../browsers.mjs';
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { open, serve } from '../browsers.mjs';
 
 const BROWSER = process.env.BROWSER;
 const SITE = process.env.SITE;
 if (!SITE || !existsSync(join(SITE, 'index.html'))) throw new Error('SITE=<the docs built for http://127.0.0.1:8737> (README.md)');
 const ORIGIN = 'http://127.0.0.1:8737';
-const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png', '.svg': 'image/svg+xml', '.json': 'application/json' };
-const server = createServer((req, res) => {
-  let f = join(SITE, decodeURIComponent(new URL(req.url, ORIGIN).pathname));
-  if (existsSync(f) && statSync(f).isDirectory()) f = join(f, 'index.html');
-  if (!existsSync(f)) { res.writeHead(404); return res.end(); }
-  res.writeHead(200, { 'content-type': TYPES[extname(f)] ?? 'application/octet-stream' });
-  res.end(readFileSync(f));
-});
-await new Promise((r) => server.listen(8737, '127.0.0.1', r));
+const server = await serve(SITE, 8737);
 let page;
 // the waits are the run's own, no command to the page, which might bring it
 // in front again

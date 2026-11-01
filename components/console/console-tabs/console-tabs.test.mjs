@@ -45,30 +45,17 @@ export const cases = [
       { target: '.cui-console-tabs', props: ['scroll-padding-left', 'scroll-padding-right'], golden: 'a focused tab is brought in clear of the 24px fade: a browser\'s focus scrolls only a tab it judges out of view, and Chromium 151 left one 3px in view where it was (reference/console/)' },
     ],
   },
-  {
-    name: 'tabs overflow fade start',
-    html: ex('many').replace('cui-console-tabs"', 'cui-console-tabs" data-overflow data-overflow-start'),
-    widths: [375],
-    checks: [
-      { target: '.cui-console-tabs', props: ['mask-image'], golden: 'scrolled to its start, the right edge fades over the content still hidden; the left edge stays clear' },
-    ],
-  },
-  {
-    name: 'tabs overflow fade end',
-    html: ex('many').replace('cui-console-tabs"', 'cui-console-tabs" data-overflow data-overflow-end'),
-    widths: [375],
-    checks: [
-      { target: '.cui-console-tabs', props: ['mask-image'], golden: 'scrolled to its end, the left edge fades over the sections clipped behind; the right edge stays clear' },
-    ],
-  },
-  {
-    name: 'tabs overflow fade middle and desktop',
-    html: ex('many').replace('cui-console-tabs"', 'cui-console-tabs" data-overflow'),
-    widths: [375, 1200],
-    checks: [
-      { target: '.cui-console-tabs', props: ['mask-image'], golden: 'between the ends, both edges fade; the fade is the phone row\'s — wide, none' },
-    ],
-  },
+  // the host's script's overflow states on the phone row, each one's fade
+  ...[
+    ['start', 'data-overflow data-overflow-start', [375], 'scrolled to its start, the right edge fades over the content still hidden; the left edge stays clear'],
+    ['end', 'data-overflow data-overflow-end', [375], 'scrolled to its end, the left edge fades over the sections clipped behind; the right edge stays clear'],
+    ['middle and desktop', 'data-overflow', [375, 1200], 'between the ends, both edges fade; the fade is the phone row\'s — wide, none'],
+  ].map(([where, states, widths, golden]) => ({
+    name: `tabs overflow fade ${where}`,
+    html: ex('many').replace('cui-console-tabs"', `cui-console-tabs" ${states}`),
+    widths,
+    checks: [{ target: '.cui-console-tabs', props: ['mask-image'], golden }],
+  })),
   {
     name: 'tabs many wide',
     html: ex('many'),

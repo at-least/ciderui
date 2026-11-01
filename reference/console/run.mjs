@@ -25,62 +25,30 @@
 //    what a point finds there, fading in on data-shown (its opacity read
 //    each frame: one between 0 and 1, then 1).
 // The result is results/<browser>.json; exits 1 if a claim does not hold.
-import { createServer } from 'node:http';
-import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
-import { extname, join } from 'node:path';
-import { inflateSync } from 'node:zlib';
-import { open, wait } from '../browsers.mjs';
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { open, serve, wait } from '../browsers.mjs';
 
 const BROWSER = process.env.BROWSER;
 const SITE = process.env.SITE;
 if (!SITE || !existsSync(join(SITE, 'index.html'))) throw new Error('SITE=<build.mjs\'s dir>');
 const ORIGIN = 'http://127.0.0.1:8738';
-const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.woff2': 'font/woff2' };
-const server = createServer((req, res) => {
-  const f = join(SITE, decodeURIComponent(new URL(req.url, ORIGIN).pathname));
-  if (!existsSync(f) || statSync(f).isDirectory()) { res.writeHead(404); return res.end(); }
-  res.writeHead(200, { 'content-type': TYPES[extname(f)] ?? 'application/octet-stream' });
-  res.end(readFileSync(f));
-});
-await new Promise((r) => server.listen(8738, '127.0.0.1', r));
+const server = await serve(SITE, 8738);
 
-// a PNG's pixels (8-bit RGB or RGBA, not interlaced: what the browsers' shots are)
-function png(base64) {
-  const buf = Buffer.from(base64, 'base64');
-  let at = 8;
-  let width, height, type;
-  const idat = [];
-  while (at < buf.length) {
-    const len = buf.readUInt32BE(at);
-    const name = buf.toString('latin1', at + 4, at + 8);
-    const data = buf.subarray(at + 8, at + 8 + len);
-    if (name === 'IHDR') {
-      width = data.readUInt32BE(0);
-      height = data.readUInt32BE(4);
-      type = data[9];
-      if (data[8] !== 8 || ![2, 6].includes(type) || data[12] !== 0) throw new Error(`a PNG this reader does not read: depth ${data[8]}, type ${type}, interlace ${data[12]}`);
-    }
-    if (name === 'IDAT') idat.push(data);
-    at += 12 + len;
-  }
-  const bpp = type === 6 ? 4 : 3;
-  const raw = inflateSync(Buffer.concat(idat));
-  const stride = width * bpp;
-  const px = Buffer.alloc(height * stride);
-  for (let y = 0; y < height; y++) {
-    const f = raw[y * (stride + 1)];
-    for (let x = 0; x < stride; x++) {
-      const v = raw[y * (stride + 1) + 1 + x];
-      const a = x >= bpp ? px[y * stride + x - bpp] : 0;
-      const b = y ? px[(y - 1) * stride + x] : 0;
-      const c = x >= bpp && y ? px[(y - 1) * stride + x - bpp] : 0;
-      const p = a + b - c;
-      const pred = [0, a, b, (a + b) >> 1, Math.abs(p - a) <= Math.abs(p - b) && Math.abs(p - a) <= Math.abs(p - c) ? a : Math.abs(p - b) <= Math.abs(p - c) ? b : c][f];
-      px[y * stride + x] = (v + pred) & 255;
-    }
-  }
-  return { width, height, red: (x, y) => px[y * stride + x * bpp] };
-}
+// the red channel at points of a picture of the window (base64 PNG), each
+// [x, y] in the page's px, read in the page as ../dialog/dialog.js reads its
+const reds = (png, ratio, points) => page.run(`(async () => {
+  const img = new Image();
+  img.src = 'data:image/png;base64,${png}';
+  await img.decode();
+  const c = document.createElement('canvas');
+  c.width = img.width;
+  c.height = img.height;
+  const g = c.getContext('2d');
+  g.drawImage(img, 0, 0);
+  const points = ${JSON.stringify(points)};
+  return Object.fromEntries(Object.entries(points).map(([k, [x, y]]) => [k, g.getImageData(Math.round(x * ${ratio}), Math.round(y * ${ratio}), 1, 1).data[0]]));
+})()`);
 
 const got = { browser: BROWSER, claims: {} };
 const fails = [];
@@ -128,9 +96,9 @@ try {
       return { left: f.left + b.left, right: f.left + b.right, top: f.top + b.top, ratio: devicePixelRatio, scrollLeft: bar.scrollLeft,
         attrs: ['data-overflow', 'data-overflow-start', 'data-overflow-end'].filter((a) => bar.hasAttribute(a)), mask: w.getComputedStyle(bar).maskImage };
     })()`);
-    const shot = png(await page.shot());
-    const r = (x) => shot.red(Math.round(x * where.ratio), Math.round((where.top + 1) * where.ratio));
-    fades[at] = { ...where, red: { left2: r(where.left + 2), left12: r(where.left + 12), right12: r(where.right - 12), right2: r(where.right - 2), middle: r((where.left + where.right) / 2) } };
+    const y = where.top + 1;
+    const red = await reds(await page.shot(), where.ratio, { left2: [where.left + 2, y], left12: [where.left + 12, y], right12: [where.right - 12, y], right2: [where.right - 2, y], middle: [(where.left + where.right) / 2, y] });
+    fades[at] = { ...where, red };
   }
   const solid = (v) => v < 40;
   const faded = (v) => v > 180;

@@ -44,6 +44,9 @@
 //             leaves backdrop-filter out, headless or not, which Firefox
 //             paints on the display (2026-10-22)
 import { execFileSync, spawn, spawnSync } from 'node:child_process';
+import { existsSync, readFileSync, statSync } from 'node:fs';
+import { createServer } from 'node:http';
+import { extname, join } from 'node:path';
 
 // options: Playwright's page options (a touch screen: hasTouch), for its
 // browsers only
@@ -56,6 +59,21 @@ export async function open(name, url, options) {
 
 // an expression for run(): a promise that resolves to true ms milliseconds
 // on, by the page's own clock
+// a built site served from dir on 127.0.0.1:port, a directory's
+// index.html for the directory; resolves once it listens
+const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain', '.json': 'application/json' };
+export async function serve(dir, port) {
+  const server = createServer((req, res) => {
+    let f = join(dir, decodeURIComponent(new URL(req.url, 'http://127.0.0.1').pathname));
+    if (existsSync(f) && statSync(f).isDirectory()) f = join(f, 'index.html');
+    if (!existsSync(f)) { res.writeHead(404); return res.end(); }
+    res.writeHead(200, { 'content-type': TYPES[extname(f)] ?? 'application/octet-stream' });
+    res.end(readFileSync(f));
+  });
+  await new Promise((r) => server.listen(port, '127.0.0.1', r));
+  return server;
+}
+
 export const wait = (ms) => `new Promise(r => setTimeout(() => r(true), ${ms}))`;
 
 function launch(name, url, options) {

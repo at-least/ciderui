@@ -42,24 +42,15 @@
 // matches no :focus, and a page hidden stops a smooth scroll where it is,
 // not going on once it is shown (inactive.mjs). The result is
 // results/<browser>.json; exits 1 if a claim does not hold.
-import { createServer } from 'node:http';
-import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
-import { extname, join, relative } from 'node:path';
-import { open, wait } from '../browsers.mjs';
+import { existsSync, mkdirSync, readdirSync, statSync, writeFileSync } from 'node:fs';
+import { join, relative } from 'node:path';
+import { open, serve, wait } from '../browsers.mjs';
 
 const BROWSER = process.env.BROWSER;
 const SITE = process.env.SITE;
 if (!SITE || !existsSync(join(SITE, 'index.html'))) throw new Error('SITE=<the docs built for http://127.0.0.1:8737> (README.md)');
 const ORIGIN = 'http://127.0.0.1:8737';
-const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain', '.json': 'application/json' };
-const server = createServer((req, res) => {
-  let f = join(SITE, decodeURIComponent(new URL(req.url, ORIGIN).pathname));
-  if (existsSync(f) && statSync(f).isDirectory()) f = join(f, 'index.html');
-  if (!existsSync(f)) { res.writeHead(404); return res.end(); }
-  res.writeHead(200, { 'content-type': TYPES[extname(f)] ?? 'application/octet-stream' });
-  res.end(readFileSync(f));
-});
-await new Promise((r) => server.listen(8737, '127.0.0.1', r));
+const server = await serve(SITE, 8737);
 const pages = (dir) => readdirSync(dir).flatMap((f) => {
   const p = join(dir, f);
   return statSync(p).isDirectory() ? pages(p) : f === 'index.html' ? [p] : [];
@@ -474,9 +465,21 @@ const bag = async (width) => {
 // sheet, which fills the rest. A section's chevron (its checkbox's label, clicked by the
 // page's script) hides its rows and shows them again. A link to a heading
 // (the address's #install) lands it at the bar's foot.
+// the docs layout at rest: the page's scroll and the navigator's boxes
+// (the sidebar, a section's rows) unchanged for 10 frames
+const SETTLED = `new Promise((done) => {
+  let last = '', same = 0;
+  const tick = () => {
+    const now = JSON.stringify([scrollY, ...[...document.querySelectorAll('.cui-docs-page-sidebar, .cui-docs-navigator-list')].map((e) => { const r = e.getBoundingClientRect(); return [r.left, r.top, r.width, r.height]; })]);
+    if (now === last) same++; else { same = 0; last = now; }
+    if (same < 10) return requestAnimationFrame(tick);
+    done(true);
+  };
+  requestAnimationFrame(tick);
+})`;
 const docs = async (width) => {
   await page.go(`${ORIGIN}/components/button/`);
-  await page.run(wait(700));
+  await page.run(SETTLED);
   const place = () => page.run(`Promise.resolve((() => {
     const s = document.querySelector('.cui-docs-page-sidebar'), b = document.querySelector('.cui-docs-bar'), m = document.querySelector('.cui-docs-page-main');
     const sb = s.getBoundingClientRect(), bb = b.getBoundingClientRect();
@@ -486,23 +489,23 @@ const docs = async (width) => {
   const record = { rest };
   if (width >= 1024) {
     await page.run('Promise.resolve((scrollTo(0, 1500), true))');
-    await page.run(wait(500));
+    await page.run(SETTLED);
     record.scrolled = await place();
     claim(`the navigator is a column of the page at ${width}px, 400px beside the content`, rest.shown && !rest.open && rest.left === 0 && rest.width === 400 && rest.main === 400, record);
     claim(`as the page scrolls at ${width}px, the bar sticks at the window's top and the navigator under it`, record.scrolled.scroll > 0 && record.scrolled.bar === 0 && Math.abs(record.scrolled.top - record.scrolled.barFoot) <= 0.5, record);
     claim(`the navigator's column ends at the window's foot at ${width}px, the global nav over the bar and scrolled away (the theme's script)`, Math.abs(rest.bottom - rest.window[1]) <= 1 && Math.abs(record.scrolled.bottom - record.scrolled.window[1]) <= 1, record);
   } else {
     await page.script('.cui-docs-bar-toggle', 'click');
-    await page.run(wait(700));
+    await page.run(SETTLED);
     record.opened = await place();
     await page.script('.cui-docs-page-close', 'click');
-    await page.run(wait(700));
+    await page.run(SETTLED);
     record.closed = await place();
     claim(`the navigator is hidden at ${width}px, and the bar's button opens it as a sheet over the window, with no script`, !rest.shown && record.opened.open && record.opened.left === 0 && record.opened.top === 0 && record.opened.width === record.opened.window[0] && record.opened.height === record.opened.window[1], record);
     claim(`its close button closes it at ${width}px`, !record.closed.open && !record.closed.shown, record);
     // the chevrons are the sheet's, opened for them
     await page.script('.cui-docs-bar-toggle', 'click');
-    await page.run(wait(700));
+    await page.run(SETTLED);
   }
   const rows = () => page.run(`Promise.resolve((() => {
     const t = document.getElementById('docs-navigator-components');
@@ -511,10 +514,10 @@ const docs = async (width) => {
   const chevron = () => page.script('label[for="docs-navigator-components"]', 'click');
   record.open = await rows();
   await chevron();
-  await page.run(wait(300));
+  await page.run(SETTLED);
   record.shut = await rows();
   await chevron();
-  await page.run(wait(300));
+  await page.run(SETTLED);
   record.again = await rows();
   claim(`a section's chevron hides its rows and shows them again at ${width}px, with no script`, record.open.checked && record.open.shown && !record.shut.checked && !record.shut.shown && record.again.checked && record.again.shown, record);
   // the filter (the theme's script): "console b" put in it and an input

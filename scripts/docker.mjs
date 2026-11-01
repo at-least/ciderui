@@ -12,16 +12,24 @@
 //   UPDATE_GOLDEN=1 node scripts/docker.mjs node test/components.mjs
 
 import { execFileSync, execSync, spawnSync } from 'node:child_process';
-import { mkdtempSync, realpathSync, rmSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { mkdtempSync, readFileSync, realpathSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { ROOT } from '../test/compile.mjs';
 
 const IMAGE = 'ciderui-test';
-// run by the ID this build gives, not by the tag: lab's daemon serves every
-// Mac and checkout, and another's build can move the tag meanwhile
-const image = execFileSync('docker', ['build', '-q', '-t', IMAGE, '-f', join(ROOT, 'test/Dockerfile'), ROOT], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'inherit'] }).trim();
-if (!/^sha256:[0-9a-f]{64}$/.test(image)) throw new Error(`docker build -q gave no image ID: ${image}`);
+// The image is made from these alone (.dockerignore): one built from the same
+// bytes carries their hash as a label and is run by its ID, with no build
+// (a cached build still took 2s over ssh). Not by the tag: lab's daemon
+// serves every Mac and checkout, and another's build can move the tag
+// meanwhile.
+const inputs = createHash('sha256');
+for (const f of ['test/Dockerfile', 'package.json', 'package-lock.json']) inputs.update(f).update(readFileSync(join(ROOT, f)));
+const label = `ciderui.inputs=${inputs.digest('hex')}`;
+let image = execFileSync('docker', ['images', '-q', '--no-trunc', '--filter', `label=${label}`], { encoding: 'utf8' }).split('\n')[0].trim();
+if (!image) image = execFileSync('docker', ['build', '-q', '-t', IMAGE, '--label', label, '-f', join(ROOT, 'test/Dockerfile'), ROOT], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'inherit'] }).trim();
+if (!/^sha256:[0-9a-f]{64}$/.test(image)) throw new Error(`docker gave no image ID: ${image}`);
 
 const STEPS = 'node test/tokens.mjs && node test/type.mjs && node test/page.mjs && node test/components.mjs && node scripts/build-lucide.mjs --check && node scripts/build-docs.mjs --check && node scripts/docs-pictures.mjs --check && node test/docs.mjs';
 const command = process.argv.length > 2 ? process.argv.slice(2) : ['sh', '-c', STEPS];
@@ -47,12 +55,7 @@ try {
   const exclude = '--exclude ./node_modules --exclude ./rust/target --exclude ./.git';
   execSync(`tar -c --no-xattrs -C ${q(ROOT)} ${exclude} . | docker cp - ${id}:/src/ciderui`, { env: TAR_ENV, stdio: ['ignore', 'ignore', 'inherit'] });
   execSync(`tar -c --no-xattrs -C ${q(theme)} --exclude ./.git . | docker cp - ${id}:/src/ciderui-zola`, { env: TAR_ENV, stdio: ['ignore', 'ignore', 'inherit'] });
-  try {
-    execFileSync('docker', ['start', '-a', id], { stdio: 'inherit' });
-    status = 0;
-  } catch (e) {
-    status = e.status ?? 1;
-  }
+  status = spawnSync('docker', ['start', '-a', id], { stdio: 'inherit' }).status ?? 1;
   const out = mkdtempSync(join(tmpdir(), 'ciderui-written-'));
   try {
     execSync(`docker cp ${id}:/tmp/written.tar - | tar -xOf - written.tar | tar -xf - -C ${q(out)}`, { stdio: ['ignore', 'ignore', 'inherit'] });

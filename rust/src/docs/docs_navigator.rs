@@ -97,19 +97,8 @@ impl Renderable for Row<'_> {
                     page.label
                 );
                 let parent = !page.children.is_empty();
-                // the chevron's checkbox named after the page's address, its
-                // path's words alone ("/components/" and
-                // "https://example.test/components/" docs-navigator-components)
-                let path = match page.href.split_once("://") {
-                    Some((_, rest)) => rest.find('/').map_or("", |i| &rest[i..]),
-                    None => page.href,
-                };
-                let words: Vec<String> = path
-                    .split(|c: char| !c.is_ascii_alphanumeric())
-                    .filter(|w| !w.is_empty())
-                    .map(str::to_ascii_lowercase)
-                    .collect();
-                let id = format!("docs-navigator-{}", words.join("-"));
+                // a parent's chevron's checkbox id; a leaf has no chevron
+                let id = parent.then(|| chevron_id(page.href));
                 let icon = if parent {
                     DOCS_COLLECTION
                 } else {
@@ -117,11 +106,11 @@ impl Renderable for Row<'_> {
                 };
                 rsx! {
                     <li class="cui-docs-navigator-item">
-                        @if parent {
+                        @if let Some(id) = &id {
                             <input class="cui-docs-navigator-toggle" type="checkbox" id=(id.as_str()) aria-label=(page.label) checked[page.open]>
                         }
                         <div class="cui-docs-navigator-row">
-                            @if parent {
+                            @if let Some(id) = &id {
                                 <label class="cui-docs-navigator-chevron" for=(id.as_str())>(DOCS_CHEVRON)</label>
                             }
                             (icon.class("cui-docs-navigator-icon"))
@@ -136,6 +125,25 @@ impl Renderable for Row<'_> {
             }
         }
     }
+}
+
+/// The chevron's checkbox id, named after the page's address, its path's
+/// words alone (`/components/` and `https://example.test/components/`
+/// docs-navigator-components).
+fn chevron_id(href: &str) -> String {
+    let path = match href.split_once("://") {
+        Some((_, rest)) => rest.find('/').map_or("", |i| &rest[i..]),
+        None => href,
+    };
+    let mut id = String::from("docs-navigator");
+    for word in path
+        .split(|c: char| !c.is_ascii_alphanumeric())
+        .filter(|w| !w.is_empty())
+    {
+        id.push('-');
+        id.push_str(&word.to_ascii_lowercase());
+    }
+    id
 }
 
 impl Renderable for DocsNavigator<'_> {

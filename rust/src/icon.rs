@@ -17,7 +17,7 @@
 //! ```
 use std::fmt::Write;
 
-use hypertext::{Buffer, Raw, prelude::*};
+use hypertext::{Buffer, prelude::*};
 
 /// An icon: its box (in em or pixels), its view box, the attributes on its
 /// `<svg>` that what is drawn in it inherits, and what is drawn in it.
@@ -55,10 +55,11 @@ impl Icon {
     // hypertext's rsx! knows the HTML elements, not SVG's: the markup is
     // written out, the class escaped as an attribute value
     fn write(&self, class: Option<&str>, buffer: &mut Buffer) {
-        let mut svg = String::from("<svg");
+        let svg = buffer.dangerously_get_string();
+        svg.push_str("<svg");
         if let Some(class) = class {
             svg.push_str(" class=\"");
-            crate::escape_attribute(class, &mut svg);
+            crate::escape_attribute(class, svg);
             svg.push('"');
         }
         write!(
@@ -74,7 +75,6 @@ impl Icon {
         svg.push('>');
         svg.push_str(self.inner);
         svg.push_str("</svg>");
-        Raw::<_>::dangerously_create(svg).render_to(buffer);
     }
 }
 
