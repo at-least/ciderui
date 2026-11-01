@@ -46,7 +46,7 @@
  "copy inline | p:first-child .cui-console-copy-inline | 1200 | box-height": "26px",
  "copy inline | p:first-child .cui-console-copy-inline | 1200 | margin-top": "-5px",
  "copy inline | p:first-child .cui-console-copy-inline | 1200 | padding-top": "5px",
- "copy inline | p:first-child .cui-console-copy-inline | 1200 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "copy inline | p:first-child .cui-console-copy-inline | 1200 | color": "oklch(0.359 0.012 285.8 / 0.76)",
  "copy inline | p:first-child .cui-console-copy-inline | 1200 | background-color": "rgba(0, 0, 0, 0)",
  "copy inline | p:first-child | 1200 | box-height": "20px",
  "copy inline | p:last-child | 1200 | box-height": "20px",

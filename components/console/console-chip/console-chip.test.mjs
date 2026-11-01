@@ -20,7 +20,7 @@ export const cases = [
       { target: FILTER, props: ['background-color', 'color'], tb: [`${C}-colorRole-neutral-effect-default-variant-gray-backgroundColor`, `${C}-colorRole-neutral-effect-default-variant-gray-color`] },
       { target: TAG, props: ['background-color', 'color'], state: 'hover', tb: [`${C}-colorRole-neutral-effect-hover-variant-gray-backgroundColor`, `${C}-colorRole-neutral-effect-default-variant-gray-color`] },
       { target: TAG, props: ['text-decoration-line'], golden: 'a tag that is a link: no underline, its fill says it' },
-      { target: '.cui-console-chip-key', props: ['color'], golden: 'the key in the secondary label at 0.74, the toolkit\'s art color fitted (tokens.css, decision 21): its 0.60 is 3.4:1 on white' },
+      { target: '.cui-console-chip-key', props: ['color'], golden: 'the key in the secondary label at 0.76, the toolkit\'s art color fitted (tokens.css, decision 21): its 0.60 is 3.4:1 on white' },
       { target: '.cui-console-chip-remove', props: ['color'], golden: 'the remove control in the secondary label' },
       { target: '.cui-console-chip-remove', props: ['color'], state: 'hover', golden: 'hovered, the label\'s own' },
       { target: '.cui-console-chip-remove > svg', props: ['box-width', 'box-height'], golden: 'its ×, Lucide\'s x, 12px: the toolkit\'s art button draws an SF Symbol' },

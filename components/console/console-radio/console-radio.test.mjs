@@ -29,7 +29,7 @@ export const cases = [
       { target: `${DISABLED} .cui-console-radio-input`, props: ['border-top-color'], tb: [`${R}-controlSize-md-effect-disabled-border-color`] },
       { target: `${DISABLED} .cui-console-radio-input`, props: ['background-color'], golden: 'disabled, the gray fill' },
       { target: DISABLED, props: ['color'], golden: 'a disabled radio\'s label the disabled label' },
-      { target: `${ON} .cui-console-radio-caption`, props: ['color', 'font-size', 'line-height', 'grid-column-start'], golden: 'a line under the label, the secondary label at 0.74 (fitted), 13px on 18px' },
+      { target: `${ON} .cui-console-radio-caption`, props: ['color', 'font-size', 'line-height', 'grid-column-start'], golden: 'a line under the label, the secondary label at 0.76 (fitted), 13px on 18px' },
     ],
   },
   {

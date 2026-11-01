@@ -56,7 +56,7 @@ export const cases = [
     widths: scale === 'desktop' ? [1200] : [390],
     checks: [
       { target: '.cui-console-banner-caption', props: ['font-size', 'line-height', 'font-weight'], tb: [`${D}-caption-variant-pageScale-${scale}-textStyle-fontSize`, `${D}-caption-variant-pageScale-${scale}-textStyle-lineHeight`, `${D}-caption-variant-pageScale-${scale}-textStyle-fontWeight`] },
-      { target: '.cui-console-banner-caption', props: ['color'], golden: 'the secondary label fitted to 0.74 (tokens.css, decision 21)' },
+      { target: '.cui-console-banner-caption', props: ['color'], golden: 'the secondary label fitted to 0.76 (tokens.css, decision 21)' },
     ],
   })),
   {

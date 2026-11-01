@@ -23,7 +23,7 @@ export const cases = [
     checks: [
       { target: B, props: ['height', 'border-top-left-radius', 'background-color'], asc: ['analytics', 'card.info'] },
       { target: B, pseudo: '::before', props: ['background-color'], tb: [`${I}-variant-effect-default-backgroundColor`] },
-      { target: B, props: ['color'], golden: 'the "i" the secondary label at 0.74: the toolkit\'s 0.60 is 3.4:1 on white (tokens.css, decision 21)' },
+      { target: B, props: ['color'], golden: 'the "i" the secondary label at 0.76: the toolkit\'s 0.60 is 3.4:1 on white (tokens.css, decision 21)' },
       { target: B, props: ['width', 'font-size', 'font-weight', 'margin-left'], golden: 'the "i" a 12px letter at 600 in a 20px button, where App Store Connect draws an SF Symbol; 4px after the word' },
       { target: B, pseudo: '::before', props: ['width', 'height', 'border-top-left-radius'], golden: 'its circle 17px, as App Store Connect\'s symbol draws it' },
       { target: B, pseudo: '::before', props: ['background-color'], state: 'hover', tb: [`${I}-variant-effect-hover-backgroundColor`] },

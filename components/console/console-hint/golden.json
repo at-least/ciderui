@@ -1,5 +1,5 @@
 {
- "hint | .cui-console-hint | 1200 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "hint | .cui-console-hint | 1200 | color": "oklch(0.359 0.012 285.8 / 0.76)",
  "hint | .cui-console-hint | 1200 | width": "20px",
  "hint | .cui-console-hint | 1200 | font-size": "12px",
  "hint | .cui-console-hint | 1200 | font-weight": "600",
@@ -14,7 +14,7 @@
  "hint | .cui-console-popover | 1200 | display": "none",
  "hint | .cui-console-hint::after | 1200 | width": "20px",
  "hint | .cui-console-hint::after | 1200 | height": "20px",
- "hint | .cui-console-hint | 390 | color": "oklch(0.359 0.012 285.8 / 0.74)",
+ "hint | .cui-console-hint | 390 | color": "oklch(0.359 0.012 285.8 / 0.76)",
  "hint | .cui-console-hint | 390 | width": "20px",
  "hint | .cui-console-hint | 390 | font-size": "12px",
  "hint | .cui-console-hint | 390 | font-weight": "600",

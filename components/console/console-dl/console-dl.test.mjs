@@ -20,7 +20,7 @@ export const cases = [
       { target: '.cui-console-dl', props: ['column-gap', 'row-gap'], tb: [`${D}-variant-orientation-horizontal-pageScale-desktop-columnGap`, `${D}-variant-orientation-horizontal-pageScale-desktop-rowGap`] },
       { target: 'dt:first-of-type', props: TYPE, tb: style('DT', 'desktop', 'muted') },
       { target: 'dd:first-of-type', props: [...TYPE, 'color'], tb: [...style('DD', 'desktop'), `${D}-anatomy-DD-color`] },
-      { target: 'dt:first-of-type', props: ['color'], golden: 'the muted label, the secondary label at 0.74: the toolkit\'s 0.60 is 3.4:1 on white (tokens.css, decision 21)' },
+      { target: 'dt:first-of-type', props: ['color'], golden: 'the muted label, the secondary label at 0.76: the toolkit\'s 0.60 is 3.4:1 on white (tokens.css, decision 21)' },
       { target: '.cui-console-dl', props: ['grid-template-columns'], golden: 'a label column as wide as its longest label, the values in the rest' },
       { target: 'dd:last-of-type', props: ['overflow-wrap'], golden: 'a value breaks anywhere it must: an id, a URL' },
     ],

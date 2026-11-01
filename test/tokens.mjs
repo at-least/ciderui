@@ -248,7 +248,7 @@ const darkOf = (name, light) => {
   return withAlpha(tbTokens[stepOf(light, 'light')[0].replace('-palette-light-', '-palette-dark-')], alpha);
 };
 const FITTED = {
-  '--cui-c-console-neutral-label-secondary': { light: 'oklch(35.9% 0.012 285.8 / 0.74)', why: 'the toolkit\'s 0.60 is 3.4:1 on white' },
+  '--cui-c-console-neutral-label-secondary': { light: 'oklch(35.9% 0.012 285.8 / 0.76)', why: 'the toolkit\'s 0.60 is 3.4:1 on white, 0.74 4.4:1 on a chip over a card' },
   '--cui-c-console-brand-accent-primary': { dark: 'oklch(51.2% 0.203 260.5)', why: 'white on the derived blue-600 is 2.7:1' },
   '--cui-c-console-brand-fill-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the toolkit\'s lighter blue is 3.9:1' },
   '--cui-c-console-brand-fill-press': { dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the derived blue-600 is 2.7:1' },
@@ -361,6 +361,9 @@ const CONSOLE_MIN = [
   // gray (crashcart's badges and red buttons sit on cards)
   ...['brand', 'info', 'success', 'warning', 'error'].map((role) => [role === 'brand' ? '--cui-c-console-brand-label-on-fill' : `--cui-c-console-${role}-label-primary`, [[`--cui-c-console-${role}-accent-quaternary`, CARD, PAGE], ['--cui-c-console-neutral-fill-tertiary', CARD, PAGE]], 4.5]),
   ...['--cui-c-console-neutral-label-primary', '--cui-c-console-brand-label-on-fill', '--cui-c-console-error-label-primary', '--cui-c-console-error-label-hover', '--cui-c-console-error-label-press'].map((fg) => [fg, GRAY.map((g) => [g, CARD, PAGE]), 4.5]),
+  // a chip's key and its remove control on its gray, at rest and as a link
+  // hovered and pressed, on the page and on a card (crashcart's event tags)
+  ['--cui-c-console-neutral-label-secondary', [...GRAY.map((g) => [g, PAGE]), ...GRAY.map((g) => [g, CARD, PAGE])], 4.5],
 ];
 CONSOLE_MIN.push(
   // a field's edge and its red edge in error: 3:1 on the page and on a card
