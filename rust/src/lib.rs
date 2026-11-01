@@ -20,7 +20,10 @@ pub mod css;
 pub mod docs;
 pub mod icon;
 pub mod lucide;
+mod markup;
 pub mod site;
+
+pub use markup::check_markup;
 
 #[cfg(test)]
 mod example;

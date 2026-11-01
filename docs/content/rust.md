@@ -75,6 +75,18 @@ let html = rsx! { <a href="/saved">(HEART.class("inline"))" Saved"</a> }.render(
 assert!(html.as_inner().starts_with(r#"<a href="/saved"><svg class="inline" aria-hidden="true" width="1em""#));
 ```
 
+## Checking the markup
+
+A class misspelt styles nothing, and a `data-variant`, `data-size` or `data-color` value no rule selects draws the default, with no error. `ciderui::check_markup` reads a rendered page and lists each word of ciderui's that its stylesheets do not know; a site's tests call it on every page they render:
+
+```rust
+let page = r#"<a class="cui-console-btn" data-variant="plian" href="/">Open</a>"#;
+assert_eq!(
+    ciderui::check_markup(page).unwrap_err(),
+    [r#"data-variant="plian" on <a class="cui-console-btn">: no rule of ciderui's selects it (cui-console-btn's: filled, plain)"#]
+);
+```
+
 ## The stylesheets
 
 With the `css` feature the crate embeds every stylesheet, and writes them out in the kit’s layout before the site’s Tailwind build:
