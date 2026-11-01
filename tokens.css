@@ -73,6 +73,8 @@
  *                           light alone) and its code (black, white dark)
  *   docs-<kind>, -edge      an aside's ground, and its edge and label: note,
  *                           important, warning, tip, deprecated, experiment
+ *   docs-bar-rule           the hairline at the foot of the documentation's
+ *                           bar
  *
  * The console's colors (--cui-c-console-*), the console parts' (cui-console-*):
  * App Store Connect's newer look's color roles, one slot per role a part
@@ -155,6 +157,7 @@
   --cui-c-docs-deprecated-edge: light-dark(#bf4800, #f56300);
   --cui-c-docs-experiment: light-dark(#fcf8ff, #190325);
   --cui-c-docs-experiment-edge: light-dark(#8c28c2, #a95ed2);
+  --cui-c-docs-bar-rule: light-dark(rgb(29 29 31 / 0.2), rgb(66 66 69 / 0.95));
 
   --cui-c-console-neutral-label-primary: light-dark(oklch(0.0% 0.000 0.0 / 0.85), oklch(100.0% 0.000 0 / 0.85));
   --cui-c-console-neutral-background-primary: light-dark(oklch(100.0% 0.000 0), oklch(0.0% 0.000 0));

@@ -539,6 +539,62 @@ pub const SIGN_IN_COMPACT: Icon = Icon {
     inner: r#"<circle cx="7.99" cy="12.5" r="6.495" fill="none" stroke="currentColor" stroke-width="1.21"/><ellipse cx="7.99" cy="11" rx="2.475" ry="2.6" fill="currentColor"/><path d="M3.529 16.347A6.77 6.77 0 0 1 12.452 16.347 5.89 5.89 0 0 1 3.529 16.347Z" fill="currentColor"/>"#,
 };
 
+/// Apple's developer documentation's bar's button that opens the navigator
+/// (`cui-docs-bar-toggle`), in place of DocC's 14 by 14 SVG drawn at 19px: a
+/// rounded rectangle 0.975 thick from (0.625, 2) to (13.375, 12), its
+/// corners 1.27 at the stroke's middle, a bar 0.95 wide down it at 5.3, and
+/// three lines in the left pane at 4.635, 6.056 and 7.473 down, from 2.325
+/// to 4.125 across, 0.656 thick, round; 0.987 of its ink DocC's
+/// (`reference/icons/`).
+pub const DOCS_SIDEBAR: Icon = Icon {
+    width: "19",
+    height: "19",
+    view_box: "0 0 14 14",
+    paint: "",
+    inner: r#"<rect x="1.1125" y="2.4875" width="11.775" height="9.025" rx="1.27" fill="none" stroke="currentColor" stroke-width="0.975"/><path d="M5.3 2.4875V11.5125" fill="none" stroke="currentColor" stroke-width="0.95"/><path d="M2.653 4.635H3.797M2.653 6.056H3.797M2.653 7.473H3.797" fill="none" stroke="currentColor" stroke-width="0.656" stroke-linecap="round"/>"#,
+};
+
+/// Apple's developer documentation's navigator's toggle, the chevron of a
+/// row that opens (`cui-docs-navigator-toggle`), in place of DocC's 14 by 14
+/// SVG drawn at 10px: two strokes 1.63 thick from (4.81, 1.81) to (10.17, 7)
+/// to (4.81, 12.32), round at the ends and the join; 0.975 of its ink
+/// DocC's.
+pub const DOCS_CHEVRON: Icon = Icon {
+    width: "10",
+    height: "10",
+    view_box: "0 0 14 14",
+    paint: "",
+    inner: r#"<path d="M4.81 1.81 10.17 7 4.81 12.32" fill="none" stroke="currentColor" stroke-width="1.63" stroke-linecap="round" stroke-linejoin="round"/>"#,
+};
+
+/// Apple's developer documentation's glyph for an article, before a row of
+/// the navigator (17px) and a link to it (15px), in place of DocC's 14 by 14
+/// SVG: a page 1.05 thick from (1.6, 0) to (12.6, 14), its corners 1.35, its
+/// top right corner folded down from (7.515, 0.525) to (12.075, 5.085), the
+/// fold's edge 0.975 thick at 7.09 across and 5.59 down, two lines of text at
+/// 8.28 and 10.57 down from 4.13 to 9.9, 0.8 thick, round; 0.982 of its ink
+/// DocC's.
+pub const DOCS_ARTICLE: Icon = Icon {
+    width: "17",
+    height: "17",
+    view_box: "0 0 14 14",
+    paint: "",
+    inner: r#"<path d="M7.515 0.525H3.475A1.35 1.35 0 0 0 2.125 1.875V12.125A1.35 1.35 0 0 0 3.475 13.475H10.725A1.35 1.35 0 0 0 12.075 12.125V5.085Z" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linejoin="round"/><path d="M7.09 0.6V4.9A0.69 0.69 0 0 0 7.78 5.59H12" fill="none" stroke="currentColor" stroke-width="0.975"/><path d="M4.53 8.28H9.5M4.53 10.57H9.5" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"/>"#,
+};
+
+/// Apple's developer documentation's glyph for a collection, a page of
+/// pages, before a row of the navigator (17px) and a link to it (15px), in
+/// place of DocC's 14 by 14 SVG: three dots 1.72 across at 0.875 across and
+/// 2.81, 7.01 and 11.21 down, each before a line from 3.375 to 14 across,
+/// 1.125 thick, round; 0.992 of its ink DocC's.
+pub const DOCS_COLLECTION: Icon = Icon {
+    width: "17",
+    height: "17",
+    view_box: "0 0 14 14",
+    paint: "",
+    inner: r#"<circle cx="0.875" cy="2.81" r="0.86" fill="currentColor"/><circle cx="0.875" cy="7.01" r="0.86" fill="currentColor"/><circle cx="0.875" cy="11.21" r="0.86" fill="currentColor"/><path d="M3.94 2.81H13.44M3.94 7.01H13.44M3.94 11.21H13.44" fill="none" stroke="currentColor" stroke-width="1.125" stroke-linecap="round"/>"#,
+};
+
 #[cfg(test)]
 mod tests {
     use super::*;

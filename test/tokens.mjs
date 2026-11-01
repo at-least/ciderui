@@ -154,6 +154,8 @@ const CONTRACT = {
       [`--cui-c-docs-${kind}`, [[page, kind, W, 'background-color'], [`${page}-dark`, kind, W, 'background-color']]],
       [`--cui-c-docs-${kind}-edge`, [[page, kind, W, 'border-top-color'], [`${page}-dark`, kind, W, 'border-top-color']]],
     ])),
+  // the documentation's bar's hairline, light and dark
+  '--cui-c-docs-bar-rule': [['docc-page', 'bar.rule', W, 'background-color'], ['docc-page-dark', 'bar.rule', W, 'background-color']],
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-') && !k.startsWith('--cui-c-console-'));
