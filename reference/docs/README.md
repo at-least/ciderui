@@ -27,7 +27,7 @@ The frames' elements are clicked by the page's script (`click()`, the activation
 
 ## The result
 
-Claims 15 to 20, and claims 5, 7, 12 and 13 read under the docs bar, with the documentation in the docs layout, 2026-11-01 (claims 15 to 17 first on ciderui 29efa07 with ciderui-zola 9b7c72a, 81 pages; all again on ciderui bc6be96 with ciderui-zola 686554c, 82 pages); Safari and Chrome in a VM of their own, never on the Mac in front of its user, on ciderui af2467f's tree with ciderui-zola 686554c, 82 pages):
+Claims 15 to 20, and claims 5, 7, 12 and 13 read under the docs bar, with the documentation in the docs layout, 2026-11-01 (claims 15 to 17 first on ciderui 29efa07 with ciderui-zola 9b7c72a, 81 pages; all again on ciderui bc6be96 with ciderui-zola 686554c, 82 pages); Safari in a VM of its own, never on the Mac in front of its user, Chrome in Docker, on ciderui af2467f's tree with ciderui-zola 686554c, 82 pages):
 
 Safari in the VM first failed claim 15 at 700px, the sheet 683px in a 700px window: the VM has no trackpad and its scroll bars setting is unset (Automatic), so Safari draws a classic 17px scrollbar (a probe read `innerWidth` 700, the root's `clientWidth` 683, a scroller's bar 17px, the sheet 683px). The sheet fills the root's box as a fixed box does, the page's scrollbar beside it; the claim now measures the window as the root's box (as claim 1 does), and passes.
 
@@ -36,7 +36,8 @@ Safari in the VM first failed claim 15 at 700px, the sheet 683px in a 700px wind
 | Chromium 151, Linux | 1440, 700 | ok (82 pages) | ok (the column 400px, 52px under the bar at 1500px down; the sheet 700 by 900) | ok | ok (51.78px under a 52px bar; 47.98 under 48) | ok | ok | ok |
 | Firefox 153.0 (Playwright's), Linux, its window on a virtual X display | 1440, 700 | ok (82 pages) | ok | ok | ok | ok | ok | ok |
 | Safari 27.0, macOS 27.0, in a `tester` VM (`../vm.mjs`) | 1440, 700 | ok (82 pages) | ok (the sheet 683 by 848: the root's box, the page's 17px classic scrollbar beside it) | ok | ok | ok | ok | ok |
-| Chrome 156.0.8078.80, macOS 27.0, in a `tester` VM, installed per run | 1440, 700 | ok (82 pages) | ok | ok | ok | ok | ok | ok |
+| Chrome 156.0.8078.79, Linux, in the test image (`scripts/docker.mjs`), installed per run | 1440, 700 | ok (82 pages) | ok | ok | ok | ok | ok | ok |
+| Chrome 156.0.8078.80, macOS 27.0, in a `tester` VM, installed per run (once; Chrome now runs in Docker) | 1440, 700 | ok (82 pages) | ok | ok | ok | ok | ok | ok |
 | the iOS simulator | | not run: the VM has no Xcode, nor has air (UNVERIFIED) | | | | | | |
 
 The first Chromium run failed claim 17 (Get Started's `#install` at -0.22px under a 52px bar): the theme's prebuilt stylesheet was built before docs-page's `:target` rule (`build --check`: "differs"); rebuilt (ciderui-zola 9b7c72a), it holds, and `test/docs.mjs` now checks it in Chromium.
@@ -57,7 +58,9 @@ Measured 2026-10-22 (`results/`), every browser's again 2026-10-23 (the simulato
 
 ```sh
 zola --root docs build --base-url http://127.0.0.1:8737 --output-dir /tmp/ciderui-docs --force
-BROWSER=safari SITE=/tmp/ciderui-docs node ../vm.mjs node run.mjs   # in a fresh tester VM; and chrome
+BROWSER=safari SITE=/tmp/ciderui-docs node ../vm.mjs node run.mjs   # in a fresh tester VM
+# Chrome in Docker (from the repository's top): Google Chrome installed per run, Playwright's channel
+node scripts/docker.mjs sh -c 'node node_modules/playwright-core/cli.js install chrome && zola --root docs build --base-url http://127.0.0.1:8737 --output-dir /tmp/ciderui-docs --force && cd reference/docs && BROWSER=chrome SITE=/tmp/ciderui-docs node run.mjs'
 BROWSER=ios SITE=/tmp/ciderui-docs node run.mjs        # on a Mac with Xcode (not in the VM)
 PW=…/playwright-chromium/index.mjs BROWSER=chromium SITE=/tmp/ciderui-docs node run.mjs
 BROWSER=firefox SITE=/tmp/ciderui-docs node run.mjs    # Playwright's Firefox (playwright-core install firefox), Xvfb

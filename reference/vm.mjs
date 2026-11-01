@@ -12,8 +12,6 @@
 //   cd reference/console && node build.mjs /tmp/ciderui-console &&
 //     BROWSER=safari SITE=/tmp/ciderui-console node ../vm.mjs node run.mjs
 //
-//   BROWSER=chrome SITE=/tmp/ciderui-docs node ../vm.mjs node run.mjs
-//
 // The VM has no Xcode: BROWSER=ios and the XCUITest probes stay on a Mac.
 
 import { execFileSync, spawnSync } from 'node:child_process';
@@ -24,6 +22,8 @@ const ROOT = resolve(new URL('..', import.meta.url).pathname);
 const command = process.argv.slice(2);
 if (!command.length) throw new Error('usage: node reference/vm.mjs <command> [args…]');
 if (process.env.BROWSER === 'ios') throw new Error('BROWSER=ios needs Xcode, which the VM has not: run it on a Mac');
+// the owner's: Chrome runs in Docker (scripts/docker.mjs), not in a VM
+if (process.env.BROWSER === 'chrome') throw new Error('BROWSER=chrome runs in Docker: see reference/docs/README.md');
 const cwd = process.cwd();
 if (!cwd.startsWith(ROOT)) throw new Error(`run it from inside the repository (${ROOT}), not ${cwd}`);
 
@@ -35,11 +35,6 @@ const pass = ['BROWSER', 'SITE', 'MODE', 'EXPECT', 'INTER']
 const paths = readdirSync(ROOT)
   .filter((e) => !['node_modules', '.git', 'rust'].includes(e))
   .map((e) => join(ROOT, e));
-// chrome: playwright-core drives the VM's Chrome, installed per run from
-// Google's stable dmg (the image has Safari alone; baking Chrome into it
-// would change the image every pixel baseline is captured in)
-const chrome = process.env.BROWSER === 'chrome';
-if (chrome) paths.push(join(ROOT, 'node_modules/playwright-core'));
 for (const k of ['SITE', 'INTER']) {
   const p = process.env[k];
   if (p === undefined) continue;
@@ -52,7 +47,6 @@ let status = 1;
 try {
   tester('push', name, ...paths);
   tester('exec', name, 'sudo', '-n', '/usr/bin/safaridriver', '--enable');
-  if (chrome) tester('exec', name, 'sh', '-c', 'set -e; curl -fsSL -o /tmp/chrome.dmg https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg; hdiutil attach -nobrowse -quiet -mountpoint /tmp/chrome /tmp/chrome.dmg; cp -R "/tmp/chrome/Google Chrome.app" /Applications/; hdiutil detach -quiet /tmp/chrome; rm /tmp/chrome.dmg');
   const run = spawnSync('tester', ['exec', name, 'env', ...pass, 'sh', '-c', 'cd "$1" && shift && exec "$@"', 'run', cwd, ...command], { stdio: 'inherit' });
   status = run.status ?? 1;
   if (existsSync(join(cwd, 'results'))) tester('pull', name, join(cwd, 'results'));
