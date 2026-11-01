@@ -19,8 +19,9 @@ pub enum DocsNavigatorItem<'a> {
 pub struct DocsNavigatorPage<'a> {
     /// Its name.
     pub label: &'a str,
-    /// Its address. Unique among the navigator's pages: a page with pages
-    /// under it names its chevron's checkbox after it.
+    /// Its address. Its path unique among the navigator's pages: a page
+    /// with pages under it names its chevron's checkbox after its path's
+    /// words.
     pub href: &'a str,
     /// The page shown (`aria-current="page"`).
     pub current: bool,
@@ -94,9 +95,13 @@ impl Renderable for Row<'_> {
                 );
                 let parent = !page.children.is_empty();
                 // the chevron's checkbox named after the page's address, its
-                // words alone ("/components/" docs-navigator-components)
-                let words: Vec<String> = page
-                    .href
+                // path's words alone ("/components/" and
+                // "https://example.test/components/" docs-navigator-components)
+                let path = match page.href.split_once("://") {
+                    Some((_, rest)) => rest.find('/').map_or("", |i| &rest[i..]),
+                    None => page.href,
+                };
+                let words: Vec<String> = path
                     .split(|c: char| !c.is_ascii_alphanumeric())
                     .filter(|w| !w.is_empty())
                     .map(str::to_ascii_lowercase)
@@ -196,6 +201,27 @@ mod tests {
                 "../../../components/docs/docs-navigator/examples/navigator.html"
             ))
         );
+    }
+
+    #[test]
+    fn a_chevron_is_named_after_its_pages_path() {
+        let under = [page(
+            "Button",
+            "https://example.test/components/button/",
+            false,
+            false,
+            &[],
+        )];
+        for href in ["/components/", "https://example.test/components/"] {
+            let items = [page("Components", href, false, false, &under)];
+            let html =
+                rsx! { <DocsNavigator title="T" href="/" items=(&items) class="" /> }.render();
+            assert!(
+                html.as_inner()
+                    .contains(r#"id="docs-navigator-components""#),
+                "{href}"
+            );
+        }
     }
 
     #[test]
