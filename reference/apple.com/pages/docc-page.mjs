@@ -64,7 +64,7 @@ export const probes = [
   { name: 'seealso.section.content', select: 'section.contenttable .contenttable-section > .section-content', props: [...ROOM, 'width', 'flex-basis'], box: true },
   { name: 'seealso.block', select: 'section.contenttable .link-block', props: ROOM, box: true },
   { name: 'seealso.block.next', select: 'section.contenttable .link-block + .link-block', props: ['margin-top', 'padding-top'], box: true },
-  { name: 'seealso.link', select: 'section.contenttable .link-block a.link', props: [...TYPE, ...LINK, 'display', 'align-items'], box: true, states: ['hover'] },
+  { name: 'seealso.link', select: 'section.contenttable .link-block a.link', props: [...TYPE, ...LINK, ...ROOM, 'display', 'align-items'], box: true, states: ['hover'] },
   { name: 'seealso.icon', select: 'section.contenttable .link-block .topic-icon-wrapper', props: [...ROOM, 'display', 'width', 'height', 'flex-basis', 'align-items', 'justify-content'], box: true },
   { name: 'seealso.icon.svg', select: 'section.contenttable .link-block .topic-icon-wrapper svg', props: ['width', 'height', 'color', 'fill'], box: true },
   { name: 'seealso.abstract', select: 'section.contenttable .link-block .abstract', props: [...TYPE, ...ROOM], box: true },

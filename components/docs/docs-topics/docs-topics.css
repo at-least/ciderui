@@ -1,0 +1,127 @@
+/* ciderui — the docs topics: Apple's developer documentation's Topics and
+ * See Also, after a page's content: its title over groups of links, each
+ * after its glyph, each with its abstract under it.
+ *
+ * From Apple's developer documentation (DocC, reference/apple.com/):
+ * docc-page:seealso* (the section's room, its title, a group's room and
+ * title, a link, its glyph, hovered, its abstract), and their -dark; the
+ * glyphs reference/icons/ (DocC's numbers, icon.rs's DOCS_ARTICLE,
+ * DOCS_COLLECTION).
+ *
+ *   <section class="cui-docs-topics">
+ *     <h2 class="cui-docs-topics-title">See Also</h2>
+ *     <div class="cui-docs-topics-group">
+ *       <h3 class="cui-docs-topics-heading">Crash reports</h3>
+ *       <div class="cui-docs-topics-item">
+ *         <a class="cui-docs-topics-link" href="…">(DOCS_ARTICLE, class cui-docs-topics-icon)<span>…</span></a>
+ *         <p class="cui-docs-topics-abstract">…</p>
+ *       </div>
+ *     </div>
+ *   </section>
+ *
+ * cui-docs-topics        40px of room under it
+ * cui-docs-topics-title  40px down, 32/36 at 600 from 1251px (28/32 from
+ *                        736px, 24/28 below)
+ * cui-docs-topics-group  40px down
+ * cui-docs-topics-heading  24/28 at 600 from 1251px (21/25 below); to 735px
+ *                        8.5px of room under it and 40px to its first link
+ * cui-docs-topics-item   15px under what is above it
+ * cui-docs-topics-link   17/25 in the link's color, 5px above and below,
+ *                        underlined hovered; its glyph (cui-docs-topics-icon)
+ *                        15px in a 22px column 17px before its words, in the
+ *                        muted text
+ * cui-docs-topics-abstract  17/25 in the text's color, under the link, 39px
+ *                        in, under its words
+ *
+ * DocC's: the room, the type, the steps, the colors, the glyph's size and
+ * place. ciderui's: the letter-spacing (tokens.css); the glyph's column its
+ * own room (3.5px either side), where DocC's is a 22px box it is centered
+ * in; the hover behind (hover: hover) (rule 5). Its column is the page's
+ * (cui-docs-page-column). */
+
+@layer components {
+  .cui-docs-topics {
+    padding-bottom: 40px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: var(--cui-tracking-17);
+    color: var(--cui-c-text);
+  }
+
+  .cui-docs-topics-title {
+    margin: 0;
+    padding-top: 40px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: var(--cui-tracking-24);
+
+    @media (width >= 736px) {
+      font-size: 28px;
+      line-height: 32px;
+      letter-spacing: var(--cui-tracking-28);
+    }
+
+    @media (width >= 1251px) {
+      font-size: 32px;
+      line-height: 36px;
+      letter-spacing: var(--cui-tracking-32);
+    }
+  }
+
+  .cui-docs-topics-group {
+    padding-top: 40px;
+  }
+
+  .cui-docs-topics-heading {
+    margin: 0 0 40px;
+    padding-bottom: 8.5px;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 25px;
+    letter-spacing: var(--cui-tracking-21);
+
+    @media (width >= 736px) {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    @media (width >= 1251px) {
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing: var(--cui-tracking-24);
+    }
+  }
+
+  .cui-docs-topics-item {
+    margin-top: 15px;
+  }
+
+  .cui-docs-topics-link {
+    display: inline-flex;
+    padding-block: 5px;
+    color: var(--cui-c-link);
+    text-decoration-line: none;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration-line: underline;
+      }
+    }
+  }
+
+  .cui-docs-topics-icon {
+    flex: none;
+    box-sizing: content-box;
+    width: 15px;
+    height: 15px;
+    margin: 5px 17px 0 0;
+    padding-inline: 3.5px;
+    color: var(--cui-c-text-3);
+  }
+
+  .cui-docs-topics-abstract {
+    margin: 0 0 0 39px;
+  }
+}
