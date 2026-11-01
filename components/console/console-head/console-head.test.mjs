@@ -13,6 +13,15 @@ const CURRENT = `${H} .cui-console-tab[aria-current]`;
 
 export const cases = [
   {
+    name: 'head touch',
+    html: ex('head'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: NAME, props: ['box-height', 'line-height'], golden: 'the name\'s link 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), its one line centered in it' },
+    ],
+  },
+  {
     name: 'head',
     html: ex('head'),
     widths: [1200, 390],

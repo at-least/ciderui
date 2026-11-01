@@ -123,6 +123,16 @@
       padding-inline-end: 0;
     }
 
+    /* a touch screen: room either side of a checkbox for its input's 44px,
+       which runs 14.5px past its box each way (console-checkbox); flush at
+       the table's start the scroll box clipped it to 29px, and 8px from the
+       next cell it met a sort link's target */
+    @media (pointer: coarse) {
+      :where(th, td):has(> .cui-console-checkbox) {
+        padding-inline: 14.5px;
+      }
+    }
+
     &[data-size="sm"] :where(td, tbody th) {
       padding-block: 0.4375rem;
     }

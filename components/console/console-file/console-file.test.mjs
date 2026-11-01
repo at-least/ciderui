@@ -13,6 +13,15 @@ const OFF = '#off';
 
 export const cases = [
   {
+    name: 'file touch',
+    html: ex('file'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: ON, props: ['box-height', 'padding-top', 'padding-bottom'], golden: 'the field 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), its line centered in it: a file input\'s text sits at its padding' },
+    ],
+  },
+  {
     name: 'file',
     html: ex('file'),
     widths: [1200],

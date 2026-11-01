@@ -98,6 +98,13 @@
       line-height: 18px;
     }
 
+    /* a touch screen's: 44px tall at least, the HIG's 44pt (Accessibility,
+       Mobility), a pill's corners half of it */
+    @media (pointer: coarse) {
+      min-height: 2.75rem;
+      border-radius: 22px;
+    }
+
     @media (hover: hover) {
       &:hover {
         background-color: var(--cui-c-console-neutral-fill-quaternary);

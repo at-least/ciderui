@@ -61,7 +61,8 @@ export const cases = [
     touch: true,
     widths: [390],
     checks: [
-      { target: '[data-size="sm"]', props: ['box-height'], golden: 'the small field 28px tall on a touch screen, the HIG\'s minimum control size (Accessibility, Mobility): the toolkit\'s 22px is under it, and an <input> draws no ::after to reach it' },
+      ...['.cui-console-field[data-size="sm"]', '.cui-console-field:not([data-size])', '.cui-console-field[data-size="lg"]'].map((target) => ({ target, props: ['box-height'], golden: 'a field 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), whatever its size: an <input> draws no ::after to reach it' })),
+      { target: '[data-size="xl"]', props: ['box-height'], golden: 'the extra large keeps its 50px, over 44' },
     ],
   },
   {

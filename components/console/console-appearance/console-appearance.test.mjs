@@ -46,6 +46,7 @@ export const cases = [
     widths: [390],
     checks: [
       { target: CHOICE, pseudo: '::after', props: ['height'], golden: 'a touch screen\'s target 44px tall, the HIG\'s 44pt' },
+      { target: CHOICE, props: ['box-width'], golden: 'a choice 44px wide on a touch screen, the HIG\'s 44pt: choices side by side leave no room for a wider target' },
     ],
   },
   {

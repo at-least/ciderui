@@ -106,9 +106,18 @@ export const cases = [
     touch: true,
     widths: [390],
     checks: [
-      { target: '.cui-console-btn-icon', pseudo: '::after', props: ['width', 'height'], golden: 'a 30px icon button\'s target 44px square on a touch screen, the HIG\'s 44pt (Accessibility, Mobility)' },
-      { target: '.cui-console-btn:not(.cui-console-btn-icon)', pseudo: '::after', props: ['width', 'height'], golden: 'a labelled button\'s target its width by 44px, the HIG\'s 44pt (Accessibility, Mobility)' },
-      { target: '.cui-console-btn-icon', props: ['position', 'box-height'], golden: 'positioned for its target, its look unchanged: 30px' },
+      { target: '.cui-console-btn-icon', props: ['box-width', 'box-height'], golden: 'an icon button 44px square on a touch screen, the HIG\'s 44pt (Accessibility, Mobility): a target drawn round a 30px button covered its neighbour\'s, 8px away' },
+      { target: '.cui-console-btn:not(.cui-console-btn-icon)', props: ['box-height'], golden: 'a labelled button 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility)' },
+    ],
+  },
+  {
+    name: 'touch sizes',
+    html: ex('sizes'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: '[data-size="sm"]', props: ['box-height'], golden: 'the small button 44px tall on a touch screen too, the HIG\'s 44pt (Accessibility, Mobility)' },
+      { target: '[data-size="xl"]', props: ['box-height'], golden: 'the extra large keeps its 50px, over 44' },
     ],
   },
   {
@@ -116,7 +125,7 @@ export const cases = [
     html: ex('icon'),
     widths: [1200],
     checks: [
-      { target: '.cui-console-btn-icon', pseudo: '::after', props: ['content'], golden: 'a pointer is exact: no larger target, App Store Connect\'s 30px' },
+      { target: '.cui-console-btn-icon', props: ['box-width', 'box-height'], golden: 'a pointer is exact: App Store Connect\'s 30px' },
     ],
   },
   {

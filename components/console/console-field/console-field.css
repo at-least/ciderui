@@ -27,9 +27,9 @@
  *                         its red at 0.12 (white again focused, the halo
  *                         red); disabled, the neutral at 0.03 under the
  *                         disabled label
- *   data-size="sm"|"lg"|"xl"  22px (5px in, 8px corners, 11px on 13px; 28px
- *                         on a touch screen, the HIG's minimum), 40px
+ *   data-size="sm"|"lg"|"xl"  22px (5px in, 8px corners, 11px on 13px), 40px
  *                         (10px, 12px, 16px on 21px), 50px (15px, 14px)
+ *   a touch screen        44px tall at least, every size
  *   a <textarea>          its height its rows', 6px above and below
  * cui-console-select      a dropdown's box: its <select> (room for the
  *                         chevron at its end) and its chevron
@@ -107,6 +107,13 @@
       cursor: default;
     }
 
+    /* a touch screen's: 44px tall at least, the HIG's 44pt (Accessibility,
+       Mobility), the box itself, as an <input> draws no ::after; xl's 50px
+       kept */
+    @media (pointer: coarse) {
+      min-height: 2.75rem;
+    }
+
     &:is(textarea) {
       height: auto;
       padding-block: 6px;
@@ -119,12 +126,6 @@
       border-radius: 8px;
       font-size: 11px;
       line-height: 13px;
-
-      /* a touch screen's minimum, the HIG's 28pt (Accessibility, Mobility):
-         the box itself grows, as an <input> draws no ::after to reach it */
-      @media (pointer: coarse) {
-        height: 1.75rem;
-      }
     }
 
     &[data-size="lg"] {

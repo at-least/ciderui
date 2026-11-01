@@ -63,7 +63,8 @@ export const cases = [
     widths: [390],
     checks: [
       { target: B, props: ['color'], state: 'hover', rest: 'a tapped hint keeps no hover (rule 5)' },
-      { target: B, pseudo: '::after', props: ['width', 'height'], golden: 'its target on a touch screen 32 by 44px: the HIG\'s 44pt height, over its 28pt minimum across, no wider so it leaves the control beside the word' },
+      { target: B, props: ['box-width', 'box-height'], golden: 'the button 44px square on a touch screen, the HIG\'s 44pt (Accessibility, Mobility): a 44px target drawn round its 20px reached over the control beside the word, which the wider button moves along' },
+      { target: B, pseudo: '::before', props: ['width', 'height'], golden: 'its circle drawn as before, 17px' },
     ],
   },
   {

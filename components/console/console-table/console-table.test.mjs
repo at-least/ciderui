@@ -119,6 +119,7 @@ export const cases = [
     touch: true,
     checks: [
       { target: 'tbody tr:first-child .cui-console-checkbox', props: ['hit'], golden: 'on a touch screen too a tap on a linked row\'s checkbox finds the checkbox, not the row\'s link' },
+      { target: 'tbody tr:first-child > td:first-child', props: ['padding-left', 'padding-right'], golden: 'a cell with a checkbox 14.5px in each way on a touch screen, room for its input\'s 44px: flush at the table\'s start the scroll box clipped it to 29px, and 8px from the next cell it met a sort link\'s target' },
     ],
   },
   {

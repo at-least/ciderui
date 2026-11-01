@@ -33,8 +33,9 @@ export const cases = [
     widths: [390],
     checks: [
       { target: TAG, props: ['background-color'], state: 'hover', rest: 'a tapped chip keeps no hovered fill (rule 5)' },
-      { target: TAG, pseudo: '::after', props: ['width', 'height'], golden: 'a chip that is a link: its target its width by 44px on a touch screen, the HIG\'s 44pt (Accessibility, Mobility)' },
-      { target: '.cui-console-chip-remove', pseudo: '::after', props: ['width', 'height'], golden: 'the 12px ×: its target 44px square on a touch screen, the HIG\'s 44pt (Accessibility, Mobility)' },
+      { target: TAG, props: ['box-height'], golden: 'a chip that is a link 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility): chips in rows 8px apart are 30px from row to row, and a target drawn round each covered the next' },
+      { target: FILTER, props: ['box-height'], golden: 'a chip with a remove control 44px tall on a touch screen, for its control' },
+      { target: '.cui-console-chip-remove', props: ['box-width', 'box-height'], golden: 'the remove control 44px square on a touch screen, its chip\'s end, the HIG\'s 44pt (Accessibility, Mobility)' },
     ],
   },
   {

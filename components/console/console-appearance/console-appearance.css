@@ -95,8 +95,14 @@
       outline-offset: var(--cui-focus-ring-offset);
     }
 
-    /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility) */
+    /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility):
+       44px tall round the choice, and the choice 44px wide itself, as
+       choices side by side leave no room for a wider target */
     @media (pointer: coarse) {
+      & > span {
+        min-width: 2.75rem;
+      }
+
       &::after {
         content: "";
         position: absolute;

@@ -233,4 +233,22 @@
       border-radius: 25px;
     }
   }
+
+  /* a touch screen's: a tab 44px each way at least, the HIG's 44pt
+     (Accessibility, Mobility), its own box: a target drawn round it is
+     clipped by a phone's sideways-scrolling row. After the sizes; xl's
+     50px kept, a pill's corners half its height */
+  @media (pointer: coarse) {
+    .cui-console-tab {
+      min-height: 2.75rem;
+    }
+
+    :where(.cui-console-tabs:not([data-size="xl"])) > .cui-console-tab {
+      min-width: 2.75rem;
+    }
+
+    :where(.cui-console-tabs[data-variant="filled"]:not([data-size="xl"])) > .cui-console-tab {
+      border-radius: 22px;
+    }
+  }
 }

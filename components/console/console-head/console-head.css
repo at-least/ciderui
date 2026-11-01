@@ -71,5 +71,11 @@
     text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    /* a touch screen's: the link 44px tall, the HIG's 44pt (Accessibility,
+       Mobility), its one line centered in it */
+    @media (pointer: coarse) {
+      line-height: 2.75rem;
+    }
   }
 }

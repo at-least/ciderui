@@ -20,7 +20,8 @@
  *                           word; hovered and
  *                           pressed, the toolkit's fills and labels; focused
  *                           from the keyboard, base.css's ring; its target (::after) 20px
- *                           square, 32px by 44px on a touch screen
+ *                           square; on a touch screen the button itself
+ *                           44px square, the circle in its place
  * the popover               what the word means, a cui-console-popover
  *                           opened by the button's popovertarget
  *
@@ -32,9 +33,10 @@
  * target: the HIG's minimum control sizes (Accessibility,
  * Mobility: 20x20pt on macOS, 28x28pt on iOS, 44x44pt its default there),
  * drawn round the circle as apple.com's modal's close button is (its 36px
- * circle in a 44px button, overlay:close). Not 44px wide on a touch screen:
- * it reached over the control beside the word (crashcart's badge rows and
- * lines of text at 375px, a flex gap of 8px holds its 6px either side). */
+ * circle in a 44px button, overlay:close). On a touch screen the button
+ * itself is 44px, the HIG's default there: a 44px target drawn round the
+ * 20px button reached over the control beside the word (crashcart's badge
+ * rows, a flex gap of 8px), where the wider button moves it along. */
 
 @layer components {
   .cui-console-hint {
@@ -83,10 +85,15 @@
       transform: translate(-50%, -50%);
     }
 
+    /* the box itself 44px, the circle where it was: 13px each way taken
+       back from the line's height, 8px from the room before it */
     @media (pointer: coarse) {
+      width: 2.75rem;
+      height: 2.75rem;
+      margin: -13px 0 -13px -8px;
+
       &::after {
-        width: 32px;
-        height: 44px;
+        content: none;
       }
     }
 

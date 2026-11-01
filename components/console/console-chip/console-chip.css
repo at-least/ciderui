@@ -88,21 +88,21 @@
     }
   }
 
-  /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility),
-     round a chip that is a link and round a remove control's × */
+  /* a touch screen's: a chip that is a link or holds a remove control
+     44px tall at least, the HIG's 44pt (Accessibility, Mobility), and the
+     remove control 44px each way, its chip's end; not a larger target
+     round them: chips in rows 8px apart are 30px from one row to the
+     next, and each one's target covered its neighbour's */
   @media (pointer: coarse) {
-    :where(a.cui-console-chip, button.cui-console-chip, .cui-console-chip-remove) {
-      position: relative;
+    :is(a.cui-console-chip, button.cui-console-chip, .cui-console-chip:has(> .cui-console-chip-remove)) {
+      min-height: 2.75rem;
     }
 
-    :is(a.cui-console-chip, button.cui-console-chip, .cui-console-chip-remove)::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: max(100%, 44px);
-      height: max(100%, 44px);
-      transform: translate(-50%, -50%);
+    .cui-console-chip-remove {
+      align-self: stretch;
+      min-width: 2.75rem;
+      margin-block: -2px;
+      margin-inline-end: -4px;
     }
   }
 }

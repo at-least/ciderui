@@ -69,6 +69,7 @@ export const cases = [
     widths: [390],
     checks: [
       { target: PLAIN, props: ['background-color'], state: 'hover', rest: 'a tapped item keeps no fill (rule 5)' },
+      { target: PLAIN, props: ['box-height', 'border-top-left-radius'], golden: 'an item 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), a pill\'s corners half of it' },
     ],
   },
   {

@@ -185,22 +185,18 @@
     }
   }
 
-  /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility), round
-     the button as the hint's is; the button positioned at no specificity, so
-     a part that places it (the skip link, fixed) keeps its place */
+  /* a touch screen's: the button itself 44px each way at least, the HIG's
+     44pt (Accessibility, Mobility). Not a larger transparent target round
+     it: buttons 8px apart are 38px from center to center, and each one's
+     target covered its neighbour's. After the sizes and the plain
+     variant, whose min-width it overrides; xl's 50px kept */
   @media (pointer: coarse) {
-    :where(.cui-console-btn) {
-      position: relative;
+    .cui-console-btn {
+      min-height: 2.75rem;
     }
 
-    .cui-console-btn::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: max(100%, 44px);
-      height: max(100%, 44px);
-      transform: translate(-50%, -50%);
+    .cui-console-btn:not([data-size="xl"]) {
+      min-width: 2.75rem;
     }
   }
 }

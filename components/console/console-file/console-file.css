@@ -47,6 +47,13 @@
       line-height: 21px;
     }
 
+    /* a touch screen's: 44px tall, the HIG's 44pt (Accessibility, Mobility),
+       its line centered in it (a file input's text sits at its padding) */
+    @media (pointer: coarse) {
+      height: 2.75rem;
+      padding-block: calc((2.75rem - 2px - 1lh) / 2);
+    }
+
     &::file-selector-button {
       margin: 0 0.5rem 0 0;
       padding: 0;

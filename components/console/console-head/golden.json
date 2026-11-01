@@ -1,4 +1,6 @@
 {
+ "head touch | .cui-console-head-name | 390 | box-height": "44px",
+ "head touch | .cui-console-head-name | 390 | line-height": "44px",
  "head | .cui-console-head | 1200 | column-gap": "19px",
  "head | .cui-console-head | 1200 | margin-bottom": "24px",
  "head | .cui-console-head | 1200 | flex-wrap": "wrap",

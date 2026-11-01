@@ -1,4 +1,7 @@
 {
+ "file touch | #dsym | 390 | box-height": "44px",
+ "file touch | #dsym | 390 | padding-top": "10.5px",
+ "file touch | #dsym | 390 | padding-bottom": "10.5px",
  "file | #dsym::file-selector-button | 1200 | background-color": "rgba(0, 0, 0, 0)",
  "file | #dsym::file-selector-button | 1200 | border-top-width": "0px",
  "file | #dsym::file-selector-button | 1200 | margin-right": "8px",

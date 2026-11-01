@@ -122,6 +122,16 @@ export const cases = [
     widths: [390],
     checks: [
       { target: PILL, props: ['background-color', 'color'], state: 'hover', rest: 'a tapped tab keeps no hover (rule 5)' },
+      { target: PILL, props: ['box-height', 'min-width', 'border-top-left-radius'], golden: 'a tab 44px each way at least on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), a pill\'s corners half its height: a target drawn round it was clipped by a phone\'s sideways-scrolling row' },
+    ],
+  },
+  {
+    name: 'tabs underlined touch',
+    html: ex('many'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: REST, props: ['box-height', 'min-width'], golden: 'an underlined tab 44px each way at least on a touch screen, in its scrolling row' },
     ],
   },
   {
