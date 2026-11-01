@@ -113,6 +113,7 @@
  "navigator filtered | .cui-docs-navigator-status | 1200 | width": "1px",
  "navigator filtered | .cui-docs-navigator-status | 1200 | height": "1px",
  "navigator filtered | .cui-docs-navigator-status | 1200 | overflow-x": "hidden",
+ "navigator filter narrow | .cui-docs-navigator-field | 390 | box-width": "200px",
  "navigator no script | .cui-docs-navigator-filter | 1200 | display": "none",
  "navigator no script | .cui-docs-navigator-empty | 1200 | display": "none",
  "navigator long | .cui-docs-navigator-link | 1200 | white-space": "nowrap",

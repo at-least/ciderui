@@ -136,6 +136,16 @@ export const cases = [
     ],
   },
   {
+    // a navigator narrower than the input's own width (a sheet's on a
+    // phone, an example's frame): the field shrinks to the room left
+    name: 'navigator filter narrow',
+    html: FILTER.replace('<nav class="cui-docs-navigator" aria-label="Navigator">', '<nav class="cui-docs-navigator" aria-label="Navigator" style="width:240px">'),
+    widths: [390],
+    checks: [
+      { target: '.cui-docs-navigator-field', props: ['box-width'], golden: 'the navigator\'s 240px less the filter\'s 20px either side: the field shrinks below its input\'s own width (min-width 0), where a flex item would overflow the navigator' },
+    ],
+  },
+  {
     // with no script: no filter
     name: 'navigator no script',
     html: ex('navigator'),

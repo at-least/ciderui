@@ -263,6 +263,7 @@
   .cui-docs-navigator-field {
     display: flex;
     flex-grow: 1;
+    min-width: 0;
     align-items: center;
     box-sizing: border-box;
     height: 40px;
