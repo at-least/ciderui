@@ -17,7 +17,8 @@
 // frame's element is found in the page's own
 // session, so only a frame in the page's process can have its states forced
 // (another fails the run). `scroll` scrolls the page to that many pixels first
-// (for what shows only once scrolled), every other probe reading at the top;
+// (for what shows only once scrolled; with `hover`, before the pointer
+// moves), every other probe reading at the top;
 // `blur` takes the focus off the element that has it (a field the page
 // focuses on load) before reading, then waits as `set` does; `set`, [[selector, name, value], …], gives
 // the page's elements what its script would before reading (an attribute
@@ -195,7 +196,8 @@ const read = (probe) => {
   return out;
 };
 
-const page = await open('chromium', spec.url);
+// `options`: Playwright's page options for the run (a permission it needs)
+const page = await open('chromium', spec.url, spec.options);
 const pw = page.page;
 // `colorScheme`: the page read in that scheme (prefers-color-scheme), from its load
 if (spec.colorScheme) {
@@ -260,6 +262,12 @@ try {
         if (spec.touch) throw new Error(`${probe.name}: a hover on a touch spec`);
         clicked.add(probe.name);
         if (clicking && probe.animations) await frame.evaluate(watchAnimations, probe.animations);
+        // a probe's scroll before the pointer moves, so what it hovers is in
+        // the window (the read's own scroll then finds it there)
+        if (probe.scroll !== undefined) {
+          await frame.evaluate((y) => window.scrollTo(0, y), probe.scroll);
+          await settle();
+        }
         let to = point(probe.hover, width);
         if (!Array.isArray(to)) {
           const r = await frame.locator(probe.hover).first().boundingBox();

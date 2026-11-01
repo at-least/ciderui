@@ -607,6 +607,31 @@ pub const DOCS_CLOSE: Icon = Icon {
     inner: r#"<path d="M1.79 1.79 11.235 11.235M11.235 1.79 1.79 11.235" fill="none" stroke="currentColor" stroke-width="1.58" stroke-linecap="round"/>"#,
 };
 
+/// Apple's developer documentation's copy button's glyph
+/// (`cui-docs-copy-button`), in place of DocC's 24 by 24 SVG drawn at
+/// 25.5px: a sheet behind, its top and left edges 2 thick from (16, 2) round
+/// a corner of 1 to (3, 17), and a sheet in front, a rectangle 2 thick from
+/// (7, 6) to (20, 22), corners 1; 0.9997 of its ink DocC's.
+pub const DOCS_COPY: Icon = Icon {
+    width: "25.5",
+    height: "25.5",
+    view_box: "0 0 24 24",
+    paint: "",
+    inner: r#"<path d="M16 2H4A1 1 0 0 0 3 3V17" fill="none" stroke="currentColor" stroke-width="2"/><rect x="7" y="6" width="13" height="16" rx="1" fill="none" stroke="currentColor" stroke-width="2"/>"#,
+};
+
+/// Apple's developer documentation's copy button's glyph once it has
+/// copied, in place of DocC's 24 by 24 check drawn at 25.5px: two strokes
+/// 1.98 thick, square, from (4.1, 12.7) to (9, 17.6) to (20.3, 6.3); 0.9992
+/// of its ink DocC's.
+pub const DOCS_COPIED: Icon = Icon {
+    width: "25.5",
+    height: "25.5",
+    view_box: "0 0 24 24",
+    paint: "",
+    inner: r#"<path d="M4.1 12.7 9 17.6 20.3 6.3" fill="none" stroke="currentColor" stroke-width="1.98"/>"#,
+};
+
 #[cfg(test)]
 mod tests {
     use super::*;

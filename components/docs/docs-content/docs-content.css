@@ -32,7 +32,8 @@
  *                      cell at 600; moved sideways inside itself where
  *                      the column is narrower; 27.2px down
  *   aside, figure,     27.2px down; an image at its own size, centered
- *   p's lone image
+ *   p's lone image,
+ *   cui-docs-copy      (a listing with its copy button)
  *
  * DocC's: the type, the rhythm, the colors, the list's indent, the
  * listing's corners, room and type, the table's cells. ciderui's: the
@@ -61,7 +62,7 @@
       margin-bottom: 0;
     }
 
-    > :where(pre, table, aside, figure, p:has(> img:only-child)) {
+    > :where(pre, table, aside, figure, .cui-docs-copy, p:has(> img:only-child)) {
       margin-top: 27.2px;
       margin-bottom: 0;
     }

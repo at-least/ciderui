@@ -1,10 +1,13 @@
 // node docc.mjs: Apple's developer documentation's icons the docs set draws
 // (the bar's button that opens the navigator, a navigator row's chevron, an
-// article's and a collection's glyph, the navigator sheet's close button),
+// article's and a collection's glyph, the navigator sheet's close button, a
+// listing's copy button and its check once it has copied: the button
+// clicked, the clipboard granted),
 // DocC's SVG read live off the crash report's article (never stored), each
 // rasterized at 40 pixels to the unit on a blank page (svg.js) beside the
 // drawing the kit ships, read out of rust/src/icon.rs (DOCS_SIDEBAR,
-// DOCS_CHEVRON, DOCS_ARTICLE, DOCS_COLLECTION, DOCS_CLOSE): the share of ink
+// DOCS_CHEVRON, DOCS_ARTICLE, DOCS_COLLECTION, DOCS_CLOSE, DOCS_COPY,
+// DOCS_COPIED): the share of ink
 // each pair has in common, and each one's ink and its runs along rows and
 // columns, the numbers the drawings are drawn from. Fails below 0.85
 // (intersection over union), the mark the global nav's icons are held to.
@@ -18,7 +21,7 @@ const shipped = (name) => {
   if (!m) throw new Error(`rust/src/icon.rs has no ${name}`);
   return `<svg viewBox="${m[1]}">${m[2]}</svg>`;
 };
-const OURS = { sidebar: shipped('DOCS_SIDEBAR'), chevron: shipped('DOCS_CHEVRON'), article: shipped('DOCS_ARTICLE'), collection: shipped('DOCS_COLLECTION'), close: shipped('DOCS_CLOSE') };
+const OURS = { sidebar: shipped('DOCS_SIDEBAR'), chevron: shipped('DOCS_CHEVRON'), article: shipped('DOCS_ARTICLE'), collection: shipped('DOCS_COLLECTION'), close: shipped('DOCS_CLOSE'), copy: shipped('DOCS_COPY'), copied: shipped('DOCS_COPIED') };
 // where each drawing's numbers were read
 const RUNS = {
   sidebar: [['row', 4.635], ['row', 7], ['col', 1.2], ['col', 5.3], ['col', 7]],
@@ -26,10 +29,12 @@ const RUNS = {
   article: [['row', 7.9], ['row', 3], ['col', 6], ['col', 8], ['col', 10.5]],
   collection: [['row', 3], ['row', 7], ['col', 0.875], ['col', 7]],
   close: [['row', 3.5], ['row', 7], ['col', 7]],
+  copy: [['row', 5], ['row', 10], ['col', 6], ['col', 12]],
+  copied: [['row', 8], ['row', 12], ['row', 16], ['col', 10]],
 };
 
 const src = readFileSync(new URL('./svg.js', import.meta.url), 'utf8');
-const page = await open('chromium', 'https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report');
+const page = await open('chromium', 'https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report', { permissions: ['clipboard-read', 'clipboard-write'] });
 let result;
 try {
   await page.run('new Promise(r => setTimeout(r, 4000))');
@@ -41,6 +46,12 @@ try {
       article: nav.find(s => s.classList.contains('article-icon')).outerHTML,
       collection: nav.find(s => s.classList.contains('collection-icon')).outerHTML,
       close: document.querySelector('.navigator button.close-card svg').outerHTML,
+      copy: document.querySelector('.code-listing button.copy-button svg').outerHTML,
+      copied: await new Promise((done) => {
+        const b = document.querySelector('.code-listing button.copy-button');
+        b.click();
+        setTimeout(() => done(b.querySelector('svg').outerHTML), 300);
+      }),
     };
   })()`);
   await page.page.setContent('<!doctype html><body></body>');

@@ -1,0 +1,103 @@
+{
+ "url": "https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report",
+ "finalUrl": "https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-11-01T04:14:43.279Z",
+ "widths": {
+  "390": {
+   "listing.hovered": {
+    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
+    "styles": {
+     "opacity": "1",
+     "background-color": "rgb(210, 210, 215)",
+     "color": "rgb(0, 0, 0)",
+     "transition-property": "all",
+     "transition-duration": "0.2s",
+     "transition-timing-function": "ease-in-out"
+    }
+   },
+   "listing.hovered.icon": {
+    "html": "<svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" class=\"svg-icon CopyIcon copy-icon\" viewBox=\"0 0 24 24\"><title data-v-65e0e28e=\"\"",
+    "styles": {
+     "width": "25.5px",
+     "height": "25.5px",
+     "fill": "rgb(29, 29, 31)",
+     "color": "rgb(0, 0, 0)"
+    },
+    "box": {
+     "width": 25.5,
+     "height": 25.5
+    }
+   },
+   "button.hovered": {
+    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
+    "styles": {
+     "opacity": "1",
+     "background-color": "rgb(29, 29, 31)",
+     "color": "rgb(0, 0, 0)"
+    }
+   },
+   "button.hovered.icon": {
+    "html": "<svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" class=\"svg-icon CopyIcon copy-icon\" viewBox=\"0 0 24 24\"><title data-v-65e0e28e=\"\"",
+    "styles": {
+     "fill": "rgb(29, 29, 31)",
+     "color": "rgb(0, 0, 0)"
+    }
+   }
+  },
+  "1200": {
+   "listing.hovered": {
+    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
+    "styles": {
+     "opacity": "1",
+     "background-color": "rgb(210, 210, 215)",
+     "color": "rgb(0, 0, 0)",
+     "transition-property": "all",
+     "transition-duration": "0.2s",
+     "transition-timing-function": "ease-in-out"
+    }
+   },
+   "listing.hovered.icon": {
+    "html": "<svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" class=\"svg-icon CopyIcon copy-icon\" viewBox=\"0 0 24 24\"><title data-v-65e0e28e=\"\"",
+    "styles": {
+     "width": "25.5px",
+     "height": "25.5px",
+     "fill": "rgb(29, 29, 31)",
+     "color": "rgb(0, 0, 0)"
+    },
+    "box": {
+     "width": 25.5,
+     "height": 25.5
+    }
+   },
+   "button.hovered": {
+    "html": "<button data-v-e6b18ca8=\"\" aria-label=\"…\" title=\"…\" class=\"copy-button idle\"><svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns",
+    "styles": {
+     "opacity": "1",
+     "background-color": "rgb(29, 29, 31)",
+     "color": "rgb(0, 0, 0)"
+    }
+   },
+   "button.hovered.icon": {
+    "html": "<svg data-v-992f7eb0=\"\" data-v-65e0e28e=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" class=\"svg-icon CopyIcon copy-icon\" viewBox=\"0 0 24 24\"><title data-v-65e0e28e=\"\"",
+    "styles": {
+     "fill": "rgb(29, 29, 31)",
+     "color": "rgb(0, 0, 0)"
+    }
+   },
+   "copied": {
+    "html": "<svg data-v-992f7eb0=\"\" data-v-63cc7586=\"\" data-v-e6b18ca8=\"\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" class=\"svg-icon CheckmarkIcon checkmark-icon\" viewBox=\"0 0 24 24\"><path data-v-63",
+    "styles": {
+     "width": "25.5px",
+     "height": "25.5px",
+     "fill": "rgb(0, 102, 204)",
+     "color": "rgb(0, 102, 204)"
+    },
+    "box": {
+     "width": 25.5,
+     "height": 25.5
+    }
+   }
+  }
+ }
+}
