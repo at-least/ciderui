@@ -469,7 +469,9 @@ const bag = async (width) => {
 // and as the page scrolls the bar sticks at the window's top and the
 // navigator under it; narrower, the navigator hidden, the bar's button opens
 // it as a sheet over the window (a popover) and its close button closes it,
-// no script. A section's chevron (its checkbox's label, clicked by the
+// no script. The window is its root's box: with classic scrollbars (a Mac
+// with no trackpad, as the VM) the page's 17px scrollbar stays beside the
+// sheet, which fills the rest. A section's chevron (its checkbox's label, clicked by the
 // page's script) hides its rows and shows them again. A link to a heading
 // (the address's #install) lands it at the bar's foot.
 const docs = async (width) => {
@@ -478,7 +480,7 @@ const docs = async (width) => {
   const place = () => page.run(`Promise.resolve((() => {
     const s = document.querySelector('.cui-docs-page-sidebar'), b = document.querySelector('.cui-docs-bar'), m = document.querySelector('.cui-docs-page-main');
     const sb = s.getBoundingClientRect(), bb = b.getBoundingClientRect();
-    return { shown: getComputedStyle(s).display !== 'none', open: s.matches(':popover-open'), left: sb.left, top: sb.top, width: sb.width, height: sb.height, bottom: sb.bottom, main: m.getBoundingClientRect().left, bar: bb.top, barFoot: bb.bottom, window: [innerWidth, innerHeight], scroll: scrollY };
+    return { shown: getComputedStyle(s).display !== 'none', open: s.matches(':popover-open'), left: sb.left, top: sb.top, width: sb.width, height: sb.height, bottom: sb.bottom, main: m.getBoundingClientRect().left, bar: bb.top, barFoot: bb.bottom, window: [document.documentElement.clientWidth, document.documentElement.clientHeight], scroll: scrollY };
   })())`);
   const rest = await place();
   const record = { rest };
