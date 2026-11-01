@@ -243,6 +243,15 @@ for (const width of [1440, 390]) {
     check(`at ${width}px a page's footnote mark scrolls its note to below its local nav (its top ${at.note.toFixed(2)}px, the nav's foot ${at.nav.toFixed(2)}px, ${at.scroll}px down)`, at.scroll > 0 && at.note >= at.nav - 0.5, true);
   }
   {
+    // a docs page's heading, its address's fragment: it lands below the
+    // page's bar, which sticks over it (the theme's stylesheet holding
+    // docs-page's :target)
+    await page.goto(`${ORIGIN}/get-started/#install`, { waitUntil: 'load' });
+    await still();
+    const at = await page.evaluate(() => ({ scroll: scrollY, heading: document.getElementById('install').getBoundingClientRect().top, bar: document.querySelector('.cui-docs-bar').getBoundingClientRect().bottom }));
+    check(`at ${width}px a docs page's #install lands its heading below its bar (its top ${at.heading.toFixed(2)}px, the bar's foot ${at.bar.toFixed(2)}px, ${at.scroll}px down)`, at.scroll > 0 && at.heading >= at.bar - 0.5, true);
+  }
+  {
     errors = [];
     await page.goto(`${ORIGIN}/`, { waitUntil: 'load' });
     await page.click('body > .cui-globalnav [popovertarget="cui-globalnav-search"]');

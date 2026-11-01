@@ -25,10 +25,14 @@
 // opened by its button, by the keyboard where there is one (bag()); in a
 // window narrower than
 // 834px the global nav's menu opens over its frame, grown to the window's
-// height under the page's local nav and scrolled there, and the local nav's
+// height under the page's bar and scrolled there, and the local nav's
 // menu below its bar, the frame grown to hold it; a page's own footnote (the
 // news article's): its mark clicked, its note at the local nav's foot, or
-// below it where the page ends first. On a phone at its width;
+// below it where the page ends first; the docs layout (docs()): its
+// navigator a column from 1024px, sticking under the bar, a sheet the bar's
+// button opens narrower, a section's chevron, a heading's link landing it
+// at the bar's foot. A component's page is a docs page: its bar, the
+// .cui-docs-bar, is the one the frames' sheets keep below. On a phone at its width;
 // elsewhere in a window 1440px wide, then 700px (Safari's window, its frame
 // included, so its page a little narrower). Each claim is recorded with
 // when it was read (got.claims: ms since 1970, a clock to set beside a log
@@ -138,7 +142,7 @@ const behave = async (width) => {
   // the global nav's search, opened by its button: in a frame 834px wide or
   // more the flyout hung from the bar's bottom, the curtain to the frame's
   // bottom, else the sheet over the frame; its field focused; the frame
-  // grown to the window under the local nav; closed by the curtain or the
+  // grown to the window under the page's bar; closed by the curtain or the
   // sheet's X, the frame the bar's height again
   {
     const title = 'A global nav and its search';
@@ -154,12 +158,12 @@ const behave = async (width) => {
       return {
         open: d.querySelector('.cui-globalnav-search').matches(':popover-open'), focus: d.activeElement.className,
         inner: w.innerWidth, frameHeight: w.innerHeight, nav: box('.cui-globalnav').bottom, search: box('.cui-globalnav-search').top, searchHeight: box('.cui-globalnav-search').height,
-        curtain: box('.cui-globalnav-curtain').bottom, height: f.clientHeight, window: innerHeight, bar: document.querySelector('.cui-localnav').getBoundingClientRect().height,
+        curtain: box('.cui-globalnav-curtain').bottom, height: f.clientHeight, window: innerHeight, bar: document.querySelector('.cui-docs-bar').getBoundingClientRect().height,
       };
     })())`);
     const flyout = r.inner >= 834;
     got.frames[`globalnav search at ${width}`] = { closed, ...r };
-    claim(`the global nav's search opens in its frame at ${width}px, its field focused, the frame the window's height under the local nav`, r.open && r.focus === 'cui-globalnav-searchinput' && Math.abs(r.height - (r.window - r.bar)) <= 1, r);
+    claim(`the global nav's search opens in its frame at ${width}px, its field focused, the frame the window's height under the page's bar`, r.open && r.focus === 'cui-globalnav-searchinput' && Math.abs(r.height - (r.window - r.bar)) <= 1, r);
     claim(flyout ? `in its ${r.inner}px frame it hangs from the bar's bottom, the curtain to the frame's bottom` : `in its ${r.inner}px frame it is a sheet over the frame`,
       flyout ? Math.abs(r.search - r.nav) <= 0.5 && Math.abs(r.curtain - r.frameHeight) <= 0.5 : r.search === 0 && Math.abs(r.searchHeight - r.frameHeight) <= 0.5, r);
     await page.run(inFrame(title, flyout ? '.cui-globalnav-curtain' : '.cui-globalnav-search .cui-globalnav-closebutton', 'click'));
@@ -298,11 +302,11 @@ const menus = async (width) => {
   await page.run(wait(1000));
   const opened = await page.run(`Promise.resolve((() => {
     const f = ${frame('A global nav')};
-    const bar = document.querySelector('.cui-localnav').getBoundingClientRect().height;
+    const bar = document.querySelector('.cui-docs-bar').getBoundingClientRect().height;
     return { open: f.contentDocument.querySelector('.cui-globalnav-list').matches(':popover-open'), height: f.clientHeight, top: Math.round(f.getBoundingClientRect().top), window: innerHeight, bar };
   })())`);
   got.frames[`globalnav menu at ${width}`] = { closed, ...opened };
-  claim(`the global nav's menu opens in its frame at ${width}px, the frame the window's height under the local nav, scrolled there`, opened.open && Math.abs(opened.height - (opened.window - opened.bar)) <= 1 && Math.abs(opened.top - opened.bar) <= 1, { closed, ...opened });
+  claim(`the global nav's menu opens in its frame at ${width}px, the frame the window's height under the page's bar, scrolled there`, opened.open && Math.abs(opened.height - (opened.window - opened.bar)) <= 1 && Math.abs(opened.top - opened.bar) <= 1, { closed, ...opened });
   await page.run(inFrame('A global nav', '.cui-globalnav-closebutton', 'click'));
   await page.run(wait(700));
   const again = await height('A global nav');
@@ -350,7 +354,7 @@ const flyouts = async (width) => {
       inner: f.contentWindow.innerWidth, height: f.clientHeight, open: fly.matches(':popover-open'), shown: cs.display !== 'none' && cs.visibility === 'visible',
       bottom: Math.ceil(fly.getBoundingClientRect().bottom), content: Math.ceil(fly.querySelector('.cui-globalnav-flyoutpanel').getBoundingClientRect().bottom), menu: d.querySelector('.cui-globalnav-list').matches(':popover-open'),
       link: [frameBox.left + link.left + link.width / 2, frameBox.top + link.top + link.height / 2], left: frameBox.left,
-      window: innerHeight, bar: document.querySelector('.cui-localnav').getBoundingClientRect().height,
+      window: innerHeight, bar: document.querySelector('.cui-docs-bar').getBoundingClientRect().height,
     };
   })())`);
   const closed = await state();
@@ -372,7 +376,7 @@ const flyouts = async (width) => {
     await page.run(inFrame(title, `[popovertarget="${FLY.slice(1)}"]`, 'click'));
     await page.run(wait(1200));
     record.opened = await state();
-    claim(`its button opens it in its frame at ${width}px, a popover, the frame the window's height under the local nav`, record.opened.open && Math.abs(record.opened.height - (record.opened.window - record.opened.bar)) <= 1, { closed, ...record });
+    claim(`its button opens it in its frame at ${width}px, a popover, the frame the window's height under the page's bar`, record.opened.open && Math.abs(record.opened.height - (record.opened.window - record.opened.bar)) <= 1, { closed, ...record });
     await page.run(inFrame(title, `${FLY} > .cui-globalnav-curtain`, 'click'));
     await page.run(wait(700));
     record.curtained = await state();
@@ -383,11 +387,11 @@ const flyouts = async (width) => {
     await page.run(inFrame(title, `[popovertarget="${FLY.slice(1)}"]`, 'click'));
     await page.run(wait(1000));
     record.opened = await state();
-    claim(`at ${width}px the menu's row opens its flyout over the open menu, the frame the window's height under the local nav, or its content's where taller`, record.opened.open && record.opened.menu && Math.abs(record.opened.height - Math.max(record.opened.window - record.opened.bar, record.opened.content)) <= 1, { closed, ...record });
+    claim(`at ${width}px the menu's row opens its flyout over the open menu, the frame the window's height under the page's bar, or its content's where taller`, record.opened.open && record.opened.menu && Math.abs(record.opened.height - Math.max(record.opened.window - record.opened.bar, record.opened.content)) <= 1, { closed, ...record });
     await page.run(inFrame(title, `${FLY} .cui-globalnav-backbutton`, 'click'));
     await page.run(wait(800));
     record.back = await state();
-    claim(`its back button closes it at ${width}px, the menu still open over the frame, at least the window's height under the local nav`, !record.back.open && record.back.menu && record.back.height >= record.back.window - record.back.bar - 1, { closed, ...record });
+    claim(`its back button closes it at ${width}px, the menu still open over the frame, at least the window's height under the page's bar`, !record.back.open && record.back.menu && record.back.height >= record.back.window - record.back.bar - 1, { closed, ...record });
     await page.run(inFrame(title, `[popovertarget="${FLY.slice(1)}"]`, 'click'));
     await page.run(wait(1000));
     await page.run(inFrame(title, `${FLY} .cui-globalnav-closebutton`, 'click'));
@@ -425,7 +429,7 @@ const bag = async (width) => {
       inner: w.innerWidth, frameHeight: w.innerHeight, height: f.clientHeight, open: d.querySelector('.cui-globalnav-bag').matches(':popover-open'),
       focus: focus.className || focus.tagName, focusText: focus.textContent.trim().slice(0, 20),
       nav: box('.cui-globalnav').bottom, bag: box('.cui-globalnav-bag').top, bagHeight: box('.cui-globalnav-bag').height, curtain: box('.cui-globalnav-bag .cui-globalnav-curtain').bottom,
-      window: innerHeight, bar: document.querySelector('.cui-localnav').getBoundingClientRect().height,
+      window: innerHeight, bar: document.querySelector('.cui-docs-bar').getBoundingClientRect().height,
     };
   })())`);
   const closed = await state();
@@ -439,7 +443,7 @@ const bag = async (width) => {
   await page.run(wait(1200));
   const r = record.opened = await state();
   const flyout = r.inner >= 834;
-  claim(`the global nav's bag opens in its frame at ${width}px${keys ? ' by its keyboard (Return)' : ''}, the frame the window's height under the local nav`, r.open && Math.abs(r.height - (r.window - r.bar)) <= 1, { closed, ...record });
+  claim(`the global nav's bag opens in its frame at ${width}px${keys ? ' by its keyboard (Return)' : ''}, the frame the window's height under the page's bar`, r.open && Math.abs(r.height - (r.window - r.bar)) <= 1, { closed, ...record });
   claim(flyout ? `in its ${r.inner}px frame it hangs from the bar's bottom, the curtain to the frame's bottom${keys ? ', the focus kept on its button' : ''}` : `in its ${r.inner}px frame it is a sheet over the frame, its X focused`,
     flyout ? Math.abs(r.bag - r.nav) <= 0.5 && Math.abs(r.curtain - r.frameHeight) <= 0.5 && (!keys || r.focus === 'cui-globalnav-icon') : r.bag === 0 && Math.abs(r.bagHeight - r.frameHeight) <= 0.5 && r.focus === 'cui-globalnav-closebutton', { closed, ...record });
   if (keys && flyout) {
@@ -460,6 +464,68 @@ const bag = async (width) => {
   got.frames[`globalnav bag at ${width}`] = { closed, ...record };
 };
 
+// the docs layout (ciderui-zola's docs.html, ciderui's docs set), on a
+// component's page. From 1024px the navigator a column beside the page, 400px,
+// and as the page scrolls the bar sticks at the window's top and the
+// navigator under it; narrower, the navigator hidden, the bar's button opens
+// it as a sheet over the window (a popover) and its close button closes it,
+// no script. A section's chevron (its checkbox's label, clicked by the
+// page's script) hides its rows and shows them again. A link to a heading
+// (the address's #install) lands it at the bar's foot.
+const docs = async (width) => {
+  await page.go(`${ORIGIN}/components/button/`);
+  await page.run(wait(700));
+  const place = () => page.run(`Promise.resolve((() => {
+    const s = document.querySelector('.cui-docs-page-sidebar'), b = document.querySelector('.cui-docs-bar'), m = document.querySelector('.cui-docs-page-main');
+    const sb = s.getBoundingClientRect(), bb = b.getBoundingClientRect();
+    return { shown: getComputedStyle(s).display !== 'none', open: s.matches(':popover-open'), left: sb.left, top: sb.top, width: sb.width, height: sb.height, main: m.getBoundingClientRect().left, bar: bb.top, barFoot: bb.bottom, window: [innerWidth, innerHeight], scroll: scrollY };
+  })())`);
+  const rest = await place();
+  const record = { rest };
+  if (width >= 1024) {
+    await page.run('Promise.resolve((scrollTo(0, 1500), true))');
+    await page.run(wait(500));
+    record.scrolled = await place();
+    claim(`the navigator is a column of the page at ${width}px, 400px beside the content`, rest.shown && !rest.open && rest.left === 0 && rest.width === 400 && rest.main === 400, record);
+    claim(`as the page scrolls at ${width}px, the bar sticks at the window's top and the navigator under it`, record.scrolled.scroll > 0 && record.scrolled.bar === 0 && Math.abs(record.scrolled.top - record.scrolled.barFoot) <= 0.5, record);
+  } else {
+    await page.run(`Promise.resolve((document.querySelector('.cui-docs-bar-toggle').click(), true))`);
+    await page.run(wait(700));
+    record.opened = await place();
+    await page.run(`Promise.resolve((document.querySelector('.cui-docs-page-close').click(), true))`);
+    await page.run(wait(700));
+    record.closed = await place();
+    claim(`the navigator is hidden at ${width}px, and the bar's button opens it as a sheet over the window, with no script`, !rest.shown && record.opened.open && record.opened.left === 0 && record.opened.top === 0 && record.opened.width === record.opened.window[0] && record.opened.height === record.opened.window[1], record);
+    claim(`its close button closes it at ${width}px`, !record.closed.open && !record.closed.shown, record);
+    // the chevrons are the sheet's, opened for them
+    await page.run(`Promise.resolve((document.querySelector('.cui-docs-bar-toggle').click(), true))`);
+    await page.run(wait(700));
+  }
+  const rows = () => page.run(`Promise.resolve((() => {
+    const t = document.getElementById('docs-navigator-components');
+    return { checked: t.checked, shown: getComputedStyle(t.parentElement.querySelector(':scope > .cui-docs-navigator-list')).display !== 'none' };
+  })())`);
+  const chevron = `Promise.resolve((document.querySelector('label[for="docs-navigator-components"]').click(), true))`;
+  record.open = await rows();
+  await page.run(chevron);
+  await page.run(wait(300));
+  record.shut = await rows();
+  await page.run(chevron);
+  await page.run(wait(300));
+  record.again = await rows();
+  claim(`a section's chevron hides its rows and shows them again at ${width}px, with no script`, record.open.checked && record.open.shown && !record.shut.checked && !record.shut.shown && record.again.checked && record.again.shown, record);
+  // a link to a heading: the address's #install on Get Started, read once
+  // the page's scroll is at rest (unchanged for 10 frames)
+  await page.go(`${ORIGIN}/get-started/#install`);
+  record.target = await page.run(`new Promise((done) => {
+    let last = -1, same = 0;
+    const tick = () => { if (scrollY === last) same++; else { same = 0; last = scrollY; } if (same < 10) return requestAnimationFrame(tick); done({ scroll: scrollY, max: document.documentElement.scrollHeight - innerHeight, heading: document.getElementById('install').getBoundingClientRect().top, bar: document.querySelector('.cui-docs-bar').getBoundingClientRect().bottom }); };
+    setTimeout(() => requestAnimationFrame(tick), 700);
+  })`);
+  claim(`a link to a heading lands it at the bar's foot at ${width}px, or below it where the page ends first`, record.target.scroll > 0 && (Math.abs(record.target.heading - record.target.bar) <= 1 || (record.target.scroll >= record.target.max - 1 && record.target.heading > record.target.bar)), record);
+  got.frames[`docs at ${width}`] = record;
+};
+
 try {
   page = await open(BROWSER, `${ORIGIN}/`);
   got.browser = page.label;
@@ -471,6 +537,7 @@ try {
     await behave(width);
     await flyouts(width);
     await bag(width);
+    await docs(width);
     if (width < 834) await menus(width);
   }
 } finally {

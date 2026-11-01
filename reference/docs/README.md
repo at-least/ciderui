@@ -6,9 +6,9 @@ The probe behind the claim that ciderui's documentation (`docs/`, built with cid
 2. every example frame: it loads its stylesheet (`example.css`) and its pictures, is no wider than the page, and is as tall as its content (its root's box: its scroll height, never less than the frame's, would hide a frame too tall), and does not scroll down;
 3. a gallery's and a shelf's Next paddle (the theme's script, in their frames) scroll their row on a step (half its width at least, or to its end: the theme's step its width, snapped to an item's start), the previous paddle enabled (and the gallery's later dot current), the frame brought into the window first, as a hand's is;
 4. an example's link leaves its frame where it is (`about:srcdoc`);
-5. below 834px, the global nav's menu opens over its frame, the frame grown to the window's height under the page's sticky local nav and scrolled there, and back to the bar's height closed;
+5. below 834px, the global nav's menu opens over its frame, the frame grown to the window's height under the page's sticky bar (a component's page's docs bar; its local nav before 2026-11-01) and scrolled there, and back to the bar's height closed;
 6. below 834px, the local nav's menu opens below its bar, the frame grown to hold it;
-7. the global nav's search opens in its frame by its button, its field focused, the frame grown to the window's height under the local nav; in a frame 834px wide or more it hangs from the bar's bottom (anchor positioning), its curtain to the frame's bottom, in a narrower one it is a sheet over the frame; its curtain or its X closes it, the frame the bar's height again;
+7. the global nav's search opens in its frame by its button, its field focused, the frame grown to the window's height under the page's bar; in a frame 834px wide or more it hangs from the bar's bottom (anchor positioning), its curtain to the frame's bottom, in a narrower one it is a sheet over the frame; its curtain or its X closes it, the frame the bar's height again;
 8. the field's dropdown, with no script: nothing chosen, its label the placeholder (17px, 18px down) and its own text not shown; a choice made (its value set to an option's, as a pick sets it, and that option selected), its label at its top (12px, 10px down) and its text shown;
 9. the field's textarea, with no script: at rest its label the placeholder and its box's edge 1px; its textarea focused (by the page's script), the box's edge 2px of the accent and the label at its top; then blurred and filled (its value set), the label at its top and the edge 1px;
 10. the site's own search page, its query in its address as the global nav's search form sends it (`/search/?q=modal`): its field holding the query, and the rows ciderui-zola's script finds in Zola's index, the modal's page first;
@@ -16,10 +16,25 @@ The probe behind the claim that ciderui's documentation (`docs/`, built with cid
 12. a link's flyout, the second link's in the global nav's flyouts example: in a frame 834px wide or more, the pointer moved onto its link (`../browsers.mjs`'s `move`, the browser's own input; not on the simulator, whose screen has no pointer) shows it, no popover opened, the frame grown to hold it, and the pointer moved off the frame hides it, the frame the bar's height again; its button opens it as a popover, the frame the window's height under the local nav, and its curtain closes it, the frame the bar's height again. In a narrower frame, its menu opened, the row's button opens the flyout over the open menu, the frame the window's height under the local nav, or as tall as the flyout's content where that is taller (the frame never scrolls; in a window of its own the flyout scrolls itself); its back button closes it, the menu still open over the frame, at least the window's height under the local nav; its X closes both, the frame the bar's height again.
 13. the global nav's bag, an empty bag's, in its frame: its button focused and Return pressed (on the iOS simulator, which presses no key, its `click()`), it opens, the frame the window's height under the local nav; in a frame 834px wide or more it hangs from the bar's bottom, its curtain to the frame's bottom, the focus kept on its button, Tab going on into it to its line's link (Option-Tab in Safari, whose Tab skips links, as `../popover/` presses it), and Escape closes it, the focus back on its button, the frame the bar's height again; narrower it is a sheet over the frame, its X focused (`autofocus`), and Escape (on the simulator its X) closes it.
 14. a page's own footnote, the news article's (markdown's): its mark clicked, its note lands at the local nav's foot, or below it where the page ends first, not under it (`../anchor/`).
+15. the docs layout, on a component's page: from 1024px the navigator a column 400px beside the content, and as the page scrolls the bar sticks at the window's top and the navigator under it; narrower, the navigator hidden, the bar's button (its `click()`) opens it as a sheet over the whole window, a popover, and its close button closes it, no script;
+16. a section's chevron in the navigator (its checkbox's label, its `click()`; in the sheet below 1024px) hides its rows, and again shows them;
+17. a docs page's heading reached by its address's fragment (Get Started's `#install`) lands at the bar's foot, or below it where the page ends first (the theme's stylesheet holding `cui-docs-page :target`).
 
 The frames' elements are clicked by the page's script (`click()`, the activation a tap's click runs): safaridriver's taps on the iOS simulator never click (`../popover/`).
 
 ## The result
+
+Claims 15 to 17, and claims 5, 7, 12 and 13 read under the docs bar, with the documentation in the docs layout (ciderui 29efa07, ciderui-zola 9b7c72a), 2026-11-01:
+
+| browser | window | 1 to 14 | 15 | 16 | 17 |
+| --- | --- | --- | --- | --- | --- |
+| Chromium 151, Linux | 1440, 700 | ok (81 pages) | ok (the column 400px, 52px under the bar at 1500px down; the sheet 700 by 900) | ok | ok (51.78px under a 52px bar; 47.98 under 48) |
+| Firefox 153.0 (Playwright's), Linux, its window on a virtual X display | 1440, 700 | ok (81 pages) | ok | ok | ok |
+| Safari, the iOS simulator, Chrome on macOS | | not run: no Mac reachable from lab with a VM (`../vm.mjs`'s `tester` finds no `orchard`), Xcode or node (UNVERIFIED) | | | |
+
+The first Chromium run failed claim 17 (Get Started's `#install` at -0.22px under a 52px bar): the theme's prebuilt stylesheet was built before docs-page's `:target` rule (`build --check`: "differs"); rebuilt (ciderui-zola 9b7c72a), it holds, and `test/docs.mjs` now checks it in Chromium.
+
+The layout before the docs set (claims 1 to 14, under the local nav):
 
 | browser | window | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
