@@ -147,6 +147,13 @@ const CONTRACT = {
   // listing, light and in the dark, which DocC follows
   '--cui-c-docs-listing': [['docc', 'listing', W, 'background-color'], ['docc-dark', 'listing', W, 'background-color']],
   '--cui-c-docs-code': [['docc', 'listing.code', W, 'color'], ['docc-dark', 'listing.code', W, 'color']],
+  // its asides: the crash report's note, another article's important one,
+  // and the note's class set to each other kind (docc-asides)
+  ...Object.fromEntries([['note', 'docc'], ['important', 'docc-important'], ['warning', 'docc-asides'], ['tip', 'docc-asides'], ['deprecated', 'docc-asides'], ['experiment', 'docc-asides']]
+    .flatMap(([kind, page]) => [
+      [`--cui-c-docs-${kind}`, [[page, kind, W, 'background-color'], [`${page}-dark`, kind, W, 'background-color']]],
+      [`--cui-c-docs-${kind}-edge`, [[page, kind, W, 'border-top-color'], [`${page}-dark`, kind, W, 'border-top-color']]],
+    ])),
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-') && !k.startsWith('--cui-c-console-'));
@@ -296,6 +303,11 @@ const MIN = [
   ['--cui-c-tag', ['--cui-c-bg'], 4.5],
   // a docs listing's code on its ground
   ['--cui-c-docs-code', ['--cui-c-docs-listing'], 4.5],
+  // an aside's label (its edge's color) and its text on its ground
+  ...['note', 'important', 'warning', 'tip', 'deprecated', 'experiment'].flatMap(kind => [
+    [`--cui-c-docs-${kind}-edge`, [`--cui-c-docs-${kind}`], 4.5],
+    ['--cui-c-text', [`--cui-c-docs-${kind}`], 4.5],
+  ]),
 ];
 for (const [fg, grounds, min] of MIN) {
   for (const bg of grounds) {

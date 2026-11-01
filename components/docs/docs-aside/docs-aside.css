@@ -1,0 +1,87 @@
+/* ciderui — the docs aside: a note set apart from an article's text in
+ * Apple's developer documentation, its label over it, in the color of its
+ * kind.
+ *
+ * From Apple's developer documentation (DocC, reference/apple.com/):
+ * docc:note* (a note), docc-important:* (an important aside), docc-asides:*
+ * (the note's class set to warning, tip, deprecated and experiment, which
+ * DocC's stylesheets style and no page read carries), and their -dark;
+ * docc-page:content.note.* (its label's and its text's room).
+ *
+ *   <aside class="cui-docs-aside" aria-label="Note">
+ *     <p class="cui-docs-aside-label">Note</p>
+ *     <p>…</p>
+ *   </aside>
+ *
+ * cui-docs-aside       16px in, a 1px edge all round and 15px corners, a
+ *                      hairline's blur inside and outside the edge; the
+ *                      text 17/25 on its kind's ground; what follows the
+ *                      label 6.8px under the one before
+ *   data-variant       important, warning, tip, deprecated, experiment; a
+ *                      note without one
+ * cui-docs-aside-label its kind's word at 600, 17/26, in the edge's color
+ *
+ * DocC's: the room, the edge and its blur, the corners, the type, each
+ * kind's ground and edge, light and dark. ciderui's: the letter-spacing
+ * (tokens.css); a second paragraph 6.8px under the first, as the text under
+ * the label (DocC's pages read show none). Its place, the room above it
+ * (27.2px), is the content's. */
+
+@layer components {
+  .cui-docs-aside {
+    --cui-docs-aside-ground: var(--cui-c-docs-note);
+    --cui-docs-aside-edge: var(--cui-c-docs-note-edge);
+
+    box-sizing: border-box;
+    border: 1px solid var(--cui-docs-aside-edge);
+    border-radius: 15px;
+    padding: 16px;
+    box-shadow: inset 0 0 1px 0 var(--cui-docs-aside-edge), 0 0 1px 0 var(--cui-docs-aside-edge);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: var(--cui-tracking-17);
+    color: var(--cui-c-text);
+    background-color: var(--cui-docs-aside-ground);
+
+    > :where(*) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    > :where(* + *) {
+      margin-top: 6.8px;
+    }
+  }
+
+  .cui-docs-aside[data-variant="important"] {
+    --cui-docs-aside-ground: var(--cui-c-docs-important);
+    --cui-docs-aside-edge: var(--cui-c-docs-important-edge);
+  }
+
+  .cui-docs-aside[data-variant="warning"] {
+    --cui-docs-aside-ground: var(--cui-c-docs-warning);
+    --cui-docs-aside-edge: var(--cui-c-docs-warning-edge);
+  }
+
+  .cui-docs-aside[data-variant="tip"] {
+    --cui-docs-aside-ground: var(--cui-c-docs-tip);
+    --cui-docs-aside-edge: var(--cui-c-docs-tip-edge);
+  }
+
+  .cui-docs-aside[data-variant="deprecated"] {
+    --cui-docs-aside-ground: var(--cui-c-docs-deprecated);
+    --cui-docs-aside-edge: var(--cui-c-docs-deprecated-edge);
+  }
+
+  .cui-docs-aside[data-variant="experiment"] {
+    --cui-docs-aside-ground: var(--cui-c-docs-experiment);
+    --cui-docs-aside-edge: var(--cui-c-docs-experiment-edge);
+  }
+
+  .cui-docs-aside-label {
+    font-weight: 600;
+    line-height: 26px;
+    color: var(--cui-docs-aside-edge);
+  }
+}

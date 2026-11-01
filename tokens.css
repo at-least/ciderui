@@ -71,6 +71,8 @@
  * measured on both sides (reference/apple.com/'s docc, docc-dark):
  *   docs-listing, docs-code a code listing's ground (the alternate ground in
  *                           light alone) and its code (black, white dark)
+ *   docs-<kind>, -edge      an aside's ground, and its edge and label: note,
+ *                           important, warning, tip, deprecated, experiment
  *
  * The console's colors (--cui-c-console-*), the console parts' (cui-console-*):
  * App Store Connect's newer look's color roles, one slot per role a part
@@ -141,6 +143,18 @@
   --cui-c-on-close-hover: rgb(0 0 0 / 0.72);
   --cui-c-docs-listing: light-dark(#f5f5f7, #333336);
   --cui-c-docs-code: light-dark(#000000, #ffffff);
+  --cui-c-docs-note: light-dark(#f5f5f7, #323232);
+  --cui-c-docs-note-edge: light-dark(#696969, #9a9a9e);
+  --cui-c-docs-important: light-dark(#fffbf2, #2b1e00);
+  --cui-c-docs-important-edge: light-dark(#9e6700, #ffb50f);
+  --cui-c-docs-warning: light-dark(#fff2f4, #330000);
+  --cui-c-docs-warning-edge: light-dark(#e30000, #ff3037);
+  --cui-c-docs-tip: light-dark(#faffff, #002d2b);
+  --cui-c-docs-tip-edge: light-dark(#3d777d, #7dffe4);
+  --cui-c-docs-deprecated: light-dark(#fff9f4, #290d00);
+  --cui-c-docs-deprecated-edge: light-dark(#bf4800, #f56300);
+  --cui-c-docs-experiment: light-dark(#fcf8ff, #190325);
+  --cui-c-docs-experiment-edge: light-dark(#8c28c2, #a95ed2);
 
   --cui-c-console-neutral-label-primary: light-dark(oklch(0.0% 0.000 0.0 / 0.85), oklch(100.0% 0.000 0 / 0.85));
   --cui-c-console-neutral-background-primary: light-dark(oklch(100.0% 0.000 0), oklch(0.0% 0.000 0));

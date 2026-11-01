@@ -2,7 +2,7 @@
  "url": "https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report",
  "finalUrl": "https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-11-01T02:13:03.502Z",
+ "date": "2026-11-01T02:33:20.491Z",
  "widths": {
   "390": {
    "sidebar": {
@@ -666,6 +666,28 @@
     "box": {
      "width": 341.25,
      "height": 191.796875
+    }
+   },
+   "content.note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 307.25,
+     "height": 26
+    }
+   },
+   "content.note.text": {
+    "html": "<p data-v-5ed0444c=\"\"></p>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 307.25,
+     "height": 125
     }
    },
    "seealso": {
@@ -1623,6 +1645,28 @@
      "height": 141.796875
     }
    },
+   "content.note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 609.125,
+     "height": 26
+    }
+   },
+   "content.note.text": {
+    "html": "<p data-v-5ed0444c=\"\"></p>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 609.125,
+     "height": 75
+    }
+   },
    "seealso": {
     "html": "<section data-v-68542180=\"\" data-v-bbeda56a=\"\" data-v-075e8b5e=\"\" class=\"contenttable alt-light\"><div data-v-68542180=\"\" class=\"container\"><h2 data-v-220404f1=\"\" data-v-68542180=\"\" id=\"see-also\" class=\"title\"><a data-v-220404f1=\"\" href=\"/do",
     "styles": {
@@ -2576,6 +2620,28 @@
     "box": {
      "width": 576,
      "height": 141.796875
+    }
+   },
+   "content.note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 542,
+     "height": 26
+    }
+   },
+   "content.note.text": {
+    "html": "<p data-v-5ed0444c=\"\"></p>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 542,
+     "height": 75
     }
    },
    "seealso": {
@@ -3533,6 +3599,28 @@
      "height": 141.796875
     }
    },
+   "content.note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 573,
+     "height": 26
+    }
+   },
+   "content.note.text": {
+    "html": "<p data-v-5ed0444c=\"\"></p>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 573,
+     "height": 75
+    }
+   },
    "seealso": {
     "html": "<section data-v-68542180=\"\" data-v-bbeda56a=\"\" data-v-075e8b5e=\"\" class=\"contenttable alt-light\"><div data-v-68542180=\"\" class=\"container\"><h2 data-v-220404f1=\"\" data-v-68542180=\"\" id=\"see-also\" class=\"title\"><a data-v-220404f1=\"\" href=\"/do",
     "styles": {
@@ -4486,6 +4574,28 @@
     "box": {
      "width": 608,
      "height": 141.796875
+    }
+   },
+   "content.note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 574,
+     "height": 26
+    }
+   },
+   "content.note.text": {
+    "html": "<p data-v-5ed0444c=\"\"></p>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 574,
+     "height": 75
     }
    },
    "seealso": {
@@ -5443,6 +5553,28 @@
      "height": 141.796875
     }
    },
+   "content.note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 626,
+     "height": 26
+    }
+   },
+   "content.note.text": {
+    "html": "<p data-v-5ed0444c=\"\"></p>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 626,
+     "height": 75
+    }
+   },
    "seealso": {
     "html": "<section data-v-68542180=\"\" data-v-bbeda56a=\"\" data-v-075e8b5e=\"\" class=\"contenttable alt-light\"><div data-v-68542180=\"\" class=\"container\"><h2 data-v-220404f1=\"\" data-v-68542180=\"\" id=\"see-also\" class=\"title\"><a data-v-220404f1=\"\" href=\"/do",
     "styles": {
@@ -6398,6 +6530,28 @@
      "height": 141.796875
     }
    },
+   "content.note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 626,
+     "height": 26
+    }
+   },
+   "content.note.text": {
+    "html": "<p data-v-5ed0444c=\"\"></p>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 626,
+     "height": 75
+    }
+   },
    "seealso": {
     "html": "<section data-v-68542180=\"\" data-v-bbeda56a=\"\" data-v-075e8b5e=\"\" class=\"contenttable alt-light\"><div data-v-68542180=\"\" class=\"container\"><h2 data-v-220404f1=\"\" data-v-68542180=\"\" id=\"see-also\" class=\"title\"><a data-v-220404f1=\"\" href=\"/do",
     "styles": {
@@ -7351,6 +7505,28 @@
     "box": {
      "width": 455,
      "height": 166.796875
+    }
+   },
+   "content.note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 421,
+     "height": 26
+    }
+   },
+   "content.note.text": {
+    "html": "<p data-v-5ed0444c=\"\"></p>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 421,
+     "height": 100
     }
    },
    "seealso": {
@@ -8641,6 +8817,28 @@
      "height": 141.796875
     }
    },
+   "content.note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 550,
+     "height": 26
+    }
+   },
+   "content.note.text": {
+    "html": "<p data-v-5ed0444c=\"\"></p>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 550,
+     "height": 75
+    }
+   },
    "seealso": {
     "html": "<section data-v-68542180=\"\" data-v-bbeda56a=\"\" data-v-075e8b5e=\"\" class=\"contenttable alt-light\"><div data-v-68542180=\"\" class=\"container\"><h2 data-v-220404f1=\"\" data-v-68542180=\"\" id=\"see-also\" class=\"title\"><a data-v-220404f1=\"\" href=\"/do",
     "styles": {
@@ -9927,6 +10125,28 @@
     "box": {
      "width": 634,
      "height": 141.796875
+    }
+   },
+   "content.note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 600,
+     "height": 26
+    }
+   },
+   "content.note.text": {
+    "html": "<p data-v-5ed0444c=\"\"></p>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 600,
+     "height": 75
     }
    },
    "seealso": {
@@ -11217,6 +11437,28 @@
      "height": 141.796875
     }
    },
+   "content.note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 601,
+     "height": 26
+    }
+   },
+   "content.note.text": {
+    "html": "<p data-v-5ed0444c=\"\"></p>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 601,
+     "height": 75
+    }
+   },
    "seealso": {
     "html": "<section data-v-68542180=\"\" data-v-bbeda56a=\"\" data-v-075e8b5e=\"\" class=\"contenttable alt-light\"><div data-v-68542180=\"\" class=\"container\"><h2 data-v-220404f1=\"\" data-v-68542180=\"\" id=\"see-also\" class=\"title\"><a data-v-220404f1=\"\" href=\"/do",
     "styles": {
@@ -12503,6 +12745,28 @@
     "box": {
      "width": 820,
      "height": 116.796875
+    }
+   },
+   "content.note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 786,
+     "height": 26
+    }
+   },
+   "content.note.text": {
+    "html": "<p data-v-5ed0444c=\"\"></p>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 786,
+     "height": 50
     }
    },
    "seealso": {
@@ -13793,6 +14057,28 @@
      "height": 116.796875
     }
    },
+   "content.note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 850,
+     "height": 26
+    }
+   },
+   "content.note.text": {
+    "html": "<p data-v-5ed0444c=\"\"></p>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 850,
+     "height": 50
+    }
+   },
    "seealso": {
     "html": "<section data-v-68542180=\"\" data-v-bbeda56a=\"\" data-v-075e8b5e=\"\" class=\"contenttable alt-light\"><div data-v-68542180=\"\" class=\"container\"><h2 data-v-220404f1=\"\" data-v-68542180=\"\" id=\"see-also\" class=\"title\"><a data-v-220404f1=\"\" href=\"/do",
     "styles": {
@@ -15079,6 +15365,28 @@
     "box": {
      "width": 920,
      "height": 116.796875
+    }
+   },
+   "content.note.label": {
+    "html": "<p data-v-5ed0444c=\"\" class=\"label\"></p>",
+    "styles": {
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 886,
+     "height": 26
+    }
+   },
+   "content.note.text": {
+    "html": "<p data-v-5ed0444c=\"\"></p>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 886,
+     "height": 50
     }
    },
    "seealso": {

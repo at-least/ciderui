@@ -6,4 +6,5 @@
  *
  * One import per part, in the order of their names. */
 
+@import "./components/docs/docs-aside/docs-aside.css";
 @import "./components/docs/docs-content/docs-content.css";

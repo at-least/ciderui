@@ -8,10 +8,11 @@
 // breadcrumbs, a crumb's separator, a crumb's link hovered, the current
 // one, the eyebrow and the title's room); the content's top and its
 // elements docc did not read (h3, a list, its item, an inline image, a
-// listing's and a note's room); the See Also section (its ground, its title, a group's title, a
-// link with its icon, hovered, its abstract); the navigator, read where it
-// shows, from 1024px (the technology's title, a group's title, an item
-// nested, its depth's spacer, its toggle, its icon, the current item).
+// listing's and a note's room, its label's and its text's); the See Also
+// section (its ground, its title, a group's title, a link with its icon,
+// hovered, its abstract); the navigator, read where it shows, from 1024px
+// (the technology's title, a group's title, an item nested, its depth's
+// spacer, its toggle, its icon, the current item).
 // docc-page-dark reads the same in the dark.
 import { TYPE, BOX, LINK, FLEX } from './common.mjs';
 
@@ -52,6 +53,8 @@ export const probes = [
   { name: 'content.image.img', select: '.primary-content .content > p.inline-image-container img', props: ['max-width', 'width', 'height', 'display', 'margin-left', 'margin-right'], box: true },
   { name: 'content.listing', select: '.primary-content .content > .code-listing', props: ['margin-top', 'margin-bottom'], box: true },
   { name: 'content.note', select: '.primary-content .content > aside.note', props: ['margin-top', 'margin-bottom'], box: true },
+  { name: 'content.note.label', select: '.primary-content .content > aside.note p.label', props: ['margin-top', 'margin-bottom'], box: true },
+  { name: 'content.note.text', select: '.primary-content .content > aside.note p:not(.label)', props: ['margin-top', 'margin-bottom'], box: true },
   { name: 'seealso', select: 'section.contenttable', props: [...BOX, 'color'], box: true },
   { name: 'seealso.container', select: 'section.contenttable > .container', props: ROOM, box: true },
   { name: 'seealso.title', select: 'section.contenttable h2.title', props: [...TYPE, ...ROOM, 'border-bottom-width', 'border-bottom-style', 'border-bottom-color'], box: true },

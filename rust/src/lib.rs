@@ -17,6 +17,7 @@
 pub mod console;
 #[cfg(feature = "css")]
 pub mod css;
+pub mod docs;
 pub mod icon;
 pub mod lucide;
 pub mod site;
