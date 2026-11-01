@@ -16,6 +16,6 @@
  "fields dark | #project | 1200 | background-color": "oklch(0 0 0)",
  "fields dark | #project | 1200 | border-top-color": "oklch(0.879 0.015 286.1 / 0.42)",
  "fields dark | #project | 1200 | color": "oklch(1 0 0 / 0.85)",
- "fields dark | #url | 1200 | border-top-color": "oklch(0.654 0.232 28.8)",
+ "fields dark | #url | 1200 | border-top-color": "oklch(0.706 0.184 29.4)",
  "fields dark | #url | 1200 | background-color": "oklch(0.654 0.232 28.8 / 0.12)"
 }

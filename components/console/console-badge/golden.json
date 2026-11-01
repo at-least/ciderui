@@ -2,12 +2,12 @@
  "badges | .cui-console-badge[data-color=\"error\"] | 1200 | color": "oklch(0.495 0.19 31.5)",
  "badges | .cui-console-badge[data-color=\"brand\"] | 1200 | color": "oklch(0.497 0.209 260.5)",
  "badges | .cui-console-badge[data-color=\"info\"] | 1200 | color": "oklch(0.497 0.209 260.5)",
- "badges | .cui-console-badge[data-color=\"success\"] | 1200 | color": "oklch(0.504 0.125 152.9)",
+ "badges | .cui-console-badge[data-color=\"success\"] | 1200 | color": "oklch(0.385 0.094 150.1)",
  "badges | .cui-console-badge[data-color=\"warning\"] | 1200 | color": "oklch(0.486 0.112 61.8)",
  "badges | .cui-console-badge[data-color=\"error\"] | 390 | color": "oklch(0.495 0.19 31.5)",
  "badges | .cui-console-badge[data-color=\"brand\"] | 390 | color": "oklch(0.497 0.209 260.5)",
  "badges | .cui-console-badge[data-color=\"info\"] | 390 | color": "oklch(0.497 0.209 260.5)",
- "badges | .cui-console-badge[data-color=\"success\"] | 390 | color": "oklch(0.504 0.125 152.9)",
+ "badges | .cui-console-badge[data-color=\"success\"] | 390 | color": "oklch(0.385 0.094 150.1)",
  "badges | .cui-console-badge[data-color=\"warning\"] | 390 | color": "oklch(0.486 0.112 61.8)",
  "plain badges | .cui-console-badge:not([data-color]) | 1200 | background-color": "rgba(0, 0, 0, 0)",
  "plain badges | .cui-console-badge[data-color=\"brand\"] | 1200 | background-color": "rgba(0, 0, 0, 0)",
@@ -26,11 +26,11 @@
  "badges dark | .cui-console-badge[data-color=\"brand\"] | 1200 | background-color": "oklch(0.683 0.167 256.6 / 0.15)",
  "badges dark | .cui-console-badge[data-color=\"brand\"] | 1200 | color": "oklch(0.683 0.167 256.6)",
  "badges dark | .cui-console-badge[data-color=\"info\"] | 1200 | background-color": "oklch(0.624 0.206 255.5 / 0.15)",
- "badges dark | .cui-console-badge[data-color=\"info\"] | 1200 | color": "oklch(0.624 0.206 255.5)",
+ "badges dark | .cui-console-badge[data-color=\"info\"] | 1200 | color": "oklch(0.683 0.167 256.6)",
  "badges dark | .cui-console-badge[data-color=\"success\"] | 1200 | background-color": "oklch(0.756 0.208 146.9 / 0.15)",
  "badges dark | .cui-console-badge[data-color=\"success\"] | 1200 | color": "oklch(0.756 0.208 146.9)",
  "badges dark | .cui-console-badge[data-color=\"warning\"] | 1200 | background-color": "oklch(0.885 0.181 94.8 / 0.15)",
  "badges dark | .cui-console-badge[data-color=\"warning\"] | 1200 | color": "oklch(0.885 0.181 94.8)",
  "badges dark | .cui-console-badge[data-color=\"error\"] | 1200 | background-color": "oklch(0.654 0.232 28.8 / 0.15)",
- "badges dark | .cui-console-badge[data-color=\"error\"] | 1200 | color": "oklch(0.654 0.232 28.8)"
+ "badges dark | .cui-console-badge[data-color=\"error\"] | 1200 | color": "oklch(0.706 0.184 29.4)"
 }

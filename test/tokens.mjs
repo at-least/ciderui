@@ -239,14 +239,14 @@ const FITTED = {
   '--cui-c-console-error-accent-primary': { light: 'oklch(49.5% 0.190 31.5)', dark: 'oklch(50.0% 0.186 31.4)', why: 'white on the toolkit\'s red is 3.3:1' },
   '--cui-c-console-field-border': { light: 'oklch(35.9% 0.012 285.8 / 0.58)', dark: 'oklch(87.9% 0.015 286.1 / 0.42)', why: 'a field\'s edge, at the toolkit\'s 0.18, is 1.4:1 on white; a control\'s edge is held to 3:1' },
   '--cui-c-console-brand-label-on-fill': { light: 'oklch(49.7% 0.209 260.5)', why: 'the brand\'s label on the gray fill is 4.4:1' },
-  '--cui-c-console-info-label-primary': { light: 'oklch(49.7% 0.209 260.5)', why: 'the toolkit\'s info blue is 4.0:1 on white' },
-  '--cui-c-console-success-label-primary': { light: 'oklch(50.4% 0.125 152.9)', why: 'the toolkit\'s green is 2.2:1 on white' },
+  '--cui-c-console-info-label-primary': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(68.3% 0.167 256.6)', why: 'the toolkit\'s info blue is 4.0:1 on white; its derived dark blue-500 short of 4.5:1 on its tint over a card' },
+  '--cui-c-console-success-label-primary': { light: 'oklch(38.5% 0.094 150.1)', why: 'the toolkit\'s green is 2.2:1 on white, green-800 short of 4.5:1 on the gray fill over a card' },
   '--cui-c-console-warning-label-primary': { light: 'oklch(48.6% 0.112 61.8)', why: 'the toolkit\'s yellow is 1.6:1 on white' },
-  '--cui-c-console-error-label-primary': { light: 'oklch(49.5% 0.190 31.5)', why: 'the toolkit\'s red is 3.6:1 on white, red-600 4.2:1 on a gray button' },
+  '--cui-c-console-error-label-primary': { light: 'oklch(49.5% 0.190 31.5)', dark: 'oklch(70.6% 0.184 29.4)', why: 'the toolkit\'s red is 3.6:1 on white, red-600 4.2:1 on a gray button; its derived dark red-500 short of 4.5:1 on its tint and a gray button over a card (crashcart: 4.09:1, 3.92:1)' },
   '--cui-c-console-error-fill-hover': { light: 'oklch(37.8% 0.147 29.3)', dark: 'oklch(40.9% 0.152 29.5)', why: 'white on the toolkit\'s lighter red is 3.0:1' },
   '--cui-c-console-error-fill-press': { light: 'oklch(37.8% 0.147 29.3)', dark: 'oklch(40.9% 0.152 29.5)', why: 'white on the toolkit\'s red is 3.5:1' },
   '--cui-c-console-error-label-hover': { light: 'oklch(49.5% 0.190 31.5)', dark: 'oklch(70.6% 0.184 29.4)', why: 'the toolkit\'s lighter red is 2.9:1 on white, its derived dark 4.3:1 on a gray button' },
-  '--cui-c-console-error-label-press': { light: 'oklch(49.5% 0.190 31.5)', why: 'the toolkit\'s red is 3.8:1 on white' },
+  '--cui-c-console-error-label-press': { light: 'oklch(49.5% 0.190 31.5)', dark: 'oklch(70.6% 0.184 29.4)', why: 'the toolkit\'s red is 3.8:1 on white; its derived dark red-500 short of 4.5:1 on a gray button over a card' },
 };
 for (const name of Object.keys(vars).filter(k => k.startsWith('--cui-c-console-'))) {
   const source = sourceOf(name);
@@ -302,6 +302,7 @@ for (const [fg, grounds, min] of MIN) {
 // a console part's text on the console's grounds: each ground the layers
 // named, over the page (white light, black dark)
 const PAGE = '--cui-c-console-neutral-background-primary';
+const CARD = '--cui-c-console-card';
 const ON_FILLS = ['--cui-c-console-brand-accent-primary', '--cui-c-console-brand-fill-hover', '--cui-c-console-error-accent-primary', '--cui-c-console-error-fill-hover'];
 const GRAY = ['--cui-c-console-neutral-fill-tertiary', '--cui-c-console-gray-fill-hover', '--cui-c-console-gray-fill-press'];
 const CONSOLE_MIN = [
@@ -326,6 +327,11 @@ const CONSOLE_MIN = [
   ...['--cui-c-console-brand-label-primary', '--cui-c-console-brand-label-hover', '--cui-c-console-brand-label-press'].map((fg) => [fg, [[PAGE]], 4.5]),
   // a gray button's red label: on the page and on its gray
   ...['--cui-c-console-error-label-primary', '--cui-c-console-error-label-hover', '--cui-c-console-error-label-press'].map((fg) => [fg, [[PAGE], ...GRAY.map((g) => [g, PAGE])], 4.5]),
+  // the same on a card, whose ground is lighter than the page's in dark: a
+  // badge on its tint and on the gray fill, a gray button's labels on its
+  // gray (crashcart's badges and red buttons sit on cards)
+  ...['brand', 'info', 'success', 'warning', 'error'].map((role) => [role === 'brand' ? '--cui-c-console-brand-label-on-fill' : `--cui-c-console-${role}-label-primary`, [[`--cui-c-console-${role}-accent-quaternary`, CARD, PAGE], ['--cui-c-console-neutral-fill-tertiary', CARD, PAGE]], 4.5]),
+  ...['--cui-c-console-neutral-label-primary', '--cui-c-console-brand-label-on-fill', '--cui-c-console-error-label-primary', '--cui-c-console-error-label-hover', '--cui-c-console-error-label-press'].map((fg) => [fg, GRAY.map((g) => [g, CARD, PAGE]), 4.5]),
 ];
 CONSOLE_MIN.push(
   // a field's edge and its red edge in error: 3:1 on the page and on a card

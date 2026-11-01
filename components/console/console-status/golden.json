@@ -7,7 +7,7 @@
  "statuses | .cui-console-status[data-color=\"brand\"] .cui-console-status-mark | 1200 | border-top-left-radius": "50%",
  "statuses | .cui-console-status[data-color=\"info\"] .cui-console-status-mark | 1200 | background-color": "oklch(0.497 0.209 260.5)",
  "statuses | .cui-console-status[data-color=\"info\"] .cui-console-status-mark | 1200 | border-top-left-radius": "50%",
- "statuses | .cui-console-status[data-color=\"success\"] .cui-console-status-mark | 1200 | background-color": "oklch(0.504 0.125 152.9)",
+ "statuses | .cui-console-status[data-color=\"success\"] .cui-console-status-mark | 1200 | background-color": "oklch(0.385 0.094 150.1)",
  "statuses | .cui-console-status[data-color=\"success\"] .cui-console-status-mark | 1200 | border-top-left-radius": "50%",
  "statuses | .cui-console-status[data-color=\"warning\"] .cui-console-status-mark | 1200 | background-color": "oklch(0.486 0.112 61.8)",
  "statuses | .cui-console-status[data-color=\"warning\"] .cui-console-status-mark | 1200 | border-top-left-radius": "50%",
@@ -21,7 +21,7 @@
  "statuses | .cui-console-status[data-color=\"brand\"] .cui-console-status-mark | 390 | border-top-left-radius": "50%",
  "statuses | .cui-console-status[data-color=\"info\"] .cui-console-status-mark | 390 | background-color": "oklch(0.497 0.209 260.5)",
  "statuses | .cui-console-status[data-color=\"info\"] .cui-console-status-mark | 390 | border-top-left-radius": "50%",
- "statuses | .cui-console-status[data-color=\"success\"] .cui-console-status-mark | 390 | background-color": "oklch(0.504 0.125 152.9)",
+ "statuses | .cui-console-status[data-color=\"success\"] .cui-console-status-mark | 390 | background-color": "oklch(0.385 0.094 150.1)",
  "statuses | .cui-console-status[data-color=\"success\"] .cui-console-status-mark | 390 | border-top-left-radius": "50%",
  "statuses | .cui-console-status[data-color=\"warning\"] .cui-console-status-mark | 390 | background-color": "oklch(0.486 0.112 61.8)",
  "statuses | .cui-console-status[data-color=\"warning\"] .cui-console-status-mark | 390 | border-top-left-radius": "50%",
@@ -33,8 +33,8 @@
  "statuses forced colors | .cui-console-status[data-color=\"error\"] .cui-console-status-mark | 1200 | background-color": "rgb(0, 0, 0)",
  "statuses dark | .cui-console-status:not([data-color]) .cui-console-status-mark | 1200 | background-color": "oklch(0.879 0.015 286.1 / 0.6)",
  "statuses dark | .cui-console-status[data-color=\"brand\"] .cui-console-status-mark | 1200 | background-color": "oklch(0.683 0.167 256.6)",
- "statuses dark | .cui-console-status[data-color=\"info\"] .cui-console-status-mark | 1200 | background-color": "oklch(0.624 0.206 255.5)",
+ "statuses dark | .cui-console-status[data-color=\"info\"] .cui-console-status-mark | 1200 | background-color": "oklch(0.683 0.167 256.6)",
  "statuses dark | .cui-console-status[data-color=\"success\"] .cui-console-status-mark | 1200 | background-color": "oklch(0.756 0.208 146.9)",
  "statuses dark | .cui-console-status[data-color=\"warning\"] .cui-console-status-mark | 1200 | background-color": "oklch(0.885 0.181 94.8)",
- "statuses dark | .cui-console-status[data-color=\"error\"] .cui-console-status-mark | 1200 | background-color": "oklch(0.654 0.232 28.8)"
+ "statuses dark | .cui-console-status[data-color=\"error\"] .cui-console-status-mark | 1200 | background-color": "oklch(0.706 0.184 29.4)"
 }

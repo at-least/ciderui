@@ -46,6 +46,6 @@
  "dark | .flex > :nth-child(2) | 1200 | background-color": "oklch(0.512 0.203 260.5)",
  "dark | .flex > :nth-child(2) | 1200 | color": "oklch(1 0 0 / 0.95)",
  "dark | .flex > :nth-child(3) | 1200 | color": "oklch(0.683 0.167 256.6)",
- "dark | .flex > :nth-child(4) | 1200 | color": "oklch(0.654 0.232 28.8)",
+ "dark | .flex > :nth-child(4) | 1200 | color": "oklch(0.706 0.184 29.4)",
  "dark | .flex > :nth-child(5) | 1200 | background-color": "oklch(0.5 0.186 31.4)"
 }
