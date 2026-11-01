@@ -156,6 +156,8 @@ const CONTRACT = {
     ])),
   // the documentation's bar's hairline, light and dark
   '--cui-c-docs-bar-rule': [['docc-page', 'bar.rule', W, 'background-color'], ['docc-page-dark', 'bar.rule', W, 'background-color']],
+  // the navigator's current row
+  '--cui-c-docs-current': [['docc-page', 'navigator.current.row', W, 'background-color'], ['docc-page-dark', 'navigator.current.row', W, 'background-color']],
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-') && !k.startsWith('--cui-c-console-'));
@@ -310,6 +312,9 @@ const MIN = [
     [`--cui-c-docs-${kind}-edge`, [`--cui-c-docs-${kind}`], 4.5],
     ['--cui-c-text', [`--cui-c-docs-${kind}`], 4.5],
   ]),
+  // the navigator's current row's words, and its glyph (a mark, 3:1)
+  ['--cui-c-text', ['--cui-c-docs-current'], 4.5],
+  ['--cui-c-text-2', ['--cui-c-docs-current'], 3],
 ];
 for (const [fg, grounds, min] of MIN) {
   for (const bg of grounds) {
