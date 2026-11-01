@@ -1,5 +1,6 @@
 // A page in Playwright's Chromium (test/chromium.mjs: the image's, hinting
-// off) with ciderui's compiled CSS, for the checks, at a width
+// off) with ciderui's compiled CSS (its url(fonts/…) the repository's
+// fonts/), for the checks, at a width
 // a check sets, its states forced through the DevTools protocol with
 // transitions off and styles flushed before they return
 // (reference/apple.com/: a state's last change must land while they are off).
@@ -16,7 +17,22 @@
 // Chromium serves a run, each page in a context of its own (its close closes
 // that); quit() closes the browser, as a runner ends.
 
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { launch } from './chromium.mjs';
+import { ROOT } from './compile.mjs';
+
+// The stylesheet's url(fonts/…) rewritten to an origin whose fonts are served
+// from memory: not inlined as data: URLs, which put every font into every
+// case's page. The page stays about:blank, set by setContent: navigated to that
+// origin, the pointer's place (0, 0) hovered what the page drew there; a
+// <base> for it took #fragment links off the page.
+const FONTS = 'http://ciderui.test/fonts/';
+const fonts = new Map();
+const font = (name) => {
+  if (!fonts.has(name)) fonts.set(name, readFileSync(join(ROOT, 'fonts', name)));
+  return fonts.get(name);
+};
 
 let browser;
 export const quit = async () => {
@@ -30,7 +46,13 @@ export async function open(css, html, { width = 1200, height = 800, reducedMotio
   const page = await context.newPage();
   const cdp = await page.context().newCDPSession(page);
   if (touch) await cdp.send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
-  await page.setContent(`<!doctype html><html lang="en"><head><meta charset="utf-8"><style>${css}</style></head><body>${html}</body></html>`);
+  // about:blank's origin is opaque: a font from another needs CORS
+  await context.route(`${FONTS}*`, (route) => route.fulfill({ contentType: 'font/woff2', headers: { 'access-control-allow-origin': '*' }, body: font(route.request().url().slice(FONTS.length)) }));
+  const served = css.replace(/url\(fonts\//g, `url(${FONTS}`);
+  // a form not rewritten would load from about:blank, which fails silently:
+  // its text in a fallback face, every check read off that
+  if (/url\(["']?(\.\.\/)*fonts\//.test(served)) throw new Error('the stylesheet names its fonts in a form not rewritten here');
+  await page.setContent(`<!doctype html><html lang="en"><head><meta charset="utf-8"><style>${served}</style></head><body>${html}</body></html>`);
   // the page's fonts loaded before anything is read (a case's Inter)
   await page.evaluate(() => document.fonts.ready);
   const hover = await page.evaluate(() => matchMedia('(hover: hover)').matches);

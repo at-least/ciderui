@@ -26,16 +26,10 @@ if (UPDATE && PICK) throw new Error('UPDATE_GOLDEN=1 runs every case: drop CASES
 
 const tested = COMPONENTS.filter(c => existsSync(join(ROOT, c.dir, `${c.name}.test.mjs`)));
 const sheets = tested.map(c => `@import "${c.dir}/${c.name}.css";`).join('\n');
-// the fonts' files inlined, as each case's page is set from no URL
-const inline = (css) => {
-  const inlined = css.replace(/url\(fonts\/([^)]+)\)/g, (_, f) => `url(data:font/woff2;base64,${readFileSync(join(ROOT, 'fonts', f)).toString('base64')})`);
-  if (inlined === css || /url\(["']?fonts\//.test(inlined)) throw new Error('fonts.css\'s url()s are not the form inlined here');
-  return inlined;
-};
 // Tailwind scans the components' directories, as a site's @source does: the
 // examples and the test files, whose cases write markup of their own (a type
 // class around an example)
-const css = inline(compile({ css: `@import "fonts.css";\n@import "index.css";\n${sheets}`, sources: ['components'] }));
+const css = compile({ css: `@import "fonts.css";\n@import "index.css";\n${sheets}`, sources: ['components'] });
 
 for (const { name, dir } of tested) {
   const file = join(ROOT, dir, `${name}.test.mjs`);
