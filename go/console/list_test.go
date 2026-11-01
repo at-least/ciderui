@@ -1,0 +1,40 @@
+package console_test
+
+import (
+	"testing"
+
+	"github.com/at-least/ciderui/go/console"
+	"github.com/at-least/ciderui/go/internal/example"
+	g "maragu.dev/gomponents"
+	h "maragu.dev/gomponents/html"
+)
+
+func TestListItemRendersTheExample(t *testing.T) {
+	list := h.Div(h.Class("cui-console-list max-w-md"),
+		console.ConsoleListItem{Href: "#shop", ID: "", Label: "Shop App", Secondary: "8 open issues · crash-free 99.2%", Class: "", Children: nil},
+		console.ConsoleListItem{Href: "#api", ID: "", Label: "Orders API", Secondary: "2 open issues", Class: "", Children: nil},
+		console.ConsoleListItem{Href: "", ID: "", Label: "nightly-backup", Secondary: "Last run 4 hours ago", Class: "", Children: nil},
+	)
+	example.Check(t, list, "console/console-list/examples/list.html")
+}
+
+func TestListItemRendersTheContentExample(t *testing.T) {
+	list := h.Div(h.Class("cui-console-list max-w-md"),
+		console.ConsoleListItem{Href: "", ID: "nightly-backup", Label: "nightly-backup", Secondary: "Last run 4 hours ago", Class: "",
+			Children: h.P(h.Class("mt-2"), h.Button(h.Class("cui-console-btn"), h.Type("button"), g.Text("Pause")))},
+	)
+	example.Check(t, list, "console/console-list/examples/content.html")
+}
+
+func TestListItemARowOfItsOwnContentNeedsNoLabel(t *testing.T) {
+	got := example.Render(console.ConsoleListItem{Href: "", ID: "", Label: "", Secondary: "", Class: "py-3", Children: h.P(g.Text("Shop App"))})
+	if want := `<div class="cui-console-list-item py-3"><p>Shop App</p></div>`; got != want {
+		t.Errorf("got  %s\nwant %s", got, want)
+	}
+}
+
+func TestListItemARowOfNothingPanics(t *testing.T) {
+	mustPanic(t, "needs a Label or its own content", func() {
+		example.Render(console.ConsoleListItem{Href: "", ID: "", Label: "", Secondary: "", Class: "", Children: nil})
+	})
+}
