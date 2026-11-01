@@ -21,4 +21,4 @@ A link in running text is apple.com’s own `a`: the link’s color, underlined 
 
 {{ <cui_example file="link/more" title="A more link" pad={true} /> }}
 
-Write it on one line: a space between the text and the chevron would widen the gap. The crate writes it with `MoreLink`, its chevron `icon::MORE`.
+Write it on one line: a space between the text and the chevron would widen the gap. The Go module writes it with `site.MoreLink`, its chevron `icon.More`.

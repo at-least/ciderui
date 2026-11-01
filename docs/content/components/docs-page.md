@@ -23,4 +23,4 @@ A page of Apple’s developer documentation, under the site’s global nav: the 
 | `cui-docs-page-main` | the page’s `<main>` |
 | `cui-docs-page-column` | the content’s column: 87.5% of the window to 735px, then 80px in on either side within 820px, 980px from 1251px and 1080px from 1500px |
 
-The navigator’s column is 400px, Apple’s at a fresh load. The crate writes the page, its bar, its navigator and its sheet’s button, the navigator’s id `DOCS_NAVIGATOR_ID`, with `DocsPage`; the page writes its columns.
+The navigator’s column is 400px, Apple’s at a fresh load. The Go module writes the page, its bar, its navigator and its sheet’s button, the navigator’s id `docs.DocsNavigatorID`, with `docs.DocsPage`; the page writes its columns.

@@ -31,7 +31,7 @@ func TestTabsTwoCurrentTabsPanic(t *testing.T) {
 	})
 }
 
-// not in the Rust crate, whose enum has no zero value
+// ConsoleTabsVariant has no variant that writes no attribute
 func TestTabsTheZeroVariantPanics(t *testing.T) {
 	mustPanic(t, "needs a Variant", func() {
 		example.Render(console.ConsoleTabs{Label: "X", Variant: console.ConsoleTabsVariant{}, Tabs: nil, Class: ""})

@@ -31,4 +31,4 @@ The Newsroom’s archive: a heading over ruled rows, each row a link holding its
 
 {{ <cui_example file="posts/related" title="Related stories" /> }}
 
-The crate writes it with `Posts`, `Post` and `PostSize`.
+The Go module writes it with `site.Posts`, `site.Post` and `site.PostSize`.

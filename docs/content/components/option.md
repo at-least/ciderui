@@ -25,4 +25,4 @@ A choice on apple.com’s buy page: a tile 83px tall at least, 12px corners and 
 | `cui-option-title` | 17px at 600; a detail inside it, `cui-option-detail`, 12px under it |
 | `cui-option-price` | 12px at its end; without one, the title takes the row |
 
-Options of one choice share a `name`. In a dark block an option keeps its light look, as a [Field](@/components/field.md) does. The crate writes it with `OptionTile`.
+Options of one choice share a `name`. In a dark block an option keeps its light look, as a [Field](@/components/field.md) does. The Go module writes it with `site.OptionTile`.

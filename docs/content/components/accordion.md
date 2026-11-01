@@ -30,4 +30,4 @@ An item with `open` starts opened. Its height moves to the answer’s where the 
 
 {{ <cui_example file="accordion/large" title="A large question" pad={true} /> }}
 
-The crate writes it with `Accordion` and `AccordionItem`, the chevron its `icon::DISCLOSURE`.
+The Go module writes it with `site.Accordion` and `site.AccordionItem`, the chevron its `icon.Disclosure`.

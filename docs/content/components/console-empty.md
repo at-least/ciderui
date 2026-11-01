@@ -33,4 +33,4 @@ Centered where a list or a chart has nothing to show: an icon, a heading, a line
 
 {{ <cui_example file="console-empty/large" title="A large empty state" pad={true} /> }}
 
-The crate writes it with `ConsoleEmpty`.
+The Go module writes it with `console.ConsoleEmpty`.

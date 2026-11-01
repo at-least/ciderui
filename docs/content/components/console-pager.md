@@ -31,4 +31,4 @@ A list paged by a cursor cannot step back one page: past its first page it offer
 
 {{ <cui_example file="console-pager/later" title="A later page: First and the next page" pad={true} /> }}
 
-The crate writes it with `ConsolePager`.
+The Go module writes it with `console.ConsolePager`.

@@ -49,4 +49,4 @@ A word too long for its line, an import in code, a bare URL, a hash in a table�
 
 `cui-article-footnotes` is the notes’ section at the end, 12px in the secondary text, numbered. The elements apple.com’s copy has none of (h3 to h6, code, a quotation, a table, a rule) are ciderui’s. A component inside the copy, any element with a `cui-` class, keeps its own look: the copy’s rules match plain elements alone.
 
-The crate writes it with `Article`, its copy the page’s; ciderui-zola writes a page’s markdown into it.
+The Go module writes it with `site.Article`, its copy the page’s; ciderui-zola writes a page’s markdown into it.

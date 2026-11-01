@@ -30,4 +30,4 @@ A message on a rounded panel tinted in its color: an icon at its start, a title,
 
 {{ <cui_example file="console-banner/colors" title="Console banners in each color" pad={true} /> }}
 
-The crate writes it with `ConsoleBanner`.
+The Go module writes it with `console.ConsoleBanner`.

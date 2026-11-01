@@ -26,4 +26,4 @@ The list of a section’s pages down the left of App Store Connect’s analytics
 | `cui-console-menu-heading` | a heading over a run of items |
 | `cui-console-menu-rule` | a rule between runs, an `<hr>` |
 
-Below 640px its items are 37px at 16px. The crate writes it with `ConsoleMenu`, `ConsoleMenuItem` and `ConsoleMenuGroup`, an icon any of `ciderui::lucide`’s.
+Below 640px its items are 37px at 16px. The Go module writes it with `console.ConsoleMenu`, `console.ConsoleMenuItem` and `console.ConsoleMenuGroup`, an icon any of package `lucide`’s.

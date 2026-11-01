@@ -26,4 +26,4 @@ The bar most of apple.com’s product pages carry under the global nav, on a `<n
 | `cui-localnav-link` | a link: 12px in the bar, a 34px row in the menu; `aria-current="page"` the current page, a line under it |
 | `cui-localnav-actions` | the chevron (`cui-localnav-menubutton`, the checkbox’s label) and the button, a `cui-btn` with `data-size="sm"` |
 
-The crate writes it with `LocalNav`, its chevron `icon::CHEVRON`.
+The Go module writes it with `site.LocalNav`, its chevron `icon.Chevron`.

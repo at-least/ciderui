@@ -23,4 +23,4 @@ The row at the top of apple.com’s store: small cards, each a product’s pictu
 | `cui-productnav-image` | its picture, 78px tall (60px below 735px), as wide as its shape makes it |
 | `cui-productnav-name` | 14px on 20px at 600, centered |
 
-The crate writes it with `ProductNav` and `ProductNavItem`.
+The Go module writes it with `site.ProductNav` and `site.ProductNavItem`.

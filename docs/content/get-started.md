@@ -69,6 +69,6 @@ The pages of [Components](@/components/_index.md) show each part live, over its 
 
 There is no dark mode: apple.com has none. A block is dark when the page says so, `cui-dark` on any element, from a section to the whole page on `<html>`; inside it, every color takes its dark value, and `cui-light` makes a block inside it light again.
 
-## In Rust, and with Zola
+## In Go, and with Zola
 
-A site that renders its pages in Rust with hypertext writes the components’ markup with [the crate](@/rust.md), which also carries the stylesheets, so one dependency pins both. A static site is built with ciderui-zola, the Zola theme on ciderui, which ships its stylesheet, its fonts and its one script prebuilt: this documentation is built with it.
+A site that renders its pages in Go with gomponents writes the components’ markup with [the Go module](@/go.md), which also carries the stylesheets, so one dependency pins both. A static site is built with ciderui-zola, the Zola theme on ciderui, which ships its stylesheet, its fonts and its one script prebuilt: this documentation is built with it.

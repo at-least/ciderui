@@ -32,4 +32,4 @@ This page’s frames are narrower than 1024px, so the sidebar above is a closed 
 
 {{ <cui_example file="console-sidebar/open" title="The sidebar’s sheet and the button that opens it" pad={true} /> }}
 
-The crate writes it with `ConsoleSidebar` and `ConsoleSidebarItem`.
+The Go module writes it with `console.ConsoleSidebar` and `console.ConsoleSidebarItem`.

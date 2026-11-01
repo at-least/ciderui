@@ -34,4 +34,4 @@ A tile of apple.com’s home page: a block of its own ground with a headline, a 
 
 {{ <cui_example file="tile/hero" title="A full-width tile" /> }}
 
-The crate writes it with `Tile` and `TileSize`.
+The Go module writes it with `site.Tile` and `site.TileSize`.

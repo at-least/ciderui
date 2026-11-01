@@ -5,9 +5,9 @@
 // clicked, the clipboard granted, the navigator's filter's glyph),
 // DocC's SVG read live off the crash report's article (never stored), each
 // rasterized at 40 pixels to the unit on a blank page (svg.js) beside the
-// drawing the kit ships, read out of rust/src/icon.rs (DOCS_SIDEBAR,
-// DOCS_CHEVRON, DOCS_ARTICLE, DOCS_COLLECTION, DOCS_CLOSE, DOCS_COPY,
-// DOCS_COPIED, DOCS_FILTER): the share of ink
+// drawing the kit ships, read out of go/icon/icon.go (DocsSidebar,
+// DocsChevron, DocsArticle, DocsCollection, DocsClose, DocsCopy,
+// DocsCopied, DocsFilter): the share of ink
 // each pair has in common, and each one's ink and its runs along rows and
 // columns, the numbers the drawings are drawn from. Fails below 0.85
 // (intersection over union), the mark the global nav's icons are held to.
@@ -15,13 +15,13 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 
-const icons = readFileSync(new URL('../../rust/src/icon.rs', import.meta.url), 'utf8');
+const icons = readFileSync(new URL('../../go/icon/icon.go', import.meta.url), 'utf8');
 const shipped = (name) => {
-  const m = icons.match(new RegExp(`pub const ${name}: Icon = Icon \\{[^}]*?view_box: "([^"]+)"[^}]*?inner: r#"(.*?)"#`, 's'));
-  if (!m) throw new Error(`rust/src/icon.rs has no ${name}`);
+  const m = icons.match(new RegExp(`^var ${name} = Icon\\{[^\\n]*?viewBox: "([^"]+)"[^\\n]*?inner: \`([^\`]*)\`\\}$`, 'm'));
+  if (!m) throw new Error(`go/icon/icon.go has no ${name}`);
   return `<svg viewBox="${m[1]}">${m[2]}</svg>`;
 };
-const OURS = { sidebar: shipped('DOCS_SIDEBAR'), chevron: shipped('DOCS_CHEVRON'), article: shipped('DOCS_ARTICLE'), collection: shipped('DOCS_COLLECTION'), close: shipped('DOCS_CLOSE'), copy: shipped('DOCS_COPY'), copied: shipped('DOCS_COPIED'), filter: shipped('DOCS_FILTER') };
+const OURS = { sidebar: shipped('DocsSidebar'), chevron: shipped('DocsChevron'), article: shipped('DocsArticle'), collection: shipped('DocsCollection'), close: shipped('DocsClose'), copy: shipped('DocsCopy'), copied: shipped('DocsCopied'), filter: shipped('DocsFilter') };
 // where each drawing's numbers were read
 const RUNS = {
   sidebar: [['row', 4.635], ['row', 7], ['col', 1.2], ['col', 5.3], ['col', 7]],

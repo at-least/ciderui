@@ -32,4 +32,4 @@ A plain eyebrow is the dark gray of apple.com’s, the headline as far down with
 
 {{ <cui_example file="card/eyebrow" title="A card with an eyebrow" pad={true} /> }}
 
-Its size is the store’s most common card; a site gives it another width with a utility (`w-full`), its picture cropped to it. A row of cards is a [Shelf](@/components/shelf.md). The crate writes it with `Card`.
+Its size is the store’s most common card; a site gives it another width with a utility (`w-full`), its picture cropped to it. A row of cards is a [Shelf](@/components/shelf.md). The Go module writes it with `site.Card`.

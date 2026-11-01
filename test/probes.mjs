@@ -70,7 +70,7 @@ const missing = scripts.flatMap((f) => [...readFileSync(join(ROOT, f), 'utf8').m
   .map((path) => `${f}: ${path}`));
 if (missing.length) throw new Error(`named by a script, no such file: ${missing.join(', ')}`);
 
-cpSync(ROOT, tree, { recursive: true, filter: (f) => !['node_modules', '.git', 'rust/target'].includes(relative(ROOT, f)) });
+cpSync(ROOT, tree, { recursive: true, filter: (f) => !['node_modules', '.git'].includes(relative(ROOT, f)) });
 symlinkSync(join(ROOT, 'node_modules'), join(tree, 'node_modules'));
 symlinkSync(realpathSync(join(ROOT, 'docs/themes/ciderui-zola')), join(copy, 'ciderui-zola'));
 

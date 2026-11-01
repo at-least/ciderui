@@ -30,7 +30,7 @@ And its dark one, as `cui-dark` on the dialog makes it (`ricmodal-dark:*`): the 
 20. its scrim the light one's (`rgba(0,0,0,.48)`, one value);
 21. in a picture of the window its panel is black, the light one's white;
 22. its close button closes it;
-23. a button in a form, its type `button` (the crate's `ModalButton` writes one), opens the dialog, the form not sent;
+23. a button in a form, its type `button` (`site.ModalButton` writes one), opens the dialog, the form not sent;
 24. the control: one with no type, the form's submit button, does nothing at all with its `commandfor`, the dialog not opened and the form not sent (a submit button with no command sends it).
 
 ## The result

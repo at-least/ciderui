@@ -24,4 +24,4 @@ A finish on apple.com’s buy page: a 28px circle of the color in a 36px ring, o
 | `cui-swatch-color` | the color: the page’s image, or an element its `style` colors |
 | `cui-swatch-name` | the color’s name, for assistive technology |
 
-The crate writes it with `Swatch`.
+The Go module writes it with `site.Swatch`.

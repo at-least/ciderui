@@ -1,7 +1,7 @@
 // The documentation (docs/): it has a page for each component and no other
 // under docs/content/components/, each with its kind and its picture
 // (docs/static/pictures/, scripts/docs-pictures.mjs) and showing every
-// example file of its component's directory, so no example the crate's
+// example file of its component's directory, so no example the Go module's
 // tests render is missing from it; the frames' stylesheet styles every
 // class the examples write. Built with zola, every page at 1440 and 390px
 // in Chromium: no page error, nothing the page asks for missing or of a

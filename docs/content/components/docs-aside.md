@@ -27,7 +27,7 @@ Important, warning, tip, deprecated and experiment, each a `data-variant`; a not
 | `cui-docs-aside-label` | its kind’s word at 600, in the edge’s color |
 | `data-variant` | `important`, `warning`, `tip`, `deprecated`, `experiment`; a note without one |
 
-The crate writes an aside, its label and its accessible name with `DocsAside` and its `DocsAsideVariant`. On a page in ciderui-zola’s docs layout, markdown’s alert is an aside of its kind:
+The Go module writes an aside, its label and its accessible name with `docs.DocsAside` and its `docs.DocsAsideVariant`. On a page in ciderui-zola’s docs layout, markdown’s alert is an aside of its kind:
 
 ```markdown
 > [!NOTE]

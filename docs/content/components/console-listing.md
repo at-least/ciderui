@@ -35,4 +35,4 @@ Inside a card, or inside another listing, whose gray is its own, a listing takes
 
 Inline code in a line of text is `cui-console-code`.
 
-The crate writes a listing with numbered lines with `ConsoleListing`.
+The Go module writes a listing with numbered lines with `console.ConsoleListing`.

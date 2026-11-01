@@ -22,4 +22,4 @@ The store’s quick links: a title over a row of pills, as far in as a shelf’s
 | `cui-quicklinks-title` | 28px at 600 (21px below 735px), naming the nav by `aria-labelledby` |
 | `cui-quicklinks-list` | the pills, 8px apart, rows 10px apart |
 
-The crate writes it with `QuickLinks`.
+The Go module writes it with `site.QuickLinks`.

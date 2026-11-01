@@ -37,7 +37,7 @@
  *                             aria-current="page", the same fill;
  *                             aria-disabled="true", its label the disabled
  *                             label, no fill, no pointer
- * cui-console-menu-icon       its icon (a Lucide icon from the crate), 25px
+ * cui-console-menu-icon       its icon (one of package lucide's), 25px
  *                             wide, the secondary label, 8px before the label
  * cui-console-menu-label      its label, cut with an ellipsis
  * cui-console-menu-secondary  what follows it at its end (a count), the

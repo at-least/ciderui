@@ -22,4 +22,4 @@ apple.com’s message above a page’s content: a band on the alternate ground, 
 
 {{ <cui_example file="ribbon/announce" title="An announcing ribbon" /> }}
 
-`cui-ribbon` is the band, `cui-ribbon-content` its ground and its 16px above and below. The crate writes it with `Ribbon`.
+`cui-ribbon` is the band, `cui-ribbon-content` its ground and its 16px above and below. The Go module writes it with `site.Ribbon`.

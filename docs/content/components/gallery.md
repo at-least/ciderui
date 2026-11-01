@@ -25,4 +25,4 @@ A product page’s gallery: a row of items across the whole window, each snappin
 | `cui-gallery-dots` | the dots’ row, centered |
 | `cui-gallery-dot` | an item’s dot, a link to it: 8px; the current one, `aria-current="true"`, a 48px pill (32px below 735px) |
 
-A paddle names the row it scrolls with `aria-controls`, the previous first. The crate writes it with `Gallery`, its chevrons `icon::PADDLE_PREVIOUS` and `icon::PADDLE_NEXT`.
+A paddle names the row it scrolls with `aria-controls`, the previous first. The Go module writes it with `site.Gallery`, its chevrons `icon.PaddlePrevious` and `icon.PaddleNext`.

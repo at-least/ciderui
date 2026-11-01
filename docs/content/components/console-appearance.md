@@ -20,4 +20,4 @@ Light, Dark and Auto as one segmented control, as Apple’s developer documentat
 | `cui-console-appearance` | the `<fieldset>`; its `<legend>` names it for a screen reader |
 | `cui-console-appearance-choice` | a choice: the `<label>` around its radio and its word (a `<span>`) |
 
-The crate writes it with `ConsoleAppearance` and `ConsoleAppearanceChoice`.
+The Go module writes it with `console.ConsoleAppearance` and `console.ConsoleAppearanceChoice`.

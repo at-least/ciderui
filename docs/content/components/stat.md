@@ -27,4 +27,4 @@ A number on a product page, between two captions in the secondary text: “Up to
 
 {{ <cui_example file="stat/large" title="A large stat" pad={true} /> }}
 
-The crate writes it with `Stat`.
+The Go module writes it with `site.Stat`.

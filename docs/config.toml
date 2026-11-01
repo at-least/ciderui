@@ -3,7 +3,7 @@
 # site is not published.
 base_url = "https://ciderui.test"
 title = "ciderui"
-description = "apple.com's look for websites: a Tailwind CSS v4 theme, apple.com's parts as classes, and a Rust crate that writes their markup."
+description = "apple.com's look for websites: a Tailwind CSS v4 theme, apple.com's parts as classes, and a Go module that writes their markup."
 theme = "ciderui-zola"
 compile_sass = false
 build_search_index = true
@@ -31,7 +31,7 @@ nav = [
   { text = "Get Started", href = "/get-started/" },
   { text = "Foundations", href = "/foundations/" },
   { text = "Components", href = "/components/" },
-  { text = "Rust", href = "/rust/" },
+  { text = "Go", href = "/go/" },
   { text = "News", href = "/news/" },
 ]
 search = "/search/"
@@ -40,7 +40,7 @@ search_links = [
   { text = "Get Started", href = "/get-started/" },
   { text = "All Components", href = "/components/" },
   { text = "Foundations", href = "/foundations/" },
-  { text = "Rust", href = "/rust/" },
+  { text = "Go", href = "/go/" },
 ]
 head = [{ tag = "link", attrs = { rel = "icon", type = "image/svg+xml", href = "/logo.svg" } }]
 
@@ -49,13 +49,13 @@ head = [{ tag = "link", attrs = { rel = "icon", type = "image/svg+xml", href = "
 # navigator's title, and its navigator's rows
 [extra.docs]
 title = "Documentation"
-pages = ["get-started.md", "foundations.md", "rust.md", "components/_index.md"]
+pages = ["get-started.md", "foundations.md", "go.md", "components/_index.md"]
 
 [extra.footer]
 notes = "<p>apple.com’s values are read off its live pages and recorded with the probe that read them; none of apple.com’s stylesheets is copied. Apple, iPhone and Mac are trademarks of Apple Inc.; ciderui is not Apple’s.</p>"
 directory = [
   [
-    { id = "footer-docs", title = "Documentation", links = [{ text = "Get Started", href = "/get-started/" }, { text = "Foundations", href = "/foundations/" }, { text = "Rust", href = "/rust/" }] },
+    { id = "footer-docs", title = "Documentation", links = [{ text = "Get Started", href = "/get-started/" }, { text = "Foundations", href = "/foundations/" }, { text = "Go", href = "/go/" }] },
   ],
   [
     { id = "footer-components", title = "Components", links = [{ text = "All Components", href = "/components/" }, { text = "Button", href = "/components/button/" }, { text = "Global Nav", href = "/components/globalnav/" }, { text = "Article", href = "/components/article/" }] },

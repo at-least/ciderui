@@ -16,7 +16,7 @@
  *     </div>
  *   </section>
  *
- * The markup is the crate's Section and SectionHeader.
+ * The markup is site.Section's and site.SectionHeader's.
  *
  * data-variant   (none) no ground of its own, the page's; alt, the
  *                alternate ground (#f5f5f7, #1d1d1f in a dark block)

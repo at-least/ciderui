@@ -33,4 +33,4 @@ The Newsroom’s index: a band on the alternate ground, its heading over a grid 
 | `md` | two across, 472px tall at least |
 | `lg` | one across, from 1069px its picture beside its text |
 
-From 735px to 1068px every story is two across, whatever its size, as apple.com’s script lays them out there. The Newsroom’s order is one large story, two medium, then the rest. The crate writes it with `Stories`, `Story` and `StorySize`.
+From 735px to 1068px every story is two across, whatever its size, as apple.com’s script lays them out there. The Newsroom’s order is one large story, two medium, then the rest. The Go module writes it with `site.Stories`, `site.Story` and `site.StorySize`.

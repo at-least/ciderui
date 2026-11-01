@@ -23,4 +23,4 @@ The top of a page in Apple’s developer documentation: where the page is (its b
 | `cui-docs-hero-title` | the page’s title, 12px over the abstract |
 | `cui-docs-hero-abstract` | what the page is about |
 
-The crate writes a hero, its crumbs ending with the page’s own title, with `DocsHero` and its `DocsCrumb`s.
+The Go module writes a hero, its crumbs ending with the page’s own title, with `docs.DocsHero` and its `docs.DocsCrumb`s.

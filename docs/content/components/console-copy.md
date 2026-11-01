@@ -35,4 +35,4 @@ A value inside a sentence — an issue’s ID, an event’s — takes a small co
 
 {{ <cui_example file="console-copy/inline" title="An issue ID to copy, an event ID just copied" pad={true} /> }}
 
-The crate writes the button’s two icons with `ConsoleCopyIcons`; the button is the page’s own, with whatever its script reads.
+The Go module writes the button’s two icons with `console.ConsoleCopyIcons`; the button is the page’s own, with whatever its script reads.

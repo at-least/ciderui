@@ -35,4 +35,4 @@ A shelf’s paddles are a gallery’s large ones, `cui-gallery-paddle cui-shelf-
 
 {{ <cui_example file="shelf/paddles" title="A shelf with paddles" /> }}
 
-The crate writes it with `Shelf`.
+The Go module writes it with `site.Shelf`.

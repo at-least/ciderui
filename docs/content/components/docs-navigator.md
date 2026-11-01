@@ -29,4 +29,4 @@ The tree of a documentation’s pages, as Apple’s developer documentation show
 | `cui-docs-navigator-empty` | the line saying the filter matches nothing, `hidden` until then |
 | `cui-docs-navigator-status` | read aloud, not shown: what the filter found |
 
-The filter is the page’s script’s: it hides the rows whose names do not hold what is typed, keeping the pages above a match open, and marks the match; ciderui-zola’s does. Its width, its place beside the page and its scroll are the page’s. The crate writes the navigator, each page’s glyph and each chevron’s checkbox with `DocsNavigator`, its `DocsNavigatorItem`s and `DocsNavigatorPage`s.
+The filter is the page’s script’s: it hides the rows whose names do not hold what is typed, keeping the pages above a match open, and marks the match; ciderui-zola’s does. Its width, its place beside the page and its scroll are the page’s. The Go module writes the navigator, each page’s glyph and each chevron’s checkbox with `docs.DocsNavigator`, its `docs.DocsNavigatorItem`s and `docs.DocsNavigatorPage`s.

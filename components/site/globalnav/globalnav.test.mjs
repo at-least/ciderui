@@ -148,7 +148,7 @@ const BAGGING = { click: BBUTTON, height: 900 };
 // the bag's motion held at its start, for a case that reads its start
 const BHOLD = '<style>.cui-globalnav-bag, .cui-globalnav-bag * { transition-delay: 10s !important; }</style>';
 // the flyouts' example with the bag's flyout in the bag link's place: what
-// the crate writes for both
+// site.GlobalNav writes for both
 const FLYOUT_BAG = FLYOUT_NAV
   .replace(/<li><a class="cui-globalnav-icon" href="\/bag"[^\n]*<\/a><\/li>/, BAG_NAV.match(/<li><button class="cui-globalnav-icon" popovertarget="cui-globalnav-bag"[^\n]*<\/button><\/li>/)[0])
   .replace(/(<button class="cui-globalnav-menubutton"[^\n]*<\/button>)/, (m) => `${m}\n${BAG_NAV.slice(BAG_NAV.indexOf('<div class="cui-globalnav-bag"'), BAG_NAV.lastIndexOf('</div>\n</nav>'))}`);

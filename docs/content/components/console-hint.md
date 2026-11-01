@@ -21,4 +21,4 @@ A small “i” in a gray circle beside a word — a metric’s title, a column�
 | `cui-console-hint` | the `<button>` with `popovertarget` and an `aria-label` saying what it is about |
 | `cui-console-popover` | the `popover` it opens (Console Popover): 16px in, 13px, 240px to 350px wide, under the button |
 
-The crate’s `ConsoleHint` renders both.
+The Go module’s `console.ConsoleHint` renders both.

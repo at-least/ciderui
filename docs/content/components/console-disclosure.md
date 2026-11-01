@@ -30,4 +30,4 @@ A plain one, for an action among a row’s plain buttons:
 
 {{ <cui_example file="console-disclosure/plain-button" title="A plain disclosure button, closed and open" pad={true} /> }}
 
-The crate writes it with `ConsoleDisclosure` and `ConsoleDisclosureVariant`.
+The Go module writes it with `console.ConsoleDisclosure` and `console.ConsoleDisclosureVariant`.

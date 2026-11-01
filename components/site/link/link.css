@@ -9,8 +9,8 @@
  *   <p>Read the <a class="cui-link" href="/guide">guide</a> first.</p>
  *   <a class="cui-link" data-variant="more" href="#learn"><span class="cui-link-text">Learn more</span><svg class="cui-link-icon" …></svg></a>
  *
- * The more link's markup is the crate's MoreLink (the chevron is
- * ciderui::icon::MORE), on one line: a space between its text and its
+ * The more link's markup is site.MoreLink's (the chevron is
+ * icon.More), on one line: a space between its text and its
  * chevron would widen the gap.
  *
  * (none)              the link's color, underlined: apple.com's in running
@@ -24,7 +24,7 @@
  * The size is the text's around it, as apple.com's links take theirs; the
  * focus ring is base.css's. apple.com's: the color, the underline, the
  * chevron's place. ciderui's: the chevron, drawn from apple.com's glyph's
- * numbers (the crate's icon); the more link's touch target (the HIG's). */
+ * numbers (icon.More); the more link's touch target (the HIG's). */
 
 @layer components {
   .cui-link {

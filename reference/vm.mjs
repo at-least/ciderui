@@ -2,8 +2,8 @@
 // its VMs orchard's, one fresh VM per run, deleted after), where Safari is
 // driven through safaridriver as on a Mac but never on the Mac in front of
 // someone: its Safari, its windows and its focus are left alone. The
-// repository goes to the same path in the VM (no node_modules, .git or
-// rust: the probes use node's own modules and the VM's Safari), SITE and
+// repository goes to the same path in the VM (no node_modules or .git:
+// the probes use node's own modules and the VM's Safari), SITE and
 // INTER too where they name a path; the command runs in this directory
 // with BROWSER, SITE, MODE, EXPECT and INTER passed through; the
 // directory's results/ comes back. The VM's Safari takes automation
@@ -33,7 +33,7 @@ const pass = ['BROWSER', 'SITE', 'MODE', 'EXPECT', 'INTER']
   .filter((k) => process.env[k] !== undefined)
   .map((k) => `${k}=${process.env[k]}`);
 const paths = readdirSync(ROOT)
-  .filter((e) => !['node_modules', '.git', 'rust'].includes(e))
+  .filter((e) => !['node_modules', '.git'].includes(e))
   .map((e) => join(ROOT, e));
 for (const k of ['SITE', 'INTER']) {
   const p = process.env[k];

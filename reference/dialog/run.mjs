@@ -20,8 +20,8 @@
 // (sampled each frame), its close button stuck at the window's top as the
 // panel scrolls, closed by it; and its dark one (color-scheme: dark on the
 // dialog), its panel and close button from the root's light-dark() pairs, its
-// panel black in a picture. And a button in a form: its type button, as the
-// crate's ModalButton writes it, it opens the dialog; with none, the form's
+// panel black in a picture. And a button in a form: its type button, as
+// site.ModalButton writes it, it opens the dialog; with none, the form's
 // submit button, it does nothing at all, the dialog closed and the form not
 // sent (the control; a submit button with no command sends it). The result
 // is results/<browser>.json.
@@ -127,7 +127,7 @@ const claims = [
   ['its scrim the light one\'s', got.dark.backdrop === 'rgba(0, 0, 0, 0.48)' && got.pageColors.backdrop === got.dark.backdrop],
   ['in the picture its panel is black, the light one\'s white', got.darkPixels.panel.every(v => v <= 2) && got.pageOpenPixels.panel.every(v => v >= 253)],
   ['its close button closes it', got.darkClosed.open === false],
-  ['a button in a form, its type button (the crate\'s ModalButton\'s), opens it, the form not sent', got.formButton.open === true && got.formButton.hash === ''],
+  ['a button in a form, its type button (site.ModalButton\'s), opens it, the form not sent', got.formButton.open === true && got.formButton.hash === ''],
   ['a button in a form with no type does nothing, the dialog closed and the form not sent (the control)', got.formSubmit.open === false && got.formSubmit.hash === ''],
 ];
 console.log(page.label + (IOS ? ' (clicked by script; no Escape)' : KEYBOARD ? ' (by its keyboard: Return)' : ''));

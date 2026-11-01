@@ -1,6 +1,6 @@
 # The icons
 
-The numbers ciderui's icons are drawn from. apple.com draws its small icons with its own icon font (SF Pro Icons) or its own SVG; both are Apple's, so neither is copied. What is read is a glyph's box in em, the place of its ink in it and its strokes' thickness; ciderui's icon is drawn from those numbers alone, and held to sharing most of the ink with apple.com's (`rust/src/icon.rs`).
+The numbers ciderui's icons are drawn from. apple.com draws its small icons with its own icon font (SF Pro Icons) or its own SVG; both are Apple's, so neither is copied. What is read is a glyph's box in em, the place of its ink in it and its strokes' thickness; ciderui's icon is drawn from those numbers alone, and held to sharing most of the ink with apple.com's (`go/icon/icon.go`).
 
 ## The "more" chevron
 
@@ -164,7 +164,7 @@ Intersection over union; the probe fails below 0.85, a mark set before the run, 
 
 ## Apple's developer documentation's icons
 
-DocC draws its icons as inline SVG in 14 by 14 view boxes: the bar's button that opens the navigator (at 19px), a navigator row's chevron (at 10px, turned a quarter open), the glyphs before a navigator row (17px) and a See Also link (15px), an article's and a collection's, the button that closes the navigator's sheet below 1024px (19px), a listing's copy button's glyph and its check once it has copied (24 by 24 view boxes, at 25.5px), and the navigator's filter's glyph (21 by 21, at 21px). `docc.mjs` reads each off the crash report's article (https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report), rasterizes it at 40 pixels to the unit beside the drawing the kit ships (read out of `rust/src/icon.rs`) and reads their ink: its box, and its runs along rows and columns. ciderui's are drawn from those numbers, in the same view box:
+DocC draws its icons as inline SVG in 14 by 14 view boxes: the bar's button that opens the navigator (at 19px), a navigator row's chevron (at 10px, turned a quarter open), the glyphs before a navigator row (17px) and a See Also link (15px), an article's and a collection's, the button that closes the navigator's sheet below 1024px (19px), a listing's copy button's glyph and its check once it has copied (24 by 24 view boxes, at 25.5px), and the navigator's filter's glyph (21 by 21, at 21px). `docc.mjs` reads each off the crash report's article (https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report), rasterizes it at 40 pixels to the unit beside the drawing the kit ships (read out of `go/icon/icon.go`) and reads their ink: its box, and its runs along rows and columns. ciderui's are drawn from those numbers, in the same view box:
 
 | icon | DocC's ink | ciderui's (`icon.rs`) |
 | --- | --- | --- |

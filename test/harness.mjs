@@ -1,6 +1,6 @@
 // What a component's test file (components/<set>/<name>/<name>.test.mjs) builds
 // its cases from: the property lists the checks share, and the component's
-// examples (components/<set>/<name>/examples/<id>.html), the markup the crate's
+// examples (components/<set>/<name>/examples/<id>.html), the markup the Go module's
 // tests render and the cases measure.
 //
 // A case:

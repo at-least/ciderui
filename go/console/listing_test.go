@@ -58,8 +58,7 @@ func TestListingNoLinesPanic(t *testing.T) {
 	})
 }
 
-// not in the Rust crate, whose highlighted line is an Option: here 0 is
-// none, so a first line 0 would make line 0 unhighlightable unseen
+// Highlighted 0 is none, so a first line 0 would make line 0 unhighlightable unseen
 func TestListingAFirstLineOf0Panics(t *testing.T) {
 	mustPanic(t, "FirstLine is at least 1", func() {
 		example.Render(console.ConsoleListing{FirstLine: 0, Lines: []string{"a"}, Highlighted: 0, Class: ""})

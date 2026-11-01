@@ -21,4 +21,4 @@ The bar across the top of Apple’s developer documentation, under the global na
 | `cui-docs-bar-toggle` | the button that opens the navigator, its `popovertarget` the navigator’s id; below 1024px alone |
 | `cui-docs-bar-title` | the documentation’s title, a link home |
 
-The crate writes the bar and its button’s glyph with `DocsBar`.
+The Go module writes the bar and its button’s glyph with `docs.DocsBar`.

@@ -21,4 +21,4 @@ A question over the page: its title, what it asks, its buttons at its end. A `<d
 | `cui-console-dialog-title` | its title, 18px at 600; the dialog’s `aria-labelledby` |
 | `cui-console-dialog-actions` | its buttons, at its end |
 
-In Rust, `ciderui::ConsoleDialog`.
+In Go, `console.ConsoleDialog`.

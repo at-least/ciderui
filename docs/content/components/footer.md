@@ -24,4 +24,4 @@ apple.com’s footer, on the alternate ground: its footnotes over a rule, its di
 | `cui-footer-section` | a title (`cui-footer-title`) over its links (`cui-footer-list`); to 833px a row over a rule, its checkbox `cui-footer-toggle` before it |
 | `cui-footer-legal` | the shop line (`cui-footer-shop`) and the legal row (`cui-footer-row`: `cui-footer-copyright`, `cui-footer-links`, `cui-footer-locale`) |
 
-Every part but the copyright is optional. The crate writes it with `Footer` and `FooterSection`, the chevron its `icon::FOOTER_CHEVRON`.
+Every part but the copyright is optional. The Go module writes it with `site.Footer` and `site.FooterSection`, the chevron its `icon.FooterChevron`.

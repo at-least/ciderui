@@ -21,4 +21,4 @@ A code listing with Apple’s developer documentation’s copy button at its cor
 | `cui-docs-copy-button` | the button, `hidden` until the page’s script shows it |
 | `data-state="copied"` | on the button, set by the page’s script once it has copied: the check in the link’s blue |
 
-ciderui-zola’s docs layout gives every code block its button, and its script copies. The crate writes the box, the button and its two glyphs with `DocsCopy`.
+ciderui-zola’s docs layout gives every code block its button, and its script copies. The Go module writes the box, the button and its two glyphs with `docs.DocsCopy`.

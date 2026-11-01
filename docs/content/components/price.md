@@ -15,4 +15,4 @@ The price under a product’s title on apple.com’s buy page: 17px on 25px at 6
 
 {{ <cui_example file="price/price" title="A price" pad={true} /> }}
 
-It is a class on the page’s own sentence, so the crate has no component for it.
+It is a class on the page’s own sentence, so the Go module has no component for it.

@@ -41,8 +41,8 @@
  * The HIG's: the triangle's place and turns, the button's turns. App Store
  * Connect's menu group's: the chevron's size and color. ciderui's: the 4px
  * between chevron and label; no motion (the toolkit's controls draw none).
- * The page writes the icons (the crate's lucide::CHEVRON_RIGHT and
- * CHEVRON_DOWN), as a menu group's. */
+ * The page writes the icons (console.ConsoleDisclosure's
+ * lucide.ChevronRight and lucide.ChevronDown), as a menu group's. */
 
 @layer components {
   .cui-console-disclosure > :where(summary) {

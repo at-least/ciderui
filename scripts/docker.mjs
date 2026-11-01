@@ -52,7 +52,7 @@ const TAR_ENV = { ...process.env, COPYFILE_DISABLE: '1' };
 
 let status = 1;
 try {
-  const exclude = '--exclude ./node_modules --exclude ./rust/target --exclude ./.git';
+  const exclude = '--exclude ./node_modules --exclude ./.git';
   execSync(`tar -c --no-xattrs -C ${q(ROOT)} ${exclude} . | docker cp - ${id}:/src/ciderui`, { env: TAR_ENV, stdio: ['ignore', 'ignore', 'inherit'] });
   execSync(`tar -c --no-xattrs -C ${q(theme)} --exclude ./.git . | docker cp - ${id}:/src/ciderui-zola`, { env: TAR_ENV, stdio: ['ignore', 'ignore', 'inherit'] });
   status = spawnSync('docker', ['start', '-a', id], { stdio: 'inherit' }).status ?? 1;

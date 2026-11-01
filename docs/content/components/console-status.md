@@ -27,4 +27,4 @@ A chart’s key sets the mark to its series’ color with `--cui-console-status-
 
 {{ <cui_example file="console-status/key" title="A chart’s key" pad={true} /> }}
 
-The crate writes it with `ConsoleStatus`.
+The Go module writes it with `console.ConsoleStatus`.

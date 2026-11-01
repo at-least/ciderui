@@ -2,12 +2,12 @@
 
 The owner's global instructions (their `~/.claude/CLAUDE.md`), copied for
 sessions that lack that file and adapted to this repository: "This
-repository's gate" replaces the global "Rust projects" section (its clippy
-rule kept), "Commits" is scoped to this repository's owner and gate, the
-Comments rule's rustdoc pointer names the gate, and the global "Docker"
-section is left out; what is left out concerns the owner's machines (their
-Rust toolchain and aliases, sccache, the Docker host). When the global file
-changes, copy its other sections here.
+repository's gate" is added, "Commits" is scoped to this repository's owner
+and gate, the Comments rule's pointer names what checks one here, and the
+global "Rust projects", "Docker", "Android emulators" and "macOS desktop
+apps" sections are left out: they concern the owner's machines and projects
+of other kinds (this repository has no Rust). When the global file changes,
+copy its other sections here.
 
 1. Never state runtime behavior as fact until you have run something that
    could have proven it wrong. Otherwise prefix it `UNVERIFIED (reason)`.
@@ -145,13 +145,9 @@ comment carries only that.
   or coupling the type system does not enforce.
 - Describe no code the comment does not sit beside (another file, repo or
   upstream): a reason that rests on code elsewhere drifts like any other
-  claim. Point at it only where a broken pointer fails a check (rustdoc
-  intra-doc links in what test/rust.mjs documents — the library's and the
-  bin's items, private ones too, built with `--no-deps --all-features
-  --document-private-items` and `RUSTDOCFLAGS='-D warnings'` — fail
-  `npm test`; a link in `#[cfg(test)]` code, on an item inside a function
-  body, in code compiled out under `--all-features`, or in rust/build.rs
-  is checked by nothing); otherwise leave it out.
+  claim. Point at it only where a broken pointer fails a check: nothing
+  checks a Go doc link (`[Name]`), so a pointer is checked only where a
+  test reads it; otherwise leave it out.
 - A behavior or contract claim goes into the check that holds it (a test,
   golden or assert, with its reason beside it); where none can exist yet,
   keep the comment and say in the commit message that nothing tests it.
@@ -193,7 +189,7 @@ comment carries only that.
   `node scripts/build-lucide.mjs --check`,
   `node scripts/build-docs.mjs --check`,
   `node scripts/docs-pictures.mjs --check`, `node test/docs.mjs`; then
-  `node test/rust.mjs` and `node test/go.mjs` on the machine.
+  `node test/go.mjs` on the machine.
 - The browser starts only in that image (test/chromium.mjs throws
   elsewhere): its Chromium and its fonts are the same on every machine, so
   a check's value and a picture are too. Every step that opens a page runs
@@ -205,33 +201,15 @@ comment carries only that.
   repository is copied into the container and what a step writes copied
   back, nothing bind-mounted); ciderui-zola checked out beside this
   repository (`../ciderui-zola`, which docs/themes/ciderui-zola links to),
-  copied in beside it; cargo with rustfmt and clippy, and cargo-nextest (where
-  it is missing, test/rust.mjs runs cargo test in its place and says so); go
-  at go.mod's version or later (its tools, exhaustruct, are go.mod's `tool`
-  lines, fetched by `go tool`).
+  copied in beside it; go at go.mod's version or later (its tools,
+  exhaustruct, are go.mod's `tool` lines, fetched by `go tool`).
 - Where a tool is missing and cannot be installed, `npm test` stops at the
   step that needs it: run each later step alone, and report the step that
   could not run `UNVERIFIED (environment: <what is missing>)`. Never leave
   it out silently.
-- The Rust part alone: `node test/rust.mjs`. It sets
-  `CARGO_TARGET_DIR=rust/target` and `RUSTDOCFLAGS='-D warnings'` and runs,
-  in order:
-  `cargo fmt --manifest-path rust/Cargo.toml --check`;
-  `cargo clippy --manifest-path rust/Cargo.toml --all-targets --all-features -- -D warnings`;
-  `cargo nextest run --manifest-path rust/Cargo.toml --all-features --no-fail-fast`,
-  or, where cargo-nextest is missing,
-  `cargo test --manifest-path rust/Cargo.toml --all-features --no-fail-fast --lib --bins --tests`;
-  `cargo test --manifest-path rust/Cargo.toml --all-features --doc`;
-  `cargo doc --manifest-path rust/Cargo.toml --no-deps --all-features --document-private-items`.
-- Fast loop while editing:
-  `cargo check --manifest-path rust/Cargo.toml --all-features`, not cargo
-  build. `cargo fmt --manifest-path rust/Cargo.toml` writes the formatting
-  the check wants.
-- Fix clippy findings as suggested; `#[allow]` only with a comment saying why.
 - The Go part alone: `node test/go.mjs`. It runs, from the root, in order:
   `gofmt -l` on each package's directory (any file listed fails); `go vet ./...`;
   `go tool exhaustruct -i 'github.com/at-least/ciderui/.*' ./...` (a
   struct literal of the module's types that leaves a field out fails: a
-  component's every field is written at every call, as hypertext's struct
-  literals were); `go test ./...`. A component's test holds its output to
-  its examples (go/internal/example).
+  component's every field is written at every call); `go test ./...`. A
+  component's test holds its output to its examples (go/internal/example).

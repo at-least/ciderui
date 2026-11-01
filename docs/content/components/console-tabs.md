@@ -35,4 +35,4 @@ App Store Connect’s tab bar, in its two forms: underlined, a page’s sections
 
 {{ <cui_example file="console-tabs/large" title="Large tabs" pad={true} /> }}
 
-The crate writes either with `ConsoleTabs` and its `ConsoleTab`s.
+The Go module writes either with `console.ConsoleTabs` and its `console.ConsoleTab`s.

@@ -30,4 +30,4 @@ The room is the section’s own: a page joining two sections takes one away with
 
 {{ <cui_example file="section/header" title="A section's header" pad={true} /> }}
 
-The crate writes them with `Section` (its `Ground` and `Rhythm`) and `SectionHeader`.
+The Go module writes them with `site.Section` (its `Ground` and `Rhythm`) and `site.SectionHeader`.

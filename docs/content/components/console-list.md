@@ -26,4 +26,4 @@ Rows grouped on the card’s gray, a hairline between them from 16px in. A row t
 
 {{ <cui_example file="console-list/content" title="A row holding the page’s own controls" pad={true} /> }}
 
-The crate writes a row with `ConsoleListItem`: its id, its label and what follows it, then what the page gives it; the group is the page’s own `<div>`.
+The Go module writes a row with `console.ConsoleListItem`: its id, its label and what follows it, then what the page gives it; the group is the page’s own `<div>`.

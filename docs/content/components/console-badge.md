@@ -35,4 +35,4 @@ A short word on a pill tinted in its color: a level, a status, a count. Or on th
 
 {{ <cui_example file="console-badge/small" title="Small console badges" pad={true} /> }}
 
-The crate writes it with `ConsoleBadge`, its color a `ConsoleColor`.
+The Go module writes it with `console.ConsoleBadge`, its color a `console.ConsoleColor`.

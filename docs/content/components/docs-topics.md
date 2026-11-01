@@ -23,4 +23,4 @@ After a page’s content, Apple’s developer documentation lists the pages unde
 | `cui-docs-topics-heading` | a group’s title |
 | `cui-docs-topics-item` | a page: its link (`cui-docs-topics-link`), its glyph (`cui-docs-topics-icon`) and its abstract (`cui-docs-topics-abstract`) |
 
-The crate writes the section, each link’s glyph (an article’s, or a collection’s for a page of pages) and its abstract with `DocsTopics`, its `DocsTopicsGroup`s and `DocsTopic`s.
+The Go module writes the section, each link’s glyph (an article’s, or a collection’s for a page of pages) and its abstract with `docs.DocsTopics`, its `docs.DocsTopicsGroup`s and `docs.DocsTopic`s.

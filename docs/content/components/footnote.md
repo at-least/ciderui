@@ -15,4 +15,4 @@ A product page’s footnote mark: a `<sup>` holding a link to its note, at the t
 
 {{ <cui_example file="footnote/footnote" title="A footnote's mark" pad={true} /> }}
 
-The notes themselves are the footer’s, `cui-footer-notes` on the [Footer](@/components/footer.md). Give the link an `aria-label` (“Footnote 1”), since a lone digit says little. The crate writes it with `Footnote`.
+The notes themselves are the footer’s, `cui-footer-notes` on the [Footer](@/components/footer.md). Give the link an `aria-label` (“Footnote 1”), since a lone digit says little. The Go module writes it with `site.Footnote`.

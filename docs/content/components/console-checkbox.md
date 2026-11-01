@@ -21,4 +21,4 @@ A 15px rounded box before its label, the input kept over it, transparent, so it 
 | `cui-console-checkbox-input` | the page’s own `<input type="checkbox">`, first |
 | `cui-console-checkbox-box` | the box after it, its check and its dash |
 
-The crate writes the box with `ConsoleCheckboxBox`.
+The Go module writes the box with `console.ConsoleCheckboxBox`.
