@@ -1,6 +1,7 @@
 +++
 title = "Foundations"
 description = "The colors, the type, the breakpoints and the rest every component is made of."
+template = "docs.html"
 +++
 
 Every component reads the same small contract, `tokens.css`: no component writes a color of its own, so a part placed in a dark block, or in another part, keeps to the page’s palette. The values are apple.com’s, read off its live pages; where one fell short of its contrast, it is fitted, and said so.

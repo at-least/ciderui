@@ -129,6 +129,8 @@
  "page sheet | .cui-docs-page-close | 390 | box-y": "14.5px",
  "page sheet | .cui-docs-page-close | 390 | box-x": "351px",
  "page sheet | .cui-docs-page-close svg | 390 | width": "19px",
+ "page target | #overview | 1200 | scroll-margin-top": "52px",
+ "page target | #overview | 767 | scroll-margin-top": "48px",
  "page touch | .cui-docs-page-close::after | 390 | width": "44px",
  "page touch | .cui-docs-page-close::after | 390 | height": "44px"
 }

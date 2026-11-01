@@ -23,9 +23,10 @@ addEventListener('DOMContentLoaded', () => {
 // a menu shown by a checkbox (the local nav's) changes what is visible, not
 // its boxes' sizes
 for (const type of ['change', 'transitionend']) document.addEventListener(type, size, true);
-// the page's bars that stay at the top of its window as it scrolls (its
-// local nav), which the sheet keeps below
-const bars = () => [...parent.document.querySelectorAll('.cui-globalnav, .cui-localnav')]
+// the page's bars that stay at the top of its window as it scrolls (a
+// documentation page's bar, a news page's local nav), which the sheet keeps
+// below
+const bars = () => [...parent.document.querySelectorAll('.cui-globalnav, .cui-localnav, .cui-docs-bar')]
   .filter((e) => ['sticky', 'fixed'].includes(parent.getComputedStyle(e).position))
   .reduce((sum, e) => sum + e.getBoundingClientRect().height, 0);
 // a sheet over the frame's window open or not: the frame as tall as the

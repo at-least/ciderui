@@ -42,11 +42,13 @@
  *                        within 820px at most (980px from 1251px, 1080px
  *                        from 1500px), centered in what the navigator leaves
  * cui-docs-content       40px under the hero (the content's top)
+ * :target                a place a link leads to lands under the bar
  *
  * DocC's: the columns, the steps, the bar sticking, the sheet's ground and
  * its close button's size and place. ciderui's: the navigator's 400px (DocC's
  * script's width at a fresh load up to 1300px wide, growing to 543px on a
- * wider window: its stylesheet sets none); the sheet over the whole window,
+ * wider window: its stylesheet sets none); a link's target landing under
+ * the bar (DocC's script scrolls it there); the sheet over the whole window,
  * the global nav too (a popover is in the top layer; DocC's starts under its
  * global nav, 44px down), shown at once (DocC's slides by a transform in
  * 0.15s, from a place not read); the column under the bar the window's
@@ -156,6 +158,16 @@
 
     > .cui-docs-content {
       margin-top: 40px;
+    }
+  }
+
+  /* a link to a place on the page (a heading's, a footnote's) lands it under
+     the bar, which sticks over it */
+  .cui-docs-page :target {
+    scroll-margin-top: 48px;
+
+    @media (width >= 768px) {
+      scroll-margin-top: 52px;
     }
   }
 }

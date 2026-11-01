@@ -1,6 +1,7 @@
 +++
 title = "Get Started"
 description = "ciderui in a site: Tailwind CSS v4, its stylesheets imported, its classes on your markup."
+template = "docs.html"
 +++
 
 ciderui is apple.com’s look for a website built with Tailwind CSS v4: a small contract of variables (the colors, the sizes, the motion), the type as utilities, and apple.com’s parts as classes, each in a stylesheet of its own that a site imports when it uses the part. Everything it draws was measured on apple.com’s live pages; none of apple.com’s CSS is copied.

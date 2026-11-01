@@ -2,10 +2,11 @@
 title = "Components"
 description = "apple.com’s parts as classes, each measured from the page it comes from."
 sort_by = "title"
+template = "docs-section.html"
+page_template = "docs.html"
 
 [extra]
-heading = "All Components"
-localnav = {}
+categories = ["Page", "Navigation", "Controls", "Store", "Newsroom", "Console", "Documentation"]
 +++
 
 A component is a class, or a block of a few, that gives an element the look of one of apple.com’s parts, and nothing else: no script, no place on the page. Each is a stylesheet of its own, `components/<set>/<name>/<name>.css`, imported when a site uses it, or with every part of its set: `site.css` for apple.com’s parts, `console.css` for the console’s, `docs.css` for Apple’s developer documentation’s.

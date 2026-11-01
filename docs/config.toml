@@ -44,6 +44,13 @@ search_links = [
 ]
 head = [{ tag = "link", attrs = { rel = "icon", type = "image/svg+xml", href = "/logo.svg" } }]
 
+# the documentation's pages in Apple's developer documentation's layout
+# (ciderui-zola's docs.html and docs-section.html): its bar's and its
+# navigator's title, and its navigator's rows
+[extra.docs]
+title = "Documentation"
+pages = ["get-started.md", "foundations.md", "rust.md", "components/_index.md"]
+
 [extra.footer]
 notes = "<p>apple.com’s values are read off its live pages and recorded with the probe that read them; none of apple.com’s stylesheets is copied. Apple, iPhone and Mac are trademarks of Apple Inc.; ciderui is not Apple’s.</p>"
 directory = [

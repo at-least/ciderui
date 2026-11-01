@@ -190,9 +190,9 @@ for (const width of [1440, 390]) {
     await inner.click('[command="show-modal"]');
     await settle(inner);
     const open = await inner.evaluate(() => document.querySelector('.cui-modal').matches(':modal'));
-    const below = await page.evaluate(() => innerHeight - document.querySelector('.cui-localnav').getBoundingClientRect().height);
+    const below = await page.evaluate(() => innerHeight - document.querySelector('.cui-docs-bar').getBoundingClientRect().height);
     check(`at ${width}px "${title}" opens in its frame by its button, with no script`, open, true);
-    check(`at ${width}px its frame grows to the window's height below the page's local nav (${closed}px closed)`, await height(handle), below);
+    check(`at ${width}px its frame grows to the window's height below the page's bar (${closed}px closed)`, await height(handle), below);
     await inner.click('.cui-modal-close');
     await settle(inner);
     check(`at ${width}px its close button closes it, its frame its content's height again`, await height(handle), closed);
@@ -203,9 +203,9 @@ for (const width of [1440, 390]) {
     await inner.click('[popovertarget="cui-globalnav-search"]');
     await settle(inner);
     const open = await inner.evaluate(() => `${document.querySelector('.cui-globalnav-search').matches(':popover-open')}, ${document.activeElement.className}`);
-    const below = await page.evaluate(() => innerHeight - document.querySelector('.cui-localnav').getBoundingClientRect().height);
+    const below = await page.evaluate(() => innerHeight - document.querySelector('.cui-docs-bar').getBoundingClientRect().height);
     check(`at ${width}px the global nav's search opens in its frame by its button, its field focused`, open, 'true, cui-globalnav-searchinput');
-    check(`at ${width}px its frame grows to the window's height below the page's local nav (${closed}px closed)`, await height(handle), below);
+    check(`at ${width}px its frame grows to the window's height below the page's bar (${closed}px closed)`, await height(handle), below);
     await inner.press('.cui-globalnav-searchinput', 'Escape');
     await settle(inner);
     check(`at ${width}px Escape closes it, its frame the bar's height again`, await height(handle), closed);
@@ -222,16 +222,16 @@ for (const width of [1440, 390]) {
   }
   {
     // a footnote's mark in an example: its note scrolled to below the page's
-    // local nav, not under it
+    // bar, not under it
     const { inner } = await frame('/components/article/', 'An article');
     await inner.click('a[href="#fn-1"]');
     await still();
     const at = await page.evaluate(() => {
       const f = document.querySelector('iframe[title="An article"]');
       const note = f.contentDocument.getElementById('fn-1').getBoundingClientRect();
-      return { note: f.getBoundingClientRect().top + f.clientTop + note.top, nav: document.querySelector('.cui-localnav').getBoundingClientRect().bottom };
+      return { note: f.getBoundingClientRect().top + f.clientTop + note.top, nav: document.querySelector('.cui-docs-bar').getBoundingClientRect().bottom };
     });
-    check(`at ${width}px a footnote's mark in an example scrolls its note to below the page's local nav (its top ${at.note.toFixed(2)}px, the nav's foot ${at.nav.toFixed(2)}px)`, at.note >= at.nav - 0.5, true);
+    check(`at ${width}px a footnote's mark in an example scrolls its note to below the page's bar (its top ${at.note.toFixed(2)}px, the bar's foot ${at.nav.toFixed(2)}px)`, at.note >= at.nav - 0.5, true);
   }
   {
     // a page's own footnote (markdown's, the news article's): its mark
@@ -266,9 +266,9 @@ for (const width of [1440, 390]) {
       await settle(inner);
       const open = await inner.evaluate(() => document.querySelector('.cui-globalnav-list').matches(':popover-open'));
       check('at 390px the global nav\'s menu opens in its frame', open, true);
-      const below = await page.evaluate(() => innerHeight - document.querySelector('.cui-localnav').getBoundingClientRect().height);
-      check(`at 390px its frame grows to the window's height below the page's local nav (${closed}px closed)`, await height(handle), below);
-      check('and it is scrolled there, under the local nav', await handle.evaluate((f) => Math.round(f.getBoundingClientRect().top)), 900 - below);
+      const below = await page.evaluate(() => innerHeight - document.querySelector('.cui-docs-bar').getBoundingClientRect().height);
+      check(`at 390px its frame grows to the window's height below the page's bar (${closed}px closed)`, await height(handle), below);
+      check('and it is scrolled there, under the bar', await handle.evaluate((f) => Math.round(f.getBoundingClientRect().top)), 900 - below);
       await inner.click('.cui-globalnav-closebutton');
       await settle(inner);
       check('closed again, its frame is the bar\'s height', await height(handle), closed);

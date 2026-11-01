@@ -1,6 +1,6 @@
 # ciderui's documentation
 
-ciderui's documentation, as a site built with ciderui-zola, the Zola theme on ciderui: getting started, the foundations (the colors, the type, the breakpoints), the Rust crate, a page for each component with its live examples, and the news, in the Newsroom's look. The pages are under `content/`.
+ciderui's documentation, as a site built with ciderui-zola, the Zola theme on ciderui: getting started, the foundations (the colors, the type, the breakpoints), the Rust crate and a page for each component with its live examples, in Apple's developer documentation's look (the theme's `docs.html` and `docs-section.html`; `[extra.docs]` in `config.toml` names the navigator's rows, and `content/components/_index.md`'s `[extra] categories` the order of the components' groups), and the home and the news, in apple.com's and the Newsroom's. The pages are under `content/`.
 
 From the repository's root, with ciderui-zola checked out beside this repository:
 

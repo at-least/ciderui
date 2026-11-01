@@ -64,6 +64,16 @@ export const cases = [
     ],
   },
   {
+    // a link to a heading of the content: it lands under the bar
+    name: 'page target',
+    html: ex('page').replace('<h2>Overview</h2>', '<h2 id="overview">Overview</h2>').replace('<main class="cui-docs-page-main">', '<main class="cui-docs-page-main"><a id="to-overview" href="#overview">Overview</a>'),
+    widths: [1200, 767],
+    click: '#to-overview',
+    checks: [
+      { target: '#overview', props: ['scroll-margin-top'], golden: 'a place a link leads to lands under the bar that sticks over it, its 52px (48px below 768px): DocC\'s script scrolls it there' },
+    ],
+  },
+  {
     name: 'page touch',
     html: ex('page'),
     widths: [390],

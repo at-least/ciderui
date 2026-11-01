@@ -1,6 +1,7 @@
 +++
 title = "Rust"
 description = "The crate: the components’ markup as hypertext components, the icons, and the stylesheets."
+template = "docs.html"
 +++
 
 A site that renders its pages in Rust with [hypertext](https://crates.io/crates/hypertext) writes ciderui’s markup with the crate `ciderui` (in the repository’s `rust/`), and takes its stylesheets from the same crate, so its dependency, at one commit, pins both: the markup and the CSS cannot part.
