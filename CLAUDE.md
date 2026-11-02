@@ -162,8 +162,9 @@ comment carries only that.
   made) goes in the commit message or the repo's ledger, not in comments.
 - A repo's own comment conventions (component headers, rustdoc, config-file
   documentation) override the form, never the truth: every claim in them
-  still follows the rules above. These rules govern comments you write or
-  touch; don't sweep old ones unasked.
+  still follows the rules above. These rules govern every comment, old
+  ones too: bring the comments of a file you work in to them, unasked, as
+  a stage of its own (the owner, 2026-11-03).
 
 ## Commits
 
