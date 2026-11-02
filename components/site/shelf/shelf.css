@@ -44,7 +44,8 @@
  * as far in by the scroller's padding and its scroll padding (apple.com's
  * items are translated so far, the last padded at its end); the steps at
  * 735px by the window (apple.com's by a phone's screen); its paddles' look
- * the gallery's (its large paddle's chevron and colors, gallery.css); no
+ * the gallery's (its large paddle's chevron, colors and their 0.1s fade,
+ * gallery.css; apple.com's shelf paddle changes its colors at once); no
  * paddles on a screen with no hover (apple.com's draws none on a touch
  * screen); a paddle at an end fades out without shrinking (apple.com's
  * scales it to 0.8 as it goes, motion past what shows the change of state:
@@ -129,7 +130,9 @@
     position: absolute;
     top: 49%;
     margin-top: -28px;
-    transition: opacity 0.7s cubic-bezier(0.15, 0, 0.2, 1) 0.1s;
+    /* the gallery's paddle's colors' fades kept: this shorthand replaces its
+       list */
+    transition: background 0.1s linear, color 0.1s linear, opacity 0.7s cubic-bezier(0.15, 0, 0.2, 1) 0.1s;
 
     &:first-of-type {
       inset-inline-start: 18px;
@@ -142,7 +145,7 @@
     /* shown, in 0.5s; the one at an end faded out (over the gallery's
        disabled paddle) */
     &:not(:disabled) {
-      transition-duration: 0.5s;
+      transition-duration: 0.1s, 0.1s, 0.5s;
     }
 
     &:disabled {

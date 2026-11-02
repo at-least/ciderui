@@ -61,8 +61,8 @@ export const cases = [
     checks: [
       { target: '.cui-shelf-paddle:not(:disabled)', props: ['position', 'top', 'right', 'margin-top', 'opacity', 'box-height'], apple: ['store', 'shelf.paddle'] },
       { target: '.cui-shelf-paddle:disabled', props: ['position', 'top', 'left', 'margin-top', 'opacity'], apple: ['store', 'shelf.paddle-previous'] },
-      { target: '.cui-shelf-paddle:not(:disabled)', props: ['transform', ...MOTION, 'transition-delay'], golden: 'no transform, its opacity alone moving, in apple.com\'s 0.5s from 0.1s (store:shelf.paddle): apple.com\'s scale moves too, motion past what shows the change of state (DESIGN.md decision 25)' },
-      { target: '.cui-shelf-paddle:disabled', props: ['transform', ...MOTION, 'transition-delay'], golden: 'faded out at its size, its opacity alone in apple.com\'s 0.7s from 0.1s: apple.com\'s shrinks it to 0.8 as well (store:shelf.paddle-previous, DESIGN.md decision 25)' },
+      { target: '.cui-shelf-paddle:not(:disabled)', props: ['transform', ...MOTION, 'transition-delay'], golden: 'no transform; its colors as a gallery paddle\'s, in 0.1s (gallery.css: apple.com\'s shelf paddle changes them at once), its opacity in apple.com\'s 0.5s from 0.1s (store:shelf.paddle): apple.com\'s scale moves too, motion past what shows the change of state (DESIGN.md decision 25)' },
+      { target: '.cui-shelf-paddle:disabled', props: ['transform', ...MOTION, 'transition-delay'], golden: 'faded out at its size, its opacity in apple.com\'s 0.7s from 0.1s, its colors as a gallery paddle\'s in 0.1s: apple.com\'s shrinks it to 0.8 as well (store:shelf.paddle-previous, DESIGN.md decision 25)' },
       { target: '.cui-shelf-row', props: ['position', 'box-height'], apple: ['store', 'shelf.paddles'] },
     ],
   },
