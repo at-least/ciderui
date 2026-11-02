@@ -2,7 +2,7 @@
 // (--tb-component-Banner-*): its corners, room and least height, its title,
 // body and caption, its tints, its icon's column, its close button's place,
 // at the desktop's page scale and the mobile's. Golden, with their why: the
-// icon's size and color, the actions' room, the dark side.
+// icon's size and color, the actions' room, a link's color, the dark side.
 
 import { examples } from '../../../test/harness.mjs';
 
@@ -11,6 +11,7 @@ const B = 'component-Banner';
 const D = `${B}-anatomy`;
 const BANNER = '.cui-console-banner';
 const COLORS = [['info'], ['success'], ['error']];
+const LINK = 'a link in its sentence in the brand\'s blue fitted to the tints (--cui-c-console-brand-label-on-tint, held to 4.5:1 on each by test/tokens.mjs), not the console link\'s own';
 
 export const cases = [
   {
@@ -48,6 +49,8 @@ export const cases = [
       { target: `${BANNER}:not([data-color])`, props: ['background-color'], tb: [`${B}-variant-colorRole-neutral-variant-tinted-backgroundColor`] },
       ...COLORS.map(([c]) => ({ target: `${BANNER}[data-color="${c}"]`, props: ['background-color'], tb: [`${B}-variant-colorRole-${c}-variant-tinted-backgroundColor`] })),
       ...COLORS.map(([c]) => ({ target: `${BANNER}[data-color="${c}"] .cui-console-banner-icon`, props: ['color'], golden: `its icon in the fitted ${c} label (tokens.css, decision 21)` })),
+      { target: `${BANNER}:not([data-color]) .cui-console-link`, props: ['color'], golden: LINK },
+      ...COLORS.map(([c]) => ({ target: `${BANNER}[data-color="${c}"] .cui-console-link`, props: ['color'], golden: LINK })),
     ],
   },
   ...['desktop', 'mobile'].map((scale) => ({
@@ -66,6 +69,7 @@ export const cases = [
     checks: [
       { target: '[data-color="warning"]', props: ['background-color', 'color'], golden: 'the dark side derived (tokens.css, decision 18)' },
       { target: '[data-color="error"]', props: ['background-color'], golden: 'the dark side derived (tokens.css, decision 18)' },
+      { target: '[data-color="warning"] .cui-console-link', props: ['color'], golden: LINK },
     ],
   },
 ];

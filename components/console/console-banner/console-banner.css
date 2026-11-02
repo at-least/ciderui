@@ -28,6 +28,10 @@
  * cui-console-banner-actions  its buttons, 9px apart, 8px down
  * cui-console-banner-dismiss  its close button, 8px in from its top end
  *
+ * A link in its sentence (cui-console-link) is the brand's blue fitted to
+ * the tints (--cui-c-console-brand-label-on-tint): the console's blue is
+ * short of 4.5:1 on some of them.
+ *
  * Below 640px, the toolkit's mobile page scale: the title 16px on 21px at
  * 600, a caption 15px on 20px, 45px at its end, 46px at least, the body
  * 10px down.
@@ -43,6 +47,7 @@
   .cui-console-banner {
     --cui-console-banner-fill: var(--cui-c-console-neutral-fill-quaternary);
     --cui-console-banner-icon: var(--cui-c-console-neutral-label-secondary);
+    --cui-console-link-color: var(--cui-c-console-brand-label-on-tint);
 
     position: relative;
     display: flex;
