@@ -172,8 +172,11 @@ comment carries only that.
   the owner's alone: DESIGN.md, "Who it is for": "The owner's websites, and
   nobody else's: ciderui is not public (stated)." Any other session (a
   fork, someone else's clone) asks before each commit.
-- A stage ends when its part is done and `npm test` passes ("This
-  repository's gate"). Where it cannot pass here, the stage has not ended:
+- A stage ends when its part is done, /simplify has run on its changes
+  and its fixes are applied, and then `npm test` passes ("This
+  repository's gate"). .claude/hooks/simplify-gate.mjs denies a
+  `git commit` of changed code until /simplify has run (the owner,
+  2026-11-03). Where it cannot pass here, the stage has not ended:
   report the step that could not run `UNVERIFIED (environment: ...)` and
   ask before committing. Commit only that stage's files, never unrelated
   uncommitted changes. Match the repo's commit message style. Pushing

@@ -1,3 +1,4 @@
 node_modules/
 docs/public/
 docs/static/processed_images/
+.claude/worktrees/
