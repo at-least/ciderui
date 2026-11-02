@@ -1,7 +1,8 @@
 /* ciderui — the card: the store's card, a block of the page's ground with
  * rounded corners and a shadow, its picture filling it and its text at its
  * top (an eyebrow or a tag, its headline, a description, a price); the
- * whole card its headline's link, lifted as the pointer comes over it.
+ * whole card its headline's link, its shadow deepening as the pointer comes
+ * over it.
  *
  * From apple.com's store (reference/apple.com/): store:card* (a light card
  * with a tag, a dark one, one with a plain eyebrow; their parts, hovered).
@@ -20,7 +21,7 @@
  *                       on the page's ground (white; black in a dark block,
  *                       cui-dark on the card, its text white), 18px corners,
  *                       its shadow; hovered or with the focus in it, a
- *                       deeper shadow and 1% larger, in 0.3s
+ *                       deeper shadow, in 0.3s
  * cui-card-media        its picture, filling it (object-fit: cover), under
  *                       its text
  * cui-card-content      its text, at its top: 28px in, 340px wide at most
@@ -38,11 +39,12 @@
  * (apple.com's with a phone's screen, `max-device-width: 736px`: the same
  * at the widths measured); the whole card is its link with no script, the
  * link's ::after over it (apple.com's script follows the link from anywhere
- * on the card), so its text cannot be selected, as apple.com's cannot; it
- * lifts as the pointer comes over it anywhere (apple.com's in a shelf, its
- * scroller still); its shadow and its scale are what move (apple.com's
- * `transition: all` would also move its size as a window's width crosses
- * 735px, which a screen's does not); its picture is laid under its text (apple.com's text is
+ * on the card), so its text cannot be selected, as apple.com's cannot; its
+ * shadow deepens as the pointer comes over it anywhere (apple.com's in a
+ * shelf, its scroller still); its shadow is what moves, and it does not grow
+ * (apple.com's `transition: all` also scales it 1%, a lift that only draws
+ * the eye: DESIGN.md decision 25; and would move its size as a window's
+ * width crosses 735px, which a screen's does not); its picture is laid under its text (apple.com's text is
  * laid over its picture). One size, the store's most (its rf-ccard-40): a
  * site sets another width with a utility (`w-full`), the picture cropped to
  * it. */
@@ -58,7 +60,7 @@
     color: var(--cui-c-on-card);
     background-color: var(--cui-c-bg);
     box-shadow: var(--cui-shadow-card);
-    transition-property: box-shadow, transform;
+    transition-property: box-shadow;
     transition-duration: 0.3s;
     transition-timing-function: cubic-bezier(0, 0, 0.5, 1);
 
@@ -66,7 +68,6 @@
       &:hover,
       &:focus-within {
         box-shadow: var(--cui-shadow-card-hover);
-        transform: scale3d(1.01, 1.01, 1.01);
       }
     }
 

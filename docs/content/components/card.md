@@ -1,13 +1,13 @@
 +++
 title = "Card"
-description = "The store’s card: a picture, a headline and a price, the whole card a link, lifted as the pointer comes over it."
+description = "The store’s card: a picture, a headline and a price, the whole card a link, its shadow deepening as the pointer comes over it."
 
 [extra]
 category = "Store"
 image = "pictures/card.png"
 +++
 
-The store’s card: 400 by 500px (309 by 450px below 735px) on the page’s ground, 18px corners and a soft shadow, its picture filling it and its text at its top. The whole card is its headline’s link, with no script: the link’s `::after` lies over the card. Hovered, or with the focus in it, its shadow deepens and it grows 1%, in 0.3s.
+The store’s card: 400 by 500px (309 by 450px below 735px) on the page’s ground, 18px corners and a soft shadow, its picture filling it and its text at its top. The whole card is its headline’s link, with no script: the link’s `::after` lies over the card. Hovered, or with the focus in it, its shadow deepens in 0.3s; it does not grow, as apple.com’s does.
 
 ```css
 @import "ciderui/components/site/card/card.css";
