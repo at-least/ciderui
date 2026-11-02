@@ -1,20 +1,9 @@
-// The button against apple.com: each size against its shared button
-// (store:button*), the variants (store:button.secondary, .neutral,
-// .secondary-neutral), the call to action against the home page's tile buttons
-// across 735px (home:button*), the variants on light and in a dark block
-// (home:tile.dark-button*, home:gallery.button-neutral), disabled
-// (store:button*.disabled), the rectangle (bag:form-button*), the block
-// (store:button.block); golden: the letter-spacing, the font, a disabled
-// button under the pointer; a touch screen's hover is rest, where apple.com's
-// is its hover (touch-store:button*).
-
 import { examples, SIZE, PADDING, BORDER, RADIUS, COLORS, TEXT, OUTLINE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const LOOK = [...SIZE, ...PADDING, ...BORDER, ...RADIUS, 'min-width', 'box-height', ...TEXT];
 // what the home page's probes read (no text-align, wrapping or opacity; its
-// primary button's cursor alone); not its display, which is its place's: its
-// buttons are grid items, blockified (the case cta-grid)
+// primary button's cursor alone); not its display, which is its place's
 const LOOK_HOME = [...SIZE, ...PADDING, ...BORDER, ...RADIUS, 'min-width', 'box-height'];
 const OWN = { props: ['letter-spacing', 'font-family'], golden: 'the system font\'s fitted letter-spacing (tokens.css) and the kit\'s stack, not apple.com\'s' };
 const states = (target, probe, props = COLORS) => [
@@ -90,6 +79,15 @@ export const cases = [
       // the gallery's button steps at 1069px, a size of its own: its colors
       { target: '.cui-btn[data-variant="neutral"]', props: COLORS, apple: ['home', 'gallery.button-neutral'] },
       ...states('.cui-btn[data-variant="neutral"]', ['home', 'gallery.button-neutral']),
+    ],
+  },
+  {
+    name: 'dark secondary-neutral',
+    html: '<section class="cui-dark"><a class="cui-btn" data-variant="secondary-neutral" href="#buy">Buy</a></section>',
+    widths: [1200],
+    checks: [
+      { target: '.cui-btn', props: COLORS, golden: 'the neutral\'s dark side, near-white on no ground: apple.com\'s in a dark block not measured' },
+      { target: '.cui-btn', state: 'hover', props: COLORS, golden: 'filled with it hovered' },
     ],
   },
   {
