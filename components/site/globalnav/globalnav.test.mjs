@@ -277,9 +277,11 @@ export const cases = [
     ...OPEN,
     checks: [
       { target: `${LIST} > li:nth-child(1)`, props: [...MOTION, 'transition-delay'], apple: ['home', 'menu.logo'] },
-      { target: `${LIST} > li:nth-child(3)`, props: ['transition-duration', 'transition-delay'], apple: ['home', 'menu.row'] },
+      { target: `${LIST} > li:nth-child(3)`, props: ['transition-duration'], apple: ['home', 'menu.row'] },
       { target: `${LIST} > li:nth-child(4)`, props: ['transition-duration'], apple: ['home', 'menu.row-second'] },
-      { target: `${LIST} > li:nth-child(4)`, props: ['transition-delay'], golden: STAGGER },
+      { target: `${LIST} > li:nth-child(3)`, props: ['animation-name', 'animation-duration', 'animation-delay', 'animation-timing-function', 'animation-fill-mode'], golden: 'apple.com\'s rows in 240ms from 200ms (home:menu.row\'s transition), as an animation that runs once as the menu shows, from transparent: the rows\' transition is their coming back from a phone\'s flyout, from another delay' },
+      { target: `${LIST} > li:nth-child(4)`, props: ['animation-delay'], golden: STAGGER },
+      { target: `${LIST} > li:nth-child(3)`, props: ['transition-delay'], golden: 'the rows back from behind a phone\'s open flyout from 160ms, apple.com\'s (flyout-phone:flyout\'s animations, globalnav-flyout-slide-back-next: 240ms from 160ms)' },
       { target: `${LIST} > li:nth-child(3)`, props: ['transition-property', 'transition-timing-function'], golden: 'apple.com\'s rows also turn visible (its rows are hidden closed, ciderui\'s not displayed); their opacity and transform as apple.com\'s, the transform for the 8px back behind a phone\'s open flyout' },
       { target: LIST, props: MOTION, golden: 'apple.com\'s ground and height in 450ms (home:menu.open\'s animations; its computed transition names its ground alone, its height\'s declared in a state between)' },
       { target: X[0], props: MOTION, golden: 'apple.com\'s lines turn in 0.24s (their SVG animation, reference/icons/)' },

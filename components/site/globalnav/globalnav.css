@@ -158,7 +158,8 @@
  * chevron at the row's end, hovered; it opens the flyout over the open menu
  * (a popover inside it), a sheet with its back button, which closes the
  * flyout, and its X, which closes the menu and the flyout with it; the
- * menu's rows slide back and out behind it.
+ * menu's rows slide back and out behind it, and come in again from 160ms
+ * as it closes (apple.com's), where the menu brings them in from 200ms.
  *
  * cui-globalnav             the bar: 48px, 44px from 834px, on the bar's
  *                           material, translucent under a blur (dark in a
@@ -532,8 +533,11 @@
     }
 
     /* each row 47px down, then 46px below the one above (each 53px tall, 7px
-       over the next), all fading in together, the sheet grown under them;
-       the transform for the 8px back behind a phone's open flyout */
+       over the next), all fading in together as the menu opens, the sheet
+       grown under them: an animation, which runs once as the menu shows; the
+       transition is the rows' coming back from behind a phone's open flyout.
+       Not the opening on the transition too: one delay would then serve
+       both, where apple.com's are 200ms and 160ms */
     > li:has(> .cui-globalnav-link) {
       display: grid;
       margin-top: -1px;
@@ -541,15 +545,18 @@
       transition-property: opacity, transform;
       transition-duration: 0.24s;
       transition-timing-function: var(--cui-globalnav-ease);
-      transition-delay: 0.2s;
+      transition-delay: 0.16s;
+      animation: cui-globalnav-row-in 0.24s var(--cui-globalnav-ease) 0.2s backwards;
+    }
+  }
+
+  @keyframes cui-globalnav-row-in {
+    from {
+      opacity: 0;
     }
   }
 
   @starting-style {
-    .cui-globalnav-list:popover-open > li:has(> .cui-globalnav-link) {
-      opacity: 0;
-    }
-
     .cui-globalnav-list:popover-open .cui-globalnav-closebutton path {
       transform: none;
     }
