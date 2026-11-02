@@ -215,6 +215,7 @@ const SOURCES = {
   '--cui-c-console-field-border': 'component-TextInput-variant-colorRole-neutral-focus-off-variant-stroked-border-color',
   '--cui-c-console-brand-label-on-fill': 'component-Tabs-variant-colorRole-brand-variant-filledGray-anatomy-Tab-variant-effect-default-isActive-false-color',
   '--cui-c-console-brand-label-on-tint': 'component-Link-variant-colorRole-brand-effect-default-variant-inline-color',
+  '--cui-c-console-brand-label-on-tint-secondary': 'component-Link-variant-colorRole-brand-effect-disabled-variant-inline-color',
   '--cui-c-console-table-sticky': 'component-Table-anatomy-TH-stickyBackgroundColor',
   '--cui-c-console-dialog-stroke': 'component-Modal-variant-variant-modal-stroke',
 };
@@ -261,6 +262,7 @@ const FITTED = {
   '--cui-c-console-field-border': { light: 'oklch(35.9% 0.012 285.8 / 0.58)', dark: 'oklch(87.9% 0.015 286.1 / 0.42)', why: 'a field\'s edge, at the toolkit\'s 0.18, is 1.4:1 on white; a control\'s edge is held to 3:1' },
   '--cui-c-console-brand-label-on-fill': { light: 'oklch(49.7% 0.209 260.5)', why: 'the brand\'s label on the gray fill is 4.4:1' },
   '--cui-c-console-brand-label-on-tint': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(75.6% 0.120 260.5)', why: 'a link in a banner\'s sentence: the toolkit\'s blue 3.9:1 on the info tint over a card, its derived dark blue-600 4.47:1 on the warning tint over a card (crashcart\'s unsymbolicated notice)' },
+  '--cui-c-console-brand-label-on-tint-secondary': { light: 'oklch(49.7% 0.209 260.5 / 0.60)', dark: 'oklch(75.6% 0.120 260.5 / 0.60)', why: 'a disabled link in a banner\'s sentence: on-tint\'s blue at the toolkit\'s disabled 0.60, so a banner\'s links are one blue (disabled, it has no contrast minimum, WCAG 1.4.3)' },
   '--cui-c-console-info-label-primary': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(68.3% 0.167 256.6)', why: 'the toolkit\'s info blue is 4.0:1 on white; its derived dark blue-500 short of 4.5:1 on its tint over a card' },
   '--cui-c-console-success-label-primary': { light: 'oklch(38.5% 0.094 150.1)', why: 'the toolkit\'s green is 2.2:1 on white, green-800 short of 4.5:1 on the gray fill over a card' },
   '--cui-c-console-warning-label-primary': { light: 'oklch(48.6% 0.112 61.8)', why: 'the toolkit\'s yellow is 1.6:1 on white' },

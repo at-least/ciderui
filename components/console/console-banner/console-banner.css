@@ -30,7 +30,8 @@
  *
  * A link in its sentence (cui-console-link) is the brand's blue fitted to
  * the tints (--cui-c-console-brand-label-on-tint): the console's blue is
- * short of 4.5:1 on some of them.
+ * short of 4.5:1 on some of them; disabled, that blue at 0.60
+ * (--cui-c-console-brand-label-on-tint-secondary).
  *
  * Below 640px, the toolkit's mobile page scale: the title 16px on 21px at
  * 600, a caption 15px on 20px, 45px at its end, 46px at least, the body
@@ -48,6 +49,7 @@
     --cui-console-banner-fill: var(--cui-c-console-neutral-fill-quaternary);
     --cui-console-banner-icon: var(--cui-c-console-neutral-label-secondary);
     --cui-console-link-color: var(--cui-c-console-brand-label-on-tint);
+    --cui-console-link-color-disabled: var(--cui-c-console-brand-label-on-tint-secondary);
 
     position: relative;
     display: flex;
