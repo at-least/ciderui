@@ -10,7 +10,7 @@
 // first row's delay; a row's own, its hover's, at once), the chevron turned
 // (reference/icons/).
 
-import { examples, MOTION, PADDING, SIZE } from '../../../test/harness.mjs';
+import { examples, MOTION, PADDING, SIZE, SLIDE, STAGGER } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const NAV = ex('localnav');
@@ -24,8 +24,6 @@ const LINK = '.cui-localnav-list > li:nth-child(2) > .cui-localnav-link';
 const BUTTON = '.cui-localnav-actions > .cui-btn';
 const CHEVRON = '.cui-localnav-menubutton';
 const OPEN = { click: CHEVRON, widths: [390] };
-const STAGGER = 'together with the first row: apple.com\'s second comes in from 280ms, 20ms after the first, a staggered reveal that only draws the eye (DESIGN.md decision 25)';
-const SLIDE = 'where it is: apple.com\'s rows come in from 4px up, a slide that only draws the eye (DESIGN.md decision 25)';
 // a footnote's mark under the bar and its note far down the page
 const NOTE = `${NAV}<main><p><a href="#note">1</a></p><div style="height: 3000px"></div><p id="note">The note.</p><div style="height: 3000px"></div></main>`;
 
@@ -91,7 +89,7 @@ export const cases = [
       { target: LINK, state: 'hover', props: ['opacity'], apple: ['localnav', 'tray.link', 'hover'] },
       { target: CURRENT, props: [...SIZE, 'color', 'opacity', 'box-top', 'box-left', 'box-height'], apple: ['localnav', 'tray.current'] },
       { target: CURRENT, pseudo: '::after', props: ['background-color', 'opacity', 'height', 'top', 'left', 'border-top-left-radius'], apple: ['localnav', 'tray.current-mark'] },
-      { target: LINK, props: ['transform'], golden: SLIDE },
+      { target: LINK, props: ['transform'], golden: 'not 4px up as apple.com\'s start: ' + SLIDE },
       { target: CURRENT, pseudo: '::after', props: ['width'], golden: 'apple.com\'s mark, 1.2px wide (localnav:tray.current-mark, 1.1875px as drawn)' },
       { target: '.cui-localnav-menu', props: ['box-top', 'box-height'], golden: 'the menu below the bar, its last row\'s foot 27px above its own at 221px, apple.com\'s (localnav:tray.open: from 24px, 197px)' },
       { target: `${CHEVRON} svg`, props: ['transform'], golden: 'the chevron turned up: apple.com\'s points flipped about its middle (reference/icons/)' },
@@ -105,7 +103,7 @@ export const cases = [
     checks: [
       { target: '.cui-localnav', props: ['transition-duration', 'transition-timing-function'], apple: ['localnav', 'tray.background'] },
       { target: '.cui-localnav-list', props: [...MOTION, 'transition-delay'], golden: 'the rows in apple.com\'s 0.32s with its curve (localnav:tray.link), from its first row\'s 260ms (localnav:tray.open\'s animations), faded in as one list, its opacity alone: ' + SLIDE },
-      { target: LINK, props: [...MOTION, 'transition-delay'], golden: 'a row\'s own opacity, its hover, at once in 0.32s, coming and going; the rows\' entrance the list\'s, ' + STAGGER },
+      { target: LINK, props: [...MOTION, 'transition-delay'], golden: 'a row\'s own opacity, its hover, at once in 0.32s, coming and going; the rows\' entrance the list\'s, apple.com\'s second from 280ms, 20ms after the first: ' + STAGGER },
       { target: '.cui-localnav-menu', props: ['transition-duration', 'transition-timing-function'], golden: 'apple.com\'s menu opens in 0.32s with its curve (localnav:tray.open, its max-height)' },
     ],
   },

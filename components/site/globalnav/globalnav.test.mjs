@@ -26,7 +26,7 @@
 // are (apple.com's one after another, from a few px up: DESIGN.md decision
 // 25).
 
-import { examples, MOTION, OUTLINE, PADDING, SIZE } from '../../../test/harness.mjs';
+import { examples, MOTION, OUTLINE, PADDING, SIZE, SLIDE, STAGGER } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const NAV = ex('globalnav');
@@ -124,8 +124,6 @@ const CHEVRON = `${LAPTOPS_BUTTON} > .cui-globalnav-image`;
 const CHEVRON_COMPACT = `${LAPTOPS_BUTTON} > .cui-globalnav-image-compact`;
 const HOVERING = { hover: LAPTOPS_LINK, widths: WIDE, height: 900 };
 const ITEM_MOTION = [...MOTION, 'transition-delay'];
-const STAGGER = 'together with the rows before it: apple.com\'s come in one after another, 20ms apart, a staggered reveal that only draws the eye (DESIGN.md decision 25)';
-const SLIDE = 'where it is: apple.com\'s come in from a few px up, a slide that only draws the eye (DESIGN.md decision 25)';
 // apple.com's flyout is read below its locale banner (70px from 834px): a
 // place here is the same distance from the nav's top
 const FPLACE = 'the same distance from the nav\'s top as apple.com\'s (flyout:*, its locale banner above its nav)';
@@ -280,7 +278,7 @@ export const cases = [
       { target: `${LIST} > li:nth-child(3)`, props: ['transition-duration'], apple: ['home', 'menu.row'] },
       { target: `${LIST} > li:nth-child(4)`, props: ['transition-duration'], apple: ['home', 'menu.row-second'] },
       { target: `${LIST} > li:nth-child(3)`, props: ['animation-name', 'animation-duration', 'animation-delay', 'animation-timing-function', 'animation-fill-mode'], golden: 'apple.com\'s rows in 240ms from 200ms (home:menu.row\'s transition), as an animation that runs once as the menu shows, from transparent: the rows\' transition is their coming back from a phone\'s flyout, from another delay' },
-      { target: `${LIST} > li:nth-child(4)`, props: ['animation-delay'], golden: STAGGER },
+      { target: `${LIST} > li:nth-child(4)`, props: ['animation-delay'], golden: 'with the row above, not 20ms after it (home:menu.row-second): ' + STAGGER },
       { target: `${LIST} > li:nth-child(3)`, props: ['transition-delay'], golden: 'the rows back from behind a phone\'s open flyout from 160ms, apple.com\'s (flyout-phone:flyout\'s animations, globalnav-flyout-slide-back-next: 240ms from 160ms)' },
       { target: `${LIST} > li:nth-child(3)`, props: ['transition-property', 'transition-timing-function'], golden: 'apple.com\'s rows also turn visible (its rows are hidden closed, ciderui\'s not displayed); their opacity and transform as apple.com\'s, the transform for the 8px back behind a phone\'s open flyout' },
       { target: LIST, props: MOTION, golden: 'apple.com\'s ground and height in 450ms (home:menu.open\'s animations; its computed transition names its ground alone, its height\'s declared in a state between)' },
@@ -520,7 +518,7 @@ export const cases = [
       { target: FIELD, props: [...MOTION, 'transition-delay'], golden: 'apple.com\'s field in 240ms from 200ms (search:field.wrapper\'s keyframes, an animation there), its opacity alone: ' + SLIDE },
       { target: HEADING, props: ['transition-duration', 'transition-delay'], golden: 'apple.com\'s heading in 320ms from 200ms (search:results.header)' },
       { target: '.cui-globalnav-searchlinks > li:first-child', props: ['transition-duration', 'transition-delay'], golden: 'apple.com\'s rows in 320ms, from the heading\'s 200ms (search:nav\'s animations), not 20ms after the one above: ' + STAGGER },
-      { target: '.cui-globalnav-searchlinks > li:nth-child(2)', props: ['transition-delay'], golden: STAGGER },
+      { target: '.cui-globalnav-searchlinks > li:nth-child(2)', props: ['transition-delay'], golden: 'with the row above, not 20ms after it: ' + STAGGER },
       { target: FLY, props: MOTION, golden: 'the sheet\'s height and ground in 450ms to 833px (search:nav.phone\'s animations on its content); no motion of its own from 834px' },
       { target: PANEL, props: MOTION, golden: 'from 834px revealed down and from the bar\'s ground in 0.24s, apple.com\'s flyout\'s height and ground (search:nav\'s animations)' },
       { target: CURTAIN, props: MOTION, golden: 'apple.com\'s curtain in 0.32s (search:curtain), from 834px' },
