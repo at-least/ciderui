@@ -282,7 +282,7 @@ export const cases = [
       { target: `${LIST} > li:nth-child(3)`, props: ['transition-duration', 'transition-delay'], apple: ['home', 'menu.row'] },
       { target: `${LIST} > li:nth-child(4)`, props: ['transition-duration'], apple: ['home', 'menu.row-second'] },
       { target: `${LIST} > li:nth-child(4)`, props: ['transition-delay'], golden: STAGGER },
-      { target: `${LIST} > li:nth-child(3)`, props: ['transition-property', 'transition-timing-function'], golden: 'apple.com\'s rows also turn visible (its rows are hidden closed, ciderui\'s not displayed); their opacity and transform as apple.com\'s' },
+      { target: `${LIST} > li:nth-child(3)`, props: ['transition-property', 'transition-timing-function'], golden: 'apple.com\'s rows also turn visible (its rows are hidden closed, ciderui\'s not displayed); their opacity alone, apple.com\'s transform too: ' + SLIDE },
       { target: LIST, props: MOTION, golden: 'apple.com\'s ground and height in 450ms (home:menu.open\'s animations; its computed transition names its ground alone, its height\'s declared in a state between)' },
       { target: X[0], props: MOTION, golden: 'apple.com\'s lines turn in 0.24s (their SVG animation, reference/icons/)' },
     ],
@@ -518,7 +518,7 @@ export const cases = [
     ...SEARCHING,
     widths: [1600, 390],
     checks: [
-      { target: FIELD, props: [...MOTION, 'transition-delay'], golden: 'apple.com\'s field in 240ms from 200ms (search:field.wrapper\'s keyframes, an animation there)' },
+      { target: FIELD, props: [...MOTION, 'transition-delay'], golden: 'apple.com\'s field in 240ms from 200ms (search:field.wrapper\'s keyframes, an animation there), its opacity alone: ' + SLIDE },
       { target: HEADING, props: ['transition-duration', 'transition-delay'], golden: 'apple.com\'s heading in 320ms from 200ms (search:results.header)' },
       { target: '.cui-globalnav-searchlinks > li:first-child', props: ['transition-duration', 'transition-delay'], golden: 'apple.com\'s rows in 320ms, from the heading\'s 200ms (search:nav\'s animations), not 20ms after the one above: ' + STAGGER },
       { target: '.cui-globalnav-searchlinks > li:nth-child(2)', props: ['transition-delay'], golden: STAGGER },
@@ -1320,7 +1320,7 @@ export const cases = [
     ...BAGGING,
     widths: [1600, 390],
     checks: [
-      { target: BMESSAGE, props: [...MOTION, 'transition-delay'], golden: 'apple.com\'s rows in 0.32s from 80ms (bag-flyout:bag.header: opacity and transform, cubic-bezier(.4,0,.6,1))' },
+      { target: BMESSAGE, props: [...MOTION, 'transition-delay'], golden: 'apple.com\'s rows in 0.32s from 80ms (bag-flyout:bag.header: opacity and transform, cubic-bezier(.4,0,.6,1)), its opacity alone: ' + SLIDE },
       { target: BTEXT, props: ['transition-delay'], golden: 'with the message, not 20ms after it (bag-flyout:bag.subheader): ' + STAGGER },
       { target: BHEADING, props: ['transition-delay'], golden: 'with the message (bag-flyout:bag.nav-header): ' + STAGGER },
       { target: BROW, props: ['transition-delay'], golden: 'with the message (bag-flyout:bag.nav-item): ' + STAGGER },

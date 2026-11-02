@@ -538,7 +538,7 @@
       display: grid;
       margin-top: -1px;
       margin-bottom: -6px;
-      transition-property: opacity, transform;
+      transition-property: opacity;
       transition-duration: 0.24s;
       transition-timing-function: var(--cui-globalnav-ease);
       transition-delay: 0.2s;
@@ -857,7 +857,7 @@
     .cui-globalnav-bagtext,
     .cui-globalnav-bagheading,
     .cui-globalnav-baglinks > li {
-      transition-property: opacity, transform;
+      transition-property: opacity;
       transition-duration: 0.32s;
       transition-timing-function: var(--cui-globalnav-ease);
       transition-delay: 0.08s;
@@ -876,7 +876,7 @@
     .cui-globalnav-searchfield,
     .cui-globalnav-searchheading,
     .cui-globalnav-searchlinks > li {
-      transition-property: opacity, transform;
+      transition-property: opacity;
       transition-duration: 0.32s;
       transition-timing-function: var(--cui-globalnav-ease);
       transition-delay: 0.2s;
@@ -1627,7 +1627,8 @@
         .cui-globalnav-flyoutlinks > li {
           opacity: 1;
           transition-duration: 0.32s;
-          transition-delay: 0.2s;
+          /* the pointer's 120ms rest, then the open flyout's 80ms */
+          transition-delay: calc(0.12s + 0.08s);
         }
       }
 
