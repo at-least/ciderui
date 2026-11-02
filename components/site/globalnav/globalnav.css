@@ -89,8 +89,8 @@
  *
  * While a row marks what was typed, each row is muted and its marked part
  * the rows' color; a section after another is 34px below it (48px to 833px).
- * Rows written once something is typed fade in where they are, the heading
- * from 40ms, each row 20ms after the one above from 60ms, in 0.32s.
+ * Rows written once something is typed fade in where they are, together,
+ * from 40ms, in 0.32s.
  *
  * The bag is a link to the site's bag page (above), or a button opening
  * the bag, another popover, after the search's, an empty bag's:
@@ -115,8 +115,8 @@
  * held; it has no field, so to 833px its X takes the focus (autofocus), its
  * X first in it, so that the next stop after the X is its line's link, as
  * the menu's, and from 834px, where its X is not shown, the focus stays on
- * its button, Tab going on into it. Its message, line, heading and rows come in from above,
- * from 80ms, each 20ms after the one before.
+ * its button, Tab going on into it. Its message, line, heading and rows fade
+ * in together from 80ms.
  *
  * A link may open a flyout, a menu under the bar, its button and the
  * flyout (a popover) after it in its item:
@@ -256,8 +256,12 @@
  * takes every delay, a pointer passing over the bar shows the flyouts it
  * passes; revealed down from the bar (apple.com's grows its height from
  * the bar's in half its content's height in ms: 240ms here, its least and
- * most flyouts', with Mac's 254ms); its headings and rows come in 120ms
- * later than apple.com's, the pointer's rest first, as apple.com's script
+ * most flyouts', with Mac's 254ms); its headings and rows fade in together,
+ * where they are, 120ms later than apple.com's first heading, the pointer's
+ * rest first (apple.com's come in from 4px up one after another, a group's
+ * heading 80ms, 160ms, 200ms, 240ms on and its rows 20ms apart: a staggered
+ * reveal that only draws the eye, DESIGN.md decision 25; so, the same, the
+ * menu's rows, the search's and the bag's), as apple.com's script
  * waits it out before it adds its classes; moved on along the bar, the one
  * left kept until the next has grown over it, where apple.com crossfades
  * them in 120ms, their height between; the curtain the list's, which
@@ -529,7 +533,7 @@
     }
 
     /* each row 47px down, then 46px below the one above (each 53px tall, 7px
-       over the next), coming in 20ms after it */
+       over the next), all fading in from 200ms, the sheet grown under them */
     > li:has(> .cui-globalnav-link) {
       display: grid;
       margin-top: -1px;
@@ -540,22 +544,11 @@
       transition-delay: 0.2s;
     }
 
-    > li:has(> .cui-globalnav-link):nth-child(4) { transition-delay: 0.22s; }
-    > li:has(> .cui-globalnav-link):nth-child(5) { transition-delay: 0.24s; }
-    > li:has(> .cui-globalnav-link):nth-child(6) { transition-delay: 0.26s; }
-    > li:has(> .cui-globalnav-link):nth-child(7) { transition-delay: 0.28s; }
-    > li:has(> .cui-globalnav-link):nth-child(8) { transition-delay: 0.3s; }
-    > li:has(> .cui-globalnav-link):nth-child(9) { transition-delay: 0.32s; }
-    > li:has(> .cui-globalnav-link):nth-child(10) { transition-delay: 0.34s; }
-    > li:has(> .cui-globalnav-link):nth-child(11) { transition-delay: 0.36s; }
-    > li:has(> .cui-globalnav-link):nth-child(12) { transition-delay: 0.38s; }
-    > li:has(> .cui-globalnav-link):nth-child(n + 13) { transition-delay: 0.4s; }
   }
 
   @starting-style {
     .cui-globalnav-list:popover-open > li:has(> .cui-globalnav-link) {
       opacity: 0;
-      transform: translateY(-8px);
     }
 
     .cui-globalnav-list:popover-open .cui-globalnav-closebutton path {
@@ -858,8 +851,7 @@
     }
   }
 
-  /* its message, line, heading and rows in from above, each 20ms after the
-     one before, from 80ms */
+  /* its message, line, heading and rows fading in together from 80ms */
   .cui-globalnav-bag:popover-open {
     .cui-globalnav-bagmessage,
     .cui-globalnav-bagtext,
@@ -871,13 +863,6 @@
       transition-delay: 0.08s;
     }
 
-    .cui-globalnav-bagtext { transition-delay: 0.1s; }
-    .cui-globalnav-bagheading { transition-delay: 0.12s; }
-    .cui-globalnav-baglinks > li:nth-child(1) { transition-delay: 0.14s; }
-    .cui-globalnav-baglinks > li:nth-child(2) { transition-delay: 0.16s; }
-    .cui-globalnav-baglinks > li:nth-child(3) { transition-delay: 0.18s; }
-    .cui-globalnav-baglinks > li:nth-child(4) { transition-delay: 0.2s; }
-    .cui-globalnav-baglinks > li:nth-child(n + 5) { transition-delay: 0.22s; }
   }
 
   /* the curtain is the flyout's, from 834px */
@@ -885,8 +870,8 @@
     display: none;
   }
 
-  /* the field and each row in from above, 20ms after the one before, from
-     200ms, as the search opens with its field empty */
+  /* the field and the rows fading in together from 200ms, as the search
+     opens with its field empty */
   .cui-globalnav-search:popover-open:has(.cui-globalnav-searchinput:placeholder-shown) {
     .cui-globalnav-searchfield,
     .cui-globalnav-searchheading,
@@ -898,27 +883,16 @@
     }
 
     .cui-globalnav-searchfield { transition-duration: 0.24s; }
-    .cui-globalnav-searchlinks > li:nth-child(1) { transition-delay: 0.22s; }
-    .cui-globalnav-searchlinks > li:nth-child(2) { transition-delay: 0.24s; }
-    .cui-globalnav-searchlinks > li:nth-child(3) { transition-delay: 0.26s; }
-    .cui-globalnav-searchlinks > li:nth-child(4) { transition-delay: 0.28s; }
-    .cui-globalnav-searchlinks > li:nth-child(n + 5) { transition-delay: 0.3s; }
   }
 
   /* once something is typed, a heading and rows a site's script writes fade
-     in where they are, as apple.com's new results do: the heading from 40ms,
-     each row 20ms after the one above from 60ms */
+     in where they are, as apple.com's new results do, together from 40ms */
   .cui-globalnav-search:popover-open:has(.cui-globalnav-searchinput:not(:placeholder-shown)) {
     .cui-globalnav-searchheading,
     .cui-globalnav-searchlinks > li {
       transition: opacity 0.32s var(--cui-globalnav-ease) 0.04s;
     }
 
-    .cui-globalnav-searchlinks > li:nth-child(1) { transition-delay: 0.06s; }
-    .cui-globalnav-searchlinks > li:nth-child(2) { transition-delay: 0.08s; }
-    .cui-globalnav-searchlinks > li:nth-child(3) { transition-delay: 0.1s; }
-    .cui-globalnav-searchlinks > li:nth-child(4) { transition-delay: 0.12s; }
-    .cui-globalnav-searchlinks > li:nth-child(n + 5) { transition-delay: 0.14s; }
   }
 
   @starting-style {
@@ -927,7 +901,6 @@
       .cui-globalnav-searchheading,
       .cui-globalnav-searchlinks > li {
         opacity: 0;
-        transform: translateY(-8px);
       }
 
       .cui-globalnav-closebutton path {
@@ -941,7 +914,6 @@
       .cui-globalnav-bagheading,
       .cui-globalnav-baglinks > li {
         opacity: 0;
-        transform: translateY(-8px);
       }
 
       .cui-globalnav-closebutton path {
@@ -1122,12 +1094,6 @@
           background-color: var(--cui-c-bar);
         }
 
-        .cui-globalnav-searchfield,
-        .cui-globalnav-searchheading,
-        .cui-globalnav-searchlinks > li {
-          transform: translateY(-4px);
-        }
-
         .cui-globalnav-curtain {
           opacity: 0;
         }
@@ -1137,13 +1103,6 @@
         .cui-globalnav-bagpanel {
           clip-path: inset(0 0 100% 0);
           background-color: var(--cui-c-bar);
-        }
-
-        .cui-globalnav-bagmessage,
-        .cui-globalnav-bagtext,
-        .cui-globalnav-bagheading,
-        .cui-globalnav-baglinks > li {
-          transform: translateY(-4px);
         }
 
         .cui-globalnav-curtain {
@@ -1275,23 +1234,6 @@
     color: inherit;
     background-color: transparent;
 
-    /* each group's place in the motion, and each row's */
-    .cui-globalnav-flyoutgroup { --cui-globalnav-group: 0.08s; }
-    .cui-globalnav-flyoutgroup:nth-of-type(2) { --cui-globalnav-group: 0.16s; }
-    .cui-globalnav-flyoutgroup:nth-of-type(3) { --cui-globalnav-group: 0.2s; }
-    .cui-globalnav-flyoutgroup:nth-of-type(n + 4) { --cui-globalnav-group: 0.24s; }
-    .cui-globalnav-flyoutlinks > li { --cui-globalnav-row: 0; }
-    .cui-globalnav-flyoutlinks > li:nth-child(2) { --cui-globalnav-row: 1; }
-    .cui-globalnav-flyoutlinks > li:nth-child(3) { --cui-globalnav-row: 2; }
-    .cui-globalnav-flyoutlinks > li:nth-child(4) { --cui-globalnav-row: 3; }
-    .cui-globalnav-flyoutlinks > li:nth-child(5) { --cui-globalnav-row: 4; }
-    .cui-globalnav-flyoutlinks > li:nth-child(6) { --cui-globalnav-row: 5; }
-    .cui-globalnav-flyoutlinks > li:nth-child(7) { --cui-globalnav-row: 6; }
-    .cui-globalnav-flyoutlinks > li:nth-child(8) { --cui-globalnav-row: 7; }
-    .cui-globalnav-flyoutlinks > li:nth-child(9) { --cui-globalnav-row: 8; }
-    .cui-globalnav-flyoutlinks > li:nth-child(10) { --cui-globalnav-row: 9; }
-    .cui-globalnav-flyoutlinks > li:nth-child(11) { --cui-globalnav-row: 10; }
-    .cui-globalnav-flyoutlinks > li:nth-child(n + 12) { --cui-globalnav-row: 11; }
   }
 
   .cui-globalnav-flyout:popover-open {
@@ -1568,23 +1510,11 @@
       display: none;
     }
 
-    /* its headings and rows in from 4px up, a group's heading from 80ms
-       (160ms, 200ms, 240ms for the groups after it) and its rows 40ms after
-       it, 20ms apart */
+    /* its headings and rows fading in together from 80ms */
     .cui-globalnav-flyout:popover-open {
       .cui-globalnav-flyoutheading,
       .cui-globalnav-flyoutlinks > li {
-        transition-property: opacity, transform;
-        transition-duration: 0.32s;
-        transition-timing-function: ease;
-      }
-
-      .cui-globalnav-flyoutheading {
-        transition-delay: var(--cui-globalnav-group);
-      }
-
-      .cui-globalnav-flyoutlinks > li {
-        transition-delay: calc(var(--cui-globalnav-group) + 0.04s + 0.02s * var(--cui-globalnav-row));
+        transition: opacity 0.32s ease 0.08s;
       }
     }
 
@@ -1598,7 +1528,6 @@
         .cui-globalnav-flyoutheading,
         .cui-globalnav-flyoutlinks > li {
           opacity: 0;
-          transform: translateY(-4px);
         }
       }
     }
@@ -1675,18 +1604,11 @@
           display: none;
         }
 
-        /* the rows going, each from a group's fifth on 20ms shorter */
+        /* the rows going, together */
         .cui-globalnav-flyoutheading,
         .cui-globalnav-flyoutlinks > li {
           opacity: 0;
-          transform: translateY(-4px);
-          transition-property: opacity, transform;
-          transition-duration: 0.24s;
-          transition-timing-function: ease;
-        }
-
-        .cui-globalnav-flyoutlinks > li {
-          transition-duration: clamp(0.14s, 0.24s - 0.02s * (var(--cui-globalnav-row) - 3), 0.24s);
+          transition: opacity 0.24s ease;
         }
       }
 
@@ -1704,16 +1626,8 @@
         .cui-globalnav-flyoutheading,
         .cui-globalnav-flyoutlinks > li {
           opacity: 1;
-          transform: none;
           transition-duration: 0.32s;
-        }
-
-        .cui-globalnav-flyoutheading {
-          transition-delay: calc(0.12s + var(--cui-globalnav-group));
-        }
-
-        .cui-globalnav-flyoutlinks > li {
-          transition-delay: calc(0.12s + var(--cui-globalnav-group) + 0.04s + 0.02s * var(--cui-globalnav-row));
+          transition-delay: 0.2s;
         }
       }
 
