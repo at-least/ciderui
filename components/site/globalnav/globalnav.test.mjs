@@ -319,8 +319,7 @@ export const cases = [
     ...OPEN,
     wait: 0,
     checks: [
-      { target: `${LIST} > li:nth-child(3)`, props: ['opacity'], golden: 'apple.com\'s rows start transparent (home:menu.open\'s animations)' },
-      { target: `${LIST} > li:nth-child(3)`, props: ['transform'], golden: SLIDE },
+      { target: `${LIST} > li:nth-child(3)`, props: ['opacity', 'transform'], golden: 'apple.com\'s rows start transparent (home:menu.open\'s animations), ' + SLIDE },
     ],
   },
   {
@@ -537,10 +536,8 @@ export const cases = [
     widths: [1600],
     wait: 0,
     checks: [
-      { target: FIELD, props: ['opacity'], golden: 'the field from transparent (search:field.wrapper\'s keyframes)' },
-      { target: '.cui-globalnav-searchlinks > li:first-child', props: ['opacity'], golden: 'each row from transparent (search:results.header\'s keyframes)' },
-      { target: FIELD, props: ['transform'], golden: SLIDE },
-      { target: '.cui-globalnav-searchlinks > li:first-child', props: ['transform'], golden: SLIDE },
+      { target: FIELD, props: ['opacity', 'transform'], golden: 'the field from transparent (search:field.wrapper\'s keyframes), ' + SLIDE },
+      { target: '.cui-globalnav-searchlinks > li:first-child', props: ['opacity', 'transform'], golden: 'each row from transparent (search:results.header\'s keyframes), ' + SLIDE },
       { target: PANEL, props: ['clip-path', 'background-color'], golden: 'the panel hidden down from the bar, on its ground: apple.com\'s flyout 44px tall, the bar\'s ground (search:nav\'s animations)' },
       { target: CURTAIN, props: ['opacity'], golden: 'the curtain from transparent (search:curtain\'s transition)' },
     ],
@@ -553,8 +550,7 @@ export const cases = [
     wait: 0,
     checks: [
       { target: FLY, props: ['height', 'background-color'], golden: 'the sheet from the bar\'s height and ground (search:nav.phone\'s animations on its content)' },
-      { target: FIELD, props: ['opacity'], golden: 'the field from transparent (search:nav.phone\'s animations)' },
-      { target: FIELD, props: ['transform'], golden: SLIDE },
+      { target: FIELD, props: ['opacity', 'transform'], golden: 'the field from transparent (search:nav.phone\'s animations), ' + SLIDE },
     ],
   },
   {
@@ -1337,10 +1333,8 @@ export const cases = [
     widths: [1600],
     wait: 0,
     checks: [
-      { target: BMESSAGE, props: ['opacity'], golden: 'each row from transparent (globalheader.css\'s globalnav-flyout-item, bag-flyout:bag.header\'s transition)' },
-      { target: BROW, props: ['opacity'], golden: 'each row from transparent' },
-      { target: BMESSAGE, props: ['transform'], golden: SLIDE },
-      { target: BROW, props: ['transform'], golden: SLIDE },
+      { target: BMESSAGE, props: ['opacity', 'transform'], golden: 'each row from transparent (globalheader.css\'s globalnav-flyout-item, bag-flyout:bag.header\'s transition), ' + SLIDE },
+      { target: BROW, props: ['opacity', 'transform'], golden: 'each row from transparent, ' + SLIDE },
       { target: BPANEL, props: ['clip-path', 'background-color'], golden: 'the panel hidden down from the bar, on its ground: apple.com\'s flyout 44px tall, the bar\'s ground (bag-flyout:nav\'s animations)' },
       { target: BCURTAIN, props: ['opacity'], golden: 'the curtain from transparent (bag-flyout:curtain\'s transition)' },
     ],
@@ -1353,8 +1347,7 @@ export const cases = [
     wait: 0,
     checks: [
       { target: BFLY, props: ['height', 'background-color'], golden: 'the sheet from the bar\'s height and ground (bag-flyout:nav.phone\'s animations on its content)' },
-      { target: BMESSAGE, props: ['opacity'], golden: 'each row from transparent (globalheader.css\'s globalnav-flyout-item to 833px)' },
-      { target: BMESSAGE, props: ['transform'], golden: SLIDE },
+      { target: BMESSAGE, props: ['opacity', 'transform'], golden: 'each row from transparent (globalheader.css\'s globalnav-flyout-item to 833px), ' + SLIDE },
     ],
   },
   {

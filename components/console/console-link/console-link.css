@@ -28,7 +28,11 @@
 
 @layer components {
   .cui-console-link {
-    color: var(--cui-console-link-color, var(--cui-c-console-brand-label-primary));
+    /* not a default on --cui-console-link-color here: it would override the
+       part's around it */
+    --cui-console-link-blue: var(--cui-console-link-color, var(--cui-c-console-brand-label-primary));
+
+    color: var(--cui-console-link-blue);
     text-decoration-line: none;
     cursor: pointer;
 
@@ -47,7 +51,7 @@
 
       @media (hover: hover) {
         &:hover {
-          color: var(--cui-console-link-color, var(--cui-c-console-brand-label-primary));
+          color: var(--cui-console-link-blue);
           text-decoration-line: none;
         }
       }

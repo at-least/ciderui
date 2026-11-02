@@ -6,8 +6,8 @@
 // the rows, the mark, the chevron turned up) and its motion, the keys (the
 // checkbox's focus ring on the chevron, Tab on to the first link), dark, a
 // touch screen. Golden, with their why: the letter-spacing, the name's
-// color (its opacity in it), the rows' motion (apple.com's first row's
-// delay, recorded; the rows together, opacity alone), the chevron turned
+// color (its opacity in it), the rows' motion (the list's, from apple.com's
+// first row's delay; a row's own, its hover's, at once), the chevron turned
 // (reference/icons/).
 
 import { examples, MOTION, PADDING, SIZE } from '../../../test/harness.mjs';
@@ -104,20 +104,9 @@ export const cases = [
     ...OPEN,
     checks: [
       { target: '.cui-localnav', props: ['transition-duration', 'transition-timing-function'], apple: ['localnav', 'tray.background'] },
-      { target: LINK, props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: 'apple.com\'s rows in 0.32s with its curve (localnav:tray.link), its opacity alone: ' + SLIDE },
-      { target: CURRENT, props: ['transition-delay'], golden: 'apple.com\'s first row from 260ms (localnav:tray.open\'s animations)' },
-      { target: LINK, props: ['transition-delay'], golden: STAGGER },
+      { target: '.cui-localnav-list', props: [...MOTION, 'transition-delay'], golden: 'the rows in apple.com\'s 0.32s with its curve (localnav:tray.link), from its first row\'s 260ms (localnav:tray.open\'s animations), faded in as one list, its opacity alone: ' + SLIDE },
+      { target: LINK, props: [...MOTION, 'transition-delay'], golden: 'a row\'s own opacity, its hover, at once in 0.32s, coming and going; the rows\' entrance the list\'s, ' + STAGGER },
       { target: '.cui-localnav-menu', props: ['transition-duration', 'transition-timing-function'], golden: 'apple.com\'s menu opens in 0.32s with its curve (localnav:tray.open, its max-height)' },
-    ],
-  },
-  {
-    // opened, then the pointer over a row (a forced :hover reads no transition)
-    name: 'menu-hover',
-    html: NAV,
-    ...OPEN,
-    hover: LINK,
-    checks: [
-      { target: LINK, props: ['transition-delay', 'opacity'], golden: 'hovered, its opacity to 1 at once: the 260ms is the menu\'s opening\'s' },
     ],
   },
   {

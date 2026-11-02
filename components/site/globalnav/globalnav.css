@@ -261,8 +261,8 @@
  * rest first, as apple.com's script waits it out before it adds its
  * classes (apple.com's come in from 4px up one after another, a group's
  * heading 80ms, 160ms, 200ms, 240ms on and its rows 20ms apart: a staggered
- * reveal that only draws the eye, DESIGN.md decision 25); moved on along the bar, the one
- * left kept until the next has grown over it, where apple.com crossfades
+ * reveal that only draws the eye, DESIGN.md decision 25); moved on along
+ * the bar, the one left kept until the next has grown over it, where apple.com crossfades
  * them in 120ms, their height between; the curtain the list's, which
  * takes no pointer (apple.com's takes it, its script closing the flyout as
  * the pointer leaves the nav), so a click on the page as the flyout goes
