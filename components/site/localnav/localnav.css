@@ -28,7 +28,7 @@
  * The menu is apple.com's own way, a checkbox: the chevron is its label, the
  * checkbox (visually hidden) takes the focus and the space bar, its focus
  * ring drawn on the chevron; checked, the menu opens below the bar on the
- * menu's ground, its rows coming in, the chevron turned up. The checkbox
+ * menu's ground, its rows fading in, the chevron turned up. The checkbox
  * comes before the menu in the markup, so that opened, the next stop is the
  * first link; closed, the menu's links are hidden, not merely clipped, and
  * so out of the focus order.
@@ -59,8 +59,10 @@
  * (apple.com's dark one is clear until its script sees it stick); the
  * material in the bar alone (apple.com's reaches up behind its global nav);
  * the menu closes by its chevron alone (apple.com's script also closes it on
- * a click elsewhere); its rows fade out in its 0.32s (apple.com's in 0.38s
- * and 0.4s); a link to a place on the page (a footnote's mark) lands its
+ * a click elsewhere); its rows fade in together where they are, from
+ * apple.com's first row's 260ms (apple.com's come in 20ms apart, each from
+ * 4px up: a staggered slide that only draws the eye, DESIGN.md decision
+ * 25); its rows fade out in its 0.32s (apple.com's in 0.38s and 0.4s); a link to a place on the page (a footnote's mark) lands its
  * target at the bar's foot, as apple.com's iPhone 18 Pro page, with a newer
  * local nav, lands a footnote's note at its nav's, where its MacBook Air's
  * lands it under the bar (reference/anchor/). */
@@ -192,8 +194,7 @@
     color: var(--cui-c-on-bar-hover);
     text-decoration-line: none;
     opacity: 0;
-    transform: translateY(-4px);
-    transition: opacity 0.32s var(--cui-localnav-ease), transform 0.32s var(--cui-localnav-ease);
+    transition: opacity 0.32s var(--cui-localnav-ease);
 
     @media (hover: hover) {
       &:hover {
@@ -220,8 +221,8 @@
   }
 
   /* opened (to 833px): the bar and the menu on the menu's ground, the menu
-     at its rows' height, the rule along its foot, its rows coming in 20ms
-     apart, the chevron turned up */
+     at its rows' height, the rule along its foot, its rows fading in
+     together, the chevron turned up */
   @media (width < 834px) {
     .cui-localnav:has(.cui-localnav-toggle:checked) {
       background-color: var(--cui-c-menu);
@@ -242,8 +243,7 @@
 
       .cui-localnav-link {
         opacity: 0.8;
-        transform: none;
-        transition-delay: 0.28s;
+        transition-delay: 0.26s;
 
         @media (hover: hover) {
           &:hover {
@@ -255,12 +255,6 @@
           opacity: 1;
         }
       }
-
-      li:first-child > .cui-localnav-link { transition-delay: 0.26s; }
-      li:nth-child(3) > .cui-localnav-link { transition-delay: 0.3s; }
-      li:nth-child(4) > .cui-localnav-link { transition-delay: 0.32s; }
-      li:nth-child(5) > .cui-localnav-link { transition-delay: 0.34s; }
-      li:nth-child(n + 6) > .cui-localnav-link { transition-delay: 0.36s; }
 
       .cui-localnav-menubutton svg {
         transform: scaleY(-1);
@@ -371,7 +365,6 @@
       line-height: 22px;
       letter-spacing: var(--cui-tracking-12);
       opacity: 0.8;
-      transform: none;
       transition: none;
 
       @media (hover: hover) {

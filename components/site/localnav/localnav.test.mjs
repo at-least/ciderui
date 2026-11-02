@@ -7,7 +7,8 @@
 // checkbox's focus ring on the chevron, Tab on to the first link), dark, a
 // touch screen. Golden, with their why: the letter-spacing, the name's
 // color (its opacity in it), the rows' delays (apple.com's recorded
-// animations), the chevron turned (reference/icons/).
+// animations) and their start (opacity alone), the chevron turned
+// (reference/icons/).
 
 import { examples, MOTION, PADDING, SIZE } from '../../../test/harness.mjs';
 
@@ -23,6 +24,8 @@ const LINK = '.cui-localnav-list > li:nth-child(2) > .cui-localnav-link';
 const BUTTON = '.cui-localnav-actions > .cui-btn';
 const CHEVRON = '.cui-localnav-menubutton';
 const OPEN = { click: CHEVRON, widths: [390] };
+const STAGGER = 'together with the first row: apple.com\'s second comes in from 280ms, 20ms after the first, a staggered reveal that only draws the eye (DESIGN.md decision 25)';
+const SLIDE = 'where it is: apple.com\'s rows come in from 4px up, a slide that only draws the eye (DESIGN.md decision 25)';
 // a footnote's mark under the bar and its note far down the page
 const NOTE = `${NAV}<main><p><a href="#note">1</a></p><div style="height: 3000px"></div><p id="note">The note.</p><div style="height: 3000px"></div></main>`;
 
@@ -100,10 +103,20 @@ export const cases = [
     ...OPEN,
     checks: [
       { target: '.cui-localnav', props: ['transition-duration', 'transition-timing-function'], apple: ['localnav', 'tray.background'] },
-      { target: LINK, props: ['transition-duration', 'transition-timing-function'], golden: 'apple.com\'s rows in 0.32s with its curve (localnav:tray.link); its list names -webkit-transform as well' },
+      { target: LINK, props: ['transition-duration', 'transition-timing-function'], golden: 'apple.com\'s rows in 0.32s with its curve (localnav:tray.link), its opacity alone: ' + SLIDE },
       { target: CURRENT, props: ['transition-delay'], golden: 'apple.com\'s first row from 260ms (localnav:tray.open\'s animations)' },
-      { target: LINK, props: ['transition-delay'], golden: 'apple.com\'s second row from 280ms, 20ms after the first' },
+      { target: LINK, props: ['transition-delay'], golden: STAGGER },
       { target: '.cui-localnav-menu', props: ['transition-duration', 'transition-timing-function'], golden: 'apple.com\'s menu opens in 0.32s with its curve (localnav:tray.open, its max-height)' },
+    ],
+  },
+  {
+    // read as it opens
+    name: 'menu-start',
+    html: NAV,
+    ...OPEN,
+    wait: 0,
+    checks: [
+      { target: LINK, props: ['transform'], golden: SLIDE },
     ],
   },
   {
