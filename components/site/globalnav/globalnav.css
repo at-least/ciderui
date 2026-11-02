@@ -532,7 +532,7 @@
     }
 
     /* each row 47px down, then 46px below the one above (each 53px tall, 7px
-       over the next), all fading in from 200ms, the sheet grown under them;
+       over the next), all fading in together, the sheet grown under them;
        the transform for the 8px back behind a phone's open flyout */
     > li:has(> .cui-globalnav-link) {
       display: grid;
@@ -850,7 +850,7 @@
     }
   }
 
-  /* its message, line, heading and rows fading in together from 80ms */
+  /* its message, line, heading and rows fading in together */
   .cui-globalnav-bag:popover-open {
     .cui-globalnav-bagmessage,
     .cui-globalnav-bagtext,
@@ -865,8 +865,8 @@
     display: none;
   }
 
-  /* the field and the rows fading in together from 200ms, as the search
-     opens with its field empty */
+  /* the field and the rows fading in together, as the search opens with its
+     field empty */
   .cui-globalnav-search:popover-open:has(.cui-globalnav-searchinput:placeholder-shown) {
     .cui-globalnav-searchfield,
     .cui-globalnav-searchheading,
@@ -878,7 +878,7 @@
   }
 
   /* once something is typed, a heading and rows a site's script writes fade
-     in where they are, as apple.com's new results do, together from 40ms */
+     in where they are, as apple.com's new results do, together */
   .cui-globalnav-search:popover-open:has(.cui-globalnav-searchinput:not(:placeholder-shown)) {
     .cui-globalnav-searchheading,
     .cui-globalnav-searchlinks > li {
@@ -1224,8 +1224,8 @@
     overflow: visible;
     color: inherit;
     background-color: transparent;
-    /* its rows' delay, opened and shown by the pointer */
-    --cui-globalnav-flyout-rows: 0.08s;
+    /* its headings' and rows' fade in, opened or shown by the pointer */
+    --cui-globalnav-flyout-fade-delay: 0.08s;
   }
 
   .cui-globalnav-flyout:popover-open {
@@ -1502,11 +1502,11 @@
       display: none;
     }
 
-    /* its headings and rows fading in together from 80ms */
+    /* its headings and rows fading in together */
     .cui-globalnav-flyout:popover-open {
       .cui-globalnav-flyoutheading,
       .cui-globalnav-flyoutlinks > li {
-        transition: opacity 0.32s ease var(--cui-globalnav-flyout-rows);
+        transition: opacity 0.32s ease var(--cui-globalnav-flyout-fade-delay);
       }
     }
 
@@ -1620,7 +1620,7 @@
           opacity: 1;
           transition-duration: 0.32s;
           /* the pointer's 120ms rest, then the open flyout's */
-          transition-delay: calc(0.12s + var(--cui-globalnav-flyout-rows));
+          transition-delay: calc(0.12s + var(--cui-globalnav-flyout-fade-delay));
         }
       }
 

@@ -168,8 +168,11 @@
     padding: 0;
     overflow: hidden;
     list-style: none;
-    opacity: 0;
-    transition: opacity 0.32s var(--cui-localnav-ease);
+
+    @media (width < 834px) {
+      opacity: 0;
+      transition: opacity 0.32s var(--cui-localnav-ease);
+    }
 
     /* each row 34px, the first 10px below the bar, 27px below the last */
     &::before,
@@ -341,8 +344,6 @@
     .cui-localnav .cui-localnav-list {
       display: flex;
       overflow: visible;
-      opacity: 1;
-      transition: none;
 
       &::before,
       &::after {
