@@ -344,13 +344,15 @@ const BASES = [[PAGE], [CARD, PAGE]];
 const ON_FILLS = ['--cui-c-console-brand-accent-primary', '--cui-c-console-brand-fill-hover', '--cui-c-console-error-accent-primary', '--cui-c-console-error-fill-hover'];
 const GRAY = ['--cui-c-console-neutral-fill-tertiary', '--cui-c-console-gray-fill-hover', '--cui-c-console-gray-fill-press'];
 const ROLES = ['info', 'success', 'warning', 'error'];
+// a banner's tints: the neutral's and each role's
+const TINTS = [['--cui-c-console-neutral-fill-quaternary'], ...ROLES.map((role) => [`--cui-c-console-${role}-fill-tertiary`])];
 const BADGE_LABEL = (role) => (role === 'brand' ? '--cui-c-console-brand-label-on-fill' : `--cui-c-console-${role}-label-primary`);
 const CONSOLE_MIN = [
-  ['--cui-c-console-neutral-label-primary', [[], ['--cui-c-console-neutral-fill-quaternary'], ['--cui-c-console-neutral-accent-quaternary'], ...GRAY.map((g) => [g]), ...ROLES.map((role) => [`--cui-c-console-${role}-fill-tertiary`])], 4.5],
+  ['--cui-c-console-neutral-label-primary', [[], ['--cui-c-console-neutral-accent-quaternary'], ...GRAY.map((g) => [g]), ...TINTS], 4.5],
   // the secondary label: a current menu item's, a chip's key and its remove
   // control on its gray at rest, hovered and pressed, a banner's caption, a
   // field's placeholder, a card's caption
-  ['--cui-c-console-neutral-label-secondary', [[], ['--cui-c-console-neutral-fill-quaternary'], ...GRAY.map((g) => [g]), ...ROLES.map((role) => [`--cui-c-console-${role}-fill-tertiary`])], 4.5],
+  ['--cui-c-console-neutral-label-secondary', [[], ...GRAY.map((g) => [g]), ...TINTS], 4.5],
   // a button's label on its fill, at rest, hovered and pressed
   ['--cui-c-console-brand-label-on-accent-primary', [...ON_FILLS.map((f) => [f]), ['--cui-c-console-brand-fill-press'], ['--cui-c-console-error-fill-press']], 4.5],
   ['--cui-c-console-on-accent-press', [['--cui-c-console-brand-fill-press'], ['--cui-c-console-error-fill-press']], 4.5],
@@ -364,7 +366,7 @@ const CONSOLE_MIN = [
   // a plain button's, a link's
   ...['--cui-c-console-brand-label-primary', '--cui-c-console-brand-label-hover', '--cui-c-console-brand-label-press'].map((fg) => [fg, [[]], 4.5]),
   // a link in a banner's sentence, on the banner's tint
-  ['--cui-c-console-brand-label-on-tint', [['--cui-c-console-neutral-fill-quaternary'], ...ROLES.map((role) => [`--cui-c-console-${role}-fill-tertiary`])], 4.5],
+  ['--cui-c-console-brand-label-on-tint', TINTS, 4.5],
   // a gray button's red label, on the base and on its gray
   ...['--cui-c-console-error-label-primary', '--cui-c-console-error-label-hover', '--cui-c-console-error-label-press'].map((fg) => [fg, [[], ...GRAY.map((g) => [g])], 4.5]),
   // a field's edge and its red edge in error

@@ -142,7 +142,6 @@
     /* shown, in 0.5s; the one at an end faded out (over the gallery's
        disabled paddle) */
     &:not(:disabled) {
-      opacity: 1;
       transition-duration: 0.5s;
     }
 

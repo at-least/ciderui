@@ -365,16 +365,14 @@
       letter-spacing: var(--cui-tracking-12);
       transition: none;
 
-      &[aria-current="page"] {
-        /* the current page: in the bar, a line under it along the bar's foot */
-        &::after {
-          top: 36px;
-          right: 0;
-          left: 0;
-          width: auto;
-          height: 1px;
-          border-radius: 1px;
-        }
+      /* the current page: in the bar, a line under it along the bar's foot */
+      &[aria-current="page"]::after {
+        top: 36px;
+        right: 0;
+        left: 0;
+        width: auto;
+        height: 1px;
+        border-radius: 1px;
       }
     }
 
