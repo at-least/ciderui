@@ -11,15 +11,6 @@
  "ribbon | .cui-ribbon-content | 390 | padding-left": "32.4844px",
  "ribbon | .cui-ribbon-content | 390 | padding-right": "32.4844px",
  "ribbon | .cui-ribbon-content | 390 | letter-spacing": "-0.0812px",
- "announce-start | .cui-ribbon-content | 1200 | background-color": "rgb(0, 113, 227)",
- "announce-start | .cui-ribbon-content | 1200 | color": "rgb(255, 255, 255)",
- "announce-start | .cui-ribbon .cui-link | 1200 | color": "rgb(255, 255, 255)",
- "announce-start | .cui-ribbon-content | 1200 | animation-name": "cui-ribbon-drop, cui-ribbon-announce",
- "announce-start | .cui-ribbon .cui-link | 1200 | animation-fill-mode": "both",
- "announce-motion | .cui-ribbon-content | 1200 | animation-duration": "0.8s, 0.8s",
- "announce-motion | .cui-ribbon-content | 1200 | animation-delay": "0s, 1.6s",
- "announce-motion | .cui-ribbon-content | 1200 | animation-timing-function": "ease-in-out, ease-in-out",
- "announce-motion | .cui-ribbon-content | 1200 | animation-fill-mode": "both, both",
- "announce-motion | .cui-ribbon-content | 1200 | animation-iteration-count": "1, 1",
- "announce-end | .cui-ribbon-content | 1200 | transform": "matrix(1, 0, 0, 1, 0, 0)"
+ "still | .cui-ribbon-content | 1200 | animation-name": "none",
+ "still | .cui-ribbon-content | 1200 | transform": "none"
 }

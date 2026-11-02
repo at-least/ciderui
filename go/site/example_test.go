@@ -136,9 +136,9 @@ func ExampleQuickLinks() {
 }
 
 func ExampleRibbon() {
-	page := site.Ribbon{Announce: true, Class: "", Children: h.P(g.Text("New this week. "), site.MoreLink{Href: "/new", Text: "See what's new", Class: ""})}
+	page := site.Ribbon{Class: "", Children: h.P(g.Text("New this week. "), site.MoreLink{Href: "/new", Text: "See what's new", Class: ""})}
 	_ = page.Render(os.Stdout)
-	// Output: <div class="cui-ribbon" data-variant="announce"><div class="cui-ribbon-content"><p>New this week. <a class="cui-link" data-variant="more" href="/new"><span class="cui-link-text">See what&#39;s new</span><svg class="cui-link-icon" aria-hidden="true" width="0.442em" height="0.54em" viewBox="0 0 442 540"><path d="M107.7 47.7 332.3 272.5 107.7 497.3" fill="none" stroke="currentColor" stroke-width="67.9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p></div></div>
+	// Output: <div class="cui-ribbon"><div class="cui-ribbon-content"><p>New this week. <a class="cui-link" data-variant="more" href="/new"><span class="cui-link-text">See what&#39;s new</span><svg class="cui-link-icon" aria-hidden="true" width="0.442em" height="0.54em" viewBox="0 0 442 540"><path d="M107.7 47.7 332.3 272.5 107.7 497.3" fill="none" stroke="currentColor" stroke-width="67.9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p></div></div>
 }
 
 func ExampleSection() {

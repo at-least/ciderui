@@ -16,10 +16,4 @@ apple.com’s message above a page’s content: a band on the alternate ground, 
 
 {{ <cui_example file="ribbon/ribbon" title="A ribbon" /> }}
 
-## Announced
-
-`data-variant="announce"` is the iPhone page’s: as the page shows it, it drops in on the accent, then turns to its ground, in apple.com’s timing (a 0.8s drop, the colors 1.6s on). Under reduced motion it is still.
-
-{{ <cui_example file="ribbon/announce" title="An announcing ribbon" /> }}
-
-`cui-ribbon` is the band, `cui-ribbon-content` its ground and its 16px above and below. The Go module writes it with `site.Ribbon`.
+`cui-ribbon` is the band, `cui-ribbon-content` its ground and its 16px above and below. It is still as the page shows it: apple.com’s iPhone page drops its ribbon in on the accent, an effect ciderui leaves out. The Go module writes it with `site.Ribbon`.
