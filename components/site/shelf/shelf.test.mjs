@@ -5,9 +5,10 @@
 // snapping, the first two cards' places; scrolled 300px, the second card
 // snapped to the inset; scrolled to its end, the last card as far in; its
 // paddles (store:shelf.paddle*: their places over the scroller, the next
-// shown, the previous hidden, their motion). Golden, with their why: the
+// shown, the previous faded out, their fade). Golden, with their why: the
 // letter-spacing, the header's box, the foot in sight, the scrollbar hidden,
-// the last card's place at the end, no paddles on a touch screen.
+// the last card's place at the end, no paddles on a touch screen, a paddle
+// that does not shrink.
 
 import { examples, SIZE } from '../../../test/harness.mjs';
 
@@ -58,8 +59,10 @@ export const cases = [
     name: 'paddles',
     html: ex('paddles'),
     checks: [
-      { target: '.cui-shelf-paddle:not(:disabled)', props: ['position', 'top', 'right', 'margin-top', 'opacity', 'transform', 'transition-property', 'transition-duration', 'transition-timing-function', 'box-height'], apple: ['store', 'shelf.paddle'] },
-      { target: '.cui-shelf-paddle:disabled', props: ['position', 'top', 'left', 'margin-top', 'opacity', 'transform', 'transition-property', 'transition-duration', 'transition-timing-function'], apple: ['store', 'shelf.paddle-previous'] },
+      { target: '.cui-shelf-paddle:not(:disabled)', props: ['position', 'top', 'right', 'margin-top', 'opacity', 'box-height'], apple: ['store', 'shelf.paddle'] },
+      { target: '.cui-shelf-paddle:disabled', props: ['position', 'top', 'left', 'margin-top', 'opacity'], apple: ['store', 'shelf.paddle-previous'] },
+      { target: '.cui-shelf-paddle:not(:disabled)', props: ['transform', 'transition-property', 'transition-duration', 'transition-timing-function'], golden: 'no transform, its opacity alone moving, in apple.com\'s 0.5s (store:shelf.paddle): apple.com\'s scale moves too, motion past what shows the change of state (DESIGN.md decision 25)' },
+      { target: '.cui-shelf-paddle:disabled', props: ['transform', 'transition-property', 'transition-duration', 'transition-timing-function'], golden: 'faded out at its size, its opacity alone in apple.com\'s 0.7s from 0.1s: apple.com\'s shrinks it to 0.8 as well (store:shelf.paddle-previous, DESIGN.md decision 25)' },
       { target: '.cui-shelf-row', props: ['position', 'box-height'], apple: ['store', 'shelf.paddles'] },
     ],
   },

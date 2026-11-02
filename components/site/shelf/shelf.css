@@ -32,12 +32,12 @@
  * cui-shelf-paddle     a gallery's large paddle (cui-gallery-paddle,
  *                      data-size="lg", gallery.css) at a side, over the
  *                      scroller: the previous first, the next second; the
- *                      one at an end (disabled) hidden; none on a touch
+ *                      one at an end (disabled) faded out; none on a touch
  *                      screen. The page's script scrolls the row and
  *                      disables the one at an end, as a gallery's does
  *
  * apple.com's: the inset, the gaps, the room, the type, the colors, the
- * snapping, the paddles' places and motion. ciderui's: the letter-spacing
+ * snapping, the paddles' places and their fade. ciderui's: the letter-spacing
  * (tokens.css); its scrollbar hidden
  * by scrollbar-width (apple.com's crop clips it, and the 18px of its
  * scroller's foot under it: ciderui's foot is the 22px in sight); its cards
@@ -46,7 +46,9 @@
  * 735px by the window (apple.com's by a phone's screen); its paddles' look
  * the gallery's (its large paddle's chevron and colors, gallery.css); no
  * paddles on a screen with no hover (apple.com's draws none on a touch
- * screen). */
+ * screen); a paddle at an end fades out without shrinking (apple.com's
+ * scales it to 0.8 as it goes, motion past what shows the change of state:
+ * DESIGN.md decision 25). */
 
 @layer components {
   .cui-shelf {
@@ -127,7 +129,7 @@
     position: absolute;
     top: 49%;
     margin-top: -28px;
-    transition: transform 0.5s ease-in, opacity 0.7s cubic-bezier(0.15, 0, 0.2, 1) 0.1s;
+    transition: opacity 0.7s cubic-bezier(0.15, 0, 0.2, 1) 0.1s;
 
     &:first-of-type {
       inset-inline-start: 18px;
@@ -137,17 +139,15 @@
       inset-inline-end: 18px;
     }
 
-    /* shown, in 0.5s; the one at an end hidden, smaller (over the
-       gallery's disabled paddle) */
+    /* shown, in 0.5s; the one at an end faded out (over the gallery's
+       disabled paddle) */
     &:not(:disabled) {
       opacity: 1;
-      transform: scale(1);
       transition-duration: 0.5s;
     }
 
     &:disabled {
       opacity: 0;
-      transform: scale(0.8);
     }
 
     @media (hover: none) {

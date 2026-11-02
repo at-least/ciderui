@@ -184,7 +184,7 @@ Not built: DocC's footer appearance control in the docs set, which needs the pag
 
 Not measured: the store's checkout pages (my recommendation, which the owner took, 「都按照你的推薦」, 2026-10-21): they are not reachable without a bag, a headless browser's Add to Bag is refused (a 541), and getting past that would be getting past apple.com's bot protection; their form parts were read on the gift card's, the trade-in's and the feedback form's pages. So the global nav's bag is an empty bag's (`bag-flyout:*`): what it shows with something in it, and the count on the bag's icon, are not measured. Nor a phone's own screen: the taps are the iOS simulator's and Chromium's (`reference/tap/`); apple.com's pages are tapped in Chromium alone (`tap-*:*`). When a part is built, its probes are added where the reference's are not enough.
 
-Not yet following decision 25 (read in their stylesheets, 2026-11-02): the shelf's paddle at an end shrinking to 0.8 as it fades out, and the global nav's rows and flyout rows coming in one after another, 20ms apart.
+Not yet following decision 25 (read in their stylesheets, 2026-11-02): the global nav's rows and flyout rows coming in one after another, 20ms apart.
 
 ## The Go module
 
