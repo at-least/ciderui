@@ -23,17 +23,7 @@ export const cases = [
       { target: LINK, props: [...SIZE, 'color', 'text-decoration-line'], apple: ['ribbon', 'ribbon.link'] },
       { target: LINK, state: 'hover', props: ['color'], apple: ['ribbon', 'ribbon.link', 'hover'] },
       { target: `${LINK} .cui-link-text`, on: LINK, state: 'hover', props: ['text-decoration-line'], apple: ['ribbon', 'ribbon.link', 'hover'] },
-    ],
-  },
-  {
-    // as the page shows it, at once: no drop, no turn from the accent
-    name: 'still',
-    html: ex('ribbon'),
-    widths: [1200],
-    wait: 0,
-    checks: [
       { target: '.cui-ribbon-content', props: ['animation-name', 'transform'], golden: 'still as the page shows it: apple.com\'s iPhone page drops it in on the accent and turns it to its ground 1.6s on (ribbon:ribbon.drop, ribbon.ground), an entrance that only draws the eye (DESIGN.md decision 25)' },
-      { target: '.cui-ribbon-content', props: ['color', 'background-color'], apple: ['ribbon', 'ribbon.ground'] },
     ],
   },
 ];

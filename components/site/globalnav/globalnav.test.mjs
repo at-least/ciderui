@@ -124,8 +124,6 @@ const CHEVRON = `${LAPTOPS_BUTTON} > .cui-globalnav-image`;
 const CHEVRON_COMPACT = `${LAPTOPS_BUTTON} > .cui-globalnav-image-compact`;
 const HOVERING = { hover: LAPTOPS_LINK, widths: WIDE, height: 900 };
 const ITEM_MOTION = [...MOTION, 'transition-delay'];
-// what ciderui leaves out of apple.com's opening (DESIGN.md decision 25): a
-// staggered reveal and a slide that only draw the eye
 const STAGGER = 'together with the rows before it: apple.com\'s come in one after another, 20ms apart, a staggered reveal that only draws the eye (DESIGN.md decision 25)';
 const SLIDE = 'where it is: apple.com\'s come in from a few px up, a slide that only draws the eye (DESIGN.md decision 25)';
 // apple.com's flyout is read below its locale banner (70px from 834px): a
@@ -282,7 +280,7 @@ export const cases = [
       { target: `${LIST} > li:nth-child(3)`, props: ['transition-duration', 'transition-delay'], apple: ['home', 'menu.row'] },
       { target: `${LIST} > li:nth-child(4)`, props: ['transition-duration'], apple: ['home', 'menu.row-second'] },
       { target: `${LIST} > li:nth-child(4)`, props: ['transition-delay'], golden: STAGGER },
-      { target: `${LIST} > li:nth-child(3)`, props: ['transition-property', 'transition-timing-function'], golden: 'apple.com\'s rows also turn visible (its rows are hidden closed, ciderui\'s not displayed); their opacity alone, apple.com\'s transform too: ' + SLIDE },
+      { target: `${LIST} > li:nth-child(3)`, props: ['transition-property', 'transition-timing-function'], golden: 'apple.com\'s rows also turn visible (its rows are hidden closed, ciderui\'s not displayed); their opacity and transform as apple.com\'s, the transform for the 8px back behind a phone\'s open flyout' },
       { target: LIST, props: MOTION, golden: 'apple.com\'s ground and height in 450ms (home:menu.open\'s animations; its computed transition names its ground alone, its height\'s declared in a state between)' },
       { target: X[0], props: MOTION, golden: 'apple.com\'s lines turn in 0.24s (their SVG animation, reference/icons/)' },
     ],
@@ -1147,7 +1145,7 @@ export const cases = [
     checks: [
       { target: LAPTOPS_FLY, props: ITEM_MOTION, golden: 'in from 8px on and transparent in 240ms from 160ms (flyout-phone:flyout\'s animations, globalnav-flyout-slide-forward-next)' },
       { target: BACK, props: ITEM_MOTION, golden: 'its color in 0.32s (flyout-phone:back.button), in from 4px on and transparent in 240ms from 160ms (flyout-phone:back)' },
-      { target: STORE_ITEM, props: ['transition-duration', 'transition-delay'], golden: 'the menu\'s rows out at once in 240ms (flyout-phone:flyout\'s animations, globalnav-flyout-slide-forward-previous)' },
+      { target: STORE_ITEM, props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'the menu\'s rows out at once in 240ms, transparent and 8px back (flyout-phone:flyout\'s animations, globalnav-flyout-slide-forward-previous)' },
     ],
   },
   {

@@ -6,8 +6,8 @@
 // the rows, the mark, the chevron turned up) and its motion, the keys (the
 // checkbox's focus ring on the chevron, Tab on to the first link), dark, a
 // touch screen. Golden, with their why: the letter-spacing, the name's
-// color (its opacity in it), the rows' delays (apple.com's recorded
-// animations) and their start (opacity alone), the chevron turned
+// color (its opacity in it), the rows' motion (apple.com's first row's
+// delay, recorded; the rows together, opacity alone), the chevron turned
 // (reference/icons/).
 
 import { examples, MOTION, PADDING, SIZE } from '../../../test/harness.mjs';
@@ -103,20 +103,10 @@ export const cases = [
     ...OPEN,
     checks: [
       { target: '.cui-localnav', props: ['transition-duration', 'transition-timing-function'], apple: ['localnav', 'tray.background'] },
-      { target: LINK, props: ['transition-duration', 'transition-timing-function'], golden: 'apple.com\'s rows in 0.32s with its curve (localnav:tray.link), its opacity alone: ' + SLIDE },
+      { target: LINK, props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: 'apple.com\'s rows in 0.32s with its curve (localnav:tray.link), its opacity alone: ' + SLIDE },
       { target: CURRENT, props: ['transition-delay'], golden: 'apple.com\'s first row from 260ms (localnav:tray.open\'s animations)' },
       { target: LINK, props: ['transition-delay'], golden: STAGGER },
       { target: '.cui-localnav-menu', props: ['transition-duration', 'transition-timing-function'], golden: 'apple.com\'s menu opens in 0.32s with its curve (localnav:tray.open, its max-height)' },
-    ],
-  },
-  {
-    // read as it opens
-    name: 'menu-start',
-    html: NAV,
-    ...OPEN,
-    wait: 0,
-    checks: [
-      { target: LINK, props: ['transform'], golden: SLIDE },
     ],
   },
   {

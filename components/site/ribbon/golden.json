@@ -2,15 +2,21 @@
  "ribbon | .cui-ribbon-content | 1600 | padding-left": "133.328px",
  "ribbon | .cui-ribbon-content | 1600 | padding-right": "133.328px",
  "ribbon | .cui-ribbon-content | 1600 | letter-spacing": "-0.0812px",
+ "ribbon | .cui-ribbon-content | 1600 | animation-name": "none",
+ "ribbon | .cui-ribbon-content | 1600 | transform": "none",
  "ribbon | .cui-ribbon-content | 1200 | padding-left": "99.9844px",
  "ribbon | .cui-ribbon-content | 1200 | padding-right": "99.9844px",
  "ribbon | .cui-ribbon-content | 1200 | letter-spacing": "-0.0812px",
+ "ribbon | .cui-ribbon-content | 1200 | animation-name": "none",
+ "ribbon | .cui-ribbon-content | 1200 | transform": "none",
  "ribbon | .cui-ribbon-content | 900 | padding-left": "74.9844px",
  "ribbon | .cui-ribbon-content | 900 | padding-right": "74.9844px",
  "ribbon | .cui-ribbon-content | 900 | letter-spacing": "-0.0812px",
+ "ribbon | .cui-ribbon-content | 900 | animation-name": "none",
+ "ribbon | .cui-ribbon-content | 900 | transform": "none",
  "ribbon | .cui-ribbon-content | 390 | padding-left": "32.4844px",
  "ribbon | .cui-ribbon-content | 390 | padding-right": "32.4844px",
  "ribbon | .cui-ribbon-content | 390 | letter-spacing": "-0.0812px",
- "still | .cui-ribbon-content | 1200 | animation-name": "none",
- "still | .cui-ribbon-content | 1200 | transform": "none"
+ "ribbon | .cui-ribbon-content | 390 | animation-name": "none",
+ "ribbon | .cui-ribbon-content | 390 | transform": "none"
 }

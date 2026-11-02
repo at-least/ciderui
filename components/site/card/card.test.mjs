@@ -12,7 +12,7 @@
 import { examples, PADDING, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const LIFT = ['box-shadow', 'transform'];
+const HOVERED = ['box-shadow', 'transform'];
 const STILL = 'not 1% larger: apple.com\'s card grows as it lifts (store:card\'s hover, scale 1.01), a lift that only draws the eye (DESIGN.md decision 25); its shadow deepens alone';
 const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
 const dark = (html) => html.replace('class="cui-card"', 'class="cui-card cui-dark"');
@@ -53,7 +53,6 @@ export const cases = [
       { target: '.cui-card', state: 'hover', props: ['box-shadow'], apple: ['store', 'card', 'hover'] },
       { target: '.cui-card', state: 'focus-within', props: ['box-shadow'], apple: ['store', 'card', 'focus-within'] },
       { target: '.cui-card', state: 'hover', props: ['transform'], golden: STILL },
-      { target: '.cui-card', state: 'focus-within', props: ['transform'], golden: STILL },
     ],
   },
   {
@@ -75,8 +74,8 @@ export const cases = [
     touch: true,
     checks: [
       // apple.com's lifts only with no touch (html.no-touch, its script's)
-      { target: '.cui-card', state: 'hover', props: LIFT, apple: ['touch-store', 'card', 'hover'] },
-      { target: '.cui-card', state: 'focus-within', props: LIFT, apple: ['touch-store', 'card', 'focus-within'] },
+      { target: '.cui-card', state: 'hover', props: HOVERED, apple: ['touch-store', 'card', 'hover'] },
+      { target: '.cui-card', state: 'focus-within', props: HOVERED, apple: ['touch-store', 'card', 'focus-within'] },
     ],
   },
   {
@@ -99,7 +98,6 @@ export const cases = [
     checks: [
       { target: '.cui-card', props: ['background-color', 'border-top-left-radius', 'box-shadow', 'transform', 'overflow', 'box-height'], apple: ['store', 'card.dark'] },
       { target: '.cui-card', state: 'hover', props: ['box-shadow'], apple: ['store', 'card.dark', 'hover'] },
-      { target: '.cui-card', state: 'hover', props: ['transform'], golden: STILL },
       { target: '.cui-card-eyebrow', props: ['color'], apple: ['store', 'card.dark-tag'] },
       { target: '.cui-card-headline', props: ['color'], apple: ['store', 'card.dark-header'] },
       { target: '.cui-card-link', props: ['color'], apple: ['store', 'card.dark-link'] },

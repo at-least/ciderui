@@ -258,11 +258,10 @@
  * the bar's in half its content's height in ms: 240ms here, its least and
  * most flyouts', with Mac's 254ms); its headings and rows fade in together,
  * where they are, 120ms later than apple.com's first heading, the pointer's
- * rest first (apple.com's come in from 4px up one after another, a group's
+ * rest first, as apple.com's script waits it out before it adds its
+ * classes (apple.com's come in from 4px up one after another, a group's
  * heading 80ms, 160ms, 200ms, 240ms on and its rows 20ms apart: a staggered
- * reveal that only draws the eye, DESIGN.md decision 25; so, the same, the
- * menu's rows, the search's and the bag's), as apple.com's script
- * waits it out before it adds its classes; moved on along the bar, the one
+ * reveal that only draws the eye, DESIGN.md decision 25); moved on along the bar, the one
  * left kept until the next has grown over it, where apple.com crossfades
  * them in 120ms, their height between; the curtain the list's, which
  * takes no pointer (apple.com's takes it, its script closing the flyout as
@@ -533,17 +532,17 @@
     }
 
     /* each row 47px down, then 46px below the one above (each 53px tall, 7px
-       over the next), all fading in from 200ms, the sheet grown under them */
+       over the next), all fading in from 200ms, the sheet grown under them;
+       the transform for the 8px back behind a phone's open flyout */
     > li:has(> .cui-globalnav-link) {
       display: grid;
       margin-top: -1px;
       margin-bottom: -6px;
-      transition-property: opacity;
+      transition-property: opacity, transform;
       transition-duration: 0.24s;
       transition-timing-function: var(--cui-globalnav-ease);
       transition-delay: 0.2s;
     }
-
   }
 
   @starting-style {
@@ -857,12 +856,8 @@
     .cui-globalnav-bagtext,
     .cui-globalnav-bagheading,
     .cui-globalnav-baglinks > li {
-      transition-property: opacity;
-      transition-duration: 0.32s;
-      transition-timing-function: var(--cui-globalnav-ease);
-      transition-delay: 0.08s;
+      transition: opacity 0.32s var(--cui-globalnav-ease) 0.08s;
     }
-
   }
 
   /* the curtain is the flyout's, from 834px */
@@ -892,7 +887,6 @@
     .cui-globalnav-searchlinks > li {
       transition: opacity 0.32s var(--cui-globalnav-ease) 0.04s;
     }
-
   }
 
   @starting-style {
@@ -1233,7 +1227,6 @@
     overflow: visible;
     color: inherit;
     background-color: transparent;
-
   }
 
   .cui-globalnav-flyout:popover-open {
