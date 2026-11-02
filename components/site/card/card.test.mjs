@@ -25,7 +25,7 @@ export const cases = [
     html: ex('card'),
     checks: [
       { target: '.cui-card', props: ['background-color', 'color', 'border-top-left-radius', 'box-shadow', 'transform', 'overflow', 'position', 'box-height', 'transition-duration', 'transition-timing-function'], apple: ['store', 'card'] },
-      { target: '.cui-card', props: ['transition-property'], golden: 'its shadow alone: apple.com\'s all also scales it (DESIGN.md decision 25) and would move its size as the window crosses 735px (apple.com\'s steps with the screen)' },
+      { target: '.cui-card', props: ['transition-property'], golden: 'its shadow alone: apple.com\'s all also moves its hover\'s 1% scale (DESIGN.md decision 25) and would move its size as the window crosses 735px (apple.com\'s steps with the screen)' },
       { target: '.cui-card', props: ['box-width'], golden: 'apple.com\'s 400px, 309px on a phone (store:card\'s box): a width no text sets' },
       { target: '.cui-card-content', props: [...PADDING, 'box-height'], apple: ['store', 'card.info'] },
       { target: '.cui-card-content', props: ['box-width'], golden: 'apple.com\'s 396px, 340px and its padding, and on a phone the whole card (store:card.info\'s box)' },

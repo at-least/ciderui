@@ -871,10 +871,7 @@
     .cui-globalnav-searchfield,
     .cui-globalnav-searchheading,
     .cui-globalnav-searchlinks > li {
-      transition-property: opacity;
-      transition-duration: 0.32s;
-      transition-timing-function: var(--cui-globalnav-ease);
-      transition-delay: 0.2s;
+      transition: opacity 0.32s var(--cui-globalnav-ease) 0.2s;
     }
 
     .cui-globalnav-searchfield { transition-duration: 0.24s; }
@@ -1227,6 +1224,8 @@
     overflow: visible;
     color: inherit;
     background-color: transparent;
+    /* its rows' delay, opened and shown by the pointer */
+    --cui-globalnav-flyout-rows: 0.08s;
   }
 
   .cui-globalnav-flyout:popover-open {
@@ -1507,7 +1506,7 @@
     .cui-globalnav-flyout:popover-open {
       .cui-globalnav-flyoutheading,
       .cui-globalnav-flyoutlinks > li {
-        transition: opacity 0.32s ease 0.08s;
+        transition: opacity 0.32s ease var(--cui-globalnav-flyout-rows);
       }
     }
 
@@ -1620,8 +1619,8 @@
         .cui-globalnav-flyoutlinks > li {
           opacity: 1;
           transition-duration: 0.32s;
-          /* the pointer's 120ms rest, then the open flyout's 80ms */
-          transition-delay: calc(0.12s + 0.08s);
+          /* the pointer's 120ms rest, then the open flyout's */
+          transition-delay: calc(0.12s + var(--cui-globalnav-flyout-rows));
         }
       }
 

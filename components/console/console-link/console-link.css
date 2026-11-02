@@ -20,8 +20,7 @@
  *                         secondary caption measured 1.03:1)
  *   data-variant="label"  the label's color (a name that is a link: an
  *                         issue's title); hovered, the brand's blue
- *   --cui-console-link-color  its blue where a part around it sets one (a
- *                         banner's, fitted to its tints)
+ *   --cui-console-link-color  its blue, where a part around it sets one
  *
  * The toolkit's, and the analytics page's: the colors, the underline
  * hovered. ciderui's: the focus ring base.css's (rule 9); the type, the

@@ -246,8 +246,10 @@
         transition-delay: 0.26s;
 
         @media (hover: hover) {
+          /* hovered, at once: the 260ms is the menu's opening's */
           &:hover {
             opacity: 1;
+            transition-delay: 0s;
           }
         }
 

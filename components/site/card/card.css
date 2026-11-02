@@ -42,10 +42,11 @@
  * on the card), so its text cannot be selected, as apple.com's cannot; its
  * shadow deepens as the pointer comes over it anywhere (apple.com's in a
  * shelf, its scroller still); its shadow is what moves, and it does not grow
- * (apple.com's `transition: all` also scales it 1%, a lift that only draws
- * the eye: DESIGN.md decision 25; and would move its size as a window's
- * width crosses 735px, which a screen's does not); its picture is laid under its text (apple.com's text is
- * laid over its picture). One size, the store's most (its rf-ccard-40): a
+ * (apple.com's hover also scales it 1%, a lift that only draws the eye:
+ * DESIGN.md decision 25; apple.com's `transition: all` would also move its
+ * size as a window's width crosses 735px, which a screen's does not); its
+ * picture is laid under its text (apple.com's text is laid over its
+ * picture). One size, the store's most (its rf-ccard-40): a
  * site sets another width with a utility (`w-full`), the picture cropped to
  * it. */
 

@@ -91,6 +91,7 @@ export const cases = [
       { target: LINK, state: 'hover', props: ['opacity'], apple: ['localnav', 'tray.link', 'hover'] },
       { target: CURRENT, props: [...SIZE, 'color', 'opacity', 'box-top', 'box-left', 'box-height'], apple: ['localnav', 'tray.current'] },
       { target: CURRENT, pseudo: '::after', props: ['background-color', 'opacity', 'height', 'top', 'left', 'border-top-left-radius'], apple: ['localnav', 'tray.current-mark'] },
+      { target: LINK, props: ['transform'], golden: SLIDE },
       { target: CURRENT, pseudo: '::after', props: ['width'], golden: 'apple.com\'s mark, 1.2px wide (localnav:tray.current-mark, 1.1875px as drawn)' },
       { target: '.cui-localnav-menu', props: ['box-top', 'box-height'], golden: 'the menu below the bar, its last row\'s foot 27px above its own at 221px, apple.com\'s (localnav:tray.open: from 24px, 197px)' },
       { target: `${CHEVRON} svg`, props: ['transform'], golden: 'the chevron turned up: apple.com\'s points flipped about its middle (reference/icons/)' },
@@ -107,6 +108,16 @@ export const cases = [
       { target: CURRENT, props: ['transition-delay'], golden: 'apple.com\'s first row from 260ms (localnav:tray.open\'s animations)' },
       { target: LINK, props: ['transition-delay'], golden: STAGGER },
       { target: '.cui-localnav-menu', props: ['transition-duration', 'transition-timing-function'], golden: 'apple.com\'s menu opens in 0.32s with its curve (localnav:tray.open, its max-height)' },
+    ],
+  },
+  {
+    // opened, then the pointer over a row (a forced :hover reads no transition)
+    name: 'menu-hover',
+    html: NAV,
+    ...OPEN,
+    hover: LINK,
+    checks: [
+      { target: LINK, props: ['transition-delay', 'opacity'], golden: 'hovered, its opacity to 1 at once: the 260ms is the menu\'s opening\'s' },
     ],
   },
   {
