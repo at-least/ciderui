@@ -1,12 +1,3 @@
-/* The site set: every part of apple.com's pages (its marketing pages,
- * its store, its Newsroom), after index.css:
- *
- *   @import "ciderui";
- *   @import "ciderui/site.css";
- *
- * One import per part, in the order of their names; a site that uses a few
- * parts may import those alone (components/site/<name>/<name>.css). */
-
 @import "./components/site/accordion/accordion.css";
 @import "./components/site/article/article.css";
 @import "./components/site/button/button.css";

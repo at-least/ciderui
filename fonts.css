@@ -1,12 +1,4 @@
-/* ciderui — Inter, the text where the system font is not SF. An optional
- * import, separate from index.css: `@import "ciderui/fonts.css";`. On
- * Apple's platforms the font stack names the system font first
- * (-apple-system, BlinkMacSystemFont), so Inter is never fetched there; it
- * is fetched where neither name is a font. Inter 4.001, the variable font
- * (opsz 14 to 32, wght 100 to 900), in VitePress's subsets as vpkit ships
- * them; SIL Open Font License 1.1 (LICENSE-Inter). The url()s are relative
- * to the compiled stylesheet (the Tailwind CLI leaves them as written), so
- * serve this package's fonts/ directory next to it. */
+/* each unicode-range is its file's subset */
 
 @font-face {
   font-family: Inter;

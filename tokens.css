@@ -1,103 +1,11 @@
-/* ciderui — the tokens. The colors are the contract: the --cui-c-* variables
- * every component reads, and the only colors it may. Each is apple.com's,
- * measured (reference/apple.com/), one light-dark() pair, light first, or
- * one value where both sides are the same; the dark secondary text is
- * fitted (apple.com's #6e6e73 is 4.1:1 on black, below 4.5:1), and so is
- * the dark error's (below). The palette
- * is fixed: no site redefines a color. A slot enters with the first
- * component that reads it, its dark side measured then (DESIGN.md, the
- * token contract). The pairs follow the color scheme of the element they
- * are used on: `cui-dark` on any element darkens what is inside it
- * (base.css; reference/scheme/). Plain custom properties, no Tailwind
- * directive. Part of index.css.
- *
- * What each color is for:
- *   bg, bg-alt              the page; the alternate ground (a tile, the
- *                           footer, a dark section's alternate)
- *   text, text-2, text-3    body, secondary and muted text (muted at 3:1,
- *                           never body)
- *   border                  a control's edge (a field, an option)
- *   accent, -hover, -active the primary fill; the focus ring
- *   on-accent               text on the accent's fills
- *   link                    a link; a secondary button's text and edge
- *   neutral, -hover, -active the neutral fill: near-black on a light page,
- *                           near-white in a dark block
- *   on-neutral              text on the neutral's fills
- *   bar                     the global nav's material, translucent over
- *                           the page under a blur
- *   on-bar, on-bar-hover    the nav's links and icons, and hovered (the
- *                           menu's button is on-bar-hover at 0.8 opacity)
- *   menu, on-menu           the nav's menu opened over the window on a
- *                           phone, and its links (hovered, on-bar-hover); a
- *                           local nav's menu; the nav's search, opened
- *   curtain                 the layer over the page under the nav's search,
- *                           translucent under a blur
- *   bar-2, on-bar-2         the local nav's material, and its product's
- *                           name (its links are on-bar-hover at 0.8 opacity)
- *   separator               a rule on a bar (the local nav's), between a
- *                           footer's rows
- *   tile                    a tile's ground: the alternate ground, black
- *                           in a dark block (apple.com's dark tiles are #000)
- *   on-card                 a card's text (on the page's ground: white,
- *                           black in a dark block), white in a dark one
- *   eyebrow, tag            a card's eyebrow, and a tag in its place
- *                           ("NEW")
- *   paddle, -hover, -active a gallery's paddle, translucent over the page
- *   on-paddle, -hover       its chevron, and hovered or pressed
- *   dot, dot-hover          a gallery's dots, and hovered
- *   divider                 a rule between items on the page (an
- *                           accordion's)
- *   on-footer, -link, -title the footer's text, links and titles, on the
- *                           alternate ground; footer-rule, its legal links'
- *                           separators. One value each: the footer is light
- *                           on a dark page too, as apple.com's is
- *   field                   a field's ground, translucent; one value: a
- *                           field keeps its light look in a dark block, as
- *                           apple.com's does in a dark color scheme
- *   field-error, -disabled, a field's ground in error and disabled, its
- *   -prefix, border-disabled prefix's ground, a disabled field's edge; one
- *                           value each, as the field's
- *   error                   a field's edge, label and message in error; its
- *                           dark side fitted (apple.com's #e30000 is 4.3:1 on
- *                           black, below 4.5:1: Apple's dark red, #ff453a)
- *   scrim                   the layer a modal lays over the page, dimming it
- *   close, -hover, -active  a modal's close button, its circle
- *   on-close, -hover        its X, and hovered (pressed, on-close). One value
- *                           each: a modal is light in a dark block too, as
- *                           apple.com's store has no dark overlay
- *
- * The docs set's own colors (--cui-c-docs-*), where Apple's developer
- * documentation's are not apple.com's slots (DESIGN.md, decision 23),
- * measured on both sides (reference/apple.com/'s docc, docc-dark):
- *   docs-listing, docs-code a code listing's ground (the alternate ground in
- *                           light alone) and its code (black, white dark)
- *   docs-<kind>, -edge      an aside's ground, and its edge and label: note,
- *                           important, warning, tip, deprecated, experiment
- *   docs-bar-rule           the hairline at the foot of the documentation's
- *                           bar
- *   docs-current            the navigator's current row
- *   docs-match              a navigator's row's words matching its filter
- *
- * The console's colors (--cui-c-console-*), the console parts' (cui-console-*):
- * App Store Connect's newer look's color roles, one slot per role a part
- * reads, named by the role (--cui-c-console-neutral-label-primary is its
- * --tb-color-role-neutral-label-primary; reference/asc/results/tokens.json),
- * light as its page computes it; dark, which it does not ship, the role's
- * step of its dark palette at the role's alpha, black and white each
- * other's (DESIGN.md, decision 18: derived). The secondary label is
- * fitted: the toolkit's, at 0.60, is 3.4:1 on white, so it is the same step
- * at 0.76, 4.5:1 on a fill and a banner's tint over white, and on a chip over a card; in dark at 0.63, 4.5:1 on a banner's tint over a card (decision 21). They are not apple.com's
- * colors: a console part reads these alone.
- *
- * The rest is not themed: the font stack, the letter-spacing per size, the
- * focus ring, the shadows. */
-
 :root {
   --cui-c-bg: light-dark(#ffffff, #000000);
   --cui-c-bg-alt: light-dark(#f5f5f7, #1d1d1f);
   --cui-c-text: light-dark(#1d1d1f, #f5f5f7);
   --cui-c-text-2: light-dark(#6e6e73, #86868b);
+  /* never body text */
   --cui-c-text-3: light-dark(#86868b, #6e6e73);
+  /* a control's edge; a rule is --cui-c-divider or --cui-c-separator */
   --cui-c-border: light-dark(#86868b, #6e6e73);
   --cui-c-accent: #0071e3;
   --cui-c-accent-hover: #0076df;
@@ -108,29 +16,38 @@
   --cui-c-neutral-hover: light-dark(#272729, #ffffff);
   --cui-c-neutral-active: light-dark(#18181a, #ededf2);
   --cui-c-on-neutral: light-dark(#ffffff, #000000);
+  /* the global nav's ground */
   --cui-c-bar: light-dark(rgb(255 255 255 / 0.8), rgb(0 0 0 / 0.8));
   --cui-c-on-bar: light-dark(rgb(0 0 0 / 0.8), rgb(255 255 255 / 0.8));
   --cui-c-on-bar-hover: light-dark(#000000, #ffffff);
+  /* an opened nav menu's ground, and the global nav's opened search's */
   --cui-c-menu: light-dark(#fafafc, #161617);
   --cui-c-on-menu: light-dark(#333336, #e8e8ed);
+  /* over the page under the global nav's opened search */
   --cui-c-curtain: light-dark(rgb(232 232 237 / 0.4), rgb(0 0 0 / 0.4));
+  /* the local nav's ground, and its product's name */
   --cui-c-bar-2: light-dark(rgb(250 250 252 / 0.8), rgb(22 22 23 / 0.8));
   --cui-c-on-bar-2: light-dark(rgb(0 0 0 / 0.88), rgb(255 255 255 / 0.92));
+  /* a rule on a bar (the local nav's) and between the footer's rows */
   --cui-c-separator: light-dark(rgb(0 0 0 / 0.16), rgb(255 255 255 / 0.24));
   --cui-c-tile: light-dark(#f5f5f7, #000000);
   --cui-c-on-card: light-dark(#1d1d1f, #ffffff);
   --cui-c-eyebrow: light-dark(#424245, #f5f5f7);
+  /* a card's tag ("NEW") in its eyebrow's place */
   --cui-c-tag: light-dark(#b64400, #ff791b);
+  /* a gallery's previous and next buttons, and their chevrons */
   --cui-c-paddle: light-dark(rgb(210 210 215 / 0.64), rgb(66 66 69 / 0.72));
   --cui-c-paddle-hover: light-dark(rgb(223 223 227 / 0.698), rgb(73 73 76 / 0.725));
   --cui-c-paddle-active: light-dark(rgb(193 193 198 / 0.655), rgb(57 57 60 / 0.74));
   --cui-c-on-paddle: light-dark(rgb(0 0 0 / 0.56), rgb(255 255 255 / 0.8));
   --cui-c-on-paddle-hover: light-dark(rgb(0 0 0 / 0.64), #ffffff);
+  /* a gallery's dots */
   --cui-c-dot: light-dark(rgb(29 29 31 / 0.6), rgb(255 255 255 / 0.36));
   --cui-c-dot-hover: light-dark(rgb(0 0 0 / 0.54), rgb(255 255 255 / 0.48));
   --cui-c-field: rgb(255 255 255 / 0.8);
   --cui-c-field-error: #fff2f4;
   --cui-c-field-disabled: rgb(0 0 0 / 0.01);
+  /* a field's prefix's ground (a currency sign) */
   --cui-c-field-prefix: rgb(0 0 0 / 0.02);
   --cui-c-border-disabled: rgb(134 134 139 / 0.42);
   --cui-c-error: light-dark(#e30000, #ff453a);
@@ -140,13 +57,16 @@
   --cui-c-on-footer-title: rgb(0 0 0 / 0.88);
   --cui-c-footer-rule: rgb(0 0 0 / 0.48);
   --cui-c-scrim: rgb(0 0 0 / 0.48);
+  /* a modal's close button's circle, and its X */
   --cui-c-close: #e8e8ed;
   --cui-c-close-hover: #ececf0;
   --cui-c-close-active: #dfdfe4;
   --cui-c-on-close: #6e6e73;
   --cui-c-on-close-hover: rgb(0 0 0 / 0.72);
+  /* a code listing's ground, and its code */
   --cui-c-docs-listing: light-dark(#f5f5f7, #333336);
   --cui-c-docs-code: light-dark(#000000, #ffffff);
+  /* an aside's ground by its kind; -edge, its edge and label */
   --cui-c-docs-note: light-dark(#f5f5f7, #323232);
   --cui-c-docs-note-edge: light-dark(#696969, #9a9a9e);
   --cui-c-docs-important: light-dark(#fffbf2, #2b1e00);
@@ -217,21 +137,12 @@
   --cui-c-console-error-fill-tertiary: light-dark(oklch(65.4% 0.232 28.8 / 0.12), oklch(65.4% 0.232 28.8 / 0.12));
   --cui-c-console-neutral-fill-primary: light-dark(oklch(57.5% 0.012 286.0 / 0.20), oklch(71.0% 0.019 285.9 / 0.20));
 
-  /* SF on Apple's platforms by its two Apple-only names (-apple-system
-     Safari's, BlinkMacSystemFont Chrome's; system-ui would be a font
-     everywhere and Inter never drawn), Inter where neither is a font,
-     fetched only there (reference/stack/) */
+  /* not system-ui: a font everywhere, so Inter would never be drawn */
   --cui-font: -apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-  /* code's, which apple.com's pages show none of: SF Mono on Apple's
-     platforms (ui-monospace, Safari's; Menlo, Chrome's there), the
-     platform's own elsewhere; no font is shipped for it */
+  /* ui-monospace is Safari's alone; Menlo is Chrome's on a Mac */
   --cui-font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
-  /* the letter-spacing per size: apple.com's minus the system font's own
-     tracking, which apple.com's SF Pro webfonts do not carry
-     (reference/tracking/cui-tracking.json; within 0.0006em of apple.com's
-     text in Safari, Chrome and iOS's Safari; Inter takes the same) */
   --cui-tracking-12: -0.0105em;
   --cui-tracking-14: -0.0058em;
   --cui-tracking-17: 0.0029em;
@@ -247,26 +158,15 @@
   --cui-tracking-80: -0.0156em;
   --cui-tracking-96: -0.0156em;
 
-  /* the focus ring: apple.com's on every control it was read on, 2px of the
-     accent 3px out (a text field shows its edge instead: cui-field) */
   --cui-focus-ring: 2px solid var(--cui-c-accent);
   --cui-focus-ring-offset: 3px;
 
-  /* a console sheet's shadow (a sidebar opened over the page below 1024px):
-     App Store Connect's toolkit's opaque sidebar's, an outer shadow and an
-     inner glow (reference/asc/results/tokens.json) */
   --cui-console-shadow-sidebar: 0px 0px 25px 0px oklch(0.0% 0.000 0 / 0.1),0px 0px 0px 1px inset oklch(100.0% 0.000 0 / 0.10),0px 0px 10px 0px inset oklch(100.0% 0.000 0 / 0.05),0px 0px 24px 0px inset oklch(100.0% 0.000 0 / 0.05);
-  /* a sticky table header's shadow: the toolkit's */
   --cui-console-shadow-table-sticky: 0 3px 10px -10px oklch(0.0% 0.000 0 / 0.50);
-  /* a chosen radio's shadow: the toolkit's */
   --cui-console-shadow-radio: 0 1px 5px -2px oklch(54.2% 0.162 251.9 / 0.30);
-  /* a dialog's shadow: the toolkit's modal's */
   --cui-console-shadow-dialog: 0px 16px 35px oklch(0.0% 0.000 0.0 / 0.04);
-  /* a popover's shadow: the toolkit's stroked popover's, its 0.5px edge in it */
   --cui-console-shadow-popover: 0px 16px 35px oklch(0.0% 0.000 0.0 / 0.04),0px 0px 0px 0.5px oklch(0.0% 0.000 0.0 / 0.15),0px 1px 1px -1px inset oklch(100.0% 0.000 0.0 / 0.24);
 
-  /* a card's shadow, and hovered: apple.com's store cards', a dark card's the
-     same */
   --cui-shadow-card: 2px 4px 12px rgb(0 0 0 / 0.08);
   --cui-shadow-card-hover: 2px 4px 16px rgb(0 0 0 / 0.16);
 }

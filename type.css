@@ -1,13 +1,4 @@
-/* ciderui — the type: apple.com store's t- ladder (measured,
- * reference/apple.com/, store:type.t-*) as Tailwind utilities, each with
- * its own step at 735px, apple.com's small screen below it. A utility, not
- * a component class, so a variant composes with it (lg:cui-headline-super
- * over cui-headline) and a plain utility on the same element wins
- * (text-[20px]): measured, Tailwind 4.3.3, Chromium 151. The size, line
- * height and weight are apple.com's; the letter-spacing is the system
- * font's fitted value for the size (tokens.css), not apple.com's. 735px is
- * theme.css's md. Tailwind writes a class only where a source uses it.
- * Part of index.css. */
+/* each step's 735px is theme.css's --breakpoint-md */
 
 @utility cui-headline-standalone {
   font-size: 48px;

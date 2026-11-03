@@ -21,7 +21,8 @@ func TestTheKitIsEmbedded(t *testing.T) {
 }
 
 // a set's entry imports each of its parts once, in the order of their names,
-// and no other set's
+// and no other set's: a part's rule over another's of the same specificity
+// relies on that order
 func TestEachSetImportsItsPartsInOrder(t *testing.T) {
 	for _, set := range []string{"site", "console", "docs"} {
 		var imported []string
@@ -41,6 +42,16 @@ func TestEachSetImportsItsPartsInOrder(t *testing.T) {
 		}
 		if !slices.Equal(imported, parts) {
 			t.Errorf("%s.css imports %v, the parts are %v", set, imported, parts)
+		}
+	}
+}
+
+// a part's stylesheet opens with its rules: what a header would say is its
+// examples', its rules' and its test's (DESIGN.md, rule 14)
+func TestNoPartHasAHeader(t *testing.T) {
+	for _, p := range CSSFiles() {
+		if strings.HasPrefix(p, "components/") && strings.HasPrefix(strings.TrimSpace(CSS(p)), "/*") {
+			t.Errorf("%s opens with a comment", p)
 		}
 	}
 }

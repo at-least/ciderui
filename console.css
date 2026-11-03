@@ -1,13 +1,3 @@
-/* The console set: every cui-console-* part, App Store Connect's newer
- * look's, after index.css (or its tokens.css, base.css and type.css):
- *
- *   @import "ciderui";
- *   @import "ciderui/console.css";
- *
- * One import per part, in the order of their names: a part's rule over
- * another's relies on it (the sidebar's close button hides at 1024px
- * only after console-btn's display). */
-
 @import "./components/console/console-appearance/console-appearance.css";
 @import "./components/console/console-badge/console-badge.css";
 @import "./components/console/console-banner/console-banner.css";
