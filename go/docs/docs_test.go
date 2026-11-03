@@ -137,6 +137,19 @@ func TestDocsNavigatorAnEmptyTitlePanics(t *testing.T) {
 	})
 }
 
+func TestDocsNavigatorANilItemPanics(t *testing.T) {
+	mustPanic(t, "docs.DocsNavigator: a nil item", func() {
+		example.Render(docs.DocsNavigator{Title: "T", Href: "/", Items: []docs.DocsNavigatorItem{nil}, Class: ""})
+	})
+}
+
+func TestDocsNavigatorAPageWithAnEmptyLabelPanics(t *testing.T) {
+	mustPanic(t, "a page needs a Label", func() {
+		items := []docs.DocsNavigatorItem{page("", "/alone/", false, false, nil)}
+		example.Render(docs.DocsNavigator{Title: "T", Href: "/", Items: items, Class: ""})
+	})
+}
+
 func TestDocsPageRendersTheExample(t *testing.T) {
 	reports := []docs.DocsNavigatorItem{
 		page("Reading a crash report", "#reading", true, false, nil),

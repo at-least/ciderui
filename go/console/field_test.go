@@ -52,3 +52,15 @@ func TestErrorATextWithNoControlPanics(t *testing.T) {
 		example.Render(console.ConsoleError{ID: "", Text: "Enter a name.", Class: ""})
 	})
 }
+
+func TestFormFieldAnEmptyIDPanics(t *testing.T) {
+	mustPanic(t, "ConsoleFormField needs an ID", func() {
+		example.Render(console.ConsoleFormField{ID: "", Label: g.Text("Name"), Children: h.Input(h.Class("cui-console-field"))})
+	})
+}
+
+func TestHelpAnEmptyTextPanics(t *testing.T) {
+	mustPanic(t, "ConsoleHelp needs a Text", func() {
+		example.Render(console.ConsoleHelp{ID: "name", Text: ""})
+	})
+}

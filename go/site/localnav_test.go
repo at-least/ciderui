@@ -47,3 +47,9 @@ func TestLocalNavDarkThenThePagesUtilities(t *testing.T) {
 		t.Errorf("got %s", got)
 	}
 }
+
+func TestLocalNavAnEmptyHrefPanics(t *testing.T) {
+	mustPanic(t, "LocalNav needs an Href", func() {
+		example.Render(site.LocalNav{Title: "x", Href: "", Links: nil, Current: "", Button: nil, Dark: false, Class: ""})
+	})
+}

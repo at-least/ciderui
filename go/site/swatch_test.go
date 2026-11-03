@@ -22,3 +22,9 @@ func TestSwatchAnEmptyLabelPanics(t *testing.T) {
 		example.Render(site.Swatch{ID: "x", Name: "x", Value: "x", Label: "", Checked: false, Class: "", Children: g.Text("x")})
 	})
 }
+
+func TestSwatchAnEmptyIDPanics(t *testing.T) {
+	mustPanic(t, "Swatch needs an ID", func() {
+		example.Render(site.Swatch{ID: "", Name: "x", Value: "x", Label: "x", Checked: false, Class: "", Children: g.Text("x")})
+	})
+}

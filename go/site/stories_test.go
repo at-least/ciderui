@@ -56,3 +56,15 @@ func TestStoryTakesThePagesUtilities(t *testing.T) {
 		t.Errorf("got %s", got)
 	}
 }
+
+func TestStoryAnEmptyHrefPanics(t *testing.T) {
+	mustPanic(t, "Story needs an Href", func() {
+		example.Render(site.Story{Size: site.StorySize{}, Href: "", Media: nil, Category: "", Datetime: "", Date: "", Headline: "x", Class: ""})
+	})
+}
+
+func TestStoryAnEmptyHeadlinePanics(t *testing.T) {
+	mustPanic(t, "Story needs a Headline", func() {
+		example.Render(site.Story{Size: site.StorySize{}, Href: "/x/", Media: nil, Category: "", Datetime: "", Date: "", Headline: "", Class: ""})
+	})
+}

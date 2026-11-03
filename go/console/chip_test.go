@@ -29,3 +29,9 @@ func TestChipARemoveControlWithoutALabelPanics(t *testing.T) {
 		example.Render(console.ConsoleChip{Key: "env", Value: "prod", Href: "", RemoveHref: "/b", RemoveLabel: "", Class: ""})
 	})
 }
+
+func TestChipAnEmptyKeyPanics(t *testing.T) {
+	mustPanic(t, "ConsoleChip needs a Key", func() {
+		example.Render(console.ConsoleChip{Key: "", Value: "prod", Href: "", RemoveHref: "", RemoveLabel: "", Class: ""})
+	})
+}

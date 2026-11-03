@@ -52,3 +52,9 @@ func TestMetricAWarningChangePanics(t *testing.T) {
 		example.Render(console.ConsoleMetric{Title: "x", Value: g.Text("1"), Change: "x", ChangeColor: console.ConsoleColorWarning, Caption: "", Href: "", Class: ""})
 	})
 }
+
+func TestMetricAnEmptyTitlePanics(t *testing.T) {
+	mustPanic(t, "ConsoleMetric needs a Title", func() {
+		example.Render(console.ConsoleMetric{Title: "", Value: g.Text("1"), Change: "", ChangeColor: console.ConsoleColorNeutral, Caption: "", Href: "", Class: ""})
+	})
+}

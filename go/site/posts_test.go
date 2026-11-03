@@ -56,3 +56,15 @@ func TestPostTakesThePagesUtilities(t *testing.T) {
 		t.Errorf("got %s", got)
 	}
 }
+
+func TestPostAnEmptyHrefPanics(t *testing.T) {
+	mustPanic(t, "Post needs an Href", func() {
+		example.Render(site.Post{Href: "", Media: nil, Category: "", Datetime: "", Date: "", Headline: "x", Class: ""})
+	})
+}
+
+func TestPostAnEmptyHeadlinePanics(t *testing.T) {
+	mustPanic(t, "Post needs a Headline", func() {
+		example.Render(site.Post{Href: "/x/", Media: nil, Category: "", Datetime: "", Date: "", Headline: "", Class: ""})
+	})
+}

@@ -21,3 +21,15 @@ func TestHintAnEmptyIDPanics(t *testing.T) {
 		example.Render(console.ConsoleHint{ID: "", Label: "x", Hint: "x"})
 	})
 }
+
+func TestHintAnEmptyLabelPanics(t *testing.T) {
+	mustPanic(t, "ConsoleHint needs a Label", func() {
+		example.Render(console.ConsoleHint{ID: "x", Label: "", Hint: "x"})
+	})
+}
+
+func TestHintAnEmptyHintPanics(t *testing.T) {
+	mustPanic(t, "ConsoleHint needs a Hint", func() {
+		example.Render(console.ConsoleHint{ID: "x", Label: "x", Hint: ""})
+	})
+}

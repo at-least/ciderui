@@ -29,15 +29,17 @@ type ConsoleSidebar struct {
 }
 
 func (s ConsoleSidebar) Render(w io.Writer) error {
-	for _, field := range []struct{ name, value string }{
-		{"ID", s.ID},
-		{"Label", s.Label},
-		{"Wordmark", s.Wordmark},
-		{"Close", s.Close},
-	} {
-		if field.value == "" {
-			panic("console.ConsoleSidebar needs a " + field.name)
-		}
+	if s.ID == "" {
+		panic("console.ConsoleSidebar needs an ID")
+	}
+	if s.Label == "" {
+		panic("console.ConsoleSidebar needs a Label")
+	}
+	if s.Wordmark == "" {
+		panic("console.ConsoleSidebar needs a Wordmark")
+	}
+	if s.Close == "" {
+		panic("console.ConsoleSidebar needs a Close")
 	}
 	return h.Nav(class.Root("cui-console-sidebar", s.Class), h.ID(s.ID), h.Popover(), h.Aria("label", s.Label),
 		h.Div(h.Class("cui-console-sidebar-header"),

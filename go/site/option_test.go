@@ -17,3 +17,9 @@ func TestOptionTileAnEmptyTitlePanics(t *testing.T) {
 		example.Render(site.OptionTile{ID: "x", Name: "x", Value: "x", Title: "", Detail: "", Price: "", Checked: false, Class: ""})
 	})
 }
+
+func TestOptionTileAnEmptyIDPanics(t *testing.T) {
+	mustPanic(t, "OptionTile needs an ID", func() {
+		example.Render(site.OptionTile{ID: "", Name: "x", Value: "x", Title: "x", Detail: "", Price: "", Checked: false, Class: ""})
+	})
+}

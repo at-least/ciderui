@@ -17,3 +17,9 @@ func TestCheckboxAnEmptyLabelPanics(t *testing.T) {
 		example.Render(site.Checkbox{ID: "x", Name: "x", Label: "", Checked: false, Class: ""})
 	})
 }
+
+func TestCheckboxAnEmptyIDPanics(t *testing.T) {
+	mustPanic(t, "Checkbox needs an ID", func() {
+		example.Render(site.Checkbox{ID: "", Name: "x", Label: "x", Checked: false, Class: ""})
+	})
+}

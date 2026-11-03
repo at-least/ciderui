@@ -21,3 +21,9 @@ func TestQuickLinksAnEmptyTitlePanics(t *testing.T) {
 		example.Render(site.QuickLinks{ID: "q", Title: "", Links: nil, Class: ""})
 	})
 }
+
+func TestQuickLinksAnEmptyIDPanics(t *testing.T) {
+	mustPanic(t, "QuickLinks needs an ID", func() {
+		example.Render(site.QuickLinks{ID: "", Title: "Shortcuts", Links: nil, Class: ""})
+	})
+}

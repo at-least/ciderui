@@ -31,3 +31,9 @@ func TestPagerNothingToShowPanics(t *testing.T) {
 		example.Render(console.ConsolePager{Label: "Pages", Summary: "", First: "", Previous: "", Next: "", Class: ""})
 	})
 }
+
+func TestPagerAnEmptyLabelPanics(t *testing.T) {
+	mustPanic(t, "ConsolePager needs a Label", func() {
+		example.Render(console.ConsolePager{Label: "", Summary: "1–50 of 230", First: "", Previous: "", Next: "#page-2", Class: ""})
+	})
+}

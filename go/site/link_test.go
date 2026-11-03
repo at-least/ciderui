@@ -33,3 +33,9 @@ func TestMoreLinkAnEmptyTextPanics(t *testing.T) {
 		example.Render(site.MoreLink{Href: "/x", Text: "", Class: ""})
 	})
 }
+
+func TestMoreLinkAnEmptyHrefPanics(t *testing.T) {
+	mustPanic(t, "MoreLink needs an Href", func() {
+		example.Render(site.MoreLink{Href: "", Text: "x", Class: ""})
+	})
+}

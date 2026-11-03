@@ -50,3 +50,16 @@ func TestAppearanceNoneChosenChecksNone(t *testing.T) {
 		t.Errorf("got %s", got)
 	}
 }
+
+func TestTabsAnEmptyLabelPanics(t *testing.T) {
+	mustPanic(t, "ConsoleTabs needs a Label", func() {
+		example.Render(console.ConsoleTabs{Label: "", Variant: console.ConsoleTabsVariantUnderlined, Tabs: nil, Class: ""})
+	})
+}
+
+func TestTabsATabWithAnEmptyLabelPanics(t *testing.T) {
+	tabs := []console.ConsoleTab{{Label: "", Href: "#a", Current: false}}
+	mustPanic(t, "ConsoleTab needs a Label", func() {
+		example.Render(console.ConsoleTabs{Label: "X", Variant: console.ConsoleTabsVariantUnderlined, Tabs: tabs, Class: ""})
+	})
+}

@@ -71,3 +71,15 @@ func TestFooterASectionWithNoIDPanics(t *testing.T) {
 		example.Render(site.Footer{Notes: nil, Directory: [][]site.FooterSection{{{ID: "", Title: "x", Links: nil}}}, Shop: nil, Copyright: "©", Links: nil, Locale: nil, Class: ""})
 	})
 }
+
+func TestFooterAnEmptyCopyrightPanics(t *testing.T) {
+	mustPanic(t, "Footer needs a Copyright", func() {
+		example.Render(site.Footer{Notes: nil, Directory: nil, Shop: nil, Copyright: "", Links: nil, Locale: nil, Class: ""})
+	})
+}
+
+func TestFooterASectionWithNoTitlePanics(t *testing.T) {
+	mustPanic(t, "FooterSection needs a Title", func() {
+		example.Render(site.Footer{Notes: nil, Directory: [][]site.FooterSection{{{ID: "x", Title: "", Links: nil}}}, Shop: nil, Copyright: "©", Links: nil, Locale: nil, Class: ""})
+	})
+}

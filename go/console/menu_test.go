@@ -44,3 +44,15 @@ func TestMenuWithNoLabelPanics(t *testing.T) {
 		example.Render(console.ConsoleMenu{Label: "", Class: "", Children: g.Text("x")})
 	})
 }
+
+func TestMenuItemWithNoLabelPanics(t *testing.T) {
+	mustPanic(t, "ConsoleMenuItem needs a Label", func() {
+		example.Render(console.ConsoleMenuItem{Href: "#x", Label: "", Icon: icon.Icon{}, Current: false, Disabled: false, Secondary: "", Class: ""})
+	})
+}
+
+func TestMenuGroupWithNoLabelPanics(t *testing.T) {
+	mustPanic(t, "ConsoleMenuGroup needs a Label", func() {
+		example.Render(console.ConsoleMenuGroup{Label: "", Icon: icon.Icon{}, Open: false, Class: "", Children: g.Text("x")})
+	})
+}

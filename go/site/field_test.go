@@ -99,3 +99,39 @@ func TestSelectAnOptionWithNoValuePanics(t *testing.T) {
 		example.Render(site.Select{ID: "m", Name: "m", Label: "Model", Options: []site.Option{{Value: "", Text: "None"}}, Selected: "", Error: "", Disabled: false, Class: ""})
 	})
 }
+
+func TestFieldAnEmptyIDPanics(t *testing.T) {
+	mustPanic(t, "Field needs an ID", func() {
+		example.Render(site.Field{ID: "", Type: "text", Name: "x", Label: "x", Autocomplete: "", Value: "", Error: "", Disabled: false, Prefix: "", Class: ""})
+	})
+}
+
+func TestSelectAnEmptyIDPanics(t *testing.T) {
+	mustPanic(t, "Select needs an ID", func() {
+		example.Render(site.Select{ID: "", Name: "m", Label: "Model", Options: models, Selected: "", Error: "", Disabled: false, Class: ""})
+	})
+}
+
+func TestSelectAnEmptyLabelPanics(t *testing.T) {
+	mustPanic(t, "Select needs a Label", func() {
+		example.Render(site.Select{ID: "m", Name: "m", Label: "", Options: models, Selected: "", Error: "", Disabled: false, Class: ""})
+	})
+}
+
+func TestSelectNoOptionsPanics(t *testing.T) {
+	mustPanic(t, "Select needs Options", func() {
+		example.Render(site.Select{ID: "m", Name: "m", Label: "Model", Options: nil, Selected: "", Error: "", Disabled: false, Class: ""})
+	})
+}
+
+func TestTextAreaAnEmptyIDPanics(t *testing.T) {
+	mustPanic(t, "TextArea needs an ID", func() {
+		example.Render(site.TextArea{ID: "", Name: "note", Label: "Message", Value: "", Error: "", Disabled: false, Class: ""})
+	})
+}
+
+func TestTextAreaAnEmptyLabelPanics(t *testing.T) {
+	mustPanic(t, "TextArea needs a Label", func() {
+		example.Render(site.TextArea{ID: "note", Name: "note", Label: "", Value: "", Error: "", Disabled: false, Class: ""})
+	})
+}

@@ -37,3 +37,15 @@ func TestProductNavItemTakesThePagesUtilities(t *testing.T) {
 		t.Errorf("got %s", got)
 	}
 }
+
+func TestProductNavAnEmptyIDPanics(t *testing.T) {
+	mustPanic(t, "ProductNav needs an ID", func() {
+		example.Render(site.ProductNav{ID: "", Label: "Products", Paddles: false, Class: "", Children: g.Text("")})
+	})
+}
+
+func TestProductNavAnEmptyLabelPanics(t *testing.T) {
+	mustPanic(t, "ProductNav needs a Label", func() {
+		example.Render(site.ProductNav{ID: "p", Label: "", Paddles: false, Class: "", Children: g.Text("")})
+	})
+}

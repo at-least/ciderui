@@ -30,3 +30,21 @@ func TestSidebarWithNoCloseLabelPanics(t *testing.T) {
 		example.Render(console.ConsoleSidebar{ID: "s", Label: "x", Home: "/", Wordmark: "x", Close: "", Class: "", Footer: nil, Children: nil})
 	})
 }
+
+func TestSidebarWithNoIDPanics(t *testing.T) {
+	mustPanic(t, "ConsoleSidebar needs an ID", func() {
+		example.Render(console.ConsoleSidebar{ID: "", Label: "x", Home: "/", Wordmark: "x", Close: "Close", Class: "", Footer: nil, Children: nil})
+	})
+}
+
+func TestSidebarWithNoLabelPanics(t *testing.T) {
+	mustPanic(t, "ConsoleSidebar needs a Label", func() {
+		example.Render(console.ConsoleSidebar{ID: "s", Label: "", Home: "/", Wordmark: "x", Close: "Close", Class: "", Footer: nil, Children: nil})
+	})
+}
+
+func TestSidebarWithNoWordmarkPanics(t *testing.T) {
+	mustPanic(t, "ConsoleSidebar needs a Wordmark", func() {
+		example.Render(console.ConsoleSidebar{ID: "s", Label: "x", Home: "/", Wordmark: "", Close: "Close", Class: "", Footer: nil, Children: nil})
+	})
+}
