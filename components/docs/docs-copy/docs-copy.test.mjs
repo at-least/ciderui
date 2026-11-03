@@ -1,14 +1,6 @@
-// The docs copy against Apple's developer documentation (DocC): the button
-// at rest (docc:copy*), with the pointer on the listing and once it has
-// copied (docc-copy:*), light and dark. Golden, with their why: hidden
-// until the page's script shows it, shown with the keyboard's focus and on
-// a screen with no hover, unchanged with the pointer on it, its fade alone
-// transitioned, its width, its touch target.
-
 import { examples, PADDING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-// the button as the page's script leaves it: shown
 const shown = ex('copy').replace(' hidden>', '>');
 const copied = shown.replace('aria-label="Copy">', 'aria-label="Copy" data-state="copied">');
 const B = '.cui-docs-copy-button';
@@ -28,7 +20,6 @@ export const cases = [
     ],
   },
   {
-    // the pointer on the listing shows it
     name: 'copy hovered',
     html: shown,
     widths: [1200, 390],
@@ -39,7 +30,6 @@ export const cases = [
     ],
   },
   {
-    // the pointer on the button: DocC's hides its glyph
     name: 'copy button hovered',
     html: shown,
     widths: [1200],

@@ -1,13 +1,4 @@
-// The docs navigator against Apple's developer documentation (DocC), where
-// its navigator shows (from 1024px): its top, its title, a group's title, a
-// row, the spacer of a row at the top and one in, the chevron closed and
-// open, a row's glyph, the current row (docc-page:navigator.*), a row's
-// words and the current one's (docc:navigator.*); light and dark. Golden,
-// with their why: the letter-spacing, the widths an apple check does not
-// read, a group's title fitted, the whole row its link's, a closed page's
-// rows hidden, the chevron's focus ring and touch target, a long name.
-
-import { LINK, PADDING, SIZE, examples } from '../../../test/harness.mjs';
+import { LINK, PADDING, SIZE, examples, DOCC_TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const N = '.cui-docs-navigator';
@@ -15,7 +6,6 @@ const TOP = `${N} > .cui-docs-navigator-list > .cui-docs-navigator-item`;
 const NESTED = `${N} .cui-docs-navigator-list .cui-docs-navigator-list > .cui-docs-navigator-item`;
 const CURRENT = '.cui-docs-navigator-row:has(> [aria-current="page"])';
 const WIDE = [1600, 1500, 1499, 1251, 1250, 1200, 1024];
-// the navigator as the page's script leaves it: its filter shown
 const FILTER = ex('navigator').replace('<div class="cui-docs-navigator-filter" role="search" hidden>', '<div class="cui-docs-navigator-filter" role="search">');
 
 export const cases = [
@@ -38,10 +28,10 @@ export const cases = [
       { target: '.cui-docs-navigator-icon', props: ['height', 'margin-right', 'display'], apple: ['docc-page', 'navigator.icon'] },
       { target: '.cui-docs-navigator-icon', props: ['height', 'color'], apple: ['docc-page', 'navigator.icon.svg'] },
       { target: CURRENT, props: ['height', 'padding-right', 'background-color', 'border-top-left-radius', 'box-height'], apple: ['docc-page', 'navigator.current.row'] },
-      // golden
-      ...[N, '.cui-docs-navigator-title', '.cui-docs-navigator-group'].map(target => ({ target, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not DocC\'s' })),
+      ...[N, '.cui-docs-navigator-title', '.cui-docs-navigator-group'].map(target => ({ target, props: ['letter-spacing'], golden: DOCC_TRACKING })),
       { target: '.cui-docs-navigator-chevron', props: ['width', 'box-x'], golden: 'the chevron 20px at the end of its row\'s spacer (DocC\'s tree-toggle, docc-page:navigator.toggle width 20px; an apple check reads no width)' },
       { target: '.cui-docs-navigator-icon', props: ['width'], golden: 'square, DocC\'s 17px (docc-page:navigator.icon)' },
+      { target: '.cui-docs-navigator-group', props: ['padding-left'], golden: 'a group\'s title at its rows\' words\' place: the row\'s 20px of room and its level\'s spacer' },
       { target: '.cui-docs-navigator-group', props: ['color'], golden: 'the secondary text, 5.1:1 (dark 5.8:1): DocC\'s is the muted text, rgb(134, 134, 139), 3.5:1 on white (decision 6)' },
       { target: '.cui-docs-navigator-row', props: ['margin-left', 'margin-right'], golden: 'the row 20px from either side, DocC\'s item\'s room (docc-page:navigator.group padding-left 20px), its gray from there' },
       { target: `${N} [aria-current="page"]`, pseudo: '::after', props: ['position', 'top', 'left', 'height'], golden: 'the whole row its link\'s, the row\'s 35px from its start (DocC\'s row follows its link by its script)' },
@@ -49,7 +39,6 @@ export const cases = [
     ],
   },
   {
-    // a row's words, which docc read at 1600 and 1200px
     name: 'navigator words',
     html: ex('navigator'),
     widths: [1600, 1200],
@@ -72,12 +61,12 @@ export const cases = [
     ],
   },
   {
-    // the chevron's focus ring, its checkbox having the keyboard's focus
     name: 'navigator focus',
     html: ex('navigator'),
     widths: [1200],
     checks: [
       { target: '#docs-navigator-alerts + .cui-docs-navigator-row .cui-docs-navigator-chevron', on: '#docs-navigator-alerts', state: 'focus-visible', props: ['outline-style', 'outline-width', 'outline-color', 'outline-offset'], golden: 'the kit\'s ring (rule 9) on the chevron, its checkbox out of sight' },
+      { target: '#docs-navigator-alerts', props: ['position', 'width', 'height', 'opacity', 'pointer-events'], golden: 'the checkbox out of sight and under no pointer, in the focus order (DocC\'s chevron is its script\'s button)' },
     ],
   },
   {
@@ -90,7 +79,6 @@ export const cases = [
     ],
   },
   {
-    // the filter, as the page's script shows it (docc-filter, at 1200px)
     name: 'navigator filter',
     html: FILTER,
     widths: [1200],
@@ -100,6 +88,7 @@ export const cases = [
       { target: '.cui-docs-navigator-field', props: ['border-top-width', 'border-top-style', 'border-top-color', 'border-top-left-radius', 'background-color', 'box-height'], apple: ['docc-filter', 'field'] },
       { target: '.cui-docs-navigator-filter-icon', props: ['margin-left', 'margin-right', 'display'], apple: ['docc-filter', 'glyph'] },
       { target: '.cui-docs-navigator-filter-icon', props: ['height'], apple: ['docc-filter', 'glyph.svg'] },
+      { target: '.cui-docs-navigator-filter-icon', props: ['width'], golden: 'square, DocC\'s 21px glyph (docc-filter:glyph.svg; an apple check reads no width)' },
       { target: '.cui-docs-navigator-filter-icon', props: ['color'], as: { color: 'fill' }, apple: ['docc-filter', 'glyph.svg'] },
       { target: '.cui-docs-navigator-input', props: [...SIZE, 'color', 'height', 'padding-left', 'background-color', 'border-top-width', 'caret-color'], apple: ['docc-filter', 'input'] },
       { target: '.cui-docs-navigator-input', pseudo: '::placeholder', props: ['color'], apple: ['docc-filter', 'input.placeholder'] },
@@ -110,7 +99,6 @@ export const cases = [
     ],
   },
   {
-    // a row the filter matched, and the line saying it matched nothing
     name: 'navigator filtered',
     html: FILTER.replace('>Reading a crash report</a>', '>Reading a <mark class="cui-docs-navigator-match">crash</mark> report</a>').replace('<p class="cui-docs-navigator-empty" hidden>', '<p class="cui-docs-navigator-empty">'),
     widths: [1200],
@@ -118,6 +106,7 @@ export const cases = [
       { target: '.cui-docs-navigator-match', props: [...SIZE, 'color', 'background-color', 'border-top-left-radius', 'padding-left', 'padding-right'], apple: ['docc-filter', 'match'] },
       { target: '.cui-docs-navigator-empty', props: [...SIZE, 'padding-top', 'padding-left', 'margin-top', 'text-align'], apple: ['docc-filter', 'none'] },
       { target: '.cui-docs-navigator-empty', props: ['color'], golden: 'the secondary text, 5.1:1: DocC\'s is the muted text, rgb(134, 134, 139), 3.5:1 on white (decision 6)' },
+      { target: '.cui-docs-navigator-empty', props: ['letter-spacing'], golden: DOCC_TRACKING },
       { target: '.cui-docs-navigator-status', props: ['position', 'width', 'height', 'overflow-x'], golden: 'read aloud, not shown: what the filter found (DocC\'s visually hidden live region)' },
     ],
   },
@@ -135,8 +124,6 @@ export const cases = [
     ],
   },
   {
-    // a navigator narrower than the input's own width (a sheet's on a
-    // phone, an example's frame): the field shrinks to the room left
     name: 'navigator filter narrow',
     html: FILTER.replace('<nav class="cui-docs-navigator" aria-label="Navigator">', '<nav class="cui-docs-navigator" aria-label="Navigator" style="width:240px">'),
     widths: [390],
@@ -145,7 +132,6 @@ export const cases = [
     ],
   },
   {
-    // with no script: no filter
     name: 'navigator no script',
     html: ex('navigator'),
     widths: [1200],
@@ -155,12 +141,19 @@ export const cases = [
     ],
   },
   {
-    // a page's name longer than its row
     name: 'navigator long',
     html: `<nav class="cui-docs-navigator" aria-label="Navigator" style="width:320px"><a class="cui-docs-navigator-title" href="#t">Crashes</a><ul class="cui-docs-navigator-list"><li class="cui-docs-navigator-item"><div class="cui-docs-navigator-row"><a class="cui-docs-navigator-link" href="#long">Understanding the exception types in a crash report</a></div></li></ul></nav>`,
     widths: [1200],
     checks: [
       { target: '.cui-docs-navigator-link', props: ['white-space', 'text-overflow', 'overflow-x', 'box-height'], golden: 'one line, an ellipsis where the row has no room (DocC\'s rows are one 25px line each)' },
+    ],
+  },
+  {
+    name: 'navigator deep',
+    html: `<nav class="cui-docs-navigator" aria-label="Navigator"><ul class="cui-docs-navigator-list"><li class="cui-docs-navigator-item"><div class="cui-docs-navigator-row"><a class="cui-docs-navigator-link" href="#a">Crash reports</a></div><ul class="cui-docs-navigator-list"><li class="cui-docs-navigator-item"><div class="cui-docs-navigator-row"><a class="cui-docs-navigator-link" href="#b">Reading a crash report</a></div><ul class="cui-docs-navigator-list"><li class="cui-docs-navigator-item"><div class="cui-docs-navigator-row"><a class="cui-docs-navigator-link" href="#c">Exception types</a></div></li></ul></li></ul></li></ul></nav>`,
+    widths: [1200],
+    checks: [
+      { target: `${N} .cui-docs-navigator-list .cui-docs-navigator-list .cui-docs-navigator-list .cui-docs-navigator-row`, props: ['padding-left'], golden: 'a row two levels in after a 65px spacer, DocC\'s step of 15px a level (docc-page:navigator.spacer, .spacer.nested)' },
     ],
   },
 ];

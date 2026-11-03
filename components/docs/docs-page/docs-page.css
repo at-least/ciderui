@@ -1,64 +1,3 @@
-/* ciderui — the docs page: a page of Apple's developer documentation, under
- * the site's global nav: the documentation's bar across it, the navigator
- * beside the content from 1024px, a sheet the bar's button opens below
- * that, and the content's column, which the hero, the content and the
- * topics sit in.
- *
- * From Apple's developer documentation (DocC, reference/apple.com/):
- * docc-page:sidebar, content, container, primary (the navigator's column,
- * the content's column at each of DocC's steps), docc-sheet:* (the bar's
- * place; the sheet below 1024px, its card and its close button, and their
- * -dark); the close button's glyph reference/icons/ (DocC's numbers,
- * icon.rs's DOCS_CLOSE).
- *
- *   <div class="cui-docs-page">
- *     <nav class="cui-docs-bar" aria-label="Documentation">… popovertarget="docs-navigator" …</nav>
- *     <div class="cui-docs-page-sidebar" id="docs-navigator" popover>
- *       <button class="cui-docs-page-close" type="button" popovertarget="docs-navigator" popovertargetaction="hide" aria-label="Close Navigator">(DOCS_CLOSE)</button>
- *       <nav class="cui-docs-navigator" aria-label="Navigator">…</nav>
- *     </div>
- *     <main class="cui-docs-page-main">
- *       <div class="cui-docs-page-column"><header class="cui-docs-hero">…</header></div>
- *       <div class="cui-docs-page-column"><div class="cui-docs-content">…</div></div>
- *       <div class="cui-docs-page-column"><section class="cui-docs-topics">…</section></div>
- *     </main>
- *   </div>
- *
- * cui-docs-page          its bar across the top, sticking at the window's
- *                        top as the page scrolls, over its two columns from
- *                        1024px (the navigator's 400px, the content's the
- *                        rest), one below
- * cui-docs-page-sidebar  the navigator's place, a popover: from 1024px
- *                        always shown, a column sticking under the bar, its
- *                        own scroll, the window's height under the bar
- *                        (--cui-docs-page-top, its top in the window, the
- *                        page's script's as the page scrolls: the global
- *                        nav over the bar until it scrolls away; the bar's
- *                        height, --cui-docs-bar-height, without);
- *                        below, the sheet the bar's button opens, over the
- *                        window on the page's ground, its own scroll
- * cui-docs-page-close    the sheet's close button: 19px, its 19px glyph,
- *                        24px down to its middle, 20px from the end; below
- *                        1024px alone; a 44px target on a touch screen
- * cui-docs-page-main     the content's side
- * cui-docs-page-column   the content's column: 87.5% of the window to
- *                        735px, centered; from 736px 80px in on either side
- *                        within 820px at most (980px from 1251px, 1080px
- *                        from 1500px), centered in what the navigator leaves
- * cui-docs-content       40px under the hero (the content's top)
- * :target                a place a link leads to lands under the bar
- *
- * DocC's: the columns, the steps, the bar sticking, the sheet's ground and
- * its close button's size and place. ciderui's: the navigator's 400px (DocC's
- * script's width at a fresh load up to 1300px wide, growing to 543px on a
- * wider window: its stylesheet sets none); a link's target landing under
- * the bar (DocC's script scrolls it there); the sheet over the whole window,
- * the global nav too (a popover is in the top layer; DocC's starts under its
- * global nav, 44px down), shown at once (DocC's slides by a transform in
- * 0.15s, from a place not read); the column under the bar the window's
- * height less the bar's (DocC's script takes off the global nav's too, as
- * it scrolls away); the close button's target. */
-
 @layer components {
   .cui-docs-page {
     display: grid;
@@ -153,8 +92,6 @@
     }
   }
 
-  /* a link to a place on the page (a heading's, a footnote's) lands it under
-     the bar, which sticks over it */
   .cui-docs-page :target {
     scroll-margin-top: var(--cui-docs-bar-height);
   }

@@ -1,15 +1,4 @@
-// The docs content against Apple's developer documentation (DocC): the text,
-// a section's heading, a link (hovered alike), inline code, emphasis, a code
-// listing (docc:*); h3, a list, its items, an image, the room before a
-// listing and an aside (docc-page:content.*); a later section's heading, a
-// numbered list, a table (docc-technote:*); at DocC's widths and both sides
-// of each of its steps, light and dark. Golden, with their why: the
-// letter-spacing, the mono face, a listing's and a table's scroll, what
-// DocC's pages read show none of (h4, strong, a quotation, a rule, an
-// example's figure, a list or a listing in a list item), a long word broken,
-// an image centered.
-
-import { LINK, PADDING, SIZE, examples } from '../../../test/harness.mjs';
+import { LINK, PADDING, SIZE, examples, DOCC_TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const C = '.cui-docs-content';
@@ -17,7 +6,6 @@ const LIST = ['margin-top', 'margin-left', 'padding-left', 'padding-inline-start
 const CELL = [...PADDING, 'text-align', 'vertical-align', 'background-color',
   'border-top-width', 'border-top-style', 'border-top-color', 'border-bottom-width', 'border-bottom-style', 'border-bottom-color',
   'border-left-width', 'border-left-style', 'border-left-color', 'border-right-width', 'border-right-style', 'border-right-color'];
-const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not DocC\'s';
 const STEPS = [1500, 1499, 1251, 1250, 1024, 1023, 768, 767, 736, 735];
 const NONE = 'DocC\'s pages read show none';
 
@@ -26,7 +14,6 @@ export const cases = [
     name: 'content',
     html: ex('content'),
     checks: [
-      // docc: the crash report's article
       { target: `${C} > h2:first-child`, props: [...SIZE, 'color', 'margin-top', 'margin-bottom'], apple: ['docc', 'heading'] },
       { target: `${C} > h2 + p`, props: [...SIZE, 'color', 'margin-top'], apple: ['docc', 'text'] },
       { target: `${C} > p a`, props: [...SIZE, 'color', ...LINK], apple: ['docc', 'link'] },
@@ -35,7 +22,6 @@ export const cases = [
       { target: `${C} > pre`, props: ['border-top-left-radius', 'background-color', 'margin-top'], apple: ['docc', 'listing'] },
       { target: `${C} > pre`, props: [...PADDING, 'white-space'], apple: ['docc', 'listing.pre'] },
       { target: `${C} > pre code`, props: [...SIZE, 'color', 'white-space', 'tab-size'], apple: ['docc', 'listing.code'] },
-      // docc-page: the same article's other elements
       { target: `${C} > h3`, props: [...SIZE, 'color', 'margin-top', 'margin-bottom'], apple: ['docc-page', 'content.h3'] },
       { target: `${C} > ul`, props: LIST, apple: ['docc-page', 'content.ul'] },
       { target: `${C} > ul > li`, props: [...SIZE, 'color', 'display'], apple: ['docc-page', 'content.li'] },
@@ -43,7 +29,6 @@ export const cases = [
       { target: `${C} > ul > li > p`, props: [...SIZE, 'color', 'margin-top', 'margin-bottom'], apple: ['docc-page', 'content.li.p'] },
       { target: `${C} > p:has(> img)`, props: ['margin-top', 'text-align'], apple: ['docc-page', 'content.image'] },
       { target: `${C} img`, props: ['max-width', 'display'], apple: ['docc-page', 'content.image.img'] },
-      // docc-technote: a TechNote's table, numbered list, later heading
       { target: `${C} > h2 ~ h2`, props: [...SIZE, 'color', 'margin-top', 'margin-bottom'], apple: ['docc-technote', 'h2.next'] },
       { target: `${C} > ol`, props: LIST, apple: ['docc-technote', 'ol'] },
       { target: `${C} > ol > li`, props: [...SIZE, 'color', 'display'], apple: ['docc-technote', 'ol.li'] },
@@ -53,10 +38,8 @@ export const cases = [
       { target: `${C} > table`, props: ['margin-top'], apple: ['docc-technote', 'table.wrapper'] },
       { target: `${C} th`, props: [...SIZE, 'color', ...CELL], apple: ['docc-technote', 'table.head'] },
       { target: `${C} td`, props: [...SIZE, 'color', ...CELL], apple: ['docc-technote', 'table.cell'] },
-      // the letter-spacing
       ...[`${C} > h2:first-child`, `${C} > h3`, `${C} > p`, `${C} > ul > li`]
-        .map(target => ({ target, props: ['letter-spacing'], golden: TRACKING })),
-      // what is ciderui's
+        .map(target => ({ target, props: ['letter-spacing'], golden: DOCC_TRACKING })),
       { target: `${C} > p code`, props: ['font-family'], golden: 'the mono face (tokens.css, --cui-font-mono): DocC\'s SF Mono where it is the system\'s' },
       { target: `${C} > pre`, props: ['font-family', 'letter-spacing', 'overflow-x'], golden: 'the mono face at its own spacing, as the console\'s listing (DocC sets -0.405px on its SF Mono webfont); a line too long moves sideways inside the listing (DocC\'s scroller inside its box)' },
       { target: `${C} > table`, props: ['display', 'overflow-x', 'max-width'], golden: 'the table scrolls by itself where the column is narrower: DocC\'s wrapper does (docc-technote:table.wrapper), and markdown writes none' },
@@ -64,7 +47,6 @@ export const cases = [
     ],
   },
   {
-    // DocC's steps: its type at 1251 and 736, nothing at its other steps
     name: 'steps',
     html: ex('content'),
     widths: STEPS,
@@ -93,8 +75,6 @@ export const cases = [
     ],
   },
   {
-    // an aside's room (docc-page:content.note), and what DocC's pages read
-    // show none of, as markdown writes it
     name: 'more',
     html: `<div class="cui-docs-content">
 <p>The first paragraph, at the top.</p>
@@ -116,8 +96,7 @@ export const cases = [
     ],
   },
   {
-    // markdown's list in a list item and its code block in one (a step's
-    // command), as Zola writes them
+    // as Zola writes a list in a list item and a code block in one
     name: 'nested',
     html: `<div class="cui-docs-content">
 <ul><li>Outer<ul><li>Inner</li></ul></li></ul>
@@ -132,8 +111,6 @@ export const cases = [
     ],
   },
   {
-    // words too long for a line: an import in inline code, a bare URL as a
-    // link, a long name in a table's cell
     name: 'long',
     html: `<div class="cui-docs-content">
 <p>Import <code>@import "../target/ciderui/components/docs/docs-content/docs-content.css";</code> first.</p>
@@ -147,7 +124,6 @@ export const cases = [
     ],
   },
   {
-    // a part inside keeps its own look (rule 4)
     name: 'parts',
     html: `<div class="cui-docs-content"><p>Read <a class="cui-console-link" href="#guide">the guide</a>.</p><pre class="cui-console-listing"><code>Thread 0 Crashed:</code></pre></div>`,
     widths: [1200],

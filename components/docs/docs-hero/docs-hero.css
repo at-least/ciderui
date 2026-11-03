@@ -1,43 +1,3 @@
-/* ciderui — the docs hero: the top of a page in Apple's developer
- * documentation, where it is in the documentation (its breadcrumbs), what
- * kind of page it is (its eyebrow), its title and what it is about (its
- * abstract).
- *
- * From Apple's developer documentation (DocC, reference/apple.com/):
- * docc:eyebrow, title, abstract (their type), docc-page:hero.content,
- * hierarchy*, eyebrow.room, title.box, topictitle, abstract.box (the room,
- * the breadcrumbs, the steps), and their -dark.
- *
- *   <header class="cui-docs-hero">
- *     <nav aria-label="Breadcrumbs">
- *       <ol class="cui-docs-hero-crumbs">
- *         <li><a href="/components/">Components</a></li>
- *         <li aria-current="page">Docs Hero</li>
- *       </ol>
- *     </nav>
- *     <p class="cui-docs-hero-eyebrow">Component</p>
- *     <h1 class="cui-docs-hero-title">Docs Hero</h1>
- *     <p class="cui-docs-hero-abstract">…</p>
- *   </header>
- *
- * cui-docs-hero          40px above and below
- * cui-docs-hero-crumbs   a row 14/20, 20px over the eyebrow; each link
- *                        underlined in the text's color, a "/" 5px either
- *                        side before every crumb after the first; the
- *                        current page's (aria-current) not a link
- * cui-docs-hero-eyebrow  21/25 at 500 in the secondary text (19/23 to
- *                        735px), 15px over the title
- * cui-docs-hero-title    40/44 at 700 from 1251px (32/36 from 736px, 28/32
- *                        below), 12px over the abstract (none to 735px)
- * cui-docs-hero-abstract 21/29 at 500 (19/27 to 735px)
- *
- * DocC's: the room, the type, the steps, the colors, the crumbs' row and
- * separator. ciderui's: the letter-spacing (tokens.css); the crumbs
- * wrapping where the row has no room (DocC's script hides its middle crumbs
- * there: no script here), a separator read as nothing (DocC's "/" is read
- * aloud), the parts' own room where one is left out (DocC's pages read show
- * all four). Its column is the page's (cui-docs-page-column). */
-
 @layer components {
   .cui-docs-hero {
     padding-top: 40px;
@@ -73,7 +33,6 @@
       color: inherit;
       text-decoration-line: underline;
 
-      /* a touch screen's: 44px tall, the HIG's 44pt (Accessibility, Mobility), the row with it */
       @media (pointer: coarse) {
         display: inline-flex;
         align-items: center;

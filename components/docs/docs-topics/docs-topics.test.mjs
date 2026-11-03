@@ -1,10 +1,4 @@
-// The docs topics against Apple's developer documentation (DocC)'s See Also
-// (docc-page:seealso*), at each of DocC's steps, light and dark: the room,
-// the title, a group and its title, a link (hovered), its glyph, its
-// abstract. Golden, with their why: the letter-spacing, the glyph's column
-// and color, a touch screen's hover.
-
-import { DOCC_STEPS, LINK, SIZE, examples } from '../../../test/harness.mjs';
+import { DOCC_STEPS, LINK, SIZE, examples, DOCC_TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const S = '.cui-docs-topics';
@@ -26,7 +20,7 @@ export const cases = [
       { target: '.cui-docs-topics-icon', props: ['height'], apple: ['docc-page', 'seealso.icon.svg'] },
       { target: '.cui-docs-topics-icon', props: ['margin-right'], apple: ['docc-page', 'seealso.icon'] },
       { target: '.cui-docs-topics-abstract', props: [...SIZE, 'color', 'margin-left'], apple: ['docc-page', 'seealso.abstract'] },
-      ...['.cui-docs-topics-title', '.cui-docs-topics-heading', '.cui-docs-topics-link'].map(target => ({ target, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not DocC\'s' })),
+      ...['.cui-docs-topics-title', '.cui-docs-topics-heading', '.cui-docs-topics-link'].map(target => ({ target, props: ['letter-spacing'], golden: DOCC_TRACKING })),
       { target: '.cui-docs-topics-icon', props: ['width', 'padding-left', 'padding-right', 'box-width', 'box-y'], golden: 'the 15px glyph in a 22px column, 5px down its 25px line (DocC\'s 22px box centers it: docc-page:seealso.icon)' },
       { target: '.cui-docs-topics-icon', props: ['color'], golden: 'the muted text, DocC\'s glyph\'s fill rgb(134, 134, 139) (docc-page:seealso.icon.svg; its color, the link\'s, paints nothing): a mark, 3.5:1 on white' },
     ],
@@ -43,7 +37,6 @@ export const cases = [
     ],
   },
   {
-    // a tap leaves no underline (rule 5): DocC's link underlines hovered
     name: 'topics touch',
     html: ex('topics'),
     widths: [390],

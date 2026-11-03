@@ -72,6 +72,7 @@ export const MOTION = ['transition-property', 'transition-duration', 'transition
 export const STAGGER = 'together: apple.com\'s come in one after another, a staggered reveal that only draws the eye (DESIGN.md decision 25)';
 export const SLIDE = 'where it is: apple.com\'s come in from a few px up, a slide that only draws the eye (DESIGN.md decision 25)';
 export const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
+export const DOCC_TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not DocC\'s';
 
 // a component's examples, read by its test file's URL (`const ex =
 // examples(import.meta.url)`): ex(id) is examples/<id>.html's markup

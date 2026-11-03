@@ -1,18 +1,8 @@
-// The docs hero against Apple's developer documentation (DocC): its room,
-// the breadcrumbs, a crumb's link (hovered alike) and separator, the
-// current crumb, the eyebrow's, the title's and the abstract's type and
-// room (docc-page:hero.content, hierarchy*, eyebrow.room, title.box,
-// topictitle, abstract.box), at each of DocC's steps; the eyebrow's type
-// (docc:eyebrow) at DocC's widths; light and dark. Golden, with their why:
-// the letter-spacing, the crumbs wrapping and their separator read as
-// nothing, a hero with a part left out.
-
-import { DOCC_STEPS, LINK, PADDING, SIZE, examples } from '../../../test/harness.mjs';
+import { DOCC_STEPS, LINK, PADDING, SIZE, examples, DOCC_TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const H = '.cui-docs-hero';
 const CRUMBS = '.cui-docs-hero-crumbs';
-const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not DocC\'s';
 
 export const cases = [
   {
@@ -31,13 +21,12 @@ export const cases = [
       { target: '.cui-docs-hero-title', props: ['margin-bottom'], apple: ['docc-page', 'topictitle'] },
       { target: '.cui-docs-hero-abstract', props: [...SIZE, 'color', 'margin-top', 'margin-bottom'], apple: ['docc-page', 'abstract.box'] },
       ...[CRUMBS, '.cui-docs-hero-eyebrow', '.cui-docs-hero-title', '.cui-docs-hero-abstract']
-        .map(target => ({ target, props: ['letter-spacing'], golden: TRACKING })),
+        .map(target => ({ target, props: ['letter-spacing'], golden: DOCC_TRACKING })),
       { target: CRUMBS, props: ['flex-wrap', 'list-style-type'], golden: 'the crumbs wrap where the row has no room: DocC\'s script hides its middle crumbs there (docc-page:hierarchy.item display none), and there is no script; no marks (DocC\'s ul reads disc, its items flex boxes that draw none)' },
       { target: `${CRUMBS} li + li`, pseudo: '::before', props: ['content', 'display'], golden: 'a "/" read as nothing (alternative text ""), where DocC\'s is read aloud; a block in the crumb\'s row, DocC\'s where the crumb shows (docc-page:hierarchy.separator display block at 1600px)' },
     ],
   },
   {
-    // the eyebrow's type, which docc read at its four widths
     name: 'hero eyebrow',
     html: ex('hero'),
     checks: [
@@ -60,8 +49,7 @@ export const cases = [
     ],
   },
   {
-    // a hero of a title alone, and of a title and its abstract, which DocC's
-    // pages read do not show
+    // DocC's pages read show all four parts
     name: 'hero parts',
     html: `<header class="cui-docs-hero" id="title-alone"><h1 class="cui-docs-hero-title">Get Started</h1></header>
 <header class="cui-docs-hero" id="no-crumbs"><h1 class="cui-docs-hero-title">Get Started</h1><p class="cui-docs-hero-abstract">Add ciderui to a site.</p></header>`,

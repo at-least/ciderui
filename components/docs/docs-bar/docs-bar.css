@@ -1,41 +1,5 @@
-/* ciderui — the docs bar: the documentation's bar in Apple's developer
- * documentation, across the top of its pages under the global nav: the
- * button that opens the navigator, then the documentation's title, a link
- * home, over a hairline.
- *
- * From Apple's developer documentation (DocC, reference/apple.com/):
- * docc-page:bar.* (its height, room, hairline, button and title, at each of
- * DocC's steps), docc:bar* (its ground), and their -dark; the button's
- * glyph reference/icons/ (DocC's sidebar's numbers, icon.rs's
- * DOCS_SIDEBAR).
- *
- *   <nav class="cui-docs-bar" aria-label="Documentation">
- *     <button class="cui-docs-bar-toggle" type="button" popovertarget="docs-navigator" aria-label="Navigator">(DOCS_SIDEBAR)</button>
- *     <a class="cui-docs-bar-title" href="/">Documentation</a>
- *   </nav>
- *
- * cui-docs-bar         52px (48px below 768px) on the page's ground, 22px
- *                      in (16px below 768px), a 1px hairline at its foot
- * cui-docs-bar-toggle  29px, 6px corners, its 19px glyph centered, 5px out
- *                      before the bar's room, 6px before the title, 1px
- *                      down; below 1024px alone (the navigator is a column
- *                      from there); a 44px target on a touch screen
- * cui-docs-bar-title   the bar's height, its words centered in it, 21/25 at
- *                      600 (17/17 below 768px) in the text's color, no
- *                      underline
- *
- * DocC's: the heights, the room, the hairline, the button's size, corners,
- * place and glyph, the title's type and its place after the button. ciderui's:
- * the letter-spacing (tokens.css); no button from 1024px, where DocC's
- * collapses the navigator by its script, so the title is the bar's first
- * there; the button's 44px target on a touch screen, the HIG's 44pt; the
- * bar's position (DocC's sticks under the global nav) is the page's
- * (cui-docs-page), the hairline its own part's place (position: relative,
- * rule 6's containing block). */
-
 @layer components {
-  /* the bar's height, one value for the bar and for the page, whose sidebar
-     and linked-to places sit under it (cui-docs-page) */
+  /* on the page too: its sidebar and its linked-to places sit under the bar */
   :where(.cui-docs-page, .cui-docs-bar) {
     --cui-docs-bar-height: 48px;
 

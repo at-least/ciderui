@@ -1,87 +1,3 @@
-/* ciderui — the docs navigator: the tree of a documentation's pages in
- * Apple's developer documentation, its title over its rows: a group's title
- * over the pages after it, a page after its glyph, a page with pages under
- * it opened and closed by its chevron, the current page's row marked.
- *
- * From Apple's developer documentation (DocC, reference/apple.com/):
- * docc:navigator* (a row's type, the current one's weight),
- * docc-page:navigator.* (its top, the title, a group's title, a row, the
- * spacer of a row one and two levels in, the chevron closed and open, the
- * glyph, the current row), and their -dark; the glyphs reference/icons/
- * (DocC's numbers, icon.rs's DOCS_CHEVRON, DOCS_ARTICLE, DOCS_COLLECTION).
- *
- *   <nav class="cui-docs-navigator" aria-label="Navigator">
- *     <a class="cui-docs-navigator-title" href="/">Crashes</a>
- *     <ul class="cui-docs-navigator-list">
- *       <li class="cui-docs-navigator-item">
- *         <input class="cui-docs-navigator-toggle" type="checkbox" id="docs-navigator-reports" aria-label="Crash reports" checked>
- *         <div class="cui-docs-navigator-row">
- *           <label class="cui-docs-navigator-chevron" for="docs-navigator-reports">(DOCS_CHEVRON)</label>
- *           (DOCS_COLLECTION, class cui-docs-navigator-icon)
- *           <a class="cui-docs-navigator-link" href="/reports/">Crash reports</a>
- *         </div>
- *         <ul class="cui-docs-navigator-list">
- *           <li class="cui-docs-navigator-group">Reports</li>
- *           <li class="cui-docs-navigator-item">… <a class="cui-docs-navigator-link" href="…" aria-current="page">…</a> …</li>
- *         </ul>
- *       </li>
- *     </ul>
- *   </nav>
- *
- * cui-docs-navigator   10px down; the text 17/25
- * cui-docs-navigator-title  the documentation's title, 19/23 at 600, in a
- *                      link 8px above and below and 20px before it, 20px
- *                      from either side, 6px corners
- * cui-docs-navigator-row  35px: 25px, 5px above and below, 20px from either
- *                      side and 20px from its end; its words after a spacer
- *                      for its level, 35px a page at the top, 50px one in,
- *                      65px two in; the whole row its link's (the link's
- *                      ::after over it); one line, an ellipsis where it has
- *                      no room
- * cui-docs-navigator-group  a group's title at the row's place, at 600 in
- *                      the secondary text
- * cui-docs-navigator-chevron  the label of a page's checkbox
- *                      (cui-docs-navigator-toggle, out of sight but in the
- *                      focus order, its ring on the chevron): 20px at the
- *                      spacer's end, its 10px chevron 5px from its end,
- *                      turned a quarter (down) where it is checked, the
- *                      pages under it shown; a 44px target on a touch
- *                      screen
- * cui-docs-navigator-icon  the page's glyph, 17px, 7px before its words, in
- *                      the secondary text
- *   aria-current="page"  the current page's link: its words at 600, its row
- *                      on the navigator's gray (docs-current), 6px corners
- * cui-docs-navigator-filter  the filter, at the navigator's foot, sticking
- *                      to its column's: a hairline over it in the divider's
- *                      color, 15px above and below, 20px in, on the page's
- *                      ground; its field (cui-docs-navigator-field) 40px,
- *                      its edge the divider's, 12px corners, its glyph
- *                      (cui-docs-navigator-filter-icon) 21px, 10px in and
- *                      3px before the input (cui-docs-navigator-input),
- *                      17/25, its placeholder the secondary text; focused,
- *                      its edge the accent's, 2px; hidden until the page's
- *                      script shows it and filters
- * cui-docs-navigator-match  the part of a row's words the filter matches, at
- *                      600 on its tint (docs-match)
- * cui-docs-navigator-empty  the line saying the filter matches nothing, 14/20
- *                      in the secondary text, 10px down, 20px in (hidden,
- *                      the page's script's)
- * cui-docs-navigator-status  read aloud, not shown: what the filter found
- *                      (the page's script's)
- *
- * DocC's: the room, the type, the spacer's steps, the chevron's place and
- * turn, the glyphs' size and color, the current row's gray and corners.
- * ciderui's: the letter-spacing (tokens.css); a group's title in the
- * secondary text, where DocC's is the muted text (text-3, 3.5:1 on white:
- * fitted, DESIGN.md decision 6); a page opened by a checkbox and its label,
- * the footer's way, where DocC's chevron is its script's button; the
- * chevron's touch target; the title one link in the text's color (DocC's
- * link is the link's color around a heading in the text's); the focused
- * field's edge 2px of the accent, a text field's ring (rule 9; DocC's 1px
- * and a 4px glow), the empty line in the secondary text (DocC's the muted,
- * fitted); no tags or quick navigation beside the filter (DocC's). Its
- * width, its place and its scroll are the page's (cui-docs-page). */
-
 @layer components {
   .cui-docs-navigator {
     display: flex;
@@ -105,7 +21,6 @@
     font-weight: 600;
     line-height: 23px;
 
-    /* a touch screen's: 44px tall, the HIG's 44pt (Accessibility, Mobility) */
     @media (pointer: coarse) {
       padding-block: 10.5px;
     }
@@ -140,7 +55,6 @@
     border-radius: 6px;
     padding: 5px 20px 5px var(--cui-docs-navigator-indent);
 
-    /* a touch screen's: the row, its link's target, 44px tall, the HIG's 44pt (Accessibility, Mobility) */
     @media (pointer: coarse) {
       padding-block: 9.5px;
     }

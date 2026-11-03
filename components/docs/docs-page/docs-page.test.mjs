@@ -1,12 +1,4 @@
-// The docs page against Apple's developer documentation (DocC): the
-// content's column at each of DocC's steps (docc-page:container), the
-// content's top (docc-page:content.top), the bar sticking
-// (docc-sheet:bar.place); below 1024px the sheet the bar's button opens, its
-// card and its close button (docc-sheet:*), light and dark. Golden, with
-// their why: the navigator's column, the columns' places, the sheet over the
-// whole window, the close button's place and target.
-
-import { DOCC_STEPS, PADDING, examples } from '../../../test/harness.mjs';
+import { DOCC_STEPS, MOTION, PADDING, examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const NARROW = [1023, 900, 767, 390];
@@ -29,6 +21,16 @@ export const cases = [
     ],
   },
   {
+    name: 'page wide',
+    html: ex('page'),
+    widths: [1024],
+    checks: [
+      { target: '.cui-docs-page > .cui-docs-bar', props: ['position', 'top', 'box-width'], golden: 'across both columns, sticking at the window\'s top, as below 1024px (docc-sheet:bar.place, read to 1023px)' },
+      { target: SIDEBAR, props: ['overflow-y', 'box-height'], golden: 'the navigator\'s column its own scroll, the window\'s height less the bar\'s with no --cui-docs-page-top' },
+      { target: CLOSE, props: ['display'], golden: 'none from 1024px: the navigator is a column, with no sheet to close' },
+    ],
+  },
+  {
     name: 'page bar',
     html: ex('page'),
     widths: NARROW,
@@ -37,7 +39,6 @@ export const cases = [
     ],
   },
   {
-    // below 1024px, the bar's button opens the navigator's sheet
     name: 'page sheet',
     html: ex('page'),
     widths: NARROW,
@@ -50,6 +51,7 @@ export const cases = [
       { target: SIDEBAR, props: ['top', 'box-height', 'box-width', 'overflow-y'], golden: 'over the whole window, the global nav too (a popover is in the top layer; DocC\'s starts under its global nav, 44px down, docc-sheet:sheet top), its own scroll' },
       { target: CLOSE, props: ['width', 'box-y', 'box-x'], golden: 'DocC\'s 19px button 20px from the sheet\'s end, its middle 24px down (docc-sheet:sheet.close: 14.5px down to 767px, 11.5px and 25px tall from 768px)' },
       { target: `${CLOSE} svg`, props: ['width'], golden: 'square, DocC\'s 19px glyph (docc-sheet:sheet.close.icon)' },
+      { target: SIDEBAR, props: MOTION, golden: 'shown at once: DocC\'s slides in by a transform in 0.15s (docc-sheet:sheet), from a place not read' },
     ],
   },
   {
@@ -63,7 +65,6 @@ export const cases = [
     ],
   },
   {
-    // a link to a heading of the content: it lands under the bar
     name: 'page target',
     html: ex('page').replace('<h2>Overview</h2>', '<h2 id="overview">Overview</h2>').replace('<main class="cui-docs-page-main">', '<main class="cui-docs-page-main"><a id="to-overview" href="#overview">Overview</a>'),
     widths: [1200, 767],
@@ -73,8 +74,6 @@ export const cases = [
     ],
   },
   {
-    // the page's script gives the column its top in the window, the global
-    // nav over the bar at first: the column the window's height under it
     name: 'page top',
     html: ex('page').replace('<div class="cui-docs-page-sidebar" id="docs-navigator" popover>', '<div class="cui-docs-page-sidebar" id="docs-navigator" popover style="--cui-docs-page-top: 96px">'),
     widths: [1200],
