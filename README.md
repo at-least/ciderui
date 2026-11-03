@@ -1,5 +1,7 @@
 # ciderui
 
+Agents write this project entirely. It is fully optimized for agent vibe coding, debugging and RSI (recursive self-improvement): this README is the only file written for people; every other document, comment and line of code is written for the agents that read and change it.
+
 apple.com's look for websites, built with Tailwind CSS v4: a small contract of variables (`--cui-*`: the colors, the type, the focus ring, the shadows), the type as classes, and apple.com's parts as classes (`cui-btn`, `cui-globalnav`, `cui-tile`, …), each in a stylesheet of its own that a site imports when it uses the part; Inter for where the system font is not SF; and a Go module that writes the parts' markup with gomponents, carries the stylesheets and draws every [Lucide](https://lucide.dev) icon. It has no JavaScript. [ciderui-zola](../ciderui-zola), a Zola theme, is built on it. Why it is built as it is: [DESIGN.md](DESIGN.md).
 
 ## Use it
