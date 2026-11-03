@@ -19,7 +19,7 @@ Lines of code or of a log — a crash’s backtrace, a job’s output — on a g
 | --- | --- |
 | `cui-console-listing` | the panel: 15px corners, 8px by 14px in, 13px on 22px in the mono face |
 | `cui-console-listing-line` | a numbered line: its number from `data-line`, drawn before it, never selected or copied |
-| `data-highlighted` | on a line: the line to look at, tinted, an edge at its number |
+| `data-highlighted` | on a line: a line to look at, tinted, an edge at its number |
 
 ## Numbered lines
 

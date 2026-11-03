@@ -60,20 +60,13 @@ func (c ConsoleChart) Render(w io.Writer) error {
 	).Render(w)
 }
 
-// ConsoleSparklinePoint is in the sparkline's viewBox units, Y down.
-type ConsoleSparklinePoint struct {
-	X float64
-	Y float64
-}
-
 type ConsoleSparkline struct {
 	// Label is what the line shows, in words ("3 events over 2 days").
 	Label  string
 	Width  uint
 	Height uint
-	// Points run from X 0 to X Width: the area under the line is closed at
-	// those two ends.
-	Points []ConsoleSparklinePoint
+	// Values: each point's Y in viewBox units, Y down.
+	Values []float64
 	Class  string
 }
 
@@ -81,9 +74,15 @@ func (s ConsoleSparkline) Render(w io.Writer) error {
 	if s.Label == "" {
 		panic("console.ConsoleSparkline needs a Label")
 	}
-	points := make([]string, len(s.Points))
-	for i, p := range s.Points {
-		points[i] = strconv.FormatFloat(p.X, 'f', -1, 64) + "," + strconv.FormatFloat(p.Y, 'f', -1, 64)
+	if len(s.Values) < 2 {
+		panic("console.ConsoleSparkline needs two values or more")
+	}
+	last := uint(len(s.Values) - 1)
+	points := make([]string, len(s.Values))
+	for i, y := range s.Values {
+		// i*Width in integers first: the last X is then Width exactly
+		x := float64(uint(i)*s.Width) / float64(last)
+		points[i] = strconv.FormatFloat(x, 'f', -1, 64) + "," + strconv.FormatFloat(y, 'f', -1, 64)
 	}
 	line := strings.Join(points, " ")
 	width := strconv.FormatUint(uint64(s.Width), 10)

@@ -1,6 +1,7 @@
 package console_test
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
@@ -31,9 +32,8 @@ func TestChartRendersTheExamples(t *testing.T) {
 	)
 	example.Check(t, empty, "console/console-chart/examples/empty.html")
 
-	points := []console.ConsoleSparklinePoint{{X: 0, Y: 20}, {X: 20, Y: 16}, {X: 40, Y: 22}, {X: 60, Y: 8}, {X: 80, Y: 12}, {X: 100, Y: 4}, {X: 120, Y: 10}}
 	sparkline := h.Div(h.Class("cui-console-page"),
-		console.ConsoleSparkline{Label: "42 events over 7 days", Width: 120, Height: 28, Points: points, Class: ""},
+		console.ConsoleSparkline{Label: "42 events over 7 days", Width: 120, Height: 28, Values: []float64{20, 16, 22, 8, 12, 4, 10}, Class: ""},
 	)
 	example.Check(t, sparkline, "console/console-chart/examples/sparkline.html")
 }
@@ -52,6 +52,19 @@ func TestChartAnAxisWithoutItsEndPanics(t *testing.T) {
 
 func TestSparklineWithoutALabelPanics(t *testing.T) {
 	mustPanic(t, "needs a Label", func() {
-		example.Render(console.ConsoleSparkline{Label: "", Width: 1, Height: 1, Points: nil, Class: ""})
+		example.Render(console.ConsoleSparkline{Label: "", Width: 1, Height: 1, Values: nil, Class: ""})
 	})
+}
+
+func TestSparklineOfOneValuePanics(t *testing.T) {
+	mustPanic(t, "ConsoleSparkline needs two values or more", func() {
+		example.Render(console.ConsoleSparkline{Label: "x", Width: 10, Height: 4, Values: []float64{2}, Class: ""})
+	})
+}
+
+func TestSparklineSpacesItsValuesEvenlyFromXZeroToXWidth(t *testing.T) {
+	got := example.Render(console.ConsoleSparkline{Label: "x", Width: 1, Height: 4, Values: make([]float64, 50), Class: ""})
+	if !strings.Contains(got, ` 1,0"/>`) || !strings.Contains(got, `points="0,4 0,0 `) {
+		t.Errorf("got %s", got)
+	}
 }

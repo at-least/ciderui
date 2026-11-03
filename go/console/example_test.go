@@ -36,7 +36,7 @@ func ExampleConsoleChart() {
 }
 
 func ExampleConsoleSparkline() {
-	_ = console.ConsoleSparkline{Label: "3 events over 2 days", Width: 40, Height: 28, Points: []console.ConsoleSparklinePoint{{X: 0, Y: 20}, {X: 40, Y: 8}}, Class: ""}.Render(os.Stdout)
+	_ = console.ConsoleSparkline{Label: "3 events over 2 days", Width: 40, Height: 28, Values: []float64{20, 8}, Class: ""}.Render(os.Stdout)
 	// Output: <svg class="cui-console-chart-sparkline" viewBox="0 0 40 28" width="40" height="28" role="img" aria-label="3 events over 2 days"><polygon class="cui-console-chart-sparkline-area" points="0,28 0,20 40,8 40,28"/><polyline class="cui-console-chart-sparkline-line" points="0,20 40,8"/></svg>
 }
 
@@ -104,7 +104,7 @@ func ExampleConsoleListItem() {
 }
 
 func ExampleConsoleListing() {
-	_ = console.ConsoleListing{FirstLine: 41, Lines: []string{"let a = 1;", "throw a;"}, Highlighted: 42, Class: ""}.Render(os.Stdout)
+	_ = console.ConsoleListing{FirstLine: 41, Lines: []console.ConsoleListingLine{{Text: "let a = 1;", Highlighted: false}, {Text: "throw a;", Highlighted: true}}, Class: ""}.Render(os.Stdout)
 	// Output:
 	// <pre class="cui-console-listing"><code><span class="cui-console-listing-line" data-line="41">let a = 1;</span>
 	// <span class="cui-console-listing-line" data-line="42" data-highlighted>throw a;</span></code></pre>

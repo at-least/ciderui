@@ -38,13 +38,13 @@ func checkPre(t *testing.T, node g.Node, path string) {
 
 func TestListingRendersTheExamples(t *testing.T) {
 	lines := h.Div(h.Class("cui-console-page max-w-xl"),
-		console.ConsoleListing{FirstLine: 40, Lines: []string{"func total(_ cart: Cart) -> Int {", "    let items = cart.items", "    return items.reduce(0) { $0 + $1.price }", "}"}, Highlighted: 42, Class: ""},
+		console.ConsoleListing{FirstLine: 40, Lines: []console.ConsoleListingLine{{Text: "func total(_ cart: Cart) -> Int {", Highlighted: false}, {Text: "    let items = cart.items", Highlighted: false}, {Text: "    return items.reduce(0) { $0 + $1.price }", Highlighted: true}, {Text: "}", Highlighted: false}}, Class: ""},
 	)
 	checkPre(t, lines, "console/console-listing/examples/lines.html")
 
 	nested := h.Div(h.Class("cui-console-page max-w-xl"),
 		h.Div(h.Class("cui-console-card"),
-			console.ConsoleListing{FirstLine: 41, Lines: []string{"    let items = cart.items", "    return items.reduce(0) { $0 + $1.price }"}, Highlighted: 42, Class: ""},
+			console.ConsoleListing{FirstLine: 41, Lines: []console.ConsoleListingLine{{Text: "    let items = cart.items", Highlighted: false}, {Text: "    return items.reduce(0) { $0 + $1.price }", Highlighted: true}}, Class: ""},
 		),
 	)
 	checkPre(t, nested, "console/console-listing/examples/nested.html")
@@ -52,21 +52,14 @@ func TestListingRendersTheExamples(t *testing.T) {
 
 func TestListingNoLinesPanic(t *testing.T) {
 	mustPanic(t, "needs a line", func() {
-		example.Render(console.ConsoleListing{FirstLine: 1, Lines: nil, Highlighted: 0, Class: ""})
+		example.Render(console.ConsoleListing{FirstLine: 1, Lines: nil, Class: ""})
 	})
 }
 
-// Highlighted 0 is none, so a first line 0 would make line 0 unhighlightable unseen
-func TestListingAFirstLineOf0Panics(t *testing.T) {
-	mustPanic(t, "FirstLine is at least 1", func() {
-		example.Render(console.ConsoleListing{FirstLine: 0, Lines: []string{"a"}, Highlighted: 0, Class: ""})
-	})
-}
-
-func TestListingAHighlightedLineOutsideItsLinesPanics(t *testing.T) {
-	for _, highlighted := range []uint{39, 42} {
-		mustPanic(t, "ConsoleListing's Highlighted is one of its lines", func() {
-			example.Render(console.ConsoleListing{FirstLine: 40, Lines: []string{"a", "b"}, Highlighted: highlighted, Class: ""})
-		})
+func TestListingHighlightsEveryMarkedLine(t *testing.T) {
+	got := example.Render(console.ConsoleListing{FirstLine: 1, Lines: []console.ConsoleListingLine{{Text: "a", Highlighted: true}, {Text: "b", Highlighted: false}, {Text: "c", Highlighted: true}}, Class: ""})
+	want := `<pre class="cui-console-listing"><code><span class="cui-console-listing-line" data-line="1" data-highlighted>a</span>` + "\n" + `<span class="cui-console-listing-line" data-line="2">b</span>` + "\n" + `<span class="cui-console-listing-line" data-line="3" data-highlighted>c</span></code></pre>`
+	if got != want {
+		t.Errorf("got %s", got)
 	}
 }
