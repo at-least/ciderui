@@ -1,6 +1,6 @@
 # ciderui's documentation
 
-ciderui's documentation, as a site built with ciderui-zola, the Zola theme on ciderui: getting started, the foundations (the colors, the type, the breakpoints), the Go module and a page for each component with its live examples, in Apple's developer documentation's look (the theme's `docs.html` and `docs-section.html`; `[extra.docs]` in `config.toml` names the navigator's rows, and `content/components/_index.md`'s `[extra] categories` the order of the components' groups), and the home and the news, in apple.com's and the Newsroom's. The pages are under `content/`.
+Its pages (`content/`) are written for people (the owner, 2026-11-04); this file is for agents. The documentation's pages are drawn by ciderui-zola's `docs.html` and `docs-section.html`; the home and the news are in the site set's look. The navigator's top rows are `config.toml`'s `[extra.docs] pages`; a component page's group is its front matter's `category`, one of `content/components/_index.md`'s `[extra] categories`, which orders the groups.
 
 From the repository's root, with ciderui-zola checked out beside this repository:
 

@@ -1,6 +1,6 @@
 # ciderui: its design
 
-ciderui is apple.com's look for websites: a Tailwind CSS v4 theme on a small token contract, apple.com's parts as CSS classes (`cui-btn`, `cui-field`, `cui-tile`, …), and a Go module that writes their markup as gomponents nodes and carries the stylesheets; ciderui-zola, a Zola theme in a repository of its own, is built on it. It is vpkit's architecture (`../vpkit`, `../vpkit-zola`) with apple.com where vpkit has VitePress. This holds what is decided and why: who it is for, the standard, what a component is, the rules every one follows, the tokens, the type, the page, the catalogue, the Go module, the documentation, how a component is proven, the browsers, and the decisions and assumptions behind them. What a value is is in the file that holds it (a stylesheet, tokens.css), where it was read in the check that holds it (a test); this does not copy either.
+ciderui is apple.com's look for websites: a Tailwind CSS v4 theme on a small token contract, apple.com's parts as CSS classes (`cui-btn`, `cui-field`, `cui-tile`, …), and a Go module that writes their markup as gomponents nodes and carries the stylesheets; ciderui-zola, a Zola theme in a repository of its own, is built on it. It is vpkit's architecture (`../vpkit`, `../vpkit-zola`) with apple.com where vpkit has VitePress. This holds what is decided and why, which no file of code can say. What a value is is in the file that holds it (a stylesheet, tokens.css), where it was read in the check that holds it (a test); this does not copy either.
 
 *Measured* means read off a live page or a browser, recorded in `reference/` with its probe, page, browser and date; *stated* is the owner's; *guessed* is nobody's measurement.
 
@@ -65,7 +65,7 @@ Every component follows these. The numbers are cited across the repository; they
 
 ## The token contract
 
-`tokens.css` is the contract: the colors every component reads, each one `light-dark()` pair, light first, or one value where both sides are the same; what one is for, where its name does not say, is a comment beside it. `test/tokens.mjs` holds each value to the probe it was read from, every stylesheet to the contract alone, and each pair's contrast on every ground it is drawn on: text 4.5:1, a mark or a control's edge 3:1 (WCAG 2), a translucent color counted as what it draws over the ground under it.
+`tokens.css` is the contract: the colors every component reads, each one `light-dark()` pair, light first, or one value where both sides are the same; what one is for, where its name does not say, is a comment beside it.
 
 - **apple.com's slots, `--cui-c-*`**: apple.com's values, measured, both sides. Where one falls short, it is fitted (decision 6): the dark secondary text is `#86868b` (apple.com's `#6e6e73` is 4.1:1 on black), the dark error Apple's dark red `#ff453a` (apple.com's `#e30000` is 4.3:1). A slot enters with the first component that reads it, its dark side measured then, so no stylesheet reads a guess. A field, a modal and the footer are light on a dark page too, as apple.com's are: their slots have one value.
 - **The console's slots, `--cui-c-console-*`**: App Store Connect's toolkit's color roles, one slot per role a part reads, named by the role (`--cui-c-console-neutral-label-primary` is `--tb-color-role-neutral-label-primary`). Light is the role as its page computes it; dark is derived (decision 18); short ones fitted (decision 21). A console part reads these alone (the dialog's backdrop, `--cui-c-scrim`, is the one exception: the toolkit names none).
@@ -79,7 +79,7 @@ Not themed, each measured: in tokens.css, the focus ring (rule 9), the shadows (
 
 **The stack** is `-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif`. SF cannot be shipped; on Apple's platforms the first two names are SF (`-apple-system` in Safari, `BlinkMacSystemFont` in Chrome; not `system-ui`: it is a font everywhere, so Inter after it would never be drawn). Elsewhere neither name is a font and the text is Inter, the kit's (`fonts.css`, Inter 4.001 with its `opsz` axis), fetched only there: in Safari 27.0.1, Chrome 155 and iOS 26.5's Safari the stack draws the system font and not one of Inter's faces is fetched; in Chromium on Linux it draws Inter with its Latin face alone (measured, `reference/stack/`; decisions 3, 4). Code's stack, `--cui-font-mono`, is SF Mono on Apple's platforms and the platform's own elsewhere, no font shipped.
 
-**The ladder** is the store's `t-` classes (measured: one coherent ladder, where the marketing pages define theirs page by page), named `cui-<name>` (`cui-headline`, `cui-eyebrow`, `cui-body`, `cui-caption`, …), each with one step at 735px; `cui-body` is ciderui's (the store defines no `t-body`). The marketing pages' three-tier headlines (32, 48 and 56px) are the tile's, built with it (decision 10). The classes and their values are `type.css`'s; `test/type.mjs` holds each to the store's at 390, 734, 735, 900, 1200 and 1600px.
+**The ladder** is the store's `t-` classes (measured: one coherent ladder, where the marketing pages define theirs page by page), named `cui-<name>` (`cui-headline`, `cui-eyebrow`, `cui-body`, `cui-caption`, …), each with one step at 735px; `cui-body` is ciderui's (the store defines no `t-body`). The marketing pages' three-tier headlines (32, 48 and 56px) are the tile's, built with it (decision 10).
 
 **The letter-spacing** is per size, and it is not apple.com's numbers: apple.com sets them on its SF Pro webfonts, which carry no tracking, while the system font carries Apple's size-specific tracking itself, the same in Safari and Chrome on macOS and in Safari on iOS; apple.com's values on the system font would track it twice. ciderui's are apple.com's minus the system font's own, measured size by size (`reference/tracking/cui-tracking.json`, the values in tokens.css). Where apple.com tunes a size two ways, the store's is taken. CSS has no letter-spacing per font of a stack, so Inter takes SF's values and runs wide of apple.com's text (decision 3).
 
@@ -91,92 +91,7 @@ Not themed, each measured: in tokens.css, the focus ring (rule 9), the shadows (
 
 **Sections.** A section is the page's ground (`bg`), the alternate (`bg-alt`) or dark (`cui-dark`, its alternate `#1d1d1f`, measured on the product page's highlights); its content is the newer width. Their padding is a section's own (apple.com's varies by section; measured per component).
 
-## The catalogue
-
-Every part, by set. Each row names the part; its markup is its examples', its attributes its stylesheet's rules, its sources and what is Apple's and what is ciderui's its test's (rule 13), its Go type in its set's package (the Go module, below).
-
-The site set, apple.com's parts (`components/site/`):
-
-| component | the part |
-| --- | --- |
-| `cui-accordion` | apple.com's FAQ, on `<details>` |
-| `cui-article` | the Newsroom's story: its header, copy, figures and footnotes; markdown's elements as they come |
-| `cui-btn` (`components/site/button/`) | the pill, its sizes and variants; 12px corners (`cui-btn-rect`) and the block (`cui-btn-block`) |
-| `cui-card` | the store's card, the whole card its headline's link |
-| `cui-checkbox` | the store's sign-in checkbox |
-| `cui-field` | the store's 56px text field, its textarea (`cui-field-box`) and its dropdown |
-| `cui-footer` | the footer, light on a dark page too |
-| `cui-footnote` | a footnote's mark |
-| `cui-gallery` | a product page's gallery, its paddles and dots |
-| `cui-globalnav` | the global nav: the bar, its menu below 834px, its search, its bag and its links' flyouts, with no script |
-| `cui-link` | a link in running text, and the more link (`data-variant="more"`) |
-| `cui-localnav` | a product page's local nav |
-| `cui-modal` | the store's overlay and the product pages' modal (`data-variant="page"`), on `<dialog>` |
-| `cui-option` | an option on a radio, the buy page's |
-| `cui-posts` | the Newsroom's archive, and the related stories under an article (`data-size="sm"`) |
-| `cui-price` | the buy page's price |
-| `cui-productnav` | the store's shelf of small product cards |
-| `cui-quicklinks` | the store's row of pill links under a title |
-| `cui-ribbon` | the message above a page's content |
-| `cui-section` | a band: its ground, its rhythm, its content's width, its header |
-| `cui-shelf` | the store's row of cards across the window |
-| `cui-stat` | a stat, a value between its captions |
-| `cui-stories` | the Newsroom's index |
-| `cui-swatch` | a color swatch on a radio, and a row of them (`cui-swatches`) |
-| `cui-tile` | a home page tile, promo or full width |
-
-The console set, App Store Connect's newer look's parts (`components/console/`):
-
-| component | the part |
-| --- | --- |
-| `cui-console-badge` | a short word on a tinted capsule |
-| `cui-console-banner` | a message on a rounded, tinted panel |
-| `cui-console-bar` | the band across the top of a console's page |
-| `cui-console-btn` | the button, a class on the page's own `<button>` or `<a>` |
-| `cui-console-card` | the analytics card: a metric, or a section's list or chart |
-| `cui-console-chart` | what is around an analytics chart's data, and a sparkline |
-| `cui-console-checkbox` | a checkbox |
-| `cui-console-chip` | a key and its value; a filter's chip with its remove control |
-| `cui-console-code` | inline code |
-| `cui-console-content` | the page's column, with a `cui-console-sidebar` beside it from 1024px |
-| `cui-console-copy` | a value to copy in a listing with its copy button, and a copy button in a line of text |
-| `cui-console-dialog` | a `<dialog>` the page opens with `showModal()` |
-| `cui-console-disclosure` | a `<details>` hiding what is not needed yet, the HIG's disclosure controls |
-| `cui-console-dl` | an item's facts, labels beside their values |
-| `cui-console-empty` | what a list or a chart shows with nothing in it |
-| `cui-console-field` | a text field, a dropdown, a multi-line field, a file field (the native file input), and a form field's label, help and error |
-| `cui-console-head` | what a page belongs to, by name, with its tabs |
-| `cui-console-hint` | an info button opening a popover |
-| `cui-console-link` | a link |
-| `cui-console-list` | a grouped list |
-| `cui-console-listing` | lines of code or of a log on a gray panel, DocC's listing at the console's size |
-| `cui-console-menu` | the list of a section's pages down its left side, and the app sidebar's list (`data-variant="sidebar"`): the toolkit's DisplayList, its menu and sidebar variants |
-| `cui-console-page` | the page's ground and text, and the console's type as utilities |
-| `cui-console-pager` | Apple Developer Forums' pager under a long list |
-| `cui-console-popover` | a small panel its button opens |
-| `cui-console-progress` | the native `<progress>` as a bar |
-| `cui-console-radio` | a radio |
-| `cui-console-section-head` | a page's or a section's title with its controls |
-| `cui-console-sidebar` | the app's sidebar, a sheet below 1024px |
-| `cui-console-skip` | the skip link |
-| `cui-console-status` | a status: a colored circle before its word |
-| `cui-console-table` | the table, a class on the page's own `<table>` |
-| `cui-console-tabs` | the tab bar, underlined (a page's sections) or filled (the HIG's segmented control), its tabs links, or radios in a `<fieldset>` |
-| `cui-console-thumb` | a screenshot shown small, a link to itself |
-| `cui-console-toast` | a word that the page did what was asked (the toolkit has no toast) |
-
-The docs set, Apple's developer documentation's parts (DocC on developer.apple.com, `components/docs/`), stepping at DocC's widths (decision 24):
-
-| component | the part |
-| --- | --- |
-| `cui-docs-aside` | an aside: note, important, warning, tip, deprecated, experiment |
-| `cui-docs-bar` | the documentation's bar |
-| `cui-docs-content` | the article's prose, as markdown writes it |
-| `cui-docs-copy` | a code listing with DocC's copy button |
-| `cui-docs-hero` | the page's title block and breadcrumbs |
-| `cui-docs-navigator` | the navigator and its filter |
-| `cui-docs-page` | the page: the bar, the navigator's column (a sheet below 1024px), the content's columns |
-| `cui-docs-topics` | See Also and Topics |
+## What is not built or measured
 
 Not built: DocC's footer appearance control in the docs set, which needs the page's script (decision 11): a docs page is light, or dark by `cui-dark` (rule 11). The console's appearance choice is filled `cui-console-tabs` of radios (decision 27).
 
@@ -184,26 +99,22 @@ Not measured: the store's checkout pages (my recommendation, which the owner too
 
 ## The Go module
 
-`go.mod` at the root is the module `github.com/at-least/ciderui`, for a site that renders with gomponents (decision 26). How a site uses it is the documentation's `docs/content/go.md`.
-
 - **The components**, in their set's package (`site`, `console`, `docs`, under `go/`), for the parts whose markup is more than a class on one element; a button, a link in running text, a price, a console table is a class string on the page's own element. A type is named by its class without `cui-`, in CamelCase (`cui-card` is `site.Card`, `cui-console-badge` `console.ConsoleBadge`, `cui-docs-bar` `docs.DocsBar`): the set's prefix stays though the package names it, so one grep finds the class, the type and a site's uses. Where a part writes one piece of a larger block the type names that piece (`site.OptionTile`, `site.MoreLink`, `console.ConsoleMetric`, `console.ConsoleCheckboxBox`, `console.ConsoleListItem`, `console.ConsoleCopyIcons`).
 - **Each component is a struct a call writes every field of**: `go tool exhaustruct` fails a literal of the module's types that leaves one out, in this repository's gate and in a site's, so a field added stops every call that does not set it. A variant is a struct of one unexported field, its zero value the default (the variant writing no attribute); a choice with data is a sealed interface, nil for none (`site.LinkedSearch` or `site.FlyoutSearch`); an absent text is `""`, an absent node nil. A precondition the type cannot hold is a panic naming the package's type.
-- **The markup and the CSS cannot part**: each component's test renders its examples and holds the output equal to `examples/<id>.html`, its lines trimmed and joined (`go/internal/example`).
-- **`icon`**: ciderui's icons (rule 12). **`lucide`**: every Lucide icon, named by Lucide's name in Go's capitals (`shopping-bag` is `lucide.ShoppingBag`), 1em square (decision 17). `scripts/build-lucide.mjs` writes `go/lucide/lucide.go` from lucide-static (package.json's exact version; its license `LICENSE-Lucide`), each icon's elements and its `<svg>`'s attributes held to its file there; `npm test` fails while the file differs from what the script writes.
-- **The stylesheets**: the root package embeds every one; `ciderui.WriteCSS(dir)`, or `go run github.com/at-least/ciderui/go/cmd/ciderui-css <dir>`, writes them out in the kit's layout for a Tailwind build to import, so a site's dependency at a commit is the one pin for its markup and its CSS (decision 13). The font files are not embedded: `fonts.css` reads them beside the compiled stylesheet.
-- **`ciderui.CheckMarkup`**: reads a rendered page and lists each ciderui class, and each `data-variant`, `data-size` or `data-color` value, that no stylesheet's rule selects, which would otherwise draw the default with no error; a site's tests call it on every page they render.
+- **The markup and the CSS cannot part**: `examples/<id>.html` is the one copy of a part's markup; its Go component's test renders equal to it.
+- **`icon`**: ciderui's icons (rule 12). **`lucide`**: every Lucide icon, named by Lucide's name in Go's capitals (`shopping-bag` is `lucide.ShoppingBag`), 1em square (decision 17). `go/lucide/lucide.go` is generated: edit `scripts/build-lucide.mjs`, never the file.
+- **The stylesheets** are embedded in the root package, so a site's dependency at a commit is the one pin for its markup and its CSS (decision 13).
+- **`ciderui.CheckMarkup`**: a site's tests call it on every page they render; a class or attribute value no rule selects would otherwise draw the default with no error.
 
 ## The documentation
 
-`docs/` is ciderui's documentation, a site built with ciderui-zola (decision 14): getting started, the foundations, the Go module and a page for each component with each of its examples live in a frame of its own over its markup, in Apple's developer documentation's look (decision 23: ciderui-zola's `docs.html` and `docs-section.html` on the docs set), and the home and the news in apple.com's and the Newsroom's (`docs/README.md`).
-
-`npm test` holds it to the kit: the examples' copies and the frames' stylesheet are this commit's (`scripts/build-docs.mjs --check`); `test/docs.mjs` wants a page for every component showing every one of its examples, the frames' stylesheet holding every rule the examples' classes have, and, the site built with zola, every page at 1440 and 390px in Chromium with no error, no missing file or dead link and no sideways scroll, each frame as tall as its content with every picture loaded. Its pictures are ciderui drawn by itself (`scripts/docs-pictures.mjs`), held to what they were drawn from (`docs/pictures.json`, each scene's and the stylesheet's digest), not to Chromium's bytes.
+`docs/` is ciderui's documentation, built with ciderui-zola (decision 14), written for people (the owner, 2026-11-04); how it is built is `docs/README.md`.
 
 Outside Chromium it is measured in Safari 27.0.1 on macOS, Safari 26.5 on the iOS simulator and Chrome 156 (`reference/docs/`: every page and frame, the gallery's and the shelf's paddles, the menus, the search, the flyouts and the bag in their frames), before the docs layout; the docs layout (its navigator's column and sheet, a section's chevron, a heading's link under the bar, the column's foot at the window's, the filter, a code block's copy button) in Chromium 151, Firefox 153 and Chrome 156 on Linux, in Docker, and in Safari 27.0 on macOS in a `tester` VM (2026-11-01); not yet on the iOS simulator.
 
 ## How a component is proven
 
-`npm test` is the gate. `test/components.mjs` renders each case in headless Chromium, in test/Dockerfile's image, and compares computed styles by the check's source (rule 13). What the measurements taught the harness, which it keeps:
+`npm test` is the gate. What the measurements taught the harness, which it keeps:
 
 - **Linux's hinting.** Chromium on Linux hints every glyph to a whole-pixel advance unless launched with `--font-render-hinting=none`; with it, its text widths are the Mac's within 0.00006em a character (measured, `reference/tracking/`). Every run passes the flag.
 - **The fonts differ between the two sides.** apple.com's values were read with its SF Pro webfonts; ciderui's cases render on Linux in Inter, fonts.css's, inlined into each case's page. So an `apple` check compares what does not depend on the text's width (the type's own values, colors, borders, radii, padding, heights where the line height fixes them), and a box that depends on the text's width is a `golden` check.
@@ -213,8 +124,6 @@ Outside Chromium it is measured in Safari 27.0.1 on macOS, Safari 26.5 on the iO
 - **States a click makes.** `:popover-open` is not forced either: a case clicks the element that makes it (`click`), then moves the pointer off, which a click leaves over what it clicked, hovered; it presses keys (`press`: Tab, Escape) and reads where the focus is (`focused`); `wait: 0` reads its motion's start (`@starting-style` through the compiled stylesheet).
 - **A scroller's snapping.** `scroll` scrolls a case's scroller to a place before its checks, at every width: between two snap positions it comes to rest at one, at its end its last item as far in as its first.
 - **What the pointer finds.** A link laid over a box (a card's `::after`) has no box of its own a check can read: `hit` reads what the pointer finds at five points of the box, a tenth in from each corner and its middle.
-
-The token test holds the contract and its contrast; `reference/touch/audit.mjs` holds every control's touch target; `test/go.mjs` holds the Go module to gofmt, go vet, exhaustruct and its tests, its examples included.
 
 ## Browsers
 
