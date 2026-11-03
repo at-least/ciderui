@@ -2,7 +2,7 @@
 // the committed results stay the record of the runs each README names.
 
 import { execFileSync } from 'node:child_process';
-import { cpSync, existsSync, mkdtempSync, readFileSync, readdirSync, realpathSync, rmSync, symlinkSync } from 'node:fs';
+import { cpSync, existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, symlinkSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join, relative } from 'node:path';
 import { ROOT } from './compile.mjs';
@@ -11,14 +11,12 @@ const copy = mkdtempSync(join(tmpdir(), 'ciderui-probes-'));
 process.on('exit', () => rmSync(copy, { recursive: true, force: true }));
 const tree = join(copy, 'ciderui');
 const CONSOLE_SITE = join(copy, 'console-site');
-const DOCS_SITE = join(copy, 'docs-site');
 
 const RUN = [['node', 'run.mjs']];
 const PROBES = {
   console: { env: { SITE: CONSOLE_SITE }, commands: [['node', 'build.mjs', CONSOLE_SITE], ...RUN] },
   details: { env: {}, commands: [['node', 'page.mjs'], ...RUN] },
   dialog: { env: {}, commands: RUN },
-  docs: { env: { SITE: DOCS_SITE }, commands: [['zola', '--root', '../../docs', 'build', '--base-url', 'http://127.0.0.1:8737', '--output-dir', DOCS_SITE, '--force'], ...RUN] },
   flyout: { env: {}, commands: RUN },
   forced: { env: {}, commands: [['node', 'page.mjs'], ...RUN] },
   popover: { env: {}, commands: RUN },
@@ -40,8 +38,6 @@ const NOT_RUN = {
   'reference/feedback-assistant/': 'reads Feedback Assistant live, signed in',
   'reference/icons/': 'reads apple.com live',
   'reference/tracking/': 'reads apple.com live (derive.mjs and tables.mjs read what it wrote)',
-  'reference/docs/inactive.mjs': 'Safari alone',
-  'reference/docs/front.sh': 'the Mac\'s front app, beside a Safari run',
   'reference/vm.mjs': 'Safari in a tester VM',
   'reference/xcuitest.mjs': 'the iOS simulator',
   'reference/touch/audit.mjs': 'a step of npm test of its own',
@@ -66,7 +62,6 @@ if (missing.length) throw new Error(`named by a script, no such file: ${missing.
 
 cpSync(ROOT, tree, { recursive: true, filter: (f) => !['node_modules', '.git'].includes(relative(ROOT, f)) });
 symlinkSync(join(ROOT, 'node_modules'), join(tree, 'node_modules'));
-symlinkSync(realpathSync(join(ROOT, 'docs/themes/ciderui-zola')), join(copy, 'ciderui-zola'));
 
 const failed = [];
 for (const [dir, { env, commands }] of Object.entries(PROBES)) {

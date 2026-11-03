@@ -13,8 +13,6 @@ On iPhone 18 Pro's page the note's `scroll-margin-top` is 0px before the click a
 ciderui's local nav lands the target at its foot, as iPhone 18 Pro's page does: while the page has one, `:target`'s `scroll-margin-top` is the bar's height, 48px, 52px from 834px (`components/localnav/localnav.css`). Its claims:
 
 - the local nav's cases `target` and `target-phone` (`test/components.mjs`, Chromium): a mark under the bar clicked, its note lands 52px down at 834px and 48px at 833px; before the rule it landed 0px down, under the bar;
-- `test/docs.mjs` (Chromium): on the documentation's news article, its markdown footnote's mark clicked, the note lands below the page's local nav at 1440 and 390px; before the rule, at 0px under the 52px bar at 1440px, and 42.16px under the 48px one at 390px;
-- `../docs/`'s claim 14 in every browser it runs in, the same page: the note at the nav's foot, or below it where the page ends first. Before the rule (the site built with ciderui-zola's stylesheet as it was) Chromium read the note at 0px at 1440px, the nav's foot 52px.
 
 | browser | 1440px | 700px (a phone's width on the simulator) |
 | --- | --- | --- |
@@ -27,3 +25,8 @@ ciderui's local nav lands the target at its foot, as iPhone 18 Pro's page does: 
 ```sh
 node apple.mjs     # PW=…/playwright-chromium/index.mjs, as ../browsers.mjs takes it
 ```
+
+No longer checked, the documentation site and its tests gone (2026-11-04; git history has them):
+
+- `test/docs.mjs` (Chromium): on the documentation's news article, its markdown footnote's mark clicked, the note lands below the page's local nav at 1440 and 390px; before the rule, at 0px under the 52px bar at 1440px, and 42.16px under the 48px one at 390px;
+- `reference/docs/`'s claim 14 in every browser it runs in, the same page: the note at the nav's foot, or below it where the page ends first. Before the rule (the site built with ciderui-zola's stylesheet as it was) Chromium read the note at 0px at 1440px, the nav's foot 52px.

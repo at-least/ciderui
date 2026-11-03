@@ -64,12 +64,9 @@ export const TEXT = ['display', 'text-align', 'white-space', 'text-decoration-li
 export const OUTLINE = ['outline-style', 'outline-color', 'outline-width', 'outline-offset'];
 export const LINK = ['text-decoration-line', 'text-decoration-color'];
 export const ELLIPSIS = ['overflow-x', 'text-overflow', 'white-space'];
-// the widths DocC's layout steps at, each side of a step
-export const DOCC_STEPS = [1600, 1500, 1499, 1251, 1250, 1200, 1024, 1023, 900, 768, 767, 736, 735, 390];
 export const MOTION = ['transition-property', 'transition-duration', 'transition-timing-function'];
 export const STAGGER = 'together: apple.com\'s come in one after another, a staggered reveal that only draws the eye (DESIGN.md decision 25)';
 export const SLIDE = 'where it is: apple.com\'s come in from a few px up, a slide that only draws the eye (DESIGN.md decision 25)';
 export const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
-export const DOCC_TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not DocC\'s';
 
 export const examples = (url) => (id) => readFileSync(new URL(`examples/${id}.html`, url), 'utf8').trim();

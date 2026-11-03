@@ -17,7 +17,7 @@ import (
 // root stylesheets by name, not a pattern: a pattern would embed a stray
 // file in the repository's root too
 //
-//go:embed index.css theme.css tokens.css base.css type.css fonts.css site.css console.css docs.css components/*/*/*.css
+//go:embed index.css theme.css tokens.css base.css type.css fonts.css site.css console.css components/*/*/*.css
 var stylesheets embed.FS
 
 // CSSFiles is every stylesheet's path in the kit, sorted.

@@ -45,8 +45,8 @@ writeFileSync(join(OUT, 'thumbs.html'), page(wide));
 writeFileSync(join(OUT, 'pager.html'), page(ex('console-pager', 'pager')));
 writeFileSync(join(OUT, 'content.html'), page(ex('console-content', 'content')));
 
-// the toast in the page itself, at rest: the example's wrapper is the docs
-// frame's (a transform holding the fixed toast in its box)
+// the toast in the page itself, at rest: the example's wrapper holds a
+// transform, which holds the fixed toast in its box
 const toast = ex('console-toast', 'toast').match(/<span class="cui-console-toast"[^>]*>[^<]*<\/span>/)[0].replace(' data-shown', '');
 writeFileSync(join(OUT, 'toast.html'), page(toast));
 

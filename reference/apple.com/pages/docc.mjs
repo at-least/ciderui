@@ -5,7 +5,7 @@
 // rest, hovered and focused; the documentation's bar (its ground), its
 // title and, at 390px, the button that opens the navigator; the navigator
 // (an item and its link, hovered, the current one), hidden at 900px and
-// 390px; a note (its label, its text). docc-dark reads the same in the dark.
+// 390px; a note (its label, its text).
 import { TYPE, BOX, LINK, FOCUS, MOTION, PAGE } from './common.mjs';
 
 export const ASIDE = [...BOX, ...TYPE, 'border-left-width', 'border-left-style', 'border-left-color', 'border-right-color'];

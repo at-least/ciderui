@@ -23,7 +23,7 @@ func TestTheKitIsEmbedded(t *testing.T) {
 
 // a part's rule over another's of the same specificity relies on this order
 func TestEachSetImportsItsPartsInOrder(t *testing.T) {
-	for _, set := range []string{"site", "console", "docs"} {
+	for _, set := range []string{"site", "console"} {
 		var imported []string
 		for _, line := range strings.Split(CSS(set+".css"), "\n") {
 			if rest, ok := strings.CutPrefix(line, `@import "./`); ok {

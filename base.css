@@ -47,11 +47,11 @@
   /* a control that grows to 44px itself is not listed: a target round a
      control closer than 44px to the next covers the next one's */
   @media (pointer: coarse) {
-    :where(.cui-btn, .cui-link[data-variant="more"], .cui-console-link, .cui-console-copy-button, .cui-console-copy-inline, .cui-console-table-sort, .cui-docs-copy-button, .cui-docs-navigator-chevron, .cui-docs-page-close, .cui-docs-bar-toggle, .cui-gallery-dot) {
+    :where(.cui-btn, .cui-link[data-variant="more"], .cui-console-link, .cui-console-copy-button, .cui-console-copy-inline, .cui-console-table-sort, .cui-gallery-dot) {
       position: relative;
     }
 
-    :where(.cui-btn, .cui-link[data-variant="more"], .cui-console-link, .cui-console-copy-button, .cui-console-copy-inline, .cui-console-table-sort, .cui-docs-copy-button, .cui-docs-navigator-chevron, .cui-docs-page-close, .cui-docs-bar-toggle, .cui-gallery-dot)::after {
+    :where(.cui-btn, .cui-link[data-variant="more"], .cui-console-link, .cui-console-copy-button, .cui-console-copy-inline, .cui-console-table-sort, .cui-gallery-dot)::after {
       content: "";
       position: absolute;
       top: 50%;

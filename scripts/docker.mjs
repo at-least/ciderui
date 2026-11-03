@@ -3,7 +3,7 @@
 
 import { execFileSync, execSync, spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { mkdtempSync, readFileSync, realpathSync, rmSync } from 'node:fs';
+import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { ROOT } from '../test/compile.mjs';
@@ -21,9 +21,8 @@ let image = execFileSync('docker', ['images', '-q', '--no-trunc', '--filter', `l
 if (!image) image = execFileSync('docker', ['build', '-q', '-t', IMAGE, '--label', label, '-f', join(ROOT, 'test/Dockerfile'), ROOT], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'inherit'] }).trim();
 if (!/^sha256:[0-9a-f]{64}$/.test(image)) throw new Error(`docker gave no image ID: ${image}`);
 
-const STEPS = 'node test/tokens.mjs && node test/type.mjs && node test/page.mjs && node test/components.mjs && node test/surfaces.mjs && node reference/touch/audit.mjs && node test/probes.mjs && node scripts/build-lucide.mjs --check && node scripts/build-docs.mjs --check && node scripts/docs-pictures.mjs --check && node test/docs.mjs';
+const STEPS = 'node test/tokens.mjs && node test/type.mjs && node test/page.mjs && node test/components.mjs && node test/surfaces.mjs && node reference/touch/audit.mjs && node test/probes.mjs && node scripts/build-lucide.mjs --check';
 const command = process.argv.length > 2 ? process.argv.slice(2) : ['sh', '-c', STEPS];
-const theme = realpathSync(join(ROOT, 'docs/themes/ciderui-zola'));
 const pass = ['CASES', 'UPDATE_GOLDEN'].filter((k) => process.env[k] !== undefined).flatMap((k) => ['-e', `${k}=${process.env[k]}`]);
 // The image's user (root): what it writes comes back through tar as the
 // caller's own, so no --user (the repository's top, the image's WORKDIR, is
@@ -44,7 +43,6 @@ let status = 1;
 try {
   const exclude = '--exclude ./node_modules --exclude ./.git';
   execSync(`tar -c --no-xattrs -C ${q(ROOT)} ${exclude} . | docker cp - ${id}:/src/ciderui`, { env: TAR_ENV, stdio: ['ignore', 'ignore', 'inherit'] });
-  execSync(`tar -c --no-xattrs -C ${q(theme)} --exclude ./.git . | docker cp - ${id}:/src/ciderui-zola`, { env: TAR_ENV, stdio: ['ignore', 'ignore', 'inherit'] });
   status = spawnSync('docker', ['start', '-a', id], { stdio: 'inherit' }).status ?? 1;
   const out = mkdtempSync(join(tmpdir(), 'ciderui-written-'));
   try {

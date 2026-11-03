@@ -22,10 +22,6 @@ const SURFACES = {
     card: (html) => `<div class="cui-console-page"><div class="cui-console-card">${html}</div></div>`,
     'card dark': (html) => `<div class="cui-console-page cui-dark"><div class="cui-console-card">${html}</div></div>`,
   },
-  docs: {
-    page: (html) => `<div class="cui-light">${html}</div>`,
-    dark: (html) => `<div class="cui-dark">${html}</div>`,
-  },
 };
 
 const sheets = COMPONENTS.map((c) => `@import "${c.dir}/${c.name}.css";`).join('\n');

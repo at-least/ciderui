@@ -79,16 +79,5 @@ try {
   await b.close();
 }
 
-for (const sets of [['console.css', 'docs.css'], ['docs.css', 'console.css']]) {
-  b = await open(compile({ css: ['index.css', ...sets].map(f => `@import "${f}";`).join('\n') }),
-    '<div class="cui-docs-content"><p>Text</p><pre id="plain">x</pre><pre class="cui-console-listing"><code>x</code></pre></div>');
-  try {
-    const want = (await b.read('#plain', ['margin-top']))['margin-top'];
-    check(`${sets.join(' then ')}: the docs' content sets a listing's margin-top, as a plain pre's (${want})`, (await b.read('.cui-console-listing', ['margin-top']))['margin-top'], want);
-  } finally {
-    await b.close();
-  }
-}
-
 await quit();
 done('page');

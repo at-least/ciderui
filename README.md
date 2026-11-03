@@ -6,7 +6,7 @@ apple.com's look for websites, built with Tailwind CSS v4: a small contract of v
 
 ## Use it
 
-ciderui is not published: a site takes it as a checkout beside its own, `"ciderui": "file:../ciderui"`, with the Tailwind CLI, and imports it after Tailwind, its fonts first, then the parts it uses:
+ciderui is not on npm: a site's CSS build takes it as a checkout beside its own, `"ciderui": "file:../ciderui"`, with the Tailwind CLI, and imports it after Tailwind, its fonts first, then the parts it uses:
 
 ```css
 @import "tailwindcss";
@@ -15,11 +15,10 @@ ciderui is not published: a site takes it as a checkout beside its own, `"cideru
 @import "ciderui/components/site/button/button.css";
 ```
 
-The documentation is `docs/`, a site built with ciderui-zola (checked out beside this repository): getting started, the foundations, the Go module, and each part live over its markup.
+Each part's markup is its examples, `components/<set>/<name>/examples/*.html`. A site that renders in Go writes the same markup with the Go module, pinned at a commit, which also carries the stylesheets (`go run github.com/at-least/ciderui/go/cmd/ciderui-css <dir>` writes them out for the Tailwind build), and calls `ciderui.CheckMarkup` on its pages in its tests:
 
 ```sh
-node scripts/build-docs.mjs   # the examples' copies and the frames' stylesheet
-cd docs && zola serve
+go get github.com/at-least/ciderui@<commit>
 ```
 
 ## The repository
@@ -28,13 +27,12 @@ cd docs && zola serve
 | --- | --- |
 | `index.css` | `theme.css`, `tokens.css`, `base.css` and `type.css`: the breakpoints and utilities, the variables, the page's base, the type |
 | `fonts.css`, `fonts/` | Inter |
-| `site.css`, `console.css`, `docs.css` | a set's every part, one import each: the site set (apple.com's pages), the console set (`cui-console-*`) and the docs set (`cui-docs-*`, Apple's developer documentation) |
-| `components/<set>/<name>/` | a part, in its set (`site`, `console` or `docs`): its stylesheet, its examples (the markup the Go module's tests render too) and its test |
-| `ciderui.go`, `markup.go`, `go/` | the Go module (`go.mod`): the root package embeds the stylesheets and checks a page's markup; `go/` holds the components (`site`, `console`, `docs`), the icons (`icon`, `lucide`) and `ciderui-css` |
+| `site.css`, `console.css` | a set's every part, one import each: the site set (apple.com's pages) and the console set (`cui-console-*`) |
+| `components/<set>/<name>/` | a part, in its set (`site` or `console`): its stylesheet, its examples (the markup the Go module's tests render too) and its test |
+| `ciderui.go`, `markup.go`, `go/` | the Go module (`go.mod`): the root package embeds the stylesheets and checks a page's markup; `go/` holds the components (`site`, `console`), the icons (`icon`, `lucide`) and `ciderui-css` |
 | `reference/` | the measurements, each with its probe, page, browser and date |
-| `docs/` | the documentation's site |
 
-`npm test` runs every test, the browser's in one Docker image (`test/Dockerfile`, `scripts/docker.mjs`): the variables, the type, the page, each part in headless Chromium against apple.com's measured values and its own goldens, the Go module (its Lucide icons lucide-static's, gofmt, vet, exhaustruct, its tests and its examples), and the documentation (its examples' copies and pictures current, every page).
+`npm test` runs every test, the browser's in one Docker image (`test/Dockerfile`, `scripts/docker.mjs`): the variables, the type, the page, each part in headless Chromium against apple.com's measured values and its own goldens, the Go module (its Lucide icons lucide-static's, gofmt, vet, exhaustruct, its tests and its examples), every control's touch target (`reference/touch/`) and the reference probes Chromium can run (`test/probes.mjs`).
 
 ## License
 
