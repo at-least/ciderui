@@ -1,6 +1,7 @@
 package console_test
 
 import (
+	"math"
 	"strings"
 	"testing"
 
@@ -33,7 +34,7 @@ func TestChartRendersTheExamples(t *testing.T) {
 	example.Check(t, empty, "console/console-chart/examples/empty.html")
 
 	sparkline := h.Div(h.Class("cui-console-page"),
-		console.ConsoleSparkline{Label: "42 events over 7 days", Width: 120, Height: 28, Values: []float64{20, 16, 22, 8, 12, 4, 10}, Class: ""},
+		console.ConsoleSparkline{Label: "53 events over 7 days", Width: 120, Height: 28, Values: []float64{4, 6, 3, 10, 8, 13, 9}, Class: ""},
 	)
 	example.Check(t, sparkline, "console/console-chart/examples/sparkline.html")
 }
@@ -64,7 +65,29 @@ func TestSparklineOfOneValuePanics(t *testing.T) {
 
 func TestSparklineSpacesItsValuesEvenlyFromXZeroToXWidth(t *testing.T) {
 	got := example.Render(console.ConsoleSparkline{Label: "x", Width: 1, Height: 4, Values: make([]float64, 50), Class: ""})
-	if !strings.Contains(got, ` 1,0"/>`) || !strings.Contains(got, `points="0,4 0,0 `) {
+	if !strings.Contains(got, ` 1,3"/>`) || !strings.Contains(got, `points="0,4 0,3 `) {
 		t.Errorf("got %s", got)
+	}
+}
+
+func TestSparklineDrawsA0HalfItsStrokeAboveTheBottom(t *testing.T) {
+	got := example.Render(console.ConsoleSparkline{Label: "x", Width: 10, Height: 28, Values: []float64{0, 4}, Class: ""})
+	if !strings.Contains(got, `<polyline class="cui-console-chart-sparkline-line" points="0,27 10,2"/>`) {
+		t.Errorf("got %s", got)
+	}
+}
+
+func TestSparklineOfOnly0sLiesHalfItsStrokeAboveTheBottom(t *testing.T) {
+	got := example.Render(console.ConsoleSparkline{Label: "x", Width: 10, Height: 28, Values: []float64{0, 0}, Class: ""})
+	if !strings.Contains(got, `points="0,27 10,27"`) {
+		t.Errorf("got %s", got)
+	}
+}
+
+func TestSparklineANegativeNaNOrInfiniteValuePanics(t *testing.T) {
+	for _, bad := range []float64{-1, math.NaN(), math.Inf(1)} {
+		mustPanic(t, "ConsoleSparkline's Values are finite and 0 or more", func() {
+			example.Render(console.ConsoleSparkline{Label: "x", Width: 10, Height: 28, Values: []float64{bad, 4}, Class: ""})
+		})
 	}
 }

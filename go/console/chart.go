@@ -2,6 +2,7 @@ package console
 
 import (
 	"io"
+	"math"
 	"strconv"
 	"strings"
 
@@ -65,7 +66,7 @@ type ConsoleSparkline struct {
 	Label  string
 	Width  uint
 	Height uint
-	// Values: each point's Y in viewBox units, Y down.
+	// Values: the data, drawn on a scale from 0 to the largest.
 	Values []float64
 	Class  string
 }
@@ -77,12 +78,29 @@ func (s ConsoleSparkline) Render(w io.Writer) error {
 	if len(s.Values) < 2 {
 		panic("console.ConsoleSparkline needs two values or more")
 	}
-	last := uint(len(s.Values) - 1)
+	largest := 0.0
+	for _, v := range s.Values {
+		// not v < 0 alone: NaN passes it and max then makes largest NaN
+		if !(v >= 0) || math.IsInf(v, 1) {
+			panic("console.ConsoleSparkline's Values are finite and 0 or more")
+		}
+		largest = max(largest, v)
+	}
+	// App Store Connect's (reference/asc/README.md, Charts): the largest 2
+	// below the top, nothing below Height-1, so the round stroke is never
+	// clipped
+	bottom := float64(s.Height)
+	top := 2.0
+	floor := bottom - 1
+	last := float64(len(s.Values) - 1)
 	points := make([]string, len(s.Values))
-	for i, y := range s.Values {
-		// i*Width in integers first: the last X is then Width exactly
-		x := float64(uint(i)*s.Width) / float64(last)
-		points[i] = strconv.FormatFloat(x, 'f', -1, 64) + "," + strconv.FormatFloat(y, 'f', -1, 64)
+	for i, v := range s.Values {
+		y := floor
+		if largest > 0 {
+			y = min(floor, bottom-v/largest*(bottom-top))
+		}
+		x := float64(i) * float64(s.Width) / last
+		points[i] = sparklineCoordinate(x) + "," + sparklineCoordinate(y)
 	}
 	line := strings.Join(points, " ")
 	width := strconv.FormatUint(uint64(s.Width), 10)
@@ -95,4 +113,10 @@ func (s ConsoleSparkline) Render(w io.Writer) error {
 		g.Attr("viewBox", "0 0 "+width+" "+height), h.Width(width), h.Height(height), h.Role("img"), h.Aria("label", s.Label),
 		g.Raw(marks),
 	).Render(w)
+}
+
+// to hundredths, as App Store Connect's read coordinates are: no float noise
+// (7.999999999999999)
+func sparklineCoordinate(f float64) string {
+	return strconv.FormatFloat(math.Round(f*100)/100, 'f', -1, 64)
 }

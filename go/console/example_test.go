@@ -36,8 +36,8 @@ func ExampleConsoleChart() {
 }
 
 func ExampleConsoleSparkline() {
-	_ = console.ConsoleSparkline{Label: "3 events over 2 days", Width: 40, Height: 28, Values: []float64{20, 8}, Class: ""}.Render(os.Stdout)
-	// Output: <svg class="cui-console-chart-sparkline" viewBox="0 0 40 28" width="40" height="28" role="img" aria-label="3 events over 2 days"><polygon class="cui-console-chart-sparkline-area" points="0,28 0,20 40,8 40,28"/><polyline class="cui-console-chart-sparkline-line" points="0,20 40,8"/></svg>
+	_ = console.ConsoleSparkline{Label: "3 events over 2 days", Width: 40, Height: 28, Values: []float64{1, 2}, Class: ""}.Render(os.Stdout)
+	// Output: <svg class="cui-console-chart-sparkline" viewBox="0 0 40 28" width="40" height="28" role="img" aria-label="3 events over 2 days"><polygon class="cui-console-chart-sparkline-area" points="0,28 0,15 40,2 40,28"/><polyline class="cui-console-chart-sparkline-line" points="0,15 40,2"/></svg>
 }
 
 func ExampleConsoleCheckboxBox() {
