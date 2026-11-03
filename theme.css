@@ -10,8 +10,7 @@
   --breakpoint-xl: 1441px;
 }
 
-/* inline: a utility emits the var() and follows the block's scheme.
-   --text-color-* and --background-color-*, not --color-*: no bg-secondary,
+/* --text-color-* and --background-color-*, not --color-*: no bg-secondary,
    no text-alt */
 @theme inline {
   --font-sans: var(--cui-font);

@@ -83,6 +83,7 @@ const FCLOSE = `${FPANEL} > .cui-globalnav-closebutton`;
 const CHEVRON = `${LAPTOPS_BUTTON} > .cui-globalnav-image`;
 const CHEVRON_COMPACT = `${LAPTOPS_BUTTON} > .cui-globalnav-image-compact`;
 const HOVERING = { hover: LAPTOPS_LINK, widths: WIDE, height: 900 };
+const CLOSED_AT_ONCE = { html: FLYOUT_NAV, wait: 0, widths: [1200], height: 900 };
 const ITEM_MOTION = [...MOTION, 'transition-delay'];
 const FPLACE = 'the same distance from the nav\'s top as apple.com\'s (flyout:*, its locale banner above its nav)';
 const PLACE = 'the same distance from the bar as apple.com\'s (search:*, its locale banner above its nav)';
@@ -1056,15 +1057,28 @@ export const cases = [
   },
   {
     name: 'flyout-button-closed-at-once',
-    html: FLYOUT_NAV,
+    ...CLOSED_AT_ONCE,
     click: LAPTOPS_BUTTON,
     press: 'Escape',
-    wait: 0,
-    widths: [1200],
-    height: 900,
     checks: [
       { target: LAPTOPS_FLY, props: ['visibility'], golden: 'opened by its button, closed at once, where the pointer\'s flyout runs its motion back' },
       { target: FPANEL, props: ['visibility'], golden: 'its panel hidden at once with it' },
+    ],
+  },
+  {
+    name: 'flyout-button-again-closed-at-once',
+    ...CLOSED_AT_ONCE,
+    click: [LAPTOPS_BUTTON, LAPTOPS_BUTTON],
+    checks: [
+      { target: LAPTOPS_FLY, props: ['visibility'], golden: 'its button clicked again: closed at once, as by Escape' },
+    ],
+  },
+  {
+    name: 'flyout-curtain-closed-at-once',
+    ...CLOSED_AT_ONCE,
+    click: [LAPTOPS_BUTTON, LAPTOPS_CURTAIN],
+    checks: [
+      { target: LAPTOPS_FLY, props: ['visibility'], golden: 'its curtain clicked: closed at once, as by Escape' },
     ],
   },
   {
@@ -1117,6 +1131,7 @@ export const cases = [
     reducedMotion: 'reduce',
     checks: [
       { target: FPANEL, props: ['background-color'], apple: ['flyout-dark', 'flyout'] },
+      { target: LAPTOPS_FLY, props: ['transition-delay'], golden: 'reduced motion drops the 120ms rest too: a pointer passing over the bar shows each flyout it passes' },
       { target: FHEAD2, props: ['color'], apple: ['flyout-dark', 'header'] },
       { target: LINK_LG, props: ['color'], apple: ['flyout-dark', 'link.elevated'] },
       { target: FLINK, props: ['color'], apple: ['flyout-dark', 'link'] },

@@ -1,5 +1,3 @@
-/* each step's 735px is theme.css's --breakpoint-md */
-
 @utility cui-headline-standalone {
   font-size: 48px;
   line-height: 52px;

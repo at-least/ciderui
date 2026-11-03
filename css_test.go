@@ -3,6 +3,7 @@ package ciderui
 import (
 	"os"
 	"path/filepath"
+	"regexp"
 	"slices"
 	"strings"
 	"testing"
@@ -52,6 +53,20 @@ func TestNoPartHasAHeader(t *testing.T) {
 	for _, p := range CSSFiles() {
 		if strings.HasPrefix(p, "components/") && strings.HasPrefix(strings.TrimSpace(CSS(p)), "/*") {
 			t.Errorf("%s opens with a comment", p)
+		}
+	}
+}
+
+// type.css steps at md:, so a page's md: layout and its type change at one width
+func TestTypeStepsAtTheMdBreakpoint(t *testing.T) {
+	md := regexp.MustCompile(`--breakpoint-md: (\d+px);`).FindStringSubmatch(CSS("theme.css"))[1]
+	steps := regexp.MustCompile(`width >= (\d+px)`).FindAllStringSubmatch(CSS("type.css"), -1)
+	if len(steps) == 0 {
+		t.Fatal("type.css has no step")
+	}
+	for _, step := range steps {
+		if step[1] != md {
+			t.Errorf("type.css steps at %s, md: at %s", step[1], md)
 		}
 	}
 }

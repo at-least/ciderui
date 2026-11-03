@@ -1209,8 +1209,6 @@
         z-index: 1;
         height: auto;
         visibility: visible;
-        /* a delay, which reduced motion takes too: with it a pointer passing
-           over the bar shows each flyout it passes */
         transition-delay: 0.12s;
 
         .cui-globalnav-flyoutpanel {

@@ -92,7 +92,7 @@ export const cases = [
       { target: '.cui-localnav', props: ['transition-duration', 'transition-timing-function'], apple: ['localnav', 'tray.background'] },
       { target: '.cui-localnav-list', props: [...MOTION, 'transition-delay'], golden: 'the rows in apple.com\'s 0.32s with its curve (localnav:tray.link), from its first row\'s 260ms (localnav:tray.open\'s animations), faded in as one list, its opacity alone: ' + SLIDE },
       { target: LINK, props: [...MOTION, 'transition-delay'], golden: 'a row\'s own opacity, its hover, at once in 0.32s, coming and going; the rows\' entrance the list\'s, apple.com\'s second from 280ms, 20ms after the first: ' + STAGGER },
-      { target: '.cui-localnav-menu', props: ['transition-duration', 'transition-timing-function'], golden: 'apple.com\'s menu opens in 0.32s with its curve (localnav:tray.open, its max-height)' },
+      { target: '.cui-localnav-menu', props: ['transition-duration', 'transition-timing-function', 'transition-delay'], golden: 'apple.com\'s menu opens in 0.32s with its curve (localnav:tray.open, its max-height), shown at once: not the closing\'s 0.32s on its visibility' },
     ],
   },
   {
@@ -139,6 +139,15 @@ export const cases = [
     checks: [
       { target: CHEVRON, props: ['outline-style', 'outline-color', 'outline-width', 'outline-offset'], golden: 'the checkbox\'s focus ring drawn on the chevron: the one ring (rule 9), moved' },
       { target: '.cui-localnav-menu', props: ['visibility'], golden: 'closed, its links out of the focus order' },
+    ],
+  },
+  {
+    name: 'menu-widened',
+    html: NAV,
+    ...OPEN,
+    widths: [390, 900],
+    checks: [
+      { target: '.cui-localnav-menu', props: ['transition-property'], golden: 'opened, then the window widened: its links shown in the bar at once, not unfolding' },
     ],
   },
   {

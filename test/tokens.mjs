@@ -484,6 +484,12 @@ for (const file of sheets) {
   const values = [...text.matchAll(/:\s*([^;{}]+)[;}]/g)].map(m => m[1]).join(' ; ').replace(/--[\w-]+/g, '');
   const literal = values.match(/#[0-9a-f]{3,8}\b|\b(rgba?|hsla?|hwb|lab|lch|oklab|oklch|color)\(/i) ?? values.match(NAMED);
   check(`${file} writes no color of its own`, literal?.[0] ?? 'none', 'none');
+  // a console part reads the console's slots alone; the dialog's backdrop the
+  // scrim, which the toolkit names none of
+  if (file.startsWith(join('components', 'console'))) {
+    const other = [...text.matchAll(/var\((--cui-c-[\w-]+)/g)].map(m => m[1]).filter(name => !name.startsWith('--cui-c-console-') && name !== '--cui-c-scrim');
+    check(`${file} reads the console's colors alone`, other.join(' ') || 'none', 'none');
+  }
 }
 
 done('tokens');
