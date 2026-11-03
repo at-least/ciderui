@@ -205,7 +205,7 @@ Outside Chromium it is measured in Safari 27.0.1 on macOS, Safari 26.5 on the iO
 
 ## How a component is proven
 
-`npm test` is the gate (CLAUDE.md, "This repository's gate"). `test/components.mjs` renders each case in headless Chromium, in test/Dockerfile's image, and compares computed styles by the check's source (rule 13). What the measurements taught the harness, which it keeps:
+`npm test` is the gate. `test/components.mjs` renders each case in headless Chromium, in test/Dockerfile's image, and compares computed styles by the check's source (rule 13). What the measurements taught the harness, which it keeps:
 
 - **Linux's hinting.** Chromium on Linux hints every glyph to a whole-pixel advance unless launched with `--font-render-hinting=none`; with it, its text widths are the Mac's within 0.00006em a character (measured, `reference/tracking/`). Every run passes the flag.
 - **The fonts differ between the two sides.** apple.com's values were read with its SF Pro webfonts; ciderui's cases render on Linux in Inter, fonts.css's, inlined into each case's page. So an `apple` check compares what does not depend on the text's width (the type's own values, colors, borders, radii, padding, heights where the line height fixes them), and a box that depends on the text's width is a `golden` check.

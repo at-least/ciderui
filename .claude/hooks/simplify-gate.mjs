@@ -30,6 +30,6 @@ console.log(JSON.stringify({
   hookSpecificOutput: {
     hookEventName: 'PreToolUse',
     permissionDecision: 'deny',
-    permissionDecisionReason: `Code changed since the last commit (${changed.join(', ')}). Run /simplify on it first (CLAUDE.md, Commits).`,
+    permissionDecisionReason: `Code changed since the last commit (${changed.join(', ')}). Run /simplify on it first.`,
   },
 }));
