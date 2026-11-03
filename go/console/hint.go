@@ -12,17 +12,17 @@ import (
 type ConsoleHint struct {
 	// ID is the popover's id, unique on the page.
 	ID string
-	// Label is the button's aria-label ("What A means").
-	Label string
-	Hint  string
+	// AriaLabel: "What A means".
+	AriaLabel string
+	Hint      string
 }
 
 func (t ConsoleHint) Render(w io.Writer) error {
 	if t.ID == "" {
 		panic("console.ConsoleHint needs an ID")
 	}
-	if t.Label == "" {
-		panic("console.ConsoleHint needs a Label")
+	if t.AriaLabel == "" {
+		panic("console.ConsoleHint needs an AriaLabel")
 	}
 	if t.Hint == "" {
 		panic("console.ConsoleHint needs a Hint")
@@ -30,7 +30,7 @@ func (t ConsoleHint) Render(w io.Writer) error {
 	// the popover a <span>, not a <div>: a hint sits in a heading or a <p>,
 	// where a <div> would close the <p>
 	return g.Group{
-		h.Button(h.Type("button"), h.Class("cui-console-hint"), h.PopoverTarget(t.ID), h.Aria("label", t.Label), g.Text("i")),
+		h.Button(h.Type("button"), h.Class("cui-console-hint"), h.PopoverTarget(t.ID), h.Aria("label", t.AriaLabel), g.Text("i")),
 		h.Span(h.Class("cui-console-popover"), h.ID(t.ID), h.Popover(), g.Text(t.Hint)),
 	}.Render(w)
 }

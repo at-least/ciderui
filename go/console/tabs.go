@@ -22,11 +22,10 @@ var (
 )
 
 type ConsoleTabs struct {
-	// Label is the row's aria-label.
-	Label   string
-	Variant ConsoleTabsVariant
-	Tabs    []ConsoleTab
-	Class   string
+	AriaLabel string
+	Variant   ConsoleTabsVariant
+	Tabs      []ConsoleTab
+	Class     string
 }
 
 type ConsoleTab struct {
@@ -37,8 +36,8 @@ type ConsoleTab struct {
 }
 
 func (t ConsoleTabs) Render(w io.Writer) error {
-	if t.Label == "" {
-		panic("console.ConsoleTabs needs a Label")
+	if t.AriaLabel == "" {
+		panic("console.ConsoleTabs needs an AriaLabel")
 	}
 	currents := 0
 	for _, tab := range t.Tabs {
@@ -68,9 +67,9 @@ func (t ConsoleTabs) Render(w io.Writer) error {
 		return h.A(h.Class("cui-console-tab"), h.Href(tab.Href), g.If(tab.Current, h.Aria("current", current)), g.Text(tab.Label))
 	})
 	if t.Variant == ConsoleTabsVariantUnderlined {
-		return h.Nav(class.Root("cui-console-tabs", t.Class), h.Aria("label", t.Label), tabs).Render(w)
+		return h.Nav(class.Root("cui-console-tabs", t.Class), h.Aria("label", t.AriaLabel), tabs).Render(w)
 	}
-	return h.Div(class.Root("cui-console-tabs", t.Class), h.Data("variant", "filled"), h.Role("group"), h.Aria("label", t.Label), tabs).Render(w)
+	return h.Div(class.Root("cui-console-tabs", t.Class), h.Data("variant", "filled"), h.Role("group"), h.Aria("label", t.AriaLabel), tabs).Render(w)
 }
 
 type ConsoleAppearanceChoice struct{ value string }

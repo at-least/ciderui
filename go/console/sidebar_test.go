@@ -13,7 +13,7 @@ import (
 
 func TestSidebarRendersTheExample(t *testing.T) {
 	account := h.A(h.Class("cui-console-sidebar-account"), h.Href("#account"), lucide.CircleUser.Class("cui-console-sidebar-avatar"), g.Text("Alex Morgan"))
-	sidebar := console.ConsoleSidebar{ID: "sidebar", Label: "CrashCart", Home: "#home", Wordmark: "CrashCart", CloseLabel: "Close", Class: "", Footer: account, Children: g.Group{
+	sidebar := console.ConsoleSidebar{ID: "sidebar", AriaLabel: "CrashCart", Home: "#home", Wordmark: "CrashCart", CloseAriaLabel: "Close", Class: "", Footer: account, Children: g.Group{
 		console.ConsoleMenuItem{Href: "#projects", Label: "All Projects", Icon: lucide.LayoutGrid, Current: false, Disabled: false, Secondary: "", Class: ""},
 		console.ConsoleMenuItem{Href: "#issues", Label: "All Issues", Icon: lucide.Bug, Current: true, Disabled: false, Secondary: "", Class: ""},
 		h.P(h.Class("cui-console-menu-heading"), g.Text("Projects")),
@@ -25,26 +25,26 @@ func TestSidebarRendersTheExample(t *testing.T) {
 	example.Check(t, sidebar, "console/console-sidebar/examples/sidebar.html")
 }
 
-func TestSidebarWithNoCloseLabelPanics(t *testing.T) {
-	mustPanic(t, "ConsoleSidebar needs a CloseLabel", func() {
-		example.Render(console.ConsoleSidebar{ID: "s", Label: "x", Home: "/", Wordmark: "x", CloseLabel: "", Class: "", Footer: nil, Children: nil})
+func TestSidebarWithNoCloseAriaLabelPanics(t *testing.T) {
+	mustPanic(t, "ConsoleSidebar needs a CloseAriaLabel", func() {
+		example.Render(console.ConsoleSidebar{ID: "s", AriaLabel: "x", Home: "/", Wordmark: "x", CloseAriaLabel: "", Class: "", Footer: nil, Children: nil})
 	})
 }
 
 func TestSidebarWithNoIDPanics(t *testing.T) {
 	mustPanic(t, "ConsoleSidebar needs an ID", func() {
-		example.Render(console.ConsoleSidebar{ID: "", Label: "x", Home: "/", Wordmark: "x", CloseLabel: "Close", Class: "", Footer: nil, Children: nil})
+		example.Render(console.ConsoleSidebar{ID: "", AriaLabel: "x", Home: "/", Wordmark: "x", CloseAriaLabel: "Close", Class: "", Footer: nil, Children: nil})
 	})
 }
 
-func TestSidebarWithNoLabelPanics(t *testing.T) {
-	mustPanic(t, "ConsoleSidebar needs a Label", func() {
-		example.Render(console.ConsoleSidebar{ID: "s", Label: "", Home: "/", Wordmark: "x", CloseLabel: "Close", Class: "", Footer: nil, Children: nil})
+func TestSidebarWithNoAriaLabelPanics(t *testing.T) {
+	mustPanic(t, "ConsoleSidebar needs an AriaLabel", func() {
+		example.Render(console.ConsoleSidebar{ID: "s", AriaLabel: "", Home: "/", Wordmark: "x", CloseAriaLabel: "Close", Class: "", Footer: nil, Children: nil})
 	})
 }
 
 func TestSidebarWithNoWordmarkPanics(t *testing.T) {
 	mustPanic(t, "ConsoleSidebar needs a Wordmark", func() {
-		example.Render(console.ConsoleSidebar{ID: "s", Label: "x", Home: "/", Wordmark: "", CloseLabel: "Close", Class: "", Footer: nil, Children: nil})
+		example.Render(console.ConsoleSidebar{ID: "s", AriaLabel: "x", Home: "/", Wordmark: "", CloseAriaLabel: "Close", Class: "", Footer: nil, Children: nil})
 	})
 }

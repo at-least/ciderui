@@ -23,7 +23,7 @@ func globalNavLogo() g.Node {
 }
 
 func TestGlobalNavRendersTheExample(t *testing.T) {
-	example.Check(t, site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: globalNavLinks, Search: site.LinkedSearch{Href: "/search"}, Bag: site.LinkedBag{Href: "/bag"}, Dark: false, Clear: false, Class: ""}, "site/globalnav/examples/globalnav.html")
+	example.Check(t, site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: site.LinkedSearch{Href: "/search"}, Bag: site.LinkedBag{Href: "/bag"}, Dark: false, Clear: false, Class: ""}, "site/globalnav/examples/globalnav.html")
 }
 
 var globalNavStore = []site.FlyoutGroup{
@@ -66,7 +66,7 @@ func TestGlobalNavRendersTheFlyoutExample(t *testing.T) {
 		{Text: "Tablets", Href: "/tablets", Flyout: nil},
 		{Text: "Support", Href: "/support", Flyout: nil},
 	}
-	example.Check(t, site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: flyouts, Search: site.LinkedSearch{Href: "/search"}, Bag: site.LinkedBag{Href: "/bag"}, Dark: false, Clear: false, Class: ""}, "site/globalnav/examples/flyout.html")
+	example.Check(t, site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: flyouts, Search: site.LinkedSearch{Href: "/search"}, Bag: site.LinkedBag{Href: "/bag"}, Dark: false, Clear: false, Class: ""}, "site/globalnav/examples/flyout.html")
 }
 
 func TestGlobalNavRendersTheBagExample(t *testing.T) {
@@ -81,7 +81,7 @@ func TestGlobalNavRendersTheBagExample(t *testing.T) {
 			{Icon: icon.SignIn, IconCompact: icon.SignInCompact, Text: "Sign in", Href: "/signin"},
 		},
 	}
-	example.Check(t, site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: globalNavLinks, Search: site.LinkedSearch{Href: "/search"}, Bag: emptyBag, Dark: false, Clear: false, Class: ""}, "site/globalnav/examples/bag.html")
+	example.Check(t, site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: site.LinkedSearch{Href: "/search"}, Bag: emptyBag, Dark: false, Clear: false, Class: ""}, "site/globalnav/examples/bag.html")
 }
 
 var globalNavQuick = []site.Link{
@@ -93,14 +93,14 @@ var globalNavQuick = []site.Link{
 }
 
 func TestGlobalNavRendersTheSearchExample(t *testing.T) {
-	example.Check(t, site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: globalNavLinks, Search: site.FlyoutSearch{Action: "/search", Links: globalNavQuick}, Bag: site.LinkedBag{Href: "/bag"}, Dark: false, Clear: false, Class: ""}, "site/globalnav/examples/search.html")
+	example.Check(t, site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: site.FlyoutSearch{Action: "/search", Links: globalNavQuick}, Bag: site.LinkedBag{Href: "/bag"}, Dark: false, Clear: false, Class: ""}, "site/globalnav/examples/search.html")
 }
 
 // the suggestions' example is the search's as a site's script leaves it, its
 // sections in the quick links' place, each row after the package's icons: a
 // link's arrow, a suggested search's magnifier
 func TestGlobalNavTheSuggestionsExampleIsTheSearchWithItsSections(t *testing.T) {
-	search := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: globalNavLinks, Search: site.FlyoutSearch{Action: "/search", Links: globalNavQuick}, Bag: site.LinkedBag{Href: "/bag"}, Dark: false, Clear: false, Class: ""})
+	search := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: site.FlyoutSearch{Action: "/search", Links: globalNavQuick}, Bag: site.LinkedBag{Href: "/bag"}, Dark: false, Clear: false, Class: ""})
 	suggestions := example.Read("site/globalnav/examples/suggestions.html")
 	sections := func(html string) (int, int) {
 		start := strings.Index(html, `<h2 class="cui-globalnav-searchheading"`)
@@ -129,7 +129,7 @@ func TestGlobalNavTheSuggestionsExampleIsTheSearchWithItsSections(t *testing.T) 
 }
 
 func TestGlobalNavASearchWithNoQuickLinksHasNoHeading(t *testing.T) {
-	got := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: globalNavLinks, Search: site.FlyoutSearch{Action: "/find?a&b", Links: nil}, Bag: nil, Dark: false, Clear: false, Class: ""})
+	got := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: site.FlyoutSearch{Action: "/find?a&b", Links: nil}, Bag: nil, Dark: false, Clear: false, Class: ""})
 	if !strings.Contains(got, `<form class="cui-globalnav-searchfield" action="/find?a&amp;b" method="get" role="search">`) {
 		t.Errorf("got %s", got)
 	}
@@ -140,12 +140,12 @@ func TestGlobalNavASearchWithNoQuickLinksHasNoHeading(t *testing.T) {
 
 func TestGlobalNavASearchWithNoPagePanics(t *testing.T) {
 	mustPanic(t, "needs its page", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: globalNavLinks, Search: site.FlyoutSearch{Action: "", Links: nil}, Bag: nil, Dark: false, Clear: false, Class: ""})
+		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: site.FlyoutSearch{Action: "", Links: nil}, Bag: nil, Dark: false, Clear: false, Class: ""})
 	})
 }
 
 func TestGlobalNavDarkClearAndThePagesUtilities(t *testing.T) {
-	got := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: globalNavLinks, Search: nil, Bag: nil, Dark: true, Clear: true, Class: "sticky top-0"})
+	got := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: nil, Dark: true, Clear: true, Class: "sticky top-0"})
 	if !strings.HasPrefix(got, `<nav class="cui-globalnav cui-dark sticky top-0" data-variant="clear" aria-label="Global">`) {
 		t.Errorf("got %s", got)
 	}
@@ -155,7 +155,7 @@ func TestGlobalNavDarkClearAndThePagesUtilities(t *testing.T) {
 }
 
 func TestGlobalNavEscapesItsText(t *testing.T) {
-	got := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/?a&b", Name: `A "B"`, Links: []site.NavLink{{Text: "<b>", Href: "/x", Flyout: nil}}, Search: nil, Bag: nil, Dark: false, Clear: false, Class: ""})
+	got := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/?a&b", LogoAriaLabel: `A "B"`, Links: []site.NavLink{{Text: "<b>", Href: "/x", Flyout: nil}}, Search: nil, Bag: nil, Dark: false, Clear: false, Class: ""})
 	for _, want := range []string{
 		`href="/?a&amp;b" aria-label="A &quot;B&quot;"`,
 		`<a class="cui-globalnav-link" href="/x">&lt;b&gt;</a>`,
@@ -168,60 +168,60 @@ func TestGlobalNavEscapesItsText(t *testing.T) {
 
 func TestGlobalNavNoLinksPanics(t *testing.T) {
 	mustPanic(t, "needs Links", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: nil, Search: nil, Bag: nil, Dark: false, Clear: false, Class: ""})
+		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: nil, Search: nil, Bag: nil, Dark: false, Clear: false, Class: ""})
 	})
 }
 
 func TestGlobalNavAnEmptyHomePanics(t *testing.T) {
 	mustPanic(t, "GlobalNav needs a Home", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "", Name: "Cider", Links: globalNavLinks, Search: nil, Bag: nil, Dark: false, Clear: false, Class: ""})
+		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: nil, Dark: false, Clear: false, Class: ""})
 	})
 }
 
-func TestGlobalNavAnEmptyNamePanics(t *testing.T) {
-	mustPanic(t, "GlobalNav needs a Name", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "", Links: globalNavLinks, Search: nil, Bag: nil, Dark: false, Clear: false, Class: ""})
+func TestGlobalNavAnEmptyLogoAriaLabelPanics(t *testing.T) {
+	mustPanic(t, "GlobalNav needs a LogoAriaLabel", func() {
+		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "", Links: globalNavLinks, Search: nil, Bag: nil, Dark: false, Clear: false, Class: ""})
 	})
 }
 
 func TestGlobalNavALinkWithNoTextPanics(t *testing.T) {
 	mustPanic(t, "GlobalNav's Links need their Text and Href", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: []site.NavLink{{Text: "", Href: "/x", Flyout: nil}}, Search: nil, Bag: nil, Dark: false, Clear: false, Class: ""})
+		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: []site.NavLink{{Text: "", Href: "/x", Flyout: nil}}, Search: nil, Bag: nil, Dark: false, Clear: false, Class: ""})
 	})
 }
 
 func TestGlobalNavAFlyoutGroupWithNoHeadingPanics(t *testing.T) {
 	flyout := []site.FlyoutGroup{{Heading: "", Large: nil, Links: nil}}
 	mustPanic(t, "FlyoutGroups need their Heading", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: []site.NavLink{{Text: "Store", Href: "/store", Flyout: flyout}}, Search: nil, Bag: nil, Dark: false, Clear: false, Class: ""})
+		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: []site.NavLink{{Text: "Store", Href: "/store", Flyout: flyout}}, Search: nil, Bag: nil, Dark: false, Clear: false, Class: ""})
 	})
 }
 
 func TestGlobalNavABagWithNoMessagePanics(t *testing.T) {
 	bag := site.FlyoutBag{Message: "", Line: nil, Heading: "", Links: nil}
 	mustPanic(t, "bag needs its Message", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Dark: false, Clear: false, Class: ""})
+		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Dark: false, Clear: false, Class: ""})
 	})
 }
 
 func TestGlobalNavABagLineWithNoTextPanics(t *testing.T) {
 	bag := site.FlyoutBag{Message: "Nothing here yet.", Line: &site.BagLine{Text: "", Href: "/signin", Rest: ""}, Heading: "", Links: nil}
 	mustPanic(t, "Line needs its link's Text and Href", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Dark: false, Clear: false, Class: ""})
+		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Dark: false, Clear: false, Class: ""})
 	})
 }
 
 func TestGlobalNavBagLinksWithNoHeadingPanics(t *testing.T) {
 	bag := site.FlyoutBag{Message: "Nothing here yet.", Line: nil, Heading: "", Links: []site.BagLink{{Icon: icon.Icon{}, IconCompact: icon.Icon{}, Text: "Orders", Href: "/orders"}}}
 	mustPanic(t, "bag's Links need their Heading", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Dark: false, Clear: false, Class: ""})
+		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Dark: false, Clear: false, Class: ""})
 	})
 }
 
 func TestGlobalNavABagLinkWithNoTextPanics(t *testing.T) {
 	bag := site.FlyoutBag{Message: "Nothing here yet.", Line: nil, Heading: "Account", Links: []site.BagLink{{Icon: icon.Icon{}, IconCompact: icon.Icon{}, Text: "", Href: "/orders"}}}
 	mustPanic(t, "bag's Links need their Text and Href", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Dark: false, Clear: false, Class: ""})
+		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Dark: false, Clear: false, Class: ""})
 	})
 }
 
@@ -231,6 +231,6 @@ func TestGlobalNavLargeLinksAfterTheFirstGroupPanics(t *testing.T) {
 		{Heading: "More", Large: []site.Link{{Text: "x", Href: "/x"}}, Links: nil},
 	}
 	mustPanic(t, "site.GlobalNav's Large links are only in a flyout's first group", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: []site.NavLink{{Text: "Store", Href: "/store", Flyout: flyout}}, Search: nil, Bag: nil, Dark: false, Clear: false, Class: ""})
+		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: []site.NavLink{{Text: "Store", Href: "/store", Flyout: flyout}}, Search: nil, Bag: nil, Dark: false, Clear: false, Class: ""})
 	})
 }

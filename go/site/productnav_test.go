@@ -19,7 +19,7 @@ func TestProductNavRendersTheExample(t *testing.T) {
 		{Text: "Audio", Href: "/shop/audio"},
 		{Text: "Accessories", Href: "/shop/accessories"},
 	}
-	example.Check(t, site.ProductNav{ID: "products", Label: "Products", Paddles: false, Class: "", Children: g.Map(items, func(item site.Link) g.Node {
+	example.Check(t, site.ProductNav{ID: "products", AriaLabel: "Products", Paddles: false, Class: "", Children: g.Map(items, func(item site.Link) g.Node {
 		image := h.Img(h.Class("cui-productnav-image"), h.Src("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTMwIi8+"), h.Width("200"), h.Height("130"), h.Alt(""))
 		return site.ProductNavItem{Href: item.Href, Name: item.Text, Class: "", Children: image}
 	})}, "site/productnav/examples/productnav.html")
@@ -40,12 +40,12 @@ func TestProductNavItemTakesThePagesUtilities(t *testing.T) {
 
 func TestProductNavAnEmptyIDPanics(t *testing.T) {
 	mustPanic(t, "ProductNav needs an ID", func() {
-		example.Render(site.ProductNav{ID: "", Label: "Products", Paddles: false, Class: "", Children: g.Text("")})
+		example.Render(site.ProductNav{ID: "", AriaLabel: "Products", Paddles: false, Class: "", Children: g.Text("")})
 	})
 }
 
-func TestProductNavAnEmptyLabelPanics(t *testing.T) {
-	mustPanic(t, "ProductNav needs a Label", func() {
-		example.Render(site.ProductNav{ID: "p", Label: "", Paddles: false, Class: "", Children: g.Text("")})
+func TestProductNavAnEmptyAriaLabelPanics(t *testing.T) {
+	mustPanic(t, "ProductNav needs an AriaLabel", func() {
+		example.Render(site.ProductNav{ID: "p", AriaLabel: "", Paddles: false, Class: "", Children: g.Text("")})
 	})
 }

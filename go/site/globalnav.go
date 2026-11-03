@@ -85,15 +85,15 @@ type BagLink struct {
 // [LocalNav]; a z-* utility in Class replaces it.
 type GlobalNav struct {
 	// Logo: an <svg> in currentColor takes the bar's color.
-	Logo   g.Node
-	Home   string
-	Name   string
-	Links  []NavLink
-	Search Search
-	Bag    Bag
-	Dark   bool
-	Clear  bool
-	Class  string
+	Logo          g.Node
+	Home          string
+	LogoAriaLabel string
+	Links         []NavLink
+	Search        Search
+	Bag           Bag
+	Dark          bool
+	Clear         bool
+	Class         string
 }
 
 func globalNavImages(regular, compact icon.Icon) g.Node {
@@ -109,8 +109,8 @@ func (n GlobalNav) Render(w io.Writer) error {
 	if n.Home == "" {
 		panic("site.GlobalNav needs a Home")
 	}
-	if n.Name == "" {
-		panic("site.GlobalNav needs a Name")
+	if n.LogoAriaLabel == "" {
+		panic("site.GlobalNav needs a LogoAriaLabel")
 	}
 	if len(n.Links) == 0 {
 		panic("site.GlobalNav needs Links")
@@ -215,7 +215,7 @@ func (n GlobalNav) Render(w io.Writer) error {
 	return h.Nav(class.Root(block, n.Class), g.If(n.Clear, h.Data("variant", "clear")), h.Aria("label", "Global"),
 		h.Div(h.Class("cui-globalnav-content"),
 			h.Ul(h.Class("cui-globalnav-list"), h.ID(globalNavMenuID), h.Popover(),
-				h.Li(h.A(h.Class("cui-globalnav-logo"), h.Href(n.Home), h.Aria("label", n.Name), n.Logo)),
+				h.Li(h.A(h.Class("cui-globalnav-logo"), h.Href(n.Home), h.Aria("label", n.LogoAriaLabel), n.Logo)),
 				h.Li(h.Button(h.Class("cui-globalnav-closebutton"), h.PopoverTarget(globalNavMenuID), h.PopoverTargetAction("hide"), h.Aria("label", "Close"), h.AutoFocus(), icon.Menu)),
 				links,
 				searchItem,

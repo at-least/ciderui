@@ -62,18 +62,18 @@ func (c ConsoleChart) Render(w io.Writer) error {
 }
 
 type ConsoleSparkline struct {
-	// Label is what the line shows, in words ("3 events over 2 days").
-	Label  string
-	Width  uint
-	Height uint
+	// AriaLabel: what the line shows, in words ("3 events over 2 days").
+	AriaLabel string
+	Width     uint
+	Height    uint
 	// Values: the data, drawn on a scale from 0 to the largest.
 	Values []float64
 	Class  string
 }
 
 func (s ConsoleSparkline) Render(w io.Writer) error {
-	if s.Label == "" {
-		panic("console.ConsoleSparkline needs a Label")
+	if s.AriaLabel == "" {
+		panic("console.ConsoleSparkline needs an AriaLabel")
 	}
 	if len(s.Values) < 2 {
 		panic("console.ConsoleSparkline needs two values or more")
@@ -110,7 +110,7 @@ func (s ConsoleSparkline) Render(w io.Writer) error {
 	marks := `<polygon class="cui-console-chart-sparkline-area" points="0,` + height + " " + line + " " + width + "," + height + `"/>` +
 		`<polyline class="cui-console-chart-sparkline-line" points="` + line + `"/>`
 	return g.El("svg", class.Root("cui-console-chart-sparkline", s.Class),
-		g.Attr("viewBox", "0 0 "+width+" "+height), h.Width(width), h.Height(height), h.Role("img"), h.Aria("label", s.Label),
+		g.Attr("viewBox", "0 0 "+width+" "+height), h.Width(width), h.Height(height), h.Role("img"), h.Aria("label", s.AriaLabel),
 		g.Raw(marks),
 	).Render(w)
 }

@@ -18,9 +18,9 @@ type ConsoleChip struct {
 	// HTML.
 	Href       string
 	RemoveHref string
-	// RemoveLabel is the remove link's aria-label: the link is an icon alone.
-	RemoveLabel string
-	Class       string
+	// RemoveAriaLabel: required, the remove link is an icon alone.
+	RemoveAriaLabel string
+	Class           string
 }
 
 func (c ConsoleChip) Render(w io.Writer) error {
@@ -30,8 +30,8 @@ func (c ConsoleChip) Render(w io.Writer) error {
 	if c.Href != "" && c.RemoveHref != "" {
 		panic("console.ConsoleChip is a link or has a remove control, not both")
 	}
-	if c.RemoveHref != "" && c.RemoveLabel == "" {
-		panic("console.ConsoleChip needs a RemoveLabel with a RemoveHref")
+	if c.RemoveHref != "" && c.RemoveAriaLabel == "" {
+		panic("console.ConsoleChip needs a RemoveAriaLabel with a RemoveHref")
 	}
 	parts := g.Group{h.Span(h.Class("cui-console-chip-key"), g.Text(c.Key)), g.Text(c.Value)}
 	if c.Href != "" {
@@ -39,6 +39,6 @@ func (c ConsoleChip) Render(w io.Writer) error {
 	}
 	return h.Span(class.Root("cui-console-chip", c.Class),
 		parts,
-		g.If(c.RemoveHref != "", h.A(h.Class("cui-console-chip-remove"), h.Href(c.RemoveHref), h.Aria("label", c.RemoveLabel), lucide.X)),
+		g.If(c.RemoveHref != "", h.A(h.Class("cui-console-chip-remove"), h.Href(c.RemoveHref), h.Aria("label", c.RemoveAriaLabel), lucide.X)),
 	).Render(w)
 }

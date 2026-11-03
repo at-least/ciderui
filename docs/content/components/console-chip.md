@@ -21,4 +21,4 @@ A key and its value on the gray fill, with 5px corners: a filter in force, with 
 | `cui-console-chip-key` | its key, before its value, secondary |
 | `cui-console-chip-remove` | the control that removes a filter, its × 12px, its label its `aria-label` |
 
-In Go, `console.ConsoleChip` (`Href` for a link, `RemoveHref` and `RemoveLabel` for a filter).
+In Go, `console.ConsoleChip` (`Href` for a link, `RemoveHref` and `RemoveAriaLabel` for a filter).

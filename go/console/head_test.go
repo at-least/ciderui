@@ -17,7 +17,7 @@ func TestHeadRendersTheExample(t *testing.T) {
 		{Label: "Jobs", Href: "#jobs", Current: false},
 	}
 	head := h.Div(h.Class("cui-console-page max-w-4xl"),
-		console.ConsoleHead{Name: "Shop", Href: "#overview", Label: "Project", Tabs: tabs, Class: ""},
+		console.ConsoleHead{Name: "Shop", Href: "#overview", TabsAriaLabel: "Project", Tabs: tabs, Class: ""},
 		h.P(g.Text("The page’s content.")),
 	)
 	example.Check(t, head, "console/console-head/examples/head.html")
@@ -25,6 +25,6 @@ func TestHeadRendersTheExample(t *testing.T) {
 
 func TestHeadAnEmptyNamePanics(t *testing.T) {
 	mustPanic(t, "needs a Name", func() {
-		example.Render(console.ConsoleHead{Name: "", Href: "/", Label: "Project", Tabs: nil, Class: ""})
+		example.Render(console.ConsoleHead{Name: "", Href: "/", TabsAriaLabel: "Project", Tabs: nil, Class: ""})
 	})
 }

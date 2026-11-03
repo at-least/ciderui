@@ -12,7 +12,7 @@ import (
 )
 
 func TestMenuRendersTheExample(t *testing.T) {
-	menu := console.ConsoleMenu{Label: "Analytics", Class: "", Children: g.Group{
+	menu := console.ConsoleMenu{AriaLabel: "Analytics", Class: "", Children: g.Group{
 		console.ConsoleMenuItem{Href: "#overview", Label: "Overview", Icon: lucide.LayoutGrid, Current: true, Disabled: false, Secondary: "", Class: ""},
 		console.ConsoleMenuGroup{Label: "Acquisition", Icon: lucide.UserPlus, Open: true, Class: "", Children: g.Group{
 			console.ConsoleMenuItem{Href: "#sources", Label: "Sources", Icon: icon.Icon{}, Current: false, Disabled: false, Secondary: "", Class: ""},
@@ -39,9 +39,9 @@ func TestMenuItemDisabledWithAnHrefPanics(t *testing.T) {
 	})
 }
 
-func TestMenuWithNoLabelPanics(t *testing.T) {
-	mustPanic(t, "needs a Label", func() {
-		example.Render(console.ConsoleMenu{Label: "", Class: "", Children: g.Text("x")})
+func TestMenuWithNoAriaLabelPanics(t *testing.T) {
+	mustPanic(t, "ConsoleMenu needs an AriaLabel", func() {
+		example.Render(console.ConsoleMenu{AriaLabel: "", Class: "", Children: g.Text("x")})
 	})
 }
 

@@ -12,9 +12,8 @@ import (
 
 // ConsoleMenu is a section's pages down its left side.
 type ConsoleMenu struct {
-	// Label is the <nav>'s aria-label.
-	Label string
-	Class string
+	AriaLabel string
+	Class     string
 	// Children: [ConsoleMenuItem]s and [ConsoleMenuGroup]s, with a
 	// <p class="cui-console-menu-heading"> or an
 	// <hr class="cui-console-menu-rule"> between runs of them.
@@ -22,10 +21,10 @@ type ConsoleMenu struct {
 }
 
 func (m ConsoleMenu) Render(w io.Writer) error {
-	if m.Label == "" {
-		panic("console.ConsoleMenu needs a Label")
+	if m.AriaLabel == "" {
+		panic("console.ConsoleMenu needs an AriaLabel")
 	}
-	return h.Nav(class.Root("cui-console-menu", m.Class), h.Aria("label", m.Label), m.Children).Render(w)
+	return h.Nav(class.Root("cui-console-menu", m.Class), h.Aria("label", m.AriaLabel), m.Children).Render(w)
 }
 
 // ConsoleMenuItem is a page in a [ConsoleMenu], a [ConsoleMenuGroup] or a

@@ -20,7 +20,7 @@ func ExampleConsoleBadge() {
 }
 
 func ExampleConsoleBanner() {
-	_ = console.ConsoleBanner{Color: console.ConsoleColorInfo, Icon: icon.Icon{}, Title: "Saved", DismissLabel: "", Class: "", Children: nil}.Render(os.Stdout)
+	_ = console.ConsoleBanner{Color: console.ConsoleColorInfo, Icon: icon.Icon{}, Title: "Saved", DismissAriaLabel: "", Class: "", Children: nil}.Render(os.Stdout)
 	// Output: <div class="cui-console-banner" data-color="info" role="status"><div><p class="cui-console-banner-title">Saved</p></div></div>
 }
 
@@ -36,7 +36,7 @@ func ExampleConsoleChart() {
 }
 
 func ExampleConsoleSparkline() {
-	_ = console.ConsoleSparkline{Label: "3 events over 2 days", Width: 40, Height: 28, Values: []float64{1, 2}, Class: ""}.Render(os.Stdout)
+	_ = console.ConsoleSparkline{AriaLabel: "3 events over 2 days", Width: 40, Height: 28, Values: []float64{1, 2}, Class: ""}.Render(os.Stdout)
 	// Output: <svg class="cui-console-chart-sparkline" viewBox="0 0 40 28" width="40" height="28" role="img" aria-label="3 events over 2 days"><polygon class="cui-console-chart-sparkline-area" points="0,28 0,15 40,2 40,28"/><polyline class="cui-console-chart-sparkline-line" points="0,15 40,2"/></svg>
 }
 
@@ -50,7 +50,7 @@ func ExampleConsoleCheckboxBox() {
 }
 
 func ExampleConsoleChip() {
-	_ = console.ConsoleChip{Key: "os", Value: "iOS", Href: "", RemoveHref: "", RemoveLabel: "", Class: ""}.Render(os.Stdout)
+	_ = console.ConsoleChip{Key: "os", Value: "iOS", Href: "", RemoveHref: "", RemoveAriaLabel: "", Class: ""}.Render(os.Stdout)
 	// Output: <span class="cui-console-chip"><span class="cui-console-chip-key">os</span>iOS</span>
 }
 
@@ -89,12 +89,12 @@ func ExampleConsoleFormField() {
 
 func ExampleConsoleHead() {
 	tabs := []console.ConsoleTab{{Label: "Overview", Href: "/p/shop", Current: true}}
-	_ = console.ConsoleHead{Name: "Shop", Href: "/p/shop", Label: "Project", Tabs: tabs, Class: ""}.Render(os.Stdout)
+	_ = console.ConsoleHead{Name: "Shop", Href: "/p/shop", TabsAriaLabel: "Project", Tabs: tabs, Class: ""}.Render(os.Stdout)
 	// Output: <div class="cui-console-head"><a class="cui-console-head-name" href="/p/shop">Shop</a><nav class="cui-console-tabs" aria-label="Project"><a class="cui-console-tab" href="/p/shop" aria-current="page">Overview</a></nav></div>
 }
 
 func ExampleConsoleHint() {
-	_ = console.ConsoleHint{ID: "hint-a", Label: "What A means", Hint: "A is a."}.Render(os.Stdout)
+	_ = console.ConsoleHint{ID: "hint-a", AriaLabel: "What A means", Hint: "A is a."}.Render(os.Stdout)
 	// Output: <button type="button" class="cui-console-hint" popovertarget="hint-a" aria-label="What A means">i</button><span class="cui-console-popover" id="hint-a" popover>A is a.</span>
 }
 
@@ -111,12 +111,12 @@ func ExampleConsoleListing() {
 }
 
 func ExampleConsoleMenu() {
-	_ = console.ConsoleMenu{Label: "Analytics", Class: "", Children: console.ConsoleMenuItem{Href: "/overview", Label: "Overview", Icon: icon.Icon{}, Current: true, Disabled: false, Secondary: "", Class: ""}}.Render(os.Stdout)
+	_ = console.ConsoleMenu{AriaLabel: "Analytics", Class: "", Children: console.ConsoleMenuItem{Href: "/overview", Label: "Overview", Icon: icon.Icon{}, Current: true, Disabled: false, Secondary: "", Class: ""}}.Render(os.Stdout)
 	// Output: <nav class="cui-console-menu" aria-label="Analytics"><a class="cui-console-menu-item" href="/overview" aria-current="page"><span class="cui-console-menu-label">Overview</span></a></nav>
 }
 
 func ExampleConsolePager() {
-	_ = console.ConsolePager{Label: "Issue pages", Summary: "1–50 of 230", First: "", Previous: "", Next: "?page=2", Class: ""}.Render(os.Stdout)
+	_ = console.ConsolePager{AriaLabel: "Issue pages", Summary: "1–50 of 230", First: "", Previous: "", Next: "?page=2", Class: ""}.Render(os.Stdout)
 	// Output: <nav class="cui-console-pager" aria-label="Issue pages"><p class="cui-console-pager-summary">1–50 of 230</p><a class="cui-console-btn cui-console-btn-icon" href="?page=2" aria-label="Next page"><svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></nav>
 }
 
@@ -126,7 +126,7 @@ func ExampleConsoleRadio() {
 }
 
 func ExampleConsoleSidebar() {
-	_ = console.ConsoleSidebar{ID: "sidebar", Label: "CrashCart", Home: "/", Wordmark: "CrashCart", CloseLabel: "Close", Class: "", Footer: nil, Children: nil}.Render(os.Stdout)
+	_ = console.ConsoleSidebar{ID: "sidebar", AriaLabel: "CrashCart", Home: "/", Wordmark: "CrashCart", CloseAriaLabel: "Close", Class: "", Footer: nil, Children: nil}.Render(os.Stdout)
 	// Output: <nav class="cui-console-sidebar" id="sidebar" popover aria-label="CrashCart"><div class="cui-console-sidebar-header"><a class="cui-console-sidebar-wordmark" href="/">CrashCart</a><button class="cui-console-btn cui-console-btn-icon cui-console-sidebar-close" data-variant="plain" type="button" popovertarget="sidebar" popovertargetaction="hide" aria-label="Close"><svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></div><div class="cui-console-sidebar-body cui-console-menu" data-variant="sidebar"></div><div class="cui-console-sidebar-footer"></div></nav>
 }
 
@@ -140,7 +140,7 @@ func ExampleConsoleTabs() {
 		{Label: "Unresolved", Href: "?status=unresolved", Current: true},
 		{Label: "Resolved", Href: "?status=resolved", Current: false},
 	}
-	_ = console.ConsoleTabs{Label: "Status", Variant: console.ConsoleTabsVariantFilled, Tabs: tabs, Class: ""}.Render(os.Stdout)
+	_ = console.ConsoleTabs{AriaLabel: "Status", Variant: console.ConsoleTabsVariantFilled, Tabs: tabs, Class: ""}.Render(os.Stdout)
 	// Output: <div class="cui-console-tabs" data-variant="filled" role="group" aria-label="Status"><a class="cui-console-tab" href="?status=unresolved" aria-current="true">Unresolved</a><a class="cui-console-tab" href="?status=resolved">Resolved</a></div>
 }
 

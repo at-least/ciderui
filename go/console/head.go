@@ -11,12 +11,11 @@ import (
 // ConsoleHead names what the page belongs to (an app, a project) beside its
 // tabs.
 type ConsoleHead struct {
-	Name string
-	Href string
-	// Label is the tabs' aria-label.
-	Label string
-	Tabs  []ConsoleTab
-	Class string
+	Name          string
+	Href          string
+	TabsAriaLabel string
+	Tabs          []ConsoleTab
+	Class         string
 }
 
 func (d ConsoleHead) Render(w io.Writer) error {
@@ -25,6 +24,6 @@ func (d ConsoleHead) Render(w io.Writer) error {
 	}
 	return h.Div(class.Root("cui-console-head", d.Class),
 		h.A(h.Class("cui-console-head-name"), h.Href(d.Href), g.Text(d.Name)),
-		ConsoleTabs{Label: d.Label, Variant: ConsoleTabsVariantUnderlined, Tabs: d.Tabs, Class: ""},
+		ConsoleTabs{AriaLabel: d.TabsAriaLabel, Variant: ConsoleTabsVariantUnderlined, Tabs: d.Tabs, Class: ""},
 	).Render(w)
 }

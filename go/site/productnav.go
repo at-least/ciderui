@@ -10,8 +10,8 @@ import (
 )
 
 type ProductNav struct {
-	ID    string
-	Label string
+	ID        string
+	AriaLabel string
 	// Paddles: only on a page with a script that scrolls the row.
 	Paddles bool
 	Class   string
@@ -23,10 +23,10 @@ func (n ProductNav) Render(w io.Writer) error {
 	if n.ID == "" {
 		panic("site.ProductNav needs an ID")
 	}
-	if n.Label == "" {
-		panic("site.ProductNav needs a Label")
+	if n.AriaLabel == "" {
+		panic("site.ProductNav needs an AriaLabel")
 	}
-	return h.Nav(class.Root("cui-shelf cui-productnav", n.Class), h.Aria("label", n.Label),
+	return h.Nav(class.Root("cui-shelf cui-productnav", n.Class), h.Aria("label", n.AriaLabel),
 		h.Div(h.Class("cui-shelf-row"),
 			h.Ul(h.Class("cui-shelf-scroller"), h.ID(n.ID), n.Children),
 			g.If(n.Paddles, g.Group{
