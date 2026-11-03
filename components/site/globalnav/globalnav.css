@@ -1162,6 +1162,16 @@
       margin-right: -14px;
     }
 
+    /* hidden itself, so on closing its visibility does not change and the
+       delayed visibility below never runs: closed at once (the owner's) */
+    .cui-globalnav-flyout:popover-open {
+      visibility: hidden;
+
+      > * {
+        visibility: visible;
+      }
+    }
+
     .cui-globalnav:not(:has(:popover-open)) {
       .cui-globalnav-flyout {
         position: absolute;

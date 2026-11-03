@@ -1055,6 +1055,19 @@ export const cases = [
     ],
   },
   {
+    name: 'flyout-button-closed-at-once',
+    html: FLYOUT_NAV,
+    click: LAPTOPS_BUTTON,
+    press: 'Escape',
+    wait: 0,
+    widths: [1200],
+    height: 900,
+    checks: [
+      { target: LAPTOPS_FLY, props: ['visibility'], golden: 'opened by its button, closed at once, where the pointer\'s flyout runs its motion back' },
+      { target: FPANEL, props: ['visibility'], golden: 'its panel hidden at once with it' },
+    ],
+  },
+  {
     name: 'flyout-touch',
     html: FLYOUT_NAV,
     touch: true,
