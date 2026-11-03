@@ -87,3 +87,51 @@ func (t ConsoleTabs) Render(w io.Writer) error {
 	}
 	return h.Div(class.Root("cui-console-tabs", t.Class), h.Data("variant", "filled"), h.Role("group"), h.Aria("label", t.Label), tabs).Render(w)
 }
+
+// ConsoleAppearanceChoice is a choice of an [ConsoleAppearance]. Its zero value is none
+// chosen yet.
+type ConsoleAppearanceChoice struct{ value string }
+
+var (
+	// ConsoleAppearanceChoiceLight is Light, value="light".
+	ConsoleAppearanceChoiceLight = ConsoleAppearanceChoice{"light"}
+	// ConsoleAppearanceChoiceDark is Dark, value="dark".
+	ConsoleAppearanceChoiceDark = ConsoleAppearanceChoice{"dark"}
+	// ConsoleAppearanceChoiceAuto is the system's, value="auto".
+	ConsoleAppearanceChoiceAuto = ConsoleAppearanceChoice{"auto"}
+)
+
+// ConsoleAppearance is Light, Dark and Auto as a filled cui-console-tabs
+// (components/console/console-tabs) of radios (name="appearance"), the HIG's
+// segmented control, for a site that offers its own appearance; the page's
+// script applies the choice.
+type ConsoleAppearance struct {
+	// Chosen is the chosen one; the zero ConsoleAppearanceChoice for none yet (the
+	// page's script chooses it from what it stored).
+	Chosen ConsoleAppearanceChoice
+	// Class is the page's utilities on the <fieldset>; "" for none.
+	Class string
+}
+
+// Render writes the control.
+func (a ConsoleAppearance) Render(w io.Writer) error {
+	choices := []struct {
+		choice ConsoleAppearanceChoice
+		word   string
+	}{
+		{ConsoleAppearanceChoiceLight, "Light"},
+		{ConsoleAppearanceChoiceDark, "Dark"},
+		{ConsoleAppearanceChoiceAuto, "Auto"},
+	}
+	var labels g.Group
+	for _, c := range choices {
+		labels = append(labels, h.Label(h.Class("cui-console-tab"),
+			h.Input(h.Type("radio"), h.Name("appearance"), h.Value(c.choice.value), g.If(a.Chosen == c.choice, h.Checked())),
+			g.Text(c.word),
+		))
+	}
+	return h.FieldSet(class.Root("cui-console-tabs", a.Class), h.Data("variant", "filled"),
+		h.Legend(g.Text("Appearance")),
+		labels,
+	).Render(w)
+}

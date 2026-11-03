@@ -21,23 +21,23 @@ var badgeColors = []struct {
 	{console.ConsoleColorError, "Fatal"},
 }
 
-func badgeRow(class string, count int, variant console.ConsoleBadgeVariant, small, dot bool) g.Node {
+func badgeRow(count int, variant console.ConsoleBadgeVariant, small bool) g.Node {
 	var badges g.Group
 	for _, c := range badgeColors[:count] {
-		badges = append(badges, console.ConsoleBadge{Label: c.word, Color: c.color, Variant: variant, Small: small, Dot: dot, Class: ""})
+		badges = append(badges, console.ConsoleBadge{Label: c.word, Color: c.color, Variant: variant, Small: small, Class: ""})
 	}
-	return h.P(h.Class(class), badges)
+	return h.P(h.Class("flex flex-wrap gap-2"), badges)
 }
 
 func TestBadgeRendersTheExamples(t *testing.T) {
-	example.Check(t, badgeRow("flex flex-wrap gap-2", 6, console.ConsoleBadgeVariantTinted, false, false), "console/console-badge/examples/badges.html")
-	example.Check(t, badgeRow("flex flex-wrap gap-2", 6, console.ConsoleBadgeVariantGray, false, false), "console/console-badge/examples/gray.html")
-	example.Check(t, badgeRow("flex flex-wrap gap-4", 6, console.ConsoleBadgeVariantPlain, false, true), "console/console-badge/examples/plain.html")
-	example.Check(t, badgeRow("flex flex-wrap gap-2", 3, console.ConsoleBadgeVariantTinted, true, false), "console/console-badge/examples/small.html")
+	example.Check(t, badgeRow(6, console.ConsoleBadgeVariantTinted, false), "console/console-badge/examples/badges.html")
+	example.Check(t, badgeRow(6, console.ConsoleBadgeVariantGray, false), "console/console-badge/examples/gray.html")
+	example.Check(t, badgeRow(6, console.ConsoleBadgeVariantPlain, false), "console/console-badge/examples/plain.html")
+	example.Check(t, badgeRow(3, console.ConsoleBadgeVariantTinted, true), "console/console-badge/examples/small.html")
 }
 
 func TestBadgeAnEmptyLabelPanics(t *testing.T) {
 	mustPanic(t, "needs a Label", func() {
-		example.Render(console.ConsoleBadge{Label: "", Color: console.ConsoleColorNeutral, Variant: console.ConsoleBadgeVariantTinted, Small: false, Dot: false, Class: ""})
+		example.Render(console.ConsoleBadge{Label: "", Color: console.ConsoleColorNeutral, Variant: console.ConsoleBadgeVariantTinted, Small: false, Class: ""})
 	})
 }

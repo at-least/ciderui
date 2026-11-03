@@ -1,13 +1,13 @@
 +++
 title = "Console Field"
-description = "App Store Connect’s text field, dropdown and multi-line field, with their labels."
+description = "App Store Connect’s text field, dropdown, multi-line field and file field, with their labels."
 
 [extra]
 category = "Console"
 image = "pictures/console-field.png"
 +++
 
-App Store Connect’s fields: a text field, a dropdown and a multi-line field, each a rounded rectangle on white inside its edge; a label over one, help under it, an error in its place. Each is the page’s own `<input>`, `<select>` or `<textarea>` with the class.
+App Store Connect’s fields: a text field, a dropdown, a multi-line field and a file field, each a rounded rectangle on white inside its edge; a label over one, help under it, an error in its place. Each is the page’s own `<input>`, `<select>` or `<textarea>` with the class.
 
 ```css
 @import "ciderui/components/console/console-field/console-field.css";
@@ -17,7 +17,7 @@ App Store Connect’s fields: a text field, a dropdown and a multi-line field, e
 
 | class or attribute | what |
 | --- | --- |
-| `cui-console-field` | an `<input>`, `<select>` or `<textarea>`: 30px, 13px |
+| `cui-console-field` | an `<input>`, `<select>` or `<textarea>`: 30px, 13px; on an `<input type="file">`, its button the blue word |
 | `aria-invalid="true"` | in error: a red edge on a faint red |
 | `disabled` | not available now |
 | `data-size="sm"`, `"lg"`, `"xl"` | 22px, 40px, 50px |
@@ -30,6 +30,12 @@ App Store Connect’s fields: a text field, a dropdown and a multi-line field, e
 ## Dropdown
 
 {{ <cui_example file="console-field/select" title="A console dropdown" pad={true} /> }}
+
+## File
+
+A file to send: its button the blue word that chooses a file, the file’s name after it.
+
+{{ <cui_example file="console-field/file" title="Console file fields" pad={true} /> }}
 
 ## Sizes
 

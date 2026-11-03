@@ -11,11 +11,11 @@ import (
 
 func ExampleConsoleAppearance() {
 	_ = console.ConsoleAppearance{Chosen: console.ConsoleAppearanceChoice{}, Class: ""}.Render(os.Stdout)
-	// Output: <fieldset class="cui-console-appearance"><legend>Appearance</legend><label class="cui-console-appearance-choice"><input type="radio" name="appearance" value="light"><span>Light</span></label><label class="cui-console-appearance-choice"><input type="radio" name="appearance" value="dark"><span>Dark</span></label><label class="cui-console-appearance-choice"><input type="radio" name="appearance" value="auto"><span>Auto</span></label></fieldset>
+	// Output: <fieldset class="cui-console-tabs" data-variant="filled"><legend>Appearance</legend><label class="cui-console-tab"><input type="radio" name="appearance" value="light">Light</label><label class="cui-console-tab"><input type="radio" name="appearance" value="dark">Dark</label><label class="cui-console-tab"><input type="radio" name="appearance" value="auto">Auto</label></fieldset>
 }
 
 func ExampleConsoleBadge() {
-	_ = console.ConsoleBadge{Label: "Fatal", Color: console.ConsoleColorError, Variant: console.ConsoleBadgeVariantTinted, Small: false, Dot: false, Class: ""}.Render(os.Stdout)
+	_ = console.ConsoleBadge{Label: "Fatal", Color: console.ConsoleColorError, Variant: console.ConsoleBadgeVariantTinted, Small: false, Class: ""}.Render(os.Stdout)
 	// Output: <span class="cui-console-badge" data-color="error">Fatal</span>
 }
 

@@ -40,7 +40,6 @@ export const cases = [
       ...COLORS.map((c) => ({ target: at(c), props: ['background-color'], golden: 'no fill: transparent, where the toolkit writes its transparent white, the same nothing' })),
       { target: at('neutral'), props: ['color'], tb: [`${B}-colorRole-neutral-variant-plain-color`] },
       { target: at('neutral'), props: ['padding-left', 'padding-right'], golden: 'plain, no room at its sides' },
-      { target: `${at('error')} .cui-console-badge-dot`, props: ['box-width', 'box-height', 'border-top-left-radius', 'background-color'], golden: 'a dot before the label, 0.5em, in its label\'s color: the toolkit\'s badge has none' },
     ],
   },
   {

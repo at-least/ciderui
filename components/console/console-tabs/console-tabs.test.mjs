@@ -1,4 +1,4 @@
-import { examples } from '../../../test/harness.mjs';
+import { OUTLINE, examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const T = 'component-Tabs';
@@ -10,6 +10,8 @@ const FITTED = 'fitted to 4.5:1 (tokens.css, decision 21)';
 const REST = '.cui-console-tab[href="#issues"]';
 const PILL = '.cui-console-tab[href="#30d"]';
 const CHOSEN = '.cui-console-tab[aria-current="true"]';
+const RADIO = 'label.cui-console-tab:not(:has(input:checked))';
+const CHECKED = 'label.cui-console-tab:has(input:checked)';
 
 export const cases = [
   {
@@ -86,6 +88,48 @@ export const cases = [
       { target: CHOSEN, props: ['background-color', 'color'], tb: [tab('filledGray', 'default', 'true', 'backgroundColor'), tab('filledGray', 'default', 'true', 'color')] },
       { target: CHOSEN, props: ['background-color'], state: 'hover', golden: `the chosen pill hovered blue-600, a step darker: white on the toolkit's lighter blue is 3.9:1, ${FITTED}` },
       { target: CHOSEN, props: ['background-color', 'color'], state: 'active', tb: [tab('filledGray', 'press', 'true', 'backgroundColor'), tab('filledGray', 'press', 'true', 'color')] },
+    ],
+  },
+  {
+    name: 'tabs of radios',
+    html: ex('appearance'),
+    widths: [1200, 390],
+    checks: [
+      { target: RADIO, props: SIZE, tb: size('md') },
+      { target: RADIO, props: ['background-color', 'padding-left', 'padding-right', 'border-top-left-radius'], tb: [tab('filledGray', 'default', 'false', 'backgroundColor'), `${T}-defaultMdPaddingInline`, `${T}-defaultMdPaddingInline`, `${T}-variant-controlShape-capsule-controlSize-md-borderRadius`] },
+      { target: CHECKED, props: ['background-color', 'color'], tb: [tab('filledGray', 'default', 'true', 'backgroundColor'), tab('filledGray', 'default', 'true', 'color')] },
+      { target: RADIO, props: ['color', 'cursor'], golden: 'a radio\'s tab as a link\'s: the blue label on the gray pill, the pointer' },
+      { target: 'fieldset.cui-console-tabs', props: ['border-top-width', 'border-left-width', 'padding-left', 'padding-top', 'margin-left', 'column-gap'], golden: 'a <fieldset> drawn as the row: no edge, no room, the filled gap' },
+      { target: 'fieldset.cui-console-tabs > legend', props: ['box-width', 'position'], golden: 'the legend read, not shown' },
+      { target: `${RADIO} > input`, props: ['opacity', 'box-width'], golden: 'the radio read, not shown' },
+      { target: CHECKED, props: ['outline-style'], golden: 'no ring at rest' },
+    ],
+  },
+  {
+    name: 'tabs of radios focused',
+    html: ex('appearance'),
+    widths: [1200],
+    press: ['Tab'],
+    checks: [
+      { target: CHECKED, props: OUTLINE, golden: 'the radio hidden, the one focus ring around its tab' },
+    ],
+  },
+  {
+    name: 'tabs of radios touch',
+    html: ex('appearance'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: RADIO, props: ['box-height', 'min-width'], golden: 'a radio\'s tab 44px each way at least on a touch screen, as a link\'s' },
+    ],
+  },
+  {
+    name: 'tabs of radios forced colors',
+    html: ex('appearance'),
+    widths: [1200],
+    forcedColors: true,
+    checks: [
+      { target: CHECKED, props: ['background-color', 'color'], golden: 'the checked tab the theme\'s Highlight under HighlightText, as a chosen link\'s' },
     ],
   },
   {

@@ -5,7 +5,6 @@
 
     display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
     height: 20px;
     padding: 0 6.5px;
     border-radius: 15px;
@@ -54,7 +53,6 @@
   }
 
   .cui-console-badge[data-size="sm"] {
-    gap: 0.1875rem;
     height: 18px;
     padding-inline: 5px;
     border-radius: 11px;
@@ -64,13 +62,5 @@
     &[data-variant="plain"] {
       padding-inline: 0;
     }
-  }
-
-  .cui-console-badge-dot {
-    flex: none;
-    width: 0.5em;
-    height: 0.5em;
-    border-radius: 50%;
-    background-color: currentColor;
   }
 }

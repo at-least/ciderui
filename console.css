@@ -1,4 +1,3 @@
-@import "./components/console/console-appearance/console-appearance.css";
 @import "./components/console/console-badge/console-badge.css";
 @import "./components/console/console-banner/console-banner.css";
 @import "./components/console/console-bar/console-bar.css";
@@ -15,7 +14,6 @@
 @import "./components/console/console-dl/console-dl.css";
 @import "./components/console/console-empty/console-empty.css";
 @import "./components/console/console-field/console-field.css";
-@import "./components/console/console-file/console-file.css";
 @import "./components/console/console-head/console-head.css";
 @import "./components/console/console-hint/console-hint.css";
 @import "./components/console/console-link/console-link.css";

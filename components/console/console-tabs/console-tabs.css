@@ -56,6 +56,24 @@
     }
   }
 
+  /* a choice the form sends: a <fieldset> of <label> tabs, each round its radio */
+  :where(fieldset.cui-console-tabs) {
+    min-inline-size: min-content;
+    margin: 0;
+    border: 0;
+    padding: 0;
+
+    & > legend {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+  }
+
   .cui-console-tab {
     --cui-console-tab-fill: transparent;
     --cui-console-tab-fill-hover: transparent;
@@ -100,11 +118,30 @@
       color: var(--cui-console-tab-label-press);
     }
 
-    &:is([aria-current]:not([aria-current="false"]), [aria-selected="true"]) {
+    &:is([aria-current]:not([aria-current="false"]), [aria-selected="true"], :has(> input[type="radio"]:checked)) {
       --cui-console-tab-label-hover: var(--cui-c-console-brand-label-primary);
       --cui-console-tab-label-press: var(--cui-c-console-brand-label-primary);
 
       border-bottom-color: currentColor;
+    }
+
+    &:where(label) {
+      position: relative;
+    }
+
+    & > input[type="radio"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: 0;
+      opacity: 0;
+      appearance: none;
+    }
+
+    /* the radio is hidden: its ring goes around the tab */
+    &:has(> input:focus-visible) {
+      outline: var(--cui-focus-ring);
+      outline-offset: var(--cui-focus-ring-offset);
     }
 
     &[aria-disabled="true"] {
@@ -145,7 +182,7 @@
       border-bottom: 0;
       border-radius: 15px;
 
-      &:is([aria-current]:not([aria-current="false"]), [aria-selected="true"]) {
+      &:is([aria-current]:not([aria-current="false"]), [aria-selected="true"], :has(> input[type="radio"]:checked)) {
         --cui-console-tab-fill: var(--cui-c-console-brand-accent-primary);
         --cui-console-tab-fill-hover: var(--cui-c-console-brand-fill-hover);
         --cui-console-tab-fill-press: var(--cui-c-console-brand-fill-press);

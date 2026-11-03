@@ -19,11 +19,11 @@ App Store Connect’s tab bar, in its two forms: underlined, a page’s sections
 
 | class or attribute | what |
 | --- | --- |
-| `cui-console-tabs` | the bar: a `<nav>` with an `aria-label`, or a group |
+| `cui-console-tabs` | the bar: a `<nav>` with an `aria-label`, a group, or a `<fieldset>` of radios with its `<legend>` |
 | `data-variant="filled"` | pills, for a choice of a few |
 | `data-size="sm"`, `"lg"`, `"xl"` | 22px, 40px, 50px |
 | `data-overflow`, `data-overflow-start`, `data-overflow-end` | the host’s script marks the bar’s scroll state; the side still hiding content fades (the phone row has no scrollbar) |
-| `cui-console-tab` | a tab, a link |
+| `cui-console-tab` | a tab, a link; or a `<label>` round its radio, checked for the chosen one |
 | `aria-current` | the current one (`"page"` for a page, `"true"` for a choice) |
 | `aria-disabled="true"` | not available now |
 
@@ -31,8 +31,14 @@ App Store Connect’s tab bar, in its two forms: underlined, a page’s sections
 
 {{ <cui_example file="console-tabs/filled" title="Filled tabs" pad={true} /> }}
 
+## A choice the form sends
+
+Filled tabs of radios, where the choice is a setting rather than a page: Light, Dark and Auto, for a site that keeps its own appearance. Apple’s Human Interface Guidelines advise against an app-specific appearance setting; follow the system’s where you can. The radios are real, so the keyboard moves between them; the page’s script applies the choice and remembers it.
+
+{{ <cui_example file="console-tabs/appearance" title="Light chosen" pad={true} /> }}
+
 ## Large
 
 {{ <cui_example file="console-tabs/large" title="Large tabs" pad={true} /> }}
 
-The Go module writes either with `console.ConsoleTabs` and its `console.ConsoleTab`s.
+The Go module writes either with `console.ConsoleTabs` and its `console.ConsoleTab`s, and the appearance choice with `console.ConsoleAppearance` and `console.ConsoleAppearanceChoice`.

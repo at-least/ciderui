@@ -129,7 +129,6 @@ The console set, App Store Connect's newer look's parts (`components/console/`):
 
 | component | the part |
 | --- | --- |
-| `cui-console-appearance` | Light, Dark and Auto as one segmented control: DocC's footer control, for a site that offers the choice (the HIG's Dark Mode advises against one; crashcart's, the owner's call) |
 | `cui-console-badge` | a short word on a tinted capsule |
 | `cui-console-banner` | a message on a rounded, tinted panel |
 | `cui-console-bar` | the band across the top of a console's page |
@@ -145,8 +144,7 @@ The console set, App Store Connect's newer look's parts (`components/console/`):
 | `cui-console-disclosure` | a `<details>` hiding what is not needed yet, the HIG's disclosure controls |
 | `cui-console-dl` | an item's facts, labels beside their values |
 | `cui-console-empty` | what a list or a chart shows with nothing in it |
-| `cui-console-field` | a text field, a dropdown, a multi-line field, and a form field's label, help and error |
-| `cui-console-file` | the native file input drawn as a text field |
+| `cui-console-field` | a text field, a dropdown, a multi-line field, a file field (the native file input), and a form field's label, help and error |
 | `cui-console-head` | what a page belongs to, by name, with its tabs |
 | `cui-console-hint` | an info button opening a popover |
 | `cui-console-link` | a link |
@@ -163,7 +161,7 @@ The console set, App Store Connect's newer look's parts (`components/console/`):
 | `cui-console-skip` | the skip link |
 | `cui-console-status` | a status: a colored circle before its word |
 | `cui-console-table` | the table, a class on the page's own `<table>` |
-| `cui-console-tabs` | the tab bar, underlined (a page's sections) or filled (the HIG's segmented control) |
+| `cui-console-tabs` | the tab bar, underlined (a page's sections) or filled (the HIG's segmented control), its tabs links, or radios in a `<fieldset>` |
 | `cui-console-thumb` | a screenshot shown small, a link to itself |
 | `cui-console-toast` | a word that the page did what was asked (the toolkit has no toast) |
 
@@ -180,7 +178,7 @@ The docs set, Apple's developer documentation's parts (DocC on developer.apple.c
 | `cui-docs-page` | the page: the bar, the navigator's column (a sheet below 1024px), the content's columns |
 | `cui-docs-topics` | See Also and Topics |
 
-Not built: DocC's footer appearance control in the docs set, which needs the page's script (decision 11): a docs page is light, or dark by `cui-dark` (rule 11). The console's `cui-console-appearance` is that control at the console's size.
+Not built: DocC's footer appearance control in the docs set, which needs the page's script (decision 11): a docs page is light, or dark by `cui-dark` (rule 11). The console's appearance choice is filled `cui-console-tabs` of radios (decision 27).
 
 Not measured: the store's checkout pages (my recommendation, which the owner took, 「都按照你的推薦」, 2026-10-21): they are not reachable without a bag, a headless browser's Add to Bag is refused (a 541), and getting past that would be getting past apple.com's bot protection; their form parts were read on the gift card's, the trade-in's and the feedback form's pages. So the global nav's bag is an empty bag's (`bag-flyout:*`): what it shows with something in it, and the count on the bag's icon, are not measured. Nor a phone's own screen: the taps are the iOS simulator's and Chromium's (`reference/tap/`); apple.com's pages are tapped in Chromium alone (`tap-*:*`). When a part is built, its probes are added where the reference's are not enough.
 
@@ -257,10 +255,11 @@ Numbered as cited across the repository; a new one takes the next number.
 20. **The console steps at the toolkit's 640px and 1024px** (stated, 2026-10-24: 「tb 自己的 640/1024px」), its page scale's (desktop from 640px, mobile below), inside each part, as the global nav's 834px is its own.
 21. **The console's colors are fitted to 4.5:1** (stated, 2026-10-24, asked whether to keep Apple's or fit them: 「調到 4.5:1」; decision 6 applied to the console): where a console color falls short of its job's contrast (text 4.5:1 on its ground, a label 4.5:1 on its fill, a field's edge 3:1 as a control's boundary), that side is the nearest step of the same ramp that reaches it, or the same step at another alpha. A part's text is held on a card's ground as well as the page's (a card is lighter than the page in dark). Each fitted side, its ramp and its reason are tokens.css's and `test/tokens.mjs`'s, which holds each to its ramp and its minimum on its grounds.
 22. **The site and console sets** (stated, 2026-10-31: 「好，分兩套」, then 「Everything as first proposed」): apple.com's parts (its marketing pages', its store's, its Newsroom's, which share the global nav, the footer, the button and `--cui-c-*`) and the console's (decision 19), each its directory (`components/site/`, `components/console/`), its Go package (`site`, `console`; the names kept whole, the owner's pick over short ones) and its entry (`site.css`, `console.css`: every part of the set by name order, which `css_test.go` holds). The docs set is the third (decision 23).
-23. **The docs set, `cui-docs-*`** (stated, 2026-11-01: asked whether ciderui should have a set for code docs, 「要，文件站改成 developer.apple.com 的樣子」): Apple's developer documentation's parts (DocC on developer.apple.com), its directory `components/docs/`, its Go package `docs`, its entry `docs.css`. Its colors are apple.com's slots where DocC's are the same values on both sides (its text, secondary text and links, the page's ground, a table's edge the divider: each measured equal light and dark) and `--cui-c-docs-*` for DocC's own. Its first site is ciderui's documentation, through ciderui-zola's docs layout: the documentation's pages in DocC's page; the home and the news stay the site set's. The DocC parts already in the console set (`cui-console-listing`, `cui-console-copy`, `cui-console-appearance`) stay there, DocC at the console's size; the docs set draws DocC at its own (its code 15px where the console's is 13px).
+23. **The docs set, `cui-docs-*`** (stated, 2026-11-01: asked whether ciderui should have a set for code docs, 「要，文件站改成 developer.apple.com 的樣子」): Apple's developer documentation's parts (DocC on developer.apple.com), its directory `components/docs/`, its Go package `docs`, its entry `docs.css`. Its colors are apple.com's slots where DocC's are the same values on both sides (its text, secondary text and links, the page's ground, a table's edge the divider: each measured equal light and dark) and `--cui-c-docs-*` for DocC's own. Its first site is ciderui's documentation, through ciderui-zola's docs layout: the documentation's pages in DocC's page; the home and the news stay the site set's. The DocC parts already in the console set (`cui-console-listing`, `cui-console-copy`, `cui-console-appearance`, merged into `cui-console-tabs` by decision 27) stay there, DocC at the console's size; the docs set draws DocC at its own (its code 15px where the console's is 13px).
 24. **The docs set steps at DocC's own widths** (its stylesheets' media queries, measured 2026-11-01: 735, 767, 1023, 1250 and 1499px, each read on both sides), inside each part (my recommendation: DocC's steps are what its parts are measured at; apple.com's 1069px is not one of them).
 25. **The quietest layout, by the HIG** (stated, 2026-11-02: 「ciderui是為agent coding最佳化，可是設計出來的版面要最簡潔，不要用花俏的設計去搶使用者的注意力，所以即使是參考apple的設計，也要照著hig跟最簡潔來取捨」): agents write the markup, people read the page, and nothing on it competes with the content for their attention. apple.com, measured, stays the standard for how a part looks (decision 2), not for whether a part or an effect is there: where apple.com draws an effect that only draws the eye (an entrance animation, a lift on hover, a staggered reveal), the HIG and the simplest page decide, and the effect is left out or kept to what the HIG asks of it (feedback for an action, a change of state made clear). A component or a variant that exists only to call attention is not added.
 26. **Markup in Go, with gomponents** (stated, 2026-11-02: 「我希望都轉成go」, gomponents chosen over templ; then 「rust 清除掉就好」, the Rust crate removed): a component is a struct whose every field a call writes, exhaustruct holding it; plain Go, so gofmt, vet and gopls rename work on it, with no generate step (templ, tried on `site.Field`, dropped text after a raw node and needs a generate step whose stale output runs with no error).
+27. **One part for one job** (stated, 2026-11-03: 「已經做的元件不用刻意刪掉，而是有重複的功能可以整併」): where two parts of a set do the same job, one is kept and the other becomes its variant or goes. The console's appearance control (Light, Dark and Auto, for a site that offers the choice: the HIG's Dark Mode advises against one; crashcart's, the owner's call) is filled `cui-console-tabs` of radios, not DocC's outlined control: one segmented control, the HIG's; a file field is `cui-console-field` on `<input type="file">`, as a multi-line field is on `<textarea>`; a colored mark before a word is `cui-console-status`, the badge drawing none. Parts that look alike but are measured from different sources (the site set's `cui-btn`, the console's `cui-console-btn`) are not one job: each set keeps its own (decisions 19, 23).
 
 ## Assumptions
 

@@ -8,6 +8,9 @@ const OFF = '#dsn';
 const size = (s) => [`${T}-controlSize-${s}-blockSize`, `${T}-controlShape-roundedRect-controlSize-${s}-paddingInlineStart`, `${T}-controlShape-roundedRect-controlSize-${s}-paddingInlineEnd`, `${T}-controlShape-roundedRect-controlSize-${s}-borderRadius`, `${T}-controlSize-${s}-textStyle-fontSize`, `${T}-controlSize-${s}-textStyle-lineHeight`, `${T}-controlSize-${s}-textStyle-fontWeight`];
 const SIZE = ['box-height', 'padding-left', 'padding-right', 'border-top-left-radius', 'font-size', 'line-height', 'font-weight'];
 const FITTED = 'fitted (tokens.css, decision 21)';
+const FILE = 'component-FileUpload-variant';
+const FILE_ON = '#dsym';
+const FILE_OFF = '#off';
 
 export const cases = [
   {
@@ -79,6 +82,57 @@ export const cases = [
     checks: [
       { target: NAME, props: ['background-color', 'border-top-color', 'color'], golden: 'the dark side derived; its edge fitted to 3:1 on black at 0.42 (tokens.css, decisions 18, 21)' },
       { target: BAD, props: ['border-top-color', 'background-color'], golden: 'the dark side derived (tokens.css, decision 18)' },
+    ],
+  },
+  {
+    name: 'file touch',
+    html: ex('file'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: FILE_ON, props: ['box-height', 'padding-top', 'padding-bottom'], golden: 'the field 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), its line centered in it: a file input\'s text sits at its padding' },
+    ],
+  },
+  {
+    name: 'file',
+    html: ex('file'),
+    widths: [1200],
+    checks: [
+      { target: FILE_ON, props: ['box-height', 'padding-left', 'padding-right', 'border-top-left-radius', 'font-size', 'line-height', 'font-weight', 'background-color', 'color'], tb: [`${FILE}-controlSize-md-blockSize`, `${FILE}-controlShape-roundedRect-controlSize-md-paddingInlineStart`, `${FILE}-controlShape-roundedRect-controlSize-md-paddingInlineEnd`, `${FILE}-controlShape-roundedRect-controlSize-md-borderRadius`, `${FILE}-controlSize-md-textStyle-fontSize`, `${FILE}-controlSize-md-textStyle-lineHeight`, `${FILE}-controlSize-md-textStyle-fontWeight`, `${FILE}-colorRole-neutral-variant-stroked-backgroundColor`, `${FILE}-effect-default-anatomy-ControlText-color`] },
+      { target: FILE_ON, pseudo: '::file-selector-button', props: ['color'], tb: [`${FILE}-effect-default-empty-true-anatomy-ControlText-color`] },
+      { target: FILE_ON, pseudo: '::file-selector-button', props: ['background-color', 'border-top-width', 'margin-right'], golden: 'its button the blue word alone, 8px before the name' },
+      { target: FILE_ON, props: ['border-top-color', 'border-top-width'], golden: 'its edge the field\'s, coolGray-800 at 0.58 (3:1; the toolkit\'s 0.18 is 1.4:1: tokens.css, decision 21)' },
+      { target: FILE_OFF, props: ['background-color'], tb: [`${FILE}-effect-disabled-variant-stroked-backgroundColor`] },
+      { target: FILE_OFF, props: ['color'], tb: [`${FILE}-effect-disabled-anatomy-ControlText-color`] },
+      { target: FILE_OFF, pseudo: '::file-selector-button', props: ['color'], tb: [`${FILE}-effect-disabled-anatomy-ControlText-color`] },
+      { target: FILE_OFF, props: ['border-top-color'], golden: 'disabled, the tertiary edge, as a disabled checkbox\'s and radio\'s' },
+      { target: FILE_OFF, props: ['cursor'], golden: 'disabled, no pointer over it, as over a disabled text field' },
+    ],
+  },
+  {
+    name: 'file focus',
+    html: ex('file'),
+    widths: [1200],
+    press: ['Tab'],
+    checks: [
+      { target: FILE_ON, props: ['border-top-color', 'outline-width', 'outline-style', 'outline-color'], golden: 'focused, the text field\'s dark edge and 3px halo (the toolkit\'s focus outline)' },
+    ],
+  },
+  {
+    name: 'file phone',
+    html: ex('file'),
+    widths: [639, 390],
+    checks: [
+      { target: FILE_ON, props: ['font-size', 'line-height'], tb: ['typography-textStyle-bodyMobileRegular-fontSize', 'typography-textStyle-bodyMobileRegular-lineHeight'] },
+    ],
+  },
+  {
+    name: 'file dark',
+    html: `<div class="cui-dark">${ex('file')}</div>`,
+    widths: [1200],
+    checks: [
+      { target: FILE_ON, props: ['background-color', 'border-top-color', 'color'], golden: 'the dark side derived; its edge fitted (tokens.css, decisions 18, 21)' },
+      { target: FILE_ON, pseudo: '::file-selector-button', props: ['color'], golden: 'the dark side derived (tokens.css, decision 18)' },
     ],
   },
 ];

@@ -47,7 +47,7 @@ var (
 
 // ConsoleBadge is cui-console-badge (components/console/console-badge): App Store
 // Connect's newer look's badge, a short word on a pill tinted in its color,
-// on the gray, or plain; with Dot, a dot before it.
+// on the gray, or plain. A colored mark before a word is [ConsoleStatus].
 type ConsoleBadge struct {
 	// Label is its word. Required: an empty one panics.
 	Label string
@@ -57,8 +57,6 @@ type ConsoleBadge struct {
 	Variant ConsoleBadgeVariant
 	// Small is whether it is small (data-size="sm").
 	Small bool
-	// Dot is whether a dot in its color goes before its word.
-	Dot bool
 	// Class is the page's utilities on the badge; "" for none.
 	Class string
 }
@@ -72,7 +70,6 @@ func (b ConsoleBadge) Render(w io.Writer) error {
 		optionalAttr("data-color", b.Color.value),
 		optionalAttr("data-variant", b.Variant.value),
 		g.If(b.Small, h.Data("size", "sm")),
-		g.If(b.Dot, h.Span(h.Class("cui-console-badge-dot"))),
 		g.Text(b.Label),
 	).Render(w)
 }
