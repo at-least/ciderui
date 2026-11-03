@@ -21,9 +21,7 @@ type DocsNavigatorGroup struct {
 }
 
 type DocsNavigatorPage struct {
-	Label string
-	// Href: its path's words must be unique among the navigator's pages, or
-	// two chevrons share one checkbox id (chevronID); nothing checks it.
+	Label   string
 	Href    string
 	Current bool
 	// Open: set it on the current page's ancestors, as DocC does.
@@ -50,7 +48,7 @@ func (n DocsNavigator) Render(w io.Writer) error {
 	}
 	return h.Nav(class.Root("cui-docs-navigator", n.Class), h.Aria("label", "Navigator"),
 		h.A(h.Class("cui-docs-navigator-title"), h.Href(n.Href), g.Text(n.Title)),
-		navigatorRows(n.Items),
+		navigatorRows(n.Items, map[string]bool{}),
 		h.P(h.Class("cui-docs-navigator-empty"), g.Attr("hidden"), g.Text("No results found.")),
 		h.Div(h.Class("cui-docs-navigator-filter"), h.Role("search"), g.Attr("hidden"),
 			h.Label(h.Class("cui-docs-navigator-field"),
@@ -62,21 +60,21 @@ func (n DocsNavigator) Render(w io.Writer) error {
 	).Render(w)
 }
 
-func navigatorRows(items []DocsNavigatorItem) g.Node {
-	return h.Ul(h.Class("cui-docs-navigator-list"), g.Map(items, navigatorRow))
+func navigatorRows(items []DocsNavigatorItem, seen map[string]bool) g.Node {
+	return h.Ul(h.Class("cui-docs-navigator-list"), g.Map(items, func(item DocsNavigatorItem) g.Node { return navigatorRow(item, seen) }))
 }
 
-func navigatorRow(item DocsNavigatorItem) g.Node {
+func navigatorRow(item DocsNavigatorItem, seen map[string]bool) g.Node {
 	switch item := item.(type) {
 	case DocsNavigatorGroup:
 		return h.Li(h.Class("cui-docs-navigator-group"), g.Text(item.Title))
 	case DocsNavigatorPage:
-		return navigatorPage(item)
+		return navigatorPage(item, seen)
 	}
 	panic("docs.DocsNavigator: a nil item")
 }
 
-func navigatorPage(page DocsNavigatorPage) g.Node {
+func navigatorPage(page DocsNavigatorPage, seen map[string]bool) g.Node {
 	if page.Label == "" {
 		panic("docs.DocsNavigator: a page needs a Label")
 	}
@@ -92,6 +90,10 @@ func navigatorPage(page DocsNavigatorPage) g.Node {
 		)
 	}
 	id := chevronID(page.Href)
+	if seen[id] {
+		panic("docs.DocsNavigator: two pages share the chevron id " + id)
+	}
+	seen[id] = true
 	return h.Li(h.Class("cui-docs-navigator-item"),
 		h.Input(h.Class("cui-docs-navigator-toggle"), h.Type("checkbox"), h.ID(id), h.Aria("label", page.Label), g.If(page.Open, h.Checked())),
 		h.Div(h.Class("cui-docs-navigator-row"),
@@ -99,7 +101,7 @@ func navigatorPage(page DocsNavigatorPage) g.Node {
 			icon.DocsCollection.Class("cui-docs-navigator-icon"),
 			navigatorLink(page),
 		),
-		navigatorRows(page.Children),
+		navigatorRows(page.Children, seen),
 	)
 }
 

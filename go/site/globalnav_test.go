@@ -224,3 +224,13 @@ func TestGlobalNavABagLinkWithNoTextPanics(t *testing.T) {
 		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Dark: false, Clear: false, Class: ""})
 	})
 }
+
+func TestGlobalNavLargeLinksAfterTheFirstGroupPanics(t *testing.T) {
+	flyout := []site.FlyoutGroup{
+		{Heading: "Shop", Large: nil, Links: nil},
+		{Heading: "More", Large: []site.Link{{Text: "x", Href: "/x"}}, Links: nil},
+	}
+	mustPanic(t, "site.GlobalNav's Large links are only in a flyout's first group", func() {
+		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: []site.NavLink{{Text: "Store", Href: "/store", Flyout: flyout}}, Search: nil, Bag: nil, Dark: false, Clear: false, Class: ""})
+	})
+}

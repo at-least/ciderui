@@ -97,7 +97,7 @@ func ExampleLocalNav() {
 func ExampleModal() {
 	page := g.Group{
 		site.ModalButton{Modal: "models", Class: "cui-btn", Children: g.Text("Show more")},
-		site.Modal{ID: "models", Labelledby: "models-title", Page: false, Class: "", Children: h.H2(h.ID("models-title"), g.Text("Not sure which size to get?"))},
+		site.Modal{ID: "models", Labelledby: "models-title", Page: false, Dark: false, Class: "", Children: h.H2(h.ID("models-title"), g.Text("Not sure which size to get?"))},
 	}
 	_ = page.Render(os.Stdout)
 	// Output: <button class="cui-btn" type="button" commandfor="models" command="show-modal">Show more</button><dialog class="cui-modal" id="models" aria-labelledby="models-title"><div class="cui-modal-panel"><form method="dialog"><button class="cui-modal-close" aria-label="Close"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4.88 4.88 15.12 15.12M15.12 4.88 4.88 15.12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></button></form><h2 id="models-title">Not sure which size to get?</h2></div></dialog>

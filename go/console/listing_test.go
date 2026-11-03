@@ -62,3 +62,11 @@ func TestListingAFirstLineOf0Panics(t *testing.T) {
 		example.Render(console.ConsoleListing{FirstLine: 0, Lines: []string{"a"}, Highlighted: 0, Class: ""})
 	})
 }
+
+func TestListingAHighlightedLineOutsideItsLinesPanics(t *testing.T) {
+	for _, highlighted := range []uint{39, 42} {
+		mustPanic(t, "ConsoleListing's Highlighted is one of its lines", func() {
+			example.Render(console.ConsoleListing{FirstLine: 40, Lines: []string{"a", "b"}, Highlighted: highlighted, Class: ""})
+		})
+	}
+}

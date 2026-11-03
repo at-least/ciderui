@@ -14,9 +14,9 @@ type Modal struct {
 	// Labelledby: the id of a headline in Children.
 	Labelledby string
 	Page       bool
-	// Class: cui-dark only with Page.
-	Class    string
-	Children g.Node
+	Dark       bool
+	Class      string
+	Children   g.Node
 }
 
 func (m Modal) Render(w io.Writer) error {
@@ -26,11 +26,18 @@ func (m Modal) Render(w io.Writer) error {
 	if m.Labelledby == "" {
 		panic("site.Modal needs the id of its headline (Labelledby)")
 	}
+	if m.Dark && !m.Page {
+		panic("site.Modal is Dark only with Page")
+	}
 	closeIcon := icon.Close
 	if m.Page {
 		closeIcon = icon.CloseSmall
 	}
-	return h.Dialog(class.Root("cui-modal", m.Class), g.If(m.Page, h.Data("variant", "page")), h.ID(m.ID), h.Aria("labelledby", m.Labelledby),
+	block := "cui-modal"
+	if m.Dark {
+		block = "cui-modal cui-dark"
+	}
+	return h.Dialog(class.Root(block, m.Class), g.If(m.Page, h.Data("variant", "page")), h.ID(m.ID), h.Aria("labelledby", m.Labelledby),
 		h.Div(h.Class("cui-modal-panel"),
 			h.Form(h.Method("dialog"), h.Button(h.Class("cui-modal-close"), h.Aria("label", "Close"), closeIcon)),
 			m.Children,

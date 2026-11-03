@@ -15,7 +15,7 @@ type ConsoleListing struct {
 	FirstLine uint
 	// Lines: each without its newline.
 	Lines []string
-	// Highlighted is a line number, as FirstLine counts; 0 for none.
+	// Highlighted: 0 for none.
 	Highlighted uint
 	Class       string
 }
@@ -26,6 +26,9 @@ func (l ConsoleListing) Render(w io.Writer) error {
 	}
 	if l.FirstLine == 0 {
 		panic("console.ConsoleListing's FirstLine is at least 1")
+	}
+	if l.Highlighted != 0 && (l.Highlighted < l.FirstLine || l.Highlighted >= l.FirstLine+uint(len(l.Lines))) {
+		panic("console.ConsoleListing's Highlighted is one of its lines")
 	}
 	var lines g.Group
 	for i, line := range l.Lines {

@@ -29,4 +29,4 @@ The product pages’ modal is the same dialog with `data-variant="page"`: the pa
 
 {{ <cui_example file="modal/page" title="A product page’s modal and the button that opens it" pad={true} /> }}
 
-A browser without the `command` attribute opens it from the page’s script, `showModal()`; Safari 26.5 and 27, Chrome, Chromium and Firefox 153 all have it. The Go module writes it with `site.Modal` (its `Page` the variant), and its opener with `site.ModalButton`, a button of type `button`: in a form, a submit button does nothing with its `commandfor`, opening no modal and sending no form (`reference/dialog/`).
+A browser without the `command` attribute opens it from the page’s script, `showModal()`; Safari 26.5 and 27, Chrome, Chromium and Firefox 153 all have it. The Go module writes it with `site.Modal` (its `Page` the variant, its `Dark` the dark one), and its opener with `site.ModalButton`, a button of type `button`: in a form, a submit button does nothing with its `commandfor`, opening no modal and sending no form (`reference/dialog/`).

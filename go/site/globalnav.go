@@ -27,8 +27,7 @@ type NavLink struct {
 
 type FlyoutGroup struct {
 	Heading string
-	// Large: apple.com's elevated links, only in a flyout's first group;
-	// their group's heading is hidden to 833px.
+	// Large: apple.com's elevated links.
 	Large []Link
 	Links []Link
 }
@@ -120,9 +119,12 @@ func (n GlobalNav) Render(w io.Writer) error {
 		if link.Text == "" || link.Href == "" {
 			panic("site.GlobalNav's Links need their Text and Href")
 		}
-		for _, group := range link.Flyout {
+		for i, group := range link.Flyout {
 			if group.Heading == "" {
 				panic("site.GlobalNav's FlyoutGroups need their Heading")
+			}
+			if i > 0 && len(group.Large) > 0 {
+				panic("site.GlobalNav's Large links are only in a flyout's first group")
 			}
 		}
 	}

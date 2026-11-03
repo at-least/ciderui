@@ -201,3 +201,14 @@ func TestDocsTopicsAnEmptyLabelPanics(t *testing.T) {
 		example.Render(docs.DocsTopics{Title: "See Also", Groups: groups, Class: ""})
 	})
 }
+
+func TestDocsNavigatorTwoChevronsOfOneIDPanics(t *testing.T) {
+	under := []docs.DocsNavigatorItem{page("Button", "/components/button/", false, false, nil)}
+	items := []docs.DocsNavigatorItem{
+		page("Components", "/components/", false, false, under),
+		page("Components again", "https://example.test/components/", false, false, under),
+	}
+	mustPanic(t, "docs.DocsNavigator: two pages share the chevron id docs-navigator-components", func() {
+		example.Render(docs.DocsNavigator{Title: "T", Href: "/", Items: items, Class: ""})
+	})
+}
