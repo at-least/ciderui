@@ -45,35 +45,34 @@ func (f ConsoleFormField) Render(w io.Writer) error {
 }
 
 type ConsoleHelp struct {
-	// ID is the control's id, not the help line's.
-	ID   string
-	Text string
+	ControlID string
+	Text      string
 }
 
 func (p ConsoleHelp) Render(w io.Writer) error {
 	if p.Text == "" {
 		panic("console.ConsoleHelp needs a Text")
 	}
-	return h.P(h.Class("cui-console-help"), h.ID(ConsoleHelpID(p.ID)), g.Text(p.Text)).Render(w)
+	return h.P(h.Class("cui-console-help"), h.ID(ConsoleHelpID(p.ControlID)), g.Text(p.Text)).Render(w)
 }
 
 // ConsoleError with no Text is a hidden slot the page's script fills and
 // unhides when a request fails.
 type ConsoleError struct {
-	// ID is the control's id, not the error line's; "" for a form's slot.
-	ID    string
-	Text  string
-	Class string
+	// ControlID: "" for a form's slot.
+	ControlID string
+	Text      string
+	Class     string
 }
 
 func (e ConsoleError) Render(w io.Writer) error {
 	if e.Text == "" {
-		return h.P(class.Root("cui-console-error", e.Class), g.If(e.ID != "", h.ID(ConsoleErrorID(e.ID))), h.Role("alert"), g.Attr("hidden")).Render(w)
+		return h.P(class.Root("cui-console-error", e.Class), g.If(e.ControlID != "", h.ID(ConsoleErrorID(e.ControlID))), h.Role("alert"), g.Attr("hidden")).Render(w)
 	}
-	if e.ID == "" {
-		panic("console.ConsoleError with a Text needs its control's ID")
+	if e.ControlID == "" {
+		panic("console.ConsoleError with a Text needs a ControlID")
 	}
-	return h.P(class.Root("cui-console-error", e.Class), h.ID(ConsoleErrorID(e.ID)), g.Text(e.Text)).Render(w)
+	return h.P(class.Root("cui-console-error", e.Class), h.ID(ConsoleErrorID(e.ControlID)), g.Text(e.Text)).Render(w)
 }
 
 func ConsoleHelpID(id string) string {

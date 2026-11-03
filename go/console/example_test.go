@@ -20,7 +20,7 @@ func ExampleConsoleBadge() {
 }
 
 func ExampleConsoleBanner() {
-	_ = console.ConsoleBanner{Color: console.ConsoleColorInfo, Icon: icon.Icon{}, Title: "Saved", Dismiss: "", Class: "", Children: nil}.Render(os.Stdout)
+	_ = console.ConsoleBanner{Color: console.ConsoleColorInfo, Icon: icon.Icon{}, Title: "Saved", DismissLabel: "", Class: "", Children: nil}.Render(os.Stdout)
 	// Output: <div class="cui-console-banner" data-color="info" role="status"><div><p class="cui-console-banner-title">Saved</p></div></div>
 }
 
@@ -82,7 +82,7 @@ func ExampleConsoleSelect() {
 func ExampleConsoleFormField() {
 	_ = console.ConsoleFormField{ID: "name", Label: g.Text("Name"), Children: g.Group{
 		h.Input(h.Class("cui-console-field"), h.ID("name"), h.Aria("describedby", console.ConsoleHelpID("name"))),
-		console.ConsoleHelp{ID: "name", Text: "Shown on every page."},
+		console.ConsoleHelp{ControlID: "name", Text: "Shown on every page."},
 	}}.Render(os.Stdout)
 	// Output: <div class="cui-console-form-field"><label class="cui-console-label" for="name">Name</label><input class="cui-console-field" id="name" aria-describedby="name-help"><p class="cui-console-help" id="name-help">Shown on every page.</p></div>
 }
@@ -126,7 +126,7 @@ func ExampleConsoleRadio() {
 }
 
 func ExampleConsoleSidebar() {
-	_ = console.ConsoleSidebar{ID: "sidebar", Label: "CrashCart", Home: "/", Wordmark: "CrashCart", Close: "Close", Class: "", Footer: nil, Children: nil}.Render(os.Stdout)
+	_ = console.ConsoleSidebar{ID: "sidebar", Label: "CrashCart", Home: "/", Wordmark: "CrashCart", CloseLabel: "Close", Class: "", Footer: nil, Children: nil}.Render(os.Stdout)
 	// Output: <nav class="cui-console-sidebar" id="sidebar" popover aria-label="CrashCart"><div class="cui-console-sidebar-header"><a class="cui-console-sidebar-wordmark" href="/">CrashCart</a><button class="cui-console-btn cui-console-btn-icon cui-console-sidebar-close" data-variant="plain" type="button" popovertarget="sidebar" popovertargetaction="hide" aria-label="Close"><svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></div><div class="cui-console-sidebar-body cui-console-menu" data-variant="sidebar"></div><div class="cui-console-sidebar-footer"></div></nav>
 }
 

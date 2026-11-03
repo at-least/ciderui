@@ -10,14 +10,14 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleBanner: the page's script wires the Dismiss button.
+// ConsoleBanner: the page's script wires the close button.
 type ConsoleBanner struct {
 	Color ConsoleColor
 	Icon  icon.Icon
 	Title string
-	// Dismiss is the close button's aria-label; "" for no close button.
-	Dismiss string
-	Class   string
+	// DismissLabel: "" for no close button.
+	DismissLabel string
+	Class        string
 	// Children: a <p class="cui-console-banner-body">, a caption, actions.
 	Children g.Node
 }
@@ -36,6 +36,6 @@ func (b ConsoleBanner) Render(w io.Writer) error {
 			g.If(b.Title != "", h.P(h.Class("cui-console-banner-title"), g.Text(b.Title))),
 			b.Children,
 		),
-		g.If(b.Dismiss != "", h.Button(h.Class("cui-console-btn cui-console-btn-icon cui-console-banner-dismiss"), h.Data("variant", "plain"), h.Data("size", "sm"), h.Type("button"), h.Aria("label", b.Dismiss), lucide.X)),
+		g.If(b.DismissLabel != "", h.Button(h.Class("cui-console-btn cui-console-btn-icon cui-console-banner-dismiss"), h.Data("variant", "plain"), h.Data("size", "sm"), h.Type("button"), h.Aria("label", b.DismissLabel), lucide.X)),
 	).Render(w)
 }

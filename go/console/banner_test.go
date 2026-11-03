@@ -12,7 +12,7 @@ import (
 )
 
 func TestBannerRendersTheExamples(t *testing.T) {
-	warning := console.ConsoleBanner{Color: console.ConsoleColorWarning, Icon: lucide.TriangleAlert, Title: "Symbols are missing", Dismiss: "Close", Class: "", Children: g.Group{
+	warning := console.ConsoleBanner{Color: console.ConsoleColorWarning, Icon: lucide.TriangleAlert, Title: "Symbols are missing", DismissLabel: "Close", Class: "", Children: g.Group{
 		h.P(h.Class("cui-console-banner-body"), g.Text("Upload a dSYM in "), textLink("#settings", "Settings"), g.Text(" to see function names in this crash.")),
 		h.P(h.Class("cui-console-banner-actions"), h.A(h.Class("cui-console-btn"), h.Data("size", "sm"), h.Href("#upload"), g.Text("Upload dSYM"))),
 	}}
@@ -30,7 +30,7 @@ func TestBannerRendersTheExamples(t *testing.T) {
 	}
 	var banners g.Group
 	for _, r := range rows {
-		banners = append(banners, console.ConsoleBanner{Color: r.color, Icon: r.icon, Title: "", Dismiss: "", Class: "", Children: h.P(h.Class("cui-console-banner-body"), r.body)})
+		banners = append(banners, console.ConsoleBanner{Color: r.color, Icon: r.icon, Title: "", DismissLabel: "", Class: "", Children: h.P(h.Class("cui-console-banner-body"), r.body)})
 	}
 	example.Check(t, h.Div(h.Class("grid gap-3"), banners), "console/console-banner/examples/colors.html")
 }
@@ -41,6 +41,6 @@ func textLink(href, text string) g.Node {
 
 func TestBannerABrandBannerPanics(t *testing.T) {
 	mustPanic(t, "has no brand color", func() {
-		example.Render(console.ConsoleBanner{Color: console.ConsoleColorBrand, Icon: icon.Icon{}, Title: "", Dismiss: "", Class: "", Children: nil})
+		example.Render(console.ConsoleBanner{Color: console.ConsoleColorBrand, Icon: icon.Icon{}, Title: "", DismissLabel: "", Class: "", Children: nil})
 	})
 }

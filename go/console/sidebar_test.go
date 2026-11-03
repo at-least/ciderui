@@ -13,7 +13,7 @@ import (
 
 func TestSidebarRendersTheExample(t *testing.T) {
 	account := h.A(h.Class("cui-console-sidebar-account"), h.Href("#account"), lucide.CircleUser.Class("cui-console-sidebar-avatar"), g.Text("Alex Morgan"))
-	sidebar := console.ConsoleSidebar{ID: "sidebar", Label: "CrashCart", Home: "#home", Wordmark: "CrashCart", Close: "Close", Class: "", Footer: account, Children: g.Group{
+	sidebar := console.ConsoleSidebar{ID: "sidebar", Label: "CrashCart", Home: "#home", Wordmark: "CrashCart", CloseLabel: "Close", Class: "", Footer: account, Children: g.Group{
 		console.ConsoleMenuItem{Href: "#projects", Label: "All Projects", Icon: lucide.LayoutGrid, Current: false, Disabled: false, Secondary: "", Class: ""},
 		console.ConsoleMenuItem{Href: "#issues", Label: "All Issues", Icon: lucide.Bug, Current: true, Disabled: false, Secondary: "", Class: ""},
 		h.P(h.Class("cui-console-menu-heading"), g.Text("Projects")),
@@ -26,25 +26,25 @@ func TestSidebarRendersTheExample(t *testing.T) {
 }
 
 func TestSidebarWithNoCloseLabelPanics(t *testing.T) {
-	mustPanic(t, "needs a Close", func() {
-		example.Render(console.ConsoleSidebar{ID: "s", Label: "x", Home: "/", Wordmark: "x", Close: "", Class: "", Footer: nil, Children: nil})
+	mustPanic(t, "ConsoleSidebar needs a CloseLabel", func() {
+		example.Render(console.ConsoleSidebar{ID: "s", Label: "x", Home: "/", Wordmark: "x", CloseLabel: "", Class: "", Footer: nil, Children: nil})
 	})
 }
 
 func TestSidebarWithNoIDPanics(t *testing.T) {
 	mustPanic(t, "ConsoleSidebar needs an ID", func() {
-		example.Render(console.ConsoleSidebar{ID: "", Label: "x", Home: "/", Wordmark: "x", Close: "Close", Class: "", Footer: nil, Children: nil})
+		example.Render(console.ConsoleSidebar{ID: "", Label: "x", Home: "/", Wordmark: "x", CloseLabel: "Close", Class: "", Footer: nil, Children: nil})
 	})
 }
 
 func TestSidebarWithNoLabelPanics(t *testing.T) {
 	mustPanic(t, "ConsoleSidebar needs a Label", func() {
-		example.Render(console.ConsoleSidebar{ID: "s", Label: "", Home: "/", Wordmark: "x", Close: "Close", Class: "", Footer: nil, Children: nil})
+		example.Render(console.ConsoleSidebar{ID: "s", Label: "", Home: "/", Wordmark: "x", CloseLabel: "Close", Class: "", Footer: nil, Children: nil})
 	})
 }
 
 func TestSidebarWithNoWordmarkPanics(t *testing.T) {
 	mustPanic(t, "ConsoleSidebar needs a Wordmark", func() {
-		example.Render(console.ConsoleSidebar{ID: "s", Label: "x", Home: "/", Wordmark: "", Close: "Close", Class: "", Footer: nil, Children: nil})
+		example.Render(console.ConsoleSidebar{ID: "s", Label: "x", Home: "/", Wordmark: "", CloseLabel: "Close", Class: "", Footer: nil, Children: nil})
 	})
 }
