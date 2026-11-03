@@ -1,48 +1,3 @@
-/* ciderui — the console's tabs: App Store Connect's newer look's tab bar,
- * in its two forms: underlined (a page's sections, the current one on a
- * 2px rule, a hairline under the bar) and filled (a choice of a few, each a
- * pill, the chosen one filled: a chart's period).
- *
- * From the toolkit's tab bar (reference/asc/results/tokens.json,
- * --tb-component-Tabs-*: its underlined and filled-gray variants, brand).
- *
- *   <nav class="cui-console-tabs" aria-label="Project">
- *     <a class="cui-console-tab" href="/overview" aria-current="page">Overview</a>
- *     <a class="cui-console-tab" href="/issues">Issues</a>
- *   </nav>
- *   <div class="cui-console-tabs" data-variant="filled" role="group" aria-label="Period">
- *     <a class="cui-console-tab" href="?win=24h">24h</a>
- *     <a class="cui-console-tab" href="?win=7d" aria-current="true">7d</a>
- *   </div>
- *
- * cui-console-tabs        the bar, a row; underlined: 12px between tabs, a
- *                         0.5px secondary hairline under it; below 640px
- *                         one row that scrolls sideways when too wide
- *   data-variant="filled" 8px between pills, no hairline
- *   data-size="sm"|"lg"|"xl"  22px (11px on 13px), 40px or 50px (18px on 22px)
- *   data-overflow / -start / -end  the host's script marks the bar's
- *                                  scroll state; the side still hiding
- *                                  content fades (the phone row has no
- *                                  scrollbar)
- * cui-console-tab         a tab: 30px, 14px on 19px at 500, the brand's
- *                         label; underlined, no room at its sides; filled, a
- *                         pill 12px in on the gray fill, its label the blue
- *                         fitted to it
- *   aria-current (not "false"), aria-selected="true"  the current one:
- *                         underlined, on a 2px rule in its label's color;
- *                         filled, the brand's fill, the label white
- *   aria-disabled="true"  its disabled label, no pointer
- *
- * Hovered and pressed, the toolkit's (the brand's label a step darker
- * hovered, fitted: tokens.css). The toolkit's: the sizes, gaps, type, the
- * rule, the hairline, the capsule, the colors (light; dark derived). ciderui's:
- * the colors a contrast check found short, fitted (decision 21: the blue
- * label on the gray pill, and hovered, blue-600; an underlined tab hovered
- * the button's hovered blue, where the toolkit's is a lighter one, 4.1:1);
- * the focus ring base.css's (rule 9), inside the tab where a phone's
- * bar scrolls; the phone's one scrolling row; in forced colors the other
- * tabs' rule the ground's, the chosen pill the theme's highlight. */
-
 @layer components {
   .cui-console-tabs {
     display: flex;
@@ -56,17 +11,14 @@
       border-bottom: 0;
     }
 
-    /* a phone: an underlined bar too wide scrolls sideways, not onto a
-       second row (which drew the hairline under each row); its focus
-       ring inside the tab, where the scroll box would clip it */
+    /* not onto a second row: it drew the hairline under each row */
     &:not([data-variant="filled"]) {
       @media (width < 640px) {
         flex-wrap: nowrap;
         overflow-x: auto;
         scrollbar-width: none;
-        /* a focused tab brought in clear of the edge fade: a browser's
-           focus scrolls only a tab it judges out of view, and without this
-           one 3px in the row was left there (reference/console/) */
+        /* a browser's focus scrolls only a tab it judges out of view:
+           without this one 3px in the row was left under the fade */
         scroll-padding-inline: 24px;
 
         & > .cui-console-tab {
@@ -77,13 +29,8 @@
           outline-offset: -2px;
         }
 
-        /* a row too wide scrolls with no scrollbar: the side still
-           hiding content fades, so a clipped label reads as "more to
-           scroll", not as a clipped render. The host's script sets the
-           three states on load, scroll and resize; without them (no-JS)
-           the row renders as before, unfaded. The stops are currentColor:
-           a mask reads only the color's alpha, and not black — tokens.mjs
-           refuses a color literal in a component's stylesheet. */
+        /* stops in currentColor: a mask reads only the alpha, and the
+           token test refuses a color literal */
         &[data-overflow]:not([data-overflow-end]) {
           mask-image: linear-gradient(to right, currentColor calc(100% - 24px), transparent);
         }
@@ -130,9 +77,6 @@
     background-color: var(--cui-console-tab-fill);
     color: var(--cui-console-tab-label);
 
-    /* forced colors draw even a transparent rule in the text's color,
-       every tab ruled as the current one: the others' in the ground's,
-       their 2px kept */
     @media (forced-colors: active) {
       border-bottom-color: Canvas;
     }
@@ -209,8 +153,6 @@
         --cui-console-tab-label-hover: var(--cui-c-console-brand-label-on-accent-primary);
         --cui-console-tab-label-press: var(--cui-c-console-on-accent-press);
 
-        /* forced colors drop the fill, the chosen pill read as the others:
-           the theme's highlight */
         @media (forced-colors: active) {
           background-color: Highlight;
           color: HighlightText;
@@ -234,10 +176,8 @@
     }
   }
 
-  /* a touch screen's: a tab 44px each way at least, the HIG's 44pt
-     (Accessibility, Mobility), its own box: a target drawn round it is
-     clipped by a phone's sideways-scrolling row. After the sizes; xl's
-     50px kept, a pill's corners half its height */
+  /* not a target drawn round the tab: a phone's scrolling row clips it.
+     After the sizes, which it overrides */
   @media (pointer: coarse) {
     .cui-console-tab {
       min-height: 2.75rem;

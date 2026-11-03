@@ -2,6 +2,8 @@
  "bar | .cui-console-bar | 1200 | background-color": "oklch(0.968 0.001 286.4)",
  "bar | .cui-console-bar | 1200 | column-gap": "8px",
  "bar | .cui-console-bar | 1200 | align-items": "center",
+ "bar | .cui-console-bar | 1200 | display": "flex",
+ "bar | .cui-console-bar | 1200 | flex-direction": "row",
  "bar narrow | .cui-console-bar | 900 | padding-left": "24px",
  "bar narrow | .cui-console-bar | 900 | box-height": "50px",
  "bar narrow | .cui-console-bar | 390 | padding-left": "16px",

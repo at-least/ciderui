@@ -1,9 +1,3 @@
-// The console's pager against Apple Developer Forums' (reference/
-// developer-forums/results/pager.json; golden: its values are the forums'
-// own, which no probe in reference/apple.com/ or reference/asc/ holds): the
-// row, its gaps, the summary's room and color, a missing direction left
-// out. Its type the toolkit's body text style; its buttons the console's.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);

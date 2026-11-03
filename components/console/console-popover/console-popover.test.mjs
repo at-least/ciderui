@@ -1,9 +1,3 @@
-// The console's popover against App Store Connect's toolkit's stroked
-// popover (--tb-component-Popover-*) and its analytics overview's info
-// popover: the ground, shadow, corners, narrowest and tallest. Golden, with
-// their why: the room, the type, the widest, the stack's gap, the place,
-// the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -31,6 +25,16 @@ export const cases = [
       { target: POP, props: ['padding-top', 'padding-left', 'font-size', 'line-height', 'font-weight', 'color', 'max-width'], golden: 'App Store Connect\'s analytics overview\'s info popover: 16px in, 13px on 18px, the label, 350px at its widest' },
       { target: POP, props: ['display', 'flex-direction', 'row-gap'], golden: 'its parts stacked 8px apart: a control row\'s md button\'s (controlrow.json); the toolkit names no gap for a stack' },
       { target: POP, props: ['box-top', 'box-left', 'box-width'], golden: 'open: 8px under its button, centered on it' },
+      { target: POP, props: ['overflow-y'], golden: 'scrolling past its tallest' },
+    ],
+  },
+  {
+    name: 'popover open low',
+    html: `<div style="padding:720px 24px 24px">${ex('popover')}</div>`,
+    click: BUTTON,
+    widths: [1200],
+    checks: [
+      { target: POP, props: ['box-top'], golden: 'above its button where there is no room below' },
     ],
   },
   {
@@ -41,6 +45,7 @@ export const cases = [
     checks: [
       { target: POP, props: ['border-top-left-radius'], tb: [`${P}-variant-pageScale-mobile-borderRadius`] },
       { target: POP, props: ['box-left', 'box-width'], golden: 'on a phone, inside the window, 16px from its edges at the least' },
+      { target: POP, props: ['max-width'], golden: '85% of the window at most' },
     ],
   },
   {

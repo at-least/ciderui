@@ -1,8 +1,3 @@
-// The console's status against App Store Connect's: TestFlight's build
-// status (its mark, its word, the line under it). Golden, with their why:
-// the mark's colors (the console's fitted labels), its circle, the line's
-// indent, a key's own color, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -18,6 +13,7 @@ export const cases = [
     checks: [
       { target: MARK('success'), props: ['height', 'margin-right'], asc: ['testflight', 'status.icon'] },
       { target: at('success'), props: ['font-size', 'line-height'], asc: ['testflight', 'status.word'] },
+      { target: at('success'), props: ['display', 'align-items'], golden: 'the mark and the word on one line, the mark centered on it' },
       { target: at('success'), props: ['color'], golden: 'the word in the console\'s label: App Store Connect\'s older look wrote rgb(51, 51, 51)' },
       { target: MARK('success'), props: ['box-width'], golden: 'as wide as App Store Connect\'s 12px (an asc check reads no width: its text was SF)' },
       ...COLORS.map((c) => ({ target: MARK(c), props: ['background-color', 'border-top-left-radius'], golden: `${c}: the mark in the console's ${c} label (tokens.css, fitted to 4.5:1, decision 21), a circle (App Store Connect's glyph's shape is unread)` })),

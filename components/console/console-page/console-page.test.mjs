@@ -1,10 +1,3 @@
-// The console's page against App Store Connect's newer look: its ground,
-// its text and its type each the toolkit's token (reference/asc/results/
-// tokens.json), at the desktop's page scale from 640px and the mobile's
-// below; a section's heading and a metric's value as the analytics page drew
-// them (analytics-page:section.heading, analytics:card.value). Golden, with
-// their why: the font stacks, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -13,7 +6,6 @@ const style = (s) => ['fontSize', 'lineHeight', 'fontWeight', 'letterSpacing'].m
 const DESKTOP = [1600, 1200, 900, 640];
 const STACK = 'tokens.css\'s stack, SF on Apple\'s platforms and Inter elsewhere, where the toolkit names -system-ui first (decision 4)';
 
-// each utility and the toolkit's text style it is
 const STYLES = [
   ['h1-plus', 'h1PlusRegular'],
   ['h1-plus-emph', 'h1PlusEmph'],
@@ -80,6 +72,15 @@ export const cases = [
       { target: '.cui-console-h1-plus-emph', props: ['font-size', 'line-height', 'font-weight', 'letter-spacing'], asc: ['analytics', 'card.value'] },
       { target: '.cui-console-mono', props: ['font-size', 'line-height', 'font-weight', 'letter-spacing'], tb: style('monoBodyRegular') },
       { target: '.cui-console-mono', props: ['font-family'], golden: 'tokens.css\'s code stack, SF Mono on Apple\'s platforms and the platform\'s own elsewhere, where the toolkit names SF Mono alone' },
+    ],
+  },
+  {
+    name: 'type composes',
+    html: '<div class="cui-console-page"><p id="variant" class="cui-console-body md:cui-console-h1">v</p><p id="plain" class="cui-console-h1 text-[20px]">p</p></div>',
+    widths: [900, 390],
+    checks: [
+      { target: '#variant', props: ['font-size'], golden: 'utilities, not component classes, as type.css\'s: a variant composes with one (md:cui-console-h1 over cui-console-body from 735px)' },
+      { target: '#plain', props: ['font-size'], golden: 'a plain utility wins over one' },
     ],
   },
 ];

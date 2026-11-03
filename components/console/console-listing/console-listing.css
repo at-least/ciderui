@@ -1,50 +1,3 @@
-/* ciderui — the console's code listing: lines of code or of a log, a
- * crash's backtrace, on a gray rounded panel, a line too long for it moved
- * sideways inside it; with numbered lines, one or more highlighted.
- *
- * Apple's developer documentation's code listing (DocC: reference/
- * apple.com/results/docc.json's listing, listing.pre, listing.code, read
- * 2026-10-23; its numbered and highlighted lines, docc-lines.json and
- * -dark, a SwiftUI tutorial's code step, read 2026-10-29) at the console's
- * type:
- *
- *   <pre class="cui-console-listing"><code>Thread 0 Crashed:
- *   0   Shop   0x0000000100a4c2f8 Cart.total() + 120</code></pre>
- *
- *   <pre class="cui-console-listing"><code><span class="cui-console-listing-line" data-line="41">let items = cart.items</span>
- *   <span class="cui-console-listing-line" data-line="42" data-highlighted>let total = items.reduce(0, +)</span></code></pre>
- *
- * cui-console-listing  15px corners, 8px above and below, 14px at its
- *                      sides, on the console card's gray; 13px on 22px in
- *                      the mono face, the label; what is too wide for it
- *                      scrolls sideways inside it; a <pre>'s lines kept,
- *                      another element's wrapping; inside a console card
- *                      or another listing, whose gray is its own, the
- *                      page's ground
- * cui-console-listing-line  a numbered line, its number (data-line) before
- *                      it: in the secondary label, right-aligned, 2em wide
- *                      at least, 8px before and 17px after it, never
- *                      selected or copied (drawn, not text); a listing of
- *                      numbered lines has no room at its sides, the numbers
- *                      give it
- *   data-highlighted   the line on the brand's quaternary fill, a 4px edge
- *                      in the brand's label's blue at its number
- *
- * DocC's: the corners, the room, the scroll, a line's height in proportion
- * to its size (25px on 15px); a number's place, width, room and its
- * highlighted edge's width; a number drawn from an attribute, out of the
- * text. ciderui's: the console's 13px mono body (the toolkit's
- * monoBodyRegular) where DocC's is 15px, and so 22px lines; the console
- * card's gray (--cui-c-console-card) where DocC's is rgb(245, 245, 247),
- * the nearest the contract holds; the label's color where DocC's is black;
- * the number in the secondary label, fitted to 4.5:1 (DocC's
- * rgb(110, 110, 115)); the highlight the brand's fill-quaternary (DocC's
- * rgb(234, 243, 255), and in the dark a gray, rgb(66, 66, 69)) and its edge
- * the brand label's blue, the accent's in light and a step lighter in the
- * dark, where the accent's is under 3:1 (DocC's rgb(76, 169, 255),
- * rgb(125, 193, 255) dark);
- * the page's ground nested. */
-
 @layer components {
   .cui-console-listing {
     box-sizing: border-box;
@@ -59,11 +12,9 @@
     letter-spacing: normal;
     tab-size: 4;
     color: var(--cui-c-console-neutral-label-primary);
-    /* the gray on the page; a card's inset ground inside one */
     background-color: var(--cui-console-inset, var(--cui-c-console-card));
   }
 
-  /* a listing in a listing: the page's ground */
   :where(.cui-console-listing) .cui-console-listing {
     --cui-console-inset: var(--cui-c-console-neutral-background-primary);
   }
@@ -91,9 +42,7 @@
       background-color: var(--cui-c-console-brand-fill-quaternary);
 
       &::before {
-        /* the brand's label's blue: light, the accent's; dark, a step
-           lighter (the accent's dark side is 2.57:1 on the dark highlight,
-           under a mark's 3:1) */
+        /* not the accent: its dark side is under a mark's 3:1 on the dark highlight */
         border-left: 4px solid var(--cui-c-console-brand-label-primary);
         padding-left: 4px;
       }

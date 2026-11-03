@@ -1,9 +1,3 @@
-// The console's card against App Store Connect's analytics overview: its
-// ground, corners, room above and clip (analytics-page:card), its title,
-// value and change's type (analytics:card.*); the ground the toolkit's
-// v2-bgPlaceholder. Golden, with their why: its room at its sides and
-// foot, the change's colors, the caption, the figure's row, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);

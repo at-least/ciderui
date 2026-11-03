@@ -1,8 +1,12 @@
 {
  "section head | .cui-console-section-head > :first-child | 1200 | flex-grow": "1",
  "section head | .cui-console-section-head > :first-child | 1200 | min-width": "0px",
+ "section head | .cui-console-section-head h1 | 1200 | font-size": "26px",
+ "section head | .cui-console-section-head h1 | 1200 | line-height": "30px",
  "section head | .cui-console-section-head > .cui-console-tabs | 1200 | box-y": "3.5px",
  "section head | .cui-console-section-head > :first-child | 390 | flex-grow": "1",
  "section head | .cui-console-section-head > :first-child | 390 | min-width": "0px",
+ "section head | .cui-console-section-head h1 | 390 | font-size": "26px",
+ "section head | .cui-console-section-head h1 | 390 | line-height": "30px",
  "section head | .cui-console-section-head > .cui-console-tabs | 390 | box-y": "61px"
 }

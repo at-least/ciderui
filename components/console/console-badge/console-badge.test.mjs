@@ -1,8 +1,3 @@
-// The console's badge against App Store Connect's toolkit's badge
-// (--tb-component-Badge-*): each size, the tinted fill of each color, the
-// gray and the plain. Golden, with their why: the labels fitted to 4.5:1,
-// the dot, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -34,6 +29,7 @@ export const cases = [
     checks: [
       ...COLORS.map((c) => ({ target: at(c), props: ['background-color'], tb: [`${B}-colorRole-${c}-variant-gray-backgroundColor`] })),
       { target: at('neutral'), props: ['color'], tb: [`${B}-colorRole-neutral-variant-gray-color`] },
+      ...['brand', 'info', 'success', 'warning', 'error'].map((c) => ({ target: at(c), props: ['color'], golden: `${c} on the gray: ${FITTED}` })),
     ],
   },
   {

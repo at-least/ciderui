@@ -1,31 +1,6 @@
-/* ciderui — the console's progress bar: App Store Connect's newer look's,
- * how much of a whole a value is (a share, a task done so far).
- *
- * From the toolkit's progress bar (reference/asc/results/tokens.json,
- * --tb-component-Progress-*: horizontalRounded, its three heights, brand
- * and neutral).
- *
- *   <progress class="cui-console-progress" value="42" max="100">42%</progress>
- *
- * cui-console-progress     the native <progress>: the column's width, 4px
- *                          high, fully rounded, its track the neutral
- *                          primary fill, the done part the blue; no value
- *                          (indeterminate), the track alone
- *   data-size="sm" | "lg"  3px | 5px high
- *   data-color="neutral"   the done part the label's black (white in dark)
- *
- * The toolkit's: the heights, the rounding, the track's and the fills'
- * colors (light; dark derived: tokens.css). ciderui's: the brand fill's
- * dark side, the brand label's (fitted, decision 21); the native element
- * (its value is read out; the page gives aria-hidden when the figure is
- * already in text beside it); an indeterminate bar drawing no motion (the
- * toolkit has none). */
-
 @layer components {
   .cui-console-progress {
-    /* the brand's label's blue: light, the accent's; dark, a step lighter
-       (the accent's dark side, oklch(51.2% 0.203 260.5), is 2.74:1 on the
-       dark track, under a mark's 3:1) */
+    /* not brand-accent-primary: its dark side is under a mark's 3:1 on the dark track */
     --cui-console-progress-fill: var(--cui-c-console-brand-label-primary);
 
     appearance: none;
@@ -54,6 +29,8 @@
       background-color: var(--cui-console-progress-fill);
     }
 
+    /* no value: the track alone, unmoving, as Chromium draws it under
+       appearance: none (the toolkit has no indeterminate bar) */
     &:indeterminate::-moz-progress-bar {
       background-color: transparent;
     }

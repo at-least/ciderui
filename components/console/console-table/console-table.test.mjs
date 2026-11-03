@@ -1,10 +1,3 @@
-// The console's table against App Store Connect's: the analytics overview's
-// plain table (analytics:table.*: a large row, its cells, its text and its
-// figure; hover-row:table.row hovered) and the toolkit's table tokens
-// (--tb-component-Table-*: the header, each row size, the mobile page
-// scale). Golden, with their why: no header rule, the last cell flush,
-// the subtitle, the selected row, the secondary label's alpha, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -30,6 +23,7 @@ export const cases = [
       { target: 'tbody tr[aria-selected="true"]', props: ['background-color'], golden: 'the brand\'s fill at 0.08, the toolkit\'s selected row\'s (--tb-component-Table-anatomy-TR-…-selected-fill), square: its 12px corners set out 12px are no table row\'s' },
       { target: '.cui-console-table-subtitle', props: ['font-size', 'line-height', 'font-weight', 'color', 'display'], golden: 'a line under a cell\'s text, 12px on 16px, the secondary label: the toolkit\'s display list\'s subtitle at the table\'s small size' },
       { target: 'tbody tr:first-child', props: ['cursor'], golden: 'a row that is a link, all of it' },
+      { target: '.cui-console-table', props: ['box-width'], golden: 'the full width of its place' },
       { target: 'tbody tr:first-child td:first-child', props: ['hit'], golden: 'the pointer finds the row\'s link anywhere in its first cell' },
     ],
   },
@@ -98,9 +92,6 @@ export const cases = [
     ],
   },
   {
-    // a row's own checkbox selects it; one inside a form or a dialog in a
-    // cell (a row's editor: crashcart's alert routing, its channels
-    // checked) is that control's, and the row is not selected
     name: 'table checkbox in a cell\'s dialog',
     html: `<div class="cui-console-page"><table class="cui-console-table"><thead><tr><th scope="col">Project</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead><tbody>
       <tr id="routed"><td>Shop App</td><td><form><button type="button" class="cui-console-btn" data-variant="plain">Edit…</button><dialog class="cui-console-dialog"><label class="cui-console-checkbox"><input class="cui-console-checkbox-input" type="checkbox" checked><span class="cui-console-checkbox-box" aria-hidden="true"></span>ops</label></dialog></form></td></tr>
@@ -110,6 +101,15 @@ export const cases = [
     checks: [
       { target: '#routed', props: ['background-color'], golden: 'a checkbox inside a cell\'s form or dialog is that control\'s, not the row\'s: no fill' },
       { target: '#own', props: ['background-color'], golden: 'a checkbox that is the cell\'s own control selects its row: the brand\'s fill at 0.08' },
+    ],
+  },
+  {
+    name: 'table row controls',
+    html: '<table class="cui-console-table"><tbody><tr><td><a class="cui-console-table-link" href="#shop">Shop App</a></td><td><button type="button" class="cui-console-btn" data-variant="plain">Edit…</button></td><td><a href="#docs">Docs</a></td></tr></tbody></table>',
+    widths: [1200],
+    checks: [
+      { target: 'button', props: ['hit'], golden: 'the pointer finds a linked row\'s button, not the row\'s link' },
+      { target: 'a[href="#docs"]', props: ['hit'], golden: 'and another link in the row' },
     ],
   },
   {

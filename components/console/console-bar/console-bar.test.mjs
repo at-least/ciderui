@@ -1,7 +1,3 @@
-// The console's bar against App Store Connect's (reference/asc/results/
-// apps.json: nav, read at 1920px, so held at 1200 alone). Golden, with
-// their why: the gray, the narrower screens' room, the gap, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -15,6 +11,7 @@ export const cases = [
     checks: [
       { target: B, props: ['height', 'padding-left', 'padding-right', 'border-bottom-width', 'box-shadow'], asc: ['apps', 'nav'] },
       { target: B, props: ['background-color', 'column-gap', 'align-items'], golden: 'the console card\'s gray, the nearest the contract holds to App Store Connect\'s rgb(241, 241, 241); its parts 8px apart (a control row\'s md button\'s), centered' },
+      { target: B, props: ['display', 'flex-direction'], golden: 'a row of its parts' },
     ],
   },
   {

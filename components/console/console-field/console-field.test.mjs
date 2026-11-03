@@ -1,10 +1,3 @@
-// The console's fields against App Store Connect's toolkit's text input,
-// label, help text, input error and form field (--tb-component-TextInput-*,
-// -Label-*, -HelpText-*, -InputError-*, -FormField-*: stroked, md, and each
-// size): their size, room, corners, type, ground, focused and in error.
-// Golden, with their why: the edge, the placeholder, the help's and the
-// error's colors, all fitted; the chevron; the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -36,8 +29,11 @@ export const cases = [
       { target: '.cui-console-help', props: ['font-size', 'line-height', 'font-weight', 'margin-top'], tb: ['component-HelpText-variant-controlSize-md-textStyle-fontSize', 'component-HelpText-variant-controlSize-md-textStyle-lineHeight', 'component-HelpText-variant-controlSize-md-textStyle-fontWeight', 'component-FormField-anatomy-field-variant-controlSize-md-marginBlockEnd'] },
       { target: '.cui-console-help', props: ['color'], golden: `the secondary label at 0.76, ${FITTED}` },
       { target: '.cui-console-error', props: ['font-size', 'line-height', 'font-weight'], tb: ['component-InputError-variant-controlSize-md-textStyle-fontSize', 'component-InputError-variant-controlSize-md-textStyle-lineHeight', 'component-InputError-variant-controlSize-md-textStyle-fontWeight'] },
+      { target: '.cui-console-error', props: ['margin-top'], tb: ['component-FormField-anatomy-field-variant-controlSize-md-marginBlockEnd'] },
       { target: '.cui-console-error', props: ['color'], golden: `red-700, the red label: the toolkit's red is 3.6:1 on white, ${FITTED}` },
-      { target: '#note', props: ['padding-top', 'padding-bottom', 'resize'], golden: 'a multi-line field: its height its rows\', 6px above and below, taller by its handle' },
+      { target: '#note', props: ['padding-top', 'padding-bottom', 'resize', 'box-height'], golden: 'a multi-line field: its height its 3 rows\' and its padding, not the 30px field\'s, 6px above and below, taller by its handle' },
+      { target: NAME, props: ['box-width'], golden: 'as wide as its box, the example\'s 320px column' },
+      { target: '.cui-console-form-field', props: ['display', 'flex-direction'], golden: 'its label, field and lines in a column' },
     ],
   },
   {
@@ -63,6 +59,7 @@ export const cases = [
     checks: [
       ...['.cui-console-field[data-size="sm"]', '.cui-console-field:not([data-size])', '.cui-console-field[data-size="lg"]'].map((target) => ({ target, props: ['box-height'], golden: 'a field 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), whatever its size: an <input> draws no ::after to reach it' })),
       { target: '[data-size="xl"]', props: ['box-height'], golden: 'the extra large keeps its 50px, over 44' },
+      { target: '[data-size="sm"]', props: ['font-size', 'line-height'], tb: [`${T}-controlSize-sm-textStyle-fontSize`, `${T}-controlSize-sm-textStyle-lineHeight`] },
     ],
   },
   {

@@ -1,10 +1,3 @@
-// The console's hint against App Store Connect's toolkit's info button and
-// stroked popover (--tb-component-InfoSystemButton-*, --tb-component-
-// Popover-*) and its analytics overview's card info button: the button's
-// height, rounding, fills, labels and halo; the popover's ground, shadow,
-// corners, narrowest and widest. Golden, with their why: the circle, the
-// letter, the popover's room, type and place, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -12,7 +5,7 @@ const I = 'component-InfoSystemButton';
 const P = 'component-Popover';
 const B = '.cui-console-hint';
 const POP = '.cui-console-popover';
-// the example set where the popover has room below it, and room either side
+// room for the popover below the button and either side
 const page = (html) => `<div style="padding:24px 160px 240px">${html}</div>`;
 
 export const cases = [
@@ -65,6 +58,7 @@ export const cases = [
       { target: B, props: ['color'], state: 'hover', rest: 'a tapped hint keeps no hover (rule 5)' },
       { target: B, props: ['box-width', 'box-height'], golden: 'the button 44px square on a touch screen, the HIG\'s 44pt (Accessibility, Mobility): a 44px target drawn round its 20px reached over the control beside the word, which the wider button moves along' },
       { target: B, pseudo: '::before', props: ['width', 'height'], golden: 'its circle drawn as before, 17px' },
+      { target: B, props: ['margin-top', 'margin-bottom', 'margin-left'], golden: 'the wider box taken back from the line\'s height and the 4px before it, its circle where it is with a pointer' },
     ],
   },
   {

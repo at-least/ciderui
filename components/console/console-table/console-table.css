@@ -1,79 +1,3 @@
-/* ciderui — the console's table: App Store Connect's newer look's, rows
- * between hairlines, its header's labels small and secondary, a row that is
- * a link filling faintly under the pointer.
- *
- * From the toolkit's table (reference/asc/results/tokens.json,
- * --tb-component-Table-*) and the analytics overview's plain table
- * (analytics:table.*, hover-row:table.*).
- *
- *   <table class="cui-console-table">
- *     <thead>
- *       <tr><th scope="col">Version</th><th scope="col" class="cui-console-table-figure">Crashes</th></tr>
- *     </thead>
- *     <tbody>
- *       <tr>
- *         <td><a href="/v/2025.10.16">2025.10.16</a><span class="cui-console-table-subtitle">iOS</span></td>
- *         <td class="cui-console-table-figure">86</td>
- *       </tr>
- *     </tbody>
- *   </table>
- *
- * cui-console-table            the table: the full width, 13px on 18px (16px
- *                              on 21px below 640px), the label
- *   data-size="sm" | "lg"      its rows 32px or 56px (the default 48px): its
- *                              cells 7px, 15px or 19px above and below
- * a header cell (th in thead)  34px, 8px in, 12px on 16px at 600 (15px on 20px
- *                              at 500 below 640px), the secondary label
- * a cell (td)                  8px in, a 1px tertiary border under it; the
- *                              first none at its start, the last none at its
- *                              end; centered on its row
- * a row with a link            hovered, the neutral fill at 0.03; its link
- *   cui-console-table-link     the whole row (its ::after over the row,
- *                              which holds it: position relative); a
- *                              checkbox, button or other link in the row
- *                              above it, taking its own click
- * aria-selected="true" on a row  the brand's fill at 0.08
- * cui-console-table-figure     a number's cell: at its end, at 500
- * cui-console-table-subtitle   a line under a cell's text, 12px on 16px, the
- *                              secondary label
- * a row whose own console checkbox is checked  the selected row's fill:
- *                              a cell's own control, not one inside a
- *                              cell's form or dialog (a row's editor)
- * data-sticky                  its header sticks to the top of its scroll
- *                              container (the page, or a scroll box), at
- *                              --cui-console-table-sticky-top (0 unless the
- *                              page sets it, under its own bar): the
- *                              toolkit's sticky header, white at 0.80 under
- *                              a 3px shadow
- * data-stack                   below 640px each row a block of label and
- *                              value lines (a cell's data-label before its
- *                              value, 13px at 500, secondary; a cell with
- *                              none, its value alone), 12px above and below,
- *                              the header hidden; a cell with data-empty (a
- *                              dash, a zero that says nothing) left out of
- *                              the block, its column kept from 640px
- * cui-console-table-scroll     a box around a table wider than its place,
- *                              which scrolls sideways
- * cui-console-table-sort       a header's label that sorts (a link; its th
- *                              aria-sort): the secondary label, the label's
- *                              own hovered; on the sorted column the label's,
- *                              its arrow (cui-console-table-sort-icon, a
- *                              Lucide arrow, 12px) after it; on a touch
- *                              screen a target (::after) 44px at least
- *                              each way
- *
- * The toolkit's: the sizes, the type, the colors (light; dark derived:
- * tokens.css), the fills, the analytics table's flush first cell and its
- * figure at 500, no rule under the header (its tokens name none).
- * The toolkit's too: the sticky header's ground and shadow. ciderui's: the
- * last cell flush at its end as the first is at its start, the subtitle (the
- * toolkit's display list's subtitle at the table's size), a selected row
- * square (the toolkit rounds it 12px, set out 12px, which a table's row
- * cannot draw), a checked row selected, the secondary label's alpha
- * (tokens.css), the sort control (the toolkit's tokens name none), the
- * scroll box and the stacked rows of a phone; in forced colors a selected
- * row's leading edge, 3px of the theme's highlight. */
-
 @layer components {
   .cui-console-table {
     width: 100%;
@@ -123,10 +47,6 @@
       padding-inline-end: 0;
     }
 
-    /* a touch screen: room either side of a checkbox for its input's 44px,
-       which runs 14.5px past its box each way (console-checkbox); flush at
-       the table's start the scroll box clipped it to 29px, and 8px from the
-       next cell it met a sort link's target */
     @media (pointer: coarse) {
       :where(th, td):has(> .cui-console-checkbox) {
         padding-inline: 14.5px;
@@ -146,8 +66,6 @@
       cursor: pointer;
     }
 
-    /* a control in such a row above the link's ::after, which covers the
-       row and comes later in it: a click on the checkbox went to the link */
     :where(tbody tr:has(.cui-console-table-link)) :where(.cui-console-checkbox, button, a[href]:not(.cui-console-table-link)) {
       position: relative;
       z-index: 1;
@@ -164,9 +82,8 @@
       background-color: var(--cui-c-console-brand-fill-quaternary);
     }
 
-    /* forced colors drop the fill, a selected row read as the others: its
-       leading edge the theme's highlight, on its first cell (a row draws
-       no border apart from its cells'; a shadow is dropped too) */
+    /* on the first cell: a row draws no border of its own, and forced
+       colors drop a shadow */
     @media (forced-colors: active) {
       :where(tbody tr[aria-selected="true"], tbody tr:has(> :is(td, th) > .cui-console-checkbox > .cui-console-checkbox-input:checked)) > :where(:first-child) {
         border-inline-start: 3px solid Highlight;
@@ -201,8 +118,8 @@
     font-weight: 400;
   }
 
-  /* the header row group sticks, not each cell: the toolkit's shadow, its
-     spread negative, drawn per cell left a gap at every column's edge */
+  /* the row group sticks, not each cell: per cell, the shadow's negative
+     spread left a gap at every column's edge */
   .cui-console-table[data-sticky] {
     --cui-console-table-sticky-top: 0px;
 
@@ -285,8 +202,7 @@
         content: none;
       }
 
-      /* after :where(td)'s display, which it overrides at the same
-         specificity */
+      /* after :where(td)'s display: same specificity */
       :where(td[data-empty]) {
         display: none;
       }

@@ -1,7 +1,3 @@
-// The console's inline code against App Store Connect's toolkit's
-// monoBodyRegular text style. Golden, with their why: the font, the fill,
-// the room and corners, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);

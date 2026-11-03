@@ -1,8 +1,3 @@
-// The console's empty state against App Store Connect's toolkit's
-// (--tb-component-EmptyState-*): each size's room, icon, heading, caption
-// and their widths and gaps, the backed fill and corners. Golden, with
-// their why: the secondary label's alpha, the actions' gap, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -25,7 +20,7 @@ export const cases = [
       ...sized('md', 'Md'),
       { target: '.cui-console-empty', props: ['background-color'], golden: 'not backed: no fill' },
       { target: '.cui-console-empty-actions', props: ['column-gap'], golden: 'its buttons 9px apart, as a banner\'s' },
-      { target: '.cui-console-empty', props: ['text-align', 'align-items'], golden: 'centered' },
+      { target: '.cui-console-empty', props: ['flex-direction', 'text-align', 'align-items'], golden: 'a column, centered' },
     ],
   },
   {

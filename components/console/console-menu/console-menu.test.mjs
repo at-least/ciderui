@@ -1,12 +1,4 @@
-// The console's menu against App Store Connect's analytics menu: an item, the
-// current one, an item in a group, a group's button and chevron, a disabled
-// item, the rule, and an item hovered as its page drew them
-// (analytics:menu.*, analytics-page:group.*, item.disabled.*,
-// hover-menu:menu.item); the heading and the mobile page scale the
-// toolkit's tokens (--tb-component-DisplayList-*menu*). Golden, with their
-// why: the secondary label's fitted alpha, the pressed fill, the dark side.
-
-import { examples } from '../../../test/harness.mjs';
+import { ELLIPSIS, examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const DESKTOP = [1600, 1200, 640];
@@ -47,6 +39,12 @@ export const cases = [
       { target: '.cui-console-menu-group:not([open]) .cui-console-menu-chevron', props: ['rotate'], golden: 'closed, the chevron points along the row: Lucide\'s chevron-right, where the toolkit draws an SF Symbol' },
       { target: '.cui-console-menu-group[open] .cui-console-menu-chevron', props: ['rotate'], golden: 'open, it turns down, as the toolkit\'s does' },
       { target: PLAIN, props: ['background-color'], state: 'active', golden: 'pressed as hovered: the toolkit\'s pressed fill, oklch(55.4% 0.012 286 / 0.08), is no step of its palette, so it has no dark side to derive' },
+      { target: '.cui-console-menu', props: ['display'], asc: ['analytics-page', 'menu'] },
+      { target: '.cui-console-menu', props: ['flex-direction'], golden: 'a column of its items' },
+      { target: `${SUB} .cui-console-menu-label`, props: ELLIPSIS, golden: 'a label on one line, cut with an ellipsis' },
+      { target: '.cui-console-menu-secondary', props: ['box-right'], golden: 'at the item\'s end' },
+      { target: '.cui-console-menu-chevron', props: ['box-right'], golden: 'at the group button\'s end' },
+      { target: '[aria-disabled="true"]', props: ['background-color'], state: 'hover', golden: 'a disabled item no fill hovered' },
       { target: '.cui-console-menu-secondary', props: ['font-size', 'line-height', 'font-weight'], tb: [`${MENU}-desktop-variant-menu-anatomy-Secondary-textStyle-fontSize`, `${MENU}-desktop-variant-menu-anatomy-Secondary-textStyle-lineHeight`, `${MENU}-desktop-variant-menu-anatomy-Secondary-textStyle-fontWeight`] },
     ],
   },
@@ -59,6 +57,7 @@ export const cases = [
       { target: `${CURRENT} .cui-console-menu-label`, props: ['font-size', 'line-height', 'font-weight'], tb: [`${MENU}-mobile-variant-menu-anatomy-Label-textStyle-fontSize`, `${MENU}-mobile-variant-menu-anatomy-Label-textStyle-lineHeight`, `${MENU}-mobile-variant-menu-anatomy-Label-textStyle-fontWeight`] },
       { target: '.cui-console-menu-heading', props: ['font-size', 'line-height', 'font-weight', 'padding-top', 'padding-bottom', 'padding-left'], tb: [`${MENU}-mobile-variant-menu-anatomy-Heading-textStyle-fontSize`, `${MENU}-mobile-variant-menu-anatomy-Heading-textStyle-lineHeight`, `${MENU}-mobile-variant-menu-anatomy-Heading-textStyle-fontWeight`, `${MENU}-mobile-variant-menu-anatomy-Header-paddingBlockStart`, `${MENU}-mobile-variant-menu-anatomy-Header-paddingBlockEnd`, `${MENU}-mobile-variant-menu-anatomy-Header-paddingInline`] },
       { target: '.cui-console-menu-rule', props: ['margin-left', 'margin-right'], tb: [`${MENU}-mobile-variant-menu-anatomy-HR-marginInline`, `${MENU}-mobile-variant-menu-anatomy-HR-marginInline`] },
+      { target: CURRENT, props: ['box-height'], golden: 'the toolkit\'s mobile item, its padding round its line' },
       { target: SUB, props: ['padding-left'], golden: 'a group\'s items 48px in on a phone too: the toolkit names no mobile value, the analytics page\'s is read at 1920px' },
     ],
   },

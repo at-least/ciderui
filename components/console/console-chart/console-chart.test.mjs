@@ -1,8 +1,3 @@
-// The console's chart against App Store Connect's analytics charts
-// (reference/asc/results/analytics.json: chart.grid, chart.x, chart.y,
-// spark.line). Golden, with their why: the fitted colors, the scale's
-// place, the separators, the empty note, the legend, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -24,6 +19,7 @@ export const cases = [
       { target: `${C}-mark`, props: ['stroke', 'stroke-width'], golden: 'a 1px line of the ground round each mark: stacked marks stand apart (the HIG\'s Color)' },
       { target: `${C}-legend`, props: ['margin-top', 'row-gap', 'column-gap'], golden: 'the series under the axis, 8px, 4px by 12px apart' },
       { target: `${C}-svg`, props: ['box-height', 'display'], golden: 'its height the page\'s, the svg\'s 140' },
+      { target: `${C}-svg`, props: ['box-width'], golden: 'as wide as its plot' },
     ],
   },
   {

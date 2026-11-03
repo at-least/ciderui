@@ -1,58 +1,3 @@
-/* ciderui — the console's fields: App Store Connect's newer look's text
- * field, its dropdown and its multi-line field, each a rounded rectangle on
- * white inside an edge, and the label over one, the help under it, the
- * error in its place.
- *
- * From the toolkit's text input, label, help text, input error and form
- * field (reference/asc/results/tokens.json, --tb-component-TextInput-*,
- * -Label-*, -HelpText-*, -InputError-*, -FormField-*: stroked, md).
- *
- *   <div class="cui-console-form-field">
- *     <label class="cui-console-label" for="name">Name</label>
- *     <input class="cui-console-field" id="name" aria-describedby="name-help">
- *     <p class="cui-console-help" id="name-help">Shown on every page.</p>
- *   </div>
- *   <span class="cui-console-select">
- *     <select class="cui-console-field">…</select>
- *     <svg class="cui-console-select-chevron" …></svg>
- *   </span>
- *   <textarea class="cui-console-field" rows="3"></textarea>
- *
- * cui-console-field       an <input>, <select> or <textarea>, as wide as its
- *                         box (a form's column; a utility narrows it): 30px, 8px in,
- *                         10px corners, a 1px edge, white, 13px on 18px, the
- *                         label; its placeholder the secondary label;
- *                         focused, its edge the label's black and a 3px halo
- *                         of it at 0.15; aria-invalid="true", a red edge on
- *                         its red at 0.12 (white again focused, the halo
- *                         red); disabled, the neutral at 0.03 under the
- *                         disabled label
- *   data-size="sm"|"lg"|"xl"  22px (5px in, 8px corners, 11px on 13px), 40px
- *                         (10px, 12px, 16px on 21px), 50px (15px, 14px)
- *   a touch screen        44px tall at least, every size
- *   a <textarea>          its height its rows', 6px above and below
- * cui-console-select      a dropdown's box: its <select> (room for the
- *                         chevron at its end) and its chevron
- *                         (cui-console-select-chevron, a Lucide icon), the
- *                         secondary label, 8px in
- * cui-console-label       a field's label, 13px on 18px at 500, 5px over it
- * cui-console-help        a line under a field, 13px, the secondary label,
- *                         3px under it
- * cui-console-error       a field's error, the same, red
- * cui-console-form-field  a label, its field and its lines, in a column
- *
- * Below 640px, the toolkit's mobile page scale: a field's text 16px on 21px
- * (the sizes keep theirs), where iOS stops zooming into a focused field.
- *
- * The toolkit's: the sizes, room, corners, type, the focused and error
- * states, the label's, help's and form field's type and gaps. ciderui's:
- * the edge (decision 21: the toolkit's, the secondary border at 0.18, is
- * 1.4:1 on white; a control's edge is 3:1, coolGray-800 at 0.58, 0.42
- * dark), the placeholder the secondary label (the toolkit's, at 0.39, is
- * 2.1:1), the help the fitted secondary label, the red the fitted red
- * label (red-700); the chevron. A text field shows its focus by its edge
- * and halo, not base.css's ring (rule 9). */
-
 @layer components {
   .cui-console-field {
     box-sizing: border-box;
@@ -70,8 +15,7 @@
     letter-spacing: normal;
     appearance: none;
 
-    /* below 640px the page's mobile scale, 16px on 21px: iOS zooms the
-       page into a field whose text is smaller than 16px */
+    /* iOS zooms the page into a focused field whose text is under 16px */
     @media (width < 640px) {
       font-size: 16px;
       line-height: 21px;
@@ -107,9 +51,7 @@
       cursor: default;
     }
 
-    /* a touch screen's: 44px tall at least, the HIG's 44pt (Accessibility,
-       Mobility), the box itself, as an <input> draws no ::after; xl's 50px
-       kept */
+    /* the box itself, not a ::after target: an <input> draws no ::after */
     @media (pointer: coarse) {
       min-height: 2.75rem;
     }

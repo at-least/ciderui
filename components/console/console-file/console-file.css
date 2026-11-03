@@ -1,29 +1,3 @@
-/* ciderui — the console's file field: App Store Connect's newer look's file
- * upload, a field like a text field whose button is the blue word that
- * chooses a file, the file's name after it. The native <input type="file">,
- * drawn: it takes the focus, the click and a dropped file as one does.
- *
- * From the toolkit's file upload (reference/asc/results/tokens.json,
- * --tb-component-FileUpload-*: stroked, roundedRect, md, neutral).
- *
- *   <input class="cui-console-file" type="file" name="file" id="dsym">
- *
- * cui-console-file  the field: 30px, 8px in, 10px corners, a 1px edge,
- *                   white, 13px on 18px, the file's name (or the browser's
- *                   "no file" line) in the label; its button
- *                   (::file-selector-button) the blue, no fill, 8px before
- *                   the name; focused, the text field's edge and halo;
- *                   disabled, the neutral at 0.03 under the disabled label,
- *                   a fainter edge (the checkbox's)
- *
- * Below 640px, 16px on 21px, as a text field (iOS zooms into smaller text).
- *
- * The toolkit's: the height, room, corners, ground, type, the empty
- * control's blue, the disabled ground and label. ciderui's: the edge, the
- * field's (decision 21: the toolkit's 0.18 is 1.4:1); the focus, the text
- * field's; no icon (the toolkit's art stack is an image before the text,
- * which a native input cannot hold); the button's gap. */
-
 @layer components {
   .cui-console-file {
     box-sizing: border-box;
@@ -47,8 +21,7 @@
       line-height: 21px;
     }
 
-    /* a touch screen's: 44px tall, the HIG's 44pt (Accessibility, Mobility),
-       its line centered in it (a file input's text sits at its padding) */
+    /* centered by padding: a file input's text sits at its padding, not in its height */
     @media (pointer: coarse) {
       height: 2.75rem;
       padding-block: calc((2.75rem - 2px - 1lh) / 2);

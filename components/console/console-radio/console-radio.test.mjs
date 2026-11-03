@@ -1,10 +1,3 @@
-// The console's radio against App Store Connect's toolkit's radio and
-// label (--tb-component-Radio-*: brand, md; --tb-component-Label-*): its
-// size, round corners, edge's width, the chosen mark's size and color and
-// shadow, the disabled edge, the label's type. Golden, with their why: the
-// edge (fitted), the flat blue chosen, the gap, the caption, the ring, the
-// dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -12,6 +5,7 @@ const R = 'component-Radio-variant';
 const ON = 'label:nth-of-type(1)';
 const OFF = 'label:nth-of-type(2)';
 const DISABLED = 'label:nth-of-type(3)';
+const DISABLED_CHOSEN = '<label class="cui-console-radio"><input class="cui-console-radio-input" type="radio" name="kind" value="job" checked disabled>Job</label>';
 
 export const cases = [
   {
@@ -59,6 +53,23 @@ export const cases = [
     checks: [
       { target: `${ON} .cui-console-radio-input`, props: ['border-top-color', 'background-color', 'background-image', 'box-shadow'], golden: 'chosen, its edge and mark the theme\'s Highlight: forced colors drop the gradient and the fill, and the chosen radio read as the others' },
       { target: `${OFF} .cui-console-radio-input`, props: ['border-top-color', 'background-image'], golden: 'not chosen, the forced edge and no mark' },
+    ],
+  },
+  {
+    name: 'radio disabled chosen',
+    html: DISABLED_CHOSEN,
+    widths: [1200],
+    checks: [
+      { target: '.cui-console-radio-input', props: ['background-image', 'box-shadow'], golden: 'disabled and chosen, its mark the disabled label, no shadow' },
+    ],
+  },
+  {
+    name: 'radio disabled chosen forced colors',
+    html: DISABLED_CHOSEN,
+    widths: [1200],
+    forcedColors: true,
+    checks: [
+      { target: '.cui-console-radio-input', props: ['border-top-color', 'background-image'], golden: 'disabled and chosen in forced colors, its edge and mark GrayText' },
     ],
   },
   {

@@ -1,38 +1,3 @@
-/* ciderui — the console's page: App Store Connect's newer look (its
- * analytics pages), for a site that is a console (the owner's crashcart),
- * where apple.com's pages show none. Its ground and its text, and its type
- * as Tailwind utilities.
- *
- * From the newer look's toolkit's tokens, as its page computes them
- * (reference/asc/results/tokens.json, --tb-…), and its page
- * (reference/asc/results/analytics*.json).
- *
- *   <body class="cui-console-page">
- *     <h2 class="cui-console-h4-emph">Acquisition</h2>
- *     <p>Body text, 13px on 18px.</p>
- *   </body>
- *
- * cui-console-page     the page: the console's ground and its text
- *                      (--cui-c-console-neutral-background-primary,
- *                      -label-primary), 13px on 18px (the toolkit's
- *                      bodyRegular); below 640px, the toolkit's mobile page
- *                      scale, 16px on 21px (bodyMobileRegular)
- * cui-console-<style>  a text style, the toolkit's of the same name: h1-plus
- *                      (41/45), h1 (34/41), h2 (26/30, 700), h3 (20/24), h4
- *                      (18/22), h5 (15/20), h6 (14/19), body (13/18), small
- *                      (12/16), xs (11/13); -medium at 500, -emph at its
- *                      emphasis (600, or 700 from h3 up), plain at 400;
- *                      mono, code at the body's size
- *
- * The toolkit's: every size, line height and weight, the letter-spacing
- * (normal: the system font tracks itself, so SF draws Apple's own), the
- * colors (light; dark derived, tokens.css), the 640px step. ciderui's: the
- * font stack, tokens.css's (the toolkit names -system-ui first and SF Pro
- * after; ciderui's draws SF on Apple's platforms too, Inter elsewhere:
- * decision 4), code's (--cui-font-mono, where the toolkit names SF Mono
- * alone). The type is utilities, not component classes, as type.css's are:
- * a variant composes with one and a plain utility wins over it. */
-
 @layer components {
   .cui-console-page {
     color: var(--cui-c-console-neutral-label-primary);

@@ -1,9 +1,3 @@
-// The console's appearance control against Apple's developer
-// documentation's (DocC, reference/apple.com/results/docc-scheme.json,
-// -dark): its shape, its room, its type's size. Golden, with their why: the
-// console's blues, the font tracking itself, the focus ring, the touch
-// target.
-
 import { BORDER, OUTLINE, PADDING, examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -21,6 +15,7 @@ export const cases = [
       { target: G, props: ['box-height'], golden: 'DocC\'s 24px: a 20px choice, 1px in, a 1px edge' },
       { target: `${CHOICE} > span`, props: ['display', 'min-width', 'text-align', 'border-top-left-radius', ...PADDING, ...BORDER], apple: ['docc-scheme', 'scheme.choice'] },
       { target: `${CHOICE} > span`, props: ['cursor'], state: 'hover', apple: ['docc-scheme', 'scheme.choice', 'hover'] },
+      { target: `${CHOICE} > span`, props: ['color', 'background-color'], state: 'hover', golden: 'nothing hovered but the pointer, as DocC\'s' },
       { target: `${CHOSEN} > span`, props: ['border-top-left-radius', ...PADDING, ...BORDER], apple: ['docc-scheme', 'scheme.chosen'] },
       { target: G, props: ['border-top-color', 'letter-spacing'], golden: 'the console\'s brand accent-primary, DocC\'s rgb(0, 113, 227) the nearest; the font tracking itself (DocC\'s -0.12px is SF\'s at 12px)' },
       { target: `${CHOICE} > span`, props: ['color', 'background-color'], golden: 'an unchosen word the brand\'s label, fitted to 4.5:1 (DocC\'s rgb(0, 113, 227))' },

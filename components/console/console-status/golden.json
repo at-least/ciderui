@@ -1,4 +1,6 @@
 {
+ "statuses | .cui-console-status[data-color=\"success\"] | 1200 | display": "flex",
+ "statuses | .cui-console-status[data-color=\"success\"] | 1200 | align-items": "center",
  "statuses | .cui-console-status[data-color=\"success\"] | 1200 | color": "oklch(0 0 0 / 0.85)",
  "statuses | .cui-console-status[data-color=\"success\"] .cui-console-status-mark | 1200 | box-width": "12px",
  "statuses | .cui-console-status:not([data-color]) .cui-console-status-mark | 1200 | background-color": "oklch(0.359 0.012 285.8 / 0.76)",
@@ -13,6 +15,8 @@
  "statuses | .cui-console-status[data-color=\"warning\"] .cui-console-status-mark | 1200 | border-top-left-radius": "50%",
  "statuses | .cui-console-status[data-color=\"error\"] .cui-console-status-mark | 1200 | background-color": "oklch(0.495 0.19 31.5)",
  "statuses | .cui-console-status[data-color=\"error\"] .cui-console-status-mark | 1200 | border-top-left-radius": "50%",
+ "statuses | .cui-console-status[data-color=\"success\"] | 390 | display": "flex",
+ "statuses | .cui-console-status[data-color=\"success\"] | 390 | align-items": "center",
  "statuses | .cui-console-status[data-color=\"success\"] | 390 | color": "oklch(0 0 0 / 0.85)",
  "statuses | .cui-console-status[data-color=\"success\"] .cui-console-status-mark | 390 | box-width": "12px",
  "statuses | .cui-console-status:not([data-color]) .cui-console-status-mark | 390 | background-color": "oklch(0.359 0.012 285.8 / 0.76)",

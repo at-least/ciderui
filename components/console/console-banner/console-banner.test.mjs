@@ -1,10 +1,4 @@
-// The console's banner against App Store Connect's toolkit's banner
-// (--tb-component-Banner-*): its corners, room and least height, its title,
-// body and caption, its tints, its icon's column, its close button's place,
-// at the desktop's page scale and the mobile's. Golden, with their why: the
-// icon's size and color, the actions' room, a link's color, the dark side.
-
-import { examples } from '../../../test/harness.mjs';
+import { SIZE, examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const B = 'component-Banner';
@@ -13,6 +7,7 @@ const BANNER = '.cui-console-banner';
 const COLORS = [['info'], ['success'], ['error']];
 const DISABLED = '<div class="cui-console-banner" data-color="info" role="status"><div><p class="cui-console-banner-body">Symbols upload <a class="cui-console-link" data-variant="text" aria-disabled="true">after the build is processed</a>.</p></div></div>';
 const LINK_DISABLED = 'disabled, the banner\'s blue at the toolkit\'s 0.60 (--cui-c-console-brand-label-on-tint-secondary, the toolkit\'s disabled inline link\'s alpha): one blue for a banner\'s links, not the console link\'s own disabled blue';
+const BODY = ['fontSize', 'lineHeight', 'fontWeight'].map((p) => `typography-textStyle-bodyRegular-${p}`);
 const LINK = 'a link in its sentence in the brand\'s blue fitted to the tints (--cui-c-console-brand-label-on-tint, held to 4.5:1 on each by test/tokens.mjs), not the console link\'s own';
 
 export const cases = [
@@ -25,6 +20,7 @@ export const cases = [
       { target: BANNER, props: ['background-color'], tb: [`${B}-variant-colorRole-warning-variant-tinted-backgroundColor`] },
       { target: '.cui-console-banner-title', props: ['font-size', 'line-height', 'font-weight', 'color'], tb: [`${D}-title-variant-pageScale-desktop-textStyle-fontSize`, `${D}-title-variant-pageScale-desktop-textStyle-lineHeight`, `${D}-title-variant-pageScale-desktop-textStyle-fontWeight`, `${D}-title-color`] },
       { target: '.cui-console-banner-body', props: ['margin-top', 'color'], tb: [`${D}-body-variant-pageScale-desktop-marginBlockStart`, `${D}-body-color`] },
+      { target: '.cui-console-banner-body', props: SIZE, tb: BODY },
       { target: '.cui-console-banner-icon', props: ['box-width'], tb: [`${D}-art-variant-layout-inline-pageScale-desktop-inlineSize`] },
       { target: '.cui-console-banner-icon', props: ['box-height', 'color'], golden: 'its icon 20px tall, the toolkit\'s art size at desktop, in the fitted label of its color (tokens.css, decision 21)' },
       { target: '.cui-console-banner-actions', props: ['column-gap'], tb: [`${D}-actions-variant-pageScale-desktop-gap`] },
@@ -40,6 +36,7 @@ export const cases = [
       { target: BANNER, props: ['padding-right', 'min-height'], tb: [`${B}-variant-pageScale-mobile-paddingInlineEnd`, `${B}-variant-pageScale-mobile-minHeight`] },
       { target: '.cui-console-banner-title', props: ['font-size', 'line-height', 'font-weight'], tb: [`${D}-title-variant-pageScale-mobile-textStyle-fontSize`, `${D}-title-variant-pageScale-mobile-textStyle-lineHeight`, `${D}-title-variant-pageScale-mobile-textStyle-fontWeight`] },
       { target: '.cui-console-banner-body', props: ['margin-top'], tb: [`${D}-body-variant-pageScale-mobile-marginBlockStart`] },
+      { target: '.cui-console-banner-body', props: SIZE, tb: BODY },
       { target: '.cui-console-banner-icon', props: ['box-height'], golden: 'its icon 20px tall below 640px too: the toolkit\'s 30px is SF Symbols\' size, where a Lucide icon at 30px outweighs its 16px title' },
     ],
   },
@@ -64,7 +61,6 @@ export const cases = [
     ],
   })),
   {
-    // a disabled link in a banner's sentence, light and dark
     name: 'banner disabled link',
     html: `${DISABLED}<div class="cui-dark">${DISABLED}</div>`,
     widths: [1200],

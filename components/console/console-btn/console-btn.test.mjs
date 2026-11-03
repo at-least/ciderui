@@ -1,10 +1,3 @@
-// The console's button against App Store Connect's: the analytics sources
-// page's gray button at rest and hovered (button:button,
-// hover-button:button); the toolkit's button tokens (--tb-component-Button-*)
-// for every size, the filled and plain variants and the red, at rest. The
-// hovered and pressed colors, the fitted ones and the dark side are golden,
-// each with its why.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -19,7 +12,6 @@ const RED = '.flex > :nth-child(4)';
 const RED_FILLED = '.flex > :nth-child(5)';
 const RED_PLAIN = '.flex > :nth-child(6)';
 const FITTED = 'fitted to 4.5:1 (tokens.css, decision 21)';
-const STATE = 'its own hovered or pressed color, the toolkit\'s (tokens.css)';
 
 export const cases = [
   {
@@ -41,9 +33,17 @@ export const cases = [
       { target: RED, props: ['background-color'], tb: [`${B}-colorRole-error-effect-default-variant-gray-backgroundColor`] },
       { target: RED, props: ['color'], golden: `the red label red-700: the toolkit's is 3.6:1 on white, ${FITTED}` },
       { target: RED, props: ['color'], state: 'hover', golden: `red-700 hovered too: the toolkit's lighter red is 2.9:1 on white, ${FITTED}` },
+      { target: RED, props: ['background-color'], state: 'hover', tb: [`${B}-colorRole-error-effect-hover-variant-gray-backgroundColor`] },
+      { target: RED, props: ['background-color'], state: 'active', tb: [`${B}-colorRole-error-effect-press-variant-gray-backgroundColor`] },
+      { target: RED, props: ['color'], state: 'active', golden: `red-700 pressed too: the toolkit's is lighter, ${FITTED}` },
       { target: RED_FILLED, props: ['background-color', 'color'], golden: `the red fill red-700: white on the toolkit's red is 3.3:1, ${FITTED}` },
       { target: RED_FILLED, props: ['background-color'], state: 'hover', golden: `hovered red-800, a step darker: ${FITTED}` },
+      { target: RED_FILLED, props: ['color'], state: 'hover', tb: [`${B}-colorRole-error-effect-hover-variant-filled-color`] },
+      { target: RED_FILLED, props: ['background-color'], state: 'active', golden: `pressed red-800 too: the toolkit's is lighter, ${FITTED}` },
+      { target: RED_FILLED, props: ['color'], state: 'active', tb: [`${B}-colorRole-error-effect-press-variant-filled-color`] },
       { target: RED_PLAIN, props: ['color', 'background-color'], golden: `the red label red-700, no fill: ${FITTED}` },
+      { target: RED_PLAIN, props: ['color', 'background-color'], state: 'hover', golden: `hovered, red-700, no fill: ${FITTED}` },
+      { target: RED_PLAIN, props: ['color', 'background-color'], state: 'active', golden: `pressed, red-700, no fill: ${FITTED}` },
     ],
   },
   {
@@ -65,6 +65,15 @@ export const cases = [
       { target: RED, props: ['color'], tb: [`${B}-colorRole-error-effect-disabled-variant-gray-color`] },
       { target: GRAY, props: ['cursor'], golden: 'no pointer over a disabled button' },
       { target: GRAY, props: ['background-color', 'color'], state: 'hover', golden: 'hovered, a disabled button stays as it is' },
+    ],
+  },
+  {
+    name: 'aria-disabled',
+    html: '<a class="cui-console-btn" aria-disabled="true" href="#all">See All</a>',
+    widths: [1200],
+    checks: [
+      { target: '.cui-console-btn', props: ['background-color', 'color'], tb: [`${B}-colorRole-neutral-effect-disabled-variant-gray-backgroundColor`, `${B}-colorRole-neutral-effect-disabled-variant-gray-color`] },
+      { target: '.cui-console-btn', props: ['cursor'], golden: 'a link marked disabled: no pointer, as a disabled button' },
     ],
   },
   {
@@ -90,6 +99,12 @@ export const cases = [
       { target: '.cui-console-btn-icon svg', props: ['box-height', 'box-width'], tb: ['component-Button-anatomy-artStart-withoutLabel-controlSize-md-fontSize', 'component-Button-anatomy-artStart-withoutLabel-controlSize-md-fontSize'] },
       { target: '.cui-console-btn:not(.cui-console-btn-icon) svg', props: ['box-height', 'box-width'], golden: 'an icon beside a label at the label\'s size, 1em' },
     ],
+  },
+  {
+    name: 'icon sizes',
+    html: '<div class="flex gap-3"><button class="cui-console-btn cui-console-btn-icon" data-size="sm" type="button" aria-label="Copy"></button><button class="cui-console-btn cui-console-btn-icon" data-size="lg" type="button" aria-label="Copy"></button><button class="cui-console-btn cui-console-btn-icon" data-size="xl" type="button" aria-label="Copy"></button></div>',
+    widths: [1200],
+    checks: ['sm', 'lg', 'xl'].map((size) => ({ target: `[data-size="${size}"]`, props: ['font-size'], tb: [`component-Button-anatomy-artStart-withoutLabel-controlSize-${size}-fontSize`] })),
   },
   {
     name: 'touch',

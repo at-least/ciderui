@@ -1,13 +1,9 @@
-// The console's content column against App Store Connect's toolkit's
-// legacy content: its widest, its side room at each step. Golden, with
-// their why: the sidebar's column and the 30px (the analytics overview's
-// menu), the sidebar's room dropped, the sheet below 1024px.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const C = '.cui-console-content';
 const L = 'component-Content-legacy';
+const ROOM = 'the sidebar\'s room dropped in the column (the toolkit\'s sidebar stands at the window\'s edge)';
 
 export const cases = [
   {
@@ -20,12 +16,14 @@ export const cases = [
       { target: C, props: ['box-left', 'grid-template-columns'], golden: 'centered at its widest; the sidebar\'s 225px (App Store Connect\'s menu: analytics menu.item) beside the page' },
       { target: `${C} .cui-console-sidebar-item[aria-current]`, props: ['box-left', 'box-width'], golden: 'the sidebar\'s items flush with the column, as the analytics menu\'s are' },
       { target: `${C} main`, props: ['box-left'], golden: 'the page 30px past the sidebar\'s column' },
+      { target: `${C} .cui-console-sidebar-header`, props: ['padding-left', 'padding-right'], golden: ROOM },
+      { target: `${C} .cui-console-sidebar-body`, props: ['padding-left', 'padding-right'], golden: ROOM },
     ],
   },
   {
     name: 'content tablet',
     html: ex('content'),
-    widths: [800],
+    widths: [1023, 640],
     checks: [
       { target: C, props: ['padding-left', 'padding-right'], tb: [`${L}-md-paddingInline`, `${L}-md-paddingInline`] },
       { target: C, props: ['display'], golden: 'one column below 1024px: the sidebar is a sheet there' },
@@ -35,7 +33,7 @@ export const cases = [
   {
     name: 'content phone',
     html: ex('content'),
-    widths: [390],
+    widths: [639, 390],
     checks: [
       { target: C, props: ['padding-left', 'padding-right'], tb: [`${L}-sm-paddingInline`, `${L}-sm-paddingInline`] },
     ],

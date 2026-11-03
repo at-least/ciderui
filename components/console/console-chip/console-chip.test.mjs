@@ -1,8 +1,3 @@
-// The console's chip against App Store Connect's toolkit's chip
-// (--tb-component-Chip-*: md, gray, neutral): its room, corners, gap, type,
-// fill and label, a link's hovered fill. Golden, with their why: the key's
-// fitted label, the remove control, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -19,6 +14,7 @@ export const cases = [
       { target: FILTER, props: ['padding-top', 'padding-bottom', 'padding-left', 'padding-right', 'border-top-left-radius', 'column-gap', 'font-size', 'line-height', 'font-weight'], tb: [`${C}-controlSize-md-paddingBlockStart`, `${C}-controlSize-md-paddingBlockEnd`, `${C}-controlSize-md-paddingInline`, `${C}-controlSize-md-paddingInline`, `${C}-controlSize-md-borderRadius`, `${C}-controlSize-md-gap`, `${C}-controlSize-md-textStyle-fontSize`, `${C}-controlSize-md-textStyle-lineHeight`, `${C}-controlSize-md-textStyle-fontWeight`] },
       { target: FILTER, props: ['background-color', 'color'], tb: [`${C}-colorRole-neutral-effect-default-variant-gray-backgroundColor`, `${C}-colorRole-neutral-effect-default-variant-gray-color`] },
       { target: TAG, props: ['background-color', 'color'], state: 'hover', tb: [`${C}-colorRole-neutral-effect-hover-variant-gray-backgroundColor`, `${C}-colorRole-neutral-effect-default-variant-gray-color`] },
+      { target: TAG, props: ['background-color'], state: 'active', tb: [`${C}-colorRole-neutral-effect-press-variant-gray-backgroundColor`] },
       { target: TAG, props: ['text-decoration-line'], golden: 'a tag that is a link: no underline, its fill says it' },
       { target: '.cui-console-chip-key', props: ['color'], golden: 'the key in the secondary label at 0.76, the toolkit\'s art color fitted (tokens.css, decision 21): its 0.60 is 3.4:1 on white' },
       { target: '.cui-console-chip-remove', props: ['color'], golden: 'the remove control in the secondary label' },

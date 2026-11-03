@@ -1,10 +1,4 @@
-// The console's copy against Apple's developer documentation's code
-// listing's copy button (DocC, reference/apple.com/results/docc.json's
-// copy): a round button in the listing's top-right corner. Golden, with
-// their why: its size on the console's 13px listing, always shown, the
-// fills, the check while copied.
-
-import { examples } from '../../../test/harness.mjs';
+import { examples, MOTION } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const C = '.cui-console-copy';
@@ -20,6 +14,7 @@ export const cases = [
     checks: [
       { target: `${IDLE} ${B}`, props: ['cursor'], apple: ['docc', 'copy'] },
       { target: `${IDLE} ${B}`, props: ['box-width', 'box-height', 'border-top-left-radius', 'opacity'], golden: 'a 28px circle (DocC\'s 33.5px on its 15px listing), always shown: DocC\'s shows only under a pointer, which a touch screen never has' },
+      { target: `${IDLE} ${B}`, props: MOTION, golden: 'no motion, where DocC\'s fades in 0.2s: the toolkit\'s controls draw none' },
       { target: `${IDLE} ${B}`, props: ['margin-top', 'margin-right'], golden: '5px in from the top and the end, as much from each as DocC\'s, centering it on the first 22px line (8px + 11px - 14px)' },
       { target: C, props: ['border-top-left-radius', 'background-color'], golden: 'the listing\'s corners and gray, moved to the pair: the listing scrolls beside the button, never under it' },
       { target: `${IDLE} ${B} > .cui-console-copy-idle`, props: ['display', 'box-width'], golden: 'Lucide\'s copy at 16px, the console\'s icon size' },

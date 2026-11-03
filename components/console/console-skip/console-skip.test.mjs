@@ -1,7 +1,3 @@
-// The console's skip link: unseen at rest, the filled button at the
-// toolkit's small page margin focused. Golden, with their why: its clip at
-// rest, its place over the page.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);

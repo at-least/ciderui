@@ -1,9 +1,4 @@
-// The console's disclosure against the HIG's disclosure controls (a
-// triangle at the label's leading edge, inward closed and down open; a
-// disclosure button down closed and up open) and App Store Connect's menu
-// group's chevron (components/console/console-menu). Golden, with their why.
-
-import { examples } from '../../../test/harness.mjs';
+import { examples, MOTION } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const D = '.cui-console-disclosure';
@@ -21,6 +16,8 @@ export const cases = [
       { target: `${CLOSED} .cui-console-disclosure-chevron`, props: ['rotate', 'box-width', 'box-height', 'box-left', 'color'], golden: 'closed, pointing inward at the label\'s leading edge (the HIG), 1em, Lucide\'s chevron-right and its secondary label as the menu group\'s' },
       { target: `${CLOSED} .cui-console-disclosure-chevron`, props: ['color'], state: 'hover', on: `${CLOSED} > summary`, golden: 'the label hovered, the chevron still the secondary label, as the menu group\'s: its color its own, not the label\'s' },
       { target: `${OPEN} .cui-console-disclosure-chevron`, props: ['rotate'], golden: 'open, pointing down (the HIG): 90deg' },
+      { target: `${CLOSED} > summary`, props: ['font-size'], golden: 'the text\'s size, inherited' },
+      { target: `${OPEN} .cui-console-disclosure-chevron`, props: MOTION, golden: 'turned at once: the toolkit\'s controls draw no motion' },
     ],
   },
   {

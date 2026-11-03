@@ -1,38 +1,3 @@
-/* ciderui — the console's appearance control: Light, Dark and Auto as one
- * segmented control of radios, for a site that offers its own appearance.
- *
- * Apple's developer documentation's appearance control in its footer (DocC:
- * reference/apple.com/results/docc-scheme.json, -dark, read 2026-10-29),
- * at the console's colors:
- *
- *   <fieldset class="cui-console-appearance">
- *     <legend>Appearance</legend>
- *     <label class="cui-console-appearance-choice"><input type="radio" name="appearance" value="light" checked><span>Light</span></label>
- *     <label class="cui-console-appearance-choice"><input type="radio" name="appearance" value="dark"><span>Dark</span></label>
- *     <label class="cui-console-appearance-choice"><input type="radio" name="appearance" value="auto"><span>Auto</span></label>
- *   </fieldset>
- *
- * cui-console-appearance         the group: a pill 12px round, 1px in, edged
- *                                1px in the brand's blue; its legend read,
- *                                not shown
- * cui-console-appearance-choice  a choice: its radio read, not shown; its
- *                                word 12px on 16px, 42px wide at least, 1px
- *                                by 6px in, 10px round, the brand's blue;
- *                                chosen, white on the blue; the focus ring
- *                                around it while its radio has the focus
- *                                from the keyboard; on a touch screen a
- *                                target 44px tall at least
- *
- * The page's script applies the choice; the browser checks it.
- *
- * DocC's: the shape, the room, the type's size, the blue edge, the
- * unchosen words in blue and the chosen one white on blue; nothing hovered
- * but the pointer. ciderui's: the console's blues (brand accent-primary for
- * the edge and the fill, brand label-primary for a word, fitted to 4.5:1;
- * DocC's rgb(0, 113, 227), and rgb(41, 151, 255) for a word in the dark),
- * the chosen word the label on the accent (white at 0.95); the font
- * tracking itself (DocC's -0.12px is SF's at 12px). */
-
 @layer components {
   .cui-console-appearance {
     display: inline-flex;
@@ -89,15 +54,14 @@
       border-color: var(--cui-c-console-brand-accent-primary);
     }
 
-    /* the radio is hidden, so its ring goes around the choice */
+    /* the radio is hidden: its ring goes around the choice */
     &:has(> input:focus-visible) {
       outline: var(--cui-focus-ring);
       outline-offset: var(--cui-focus-ring-offset);
     }
 
-    /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility):
-       44px tall round the choice, and the choice 44px wide itself, as
-       choices side by side leave no room for a wider target */
+    /* the choice itself the target: choices side by side leave no room
+       for a wider one */
     @media (pointer: coarse) {
       & > span {
         min-width: 2.75rem;

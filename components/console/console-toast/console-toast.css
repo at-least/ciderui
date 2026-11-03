@@ -1,24 +1,3 @@
-/* ciderui — the console's toast: a short word that the page did what was
- * asked ("Saved"), floating at the window's bottom right for a moment, on
- * App Store Connect's newer look's popover ground.
- *
- * App Store Connect's toolkit has no toast; this one is its stroked popover
- * (reference/asc/results/tokens.json, --tb-component-Popover-*: its ground,
- * its shadow, its corners) at its small page margin (--tb-space-pageMarginSm),
- * holding a popover footer's room (Popover-anatomy-Content-anatomy-Footer-*).
- *
- *   <span class="cui-console-toast" role="status" aria-live="polite" data-shown>Saved</span>
- *
- * cui-console-toast   fixed 16px from the window's bottom and right, white,
- *                     the popover's shadow and 0.5px edge, 25px corners (14px
- *                     below 640px), 12px by 14px in, 13px on 18px in the
- *                     label; unseen and untouchable until data-shown, then
- *                     fading in over 200ms (at once with reduced motion)
- *
- * The toolkit's: the ground, the shadow, the corners, the room, the 16px.
- * ciderui's: the place, the fade, the stacking (z-index 900, under the
- * skip link). */
-
 @layer components {
   .cui-console-toast {
     position: fixed;

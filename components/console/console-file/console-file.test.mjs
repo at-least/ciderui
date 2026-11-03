@@ -1,9 +1,3 @@
-// The console's file field against App Store Connect's toolkit's file
-// upload (--tb-component-FileUpload-*: stroked, roundedRect, md, neutral):
-// its height, room, corners, ground, type, the empty control's blue, the
-// disabled ground and label. Golden, with their why: the edge (fitted),
-// the button's gap, the focus, the phone's size, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -32,6 +26,7 @@ export const cases = [
       { target: ON, props: ['border-top-color', 'border-top-width'], golden: 'its edge the field\'s, coolGray-800 at 0.58 (3:1; the toolkit\'s 0.18 is 1.4:1: tokens.css, decision 21)' },
       { target: OFF, props: ['background-color'], tb: [`${F}-effect-disabled-variant-stroked-backgroundColor`] },
       { target: OFF, props: ['color'], tb: [`${F}-effect-disabled-anatomy-ControlText-color`] },
+      { target: OFF, pseudo: '::file-selector-button', props: ['color'], tb: [`${F}-effect-disabled-anatomy-ControlText-color`] },
       { target: OFF, props: ['border-top-color'], golden: 'disabled, the tertiary edge, as a disabled checkbox\'s and radio\'s' },
     ],
   },

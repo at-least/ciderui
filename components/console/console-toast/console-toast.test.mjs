@@ -1,8 +1,3 @@
-// The console's toast against App Store Connect's toolkit's stroked
-// popover: its ground, shadow and corners (desktop and phone), a popover
-// footer's room, the small page margin. Golden, with their why: its place,
-// unseen until shown, the fade, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);

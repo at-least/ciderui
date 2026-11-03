@@ -1,9 +1,3 @@
-// The console's description list against App Store Connect's toolkit's
-// (--tb-component-DL-*): its gaps, its labels' and values' type and color,
-// a vertical value's room, the strong label, each page scale. Golden, with
-// their why: the label column, the muted label's fitted alpha, a value
-// breaking anywhere, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);

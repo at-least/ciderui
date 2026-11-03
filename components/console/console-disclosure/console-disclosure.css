@@ -1,49 +1,3 @@
-/* ciderui — the console's disclosure: a <details> that hides what is not
- * needed yet (a stack's system frames, a frame's source, a phone's
- * filters) behind a line or a button that says what it hides.
- *
- * The HIG's disclosure controls (read 2026-10-29): a triangle at the
- * label's leading edge pointing inward while what it hides is hidden and
- * down while it shows; a disclosure button pointing down while hidden and
- * up while shown; a label that says what is disclosed. Drawn as App Store
- * Connect's menu group draws its chevron (components/console/console-menu: Lucide's
- * chevron-right, 1em, the secondary label, turned 90deg open):
- *
- *   <details class="cui-console-disclosure">
- *     <summary class="cui-console-disclosure-summary">
- *       <svg class="cui-console-disclosure-chevron" …chevron-right…></svg>
- *       12 system frames
- *     </summary>
- *     …
- *   </details>
- *
- *   <details class="cui-console-disclosure" data-variant="button">
- *     <summary class="cui-console-btn">
- *       Filters <svg class="cui-console-disclosure-chevron" …chevron-down…></svg>
- *     </summary>
- *     …
- *   </details>
- *
- * cui-console-disclosure          the <details>; data-variant="button" when
- *                                 its summary is a console button
- * cui-console-disclosure-summary  the line: its chevron 4px before its label,
- *                                 the text's size, the secondary label, the
- *                                 label's own hovered; no marker of the
- *                                 browser's; on a touch screen 44px each way
- *                                 at least
- * cui-console-disclosure-chevron  Lucide's chevron-right before the label,
- *                                 the secondary label whatever the label's
- *                                 color (hovered, or a page's own on it),
- *                                 turned down (90deg) open; in a button,
- *                                 chevron-down after the label, in the
- *                                 button's color, turned up (180deg) open
- *
- * The HIG's: the triangle's place and turns, the button's turns. App Store
- * Connect's menu group's: the chevron's size and color. ciderui's: the 4px
- * between chevron and label; no motion (the toolkit's controls draw none).
- * The page writes the icons (console.ConsoleDisclosure's
- * lucide.ChevronRight and lucide.ChevronDown), as a menu group's. */
-
 @layer components {
   .cui-console-disclosure > :where(summary) {
     list-style: none;
@@ -66,10 +20,9 @@
       }
     }
 
-    /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility):
-       the line itself 44px each way at least, its content centered. Not a
-       larger target drawn round it: two summaries 15px apart shared a band
-       the lower one won, and the opened one's reached into its content */
+    /* not a larger target drawn round the line: two summaries 15px apart
+       shared a band the lower one won, and an opened one's reached into its
+       content */
     @media (pointer: coarse) {
       min-width: 44px;
       min-height: 44px;

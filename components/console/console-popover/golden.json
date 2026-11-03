@@ -13,8 +13,11 @@
  "popover open | .cui-console-popover | 1200 | box-top": "62px",
  "popover open | .cui-console-popover | 1200 | box-left": "474px",
  "popover open | .cui-console-popover | 1200 | box-width": "252px",
+ "popover open | .cui-console-popover | 1200 | overflow-y": "auto",
+ "popover open low | .cui-console-popover | 1200 | box-top": "612px",
  "popover open phone | .cui-console-popover | 390 | box-left": "46px",
  "popover open phone | .cui-console-popover | 390 | box-width": "298px",
+ "popover open phone | .cui-console-popover | 390 | max-width": "331.5px",
  "popover dark | .cui-console-popover | 1200 | background-color": "oklch(0 0 0)",
  "popover dark | .cui-console-popover | 1200 | color": "oklch(1 0 0 / 0.85)"
 }

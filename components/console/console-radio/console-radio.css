@@ -1,40 +1,3 @@
-/* ciderui — the console's radio: App Store Connect's newer look's, a 15px
- * circle before its label, a 1.5px edge; chosen, the brand's blue with a
- * white mark at its center. The input itself, drawn: it takes the focus,
- * the click and the arrow keys as a radio does. A line under the label
- * says what the choice means.
- *
- * From the toolkit's radio and label (reference/asc/results/tokens.json,
- * --tb-component-Radio-*: brand, md; --tb-component-Label-*).
- *
- *   <label class="cui-console-radio">
- *     <input class="cui-console-radio-input" type="radio" name="kind" value="service" checked>
- *     Service
- *     <span class="cui-console-radio-caption">A backend or a server.</span>
- *   </label>
- *
- * cui-console-radio          the radio and its label (a <label>), its label
- *                            9px after the circle, 13px on 18px, the label;
- *                            disabled, the disabled label; on a touch
- *                            screen 44px tall at least
- * cui-console-radio-input    the input: 15px, round, a 1.5px edge, white;
- *                            chosen, the brand's blue and its shadow, a
- *                            6.43px white mark; disabled, a fainter edge on
- *                            the gray fill, its mark the disabled label;
- *                            in forced colors, chosen, its edge and mark
- *                            the theme's highlight (disabled, its gray);
- *                            focused from the keyboard, base.css's ring
- * cui-console-radio-caption  a line under the label, 13px, the secondary
- *                            label
- *
- * The toolkit's: the size, the edge's width, the mark's size and color,
- * the chosen shadow, the disabled edge and mark, the label's type.
- * ciderui's: the edge, the field's (decision 21: the toolkit's 0.18 is
- * 1.4:1; a control's edge is 3:1); chosen, the brand's flat blue (the
- * toolkit's is a gradient around it); the gap to the label, the
- * checkbox's (the toolkit's label names none for a radio); the caption;
- * the focus ring base.css's (rule 9). */
-
 @layer components {
   .cui-console-radio {
     display: inline-grid;
@@ -53,9 +16,8 @@
       cursor: default;
     }
 
-    /* a touch screen's target, the HIG's 44pt (Accessibility, Mobility): the
-       label 44px tall at least, its content centered in it. Not a larger
-       target drawn round it: stacked 12px apart, it reached the radio above */
+    /* not a larger target drawn round it: stacked 12px apart, it reached
+       the radio above */
     @media (pointer: coarse) {
       min-height: 44px;
       align-content: center;
@@ -80,8 +42,6 @@
       background-image: radial-gradient(circle, var(--cui-c-console-brand-label-on-accent-primary) 3.215px, transparent 3.715px);
       box-shadow: var(--cui-console-shadow-radio);
 
-      /* forced colors drop the gradient and the fill, the chosen radio
-         drawn as the others: its edge and its mark the theme's highlight */
       @media (forced-colors: active) {
         forced-color-adjust: none;
         border-color: Highlight;

@@ -1,43 +1,3 @@
-/* ciderui — the console's button: App Store Connect's newer look's, a
- * rounded rectangle, gray by default, filled for the page's one main action,
- * plain as a link is, red where it destroys.
- *
- * From the toolkit's button (reference/asc/results/tokens.json,
- * --tb-component-Button-*) and the analytics sources page's gray button
- * (button:button, hover-button:button).
- *
- *   <button class="cui-console-btn" type="button">Compare</button>
- *   <button class="cui-console-btn" data-variant="filled" type="submit">Save</button>
- *   <a class="cui-console-btn" data-variant="plain" href="/all">See All</a>
- *   <button class="cui-console-btn" data-color="error" type="button">Delete</button>
- *   <button class="cui-console-btn cui-console-btn-icon" aria-label="Copy"><svg …></svg></button>
- *
- * cui-console-btn          30px, 11px in, 10px corners, 13px on 18px at 500;
- *                          gray: the neutral fill at 0.12 under the label
- *   data-variant="filled"  the brand's fill, the label white
- *   data-variant="plain"   no fill, no room at its sides, the brand's label
- *   data-color="error"     red: a gray one's label, a filled one's fill, a
- *                          plain one's label
- *   data-size="sm"|"lg"|"xl"  22px (8px in, 8px corners, 11px on 13px),
- *                          40px (15px in, 12px corners), 50px (22px in, 14px
- *                          corners), each 18px on 22px
- *   disabled, aria-disabled="true"  its disabled label (a filled one its
- *                          fill at 0.30), no pointer
- * cui-console-btn-icon     an icon alone: square, its icon 16px (13px small,
- *                          20px large), its label its aria-label
- * an <svg> in it           an icon before or after the label, 1em
- * on a touch screen        its target (::after) 44px at least each way
- *
- * Hovered and pressed, each variant's own colors. The toolkit's: the sizes,
- * the corners (its rounded rectangle, the analytics page's, where its
- * default is a capsule), the gaps, the md type (the analytics page's), the
- * colors (light; dark derived: tokens.css), no motion. ciderui's: the
- * colors a contrast check found short, fitted (tokens.css, decision 21:
- * the filled blue hovered and the red, as fill and as label, a step
- * darker); the sm, lg and xl type, the toolkit's tab bar's at the same
- * sizes (its button names none); the focus ring base.css's (rule 9; the
- * toolkit's is 3px of its accent at 0.15). */
-
 @layer components {
   .cui-console-btn {
     --cui-console-btn-fill: var(--cui-c-console-neutral-fill-tertiary);
@@ -185,11 +145,9 @@
     }
   }
 
-  /* a touch screen's: the button itself 44px each way at least, the HIG's
-     44pt (Accessibility, Mobility). Not a larger transparent target round
-     it: buttons 8px apart are 38px from center to center, and each one's
-     target covered its neighbour's. After the sizes and the plain
-     variant, whose min-width it overrides; xl's 50px kept */
+  /* not a transparent target round the button: 8px apart, each one's
+     covered its neighbour's. After the sizes and the plain variant, whose
+     min-width it overrides */
   @media (pointer: coarse) {
     .cui-console-btn {
       min-height: 2.75rem;

@@ -1,10 +1,3 @@
-// The console's list against App Store Connect's toolkit's display list
-// (--tb-component-DisplayList-*: groupedGray, its item): the 16px in, the
-// label's type and color, the pressed fill, the row height (its sidebar
-// items'). Golden, with their why: the hairline, the hovered fill, the
-// secondary label's fitted alpha, the group's gray and corners, the dark
-// side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);

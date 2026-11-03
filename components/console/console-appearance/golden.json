@@ -1,5 +1,7 @@
 {
  "appearance | .cui-console-appearance | 1200 | box-height": "24px",
+ "appearance | .cui-console-appearance .cui-console-appearance-choice:not(:has(input:checked)) > span:hover | 1200 | color": "oklch(0.542 0.162 251.9)",
+ "appearance | .cui-console-appearance .cui-console-appearance-choice:not(:has(input:checked)) > span:hover | 1200 | background-color": "rgba(0, 0, 0, 0)",
  "appearance | .cui-console-appearance | 1200 | border-top-color": "oklch(0.542 0.162 251.9)",
  "appearance | .cui-console-appearance | 1200 | letter-spacing": "normal",
  "appearance | .cui-console-appearance .cui-console-appearance-choice:not(:has(input:checked)) > span | 1200 | color": "oklch(0.542 0.162 251.9)",
@@ -13,6 +15,8 @@
  "appearance | .cui-console-appearance > legend | 1200 | box-width": "1px",
  "appearance | .cui-console-appearance > legend | 1200 | position": "absolute",
  "appearance | .cui-console-appearance | 390 | box-height": "24px",
+ "appearance | .cui-console-appearance .cui-console-appearance-choice:not(:has(input:checked)) > span:hover | 390 | color": "oklch(0.542 0.162 251.9)",
+ "appearance | .cui-console-appearance .cui-console-appearance-choice:not(:has(input:checked)) > span:hover | 390 | background-color": "rgba(0, 0, 0, 0)",
  "appearance | .cui-console-appearance | 390 | border-top-color": "oklch(0.542 0.162 251.9)",
  "appearance | .cui-console-appearance | 390 | letter-spacing": "normal",
  "appearance | .cui-console-appearance .cui-console-appearance-choice:not(:has(input:checked)) > span | 390 | color": "oklch(0.542 0.162 251.9)",

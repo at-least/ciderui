@@ -1,8 +1,3 @@
-// The console's tabs against App Store Connect's toolkit's tab bar
-// (--tb-component-Tabs-*, brand: underlined and filled-gray), at rest,
-// pressed, current and disabled, at each size. Golden, with their why: the
-// colors fitted to 4.5:1, the hovered ones, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -41,11 +36,11 @@ export const cases = [
     checks: [
       { target: '.cui-console-tabs', props: ['flex-wrap', 'overflow-x', 'box-height'], golden: 'a phone: one row (no second hairline), scrolling sideways' },
       { target: '.cui-console-tabs', props: ['mask-image'], golden: 'no overflow state from the host (no-JS among it), the row unfaded' },
+      { target: '.cui-console-tabs', props: ['scrollbar-width'], golden: 'no scrollbar: the side still hiding content fades instead' },
       { target: '.cui-console-tab[href="#settings"]', props: ['outline-offset'], state: 'focus-visible', golden: 'its focus ring inside the tab, where the scroll box would clip it' },
-      { target: '.cui-console-tabs', props: ['scroll-padding-left', 'scroll-padding-right'], golden: 'a focused tab is brought in clear of the 24px fade: a browser\'s focus scrolls only a tab it judges out of view, and Chromium 151 left one 3px in view where it was (reference/console/)' },
+      { target: '.cui-console-tabs', props: ['scroll-padding-left', 'scroll-padding-right'], golden: 'a focused tab is brought in clear of the 24px fade: a browser\'s focus scrolls only a tab it judges out of view, and left one 3px in view where it was' },
     ],
   },
-  // the host's script's overflow states on the phone row, each one's fade
   ...[
     ['start', 'data-overflow data-overflow-start', [375], 'scrolled to its start, the right edge fades over the content still hidden; the left edge stays clear'],
     ['end', 'data-overflow data-overflow-end', [375], 'scrolled to its end, the left edge fades over the sections clipped behind; the right edge stays clear'],
@@ -63,6 +58,15 @@ export const cases = [
     checks: [
       { target: '.cui-console-tabs', props: ['flex-wrap', 'overflow-x'], golden: 'wide, the bar as the toolkit draws it' },
       { target: '.cui-console-tab[href="#settings"]', props: ['outline-offset'], state: 'focus-visible', golden: 'wide, base.css\'s ring outside the tab' },
+    ],
+  },
+  {
+    name: 'tabs selected',
+    html: '<div class="cui-console-tabs" role="tablist" aria-label="Report"><button class="cui-console-tab" role="tab" type="button" aria-selected="true">Crashes</button><button class="cui-console-tab" role="tab" type="button" aria-selected="false" aria-current="false">Hangs</button></div>',
+    widths: [1200],
+    checks: [
+      { target: '[aria-selected="true"]', props: ['border-bottom-color'], golden: 'aria-selected="true" the current one, on its rule, as aria-current' },
+      { target: '[aria-current="false"]', props: ['border-bottom-color'], golden: 'aria-current="false" not the current one: no rule' },
     ],
   },
   {

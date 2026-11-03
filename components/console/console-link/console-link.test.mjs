@@ -1,10 +1,4 @@
-// The console's link against App Store Connect's: the analytics overview's
-// See All link, at rest and hovered (analytics-page:section.link,
-// hover-link:section.link), and the toolkit's link tokens (brand: inline,
-// label, disabled). Golden, with their why: the label variant hovered
-// without its underline, the dark side.
-
-import { examples } from '../../../test/harness.mjs';
+import { examples, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const L = 'component-Link-variant-colorRole-brand-effect';
@@ -30,6 +24,7 @@ export const cases = [
       { target: TEXT, props: ['color'], tb: [`${L}-default-variant-inline-color`] },
       { target: TEXT, props: ['text-decoration-line'], golden: 'a link inside a sentence underlined at rest: told apart from the words around it by more than its color (WCAG 1.4.1; crashcart\'s links in a secondary caption measured 1.03:1 against it)' },
       { target: TEXT, props: ['text-decoration-line'], state: 'hover', golden: 'hovered, still underlined' },
+      { target: TEXT, props: SIZE, golden: 'the type of the text around it' },
     ],
   },
   {

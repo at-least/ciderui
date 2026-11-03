@@ -1,9 +1,3 @@
-// The console's checkbox against App Store Connect's toolkit's checkbox and
-// label (--tb-component-Checkbox-*, -Label-*: brand, md): its size, corners,
-// edge's width, the gap to its label, the label's type, the disabled fill.
-// Golden, with their why: the edge (fitted), the flat blue checked, the
-// check and the dash, the ring on the box, the dark side.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -48,6 +42,7 @@ export const cases = [
       { target: '[name="all"] + .cui-console-checkbox-box', props: ['background-color'], golden: 'indeterminate, the brand\'s blue' },
       { target: '[name="all"] + .cui-console-checkbox-box svg:last-child', props: ['visibility'], golden: 'indeterminate, Lucide\'s minus' },
       { target: '[name="all"] + .cui-console-checkbox-box svg:first-child', props: ['visibility'], golden: 'indeterminate, no check' },
+      { target: '[name="all"] + .cui-console-checkbox-box svg:last-child', props: ['color'], golden: 'indeterminate, its minus white' },
     ],
   },
   {
@@ -56,8 +51,9 @@ export const cases = [
     touch: true,
     widths: [390],
     checks: [
-      { target: `${OFF} .cui-console-checkbox-input`, props: ['box-width', 'box-height'], golden: 'the transparent input 44px square on a touch screen, the HIG\'s 44pt (Accessibility, Mobility)' },
-      { target: `${OFF} .cui-console-checkbox-box`, props: ['box-width', 'box-height'], golden: 'the box drawn as before, 15px' },
+      { target: `${OFF} .cui-console-checkbox-input`, props: ['box-width', 'box-height', 'box-left', 'box-top'], golden: 'the transparent input 44px square on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), centered on the box' },
+      { target: `${OFF} .cui-console-checkbox-box`, props: ['box-width', 'box-height', 'box-left', 'box-top'], golden: 'the box drawn as before, 15px' },
+      { target: 'span.cui-console-checkbox', props: ['box-height'], golden: 'a table row\'s <span> not made 44px tall: its row is taller than the input already' },
       { target: OFF, props: ['box-height'], golden: 'a checkbox with its label 44px tall on a touch screen, as the radio, so its input\'s 44px fits its row: stacked 12px apart, the next one\'s reached 14px into it' },
     ],
   },
