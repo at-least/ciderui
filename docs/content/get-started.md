@@ -4,7 +4,7 @@ description = "ciderui in a site: Tailwind CSS v4, its stylesheets imported, its
 template = "docs.html"
 +++
 
-ciderui is apple.com’s look for a website built with Tailwind CSS v4: a small contract of variables (the colors, the sizes, the motion), the type as utilities, and apple.com’s parts as classes, each in a stylesheet of its own that a site imports when it uses the part. Everything it draws was measured on apple.com’s live pages; none of apple.com’s CSS is copied.
+ciderui is apple.com’s look for a website built with Tailwind CSS v4: a small contract of variables (the colors, the type, the focus ring, the shadows), the type as utilities, and apple.com’s parts as classes, each in a stylesheet of its own that a site imports when it uses the part. Everything it draws was measured on apple.com’s live pages; none of apple.com’s CSS is copied.
 
 It has no JavaScript. A part that opens does so with HTML’s own elements (`<details>`, `popover`, a checkbox and its label); what only a script can do, a gallery’s paddles, is the page’s, and the component shows the state the page sets.
 
@@ -40,7 +40,7 @@ A site that uses a few parts can import those alone, `ciderui/components/site/gl
 | file | what it holds |
 | --- | --- |
 | `theme.css` | apple.com’s breakpoints, in place of Tailwind’s; the `dark:` variant; the semantic utilities (`text-body`, `bg-alt`, `text-link`, …) |
-| `tokens.css` | the `--cui-*` variables: the colors, each a light and a dark value, and the radii, sizes, durations and materials |
+| `tokens.css` | the `--cui-*` variables: the colors, each a light and a dark value, the font stacks, the letter-spacing per size, the focus ring and the shadows |
 | `base.css` | the page’s text and ground, the focus ring, dark and light blocks, reduced motion |
 | `type.css` | the type’s classes, `cui-headline` to `cui-caption` |
 

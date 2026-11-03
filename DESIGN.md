@@ -73,7 +73,7 @@ Every component follows these. The numbers are cited across the repository; they
 
 The palette is fixed: no site redefines a color, and there are no themes (decision 15).
 
-Not themed, in tokens.css too, each measured: the radii, the control sizes (rule 8), the focus ring (rule 9), the durations and curves (rule 10), the materials (the bar's `saturate(1.8) blur(20px)`, a curtain's `blur(20px)`), the shadows (apple.com's card's, the toolkit's), the content widths (apple.com's newer pages' 87.5% up to 1260px; the older 980px, its footer's; the global nav's 1024px; the Newsroom's article columns), the font stacks and the letter-spacing per size (the type).
+Not themed, each measured: in tokens.css, the focus ring (rule 9), the shadows (apple.com's card's, the toolkit's), the font stacks and the letter-spacing per size (the type); in the stylesheet of the part that draws them, the radii, the control sizes (rule 8), the durations and curves (rule 10), the materials (the bar's `saturate(1.8) blur(20px)`, a curtain's `blur(20px)`) and the content widths (apple.com's newer pages' 87.5% up to 1260px; the older 980px, its footer's; the global nav's 1024px; the Newsroom's article columns).
 
 ## The type
 
