@@ -45,7 +45,7 @@ func TestAppearanceRendersTheExample(t *testing.T) {
 }
 
 func TestAppearanceNoneChosenChecksNone(t *testing.T) {
-	got := example.Render(console.ConsoleAppearance{Chosen: console.ConsoleAppearanceChoice{}, Class: "hx-only"})
+	got := example.Render(console.ConsoleAppearance{Chosen: console.ConsoleAppearanceChoiceNone, Class: "hx-only"})
 	if !strings.HasPrefix(got, `<fieldset class="cui-console-tabs hx-only" data-variant="filled">`) || strings.Contains(got, "checked") {
 		t.Errorf("got %s", got)
 	}

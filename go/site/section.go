@@ -8,16 +8,21 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// Ground's zero value: the page's ground.
 type Ground struct{ value string }
 
-var GroundAlt = Ground{"alt"}
+var (
+	GroundPage = Ground{value: ""}
+	GroundAlt  = Ground{"alt"}
+)
 
-// Rhythm's zero value: apple.com's iPhone page.
 type Rhythm struct{ value string }
 
-// RhythmLarge: apple.com's iPhone 18 Pro page.
-var RhythmLarge = Rhythm{"lg"}
+var (
+	// RhythmRegular: apple.com's iPhone page.
+	RhythmRegular = Rhythm{value: ""}
+	// RhythmLarge: apple.com's iPhone 18 Pro page.
+	RhythmLarge = Rhythm{"lg"}
+)
 
 type Section struct {
 	Ground   Ground

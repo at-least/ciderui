@@ -8,11 +8,14 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// TileSize's zero value: a promo tile, two to a row.
 type TileSize struct{ value string }
 
-// TileSizeLarge: a full-width tile.
-var TileSizeLarge = TileSize{"lg"}
+var (
+	// TileSizeRegular: a promo tile, two to a row.
+	TileSizeRegular = TileSize{value: ""}
+	// TileSizeLarge: a full-width tile.
+	TileSizeLarge = TileSize{"lg"}
+)
 
 type Tile struct {
 	Size    TileSize

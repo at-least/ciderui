@@ -23,7 +23,7 @@ func mustPanic(t *testing.T, want string, render func()) {
 }
 
 func TestDocsAsideRendersTheExamples(t *testing.T) {
-	example.Check(t, docs.DocsAside{Variant: docs.DocsAsideVariant{}, Class: "", Children: h.P(g.Text("A report from a beta build carries its beta identifier; one from the App Store does not."))}, "docs/docs-aside/examples/note.html")
+	example.Check(t, docs.DocsAside{Variant: docs.DocsAsideVariantNote, Class: "", Children: h.P(g.Text("A report from a beta build carries its beta identifier; one from the App Store does not."))}, "docs/docs-aside/examples/note.html")
 	type kind struct {
 		variant docs.DocsAsideVariant
 		text    string
@@ -41,7 +41,7 @@ func TestDocsAsideRendersTheExamples(t *testing.T) {
 }
 
 func TestDocsAsideTakesThePagesUtilities(t *testing.T) {
-	got := example.Render(docs.DocsAside{Variant: docs.DocsAsideVariant{}, Class: "mt-8", Children: h.P(g.Text("A."))})
+	got := example.Render(docs.DocsAside{Variant: docs.DocsAsideVariantNote, Class: "mt-8", Children: h.P(g.Text("A."))})
 	if !strings.HasPrefix(got, `<aside class="cui-docs-aside mt-8" aria-label="Note">`) {
 		t.Errorf("got %s", got)
 	}

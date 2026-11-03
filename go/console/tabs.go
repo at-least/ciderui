@@ -76,6 +76,9 @@ func (t ConsoleTabs) Render(w io.Writer) error {
 type ConsoleAppearanceChoice struct{ value string }
 
 var (
+	// ConsoleAppearanceChoiceNone: the page's script picks the choice from
+	// what it stored.
+	ConsoleAppearanceChoiceNone  = ConsoleAppearanceChoice{value: ""}
 	ConsoleAppearanceChoiceLight = ConsoleAppearanceChoice{"light"}
 	ConsoleAppearanceChoiceDark  = ConsoleAppearanceChoice{"dark"}
 	ConsoleAppearanceChoiceAuto  = ConsoleAppearanceChoice{"auto"}
@@ -85,8 +88,6 @@ var (
 // for a site that offers its own appearance. The page's script applies the
 // choice (decision 27).
 type ConsoleAppearance struct {
-	// Chosen: the zero value when the page's script picks the choice from
-	// what it stored.
 	Chosen ConsoleAppearanceChoice
 	Class  string
 }

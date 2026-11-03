@@ -8,10 +8,11 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// StorySize's zero value: three across.
 type StorySize struct{ value string }
 
 var (
+	// StorySizeSmall: three across.
+	StorySizeSmall = StorySize{value: ""}
 	// StorySizeMedium: two across.
 	StorySizeMedium = StorySize{"md"}
 	// StorySizeLarge: one across.

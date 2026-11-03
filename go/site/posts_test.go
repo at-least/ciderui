@@ -28,7 +28,7 @@ func TestPostsRendersTheExamples(t *testing.T) {
 		rows    []row
 		file    string
 	}{
-		{site.PostSize{}, "October 2026", archive, "site/posts/examples/archive.html"},
+		{site.PostSizeRegular, "October 2026", archive, "site/posts/examples/archive.html"},
 		{site.PostSizeSmall, "More from the Newsroom", related, "site/posts/examples/related.html"},
 	} {
 		example.Check(t, site.Posts{Size: c.size, Heading: c.heading, Class: "", Children: g.Map(c.rows, func(r row) g.Node {
@@ -46,7 +46,7 @@ func TestPostADateWithNoDatetimePanics(t *testing.T) {
 
 func TestPostsAnEmptyHeadingPanics(t *testing.T) {
 	mustPanic(t, "Posts needs a Heading", func() {
-		example.Render(site.Posts{Size: site.PostSize{}, Heading: "", Class: "", Children: g.Text("")})
+		example.Render(site.Posts{Size: site.PostSizeRegular, Heading: "", Class: "", Children: g.Text("")})
 	})
 }
 

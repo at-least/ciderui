@@ -10,7 +10,7 @@ import (
 )
 
 func ExampleConsoleAppearance() {
-	_ = console.ConsoleAppearance{Chosen: console.ConsoleAppearanceChoice{}, Class: ""}.Render(os.Stdout)
+	_ = console.ConsoleAppearance{Chosen: console.ConsoleAppearanceChoiceNone, Class: ""}.Render(os.Stdout)
 	// Output: <fieldset class="cui-console-tabs" data-variant="filled"><legend>Appearance</legend><label class="cui-console-tab"><input type="radio" name="appearance" value="light">Light</label><label class="cui-console-tab"><input type="radio" name="appearance" value="dark">Dark</label><label class="cui-console-tab"><input type="radio" name="appearance" value="auto">Auto</label></fieldset>
 }
 

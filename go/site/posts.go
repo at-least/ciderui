@@ -8,11 +8,14 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// PostSize's zero value is the Newsroom archive.
 type PostSize struct{ value string }
 
-// PostSizeSmall: the related stories under an article.
-var PostSizeSmall = PostSize{"sm"}
+var (
+	// PostSizeRegular: the Newsroom archive.
+	PostSizeRegular = PostSize{value: ""}
+	// PostSizeSmall: the related stories under an article.
+	PostSizeSmall = PostSize{"sm"}
+)
 
 type Posts struct {
 	Size    PostSize

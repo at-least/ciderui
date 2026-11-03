@@ -110,7 +110,7 @@ func ExampleOptionTile() {
 }
 
 func ExamplePosts() {
-	page := site.Posts{Size: site.PostSize{}, Heading: "October 2026", Class: "", Children: h.Li(g.Text("…"))}
+	page := site.Posts{Size: site.PostSizeRegular, Heading: "October 2026", Class: "", Children: h.Li(g.Text("…"))}
 	_ = page.Render(os.Stdout)
 	// Output: <section class="cui-posts"><h2 class="cui-posts-heading">October 2026</h2><ul class="cui-posts-list"><li>…</li></ul></section>
 }

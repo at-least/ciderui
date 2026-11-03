@@ -8,10 +8,11 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// DocsAsideVariant is DocC's six aside kinds; the zero value is a note.
+// DocsAsideVariant is DocC's six aside kinds.
 type DocsAsideVariant struct{ value string }
 
 var (
+	DocsAsideVariantNote       = DocsAsideVariant{value: ""}
 	DocsAsideVariantImportant  = DocsAsideVariant{"important"}
 	DocsAsideVariantWarning    = DocsAsideVariant{"warning"}
 	DocsAsideVariantTip        = DocsAsideVariant{"tip"}
