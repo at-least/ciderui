@@ -21,9 +21,7 @@ func TestTheKitIsEmbedded(t *testing.T) {
 	}
 }
 
-// a set's entry imports each of its parts once, in the order of their names,
-// and no other set's: a part's rule over another's of the same specificity
-// relies on that order
+// a part's rule over another's of the same specificity relies on this order
 func TestEachSetImportsItsPartsInOrder(t *testing.T) {
 	for _, set := range []string{"site", "console", "docs"} {
 		var imported []string
@@ -57,7 +55,7 @@ func TestNoPartHasAHeader(t *testing.T) {
 	}
 }
 
-// type.css steps at md:, so a page's md: layout and its type change at one width
+// a page's md: layout and its type change at one width
 func TestTypeStepsAtTheMdBreakpoint(t *testing.T) {
 	md := regexp.MustCompile(`--breakpoint-md: (\d+px);`).FindStringSubmatch(CSS("theme.css"))[1]
 	steps := regexp.MustCompile(`width >= (\d+px)`).FindAllStringSubmatch(CSS("type.css"), -1)

@@ -102,7 +102,6 @@ func TestGlobalNavRendersTheSearchExample(t *testing.T) {
 func TestGlobalNavTheSuggestionsExampleIsTheSearchWithItsSections(t *testing.T) {
 	search := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", Name: "Cider", Links: globalNavLinks, Search: site.FlyoutSearch{Action: "/search", Links: globalNavQuick}, Bag: site.LinkedBag{Href: "/bag"}, Dark: false, Clear: false, Class: ""})
 	suggestions := example.Read("site/globalnav/examples/suggestions.html")
-	// from the first heading to the last list's end
 	sections := func(html string) (int, int) {
 		start := strings.Index(html, `<h2 class="cui-globalnav-searchheading"`)
 		end := strings.LastIndex(html, "</ul>")

@@ -10,10 +10,8 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// the example at path with its listing's lines kept as written: trimming
-// each line, as example.Read does, would drop the code's indent and the
-// newlines between its lines; each line outside the <pre> is trimmed as
-// example.Read trims it
+// the <pre> kept as written, each line outside it trimmed: example.Read
+// would drop the code's indent and the newlines between its lines
 func examplePre(path string) string {
 	raw := readRaw(path)
 	start := strings.Index(raw, "<pre")

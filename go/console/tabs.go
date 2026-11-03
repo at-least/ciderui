@@ -8,49 +8,34 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleTabsVariant is what a row of [ConsoleTabs] is for, which sets its look and its
-// markup. It has no default: its zero value panics in Render.
+// ConsoleTabsVariant is what the tabs are for; it sets their markup as well
+// as their look.
 type ConsoleTabsVariant struct{ value string }
 
 var (
-	// ConsoleTabsVariantUnderlined is a page's sections, each its own page: App
-	// Store Connect's app tabs. A <nav>; the current tab
-	// aria-current="page".
+	// ConsoleTabsVariantUnderlined is a page's sections, each its own page:
+	// App Store Connect's app tabs.
 	ConsoleTabsVariantUnderlined = ConsoleTabsVariant{"underlined"}
-	// ConsoleTabsVariantFilled is a choice of a few views of one thing (a list's
-	// status, a chart's period): the HIG's segmented control, Apple
-	// Developer Forums' Topics and All Posts. A group; the chosen tab
-	// aria-current="true".
+	// ConsoleTabsVariantFilled is a choice of a few views of one thing (a
+	// list's status, a chart's period): the HIG's segmented control.
 	ConsoleTabsVariantFilled = ConsoleTabsVariant{"filled"}
 )
 
-// ConsoleTabs is cui-console-tabs (components/console/console-tabs): a row of
-// tabs, each a link to a page.
 type ConsoleTabs struct {
-	// Label is what the row is called (its aria-label). Required: an empty
-	// one panics.
-	Label string
-	// Variant is underlined or filled. Required: the zero ConsoleTabsVariant
-	// panics.
+	// Label is the row's aria-label.
+	Label   string
 	Variant ConsoleTabsVariant
-	// Tabs are the tabs, in order.
-	Tabs []ConsoleTab
-	// Class is the page's utilities on the row; "" for none.
-	Class string
+	Tabs    []ConsoleTab
+	Class   string
 }
 
-// ConsoleTab is one tab of a [ConsoleTabs].
 type ConsoleTab struct {
-	// Label is its text. Required: an empty one panics.
 	Label string
-	// Href is the page it opens; "" for a tab not available now
-	// (aria-disabled).
-	Href string
-	// Current is whether it is the page or the choice shown.
+	// Href: "" for a tab not available now.
+	Href    string
 	Current bool
 }
 
-// Render writes the row.
 func (t ConsoleTabs) Render(w io.Writer) error {
 	if t.Label == "" {
 		panic("console.ConsoleTabs needs a Label")
@@ -88,32 +73,24 @@ func (t ConsoleTabs) Render(w io.Writer) error {
 	return h.Div(class.Root("cui-console-tabs", t.Class), h.Data("variant", "filled"), h.Role("group"), h.Aria("label", t.Label), tabs).Render(w)
 }
 
-// ConsoleAppearanceChoice is a choice of an [ConsoleAppearance]. Its zero value is none
-// chosen yet.
 type ConsoleAppearanceChoice struct{ value string }
 
 var (
-	// ConsoleAppearanceChoiceLight is Light, value="light".
 	ConsoleAppearanceChoiceLight = ConsoleAppearanceChoice{"light"}
-	// ConsoleAppearanceChoiceDark is Dark, value="dark".
-	ConsoleAppearanceChoiceDark = ConsoleAppearanceChoice{"dark"}
-	// ConsoleAppearanceChoiceAuto is the system's, value="auto".
-	ConsoleAppearanceChoiceAuto = ConsoleAppearanceChoice{"auto"}
+	ConsoleAppearanceChoiceDark  = ConsoleAppearanceChoice{"dark"}
+	ConsoleAppearanceChoiceAuto  = ConsoleAppearanceChoice{"auto"}
 )
 
-// ConsoleAppearance is Light, Dark and Auto as a filled cui-console-tabs
-// (components/console/console-tabs) of radios (name="appearance"), the HIG's
-// segmented control, for a site that offers its own appearance; the page's
-// script applies the choice.
+// ConsoleAppearance is Light, Dark and Auto as filled [ConsoleTabs] of radios,
+// for a site that offers its own appearance. The page's script applies the
+// choice (decision 27).
 type ConsoleAppearance struct {
-	// Chosen is the chosen one; the zero ConsoleAppearanceChoice for none yet (the
-	// page's script chooses it from what it stored).
+	// Chosen: the zero value when the page's script picks the choice from
+	// what it stored.
 	Chosen ConsoleAppearanceChoice
-	// Class is the page's utilities on the <fieldset>; "" for none.
-	Class string
+	Class  string
 }
 
-// Render writes the control.
 func (a ConsoleAppearance) Render(w io.Writer) error {
 	choices := []struct {
 		choice ConsoleAppearanceChoice

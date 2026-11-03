@@ -10,36 +10,22 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleBanner is cui-console-banner (components/console/console-banner): App
-// Store Connect's newer look's banner, a message on a rounded panel tinted
-// in its color: its icon, its title, what the page gives it under the title
-// (a <p class="cui-console-banner-body">, a caption, its actions), and a
-// button that closes it, which the page's script wires. An error banner is
-// role="alert", any other role="status".
+// ConsoleBanner: the page's script wires the Dismiss button.
 type ConsoleBanner struct {
-	// Color is its color: the neutral, info, success, warning or error. The
-	// brand has no banner: it panics.
 	Color ConsoleColor
-	// Icon is its icon at its start, a package lucide icon; the zero
-	// icon.Icon for none.
-	Icon icon.Icon
-	// Title is its title; "" for none.
+	Icon  icon.Icon
 	Title string
-	// Dismiss is its close button's label (aria-label); "" for no close
-	// button.
+	// Dismiss is the close button's aria-label; "" for no close button.
 	Dismiss string
-	// Class is the page's utilities on the banner; "" for none.
-	Class string
-	// Children is what goes under its title; nil for nothing.
+	Class   string
+	// Children: a <p class="cui-console-banner-body">, a caption, actions.
 	Children g.Node
 }
 
-// Render writes the banner.
 func (b ConsoleBanner) Render(w io.Writer) error {
 	if b.Color == ConsoleColorBrand {
 		panic("console.ConsoleBanner has no brand color")
 	}
-	// an error interrupts: a screen reader announces it at once
 	role := "status"
 	if b.Color == ConsoleColorError {
 		role = "alert"

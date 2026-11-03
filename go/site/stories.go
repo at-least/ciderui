@@ -8,31 +8,23 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// StorySize is a [Story]'s size (data-size): how many of it go across the
-// grid. Its zero value is three across, four of the grid's twelve columns.
+// StorySize's zero value: three across.
 type StorySize struct{ value string }
 
 var (
-	// StorySizeMedium is two across (data-size="md"), six columns.
+	// StorySizeMedium: two across.
 	StorySizeMedium = StorySize{"md"}
-	// StorySizeLarge is one across (data-size="lg"), its picture beside its
-	// text from 1069px.
+	// StorySizeLarge: one across.
 	StorySizeLarge = StorySize{"lg"}
 )
 
-// Stories is cui-stories (components/site/stories): apple.com's Newsroom
-// index, a band on the alternate ground, its heading over a grid of [Story]
-// tiles.
 type Stories struct {
-	// Heading is its heading, an <h2>. Required: an empty one panics.
 	Heading string
-	// Class is the page's utilities on the band; "" for none.
-	Class string
-	// Children are its stories, each an <li> with a [Story] in it.
+	Class   string
+	// Children: <li>s, each holding a [Story].
 	Children g.Node
 }
 
-// Render writes the band.
 func (s Stories) Render(w io.Writer) error {
 	if s.Heading == "" {
 		panic("site.Stories needs a Heading")
@@ -45,32 +37,19 @@ func (s Stories) Render(w io.Writer) error {
 	).Render(w)
 }
 
-// Story is cui-story (components/site/stories): a story in a [Stories] grid,
-// a white rounded tile, the whole of it its link: its picture, its category,
-// its headline, its date.
 type Story struct {
-	// Size is how many go across: [StorySize].
 	Size StorySize
-	// Href is where it goes, the whole tile's link. Required: an empty one
-	// panics.
 	Href string
-	// Media is its picture (cui-story-media on an <img>); nil for none.
-	Media g.Node
-	// Category is its category, over its headline; "" for none.
+	// Media: an <img> carrying cui-story-media.
+	Media    g.Node
 	Category string
-	// Datetime is its date as a machine reads it, the <time>'s datetime; ""
-	// with no date.
+	// Datetime: machine-readable (2026-10-19).
 	Datetime string
-	// Date is its date as the page shows it, at the tile's foot; "" for
-	// none. A Date with no Datetime panics.
-	Date string
-	// Headline is its headline, an <h3>. Required: an empty one panics.
+	Date     string
 	Headline string
-	// Class is the page's utilities on its root; "" for none.
-	Class string
+	Class    string
 }
 
-// Render writes the story's link.
 func (s Story) Render(w io.Writer) error {
 	if s.Href == "" {
 		panic("site.Story needs an Href")

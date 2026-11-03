@@ -7,7 +7,6 @@ import (
 	"testing"
 )
 
-// every component's examples write only words the stylesheets know
 func TestEveryExamplePasses(t *testing.T) {
 	paths, err := filepath.Glob("components/*/*/examples/*.html")
 	if err != nil {
@@ -49,7 +48,6 @@ func TestAValueOfAnotherClassOnTheElementPasses(t *testing.T) {
 	}
 }
 
-// a page's own data-* and classes, and what a script holds, are not ciderui's
 func TestWhatIsNotCideruisPasses(t *testing.T) {
 	if got := CheckMarkup(`<div class="mt-2" data-variant="whatever"><!-- <b class="cui-nope"> --><script>let s = '<a class="cui-nope">';</script></div>`); got != nil {
 		t.Errorf("got %q", got)

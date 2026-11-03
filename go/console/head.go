@@ -8,23 +8,17 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleHead is cui-console-head (components/console/console-head): what a page
-// belongs to (an app, a project) by name, a link to it, with its underlined
-// tabs beside the name, App Store Connect's app head.
+// ConsoleHead names what the page belongs to (an app, a project) beside its
+// tabs.
 type ConsoleHead struct {
-	// Name is what the page belongs to. Required: an empty one panics.
 	Name string
-	// Href is its page.
 	Href string
-	// Label is what its tabs are called (their aria-label).
+	// Label is the tabs' aria-label.
 	Label string
-	// Tabs are its tabs, in order.
-	Tabs []ConsoleTab
-	// Class is the page's utilities on the row; "" for none.
+	Tabs  []ConsoleTab
 	Class string
 }
 
-// Render writes the head.
 func (d ConsoleHead) Render(w io.Writer) error {
 	if d.Name == "" {
 		panic("console.ConsoleHead needs a Name")

@@ -9,42 +9,29 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleEmptySize is an [ConsoleEmpty]'s size (data-size). Its zero value is
-// [ConsoleEmptySizeMedium].
 type ConsoleEmptySize struct{ value string }
 
 var (
-	// ConsoleEmptySizeSmall is in a small place (a card's): data-size="sm".
-	ConsoleEmptySizeSmall = ConsoleEmptySize{"sm"}
-	// ConsoleEmptySizeMedium is the default: no data-size.
+	// ConsoleEmptySizeSmall is for a small place, a card.
+	ConsoleEmptySizeSmall  = ConsoleEmptySize{"sm"}
 	ConsoleEmptySizeMedium = ConsoleEmptySize{value: ""}
-	// ConsoleEmptySizeLarge is a whole page's: data-size="lg".
+	// ConsoleEmptySizeLarge is for a whole page.
 	ConsoleEmptySizeLarge = ConsoleEmptySize{"lg"}
 )
 
-// ConsoleEmpty is cui-console-empty (components/console/console-empty): App Store
-// Connect's newer look's empty state, centered where a list or a chart has
-// nothing to show: its icon, heading, caption, and what the page gives it,
-// its actions (<p class="cui-console-empty-actions">).
+// ConsoleEmpty is the empty state where a list or a chart has nothing to show.
 type ConsoleEmpty struct {
-	// Size is its size.
-	Size ConsoleEmptySize
-	// Backed is whether it is on its own faint ground
-	// (data-variant="backed").
-	Backed bool
-	// Icon is its icon, a package lucide icon; the zero icon.Icon for none.
-	Icon icon.Icon
-	// Heading is its heading. Required: an empty one panics.
+	Size    ConsoleEmptySize
+	Backed  bool
+	Icon    icon.Icon
 	Heading string
-	// Caption is the line under it, what to do next; "" for none.
+	// Caption says what to do next.
 	Caption string
-	// Class is the page's utilities on it; "" for none.
-	Class string
-	// Children is its actions; nil for none.
+	Class   string
+	// Children: its actions, in a <p class="cui-console-empty-actions">.
 	Children g.Node
 }
 
-// Render writes the empty state.
 func (e ConsoleEmpty) Render(w io.Writer) error {
 	if e.Heading == "" {
 		panic("console.ConsoleEmpty needs a Heading")

@@ -10,66 +10,40 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// DocsNavigatorItem is a row of a [DocsNavigator]: a [DocsNavigatorGroup], a
-// group's title over the pages after it, or a [DocsNavigatorPage], a page.
-// The two are its only types (its method is unexported).
 type DocsNavigatorItem interface {
 	docsNavigatorItem()
 }
 
-// DocsNavigatorGroup is a group's title in a [DocsNavigator], the pages after
-// it its own until the next.
+// DocsNavigatorGroup is a title over the pages after it, up to the next
+// group.
 type DocsNavigatorGroup struct {
-	// Title is the group's title.
 	Title string
 }
 
-// DocsNavigatorPage is a page in a [DocsNavigator], and the pages under it: a
-// collection's glyph where it has pages under it, which its chevron shows
-// and hides, an article's where not.
 type DocsNavigatorPage struct {
-	// Label is its name. Required: an empty one panics.
 	Label string
-	// Href is its address. Its path unique among the navigator's pages: a
-	// page with pages under it names its chevron's checkbox after its path's
-	// words.
-	Href string
-	// Current is whether it is the page shown (aria-current="page").
+	// Href: its path's words must be unique among the navigator's pages, or
+	// two chevrons share one checkbox id (chevronID); nothing checks it.
+	Href    string
 	Current bool
-	// Open is whether the pages under it are shown at first (the current
-	// page's ancestors' are, as DocC's); false for a page with none: an open
-	// one with none panics.
-	Open bool
-	// Children are the pages under it, and their groups' titles; nil for
-	// none.
+	// Open: set it on the current page's ancestors, as DocC does.
+	Open     bool
 	Children []DocsNavigatorItem
 }
 
 func (DocsNavigatorGroup) docsNavigatorItem() {}
 func (DocsNavigatorPage) docsNavigatorItem()  {}
 
-// DocsNavigator is cui-docs-navigator (components/docs/docs-navigator): the
-// navigator of Apple's developer documentation, its pages as a tree, a <nav>
-// named Navigator (the bar's button's name): the documentation's title, a
-// link to its first page, over its rows. A row with pages under it opens and
-// closes by its chevron, a checkbox and its label (no script); the current
-// page's row is marked. Under the rows, the line saying the filter matches
-// nothing, the filter at the navigator's foot and a status read aloud, the
-// first two hidden: the page's script shows the filter, filters the rows and
-// says what it found.
+// DocsNavigator's filter and its no-results line start hidden: the page's
+// script unhides the filter, filters the rows and writes what it found into
+// the status line.
 type DocsNavigator struct {
-	// Title is the documentation's title, at the navigator's top. Required:
-	// an empty one panics.
 	Title string
-	// Href is where the title links: the documentation's first page.
-	Href string
-	// Items are its rows, from the top.
+	Href  string
 	Items []DocsNavigatorItem
-	// Class is the page's utilities on the navigator; "" for none.
 	Class string
 }
 
-// Render writes the navigator.
 func (n DocsNavigator) Render(w io.Writer) error {
 	if n.Title == "" {
 		panic("docs.DocsNavigator needs a Title")
@@ -88,7 +62,6 @@ func (n DocsNavigator) Render(w io.Writer) error {
 	).Render(w)
 }
 
-// the rows of one level, as a list
 func navigatorRows(items []DocsNavigatorItem) g.Node {
 	return h.Ul(h.Class("cui-docs-navigator-list"), g.Map(items, navigatorRow))
 }
@@ -134,9 +107,6 @@ func navigatorLink(page DocsNavigatorPage) g.Node {
 	return h.A(h.Class("cui-docs-navigator-link"), h.Href(page.Href), g.If(page.Current, h.Aria("current", "page")), g.Text(page.Label))
 }
 
-// chevronID is the chevron's checkbox id, named after the page's address, its
-// path's words alone (/components/ and https://example.test/components/
-// docs-navigator-components).
 func chevronID(href string) string {
 	path := href
 	if _, rest, ok := strings.Cut(href, "://"); ok {

@@ -8,34 +8,23 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// DocsCrumb is a page above this one in the documentation, as a crumb of a
-// [DocsHero]: its name and its address.
 type DocsCrumb struct {
-	// Label is its name, the link's words.
 	Label string
-	// Href is its address.
-	Href string
+	Href  string
 }
 
-// DocsHero is cui-docs-hero (components/docs/docs-hero): the top of a page in
-// Apple's developer documentation: its breadcrumbs (the pages above it, then
-// its own title, the current crumb), its eyebrow, its title and its abstract.
+// DocsHero is the top of a page.
 type DocsHero struct {
-	// Crumbs are the pages above this one, from the top; nil for none, a page
-	// at the top, which shows no breadcrumbs.
+	// Crumbs are the pages above this one, from the top; the page's own
+	// title is the current crumb, written from Title.
 	Crumbs []DocsCrumb
-	// Eyebrow is what kind of page it is (Article, Component); "" for none.
-	Eyebrow string
-	// Title is its title, the page's <h1> and its current crumb. Required: an
-	// empty one panics.
-	Title string
-	// Abstract is what it is about, under the title; "" for none.
+	// Eyebrow is the kind of page ("Article", "Component").
+	Eyebrow  string
+	Title    string
 	Abstract string
-	// Class is the page's utilities on the hero; "" for none.
-	Class string
+	Class    string
 }
 
-// Render writes the hero.
 func (x DocsHero) Render(w io.Writer) error {
 	if x.Title == "" {
 		panic("docs.DocsHero needs a Title")

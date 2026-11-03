@@ -8,22 +8,16 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleStatus is cui-console-status (components/console/console-status): App
-// Store Connect's status, a mark in its color before its word. The line
-// under it (<span class="cui-console-status-detail">) is the page's own.
+// ConsoleStatus is a colored mark before a word. A line under it,
+// <span class="cui-console-status-detail">, is the page's own.
 type ConsoleStatus struct {
-	// Label is its word. Required: an empty one panics.
 	Label string
-	// Color is its mark's color.
 	Color ConsoleColor
-	// Series is a series' color for its mark, a CSS color (a chart's key,
-	// --cui-console-status-color), in place of Color's; "" for none.
+	// Series: a chart legend's series color, as CSS.
 	Series string
-	// Class is the page's utilities on it; "" for none.
-	Class string
+	Class  string
 }
 
-// Render writes the status.
 func (s ConsoleStatus) Render(w io.Writer) error {
 	if s.Label == "" {
 		panic("console.ConsoleStatus needs a Label")

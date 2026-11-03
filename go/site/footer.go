@@ -9,40 +9,23 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// FooterSection is a section of a [Footer]'s directory: its title and its
-// links.
 type FooterSection struct {
-	// ID is its toggle's id (to 833px it opens by its title). Required: an
-	// empty one panics.
-	ID string
-	// Title is its title. Required: an empty one panics.
+	ID    string
 	Title string
-	// Links are its links.
 	Links []Link
 }
 
-// Footer is cui-footer (components/site/footer): apple.com's footer on the
-// alternate ground, light on a dark page too: its footnotes, its directory of
-// columns of [FooterSection]s (to 833px a column of sections that open one by
-// one, with no script), the shop line and the legal row.
 type Footer struct {
-	// Notes are its footnotes (<p>s, <ol>); nil for none.
-	Notes g.Node
-	// Directory is its directory: columns of sections.
+	// Notes: <p>s and <ol>s.
+	Notes     g.Node
 	Directory [][]FooterSection
-	// Shop is the shop line's content (its text and links); nil for none.
-	Shop g.Node
-	// Copyright is the copyright. Required: an empty one panics.
+	Shop      g.Node
 	Copyright string
-	// Links are the legal links.
-	Links []Link
-	// Locale is the locale's link; nil for none.
-	Locale *Link
-	// Class is the page's utilities on the footer; "" for none.
-	Class string
+	Links     []Link
+	Locale    *Link
+	Class     string
 }
 
-// Render writes the footer.
 func (f Footer) Render(w io.Writer) error {
 	if f.Copyright == "" {
 		panic("site.Footer needs a Copyright")

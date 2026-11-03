@@ -9,37 +9,27 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleMetric is a metric's cui-console-card (components/console/console-card):
-// App Store Connect's newer look's analytics card, its title, its value, a
-// change up or down and a caption; with an Href, all of it a link to what
-// it counts (a.cui-console-card). A card holding anything else (a list, a
-// chart) is the page's own <div class="cui-console-card">.
+// ConsoleMetric is a metric's cui-console-card. A card holding anything else
+// (a list, a chart) is the page's own <div class="cui-console-card">.
 type ConsoleMetric struct {
-	// Title is its title. Required: an empty one panics.
 	Title string
-	// Value is its value, text or markup (a figure in a color, a badge
-	// beside it). Required: one that renders empty panics.
 	Value g.Node
-	// Change is its change beside the value; "" for none.
+	// Change is "+0.4%" or "No change"; "" for none.
 	Change string
-	// ChangeColor is the change's color: the neutral (no change), success
-	// (up, for the better) or error (for the worse); any other panics.
+	// ChangeColor: success for the better, error for the worse, whichever
+	// direction the number moved.
 	ChangeColor ConsoleColor
-	// Caption is a line under it; "" for none.
-	Caption string
-	// Href is where it goes, the whole card a link; "" for a card that is
-	// no link.
-	Href string
-	// Class is the page's utilities on the card; "" for none.
-	Class string
+	Caption     string
+	Href        string
+	Class       string
 }
 
-// Render writes the card.
 func (m ConsoleMetric) Render(w io.Writer) error {
 	if m.Title == "" {
 		panic("console.ConsoleMetric needs a Title")
 	}
-	// rendered once to check it, then written as the markup it is
+	// rendered once, then written raw: a page's node may cost, or render
+	// differently, a second time
 	var value strings.Builder
 	if m.Value != nil {
 		if err := m.Value.Render(&value); err != nil {

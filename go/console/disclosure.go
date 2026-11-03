@@ -9,42 +9,27 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleDisclosureVariant is a [ConsoleDisclosure]'s look (data-variant). Its zero value
-// is [ConsoleDisclosureVariantLine].
 type ConsoleDisclosureVariant struct{ value string }
 
 var (
-	// ConsoleDisclosureVariantLine is a line, the chevron before its label, the
-	// default: no data-variant.
-	ConsoleDisclosureVariantLine = ConsoleDisclosureVariant{value: ""}
-	// ConsoleDisclosureVariantButton is a console button, the chevron after its
-	// label.
+	ConsoleDisclosureVariantLine   = ConsoleDisclosureVariant{value: ""}
 	ConsoleDisclosureVariantButton = ConsoleDisclosureVariant{"button"}
-	// ConsoleDisclosureVariantPlainButton is a plain console button
-	// (data-variant="plain": no fill, the brand's label), the chevron after
-	// its label.
+	// ConsoleDisclosureVariantPlainButton is not a data-variant value of the
+	// disclosure: it writes data-variant="button" on the <details> and
+	// data-variant="plain" on the button.
 	ConsoleDisclosureVariantPlainButton = ConsoleDisclosureVariant{"plain-button"}
 )
 
-// ConsoleDisclosure is cui-console-disclosure (components/console/console-disclosure):
-// a <details> hiding what is not needed yet (Children) behind a line or a
-// console button, the HIG's disclosure control.
+// ConsoleDisclosure is the HIG's disclosure control.
 type ConsoleDisclosure struct {
-	// Variant is its look.
-	Variant ConsoleDisclosureVariant
-	// Open is whether it starts open.
-	Open bool
-	// Summary is its label. Required: an empty one panics.
-	Summary string
-	// SummaryClass is the page's utilities on its <summary>; "" for none.
+	Variant      ConsoleDisclosureVariant
+	Open         bool
+	Summary      string
 	SummaryClass string
-	// Class is the page's utilities on its <details>; "" for none.
-	Class string
-	// Children is what it hides.
-	Children g.Node
+	Class        string
+	Children     g.Node
 }
 
-// Render writes the disclosure.
 func (d ConsoleDisclosure) Render(w io.Writer) error {
 	if d.Summary == "" {
 		panic("console.ConsoleDisclosure needs a Summary")

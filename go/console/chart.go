@@ -10,44 +10,31 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleChartSeries is one series of a [ConsoleChart]'s legend.
 type ConsoleChartSeries struct {
-	// Name is its name.
 	Name string
-	// Color is its marks' fill, a CSS color.
+	// Color is a CSS color, the series' marks' fill.
 	Color string
 }
 
-// ConsoleChart is cui-console-chart (components/console/console-chart): App Store
-// Connect's analytics chart, what is around the page's plot (Children: its
-// <svg class="cui-console-chart-svg">, gridlines and marks, which the page
-// draws from its data): the scale over it, the empty note, the axis's first
-// and last labels under it, and the legend, a console [ConsoleStatus] for each
-// series.
+// ConsoleChart is the frame around the page's plot; the page draws the plot.
 type ConsoleChart struct {
-	// Peak is the top gridline's value, at the plot's top end; "" for no
-	// scale.
+	// Peak and Half label the top and middle gridlines.
 	Peak string
-	// Half is the middle gridline's value; "" where Peak is.
 	Half string
-	// Empty is what the plot has none of, centered on it; "" for a plot
-	// with data.
+	// Empty is the note centered on a plot with no data ("No data in this
+	// window"); "" for a plot with data.
 	Empty string
-	// AxisStart is the first bucket's label under the plot; "" with AxisEnd
-	// for no axis.
+	// AxisStart and AxisEnd label the first and last buckets.
 	AxisStart string
-	// AxisEnd is the last bucket's label.
-	AxisEnd string
-	// Legend is the series, for a chart of more than one; nil for no
-	// legend.
+	AxisEnd   string
+	// Legend: for a chart of more than one series.
 	Legend []ConsoleChartSeries
-	// Class is the page's utilities on the <figure>; "" for none.
-	Class string
-	// Children is the plot.
+	Class  string
+	// Children: <svg class="cui-console-chart-svg"> holding the gridlines and
+	// marks.
 	Children g.Node
 }
 
-// Render writes the chart.
 func (c ConsoleChart) Render(w io.Writer) error {
 	if (c.Peak == "") != (c.Half == "") {
 		panic("console.ConsoleChart's scale is a peak and a half, both or neither")
@@ -73,31 +60,23 @@ func (c ConsoleChart) Render(w io.Writer) error {
 	).Render(w)
 }
 
-// ConsoleSparklinePoint is a point of a [ConsoleSparkline]'s line, in its units; Y down.
+// ConsoleSparklinePoint is in the sparkline's viewBox units, Y down.
 type ConsoleSparklinePoint struct {
 	X float64
 	Y float64
 }
 
-// ConsoleSparkline is cui-console-chart-sparkline (components/console/console-chart):
-// a small line chart, its line in the brand's blue over its area in the
-// blue's tint, down to its foot.
 type ConsoleSparkline struct {
-	// Label is what it shows, in words: the svg's label. Required: an empty
-	// one panics.
-	Label string
-	// Width is its width, in its own units and in CSS pixels.
-	Width uint
-	// Height is its height, the same.
+	// Label is what the line shows, in words ("3 events over 2 days").
+	Label  string
+	Width  uint
 	Height uint
-	// Points are the line's points, from its start (X 0) to its end (X
-	// Width).
+	// Points run from X 0 to X Width: the area under the line is closed at
+	// those two ends.
 	Points []ConsoleSparklinePoint
-	// Class is the page's utilities on the svg; "" for none.
-	Class string
+	Class  string
 }
 
-// Render writes the sparkline's <svg>.
 func (s ConsoleSparkline) Render(w io.Writer) error {
 	if s.Label == "" {
 		panic("console.ConsoleSparkline needs a Label")
@@ -109,8 +88,8 @@ func (s ConsoleSparkline) Render(w io.Writer) error {
 	line := strings.Join(points, " ")
 	width := strconv.FormatUint(uint64(s.Width), 10)
 	height := strconv.FormatUint(uint64(s.Height), 10)
-	// the marks raw: g.El writes no self-closing tag, and the example's
-	// marks are <polygon …/> and <polyline …/>; their points are numbers
+	// raw, not g.El: g.El writes no self-closing tag, and the example's marks
+	// are <polygon …/> and <polyline …/>; raw is safe, the points are numbers
 	marks := `<polygon class="cui-console-chart-sparkline-area" points="0,` + height + " " + line + " " + width + "," + height + `"/>` +
 		`<polyline class="cui-console-chart-sparkline-line" points="` + line + `"/>`
 	return g.El("svg", class.Root("cui-console-chart-sparkline", s.Class),

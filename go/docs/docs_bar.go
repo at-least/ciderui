@@ -9,24 +9,18 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// DocsBar is cui-docs-bar (components/docs/docs-bar): the documentation's bar
-// in Apple's developer documentation, under the global nav: the button that
-// opens the navigator below 1024px (its popovertarget, the navigator's id),
-// then the documentation's title, a link home.
+// DocsBar sits under the site's global nav.
 type DocsBar struct {
-	// Title is the documentation's title, its link's words and the bar's
-	// name. Required: an empty one panics.
+	// Title is the documentation's title.
 	Title string
-	// Href is where the title links: the documentation's first page.
+	// Href is the documentation's first page.
 	Href string
-	// Navigator is the navigator's id, which the button opens; "" for no
-	// navigator, and no button.
+	// Navigator is the id of the navigator popover the bar's button opens
+	// below 1024px; "" for no navigator and no button.
 	Navigator string
-	// Class is the page's utilities on the bar; "" for none.
-	Class string
+	Class     string
 }
 
-// Render writes the bar.
 func (b DocsBar) Render(w io.Writer) error {
 	if b.Title == "" {
 		panic("docs.DocsBar needs a Title")

@@ -19,8 +19,7 @@ func mustPanic(t *testing.T, want string, render func()) {
 	render()
 }
 
-// the example at path, under components/, as its file holds it: not trimmed
-// as example.Read trims it (go test runs in the package's directory)
+// not example.Read: it trims each line
 func readRaw(path string) string {
 	b, err := os.ReadFile(filepath.Join("../../components", path))
 	if err != nil {

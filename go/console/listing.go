@@ -9,24 +9,17 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleListing is cui-console-listing (components/console/console-listing) with
-// its lines numbered (cui-console-listing-line): a frame's source, one line
-// highlighted, as Apple's developer documentation's tutorials mark the lines
-// that changed. A listing without numbers is one class on the page's own
-// <pre>.
+// ConsoleListing is a listing with numbered lines. A listing without numbers
+// is the page's own <pre class="cui-console-listing">.
 type ConsoleListing struct {
-	// FirstLine is the first line's number. At least 1: 0 is Highlighted's
-	// none, so a 0 panics.
 	FirstLine uint
-	// Lines are the lines, each without its newline. Required: none panics.
+	// Lines: each without its newline.
 	Lines []string
-	// Highlighted is the highlighted line's number; 0 for none.
+	// Highlighted is a line number, as FirstLine counts; 0 for none.
 	Highlighted uint
-	// Class is the page's utilities on the <pre>; "" for none.
-	Class string
+	Class       string
 }
 
-// Render writes the listing.
 func (l ConsoleListing) Render(w io.Writer) error {
 	if len(l.Lines) == 0 {
 		panic("console.ConsoleListing needs a line")

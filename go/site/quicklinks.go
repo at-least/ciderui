@@ -8,22 +8,13 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// QuickLinks is cui-quicklinks (components/site/quicklinks): the store's row
-// of pill links (cui-btn, data-variant="secondary-neutral") under a title, as
-// far in as a shelf's header.
 type QuickLinks struct {
-	// ID makes the title's id, the nav's aria-labelledby (<id>-title).
-	// Required: an empty one panics.
-	ID string
-	// Title is the title. Required: an empty one panics.
+	ID    string
 	Title string
-	// Links are the links.
 	Links []Link
-	// Class is the page's utilities on the nav; "" for none.
 	Class string
 }
 
-// Render writes the nav.
 func (q QuickLinks) Render(w io.Writer) error {
 	if q.ID == "" {
 		panic("site.QuickLinks needs an ID")

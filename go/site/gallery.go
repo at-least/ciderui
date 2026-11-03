@@ -10,31 +10,21 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// Gallery is cui-gallery (components/site/gallery): a row of items across the
-// window, each snapping into place where the content starts; with Paddles,
-// its paddles' row, the previous disabled (the row at its start); with Dots,
-// a dot for each item, a link to it, the current one marked. The page's
-// script scrolls the row from the paddles, disables the one at an end and
-// moves the mark: the gallery shows the state the page sets.
+// The page's script scrolls the row from the paddles, disables the paddle
+// at an end and moves the dots' aria-current: Gallery renders only the
+// start state.
 type Gallery struct {
-	// ID is the row's id: the paddles' aria-controls, and the dots' links to
-	// its items, #<id>-1, #<id>-2, …. Required: an empty one panics.
-	ID string
-	// Paddles is whether it shows its paddles (a page with a script to
-	// scroll the row).
+	// ID: each item's id must be <ID>-<n>, n from 1, for its dot's link.
+	ID      string
 	Paddles bool
-	// Dots is how many dots, one for each item (0 for none).
-	Dots int
-	// Current is the current dot, counted from 1: with dots, one outside
-	// them panics.
+	// Dots: one per item, or 0.
+	Dots    int
 	Current int
-	// Class is the page's utilities on the gallery (cui-dark); "" for none.
-	Class string
-	// Children are its items, each an <li>, with the id its dot links to.
+	Class   string
+	// Children: <li>s.
 	Children g.Node
 }
 
-// Render writes the gallery.
 func (x Gallery) Render(w io.Writer) error {
 	if x.ID == "" {
 		panic("site.Gallery needs an ID")

@@ -10,22 +10,17 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleMenu is cui-console-menu (components/console/console-menu): App Store
-// Connect's newer look's list of a section's pages down its left side; its
-// [ConsoleMenuItem]s, [ConsoleMenuGroup]s, and a heading
-// (<p class="cui-console-menu-heading">) or a rule
-// (<hr class="cui-console-menu-rule">) between runs of them.
+// ConsoleMenu is a section's pages down its left side.
 type ConsoleMenu struct {
-	// Label is what the list is, for a screen reader (aria-label).
-	// Required: an empty one panics.
+	// Label is the <nav>'s aria-label.
 	Label string
-	// Class is the page's utilities on the list; "" for none.
 	Class string
-	// Children is its items, groups, headings and rules.
+	// Children: [ConsoleMenuItem]s and [ConsoleMenuGroup]s, with a
+	// <p class="cui-console-menu-heading"> or an
+	// <hr class="cui-console-menu-rule"> between runs of them.
 	Children g.Node
 }
 
-// Render writes the menu.
 func (m ConsoleMenu) Render(w io.Writer) error {
 	if m.Label == "" {
 		panic("console.ConsoleMenu needs a Label")
@@ -34,27 +29,18 @@ func (m ConsoleMenu) Render(w io.Writer) error {
 }
 
 // ConsoleMenuItem is a page in a [ConsoleMenu], a [ConsoleMenuGroup] or a
-// [ConsoleSidebar], a link.
+// [ConsoleSidebar].
 type ConsoleMenuItem struct {
-	// Href is where it goes. Required unless it is disabled, when it is
-	// left out ("").
-	Href string
-	// Label is its label. Required: an empty one panics.
-	Label string
-	// Icon is its icon before the label, a package lucide icon; the zero
-	// icon.Icon for none.
-	Icon icon.Icon
-	// Current is whether it is the current page (aria-current="page").
-	Current bool
-	// Disabled is whether it goes nowhere now (aria-disabled, no href).
+	Href     string
+	Label    string
+	Icon     icon.Icon
+	Current  bool
 	Disabled bool
-	// Secondary is what follows it at its end (a count); "" for nothing.
+	// Secondary is a count at the item's end.
 	Secondary string
-	// Class is the page's utilities on the item; "" for none.
-	Class string
+	Class     string
 }
 
-// Render writes the item.
 func (m ConsoleMenuItem) Render(w io.Writer) error {
 	if m.Label == "" {
 		panic("console.ConsoleMenuItem needs a Label")
@@ -69,22 +55,15 @@ func (m ConsoleMenuItem) Render(w io.Writer) error {
 	).Render(w)
 }
 
-// ConsoleMenuGroup is a group of a [ConsoleMenu] (<details>): its label opening its
-// items, set in from the left, with no script.
 type ConsoleMenuGroup struct {
-	// Label is its label. Required: an empty one panics.
 	Label string
-	// Icon is its icon before the label; the zero icon.Icon for none.
-	Icon icon.Icon
-	// Open is whether it is open.
-	Open bool
-	// Class is the page's utilities on the group; "" for none.
+	Icon  icon.Icon
+	Open  bool
 	Class string
-	// Children is its items, [ConsoleMenuItem]s.
+	// Children: [ConsoleMenuItem]s.
 	Children g.Node
 }
 
-// Render writes the group.
 func (m ConsoleMenuGroup) Render(w io.Writer) error {
 	if m.Label == "" {
 		panic("console.ConsoleMenuGroup needs a Label")

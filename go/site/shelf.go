@@ -9,29 +9,18 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// Shelf is cui-shelf (components/site/shelf): the store's row of cards, a
-// header (a headline and its secondary text after it) over a scroller across
-// the window, its items snapping into place; with Paddles, a large paddle at
-// each side, the previous disabled (the row at its start): the page's script
-// scrolls the row and disables the one at an end.
+// With Paddles, the page's script scrolls the row and disables the paddle
+// at an end: Shelf renders only the start state.
 type Shelf struct {
-	// ID is the scroller's id, the paddles' aria-controls. Required: an empty
-	// one panics.
-	ID string
-	// Headline is the headline, an <h2>. Required: an empty one panics.
+	ID       string
 	Headline string
-	// Subhead is the secondary text after it; "" for none.
-	Subhead string
-	// Paddles is whether it shows its paddles (a page with a script to
-	// scroll the row).
-	Paddles bool
-	// Class is the page's utilities on the shelf; "" for none.
-	Class string
-	// Children are its items, each an <li> (a [Card] in it).
+	Subhead  string
+	Paddles  bool
+	Class    string
+	// Children: <li>s, each holding a [Card].
 	Children g.Node
 }
 
-// Render writes the shelf.
 func (s Shelf) Render(w io.Writer) error {
 	if s.ID == "" {
 		panic("site.Shelf needs an ID")

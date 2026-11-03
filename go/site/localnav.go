@@ -9,35 +9,19 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// the menu's checkbox: a page has one local nav
+// a fixed id: a page has one local nav
 const localNavToggleID = "cui-localnav-menu"
 
-// LocalNav is cui-localnav (components/site/localnav): the bar under the
-// global nav on a product's pages, stuck to the top as the page scrolls: the
-// product's name, its pages' links (the current one marked) and a button; to
-// 833px the links are a menu its chevron opens below the bar, with no script
-// (a checkbox, the chevron its label). No links, no menu.
 type LocalNav struct {
-	// Title is the product's name. Required: an empty one panics.
-	Title string
-	// Href is where the name goes, the product's main page. Required: an
-	// empty one panics.
-	Href string
-	// Links are the product's pages, in order; none, no menu.
-	Links []Link
-	// Current is the current page's href: its link is marked
-	// (aria-current="page"); "" for none.
+	Title   string
+	Href    string
+	Links   []Link
 	Current string
-	// Button is the button after the links: a cui-btn, data-size="sm"; nil
-	// for none.
-	Button *Link
-	// Dark is whether the nav is dark (cui-dark).
-	Dark bool
-	// Class is the page's utilities on the nav; "" for none.
-	Class string
+	Button  *Link
+	Dark    bool
+	Class   string
 }
 
-// Render writes the local nav.
 func (n LocalNav) Render(w io.Writer) error {
 	if n.Title == "" {
 		panic("site.LocalNav needs a Title")

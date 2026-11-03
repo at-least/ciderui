@@ -8,30 +8,19 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// OptionTile is cui-option (components/site/option): apple.com's buy page's
-// choice, a tile on a radio, its title (a detail under it) at one side and a
-// price at the other; checked, its edge the accent. Not Option: that is a
+// OptionTile is apple.com's buy-page choice. Not Option: that is a
 // [Select]'s choice.
 type OptionTile struct {
-	// ID is the radio's id, its label's for. Required: an empty one panics.
-	ID string
-	// Name is the radio's name, its group's.
-	Name string
-	// Value is the radio's value.
-	Value string
-	// Title is the title. Required: an empty one panics.
-	Title string
-	// Detail is a detail under the title; "" for none.
-	Detail string
-	// Price is the price at its end; "" for none.
-	Price string
-	// Checked is whether it is checked.
+	ID      string
+	Name    string
+	Value   string
+	Title   string
+	Detail  string
+	Price   string
 	Checked bool
-	// Class is the page's utilities on the option; "" for none.
-	Class string
+	Class   string
 }
 
-// Render writes the option.
 func (o OptionTile) Render(w io.Writer) error {
 	if o.ID == "" {
 		panic("site.OptionTile needs an ID")

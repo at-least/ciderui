@@ -48,7 +48,6 @@ func TestFooterNoNotesNoDirectoryNoShop(t *testing.T) {
 	}
 }
 
-// a node that counts its renders
 type counted struct{ n *int }
 
 func (c counted) Render(w io.Writer) error {
@@ -57,8 +56,8 @@ func (c counted) Render(w io.Writer) error {
 	return err
 }
 
-// a part is a page's: it may cost to render, or render otherwise a second
-// time
+// Notes and Shop are the page's nodes: rendering one twice may cost, or
+// render differently the second time
 func TestFooterItsNotesAndShopRenderedOnce(t *testing.T) {
 	var notes, shop int
 	example.Render(site.Footer{Notes: counted{&notes}, Directory: nil, Shop: counted{&shop}, Copyright: "©", Links: nil, Locale: nil, Class: ""})

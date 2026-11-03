@@ -9,30 +9,21 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleListItem is cui-console-list-item (components/console/console-list): a
-// row of App Store Connect's newer look's grouped list, its label and what
-// follows it, then what the page gives it (its controls, its lines), a link
-// where it has an Href. The group, <div class="cui-console-list">, is the
-// page's own.
+// ConsoleListItem is a row of a grouped list; the group,
+// <div class="cui-console-list">, is the page's own.
 type ConsoleListItem struct {
-	// Href is where it goes; "" for a row that is no link.
-	Href string
-	// ID is its id; "" for none.
-	ID string
-	// Label is its title; "" for a row whose content is all the page's own.
-	Label string
-	// Secondary is what follows it, in the secondary label; "" for none.
+	Href      string
+	ID        string
+	Label     string
 	Secondary string
-	// Class is the page's utilities on the row; "" for none.
-	Class string
-	// Children is what the page gives it after its label; nil for nothing.
-	// A row of no label and nothing panics.
+	Class     string
+	// Children: the row's controls or lines, after its label.
 	Children g.Node
 }
 
-// Render writes the row.
 func (l ConsoleListItem) Render(w io.Writer) error {
-	// rendered once to check it, then written as the markup it is
+	// rendered once, then written raw: a page's node may cost, or render
+	// differently, a second time
 	var children strings.Builder
 	if l.Children != nil {
 		if err := l.Children.Render(&children); err != nil {

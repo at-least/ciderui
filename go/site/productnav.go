@@ -9,26 +9,16 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ProductNav is cui-productnav (components/site/productnav): the store's
-// shelf of small cards ([ProductNavItem]s), each a product's image above its
-// name, on a cui-shelf with no header; with Paddles, the shelf's large
-// paddles.
 type ProductNav struct {
-	// ID is the scroller's id, the paddles' aria-controls. Required: an empty
-	// one panics.
-	ID string
-	// Label is the nav's name (aria-label). Required: an empty one panics.
+	ID    string
 	Label string
-	// Paddles is whether it shows its paddles (a page with a script to
-	// scroll the row).
+	// Paddles: only on a page with a script that scrolls the row.
 	Paddles bool
-	// Class is the page's utilities on the nav; "" for none.
-	Class string
-	// Children are its cards, [ProductNavItem]s.
+	Class   string
+	// Children: [ProductNavItem]s.
 	Children g.Node
 }
 
-// Render writes the nav.
 func (n ProductNav) Render(w io.Writer) error {
 	if n.ID == "" {
 		panic("site.ProductNav needs an ID")
@@ -47,21 +37,15 @@ func (n ProductNav) Render(w io.Writer) error {
 	).Render(w)
 }
 
-// ProductNavItem is a card of a [ProductNav]: a link, its image above its
-// name.
 type ProductNavItem struct {
-	// Href is the link.
-	Href string
-	// Name is the product's name. Required: an empty one panics.
-	Name string
-	// Class is the page's utilities on its root, the <li>; "" for none.
+	Href  string
+	Name  string
 	Class string
-	// Children is its image, cui-productnav-image on an <img> (with its
-	// width and height: its shape sets its width).
+	// Children: an <img> carrying cui-productnav-image, with its width and
+	// height: its shape sets the card's width.
 	Children g.Node
 }
 
-// Render writes the card.
 func (i ProductNavItem) Render(w io.Writer) error {
 	if i.Name == "" {
 		panic("site.ProductNavItem needs a Name")

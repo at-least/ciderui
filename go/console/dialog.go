@@ -8,28 +8,19 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleDialog is cui-console-dialog (components/console/console-dialog): App
-// Store Connect's newer look's modal, a <dialog> the page opens with
-// showModal(): its title (the dialog's name, aria-labelledby), and what the
-// page gives it — what it asks, its buttons in a
-// <form method="dialog" class="cui-console-dialog-actions"> or the page's
-// own form.
+// ConsoleDialog is a modal the page's script opens with showModal().
 type ConsoleDialog struct {
-	// ID is its id, which the page's script opens; its title's is the id
-	// with -title. Required: an empty one panics.
-	ID string
-	// Title is its title, text or markup.
+	ID    string
 	Title g.Node
-	// Open is whether it is rendered open (open): a page shown with it open,
-	// no script.
-	Open bool
-	// Class is the page's utilities on it; "" for none.
+	// Open renders it open, for a page that shows it with no script.
+	Open  bool
 	Class string
-	// Children is what it asks and its buttons.
+	// Children: what it asks, then its buttons in a
+	// <form method="dialog" class="cui-console-dialog-actions"> or the page's
+	// own form.
 	Children g.Node
 }
 
-// Render writes the dialog.
 func (d ConsoleDialog) Render(w io.Writer) error {
 	if d.ID == "" {
 		panic("console.ConsoleDialog needs an ID")

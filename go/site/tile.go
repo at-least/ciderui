@@ -8,43 +8,27 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// TileSize is a [Tile]'s size (data-size). Its zero value is a promo tile,
-// two to a row from 735px: 580px, 490px, 500px tall.
+// TileSize's zero value: a promo tile, two to a row.
 type TileSize struct{ value string }
 
-// TileSizeLarge is a full-width tile (data-size="lg"): 692px, 650px, 500px,
-// its type a step larger.
+// TileSizeLarge: a full-width tile.
 var TileSizeLarge = TileSize{"lg"}
 
-// Tile is cui-tile (components/site/tile): a block of its own ground, its
-// headline, subhead, callout and buttons centered at its top, its picture
-// filling it; with Link, the whole tile a link, its buttons above it.
 type Tile struct {
-	// Size is its size.
-	Size TileSize
-	// Rounded is whether its corners are rounded (cui-tile-rounded, 28px).
+	Size    TileSize
 	Rounded bool
-	// Dark is whether it is a dark block (cui-dark): black, its text light.
-	Dark bool
-	// Link is the whole tile's link, its Text the link's name (aria-label);
-	// nil for none.
-	Link *Link
-	// Media is its picture (cui-tile-media on an <img>); nil for none.
-	Media g.Node
-	// Headline is the headline, an <h2>. Required: an empty one panics.
+	Dark    bool
+	Link    *Link
+	// Media: an <img> carrying cui-tile-media.
+	Media    g.Node
 	Headline string
-	// Subhead is the subhead; "" for none.
-	Subhead string
-	// Callout is the callout, in the secondary text; "" for none.
-	Callout string
-	// Class is the page's utilities on the tile (its minimum height removed:
-	// min-h-0); "" for none.
-	Class string
-	// Children are the buttons (cui-btn, data-size="cta" in a large tile).
+	Subhead  string
+	Callout  string
+	Class    string
+	// Children: cui-btn buttons, data-size="cta" in a [TileSizeLarge] tile.
 	Children g.Node
 }
 
-// Render writes the tile.
 func (t Tile) Render(w io.Writer) error {
 	if t.Headline == "" {
 		panic("site.Tile needs a Headline")

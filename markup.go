@@ -7,16 +7,14 @@ import (
 	"sync"
 )
 
-// the attributes whose values CheckMarkup holds to the rules that select them
 var checkedAttributes = []string{"data-variant", "data-size", "data-color"}
 
 type value struct{ class, attribute, value string }
 
-// the words of ciderui's markup the kit's stylesheets know: every cui-* name
-// they write anywhere (a rule's, a utility's, a comment's: a part with no rule
-// of its own, cui-post-content, is named in a comment), and each checked
-// attribute's value a rule selects, with the last .cui-* class before it in
-// the selector, nesting resolved
+// classes: every cui-* name anywhere in the stylesheets, comments included: a
+// part with no rule of its own (cui-post-content) is named only in a comment.
+// values: each checked attribute value a rule selects, with the last .cui-*
+// class before it in the selector.
 var words = sync.OnceValues(func() (map[string]bool, []value) {
 	classes := map[string]bool{}
 	var values []value
@@ -65,7 +63,6 @@ func isNameByte(c byte) bool {
 	return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' || c >= '0' && c <= '9' || c == '-'
 }
 
-// the class name text begins with
 func name(text string) string {
 	end := 0
 	for end < len(text) && isNameByte(text[end]) {
@@ -74,8 +71,7 @@ func name(text string) string {
 	return text[:end]
 }
 
-// every style rule's selector in css, nesting resolved (& the parent, or the
-// parent and a space before it); at-rules see-through
+// every style rule's selector in css, nesting resolved
 func selectors(css string) []string {
 	var text strings.Builder
 	rest := css
@@ -133,7 +129,6 @@ func selectors(css string) []string {
 	return out
 }
 
-// selector's list split at its top-level commas
 func split(selector string) []string {
 	var parts []string
 	depth, start := 0, 0
@@ -151,12 +146,11 @@ func split(selector string) []string {
 	return append(parts, strings.TrimSpace(selector[start:]))
 }
 
-// CheckMarkup returns each word of ciderui's in html that the kit's
-// stylesheets do not know, as a line saying what and where; nil when there is
-// none. Checked: every cui-* class (a misspelt one styles nothing), and on an
-// element with a cui-* class, every data-variant, data-size and data-color
-// value (a value no rule selects renders the default, silently). For a
-// site's tests, on each page it renders.
+// CheckMarkup returns a line for each word of ciderui's in html that the kit's
+// stylesheets do not know, nil when there is none: a cui-* class (a misspelt
+// one styles nothing), and on an element with a cui-* class, a
+// checkedAttributes value no rule selects (it renders the default, silently).
+// For a site's tests, on each page it renders.
 func CheckMarkup(html string) []string {
 	classes, values := words()
 	var problems []string
@@ -222,7 +216,6 @@ type startTag struct {
 
 func isSpace(c byte) bool { return c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\f' }
 
-// indexFunc is the index of the first byte of s that stop accepts, or len(s)
 func indexFunc(s string, stop func(byte) bool) int {
 	for i := 0; i < len(s); i++ {
 		if stop(s[i]) {
@@ -232,8 +225,6 @@ func indexFunc(s string, stop func(byte) bool) int {
 	return len(s)
 }
 
-// each start tag in html: its name and its attributes, names as written,
-// values unquoted; comments, and what a <script> or <style> holds, skipped
 func startTags(html string) []startTag {
 	var tags []startTag
 	rest := html

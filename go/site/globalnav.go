@@ -10,8 +10,7 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// the list's id, which its button opens, and the search's: a page has one
-// global nav; a flyout's is cui-globalnav-flyout-<n>, n its link's place
+// fixed ids: a page has one global nav
 const (
 	globalNavMenuID       = "cui-globalnav-menu"
 	globalNavSearchID     = "cui-globalnav-search"
@@ -20,163 +19,93 @@ const (
 	globalNavBagHeadingID = "cui-globalnav-bagheading"
 )
 
-// NavLink is a link of the global nav ([GlobalNav]'s Links): its text, where
-// it goes, and the groups of the flyout it opens, if it opens one: from 834px
-// a menu under the bar, which the pointer resting on the link shows, its
-// button (the keyboard's, and on a screen with no hover a tap on the link)
-// opens; to 833px the menu's row opens it over the menu.
 type NavLink struct {
-	// Text is its text. Required: an empty one panics.
-	Text string
-	// Href is where it goes. Required: an empty one panics.
-	Href string
-	// Flyout is its flyout's groups, in order; nil for no flyout.
+	Text   string
+	Href   string
 	Flyout []FlyoutGroup
 }
 
-// FlyoutGroup is a group of a flyout ([NavLink]'s Flyout): a heading over its
-// links; its large links first (apple.com's elevated group, the flyout's
-// first: 24px from 834px, 28px to 833px, where its heading is not shown),
-// then its small ones.
 type FlyoutGroup struct {
-	// Heading is its heading, which names its list. Required: an empty one
-	// panics.
 	Heading string
-	// Large are its large links; nil for none.
+	// Large: apple.com's elevated links, only in a flyout's first group;
+	// their group's heading is hidden to 833px.
 	Large []Link
-	// Links are its small links, after the large ones; nil for none.
 	Links []Link
 }
 
-// Search is the global nav's search ([GlobalNav]'s Search): a
-// [LinkedSearch] or a [FlyoutSearch]; nil for none.
 type Search interface{ search() }
 
-// LinkedSearch is a link to the site's search page.
 type LinkedSearch struct {
-	// Href is the site's search page.
 	Href string
 }
 
-// FlyoutSearch is a button opening the search with no script: its field,
-// focused, sent as q (GET) to Action, the site's search page, its clear
-// button shown while it holds text, and under it the quick links under the
-// heading Shortcuts (none, no heading); from 834px a flyout under the bar, to
-// 833px a sheet over the window.
 type FlyoutSearch struct {
-	// Action is the site's search page. Required: an empty one panics.
 	Action string
-	// Links are the quick links, in order; nil for none.
-	Links []Link
+	Links  []Link
 }
 
 func (LinkedSearch) search() {}
 func (FlyoutSearch) search() {}
 
-// Bag is the global nav's bag ([GlobalNav]'s Bag): a [LinkedBag] or a
-// [FlyoutBag]; nil for none.
 type Bag interface{ bag() }
 
-// LinkedBag is a link to the site's bag.
 type LinkedBag struct {
-	// Href is the site's bag.
 	Href string
 }
 
-// FlyoutBag is a button opening the bag with no script, an empty bag's, as
-// apple.com's: its message, a line under it (a link, then the rest of its
-// sentence), and its links under their heading, each after its icons
-// ([BagLink]); from 834px a flyout under the bar, to 833px a sheet over the
-// window.
+// FlyoutBag is apple.com's empty-bag flyout.
 type FlyoutBag struct {
-	// Message is its message (Nothing here yet.). Required: an empty one
-	// panics.
 	Message string
-	// Line is the line under it; nil for none.
-	Line *BagLine
-	// Heading is the heading over its links (Account), which names their
-	// list. Required where there are links.
+	Line    *BagLine
 	Heading string
-	// Links are its links, in order; nil for none, and no heading.
-	Links []BagLink
+	Links   []BagLink
 }
 
 func (LinkedBag) bag() {}
 func (FlyoutBag) bag() {}
 
-// BagLine is the line under a [FlyoutBag]'s message: a link, then the rest
-// of its sentence (Sign in, /signin, " for items you saved earlier").
 type BagLine struct {
-	// Text is the link's text. Required: an empty one panics.
 	Text string
-	// Href is where the link goes. Required: an empty one panics.
 	Href string
-	// Rest is the rest of the sentence, after the link.
+	// Rest follows the link with no space: start it with one
+	// (" for items you saved earlier").
 	Rest string
 }
 
-// BagLink is a link of the bag's flyout ([FlyoutBag]'s Links): its icons,
-// the one from 834px and the one to 833px (apple.com's: [icon.Orders],
-// [icon.Saves], [icon.Account], [icon.SignIn] and each one's Compact), its
-// text and where it goes.
+// BagLink's icons on apple.com: [icon.Orders], [icon.Saves],
+// [icon.Account], [icon.SignIn], each with its Compact one.
 type BagLink struct {
-	// Icon is its icon from 834px.
-	Icon icon.Icon
-	// IconCompact is its icon to 833px.
+	Icon        icon.Icon
 	IconCompact icon.Icon
-	// Text is its text. Required: an empty one panics.
-	Text string
-	// Href is where it goes. Required: an empty one panics.
-	Href string
+	Text        string
+	Href        string
 }
 
-// GlobalNav is cui-globalnav (components/site/globalnav): the bar across the
-// top of the page, the site's logo, its links and its search and bag; to
-// 833px the links are a menu its button opens over the window, with no script
-// (the list a popover beside the button, with a close button of its own that
-// takes the focus); a link may open a flyout ([NavLink]). Not placed on the
-// page: a site adds sticky top-0 (its Class) where the nav stays; its
-// z-index, apple.com's 9999, is the nav's own, over the page and a local nav
-// (a z-* utility in its Class would replace it).
+// GlobalNav does not position itself: put sticky top-0 in Class where the
+// nav stays. Its z-index, apple.com's 9999, puts it over the page and a
+// [LocalNav]; a z-* utility in Class replaces it.
 type GlobalNav struct {
-	// Logo is the site's logo, its image (an <svg> in currentColor takes the
-	// bar's color), in the logo's link.
-	Logo g.Node
-	// Home is where the logo goes, the site's home. Required: an empty one
-	// panics.
-	Home string
-	// Name is the site's name, the logo link's accessible name. Required: an
-	// empty one panics.
-	Name string
-	// Links are the links, in order, each perhaps opening a flyout. At least
-	// one: a menu of nothing panics.
-	Links []NavLink
-	// Search is the site's search, if it has one ([icon.Search]): a link to
-	// its page, or the search opened over the page; nil for none.
+	// Logo: an <svg> in currentColor takes the bar's color.
+	Logo   g.Node
+	Home   string
+	Name   string
+	Links  []NavLink
 	Search Search
-	// Bag is the site's bag, if it has one ([icon.Bag]): a link to its page,
-	// or the bag opened over the page; nil for none.
-	Bag Bag
-	// Dark is whether the nav is dark (cui-dark): the dark bar and menu.
-	Dark bool
-	// Clear is whether the bar is clear (data-variant="clear"): no ground and
-	// no blur, over a hero.
-	Clear bool
-	// Class is the page's utilities on the nav; "" for none.
-	Class string
+	Bag    Bag
+	Dark   bool
+	Clear  bool
+	Class  string
 }
 
-// an icon's two sizes, from 834px and to 833px
 func globalNavImages(regular, compact icon.Icon) g.Node {
 	return g.Group{regular.Class("cui-globalnav-image"), compact.Class("cui-globalnav-image-compact")}
 }
 
-// a popover's curtain, the click outside it that closes it
+// the curtain takes the click outside a popover and closes it
 func globalNavCurtain(id string) g.Node {
 	return h.Button(h.Class("cui-globalnav-curtain"), h.PopoverTarget(id), h.PopoverTargetAction("hide"), h.TabIndex("-1"), h.Aria("hidden", "true"))
 }
 
-// Render writes the nav.
 func (n GlobalNav) Render(w io.Writer) error {
 	if n.Home == "" {
 		panic("site.GlobalNav needs a Home")
@@ -297,9 +226,6 @@ func (n GlobalNav) Render(w io.Writer) error {
 	).Render(w)
 }
 
-// a link with its flyout, the nth link: the link, the flyout's button, the
-// flyout (a popover) with its panel (the sheet's back button and X, its
-// groups) and its curtain
 func globalNavFlyout(link NavLink, n int) g.Node {
 	id := "cui-globalnav-flyout-" + strconv.Itoa(n)
 	var groups g.Group

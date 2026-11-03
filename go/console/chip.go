@@ -9,30 +9,20 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleChip is cui-console-chip (components/console/console-chip): App Store
-// Connect's newer look's chip, a key and its value on the gray fill. A
-// filter the page applies has a control that removes it (RemoveHref, a link
-// with a Lucide x); a value that opens a list filtered by it is a link as a
-// whole (Href).
+// ConsoleChip is a key and its value. A filter the page applies gets
+// RemoveHref; a value that opens a list filtered by it gets Href.
 type ConsoleChip struct {
-	// Key is its key, as the page words it. Required: an empty one panics.
-	Key string
-	// Value is its value.
+	Key   string
 	Value string
-	// Href, not "": the chip is a link to this URL. Not with RemoveHref: a
-	// control inside a link is no valid HTML, so both panic.
-	Href string
-	// RemoveHref, not "": the chip has a remove control, a link to this
-	// URL.
+	// Href is not allowed with RemoveHref: a link inside a link is invalid
+	// HTML.
+	Href       string
 	RemoveHref string
-	// RemoveLabel is the remove control's aria-label. Required with
-	// RemoveHref: the control is an icon alone.
+	// RemoveLabel is the remove link's aria-label: the link is an icon alone.
 	RemoveLabel string
-	// Class is the page's utilities on the chip; "" for none.
-	Class string
+	Class       string
 }
 
-// Render writes the chip.
 func (c ConsoleChip) Render(w io.Writer) error {
 	if c.Key == "" {
 		panic("console.ConsoleChip needs a Key")

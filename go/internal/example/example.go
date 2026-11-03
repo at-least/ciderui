@@ -13,7 +13,6 @@ import (
 	g "maragu.dev/gomponents"
 )
 
-// the repository's root, from this file's place in it
 var root = func() string {
 	_, file, _, ok := runtime.Caller(0)
 	if !ok {
@@ -22,8 +21,8 @@ var root = func() string {
 	return filepath.Join(filepath.Dir(file), "../../..")
 }()
 
-// Read is the example at path, under components/, each line trimmed and the
-// lines joined with nothing between them: the markup as a component writes it.
+// Read is the example at path under components/, its lines trimmed and
+// joined: the markup as a component writes it.
 func Read(path string) string {
 	b, err := os.ReadFile(filepath.Join(root, "components", path))
 	if err != nil {

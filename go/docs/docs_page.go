@@ -9,32 +9,22 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// DocsNavigatorID is the navigator's id: the bar's button and the sheet's
-// close button name it (popovertarget). One docs page to a document.
+// DocsNavigatorID is fixed, so a document holds one DocsPage.
 const DocsNavigatorID = "docs-navigator"
 
-// DocsPage is cui-docs-page (components/docs/docs-page): a page of Apple's
-// developer documentation, under the site's global nav: the documentation's
-// bar ([DocsBar]) across it, the navigator ([DocsNavigator]) beside the
-// content from 1024px and a sheet the bar's button opens below that, with its
-// close button, and the page's <main>, whose children are the page's: its
-// columns (cui-docs-page-column), each holding a hero, the content or the
-// topics.
+// DocsPage goes under the site's global nav; the navigator is beside the
+// content from 1024px and a sheet below that.
 type DocsPage struct {
-	// Title is the documentation's title, the bar's and the navigator's.
-	// Required: an empty one panics.
-	Title string
-	// Href is where the title links: the documentation's first page.
-	Href string
-	// Navigator is the navigator's rows.
+	// Title and Href: as DocsBar's.
+	Title     string
+	Href      string
 	Navigator []DocsNavigatorItem
-	// Class is the page's utilities on the page; "" for none.
-	Class string
-	// Children is the page's <main>: its columns.
+	Class     string
+	// Children: <div class="cui-docs-page-column">s, each holding a
+	// [DocsHero], the cui-docs-content or a [DocsTopics].
 	Children g.Node
 }
 
-// Render writes the page.
 func (p DocsPage) Render(w io.Writer) error {
 	return h.Div(class.Root("cui-docs-page", p.Class),
 		DocsBar{Title: p.Title, Href: p.Href, Navigator: DocsNavigatorID, Class: ""},

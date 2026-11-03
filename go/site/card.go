@@ -8,34 +8,19 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// Card is cui-card (components/site/card): the store's card, its picture
-// filling it and its text at its top, an eyebrow (or a tag), its headline, a
-// description and a price; the whole card its headline's link.
 type Card struct {
-	// Dark is whether it is a dark card (cui-dark): black, its text white.
 	Dark bool
-	// Href is its headline's link, the whole card's.
 	Href string
-	// Media is its picture (cui-card-media on an <img>); nil for none.
-	Media g.Node
-	// Eyebrow is the eyebrow above the headline; "" for none.
-	Eyebrow string
-	// Tag is whether the eyebrow is a tag ("NEW"), in the tag's color. A Tag
-	// with no Eyebrow panics.
-	Tag bool
-	// Headline is the headline, an <h3>, its text the link's. Required: an
-	// empty one panics.
-	Headline string
-	// Description is the description; "" for none.
+	// Media: an <img> carrying cui-card-media.
+	Media       g.Node
+	Eyebrow     string
+	Tag         bool
+	Headline    string
 	Description string
-	// Price is the price; "" for none.
-	Price string
-	// Class is the page's utilities on the card (another width: w-full); ""
-	// for none.
-	Class string
+	Price       string
+	Class       string
 }
 
-// Render writes the card.
 func (c Card) Render(w io.Writer) error {
 	if c.Headline == "" {
 		panic("site.Card needs a Headline")

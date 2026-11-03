@@ -8,31 +8,20 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// Swatch is cui-swatch (components/site/swatch): apple.com's buy page's color
-// choice, an <li> of a <ul class="cui-swatches">: a 28px circle of the color
-// (its Children: the page's <img class="cui-swatch-color">, or an element its
-// style colors) in a 36px ring, on a radio; checked, the ring the accent; the
-// color's name hidden but read.
+// Swatch is an <li>: put it in a <ul class="cui-swatches">.
 type Swatch struct {
-	// ID is the radio's id, its ring's for. Required: an empty one panics.
-	ID string
-	// Name is the radio's name, its group's.
-	Name string
-	// Value is the radio's value.
+	ID    string
+	Name  string
 	Value string
-	// Label is the color's name, read but not shown. Required: an empty one
-	// panics.
-	Label string
-	// Checked is whether it is checked.
+	// Label: the color's name, read by screen readers but not shown.
+	Label   string
 	Checked bool
-	// Class is the page's utilities on the item; "" for none.
-	Class string
-	// Children is the color: cui-swatch-color on an image, or on an element
-	// its style colors.
+	Class   string
+	// Children: cui-swatch-color on an <img>, or on an element its style
+	// colors.
 	Children g.Node
 }
 
-// Render writes the swatch.
 func (s Swatch) Render(w io.Writer) error {
 	if s.ID == "" {
 		panic("site.Swatch needs an ID")

@@ -8,32 +8,20 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// Article is cui-article (components/site/article): apple.com's Newsroom
-// story, its header (an eyebrow of its category and its date, the headline, a
-// subhead) over its copy (Body, the plain elements markdown writes, its
-// footnotes a cui-article-footnotes section at its end).
+// Article is apple.com's Newsroom story.
 type Article struct {
-	// Category is its category, over its date (cui-article-category); ""
-	// for none.
 	Category string
-	// Datetime is its date as a machine reads it (2026-10-19), the <time>'s
-	// datetime; "" with no date.
+	// Datetime: machine-readable (2026-10-19).
 	Datetime string
-	// Date is its date as the page shows it (October 19, 2026); "" for none.
-	// A Date with no Datetime panics.
-	Date string
-	// Headline is the headline, the page's <h1>. Required: an empty one
-	// panics.
+	Date     string
 	Headline string
-	// Subhead is the subhead under it; "" for none.
-	Subhead string
-	// Body is the copy: paragraphs, subheads, lists, figures, its footnotes.
-	Body g.Node
-	// Class is the page's utilities on the article; "" for none.
+	Subhead  string
+	// Body: the plain elements markdown writes; footnotes go last, in a
+	// cui-article-footnotes section.
+	Body  g.Node
 	Class string
 }
 
-// Render writes the article.
 func (a Article) Render(w io.Writer) error {
 	if a.Headline == "" {
 		panic("site.Article needs a Headline")

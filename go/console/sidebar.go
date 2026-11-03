@@ -9,34 +9,25 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleSidebar is cui-console-sidebar (components/console/console-sidebar): App
-// Store Connect's newer look's app sidebar: its wordmark (a link home), its
-// list (its Children, a [ConsoleMenu]'s at the toolkit's sidebar size:
-// [ConsoleMenuItem]s, headings, rules) and its foot (an
-// account); a popover, so below 1024px it is a sheet the page's
-// cui-console-sidebar-open button opens (popovertarget its ID) and its own
-// close button closes.
+// ConsoleSidebar is a popover: below 1024px it is a sheet that the page's own
+// <button class="cui-console-sidebar-open" popovertarget="ID"> opens.
 type ConsoleSidebar struct {
-	// ID is its id, which the page's open button names. Required: an empty
-	// one panics.
 	ID string
-	// Label is what it is, for a screen reader (aria-label). Required.
+	// Label is the <nav>'s aria-label.
 	Label string
-	// Home is where its wordmark goes.
-	Home string
-	// Wordmark is its wordmark's text, the product's name. Required.
+	// Home is the wordmark's href.
+	Home     string
 	Wordmark string
-	// Close is its close button's label (aria-label). Required.
+	// Close is the close button's aria-label.
 	Close string
-	// Class is the page's utilities on it; "" for none.
 	Class string
-	// Footer is what goes at its foot (an account); nil for nothing.
+	// Footer: an account.
 	Footer g.Node
-	// Children is its list.
+	// Children: [ConsoleMenuItem]s, headings and rules, as in a [ConsoleMenu]
+	// (decision 27).
 	Children g.Node
 }
 
-// Render writes the sidebar.
 func (s ConsoleSidebar) Render(w io.Writer) error {
 	for _, field := range []struct{ name, value string }{
 		{"ID", s.ID},
