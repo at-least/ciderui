@@ -1,4 +1,8 @@
 @layer components {
+  :where(.cui-modal) {
+    margin: 0;
+  }
+
   .cui-modal {
     color-scheme: light;
     /* rule 6: a dialog's place, over the window */
@@ -9,7 +13,6 @@
     height: 100%;
     max-width: none;
     max-height: none;
-    margin: 0;
     padding: 0;
     border: 0;
     overflow-y: auto;

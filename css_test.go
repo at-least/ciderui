@@ -71,6 +71,30 @@ func TestTypeStepsAtTheMdBreakpoint(t *testing.T) {
 	}
 }
 
+// a part's margin: 0, the browser's margin undone, is in :where(), with no
+// specificity: a container spacing its children (a page's content) wins, where
+// an equal selector would leave it to the order the stylesheets come in. A
+// margin of the part's own design keeps its class.
+func TestNoPartResetsItsMarginOverAContainer(t *testing.T) {
+	for _, p := range CSSFiles() {
+		if !strings.HasPrefix(p, "components/") {
+			continue
+		}
+		css := CSS(p)
+		part := strings.TrimSuffix(filepath.Base(p), ".css")
+		at := strings.Index(css, "\n  .cui-"+part+" {\n")
+		if at < 0 {
+			continue
+		}
+		block, _, _ := strings.Cut(css[at+1:], "\n  }\n")
+		for _, line := range strings.Split(block, "\n") {
+			if line == "    margin: 0;" {
+				t.Errorf("%s: .cui-%s sets %s", p, part, strings.TrimSpace(line))
+			}
+		}
+	}
+}
+
 func TestWritesTheKitsLayout(t *testing.T) {
 	dir := t.TempDir()
 	if err := WriteCSS(dir); err != nil {

@@ -1,7 +1,10 @@
 @layer components {
+  :where(.cui-console-chart) {
+    margin: 0;
+  }
+
   .cui-console-chart {
     --cui-console-chart-ground: var(--cui-console-ground, var(--cui-c-console-neutral-background-primary));
-    margin: 0;
   }
 
   .cui-console-chart-plot {

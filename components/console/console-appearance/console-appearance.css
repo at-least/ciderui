@@ -1,8 +1,11 @@
 @layer components {
+  :where(.cui-console-appearance) {
+    margin: 0;
+  }
+
   .cui-console-appearance {
     display: inline-flex;
     min-inline-size: min-content;
-    margin: 0;
     border: 1px solid var(--cui-c-console-brand-accent-primary);
     border-radius: 12px;
     padding: 1px;

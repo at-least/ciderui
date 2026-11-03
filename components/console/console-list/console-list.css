@@ -1,7 +1,10 @@
 @layer components {
+  :where(.cui-console-list) {
+    margin: 0;
+  }
+
   .cui-console-list {
     display: block;
-    margin: 0;
     padding: 0;
     list-style: none;
     border-radius: 10px;

@@ -5,8 +5,11 @@
     gap: 12px;
   }
 
-  .cui-console-thumb {
+  :where(.cui-console-thumb) {
     margin: 0;
+  }
+
+  .cui-console-thumb {
     min-width: 0;
 
     & > a {
