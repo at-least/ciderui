@@ -1,22 +1,9 @@
-// Draw the documentation's pictures (docs/static/pictures/<name>.png): ciderui
-// drawn by itself, for the places apple.com's pages put a picture. Each is a
-// scene of one or more of the components' examples on the alternate ground,
-// drawn in Chromium (--font-render-hinting=none, as the checks draw) with
-// the example frames' stylesheet (docs/static/example.css, so run
-// scripts/build-docs.mjs first) and Inter, at 1280 by 720 (16:9: a
-// component's row, a story), or the home's tile at 1440 by 692. A small
-// part is drawn larger (zoom) and centered; a band of the page at its
-// width, from the top.
+// Run scripts/build-docs.mjs first: the pictures are drawn with
+// docs/static/example.css.
 //
-// A picture is what this Chromium drew, and another version draws other
-// bytes, so what is held is what it was drawn from: docs/pictures.json
-// records, for each picture, one digest of its scene (its document, the
-// examples' markup in it, its size), the stylesheet and the fonts, and --check fails
-// when an example, the stylesheet, a font or a scene has changed since, or a
-// picture is missing:
-//
-//   node scripts/docs-pictures.mjs           draw them
-//   node scripts/docs-pictures.mjs --check   fail if one was drawn from other inputs
+// Another Chromium version draws other bytes, so --check compares not the
+// pictures but what each was drawn from: docs/pictures.json holds one digest
+// per picture of its scene, the stylesheet and the fonts.
 
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
@@ -29,9 +16,8 @@ const MANIFEST = join(DOCS, 'pictures.json');
 // id: <name>/<example>
 const example = (id) => { const [name, file] = id.split('/'); return readFileSync(join(ROOT, componentDir(name), 'examples', `${file}.html`), 'utf8'); };
 
-// ciderui's own parts as a shelf of the store's cards, each its name, its
-// kind and what it is, for the home's tile and the catalogue's story: the
-// examples' cards name a store's products
+// ciderui's own parts on the store's cards, for the home's tile and the
+// catalogue's story: the examples' cards name a store's products
 const card = (kind, name, what) => `<li><div class="cui-card"><div class="cui-card-content"><p class="cui-card-eyebrow">${kind}</p><h3 class="cui-card-headline"><a class="cui-card-link" href="#">${name}</a></h3><p class="cui-card-description">${what}</p></div></div></li>`;
 const PARTS = `<div class="cui-shelf"><div class="cui-shelf-row"><ul class="cui-shelf-scroller">${[
   card('Navigation', 'Global Nav', 'The bar across the top, its menu a popover.'),
@@ -41,14 +27,11 @@ const PARTS = `<div class="cui-shelf"><div class="cui-shelf-row"><ul class="cui-
   card('Newsroom', 'Article', 'The Newsroom’s story, for a page’s markdown.'),
 ].join('')}</ul></div></div>`;
 
-// name: the examples drawn, one after another (or html, a scene's own: the
+// files: the examples drawn, one after another, or html, a scene's own (the
 // modal's opens it, then blurs its close button, whose ring a script's
-// opening shows and a click's would not);
-// zoom: how much larger;
-// width: the scene's own width before the zoom (the window's, for a band;
-// none, a small part's own);
-// center: a small part in the middle of the picture, else from the top;
-// window, height: the picture's size (1280 by 720); top: room above
+// opening shows and a click's would not); width: before the zoom (the
+// window's, for a band; none, a small part's own); center: in the middle,
+// else from the top; window, height: the picture's size; top: room above
 const SCENES = [
   { name: 'accordion', files: ['accordion/accordion'], zoom: 1.5, width: 640, center: true },
   { name: 'article', files: ['article/article'], zoom: 1, width: 1280 },
@@ -124,10 +107,8 @@ const SCENES = [
 
 const css = readFileSync(join(DOCS, 'static/example.css'), 'utf8');
 const digest = (text) => createHash('sha256').update(text).digest('hex');
-// the fonts the pictures are drawn in (Inter, fonts/), each file's digest
 const fonts = readdirSync(join(ROOT, 'fonts')).sort().map((f) => `${f} ${digest(readFileSync(join(ROOT, 'fonts', f)))}`).join('\n');
 
-// each scene's size and the document drawn
 const scenes = SCENES.map((s) => {
   const height = s.height ?? 720;
   const box = `zoom:${s.zoom};width:${s.width ? `${s.width}px` : 'max-content'};${s.top ? `margin-top:${s.top}px;` : ''}${s.center ? '' : 'margin-inline:auto;'}`;
@@ -138,7 +119,6 @@ const scenes = SCENES.map((s) => {
     html: `<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="/example.css"></head><body style="margin:0;height:${height}px;overflow:hidden;background:var(--cui-c-bg-alt);${s.center ? 'display:flex;align-items:center;justify-content:center;' : ''}"><div style="${box}">${s.html ?? s.files.map(example).join('\n')}</div></body></html>`,
   };
 });
-// what each picture is drawn from
 const inputs = Object.fromEntries(scenes.map((s) => [s.name, digest(`${s.width}x${s.height}\n${s.html}\n${css}\n${fonts}`)]));
 
 if (process.argv[2] === '--check') {

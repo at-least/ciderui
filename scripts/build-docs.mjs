@@ -1,20 +1,8 @@
-// Build what the documentation (docs/) generates:
-//
-// - docs/examples/<name>/<id>.html: a copy of every component's example
-//   (components/<set>/<name>/examples/<id>.html), for the pages' cui_example
-//   component (docs/templates/cui-example.html), since zola's load_data
-//   reads only inside the site. Committed, like the stylesheet, so the site
-//   builds with zola alone. docs/examples/pages/ is not generated: the
-//   examples a page writes itself, kept there so the same component shows
-//   them.
-// - docs/static/example.css, the example frames' stylesheet: Tailwind's
-//   preflight, ciderui with its fonts and every component, and the
-//   utilities the examples' class attributes name (the type's), compiled
-//   as ciderui's checks compile it (test/compile.mjs), minified. Its fonts'
-//   url()s are the theme's static/fonts/, beside it in the built site.
-//
-//   node scripts/build-docs.mjs           write them
-//   node scripts/build-docs.mjs --check   fail if the committed ones differ
+// docs/examples/ copies the components' examples because zola's load_data
+// reads only inside the site; committed with docs/static/example.css so the
+// site builds with zola alone. docs/examples/pages/ is not generated: a
+// page's own examples, kept there so the same cui_example component shows
+// them.
 
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -23,7 +11,6 @@ import { COMPONENTS, ROOT, compile } from '../test/compile.mjs';
 
 const DOCS = join(ROOT, 'docs');
 
-// every component's examples, by their path under docs/examples
 function exampleFiles() {
   const out = new Map();
   for (const c of COMPONENTS) {
@@ -33,7 +20,6 @@ function exampleFiles() {
   return out;
 }
 
-// the class names every example's markup writes, the pages' own included
 function classes(examplesDir) {
   const names = new Set();
   for (const e of readdirSync(examplesDir, { recursive: true, withFileTypes: true })) {
@@ -44,7 +30,6 @@ function classes(examplesDir) {
   return [...names].sort().join(' ');
 }
 
-// writes everything under out: examples/ and static/example.css
 function build(out) {
   const examplesDir = join(out, 'examples');
   if (existsSync(examplesDir)) {
@@ -65,7 +50,6 @@ function build(out) {
   writeFileSync(join(out, 'static/example.css'), compile({ css: `@import "fonts.css";\n@import "index.css";\n${components}`, classes: classes(examplesDir) }));
 }
 
-// every generated file under a root, relative
 function generated(root) {
   const out = [];
   for (const e of readdirSync(join(root, 'examples'), { recursive: true, withFileTypes: true })) {

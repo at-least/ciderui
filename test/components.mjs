@@ -1,15 +1,3 @@
-// Runs every components/<set>/<name>/<name>.test.mjs (its `cases`, test/harness.mjs
-// says what a case and a check are): each case rendered in headless Chromium
-// on the kit, its fonts and every component's stylesheet, compiled as a site
-// compiles them, at each of its widths, its text in Inter as a site that
-// imports fonts.css draws it where the system font is not SF (here, Linux:
-// without them the stack falls through to this host's Arial, Liberation
-// Sans); each check's values against apple.com's
-// measured ones, golden.json's or the element's own at rest. golden.json
-// beside a test holds its golden values; UPDATE_GOLDEN=1 rewrites them, and
-// an entry no check reads fails the run. CASES=<regex> runs the cases it
-// matches.
-
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -26,9 +14,9 @@ if (UPDATE && PICK) throw new Error('UPDATE_GOLDEN=1 runs every case: drop CASES
 
 const tested = COMPONENTS.filter(c => existsSync(join(ROOT, c.dir, `${c.name}.test.mjs`)));
 const sheets = tested.map(c => `@import "${c.dir}/${c.name}.css";`).join('\n');
-// Tailwind scans the components' directories, as a site's @source does: the
-// examples and the test files, whose cases write markup of their own (a type
-// class around an example)
+// fonts.css: without Inter the stack falls through to this Linux host's
+// Arial (Liberation Sans). Tailwind scans the test files too: their cases
+// write markup of their own (a type class around an example).
 const css = compile({ css: `@import "fonts.css";\n@import "index.css";\n${sheets}`, sources: ['components'] });
 
 for (const { name, dir } of tested) {
@@ -49,11 +37,9 @@ for (const { name, dir } of tested) {
     try {
       for (const width of widths) {
         await page.resize(width);
-        // the case's clicks, once, at its first width (a menu stays open across
-        // the widths after it); then the pointer leaves for the window's
-        // bottom corner (a click leaves it over what it clicked, hovered: a
-        // state the checks force when they mean it), its keys are pressed,
-        // and the motion runs to its end, or for `wait` ms (0: its start)
+        // once, at the first width: a menu stays open across the widths after
+        // it. The pointer then leaves: a click leaves it over what it clicked,
+        // hovered, a state the checks force when they mean it.
         if ((c.click || c.press || c.wait !== undefined) && width === widths[0]) {
           for (const selector of [].concat(c.click ?? [])) await page.page.click(selector);
           if (c.click) await page.page.mouse.move(0, (c.height ?? 800) - 1);
@@ -61,10 +47,8 @@ for (const { name, dir } of tested) {
           if (c.wait !== undefined) await page.page.waitForTimeout(c.wait);
           else await page.settle();
         }
-        // `hover`: the pointer off to the window's bottom corner, then moved
-        // onto each element (its middle) or point ([x, y]) in turn in steps,
-        // as a hand moves it, at every width (what it shows a resize may
-        // hide), and the motion run to its end, or for `wait` ms
+        // at every width: what the pointer shows a resize may hide. In steps,
+        // as a hand moves it.
         if (c.hover) {
           await page.page.mouse.move(0, (c.height ?? 800) - 1);
           await page.settle();
@@ -76,8 +60,6 @@ for (const { name, dir } of tested) {
             else await page.settle();
           }
         }
-        // `scroll`: [selector, x], that element scrolled to x (snapping where
-        // it snaps) at every width, before the checks
         if (c.scroll) {
           await page.page.evaluate(([selector, x]) => { document.querySelector(selector).scrollLeft = x; }, c.scroll);
           await page.page.waitForTimeout(100);
@@ -91,8 +73,6 @@ for (const { name, dir } of tested) {
             for (const prop of k.props) {
               // apple.com drew SF, ciderui draws Inter here: a width is the text's
               if (prop === 'width' || prop === 'box-width') throw new Error(`${label}: an apple.com check reads no width (${prop})`);
-              // `as`: apple.com's property where it does the same with another (a
-              // pseudo-element's padding for an icon's margin)
               const theirs = k.as?.[prop] ?? prop;
               check(`${label} ${prop} is apple.com's ${p}:${probe}${state ? ':' + state : ''} ${theirs} at ${at}px`, got[prop], ref(p, probe, at, theirs, state));
             }

@@ -1,10 +1,6 @@
-// The checks' bookkeeping: each check passes or fails with what it compared,
-// and a test file ends with its tally, exiting non-zero on any failure.
-
 const failures = [];
 let passed = 0;
 
-// a computed value against the expected one, lengths within 1/32px
 export function check(name, got, want, { tolerance = 1 / 32 } = {}) {
   const ok = same(got, want, tolerance);
   if (ok) passed++;

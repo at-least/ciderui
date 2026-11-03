@@ -1,9 +1,5 @@
-// Every component's examples on every surface its set's parts sit on, read
-// by axe-core's rules for what a combination gets wrong: text against what
-// is behind it (color-contrast) and a link inside text told apart by more
-// than color (link-in-text-block). A check per example and surface, failing
-// with each node axe-core finds. Combinations, not cases: six times a site
-// built on ciderui (crashcart) found such a pair the cases had not listed.
+// Every example on every surface, not listed cases: six times a site built
+// on ciderui (crashcart) found a failing pair the cases had not listed.
 
 import { readdirSync, readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
@@ -15,7 +11,6 @@ import { check, done } from './check.mjs';
 const AXE = readFileSync(createRequire(import.meta.url).resolve('axe-core/axe.min.js'), 'utf8');
 const RULES = ['color-contrast', 'link-in-text-block'];
 
-// each set's surfaces: the markup an example is set into
 const SURFACES = {
   site: {
     page: (html) => `<div class="cui-light">${html}</div>`,

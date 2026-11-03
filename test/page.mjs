@@ -62,7 +62,6 @@ try {
   await b.close();
 }
 
-// the OS's appearance changes nothing; reduced motion stills a transition
 b = await open(css, html, { colorScheme: 'dark', reducedMotion: 'reduce' });
 try {
   check('the OS\'s dark appearance leaves the page light', (await b.read('body', ['color']))['color'], LIGHT.color);

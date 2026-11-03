@@ -1,11 +1,3 @@
-// tokens.css against what it is: each color apple.com's measured value
-// (reference/apple.com/, the probe named beside it) or the fitted one,
-// one light-dark() pair or one value; the contrast minimums of each color's
-// job on both sides; the letter-spacing per size the tracking probe's table
-// (reference/tracking/cui-tracking.json); the font stack the one the stack
-// probe holds (reference/stack/); the focus ring apple.com's; and no other
-// stylesheet with a color of its own.
-
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { ROOT } from './compile.mjs';
@@ -16,12 +8,10 @@ const css = readFileSync(join(ROOT, 'tokens.css'), 'utf8');
 const tbTokens = JSON.parse(readFileSync(join(ROOT, 'reference/asc/results/tokens.json'), 'utf8')).tokens;
 const vars = Object.fromEntries([...css.matchAll(/^\s*(--cui-[a-z0-9-]+):\s*([^;]+);/gm)].map(m => [m[1], m[2].trim()]));
 
-// a token's two sides: light-dark(a, b), or one value for both
 const sides = (name) => {
   const v = vars[name];
   if (v === undefined) throw new Error(`tokens.css has no ${name}`);
   if (!v.startsWith('light-dark(')) return [v, v];
-  // the comma between the two sides is the one outside any parentheses
   const inner = v.slice('light-dark('.length, -1);
   let depth = 0;
   for (let i = 0; i < inner.length; i++) {
@@ -31,7 +21,6 @@ const sides = (name) => {
   }
   throw new Error(`${name}: no two sides in ${v}`);
 };
-// a side as its channels, [r, g, b, alpha]: #rrggbb, or rgb(r g b / a)
 const channels = (value) => {
   const h = value.match(/^#([0-9a-f]{6})$/i);
   if (h) {
@@ -44,7 +33,6 @@ const channels = (value) => {
   if (!c) throw new Error(`not a #rrggbb, rgb(r g b / a) or oklch(l% c h / a) color: ${value}`);
   return [+c[1], +c[2], +c[3], +c[4]];
 };
-// oklch to sRGB's 0-255 channels, unrounded and clipped to the gamut, by
 // CSS Color 4's matrices (OKLab to linear sRGB)
 function oklchToSrgb(l, c, h) {
   const a = c * Math.cos(h * Math.PI / 180), b = c * Math.sin(h * Math.PI / 180);
@@ -52,7 +40,6 @@ function oklchToSrgb(l, c, h) {
   const lin = [4.0767416621 * l_ - 3.3077115913 * m_ + 0.2309699292 * s_, -1.2684380046 * l_ + 2.6097574011 * m_ - 0.3413193965 * s_, -0.0041960863 * l_ - 0.7034186147 * m_ + 1.7076147010 * s_];
   return lin.map(v => Math.min(1, Math.max(0, v))).map(v => (v <= 0.0031308 ? 12.92 * v : 1.055 * v ** (1 / 2.4) - 0.055) * 255);
 }
-// a computed rgb()/rgba() as the rgb(r g b / a) channels() reads
 const computedToSpace = (value) => {
   const m = value.match(/^rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)$/);
   if (!m) throw new Error(`not a computed rgb color: ${value}`);
@@ -64,15 +51,13 @@ const rgb = (value) => {
   return a === 1 ? `rgb(${r}, ${g}, ${b})` : `rgba(${r}, ${g}, ${b}, ${a})`;
 };
 
-// the contract: each color's light and dark side and where apple.com shows it
-// ([page, probe, width, property, state?, opacity?]: with `opacity`, the color
-// at the element's opacity, as apple.com draws a title in black at .88), or
-// `fitted` with why
 const W = 1200;
-// the docs set's aside kinds, each with the DocC page its colors are read
-// from: the crash report's note, another article's important one, and the
-// note's class set to each other kind (docc-asides)
+// docc: the crash report's note; docc-important: another article's
+// important aside; docc-asides: the note's class set to each other kind
 const DOCS_ASIDES = [['note', 'docc'], ['important', 'docc-important'], ['warning', 'docc-asides'], ['tip', 'docc-asides'], ['deprecated', 'docc-asides'], ['experiment', 'docc-asides']];
+// each color's light and dark side: [page, probe, width, property, state?,
+// opacity?] where apple.com shows it (`opacity`: the color at the element's
+// opacity, as apple.com draws a title in black at .88), or 'fitted: why'
 const CONTRACT = {
   '--cui-c-bg': [['home', 'page.body', W, 'background-color'], ['product', 'page.body', W, 'background-color']],
   '--cui-c-bg-alt': [['home', 'hero.tile', W, 'background-color'], ['product', 'section.dark', W, 'background-color']],
@@ -147,21 +132,15 @@ const CONTRACT = {
   '--cui-c-close-active': [['overlay', 'close.circle-hover', W, 'background-color', 'active'], ['overlay', 'close.circle-hover', 390, 'background-color', 'active']],
   '--cui-c-on-close': [['overlay', 'close.circle', W, 'color'], ['overlay', 'close.circle-hover', 390, 'color', 'active']],
   '--cui-c-on-close-hover': [['overlay', 'close.circle-hover', W, 'color', 'hover'], ['overlay', 'close.circle-hover', 390, 'color', 'hover']],
-  // the docs set's own (decision 23): Apple's developer documentation's code
-  // listing, light and in the dark, which DocC follows
   '--cui-c-docs-listing': [['docc', 'listing', W, 'background-color'], ['docc-dark', 'listing', W, 'background-color']],
   '--cui-c-docs-code': [['docc', 'listing.code', W, 'color'], ['docc-dark', 'listing.code', W, 'color']],
-  // its asides
   ...Object.fromEntries(DOCS_ASIDES
     .flatMap(([kind, page]) => [
       [`--cui-c-docs-${kind}`, [[page, kind, W, 'background-color'], [`${page}-dark`, kind, W, 'background-color']]],
       [`--cui-c-docs-${kind}-edge`, [[page, kind, W, 'border-top-color'], [`${page}-dark`, kind, W, 'border-top-color']]],
     ])),
-  // the documentation's bar's hairline, light and dark
   '--cui-c-docs-bar-rule': [['docc-page', 'bar.rule', W, 'background-color'], ['docc-page-dark', 'bar.rule', W, 'background-color']],
-  // the navigator's current row
   '--cui-c-docs-current': [['docc-page', 'navigator.current.row', W, 'background-color'], ['docc-page-dark', 'navigator.current.row', W, 'background-color']],
-  // the words of a row its filter matches
   '--cui-c-docs-match': [['docc-filter', 'match', W, 'background-color'], ['docc-filter-dark', 'match', W, 'background-color']],
 };
 
@@ -184,20 +163,10 @@ for (const [name, [light, dark]] of Object.entries(CONTRACT)) {
   }
 }
 
-// the console's colors (--cui-c-console-*, the console parts'): each App
-// Store Connect's toolkit's color (reference/asc/results/tokens.json) on
-// the light side, the role of the slot's name (--cui-c-console-brand-label-
-// on-accent-primary is --tb-color-role-brand-label-onAccent-primary) or, a
-// part's own state color, the token SOURCES names; on the dark side, which
-// the toolkit does not ship, that color's step of its dark palette at its
-// alpha: the light palette's step of the same lightness, chroma and hue, or,
-// for a color that is no step, the step nearest its lightness in the ramp
-// nearest its hue (the gray ramps for a gray, chroma under 0.05); black and
-// white each other's, and white on an accent (on-accent) white still
-// (DESIGN.md, decision 18: derived, not measured). A side its job's
-// contrast finds short is fitted (decision 21): FITTED's value, a step of
-// the same ramp (or the same step at another alpha), held below by the
-// contrast checks.
+// the console's colors: light the toolkit's, dark derived (decision 18:
+// not measured). A side its job's contrast
+// finds short is fitted (decision 21): FITTED's value, a step of the same
+// ramp (or the same step at another alpha), held by the contrast checks.
 const SOURCES = {
   '--cui-c-console-brand-fill-hover': 'component-Button-variant-colorRole-brand-effect-hover-variant-filled-backgroundColor',
   '--cui-c-console-brand-fill-press': 'component-Button-variant-colorRole-brand-effect-press-variant-filled-backgroundColor',
@@ -228,7 +197,6 @@ const lch = (v) => {
 const steps = (side) => Object.entries(tbTokens).filter(([k]) => k.startsWith(`--tb-color-palette-${side}-`));
 const sameColor = (a, b) => a.replace(/ 0\.0\)$/, ' 0)') === b.replace(/ 0\.0\)$/, ' 0)');
 const rampName = (k) => k.match(/-palette-(?:light|dark)-([a-zA-Z]+)-/)[1];
-// a color's step of a palette side: [token, ramp]
 const stepOf = (value, side) => {
   const { l, c, h, opaque } = lch(value);
   const exact = steps(side).filter(([, v]) => sameColor(v, opaque));
@@ -289,9 +257,8 @@ for (const name of Object.keys(vars).filter(k => k.startsWith('--cui-c-console-'
 }
 for (const name of Object.keys(FITTED)) if (!(name in vars)) throw new Error(`FITTED names ${name}, which tokens.css has not`);
 
-// contrast: WCAG 2, each color's job on both sides. A translucent color is
-// what it draws over the color under it: `over` lays each side in turn on
-// the next (the nav's text on its bar on the page)
+// WCAG 2 contrast. A translucent color is what it draws over the color
+// under it.
 const over = (...layers) => layers.reduceRight((under, top) => {
   const [r, g, b, a] = channels(top);
   const [ur, ug, ub] = channels(under);
@@ -335,11 +302,9 @@ for (const [fg, grounds, min] of MIN) {
     }
   }
 }
-// a console part's text on the console's grounds: each label on the fills
-// it is drawn on (the layers named, top first; [] the bare base), and each of
-// those over both bases a console part sits on, the page (white light,
-// black dark) and a card over the page: the pairs read on a card alone
-// before were found by a site's axe-core run, not here (69d2d21, af2467f)
+// each label on the fills it is drawn on (top first; [] the bare base), each
+// over both bases: pairs on a card were missed here and found by a site's
+// axe-core run
 const PAGE = '--cui-c-console-neutral-background-primary';
 const CARD = '--cui-c-console-card';
 const BASES = [[PAGE], [CARD, PAGE]];
@@ -436,13 +401,11 @@ for (const [mark, fill] of [['--cui-c-on-close', '--cui-c-close'], ['--cui-c-on-
   check(`${mark} on ${fill}, at least 3:1`, ratio(over(sides(mark)[0], ground), ground) >= 3, true);
 }
 
-// the letter-spacing per size
 const table = JSON.parse(readFileSync(join(ROOT, 'reference/tracking/cui-tracking.json'), 'utf8'));
 const tracking = Object.keys(vars).filter(k => k.startsWith('--cui-tracking-'));
 check('a letter-spacing for each size of the table', tracking.map(k => k.slice(15)).join(' '), Object.keys(table).join(' '));
 for (const [size, em] of Object.entries(table)) check(`--cui-tracking-${size}`, parseFloat(vars[`--cui-tracking-${size}`]), em);
 
-// the font stack and the focus ring
 check('--cui-font', vars['--cui-font'], '-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif');
 check('--cui-font-mono', vars['--cui-font-mono'], 'ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace');
 check('--cui-focus-ring', vars['--cui-focus-ring'], '2px solid var(--cui-c-accent)');
@@ -450,15 +413,14 @@ check('the focus ring is apple.com\'s width', ref('home', 'button', W, 'outline-
 check('the focus ring is apple.com\'s color', rgb(sides('--cui-c-accent')[0]), ref('home', 'button', W, 'outline-color', 'focus-visible'));
 check('--cui-focus-ring-offset is apple.com\'s', vars['--cui-focus-ring-offset'], ref('home', 'button', W, 'outline-offset', 'focus-visible'));
 
-// a console sheet's shadow: the toolkit's opaque sidebar's
 check('--cui-console-shadow-sidebar is App Store Connect\'s --tb-component-Sidebar-variant-variant-opaque-boxShadow', vars['--cui-console-shadow-sidebar'], tbTokens['--tb-component-Sidebar-variant-variant-opaque-boxShadow']);
 check('--cui-console-shadow-table-sticky is App Store Connect\'s --tb-component-Table-anatomy-TH-stickyBoxShadow', vars['--cui-console-shadow-table-sticky'], tbTokens['--tb-component-Table-anatomy-TH-stickyBoxShadow']);
 check('--cui-console-shadow-dialog is App Store Connect\'s --tb-component-Modal-variant-variant-modal-boxShadow', vars['--cui-console-shadow-dialog'], tbTokens['--tb-component-Modal-variant-variant-modal-boxShadow']);
 check('--cui-console-shadow-radio is App Store Connect\'s --tb-component-Radio-variant-colorRole-brand-effect-default-state-on-boxShadow', vars['--cui-console-shadow-radio'], tbTokens['--tb-component-Radio-variant-colorRole-brand-effect-default-state-on-boxShadow']);
 check('--cui-console-shadow-popover is App Store Connect\'s --tb-component-Popover-variant-variant-stroked-boxShadow', vars['--cui-console-shadow-popover'], tbTokens['--tb-component-Popover-variant-variant-stroked-boxShadow']);
 
-// the card's shadows, as the browser computes one: its color first, then its
-// lengths (the spread 0px where none is written)
+// as the browser computes a shadow: its color first, the spread 0px where
+// none is written
 const shadow = (value) => {
   const color = value.match(/rgba?\([^)]*\)/)[0];
   const lengths = value.replace(color, '').trim().split(/\s+/);
@@ -471,15 +433,13 @@ for (const [name, state] of [['--cui-shadow-card'], ['--cui-shadow-card-hover', 
   }
 }
 
-// no stylesheet but tokens.css writes a color: not by value, not by name
-// (transparent, currentColor and inherit are not a color of its own)
-// every named color CSS has
+// every named color CSS has; not transparent, currentColor or inherit, which
+// are no color of a stylesheet's own
 const NAMED = /\b(aliceblue|antiquewhite|aqua|aquamarine|azure|beige|bisque|black|blanchedalmond|blue|blueviolet|brown|burlywood|cadetblue|chartreuse|chocolate|coral|cornflowerblue|cornsilk|crimson|cyan|darkblue|darkcyan|darkgoldenrod|darkgray|darkgreen|darkgrey|darkkhaki|darkmagenta|darkolivegreen|darkorange|darkorchid|darkred|darksalmon|darkseagreen|darkslateblue|darkslategray|darkslategrey|darkturquoise|darkviolet|deeppink|deepskyblue|dimgray|dimgrey|dodgerblue|firebrick|floralwhite|forestgreen|fuchsia|gainsboro|ghostwhite|gold|goldenrod|gray|green|greenyellow|grey|honeydew|hotpink|indianred|indigo|ivory|khaki|lavender|lavenderblush|lawngreen|lemonchiffon|lightblue|lightcoral|lightcyan|lightgoldenrodyellow|lightgray|lightgreen|lightgrey|lightpink|lightsalmon|lightseagreen|lightskyblue|lightslategray|lightslategrey|lightsteelblue|lightyellow|lime|limegreen|linen|magenta|maroon|mediumaquamarine|mediumblue|mediumorchid|mediumpurple|mediumseagreen|mediumslateblue|mediumspringgreen|mediumturquoise|mediumvioletred|midnightblue|mintcream|mistyrose|moccasin|navajowhite|navy|oldlace|olive|olivedrab|orange|orangered|orchid|palegoldenrod|palegreen|paleturquoise|palevioletred|papayawhip|peachpuff|peru|pink|plum|powderblue|purple|rebeccapurple|red|rosybrown|royalblue|saddlebrown|salmon|sandybrown|seagreen|seashell|sienna|silver|skyblue|slateblue|slategray|slategrey|snow|springgreen|steelblue|tan|teal|thistle|tomato|turquoise|violet|wheat|white|whitesmoke|yellow|yellowgreen)\b/i;
 const sheets = ['theme.css', 'base.css', 'type.css', 'index.css',
   ...readdirSync(join(ROOT, 'components'), { recursive: true }).filter(f => f.endsWith('.css')).map(f => join('components', f))];
 for (const file of sheets) {
   const text = readFileSync(join(ROOT, file), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
-  // a value is what follows a colon up to its semicolon or brace
   // a custom property's name is no color (--cui-c-console-gray-fill-hover)
   const values = [...text.matchAll(/:\s*([^;{}]+)[;}]/g)].map(m => m[1]).join(' ; ').replace(/--[\w-]+/g, '');
   const literal = values.match(/#[0-9a-f]{3,8}\b|\b(rgba?|hsla?|hwb|lab|lch|oklab|oklch|color)\(/i) ?? values.match(NAMED);

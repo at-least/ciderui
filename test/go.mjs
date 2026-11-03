@@ -1,8 +1,3 @@
-// The Go module (go.mod at the root; the packages under go/): formatted
-// (gofmt), vetted, every struct literal of the module's types writing every
-// field (exhaustruct: a component's field left out of a call is a default
-// nobody chose), and its tests, examples included, passing.
-
 import { execFileSync } from 'node:child_process';
 import { ROOT } from './compile.mjs';
 
@@ -13,6 +8,7 @@ const unformatted = execFileSync('gofmt', ['-l', ...dirs], { cwd: ROOT, encoding
 if (unformatted) throw new Error(`not gofmt'd (gofmt -w <file>):\n${unformatted}`);
 for (const args of [
   ['vet', './...'],
+  // a component's field left out of a struct literal is a default nobody chose
   ['tool', 'exhaustruct', '-i', 'github.com/at-least/ciderui/.*', './...'],
   ['test', './...'],
 ]) {

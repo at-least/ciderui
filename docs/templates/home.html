@@ -1,9 +1,4 @@
 {% extends "base.html" %}
-{#- The documentation's home: a tile (its picture ciderui's parts as a
-    shelf of cards, drawn by scripts/docs-pictures.mjs), the newest three
-    stories of its news, as the news' index lays them out, and a section's
-    header, its headline and more links ([extra] closing, links); then the
-    home's own markdown, if any. -#}
 {% block description %}{{ section.description or config.description }}{% endblock description %}
 {% block content -%}
 <div class="cui-tile" data-size="lg">

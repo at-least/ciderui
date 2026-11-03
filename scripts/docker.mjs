@@ -1,15 +1,5 @@
-// Runs a command in test/Dockerfile's image, the only place the browser
-// starts (test/chromium.mjs): the repository copied to /src/ciderui (the
-// image's node_modules kept), ciderui-zola (the docs' theme, a sibling
-// checkout) to /src/ciderui-zola, CASES and UPDATE_GOLDEN passed through; then every file the command wrote that git
-// does not ignore (golden.json, the docs' copies and pictures, a probe's
-// results) copied back into the checkout. Nothing is bind-mounted: the
-// Docker daemon may be on another machine (DOCKER_HOST=ssh://…), where a
-// bind mount would read that machine's paths.
-//
-//   node scripts/docker.mjs                          the browser steps of npm test
-//   node scripts/docker.mjs node test/components.mjs a command
-//   UPDATE_GOLDEN=1 node scripts/docker.mjs node test/components.mjs
+// Nothing is bind-mounted: the Docker daemon may be on another machine
+// (DOCKER_HOST=ssh://…), where a bind mount would read that machine's paths.
 
 import { execFileSync, execSync, spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
@@ -60,8 +50,6 @@ try {
   try {
     execSync(`docker cp ${id}:/tmp/written.tar - | tar -xOf - written.tar | tar -xf - -C ${q(out)}`, { stdio: ['ignore', 'ignore', 'inherit'] });
     const written = execSync('find . -type f', { cwd: out, encoding: 'utf8' }).split('\n').filter(Boolean).map((f) => f.replace(/^\.\//, ''));
-    // git's own ignore list decides what comes back (docs/public, zola's
-    // processed images stay in the container)
     // check-ignore exits 1 when it ignores none of them, 0 when some
     const check = spawnSync('git', ['check-ignore', '--no-index', '--stdin'], { cwd: ROOT, input: written.join('\n'), encoding: 'utf8' });
     if (check.status > 1) throw new Error(`git check-ignore: ${check.stderr}`);

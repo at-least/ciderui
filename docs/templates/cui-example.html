@@ -1,19 +1,6 @@
-{#- cui_example: a live example, for a page's markdown: a component's
-    example file (components/<set>/<name>/examples/<id>.html, copied into
-    docs/examples/ by scripts/build-docs.mjs, since zola reads only inside
-    the site), shown in a frame of its own, the article's figure, over the
-    same markup as code.
-
-      {{ <cui_example file="button/variants" title="The button's variants" pad={true} /> }}
-
-    The frame is a page of its own, as a site's is: Tailwind's preflight,
-    ciderui and its components (static/example.css, from
-    scripts/build-docs.mjs), with none of the article's styles, which would
-    restyle an example's paragraphs, lists and links; and the theme's
-    script, so a gallery's paddles and dots work as on a site.
-    static/example.js keeps it as tall as its content. file: the example,
-    <name>/<id>; title: the frame's name for assistive technology; pad:
-    24px around the example, for a part that is not a band of the page (a
+{#- A frame, not the markup in the article: the article's styles would
+    restyle an example's paragraphs, lists and links. example.js replaces
+    the 150px height. pad: for a part that is not a band of the page (a
     button, a field, a card). A blank line would end the raw HTML in the
     markdown, so srcdoc carries the line breaks as &#10;. -#}
 {% component cui_example(file, title, pad=false) -%}

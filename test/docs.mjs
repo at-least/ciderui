@@ -1,34 +1,5 @@
-// The documentation (docs/): it has a page for each component and no other
-// under docs/content/components/, each with its kind and its picture
-// (docs/static/pictures/, scripts/docs-pictures.mjs) and showing every
-// example file of its component's directory, so no example the Go module's
-// tests render is missing from it; the frames' stylesheet styles every
-// class the examples write. Built with zola, every page at 1440 and 390px
-// in Chromium: no page error, nothing the page asks for missing or of a
-// type TYPES has not, every link within the site to a page that exists, no
-// scrolling sideways; each
-// example frame loads its stylesheet, draws every picture it has, is no
-// wider than the page and as tall as its content, so it never scrolls.
-// And what the frames do: the theme's script moves a gallery's row; a
-// modal, the store's and a product page's, opens in its frame by its button,
-// the frame grown to the window under the page's local nav, and its close
-// button closes it; the global nav's
-// search the same, its field focused, Escape closing it; at 390px the global
-// nav's menu opens over its frame, grown to the window's height, and the
-// local nav's below its bar, the frame grown to hold it; an example's link
-// leaves the frame where it is; a footnote's mark, an example's or a page's
-// own (the news article's), scrolls its note to below the page's local nav.
-// The site's own search: the page's global
-// nav's search suggests the component's page first as its name is typed,
-// and sends it to the search page, which lists the pages holding it, the
-// component's page first.
-//
-//   node test/docs.mjs
-//
 // Needs zola, and ciderui-zola, the theme the site is built with, as a
-// sibling checkout: docs/themes/ciderui-zola links to ../ciderui-zola. The
-// site is built into a temporary directory and served from it through a
-// Playwright route at its base_url.
+// sibling checkout: docs/themes/ciderui-zola links to ../ciderui-zola.
 
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, statSync } from 'node:fs';
@@ -42,7 +13,6 @@ const DOCS = join(ROOT, 'docs');
 const ORIGIN = 'https://ciderui.test';
 const TYPES = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.json': 'application/json', '.txt': 'text/plain' };
 
-// the pages: one for each component, its examples all shown
 const pages = readdirSync(join(DOCS, 'content/components')).filter((f) => f !== '_index.md').map((f) => f.replace(/\.md$/, ''));
 for (const { name, dir } of COMPONENTS) {
   const file = join(DOCS, 'content/components', `${name}.md`);
@@ -58,12 +28,8 @@ for (const { name, dir } of COMPONENTS) {
 }
 for (const name of pages.filter((p) => !COMPONENTS.some((c) => c.name === p))) check(`docs/content/components/${name}.md is a component's page`, false, true);
 
-// the frames' stylesheet has ciderui's rules for every class the examples
-// write: a component's (its stylesheet names it), a block's (base.css:
-// cui-dark, cui-light) or a type utility (type.css's, a component's own:
-// the console's);
-// a class ciderui has no rule for (a part's box that needs none,
-// cui-post-content) is the markup's alone
+// a class no stylesheet rules (a part's box that needs none,
+// cui-post-content) is the markup's alone: not looked for in example.css
 const css = readFileSync(join(DOCS, 'static/example.css'), 'utf8');
 const ruled = new Set([
   ...[...COMPONENTS.map((c) => `${c.dir}/${c.name}.css`), 'base.css'].flatMap((f) => [...readFileSync(join(ROOT, f), 'utf8').matchAll(/\.(cui-[a-z0-9-]+)/g)].map((m) => m[1])),
@@ -76,9 +42,8 @@ for (const e of readdirSync(join(DOCS, 'examples'), { recursive: true, withFileT
   }
 }
 
-// the site, built
 const out = mkdtempSync(join(tmpdir(), 'ciderui-docs-'));
-// removed however the run ends: a failure thrown below, or done()'s exit
+// on exit, not finally: done() exits
 process.on('exit', () => rmSync(out, { recursive: true, force: true }));
 // its failure thrown as it is: zola's own words, or no zola (ENOENT)
 execFileSync('zola', ['--root', DOCS, 'build', '--output-dir', out, '--force'], { stdio: 'pipe' });
@@ -152,7 +117,6 @@ for (const width of [1440, 390]) {
     }
   }
 
-  // what the frames do
   const frame = async (path, title) => {
     await page.goto(`${ORIGIN}${path}`, { waitUntil: 'load' });
     await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 50)))));
@@ -161,7 +125,6 @@ for (const width of [1440, 390]) {
   };
   const height = (handle) => handle.evaluate((f) => f.clientHeight);
   const settle = (inner) => inner.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 400)))));
-  // the page's scroll at rest: unchanged for 10 frames
   const still = () => page.evaluate(() => new Promise((r) => {
     let last = -1, same = 0;
     const tick = () => { if (scrollY === last) same++; else { same = 0; last = scrollY; } if (same >= 10) r(); else requestAnimationFrame(tick); };
@@ -220,8 +183,6 @@ for (const width of [1440, 390]) {
     check(`at ${width}px its search's form sent leaves its frame where it is`, inner.url(), 'about:srcdoc');
   }
   {
-    // a footnote's mark in an example: its note scrolled to below the page's
-    // bar, not under it
     const { inner } = await frame('/components/article/', 'An article');
     await inner.click('a[href="#fn-1"]');
     await still();
@@ -233,8 +194,6 @@ for (const width of [1440, 390]) {
     check(`at ${width}px a footnote's mark in an example scrolls its note to below the page's bar (its top ${at.note.toFixed(2)}px, the bar's foot ${at.nav.toFixed(2)}px)`, at.note >= at.nav - 0.5, true);
   }
   {
-    // a page's own footnote (markdown's, the news article's): its mark
-    // clicked, its note lands below the page's local nav, not under it
     await page.goto(`${ORIGIN}/news/zola/`, { waitUntil: 'load' });
     await page.click('sup.footnote-reference a');
     await still();
@@ -242,9 +201,7 @@ for (const width of [1440, 390]) {
     check(`at ${width}px a page's footnote mark scrolls its note to below its local nav (its top ${at.note.toFixed(2)}px, the nav's foot ${at.nav.toFixed(2)}px, ${at.scroll}px down)`, at.scroll > 0 && at.note >= at.nav - 0.5, true);
   }
   {
-    // a docs page's heading, its address's fragment: it lands below the
-    // page's bar, which sticks over it (the theme's stylesheet holding
-    // docs-page's :target)
+    // the theme's stylesheet holds docs-page's :target
     await page.goto(`${ORIGIN}/get-started/#install`, { waitUntil: 'load' });
     await still();
     const at = await page.evaluate(() => ({ scroll: scrollY, heading: document.getElementById('install').getBoundingClientRect().top, bar: document.querySelector('.cui-docs-bar').getBoundingClientRect().bottom }));

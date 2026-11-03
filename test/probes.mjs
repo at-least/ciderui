@@ -1,9 +1,5 @@
-// The reference probes that run in this image, in Playwright's Chromium
-// (forced/ in its Firefox too): each reference/<dir>/run.mjs reads its
-// claims and exits 1 when one fails. Run in a copy of the repository: a probe
-// writes results/<browser>.json, and the committed results stay the record
-// of the runs each README names. The other scripts under reference/ are in
-// NOT_RUN with what they need; a script in neither list fails this step.
+// Run in a copy of the repository: a probe writes results/<browser>.json, and
+// the committed results stay the record of the runs each README names.
 
 import { execFileSync } from 'node:child_process';
 import { cpSync, existsSync, mkdtempSync, readFileSync, readdirSync, realpathSync, rmSync, symlinkSync } from 'node:fs';
@@ -17,7 +13,6 @@ const tree = join(copy, 'ciderui');
 const CONSOLE_SITE = join(copy, 'console-site');
 const DOCS_SITE = join(copy, 'docs-site');
 
-// each probe's commands, in reference/<dir> of the copy, with BROWSER=chromium
 const RUN = [['node', 'run.mjs']];
 const PROBES = {
   console: { env: { SITE: CONSOLE_SITE }, commands: [['node', 'build.mjs', CONSOLE_SITE], ...RUN] },
@@ -35,7 +30,6 @@ const PROBES = {
   tap: { env: {}, commands: RUN },
 };
 
-// the scripts under reference/ no probe above runs, by path prefix, and why
 const NOT_RUN = {
   'reference/anchor/': 'reads apple.com live',
   'reference/apple-account/': 'reads Apple Account live, signed in',
@@ -62,8 +56,8 @@ const unlisted = scripts.filter((f) => ![...Object.keys(NOT_RUN), ...READ].some(
 if (unlisted.length) throw new Error(`not run here and not in NOT_RUN: ${unlisted.join(', ')}`);
 const stale = Object.keys(NOT_RUN).filter((p) => !scripts.some((f) => f === p || f.startsWith(p)));
 if (stale.length) throw new Error(`in NOT_RUN, no such script: ${stale.join(', ')}`);
-// what a script not run here names by a relative path (an import, a page, an
-// example) still exists: up to its first ${…}, the directory it names
+// a script not run here still has its relative paths (an import, a page, an
+// example) checked: up to its first ${…}, the directory it names
 const missing = scripts.flatMap((f) => [...readFileSync(join(ROOT, f), 'utf8').matchAll(/['`](\.{1,2}\/[^'`\n]*)['`]/g)]
   .map(([, path]) => (path.includes('${') ? path.slice(0, path.lastIndexOf('/', path.indexOf('${')) + 1) : path))
   .filter((path) => !path.includes('results/') && !existsSync(join(ROOT, dirname(f), path)))
