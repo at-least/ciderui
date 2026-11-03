@@ -1,29 +1,3 @@
-/* ciderui — the stat: a product page's number, a caption above it and one
- * below, in the secondary text.
- *
- * From apple.com's product pages (reference/apple.com/): product:stat.*
- * (iPhone 18 Pro's, a dark page), airpods:stat.* (AirPods Pro's, a large
- * one, a light page).
- *
- *   <p class="cui-stat">
- *     <span class="cui-stat-caption">Up to</span>
- *     <span class="cui-stat-value">2 days</span>
- *     <span class="cui-stat-caption">on a single charge</span>
- *   </p>
- *
- * cui-stat           2px in above and below
- *   data-size="lg"   a large one: 4px in above
- * cui-stat-caption   12px on 16px at 600, the secondary text (lg: 19px,
- *                    17px below 1069px, 14px below 735px)
- * cui-stat-value     28px on 28px at 600, 2px from its captions (lg: 80px,
- *                    64px, 48px, no gap)
- *
- * apple.com's: the type, the gaps, the colors on a light page. ciderui's:
- * the letter-spacing (tokens.css); the dark captions the contract's dark
- * secondary text, #86868b (apple.com's #6e6e73, 4.1:1 on black: decision
- * 6); no margin around it (apple.com's large one's 20px and 40px, the
- * page's). */
-
 @layer components {
   .cui-stat {
     margin: 0;

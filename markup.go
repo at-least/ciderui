@@ -13,8 +13,8 @@ var checkedAttributes = []string{"data-variant", "data-size", "data-color"}
 type value struct{ class, attribute, value string }
 
 // the words of ciderui's markup the kit's stylesheets know: every cui-* name
-// they write anywhere (a rule's, a utility's, a header's: a part with no rule
-// of its own, cui-post-content, is named in its header), and each checked
+// they write anywhere (a rule's, a utility's, a comment's: a part with no rule
+// of its own, cui-post-content, is named in a comment), and each checked
 // attribute's value a rule selects, with the last .cui-* class before it in
 // the selector, nesting resolved
 var words = sync.OnceValues(func() (map[string]bool, []value) {

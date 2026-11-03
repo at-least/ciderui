@@ -1,16 +1,7 @@
-// The posts against apple.com's Newsroom: the archive (newsroom-archive:*:
-// a month's heading, its rows' room, rule, layout, no hover; their picture's
-// room, category, headline and date) and, data-size="sm", the related
-// stories under an article (newsroom-article:related.*); at the kit's widths
-// and both sides of 735 and 1069. Golden, with their why: the widths and
-// places (an apple.com check reads no width), the pictures' sizes, the
-// letter-spacing, the colors in a dark block.
-
-import { examples, SIZE } from '../../../test/harness.mjs';
+import { examples, SIZE, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const WIDTHS = [1600, 1200, 1069, 1068, 900, 735, 734, 390];
-const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
 const ROW = ['padding-top', 'padding-bottom', 'border-top-width', 'border-top-style', 'border-top-color', 'border-bottom-width', 'display', 'flex-direction', 'align-items', 'cursor'];
 
 const tracking = ['.cui-posts-heading', '.cui-post-category', '.cui-post-headline', '.cui-post-date']

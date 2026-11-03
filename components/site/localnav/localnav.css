@@ -1,73 +1,3 @@
-/* ciderui — the local nav: apple.com's bar under the global nav on a
- * product's pages, on a <nav>: the product's name, its pages' links (the
- * current one marked) and a button (Buy), stuck to the top of the window as
- * the page scrolls; to 833px its links fold into a menu its chevron opens
- * below the bar, with no script.
- *
- * From apple.com's local nav, the one most product pages carry
- * (reference/apple.com/): localnav:* (MacBook Air's, light), localnav-dark:*
- * (MacBook Pro's); its chevron ciderui's own (reference/icons/).
- *
- *   <nav class="cui-localnav" aria-label="Local">
- *     <div class="cui-localnav-content">
- *       <a class="cui-localnav-title" href="/cider-book/">Cider Book 13</a>
- *       <input class="cui-localnav-toggle" type="checkbox" id="cui-localnav-menu" aria-label="Menu">
- *       <div class="cui-localnav-menu">
- *         <ul class="cui-localnav-list">
- *           <li><a class="cui-localnav-link" href="/cider-book/" aria-current="page">Overview</a></li>
- *           <li><a class="cui-localnav-link" href="/cider-book/specs/">Tech Specs</a></li>
- *         </ul>
- *       </div>
- *       <div class="cui-localnav-actions">
- *         <label class="cui-localnav-menubutton" for="cui-localnav-menu" aria-hidden="true">(icon::CHEVRON)</label>
- *         <a class="cui-btn" data-size="sm" href="/buy">Buy</a>
- *       </div>
- *     </div>
- *   </nav>
- *
- * The menu is apple.com's own way, a checkbox: the chevron is its label, the
- * checkbox (visually hidden) takes the focus and the space bar, its focus
- * ring drawn on the chevron; checked, the menu opens below the bar on the
- * menu's ground, its rows fading in, the chevron turned up. The checkbox
- * comes before the menu in the markup, so that opened, the next stop is the
- * first link; closed, the menu's links are hidden, not merely clipped, and
- * so out of the focus order.
- *
- * cui-localnav              the bar: 48px, 52px from 834px, sticky at the
- *                           top, on its material (dark in a dark block,
- *                           cui-dark on the nav), a rule along its foot
- * cui-localnav-content      980px at most, 16px in, 22px from 834px
- * cui-localnav-title        the product's name, a link: 19px, 21px from 834px
- * cui-localnav-menu         the links' place: in the bar from 834px, below it
- *                           to 833px
- * cui-localnav-link         a link: 12px in the bar, a 34px row of 14px in
- *                           the menu; aria-current="page" marks the current
- *                           page (a line under it in the bar, beside it in
- *                           the menu)
- * cui-localnav-toggle       the menu's checkbox, to 833px
- * cui-localnav-menubutton   its label, the chevron
- * cui-localnav-actions      the chevron and the button (a cui-btn,
- *                           data-size="sm": apple.com's local nav button is
- *                           its 24px pill)
- *
- * apple.com's: every size, color, the material, the rule, the motion, the
- * stickiness (every local nav measured sticks) and its stacking (9997, under
- * the global nav's 9999). ciderui's: the letter-spacing (tokens.css); the
- * product's name and the menu's rows in a color with its opacity in it
- * (on-bar-2; apple.com's black at .88, white at .92 dark, an opacity no
- * color scheme can switch); the material at the top of the page as stuck
- * (apple.com's dark one is clear until its script sees it stick); the
- * material in the bar alone (apple.com's reaches up behind its global nav);
- * the menu closes by its chevron alone (apple.com's script also closes it on
- * a click elsewhere); its rows fade in together where they are, from
- * apple.com's first row's 260ms (apple.com's come in 20ms apart, each from
- * 4px up: a staggered slide that only draws the eye, DESIGN.md decision
- * 25); its rows fade out in its 0.32s (apple.com's in 0.38s and 0.4s); a
- * link to a place on the page (a footnote's mark) lands its target at the
- * bar's foot, as apple.com's iPhone 18 Pro page, with a newer local nav,
- * lands a footnote's note at its nav's, where its MacBook Air's lands it
- * under the bar (reference/anchor/). */
-
 @layer components {
   .cui-localnav {
     --cui-localnav-ease: cubic-bezier(0.4, 0, 0.6, 1);
@@ -82,7 +12,6 @@
     transition-duration: 0.24s;
     transition-timing-function: cubic-bezier(0.28, 0.11, 0.32, 1);
 
-    /* the rule along its foot */
     &::after {
       content: "";
       position: absolute;
@@ -98,8 +27,6 @@
     }
   }
 
-  /* a link to a place on the page (a footnote's mark): its target lands at
-     the bar's foot, not under it */
   :root:has(.cui-localnav) :target {
     scroll-margin-top: 48px;
 
@@ -137,7 +64,6 @@
       letter-spacing: var(--cui-tracking-21);
     }
 
-    /* a touch screen's: 44px tall, the HIG's 44pt (Accessibility, Mobility), in the bar's 48px */
     @media (pointer: coarse) {
       display: flex;
       align-items: center;
@@ -145,8 +71,6 @@
     }
   }
 
-  /* to 833px: the links' place is below the bar, a menu on the menu's ground
-     that opens to its rows' height */
   .cui-localnav-menu {
     position: absolute;
     top: 100%;
@@ -156,12 +80,10 @@
     grid-template-rows: 0fr;
     visibility: hidden;
     background-color: var(--cui-c-menu);
-    /* closing, hidden at the end of its fold, its rows faded out */
     transition: grid-template-rows 0.32s var(--cui-localnav-ease), visibility 0s 0.32s;
   }
 
-  /* its rows faded in and out together, as one: the entrance's delay here,
-     not on a row, where it would hold back a row's hover too */
+  /* the entrance's delay on the list, not a row: on a row it would hold back the row's hover too */
   .cui-localnav-list {
     min-height: 0;
     margin: 0;
@@ -174,7 +96,6 @@
       transition: opacity 0.32s var(--cui-localnav-ease);
     }
 
-    /* each row 34px, the first 10px below the bar, 27px below the last */
     &::before,
     &::after {
       content: "";
@@ -210,7 +131,6 @@
       }
     }
 
-    /* the current page: in the menu, a short line before it */
     &[aria-current="page"] {
       cursor: default;
       opacity: 1;
@@ -229,9 +149,6 @@
     }
   }
 
-  /* opened (to 833px): the bar and the menu on the menu's ground, the menu
-     at its rows' height, the rule along its foot, its rows fading in
-     together, the chevron turned up */
   @media (width < 834px) {
     .cui-localnav:has(.cui-localnav-toggle:checked) {
       background-color: var(--cui-c-menu);
@@ -246,7 +163,7 @@
         grid-template-rows: 1fr;
         visibility: visible;
         box-shadow: inset 0 -1px var(--cui-c-separator);
-        /* opening, shown at once */
+        /* opening, shown at once: not the closing's delay */
         transition-delay: 0s;
       }
 
@@ -261,8 +178,6 @@
     }
   }
 
-  /* the checkbox, out of sight but in the focus order; its ring on the
-     chevron */
   .cui-localnav-toggle {
     position: absolute;
     width: 1px;
@@ -306,8 +221,6 @@
       transition: transform 0.32s var(--cui-localnav-ease);
     }
 
-    /* a touch screen's: 44px each way, the HIG's 44pt (Accessibility, Mobility), its chevron where it was (2px
-       more each way across, 12px up with 12px more above it) */
     @media (pointer: coarse) {
       width: 44px;
       height: 44px;
@@ -324,7 +237,6 @@
     margin-left: 16px;
   }
 
-  /* from 834px: the links in the bar, after the name, the button after them */
   @media (width >= 834px) {
     .cui-localnav-toggle,
     .cui-localnav-menubutton {
@@ -337,7 +249,7 @@
       visibility: visible;
       background-color: transparent;
       box-shadow: none;
-      /* the bar's links, shown at once as the window widens */
+      /* shown at once as the window widens, not unfolding */
       transition: none;
     }
 
@@ -365,7 +277,6 @@
       letter-spacing: var(--cui-tracking-12);
       transition: none;
 
-      /* the current page: in the bar, a line under it along the bar's foot */
       &[aria-current="page"]::after {
         top: 36px;
         right: 0;

@@ -1,55 +1,3 @@
-/* ciderui — the card: the store's card, a block of the page's ground with
- * rounded corners and a shadow, its picture filling it and its text at its
- * top (an eyebrow or a tag, its headline, a description, a price); the
- * whole card its headline's link, its shadow deepening as the pointer comes
- * over it.
- *
- * From apple.com's store (reference/apple.com/): store:card* (a light card
- * with a tag, a dark one, one with a plain eyebrow; their parts, hovered).
- *
- *   <div class="cui-card">
- *     <img class="cui-card-media" src="/phone.jpg" alt="">
- *     <div class="cui-card-content">
- *       <p class="cui-card-eyebrow" data-variant="tag">NEW</p>
- *       <h3 class="cui-card-headline"><a class="cui-card-link" href="/phone/">Cider Phone 3</a></h3>
- *       <p class="cui-card-description">Our most capable phone.</p>
- *       <p class="cui-card-price">From $1199</p>
- *     </div>
- *   </div>
- *
- * cui-card              the card: 400 by 500px (309 by 450px below 735px),
- *                       on the page's ground (white; black in a dark block,
- *                       cui-dark on the card, its text white), 18px corners,
- *                       its shadow; hovered or with the focus in it, a
- *                       deeper shadow, in 0.3s
- * cui-card-media        its picture, filling it (object-fit: cover), under
- *                       its text
- * cui-card-content      its text, at its top: 28px in, 340px wide at most
- * cui-card-eyebrow      12px at 600, 8px above the headline (7px)
- *   data-variant="tag"  a tag in its place ("NEW"), in the tag's color
- * cui-card-headline     28px at 600 (21px below 735px), as far down with no
- *                       eyebrow above it as with one
- * cui-card-link         its headline's link, the whole card's
- * cui-card-description  14px at 600, 10px below the headline (6px)
- * cui-card-price        14px at 400, 6px below the description
- *
- * apple.com's: the size, the ground, the corners, the shadows and the
- * motion, the spacing, the type and the colors. ciderui's: the
- * letter-spacing (tokens.css); its size steps with the window at 735px
- * (apple.com's with a phone's screen, `max-device-width: 736px`: the same
- * at the widths measured); the whole card is its link with no script, the
- * link's ::after over it (apple.com's script follows the link from anywhere
- * on the card), so its text cannot be selected, as apple.com's cannot; its
- * shadow deepens as the pointer comes over it anywhere (apple.com's in a
- * shelf, its scroller still); its shadow is what moves, and it does not grow
- * (apple.com's hover also scales it 1%, a lift that only draws the eye:
- * DESIGN.md decision 25; apple.com's `transition: all` would also move its
- * size as a window's width crosses 735px, which a screen's does not); its
- * picture is laid under its text (apple.com's text is laid over its
- * picture). One size, the store's most (its rf-ccard-40): a
- * site sets another width with a utility (`w-full`), the picture cropped to
- * it. */
-
 @layer components {
   .cui-card {
     position: relative;
@@ -76,7 +24,6 @@
     }
   }
 
-  /* under the text, inside the card's own stacking */
   .cui-card-media {
     position: absolute;
     inset: 0;
@@ -110,7 +57,6 @@
     }
   }
 
-  /* first in the card, it is as far down as after an eyebrow */
   .cui-card-headline {
     margin: 0;
     padding-top: 23px;
@@ -136,7 +82,6 @@
     color: inherit;
     text-decoration-line: none;
 
-    /* the whole card: the card is the nearest box placed */
     &::after {
       content: "";
       position: absolute;

@@ -1,57 +1,5 @@
-/* ciderui — the gallery: a product page's row of items across the window,
- * each snapping into place where the content starts; below it its paddles
- * at the content's right edge and its dots, which show the state the page
- * sets: its script scrolls the row, disables the paddle at an end and marks
- * the current dot, as it opens a dialog (no script, no paddles: the row
- * still scrolls by touch, trackpad and keys, and each dot is a link to its
- * item).
- *
- * From apple.com (reference/apple.com/): product:gallery.* (iPhone 18 Pro's
- * first scroll gallery: its scroller, items, paddles' row and dots, a dark
- * page), product:paddle* (its paddles), iphone:paddle* and iphone:gallery.*
- * (a light page's paddles and dots), store:shelf.paddle (the store's 56px
- * paddle); its chevrons ciderui's own (reference/icons/).
- *
- *   <div class="cui-gallery">
- *     <ul class="cui-gallery-scroller" id="gallery">
- *       <li id="gallery-1">…</li>
- *     </ul>
- *     <div class="cui-gallery-nav">
- *       <button class="cui-gallery-paddle" type="button" aria-controls="gallery" aria-label="Previous" disabled>(icon::PADDLE_PREVIOUS)</button>
- *       <button class="cui-gallery-paddle" type="button" aria-controls="gallery" aria-label="Next">(icon::PADDLE_NEXT)</button>
- *     </div>
- *     <ul class="cui-gallery-dots">
- *       <li><a class="cui-gallery-dot" href="#gallery-1" aria-label="Item 1" aria-current="true"></a></li>
- *     </ul>
- *   </div>
- *
- * cui-gallery            the gallery, dark in a dark block (cui-dark)
- * cui-gallery-scroller   its items, each snapping at its start where the
- *                        content does (87.5% of the window, 1260px at most,
- *                        420px below 735px), 20px apart; its scrollbar
- *                        hidden; room above and below them for a shadow
- * cui-gallery-nav        its paddles' row, at the content's right edge
- * cui-gallery-paddle     a 36px paddle, translucent over the page, its
- *                        chevron; disabled at an end
- *   data-size="lg"       56px, the store's
- * cui-gallery-dots       its dots' row, centered
- * cui-gallery-dot        an item's dot, a link to it: 8px; the current one
- *                        (aria-current="true") a pill, 48px (32px below
- *                        735px)
- *
- * apple.com's: the inset, the gaps, the room, the snapping, the paddles'
- * sizes, colors and motion, the dots'. ciderui's: no script, the page's
- * own; one disabled paddle's opacity, .42 (apple.com's dark page's .36),
- * a disabled button's (cui-btn); the paddles' row in the gallery's flow
- * (apple.com's placed below its scroller); the current dot's pill without a
- * timer's fill (apple.com's fills it as its item shows, the gallery playing
- * on its own); a large paddle's colors and chevron the 36px paddle's
- * (apple.com's store draws its chevron white, 1.35:1 on its ground, and
- * longer); in forced colors (a high-contrast theme) each dot a 4px edge in
- * the theme's link color, where its ground alone, forced to the window's,
- * drew nothing (apple.com's the same: reference/forced/). */
-
 @layer components {
+  /* cui-gallery, its root: no rule of its own (markup.go reads its name here) */
   .cui-gallery-scroller {
     /* where the content starts: apple.com's own expression */
     --cui-gallery-inset: calc(50% - (0.5 * min(420px, 87.5%)));
@@ -81,7 +29,6 @@
     }
   }
 
-  /* the paddles, at the content's right edge, 24px below the items */
   .cui-gallery-nav {
     display: flex;
     justify-content: end;
@@ -143,7 +90,6 @@
       border-radius: 56px;
     }
 
-    /* a touch screen's: 44px, the HIG's 44pt (Accessibility, Mobility); lg's 56px kept */
     @media (pointer: coarse) {
       &:not([data-size="lg"]) {
         width: 2.75rem;
@@ -165,9 +111,6 @@
       margin: 0 8px;
     }
 
-    /* a touch screen: the row 44px tall and the dots 44px apart at least,
-       room for each dot's target (::after, base.css) with no neighbour's
-       over it; the dots drawn as before */
     @media (pointer: coarse) {
       height: 2.75rem;
 
@@ -186,8 +129,6 @@
     background-color: var(--cui-c-dot);
     transition: background-color 0.25s linear;
 
-    /* forced colors draw no ground: the dot its edge, the current one's a
-       pill */
     @media (forced-colors: active) {
       border: 4px solid;
     }

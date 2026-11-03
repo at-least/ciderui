@@ -1,17 +1,9 @@
-// The option against apple.com's buy page (buy:option*): the tile at rest,
-// hovered, focused from the keyboard (on its radio) and checked (a checked
-// copy, its box apple.com's at its least), the radio over it, the title,
-// its detail and the price. Golden, with their why: the letter-spacing, the
-// title's and the price's places, its own ground, no margin above, light in
-// a dark block.
-
-import { examples, PADDING, SIZE } from '../../../test/harness.mjs';
+import { examples, PADDING, SIZE, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const EDGE = ['border-top-width', 'border-top-style', 'border-top-color', 'border-bottom-width', 'border-bottom-color', 'border-top-left-radius'];
 const INPUT = '.cui-option-input';
 const LABEL = '.cui-option-label';
-const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
 
 export const cases = [
   {
@@ -28,6 +20,7 @@ export const cases = [
       { target: '.cui-option-price', props: ['letter-spacing', 'box-width'], golden: '40% of the row at its end, as apple.com\'s price column (buy:option.right)' },
       { target: '.cui-option', props: ['background-color', 'border-top-left-radius', 'margin-top'], golden: 'its own light ground, the label\'s corners, as a field\'s; no margin above (apple.com\'s 14px, the form\'s spacing, buy:option.box)' },
       { target: LABEL, props: ['letter-spacing'], golden: TRACKING },
+      { target: LABEL, props: ['display', 'flex-direction', 'align-items'], golden: 'one row of its title and price, centered down the tile (apple.com\'s a flex column holding the row)' },
     ],
   },
   {
@@ -37,6 +30,7 @@ export const cases = [
       { target: LABEL, props: [...SIZE, 'color', ...PADDING, ...EDGE, 'background-color', 'min-height', 'box-height'], apple: ['buy', 'option.checked'] },
       { target: '.cui-option-detail', props: [...SIZE, 'display', 'margin-top'], apple: ['buy', 'option.detail'] },
       { target: '.cui-option-detail', props: ['letter-spacing'], golden: TRACKING },
+      { target: '.cui-option-title', props: ['box-width'], golden: 'with no price, the rest of the row (apple.com\'s 60%)' },
     ],
   },
   {
@@ -69,6 +63,7 @@ export const cases = [
     widths: [1200],
     checks: [
       { target: INPUT, props: ['cursor'], golden: 'the pointer over a tile, apple.com\'s (its enabled tiles\' labels and inputs pointer, read 2026-10-31); the input over the tile takes it' },
+      { target: LABEL, props: ['hit'], golden: 'the radio over the whole tile: the pointer finds it at the tile\'s corners and middle, so it takes the click' },
     ],
   },
 ];

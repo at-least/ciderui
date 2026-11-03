@@ -1,83 +1,7 @@
-/* ciderui — the modal: apple.com's store overlay, a dialog over the page,
- * the page dimmed and held under it, a white panel scrolling over it with a
- * close button at its corner; on HTML's <dialog>, opened and closed with no
- * script.
- *
- * From apple.com's store (reference/apple.com/): overlay:* (iPhone 18 Pro's
- * buy page, its first "Show more" opened: the layer, the dialog, the panel,
- * its content's room, the close button hovered and pressed); its X
- * ciderui's own (reference/icons/); the dialog reference/dialog/.
- *
- *   <button class="cui-btn" type="button" commandfor="models" command="show-modal">Show more</button>
- *   <dialog class="cui-modal" id="models" aria-labelledby="models-title">
- *     <div class="cui-modal-panel">
- *       <form method="dialog"><button class="cui-modal-close" aria-label="Close">(icon::CLOSE)</button></form>
- *       <h2 class="cui-headline" id="models-title">Not sure which size to get?</h2>
- *     </div>
- *   </dialog>
- *
- * The page's button opens it (command="show-modal", commandfor naming it,
- * its type button: in a form a submit button does nothing with its command,
- * reference/dialog/; or the page's script, showModal()); it is the layer
- * over the window, which scrolls the panel when the panel is taller than
- * the window, the page under it dimmed (its ::backdrop) and held still,
- * fading in; the focus on its close button, its first control; the close
- * button (a form's, method="dialog") and Escape close it, the focus back on
- * its opener.
- *
- * cui-modal          the <dialog>: the layer, fixed over the window, the
- *                    scrim under it, fading in in 0.1s; light in a dark
- *                    block, as a field
- * cui-modal-panel    the panel: white, 18px corners, 816px at most (the
- *                    window's width below), 40px from the layer's top and as
- *                    far below its end, its content 76px in at the sides,
- *                    76px down and 60px up; below 735px, 640px at most, 20px
- *                    from the top, running on to the layer's foot, its foot's
- *                    corners square, 40px in (6.25% of the window below
- *                    640px)
- * cui-modal-close    its close button, at its top right corner: a 36px
- *                    circle 24px in (a 44px target, 20px in), its X 20px
- *                    (icon::CLOSE); hovered and pressed, darker, in 0.1s
- *
- *   data-variant="page"  the marketing pages' modal (apple.com's product
- *                    pages', ricmodal:*): the page under it dimmed and
- *                    blurred, the panel centered, 28px corners, 816px from
- *                    1069px, 692px from 735px, 480px at most below (10px
- *                    from the window's sides), its content 76px in (6.25%
- *                    of the panel below 735px) and 76px down and up (60px
- *                    up below); its close button the neutral fill with a
- *                    white X (icon::CLOSE_SMALL), 20px in, staying at the
- *                    top as the panel scrolls; the scrim in over 0.75s, the
- *                    panel from 0.25s; cui-dark on the dialog, dark
- *                    (ricmodal-dark:*): its panel black, its text #f5f5f7,
- *                    its close button the light neutral, #f5f5f7 with a
- *                    black X
- *
- * apple.com's: the scrim, the fade, the panel's widths, corners, ground and
- * room, the close button's sizes, places, colors and motion, the page held.
- * ciderui's: the dialog element, opened and closed with no script (apple.com's
- * script draws its layer and moves the focus); its step at 735px, the kit's
- * (the store's at 736/737px, its own media queries: a 735px or 736px window
- * here has the wide panel); the focus on the close button, the dialog's first
- * control, as a dialog's opening gives it (apple.com's script focuses the
- * dialog itself), and the ring base.css draws there (apple.com's none); a
- * click on the scrim closes nothing (apple.com's script closes it); it closes
- * at once (apple.com's fades out); the close button's target its ::before
- * (apple.com's a 44px button holding the circle); its place on the page,
- * fixed over the window, a dialog's, where rule 6 leaves a component none.
- * The page variant's: apple.com's script's motion as CSS transitions, fitted
- * to its frames (its scrim's darkness and blur together in 0.75s, its panel
- * in 0.5s from 0.25s, each cubic-bezier(.4,0,.6,1), where apple.com's run
- * from its script's start, about 0.1s later); the focus on the close button
- * (apple.com's on the panel); the close button's target around its circle
- * (apple.com's to its right and below it); light in a dark block, dark with
- * cui-dark on the dialog (apple.com's theme-dark on its modal); its scrim
- * the light one's in the dark one (apple.com's dark theme sets none; MacBook
- * Pro's dark modal has its own, #1d1d1f at .48). */
-
 @layer components {
   .cui-modal {
     color-scheme: light;
+    /* rule 6: a dialog's place, over the window */
     position: fixed;
     inset: 0;
     box-sizing: border-box;
@@ -110,7 +34,6 @@
     }
   }
 
-  /* the page under it holds still, as apple.com's does */
   :root:has(.cui-modal:modal) {
     overflow: hidden;
   }
@@ -120,9 +43,6 @@
     box-sizing: border-box;
     width: 100%;
     max-width: 640px;
-    /* below 735px it runs on to the layer's foot, however short its
-       content: apple.com's least height (overlay:panel, the window's less
-       its 20px above) */
     min-height: calc(100vh - 20px);
     margin: 20px auto 0;
     padding: 76px 6.25% 60px;
@@ -159,7 +79,6 @@
     cursor: pointer;
     transition: color 0.1s linear, background 0.1s linear;
 
-    /* its target, 44px: apple.com's button around the circle */
     &::before {
       content: "";
       position: absolute;
@@ -179,8 +98,6 @@
     }
   }
 
-  /* the marketing pages' modal: the panel centered over the page dimmed and
-     blurred; it holds no motion of its own, its scrim and panel have */
   .cui-modal[data-variant="page"] {
     --cui-modal-ease: cubic-bezier(0.4, 0, 0.6, 1);
 
@@ -194,9 +111,8 @@
       }
     }
 
-    /* dark with cui-dark on the dialog, as apple.com's theme-dark one: its
-       panel black, its close button the light neutral (tokens.css's dark
-       side); the modal is light otherwise, here beating base.css's cui-dark */
+    /* not base.css's cui-dark alone: .cui-modal's color-scheme: light, in a
+       later layer, outranks it */
     &.cui-dark {
       color-scheme: dark;
     }
@@ -205,19 +121,12 @@
       backdrop-filter: blur(20px);
     }
 
-    /* backdrop-filter alone, which the build does not prefix here (the
-       var()): Safari 17.5 and 17.6, whose declarations take
-       -webkit-backdrop-filter alone, move the blur all the same, by
-       WebKit's source at Safari 17.5's branch (618.2.12.11): a transition
-       takes the name with the property off, and blends the value both
-       names set; blur(0), built as blur(), parses there as a 0px blur.
-       Read, not run: no Safari 17 here */
+    /* backdrop-filter alone, unprefixed: a Safari that reads only
+       -webkit-backdrop-filter still transitions the blur by this name */
     &[open]::backdrop {
       transition: background-color 0.75s var(--cui-modal-ease), backdrop-filter 0.75s var(--cui-modal-ease);
     }
 
-    /* centered: its auto margins in the flex layer, which scrolls it from
-       its top when it is taller than the window */
     .cui-modal-panel {
       max-width: 480px;
       min-height: auto;
@@ -239,12 +148,11 @@
       transition: opacity 0.5s var(--cui-modal-ease) 0.25s;
     }
 
-    /* its close button stays at the top as the panel scrolls: its form
-       sticky, 0px tall, at the panel's top (76px up), its end 20px in from
-       the panel's (the panel's room below 735px is 1/14 of the form's
-       width, 6.25% of the panel's); stuck at the window's top, the layer's
-       room above it taken back (a sticky box sticks inside its scroller's
-       padding) */
+    /* top: the layer's padding-top taken back, a sticky box sticking inside
+       its scroller's padding; margin: back up over the panel's padding-top,
+       its end the close button's inset in from the panel's, whose padding
+       below 735px is a share of the panel's width, restated as one of the
+       form's */
     .cui-modal-panel > form:has(> .cui-modal-close) {
       position: sticky;
       top: -28px;

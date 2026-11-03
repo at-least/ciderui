@@ -643,5 +643,10 @@
  "footnote-parts | .cui-article-footnotes .cui-link | 1200 | text-decoration-line": "underline",
  "footnote-parts | .cui-article-footnotes .cui-btn | 1200 | color": "rgb(255, 255, 255)",
  "footnote-parts | .cui-article-footnotes .cui-btn | 1200 | background-color": "rgb(0, 113, 227)",
- "footnote-parts | .cui-article-footnotes .cui-btn | 1200 | text-decoration-line": "none"
+ "footnote-parts | .cui-article-footnotes .cui-btn | 1200 | text-decoration-line": "none",
+ "body-parts | .cui-article-body .cui-link | 1200 | color": "rgb(0, 102, 204)",
+ "body-parts | .cui-article-body .cui-link | 1200 | text-decoration-line": "underline",
+ "body-parts | .cui-article-body .cui-btn | 1200 | color": "rgb(255, 255, 255)",
+ "body-parts | .cui-article-body .cui-btn | 1200 | background-color": "rgb(0, 113, 227)",
+ "body-parts | .cui-article-body .cui-btn | 1200 | text-decoration-line": "none"
 }

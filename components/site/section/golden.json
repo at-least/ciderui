@@ -1,6 +1,20 @@
 {
+ "content | .cui-section-content | 1600 | box-width": "1260px",
+ "content | .cui-section-content | 1600 | box-left": "170px",
+ "content | .cui-section-content | 1200 | box-width": "1050px",
+ "content | .cui-section-content | 1200 | box-left": "75px",
+ "content | .cui-section-content | 900 | box-width": "787.5px",
+ "content | .cui-section-content | 900 | box-left": "56.25px",
+ "content | .cui-section-content | 390 | box-width": "341.25px",
+ "content | .cui-section-content | 390 | box-left": "24.375px",
  "header | .cui-section-headline | 1600 | letter-spacing": "-0.5232px",
+ "header | .cui-section-links | 1600 | letter-spacing": "0.0493px",
  "header | .cui-section-headline | 1200 | letter-spacing": "-0.5232px",
+ "header | .cui-section-links | 1200 | letter-spacing": "0.0493px",
  "header | .cui-section-headline | 900 | letter-spacing": "-0.396px",
- "header | .cui-section-headline | 390 | letter-spacing": "-0.2976px"
+ "header | .cui-section-links | 900 | letter-spacing": "0.0493px",
+ "header | .cui-section-headline | 390 | letter-spacing": "-0.2976px",
+ "header | .cui-section-links | 390 | letter-spacing": "-0.0812px",
+ "section joined | .cui-section + .cui-section | 1200 | padding-top": "112px",
+ "section joined | .cui-section + .cui-section | 1200 | padding-bottom": "112px"
 }

@@ -1,20 +1,8 @@
-// The card against apple.com's store: a light card with a tag (store:card,
-// .info, .tag, .header, .link, .desc, .description, .price: its size,
-// ground, corners, shadow and motion, its text's padding, type, colors and
-// spacing), hovered and with the focus in it (store:card's hover and
-// focus-within), a plain eyebrow (store:card.eyebrow), a headline with no
-// eyebrow above it (store:card.header-first), a dark card
-// (store:card.dark*), its picture (store:card.media); on a touch screen,
-// unchanged hovered or with the focus in it (touch-store:card). Golden, with
-// their why: the letter-spacing, the widths, what moves and that it does not
-// grow, the whole card its link, the layers.
-
-import { examples, PADDING, SIZE } from '../../../test/harness.mjs';
+import { examples, PADDING, SIZE, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const HOVERED = ['box-shadow', 'transform'];
 const STILL = 'not 1% larger: apple.com\'s card grows as it lifts (store:card\'s hover, scale 1.01), a lift that only draws the eye (DESIGN.md decision 25); its shadow deepens alone';
-const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
 const dark = (html) => html.replace('class="cui-card"', 'class="cui-card cui-dark"');
 const media = (html) => html.replace('<div class="cui-card">', '<div class="cui-card"><img class="cui-card-media" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjcyMCIvPg==" alt="">');
 const headlineFirst = ex('card').replace(/\s*<p class="cui-card-eyebrow"[^\n]*/, '');
@@ -56,7 +44,6 @@ export const cases = [
     ],
   },
   {
-    // Tab from the page's start: the link takes the focus, the shadow deepens
     name: 'focus',
     html: ex('card'),
     widths: [1200],

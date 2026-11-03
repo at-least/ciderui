@@ -1,16 +1,4 @@
-// The local nav against apple.com's (MacBook Air's, localnav:*; dark,
-// MacBook Pro's, localnav-dark:*): the bar from 834px (its height, its
-// stickiness, its material and rule, the content's width, the name, the
-// links, the current page's mark, the button), the phone's bar (the same at
-// 833 and 390px, the chevron), the menu opened by the chevron (the ground,
-// the rows, the mark, the chevron turned up) and its motion, the keys (the
-// checkbox's focus ring on the chevron, Tab on to the first link), dark, a
-// touch screen. Golden, with their why: the letter-spacing, the name's
-// color (its opacity in it), the rows' motion (the list's, from apple.com's
-// first row's delay; a row's own, its hover's, at once), the chevron turned
-// (reference/icons/).
-
-import { examples, MOTION, PADDING, SIZE, SLIDE, STAGGER } from '../../../test/harness.mjs';
+import { examples, MOTION, PADDING, SIZE, SLIDE, STAGGER, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const NAV = ex('localnav');
@@ -24,7 +12,6 @@ const LINK = '.cui-localnav-list > li:nth-child(2) > .cui-localnav-link';
 const BUTTON = '.cui-localnav-actions > .cui-btn';
 const CHEVRON = '.cui-localnav-menubutton';
 const OPEN = { click: CHEVRON, widths: [390] };
-// a footnote's mark under the bar and its note far down the page
 const NOTE = `${NAV}<main><p><a href="#note">1</a></p><div style="height: 3000px"></div><p id="note">The note.</p><div style="height: 3000px"></div></main>`;
 
 export const cases = [
@@ -39,13 +26,13 @@ export const cases = [
       { target: '.cui-localnav', pseudo: '::after', props: ['background-color', 'height', 'position', 'bottom'], apple: ['localnav', 'localnav.rule'] },
       { target: '.cui-localnav-content', props: ['max-width', 'padding-left', 'padding-right', 'margin-left', 'margin-right'], apple: ['localnav', 'localnav.content'] },
       { target: TITLE, props: [...SIZE, 'text-decoration-line', ...MOTION, 'box-top', 'box-left', 'box-height'], apple: ['localnav', 'localnav.title'] },
-      { target: TITLE, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: TITLE, props: ['letter-spacing'], golden: TRACKING },
       { target: TITLE, props: ['color', 'opacity'], golden: 'apple.com\'s black at opacity .88 (localnav:localnav.title), as one color, on-bar-2' },
       { target: '.cui-localnav-list > li:nth-child(2)', props: ['margin-left', 'margin-right'], apple: ['localnav', 'localnav.item'] },
       { target: LINK, props: [...SIZE, 'color', 'opacity', 'text-decoration-line', 'box-top', 'box-height'], apple: ['localnav', 'localnav.link'] },
       { target: LINK, props: ['display'], golden: 'a flex item, so block: apple.com\'s inline-block sits in a 12px line, ciderui\'s in its item (the same place, localnav:localnav.link)' },
       { target: LINK, state: 'hover', props: ['opacity'], apple: ['localnav', 'localnav.link', 'hover'] },
-      { target: LINK, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: LINK, props: ['letter-spacing'], golden: TRACKING },
       { target: CURRENT, props: [...SIZE, 'color', 'opacity', 'cursor', 'box-top'], apple: ['localnav', 'localnav.current'] },
       { target: CURRENT, pseudo: '::after', props: ['background-color', 'opacity', 'height', 'top', 'left', 'border-top-left-radius', 'position'], apple: ['localnav', 'localnav.current-mark'] },
       { target: BUTTON, props: [...SIZE, 'color', ...PADDING, 'border-top-left-radius', 'background-color', 'min-width', 'box-top', 'box-height'], apple: ['localnav', 'localnav.button'] },
@@ -54,6 +41,7 @@ export const cases = [
       { target: '.cui-localnav-actions', props: ['margin-left'], golden: 'the button\'s own 24px before it, apple.com\'s action\'s (localnav:localnav.action)' },
       { target: BUTTON, props: ['margin-left'], apple: ['localnav', 'localnav.action'] },
       { target: CHEVRON, props: ['display'], golden: 'from 834px the links are in the bar: no chevron (apple.com\'s is not displayed)' },
+      { target: '.cui-localnav-toggle', props: ['display'], golden: 'nor its checkbox, out of the focus order with it' },
     ],
   },
   {
@@ -108,7 +96,6 @@ export const cases = [
     ],
   },
   {
-    // opened and closed again by its chevron: read as it starts to close
     name: 'menu-closing',
     html: NAV,
     click: [CHEVRON, CHEVRON],
@@ -116,10 +103,21 @@ export const cases = [
     wait: 0,
     checks: [
       { target: '.cui-localnav-menu', props: ['visibility'], golden: 'closing, still shown, its rows fading out and the menu folding in its 0.32s, hidden at their end (apple.com\'s keeps its menu shown 1s as it closes: visibility 0s linear 1s, its stylesheet\'s)' },
+      { target: '.cui-localnav-menu', props: [...MOTION, 'transition-delay'], golden: 'folding in its 0.32s, hidden at its end' },
+      { target: '.cui-localnav-list', props: [...MOTION, 'transition-delay'], golden: 'its rows fading out together at once in its 0.32s: apple.com\'s in 0.38s and 0.4s' },
     ],
   },
   {
-    // the focus from the bar's empty middle: the name, the checkbox, its space bar, the next stop
+    name: 'menu-elsewhere',
+    html: NAV,
+    click: [CHEVRON, '.cui-localnav-content'],
+    widths: [390],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: '.cui-localnav-menu', props: ['visibility'], golden: 'a click elsewhere leaves it open, closed by its chevron alone: apple.com\'s script also closes it on a click elsewhere' },
+    ],
+  },
+  {
     name: 'menu-keys',
     html: NAV,
     click: '.cui-localnav-content',
@@ -183,6 +181,15 @@ export const cases = [
     touch: true,
     ...OPEN,
     checks: [{ target: LINK, state: 'hover', props: ['opacity'], rest: 'nor in the opened tray, where apple.com\'s keeps it (touch-localnav:tray.link)' }],
+  },
+  {
+    name: 'touch-chevron',
+    html: NAV,
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: `${CHEVRON} svg`, props: ['box-top', 'box-left'], golden: 'where it is with a mouse (the case phone): its 44px target grows round it' },
+    ],
   },
   {
     name: 'target',

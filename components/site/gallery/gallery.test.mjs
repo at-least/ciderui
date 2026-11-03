@@ -1,15 +1,3 @@
-// The gallery against apple.com's: its scroller (product:gallery.scroller,
-// .items, .set, .item: the overflow and snapping, the room, the inset, the
-// gap, the first item's place), its paddles' row (product:gallery.nav,
-// .nav-list) and a paddle on a light page (iphone:paddle*: its size, ground,
-// chevron, motion, hovered, pressed, disabled) and a dark one
-// (product:paddle.next, its place at the content's right edge), the store's
-// 56px (store:shelf.paddle), its dots (iphone:gallery.dot*,
-// product:gallery.dot*: their size, color, gap, the current pill); scrolled
-// 250px, the second item snapped to the inset. Golden, with their why: the
-// widths of the row, the dark page's disabled opacity, the pill with no
-// fill, a large paddle's colors.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -50,6 +38,8 @@ export const cases = [
       { target: DOT, props: ['width'], golden: 'apple.com\'s 8px dot (iphone:gallery.dot), a width no text sets' },
       { target: CURRENT, props: ['width'], golden: 'apple.com\'s pill, 48px, 32px below 735px (iphone:gallery.dot-current)' },
       { target: CURRENT, pseudo: '::after', props: ['content'], golden: 'the pill with no timer\'s fill: no script plays the gallery (apple.com\'s fills it as its item shows, iphone:gallery.dot-fill)' },
+      { target: SCROLLER, props: ['scrollbar-width'], golden: 'hidden, as apple.com\'s is' },
+      { target: '.cui-gallery-nav', props: ['position'], golden: 'the paddles\' row in the gallery\'s flow (apple.com\'s placed below its scroller)' },
     ],
   },
   {
@@ -76,8 +66,6 @@ export const cases = [
     ],
   },
   {
-    // forced colors (a high-contrast theme): the dots drawn, each a ring of
-    // the theme's link color, the current one a longer pill
     name: 'forced',
     html: ex('gallery'),
     forcedColors: true,
@@ -87,8 +75,17 @@ export const cases = [
     ],
   },
   {
-    // between the first item and the second, nearer the second (at 1600px
-    // four cards scroll less than an item)
+    name: 'touch targets',
+    html: lg(ex('gallery')),
+    widths: [390],
+    touch: true,
+    checks: [
+      { target: NEXT, props: ['width', 'height'], golden: 'a large paddle keeps its 56px on a touch screen' },
+      { target: '.cui-gallery-dots li:nth-child(2)', props: ['margin-left', 'margin-right'], golden: 'a touch screen\'s dots 44px apart at least: each dot\'s 44px target (::after) with no neighbour\'s over it' },
+    ],
+  },
+  {
+    // not 1600: there four items scroll less than one
     name: 'snap',
     html: ex('gallery'),
     widths: [1200, 900, 390],

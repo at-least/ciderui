@@ -1,10 +1,4 @@
-// The ribbon against apple.com's (the iPhone page's, ribbon:*, read once
-// its motion has run; the bag's, bag:ribbon): its ground, padding, type and
-// width, its message's height, its link, hovered; still as the page shows
-// it. Golden, with their why: the letter-spacing, the content's width
-// (apple.com's 83.33%), its stillness.
-
-import { examples, PADDING, SIZE } from '../../../test/harness.mjs';
+import { examples, PADDING, SIZE, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const LINK = '.cui-ribbon .cui-link';
@@ -19,7 +13,7 @@ export const cases = [
       { target: '.cui-ribbon-content', props: ['background-color', 'padding-top', 'padding-bottom'], apple: ['bag', 'ribbon'] },
       { target: '.cui-ribbon-content', props: ['color'], apple: ['ribbon', 'ribbon.content'] },
       { target: '.cui-ribbon-content', props: ['padding-left', 'padding-right'], golden: 'the message within 83.33% of the window, centered: apple.com\'s content\'s width (ribbon:ribbon.content)' },
-      { target: '.cui-ribbon-content', props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: '.cui-ribbon-content', props: ['letter-spacing'], golden: TRACKING },
       { target: '.cui-ribbon-content p', props: [...SIZE, 'margin-top', 'margin-bottom'], apple: ['ribbon', 'ribbon.text'] },
       { target: LINK, props: [...SIZE, 'color', 'text-decoration-line'], apple: ['ribbon', 'ribbon.link'] },
       { target: LINK, state: 'hover', props: ['color'], apple: ['ribbon', 'ribbon.link', 'hover'] },

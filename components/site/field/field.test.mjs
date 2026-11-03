@@ -1,28 +1,9 @@
-// The field against apple.com's own (retail:field*, the retail page's
-// form-textbox): the input at rest, hovered and focused (alone, and with
-// :focus-visible, as a text field always is), its label as the placeholder,
-// floated when the field is focused and when it is filled; in a dark block,
-// as apple.com's in a dark color scheme (retail-dark:field*). Its states:
-// in error, its message under it (giftcard:error*, an empty required field
-// the focus left; retail:field.error*, retail-dark:field.error*, copies),
-// focused in error; disabled (giftcard:field.disabled, retail:field.disabled*,
-// retail-dark:field.disabled*); with a currency before it
-// (giftcard:prefix*); the dropdown, empty, hovered, focused and chosen
-// (tradein:dropdown*); the textarea in its box, at rest, focused, filled, in
-// error, disabled and in a dark block (retail:textarea*, retail-dark:textarea*,
-// the store's stylesheet on the feedback form's markup); the dropdown in error
-// and disabled (retail:dropdown.*, retail-dark:dropdown.*). Golden, with their why: the letter-spacing, the
-// field's own ground, no margin below, the message's mark and its dark red,
-// the prefix's width, the chevron's place and color, and the states
-// apple.com was not seen in.
-
-import { examples, PADDING, SIZE } from '../../../test/harness.mjs';
+import { examples, PADDING, SIZE, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const EDGE = ['border-top-width', 'border-top-style', 'border-top-color', 'border-bottom-width', 'border-bottom-color', 'border-top-left-radius'];
 const INPUT = '.cui-field-input';
 const LABEL = '.cui-field-label';
-const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
 const dark = (html) => `<div class="cui-dark">${html}</div>`;
 const MESSAGE = '.cui-field-message';
 const MARK = `${MESSAGE} svg`;
@@ -41,7 +22,7 @@ export const cases = [
       { target: INPUT, props: [...SIZE, 'color', ...PADDING, ...EDGE, 'background-color', 'height', 'box-sizing', 'box-height', 'transition-property', 'transition-duration', 'outline-style'], apple: ['retail', 'field.input'] },
       { target: INPUT, state: 'hover', props: ['color', 'background-color', 'border-top-color'], apple: ['retail', 'field.input', 'hover'] },
       { target: INPUT, state: 'focus', props: [...PADDING, ...EDGE], apple: ['retail', 'field.input', 'focus'] },
-      // focused, its box apple.com's at rest: the 2px edge takes the padding's pixel
+      // against the rest probe: focused, the 2px edge takes the padding's pixel, the box unchanged
       { target: INPUT, state: 'focus', props: ['box-height'], apple: ['retail', 'field.input'] },
       { target: INPUT, state: ['focus', 'focus-visible'], props: ['padding-left', 'border-top-width', 'border-top-color', 'outline-style'], apple: ['retail', 'field.input', 'focus+focus-visible'] },
       { target: LABEL, props: [...SIZE, 'color', 'position', 'top', 'left', 'white-space', 'transition-property', 'transition-duration', 'transition-timing-function'], apple: ['retail', 'field.label'] },
@@ -86,8 +67,6 @@ export const cases = [
     ],
   },
   {
-    // copies with apple.com's classes on the retail page, light and in a dark
-    // color scheme: the field keeps its light look in error too
     name: 'error-copies',
     html: ex('error'),
     checks: [
@@ -113,7 +92,7 @@ export const cases = [
     ],
   },
   {
-    // the gift card's page's own, read at 1600px alone (before its choices)
+    // the gift card's page read at 1600px alone (before its choices)
     name: 'disabled-page',
     html: ex('disabled'),
     widths: [1600],
@@ -158,9 +137,6 @@ export const cases = [
     ],
   },
   {
-    // forced colors (a high-contrast theme), Chromium's: the empty select's
-    // own text, "Select", is drawn, its color forced, so its label is at its
-    // top as a filled one's, not over it
     name: 'select-forced',
     html: ex('select'),
     forcedColors: true,
@@ -197,7 +173,6 @@ export const cases = [
     ],
   },
   {
-    // clicked: the box focused by its textarea's focus, with no script
     name: 'textarea-focused',
     html: ex('textarea'),
     click: AREA,
@@ -217,8 +192,7 @@ export const cases = [
     ],
   },
   {
-    // made taller by its handle (its height set, as dragging sets it): the box
-    // grows with it
+    // its height set, as dragging its handle sets it
     name: 'textarea-taller',
     html: area(' style="height: 120px"'),
     widths: [1200],

@@ -1,20 +1,9 @@
-// The article against apple.com's Newsroom (newsroom-article:*): the header's
-// room and type, the copy's type and rhythm, a link (hovered alike), a
-// footnote's mark, a subhead, a figure and its caption, the list's marks,
-// the footnotes; at the kit's widths and both sides of 735 and 1069, where
-// it steps. Golden, with their why: the columns' widths and places (an
-// apple.com check reads no width), the letter-spacing, what Newsroom's copy
-// has none of (h3, h4, code, a block of it, blockquote, table, hr), a list
-// at the copy's size, a footnote's mark that is a link, the copy's room
-// where no figure leads it, and the colors in a dark block.
-
-import { examples, SIZE } from '../../../test/harness.mjs';
+import { examples, SIZE, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const PAGE = 'newsroom-article';
 const WIDTHS = [1600, 1200, 1069, 1068, 900, 735, 734, 390];
 const LINK = ['text-decoration-line', 'text-decoration-color'];
-const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
 const TEXT = 'the text\'s column: apple.com\'s 653px from 1069px, 576px from 735px, 87.5% of 414px at most below (newsroom-article:column.text, column.header), centered';
 const BAND = 'the figures\' column: apple.com\'s 980px, 692px, 414px at most (newsroom-article:figure, column.figure), centered';
 const NONE = 'Newsroom\'s copy has none';
@@ -25,7 +14,6 @@ export const cases = [
     html: ex('article'),
     widths: WIDTHS,
     checks: [
-      // the header
       { target: '.cui-article-header', props: ['padding-top'], as: { 'padding-top': 'margin-top' }, apple: [PAGE, 'header.eyebrow'] },
       { target: '.cui-article-eyebrow', props: ['margin-bottom'], apple: [PAGE, 'header.eyebrow'] },
       { target: '.cui-article-category', props: [...SIZE, 'color', 'display', 'text-transform'], apple: [PAGE, 'eyebrow.category'] },
@@ -33,7 +21,6 @@ export const cases = [
       { target: '.cui-article-headline', props: [...SIZE, 'color', 'margin-top', 'margin-bottom', 'text-align'], apple: [PAGE, 'headline'] },
       { target: '.cui-article-subhead', props: [...SIZE, 'color'], apple: [PAGE, 'subhead'] },
       { target: '.cui-article-subhead', props: ['margin-top'], apple: [PAGE, 'header.subhead'] },
-      // the copy
       { target: '.cui-article-body > p', props: [...SIZE, 'color', 'margin-top', 'margin-bottom'], apple: [PAGE, 'copy'] },
       { target: '.cui-article-body > p a', props: [...SIZE, 'color', ...LINK], apple: [PAGE, 'copy.link'] },
       { target: '.cui-article-body > p a', state: 'hover', props: ['color', ...LINK], apple: [PAGE, 'copy.link', 'hover'] },
@@ -44,23 +31,19 @@ export const cases = [
       { target: '.cui-article-body > figure', props: ['margin-top', 'margin-bottom'], apple: [PAGE, 'figure'] },
       { target: '.cui-article-body figcaption', props: [...SIZE, 'color', 'text-align'], apple: [PAGE, 'figure.caption'] },
       { target: '.cui-article-body figcaption', props: ['margin-top'], apple: [PAGE, 'figure.description'] },
-      // the footnotes
       { target: '.cui-article-footnotes', props: ['margin-top'], apple: [PAGE, 'footnotes'] },
       { target: '.cui-article-footnotes ol', props: [...SIZE, 'color', 'padding-left', 'list-style-type'], apple: [PAGE, 'footnotes.ol'] },
       { target: '.cui-article-footnotes li', props: [...SIZE, 'color', 'margin-top', 'margin-bottom'], apple: [PAGE, 'footnotes.li'] },
       { target: '.cui-article-footnotes a', props: [...SIZE, 'color', ...LINK], apple: [PAGE, 'footnotes.link'] },
       { target: '.cui-article-footnotes a', state: 'hover', props: ['color', ...LINK], apple: [PAGE, 'footnotes.link', 'hover'] },
-      // the columns
       { target: '.cui-article-header', props: ['box-width', 'box-left'], golden: TEXT },
       { target: '.cui-article-body > p', props: ['box-width', 'box-left'], golden: TEXT },
       { target: '.cui-article-footnotes', props: ['box-width', 'box-left'], golden: TEXT },
       { target: '.cui-article-body > figure', props: ['box-width', 'box-left'], golden: BAND },
       { target: '.cui-article-body figcaption', props: ['box-width', 'box-left'], golden: `the caption in ${TEXT}` },
       { target: '.cui-article-body figure img', props: ['box-width', 'box-height'], golden: 'the picture the figure\'s width, at its own shape' },
-      // the letter-spacing
       ...['.cui-article-category', '.cui-article-date', '.cui-article-headline', '.cui-article-subhead', '.cui-article-body > p', '.cui-article-body > h2', '.cui-article-body figcaption', '.cui-article-footnotes ol']
         .map(target => ({ target, props: ['letter-spacing'], golden: TRACKING })),
-      // what is ciderui's
       { target: '.cui-article-body', props: ['margin-top'], golden: 'the copy 44px under the header (36px from 735px, 32px below), the room a figure takes there (newsroom-article:figure), where no figure leads it' },
       { target: '.cui-article-body > ul', props: ['padding-left', 'margin-bottom'], golden: 'the small print\'s indent, 1.1765em (newsroom-article:list, 16.47px at 14px), at the copy\'s size; a paragraph\'s room under it' },
       { target: '.cui-article-body > ul li', props: [...SIZE, 'margin-top', 'margin-bottom'], golden: 'a list at the copy\'s size: apple.com\'s is the small print\'s 14px (newsroom-article:list.li)' },
@@ -88,9 +71,6 @@ export const cases = [
     ],
   },
   {
-    // words too long for a line, which markdown's copy has and Newsroom's
-    // prose does not: an import in inline code, a bare URL as a link, a
-    // hash in a table's cell
     name: 'long',
     html: `<article class="cui-article"><header class="cui-article-header"><h1 class="cui-article-headline">ciderui</h1></header><div class="cui-article-body">
 <p>Import <code>@import "../target/ciderui/components/button/button.css";</code> first.</p>
@@ -104,8 +84,6 @@ export const cases = [
     ],
   },
   {
-    // markdown's lists in a list item and in a quotation, and its code block
-    // in a list item (a step's command), as Zola writes them
     name: 'nested',
     html: `<article class="cui-article"><header class="cui-article-header"><h1 class="cui-article-headline">ciderui</h1></header><div class="cui-article-body">
 <ul><li>Outer<ul><li>Inner</li></ul></li></ul>
@@ -120,13 +98,21 @@ export const cases = [
     ],
   },
   {
-    // a link and a button in a footnote keep their own look (rule 4)
     name: 'footnote-parts',
     html: ex('article').replace(/(<section class="cui-article-footnotes">\s*<ol>)/, '$1<li><p>See <a class="cui-link" href="#guide">the guide</a> <a class="cui-btn" href="#buy">Buy</a></p></li>'),
     widths: [1200],
     checks: [
       { target: '.cui-article-footnotes .cui-link', props: ['color', 'text-decoration-line'], golden: 'a link in a footnote the kit\'s link still, not the footnotes\' (rule 4)' },
       { target: '.cui-article-footnotes .cui-btn', props: ['color', 'background-color', 'text-decoration-line'], golden: 'a button in a footnote the kit\'s button still (rule 4)' },
+    ],
+  },
+  {
+    name: 'body-parts',
+    html: '<article class="cui-article"><div class="cui-article-body"><p>See <a class="cui-link" href="#guide">the guide</a> <a class="cui-btn" href="#buy">Buy</a></p></div></article>',
+    widths: [1200],
+    checks: [
+      { target: '.cui-article-body .cui-link', props: ['color', 'text-decoration-line'], golden: 'a link in the copy the kit\'s link still: the copy\'s rules match plain elements alone (rule 4)' },
+      { target: '.cui-article-body .cui-btn', props: ['color', 'background-color', 'text-decoration-line'], golden: 'a button in the copy the kit\'s button still (rule 4)' },
     ],
   },
 ];

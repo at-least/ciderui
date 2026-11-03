@@ -1,17 +1,10 @@
-// The accordion against apple.com's bag (bag:accordion.item, its rule;
-// bag-accordion:*: a compact item's question, its chevron at rest and with
-// the question hovered, opened its answer; the outer item, a large
-// question). Golden, with their why: the letter-spacing, the chevron's box
-// and turn, the height's motion, no marker.
-
-import { examples, SIZE } from '../../../test/harness.mjs';
+import { examples, SIZE, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const ITEM = '.cui-accordion-item';
 const OPEN = '.cui-accordion-item[open]';
 const CLOSED = '.cui-accordion-item:not([open])';
 const Q = '.cui-accordion-question';
-const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
 
 export const cases = [
   {
@@ -33,6 +26,7 @@ export const cases = [
       { target: ITEM, pseudo: '::details-content', props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: 'its answer\'s height in apple.com\'s 0.3s ease-in-out (bag-accordion:compact.panel), where the browser can move a height to auto' },
       { target: ITEM, pseudo: '::details-content', props: ['overflow-x', 'overflow-y'], golden: 'its answer\'s height clipped as it moves, not its width: the ring of what begins a line in it, a link or a question in the large one\'s answer, is drawn 3px outside it (reference/details/)' },
       { target: Q, props: ['list-style-type'], golden: 'no marker: the chevron is the question\'s' },
+      { target: '.cui-accordion', props: ['interpolate-size'], golden: 'its answer\'s height moves to auto, where the browser can' },
       { target: Q, props: ['letter-spacing'], golden: TRACKING },
       { target: `${OPEN} .cui-accordion-answer`, props: ['letter-spacing'], golden: TRACKING },
     ],
@@ -50,7 +44,6 @@ export const cases = [
     ],
   },
   {
-    // the bag's structure: the compact FAQ as the large question's answer
     name: 'nested',
     html: ex('large').replace('<details class="cui-accordion-item">', '<details class="cui-accordion-item" open>').replace('<p>What people ask most, answered.</p>', ex('accordion')),
     checks: [
@@ -61,7 +54,6 @@ export const cases = [
     ],
   },
   {
-    // the second question clicked: its answer opens, its chevron turns
     name: 'click',
     html: ex('accordion'),
     widths: [1200],

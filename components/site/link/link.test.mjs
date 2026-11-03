@@ -1,17 +1,10 @@
-// The link against apple.com: in running text, light and dark, its own `a`
-// (iphone:link.inline, product:link.inline); the more link at 17px and 14px
-// and dark, its copy underlined hovered, its chevron's place and color
-// (iphone:link.more*, product:link.more*); golden: the chevron's box, from
-// apple.com's glyph's numbers (reference/icons/); a touch screen's hover is
-// rest.
-
-import { examples } from '../../../test/harness.mjs';
+import { examples, OUTLINE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const LINK = ['color', 'text-decoration-line', 'text-decoration-color'];
 const more = (page, glyph) => [
-  // the size is the case's text's, built as apple.com's is around its link
   { target: '.cui-link', props: ['font-size', 'color', 'text-decoration-line'], apple: [page, 'link.more'] },
+  { target: '.cui-link', state: 'hover', props: ['text-decoration-line'], apple: [page, 'link.more', 'hover'] },
   { target: '.cui-link-text', props: ['text-decoration-line'], apple: [page, 'link.more-copy'] },
   { target: '.cui-link-text', on: '.cui-link', state: 'hover', props: ['text-decoration-line'], apple: [page, 'link.more-copy', 'hover'] },
   { target: '.cui-link-icon', props: ['margin-left', 'color'], apple: [page, glyph], as: { 'margin-left': 'padding-left' } },
@@ -25,6 +18,7 @@ export const cases = [
       { target: '.cui-link', props: ['font-size', 'line-height', 'font-weight', ...LINK], apple: ['iphone', 'link.inline'] },
       { target: '.cui-link', state: 'hover', props: LINK, apple: ['iphone', 'link.inline', 'hover'] },
       { target: '.cui-link', state: 'active', props: LINK, apple: ['iphone', 'link.inline', 'active'] },
+      { target: '.cui-link', state: 'focus-visible', props: OUTLINE, golden: 'base.css\'s focus ring, the link drawing none of its own' },
     ],
   },
   {
@@ -46,6 +40,8 @@ export const cases = [
       { target: '.cui-link-icon', props: ['box-width', 'box-height', 'vertical-align'], golden: 'the chevron\'s box: apple.com\'s glyph\'s advance, 0.4419em, by 0.54em, 0.01em below the baseline (reference/icons/)' },
       { target: '.cui-link-icon', props: ['display'], golden: 'inline, on its text\'s line: Tailwind\'s preflight draws an svg as a block' },
       { target: 'p', props: ['box-height'], golden: 'one line, the chevron after the text: the paragraph\'s 25px line' },
+      { target: '.cui-link-icon', props: ['box-x'], golden: 'after the text by its margin alone: the markup on one line, as a space between text and chevron would widen the gap' },
+      { target: '.cui-link', state: 'focus-visible', props: OUTLINE, golden: 'base.css\'s focus ring, the more link drawing none of its own' },
     ],
   },
   {
@@ -77,6 +73,7 @@ export const cases = [
     widths: [390],
     checks: [
       { target: '.cui-link', props: ['box-height'], golden: 'the more link drawn as before' },
+      { target: '.cui-link', pseudo: '::after', props: ['width', 'background-color'], golden: 'the target 44px wide at least, and transparent' },
       { target: '.cui-link', pseudo: '::after', props: ['height'], golden: 'its target a transparent ::after 44px tall at least, the HIG\'s 44pt (Accessibility, Mobility; its 20px line is under the 28pt minimum), as the console\'s link draws one; a link in running text is text, and draws none' },
     ],
   },

@@ -1,336 +1,9 @@
-/* ciderui — the global nav: apple.com's bar across the top of the page, on
- * a <nav>: the site's logo, its links and its icon links (a search, a bag)
- * spread across 1024px at most, a link perhaps opening a flyout under the
- * bar; to 833px the links fold into a menu that the bar's button opens over
- * the window, with no script.
- *
- * From apple.com's global nav (reference/apple.com/): home:nav* (the bar,
- * light), home:menu* (the phone's menu, opened), newsroom:nav* and
- * newsroom:menu* (a dark nav), product:nav (a clear one), nav-select:*
- * (what of it can be selected: none of it), search:*,
- * search-dark:*, search-text:* (its search, opened, with text in it),
- * search-suggestions:*, search-suggestions-dark:* (showing suggestions),
- * search-typed:* (typed into: its motion between results), bag-flyout:*,
- * bag-flyout-dark:* (its bag, opened, an empty bag's), flyout:*,
- * flyout-dark:*, flyout-phone:* and tap-flyout:* (a link's flyout); its
- * icons ciderui's own (reference/icons/), its menu, its search and its
- * flyouts popovers (reference/popover/, reference/search/,
- * reference/flyout/), its search's field taking text in a nav none of
- * which can be selected (reference/select/).
- *
- *   <nav class="cui-globalnav" aria-label="Global">
- *     <div class="cui-globalnav-content">
- *       <ul class="cui-globalnav-list" id="cui-globalnav-menu" popover>
- *         <li><a class="cui-globalnav-logo" href="/" aria-label="Site">(the site's logo)</a></li>
- *         <li><button class="cui-globalnav-closebutton" popovertarget="cui-globalnav-menu" popovertargetaction="hide" aria-label="Close" autofocus>(icon::MENU)</button></li>
- *         <li><a class="cui-globalnav-link" href="/store">Store</a></li>
- *         <li><a class="cui-globalnav-icon" href="/search" aria-label="Search">(icon::SEARCH, icon::SEARCH_COMPACT)</a></li>
- *       </ul>
- *       <button class="cui-globalnav-menubutton" popovertarget="cui-globalnav-menu" aria-label="Menu">(icon::MENU)</button>
- *     </div>
- *   </nav>
- *
- * The list is the menu: a popover the page shows closed, as the bar's row,
- * beside the menu's button. Opened into the top layer, a sheet over the
- * window, it shows its own close button where the menu's button is, the two
- * lines turning into an X, and the focus moves to it (autofocus); Tab goes
- * on to the links; the X or Escape closes it, the focus back on the menu's
- * button. The menu's button is beside the list, not in it: a popover opened
- * by a button inside it holds the focus on that button (Chromium 151,
- * reference/popover/). In the markup the logo comes first and the close
- * button second, so that the next stop after the X is the first link.
- *
- * The search is a link to the site's search page (above), or a button
- * opening the search, another popover, after the menu's button:
- *
- *         <li><button class="cui-globalnav-icon" popovertarget="cui-globalnav-search" aria-label="Search">(icon::SEARCH, icon::SEARCH_COMPACT)</button></li>
- *       …
- *       <div class="cui-globalnav-search" id="cui-globalnav-search" popover>
- *         <div class="cui-globalnav-searchpanel">
- *           <form class="cui-globalnav-searchfield" action="/search" method="get" role="search">
- *             (icon::SEARCHFIELD, icon::SEARCHFIELD_COMPACT)
- *             <input class="cui-globalnav-searchinput" type="text" name="q" placeholder="Search" aria-label="Search" autocomplete="off" autocapitalize="off" autofocus>
- *             <button class="cui-globalnav-searchreset" type="reset" aria-label="Clear search">(icon::CLEAR, icon::CLEAR_COMPACT)</button>
- *           </form>
- *           <h2 class="cui-globalnav-searchheading" id="cui-globalnav-searchheading">Shortcuts</h2>
- *           <ul class="cui-globalnav-searchlinks" aria-labelledby="cui-globalnav-searchheading">
- *             <li><a class="cui-globalnav-searchlink" href="/retail">(icon::ARROW, icon::ARROW_COMPACT)Visit a Store</a></li>
- *           </ul>
- *           <button class="cui-globalnav-closebutton" popovertarget="cui-globalnav-search" popovertargetaction="hide" aria-label="Close">(icon::MENU)</button>
- *         </div>
- *         <button class="cui-globalnav-curtain" popovertarget="cui-globalnav-search" popovertargetaction="hide" tabindex="-1" aria-hidden="true"></button>
- *       </div>
- *
- * Opened, its field takes the focus (autofocus); Return sends the form, GET,
- * to the site's search page; Escape closes it, the focus back on its
- * button, and so does its button again. From 834px it hangs from the bar's
- * bottom (anchor positioning: the nav is --cui-globalnav) to the window's:
- * its panel, and behind it the curtain over the page, blurring it, a button
- * that closes it (a popover's own backdrop takes no click: a click there
- * would close it and go on to the page under it); the bar is outside it, so
- * a click on the bar closes it and reaches what it clicked. To 833px it is a
- * sheet over the window, the bar too, with its own X where the menu's button
- * is, the page held. Its field is a text field: with type="search" Escape in
- * it leaves it open in Safari 27 (reference/search/).
- *
- * Its suggestions are the site's script's: as something is typed, it writes
- * sections in the quick links' place, each a heading and its rows, a
- * suggestion's text in a span with the typed part in a mark, after its
- * section's image (a link's arrow, a suggested search's magnifier):
- *
- *           <h2 class="cui-globalnav-searchheading" id="cui-globalnav-suggestedlinks">Pages</h2>
- *           <ul class="cui-globalnav-searchlinks" aria-labelledby="cui-globalnav-suggestedlinks">
- *             <li><a class="cui-globalnav-searchlink" href="/laptops">(icon::ARROW, icon::ARROW_COMPACT)<span><mark>La</mark>ptops</span></a></li>
- *           </ul>
- *           <h2 class="cui-globalnav-searchheading" id="cui-globalnav-suggestedsearches">Searches</h2>
- *           <ul class="cui-globalnav-searchlinks" aria-labelledby="cui-globalnav-suggestedsearches">
- *             <li><a class="cui-globalnav-searchlink" href="/search?q=laptop">(icon::SUGGESTION, icon::SUGGESTION_COMPACT)<span><mark>la</mark>ptop</span></a></li>
- *           </ul>
- *
- * While a row marks what was typed, each row is muted and its marked part
- * the rows' color; a section after another is 34px below it (48px to 833px).
- * Rows written once something is typed fade in where they are, together,
- * from 40ms, in 0.32s.
- *
- * The bag is a link to the site's bag page (above), or a button opening
- * the bag, another popover, after the search's, an empty bag's:
- *
- *         <li><button class="cui-globalnav-icon" popovertarget="cui-globalnav-bag" aria-label="Bag">(icon::BAG, icon::BAG_COMPACT)</button></li>
- *       …
- *       <div class="cui-globalnav-bag" id="cui-globalnav-bag" popover>
- *         <div class="cui-globalnav-bagpanel">
- *           <button class="cui-globalnav-closebutton" popovertarget="cui-globalnav-bag" popovertargetaction="hide" aria-label="Close" autofocus>(icon::MENU)</button>
- *           <h2 class="cui-globalnav-bagmessage">Nothing here yet.</h2>
- *           <p class="cui-globalnav-bagtext"><a href="/signin">Sign in</a> for items you saved earlier</p>
- *           <h3 class="cui-globalnav-bagheading" id="cui-globalnav-bagheading">Account</h3>
- *           <ul class="cui-globalnav-baglinks" aria-labelledby="cui-globalnav-bagheading">
- *             <li><a class="cui-globalnav-baglink" href="/orders">(icon::ORDERS, icon::ORDERS_COMPACT)Orders</a></li>
- *           </ul>
- *         </div>
- *         <button class="cui-globalnav-curtain" popovertarget="cui-globalnav-bag" popovertargetaction="hide" tabindex="-1" aria-hidden="true"></button>
- *       </div>
- *
- * It opens and closes as the search does, from 834px a flyout from the
- * bar's bottom over its curtain, to 833px a sheet over the window, the page
- * held; it has no field, so to 833px its X takes the focus (autofocus), its
- * X first in it, so that the next stop after the X is its line's link, as
- * the menu's, and from 834px, where its X is not shown, the focus stays on
- * its button, Tab going on into it. Its message, line, heading and rows fade
- * in together from 80ms.
- *
- * A link may open a flyout, a menu under the bar, its button and the
- * flyout (a popover) after it in its item:
- *
- *         <li>
- *           <a class="cui-globalnav-link" href="/laptops">Laptops</a>
- *           <button class="cui-globalnav-flyoutbutton" popovertarget="cui-globalnav-flyout-1" aria-label="Laptops menu">(icon::FLYOUT, icon::FLYOUT_COMPACT)</button>
- *           <div class="cui-globalnav-flyout" id="cui-globalnav-flyout-1" popover>
- *             <div class="cui-globalnav-flyoutpanel">
- *               <button class="cui-globalnav-backbutton" popovertarget="cui-globalnav-flyout-1" popovertargetaction="hide" aria-label="Main menu">(icon::FLYOUT_BACK)</button>
- *               <button class="cui-globalnav-closebutton" popovertarget="cui-globalnav-menu" popovertargetaction="hide" aria-label="Close">(icon::MENU)</button>
- *               <div class="cui-globalnav-flyoutgroup">
- *                 <h2 class="cui-globalnav-flyoutheading" id="cui-globalnav-flyout-1-1">Laptops</h2>
- *                 <ul class="cui-globalnav-flyoutlinks" aria-labelledby="cui-globalnav-flyout-1-1">
- *                   <li><a class="cui-globalnav-flyoutlink" data-size="lg" href="/laptops">All Laptops</a></li>
- *                   <li><a class="cui-globalnav-flyoutlink" href="/laptops/compare">Compare Models</a></li>
- *                 </ul>
- *               </div>
- *             </div>
- *             <button class="cui-globalnav-curtain" popovertarget="cui-globalnav-flyout-1" popovertargetaction="hide" tabindex="-1" aria-hidden="true"></button>
- *           </div>
- *         </li>
- *
- * From 834px with a pointer, no popover open, the pointer resting 120ms on
- * the link shows the flyout, the closed popover shown by the page: from the
- * nav's top, behind the bar's links (closed, hidden and the bar's height),
- * its panel revealed down from the bar,
- * its headings and rows coming in; under it the list's curtain (its ::after),
- * fixed over the window, blurring the page and taking no pointer; the bar's
- * blur off while it shows (kept on, the curtain would not reach the page).
- * The pointer moved on along the bar shows the next link's, the one left
- * kept until the next has grown; the pointer off the bar and the flyout
- * hides it. The button, at the link's end, draws its chevron only with the
- * focus from the keyboard; it opens the flyout as a popover, from the bar's
- * bottom (anchor positioning), over its own curtain, a button that closes
- * it; Tab goes into it, Escape closes it, the focus back on the button. On a
- * screen with no hover the button lies over the link: a tap on the link
- * opens the flyout. To 833px the button lies over the menu's row, its
- * chevron at the row's end, hovered; it opens the flyout over the open menu
- * (a popover inside it), a sheet with its back button, which closes the
- * flyout, and its X, which closes the menu and the flyout with it; the
- * menu's rows slide back and out behind it, and come in again from 160ms
- * as it closes (apple.com's), where the menu brings them in from 200ms.
- *
- * cui-globalnav             the bar: 48px, 44px from 834px, on the bar's
- *                           material, translucent under a blur (dark in a
- *                           dark block, cui-dark on the nav)
- *   data-variant="clear"    no ground and no blur: over a hero, with a nav
- *                           that scrolls away with it
- * cui-globalnav-content     1024px at most, 22px in from 834px
- * cui-globalnav-list        the row (closed), the menu (opened)
- * cui-globalnav-logo        the site's logo, a link; its image the site's
- * cui-globalnav-link        a link: 12px in the bar, a 28px row in the menu
- * cui-globalnav-icon        an icon link: cui-globalnav-image from 834px
- *                           (15 or 14 by 44), cui-globalnav-image-compact to
- *                           833px (17 by 48)
- * cui-globalnav-menubutton  the menu's button, to 833px: two lines
- * cui-globalnav-closebutton the opened menu's: an X; the search's, to 833px
- * cui-globalnav-search      the search, opened: a flyout under the bar from
- *                           834px, a sheet over the window to 833px
- * cui-globalnav-searchpanel its ground, #fafafc, and its room
- * cui-globalnav-searchfield the form: its magnifier (cui-globalnav-image,
- *                           30 by 32; -compact, 38 by 40) and its input
- * cui-globalnav-searchinput the field: 24px at 600, 28px to 833px
- * cui-globalnav-searchreset its clear button, a reset button at its end,
- *                           shown while it holds text, the magnifier then
- *                           darker; clicked, the field empty (its mark
- *                           icon::CLEAR, 14px; -compact, 16px)
- * cui-globalnav-searchheading a section's heading: the quick links', a
- *                           suggestions' section's
- * cui-globalnav-searchlinks its rows, each a cui-globalnav-searchlink after
- *                           its image (9 by 16; 13 by 25): an arrow, a
- *                           suggested search's magnifier; a suggestion's
- *                           text in a span, the typed part a mark
- * cui-globalnav-bag         the bag, opened: a flyout under the bar from
- *                           834px, a sheet over the window to 833px
- * cui-globalnav-bagpanel    its ground, #fafafc, and its room
- * cui-globalnav-bagmessage  its message: 24px at 600, 28px to 833px
- * cui-globalnav-bagtext     a line under it, 12px (17px), its link the
- *                           link's color, underlined
- * cui-globalnav-bagheading  the heading over its links, 12px (17px)
- * cui-globalnav-baglinks    its rows, each a cui-globalnav-baglink, 12px at
- *                           600 (17px), its icon before its text in the
- *                           secondary text's color (cui-globalnav-image, 11
- *                           by 16, 1px in, the text 24px in;
- *                           -compact, 16 by 25, the text 30px in)
- * cui-globalnav-curtain     the curtain under the search's flyout, the
- *                           bag's, and under a flyout its button opens,
- *                           from 834px
- * cui-globalnav-flyoutbutton a flyout's button, after its link: from 834px
- *                           22 by 44 at the link's end, its chevron
- *                           (cui-globalnav-image, icon::FLYOUT, 10 by 10)
- *                           shown with the focus from the keyboard; over
- *                           the link on a screen with no hover, its
- *                           chevron at the link's end still; to 833px
- *                           over the row, its chevron (-compact,
- *                           icon::FLYOUT_COMPACT, 9 by 48) at its end,
- *                           hovered
- * cui-globalnav-flyout      a link's flyout: from 834px under the bar,
- *                           from the nav's top (the pointer's) or from the
- *                           bar's bottom (opened); to 833px a sheet over
- *                           the menu
- * cui-globalnav-flyoutpanel its ground, #fafafc, and its room
- * cui-globalnav-flyoutgroup a group: a heading over its links; in a row
- *                           from 834px, a group of large links half the
- *                           content at most and 88px before the next, the
- *                           others a quarter and 44px
- * cui-globalnav-flyoutheading its heading, 12px (17px to 833px), which names
- *                           its list; none shown to 833px for a group of
- *                           large links
- * cui-globalnav-flyoutlinks its rows, each a cui-globalnav-flyoutlink, 12px
- *                           at 600 (17px to 833px)
- *   data-size="lg"          a large link, first in its group: 24px (28px)
- * cui-globalnav-backbutton  the sheet's back button, to 833px
- *                           (icon::FLYOUT_BACK, 9 by 48)
- *
- * apple.com's: every size, color, the material, the motion, and that
- * none of it can be selected (`user-select: none` on the nav, its field
- * not excepted, as apple.com's: in Safari, macOS's and iOS's, an editable
- * field computes `text` there). ciderui's: the
- * letter-spacing (tokens.css); no place on the page: apple.com fixes its nav
- * to the top of its home page alone (home:nav `position: fixed`;
- * product:nav, newsroom:nav absolute, scrolling away), so a site adds
- * `sticky top-0` where the nav stays; opened, the menu is a
- * sheet at any width (a tablet turned with it open keeps it until closed);
- * Tab past its last link leaves it for the page under it (no script holds
- * the focus in it, as apple.com's does); the X's lines turn as they move
- * (apple.com's fold into one line, then turn) and their round ends are
- * stretched with them (0.05px further); the menu closes at once, its list
- * leaving the top layer when it closes (apple.com's runs its motion back);
- * the bar is the containing block and the stacking context of a flyout
- * the pointer shows (`position: relative`, `isolation: isolate`, a site's
- * sticky replacing the position), its `z-index` apple.com's 9999 (flyout:nav),
- * so that the nav and its flyouts are over the page, a tile's link and a
- * local nav's 9997 too, whether the nav stays or scrolls away (a site's own
- * z-index on it, a utility, wins). A flyout: shown by the pointer's resting on its
- * link through a transition's delay, so that with reduced motion, which
- * takes every delay, a pointer passing over the bar shows the flyouts it
- * passes; revealed down from the bar (apple.com's grows its height from
- * the bar's in half its content's height in ms: 240ms here, its least and
- * most flyouts', with Mac's 254ms); its headings and rows fade in together,
- * where they are, 120ms later than apple.com's first heading, the pointer's
- * rest first, as apple.com's script waits it out before it adds its
- * classes (apple.com's come in from 4px up one after another, a group's
- * heading 80ms, 160ms, 200ms, 240ms on and its rows 20ms apart: a staggered
- * reveal that only draws the eye, DESIGN.md decision 25); moved on along
- * the bar, the one left kept until the next has grown over it, where apple.com crossfades
- * them in 120ms, their height between; the curtain the list's, which
- * takes no pointer (apple.com's takes it, its script closing the flyout as
- * the pointer leaves the nav), so a click on the page as the flyout goes
- * reaches it; the bar's blur back 0.45s after it goes, the curtain gone (as
- * apple.com's, 0.4 to 0.53s: scouted, each frame); the button
- * from 8px before the link's end to 14px past it, over its room and not its
- * text (apple.com's from 15px before it, over its text's end, where a click
- * opens the flyout instead of following the link); opened by its button,
- * the flyout hangs from the bar's bottom, as the search does, and closes at
- * once; on a screen with no hover the button over the whole link, so a tap
- * on the link opens the flyout and a second tap on it closes it (apple.com's
- * follows the link then: tap-flyout); its chevron to 833px goes as it
- * came, sliding back (apple.com's scales down to 0.8); the menu's rows
- * come back with their own motion when the sheet closes (apple.com's in
- * 240ms from 160ms); a pointer on the bar while a popover is open (the
- * search, a flyout its button opened) shows no flyout (apple.com's opens
- * the flyout in the search's place). The search: its flyout
- * starts under the bar, revealed from its top (apple.com's grows from
- * behind the bar's links, from the nav's top), and closes at once; the bar
- * while it is open shows the flyout's ground, unblurred, as apple.com's
- * shows its flyout's, drawn over the nav's own (#fafafc at the bar); one
- * placeholder, Search (apple.com's
- * script writes Search apple.com from 834px); its quick links' heading is
- * Shortcuts (apple.com's Quick Links); its clear button shown by the field's text with
- * no script (apple.com's script enables it as one types), a reset button,
- * which gives the field back its value attribute (a page that fills the
- * field with its query leaves the attribute out: the button would bring it
- * back), and leaves the focus on the page, the button hidden (Safari,
- * Chrome, Chromium: reference/search/; apple.com's script puts it in the
- * field), the kit's ring 3px out (apple.com's 1px); its suggestions the
- * site's script's to write (apple.com's asks its service for them as one
- * types), muted while a row marks what was typed (apple.com's script mutes
- * them from two typed characters, a row marked or not: search-typed:*), a
- * suggestion's text in a span (a row is a flex box: its text and mark would
- * be boxes of their own, the spaces between them dropped); rows written once
- * something is typed fade in where they are, as apple.com's new results do,
- * and the opening's motion is the empty field's, which needs its
- * placeholder; the rows they replace go at once (apple.com's fade out under
- * them), a section kept does not slide to its new place (apple.com's does),
- * and the panel takes its new height at once (apple.com's flyout grows in
- * 269ms and shrinks in 320ms after 120ms: search-typed:*); the field's
- * magnifier is an image, not a disabled submit button (a disabled default
- * button keeps Return from sending the form), darker with text in the
- * field, as apple.com's, but never hovered (apple.com's is a button then); a focused link has the focus ring with its hovered look (apple.com
- * forced into focus-visible draws no outline); the sheet's X turns as the
- * menu's; opened on a phone the bar's logo, search and bag are under the
- * sheet at once (apple.com's fade in 240ms); a window widened or narrowed
- * with it open keeps it, as the other layout (apple.com's closes it at
- * 833px). The bag: opened by its button alone, as apple.com's, and closed
- * as the search, where apple.com's script closes it too as the pointer
- * leaves it for the curtain (bag-flyout:left); its markup the page's
- * (apple.com's script fetches it, showing a spinner until it comes); an
- * empty bag's alone (a bag with something in it, and the count on the bag's
- * icon, are not measured: DESIGN.md); from the bar's bottom, revealed from
- * its top, as the search; to 833px its X takes the focus; a link's text and
- * icon hovered together (apple.com's text by its own hover too); the kit's
- * ring 3px out (apple.com's 1px). */
-
 @layer components {
   .cui-globalnav {
     --cui-globalnav-ease: cubic-bezier(0.4, 0, 0.6, 1);
 
-    /* its own height: the bar keeps it while the list is opened out of it;
-       the anchor the search and a flyout opened by its button hang from; the
-       containing block and the stacking context of a flyout the pointer
-       shows (a site's sticky replaces the position), over the page, a local
-       nav's 9997 too, as apple.com's 9999 (flyout:nav) */
+    /* rule 6's exception: the containing block and stacking context of a
+       flyout the pointer shows; a site's sticky replaces the position */
     position: relative;
     isolation: isolate;
     z-index: 9999;
@@ -338,12 +11,9 @@
     anchor-name: --cui-globalnav;
     background-color: var(--cui-c-bar);
     backdrop-filter: saturate(1.8) blur(20px);
-    /* its blur back once a flyout's or the search's curtain has gone, as
-       apple.com's (taken off while one shows) */
     transition: backdrop-filter 0s 0.45s;
-    /* none of it can be selected, as apple.com's, its search's field still
-       taking text (reference/select/); Safari has the prefixed property
-       alone, written here for a site whose build adds no prefixes */
+    /* Safari has the prefixed property alone: for a site whose build adds
+       no prefixes */
     -webkit-user-select: none;
     user-select: none;
 
@@ -368,11 +38,8 @@
     }
   }
 
-  /* to 833px: the logo at the start, the icons at the end, the menu's
-     button after them; the links are the menu's rows */
   .cui-globalnav-list {
-    /* the browser's own style for a popover, undone: closed, the list is the
-       bar's row */
+    /* the browser's popover style undone, not rule 6's size or place */
     position: static;
     inset: auto;
     display: flex;
@@ -401,7 +68,6 @@
       flex-basis: 100%;
     }
 
-    /* a link and its flyout's button in one cell */
     > li > .cui-globalnav-link,
     > li > .cui-globalnav-flyoutbutton {
       grid-area: 1 / 1;
@@ -433,7 +99,6 @@
     padding-inline: 16px;
   }
 
-  /* a link, or the button opening the search */
   .cui-globalnav-icon {
     align-items: center;
     justify-content: center;
@@ -449,7 +114,6 @@
     display: none;
   }
 
-  /* a row of the menu */
   .cui-globalnav-link {
     align-items: flex-start;
     height: 53px;
@@ -483,8 +147,6 @@
     }
   }
 
-  /* the close button's lines: the menu's two lines, each turned about its
-     middle into apple.com's X (reference/icons/) as the button shows */
   .cui-globalnav-closebutton path {
     transition: transform 0.24s var(--cui-globalnav-ease);
   }
@@ -499,8 +161,6 @@
     transform: translate(0.25px, -2.75px) rotate(-45deg) scaleX(1.16168);
   }
 
-  /* opened: a sheet over the window, the bar's row on top (the logo, the
-     icons, the X where the menu's button is), its rows below */
   .cui-globalnav-list:popover-open {
     position: fixed;
     inset: 0;
@@ -532,12 +192,9 @@
       transition: opacity 0.24s var(--cui-globalnav-ease), visibility 0.24s step-end;
     }
 
-    /* each row 47px down, then 46px below the one above (each 53px tall, 7px
-       over the next), all fading in together as the menu opens, the sheet
-       grown under them: an animation, which runs once as the menu shows; the
-       transition is the rows' coming back from behind a phone's open flyout.
-       Not the opening on the transition too: one delay would then serve
-       both, where apple.com's are 200ms and 160ms */
+    /* the opening an animation, not this transition: the transition is the
+       rows' return from behind a phone's flyout, and one transition has one
+       delay, where apple.com's opening and return have two */
     > li:has(> .cui-globalnav-link) {
       display: grid;
       margin-top: -1px;
@@ -562,13 +219,12 @@
     }
   }
 
-  /* the page under the menu holds still, as apple.com's does */
   :root:has(.cui-globalnav-list:popover-open) {
     overflow: hidden;
   }
 
-  /* the search and the bag: closed, not shown (the browser's own style for
-     a popover, undone but its display) */
+  /* the browser's popover style undone but its display, not rule 6's size
+     or place */
   .cui-globalnav-search,
   .cui-globalnav-bag {
     inset: auto;
@@ -584,8 +240,6 @@
     background-color: transparent;
   }
 
-  /* opened, to 833px: a sheet over the window, the bar too, growing from the
-     bar's height and ground to the window's and the menu's, as the menu */
   .cui-globalnav-search:popover-open,
   .cui-globalnav-bag:popover-open {
     position: fixed;
@@ -602,7 +256,6 @@
     padding: 54px 48px 84px;
   }
 
-  /* the sheet's X, where the menu's button is */
   .cui-globalnav-search .cui-globalnav-closebutton,
   .cui-globalnav-bag .cui-globalnav-closebutton {
     position: absolute;
@@ -617,8 +270,6 @@
     margin: 0;
   }
 
-  /* its magnifier, an image over the input's start, darker while the field
-     holds text */
   .cui-globalnav-searchfield > svg {
     position: absolute;
     top: -8px;
@@ -628,7 +279,6 @@
     transition: color 0.32s var(--cui-globalnav-ease);
   }
 
-  /* the caret shows the focus: apple.com's field has no outline, focused too */
   .cui-globalnav-searchinput {
     width: 100%;
     height: 40px;
@@ -652,9 +302,6 @@
     }
   }
 
-  /* its clear button, a reset button at its end, its mark centered on the
-     field and ending 1px in from its end (from 834px at it), hidden while
-     the field is empty */
   .cui-globalnav-searchreset {
     position: absolute;
     top: 1px;
@@ -715,7 +362,8 @@
     list-style: none;
   }
 
-  /* a row 12px out on either side, its ground on hover and focus */
+  /* a suggestion's text in a span: in this flex row its text and mark would
+     be boxes of their own, the spaces between them dropped */
   .cui-globalnav-searchlink {
     display: flex;
     align-items: flex-start;
@@ -757,9 +405,6 @@
     }
   }
 
-  /* its suggestions, the site's script's: while a row marks what was typed
-     (mark), each row muted and its marked part the rows' color, hovered and
-     focused too; a section after another 48px below it */
   :where(.cui-globalnav-searchpanel:has(.cui-globalnav-searchlink mark)) .cui-globalnav-searchlink {
     color: var(--cui-c-text-2);
   }
@@ -773,8 +418,6 @@
     margin-top: 48px;
   }
 
-  /* the bag (bag-flyout:*): its message over a line, its heading over its
-     links, each after its icon, the text 30px in */
   .cui-globalnav-bagpanel {
     position: relative;
     padding: 50px 48px 84px;
@@ -798,7 +441,6 @@
     color: var(--cui-c-text-2);
   }
 
-  /* its link, underlined, as apple.com's */
   :where(.cui-globalnav-bagtext) a {
     color: var(--cui-c-link);
     text-decoration-line: underline;
@@ -814,7 +456,6 @@
     color: var(--cui-c-text-2);
   }
 
-  /* a row its link's line, the link 7px in it above and below */
   .cui-globalnav-baglinks {
     margin: 0;
     padding: 0;
@@ -826,8 +467,6 @@
     }
   }
 
-  /* its icon before its text, in the secondary text's color, the link's
-     own hovered */
   .cui-globalnav-baglink {
     display: inline-flex;
     align-items: flex-start;
@@ -857,7 +496,6 @@
     }
   }
 
-  /* its message, line, heading and rows fading in together */
   .cui-globalnav-bag:popover-open {
     .cui-globalnav-bagmessage,
     .cui-globalnav-bagtext,
@@ -867,13 +505,11 @@
     }
   }
 
-  /* the curtain is the flyout's, from 834px */
   .cui-globalnav-curtain {
     display: none;
   }
 
-  /* the field and the rows fading in together, as the search opens with its
-     field empty */
+  /* :placeholder-shown: the field needs its placeholder */
   .cui-globalnav-search:popover-open:has(.cui-globalnav-searchinput:placeholder-shown) {
     .cui-globalnav-searchfield,
     .cui-globalnav-searchheading,
@@ -884,8 +520,6 @@
     .cui-globalnav-searchfield { transition-duration: 0.24s; }
   }
 
-  /* once something is typed, a heading and rows a site's script writes fade
-     in where they are, as apple.com's new results do, together */
   .cui-globalnav-search:popover-open:has(.cui-globalnav-searchinput:not(:placeholder-shown)) {
     .cui-globalnav-searchheading,
     .cui-globalnav-searchlinks > li {
@@ -929,14 +563,11 @@
       }
     }
 
-    /* the page under the sheet holds still, as apple.com's does */
     :root:has(:is(.cui-globalnav-search, .cui-globalnav-bag):popover-open) {
       overflow: hidden;
     }
   }
 
-  /* from 834px: the flyout, from the bar's bottom to the window's, its panel
-     and the curtain behind it */
   @media (width >= 834px) {
     .cui-globalnav-search:popover-open,
     .cui-globalnav-bag:popover-open {
@@ -948,7 +579,6 @@
       transition: none;
     }
 
-    /* the content 980px at most (apple.com's 1024px, 22px in) */
     .cui-globalnav-searchpanel {
       z-index: 1;
       padding: 32px max(22px, (100% - 980px) / 2) 80px;
@@ -1020,8 +650,6 @@
       }
     }
 
-    /* the bag's content 980px at most (apple.com's 1024px, 22px in), 40px
-       down, 84px room below; the type a size down, the text 24px in */
     .cui-globalnav-bagpanel {
       z-index: 1;
       padding: 40px max(22px, (100% - 980px) / 2) 84px;
@@ -1070,7 +698,8 @@
       }
     }
 
-    /* over the page under the flyout, a button that closes it */
+    /* a button, not the popover's ::backdrop: that takes no click, which
+       would close the popover and go on to the page under it */
     .cui-globalnav-curtain {
       position: absolute;
       inset: 0;
@@ -1109,8 +738,6 @@
       }
     }
 
-    /* while one is open the bar shows the flyout's ground, unblurred, and
-       its button is hovered's */
     .cui-globalnav:has(:is(.cui-globalnav-search, .cui-globalnav-bag):popover-open) {
       background-color: var(--cui-c-menu);
       backdrop-filter: none;
@@ -1122,7 +749,6 @@
     }
   }
 
-  /* from 834px, closed: one row of everything, spread across the bar */
   @media (width >= 834px) {
     .cui-globalnav-menubutton {
       display: none;
@@ -1177,9 +803,6 @@
     }
   }
 
-  /* a link's flyout (flyout:*): its button, after the link in the link's
-     cell; to 833px over the whole row, its chevron at the row's end, shown
-     hovered, sliding in */
   .cui-globalnav-flyoutbutton {
     position: relative;
     z-index: 2;
@@ -1216,9 +839,8 @@
     }
   }
 
-  /* the flyout: closed, not shown (the browser's own style for a popover,
-     undone but its display); to 833px a sheet over the open menu, its
-     groups one under another, sliding in from 8px on */
+  /* the browser's popover style undone but its display, not rule 6's size
+     or place */
   .cui-globalnav-flyout {
     inset: auto;
     width: auto;
@@ -1231,7 +853,6 @@
     overflow: visible;
     color: inherit;
     background-color: transparent;
-    /* its headings' and rows' fade in, opened or shown by the pointer */
     --cui-globalnav-flyout-fade-delay: 0.08s;
   }
 
@@ -1264,8 +885,7 @@
     color: var(--cui-c-text-2);
   }
 
-  /* a group of large links (apple.com's elevated one) shows no heading to
-     833px: the heading still names its list */
+  /* hidden, not left out: it names its list (aria-labelledby) */
   .cui-globalnav-flyoutgroup:has(> .cui-globalnav-flyoutlinks > li > .cui-globalnav-flyoutlink[data-size="lg"]) > .cui-globalnav-flyoutheading {
     display: none;
   }
@@ -1275,7 +895,6 @@
     padding: 0;
     list-style: none;
 
-    /* a row's type its own, its link's line on it, as apple.com's */
     > li {
       margin-inline: -11px;
       font-size: 17px;
@@ -1303,8 +922,6 @@
     }
   }
 
-  /* a link 11px in on either side, its text its own width; large, a group's
-     first links (apple.com's elevated) */
   .cui-globalnav-flyoutlink {
     display: flex;
     max-width: max-content;
@@ -1331,9 +948,6 @@
     padding: 11px;
   }
 
-  /* to 833px the sheet's back button at the bar's start, coming in from 4px
-     on; its X at the bar's end, the menu's own (closing the menu, and the
-     flyout with it) */
   .cui-globalnav-backbutton {
     position: absolute;
     top: 0;
@@ -1367,8 +981,6 @@
     right: 0;
   }
 
-  /* the menu's rows behind the open sheet: 8px back and out; from 834px,
-     the menu open still as the window widens, they are the bar's links */
   @media (width < 834px) {
     .cui-globalnav-list:popover-open:has(> li > .cui-globalnav-flyout:popover-open) > li {
       opacity: 0;
@@ -1391,11 +1003,6 @@
     }
   }
 
-  /* from 834px: the button 22 by 44 at the link's end and 14px past it
-     (over its room, not its text), drawing its chevron only with the focus
-     from the keyboard, its ring 7px in; on a screen with no hover over the
-     whole link, so a tap on the link opens the flyout (apple.com's script
-     opens it so on a touch screen: tap-flyout) */
   @media (width >= 834px) {
     .cui-globalnav-flyoutbutton {
       align-items: center;
@@ -1419,8 +1026,6 @@
       opacity: 1;
     }
 
-    /* opened by its button: from the bar's bottom to the window's, its panel
-       revealed from its top, its groups in a row, the curtain behind it */
     .cui-globalnav-flyout:popover-open {
       position-anchor: --cui-globalnav;
       top: anchor(bottom);
@@ -1431,7 +1036,6 @@
       transition: none;
     }
 
-    /* the content 980px at most (apple.com's 1024px, 22px in) */
     .cui-globalnav-flyoutpanel {
       display: flex;
       padding: 40px max(22px, (100% - 980px) / 2) 84px;
@@ -1509,7 +1113,6 @@
       display: none;
     }
 
-    /* its headings and rows fading in together */
     .cui-globalnav-flyout:popover-open {
       .cui-globalnav-flyoutheading,
       .cui-globalnav-flyoutlinks > li {
@@ -1531,8 +1134,6 @@
       }
     }
 
-    /* while one is open the bar shows its ground, unblurred, and its link is
-       hovered's */
     .cui-globalnav:has(.cui-globalnav-flyout:popover-open) {
       background-color: var(--cui-c-menu);
       backdrop-filter: none;
@@ -1543,10 +1144,6 @@
     }
   }
 
-  /* from 834px on a screen with no hover, the button over the whole link:
-     its chevron at its end, where a pointer's 22 by 44 button draws it,
-     after the link's text and not over it (a touch screen's keyboard, as an
-     iPad's) */
   @media (width >= 834px) and (hover: none) {
     .cui-globalnav-flyoutbutton {
       justify-content: flex-end;
@@ -1565,20 +1162,7 @@
       margin-right: -14px;
     }
 
-    /* from 834px with a pointer, no popover open: the pointer resting 120ms
-       on a link shows its flyout, the closed popover shown by the page from
-       the nav's top behind the bar's links, its panel revealed down from the
-       bar, its headings and rows coming in, the list's curtain fixed over the
-       window under it, blurring the page and taking no pointer (the pointer
-       on it is off the link), the bar's blur off; the pointer moved on along
-       the bar keeps the one it left until the next has grown; the pointer off
-       the bar and the flyout hides it, its rows going at once, its panel
-       back to the bar from 120ms, the curtain out from 80ms
-       (reference/flyout/) */
     .cui-globalnav:not(:has(:popover-open)) {
-      /* closed, the bar's height, so that no hidden flyout is laid out below
-         the bar (a page shorter than one would scroll to its foot): its
-         height flipped with its visibility */
       .cui-globalnav-flyout {
         position: absolute;
         top: 0;
@@ -1588,8 +1172,9 @@
         height: 44px;
         overflow: hidden;
         visibility: hidden;
-        /* allow-discrete in the shorthand: a transition-behavior after it,
-           the minifier writes before it, where the shorthand resets it */
+        /* allow-discrete in the shorthand: the minifier moves a
+           transition-behavior written after it before it, where the shorthand
+           resets it */
         transition: visibility 0s 0.36s allow-discrete, height 0s 0.36s allow-discrete;
 
         .cui-globalnav-flyoutpanel {
@@ -1603,7 +1188,6 @@
           display: none;
         }
 
-        /* the rows going, together */
         .cui-globalnav-flyoutheading,
         .cui-globalnav-flyoutlinks > li {
           opacity: 0;
@@ -1615,6 +1199,8 @@
         z-index: 1;
         height: auto;
         visibility: visible;
+        /* a delay, which reduced motion takes too: with it a pointer passing
+           over the bar shows each flyout it passes */
         transition-delay: 0.12s;
 
         .cui-globalnav-flyoutpanel {
@@ -1626,7 +1212,6 @@
         .cui-globalnav-flyoutlinks > li {
           opacity: 1;
           transition-duration: 0.32s;
-          /* the pointer's 120ms rest, then the open flyout's */
           transition-delay: calc(0.12s + var(--cui-globalnav-flyout-fade-delay));
         }
       }

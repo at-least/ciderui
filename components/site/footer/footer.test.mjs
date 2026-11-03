@@ -1,14 +1,4 @@
-// The footer against apple.com's home page (home:footer*): its ground and
-// type, its content's width and inset, its footnotes and their rule, its
-// directory (a row of columns, a title and its list, the gaps) from 834px;
-// to 833px its sections, rows over rules, one opened (home-footer:*); the
-// shop line, the legal row and its links' rules, the locale; on a dark page
-// light (product:footer*); a touch screen's links not underlined hovered
-// (rule 5, where apple.com's are: touch-home:footer.*). Golden, with their why: the letter-spacing, the
-// legal row's rule, a section's toggle and closed list, the chevron turned, the
-// notes' link and button (rule 4).
-
-import { examples, SIZE } from '../../../test/harness.mjs';
+import { examples, OUTLINE, SIZE, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const WIDE = [1600, 1200, 900];
@@ -17,13 +7,14 @@ const SECTION = '.cui-footer-column:first-child .cui-footer-section:first-child'
 
 export const cases = [
   {
-    // a link and a button in the footer's notes keep their own look (rule 4)
     name: 'footer-parts',
     html: ex('footer').replace('<section class="cui-footer-notes" aria-label="Footnotes">', '<section class="cui-footer-notes" aria-label="Footnotes"><p>See <a class="cui-link" href="#guide">the guide</a> <a class="cui-btn" href="#buy">Buy</a></p>'),
     widths: [1200],
     checks: [
       { target: '.cui-footer-notes .cui-link', props: ['color', 'text-decoration-line'], golden: 'a link in the footer\'s notes the kit\'s link still, not the footer\'s (rule 4)' },
       { target: '.cui-footer-notes .cui-btn', props: ['color', 'background-color', 'text-decoration-line'], golden: 'a button in the footer\'s notes the kit\'s button still (rule 4)' },
+      { target: '.cui-footer-links > li:last-child', pseudo: '::after', props: ['content'], golden: 'a rule between the legal links, none after the last' },
+      { target: '.cui-footer-locale', props: ['box-right'], golden: 'the locale at the legal row\'s end, the content\'s right edge (apple.com\'s, reference/apple.com/README.md)' },
     ],
   },
   {
@@ -50,7 +41,7 @@ export const cases = [
       { target: '.cui-footer-locale', state: 'hover', props: ['text-decoration-line'], apple: ['home', 'footer.locale-link', 'hover'] },
       // apple.com's two locales (a phone's, a desktop's) are 5px down alike
       { target: '.cui-footer-locale', props: ['margin-top'], apple: ['home', 'footer.locale'] },
-      { target: '.cui-footer', props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: '.cui-footer', props: ['letter-spacing'], golden: TRACKING },
     ],
   },
   {
@@ -86,7 +77,6 @@ export const cases = [
     ],
   },
   {
-    // a phone's section opened by its title
     name: 'footer-open',
     html: ex('footer'),
     widths: PHONE,
@@ -111,8 +101,6 @@ export const cases = [
     ],
   },
   {
-    // a touch screen's links underline on no hover (rule 5), where apple.com's
-    // do (touch-home:footer.link, footer.legal-link, footer.locale-link)
     name: 'touch',
     html: ex('footer'),
     touch: true,
@@ -121,6 +109,51 @@ export const cases = [
       { target: `${SECTION} .cui-footer-list a`, state: 'hover', props: ['text-decoration-line'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s underlines (touch-home:footer.link)' },
       { target: '.cui-footer-links > li:first-child a', state: 'hover', props: ['text-decoration-line'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s underlines (touch-home:footer.legal-link)' },
       { target: '.cui-footer-locale', state: 'hover', props: ['text-decoration-line'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s underlines (touch-home:footer.locale-link)' },
+    ],
+  },
+  {
+    name: 'footer step at 834px',
+    html: ex('footer'),
+    widths: [834, 833],
+    checks: [
+      { target: '.cui-footer-content', props: ['padding-left', 'padding-right'], golden: '22px in from 834px, 16px to 833px: apple.com\'s footer steps there, with the global nav (reference/apple.com/README.md, not read at these widths)' },
+      { target: '.cui-footer-directory', props: ['flex-direction'], golden: 'a row of columns from 834px, a column of sections to 833px, as apple.com\'s' },
+      { target: `${SECTION} .cui-footer-toggle`, props: ['display'], golden: 'its toggle from 833px down alone' },
+    ],
+  },
+  {
+    name: 'footer open at once',
+    html: ex('footer'),
+    widths: PHONE,
+    click: `${SECTION} .cui-footer-title label`,
+    wait: 0,
+    checks: [
+      { target: `${SECTION} .cui-footer-list`, props: ['display', 'box-height'], golden: 'opened at once, its whole list at the click: apple.com\'s moves in 0.3s' },
+    ],
+  },
+  {
+    name: 'footer toggle focus',
+    html: ex('footer'),
+    widths: PHONE,
+    press: ['Tab', 'Tab'],
+    checks: [
+      { target: `${SECTION} .cui-footer-toggle`, props: ['focused'], golden: 'the toggle, out of sight, in the focus order after the notes\' link' },
+      { target: `${SECTION} .cui-footer-title label`, props: OUTLINE, golden: 'its focus ring on its title' },
+    ],
+  },
+  {
+    // from 834px: below it a closed section's links have no box
+    name: 'footer touch targets',
+    html: ex('footer'),
+    touch: true,
+    widths: [1200],
+    checks: [
+      { target: `${SECTION} .cui-footer-title label`, props: ['box-height'], golden: 'a section\'s title 44px tall on a touch screen' },
+      { target: '.cui-footer-locale', props: ['box-height'], golden: 'the locale 44px tall at least on a touch screen' },
+      { target: '.cui-footer-links > li:first-child a', props: ['box-height'], golden: 'a legal link 44px tall on a touch screen' },
+      { target: '.cui-footer-links > li:first-child', pseudo: '::after', props: ['top', 'margin-top'], golden: 'the rule beside the legal links at their line\'s middle, as without touch' },
+      { target: `${SECTION} .cui-footer-list li:first-child a`, props: ['box-height'], golden: 'a link 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), a tablet\'s columns too' },
+      { target: `${SECTION} .cui-footer-list li:first-child`, props: ['margin-bottom'], golden: 'the list\'s gaps inside the links\' 44px' },
     ],
   },
 ];

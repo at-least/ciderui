@@ -1,20 +1,9 @@
-// The stories against apple.com's Newsroom index (newsroom-index:*): the
-// feed's ground and room, its heading, the grid's gaps, the tiles one, two
-// and three across (the example's first, third and fourth, as the probes'):
-// their corners, ground, height, no hover; their text's room, category,
-// headline and date; at the kit's widths and both sides of 735 and 1069.
-// Golden, with their why: the widths and places (an apple.com check reads
-// no width), the grid's columns and spans, the picture's shape, the
-// letter-spacing, the category uppercase, the colors in a dark block.
-
-import { examples, SIZE } from '../../../test/harness.mjs';
+import { examples, SIZE, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const PAGE = 'newsroom-index';
 const WIDTHS = [1600, 1200, 1069, 1068, 900, 735, 734, 390];
-const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
-// the example's stories in the places the probes read: the first (one
-// across), the third (two), the fourth (three)
+// the example's stories in the probes' order: the first one across, the third two, the fourth three
 const TILES = [['first', 1], ['third', 3], ['fourth', 4]];
 const tile = (n) => `.cui-stories-list > li:nth-child(${n}) > .cui-story`;
 

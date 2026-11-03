@@ -1,25 +1,3 @@
-/* ciderui — the ribbon: apple.com's message above a page's content, a band
- * on the alternate ground, its text centered, a more link after it.
- *
- * From apple.com's ribbons (reference/apple.com/): ribbon:* (the iPhone
- * page's), bag:ribbon (the bag's).
- *
- *   <div class="cui-ribbon">
- *     <div class="cui-ribbon-content">
- *       <p>Pre-order now. <a class="cui-link" data-variant="more" href="/buy">…Check out now…</a></p>
- *     </div>
- *   </div>
- *
- * cui-ribbon                 the band, clipping its content (apple.com's)
- * cui-ribbon-content         its ground: 16px above and below, the message
- *                            within 83.33% of the window, centered
- *
- * apple.com's: the ground, the type, the padding, the width, the link's
- * color hovered (ribbon:ribbon.link:hover, ribbon.link-hovered). ciderui's:
- * the letter-spacing (tokens.css); it is still as the page shows it (not
- * apple.com's iPhone page's drop on the accent, turning to its ground
- * 1.6s on: an entrance that only draws the eye, DESIGN.md decision 25). */
-
 @layer components {
   .cui-ribbon {
     overflow: hidden;

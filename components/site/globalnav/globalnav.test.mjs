@@ -1,32 +1,4 @@
-// The global nav against apple.com: the bar from 834px (home:nav*: its
-// height, material, content, row, links, logo and icons), the phone's bar
-// (the same probes at 390px: the logo, the compact icons, the menu's
-// button, their places), the phone's menu opened by its button (home:menu*:
-// the sheet, its rows, the faded logo and search, the X, the page held), its
-// motion and its start, the keys (the focus on the X, Tab to the first link,
-// Escape back to the button: reference/popover/), a dark nav
-// (newsroom:nav*, newsroom:menu*), a clear one (product:nav), a touch
-// screen. Its search opened by its button (search:*, search-dark:*): from
-// 834px the flyout, its field, its quick links, the curtain, the bar over
-// it; to 833px the sheet, the page held; its motion and its start; the focus
-// on its field, Tab to the first link, Escape, the curtain, a click on the
-// bar and its button again closing it (reference/search/); a dark nav's; a
-// touch screen's. A link's flyout (flyout:*, flyout-dark:*, flyout-phone:*,
-// tap-flyout:*): from 834px shown by the pointer resting on its link (its
-// bar, its panel, its groups, headings, rows and links, the curtain, the
-// link's button and its chevron), its motion, the pointer off the bar and on
-// to another link, opened by its button (the keys), on a touch screen its
-// button over the link; to 833px over the open menu, its back button and X,
-// a row hovered; a dark nav's (reference/flyout/). What can be selected
-// (nav-select:*): none of it, its search's field too. Golden, with their why: the letter-spacing, the images'
-// widths (apple.com's SVG boxes), the X's lines (apple.com's end points,
-// reference/icons/), the focus, the places apple.com's recorded with its
-// locale banner above them, where ciderui's markup differs from apple.com's
-// with the same picture, and a popover's rows fading in together where they
-// are (apple.com's one after another, from a few px up: DESIGN.md decision
-// 25).
-
-import { examples, MOTION, OUTLINE, PADDING, SIZE, SLIDE, STAGGER } from '../../../test/harness.mjs';
+import { examples, MOTION, OUTLINE, PADDING, SIZE, SLIDE, STAGGER, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const NAV = ex('globalnav');
@@ -40,7 +12,6 @@ const LIST = '.cui-globalnav-list';
 const LOGO = '.cui-globalnav-logo';
 const BUTTON = '.cui-globalnav-menubutton';
 const CLOSE = '.cui-globalnav-closebutton';
-// the first and second links (Store, Laptops), the search and the bag
 const LINK = `${LIST} > li:nth-child(3) > .cui-globalnav-link`;
 const LINK2 = `${LIST} > li:nth-child(4) > .cui-globalnav-link`;
 const SEARCH = `${LIST} > li:nth-child(7) > .cui-globalnav-icon`;
@@ -54,8 +25,6 @@ const TRIGGER_AT = { 1600: 900, 1200: 900 };
 const GROUND_AT = { 390: 900 };
 const OPEN = { click: BUTTON, widths: [390], height: 900 };
 
-// the search: the example with the button opening it, opened at the widths
-// apple.com's was read at, a flyout from 834px and a sheet to 833px
 const SEARCH_NAV = ex('search');
 const SEARCH_DARK = SEARCH_NAV.replace('class="cui-globalnav"', 'class="cui-globalnav cui-dark"');
 const SBUTTON = `${LIST} > li:nth-child(7) > .cui-globalnav-icon`;
@@ -70,12 +39,8 @@ const CURTAIN = '.cui-globalnav-curtain';
 const SCLOSE = `${FLY} .cui-globalnav-closebutton`;
 const RESET = '.cui-globalnav-searchreset';
 const MAGNIFIER = `${FIELD} > .cui-globalnav-image`;
-// with text in its field, as apple.com's was read (search-text:*): typed,
 // its value, not its value attribute, which is what a reset gives it back
 const SEARCH_TEXT = `${SEARCH_NAV}<script>document.querySelector('.cui-globalnav-searchinput').value = 'phone';</script>`;
-// showing suggestions, as a site's script leaves it once la is typed
-// (search-suggestions:*): the field's value, its two sections, each row's
-// typed part marked
 const SUGGESTING = `${ex('suggestions')}<script>document.querySelector('.cui-globalnav-searchinput').value = 'la';</script>`;
 const SUGGESTING_DARK = SUGGESTING.replace('class="cui-globalnav"', 'class="cui-globalnav cui-dark"');
 const LHEAD = `${PANEL} > .cui-globalnav-searchheading:first-of-type`;
@@ -84,18 +49,14 @@ const LROW = `${PANEL} > .cui-globalnav-searchlinks:first-of-type > li:first-chi
 const LROW2 = `${PANEL} > .cui-globalnav-searchlinks:first-of-type > li:last-child > .cui-globalnav-searchlink`;
 const SROW = `${PANEL} > .cui-globalnav-searchlinks:last-of-type > li:first-child > .cui-globalnav-searchlink`;
 const MARK = `${LROW} mark`;
-// a row the site's script writes once the search is open, after a frame
 const LATER = `<script>document.querySelector('.cui-globalnav-search').addEventListener('toggle', (e) => { if (e.newState === 'open') requestAnimationFrame(() => requestAnimationFrame(() => { const list = document.querySelector('.cui-globalnav-searchlinks'); list.append(list.firstElementChild.cloneNode(true)); })); });</script>`;
 const WIDE = [1600, 1200, 900, 834];
 const NARROW = [833, 390];
 const SEARCHING = { click: SBUTTON, height: 900 };
-// the search's motion held at its start, for a case that reads its start
 const HOLD = '<style>.cui-globalnav-search, .cui-globalnav-search * { transition-delay: 10s !important; }</style>';
 const TYPE = [...SIZE, 'color'];
 
-// a link's flyout: the example with Store's and Laptops'
 const FLYOUT_NAV = ex('flyout');
-// the local nav's example, under the bar
 const LOCALNAV = examples(new URL('../localnav/', import.meta.url))('localnav');
 const FLYOUT_DARK = FLYOUT_NAV.replace('class="cui-globalnav"', 'class="cui-globalnav cui-dark"');
 const STORE_ITEM = `${LIST} > li:nth-child(3)`;
@@ -110,7 +71,6 @@ const FPANEL = `${LAPTOPS_FLY} > .cui-globalnav-flyoutpanel`;
 const [GROUP1, GROUP2, GROUP3] = [1, 2, 3].map(n => `${FPANEL} > .cui-globalnav-flyoutgroup:nth-of-type(${n})`);
 const [FHEAD1, FHEAD2, FHEAD3] = [GROUP1, GROUP2, GROUP3].map(g => `${g} > .cui-globalnav-flyoutheading`);
 const FLIST2 = `${GROUP2} > .cui-globalnav-flyoutlinks`;
-// the first group's first two rows (large), its fifth (small), the second's first two
 const ROW_LG = `${GROUP1} > .cui-globalnav-flyoutlinks > li:nth-child(1)`;
 const ROW_LG2 = `${GROUP1} > .cui-globalnav-flyoutlinks > li:nth-child(2)`;
 const ROW_AFTER = `${GROUP1} > .cui-globalnav-flyoutlinks > li:nth-child(5)`;
@@ -124,14 +84,9 @@ const CHEVRON = `${LAPTOPS_BUTTON} > .cui-globalnav-image`;
 const CHEVRON_COMPACT = `${LAPTOPS_BUTTON} > .cui-globalnav-image-compact`;
 const HOVERING = { hover: LAPTOPS_LINK, widths: WIDE, height: 900 };
 const ITEM_MOTION = [...MOTION, 'transition-delay'];
-// apple.com's flyout is read below its locale banner (70px from 834px): a
-// place here is the same distance from the nav's top
 const FPLACE = 'the same distance from the nav\'s top as apple.com\'s (flyout:*, its locale banner above its nav)';
-// apple.com's places in the window are below its locale banner (70px from
-// 834px, 135px to 833px): a place here is the same distance from the bar
 const PLACE = 'the same distance from the bar as apple.com\'s (search:*, its locale banner above its nav)';
 
-// the bag: the example with its button opening its flyout, an empty bag's
 const BAG_NAV = ex('bag');
 const BAG_DARK = BAG_NAV.replace('class="cui-globalnav"', 'class="cui-globalnav cui-dark"');
 const BBUTTON = `${LIST} > li:nth-child(8) > .cui-globalnav-icon`;
@@ -147,15 +102,10 @@ const BLINK = `${BROW} > .cui-globalnav-baglink`;
 const BCURTAIN = `${BFLY} > .cui-globalnav-curtain`;
 const BCLOSE = `${BFLY} .cui-globalnav-closebutton`;
 const BAGGING = { click: BBUTTON, height: 900 };
-// the bag's motion held at its start, for a case that reads its start
 const BHOLD = '<style>.cui-globalnav-bag, .cui-globalnav-bag * { transition-delay: 10s !important; }</style>';
-// the flyouts' example with the bag's flyout in the bag link's place: what
-// site.GlobalNav writes for both
 const FLYOUT_BAG = FLYOUT_NAV
   .replace(/<li><a class="cui-globalnav-icon" href="\/bag"[^\n]*<\/a><\/li>/, BAG_NAV.match(/<li><button class="cui-globalnav-icon" popovertarget="cui-globalnav-bag"[^\n]*<\/button><\/li>/)[0])
   .replace(/(<button class="cui-globalnav-menubutton"[^\n]*<\/button>)/, (m) => `${m}\n${BAG_NAV.slice(BAG_NAV.indexOf('<div class="cui-globalnav-bag"'), BAG_NAV.lastIndexOf('</div>\n</nav>'))}`);
-// apple.com's bag is read below its locale banner (70px from 834px, 135px
-// to 833px): a place here is the same distance from the bar
 const BPLACE = 'the same distance from the bar as apple.com\'s (bag-flyout:*, its locale banner above its nav)';
 
 export const cases = [
@@ -170,7 +120,7 @@ export const cases = [
       { target: LINK, props: ['font-size', 'line-height', 'font-weight', 'color', ...MOTION], apple: ['home', 'nav.link'] },
       { target: LINK, state: 'hover', props: ['color'], apple: ['home', 'nav.link', 'hover'] },
       { target: LINK, props: [...FLEX, ...INLINE, 'box-height', 'text-decoration-line'], apple: ['home', 'nav.link-box'] },
-      { target: LINK, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: LINK, props: ['letter-spacing'], golden: TRACKING },
       { target: LOGO, props: [...FLEX, ...INLINE, 'box-height', 'box-left', 'color', ...MOTION], apple: ['home', 'nav.logo'] },
       { target: LOGO, state: 'hover', props: ['color'], apple: ['home', 'nav.logo', 'hover'] },
       { target: SEARCH, props: [...FLEX, ...INLINE, 'box-height', 'color', ...MOTION], apple: ['home', 'nav.search'] },
@@ -211,9 +161,6 @@ export const cases = [
       { target: LINK, props: ['box-height'], golden: 'to 833px the links are the menu\'s rows, not the bar\'s: apple.com\'s bar holds the logo, the search, the bag and the button' },
     ],
   },
-  // nothing in the nav can be selected, as apple.com's (nav-select:*): the
-  // bar, its list, logo, links, icons and button, a closed flyout, and the
-  // search's field (reference/select/: it still takes text)
   {
     name: 'select',
     html: FLYOUT_NAV,
@@ -258,7 +205,7 @@ export const cases = [
       { target: LINK, props: ['padding-top', 'box-top', 'box-height'], apple: ['home', 'menu.link-first'] },
       { target: LINK2, props: ['font-size', 'line-height', 'font-weight', 'color', 'display', ...PADDING, 'box-top', 'box-height'], apple: ['home', 'menu.link'] },
       { target: LINK2, state: 'hover', props: ['color'], apple: ['home', 'menu.link', 'hover'] },
-      { target: LINK2, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: LINK2, props: ['letter-spacing'], golden: TRACKING },
       // apple.com fades the links themselves; ciderui their items
       { target: `${LIST} > li:nth-child(1)`, props: ['opacity', 'visibility'], apple: ['home', 'menu.logo'] },
       { target: `${LIST} > li:nth-child(7)`, props: ['opacity', 'visibility'], apple: ['home', 'menu.search'] },
@@ -296,10 +243,30 @@ export const cases = [
       { target: LIST, props: ['position', 'background-color'], golden: 'closed, the bar\'s row again (reference/popover/)' },
       { target: 'html', props: ['overflow-y'], golden: 'the page scrolls again' },
       { target: LINK, props: ['box-height'], golden: 'the links are the menu\'s again' },
+      { target: BUTTON, props: ['focused'], golden: 'the X closes it, the focus back on the menu\'s button (reference/popover/)' },
     ],
   },
   {
-    // a menu opened on a phone and the window widened (a tablet turned) stays a sheet
+    name: 'menu-closed-at-once',
+    html: NAV,
+    ...OPEN,
+    click: [BUTTON, CLOSE],
+    wait: 0,
+    checks: [
+      { target: LIST, props: ['position', 'box-height'], golden: 'closed at once, out of the top layer (apple.com\'s runs its motion back)' },
+    ],
+  },
+  {
+    name: 'menu-tab-out',
+    html: `${NAV}<a class="after" href="#after">After</a>`,
+    ...OPEN,
+    press: ['Tab', 'Tab', 'Tab', 'Tab', 'Tab'],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: '.after', props: ['focused'], golden: 'Tab past its last link leaves it for the page: no script holds the focus in it (apple.com\'s does)' },
+    ],
+  },
+  {
     name: 'menu-widened',
     html: NAV,
     click: BUTTON,
@@ -311,9 +278,6 @@ export const cases = [
     ],
   },
   {
-    // read at its start: the rows still transparent, where they are
-    // (@starting-style through the compiled stylesheet), 200ms before they
-    // fade in
     name: 'menu-start',
     html: NAV,
     ...OPEN,
@@ -328,7 +292,7 @@ export const cases = [
     ...OPEN,
     reducedMotion: 'reduce',
     checks: [
-      { target: CLOSE, props: ['focused'], golden: 'opened, the focus is on the X (autofocus; reference/popover/)' },
+      { target: CLOSE, props: ['focused'], golden: 'opened, the focus is on the X (autofocus; reference/popover/): the menu\'s button beside the list, as a popover opened by a button inside it holds the focus on that button' },
     ],
   },
   {
@@ -338,7 +302,7 @@ export const cases = [
     press: 'Tab',
     reducedMotion: 'reduce',
     checks: [
-      { target: LINK, props: ['focused'], golden: 'Tab goes from the X to the first link, not back to a button (reference/popover/)' },
+      { target: LINK, props: ['focused'], golden: 'Tab goes from the X to the first link, not back to a button (reference/popover/): the X second in the list, after the logo' },
     ],
   },
   {
@@ -386,7 +350,6 @@ export const cases = [
     ],
   },
   {
-    // the product page's: a clear bar over its dark hero
     name: 'clear',
     html: clear('cui-globalnav cui-dark'),
     widths: DESKTOP,
@@ -403,6 +366,14 @@ export const cases = [
     checks: [
       { target: '.cui-globalnav', props: ['background-color', 'backdrop-filter'], golden: 'clear on a light page as on a dark one (product:nav)' },
       { target: LINK, props: ['color'], apple: ['home', 'nav.link'] },
+    ],
+  },
+  {
+    name: 'sticky',
+    html: NAV.replace('class="cui-globalnav"', 'class="cui-globalnav sticky top-0 z-0"'),
+    widths: [1200],
+    checks: [
+      { target: '.cui-globalnav', props: ['position', 'z-index'], golden: 'a site\'s sticky and z-index, utilities, win over its position and 9999: its place the page\'s' },
     ],
   },
   {
@@ -431,42 +402,37 @@ export const cases = [
     widths: WIDE,
     reducedMotion: 'reduce',
     checks: [
-      // the bar over it, its button, the page not held
       { target: '.cui-globalnav', props: ['backdrop-filter'], apple: ['search', 'nav'] },
       { target: '.cui-globalnav', props: ['background-color'], apple: ['search', 'flyout'] },
       { target: '.cui-globalnav', props: ['background-image'], golden: 'the flyout\'s ground alone: apple.com\'s flyout runs from the nav\'s top (search:flyout, margin-top -44px) over the nav\'s own ground, its #fafafc at the bar (a pixel read)' },
       { target: SBUTTON, props: ['color'], apple: ['search', 'search'] },
       { target: 'html', props: ['overflow-y'], apple: ['search', 'root'] },
-      // the flyout from the bar's bottom, its panel, the curtain behind it
       { target: FLY, props: ['box-top', 'box-left', 'box-height'], golden: 'from the bar\'s bottom (anchor positioning) to the window\'s, across it (reference/search/)' },
       { target: PANEL, props: ['background-color'], apple: ['search', 'flyout'] },
       { target: PANEL, props: ['box-height', 'box-top'], golden: 'apple.com\'s flyout below the bar, 344px (search:flyout.scroll), its content\'s' },
       { target: PANEL, props: ['padding-top', 'padding-bottom'], apple: ['search', 'flyout.content'] },
       { target: CURTAIN, props: ['background-color', 'backdrop-filter', 'opacity'], apple: ['search', 'curtain'] },
       { target: CURTAIN, props: ['box-top', 'box-height', 'hit'], golden: 'behind the panel from the bar\'s bottom to the window\'s, a button: what the pointer finds under the panel (apple.com\'s curtain is the window\'s, under its flyout)' },
-      // the field: its row, its input, its placeholder, its magnifier
       { target: FIELD, props: ['height'], apple: ['search', 'field'] },
       { target: FIELD, props: ['box-top', 'box-left'], golden: PLACE },
       { target: INPUT, props: [...TYPE, 'height', 'background-color', 'border-top-width', 'border-top-style', 'border-top-left-radius', 'outline-style', 'caret-color'], apple: ['search', 'field.input'] },
-      { target: INPUT, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: INPUT, props: ['letter-spacing'], golden: TRACKING },
       { target: INPUT, props: ['padding-left', 'padding-top'], golden: 'its text 28px in from the field\'s start, where apple.com\'s is (its input 6px out, 34px in: search:field.input)' },
       { target: INPUT, pseudo: '::placeholder', props: ['color', 'font-weight', 'opacity'], apple: ['search', 'field.placeholder'] },
       { target: `${FIELD} .cui-globalnav-image`, props: ['box-height', 'color'], as: { 'box-height': 'box-height', color: 'fill' }, apple: ['search', 'field.submit-image'] },
       { target: `${FIELD} .cui-globalnav-image`, props: ['box-width', 'box-top', 'box-left'], golden: 'apple.com\'s 30 by 32 magnifier, 6px out from the field\'s start, 0.5px up (search:field.submit-image)' },
       { target: `${FIELD} .cui-globalnav-image-compact`, props: ['box-height'], golden: 'the phone\'s magnifier, not drawn from 834px' },
       { target: INPUT, props: ['focused'], golden: 'opened, the focus is on its field (autofocus; reference/search/)' },
-      // empty, its clear button hidden
       { target: RESET, props: ['opacity', 'visibility'], apple: ['search', 'field.reset'] },
-      // the quick links
       { target: HEADING, props: [...TYPE], apple: ['search', 'results.header'] },
       { target: HEADING, props: ['box-height'], apple: ['search', 'results.header'] },
-      { target: HEADING, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: HEADING, props: ['letter-spacing'], golden: TRACKING },
       { target: HEADING, props: ['box-top'], golden: `32px below the field, ${PLACE}` },
       { target: QLINK, props: [...TYPE, ...PADDING, 'display', 'align-items', 'text-decoration-line', 'background-color', 'border-top-left-radius', 'box-height'], apple: ['search', 'results.link'] },
       { target: QLINK, state: 'hover', props: ['color', 'background-color'], apple: ['search', 'results.link', 'hover'] },
       { target: QLINK, state: 'focus-visible', props: ['color', 'background-color'], apple: ['search', 'results.link', 'focus-visible'] },
       { target: QLINK, state: 'focus-visible', props: ['outline-style'], golden: 'the focus ring with its hovered look (base.css; apple.com forced into focus-visible draws none)' },
-      { target: QLINK, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: QLINK, props: ['letter-spacing'], golden: TRACKING },
       { target: QLINK, props: ['box-top', 'box-left'], golden: `8px below the heading, 8px out from the field's start, ${PLACE}` },
       { target: QLINK2, props: ['box-top'], golden: `4px below the first, ${PLACE}` },
       { target: `${QLINK} .cui-globalnav-image`, props: ['box-height', 'color'], as: { color: 'fill' }, apple: ['search', 'results.icon-image'] },
@@ -523,13 +489,11 @@ export const cases = [
       { target: PANEL, props: MOTION, golden: 'from 834px revealed down and from the bar\'s ground in 0.24s, apple.com\'s flyout\'s height and ground (search:nav\'s animations)' },
       { target: CURTAIN, props: MOTION, golden: 'apple.com\'s curtain in 0.32s (search:curtain), from 834px' },
       { target: QLINK, props: MOTION, golden: 'apple.com\'s color and ground in 0.02s (search:results.link; its fill too, where the arrow here is drawn in currentColor)' },
+      { target: `${SCLOSE} path:first-child`, props: MOTION, golden: 'the sheet\'s X turns as the menu\'s' },
     ],
   },
   {
-    // read at its start: apple.com's from (search:nav's animations); held
-    // there, as what moves can move before it is read (the panel and the
-    // curtain at once, the field and its rows after 200ms, which a busy run
-    // has passed)
+    // held: the delay holds the first frame
     name: 'search-start',
     html: `${HOLD}${SEARCH_NAV}`,
     ...SEARCHING,
@@ -554,6 +518,54 @@ export const cases = [
     ],
   },
   {
+    name: 'search-typed',
+    html: SEARCH_NAV,
+    ...SEARCHING,
+    widths: [1600],
+    press: 'a',
+    reducedMotion: 'reduce',
+    checks: [
+      { target: RESET, props: ['visibility'], golden: 'a key typed shows the clear button: the field takes text in a nav none of which can be selected (reference/select/)' },
+    ],
+  },
+  {
+    name: 'search-closed-at-once',
+    html: SEARCH_NAV,
+    click: [SBUTTON, SBUTTON],
+    height: 900,
+    widths: [1600],
+    wait: 0,
+    checks: [{ target: FLY, props: ['display'], golden: 'closed at once (apple.com\'s runs its motion back)' }],
+  },
+  {
+    name: 'search-widened',
+    html: SEARCH_NAV,
+    ...SEARCHING,
+    widths: [390, 900],
+    reducedMotion: 'reduce',
+    checks: [{ target: FLY, props: ['display', 'box-top'], golden: 'a window widened with it open keeps it, as the other layout (apple.com\'s closes it at 833px)' }],
+  },
+  {
+    name: 'search-narrowed',
+    html: SEARCH_NAV,
+    ...SEARCHING,
+    widths: [1600, 390],
+    reducedMotion: 'reduce',
+    checks: [{ target: FLY, props: ['display', 'box-top'], golden: 'a window narrowed with it open keeps it, as the other layout (apple.com\'s closes it at 833px)' }],
+  },
+  {
+    name: 'search-link',
+    html: SEARCH_NAV.replaceAll('href="/', 'href="#/'),
+    click: [SBUTTON, LINK],
+    height: 900,
+    widths: [1600],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: FLY, props: ['display'], golden: 'a click on the bar\'s link, outside it, closes it (reference/search/)' },
+      { target: LINK, props: ['focused'], golden: 'and reaches the link (reference/search/)' },
+    ],
+  },
+  {
     name: 'search-tab',
     html: SEARCH_NAV,
     ...SEARCHING,
@@ -570,7 +582,7 @@ export const cases = [
     press: 'Escape',
     reducedMotion: 'reduce',
     checks: [
-      { target: FLY, props: ['display'], golden: 'Escape closes it (a text field: reference/search/)' },
+      { target: FLY, props: ['display'], golden: 'Escape closes it: a text field, where type="search" leaves it open in Safari (reference/search/)' },
       { target: SBUTTON, props: ['focused'], golden: 'the focus back on its button (reference/search/)' },
       { target: 'html', props: ['overflow-y'], golden: 'the page scrolls again' },
     ],
@@ -655,7 +667,6 @@ export const cases = [
     checks: [{ target: FLY, props: ['background-color'], apple: ['search-dark', 'content'] }],
   },
   {
-    // text in its field: the clear button shown, the magnifier darker
     name: 'search-text',
     html: SEARCH_TEXT,
     ...SEARCHING,
@@ -679,7 +690,6 @@ export const cases = [
     ],
   },
   {
-    // its clear button clicked: the field empty, the button hidden again
     name: 'search-clear',
     html: SEARCH_TEXT,
     click: [SBUTTON, RESET],
@@ -693,7 +703,6 @@ export const cases = [
     ],
   },
   {
-    // a field the page fills (value=): the reset gives that back
     name: 'search-clear-value',
     html: SEARCH_NAV.replace('<input class="cui-globalnav-searchinput"', '<input class="cui-globalnav-searchinput" value="phone"'),
     click: [SBUTTON, RESET],
@@ -715,8 +724,6 @@ export const cases = [
     ],
   },
   {
-    // its suggestions: two sections, the quick links' type and rows, each
-    // row's typed part marked
     name: 'search-suggestions',
     html: SUGGESTING,
     ...SEARCHING,
@@ -791,10 +798,7 @@ export const cases = [
     ],
   },
   {
-    // with text in the field, a row the site's script writes fades in where
-    // it is, as apple.com's new results do (search-typed:ip, a section to
-    // a section: its rows before fade out under them, here gone); read 150ms
-    // after the click, inside the opening's 200ms delay
+    // read inside the opening's 200ms delay
     name: 'search-suggestions-rows',
     html: `${SUGGESTING}${LATER}`,
     ...SEARCHING,
@@ -806,12 +810,10 @@ export const cases = [
     ],
   },
   {
-    // read at its start, any motion held there: from transparent, in place
     name: 'search-suggestions-start',
     html: `${HOLD}${SUGGESTING}${LATER}`,
     ...SEARCHING,
-    // read 1s in, its motion held at its start (HOLD): run to its end, it
-    // would be read 10s on, at its end
+    // not run to its end: HOLD's 10s delay would read it there
     wait: 1000,
     widths: [1600],
     checks: [
@@ -839,7 +841,6 @@ export const cases = [
     checks: [{ target: LINK2, state: 'hover', props: ['color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-home:menu.link)' }],
   },
   {
-    // shown by the pointer resting on Laptops' link
     name: 'flyout',
     html: FLYOUT_NAV,
     ...HOVERING,
@@ -848,6 +849,7 @@ export const cases = [
       { target: '.cui-globalnav', props: ['position', 'isolation'], golden: 'the containing block and the stacking context of a flyout the pointer shows (a site\'s sticky replaces the position)' },
       { target: LAPTOPS_LINK, props: ['color', ...MOTION], apple: ['flyout', 'link.open'] },
       { target: TABLETS_LINK, props: ['color'], apple: ['flyout', 'link.other'] },
+      { target: TABLETS_LINK, props: ['hit'], golden: 'the bar\'s links over the flyout, which runs from the nav\'s top (reference/flyout/)' },
       { target: LAPTOPS_FLY, props: ['position', 'visibility'], apple: ['flyout', 'flyout'] },
       { target: LAPTOPS_FLY, props: ['box-top', 'box-left', 'box-width', 'height', 'overflow-y'], golden: 'from the nav\'s top across the window, as apple.com\'s (flyout:flyout, 44px down less 44px: at its nav\'s top, below its banner), its panel\'s height (apple.com\'s its own, its overflow hidden)' },
       { target: FPANEL, props: ['background-color'], apple: ['flyout', 'flyout'] },
@@ -859,7 +861,7 @@ export const cases = [
       { target: GROUP3, props: ['max-width', 'padding-right', 'margin-bottom'], apple: ['flyout', 'group.last'] },
       { target: FHEAD1, props: [...TYPE, 'margin-top', 'margin-bottom', 'display', 'box-height'], apple: ['flyout', 'header.elevated'] },
       { target: FHEAD2, props: [...TYPE, 'margin-top', 'margin-bottom', 'box-height'], apple: ['flyout', 'header'] },
-      { target: FHEAD1, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: FHEAD1, props: ['letter-spacing'], golden: TRACKING },
       { target: FLIST2, props: ['list-style-type', 'margin-top', 'margin-bottom', 'padding-top', 'padding-left'], apple: ['flyout', 'list'] },
       { target: ROW_LG, props: ['margin-top', 'margin-left', 'margin-right', 'box-height'], apple: ['flyout', 'item.elevated'] },
       { target: ROW_LG2, props: ['margin-top', 'box-height'], apple: ['flyout', 'item.elevated2'] },
@@ -870,16 +872,14 @@ export const cases = [
       { target: LINK_LG, props: [...TYPE, ...PADDING, 'margin-bottom', 'display', 'text-decoration-line', 'background-color', ...MOTION, 'box-height'], apple: ['flyout', 'link.elevated'] },
       { target: LINK_LG, state: 'hover', props: ['color'], apple: ['flyout', 'link.elevated', 'hover'] },
       { target: LINK_LG, state: 'focus-visible', props: ['color', ...OUTLINE], apple: ['flyout', 'link.elevated', 'focus-visible'] },
-      { target: LINK_LG, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: LINK_LG, props: ['letter-spacing'], golden: TRACKING },
       { target: LINK_AFTER, props: [...TYPE, ...PADDING, 'margin-bottom', 'display', 'box-height'], apple: ['flyout', 'link.after'] },
       { target: LINK_AFTER, state: 'hover', props: ['color'], apple: ['flyout', 'link.after', 'hover'] },
       { target: FLINK, props: [...TYPE, ...PADDING, 'margin-bottom', 'display', 'text-decoration-line', ...MOTION, 'box-height'], apple: ['flyout', 'link'] },
       { target: FLINK, state: 'hover', props: ['color'], apple: ['flyout', 'link', 'hover'] },
       { target: FLINK, state: 'focus-visible', props: ['color', ...OUTLINE], apple: ['flyout', 'link', 'focus-visible'] },
-      // the curtain, the list's ::after
       { target: LIST, pseudo: '::after', props: ['position', 'top', 'background-color', 'backdrop-filter', 'opacity', 'visibility'], apple: ['flyout', 'curtain'] },
       { target: LIST, pseudo: '::after', props: ['z-index', 'pointer-events'], golden: 'under the bar\'s links and the flyout, in the nav (apple.com\'s under the nav, 9998 to its 9999); taking no pointer, so that the pointer on it is off the link (apple.com\'s takes it, its script closing the flyout as the pointer leaves the nav: reference/flyout/)' },
-      // the link's button and its chevron
       { target: LAPTOPS_BUTTON, props: ['box-height', 'cursor', 'color', 'display', 'align-items', 'justify-content', 'background-color', 'border-top-width'], apple: ['flyout', 'trigger'] },
       { target: LAPTOPS_BUTTON, state: 'focus-visible', props: OUTLINE, apple: ['flyout', 'trigger', 'focus-visible'] },
       { target: LAPTOPS_BUTTON, props: ['box-width', 'margin-right'], golden: 'apple.com\'s 22 by 44 (flyout:trigger), from 8px before the link\'s end to 14px past it, over its room, not its text (apple.com\'s from 15px before it, over its text\'s end, which a click there opens the flyout from)' },
@@ -889,7 +889,6 @@ export const cases = [
     ],
   },
   {
-    // a local nav under the bar, as a product page's
     name: 'flyout-localnav',
     html: `${FLYOUT_NAV}\n${LOCALNAV}`,
     ...HOVERING,
@@ -918,7 +917,6 @@ export const cases = [
     ],
   },
   {
-    // the pointer off the bar, down to the page
     name: 'flyout-closed',
     html: FLYOUT_NAV,
     ...HOVERING,
@@ -952,7 +950,6 @@ export const cases = [
     ],
   },
   {
-    // the pointer on along the bar from Store's link to Laptops'
     name: 'flyout-change',
     html: FLYOUT_NAV,
     ...HOVERING,
@@ -977,7 +974,6 @@ export const cases = [
     ],
   },
   {
-    // opened by its button: the keyboard's (a click here)
     name: 'flyout-button',
     html: FLYOUT_NAV,
     click: LAPTOPS_BUTTON,
@@ -997,6 +993,30 @@ export const cases = [
       { target: LAPTOPS_CURTAIN, props: ['box-top', 'box-height', 'hit'], golden: 'behind the panel from the bar\'s bottom to the window\'s, a button: what the pointer finds under the panel (as the search\'s)' },
       { target: BACK, props: ['display'], golden: 'the sheet\'s back button, none from 834px' },
       { target: FCLOSE, props: ['display'], golden: 'the sheet\'s X, none from 834px' },
+    ],
+  },
+  {
+    name: 'flyout-curtain',
+    html: FLYOUT_NAV,
+    click: [LAPTOPS_BUTTON, LAPTOPS_CURTAIN],
+    widths: [1600],
+    height: 900,
+    reducedMotion: 'reduce',
+    checks: [
+      { target: LAPTOPS_FLY, props: ['position', 'visibility'], golden: 'a click on its curtain closes it (reference/flyout/): in the bar and hidden again' },
+    ],
+  },
+  {
+    name: 'flyout-button-pointer',
+    html: FLYOUT_NAV,
+    click: LAPTOPS_BUTTON,
+    hover: STORE_LINK,
+    widths: [1600],
+    height: 900,
+    reducedMotion: 'reduce',
+    checks: [
+      { target: STORE_FLY, props: ['display'], golden: 'no flyout by the pointer while one its button opened is open (apple.com\'s opens the pointer\'s in its place)' },
+      { target: LAPTOPS_FLY, props: ['display'], golden: 'the one its button opened still open' },
     ],
   },
   {
@@ -1035,8 +1055,6 @@ export const cases = [
     ],
   },
   {
-    // a screen with no hover: its button over the link, which a tap opens the
-    // flyout by, as apple.com's script does there (tap-flyout)
     name: 'flyout-touch',
     html: FLYOUT_NAV,
     touch: true,
@@ -1067,6 +1085,18 @@ export const cases = [
     ],
   },
   {
+    name: 'flyout-tap-again',
+    html: FLYOUT_NAV,
+    touch: true,
+    click: [LAPTOPS_BUTTON, LAPTOPS_BUTTON],
+    widths: [1200],
+    height: 900,
+    reducedMotion: 'reduce',
+    checks: [
+      { target: LAPTOPS_FLY, props: ['display'], golden: 'a second tap on the link closes it (apple.com\'s follows the link then: tap-flyout)' },
+    ],
+  },
+  {
     name: 'flyout-dark',
     html: FLYOUT_DARK,
     ...HOVERING,
@@ -1084,8 +1114,6 @@ export const cases = [
     ],
   },
   {
-    // a flyout opened over the open menu, then the window widened past 834px:
-    // the bar's links shown again, the menu's rows out only below 834px
     name: 'flyout-widened',
     html: FLYOUT_NAV,
     click: [BUTTON, LAPTOPS_BUTTON],
@@ -1097,7 +1125,6 @@ export const cases = [
     ],
   },
   {
-    // to 833px: the menu opened, then Laptops' row
     name: 'flyout-phone',
     html: FLYOUT_NAV,
     click: [BUTTON, LAPTOPS_BUTTON],
@@ -1145,7 +1172,6 @@ export const cases = [
     ],
   },
   {
-    // read at its start, its motion held there
     name: 'flyout-phone-start',
     html: `<style>.cui-globalnav-flyout, .cui-globalnav-flyout * { transition-delay: 10s !important; }</style>${FLYOUT_NAV}`,
     click: [BUTTON, LAPTOPS_BUTTON],
@@ -1183,7 +1209,6 @@ export const cases = [
     ],
   },
   {
-    // a phone's width with a pointer: a row hovered shows its chevron
     name: 'flyout-phone-row',
     html: FLYOUT_NAV,
     click: BUTTON,
@@ -1196,6 +1221,7 @@ export const cases = [
       { target: CHEVRON_COMPACT, props: ['box-height'], apple: ['flyout-phone', 'row.chevron-image'] },
       { target: CHEVRON_COMPACT, props: ['box-top', 'box-left', 'box-width', 'transform'], golden: 'apple.com\'s 9 by 48 chevron 19px in from the row\'s end, 2px down it (flyout-phone:row.chevron-image, its row 93px down)' },
       { target: LAPTOPS_LINK, props: ['color'], apple: ['flyout-phone', 'row.text'] },
+      { target: LAPTOPS_LINK, props: ['hit'], golden: 'to 833px its button over the whole row' },
     ],
   },
   {
@@ -1222,8 +1248,6 @@ export const cases = [
       { target: CHEVRON_COMPACT, state: 'hover', on: LAPTOPS_BUTTON, props: ['opacity'], rest: 'its chevron not shown by a tap (rule 5), where apple.com\'s shows on a hovered row' },
     ],
   },
-  // the bag (bag-flyout:*): opened by its button, from 834px a flyout from
-  // the bar's bottom over its curtain, to 833px a sheet over the window
   {
     name: 'bag',
     html: BAG_NAV,
@@ -1231,14 +1255,12 @@ export const cases = [
     widths: WIDE,
     reducedMotion: 'reduce',
     checks: [
-      // the bar over it, its button, the page not held
       { target: '.cui-globalnav', props: ['backdrop-filter'], apple: ['bag-flyout', 'nav'] },
       { target: '.cui-globalnav', props: ['background-color'], apple: ['bag-flyout', 'flyout'] },
       { target: '.cui-globalnav', props: ['background-image'], golden: 'the flyout\'s ground alone: apple.com\'s flyout runs from the nav\'s top (bag-flyout:flyout, margin-top -44px) over the nav\'s own ground' },
       { target: BBUTTON, props: ['color'], apple: ['bag-flyout', 'link.bag'] },
       { target: BBUTTON, props: ['focused'], golden: 'opened by its button, the focus stays on it: its X (autofocus) is not shown from 834px' },
       { target: 'html', props: ['overflow-y'], apple: ['bag-flyout', 'root'] },
-      // the flyout from the bar's bottom, its panel, the curtain behind it
       { target: BFLY, props: ['box-top', 'box-left', 'box-height'], golden: 'from the bar\'s bottom (anchor positioning) to the window\'s, across it, as the search\'s (reference/search/)' },
       { target: BPANEL, props: ['background-color'], apple: ['bag-flyout', 'flyout'] },
       { target: BPANEL, props: ['padding-top', 'padding-bottom'], apple: ['bag-flyout', 'flyout.content'] },
@@ -1247,26 +1269,24 @@ export const cases = [
       { target: BCURTAIN, props: ['background-color', 'backdrop-filter', 'opacity'], apple: ['bag-flyout', 'curtain'] },
       { target: BCURTAIN, props: ['box-top', 'box-height', 'hit'], golden: 'behind the panel from the bar\'s bottom to the window\'s, a button: what the pointer finds under the panel (apple.com\'s curtain is the window\'s, under its flyout)' },
       { target: BCLOSE, props: ['display'], golden: 'the sheet\'s X, not shown from 834px' },
-      // its message, its line, its heading
       { target: BMESSAGE, props: [...TYPE, 'margin-bottom', 'box-height', 'box-left'], apple: ['bag-flyout', 'bag.header'] },
-      { target: BMESSAGE, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: BMESSAGE, props: ['letter-spacing'], golden: TRACKING },
       { target: BMESSAGE, props: ['box-top'], golden: `40px below the bar, ${BPLACE}` },
       { target: BTEXT, props: [...TYPE, 'box-height', 'box-left'], apple: ['bag-flyout', 'bag.subheader'] },
-      { target: BTEXT, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: BTEXT, props: ['letter-spacing'], golden: TRACKING },
       { target: BTEXT, props: ['box-top'], golden: `24px below the message, ${BPLACE}` },
       { target: BTEXTLINK, props: ['color', 'text-decoration-line'], apple: ['bag-flyout', 'bag.subheader-link'] },
       { target: BTEXTLINK, state: 'focus-visible', props: ['outline-style', 'outline-color', 'outline-width'], apple: ['bag-flyout', 'bag.subheader-link', 'focus-visible'] },
       { target: BTEXTLINK, state: 'focus-visible', props: ['outline-offset'], golden: 'the kit\'s one ring, 3px out (base.css), where apple.com\'s is 1px out (bag-flyout:bag.subheader-link)' },
       { target: BHEADING, props: [...TYPE, 'margin-top', 'padding-bottom', 'box-height', 'box-left'], apple: ['bag-flyout', 'bag.nav-header'] },
-      { target: BHEADING, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: BHEADING, props: ['letter-spacing'], golden: TRACKING },
       { target: BHEADING, props: ['box-top'], golden: `36px below the line, ${BPLACE}` },
-      // its links: a 28px row each, its icon before its text
       { target: BROW, props: ['box-height'], apple: ['bag-flyout', 'bag.nav-item'] },
       { target: BROW2, props: ['box-top'], golden: `28px below the first, ${BPLACE}` },
       { target: BLINK, props: ['font-size', 'line-height', 'font-weight', 'margin-top', 'margin-bottom', 'display', 'text-decoration-line', 'background-color', 'box-height', 'box-left'], apple: ['bag-flyout', 'bag.nav-link'] },
       { target: BLINK, props: ['color'], apple: ['bag-flyout', 'bag.nav-text'] },
       { target: BLINK, state: 'hover', props: ['color'], apple: ['bag-flyout', 'bag.nav-text', 'hover'] },
-      { target: BLINK, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: BLINK, props: ['letter-spacing'], golden: TRACKING },
       { target: BLINK, props: ['transition-property', 'transition-duration'], apple: ['bag-flyout', 'bag.nav-link'] },
       { target: BLINK, state: 'focus-visible', props: ['outline-style', 'outline-color', 'outline-width'], apple: ['bag-flyout', 'bag.nav-link', 'focus-visible'] },
       { target: BLINK, state: 'focus-visible', props: ['color', 'outline-offset'], golden: 'the kit\'s one ring, 3px out (base.css), where apple.com\'s is 1px out, its color the link\'s (bag-flyout:bag.nav-link)' },
@@ -1290,7 +1310,7 @@ export const cases = [
       { target: BPANEL, props: ['padding-bottom'], apple: ['bag-flyout', 'flyout.scroll'] },
       { target: BCURTAIN, props: ['display'], golden: 'no curtain: the sheet is over the window (apple.com\'s, under it, is not seen)' },
       { target: BMESSAGE, props: [...TYPE, 'margin-bottom', 'box-height', 'box-left'], apple: ['bag-flyout', 'bag.header'] },
-      { target: BMESSAGE, props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: BMESSAGE, props: ['letter-spacing'], golden: TRACKING },
       { target: BMESSAGE, props: ['box-top'], golden: `50px down the sheet, ${BPLACE}` },
       { target: BTEXT, props: [...TYPE, 'box-left'], apple: ['bag-flyout', 'bag.subheader'] },
       { target: BTEXTLINK, props: ['color', 'text-decoration-line'], apple: ['bag-flyout', 'bag.subheader-link'] },
@@ -1325,8 +1345,6 @@ export const cases = [
     ],
   },
   {
-    // read at its start, held there: apple.com's from (the link flyouts'
-    // rule, globalnav-flyout-item, on its rows)
     name: 'bag-start',
     html: `${BHOLD}${BAG_NAV}`,
     ...BAGGING,
@@ -1425,7 +1443,6 @@ export const cases = [
     ],
   },
   {
-    // the pointer on a link with a flyout while the bag is open shows none
     name: 'bag-pointer',
     html: FLYOUT_BAG,
     ...BAGGING,

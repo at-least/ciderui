@@ -1,13 +1,6 @@
-// The stat against apple.com's: iPhone 18 Pro's (product:stat.*: its
-// captions' and value's type, the gaps; on its dark page the value's color)
-// and AirPods Pro's large one (airpods:stat.*, on a light page: its three
-// tiers, its colors). Golden, with their why: the letter-spacing, the dark
-// captions' fitted color.
-
-import { examples, SIZE } from '../../../test/harness.mjs';
+import { examples, SIZE, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
 
 export const cases = [
   {

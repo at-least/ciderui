@@ -1,49 +1,13 @@
-/* ciderui — the accordion: apple.com's FAQ, questions under rules, each
- * opening its answer below it with no script (<details>), its chevron at
- * the end turning up.
- *
- * From apple.com's bag (reference/apple.com/): bag:accordion.item (its
- * rule), bag-accordion:* (opened: its outer item, a large title; its
- * compact items, the questions; the first opened, its answer).
- *
- *   <div class="cui-accordion">
- *     <details class="cui-accordion-item">
- *       <summary class="cui-accordion-question">How long does delivery take?(icon::DISCLOSURE)</summary>
- *       <div class="cui-accordion-answer"><p>…</p></div>
- *     </details>
- *   </div>
- *
- * cui-accordion           the questions
- *   data-size="lg"        a large question (the bag's outer one): 32px
- *                         (24px below 735px), 32px from its rule (24px)
- * cui-accordion-item      a question and its answer, a rule above it
- * cui-accordion-question  the question: 17px at 600 (14px below 735px), 17px
- *                         from the rule, its chevron at its end in the muted
- *                         text, the secondary hovered; open, turned up
- * cui-accordion-answer    the answer: 14px, 13.6px below the question, 28px
- *                         above the next rule, 35px short of its end from
- *                         735px; it opens to its height in 0.3s
- *
- * apple.com's: the rule, the type, the room, the chevron's colors and its
- * line, the motion's time. ciderui's: the letter-spacing (tokens.css);
- * <details> with no script (apple.com's buttons and script); the chevron
- * turned with a transform in 0.32s (apple.com's line moved point by point
- * through a flat one); its height moves where the browser can move to auto
- * (interpolate-size: Chromium 151, Chrome 155), and opens at once where it
- * cannot (Safari 27.0.1 on macOS and 26.5 on iOS, Firefox 153:
- * reference/details/), clipping its height as it moves and not its width, so
- * that a focus ring in it shows whole (reference/details/). */
-
 @layer components {
   .cui-accordion {
+    /* Safari and Firefox have no interpolate-size: there the answer opens
+       at once */
     interpolate-size: allow-keywords;
   }
 
   .cui-accordion-item {
     border-top: 1px solid var(--cui-c-divider);
 
-    /* its height clipped as it moves, not its width: the ring of what begins
-     * a line in it, drawn 3px outside it, shown whole */
     &::details-content {
       height: 0;
       overflow: visible clip;
@@ -73,7 +37,6 @@
       display: none;
     }
 
-    /* in the middle of a 32px column at its end, as apple.com's */
     svg {
       flex: none;
       width: 14px;
@@ -119,7 +82,6 @@
     }
   }
 
-  /* the bag's outer question (its own, not a compact one in its answer) */
   .cui-accordion[data-size="lg"] > .cui-accordion-item > .cui-accordion-question {
     padding: 24px 0;
     font-size: 24px;

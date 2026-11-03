@@ -39,5 +39,8 @@
  "focus | .cui-swatch:first-child .cui-swatch-ring | 1200 | outline-style": "solid",
  "focus | .cui-swatch:first-child .cui-swatch-ring | 1200 | outline-width": "2px",
  "focus | .cui-swatch:first-child .cui-swatch-ring | 1200 | outline-color": "rgb(0, 113, 227)",
- "focus | .cui-swatch:first-child .cui-swatch-ring | 1200 | outline-offset": "3px"
+ "focus | .cui-swatch:first-child .cui-swatch-ring | 1200 | outline-offset": "3px",
+ "swatch touch | .cui-swatch:nth-child(2) | 390 | padding-top": "4px",
+ "swatch touch | .cui-swatch:nth-child(2) | 390 | padding-left": "4px",
+ "swatch touch | .cui-swatch:nth-child(2) | 390 | box-height": "44px"
 }

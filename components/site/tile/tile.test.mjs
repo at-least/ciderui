@@ -1,13 +1,4 @@
-// The tile against apple.com's home page: a promo tile (home:tile.light,
-// .promo-*: its ground, size, padding and layout, its headline, subhead and
-// buttons), a full-width one (home:hero.*: the same a step larger, its
-// callout, its call-to-action buttons), a dark one (home:tile.dark*), the
-// type through the widths (home:type.tile-*, .promo-*), the layers (its
-// picture, its link, its buttons above it), the product page's rounded
-// corners. Golden, with their why: the letter-spacing, a promo tile's
-// callout, the buttons' row, the layers' order.
-
-import { examples, PADDING, SIZE } from '../../../test/harness.mjs';
+import { examples, PADDING, SIZE, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const PAD = ['padding-top', 'padding-bottom'];
@@ -30,7 +21,8 @@ export const cases = [
       { target: '.cui-tile-ctas .cui-btn', props: [...SIZE, 'padding-top', 'padding-left', 'min-width', 'box-height'], apple: ['home', 'tile.promo-button'] },
       { target: '.cui-tile-link', props: ['position'], apple: ['home', 'tile.link'] },
       { target: '.cui-tile-link', props: ['box-height'], apple: ['home', 'tile.light'] },
-      { target: '.cui-tile-headline', props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: '.cui-tile-headline', props: ['letter-spacing'], golden: TRACKING },
+      { target: '.cui-tile-subhead', props: ['letter-spacing'], golden: TRACKING },
       { target: '.cui-tile-ctas', props: ['display'], golden: 'a flex row of the gaps apple.com\'s grid has (home:tile.promo-ctas)' },
     ],
   },
@@ -40,6 +32,7 @@ export const cases = [
     checks: [
       { target: '.cui-tile-callout', props: SIZE, apple: ['home', 'type.promo-callout'] },
       { target: '.cui-tile-callout', props: ['color', 'margin-top'], golden: 'the secondary text, 8px below the subhead: apple.com\'s promo tiles measured carry no callout; a full tile\'s, below 735px (home:hero.callout)' },
+      { target: '.cui-tile-callout', props: ['letter-spacing'], golden: TRACKING },
     ],
   },
   {

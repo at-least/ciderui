@@ -1,9 +1,3 @@
-// The swatch against apple.com's buy page (buy:swatch*): the list, the
-// ring at rest and checked (a checked copy), the radio over it, the color's
-// circle and its ground before its image, the name hidden but read.
-// Golden, with their why: the fixed widths, the gaps, an item's height,
-// the focus ring.
-
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
@@ -30,8 +24,6 @@ export const cases = [
     ],
   },
   {
-    // forced colors (a high-contrast theme): a swatch shows its color, as a
-    // picture does, and its checked ring the accent, the others clear
     name: 'forced',
     html: ex('swatches'),
     forcedColors: true,
@@ -42,7 +34,6 @@ export const cases = [
     ],
   },
   {
-    // Tab from the page's start: the checked radio takes the focus
     name: 'focus',
     html: ex('swatches'),
     widths: [1200],
@@ -51,6 +42,15 @@ export const cases = [
     checks: [
       { target: `${CHECKED} .cui-swatch-input`, props: ['focused'], golden: 'the group\'s checked radio takes the keyboard\'s focus' },
       { target: `${CHECKED} .cui-swatch-ring`, props: ['outline-style', 'outline-width', 'outline-color', 'outline-offset'], golden: 'the focus ring around the ring, as on an option (apple.com\'s swatches take no keyboard focus until a model is chosen: not measured)' },
+    ],
+  },
+  {
+    name: 'swatch touch',
+    html: ex('swatches'),
+    widths: [390],
+    touch: true,
+    checks: [
+      { target: REST, props: ['padding-top', 'padding-left', 'box-height'], golden: 'on a touch screen 4px of room round each ring, for its radio\'s 44px' },
     ],
   },
 ];

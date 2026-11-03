@@ -1,19 +1,6 @@
-// The shelf against apple.com's store (store:shelf*): its room below, its
-// header's inset and room, its headline's and secondary text's type and
-// colors, its scroller (its overflow and snapping, the room above and
-// below its cards in sight, its inset at each end, its gap), its items'
-// snapping, the first two cards' places; scrolled 300px, the second card
-// snapped to the inset; scrolled to its end, the last card as far in; its
-// paddles (store:shelf.paddle*: their places over the scroller, the next
-// shown, the previous faded out, their fade). Golden, with their why: the
-// letter-spacing, the header's box, the foot in sight, the scrollbar hidden,
-// the last card's place at the end, no paddles on a touch screen, a paddle
-// that does not shrink.
-
-import { examples, MOTION, SIZE } from '../../../test/harness.mjs';
+import { examples, MOTION, SIZE, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
 const SCROLLER = '.cui-shelf-scroller';
 const card = (n) => `${SCROLLER} > li:nth-child(${n}) .cui-card`;
 
@@ -31,11 +18,11 @@ export const cases = [
       { target: '.cui-shelf-subhead', props: ['letter-spacing'], golden: TRACKING },
       { target: SCROLLER, props: ['overflow-x', 'overflow-y', 'scroll-snap-type', 'overscroll-behavior-x'], apple: ['store', 'shelf.scroller'] },
       { target: SCROLLER, props: ['padding-top'], apple: ['store', 'shelf.platter'] },
-      // in sight: apple.com's crop, its cards and the room above and below them
+      // apple.com's scroller runs under its crop: the crop is what shows
       { target: SCROLLER, props: ['box-height'], apple: ['store', 'shelf.crop'] },
       { target: SCROLLER, props: ['padding-bottom'], golden: 'the 22px of apple.com\'s foot in sight: its scroller\'s 40px under a crop 38px below its cards (store:shelf.crop, .platter)' },
       { target: SCROLLER, props: ['scrollbar-width'], golden: 'hidden, as apple.com\'s crop hides it' },
-      // the inset at each end: the header's, the last item's padding
+      // apple.com's start inset is its header's margin, its end the last item's padding
       { target: SCROLLER, props: ['padding-left', 'scroll-padding-left'], as: { 'padding-left': 'margin-left', 'scroll-padding-left': 'margin-left' }, apple: ['store', 'shelf.header'] },
       { target: SCROLLER, props: ['padding-right'], apple: ['store', 'shelf.card-last'] },
       { target: SCROLLER, props: ['column-gap'], as: { 'column-gap': 'margin-right' }, apple: ['store', 'shelf.card'] },
@@ -45,8 +32,7 @@ export const cases = [
     ],
   },
   {
-    // between the first card and the second, nearer the second: it snaps
-    // there, at the inset (at 1600px four cards scroll less than a card)
+    // not 1600: there four cards scroll less than a card
     name: 'snap',
     html: ex('shelf'),
     widths: [1200, 900, 390],

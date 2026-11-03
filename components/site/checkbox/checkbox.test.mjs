@@ -1,11 +1,4 @@
-// The checkbox against the sign-in widget's (signin:checkbox*): the input's
-// place, the label's type and place, the box's size, edge, corners and
-// ground; checked, its accent (signin:checkbox.checked); focused from the
-// keyboard, its ring (Tab from the page's start). Golden, with their why:
-// the letter-spacing, the box's width, the check shown and hidden, the ring,
-// no margin below.
-
-import { examples, SIZE } from '../../../test/harness.mjs';
+import { examples, SIZE, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const BOX = ['padding-top', 'padding-left', 'border-top-width', 'border-top-style', 'border-top-color', 'border-bottom-color', 'border-top-left-radius', 'background-color'];
@@ -22,8 +15,10 @@ export const cases = [
       { target: INDICATOR, props: [...BOX, 'position', 'top', 'left', 'display', 'box-height'], apple: ['signin', 'checkbox'] },
       { target: INDICATOR, props: ['box-width'], golden: 'apple.com\'s 16px box (signin:checkbox), a width no text sets' },
       { target: `${INDICATOR} svg`, props: ['visibility'], golden: 'its check hidden until it is checked' },
-      { target: '.cui-checkbox-label', props: ['letter-spacing'], golden: 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s' },
+      { target: '.cui-checkbox-label', props: ['letter-spacing'], golden: TRACKING },
       { target: '.cui-checkbox', props: ['margin-bottom'], golden: 'no margin of its own: apple.com\'s 11px below it is the form\'s spacing, the page\'s (signin:checkbox.box)' },
+      { target: '.cui-checkbox-input', props: ['box-width'], golden: 'the input the box\'s 16px' },
+      { target: INDICATOR, props: ['hit'], golden: 'the box drawn over the input: the pointer finds the box' },
     ],
   },
   {
@@ -35,7 +30,6 @@ export const cases = [
     ],
   },
   {
-    // Tab from the page's start: the checkbox takes the focus, its box the ring
     name: 'focus',
     html: ex('checkbox'),
     widths: [1200],
@@ -47,7 +41,6 @@ export const cases = [
     ],
   },
   {
-    // clicked: no ring (a click is not the keyboard's)
     name: 'click',
     html: ex('checkbox'),
     widths: [1200],

@@ -1,4 +1,10 @@
 {
+ "quicklinks-place | .cui-quicklinks-list | 1600 | display": "flex",
+ "quicklinks-place | .cui-quicklinks-list | 1600 | flex-wrap": "wrap",
+ "quicklinks-place | .cui-quicklinks-list | 1200 | display": "flex",
+ "quicklinks-place | .cui-quicklinks-list | 1200 | flex-wrap": "wrap",
+ "quicklinks-place | .cui-quicklinks-list | 900 | display": "flex",
+ "quicklinks-place | .cui-quicklinks-list | 900 | flex-wrap": "wrap",
  "quicklinks-phone | .cui-quicklinks | 390 | margin-left": "22px",
  "quicklinks-phone | .cui-quicklinks | 390 | margin-right": "22px",
  "quicklinks | .cui-quicklinks-list li:nth-child(2) | 1600 | box-x": "118.125px",

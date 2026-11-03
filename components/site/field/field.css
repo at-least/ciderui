@@ -1,99 +1,6 @@
-/* ciderui — the field: apple.com's text field, 56px, its label the
- * placeholder until the field is focused or filled, then small at its top;
- * in error, with its message under it; disabled; with a currency or a
- * country code before it; and the store's dropdown, a select with the same
- * look.
- *
- * From apple.com's own form field, the store's (reference/apple.com/):
- * retail:field* (the retail page's form-textbox: a plain one the probe
- * adds with its classes; in error and disabled, copies), retail-dark:field*
- * (the same in a dark color scheme), giftcard:* (the gift card's buy page:
- * an empty required field the focus left, its message, a disabled field,
- * the currency field), tradein:dropdown* (iPhone 18 Pro's trade-in, the
- * store's dropdown), retail:dropdown.* (in error and disabled, copies); its
- * icons ciderui's own (reference/icons/).
- *
- *   <div class="cui-field">
- *     <input class="cui-field-input" id="email" type="email" name="email" placeholder=" " autocomplete="email">
- *     <label class="cui-field-label" for="email">Email</label>
- *   </div>
- *
- *   in error, its message after the field:
- *     <input class="cui-field-input" … aria-invalid="true" aria-describedby="email-message">
- *   <p class="cui-field-message" id="email-message">(icon::ALERT)Please enter a valid email address.</p>
- *
- *   with a currency before it, after its label:
- *     <span class="cui-field-prefix" id="amount-prefix">$</span>
- *
- *   a message of several lines, its textarea in a box:
- *   <div class="cui-field">
- *     <div class="cui-field-box"><textarea class="cui-field-textarea" id="comments" name="comments" placeholder=" "></textarea></div>
- *     <label class="cui-field-label" for="comments">Comments</label>
- *   </div>
- *
- *   the dropdown, its empty choice first:
- *   <div class="cui-field">
- *     <select class="cui-field-input" id="model" name="model">
- *       <option value="">Select</option>
- *       <option value="phone-3">Cider Phone 3</option>
- *     </select>
- *     <label class="cui-field-label" for="model">Choose your model</label>
- *     (icon::DROPDOWN, class cui-field-chevron)
- *   </div>
- *
- * cui-field          the field, on its own light ground in any block
- * cui-field-input    the input or the select: 56px, its 1px edge, 12px
- *                    corners, on the field's translucent ground, 17px text
- *                    18px down and 16px in; focused, a 2px accent edge (15px
- *                    in, the box unchanged). An input's placeholder a space
- *                    (placeholder=" "), so the label can tell it empty; a
- *                    select empty while its empty choice (value="") is
- *                    chosen, its text then not shown. aria-invalid="true": in
- *                    error, its edge and label red on a pink ground (focused,
- *                    the focus's look); disabled: grey, its edge faint
- * cui-field-label    after the input: 17px in the secondary text, 18px
- *                    down, as its placeholder; with the field focused or
- *                    filled, 12px at its top, in 0.125s
- * cui-field-box      a textarea's box, with the field's edge, corners and
- *                    ground: 95px, its label in its top 23px, which grows
- *                    as the textarea is made taller; focused, its 2px
- *                    accent edge; in error and disabled, as the input
- * cui-field-textarea in the box: 63px (3 lines), at least 25px, taller or
- *                    shorter by its handle, 13px in; aria-invalid and
- *                    disabled as the input's
- * cui-field-prefix   after the label: a currency or a country code at the
- *                    field's start, on its own faint ground, a rule after it
- * cui-field-chevron  a select's chevron (icon::DROPDOWN), at its end
- * cui-field-message  after the field: its error, 12px in red after its mark
- *                    (icon::ALERT), 8px under it
- *
- * apple.com's: the sizes, the edge, the ground, the type, the label and
- * its motion; the light look in a dark color scheme; the error's colors, its
- * message's place and type; the disabled look; the prefix's; the dropdown's.
- * ciderui's: the letter-spacing (tokens.css); the label floats with no
- * script, read off the input (focused, or its placeholder not shown: a
- * select's, its empty choice not chosen; apple.com's script sets a class);
- * focused, the accent edge alone and no ring (a text field matches
- * :focus-visible however it is focused, so no ring can show for the keyboard
- * alone, as apple.com's script's does); the field on a light ground of its
- * own, its corners the input's, so it reads in a dark block too (apple.com
- * shows no field in one); no margin below it, or below its message
- * (apple.com's 14px and 12px are the form's spacing, the page's); the error
- * is the page's to set, with its message (aria-invalid, from its server:
- * apple.com's script checks the field as the focus leaves it); the
- * message's red is apple.com's on a light page and a fitted one in a dark
- * block (apple.com's is below 4.5:1 on black: tokens.css); a select in
- * error or disabled as the field, as apple.com's stylesheet draws it; the
- * prefix's width its text's, the input's and the label's room for one
- * character (apple.com's onedigit field's); the textarea's box focused by
- * its textarea's focus, with no script (apple.com's script sets a class);
- * no counter (apple.com's stylesheet defines one, which no page read shows);
- * in forced colors (a high-contrast theme) an empty select's label at its
- * top, where Chromium draws its own text ("Select"), its color forced, under
- * the label as the placeholder (apple.com's the same: reference/forced/). */
-
 @layer components {
   .cui-field {
+    /* rule 6: the containing block its label, prefix and chevron are placed in */
     position: relative;
     color-scheme: light;
     border-radius: 12px;
@@ -103,6 +10,7 @@
   .cui-field-input {
     display: block;
     width: 100%;
+    /* rule 6: apple.com's fixed height */
     height: 56px;
     margin: 0;
     padding: 18px 16px 0;
@@ -148,7 +56,6 @@
     transition: all 0.125s ease-in;
   }
 
-  /* focused or filled: at the field's top */
   .cui-field-input:focus + .cui-field-label,
   .cui-field-input:not(:placeholder-shown) + .cui-field-label {
     top: 10px;
@@ -161,9 +68,8 @@
     color: var(--cui-c-error);
   }
 
-  /* the dropdown: room for its chevron at its end, a pointer over it; empty,
-     its text not shown and its label the placeholder, focused too (a
-     select matches no :placeholder-shown, so it is filled to the rule above) */
+  /* a select matches no :placeholder-shown: the label rule above floats it
+     always, and an empty one is taken back to the placeholder below */
   select.cui-field-input {
     padding-right: 40px;
     text-overflow: ellipsis;
@@ -178,7 +84,7 @@
       cursor: default;
     }
 
-    /* its list, which some browsers draw in the select's color */
+    /* some browsers draw the list in the select's color, transparent when empty */
     option {
       color: var(--cui-c-text);
     }
@@ -190,8 +96,8 @@
     line-height: 21px;
     letter-spacing: var(--cui-tracking-17);
 
-    /* forced colors draw its own text, its color forced (Chromium's): the
-       label at its top, as a filled one's, not over that text */
+    /* Chromium in forced colors draws the empty choice's text, its color
+       forced: the label at the top, not over that text */
     @media (forced-colors: active) {
       top: 10px;
       font-size: 12px;
@@ -200,16 +106,14 @@
     }
   }
 
-  /* its label, over it, passes the pointer to it, as apple.com's
-     (tradein:dropdown.label): a click on the label opens its list, where the
-     label's own click would only focus it */
+  /* a click through the label opens the list; the label's own click would
+     only focus the select */
   select.cui-field-input + .cui-field-label {
     pointer-events: none;
   }
 
-  /* a textarea's box: the input's edge, corners and ground, the label in its
-     top 23px; the textarea in it scrolls under that room, not under the
-     label */
+  /* the label's room is the box's padding: the textarea's text scrolls out
+     below it, not under the label */
   .cui-field-box {
     display: flex;
     padding: 23px 3px 3px;
@@ -281,8 +185,6 @@
     opacity: 0.42;
   }
 
-  /* a currency or a country code at the field's start, 1px down it: the
-     input's text and the label after it */
   .cui-field-prefix {
     position: absolute;
     top: 1px;
@@ -313,7 +215,6 @@
     }
   }
 
-  /* its error under it: the mark, 3px, the message */
   .cui-field-message {
     display: flex;
     margin: 8px 0 0;
