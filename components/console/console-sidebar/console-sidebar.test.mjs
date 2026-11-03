@@ -6,8 +6,8 @@ const D = 'component-DisplayList-variant';
 const DS = `${D}-pageScale-desktop-variant-sidebar`;
 const MS = `${D}-pageScale-mobile-variant-sidebar`;
 const SIDEBAR = '.cui-console-sidebar';
-const ITEM = '.cui-console-sidebar-item[href="#projects"]';
-const CURRENT = '.cui-console-sidebar-item[aria-current="page"]';
+const ITEM = '.cui-console-sidebar .cui-console-menu-item[href="#projects"]';
+const CURRENT = '.cui-console-sidebar .cui-console-menu-item[aria-current="page"]';
 const FITTED = 'the secondary label fitted to 0.76 (tokens.css, decision 21)';
 const PAGE = (html) => `<div class="cui-console-page">${html}</div>`;
 
@@ -31,13 +31,13 @@ export const cases = [
       { target: ITEM, props: ['background-color'], state: 'hover', tb: [`${D}-variant-sidebar-anatomy-Item-variant-effect-hover-focus-off-selected-none-backgroundColor`] },
       { target: ITEM, props: ['background-color'], state: 'active', golden: 'pressed as hovered: the toolkit\'s pressed fill, oklch(42.6% 0.008 286 / 0.03), is no step of its palette' },
       { target: CURRENT, props: ['background-color', 'font-weight'], tb: [`${D}-variant-sidebar-anatomy-Item-variant-effect-default-focus-off-selected-fill-backgroundColor`, `${DS}-anatomy-Item-variant-selected-fill-anatomy-Label-textStyle-fontWeight`] },
-      { target: '.cui-console-sidebar-heading', props: ['font-size', 'line-height', 'font-weight', 'padding-top', 'padding-bottom', 'padding-left', 'margin-top'], tb: [`${DS}-anatomy-Heading-textStyle-fontSize`, `${DS}-anatomy-Heading-textStyle-lineHeight`, `${DS}-anatomy-Heading-textStyle-fontWeight`, `${DS}-anatomy-Header-paddingBlockStart`, `${DS}-anatomy-Header-paddingBlockEnd`, `${DS}-anatomy-Header-paddingInline`, `${D}-variant-sidebar-anatomy-groupGap-marginBlockEnd`] },
-      { target: '.cui-console-sidebar-heading', props: ['color'], golden: FITTED },
-      { target: '.cui-console-sidebar-secondary', props: ['font-size', 'line-height', 'font-weight'], tb: [`${DS}-anatomy-Secondary-textStyle-fontSize`, `${DS}-anatomy-Secondary-textStyle-lineHeight`, `${DS}-anatomy-Secondary-textStyle-fontWeight`] },
-      { target: '.cui-console-sidebar-secondary', props: ['color'], golden: FITTED },
-      { target: `${ITEM} .cui-console-sidebar-label`, props: ELLIPSIS, golden: 'a long label cut with an ellipsis, on one line' },
-      { target: '.cui-console-sidebar-rule', props: ['margin-top', 'margin-left', 'background-color', 'box-height'], tb: [`${D}-variant-sidebar-anatomy-HR-marginBlock`, `${DS}-anatomy-HR-marginInline`, 'color-role-neutral-border-secondary', 'border-width-fine'] },
-      { target: '.cui-console-sidebar-icon', props: ['box-width', 'box-height'], golden: 'its icon Lucide\'s, 20px in 24px (the toolkit\'s art\'s least width): the toolkit draws SF Symbols at its text\'s size' },
+      { target: '.cui-console-sidebar .cui-console-menu-heading', props: ['font-size', 'line-height', 'font-weight', 'padding-top', 'padding-bottom', 'padding-left', 'margin-top'], tb: [`${DS}-anatomy-Heading-textStyle-fontSize`, `${DS}-anatomy-Heading-textStyle-lineHeight`, `${DS}-anatomy-Heading-textStyle-fontWeight`, `${DS}-anatomy-Header-paddingBlockStart`, `${DS}-anatomy-Header-paddingBlockEnd`, `${DS}-anatomy-Header-paddingInline`, `${D}-variant-sidebar-anatomy-groupGap-marginBlockEnd`] },
+      { target: '.cui-console-sidebar .cui-console-menu-heading', props: ['color'], golden: FITTED },
+      { target: '.cui-console-sidebar .cui-console-menu-secondary', props: ['font-size', 'line-height', 'font-weight'], tb: [`${DS}-anatomy-Secondary-textStyle-fontSize`, `${DS}-anatomy-Secondary-textStyle-lineHeight`, `${DS}-anatomy-Secondary-textStyle-fontWeight`] },
+      { target: '.cui-console-sidebar .cui-console-menu-secondary', props: ['color'], golden: FITTED },
+      { target: `${ITEM} .cui-console-menu-label`, props: ELLIPSIS, golden: 'a long label cut with an ellipsis, on one line' },
+      { target: '.cui-console-sidebar .cui-console-menu-rule', props: ['margin-top', 'margin-left', 'background-color', 'box-height'], tb: [`${D}-variant-sidebar-anatomy-HR-marginBlock`, `${DS}-anatomy-HR-marginInline`, 'color-role-neutral-border-secondary', 'border-width-fine'] },
+      { target: '.cui-console-sidebar .cui-console-menu-icon', props: ['box-width', 'box-height'], golden: 'its icon Lucide\'s, 20px in 24px (the toolkit\'s art\'s least width): the toolkit draws SF Symbols at its text\'s size' },
       { target: '.cui-console-sidebar-footer', props: ['padding-top', 'padding-bottom'], tb: [`${S}-anatomy-UniversalIDFooter-paddingBlockStart`, `${S}-anatomy-UniversalIDFooter-paddingBlockEnd`] },
       { target: '.cui-console-sidebar-account', props: ['min-height', 'border-top-left-radius', 'column-gap', 'margin-left', 'padding-left', 'padding-right', 'font-size', 'line-height', 'font-weight', 'color'], tb: ['minHeight', 'borderRadius', 'gap', 'marginInline', 'paddingInlineStart', 'paddingInlineEnd'].map((p) => `${S}-anatomy-UniversalIDFooter-anatomy-ID-${p}`).concat(['fontSize', 'lineHeight', 'fontWeight'].map((p) => `${S}-anatomy-UniversalIDFooter-anatomy-ID-anatomy-Name-textStyle-${p}`), [`${S}-anatomy-UniversalIDFooter-anatomy-ID-anatomy-Name-color`]) },
       { target: '.cui-console-sidebar-avatar', props: ['box-height', 'color'], tb: [`${S}-anatomy-UniversalIDFooter-anatomy-ID-anatomy-Art-fontSize`, `${S}-anatomy-UniversalIDFooter-anatomy-ID-anatomy-Art-color`] },
@@ -91,7 +91,7 @@ export const cases = [
     checks: [
       { target: CURRENT, props: ['background-color', 'color'], golden: 'the current page the theme\'s Highlight under HighlightText: forced colors drop the fill, and it read as the others' },
       { target: ITEM, props: ['background-color'], golden: 'another item no ground' },
-      { target: '.cui-console-sidebar-rule', props: ['background-color'], golden: 'the rule CanvasText: forced colors drew its fill in the ground\'s color, at its alpha' },
+      { target: '.cui-console-sidebar .cui-console-menu-rule', props: ['background-color'], golden: 'the rule CanvasText: forced colors drew its fill in the ground\'s color, at its alpha' },
     ],
   },
   {

@@ -19,10 +19,7 @@ The app’s sidebar, down the page’s left: the product’s wordmark at its top
 | --- | --- |
 | `cui-console-sidebar` | the sidebar, a `<nav>` with an `id`, `popover` and an `aria-label` |
 | `cui-console-sidebar-header` | its top: the wordmark (`cui-console-sidebar-wordmark`) and its close button (`cui-console-sidebar-close`) |
-| `cui-console-sidebar-body` | its list |
-| `cui-console-sidebar-item` | a page; `aria-current="page"` the current one |
-| `cui-console-sidebar-icon`, `-label`, `-secondary` | an item’s icon, label and count |
-| `cui-console-sidebar-heading`, `-rule` | a heading over a run; a rule between runs |
+| `cui-console-sidebar-body` | its list, a [Console Menu](@/components/console-menu.md) at the sidebar’s size: `cui-console-menu` with `data-variant="sidebar"` on the same element, its items, headings and rules the menu’s |
 | `cui-console-sidebar-footer`, `-account`, `-avatar` | the account at its foot |
 | `cui-console-sidebar-open` | the page’s button that opens it below 1024px (`popovertarget` its id) |
 
@@ -32,4 +29,4 @@ This page’s frames are narrower than 1024px, so the sidebar above is a closed 
 
 {{ <cui_example file="console-sidebar/open" title="The sidebar’s sheet and the button that opens it" pad={true} /> }}
 
-The Go module writes it with `console.ConsoleSidebar` and `console.ConsoleSidebarItem`.
+The Go module writes it with `console.ConsoleSidebar`, its list `console.ConsoleMenuItem`s.

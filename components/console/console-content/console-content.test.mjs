@@ -14,7 +14,7 @@ export const cases = [
       { target: C, props: ['max-width', 'padding-left', 'padding-right'], tb: [`${L}-maxWidth`, `${L}-xl-paddingInline`, `${L}-xl-paddingInline`] },
       { target: C, props: ['column-gap'], tb: ['space-spacer-30'] },
       { target: C, props: ['box-left', 'grid-template-columns'], golden: 'centered at its widest; the sidebar\'s 225px (App Store Connect\'s menu: analytics menu.item) beside the page' },
-      { target: `${C} .cui-console-sidebar-item[aria-current]`, props: ['box-left', 'box-width'], golden: 'the sidebar\'s items flush with the column, as the analytics menu\'s are' },
+      { target: `${C} .cui-console-menu-item[aria-current]`, props: ['box-left', 'box-width'], golden: 'the sidebar\'s items flush with the column, as the analytics menu\'s are' },
       { target: `${C} main`, props: ['box-left'], golden: 'the page 30px past the sidebar\'s column' },
       { target: `${C} .cui-console-sidebar-header`, props: ['padding-left', 'padding-right'], golden: ROOM },
       { target: `${C} .cui-console-sidebar-body`, props: ['padding-left', 'padding-right'], golden: ROOM },

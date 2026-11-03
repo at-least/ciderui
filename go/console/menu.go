@@ -33,7 +33,8 @@ func (m ConsoleMenu) Render(w io.Writer) error {
 	return h.Nav(class.Root("cui-console-menu", m.Class), h.Aria("label", m.Label), m.Children).Render(w)
 }
 
-// ConsoleMenuItem is a page in a [ConsoleMenu] or a [ConsoleMenuGroup], a link.
+// ConsoleMenuItem is a page in a [ConsoleMenu], a [ConsoleMenuGroup] or a
+// [ConsoleSidebar], a link.
 type ConsoleMenuItem struct {
 	// Href is where it goes. Required unless it is disabled, when it is
 	// left out ("").

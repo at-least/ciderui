@@ -18,6 +18,7 @@ The list of a section’s pages down the left of App Store Connect’s analytics
 | class | what |
 | --- | --- |
 | `cui-console-menu` | the list, a `<nav>` with an `aria-label` |
+| `data-variant="sidebar"` | the list in a [Console Sidebar](@/components/console-sidebar.md), at the toolkit’s sidebar size: items 44px at 15px, 48px at 18px below 640px, their icons 24px wide |
 | `cui-console-menu-item` | a page, an `<a>`: 36px, 13px at 500; `aria-current="page"` the current one; `aria-disabled="true"` (and no `href`) one that goes nowhere now |
 | `cui-console-menu-icon` | its icon, 25px wide, before its label |
 | `cui-console-menu-label` | its label, cut with an ellipsis |

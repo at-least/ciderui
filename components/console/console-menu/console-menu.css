@@ -1,7 +1,17 @@
 @layer components {
+  /* the toolkit's DisplayList: its menu variant, and its sidebar variant
+     (data-variant="sidebar"), the list in a cui-console-sidebar. Each
+     part's sidebar block sits after the part's base and its media queries:
+     equal specificity, so the later one wins */
   .cui-console-menu {
+    --cui-console-menu-hover: var(--cui-c-console-neutral-fill-quaternary);
+
     display: flex;
     flex-direction: column;
+
+    &[data-variant="sidebar"] {
+      --cui-console-menu-hover: var(--cui-c-console-neutral-fill-quinary);
+    }
   }
 
   .cui-console-menu-item {
@@ -39,17 +49,18 @@
 
     @media (hover: hover) {
       &:hover {
-        background-color: var(--cui-c-console-neutral-fill-quaternary);
+        background-color: var(--cui-console-menu-hover);
       }
     }
 
-    &:active,
-    &[aria-current="page"] {
-      background-color: var(--cui-c-console-neutral-fill-quaternary);
+    &:active {
+      background-color: var(--cui-console-menu-hover);
     }
 
-    /* forced colors drop the fill: the current page would read as the others */
     &[aria-current="page"] {
+      background-color: var(--cui-c-console-neutral-fill-quaternary);
+
+      /* forced colors drop the fill: the current page would read as the others */
       @media (forced-colors: active) {
         background-color: Highlight;
         color: HighlightText;
@@ -61,6 +72,29 @@
       background-color: transparent;
       cursor: default;
     }
+
+    :where(.cui-console-menu[data-variant="sidebar"]) > & {
+      gap: 11.5px;
+      box-sizing: border-box;
+      min-height: 3rem;
+      padding-inline: 15px;
+      border-radius: 24px;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 400;
+
+      @media (width >= 640px) {
+        min-height: 44px;
+        padding: 0.4375rem 13px;
+        border-radius: 22px;
+        font-size: 15px;
+        line-height: 20px;
+      }
+
+      &[aria-current="page"] {
+        font-weight: 500;
+      }
+    }
   }
 
   .cui-console-menu-icon {
@@ -69,6 +103,13 @@
     height: 1em;
     margin-inline-start: -2.34px;
     color: var(--cui-c-console-neutral-label-secondary);
+
+    :where(.cui-console-menu[data-variant="sidebar"]) & {
+      width: 24px;
+      height: 20px;
+      margin-inline-start: 0;
+      color: inherit;
+    }
   }
 
   .cui-console-menu-label {
@@ -82,6 +123,12 @@
   .cui-console-menu-secondary {
     flex: none;
     color: var(--cui-c-console-neutral-label-secondary);
+
+    :where(.cui-console-menu[data-variant="sidebar"]) & {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 500;
+    }
   }
 
   .cui-console-menu-chevron {
@@ -113,6 +160,17 @@
       font-size: 13px;
       line-height: 18px;
     }
+
+    :where(.cui-console-menu[data-variant="sidebar"]) > & {
+      margin: 0.75rem 0 0;
+      padding-inline: 15px;
+      font-size: 13px;
+      line-height: 18px;
+
+      @media (width >= 640px) {
+        padding-inline: 13px;
+      }
+    }
   }
 
   .cui-console-menu-rule {
@@ -128,6 +186,14 @@
 
     @media (width >= 640px) {
       margin-inline: 0.9375rem;
+    }
+
+    :where(.cui-console-menu[data-variant="sidebar"]) > & {
+      margin: 0.3125rem 15px;
+
+      @media (width >= 640px) {
+        margin-inline: 13px;
+      }
     }
   }
 }
