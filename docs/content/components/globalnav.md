@@ -38,14 +38,14 @@ The search can open over the page instead of leading to the site’s search page
 | `cui-globalnav-searchpanel` | its ground and its room: the field, then the quick links |
 | `cui-globalnav-searchfield` | the form, `role="search"`: its magnifier and its input |
 | `cui-globalnav-searchinput` | the field, `autofocus`: `type="text"`, as with `type="search"` Escape in it leaves the search open in Safari |
-| `cui-globalnav-searchreset` | after the field: its clear button, `type="reset"`, its mark `icon::CLEAR` (`icon::CLEAR_COMPACT` below 834px); shown while the field holds text |
+| `cui-globalnav-searchreset` | after the field: its clear button, `type="reset"`, its mark `icon.Clear` (`icon.ClearCompact` below 834px); shown while the field holds text |
 | `cui-globalnav-searchheading` | a section’s heading, which names its list: the quick links’, a suggestions’ section’s |
 | `cui-globalnav-searchlinks` | its rows, each a `cui-globalnav-searchlink` after its image, on a ground hovered and focused |
 | `cui-globalnav-curtain` | the curtain under the flyout from 834px, a button that closes it (`popovertargetaction="hide"`, out of the tab order) |
 
 The clear button resets the form, so it gives the field back its `value` attribute: a page that fills the field with its query leaves the attribute out, or the button brings the query back. Clicked, the button hides itself and the focus is left on the page, where apple.com’s script puts it back in the field; Shift+Tab takes it there.
 
-Its suggestions are a site’s script’s, as apple.com’s are (its script asks its service for them as one types): in the quick links’ place it writes sections, each a heading and its rows, a suggestion’s text in a `span` with what was typed in a `mark`. While a row marks what was typed, every row is muted and its marked part takes the rows’ color, hovered too; a section after another is 34px below it (48px below 834px). A suggested link keeps the arrow, a suggested search has a magnifier, `icon::SUGGESTION`. Rows the script writes once something is typed fade in where they are, as apple.com’s new results do, together from 40ms; the search’s opening motion is its empty field’s. The example is the search as a script leaves it once “ma” is typed: what was typed is the field’s value, which the markup does not hold.
+Its suggestions are a site’s script’s, as apple.com’s are (its script asks its service for them as one types): in the quick links’ place it writes sections, each a heading and its rows, a suggestion’s text in a `span` with what was typed in a `mark`. While a row marks what was typed, every row is muted and its marked part takes the rows’ color, hovered too; a section after another is 34px below it (48px below 834px). A suggested link keeps the arrow, a suggested search has a magnifier, `icon.Suggestion`. Rows the script writes once something is typed fade in where they are, as apple.com’s new results do, together from 40ms; the search’s opening motion is its empty field’s. The example is the search as a script leaves it once “ma” is typed: what was typed is the field’s value, which the markup does not hold.
 
 {{ <cui_example file="globalnav/suggestions" title="A global nav and its search’s suggestions" /> }}
 
@@ -60,7 +60,7 @@ The bag can open over the page too, as apple.com’s does, where it would lead t
 | `cui-globalnav-bagmessage` | its message, an `h2` |
 | `cui-globalnav-bagtext` | a line under it, its link underlined |
 | `cui-globalnav-bagheading` | the heading over its links, an `h3`, which names their list |
-| `cui-globalnav-baglinks` | its rows, each a `cui-globalnav-baglink` after its icon: `icon::ORDERS`, `icon::SAVES`, `icon::ACCOUNT` or `icon::SIGN_IN` (their compact forms below 834px) |
+| `cui-globalnav-baglinks` | its rows, each a `cui-globalnav-baglink` after its icon: `icon.Orders`, `icon.Saves`, `icon.Account` or `icon.SignIn` (their compact forms below 834px) |
 | `cui-globalnav-closebutton` | the sheet’s X below 834px, `autofocus` |
 | `cui-globalnav-curtain` | the curtain under the flyout from 834px, a button that closes it |
 
@@ -70,13 +70,13 @@ A link can open a flyout, a menu under the bar, as apple.com’s do, with no scr
 
 | class | what |
 | --- | --- |
-| `cui-globalnav-flyoutbutton` | after the link: `popovertarget`, `aria-label` its link’s and “menu”; its chevron `icon::FLYOUT` from 834px, `icon::FLYOUT_COMPACT` below, at the row’s end, hovered |
+| `cui-globalnav-flyoutbutton` | after the link: `popovertarget`, `aria-label` its link’s and “menu”; its chevron `icon.Flyout` from 834px, `icon.FlyoutCompact` below, at the row’s end, hovered |
 | `cui-globalnav-flyout` | the flyout, after the button: `id` and `popover` |
 | `cui-globalnav-flyoutpanel` | its ground and its room: the sheet’s back button and X, then its groups |
 | `cui-globalnav-flyoutgroup` | a group: a heading over its links, in a row from 834px, one under another below |
 | `cui-globalnav-flyoutheading` | a group’s heading, which names its list; a group of large links shows none below 834px |
 | `cui-globalnav-flyoutlinks` | its rows, each a `cui-globalnav-flyoutlink`; `data-size="lg"` a large one (24px, 28px below 834px), first in its group |
-| `cui-globalnav-backbutton` | the sheet’s back button below 834px, at the bar’s start: `popovertargetaction="hide"`, its chevron `icon::FLYOUT_BACK` |
+| `cui-globalnav-backbutton` | the sheet’s back button below 834px, at the bar’s start: `popovertargetaction="hide"`, its chevron `icon.FlyoutBack` |
 | `cui-globalnav-closebutton` | the sheet’s X below 834px, hiding the menu, and the flyout with it |
 | `cui-globalnav-curtain` | the curtain under the flyout its button opens, from 834px; the pointer’s flyout has the list’s own, which takes no click |
 

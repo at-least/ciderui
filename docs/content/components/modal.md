@@ -20,8 +20,8 @@ The store’s overlay, the one a buy page’s “Show more” opens: a layer ove
 | --- | --- |
 | `cui-modal` | the `<dialog>`: the layer over the window, which scrolls the panel when it is taller; the page under it dimmed (its `::backdrop`, the scrim) and held; fading in, in 0.1s |
 | `cui-modal-panel` | the panel: 816px at most, 40px from the top and as far below its end, its content 76px in; below 735px 640px at most, 20px from the top, running on to the window’s foot, 40px in |
-| `data-variant="page"` | on the dialog: the product pages’ modal, its X `icon::CLOSE_SMALL`; with `cui-dark` on the dialog too, its dark one |
-| `cui-modal-close` | its close button at the panel’s top right corner, a 36px circle in a 44px target, its X `icon::CLOSE`; darker hovered and pressed |
+| `data-variant="page"` | on the dialog: the product pages’ modal, its X `icon.CloseSmall`; with `cui-dark` on the dialog too, its dark one |
+| `cui-modal-close` | its close button at the panel’s top right corner, a 36px circle in a 44px target, its X `icon.Close`; darker hovered and pressed |
 
 Name the dialog by its headline (`aria-labelledby`). Opened, the focus is on its close button, its first control, as a dialog’s opening gives it. A modal keeps its light look in a dark block, as apple.com’s are on its dark pages. A click on the scrim closes nothing, where apple.com’s script closes the overlay; a page that wants that adds it.
 

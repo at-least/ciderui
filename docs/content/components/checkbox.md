@@ -22,6 +22,6 @@ The checkbox of Apple’s sign-in: a 16px box before its label, on the field’s
 | `cui-checkbox` | the checkbox and its label |
 | `cui-checkbox-input` | the `<input type="checkbox">`, transparent, the box’s size and place |
 | `cui-checkbox-label` | its `<label>`, 17px, 26px in |
-| `cui-checkbox-indicator` | the box inside the label, holding the check (`icon::CHECK`) |
+| `cui-checkbox-indicator` | the box inside the label, holding the check (`icon.Check`) |
 
 The Go module writes it with `site.Checkbox`.

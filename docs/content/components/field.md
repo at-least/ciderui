@@ -43,7 +43,7 @@ The store’s dropdown is a `<select>` with the same look and a chevron at its e
 | `cui-field-box` | a textarea’s box, with the field’s edge, corners and ground, focused as the textarea is |
 | `cui-field-textarea` | the `<textarea>`, in the box; its placeholder a space; `aria-invalid="true"`; `disabled` |
 | `cui-field-prefix` | a currency or a country code, after the label; the input’s `aria-describedby` names it |
-| `cui-field-chevron` | a select’s chevron, `icon::DROPDOWN`, after the label |
-| `cui-field-message` | its error, after the field, its mark `icon::ALERT` |
+| `cui-field-chevron` | a select’s chevron, `icon.Dropdown`, after the label |
+| `cui-field-message` | its error, after the field, its mark `icon.Alert` |
 
 Focused, the field shows a 2px accent edge in place of the focus ring: a text field is `:focus-visible` however it is focused, so a ring cannot show for the keyboard alone, as apple.com’s script’s does; in error too. In a dark block it keeps its light look on a ground of its own, as apple.com’s field does in a dark color scheme; its message there, on the block’s ground, is a lighter red, as apple.com’s is below 4.5:1 on black. The Go module writes it with `site.Field`, the textarea with `site.TextArea` and the dropdown with `site.Select`.
