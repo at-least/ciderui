@@ -11,7 +11,7 @@ import (
 )
 
 func ExampleField() {
-	page := h.Form(site.Field{ID: "email", Type: "email", Name: "email", Label: "Email", Autocomplete: "email", Value: "", Error: "", Disabled: false, Prefix: "", Class: ""})
+	page := h.Form(site.Field{ID: "email", Type: "email", Name: "email", Label: "Email", Autocomplete: "email", Value: "", Error: "", Disabled: false, Prefix: "", Attrs: nil, Class: ""})
 	_ = page.Render(os.Stdout)
 	// Output: <form><div class="cui-field"><input class="cui-field-input" id="email" type="email" name="email" placeholder=" " autocomplete="email"><label class="cui-field-label" for="email">Email</label></div></form>
 }
