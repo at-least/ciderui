@@ -13,6 +13,25 @@ import (
 
 const playerPoster = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjkwMCI+PHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjNGE2YjhhIi8+PGNpcmNsZSBjeD0iMTE4MCIgY3k9IjMwMCIgcj0iMTQwIiBmaWxsPSIjZThjMjdhIi8+PHJlY3QgeT0iNjIwIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIyODAiIGZpbGw9IiMyZjRhM2EiLz48L3N2Zz4="
 
+// a frame of stills, as muse draws them: each <img> over the last, the
+// page's script showing one at a time
+const playerStill = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjkwMCI+PHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjNmE0YThhIi8+PGNpcmNsZSBjeD0iNDIwIiBjeT0iMzIwIiByPSIxNjAiIGZpbGw9IiNmMGQwYTAiLz48cmVjdCB5PSI2NDAiIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjI2MCIgZmlsbD0iIzNhMmE0YSIvPjwvc3ZnPg=="
+
+func subtitlesMenu() console.ConsoleChoiceMenu {
+	return console.ConsoleChoiceMenu{ID: "subtitles", Title: "Subtitles", Class: "", Choices: []console.ConsoleChoice{
+		{Label: "Off", Value: "off", Lang: "", Checked: false},
+		{Label: "English", Value: "en", Lang: "en", Checked: true},
+		{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant", Checked: false},
+	}}
+}
+
+func voicesMenu() console.ConsoleChoiceMenu {
+	return console.ConsoleChoiceMenu{ID: "voices", Title: "Voices", Class: "", Choices: []console.ConsoleChoice{
+		{Label: "English", Value: "en", Lang: "en", Checked: true},
+		{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant", Checked: false},
+	}}
+}
+
 func player(state console.ConsolePlayerState, hidden bool, title string) console.ConsolePlayer {
 	return console.ConsolePlayer{
 		Video:               h.Video(h.Poster(playerPoster), h.Preload("none"), g.Attr("playsinline")),
@@ -27,19 +46,30 @@ func player(state console.ConsolePlayerState, hidden bool, title string) console
 		Position:            5,
 		Duration:            62,
 		ScrubAriaLabel:      "Playback position",
-		SubtitlesMenuID:     "subtitles",
+		Cue:                 "",
+		CueLang:             "",
+		SubtitlesMenu:       subtitlesMenu(),
 		SubtitlesAriaLabel:  "Subtitles",
-		AudioMenuID:         "voices",
-		AudioAriaLabel:      "Voices",
+		VoicesMenu:          voicesMenu(),
+		VoicesAriaLabel:     "Voices",
 		FullScreenAriaLabel: "Full Screen",
 		Class:               "aspect-video",
 	}
+}
+
+func stills() console.ConsolePlayer {
+	p := player(console.ConsolePlayerStatePlaying, false, "The Wedding")
+	p.Video = h.Div(h.Class("relative"), h.Img(h.Class("absolute inset-0 size-full object-contain"), h.Src(playerStill), h.Alt("")))
+	p.Cue = "Everyone stood when the bride came in, and the old dog barked once."
+	p.CueLang = "en"
+	return p
 }
 
 var playerExamples = map[string]console.ConsolePlayer{
 	"paused":  player(console.ConsolePlayerStatePaused, false, "The Wedding"),
 	"playing": player(console.ConsolePlayerStatePlaying, false, "The Wedding"),
 	"hidden":  player(console.ConsolePlayerStatePlaying, true, "The Wedding"),
+	"stills":  stills(),
 }
 
 func TestPlayerRendersTheExamples(t *testing.T) {
@@ -47,7 +77,7 @@ func TestPlayerRendersTheExamples(t *testing.T) {
 		path := "console/console-player/examples/" + id + ".html"
 		if os.Getenv("WRITE_PLAYER_EXAMPLES") == "1" {
 			html := example.Render(p)
-			for _, tag := range []string{"<video", "<div", "<input", "<button", "<p ", "<time"} {
+			for _, tag := range []string{"<video", "<div", "<input", "<button", "<p ", "<p>", "<time", "<img"} {
 				html = strings.ReplaceAll(html, "><"+tag[1:], ">\n"+tag)
 			}
 			if err := os.WriteFile("../../components/"+path, []byte(html+"\n"), 0o644); err != nil {
@@ -70,8 +100,9 @@ func TestPlayerPanics(t *testing.T) {
 		{"needs a MuteAriaLabel", func(p *console.ConsolePlayer) { p.MuteAriaLabel = "" }},
 		{"needs a ScrubAriaLabel", func(p *console.ConsolePlayer) { p.ScrubAriaLabel = "" }},
 		{"needs a FullScreenAriaLabel", func(p *console.ConsolePlayer) { p.FullScreenAriaLabel = "" }},
-		{"needs a SubtitlesAriaLabel with a SubtitlesMenuID", func(p *console.ConsolePlayer) { p.SubtitlesAriaLabel = "" }},
-		{"needs an AudioAriaLabel with an AudioMenuID", func(p *console.ConsolePlayer) { p.AudioAriaLabel = "" }},
+		{"needs a SubtitlesAriaLabel with a SubtitlesMenu", func(p *console.ConsolePlayer) { p.SubtitlesAriaLabel = "" }},
+		{"needs a VoicesAriaLabel with a VoicesMenu", func(p *console.ConsolePlayer) { p.VoicesAriaLabel = "" }},
+		{"needs a Cue with a CueLang", func(p *console.ConsolePlayer) { p.CueLang = "en" }},
 		{"Volume is 0 to 100", func(p *console.ConsolePlayer) { p.Volume = 101 }},
 		{"Position is 0 to its Duration", func(p *console.ConsolePlayer) { p.Position = 63 }},
 	} {
@@ -83,9 +114,20 @@ func TestPlayerPanics(t *testing.T) {
 
 func TestPlayerWritesNoMenuButtonWithoutItsMenu(t *testing.T) {
 	p := player(console.ConsolePlayerStatePaused, false, "")
-	p.SubtitlesMenuID, p.SubtitlesAriaLabel, p.AudioMenuID, p.AudioAriaLabel = "", "", "", ""
+	none := console.ConsoleChoiceMenu{ID: "", Title: "", Choices: nil, Class: ""}
+	p.SubtitlesMenu, p.SubtitlesAriaLabel, p.VoicesMenu, p.VoicesAriaLabel = none, "", none, ""
 	got := example.Render(p)
-	if strings.Contains(got, "popovertarget") || strings.Contains(got, "cui-console-player-title") {
+	if strings.Contains(got, "popover") || strings.Contains(got, "cui-console-player-title") {
 		t.Errorf("a player with no menus and no title wrote one: %s", got)
+	}
+}
+
+// the hooks a page's script finds the controls by: each once
+func TestPlayerMarksEachControl(t *testing.T) {
+	got := example.Render(player(console.ConsolePlayerStatePaused, false, ""))
+	for _, control := range []string{"play", "volume", "mute", "subtitles", "voices", "full-screen", "scrubber", "elapsed", "remaining"} {
+		if n := strings.Count(got, `data-control="`+control+`"`); n != 1 {
+			t.Errorf("data-control=%q written %d times, want 1", control, n)
+		}
 	}
 }

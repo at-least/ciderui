@@ -56,3 +56,38 @@ func TestMenuGroupWithNoLabelPanics(t *testing.T) {
 		example.Render(console.ConsoleMenuGroup{Label: "", Icon: icon.Icon{}, Open: false, Class: "", Children: g.Text("x")})
 	})
 }
+
+func choiceMenu() console.ConsoleChoiceMenu {
+	return console.ConsoleChoiceMenu{ID: "subtitles", Title: "Subtitles", Class: "", Choices: []console.ConsoleChoice{
+		{Label: "Off", Value: "off", Lang: "", Checked: false},
+		{Label: "English", Value: "en", Lang: "en", Checked: true},
+		{Label: "日本語", Value: "ja", Lang: "ja", Checked: false},
+	}}
+}
+
+func TestChoiceMenuRendersTheExample(t *testing.T) {
+	page := h.Div(h.Class("flex justify-center"),
+		h.Button(h.Type("button"), h.Class("cui-console-btn"), h.PopoverTarget("subtitles"), g.Text("Subtitles")),
+		choiceMenu(),
+	)
+	example.Check(t, page, "console/console-menu/examples/choices.html")
+}
+
+func TestChoiceMenuPanics(t *testing.T) {
+	for _, c := range []struct {
+		want   string
+		change func(*console.ConsoleChoiceMenu)
+	}{
+		{"ConsoleChoiceMenu needs an ID", func(m *console.ConsoleChoiceMenu) { m.ID = "" }},
+		{"ConsoleChoiceMenu needs a Title", func(m *console.ConsoleChoiceMenu) { m.Title = "" }},
+		{"ConsoleChoiceMenu needs a choice", func(m *console.ConsoleChoiceMenu) { m.Choices = nil }},
+		{"ConsoleChoice needs a Label and a Value", func(m *console.ConsoleChoiceMenu) { m.Choices[0].Label = "" }},
+		{"ConsoleChoice needs a Label and a Value", func(m *console.ConsoleChoiceMenu) { m.Choices[0].Value = "" }},
+		{"needs one choice checked", func(m *console.ConsoleChoiceMenu) { m.Choices[0].Checked = true }},
+		{"needs one choice checked", func(m *console.ConsoleChoiceMenu) { m.Choices[1].Checked = false }},
+	} {
+		m := choiceMenu()
+		c.change(&m)
+		mustPanic(t, c.want, func() { example.Render(m) })
+	}
+}

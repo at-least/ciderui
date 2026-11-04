@@ -23,13 +23,20 @@ Its controls hidden while it plays (`data-controls="hidden"`), the video alone:
 
 {{ <cui_example file="console-player/hidden" title="Console player, controls hidden" /> }}
 
+Its picture can be any element in the video’s place, its first child: here a `<div>` of stills the page’s script shows one at a time, with a subtitle over it:
+
+{{ <cui_example file="console-player/stills" title="Console player, stills and a subtitle" /> }}
+
 | class | what |
 | --- | --- |
-| `cui-console-player` | the player: black, its `<video>` and overlay in one place; its size is the page’s (`aspect-video` here) |
+| `cui-console-player` | the player: black, its picture and overlay in one place; its size is the page’s (`aspect-video` here) |
+| its first child | the picture, the player’s whole box: a `<video>` (`object-fit: contain`), or an element the page draws its stills in |
 | `cui-console-player-overlay` | the controls, 30px from the sides and 20px from the top and foot, over a gradient |
 | `cui-console-player-header` | the volume: a range and the mute button |
 | `cui-console-player-play` | the centre button, 66px; it holds both glyphs |
 | `cui-console-player-glyph-play`, `cui-console-player-glyph-pause` | the glyph shown while paused, and while playing |
+| `cui-console-player-subtitles` | the subtitles over the picture: above the footer while the controls show, 20px from the foot while they hide, moving in the footer’s 0.4s; it takes no click |
+| `cui-console-player-cue` | the cue in it, a `<span>` in its `<p>`: 2.4% of the width (15px at least), 1.6 lines, on a box of black at 0.75 round each line; empty, none |
 | `cui-console-player-footer` | the title, the buttons and the scrubber |
 | `cui-console-player-title` | the title, 26px bold |
 | `cui-console-player-buttons` | the buttons’ row, 14px apart |
@@ -48,12 +55,27 @@ ciderui has no script: the page’s plays the video and keeps the markup in step
 | `data-controls="hidden"` | `cui-console-player` | the controls faded out: tv.apple.com hides them while the video plays and the pointer is still, and keeps them while it is paused. They show again while the focus is inside the player |
 | `--cui-console-player-value` | `cui-console-player-range` | the part played, or the volume, as a percentage (`style="--cui-console-player-value: 8%"`) |
 
-The script also changes the centre button’s `aria-label` (Play, Pause) with the state.
+The script also changes the centre button’s `aria-label` (Play, Pause) with the state, and writes the cue’s text (and its `lang`) as the picture plays.
+
+## Hooks
+
+The script finds each control by its `data-control`, the same on every player:
+
+| `data-control` | what |
+| --- | --- |
+| `play` | the centre button |
+| `volume`, `mute` | the volume’s range, and its button |
+| `subtitles`, `voices` | the buttons that open the two menus |
+| `full-screen` | the full-screen button |
+| `scrubber` | the scrubber’s range |
+| `elapsed`, `remaining` | the time played, and the time left |
+
+The cue is `cui-console-player-cue`.
 
 ## Menus
 
-The subtitles and voices buttons open a popover by `popovertarget`: a `cui-console-popover` holding a `cui-console-menu`, the page’s. tv.apple.com’s own menu is drawn otherwise (a blurred light ground, 6px corners, 32px rows with a check at their start: `reference/apple.com/`’s `tv-player-menu`); the console keeps its one menu.
+The subtitles and voices buttons open a popover by `popovertarget`: a menu of choices, a [Console Menu](@/components/console-menu.md#choices)’s, written inside the player after its overlay, so the controls stay while the focus is in it (not inside the overlay, which places its own parts). tv.apple.com’s own menu is drawn otherwise (a blurred light ground, 6px corners, 32px rows: `reference/apple.com/`’s `tv-player-menu`); the console keeps its one menu, and takes tv.apple.com’s check at each choice’s start.
 
 ## Go
 
-The Go module writes it with `console.ConsolePlayer`: the page’s `<video>`, the state, the labels, the volume, the position and duration in seconds (it writes the times), and each menu’s id (none, no button).
+The Go module writes it with `console.ConsolePlayer`: the picture (`Video`), the state, the labels, the volume, the position and duration in seconds (it writes the times), the cue and its language, and each menu, a `console.ConsoleChoiceMenu` (none, no button).

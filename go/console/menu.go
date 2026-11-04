@@ -2,6 +2,7 @@ package console
 
 import (
 	"io"
+	"strconv"
 
 	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
@@ -74,5 +75,66 @@ func (m ConsoleMenuGroup) Render(w io.Writer) error {
 			lucide.ChevronRight.Class("cui-console-menu-chevron"),
 		),
 		m.Children,
+	).Render(w)
+}
+
+// ConsoleChoiceMenu is a popover of choices, one of them checked: a
+// [ConsolePlayer]'s subtitles or voices. The page's script hears a choice's
+// click (its value), moves aria-checked to it and moves the focus among
+// the choices by the arrow keys; the click closes the popover itself
+// (popovertargetaction="hide").
+type ConsoleChoiceMenu struct {
+	// ID is the popover's id, the popovertarget of the button that opens it.
+	ID      string
+	Title   string
+	Choices []ConsoleChoice
+	Class   string
+}
+
+type ConsoleChoice struct {
+	Label string
+	// Value is the <button>'s value, what the script reads.
+	Value string
+	// Lang is the label's language, a BCP 47 tag; "" for the page's.
+	Lang    string
+	Checked bool
+}
+
+func (m ConsoleChoiceMenu) Render(w io.Writer) error {
+	if m.ID == "" {
+		panic("console.ConsoleChoiceMenu needs an ID")
+	}
+	if m.Title == "" {
+		panic("console.ConsoleChoiceMenu needs a Title")
+	}
+	if len(m.Choices) == 0 {
+		panic("console.ConsoleChoiceMenu needs a choice")
+	}
+	checked := 0
+	for _, c := range m.Choices {
+		if c.Label == "" || c.Value == "" {
+			panic("console.ConsoleChoice needs a Label and a Value")
+		}
+		if c.Checked {
+			checked++
+		}
+	}
+	if checked != 1 {
+		panic("console.ConsoleChoiceMenu needs one choice checked")
+	}
+	title := m.ID + "-title"
+	return h.Div(class.Root("cui-console-popover", m.Class), h.ID(m.ID), h.Popover(),
+		h.Div(h.Class("cui-console-menu"),
+			h.P(h.Class("cui-console-menu-heading"), h.ID(title), g.Text(m.Title)),
+			h.Div(h.Role("menu"), h.Aria("labelledby", title),
+				g.Map(m.Choices, func(c ConsoleChoice) g.Node {
+					return h.Button(h.Class("cui-console-menu-item"), h.Type("button"), h.Role("menuitemradio"), h.Aria("checked", strconv.FormatBool(c.Checked)), h.Value(c.Value),
+						h.PopoverTarget(m.ID), h.PopoverTargetAction("hide"),
+						lucide.Check.Class("cui-console-menu-icon"),
+						h.Span(h.Class("cui-console-menu-label"), optionalAttr("lang", c.Lang), g.Text(c.Label)),
+					)
+				}),
+			),
+		),
 	).Render(w)
 }

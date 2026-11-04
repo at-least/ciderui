@@ -58,6 +58,7 @@ const DOCS_ASIDES = [['note', 'docc'], ['important', 'docc-important'], ['warnin
 // each color's light and dark side: [page, probe, width, property, state?,
 // opacity?] where apple.com shows it (`opacity`: the color at the element's
 // opacity, as apple.com draws a title in black at .88), or 'fitted: why'
+// or 'golden: why' (no instance measured), each held by the contrast checks
 const CONTRACT = {
   '--cui-c-bg': [['home', 'page.body', W, 'background-color'], ['product', 'page.body', W, 'background-color']],
   '--cui-c-bg-alt': [['home', 'hero.tile', W, 'background-color'], ['product', 'section.dark', W, 'background-color']],
@@ -139,6 +140,7 @@ const CONTRACT = {
   '--cui-c-on-video-control': [['tv-player', 'subtitles', W, 'color'], ['tv-player', 'fullscreen', W, 'color']],
   '--cui-c-on-video-time': [['tv-player', 'elapsed', W, 'color'], ['tv-player', 'remaining', W, 'color']],
   '--cui-c-video-track': [['tv-player', 'volume.range', W, '--progress-track-color'], ['tv-player', 'volume.range', 1600, '--progress-track-color']],
+  '--cui-c-video-cue': ['golden: muse\'s cue box; tv.apple.com\'s cues are its <video>\'s own text track, none read', 'golden: muse\'s cue box; tv.apple.com\'s cues are its <video>\'s own text track, none read'],
   '--cui-c-docs-listing': [['docc', 'listing', W, 'background-color'], ['docc-dark', 'listing', W, 'background-color']],
   '--cui-c-docs-code': [['docc', 'listing.code', W, 'color'], ['docc-dark', 'listing.code', W, 'color']],
   ...Object.fromEntries(DOCS_ASIDES
@@ -301,6 +303,8 @@ const MIN = [
   // the player's text and controls on its video
   ['--cui-c-on-video-control', ['--cui-c-video'], 4.5],
   ['--cui-c-on-video-time', ['--cui-c-video'], 4.5],
+  // a cue on its box, over any picture
+  ['--cui-c-on-video', ['--cui-c-video-cue'], 4.5],
   // a row's matched words on their tint
   ['--cui-c-text', ['--cui-c-docs-match'], 4.5],
 ];

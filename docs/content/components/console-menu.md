@@ -28,3 +28,11 @@ The list of a section’s pages down the left of App Store Connect’s analytics
 | `cui-console-menu-rule` | a rule between runs, an `<hr>` |
 
 Below 640px its items are 37px at 16px. The Go module writes it with `console.ConsoleMenu`, `console.ConsoleMenuItem` and `console.ConsoleMenuGroup`, an icon any of package `lucide`’s.
+
+## Choices
+
+A list to choose one from, in a [Console Popover](@/components/console-popover.md): a [Console Player](@/components/console-player.md)’s subtitles or voices. Each choice is a `<button role="menuitemradio">` item, its `value` what the page’s script reads, its check in the icon’s place, shown on the one with `aria-checked="true"` and kept hidden on the others so every label starts in line. A click closes the popover by itself (`popovertarget` and `popovertargetaction="hide"`); the script moves `aria-checked` to the choice and moves the focus among the choices by the arrow keys. A language’s name carries its `lang`.
+
+{{ <cui_example file="console-menu/choices" title="A console menu of choices" pad={true} /> }}
+
+The Go module writes it with `console.ConsoleChoiceMenu` (the popover’s id, its title, its choices) and `console.ConsoleChoice` (the label, the value, the language, checked); one choice is checked.

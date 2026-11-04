@@ -10,8 +10,62 @@ const FITTED = 'the secondary label fitted to 0.76 (tokens.css, decision 21): th
 const CURRENT = '.cui-console-menu > [aria-current="page"]';
 const SUB = '.cui-console-menu-group[open] > a[href]';
 const PLAIN = '.cui-console-menu > a[href="#shop"]';
+const OPEN = '.cui-console-btn[popovertarget]';
+const CHECKED = '[role="menuitemradio"][aria-checked="true"]';
+const UNCHECKED = '[role="menuitemradio"][aria-checked="false"]';
+const page = (html) => `<div style="padding:24px 24px 320px">${html}</div>`;
 
 export const cases = [
+  {
+    name: 'menu choices',
+    html: page(ex('choices')),
+    widths: [1200],
+    click: OPEN,
+    checks: [
+      { target: '#subtitles', props: ['display'], golden: 'its button opens it, a console popover (decision 27)' },
+      { target: UNCHECKED, props: ['box-height', 'border-top-left-radius', 'padding-left', 'padding-right'], asc: ['hover-menu', 'menu.item'] },
+      { target: `${UNCHECKED} .cui-console-menu-label`, props: LABEL, asc: ['analytics', 'menu.item.label'] },
+      { target: UNCHECKED, props: ['background-color', 'border-top-width', 'text-align', 'font-family'], golden: 'a <button> drawn as the menu\'s <a>: no ground, no edge, its label at its start in the page\'s face' },
+      { target: CHECKED, props: ['background-color'], golden: 'the chosen one unfilled, its check alone marking it, as tv.apple.com\'s chosen subtitles (tv-player-menu:chosen, no fill): a fill is the current page\'s' },
+      { target: UNCHECKED, props: ['background-color'], state: 'hover', asc: ['hover-menu', 'menu.item'] },
+      { target: UNCHECKED, props: ['box-width'], golden: 'a row the menu\'s width, as an <a> item is' },
+      { target: `${CHECKED} .cui-console-menu-icon`, props: ['box-width', 'margin-left'], tb: ['component-DisplayList-anatomy-Item-anatomy-Indicator-variant-inlinePosition-start-width', 'component-DisplayList-anatomy-Item-anatomy-Indicator-variant-inlinePosition-start-marginInlineStart'] },
+      { target: `${CHECKED} .cui-console-menu-icon`, props: ['visibility', 'color'], golden: `the check in the toolkit's indicator's place at its start, where tv.apple.com draws its own (tv-player-menu:chosen.check, 10px in); Lucide's check (decision 17); ${FITTED}` },
+      { target: `${UNCHECKED} .cui-console-menu-icon`, props: ['visibility', 'box-width'], golden: 'unchecked, its check hidden in its place: every label lines up, as tv.apple.com\'s (its text 36px in on every row)' },
+      { target: `${UNCHECKED} .cui-console-menu-label`, props: ['box-left'], golden: 'each label at the same start' },
+      { target: `${CHECKED} .cui-console-menu-label`, props: ['box-left'], golden: 'each label at the same start' },
+      { target: '#subtitles .cui-console-menu-heading', props: ['font-size', 'line-height', 'font-weight', 'padding-top', 'padding-left'], tb: [`${MENU}-desktop-variant-menu-anatomy-Heading-textStyle-fontSize`, `${MENU}-desktop-variant-menu-anatomy-Heading-textStyle-lineHeight`, `${MENU}-desktop-variant-menu-anatomy-Heading-textStyle-fontWeight`, `${MENU}-desktop-variant-menu-anatomy-Header-paddingBlockStart`, `${MENU}-desktop-variant-menu-anatomy-Header-paddingInline`] },
+      { target: UNCHECKED, props: ['outline-style', 'outline-width', 'outline-offset'], state: 'focus-visible', golden: 'base.css\'s one focus ring (rule 9)' },
+    ],
+  },
+  {
+    name: 'menu choices chosen',
+    html: page(ex('choices')),
+    widths: [1200],
+    click: [OPEN, '[role="menuitemradio"][value="ja"]'],
+    checks: [
+      { target: '#subtitles', props: ['display'], golden: 'a choice closes its popover with no script (popovertargetaction="hide"); its check is the page\'s script\'s to move' },
+    ],
+  },
+  {
+    name: 'menu choices phone',
+    html: page(ex('choices')),
+    widths: [390],
+    click: OPEN,
+    checks: [
+      { target: UNCHECKED, props: ['padding-top', 'padding-left', 'border-top-left-radius', 'column-gap'], tb: [`${MENU}-mobile-variant-menu-anatomy-Item-paddingBlock`, `${MENU}-mobile-variant-menu-anatomy-Item-paddingInline`, `${MENU}-mobile-variant-menu-anatomy-Item-borderRadius`, `${MENU}-mobile-variant-menu-anatomy-Item-gap`] },
+    ],
+  },
+  {
+    name: 'menu choices dark',
+    html: `<div class="cui-dark">${page(ex('choices'))}</div>`,
+    widths: [1200],
+    click: OPEN,
+    checks: [
+      { target: '#subtitles', props: ['background-color', 'color'], golden: 'dark over a dark page: the console popover\'s derived dark (decision 18), a menu over the video in muse\'s dark console' },
+      { target: `${CHECKED} .cui-console-menu-icon`, props: ['color'], golden: 'the check in the dark secondary label' },
+    ],
+  },
   {
     name: 'menu',
     html: ex('menu'),

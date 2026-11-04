@@ -7,6 +7,11 @@ const SCRUB = '.cui-console-player-progress > .cui-console-player-range';
 const VOLUME = '.cui-console-player-header > .cui-console-player-range';
 const TV = [1600, 1200];
 const LAYOUT = 'tv.apple.com\'s player\'s room: 30px at the sides, 20px at the top and foot (tv-player:scrim\'s grid, 20px 26px 713px 121px 20px by 30px 1540px 30px); its rows the header, the centre and the footer, whatever the video\'s size';
+const STAGE = '.cui-console-player > :first-child';
+const LINE = '.cui-console-player-subtitles > p';
+const CUE = '.cui-console-player-cue';
+const MUSE = 'muse\'s console\'s subtitles, not tv.apple.com\'s, whose cues are its <video>\'s own text track (shown, none active in the first 22s of its first trailer, 2026-11-05; ::cue unreadable): 2.4% of the width at the least 15px, 1.6 lines, 500, white on a box of black at 0.75, 0.3em corners, each line its own box, 42em at its widest, balanced';
+const hidden = (html) => html.replace('data-state="playing"', 'data-state="playing" data-controls="hidden"');
 const NO_SLIDE = 'faded where they are: tv.apple.com\'s header goes 20px up and its footer 20px down as they hide (tv-player-playing:hidden.*), a slide that only draws the eye (DESIGN.md decision 25); the fades\' durations and curves its own';
 
 export const cases = [
@@ -46,6 +51,65 @@ export const cases = [
       { target: VOLUME, props: ['--cui-console-player-track', '--cui-console-player-thumb'], apple: ['tv-player', 'volume.range'], as: { '--cui-console-player-track': '--progress-track-height', '--cui-console-player-thumb': '--progress-thumb-height' } },
       { target: VOLUME, props: ['box-width'], golden: 'tv.apple.com\'s volume, 100px (tv-player:volume.range); its thumb white as the scrubber\'s, where tv.apple.com\'s is #d0d0d0 until hovered: one thumb' },
       { target: SCRUB, props: ['outline-style', 'outline-width', 'outline-offset'], state: 'focus-visible', golden: 'base.css\'s one focus ring (rule 9), where tv.apple.com draws a 4px blue one' },
+      { target: CUE, props: ['display'], golden: 'no cue, no box: the slot is written empty until the page\'s script fills it' },
+      { target: '#subtitles', props: ['display'], golden: 'its menus written inside it, closed until a button opens one' },
+    ],
+  },
+  {
+    name: 'player stills',
+    html: ex('stills'),
+    widths: TV,
+    height: 900,
+    checks: [
+      { target: STAGE, props: ['box-width', 'box-height', 'box-top', 'box-left'], golden: 'an element of stills in the video\'s place, the player\'s first child: the player\'s whole box, under the overlay' },
+      { target: `${STAGE} > img`, props: ['box-width', 'box-height'], golden: 'the page\'s stills fill it (its own utilities: the player sizes the element, not what is in it)' },
+      { target: LINE, props: ['font-size', 'line-height', 'font-weight', 'color', 'text-align', 'text-wrap-style', 'max-width'], golden: MUSE },
+      { target: CUE, props: ['background-color', 'padding-top', 'padding-left', 'border-top-left-radius', 'box-decoration-break'], golden: MUSE },
+      { target: LINE, props: ['box-top', 'box-height'], golden: 'over the footer while the controls show: its foot 12px above the footer\'s top, the footer\'s own gap (tv-player:footer\'s 12px)' },
+      { target: '.cui-console-player-footer', props: ['box-top'], golden: 'the footer, under the subtitles, where it is with none' },
+      { target: '.cui-console-player-subtitles', props: ['pointer-events', 'transition-property', 'transition-duration', 'transition-timing-function'], golden: 'the controls under it take the pointer; it moves as the footer fades, in the footer\'s 0.4s (tv-player-playing:hidden.footer)' },
+      { target: CUE, props: ['hit'], golden: 'a click on the cue reaches the overlay under it, which the page\'s script hears (a click on the picture plays or pauses)' },
+    ],
+  },
+  {
+    name: 'player stills hidden',
+    html: hidden(ex('stills')),
+    widths: [1600],
+    height: 900,
+    checks: [
+      { target: LINE, props: ['box-top', 'box-height'], golden: 'the controls hidden, the subtitles at the foot: 20px up, the overlay\'s room (the footer\'s row\'s foot)' },
+      { target: '.cui-console-player-subtitles', props: ['opacity'], golden: 'shown while the controls are hidden' },
+      { target: '.cui-console-player-footer', props: ['opacity'], apple: ['tv-player-playing', 'hidden.footer'] },
+    ],
+  },
+  {
+    name: 'player stills hidden focused',
+    html: hidden(ex('stills')),
+    widths: [1600],
+    height: 900,
+    press: ['Tab'],
+    checks: [
+      { target: LINE, props: ['box-top'], golden: 'the focus inside shows the controls, and the subtitles go back over the footer' },
+    ],
+  },
+  {
+    name: 'player stills phone',
+    html: ex('stills'),
+    widths: [390],
+    checks: [
+      { target: LINE, props: ['font-size'], golden: 'at the least 15px, where 2.4% of a narrow player would be smaller' },
+    ],
+  },
+  {
+    name: 'player menu open',
+    html: hidden(ex('stills')),
+    widths: [1600],
+    height: 900,
+    click: '[data-control="subtitles"]',
+    checks: [
+      { target: '#subtitles', props: ['display'], golden: 'the subtitles button opens its menu, a console popover (decision 27)' },
+      { target: '#subtitles', props: ['box-top', 'box-height'], golden: 'above its button: no room below the player\'s foot (the popover\'s flip)' },
+      { target: '.cui-console-player-footer', props: ['opacity'], golden: 'the controls hidden before, shown while the menu is open: the focus is inside the player, the menu too' },
     ],
   },
   {
