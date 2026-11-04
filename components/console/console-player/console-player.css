@@ -1,0 +1,255 @@
+@layer components {
+  /* a containing block its overlay is laid over its video in (rule 6) */
+  .cui-console-player {
+    position: relative;
+    display: grid;
+    background-color: var(--cui-c-video);
+    color: var(--cui-c-on-video);
+    letter-spacing: normal;
+
+    & > video {
+      grid-area: 1 / 1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .cui-console-player-overlay {
+    grid-area: 1 / 1;
+    position: relative;
+    display: grid;
+    /* tv.apple.com's room round its controls */
+    grid-template-columns: 30px minmax(0, 1fr) 30px;
+    grid-template-rows: 20px auto minmax(0, 1fr) auto 20px;
+
+    /* the gradient under the controls, faded apart from them */
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--cui-video-scrim);
+      transition: opacity 0.1s ease;
+      pointer-events: none;
+    }
+
+    & > * {
+      position: relative;
+      grid-column: 2;
+    }
+  }
+
+  .cui-console-player-header {
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 8px;
+    transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .cui-console-player-play {
+    grid-row: 3;
+    place-self: center;
+    display: grid;
+    place-items: center;
+    width: 66px;
+    height: 66px;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    color: var(--cui-c-on-video);
+    cursor: pointer;
+    transition: opacity 0.4s cubic-bezier(0, 0, 0.2, 1), transform 0.2s ease-out;
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    & > svg {
+      grid-area: 1 / 1;
+      width: 50px;
+      height: 50px;
+      fill: currentColor;
+      stroke: none;
+    }
+  }
+
+  /* the glyph of what a click does: play while paused, pause while playing */
+  :where(.cui-console-player[data-state="playing"]) .cui-console-player-glyph-play,
+  :where(.cui-console-player:not([data-state="playing"])) .cui-console-player-glyph-pause {
+    display: none;
+  }
+
+  .cui-console-player-footer {
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "title buttons" "progress progress";
+    align-items: center;
+    gap: 12px;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.6, 1);
+  }
+
+  .cui-console-player-title {
+    grid-area: title;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 700;
+  }
+
+  .cui-console-player-buttons {
+    grid-area: buttons;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .cui-console-player-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    color: var(--cui-c-on-video-control);
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--cui-c-on-video);
+      }
+    }
+
+    &:active {
+      color: var(--cui-c-on-video);
+    }
+
+    & > svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    :where(.cui-console-player-header) > & {
+      width: 26px;
+      height: 26px;
+      color: var(--cui-c-on-video);
+
+      & > svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+
+  .cui-console-player-progress {
+    grid-area: progress;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "range range range" "elapsed . remaining";
+    grid-template-rows: 11px 14px;
+  }
+
+  .cui-console-player-time {
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    color: var(--cui-c-on-video-time);
+
+    &:first-of-type {
+      grid-area: elapsed;
+    }
+
+    &:last-of-type {
+      grid-area: remaining;
+    }
+  }
+
+  /* a range the page's script fills: --cui-console-player-value, the share
+     played (or the volume), as a percentage */
+  .cui-console-player-range {
+    --cui-console-player-value: 0%;
+    --cui-console-player-track: 5px;
+    --cui-console-player-thumb: 11px;
+    --cui-console-player-fill: linear-gradient(to right, var(--cui-c-on-video) var(--cui-console-player-value), var(--cui-c-video-track) var(--cui-console-player-value));
+
+    grid-area: range;
+    display: block;
+    width: 100%;
+    height: var(--cui-console-player-thumb);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    appearance: none;
+    cursor: pointer;
+
+    &::-webkit-slider-runnable-track {
+      height: var(--cui-console-player-track);
+      border-radius: var(--cui-console-player-track);
+      background-image: var(--cui-console-player-fill);
+    }
+
+    &::-moz-range-track {
+      height: var(--cui-console-player-track);
+      border-radius: var(--cui-console-player-track);
+      background-image: var(--cui-console-player-fill);
+    }
+
+    &::-webkit-slider-thumb {
+      width: var(--cui-console-player-thumb);
+      height: var(--cui-console-player-thumb);
+      margin-top: calc((var(--cui-console-player-track) - var(--cui-console-player-thumb)) / 2);
+      border: 0;
+      border-radius: 50%;
+      background-color: var(--cui-c-on-video);
+      box-shadow: var(--cui-video-thumb-shadow);
+      appearance: none;
+    }
+
+    &::-moz-range-thumb {
+      width: var(--cui-console-player-thumb);
+      height: var(--cui-console-player-thumb);
+      border: 0;
+      border-radius: 50%;
+      background-color: var(--cui-c-on-video);
+      box-shadow: var(--cui-video-thumb-shadow);
+    }
+
+    /* tv.apple.com's volume, 100px beside its button */
+    :where(.cui-console-player-header) > & {
+      width: 100px;
+    }
+  }
+
+  /* hidden by the page's script while the video plays and the pointer is
+     still; shown again while the focus is inside, for the keyboard */
+  .cui-console-player[data-controls="hidden"]:not(:focus-within) .cui-console-player-overlay {
+    &::before,
+    & > * {
+      opacity: 0;
+    }
+  }
+
+  @media (pointer: coarse) {
+    .cui-console-player-btn {
+      min-width: 2.75rem;
+      min-height: 2.75rem;
+    }
+
+    .cui-console-player-range {
+      height: 2.75rem;
+    }
+
+    .cui-console-player-progress {
+      grid-template-rows: 2.75rem 14px;
+    }
+  }
+}

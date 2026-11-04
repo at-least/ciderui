@@ -132,6 +132,13 @@ const CONTRACT = {
   '--cui-c-close-active': [['overlay', 'close.circle-hover', W, 'background-color', 'active'], ['overlay', 'close.circle-hover', 390, 'background-color', 'active']],
   '--cui-c-on-close': [['overlay', 'close.circle', W, 'color'], ['overlay', 'close.circle-hover', 390, 'color', 'active']],
   '--cui-c-on-close-hover': [['overlay', 'close.circle-hover', W, 'color', 'hover'], ['overlay', 'close.circle-hover', 390, 'color', 'hover']],
+  // tv.apple.com's video player, paused (decision 28): one value each, a
+  // video dark on any page
+  '--cui-c-video': [['tv-player', 'dialog', W, 'background-color'], ['tv-player', 'dialog', 1600, 'background-color']],
+  '--cui-c-on-video': [['tv-player', 'play', W, 'color'], ['tv-player', 'play', 1600, 'color']],
+  '--cui-c-on-video-control': [['tv-player', 'subtitles', W, 'color'], ['tv-player', 'fullscreen', W, 'color']],
+  '--cui-c-on-video-time': [['tv-player', 'elapsed', W, 'color'], ['tv-player', 'remaining', W, 'color']],
+  '--cui-c-video-track': [['tv-player', 'volume.range', W, '--progress-track-color'], ['tv-player', 'volume.range', 1600, '--progress-track-color']],
   '--cui-c-docs-listing': [['docc', 'listing', W, 'background-color'], ['docc-dark', 'listing', W, 'background-color']],
   '--cui-c-docs-code': [['docc', 'listing.code', W, 'color'], ['docc-dark', 'listing.code', W, 'color']],
   ...Object.fromEntries(DOCS_ASIDES
@@ -291,6 +298,9 @@ const MIN = [
   // the navigator's current row's words, and its glyph (a mark, 3:1)
   ['--cui-c-text', ['--cui-c-docs-current'], 4.5],
   ['--cui-c-text-2', ['--cui-c-docs-current'], 3],
+  // the player's text and controls on its video
+  ['--cui-c-on-video-control', ['--cui-c-video'], 4.5],
+  ['--cui-c-on-video-time', ['--cui-c-video'], 4.5],
   // a row's matched words on their tint
   ['--cui-c-text', ['--cui-c-docs-match'], 4.5],
 ];
@@ -427,6 +437,8 @@ const shadow = (value) => {
   while (lengths.length < 4) lengths.push('0px');
   return `${color.includes(',') ? color : rgb(color)} ${lengths.join(' ')}`;
 };
+check('--cui-video-scrim is tv.apple.com\'s tv-player:scrim.gradient background-image', vars['--cui-video-scrim'], ref('tv-player', 'scrim.gradient', W, 'background-image'));
+check('--cui-video-thumb-shadow is tv.apple.com\'s tv-player:volume.range --volume-thumb-box-shadow', vars['--cui-video-thumb-shadow'], ref('tv-player', 'volume.range', W, '--volume-thumb-box-shadow'));
 for (const [name, state] of [['--cui-shadow-card'], ['--cui-shadow-card-hover', 'hover']]) {
   for (const probe of ['card', 'card.dark']) {
     check(`${name} is apple.com's store:${probe}${state ? ':' + state : ''} box-shadow`, shadow(vars[name]), shadow(ref('store', probe, W, 'box-shadow', state)));
@@ -445,9 +457,10 @@ for (const file of sheets) {
   const literal = values.match(/#[0-9a-f]{3,8}\b|\b(rgba?|hsla?|hwb|lab|lch|oklab|oklch|color)\(/i) ?? values.match(NAMED);
   check(`${file} writes no color of its own`, literal?.[0] ?? 'none', 'none');
   // a console part reads the console's slots alone; the dialog's backdrop the
-  // scrim, which the toolkit names none of
+  // scrim, which the toolkit names none of, and the player the video's
+  // (decision 28)
   if (file.startsWith(join('components', 'console'))) {
-    const other = [...text.matchAll(/var\((--cui-c-[\w-]+)/g)].map(m => m[1]).filter(name => !name.startsWith('--cui-c-console-') && name !== '--cui-c-scrim');
+    const other = [...text.matchAll(/var\((--cui-c-[\w-]+)/g)].map(m => m[1]).filter(name => !name.startsWith('--cui-c-console-') && name !== '--cui-c-scrim' && !/^--cui-c-(on-)?video/.test(name));
     check(`${file} reads the console's colors alone`, other.join(' ') || 'none', 'none');
   }
 }
