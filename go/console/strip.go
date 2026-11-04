@@ -22,6 +22,17 @@ var (
 	ConsoleStripMarkRedraw = ConsoleStripMark{"redraw"}
 )
 
+// ConsoleStripItemVariant is how an item's picture is cropped to 16:9.
+type ConsoleStripItemVariant struct{ value string }
+
+var (
+	// ConsoleStripItemVariantFrame: round its middle, a film's frame.
+	ConsoleStripItemVariantFrame = ConsoleStripItemVariant{value: ""}
+	// ConsoleStripItemVariantSheet: to its left edge, a character sheet's
+	// face.
+	ConsoleStripItemVariantSheet = ConsoleStripItemVariant{"sheet"}
+)
+
 // ConsoleStrip is one row of 16:9 thumbnails scrolled sideways, in groups
 // under their names (a storyboard's shots by scene under its player), one of
 // them current.
@@ -39,14 +50,19 @@ type ConsoleStripGroup struct {
 type ConsoleStripItem struct {
 	Href string
 	Src  string
-	// Alt is the link's name, with Caption, DoubtAriaLabel and MarkAriaLabel
-	// after it.
+	// Alt is the link's name, with Caption, Detail, DoubtAriaLabel and
+	// MarkAriaLabel after it.
 	Alt  string
 	Lazy bool
 	// Current: aria-current="true", ringed.
 	Current bool
+	Variant ConsoleStripItemVariant
 	// Caption: the shot's name under its picture.
 	Caption string
+	// Detail: a second line under the Caption.
+	Detail string
+	// Unused: nothing uses it, dimmed (data-state="unused").
+	Unused bool
 	// DoubtAriaLabel: a doubt waiting for the reader's call, a dot in
 	// console-status's warning color; "" none.
 	DoubtAriaLabel string
@@ -92,6 +108,9 @@ func stripItem(item ConsoleStripItem) g.Node {
 	if item.Alt == "" {
 		panic("console.ConsoleStripItem needs an Alt: it is its link's name")
 	}
+	if item.Detail != "" && item.Caption == "" {
+		panic("console.ConsoleStripItem needs a Caption under a Detail")
+	}
 	if (item.Mark == ConsoleStripMarkNone) != (item.MarkAriaLabel == "") {
 		panic("console.ConsoleStripItem needs a MarkAriaLabel with a Mark, and none without")
 	}
@@ -101,9 +120,11 @@ func stripItem(item ConsoleStripItem) g.Node {
 	}
 	// the doubt before the mark: the stylesheet moves a check that follows a
 	// dot out of its corner
-	return h.A(h.Class("cui-console-strip-item"), h.Href(item.Href), g.If(item.Current, h.Aria("current", "true")),
+	return h.A(h.Class("cui-console-strip-item"), h.Href(item.Href), g.If(item.Variant != ConsoleStripItemVariantFrame, h.Data("variant", item.Variant.value)),
+		g.If(item.Unused, h.Data("state", "unused")), g.If(item.Current, h.Aria("current", "true")),
 		h.Img(h.Src(item.Src), h.Alt(item.Alt), g.If(item.Lazy, h.Loading("lazy"))),
 		g.If(item.Caption != "", h.Span(h.Class("cui-console-strip-caption"), g.Text(item.Caption))),
+		g.If(item.Detail != "", h.Span(h.Class("cui-console-strip-detail"), g.Text(item.Detail))),
 		g.If(item.DoubtAriaLabel != "", stripMark("doubt", item.DoubtAriaLabel, nil)),
 		mark,
 	)

@@ -127,4 +127,35 @@ export const cases = [
       { target: '.cui-console-strip-group', props: ['box-width', 'padding-bottom'], golden: 'the scene its shot\'s width, whatever its name; no caption, so no room under it' },
     ],
   },
+  {
+    name: 'strip assets',
+    html: ex('assets'),
+    widths: [1200, 390],
+    checks: [
+      { target: `${FIRST} > .cui-console-strip-detail`, props: ['font-size', 'line-height', 'color', 'text-overflow', 'white-space', 'box-top', 'box-left', 'box-width'], golden: 'a second line under the caption, in its type, the next line down (126px: the caption\'s 113 and its 13px line), cut to the picture\'s width: muse\'s assets page says under each asset\'s name how many shots use it (the owner, 2026-11-05)' },
+      { target: GROUP, props: ['padding-bottom'], golden: 'a strip with a detail line keeps both lines\' room under every group\'s shots: 1px past the ring and two 13px lines' },
+      { target: `${FIRST} > img`, props: ['object-position', 'object-fit', 'box-width', 'box-height'], golden: 'a character sheet cropped to its left edge, where its face is (muse\'s assets page), at the row\'s 16:9 and not muse\'s square: a square would narrow its item, its caption and its marks\' places in a row of 16:9 shots' },
+      { target: `${item(2, 1)} > img`, props: ['object-position'], golden: 'any other picture cropped round its middle' },
+      { target: `${item(1, 2)} > img`, props: ['opacity'], golden: 'an asset no shot uses: its picture dimmed to half, muse\'s; not its lines, which its words already say (dimmed, the caption fell to 2:1 on the page, the surfaces\' contrast check)' },
+      { target: `${item(1, 2)} > .cui-console-strip-caption`, props: ['opacity'], golden: 'its caption not dimmed' },
+      { target: `${FIRST} > img`, props: ['opacity'], golden: 'one in use not dimmed' },
+    ],
+  },
+  {
+    name: 'strip assets hovered',
+    html: ex('assets'),
+    widths: [1200],
+    checks: [
+      { target: `${item(1, 2)} > img`, props: ['opacity'], state: 'hover', on: item(1, 2), golden: 'a dimmed asset under the pointer at 0.8, muse\'s: brighter, so it reads as a link, and still apart from those in use' },
+    ],
+  },
+  {
+    name: 'strip assets touch',
+    html: ex('assets'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: `${item(1, 2)} > img`, props: ['opacity'], state: 'hover', on: item(1, 2), rest: 'a tapped dimmed asset keeps no hover (rule 5)' },
+    ],
+  },
 ];

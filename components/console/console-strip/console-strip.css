@@ -25,6 +25,11 @@
     .cui-console-strip:has(.cui-console-strip-caption) > & {
       padding-bottom: 14px;
     }
+
+    /* and the detail's line under the caption */
+    .cui-console-strip:has(.cui-console-strip-detail) > & {
+      padding-bottom: 27px;
+    }
   }
 
   :where(.cui-console-strip-head) {
@@ -67,6 +72,18 @@
       border-color: Canvas;
     }
 
+    /* nothing uses it: muse's assets page. Its picture alone: its lines
+       dimmed too fell to 2:1 */
+    &[data-state="unused"] > img {
+      opacity: 0.5;
+    }
+
+    @media (hover: hover) {
+      &[data-state="unused"]:hover > img {
+        opacity: 0.8;
+      }
+    }
+
     &[aria-current="true"] {
       border-color: var(--cui-c-console-brand-accent-primary);
 
@@ -86,6 +103,11 @@
       border-radius: 12px;
       background-color: var(--cui-c-console-card);
     }
+
+    /* a character sheet: its face is at its left */
+    &[data-variant="sheet"] > img {
+      object-position: left;
+    }
   }
 
   /* out of the item's box, so its ring and its marks keep the picture's;
@@ -98,9 +120,18 @@
     right: 2px;
   }
 
+  /* a second line under the caption */
+  .cui-console-strip-detail {
+    position: absolute;
+    top: calc(100% + 16px);
+    left: 2px;
+    right: 2px;
+  }
+
   /* a console thumbnail's caption's type, cut to its box */
   .cui-console-strip-label,
-  .cui-console-strip-caption {
+  .cui-console-strip-caption,
+  .cui-console-strip-detail {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
