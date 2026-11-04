@@ -74,7 +74,7 @@ The cue is `cui-console-player-cue`.
 
 ## Menus
 
-The subtitles and voices buttons open a popover by `popovertarget`: a menu of choices, a [Console Menu](@/components/console-menu.md#choices)’s, written inside the player after its overlay, so the controls stay while the focus is in it (not inside the overlay, which places its own parts). tv.apple.com’s own menu is drawn otherwise (a blurred light ground, 6px corners, 32px rows: `reference/apple.com/`’s `tv-player-menu`); the console keeps its one menu, and takes tv.apple.com’s check at each choice’s start.
+The subtitles and voices buttons open a popover by `popovertarget`: a menu of choices, a [Console Menu](@/components/console-menu.md#choices)’s, written inside the player after its overlay, so the controls stay while the focus is in it (not inside the overlay, which places its own parts). tv.apple.com’s own menu is drawn otherwise (a blurred light ground, 6px corners, 32px rows: `reference/apple.com/`’s `tv-player-menu`); the console keeps its one menu, and takes tv.apple.com’s check at each choice’s start. A menu opens upward inside the player, as tv.apple.com’s: its foot and its right edge on its button’s centre, at most as tall as the player leaves above it (20px from its top), its choices scrolling inside it.
 
 ## Go
 

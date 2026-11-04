@@ -278,6 +278,30 @@
     translate: none;
   }
 
+  /* its menus, popovers written inside it: open in the top layer, so placed
+     by the player's box and their button's. Not position-area with a
+     fallback: a top-layer box tries its fallbacks against the window, never
+     the player, and the popover's own centring ran past the player's edge */
+  @supports (position-area: bottom) {
+    .cui-console-player {
+      anchor-name: --cui-console-player;
+      anchor-scope: --cui-console-player;
+    }
+
+    .cui-console-player > .cui-console-popover {
+      position-area: none;
+      /* the button that opened it; not normal, the initial: with no
+         position-area it gave anchor() no anchor (Chromium 151) */
+      position-anchor: auto;
+      position-try-fallbacks: none;
+      inset: calc(anchor(--cui-console-player top) + 20px) anchor(center) anchor(center) calc(anchor(--cui-console-player left) + 30px);
+      margin: 0;
+      align-self: end;
+      justify-self: end;
+      max-height: stretch;
+    }
+  }
+
   @media (pointer: coarse) {
     .cui-console-player-btn {
       min-width: 2.75rem;
