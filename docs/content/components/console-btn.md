@@ -23,6 +23,7 @@ App Store Connect’s button: a rounded rectangle, gray by default, filled for t
 | `data-color="error"` | red, for an action that destroys |
 | `disabled`, `aria-disabled="true"` | not available now |
 | `cui-console-btn-icon` | an icon alone, square; its label its `aria-label` |
+| `data-shape="capsule"` | corners half its height: an icon button round, a labelled one a pill |
 
 ## Disabled
 
@@ -39,3 +40,9 @@ App Store Connect’s button: a rounded rectangle, gray by default, filled for t
 An icon, any of `ciderui::lucide`’s, before the label, or alone with `cui-console-btn-icon`.
 
 {{ <cui_example file="console-btn/icon" title="Console buttons with icons" pad={true} /> }}
+
+## Capsule
+
+`data-shape="capsule"`: App Store Connect’s capsule shape, its corners half the button’s height at every size, so an icon button is a circle. On a touch screen a 44px button keeps 22px corners.
+
+{{ <cui_example file="console-btn/capsule" title="Capsule console buttons" pad={true} /> }}

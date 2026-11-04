@@ -62,6 +62,7 @@ const SCENES = [
   { name: 'console-skip', html: `<div class="cui-console-page" style="width:420px;height:120px;padding:24px">${example('console-skip/skip').replace('class="cui-console-skip ', 'style="position:static" class="')}</div>`, zoom: 2, center: true },
   { name: 'console-toast', html: `<div class="cui-console-page" style="width:420px;height:160px;padding:24px;display:grid;place-items:center">${example('console-toast/toast')}</div>`, zoom: 2, center: true },
   { name: 'console-pager', html: `<div class="cui-console-page" style="width:520px;padding:24px">${example('console-pager/pager')}</div>`, zoom: 2, center: true },
+  { name: 'console-play', html: `<div class="cui-console-page" style="padding:24px">${example('console-play/play')}</div>`, zoom: 3, center: true },
   { name: 'console-thumb', html: `<div class="cui-console-page" style="width:360px;padding:24px">${example('console-thumb/thumbs')}</div>`, zoom: 1.6, center: true },
   { name: 'console-content', html: `<div style="width:1280px">${example('console-content/content')}</div>`, zoom: 1, center: true, window: 1280 },
   { name: 'console-link', files: ['console-link/link'], zoom: 2, width: 560, center: true },

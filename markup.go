@@ -7,7 +7,7 @@ import (
 	"sync"
 )
 
-var checkedAttributes = []string{"data-variant", "data-size", "data-color"}
+var checkedAttributes = []string{"data-variant", "data-size", "data-color", "data-shape"}
 
 type value struct{ class, attribute, value string }
 

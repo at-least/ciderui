@@ -107,6 +107,25 @@ export const cases = [
     checks: ['sm', 'lg', 'xl'].map((size) => ({ target: `[data-size="${size}"]`, props: ['font-size'], tb: [`component-Button-anatomy-artStart-withoutLabel-controlSize-${size}-fontSize`] })),
   },
   {
+    name: 'capsule',
+    html: ex('capsule'),
+    widths: [1200],
+    checks: [
+      ...['sm', 'md', 'lg', 'xl'].map((size) => ({ target: `.cui-console-btn-icon${size === 'md' ? ':not([data-size])' : `[data-size="${size}"]`}`, props: ['box-height', 'box-width', 'border-top-left-radius', 'border-bottom-right-radius'], tb: [`${B}-controlSize-${size}-blockSize`, `${B}-controlSize-${size}-minWidth`, `${B}-controlShape-capsule-controlSize-${size}-borderRadius`, `${B}-controlShape-capsule-controlSize-${size}-borderRadius`] })),
+      { target: '.cui-console-btn:not(.cui-console-btn-icon)', props: ['box-height', 'border-top-left-radius', 'padding-left', 'padding-right'], tb: [`${B}-controlSize-md-blockSize`, `${B}-controlShape-capsule-controlSize-md-borderRadius`, `${B}-controlSize-md-paddingInlineStart`, `${B}-controlSize-md-paddingInlineEnd`] },
+    ],
+  },
+  {
+    name: 'capsule touch',
+    html: ex('capsule'),
+    touch: true,
+    widths: [390],
+    checks: [
+      { target: '.cui-console-btn-icon[data-size="sm"]', props: ['box-width', 'box-height', 'border-top-left-radius'], golden: 'a capsule icon button 44px square on a touch screen, its corners half that: a circle still, as the toolkit\'s capsule is at each size' },
+      { target: '.cui-console-btn-icon[data-size="xl"]', props: ['box-width', 'box-height', 'border-top-left-radius'], golden: 'the extra large keeps its 50px and its 25px corners, over 44' },
+    ],
+  },
+  {
     name: 'touch',
     html: ex('variants'),
     touch: true,

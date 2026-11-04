@@ -1,0 +1,23 @@
+@layer components {
+  /* Lucide's play and pause filled: CSS wins over the <svg>'s fill="none".
+     Not filled and stroked: in the label's translucent color the stroke
+     over the fill drew a darker outline */
+  .cui-console-play > svg {
+    fill: currentColor;
+    stroke: none;
+  }
+
+  .cui-console-play-playing {
+    display: none;
+  }
+
+  .cui-console-play[data-state="playing"] {
+    & > .cui-console-play-paused {
+      display: none;
+    }
+
+    & > .cui-console-play-playing {
+      display: block;
+    }
+  }
+}
