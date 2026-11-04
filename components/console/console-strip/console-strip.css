@@ -1,0 +1,136 @@
+@layer components {
+  .cui-console-strip {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    column-gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    /* room inside the scroller, which clips both ways, for the focus ring
+       and the current item's ring, given back outside: tv.apple.com's row */
+    padding: 15px;
+    margin-block: -15px;
+    margin-inline: -15px;
+    scroll-padding-inline: 15px;
+  }
+
+  .cui-console-strip-group {
+    /* the label's containing block: it is placed over the group's top */
+    position: relative;
+    display: flex;
+    gap: 12px;
+    padding-top: 14px;
+  }
+
+  :where(.cui-console-strip-label) {
+    margin: 0;
+  }
+
+  /* out of the flow, so a long name runs to the group's width and no wider;
+     4px in, over the pictures inside the items' ring room */
+  .cui-console-strip-label {
+    position: absolute;
+    top: 0;
+    left: 4px;
+    right: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: normal;
+    color: var(--cui-c-console-neutral-label-secondary);
+  }
+
+  .cui-console-strip-item {
+    /* the marks' containing block */
+    position: relative;
+    display: block;
+    flex: none;
+    padding: 2px;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    scroll-snap-align: start;
+
+    /* forced colors draw a transparent border in the text's color */
+    @media (forced-colors: active) {
+      border-color: Canvas;
+    }
+
+    &[aria-current="true"] {
+      border-color: var(--cui-c-console-brand-accent-primary);
+
+      @media (forced-colors: active) {
+        border-color: Highlight;
+      }
+    }
+
+    & > img {
+      display: block;
+      /* a storyboard's shot: the strip's size, not the page's */
+      width: 160px;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border: none;
+      border-radius: 12px;
+      background-color: var(--cui-c-console-card);
+    }
+  }
+
+  .cui-console-strip-mark {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: grid;
+    place-items: center;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--cui-c-console-neutral-background-primary);
+    border-radius: 50%;
+    background-color: var(--cui-c-console-neutral-background-primary);
+
+    @media (forced-colors: active) {
+      forced-color-adjust: none;
+      border-color: Canvas;
+      background-color: Canvas;
+      color: CanvasText;
+    }
+
+    & > svg {
+      width: 12px;
+      height: 12px;
+      stroke-width: 3;
+    }
+
+    &[data-state="doubt"] {
+      background-color: var(--cui-c-console-warning-label-primary);
+
+      @media (forced-colors: active) {
+        background-color: CanvasText;
+      }
+    }
+
+    &[data-state="kept"] {
+      color: var(--cui-c-console-success-label-primary);
+
+      @media (forced-colors: active) {
+        color: CanvasText;
+      }
+    }
+
+    &[data-state="redraw"] {
+      inset: 2px;
+      width: auto;
+      height: auto;
+      border-color: var(--cui-c-console-error-accent-primary);
+      border-radius: 12px;
+      background-color: transparent;
+
+      @media (forced-colors: active) {
+        border-color: CanvasText;
+        background-color: transparent;
+      }
+    }
+  }
+}

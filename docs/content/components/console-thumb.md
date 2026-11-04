@@ -22,3 +22,5 @@ A screenshot shown small, a link to itself whole, its name under it.
 | `cui-console-thumb-caption` | its name, 11px, secondary |
 
 The Go module writes a thumbnail with `console.ConsoleThumb`; their row is the page’s own `<div>`.
+
+A storyboard’s row of 16:9 shots, one current, is the [Console Strip](@/components/console-strip.md).

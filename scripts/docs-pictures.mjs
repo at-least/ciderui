@@ -64,6 +64,7 @@ const SCENES = [
   { name: 'console-pager', html: `<div class="cui-console-page" style="width:520px;padding:24px">${example('console-pager/pager')}</div>`, zoom: 2, center: true },
   { name: 'console-play', html: `<div class="cui-console-page" style="padding:24px">${example('console-play/play')}</div>`, zoom: 3, center: true },
   { name: 'console-thumb', html: `<div class="cui-console-page" style="width:360px;padding:24px">${example('console-thumb/thumbs')}</div>`, zoom: 1.6, center: true },
+  { name: 'console-strip', html: `<div class="cui-console-page" style="width:1000px;padding:24px">${example('console-strip/strip')}</div>`, zoom: 1.2, center: true },
   { name: 'console-content', html: `<div style="width:1280px">${example('console-content/content')}</div>`, zoom: 1, center: true, window: 1280 },
   { name: 'console-link', files: ['console-link/link'], zoom: 2, width: 560, center: true },
   { name: 'console-copy', html: `<div class="cui-console-page" style="width:560px;padding:24px">${example('console-copy/copy')}</div>`, zoom: 2, center: true },

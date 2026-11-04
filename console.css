@@ -31,6 +31,7 @@
 @import "./components/console/console-sidebar/console-sidebar.css";
 @import "./components/console/console-skip/console-skip.css";
 @import "./components/console/console-status/console-status.css";
+@import "./components/console/console-strip/console-strip.css";
 @import "./components/console/console-table/console-table.css";
 @import "./components/console/console-tabs/console-tabs.css";
 @import "./components/console/console-thumb/console-thumb.css";
