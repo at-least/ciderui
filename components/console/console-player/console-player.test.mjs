@@ -10,7 +10,7 @@ const LAYOUT = 'tv.apple.com\'s player\'s room: 30px at the sides, 20px at the t
 const STAGE = '.cui-console-player > :first-child';
 const LINE = '.cui-console-player-subtitles > p';
 const CUE = '.cui-console-player-cue';
-const MUSE = 'muse\'s console\'s subtitles, not tv.apple.com\'s, whose cues are its <video>\'s own text track (shown, none active in the first 22s of its first trailer, 2026-11-05; ::cue unreadable): 2.4% of the width at the least 15px, 1.6 lines, 500, white on a box of black at 0.75, 0.3em corners, each line its own box, 42em at its widest, balanced';
+const MUSE = 'muse\'s console\'s subtitles, not tv.apple.com\'s, whose cues are its <video>\'s own text track (shown, none active in the first 22s of its first trailer, 2026-11-05; ::cue unreadable): 2.4% of the width at the least 15px, so it grows with the player (full screen too), 1.6 lines, 500, white under a soft shadow (--cui-video-cue-shadow) and no box (the owner, 2026-11-05, from Apple\'s view), 42em at its widest, balanced';
 const hidden = (html) => html.replace('data-state="playing"', 'data-state="playing" data-controls="hidden"');
 const NO_SLIDE = 'faded where they are: tv.apple.com\'s header goes 20px up and its footer 20px down as they hide (tv-player-playing:hidden.*), a slide that only draws the eye (DESIGN.md decision 25); the fades\' durations and curves its own';
 
@@ -64,7 +64,7 @@ export const cases = [
       { target: STAGE, props: ['box-width', 'box-height', 'box-top', 'box-left'], golden: 'an element of stills in the video\'s place, the player\'s first child: the player\'s whole box, under the overlay' },
       { target: `${STAGE} > img`, props: ['box-width', 'box-height'], golden: 'the page\'s stills fill it (its own utilities: the player sizes the element, not what is in it)' },
       { target: LINE, props: ['font-size', 'line-height', 'font-weight', 'color', 'text-align', 'text-wrap-style', 'max-width'], golden: MUSE },
-      { target: CUE, props: ['background-color', 'padding-top', 'padding-left', 'border-top-left-radius', 'box-decoration-break'], golden: MUSE },
+      { target: CUE, props: ['text-shadow', 'background-color', 'padding-top', 'padding-left', 'border-top-left-radius'], golden: MUSE },
       { target: LINE, props: ['box-top', 'box-height'], golden: 'over the footer while the controls show: its foot 12px above the footer\'s top, the footer\'s own gap (tv-player:footer\'s 12px)' },
       { target: '.cui-console-player-footer', props: ['box-top'], golden: 'the footer, under the subtitles, where it is with none' },
       { target: '.cui-console-player-subtitles', props: ['pointer-events', 'transition-property', 'transition-duration', 'transition-timing-function'], golden: 'the controls under it take the pointer; it moves as the footer fades, in the footer\'s 0.4s (tv-player-playing:hidden.footer)' },

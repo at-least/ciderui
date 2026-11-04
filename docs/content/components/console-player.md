@@ -36,7 +36,7 @@ Its picture can be any element in the video’s place, its first child: here a `
 | `cui-console-player-play` | the centre button, 66px; it holds both glyphs |
 | `cui-console-player-glyph-play`, `cui-console-player-glyph-pause` | the glyph shown while paused, and while playing |
 | `cui-console-player-subtitles` | the subtitles over the picture: above the footer while the controls show, 20px from the foot while they hide, moving in the footer’s 0.4s; it takes no click |
-| `cui-console-player-cue` | the cue in it, a `<span>` in its `<p>`: 2.4% of the width (15px at least), 1.6 lines, on a box of black at 0.75 round each line; empty, none |
+| `cui-console-player-cue` | the cue in it, a `<span>` in its `<p>`: 2.4% of the width (15px at least), so it grows with the player and in full screen, 1.6 lines, white under a soft shadow (`--cui-video-cue-shadow`), no box; empty, none |
 | `cui-console-player-footer` | the title, the buttons and the scrubber |
 | `cui-console-player-title` | the title, 26px bold |
 | `cui-console-player-buttons` | the buttons’ row, 14px apart |

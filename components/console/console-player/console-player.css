@@ -108,13 +108,10 @@
     }
   }
 
-  /* the cue the page's script writes; none, no box */
+  /* the cue the page's script writes, white on the picture under a soft
+     shadow, in em so it grows with the type; empty, nothing drawn */
   .cui-console-player-cue {
-    padding: 0.12em 0.45em;
-    border-radius: 0.3em;
-    background-color: var(--cui-c-video-cue);
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
+    text-shadow: var(--cui-video-cue-shadow);
 
     &:empty {
       display: none;
