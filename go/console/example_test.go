@@ -144,6 +144,15 @@ func ExampleConsoleTabs() {
 	// Output: <div class="cui-console-tabs" data-variant="filled" role="group" aria-label="Status"><a class="cui-console-tab" href="?status=unresolved" aria-current="true">Unresolved</a><a class="cui-console-tab" href="?status=resolved">Resolved</a></div>
 }
 
+func ExampleConsoleTabButtons() {
+	buttons := []console.ConsoleTabButton{
+		{Label: "Keep", Value: "keep", Pressed: true},
+		{Label: "Redraw", Value: "redraw", Pressed: false},
+	}
+	_ = console.ConsoleTabButtons{AriaLabel: "Mark", Name: "mark", Buttons: buttons, Class: ""}.Render(os.Stdout)
+	// Output: <div class="cui-console-tabs" data-variant="filled" role="group" aria-label="Mark"><button class="cui-console-tab" type="submit" name="mark" value="keep" aria-pressed="true">Keep</button><button class="cui-console-tab" type="submit" name="mark" value="redraw" aria-pressed="false">Redraw</button></div>
+}
+
 func ExampleConsoleThumb() {
 	_ = console.ConsoleThumb{Href: "/shot.png", Src: "/shot.png", Alt: "shot.png", Caption: "shot.png", Lazy: true, Class: ""}.Render(os.Stdout)
 	// Output: <figure class="cui-console-thumb"><a href="/shot.png"><img src="/shot.png" alt="shot.png" loading="lazy"></a><figcaption class="cui-console-thumb-caption">shot.png</figcaption></figure>

@@ -72,6 +72,56 @@ func (t ConsoleTabs) Render(w io.Writer) error {
 	return h.Div(class.Root("cui-console-tabs", t.Class), h.Data("variant", "filled"), h.Role("group"), h.Aria("label", t.AriaLabel), tabs).Render(w)
 }
 
+// ConsoleTabButtons is filled [ConsoleTabs] of submit buttons, the pressed
+// one chosen: a choice the page's own form posts as Name=Value.
+type ConsoleTabButtons struct {
+	AriaLabel string
+	// Name is the form field every button posts.
+	Name    string
+	Buttons []ConsoleTabButton
+	Class   string
+}
+
+type ConsoleTabButton struct {
+	Label   string
+	Value   string
+	Pressed bool
+}
+
+func (t ConsoleTabButtons) Render(w io.Writer) error {
+	if t.AriaLabel == "" {
+		panic("console.ConsoleTabButtons needs an AriaLabel")
+	}
+	if t.Name == "" {
+		panic("console.ConsoleTabButtons needs a Name")
+	}
+	pressed := 0
+	for _, b := range t.Buttons {
+		if b.Pressed {
+			pressed++
+		}
+	}
+	if pressed > 1 {
+		panic("console.ConsoleTabButtons has one pressed button at most")
+	}
+	buttons := g.Map(t.Buttons, func(b ConsoleTabButton) g.Node {
+		if b.Label == "" {
+			panic("console.ConsoleTabButton needs a Label")
+		}
+		if b.Value == "" {
+			panic("console.ConsoleTabButton needs a Value")
+		}
+		// aria-pressed="false" too: it is what makes a button a toggle to a
+		// screen reader
+		ariaPressed := "false"
+		if b.Pressed {
+			ariaPressed = "true"
+		}
+		return h.Button(h.Class("cui-console-tab"), h.Type("submit"), h.Name(t.Name), h.Value(b.Value), h.Aria("pressed", ariaPressed), g.Text(b.Label))
+	})
+	return h.Div(class.Root("cui-console-tabs", t.Class), h.Data("variant", "filled"), h.Role("group"), h.Aria("label", t.AriaLabel), buttons).Render(w)
+}
+
 type ConsoleAppearanceChoice struct{ value string }
 
 var (

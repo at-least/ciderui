@@ -23,8 +23,9 @@ App Store Connect’s tab bar, in its two forms: underlined, a page’s sections
 | `data-variant="filled"` | pills, for a choice of a few |
 | `data-size="sm"`, `"lg"`, `"xl"` | 22px, 40px, 50px |
 | `data-overflow`, `data-overflow-start`, `data-overflow-end` | the host’s script marks the bar’s scroll state; the side still hiding content fades (the phone row has no scrollbar) |
-| `cui-console-tab` | a tab, a link; or a `<label>` round its radio, checked for the chosen one |
+| `cui-console-tab` | a tab, a link; a `<label>` round its radio, checked for the chosen one; or a `<button>` |
 | `aria-current` | the current one (`"page"` for a page, `"true"` for a choice) |
+| `aria-pressed="true"` | a button’s tab chosen; `"false"` on the others |
 | `aria-disabled="true"` | not available now |
 
 ## Filled
@@ -37,8 +38,14 @@ Filled tabs of radios, where the choice is a setting rather than a page: Light, 
 
 {{ <cui_example file="console-tabs/appearance" title="Light chosen" pad={true} /> }}
 
+## A choice of buttons
+
+Filled tabs of `<button>`s, where pressing one posts the choice at once: the page’s form sends the pressed one’s `name` and `value`. The chosen one is `aria-pressed="true"`, the others `"false"`, so a screen reader reads each as a toggle; the group is `role="group"` with an `aria-label`. App Store Connect’s tabs come in its brand and neutral colors only, with no red one, so a destructive choice is not drawn red.
+
+{{ <cui_example file="console-tabs/pressed" title="Keep pressed" pad={true} /> }}
+
 ## Large
 
 {{ <cui_example file="console-tabs/large" title="Large tabs" pad={true} /> }}
 
-The Go module writes either with `console.ConsoleTabs` and its `console.ConsoleTab`s, and the appearance choice with `console.ConsoleAppearance` and `console.ConsoleAppearanceChoice`.
+The Go module writes either with `console.ConsoleTabs` and its `console.ConsoleTab`s, the buttons with `console.ConsoleTabButtons` and its `console.ConsoleTabButton`s, and the appearance choice with `console.ConsoleAppearance` and `console.ConsoleAppearanceChoice`.
