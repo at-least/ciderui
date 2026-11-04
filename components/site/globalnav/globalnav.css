@@ -123,6 +123,11 @@
     font-weight: 600;
     letter-spacing: var(--cui-tracking-28);
     color: var(--cui-c-on-menu);
+    /* a <button>'s own look undone, for a POST item (sign out) */
+    border: 0;
+    background-color: transparent;
+    text-align: start;
+    cursor: pointer;
   }
 
   .cui-globalnav-menubutton,

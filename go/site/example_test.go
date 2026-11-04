@@ -64,7 +64,7 @@ func ExampleGallery() {
 
 func ExampleNavLink() {
 	laptops := []site.FlyoutGroup{{Heading: "Laptops", Large: []site.Link{{Text: "All Laptops", Href: "/laptops"}}, Links: []site.Link{{Text: "Compare Models", Href: "/laptops/compare"}}}}
-	links := []site.NavLink{{Text: "Store", Href: "/store", Flyout: nil, FlyoutAriaLabel: ""}, {Text: "Laptops", Href: "/laptops", Flyout: laptops, FlyoutAriaLabel: "Laptops menu"}}
+	links := []site.NavLink{{Text: "Store", Href: "/store", Flyout: nil, FlyoutAriaLabel: "", Post: false}, {Text: "Laptops", Href: "/laptops", Flyout: laptops, FlyoutAriaLabel: "Laptops menu", Post: false}}
 	fmt.Println(len(links[1].Flyout))
 	// Output: 1
 }
@@ -77,7 +77,7 @@ func ExampleBagLink() {
 
 func ExampleGlobalNav() {
 	logo := g.Raw(`<img src="/logo.svg" alt="" width="14" height="44">`)
-	page := site.GlobalNav{Logo: logo, Home: "/", LogoAriaLabel: "Cider", Links: []site.NavLink{{Text: "Store", Href: "/store", Flyout: nil, FlyoutAriaLabel: ""}}, Search: nil, Bag: nil, Text: site.GlobalNavTextEnglish, Dark: false, Clear: false, Class: "sticky top-0"}
+	page := site.GlobalNav{Logo: logo, Home: "/", LogoAriaLabel: "Cider", Links: []site.NavLink{{Text: "Store", Href: "/store", Flyout: nil, FlyoutAriaLabel: "", Post: false}}, Search: nil, Bag: nil, Text: site.GlobalNavTextEnglish, Dark: false, Clear: false, Class: "sticky top-0"}
 	_ = page.Render(os.Stdout)
 	// Output: <nav class="cui-globalnav sticky top-0" aria-label="Global"><div class="cui-globalnav-content"><ul class="cui-globalnav-list" id="cui-globalnav-menu" popover><li><a class="cui-globalnav-logo" href="/" aria-label="Cider"><img src="/logo.svg" alt="" width="14" height="44"></a></li><li><button class="cui-globalnav-closebutton" popovertarget="cui-globalnav-menu" popovertargetaction="hide" aria-label="Close" autofocus><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18"><path d="M2 5H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 12H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></button></li><li><a class="cui-globalnav-link" href="/store">Store</a></li></ul><button class="cui-globalnav-menubutton" popovertarget="cui-globalnav-menu" aria-label="Menu"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18"><path d="M2 5H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 12H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></button></div></nav>
 }
