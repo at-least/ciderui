@@ -22,7 +22,9 @@ type Field struct {
 	Disabled     bool
 	// Prefix: a currency or a country code ($, +1).
 	Prefix string
-	Class  string
+	// Attrs: nodes appended to the <input> (hx-post, inputmode, pattern, required); nil for none.
+	Attrs g.Node
+	Class string
 }
 
 func (f Field) Render(w io.Writer) error {
@@ -51,6 +53,7 @@ func (f Field) Render(w io.Writer) error {
 				g.If(f.Error != "", h.Aria("invalid", "true")),
 				g.If(described != "", h.Aria("describedby", described)),
 				g.If(f.Disabled, h.Disabled()),
+				f.Attrs,
 			),
 			h.Label(h.Class("cui-field-label"), h.For(f.ID), g.Text(f.Label)),
 			g.If(f.Prefix != "", h.Span(h.Class("cui-field-prefix"), h.ID(prefix), g.Text(f.Prefix))),
@@ -76,7 +79,9 @@ type Select struct {
 	Selected string
 	Error    string
 	Disabled bool
-	Class    string
+	// Attrs: nodes appended to the <select> (hx-post, required); nil for none.
+	Attrs g.Node
+	Class string
 }
 
 func (s Select) Render(w io.Writer) error {
@@ -102,6 +107,7 @@ func (s Select) Render(w io.Writer) error {
 				g.If(s.Error != "", h.Aria("invalid", "true")),
 				g.If(s.Error != "", h.Aria("describedby", message)),
 				g.If(s.Disabled, h.Disabled()),
+				s.Attrs,
 				h.Option(h.Value(""), g.If(s.Selected == "", h.Selected()), g.Text("Select")),
 				g.Map(s.Options, func(o Option) g.Node {
 					return h.Option(h.Value(o.Value), g.If(o.Value == s.Selected, h.Selected()), g.Text(o.Text))
@@ -121,7 +127,9 @@ type TextArea struct {
 	Value    string
 	Error    string
 	Disabled bool
-	Class    string
+	// Attrs: nodes appended to the <textarea> (hx-post, required, maxlength); nil for none.
+	Attrs g.Node
+	Class string
 }
 
 func (a TextArea) Render(w io.Writer) error {
@@ -140,6 +148,7 @@ func (a TextArea) Render(w io.Writer) error {
 					g.If(a.Error != "", h.Aria("invalid", "true")),
 					g.If(a.Error != "", h.Aria("describedby", message)),
 					g.If(a.Disabled, h.Disabled()),
+					a.Attrs,
 					// the parser drops one newline after <textarea>: a text
 					// starting with one keeps it only behind a second
 					g.If(strings.HasPrefix(a.Value, "\n"), g.Text("\n")),
