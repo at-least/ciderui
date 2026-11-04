@@ -20,6 +20,16 @@ const label = `ciderui.inputs=${inputs.digest('hex')}`;
 let image = execFileSync('docker', ['images', '-q', '--no-trunc', '--filter', `label=${label}`], { encoding: 'utf8' }).split('\n')[0].trim();
 if (!image) image = execFileSync('docker', ['build', '-q', '-t', IMAGE, '--label', label, '-f', join(ROOT, 'test/Dockerfile'), ROOT], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'inherit'] }).trim();
 if (!/^sha256:[0-9a-f]{64}$/.test(image)) throw new Error(`docker gave no image ID: ${image}`);
+// CIDERUI_CHROME=1: the image with Google Chrome too (reference/chrome.Dockerfile),
+// for a probe of a page Playwright's Chromium cannot play; the tests never run in it
+if (process.env.CIDERUI_CHROME === '1') {
+  // FROM takes a name, not an ID: a tag of this image's own
+  const base = `${IMAGE}:${image.slice('sha256:'.length, 'sha256:'.length + 12)}`;
+  execFileSync('docker', ['tag', image, base]);
+  // no context: the Dockerfile on stdin is all it needs
+  image = execFileSync('docker', ['build', '-q', '--build-arg', `BASE=${base}`, '-'], { input: readFileSync(join(ROOT, 'reference/chrome.Dockerfile')), encoding: 'utf8', stdio: ['pipe', 'pipe', 'inherit'] }).trim();
+  if (!/^sha256:[0-9a-f]{64}$/.test(image)) throw new Error(`docker gave no image ID for Chrome's: ${image}`);
+}
 
 const STEPS = 'node test/tokens.mjs && node test/type.mjs && node test/page.mjs && node test/components.mjs && node test/surfaces.mjs && node reference/touch/audit.mjs && node test/probes.mjs && node scripts/build-lucide.mjs --check && node scripts/build-docs.mjs --check && node scripts/docs-pictures.mjs --check && node test/docs.mjs';
 const command = process.argv.length > 2 ? process.argv.slice(2) : ['sh', '-c', STEPS];
