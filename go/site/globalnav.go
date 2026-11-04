@@ -25,6 +25,8 @@ type NavLink struct {
 	Flyout []FlyoutGroup
 	// FlyoutAriaLabel: the button that opens Flyout ("Store menu"); "" with no Flyout.
 	FlyoutAriaLabel string
+	// Post: the item submits a POST to Href (sign out: a change a GET link must not make).
+	Post bool
 }
 
 type FlyoutGroup struct {
@@ -161,6 +163,9 @@ func (n GlobalNav) Render(w io.Writer) error {
 		if link.Text == "" || link.Href == "" {
 			panic("site.GlobalNav's Links need their Text and Href")
 		}
+		if link.Post && len(link.Flyout) > 0 {
+			panic("site.GlobalNav's Links that Post have no Flyout")
+		}
 		if len(link.Flyout) > 0 && link.FlyoutAriaLabel == "" {
 			panic("site.GlobalNav's Links with a Flyout need their FlyoutAriaLabel")
 		}
@@ -201,11 +206,18 @@ func (n GlobalNav) Render(w io.Writer) error {
 	if n.Dark {
 		block = "cui-globalnav cui-dark"
 	}
-	var links g.Group
+	var links, postForms g.Group
 	for i, link := range n.Links {
-		if len(link.Flyout) == 0 {
+		switch {
+		case link.Post:
+			form := "cui-globalnav-post-" + strconv.Itoa(i+1)
+			// not the <li> wrapping a <form>: the rows are li:has(> .cui-globalnav-link),
+			// and a form between drew the item full size in a closed phone bar
+			links = append(links, h.Li(h.Button(h.Class("cui-globalnav-link"), h.Type("submit"), h.FormAttr(form), g.Text(link.Text))))
+			postForms = append(postForms, h.Form(h.ID(form), h.Action(link.Href), h.Method("post"), g.Attr("hidden")))
+		case len(link.Flyout) == 0:
 			links = append(links, h.Li(h.A(h.Class("cui-globalnav-link"), h.Href(link.Href), g.Text(link.Text))))
-		} else {
+		default:
 			links = append(links, h.Li(globalNavFlyout(link, i+1, n.Text)))
 		}
 	}
@@ -274,6 +286,7 @@ func (n GlobalNav) Render(w io.Writer) error {
 			h.Button(h.Class("cui-globalnav-menubutton"), h.PopoverTarget(globalNavMenuID), h.Aria("label", n.Text.MenuAriaLabel), icon.Menu),
 			searchPopover,
 			bagPopover,
+			postForms,
 		),
 	).Render(w)
 }

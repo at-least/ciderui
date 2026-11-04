@@ -109,7 +109,47 @@ const FLYOUT_BAG = FLYOUT_NAV
   .replace(/(<button class="cui-globalnav-menubutton"[^\n]*<\/button>)/, (m) => `${m}\n${BAG_NAV.slice(BAG_NAV.indexOf('<div class="cui-globalnav-bag"'), BAG_NAV.lastIndexOf('</div>\n</nav>'))}`);
 const BPLACE = 'the same distance from the bar as apple.com\'s (bag-flyout:*, its locale banner above its nav)';
 
+const POST_NAV = ex('post');
+const POST = `${LIST} > li:nth-child(6) > .cui-globalnav-link`;
+// what a <button> brings of its own, a link not
+const BUTTONS_OWN = ['font-family', 'font-style', 'text-align', 'vertical-align', 'border-top-width', 'border-left-width', 'background-color', 'cursor', 'margin-top', 'margin-left', 'box-sizing', 'box-top', 'opacity'];
+const AS_LINK = 'a POST item (sign out) is a <button>, drawn as the link: each value equal to the link\'s beside it';
+
 export const cases = [
+  {
+    name: 'post-bar',
+    html: POST_NAV,
+    widths: DESKTOP,
+    checks: [
+      { target: POST, props: ['font-size', 'line-height', 'font-weight', 'color', ...MOTION], apple: ['home', 'nav.link'] },
+      { target: POST, state: 'hover', props: ['color'], apple: ['home', 'nav.link', 'hover'] },
+      { target: POST, props: [...FLEX, ...INLINE, 'box-height', 'text-decoration-line'], apple: ['home', 'nav.link-box'] },
+      { target: POST, props: ['letter-spacing'], golden: TRACKING },
+      { target: LINK, props: BUTTONS_OWN, golden: AS_LINK },
+      { target: POST, props: BUTTONS_OWN, golden: AS_LINK },
+    ],
+  },
+  {
+    name: 'post-phone',
+    html: POST_NAV,
+    widths: [390],
+    checks: [
+      { target: POST, props: ['box-height'], golden: 'to 833px the links are the menu\'s rows, not the bar\'s: apple.com\'s bar holds the logo, the search, the bag and the button' },
+    ],
+  },
+  {
+    name: 'post-menu',
+    html: POST_NAV,
+    ...OPEN,
+    reducedMotion: 'reduce',
+    checks: [
+      { target: POST, props: ['font-size', 'line-height', 'font-weight', 'color', 'display', ...PADDING, 'box-height'], apple: ['home', 'menu.link'] },
+      { target: POST, state: 'hover', props: ['color'], apple: ['home', 'menu.link', 'hover'] },
+      { target: POST, props: ['letter-spacing'], golden: TRACKING },
+      { target: LINK2, props: [...BUTTONS_OWN.filter(p => p !== 'box-top'), 'box-left', 'box-width'], golden: AS_LINK },
+      { target: POST, props: [...BUTTONS_OWN.filter(p => p !== 'box-top'), 'box-left', 'box-width'], golden: AS_LINK },
+    ],
+  },
   {
     name: 'bar',
     html: NAV,
