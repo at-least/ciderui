@@ -15,31 +15,41 @@
   }
 
   .cui-console-strip-group {
-    /* the label's containing block: it is placed over the group's top */
+    /* the head's containing block: it is placed over the group's top */
     position: relative;
     display: flex;
     gap: 12px;
     padding-top: 14px;
+
+    /* every group, so a group without captions is not stretched to one with */
+    .cui-console-strip:has(.cui-console-strip-caption) > & {
+      padding-bottom: 14px;
+    }
   }
 
-  :where(.cui-console-strip-label) {
+  :where(.cui-console-strip-head) {
     margin: 0;
   }
 
-  /* out of the flow, so a long name runs to the group's width and no wider;
-     4px in, over the pictures inside the items' ring room */
-  .cui-console-strip-label {
+  /* out of the flow, so a long name widens no group: the group's width, the
+     track the label slides along; not clipped, or it would be the label's
+     scroller and the label would stick to it */
+  .cui-console-strip-head {
     position: absolute;
     top: 0;
-    left: 4px;
-    right: 4px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: 11px;
-    line-height: 13px;
-    letter-spacing: normal;
-    color: var(--cui-c-console-neutral-label-secondary);
+    left: 0;
+    right: 0;
+  }
+
+  /* its own width, not the head's: a box as wide as its containing block
+     has no room to stick in */
+  .cui-console-strip-label {
+    position: sticky;
+    left: 0;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    padding-inline: 4px;
   }
 
   .cui-console-strip-item {
@@ -78,6 +88,28 @@
     }
   }
 
+  /* out of the item's box, so its ring and its marks keep the picture's;
+     the group keeps its room */
+  .cui-console-strip-caption {
+    position: absolute;
+    /* 5px under the picture, past the item's 2px of room */
+    top: calc(100% + 3px);
+    left: 2px;
+    right: 2px;
+  }
+
+  /* a console thumbnail's caption's type, cut to its box */
+  .cui-console-strip-label,
+  .cui-console-strip-caption {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: normal;
+    color: var(--cui-c-console-neutral-label-secondary);
+  }
+
   .cui-console-strip-mark {
     position: absolute;
     top: 8px;
@@ -113,6 +145,11 @@
 
     &[data-state="kept"] {
       color: var(--cui-c-console-success-label-primary);
+
+      /* the doubt keeps the corner, the check 4px before it */
+      .cui-console-strip-mark[data-state="doubt"] ~ & {
+        right: 28px;
+      }
 
       @media (forced-colors: active) {
         color: CanvasText;

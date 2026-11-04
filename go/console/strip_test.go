@@ -19,19 +19,19 @@ func TestStripRendersTheExample(t *testing.T) {
 		start := strings.LastIndex(raw[:at], `src="`) + len(`src="`)
 		return raw[start:at]
 	}
-	shot := func(scene, n int, mark console.ConsoleStripMark, markAriaLabel string, current bool) console.ConsoleStripItem {
+	shot := func(scene, n int, doubtAriaLabel string, mark console.ConsoleStripMark, markAriaLabel string, current bool) console.ConsoleStripItem {
 		alt := fmt.Sprintf("Shot %d.%d", scene, n)
-		return console.ConsoleStripItem{Href: fmt.Sprintf("#shot-%d-%d", scene, n), Src: src(alt), Alt: alt, Lazy: false, Current: current, Mark: mark, MarkAriaLabel: markAriaLabel}
+		return console.ConsoleStripItem{Href: fmt.Sprintf("#shot-%d-%d", scene, n), Src: src(alt), Alt: alt, Lazy: false, Current: current, Caption: fmt.Sprintf("S%02d-%02d", scene, n), DoubtAriaLabel: doubtAriaLabel, Mark: mark, MarkAriaLabel: markAriaLabel}
 	}
+	const doubt = "Waiting for you"
 	none := console.ConsoleStripMarkNone
 	kept := console.ConsoleStripMarkKept
-	doubt := console.ConsoleStripMarkDoubt
 	redraw := console.ConsoleStripMarkRedraw
 	strip := h.Div(h.Class("cui-console-page"),
 		console.ConsoleStrip{AriaLabel: "Shots", Class: "", Groups: []console.ConsoleStripGroup{
-			{Label: "Scene 1", Items: []console.ConsoleStripItem{shot(1, 1, kept, "Kept", false), shot(1, 2, kept, "Kept", false), shot(1, 3, doubt, "Waiting for you", false)}},
-			{Label: "Scene 2", Items: []console.ConsoleStripItem{shot(2, 1, kept, "Kept", false), shot(2, 2, redraw, "To redraw", true), shot(2, 3, none, "", false), shot(2, 4, doubt, "Waiting for you", false)}},
-			{Label: "Scene 3", Items: []console.ConsoleStripItem{shot(3, 1, none, "", false), shot(3, 2, none, "", false), shot(3, 3, none, "", false)}},
+			{Label: "Scene 1", Items: []console.ConsoleStripItem{shot(1, 1, "", kept, "Kept", false), shot(1, 2, "", kept, "Kept", false), shot(1, 3, doubt, kept, "Kept", false)}},
+			{Label: "Scene 2", Items: []console.ConsoleStripItem{shot(2, 1, "", kept, "Kept", false), shot(2, 2, doubt, redraw, "To redraw", true), shot(2, 3, "", none, "", false), shot(2, 4, doubt, none, "", false)}},
+			{Label: "Scene 3", Items: []console.ConsoleStripItem{shot(3, 1, "", none, "", false), shot(3, 2, "", none, "", false), shot(3, 3, "", none, "", false)}},
 		}},
 	)
 	example.Check(t, strip, path)
@@ -42,7 +42,7 @@ func stripOf(items ...console.ConsoleStripItem) console.ConsoleStrip {
 }
 
 func stripItem(alt string, current bool, mark console.ConsoleStripMark, markAriaLabel string) console.ConsoleStripItem {
-	return console.ConsoleStripItem{Href: "#a", Src: "/a.png", Alt: alt, Lazy: false, Current: current, Mark: mark, MarkAriaLabel: markAriaLabel}
+	return console.ConsoleStripItem{Href: "#a", Src: "/a.png", Alt: alt, Lazy: false, Current: current, Caption: "", DoubtAriaLabel: "", Mark: mark, MarkAriaLabel: markAriaLabel}
 }
 
 func TestStripPanics(t *testing.T) {
@@ -58,7 +58,7 @@ func TestStripPanics(t *testing.T) {
 		{"one current item at most", stripOf(stripItem("Shot 1", true, none, ""), stripItem("Shot 2", true, none, ""))},
 		{"needs an Alt", stripOf(stripItem("", false, none, ""))},
 		{"needs a MarkAriaLabel with a Mark", stripOf(stripItem("Shot 1", false, console.ConsoleStripMarkKept, ""))},
-		{"and none without", stripOf(stripItem("Shot 1", false, none, "Kept"))},
+		{"a MarkAriaLabel with a Mark, and none without", stripOf(stripItem("Shot 1", false, none, "Kept"))},
 	} {
 		t.Run(c.want, func(t *testing.T) {
 			mustPanic(t, c.want, func() { example.Render(c.strip) })

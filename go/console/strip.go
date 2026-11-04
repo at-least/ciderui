@@ -9,15 +9,14 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleStripMark is what an item's corner or edge says of its shot.
+// ConsoleStripMark is what the reader decided of an item's shot: kept, or to
+// redraw. A doubt is ConsoleStripItem.DoubtAriaLabel, beside either.
 type ConsoleStripMark struct{ value string }
 
 var (
 	ConsoleStripMarkNone = ConsoleStripMark{value: ""}
-	// ConsoleStripMarkDoubt: a doubt waiting for the reader's call, a dot in
-	// console-status's warning color.
-	ConsoleStripMarkDoubt = ConsoleStripMark{"doubt"}
-	// ConsoleStripMarkKept: a check.
+	// ConsoleStripMarkKept: a check in the picture's corner, beside a doubt's
+	// dot.
 	ConsoleStripMarkKept = ConsoleStripMark{"kept"}
 	// ConsoleStripMarkRedraw: to redraw, a red edge inside the picture.
 	ConsoleStripMarkRedraw = ConsoleStripMark{"redraw"}
@@ -40,13 +39,19 @@ type ConsoleStripGroup struct {
 type ConsoleStripItem struct {
 	Href string
 	Src  string
-	// Alt is the link's name, with MarkAriaLabel after it.
+	// Alt is the link's name, with Caption, DoubtAriaLabel and MarkAriaLabel
+	// after it.
 	Alt  string
 	Lazy bool
 	// Current: aria-current="true", ringed.
-	Current       bool
-	Mark          ConsoleStripMark
-	MarkAriaLabel string
+	Current bool
+	// Caption: the shot's name under its picture.
+	Caption string
+	// DoubtAriaLabel: a doubt waiting for the reader's call, a dot in
+	// console-status's warning color; "" none.
+	DoubtAriaLabel string
+	Mark           ConsoleStripMark
+	MarkAriaLabel  string
 }
 
 func (s ConsoleStrip) Render(w io.Writer) error {
@@ -76,7 +81,7 @@ func (s ConsoleStrip) Render(w io.Writer) error {
 				panic("console.ConsoleStripGroup needs a ConsoleStripItem")
 			}
 			return h.Div(h.Class("cui-console-strip-group"),
-				h.P(h.Class("cui-console-strip-label"), g.Text(group.Label)),
+				h.P(h.Class("cui-console-strip-head"), h.Span(h.Class("cui-console-strip-label"), g.Text(group.Label))),
 				g.Map(group.Items, stripItem),
 			)
 		}),
@@ -92,12 +97,18 @@ func stripItem(item ConsoleStripItem) g.Node {
 	}
 	var mark g.Node
 	if item.Mark != ConsoleStripMarkNone {
-		mark = h.Span(h.Class("cui-console-strip-mark"), h.Data("state", item.Mark.value), h.Role("img"), h.Aria("label", item.MarkAriaLabel),
-			g.If(item.Mark == ConsoleStripMarkKept, lucide.Check),
-		)
+		mark = stripMark(item.Mark.value, item.MarkAriaLabel, g.If(item.Mark == ConsoleStripMarkKept, lucide.Check))
 	}
+	// the doubt before the mark: the stylesheet moves a check that follows a
+	// dot out of its corner
 	return h.A(h.Class("cui-console-strip-item"), h.Href(item.Href), g.If(item.Current, h.Aria("current", "true")),
 		h.Img(h.Src(item.Src), h.Alt(item.Alt), g.If(item.Lazy, h.Loading("lazy"))),
+		g.If(item.Caption != "", h.Span(h.Class("cui-console-strip-caption"), g.Text(item.Caption))),
+		g.If(item.DoubtAriaLabel != "", stripMark("doubt", item.DoubtAriaLabel, nil)),
 		mark,
 	)
+}
+
+func stripMark(state, ariaLabel string, glyph g.Node) g.Node {
+	return h.Span(h.Class("cui-console-strip-mark"), h.Data("state", state), h.Role("img"), h.Aria("label", ariaLabel), glyph)
 }

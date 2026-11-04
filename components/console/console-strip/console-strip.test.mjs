@@ -3,14 +3,22 @@ import { examples } from '../../../test/harness.mjs';
 const ex = examples(import.meta.url);
 const STRIP = '.cui-console-strip';
 const GROUP = '.cui-console-strip-group:first-child';
-const LABEL = `${GROUP} .cui-console-strip-label`;
+const HEAD = `${GROUP} > .cui-console-strip-head`;
+const LABEL = `${HEAD} > .cui-console-strip-label`;
 const item = (group, n) => `.cui-console-strip-group:nth-child(${group}) > .cui-console-strip-item:nth-of-type(${n})`;
 const FIRST = item(1, 1);
 const IMG = `${FIRST} > img`;
+const CAPTION = `${FIRST} > .cui-console-strip-caption`;
 const CURRENT = '.cui-console-strip-item[aria-current="true"]';
 const DOUBT = '.cui-console-strip-mark[data-state="doubt"]';
 const KEPT = '.cui-console-strip-mark[data-state="kept"]';
 const REDRAW = '.cui-console-strip-mark[data-state="redraw"]';
+// a kept shot with a doubt (shot 1.3), the current one with a doubt and to redraw (2.2)
+const KEPT_DOUBTED = `${item(1, 3)} > ${KEPT}`;
+const CURRENT_DOUBT = `${CURRENT} > ${DOUBT}`;
+const CURRENT_REDRAW = `${CURRENT} > ${REDRAW}`;
+// one scene of one shot, its name longer than the shot is wide, and no caption
+const lone = (label) => `<div class="cui-console-page"><nav class="cui-console-strip" aria-label="Shots"><div class="cui-console-strip-group"><p class="cui-console-strip-head"><span class="cui-console-strip-label">${label}</span></p><a class="cui-console-strip-item" href="#a"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Shot 1"></a></div></nav></div>`;
 // tv.apple.com's player's row was read at 1600 and 1200px
 const AT = { 390: 1200 };
 
@@ -29,10 +37,17 @@ export const cases = [
       { target: STRIP, props: ['column-gap', 'overflow-y'], golden: 'one row, scrolled sideways only as tv.apple.com\'s (its grid of columns); a scene\'s shots twice as close to each other as to the next scene\'s, so they read as its group: neither site groups its row' },
       { target: LABEL, props: ['font-size', 'line-height', 'font-weight', 'color', 'text-overflow', 'white-space'], golden: 'the scene\'s name above its shots in a console thumbnail\'s caption\'s type (cui-console-thumb-caption: 11px on 13px, the secondary label), cut to its group\'s width; neither site labels a group of its row' },
       { target: `${GROUP} > .cui-console-strip-item:first-of-type > img`, props: ['box-top', 'box-left'], golden: 'the first picture 18px under its group\'s top, its name\'s 13px line and 5px (a thumbnail\'s caption\'s 5px from it), 4px in from the page\'s content edge, the items\' room for their ring' },
-      { target: LABEL, props: ['box-top', 'box-left'], golden: 'the scene\'s name over its first picture\'s left edge' },
+      { target: LABEL, props: ['box-top', 'box-left', 'padding-left', 'position', 'left'], golden: 'the scene\'s name over its first picture\'s left edge, its text 4px into its box as the picture is into its item; sticky at the scroller\'s edge, so the name of the scene scrolled half out stays in view (muse\'s storyboard, the owner, 2026-11-05)' },
+      { target: HEAD, props: ['position', 'box-top', 'box-left', 'box-width', 'overflow-x'], golden: 'the name\'s track: out of the flow so a long name widens no scene, the group\'s whole width (528px: three 168px shots, each its picture and 4px of ring room either side, 12px apart), not clipped (a clipping box would be the sticky name\'s scroller)' },
+      { target: CAPTION, props: ['font-size', 'line-height', 'font-weight', 'color', 'text-overflow', 'white-space'], golden: 'the shot\'s code under it in a console thumbnail\'s caption\'s type (cui-console-thumb-caption: 11px on 13px, the secondary label), cut to the picture\'s width: muse\'s storyboard names each shot under it, not over it (the owner, 2026-11-05)' },
+      { target: CAPTION, props: ['box-top', 'box-left', 'box-width'], golden: 'the caption 5px under its picture (the picture\'s foot at 108px: 18 and 90), as a console thumbnail\'s caption, outside the item\'s ring, at the picture\'s left and as wide' },
+      { target: GROUP, props: ['padding-bottom'], golden: 'a scene with captions keeps their room under its shots: 1px past the ring and the 13px line, as its name\'s over them' },
+      { target: KEPT_DOUBTED, props: ['top', 'right'], golden: 'a kept shot with a doubt: the doubt keeps the corner, the check 4px before it (8px, the dot\'s 16 and 4), so neither hides the other' },
+      { target: CURRENT_DOUBT, props: ['box-width', 'top', 'right', 'background-color'], golden: 'the current shot to redraw, with a doubt: its dot drawn as any shot\'s, inside the red edge' },
+      { target: CURRENT_REDRAW, props: ['top', 'left', 'box-width', 'box-height', 'border-top-color'], golden: 'the red edge round the current shot\'s picture beside its dot, the ring outside it' },
       { target: FIRST, props: ['border-top-width', 'border-top-color', 'padding-top', 'border-top-left-radius'], golden: 'a 2px edge 2px out from the picture, clear at rest, so the current shot\'s ring takes no room of its own' },
       { target: CURRENT, props: ['border-top-color', 'border-top-width'], golden: 'the current shot ringed in the brand accent, 2px out from its picture (Keynote\'s and Photos\' chosen thumbnail): neither site marks one current (tv-player-playlist, none marked as playing); a ring, not a fill, so its picture shows whole' },
-      { target: DOUBT, props: ['box-width', 'box-height', 'top', 'right', 'border-top-width', 'border-top-color', 'background-color', 'border-top-left-radius'], golden: 'a doubt waiting: a dot in console-status\'s warning mark\'s color (its 12px), ringed 2px in the page\'s ground so it shows on any picture, 6px in from the picture\'s top right' },
+      { target: DOUBT, props: ['box-width', 'box-height', 'top', 'right', 'border-top-width', 'border-top-color', 'background-color', 'border-top-left-radius'], golden: 'a doubt waiting: a dot in console-status\'s warning mark\'s color (its 12px), ringed 2px in the page\'s ground so it shows on any picture, 6px in from the picture\'s top right, beside a check as alone (this first doubt is on a kept shot)' },
       { target: KEPT, props: ['box-width', 'box-height', 'top', 'right', 'color', 'background-color'], golden: 'kept: a check (lucide.Check, 3px of its 24, so 1.5px drawn) in the success label\'s color on the page\'s ground, the dot\'s size and place: a glyph, not a color, tells it from the dot' },
       { target: `${KEPT} > svg`, props: ['box-width', 'box-height'], golden: 'the check 12px, inside the ground\'s 2px ring' },
       { target: REDRAW, props: ['top', 'left', 'box-width', 'box-height', 'border-top-width', 'border-top-color', 'border-top-left-radius'], golden: 'to redraw: a 2px edge in the error accent round the picture\'s inside, its corners the picture\'s, where the current ring is outside it: a shot can be both' },
@@ -53,6 +68,7 @@ export const cases = [
     widths: [1200],
     checks: [
       { target: LABEL, props: ['color'], golden: 'the dark side derived (tokens.css, decision 18)' },
+      { target: CAPTION, props: ['color'], golden: 'the dark side derived (tokens.css, decision 18)' },
       { target: CURRENT, props: ['border-top-color'], golden: 'the dark side derived (tokens.css, decision 18)' },
       { target: DOUBT, props: ['background-color', 'border-top-color'], golden: 'the dark side derived (tokens.css, decision 18), the ring the dark page\'s ground' },
       { target: KEPT, props: ['color', 'background-color'], golden: 'the dark side derived (tokens.css, decision 18)' },
@@ -88,6 +104,27 @@ export const cases = [
     scroll: [STRIP, 99999],
     checks: [
       { target: item(3, 3), props: ['box-right'], golden: 'at its end the last shot as far in from the right as the first from the left' },
+    ],
+  },
+  {
+    name: 'strip pinned',
+    html: ex('strip'),
+    widths: [1200, 390],
+    scroll: [STRIP, 400],
+    checks: [
+      { target: STRIP, props: ['box-left'], golden: 'the scroller 15px out of the content edge, its room for the rings (tv.apple.com\'s row)' },
+      { target: GROUP, props: ['box-left'], golden: 'scrolled to the first scene\'s third shot (it snaps there from 400px, 2 × 180px): the scene\'s start 360px out of view, its end still in it' },
+      { target: LABEL, props: ['box-left'], golden: 'the scene\'s name stays while its scene is still in view (muse\'s storyboard, the owner, 2026-11-05), at the content edge, 15px in from the scroller\'s (Chromium sticks it inside the scroller\'s padding, its room for the rings), so its text is where the first picture starts at rest; left in the group, it would have scrolled out with the scene\'s start' },
+      { target: `.cui-console-strip-group:nth-child(2) > .cui-console-strip-head > .cui-console-strip-label`, props: ['box-left'], golden: 'the next scene\'s name over its first shot, where its scene starts (24px past the first scene\'s end)' },
+    ],
+  },
+  {
+    name: 'strip long label',
+    html: lone('A scene whose name is longer than its one shot is wide'),
+    widths: [1200],
+    checks: [
+      { target: LABEL, props: ['box-width', 'text-overflow'], golden: 'a name longer than its scene cut to the scene\'s width (one shot, 168px), widening nothing' },
+      { target: '.cui-console-strip-group', props: ['box-width', 'padding-bottom'], golden: 'the scene its shot\'s width, whatever its name; no caption, so no room under it' },
     ],
   },
 ];

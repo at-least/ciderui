@@ -141,9 +141,9 @@ func ExampleConsoleStatus() {
 }
 
 func ExampleConsoleStrip() {
-	item := console.ConsoleStripItem{Href: "#shot-1", Src: "/shot-1.png", Alt: "Shot 1", Lazy: true, Current: true, Mark: console.ConsoleStripMarkKept, MarkAriaLabel: "Kept"}
+	item := console.ConsoleStripItem{Href: "#shot-1", Src: "/shot-1.png", Alt: "Shot 1", Lazy: true, Current: true, Caption: "S01-01", DoubtAriaLabel: "Waiting for you", Mark: console.ConsoleStripMarkRedraw, MarkAriaLabel: "To redraw"}
 	_ = console.ConsoleStrip{AriaLabel: "Shots", Groups: []console.ConsoleStripGroup{{Label: "Scene 1", Items: []console.ConsoleStripItem{item}}}, Class: ""}.Render(os.Stdout)
-	// Output: <nav class="cui-console-strip" aria-label="Shots"><div class="cui-console-strip-group"><p class="cui-console-strip-label">Scene 1</p><a class="cui-console-strip-item" href="#shot-1" aria-current="true"><img src="/shot-1.png" alt="Shot 1" loading="lazy"><span class="cui-console-strip-mark" data-state="kept" role="img" aria-label="Kept"><svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></a></div></nav>
+	// Output: <nav class="cui-console-strip" aria-label="Shots"><div class="cui-console-strip-group"><p class="cui-console-strip-head"><span class="cui-console-strip-label">Scene 1</span></p><a class="cui-console-strip-item" href="#shot-1" aria-current="true"><img src="/shot-1.png" alt="Shot 1" loading="lazy"><span class="cui-console-strip-caption">S01-01</span><span class="cui-console-strip-mark" data-state="doubt" role="img" aria-label="Waiting for you"></span><span class="cui-console-strip-mark" data-state="redraw" role="img" aria-label="To redraw"></span></a></div></nav>
 }
 
 func ExampleConsoleTabs() {
