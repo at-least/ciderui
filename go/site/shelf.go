@@ -4,21 +4,19 @@ import (
 	"io"
 
 	"github.com/at-least/ciderui/go/internal/class"
-	"github.com/at-least/ciderui/go/internal/glyph"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
 
-// With Paddles, the page's script scrolls the row and disables the paddle
-// at an end: Shelf renders only the start state.
 type Shelf struct {
 	ID       string
 	Headline string
 	Subhead  string
-	Paddles  bool
-	Class    string
-	// Children: <li>s, each holding a [Card].
-	Children g.Node
+	// Paddles: nil for none.
+	Paddles *Paddles
+	Class   string
+	// Items: each a [Card].
+	Items []g.Node
 }
 
 func (s Shelf) Render(w io.Writer) error {
@@ -34,11 +32,8 @@ func (s Shelf) Render(w io.Writer) error {
 			g.If(s.Subhead != "", g.Group{g.Text(" "), h.Span(h.Class("cui-shelf-subhead"), g.Text(s.Subhead))}),
 		),
 		h.Div(h.Class("cui-shelf-row"),
-			h.Ul(h.Class("cui-shelf-scroller"), h.ID(s.ID), s.Children),
-			g.If(s.Paddles, g.Group{
-				h.Button(h.Class("cui-gallery-paddle cui-shelf-paddle"), h.Data("size", "lg"), h.Type("button"), h.Aria("controls", s.ID), h.Aria("label", "Previous"), h.Disabled(), glyph.PaddlePrevious),
-				h.Button(h.Class("cui-gallery-paddle cui-shelf-paddle"), h.Data("size", "lg"), h.Type("button"), h.Aria("controls", s.ID), h.Aria("label", "Next"), glyph.PaddleNext),
-			}),
+			h.Ul(h.Class("cui-shelf-scroller"), h.ID(s.ID), g.Map(s.Items, func(item g.Node) g.Node { return h.Li(item) })),
+			s.Paddles.node("site.Shelf", "cui-gallery-paddle cui-shelf-paddle", s.ID),
 		),
 	).Render(w)
 }

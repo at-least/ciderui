@@ -9,9 +9,9 @@ import (
 
 func TestQuickLinksRendersTheExample(t *testing.T) {
 	links := []site.Link{
-		{Text: "Visit a Store", Href: "/retail/"},
-		{Text: "Track an Order", Href: "/shop/order/list"},
-		{Text: "Help with Buying", Href: "/shop/help"},
+		{Label: "Visit a Store", Href: "/retail/"},
+		{Label: "Track an Order", Href: "/shop/order/list"},
+		{Label: "Help with Buying", Href: "/shop/help"},
 	}
 	example.Check(t, site.QuickLinks{ID: "quicklinks", Title: "Shortcuts", Links: links, Class: ""}, "site/quicklinks/examples/quicklinks.html")
 }

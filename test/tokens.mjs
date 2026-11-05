@@ -92,7 +92,6 @@ const CONTRACT = {
   // card's plain eyebrow on a copy the probe adds
   '--cui-c-on-card': [['store', 'card.header', W, 'color'], ['store', 'card.dark-header', W, 'color']],
   '--cui-c-eyebrow': [['store', 'card.eyebrow', W, 'color'], ['store', 'card.dark-eyebrow', W, 'color']],
-  '--cui-c-tag': [['store', 'card.tag', W, 'color'], ['store', 'card.dark-tag', W, 'color']],
   // a gallery's: the iPhone page's paddles and dots, light, and iPhone 18
   // Pro's, dark (its first paddle disabled, the next read)
   '--cui-c-paddle': [['iphone', 'paddle', W, 'background-color'], ['product', 'paddle.next', W, 'background-color']],
@@ -275,7 +274,6 @@ const MIN = [
   // a card's text on its ground, the page's
   ['--cui-c-on-card', ['--cui-c-bg'], 4.5],
   ['--cui-c-eyebrow', ['--cui-c-bg'], 4.5],
-  ['--cui-c-tag', ['--cui-c-bg'], 4.5],
   // the player's text and controls on its video
   ['--cui-c-on-video-control', ['--cui-c-video'], 4.5],
   ['--cui-c-on-video-time', ['--cui-c-video'], 4.5],
@@ -388,8 +386,10 @@ for (const [mark, fill] of [['--cui-c-on-close', '--cui-c-close'], ['--cui-c-on-
 
 const table = JSON.parse(readFileSync(join(ROOT, 'reference/tracking/cui-tracking.json'), 'utf8'));
 const tracking = Object.keys(vars).filter(k => k.startsWith('--cui-tracking-'));
-check('a letter-spacing for each size of the table', tracking.map(k => k.slice(15)).join(' '), Object.keys(table).join(' '));
-for (const [size, em] of Object.entries(table)) check(`--cui-tracking-${size}`, parseFloat(vars[`--cui-tracking-${size}`]), em);
+// the table is what was measured; a size no stylesheet reads has no token
+const READ = ['base.css', 'type.css', ...readdirSync(join(ROOT, 'components'), { recursive: true }).filter(f => f.endsWith('.css')).map(f => join('components', f))].map(f => readFileSync(join(ROOT, f), 'utf8')).join('\n');
+check('a letter-spacing for each size of the table a stylesheet reads', tracking.map(k => k.slice(15)).join(' '), Object.keys(table).filter(size => READ.includes(`--cui-tracking-${size})`)).join(' '));
+for (const k of tracking) check(k, parseFloat(vars[k]), table[k.slice(15)]);
 
 check('--cui-font', vars['--cui-font'], '-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Noto Sans TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif');
 check('--cui-font-mono', vars['--cui-font-mono'], 'ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace');
@@ -424,11 +424,7 @@ check('--cui-video-preview-shadow is muse\'s golden', vars['--cui-video-preview-
 check('--cui-video-control-fill is muse\'s golden', vars['--cui-video-control-fill'], 'rgb(255 255 255 / 0.16)');
 check('--cui-video-control-fill-hover is muse\'s golden', vars['--cui-video-control-fill-hover'], 'rgb(255 255 255 / 0.24)');
 check('--cui-video-thumb-shadow is tv.apple.com\'s tv-player:volume.range --volume-thumb-box-shadow', vars['--cui-video-thumb-shadow'], ref('tv-player', 'volume.range', W, '--volume-thumb-box-shadow'));
-for (const [name, state] of [['--cui-shadow-card'], ['--cui-shadow-card-hover', 'hover']]) {
-  for (const probe of ['card', 'card.dark']) {
-    check(`${name} is apple.com's store:${probe}${state ? ':' + state : ''} box-shadow`, shadow(vars[name]), shadow(ref('store', probe, W, 'box-shadow', state)));
-  }
-}
+for (const probe of ['card', 'card.dark']) check(`--cui-shadow-card is apple.com's store:${probe} box-shadow`, shadow(vars['--cui-shadow-card']), shadow(ref('store', probe, W, 'box-shadow')));
 
 // every named color CSS has; not transparent, currentColor or inherit, which
 // are no color of a stylesheet's own

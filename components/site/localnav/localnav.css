@@ -57,7 +57,6 @@
     letter-spacing: var(--cui-tracking-19);
     color: var(--cui-c-on-bar-2);
     text-decoration-line: none;
-    transition: color 0.24s cubic-bezier(0.28, 0.11, 0.32, 1);
 
     @media (width >= 834px) {
       font-size: 21px;
@@ -83,18 +82,12 @@
     transition: grid-template-rows 0.32s var(--cui-localnav-ease), visibility 0s 0.32s;
   }
 
-  /* the entrance's delay on the list, not a row: on a row it would hold back the row's hover too */
   .cui-localnav-list {
     min-height: 0;
     margin: 0;
     padding: 0;
     overflow: hidden;
     list-style: none;
-
-    @media (width < 834px) {
-      opacity: 0;
-      transition: opacity 0.32s var(--cui-localnav-ease);
-    }
 
     &::before,
     &::after {
@@ -123,7 +116,6 @@
     color: var(--cui-c-on-bar-hover);
     text-decoration-line: none;
     opacity: 0.8;
-    transition: opacity 0.32s var(--cui-localnav-ease);
 
     @media (hover: hover) {
       &:hover {
@@ -164,11 +156,6 @@
         visibility: visible;
         box-shadow: inset 0 -1px var(--cui-c-separator);
         transition-delay: 0s;
-      }
-
-      .cui-localnav-list {
-        opacity: 1;
-        transition-delay: 0.26s;
       }
 
       .cui-localnav-menubutton svg {
@@ -273,7 +260,6 @@
       font-size: 12px;
       line-height: 22px;
       letter-spacing: var(--cui-tracking-12);
-      transition: none;
 
       &[aria-current="page"]::after {
         top: 36px;

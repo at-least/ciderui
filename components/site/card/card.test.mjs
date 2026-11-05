@@ -1,8 +1,9 @@
-import { examples, PADDING, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, MOTION, PADDING, SIZE, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const HOVERED = ['box-shadow', 'transform'];
-const STILL = 'not 1% larger: apple.com\'s card grows as it lifts (store:card\'s hover, scale 1.01), a lift that only draws the eye (DESIGN.md decision 25); its shadow deepens alone';
+const STILL = 'as it rests: apple.com\'s card deepens its shadow and grows 1% (store:card\'s hover and focus-within), a lift that only draws the eye; its link is the feedback, and the pointer\'s own (DESIGN.md decision 25)';
+const TAG = 'the one eyebrow color: apple.com\'s NEW in orange (store:card.tag, card.dark-tag) only calls attention, the word says it (DESIGN.md decision 25)';
 const dark = (html) => html.replace('class="cui-card"', 'class="cui-card cui-dark"');
 const media = (html) => html.replace('<div class="cui-card">', '<div class="cui-card"><img class="cui-card-media" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjcyMCIvPg==" alt="">');
 const headlineFirst = ex('card').replace(/\s*<p class="cui-card-eyebrow"[^\n]*/, '');
@@ -12,12 +13,13 @@ export const cases = [
     name: 'card',
     html: ex('card'),
     checks: [
-      { target: '.cui-card', props: ['background-color', 'color', 'border-top-left-radius', 'box-shadow', 'transform', 'overflow', 'position', 'box-height', 'transition-duration', 'transition-timing-function'], apple: ['store', 'card'] },
-      { target: '.cui-card', props: ['transition-property'], golden: 'its shadow alone: apple.com\'s all also moves its hover\'s 1% scale (DESIGN.md decision 25) and would move its size as the window crosses 735px (apple.com\'s steps with the screen)' },
+      { target: '.cui-card', props: ['background-color', 'color', 'border-top-left-radius', 'box-shadow', 'transform', 'overflow', 'position', 'box-height'], apple: ['store', 'card'] },
+      { target: '.cui-card', props: MOTION, golden: STILL },
       { target: '.cui-card', props: ['box-width'], golden: 'apple.com\'s 400px, 309px on a phone (store:card\'s box): a width no text sets' },
       { target: '.cui-card-content', props: [...PADDING, 'box-height'], apple: ['store', 'card.info'] },
       { target: '.cui-card-content', props: ['box-width'], golden: 'apple.com\'s 396px, 340px and its padding, and on a phone the whole card (store:card.info\'s box)' },
-      { target: '.cui-card-eyebrow', props: [...SIZE, 'color', 'margin-top', 'margin-bottom', 'padding-top', 'padding-bottom', 'text-transform'], apple: ['store', 'card.tag'] },
+      { target: '.cui-card-eyebrow', props: [...SIZE, 'margin-top', 'margin-bottom', 'padding-top', 'padding-bottom', 'text-transform'], apple: ['store', 'card.tag'] },
+      { target: '.cui-card-eyebrow', props: ['color'], golden: TAG },
       { target: '.cui-card-headline', props: [...SIZE, 'color', 'margin-top', 'margin-bottom', 'padding-top', 'padding-bottom'], apple: ['store', 'card.header'] },
       { target: '.cui-card-link', props: [...SIZE, 'color', 'display', 'text-decoration-line', 'cursor'], apple: ['store', 'card.link'] },
       { target: '.cui-card-link', state: 'hover', props: ['color', 'text-decoration-line'], apple: ['store', 'card.link', 'hover'] },
@@ -38,9 +40,8 @@ export const cases = [
     name: 'hover',
     html: ex('card'),
     checks: [
-      { target: '.cui-card', state: 'hover', props: ['box-shadow'], apple: ['store', 'card', 'hover'] },
-      { target: '.cui-card', state: 'focus-within', props: ['box-shadow'], apple: ['store', 'card', 'focus-within'] },
-      { target: '.cui-card', state: 'hover', props: ['transform'], golden: STILL },
+      { target: '.cui-card', state: 'hover', props: ['box-shadow', 'transform'], golden: STILL },
+      { target: '.cui-card', state: 'focus-within', props: ['box-shadow', 'transform'], golden: STILL },
     ],
   },
   {
@@ -51,8 +52,7 @@ export const cases = [
     wait: 1000,
     checks: [
       { target: '.cui-card-link', props: ['focused'], golden: 'the headline\'s link, the card\'s one stop in the focus order' },
-      { target: '.cui-card', props: ['box-shadow'], apple: ['store', 'card', 'focus-within'] },
-      { target: '.cui-card', props: ['transform'], golden: STILL },
+      { target: '.cui-card', props: ['box-shadow', 'transform'], golden: STILL },
     ],
   },
   {
@@ -84,8 +84,8 @@ export const cases = [
     html: dark(ex('card')),
     checks: [
       { target: '.cui-card', props: ['background-color', 'border-top-left-radius', 'box-shadow', 'transform', 'overflow', 'box-height'], apple: ['store', 'card.dark'] },
-      { target: '.cui-card', state: 'hover', props: ['box-shadow'], apple: ['store', 'card.dark', 'hover'] },
-      { target: '.cui-card-eyebrow', props: ['color'], apple: ['store', 'card.dark-tag'] },
+      { target: '.cui-card', state: 'hover', props: ['box-shadow'], golden: STILL },
+      { target: '.cui-card-eyebrow', props: ['color'], apple: ['store', 'card.dark-eyebrow'] },
       { target: '.cui-card-headline', props: ['color'], apple: ['store', 'card.dark-header'] },
       { target: '.cui-card-link', props: ['color'], apple: ['store', 'card.dark-link'] },
       { target: '.cui-card-description', props: ['color'], apple: ['store', 'card.dark-desc'] },

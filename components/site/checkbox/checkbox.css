@@ -50,6 +50,10 @@
     }
   }
 
+  .cui-checkbox-input:disabled + .cui-checkbox-label {
+    opacity: 0.42;
+  }
+
   .cui-checkbox-input:focus-visible + .cui-checkbox-label .cui-checkbox-indicator {
     outline: var(--cui-focus-ring);
     outline-offset: var(--cui-focus-ring-offset);

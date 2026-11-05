@@ -1,4 +1,4 @@
-import { examples } from '../../../test/harness.mjs';
+import { examples, MOTION, POINTER } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const SCROLLER = '.cui-gallery-scroller';
@@ -6,9 +6,10 @@ const NEXT = '.cui-gallery-paddle:not(:disabled)';
 const PREVIOUS = '.cui-gallery-paddle:disabled';
 const DOT = '.cui-gallery-dots li:nth-child(2) .cui-gallery-dot';
 const CURRENT = '.cui-gallery-dot[aria-current="true"]';
-const PADDLE = ['height', 'padding-top', 'padding-left', 'border-top-width', 'border-top-left-radius', 'background-color', 'color', 'opacity', 'cursor', 'transition-property', 'transition-duration', 'transition-timing-function', 'box-height'];
+const PADDLE = ['height', 'padding-top', 'padding-left', 'border-top-width', 'border-top-left-radius', 'background-color', 'color', 'opacity', 'cursor', 'box-height'];
 const DOTS = ['height', 'background-color', 'border-top-left-radius', 'padding-top'];
 const dark = (html) => html.replace('class="cui-gallery"', 'class="cui-gallery cui-dark"');
+const noPaddles = (html) => html.replace(/<div class="cui-gallery-nav">[\s\S]*?<\/div>\n/, '');
 const lg = (html) => html.replace('<button class="cui-gallery-paddle" type="button" aria-controls="gallery" aria-label="Next">', '<button class="cui-gallery-paddle" type="button" aria-controls="gallery" aria-label="Next" data-size="lg">');
 
 export const cases = [
@@ -25,6 +26,7 @@ export const cases = [
       { target: '.cui-gallery-nav', props: ['column-gap'], apple: ['product', 'gallery.nav-list'] },
       { target: NEXT, props: PADDLE, apple: ['iphone', 'paddle'] },
       { target: NEXT, props: ['box-right'], apple: ['product', 'paddle.next'] },
+      { target: NEXT, props: MOTION, golden: 'its dim as it is disabled in apple.com\'s 0.1s (iphone:paddle), its colors at once: motion that adds nothing to a pointer\'s color change (DESIGN.md decision 25)' },
       { target: NEXT, props: ['width', 'box-width'], golden: 'apple.com\'s 36px circle (iphone:paddle), a width no text sets' },
       { target: NEXT, state: 'hover', props: ['background-color', 'color'], apple: ['iphone', 'paddle', 'hover'] },
       { target: NEXT, state: 'active', props: ['background-color', 'color'], apple: ['iphone', 'paddle', 'active'] },
@@ -32,14 +34,30 @@ export const cases = [
       { target: PREVIOUS, props: ['opacity', 'background-color', 'color', 'cursor', 'pointer-events'], apple: ['iphone', 'paddle.disabled'] },
       { target: '.cui-gallery-dots', props: ['display', 'flex-direction', 'align-items', 'justify-content', 'box-height'], apple: ['product', 'gallery.dots'] },
       { target: '.cui-gallery-dots li:nth-child(2)', props: ['margin-left', 'margin-right'], apple: ['product', 'gallery.dot-item'] },
-      { target: DOT, props: [...DOTS, 'transition-property', 'transition-duration', 'transition-timing-function'], apple: ['iphone', 'gallery.dot'] },
+      { target: DOT, props: DOTS, apple: ['iphone', 'gallery.dot'] },
+      { target: DOT, props: MOTION, golden: POINTER },
       { target: DOT, state: 'hover', props: ['background-color'], apple: ['iphone', 'gallery.dot', 'hover'] },
       { target: CURRENT, props: DOTS, apple: ['iphone', 'gallery.dot-current'] },
       { target: DOT, props: ['width'], golden: 'apple.com\'s 8px dot (iphone:gallery.dot), a width no text sets' },
       { target: CURRENT, props: ['width'], golden: 'apple.com\'s pill, 48px, 32px below 735px (iphone:gallery.dot-current)' },
       { target: CURRENT, pseudo: '::after', props: ['content'], golden: 'the pill with no timer\'s fill: no script plays the gallery (apple.com\'s fills it as its item shows, iphone:gallery.dot-fill)' },
-      { target: SCROLLER, props: ['scrollbar-width'], golden: 'hidden, as apple.com\'s is' },
+      { target: SCROLLER, props: ['scrollbar-width'], golden: 'hidden with paddles beside it, as apple.com\'s is' },
       { target: '.cui-gallery-nav', props: ['position'], golden: 'the paddles\' row in the gallery\'s flow (apple.com\'s placed below its scroller)' },
+    ],
+  },
+  {
+    name: 'no paddles',
+    html: noPaddles(ex('gallery')),
+    checks: [
+      { target: SCROLLER, props: ['scrollbar-width'], golden: 'a thin scrollbar with no paddles, where apple.com\'s hides it, as it draws paddles: with neither, a mouse with no sideways wheel cannot reach the rest of the row, nor can anyone see there is more' },
+    ],
+  },
+  {
+    name: 'no paddles touch',
+    html: noPaddles(ex('gallery')),
+    touch: true,
+    checks: [
+      { target: SCROLLER, props: ['scrollbar-width'], golden: 'a touch screen swipes: hidden still, as apple.com\'s' },
     ],
   },
   {

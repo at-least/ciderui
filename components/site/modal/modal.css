@@ -28,6 +28,12 @@
     &[open]::backdrop {
       transition: opacity 0.1s ease-in-out;
     }
+
+    /* one cell, the panel and the curtain in it */
+    &[open] {
+      display: grid;
+      grid-template: minmax(max-content, auto) / minmax(0, 1fr);
+    }
   }
 
   @starting-style {
@@ -43,6 +49,9 @@
 
   .cui-modal-panel {
     position: relative;
+    z-index: 1;
+    grid-area: 1 / 1;
+    align-self: start;
     box-sizing: border-box;
     width: 100%;
     max-width: 640px;
@@ -66,13 +75,13 @@
   }
 
   .cui-modal-close {
-    position: absolute;
-    top: 24px;
-    right: 24px;
+    position: relative;
+    flex: none;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 36px;
+    margin-top: 24px;
     height: 36px;
     padding: 0;
     border: 0;
@@ -80,7 +89,6 @@
     color: var(--cui-c-on-close);
     background-color: var(--cui-c-close);
     cursor: pointer;
-    transition: color 0.1s linear, background 0.1s linear;
 
     &::before {
       content: "";
@@ -101,16 +109,62 @@
     }
   }
 
-  .cui-modal[data-variant="page"] {
-    --cui-modal-ease: cubic-bezier(0.4, 0, 0.6, 1);
+  /* top: a sticky box sticks inside its scroller's padding; margin: back up
+     over the panel's padding-top, its end the close button's inset in from the
+     panel's, whose padding below 640px is a share of the panel's width, restated
+     as one of the form's */
+  .cui-modal-panel > form:has(> .cui-modal-close) {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    height: 0;
+    margin: -76px calc(24px - 100% / 14) 76px 0;
 
+    @media (width >= 640px) {
+      margin-right: -16px;
+    }
+
+    @media (width >= 735px) {
+      margin-right: -52px;
+    }
+  }
+
+  /* in the panel's cell, not fixed over the window: over a fixed box the wheel
+     does not scroll the dialog */
+  :where(.cui-modal) > form {
+    grid-area: 1 / 1;
+  }
+
+  /* a button in a dialog form, after the panel in the markup, or the dialog's
+     opening would focus it */
+  .cui-modal-curtain {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: default;
+  }
+
+  .cui-modal[data-variant="page"] {
     &[open] {
-      display: flex;
       padding: 28px 10px;
-      transition: none;
 
       @media (width >= 735px) {
         padding: 40px 0;
+      }
+    }
+
+    /* the curtain reaches over the layer's padding */
+    > form {
+      margin: -28px -10px;
+
+      @media (width >= 735px) {
+        margin: -40px 0;
       }
     }
 
@@ -118,16 +172,6 @@
        later layer, outranks it */
     &.cui-dark {
       color-scheme: dark;
-    }
-
-    &::backdrop {
-      backdrop-filter: blur(20px);
-    }
-
-    /* backdrop-filter alone, unprefixed: a Safari that reads only
-       -webkit-backdrop-filter still transitions the blur by this name */
-    &[open]::backdrop {
-      transition: background-color 0.75s var(--cui-modal-ease), backdrop-filter 0.75s var(--cui-modal-ease);
     }
 
     .cui-modal-panel {
@@ -147,23 +191,10 @@
       }
     }
 
-    &[open] .cui-modal-panel {
-      transition: opacity 0.5s var(--cui-modal-ease) 0.25s;
-    }
-
-    /* top: the layer's padding-top taken back, a sticky box sticking inside
-       its scroller's padding; margin: back up over the panel's padding-top,
-       its end the close button's inset in from the panel's, whose padding
-       below 735px is a share of the panel's width, restated as one of the
-       form's */
+    /* top: the layer's padding-top taken back */
     .cui-modal-panel > form:has(> .cui-modal-close) {
-      position: sticky;
       top: -28px;
-      z-index: 1;
-      display: flex;
-      justify-content: flex-end;
-      height: 0;
-      margin: -76px calc(20px - 100% / 14) 76px 0;
+      margin-right: calc(20px - 100% / 14);
 
       @media (width >= 735px) {
         top: -40px;
@@ -172,36 +203,7 @@
     }
 
     .cui-modal-close {
-      position: relative;
-      top: auto;
-      right: auto;
-      flex: none;
       margin-top: 20px;
-      color: var(--cui-c-on-neutral);
-      background-color: var(--cui-c-neutral);
-
-      @media (hover: hover) {
-        &:hover {
-          color: var(--cui-c-on-neutral);
-          background-color: var(--cui-c-neutral-hover);
-        }
-      }
-
-      &:active {
-        color: var(--cui-c-on-neutral);
-        background-color: var(--cui-c-neutral-active);
-      }
-    }
-  }
-
-  @starting-style {
-    .cui-modal[data-variant="page"][open]::backdrop {
-      background-color: transparent;
-      backdrop-filter: blur(0);
-    }
-
-    .cui-modal[data-variant="page"][open] .cui-modal-panel {
-      opacity: 0;
     }
   }
 }

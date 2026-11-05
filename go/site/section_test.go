@@ -11,11 +11,11 @@ import (
 )
 
 func TestSectionRendersTheSectionExample(t *testing.T) {
-	example.Check(t, site.Section{Ground: site.GroundPage, Rhythm: site.RhythmRegular, Dark: false, Class: "", Children: h.P(g.Text("Content"))}, "site/section/examples/section.html")
+	example.Check(t, site.Section{Alt: false, Large: false, Class: "", Children: h.P(g.Text("Content"))}, "site/section/examples/section.html")
 }
 
 func TestSectionHeaderRendersTheHeaderExample(t *testing.T) {
-	links := []site.Link{{Text: "Watch the video", Href: "#film"}, {Text: "Take the tour", Href: "#event"}}
+	links := []site.Link{{Label: "Watch the video", Href: "#film"}, {Label: "Take the tour", Href: "#event"}}
 	example.Check(t, site.SectionHeader{Headline: "See it in action.", Links: links, Class: ""}, "site/section/examples/header.html")
 }
 
@@ -28,7 +28,7 @@ func TestSectionHeaderWithoutLinksHasNoList(t *testing.T) {
 }
 
 func TestSectionTakesThePagesUtilities(t *testing.T) {
-	got := example.Render(site.Section{Ground: site.GroundPage, Rhythm: site.RhythmRegular, Dark: false, Class: "pt-0", Children: g.Text("x")})
+	got := example.Render(site.Section{Alt: false, Large: false, Class: "pt-0", Children: g.Text("x")})
 	if !strings.HasPrefix(got, `<section class="cui-section pt-0">`) {
 		t.Errorf("got %s", got)
 	}
@@ -47,9 +47,9 @@ func TestSectionHeaderTakesThePagesUtilities(t *testing.T) {
 	}
 }
 
-func TestSectionDarkThenThePagesUtilities(t *testing.T) {
-	got := example.Render(site.Section{Ground: site.GroundPage, Rhythm: site.RhythmRegular, Dark: true, Class: "pt-0", Children: g.Text("x")})
-	if !strings.HasPrefix(got, `<section class="cui-section cui-dark pt-0">`) {
+func TestSectionAltAndLargeThenThePagesUtilities(t *testing.T) {
+	got := example.Render(site.Section{Alt: true, Large: true, Class: "cui-dark", Children: g.Text("x")})
+	if !strings.HasPrefix(got, `<section class="cui-section cui-dark" data-variant="alt" data-size="lg">`) {
 		t.Errorf("got %s", got)
 	}
 }

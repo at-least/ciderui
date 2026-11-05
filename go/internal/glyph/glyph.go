@@ -99,8 +99,6 @@ var Dropdown = Icon{width: "25", height: "25", viewBox: "0 0 21 21", paint: ``, 
 
 var Close = Icon{width: "20", height: "20", viewBox: "0 0 20 20", paint: ``, inner: `<path d="M4.88 4.88 15.12 15.12M15.12 4.88 4.88 15.12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>`}
 
-var CloseSmall = Icon{width: "20", height: "20", viewBox: "0 0 20 20", paint: ``, inner: `<path d="M5.5 5.5 14.5 14.5M14.5 5.5 5.5 14.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>`}
-
 var Orders = Icon{width: "11", height: "16", viewBox: "0 0 11 16", paint: ``, inner: `<path d="M6.033 2.843 9.198 4.628A1.0625 1.0625 0 0 1 9.738 5.553V9.063A1.0625 1.0625 0 0 1 9.198 9.989L6.033 11.774A1.0625 1.0625 0 0 1 4.989 11.774L1.825 9.989A1.0625 1.0625 0 0 1 1.285 9.063V5.553A1.0625 1.0625 0 0 1 1.825 4.628L4.989 2.843A1.0625 1.0625 0 0 1 6.033 2.843ZM1.43 5.018 5.511 7.375 9.593 5.018M5.511 7.375V11.91" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width=".875"/><path d="M3.849 3.988 7.254 5.878" fill="none" stroke="currentColor" stroke-width=".875"/>`}
 
 var OrdersCompact = Icon{width: "16", height: "25", viewBox: "0 0 16 25", paint: ``, inner: `<path d="M8.835 6.211 13.135 8.637A1.7 1.7 0 0 1 14 10.118V14.882A1.7 1.7 0 0 1 13.135 16.363L8.835 18.788A1.7 1.7 0 0 1 7.165 18.788L2.865 16.363A1.7 1.7 0 0 1 2 14.882V10.118A1.7 1.7 0 0 1 2.865 8.637L7.165 6.211A1.7 1.7 0 0 1 8.835 6.211ZM2.232 9.26 8 12.594 13.768 9.26M8 12.594V19.007" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/><path d="M5.561 7.806 10.456 10.522" fill="none" stroke="currentColor" stroke-width="1.2"/>`}

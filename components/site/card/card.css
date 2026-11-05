@@ -9,14 +9,6 @@
     color: var(--cui-c-on-card);
     background-color: var(--cui-c-bg);
     box-shadow: var(--cui-shadow-card);
-    transition: box-shadow 0.3s cubic-bezier(0, 0, 0.5, 1);
-
-    @media (hover: hover) {
-      &:hover,
-      &:focus-within {
-        box-shadow: var(--cui-shadow-card-hover);
-      }
-    }
 
     @media (width >= 735px) {
       width: 400px;
@@ -47,10 +39,6 @@
     font-weight: 600;
     letter-spacing: var(--cui-tracking-12);
     color: var(--cui-c-eyebrow);
-
-    &[data-variant="tag"] {
-      color: var(--cui-c-tag);
-    }
 
     @media (width >= 735px) {
       padding-bottom: 8px;

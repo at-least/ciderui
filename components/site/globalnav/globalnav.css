@@ -83,7 +83,6 @@
     display: flex;
     color: var(--cui-c-on-bar);
     text-decoration-line: none;
-    transition: color 0.32s var(--cui-globalnav-ease);
 
     @media (hover: hover) {
       &:hover {
@@ -143,7 +142,6 @@
     background-color: transparent;
     opacity: 0.8;
     cursor: pointer;
-    transition: opacity 0.32s var(--cui-globalnav-ease), color 0.32s var(--cui-globalnav-ease);
 
     @media (hover: hover) {
       &:hover {
@@ -197,9 +195,7 @@
       transition: opacity 0.24s var(--cui-globalnav-ease), visibility 0.24s step-end;
     }
 
-    /* the opening an animation, not this transition: the transition is the
-       rows' return from behind a phone's flyout, and one transition has one
-       delay, where apple.com's opening and return have two */
+    /* the rows' return from behind a phone's flyout */
     > li:has(> .cui-globalnav-link) {
       display: grid;
       margin-top: -1px;
@@ -208,13 +204,6 @@
       transition-duration: 0.24s;
       transition-timing-function: var(--cui-globalnav-ease);
       transition-delay: 0.16s;
-      animation: cui-globalnav-row-in 0.24s var(--cui-globalnav-ease) 0.2s backwards;
-    }
-  }
-
-  @keyframes cui-globalnav-row-in {
-    from {
-      opacity: 0;
     }
   }
 
@@ -324,7 +313,7 @@
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.32s var(--cui-globalnav-ease), color 0.32s var(--cui-globalnav-ease), visibility 0.32s steps(1);
+    transition: opacity 0.32s var(--cui-globalnav-ease), visibility 0.32s steps(1);
 
     @media (hover: hover) {
       &:hover {
@@ -345,7 +334,7 @@
     .cui-globalnav-searchreset {
       opacity: 1;
       visibility: visible;
-      transition-timing-function: var(--cui-globalnav-ease), var(--cui-globalnav-ease), steps(1, start);
+      transition-timing-function: var(--cui-globalnav-ease), steps(1, start);
     }
   }
 
@@ -381,7 +370,6 @@
     letter-spacing: var(--cui-tracking-17);
     color: var(--cui-c-on-menu);
     text-decoration-line: none;
-    transition: color 0.02s var(--cui-globalnav-ease), background-color 0.02s var(--cui-globalnav-ease);
 
     > svg {
       flex: none;
@@ -501,61 +489,14 @@
     }
   }
 
-  .cui-globalnav-bag:popover-open {
-    .cui-globalnav-bagmessage,
-    .cui-globalnav-bagtext,
-    .cui-globalnav-bagheading,
-    .cui-globalnav-baglinks > li {
-      transition: opacity 0.32s var(--cui-globalnav-ease) 0.08s;
-    }
-  }
-
   .cui-globalnav-curtain {
     display: none;
   }
 
-  /* :placeholder-shown: the field needs its placeholder */
-  .cui-globalnav-search:popover-open:has(.cui-globalnav-searchinput:placeholder-shown) {
-    .cui-globalnav-searchfield,
-    .cui-globalnav-searchheading,
-    .cui-globalnav-searchlinks > li {
-      transition: opacity 0.32s var(--cui-globalnav-ease) 0.2s;
-    }
-
-    .cui-globalnav-searchfield { transition-duration: 0.24s; }
-  }
-
-  .cui-globalnav-search:popover-open:has(.cui-globalnav-searchinput:not(:placeholder-shown)) {
-    .cui-globalnav-searchheading,
-    .cui-globalnav-searchlinks > li {
-      transition: opacity 0.32s var(--cui-globalnav-ease) 0.04s;
-    }
-  }
-
   @starting-style {
-    .cui-globalnav-search:popover-open {
-      .cui-globalnav-searchfield,
-      .cui-globalnav-searchheading,
-      .cui-globalnav-searchlinks > li {
-        opacity: 0;
-      }
-
-      .cui-globalnav-closebutton path {
-        transform: none;
-      }
-    }
-
-    .cui-globalnav-bag:popover-open {
-      .cui-globalnav-bagmessage,
-      .cui-globalnav-bagtext,
-      .cui-globalnav-bagheading,
-      .cui-globalnav-baglinks > li {
-        opacity: 0;
-      }
-
-      .cui-globalnav-closebutton path {
-        transform: none;
-      }
+    .cui-globalnav-search:popover-open .cui-globalnav-closebutton path,
+    .cui-globalnav-bag:popover-open .cui-globalnav-closebutton path {
+      transform: none;
     }
   }
 
@@ -714,7 +655,6 @@
       padding: 0;
       border: 0;
       background-color: var(--cui-c-curtain);
-      backdrop-filter: blur(20px);
       cursor: default;
       transition: opacity 0.32s var(--cui-globalnav-ease);
     }
@@ -824,19 +764,16 @@
 
   .cui-globalnav-flyoutbutton > .cui-globalnav-image-compact {
     opacity: 0;
-    transform: translateX(-4px);
-    transition: opacity 0.24s var(--cui-globalnav-ease), transform 0.24s var(--cui-globalnav-ease);
+    transition: opacity 0.24s var(--cui-globalnav-ease);
   }
 
   .cui-globalnav-flyoutbutton:focus-visible > .cui-globalnav-image-compact {
     opacity: 1;
-    transform: none;
   }
 
   @media (hover: hover) {
     .cui-globalnav-flyoutbutton:hover > .cui-globalnav-image-compact {
       opacity: 1;
-      transform: none;
     }
 
     .cui-globalnav-list > li:has(> .cui-globalnav-flyoutbutton:hover) > .cui-globalnav-link {
@@ -858,7 +795,6 @@
     overflow: visible;
     color: inherit;
     background-color: transparent;
-    --cui-globalnav-flyout-fade-delay: 0.08s;
   }
 
   .cui-globalnav-flyout:popover-open {
@@ -934,7 +870,6 @@
     padding: 8px 11px 7px;
     color: var(--cui-c-on-menu);
     text-decoration-line: none;
-    transition: color 0.32s var(--cui-globalnav-ease);
 
     &:focus-visible {
       color: var(--cui-c-on-bar-hover);
@@ -967,7 +902,6 @@
     color: var(--cui-c-on-menu);
     background-color: transparent;
     cursor: pointer;
-    transition: color 0.32s var(--cui-globalnav-ease), opacity 0.24s var(--cui-globalnav-ease) 0.16s, transform 0.24s var(--cui-globalnav-ease) 0.16s;
 
     &:focus-visible {
       outline-offset: -7px;
@@ -999,11 +933,6 @@
       .cui-globalnav-flyout:popover-open {
         opacity: 0;
         transform: translateX(8px);
-      }
-
-      .cui-globalnav-flyout:popover-open .cui-globalnav-backbutton {
-        opacity: 0;
-        transform: translateX(4px);
       }
     }
   }
@@ -1118,24 +1047,10 @@
       display: none;
     }
 
-    .cui-globalnav-flyout:popover-open {
-      .cui-globalnav-flyoutheading,
-      .cui-globalnav-flyoutlinks > li {
-        transition: opacity 0.32s ease var(--cui-globalnav-flyout-fade-delay);
-      }
-    }
-
     @starting-style {
-      .cui-globalnav-flyout:popover-open {
-        .cui-globalnav-flyoutpanel {
-          clip-path: inset(0 0 100% 0);
-          background-color: var(--cui-c-bar);
-        }
-
-        .cui-globalnav-flyoutheading,
-        .cui-globalnav-flyoutlinks > li {
-          opacity: 0;
-        }
+      .cui-globalnav-flyout:popover-open .cui-globalnav-flyoutpanel {
+        clip-path: inset(0 0 100% 0);
+        background-color: var(--cui-c-bar);
       }
     }
 
@@ -1202,12 +1117,6 @@
         .cui-globalnav-curtain {
           display: none;
         }
-
-        .cui-globalnav-flyoutheading,
-        .cui-globalnav-flyoutlinks > li {
-          opacity: 0;
-          transition: opacity 0.24s ease;
-        }
       }
 
       .cui-globalnav-list > li:hover > .cui-globalnav-flyout {
@@ -1219,13 +1128,6 @@
         .cui-globalnav-flyoutpanel {
           clip-path: inset(0);
           background-color: var(--cui-c-menu);
-        }
-
-        .cui-globalnav-flyoutheading,
-        .cui-globalnav-flyoutlinks > li {
-          opacity: 1;
-          transition-duration: 0.32s;
-          transition-delay: calc(0.12s + var(--cui-globalnav-flyout-fade-delay));
         }
       }
 
@@ -1247,7 +1149,6 @@
         inset: 0;
         z-index: -1;
         background-color: var(--cui-c-curtain);
-        backdrop-filter: blur(20px);
         pointer-events: none;
         opacity: 0;
         visibility: hidden;

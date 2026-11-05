@@ -12,6 +12,17 @@ const CHEVRON = '.cui-field-chevron';
 const FONT = ['font-size', 'line-height'];
 const BOX = '.cui-field-box';
 const AREA = '.cui-field-textarea';
+// the stylesheet's :-webkit-autofill rules copied onto a class: no script can make
+// a browser autofill. Its reason is the copy's, so a rule dropped fails here
+const AUTOFILLED = `<script>
+  const copy = (rules) => { for (const rule of [...rules]) {
+    if (rule.cssRules) copy(rule.cssRules);
+    if (rule.selectorText?.includes(':-webkit-autofill')) (rule.parentRule ?? rule.parentStyleSheet).insertRule(rule.cssText.replaceAll(':-webkit-autofill', '.autofilled'));
+  } };
+  for (const sheet of document.styleSheets) copy(sheet.cssRules);
+  document.querySelector('.cui-field-input').classList.add('autofilled');
+</script>`;
+const LONG = 'A label far longer than the field it names on a phone, and longer still';
 const area = (attrs = '', text = '') => ex('textarea').replace('placeholder=" "></textarea>', `placeholder=" "${attrs}>${text}</textarea>`);
 
 export const cases = [
@@ -32,6 +43,38 @@ export const cases = [
       { target: LABEL, on: INPUT, state: 'focus', props: ['letter-spacing'], golden: TRACKING },
       { target: '.cui-field', props: ['background-color', 'border-top-left-radius'], golden: 'its own light ground under the translucent input, its corners the input\'s: it reads in a dark block too, where apple.com shows no field' },
       { target: INPUT, props: ['margin-bottom'], golden: 'no margin of its own: apple.com\'s 14px below each field is the form\'s spacing, the page\'s (retail:field.input)' },
+    ],
+  },
+  {
+    name: 'help',
+    html: ex('help'),
+    checks: [
+      { target: '.cui-field-help', props: [...SIZE, 'color', 'letter-spacing', 'margin-top'], golden: 'the error message\'s size and place, in the secondary text: the store\'s form hints (retail: not one measured alone)' },
+    ],
+  },
+  {
+    name: 'long label',
+    html: ex('field').replace('>Email</label>', `>${LONG}</label>`),
+    widths: [390],
+    checks: [
+      { target: LABEL, props: ['box-width', 'overflow-x', 'text-overflow', 'white-space'], golden: 'a long label stops 17px short of the field\'s end, with an ellipsis, where it ran past the field (apple.com\'s labels are short: not measured)' },
+    ],
+  },
+  {
+    name: 'long select label',
+    html: ex('select').replace('>Choose your model</label>', `>${LONG}</label>`),
+    widths: [390],
+    checks: [
+      { target: LABEL, props: ['box-width'], golden: 'a select\'s label stops short of its chevron too' },
+    ],
+  },
+  {
+    name: 'autofilled',
+    html: `${ex('field')}${AUTOFILLED}`,
+    widths: [1200],
+    checks: [
+      { target: LABEL, props: ['top', 'font-size', 'line-height'], golden: 'an autofilled field\'s label floats, as over any value, so it does not lie over the filled text (a browser\'s real fill not read: no script can make one)' },
+      { target: INPUT, props: ['box-shadow'], golden: 'its ground the page\'s, an inset shadow over the browser\'s own autofill color, which is !important' },
     ],
   },
   {

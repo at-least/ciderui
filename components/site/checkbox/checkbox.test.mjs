@@ -6,6 +6,13 @@ const INDICATOR = '.cui-checkbox-indicator';
 
 export const cases = [
   {
+    name: 'disabled',
+    html: ex('checkbox').replace('name="remember"', 'name="remember" disabled'),
+    checks: [
+      { target: '.cui-checkbox-label', props: ['opacity'], golden: 'disabled, dimmed to 0.42 as a disabled option tile (apple.com\'s: not measured)' },
+    ],
+  },
+  {
     name: 'checkbox',
     html: ex('checkbox'),
     checks: [

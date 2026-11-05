@@ -39,29 +39,3 @@ async function ring(selector, png) {
     right: count(box.right, box.right + 8),
   };
 }
-
-// held(png): an answer held short, in the window's picture: its details'
-// content's height and overflow, and the ink (pixels darker than mid-gray)
-// in its paragraph's box, below what is shown of it
-async function held(png) {
-  const item = document.querySelector('.cui-accordion-item[open]');
-  const box = item.querySelector('.cui-accordion-answer p').getBoundingClientRect();
-  const content = getComputedStyle(item, '::details-content');
-  const img = new Image();
-  img.src = `data:image/png;base64,${png}`;
-  await img.decode();
-  const scale = img.width / innerWidth;
-  const c = document.createElement('canvas');
-  c.width = img.width;
-  c.height = img.height;
-  const g = c.getContext('2d', { willReadFrequently: true });
-  g.drawImage(img, 0, 0);
-  const x = Math.round(box.left * scale), y = Math.round(box.top * scale);
-  const d = g.getImageData(x, y, Math.round(box.width * scale), Math.round(box.height * scale)).data;
-  let ink = 0;
-  for (let i = 0; i < d.length; i += 4) if ((d[i] + d[i + 1] + d[i + 2]) / 3 < 128) ink++;
-  // the content's height as laid out: the item's less its question's and
-  // its rule, where a browser's style of the pseudo-element is not its own
-  const laid = item.getBoundingClientRect().height - item.querySelector('summary').getBoundingClientRect().height - parseFloat(getComputedStyle(item).borderTopWidth);
-  return { height: content.height, laid: +laid.toFixed(2), overflow: `${content.overflowX} ${content.overflowY}`, box: { top: +box.top.toFixed(2), height: +box.height.toFixed(2) }, scale, ink };
-}

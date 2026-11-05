@@ -21,7 +21,7 @@ export const cases = [
       // apple.com's scroller runs under its crop: the crop is what shows
       { target: SCROLLER, props: ['box-height'], apple: ['store', 'shelf.crop'] },
       { target: SCROLLER, props: ['padding-bottom'], golden: 'the 22px of apple.com\'s foot in sight: its scroller\'s 40px under a crop 38px below its cards (store:shelf.crop, .platter)' },
-      { target: SCROLLER, props: ['scrollbar-width'], golden: 'hidden, as apple.com\'s crop hides it' },
+      { target: SCROLLER, props: ['scrollbar-width'], golden: 'a thin scrollbar with no paddles, where apple.com\'s crop hides it, as it draws paddles: with neither, a mouse with no sideways wheel cannot reach the rest of the row, nor can anyone see there is more' },
       // apple.com's start inset is its header's margin, its end the last item's padding
       { target: SCROLLER, props: ['padding-left', 'scroll-padding-left'], as: { 'padding-left': 'margin-left', 'scroll-padding-left': 'margin-left' }, apple: ['store', 'shelf.header'] },
       { target: SCROLLER, props: ['padding-right'], apple: ['store', 'shelf.card-last'] },
@@ -45,10 +45,12 @@ export const cases = [
     name: 'paddles',
     html: ex('paddles'),
     checks: [
-      { target: '.cui-shelf-paddle:not(:disabled)', props: ['position', 'top', 'right', 'margin-top', 'opacity', 'box-height'], apple: ['store', 'shelf.paddle'] },
-      { target: '.cui-shelf-paddle:disabled', props: ['position', 'top', 'left', 'margin-top', 'opacity'], apple: ['store', 'shelf.paddle-previous'] },
-      { target: '.cui-shelf-paddle:not(:disabled)', props: ['transform', ...MOTION, 'transition-delay'], golden: 'no transform; its colors as a gallery paddle\'s, in 0.1s (gallery.css: apple.com\'s shelf paddle changes them at once), its opacity in apple.com\'s 0.5s from 0.1s (store:shelf.paddle): apple.com\'s scale moves too, motion past what shows the change of state (DESIGN.md decision 25)' },
-      { target: '.cui-shelf-paddle:disabled', props: ['transform', ...MOTION, 'transition-delay'], golden: 'faded out at its size, its opacity in apple.com\'s 0.7s from 0.1s, its colors as a gallery paddle\'s in 0.1s: apple.com\'s shrinks it to 0.8 as well (store:shelf.paddle-previous, DESIGN.md decision 25)' },
+      { target: '.cui-shelf-paddle:not(:disabled)', props: ['position', 'top', 'right', 'opacity'], apple: ['store', 'shelf.paddle'] },
+      { target: '.cui-shelf-paddle:disabled', props: ['position', 'top', 'left'], apple: ['store', 'shelf.paddle-previous'] },
+      { target: '.cui-shelf-paddle:not(:disabled)', props: ['margin-top', 'box-height', 'box-width'], golden: 'the gallery\'s 36px paddle, centered where apple.com\'s is, not its 56px (store:shelf.paddle): a large circle over the content competes with it (DESIGN.md decision 25)' },
+      { target: '.cui-shelf-paddle:not(:disabled)', props: ['transform', ...MOTION, 'transition-delay'], golden: 'no transform; a gallery paddle\'s 0.1s dim: apple.com\'s scale and 0.5s fade from 0.1s (store:shelf.paddle) are motion past what shows the change of state (DESIGN.md decision 25)' },
+      { target: '.cui-shelf-paddle:disabled', props: ['opacity', 'margin-top', 'transform', ...MOTION, 'transition-delay'], golden: 'at an end, dimmed to a gallery paddle\'s .42 in its 0.1s and in its place: apple.com\'s vanishes in 0.7s from 0.1s, shrinking to 0.8 (store:shelf.paddle-previous), so the row\'s other paddle jumps out of a pair (DESIGN.md decision 25)' },
+      { target: SCROLLER, props: ['scrollbar-width'], golden: 'hidden with paddles beside it, as apple.com\'s crop hides it' },
       { target: '.cui-shelf-row', props: ['position', 'box-height'], apple: ['store', 'shelf.paddles'] },
     ],
   },
@@ -58,6 +60,14 @@ export const cases = [
     touch: true,
     checks: [
       { target: '.cui-shelf-paddle:not(:disabled)', props: ['display'], golden: 'none on a touch screen: apple.com\'s draws no paddles there (an emulated iPhone 13)' },
+    ],
+  },
+  {
+    name: 'touch',
+    html: ex('shelf'),
+    touch: true,
+    checks: [
+      { target: SCROLLER, props: ['scrollbar-width'], golden: 'a touch screen swipes: hidden still, as apple.com\'s crop hides it' },
     ],
   },
   {

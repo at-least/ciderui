@@ -1,4 +1,4 @@
-import { examples, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, MOTION, SIZE, TRACKING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const ITEM = '.cui-accordion-item';
@@ -16,17 +16,15 @@ export const cases = [
       { target: `${CLOSED} > ${Q}`, props: [...SIZE, 'color'], apple: ['bag-accordion', 'compact.title'] },
       { target: `${CLOSED} > ${Q} svg`, props: ['color'], apple: ['bag-accordion', 'compact.icon'] },
       { target: `${CLOSED} > ${Q} svg`, props: ['box-height'], apple: ['bag-accordion', 'compact.svg'] },
-      { target: `${CLOSED} > ${Q} svg`, props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: 'its color in apple.com\'s 0.1s linear (bag-accordion:compact.icon), and its turn in 0.32s' },
+      { target: `${CLOSED} > ${Q} svg`, props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: 'its turn in 0.32s, its color at once, where apple.com\'s eases in 0.1s linear (bag-accordion:compact.icon): motion that adds nothing to a pointer\'s color change (DESIGN.md decision 25)' },
       { target: `${CLOSED} > ${Q} svg`, on: `${CLOSED} > ${Q}`, state: 'hover', props: ['color'], apple: ['bag-accordion', 'compact.icon-hover', 'hover'] },
       { target: `${OPEN} > ${Q} svg`, props: ['color'], apple: ['bag-accordion', 'compact.open'] },
       { target: `${OPEN} .cui-accordion-answer`, props: [...SIZE, 'color', 'padding-right', 'padding-bottom'], apple: ['bag-accordion', 'compact.answer'] },
       { target: `${OPEN} .cui-accordion-answer`, props: ['padding-top'], as: { 'padding-top': 'margin-top' }, apple: ['bag-accordion', 'compact.panel'] },
       { target: `${OPEN} > ${Q} svg`, props: ['transform'], golden: 'open, turned up: apple.com\'s line moved to the same points, through a flat one, in 320ms' },
       { target: `${CLOSED} > ${Q} svg`, props: ['box-width', 'margin-right'], golden: 'apple.com\'s 17px chevron (14px) in the middle of its 32px column at the end (bag-accordion:compact.svg, .icon)' },
-      { target: ITEM, pseudo: '::details-content', props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: 'its answer\'s height in apple.com\'s 0.3s ease-in-out (bag-accordion:compact.panel), where the browser can move a height to auto' },
-      { target: ITEM, pseudo: '::details-content', props: ['overflow-x', 'overflow-y'], golden: 'its answer\'s height clipped as it moves, not its width: the ring of what begins a line in it, a link or a question in the large one\'s answer, is drawn 3px outside it (reference/details/)' },
+      { target: ITEM, pseudo: '::details-content', props: MOTION, golden: 'its answer opens at once, where apple.com\'s height slides in 0.3s ease-in-out (bag-accordion:compact.panel): the chevron\'s turn says it opened, and the words are there to read (DESIGN.md decision 25)' },
       { target: Q, props: ['list-style-type'], golden: 'no marker: the chevron is the question\'s' },
-      { target: '.cui-accordion', props: ['interpolate-size'], golden: 'its answer\'s height moves to auto, where the browser can' },
       { target: Q, props: ['letter-spacing'], golden: TRACKING },
       { target: `${OPEN} .cui-accordion-answer`, props: ['letter-spacing'], golden: TRACKING },
     ],

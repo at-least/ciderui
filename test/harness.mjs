@@ -65,8 +65,9 @@ export const OUTLINE = ['outline-style', 'outline-color', 'outline-width', 'outl
 export const LINK = ['text-decoration-line', 'text-decoration-color'];
 export const ELLIPSIS = ['overflow-x', 'text-overflow', 'white-space'];
 export const MOTION = ['transition-property', 'transition-duration', 'transition-timing-function'];
-export const STAGGER = 'together: apple.com\'s come in one after another, a staggered reveal that only draws the eye (DESIGN.md decision 25)';
-export const SLIDE = 'where it is: apple.com\'s come in from a few px up, a slide that only draws the eye (DESIGN.md decision 25)';
+export const POINTER = 'at once: apple.com\'s eases a pointer\'s color change, motion that adds nothing to the change of state (DESIGN.md decision 25)';
+export const WITH_PANEL = 'shown with its panel, the panel\'s reveal its only motion: apple.com\'s fade in after the panel opens, one after another, time the reader waits for nothing (DESIGN.md decision 25)';
+export const DIM = 'the page dimmed alone: apple.com\'s also blurs it, an effect that only draws the eye and makes the page harder to read beside what opened (DESIGN.md decision 25)';
 export const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
 
 export const examples = (url) => (id) => readFileSync(new URL(`examples/${id}.html`, url), 'utf8').trim();

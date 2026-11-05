@@ -26,7 +26,7 @@ func (q QuickLinks) Render(w io.Writer) error {
 	return h.Nav(class.Root("cui-quicklinks", q.Class), h.Aria("labelledby", titleID),
 		h.H2(h.Class("cui-quicklinks-title"), h.ID(titleID), g.Text(q.Title)),
 		h.Ul(h.Class("cui-quicklinks-list"), g.Map(q.Links, func(link Link) g.Node {
-			return h.Li(h.A(h.Class("cui-btn"), h.Data("variant", "secondary-neutral"), h.Href(link.Href), g.Text(link.Text)))
+			return h.Li(h.A(h.Class("cui-btn"), h.Data("variant", "secondary-neutral"), h.Href(link.Href), g.Text(link.Label)))
 		})),
 	).Render(w)
 }

@@ -52,18 +52,6 @@
       font-size: 48px;
       line-height: 48px;
       letter-spacing: var(--cui-tracking-48);
-
-      @media (width >= 735px) {
-        font-size: 64px;
-        line-height: 64px;
-        letter-spacing: var(--cui-tracking-64);
-      }
-
-      @media (width >= 1069px) {
-        font-size: 80px;
-        line-height: 80px;
-        letter-spacing: var(--cui-tracking-80);
-      }
     }
   }
 }

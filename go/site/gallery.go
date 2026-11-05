@@ -5,43 +5,50 @@ import (
 	"strconv"
 
 	"github.com/at-least/ciderui/go/internal/class"
-	"github.com/at-least/ciderui/go/internal/glyph"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
 
-// The page's script scrolls the row from the paddles, disables the paddle
-// at an end and moves the dots' aria-current: Gallery renders only the
-// start state.
+// GalleryItem: DotAriaLabel, what its dot reads as; "" in a gallery with no dots.
+type GalleryItem struct {
+	Content      g.Node
+	DotAriaLabel string
+}
+
+// The page's script scrolls the row from the paddles and moves the dots'
+// aria-current: Gallery renders only the start state.
 type Gallery struct {
-	// ID: each item's id must be <ID>-<n>, n from 1, for its dot's link.
-	ID      string
-	Paddles bool
-	// Dots: one per item, or 0.
-	Dots    int
+	ID    string
+	Items []GalleryItem
+	// Paddles: nil for none.
+	Paddles *Paddles
+	// Current: the shown item's dot, from 1; 0 for no dots.
 	Current int
 	Class   string
-	// Children: <li>s.
-	Children g.Node
 }
 
 func (x Gallery) Render(w io.Writer) error {
 	if x.ID == "" {
 		panic("site.Gallery needs an ID")
 	}
-	if x.Dots != 0 && (x.Current < 1 || x.Current > x.Dots) {
-		panic("site.Gallery's Current dot is outside its Dots")
+	if x.Current < 0 || x.Current > len(x.Items) {
+		panic("site.Gallery's Current dot is outside its Items")
 	}
-	var dots g.Group
-	for n := 1; n <= x.Dots; n++ {
-		dots = append(dots, h.Li(h.A(h.Class("cui-gallery-dot"), h.Href("#"+x.ID+"-"+strconv.Itoa(n)), h.Aria("label", "Item "+strconv.Itoa(n)), g.If(n == x.Current, h.Aria("current", "true")))))
+	var items, dots g.Group
+	for i, item := range x.Items {
+		id := x.ID + "-" + strconv.Itoa(i+1)
+		items = append(items, h.Li(h.ID(id), item.Content))
+		if x.Current == 0 {
+			continue
+		}
+		if item.DotAriaLabel == "" {
+			panic("site.GalleryItem needs a DotAriaLabel in a gallery with dots")
+		}
+		dots = append(dots, h.Li(h.A(h.Class("cui-gallery-dot"), h.Href("#"+id), h.Aria("label", item.DotAriaLabel), g.If(i+1 == x.Current, h.Aria("current", "true")))))
 	}
 	return h.Div(class.Root("cui-gallery", x.Class),
-		h.Ul(h.Class("cui-gallery-scroller"), h.ID(x.ID), x.Children),
-		g.If(x.Paddles, h.Div(h.Class("cui-gallery-nav"),
-			h.Button(h.Class("cui-gallery-paddle"), h.Type("button"), h.Aria("controls", x.ID), h.Aria("label", "Previous"), h.Disabled(), glyph.PaddlePrevious),
-			h.Button(h.Class("cui-gallery-paddle"), h.Type("button"), h.Aria("controls", x.ID), h.Aria("label", "Next"), glyph.PaddleNext),
-		)),
-		g.If(x.Dots > 0, h.Ul(h.Class("cui-gallery-dots"), dots)),
+		h.Ul(h.Class("cui-gallery-scroller"), h.ID(x.ID), items),
+		g.If(x.Paddles != nil, h.Div(h.Class("cui-gallery-nav"), x.Paddles.node("site.Gallery", "cui-gallery-paddle", x.ID))),
+		g.If(x.Current > 0, h.Ul(h.Class("cui-gallery-dots"), dots)),
 	).Render(w)
 }

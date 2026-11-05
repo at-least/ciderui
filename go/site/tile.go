@@ -8,19 +8,10 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-type TileSize struct{ value string }
-
-var (
-	// TileSizeRegular: a promo tile, two to a row.
-	TileSizeRegular = TileSize{value: ""}
-	// TileSizeLarge: a full-width tile.
-	TileSizeLarge = TileSize{"lg"}
-)
-
 type Tile struct {
-	Size    TileSize
+	// Large: a full-width tile; else a promo tile, two to a row.
+	Large   bool
 	Rounded bool
-	Dark    bool
 	Link    *Link
 	// Media: an <img> carrying cui-tile-media.
 	Media    g.Node
@@ -28,7 +19,7 @@ type Tile struct {
 	Subhead  string
 	Callout  string
 	Class    string
-	// Children: cui-btn buttons, data-size="cta" in a [TileSizeLarge] tile.
+	// Children: cui-btn buttons, data-size="cta" in a Large tile.
 	Children g.Node
 }
 
@@ -36,17 +27,17 @@ func (t Tile) Render(w io.Writer) error {
 	if t.Headline == "" {
 		panic("site.Tile needs a Headline")
 	}
+	if t.Link != nil && (t.Link.Label == "" || t.Link.Href == "") {
+		panic("site.Tile's Link needs its Label and Href")
+	}
 	block := "cui-tile"
 	if t.Rounded {
 		block += " cui-tile-rounded"
 	}
-	if t.Dark {
-		block += " cui-dark"
-	}
-	return h.Div(class.Root(block, t.Class), g.If(t.Size.value != "", h.Data("size", t.Size.value)),
+	return h.Div(class.Root(block, t.Class), g.If(t.Large, h.Data("size", "lg")),
 		t.Media,
 		g.Iff(t.Link != nil, func() g.Node {
-			return h.A(h.Class("cui-tile-link"), h.Href(t.Link.Href), h.Aria("label", t.Link.Text))
+			return h.A(h.Class("cui-tile-link"), h.Href(t.Link.Href), h.Aria("label", t.Link.Label))
 		}),
 		h.Div(h.Class("cui-tile-content"),
 			h.H2(h.Class("cui-tile-headline"), g.Text(t.Headline)),

@@ -76,14 +76,4 @@
     transition-duration: 0s !important;
     transition-delay: 0s !important;
   }
-
-  /* a rule of its own: a browser that does not know ::details-content drops
-     every rule naming it */
-  ::details-content {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0s !important;
-    transition-delay: 0s !important;
-  }
 }

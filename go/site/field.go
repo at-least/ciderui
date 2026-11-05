@@ -18,11 +18,12 @@ type Field struct {
 	Label        string
 	Autocomplete string
 	Value        string
-	Error        string
-	Disabled     bool
+	// Help: a line under the field that says what to write; "" for none.
+	Help  string
+	Error string
 	// Prefix: a currency or a country code ($, +1).
 	Prefix string
-	// Attrs: nodes appended to the <input> (hx-post, inputmode, pattern, required); nil for none.
+	// Attrs: nodes appended to the <input> (disabled, hx-post, inputmode, pattern, required); nil for none.
 	Attrs g.Node
 	Class string
 }
@@ -31,14 +32,21 @@ func (f Field) Render(w io.Writer) error {
 	if f.ID == "" {
 		panic("site.Field needs an ID")
 	}
+	if f.Name == "" {
+		panic("site.Field needs a Name")
+	}
 	if f.Label == "" {
 		panic("site.Field needs a Label")
 	}
+	help := f.ID + "-help"
 	message := f.ID + "-message"
 	prefix := f.ID + "-prefix"
 	var ids []string
 	if f.Prefix != "" {
 		ids = append(ids, prefix)
+	}
+	if f.Help != "" {
+		ids = append(ids, help)
 	}
 	if f.Error != "" {
 		ids = append(ids, message)
@@ -52,12 +60,12 @@ func (f Field) Render(w io.Writer) error {
 				g.If(f.Value != "", h.Value(f.Value)),
 				g.If(f.Error != "", h.Aria("invalid", "true")),
 				g.If(described != "", h.Aria("describedby", described)),
-				g.If(f.Disabled, h.Disabled()),
 				f.Attrs,
 			),
 			h.Label(h.Class("cui-field-label"), h.For(f.ID), g.Text(f.Label)),
 			g.If(f.Prefix != "", h.Span(h.Class("cui-field-prefix"), h.ID(prefix), g.Text(f.Prefix))),
 		),
+		g.If(f.Help != "", h.P(h.Class("cui-field-help"), h.ID(help), g.Text(f.Help))),
 		g.If(f.Error != "", errorMessage(message, f.Error)),
 	}.Render(w)
 }
@@ -68,18 +76,19 @@ func errorMessage(id, text string) g.Node {
 
 type Option struct {
 	Value string
-	Text  string
+	Label string
 }
 
 type Select struct {
-	ID       string
-	Name     string
-	Label    string
-	Options  []Option
-	Selected string
-	Error    string
-	Disabled bool
-	// Attrs: nodes appended to the <select> (hx-post, required); nil for none.
+	ID    string
+	Name  string
+	Label string
+	// Placeholder: the empty choice's words, in the page's language.
+	Placeholder string
+	Options     []Option
+	Selected    string
+	Error       string
+	// Attrs: nodes appended to the <select> (disabled, hx-post, required); nil for none.
 	Attrs g.Node
 	Class string
 }
@@ -88,8 +97,14 @@ func (s Select) Render(w io.Writer) error {
 	if s.ID == "" {
 		panic("site.Select needs an ID")
 	}
+	if s.Name == "" {
+		panic("site.Select needs a Name")
+	}
 	if s.Label == "" {
 		panic("site.Select needs a Label")
+	}
+	if s.Placeholder == "" {
+		panic("site.Select needs a Placeholder")
 	}
 	if len(s.Options) == 0 {
 		panic("site.Select needs Options")
@@ -106,11 +121,10 @@ func (s Select) Render(w io.Writer) error {
 			h.Select(h.Class("cui-field-input"), h.ID(s.ID), h.Name(s.Name),
 				g.If(s.Error != "", h.Aria("invalid", "true")),
 				g.If(s.Error != "", h.Aria("describedby", message)),
-				g.If(s.Disabled, h.Disabled()),
 				s.Attrs,
-				h.Option(h.Value(""), g.If(s.Selected == "", h.Selected()), g.Text("Select")),
+				h.Option(h.Value(""), g.If(s.Selected == "", h.Selected()), g.Text(s.Placeholder)),
 				g.Map(s.Options, func(o Option) g.Node {
-					return h.Option(h.Value(o.Value), g.If(o.Value == s.Selected, h.Selected()), g.Text(o.Text))
+					return h.Option(h.Value(o.Value), g.If(o.Value == s.Selected, h.Selected()), g.Text(o.Label))
 				}),
 			),
 			h.Label(h.Class("cui-field-label"), h.For(s.ID), g.Text(s.Label)),
@@ -121,13 +135,12 @@ func (s Select) Render(w io.Writer) error {
 }
 
 type TextArea struct {
-	ID       string
-	Name     string
-	Label    string
-	Value    string
-	Error    string
-	Disabled bool
-	// Attrs: nodes appended to the <textarea> (hx-post, required, maxlength); nil for none.
+	ID    string
+	Name  string
+	Label string
+	Value string
+	Error string
+	// Attrs: nodes appended to the <textarea> (disabled, hx-post, required, maxlength); nil for none.
 	Attrs g.Node
 	Class string
 }
@@ -135,6 +148,9 @@ type TextArea struct {
 func (a TextArea) Render(w io.Writer) error {
 	if a.ID == "" {
 		panic("site.TextArea needs an ID")
+	}
+	if a.Name == "" {
+		panic("site.TextArea needs a Name")
 	}
 	if a.Label == "" {
 		panic("site.TextArea needs a Label")
@@ -147,7 +163,6 @@ func (a TextArea) Render(w io.Writer) error {
 				h.Textarea(h.Class("cui-field-textarea"), h.ID(a.ID), h.Name(a.Name), h.Placeholder(" "),
 					g.If(a.Error != "", h.Aria("invalid", "true")),
 					g.If(a.Error != "", h.Aria("describedby", message)),
-					g.If(a.Disabled, h.Disabled()),
 					a.Attrs,
 					// the parser drops one newline after <textarea>: a text
 					// starting with one keeps it only behind a second

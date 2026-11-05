@@ -1,4 +1,4 @@
-import { examples, MOTION, OUTLINE, PADDING, SIZE, SLIDE, STAGGER, TRACKING } from '../../../test/harness.mjs';
+import { DIM, examples, MOTION, OUTLINE, PADDING, POINTER, SIZE, TRACKING, WITH_PANEL } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const NAV = ex('globalnav');
@@ -24,6 +24,8 @@ const TRIGGER_AT = { 1600: 900, 1200: 900 };
 // nav at every width: the same ground, apple.com's at 900px
 const GROUND_AT = { 390: 900 };
 const OPEN = { click: BUTTON, widths: [390], height: 900 };
+const ROWS = 'shown with the sheet, where apple.com\'s fade in 240ms from 200ms (home:menu.row, home:menu.open\'s animations): a phone\'s menu is read at once (DESIGN.md decision 25)';
+const PANEL_OUT = 'gone with the panel, where apple.com\'s go first in 240ms (flyout:close\'s animations): DESIGN.md decision 25';
 
 const SEARCH_NAV = ex('search');
 const SEARCH_DARK = SEARCH_NAV.replace('class="cui-globalnav"', 'class="cui-globalnav cui-dark"');
@@ -121,7 +123,8 @@ export const cases = [
     html: POST_NAV,
     widths: DESKTOP,
     checks: [
-      { target: POST, props: ['font-size', 'line-height', 'font-weight', 'color', ...MOTION], apple: ['home', 'nav.link'] },
+      { target: POST, props: ['font-size', 'line-height', 'font-weight', 'color'], apple: ['home', 'nav.link'] },
+      { target: POST, props: MOTION, golden: POINTER },
       { target: POST, state: 'hover', props: ['color'], apple: ['home', 'nav.link', 'hover'] },
       { target: POST, props: [...FLEX, ...INLINE, 'box-height', 'text-decoration-line'], apple: ['home', 'nav.link-box'] },
       { target: POST, props: ['letter-spacing'], golden: TRACKING },
@@ -158,13 +161,16 @@ export const cases = [
       { target: '.cui-globalnav', props: ['box-height', 'background-color', 'backdrop-filter'], apple: ['home', 'nav'] },
       { target: '.cui-globalnav-content', props: ['max-width', ...INLINE], apple: ['home', 'nav.content'] },
       { target: LIST, props: [...FLEX, 'margin-left', 'margin-right', 'box-height'], apple: ['home', 'nav.list'] },
-      { target: LINK, props: ['font-size', 'line-height', 'font-weight', 'color', ...MOTION], apple: ['home', 'nav.link'] },
+      { target: LINK, props: ['font-size', 'line-height', 'font-weight', 'color'], apple: ['home', 'nav.link'] },
+      { target: LINK, props: MOTION, golden: POINTER },
       { target: LINK, state: 'hover', props: ['color'], apple: ['home', 'nav.link', 'hover'] },
       { target: LINK, props: [...FLEX, ...INLINE, 'box-height', 'text-decoration-line'], apple: ['home', 'nav.link-box'] },
       { target: LINK, props: ['letter-spacing'], golden: TRACKING },
-      { target: LOGO, props: [...FLEX, ...INLINE, 'box-height', 'box-left', 'color', ...MOTION], apple: ['home', 'nav.logo'] },
+      { target: LOGO, props: [...FLEX, ...INLINE, 'box-height', 'box-left', 'color'], apple: ['home', 'nav.logo'] },
+      { target: LOGO, props: MOTION, golden: POINTER },
       { target: LOGO, state: 'hover', props: ['color'], apple: ['home', 'nav.logo', 'hover'] },
-      { target: SEARCH, props: [...FLEX, ...INLINE, 'box-height', 'color', ...MOTION], apple: ['home', 'nav.search'] },
+      { target: SEARCH, props: [...FLEX, ...INLINE, 'box-height', 'color'], apple: ['home', 'nav.search'] },
+      { target: SEARCH, props: MOTION, golden: POINTER },
       { target: SEARCH, state: 'hover', props: ['color'], apple: ['home', 'nav.search', 'hover'] },
       { target: BAG, props: [...FLEX, ...INLINE, 'box-height', 'box-left', 'color'], apple: ['home', 'nav.bag'] },
       { target: BAG, state: 'hover', props: ['color'], apple: ['home', 'nav.bag', 'hover'] },
@@ -193,7 +199,8 @@ export const cases = [
       { target: `${BAG} .cui-globalnav-image-compact`, props: ['box-height'], apple: ['home', 'nav.bag-compact'] },
       { target: `${SEARCH} .cui-globalnav-image-compact`, props: ['box-width'], golden: 'apple.com\'s compact image, 17 by 48 (home:nav.search-compact)' },
       { target: `${SEARCH} .cui-globalnav-image`, props: ['box-height'], apple: ['home', 'nav.search-image'] },
-      { target: BUTTON, props: [...FLEX, 'box-height', 'box-left', 'color', 'opacity', 'cursor', ...MOTION], apple: ['home', 'nav.menutrigger'] },
+      { target: BUTTON, props: [...FLEX, 'box-height', 'box-left', 'color', 'opacity', 'cursor'], apple: ['home', 'nav.menutrigger'] },
+      { target: BUTTON, props: MOTION, golden: POINTER },
       { target: BUTTON, state: 'hover', props: ['opacity'], apple: ['home', 'nav.menutrigger', 'hover'] },
       { target: BUTTON, props: ['box-width'], golden: 'apple.com\'s 48px square (home:nav.menutrigger at 390px)' },
       { target: BARS[0], props: ['stroke-width'], apple: ['home', 'nav.menutrigger-bread'] },
@@ -265,8 +272,7 @@ export const cases = [
       { target: `${LIST} > li:nth-child(1)`, props: [...MOTION, 'transition-delay'], apple: ['home', 'menu.logo'] },
       { target: `${LIST} > li:nth-child(3)`, props: ['transition-duration'], apple: ['home', 'menu.row'] },
       { target: `${LIST} > li:nth-child(4)`, props: ['transition-duration'], apple: ['home', 'menu.row-second'] },
-      { target: `${LIST} > li:nth-child(3)`, props: ['animation-name', 'animation-duration', 'animation-delay', 'animation-timing-function', 'animation-fill-mode'], golden: 'apple.com\'s rows in 240ms from 200ms (home:menu.row\'s transition), as an animation that runs once as the menu shows, from transparent: the rows\' transition is their coming back from a phone\'s flyout, from another delay' },
-      { target: `${LIST} > li:nth-child(4)`, props: ['animation-delay'], golden: 'with the row above, not 20ms after it (home:menu.row-second): ' + STAGGER },
+      { target: `${LIST} > li:nth-child(3)`, props: ['animation-name', 'animation-duration', 'animation-delay'], golden: ROWS },
       { target: `${LIST} > li:nth-child(3)`, props: ['transition-delay'], golden: 'the rows back from behind a phone\'s open flyout from 160ms, apple.com\'s (flyout-phone:flyout\'s animations, globalnav-flyout-slide-back-next: 240ms from 160ms)' },
       { target: `${LIST} > li:nth-child(3)`, props: ['transition-property', 'transition-timing-function'], golden: 'apple.com\'s rows also turn visible (its rows are hidden closed, ciderui\'s not displayed); their opacity and transform as apple.com\'s, the transform for the 8px back behind a phone\'s open flyout' },
       { target: LIST, props: MOTION, golden: 'apple.com\'s ground and height in 450ms (home:menu.open\'s animations; its computed transition names its ground alone, its height\'s declared in a state between)' },
@@ -324,7 +330,7 @@ export const cases = [
     ...OPEN,
     wait: 0,
     checks: [
-      { target: `${LIST} > li:nth-child(3)`, props: ['opacity', 'transform'], golden: 'apple.com\'s rows start transparent (home:menu.open\'s animations), ' + SLIDE },
+      { target: `${LIST} > li:nth-child(3)`, props: ['opacity', 'transform'], golden: ROWS },
     ],
   },
   {
@@ -452,7 +458,8 @@ export const cases = [
       { target: PANEL, props: ['background-color'], apple: ['search', 'flyout'] },
       { target: PANEL, props: ['box-height', 'box-top'], golden: 'apple.com\'s flyout below the bar, 344px (search:flyout.scroll), its content\'s' },
       { target: PANEL, props: ['padding-top', 'padding-bottom'], apple: ['search', 'flyout.content'] },
-      { target: CURTAIN, props: ['background-color', 'backdrop-filter', 'opacity'], apple: ['search', 'curtain'] },
+      { target: CURTAIN, props: ['background-color', 'opacity'], apple: ['search', 'curtain'] },
+      { target: CURTAIN, props: ['backdrop-filter'], golden: DIM },
       { target: CURTAIN, props: ['box-top', 'box-height', 'hit'], golden: 'behind the panel from the bar\'s bottom to the window\'s, a button: what the pointer finds under the panel (apple.com\'s curtain is the window\'s, under its flyout)' },
       { target: FIELD, props: ['height'], apple: ['search', 'field'] },
       { target: FIELD, props: ['box-top', 'box-left'], golden: PLACE },
@@ -522,14 +529,14 @@ export const cases = [
     ...SEARCHING,
     widths: [1600, 390],
     checks: [
-      { target: FIELD, props: [...MOTION, 'transition-delay'], golden: 'apple.com\'s field in 240ms from 200ms (search:field.wrapper\'s keyframes, an animation there), its opacity alone: ' + SLIDE },
-      { target: HEADING, props: ['transition-duration', 'transition-delay'], golden: 'apple.com\'s heading in 320ms from 200ms (search:results.header)' },
-      { target: '.cui-globalnav-searchlinks > li:first-child', props: ['transition-duration', 'transition-delay'], golden: 'apple.com\'s rows in 320ms, from the heading\'s 200ms (search:nav\'s animations), not 20ms after the one above: ' + STAGGER },
-      { target: '.cui-globalnav-searchlinks > li:nth-child(2)', props: ['transition-delay'], golden: 'with the row above, not 20ms after it: ' + STAGGER },
+      { target: FIELD, props: [...MOTION, 'transition-delay'], golden: WITH_PANEL },
+      { target: HEADING, props: ['transition-duration', 'transition-delay'], golden: WITH_PANEL },
+      { target: '.cui-globalnav-searchlinks > li:first-child', props: ['transition-duration', 'transition-delay'], golden: WITH_PANEL },
+      { target: '.cui-globalnav-searchlinks > li:nth-child(2)', props: ['transition-delay'], golden: WITH_PANEL },
       { target: FLY, props: MOTION, golden: 'the sheet\'s height and ground in 450ms to 833px (search:nav.phone\'s animations on its content); no motion of its own from 834px' },
       { target: PANEL, props: MOTION, golden: 'from 834px revealed down and from the bar\'s ground in 0.24s, apple.com\'s flyout\'s height and ground (search:nav\'s animations)' },
       { target: CURTAIN, props: MOTION, golden: 'apple.com\'s curtain in 0.32s (search:curtain), from 834px' },
-      { target: QLINK, props: MOTION, golden: 'apple.com\'s color and ground in 0.02s (search:results.link; its fill too, where the arrow here is drawn in currentColor)' },
+      { target: QLINK, props: MOTION, golden: POINTER },
       { target: `${SCLOSE} path:first-child`, props: MOTION, golden: 'the sheet\'s X turns as the menu\'s' },
     ],
   },
@@ -541,8 +548,8 @@ export const cases = [
     widths: [1600],
     wait: 0,
     checks: [
-      { target: FIELD, props: ['opacity', 'transform'], golden: 'the field from transparent (search:field.wrapper\'s keyframes), ' + SLIDE },
-      { target: '.cui-globalnav-searchlinks > li:first-child', props: ['opacity', 'transform'], golden: 'each row from transparent (search:results.header\'s keyframes), ' + SLIDE },
+      { target: FIELD, props: ['opacity', 'transform'], golden: WITH_PANEL },
+      { target: '.cui-globalnav-searchlinks > li:first-child', props: ['opacity', 'transform'], golden: WITH_PANEL },
       { target: PANEL, props: ['clip-path', 'background-color'], golden: 'the panel hidden down from the bar, on its ground: apple.com\'s flyout 44px tall, the bar\'s ground (search:nav\'s animations)' },
       { target: CURTAIN, props: ['opacity'], golden: 'the curtain from transparent (search:curtain\'s transition)' },
     ],
@@ -555,7 +562,7 @@ export const cases = [
     wait: 0,
     checks: [
       { target: FLY, props: ['height', 'background-color'], golden: 'the sheet from the bar\'s height and ground (search:nav.phone\'s animations on its content)' },
-      { target: FIELD, props: ['opacity', 'transform'], golden: 'the field from transparent (search:nav.phone\'s animations), ' + SLIDE },
+      { target: FIELD, props: ['opacity', 'transform'], golden: WITH_PANEL },
     ],
   },
   {
@@ -693,7 +700,8 @@ export const cases = [
     reducedMotion: 'reduce',
     checks: [
       { target: PANEL, props: ['background-color'], apple: ['search-dark', 'flyout'] },
-      { target: CURTAIN, props: ['background-color', 'backdrop-filter'], apple: ['search-dark', 'curtain'] },
+      { target: CURTAIN, props: ['background-color'], apple: ['search-dark', 'curtain'] },
+      { target: CURTAIN, props: ['backdrop-filter'], golden: DIM },
       { target: `${FIELD} .cui-globalnav-image`, props: ['color'], as: { color: 'fill' }, apple: ['search-dark', 'field.submit-image'] },
       { target: `${QLINK} .cui-globalnav-image`, props: ['color'], as: { color: 'fill' }, apple: ['search-dark', 'results.icon-image'] },
       { target: `${QLINK} .cui-globalnav-image`, state: 'hover', on: QLINK, props: ['color'], as: { color: 'fill' }, apple: ['search-dark', 'results.icon-image', 'hover'] },
@@ -715,9 +723,10 @@ export const cases = [
     checks: [
       { target: INPUT, props: ['color'], apple: ['search-text', 'input'] },
       { target: INPUT, props: ['padding-right'], golden: 'its text ending 31px before the field\'s end (25px from 834px), where apple.com\'s does, 3px before its clear button (its input 7px out and 38px in; 8px out, 34px in: search-text:input)' },
-      { target: RESET, props: ['opacity', 'visibility', 'display', 'align-items', 'justify-content', 'cursor', 'background-color', 'border-top-width', 'transition-duration', 'transition-timing-function'], apple: ['search-text', 'reset'] },
+      { target: RESET, props: ['opacity', 'visibility', 'display', 'align-items', 'justify-content', 'cursor', 'background-color', 'border-top-width'], apple: ['search-text', 'reset'] },
+      { target: RESET, props: ['transition-duration', 'transition-timing-function'], golden: 'its opacity and visibility in apple.com\'s 0.32s (search-text:reset); its mark\'s color at once, where apple.com\'s eases, as a pointer\'s color change is everywhere here (DESIGN.md decision 25)' },
       { target: RESET, props: ['color'], as: { color: 'fill' }, apple: ['search-text', 'reset'] },
-      { target: RESET, props: ['transition-property'], golden: 'apple.com\'s opacity and visibility (search-text:reset), and its mark\'s color where apple.com\'s fill moves' },
+      { target: RESET, props: ['transition-property'], golden: 'apple.com\'s opacity and visibility (search-text:reset), its mark\'s color not among them (DESIGN.md decision 25)' },
       { target: RESET, props: ['box-width', 'box-height', 'box-top', 'box-right'], golden: 'apple.com\'s 30 by 36 button from 834px, 32 by 38 below, its mark centered on the field and ending at its end (1px in below 834px), the button 8px (7px) past it (search-text:reset, reset.image)' },
       { target: `${RESET} .cui-globalnav-image`, props: ['box-width', 'box-height', 'display'], golden: 'apple.com\'s 14px mark from 834px (search-text:reset.image), not drawn below' },
       { target: `${RESET} .cui-globalnav-image-compact`, props: ['box-width', 'box-height', 'display'], golden: 'apple.com\'s 16px mark to 833px (search-text:reset.image-compact), not drawn from 834px' },
@@ -737,7 +746,7 @@ export const cases = [
     height: 900,
     widths: [1600],
     checks: [
-      { target: RESET, props: ['opacity', 'visibility', 'transition-duration', 'transition-timing-function'], apple: ['search', 'field.reset'] },
+      { target: RESET, props: ['opacity', 'visibility'], apple: ['search', 'field.reset'] },
       { target: MAGNIFIER, props: ['color'], as: { color: 'fill' }, apple: ['search', 'field.submit-image'] },
       { target: FLY, props: ['display'], golden: 'still open: the clear button is in it (reference/search/)' },
       { target: INPUT, props: ['focused'], golden: 'the focus on the page, the button it was on hidden (Safari, Chrome, Chromium: reference/search/), where apple.com\'s script puts it back in the field; Shift+Tab takes it there' },
@@ -846,8 +855,8 @@ export const cases = [
     wait: 150,
     widths: [1600, 390],
     checks: [
-      { target: SHEAD, props: ['transition-property', 'transition-duration', 'transition-timing-function', 'transition-delay'], golden: 'apple.com\'s new heading in 320ms from 40ms, its opacity alone (search-typed:ip, globalnav-search-fade: in place)' },
-      ...[1, 2, 3].map((n) => ({ target: `.cui-globalnav-searchlinks > li:nth-child(${n})`, props: ['transition-property', 'transition-duration', 'transition-delay'], golden: `apple.com's new rows in 320ms, from its heading's 40ms (search-typed:ip), the ${['first', 'second', 'third'][n - 1]} ${n === 3 ? 'written once the search was open, ' : ''}not 20ms after the one above: ${STAGGER}` })),
+      { target: SHEAD, props: ['transition-property', 'transition-duration', 'transition-timing-function', 'transition-delay'], golden: WITH_PANEL },
+      ...[1, 2, 3].map((n) => ({ target: `.cui-globalnav-searchlinks > li:nth-child(${n})`, props: ['transition-property', 'transition-duration', 'transition-delay'], golden: WITH_PANEL })),
     ],
   },
   {
@@ -858,7 +867,7 @@ export const cases = [
     wait: 1000,
     widths: [1600],
     checks: [
-      { target: '.cui-globalnav-searchlinks > li:nth-child(3)', props: ['opacity', 'transform'], golden: 'a row written once something is typed from transparent, where it is (search-typed:ip\'s keyframes: opacity 0 to 1, translateY(0px))' },
+      { target: '.cui-globalnav-searchlinks > li:nth-child(3)', props: ['opacity', 'transform'], golden: WITH_PANEL },
     ],
   },
   {
@@ -888,7 +897,8 @@ export const cases = [
     checks: [
       { target: '.cui-globalnav', props: ['background-color', 'backdrop-filter', 'z-index'], apple: ['flyout', 'nav'] },
       { target: '.cui-globalnav', props: ['position', 'isolation'], golden: 'the containing block and the stacking context of a flyout the pointer shows (a site\'s sticky replaces the position)' },
-      { target: LAPTOPS_LINK, props: ['color', ...MOTION], apple: ['flyout', 'link.open'] },
+      { target: LAPTOPS_LINK, props: ['color'], apple: ['flyout', 'link.open'] },
+      { target: LAPTOPS_LINK, props: MOTION, golden: POINTER },
       { target: TABLETS_LINK, props: ['color'], apple: ['flyout', 'link.other'] },
       { target: TABLETS_LINK, props: ['hit'], golden: 'the bar\'s links over the flyout, which runs from the nav\'s top (reference/flyout/)' },
       { target: LAPTOPS_FLY, props: ['position', 'visibility'], apple: ['flyout', 'flyout'] },
@@ -910,16 +920,19 @@ export const cases = [
       { target: ROW, props: ['margin-top', 'margin-left', 'box-height'], apple: ['flyout', 'item'] },
       { target: ROW2, props: ['margin-top', 'box-height'], apple: ['flyout', 'item2'] },
       { target: ROW_LG, props: ['box-top', 'box-left'], golden: `6px below its heading, 11px out, ${FPLACE}` },
-      { target: LINK_LG, props: [...TYPE, ...PADDING, 'margin-bottom', 'display', 'text-decoration-line', 'background-color', ...MOTION, 'box-height'], apple: ['flyout', 'link.elevated'] },
+      { target: LINK_LG, props: [...TYPE, ...PADDING, 'margin-bottom', 'display', 'text-decoration-line', 'background-color', 'box-height'], apple: ['flyout', 'link.elevated'] },
+      { target: LINK_LG, props: MOTION, golden: POINTER },
       { target: LINK_LG, state: 'hover', props: ['color'], apple: ['flyout', 'link.elevated', 'hover'] },
       { target: LINK_LG, state: 'focus-visible', props: ['color', ...OUTLINE], apple: ['flyout', 'link.elevated', 'focus-visible'] },
       { target: LINK_LG, props: ['letter-spacing'], golden: TRACKING },
       { target: LINK_AFTER, props: [...TYPE, ...PADDING, 'margin-bottom', 'display', 'box-height'], apple: ['flyout', 'link.after'] },
       { target: LINK_AFTER, state: 'hover', props: ['color'], apple: ['flyout', 'link.after', 'hover'] },
-      { target: FLINK, props: [...TYPE, ...PADDING, 'margin-bottom', 'display', 'text-decoration-line', ...MOTION, 'box-height'], apple: ['flyout', 'link'] },
+      { target: FLINK, props: [...TYPE, ...PADDING, 'margin-bottom', 'display', 'text-decoration-line', 'box-height'], apple: ['flyout', 'link'] },
+      { target: FLINK, props: MOTION, golden: POINTER },
       { target: FLINK, state: 'hover', props: ['color'], apple: ['flyout', 'link', 'hover'] },
       { target: FLINK, state: 'focus-visible', props: ['color', ...OUTLINE], apple: ['flyout', 'link', 'focus-visible'] },
-      { target: LIST, pseudo: '::after', props: ['position', 'top', 'background-color', 'backdrop-filter', 'opacity', 'visibility'], apple: ['flyout', 'curtain'] },
+      { target: LIST, pseudo: '::after', props: ['position', 'top', 'background-color', 'opacity', 'visibility'], apple: ['flyout', 'curtain'] },
+      { target: LIST, pseudo: '::after', props: ['backdrop-filter'], golden: DIM },
       { target: LIST, pseudo: '::after', props: ['z-index', 'pointer-events'], golden: 'under the bar\'s links and the flyout, in the nav (apple.com\'s under the nav, 9998 to its 9999); taking no pointer, so that the pointer on it is off the link (apple.com\'s takes it, its script closing the flyout as the pointer leaves the nav: reference/flyout/)' },
       { target: LAPTOPS_BUTTON, props: ['box-height', 'cursor', 'color', 'display', 'align-items', 'justify-content', 'background-color', 'border-top-width'], apple: ['flyout', 'trigger'] },
       { target: LAPTOPS_BUTTON, state: 'focus-visible', props: OUTLINE, apple: ['flyout', 'trigger', 'focus-visible'] },
@@ -945,14 +958,14 @@ export const cases = [
     checks: [
       { target: LAPTOPS_FLY, props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'shown once the pointer has rested 120ms on its link (apple.com\'s script\'s 120ms, read in globalheader.umd.js: flyout:*)' },
       { target: FPANEL, props: ITEM_MOTION, golden: 'revealed down from the bar and from its ground in 240ms after those 120ms: apple.com\'s flyout\'s height and ground in half its content\'s height in ms, 240 at least (flyout:flyout, 254ms for Mac\'s; 240ms for seven of the eleven)' },
-      { target: FHEAD1, props: ['transition-duration', 'transition-timing-function'], apple: ['flyout', 'header.elevated'] },
-      { target: FHEAD1, props: ['transition-delay'], golden: 'apple.com\'s first heading from 80ms (flyout:header.elevated), after the 120ms' },
-      { target: FHEAD2, props: ['transition-delay'], golden: 'with the first, not from 160ms (flyout:header): ' + STAGGER },
-      { target: FHEAD3, props: ['transition-delay'], golden: 'with the first, not from 200ms (flyout:header.last): ' + STAGGER },
-      { target: ROW_LG, props: ['transition-duration', 'transition-timing-function'], apple: ['flyout', 'item.elevated'] },
-      { target: ROW_LG, props: ['transition-delay'], golden: 'with its heading, not 40ms after it (flyout:item.elevated): ' + STAGGER },
-      { target: ROW_LG2, props: ['transition-delay'], golden: 'with its heading, not 20ms after the row above (flyout:item.elevated2): ' + STAGGER },
-      { target: ROW, props: ['transition-delay'], golden: 'the second group\'s with the first\'s, not from 200ms (flyout:item): ' + STAGGER },
+      { target: FHEAD1, props: ['transition-duration', 'transition-timing-function'], golden: WITH_PANEL },
+      { target: FHEAD1, props: ['transition-delay'], golden: WITH_PANEL },
+      { target: FHEAD2, props: ['transition-delay'], golden: WITH_PANEL },
+      { target: FHEAD3, props: ['transition-delay'], golden: WITH_PANEL },
+      { target: ROW_LG, props: ['transition-duration', 'transition-timing-function'], golden: WITH_PANEL },
+      { target: ROW_LG, props: ['transition-delay'], golden: WITH_PANEL },
+      { target: ROW_LG2, props: ['transition-delay'], golden: WITH_PANEL },
+      { target: ROW, props: ['transition-delay'], golden: WITH_PANEL },
       { target: LIST, pseudo: '::after', props: ['transition-property', 'transition-duration', 'transition-timing-function', 'transition-delay'], golden: 'apple.com\'s curtain in 0.32s from 80ms (flyout:curtain), after the 120ms' },
       { target: '.cui-globalnav', props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'its blur off as the flyout shows, after the 120ms' },
     ],
@@ -983,9 +996,9 @@ export const cases = [
       { target: LAPTOPS_FLY, props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'hidden at the end of its going (apple.com\'s flyout hidden at its height\'s end: flyout:close\'s animations, 240ms from 120ms)' },
       { target: LAPTOPS_FLY, props: ['transition-behavior'], golden: 'its height, which does not interpolate, flipped with its visibility at that end: allow-discrete in the compiled stylesheet too (written inside the shorthand: the minifier moves a transition-behavior written after the shorthand before it, where the shorthand resets it)' },
       { target: FPANEL, props: ITEM_MOTION, golden: 'back to the bar and its ground in 240ms from 120ms (flyout:close\'s animations)' },
-      { target: FHEAD1, props: ITEM_MOTION, golden: 'its headings transparent at once in 240ms (flyout:close\'s animations), where they are: ' + SLIDE },
-      { target: ROW_LG, props: ['transition-duration', 'transition-delay'], golden: 'its rows the same, at once in 240ms, as apple.com\'s a group\'s first five, its heading the first (flyout:close\'s animations)' },
-      { target: ROW_AFTER, props: ['transition-duration'], golden: 'the same 240ms: apple.com\'s are 20ms shorter for each row after a group\'s fifth (flyout:close\'s animations), a staggered going that only draws the eye (DESIGN.md decision 25)' },
+      { target: FHEAD1, props: ITEM_MOTION, golden: PANEL_OUT },
+      { target: ROW_LG, props: ['transition-duration', 'transition-delay'], golden: PANEL_OUT },
+      { target: ROW_AFTER, props: ['transition-duration'], golden: PANEL_OUT },
       { target: LIST, pseudo: '::after', props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'the curtain out in 0.32s from 80ms, hidden at its end (flyout:close\'s animations)' },
       { target: '.cui-globalnav', props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'its blur back 0.45s on, the curtain gone (apple.com\'s back 0.4 to 0.53s after a flyout or the search closed: scouted, each frame; kept on, the curtain would not reach the page: reference/flyout/)' },
     ],
@@ -1030,7 +1043,8 @@ export const cases = [
       { target: '.cui-globalnav', props: ['background-color'], apple: ['flyout', 'flyout'] },
       { target: '.cui-globalnav', props: ['backdrop-filter'], apple: ['flyout', 'nav'] },
       { target: LAPTOPS_LINK, props: ['color'], apple: ['flyout', 'link.open'] },
-      { target: LAPTOPS_CURTAIN, props: ['background-color', 'backdrop-filter', 'opacity'], apple: ['flyout', 'curtain'] },
+      { target: LAPTOPS_CURTAIN, props: ['background-color', 'opacity'], apple: ['flyout', 'curtain'] },
+      { target: LAPTOPS_CURTAIN, props: ['backdrop-filter'], golden: DIM },
       { target: LAPTOPS_CURTAIN, props: ['box-top', 'box-height', 'hit'], golden: 'behind the panel from the bar\'s bottom to the window\'s, a button: what the pointer finds under the panel (as the search\'s)' },
       { target: BACK, props: ['display'], golden: 'the sheet\'s back button, none from 834px' },
       { target: FCLOSE, props: ['display'], golden: 'the sheet\'s X, none from 834px' },
@@ -1068,8 +1082,8 @@ export const cases = [
     height: 900,
     checks: [
       { target: FPANEL, props: ITEM_MOTION, golden: 'revealed down from the bar and from its ground in 240ms, as the search\'s (apple.com\'s flyout\'s height and ground: flyout:flyout)' },
-      { target: FHEAD1, props: ['transition-delay'], golden: 'apple.com\'s first heading from 80ms (flyout:header.elevated)' },
-      { target: ROW_LG2, props: ['transition-delay'], golden: 'with its heading, not from 140ms (flyout:item.elevated2): ' + STAGGER },
+      { target: FHEAD1, props: ['transition-delay'], golden: WITH_PANEL },
+      { target: ROW_LG2, props: ['transition-delay'], golden: WITH_PANEL },
     ],
   },
   {
@@ -1178,7 +1192,8 @@ export const cases = [
       { target: FLINK, state: 'hover', props: ['color'], apple: ['flyout-dark', 'link', 'hover'] },
       { target: FLINK, state: 'focus-visible', props: ['color'], apple: ['flyout-dark', 'link', 'focus-visible'] },
       { target: LAPTOPS_LINK, props: ['color'], apple: ['flyout-dark', 'link.open'] },
-      { target: LIST, pseudo: '::after', props: ['background-color', 'backdrop-filter'], apple: ['flyout-dark', 'curtain'] },
+      { target: LIST, pseudo: '::after', props: ['background-color'], apple: ['flyout-dark', 'curtain'] },
+      { target: LIST, pseudo: '::after', props: ['backdrop-filter'], golden: DIM },
     ],
   },
   {
@@ -1211,7 +1226,8 @@ export const cases = [
       { target: ROW_AFTER, props: ['margin-top', 'box-height'], apple: ['flyout-phone', 'item.after'] },
       { target: ROW, props: ['margin-top', 'box-height'], apple: ['flyout-phone', 'item'] },
       { target: ROW2, props: ['margin-top', 'box-height'], apple: ['flyout-phone', 'item2'] },
-      { target: LINK_LG, props: [...TYPE, ...PADDING, 'margin-bottom', 'display', 'max-width', ...MOTION, 'box-height'], apple: ['flyout-phone', 'link.elevated'] },
+      { target: LINK_LG, props: [...TYPE, ...PADDING, 'margin-bottom', 'display', 'max-width', 'box-height'], apple: ['flyout-phone', 'link.elevated'] },
+      { target: LINK_LG, props: MOTION, golden: POINTER },
       { target: LINK_LG, state: 'hover', props: ['color'], apple: ['flyout-phone', 'link.elevated', 'hover'] },
       { target: LINK_LG, state: 'focus-visible', props: ['color', ...OUTLINE], apple: ['flyout-phone', 'link.elevated', 'focus-visible'] },
       { target: FLINK, props: [...TYPE, ...PADDING, 'margin-bottom', 'display', 'max-width', 'box-height'], apple: ['flyout-phone', 'link'] },
@@ -1235,7 +1251,7 @@ export const cases = [
     height: 900,
     checks: [
       { target: LAPTOPS_FLY, props: ITEM_MOTION, golden: 'in from 8px on and transparent in 240ms from 160ms (flyout-phone:flyout\'s animations, globalnav-flyout-slide-forward-next)' },
-      { target: BACK, props: ITEM_MOTION, golden: 'its color in 0.32s (flyout-phone:back.button), in from 4px on and transparent in 240ms from 160ms (flyout-phone:back)' },
+      { target: BACK, props: ITEM_MOTION, golden: 'no motion of its own: it comes with the sheet. apple.com\'s color in 0.32s (flyout-phone:back.button) at once, as a pointer\'s color change is everywhere here; its own 4px slide from 160ms (flyout-phone:back) left out, a movement too small to read (DESIGN.md decision 25)' },
       { target: STORE_ITEM, props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'the menu\'s rows out at once in 240ms, transparent and 8px back (flyout-phone:flyout\'s animations, globalnav-flyout-slide-forward-previous)' },
     ],
   },
@@ -1248,7 +1264,7 @@ export const cases = [
     wait: 0,
     checks: [
       { target: LAPTOPS_FLY, props: ['opacity', 'transform'], golden: 'from transparent, 8px on (flyout-phone:keyframes, globalnav-flyout-slide-forward-next)' },
-      { target: BACK, props: ['opacity', 'transform'], golden: 'from transparent, 4px on (flyout-phone:back\'s transition)' },
+      { target: BACK, props: ['opacity', 'transform'], golden: 'with the sheet, where it is: apple.com\'s own 4px slide left out (flyout-phone:back\'s transition, DESIGN.md decision 25)' },
     ],
   },
   {
@@ -1300,7 +1316,7 @@ export const cases = [
     height: 900,
     checks: [
       { target: `${STORE_ITEM} > .cui-globalnav-flyoutbutton > .cui-globalnav-image-compact`, props: ['opacity'], apple: ['flyout-phone', 'row.other-chevron'] },
-      { target: `${STORE_ITEM} > .cui-globalnav-flyoutbutton > .cui-globalnav-image-compact`, props: ['transform', ...MOTION], golden: 'apple.com\'s chevron slides in from 4px back in 0.24s (flyout-phone:row.chevron\'s keyframes) and goes as it came, where apple.com\'s scales to 0.8 (row.other-chevron)' },
+      { target: `${STORE_ITEM} > .cui-globalnav-flyoutbutton > .cui-globalnav-image-compact`, props: ['transform', ...MOTION], golden: 'its chevron fades in 0.24s where it is: apple.com\'s also slides in from 4px back (flyout-phone:row.chevron\'s keyframes), a movement too small to read, and scales to 0.8 going (row.other-chevron) (DESIGN.md decision 25)' },
     ],
   },
   {
@@ -1334,7 +1350,8 @@ export const cases = [
       { target: BPANEL, props: ['padding-top', 'padding-bottom'], apple: ['bag-flyout', 'flyout.content'] },
       { target: BPANEL, props: ['box-height'], apple: ['bag-flyout', 'flyout.scroll'] },
       { target: BPANEL, props: ['box-top'], golden: 'from the bar\'s bottom, where apple.com\'s flyout\'s room starts (bag-flyout:flyout.scroll, 44px into its nav)' },
-      { target: BCURTAIN, props: ['background-color', 'backdrop-filter', 'opacity'], apple: ['bag-flyout', 'curtain'] },
+      { target: BCURTAIN, props: ['background-color', 'opacity'], apple: ['bag-flyout', 'curtain'] },
+      { target: BCURTAIN, props: ['backdrop-filter'], golden: DIM },
       { target: BCURTAIN, props: ['box-top', 'box-height', 'hit'], golden: 'behind the panel from the bar\'s bottom to the window\'s, a button: what the pointer finds under the panel (apple.com\'s curtain is the window\'s, under its flyout)' },
       { target: BCLOSE, props: ['display'], golden: 'the sheet\'s X, not shown from 834px' },
       { target: BMESSAGE, props: [...TYPE, 'margin-bottom', 'box-height', 'box-left'], apple: ['bag-flyout', 'bag.header'] },
@@ -1402,11 +1419,11 @@ export const cases = [
     ...BAGGING,
     widths: [1600, 390],
     checks: [
-      { target: BMESSAGE, props: [...MOTION, 'transition-delay'], golden: 'apple.com\'s rows in 0.32s from 80ms (bag-flyout:bag.header: opacity and transform, cubic-bezier(.4,0,.6,1)), its opacity alone: ' + SLIDE },
-      { target: BTEXT, props: ['transition-delay'], golden: 'with the message, not 20ms after it (bag-flyout:bag.subheader): ' + STAGGER },
-      { target: BHEADING, props: ['transition-delay'], golden: 'with the message (bag-flyout:bag.nav-header): ' + STAGGER },
-      { target: BROW, props: ['transition-delay'], golden: 'with the message (bag-flyout:bag.nav-item): ' + STAGGER },
-      { target: BROW2, props: ['transition-delay'], golden: 'with the message (bag-flyout:bag.nav-item2): ' + STAGGER },
+      { target: BMESSAGE, props: [...MOTION, 'transition-delay'], golden: WITH_PANEL },
+      { target: BTEXT, props: ['transition-delay'], golden: WITH_PANEL },
+      { target: BHEADING, props: ['transition-delay'], golden: WITH_PANEL },
+      { target: BROW, props: ['transition-delay'], golden: WITH_PANEL },
+      { target: BROW2, props: ['transition-delay'], golden: WITH_PANEL },
       { target: BFLY, props: MOTION, golden: 'the sheet\'s height and ground in 450ms to 833px (bag-flyout:nav.phone\'s animations on its content); no motion of its own from 834px' },
       { target: BPANEL, props: MOTION, golden: 'from 834px revealed down and from the bar\'s ground in 0.24s, apple.com\'s flyout\'s height and ground (bag-flyout:nav\'s animations)' },
       { target: BCURTAIN, props: MOTION, golden: 'apple.com\'s curtain in 0.32s (bag-flyout:curtain), from 834px' },
@@ -1419,8 +1436,8 @@ export const cases = [
     widths: [1600],
     wait: 0,
     checks: [
-      { target: BMESSAGE, props: ['opacity', 'transform'], golden: 'each row from transparent (globalheader.css\'s globalnav-flyout-item, bag-flyout:bag.header\'s transition), ' + SLIDE },
-      { target: BROW, props: ['opacity', 'transform'], golden: 'each row from transparent, ' + SLIDE },
+      { target: BMESSAGE, props: ['opacity', 'transform'], golden: WITH_PANEL },
+      { target: BROW, props: ['opacity', 'transform'], golden: WITH_PANEL },
       { target: BPANEL, props: ['clip-path', 'background-color'], golden: 'the panel hidden down from the bar, on its ground: apple.com\'s flyout 44px tall, the bar\'s ground (bag-flyout:nav\'s animations)' },
       { target: BCURTAIN, props: ['opacity'], golden: 'the curtain from transparent (bag-flyout:curtain\'s transition)' },
     ],
@@ -1433,7 +1450,7 @@ export const cases = [
     wait: 0,
     checks: [
       { target: BFLY, props: ['height', 'background-color'], golden: 'the sheet from the bar\'s height and ground (bag-flyout:nav.phone\'s animations on its content)' },
-      { target: BMESSAGE, props: ['opacity', 'transform'], golden: 'each row from transparent (globalheader.css\'s globalnav-flyout-item to 833px), ' + SLIDE },
+      { target: BMESSAGE, props: ['opacity', 'transform'], golden: WITH_PANEL },
     ],
   },
   {
@@ -1545,7 +1562,8 @@ export const cases = [
     reducedMotion: 'reduce',
     checks: [
       { target: BPANEL, props: ['background-color'], apple: ['bag-flyout-dark', 'flyout'] },
-      { target: BCURTAIN, props: ['background-color', 'backdrop-filter'], apple: ['bag-flyout-dark', 'curtain'] },
+      { target: BCURTAIN, props: ['background-color'], apple: ['bag-flyout-dark', 'curtain'] },
+      { target: BCURTAIN, props: ['backdrop-filter'], golden: DIM },
       { target: BBUTTON, props: ['color'], apple: ['bag-flyout-dark', 'link.bag'] },
       { target: `${BLINK} .cui-globalnav-image`, props: ['color'], apple: ['bag-flyout-dark', 'bag.nav-icon'] },
       { target: `${BLINK} .cui-globalnav-image`, state: 'hover', on: BLINK, props: ['color'], apple: ['bag-flyout-dark', 'bag.nav-icon', 'hover'] },

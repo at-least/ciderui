@@ -9,8 +9,7 @@ const html = `<p id="text">Text <strong id="strong">bold</strong></p><button id=
   <div id="light" class="cui-light"><p id="in-light" class="dark:underline">light inside dark</p></div><p id="secondary-dark" class="text-secondary">secondary</p></section>
 <p id="outside" class="dark:underline">outside</p><p id="moving" style="transition: color 1s 0.5s">moving</p><button id="plain" class="outline-none">Plain</button>
 <p id="md" class="md:underline">md</p><p id="lg" class="lg:underline">lg</p><p id="xl" class="xl:underline">xl</p><p id="secondary" class="text-secondary">secondary</p>
-<style>@keyframes cui-test { to { opacity: 0.5; } }</style><p id="animated" style="animation: cui-test 1s infinite">animated</p><div id="smooth" style="scroll-behavior: smooth">smooth</div>
-<style>#opening::details-content { transition: height 1s; }</style><details id="opening"><summary>a question</summary><p>its answer</p></details>`;
+<style>@keyframes cui-test { to { opacity: 0.5; } }</style><p id="animated" style="animation: cui-test 1s infinite">animated</p><div id="smooth" style="scroll-behavior: smooth">smooth</div>`;
 const LIGHT = { color: 'rgb(29, 29, 31)', 'background-color': 'rgb(255, 255, 255)' };
 const DARK = { color: 'rgb(245, 245, 247)', 'background-color': 'rgb(0, 0, 0)' };
 const W = 1200;
@@ -45,7 +44,6 @@ try {
   check('text-secondary follows a dark block', (await b.read('#secondary-dark', ['color'])).color, 'rgb(134, 134, 139)');
   check('text- and bg- names apart: of bg-alt, bg-secondary and text-alt, bg-alt alone a utility', ['bg-alt', 'bg-secondary', 'text-alt'].filter(u => css.includes(`.${u}{`)).join(' '), 'bg-alt');
   check('a transition moves without the preference', (await b.read('#moving', ['transition-duration']))['transition-duration'], '1s');
-  check('a <details>\' content moves without the preference', (await b.read('#opening', ['transition-duration'], { pseudo: '::details-content' }))['transition-duration'], '1s');
 
   await b.page.evaluate(() => document.documentElement.classList.add('cui-dark'));
   const dark = await b.read('body', ['color', 'background-color']);
@@ -74,7 +72,6 @@ try {
     check(`reduced motion ends an animation at once, once: ${prop}`, animated[prop], want);
   }
   check('reduced motion scrolls at once', (await b.read('#smooth', ['scroll-behavior']))['scroll-behavior'], 'auto');
-  check('reduced motion stills a <details>\' content', (await b.read('#opening', ['transition-duration'], { pseudo: '::details-content' }))['transition-duration'], '0s');
 } finally {
   await b.close();
 }

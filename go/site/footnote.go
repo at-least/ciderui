@@ -11,13 +11,18 @@ import (
 type Footnote struct {
 	Href string
 	// Mark: a number or a symbol (◊, ※).
-	Mark  string
-	Class string
+	Mark string
+	// AriaLabel: what it reads as ("Footnote 1"), in the page's language.
+	AriaLabel string
+	Class     string
 }
 
 func (f Footnote) Render(w io.Writer) error {
 	if f.Mark == "" {
 		panic("site.Footnote needs a Mark")
 	}
-	return h.Sup(class.Root("cui-footnote", f.Class), h.A(h.Href(f.Href), h.Aria("label", "Footnote "+f.Mark), g.Text(f.Mark))).Render(w)
+	if f.AriaLabel == "" {
+		panic("site.Footnote needs an AriaLabel")
+	}
+	return h.Sup(class.Root("cui-footnote", f.Class), h.A(h.Href(f.Href), h.Aria("label", f.AriaLabel), g.Text(f.Mark))).Render(w)
 }

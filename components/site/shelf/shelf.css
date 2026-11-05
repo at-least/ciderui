@@ -66,6 +66,18 @@
     }
   }
 
+  /* with no paddles a pointer has no other way along the row but a wheel it may
+     not have; touch swipes */
+  @media (hover: hover) {
+    .cui-shelf-row:not(:has(> .cui-shelf-paddle)) > .cui-shelf-scroller {
+      scrollbar-width: thin;
+
+      &::-webkit-scrollbar {
+        display: block;
+      }
+    }
+  }
+
   .cui-shelf-row {
     position: relative;
   }
@@ -74,9 +86,7 @@
   .cui-shelf-row > .cui-shelf-paddle {
     position: absolute;
     top: 49%;
-    margin-top: -28px;
-    /* written whole: opacity's alone would drop the colors' 0.1s fades */
-    transition: background 0.1s linear, color 0.1s linear, opacity 0.7s cubic-bezier(0.15, 0, 0.2, 1) 0.1s;
+    margin-top: -18px;
 
     &:first-of-type {
       inset-inline-start: 18px;
@@ -84,14 +94,6 @@
 
     &:last-of-type {
       inset-inline-end: 18px;
-    }
-
-    &:not(:disabled) {
-      transition-duration: 0.1s, 0.1s, 0.5s;
-    }
-
-    &:disabled {
-      opacity: 0;
     }
 
     @media (hover: none) {

@@ -21,6 +21,8 @@ export const cases = [
       { target: `${REST} .cui-swatch-ring`, props: ['width'], golden: 'apple.com\'s 36px ring (buy:swatch.link), a width no text sets' },
       { target: '.cui-swatch:nth-child(3) .cui-swatch-color', props: ['width'], golden: 'apple.com\'s 28px circle (buy:swatch)' },
       { target: REST, props: ['box-height'], golden: 'the ring a block, so an item is 36px (apple.com\'s inline ring leaves its item 39px)' },
+      { target: `${REST} .cui-swatch-color`, props: ['outline-width', 'outline-style', 'outline-color', 'outline-offset'], golden: 'a 1px hairline just inside the circle, --cui-c-separator: a white swatch reads on a white page, where apple.com\'s draws its edge into its picture (buy:swatch)' },
+      { target: `${REST} .cui-swatch-input`, props: ['hit'], golden: 'the input lies over the ring: the pointer rests on it, so the color\'s name, its title, shows' },
     ],
   },
   {
@@ -42,6 +44,14 @@ export const cases = [
     checks: [
       { target: `${CHECKED} .cui-swatch-input`, props: ['focused'], golden: 'the group\'s checked radio takes the keyboard\'s focus' },
       { target: `${CHECKED} .cui-swatch-ring`, props: ['outline-style', 'outline-width', 'outline-color', 'outline-offset'], golden: 'the focus ring around the ring, as on an option (apple.com\'s swatches take no keyboard focus until a model is chosen: not measured)' },
+    ],
+  },
+  {
+    name: 'disabled',
+    html: ex('swatches').replace('value="silver" title="Silver"', 'value="silver" title="Silver" disabled'),
+    checks: [
+      { target: `${REST} .cui-swatch-ring`, props: ['opacity'], golden: 'disabled, dimmed to 0.42 as a disabled option tile (apple.com\'s swatches of a model not chosen: not measured)' },
+      { target: `${REST} .cui-swatch-input`, props: ['cursor'], golden: 'disabled, the arrow, as an option tile' },
     ],
   },
   {

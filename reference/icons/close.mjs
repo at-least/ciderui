@@ -70,10 +70,10 @@ const example = readFileSync(new URL('../../components/site/modal/examples/modal
 const inner = OURS.replace(/^<svg[^>]*>|<\/svg>$/g, '').replaceAll('stroke="#000"', 'stroke="currentColor"');
 const shipped = example.includes(inner);
 console.log(`${shipped ? 'ok  ' : 'FAIL'} the X is the modal example's`);
-// and the marketing X, the marketing modal's example's
+// and the marketing modal draws the same X (DESIGN.md decision 25)
 const page2 = readFileSync(new URL('../../components/site/modal/examples/page.html', import.meta.url), 'utf8');
-const shipped2 = page2.includes(SMALL.replace(/^<svg[^>]*>|<\/svg>$/g, '').replaceAll('stroke="#000"', 'stroke="currentColor"'));
-console.log(`${shipped2 ? 'ok  ' : 'FAIL'} the marketing X is the marketing modal example's`);
+const shipped2 = page2.includes(inner);
+console.log(`${shipped2 ? 'ok  ' : 'FAIL'} the marketing modal's X is the modal example's`);
 const pass = result.iou >= 0.85 && result.marketing.iou >= 0.85 && shipped && shipped2;
 console.log(pass ? 'PASS: it shares at least 0.85 of its ink with apple.com\'s' : 'FAIL');
 process.exit(pass ? 0 : 1);

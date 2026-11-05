@@ -7,9 +7,9 @@ import { check, done } from './check.mjs';
 
 const names = [...readFileSync(join(ROOT, 'type.css'), 'utf8').matchAll(/@utility cui-([a-z-]+)/g)].map(m => m[1]);
 const tracking = JSON.parse(readFileSync(join(ROOT, 'reference/tracking/cui-tracking.json'), 'utf8'));
-const css = compile({ classes: [...names.map(n => `cui-${n}`), 'lg:cui-headline-super', 'text-[20px]'].join(' ') });
+const css = compile({ classes: [...names.map(n => `cui-${n}`), 'lg:cui-headline-elevated', 'text-[20px]'].join(' ') });
 const html = names.map(n => `<p id="${n}" class="cui-${n}">Sample text</p>`).join('')
-  + '<p id="variant" class="cui-headline lg:cui-headline-super">v</p><p id="plain" class="cui-headline text-[20px]">p</p>';
+  + '<p id="variant" class="cui-headline lg:cui-headline-elevated">v</p><p id="plain" class="cui-headline text-[20px]">p</p>';
 const b = await open(css, html);
 
 // the store defines no t-body: cui-body is the page's body text
@@ -34,9 +34,9 @@ try {
     await b.resize(width);
     for (const name of names) check(`cui-${name} font-size at ${width}px is its ${at}px size`, (await b.read(`#${name}`, ['font-size']))['font-size'], apple(name, at, 'font-size'));
   }
-  for (const [width, variant] of [[390, '32px'], [900, '48px'], [1068, '48px'], [1069, '80px'], [1600, '80px']]) {
+  for (const [width, variant] of [[390, '32px'], [900, '48px'], [1068, '48px'], [1069, '64px'], [1600, '64px']]) {
     await b.resize(width);
-    check(`lg:cui-headline-super over cui-headline at ${width}px`, (await b.read('#variant', ['font-size']))['font-size'], variant);
+    check(`lg:cui-headline-elevated over cui-headline at ${width}px`, (await b.read('#variant', ['font-size']))['font-size'], variant);
     check(`text-[20px] over cui-headline at ${width}px`, (await b.read('#plain', ['font-size']))['font-size'], '20px');
   }
 } finally {

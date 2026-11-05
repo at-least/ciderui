@@ -71,6 +71,7 @@ export const cases = [
       { target: SECTION, pseudo: '::after', props: ['content', 'position', 'bottom', 'left', 'right', 'height', 'background-color'], apple: ['home', 'footer.section-rule'] },
       { target: `${SECTION} .cui-footer-title label`, props: [...SIZE, 'color', 'padding-top', 'padding-bottom', 'cursor', 'box-height'], apple: ['home', 'footer.title-button'] },
       { target: `${SECTION} .cui-footer-title svg`, props: ['color', 'margin-top', 'box-height'], apple: ['home', 'footer.title-icon'] },
+      { target: `${SECTION} .cui-footer-title svg`, props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: 'its turn the kit\'s one chevron turn, 0.32s cubic-bezier(.4,0,.6,1), the accordion\'s and the local nav\'s, where apple.com\'s reads 0.3s ease here' },
       { target: '.cui-footer-shop', props: ['padding-bottom', 'margin-bottom', 'border-bottom-width'], apple: ['home', 'footer.shop'] },
       { target: '.cui-footer-locale', props: ['margin-top', 'display'], apple: ['home', 'footer.locale'] },
       { target: `${SECTION} .cui-footer-list`, props: ['display'], golden: 'closed, its links out of sight and out of the focus order (apple.com\'s hidden: home:footer.list-closed)' },

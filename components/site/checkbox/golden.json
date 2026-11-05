@@ -1,4 +1,8 @@
 {
+ "disabled | .cui-checkbox-label | 1600 | opacity": "0.42",
+ "disabled | .cui-checkbox-label | 1200 | opacity": "0.42",
+ "disabled | .cui-checkbox-label | 900 | opacity": "0.42",
+ "disabled | .cui-checkbox-label | 390 | opacity": "0.42",
  "checkbox | .cui-checkbox-indicator | 1600 | box-width": "16px",
  "checkbox | .cui-checkbox-indicator svg | 1600 | visibility": "hidden",
  "checkbox | .cui-checkbox-label | 1600 | letter-spacing": "0.0493px",

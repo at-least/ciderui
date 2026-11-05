@@ -22,8 +22,7 @@ var (
 type Stories struct {
 	Heading string
 	Class   string
-	// Children: <li>s, each holding a [Story].
-	Children g.Node
+	Items   []Story
 }
 
 func (s Stories) Render(w io.Writer) error {
@@ -33,7 +32,7 @@ func (s Stories) Render(w io.Writer) error {
 	return h.Section(class.Root("cui-stories", s.Class),
 		h.Div(h.Class("cui-stories-content"),
 			h.H2(h.Class("cui-stories-heading"), g.Text(s.Heading)),
-			h.Ul(h.Class("cui-stories-list"), s.Children),
+			h.Ul(h.Class("cui-stories-list"), g.Map(s.Items, func(story Story) g.Node { return h.Li(story.node()) })),
 		),
 	).Render(w)
 }
@@ -44,22 +43,17 @@ type Story struct {
 	// Media: an <img> carrying cui-story-media.
 	Media    g.Node
 	Category string
-	// Datetime: machine-readable (2026-10-19).
-	Datetime string
-	Date     string
+	Date     *Date
 	Headline string
 	Class    string
 }
 
-func (s Story) Render(w io.Writer) error {
+func (s Story) node() g.Node {
 	if s.Href == "" {
 		panic("site.Story needs an Href")
 	}
 	if s.Headline == "" {
 		panic("site.Story needs a Headline")
-	}
-	if s.Date != "" && s.Datetime == "" {
-		panic("site.Story's Date needs its Datetime")
 	}
 	return h.A(class.Root("cui-story", s.Class), g.If(s.Size.value != "", h.Data("size", s.Size.value)), h.Href(s.Href),
 		s.Media,
@@ -68,7 +62,7 @@ func (s Story) Render(w io.Writer) error {
 				g.If(s.Category != "", h.P(h.Class("cui-story-category"), g.Text(s.Category))),
 				h.H3(h.Class("cui-story-headline"), g.Text(s.Headline)),
 			),
-			g.If(s.Date != "", h.Time(h.Class("cui-story-date"), h.DateTime(s.Datetime), g.Text(s.Date))),
+			s.Date.node("cui-story-date"),
 		),
-	).Render(w)
+	)
 }

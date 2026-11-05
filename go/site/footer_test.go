@@ -2,6 +2,7 @@ package site_test
 
 import (
 	"io"
+	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/internal/example"
@@ -16,32 +17,32 @@ func TestFooterRendersTheExample(t *testing.T) {
 	directory := [][]site.FooterSection{
 		{
 			{ID: "footer-shop", Title: "Products", Links: []site.Link{
-				{Text: "Store", Href: "/store/"},
-				{Text: "Laptops", Href: "/laptops/"},
-				{Text: "Phones", Href: "/phones/"},
+				{Label: "Store", Href: "/store/"},
+				{Label: "Laptops", Href: "/laptops/"},
+				{Label: "Phones", Href: "/phones/"},
 			}},
 			{ID: "footer-wallet", Title: "Payments", Links: []site.Link{
-				{Text: "Wallet", Href: "/wallet/"},
-				{Text: "Cider Card", Href: "/cider-card/"},
+				{Label: "Wallet", Href: "/wallet/"},
+				{Label: "Cider Card", Href: "/cider-card/"},
 			}},
 		},
 		{
 			{ID: "footer-account", Title: "Account", Links: []site.Link{
-				{Text: "Your Account", Href: "/account/"},
-				{Text: "Order History", Href: "/shop/account/"},
+				{Label: "Your Account", Href: "/account/"},
+				{Label: "Order History", Href: "/shop/account/"},
 			}},
 		},
 	}
 	links := []site.Link{
-		{Text: "Privacy Policy", Href: "/privacy/"},
-		{Text: "Terms of Use", Href: "/terms/"},
-		{Text: "Site Map", Href: "/sitemap/"},
+		{Label: "Privacy Policy", Href: "/privacy/"},
+		{Label: "Terms of Use", Href: "/terms/"},
+		{Label: "Site Map", Href: "/sitemap/"},
 	}
-	example.Check(t, site.Footer{Notes: notes, Directory: directory, Shop: shop, Copyright: g.Text("Copyright © 2026 Example Inc. All rights reserved."), Links: links, Locale: &site.Link{Text: "United States", Href: "/choose-country/"}, Class: ""}, "site/footer/examples/footer.html")
+	example.Check(t, site.Footer{Notes: notes, NotesAriaLabel: "Footnotes", Directory: directory, DirectoryAriaLabel: "Directory", Shop: shop, Copyright: g.Text("Copyright © 2026 Example Inc. All rights reserved."), Links: links, Locale: &site.Link{Label: "United States", Href: "/choose-country/"}, Class: ""}, "site/footer/examples/footer.html")
 }
 
 func TestFooterNoNotesNoDirectoryNoShop(t *testing.T) {
-	got := example.Render(site.Footer{Notes: nil, Directory: nil, Shop: nil, Copyright: g.Text("© 2026"), Links: nil, Locale: nil, Class: ""})
+	got := example.Render(site.Footer{Notes: nil, NotesAriaLabel: "", Directory: nil, DirectoryAriaLabel: "", Shop: nil, Copyright: g.Text("© 2026"), Links: nil, Locale: nil, Class: ""})
 	want := `<footer class="cui-footer"><div class="cui-footer-content"><div class="cui-footer-legal"><div class="cui-footer-row"><p class="cui-footer-copyright">© 2026</p></div></div></div></footer>`
 	if got != want {
 		t.Errorf("got %s", got)
@@ -60,14 +61,14 @@ func (c counted) Render(w io.Writer) error {
 // cost, or render differently the second time
 func TestFooterItsNotesAndShopRenderedOnce(t *testing.T) {
 	var notes, shop, copyright int
-	example.Render(site.Footer{Notes: counted{&notes}, Directory: nil, Shop: counted{&shop}, Copyright: counted{&copyright}, Links: nil, Locale: nil, Class: ""})
+	example.Render(site.Footer{Notes: counted{&notes}, NotesAriaLabel: "Footnotes", Directory: nil, DirectoryAriaLabel: "", Shop: counted{&shop}, Copyright: counted{&copyright}, Links: nil, Locale: nil, Class: ""})
 	if notes != 1 || shop != 1 || copyright != 1 {
 		t.Errorf("notes rendered %d times, shop %d, copyright %d (want 1, 1, 1)", notes, shop, copyright)
 	}
 }
 
 func TestFooterCopyrightCanBeALink(t *testing.T) {
-	got := example.Render(site.Footer{Notes: nil, Directory: nil, Shop: nil, Copyright: h.A(h.Href("https://example.com/"), g.Text("Example Inc.")), Links: nil, Locale: nil, Class: ""})
+	got := example.Render(site.Footer{Notes: nil, NotesAriaLabel: "", Directory: nil, DirectoryAriaLabel: "", Shop: nil, Copyright: h.A(h.Href("https://example.com/"), g.Text("Example Inc.")), Links: nil, Locale: nil, Class: ""})
 	want := `<footer class="cui-footer"><div class="cui-footer-content"><div class="cui-footer-legal"><div class="cui-footer-row"><p class="cui-footer-copyright"><a href="https://example.com/">Example Inc.</a></p></div></div></div></footer>`
 	if got != want {
 		t.Errorf("got %s", got)
@@ -76,18 +77,39 @@ func TestFooterCopyrightCanBeALink(t *testing.T) {
 
 func TestFooterASectionWithNoIDPanics(t *testing.T) {
 	mustPanic(t, "FooterSection needs an ID", func() {
-		example.Render(site.Footer{Notes: nil, Directory: [][]site.FooterSection{{{ID: "", Title: "x", Links: nil}}}, Shop: nil, Copyright: g.Text("©"), Links: nil, Locale: nil, Class: ""})
+		example.Render(site.Footer{Notes: nil, NotesAriaLabel: "", Directory: [][]site.FooterSection{{{ID: "", Title: "x", Links: nil}}}, DirectoryAriaLabel: "Directory", Shop: nil, Copyright: g.Text("©"), Links: nil, Locale: nil, Class: ""})
 	})
 }
 
 func TestFooterAnEmptyCopyrightPanics(t *testing.T) {
 	mustPanic(t, "Footer needs a Copyright", func() {
-		example.Render(site.Footer{Notes: nil, Directory: nil, Shop: nil, Copyright: nil, Links: nil, Locale: nil, Class: ""})
+		example.Render(site.Footer{Notes: nil, NotesAriaLabel: "", Directory: nil, DirectoryAriaLabel: "", Shop: nil, Copyright: nil, Links: nil, Locale: nil, Class: ""})
 	})
 }
 
 func TestFooterASectionWithNoTitlePanics(t *testing.T) {
 	mustPanic(t, "FooterSection needs a Title", func() {
-		example.Render(site.Footer{Notes: nil, Directory: [][]site.FooterSection{{{ID: "x", Title: "", Links: nil}}}, Shop: nil, Copyright: g.Text("©"), Links: nil, Locale: nil, Class: ""})
+		example.Render(site.Footer{Notes: nil, NotesAriaLabel: "", Directory: [][]site.FooterSection{{{ID: "x", Title: "", Links: nil}}}, DirectoryAriaLabel: "Directory", Shop: nil, Copyright: g.Text("©"), Links: nil, Locale: nil, Class: ""})
 	})
+}
+
+func TestFooterNotesWithNoAriaLabelPanics(t *testing.T) {
+	mustPanic(t, "site.Footer's Notes need a NotesAriaLabel", func() {
+		example.Render(site.Footer{Notes: g.Text("x"), NotesAriaLabel: "", Directory: nil, DirectoryAriaLabel: "", Shop: nil, Copyright: g.Text("©"), Links: nil, Locale: nil, Class: ""})
+	})
+}
+
+func TestFooterADirectoryWithNoAriaLabelPanics(t *testing.T) {
+	mustPanic(t, "site.Footer's Directory needs a DirectoryAriaLabel", func() {
+		example.Render(site.Footer{Notes: nil, NotesAriaLabel: "", Directory: [][]site.FooterSection{{{ID: "x", Title: "x", Links: nil}}}, DirectoryAriaLabel: "", Shop: nil, Copyright: g.Text("©"), Links: nil, Locale: nil, Class: ""})
+	})
+}
+
+func TestFooterWritesItsWordsInThePagesLanguage(t *testing.T) {
+	got := example.Render(site.Footer{Notes: g.Text("x"), NotesAriaLabel: "附註", Directory: [][]site.FooterSection{{{ID: "x", Title: "x", Links: nil}}}, DirectoryAriaLabel: "網站導覽", Shop: nil, Copyright: g.Text("©"), Links: nil, Locale: nil, Class: ""})
+	for _, want := range []string{`<section class="cui-footer-notes" aria-label="附註">`, `<nav class="cui-footer-directory" aria-label="網站導覽">`} {
+		if !strings.Contains(got, want) {
+			t.Errorf("%s has no %s", got, want)
+		}
+	}
 }

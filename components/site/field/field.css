@@ -51,7 +51,10 @@
     line-height: 21px;
     font-weight: 400;
     letter-spacing: var(--cui-tracking-17);
+    max-width: calc(100% - 34px);
+    overflow: hidden;
     color: var(--cui-c-text-2);
+    text-overflow: ellipsis;
     white-space: nowrap;
     transition: all 0.125s ease-in;
   }
@@ -62,6 +65,21 @@
     font-size: 12px;
     line-height: 16px;
     letter-spacing: var(--cui-tracking-12);
+  }
+
+  /* rules of their own: a browser that does not know this pseudo-class would
+     drop a selector list naming it */
+  .cui-field-input:-webkit-autofill + .cui-field-label {
+    top: 10px;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: var(--cui-tracking-12);
+  }
+
+  /* an inset shadow: the browser's own autofill ground is !important */
+  .cui-field-input:-webkit-autofill {
+    box-shadow: inset 0 0 0 1000px var(--cui-c-bg);
+    -webkit-text-fill-color: var(--cui-c-text);
   }
 
   .cui-field-input[aria-invalid="true"] + .cui-field-label {
@@ -109,6 +127,7 @@
   /* a click through the label opens the list; the label's own click would
      only focus the select */
   select.cui-field-input + .cui-field-label {
+    max-width: calc(100% - 57px);
     pointer-events: none;
   }
 
@@ -213,6 +232,15 @@
     .cui-field-label {
       padding-left: 53px;
     }
+  }
+
+  .cui-field-help {
+    margin: 8px 0 0;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-12);
+    color: var(--cui-c-text-2);
   }
 
   .cui-field-message {

@@ -47,6 +47,9 @@
     height: 28px;
     border-radius: 50%;
     background-color: var(--cui-c-bg-alt);
+    /* an outline, not an inset shadow: an <img>'s picture covers a shadow */
+    outline: 1px solid var(--cui-c-separator);
+    outline-offset: -1px;
   }
 
   .cui-swatch-name {
@@ -61,6 +64,14 @@
 
   .cui-swatch-input:checked + .cui-swatch-ring {
     border-color: var(--cui-c-accent);
+  }
+
+  .cui-swatch-input:disabled {
+    cursor: default;
+  }
+
+  .cui-swatch-input:disabled + .cui-swatch-ring {
+    opacity: 0.42;
   }
 
   .cui-swatch-input:focus-visible + .cui-swatch-ring {

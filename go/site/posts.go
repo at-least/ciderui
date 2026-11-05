@@ -8,30 +8,21 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-type PostSize struct{ value string }
-
-var (
-	// PostSizeRegular: the Newsroom archive.
-	PostSizeRegular = PostSize{value: ""}
-	// PostSizeSmall: the related stories under an article.
-	PostSizeSmall = PostSize{"sm"}
-)
-
 type Posts struct {
-	Size    PostSize
+	// Small: the related stories under an article; else the Newsroom archive.
+	Small   bool
 	Heading string
 	Class   string
-	// Children: <li>s, each holding a [Post].
-	Children g.Node
+	Items   []Post
 }
 
 func (p Posts) Render(w io.Writer) error {
 	if p.Heading == "" {
 		panic("site.Posts needs a Heading")
 	}
-	return h.Section(class.Root("cui-posts", p.Class), g.If(p.Size.value != "", h.Data("size", p.Size.value)),
+	return h.Section(class.Root("cui-posts", p.Class), g.If(p.Small, h.Data("size", "sm")),
 		h.H2(h.Class("cui-posts-heading"), g.Text(p.Heading)),
-		h.Ul(h.Class("cui-posts-list"), p.Children),
+		h.Ul(h.Class("cui-posts-list"), g.Map(p.Items, func(post Post) g.Node { return h.Li(post.node()) })),
 	).Render(w)
 }
 
@@ -40,29 +31,24 @@ type Post struct {
 	// Media: an <img> carrying cui-post-media.
 	Media    g.Node
 	Category string
-	// Datetime: machine-readable (2026-10-19).
-	Datetime string
-	Date     string
+	Date     *Date
 	Headline string
 	Class    string
 }
 
-func (p Post) Render(w io.Writer) error {
+func (p Post) node() g.Node {
 	if p.Href == "" {
 		panic("site.Post needs an Href")
 	}
 	if p.Headline == "" {
 		panic("site.Post needs a Headline")
 	}
-	if p.Date != "" && p.Datetime == "" {
-		panic("site.Post's Date needs its Datetime")
-	}
 	return h.A(class.Root("cui-post", p.Class), h.Href(p.Href),
 		p.Media,
 		h.Div(h.Class("cui-post-content"),
 			g.If(p.Category != "", h.P(h.Class("cui-post-category"), g.Text(p.Category))),
 			h.H3(h.Class("cui-post-headline"), g.Text(p.Headline)),
-			g.If(p.Date != "", h.Time(h.Class("cui-post-date"), h.DateTime(p.Datetime), g.Text(p.Date))),
+			p.Date.node("cui-post-date"),
 		),
-	).Render(w)
+	)
 }

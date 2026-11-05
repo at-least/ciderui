@@ -1,30 +1,24 @@
 // BROWSER=safari|ios|chrome|chromium|firefox node run.mjs: does cui-accordion's
-// <details> open with no script, its answer shown and its chevron turned, and
-// does its height move as it opens? Serves page.html (the accordion's
-// example on the kit's compiled CSS, `node page.mjs` writes it) on
-// 127.0.0.1 (the browsers: ../browsers.mjs); clicks the second question (by
-// the page's script on the iOS simulator, as ../popover/ does) and reads the
-// item's height 120ms on and 700ms on. Then, where there is a keyboard (not
-// the simulator), is the focus ring of what is in an open answer shown
-// whole, the answer clipping its height as it moves? ring.html, at 1200 and
-// 390px: a compact question in the large one's answer and a link beginning
-// an answer, each focused by Tab (Option-Tab in Safari, whose Tab skips
-// links), the window's picture (../browsers.mjs's shot) read in the page
-// (ring.js): the accent's pixels in the 8px beside it, left and right, where
-// its ring's sides are drawn 3 to 5px out. And is its height clipped still?
-// held.html's answer held 10px tall: none of its text drawn, where
-// held-visible.html, clipping nothing, draws it, and held-clip.html, clipping
-// both axes, the kit's old rule, draws none (a browser that clips no
-// ::details-content draws it in all three). The click and each ring's
-// read wait for the window in front (front()). The result is
-// results/<browser>.json.
+// <details> open with no script and at once, its answer shown and its chevron
+// turned? Serves page.html (the accordion's example on the kit's compiled CSS,
+// `node page.mjs` writes it) on 127.0.0.1 (the browsers: ../browsers.mjs);
+// clicks the second question (by the page's script on the iOS simulator, as
+// ../popover/ does) and reads the item's height 120ms on and 700ms on. Then,
+// where there is a keyboard (not the simulator), is the focus ring of what is
+// in an open answer shown whole? ring.html, at 1200 and 390px: a compact
+// question in the large one's answer and a link beginning an answer, each
+// focused by Tab (Option-Tab in Safari, whose Tab skips links), the window's
+// picture (../browsers.mjs's shot) read in the page (ring.js): the accent's
+// pixels in the 8px beside it, left and right, where its ring's sides are drawn
+// 3 to 5px out. The click and each ring's read wait for the window in front
+// (front()). The result is results/<browser>.json.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open, wait } from '../browsers.mjs';
 
 const BROWSER = process.env.BROWSER;
 const html = readFileSync(new URL('./page.html', import.meta.url));
-const PAGES = Object.fromEntries(['ring', 'held', 'held-visible', 'held-clip'].map((name) => [`/${name}.html`, readFileSync(new URL(`./${name}.html`, import.meta.url))]));
+const PAGES = Object.fromEntries(['ring'].map((name) => [`/${name}.html`, readFileSync(new URL(`./${name}.html`, import.meta.url))]));
 const server = createServer((req, res) => { res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' }); res.end(PAGES[req.url] ?? html); });
 await new Promise(r => server.listen(0, '127.0.0.1', r));
 const ITEM = '.cui-accordion-item:nth-child(2)';
@@ -58,14 +52,7 @@ try {
   got.opening = await page.run(read);
   await page.run(wait(580));
   got.opened = await page.run(read);
-  got.interpolateSize = await page.run(`Promise.resolve(CSS.supports('interpolate-size: allow-keywords'))`);
-  got.detailsContent = await page.run(`Promise.resolve(CSS.supports('selector(::details-content)'))`);
   const src = readFileSync(new URL('./ring.js', import.meta.url), 'utf8');
-  for (const name of ['held', 'held-visible', 'held-clip']) {
-    await page.go(`http://127.0.0.1:${server.address().port}/${name}.html`);
-    await page.run(wait(300));
-    got[name] = await page.run(`(async () => {\n${src}\nreturn held(${JSON.stringify(await page.shot())});\n})()`);
-  }
   if (BROWSER !== 'ios') {
     const TAB = BROWSER === 'safari' ? 'Alt+Tab' : 'Tab';
     got.rings = {};
@@ -100,17 +87,8 @@ const { closed, opening, opened } = got;
 const claims = [
   ['it opens with no script, its answer shown', !closed.open && opened.open && opened.item > closed.item + 30 && opened.answer > 30],
   ['its chevron turned up', opened.chevron === 'matrix(1, 0, 0, -1, 0, 0)'],
-  [got.interpolateSize ? 'its height moves as it opens (a height between, 120ms on)' : 'it opens at once (no interpolate-size: its full height 120ms on)',
-    got.interpolateSize ? opening.item > closed.item + 1 && opening.item < opened.item - 1 : opening.item === opened.item],
+  ['it opens at once (its full height 120ms on)', opening.item === opened.item],
 ];
-// a browser that clips no ::details-content (held-clip, the kit's old rule,
-// draws its text too) moves no height either: nothing drawn outside the
-// answer as it opens
-claims.push(got['held-clip'].ink === 0
-  ? ['its height clipped as it moves: an answer held 10px tall draws none of its text, which one clipping nothing draws',
-    got.held.laid === 10 && got.held.ink === 0 && got['held-visible'].laid === 10 && got['held-visible'].ink > 0]
-  : ['it clips no ::details-content, overflow: clip neither (its text drawn held 10px tall, as with nothing clipped), and moves no height (no interpolate-size): nothing drawn outside the answer as it opens',
-    got.held.laid === 10 && got.held.ink > 0 && got['held-clip'].ink === got.held.ink && got['held-visible'].ink === got.held.ink && !got.interpolateSize]);
 // a side shown: at least a column of the screen's pixels the element's
 // height in the accent, beside it
 const shown = (r, side) => r.focused && r.visible && r[side] >= r.height * r.scale;
