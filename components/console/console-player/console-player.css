@@ -459,6 +459,104 @@
     translate: none;
   }
 
+  /* before it first plays (data-intro, the page's script's to drop): its
+     title, length and summary over the picture's foot at the overlay's
+     room, one Play, its controls hidden; it fades out as the film plays */
+  .cui-console-player-intro {
+    grid-area: 1 / 1;
+    position: relative;
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    gap: 6px;
+    padding: 20px 30px 30px;
+    background-image: var(--cui-video-scrim);
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.6, 1), visibility 0.4s;
+
+    & > p {
+      max-width: 36em;
+      margin: 0;
+      text-shadow: var(--cui-video-cue-shadow);
+    }
+
+    :where(.cui-console-player:not([data-intro])) > & {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  :where(.cui-console-player[data-intro]) > .cui-console-player-overlay {
+    visibility: hidden;
+  }
+
+  .cui-console-player-intro-title {
+    font-size: max(26px, 4cqw);
+    line-height: 1.15;
+    font-weight: 700;
+  }
+
+  .cui-console-player-intro-detail {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    color: var(--cui-c-on-video-control);
+  }
+
+  .cui-console-player-intro-summary {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--cui-c-on-video-control);
+  }
+
+  .cui-console-player-intro-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  /* the one Play: a white capsule, the picture's own color on it */
+  .cui-console-player-intro-play {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 44px;
+    padding: 0 24px;
+    border: 0;
+    border-radius: 22px;
+    background-color: var(--cui-c-on-video);
+    color: var(--cui-c-video);
+    font-family: inherit;
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: 600;
+    cursor: pointer;
+
+    & > svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      stroke: none;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--cui-c-on-video-control);
+      }
+    }
+
+    &:active {
+      transform: scale(0.97);
+    }
+  }
+
   /* its menus, popovers written inside it: open in the top layer, so placed
      by the player's box and their button's. Not position-area with a
      fallback: a top-layer box tries its fallbacks against the window, never

@@ -31,6 +31,10 @@ Filling the screen (`data-fullscreen`), its bar adds the page’s own controls b
 
 {{ <cui_example file="console-player/full-screen" title="Console player, full screen" /> }}
 
+Before it first plays, its intro over the picture, one Play:
+
+{{ <cui_example file="console-player/intro" title="Console player, before it plays" /> }}
+
 | class | what |
 | --- | --- |
 | `cui-console-player` | the player: black, its picture and overlay in one place; its size is the page’s (`aspect-video` here) |
@@ -44,6 +48,7 @@ Filling the screen (`data-fullscreen`), its bar adds the page’s own controls b
 | `cui-console-player-subtitles` | the subtitles over the picture: above the footer while the controls show, 20px from the foot while they hide, moving in the footer’s 0.4s; it takes no click |
 | `cui-console-player-cue` | the cue in it, a `<span>` in its `<p>`: 2.4% of the width (15px at least), so it grows with the player and in full screen, 1.6 lines, white under a soft shadow (`--cui-video-cue-shadow`), no box; empty, none |
 | `cui-console-player-caption` | a `<p>` at the header’s start: what is on screen, shown while paused and gone while playing (empty, nothing) |
+| `cui-console-player-intro` | before it first plays (`data-intro`): the title (`-intro-title`), its length (`-intro-detail`), a sentence (`-intro-summary`, two lines at most) and its buttons (`-intro-actions`: `-intro-play`, a white capsule, and a start-over capsule of words, hidden until the script shows it), over the picture’s foot; its controls hidden under it |
 | `cui-console-player-footer` | the title, the buttons and the scrubber |
 | `cui-console-player-title` | the title, 26px bold |
 | `cui-console-player-buttons` | the buttons’ row, 14px apart |
@@ -63,6 +68,7 @@ ciderui has no script: the page’s plays the video and keeps the markup in step
 | --- | --- | --- |
 | `data-state="playing"` | `cui-console-player` | playing: the centre button shows pause. None, paused |
 | `data-fullscreen` | `cui-console-player` | it fills the screen: the bar shows the page’s full-screen controls, and the full-screen button its way out |
+| `data-intro` | `cui-console-player` | before it first plays: the intro shows and the controls hide; the script drops it as it plays, the intro fading out |
 | `data-muted` | `cui-console-player` | muted: the mute button shows the struck speaker |
 | `data-controls="hidden"` | `cui-console-player` | the controls faded out: tv.apple.com hides them while the video plays and the pointer is still, and keeps them while it is paused. They show again while the focus is inside the player |
 | `--cui-console-player-value` | `cui-console-player-range` | the part played, or the volume, as a percentage (`style="--cui-console-player-value: 8%"`) |
@@ -84,6 +90,7 @@ The script finds each control by its `data-control`, the same on every player:
 | `scrubber` | the scrubber’s range |
 | `elapsed`, `remaining` | the time played, and the time left |
 | `caption` | the paused caption: the script writes its text |
+| `start`, `restart` | the intro’s Play and start-over: the script labels them (a saved place: “Resume from 3:12”, start-over shown) |
 | `preview` | the scrubber’s preview: the script sets its `<img>`’s `src` and its `<p>`’s text |
 
 The cue is `cui-console-player-cue`.
@@ -94,4 +101,4 @@ The subtitles button opens a popover by `popovertarget`: a menu of choices, a [C
 
 ## Go
 
-The Go module writes it with `console.ConsolePlayer`: the picture (`Video`), the state, the labels, the volume, whether it is muted or fills the screen, the position and duration in seconds (it writes the times), the cue and its language, the paused caption (`Caption`), the menu, a `console.ConsoleChoiceMenu` (none, no button), the page’s full-screen controls (`FullScreenControls`) and its own popovers (`Popovers`, written inside the player after its menus and placed as they are).
+The Go module writes it with `console.ConsolePlayer`: the picture (`Video`), the state, the labels, the volume, whether it is muted or fills the screen, the position and duration in seconds (it writes the times), the cue and its language, the paused caption (`Caption`), the menu, a `console.ConsoleChoiceMenu` (none, no button), the intro (`Intro`, a `console.ConsolePlayerIntro`), the page’s full-screen controls (`FullScreenControls`) and its own popovers (`Popovers`, written inside the player after its menus and placed as they are).

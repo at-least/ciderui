@@ -20,6 +20,24 @@ var (
 	ConsolePlayerStatePlaying = ConsolePlayerState{"playing"}
 )
 
+// ConsolePlayerIntro is what the player shows over its picture before it
+// first plays, in place of its controls: the title, a line of detail and a
+// summary, a button that plays and a smaller one that starts over. The page's
+// script labels the buttons (a saved position: "Resume from 3:12", and the
+// smaller one shown) and drops the player's data-intro as it plays, the
+// layer fading out.
+type ConsolePlayerIntro struct {
+	Title string
+	// Detail: the length ("8 min 33 s"); "" none.
+	Detail string
+	// Summary: a sentence of what it is about; "" none.
+	Summary   string
+	PlayLabel string
+	// RestartLabel is the smaller button's words, hidden until the page's
+	// script shows it.
+	RestartLabel string
+}
+
 // ConsolePlayer is a video's controls over it, tv.apple.com's player's. The
 // page's script plays the video and keeps the markup current: data-state,
 // data-controls="hidden" (while playing and the pointer is still),
@@ -28,7 +46,8 @@ var (
 // shows its exit glyph), each range's value and --cui-console-player-value,
 // the times, the cue, the caption. It finds each control by its
 // data-control: play, volume, mute, subtitles, full-screen, scrubber,
-// elapsed, remaining, caption, and the scrubber's preview
+// elapsed, remaining, caption, the intro's start and restart, and the
+// scrubber's preview
 // (preview), hidden until the page fills its picture and line and shows it
 // over the time under the pointer.
 type ConsolePlayer struct {
@@ -72,6 +91,8 @@ type ConsolePlayer struct {
 	// its buttons while the player fills the screen (data-fullscreen), and
 	// hides otherwise; nil for none.
 	FullScreenControls g.Node
+	// Intro: the layer before it first plays (data-intro); nil for none.
+	Intro *ConsolePlayerIntro
 	// Popovers are the page's own (cui-console-popover, a field its
 	// FullScreenControls open), written inside the player after its menus,
 	// so they open over it in full screen and are placed as its menus are;
@@ -91,6 +112,9 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 	}
 	if p.SubtitlesMenu.ID != "" && p.SubtitlesAriaLabel == "" {
 		panic("console.ConsolePlayer needs a SubtitlesAriaLabel with a SubtitlesMenu")
+	}
+	if p.Intro != nil && (p.Intro.Title == "" || p.Intro.PlayLabel == "" || p.Intro.RestartLabel == "") {
+		panic("console.ConsolePlayerIntro needs a Title, a PlayLabel and a RestartLabel")
 	}
 	if p.CueLang != "" && p.Cue == "" {
 		panic("console.ConsolePlayer needs a Cue with a CueLang")
@@ -112,7 +136,7 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 	button := func(control, label, menu string, glyph g.Node) g.Node {
 		return h.Button(h.Class("cui-console-player-btn"), h.Type("button"), h.Data("control", control), h.Aria("label", label), optionalAttr("popovertarget", menu), glyph)
 	}
-	return h.Div(class.Root("cui-console-player", p.Class), optionalAttr("data-state", p.State.value), g.If(p.ControlsHidden, g.Attr("data-controls", "hidden")), g.If(p.Muted, g.Attr("data-muted")), g.If(p.FullScreen, g.Attr("data-fullscreen")),
+	return h.Div(class.Root("cui-console-player", p.Class), optionalAttr("data-state", p.State.value), g.If(p.ControlsHidden, g.Attr("data-controls", "hidden")), g.If(p.Muted, g.Attr("data-muted")), g.If(p.FullScreen, g.Attr("data-fullscreen")), g.If(p.Intro != nil, g.Attr("data-intro")),
 		p.Video,
 		h.Div(h.Class("cui-console-player-overlay"),
 			h.Div(h.Class("cui-console-player-header"),
@@ -147,9 +171,22 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 				),
 			),
 		),
+		g.Iff(p.Intro != nil, func() g.Node { return intro(*p.Intro) }),
 		g.If(p.SubtitlesMenu.ID != "", p.SubtitlesMenu),
 		p.Popovers,
 	).Render(w)
+}
+
+func intro(i ConsolePlayerIntro) g.Node {
+	return h.Div(h.Class("cui-console-player-intro"),
+		h.P(h.Class("cui-console-player-intro-title"), g.Text(i.Title)),
+		g.If(i.Detail != "", h.P(h.Class("cui-console-player-intro-detail"), g.Text(i.Detail))),
+		g.If(i.Summary != "", h.P(h.Class("cui-console-player-intro-summary"), g.Text(i.Summary))),
+		h.Div(h.Class("cui-console-player-intro-actions"),
+			h.Button(h.Class("cui-console-player-intro-play"), h.Type("button"), h.Data("control", "start"), lucide.Play, h.Span(g.Text(i.PlayLabel))),
+			h.Button(h.Class("cui-console-player-text-btn"), h.Type("button"), h.Data("control", "restart"), g.Attr("hidden"), g.Text(i.RestartLabel)),
+		),
+	)
 }
 
 func rangeInput(control string, value, max int, label, valueText string, percent float64) g.Node {

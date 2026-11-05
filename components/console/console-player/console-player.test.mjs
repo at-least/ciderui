@@ -43,6 +43,7 @@ const TEXT_BTN = '.cui-console-player-text-btn';
 const FULL = 'muse\'s, for its 回報問題 and 下一個要看 while the player fills the screen (the owner, 2026-11-05); tv.apple.com\'s bar has no control of words: a 24px capsule, the bar\'s buttons\' height (tv-player:audio), white on a 16% white fill, 24% hovered or pressed, 13px medium, 8px apart; half opacity disabled';
 const CAPTION = '.cui-console-player-caption';
 const PAUSED = 'muse\'s (the owner, 2026-11-05: paused, a small line at the picture\'s top left saying the story, the scene and the shot; gone on play): in tv.apple.com\'s header\'s first column, 711px and empty on its trailers (tv-player:header, grid-template-columns 711px 829px), on the header\'s 26px row; 15px semibold white under the cue\'s shadow (--cui-video-cue-shadow) so it reads on a bright picture with no box, cut short with an ellipsis before the volume; tv.apple.com shows no such line';
+const INTRO = 'muse\'s pre-play layer (the owner, 2026-11-05: over the cover the title large, the demo\'s length, its description\'s first sentence, one clear Play; tv.apple.com\'s pre-play page was not measured, so golden): at the picture\'s foot in the overlay\'s room (30px at the sides, tv-player:scrim), on tv.apple.com\'s gradient (--cui-video-scrim), the lines white under the cue\'s shadow; the length 15px medium and the sentence 17px on 24px in the controls\' 90% white, two lines at most, 36em wide';
 const NO_SLIDE = 'faded where they are: tv.apple.com\'s header goes 20px up and its footer 20px down as they hide (tv-player-playing:hidden.*), a slide that only draws the eye (DESIGN.md decision 25); the fades\' durations and curves its own';
 
 export const cases = [
@@ -202,6 +203,42 @@ export const cases = [
     checks: [
       { target: '[data-control="full-screen"] .cui-console-player-glyph-full-screen', props: ['display', 'box-width'], golden: 'not full screen, the way in' },
       { target: '[data-control="full-screen"] .cui-console-player-glyph-exit-full-screen', props: ['display'], golden: 'and not the way out' },
+    ],
+  },
+  {
+    name: 'player intro',
+    html: ex('intro'),
+    widths: TV,
+    height: 900,
+    checks: [
+      { target: '.cui-console-player-intro', props: ['display', 'flex-direction', 'justify-content', 'align-items', 'padding-left', 'padding-bottom', 'background-image', 'opacity', 'visibility'], golden: INTRO },
+      { target: '.cui-console-player-overlay', props: ['visibility'], golden: 'its controls hidden under it: one Play, nothing else to press (the owner, 2026-11-05)' },
+      { target: '.cui-console-player-intro-title', props: ['font-size', 'line-height', 'font-weight', 'color', 'box-left'], golden: `${INTRO}; the title as large as 4% of the player, at the least tv.apple.com's 26px bold title (tv-player:title)` },
+      { target: '.cui-console-player-intro-detail', props: ['font-size', 'line-height', 'font-weight', 'color'], golden: INTRO },
+      { target: '.cui-console-player-intro-summary', props: ['font-size', 'line-height', 'color', 'max-width', '-webkit-line-clamp'], golden: INTRO },
+      { target: '.cui-console-player-intro-play', props: ['box-height', 'padding-left', 'border-top-left-radius', 'background-color', 'color', 'font-size', 'font-weight', 'column-gap'], golden: `${INTRO}; Play a white 44px capsule in the picture's black, the HIG's 44pt target` },
+      { target: '.cui-console-player-intro-play', props: ['background-color'], state: 'hover', golden: 'hovered, the controls\' 90% white (--cui-c-on-video-control)' },
+      { target: '.cui-console-player-intro [data-control="restart"]', props: ['display'], golden: 'the smaller start-over hidden until the page\'s script finds a saved place' },
+      { target: '.cui-console-player-intro', props: ['transition-property', 'transition-duration'], golden: 'it fades out in the subtitles\' 0.4s curve (tv-player-playing:hidden.footer)' },
+    ],
+  },
+  {
+    name: 'player intro resume',
+    html: ex('intro').replace('data-control="restart" hidden', 'data-control="restart"'),
+    widths: [1600],
+    height: 900,
+    checks: [
+      { target: '.cui-console-player-intro [data-control="restart"]', props: ['display', 'box-height', 'background-color'], golden: 'a saved place: start over beside Play, the bar\'s capsule of words, smaller' },
+    ],
+  },
+  {
+    name: 'player intro gone',
+    html: ex('intro').replace(' data-intro', ''),
+    widths: [1600],
+    height: 900,
+    checks: [
+      { target: '.cui-console-player-intro', props: ['opacity', 'visibility'], golden: 'playing (data-intro dropped by the page\'s script), the layer gone' },
+      { target: '.cui-console-player-overlay', props: ['visibility'], golden: 'and the controls back' },
     ],
   },
   {

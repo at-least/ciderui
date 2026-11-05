@@ -55,6 +55,7 @@ func player(state console.ConsolePlayerState, hidden bool, title string) console
 		SubtitlesAriaLabel:  "Subtitles",
 		FullScreenAriaLabel: "Full Screen",
 		FullScreenControls:  nil,
+		Intro:               nil,
 		Popovers:            nil,
 		Class:               "aspect-video",
 	}
@@ -79,7 +80,17 @@ func fullScreen() console.ConsolePlayer {
 	return p
 }
 
+// before it first plays: the title, its length, a sentence, Play, and Start Over hidden until the page's script shows it
+func intro() console.ConsolePlayer {
+	p := stills()
+	p.State = console.ConsolePlayerStatePaused
+	p.Cue, p.CueLang = "", ""
+	p.Intro = &console.ConsolePlayerIntro{Title: "The Wedding", Detail: "8 min 33 s", Summary: "The bride was late, and the old dog knew why.", PlayLabel: "Play", RestartLabel: "Start Over"}
+	return p
+}
+
 var playerExamples = map[string]console.ConsolePlayer{
+	"intro":       intro(),
 	"full-screen": fullScreen(),
 	"paused":      player(console.ConsolePlayerStatePaused, false, "The Wedding"),
 	"playing":     player(console.ConsolePlayerStatePlaying, false, "The Wedding"),
@@ -119,6 +130,9 @@ func TestPlayerPanics(t *testing.T) {
 		{"needs a Cue with a CueLang", func(p *console.ConsolePlayer) { p.CueLang = "en" }},
 		{"Volume is 0 to 100", func(p *console.ConsolePlayer) { p.Volume = 101 }},
 		{"Position is 0 to its Duration", func(p *console.ConsolePlayer) { p.Position = 63 }},
+		{"needs a Title, a PlayLabel and a RestartLabel", func(p *console.ConsolePlayer) {
+			p.Intro = &console.ConsolePlayerIntro{Title: "", Detail: "", Summary: "", PlayLabel: "Play", RestartLabel: "Start Over"}
+		}},
 	} {
 		p := player(console.ConsolePlayerStatePaused, false, "")
 		c.change(&p)
