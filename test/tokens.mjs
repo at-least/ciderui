@@ -446,6 +446,10 @@ check('--cui-video-cue-shadow is muse\'s golden', vars['--cui-video-cue-shadow']
 // golden: muse's scrubber preview (the owner, 2026-11-05: a thumbnail over the time under the pointer); tv.apple.com's
 // trailers scrub with no preview. A 1px hairline edges it over a dark picture, a soft drop lifts it off a bright one
 check('--cui-video-preview-shadow is muse\'s golden', vars['--cui-video-preview-shadow'], '0 0 0 1px rgb(255 255 255 / 0.15), 0 4px 12px rgb(0 0 0 / 0.4)');
+// golden: muse's full-screen controls (回報問題, 下一個要看), a capsule of words on the picture; tv.apple.com's bar has none.
+// A faint white fill that reads on a dark or a bright picture, a little more hovered or pressed
+check('--cui-video-control-fill is muse\'s golden', vars['--cui-video-control-fill'], 'rgb(255 255 255 / 0.16)');
+check('--cui-video-control-fill-hover is muse\'s golden', vars['--cui-video-control-fill-hover'], 'rgb(255 255 255 / 0.24)');
 check('--cui-video-thumb-shadow is tv.apple.com\'s tv-player:volume.range --volume-thumb-box-shadow', vars['--cui-video-thumb-shadow'], ref('tv-player', 'volume.range', W, '--volume-thumb-box-shadow'));
 for (const [name, state] of [['--cui-shadow-card'], ['--cui-shadow-card-hover', 'hover']]) {
   for (const probe of ['card', 'card.dark']) {

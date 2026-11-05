@@ -135,7 +135,9 @@
   .cui-console-player-footer {
     grid-row: 4;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    /* the buttons as wide as they ask while there is room, then no wider
+       than the player (the full-screen controls give way first) */
+    grid-template-columns: minmax(0, 1fr) minmax(0, auto);
     grid-template-areas: "title buttons" "progress progress";
     align-items: center;
     gap: 12px;
@@ -155,6 +157,7 @@
 
   .cui-console-player-buttons {
     grid-area: buttons;
+    min-width: 0;
     /* over the scrubber's hit area, which reaches up into this row */
     position: relative;
     z-index: 1;
@@ -163,7 +166,54 @@
     gap: 14px;
   }
 
+  /* the page's controls the bar shows only while the player fills the
+     screen (data-fullscreen, the page's script's to set) */
+  .cui-console-player-full-screen-controls {
+    display: none;
+    min-width: 0;
+    align-items: center;
+    gap: 8px;
+
+    :where(.cui-console-player[data-fullscreen]) & {
+      display: flex;
+    }
+  }
+
+  /* a control of words in the bar: a capsule on the picture */
+  .cui-console-player-text-btn {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 24px;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 12px;
+    background-color: var(--cui-video-control-fill);
+    color: var(--cui-c-on-video);
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover:not(:disabled) {
+        background-color: var(--cui-video-control-fill-hover);
+      }
+    }
+
+    &:active:not(:disabled) {
+      background-color: var(--cui-video-control-fill-hover);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+
   .cui-console-player-btn {
+    flex-shrink: 0;
     display: inline-grid;
     place-items: center;
     width: 24px;
@@ -401,6 +451,10 @@
   @media (pointer: coarse) {
     .cui-console-player-btn {
       min-width: 2.75rem;
+      min-height: 2.75rem;
+    }
+
+    .cui-console-player-text-btn {
       min-height: 2.75rem;
     }
 

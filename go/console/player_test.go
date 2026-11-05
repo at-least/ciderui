@@ -41,6 +41,7 @@ func player(state console.ConsolePlayerState, hidden bool, title string) console
 		PlayAriaLabel:       "Play",
 		PauseAriaLabel:      "Pause",
 		Volume:              50,
+		FullScreen:          false,
 		Muted:               false,
 		VolumeAriaLabel:     "Volume",
 		MuteAriaLabel:       "Mute",
@@ -54,6 +55,8 @@ func player(state console.ConsolePlayerState, hidden bool, title string) console
 		VoicesMenu:          voicesMenu(),
 		VoicesAriaLabel:     "Voices",
 		FullScreenAriaLabel: "Full Screen",
+		FullScreenControls:  nil,
+		Popovers:            nil,
 		Class:               "aspect-video",
 	}
 }
@@ -66,11 +69,23 @@ func stills() console.ConsolePlayer {
 	return p
 }
 
+// a page's own controls in the bar while full screen, as muse's: a report and the next item to look at
+func fullScreen() console.ConsolePlayer {
+	p := stills()
+	p.FullScreen = true
+	p.FullScreenControls = g.Group{
+		h.Button(h.Class("cui-console-player-text-btn"), h.Type("button"), g.Text("Report a Problem")),
+		h.Button(h.Class("cui-console-player-text-btn"), h.Type("button"), g.Text("Next to Watch › 3")),
+	}
+	return p
+}
+
 var playerExamples = map[string]console.ConsolePlayer{
-	"paused":  player(console.ConsolePlayerStatePaused, false, "The Wedding"),
-	"playing": player(console.ConsolePlayerStatePlaying, false, "The Wedding"),
-	"hidden":  player(console.ConsolePlayerStatePlaying, true, "The Wedding"),
-	"stills":  stills(),
+	"full-screen": fullScreen(),
+	"paused":      player(console.ConsolePlayerStatePaused, false, "The Wedding"),
+	"playing":     player(console.ConsolePlayerStatePlaying, false, "The Wedding"),
+	"hidden":      player(console.ConsolePlayerStatePlaying, true, "The Wedding"),
+	"stills":      stills(),
 }
 
 func TestPlayerRendersTheExamples(t *testing.T) {
@@ -132,6 +147,23 @@ func TestPlayerWritesMuted(t *testing.T) {
 	p.Muted = true
 	if got := example.Render(p); !strings.Contains(got, `<div class="cui-console-player aspect-video" data-muted>`) {
 		t.Errorf("a muted player wrote no data-muted: %s", got)
+	}
+}
+
+// the page's full-screen controls in the bar, before its buttons; none, no wrapper
+func TestPlayerWritesItsFullScreenControls(t *testing.T) {
+	p := player(console.ConsolePlayerStatePaused, false, "")
+	if got := example.Render(p); strings.Contains(got, "cui-console-player-full-screen-controls") {
+		t.Errorf("a player with no FullScreenControls wrote their row: %s", got)
+	}
+	p.FullScreenControls = h.Button(h.Class("cui-console-player-text-btn"), h.Type("button"), g.Text("Report"))
+	want := `<div class="cui-console-player-buttons"><div class="cui-console-player-full-screen-controls"><button class="cui-console-player-text-btn" type="button">Report</button></div><button class="cui-console-player-btn"`
+	if got := example.Render(p); !strings.Contains(got, want) {
+		t.Errorf("the controls are not first in the buttons' row: %s", got)
+	}
+	p.Popovers = h.Div(h.Class("cui-console-popover"), h.ID("report"), g.Attr("popover"))
+	if got := example.Render(p); !strings.HasSuffix(got, `<div class="cui-console-popover" id="report" popover></div></div>`) {
+		t.Errorf("the page's popover is not the player's last child: %s", got)
 	}
 }
 

@@ -27,6 +27,10 @@ Its picture can be any element in the video’s place, its first child: here a `
 
 {{ <cui_example file="console-player/stills" title="Console player, stills and a subtitle" /> }}
 
+Filling the screen (`data-fullscreen`), its bar adds the page’s own controls before its buttons:
+
+{{ <cui_example file="console-player/full-screen" title="Console player, full screen" /> }}
+
 | class | what |
 | --- | --- |
 | `cui-console-player` | the player: black, its picture and overlay in one place; its size is the page’s (`aspect-video` here) |
@@ -42,6 +46,8 @@ Its picture can be any element in the video’s place, its first child: here a `
 | `cui-console-player-footer` | the title, the buttons and the scrubber |
 | `cui-console-player-title` | the title, 26px bold |
 | `cui-console-player-buttons` | the buttons’ row, 14px apart |
+| `cui-console-player-full-screen-controls` | the page’s own controls, first in the buttons’ row, shown only while the player fills the screen |
+| `cui-console-player-text-btn` | a control of words in the bar: a 24px capsule, white on a faint white fill |
 | `cui-console-player-btn` | a button of one glyph, 24px |
 | `cui-console-player-progress` | the scrubber over the two times |
 | `cui-console-player-range` | an `<input type="range">`: the scrubber, or the volume in the header; 44px a pointer hits for an 11px row, its line 5px, 8px while held |
@@ -55,6 +61,7 @@ ciderui has no script: the page’s plays the video and keeps the markup in step
 | attribute | on | what |
 | --- | --- | --- |
 | `data-state="playing"` | `cui-console-player` | playing: the centre button shows pause. None, paused |
+| `data-fullscreen` | `cui-console-player` | it fills the screen: the bar shows the page’s full-screen controls |
 | `data-muted` | `cui-console-player` | muted: the mute button shows the struck speaker |
 | `data-controls="hidden"` | `cui-console-player` | the controls faded out: tv.apple.com hides them while the video plays and the pointer is still, and keeps them while it is paused. They show again while the focus is inside the player |
 | `--cui-console-player-value` | `cui-console-player-range` | the part played, or the volume, as a percentage (`style="--cui-console-player-value: 8%"`) |
@@ -85,4 +92,4 @@ The subtitles and voices buttons open a popover by `popovertarget`: a menu of ch
 
 ## Go
 
-The Go module writes it with `console.ConsolePlayer`: the picture (`Video`), the state, the labels, the volume, whether it is muted, the position and duration in seconds (it writes the times), the cue and its language, and each menu, a `console.ConsoleChoiceMenu` (none, no button).
+The Go module writes it with `console.ConsolePlayer`: the picture (`Video`), the state, the labels, the volume, whether it is muted or fills the screen, the position and duration in seconds (it writes the times), the cue and its language, each menu, a `console.ConsoleChoiceMenu` (none, no button), the page’s full-screen controls (`FullScreenControls`) and its own popovers (`Popovers`, written inside the player after its menus and placed as they are).

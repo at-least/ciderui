@@ -23,7 +23,8 @@ var (
 // ConsolePlayer is a video's controls over it, tv.apple.com's player's. The
 // page's script plays the video and keeps the markup current: data-state,
 // data-controls="hidden" (while playing and the pointer is still),
-// data-muted (the mute button's glyph), each
+// data-muted (the mute button's glyph), data-fullscreen (while it fills
+// the screen: the bar's FullScreenControls show), each
 // range's value and --cui-console-player-value, the times, the cue. It finds
 // each control by its data-control: play, volume, mute, subtitles, voices,
 // full-screen, scrubber, elapsed, remaining, and the scrubber's preview
@@ -42,6 +43,8 @@ type ConsolePlayer struct {
 	PauseAriaLabel string
 	// Volume is 0 to 100.
 	Volume int
+	// FullScreen shows the bar's FullScreenControls (data-fullscreen).
+	FullScreen bool
 	// Muted shows the mute button's muted glyph.
 	Muted           bool
 	VolumeAriaLabel string
@@ -63,7 +66,16 @@ type ConsolePlayer struct {
 	VoicesMenu          ConsoleChoiceMenu
 	VoicesAriaLabel     string
 	FullScreenAriaLabel string
-	Class               string
+	// FullScreenControls are the page's own controls the bar shows before
+	// its buttons while the player fills the screen (data-fullscreen), and
+	// hides otherwise; nil for none.
+	FullScreenControls g.Node
+	// Popovers are the page's own (cui-console-popover, a field its
+	// FullScreenControls open), written inside the player after its menus,
+	// so they open over it in full screen and are placed as its menus are;
+	// nil for none.
+	Popovers g.Node
+	Class    string
 }
 
 func (p ConsolePlayer) Render(w io.Writer) error {
@@ -101,7 +113,7 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 	button := func(control, label, menu string, glyph g.Node) g.Node {
 		return h.Button(h.Class("cui-console-player-btn"), h.Type("button"), h.Data("control", control), h.Aria("label", label), optionalAttr("popovertarget", menu), glyph)
 	}
-	return h.Div(class.Root("cui-console-player", p.Class), optionalAttr("data-state", p.State.value), g.If(p.ControlsHidden, g.Attr("data-controls", "hidden")), g.If(p.Muted, g.Attr("data-muted")),
+	return h.Div(class.Root("cui-console-player", p.Class), optionalAttr("data-state", p.State.value), g.If(p.ControlsHidden, g.Attr("data-controls", "hidden")), g.If(p.Muted, g.Attr("data-muted")), g.If(p.FullScreen, g.Attr("data-fullscreen")),
 		p.Video,
 		h.Div(h.Class("cui-console-player-overlay"),
 			h.Div(h.Class("cui-console-player-header"),
@@ -119,6 +131,7 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 			h.Div(h.Class("cui-console-player-footer"),
 				g.If(p.Title != "", h.P(h.Class("cui-console-player-title"), g.Text(p.Title))),
 				h.Div(h.Class("cui-console-player-buttons"),
+					g.If(p.FullScreenControls != nil, h.Div(h.Class("cui-console-player-full-screen-controls"), p.FullScreenControls)),
 					g.If(p.SubtitlesMenu.ID != "", button("subtitles", p.SubtitlesAriaLabel, p.SubtitlesMenu.ID, lucide.Captions)),
 					g.If(p.VoicesMenu.ID != "", button("voices", p.VoicesAriaLabel, p.VoicesMenu.ID, lucide.AudioLines)),
 					button("full-screen", p.FullScreenAriaLabel, "", lucide.Maximize2),
@@ -137,6 +150,7 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 		),
 		g.If(p.SubtitlesMenu.ID != "", p.SubtitlesMenu),
 		g.If(p.VoicesMenu.ID != "", p.VoicesMenu),
+		p.Popovers,
 	).Render(w)
 }
 
