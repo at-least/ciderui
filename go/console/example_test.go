@@ -121,8 +121,8 @@ func ExampleConsolePager() {
 }
 
 func ExampleConsolePlay() {
-	_ = console.ConsolePlay{State: console.ConsolePlayStatePlaying, AriaLabel: "Pause", Size: console.ConsoleBtnSizeSmall, Class: "js-clip"}.Render(os.Stdout)
-	// Output: <button class="cui-console-btn cui-console-btn-icon cui-console-play js-clip" data-size="sm" data-shape="capsule" data-state="playing" type="button" aria-label="Pause"><svg class="cui-console-play-paused" aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><svg class="cui-console-play-playing" aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg></button>
+	_ = console.ConsolePlay{State: console.ConsolePlayStatePlaying, AriaLabel: "", Label: "Play This Line", PlayingLabel: "Stop", Size: console.ConsoleBtnSizeSmall, Class: "js-clip"}.Render(os.Stdout)
+	// Output: <button class="cui-console-btn cui-console-play js-clip" data-size="sm" data-shape="capsule" data-state="playing" type="button"><span class="cui-console-play-glyph"><svg class="cui-console-play-paused" aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><svg class="cui-console-play-playing" aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/></svg></span><span class="cui-console-play-paused">Play This Line</span><span class="cui-console-play-playing">Stop</span></button>
 }
 
 func ExampleConsoleRadio() {

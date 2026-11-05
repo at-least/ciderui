@@ -1,23 +1,52 @@
 @layer components {
-  /* Lucide's play and pause filled: CSS wins over the <svg>'s fill="none".
-     Not filled and stroked: in the label's translucent color the stroke
-     over the fill drew a darker outline */
-  .cui-console-play > svg {
-    fill: currentColor;
-    stroke: none;
+  /* the glyph, its ring's box; Lucide's play and stop filled: CSS wins over
+     the <svg>'s fill="none". Not filled and stroked: in the label's
+     translucent color the stroke over the fill drew a darker outline */
+  .cui-console-play-glyph {
+    flex: none;
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    width: 1em;
+    height: 1em;
+
+    & > svg {
+      grid-area: 1 / 1;
+      width: 1em;
+      height: 1em;
+      fill: currentColor;
+      stroke: none;
+    }
   }
 
-  .cui-console-play-playing {
+  /* the stop glyph a little smaller than the play, inside its ring */
+  .cui-console-play-glyph > .cui-console-play-playing {
+    width: 0.625em;
+    height: 0.625em;
+  }
+
+  .cui-console-play[data-state="playing"] .cui-console-play-paused,
+  .cui-console-play:not([data-state="playing"]) .cui-console-play-playing {
     display: none;
   }
 
-  .cui-console-play[data-state="playing"] {
-    & > .cui-console-play-paused {
-      display: none;
-    }
+  /* playing, a ring round the glyph fills with how much has played (the
+     page's script sets --cui-console-play-progress), on a track of the
+     label's color at a quarter, as Podcasts' and Voice Memos' small
+     buttons */
+  .cui-console-play[data-state="playing"] .cui-console-play-glyph::before {
+    content: "";
+    position: absolute;
+    inset: -0.1875em;
+    border-radius: 50%;
+    background-image: conic-gradient(currentColor var(--cui-console-play-progress, 0%), color-mix(in srgb, currentColor 25%, transparent) 0);
+    /* a mask reads only the alpha: CanvasText is opaque in every theme,
+       where currentColor is the label's translucent one */
+    mask-image: radial-gradient(farthest-side, transparent calc(100% - 0.125em), CanvasText calc(100% - 0.125em));
 
-    & > .cui-console-play-playing {
-      display: block;
+    @media (forced-colors: active) {
+      forced-color-adjust: none;
+      background-image: conic-gradient(ButtonText var(--cui-console-play-progress, 0%), GrayText 0);
     }
   }
 }
