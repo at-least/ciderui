@@ -16,14 +16,11 @@ func TestQuickLinksRendersTheExample(t *testing.T) {
 	example.Check(t, site.QuickLinks{ID: "quicklinks", Title: "Shortcuts", Links: links, Class: ""}, "site/quicklinks/examples/quicklinks.html")
 }
 
-func TestQuickLinksAnEmptyTitlePanics(t *testing.T) {
-	mustPanic(t, "needs a Title", func() {
-		example.Render(site.QuickLinks{ID: "q", Title: "", Links: nil, Class: ""})
-	})
-}
-
-func TestQuickLinksAnEmptyIDPanics(t *testing.T) {
-	mustPanic(t, "QuickLinks needs an ID", func() {
-		example.Render(site.QuickLinks{ID: "", Title: "Shortcuts", Links: nil, Class: ""})
+func TestQuickLinksPanics(t *testing.T) {
+	example.Panics(t, func() site.QuickLinks {
+		return site.QuickLinks{ID: "q", Title: "x", Links: nil, Class: ""}
+	}, []example.Break[site.QuickLinks]{
+		{Want: "site.QuickLinks needs an ID", Change: func(p *site.QuickLinks) { p.ID = "" }},
+		{Want: "site.QuickLinks needs a Title", Change: func(p *site.QuickLinks) { p.Title = "" }},
 	})
 }

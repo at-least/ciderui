@@ -28,31 +28,15 @@ func TestGalleryNoPaddlesNoDots(t *testing.T) {
 	}
 }
 
-func TestGalleryAnEmptyIDPanics(t *testing.T) {
-	mustPanic(t, "needs an ID", func() {
-		example.Render(site.Gallery{ID: "", Items: nil, Paddles: nil, Current: 0, Class: ""})
-	})
-}
-
-func TestGalleryACurrentDotOutsidePanics(t *testing.T) {
-	for _, current := range []int{-1, 2} {
-		mustPanic(t, "outside its Items", func() {
-			example.Render(site.Gallery{ID: "g", Items: []site.GalleryItem{{Content: g.Text("x"), DotAriaLabel: "a"}}, Paddles: nil, Current: current, Class: ""})
-		})
-	}
-}
-
-func TestGalleryAnEmptyDotAriaLabelPanics(t *testing.T) {
-	mustPanic(t, "site.GalleryItem needs a DotAriaLabel in a gallery with dots", func() {
-		example.Render(site.Gallery{ID: "g", Items: []site.GalleryItem{{Content: g.Text("x"), DotAriaLabel: ""}}, Paddles: nil, Current: 1, Class: ""})
-	})
-}
-
-func TestGalleryPaddlesNeedTheirWords(t *testing.T) {
-	mustPanic(t, "site.Gallery's Paddles need a PreviousAriaLabel", func() {
-		example.Render(site.Gallery{ID: "g", Items: nil, Paddles: &site.Paddles{PreviousAriaLabel: "", NextAriaLabel: "x"}, Current: 0, Class: ""})
-	})
-	mustPanic(t, "site.Gallery's Paddles need a NextAriaLabel", func() {
-		example.Render(site.Gallery{ID: "g", Items: nil, Paddles: &site.Paddles{PreviousAriaLabel: "x", NextAriaLabel: ""}, Current: 0, Class: ""})
+func TestGalleryPanics(t *testing.T) {
+	example.Panics(t, func() site.Gallery {
+		return site.Gallery{ID: "g", Items: []site.GalleryItem{{Content: g.Text("x"), DotAriaLabel: "a"}}, Paddles: nil, Current: 1, Class: ""}
+	}, []example.Break[site.Gallery]{
+		{Want: "site.Gallery needs an ID", Change: func(p *site.Gallery) { p.ID = "" }},
+		{Want: "site.Gallery's Current dot is outside its Items", Change: func(p *site.Gallery) { p.Current = -1 }},
+		{Want: "site.Gallery's Current dot is outside its Items", Change: func(p *site.Gallery) { p.Current = 2 }},
+		{Want: "site.GalleryItem needs a DotAriaLabel in a gallery with dots", Change: func(p *site.Gallery) { p.Items[0].DotAriaLabel = "" }},
+		{Want: "site.Gallery's Paddles need a PreviousAriaLabel", Change: func(p *site.Gallery) { p.Paddles = &site.Paddles{PreviousAriaLabel: "", NextAriaLabel: "x"} }},
+		{Want: "site.Gallery's Paddles need a NextAriaLabel", Change: func(p *site.Gallery) { p.Paddles = &site.Paddles{PreviousAriaLabel: "x", NextAriaLabel: ""} }},
 	})
 }

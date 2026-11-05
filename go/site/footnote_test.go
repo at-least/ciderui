@@ -1,7 +1,6 @@
 package site_test
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/internal/example"
@@ -14,21 +13,11 @@ func TestFootnoteRendersTheExample(t *testing.T) {
 	example.Check(t, h.P(h.Class("cui-body"), g.Text("A full day of battery life"), site.Footnote{Href: "#footnote-1", Mark: "1", AriaLabel: "Footnote 1", Class: ""}), "site/footnote/examples/footnote.html")
 }
 
-func TestFootnoteAnEmptyMarkPanics(t *testing.T) {
-	mustPanic(t, "needs a Mark", func() {
-		example.Render(site.Footnote{Href: "#f", Mark: "", AriaLabel: "x", Class: ""})
+func TestFootnotePanics(t *testing.T) {
+	example.Panics(t, func() site.Footnote {
+		return site.Footnote{Href: "#f", Mark: "1", AriaLabel: "x", Class: ""}
+	}, []example.Break[site.Footnote]{
+		{Want: "site.Footnote needs a Mark", Change: func(p *site.Footnote) { p.Mark = "" }},
+		{Want: "site.Footnote needs an AriaLabel", Change: func(p *site.Footnote) { p.AriaLabel = "" }},
 	})
-}
-
-func TestFootnoteAnEmptyAriaLabelPanics(t *testing.T) {
-	mustPanic(t, "site.Footnote needs an AriaLabel", func() {
-		example.Render(site.Footnote{Href: "#f", Mark: "1", AriaLabel: "", Class: ""})
-	})
-}
-
-func TestFootnoteTakesThePagesUtilities(t *testing.T) {
-	got := example.Render(site.Footnote{Href: "#f", Mark: "1", AriaLabel: "附註 1", Class: "ml-1"})
-	if !strings.HasPrefix(got, `<sup class="cui-footnote ml-1"><a href="#f" aria-label="附註 1">`) {
-		t.Errorf("got %s", got)
-	}
 }

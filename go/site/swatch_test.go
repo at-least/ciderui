@@ -18,27 +18,19 @@ func TestSwatchRendersTheExample(t *testing.T) {
 	), "site/swatch/examples/swatches.html")
 }
 
-func TestSwatchAnEmptyAriaLabelPanics(t *testing.T) {
-	mustPanic(t, "site.Swatch needs an AriaLabel", func() {
-		example.Render(site.Swatch{ID: "x", Name: "x", Value: "x", AriaLabel: "", Checked: false, Attrs: nil, Class: "", Children: g.Text("x")})
-	})
-}
-
-func TestSwatchAnEmptyIDPanics(t *testing.T) {
-	mustPanic(t, "Swatch needs an ID", func() {
-		example.Render(site.Swatch{ID: "", Name: "x", Value: "x", AriaLabel: "x", Checked: false, Attrs: nil, Class: "", Children: g.Text("x")})
-	})
-}
-
-func TestSwatchAnEmptyNamePanics(t *testing.T) {
-	mustPanic(t, "site.Swatch needs a Name", func() {
-		example.Render(site.Swatch{ID: "x", Name: "", Value: "x", AriaLabel: "x", Checked: false, Attrs: nil, Class: "", Children: g.Text("x")})
-	})
-}
-
 func TestSwatchWritesItsTitleAndAttrsOnItsInput(t *testing.T) {
 	got := example.Render(site.Swatch{ID: "x", Name: "x", Value: "v", AriaLabel: "銀色", Checked: false, Attrs: h.Disabled(), Class: "", Children: g.Text("x")})
 	if !strings.Contains(got, `<input class="cui-swatch-input" type="radio" id="x" name="x" value="v" title="銀色" disabled>`) {
 		t.Errorf("got %s", got)
 	}
+}
+
+func TestSwatchPanics(t *testing.T) {
+	example.Panics(t, func() site.Swatch {
+		return site.Swatch{ID: "x", Name: "x", Value: "x", AriaLabel: "x", Checked: false, Attrs: nil, Class: "", Children: g.Text("x")}
+	}, []example.Break[site.Swatch]{
+		{Want: "site.Swatch needs an ID", Change: func(p *site.Swatch) { p.ID = "" }},
+		{Want: "site.Swatch needs a Name", Change: func(p *site.Swatch) { p.Name = "" }},
+		{Want: "site.Swatch needs an AriaLabel", Change: func(p *site.Swatch) { p.AriaLabel = "" }},
+	})
 }

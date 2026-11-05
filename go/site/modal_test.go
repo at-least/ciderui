@@ -51,34 +51,20 @@ func TestModalItsCloseComesBeforeItsCurtain(t *testing.T) {
 	}
 }
 
-func TestModalButtonEscapesItsAttributes(t *testing.T) {
-	got := example.Render(site.ModalButton{Modal: `a"b`, Class: "x<y&z", Children: g.Text("Open")})
-	want := `<button class="x&lt;y&amp;z" type="button" commandfor="a&quot;b" command="show-modal">Open</button>`
-	if got != want {
-		t.Errorf("got %s", got)
-	}
-}
-
-func TestModalAnEmptyIDPanics(t *testing.T) {
-	mustPanic(t, "needs an ID", func() {
-		example.Render(site.Modal{ID: "", Labelledby: "t", Variant: site.ModalVariantSheet, CloseAriaLabel: "Close", Class: "", Children: g.Text("x")})
+func TestModalPanics(t *testing.T) {
+	example.Panics(t, func() site.Modal {
+		return site.Modal{ID: "m", Labelledby: "t", Variant: site.ModalVariantSheet, CloseAriaLabel: "Close", Class: "", Children: g.Text("x")}
+	}, []example.Break[site.Modal]{
+		{Want: "site.Modal needs an ID", Change: func(p *site.Modal) { p.ID = "" }},
+		{Want: "site.Modal needs the id of its headline (Labelledby)", Change: func(p *site.Modal) { p.Labelledby = "" }},
+		{Want: "site.Modal needs a CloseAriaLabel", Change: func(p *site.Modal) { p.CloseAriaLabel = "" }},
 	})
 }
 
-func TestModalNoHeadlinePanics(t *testing.T) {
-	mustPanic(t, "Labelledby", func() {
-		example.Render(site.Modal{ID: "m", Labelledby: "", Variant: site.ModalVariantSheet, CloseAriaLabel: "Close", Class: "", Children: g.Text("x")})
-	})
-}
-
-func TestModalAnEmptyCloseAriaLabelPanics(t *testing.T) {
-	mustPanic(t, "site.Modal needs a CloseAriaLabel", func() {
-		example.Render(site.Modal{ID: "m", Labelledby: "t", Variant: site.ModalVariantSheet, CloseAriaLabel: "", Class: "", Children: g.Text("x")})
-	})
-}
-
-func TestModalButtonWithNoModalPanics(t *testing.T) {
-	mustPanic(t, "needs its Modal's id", func() {
-		example.Render(site.ModalButton{Modal: "", Class: "cui-btn", Children: g.Text("x")})
+func TestModalButtonPanics(t *testing.T) {
+	example.Panics(t, func() site.ModalButton {
+		return site.ModalButton{Modal: "m", Class: "cui-btn", Children: g.Text("x")}
+	}, []example.Break[site.ModalButton]{
+		{Want: "site.ModalButton needs its Modal's id", Change: func(p *site.ModalButton) { p.Modal = "" }},
 	})
 }

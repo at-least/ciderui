@@ -26,37 +26,23 @@ func TestPostsRendersTheExamples(t *testing.T) {
 	}}, "site/posts/examples/related.html")
 }
 
-func postsOf(post site.Post) site.Posts {
-	return site.Posts{Small: false, Heading: "x", Class: "", Items: []site.Post{post}}
+func validPosts() site.Posts {
+	return site.Posts{Small: false, Heading: "x", Class: "", Items: []site.Post{{Href: "/x/", Media: nil, Category: "", Date: nil, Headline: "y", Class: ""}}}
 }
 
-func TestPostADateWithNoDatetimePanics(t *testing.T) {
-	mustPanic(t, "site.Date needs a Datetime", func() {
-		example.Render(postsOf(site.Post{Href: "/x/", Media: nil, Category: "", Date: &site.Date{Datetime: "", Text: "Today"}, Headline: "x", Class: ""}))
+func TestPostsPanics(t *testing.T) {
+	example.Panics(t, validPosts, []example.Break[site.Posts]{
+		{Want: "site.Posts needs a Heading", Change: func(p *site.Posts) { p.Heading = "" }},
+		{Want: "site.Post needs an Href", Change: func(p *site.Posts) { p.Items[0].Href = "" }},
+		{Want: "site.Post needs a Headline", Change: func(p *site.Posts) { p.Items[0].Headline = "" }},
+		{Want: "site.Date needs a Datetime", Change: func(p *site.Posts) { p.Items[0].Date = &site.Date{Datetime: "", Text: "Today"} }},
 	})
 }
 
-func TestPostsAnEmptyHeadingPanics(t *testing.T) {
-	mustPanic(t, "Posts needs a Heading", func() {
-		example.Render(site.Posts{Small: false, Heading: "", Class: "", Items: nil})
-	})
-}
-
-func TestPostTakesThePagesUtilities(t *testing.T) {
-	got := example.Render(postsOf(site.Post{Href: "/x/", Media: nil, Category: "", Date: nil, Headline: "x", Class: "hidden"}))
-	if !strings.Contains(got, `<li><a class="cui-post hidden"`) {
-		t.Errorf("got %s", got)
+func TestPostNoCategoryNoDateNoPicture(t *testing.T) {
+	got := example.Render(validPosts())
+	want := `<li><a class="cui-post" href="/x/"><div class="cui-post-content"><h3 class="cui-post-headline">y</h3></div></a></li>`
+	if !strings.Contains(got, want) {
+		t.Errorf("no %s in %s", want, got)
 	}
-}
-
-func TestPostAnEmptyHrefPanics(t *testing.T) {
-	mustPanic(t, "Post needs an Href", func() {
-		example.Render(postsOf(site.Post{Href: "", Media: nil, Category: "", Date: nil, Headline: "x", Class: ""}))
-	})
-}
-
-func TestPostAnEmptyHeadlinePanics(t *testing.T) {
-	mustPanic(t, "Post needs a Headline", func() {
-		example.Render(postsOf(site.Post{Href: "/x/", Media: nil, Category: "", Date: nil, Headline: "", Class: ""}))
-	})
 }

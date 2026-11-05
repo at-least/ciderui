@@ -25,45 +25,22 @@ func TestStoriesRendersTheExample(t *testing.T) {
 	}}, "site/stories/examples/stories.html")
 }
 
-func storiesOf(story site.Story) site.Stories {
-	return site.Stories{Heading: "x", Class: "", Items: []site.Story{story}}
+func validStories() site.Stories {
+	return site.Stories{Heading: "x", Class: "", Items: []site.Story{{Size: site.StorySizeSmall, Href: "/x/", Media: nil, Category: "", Date: nil, Headline: "y", Class: ""}}}
+}
+
+func TestStoriesPanics(t *testing.T) {
+	example.Panics(t, validStories, []example.Break[site.Stories]{
+		{Want: "site.Stories needs a Heading", Change: func(p *site.Stories) { p.Heading = "" }},
+		{Want: "site.Story needs an Href", Change: func(p *site.Stories) { p.Items[0].Href = "" }},
+		{Want: "site.Story needs a Headline", Change: func(p *site.Stories) { p.Items[0].Headline = "" }},
+		{Want: "site.Date needs a Datetime", Change: func(p *site.Stories) { p.Items[0].Date = &site.Date{Datetime: "", Text: "Today"} }},
+	})
 }
 
 func TestStoryNoCategoryNoDateNoPicture(t *testing.T) {
-	got := example.Render(storiesOf(site.Story{Size: site.StorySizeSmall, Href: "/x/", Media: nil, Category: "", Date: nil, Headline: "x", Class: ""}))
-	want := `<li><a class="cui-story" href="/x/"><div class="cui-story-content"><div class="cui-story-head"><h3 class="cui-story-headline">x</h3></div></div></a></li>`
-	if !strings.Contains(got, want) {
-		t.Errorf("got %s", got)
+	want := `<li><a class="cui-story" href="/x/"><div class="cui-story-content"><div class="cui-story-head"><h3 class="cui-story-headline">y</h3></div></div></a></li>`
+	if got := example.Render(validStories()); !strings.Contains(got, want) {
+		t.Errorf("no %s in %s", want, got)
 	}
-}
-
-func TestStoryADateWithNoDatetimePanics(t *testing.T) {
-	mustPanic(t, "site.Date needs a Datetime", func() {
-		example.Render(storiesOf(site.Story{Size: site.StorySizeSmall, Href: "/x/", Media: nil, Category: "", Date: &site.Date{Datetime: "", Text: "Today"}, Headline: "x", Class: ""}))
-	})
-}
-
-func TestStoriesAnEmptyHeadingPanics(t *testing.T) {
-	mustPanic(t, "Stories needs a Heading", func() {
-		example.Render(site.Stories{Heading: "", Class: "", Items: nil})
-	})
-}
-
-func TestStoryTakesThePagesUtilities(t *testing.T) {
-	got := example.Render(storiesOf(site.Story{Size: site.StorySizeSmall, Href: "/x/", Media: nil, Category: "", Date: nil, Headline: "x", Class: "hidden"}))
-	if !strings.Contains(got, `<a class="cui-story hidden"`) {
-		t.Errorf("got %s", got)
-	}
-}
-
-func TestStoryAnEmptyHrefPanics(t *testing.T) {
-	mustPanic(t, "Story needs an Href", func() {
-		example.Render(storiesOf(site.Story{Size: site.StorySizeSmall, Href: "", Media: nil, Category: "", Date: nil, Headline: "x", Class: ""}))
-	})
-}
-
-func TestStoryAnEmptyHeadlinePanics(t *testing.T) {
-	mustPanic(t, "Story needs a Headline", func() {
-		example.Render(storiesOf(site.Story{Size: site.StorySizeSmall, Href: "/x/", Media: nil, Category: "", Date: nil, Headline: "", Class: ""}))
-	})
 }

@@ -128,7 +128,9 @@ func TestGlobalNavTheSuggestionsExampleIsTheSearchWithItsSections(t *testing.T) 
 }
 
 func TestGlobalNavASearchWithNoQuickLinksHasNoHeading(t *testing.T) {
-	got := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: site.FlyoutSearch{Action: "/find?a&b", AriaLabel: "Search", Placeholder: "Search", ClearAriaLabel: "Clear search", Heading: "", Links: nil}, Bag: nil, Text: globalNavText, Clear: false, Class: ""})
+	search := flyoutSearch()
+	search.Action = "/find?a&b"
+	got := example.Render(navWith(search, nil))
 	if !strings.Contains(got, `<form class="cui-globalnav-searchfield" action="/find?a&amp;b" method="get" role="search">`) {
 		t.Errorf("got %s", got)
 	}
@@ -137,108 +139,13 @@ func TestGlobalNavASearchWithNoQuickLinksHasNoHeading(t *testing.T) {
 	}
 }
 
-func TestGlobalNavASearchWithNoPagePanics(t *testing.T) {
-	mustPanic(t, "site.FlyoutSearch needs an Action", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: site.FlyoutSearch{Action: "", AriaLabel: "x", Placeholder: "x", ClearAriaLabel: "x", Heading: "", Links: nil}, Bag: nil, Text: globalNavText, Clear: false, Class: ""})
-	})
-}
-
-func TestGlobalNavClearAndThePagesUtilities(t *testing.T) {
-	got := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: nil, Text: globalNavText, Clear: true, Class: "sticky top-0"})
-	if !strings.HasPrefix(got, `<nav class="cui-globalnav sticky top-0" data-variant="clear" aria-label="Global">`) {
+func TestGlobalNavClearAndNoIcons(t *testing.T) {
+	n := validGlobalNav()
+	n.Clear = true
+	got := example.Render(n)
+	if !strings.HasPrefix(got, `<nav class="cui-globalnav" data-variant="clear" aria-label="Global">`) || strings.Contains(got, "cui-globalnav-icon") {
 		t.Errorf("got %s", got)
 	}
-	if strings.Contains(got, "cui-globalnav-icon") {
-		t.Errorf("got %s", got)
-	}
-}
-
-func TestGlobalNavEscapesItsText(t *testing.T) {
-	got := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/?a&b", LogoAriaLabel: `A "B"`, Links: []site.NavLink{{Label: "<b>", Href: "/x", Action: nil}}, Search: nil, Bag: nil, Text: globalNavText, Clear: false, Class: ""})
-	for _, want := range []string{
-		`href="/?a&amp;b" aria-label="A &quot;B&quot;"`,
-		`<a class="cui-globalnav-link" href="/x">&lt;b&gt;</a>`,
-	} {
-		if !strings.Contains(got, want) {
-			t.Errorf("%s has no %s", got, want)
-		}
-	}
-}
-
-func TestGlobalNavNoLinksPanics(t *testing.T) {
-	mustPanic(t, "needs Links", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: nil, Search: nil, Bag: nil, Text: globalNavText, Clear: false, Class: ""})
-	})
-}
-
-func TestGlobalNavAnEmptyHomePanics(t *testing.T) {
-	mustPanic(t, "GlobalNav needs a Home", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: nil, Text: globalNavText, Clear: false, Class: ""})
-	})
-}
-
-func TestGlobalNavAnEmptyLogoAriaLabelPanics(t *testing.T) {
-	mustPanic(t, "GlobalNav needs a LogoAriaLabel", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "", Links: globalNavLinks, Search: nil, Bag: nil, Text: globalNavText, Clear: false, Class: ""})
-	})
-}
-
-func TestGlobalNavALinkWithNoLabelPanics(t *testing.T) {
-	mustPanic(t, "GlobalNav's Links need their Label and Href", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: []site.NavLink{{Label: "", Href: "/x", Action: nil}}, Search: nil, Bag: nil, Text: globalNavText, Clear: false, Class: ""})
-	})
-}
-
-func TestGlobalNavAFlyoutGroupWithNoHeadingPanics(t *testing.T) {
-	flyout := []site.FlyoutGroup{{Heading: "", Large: nil, Links: nil}}
-	mustPanic(t, "NavFlyout's Groups need their Heading", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: []site.NavLink{{Label: "Store", Href: "/store", Action: site.NavFlyout{Groups: flyout, AriaLabel: "Store menu"}}}, Search: nil, Bag: nil, Text: globalNavText, Clear: false, Class: ""})
-	})
-}
-
-func TestGlobalNavABagWithNoMessagePanics(t *testing.T) {
-	bag := site.FlyoutBag{AriaLabel: "Bag", Message: "", Line: nil, Heading: "", Links: nil}
-	mustPanic(t, "site.FlyoutBag needs a Message", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Text: globalNavText, Clear: false, Class: ""})
-	})
-}
-
-func TestGlobalNavABagLineWithNoLabelPanics(t *testing.T) {
-	bag := site.FlyoutBag{AriaLabel: "Bag", Message: "Nothing here yet.", Line: &site.BagLine{Label: "", Href: "/signin", Rest: ""}, Heading: "", Links: nil}
-	mustPanic(t, "Line needs its link's Label and Href", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Text: globalNavText, Clear: false, Class: ""})
-	})
-}
-
-func TestGlobalNavBagLinksWithNoHeadingPanics(t *testing.T) {
-	bag := site.FlyoutBag{AriaLabel: "Bag", Message: "Nothing here yet.", Line: nil, Heading: "", Links: []site.BagLink{{Icon: site.BagLinkIconOrders, Label: "Orders", Href: "/orders"}}}
-	mustPanic(t, "FlyoutBag's Links need their Heading", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Text: globalNavText, Clear: false, Class: ""})
-	})
-}
-
-func TestGlobalNavABagLinkWithNoLabelPanics(t *testing.T) {
-	bag := site.FlyoutBag{AriaLabel: "Bag", Message: "Nothing here yet.", Line: nil, Heading: "Account", Links: []site.BagLink{{Icon: site.BagLinkIconOrders, Label: "", Href: "/orders"}}}
-	mustPanic(t, "FlyoutBag's Links need their Label and Href", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Text: globalNavText, Clear: false, Class: ""})
-	})
-}
-
-func TestGlobalNavABagLinkWithNoIconPanics(t *testing.T) {
-	bag := site.FlyoutBag{AriaLabel: "Bag", Message: "Nothing here yet.", Line: nil, Heading: "Account", Links: []site.BagLink{{Icon: site.BagLinkIcon{}, Label: "Orders", Href: "/orders"}}}
-	mustPanic(t, "FlyoutBag's Links need their Icon", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Text: globalNavText, Clear: false, Class: ""})
-	})
-}
-
-func TestGlobalNavLargeLinksAfterTheFirstGroupPanics(t *testing.T) {
-	flyout := []site.FlyoutGroup{
-		{Heading: "Shop", Large: nil, Links: nil},
-		{Heading: "More", Large: []site.Link{{Label: "x", Href: "/x"}}, Links: nil},
-	}
-	mustPanic(t, "site.NavFlyout's Large links are only in its first group", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: []site.NavLink{{Label: "Store", Href: "/store", Action: site.NavFlyout{Groups: flyout, AriaLabel: "Store menu"}}}, Search: nil, Bag: nil, Text: globalNavText, Clear: false, Class: ""})
-	})
 }
 
 // every word the nav writes of its own is the caller's: none of the English
@@ -275,69 +182,6 @@ func TestGlobalNavWritesItsTextInThePagesLanguage(t *testing.T) {
 	}
 }
 
-func TestGlobalNavAnEmptyTextPanics(t *testing.T) {
-	for field, blank := range map[string]func(*site.GlobalNavText){
-		"AriaLabel":      func(x *site.GlobalNavText) { x.AriaLabel = "" },
-		"MenuAriaLabel":  func(x *site.GlobalNavText) { x.MenuAriaLabel = "" },
-		"CloseAriaLabel": func(x *site.GlobalNavText) { x.CloseAriaLabel = "" },
-	} {
-		text := globalNavText
-		blank(&text)
-		mustPanic(t, "site.GlobalNav's Text needs its "+field, func() {
-			example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: nil, Text: text, Clear: false, Class: ""})
-		})
-	}
-}
-
-// a nav with no flyout draws no back button, so writes no word for it
-func TestGlobalNavMainMenuAriaLabelIsAFlyouts(t *testing.T) {
-	text := globalNavText
-	text.MainMenuAriaLabel = ""
-	example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: nil, Text: text, Clear: false, Class: ""})
-	mustPanic(t, "site.GlobalNav's Text needs its MainMenuAriaLabel", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: []site.NavLink{{Label: "Store", Href: "/store", Action: site.NavFlyout{Groups: globalNavStore, AriaLabel: "Store menu"}}}, Search: nil, Bag: nil, Text: text, Clear: false, Class: ""})
-	})
-}
-
-func TestGlobalNavAFlyoutWithNoAriaLabelPanics(t *testing.T) {
-	mustPanic(t, "site.NavFlyout needs an AriaLabel", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: []site.NavLink{{Label: "Store", Href: "/store", Action: site.NavFlyout{Groups: globalNavStore, AriaLabel: ""}}}, Search: nil, Bag: nil, Text: globalNavText, Clear: false, Class: ""})
-	})
-}
-
-func TestGlobalNavAFlyoutWithNoGroupsPanics(t *testing.T) {
-	mustPanic(t, "site.NavFlyout needs Groups", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: []site.NavLink{{Label: "Store", Href: "/store", Action: site.NavFlyout{Groups: nil, AriaLabel: "x"}}}, Search: nil, Bag: nil, Text: globalNavText, Clear: false, Class: ""})
-	})
-}
-
-func TestGlobalNavSearchAndBagNeedTheirWords(t *testing.T) {
-	render := func(search site.Search, bag site.Bag) func() {
-		return func() {
-			example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: search, Bag: bag, Text: globalNavText, Clear: false, Class: ""})
-		}
-	}
-	mustPanic(t, "site.LinkedSearch needs an AriaLabel", render(site.LinkedSearch{Href: "/s", AriaLabel: ""}, nil))
-	mustPanic(t, "site.FlyoutSearch needs an AriaLabel", render(site.FlyoutSearch{Action: "/s", AriaLabel: "", Placeholder: "x", ClearAriaLabel: "x", Heading: "", Links: nil}, nil))
-	mustPanic(t, "site.FlyoutSearch needs a Placeholder", render(site.FlyoutSearch{Action: "/s", AriaLabel: "x", Placeholder: "", ClearAriaLabel: "x", Heading: "", Links: nil}, nil))
-	mustPanic(t, "site.FlyoutSearch needs a ClearAriaLabel", render(site.FlyoutSearch{Action: "/s", AriaLabel: "x", Placeholder: "x", ClearAriaLabel: "", Heading: "", Links: nil}, nil))
-	mustPanic(t, "site.LinkedBag needs an AriaLabel", render(nil, site.LinkedBag{Href: "/b", AriaLabel: ""}))
-	mustPanic(t, "site.FlyoutBag needs an AriaLabel", render(nil, site.FlyoutBag{AriaLabel: "", Message: "x", Line: nil, Heading: "", Links: nil}))
-}
-
-func TestGlobalNavSearchAsksForTheSearchKey(t *testing.T) {
-	got := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: site.FlyoutSearch{Action: "/s", AriaLabel: "x", Placeholder: "x", ClearAriaLabel: "x", Heading: "", Links: nil}, Bag: nil, Text: globalNavText, Clear: false, Class: ""})
-	if !strings.Contains(got, `type="text" name="q"`) || !strings.Contains(got, `enterkeyhint="search"`) {
-		t.Errorf("got %s", got)
-	}
-}
-
-func TestGlobalNavSearchLinksWithNoHeadingPanics(t *testing.T) {
-	mustPanic(t, "site.FlyoutSearch's Links need their Heading", func() {
-		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: site.FlyoutSearch{Action: "/search", AriaLabel: "x", Placeholder: "x", ClearAriaLabel: "x", Heading: "", Links: globalNavQuick}, Bag: nil, Text: globalNavText, Clear: false, Class: ""})
-	})
-}
-
 func TestGlobalNavRendersThePostExample(t *testing.T) {
 	links := []site.NavLink{
 		{Label: "Store", Href: "/store", Action: nil},
@@ -348,14 +192,115 @@ func TestGlobalNavRendersThePostExample(t *testing.T) {
 	example.Check(t, site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: links, Search: site.LinkedSearch{Href: "/search", AriaLabel: "Search"}, Bag: site.LinkedBag{Href: "/bag", AriaLabel: "Bag"}, Text: globalNavText, Clear: false, Class: ""}, "site/globalnav/examples/post.html")
 }
 
-// a pointer to a variant also has its method: the sealed interfaces do not stop one
-func TestGlobalNavAPointerToAVariantPanics(t *testing.T) {
-	render := func(link site.NavAction, search site.Search, bag site.Bag) func() {
-		return func() {
-			example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: []site.NavLink{{Label: "x", Href: "/x", Action: link}}, Search: search, Bag: bag, Text: globalNavText, Clear: false, Class: ""})
+func validGlobalNav() site.GlobalNav {
+	return site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: []site.NavLink{{Label: "Store", Href: "/store", Action: nil}}, Search: nil, Bag: nil, Text: globalNavText, Clear: false, Class: ""}
+}
+
+func flyoutOf(groups ...site.FlyoutGroup) site.NavFlyout {
+	return site.NavFlyout{Groups: groups, AriaLabel: "Store menu"}
+}
+
+func flyoutSearch() site.FlyoutSearch {
+	return site.FlyoutSearch{Action: "/s", AriaLabel: "x", Placeholder: "x", ClearAriaLabel: "x", Heading: "", Links: nil}
+}
+
+func flyoutBag() site.FlyoutBag {
+	return site.FlyoutBag{AriaLabel: "Bag", Message: "x", Line: nil, Heading: "Account", Links: []site.BagLink{{Icon: site.BagLinkIconOrders, Label: "Orders", Href: "/orders"}}}
+}
+
+func TestGlobalNavPanics(t *testing.T) {
+	example.Panics(t, validGlobalNav, []example.Break[site.GlobalNav]{
+		{Want: "site.GlobalNav needs a Home", Change: func(p *site.GlobalNav) { p.Home = "" }},
+		{Want: "site.GlobalNav needs a LogoAriaLabel", Change: func(p *site.GlobalNav) { p.LogoAriaLabel = "" }},
+		{Want: "site.GlobalNav needs Links", Change: func(p *site.GlobalNav) { p.Links = nil }},
+		{Want: "site.GlobalNav's Text needs its AriaLabel", Change: func(p *site.GlobalNav) { p.Text.AriaLabel = "" }},
+		{Want: "site.GlobalNav's Text needs its MenuAriaLabel", Change: func(p *site.GlobalNav) { p.Text.MenuAriaLabel = "" }},
+		{Want: "site.GlobalNav's Text needs its CloseAriaLabel", Change: func(p *site.GlobalNav) { p.Text.CloseAriaLabel = "" }},
+		{Want: "site.GlobalNav's Links need their Label and Href", Change: func(p *site.GlobalNav) { p.Links[0].Label = "" }},
+		{Want: "site.GlobalNav's Links need their Label and Href", Change: func(p *site.GlobalNav) { p.Links[0].Href = "" }},
+		{Want: "site.GlobalNav's Text needs its MainMenuAriaLabel", Change: func(p *site.GlobalNav) {
+			p.Text.MainMenuAriaLabel, p.Links[0].Action = "", flyoutOf(site.FlyoutGroup{Heading: "x", Large: nil, Links: nil})
+		}},
+		{Want: "site.NavFlyout needs an AriaLabel", Change: func(p *site.GlobalNav) {
+			p.Links[0].Action = site.NavFlyout{Groups: []site.FlyoutGroup{{Heading: "x", Large: nil, Links: nil}}, AriaLabel: ""}
+		}},
+		{Want: "site.NavFlyout needs Groups", Change: func(p *site.GlobalNav) { p.Links[0].Action = flyoutOf() }},
+		{Want: "site.NavFlyout's Groups need their Heading", Change: func(p *site.GlobalNav) {
+			p.Links[0].Action = flyoutOf(site.FlyoutGroup{Heading: "", Large: nil, Links: nil})
+		}},
+		{Want: "site.NavFlyout's Large links are only in its first group", Change: func(p *site.GlobalNav) {
+			p.Links[0].Action = flyoutOf(site.FlyoutGroup{Heading: "a", Large: nil, Links: nil}, site.FlyoutGroup{Heading: "b", Large: []site.Link{{Label: "x", Href: "/x"}}, Links: nil})
+		}},
+		{Want: "site.NavLink's Action is neither a NavFlyout nor a NavPost", Change: func(p *site.GlobalNav) { p.Links[0].Action = &site.NavPost{} }},
+		{Want: "site.LinkedSearch needs an AriaLabel", Change: func(p *site.GlobalNav) { p.Search = site.LinkedSearch{Href: "/s", AriaLabel: ""} }},
+		{Want: "site.GlobalNav's Search is neither a LinkedSearch nor a FlyoutSearch", Change: func(p *site.GlobalNav) { p.Search = &site.LinkedSearch{Href: "/s", AriaLabel: "x"} }},
+		{Want: "site.LinkedBag needs an AriaLabel", Change: func(p *site.GlobalNav) { p.Bag = site.LinkedBag{Href: "/b", AriaLabel: ""} }},
+		{Want: "site.GlobalNav's Bag is neither a LinkedBag nor a FlyoutBag", Change: func(p *site.GlobalNav) { p.Bag = &site.LinkedBag{Href: "/b", AriaLabel: "x"} }},
+	})
+}
+
+func navWith(search site.Search, bag site.Bag) site.GlobalNav {
+	n := validGlobalNav()
+	n.Search, n.Bag = search, bag
+	return n
+}
+
+func TestFlyoutSearchPanics(t *testing.T) {
+	broken := func(change func(*site.FlyoutSearch)) func(*site.GlobalNav) {
+		return func(n *site.GlobalNav) {
+			s := flyoutSearch()
+			change(&s)
+			n.Search = s
 		}
 	}
-	mustPanic(t, "site.NavLink's Action is neither a NavFlyout nor a NavPost", render(&site.NavPost{}, nil, nil))
-	mustPanic(t, "site.GlobalNav's Search is neither a LinkedSearch nor a FlyoutSearch", render(nil, &site.LinkedSearch{Href: "/s", AriaLabel: "x"}, nil))
-	mustPanic(t, "site.GlobalNav's Bag is neither a LinkedBag nor a FlyoutBag", render(nil, nil, &site.LinkedBag{Href: "/b", AriaLabel: "x"}))
+	example.Panics(t, func() site.GlobalNav { return navWith(flyoutSearch(), nil) }, []example.Break[site.GlobalNav]{
+		{Want: "site.FlyoutSearch needs an Action", Change: broken(func(s *site.FlyoutSearch) { s.Action = "" })},
+		{Want: "site.FlyoutSearch needs an AriaLabel", Change: broken(func(s *site.FlyoutSearch) { s.AriaLabel = "" })},
+		{Want: "site.FlyoutSearch needs a Placeholder", Change: broken(func(s *site.FlyoutSearch) { s.Placeholder = "" })},
+		{Want: "site.FlyoutSearch needs a ClearAriaLabel", Change: broken(func(s *site.FlyoutSearch) { s.ClearAriaLabel = "" })},
+		{Want: "site.FlyoutSearch's Links need their Heading", Change: broken(func(s *site.FlyoutSearch) { s.Links = []site.Link{{Label: "x", Href: "/x"}} })},
+	})
+}
+
+func TestFlyoutBagPanics(t *testing.T) {
+	broken := func(change func(*site.FlyoutBag)) func(*site.GlobalNav) {
+		return func(n *site.GlobalNav) {
+			b := flyoutBag()
+			change(&b)
+			n.Bag = b
+		}
+	}
+	example.Panics(t, func() site.GlobalNav { return navWith(nil, flyoutBag()) }, []example.Break[site.GlobalNav]{
+		{Want: "site.FlyoutBag needs an AriaLabel", Change: broken(func(b *site.FlyoutBag) { b.AriaLabel = "" })},
+		{Want: "site.FlyoutBag needs a Message", Change: broken(func(b *site.FlyoutBag) { b.Message = "" })},
+		{Want: "site.FlyoutBag's Line needs its link's Label and Href", Change: broken(func(b *site.FlyoutBag) { b.Line = &site.BagLine{Label: "", Href: "/x", Rest: ""} })},
+		{Want: "site.FlyoutBag's Line needs its link's Label and Href", Change: broken(func(b *site.FlyoutBag) { b.Line = &site.BagLine{Label: "x", Href: "", Rest: ""} })},
+		{Want: "site.FlyoutBag's Links need their Heading", Change: broken(func(b *site.FlyoutBag) { b.Heading = "" })},
+		{Want: "site.FlyoutBag's Links need their Label and Href", Change: broken(func(b *site.FlyoutBag) { b.Links[0].Label = "" })},
+		{Want: "site.FlyoutBag's Links need their Label and Href", Change: broken(func(b *site.FlyoutBag) { b.Links[0].Href = "" })},
+		{Want: "site.FlyoutBag's Links need their Icon", Change: broken(func(b *site.FlyoutBag) { b.Links[0].Icon = site.BagLinkIcon{} })},
+	})
+}
+
+// a nav with no flyout draws no back button, so writes no word for it
+func TestGlobalNavNoFlyoutNeedsNoMainMenuAriaLabel(t *testing.T) {
+	n := validGlobalNav()
+	n.Text.MainMenuAriaLabel = ""
+	if got := example.Render(n); strings.Contains(got, "cui-globalnav-backbutton") {
+		t.Errorf("got %s", got)
+	}
+}
+
+func TestGlobalNavBagHeadingIsItsLinks(t *testing.T) {
+	n := validGlobalNav()
+	bag := flyoutBag()
+	n.Bag = bag
+	if got := example.Render(n); !strings.Contains(got, `id="cui-globalnav-bagheading">Account</h3>`) {
+		t.Errorf("one link, no heading: %s", got)
+	}
+	bag.Links = nil
+	n.Bag = bag
+	if got := example.Render(n); strings.Contains(got, "cui-globalnav-bagheading") {
+		t.Errorf("no link, a heading: %s", got)
+	}
 }

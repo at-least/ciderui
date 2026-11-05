@@ -5,9 +5,13 @@ package example
 
 import (
 	"fmt"
+	"go/ast"
+	"go/parser"
+	"go/token"
 	"os"
 	"path/filepath"
 	"runtime"
+	"slices"
 	"strings"
 	"testing"
 
@@ -98,4 +102,70 @@ func panicOf(node g.Node) (message string) {
 	}()
 	Render(node)
 	return ""
+}
+
+// PageClass is the Class a ClassRow's Node is given.
+const PageClass = "page-class"
+
+// ClassRow is a part given PageClass, and the classes of its own before it; ""
+// for an element with none.
+type ClassRow struct {
+	Root string
+	Node g.Node
+}
+
+// PagesClass fails t where a row's Node does not write PageClass after its Root,
+// and for each exported struct of the package in dir with a Class field that no
+// row's Node is and nested does not name. A part that drops its Class draws fine,
+// in the wrong place: this stops a new part going without a row. nested: a part
+// only inside another part (that part's row), or one whose Class is its whole
+// class attribute.
+func PagesClass(t testing.TB, dir string, nested []string, rows []ClassRow) {
+	t.Helper()
+	held := slices.Clone(nested)
+	for _, row := range rows {
+		_, name, _ := strings.Cut(fmt.Sprintf("%T", row.Node), ".")
+		held = append(held, name)
+		want := `class="` + strings.TrimSpace(row.Root+" "+PageClass) + `"`
+		if got := Render(row.Node); !strings.Contains(got, want) {
+			t.Errorf("%s: no %s in %s", name, want, got)
+		}
+	}
+	for _, name := range structsWithClass(dir) {
+		if !slices.Contains(held, name) {
+			t.Errorf("%s has a Class and no ClassRow", name)
+		}
+	}
+}
+
+func structsWithClass(dir string) []string {
+	paths, err := filepath.Glob(filepath.Join(dir, "*.go"))
+	if err != nil {
+		panic(err)
+	}
+	var names []string
+	for _, path := range paths {
+		if strings.HasSuffix(path, "_test.go") {
+			continue
+		}
+		file, err := parser.ParseFile(token.NewFileSet(), path, nil, parser.SkipObjectResolution)
+		if err != nil {
+			panic(err)
+		}
+		ast.Inspect(file, func(n ast.Node) bool {
+			spec, ok := n.(*ast.TypeSpec)
+			if !ok || !spec.Name.IsExported() {
+				return true
+			}
+			if fields, ok := spec.Type.(*ast.StructType); ok {
+				for _, field := range fields.Fields.List {
+					if slices.ContainsFunc(field.Names, func(f *ast.Ident) bool { return f.Name == "Class" }) {
+						names = append(names, spec.Name.Name)
+					}
+				}
+			}
+			return true
+		})
+	}
+	return names
 }

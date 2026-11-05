@@ -67,44 +67,6 @@ func TestFooterItsNotesAndShopRenderedOnce(t *testing.T) {
 	}
 }
 
-func TestFooterCopyrightCanBeALink(t *testing.T) {
-	got := example.Render(site.Footer{Notes: nil, NotesAriaLabel: "", Directory: nil, DirectoryAriaLabel: "", Shop: nil, Copyright: h.A(h.Href("https://example.com/"), g.Text("Example Inc.")), Links: nil, Locale: nil, Class: ""})
-	want := `<footer class="cui-footer"><div class="cui-footer-content"><div class="cui-footer-legal"><div class="cui-footer-row"><p class="cui-footer-copyright"><a href="https://example.com/">Example Inc.</a></p></div></div></div></footer>`
-	if got != want {
-		t.Errorf("got %s", got)
-	}
-}
-
-func TestFooterASectionWithNoIDPanics(t *testing.T) {
-	mustPanic(t, "FooterSection needs an ID", func() {
-		example.Render(site.Footer{Notes: nil, NotesAriaLabel: "", Directory: [][]site.FooterSection{{{ID: "", Title: "x", Links: nil}}}, DirectoryAriaLabel: "Directory", Shop: nil, Copyright: g.Text("©"), Links: nil, Locale: nil, Class: ""})
-	})
-}
-
-func TestFooterAnEmptyCopyrightPanics(t *testing.T) {
-	mustPanic(t, "Footer needs a Copyright", func() {
-		example.Render(site.Footer{Notes: nil, NotesAriaLabel: "", Directory: nil, DirectoryAriaLabel: "", Shop: nil, Copyright: nil, Links: nil, Locale: nil, Class: ""})
-	})
-}
-
-func TestFooterASectionWithNoTitlePanics(t *testing.T) {
-	mustPanic(t, "FooterSection needs a Title", func() {
-		example.Render(site.Footer{Notes: nil, NotesAriaLabel: "", Directory: [][]site.FooterSection{{{ID: "x", Title: "", Links: nil}}}, DirectoryAriaLabel: "Directory", Shop: nil, Copyright: g.Text("©"), Links: nil, Locale: nil, Class: ""})
-	})
-}
-
-func TestFooterNotesWithNoAriaLabelPanics(t *testing.T) {
-	mustPanic(t, "site.Footer's Notes need a NotesAriaLabel", func() {
-		example.Render(site.Footer{Notes: g.Text("x"), NotesAriaLabel: "", Directory: nil, DirectoryAriaLabel: "", Shop: nil, Copyright: g.Text("©"), Links: nil, Locale: nil, Class: ""})
-	})
-}
-
-func TestFooterADirectoryWithNoAriaLabelPanics(t *testing.T) {
-	mustPanic(t, "site.Footer's Directory needs a DirectoryAriaLabel", func() {
-		example.Render(site.Footer{Notes: nil, NotesAriaLabel: "", Directory: [][]site.FooterSection{{{ID: "x", Title: "x", Links: nil}}}, DirectoryAriaLabel: "", Shop: nil, Copyright: g.Text("©"), Links: nil, Locale: nil, Class: ""})
-	})
-}
-
 func TestFooterWritesItsWordsInThePagesLanguage(t *testing.T) {
 	got := example.Render(site.Footer{Notes: g.Text("x"), NotesAriaLabel: "附註", Directory: [][]site.FooterSection{{{ID: "x", Title: "x", Links: nil}}}, DirectoryAriaLabel: "網站導覽", Shop: nil, Copyright: g.Text("©"), Links: nil, Locale: nil, Class: ""})
 	for _, want := range []string{`<section class="cui-footer-notes" aria-label="附註">`, `<nav class="cui-footer-directory" aria-label="網站導覽">`} {
@@ -112,4 +74,20 @@ func TestFooterWritesItsWordsInThePagesLanguage(t *testing.T) {
 			t.Errorf("%s has no %s", got, want)
 		}
 	}
+}
+
+func TestFooterPanics(t *testing.T) {
+	example.Panics(t, func() site.Footer {
+		return site.Footer{Notes: nil, NotesAriaLabel: "", Directory: nil, DirectoryAriaLabel: "", Shop: nil, Copyright: g.Text("©"), Links: nil, Locale: nil, Class: ""}
+	}, []example.Break[site.Footer]{
+		{Want: "site.Footer needs a Copyright", Change: func(p *site.Footer) { p.Copyright = nil }},
+		{Want: "site.Footer's Notes need a NotesAriaLabel", Change: func(p *site.Footer) { p.Notes = g.Text("x") }},
+		{Want: "site.Footer's Directory needs a DirectoryAriaLabel", Change: func(p *site.Footer) { p.Directory = [][]site.FooterSection{{{ID: "x", Title: "x", Links: nil}}} }},
+		{Want: "site.FooterSection needs an ID", Change: func(p *site.Footer) {
+			p.DirectoryAriaLabel, p.Directory = "x", [][]site.FooterSection{{{ID: "", Title: "x", Links: nil}}}
+		}},
+		{Want: "site.FooterSection needs a Title", Change: func(p *site.Footer) {
+			p.DirectoryAriaLabel, p.Directory = "x", [][]site.FooterSection{{{ID: "x", Title: "", Links: nil}}}
+		}},
+	})
 }

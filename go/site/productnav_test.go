@@ -25,40 +25,30 @@ func TestProductNavRendersTheExample(t *testing.T) {
 	}}, "site/productnav/examples/productnav.html")
 }
 
-func productNavOf(item site.ProductNavItem) site.ProductNav {
-	return site.ProductNav{ID: "p", AriaLabel: "Products", Paddles: nil, Class: "", Items: []site.ProductNavItem{item}}
+func validProductNav() site.ProductNav {
+	return site.ProductNav{ID: "p", AriaLabel: "Products", Paddles: nil, Class: "", Items: []site.ProductNavItem{{Href: "/x", Name: "x", Class: "", Children: g.Text("x")}}}
 }
 
-func TestProductNavItemAnEmptyNamePanics(t *testing.T) {
-	mustPanic(t, "needs a Name", func() {
-		example.Render(productNavOf(site.ProductNavItem{Href: "/x", Name: "", Class: "", Children: g.Text("x")}))
+func TestProductNavPanics(t *testing.T) {
+	example.Panics(t, validProductNav, []example.Break[site.ProductNav]{
+		{Want: "site.ProductNav needs an ID", Change: func(p *site.ProductNav) { p.ID = "" }},
+		{Want: "site.ProductNav needs an AriaLabel", Change: func(p *site.ProductNav) { p.AriaLabel = "" }},
+		{Want: "site.ProductNavItem needs a Name", Change: func(p *site.ProductNav) { p.Items[0].Name = "" }},
+		{Want: "site.ProductNav's Paddles need a PreviousAriaLabel", Change: func(p *site.ProductNav) { p.Paddles = &site.Paddles{PreviousAriaLabel: "", NextAriaLabel: "x"} }},
+		{Want: "site.ProductNav's Paddles need a NextAriaLabel", Change: func(p *site.ProductNav) { p.Paddles = &site.Paddles{PreviousAriaLabel: "x", NextAriaLabel: ""} }},
 	})
 }
 
-func TestProductNavItemTakesThePagesUtilities(t *testing.T) {
-	got := example.Render(productNavOf(site.ProductNavItem{Href: "/x", Name: "x", Class: "hidden", Children: g.Text("x")}))
-	if !strings.Contains(got, `<li class="hidden"><a class="cui-productnav-item"`) {
-		t.Errorf("got %s", got)
+func TestProductNavPaddlesControlItsRow(t *testing.T) {
+	nav := validProductNav()
+	nav.Paddles = &site.Paddles{PreviousAriaLabel: "Previous", NextAriaLabel: "Next"}
+	got := example.Render(nav)
+	for _, want := range []string{
+		`<button class="cui-gallery-paddle cui-shelf-paddle" type="button" aria-controls="p" aria-label="Previous" disabled>`,
+		`<button class="cui-gallery-paddle cui-shelf-paddle" type="button" aria-controls="p" aria-label="Next">`,
+	} {
+		if !strings.Contains(got, want) {
+			t.Errorf("no %s in %s", want, got)
+		}
 	}
-}
-
-func TestProductNavAnEmptyIDPanics(t *testing.T) {
-	mustPanic(t, "ProductNav needs an ID", func() {
-		example.Render(site.ProductNav{ID: "", AriaLabel: "Products", Paddles: nil, Class: "", Items: nil})
-	})
-}
-
-func TestProductNavAnEmptyAriaLabelPanics(t *testing.T) {
-	mustPanic(t, "ProductNav needs an AriaLabel", func() {
-		example.Render(site.ProductNav{ID: "p", AriaLabel: "", Paddles: nil, Class: "", Items: nil})
-	})
-}
-
-func TestProductNavPaddlesNeedTheirWords(t *testing.T) {
-	mustPanic(t, "site.ProductNav's Paddles need a PreviousAriaLabel", func() {
-		example.Render(site.ProductNav{ID: "p", AriaLabel: "x", Paddles: &site.Paddles{PreviousAriaLabel: "", NextAriaLabel: "x"}, Class: "", Items: nil})
-	})
-	mustPanic(t, "site.ProductNav's Paddles need a NextAriaLabel", func() {
-		example.Render(site.ProductNav{ID: "p", AriaLabel: "x", Paddles: &site.Paddles{PreviousAriaLabel: "x", NextAriaLabel: ""}, Class: "", Items: nil})
-	})
 }

@@ -36,23 +36,13 @@ func TestShelfNoSubheadNoSpace(t *testing.T) {
 	}
 }
 
-func TestShelfAnEmptyIDPanics(t *testing.T) {
-	mustPanic(t, "needs an ID", func() {
-		example.Render(site.Shelf{ID: "", Headline: "x", Subhead: "", Paddles: nil, Class: "", Items: nil})
-	})
-}
-
-func TestShelfAnEmptyHeadlinePanics(t *testing.T) {
-	mustPanic(t, "needs a Headline", func() {
-		example.Render(site.Shelf{ID: "x", Headline: "", Subhead: "", Paddles: nil, Class: "", Items: nil})
-	})
-}
-
-func TestShelfPaddlesNeedTheirWords(t *testing.T) {
-	mustPanic(t, "site.Shelf's Paddles need a PreviousAriaLabel", func() {
-		example.Render(site.Shelf{ID: "x", Headline: "x", Subhead: "", Paddles: &site.Paddles{PreviousAriaLabel: "", NextAriaLabel: "x"}, Class: "", Items: nil})
-	})
-	mustPanic(t, "site.Shelf's Paddles need a NextAriaLabel", func() {
-		example.Render(site.Shelf{ID: "x", Headline: "x", Subhead: "", Paddles: &site.Paddles{PreviousAriaLabel: "x", NextAriaLabel: ""}, Class: "", Items: nil})
+func TestShelfPanics(t *testing.T) {
+	example.Panics(t, func() site.Shelf {
+		return site.Shelf{ID: "x", Headline: "x", Subhead: "", Paddles: nil, Class: "", Items: nil}
+	}, []example.Break[site.Shelf]{
+		{Want: "site.Shelf needs an ID", Change: func(p *site.Shelf) { p.ID = "" }},
+		{Want: "site.Shelf needs a Headline", Change: func(p *site.Shelf) { p.Headline = "" }},
+		{Want: "site.Shelf's Paddles need a PreviousAriaLabel", Change: func(p *site.Shelf) { p.Paddles = &site.Paddles{PreviousAriaLabel: "", NextAriaLabel: "x"} }},
+		{Want: "site.Shelf's Paddles need a NextAriaLabel", Change: func(p *site.Shelf) { p.Paddles = &site.Paddles{PreviousAriaLabel: "x", NextAriaLabel: ""} }},
 	})
 }

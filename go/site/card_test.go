@@ -13,23 +13,20 @@ func TestCardRendersTheExamples(t *testing.T) {
 	example.Check(t, site.Card{Href: "/shop/specialist/", Media: nil, Eyebrow: "EXPERT HELP", Headline: "Talk it through with an expert.", Description: "", Price: "", Class: ""}, "site/card/examples/eyebrow.html")
 }
 
-func TestCardWritesItsPictureAndThePagesUtilities(t *testing.T) {
+func TestCardWritesItsPicture(t *testing.T) {
 	media := h.Img(h.Class("cui-card-media"), h.Src("/phone.jpg"), h.Alt(""))
-	got := example.Render(site.Card{Href: "/phone/", Media: media, Eyebrow: "", Headline: "Cider Phone", Description: "", Price: "", Class: "w-full"})
-	want := `<div class="cui-card w-full"><img class="cui-card-media" src="/phone.jpg" alt=""><div class="cui-card-content"><h3 class="cui-card-headline"><a class="cui-card-link" href="/phone/">Cider Phone</a></h3></div></div>`
+	got := example.Render(site.Card{Href: "/phone/", Media: media, Eyebrow: "", Headline: "Cider Phone", Description: "", Price: "", Class: ""})
+	want := `<div class="cui-card"><img class="cui-card-media" src="/phone.jpg" alt=""><div class="cui-card-content"><h3 class="cui-card-headline"><a class="cui-card-link" href="/phone/">Cider Phone</a></h3></div></div>`
 	if got != want {
 		t.Errorf("got %s", got)
 	}
 }
 
-func TestCardAnEmptyHeadlinePanics(t *testing.T) {
-	mustPanic(t, "needs a Headline", func() {
-		example.Render(site.Card{Href: "/x/", Media: nil, Eyebrow: "", Headline: "", Description: "", Price: "", Class: ""})
-	})
-}
-
-func TestCardAnEmptyHrefPanics(t *testing.T) {
-	mustPanic(t, "site.Card needs an Href", func() {
-		example.Render(site.Card{Href: "", Media: nil, Eyebrow: "", Headline: "x", Description: "", Price: "", Class: ""})
+func TestCardPanics(t *testing.T) {
+	example.Panics(t, func() site.Card {
+		return site.Card{Href: "/x/", Media: nil, Eyebrow: "", Headline: "x", Description: "", Price: "", Class: ""}
+	}, []example.Break[site.Card]{
+		{Want: "site.Card needs a Headline", Change: func(p *site.Card) { p.Headline = "" }},
+		{Want: "site.Card needs an Href", Change: func(p *site.Card) { p.Href = "" }},
 	})
 }

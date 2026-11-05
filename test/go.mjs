@@ -29,4 +29,10 @@ try {
 } finally {
   rmSync(written, { recursive: true });
 }
+// a part's every branch has a test: a new panic with no Break, or a new
+// branch no example draws, stops here
+const covered = execFileSync('go', ['test', '-cover', './go/site', './go/console'], { cwd: ROOT, encoding: 'utf8' });
+for (const line of covered.trim().split('\n')) {
+  if (!line.includes('coverage: 100.0% of statements')) throw new Error(`a statement no test runs (go test -coverprofile): ${line}`);
+}
 console.log('go: gofmt, vet, exhaustruct and tests clean');

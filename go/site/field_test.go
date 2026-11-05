@@ -1,14 +1,12 @@
 package site_test
 
 import (
-	"fmt"
 	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/internal/example"
 	"github.com/at-least/ciderui/go/internal/glyph"
 	"github.com/at-least/ciderui/go/site"
-	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
 
@@ -27,26 +25,6 @@ func TestFieldRendersTheExamples(t *testing.T) {
 	example.Check(t, site.Select{ID: "model", Name: "model", Label: "Choose your model", Placeholder: "Select", Options: models, Selected: "", Error: "", Attrs: nil, Class: ""}, "site/field/examples/select.html")
 	example.Check(t, site.Select{ID: "model", Name: "model", Label: "Choose your model", Placeholder: "Select", Options: models, Selected: "phone-3", Error: "", Attrs: nil, Class: ""}, "site/field/examples/selected.html")
 	example.Check(t, site.TextArea{ID: "comments", Name: "comments", Label: "Comments", Value: "", Error: "", Attrs: nil, Class: ""}, "site/field/examples/textarea.html")
-}
-
-func TestFieldNoAutocompleteNoAttribute(t *testing.T) {
-	got := example.Render(site.Field{ID: "code", Type: "text", Name: "code", Label: "Promo Code", Autocomplete: "", Value: "", Help: "", Error: "", Prefix: "", Attrs: nil, Class: "mt-4"})
-	want := `<div class="cui-field mt-4"><input class="cui-field-input" id="code" type="text" name="code" placeholder=" "><label class="cui-field-label" for="code">Promo Code</label></div>`
-	if got != want {
-		t.Errorf("got %s", got)
-	}
-}
-
-func TestFieldAPrefixAndAnErrorBothDescribeIt(t *testing.T) {
-	got := example.Render(site.Field{ID: "phone", Type: "tel", Name: "phone", Label: "Phone Number", Autocomplete: "tel", Value: "", Help: "", Error: "Please enter a valid phone number.", Prefix: "+1", Attrs: nil, Class: ""})
-	for _, want := range []string{
-		`aria-invalid="true" aria-describedby="phone-prefix phone-message">`,
-		`<span class="cui-field-prefix" id="phone-prefix">+1</span></div><p class="cui-field-message" id="phone-message">`,
-	} {
-		if !strings.Contains(got, want) {
-			t.Errorf("%s has no %s", got, want)
-		}
-	}
 }
 
 func TestSelectsErrorAndDisabled(t *testing.T) {
@@ -73,109 +51,6 @@ func TestTextAreasFirstNewlineKept(t *testing.T) {
 	}
 }
 
-func mustPanic(t *testing.T, want string, render func()) {
-	t.Helper()
-	defer func() {
-		r := recover()
-		if r == nil || !strings.Contains(fmt.Sprint(r), want) {
-			t.Errorf("panicked with %v, want %q", r, want)
-		}
-	}()
-	render()
-}
-
-func TestFieldAnEmptyLabelPanics(t *testing.T) {
-	mustPanic(t, "needs a Label", func() {
-		example.Render(site.Field{ID: "x", Type: "text", Name: "x", Label: "", Autocomplete: "", Value: "", Help: "", Error: "", Prefix: "", Attrs: nil, Class: ""})
-	})
-}
-
-func TestSelectASelectedValueNoOptionHasPanics(t *testing.T) {
-	mustPanic(t, "none of its Options", func() {
-		example.Render(site.Select{ID: "m", Name: "m", Label: "Model", Placeholder: "Select", Options: models, Selected: "phone-1", Error: "", Attrs: nil, Class: ""})
-	})
-}
-
-func TestSelectAnOptionWithNoValuePanics(t *testing.T) {
-	mustPanic(t, "need values", func() {
-		example.Render(site.Select{ID: "m", Name: "m", Label: "Model", Placeholder: "Select", Options: []site.Option{{Value: "", Label: "None"}}, Selected: "", Error: "", Attrs: nil, Class: ""})
-	})
-}
-
-func TestFieldAnEmptyIDPanics(t *testing.T) {
-	mustPanic(t, "Field needs an ID", func() {
-		example.Render(site.Field{ID: "", Type: "text", Name: "x", Label: "x", Autocomplete: "", Value: "", Help: "", Error: "", Prefix: "", Attrs: nil, Class: ""})
-	})
-}
-
-func TestSelectAnEmptyIDPanics(t *testing.T) {
-	mustPanic(t, "Select needs an ID", func() {
-		example.Render(site.Select{ID: "", Name: "m", Label: "Model", Placeholder: "Select", Options: models, Selected: "", Error: "", Attrs: nil, Class: ""})
-	})
-}
-
-func TestSelectAnEmptyLabelPanics(t *testing.T) {
-	mustPanic(t, "Select needs a Label", func() {
-		example.Render(site.Select{ID: "m", Name: "m", Label: "", Placeholder: "Select", Options: models, Selected: "", Error: "", Attrs: nil, Class: ""})
-	})
-}
-
-func TestSelectNoOptionsPanics(t *testing.T) {
-	mustPanic(t, "Select needs Options", func() {
-		example.Render(site.Select{ID: "m", Name: "m", Label: "Model", Placeholder: "Select", Options: nil, Selected: "", Error: "", Attrs: nil, Class: ""})
-	})
-}
-
-func TestTextAreaAnEmptyIDPanics(t *testing.T) {
-	mustPanic(t, "TextArea needs an ID", func() {
-		example.Render(site.TextArea{ID: "", Name: "note", Label: "Message", Value: "", Error: "", Attrs: nil, Class: ""})
-	})
-}
-
-func TestTextAreaAnEmptyLabelPanics(t *testing.T) {
-	mustPanic(t, "TextArea needs a Label", func() {
-		example.Render(site.TextArea{ID: "note", Name: "note", Label: "", Value: "", Error: "", Attrs: nil, Class: ""})
-	})
-}
-
-// htmx's attributes, inputmode, pattern and required go on the control itself
-func TestEachControlTakesAttrs(t *testing.T) {
-	attrs := g.Group{g.Attr("hx-post", "/check"), g.Attr("hx-trigger", "change"), h.Required()}
-	for got, want := range map[string]string{
-		example.Render(site.Field{ID: "code", Type: "text", Name: "code", Label: "Code", Autocomplete: "", Value: "", Help: "", Error: "", Prefix: "", Attrs: g.Group{attrs, h.InputMode("numeric"), h.Pattern("[0-9]{6}")}, Class: ""}): `<input class="cui-field-input" id="code" type="text" name="code" placeholder=" " hx-post="/check" hx-trigger="change" required inputmode="numeric" pattern="[0-9]{6}">`,
-		example.Render(site.Select{ID: "state", Name: "state", Label: "State", Placeholder: "Select", Options: []site.Option{{Value: "CA", Label: "California"}}, Selected: "", Error: "", Attrs: attrs, Class: ""}):                     `<select class="cui-field-input" id="state" name="state" hx-post="/check" hx-trigger="change" required><option value="" selected>`,
-		example.Render(site.TextArea{ID: "note", Name: "note", Label: "Message", Value: "Hi", Error: "", Attrs: attrs, Class: ""}):                                                                                                       `<textarea class="cui-field-textarea" id="note" name="note" placeholder=" " hx-post="/check" hx-trigger="change" required>Hi</textarea>`,
-	} {
-		if !strings.Contains(got, want) {
-			t.Errorf("%s has no %s", got, want)
-		}
-	}
-}
-
-func TestFieldAnEmptyNamePanics(t *testing.T) {
-	mustPanic(t, "site.Field needs a Name", func() {
-		example.Render(site.Field{ID: "x", Type: "text", Name: "", Label: "x", Autocomplete: "", Value: "", Help: "", Error: "", Prefix: "", Attrs: nil, Class: ""})
-	})
-}
-
-func TestSelectAnEmptyNamePanics(t *testing.T) {
-	mustPanic(t, "site.Select needs a Name", func() {
-		example.Render(site.Select{ID: "x", Name: "", Label: "x", Placeholder: "Select", Options: models, Selected: "", Error: "", Attrs: nil, Class: ""})
-	})
-}
-
-func TestTextAreaAnEmptyNamePanics(t *testing.T) {
-	mustPanic(t, "site.TextArea needs a Name", func() {
-		example.Render(site.TextArea{ID: "x", Name: "", Label: "x", Value: "", Error: "", Attrs: nil, Class: ""})
-	})
-}
-
-func TestSelectAnEmptyPlaceholderPanics(t *testing.T) {
-	mustPanic(t, "site.Select needs a Placeholder", func() {
-		example.Render(site.Select{ID: "x", Name: "x", Label: "x", Placeholder: "", Options: models, Selected: "", Error: "", Attrs: nil, Class: ""})
-	})
-}
-
 func TestSelectWritesItsPlaceholderInThePagesLanguage(t *testing.T) {
 	got := example.Render(site.Select{ID: "x", Name: "x", Label: "x", Placeholder: "請選擇", Options: models, Selected: "", Error: "", Attrs: nil, Class: ""})
 	if !strings.Contains(got, `<option value="" selected>請選擇</option>`) {
@@ -197,4 +72,38 @@ func TestFieldItsPrefixHelpAndErrorAllDescribeIt(t *testing.T) {
 			t.Errorf("%s has no %s", got, want)
 		}
 	}
+}
+
+func TestFieldPanics(t *testing.T) {
+	example.Panics(t, func() site.Field {
+		return site.Field{ID: "x", Type: "text", Name: "x", Label: "x", Autocomplete: "", Value: "", Help: "", Error: "", Prefix: "", Attrs: nil, Class: ""}
+	}, []example.Break[site.Field]{
+		{Want: "site.Field needs an ID", Change: func(p *site.Field) { p.ID = "" }},
+		{Want: "site.Field needs a Name", Change: func(p *site.Field) { p.Name = "" }},
+		{Want: "site.Field needs a Label", Change: func(p *site.Field) { p.Label = "" }},
+	})
+}
+
+func TestSelectPanics(t *testing.T) {
+	example.Panics(t, func() site.Select {
+		return site.Select{ID: "x", Name: "x", Label: "x", Placeholder: "x", Options: []site.Option{{Value: "a", Label: "A"}}, Selected: "", Error: "", Attrs: nil, Class: ""}
+	}, []example.Break[site.Select]{
+		{Want: "site.Select needs an ID", Change: func(p *site.Select) { p.ID = "" }},
+		{Want: "site.Select needs a Name", Change: func(p *site.Select) { p.Name = "" }},
+		{Want: "site.Select needs a Label", Change: func(p *site.Select) { p.Label = "" }},
+		{Want: "site.Select needs a Placeholder", Change: func(p *site.Select) { p.Placeholder = "" }},
+		{Want: "site.Select needs Options", Change: func(p *site.Select) { p.Options = nil }},
+		{Want: "site.Select's Options need values: the empty one is its empty choice's", Change: func(p *site.Select) { p.Options[0].Value = "" }},
+		{Want: "site.Select's Selected value is none of its Options'", Change: func(p *site.Select) { p.Selected = "b" }},
+	})
+}
+
+func TestTextAreaPanics(t *testing.T) {
+	example.Panics(t, func() site.TextArea {
+		return site.TextArea{ID: "x", Name: "x", Label: "x", Value: "", Error: "", Attrs: nil, Class: ""}
+	}, []example.Break[site.TextArea]{
+		{Want: "site.TextArea needs an ID", Change: func(p *site.TextArea) { p.ID = "" }},
+		{Want: "site.TextArea needs a Name", Change: func(p *site.TextArea) { p.Name = "" }},
+		{Want: "site.TextArea needs a Label", Change: func(p *site.TextArea) { p.Label = "" }},
+	})
 }

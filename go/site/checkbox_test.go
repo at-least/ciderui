@@ -14,27 +14,19 @@ func TestCheckboxRendersTheExamples(t *testing.T) {
 	example.Check(t, site.Checkbox{ID: "terms", Name: "terms", Label: "I agree to the terms", Checked: true, Attrs: nil, Class: ""}, "site/checkbox/examples/checked.html")
 }
 
-func TestCheckboxAnEmptyLabelPanics(t *testing.T) {
-	mustPanic(t, "needs a Label", func() {
-		example.Render(site.Checkbox{ID: "x", Name: "x", Label: "", Checked: false, Attrs: nil, Class: ""})
-	})
-}
-
-func TestCheckboxAnEmptyIDPanics(t *testing.T) {
-	mustPanic(t, "Checkbox needs an ID", func() {
-		example.Render(site.Checkbox{ID: "", Name: "x", Label: "x", Checked: false, Attrs: nil, Class: ""})
-	})
-}
-
-func TestCheckboxAnEmptyNamePanics(t *testing.T) {
-	mustPanic(t, "site.Checkbox needs a Name", func() {
-		example.Render(site.Checkbox{ID: "x", Name: "", Label: "x", Checked: false, Attrs: nil, Class: ""})
-	})
-}
-
 func TestCheckboxAttrsGoOnItsInput(t *testing.T) {
 	got := example.Render(site.Checkbox{ID: "x", Name: "x", Label: "x", Checked: true, Attrs: h.Disabled(), Class: ""})
 	if !strings.Contains(got, `<input class="cui-checkbox-input" type="checkbox" id="x" name="x" checked disabled>`) {
 		t.Errorf("got %s", got)
 	}
+}
+
+func TestCheckboxPanics(t *testing.T) {
+	example.Panics(t, func() site.Checkbox {
+		return site.Checkbox{ID: "x", Name: "x", Label: "x", Checked: false, Attrs: nil, Class: ""}
+	}, []example.Break[site.Checkbox]{
+		{Want: "site.Checkbox needs an ID", Change: func(p *site.Checkbox) { p.ID = "" }},
+		{Want: "site.Checkbox needs a Name", Change: func(p *site.Checkbox) { p.Name = "" }},
+		{Want: "site.Checkbox needs a Label", Change: func(p *site.Checkbox) { p.Label = "" }},
+	})
 }

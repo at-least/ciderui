@@ -1,7 +1,6 @@
 package site_test
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/at-least/ciderui/go/site"
@@ -58,17 +57,16 @@ func ExampleGallery() {
 	// Output: <div class="cui-gallery"><ul class="cui-gallery-scroller" id="camera"><li id="camera-1">One</li><li id="camera-2">Two</li></ul><ul class="cui-gallery-dots"><li><a class="cui-gallery-dot" href="#camera-1" aria-label="Item 1" aria-current="true"></a></li><li><a class="cui-gallery-dot" href="#camera-2" aria-label="Item 2"></a></li></ul></div>
 }
 
-func ExampleNavLink() {
+// the sealed variants, as a page writes them; nothing to compare: the examples of
+// components/site/globalnav/ are this markup's
+func ExampleGlobalNav_flyouts() {
 	laptops := []site.FlyoutGroup{{Heading: "Laptops", Large: []site.Link{{Label: "All Laptops", Href: "/laptops"}}, Links: []site.Link{{Label: "Compare Models", Href: "/laptops/compare"}}}}
-	links := []site.NavLink{{Label: "Store", Href: "/store", Action: nil}, {Label: "Laptops", Href: "/laptops", Action: site.NavFlyout{Groups: laptops, AriaLabel: "Laptops menu"}}}
-	fmt.Println(links[1].Label)
-	// Output: Laptops
-}
-
-func ExampleBagLink() {
-	orders := site.BagLink{Icon: site.BagLinkIconOrders, Label: "Orders", Href: "/orders"}
-	fmt.Println(orders.Label)
-	// Output: Orders
+	_ = []site.NavLink{
+		{Label: "Laptops", Href: "/laptops", Action: site.NavFlyout{Groups: laptops, AriaLabel: "Laptops menu"}},
+		{Label: "Sign Out", Href: "/signout", Action: site.NavPost{}},
+	}
+	_ = site.FlyoutSearch{Action: "/search", AriaLabel: "Search", Placeholder: "Search", ClearAriaLabel: "Clear search", Heading: "", Links: nil}
+	_ = site.FlyoutBag{AriaLabel: "Bag", Message: "Nothing here yet.", Line: nil, Heading: "Account", Links: []site.BagLink{{Icon: site.BagLinkIconOrders, Label: "Orders", Href: "/orders"}}}
 }
 
 func ExampleGlobalNav() {

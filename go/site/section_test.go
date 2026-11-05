@@ -1,7 +1,6 @@
 package site_test
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/internal/example"
@@ -27,29 +26,10 @@ func TestSectionHeaderWithoutLinksHasNoList(t *testing.T) {
 	}
 }
 
-func TestSectionTakesThePagesUtilities(t *testing.T) {
-	got := example.Render(site.Section{Alt: false, Large: false, Class: "pt-0", Children: g.Text("x")})
-	if !strings.HasPrefix(got, `<section class="cui-section pt-0">`) {
-		t.Errorf("got %s", got)
-	}
-}
-
-func TestSectionHeaderAnEmptyHeadlinePanics(t *testing.T) {
-	mustPanic(t, "needs a Headline", func() {
-		example.Render(site.SectionHeader{Headline: "", Links: nil, Class: ""})
+func TestSectionHeaderPanics(t *testing.T) {
+	example.Panics(t, func() site.SectionHeader {
+		return site.SectionHeader{Headline: "x", Links: nil, Class: ""}
+	}, []example.Break[site.SectionHeader]{
+		{Want: "site.SectionHeader needs a Headline", Change: func(p *site.SectionHeader) { p.Headline = "" }},
 	})
-}
-
-func TestSectionHeaderTakesThePagesUtilities(t *testing.T) {
-	got := example.Render(site.SectionHeader{Headline: "x", Links: nil, Class: "mb-0"})
-	if !strings.HasPrefix(got, `<header class="cui-section-header mb-0">`) {
-		t.Errorf("got %s", got)
-	}
-}
-
-func TestSectionAltAndLargeThenThePagesUtilities(t *testing.T) {
-	got := example.Render(site.Section{Alt: true, Large: true, Class: "cui-dark", Children: g.Text("x")})
-	if !strings.HasPrefix(got, `<section class="cui-section cui-dark" data-variant="alt" data-size="lg">`) {
-		t.Errorf("got %s", got)
-	}
 }

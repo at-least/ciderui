@@ -3,6 +3,8 @@ package example
 import (
 	"fmt"
 	"io"
+	"os"
+	"path/filepath"
 	"testing"
 
 	"github.com/at-least/ciderui"
@@ -87,5 +89,38 @@ func TestPanics(t *testing.T) {
 	Panics(&r, func() part { return part{name: ""} }, nil)
 	if r.failures != 1 {
 		t.Errorf("a valid part that panics: %d failures, want 1", r.failures)
+	}
+}
+
+type classed struct{ Class string }
+
+func (c classed) Render(w io.Writer) error {
+	return h.P(g.If(c.Class != "drop", g.Attr("class", "cui-skip "+c.Class))).Render(w)
+}
+
+func TestPagesClass(t *testing.T) {
+	dir := t.TempDir()
+	source := "package p\n\ntype Classed struct{ Class string }\n\ntype hidden struct{ Class string }\n\ntype Plain struct{ Name string }\n"
+	if err := os.WriteFile(filepath.Join(dir, "p.go"), []byte(source), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	// %T names this package's type example.classed, not p.Classed: nested stands in
+	writes := ClassRow{Root: "cui-skip", Node: classed{Class: PageClass}}
+	drops := ClassRow{Root: "cui-skip", Node: classed{Class: "drop"}}
+	for _, c := range []struct {
+		name     string
+		nested   []string
+		rows     []ClassRow
+		failures int
+	}{
+		{"each struct held", []string{"Classed"}, []ClassRow{writes}, 0},
+		{"a part that drops it", []string{"Classed"}, []ClassRow{drops}, 1},
+		{"a struct with no row", nil, []ClassRow{writes}, 1},
+	} {
+		var r recorder
+		PagesClass(&r, dir, c.nested, c.rows)
+		if r.failures != c.failures {
+			t.Errorf("%s: %d failures, want %d", c.name, r.failures, c.failures)
+		}
 	}
 }

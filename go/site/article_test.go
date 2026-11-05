@@ -26,17 +26,27 @@ func TestArticleNoEyebrowAndNoSubheadWriteNothing(t *testing.T) {
 	}
 }
 
-func TestArticleAnEmptyHeadlinePanics(t *testing.T) {
-	mustPanic(t, "needs a Headline", func() {
-		example.Render(site.Article{Category: "", Date: nil, Headline: "", Subhead: "", Body: nil, Class: ""})
+func TestArticlePanics(t *testing.T) {
+	example.Panics(t, func() site.Article {
+		return site.Article{Category: "", Date: nil, Headline: "x", Subhead: "", Body: nil, Class: ""}
+	}, []example.Break[site.Article]{
+		{Want: "site.Article needs a Headline", Change: func(p *site.Article) { p.Headline = "" }},
+		{Want: "site.Date needs a Datetime", Change: func(p *site.Article) { p.Date = &site.Date{Datetime: "", Text: "Today"} }},
+		{Want: "site.Date needs a Text", Change: func(p *site.Article) { p.Date = &site.Date{Datetime: "2026-10-19", Text: ""} }},
 	})
 }
 
-func TestDateNeedsBothItsWords(t *testing.T) {
-	mustPanic(t, "site.Date needs a Datetime", func() {
-		example.Render(site.Article{Category: "", Date: &site.Date{Datetime: "", Text: "Today"}, Headline: "x", Subhead: "", Body: nil, Class: ""})
-	})
-	mustPanic(t, "site.Date needs a Text", func() {
-		example.Render(site.Article{Category: "", Date: &site.Date{Datetime: "2026-10-19", Text: ""}, Headline: "x", Subhead: "", Body: nil, Class: ""})
-	})
+func TestArticleEyebrowOfACategoryOrADateAlone(t *testing.T) {
+	date := &site.Date{Datetime: "2026-10-19", Text: "Today"}
+	for _, c := range []struct {
+		article site.Article
+		want    string
+	}{
+		{site.Article{Category: "Update", Date: nil, Headline: "x", Subhead: "", Body: nil, Class: ""}, `<p class="cui-article-eyebrow"><span class="cui-article-category">Update</span></p>`},
+		{site.Article{Category: "", Date: date, Headline: "x", Subhead: "", Body: nil, Class: ""}, `<p class="cui-article-eyebrow"><time class="cui-article-date" datetime="2026-10-19">Today</time></p>`},
+	} {
+		if got := example.Render(c.article); !strings.Contains(got, c.want) {
+			t.Errorf("no %s in %s", c.want, got)
+		}
+	}
 }

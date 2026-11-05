@@ -12,8 +12,17 @@ func TestStatRendersTheExamples(t *testing.T) {
 	example.Check(t, site.Stat{Large: true, Before: "Charges up to", Value: "3x faster", After: "than before", Class: ""}, "site/stat/examples/large.html")
 }
 
-func TestStatAnEmptyValuePanics(t *testing.T) {
-	mustPanic(t, "needs a Value", func() {
-		example.Render(site.Stat{Large: false, Before: "", Value: "", After: "", Class: ""})
+func TestStatPanics(t *testing.T) {
+	example.Panics(t, func() site.Stat {
+		return site.Stat{Large: false, Before: "", Value: "x", After: "", Class: ""}
+	}, []example.Break[site.Stat]{
+		{Want: "site.Stat needs a Value", Change: func(p *site.Stat) { p.Value = "" }},
 	})
+}
+
+func TestStatOfAValueAlone(t *testing.T) {
+	got := example.Render(site.Stat{Large: false, Before: "", Value: "x", After: "", Class: ""})
+	if want := `<p class="cui-stat"><span class="cui-stat-value">x</span></p>`; got != want {
+		t.Errorf("got %s", got)
+	}
 }

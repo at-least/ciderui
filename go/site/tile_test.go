@@ -1,7 +1,6 @@
 package site_test
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/internal/example"
@@ -22,23 +21,21 @@ func TestTileRendersTheExamples(t *testing.T) {
 	}, "site/tile/examples/hero.html")
 }
 
-func TestTileAnEmptyHeadlinePanics(t *testing.T) {
-	mustPanic(t, "needs a Headline", func() {
-		example.Render(site.Tile{Large: false, Rounded: true, Link: nil, Media: nil, Headline: "", Subhead: "", Callout: "", Class: "", Children: g.Text("x")})
+func TestTilePanics(t *testing.T) {
+	example.Panics(t, func() site.Tile {
+		return site.Tile{Large: false, Rounded: false, Link: nil, Media: nil, Headline: "x", Subhead: "", Callout: "", Class: "", Children: g.Text("x")}
+	}, []example.Break[site.Tile]{
+		{Want: "site.Tile needs a Headline", Change: func(p *site.Tile) { p.Headline = "" }},
+		{Want: "site.Tile's Link needs its Label and Href", Change: func(p *site.Tile) { p.Link = &site.Link{Label: "", Href: "/x/"} }},
+		{Want: "site.Tile's Link needs its Label and Href", Change: func(p *site.Tile) { p.Link = &site.Link{Label: "x", Href: ""} }},
 	})
 }
 
-func TestTileTakesThePagesUtilities(t *testing.T) {
-	got := example.Render(site.Tile{Large: false, Rounded: true, Link: nil, Media: nil, Headline: "x", Subhead: "", Callout: "", Class: "min-h-0", Children: g.Text("x")})
-	if !strings.HasPrefix(got, `<div class="cui-tile cui-tile-rounded min-h-0">`) {
-		t.Errorf("got %s", got)
-	}
-}
-
-func TestTileAnEmptyLinkPanics(t *testing.T) {
-	for _, link := range []site.Link{{Label: "", Href: "/x/"}, {Label: "x", Href: ""}} {
-		mustPanic(t, "site.Tile's Link needs its Label and Href", func() {
-			example.Render(site.Tile{Large: false, Rounded: false, Link: &link, Media: nil, Headline: "x", Subhead: "", Callout: "", Class: "", Children: g.Text("x")})
-		})
+func TestTileRoundedWithAPictureAndNoSubhead(t *testing.T) {
+	media := h.Img(h.Src("/a.png"), h.Alt(""))
+	got := example.Render(site.Tile{Large: false, Rounded: true, Link: nil, Media: media, Headline: "x", Subhead: "", Callout: "", Class: "", Children: g.Text("y")})
+	want := `<div class="cui-tile cui-tile-rounded"><img src="/a.png" alt=""><div class="cui-tile-content"><h2 class="cui-tile-headline">x</h2><div class="cui-tile-ctas">y</div></div></div>`
+	if got != want {
+		t.Errorf("got  %s\nwant %s", got, want)
 	}
 }
