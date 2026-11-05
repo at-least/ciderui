@@ -42,7 +42,7 @@ func ExampleCheckbox() {
 
 func ExampleFooter() {
 	directory := [][]site.FooterSection{{{ID: "f-shop", Title: "Shop", Links: []site.Link{{Text: "Store", Href: "/store/"}}}}}
-	page := site.Footer{Notes: nil, Directory: directory, Shop: nil, Copyright: "Copyright © 2026 Example Inc.", Links: []site.Link{{Text: "Privacy Policy", Href: "/privacy/"}}, Locale: nil, Class: ""}
+	page := site.Footer{Notes: nil, Directory: directory, Shop: nil, Copyright: g.Text("Copyright © 2026 Example Inc."), Links: []site.Link{{Text: "Privacy Policy", Href: "/privacy/"}}, Locale: nil, Class: ""}
 	_ = page.Render(os.Stdout)
 	// Output: <footer class="cui-footer"><div class="cui-footer-content"><nav class="cui-footer-directory" aria-label="Directory"><div class="cui-footer-column"><div class="cui-footer-section"><input class="cui-footer-toggle" type="checkbox" id="f-shop"><h3 class="cui-footer-title"><label for="f-shop">Shop<svg aria-hidden="true" width="11" height="6" viewBox="0 0 11 6"><path d="M10.075.675 5.5 5.323.925.675" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></label></h3><ul class="cui-footer-list"><li><a href="/store/">Store</a></li></ul></div></div></nav><div class="cui-footer-legal"><div class="cui-footer-row"><p class="cui-footer-copyright">Copyright © 2026 Example Inc.</p><ul class="cui-footer-links"><li><a href="/privacy/">Privacy Policy</a></li></ul></div></div></div></footer>
 }
