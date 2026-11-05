@@ -20,14 +20,15 @@ type Footer struct {
 	Notes     g.Node
 	Directory [][]FooterSection
 	Shop      g.Node
-	Copyright string
+	// Copyright: text, or a link to the company.
+	Copyright g.Node
 	Links     []Link
 	Locale    *Link
 	Class     string
 }
 
 func (f Footer) Render(w io.Writer) error {
-	if f.Copyright == "" {
+	if f.Copyright == nil {
 		panic("site.Footer needs a Copyright")
 	}
 	for _, column := range f.Directory {
@@ -68,7 +69,7 @@ func (f Footer) Render(w io.Writer) error {
 			h.Div(h.Class("cui-footer-legal"),
 				g.If(f.Shop != nil, h.P(h.Class("cui-footer-shop"), f.Shop)),
 				h.Div(h.Class("cui-footer-row"),
-					h.P(h.Class("cui-footer-copyright"), g.Text(f.Copyright)),
+					h.P(h.Class("cui-footer-copyright"), f.Copyright),
 					g.If(len(f.Links) > 0, h.Ul(h.Class("cui-footer-links"), links)),
 					g.Iff(f.Locale != nil, func() g.Node {
 						return h.A(h.Class("cui-footer-locale"), h.Href(f.Locale.Href), g.Text(f.Locale.Text))

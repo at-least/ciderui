@@ -1,8 +1,12 @@
 // PAGE=<name> node measure.mjs
-// Opens pages/<name>.mjs's url in Playwright's Chromium (../browsers.mjs) and
+// Opens pages/<name>.mjs's url in Playwright's Chromium (../browsers.mjs), or
+// in the browser its `browser` names (`chrome`: Google Chrome, which plays
+// what needs Widevine; run in chrome.Dockerfile's image, CIDERUI_CHROME=1), and
 // at each of its widths (after `settle` ms, 800 unless the spec says; `wait`
 // ms more once, after the load) reads every probe's computed styles. A probe either
-// selects an element of the page (`select`) or adds markup to it (`inject`,
+// selects an element of the page (`select`; ` >>> ` steps into the shadow
+// root of what the selector before it picks: tv.apple.com's controls keep
+// their parts behind theirs) or adds markup to it (`inject`,
 // into `into` or the body; `select` then picks the element inside it) for a
 // class the page defines but may not use, and reads `props`, `vars` (custom
 // properties) and `pseudo`'s, with `sections`, [section, attribute, row],
@@ -31,7 +35,8 @@
 // and at the widths after, so a spec puts such probes last, or in a spec of
 // their own; the pointer then leaves for the window's bottom corner, or, once
 // what the click opened has opened, for `pointer`, [x, y], inside it, when
-// leaving it closes it); `type` presses those keys, once, at the first
+// leaving it closes it; a point, [x, y], is clicked where it is), and waits `clicked` ms, where it says, for what the
+// click loads (a video); `type` presses those keys, once, at the first
 // width the probe is read, into what has the focus (a field: typed one key
 // after another, 150ms apart, then `typed` ms, 2500 unless it says, for what
 // the page answers), and, with `animations`, records what they start; `tap`
@@ -94,8 +99,11 @@ const place = async (probe) => {
   // what a blur or a set moves (the page's script checking a field, a
   // label's transition) settled before it is read
   if (probe.blur || probe.set) await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 900))));
-  document.querySelectorAll('[data-cui-probe]').forEach(e => e.removeAttribute('data-cui-probe'));
-  document.querySelectorAll('[data-cui-state]').forEach(e => e.removeAttribute('data-cui-state'));
+  const roots = (root) => [root, ...[...root.querySelectorAll('*')].filter(e => e.shadowRoot).flatMap(e => roots(e.shadowRoot))];
+  for (const root of roots(document)) {
+    root.querySelectorAll('[data-cui-probe]').forEach(e => e.removeAttribute('data-cui-probe'));
+    root.querySelectorAll('[data-cui-state]').forEach(e => e.removeAttribute('data-cui-state'));
+  }
   document.querySelectorAll('[data-cui-injected]').forEach(e => e.remove());
   let scope = document;
   let el;
@@ -110,7 +118,7 @@ const place = async (probe) => {
     scope = node;
     el = probe.select ? (node.matches(probe.select) ? node : node.querySelector(probe.select)) : node;
   } else {
-    el = document.querySelector(probe.select);
+    el = probe.select.split(' >>> ').reduce((root, part) => root && (root === document ? root : root.shadowRoot)?.querySelector(part), document);
   }
   if (!el) return null;
   const on = probe.stateOn ? scope.querySelector(probe.stateOn) ?? document.querySelector(probe.stateOn) : el;
@@ -158,7 +166,9 @@ const watchAnimations = (within) => {
 };
 
 const read = (probe) => {
-  const el = document.querySelector('[data-cui-probe]');
+  // in the document or a shadow root in it
+  const walk = (root, s) => root.querySelector(s) ?? [...root.querySelectorAll('*')].filter(e => e.shadowRoot).map(e => walk(e.shadowRoot, s)).find(Boolean) ?? null;
+  const el = walk(document, '[data-cui-probe]');
   const cs = getComputedStyle(el, probe.pseudo ?? null);
   const out = { styles: {} };
   for (const p of probe.props ?? []) out.styles[p] = cs.getPropertyValue(p);
@@ -197,7 +207,7 @@ const read = (probe) => {
 };
 
 // `options`: Playwright's page options for the run (a permission it needs)
-const page = await open('chromium', spec.url, spec.options);
+const page = await open(spec.browser ?? 'chromium', spec.url, spec.options);
 const pw = page.page;
 // `colorScheme`: the page read in that scheme (prefers-color-scheme), from its load
 if (spec.colorScheme) {
@@ -218,7 +228,13 @@ await cdp.send('CSS.enable');
 const stateNode = async (frame) => {
   if (frame === pw.mainFrame()) {
     const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
-    return (await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '[data-cui-state]' })).nodeId;
+    const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '[data-cui-state]' });
+    if (nodeId) return nodeId;
+    // in a shadow root, which DOM.querySelector does not enter
+    const whole = await cdp.send('DOM.getDocument', { depth: -1, pierce: true });
+    const find = (n) => n.attributes?.includes('data-cui-state') ? n
+      : [...(n.children ?? []), ...(n.shadowRoots ?? [])].map(find).find(Boolean);
+    return find(whole.root)?.nodeId;
   }
   const iframe = await frame.frameElement();
   await iframe.evaluate(e => e.setAttribute('data-cui-frame', ''));
@@ -303,14 +319,18 @@ try {
       } else if (clicking) {
         clicked.add(probe.name);
         if (probe.animations) await frame.evaluate(watchAnimations, probe.animations);
-        await frame.click(probe.click);
+        // a point, [x, y]: the window clicked there (what a layer over the
+        // element would take a click on it for)
+        if (Array.isArray(probe.click)) await pw.mouse.click(...probe.click);
+        else await frame.click(probe.click);
         // the pointer off what it clicked, which it would leave hovered, to the
         // window's bottom corner; or, once what the click opened has opened, to
         // `pointer`, a point inside it, which the pointer leaving would close
         // (moved at once, it lands beyond what is still growing)
         if (probe.pointer) await settle();
         await pw.mouse.move(...(point(probe.pointer, width) ?? [0, 899]));
-        await settle();
+        if (probe.clicked) await pw.waitForTimeout(probe.clicked);
+        else await settle();
       }
       used.add(frame);
       // what the page is handed of the probe: its data, not its functions (a
@@ -331,6 +351,16 @@ try {
         if (!nodeId) throw new Error(`${probe.name}: the DevTools session does not see the tagged element`);
         await frame.addStyleTag({ content: '*, *::before, *::after { transition: none !important; }' })
           .then(h => h.evaluate(e => e.setAttribute('data-cui-still', '')));
+        // a document's style does not reach into a shadow root: one there too
+        await frame.evaluate(() => {
+          const walk = (root, s) => root.querySelector(s) ?? [...root.querySelectorAll('*')].filter(e => e.shadowRoot).map(e => walk(e.shadowRoot, s)).find(Boolean) ?? null;
+          const root = walk(document, '[data-cui-state]').getRootNode();
+          if (root === document) return;
+          const still = document.createElement('style');
+          still.textContent = '*, *::before, *::after { transition: none !important; }';
+          still.setAttribute('data-cui-still', '');
+          root.append(still);
+        });
         at[probe.name].states = {};
         for (const state of probe.states) {
           // a state may be several at once: 'focus+focus-visible'
@@ -340,7 +370,11 @@ try {
         }
         // the state's last change must land while transitions are still off, or
         // it starts one that a later probe reads in flight: flush, then remove
-        await frame.evaluate(() => { void document.body.offsetHeight; document.querySelector('[data-cui-still]').remove(); });
+        await frame.evaluate(() => {
+          const walk = (root, s) => root.querySelector(s) ?? [...root.querySelectorAll('*')].filter(e => e.shadowRoot).map(e => walk(e.shadowRoot, s)).find(Boolean) ?? null;
+          void document.body.offsetHeight;
+          for (let still; (still = walk(document, '[data-cui-still]'));) still.remove();
+        });
       }
     }
     for (const frame of used) await frame.evaluate(() => document.querySelectorAll('[data-cui-injected]').forEach(e => e.remove()));

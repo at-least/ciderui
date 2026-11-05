@@ -55,6 +55,7 @@ const W = 1200;
 // each color's light and dark side: [page, probe, width, property, state?,
 // opacity?] where apple.com shows it (`opacity`: the color at the element's
 // opacity, as apple.com draws a title in black at .88), or 'fitted: why'
+// or 'golden: why' (no instance measured), each held by the contrast checks
 const CONTRACT = {
   '--cui-c-bg': [['home', 'page.body', W, 'background-color'], ['product', 'page.body', W, 'background-color']],
   '--cui-c-bg-alt': [['home', 'hero.tile', W, 'background-color'], ['product', 'section.dark', W, 'background-color']],
@@ -129,6 +130,13 @@ const CONTRACT = {
   '--cui-c-close-active': [['overlay', 'close.circle-hover', W, 'background-color', 'active'], ['overlay', 'close.circle-hover', 390, 'background-color', 'active']],
   '--cui-c-on-close': [['overlay', 'close.circle', W, 'color'], ['overlay', 'close.circle-hover', 390, 'color', 'active']],
   '--cui-c-on-close-hover': [['overlay', 'close.circle-hover', W, 'color', 'hover'], ['overlay', 'close.circle-hover', 390, 'color', 'hover']],
+  // tv.apple.com's video player, paused (decision 28): one value each, a
+  // video dark on any page
+  '--cui-c-video': [['tv-player', 'dialog', W, 'background-color'], ['tv-player', 'dialog', 1600, 'background-color']],
+  '--cui-c-on-video': [['tv-player', 'play', W, 'color'], ['tv-player', 'play', 1600, 'color']],
+  '--cui-c-on-video-control': [['tv-player', 'subtitles', W, 'color'], ['tv-player', 'fullscreen', W, 'color']],
+  '--cui-c-on-video-time': [['tv-player', 'elapsed', W, 'color'], ['tv-player', 'remaining', W, 'color']],
+  '--cui-c-video-track': [['tv-player', 'volume.range', W, '--progress-track-color'], ['tv-player', 'volume.range', 1600, '--progress-track-color']],
 };
 
 const colors = Object.keys(vars).filter(k => k.startsWith('--cui-c-') && !k.startsWith('--cui-c-console-'));
@@ -268,6 +276,9 @@ const MIN = [
   ['--cui-c-on-card', ['--cui-c-bg'], 4.5],
   ['--cui-c-eyebrow', ['--cui-c-bg'], 4.5],
   ['--cui-c-tag', ['--cui-c-bg'], 4.5],
+  // the player's text and controls on its video
+  ['--cui-c-on-video-control', ['--cui-c-video'], 4.5],
+  ['--cui-c-on-video-time', ['--cui-c-video'], 4.5],
 ];
 for (const [fg, grounds, min] of MIN) {
   for (const bg of grounds) {
@@ -402,6 +413,19 @@ const shadow = (value) => {
   while (lengths.length < 4) lengths.push('0px');
   return `${color.includes(',') ? color : rgb(color)} ${lengths.join(' ')}`;
 };
+check('--cui-video-scrim is tv.apple.com\'s tv-player:scrim.gradient background-image', vars['--cui-video-scrim'], ref('tv-player', 'scrim.gradient', W, 'background-image'));
+// golden: muse's subtitles, white under a soft shadow with no box (the owner, 2026-11-05, from Apple's view); tv.apple.com's
+// cues are its <video>'s own text track, none read. Two layers: a tight one that edges each letter on a white picture, a wide
+// faint one that darkens round the line without a box's edge
+check('--cui-video-cue-shadow is muse\'s golden', vars['--cui-video-cue-shadow'], '0 0.05em 0.1em rgb(0 0 0 / 0.6), 0 0 0.5em rgb(0 0 0 / 0.4)');
+// golden: muse's scrubber preview (the owner, 2026-11-05: a thumbnail over the time under the pointer); tv.apple.com's
+// trailers scrub with no preview. A 1px hairline edges it over a dark picture, a soft drop lifts it off a bright one
+check('--cui-video-preview-shadow is muse\'s golden', vars['--cui-video-preview-shadow'], '0 0 0 1px rgb(255 255 255 / 0.15), 0 4px 12px rgb(0 0 0 / 0.4)');
+// golden: muse's full-screen controls (回報問題, 下一個要看), a capsule of words on the picture; tv.apple.com's bar has none.
+// A faint white fill that reads on a dark or a bright picture, a little more hovered or pressed
+check('--cui-video-control-fill is muse\'s golden', vars['--cui-video-control-fill'], 'rgb(255 255 255 / 0.16)');
+check('--cui-video-control-fill-hover is muse\'s golden', vars['--cui-video-control-fill-hover'], 'rgb(255 255 255 / 0.24)');
+check('--cui-video-thumb-shadow is tv.apple.com\'s tv-player:volume.range --volume-thumb-box-shadow', vars['--cui-video-thumb-shadow'], ref('tv-player', 'volume.range', W, '--volume-thumb-box-shadow'));
 for (const [name, state] of [['--cui-shadow-card'], ['--cui-shadow-card-hover', 'hover']]) {
   for (const probe of ['card', 'card.dark']) {
     check(`${name} is apple.com's store:${probe}${state ? ':' + state : ''} box-shadow`, shadow(vars[name]), shadow(ref('store', probe, W, 'box-shadow', state)));
@@ -420,9 +444,10 @@ for (const file of sheets) {
   const literal = values.match(/#[0-9a-f]{3,8}\b|\b(rgba?|hsla?|hwb|lab|lch|oklab|oklch|color)\(/i) ?? values.match(NAMED);
   check(`${file} writes no color of its own`, literal?.[0] ?? 'none', 'none');
   // a console part reads the console's slots alone; the dialog's backdrop the
-  // scrim, which the toolkit names none of
+  // scrim, which the toolkit names none of, and the player the video's
+  // (decision 28)
   if (file.startsWith(join('components', 'console'))) {
-    const other = [...text.matchAll(/var\((--cui-c-[\w-]+)/g)].map(m => m[1]).filter(name => !name.startsWith('--cui-c-console-') && name !== '--cui-c-scrim');
+    const other = [...text.matchAll(/var\((--cui-c-[\w-]+)/g)].map(m => m[1]).filter(name => !name.startsWith('--cui-c-console-') && name !== '--cui-c-scrim' && !/^--cui-c-(on-)?video/.test(name));
     check(`${file} reads the console's colors alone`, other.join(' ') || 'none', 'none');
   }
 }

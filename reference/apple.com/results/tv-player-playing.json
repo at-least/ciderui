@@ -1,0 +1,156 @@
+{
+ "url": "https://tv.apple.com/us/collection/trailers/uts.col.Trailers.umc.cmc.vtoh0mn0xn7t3c643xqonfzy",
+ "finalUrl": "https://tv.apple.com/us/collection/trailers/uts.col.Trailers.umc.cmc.vtoh0mn0xn7t3c643xqonfzy",
+ "browser": "chrome 157.0.8103.38 on linux",
+ "date": "2026-11-04T19:08:23.208Z",
+ "widths": {
+  "1600": {
+   "dialog": {
+    "html": "<dialog data-testid=\"playback-view\" class=\"playback-view svelte-6e68jn is-full-viewport is-playback-active\" style=\"--inline-video-height: 0px; --animation-duration: 500ms; --animation-easing: cubic-bezier(0.11, 0.37, 0.36, 1); --animation-d",
+    "styles": {
+     "background-color": "rgb(0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "padding-top": "0px",
+     "padding-left": "0px"
+    },
+    "box": {
+     "width": 1600,
+     "height": 900
+    }
+   },
+   "scrim": {
+    "html": "<div class=\"video-player-scrim svelte-1610apj\" data-testid=\"video-player-scrim\"><div class=\"scrim__gradient svelte-1610apj\"></div><div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-19l0lnx\"><div",
+    "styles": {
+     "display": "grid",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "grid-template-rows": "20px 26px 713px 121px 20px",
+     "grid-template-columns": "30px 1540px 30px",
+     "padding-top": "0px",
+     "padding-left": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "opacity": "1",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 1600,
+     "height": 900
+    }
+   },
+   "pause": {
+    "html": "<button class=\"playback-play__pause\"><slot-fb name=\"pause\" hidden=\"\"><amp-icon class=\"icon\" role=\"presentation\" aria-hidden=\"true\" innerhtml=\"&lt;svg viewBox=&quot;0 0 32 28&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&",
+    "styles": {
+     "opacity": "1",
+     "visibility": "visible",
+     "pointer-events": "auto",
+     "transition-property": "transform",
+     "transition-duration": "0.2s",
+     "transition-timing-function": "ease-out",
+     "color": "rgb(255, 255, 255)",
+     "width": "66px",
+     "height": "66px"
+    },
+    "box": {
+     "width": 66,
+     "height": 66
+    }
+   },
+   "pause.icon": {
+    "html": "<amp-icon slot=\"pause\" class=\"icon\" role=\"presentation\" aria-hidden=\"true\" innerhtml=\"&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;104.23 34.94 74.91 88.23&quot;&gt;&lt;path d=&quot;M113.411 123.175h12.94c6.103 0 9.13-",
+    "styles": {
+     "color": "rgb(255, 255, 255)",
+     "width": "50px",
+     "height": "50px"
+    },
+    "box": {
+     "width": 50,
+     "height": 50
+    }
+   },
+   "play.hidden": {
+    "html": "<button class=\"playback-play__play\" aria-hidden=\"true\" tabindex=\"-1\" data-focus-method=\"undefined\"><slot-fb name=\"play\" hidden=\"\"><amp-icon class=\"icon\" role=\"presentation\" aria-hidden=\"true\" innerhtml=\"&lt;svg viewBox=&quot;0 0 32 28&quot;",
+    "styles": {
+     "opacity": "0",
+     "visibility": "visible",
+     "pointer-events": "none",
+     "transition-property": "transform",
+     "transition-duration": "0.2s",
+     "transition-timing-function": "ease-out"
+    }
+   },
+   "hidden": {
+    "html": "<div class=\"scrim__gradient svelte-1610apj\"></div>",
+    "styles": {
+     "opacity": "0",
+     "visibility": "visible",
+     "pointer-events": "none",
+     "transition-property": "opacity",
+     "transition-duration": "0.1s",
+     "transition-timing-function": "ease"
+    },
+    "box": {
+     "width": 1600,
+     "height": 900
+    }
+   },
+   "hidden.scrim": {
+    "html": "<div class=\"video-player-scrim svelte-1610apj video-player-scrim--hidden\" data-testid=\"video-player-scrim\"><div class=\"scrim__gradient svelte-1610apj\"></div><div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__",
+    "styles": {
+     "opacity": "1",
+     "visibility": "visible",
+     "pointer-events": "auto",
+     "transition-property": "all",
+     "transition-duration": "0s",
+     "transition-timing-function": "ease",
+     "cursor": "none"
+    },
+    "matches": {
+     ".video-player-scrim--hidden": true
+    }
+   },
+   "hidden.header": {
+    "html": "<div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-19l0lnx\" inert=\"\"><div class=\"close-button-group svelte-19l0lnx\"><button class=\"close-button svelte-19l0lnx\" data-testid=\"close-button\" aria-lab",
+    "styles": {
+     "opacity": "0",
+     "visibility": "visible",
+     "pointer-events": "auto",
+     "transition-property": "opacity, transform",
+     "transition-duration": "0.3s, 0.5s",
+     "transition-timing-function": "cubic-bezier(0, 0, 0.2, 1), cubic-bezier(0, 0, 0.2, 1)",
+     "transform": "matrix(1, 0, 0, 1, 0, -20)"
+    }
+   },
+   "hidden.body": {
+    "html": "<div class=\"scrim__body svelte-1610apj\"><div slot=\"body\" class=\"video-player__body svelte-19l0lnx\" inert=\"\"><amp-playback-controls-unified hydrated=\"\"><div class=\"unified-controls\"><amp-playback-controls-skip class=\"playback-controls-skip\" ",
+    "styles": {
+     "opacity": "0",
+     "visibility": "visible",
+     "pointer-events": "auto",
+     "transition-property": "opacity",
+     "transition-duration": "0.4s",
+     "transition-timing-function": "cubic-bezier(0, 0, 0.2, 1)",
+     "transform": "matrix(1, 0, 0, 1, -109, -33)"
+    }
+   },
+   "hidden.footer": {
+    "html": "<div class=\"scrim__footer svelte-1610apj\"><div slot=\"footer\" class=\"video-player__footer svelte-19l0lnx scrubbing-enabled\" inert=\"\"><div class=\"video-player__metadata svelte-19l0lnx\"><div class=\"video-metadata\"><div class=\"title svelte-1xe",
+    "styles": {
+     "opacity": "0",
+     "visibility": "visible",
+     "pointer-events": "auto",
+     "transition-property": "opacity, transform",
+     "transition-duration": "0.4s, 0.5s",
+     "transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(0.4, 0, 0.6, 1)",
+     "transform": "matrix(1, 0, 0, 1, 0, 20)"
+    }
+   }
+  }
+ }
+}

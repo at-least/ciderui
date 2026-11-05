@@ -40,6 +40,13 @@ func TestAValueNoRuleSelectsFails(t *testing.T) {
 	}
 }
 
+func TestAShapeNoRuleSelectsFails(t *testing.T) {
+	want := []string{`data-shape="circle" on <button class="cui-console-btn">: no rule of ciderui's selects it (cui-console-btn's: capsule)`}
+	if got := CheckMarkup(`<button class="cui-console-btn" data-shape="circle">x</button>`); !slices.Equal(got, want) {
+		t.Errorf("got %q", got)
+	}
+}
+
 // a value is held to every cui-* class on its element: cui-console-btn-icon's
 // sizes are its own
 func TestAValueOfAnotherClassOnTheElementPasses(t *testing.T) {

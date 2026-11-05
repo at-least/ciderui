@@ -37,11 +37,11 @@ func TestFooterRendersTheExample(t *testing.T) {
 		{Text: "Terms of Use", Href: "/terms/"},
 		{Text: "Site Map", Href: "/sitemap/"},
 	}
-	example.Check(t, site.Footer{Notes: notes, Directory: directory, Shop: shop, Copyright: "Copyright © 2026 Example Inc. All rights reserved.", Links: links, Locale: &site.Link{Text: "United States", Href: "/choose-country/"}, Class: ""}, "site/footer/examples/footer.html")
+	example.Check(t, site.Footer{Notes: notes, Directory: directory, Shop: shop, Copyright: g.Text("Copyright © 2026 Example Inc. All rights reserved."), Links: links, Locale: &site.Link{Text: "United States", Href: "/choose-country/"}, Class: ""}, "site/footer/examples/footer.html")
 }
 
 func TestFooterNoNotesNoDirectoryNoShop(t *testing.T) {
-	got := example.Render(site.Footer{Notes: nil, Directory: nil, Shop: nil, Copyright: "© 2026", Links: nil, Locale: nil, Class: ""})
+	got := example.Render(site.Footer{Notes: nil, Directory: nil, Shop: nil, Copyright: g.Text("© 2026"), Links: nil, Locale: nil, Class: ""})
 	want := `<footer class="cui-footer"><div class="cui-footer-content"><div class="cui-footer-legal"><div class="cui-footer-row"><p class="cui-footer-copyright">© 2026</p></div></div></div></footer>`
 	if got != want {
 		t.Errorf("got %s", got)
@@ -56,30 +56,38 @@ func (c counted) Render(w io.Writer) error {
 	return err
 }
 
-// Notes and Shop are the page's nodes: rendering one twice may cost, or
-// render differently the second time
+// Notes, Shop and Copyright are the page's nodes: rendering one twice may
+// cost, or render differently the second time
 func TestFooterItsNotesAndShopRenderedOnce(t *testing.T) {
-	var notes, shop int
-	example.Render(site.Footer{Notes: counted{&notes}, Directory: nil, Shop: counted{&shop}, Copyright: "©", Links: nil, Locale: nil, Class: ""})
-	if notes != 1 || shop != 1 {
-		t.Errorf("notes rendered %d times, shop %d (want 1, 1)", notes, shop)
+	var notes, shop, copyright int
+	example.Render(site.Footer{Notes: counted{&notes}, Directory: nil, Shop: counted{&shop}, Copyright: counted{&copyright}, Links: nil, Locale: nil, Class: ""})
+	if notes != 1 || shop != 1 || copyright != 1 {
+		t.Errorf("notes rendered %d times, shop %d, copyright %d (want 1, 1, 1)", notes, shop, copyright)
+	}
+}
+
+func TestFooterCopyrightCanBeALink(t *testing.T) {
+	got := example.Render(site.Footer{Notes: nil, Directory: nil, Shop: nil, Copyright: h.A(h.Href("https://example.com/"), g.Text("Example Inc.")), Links: nil, Locale: nil, Class: ""})
+	want := `<footer class="cui-footer"><div class="cui-footer-content"><div class="cui-footer-legal"><div class="cui-footer-row"><p class="cui-footer-copyright"><a href="https://example.com/">Example Inc.</a></p></div></div></div></footer>`
+	if got != want {
+		t.Errorf("got %s", got)
 	}
 }
 
 func TestFooterASectionWithNoIDPanics(t *testing.T) {
 	mustPanic(t, "FooterSection needs an ID", func() {
-		example.Render(site.Footer{Notes: nil, Directory: [][]site.FooterSection{{{ID: "", Title: "x", Links: nil}}}, Shop: nil, Copyright: "©", Links: nil, Locale: nil, Class: ""})
+		example.Render(site.Footer{Notes: nil, Directory: [][]site.FooterSection{{{ID: "", Title: "x", Links: nil}}}, Shop: nil, Copyright: g.Text("©"), Links: nil, Locale: nil, Class: ""})
 	})
 }
 
 func TestFooterAnEmptyCopyrightPanics(t *testing.T) {
 	mustPanic(t, "Footer needs a Copyright", func() {
-		example.Render(site.Footer{Notes: nil, Directory: nil, Shop: nil, Copyright: "", Links: nil, Locale: nil, Class: ""})
+		example.Render(site.Footer{Notes: nil, Directory: nil, Shop: nil, Copyright: nil, Links: nil, Locale: nil, Class: ""})
 	})
 }
 
 func TestFooterASectionWithNoTitlePanics(t *testing.T) {
 	mustPanic(t, "FooterSection needs a Title", func() {
-		example.Render(site.Footer{Notes: nil, Directory: [][]site.FooterSection{{{ID: "x", Title: "", Links: nil}}}, Shop: nil, Copyright: "©", Links: nil, Locale: nil, Class: ""})
+		example.Render(site.Footer{Notes: nil, Directory: [][]site.FooterSection{{{ID: "x", Title: "", Links: nil}}}, Shop: nil, Copyright: g.Text("©"), Links: nil, Locale: nil, Class: ""})
 	})
 }

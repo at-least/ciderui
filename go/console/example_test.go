@@ -120,6 +120,11 @@ func ExampleConsolePager() {
 	// Output: <nav class="cui-console-pager" aria-label="Issue pages"><p class="cui-console-pager-summary">1–50 of 230</p><a class="cui-console-btn cui-console-btn-icon" href="?page=2" aria-label="Next page"><svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></nav>
 }
 
+func ExampleConsolePlay() {
+	_ = console.ConsolePlay{State: console.ConsolePlayStatePlaying, AriaLabel: "", Label: "Play This Line", PlayingLabel: "Stop", Size: console.ConsoleBtnSizeSmall, Class: "js-clip"}.Render(os.Stdout)
+	// Output: <button class="cui-console-btn cui-console-play js-clip" data-size="sm" data-shape="capsule" data-state="playing" type="button"><span class="cui-console-play-glyph"><svg class="cui-console-play-paused" aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><svg class="cui-console-play-playing" aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/></svg></span><span class="cui-console-play-paused">Play This Line</span><span class="cui-console-play-playing">Stop</span></button>
+}
+
 func ExampleConsoleRadio() {
 	_ = console.ConsoleRadio{Name: "kind", Value: "app", Checked: true, Required: false, Disabled: false, Caption: "", Class: "", Children: g.Text("App")}.Render(os.Stdout)
 	// Output: <label class="cui-console-radio"><input class="cui-console-radio-input" type="radio" name="kind" value="app" checked>App</label>
@@ -135,6 +140,12 @@ func ExampleConsoleStatus() {
 	// Output: <span class="cui-console-status" data-color="success"><span class="cui-console-status-mark"></span>Delivered</span>
 }
 
+func ExampleConsoleStrip() {
+	item := console.ConsoleStripItem{Href: "#shot-1", Src: "/shot-1.png", Alt: "Shot 1", Lazy: true, Current: true, Variant: console.ConsoleStripItemVariantFrame, Caption: "S01-01", Detail: "", Unused: false, Tip: "Once upon a time", Mark: console.ConsoleStripMarkWaiting, MarkAriaLabel: "Waiting for you"}
+	_ = console.ConsoleStrip{AriaLabel: "Shots", Groups: []console.ConsoleStripGroup{{Label: "Scene 1", Items: []console.ConsoleStripItem{item}}}, Class: ""}.Render(os.Stdout)
+	// Output: <nav class="cui-console-strip" aria-label="Shots"><div class="cui-console-strip-group"><p class="cui-console-strip-head"><span class="cui-console-strip-label">Scene 1</span></p><a class="cui-console-strip-item" href="#shot-1" aria-current="true"><img src="/shot-1.png" alt="Shot 1" loading="lazy"><span class="cui-console-strip-caption">S01-01</span><span class="cui-console-strip-tip">Once upon a time</span><span class="cui-console-strip-mark" data-state="waiting" role="img" aria-label="Waiting for you"></span></a></div></nav>
+}
+
 func ExampleConsoleTabs() {
 	tabs := []console.ConsoleTab{
 		{Label: "Unresolved", Href: "?status=unresolved", Current: true},
@@ -142,6 +153,15 @@ func ExampleConsoleTabs() {
 	}
 	_ = console.ConsoleTabs{AriaLabel: "Status", Variant: console.ConsoleTabsVariantFilled, Tabs: tabs, Class: ""}.Render(os.Stdout)
 	// Output: <div class="cui-console-tabs" data-variant="filled" role="group" aria-label="Status"><a class="cui-console-tab" href="?status=unresolved" aria-current="true">Unresolved</a><a class="cui-console-tab" href="?status=resolved">Resolved</a></div>
+}
+
+func ExampleConsoleTabButtons() {
+	buttons := []console.ConsoleTabButton{
+		{Label: "Keep", Value: "keep", Pressed: true},
+		{Label: "Redraw", Value: "redraw", Pressed: false},
+	}
+	_ = console.ConsoleTabButtons{AriaLabel: "Mark", Name: "mark", Buttons: buttons, Class: ""}.Render(os.Stdout)
+	// Output: <div class="cui-console-tabs" data-variant="filled" role="group" aria-label="Mark"><button class="cui-console-tab" type="submit" name="mark" value="keep" aria-pressed="true">Keep</button><button class="cui-console-tab" type="submit" name="mark" value="redraw" aria-pressed="false">Redraw</button></div>
 }
 
 func ExampleConsoleThumb() {

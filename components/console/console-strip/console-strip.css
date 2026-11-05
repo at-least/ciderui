@@ -1,0 +1,254 @@
+@layer components {
+  .cui-console-strip {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    column-gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    /* room inside the scroller, which clips both ways, for the focus ring
+       and the current item's ring, given back outside: tv.apple.com's row */
+    padding: 15px;
+    margin-block: -15px;
+    margin-inline: -15px;
+    scroll-padding-inline: 15px;
+  }
+
+  .cui-console-strip-group {
+    /* the head's containing block: it is placed over the group's top */
+    position: relative;
+    display: flex;
+    gap: 12px;
+    padding-top: 14px;
+
+    /* every group, so a group without captions is not stretched to one with */
+    .cui-console-strip:has(.cui-console-strip-caption) > & {
+      padding-bottom: 14px;
+    }
+
+    /* and the detail's line under the caption */
+    .cui-console-strip:has(.cui-console-strip-detail) > & {
+      padding-bottom: 27px;
+    }
+  }
+
+  :where(.cui-console-strip-head) {
+    margin: 0;
+  }
+
+  /* out of the flow, so a long name widens no group: the group's width, the
+     track the label slides along; not clipped, or it would be the label's
+     scroller and the label would stick to it */
+  .cui-console-strip-head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  /* its own width, not the head's: a box as wide as its containing block
+     has no room to stick in */
+  .cui-console-strip-label {
+    position: sticky;
+    left: 0;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    padding-inline: 4px;
+  }
+
+  .cui-console-strip-item {
+    /* the marks' containing block */
+    position: relative;
+    display: block;
+    flex: none;
+    padding: 2px;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    scroll-snap-align: start;
+
+    /* forced colors draw a transparent border in the text's color */
+    @media (forced-colors: active) {
+      border-color: Canvas;
+    }
+
+    /* nothing uses it: muse's assets page. Its picture alone: its lines
+       dimmed too fell to 2:1 */
+    &[data-state="unused"] > img {
+      opacity: 0.5;
+    }
+
+    @media (hover: hover) {
+      &[data-state="unused"]:hover > img {
+        opacity: 0.8;
+      }
+    }
+
+    &[aria-current="true"] {
+      border-color: var(--cui-c-console-brand-accent-primary);
+
+      @media (forced-colors: active) {
+        border-color: Highlight;
+      }
+    }
+
+    & > img {
+      display: block;
+      /* a storyboard's shot: the strip's size, not the page's */
+      width: 160px;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border: none;
+      border-radius: 12px;
+      background-color: var(--cui-c-console-card);
+    }
+
+    /* a character sheet: its face is at its left */
+    &[data-variant="sheet"] > img {
+      object-position: left;
+    }
+  }
+
+  /* out of the item's box, so its ring and its marks keep the picture's;
+     the group keeps its room */
+  .cui-console-strip-caption {
+    position: absolute;
+    /* 5px under the picture, past the item's 2px of room */
+    top: calc(100% + 3px);
+    left: 2px;
+    right: 2px;
+  }
+
+  /* a second line under the caption */
+  .cui-console-strip-detail {
+    position: absolute;
+    top: calc(100% + 16px);
+    left: 2px;
+    right: 2px;
+  }
+
+  /* a console thumbnail's caption's type, cut to its box */
+  .cui-console-strip-label,
+  .cui-console-strip-caption,
+  .cui-console-strip-detail {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: normal;
+    color: var(--cui-c-console-neutral-label-secondary);
+  }
+
+  /* who the item waits on, a dot in the picture's corner: the reader
+     (console-status's warning mark), or someone at work on it (its neutral
+     mark), each ringed in the page's ground so it shows on any picture */
+  .cui-console-strip-mark {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 16px;
+    height: 16px;
+    box-sizing: border-box;
+    border: 2px solid var(--cui-c-console-neutral-background-primary);
+    border-radius: 50%;
+
+    @media (forced-colors: active) {
+      forced-color-adjust: none;
+      border-color: Canvas;
+    }
+
+    &[data-state="waiting"] {
+      background-color: var(--cui-c-console-warning-label-primary);
+
+      @media (forced-colors: active) {
+        background-color: CanvasText;
+      }
+    }
+
+    &[data-state="working"] {
+      background-color: var(--cui-c-console-neutral-label-secondary);
+
+      @media (forced-colors: active) {
+        background-color: GrayText;
+      }
+    }
+  }
+
+  /* how far the current shot has played (the page's script sets
+     --cui-console-strip-progress): the player's scrubber's line, thin, over
+     the picture's foot 8px in, as the mark is in its corner */
+  .cui-console-strip-item[aria-current="true"]::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    height: 3px;
+    border-radius: 3px;
+    background-image: linear-gradient(to right, var(--cui-c-on-video) var(--cui-console-strip-progress, 0%), var(--cui-c-video-track) var(--cui-console-strip-progress, 0%));
+    pointer-events: none;
+
+    @media (forced-colors: active) {
+      forced-color-adjust: none;
+      background-image: linear-gradient(to right, Highlight var(--cui-console-strip-progress, 0%), GrayText var(--cui-console-strip-progress, 0%));
+    }
+  }
+
+  /* a line over the item while the pointer is on it (a shot's first spoken
+     line), in the popover's ground and type; fixed to the item by anchor
+     positioning, so the scroller, which clips both ways, does not cut it */
+  .cui-console-strip-tip {
+    display: none;
+  }
+
+  @supports (position-area: top) {
+    .cui-console-strip-item {
+      anchor-name: --cui-console-strip-item;
+      anchor-scope: --cui-console-strip-item;
+    }
+
+    .cui-console-strip-tip {
+      position: fixed;
+      position-anchor: --cui-console-strip-item;
+      position-area: top;
+      position-try-fallbacks: flip-block;
+      display: block;
+      box-sizing: border-box;
+      width: max-content;
+      max-width: 280px;
+      margin: 0 0 8px;
+      padding: 6px 10px;
+      border-radius: 14px;
+      color: var(--cui-c-console-neutral-label-primary);
+      background-color: var(--cui-c-console-neutral-background-primary);
+      box-shadow: var(--cui-console-shadow-popover);
+      font-size: 13px;
+      line-height: 18px;
+      letter-spacing: normal;
+      white-space: normal;
+      pointer-events: none;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.2s, visibility 0.2s;
+
+      @media (forced-colors: active) {
+        border: 1px solid CanvasText;
+      }
+
+      :where(.cui-console-strip-item:focus-visible) > & {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      @media (hover: hover) {
+        :where(.cui-console-strip-item:hover) > & {
+          visibility: visible;
+          opacity: 1;
+          transition-delay: 0.5s;
+        }
+      }
+    }
+  }
+}

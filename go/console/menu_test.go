@@ -56,3 +56,58 @@ func TestMenuGroupWithNoLabelPanics(t *testing.T) {
 		example.Render(console.ConsoleMenuGroup{Label: "", Icon: icon.Icon{}, Open: false, Class: "", Children: g.Text("x")})
 	})
 }
+
+func choiceMenu() console.ConsoleChoiceMenu {
+	return console.ConsoleChoiceMenu{ID: "subtitles", Class: "", Columns: []console.ConsoleChoiceColumn{
+		{Name: "subtitles", Title: "Subtitles", Choices: []console.ConsoleChoice{
+			{Label: "Off", Value: "off", Lang: "", Checked: false},
+			{Label: "English", Value: "en", Lang: "en", Checked: true},
+			{Label: "日本語", Value: "ja", Lang: "ja", Checked: false},
+		}},
+	}}
+}
+
+// two columns, the voices beside the subtitles, as the Apple TV app's
+func columnsMenu() console.ConsoleChoiceMenu {
+	m := choiceMenu()
+	m.Columns = append([]console.ConsoleChoiceColumn{{Name: "voices", Title: "Voices", Choices: []console.ConsoleChoice{
+		{Label: "English", Value: "en", Lang: "en", Checked: true},
+		{Label: "日本語", Value: "ja", Lang: "ja", Checked: false},
+	}}}, m.Columns...)
+	return m
+}
+
+func TestChoiceMenuRendersTheExample(t *testing.T) {
+	page := h.Div(h.Class("flex justify-center"),
+		h.Button(h.Type("button"), h.Class("cui-console-btn"), h.PopoverTarget("subtitles"), g.Text("Subtitles")),
+		choiceMenu(),
+	)
+	example.Check(t, page, "console/console-menu/examples/choices.html")
+	page = h.Div(h.Class("flex justify-center"),
+		h.Button(h.Type("button"), h.Class("cui-console-btn"), h.PopoverTarget("subtitles"), g.Text("Audio and Subtitles")),
+		columnsMenu(),
+	)
+	example.Check(t, page, "console/console-menu/examples/columns.html")
+}
+
+func TestChoiceMenuPanics(t *testing.T) {
+	for _, c := range []struct {
+		want   string
+		change func(*console.ConsoleChoiceMenu)
+	}{
+		{"ConsoleChoiceMenu needs an ID", func(m *console.ConsoleChoiceMenu) { m.ID = "" }},
+		{"ConsoleChoiceMenu needs a column", func(m *console.ConsoleChoiceMenu) { m.Columns = nil }},
+		{"ConsoleChoiceColumn needs a Name and a Title", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Name = "" }},
+		{"ConsoleChoiceColumn needs a Name and a Title", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Title = "" }},
+		{"columns need names of their own", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Name = "voices" }},
+		{"ConsoleChoiceColumn needs a choice", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Choices = nil }},
+		{"ConsoleChoice needs a Label and a Value", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Choices[0].Label = "" }},
+		{"ConsoleChoice needs a Label and a Value", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Choices[0].Value = "" }},
+		{"needs one choice checked", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Choices[0].Checked = true }},
+		{"needs one choice checked", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Choices[1].Checked = false }},
+	} {
+		m := columnsMenu()
+		c.change(&m)
+		mustPanic(t, c.want, func() { example.Render(m) })
+	}
+}

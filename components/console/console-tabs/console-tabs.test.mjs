@@ -12,6 +12,8 @@ const PILL = '.cui-console-tab[href="#30d"]';
 const CHOSEN = '.cui-console-tab[aria-current="true"]';
 const RADIO = 'label.cui-console-tab:not(:has(input:checked))';
 const CHECKED = 'label.cui-console-tab:has(input:checked)';
+const PRESSED = '.cui-console-tab[aria-pressed="true"]';
+const UNPRESSED = '.cui-console-tab[value="redraw"]';
 
 export const cases = [
   {
@@ -130,6 +132,37 @@ export const cases = [
     forcedColors: true,
     checks: [
       { target: CHECKED, props: ['background-color', 'color'], golden: 'the checked tab the theme\'s Highlight under HighlightText, as a chosen link\'s' },
+    ],
+  },
+  {
+    name: 'tabs of buttons',
+    html: ex('pressed'),
+    widths: [1200, 390],
+    checks: [
+      { target: UNPRESSED, props: SIZE, tb: size('md') },
+      { target: UNPRESSED, props: ['background-color', 'padding-left', 'padding-right', 'border-top-left-radius'], tb: [tab('filledGray', 'default', 'false', 'backgroundColor'), `${T}-defaultMdPaddingInline`, `${T}-defaultMdPaddingInline`, `${T}-variant-controlShape-capsule-controlSize-md-borderRadius`] },
+      { target: PRESSED, props: ['background-color', 'color'], tb: [tab('filledGray', 'default', 'true', 'backgroundColor'), tab('filledGray', 'default', 'true', 'color')] },
+      { target: PRESSED, props: ['background-color', 'color'], state: 'active', tb: [tab('filledGray', 'press', 'true', 'backgroundColor'), tab('filledGray', 'press', 'true', 'color')] },
+      { target: UNPRESSED, props: ['color', 'cursor'], golden: 'aria-pressed="false" not the chosen one: a link\'s pill, the blue label on the gray, the pointer' },
+      { target: UNPRESSED, props: ['font-family', 'border-top-width'], golden: 'a <button> drawn as a link\'s tab: the page\'s font, no edge' },
+    ],
+  },
+  {
+    name: 'tabs of buttons focused',
+    html: ex('pressed'),
+    widths: [1200],
+    checks: [
+      { target: PRESSED, props: OUTLINE, state: 'focus-visible', golden: 'the pressed button focused: base.css\'s one ring, as every tab\'s' },
+    ],
+  },
+  {
+    name: 'tabs of buttons forced colors',
+    html: ex('pressed'),
+    widths: [1200],
+    forcedColors: true,
+    checks: [
+      { target: PRESSED, props: ['background-color', 'color'], golden: 'the pressed button the theme\'s Highlight under HighlightText, as a checked radio\'s' },
+      { target: UNPRESSED, props: ['background-color', 'color'], golden: 'the others\' gray fill forced to the ground, at its alpha, under the forced text: not Highlight' },
     ],
   },
   {
