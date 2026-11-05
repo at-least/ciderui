@@ -14,6 +14,32 @@
     }
   }
 
+  /* a choice menu's columns side by side (ConsoleChoiceMenu): the Apple TV
+     app's audio beside its subtitles; one column is the plain menu. Each
+     column as wide as the popover alone may be (350px less its 16px sides),
+     the popover as wide as its columns ask; a rule between them in the
+     popover's own 8px gap */
+  .cui-console-menu-columns {
+    display: flex;
+    align-items: stretch;
+
+    > .cui-console-menu {
+      flex: 1 0 auto;
+      min-width: 0;
+      max-width: calc(350px - 32px);
+    }
+
+    > .cui-console-menu + .cui-console-menu {
+      margin-inline-start: 8px;
+      padding-inline-start: 8px;
+      border-inline-start: 0.5px solid var(--cui-c-console-neutral-border-secondary);
+    }
+  }
+
+  .cui-console-popover:has(> .cui-console-menu-columns > .cui-console-menu + .cui-console-menu) {
+    max-width: 85vw;
+  }
+
   .cui-console-menu-item {
     display: flex;
     align-items: center;

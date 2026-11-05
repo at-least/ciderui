@@ -39,6 +39,30 @@ export const cases = [
     ],
   },
   {
+    name: 'menu choices columns',
+    html: page(ex('columns')),
+    widths: [1200],
+    click: OPEN,
+    checks: [
+      { target: '#subtitles .cui-console-menu-columns', props: ['display', 'align-items'], golden: 'the columns side by side, the Apple TV app\'s Audio beside its Subtitles (the owner, 2026-11-05, for muse\'s player: one button, one panel), each as tall as the menu so the rule runs its height' },
+      { target: '#subtitles [data-column="voices"]', props: ['box-x', 'box-width'], golden: 'the first column at the popover\'s 16px side, as wide as its choices ask' },
+      { target: '#subtitles [data-column="subtitles"]', props: ['box-x', 'border-left-width', 'border-left-style', 'border-left-color', 'margin-left', 'padding-left'], golden: 'the next after a rule, the menu\'s own 0.5px in its border color (cui-console-menu-rule), in the middle of the popover\'s 8px gap (cui-console-popover)' },
+      { target: '#subtitles', props: ['box-width', 'max-width'], golden: 'the popover as wide as its columns ask, past the one column\'s 350px' },
+      { target: `[data-column="subtitles"] ${UNCHECKED} .cui-console-menu-label`, props: LABEL, asc: ['analytics', 'menu.item.label'] },
+      { target: `[data-column="voices"] ${CHECKED} .cui-console-menu-icon`, props: ['visibility'], golden: 'each column its own check' },
+    ],
+  },
+  {
+    name: 'menu choices columns phone',
+    html: page(ex('columns')),
+    widths: [390],
+    click: OPEN,
+    checks: [
+      { target: '#subtitles', props: ['box-width'], golden: 'no wider than 85% of a phone\'s window, the popover\'s own cap' },
+      { target: '#subtitles [data-column="subtitles"]', props: ['box-right'], golden: 'both columns inside it' },
+    ],
+  },
+  {
     name: 'menu choices chosen',
     html: page(ex('choices')),
     widths: [1200],

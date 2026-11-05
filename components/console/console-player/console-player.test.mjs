@@ -13,19 +13,22 @@ const LINE = '.cui-console-player-subtitles > p';
 const CUE = '.cui-console-player-cue';
 const MUSE = 'muse\'s console\'s subtitles, not tv.apple.com\'s, whose cues are its <video>\'s own text track (shown, none active in the first 22s of its first trailer, 2026-11-05; ::cue unreadable): 2.4% of the width at the least 15px, so it grows with the player (full screen too), 1.6 lines, 500, white under a soft shadow (--cui-video-cue-shadow) and no box (the owner, 2026-11-05, from Apple\'s view), 42em at its widest, balanced';
 const hidden = (html) => html.replace('data-state="playing"', 'data-state="playing" data-controls="hidden"');
-// muse's player: its subtitles' Off and eleven languages, no voices (one), the player in a
-// column beside a 288px sidebar under a 50px bar, as wide as the window's
-// height leaves (muse's player_page.go)
+// muse's player: its subtitles' Off and eleven languages, and no voices (one)
+// or two, the player in a column beside a 288px sidebar under a 50px bar, as
+// wide as the window's height leaves (muse's player_page.go)
 const LANGUAGES = [['zh-Hant', '繁體中文'], ['zh-Hans', '简体中文'], ['en', 'English'], ['ja', '日本語'], ['ko', '한국어'], ['es', 'Español'], ['pt-BR', 'Português (Brasil)'], ['de', 'Deutsch'], ['fr', 'Français'], ['th', 'ภาษาไทย'], ['vi', 'Tiếng Việt']];
-const languages = (html) => {
+const languages = (html, voices = 1) => {
   const off = html.match(/<button class="cui-console-menu-item"[^>]*value="off"[\s\S]*?<\/button>/)[0];
   const choice = ([lang, name], i) => off.replace('aria-checked="false"', `aria-checked="${i === 0}"`).replace('value="off"', `value="${lang}"`)
     .replace('<span class="cui-console-menu-label">Off</span>', `<span class="cui-console-menu-label" lang="${lang}">${name}</span>`);
-  const menu = /(<div role="menu" aria-labelledby="subtitles-title">)[\s\S]*?(<\/div><\/div><\/div>\n<div class="cui-console-popover" id="voices")/;
-  if (!menu.test(html)) throw new Error('the stills example has no subtitles menu where languages() looks');
-  const voices = /<button[^>]*data-control="voices"[\s\S]*?<\/button>\n|\n<div class="cui-console-popover" id="voices"[\s\S]*?<\/div><\/div><\/div>(?=<\/div>$)/g;
-  if ((html.match(voices) ?? []).length !== 2) throw new Error('the stills example has no voices button and menu where languages() looks');
-  const player = html.replace(menu, (_, start, end) => `${start}\n${[off, ...LANGUAGES.map(choice)].join('\n')}${end}`).replace(voices, '');
+  const subtitles = /(<div role="menu" aria-labelledby="subtitles-subtitles-title">)[\s\S]*?(<\/div><\/div><\/div><\/div><\/div>$)/;
+  if (!subtitles.test(html)) throw new Error('the stills example has no subtitles column where languages() looks');
+  const voicesColumn = /<div class="cui-console-menu" data-column="voices">[\s\S]*?<\/div><\/div>\n/;
+  if (!voicesColumn.test(html)) throw new Error('the stills example has no voices column where languages() looks');
+  const voiced = (column) => column.replace(/(<div role="menu" aria-labelledby="subtitles-voices-title">)[\s\S]*?(<\/div><\/div>\n)$/,
+    (_, start, end) => `${start}\n${LANGUAGES.slice(0, voices).map(choice).join('\n')}${end}`);
+  const player = html.replace(subtitles, (_, start, end) => `${start}\n${[off, ...LANGUAGES.map(choice)].join('\n')}${end}`)
+    .replace(voicesColumn, (column) => voices > 1 ? voiced(column) : '');
   return `<div style="height:50px"></div><div style="display:flex"><div style="flex:1;min-width:0;padding:0 24px"><div style="margin:16px auto 0;max-width:calc((100vh - 14rem) * 16 / 9)">${player}</div></div><div style="flex:none;width:288px"></div></div>`;
 };
 const LAST = '#subtitles [value="vi"]';
@@ -88,7 +91,7 @@ export const cases = [
       { target: '.cui-console-player-glyph-muted', props: ['display'], golden: 'not muted, no struck speaker' },
       { target: SCRUB, props: ['outline-style', 'outline-width', 'outline-offset'], state: 'focus-visible', golden: 'base.css\'s one focus ring (rule 9), where tv.apple.com draws a 4px blue one' },
       { target: CUE, props: ['display'], golden: 'no cue, no box: the slot is written empty until the page\'s script fills it' },
-      { target: '#subtitles', props: ['display'], golden: 'its menus written inside it, closed until a button opens one' },
+      { target: '#subtitles', props: ['display'], golden: 'its menu written inside it, closed until its button opens it' },
     ],
   },
   {
@@ -235,6 +238,18 @@ export const cases = [
       { target: BTN, props: ['box-left', 'box-top'], golden: 'the subtitles button, 24px: its centre the menu\'s corner' },
       { target: '#subtitles', props: ['box-x', 'box-y', 'box-width', 'box-height'], golden: 'inside the player (its parent: box-x and box-y from its corner): opening upward, its foot and its right edge on its button\'s centre, as tv.apple.com\'s (tv-player-menu:menu at 1258, 637, 185 by 142, its corner 1443, 779; tv-player:subtitles at 1434, 769, 20px: centred on 1444, 779); every choice in it, none scrolled' },
       { target: '#subtitles', props: ['max-height'], golden: 'as tall as the player leaves above its button, 20px from its top (the overlay\'s room), not the toolkit\'s 435px: tv.apple.com\'s menu has none (tv-player-menu:menu, overflow visible)' },
+    ],
+  },
+  {
+    name: 'player menu voices and languages',
+    html: languages(ex('stills'), 2),
+    widths: [1440],
+    height: 900,
+    click: '[data-control="subtitles"]',
+    checks: [
+      { target: '#subtitles', props: ['box-x', 'box-y', 'box-width', 'box-height'], golden: 'one menu of two columns, muse\'s voices beside its subtitles (the owner, 2026-11-05: one button, one panel, as the Apple TV app\'s Audio and Subtitles; tv.apple.com\'s own menu is one column of groups, its audio a platform <select>, tv-player-menu): inside the player, opening upward, its foot and right edge on its button\'s centre as one column\'s' },
+      { target: '#subtitles [data-column="voices"]', props: ['box-x', 'box-width', 'box-height'], golden: 'the voices first, at the start, as wide as its longest name asks' },
+      { target: '#subtitles [data-column="subtitles"]', props: ['box-x', 'box-width', 'box-height', 'border-left-width', 'border-left-style', 'padding-left', 'margin-left'], golden: 'the subtitles beside them, after a rule in the popover\'s 8px gap, each column as tall as the menu' },
     ],
   },
   {

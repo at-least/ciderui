@@ -7,7 +7,7 @@ category = "Console"
 image = "pictures/console-player.png"
 +++
 
-A video’s controls laid over it, as tv.apple.com’s player draws them: the volume at the top, play or pause in the middle, and at the foot a title, the buttons for subtitles, voices and full screen, and the scrubber with the time played and the time left.
+A video’s controls laid over it, as tv.apple.com’s player draws them: the volume at the top, play or pause in the middle, and at the foot a title, the buttons for subtitles and full screen, and the scrubber with the time played and the time left.
 
 ```css
 @import "ciderui/components/console/console-player/console-player.css";
@@ -78,7 +78,7 @@ The script finds each control by its `data-control`, the same on every player:
 | --- | --- |
 | `play` | the centre button |
 | `volume`, `mute` | the volume’s range, and its button |
-| `subtitles`, `voices` | the buttons that open the two menus |
+| `subtitles` | the button that opens the menu |
 | `full-screen` | the full-screen button |
 | `scrubber` | the scrubber’s range |
 | `elapsed`, `remaining` | the time played, and the time left |
@@ -88,8 +88,8 @@ The cue is `cui-console-player-cue`.
 
 ## Menus
 
-The subtitles and voices buttons open a popover by `popovertarget`: a menu of choices, a [Console Menu](@/components/console-menu.md#choices)’s, written inside the player after its overlay, so the controls stay while the focus is in it (not inside the overlay, which places its own parts). tv.apple.com’s own menu is drawn otherwise (a blurred light ground, 6px corners, 32px rows: `reference/apple.com/`’s `tv-player-menu`); the console keeps its one menu, and takes tv.apple.com’s check at each choice’s start. A menu opens upward inside the player, as tv.apple.com’s: its foot and its right edge on its button’s centre, at most as tall as the player leaves above it (20px from its top), its choices scrolling inside it.
+The subtitles button opens a popover by `popovertarget`: a menu of choices, a [Console Menu](@/components/console-menu.md#choices)’s, the voices and the subtitles in columns side by side (one button, one panel, as the Apple TV app’s Audio and Subtitles; tv.apple.com’s own audio is a platform `<select>`), written inside the player after its overlay, so the controls stay while the focus is in it (not inside the overlay, which places its own parts). tv.apple.com’s own menu is drawn otherwise (a blurred light ground, 6px corners, 32px rows: `reference/apple.com/`’s `tv-player-menu`); the console keeps its one menu, and takes tv.apple.com’s check at each choice’s start. A menu opens upward inside the player, as tv.apple.com’s: its foot and its right edge on its button’s centre, at most as tall as the player leaves above it (20px from its top), its choices scrolling inside it.
 
 ## Go
 
-The Go module writes it with `console.ConsolePlayer`: the picture (`Video`), the state, the labels, the volume, whether it is muted or fills the screen, the position and duration in seconds (it writes the times), the cue and its language, each menu, a `console.ConsoleChoiceMenu` (none, no button), the page’s full-screen controls (`FullScreenControls`) and its own popovers (`Popovers`, written inside the player after its menus and placed as they are).
+The Go module writes it with `console.ConsolePlayer`: the picture (`Video`), the state, the labels, the volume, whether it is muted or fills the screen, the position and duration in seconds (it writes the times), the cue and its language, the menu, a `console.ConsoleChoiceMenu` (none, no button), the page’s full-screen controls (`FullScreenControls`) and its own popovers (`Popovers`, written inside the player after its menus and placed as they are).

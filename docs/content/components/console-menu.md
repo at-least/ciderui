@@ -31,8 +31,12 @@ Below 640px its items are 37px at 16px. The Go module writes it with `console.Co
 
 ## Choices
 
-A list to choose one from, in a [Console Popover](@/components/console-popover.md): a [Console Player](@/components/console-player.md)’s subtitles or voices. Each choice is a `<button role="menuitemradio">` item, its `value` what the page’s script reads, its check in the icon’s place, shown on the one with `aria-checked="true"` and kept hidden on the others so every label starts in line. A click closes the popover by itself (`popovertarget` and `popovertargetaction="hide"`); the script moves `aria-checked` to the choice and moves the focus among the choices by the arrow keys. A language’s name carries its `lang`.
+A list to choose one from, in a [Console Popover](@/components/console-popover.md): a [Console Player](@/components/console-player.md)’s subtitles. Each choice is a `<button role="menuitemradio">` item, its `value` what the page’s script reads, its check in the icon’s place, shown on the one with `aria-checked="true"` and kept hidden on the others so every label starts in line. A click closes the popover by itself (`popovertarget` and `popovertargetaction="hide"`); the script moves `aria-checked` to the choice and moves the focus among the choices by the arrow keys. A language’s name carries its `lang`.
 
 {{ <cui_example file="console-menu/choices" title="A console menu of choices" pad={true} /> }}
 
-The Go module writes it with `console.ConsoleChoiceMenu` (the popover’s id, its title, its choices) and `console.ConsoleChoice` (the label, the value, the language, checked); one choice is checked.
+Two lists side by side, each its title over its choices, are one menu of columns (`cui-console-menu-columns`, each column a `cui-console-menu` with its `data-column`), as the Apple TV app’s Audio beside its Subtitles: a rule between them, each column its own check, the popover as wide as they ask (at most 85% of the window).
+
+{{ <cui_example file="console-menu/columns" title="A console menu of choices in two columns" pad={true} /> }}
+
+The Go module writes it with `console.ConsoleChoiceMenu` (the popover’s id, its columns), `console.ConsoleChoiceColumn` (its name, its title, its choices; one is checked) and `console.ConsoleChoice` (the label, the value, the language, checked).

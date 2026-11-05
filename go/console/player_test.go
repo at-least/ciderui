@@ -17,18 +17,18 @@ const playerPoster = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53
 // page's script showing one at a time
 const playerStill = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjkwMCI+PHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjNmE0YThhIi8+PGNpcmNsZSBjeD0iNDIwIiBjeT0iMzIwIiByPSIxNjAiIGZpbGw9IiNmMGQwYTAiLz48cmVjdCB5PSI2NDAiIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjI2MCIgZmlsbD0iIzNhMmE0YSIvPjwvc3ZnPg=="
 
+// the voices and the subtitles side by side, as the Apple TV app's
 func subtitlesMenu() console.ConsoleChoiceMenu {
-	return console.ConsoleChoiceMenu{ID: "subtitles", Title: "Subtitles", Class: "", Choices: []console.ConsoleChoice{
-		{Label: "Off", Value: "off", Lang: "", Checked: false},
-		{Label: "English", Value: "en", Lang: "en", Checked: true},
-		{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant", Checked: false},
-	}}
-}
-
-func voicesMenu() console.ConsoleChoiceMenu {
-	return console.ConsoleChoiceMenu{ID: "voices", Title: "Voices", Class: "", Choices: []console.ConsoleChoice{
-		{Label: "English", Value: "en", Lang: "en", Checked: true},
-		{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant", Checked: false},
+	return console.ConsoleChoiceMenu{ID: "subtitles", Class: "", Columns: []console.ConsoleChoiceColumn{
+		{Name: "voices", Title: "Voices", Choices: []console.ConsoleChoice{
+			{Label: "English", Value: "en", Lang: "en", Checked: true},
+			{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant", Checked: false},
+		}},
+		{Name: "subtitles", Title: "Subtitles", Choices: []console.ConsoleChoice{
+			{Label: "Off", Value: "off", Lang: "", Checked: false},
+			{Label: "English", Value: "en", Lang: "en", Checked: true},
+			{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant", Checked: false},
+		}},
 	}}
 }
 
@@ -52,8 +52,6 @@ func player(state console.ConsolePlayerState, hidden bool, title string) console
 		CueLang:             "",
 		SubtitlesMenu:       subtitlesMenu(),
 		SubtitlesAriaLabel:  "Subtitles",
-		VoicesMenu:          voicesMenu(),
-		VoicesAriaLabel:     "Voices",
 		FullScreenAriaLabel: "Full Screen",
 		FullScreenControls:  nil,
 		Popovers:            nil,
@@ -117,7 +115,6 @@ func TestPlayerPanics(t *testing.T) {
 		{"needs a ScrubAriaLabel", func(p *console.ConsolePlayer) { p.ScrubAriaLabel = "" }},
 		{"needs a FullScreenAriaLabel", func(p *console.ConsolePlayer) { p.FullScreenAriaLabel = "" }},
 		{"needs a SubtitlesAriaLabel with a SubtitlesMenu", func(p *console.ConsolePlayer) { p.SubtitlesAriaLabel = "" }},
-		{"needs a VoicesAriaLabel with a VoicesMenu", func(p *console.ConsolePlayer) { p.VoicesAriaLabel = "" }},
 		{"needs a Cue with a CueLang", func(p *console.ConsolePlayer) { p.CueLang = "en" }},
 		{"Volume is 0 to 100", func(p *console.ConsolePlayer) { p.Volume = 101 }},
 		{"Position is 0 to its Duration", func(p *console.ConsolePlayer) { p.Position = 63 }},
@@ -130,8 +127,7 @@ func TestPlayerPanics(t *testing.T) {
 
 func TestPlayerWritesNoMenuButtonWithoutItsMenu(t *testing.T) {
 	p := player(console.ConsolePlayerStatePaused, false, "")
-	none := console.ConsoleChoiceMenu{ID: "", Title: "", Choices: nil, Class: ""}
-	p.SubtitlesMenu, p.SubtitlesAriaLabel, p.VoicesMenu, p.VoicesAriaLabel = none, "", none, ""
+	p.SubtitlesMenu, p.SubtitlesAriaLabel = console.ConsoleChoiceMenu{ID: "", Columns: nil, Class: ""}, ""
 	got := example.Render(p)
 	if strings.Contains(got, "popover") || strings.Contains(got, "cui-console-player-title") {
 		t.Errorf("a player with no menus and no title wrote one: %s", got)
@@ -170,7 +166,7 @@ func TestPlayerWritesItsFullScreenControls(t *testing.T) {
 // the hooks a page's script finds the controls by: each once
 func TestPlayerMarksEachControl(t *testing.T) {
 	got := example.Render(player(console.ConsolePlayerStatePaused, false, ""))
-	for _, control := range []string{"play", "volume", "mute", "subtitles", "voices", "full-screen", "scrubber", "elapsed", "remaining", "preview"} {
+	for _, control := range []string{"play", "volume", "mute", "subtitles", "full-screen", "scrubber", "elapsed", "remaining", "preview"} {
 		if n := strings.Count(got, `data-control="`+control+`"`); n != 1 {
 			t.Errorf("data-control=%q written %d times, want 1", control, n)
 		}

@@ -26,7 +26,7 @@ var (
 // data-muted (the mute button's glyph), data-fullscreen (while it fills
 // the screen: the bar's FullScreenControls show), each
 // range's value and --cui-console-player-value, the times, the cue. It finds
-// each control by its data-control: play, volume, mute, subtitles, voices,
+// each control by its data-control: play, volume, mute, subtitles,
 // full-screen, scrubber, elapsed, remaining, and the scrubber's preview
 // (preview), hidden until the page fills its picture and line and shows it
 // over the time under the pointer.
@@ -57,14 +57,12 @@ type ConsolePlayer struct {
 	Cue string
 	// CueLang is the cue's language, a BCP 47 tag; "" for the page's.
 	CueLang string
-	// SubtitlesMenu is the popover the subtitles button opens, written
+	// SubtitlesMenu is the popover the subtitles button opens, its columns
+	// such as the voices and the subtitles side by side, written
 	// inside the player, so the controls stay while the focus is in it; no
 	// ID, no button.
-	SubtitlesMenu      ConsoleChoiceMenu
-	SubtitlesAriaLabel string
-	// VoicesMenu: the same for the voices.
-	VoicesMenu          ConsoleChoiceMenu
-	VoicesAriaLabel     string
+	SubtitlesMenu       ConsoleChoiceMenu
+	SubtitlesAriaLabel  string
 	FullScreenAriaLabel string
 	// FullScreenControls are the page's own controls the bar shows before
 	// its buttons while the player fills the screen (data-fullscreen), and
@@ -89,9 +87,6 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 	}
 	if p.SubtitlesMenu.ID != "" && p.SubtitlesAriaLabel == "" {
 		panic("console.ConsolePlayer needs a SubtitlesAriaLabel with a SubtitlesMenu")
-	}
-	if p.VoicesMenu.ID != "" && p.VoicesAriaLabel == "" {
-		panic("console.ConsolePlayer needs a VoicesAriaLabel with a VoicesMenu")
 	}
 	if p.CueLang != "" && p.Cue == "" {
 		panic("console.ConsolePlayer needs a Cue with a CueLang")
@@ -133,7 +128,6 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 				h.Div(h.Class("cui-console-player-buttons"),
 					g.If(p.FullScreenControls != nil, h.Div(h.Class("cui-console-player-full-screen-controls"), p.FullScreenControls)),
 					g.If(p.SubtitlesMenu.ID != "", button("subtitles", p.SubtitlesAriaLabel, p.SubtitlesMenu.ID, lucide.Captions)),
-					g.If(p.VoicesMenu.ID != "", button("voices", p.VoicesAriaLabel, p.VoicesMenu.ID, lucide.AudioLines)),
 					button("full-screen", p.FullScreenAriaLabel, "", lucide.Maximize2),
 				),
 				h.Div(h.Class("cui-console-player-progress"),
@@ -149,7 +143,6 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 			),
 		),
 		g.If(p.SubtitlesMenu.ID != "", p.SubtitlesMenu),
-		g.If(p.VoicesMenu.ID != "", p.VoicesMenu),
 		p.Popovers,
 	).Render(w)
 }
