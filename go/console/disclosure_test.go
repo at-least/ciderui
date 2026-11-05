@@ -37,8 +37,10 @@ func TestDisclosureThePagesUtilitiesGoOnEachPart(t *testing.T) {
 	}
 }
 
-func TestDisclosureAnEmptySummaryPanics(t *testing.T) {
-	mustPanic(t, "needs a Summary", func() {
-		example.Render(console.ConsoleDisclosure{Variant: console.ConsoleDisclosureVariantLine, Open: false, Summary: "", SummaryClass: "", Class: "", Children: nil})
+func TestDisclosurePanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleDisclosure {
+		return console.ConsoleDisclosure{Variant: console.ConsoleDisclosureVariantLine, Open: false, Summary: "x", SummaryClass: "", Class: "", Children: nil}
+	}, []example.Break[console.ConsoleDisclosure]{
+		{Want: "console.ConsoleDisclosure needs a Summary", Change: func(p *console.ConsoleDisclosure) { p.Summary = "" }},
 	})
 }

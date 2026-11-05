@@ -16,20 +16,12 @@ func TestHintRendersTheExample(t *testing.T) {
 	example.Check(t, hint, "console/console-hint/examples/hint.html")
 }
 
-func TestHintAnEmptyIDPanics(t *testing.T) {
-	mustPanic(t, "needs an ID", func() {
-		example.Render(console.ConsoleHint{ID: "", AriaLabel: "x", Hint: "x"})
-	})
-}
-
-func TestHintAnEmptyAriaLabelPanics(t *testing.T) {
-	mustPanic(t, "ConsoleHint needs an AriaLabel", func() {
-		example.Render(console.ConsoleHint{ID: "x", AriaLabel: "", Hint: "x"})
-	})
-}
-
-func TestHintAnEmptyHintPanics(t *testing.T) {
-	mustPanic(t, "ConsoleHint needs a Hint", func() {
-		example.Render(console.ConsoleHint{ID: "x", AriaLabel: "x", Hint: ""})
+func TestHintPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleHint {
+		return console.ConsoleHint{ID: "x", AriaLabel: "x", Hint: "x"}
+	}, []example.Break[console.ConsoleHint]{
+		{Want: "console.ConsoleHint needs an ID", Change: func(p *console.ConsoleHint) { p.ID = "" }},
+		{Want: "console.ConsoleHint needs an AriaLabel", Change: func(p *console.ConsoleHint) { p.AriaLabel = "" }},
+		{Want: "console.ConsoleHint needs a Hint", Change: func(p *console.ConsoleHint) { p.Hint = "" }},
 	})
 }

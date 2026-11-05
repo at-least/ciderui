@@ -41,14 +41,12 @@ func TestMetricAValueOfMarkupIsWrittenAsItIs(t *testing.T) {
 	}
 }
 
-func TestMetricAValueOfEmptyMarkupPanics(t *testing.T) {
-	mustPanic(t, "needs a Value", func() {
-		example.Render(console.ConsoleMetric{Title: "x", Value: g.Text(""), Change: "", ChangeColor: console.ConsoleChangeColorNeutral, Caption: "", Href: "", Class: ""})
-	})
-}
-
-func TestMetricAnEmptyTitlePanics(t *testing.T) {
-	mustPanic(t, "ConsoleMetric needs a Title", func() {
-		example.Render(console.ConsoleMetric{Title: "", Value: g.Text("1"), Change: "", ChangeColor: console.ConsoleChangeColorNeutral, Caption: "", Href: "", Class: ""})
+func TestMetricPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleMetric {
+		return console.ConsoleMetric{Title: "x", Value: g.Text("1"), Change: "", ChangeColor: console.ConsoleChangeColorNeutral, Caption: "", Href: "", Class: ""}
+	}, []example.Break[console.ConsoleMetric]{
+		{Want: "console.ConsoleMetric needs a Title", Change: func(p *console.ConsoleMetric) { p.Title = "" }},
+		{Want: "console.ConsoleMetric needs a Value", Change: func(p *console.ConsoleMetric) { p.Value = nil }},
+		{Want: "console.ConsoleMetric needs a Value", Change: func(p *console.ConsoleMetric) { p.Value = g.Text("") }},
 	})
 }

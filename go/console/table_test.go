@@ -59,17 +59,10 @@ func TestTableBodyAttrsGoOnItsBody(t *testing.T) {
 }
 
 func TestTablePanics(t *testing.T) {
-	for _, c := range []struct {
-		want   string
-		change func(*console.ConsoleTable)
-	}{
-		{"ConsoleTable needs an AriaLabel", func(t *console.ConsoleTable) { t.AriaLabel = "" }},
-		{"ConsoleTable needs a ConsoleTableColumn", func(t *console.ConsoleTable) { t.Columns = nil }},
-		{"ConsoleTableColumn needs a Label", func(t *console.ConsoleTable) { t.Columns[1].Label = "" }},
-		{"ConsoleTableRow needs a cell for each column", func(t *console.ConsoleTable) { t.Rows[1].Cells = t.Rows[1].Cells[:3] }},
-	} {
-		table := jobsTable()
-		c.change(&table)
-		mustPanic(t, c.want, func() { example.Render(table) })
-	}
+	example.Panics(t, jobsTable, []example.Break[console.ConsoleTable]{
+		{Want: "console.ConsoleTable needs an AriaLabel", Change: func(p *console.ConsoleTable) { p.AriaLabel = "" }},
+		{Want: "console.ConsoleTable needs a ConsoleTableColumn", Change: func(p *console.ConsoleTable) { p.Columns = nil }},
+		{Want: "console.ConsoleTableColumn needs a Label", Change: func(p *console.ConsoleTable) { p.Columns[1].Label = "" }},
+		{Want: "console.ConsoleTableRow needs a cell for each column", Change: func(p *console.ConsoleTable) { p.Rows[1].Cells = p.Rows[1].Cells[:3] }},
+	})
 }

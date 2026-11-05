@@ -29,8 +29,10 @@ func TestStatusRendersTheExamples(t *testing.T) {
 
 }
 
-func TestStatusAnEmptyLabelPanics(t *testing.T) {
-	mustPanic(t, "needs a Label", func() {
-		example.Render(console.ConsoleStatus{Label: "", Color: console.ConsoleColorNeutral, Class: ""})
+func TestStatusPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleStatus {
+		return console.ConsoleStatus{Label: "x", Color: console.ConsoleColorNeutral, Class: ""}
+	}, []example.Break[console.ConsoleStatus]{
+		{Want: "console.ConsoleStatus needs a Label", Change: func(p *console.ConsoleStatus) { p.Label = "" }},
 	})
 }

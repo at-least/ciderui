@@ -1,23 +1,10 @@
 package console_test
 
 import (
-	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
-	"testing"
 )
-
-func mustPanic(t *testing.T, want string, render func()) {
-	t.Helper()
-	defer func() {
-		r := recover()
-		if r == nil || !strings.Contains(fmt.Sprint(r), want) {
-			t.Errorf("panicked with %v, want %q", r, want)
-		}
-	}()
-	render()
-}
 
 // not example.Read: it trims each line
 func readRaw(path string) string {
@@ -26,4 +13,12 @@ func readRaw(path string) string {
 		panic(err)
 	}
 	return string(b)
+}
+
+// the src of the image of alt in the example at path, a data: URL too long to copy
+func exampleSrc(path, alt string) string {
+	raw := readRaw(path)
+	at := strings.Index(raw, `" alt="`+alt+`"`)
+	start := strings.LastIndex(raw[:at], `src="`) + len(`src="`)
+	return raw[start:at]
 }

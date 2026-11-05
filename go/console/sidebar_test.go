@@ -25,26 +25,13 @@ func TestSidebarRendersTheExample(t *testing.T) {
 	example.Check(t, sidebar, "console/console-sidebar/examples/sidebar.html")
 }
 
-func TestSidebarWithNoCloseAriaLabelPanics(t *testing.T) {
-	mustPanic(t, "ConsoleSidebar needs a CloseAriaLabel", func() {
-		example.Render(console.ConsoleSidebar{ID: "s", AriaLabel: "x", Home: "/", Wordmark: "x", CloseAriaLabel: "", Class: "", Footer: nil, Children: nil})
-	})
-}
-
-func TestSidebarWithNoIDPanics(t *testing.T) {
-	mustPanic(t, "ConsoleSidebar needs an ID", func() {
-		example.Render(console.ConsoleSidebar{ID: "", AriaLabel: "x", Home: "/", Wordmark: "x", CloseAriaLabel: "Close", Class: "", Footer: nil, Children: nil})
-	})
-}
-
-func TestSidebarWithNoAriaLabelPanics(t *testing.T) {
-	mustPanic(t, "ConsoleSidebar needs an AriaLabel", func() {
-		example.Render(console.ConsoleSidebar{ID: "s", AriaLabel: "", Home: "/", Wordmark: "x", CloseAriaLabel: "Close", Class: "", Footer: nil, Children: nil})
-	})
-}
-
-func TestSidebarWithNoWordmarkPanics(t *testing.T) {
-	mustPanic(t, "ConsoleSidebar needs a Wordmark", func() {
-		example.Render(console.ConsoleSidebar{ID: "s", AriaLabel: "x", Home: "/", Wordmark: "", CloseAriaLabel: "Close", Class: "", Footer: nil, Children: nil})
+func TestSidebarPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleSidebar {
+		return console.ConsoleSidebar{ID: "s", AriaLabel: "x", Home: "/", Wordmark: "x", CloseAriaLabel: "Close", Class: "", Footer: nil, Children: nil}
+	}, []example.Break[console.ConsoleSidebar]{
+		{Want: "console.ConsoleSidebar needs an ID", Change: func(p *console.ConsoleSidebar) { p.ID = "" }},
+		{Want: "console.ConsoleSidebar needs an AriaLabel", Change: func(p *console.ConsoleSidebar) { p.AriaLabel = "" }},
+		{Want: "console.ConsoleSidebar needs a Wordmark", Change: func(p *console.ConsoleSidebar) { p.Wordmark = "" }},
+		{Want: "console.ConsoleSidebar needs a CloseAriaLabel", Change: func(p *console.ConsoleSidebar) { p.CloseAriaLabel = "" }},
 	})
 }

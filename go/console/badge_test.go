@@ -20,8 +20,10 @@ func TestBadgeRendersTheExample(t *testing.T) {
 	example.Check(t, h.P(h.Class("flex flex-wrap gap-2"), badges), "console/console-badge/examples/badges.html")
 }
 
-func TestBadgeAnEmptyLabelPanics(t *testing.T) {
-	mustPanic(t, "needs a Label", func() {
-		example.Render(console.ConsoleBadge{Label: "", Color: console.ConsoleColorNeutral, Class: ""})
+func TestBadgePanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleBadge {
+		return console.ConsoleBadge{Label: "x", Color: console.ConsoleColorNeutral, Class: ""}
+	}, []example.Break[console.ConsoleBadge]{
+		{Want: "console.ConsoleBadge needs a Label", Change: func(p *console.ConsoleBadge) { p.Label = "" }},
 	})
 }

@@ -30,14 +30,11 @@ func TestDialogTakesAttributes(t *testing.T) {
 	}
 }
 
-func TestDialogWithoutATitlePanics(t *testing.T) {
-	mustPanic(t, "ConsoleDialog needs a Title", func() {
-		example.Render(console.ConsoleDialog{ID: "x", Title: nil, Attrs: nil, Class: "", Children: nil})
-	})
-}
-
-func TestDialogWithoutAnIDPanics(t *testing.T) {
-	mustPanic(t, "needs an ID", func() {
-		example.Render(console.ConsoleDialog{ID: "", Title: g.Text("x"), Attrs: nil, Class: "", Children: nil})
+func TestDialogPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleDialog {
+		return console.ConsoleDialog{ID: "x", Title: g.Text("x"), Attrs: nil, Class: "", Children: nil}
+	}, []example.Break[console.ConsoleDialog]{
+		{Want: "console.ConsoleDialog needs an ID", Change: func(p *console.ConsoleDialog) { p.ID = "" }},
+		{Want: "console.ConsoleDialog needs a Title", Change: func(p *console.ConsoleDialog) { p.Title = nil }},
 	})
 }

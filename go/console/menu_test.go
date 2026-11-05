@@ -27,37 +27,6 @@ func TestMenuRendersTheExample(t *testing.T) {
 	example.Check(t, menu, "console/console-menu/examples/menu.html")
 }
 
-func TestMenuItemWithNoHrefIsNotAvailable(t *testing.T) {
-	got := example.Render(console.ConsoleMenuItem{Href: "", Label: "x", Icon: icon.Icon{}, Current: true, Secondary: "", Class: ""})
-	if want := `<a class="cui-console-menu-item" aria-disabled="true"><span class="cui-console-menu-label">x</span></a>`; got != want {
-		t.Errorf("got  %s\nwant %s", got, want)
-	}
-}
-
-func TestMenuWithNoAriaLabelPanics(t *testing.T) {
-	mustPanic(t, "ConsoleMenu needs an AriaLabel", func() {
-		example.Render(console.ConsoleMenu{AriaLabel: "", Class: "", Children: g.Text("x")})
-	})
-}
-
-func TestMenuItemWithNoLabelPanics(t *testing.T) {
-	mustPanic(t, "ConsoleMenuItem needs a Label", func() {
-		example.Render(console.ConsoleMenuItem{Href: "#x", Label: "", Icon: icon.Icon{}, Current: false, Secondary: "", Class: ""})
-	})
-}
-
-func TestMenuGroupWithNoLabelPanics(t *testing.T) {
-	mustPanic(t, "ConsoleMenuGroup needs a Label", func() {
-		example.Render(console.ConsoleMenuGroup{Label: "", Icon: icon.Icon{}, Open: false, Class: "", Items: []console.ConsoleMenuItem{{Href: "#x", Label: "x", Icon: icon.Icon{}, Current: false, Secondary: "", Class: ""}}})
-	})
-}
-
-func TestMenuGroupWithNoItemsPanics(t *testing.T) {
-	mustPanic(t, "ConsoleMenuGroup needs an Item", func() {
-		example.Render(console.ConsoleMenuGroup{Label: "x", Icon: icon.Icon{}, Open: false, Class: "", Items: nil})
-	})
-}
-
 func choiceMenu() console.ConsoleChoiceMenu {
 	return console.ConsoleChoiceMenu{ID: "subtitles", Class: "", Columns: []console.ConsoleChoiceColumn{
 		{Name: "subtitles", Title: "Subtitles", Choices: []console.ConsoleChoice{
@@ -91,24 +60,52 @@ func TestChoiceMenuRendersTheExample(t *testing.T) {
 	example.Check(t, page, "console/console-menu/examples/columns.html")
 }
 
-func TestChoiceMenuPanics(t *testing.T) {
-	for _, c := range []struct {
-		want   string
-		change func(*console.ConsoleChoiceMenu)
-	}{
-		{"ConsoleChoiceMenu needs an ID", func(m *console.ConsoleChoiceMenu) { m.ID = "" }},
-		{"ConsoleChoiceMenu needs a column", func(m *console.ConsoleChoiceMenu) { m.Columns = nil }},
-		{"ConsoleChoiceColumn needs a Name and a Title", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Name = "" }},
-		{"ConsoleChoiceColumn needs a Name and a Title", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Title = "" }},
-		{"columns need names of their own", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Name = "voices" }},
-		{"ConsoleChoiceColumn needs a choice", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Choices = nil }},
-		{"ConsoleChoice needs a Label and a Value", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Choices[0].Label = "" }},
-		{"ConsoleChoice needs a Label and a Value", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Choices[0].Value = "" }},
-		{"needs one choice checked", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Choices[0].Checked = true }},
-		{"needs one choice checked", func(m *console.ConsoleChoiceMenu) { m.Columns[1].Choices[1].Checked = false }},
-	} {
-		m := columnsMenu()
-		c.change(&m)
-		mustPanic(t, c.want, func() { example.Render(m) })
+// not the link a current item is: no aria-current on what cannot be followed
+func TestMenuItemWithNoHrefIsNotAvailable(t *testing.T) {
+	got := example.Render(console.ConsoleMenuItem{Href: "", Label: "x", Icon: icon.Icon{}, Current: true, Secondary: "", Class: ""})
+	if want := `<a class="cui-console-menu-item" aria-disabled="true"><span class="cui-console-menu-label">x</span></a>`; got != want {
+		t.Errorf("got  %s\nwant %s", got, want)
 	}
+}
+
+func TestMenuPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleMenu {
+		return console.ConsoleMenu{AriaLabel: "x", Class: "", Children: g.Text("x")}
+	}, []example.Break[console.ConsoleMenu]{
+		{Want: "console.ConsoleMenu needs an AriaLabel", Change: func(p *console.ConsoleMenu) { p.AriaLabel = "" }},
+	})
+}
+
+func validMenuItem() console.ConsoleMenuItem {
+	return console.ConsoleMenuItem{Href: "#x", Label: "x", Icon: icon.Icon{}, Current: false, Secondary: "", Class: ""}
+}
+
+func TestMenuItemPanics(t *testing.T) {
+	example.Panics(t, validMenuItem, []example.Break[console.ConsoleMenuItem]{
+		{Want: "console.ConsoleMenuItem needs a Label", Change: func(p *console.ConsoleMenuItem) { p.Label = "" }},
+	})
+}
+
+func TestMenuGroupPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleMenuGroup {
+		return console.ConsoleMenuGroup{Label: "x", Icon: icon.Icon{}, Open: false, Class: "", Items: []console.ConsoleMenuItem{validMenuItem()}}
+	}, []example.Break[console.ConsoleMenuGroup]{
+		{Want: "console.ConsoleMenuGroup needs a Label", Change: func(p *console.ConsoleMenuGroup) { p.Label = "" }},
+		{Want: "console.ConsoleMenuGroup needs an Item", Change: func(p *console.ConsoleMenuGroup) { p.Items = nil }},
+	})
+}
+
+func TestChoiceMenuPanics(t *testing.T) {
+	example.Panics(t, columnsMenu, []example.Break[console.ConsoleChoiceMenu]{
+		{Want: "console.ConsoleChoiceMenu needs an ID", Change: func(p *console.ConsoleChoiceMenu) { p.ID = "" }},
+		{Want: "console.ConsoleChoiceMenu needs a column", Change: func(p *console.ConsoleChoiceMenu) { p.Columns = nil }},
+		{Want: "console.ConsoleChoiceColumn needs a Name and a Title", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Name = "" }},
+		{Want: "console.ConsoleChoiceColumn needs a Name and a Title", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Title = "" }},
+		{Want: "console.ConsoleChoiceMenu's columns need names of their own", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Name = "voices" }},
+		{Want: "console.ConsoleChoiceColumn needs a choice", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Choices = nil }},
+		{Want: "console.ConsoleChoice needs a Label and a Value", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Choices[0].Label = "" }},
+		{Want: "console.ConsoleChoice needs a Label and a Value", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Choices[0].Value = "" }},
+		{Want: "console.ConsoleChoiceColumn needs one choice checked", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Choices[0].Checked = true }},
+		{Want: "console.ConsoleChoiceColumn needs one choice checked", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Choices[1].Checked = false }},
+	})
 }

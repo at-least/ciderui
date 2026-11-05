@@ -35,7 +35,7 @@ func TestCheck(t *testing.T) {
 }
 
 func TestJoinTrimmed(t *testing.T) {
-	if got := joinTrimmed("<p>\n  <b>a b</b>\t\n</p>\n"); got != "<p><b>a b</b></p>" {
+	if got := JoinTrimmed("<p>\n  <b>a b</b>\t\n</p>\n"); got != "<p><b>a b</b></p>" {
 		t.Errorf("got %s", got)
 	}
 }

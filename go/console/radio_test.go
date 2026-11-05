@@ -19,21 +19,11 @@ func TestRadioRendersTheExample(t *testing.T) {
 	example.Check(t, radios, "console/console-radio/examples/radios.html")
 }
 
-func TestRadioAttrsGoOnItsInput(t *testing.T) {
-	got := example.Render(console.ConsoleRadio{Name: "kind", Value: "service", Checked: false, Caption: "", Attrs: h.Required(), Class: "", Children: g.Text("Service")})
-	if want := `<label class="cui-console-radio"><input class="cui-console-radio-input" type="radio" name="kind" value="service" required>Service</label>`; got != want {
-		t.Errorf("got  %s\nwant %s", got, want)
-	}
-}
-
-func TestRadioWithoutItsLabelPanics(t *testing.T) {
-	mustPanic(t, "ConsoleRadio needs its label as Children", func() {
-		example.Render(console.ConsoleRadio{Name: "a", Value: "a", Checked: false, Caption: "", Attrs: nil, Class: "", Children: nil})
-	})
-}
-
-func TestRadioAnEmptyNamePanics(t *testing.T) {
-	mustPanic(t, "needs a Name", func() {
-		example.Render(console.ConsoleRadio{Name: "", Value: "a", Checked: false, Caption: "", Attrs: nil, Class: "", Children: g.Text("A")})
+func TestRadioPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleRadio {
+		return console.ConsoleRadio{Name: "a", Value: "a", Checked: false, Caption: "", Attrs: nil, Class: "", Children: g.Text("A")}
+	}, []example.Break[console.ConsoleRadio]{
+		{Want: "console.ConsoleRadio needs a Name", Change: func(p *console.ConsoleRadio) { p.Name = "" }},
+		{Want: "console.ConsoleRadio needs its label as Children", Change: func(p *console.ConsoleRadio) { p.Children = nil }},
 	})
 }

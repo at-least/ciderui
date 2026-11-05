@@ -1,6 +1,7 @@
 package console_test
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
@@ -33,8 +34,17 @@ func TestListItemARowOfItsOwnContentNeedsNoLabel(t *testing.T) {
 	}
 }
 
-func TestListItemARowOfNothingPanics(t *testing.T) {
-	mustPanic(t, "needs a Label or its own content", func() {
-		example.Render(console.ConsoleListItem{Href: "", ID: "", Label: "", Secondary: "", Class: "", Children: nil})
+func TestListItemPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleListItem {
+		return console.ConsoleListItem{Href: "", ID: "", Label: "x", Secondary: "", Class: "", Children: nil}
+	}, []example.Break[console.ConsoleListItem]{
+		{Want: "console.ConsoleListItem needs a Label or its own content", Change: func(p *console.ConsoleListItem) { p.Label = "" }},
 	})
+}
+
+func TestListItemALinkTakesItsID(t *testing.T) {
+	got := example.Render(console.ConsoleListItem{Href: "#a", ID: "row", Label: "x", Secondary: "", Class: "", Children: nil})
+	if !strings.HasPrefix(got, `<a class="cui-console-list-item" id="row" href="#a">`) {
+		t.Errorf("got %s", got)
+	}
 }

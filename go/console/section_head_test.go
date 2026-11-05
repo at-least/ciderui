@@ -25,8 +25,10 @@ func TestSectionHeadRendersTheExample(t *testing.T) {
 	example.Check(t, head, "console/console-section-head/examples/section-head.html")
 }
 
-func TestSectionHeadWithoutATitlePanics(t *testing.T) {
-	mustPanic(t, "ConsoleSectionHead needs a Title", func() {
-		example.Render(console.ConsoleSectionHead{Title: nil, Class: "", Children: nil})
+func TestSectionHeadPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleSectionHead {
+		return console.ConsoleSectionHead{Title: g.Text("x"), Class: "", Children: nil}
+	}, []example.Break[console.ConsoleSectionHead]{
+		{Want: "console.ConsoleSectionHead needs a Title", Change: func(p *console.ConsoleSectionHead) { p.Title = nil }},
 	})
 }

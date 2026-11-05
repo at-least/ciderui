@@ -23,8 +23,10 @@ func TestHeadRendersTheExample(t *testing.T) {
 	example.Check(t, head, "console/console-head/examples/head.html")
 }
 
-func TestHeadAnEmptyNamePanics(t *testing.T) {
-	mustPanic(t, "needs a Name", func() {
-		example.Render(console.ConsoleHead{Name: "", Href: "/", TabsAriaLabel: "Project", Tabs: nil, Class: ""})
+func TestHeadPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleHead {
+		return console.ConsoleHead{Name: "x", Href: "/", TabsAriaLabel: "x", Tabs: nil, Class: ""}
+	}, []example.Break[console.ConsoleHead]{
+		{Want: "console.ConsoleHead needs a Name", Change: func(p *console.ConsoleHead) { p.Name = "" }},
 	})
 }

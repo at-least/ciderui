@@ -63,6 +63,10 @@ func player(state console.ConsolePlayerState, hidden bool, title string) console
 	}
 }
 
+func pausedPlayer() console.ConsolePlayer {
+	return player(console.ConsolePlayerStatePaused, false, "")
+}
+
 func stills() console.ConsolePlayer {
 	p := player(console.ConsolePlayerStatePlaying, false, "The Wedding")
 	p.Video = h.Div(h.Class("relative"), h.Img(h.Class("absolute inset-0 size-full object-contain"), h.Src(playerStill), h.Alt("")))
@@ -132,48 +136,18 @@ func TestPlayerRendersTheExamples(t *testing.T) {
 	}
 }
 
-func TestPlayerPanics(t *testing.T) {
-	for _, c := range []struct {
-		want   string
-		change func(*console.ConsolePlayer)
-	}{
-		{"needs a Video", func(p *console.ConsolePlayer) { p.Video = nil }},
-		{"needs a PlayAriaLabel", func(p *console.ConsolePlayer) { p.PlayAriaLabel = "" }},
-		{"needs a PauseAriaLabel", func(p *console.ConsolePlayer) { p.PauseAriaLabel = "" }},
-		{"needs a VolumeAriaLabel", func(p *console.ConsolePlayer) { p.VolumeAriaLabel = "" }},
-		{"needs a MuteAriaLabel", func(p *console.ConsolePlayer) { p.MuteAriaLabel = "" }},
-		{"needs a ScrubAriaLabel", func(p *console.ConsolePlayer) { p.ScrubAriaLabel = "" }},
-		{"needs a FullScreenAriaLabel", func(p *console.ConsolePlayer) { p.FullScreenAriaLabel = "" }},
-		{"needs a SubtitlesAriaLabel with a SubtitlesMenu", func(p *console.ConsolePlayer) { p.SubtitlesAriaLabel = "" }},
-		{"needs a Cue with a CueLang", func(p *console.ConsolePlayer) { p.CueLang = "en" }},
-		{"Volume is 0 to 100", func(p *console.ConsolePlayer) { p.Volume = 101 }},
-		{"Position is 0 to its Duration", func(p *console.ConsolePlayer) { p.Position = 63 }},
-		{"needs an End to be Ended", func(p *console.ConsolePlayer) { p.Ended = true }},
-		{"needs a Title and a ReplayLabel", func(p *console.ConsolePlayer) {
-			p.End = &console.ConsolePlayerEnd{Title: "Finished", Body: nil, ReplayLabel: ""}
-		}},
-		{"needs a Title, a PlayLabel and a RestartLabel", func(p *console.ConsolePlayer) {
-			p.Intro = &console.ConsolePlayerIntro{Title: "", Detail: "", Summary: "", PlayLabel: "Play", RestartLabel: "Start Over"}
-		}},
-	} {
-		p := player(console.ConsolePlayerStatePaused, false, "")
-		c.change(&p)
-		mustPanic(t, c.want, func() { example.Render(p) })
-	}
-}
-
 func TestPlayerWritesNoMenuButtonWithoutItsMenu(t *testing.T) {
-	p := player(console.ConsolePlayerStatePaused, false, "")
+	p := pausedPlayer()
 	p.SubtitlesMenu, p.SubtitlesAriaLabel = console.ConsoleChoiceMenu{ID: "", Columns: nil, Class: ""}, ""
 	got := example.Render(p)
-	if strings.Contains(got, "popover") || strings.Contains(got, "cui-console-player-title") {
+	if strings.Contains(got, "popover") || strings.Contains(got, `data-control="subtitles"`) || strings.Contains(got, "cui-console-player-title") {
 		t.Errorf("a player with no menus and no title wrote one: %s", got)
 	}
 }
 
 // muted, the player says so for the mute button's glyph; it holds both glyphs
 func TestPlayerWritesMuted(t *testing.T) {
-	p := player(console.ConsolePlayerStatePaused, false, "")
+	p := pausedPlayer()
 	if got := example.Render(p); strings.Contains(got, "data-muted") || !strings.Contains(got, "cui-console-player-glyph-muted") {
 		t.Errorf("a player not muted wrote data-muted, or no muted glyph: %s", got)
 	}
@@ -185,7 +159,7 @@ func TestPlayerWritesMuted(t *testing.T) {
 
 // the page's full-screen controls in the bar, before its buttons; none, no wrapper
 func TestPlayerWritesItsFullScreenControls(t *testing.T) {
-	p := player(console.ConsolePlayerStatePaused, false, "")
+	p := pausedPlayer()
 	if got := example.Render(p); strings.Contains(got, "cui-console-player-full-screen-controls") {
 		t.Errorf("a player with no FullScreenControls wrote their row: %s", got)
 	}
@@ -202,10 +176,76 @@ func TestPlayerWritesItsFullScreenControls(t *testing.T) {
 
 // the hooks a page's script finds the controls by: each once
 func TestPlayerMarksEachControl(t *testing.T) {
-	got := example.Render(player(console.ConsolePlayerStatePaused, false, ""))
+	got := example.Render(pausedPlayer())
 	for _, control := range []string{"play", "volume", "mute", "subtitles", "full-screen", "scrubber", "elapsed", "remaining", "caption", "preview"} {
 		if n := strings.Count(got, `data-control="`+control+`"`); n != 1 {
 			t.Errorf("data-control=%q written %d times, want 1", control, n)
 		}
+	}
+}
+
+func TestPlayerPanics(t *testing.T) {
+	example.Panics(t, pausedPlayer, []example.Break[console.ConsolePlayer]{
+		{Want: "console.ConsolePlayer needs a Video", Change: func(p *console.ConsolePlayer) { p.Video = nil }},
+		{Want: "console.ConsolePlayer needs a PlayAriaLabel", Change: func(p *console.ConsolePlayer) { p.PlayAriaLabel = "" }},
+		{Want: "console.ConsolePlayer needs a PauseAriaLabel", Change: func(p *console.ConsolePlayer) { p.PauseAriaLabel = "" }},
+		{Want: "console.ConsolePlayer needs a VolumeAriaLabel", Change: func(p *console.ConsolePlayer) { p.VolumeAriaLabel = "" }},
+		{Want: "console.ConsolePlayer needs a MuteAriaLabel", Change: func(p *console.ConsolePlayer) { p.MuteAriaLabel = "" }},
+		{Want: "console.ConsolePlayer needs a ScrubAriaLabel", Change: func(p *console.ConsolePlayer) { p.ScrubAriaLabel = "" }},
+		{Want: "console.ConsolePlayer needs a FullScreenAriaLabel", Change: func(p *console.ConsolePlayer) { p.FullScreenAriaLabel = "" }},
+		{Want: "console.ConsolePlayer needs a SubtitlesAriaLabel with a SubtitlesMenu", Change: func(p *console.ConsolePlayer) { p.SubtitlesAriaLabel = "" }},
+		{Want: "console.ConsolePlayer needs a Cue with a CueLang", Change: func(p *console.ConsolePlayer) { p.CueLang = "en" }},
+		{Want: "console.ConsolePlayer's Volume is 0 to 100", Change: func(p *console.ConsolePlayer) { p.Volume = 101 }},
+		{Want: "console.ConsolePlayer's Volume is 0 to 100", Change: func(p *console.ConsolePlayer) { p.Volume = -1 }},
+		{Want: "console.ConsolePlayer's Position is 0 to its Duration", Change: func(p *console.ConsolePlayer) { p.Position = 63 }},
+		{Want: "console.ConsolePlayer's Position is 0 to its Duration", Change: func(p *console.ConsolePlayer) { p.Position = -1 }},
+		{Want: "console.ConsolePlayer's Position is 0 to its Duration", Change: func(p *console.ConsolePlayer) { p.Duration, p.Position = -1, -1 }},
+		{Want: "console.ConsolePlayer needs an End to be Ended", Change: func(p *console.ConsolePlayer) { p.Ended = true }},
+	})
+}
+
+// each end of each range is in range; an empty video has played nothing, not NaN
+func TestPlayerRanges(t *testing.T) {
+	for _, c := range []struct {
+		name                       string
+		volume, position, duration int
+		want                       string
+	}{
+		{"silent", 0, 5, 62, `data-control="volume" min="0" max="100" value="0"`},
+		{"full", 100, 5, 62, `data-control="volume" min="0" max="100" value="100"`},
+		{"at the start", 50, 0, 62, `value="0" aria-label="Playback position" aria-valuetext="0:00" style="--cui-console-player-value: 0%"`},
+		{"an empty video", 50, 0, 0, `max="0" value="0" aria-label="Playback position" aria-valuetext="0:00" style="--cui-console-player-value: 0%"`},
+	} {
+		p := pausedPlayer()
+		p.Volume, p.Position, p.Duration = c.volume, c.position, c.duration
+		if got := example.Render(p); !strings.Contains(got, c.want) {
+			t.Errorf("%s: no %s in %s", c.name, c.want, got)
+		}
+	}
+}
+
+func TestPlayerIntroPanics(t *testing.T) {
+	const want = "console.ConsolePlayerIntro needs a Title, a PlayLabel and a RestartLabel"
+	example.Panics(t, intro, []example.Break[console.ConsolePlayer]{
+		{Want: want, Change: func(p *console.ConsolePlayer) { p.Intro.Title = "" }},
+		{Want: want, Change: func(p *console.ConsolePlayer) { p.Intro.PlayLabel = "" }},
+		{Want: want, Change: func(p *console.ConsolePlayer) { p.Intro.RestartLabel = "" }},
+	})
+}
+
+func TestPlayerEndPanics(t *testing.T) {
+	const want = "console.ConsolePlayerEnd needs a Title and a ReplayLabel"
+	example.Panics(t, end, []example.Break[console.ConsolePlayer]{
+		{Want: want, Change: func(p *console.ConsolePlayer) { p.End.Title = "" }},
+		{Want: want, Change: func(p *console.ConsolePlayer) { p.End.ReplayLabel = "" }},
+	})
+}
+
+func TestPlayerIntroNoDetailNoSummary(t *testing.T) {
+	p := intro()
+	p.Intro.Detail, p.Intro.Summary = "", ""
+	want := `<p class="cui-console-player-intro-title">The Wedding</p><div class="cui-console-player-intro-actions">`
+	if got := example.Render(p); !strings.Contains(got, want) {
+		t.Errorf("no %s in %s", want, got)
 	}
 }

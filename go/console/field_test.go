@@ -47,26 +47,27 @@ func TestErrorNoLabelIsTheHiddenSlotAScriptFills(t *testing.T) {
 	}
 }
 
-func TestErrorALabelWithNoControlPanics(t *testing.T) {
-	mustPanic(t, "console.ConsoleError with a Label needs a ControlID", func() {
-		example.Render(console.ConsoleError{ControlID: "", Label: "Enter a name.", Class: ""})
+func TestFormFieldPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleFormField {
+		return console.ConsoleFormField{ID: "x", Label: g.Text("x"), Children: h.Input(h.Class("cui-console-field"))}
+	}, []example.Break[console.ConsoleFormField]{
+		{Want: "console.ConsoleFormField needs an ID", Change: func(p *console.ConsoleFormField) { p.ID = "" }},
+		{Want: "console.ConsoleFormField needs a Label", Change: func(p *console.ConsoleFormField) { p.Label = nil }},
 	})
 }
 
-func TestFormFieldAnEmptyIDPanics(t *testing.T) {
-	mustPanic(t, "ConsoleFormField needs an ID", func() {
-		example.Render(console.ConsoleFormField{ID: "", Label: g.Text("Name"), Children: h.Input(h.Class("cui-console-field"))})
+func TestHelpPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleHelp {
+		return console.ConsoleHelp{ControlID: "x", Label: "x"}
+	}, []example.Break[console.ConsoleHelp]{
+		{Want: "console.ConsoleHelp needs a Label", Change: func(p *console.ConsoleHelp) { p.Label = "" }},
 	})
 }
 
-func TestFormFieldANilLabelPanics(t *testing.T) {
-	mustPanic(t, "ConsoleFormField needs a Label", func() {
-		example.Render(console.ConsoleFormField{ID: "name", Label: nil, Children: h.Input(h.Class("cui-console-field"))})
-	})
-}
-
-func TestHelpAnEmptyLabelPanics(t *testing.T) {
-	mustPanic(t, "ConsoleHelp needs a Label", func() {
-		example.Render(console.ConsoleHelp{ControlID: "name", Label: ""})
+func TestErrorPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleError {
+		return console.ConsoleError{ControlID: "x", Label: "x", Class: ""}
+	}, []example.Break[console.ConsoleError]{
+		{Want: "console.ConsoleError with a Label needs a ControlID", Change: func(p *console.ConsoleError) { p.ControlID = "" }},
 	})
 }

@@ -39,34 +39,33 @@ func TestChartRendersTheExamples(t *testing.T) {
 	example.Check(t, sparkline, "console/console-chart/examples/sparkline.html")
 }
 
-func chartWith(change func(*console.ConsoleChart)) console.ConsoleChart {
-	c := console.ConsoleChart{AriaLabel: "Events: 3", Scale: nil, Empty: "", Axis: nil, Legend: nil, Class: "", Children: nil}
-	change(&c)
-	return c
-}
-
 func TestChartPanics(t *testing.T) {
-	for _, c := range []struct {
-		want   string
-		change func(*console.ConsoleChart)
-	}{
-		{"ConsoleChart needs an AriaLabel", func(c *console.ConsoleChart) { c.AriaLabel = "" }},
-		{"ConsoleChartScale needs a Peak and a Half", func(c *console.ConsoleChart) { c.Scale = &console.ConsoleChartScale{Peak: "3", Half: ""} }},
-		{"ConsoleChartAxis needs a Start and an End", func(c *console.ConsoleChart) { c.Axis = &console.ConsoleChartAxis{Start: "Oct 22", End: ""} }},
-		{"ConsoleChartSeries needs a Name and a Color", func(c *console.ConsoleChart) { c.Legend = []console.ConsoleChartSeries{{Name: "", Color: "red"}} }},
-		{"ConsoleChartSeries needs a Name and a Color", func(c *console.ConsoleChart) { c.Legend = []console.ConsoleChartSeries{{Name: "iOS", Color: ""}} }},
-	} {
-		mustPanic(t, c.want, func() { example.Render(chartWith(c.change)) })
-	}
+	example.Panics(t, func() console.ConsoleChart {
+		return console.ConsoleChart{AriaLabel: "Events: 3", Scale: nil, Empty: "", Axis: nil, Legend: nil, Class: "", Children: nil}
+	}, []example.Break[console.ConsoleChart]{
+		{Want: "console.ConsoleChart needs an AriaLabel", Change: func(p *console.ConsoleChart) { p.AriaLabel = "" }},
+		{Want: "console.ConsoleChartScale needs a Peak and a Half", Change: func(p *console.ConsoleChart) { p.Scale = &console.ConsoleChartScale{Peak: "3", Half: ""} }},
+		{Want: "console.ConsoleChartScale needs a Peak and a Half", Change: func(p *console.ConsoleChart) { p.Scale = &console.ConsoleChartScale{Peak: "", Half: "3"} }},
+		{Want: "console.ConsoleChartAxis needs a Start and an End", Change: func(p *console.ConsoleChart) { p.Axis = &console.ConsoleChartAxis{Start: "Oct 22", End: ""} }},
+		{Want: "console.ConsoleChartAxis needs a Start and an End", Change: func(p *console.ConsoleChart) { p.Axis = &console.ConsoleChartAxis{Start: "", End: "Oct 28"} }},
+		{Want: "console.ConsoleChartSeries needs a Name and a Color", Change: func(p *console.ConsoleChart) { p.Legend = []console.ConsoleChartSeries{{Name: "", Color: "red"}} }},
+		{Want: "console.ConsoleChartSeries needs a Name and a Color", Change: func(p *console.ConsoleChart) { p.Legend = []console.ConsoleChartSeries{{Name: "iOS", Color: ""}} }},
+	})
 }
 
-func TestSparklineDrawsTheLineAloneAndSaysItsLabelAsATitle(t *testing.T) {
-	got := example.Render(console.ConsoleSparkline{AriaLabel: "3 events", Width: 10, Height: 28, Values: []float64{0, 4}, Class: ""})
-	if strings.Contains(got, "polygon") || !strings.Contains(got, "<title>3 events</title><polyline ") {
-		t.Errorf("got %s", got)
-	}
+func TestSparklinePanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleSparkline {
+		return console.ConsoleSparkline{AriaLabel: "x", Width: 10, Height: 28, Values: []float64{0, 4}, Class: ""}
+	}, []example.Break[console.ConsoleSparkline]{
+		{Want: "console.ConsoleSparkline needs an AriaLabel", Change: func(p *console.ConsoleSparkline) { p.AriaLabel = "" }},
+		{Want: "console.ConsoleSparkline needs two values or more", Change: func(p *console.ConsoleSparkline) { p.Values = []float64{2} }},
+		{Want: "console.ConsoleSparkline's Values are finite and 0 or more", Change: func(p *console.ConsoleSparkline) { p.Values = []float64{-1, 4} }},
+		{Want: "console.ConsoleSparkline's Values are finite and 0 or more", Change: func(p *console.ConsoleSparkline) { p.Values = []float64{math.NaN(), 4} }},
+		{Want: "console.ConsoleSparkline's Values are finite and 0 or more", Change: func(p *console.ConsoleSparkline) { p.Values = []float64{math.Inf(1), 4} }},
+	})
 }
 
+// the line beside it is raw: a label is not
 func TestSparklineEscapesItsTitle(t *testing.T) {
 	got := example.Render(console.ConsoleSparkline{AriaLabel: "a<b", Width: 10, Height: 28, Values: []float64{0, 4}, Class: ""})
 	if !strings.Contains(got, "<title>a&lt;b</title>") {
@@ -74,43 +73,22 @@ func TestSparklineEscapesItsTitle(t *testing.T) {
 	}
 }
 
-func TestSparklineWithoutAnAriaLabelPanics(t *testing.T) {
-	mustPanic(t, "ConsoleSparkline needs an AriaLabel", func() {
-		example.Render(console.ConsoleSparkline{AriaLabel: "", Width: 1, Height: 1, Values: nil, Class: ""})
-	})
-}
-
-func TestSparklineOfOneValuePanics(t *testing.T) {
-	mustPanic(t, "ConsoleSparkline needs two values or more", func() {
-		example.Render(console.ConsoleSparkline{AriaLabel: "x", Width: 10, Height: 4, Values: []float64{2}, Class: ""})
-	})
-}
-
-func TestSparklineSpacesItsValuesEvenlyFromXZeroToXWidth(t *testing.T) {
-	got := example.Render(console.ConsoleSparkline{AriaLabel: "x", Width: 1, Height: 4, Values: make([]float64, 50), Class: ""})
-	if !strings.Contains(got, ` 1,3"/>`) || !strings.Contains(got, `points="0,3 `) {
-		t.Errorf("got %s", got)
-	}
-}
-
-func TestSparklineDrawsA0HalfItsStrokeAboveTheBottom(t *testing.T) {
-	got := example.Render(console.ConsoleSparkline{AriaLabel: "x", Width: 10, Height: 28, Values: []float64{0, 4}, Class: ""})
-	if !strings.Contains(got, `<polyline class="cui-console-chart-sparkline-line" points="0,27 10,2"/>`) {
-		t.Errorf("got %s", got)
-	}
-}
-
-func TestSparklineOfOnly0sLiesHalfItsStrokeAboveTheBottom(t *testing.T) {
-	got := example.Render(console.ConsoleSparkline{AriaLabel: "x", Width: 10, Height: 28, Values: []float64{0, 0}, Class: ""})
-	if !strings.Contains(got, `points="0,27 10,27"`) {
-		t.Errorf("got %s", got)
-	}
-}
-
-func TestSparklineANegativeNaNOrInfiniteValuePanics(t *testing.T) {
-	for _, bad := range []float64{-1, math.NaN(), math.Inf(1)} {
-		mustPanic(t, "ConsoleSparkline's Values are finite and 0 or more", func() {
-			example.Render(console.ConsoleSparkline{AriaLabel: "x", Width: 10, Height: 28, Values: []float64{bad, 4}, Class: ""})
-		})
+// the largest 2 below the top, nothing below Height-1, so the round stroke is
+// never clipped; x from 0 to Width, to hundredths
+func TestSparklinePoints(t *testing.T) {
+	for _, c := range []struct {
+		width, height uint
+		values        []float64
+		want          string
+	}{
+		{10, 28, []float64{0, 4}, "0,27 10,2"},
+		{10, 28, []float64{0, 0.5}, "0,27 10,2"},
+		{10, 28, []float64{0, 0}, "0,27 10,27"},
+		{1, 4, []float64{0, 0, 0, 0}, "0,3 0.33,3 0.67,3 1,3"},
+	} {
+		got := example.Render(console.ConsoleSparkline{AriaLabel: "x", Width: c.width, Height: c.height, Values: c.values, Class: ""})
+		if want := `points="` + c.want + `"`; !strings.Contains(got, want) {
+			t.Errorf("no %s in %s", want, got)
+		}
 	}
 }

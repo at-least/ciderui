@@ -30,10 +30,11 @@ func Read(path string) string {
 	if err != nil {
 		panic(err)
 	}
-	return joinTrimmed(string(b))
+	return JoinTrimmed(string(b))
 }
 
-func joinTrimmed(text string) string {
+// JoinTrimmed is text's lines trimmed and joined.
+func JoinTrimmed(text string) string {
 	var out strings.Builder
 	for _, line := range strings.Split(text, "\n") {
 		out.WriteString(strings.TrimSpace(line))
@@ -80,11 +81,11 @@ func Panics[T g.Node](t testing.TB, valid func() T, breaks []Break[T]) {
 	if got := panicOf(valid()); got != "" {
 		t.Errorf("the valid part panicked with %q", got)
 	}
-	for _, b := range breaks {
+	for i, b := range breaks {
 		node := valid()
 		b.Change(&node)
 		if got := panicOf(node); got != b.Want {
-			t.Errorf("panicked with %q, want %q", got, b.Want)
+			t.Errorf("break %d: panicked with %q, want %q", i, got, b.Want)
 		}
 	}
 }

@@ -25,17 +25,12 @@ func TestPlayRendersTheExamples(t *testing.T) {
 }
 
 func TestPlayPanics(t *testing.T) {
-	for _, c := range []struct {
-		want                           string
-		ariaLabel, label, playingLabel string
-	}{
-		{"needs an AriaLabel without a Label", "", "", ""},
-		{"and none with one", "Play", "Play This Line", "Stop"},
-		{"needs a Label and a PlayingLabel, or neither", "", "Play This Line", ""},
-		{"needs a Label and a PlayingLabel, or neither", "", "", "Stop"},
-	} {
-		mustPanic(t, c.want, func() {
-			example.Render(console.ConsolePlay{State: console.ConsolePlayStatePaused, AriaLabel: c.ariaLabel, Label: c.label, PlayingLabel: c.playingLabel, Size: console.ConsoleBtnSizeMedium, Class: ""})
-		})
-	}
+	example.Panics(t, func() console.ConsolePlay {
+		return console.ConsolePlay{State: console.ConsolePlayStatePaused, AriaLabel: "Play", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: ""}
+	}, []example.Break[console.ConsolePlay]{
+		{Want: "console.ConsolePlay needs an AriaLabel without a Label, and none with one", Change: func(p *console.ConsolePlay) { p.AriaLabel = "" }},
+		{Want: "console.ConsolePlay needs an AriaLabel without a Label, and none with one", Change: func(p *console.ConsolePlay) { p.Label, p.PlayingLabel = "Play This Line", "Stop" }},
+		{Want: "console.ConsolePlay needs a Label and a PlayingLabel, or neither", Change: func(p *console.ConsolePlay) { p.AriaLabel, p.Label = "", "Play This Line" }},
+		{Want: "console.ConsolePlay needs a Label and a PlayingLabel, or neither", Change: func(p *console.ConsolePlay) { p.AriaLabel, p.PlayingLabel = "", "Stop" }},
+	})
 }

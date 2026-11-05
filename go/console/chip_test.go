@@ -18,23 +18,15 @@ func TestChipRendersTheExample(t *testing.T) {
 	example.Check(t, chips, "console/console-chip/examples/chips.html")
 }
 
-func TestChipALinkWithARemoveControlPanics(t *testing.T) {
-	mustPanic(t, "is a link or has a remove control, not both", func() {
-		example.Render(console.ConsoleChip{Key: "env", Value: "prod", Href: "/a", Remove: &console.ConsoleChipRemove{Href: "/b", AriaLabel: "Remove"}, Class: ""})
-	})
-}
-
-func TestChipARemoveControlWithoutALabelPanics(t *testing.T) {
-	mustPanic(t, "ConsoleChipRemove needs an Href and an AriaLabel", func() {
-		example.Render(console.ConsoleChip{Key: "env", Value: "prod", Href: "", Remove: &console.ConsoleChipRemove{Href: "/b", AriaLabel: ""}, Class: ""})
-	})
-	mustPanic(t, "ConsoleChipRemove needs an Href and an AriaLabel", func() {
-		example.Render(console.ConsoleChip{Key: "env", Value: "prod", Href: "", Remove: &console.ConsoleChipRemove{Href: "", AriaLabel: "Remove"}, Class: ""})
-	})
-}
-
-func TestChipAnEmptyKeyPanics(t *testing.T) {
-	mustPanic(t, "ConsoleChip needs a Key", func() {
-		example.Render(console.ConsoleChip{Key: "", Value: "prod", Href: "", Remove: nil, Class: ""})
+func TestChipPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleChip {
+		return console.ConsoleChip{Key: "env", Value: "prod", Href: "", Remove: nil, Class: ""}
+	}, []example.Break[console.ConsoleChip]{
+		{Want: "console.ConsoleChip needs a Key", Change: func(p *console.ConsoleChip) { p.Key = "" }},
+		{Want: "console.ConsoleChip is a link or has a remove control, not both", Change: func(p *console.ConsoleChip) {
+			p.Href, p.Remove = "/a", &console.ConsoleChipRemove{Href: "/b", AriaLabel: "Remove"}
+		}},
+		{Want: "console.ConsoleChipRemove needs an Href and an AriaLabel", Change: func(p *console.ConsoleChip) { p.Remove = &console.ConsoleChipRemove{Href: "/b", AriaLabel: ""} }},
+		{Want: "console.ConsoleChipRemove needs an Href and an AriaLabel", Change: func(p *console.ConsoleChip) { p.Remove = &console.ConsoleChipRemove{Href: "", AriaLabel: "Remove"} }},
 	})
 }

@@ -20,15 +20,11 @@ func TestEmptyRendersTheExamples(t *testing.T) {
 	example.Check(t, large, "console/console-empty/examples/large.html")
 }
 
-func TestEmptyAnEmptyHeadingPanics(t *testing.T) {
-	mustPanic(t, "needs a Heading", func() {
-		example.Render(console.ConsoleEmpty{Size: console.ConsoleEmptySizeSmall, Backed: false, Icon: icon.Icon{}, Heading: "", Caption: "", Class: "", Children: nil})
-	})
-}
-
-// ConsoleEmptySize has no size that writes no attribute
-func TestEmptyTheZeroSizePanics(t *testing.T) {
-	mustPanic(t, "ConsoleEmpty needs a Size", func() {
-		example.Render(console.ConsoleEmpty{Size: console.ConsoleEmptySize{}, Backed: false, Icon: icon.Icon{}, Heading: "No Issues", Caption: "", Class: "", Children: nil})
+func TestEmptyPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleEmpty {
+		return console.ConsoleEmpty{Size: console.ConsoleEmptySizeSmall, Backed: false, Icon: icon.Icon{}, Heading: "x", Caption: "", Class: "", Children: nil}
+	}, []example.Break[console.ConsoleEmpty]{
+		{Want: "console.ConsoleEmpty needs a Heading", Change: func(p *console.ConsoleEmpty) { p.Heading = "" }},
+		{Want: "console.ConsoleEmpty needs a Size", Change: func(p *console.ConsoleEmpty) { p.Size = console.ConsoleEmptySize{} }},
 	})
 }
