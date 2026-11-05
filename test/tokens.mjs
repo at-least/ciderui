@@ -299,7 +299,6 @@ const GRAY = ['--cui-c-console-neutral-fill-tertiary', '--cui-c-console-gray-fil
 const ROLES = ['info', 'success', 'warning', 'error'];
 // a banner's tints: the neutral's and each role's
 const TINTS = [['--cui-c-console-neutral-fill-quaternary'], ...ROLES.map((role) => [`--cui-c-console-${role}-fill-tertiary`])];
-const BADGE_LABEL = (role) => (role === 'brand' ? '--cui-c-console-brand-label-on-fill' : `--cui-c-console-${role}-label-primary`);
 const CONSOLE_MIN = [
   ['--cui-c-console-neutral-label-primary', [[], ['--cui-c-console-neutral-accent-quaternary'], ...GRAY.map((g) => [g]), ...TINTS], 4.5],
   // the secondary label: a current menu item's, a chip's key and its remove
@@ -311,7 +310,7 @@ const CONSOLE_MIN = [
   ['--cui-c-console-on-accent-press', [['--cui-c-console-brand-fill-press'], ['--cui-c-console-error-fill-press']], 4.5],
   ['--cui-c-console-neutral-label-hover', [['--cui-c-console-gray-fill-hover']], 4.5],
   // a badge's label on the base, on its own tint and on the gray fill
-  ...['brand', ...ROLES].map((role) => [BADGE_LABEL(role), [[], [`--cui-c-console-${role}-accent-quaternary`], ['--cui-c-console-neutral-fill-tertiary']], 4.5]),
+  ...ROLES.map((role) => [`--cui-c-console-${role}-label-primary`, [[], [`--cui-c-console-${role}-accent-quaternary`], ['--cui-c-console-neutral-fill-tertiary']], 4.5]),
   // a banner's icon on its tint; a card's change up or down
   ...ROLES.map((role) => [`--cui-c-console-${role}-label-primary`, [[`--cui-c-console-${role}-fill-tertiary`]], 4.5]),
   // a gray segment's blue label, at rest and hovered, on its gray
@@ -402,7 +401,6 @@ check('--cui-focus-ring-offset is apple.com\'s', vars['--cui-focus-ring-offset']
 check('--cui-console-shadow-sidebar is App Store Connect\'s --tb-component-Sidebar-variant-variant-opaque-boxShadow', vars['--cui-console-shadow-sidebar'], tbTokens['--tb-component-Sidebar-variant-variant-opaque-boxShadow']);
 check('--cui-console-shadow-table-sticky is App Store Connect\'s --tb-component-Table-anatomy-TH-stickyBoxShadow', vars['--cui-console-shadow-table-sticky'], tbTokens['--tb-component-Table-anatomy-TH-stickyBoxShadow']);
 check('--cui-console-shadow-dialog is App Store Connect\'s --tb-component-Modal-variant-variant-modal-boxShadow', vars['--cui-console-shadow-dialog'], tbTokens['--tb-component-Modal-variant-variant-modal-boxShadow']);
-check('--cui-console-shadow-radio is App Store Connect\'s --tb-component-Radio-variant-colorRole-brand-effect-default-state-on-boxShadow', vars['--cui-console-shadow-radio'], tbTokens['--tb-component-Radio-variant-colorRole-brand-effect-default-state-on-boxShadow']);
 check('--cui-console-shadow-popover is App Store Connect\'s --tb-component-Popover-variant-variant-stroked-boxShadow', vars['--cui-console-shadow-popover'], tbTokens['--tb-component-Popover-variant-variant-stroked-boxShadow']);
 
 // as the browser computes a shadow: its color first, the spread 0px where

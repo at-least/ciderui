@@ -90,7 +90,6 @@
 
   .cui-console-chart-sparkline {
     --cui-console-chart-sparkline-color: var(--cui-c-console-brand-accent-primary);
-    --cui-console-chart-sparkline-fill: var(--cui-c-console-brand-accent-quaternary);
     display: block;
     overflow: visible;
   }
@@ -102,10 +101,5 @@
     stroke-linecap: round;
     stroke-linejoin: round;
     vector-effect: non-scaling-stroke;
-  }
-
-  .cui-console-chart-sparkline-area {
-    /* not App Store Connect's gradient: CSS has no gradient for an SVG fill, only a url() to an SVG one */
-    fill: var(--cui-console-chart-sparkline-fill);
   }
 }

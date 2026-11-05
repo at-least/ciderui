@@ -47,18 +47,23 @@
       padding-inline-end: 0;
     }
 
+    /* on the first cell, flush at the table's start: a row draws no border of
+       its own, and forced colors drop a shadow. Its 5px and the bar's 3px are
+       a cell's 8px, so its text stands clear of the bar. Before the checkbox
+       cell's touch padding, which keeps its room */
+    :where(tbody tr[aria-selected="true"], tbody tr:has(> :is(td, th) > .cui-console-checkbox > .cui-console-checkbox-input:checked)) > :first-child {
+      padding-inline-start: 5px;
+      border-inline-start: 3px solid var(--cui-c-console-brand-label-primary);
+
+      @media (forced-colors: active) {
+        border-inline-start-color: Highlight;
+      }
+    }
+
     @media (pointer: coarse) {
       :where(th, td):has(> .cui-console-checkbox) {
         padding-inline: 14.5px;
       }
-    }
-
-    &[data-size="sm"] :where(td, tbody th) {
-      padding-block: 0.4375rem;
-    }
-
-    &[data-size="lg"] :where(td, tbody th) {
-      padding-block: 1.1875rem;
     }
 
     :where(tbody tr:has(.cui-console-table-link)) {
@@ -80,14 +85,6 @@
     :where(tbody tr[aria-selected="true"]),
     :where(tbody tr:has(> :is(td, th) > .cui-console-checkbox > .cui-console-checkbox-input:checked)) {
       background-color: var(--cui-c-console-brand-fill-quaternary);
-    }
-
-    /* on the first cell: a row draws no border of its own, and forced
-       colors drop a shadow */
-    @media (forced-colors: active) {
-      :where(tbody tr[aria-selected="true"], tbody tr:has(> :is(td, th) > .cui-console-checkbox > .cui-console-checkbox-input:checked)) > :where(:first-child) {
-        border-inline-start: 3px solid Highlight;
-      }
     }
 
     :where(a) {

@@ -10,8 +10,6 @@ const FITTED = 'fitted to 4.5:1 (tokens.css, decision 21)';
 const REST = '.cui-console-tab[href="#issues"]';
 const PILL = '.cui-console-tab[href="#30d"]';
 const CHOSEN = '.cui-console-tab[aria-current="true"]';
-const RADIO = 'label.cui-console-tab:not(:has(input:checked))';
-const CHECKED = 'label.cui-console-tab:has(input:checked)';
 const PRESSED = '.cui-console-tab[aria-pressed="true"]';
 const UNPRESSED = '.cui-console-tab[value="redraw"]';
 
@@ -93,48 +91,6 @@ export const cases = [
     ],
   },
   {
-    name: 'tabs of radios',
-    html: ex('appearance'),
-    widths: [1200, 390],
-    checks: [
-      { target: RADIO, props: SIZE, tb: size('md') },
-      { target: RADIO, props: ['background-color', 'padding-left', 'padding-right', 'border-top-left-radius'], tb: [tab('filledGray', 'default', 'false', 'backgroundColor'), `${T}-defaultMdPaddingInline`, `${T}-defaultMdPaddingInline`, `${T}-variant-controlShape-capsule-controlSize-md-borderRadius`] },
-      { target: CHECKED, props: ['background-color', 'color'], tb: [tab('filledGray', 'default', 'true', 'backgroundColor'), tab('filledGray', 'default', 'true', 'color')] },
-      { target: RADIO, props: ['color', 'cursor'], golden: 'a radio\'s tab as a link\'s: the blue label on the gray pill, the pointer' },
-      { target: 'fieldset.cui-console-tabs', props: ['border-top-width', 'border-left-width', 'padding-left', 'padding-top', 'margin-left', 'column-gap'], golden: 'a <fieldset> drawn as the row: no edge, no room, the filled gap' },
-      { target: 'fieldset.cui-console-tabs > legend', props: ['box-width', 'position'], golden: 'the legend read, not shown' },
-      { target: `${RADIO} > input`, props: ['opacity', 'box-width'], golden: 'the radio read, not shown' },
-      { target: CHECKED, props: ['outline-style'], golden: 'no ring at rest' },
-    ],
-  },
-  {
-    name: 'tabs of radios focused',
-    html: ex('appearance'),
-    widths: [1200],
-    press: ['Tab'],
-    checks: [
-      { target: CHECKED, props: OUTLINE, golden: 'the radio hidden, the one focus ring around its tab' },
-    ],
-  },
-  {
-    name: 'tabs of radios touch',
-    html: ex('appearance'),
-    touch: true,
-    widths: [390],
-    checks: [
-      { target: RADIO, props: ['box-height', 'min-width'], golden: 'a radio\'s tab 44px each way at least on a touch screen, as a link\'s' },
-    ],
-  },
-  {
-    name: 'tabs of radios forced colors',
-    html: ex('appearance'),
-    widths: [1200],
-    forcedColors: true,
-    checks: [
-      { target: CHECKED, props: ['background-color', 'color'], golden: 'the checked tab the theme\'s Highlight under HighlightText, as a chosen link\'s' },
-    ],
-  },
-  {
     name: 'tabs of buttons',
     html: ex('pressed'),
     widths: [1200, 390],
@@ -161,26 +117,8 @@ export const cases = [
     widths: [1200],
     forcedColors: true,
     checks: [
-      { target: PRESSED, props: ['background-color', 'color'], golden: 'the pressed button the theme\'s Highlight under HighlightText, as a checked radio\'s' },
+      { target: PRESSED, props: ['background-color', 'color'], golden: 'the pressed button the theme\'s Highlight under HighlightText, as a chosen link\'s' },
       { target: UNPRESSED, props: ['background-color', 'color'], golden: 'the others\' gray fill forced to the ground, at its alpha, under the forced text: not Highlight' },
-    ],
-  },
-  {
-    name: 'large tabs',
-    html: ex('large'),
-    widths: [1200],
-    checks: [
-      { target: '[aria-current="page"]', props: SIZE, tb: size('lg') },
-      { target: '.cui-console-tabs', props: ['column-gap'], tb: [`${T}-variant-controlSize-lg-variant-underlined-gap`] },
-    ],
-  },
-  {
-    name: 'tab sizes',
-    html: ['sm', 'lg', 'xl'].map((s) => ex('filled').replace('data-variant="filled"', `data-variant="filled" data-size="${s}"`)).join(''),
-    widths: [1200],
-    checks: [
-      ...['sm', 'lg', 'xl'].map((s) => ({ target: `[data-size="${s}"] > ${PILL}`, props: [...SIZE, 'padding-left', 'border-top-left-radius'], tb: [...size(s), `${T}-default${s[0].toUpperCase()}${s.slice(1)}PaddingInline`, `${T}-variant-controlShape-capsule-controlSize-${s}-borderRadius`] })),
-      ...['sm', 'lg', 'xl'].map((s) => ({ target: `[data-size="${s}"]`, props: ['column-gap'], tb: [`${T}-variant-controlSize-${s}-variant-filledGray-gap`] })),
     ],
   },
   {

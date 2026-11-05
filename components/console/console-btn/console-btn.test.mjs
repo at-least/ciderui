@@ -84,10 +84,8 @@ export const cases = [
       { target: '[data-size="sm"]', props: SIZE, tb: at('sm') },
       { target: '.flex > :nth-child(2)', props: SIZE, tb: at('md') },
       { target: '[data-size="lg"]', props: SIZE, tb: at('lg') },
-      { target: '[data-size="xl"]', props: SIZE, tb: at('xl') },
       { target: '[data-size="sm"]', props: ['font-size', 'line-height', 'font-weight'], tb: ['component-Tabs-variant-controlSize-sm-textStyle-fontSize', 'component-Tabs-variant-controlSize-sm-textStyle-lineHeight', 'component-Tabs-variant-controlSize-sm-textStyle-fontWeight'] },
       { target: '[data-size="lg"]', props: ['font-size', 'line-height', 'font-weight'], tb: ['component-Tabs-variant-controlSize-lg-textStyle-fontSize', 'component-Tabs-variant-controlSize-lg-textStyle-lineHeight', 'component-Tabs-variant-controlSize-lg-textStyle-fontWeight'] },
-      { target: '[data-size="xl"]', props: ['font-size', 'line-height', 'font-weight'], tb: ['component-Tabs-variant-controlSize-xl-textStyle-fontSize', 'component-Tabs-variant-controlSize-xl-textStyle-lineHeight', 'component-Tabs-variant-controlSize-xl-textStyle-fontWeight'] },
     ],
   },
   {
@@ -102,16 +100,16 @@ export const cases = [
   },
   {
     name: 'icon sizes',
-    html: '<div class="flex gap-3"><button class="cui-console-btn cui-console-btn-icon" data-size="sm" type="button" aria-label="Copy"></button><button class="cui-console-btn cui-console-btn-icon" data-size="lg" type="button" aria-label="Copy"></button><button class="cui-console-btn cui-console-btn-icon" data-size="xl" type="button" aria-label="Copy"></button></div>',
+    html: '<div class="flex gap-3"><button class="cui-console-btn cui-console-btn-icon" data-size="sm" type="button" aria-label="Copy"></button><button class="cui-console-btn cui-console-btn-icon" data-size="lg" type="button" aria-label="Copy"></button></div>',
     widths: [1200],
-    checks: ['sm', 'lg', 'xl'].map((size) => ({ target: `[data-size="${size}"]`, props: ['font-size'], tb: [`component-Button-anatomy-artStart-withoutLabel-controlSize-${size}-fontSize`] })),
+    checks: ['sm', 'lg'].map((size) => ({ target: `[data-size="${size}"]`, props: ['font-size'], tb: [`component-Button-anatomy-artStart-withoutLabel-controlSize-${size}-fontSize`] })),
   },
   {
     name: 'capsule',
     html: ex('capsule'),
     widths: [1200],
     checks: [
-      ...['sm', 'md', 'lg', 'xl'].map((size) => ({ target: `.cui-console-btn-icon${size === 'md' ? ':not([data-size])' : `[data-size="${size}"]`}`, props: ['box-height', 'box-width', 'border-top-left-radius', 'border-bottom-right-radius'], tb: [`${B}-controlSize-${size}-blockSize`, `${B}-controlSize-${size}-minWidth`, `${B}-controlShape-capsule-controlSize-${size}-borderRadius`, `${B}-controlShape-capsule-controlSize-${size}-borderRadius`] })),
+      ...['sm', 'md', 'lg'].map((size) => ({ target: `.cui-console-btn-icon${size === 'md' ? ':not([data-size])' : `[data-size="${size}"]`}`, props: ['box-height', 'box-width', 'border-top-left-radius', 'border-bottom-right-radius'], tb: [`${B}-controlSize-${size}-blockSize`, `${B}-controlSize-${size}-minWidth`, `${B}-controlShape-capsule-controlSize-${size}-borderRadius`, `${B}-controlShape-capsule-controlSize-${size}-borderRadius`] })),
       { target: '.cui-console-btn:not(.cui-console-btn-icon)', props: ['box-height', 'border-top-left-radius', 'padding-left', 'padding-right'], tb: [`${B}-controlSize-md-blockSize`, `${B}-controlShape-capsule-controlSize-md-borderRadius`, `${B}-controlSize-md-paddingInlineStart`, `${B}-controlSize-md-paddingInlineEnd`] },
     ],
   },
@@ -122,7 +120,6 @@ export const cases = [
     widths: [390],
     checks: [
       { target: '.cui-console-btn-icon[data-size="sm"]', props: ['box-width', 'box-height', 'border-top-left-radius'], golden: 'a capsule icon button 44px square on a touch screen, its corners half that: a circle still, as the toolkit\'s capsule is at each size' },
-      { target: '.cui-console-btn-icon[data-size="xl"]', props: ['box-width', 'box-height', 'border-top-left-radius'], golden: 'the extra large keeps its 50px and its 25px corners, over 44' },
     ],
   },
   {
@@ -151,7 +148,6 @@ export const cases = [
     widths: [390],
     checks: [
       { target: '[data-size="sm"]', props: ['box-height'], golden: 'the small button 44px tall on a touch screen too, the HIG\'s 44pt (Accessibility, Mobility)' },
-      { target: '[data-size="xl"]', props: ['box-height'], golden: 'the extra large keeps its 50px, over 44' },
     ],
   },
   {

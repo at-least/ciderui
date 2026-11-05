@@ -9,6 +9,15 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
+// ConsoleChangeColor is a metric's change's data-color.
+type ConsoleChangeColor struct{ value string }
+
+var (
+	ConsoleChangeColorNeutral = ConsoleChangeColor{value: ""}
+	ConsoleChangeColorSuccess = ConsoleChangeColor{"success"}
+	ConsoleChangeColorError   = ConsoleChangeColor{"error"}
+)
+
 // ConsoleMetric is a metric's cui-console-card. A card holding anything else
 // (a list, a chart) is the page's own <div class="cui-console-card">.
 type ConsoleMetric struct {
@@ -18,7 +27,7 @@ type ConsoleMetric struct {
 	Change string
 	// ChangeColor: success for the better, error for the worse, whichever
 	// direction the number moved.
-	ChangeColor ConsoleColor
+	ChangeColor ConsoleChangeColor
 	Caption     string
 	Href        string
 	Class       string
@@ -38,9 +47,6 @@ func (m ConsoleMetric) Render(w io.Writer) error {
 	}
 	if value.Len() == 0 {
 		panic("console.ConsoleMetric needs a Value")
-	}
-	if m.ChangeColor != ConsoleColorNeutral && m.ChangeColor != ConsoleColorSuccess && m.ChangeColor != ConsoleColorError {
-		panic("console.ConsoleMetric's change is neutral, success or error")
 	}
 	content := g.Group{
 		h.P(h.Class("cui-console-card-title"), g.Text(m.Title)),

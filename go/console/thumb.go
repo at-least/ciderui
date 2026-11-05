@@ -15,8 +15,9 @@ type ConsoleThumb struct {
 	// Href is the full image.
 	Href string
 	Src  string
-	Alt  string
-	// Caption is the file's name.
+	// Alt is the link's name.
+	Alt string
+	// Caption is the file's name, also its title: a long one is cut short.
 	Caption string
 	// Lazy: for a row of many.
 	Lazy  bool
@@ -24,11 +25,14 @@ type ConsoleThumb struct {
 }
 
 func (t ConsoleThumb) Render(w io.Writer) error {
+	if t.Alt == "" {
+		panic("console.ConsoleThumb needs an Alt: it is its link's name")
+	}
 	if t.Caption == "" {
 		panic("console.ConsoleThumb needs a Caption")
 	}
 	return h.Figure(class.Root("cui-console-thumb", t.Class),
 		h.A(h.Href(t.Href), h.Img(h.Src(t.Src), h.Alt(t.Alt), g.If(t.Lazy, h.Loading("lazy")))),
-		h.FigCaption(h.Class("cui-console-thumb-caption"), g.Text(t.Caption)),
+		h.FigCaption(h.Class("cui-console-thumb-caption"), h.Title(t.Caption), g.Text(t.Caption)),
 	).Render(w)
 }

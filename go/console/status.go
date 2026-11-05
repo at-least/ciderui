@@ -13,20 +13,20 @@ import (
 type ConsoleStatus struct {
 	Label string
 	Color ConsoleColor
-	// Series: a chart legend's series color, as CSS.
-	Series string
-	Class  string
+	Class string
 }
 
 func (s ConsoleStatus) Render(w io.Writer) error {
 	if s.Label == "" {
 		panic("console.ConsoleStatus needs a Label")
 	}
-	if s.Series != "" && s.Color != ConsoleColorNeutral {
-		panic("console.ConsoleStatus takes a color or a series, not both")
-	}
-	return h.Span(class.Root("cui-console-status", s.Class), optionalAttr("data-color", s.Color.value),
-		h.Span(h.Class("cui-console-status-mark"), g.If(s.Series != "", h.Style("--cui-console-status-color: "+s.Series))),
-		g.Text(s.Label),
-	).Render(w)
+	return statusPart(s.Label, s.Color, "", s.Class).Render(w)
+}
+
+// seriesColor: a chart legend's series, as CSS; "" for color's.
+func statusPart(label string, color ConsoleColor, seriesColor, rootClass string) g.Node {
+	return h.Span(class.Root("cui-console-status", rootClass), optionalAttr("data-color", color.value),
+		h.Span(h.Class("cui-console-status-mark"), g.If(seriesColor != "", h.Style("--cui-console-status-color: "+seriesColor))),
+		g.Text(label),
+	)
 }

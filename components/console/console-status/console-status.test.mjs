@@ -1,7 +1,7 @@
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const COLORS = ['neutral', 'brand', 'info', 'success', 'warning', 'error'];
+const COLORS = ['neutral', 'info', 'success', 'warning', 'error'];
 const at = (c) => `.cui-console-status${c === 'neutral' ? ':not([data-color])' : `[data-color="${c}"]`}`;
 const MARK = (c) => `${at(c)} .cui-console-status-mark`;
 
@@ -26,14 +26,6 @@ export const cases = [
     checks: [
       { target: '.cui-console-status-detail', props: ['font-size', 'line-height', 'margin-top'], asc: ['testflight', 'status.line'] },
       { target: '.cui-console-status-detail', props: ['color', 'padding-left'], golden: 'the secondary label, 18px in: under the word, past the mark and its 6px' },
-    ],
-  },
-  {
-    name: 'status key',
-    html: ex('key'),
-    widths: [1200],
-    checks: [
-      { target: '.cui-console-status-mark', props: ['background-color'], golden: 'a series\' own color through --cui-console-status-color (a chart\'s key)' },
     ],
   },
   {

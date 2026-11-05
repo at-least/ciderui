@@ -2,7 +2,8 @@ import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const P = 'component-Progress-variant';
-const MD = '.cui-console-progress:not([data-size]):not([data-color])';
+const MD = '.cui-console-progress:not([data-size]):not([data-color]):not(:indeterminate)';
+const WAITING = '.cui-console-progress:indeterminate';
 
 export const cases = [
   {
@@ -19,6 +20,33 @@ export const cases = [
       { target: MD, props: ['color'], tb: [`${P}-colorRole-brand-anatomy-Fill-backgroundColor`] },
       { target: '[data-color="neutral"]', props: ['color'], tb: [`${P}-colorRole-neutral-anatomy-Fill-backgroundColor`] },
       { target: MD, props: ['width'], golden: 'the column\'s width' },
+    ],
+  },
+  {
+    name: 'progress indeterminate',
+    html: ex('progress'),
+    widths: [1200],
+    checks: [
+      { target: WAITING, props: ['animation-name', 'animation-duration', 'animation-iteration-count', 'animation-timing-function', 'background-size', 'background-repeat'], golden: 'no value: a small fill loops along the track, the HIG\'s indeterminate progress bar, its one motion; the toolkit has none, and a still track read as nothing happening' },
+      { target: WAITING, props: ['color'], golden: 'the fill the brand label\'s blue, as a value\'s' },
+    ],
+  },
+  {
+    name: 'progress indeterminate reduced motion',
+    html: ex('progress'),
+    reducedMotion: 'reduce',
+    widths: [1200],
+    checks: [
+      { target: WAITING, props: ['animation-iteration-count', 'background-position-x'], golden: 'reduced motion stills it (base.css), the fill in the track\'s middle' },
+    ],
+  },
+  {
+    name: 'progress indeterminate forced colors',
+    html: ex('progress'),
+    forcedColors: true,
+    widths: [1200],
+    checks: [
+      { target: WAITING, props: ['background-image'], golden: 'forced colors: the fill the theme\'s Highlight on its Canvas: they drop a gradient, and the bar read as still and empty' },
     ],
   },
   {

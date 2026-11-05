@@ -20,7 +20,7 @@ export const cases = [
       { target: `${IDLE} ${B} > .cui-console-copy-idle`, props: ['display', 'box-width'], golden: 'Lucide\'s copy at 16px, the console\'s icon size' },
       { target: `${IDLE} ${B} > .cui-console-copy-done`, props: ['display'], golden: 'the check hidden before a copy' },
       { target: `${IDLE} ${B}`, props: ['color', 'background-color'], golden: 'the label on the console\'s neutral fill-primary, the nearest the contract holds to DocC\'s rgb(210, 210, 215) over its gray' },
-      { target: `${IDLE} ${B}`, props: ['color', 'background-color'], state: 'hover', golden: 'hovered, the page\'s ground on the label\'s solid, as DocC\'s near-black' },
+      { target: `${IDLE} ${B}`, props: ['color', 'background-color'], state: 'hover', golden: 'hovered, the console\'s gray hover under the same label: DocC\'s full invert to near-black only draws the eye (decision 25)' },
       { target: `${IDLE} .cui-console-listing`, props: ['padding-right', 'background-color'], golden: 'its end 9px, with the button\'s 5px the listing\'s own 14px; no ground of its own' },
       { target: `${IDLE} .cui-console-listing`, props: ['box-width'], golden: 'the scrolling text ends before the button: the pair\'s width less 38px (5px, 28px, 5px)' },
       { target: `${COPIED} ${B} > .cui-console-copy-idle`, props: ['display'], golden: 'copied: the copy icon hidden' },
@@ -49,6 +49,14 @@ export const cases = [
     ],
   },
   {
+    name: 'copy inline phone',
+    html: ex('inline'),
+    widths: [320],
+    checks: [
+      { target: '#issue-id', props: ['overflow-wrap', 'box-right'], golden: 'a long id wraps anywhere in its line, staying in the window: it has no space to wrap at, and ran past a phone\'s edge' },
+    ],
+  },
+  {
     name: 'copy inline touch',
     html: ex('inline'),
     touch: true,
@@ -73,7 +81,7 @@ export const cases = [
     widths: [1200],
     checks: [
       { target: `${IDLE} ${B}`, props: ['color', 'background-color'], golden: 'the dark side derived (tokens.css, decision 18), as DocC\'s dark rgb(66, 66, 69) on its gray' },
-      { target: `${IDLE} ${B}`, props: ['color', 'background-color'], state: 'hover', golden: 'hovered in dark, the page\'s black on the label\'s white, as DocC\'s near-white' },
+      { target: `${IDLE} ${B}`, props: ['color', 'background-color'], state: 'hover', golden: 'hovered in dark, the console\'s gray hover, no invert (decision 25)' },
     ],
   },
 ];

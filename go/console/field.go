@@ -38,6 +38,9 @@ func (f ConsoleFormField) Render(w io.Writer) error {
 	if f.ID == "" {
 		panic("console.ConsoleFormField needs an ID")
 	}
+	if f.Label == nil {
+		panic("console.ConsoleFormField needs a Label")
+	}
 	return h.Div(h.Class("cui-console-form-field"),
 		h.Label(h.Class("cui-console-label"), h.For(f.ID), f.Label),
 		f.Children,
@@ -46,33 +49,33 @@ func (f ConsoleFormField) Render(w io.Writer) error {
 
 type ConsoleHelp struct {
 	ControlID string
-	Text      string
+	Label     string
 }
 
 func (p ConsoleHelp) Render(w io.Writer) error {
-	if p.Text == "" {
-		panic("console.ConsoleHelp needs a Text")
+	if p.Label == "" {
+		panic("console.ConsoleHelp needs a Label")
 	}
-	return h.P(h.Class("cui-console-help"), h.ID(ConsoleHelpID(p.ControlID)), g.Text(p.Text)).Render(w)
+	return h.P(h.Class("cui-console-help"), h.ID(ConsoleHelpID(p.ControlID)), g.Text(p.Label)).Render(w)
 }
 
-// ConsoleError with no Text is a hidden slot the page's script fills and
+// ConsoleError with no Label is a hidden slot the page's script fills and
 // unhides when a request fails.
 type ConsoleError struct {
 	// ControlID: "" for a form's slot.
 	ControlID string
-	Text      string
+	Label     string
 	Class     string
 }
 
 func (e ConsoleError) Render(w io.Writer) error {
-	if e.Text == "" {
+	if e.Label == "" {
 		return h.P(class.Root("cui-console-error", e.Class), g.If(e.ControlID != "", h.ID(ConsoleErrorID(e.ControlID))), h.Role("alert"), g.Attr("hidden")).Render(w)
 	}
 	if e.ControlID == "" {
-		panic("console.ConsoleError with a Text needs a ControlID")
+		panic("console.ConsoleError with a Label needs a ControlID")
 	}
-	return h.P(class.Root("cui-console-error", e.Class), h.ID(ConsoleErrorID(e.ControlID)), g.Text(e.Text)).Render(w)
+	return h.P(class.Root("cui-console-error", e.Class), h.ID(ConsoleErrorID(e.ControlID)), g.Text(e.Label)).Render(w)
 }
 
 func ConsoleHelpID(id string) string {

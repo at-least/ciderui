@@ -1,4 +1,4 @@
-import { ELLIPSIS, examples } from '../../../test/harness.mjs';
+import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const S = 'component-Sidebar';
@@ -35,7 +35,7 @@ export const cases = [
       { target: '.cui-console-sidebar .cui-console-menu-heading', props: ['color'], golden: FITTED },
       { target: '.cui-console-sidebar .cui-console-menu-secondary', props: ['font-size', 'line-height', 'font-weight'], tb: [`${DS}-anatomy-Secondary-textStyle-fontSize`, `${DS}-anatomy-Secondary-textStyle-lineHeight`, `${DS}-anatomy-Secondary-textStyle-fontWeight`] },
       { target: '.cui-console-sidebar .cui-console-menu-secondary', props: ['color'], golden: FITTED },
-      { target: `${ITEM} .cui-console-menu-label`, props: ELLIPSIS, golden: 'a long label cut with an ellipsis, on one line' },
+      { target: `${ITEM} .cui-console-menu-label`, props: ['white-space', 'text-overflow', 'overflow-wrap'], golden: 'a long label wraps, whole, as a menu\'s' },
       { target: '.cui-console-sidebar .cui-console-menu-rule', props: ['margin-top', 'margin-left', 'background-color', 'box-height'], tb: [`${D}-variant-sidebar-anatomy-HR-marginBlock`, `${DS}-anatomy-HR-marginInline`, 'color-role-neutral-border-secondary', 'border-width-fine'] },
       { target: '.cui-console-sidebar .cui-console-menu-icon', props: ['box-width', 'box-height'], golden: 'its icon Lucide\'s, 20px in 24px (the toolkit\'s art\'s least width): the toolkit draws SF Symbols at its text\'s size' },
       { target: '.cui-console-sidebar-footer', props: ['padding-top', 'padding-bottom'], tb: [`${S}-anatomy-UniversalIDFooter-paddingBlockStart`, `${S}-anatomy-UniversalIDFooter-paddingBlockEnd`] },
@@ -64,6 +64,23 @@ export const cases = [
       { target: '.cui-console-sidebar-close', props: ['display'], golden: 'its close button shown in the sheet' },
       { target: '.cui-console-sidebar-close', props: ['box-right'], golden: 'at the header\'s end, 6px in' },
       { target: ITEM, props: ['min-height', 'padding-top', 'padding-left', 'border-top-left-radius', 'font-size', 'line-height'], tb: [`${MS}-anatomy-Item-minHeight`, `${MS}-anatomy-Item-paddingBlock`, `${MS}-anatomy-Item-paddingInline`, `${MS}-anatomy-Item-borderRadius`, `${MS}-anatomy-Item-variant-selected-none-anatomy-Label-textStyle-fontSize`, `${MS}-anatomy-Item-variant-selected-none-anatomy-Label-textStyle-lineHeight`] },
+    ],
+  },
+  {
+    name: 'sidebar opened focus',
+    html: ex('sidebar').replace('<nav class="cui-console-sidebar"', '<button id="open" popovertarget="sidebar">Open</button><nav class="cui-console-sidebar"'),
+    click: '#open',
+    widths: [390],
+    checks: [
+      { target: '.cui-console-sidebar-close', props: ['focused'], golden: 'opened, the focus on its close button, as the global menu\'s (HTML\'s autofocus in a popover): a screen reader is in the sheet, and Escape or Return closes it' },
+    ],
+  },
+  {
+    name: 'sidebar load focus',
+    html: ex('sidebar'),
+    widths: [1200],
+    checks: [
+      { target: '.cui-console-sidebar-close', props: ['focused'], golden: 'from 1024px, the page loaded, the focus left alone: its close button stands in the page, not shown' },
     ],
   },
   {

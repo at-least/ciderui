@@ -13,17 +13,6 @@ const sized = (s, M) => [
 
 export const cases = [
   {
-    name: 'empty',
-    html: ex('empty'),
-    widths: [1200, 390],
-    checks: [
-      ...sized('md', 'Md'),
-      { target: '.cui-console-empty', props: ['background-color'], golden: 'not backed: no fill' },
-      { target: '.cui-console-empty-actions', props: ['column-gap'], golden: 'its buttons 9px apart, as a banner\'s' },
-      { target: '.cui-console-empty', props: ['flex-direction', 'text-align', 'align-items'], golden: 'a column, centered' },
-    ],
-  },
-  {
     name: 'empty small',
     html: ex('small'),
     widths: [1200],
@@ -35,8 +24,13 @@ export const cases = [
   {
     name: 'empty large',
     html: ex('large'),
-    widths: [1200],
-    checks: sized('lg', 'Lg'),
+    widths: [1200, 390],
+    checks: [
+      ...sized('lg', 'Lg'),
+      { target: '.cui-console-empty', props: ['background-color'], golden: 'not backed: no fill' },
+      { target: '.cui-console-empty-actions', props: ['column-gap'], golden: 'its buttons 9px apart, as a banner\'s' },
+      { target: '.cui-console-empty', props: ['flex-direction', 'text-align', 'align-items'], golden: 'a column, centered' },
+    ],
   },
   {
     name: 'empty dark',

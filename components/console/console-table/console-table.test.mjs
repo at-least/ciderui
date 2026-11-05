@@ -20,30 +20,16 @@ export const cases = [
       { target: '.cui-console-table', props: ['color', 'font-size', 'line-height', 'font-weight'], tb: [`${T}-color`, `${T}-variant-pageScale-desktop-textStyle-fontSize`, `${T}-variant-pageScale-desktop-textStyle-lineHeight`, `${T}-variant-pageScale-desktop-textStyle-fontWeight`] },
       { target: 'tbody tr:first-child td:last-child', props: ['padding-right'], golden: 'the last cell flush at its end, as the analytics table\'s first is at its start' },
       { target: 'tbody tr:first-child', props: ['background-color'], state: 'hover', asc: ['hover-row', 'table.row'] },
+      { target: '.cui-console-table-figure:not(th)', props: ['font-size', 'line-height', 'font-weight', 'letter-spacing', 'color', 'text-align', 'font-variant-numeric'], asc: ['analytics', 'table.figure'] },
+      { target: 'tbody td:nth-child(2)', props: ['vertical-align', 'border-bottom-width', 'border-bottom-style', 'border-bottom-color'], asc: ['analytics', 'table.cell'] },
+      { target: 'tbody td:nth-child(2)', props: ['font-size', 'line-height', 'font-weight', 'letter-spacing', 'color', 'text-align'], asc: ['analytics', 'table.text'] },
+      { target: 'tbody tr[aria-selected="true"] > :first-child', props: ['border-left-width', 'border-left-style', 'border-left-color', 'padding-left'], golden: 'a selected row its leading bar in every mode, 3px of the brand label\'s blue, its text 8px in as a cell\'s: a fill at 0.08 alone is too faint to find by, and forced colors drop it (the HIG\'s Color: not by color alone)' },
+      { target: 'tbody tr:not([aria-selected]) > :first-child', props: ['border-left-width', 'padding-left'], golden: 'another row no bar, its first cell flush' },
       { target: 'tbody tr[aria-selected="true"]', props: ['background-color'], golden: 'the brand\'s fill at 0.08, the toolkit\'s selected row\'s (--tb-component-Table-anatomy-TR-…-selected-fill), square: its 12px corners set out 12px are no table row\'s' },
       { target: '.cui-console-table-subtitle', props: ['font-size', 'line-height', 'font-weight', 'color', 'display'], golden: 'a line under a cell\'s text, 12px on 16px, the secondary label: the toolkit\'s display list\'s subtitle at the table\'s small size' },
       { target: 'tbody tr:first-child', props: ['cursor'], golden: 'a row that is a link, all of it' },
       { target: '.cui-console-table', props: ['box-width'], golden: 'the full width of its place' },
       { target: 'tbody tr:first-child td:first-child', props: ['hit'], golden: 'the pointer finds the row\'s link anywhere in its first cell' },
-    ],
-  },
-  {
-    name: 'table large',
-    html: ex('large'),
-    widths: DESKTOP,
-    checks: [
-      { target: 'tr:first-child', props: ['box-height'], asc: ['analytics', 'table.row'] },
-      { target: 'td:first-child', props: ['padding-top', 'padding-bottom', 'padding-left', 'padding-right', 'vertical-align', 'border-bottom-width', 'border-bottom-style', 'border-bottom-color'], asc: ['analytics', 'table.cell'] },
-      { target: 'td:first-child', props: ['font-size', 'line-height', 'font-weight', 'letter-spacing', 'color', 'text-align'], asc: ['analytics', 'table.text'] },
-      { target: '.cui-console-table-figure', props: ['font-size', 'line-height', 'font-weight', 'letter-spacing', 'color', 'text-align', 'font-variant-numeric'], asc: ['analytics', 'table.figure'] },
-    ],
-  },
-  {
-    name: 'table small',
-    html: ex('table').replace('<table class="cui-console-table">', '<table class="cui-console-table" data-size="sm">'),
-    widths: [1200],
-    checks: [
-      { target: 'tbody tr:last-child td:nth-child(2)', props: ['padding-top', 'padding-bottom'], tb: [`${T}-anatomy-TD-variant-size-sm-paddingTop`, `${T}-anatomy-TD-variant-size-sm-paddingBottom`] },
     ],
   },
   {
@@ -137,6 +123,15 @@ export const cases = [
     ],
   },
   {
+    name: 'table scroll box',
+    html: ex('stack'),
+    widths: [1200, 390],
+    press: ['Tab'],
+    checks: [
+      { target: '.cui-console-table-scroll', props: ['focused', 'outline-style', 'overflow-x'], golden: 'the first Tab reaches the scroll box, ringed: the keyboard scrolls what overflows (axe\'s scrollable-region-focusable)' },
+    ],
+  },
+  {
     name: 'table stacked desktop',
     html: ex('stack'),
     widths: [1200],
@@ -161,6 +156,7 @@ export const cases = [
     widths: [1200],
     checks: [
       { target: 'tbody td:nth-child(2)', props: ['border-bottom-color', 'color'], golden: 'the dark side derived (tokens.css, decision 18)' },
+      { target: 'tbody tr[aria-selected="true"] > :first-child', props: ['border-left-color'], golden: 'the bar in the dark, the brand label\'s blue, a step lighter than the accent (decision 21)' },
       { target: 'tbody tr[aria-selected="true"]', props: ['background-color'], golden: 'the dark side derived: the brand blue, no step of the palette, takes the blue ramp\'s step nearest its lightness (tokens.css, decision 18)' },
     ],
   },

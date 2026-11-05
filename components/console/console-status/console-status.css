@@ -10,10 +10,6 @@
     color: var(--cui-c-console-neutral-label-primary);
   }
 
-  .cui-console-status[data-color="brand"] {
-    --cui-console-status-color: var(--cui-c-console-brand-label-primary);
-  }
-
   .cui-console-status[data-color="info"] {
     --cui-console-status-color: var(--cui-c-console-info-label-primary);
   }

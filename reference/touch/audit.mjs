@@ -34,7 +34,9 @@ for (const { name: part, dir: partDir } of parts) {
         // what a finger can tap now: shown, not disabled (a gallery's paddle
         // at the row's end takes no pointer; a hidden toggle takes none
         // either, its label taking the tap)
-        .filter((e) => e.checkVisibility({ visibilityProperty: true }) && !e.matches(':disabled') && (e.labels?.length || getComputedStyle(e).pointerEvents !== 'none')).map((e) => {
+        .filter((e) => e.checkVisibility({ visibilityProperty: true }) && !e.matches(':disabled') && (e.labels?.length || getComputedStyle(e).pointerEvents !== 'none'))
+        // a scroll box takes tabindex for the keyboard; a finger drags it and presses nothing
+        .filter((e) => e.matches('a[href], button, input, select, textarea, summary, [role=button]') || !/auto|scroll/.test(getComputedStyle(e).overflow)).map((e) => {
         const r = e.getBoundingClientRect();
         // a link inside a sentence: WCAG 2.5.8's inline exception, listed,
         // not counted (its line's height is the text's)

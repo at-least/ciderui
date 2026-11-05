@@ -38,13 +38,13 @@ func checkPre(t *testing.T, node g.Node, path string) {
 
 func TestListingRendersTheExamples(t *testing.T) {
 	lines := h.Div(h.Class("cui-console-page max-w-xl"),
-		console.ConsoleListing{FirstLine: 40, Lines: []console.ConsoleListingLine{{Text: "func total(_ cart: Cart) -> Int {", Highlighted: false}, {Text: "    let items = cart.items", Highlighted: false}, {Text: "    return items.reduce(0) { $0 + $1.price }", Highlighted: true}, {Text: "}", Highlighted: false}}, Class: ""},
+		console.ConsoleListing{FirstLine: 40, Lines: []console.ConsoleListingLine{{Label: "func total(_ cart: Cart) -> Int {", Highlighted: false}, {Label: "    let items = cart.items", Highlighted: false}, {Label: "    return items.reduce(0) { $0 + $1.price }", Highlighted: true}, {Label: "}", Highlighted: false}}, Class: ""},
 	)
 	checkPre(t, lines, "console/console-listing/examples/lines.html")
 
 	nested := h.Div(h.Class("cui-console-page max-w-xl"),
 		h.Div(h.Class("cui-console-card"),
-			console.ConsoleListing{FirstLine: 41, Lines: []console.ConsoleListingLine{{Text: "    let items = cart.items", Highlighted: false}, {Text: "    return items.reduce(0) { $0 + $1.price }", Highlighted: true}}, Class: ""},
+			console.ConsoleListing{FirstLine: 41, Lines: []console.ConsoleListingLine{{Label: "    let items = cart.items", Highlighted: false}, {Label: "    return items.reduce(0) { $0 + $1.price }", Highlighted: true}}, Class: ""},
 		),
 	)
 	checkPre(t, nested, "console/console-listing/examples/nested.html")
@@ -57,8 +57,8 @@ func TestListingNoLinesPanic(t *testing.T) {
 }
 
 func TestListingHighlightsEveryMarkedLine(t *testing.T) {
-	got := example.Render(console.ConsoleListing{FirstLine: 1, Lines: []console.ConsoleListingLine{{Text: "a", Highlighted: true}, {Text: "b", Highlighted: false}, {Text: "c", Highlighted: true}}, Class: ""})
-	want := `<pre class="cui-console-listing"><code><span class="cui-console-listing-line" data-line="1" data-highlighted>a</span>` + "\n" + `<span class="cui-console-listing-line" data-line="2">b</span>` + "\n" + `<span class="cui-console-listing-line" data-line="3" data-highlighted>c</span></code></pre>`
+	got := example.Render(console.ConsoleListing{FirstLine: 1, Lines: []console.ConsoleListingLine{{Label: "a", Highlighted: true}, {Label: "b", Highlighted: false}, {Label: "c", Highlighted: true}}, Class: ""})
+	want := `<pre class="cui-console-listing" tabindex="0"><code><span class="cui-console-listing-line" data-line="1" data-highlighted>a</span>` + "\n" + `<span class="cui-console-listing-line" data-line="2">b</span>` + "\n" + `<span class="cui-console-listing-line" data-line="3" data-highlighted>c</span></code></pre>`
 	if got != want {
 		t.Errorf("got %s", got)
 	}

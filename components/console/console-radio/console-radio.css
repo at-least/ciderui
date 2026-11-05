@@ -40,21 +40,18 @@
       border-color: transparent;
       background-color: var(--cui-c-console-brand-accent-primary);
       background-image: radial-gradient(circle, var(--cui-c-console-brand-label-on-accent-primary) 3.215px, transparent 3.715px);
-      box-shadow: var(--cui-console-shadow-radio);
 
       @media (forced-colors: active) {
         forced-color-adjust: none;
         border-color: Highlight;
         background-color: Canvas;
         background-image: radial-gradient(circle, Highlight 3.215px, transparent 3.715px);
-        box-shadow: none;
       }
     }
 
     &:disabled {
       border-color: var(--cui-c-console-neutral-border-tertiary);
       background-color: var(--cui-c-console-neutral-fill-tertiary);
-      box-shadow: none;
 
       &:checked {
         background-image: radial-gradient(circle, var(--cui-c-console-neutral-label-disabled) 3.215px, transparent 3.715px);

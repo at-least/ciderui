@@ -12,10 +12,6 @@ import (
 )
 
 func TestEmptyRendersTheExamples(t *testing.T) {
-	empty := console.ConsoleEmpty{Size: console.ConsoleEmptySizeMedium, Backed: false, Icon: lucide.Inbox, Heading: "No Issues", Caption: "When your app reports a crash, it shows here.", Class: "",
-		Children: h.P(h.Class("cui-console-empty-actions"), h.A(h.Class("cui-console-btn"), h.Href("#setup"), g.Text("Set Up Reporting")))}
-	example.Check(t, empty, "console/console-empty/examples/empty.html")
-
 	small := console.ConsoleEmpty{Size: console.ConsoleEmptySizeSmall, Backed: true, Icon: lucide.ChartLine, Heading: "No Data", Caption: "Nothing was reported in this period.", Class: "", Children: nil}
 	example.Check(t, small, "console/console-empty/examples/small.html")
 
@@ -26,6 +22,13 @@ func TestEmptyRendersTheExamples(t *testing.T) {
 
 func TestEmptyAnEmptyHeadingPanics(t *testing.T) {
 	mustPanic(t, "needs a Heading", func() {
-		example.Render(console.ConsoleEmpty{Size: console.ConsoleEmptySizeMedium, Backed: false, Icon: icon.Icon{}, Heading: "", Caption: "", Class: "", Children: nil})
+		example.Render(console.ConsoleEmpty{Size: console.ConsoleEmptySizeSmall, Backed: false, Icon: icon.Icon{}, Heading: "", Caption: "", Class: "", Children: nil})
+	})
+}
+
+// ConsoleEmptySize has no size that writes no attribute
+func TestEmptyTheZeroSizePanics(t *testing.T) {
+	mustPanic(t, "ConsoleEmpty needs a Size", func() {
+		example.Render(console.ConsoleEmpty{Size: console.ConsoleEmptySize{}, Backed: false, Icon: icon.Icon{}, Heading: "No Issues", Caption: "", Class: "", Children: nil})
 	})
 }

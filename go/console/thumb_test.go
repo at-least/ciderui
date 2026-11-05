@@ -27,8 +27,14 @@ func TestThumbRendersTheExample(t *testing.T) {
 	example.Check(t, thumbs, path)
 }
 
+func TestThumbAnEmptyAltPanics(t *testing.T) {
+	mustPanic(t, "ConsoleThumb needs an Alt", func() {
+		example.Render(console.ConsoleThumb{Href: "/a.png", Src: "/a.png", Alt: "", Caption: "a.png", Lazy: false, Class: ""})
+	})
+}
+
 func TestThumbAnEmptyCaptionPanics(t *testing.T) {
 	mustPanic(t, "needs a Caption", func() {
-		example.Render(console.ConsoleThumb{Href: "/a.png", Src: "/a.png", Alt: "", Caption: "", Lazy: false, Class: ""})
+		example.Render(console.ConsoleThumb{Href: "/a.png", Src: "/a.png", Alt: "a.png", Caption: "", Lazy: false, Class: ""})
 	})
 }

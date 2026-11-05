@@ -49,20 +49,12 @@ export const cases = [
     ],
   },
   {
-    name: 'field sizes',
-    html: ex('sizes'),
-    widths: [1200],
-    checks: ['sm', 'lg', 'xl'].map((s) => ({ target: `[data-size="${s}"]`, props: SIZE, tb: size(s) })),
-  },
-  {
-    name: 'field sizes touch',
-    html: ex('sizes'),
+    name: 'fields touch',
+    html: ex('fields'),
     touch: true,
     widths: [390],
     checks: [
-      ...['.cui-console-field[data-size="sm"]', '.cui-console-field:not([data-size])', '.cui-console-field[data-size="lg"]'].map((target) => ({ target, props: ['box-height'], golden: 'a field 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), whatever its size: an <input> draws no ::after to reach it' })),
-      { target: '[data-size="xl"]', props: ['box-height'], golden: 'the extra large keeps its 50px, over 44' },
-      { target: '[data-size="sm"]', props: ['font-size', 'line-height'], tb: [`${T}-controlSize-sm-textStyle-fontSize`, `${T}-controlSize-sm-textStyle-lineHeight`] },
+      { target: NAME, props: ['box-height'], golden: 'a field 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility)' },
     ],
   },
   {

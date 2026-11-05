@@ -31,11 +31,11 @@ func (m ConsoleMenu) Render(w io.Writer) error {
 // ConsoleMenuItem is a page in a [ConsoleMenu], a [ConsoleMenuGroup] or a
 // [ConsoleSidebar].
 type ConsoleMenuItem struct {
-	Href     string
-	Label    string
-	Icon     icon.Icon
-	Current  bool
-	Disabled bool
+	// Href: "" for an item not available now.
+	Href    string
+	Label   string
+	Icon    icon.Icon
+	Current bool
 	// Secondary is a count at the item's end.
 	Secondary string
 	Class     string
@@ -45,28 +45,31 @@ func (m ConsoleMenuItem) Render(w io.Writer) error {
 	if m.Label == "" {
 		panic("console.ConsoleMenuItem needs a Label")
 	}
-	if m.Disabled != (m.Href == "") {
-		panic("console.ConsoleMenuItem needs an Href, unless it is disabled")
-	}
-	return h.A(class.Root("cui-console-menu-item", m.Class), g.If(!m.Disabled, h.Href(m.Href)), g.If(m.Current, h.Aria("current", "page")), g.If(m.Disabled, h.Aria("disabled", "true")),
+	content := g.Group{
 		iconPart(m.Icon, "cui-console-menu-icon"),
 		h.Span(h.Class("cui-console-menu-label"), g.Text(m.Label)),
 		g.If(m.Secondary != "", h.Span(h.Class("cui-console-menu-secondary"), g.Text(m.Secondary))),
-	).Render(w)
+	}
+	if m.Href == "" {
+		return h.A(class.Root("cui-console-menu-item", m.Class), h.Aria("disabled", "true"), content).Render(w)
+	}
+	return h.A(class.Root("cui-console-menu-item", m.Class), h.Href(m.Href), g.If(m.Current, h.Aria("current", "page")), content).Render(w)
 }
 
 type ConsoleMenuGroup struct {
 	Label string
 	Icon  icon.Icon
 	Open  bool
+	Items []ConsoleMenuItem
 	Class string
-	// Children: [ConsoleMenuItem]s.
-	Children g.Node
 }
 
 func (m ConsoleMenuGroup) Render(w io.Writer) error {
 	if m.Label == "" {
 		panic("console.ConsoleMenuGroup needs a Label")
+	}
+	if len(m.Items) == 0 {
+		panic("console.ConsoleMenuGroup needs an Item")
 	}
 	return h.Details(class.Root("cui-console-menu-group", m.Class), g.If(m.Open, h.Open()),
 		h.Summary(h.Class("cui-console-menu-item"),
@@ -74,7 +77,7 @@ func (m ConsoleMenuGroup) Render(w io.Writer) error {
 			h.Span(h.Class("cui-console-menu-label"), g.Text(m.Label)),
 			lucide.ChevronRight.Class("cui-console-menu-chevron"),
 		),
-		m.Children,
+		g.Map(m.Items, func(item ConsoleMenuItem) g.Node { return item }),
 	).Render(w)
 }
 

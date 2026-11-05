@@ -13,30 +13,25 @@ import (
 
 func TestMenuRendersTheExample(t *testing.T) {
 	menu := console.ConsoleMenu{AriaLabel: "Analytics", Class: "", Children: g.Group{
-		console.ConsoleMenuItem{Href: "#overview", Label: "Overview", Icon: lucide.LayoutGrid, Current: true, Disabled: false, Secondary: "", Class: ""},
-		console.ConsoleMenuGroup{Label: "Acquisition", Icon: lucide.UserPlus, Open: true, Class: "", Children: g.Group{
-			console.ConsoleMenuItem{Href: "#sources", Label: "Sources", Icon: icon.Icon{}, Current: false, Disabled: false, Secondary: "", Class: ""},
-			console.ConsoleMenuItem{Href: "", Label: "Product Pages", Icon: icon.Icon{}, Current: false, Disabled: true, Secondary: "", Class: ""},
+		console.ConsoleMenuItem{Href: "#overview", Label: "Overview", Icon: lucide.LayoutGrid, Current: true, Secondary: "", Class: ""},
+		console.ConsoleMenuGroup{Label: "Acquisition", Icon: lucide.UserPlus, Open: true, Class: "", Items: []console.ConsoleMenuItem{
+			{Href: "#sources", Label: "Sources", Icon: icon.Icon{}, Current: false, Secondary: "", Class: ""},
+			{Href: "", Label: "Product Pages", Icon: icon.Icon{}, Current: false, Secondary: "", Class: ""},
 		}},
-		console.ConsoleMenuGroup{Label: "Monetization", Icon: lucide.ChartLine, Open: false, Class: "", Children: console.ConsoleMenuItem{Href: "#sales", Label: "Sales", Icon: icon.Icon{}, Current: false, Disabled: false, Secondary: "", Class: ""}},
+		console.ConsoleMenuGroup{Label: "Monetization", Icon: lucide.ChartLine, Open: false, Class: "", Items: []console.ConsoleMenuItem{{Href: "#sales", Label: "Sales", Icon: icon.Icon{}, Current: false, Secondary: "", Class: ""}}},
 		h.Hr(h.Class("cui-console-menu-rule")),
 		h.P(h.Class("cui-console-menu-heading"), g.Text("Projects")),
-		console.ConsoleMenuItem{Href: "#shop", Label: "Shop", Icon: icon.Icon{}, Current: false, Disabled: false, Secondary: "8", Class: ""},
-		console.ConsoleMenuItem{Href: "#demo", Label: "Demo Shop", Icon: icon.Icon{}, Current: false, Disabled: false, Secondary: "12", Class: ""},
+		console.ConsoleMenuItem{Href: "#shop", Label: "Shop", Icon: icon.Icon{}, Current: false, Secondary: "8", Class: ""},
+		console.ConsoleMenuItem{Href: "#demo", Label: "Demo Shop", Icon: icon.Icon{}, Current: false, Secondary: "12", Class: ""},
 	}}
 	example.Check(t, menu, "console/console-menu/examples/menu.html")
 }
 
-func TestMenuItemWithNoHrefPanics(t *testing.T) {
-	mustPanic(t, "needs an Href, unless it is disabled", func() {
-		example.Render(console.ConsoleMenuItem{Href: "", Label: "x", Icon: icon.Icon{}, Current: false, Disabled: false, Secondary: "", Class: ""})
-	})
-}
-
-func TestMenuItemDisabledWithAnHrefPanics(t *testing.T) {
-	mustPanic(t, "needs an Href, unless it is disabled", func() {
-		example.Render(console.ConsoleMenuItem{Href: "#x", Label: "x", Icon: icon.Icon{}, Current: false, Disabled: true, Secondary: "", Class: ""})
-	})
+func TestMenuItemWithNoHrefIsNotAvailable(t *testing.T) {
+	got := example.Render(console.ConsoleMenuItem{Href: "", Label: "x", Icon: icon.Icon{}, Current: true, Secondary: "", Class: ""})
+	if want := `<a class="cui-console-menu-item" aria-disabled="true"><span class="cui-console-menu-label">x</span></a>`; got != want {
+		t.Errorf("got  %s\nwant %s", got, want)
+	}
 }
 
 func TestMenuWithNoAriaLabelPanics(t *testing.T) {
@@ -47,13 +42,19 @@ func TestMenuWithNoAriaLabelPanics(t *testing.T) {
 
 func TestMenuItemWithNoLabelPanics(t *testing.T) {
 	mustPanic(t, "ConsoleMenuItem needs a Label", func() {
-		example.Render(console.ConsoleMenuItem{Href: "#x", Label: "", Icon: icon.Icon{}, Current: false, Disabled: false, Secondary: "", Class: ""})
+		example.Render(console.ConsoleMenuItem{Href: "#x", Label: "", Icon: icon.Icon{}, Current: false, Secondary: "", Class: ""})
 	})
 }
 
 func TestMenuGroupWithNoLabelPanics(t *testing.T) {
 	mustPanic(t, "ConsoleMenuGroup needs a Label", func() {
-		example.Render(console.ConsoleMenuGroup{Label: "", Icon: icon.Icon{}, Open: false, Class: "", Children: g.Text("x")})
+		example.Render(console.ConsoleMenuGroup{Label: "", Icon: icon.Icon{}, Open: false, Class: "", Items: []console.ConsoleMenuItem{{Href: "#x", Label: "x", Icon: icon.Icon{}, Current: false, Secondary: "", Class: ""}}})
+	})
+}
+
+func TestMenuGroupWithNoItemsPanics(t *testing.T) {
+	mustPanic(t, "ConsoleMenuGroup needs an Item", func() {
+		example.Render(console.ConsoleMenuGroup{Label: "x", Icon: icon.Icon{}, Open: false, Class: "", Items: nil})
 	})
 }
 

@@ -18,7 +18,7 @@ export const cases = [
       { target: OFF, props: ['font-size', 'line-height', 'font-weight', 'color'], tb: ['component-Label-variant-controlSize-md-inline-on-textStyle-fontSize', 'component-Label-variant-controlSize-md-inline-on-textStyle-lineHeight', 'component-Label-variant-controlSize-md-inline-on-textStyle-fontWeight', 'component-Label-color'] },
       { target: OFF, props: ['column-gap'], golden: 'its label 9px after it, the checkbox\'s gap (the toolkit\'s label names none for a radio)' },
       { target: `${OFF} .cui-console-radio-input`, props: ['border-top-color', 'background-color'], golden: 'its edge the field\'s, coolGray-800 at 0.58 (3:1; the toolkit\'s 0.18 is 1.4:1: tokens.css, decision 21), on white' },
-      { target: `${ON} .cui-console-radio-input`, props: ['box-shadow'], tb: ['component-Radio-variant-colorRole-brand-effect-default-state-on-boxShadow'] },
+      { target: `${ON} .cui-console-radio-input`, props: ['box-shadow'], golden: 'no blue glow, where the toolkit\'s chosen radio draws one: the fill says it\'s chosen, the glow only draws the eye (decision 25)' },
       { target: `${ON} .cui-console-radio-input`, props: ['background-color', 'border-top-color', 'background-image'], golden: 'chosen, the brand\'s flat blue, its edge gone, a white mark 6.43px across (the toolkit\'s md mark, white at 0.95): the toolkit\'s blue is a gradient' },
       { target: `${DISABLED} .cui-console-radio-input`, props: ['border-top-color'], tb: [`${R}-controlSize-md-effect-disabled-border-color`] },
       { target: `${DISABLED} .cui-console-radio-input`, props: ['background-color'], golden: 'disabled, the gray fill' },
@@ -51,7 +51,7 @@ export const cases = [
     widths: [1200],
     forcedColors: true,
     checks: [
-      { target: `${ON} .cui-console-radio-input`, props: ['border-top-color', 'background-color', 'background-image', 'box-shadow'], golden: 'chosen, its edge and mark the theme\'s Highlight: forced colors drop the gradient and the fill, and the chosen radio read as the others' },
+      { target: `${ON} .cui-console-radio-input`, props: ['border-top-color', 'background-color', 'background-image'], golden: 'chosen, its edge and mark the theme\'s Highlight: forced colors drop the gradient and the fill, and the chosen radio read as the others' },
       { target: `${OFF} .cui-console-radio-input`, props: ['border-top-color', 'background-image'], golden: 'not chosen, the forced edge and no mark' },
     ],
   },
@@ -60,7 +60,7 @@ export const cases = [
     html: DISABLED_CHOSEN,
     widths: [1200],
     checks: [
-      { target: '.cui-console-radio-input', props: ['background-image', 'box-shadow'], golden: 'disabled and chosen, its mark the disabled label, no shadow' },
+      { target: '.cui-console-radio-input', props: ['background-image'], golden: 'disabled and chosen, its mark the disabled label' },
     ],
   },
   {

@@ -14,13 +14,13 @@ import (
 func TestSidebarRendersTheExample(t *testing.T) {
 	account := h.A(h.Class("cui-console-sidebar-account"), h.Href("#account"), lucide.CircleUser.Class("cui-console-sidebar-avatar"), g.Text("Alex Morgan"))
 	sidebar := console.ConsoleSidebar{ID: "sidebar", AriaLabel: "CrashCart", Home: "#home", Wordmark: "CrashCart", CloseAriaLabel: "Close", Class: "", Footer: account, Children: g.Group{
-		console.ConsoleMenuItem{Href: "#projects", Label: "All Projects", Icon: lucide.LayoutGrid, Current: false, Disabled: false, Secondary: "", Class: ""},
-		console.ConsoleMenuItem{Href: "#issues", Label: "All Issues", Icon: lucide.Bug, Current: true, Disabled: false, Secondary: "", Class: ""},
+		console.ConsoleMenuItem{Href: "#projects", Label: "All Projects", Icon: lucide.LayoutGrid, Current: false, Secondary: "", Class: ""},
+		console.ConsoleMenuItem{Href: "#issues", Label: "All Issues", Icon: lucide.Bug, Current: true, Secondary: "", Class: ""},
 		h.P(h.Class("cui-console-menu-heading"), g.Text("Projects")),
-		console.ConsoleMenuItem{Href: "#shop", Label: "Shop", Icon: icon.Icon{}, Current: false, Disabled: false, Secondary: "8", Class: ""},
-		console.ConsoleMenuItem{Href: "#demo", Label: "Demo Shop", Icon: icon.Icon{}, Current: false, Disabled: false, Secondary: "12", Class: ""},
+		console.ConsoleMenuItem{Href: "#shop", Label: "Shop", Icon: icon.Icon{}, Current: false, Secondary: "8", Class: ""},
+		console.ConsoleMenuItem{Href: "#demo", Label: "Demo Shop", Icon: icon.Icon{}, Current: false, Secondary: "12", Class: ""},
 		h.Hr(h.Class("cui-console-menu-rule")),
-		console.ConsoleMenuItem{Href: "#alerts", Label: "Alerts", Icon: lucide.Bell, Current: false, Disabled: false, Secondary: "", Class: ""},
+		console.ConsoleMenuItem{Href: "#alerts", Label: "Alerts", Icon: lucide.Bell, Current: false, Secondary: "", Class: ""},
 	}}
 	example.Check(t, sidebar, "console/console-sidebar/examples/sidebar.html")
 }

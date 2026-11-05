@@ -36,8 +36,7 @@
 
     @media (hover: hover) {
       &:hover {
-        color: var(--cui-c-console-neutral-background-primary);
-        background-color: var(--cui-c-console-neutral-accent-primary);
+        background-color: var(--cui-c-console-gray-fill-hover);
       }
     }
   }

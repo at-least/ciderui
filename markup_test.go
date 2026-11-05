@@ -71,7 +71,7 @@ func TestClassesWithNoRuleHaveNoRule(t *testing.T) {
 }
 
 func TestAValueNoRuleSelectsFails(t *testing.T) {
-	want := []string{`data-color="purple" on <span class="cui-console-badge">: no rule of ciderui's selects it (cui-console-badge's: brand, error, info, success, warning)`}
+	want := []string{`data-color="purple" on <span class="cui-console-badge">: no rule of ciderui's selects it (cui-console-badge's: error, info, success, warning)`}
 	if got := CheckMarkup(`<span class="cui-console-badge" data-color="purple">b</span>`); !slices.Equal(got, want) {
 		t.Errorf("got %q", got)
 	}

@@ -1,4 +1,4 @@
-import { ELLIPSIS, examples } from '../../../test/harness.mjs';
+import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const DESKTOP = [1600, 1200, 640];
@@ -16,6 +16,14 @@ const UNCHECKED = '[role="menuitemradio"][aria-checked="false"]';
 const page = (html) => `<div style="padding:24px 24px 320px">${html}</div>`;
 
 export const cases = [
+  {
+    name: 'menu long label',
+    html: '<div class="w-48"><nav class="cui-console-menu" aria-label="Analytics"><a class="cui-console-menu-item" href="#a"><span class="cui-console-menu-label">App Store Product Page Optimization</span></a></nav></div>',
+    widths: [1200],
+    checks: [
+      { target: '.cui-console-menu-label', props: ['box-height'], golden: 'a long label on two lines, whole, not cut with an ellipsis' },
+    ],
+  },
   {
     name: 'menu choices',
     html: page(ex('choices')),
@@ -119,7 +127,7 @@ export const cases = [
       { target: PLAIN, props: ['background-color'], state: 'active', golden: 'pressed as hovered: the toolkit\'s pressed fill, oklch(55.4% 0.012 286 / 0.08), is no step of its palette, so it has no dark side to derive' },
       { target: '.cui-console-menu', props: ['display'], asc: ['analytics-page', 'menu'] },
       { target: '.cui-console-menu', props: ['flex-direction'], golden: 'a column of its items' },
-      { target: `${SUB} .cui-console-menu-label`, props: ELLIPSIS, golden: 'a label on one line, cut with an ellipsis' },
+      { target: `${SUB} .cui-console-menu-label`, props: ['white-space', 'text-overflow', 'overflow-wrap'], golden: 'a long label wraps, whole: an ellipsis left two pages that begin alike unreadable apart' },
       { target: '.cui-console-menu-secondary', props: ['box-right'], golden: 'at the item\'s end' },
       { target: '.cui-console-menu-chevron', props: ['box-right'], golden: 'at the group button\'s end' },
       { target: '[aria-disabled="true"]', props: ['background-color'], state: 'hover', golden: 'a disabled item no fill hovered' },

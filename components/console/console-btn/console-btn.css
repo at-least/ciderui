@@ -121,16 +121,6 @@
     line-height: 22px;
   }
 
-  .cui-console-btn[data-size="xl"] {
-    gap: 0.5rem;
-    height: 3.125rem;
-    min-width: 3.125rem;
-    padding-inline: 1.375rem;
-    border-radius: 14px;
-    font-size: 18px;
-    line-height: 22px;
-  }
-
   .cui-console-btn[data-shape="capsule"] {
     border-radius: calc(1.875rem / 2);
 
@@ -140,10 +130,6 @@
 
     &[data-size="lg"] {
       border-radius: calc(2.5rem / 2);
-    }
-
-    &[data-size="xl"] {
-      border-radius: calc(3.125rem / 2);
     }
   }
 
@@ -155,25 +141,22 @@
       font-size: 13px;
     }
 
-    &[data-size="lg"],
-    &[data-size="xl"] {
+    &[data-size="lg"] {
       font-size: 20px;
     }
   }
 
   /* not a transparent target round the button: 8px apart, each one's
      covered its neighbour's. After the sizes, the plain variant and the
-     capsule, whose min-width and corners it overrides */
+     capsule, whose min-width and corners it overrides: its doubled class
+     outweighs theirs */
   @media (pointer: coarse) {
-    .cui-console-btn {
+    .cui-console-btn.cui-console-btn {
       min-height: 2.75rem;
-    }
-
-    .cui-console-btn:not([data-size="xl"]) {
       min-width: 2.75rem;
     }
 
-    .cui-console-btn[data-shape="capsule"]:not([data-size="xl"]) {
+    .cui-console-btn.cui-console-btn[data-shape="capsule"] {
       border-radius: 1.375rem;
     }
   }

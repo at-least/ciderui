@@ -25,7 +25,6 @@ export const cases = [
       { target: '.cui-console-banner-icon', props: ['box-height', 'color'], golden: 'its icon 20px tall, the toolkit\'s art size at desktop, in the fitted label of its color (tokens.css, decision 21)' },
       { target: '.cui-console-banner-actions', props: ['column-gap'], tb: [`${D}-actions-variant-pageScale-desktop-gap`] },
       { target: '.cui-console-banner-actions', props: ['margin-top'], golden: 'its actions 8px down, as its body' },
-      { target: '.cui-console-banner-dismiss', props: ['top', 'right'], tb: [`${D}-dismiss-insetBlockStart`, `${D}-dismiss-insetInlineEnd`] },
     ],
   },
   {
@@ -51,15 +50,6 @@ export const cases = [
       { target: `${BANNER}[data-color="info"] .cui-console-link`, props: ['color'], golden: LINK },
     ],
   },
-  ...['desktop', 'mobile'].map((scale) => ({
-    name: `banner caption ${scale}`,
-    html: '<div class="cui-console-banner"><div><p class="cui-console-banner-caption">Updated 9:41</p></div></div>',
-    widths: scale === 'desktop' ? [1200] : [390],
-    checks: [
-      { target: '.cui-console-banner-caption', props: ['font-size', 'line-height', 'font-weight'], tb: [`${D}-caption-variant-pageScale-${scale}-textStyle-fontSize`, `${D}-caption-variant-pageScale-${scale}-textStyle-lineHeight`, `${D}-caption-variant-pageScale-${scale}-textStyle-fontWeight`] },
-      { target: '.cui-console-banner-caption', props: ['color'], golden: 'the secondary label fitted to 0.76 (tokens.css, decision 21)' },
-    ],
-  })),
   {
     name: 'banner disabled link',
     html: `${DISABLED}<div class="cui-dark">${DISABLED}</div>`,

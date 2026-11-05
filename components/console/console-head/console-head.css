@@ -26,15 +26,13 @@
   .cui-console-head-name {
     min-width: 0;
     max-width: 100%;
-    overflow: hidden;
     font-size: 34px;
     line-height: 41px;
     font-weight: 700;
     letter-spacing: normal;
     color: var(--cui-c-console-neutral-label-primary);
     text-decoration: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    overflow-wrap: anywhere;
 
     @media (pointer: coarse) {
       line-height: 2.75rem;

@@ -23,6 +23,14 @@ export const cases = [
     ],
   },
   {
+    name: 'chip long value',
+    html: '<p class="w-40"><span class="cui-console-chip"><span class="cui-console-chip-key">id</span>60674cfe203893d8499985f493f86663</span></p>',
+    widths: [390],
+    checks: [
+      { target: '.cui-console-chip', props: ['box-width', 'box-height', 'max-width', 'overflow-wrap'], golden: 'a long value wraps inside its place, never past it: on one line it ran off a phone\'s page' },
+    ],
+  },
+  {
     name: 'chips touch',
     html: ex('chips'),
     touch: true,

@@ -18,11 +18,6 @@
     vertical-align: middle;
   }
 
-  .cui-console-badge[data-color="brand"] {
-    --cui-console-badge-fill: var(--cui-c-console-brand-accent-quaternary);
-    --cui-console-badge-label: var(--cui-c-console-brand-label-on-fill);
-  }
-
   .cui-console-badge[data-color="info"] {
     --cui-console-badge-fill: var(--cui-c-console-info-accent-quaternary);
     --cui-console-badge-label: var(--cui-c-console-info-label-primary);
@@ -41,26 +36,5 @@
   .cui-console-badge[data-color="error"] {
     --cui-console-badge-fill: var(--cui-c-console-error-accent-quaternary);
     --cui-console-badge-label: var(--cui-c-console-error-label-primary);
-  }
-
-  .cui-console-badge[data-variant="gray"] {
-    background-color: var(--cui-c-console-neutral-fill-tertiary);
-  }
-
-  .cui-console-badge[data-variant="plain"] {
-    padding-inline: 0;
-    background-color: transparent;
-  }
-
-  .cui-console-badge[data-size="sm"] {
-    height: 18px;
-    padding-inline: 5px;
-    border-radius: 11px;
-    font-size: 11px;
-    line-height: 13px;
-
-    &[data-variant="plain"] {
-      padding-inline: 0;
-    }
   }
 }

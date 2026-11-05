@@ -17,17 +17,30 @@ type ConsoleChartSeries struct {
 	Color string
 }
 
-// ConsoleChart is the frame around the page's plot; the page draws the plot.
-type ConsoleChart struct {
-	// Peak and Half label the top and middle gridlines.
+// ConsoleChartScale labels a plot's top and middle gridlines.
+type ConsoleChartScale struct {
 	Peak string
 	Half string
+}
+
+// ConsoleChartAxis labels a plot's first and last buckets.
+type ConsoleChartAxis struct {
+	Start string
+	End   string
+}
+
+// ConsoleChart is the frame around the page's plot; the page draws the plot.
+type ConsoleChart struct {
+	// AriaLabel: what the chart shows, in words ("Events: 96, peak 24 in one
+	// day"): the scale and the axis are hidden from assistive technology.
+	AriaLabel string
+	// Scale: nil for none.
+	Scale *ConsoleChartScale
 	// Empty is the note centered on a plot with no data ("No data in this
 	// window"); "" for a plot with data.
 	Empty string
-	// AxisStart and AxisEnd label the first and last buckets.
-	AxisStart string
-	AxisEnd   string
+	// Axis: nil for none.
+	Axis *ConsoleChartAxis
 	// Legend: for a chart of more than one series.
 	Legend []ConsoleChartSeries
 	Class  string
@@ -37,25 +50,35 @@ type ConsoleChart struct {
 }
 
 func (c ConsoleChart) Render(w io.Writer) error {
-	if (c.Peak == "") != (c.Half == "") {
-		panic("console.ConsoleChart's scale is a peak and a half, both or neither")
+	if c.AriaLabel == "" {
+		panic("console.ConsoleChart needs an AriaLabel")
 	}
-	if (c.AxisStart == "") != (c.AxisEnd == "") {
-		panic("console.ConsoleChart's axis is a start and an end, both or neither")
+	if c.Scale != nil && (c.Scale.Peak == "" || c.Scale.Half == "") {
+		panic("console.ConsoleChartScale needs a Peak and a Half")
 	}
-	return h.Figure(class.Root("cui-console-chart", c.Class),
+	if c.Axis != nil && (c.Axis.Start == "" || c.Axis.End == "") {
+		panic("console.ConsoleChartAxis needs a Start and an End")
+	}
+	return h.Figure(class.Root("cui-console-chart", c.Class), h.Aria("label", c.AriaLabel),
 		h.Div(h.Class("cui-console-chart-plot"),
-			g.If(c.Peak != "", g.Group{
-				h.Span(h.Class("cui-console-chart-scale"), h.Aria("hidden", "true"), g.Text(c.Peak)),
-				h.Span(h.Class("cui-console-chart-scale"), h.Data("at", "half"), h.Aria("hidden", "true"), g.Text(c.Half)),
+			g.Iff(c.Scale != nil, func() g.Node {
+				return g.Group{
+					h.Span(h.Class("cui-console-chart-scale"), h.Aria("hidden", "true"), g.Text(c.Scale.Peak)),
+					h.Span(h.Class("cui-console-chart-scale"), h.Data("at", "half"), h.Aria("hidden", "true"), g.Text(c.Scale.Half)),
+				}
 			}),
 			g.If(c.Empty != "", h.P(h.Class("cui-console-chart-empty"), g.Text(c.Empty))),
 			c.Children,
 		),
-		g.If(c.AxisStart != "", h.Div(h.Class("cui-console-chart-axis"), h.Aria("hidden", "true"), h.Span(g.Text(c.AxisStart)), h.Span(g.Text(c.AxisEnd)))),
+		g.Iff(c.Axis != nil, func() g.Node {
+			return h.Div(h.Class("cui-console-chart-axis"), h.Aria("hidden", "true"), h.Span(g.Text(c.Axis.Start)), h.Span(g.Text(c.Axis.End)))
+		}),
 		g.If(len(c.Legend) > 0, h.Div(h.Class("cui-console-chart-legend"),
 			g.Map(c.Legend, func(s ConsoleChartSeries) g.Node {
-				return ConsoleStatus{Label: s.Name, Color: ConsoleColorNeutral, Series: s.Color, Class: ""}
+				if s.Name == "" || s.Color == "" {
+					panic("console.ConsoleChartSeries needs a Name and a Color")
+				}
+				return statusPart(s.Name, ConsoleColorNeutral, s.Color, "")
 			}),
 		)),
 	).Render(w)
@@ -102,16 +125,15 @@ func (s ConsoleSparkline) Render(w io.Writer) error {
 		x := float64(i) * float64(s.Width) / last
 		points[i] = sparklineCoordinate(x) + "," + sparklineCoordinate(y)
 	}
-	line := strings.Join(points, " ")
 	width := strconv.FormatUint(uint64(s.Width), 10)
 	height := strconv.FormatUint(uint64(s.Height), 10)
-	// raw, not g.El: g.El writes no self-closing tag, and the example's marks
-	// are <polygon …/> and <polyline …/>; raw is safe, the points are numbers
-	marks := `<polygon class="cui-console-chart-sparkline-area" points="0,` + height + " " + line + " " + width + "," + height + `"/>` +
-		`<polyline class="cui-console-chart-sparkline-line" points="` + line + `"/>`
+	// raw, not g.El: g.El writes no self-closing tag, and the example's mark is
+	// <polyline …/>; raw is safe, the points are numbers
+	line := `<polyline class="cui-console-chart-sparkline-line" points="` + strings.Join(points, " ") + `"/>`
 	return g.El("svg", class.Root("cui-console-chart-sparkline", s.Class),
 		g.Attr("viewBox", "0 0 "+width+" "+height), h.Width(width), h.Height(height), h.Role("img"), h.Aria("label", s.AriaLabel),
-		g.Raw(marks),
+		g.El("title", g.Text(s.AriaLabel)),
+		g.Raw(line),
 	).Render(w)
 }
 

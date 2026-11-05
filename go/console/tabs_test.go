@@ -1,12 +1,10 @@
 package console_test
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
 	"github.com/at-least/ciderui/go/internal/example"
-	h "maragu.dev/gomponents/html"
 )
 
 func TestTabsRendersTheExamples(t *testing.T) {
@@ -38,17 +36,6 @@ func TestTabsTheZeroVariantPanics(t *testing.T) {
 	mustPanic(t, "needs a Variant", func() {
 		example.Render(console.ConsoleTabs{AriaLabel: "X", Variant: console.ConsoleTabsVariant{}, Tabs: nil, Class: ""})
 	})
-}
-
-func TestAppearanceRendersTheExample(t *testing.T) {
-	example.Check(t, h.Div(h.Class("cui-console-page"), console.ConsoleAppearance{Chosen: console.ConsoleAppearanceChoiceLight, Class: ""}), "console/console-tabs/examples/appearance.html")
-}
-
-func TestAppearanceNoneChosenChecksNone(t *testing.T) {
-	got := example.Render(console.ConsoleAppearance{Chosen: console.ConsoleAppearanceChoiceNone, Class: "hx-only"})
-	if !strings.HasPrefix(got, `<fieldset class="cui-console-tabs hx-only" data-variant="filled">`) || strings.Contains(got, "checked") {
-		t.Errorf("got %s", got)
-	}
 }
 
 func TestTabsAnEmptyAriaLabelPanics(t *testing.T) {

@@ -21,7 +21,6 @@ func TestPlayRendersTheExamples(t *testing.T) {
 		console.ConsolePlay{State: console.ConsolePlayStatePaused, AriaLabel: "Play", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeSmall, Class: ""},
 		console.ConsolePlay{State: console.ConsolePlayStatePaused, AriaLabel: "Play", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: ""},
 		console.ConsolePlay{State: console.ConsolePlayStatePaused, AriaLabel: "Play", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeLarge, Class: ""},
-		console.ConsolePlay{State: console.ConsolePlayStatePaused, AriaLabel: "Play", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeExtraLarge, Class: ""},
 	), "console/console-play/examples/sizes.html")
 }
 

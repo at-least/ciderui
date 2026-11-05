@@ -5,7 +5,6 @@
     --cui-console-link-color: var(--cui-c-console-brand-label-on-tint);
     --cui-console-link-color-disabled: var(--cui-c-console-brand-label-on-tint-secondary);
 
-    position: relative;
     display: flex;
     align-items: flex-start;
     min-height: 46px;
@@ -83,28 +82,10 @@
     }
   }
 
-  .cui-console-banner-caption {
-    margin: 0;
-    color: var(--cui-c-console-neutral-label-secondary);
-    font-size: 15px;
-    line-height: 20px;
-
-    @media (width >= 640px) {
-      font-size: 12px;
-      line-height: 16px;
-    }
-  }
-
   .cui-console-banner-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 9px;
     margin: 0.5rem 0 0;
-  }
-
-  .cui-console-banner-dismiss {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
   }
 }

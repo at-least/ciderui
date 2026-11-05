@@ -8,12 +8,14 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleDialog is a modal the page's script opens with showModal().
+// ConsoleDialog is a modal the page opens with showModal() or a button's
+// command="show-modal". Not an open attribute: it shows with no backdrop and
+// Escape does not close it.
 type ConsoleDialog struct {
 	ID    string
 	Title g.Node
-	// Open renders it open, for a page that shows it with no script.
-	Open  bool
+	// Attrs: the <dialog>'s other attributes (aria-describedby); nil for none.
+	Attrs g.Node
 	Class string
 	// Children: what it asks, then its buttons in a
 	// <form method="dialog" class="cui-console-dialog-actions"> or the page's
@@ -25,8 +27,11 @@ func (d ConsoleDialog) Render(w io.Writer) error {
 	if d.ID == "" {
 		panic("console.ConsoleDialog needs an ID")
 	}
+	if d.Title == nil {
+		panic("console.ConsoleDialog needs a Title")
+	}
 	titleID := d.ID + "-title"
-	return h.Dialog(class.Root("cui-console-dialog", d.Class), h.ID(d.ID), h.Aria("labelledby", titleID), g.If(d.Open, h.Open()),
+	return h.Dialog(class.Root("cui-console-dialog", d.Class), h.ID(d.ID), h.Aria("labelledby", titleID), d.Attrs,
 		h.H2(h.Class("cui-console-dialog-title"), h.ID(titleID), d.Title),
 		d.Children,
 	).Render(w)

@@ -1,0 +1,77 @@
+package console
+
+import (
+	"io"
+
+	"github.com/at-least/ciderui/go/internal/class"
+	g "maragu.dev/gomponents"
+	h "maragu.dev/gomponents/html"
+)
+
+// ConsoleTable is a table in a scroll box the keyboard can reach, whose rows
+// stack on a phone, each cell after the first named by its column. A table
+// with sort links or a selection column is the page's own markup (the example
+// sticky.html).
+type ConsoleTable struct {
+	// AriaLabel names the scroll box: "Jobs".
+	AriaLabel string
+	Columns   []ConsoleTableColumn
+	Rows      []ConsoleTableRow
+	// BodyAttrs: the <tbody>'s attributes (an id a swap targets); nil for none.
+	BodyAttrs g.Node
+	Class     string
+}
+
+type ConsoleTableColumn struct {
+	Label string
+	// Figure: its numbers at the cell's end.
+	Figure bool
+}
+
+type ConsoleTableRow struct {
+	// Selected: aria-selected="true".
+	Selected bool
+	// Attrs: the <tr>'s other attributes; nil for none.
+	Attrs g.Node
+	// Cells: one for each of the table's Columns.
+	Cells []ConsoleTableCell
+}
+
+type ConsoleTableCell struct {
+	Content g.Node
+	// Empty: says nothing ("—"), left out of its stacked row on a phone.
+	Empty bool
+}
+
+func (t ConsoleTable) Render(w io.Writer) error {
+	if t.AriaLabel == "" {
+		panic("console.ConsoleTable needs an AriaLabel")
+	}
+	if len(t.Columns) == 0 {
+		panic("console.ConsoleTable needs a ConsoleTableColumn")
+	}
+	return h.Div(class.Root("cui-console-table-scroll", t.Class), h.TabIndex("0"), h.Role("region"), h.Aria("label", t.AriaLabel),
+		h.Table(h.Class("cui-console-table"), g.Attr("data-stack"),
+			h.THead(h.Tr(g.Map(t.Columns, func(c ConsoleTableColumn) g.Node {
+				if c.Label == "" {
+					panic("console.ConsoleTableColumn needs a Label")
+				}
+				return h.Th(h.Scope("col"), g.If(c.Figure, h.Class("cui-console-table-figure")), g.Text(c.Label))
+			}))),
+			h.TBody(t.BodyAttrs, g.Map(t.Rows, t.Row)),
+		),
+	).Render(w)
+}
+
+// Row is one row as this table writes it, for a response that swaps one row.
+func (t ConsoleTable) Row(r ConsoleTableRow) g.Node {
+	if len(r.Cells) != len(t.Columns) {
+		panic("console.ConsoleTableRow needs a cell for each column")
+	}
+	var cells g.Group
+	for i, cell := range r.Cells {
+		column := t.Columns[i]
+		cells = append(cells, h.Td(g.If(column.Figure, h.Class("cui-console-table-figure")), g.If(i > 0, h.Data("label", column.Label)), g.If(cell.Empty, g.Attr("data-empty")), cell.Content))
+	}
+	return h.Tr(g.If(r.Selected, h.Aria("selected", "true")), r.Attrs, cells)
+}

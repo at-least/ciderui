@@ -13,10 +13,9 @@ import (
 type ConsoleBtnSize struct{ value string }
 
 var (
-	ConsoleBtnSizeSmall      = ConsoleBtnSize{"sm"}
-	ConsoleBtnSizeMedium     = ConsoleBtnSize{value: ""}
-	ConsoleBtnSizeLarge      = ConsoleBtnSize{"lg"}
-	ConsoleBtnSizeExtraLarge = ConsoleBtnSize{"xl"}
+	ConsoleBtnSizeSmall  = ConsoleBtnSize{"sm"}
+	ConsoleBtnSizeMedium = ConsoleBtnSize{value: ""}
+	ConsoleBtnSizeLarge  = ConsoleBtnSize{"lg"}
 )
 
 // ConsolePlayState is what the clip is doing; the page's script sets

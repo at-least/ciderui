@@ -10,8 +10,8 @@ import (
 )
 
 // ConsolePager follows Apple Developer Forums' pager: a chevron alone for
-// Previous and Next, a "First" button before them, and no button at all for
-// a direction with no page.
+// Previous and Next, a first-page button before them, and no button at all
+// for a direction with no page.
 type ConsolePager struct {
 	// AriaLabel: "Issue pages", so a page with two lists names each.
 	AriaLabel string
@@ -20,23 +20,38 @@ type ConsolePager struct {
 	Summary string
 	// First: "" where the previous page is the first. A list paged by a
 	// cursor, which cannot step back one page, gives First and no Previous.
-	First    string
-	Previous string
-	Next     string
-	Class    string
+	First string
+	// FirstLabel, PreviousAriaLabel, NextAriaLabel: the page's own words,
+	// required even where that link is not written, so no list's second page
+	// finds one missing.
+	FirstLabel        string
+	Previous          string
+	PreviousAriaLabel string
+	Next              string
+	NextAriaLabel     string
+	Class             string
 }
 
 func (p ConsolePager) Render(w io.Writer) error {
 	if p.AriaLabel == "" {
 		panic("console.ConsolePager needs an AriaLabel")
 	}
+	if p.FirstLabel == "" {
+		panic("console.ConsolePager needs a FirstLabel")
+	}
+	if p.PreviousAriaLabel == "" {
+		panic("console.ConsolePager needs a PreviousAriaLabel")
+	}
+	if p.NextAriaLabel == "" {
+		panic("console.ConsolePager needs a NextAriaLabel")
+	}
 	if p.Summary == "" && p.First == "" && p.Previous == "" && p.Next == "" {
 		panic("console.ConsolePager needs a Summary or a page to go to")
 	}
 	return h.Nav(class.Root("cui-console-pager", p.Class), h.Aria("label", p.AriaLabel),
-		g.If(p.First != "", h.A(h.Class("cui-console-btn"), h.Href(p.First), h.Aria("label", "First page"), g.Text("First"))),
-		g.If(p.Previous != "", h.A(h.Class("cui-console-btn cui-console-btn-icon"), h.Href(p.Previous), h.Aria("label", "Previous page"), lucide.ChevronLeft)),
+		g.If(p.First != "", h.A(h.Class("cui-console-btn"), h.Href(p.First), g.Text(p.FirstLabel))),
+		g.If(p.Previous != "", h.A(h.Class("cui-console-btn cui-console-btn-icon"), h.Href(p.Previous), h.Aria("label", p.PreviousAriaLabel), lucide.ChevronLeft)),
 		g.If(p.Summary != "", h.P(h.Class("cui-console-pager-summary"), g.Text(p.Summary))),
-		g.If(p.Next != "", h.A(h.Class("cui-console-btn cui-console-btn-icon"), h.Href(p.Next), h.Aria("label", "Next page"), lucide.ChevronRight)),
+		g.If(p.Next != "", h.A(h.Class("cui-console-btn cui-console-btn-icon"), h.Href(p.Next), h.Aria("label", p.NextAriaLabel), lucide.ChevronRight)),
 	).Render(w)
 }

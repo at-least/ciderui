@@ -1,11 +1,8 @@
 @layer components {
   .cui-console-empty {
-    --cui-console-empty-measure: 288px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-block: 2rem;
     text-align: center;
     color: var(--cui-c-console-neutral-label-primary);
     letter-spacing: normal;
@@ -18,27 +15,20 @@
 
   .cui-console-empty-icon {
     flex: none;
-    width: 32px;
-    height: 32px;
-    margin-bottom: 0.625rem;
     color: var(--cui-c-console-neutral-label-secondary);
   }
 
   .cui-console-empty-heading {
     max-width: var(--cui-console-empty-measure);
-    margin: 0 0 0.125rem;
+    margin: 0;
     color: var(--cui-c-console-neutral-label-primary);
-    font-size: 18px;
-    line-height: 22px;
     font-weight: 600;
   }
 
   .cui-console-empty-caption {
     max-width: var(--cui-console-empty-measure);
-    margin: 0 0 0.625rem;
+    margin: 0;
     color: var(--cui-c-console-neutral-label-secondary);
-    font-size: 13px;
-    line-height: 18px;
     font-weight: 400;
   }
 
@@ -62,6 +52,7 @@
     }
 
     .cui-console-empty-heading {
+      margin-bottom: 0.125rem;
       font-size: 14px;
       line-height: 19px;
     }

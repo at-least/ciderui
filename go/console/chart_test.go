@@ -22,14 +22,14 @@ func TestChartRendersTheExamples(t *testing.T) {
 		{Name: "2.4.0", Color: "var(--cui-c-console-neutral-label-secondary)"},
 	}
 	chart := h.Div(h.Class("cui-console-page max-w-xl"),
-		console.ConsoleChart{Peak: "peak 24 · Oct 27", Half: "12", Empty: "", AxisStart: "Oct 22", AxisEnd: "Oct 28", Legend: legend, Class: "",
-			Children: g.Raw(`<svg class="cui-console-chart-svg" viewBox="0 0 600 140" height="140" preserveAspectRatio="none" role="img" aria-label="Events: 96, peak 24 in one day, by release: 2.4.1 ×60, 2.4.0 ×36">` + chartGrid + bars + `</svg>`)},
+		console.ConsoleChart{AriaLabel: "Events: 96, peak 24 in one day, by release: 2.4.1 ×60, 2.4.0 ×36", Scale: &console.ConsoleChartScale{Peak: "peak 24 · Oct 27", Half: "12"}, Empty: "", Axis: &console.ConsoleChartAxis{Start: "Oct 22", End: "Oct 28"}, Legend: legend, Class: "",
+			Children: g.Raw(`<svg class="cui-console-chart-svg" viewBox="0 0 600 140" height="140" preserveAspectRatio="none">` + chartGrid + bars + `</svg>`)},
 	)
 	example.Check(t, chart, "console/console-chart/examples/chart.html")
 
 	empty := h.Div(h.Class("cui-console-page max-w-xl"),
-		console.ConsoleChart{Peak: "", Half: "", Empty: "No unhandled errors in this window", AxisStart: "Oct 22", AxisEnd: "Oct 28", Legend: nil, Class: "",
-			Children: g.Raw(`<svg class="cui-console-chart-svg" viewBox="0 0 600 140" height="140" preserveAspectRatio="none" role="img" aria-label="Events: 0">` + chartGrid + `</svg>`)},
+		console.ConsoleChart{AriaLabel: "Events: 0", Scale: nil, Empty: "No unhandled errors in this window", Axis: &console.ConsoleChartAxis{Start: "Oct 22", End: "Oct 28"}, Legend: nil, Class: "",
+			Children: g.Raw(`<svg class="cui-console-chart-svg" viewBox="0 0 600 140" height="140" preserveAspectRatio="none">` + chartGrid + `</svg>`)},
 	)
 	example.Check(t, empty, "console/console-chart/examples/empty.html")
 
@@ -39,16 +39,39 @@ func TestChartRendersTheExamples(t *testing.T) {
 	example.Check(t, sparkline, "console/console-chart/examples/sparkline.html")
 }
 
-func TestChartAPeakWithoutItsHalfPanics(t *testing.T) {
-	mustPanic(t, "a peak and a half, both or neither", func() {
-		example.Render(console.ConsoleChart{Peak: "peak 3", Half: "", Empty: "", AxisStart: "", AxisEnd: "", Legend: nil, Class: "", Children: nil})
-	})
+func chartWith(change func(*console.ConsoleChart)) console.ConsoleChart {
+	c := console.ConsoleChart{AriaLabel: "Events: 3", Scale: nil, Empty: "", Axis: nil, Legend: nil, Class: "", Children: nil}
+	change(&c)
+	return c
 }
 
-func TestChartAnAxisWithoutItsEndPanics(t *testing.T) {
-	mustPanic(t, "a start and an end, both or neither", func() {
-		example.Render(console.ConsoleChart{Peak: "", Half: "", Empty: "", AxisStart: "Oct 22", AxisEnd: "", Legend: nil, Class: "", Children: nil})
-	})
+func TestChartPanics(t *testing.T) {
+	for _, c := range []struct {
+		want   string
+		change func(*console.ConsoleChart)
+	}{
+		{"ConsoleChart needs an AriaLabel", func(c *console.ConsoleChart) { c.AriaLabel = "" }},
+		{"ConsoleChartScale needs a Peak and a Half", func(c *console.ConsoleChart) { c.Scale = &console.ConsoleChartScale{Peak: "3", Half: ""} }},
+		{"ConsoleChartAxis needs a Start and an End", func(c *console.ConsoleChart) { c.Axis = &console.ConsoleChartAxis{Start: "Oct 22", End: ""} }},
+		{"ConsoleChartSeries needs a Name and a Color", func(c *console.ConsoleChart) { c.Legend = []console.ConsoleChartSeries{{Name: "", Color: "red"}} }},
+		{"ConsoleChartSeries needs a Name and a Color", func(c *console.ConsoleChart) { c.Legend = []console.ConsoleChartSeries{{Name: "iOS", Color: ""}} }},
+	} {
+		mustPanic(t, c.want, func() { example.Render(chartWith(c.change)) })
+	}
+}
+
+func TestSparklineDrawsTheLineAloneAndSaysItsLabelAsATitle(t *testing.T) {
+	got := example.Render(console.ConsoleSparkline{AriaLabel: "3 events", Width: 10, Height: 28, Values: []float64{0, 4}, Class: ""})
+	if strings.Contains(got, "polygon") || !strings.Contains(got, "<title>3 events</title><polyline ") {
+		t.Errorf("got %s", got)
+	}
+}
+
+func TestSparklineEscapesItsTitle(t *testing.T) {
+	got := example.Render(console.ConsoleSparkline{AriaLabel: "a<b", Width: 10, Height: 28, Values: []float64{0, 4}, Class: ""})
+	if !strings.Contains(got, "<title>a&lt;b</title>") {
+		t.Errorf("got %s", got)
+	}
 }
 
 func TestSparklineWithoutAnAriaLabelPanics(t *testing.T) {
@@ -65,7 +88,7 @@ func TestSparklineOfOneValuePanics(t *testing.T) {
 
 func TestSparklineSpacesItsValuesEvenlyFromXZeroToXWidth(t *testing.T) {
 	got := example.Render(console.ConsoleSparkline{AriaLabel: "x", Width: 1, Height: 4, Values: make([]float64, 50), Class: ""})
-	if !strings.Contains(got, ` 1,3"/>`) || !strings.Contains(got, `points="0,4 0,3 `) {
+	if !strings.Contains(got, ` 1,3"/>`) || !strings.Contains(got, `points="0,3 `) {
 		t.Errorf("got %s", got)
 	}
 }
