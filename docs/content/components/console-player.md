@@ -32,7 +32,9 @@ Its picture can be any element in the video’s place, its first child: here a `
 | `cui-console-player` | the player: black, its picture and overlay in one place; its size is the page’s (`aspect-video` here) |
 | its first child | the picture, the player’s whole box: a `<video>` (`object-fit: contain`), or an element the page draws its stills in |
 | `cui-console-player-overlay` | the controls, 30px from the sides and 20px from the top and foot, over a gradient |
-| `cui-console-player-header` | the volume: a range and the mute button |
+| `cui-console-player-header` | the top row, the volume at its end |
+| `cui-console-player-volume` | the volume: the mute button alone until the pointer is over it (or its range is held or focused from the keyboard), then its range opens, 100px, to the button’s left over 0.3s |
+| `cui-console-player-glyph-volume`, `cui-console-player-glyph-muted` | the mute button’s glyph, the speaker, and struck through while muted |
 | `cui-console-player-play` | the centre button, 66px; it holds both glyphs |
 | `cui-console-player-glyph-play`, `cui-console-player-glyph-pause` | the glyph shown while paused, and while playing |
 | `cui-console-player-subtitles` | the subtitles over the picture: above the footer while the controls show, 20px from the foot while they hide, moving in the footer’s 0.4s; it takes no click |
@@ -53,6 +55,7 @@ ciderui has no script: the page’s plays the video and keeps the markup in step
 | attribute | on | what |
 | --- | --- | --- |
 | `data-state="playing"` | `cui-console-player` | playing: the centre button shows pause. None, paused |
+| `data-muted` | `cui-console-player` | muted: the mute button shows the struck speaker |
 | `data-controls="hidden"` | `cui-console-player` | the controls faded out: tv.apple.com hides them while the video plays and the pointer is still, and keeps them while it is paused. They show again while the focus is inside the player |
 | `--cui-console-player-value` | `cui-console-player-range` | the part played, or the volume, as a percentage (`style="--cui-console-player-value: 8%"`) |
 | `hidden` | `cui-console-player-preview` | written hidden; the script takes it away while the pointer is over the scrubber or its thumb is held |
@@ -82,4 +85,4 @@ The subtitles and voices buttons open a popover by `popovertarget`: a menu of ch
 
 ## Go
 
-The Go module writes it with `console.ConsolePlayer`: the picture (`Video`), the state, the labels, the volume, the position and duration in seconds (it writes the times), the cue and its language, and each menu, a `console.ConsoleChoiceMenu` (none, no button).
+The Go module writes it with `console.ConsolePlayer`: the picture (`Video`), the state, the labels, the volume, whether it is muted, the position and duration in seconds (it writes the times), the cue and its language, and each menu, a `console.ConsoleChoiceMenu` (none, no button).

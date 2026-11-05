@@ -4,7 +4,8 @@ const ex = examples(import.meta.url);
 const P = '.cui-console-player';
 const BTN = '.cui-console-player-btn[aria-label="Subtitles"]';
 const SCRUB = '.cui-console-player-progress > .cui-console-player-range';
-const VOLUME = '.cui-console-player-header > .cui-console-player-range';
+const VOLUME = '.cui-console-player-volume > .cui-console-player-range';
+const OPEN = 'the owner\'s (2026-11-05: only the speaker until hovered, the range opening beside it): tv.apple.com\'s range is 100px open beside its button with the pointer elsewhere (tv-player:volume.range, the pointer at 800,200), so none of the closing is measured; it opens over 0.3s on the header\'s own fade curve (tv-player-playing:hidden.header)';
 const TV = [1600, 1200];
 const LAYOUT = 'tv.apple.com\'s player\'s room: 30px at the sides, 20px at the top and foot (tv-player:scrim\'s grid, 20px 26px 713px 121px 20px by 30px 1540px 30px); its rows the header, the centre and the footer, whatever the video\'s size';
 const STAGE = '.cui-console-player > :first-child';
@@ -55,7 +56,7 @@ export const cases = [
       { target: '.cui-console-player-play', props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: 'its press\'s scale in tv.apple.com\'s 0.2s ease-out (tv-player:play), and its fade as the controls hide, the centre\'s 0.4s (tv-player-playing:hidden.body)' },
       { target: '.cui-console-player-glyph-play', props: ['box-width', 'box-height', 'display'], golden: 'paused, the play glyph, tv.apple.com\'s 50px (tv-player:play.icon), Lucide\'s filled (decision 17: tv.apple.com\'s is an SF Symbol)' },
       { target: '.cui-console-player-glyph-pause', props: ['display'], golden: 'paused, no pause glyph: tv.apple.com\'s pause is hidden then (tv-player:pause.hidden)' },
-      { target: '.cui-console-player-header', props: ['column-gap'], apple: ['tv-player', 'volume'] },
+      { target: '.cui-console-player-volume', props: ['column-gap'], apple: ['tv-player', 'volume'] },
       { target: '.cui-console-player-header', props: ['display', 'justify-content', 'align-items'], golden: 'the volume at the header\'s end, as tv.apple.com\'s (tv-player:volume at the right)' },
       { target: '.cui-console-player-buttons', props: ['column-gap', 'display'], apple: ['tv-player', 'controls'] },
       { target: '.cui-console-player-footer', props: ['row-gap', 'column-gap', 'grid-template-areas'], golden: 'the title beside the buttons, the scrubber under them, 12px apart (tv-player:footer\'s 12px rows and gap)' },
@@ -64,7 +65,7 @@ export const cases = [
       { target: BTN, props: ['color'], state: 'hover', golden: 'hovered white, as tv.apple.com\'s full screen button (tv-player:fullscreen:hover); its subtitles button reads no change, one look for the row' },
       { target: BTN, props: ['box-width', 'box-height'], golden: 'tv.apple.com\'s 24px (tv-player:audio, its controls\' row 24px)' },
       { target: `${BTN} > svg`, props: ['box-width', 'box-height'], golden: 'its glyph 20px, tv.apple.com\'s (tv-player:subtitles.icon); Lucide\'s (decision 17)' },
-      { target: '.cui-console-player-header > .cui-console-player-btn', props: ['box-width', 'color'], golden: 'the mute button 26px in white, tv.apple.com\'s (tv-player:volume.button, its glyph filled white); its Lucide glyph 22px, a stroke glyph drawn smaller than a filled one' },
+      { target: '.cui-console-player-volume > .cui-console-player-btn', props: ['box-width', 'color'], golden: 'the mute button 26px in white, tv.apple.com\'s (tv-player:volume.button, its glyph filled white); its Lucide glyph 22px, a stroke glyph drawn smaller than a filled one' },
       { target: '.cui-console-player-title', props: ['font-size', 'line-height', 'font-weight', 'color'], apple: ['tv-player', 'title'] },
       { target: '.cui-console-player-time', props: ['font-size', 'line-height', 'font-weight', 'color', 'font-variant-numeric'], apple: ['tv-player', 'elapsed'] },
       { target: '.cui-console-player-time:last-of-type', props: ['color'], apple: ['tv-player', 'remaining'] },
@@ -78,7 +79,11 @@ export const cases = [
       { target: '.cui-console-player-buttons', props: ['z-index', 'position'], golden: 'over the scrubber\'s target, which reaches 4.5px up into their row: a click on a button\'s foot is the button\'s' },
       { target: PREVIEW, props: ['display', 'pointer-events'], golden: 'the preview hidden until the page\'s script shows it, and never in the pointer\'s way' },
       { target: VOLUME, props: ['--cui-console-player-track', '--cui-console-player-thumb'], apple: ['tv-player', 'volume.range'], as: { '--cui-console-player-track': '--progress-track-height', '--cui-console-player-thumb': '--progress-thumb-height' } },
-      { target: VOLUME, props: ['box-width'], golden: 'tv.apple.com\'s volume, 100px (tv-player:volume.range); its thumb white as the scrubber\'s, where tv.apple.com\'s is #d0d0d0 until hovered: one thumb' },
+      { target: VOLUME, props: ['box-width', 'opacity', 'margin-right'], golden: 'closed, the speaker alone: no range and none of the 8px gap before the button; ' + OPEN },
+      { target: VOLUME, props: ['pointer-events'], golden: 'closed, it takes no pointer: its 11px thumb overflows its 0px over the button, and took 6px of the button\'s target (the touch audit read the button 38px wide)' },
+      { target: VOLUME, props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: OPEN },
+      { target: '.cui-console-player-glyph-volume', props: ['display'], golden: 'not muted, the speaker' },
+      { target: '.cui-console-player-glyph-muted', props: ['display'], golden: 'not muted, no struck speaker' },
       { target: SCRUB, props: ['outline-style', 'outline-width', 'outline-offset'], state: 'focus-visible', golden: 'base.css\'s one focus ring (rule 9), where tv.apple.com draws a 4px blue one' },
       { target: CUE, props: ['display'], golden: 'no cue, no box: the slot is written empty until the page\'s script fills it' },
       { target: '#subtitles', props: ['display'], golden: 'its menus written inside it, closed until a button opens one' },
@@ -120,6 +125,28 @@ export const cases = [
     height: 900,
     checks: [
       { target: PREVIEW, props: ['box-left'], golden: 'the pointer near the bar\'s start: the preview stops at it, inside the bar (the bar at 30px)' },
+    ],
+  },
+  {
+    name: 'player volume open',
+    html: ex('paused'),
+    widths: TV,
+    height: 900,
+    hover: '[data-control="mute"]',
+    checks: [
+      { target: VOLUME, props: ['pointer-events'], golden: 'open, it takes the pointer' },
+      { target: VOLUME, props: ['box-width', 'opacity', 'margin-right'], golden: 'the pointer over its button, the range open: tv.apple.com\'s 100px (tv-player:volume.range), its thumb white as the scrubber\'s, where tv.apple.com\'s is #d0d0d0 until hovered: one thumb; ' + OPEN },
+      { target: '.cui-console-player-volume > .cui-console-player-btn', props: ['box-left'], golden: 'the button where it was: the range opens to its left (tv-player:volume.button at the header\'s end)' },
+    ],
+  },
+  {
+    name: 'player muted',
+    html: ex('paused').replace('<div class="cui-console-player aspect-video">', '<div class="cui-console-player aspect-video" data-muted>'),
+    widths: [1600],
+    height: 900,
+    checks: [
+      { target: '.cui-console-player-glyph-muted', props: ['display', 'box-width'], golden: 'muted, the speaker struck through, Lucide\'s volume-x at the speaker\'s 22px (tv.apple.com\'s muted glyph not read)' },
+      { target: '.cui-console-player-glyph-volume', props: ['display'], golden: 'muted, no plain speaker' },
     ],
   },
   {
@@ -224,6 +251,7 @@ export const cases = [
     press: ['Tab'],
     checks: [
       { target: VOLUME, props: ['focused'], golden: 'Tab reaches the hidden controls' },
+      { target: VOLUME, props: ['box-width', 'opacity'], golden: 'focused from the keyboard, the range opens: a range that took the focus closed would be adjusted unseen' },
       { target: '.cui-console-player-footer', props: ['opacity'], golden: 'shown while the focus is inside, for the keyboard (not read on tv.apple.com, whose script shows them on a key)' },
     ],
   },

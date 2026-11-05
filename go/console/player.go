@@ -22,7 +22,8 @@ var (
 
 // ConsolePlayer is a video's controls over it, tv.apple.com's player's. The
 // page's script plays the video and keeps the markup current: data-state,
-// data-controls="hidden" (while playing and the pointer is still), each
+// data-controls="hidden" (while playing and the pointer is still),
+// data-muted (the mute button's glyph), each
 // range's value and --cui-console-player-value, the times, the cue. It finds
 // each control by its data-control: play, volume, mute, subtitles, voices,
 // full-screen, scrubber, elapsed, remaining, and the scrubber's preview
@@ -40,7 +41,9 @@ type ConsolePlayer struct {
 	PlayAriaLabel  string
 	PauseAriaLabel string
 	// Volume is 0 to 100.
-	Volume          int
+	Volume int
+	// Muted shows the mute button's muted glyph.
+	Muted           bool
 	VolumeAriaLabel string
 	MuteAriaLabel   string
 	// Position and Duration are in seconds.
@@ -98,12 +101,15 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 	button := func(control, label, menu string, glyph g.Node) g.Node {
 		return h.Button(h.Class("cui-console-player-btn"), h.Type("button"), h.Data("control", control), h.Aria("label", label), optionalAttr("popovertarget", menu), glyph)
 	}
-	return h.Div(class.Root("cui-console-player", p.Class), optionalAttr("data-state", p.State.value), g.If(p.ControlsHidden, g.Attr("data-controls", "hidden")),
+	return h.Div(class.Root("cui-console-player", p.Class), optionalAttr("data-state", p.State.value), g.If(p.ControlsHidden, g.Attr("data-controls", "hidden")), g.If(p.Muted, g.Attr("data-muted")),
 		p.Video,
 		h.Div(h.Class("cui-console-player-overlay"),
 			h.Div(h.Class("cui-console-player-header"),
-				rangeInput("volume", p.Volume, 100, p.VolumeAriaLabel, "", float64(p.Volume)),
-				button("mute", p.MuteAriaLabel, "", lucide.Volume2),
+				// the range opens beside its button while the pointer is over either
+				h.Div(h.Class("cui-console-player-volume"),
+					rangeInput("volume", p.Volume, 100, p.VolumeAriaLabel, "", float64(p.Volume)),
+					button("mute", p.MuteAriaLabel, "", g.Group{lucide.Volume2.Class("cui-console-player-glyph-volume"), lucide.VolumeX.Class("cui-console-player-glyph-muted")}),
+				),
 			),
 			h.Button(h.Class("cui-console-player-play"), h.Type("button"), h.Data("control", "play"), h.Aria("label", playLabel),
 				lucide.Play.Class("cui-console-player-glyph-play"), lucide.Pause.Class("cui-console-player-glyph-pause")),

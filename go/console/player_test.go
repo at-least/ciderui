@@ -41,6 +41,7 @@ func player(state console.ConsolePlayerState, hidden bool, title string) console
 		PlayAriaLabel:       "Play",
 		PauseAriaLabel:      "Pause",
 		Volume:              50,
+		Muted:               false,
 		VolumeAriaLabel:     "Volume",
 		MuteAriaLabel:       "Mute",
 		Position:            5,
@@ -119,6 +120,18 @@ func TestPlayerWritesNoMenuButtonWithoutItsMenu(t *testing.T) {
 	got := example.Render(p)
 	if strings.Contains(got, "popover") || strings.Contains(got, "cui-console-player-title") {
 		t.Errorf("a player with no menus and no title wrote one: %s", got)
+	}
+}
+
+// muted, the player says so for the mute button's glyph; it holds both glyphs
+func TestPlayerWritesMuted(t *testing.T) {
+	p := player(console.ConsolePlayerStatePaused, false, "")
+	if got := example.Render(p); strings.Contains(got, "data-muted") || !strings.Contains(got, "cui-console-player-glyph-muted") {
+		t.Errorf("a player not muted wrote data-muted, or no muted glyph: %s", got)
+	}
+	p.Muted = true
+	if got := example.Render(p); !strings.Contains(got, `<div class="cui-console-player aspect-video" data-muted>`) {
+		t.Errorf("a muted player wrote no data-muted: %s", got)
 	}
 }
 

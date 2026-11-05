@@ -46,8 +46,22 @@
     display: flex;
     align-items: center;
     justify-content: end;
-    gap: 8px;
     transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  /* the volume: its button alone until the pointer is over it, then its
+     range opens to the button's left; open too while the range is held or
+     focused from the keyboard */
+  .cui-console-player-volume {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* the mute button's glyph: the speaker, struck through while muted */
+  :where(.cui-console-player[data-muted]) .cui-console-player-glyph-volume,
+  :where(.cui-console-player:not([data-muted])) .cui-console-player-glyph-muted {
+    display: none;
   }
 
   .cui-console-player-play {
@@ -175,7 +189,7 @@
       height: 20px;
     }
 
-    :where(.cui-console-player-header) > & {
+    :where(.cui-console-player-volume) > & {
       width: 26px;
       height: 26px;
       color: var(--cui-c-on-video);
@@ -274,9 +288,31 @@
       --cui-console-player-track: 8px;
     }
 
-    /* tv.apple.com's volume, 100px beside its button */
-    :where(.cui-console-player-header) > & {
+    /* tv.apple.com's volume, 100px beside its button; closed, none of it
+       and none of the gap before the button, and no pointer: its thumb
+       still overflows its 0px over the button. Still reached by Tab */
+    :where(.cui-console-player-volume) > & {
+      width: 0;
+      margin-inline-end: -8px;
+      opacity: 0;
+      pointer-events: none;
+      transition: width 0.3s cubic-bezier(0, 0, 0.2, 1), margin-inline-end 0.3s cubic-bezier(0, 0, 0.2, 1), opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    :where(.cui-console-player-volume:has(:focus-visible, :active)) > & {
       width: 100px;
+      margin-inline-end: 0;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (hover: hover) {
+      :where(.cui-console-player-volume:hover) > & {
+        width: 100px;
+        margin-inline-end: 0;
+        opacity: 1;
+        pointer-events: auto;
+      }
     }
   }
 
@@ -371,7 +407,7 @@
     /* the buttons above grow to 44px too: the range's row is its whole
        target, so neither reaches into the other */
     .cui-console-player-range {
-      margin: 0;
+      margin-block: 0;
     }
 
     .cui-console-player-progress {
