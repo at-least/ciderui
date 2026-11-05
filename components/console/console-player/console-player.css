@@ -489,6 +489,9 @@
     :where(.cui-console-player:not([data-end])) > &.cui-console-player-end {
       opacity: 0;
       visibility: hidden;
+      /* at once: while it fades, visibility is still visible for 0.4s and
+         the layer took the click meant for the controls under it */
+      pointer-events: none;
     }
   }
 

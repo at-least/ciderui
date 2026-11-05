@@ -238,7 +238,7 @@ export const cases = [
     widths: [1600],
     height: 900,
     checks: [
-      { target: '.cui-console-player-intro', props: ['opacity', 'visibility'], golden: 'playing (data-intro dropped by the page\'s script), the layer gone' },
+      { target: '.cui-console-player-intro', props: ['opacity', 'visibility', 'pointer-events'], golden: 'playing (data-intro dropped by the page\'s script), the layer gone, taking no click while it fades (muse: a click on Play 0.1s after the intro went landed on the fading intro)' },
       { target: '.cui-console-player-overlay', props: ['visibility'], golden: 'and the controls back' },
     ],
   },
@@ -263,7 +263,7 @@ export const cases = [
     widths: [1600],
     height: 900,
     checks: [
-      { target: '.cui-console-player-end', props: ['opacity', 'visibility'], golden: 'before the end (data-end not set, or dropped as it plays again), the layer gone' },
+      { target: '.cui-console-player-end', props: ['opacity', 'visibility', 'pointer-events'], golden: 'before the end (data-end not set, or dropped as it plays again), the layer gone, taking no click while it fades (muse: a click on Play 0.1s after the intro went landed on the fading intro)' },
       { target: '.cui-console-player-overlay', props: ['visibility'], golden: 'and the controls there' },
     ],
   },
