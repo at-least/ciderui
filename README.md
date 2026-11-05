@@ -33,7 +33,7 @@ Each part's markup is its examples, `components/<set>/<name>/examples/*.html`. P
 | `ciderui.go`, `markup.go`, `go/` | the Go module (`go.mod`): the root package embeds the stylesheets and fonts and checks a page's markup; `go/` holds the components (`site`, `console`), the icons (`lucide`, and the type `icon.Icon`) and `ciderui-css` |
 | `reference/` | the measurements, each with its probe, page, browser and date |
 
-`npm test` runs every test, the browser's in one Docker image (`test/Dockerfile`, `scripts/docker.mjs`): the variables, the type, the page, each part in headless Chromium against apple.com's measured values and its own goldens, the Go module (its Lucide icons lucide-static's, gofmt, vet, exhaustruct, its tests and its examples), every control's touch target (`reference/touch/`) and the reference probes Chromium can run (`test/probes.mjs`).
+`npm test` runs every test, the browser's in one Docker image (`test/Dockerfile`, `scripts/docker.mjs`): the variables, the type, the page, each part in headless Chromium against apple.com's measured values and its own goldens, the Go module (its Lucide icons lucide-static's, gofmt, vet, exhaustruct, its tests and its examples, each set built from what `ciderui-css` writes), every control's touch target (`reference/touch/`) and the reference probes Chromium can run (`test/probes.mjs`).
 
 ## License
 

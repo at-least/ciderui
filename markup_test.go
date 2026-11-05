@@ -1,9 +1,12 @@
 package ciderui
 
 import (
+	"fmt"
+	"maps"
 	"os"
 	"path/filepath"
 	"slices"
+	"strings"
 	"testing"
 )
 
@@ -26,35 +29,148 @@ func TestEveryExamplePasses(t *testing.T) {
 	}
 }
 
-func TestAMisspeltClassFails(t *testing.T) {
-	want := []string{`class "cui-console-badg" on <span class="cui-console-badg mt-1">: ciderui has no such class`}
-	if got := CheckMarkup(`<p>a</p><span class="cui-console-badg mt-1">b</span>`); !slices.Equal(got, want) {
-		t.Errorf("got %q", got)
+func TestCheckMarkup(t *testing.T) {
+	noClass := func(tag string) []string {
+		return []string{fmt.Sprintf(`class "cui-console-badg" on <%s class="cui-console-badg">: ciderui has no such class`, tag)}
+	}
+	for _, c := range []struct {
+		name, html string
+		want       []string
+	}{
+		{"a misspelt class", `<p>a</p><span class="cui-console-badg mt-1">b</span>`, []string{`class "cui-console-badg" on <span class="cui-console-badg mt-1">: ciderui has no such class`}},
+		{"a keyframes name is no class", `<li class="cui-globalnav-row-in">a</li>`, []string{`class "cui-globalnav-row-in" on <li class="cui-globalnav-row-in">: ciderui has no such class`}},
+		{"a class with no rule, on the list", `<div class="cui-post-content">a</div>`, nil},
+		{"a value no rule selects", `<span class="cui-console-badge" data-color="purple">b</span>`, []string{`data-color="purple" on <span class="cui-console-badge">: no rule of ciderui's selects it (cui-console-badge's: error, info, success, warning)`}},
+		{"a value is listed for each cui-* class of its element", `<a class="cui-console-badge cui-console-link" data-color="purple">b</a>`, []string{`data-color="purple" on <a class="cui-console-badge cui-console-link">: no rule of ciderui's selects it (cui-console-badge's: error, info, success, warning; cui-console-link's: none)`}},
+		{"a typo in any selected attribute", `<dl class="cui-console-dl" data-orientation="vertcal"></dl>`, []string{`data-orientation="vertcal" on <dl class="cui-console-dl">: no rule of ciderui's selects it (cui-console-dl's: vertical)`}},
+		{"the value itself", `<dl class="cui-console-dl" data-orientation="vertical"></dl>`, nil},
+
+		// [data-sticky] selects any value, on its own class alone
+		{"a bare selected attribute", `<table class="cui-console-table" data-sticky></table>`, nil},
+		{"a value of a bare selected attribute", `<table class="cui-console-table" data-sticky="true"></table>`, nil},
+		{"a bare selected attribute on another class", `<div class="cui-console-card" data-sticky></div>`, []string{`data-sticky="" on <div class="cui-console-card">: no rule of ciderui's selects it (cui-console-card's: none)`}},
+
+		// :not([data-x]) alone: the bare attribute leaves the default, a misspelt
+		// value would as well, with no rule of its own
+		{"the bare attribute a :not selects", `<ul class="cui-console-tabs" data-overflow-end></ul>`, nil},
+		{"a value only a :not selects", `<ul class="cui-console-tabs" data-overflow-end="yes"></ul>`, []string{`data-overflow-end="yes" on <ul class="cui-console-tabs">: no rule of ciderui's selects it (cui-console-tabs's: "")`}},
+		{"a value beside a :not", `<div class="cui-story" data-size="tiny"></div>`, []string{`data-size="tiny" on <div class="cui-story">: no rule of ciderui's selects it (cui-story's: "", lg, md)`}},
+
+		// :is(.cui-console-copy-button, .cui-console-copy-inline)[data-state="copied"]
+		{"a value for one class of an :is", `<button class="cui-console-copy-button" data-state="copied">x</button>`, nil},
+		{"a value for the other class of an :is", `<button class="cui-console-copy-inline" data-state="copied">x</button>`, nil},
+		// :where(.cui-btn, .cui-link[data-variant="more"], .cui-console-link, …)
+		{"a value is not another alternative's", `<a class="cui-console-link" data-variant="more">x</a>`, []string{`data-variant="more" on <a class="cui-console-link">: no rule of ciderui's selects it (cui-console-link's: label, text)`}},
+		// .cui-console-player-end > [data-control="replay"] names no class of the element
+		{"an attribute only a rule for another element selects", `<p class="cui-console-player-caption" data-control="caption">x</p>`, nil},
+		// cui-console-btn-icon's sizes are its own
+		{"a value of another class on the element", `<button class="cui-console-btn cui-console-btn-icon" data-size="sm">x</button>`, nil},
+
+		{"a page's class and data-*", `<div class="mt-2" data-variant="whatever">a</div>`, nil},
+		{"a data-* no rule selects", `<a class="cui-console-btn" data-testid="save">x</a>`, nil},
+
+		// a site's whole page, as any writer's HTML has it
+		{"a comment", `<!-- <b class="cui-console-badg"> --><b class="cui-console-badge">a</b>`, nil},
+		{"after a comment", `<!-- a --><b class="cui-console-badg">a</b>`, noClass("b")},
+		{"a comment left open", `<!-- <b class="cui-console-badg">`, nil},
+		{"a script", `<script>let s = '<a class="cui-console-badg">';</script>`, nil},
+		{"a style", `<style>/* <a class="cui-console-badg"> */</style>`, nil},
+		{"a script left open", `<SCRIPT>let s = '<a class="cui-console-badg">';`, nil},
+		{"after a script", `<script>a</script><b class="cui-console-badg">a</b>`, noClass("b")},
+		{"after a style", `<style>a</style><b class="cui-console-badg">a</b>`, noClass("b")},
+		{"inside an element", `<div><b class="cui-console-badg">a</b></div>`, noClass("b")},
+		{"a < in text", `1 < 2 <3 <b class="cui-console-badg">a</b>`, noClass("b")},
+		{"a < at the end", `<b class="cui-console-badg">a</b><`, noClass("b")},
+		{"an uppercase tag", `<B class="cui-console-badg">a</B>`, noClass("B")},
+		{"single quotes", `<b class='cui-console-badg'>a</b>`, noClass("b")},
+		{"no quotes", `<b class=cui-console-badg>a</b>`, noClass("b")},
+		{"no quotes, then an attribute", `<b class=cui-console-badg id=x>a</b>`, noClass("b")},
+		{"a quote left open", `<b class="cui-console-badg`, noClass("b")},
+		{"a tag left open", `<b class="cui-console-badg"`, noClass("b")},
+		{"an attribute before, with no value", `<b hidden class="cui-console-badg">a</b>`, noClass("b")},
+		{"self-closed", `<img class="cui-console-badg"/><br/>`, noClass("img")},
+		{"lines and tabs between attributes", "<b\n\tid=\"x\"\r\n\fclass=\"cui-console-badg\">a</b>", noClass("b")},
+		{"lines between classes", "<b class=\"cui-console-badge\n\tcui-console-badg\">a</b>", []string{"class \"cui-console-badg\" on <b class=\"cui-console-badge\\n\\tcui-console-badg\">: ciderui has no such class"}},
+	} {
+		t.Run(c.name, func(t *testing.T) {
+			if got := CheckMarkup(c.html); !slices.Equal(got, c.want) {
+				t.Errorf("got  %q\nwant %q", got, c.want)
+			}
+		})
 	}
 }
 
-func TestAWordInACommentIsNoClass(t *testing.T) {
-	classes := classesIn(`/* cui-ghost, named here alone */ .cui-real { color: red; } @utility cui-type { color: red; }`)
-	if classes["cui-ghost"] {
-		t.Error("cui-ghost is only in a comment")
-	}
-	if !classes["cui-real"] || !classes["cui-type"] {
+func TestClassesIn(t *testing.T) {
+	classes := classesIn(`/* .cui-ghost { } */ .cui-real { color: red; } @media (width >= 1px) { .cui-inner { color: red; } } @utility cui-type { color: red; } @utility other { color: red; }`)
+	want := map[string]bool{"cui-real": true, "cui-inner": true, "cui-type": true}
+	if !maps.Equal(classes, want) {
 		t.Errorf("got %v", classes)
 	}
 }
 
-func TestAWordNoSelectorNamesFails(t *testing.T) {
-	want := []string{`class "cui-globalnav-row-in" on <li class="cui-globalnav-row-in">: ciderui has no such class`}
-	if got := CheckMarkup(`<li class="cui-globalnav-row-in">a</li>`); !slices.Equal(got, want) {
-		t.Errorf("a keyframes name: got %q", got)
+// each way a selector's compound names a class and a data-*, on one line
+func compounds(css string) string {
+	var lines []string
+	for _, c := range compoundsIn(css) {
+		line := "." + strings.Join(c.classes, ".")
+		for _, a := range c.attributes {
+			not := ""
+			if a.negated {
+				not = "!"
+			}
+			line += fmt.Sprintf("[%s%s=%s,%v]", not, a.name, a.value, a.hasValue)
+		}
+		lines = append(lines, line)
+	}
+	return strings.Join(lines, " ")
+}
+
+func TestCompoundsIn(t *testing.T) {
+	for _, c := range []struct{ css, want string }{
+		{`.a[data-x="1"] { }`, `.a[data-x=1,true]`},
+		{`.a[data-x] { }`, `.a[data-x=,false]`},
+		{`.a[title="1"] { }`, `.a`},
+		{`.a[data-x="1"], .b[data-y="2"] { }`, `.a[data-x=1,true] .b[data-y=2,true]`},
+		{`.a[data-x="1"].b { }`, `.a.b[data-x=1,true]`},
+		{`.a:hover[data-x="1"]::before { }`, `.a[data-x=1,true]`},
+		{`.a:nth-child(2n + 1)[data-x="1"] { }`, `.a[data-x=1,true]`},
+		{`.a:not([data-x]) { }`, `.a[!data-x=,false]`},
+		{`.a:not(.b)[data-x="1"] { }`, `.a[data-x=1,true]`},
+		{`:is(.a, .b)[data-x="1"] { }`, `.a[data-x=1,true] .b[data-x=1,true]`},
+		{`:where(.a, .b[data-x="1"]) { }`, `.a .b[data-x=1,true]`},
+		// the subject's first: a compound of another element comes after
+		{`.a[data-x="1"] .b[data-y="2"] { }`, `.b[data-y=2,true] .a[data-x=1,true]`},
+		{`.a[data-x="1"] > .b { }`, `.b .a[data-x=1,true]`},
+		{`.a[data-x="1"] + .b { }`, `.b .a[data-x=1,true]`},
+		{`.a[data-x="1"] ~ .b { }`, `.b .a[data-x=1,true]`},
+		{`.a:has(.b[data-x="1"]) { }`, `.a .b[data-x=1,true]`},
+		{`.a { &[data-x="1"] { } }`, `.a .a[data-x=1,true]`},
+		{`.a, .b { &[data-x="1"] { } }`, `.a .b .a[data-x=1,true] .b[data-x=1,true]`},
+		{`.a { .b[data-x="1"] { } }`, `.a .b[data-x=1,true] .a`},
+		{`@media (width >= 1px) { .a[data-x="1"] { color: red; } }`, `.a[data-x=1,true]`},
+		{`.a { color: red; &[data-x="1"] { } }`, `.a .a[data-x=1,true]`},
+		{`.a-b1C[data-x="1"] { }`, `.a-b1C[data-x=1,true]`},
+	} {
+		if got := compounds(c.css); got != c.want {
+			t.Errorf("%s\n got %s\nwant %s", c.css, got, c.want)
+		}
 	}
 }
 
-func TestAClassWithNoRulePasses(t *testing.T) {
-	for _, class := range classesWithNoRule {
-		if got := CheckMarkup(`<div class="` + class + `">a</div>`); got != nil {
-			t.Errorf("%s: %q", class, got)
-		}
+// nothing else would say so: rules would go on reading the rest as selectors
+func TestAStylesheetLeftOpenPanics(t *testing.T) {
+	for _, c := range []struct{ css, want string }{
+		{`/* .a { }`, "an unclosed comment"},
+		{`.a:not(.b { }`, "an unclosed ( in .a:not(.b"},
+	} {
+		t.Run(c.want, func(t *testing.T) {
+			defer func() {
+				if got := fmt.Sprint(recover()); got != c.want {
+					t.Errorf("panicked with %s", got)
+				}
+			}()
+			compoundsIn(c.css)
+		})
 	}
 }
 
@@ -67,104 +183,5 @@ func TestClassesWithNoRuleHaveNoRule(t *testing.T) {
 				t.Errorf("%s has a rule for %s", path, class)
 			}
 		}
-	}
-}
-
-func TestAValueNoRuleSelectsFails(t *testing.T) {
-	want := []string{`data-color="purple" on <span class="cui-console-badge">: no rule of ciderui's selects it (cui-console-badge's: error, info, success, warning)`}
-	if got := CheckMarkup(`<span class="cui-console-badge" data-color="purple">b</span>`); !slices.Equal(got, want) {
-		t.Errorf("got %q", got)
-	}
-}
-
-func TestAShapeNoRuleSelectsFails(t *testing.T) {
-	want := []string{`data-shape="circle" on <button class="cui-console-btn">: no rule of ciderui's selects it (cui-console-btn's: capsule)`}
-	if got := CheckMarkup(`<button class="cui-console-btn" data-shape="circle">x</button>`); !slices.Equal(got, want) {
-		t.Errorf("got %q", got)
-	}
-}
-
-func TestATypoInAnySelectedAttributeFails(t *testing.T) {
-	want := []string{`data-orientation="vertcal" on <dl class="cui-console-dl">: no rule of ciderui's selects it (cui-console-dl's: vertical)`}
-	if got := CheckMarkup(`<dl class="cui-console-dl" data-orientation="vertcal"></dl>`); !slices.Equal(got, want) {
-		t.Errorf("got %q", got)
-	}
-	if got := CheckMarkup(`<dl class="cui-console-dl" data-orientation="vertical"></dl>`); got != nil {
-		t.Errorf("the value itself: got %q", got)
-	}
-}
-
-// [data-sticky] selects any value, on its own class alone
-func TestAnAttributeSelectedWithNoValue(t *testing.T) {
-	for _, html := range []string{
-		`<table class="cui-console-table" data-sticky></table>`,
-		`<table class="cui-console-table" data-sticky="true"></table>`,
-		`<tr class="cui-console-listing-line" data-highlighted></tr>`,
-	} {
-		if got := CheckMarkup(html); got != nil {
-			t.Errorf("%s: got %q", html, got)
-		}
-	}
-	want := []string{`data-sticky="" on <div class="cui-console-card">: no rule of ciderui's selects it (cui-console-card's: none)`}
-	if got := CheckMarkup(`<div class="cui-console-card" data-sticky></div>`); !slices.Equal(got, want) {
-		t.Errorf("got %q", got)
-	}
-}
-
-// .cui-posts:not([data-size]) is its default: the bare attribute leaves it, and
-// a misspelt value would as well, with no rule of the size's own
-func TestAnAttributeOnlyANotSelects(t *testing.T) {
-	if got := CheckMarkup(`<ul class="cui-console-tabs" data-overflow-end></ul>`); got != nil {
-		t.Errorf("got %q", got)
-	}
-	want := []string{`data-overflow-end="yes" on <ul class="cui-console-tabs">: no rule of ciderui's selects it (cui-console-tabs's: "")`}
-	if got := CheckMarkup(`<ul class="cui-console-tabs" data-overflow-end="yes"></ul>`); !slices.Equal(got, want) {
-		t.Errorf("got %q", got)
-	}
-	want = []string{`data-size="tiny" on <div class="cui-story">: no rule of ciderui's selects it (cui-story's: "", lg, md)`}
-	if got := CheckMarkup(`<div class="cui-story" data-size="tiny"></div>`); !slices.Equal(got, want) {
-		t.Errorf("got %q", got)
-	}
-}
-
-// :is(.cui-console-copy-button, .cui-console-copy-inline)[data-state="copied"]
-func TestAValueSelectedForEachClassOfAnIs(t *testing.T) {
-	for _, class := range []string{"cui-console-copy-button", "cui-console-copy-inline"} {
-		if got := CheckMarkup(`<button class="` + class + `" data-state="copied">x</button>`); got != nil {
-			t.Errorf("%s: got %q", class, got)
-		}
-	}
-}
-
-// .cui-console-player-end > [data-control="replay"] names no class of the element
-func TestAnAttributeOnlyARuleForAnotherElementSelectsPasses(t *testing.T) {
-	if got := CheckMarkup(`<p class="cui-console-player-caption" data-control="caption">x</p>`); got != nil {
-		t.Errorf("got %q", got)
-	}
-}
-
-// :where(.cui-btn, .cui-link[data-variant="more"], .cui-console-link, …) gives
-// cui-console-link no "more"
-func TestAValueIsNotAnotherAlternativesClasss(t *testing.T) {
-	want := []string{`data-variant="more" on <a class="cui-console-link">: no rule of ciderui's selects it (cui-console-link's: label, text)`}
-	if got := CheckMarkup(`<a class="cui-console-link" data-variant="more">x</a>`); !slices.Equal(got, want) {
-		t.Errorf("got %q", got)
-	}
-}
-
-// a value is held to every cui-* class on its element: cui-console-btn-icon's
-// sizes are its own
-func TestAValueOfAnotherClassOnTheElementPasses(t *testing.T) {
-	if got := CheckMarkup(`<button class="cui-console-btn cui-console-btn-icon" data-size="sm">x</button>`); got != nil {
-		t.Errorf("got %q", got)
-	}
-}
-
-func TestWhatIsNotCideruisPasses(t *testing.T) {
-	if got := CheckMarkup(`<div class="mt-2" data-variant="whatever"><!-- <b class="cui-nope"> --><script>let s = '<a class="cui-nope">';</script></div>`); got != nil {
-		t.Errorf("got %q", got)
-	}
-	if got := CheckMarkup(`<a class="cui-console-btn" data-testid="save">x</a>`); got != nil {
-		t.Errorf("a data-* no rule selects anywhere, the page's own: got %q", got)
 	}
 }

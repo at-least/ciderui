@@ -100,7 +100,11 @@ func subjects(selector string, negated bool, others *[]compound) []compound {
 		for i := 0; i < len(part); {
 			switch c := part[i]; {
 			case c == ' ' || c == '>' || c == '+' || c == '~':
-				*others = append(*others, ways...)
+				for _, way := range ways {
+					if len(way.classes)+len(way.attributes) > 0 {
+						*others = append(*others, way)
+					}
+				}
 				ways = []compound{{classes: nil, attributes: nil}}
 				i++
 			case c == '.':
@@ -111,9 +115,6 @@ func subjects(selector string, negated bool, others *[]compound) []compound {
 				i += 1 + len(class)
 			case c == '[':
 				end := strings.IndexByte(part[i:], ']')
-				if end < 0 {
-					panic("an unclosed [ in " + part)
-				}
 				inside := part[i+1 : i+end]
 				if strings.HasPrefix(inside, "data-") {
 					attribute, value, hasValue := strings.Cut(inside, "=")

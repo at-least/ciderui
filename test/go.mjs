@@ -1,5 +1,7 @@
 import { execFileSync } from 'node:child_process';
-import { ROOT } from './compile.mjs';
+import { mkdtempSync, rmSync } from 'node:fs';
+import { join, relative } from 'node:path';
+import { compile, ROOT } from './compile.mjs';
 
 // the module's package directories, not `.`: gofmt would walk node_modules,
 // which go.mod's ignore keeps from go's own commands
@@ -13,5 +15,18 @@ for (const args of [
   ['test', './...'],
 ]) {
   execFileSync('go', args, { cwd: ROOT, stdio: 'inherit' });
+}
+// what a site does: its Go tool writes the embedded kit, Tailwind builds each set
+// from there. Everything else reads the checkout, so a stylesheet left out of
+// go:embed fails here and nowhere else.
+const written = mkdtempSync(join(ROOT, 'written-kit-'));
+try {
+  execFileSync('go', ['run', './go/cmd/ciderui-css', written], { cwd: ROOT, stdio: 'pipe' });
+  for (const [set, rule] of [['site', '.cui-btn'], ['console', '.cui-console-btn']]) {
+    const built = compile({ css: `@import "${relative(ROOT, join(written, `${set}.css`))}";` });
+    if (!built.includes(rule)) throw new Error(`${set}.css written by ciderui-css built with no ${rule}`);
+  }
+} finally {
+  rmSync(written, { recursive: true });
 }
 console.log('go: gofmt, vet, exhaustruct and tests clean');

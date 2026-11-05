@@ -9,18 +9,6 @@ import (
 	"testing"
 )
 
-func TestTheKitIsEmbedded(t *testing.T) {
-	paths := cssFiles()
-	for _, want := range []string{"index.css", "tokens.css", "type.css", "fonts.css", "components/site/button/button.css"} {
-		if !slices.Contains(paths, want) {
-			t.Errorf("%s is not embedded", want)
-		}
-	}
-	if !strings.Contains(css("tokens.css"), "--cui-c-accent:") {
-		t.Error("tokens.css has no --cui-c-accent")
-	}
-}
-
 // a part's rule over another's of the same specificity relies on this order
 func TestEachSetImportsItsPartsInOrder(t *testing.T) {
 	for _, set := range []string{"site", "console"} {
@@ -94,10 +82,19 @@ func TestNoPartResetsItsMarginOverAContainer(t *testing.T) {
 	}
 }
 
-func TestWritesEveryFontFontsCSSNames(t *testing.T) {
+func TestWriteCSSWritesTheKit(t *testing.T) {
 	dir := t.TempDir()
 	if err := WriteCSS(dir); err != nil {
 		t.Fatal(err)
+	}
+	for _, path := range kitFiles() {
+		written, err := os.ReadFile(filepath.Join(dir, path))
+		if err != nil {
+			t.Fatal(err)
+		}
+		if string(written) != css(path) {
+			t.Errorf("%s differs from the kit's", path)
+		}
 	}
 	urls := regexp.MustCompile(`url\("([^"]+)"\)`).FindAllStringSubmatch(css("fonts.css"), -1)
 	if len(urls) == 0 {
@@ -107,19 +104,5 @@ func TestWritesEveryFontFontsCSSNames(t *testing.T) {
 		if _, err := os.Stat(filepath.Join(dir, url[1])); err != nil {
 			t.Error(err)
 		}
-	}
-}
-
-func TestWritesTheKitsLayout(t *testing.T) {
-	dir := t.TempDir()
-	if err := WriteCSS(dir); err != nil {
-		t.Fatal(err)
-	}
-	button, err := os.ReadFile(filepath.Join(dir, "components/site/button/button.css"))
-	if err != nil {
-		t.Fatal(err)
-	}
-	if !strings.Contains(string(button), ".cui-btn") {
-		t.Error("button.css has no .cui-btn")
 	}
 }
