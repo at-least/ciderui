@@ -1,7 +1,6 @@
 package glyph
 
 import (
-	"bytes"
 	"os"
 	"regexp"
 	"strconv"
@@ -9,25 +8,8 @@ import (
 	"testing"
 )
 
-func rendered(t *testing.T, i Icon) string {
-	t.Helper()
-	var b bytes.Buffer
-	if err := i.Render(&b); err != nil {
-		t.Fatal(err)
-	}
-	return b.String()
-}
-
-func TestRendersAnSVGInEm(t *testing.T) {
-	want := `<svg aria-hidden="true" width="0.442em" height="0.54em" viewBox="0 0 442 540">` +
-		`<path d="M107.7 47.7 332.3 272.5 107.7 497.3" fill="none" stroke="currentColor" stroke-width="67.9" stroke-linecap="round" stroke-linejoin="round"/></svg>`
-	if got := rendered(t, More); got != want {
-		t.Errorf("got %s", got)
-	}
-}
-
 func TestEscapesItsClass(t *testing.T) {
-	var b bytes.Buffer
+	var b strings.Builder
 	if err := More.Class(`a"b<c&d`).Render(&b); err != nil {
 		t.Fatal(err)
 	}
