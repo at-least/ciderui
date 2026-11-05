@@ -3,8 +3,8 @@ package site
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/internal/glyph"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -36,8 +36,8 @@ func (s Shelf) Render(w io.Writer) error {
 		h.Div(h.Class("cui-shelf-row"),
 			h.Ul(h.Class("cui-shelf-scroller"), h.ID(s.ID), s.Children),
 			g.If(s.Paddles, g.Group{
-				h.Button(h.Class("cui-gallery-paddle cui-shelf-paddle"), h.Data("size", "lg"), h.Type("button"), h.Aria("controls", s.ID), h.Aria("label", "Previous"), h.Disabled(), icon.PaddlePrevious),
-				h.Button(h.Class("cui-gallery-paddle cui-shelf-paddle"), h.Data("size", "lg"), h.Type("button"), h.Aria("controls", s.ID), h.Aria("label", "Next"), icon.PaddleNext),
+				h.Button(h.Class("cui-gallery-paddle cui-shelf-paddle"), h.Data("size", "lg"), h.Type("button"), h.Aria("controls", s.ID), h.Aria("label", "Previous"), h.Disabled(), glyph.PaddlePrevious),
+				h.Button(h.Class("cui-gallery-paddle cui-shelf-paddle"), h.Data("size", "lg"), h.Type("button"), h.Aria("controls", s.ID), h.Aria("label", "Next"), glyph.PaddleNext),
 			}),
 		),
 	).Render(w)

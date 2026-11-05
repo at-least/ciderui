@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/site"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -70,7 +69,7 @@ func ExampleNavLink() {
 }
 
 func ExampleBagLink() {
-	orders := site.BagLink{Icon: icon.Orders, IconCompact: icon.OrdersCompact, Text: "Orders", Href: "/orders"}
+	orders := site.BagLink{Icon: site.BagLinkIconOrders, Text: "Orders", Href: "/orders"}
 	fmt.Println(orders.Text)
 	// Output: Orders
 }

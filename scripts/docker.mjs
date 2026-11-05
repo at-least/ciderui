@@ -9,7 +9,8 @@ import { join } from 'node:path';
 import { ROOT } from '../test/compile.mjs';
 
 const IMAGE = 'ciderui-test';
-// The image is made from these alone (.dockerignore): one built from the same
+// The image is made from these alone (test/Dockerfile.dockerignore; not a root
+// .dockerignore: with this -f BuildKit reads this one alone): one built from the same
 // bytes carries their hash as a label and is run by its ID, with no build
 // (a cached build still took 2s over ssh). Not by the tag: lab's daemon
 // serves every Mac and checkout, and another's build can move the tag

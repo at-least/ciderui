@@ -6,6 +6,7 @@ import (
 
 	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/internal/glyph"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -76,13 +77,21 @@ type BagLine struct {
 	Rest string
 }
 
-// BagLink's icons on apple.com: [icon.Orders], [icon.Saves],
-// [icon.Account], [icon.SignIn], each with its Compact one.
+// BagLinkIcon is the glyph before a bag's profile link; its zero value panics
+// when rendered.
+type BagLinkIcon struct{ regular, compact icon.Icon }
+
+var (
+	BagLinkIconOrders  = BagLinkIcon{regular: glyph.Orders, compact: glyph.OrdersCompact}
+	BagLinkIconSaves   = BagLinkIcon{regular: glyph.Saves, compact: glyph.SavesCompact}
+	BagLinkIconAccount = BagLinkIcon{regular: glyph.Account, compact: glyph.AccountCompact}
+	BagLinkIconSignIn  = BagLinkIcon{regular: glyph.SignIn, compact: glyph.SignInCompact}
+)
+
 type BagLink struct {
-	Icon        icon.Icon
-	IconCompact icon.Icon
-	Text        string
-	Href        string
+	Icon BagLinkIcon
+	Text string
+	Href string
 }
 
 // GlobalNavText is the nav's own words, in the page's language.
@@ -200,6 +209,9 @@ func (n GlobalNav) Render(w io.Writer) error {
 			if link.Text == "" || link.Href == "" {
 				panic("site.GlobalNav's bag's Links need their Text and Href")
 			}
+			if link.Icon.regular == (icon.Icon{}) {
+				panic("site.GlobalNav's bag's Links need their Icon")
+			}
 		}
 	}
 	block := "cui-globalnav"
@@ -225,23 +237,23 @@ func (n GlobalNav) Render(w io.Writer) error {
 	switch search := n.Search.(type) {
 	case nil:
 	case LinkedSearch:
-		searchItem = h.Li(h.A(h.Class("cui-globalnav-icon"), h.Href(search.Href), h.Aria("label", n.Text.SearchAriaLabel), globalNavImages(icon.Search, icon.SearchCompact)))
+		searchItem = h.Li(h.A(h.Class("cui-globalnav-icon"), h.Href(search.Href), h.Aria("label", n.Text.SearchAriaLabel), globalNavImages(glyph.Search, glyph.SearchCompact)))
 	case FlyoutSearch:
-		searchItem = h.Li(h.Button(h.Class("cui-globalnav-icon"), h.PopoverTarget(globalNavSearchID), h.Aria("label", n.Text.SearchAriaLabel), globalNavImages(icon.Search, icon.SearchCompact)))
+		searchItem = h.Li(h.Button(h.Class("cui-globalnav-icon"), h.PopoverTarget(globalNavSearchID), h.Aria("label", n.Text.SearchAriaLabel), globalNavImages(glyph.Search, glyph.SearchCompact)))
 		searchPopover = h.Div(h.Class("cui-globalnav-search"), h.ID(globalNavSearchID), h.Popover(),
 			h.Div(h.Class("cui-globalnav-searchpanel"),
 				h.Form(h.Class("cui-globalnav-searchfield"), h.Action(search.Action), h.Method("get"), h.Role("search"),
-					globalNavImages(icon.Searchfield, icon.SearchfieldCompact),
+					globalNavImages(glyph.Searchfield, glyph.SearchfieldCompact),
 					h.Input(h.Class("cui-globalnav-searchinput"), h.Type("text"), h.Name("q"), h.Placeholder(n.Text.SearchPlaceholder), h.Aria("label", n.Text.SearchAriaLabel), h.AutoComplete("off"), h.AutoCapitalize("off"), h.AutoFocus()),
-					h.Button(h.Class("cui-globalnav-searchreset"), h.Type("reset"), h.Aria("label", n.Text.ClearSearchAriaLabel), globalNavImages(icon.Clear, icon.ClearCompact)),
+					h.Button(h.Class("cui-globalnav-searchreset"), h.Type("reset"), h.Aria("label", n.Text.ClearSearchAriaLabel), globalNavImages(glyph.Clear, glyph.ClearCompact)),
 				),
 				g.If(len(search.Links) > 0, g.Group{
 					h.H2(h.Class("cui-globalnav-searchheading"), h.ID(globalNavHeadingID), g.Text(search.Heading)),
 					h.Ul(h.Class("cui-globalnav-searchlinks"), h.Aria("labelledby", globalNavHeadingID), g.Map(search.Links, func(link Link) g.Node {
-						return h.Li(h.A(h.Class("cui-globalnav-searchlink"), h.Href(link.Href), globalNavImages(icon.Arrow, icon.ArrowCompact), g.Text(link.Text)))
+						return h.Li(h.A(h.Class("cui-globalnav-searchlink"), h.Href(link.Href), globalNavImages(glyph.Arrow, glyph.ArrowCompact), g.Text(link.Text)))
 					})),
 				}),
-				h.Button(h.Class("cui-globalnav-closebutton"), h.PopoverTarget(globalNavSearchID), h.PopoverTargetAction("hide"), h.Aria("label", n.Text.CloseAriaLabel), icon.Menu),
+				h.Button(h.Class("cui-globalnav-closebutton"), h.PopoverTarget(globalNavSearchID), h.PopoverTargetAction("hide"), h.Aria("label", n.Text.CloseAriaLabel), glyph.Menu),
 			),
 			globalNavCurtain(globalNavSearchID),
 		)
@@ -252,12 +264,12 @@ func (n GlobalNav) Render(w io.Writer) error {
 	switch bag := n.Bag.(type) {
 	case nil:
 	case LinkedBag:
-		bagItem = h.Li(h.A(h.Class("cui-globalnav-icon"), h.Href(bag.Href), h.Aria("label", n.Text.BagAriaLabel), globalNavImages(icon.Bag, icon.BagCompact)))
+		bagItem = h.Li(h.A(h.Class("cui-globalnav-icon"), h.Href(bag.Href), h.Aria("label", n.Text.BagAriaLabel), globalNavImages(glyph.Bag, glyph.BagCompact)))
 	case FlyoutBag:
-		bagItem = h.Li(h.Button(h.Class("cui-globalnav-icon"), h.PopoverTarget(globalNavBagID), h.Aria("label", n.Text.BagAriaLabel), globalNavImages(icon.Bag, icon.BagCompact)))
+		bagItem = h.Li(h.Button(h.Class("cui-globalnav-icon"), h.PopoverTarget(globalNavBagID), h.Aria("label", n.Text.BagAriaLabel), globalNavImages(glyph.Bag, glyph.BagCompact)))
 		bagPopover = h.Div(h.Class("cui-globalnav-bag"), h.ID(globalNavBagID), h.Popover(),
 			h.Div(h.Class("cui-globalnav-bagpanel"),
-				h.Button(h.Class("cui-globalnav-closebutton"), h.PopoverTarget(globalNavBagID), h.PopoverTargetAction("hide"), h.Aria("label", n.Text.CloseAriaLabel), h.AutoFocus(), icon.Menu),
+				h.Button(h.Class("cui-globalnav-closebutton"), h.PopoverTarget(globalNavBagID), h.PopoverTargetAction("hide"), h.Aria("label", n.Text.CloseAriaLabel), h.AutoFocus(), glyph.Menu),
 				h.H2(h.Class("cui-globalnav-bagmessage"), g.Text(bag.Message)),
 				g.Iff(bag.Line != nil, func() g.Node {
 					return h.P(h.Class("cui-globalnav-bagtext"), h.A(h.Href(bag.Line.Href), g.Text(bag.Line.Text)), g.Text(bag.Line.Rest))
@@ -265,7 +277,7 @@ func (n GlobalNav) Render(w io.Writer) error {
 				g.If(len(bag.Links) > 0, g.Group{
 					h.H3(h.Class("cui-globalnav-bagheading"), h.ID(globalNavBagHeadingID), g.Text(bag.Heading)),
 					h.Ul(h.Class("cui-globalnav-baglinks"), h.Aria("labelledby", globalNavBagHeadingID), g.Map(bag.Links, func(link BagLink) g.Node {
-						return h.Li(h.A(h.Class("cui-globalnav-baglink"), h.Href(link.Href), globalNavImages(link.Icon, link.IconCompact), g.Text(link.Text)))
+						return h.Li(h.A(h.Class("cui-globalnav-baglink"), h.Href(link.Href), globalNavImages(link.Icon.regular, link.Icon.compact), g.Text(link.Text)))
 					})),
 				}),
 			),
@@ -278,12 +290,12 @@ func (n GlobalNav) Render(w io.Writer) error {
 		h.Div(h.Class("cui-globalnav-content"),
 			h.Ul(h.Class("cui-globalnav-list"), h.ID(globalNavMenuID), h.Popover(),
 				h.Li(h.A(h.Class("cui-globalnav-logo"), h.Href(n.Home), h.Aria("label", n.LogoAriaLabel), n.Logo)),
-				h.Li(h.Button(h.Class("cui-globalnav-closebutton"), h.PopoverTarget(globalNavMenuID), h.PopoverTargetAction("hide"), h.Aria("label", n.Text.CloseAriaLabel), h.AutoFocus(), icon.Menu)),
+				h.Li(h.Button(h.Class("cui-globalnav-closebutton"), h.PopoverTarget(globalNavMenuID), h.PopoverTargetAction("hide"), h.Aria("label", n.Text.CloseAriaLabel), h.AutoFocus(), glyph.Menu)),
 				links,
 				searchItem,
 				bagItem,
 			),
-			h.Button(h.Class("cui-globalnav-menubutton"), h.PopoverTarget(globalNavMenuID), h.Aria("label", n.Text.MenuAriaLabel), icon.Menu),
+			h.Button(h.Class("cui-globalnav-menubutton"), h.PopoverTarget(globalNavMenuID), h.Aria("label", n.Text.MenuAriaLabel), glyph.Menu),
 			searchPopover,
 			bagPopover,
 			postForms,
@@ -310,11 +322,11 @@ func globalNavFlyout(link NavLink, n int, text GlobalNavText) g.Node {
 	}
 	return g.Group{
 		h.A(h.Class("cui-globalnav-link"), h.Href(link.Href), g.Text(link.Text)),
-		h.Button(h.Class("cui-globalnav-flyoutbutton"), h.PopoverTarget(id), h.Aria("label", link.FlyoutAriaLabel), globalNavImages(icon.Flyout, icon.FlyoutCompact)),
+		h.Button(h.Class("cui-globalnav-flyoutbutton"), h.PopoverTarget(id), h.Aria("label", link.FlyoutAriaLabel), globalNavImages(glyph.Flyout, glyph.FlyoutCompact)),
 		h.Div(h.Class("cui-globalnav-flyout"), h.ID(id), h.Popover(),
 			h.Div(h.Class("cui-globalnav-flyoutpanel"),
-				h.Button(h.Class("cui-globalnav-backbutton"), h.PopoverTarget(id), h.PopoverTargetAction("hide"), h.Aria("label", text.MainMenuAriaLabel), icon.FlyoutBack),
-				h.Button(h.Class("cui-globalnav-closebutton"), h.PopoverTarget(globalNavMenuID), h.PopoverTargetAction("hide"), h.Aria("label", text.CloseAriaLabel), icon.Menu),
+				h.Button(h.Class("cui-globalnav-backbutton"), h.PopoverTarget(id), h.PopoverTargetAction("hide"), h.Aria("label", text.MainMenuAriaLabel), glyph.FlyoutBack),
+				h.Button(h.Class("cui-globalnav-closebutton"), h.PopoverTarget(globalNavMenuID), h.PopoverTargetAction("hide"), h.Aria("label", text.CloseAriaLabel), glyph.Menu),
 				groups,
 			),
 			globalNavCurtain(id),

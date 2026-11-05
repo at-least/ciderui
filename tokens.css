@@ -127,7 +127,7 @@
   --cui-c-console-neutral-fill-primary: light-dark(oklch(57.5% 0.012 286.0 / 0.20), oklch(71.0% 0.019 285.9 / 0.20));
 
   /* not system-ui: a font everywhere, so Inter would never be drawn */
-  --cui-font: -apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --cui-font: -apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Noto Sans TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif;
 
   /* ui-monospace is Safari's alone; Menlo is Chrome's on a Mac */
   --cui-font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;

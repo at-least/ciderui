@@ -3,8 +3,8 @@ package site
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/internal/glyph"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -46,7 +46,7 @@ func (n LocalNav) Render(w io.Writer) error {
 				),
 			}),
 			h.Div(h.Class("cui-localnav-actions"),
-				g.If(menu, h.Label(h.Class("cui-localnav-menubutton"), h.For(localNavToggleID), h.Aria("hidden", "true"), icon.Chevron)),
+				g.If(menu, h.Label(h.Class("cui-localnav-menubutton"), h.For(localNavToggleID), h.Aria("hidden", "true"), glyph.Chevron)),
 				g.Iff(n.Button != nil, func() g.Node {
 					return h.A(h.Class("cui-btn"), h.Data("size", "sm"), h.Href(n.Button.Href), g.Text(n.Button.Text))
 				}),

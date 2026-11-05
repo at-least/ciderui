@@ -24,7 +24,7 @@ try {
   // Firefox's, on macOS: Chromium drops it, so the stylesheet is read
   check('body declares -moz-osx-font-smoothing grayscale, as apple.com\'s stylesheets do', /(^|[}\s])body\{[^}]*-moz-osx-font-smoothing:grayscale/.test(css), true);
   check('body letter-spacing is the 17px fitted value', body['letter-spacing'], `${17 * 0.0029}px`, { tolerance: 0.001 });
-  check('body font-family is the stack', body['font-family'], '-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif');
+  check('body font-family is the stack', body['font-family'], '-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Noto Sans TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif');
   check('strong is apple.com\'s store:page.strong weight', (await b.read('#strong', ['font-weight']))['font-weight'], ref('store', 'page.strong', W, 'font-weight'));
 
   const ring = await b.read('#button', ['outline-style', 'outline-color', 'outline-width', 'outline-offset'], { state: 'focus-visible' });

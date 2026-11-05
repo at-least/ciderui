@@ -2,62 +2,187 @@ package ciderui
 
 import (
 	"fmt"
+	"regexp"
 	"slices"
 	"strings"
 	"sync"
 )
 
-var checkedAttributes = []string{"data-variant", "data-size", "data-color", "data-shape"}
+// classes the markup writes that no rule selects: nothing else could tell them
+// from a misspelt class
+var classesWithNoRule = []string{"cui-gallery", "cui-post-content", "cui-story-head"}
 
-type value struct{ class, attribute, value string }
+// selected is a value of a data-* attribute a rule selects on an element with
+// class, anyValue for a bare [data-x]. A bare :not([data-x]) has neither: it
+// tells the bare attribute from none, and a value there would draw no rule of
+// its own. A rule naming no cui-* class of the attribute's element holds nothing
+// to a class (.cui-console-player-end > [data-control="replay"], where the
+// player's other data-control values are selected by no rule), so it adds none.
+type selected struct {
+	class, attribute, value string
+	anyValue                bool
+}
 
-// classes: every cui-* name anywhere in the stylesheets, comments included: a
-// part with no rule of its own (cui-post-content) is named only in a comment.
-// values: each checked attribute value a rule selects, with the last .cui-*
-// class before it in the selector.
-var words = sync.OnceValues(func() (map[string]bool, []value) {
+var words = sync.OnceValues(func() (map[string]bool, []selected) {
 	classes := map[string]bool{}
-	var values []value
-	for _, path := range CSSFiles() {
-		text := CSS(path)
-		for at := 0; ; {
-			i := strings.Index(text[at:], "cui-")
-			if i < 0 {
-				break
-			}
-			i += at
-			at = i + 4
-			if i > 0 && isNameByte(text[i-1]) {
-				continue
-			}
-			classes[name(text[i:])] = true
+	for _, class := range classesWithNoRule {
+		classes[class] = true
+	}
+	var values []selected
+	for _, path := range cssFiles() {
+		text := css(path)
+		for class := range classesIn(text) {
+			classes[class] = true
 		}
-		for _, selector := range selectors(text) {
-			for at := 0; ; {
-				i := strings.Index(selector[at:], "[data-")
-				if i < 0 {
-					break
-				}
-				i += at
-				at = i + 1
-				inside, _, ok := strings.Cut(selector[i+1:], "]")
-				if !ok {
+		for _, compound := range compoundsIn(text) {
+			for _, class := range compound.classes {
+				if !strings.HasPrefix(class, "cui-") {
 					continue
 				}
-				attribute, v, ok := strings.Cut(inside, "=")
-				if !ok || !slices.Contains(checkedAttributes, attribute) {
-					continue
+				for _, a := range compound.attributes {
+					values = append(values, selected{class: class, attribute: a.name, value: a.value, anyValue: !a.hasValue && !a.negated})
 				}
-				c := strings.LastIndex(selector[:i], ".cui-")
-				if c < 0 {
-					panic(fmt.Sprintf("%s: %s=%s with no cui-* class before it", selector, attribute, v))
-				}
-				values = append(values, value{name(selector[c+1:]), attribute, strings.Trim(v, `"`)})
 			}
 		}
 	}
 	return classes, values
 })
+
+var selectorClass = regexp.MustCompile(`\.(cui-[a-zA-Z0-9-]+)`)
+
+// classesIn is every class a selector of css names and every @utility of it.
+func classesIn(css string) map[string]bool {
+	classes := map[string]bool{}
+	styleRules, utilities := rules(css)
+	for _, selector := range styleRules {
+		for _, match := range selectorClass.FindAllStringSubmatch(selector, -1) {
+			classes[match[1]] = true
+		}
+	}
+	for _, utility := range utilities {
+		if strings.HasPrefix(utility, "cui-") {
+			classes[utility] = true
+		}
+	}
+	return classes
+}
+
+func compoundsIn(css string) []compound {
+	var own, others []compound
+	styleRules, _ := rules(css)
+	for _, selector := range styleRules {
+		own = append(own, subjects(selector, false, &others)...)
+	}
+	return append(own, others...)
+}
+
+// selectorAttribute is a [data-*] of a selector.
+type selectorAttribute struct {
+	name, value       string
+	hasValue, negated bool
+}
+
+// compound is one way a compound selector matches one element.
+type compound struct {
+	classes    []string
+	attributes []selectorAttribute
+}
+
+// subjects returns the ways selector's rightmost compound matches its element,
+// and appends every other compound in it, each of another element, to others.
+// A :is or :where is the same element, one way per argument: not the last class
+// before an attribute, since :where(.a, .b[data-x]) gives .a no data-x. A :not
+// is the same element for its attributes alone; a :has is other elements.
+func subjects(selector string, negated bool, others *[]compound) []compound {
+	var all []compound
+	for _, part := range split(selector) {
+		ways := []compound{{classes: nil, attributes: nil}}
+		for i := 0; i < len(part); {
+			switch c := part[i]; {
+			case c == ' ' || c == '>' || c == '+' || c == '~':
+				*others = append(*others, ways...)
+				ways = []compound{{classes: nil, attributes: nil}}
+				i++
+			case c == '.':
+				class := name(part[i+1:])
+				for w := range ways {
+					ways[w].classes = append(slices.Clip(ways[w].classes), class)
+				}
+				i += 1 + len(class)
+			case c == '[':
+				end := strings.IndexByte(part[i:], ']')
+				if end < 0 {
+					panic("an unclosed [ in " + part)
+				}
+				inside := part[i+1 : i+end]
+				if strings.HasPrefix(inside, "data-") {
+					attribute, value, hasValue := strings.Cut(inside, "=")
+					a := selectorAttribute{name: attribute, value: strings.Trim(value, `"`), hasValue: hasValue, negated: negated}
+					for w := range ways {
+						ways[w].attributes = append(slices.Clip(ways[w].attributes), a)
+					}
+				}
+				i += end + 1
+			case c == ':':
+				i++
+				for i < len(part) && part[i] == ':' {
+					i++
+				}
+				pseudo := name(part[i:])
+				i += len(pseudo)
+				if i == len(part) || part[i] != '(' {
+					continue
+				}
+				end := closingParen(part, i)
+				arguments := part[i+1 : end]
+				i = end + 1
+				switch pseudo {
+				case "is", "where":
+					ways = alongside(ways, subjects(arguments, negated, others), true)
+				case "not":
+					ways = alongside(ways, subjects(arguments, true, others), false)
+				case "has":
+					*others = append(*others, subjects(arguments, false, others)...)
+				}
+			default:
+				i++
+			}
+		}
+		all = append(all, ways...)
+	}
+	return all
+}
+
+func closingParen(selector string, open int) int {
+	depth := 0
+	for i := open; i < len(selector); i++ {
+		switch selector[i] {
+		case '(':
+			depth++
+		case ')':
+			depth--
+			if depth == 0 {
+				return i
+			}
+		}
+	}
+	panic("an unclosed ( in " + selector)
+}
+
+// alongside is each way with each way of a pseudo-class's argument.
+func alongside(ways, arguments []compound, withClasses bool) []compound {
+	var out []compound
+	for _, way := range ways {
+		for _, argument := range arguments {
+			merged := compound{classes: slices.Clone(way.classes), attributes: slices.Concat(way.attributes, argument.attributes)}
+			if withClasses {
+				merged.classes = append(merged.classes, argument.classes...)
+			}
+			out = append(out, merged)
+		}
+	}
+	return out
+}
 
 func isNameByte(c byte) bool {
 	return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' || c >= '0' && c <= '9' || c == '-'
@@ -71,8 +196,9 @@ func name(text string) string {
 	return text[:end]
 }
 
-// every style rule's selector in css, nesting resolved
-func selectors(css string) []string {
+// rules is every style rule's selector in css, nesting resolved, and every
+// @utility's name, with its comments gone.
+func rules(css string) (selectors, utilities []string) {
 	var text strings.Builder
 	rest := css
 	for {
@@ -88,7 +214,6 @@ func selectors(css string) []string {
 		rest = rest[i+end+2:]
 	}
 	text.WriteString(rest)
-	var out []string
 	stack := [][]string{nil}
 	var head strings.Builder
 	for _, c := range text.String() {
@@ -98,6 +223,9 @@ func selectors(css string) []string {
 			prelude := strings.TrimSpace(head.String())
 			head.Reset()
 			if strings.HasPrefix(prelude, "@") {
+				if utility, ok := strings.CutPrefix(prelude, "@utility "); ok {
+					utilities = append(utilities, utility)
+				}
 				stack = append(stack, parents)
 				continue
 			}
@@ -115,7 +243,7 @@ func selectors(css string) []string {
 					}
 				}
 			}
-			out = append(out, full...)
+			selectors = append(selectors, full...)
 			stack = append(stack, full)
 		case '}':
 			stack = stack[:len(stack)-1]
@@ -126,7 +254,7 @@ func selectors(css string) []string {
 			head.WriteRune(c)
 		}
 	}
-	return out
+	return selectors, utilities
 }
 
 func split(selector string) []string {
@@ -148,9 +276,10 @@ func split(selector string) []string {
 
 // CheckMarkup returns a line for each word of ciderui's in html that the kit's
 // stylesheets do not know, nil when there is none: a cui-* class (a misspelt
-// one styles nothing), and on an element with a cui-* class, a
-// checkedAttributes value no rule selects (it renders the default, silently).
-// For a site's tests, on each page it renders.
+// one styles nothing), and on an element with a cui-* class, a value of a data-*
+// attribute some rule selects that no rule selects for that element's classes
+// (it renders the default, silently). A data-* no rule selects is the page's
+// own. For a site's tests, on each page it renders.
 func CheckMarkup(html string) []string {
 	classes, values := words()
 	var problems []string
@@ -177,21 +306,27 @@ func CheckMarkup(html string) []string {
 			continue
 		}
 		for _, a := range tag.attributes {
-			if !slices.Contains(checkedAttributes, a.name) {
+			if !slices.ContainsFunc(values, func(v selected) bool { return v.attribute == a.name }) {
 				continue
 			}
-			selected := slices.ContainsFunc(values, func(v value) bool {
-				return v.attribute == a.name && v.value == a.value && slices.Contains(ours, v.class)
+			ok := slices.ContainsFunc(values, func(v selected) bool {
+				return v.attribute == a.name && slices.Contains(ours, v.class) && (v.anyValue || v.value == a.value)
 			})
-			if selected {
+			if ok {
 				continue
 			}
 			var known []string
 			for _, c := range ours {
 				var vs []string
 				for _, v := range values {
-					if v.class == c && v.attribute == a.name && !slices.Contains(vs, v.value) {
-						vs = append(vs, v.value)
+					if v.class == c && v.attribute == a.name {
+						shown := v.value
+						if shown == "" {
+							shown = `""`
+						}
+						if !slices.Contains(vs, shown) {
+							vs = append(vs, shown)
+						}
 					}
 				}
 				slices.Sort(vs)

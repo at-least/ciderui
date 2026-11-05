@@ -1,5 +1,4 @@
 @layer components {
-  /* cui-gallery, its root: no rule of its own (markup.go reads its name here) */
   .cui-gallery-scroller {
     /* where the content starts: apple.com's own expression */
     --cui-gallery-inset: calc(50% - (0.5 * min(420px, 87.5%)));

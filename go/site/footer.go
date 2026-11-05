@@ -3,8 +3,8 @@ package site
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/internal/glyph"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -58,7 +58,7 @@ func (f Footer) Render(w io.Writer) error {
 					return h.Div(h.Class("cui-footer-column"), g.Map(column, func(section FooterSection) g.Node {
 						return h.Div(h.Class("cui-footer-section"),
 							h.Input(h.Class("cui-footer-toggle"), h.Type("checkbox"), h.ID(section.ID)),
-							h.H3(h.Class("cui-footer-title"), h.Label(h.For(section.ID), g.Text(section.Title), icon.FooterChevron)),
+							h.H3(h.Class("cui-footer-title"), h.Label(h.For(section.ID), g.Text(section.Title), glyph.FooterChevron)),
 							h.Ul(h.Class("cui-footer-list"), g.Map(section.Links, func(link Link) g.Node {
 								return h.Li(h.A(h.Href(link.Href), g.Text(link.Text)))
 							})),

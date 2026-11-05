@@ -17,7 +17,7 @@ const apple = (name, width, prop) => name === 'body'
   ? ref('store', 'page.body', width, prop)
   : ref('store', `type.t-${name}`, width, prop);
 
-const STACK = '-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif';
+const STACK = '-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Noto Sans TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif';
 try {
   for (const width of WIDTHS) {
     await b.resize(width);

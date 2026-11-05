@@ -3,8 +3,8 @@ package site
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/internal/glyph"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -30,6 +30,6 @@ func (l MoreLink) Render(w io.Writer) error {
 	return h.A(class.Root("cui-link", l.Class), h.Data("variant", "more"), h.Href(l.Href),
 		// no space between the text and the icon: it would widen the gap
 		h.Span(h.Class("cui-link-text"), g.Text(l.Text)),
-		icon.More.Class("cui-link-icon"),
+		glyph.More.Class("cui-link-icon"),
 	).Render(w)
 }

@@ -7,6 +7,7 @@ import (
 
 	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/example"
+	"github.com/at-least/ciderui/go/internal/glyph"
 	"github.com/at-least/ciderui/go/site"
 	g "maragu.dev/gomponents"
 )
@@ -75,10 +76,10 @@ func TestGlobalNavRendersTheBagExample(t *testing.T) {
 		Line:    &site.BagLine{Text: "Sign in", Href: "/signin", Rest: " for items you saved earlier"},
 		Heading: "Account",
 		Links: []site.BagLink{
-			{Icon: icon.Orders, IconCompact: icon.OrdersCompact, Text: "Orders", Href: "/orders"},
-			{Icon: icon.Saves, IconCompact: icon.SavesCompact, Text: "Saved Items", Href: "/saves"},
-			{Icon: icon.Account, IconCompact: icon.AccountCompact, Text: "Settings", Href: "/account"},
-			{Icon: icon.SignIn, IconCompact: icon.SignInCompact, Text: "Sign in", Href: "/signin"},
+			{Icon: site.BagLinkIconOrders, Text: "Orders", Href: "/orders"},
+			{Icon: site.BagLinkIconSaves, Text: "Saved Items", Href: "/saves"},
+			{Icon: site.BagLinkIconAccount, Text: "Settings", Href: "/account"},
+			{Icon: site.BagLinkIconSignIn, Text: "Sign in", Href: "/signin"},
 		},
 	}
 	example.Check(t, site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: site.LinkedSearch{Href: "/search"}, Bag: emptyBag, Text: site.GlobalNavTextEnglish, Dark: false, Clear: false, Class: ""}, "site/globalnav/examples/bag.html")
@@ -97,8 +98,7 @@ func TestGlobalNavRendersTheSearchExample(t *testing.T) {
 }
 
 // the suggestions' example is the search's as a site's script leaves it, its
-// sections in the quick links' place, each row after the package's icons: a
-// link's arrow, a suggested search's magnifier
+// sections in the quick links' place, a link's row after the package's arrow
 func TestGlobalNavTheSuggestionsExampleIsTheSearchWithItsSections(t *testing.T) {
 	search := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: site.FlyoutSearch{Action: "/search", Heading: "Shortcuts", Links: globalNavQuick}, Bag: site.LinkedBag{Href: "/bag"}, Text: site.GlobalNavTextEnglish, Dark: false, Clear: false, Class: ""})
 	suggestions := example.Read("site/globalnav/examples/suggestions.html")
@@ -118,13 +118,9 @@ func TestGlobalNavTheSuggestionsExampleIsTheSearchWithItsSections(t *testing.T) 
 	images := func(regular, compact icon.Icon) string {
 		return example.Render(g.Group{regular.Class("cui-globalnav-image"), compact.Class("cui-globalnav-image-compact")})
 	}
-	for _, want := range []string{
-		fmt.Sprintf(`href="/laptops">%s<span><mark>La</mark>ptops</span>`, images(icon.Arrow, icon.ArrowCompact)),
-		fmt.Sprintf(`href="/search?q=laptop">%s<span><mark>la</mark>ptop</span>`, images(icon.Suggestion, icon.SuggestionCompact)),
-	} {
-		if !strings.Contains(suggestions, want) {
-			t.Errorf("the suggestions have no %s", want)
-		}
+	want := fmt.Sprintf(`href="/laptops">%s<span><mark>La</mark>ptops</span>`, images(glyph.Arrow, glyph.ArrowCompact))
+	if !strings.Contains(suggestions, want) {
+		t.Errorf("the suggestions have no %s", want)
 	}
 }
 
@@ -212,15 +208,22 @@ func TestGlobalNavABagLineWithNoTextPanics(t *testing.T) {
 }
 
 func TestGlobalNavBagLinksWithNoHeadingPanics(t *testing.T) {
-	bag := site.FlyoutBag{Message: "Nothing here yet.", Line: nil, Heading: "", Links: []site.BagLink{{Icon: icon.Icon{}, IconCompact: icon.Icon{}, Text: "Orders", Href: "/orders"}}}
+	bag := site.FlyoutBag{Message: "Nothing here yet.", Line: nil, Heading: "", Links: []site.BagLink{{Icon: site.BagLinkIconOrders, Text: "Orders", Href: "/orders"}}}
 	mustPanic(t, "bag's Links need their Heading", func() {
 		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Text: site.GlobalNavTextEnglish, Dark: false, Clear: false, Class: ""})
 	})
 }
 
 func TestGlobalNavABagLinkWithNoTextPanics(t *testing.T) {
-	bag := site.FlyoutBag{Message: "Nothing here yet.", Line: nil, Heading: "Account", Links: []site.BagLink{{Icon: icon.Icon{}, IconCompact: icon.Icon{}, Text: "", Href: "/orders"}}}
+	bag := site.FlyoutBag{Message: "Nothing here yet.", Line: nil, Heading: "Account", Links: []site.BagLink{{Icon: site.BagLinkIconOrders, Text: "", Href: "/orders"}}}
 	mustPanic(t, "bag's Links need their Text and Href", func() {
+		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Text: site.GlobalNavTextEnglish, Dark: false, Clear: false, Class: ""})
+	})
+}
+
+func TestGlobalNavABagLinkWithNoIconPanics(t *testing.T) {
+	bag := site.FlyoutBag{Message: "Nothing here yet.", Line: nil, Heading: "Account", Links: []site.BagLink{{Icon: site.BagLinkIcon{}, Text: "Orders", Href: "/orders"}}}
+	mustPanic(t, "bag's Links need their Icon", func() {
 		example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: globalNavLinks, Search: nil, Bag: bag, Text: site.GlobalNavTextEnglish, Dark: false, Clear: false, Class: ""})
 	})
 }

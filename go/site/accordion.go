@@ -3,8 +3,8 @@ package site
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/internal/glyph"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -33,7 +33,7 @@ func (i AccordionItem) Render(w io.Writer) error {
 		panic("site.AccordionItem needs a Question")
 	}
 	return h.Details(class.Root("cui-accordion-item", i.Class), g.If(i.Open, h.Open()),
-		h.Summary(h.Class("cui-accordion-question"), g.Text(i.Question), icon.Disclosure),
+		h.Summary(h.Class("cui-accordion-question"), g.Text(i.Question), glyph.Disclosure),
 		h.Div(h.Class("cui-accordion-answer"), i.Children),
 	).Render(w)
 }

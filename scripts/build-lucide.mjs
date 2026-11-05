@@ -35,11 +35,10 @@ function source() {
 // license, the repository's LICENSE-Lucide), by its name in Go's capitals:
 // shopping-bag is [ShoppingBag]. Each takes the text's color and size (1em);
 // a utility on it sizes it otherwise. In a line of text a page adds inline:
-// Tailwind's preflight makes an <svg> a block. A part apple.com draws an icon
-// in draws ciderui's own (package icon), not Lucide's.
+// Tailwind's preflight makes an <svg> a block.
 package lucide
 
-import "github.com/at-least/ciderui/go/icon"
+import "github.com/at-least/ciderui/go/internal/glyph"
 
 const (
 	viewBox = "${viewBox}"
@@ -57,7 +56,7 @@ const (
     const constant = goName(name);
     if (seen.has(constant)) throw new Error(`${name} and ${seen.get(constant)} are both ${constant}`);
     seen.set(constant, name);
-    out += `\n// ${constant} is [${name}](https://lucide.dev/icons/${name}).\nvar ${constant} = icon.Lucide(viewBox, paint, \`${inner}\`)\n`;
+    out += `\n// ${constant} is [${name}](https://lucide.dev/icons/${name}).\nvar ${constant} = glyph.Lucide(viewBox, paint, \`${inner}\`)\n`;
   }
   return out;
 }

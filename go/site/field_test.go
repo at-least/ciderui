@@ -5,8 +5,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/example"
+	"github.com/at-least/ciderui/go/internal/glyph"
 	"github.com/at-least/ciderui/go/site"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -60,7 +60,7 @@ func TestTextAreasTextErrorAndDisabled(t *testing.T) {
 	got := example.Render(site.TextArea{ID: "note", Name: "note", Label: "Message", Value: "Happy <birthday> & more", Error: "Please enter a message.", Disabled: true, Attrs: nil, Class: "mt-4"})
 	want := `<div class="cui-field mt-4"><div class="cui-field-box"><textarea class="cui-field-textarea" id="note" name="note" placeholder=" " aria-invalid="true" aria-describedby="note-message" disabled>Happy &lt;birthday&gt; &amp; more</textarea></div>` +
 		`<label class="cui-field-label" for="note">Message</label></div><p class="cui-field-message" id="note-message">` +
-		example.Render(icon.Alert) + "Please enter a message.</p>"
+		example.Render(glyph.Alert) + "Please enter a message.</p>"
 	if got != want {
 		t.Errorf("got  %s\nwant %s", got, want)
 	}

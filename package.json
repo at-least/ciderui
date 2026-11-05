@@ -1,8 +1,5 @@
 {
   "name": "ciderui",
-  "version": "0.1.0",
-  "description": "apple.com's look as a Tailwind CSS v4 theme and a kit of components for websites: the --cui-* contract, the type, components, Inter webfonts, and a Go module for the markup",
-  "style": "index.css",
   "license": "MIT",
   "private": true,
   "scripts": {

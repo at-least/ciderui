@@ -101,7 +101,6 @@
     }
   }
 
-  /* cui-post-content, the text beside the picture: no rule of its own (markup.go reads its name here) */
   .cui-post-media {
     flex-shrink: 0;
     width: 105px;

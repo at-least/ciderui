@@ -20,10 +20,6 @@ var (
 	ConsoleColorError   = ConsoleColor{"error"}
 )
 
-func (c ConsoleColor) Attribute() string {
-	return c.value
-}
-
 type ConsoleBadgeVariant struct{ value string }
 
 var (

@@ -17,12 +17,10 @@
 
   --text-color-body: var(--cui-c-text);
   --text-color-secondary: var(--cui-c-text-2);
-  --text-color-muted: var(--cui-c-text-3);
 
   --background-color-page: var(--cui-c-bg);
   --background-color-alt: var(--cui-c-bg-alt);
 
   --color-border: var(--cui-c-border);
-  --color-accent: var(--cui-c-accent);
   --color-link: var(--cui-c-link);
 }

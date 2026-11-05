@@ -1,6 +1,6 @@
 # The font stack
 
-The probe behind ciderui's font stack, `-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif`, with the kit's `fonts.css` declaring Inter. The two claims it holds: on Apple's platforms the stack draws the system font and the page never fetches Inter; elsewhere it draws Inter, fetching its Latin face alone.
+The probe behind ciderui's font stack, `-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Noto Sans TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif`, with the kit's `fonts.css` declaring Inter. The two claims it holds: on Apple's platforms the stack draws the system font and the page never fetches Inter; elsewhere it draws Inter, fetching its Latin face alone.
 
 Why these two names and not `system-ui`: `system-ui` is a font on every platform (Segoe UI, Roboto, Noto Sans), so Inter after it would never be drawn anywhere; `-apple-system` is a font in Safari alone and `BlinkMacSystemFont` in Chrome alone, both SF on Apple's platforms and no font elsewhere (`../tracking/`: each lands on apple.com's widths within 0.0006em in its own browser, and is 0.064em off in the other's).
 
@@ -14,7 +14,7 @@ Why these two names and not `system-ui`: `system-ui` is a font on every platform
 | Chromium 151, Linux | `inter-roman-latin.woff2` alone | 512.813px | 504.797px | 512.813px | Inter |
 | Firefox 153.0 (Playwright's), Linux | `inter-roman-latin.woff2` alone | 512.817px | 504.617px | 512.817px | Inter |
 
-Measured 2026-10-19 (`results/`), Firefox on 2026-10-22 (Playwright's build, Gecko with its automation patched in, in its window on a virtual X display: `../browsers.mjs`). Not measured: Firefox on macOS (Playwright's does not run on the Mac over SSH), Windows, Android, a real iPhone.
+Measured 2026-10-19 (`results/`), Firefox on 2026-10-22 (Playwright's build, Gecko with its automation patched in, in its window on a virtual X display: `../browsers.mjs`), with the stack before its four Traditional Chinese names after Arial; with them, Chromium 151 on Linux read the same (stack 512.813px, `inter-roman-latin.woff2` alone, 2026-11-06), the others not re-read. Not measured: Firefox on macOS (Playwright's does not run on the Mac over SSH), Windows, Android, a real iPhone.
 
 iOS Safari's text autosizing drew the stack's line 1.31 times as wide (645.435px) until the page had `-webkit-text-size-adjust: 100%`, which Tailwind's preflight (4.3.3) sets on every ciderui page; `page.html` sets it as the preflight does.
 

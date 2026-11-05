@@ -3,8 +3,8 @@ package site
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/internal/glyph"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -29,9 +29,9 @@ func (m Modal) Render(w io.Writer) error {
 	if m.Dark && !m.Page {
 		panic("site.Modal is Dark only with Page")
 	}
-	closeIcon := icon.Close
+	closeIcon := glyph.Close
 	if m.Page {
-		closeIcon = icon.CloseSmall
+		closeIcon = glyph.CloseSmall
 	}
 	block := "cui-modal"
 	if m.Dark {

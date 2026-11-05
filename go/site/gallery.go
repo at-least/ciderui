@@ -4,8 +4,8 @@ import (
 	"io"
 	"strconv"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/internal/glyph"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -39,8 +39,8 @@ func (x Gallery) Render(w io.Writer) error {
 	return h.Div(class.Root("cui-gallery", x.Class),
 		h.Ul(h.Class("cui-gallery-scroller"), h.ID(x.ID), x.Children),
 		g.If(x.Paddles, h.Div(h.Class("cui-gallery-nav"),
-			h.Button(h.Class("cui-gallery-paddle"), h.Type("button"), h.Aria("controls", x.ID), h.Aria("label", "Previous"), h.Disabled(), icon.PaddlePrevious),
-			h.Button(h.Class("cui-gallery-paddle"), h.Type("button"), h.Aria("controls", x.ID), h.Aria("label", "Next"), icon.PaddleNext),
+			h.Button(h.Class("cui-gallery-paddle"), h.Type("button"), h.Aria("controls", x.ID), h.Aria("label", "Previous"), h.Disabled(), glyph.PaddlePrevious),
+			h.Button(h.Class("cui-gallery-paddle"), h.Type("button"), h.Aria("controls", x.ID), h.Aria("label", "Next"), glyph.PaddleNext),
 		)),
 		g.If(x.Dots > 0, h.Ul(h.Class("cui-gallery-dots"), dots)),
 	).Render(w)

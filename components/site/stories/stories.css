@@ -147,7 +147,6 @@
     }
   }
 
-  /* cui-story-head, the category over the headline: no rule of its own (markup.go reads its name here) */
   .cui-story-category {
     margin: 0;
     font-size: 12px;

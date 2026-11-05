@@ -3,7 +3,7 @@
  "menu choices | [role=\"menuitemradio\"][aria-checked=\"false\"] | 1200 | background-color": "rgba(0, 0, 0, 0)",
  "menu choices | [role=\"menuitemradio\"][aria-checked=\"false\"] | 1200 | border-top-width": "0px",
  "menu choices | [role=\"menuitemradio\"][aria-checked=\"false\"] | 1200 | text-align": "start",
- "menu choices | [role=\"menuitemradio\"][aria-checked=\"false\"] | 1200 | font-family": "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+ "menu choices | [role=\"menuitemradio\"][aria-checked=\"false\"] | 1200 | font-family": "-apple-system, BlinkMacSystemFont, Inter, \"Helvetica Neue\", Helvetica, Arial, \"PingFang TC\", \"Noto Sans TC\", \"Noto Sans CJK TC\", \"Microsoft JhengHei\", sans-serif",
  "menu choices | [role=\"menuitemradio\"][aria-checked=\"true\"] | 1200 | background-color": "rgba(0, 0, 0, 0)",
  "menu choices | [role=\"menuitemradio\"][aria-checked=\"false\"] | 1200 | box-width": "208px",
  "menu choices | [role=\"menuitemradio\"][aria-checked=\"true\"] .cui-console-menu-icon | 1200 | visibility": "visible",

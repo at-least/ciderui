@@ -5,8 +5,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/internal/glyph"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -63,7 +63,7 @@ func (f Field) Render(w io.Writer) error {
 }
 
 func errorMessage(id, text string) g.Node {
-	return h.P(h.Class("cui-field-message"), h.ID(id), icon.Alert, g.Text(text))
+	return h.P(h.Class("cui-field-message"), h.ID(id), glyph.Alert, g.Text(text))
 }
 
 type Option struct {
@@ -114,7 +114,7 @@ func (s Select) Render(w io.Writer) error {
 				}),
 			),
 			h.Label(h.Class("cui-field-label"), h.For(s.ID), g.Text(s.Label)),
-			icon.Dropdown.Class("cui-field-chevron"),
+			glyph.Dropdown.Class("cui-field-chevron"),
 		),
 		g.If(s.Error != "", errorMessage(message, s.Error)),
 	}.Render(w)
