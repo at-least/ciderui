@@ -44,6 +44,7 @@ const FULL = 'muse\'s, for its 回報問題 and 下一個要看 while the player
 const CAPTION = '.cui-console-player-caption';
 const PAUSED = 'muse\'s (the owner, 2026-11-05: paused, a small line at the picture\'s top left saying the story, the scene and the shot; gone on play): in tv.apple.com\'s header\'s first column, 711px and empty on its trailers (tv-player:header, grid-template-columns 711px 829px), on the header\'s 26px row; 15px semibold white under the cue\'s shadow (--cui-video-cue-shadow) so it reads on a bright picture with no box, cut short with an ellipsis before the volume; tv.apple.com shows no such line';
 const INTRO = 'muse\'s pre-play layer (the owner, 2026-11-05: over the cover the title large, the demo\'s length, its description\'s first sentence, one clear Play; tv.apple.com\'s pre-play page was not measured, so golden): at the picture\'s foot in the overlay\'s room (30px at the sides, tv-player:scrim), on tv.apple.com\'s gradient (--cui-video-scrim), the lines white under the cue\'s shadow; the length 15px medium and the sentence 17px on 24px in the controls\' 90% white, two lines at most, 36em wide';
+const END = 'muse\'s end layer (the owner, 2026-11-05: on end a 「看完了」 layer fades in over the last picture, the user\'s next step under it and a small 「重新播放」; tv.apple.com\'s end of a film was not measured, so golden): the intro\'s layer, its place, gradient and title, in the other direction; the next step in the length\'s type (15px medium, the controls\' 90% white), its buttons and links one under another 8px apart, 14px under the title as the intro\'s Play is';
 const NO_SLIDE = 'faded where they are: tv.apple.com\'s header goes 20px up and its footer 20px down as they hide (tv-player-playing:hidden.*), a slide that only draws the eye (DESIGN.md decision 25); the fades\' durations and curves its own';
 
 export const cases = [
@@ -239,6 +240,40 @@ export const cases = [
     checks: [
       { target: '.cui-console-player-intro', props: ['opacity', 'visibility'], golden: 'playing (data-intro dropped by the page\'s script), the layer gone' },
       { target: '.cui-console-player-overlay', props: ['visibility'], golden: 'and the controls back' },
+    ],
+  },
+  {
+    name: 'player end',
+    html: ex('end'),
+    widths: TV,
+    height: 900,
+    checks: [
+      { target: '.cui-console-player-end', props: ['display', 'flex-direction', 'justify-content', 'align-items', 'padding-left', 'padding-bottom', 'background-image', 'opacity', 'visibility'], golden: END },
+      { target: '.cui-console-player-overlay', props: ['visibility'], golden: 'its controls hidden under it: the next step and Play Again, nothing else to press' },
+      { target: '.cui-console-player-end-title', props: ['font-size', 'line-height', 'font-weight', 'color', 'box-left'], golden: `${END}; the title the intro's, 4% of the player and 26px at the least` },
+      { target: '.cui-console-player-end-body', props: ['display', 'flex-direction', 'align-items', 'row-gap', 'margin-top', 'max-width', 'font-size', 'line-height', 'font-weight', 'color'], golden: END },
+      { target: '.cui-console-player-end-body > p', props: ['margin-top', 'margin-bottom'], golden: 'its words without a paragraph\'s margin: the 8px gap spaces them' },
+      { target: '.cui-console-player-end [data-control="replay"]', props: ['display', 'box-height', 'background-color', 'margin-top'], golden: 'Play Again, the bar\'s capsule of words, smaller than the next step, 14px under it' },
+      { target: '.cui-console-player-end', props: ['transition-property', 'transition-duration'], golden: 'it fades in in the subtitles\' 0.4s curve, as the intro fades out' },
+    ],
+  },
+  {
+    name: 'player end not ended',
+    html: ex('end').replace(' data-end', ''),
+    widths: [1600],
+    height: 900,
+    checks: [
+      { target: '.cui-console-player-end', props: ['opacity', 'visibility'], golden: 'before the end (data-end not set, or dropped as it plays again), the layer gone' },
+      { target: '.cui-console-player-overlay', props: ['visibility'], golden: 'and the controls there' },
+    ],
+  },
+  {
+    name: 'player end empty',
+    html: ex('end').replace(/<div class="cui-console-player-end-body">[\s\S]*?<\/div>\n?<button class="cui-console-player-text-btn" type="button" data-control="replay">/, '<div class="cui-console-player-end-body"></div><button class="cui-console-player-text-btn" type="button" data-control="replay">'),
+    widths: [1600],
+    height: 900,
+    checks: [
+      { target: '.cui-console-player-end-body', props: ['display'], golden: 'no next step yet (the page fills it as the film ends): no room kept for it' },
     ],
   },
   {

@@ -38,6 +38,19 @@ type ConsolePlayerIntro struct {
 	RestartLabel string
 }
 
+// ConsolePlayerEnd is what the player shows over its last picture once it
+// has played to the end, in place of its controls: a title, the page's own
+// next step under it, and a smaller button that plays it again. The page's
+// script sets the player's data-end as the video ends and drops it as it
+// plays again, the layer fading in and out; ConsolePlayer's Ended writes it.
+type ConsolePlayerEnd struct {
+	Title string
+	// Body is the page's: its words, buttons and links, one under another;
+	// nil for none.
+	Body        g.Node
+	ReplayLabel string
+}
+
 // ConsolePlayer is a video's controls over it, tv.apple.com's player's. The
 // page's script plays the video and keeps the markup current: data-state,
 // data-controls="hidden" (while playing and the pointer is still),
@@ -46,8 +59,8 @@ type ConsolePlayerIntro struct {
 // shows its exit glyph), each range's value and --cui-console-player-value,
 // the times, the cue, the caption. It finds each control by its
 // data-control: play, volume, mute, subtitles, full-screen, scrubber,
-// elapsed, remaining, caption, the intro's start and restart, and the
-// scrubber's preview
+// elapsed, remaining, caption, the intro's start and restart, the end's
+// replay, and the scrubber's preview
 // (preview), hidden until the page fills its picture and line and shows it
 // over the time under the pointer.
 type ConsolePlayer struct {
@@ -93,6 +106,10 @@ type ConsolePlayer struct {
 	FullScreenControls g.Node
 	// Intro: the layer before it first plays (data-intro); nil for none.
 	Intro *ConsolePlayerIntro
+	// End: the layer once it has played to the end; nil for none. Ended
+	// shows it (data-end).
+	End   *ConsolePlayerEnd
+	Ended bool
 	// Popovers are the page's own (cui-console-popover, a field its
 	// FullScreenControls open), written inside the player after its menus,
 	// so they open over it in full screen and are placed as its menus are;
@@ -116,6 +133,12 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 	if p.Intro != nil && (p.Intro.Title == "" || p.Intro.PlayLabel == "" || p.Intro.RestartLabel == "") {
 		panic("console.ConsolePlayerIntro needs a Title, a PlayLabel and a RestartLabel")
 	}
+	if p.Ended && p.End == nil {
+		panic("console.ConsolePlayer needs an End to be Ended")
+	}
+	if p.End != nil && (p.End.Title == "" || p.End.ReplayLabel == "") {
+		panic("console.ConsolePlayerEnd needs a Title and a ReplayLabel")
+	}
 	if p.CueLang != "" && p.Cue == "" {
 		panic("console.ConsolePlayer needs a Cue with a CueLang")
 	}
@@ -136,7 +159,7 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 	button := func(control, label, menu string, glyph g.Node) g.Node {
 		return h.Button(h.Class("cui-console-player-btn"), h.Type("button"), h.Data("control", control), h.Aria("label", label), optionalAttr("popovertarget", menu), glyph)
 	}
-	return h.Div(class.Root("cui-console-player", p.Class), optionalAttr("data-state", p.State.value), g.If(p.ControlsHidden, g.Attr("data-controls", "hidden")), g.If(p.Muted, g.Attr("data-muted")), g.If(p.FullScreen, g.Attr("data-fullscreen")), g.If(p.Intro != nil, g.Attr("data-intro")),
+	return h.Div(class.Root("cui-console-player", p.Class), optionalAttr("data-state", p.State.value), g.If(p.ControlsHidden, g.Attr("data-controls", "hidden")), g.If(p.Muted, g.Attr("data-muted")), g.If(p.FullScreen, g.Attr("data-fullscreen")), g.If(p.Intro != nil, g.Attr("data-intro")), g.If(p.Ended, g.Attr("data-end")),
 		p.Video,
 		h.Div(h.Class("cui-console-player-overlay"),
 			h.Div(h.Class("cui-console-player-header"),
@@ -172,6 +195,13 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 			),
 		),
 		g.Iff(p.Intro != nil, func() g.Node { return intro(*p.Intro) }),
+		g.Iff(p.End != nil, func() g.Node {
+			return h.Div(h.Class("cui-console-player-end"),
+				h.P(h.Class("cui-console-player-end-title"), g.Text(p.End.Title)),
+				h.Div(h.Class("cui-console-player-end-body"), p.End.Body),
+				h.Button(h.Class("cui-console-player-text-btn"), h.Type("button"), h.Data("control", "replay"), g.Text(p.End.ReplayLabel)),
+			)
+		}),
 		g.If(p.SubtitlesMenu.ID != "", p.SubtitlesMenu),
 		p.Popovers,
 	).Render(w)

@@ -461,8 +461,12 @@
 
   /* before it first plays (data-intro, the page's script's to drop): its
      title, length and summary over the picture's foot at the overlay's
-     room, one Play, its controls hidden; it fades out as the film plays */
-  .cui-console-player-intro {
+     room, one Play, its controls hidden; it fades out as the film plays.
+     Played to the end (data-end, the page's script's to set): the same
+     layer over the last picture, its title, the page's next step and a
+     smaller Play Again; it fades in */
+  .cui-console-player-intro,
+  .cui-console-player-end {
     grid-area: 1 / 1;
     position: relative;
     container-type: inline-size;
@@ -481,17 +485,19 @@
       text-shadow: var(--cui-video-cue-shadow);
     }
 
-    :where(.cui-console-player:not([data-intro])) > & {
+    :where(.cui-console-player:not([data-intro])) > &.cui-console-player-intro,
+    :where(.cui-console-player:not([data-end])) > &.cui-console-player-end {
       opacity: 0;
       visibility: hidden;
     }
   }
 
-  :where(.cui-console-player[data-intro]) > .cui-console-player-overlay {
+  :where(.cui-console-player[data-intro], .cui-console-player[data-end]) > .cui-console-player-overlay {
     visibility: hidden;
   }
 
-  .cui-console-player-intro-title {
+  .cui-console-player-intro-title,
+  .cui-console-player-end-title {
     font-size: max(26px, 4cqw);
     line-height: 1.15;
     font-weight: 700;
@@ -512,6 +518,34 @@
     font-size: 17px;
     line-height: 24px;
     color: var(--cui-c-on-video-control);
+  }
+
+  /* the page's next step: its words in the length's type, its buttons
+     and links one under another */
+  .cui-console-player-end-body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+    max-width: 36em;
+    margin-top: 14px;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    color: var(--cui-c-on-video-control);
+    text-shadow: var(--cui-video-cue-shadow);
+
+    &:empty {
+      display: none;
+    }
+
+    & p {
+      margin: 0;
+    }
+  }
+
+  .cui-console-player-end > [data-control="replay"] {
+    margin-top: 14px;
   }
 
   .cui-console-player-intro-actions {

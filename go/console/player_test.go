@@ -56,6 +56,8 @@ func player(state console.ConsolePlayerState, hidden bool, title string) console
 		FullScreenAriaLabel: "Full Screen",
 		FullScreenControls:  nil,
 		Intro:               nil,
+		End:                 nil,
+		Ended:               false,
 		Popovers:            nil,
 		Class:               "aspect-video",
 	}
@@ -89,7 +91,23 @@ func intro() console.ConsolePlayer {
 	return p
 }
 
+// played to the end, over its last picture: the page's next step, a sentence, a button and a link, and Play Again
+func end() console.ConsolePlayer {
+	p := stills()
+	p.Ended = true
+	p.State = console.ConsolePlayerStatePaused
+	p.Position = p.Duration
+	p.Cue, p.CueLang = "", ""
+	p.End = &console.ConsolePlayerEnd{Title: "Finished", ReplayLabel: "Play Again", Body: g.Group{
+		h.P(g.Text("Once approved, the other 9 languages are recorded.")),
+		h.Button(h.Class("cui-console-btn"), h.Data("variant", "filled"), h.Type("button"), g.Text("Approve Recordings")),
+		h.A(h.Class("cui-console-player-text-btn"), h.Href("#next"), g.Text("Next: The Wedding Feast ›")),
+	}}
+	return p
+}
+
 var playerExamples = map[string]console.ConsolePlayer{
+	"end":         end(),
 	"intro":       intro(),
 	"full-screen": fullScreen(),
 	"paused":      player(console.ConsolePlayerStatePaused, false, "The Wedding"),
@@ -130,6 +148,10 @@ func TestPlayerPanics(t *testing.T) {
 		{"needs a Cue with a CueLang", func(p *console.ConsolePlayer) { p.CueLang = "en" }},
 		{"Volume is 0 to 100", func(p *console.ConsolePlayer) { p.Volume = 101 }},
 		{"Position is 0 to its Duration", func(p *console.ConsolePlayer) { p.Position = 63 }},
+		{"needs an End to be Ended", func(p *console.ConsolePlayer) { p.Ended = true }},
+		{"needs a Title and a ReplayLabel", func(p *console.ConsolePlayer) {
+			p.End = &console.ConsolePlayerEnd{Title: "Finished", Body: nil, ReplayLabel: ""}
+		}},
 		{"needs a Title, a PlayLabel and a RestartLabel", func(p *console.ConsolePlayer) {
 			p.Intro = &console.ConsolePlayerIntro{Title: "", Detail: "", Summary: "", PlayLabel: "Play", RestartLabel: "Start Over"}
 		}},
