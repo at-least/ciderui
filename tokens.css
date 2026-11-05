@@ -182,6 +182,10 @@
   /* a cue's shadow under its white, in em so it grows with the type: not
      tv.apple.com's, whose cues are its <video>'s own text track; muse's */
   --cui-video-cue-shadow: 0 0.05em 0.1em rgb(0 0 0 / 0.6), 0 0 0.5em rgb(0 0 0 / 0.4);
+  /* the scrubber's preview's picture: a hairline that edges it on a
+     picture as dark as its own, a drop that lifts it off a bright one;
+     muse's, tv.apple.com's trailers showing none */
+  --cui-video-preview-shadow: 0 0 0 1px rgb(255 255 255 / 0.15), 0 4px 12px rgb(0 0 0 / 0.4);
 
   --cui-shadow-card: 2px 4px 12px rgb(0 0 0 / 0.08);
   --cui-shadow-card-hover: 2px 4px 16px rgb(0 0 0 / 0.16);

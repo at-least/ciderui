@@ -28,6 +28,13 @@ const languages = (html) => {
   return `<div style="height:50px"></div><div style="display:flex"><div style="flex:1;min-width:0;padding:0 24px"><div style="margin:16px auto 0;max-width:calc((100vh - 14rem) * 16 / 9)">${player}</div></div><div style="flex:none;width:288px"></div></div>`;
 };
 const LAST = '#subtitles [value="vi"]';
+// the preview as the page's script shows it: its picture, its line and the pointer's x (300px into the bar)
+const previewing = (html) => html
+  .replace('aria-hidden="true" hidden>', 'aria-hidden="true" style="--cui-console-player-preview-x: 300px">')
+  .replace('<img class="cui-console-player-preview-picture" alt="">', `<img class="cui-console-player-preview-picture" alt="" src="${html.match(/<img class="absolute[^>]* src="([^"]+)"/)[1]}">`)
+  .replace('<p class="cui-console-player-preview-label"></p>', '<p class="cui-console-player-preview-label">場景 4　大野狼到外婆家 · 2:31</p>');
+const PREVIEW = '.cui-console-player-preview';
+const PREVIEW_WHY = 'muse\'s, tv.apple.com\'s trailers scrubbing with no preview (the owner, 2026-11-05: the shot\'s thumbnail, its scene and the time over the pointer): the storyboard\'s 320px thumbnail at 160px, sharp at 2x; 12px above the bar, clear of the thumb; the line under it 12px semibold in the times\' tabular figures, white under the cue\'s shadow, on one line however long the scene\'s name';
 const NO_SLIDE = 'faded where they are: tv.apple.com\'s header goes 20px up and its footer 20px down as they hide (tv-player-playing:hidden.*), a slide that only draws the eye (DESIGN.md decision 25); the fades\' durations and curves its own';
 
 export const cases = [
@@ -63,7 +70,13 @@ export const cases = [
       { target: '.cui-console-player-time:last-of-type', props: ['color'], apple: ['tv-player', 'remaining'] },
       { target: SCRUB, props: ['--cui-console-player-track', '--cui-console-player-thumb'], apple: ['tv-player', 'scrubber'], as: { '--cui-console-player-track': '--progress-track-height', '--cui-console-player-thumb': '--progress-thumb-height' } },
       { target: SCRUB, props: ['cursor'], apple: ['tv-player', 'scrubber'] },
-      { target: SCRUB, props: ['box-height', 'appearance', '--cui-console-player-value'], golden: 'the thumb\'s 11px, tv.apple.com\'s (tv-player:scrubber --progress-thumb-height); the share played the page\'s, written as a percentage' },
+      { target: SCRUB, props: ['box-height', 'appearance', '--cui-console-player-value'], golden: 'a 44px target for any pointer, the HIG\'s default (reference/touch/), where tv.apple.com\'s is 25px (tv-player:scrubber\'s box); the share played the page\'s, written as a percentage' },
+      { target: SCRUB, props: ['position'], golden: 'positioned, over the times\' text its target reaches down into: unpositioned, a point on the time played hit the <time>, not the range' },
+      { target: SCRUB, props: ['margin-top', 'margin-bottom'], golden: 'its margins give back all but the thumb\'s 11px, tv.apple.com\'s row (tv-player:progress.bar 11px 14px): the bar sits where it did, the line as thin' },
+      { target: '.cui-console-player-progress', props: ['grid-template-rows'], apple: ['tv-player', 'progress.bar'] },
+      { target: SCRUB, props: ['--cui-console-player-track'], state: 'active', golden: 'held, the line 8px, thicker under the thumb (the owner, 2026-11-05: 「thicker while dragged」); tv.apple.com\'s forced :active reads 5px (tv-player:scrubber:active), its drag drawn by its script' },
+      { target: '.cui-console-player-buttons', props: ['z-index', 'position'], golden: 'over the scrubber\'s target, which reaches 4.5px up into their row: a click on a button\'s foot is the button\'s' },
+      { target: PREVIEW, props: ['display', 'pointer-events'], golden: 'the preview hidden until the page\'s script shows it, and never in the pointer\'s way' },
       { target: VOLUME, props: ['--cui-console-player-track', '--cui-console-player-thumb'], apple: ['tv-player', 'volume.range'], as: { '--cui-console-player-track': '--progress-track-height', '--cui-console-player-thumb': '--progress-thumb-height' } },
       { target: VOLUME, props: ['box-width'], golden: 'tv.apple.com\'s volume, 100px (tv-player:volume.range); its thumb white as the scrubber\'s, where tv.apple.com\'s is #d0d0d0 until hovered: one thumb' },
       { target: SCRUB, props: ['outline-style', 'outline-width', 'outline-offset'], state: 'focus-visible', golden: 'base.css\'s one focus ring (rule 9), where tv.apple.com draws a 4px blue one' },
@@ -85,6 +98,28 @@ export const cases = [
       { target: '.cui-console-player-footer', props: ['box-top'], golden: 'the footer, under the subtitles, where it is with none' },
       { target: '.cui-console-player-subtitles', props: ['pointer-events', 'transition-property', 'transition-duration', 'transition-timing-function'], golden: 'the controls under it take the pointer; it moves as the footer fades, in the footer\'s 0.4s (tv-player-playing:hidden.footer)' },
       { target: CUE, props: ['hit'], golden: 'a click on the cue reaches the overlay under it, which the page\'s script hears (a click on the picture plays or pauses)' },
+    ],
+  },
+  {
+    name: 'player scrub preview',
+    html: previewing(ex('stills')),
+    widths: TV,
+    height: 900,
+    checks: [
+      { target: PREVIEW, props: ['box-width', 'box-height', 'box-left', 'box-top', 'display', 'row-gap', 'justify-items'], golden: PREVIEW_WHY },
+      { target: '.cui-console-player-preview-picture', props: ['box-width', 'box-height', 'border-top-left-radius', 'object-fit', 'background-color', 'box-shadow'], golden: PREVIEW_WHY },
+      { target: '.cui-console-player-preview-label', props: ['box-width', 'box-left'], golden: 'a line longer than the picture centred under it, over both its sides' },
+      { target: '.cui-console-player-preview-label', props: ['font-size', 'line-height', 'font-weight', 'color', 'white-space', 'font-variant-numeric', 'text-shadow'], golden: PREVIEW_WHY },
+      { target: PREVIEW, props: ['hit'], golden: 'it takes no pointer: what is under it does (the overlay, the title), so it never flickers under the pointer that shows it' },
+    ],
+  },
+  {
+    name: 'player scrub preview at the start',
+    html: previewing(ex('stills')).replace('--cui-console-player-preview-x: 300px', '--cui-console-player-preview-x: 4px'),
+    widths: [1600],
+    height: 900,
+    checks: [
+      { target: PREVIEW, props: ['box-left'], golden: 'the pointer near the bar\'s start: the preview stops at it, inside the bar (the bar at 30px)' },
     ],
   },
   {
@@ -211,7 +246,9 @@ export const cases = [
     checks: [
       { target: BTN, props: ['box-width', 'box-height'], golden: 'a button 44px each way at least on a touch screen (the HIG\'s default, reference/touch/)' },
       { target: BTN, props: ['color'], state: 'hover', rest: 'a tapped button keeps no hover (rule 5)' },
-      { target: SCRUB, props: ['box-height'], golden: 'a range 44px tall on a touch screen, its track and thumb as on a desktop\'s' },
+      { target: SCRUB, props: ['box-height'], golden: 'a range 44px tall on a touch screen as on a desktop, its track and thumb the same' },
+      { target: SCRUB, props: ['margin-top', 'margin-bottom'], golden: 'on a touch screen its row its whole target: the buttons above are 44px too, and a target reaching up into theirs would leave each short (the touch audit read 39px)' },
+      { target: '.cui-console-player-progress', props: ['grid-template-rows'], golden: 'the range\'s row 44px on a touch screen, over the times\' 14px' },
     ],
   },
 ];

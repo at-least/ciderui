@@ -61,7 +61,8 @@ const paths = pages(SITE).map((f) => `/${relative(SITE, f).replace(/index\.html$
 const INSPECT = `(async () => {
   await document.fonts.ready;
   await new Promise((r) => setTimeout(r, 700));
-  const broken = (doc) => [...doc.images].filter((i) => !i.complete || !i.naturalWidth).map((i) => i.getAttribute('src').slice(0, 48));
+  // an <img> with no src is one the page's script fills (the player's preview)
+  const broken = (doc) => [...doc.images].filter((i) => i.hasAttribute('src') && (!i.complete || !i.naturalWidth)).map((i) => i.getAttribute('src').slice(0, 48));
   return {
     width: innerWidth,
     // against the root's width, not the window's, which holds a scrollbar

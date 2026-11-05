@@ -141,6 +141,9 @@
 
   .cui-console-player-buttons {
     grid-area: buttons;
+    /* over the scrubber's hit area, which reaches up into this row */
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: center;
     gap: 14px;
@@ -186,6 +189,7 @@
 
   .cui-console-player-progress {
     grid-area: progress;
+    position: relative;
     display: grid;
     grid-template-columns: auto minmax(0, 1fr) auto;
     grid-template-areas: "range range range" "elapsed . remaining";
@@ -209,18 +213,24 @@
   }
 
   /* a range the page's script fills: --cui-console-player-value, the share
-     played (or the volume), as a percentage */
+     played (or the volume), as a percentage. Its box is the 44px a pointer
+     hits; its margins give back all but the thumb's height, so its row
+     stays the thumb's and the line stays thin */
   .cui-console-player-range {
     --cui-console-player-value: 0%;
     --cui-console-player-track: 5px;
     --cui-console-player-thumb: 11px;
+    --cui-console-player-hit: 2.75rem;
     --cui-console-player-fill: linear-gradient(to right, var(--cui-c-on-video) var(--cui-console-player-value), var(--cui-c-video-track) var(--cui-console-player-value));
 
     grid-area: range;
+    /* over the times' text its target reaches down into: unpositioned,
+       the text takes the pointer there */
+    position: relative;
     display: block;
     width: 100%;
-    height: var(--cui-console-player-thumb);
-    margin: 0;
+    height: var(--cui-console-player-hit);
+    margin: calc((var(--cui-console-player-thumb) - var(--cui-console-player-hit)) / 2) 0;
     padding: 0;
     border: 0;
     background-color: transparent;
@@ -259,10 +269,60 @@
       box-shadow: var(--cui-video-thumb-shadow);
     }
 
+    /* held, the line thicker under the thumb */
+    &:active {
+      --cui-console-player-track: 8px;
+    }
+
     /* tv.apple.com's volume, 100px beside its button */
     :where(.cui-console-player-header) > & {
       width: 100px;
     }
+  }
+
+  /* the scrubber's preview, over the time under the pointer: the page's
+     script fills its picture and line, writes
+     --cui-console-player-preview-x (the pointer's x in the bar, a length)
+     and shows it; it stays inside the bar's ends */
+  .cui-console-player-preview {
+    --cui-console-player-preview-x: 50%;
+    --cui-console-player-preview-width: 160px;
+
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: clamp(var(--cui-console-player-preview-width) / 2, var(--cui-console-player-preview-x), 100% - var(--cui-console-player-preview-width) / 2);
+    translate: -50% 0;
+    display: grid;
+    /* the picture its width; a longer line overflows both its sides */
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 6px;
+    width: var(--cui-console-player-preview-width);
+    pointer-events: none;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  .cui-console-player-preview-picture {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 6px;
+    background-color: var(--cui-c-video);
+    box-shadow: var(--cui-video-preview-shadow);
+  }
+
+  .cui-console-player-preview-label {
+    margin: 0;
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    text-shadow: var(--cui-video-cue-shadow);
   }
 
   /* hidden by the page's script while the video plays and the pointer is
@@ -308,8 +368,10 @@
       min-height: 2.75rem;
     }
 
+    /* the buttons above grow to 44px too: the range's row is its whole
+       target, so neither reaches into the other */
     .cui-console-player-range {
-      height: 2.75rem;
+      margin: 0;
     }
 
     .cui-console-player-progress {

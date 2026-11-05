@@ -443,6 +443,9 @@ check('--cui-video-scrim is tv.apple.com\'s tv-player:scrim.gradient background-
 // cues are its <video>'s own text track, none read. Two layers: a tight one that edges each letter on a white picture, a wide
 // faint one that darkens round the line without a box's edge
 check('--cui-video-cue-shadow is muse\'s golden', vars['--cui-video-cue-shadow'], '0 0.05em 0.1em rgb(0 0 0 / 0.6), 0 0 0.5em rgb(0 0 0 / 0.4)');
+// golden: muse's scrubber preview (the owner, 2026-11-05: a thumbnail over the time under the pointer); tv.apple.com's
+// trailers scrub with no preview. A 1px hairline edges it over a dark picture, a soft drop lifts it off a bright one
+check('--cui-video-preview-shadow is muse\'s golden', vars['--cui-video-preview-shadow'], '0 0 0 1px rgb(255 255 255 / 0.15), 0 4px 12px rgb(0 0 0 / 0.4)');
 check('--cui-video-thumb-shadow is tv.apple.com\'s tv-player:volume.range --volume-thumb-box-shadow', vars['--cui-video-thumb-shadow'], ref('tv-player', 'volume.range', W, '--volume-thumb-box-shadow'));
 for (const [name, state] of [['--cui-shadow-card'], ['--cui-shadow-card-hover', 'hover']]) {
   for (const probe of ['card', 'card.dark']) {

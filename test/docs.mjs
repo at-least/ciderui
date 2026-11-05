@@ -90,7 +90,8 @@ for (const width of [1440, 390]) {
         return {
           title: f.title,
           css: Boolean(sheet && sheet.cssRules.length),
-          images: [...doc.images].filter((i) => !i.complete || i.naturalWidth === 0).map((i) => i.outerHTML.slice(0, 60)),
+          // an <img> with no src is one the page's script fills (the player's preview)
+          images: [...doc.images].filter((i) => i.hasAttribute('src') && (!i.complete || i.naturalWidth === 0)).map((i) => i.outerHTML.slice(0, 60)),
           width: f.getBoundingClientRect().width,
           page: document.documentElement.clientWidth,
           height: f.clientHeight,

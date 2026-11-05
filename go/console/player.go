@@ -25,7 +25,9 @@ var (
 // data-controls="hidden" (while playing and the pointer is still), each
 // range's value and --cui-console-player-value, the times, the cue. It finds
 // each control by its data-control: play, volume, mute, subtitles, voices,
-// full-screen, scrubber, elapsed, remaining.
+// full-screen, scrubber, elapsed, remaining, and the scrubber's preview
+// (preview), hidden until the page fills its picture and line and shows it
+// over the time under the pointer.
 type ConsolePlayer struct {
 	// Video is the picture, the player's first child: the page's <video>
 	// (its source and tracks; no controls attribute), or an element the
@@ -117,6 +119,11 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 				),
 				h.Div(h.Class("cui-console-player-progress"),
 					rangeInput("scrubber", p.Position, p.Duration, p.ScrubAriaLabel, clock(p.Position), played),
+					// the range's aria-valuetext says the time: the preview is for the eye
+					h.Div(h.Class("cui-console-player-preview"), h.Data("control", "preview"), h.Aria("hidden", "true"), g.Attr("hidden"),
+						h.Img(h.Class("cui-console-player-preview-picture"), h.Alt("")),
+						h.P(h.Class("cui-console-player-preview-label")),
+					),
 					h.Time(h.Class("cui-console-player-time"), h.Data("control", "elapsed"), g.Text(clock(p.Position))),
 					h.Time(h.Class("cui-console-player-time"), h.Data("control", "remaining"), g.Text("-"+clock(p.Duration-p.Position))),
 				),

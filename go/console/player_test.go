@@ -125,7 +125,7 @@ func TestPlayerWritesNoMenuButtonWithoutItsMenu(t *testing.T) {
 // the hooks a page's script finds the controls by: each once
 func TestPlayerMarksEachControl(t *testing.T) {
 	got := example.Render(player(console.ConsolePlayerStatePaused, false, ""))
-	for _, control := range []string{"play", "volume", "mute", "subtitles", "voices", "full-screen", "scrubber", "elapsed", "remaining"} {
+	for _, control := range []string{"play", "volume", "mute", "subtitles", "voices", "full-screen", "scrubber", "elapsed", "remaining", "preview"} {
 		if n := strings.Count(got, `data-control="`+control+`"`); n != 1 {
 			t.Errorf("data-control=%q written %d times, want 1", control, n)
 		}

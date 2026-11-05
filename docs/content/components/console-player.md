@@ -42,7 +42,8 @@ Its picture can be any element in the video’s place, its first child: here a `
 | `cui-console-player-buttons` | the buttons’ row, 14px apart |
 | `cui-console-player-btn` | a button of one glyph, 24px |
 | `cui-console-player-progress` | the scrubber over the two times |
-| `cui-console-player-range` | an `<input type="range">`: the scrubber, or the volume in the header |
+| `cui-console-player-range` | an `<input type="range">`: the scrubber, or the volume in the header; 44px a pointer hits for an 11px row, its line 5px, 8px while held |
+| `cui-console-player-preview` | over the scrubber, at the pointer: a picture (`cui-console-player-preview-picture`, 160px at 16:9) over a line (`cui-console-player-preview-label`), hidden until the page’s script shows it; it stays inside the bar’s ends and takes no pointer |
 | `cui-console-player-time` | the time played, then the time left |
 
 ## States
@@ -54,6 +55,8 @@ ciderui has no script: the page’s plays the video and keeps the markup in step
 | `data-state="playing"` | `cui-console-player` | playing: the centre button shows pause. None, paused |
 | `data-controls="hidden"` | `cui-console-player` | the controls faded out: tv.apple.com hides them while the video plays and the pointer is still, and keeps them while it is paused. They show again while the focus is inside the player |
 | `--cui-console-player-value` | `cui-console-player-range` | the part played, or the volume, as a percentage (`style="--cui-console-player-value: 8%"`) |
+| `hidden` | `cui-console-player-preview` | written hidden; the script takes it away while the pointer is over the scrubber or its thumb is held |
+| `--cui-console-player-preview-x` | `cui-console-player-preview` | the pointer’s x in the bar, a length (`300px`): the preview’s centre |
 
 The script also changes the centre button’s `aria-label` (Play, Pause) with the state, and writes the cue’s text (and its `lang`) as the picture plays.
 
@@ -69,6 +72,7 @@ The script finds each control by its `data-control`, the same on every player:
 | `full-screen` | the full-screen button |
 | `scrubber` | the scrubber’s range |
 | `elapsed`, `remaining` | the time played, and the time left |
+| `preview` | the scrubber’s preview: the script sets its `<img>`’s `src` and its `<p>`’s text |
 
 The cue is `cui-console-player-cue`.
 
