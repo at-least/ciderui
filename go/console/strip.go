@@ -4,22 +4,22 @@ import (
 	"io"
 
 	"github.com/at-least/ciderui/go/internal/class"
-	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleStripMark is what the reader decided of an item's shot: kept, or to
-// redraw. A doubt is ConsoleStripItem.DoubtAriaLabel, beside either.
+// ConsoleStripMark is who an item waits on, a dot in its picture's corner:
+// the reader, or someone at work on it. An item with neither has no mark.
 type ConsoleStripMark struct{ value string }
 
 var (
 	ConsoleStripMarkNone = ConsoleStripMark{value: ""}
-	// ConsoleStripMarkKept: a check in the picture's corner, beside a doubt's
-	// dot.
-	ConsoleStripMarkKept = ConsoleStripMark{"kept"}
-	// ConsoleStripMarkRedraw: to redraw, a red edge inside the picture.
-	ConsoleStripMarkRedraw = ConsoleStripMark{"redraw"}
+	// ConsoleStripMarkWaiting: waiting for the reader (a call to make, a fix
+	// to look at), a dot in console-status's warning color.
+	ConsoleStripMarkWaiting = ConsoleStripMark{"waiting"}
+	// ConsoleStripMarkWorking: someone is at work on it (a redraw, a report
+	// being fixed), a gray dot.
+	ConsoleStripMarkWorking = ConsoleStripMark{"working"}
 )
 
 // ConsoleStripItemVariant is how an item's picture is cropped to 16:9.
@@ -35,7 +35,9 @@ var (
 
 // ConsoleStrip is one row of 16:9 thumbnails scrolled sideways, in groups
 // under their names (a storyboard's shots by scene under its player), one of
-// them current.
+// them current. The page's script may set --cui-console-strip-progress
+// (0% to 100%) on the current item: a line over its picture's foot fills to
+// it, how far the shot has played.
 type ConsoleStrip struct {
 	AriaLabel string
 	Groups    []ConsoleStripGroup
@@ -50,8 +52,8 @@ type ConsoleStripGroup struct {
 type ConsoleStripItem struct {
 	Href string
 	Src  string
-	// Alt is the link's name, with Caption, Detail, DoubtAriaLabel and
-	// MarkAriaLabel after it.
+	// Alt is the link's name, with Caption, Detail, Tip and MarkAriaLabel
+	// after it.
 	Alt  string
 	Lazy bool
 	// Current: aria-current="true", ringed.
@@ -63,11 +65,11 @@ type ConsoleStripItem struct {
 	Detail string
 	// Unused: nothing uses it, dimmed (data-state="unused").
 	Unused bool
-	// DoubtAriaLabel: a doubt waiting for the reader's call, a dot in
-	// console-status's warning color; "" none.
-	DoubtAriaLabel string
-	Mark           ConsoleStripMark
-	MarkAriaLabel  string
+	// Tip: a line shown over the item while the pointer is on it (a shot's
+	// first spoken line); "" none.
+	Tip           string
+	Mark          ConsoleStripMark
+	MarkAriaLabel string
 }
 
 func (s ConsoleStrip) Render(w io.Writer) error {
@@ -114,22 +116,12 @@ func stripItem(item ConsoleStripItem) g.Node {
 	if (item.Mark == ConsoleStripMarkNone) != (item.MarkAriaLabel == "") {
 		panic("console.ConsoleStripItem needs a MarkAriaLabel with a Mark, and none without")
 	}
-	var mark g.Node
-	if item.Mark != ConsoleStripMarkNone {
-		mark = stripMark(item.Mark.value, item.MarkAriaLabel, g.If(item.Mark == ConsoleStripMarkKept, lucide.Check))
-	}
-	// the doubt before the mark: the stylesheet moves a check that follows a
-	// dot out of its corner
 	return h.A(h.Class("cui-console-strip-item"), h.Href(item.Href), g.If(item.Variant != ConsoleStripItemVariantFrame, h.Data("variant", item.Variant.value)),
 		g.If(item.Unused, h.Data("state", "unused")), g.If(item.Current, h.Aria("current", "true")),
 		h.Img(h.Src(item.Src), h.Alt(item.Alt), g.If(item.Lazy, h.Loading("lazy"))),
 		g.If(item.Caption != "", h.Span(h.Class("cui-console-strip-caption"), g.Text(item.Caption))),
 		g.If(item.Detail != "", h.Span(h.Class("cui-console-strip-detail"), g.Text(item.Detail))),
-		g.If(item.DoubtAriaLabel != "", stripMark("doubt", item.DoubtAriaLabel, nil)),
-		mark,
+		g.If(item.Tip != "", h.Span(h.Class("cui-console-strip-tip"), g.Text(item.Tip))),
+		g.If(item.Mark != ConsoleStripMarkNone, h.Span(h.Class("cui-console-strip-mark"), h.Data("state", item.Mark.value), h.Role("img"), h.Aria("label", item.MarkAriaLabel))),
 	)
-}
-
-func stripMark(state, ariaLabel string, glyph g.Node) g.Node {
-	return h.Span(h.Class("cui-console-strip-mark"), h.Data("state", state), h.Role("img"), h.Aria("label", ariaLabel), glyph)
 }

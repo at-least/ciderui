@@ -141,32 +141,25 @@
     color: var(--cui-c-console-neutral-label-secondary);
   }
 
+  /* who the item waits on, a dot in the picture's corner: the reader
+     (console-status's warning mark), or someone at work on it (its neutral
+     mark), each ringed in the page's ground so it shows on any picture */
   .cui-console-strip-mark {
     position: absolute;
     top: 8px;
     right: 8px;
-    display: grid;
-    place-items: center;
     width: 16px;
     height: 16px;
+    box-sizing: border-box;
     border: 2px solid var(--cui-c-console-neutral-background-primary);
     border-radius: 50%;
-    background-color: var(--cui-c-console-neutral-background-primary);
 
     @media (forced-colors: active) {
       forced-color-adjust: none;
       border-color: Canvas;
-      background-color: Canvas;
-      color: CanvasText;
     }
 
-    & > svg {
-      width: 12px;
-      height: 12px;
-      stroke-width: 3;
-    }
-
-    &[data-state="doubt"] {
+    &[data-state="waiting"] {
       background-color: var(--cui-c-console-warning-label-primary);
 
       @media (forced-colors: active) {
@@ -174,30 +167,87 @@
       }
     }
 
-    &[data-state="kept"] {
-      color: var(--cui-c-console-success-label-primary);
-
-      /* the doubt keeps the corner, the check 4px before it */
-      .cui-console-strip-mark[data-state="doubt"] ~ & {
-        right: 28px;
-      }
+    &[data-state="working"] {
+      background-color: var(--cui-c-console-neutral-label-secondary);
 
       @media (forced-colors: active) {
-        color: CanvasText;
+        background-color: GrayText;
       }
     }
+  }
 
-    &[data-state="redraw"] {
-      inset: 2px;
-      width: auto;
-      height: auto;
-      border-color: var(--cui-c-console-error-accent-primary);
-      border-radius: 12px;
-      background-color: transparent;
+  /* how far the current shot has played (the page's script sets
+     --cui-console-strip-progress): the player's scrubber's line, thin, over
+     the picture's foot 8px in, as the mark is in its corner */
+  .cui-console-strip-item[aria-current="true"]::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    height: 3px;
+    border-radius: 3px;
+    background-image: linear-gradient(to right, var(--cui-c-on-video) var(--cui-console-strip-progress, 0%), var(--cui-c-video-track) var(--cui-console-strip-progress, 0%));
+    pointer-events: none;
+
+    @media (forced-colors: active) {
+      forced-color-adjust: none;
+      background-image: linear-gradient(to right, Highlight var(--cui-console-strip-progress, 0%), GrayText var(--cui-console-strip-progress, 0%));
+    }
+  }
+
+  /* a line over the item while the pointer is on it (a shot's first spoken
+     line), in the popover's ground and type; fixed to the item by anchor
+     positioning, so the scroller, which clips both ways, does not cut it */
+  .cui-console-strip-tip {
+    display: none;
+  }
+
+  @supports (position-area: top) {
+    .cui-console-strip-item {
+      anchor-name: --cui-console-strip-item;
+      anchor-scope: --cui-console-strip-item;
+    }
+
+    .cui-console-strip-tip {
+      position: fixed;
+      position-anchor: --cui-console-strip-item;
+      position-area: top;
+      position-try-fallbacks: flip-block;
+      display: block;
+      box-sizing: border-box;
+      width: max-content;
+      max-width: 280px;
+      margin: 0 0 8px;
+      padding: 6px 10px;
+      border-radius: 14px;
+      color: var(--cui-c-console-neutral-label-primary);
+      background-color: var(--cui-c-console-neutral-background-primary);
+      box-shadow: var(--cui-console-shadow-popover);
+      font-size: 13px;
+      line-height: 18px;
+      letter-spacing: normal;
+      white-space: normal;
+      pointer-events: none;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.2s, visibility 0.2s;
 
       @media (forced-colors: active) {
-        border-color: CanvasText;
-        background-color: transparent;
+        border: 1px solid CanvasText;
+      }
+
+      :where(.cui-console-strip-item:focus-visible) > & {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      @media (hover: hover) {
+        :where(.cui-console-strip-item:hover) > & {
+          visibility: visible;
+          opacity: 1;
+          transition-delay: 0.5s;
+        }
       }
     }
   }

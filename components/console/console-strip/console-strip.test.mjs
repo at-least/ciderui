@@ -10,13 +10,14 @@ const FIRST = item(1, 1);
 const IMG = `${FIRST} > img`;
 const CAPTION = `${FIRST} > .cui-console-strip-caption`;
 const CURRENT = '.cui-console-strip-item[aria-current="true"]';
-const DOUBT = '.cui-console-strip-mark[data-state="doubt"]';
-const KEPT = '.cui-console-strip-mark[data-state="kept"]';
-const REDRAW = '.cui-console-strip-mark[data-state="redraw"]';
-// a kept shot with a doubt (shot 1.3), the current one with a doubt and to redraw (2.2)
-const KEPT_DOUBTED = `${item(1, 3)} > ${KEPT}`;
-const CURRENT_DOUBT = `${CURRENT} > ${DOUBT}`;
-const CURRENT_REDRAW = `${CURRENT} > ${REDRAW}`;
+const WAITING = '.cui-console-strip-mark[data-state="waiting"]';
+const WORKING = '.cui-console-strip-mark[data-state="working"]';
+// the current shot being worked on (2.2)
+const CURRENT_WORKING = `${CURRENT} > ${WORKING}`;
+const TIP = `${FIRST} > .cui-console-strip-tip`;
+// the page's script's progress on the current shot
+const playing = (html) => html.replace('aria-current="true"', 'aria-current="true" style="--cui-console-strip-progress: 40%"');
+const MARKS = 'two marks only (the owner, 2026-11-05, for muse\'s storyboard and assets strip): who the shot waits on, the reader or someone at work on it; nothing, no mark. Kept and to redraw went: muse no longer marks either';
 // one scene of one shot, its name longer than the shot is wide, and no caption
 const lone = (label) => `<div class="cui-console-page"><nav class="cui-console-strip" aria-label="Shots"><div class="cui-console-strip-group"><p class="cui-console-strip-head"><span class="cui-console-strip-label">${label}</span></p><a class="cui-console-strip-item" href="#a"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Shot 1"></a></div></nav></div>`;
 // tv.apple.com's player's row was read at 1600 and 1200px
@@ -42,15 +43,13 @@ export const cases = [
       { target: CAPTION, props: ['font-size', 'line-height', 'font-weight', 'color', 'text-overflow', 'white-space'], golden: 'the shot\'s code under it in a console thumbnail\'s caption\'s type (cui-console-thumb-caption: 11px on 13px, the secondary label), cut to the picture\'s width: muse\'s storyboard names each shot under it, not over it (the owner, 2026-11-05)' },
       { target: CAPTION, props: ['box-top', 'box-left', 'box-width'], golden: 'the caption 5px under its picture (the picture\'s foot at 108px: 18 and 90), as a console thumbnail\'s caption, outside the item\'s ring, at the picture\'s left and as wide' },
       { target: GROUP, props: ['padding-bottom'], golden: 'a scene with captions keeps their room under its shots: 1px past the ring and the 13px line, as its name\'s over them' },
-      { target: KEPT_DOUBTED, props: ['top', 'right'], golden: 'a kept shot with a doubt: the doubt keeps the corner, the check 4px before it (8px, the dot\'s 16 and 4), so neither hides the other' },
-      { target: CURRENT_DOUBT, props: ['box-width', 'top', 'right', 'background-color'], golden: 'the current shot to redraw, with a doubt: its dot drawn as any shot\'s, inside the red edge' },
-      { target: CURRENT_REDRAW, props: ['top', 'left', 'box-width', 'box-height', 'border-top-color'], golden: 'the red edge round the current shot\'s picture beside its dot, the ring outside it' },
+      { target: CURRENT_WORKING, props: ['box-width', 'top', 'right', 'background-color'], golden: 'the current shot\'s dot drawn as any shot\'s, inside its ring' },
       { target: FIRST, props: ['border-top-width', 'border-top-color', 'padding-top', 'border-top-left-radius'], golden: 'a 2px edge 2px out from the picture, clear at rest, so the current shot\'s ring takes no room of its own' },
       { target: CURRENT, props: ['border-top-color', 'border-top-width'], golden: 'the current shot ringed in the brand accent, 2px out from its picture (Keynote\'s and Photos\' chosen thumbnail): neither site marks one current (tv-player-playlist, none marked as playing); a ring, not a fill, so its picture shows whole' },
-      { target: DOUBT, props: ['box-width', 'box-height', 'top', 'right', 'border-top-width', 'border-top-color', 'background-color', 'border-top-left-radius'], golden: 'a doubt waiting: a dot in console-status\'s warning mark\'s color (its 12px), ringed 2px in the page\'s ground so it shows on any picture, 6px in from the picture\'s top right, beside a check as alone (this first doubt is on a kept shot)' },
-      { target: KEPT, props: ['box-width', 'box-height', 'top', 'right', 'color', 'background-color'], golden: 'kept: a check (lucide.Check, 3px of its 24, so 1.5px drawn) in the success label\'s color on the page\'s ground, the dot\'s size and place: a glyph, not a color, tells it from the dot' },
-      { target: `${KEPT} > svg`, props: ['box-width', 'box-height'], golden: 'the check 12px, inside the ground\'s 2px ring' },
-      { target: REDRAW, props: ['top', 'left', 'box-width', 'box-height', 'border-top-width', 'border-top-color', 'border-top-left-radius'], golden: 'to redraw: a 2px edge in the error accent round the picture\'s inside, its corners the picture\'s, where the current ring is outside it: a shot can be both' },
+      { target: WAITING, props: ['box-width', 'box-height', 'top', 'right', 'border-top-width', 'border-top-color', 'background-color', 'border-top-left-radius'], golden: `waiting for the reader: a dot in console-status's warning mark's color (its 12px), ringed 2px in the page's ground so it shows on any picture, 8px in from the item (6px from the picture). ${MARKS}` },
+      { target: WORKING, props: ['box-width', 'box-height', 'top', 'right', 'border-top-width', 'border-top-color', 'background-color'], golden: `someone at work on it: the same dot in console-status's neutral mark's color (the secondary label). ${MARKS}` },
+      { target: TIP, props: ['visibility', 'opacity', 'position'], golden: 'its line hidden until the pointer is on it' },
+      { target: CURRENT, pseudo: '::after', props: ['width', 'height', 'background-image'], golden: 'the current shot\'s progress line from the start, its track alone until the script sets how far it has played' },
     ],
   },
   {
@@ -63,6 +62,27 @@ export const cases = [
     ],
   },
   {
+    name: 'strip progress',
+    html: playing(ex('strip')),
+    widths: [1200],
+    checks: [
+      { target: CURRENT, pseudo: '::after', props: ['position', 'left', 'right', 'bottom', 'width', 'height', 'border-top-left-radius', 'background-image'], golden: 'how far the current shot has played (the owner, 2026-11-05: how long its picture still stays), 40% here: the player\'s scrubber\'s white on its track (--cui-c-on-video, --cui-c-video-track), 3px for the scrubber\'s 5px at a tenth of its width, over the picture\'s foot 8px in, where the mark is in its corner; Apple TV draws its own lockups\' progress over the picture\'s foot. Over the picture, not under it: the caption keeps its place under every shot' },
+      { target: `${item(1, 1)}`, pseudo: '::after', props: ['content'], golden: 'only the current shot draws it' },
+    ],
+  },
+  {
+    name: 'strip tip',
+    html: `<div style="padding-top:120px">${ex('strip')}</div>`,
+    widths: [1200],
+    hover: FIRST,
+    checks: [
+      { target: TIP, props: ['visibility', 'opacity', 'position', 'font-size', 'line-height', 'color', 'background-color', 'box-shadow', 'padding-top', 'padding-left', 'border-top-left-radius', 'max-width'], golden: 'the shot\'s first spoken line over it while the pointer is on it (the owner, 2026-11-05, muse\'s storyboard; its assets strip, the asset\'s description), after half a second so a pointer passing along the row raises none: the console popover\'s ground, shadow and 13px on 18px (decision 27, its floating surface), 6px by 10px, its narrow 14px corners, 280px at most; neither site has a hover tip on its row' },
+      { target: TIP, props: ['box-left', 'box-top', 'box-width', 'box-height'], golden: 'centred over the item, 8px above it (the popover\'s gap), past the scroller\'s clip (fixed to the item by anchor positioning); at the window\'s edge it keeps inside' },
+      { target: FIRST, props: ['box-top', 'box-left', 'box-width'], golden: 'the item it is over' },
+      { target: TIP, props: ['transition-delay'], golden: 'half a second\'s wait before it shows' },
+    ],
+  },
+  {
     name: 'strip dark',
     html: `<div class="cui-dark">${ex('strip')}</div>`,
     widths: [1200],
@@ -70,9 +90,8 @@ export const cases = [
       { target: LABEL, props: ['color'], golden: 'the dark side derived (tokens.css, decision 18)' },
       { target: CAPTION, props: ['color'], golden: 'the dark side derived (tokens.css, decision 18)' },
       { target: CURRENT, props: ['border-top-color'], golden: 'the dark side derived (tokens.css, decision 18)' },
-      { target: DOUBT, props: ['background-color', 'border-top-color'], golden: 'the dark side derived (tokens.css, decision 18), the ring the dark page\'s ground' },
-      { target: KEPT, props: ['color', 'background-color'], golden: 'the dark side derived (tokens.css, decision 18)' },
-      { target: REDRAW, props: ['border-top-color'], golden: 'the dark side derived (tokens.css, decision 18)' },
+      { target: WAITING, props: ['background-color', 'border-top-color'], golden: 'the dark side derived (tokens.css, decision 18), the ring the dark page\'s ground' },
+      { target: WORKING, props: ['background-color'], golden: 'the dark side derived (tokens.css, decision 18)' },
     ],
   },
   {
@@ -83,9 +102,9 @@ export const cases = [
     checks: [
       { target: CURRENT, props: ['border-top-color'], golden: 'the current shot\'s ring the theme\'s Highlight, as a current tab\'s' },
       { target: FIRST, props: ['border-top-color'], golden: 'the others\' clear edge the ground\'s color: forced colors drew it in the text\'s, every shot ringed as the current one' },
-      { target: DOUBT, props: ['background-color', 'border-top-color'], golden: 'the dot the forced text color on the ground\'s ring, as console-status\'s mark' },
-      { target: KEPT, props: ['color', 'background-color'], golden: 'the check the forced text color on the ground' },
-      { target: REDRAW, props: ['border-top-color'], golden: 'the redraw edge the forced text color, inside the picture where the current ring is out of it' },
+      { target: WAITING, props: ['background-color', 'border-top-color'], golden: 'the waiting dot the forced text color on the ground\'s ring, as console-status\'s mark' },
+      { target: WORKING, props: ['background-color', 'border-top-color'], golden: 'the working dot the theme\'s GrayText, so the two keep apart where their colors are forced' },
+      { target: CURRENT, pseudo: '::after', props: ['background-image'], golden: 'the progress line in the theme\'s Highlight on GrayText' },
     ],
   },
   {
