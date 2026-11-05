@@ -46,7 +46,42 @@
     display: flex;
     align-items: center;
     justify-content: end;
+    gap: 16px;
     transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  /* while paused, what is on screen at the header's start (tv.apple.com's
+     header's first column, empty there), white under the cue's shadow on
+     its row; gone while playing, in the header's own fade */
+  .cui-console-player-caption {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 15px;
+    line-height: 26px;
+    font-weight: 600;
+    color: var(--cui-c-on-video);
+    text-shadow: var(--cui-video-cue-shadow);
+    transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1), visibility 0.3s;
+
+    &:empty {
+      display: none;
+    }
+
+    :where(.cui-console-player[data-state="playing"]) & {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  /* the full-screen button's glyph: to enter, or to leave while it fills
+     the screen */
+  :where(.cui-console-player[data-fullscreen]) .cui-console-player-glyph-full-screen,
+  :where(.cui-console-player:not([data-fullscreen])) .cui-console-player-glyph-exit-full-screen {
+    display: none;
   }
 
   /* the volume: its button alone until the pointer is over it, then its

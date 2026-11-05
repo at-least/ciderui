@@ -41,6 +41,8 @@ const PREVIEW = '.cui-console-player-preview';
 const PREVIEW_WHY = 'muse\'s, tv.apple.com\'s trailers scrubbing with no preview (the owner, 2026-11-05: the shot\'s thumbnail, its scene and the time over the pointer): the storyboard\'s 320px thumbnail at 160px, sharp at 2x; 12px above the bar, clear of the thumb; the line under it 12px semibold in the times\' tabular figures, white under the cue\'s shadow, on one line however long the scene\'s name';
 const TEXT_BTN = '.cui-console-player-text-btn';
 const FULL = 'muse\'s, for its 回報問題 and 下一個要看 while the player fills the screen (the owner, 2026-11-05); tv.apple.com\'s bar has no control of words: a 24px capsule, the bar\'s buttons\' height (tv-player:audio), white on a 16% white fill, 24% hovered or pressed, 13px medium, 8px apart; half opacity disabled';
+const CAPTION = '.cui-console-player-caption';
+const PAUSED = 'muse\'s (the owner, 2026-11-05: paused, a small line at the picture\'s top left saying the story, the scene and the shot; gone on play): in tv.apple.com\'s header\'s first column, 711px and empty on its trailers (tv-player:header, grid-template-columns 711px 829px), on the header\'s 26px row; 15px semibold white under the cue\'s shadow (--cui-video-cue-shadow) so it reads on a bright picture with no box, cut short with an ellipsis before the volume; tv.apple.com shows no such line';
 const NO_SLIDE = 'faded where they are: tv.apple.com\'s header goes 20px up and its footer 20px down as they hide (tv-player-playing:hidden.*), a slide that only draws the eye (DESIGN.md decision 25); the fades\' durations and curves its own';
 
 export const cases = [
@@ -152,6 +154,54 @@ export const cases = [
     checks: [
       { target: '.cui-console-player-glyph-muted', props: ['display', 'box-width'], golden: 'muted, the speaker struck through, Lucide\'s volume-x at the speaker\'s 22px (tv.apple.com\'s muted glyph not read)' },
       { target: '.cui-console-player-glyph-volume', props: ['display'], golden: 'muted, no plain speaker' },
+    ],
+  },
+  {
+    name: 'player caption paused',
+    html: ex('paused'),
+    widths: TV,
+    height: 900,
+    checks: [
+      { target: CAPTION, props: ['display', 'opacity', 'visibility', 'font-size', 'line-height', 'font-weight', 'color', 'text-shadow', 'white-space', 'text-overflow', 'box-left', 'box-top', 'box-height'], golden: PAUSED },
+      { target: CAPTION, props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: 'it comes and goes in the header\'s fade (tv-player-playing:hidden.header, 0.3s)' },
+    ],
+  },
+  {
+    name: 'player caption playing',
+    html: ex('playing'),
+    widths: [1600],
+    height: 900,
+    checks: [
+      { target: CAPTION, props: ['opacity', 'visibility'], golden: 'gone while playing (the owner, 2026-11-05), the controls shown or not' },
+    ],
+  },
+  {
+    name: 'player caption empty',
+    html: ex('paused').replace(/(data-control="caption">)[^<]*/, '$1'),
+    widths: [1600],
+    height: 900,
+    checks: [
+      { target: CAPTION, props: ['display'], golden: 'empty, nothing drawn: the volume keeps the header\'s end' },
+    ],
+  },
+  {
+    name: 'player full screen glyph',
+    html: ex('full-screen'),
+    widths: [1600],
+    height: 900,
+    checks: [
+      { target: '[data-control="full-screen"] .cui-console-player-glyph-exit-full-screen', props: ['display', 'box-width'], golden: 'filling the screen, the button shows the way out (Lucide\'s minimize-2 for its maximize-2), as tv.apple.com\'s full-screen button turns to exit (its glyph not read: a page cannot be put in full screen by the probe)' },
+      { target: '[data-control="full-screen"] .cui-console-player-glyph-full-screen', props: ['display'], golden: 'and not the way in' },
+    ],
+  },
+  {
+    name: 'player full screen glyph not full screen',
+    html: ex('paused'),
+    widths: [1600],
+    height: 900,
+    checks: [
+      { target: '[data-control="full-screen"] .cui-console-player-glyph-full-screen', props: ['display', 'box-width'], golden: 'not full screen, the way in' },
+      { target: '[data-control="full-screen"] .cui-console-player-glyph-exit-full-screen', props: ['display'], golden: 'and not the way out' },
     ],
   },
   {

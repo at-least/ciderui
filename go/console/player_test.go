@@ -38,6 +38,7 @@ func player(state console.ConsolePlayerState, hidden bool, title string) console
 		State:               state,
 		ControlsHidden:      hidden,
 		Title:               title,
+		Caption:             "The Wedding · Scene 2　The Vows · S02-03",
 		PlayAriaLabel:       "Play",
 		PauseAriaLabel:      "Pause",
 		Volume:              50,
@@ -166,7 +167,7 @@ func TestPlayerWritesItsFullScreenControls(t *testing.T) {
 // the hooks a page's script finds the controls by: each once
 func TestPlayerMarksEachControl(t *testing.T) {
 	got := example.Render(player(console.ConsolePlayerStatePaused, false, ""))
-	for _, control := range []string{"play", "volume", "mute", "subtitles", "full-screen", "scrubber", "elapsed", "remaining", "preview"} {
+	for _, control := range []string{"play", "volume", "mute", "subtitles", "full-screen", "scrubber", "elapsed", "remaining", "caption", "preview"} {
 		if n := strings.Count(got, `data-control="`+control+`"`); n != 1 {
 			t.Errorf("data-control=%q written %d times, want 1", control, n)
 		}

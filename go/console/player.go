@@ -24,10 +24,11 @@ var (
 // page's script plays the video and keeps the markup current: data-state,
 // data-controls="hidden" (while playing and the pointer is still),
 // data-muted (the mute button's glyph), data-fullscreen (while it fills
-// the screen: the bar's FullScreenControls show), each
-// range's value and --cui-console-player-value, the times, the cue. It finds
-// each control by its data-control: play, volume, mute, subtitles,
-// full-screen, scrubber, elapsed, remaining, and the scrubber's preview
+// the screen: the bar's FullScreenControls show and the full-screen button
+// shows its exit glyph), each range's value and --cui-console-player-value,
+// the times, the cue, the caption. It finds each control by its
+// data-control: play, volume, mute, subtitles, full-screen, scrubber,
+// elapsed, remaining, caption, and the scrubber's preview
 // (preview), hidden until the page fills its picture and line and shows it
 // over the time under the pointer.
 type ConsolePlayer struct {
@@ -38,7 +39,10 @@ type ConsolePlayer struct {
 	State          ConsolePlayerState
 	ControlsHidden bool
 	// Title: "" for none.
-	Title          string
+	Title string
+	// Caption is a line at the header's start shown while paused, what is
+	// on screen; "" for none (the page's script fills it).
+	Caption        string
 	PlayAriaLabel  string
 	PauseAriaLabel string
 	// Volume is 0 to 100.
@@ -112,6 +116,7 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 		p.Video,
 		h.Div(h.Class("cui-console-player-overlay"),
 			h.Div(h.Class("cui-console-player-header"),
+				h.P(h.Class("cui-console-player-caption"), h.Data("control", "caption"), g.Text(p.Caption)),
 				// the range opens beside its button while the pointer is over either
 				h.Div(h.Class("cui-console-player-volume"),
 					rangeInput("volume", p.Volume, 100, p.VolumeAriaLabel, "", float64(p.Volume)),
@@ -128,7 +133,7 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 				h.Div(h.Class("cui-console-player-buttons"),
 					g.If(p.FullScreenControls != nil, h.Div(h.Class("cui-console-player-full-screen-controls"), p.FullScreenControls)),
 					g.If(p.SubtitlesMenu.ID != "", button("subtitles", p.SubtitlesAriaLabel, p.SubtitlesMenu.ID, lucide.Captions)),
-					button("full-screen", p.FullScreenAriaLabel, "", lucide.Maximize2),
+					button("full-screen", p.FullScreenAriaLabel, "", g.Group{lucide.Maximize2.Class("cui-console-player-glyph-full-screen"), lucide.Minimize2.Class("cui-console-player-glyph-exit-full-screen")}),
 				),
 				h.Div(h.Class("cui-console-player-progress"),
 					rangeInput("scrubber", p.Position, p.Duration, p.ScrubAriaLabel, clock(p.Position), played),
