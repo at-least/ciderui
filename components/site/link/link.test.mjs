@@ -2,14 +2,6 @@ import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const LINK = ['color', 'text-decoration-line', 'text-decoration-color'];
-const more = (page, glyph) => [
-  { target: '.cui-link', props: ['font-size', 'color', 'text-decoration-line'], apple: [page, 'link.more'] },
-  { target: '.cui-link', state: 'hover', props: ['text-decoration-line'], apple: [page, 'link.more', 'hover'] },
-  { target: '.cui-link-text', props: ['text-decoration-line'], apple: [page, 'link.more-copy'] },
-  { target: '.cui-link-text', on: '.cui-link', state: 'hover', props: ['text-decoration-line'], apple: [page, 'link.more-copy', 'hover'] },
-  { target: '.cui-link-icon', props: ['margin-left', 'color'], apple: [page, glyph], as: { 'margin-left': 'padding-left' } },
-];
-
 export const cases = [
   {
     name: 'inline',
@@ -27,45 +19,6 @@ export const cases = [
       { target: '.cui-link', props: LINK, apple: ['product', 'link.inline'] },
       { target: '.cui-link', state: 'hover', props: LINK, apple: ['product', 'link.inline', 'hover'] },
       { target: '.cui-link', state: 'active', props: LINK, apple: ['product', 'link.inline', 'active'] },
-    ],
-  },
-  {
-    // the iPhone page's more link is 17px from 1069px, 14px below
-    name: 'more',
-    html: `<p>${ex('more')}</p>`,
-    widths: [1600, 1200],
-    checks: [
-      ...more('iphone', 'link.more-glyph'),
-      { target: '.cui-link-icon', props: ['box-width', 'box-height', 'vertical-align'], golden: 'the chevron\'s box: apple.com\'s glyph\'s advance, 0.4419em, by 0.54em, 0.01em below the baseline (reference/icons/)' },
-      { target: '.cui-link-icon', props: ['display'], golden: 'inline, on its text\'s line: Tailwind\'s preflight draws an svg as a block' },
-      { target: 'p', props: ['box-height'], golden: 'one line, the chevron after the text: the paragraph\'s 25px line' },
-      { target: '.cui-link-icon', props: ['box-x'], golden: 'after the text by its margin alone: the markup on one line, as a space between text and chevron would widen the gap' },
-    ],
-  },
-  {
-    name: 'more-small',
-    html: `<p class="cui-body-reduced">${ex('more')}</p>`,
-    widths: [900, 390],
-    checks: more('iphone', 'link.more-glyph'),
-  },
-  {
-    // the product page's more links are 14px at every width
-    name: 'more-dark',
-    html: `<section class="cui-dark"><p class="cui-body-reduced">${ex('more')}</p></section>`,
-    checks: [
-      { target: '.cui-link', props: ['font-size', 'color', 'text-decoration-line'], apple: ['product', 'link.more'] },
-      { target: '.cui-link-icon', props: ['margin-left', 'color'], apple: ['product', 'link.more-icon'], as: { 'margin-left': 'padding-left' } },
-    ],
-  },
-  {
-    name: 'more link touch target',
-    html: ex('more'),
-    touch: true,
-    widths: [390],
-    checks: [
-      { target: '.cui-link', props: ['box-height'], golden: 'the more link drawn as before' },
-      { target: '.cui-link', pseudo: '::after', props: ['width', 'background-color'], golden: 'the target 44px wide at least, and transparent' },
-      { target: '.cui-link', pseudo: '::after', props: ['height'], golden: 'its target a transparent ::after 44px tall at least, the HIG\'s 44pt (Accessibility, Mobility; its 20px line is under the 28pt minimum), as the console\'s link draws one; a link in running text is text, and draws none' },
     ],
   },
   {

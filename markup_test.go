@@ -15,7 +15,7 @@ func TestEveryExamplePasses(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(paths) <= 100 {
+	if len(paths) <= 50 {
 		t.Fatalf("%d examples read", len(paths))
 	}
 	for _, path := range paths {
@@ -57,7 +57,7 @@ func TestCheckMarkup(t *testing.T) {
 		// :is(.cui-console-copy-button, .cui-console-copy-inline)[data-state="copied"]
 		{"a value for one class of an :is", `<button class="cui-console-copy-button" data-state="copied">x</button>`, nil},
 		{"a value for the other class of an :is", `<button class="cui-console-copy-inline" data-state="copied">x</button>`, nil},
-		// :where(.cui-btn, .cui-link[data-variant="more"], .cui-console-link, …)
+		// the data-variant of a part where no rule selects that value
 		{"a value is not another alternative's", `<a class="cui-console-link" data-variant="more">x</a>`, []string{`data-variant="more" on <a class="cui-console-link">: no rule of ciderui's selects it (cui-console-link's: label, text)`}},
 		// .cui-console-player-end > [data-control="replay"] names no class of the element
 		{"an attribute only a rule for another element selects", `<p class="cui-console-player-caption" data-control="caption">x</p>`, nil},

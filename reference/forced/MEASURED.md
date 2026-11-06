@@ -5,11 +5,9 @@ Does each of the kit's parts that draws a state or a color in a color of its own
 | | Chromium 151 | Chromium, forced | Chromium, forced, dark | Firefox 153 | Firefox, override |
 | --- | --- | --- | --- | --- | --- |
 | forced colors matched, the option drawn checked unlike unchecked (the controls) | ok | ok | ok | ok | ok |
-| the empty select's own text not drawn where its label lies | ok | ok (drawn below it) | ok (drawn below it) | ok | ok (not drawn) |
 
-Run 2026-10-22 (`results/`). Before the kit's rule for it, apple.com's look alone: in Chromium the empty select's "Select", its transparent color forced, was drawn under its label, the label's box rows 18 to 38 over it (300 pixels of ink, rows 31 to 42), where Firefox keeps the select's transparent color and draws none. The kit's rule:
+Run 2026-10-22 (`results/`). The empty select read here went by DESIGN.md decision 36.
 
-- an empty select's label at its top in forced colors, as a filled one's: in Chromium "Select" drawn below it, in Firefox nothing drawn there.
 
 apple.com's parts are the kit's here: not measured in forced colors on apple.com. Not in Safari: WebKit has no forced colors (macOS's Increase Contrast draws no page in a theme's colors).
 

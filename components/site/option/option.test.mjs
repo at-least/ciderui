@@ -21,11 +21,9 @@ export const cases = [
       { target: LABEL, on: INPUT, state: 'focus-visible', props: ['outline-style', 'outline-width', 'outline-color', 'outline-offset'], apple: ['buy', 'option.focus', 'focus-visible'] },
       { target: INPUT, props: ['position', 'top', 'left', 'opacity', 'margin-top', 'margin-left', 'display'], apple: ['buy', 'option.input'] },
       { target: '.cui-option-title', props: SIZE, apple: ['buy', 'option.title'] },
-      { target: '.cui-option-price', props: [...SIZE, 'display', 'margin-top', 'text-align'], apple: ['buy', 'option.price'] },
       { target: '.cui-option-title', props: ['letter-spacing', 'box-x'], golden: 'at the tile\'s start, 16px in (its edge and padding), the system font\'s letter-spacing' },
-      { target: '.cui-option-price', props: ['letter-spacing', 'box-width'], golden: '40% of the row at its end, as apple.com\'s price column (buy:option.right)' },
       { target: '.cui-option', props: ['background-color', 'border-top-left-radius', 'margin-top'], golden: 'its own light ground, the label\'s corners, as a field\'s; no margin above (apple.com\'s 14px, the form\'s spacing, buy:option.box)' },
-      { target: LABEL, props: ['display', 'flex-direction', 'align-items'], golden: 'one row of its title and price, centered down the tile (apple.com\'s a flex column holding the row)' },
+      { target: LABEL, props: ['display', 'flex-direction', 'align-items'], golden: 'its title centered down the tile (apple.com\'s a flex column holding the row)' },
     ],
   },
   {
@@ -35,7 +33,7 @@ export const cases = [
     checks: [
       { target: LABEL, props: [...SIZE, 'color', ...PADDING, ...EDGE, 'background-color', 'min-height', 'box-height'], apple: ['buy', 'option.checked'] },
       { target: '.cui-option-detail', props: [...SIZE, 'display', 'margin-top'], apple: ['buy', 'option.detail'] },
-      { target: '.cui-option-title', props: ['box-width'], golden: 'with no price, the rest of the row (apple.com\'s 60%)' },
+      { target: '.cui-option-title', props: ['box-width'], golden: 'the rest of the row: nothing beside it' },
     ],
   },
   {
@@ -67,7 +65,6 @@ export const cases = [
     html: ex('option'),
     widths: [1200],
     checks: [
-      { target: '.cui-option-title', props: ['padding-right'], golden: 'its title clear of its price' },
       { target: '.cui-option', props: ['position'], golden: 'what its input is placed against' },
       { target: INPUT, props: ['cursor'], golden: 'the pointer over a tile, apple.com\'s (its enabled tiles\' labels and inputs pointer, read 2026-10-31); the input over the tile takes it' },
       { target: LABEL, props: ['hit'], golden: 'the radio over the whole tile: the pointer finds it at the tile\'s corners and middle, so it takes the click' },

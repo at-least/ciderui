@@ -62,18 +62,12 @@
     font-weight: 600;
   }
 
-  .cui-option-detail,
-  .cui-option-price {
+  .cui-option-detail {
     display: block;
     margin-top: 4px;
     font-size: 12px;
     line-height: 16px;
     font-weight: 400;
     letter-spacing: var(--cui-tracking-12);
-  }
-
-  .cui-option-price {
-    flex: 0 0 40%;
-    text-align: end;
   }
 }

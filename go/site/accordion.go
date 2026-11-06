@@ -9,15 +9,13 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
+// Accordion writes no element of its own: its items are the page's to place.
 type Accordion struct {
-	// Large: the bag page's outer accordion.
-	Large bool
-	Class string
 	Items []AccordionItem
 }
 
 func (a Accordion) Render(w io.Writer) error {
-	return h.Div(class.Root("cui-accordion", a.Class), g.If(a.Large, h.Data("size", "lg")), g.Map(a.Items, AccordionItem.node)).Render(w)
+	return g.Map(a.Items, AccordionItem.node).Render(w)
 }
 
 type AccordionItem struct {

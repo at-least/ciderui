@@ -10,7 +10,7 @@ import (
 
 func TestEscapesItsClass(t *testing.T) {
 	var b strings.Builder
-	if err := More.Class(`a"b<c&d`).Render(&b); err != nil {
+	if err := Menu.Class(`a"b<c&d`).Render(&b); err != nil {
 		t.Fatal(err)
 	}
 	if got := b.String(); !strings.HasPrefix(got, `<svg class="a&#34;b&lt;c&amp;d"`) {

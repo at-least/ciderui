@@ -1,92 +1,28 @@
-import { examples, OUTLINE, SIZE } from '../../../test/harness.mjs';
+import { examples, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const WIDE = [1600, 1200, 900];
-const PHONE = [390];
-const SECTION = '.cui-footer-column:first-child .cui-footer-section:first-child';
 
 export const cases = [
-  {
-    name: 'footer-parts',
-    html: ex('footer').replace('<section class="cui-footer-notes" aria-label="Footnotes">', '<section class="cui-footer-notes" aria-label="Footnotes"><p>See <a class="cui-link" href="#guide">the guide</a> <a class="cui-btn" href="#buy">Buy</a></p>'),
-    widths: [1200],
-    checks: [
-      { target: '.cui-footer-notes .cui-link', props: ['color', 'text-decoration-line'], golden: 'a link in the footer\'s notes the kit\'s link still, not the footer\'s (rule 4)' },
-      { target: '.cui-footer-notes .cui-btn', props: ['color', 'background-color', 'text-decoration-line'], golden: 'a button in the footer\'s notes the kit\'s button still (rule 4)' },
-      { target: '.cui-footer-links > li:last-child', pseudo: '::after', props: ['content'], golden: 'a rule between the legal links, none after the last' },
-      { target: '.cui-footer-locale', props: ['box-right'], golden: 'the locale at the legal row\'s end, the content\'s right edge (apple.com\'s, reference/apple.com/MEASURED.md)' },
-    ],
-  },
   {
     name: 'footer',
     html: ex('footer'),
     checks: [
       { target: '.cui-footer', props: [...SIZE, 'color', 'background-color'], apple: ['home', 'footer'] },
       { target: '.cui-footer-content', props: ['max-width', 'padding-left', 'padding-right'], apple: ['home', 'footer.content'] },
-      { target: '.cui-footer-notes', props: [...SIZE, 'color', 'padding-top', 'padding-bottom', 'border-bottom-width', 'border-bottom-style', 'border-bottom-color'], apple: ['home', 'footer.sosumi'] },
-      { target: '.cui-footer-notes a', props: [...SIZE, 'color', 'text-decoration-line'], apple: ['home', 'footer.sosumi-link'] },
-      { target: '.cui-footer-notes a', state: 'hover', props: ['color', 'text-decoration-line'], apple: ['home', 'footer.sosumi-link', 'hover'] },
-      { target: '.cui-footer-directory', props: ['display', 'flex-direction', 'flex-wrap', 'padding-top'], apple: ['home', 'footer.directory'] },
-      { target: '.cui-footer-shop', props: [...SIZE, 'color'], apple: ['home', 'footer.shop'] },
-      { target: '.cui-footer-shop a', props: ['color', 'text-decoration-line', 'text-decoration-color'], golden: 'a link in the shop line\'s sentence: apple.com\'s blue, underlined (its footer\'s "Find an Apple Store", not yet in home.json\'s footer.shop): told apart from the words around it by more than color, as axe-core\'s link-in-text-block holds (test/surfaces.mjs)' },
       { target: '.cui-footer-legal', props: ['padding-top', 'padding-bottom'], apple: ['home', 'footer.footer'] },
-      { target: '.cui-footer-row', props: ['display'], apple: ['home', 'footer.end'] },
       { target: '.cui-footer-copyright', props: [...SIZE, 'color', 'margin-top'], apple: ['home', 'footer.copyright'] },
-      { target: '.cui-footer-links > li:first-child', props: ['display', 'margin-right'], apple: ['home', 'footer.legal-item'] },
-      { target: '.cui-footer-links > li:first-child a', props: ['padding-left', 'padding-right', 'margin-left'], apple: ['home', 'footer.legal-link-box'] },
-      { target: '.cui-footer-links > li:first-child a', props: [...SIZE, 'color', 'text-decoration-line'], apple: ['home', 'footer.legal-link'] },
-      { target: '.cui-footer-links > li:first-child', pseudo: '::after', props: ['content', 'height', 'background-color', 'margin-top', 'position', 'right'], apple: ['home', 'footer.legal-rule'] },
-      { target: '.cui-footer-links > li:first-child', pseudo: '::after', props: ['width'], golden: 'apple.com\'s 1px rule (home:footer.legal-rule)' },
-      { target: '.cui-footer-locale', props: [...SIZE, 'color', 'text-decoration-line'], apple: ['home', 'footer.locale-link'] },
-      { target: '.cui-footer-locale', state: 'hover', props: ['text-decoration-line'], apple: ['home', 'footer.locale-link', 'hover'] },
-      // apple.com's two locales (a phone's, a desktop's) are 5px down alike
-      { target: '.cui-footer-locale', props: ['margin-top'], apple: ['home', 'footer.locale'] },
+      { target: '.cui-footer-copyright a', props: ['color', 'text-decoration-line'], apple: ['home', 'footer.legal-link'] },
+      { target: '.cui-footer-copyright a', state: 'hover', props: ['text-decoration-line'], golden: 'a link in the copyright underlined under the pointer, as apple.com\'s footer links' },
     ],
   },
   {
-    name: 'footer-wide',
+    name: 'touch target',
     html: ex('footer'),
-    widths: WIDE,
+    touch: true,
+    widths: [390],
     checks: [
-      { target: '.cui-footer-column', props: ['flex-grow', 'flex-shrink', 'flex-basis'], apple: ['home', 'footer.column'] },
-      { target: `${SECTION} + .cui-footer-section`, props: ['padding-top'], apple: ['home', 'footer.section-second'] },
-      { target: `${SECTION} .cui-footer-title`, props: [...SIZE, 'color'], apple: ['home', 'footer.title'] },
-      { target: `${SECTION} .cui-footer-title`, props: ['margin-right', 'margin-bottom'], apple: ['home', 'footer.title-text'] },
-      { target: `${SECTION} .cui-footer-list`, props: ['margin-right', 'padding-top', 'padding-bottom'], apple: ['home', 'footer.list'] },
-      { target: `${SECTION} .cui-footer-list li:first-child`, props: ['margin-bottom'], apple: ['home', 'footer.item'] },
-      { target: `${SECTION} .cui-footer-list li:last-child`, props: ['margin-bottom'], apple: ['home', 'footer.item-last'] },
-      { target: `${SECTION} .cui-footer-list a`, props: [...SIZE, 'color', 'text-decoration-line'], apple: ['home', 'footer.link'] },
-      { target: `${SECTION} .cui-footer-list a`, state: 'hover', props: ['color', 'text-decoration-line'], apple: ['home', 'footer.link', 'hover'] },
-      { target: '.cui-footer-shop', props: ['padding-bottom', 'margin-bottom', 'border-bottom-width', 'border-bottom-color'], apple: ['home', 'footer.shop'] },
-      { target: `${SECTION} .cui-footer-toggle`, props: ['display'], golden: 'its toggle gone from 834px: every section shown' },
-    ],
-  },
-  {
-    name: 'footer-phone',
-    html: ex('footer'),
-    widths: PHONE,
-    checks: [
-      { target: SECTION, props: ['padding-left', 'padding-right', 'padding-bottom', 'margin-left', 'position', 'box-height'], apple: ['home', 'footer.section-phone'] },
-      { target: SECTION, pseudo: '::after', props: ['content', 'position', 'bottom', 'left', 'right', 'height', 'background-color'], apple: ['home', 'footer.section-rule'] },
-      { target: `${SECTION} .cui-footer-title label`, props: [...SIZE, 'color', 'padding-top', 'padding-bottom', 'cursor', 'box-height'], apple: ['home', 'footer.title-button'] },
-      { target: `${SECTION} .cui-footer-title svg`, props: ['color', 'margin-top', 'box-height'], apple: ['home', 'footer.title-icon'] },
-      { target: `${SECTION} .cui-footer-title svg`, props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: 'its turn the kit\'s one chevron turn, 0.32s cubic-bezier(.4,0,.6,1), the accordion\'s and the local nav\'s, where apple.com\'s reads 0.3s ease here' },
-      { target: '.cui-footer-shop', props: ['padding-bottom', 'margin-bottom', 'border-bottom-width'], apple: ['home', 'footer.shop'] },
-      { target: '.cui-footer-locale', props: ['margin-top', 'display'], apple: ['home', 'footer.locale'] },
-      { target: `${SECTION} .cui-footer-list`, props: ['display'], golden: 'closed, its links out of sight and out of the focus order (apple.com\'s hidden: home:footer.list-closed)' },
-    ],
-  },
-  {
-    name: 'footer-open',
-    html: ex('footer'),
-    widths: PHONE,
-    click: `${SECTION} .cui-footer-title label`,
-    checks: [
-      { target: `${SECTION} .cui-footer-list`, props: ['padding-top', 'padding-bottom'], apple: ['home-footer', 'list.open'] },
-      { target: `${SECTION} .cui-footer-list li:first-child`, props: ['box-height'], apple: ['home-footer', 'item.open'] },
-      { target: `${SECTION} .cui-footer-list a`, props: [...SIZE, 'color', 'display', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left'], apple: ['home-footer', 'link.open'] },
-      { target: `${SECTION} .cui-footer-title svg`, props: ['color'], apple: ['home-footer', 'icon.open'] },
-      { target: `${SECTION} .cui-footer-title svg`, props: ['transform'], golden: 'opened, its chevron turned up: apple.com\'s line moved to the same points' },
+      { target: '.cui-footer-copyright a', pseudo: '::after', props: ['height'], golden: 'the company link\'s target 44pt on a touch screen, the HIG\'s default, past its 16px line' },
     ],
   },
   {
@@ -95,54 +31,6 @@ export const cases = [
     widths: WIDE,
     checks: [
       { target: '.cui-footer', props: ['color', 'background-color'], apple: ['product', 'footer'] },
-      { target: `${SECTION} .cui-footer-title`, props: ['color'], apple: ['product', 'footer.title'] },
-      { target: `${SECTION} .cui-footer-list a`, props: ['color'], apple: ['product', 'footer.link'] },
-      { target: '.cui-footer-shop', props: ['border-bottom-color'], apple: ['product', 'footer.shop'] },
-    ],
-  },
-  {
-    name: 'footer step at 834px',
-    html: ex('footer'),
-    widths: [834, 833],
-    checks: [
-      { target: '.cui-footer-content', props: ['padding-left', 'padding-right'], golden: '22px in from 834px, 16px to 833px: apple.com\'s footer steps there, with the global nav (reference/apple.com/MEASURED.md, not read at these widths)' },
-      { target: '.cui-footer-directory', props: ['flex-direction'], golden: 'a row of columns from 834px, a column of sections to 833px, as apple.com\'s' },
-      { target: `${SECTION} .cui-footer-toggle`, props: ['display'], golden: 'its toggle from 833px down alone' },
-    ],
-  },
-  {
-    name: 'footer open at once',
-    html: ex('footer'),
-    widths: PHONE,
-    click: `${SECTION} .cui-footer-title label`,
-    wait: 0,
-    checks: [
-      { target: `${SECTION} .cui-footer-list`, props: ['display', 'box-height'], golden: 'opened at once, its whole list at the click: apple.com\'s moves in 0.3s' },
-    ],
-  },
-  {
-    name: 'footer toggle focus',
-    html: ex('footer'),
-    widths: PHONE,
-    press: ['Tab', 'Tab'],
-    checks: [
-      { target: `${SECTION} .cui-footer-toggle`, props: ['focused'], golden: 'the toggle, out of sight, in the focus order after the notes\' link' },
-      { target: `${SECTION} .cui-footer-title label`, props: OUTLINE, golden: 'its focus ring on its title' },
-    ],
-  },
-  {
-    // from 834px: below it a closed section's links have no box
-    name: 'footer touch targets',
-    html: ex('footer'),
-    touch: true,
-    widths: [1200],
-    checks: [
-      { target: `${SECTION} .cui-footer-title label`, props: ['box-height'], golden: 'a section\'s title 44px tall on a touch screen' },
-      { target: '.cui-footer-locale', props: ['box-height'], golden: 'the locale 44px tall at least on a touch screen' },
-      { target: '.cui-footer-links > li:first-child a', props: ['box-height'], golden: 'a legal link 44px tall on a touch screen' },
-      { target: '.cui-footer-links > li:first-child', pseudo: '::after', props: ['top', 'margin-top'], golden: 'the rule beside the legal links at their line\'s middle, as without touch' },
-      { target: `${SECTION} .cui-footer-list li:first-child a`, props: ['box-height'], golden: 'a link 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), a tablet\'s columns too' },
-      { target: `${SECTION} .cui-footer-list li:first-child`, props: ['margin-bottom'], golden: 'the list\'s gaps inside the links\' 44px' },
     ],
   },
 ];

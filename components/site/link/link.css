@@ -3,20 +3,4 @@
     color: var(--cui-c-link);
     text-decoration-line: underline;
   }
-
-  .cui-link[data-variant="more"] {
-    text-decoration-line: none;
-
-    @media (hover: hover) {
-      &:hover .cui-link-text {
-        text-decoration-line: underline;
-      }
-    }
-  }
-
-  .cui-link-icon {
-    display: inline;
-    margin-left: 0.24em;
-    vertical-align: -0.01em;
-  }
 }

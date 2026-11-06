@@ -10,19 +10,15 @@ import (
 )
 
 func link(label, href string, variant site.BtnVariant, size site.BtnSize) site.Btn {
-	return site.Btn{Href: href, Label: label, Submit: false, Variant: variant, Size: size, Block: false, Rect: false, Attrs: nil, Class: ""}
+	return site.Btn{Href: href, Label: label, Submit: false, Variant: variant, Size: size, Block: false, Attrs: nil, Class: ""}
 }
 
 func TestBtnRendersTheExamples(t *testing.T) {
 	buy := "#buy"
-	primary, secondary, neutral := site.BtnVariantPrimary, site.BtnVariantSecondary, site.BtnVariantNeutral
+	primary, secondary := site.BtnVariantPrimary, site.BtnVariantSecondary
 	medium := site.BtnSizeMedium
 	block := link("Buy", buy, primary, medium)
 	block.Block = true
-	signIn := link("Sign In", "#sign-in", primary, site.BtnSizeXLarge)
-	signIn.Rect = true
-	store := link("Continue Shopping", "#store", secondary, site.BtnSizeXLarge)
-	store.Rect = true
 	disabled := func(variant site.BtnVariant) site.Btn {
 		b := link("Buy", "", variant, medium)
 		b.Attrs = h.Disabled()
@@ -34,11 +30,9 @@ func TestBtnRendersTheExamples(t *testing.T) {
 	}{
 		{"default", link("Buy", buy, primary, medium)},
 		{"block", block},
-		{"rect", g.Group{signIn, store}},
-		{"cta", g.Group{link("Learn more", "#learn", primary, site.BtnSizeCTA), link("Buy", buy, secondary, site.BtnSizeCTA)}},
-		{"sizes", g.Group{link("Buy", buy, primary, site.BtnSizeSmall), link("Buy", buy, primary, medium), link("Buy", buy, primary, site.BtnSizeLarge), link("Buy", buy, primary, site.BtnSizeXLarge)}},
-		{"variants", g.Group{link("Buy", buy, primary, medium), link("Buy", buy, secondary, medium), link("Buy", buy, neutral, medium), link("Buy", buy, site.BtnVariantSecondaryNeutral, medium)}},
-		{"disabled", g.Group{disabled(primary), disabled(secondary), disabled(neutral)}},
+		{"sizes", g.Group{link("Buy", buy, primary, medium), link("Buy", buy, primary, site.BtnSizeLarge)}},
+		{"variants", g.Group{link("Buy", buy, primary, medium), link("Buy", buy, secondary, medium)}},
+		{"disabled", g.Group{disabled(primary), disabled(secondary)}},
 	} {
 		example.Check(t, c.node, "site/button/examples/"+c.path+".html")
 	}

@@ -1,6 +1,6 @@
 @layer components {
   .cui-field {
-    /* rule 6: the containing block its label, prefix and chevron are placed in */
+    /* rule 6: the containing block its label and prefix are placed in */
     position: relative;
     color-scheme: light;
     border-radius: 12px;
@@ -85,121 +85,6 @@
     color: var(--cui-c-error);
   }
 
-  /* a select matches no :placeholder-shown: the label rule above floats it
-     always, and an empty one is taken back to the placeholder below */
-  select.cui-field-input {
-    padding-right: 40px;
-    text-overflow: ellipsis;
-    appearance: none;
-    cursor: pointer;
-
-    &:has(option[value=""]:checked) {
-      color: transparent;
-    }
-
-    &:disabled {
-      cursor: default;
-    }
-
-    /* some browsers draw the list in the select's color, transparent when empty */
-    option {
-      color: var(--cui-c-text);
-    }
-  }
-
-  select.cui-field-input:has(option[value=""]:checked) + .cui-field-label {
-    top: 18px;
-    font-size: 17px;
-    line-height: 21px;
-    letter-spacing: var(--cui-tracking-17);
-
-    /* Chromium in forced colors draws the empty choice's text, its color
-       forced: the label at the top, not over that text */
-    @media (forced-colors: active) {
-      top: 10px;
-      font-size: 12px;
-      line-height: 16px;
-      letter-spacing: var(--cui-tracking-12);
-    }
-  }
-
-  /* a click through the label opens the list; the label's own click would
-     only focus the select */
-  select.cui-field-input + .cui-field-label {
-    max-width: calc(100% - 57px);
-    pointer-events: none;
-  }
-
-  /* the label's room is the box's padding: the textarea's text scrolls out
-     below it, not under the label */
-  .cui-field-box {
-    display: flex;
-    padding: 23px 3px 3px;
-    border: 1px solid var(--cui-c-border);
-    border-radius: 12px;
-    background-color: var(--cui-c-field);
-
-    &:focus-within {
-      padding: 22px 2px 2px;
-      border-width: 2px;
-      border-color: var(--cui-c-accent);
-    }
-
-    &:has(> [aria-invalid="true"]):not(:focus-within) {
-      border-color: var(--cui-c-error);
-      background-color: var(--cui-c-field-error);
-    }
-
-    &:has(> :disabled) {
-      border-color: var(--cui-c-border-disabled);
-      background-color: var(--cui-c-field-disabled);
-    }
-  }
-
-  .cui-field-textarea {
-    box-sizing: content-box;
-    width: 100%;
-    height: 63px;
-    min-height: 25px;
-    padding: 2px 2px 2px 13px;
-    border: 0;
-    font-size: 17px;
-    line-height: 21px;
-    font-weight: 400;
-    letter-spacing: var(--cui-tracking-17);
-    color: var(--cui-c-text);
-    outline: none;
-
-    &:disabled {
-      color: var(--cui-c-text-2);
-      cursor: default;
-    }
-  }
-
-  .cui-field-box:focus-within + .cui-field-label,
-  .cui-field-box:has(> .cui-field-textarea:not(:placeholder-shown)) + .cui-field-label {
-    top: 10px;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: var(--cui-tracking-12);
-  }
-
-  .cui-field-box:has(> [aria-invalid="true"]) + .cui-field-label {
-    color: var(--cui-c-error);
-  }
-
-  .cui-field-chevron {
-    position: absolute;
-    top: 14px;
-    right: 11px;
-    color: var(--cui-c-text-2);
-    pointer-events: none;
-  }
-
-  select.cui-field-input:disabled ~ .cui-field-chevron {
-    opacity: 0.42;
-  }
-
   .cui-field-prefix {
     position: absolute;
     top: 1px;
@@ -228,15 +113,6 @@
     .cui-field-label {
       padding-left: 53px;
     }
-  }
-
-  .cui-field-help {
-    margin: 8px 0 0;
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 400;
-    letter-spacing: var(--cui-tracking-12);
-    color: var(--cui-c-text-2);
   }
 
   .cui-field-message {

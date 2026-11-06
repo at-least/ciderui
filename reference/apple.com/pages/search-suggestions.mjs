@@ -8,7 +8,7 @@
 // sections, Suggested Links and Suggested Searches, each a heading over rows,
 // each row a link with its icon (empty SVGs of apple.com's images' sizes,
 // 9 by 16 and 13 by 25: its arrow and its magnifier are read live by
-// ../icons/searchfield.mjs) and its text, the part the service marks in a
+// the magnifier probe git holds) and its text, the part the service marks in a
 // span (-text-highlight). The copy is outside the results' current box, so
 // none of its script's motion runs on it. Read only.
 import search from './search.mjs';

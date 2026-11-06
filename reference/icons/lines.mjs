@@ -11,9 +11,8 @@ import { open } from '../browsers.mjs';
 const LINE = (w) => `fill="none" stroke="#000" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"`;
 export const OURS = {
   disclosure: `<svg viewBox="0 0 17 8.85"><path d="M15 1.13 8.5 7.72 2 1.13" ${LINE(2.25)}/></svg>`,
-  footer: `<svg viewBox="0 0 11 6"><path d="M10.075.675 5.5 5.323.925.675" ${LINE(1)}/></svg>`,
 };
-const EXAMPLES = { disclosure: '../../components/site/accordion/examples/accordion.html', footer: '../../components/site/footer/examples/footer.html' };
+const EXAMPLES = { disclosure: '../../components/site/accordion/examples/accordion.html' };
 // apple.com's: the polyline with its stroke as its page computes it
 const read = (selector) => `(() => {
   const svg = document.querySelector(${JSON.stringify(selector)}).cloneNode(true);
@@ -27,7 +26,6 @@ const src = readFileSync(new URL('./svg.js', import.meta.url), 'utf8');
 const apple = {};
 for (const [key, url, selector, width] of [
   ['disclosure', 'https://www.apple.com/shop/bag', '.rc-accordion-item .accordion-icon-svg', 1200],
-  ['footer', 'https://www.apple.com/', '#ac-globalfooter .footer-icon-svg', 390],
 ]) {
   const page = await open('chromium', url);
   try {

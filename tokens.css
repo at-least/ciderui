@@ -5,17 +5,13 @@
   --cui-c-text-2: light-dark(#6e6e73, #86868b);
   /* never body text */
   --cui-c-text-3: light-dark(#86868b, #6e6e73);
-  /* a control's edge; a rule is --cui-c-divider or --cui-c-separator */
+  /* a control's edge; a rule is --cui-c-divider */
   --cui-c-border: light-dark(#86868b, #6e6e73);
   --cui-c-accent: #0071e3;
   --cui-c-accent-hover: #0076df;
   --cui-c-accent-active: #006edb;
   --cui-c-on-accent: #ffffff;
   --cui-c-link: light-dark(#0066cc, #2997ff);
-  --cui-c-neutral: light-dark(#1d1d1f, #f5f5f7);
-  --cui-c-neutral-hover: light-dark(#272729, #ffffff);
-  --cui-c-neutral-active: light-dark(#18181a, #ededf2);
-  --cui-c-on-neutral: light-dark(#ffffff, #000000);
   /* the global nav's ground */
   --cui-c-bar: light-dark(rgb(255 255 255 / 0.8), rgb(0 0 0 / 0.8));
   --cui-c-on-bar: light-dark(rgb(0 0 0 / 0.8), rgb(255 255 255 / 0.8));
@@ -24,9 +20,7 @@
   --cui-c-menu: light-dark(#fafafc, #161617);
   --cui-c-on-menu: light-dark(#333336, #e8e8ed);
   /* over the page under the global nav's opened search */
-  --cui-c-curtain: light-dark(rgb(232 232 237 / 0.4), rgb(0 0 0 / 0.4));
   /* a rule between the footer's rows */
-  --cui-c-separator: light-dark(rgb(0 0 0 / 0.16), rgb(255 255 255 / 0.24));
   --cui-c-field: rgb(255 255 255 / 0.8);
   --cui-c-field-error: #fff2f4;
   --cui-c-field-disabled: rgb(0 0 0 / 0.01);
@@ -38,7 +32,6 @@
   --cui-c-on-footer: rgb(0 0 0 / 0.56);
   --cui-c-on-footer-link: rgb(0 0 0 / 0.72);
   --cui-c-on-footer-title: rgb(0 0 0 / 0.88);
-  --cui-c-footer-rule: rgb(0 0 0 / 0.48);
   --cui-c-scrim: rgb(0 0 0 / 0.48);
   /* tv.apple.com's video player, the console's player (decision 28): one
      value each, a video dark on any page */
@@ -182,8 +175,6 @@
     --cui-c-text-3: var(--cui-c-text);
     --cui-c-border: var(--cui-c-text);
     --cui-c-divider: var(--cui-c-text);
-    --cui-c-separator: var(--cui-c-text);
-    --cui-c-footer-rule: var(--cui-c-on-footer-title);
     --cui-c-on-bar: var(--cui-c-on-bar-hover);
     --cui-c-on-footer: var(--cui-c-on-footer-title);
     --cui-c-on-footer-link: var(--cui-c-on-footer-title);

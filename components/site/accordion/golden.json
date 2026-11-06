@@ -29,12 +29,6 @@
  "accordion | .cui-accordion-item::details-content | 390 | transition-duration": "0s",
  "accordion | .cui-accordion-item::details-content | 390 | transition-timing-function": "ease",
  "accordion | .cui-accordion-question | 390 | list-style-type": "none",
- "large | .cui-accordion-question svg | 1200 | box-width": "32px",
- "large | .cui-accordion-question svg | 1200 | margin-right": "0px",
- "large | .cui-accordion-question svg | 900 | box-width": "32px",
- "large | .cui-accordion-question svg | 900 | margin-right": "0px",
- "large | .cui-accordion-question svg | 390 | box-width": "24px",
- "large | .cui-accordion-question svg | 390 | margin-right": "4px",
  "click | .cui-accordion-item:nth-child(2) > .cui-accordion-question svg | 1200 | transform": "matrix(1, 0, 0, -1, 0, 0)",
  "click | .cui-accordion-item:nth-child(2) .cui-accordion-answer | 1200 | box-height": "61.59375px"
 }

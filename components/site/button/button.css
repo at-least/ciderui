@@ -51,58 +51,12 @@
     --cui-btn-border: var(--cui-c-link);
   }
 
-  .cui-btn[data-variant="secondary-neutral"] {
-    --cui-btn-bg: transparent;
-    --cui-btn-bg-hover: var(--cui-c-neutral-hover);
-    --cui-btn-bg-active: var(--cui-c-neutral-active);
-    --cui-btn-color: var(--cui-c-neutral);
-    --cui-btn-color-hover: var(--cui-c-on-neutral);
-    --cui-btn-border: var(--cui-c-neutral);
-  }
-
-  .cui-btn[data-variant="neutral"] {
-    --cui-btn-bg: var(--cui-c-neutral);
-    --cui-btn-bg-hover: var(--cui-c-neutral-hover);
-    --cui-btn-bg-active: var(--cui-c-neutral-active);
-    --cui-btn-color: var(--cui-c-on-neutral);
-    --cui-btn-color-hover: var(--cui-c-on-neutral);
-  }
-
-  .cui-btn[data-size="sm"] {
-    min-width: 23px;
-    padding: 3px 10px;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: var(--cui-tracking-12);
-  }
-
-  .cui-btn[data-size="lg"],
-  .cui-btn[data-size="xl"] {
+  .cui-btn[data-size="lg"] {
     min-width: 26px;
     padding: 11px 21px;
     font-size: 17px;
     line-height: 20px;
     letter-spacing: var(--cui-tracking-17);
-  }
-
-  .cui-btn[data-size="xl"] {
-    min-width: 28px;
-    padding: 17px 30px;
-  }
-
-  .cui-btn[data-size="cta"] {
-    @media (width >= 735px) {
-      min-width: 26px;
-      padding: 11px 21px;
-      font-size: 17px;
-      line-height: 20px;
-      letter-spacing: var(--cui-tracking-17);
-    }
-  }
-
-  .cui-btn-rect {
-    border-radius: 12px;
-    white-space: normal;
   }
 
   .cui-btn-block {

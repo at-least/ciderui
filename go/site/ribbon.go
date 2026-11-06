@@ -10,7 +10,7 @@ import (
 
 type Ribbon struct {
 	Class string
-	// Children: a <p>, a [MoreLink] in it.
+	// Children: a <p>.
 	Children g.Node
 }
 

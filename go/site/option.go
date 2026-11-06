@@ -16,7 +16,6 @@ type OptionTile struct {
 	Value   string
 	Title   string
 	Detail  string
-	Price   string
 	Checked bool
 	// Attrs: nodes appended to the <input> (disabled, required); nil for none.
 	Attrs g.Node
@@ -40,7 +39,6 @@ func (o OptionTile) Render(w io.Writer) error {
 				g.Text(o.Title),
 				g.If(o.Detail != "", h.Span(h.Class("cui-option-detail"), g.Text(o.Detail))),
 			),
-			g.If(o.Price != "", h.Span(h.Class("cui-option-price"), g.Text(o.Price))),
 		),
 	).Render(w)
 }

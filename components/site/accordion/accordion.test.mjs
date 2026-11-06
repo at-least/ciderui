@@ -33,24 +33,9 @@ export const cases = [
     ],
   },
   {
-    name: 'large',
-    html: ex('large'),
-    checks: [
-      { target: Q, props: SIZE, apple: ['bag-accordion', 'accordion.title'] },
-      { target: `${Q} svg`, props: ['color'], apple: ['bag-accordion', 'accordion.icon'] },
-      { target: `${Q} svg`, props: ['box-height'], apple: ['bag-accordion', 'accordion.svg'] },
-      { target: Q, props: ['padding-top', 'padding-bottom'], apple: ['bag', 'accordion.button'] },
-      { target: `${Q} svg`, props: ['box-width', 'margin-right'], golden: 'apple.com\'s chevron, 32px (24px in a 32px column below 735px: bag-accordion:accordion.svg, .icon)' },
-    ],
-  },
-  {
     name: 'nested',
-    html: ex('large').replace('<details class="cui-accordion-item">', '<details class="cui-accordion-item" open>').replace('<p>What people ask most, answered.</p>', ex('accordion')),
+    html: ex('accordion').replace('<details class="cui-accordion-item">', '<details class="cui-accordion-item" open>'),
     checks: [
-      { target: `.cui-accordion[data-size="lg"] > ${ITEM} > ${Q}`, props: SIZE, apple: ['bag-accordion', 'accordion.title'] },
-      { target: `.cui-accordion:not([data-size]) > ${CLOSED} > ${Q}`, props: ['padding-top', 'padding-bottom'], apple: ['bag-accordion', 'compact.button'] },
-      { target: `.cui-accordion:not([data-size]) > ${CLOSED} > ${Q}`, props: SIZE, apple: ['bag-accordion', 'compact.title'] },
-      { target: `.cui-accordion:not([data-size]) > ${CLOSED} > ${Q} svg`, props: ['box-height'], apple: ['bag-accordion', 'compact.svg'] },
     ],
   },
   {

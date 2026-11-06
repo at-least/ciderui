@@ -64,7 +64,7 @@ for (const set of ['site', 'console']) {
 
 // Increase Contrast: secondary text and edges at the text's color...
 const CONTRAST = {
-  site: { '--cui-c-text': ['--cui-c-text-2', '--cui-c-text-3', '--cui-c-border', '--cui-c-divider', '--cui-c-separator'], '--cui-c-on-bar-hover': ['--cui-c-on-bar'], '--cui-c-on-footer-title': ['--cui-c-on-footer', '--cui-c-on-footer-link', '--cui-c-footer-rule'] },
+  site: { '--cui-c-text': ['--cui-c-text-2', '--cui-c-text-3', '--cui-c-border', '--cui-c-divider'], '--cui-c-on-bar-hover': ['--cui-c-on-bar'], '--cui-c-on-footer-title': ['--cui-c-on-footer', '--cui-c-on-footer-link'] },
   console: {
     '--cui-c-console-neutral-label-primary': ['--cui-c-console-neutral-label-secondary', '--cui-c-console-field-border', '--cui-c-console-neutral-border-secondary', '--cui-c-console-dialog-stroke'],
     '--cui-c-on-video': ['--cui-c-on-video-time'],

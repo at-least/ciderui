@@ -9,11 +9,11 @@ const PAGES = Object.fromEntries(['ring'].map((name) => [`/${name}.html`, readFi
 const server = createServer((req, res) => { res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' }); res.end(PAGES[req.url] ?? html); });
 await new Promise(r => server.listen(0, '127.0.0.1', r));
 const ITEM = '.cui-accordion-item:nth-child(2)';
-// ring.html's: the first compact question in the large one's answer, and the
-// link beginning the compact example's first answer
+// ring.html's: the first question in an answer, and the link beginning the
+// example's first answer
 const RINGS = {
-  question: '.cui-accordion[data-size="lg"] .cui-accordion:not([data-size]) > .cui-accordion-item:first-child > .cui-accordion-question',
-  link: 'main > .cui-accordion:not([data-size]) .cui-accordion-answer a',
+  question: '#nested .cui-accordion-answer > .cui-accordion-item:first-child > .cui-accordion-question',
+  link: '#linked .cui-accordion-answer a',
 };
 const read = `Promise.resolve((() => { const d = document.querySelector('${ITEM}'); return { open: d.open, item: d.getBoundingClientRect().height, answer: d.querySelector('.cui-accordion-answer').getBoundingClientRect().height, chevron: getComputedStyle(d.querySelector('svg')).transform }; })())`;
 let page;
@@ -81,7 +81,7 @@ const claims = [
 const shown = (r, side) => r.focused && r.visible && r[side] >= r.height * r.scale;
 for (const [key, r] of Object.entries(got.rings ?? {})) {
   const [name, , width] = key.split(' ');
-  claims.push([`the ${name === 'question' ? 'compact question in the large one\'s answer' : 'link beginning an answer'}, focused by the keyboard at ${width}px: its ring's left side shown${name === 'question' ? ', and its right' : ''}`,
+  claims.push([`the ${name === 'question' ? 'question in an answer' : 'link beginning an answer'}, focused by the keyboard at ${width}px: its ring's left side shown${name === 'question' ? ', and its right' : ''}`,
     shown(r, 'left') && (name !== 'question' || shown(r, 'right'))]);
 }
 console.log(page.label);

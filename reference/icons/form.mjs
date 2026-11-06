@@ -117,14 +117,14 @@ mkdirSync(new URL('./results/', import.meta.url), { recursive: true });
 writeFileSync(new URL('./results/form.json', import.meta.url), JSON.stringify({ browser: page.label, date: new Date().toISOString(), ours: { alert: ALERT, dropdown: DROPDOWN }, ...result }, null, 1));
 console.log(page.label);
 console.log(JSON.stringify(result, null, 1));
-// the icons compared are the ones the kit ships, in the field's examples, in
+// the icons compared are the ones the kit ships, in the field's error example, in
 // currentColor
-const examples = ['error', 'select'].map(n => readFileSync(new URL(`../../components/site/field/examples/${n}.html`, import.meta.url), 'utf8')).join('\n');
-const shipped = [['alert', ALERT], ['dropdown', DROPDOWN.replace(/^<svg[^>]*>|<\/svg>$/g, '')]].map(([k, inner]) => {
+const examples = ['error'].map(n => readFileSync(new URL(`../../components/site/field/examples/${n}.html`, import.meta.url), 'utf8')).join('\n');
+const shipped = [['alert', ALERT]].map(([k, inner]) => {
   const ok = examples.includes(inner.replaceAll('"#000"', '"currentColor"'));
   console.log(`${ok ? 'ok  ' : 'FAIL'} ${k} is the examples'`);
   return ok;
 });
-const pass = result.alert.iou >= 0.85 && result.dropdown.iou >= 0.85 && shipped.every(Boolean);
+const pass = result.alert.iou >= 0.85 && shipped.every(Boolean);
 console.log(pass ? 'PASS: each shares at least 0.85 of its ink with apple.com\'s' : 'FAIL');
 process.exit(pass ? 0 : 1);

@@ -50,17 +50,12 @@ for (const m of MODES) {
   // an option's edge: the pixel 1px in from its left side at its middle
   const [o0, o1] = [await shot('#opt .cui-option-label', 0), await shot('#opt .cui-option-label', 1)];
   got.options = [px(o0, 1, Math.floor(o0.h / 2)), px(o1, 1, Math.floor(o1.h / 2))];
-  const [f1, f2, f3, f4] = [await shot('#f1 .cui-field'), await shot('#f2 .cui-field'), await shot('#f3 .cui-field'), await shot('#f4 .cui-field')];
-  got.select = diff(f3, f4);
-  got.selectShown = diff(f1, f2).n;
-  got.label = await page.evaluate(() => { const f = document.querySelector('#f1 .cui-field').getBoundingClientRect(), l = document.querySelector('#f1 .cui-field-label').getBoundingClientRect(); return { y0: Math.round(l.top - f.top), y1: Math.round(l.bottom - f.top) - 1 }; });
   await browser.close();
   writeFileSync(new URL(`./results/${m.name}.json`, import.meta.url), JSON.stringify({ date: new Date().toISOString(), ...got }, null, 1));
 
   const claims = [
     [`forced colors ${m.forced ? '' : 'not '}matched (the control)`, got.forced === m.forced],
     ['the checked option drawn unlike the unchecked one (the control)', got.options[0] !== got.options[1]],
-    ['the empty select\'s own text not drawn where its label lies', got.select.n === 0 || got.select.y0 > got.label.y1],
   ];
   console.log(`${m.name}: ${got.browser}`);
   for (const [claim, ok] of claims) {

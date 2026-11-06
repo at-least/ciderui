@@ -35,11 +35,11 @@ for (const set of ['site', 'console']) check(`${set}: every :hover sits inside (
 // rule 9's exceptions, each read in its part's test: a text field draws its
 // edge or halo in the ring's place; the others move the one ring in, where a
 // scroller or their edge would clip it
-const NO_RING = ['cui-console-field', 'cui-field-input', 'cui-field-textarea', 'cui-globalnav-searchinput'];
-const RING_MOVED = ['cui-console-list-item', 'cui-globalnav-backbutton', 'cui-globalnav-flyoutbutton', 'cui-globalnav-flyoutlink'];
+const NO_RING = ['cui-console-field', 'cui-field-input'];
+const RING_MOVED = ['cui-console-list-item'];
 // rule 10 is a pointer's color change; these change with a panel opening, a
 // field's label rising or its text typed, each read in its part's test
-const OWN_MOTION = ['.cui-field-label', '.cui-globalnav-flyoutpanel', '.cui-globalnav-searchfield > svg'];
+const OWN_MOTION = ['.cui-field-label'];
 // what the keyboard reaches
 const CONTROLS = 'a[href], button, input:not([type=hidden]), select, textarea, summary, [tabindex]:not([tabindex="-1"])';
 
