@@ -32,7 +32,7 @@ if (process.env.CIDERUI_CHROME === '1') {
   if (!/^sha256:[0-9a-f]{64}$/.test(image)) throw new Error(`docker gave no image ID for Chrome's: ${image}`);
 }
 
-const STEPS = 'node test/tokens.mjs && node test/type.mjs && node test/page.mjs && node test/components.mjs && node test/rules.mjs && node test/surfaces.mjs && node reference/touch/audit.mjs && node test/probes.mjs && node scripts/build-lucide.mjs --check';
+const STEPS = 'node test/tokens.mjs && node test/type.mjs && node test/page.mjs && node test/components.mjs && node test/rules.mjs && node test/pictures.mjs && node test/surfaces.mjs && node reference/touch/audit.mjs && node test/probes.mjs && node scripts/build-lucide.mjs --check';
 const command = process.argv.length > 2 ? process.argv.slice(2) : ['sh', '-c', STEPS];
 const pass = ['CASES', 'UPDATE_GOLDEN'].filter((k) => process.env[k] !== undefined).flatMap((k) => ['-e', `${k}=${process.env[k]}`]);
 // The image's user (root): what it writes comes back through tar as the
@@ -52,21 +52,16 @@ const TAR_ENV = { ...process.env, COPYFILE_DISABLE: '1' };
 
 let status = 1;
 try {
-  const exclude = '--exclude ./node_modules --exclude ./.git';
+  const exclude = '--exclude ./node_modules --exclude ./.git --exclude ./test/pictures-failed';
   execSync(`tar -c --no-xattrs -C ${q(ROOT)} ${exclude} . | docker cp - ${id}:/src/ciderui`, { env: TAR_ENV, stdio: ['ignore', 'ignore', 'inherit'] });
   status = spawnSync('docker', ['start', '-a', id], { stdio: 'inherit' }).status ?? 1;
   const out = mkdtempSync(join(tmpdir(), 'ciderui-written-'));
   try {
     execSync(`docker cp ${id}:/tmp/written.tar - | tar -xOf - written.tar | tar -xf - -C ${q(out)}`, { stdio: ['ignore', 'ignore', 'inherit'] });
     const written = execSync('find . -type f', { cwd: out, encoding: 'utf8' }).split('\n').filter(Boolean).map((f) => f.replace(/^\.\//, ''));
-    // check-ignore exits 1 when it ignores none of them, 0 when some
-    const check = spawnSync('git', ['check-ignore', '--no-index', '--stdin'], { cwd: ROOT, input: written.join('\n'), encoding: 'utf8' });
-    if (check.status > 1) throw new Error(`git check-ignore: ${check.stderr}`);
-    const ignored = new Set(check.stdout.split('\n').filter(Boolean));
-    const kept = written.filter((f) => !ignored.has(f));
-    if (kept.length) {
-      execSync(`tar -c -C ${q(out)} -T - | tar -xf - -C ${q(ROOT)}`, { input: kept.join('\n'), stdio: ['pipe', 'ignore', 'inherit'] });
-      console.log(`docker.mjs: ${kept.length} written file(s) copied back`);
+    if (written.length) {
+      execSync(`tar -c -C ${q(out)} -T - | tar -xf - -C ${q(ROOT)}`, { input: written.join('\n'), stdio: ['pipe', 'ignore', 'inherit'] });
+      console.log(`docker.mjs: ${written.length} written file(s) copied back`);
     }
   } finally {
     rmSync(out, { recursive: true, force: true });

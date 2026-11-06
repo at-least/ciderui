@@ -36,3 +36,9 @@ export function compile({ css = '@import "index.css";', classes = '', sources = 
 export const compileKit = () => compile({ css: `@import "fonts.css";\n@import "index.css";\n${COMPONENTS.map((c) => `@import "${c.dir}/${c.name}.css";`).join('\n')}`, sources: ['components'] });
 
 export const exampleFiles = (part) => readdirSync(join(ROOT, part.dir, 'examples')).filter((f) => f.endsWith('.html')).sort();
+
+// as its set's page holds it
+export const exampleHtml = (part, file) => {
+  const example = readFileSync(join(ROOT, part.dir, 'examples', file), 'utf8');
+  return part.set === 'console' ? `<div class="cui-console-page">${example}</div>` : example;
+};

@@ -3,7 +3,7 @@
 
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { COMPONENTS, ROOT, compileKit, exampleFiles } from './compile.mjs';
+import { COMPONENTS, ROOT, compileKit, exampleFiles, exampleHtml } from './compile.mjs';
 import { open, quit } from './browser.mjs';
 import { OUTLINE } from './harness.mjs';
 import { ref } from './reference.mjs';
@@ -91,8 +91,7 @@ const page = await open(css, '');
 for (const part of COMPONENTS) {
   for (const file of exampleFiles(part)) {
     const name = `${part.name}/${file}`;
-    const example = readFileSync(join(ROOT, part.dir, 'examples', file), 'utf8');
-    await page.page.evaluate((html) => { document.body.innerHTML = html; }, part.set === 'console' ? `<div class="cui-console-page">${example}</div>` : example);
+    await page.page.evaluate((html) => { document.body.innerHTML = html; }, exampleHtml(part, file));
     examples++;
     for (const width of [390, 900, 1200]) {
       await page.resize(width);
