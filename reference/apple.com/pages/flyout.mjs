@@ -1,4 +1,4 @@
-// The global nav's flyouts, a desktop's menus under its links: Mac's,
+// @external: The global nav's flyouts, a desktop's menus under its links: Mac's,
 // opened by the pointer (`hover`: its link reached in steps, apple.com's
 // script opening it 120ms on) at each width, then the pointer into the
 // flyout's room at the window's right edge, where it hovers nothing: the bar
@@ -21,7 +21,7 @@ const SPACE = ['padding-top', 'padding-right', 'padding-bottom', 'padding-left',
 const ITEM = ['opacity', 'transform', 'transition-delay', ...MOTION];
 const SIZE = ['flex-grow', 'flex-shrink', 'flex-basis', 'max-width', 'width'];
 const MOTIONS = '#globalnav, #globalnav-curtain';
-// the flyout's room at the window's right edge, below its links' first rows
+// @external: the flyout's room at the window's right edge, below its links' first rows
 const ROOM = (w) => [w - 10, 400];
 
 export default {
@@ -31,7 +31,7 @@ export default {
   probes: [
     { name: 'nav', hover: '#globalnav .globalnav-link-mac', pointer: ROOM, animations: MOTIONS, select: '#globalnav', props: ['height', 'position', 'background-color', ...BLUR, 'z-index'], vars: ['--globalnav-background', '--globalnav-backdrop-filter'], box: true, position: true },
     { name: 'nav.content', select: '#globalnav .globalnav-content', props: ['position', 'z-index', 'background-color', ...BLUR], box: true, position: true },
-    // the open flyout's link, another, the search beside them
+    // @external: the open flyout's link, another, the search beside them
     { name: 'link.open', select: '#globalnav .globalnav-link-mac', props: ['color', 'opacity', ...MOTION] },
     { name: 'link.other', select: '#globalnav .globalnav-link-ipad', props: ['color', 'opacity'] },
     { name: 'link.search', select: '#globalnav .globalnav-link-search', props: ['color', 'opacity'] },
@@ -56,18 +56,18 @@ export default {
     { name: 'link.after', select: `${ELEVATED} .globalnav-submenu-list-item .globalnav-submenu-link`, props: [...TYPE, ...SPACE, 'display', ...MOTION], box: true, position: true, states: ['hover'] },
     { name: 'link', select: `${GROUP} .globalnav-submenu-link`, props: [...TYPE, ...SPACE, 'display', 'text-decoration-line', 'background-color', ...FOCUS, ...MOTION], box: true, position: true, states: ['hover', 'focus-visible'] },
     { name: 'curtain', select: '#globalnav-curtain', props: ['position', 'top', 'z-index', 'background-color', ...BLUR, 'opacity', 'visibility', 'pointer-events', 'transition-delay', ...MOTION], box: true, position: true },
-    // the button beside the link the keyboard opens the flyout by: its box, its
+    // @external: the button beside the link the keyboard opens the flyout by: its box, its
     // chevron shown focused
     { name: 'trigger', select: TRIGGER, props: ['position', 'top', 'left', 'right', 'width', 'height', ...BOX, 'color', 'opacity', 'cursor', ...FLEX, ...FOCUS, ...MOTION], box: true, position: true, states: ['focus-visible', 'hover'] },
     { name: 'trigger.icon', select: `${TRIGGER} .globalnav-image-regular`, stateOn: TRIGGER, props: ['display', 'width', 'height', ...SPACE, 'opacity', 'color', ...MOTION], box: true, position: true, states: ['focus-visible', 'hover'] },
     { name: 'trigger.compact', select: `${TRIGGER} .globalnav-image-compact`, props: ['display'] },
     { name: 'trigger.group', select: '#globalnav .globalnav-item-mac .globalnav-submenu-trigger-group', props: ['position', 'display', 'width', 'height', ...SPACE, 'list-style-type'], box: true, position: true },
     { name: 'trigger.item', select: '#globalnav .globalnav-item-mac .globalnav-submenu-trigger-item', props: ['display', 'position'], box: true, position: true },
-    // the change: the pointer along the bar to iPad's link
+    // @external: the change: the pointer along the bar to iPad's link
     { name: 'change', hover: '#globalnav .globalnav-link-ipad', pointer: ROOM, animations: MOTIONS, select: '#globalnav-submenu-link-ipad', props: ['height', 'background-color', 'visibility', ...MOTION], vars: ['--r-globalnav-flyout-height', '--r-globalnav-flyout-rate'], box: true },
     { name: 'change.previous', select: FLY, props: ['height', 'visibility'], box: true },
     { name: 'change.link', select: '#globalnav .globalnav-link-mac', props: ['color'] },
-    // and off the nav, down to the page: it closes
+    // @external: and off the nav, down to the page: it closes
     { name: 'close', hover: (w) => [w / 2, 890], hovered: 1200, animations: MOTIONS, select: '#globalnav-submenu-link-ipad', props: ['height', 'visibility', 'background-color'], box: true },
     { name: 'close.curtain', select: '#globalnav-curtain', props: ['opacity', 'visibility'] },
     { name: 'close.nav', select: '#globalnav', props: ['background-color', ...BLUR] },

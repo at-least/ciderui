@@ -1,4 +1,4 @@
-// node run.mjs: MEASURED.md holds its claims and method.
+// @invariant: node run.mjs: MEASURED.md holds its claims and method.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { chromium, firefox } from 'playwright-core';
 
@@ -11,7 +11,7 @@ const MODES = [
   { name: 'firefox-forced', engine: firefox, forced: true, launch: { firefoxUserPrefs: { 'browser.display.document_color_use': 2 } }, page: {} },
 ];
 
-// a PNG's pixels, decoded in an unforced Chromium page with no color
+// @external: a PNG's pixels, decoded in an unforced Chromium page with no color
 // conversion
 const reader = await chromium.launch();
 const decoder = await reader.newPage();
@@ -24,7 +24,7 @@ const decode = (png) => decoder.evaluate(async (b64) => {
   return { w: bmp.width, h: bmp.height, d: Array.from(g.getImageData(0, 0, bmp.width, bmp.height).data) };
 }, png.toString('base64'));
 const px = (im, x, y) => { const i = (y * im.w + x) * 4; return `rgb(${im.d[i]},${im.d[i + 1]},${im.d[i + 2]})`; };
-// the pixels where two pictures differ: their count and their rows
+// @invariant: the pixels where two pictures differ: their count and their rows
 const diff = (a, b) => {
   if (a.w !== b.w || a.h !== b.h) throw new Error('the pictures differ in size');
   let n = 0, y0 = null, y1 = null;
@@ -47,7 +47,7 @@ for (const m of MODES) {
     forced: matchMedia('(forced-colors: active)').matches,
     browser: navigator.userAgent.match(/(Chrome|Firefox)\/[\d.]+/)[0],
   }));
-  // an option's edge: the pixel 1px in from its left side at its middle
+  // @external: an option's edge: the pixel 1px in from its left side at its middle
   const [o0, o1] = [await shot('#opt .cui-option-label', 0), await shot('#opt .cui-option-label', 1)];
   got.options = [px(o0, 1, Math.floor(o0.h / 2)), px(o1, 1, Math.floor(o1.h / 2))];
   await browser.close();

@@ -2,14 +2,14 @@
   .cui-globalnav {
     --cui-globalnav-ease: cubic-bezier(0.4, 0, 0.6, 1);
 
-    /* rule 6's exception: over the page, apple.com's 9999; a site's sticky
+    /* @invariant: rule 6's exception: over the page, apple.com's 9999; a site's sticky
        replaces the position */
     position: relative;
     z-index: 9999;
     height: 48px;
     background-color: var(--cui-c-bar);
     backdrop-filter: saturate(1.8) blur(20px);
-    /* Safari has the prefixed property alone: for a site whose build adds
+    /* @external: Safari has the prefixed property alone: for a site whose build adds
        no prefixes */
     -webkit-user-select: none;
     user-select: none;
@@ -31,7 +31,7 @@
   }
 
   .cui-globalnav-list {
-    /* the browser's popover style undone, not rule 6's size or place */
+    /* @trap: the browser's popover style undone, not rule 6's size or place */
     position: static;
     inset: auto;
     display: flex;
@@ -90,7 +90,7 @@
     &:where(:lang(zh)) {
       letter-spacing: normal;
     }
-    /* a <button>'s own look undone, for a POST item (sign out) */
+    /* @trap: a <button>'s own look undone, for a POST item (sign out) */
     text-align: start;
     cursor: pointer;
   }
@@ -215,7 +215,7 @@
     }
   }
 
-  /* Reduce Transparency: nothing shows through the bar (tokens.css solidifies its
+  /* @invariant: Reduce Transparency: nothing shows through the bar (tokens.css solidifies its
      ground). Last: it overrides the bar's blur in every state. */
   @media (prefers-reduced-transparency: reduce) {
     .cui-globalnav {

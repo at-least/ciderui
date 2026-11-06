@@ -1,4 +1,4 @@
-// The global nav's search, opened (its button clicked once, at the first
+// @external: The global nav's search, opened (its button clicked once, at the first
 // width of each of the nav's layouts: it stays open as the window narrows
 // within one, and closes where the nav changes, at 833px), so its probes are
 // a spec of their own: the home page's flyout, its field (the input, its
@@ -27,7 +27,7 @@ export default {
   probes: [
     { name: 'nav', click: '#globalnav-menubutton-link-search', pointer: [200, 430], animations: '#globalnav', select: '#globalnav', props: NAV, vars: NAV_VARS, box: true, position: true, widths: WIDE },
     { name: 'nav.phone', click: '#globalnav-menubutton-link-search', pointer: [200, 850], animations: '#globalnav', select: '#globalnav', props: NAV, vars: NAV_VARS, box: true, position: true, widths: PHONE },
-    // the bar's content box, the sheet's ground to 833px; the page held
+    // @external: the bar's content box, the sheet's ground to 833px; the page held
     { name: 'content', select: '#globalnav .globalnav-content', props: ['position', 'top', 'height', 'background-color', ...BLUR, 'z-index', ...MOTION], box: true, position: true },
     { name: 'root', select: 'html', props: ['overflow-y'] },
     { name: 'body', select: 'body', props: ['overflow-y'] },
@@ -52,7 +52,7 @@ export default {
     { name: 'results.icon-compact', select: `${FLY} .globalnav-searchresults-list-icon .globalnav-image-compact svg`, props: ['width', 'height', 'fill'], box: true, position: true, widths: PHONE },
     { name: 'results.text', select: `${FLY} .globalnav-searchresults-list-text`, props: [...TYPE, ...SPACE], box: true, position: true },
     { name: 'curtain', select: '#globalnav-curtain', props: ['position', 'top', 'z-index', 'background-color', ...BLUR, 'opacity', 'visibility', ...MOTION], box: true, position: true },
-    // the forced states last: the still style that holds them cancels the
+    // @invariant: the forced states last: the still style that holds them cancels the
     // page's animations, and taking it off starts them again, from the rows'
     // first frame (4px up and transparent), which a probe read after them
     // reads (the link's own rest is read before its states)

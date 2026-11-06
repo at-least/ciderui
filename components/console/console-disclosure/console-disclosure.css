@@ -20,7 +20,7 @@
       }
     }
 
-    /* not a larger target drawn round the line: two summaries 15px apart
+    /* @trap: not a larger target drawn round the line: two summaries 15px apart
        shared a band the lower one won, and an opened one's reached into its
        content */
     @media (pointer: coarse) {

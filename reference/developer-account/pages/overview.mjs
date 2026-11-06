@@ -1,4 +1,4 @@
-// Its emails card and the team's address are not read.
+// @invariant: Its emails card and the team's address are not read.
 import { TYPE, LINK, PAGE } from '../../apple.com/pages/common.mjs';
 
 const PAD = ['padding-top', 'padding-right', 'padding-bottom', 'padding-left'];

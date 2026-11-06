@@ -1,4 +1,4 @@
-// The browsers the reference probes run in, behind what open() gives.
+// @external: The browsers the reference probes run in, behind what open() gives.
 // move: none on the simulator, which has no pointer. size: Playwright's viewport;
 // Safari's window, its frame included. shot: at the screen's pixels, the window's
 // width times its pixel ratio.
@@ -33,7 +33,7 @@ import { existsSync, readFileSync, statSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { extname, join } from 'node:path';
 
-// options: Playwright's page options (a touch screen: hasTouch), for its
+// @external: options: Playwright's page options (a touch screen: hasTouch), for its
 // browsers only
 export async function open(name, url, options) {
   if (options && ['safari', 'ios'].includes(name)) throw new Error(`no page options in ${name}`);
@@ -42,7 +42,7 @@ export async function open(name, url, options) {
   return page;
 }
 
-// a built site served from dir on 127.0.0.1:port, a directory's
+// @invariant: a built site served from dir on 127.0.0.1:port, a directory's
 // index.html for the directory; resolves once it listens
 const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain', '.json': 'application/json' };
 export async function serve(dir, port) {
@@ -114,7 +114,7 @@ async function viaPlaywright(engine, channel, url, options) {
   }
 }
 
-// a virtual X display of the run's own, on a number Xvfb finds free
+// @external: a virtual X display of the run's own, on a number Xvfb finds free
 // (-displayfd); shot(page) crops the page out of the display's pixels, where
 // Firefox says its page is (mozInnerScreenX, mozInnerScreenY)
 async function xvfb() {
@@ -137,7 +137,7 @@ async function xvfb() {
     server.on('error', (e) => { clearTimeout(timer); reject(e); });
     server.on('exit', (code) => { clearTimeout(timer); reject(new Error(`Xvfb exited ${code}: ${log}`)); });
   });
-  // Firefox on X, not on the desktop's Wayland
+  // @external: Firefox on X, not on the desktop's Wayland
   const env = { ...process.env, DISPLAY: display, GDK_BACKEND: 'x11', MOZ_ENABLE_WAYLAND: '0' };
   delete env.WAYLAND_DISPLAY;
   return {
@@ -150,14 +150,14 @@ async function xvfb() {
   };
 }
 
-// WebDriver's code points for the keys a probe presses (ControlOrMeta is
+// @external: WebDriver's code points for the keys a probe presses (ControlOrMeta is
 // Meta: safaridriver is the Mac's); a character is its own
 const KEYS = { Tab: '\uE004', Enter: '\uE006', Escape: '\uE00C', Alt: '\uE00A', Shift: '\uE008', Meta: '\uE03D', ControlOrMeta: '\uE03D' };
 
 async function viaSafariDriver(capabilities, url) {
   const port = 4473;
   const base = `http://localhost:${port}`;
-  // On the Mac a Safari the run launches is quit when it closes. Left with no
+  // @external: On the Mac a Safari the run launches is quit when it closes. Left with no
   // window, macOS quits it under memory pressure and still counts it as running
   // (automatic termination): safaridriver then waits for it and launches no
   // other ("waiting for its RWIApplication"). A Safari running before the run
@@ -176,7 +176,7 @@ async function viaSafariDriver(capabilities, url) {
     return json.value;
   };
   let session;
-  // where the pointer is: WebDriver's starts at the window's corner
+  // @external: where the pointer is: WebDriver's starts at the window's corner
   let pointer = [0, 0];
   const close = async () => {
     if (session) await wd('DELETE', `/session/${session.sessionId}`).catch(e => console.error('delete session:', e.message));
@@ -216,7 +216,7 @@ async function viaSafariDriver(capabilities, url) {
         const el = await wd('POST', `/session/${id}/element`, { using: 'css selector', value: selector });
         await wd('POST', `/session/${id}/element/${Object.values(el)[0]}/click`, {});
       },
-      // two clicks at the element's middle, at once: the pointer jumps there
+      // @external: two clicks at the element's middle, at once: the pointer jumps there
       dblclick: async (selector) => {
         const script = 'const r = document.querySelector(arguments[0]).getBoundingClientRect(); return [Math.round(r.left + r.width / 2), Math.round(r.top + r.height / 2)];';
         const [x, y] = await wd('POST', `/session/${id}/execute/sync`, { script, args: [selector] });
@@ -225,7 +225,7 @@ async function viaSafariDriver(capabilities, url) {
         await wd('POST', `/session/${id}/actions`, { actions: [{ type: 'pointer', id: 'mouse', parameters: { pointerType: 'mouse' }, actions }] });
         pointer = [x, y];
       },
-      // a key, or keys held together as Playwright writes them (Alt+Tab)
+      // @external: a key, or keys held together as Playwright writes them (Alt+Tab)
       press: async (key) => {
         const values = key.split('+').map(k => {
           if (k.length === 1) return k;
@@ -239,7 +239,7 @@ async function viaSafariDriver(capabilities, url) {
         const actions = [...text].flatMap(value => [{ type: 'keyDown', value }, { type: 'keyUp', value }]);
         await wd('POST', `/session/${id}/actions`, { actions: [{ type: 'key', id: 'keyboard', actions }] });
       },
-      // a move of a duration is one jump at its end in Safari 27 (one
+      // @external: a move of a duration is one jump at its end in Safari 27 (one
       // pointermove, 2026-10-21): it is moved a step a frame, from where it was
       move: async (x, y, ms) => {
         if (capabilities['safari:useSimulator']) throw new Error('the simulator has no pointer to move');

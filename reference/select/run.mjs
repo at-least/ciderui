@@ -1,4 +1,5 @@
-// BROWSER=safari|chrome|chromium|firefox|ios node run.mjs: MEASURED.md holds its claims and method.
+// @invariant: BROWSER=safari|chrome|chromium|firefox|ios node run.mjs: MEASURED.md holds its claims
+// and method.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open, wait } from '../browsers.mjs';
@@ -26,7 +27,7 @@ let label;
 let tip;
 try {
   if (IOS) {
-    // the same steps on each page, each on a simulator of its own
+    // @external: the same steps on each page, each on a simulator of its own
     const steps = ['Search', 'type:mac', 'More', 'press:Explore'];
     const ios = async (path) => {
       const from = reports.length;
@@ -45,21 +46,21 @@ try {
       label = page.label;
       await page.size(1440, 900);
       const state = () => page.run('Promise.resolve(window.cuiState())');
-      // a button: by Return in Safari, else clicked
+      // @external: a button: by Return in Safari, else clicked
       const press = (selector) => BROWSER === 'safari'
         ? page.run(`Promise.resolve((document.querySelector('${selector}').focus(), true))`).then(() => page.press('Enter'))
         : page.click(selector);
       const step = async (act, ms = 300) => { await act(); await page.run(wait(ms)); return state(); };
       const clear = () => page.run('Promise.resolve((getSelection().removeAllRanges(), true))');
       await page.run(wait(500));
-      // the bar selectable
+      // @external: the bar selectable
       got.plainAll = await step(() => page.press('ControlOrMeta+a'));
       await clear();
       await step(() => press('#more'), 600);
       got.plainExplore = await step(() => page.dblclick('#explore'));
       await step(() => press('#search'), 600);
       got.plainHeading = await step(() => page.dblclick('#heading'));
-      // the bar not selectable
+      // @external: the bar not selectable
       await page.go(`${origin}/`);
       await page.run(wait(500));
       got.rest = await state();

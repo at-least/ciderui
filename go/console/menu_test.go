@@ -36,7 +36,7 @@ func choiceMenu() console.ConsoleChoiceMenu {
 	}}
 }
 
-// two columns, the voices beside the subtitles, as the Apple TV app's
+// @external: two columns, the voices beside the subtitles, as the Apple TV app's
 func columnsMenu() console.ConsoleChoiceMenu {
 	m := choiceMenu()
 	m.Columns = append([]console.ConsoleChoiceColumn{{Name: "voices", Title: "Voices", Choices: []console.ConsoleChoice{

@@ -1,4 +1,4 @@
-// node apple.mjs: where apple.com lands a footnote's note under its sticky
+// @external: node apple.mjs: where apple.com lands a footnote's note under its sticky
 // local nav, and what puts it there. Three pages in Playwright's Chromium
 // (../browsers.mjs), at 1440 by 900 and at 390 by 900: iPhone 18 Pro's,
 // whose local nav is a newer one (nav#localnav, 72px), and MacBook Air's
@@ -16,7 +16,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { open, wait } from '../browsers.mjs';
 
 const PAGES = ['iphone-18-pro', 'macbook-air', 'airpods-pro'];
-// the rules that set the note's scroll-margin-top, through grouping rules
+// @external: the rules that set the note's scroll-margin-top, through grouping rules
 // (@media, @supports, @layer)
 const RULES = `(note) => {
   const found = [];

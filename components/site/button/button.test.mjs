@@ -2,7 +2,7 @@ import { examples, SIZE, PADDING, BORDER, RADIUS, COLORS, TEXT } from '../../../
 
 const ex = examples(import.meta.url);
 const LOOK = [...SIZE, ...PADDING, ...BORDER, ...RADIUS, 'min-width', 'box-height', ...TEXT];
-// what the home page's probes read (no text-align, wrapping or opacity; its
+// @external: what the home page's probes read (no text-align, wrapping or opacity; its
 // primary button's cursor alone); not its display, which is its place's
 const LOOK_HOME = [...SIZE, ...PADDING, ...BORDER, ...RADIUS, 'min-width', 'box-height'];
 const OWN = { props: ['font-family'], golden: 'the kit\'s stack, not apple.com\'s' };
@@ -68,7 +68,7 @@ export const cases = [
       ...[['', 'button.disabled'], ['secondary', 'button.secondary.disabled']].flatMap(([v, probe]) => {
         const target = v ? `.cui-btn[data-variant="${v}"]` : '.cui-btn:not([data-variant])';
         return [
-          // a <button>: the class over the preflight's reset of the element
+          // @external: a <button>: the class over the preflight's reset of the element
           { target, props: [...LOOK, ...COLORS], apple: ['store', probe] },
           { target, state: 'hover', props: COLORS, golden: 'a disabled button keeps its ground under the pointer, where apple.com\'s changes it' },
         ];
@@ -79,7 +79,7 @@ export const cases = [
     name: 'block',
     html: ex('block'),
     checks: [
-      // its width is its container's: a block's, not checked
+      // @external: its width is its container's: a block's, not checked
       { target: '.cui-btn-block', props: [...SIZE, ...PADDING, ...RADIUS, 'display', 'box-height', ...COLORS], apple: ['store', 'button.block'] },
     ],
   },

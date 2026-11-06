@@ -1,4 +1,5 @@
-// BROWSER=safari|chrome|chromium|firefox|ipad|iphone node run.mjs: MEASURED.md holds its claims and method.
+// @invariant: BROWSER=safari|chrome|chromium|firefox|ipad|iphone node run.mjs: MEASURED.md holds
+// its claims and method.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
@@ -23,7 +24,7 @@ const got = {};
 
 async function desktop() {
   const page = await open(BROWSER, url);
-  // a button by the keyboard in Safari (a click there focuses none), else clicked
+  // @external: a button by the keyboard in Safari (a click there focuses none), else clicked
   const KEYBOARD = BROWSER === 'safari';
   const run = (expr) => page.run(expr);
   const wait = (ms) => run(`new Promise(r => setTimeout(() => r(true), ${ms}))`);
@@ -40,7 +41,7 @@ async function desktop() {
   try {
     await page.size(1440, 900);
     await wait(800);
-    // a point on the page near the window's foot (Safari's window, its frame
+    // @external: a point on the page near the window's foot (Safari's window, its frame
     // included, is 900px tall: its page is less)
     const foot = await run('Promise.resolve(innerHeight - 50)');
     await page.move(700, foot, 100);
@@ -48,26 +49,26 @@ async function desktop() {
     got.closed = await state();
     got.closedPixels = await pixels();
     const offset = got.closedPixels.offset;
-    // the pointer to Store's link, resting there
+    // @external: the pointer to Store's link, resting there
     await watch();
     await page.move(...await mid('#store'), 150);
     await wait(800);
     got.hovered = await state();
     got.hoveredWatch = await stop();
     got.hoveredPixels = await pixels(offset);
-    // on along the bar to Mac's
+    // @external: on along the bar to Mac's
     await watch();
     await page.move(...await mid('#mac'), 150);
     await wait(900);
     got.switched = await state();
     got.switchedWatch = await stop();
-    // off the bar, through Mac's flyout, down to the page
+    // @external: off the bar, through Mac's flyout, down to the page
     await watch();
     await page.move(700, foot, 150);
     await wait(900);
     got.left = await state();
     got.leftWatch = await stop();
-    // swept along the bar past each link in 90ms, from before the first to
+    // @external: swept along the bar past each link in 90ms, from before the first to
     // after the last, then down to the page
     const [x0, y0] = await mid('#store');
     const [x1] = await mid('#search');
@@ -79,7 +80,7 @@ async function desktop() {
     await wait(800);
     got.swept = await state();
     got.sweptWatch = await stop();
-    // Mac's button: its flyout a popover
+    // @external: Mac's button: its flyout a popover
     await press('#mac-button');
     await wait(600);
     got.popover = await state();
@@ -94,7 +95,7 @@ async function desktop() {
     await page.click('#mac-curtain');
     await wait(400);
     got.curtained = await state();
-    // a phone's layout
+    // @external: a phone's layout
     await page.move(10, foot, 50);
     await page.size(700, 900);
     await wait(600);
@@ -132,7 +133,7 @@ writeFileSync(new URL(`./results/${BROWSER}.json`, import.meta.url), JSON.string
 
 const near = (a, b, t = 0.5) => Math.abs(a - b) <= t;
 const color = (c, want, t = 2) => c.every((v, i) => Math.abs(v - want[i]) <= t);
-// the first frame a flyout shows, from the pointer's entering its item
+// @external: the first frame a flyout shows, from the pointer's entering its item
 const shownAfter = (w, id) => {
   const entered = w.entered.find(([e]) => e === id)?.[1];
   const shown = w.frames.find(([, ids]) => ids.includes(id))?.[0];

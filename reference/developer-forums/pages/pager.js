@@ -1,4 +1,4 @@
-// Run in the page (Claude in Chrome's javascript tool) on
+// @external: Run in the page (Claude in Chrome's javascript tool) on
 // https://developer.apple.com/forums/latest?page=2; it leaves the record in
 // window.__pager, read back in pieces (the tool's output is cut at about
 // 1000 characters) and written by hand to ../results/pager.json, the

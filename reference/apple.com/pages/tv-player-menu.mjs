@@ -1,4 +1,4 @@
-// tv.apple.com's video player's subtitles menu, opened by its button over
+// @external: tv.apple.com's video player's subtitles menu, opened by its button over
 // the paused player (tv-player's opening): the menu, a group and its title,
 // an item hovered and the chosen one with its check, a rule between groups,
 // an item with a line under its name and a chevron (its language). At 1600px

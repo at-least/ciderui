@@ -1,4 +1,4 @@
-// Run in a copy of the repository: a probe writes results/<browser>.json, and
+// @invariant: Run in a copy of the repository: a probe writes results/<browser>.json, and
 // the committed results stay the record of the runs each MEASURED.md names.
 
 import { execFileSync } from 'node:child_process';
@@ -23,7 +23,7 @@ const PROBES = {
   scheme: { env: {}, commands: RUN },
   search: { env: {}, commands: RUN },
   select: { env: {}, commands: RUN },
-  // the image has no system font of Apple's: the stack draws Inter
+  // @external: the image has no system font of Apple's: the stack draws Inter
   stack: { env: { EXPECT: 'inter' }, commands: RUN },
   tap: { env: {}, commands: RUN },
 };
@@ -42,7 +42,7 @@ const NOT_RUN = {
   'reference/xcuitest.mjs': 'the iOS simulator',
   'reference/touch/audit.mjs': 'a step of npm test of its own',
 };
-// read by the probes above, not run on their own
+// @invariant: read by the probes above, not run on their own
 const READ = ['reference/browsers.mjs', ...Object.keys(PROBES).map((d) => `reference/${d}/`)];
 
 const scripts = readdirSync(join(ROOT, 'reference'), { recursive: true })
@@ -52,7 +52,7 @@ const unlisted = scripts.filter((f) => ![...Object.keys(NOT_RUN), ...READ].some(
 if (unlisted.length) throw new Error(`not run here and not in NOT_RUN: ${unlisted.join(', ')}`);
 const stale = Object.keys(NOT_RUN).filter((p) => !scripts.some((f) => f === p || f.startsWith(p)));
 if (stale.length) throw new Error(`in NOT_RUN, no such script: ${stale.join(', ')}`);
-// a script not run here still has its relative paths (an import, a page, an
+// @invariant: a script not run here still has its relative paths (an import, a page, an
 // example) checked: up to its first ${…}, the directory it names
 const missing = scripts.flatMap((f) => [...readFileSync(join(ROOT, f), 'utf8').matchAll(/['`](\.{1,2}\/[^'`\n]*)['`]/g)]
   .map(([, path]) => (path.includes('${') ? path.slice(0, path.lastIndexOf('/', path.indexOf('${')) + 1) : path))

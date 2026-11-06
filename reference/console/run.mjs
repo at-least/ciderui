@@ -1,4 +1,4 @@
-// BROWSER=safari|ios|chrome|chromium|firefox SITE=<dir> node run.mjs
+// @external: BROWSER=safari|ios|chrome|chromium|firefox SITE=<dir> node run.mjs
 // Do the console parts test/components.mjs holds in Chromium do the same in
 // this browser? SITE is build.mjs's pages, served at http://127.0.0.1:8738
 // (the browsers: ../browsers.mjs). Each part in a frame of a set width
@@ -28,7 +28,7 @@ if (!SITE || !existsSync(join(SITE, 'index.html'))) throw new Error('SITE=<build
 const ORIGIN = 'http://127.0.0.1:8738';
 const server = await serve(SITE, 8738);
 
-// the red channel at points of a picture of the window (base64 PNG), each
+// @invariant: the red channel at points of a picture of the window (base64 PNG), each
 // [x, y] in the page's px, read in the page as ../dialog/dialog.js reads its
 const reds = (png, ratio, points) => page.run(`(async () => {
   const img = new Image();
@@ -55,7 +55,7 @@ const page = await open(BROWSER, `${ORIGIN}/index.html`);
 try {
   got.label = page.label;
   console.log(page.label);
-  // every frame loaded, its fonts and images too
+  // @external: every frame loaded, its fonts and images too
   await page.run(`(async () => {
     for (const f of document.querySelectorAll('iframe')) {
       if (f.contentDocument?.readyState !== 'complete') await new Promise((r) => f.addEventListener('load', r, { once: true }));
@@ -66,7 +66,7 @@ try {
   })()`);
   const frame = (id) => `document.getElementById(${JSON.stringify(id)}).contentWindow`;
 
-  // 1
+  // @invariant: 1
   const row = await page.run(`(async () => {
     const w = ${frame('tabs-320')};
     const bar = w.document.querySelector('.cui-console-tabs');
@@ -74,7 +74,7 @@ try {
   })()`);
   claim('1 tabs one row, scrolling sideways', row.wrap === 'nowrap' && row.scrollHeight === row.clientHeight && row.offsetHeight - row.clientHeight <= 1 && row.scrollWidth > row.clientWidth, row);
 
-  // 2: the red channel 1px below the bar's top at 2px and 12px in from each
+  // @external: 2: the red channel 1px below the bar's top at 2px and 12px in from each
   // edge: the blue ground 0, white 255, a fade between
   const fades = {};
   for (const [at, to] of [['start', '0'], ['end', 'bar.scrollWidth'], ['middle', '(bar.scrollWidth - bar.clientWidth) / 2']]) {
@@ -101,7 +101,7 @@ try {
   claim('2 tabs fade at the end: the left edge', fadesAt(fades.end, true, false), fades.end);
   claim('2 tabs fade between: both edges', fadesAt(fades.middle, true, true), fades.middle);
 
-  // 3
+  // @invariant: 3
   const focus = await page.run(`(async () => {
     const w = ${frame('tabs-320')};
     const bar = w.document.querySelector('.cui-console-tabs');
@@ -121,7 +121,7 @@ try {
   focus.shown = Math.min(focus.tab[1], focus.row) - Math.max(focus.tab[0], 0);
   claim('3 a tab focused by script: brought in whole, its ring inside where :focus-visible matches', focus.focused && focus.shown >= focus.tab[1] - focus.tab[0] - 1 && (!focus.focusVisible || focus.outlineOffset === '-2px'), focus);
 
-  // 4
+  // @invariant: 4
   const content = {};
   for (const id of ['content-900', 'content-1200', 'content-1920']) {
     content[id] = await page.run(`(async () => {

@@ -15,9 +15,9 @@ const LINK = `${LIST} > li:nth-child(3) > .cui-globalnav-link`;
 const LINK2 = `${LIST} > li:nth-child(4) > .cui-globalnav-link`;
 const BARS = [`${BUTTON} path:first-child`, `${BUTTON} path:last-child`];
 const X = [`${CLOSE} path:first-child`, `${CLOSE} path:last-child`];
-// apple.com reads its menu's button at 900 and 390px alone
+// @external: apple.com reads its menu's button at 900 and 390px alone
 const TRIGGER_AT = { 1600: 900, 1200: 900 };
-// apple.com's phone bar draws its ground on its content, ciderui's on the
+// @external: apple.com's phone bar draws its ground on its content, ciderui's on the
 // nav at every width: the same ground, apple.com's at 900px
 const GROUND_AT = { 390: 900 };
 const OPEN = { click: BUTTON, widths: [390], height: 900 };
@@ -28,7 +28,7 @@ const ROWS = 'shown with the sheet, where apple.com\'s fade in 240ms from 200ms 
 
 const POST_NAV = ex('post');
 const POST = `${LIST} > li:nth-child(6) > .cui-globalnav-link`;
-// what a <button> brings of its own, a link not
+// @external: what a <button> brings of its own, a link not
 const BUTTONS_OWN = ['font-family', 'font-style', 'text-align', 'vertical-align', 'border-top-width', 'border-left-width', 'background-color', 'cursor', 'margin-top', 'margin-left', 'box-sizing', 'box-top', 'opacity'];
 const AS_LINK = 'a POST item (sign out) is a <button>, drawn as the link: each value equal to the link\'s beside it';
 
@@ -130,7 +130,7 @@ export const cases = [
       { target: LINK, props: ['padding-top', 'box-top', 'box-height'], apple: ['home', 'menu.link-first'] },
       { target: LINK2, props: ['font-size', 'line-height', 'font-weight', 'color', 'display', ...PADDING, 'box-top', 'box-height'], apple: ['home', 'menu.link'] },
       { target: LINK2, state: 'hover', props: ['color'], apple: ['home', 'menu.link', 'hover'] },
-      // apple.com fades the links themselves; ciderui their items
+      // @external: apple.com fades the links themselves; ciderui their items
       { target: `${LIST} > li:nth-child(1)`, props: ['opacity', 'visibility'], apple: ['home', 'menu.logo'] },
       { target: CLOSE, props: ['color', 'opacity', 'box-height', 'box-left', 'box-top'], apple: ['home', 'menu.trigger'] },
       { target: CLOSE, props: ['box-width'], golden: 'apple.com\'s 48px square, where the menu\'s button is (home:nav.menutrigger at 390px)' },

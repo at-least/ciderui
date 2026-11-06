@@ -1,4 +1,4 @@
-// Every example on every surface, not listed cases: six times a site built
+// @trap: Every example on every surface, not listed cases: six times a site built
 // on ciderui (crashcart) found a failing pair the cases had not listed.
 
 import { readFileSync } from 'node:fs';

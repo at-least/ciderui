@@ -1,4 +1,4 @@
-// A buy page, iPhone 18 Pro's: the title, an option (a form selector, its
+// @external: A buy page, iPhone 18 Pro's: the title, an option (a form selector, its
 // parts) at rest and, as a copy added beside it, checked, a color swatch the same way, an
 // accordion's question, a price, a button link.
 import { TYPE, BOX, MOTION, PAGE, FLEX } from './common.mjs';
@@ -14,7 +14,7 @@ export default {
     { name: 'option.focus', select: '.form-selector:not([data-cui-injected]) .form-selector-label', stateOn: '.form-selector:not([data-cui-injected]) .form-selector-input', props: [...BOX, 'outline-color', 'outline-style', 'outline-width', 'outline-offset'], states: ['focus-visible', 'focus'] },
     { name: 'option.title', select: '.form-selector-title', props: TYPE },
     { name: 'option.small', select: '.form-label-small', props: TYPE },
-    // its parts: the radio over the tile, the row, its columns (the title's
+    // @external: its parts: the radio over the tile, the row, its columns (the title's
     // centered, the price's at the top), the title's detail, the price
     { name: 'option.box', select: '.form-selector:not([data-cui-injected])', props: ['display', 'position', 'margin-top'], box: true },
     { name: 'option.input', select: '.form-selector:not([data-cui-injected]) .form-selector-input', props: ['position', 'top', 'left', 'opacity', 'margin-top', 'margin-left', 'display'], box: true },
@@ -29,7 +29,7 @@ export default {
     { name: 'swatch.checked', inject: SWATCH, into: '.colornav-items, .rc-dimension-colornav ul, .rc-dimension-colornav', select: '.colornav-swatch', props: [...BOX, 'width', 'height', 'outline-color', 'outline-width', 'outline-offset'], box: true },
     { name: 'swatch.checked-link', inject: SWATCH, into: '.colornav-items, .rc-dimension-colornav ul, .rc-dimension-colornav', select: '.colornav-link', props: [...BOX, 'width', 'height'], box: true },
     { name: 'swatch.label', select: '.colornav-label', props: [...TYPE, 'display'] },
-    // the swatches' list and an item's parts: the radio over the ring, the
+    // @external: the swatches' list and an item's parts: the radio over the ring, the
     // color's name (hidden but read), the ring focused (on the copy)
     { name: 'swatch.list', select: '.colornav-items', props: ['display', 'flex-wrap', 'padding-top', 'padding-bottom', 'margin-left', 'margin-right'], box: true },
     { name: 'swatch.item', select: '.colornav-item:not([data-cui-injected])', props: ['margin-top', 'margin-right', 'margin-bottom', 'margin-left'], box: true },
@@ -42,7 +42,7 @@ export default {
     { name: 'accordion.icon', select: '.rc-accordion-button .icon-plus, .rc-accordion-button .as-accordion-plusicon', props: ['font-family', 'font-size', 'color', 'width', 'height'], pseudo: '::after' },
     { name: 'accordion.content', select: '.rc-accordion-box-content', props: [...TYPE, ...BOX] },
     { name: 'price', select: '.price-point-fullPrice', props: TYPE },
-    // the page's own price, under its title: its amounts kept whole
+    // @external: the page's own price, under its title: its amounts kept whole
     { name: 'price.header', select: '.rf-bfe-header-price .rc-prices-currentprice', props: [...TYPE, 'display'] },
     { name: 'price.amount', select: '.rf-bfe-header-price .nowrap', props: [...TYPE, 'white-space', 'display'] },
     { name: 'buttonlink', select: '.as-buttonlink', props: [...TYPE, ...BOX], states: ['hover'] },

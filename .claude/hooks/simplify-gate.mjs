@@ -1,4 +1,4 @@
-// One /simplify unlocks one commit: the commit consumes the flag.
+// @invariant: One /simplify unlocks one commit: the commit consumes the flag.
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -7,7 +7,7 @@ const input = JSON.parse(readFileSync(0, 'utf8'));
 const git = (...args) => execFileSync('git', args, { cwd: input.cwd, encoding: 'utf8' }).trim();
 const flag = () => resolve(input.cwd, git('rev-parse', '--git-path', 'simplify-done'));
 
-// a /simplify typed by the user expands without a Skill call
+// @external: a /simplify typed by the user expands without a Skill call
 if (input.hook_event_name === 'UserPromptSubmit') {
   if (/^\/simplify\b/.test(input.prompt)) writeFileSync(flag(), '');
   process.exit(0);

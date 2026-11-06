@@ -1,4 +1,5 @@
-// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs: MEASURED.md holds its claims and method.
+// @invariant: BROWSER=safari|ios|chrome|chromium|firefox node run.mjs: MEASURED.md holds its claims
+// and method.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open, wait } from '../browsers.mjs';
@@ -9,7 +10,7 @@ const PAGES = Object.fromEntries(['ring'].map((name) => [`/${name}.html`, readFi
 const server = createServer((req, res) => { res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' }); res.end(PAGES[req.url] ?? html); });
 await new Promise(r => server.listen(0, '127.0.0.1', r));
 const ITEM = '.cui-accordion-item:nth-child(2)';
-// ring.html's: the first question in an answer, and the link beginning the
+// @invariant: ring.html's: the first question in an answer, and the link beginning the
 // example's first answer
 const RINGS = {
   question: '#nested .cui-accordion-answer > .cui-accordion-item:first-child > .cui-accordion-question',
@@ -17,7 +18,7 @@ const RINGS = {
 };
 const read = `Promise.resolve((() => { const d = document.querySelector('${ITEM}'); return { open: d.open, item: d.getBoundingClientRect().height, answer: d.querySelector('.cui-accordion-answer').getBoundingClientRect().height, chevron: getComputedStyle(d.querySelector('svg')).transform }; })())`;
 let page;
-// the window in front, where Safari matches :focus and a click reaches the
+// @external: the window in front, where Safari matches :focus and a click reaches the
 // page: an app of the owner's took the Mac's front by itself during a run,
 // back and forth with Safari every second or two, no input (2026-10-22), so
 // what needs it waits for it, up to 10s, and names how long (null: never)
@@ -54,7 +55,7 @@ try {
           focused = await page.run(`Promise.resolve(document.activeElement === document.querySelector(${JSON.stringify(target)}))`);
         }
         await page.run(wait(300));
-        // read again, up to three times, if the window was behind as it was read
+        // @external: read again, up to three times, if the window was behind as it was read
         let r = { focused };
         for (let tries = 0; focused && tries < 3 && !r.hasFocus; tries++) {
           got.waited[`${name} at ${width}, ${tries + 1}`] = await front();
@@ -76,7 +77,7 @@ const claims = [
   ['its chevron turned up', opened.chevron === 'matrix(1, 0, 0, -1, 0, 0)'],
   ['it opens at once (its full height 120ms on)', opening.item === opened.item],
 ];
-// a side shown: at least a column of the screen's pixels the element's
+// @invariant: a side shown: at least a column of the screen's pixels the element's
 // height in the accent, beside it
 const shown = (r, side) => r.focused && r.visible && r[side] >= r.height * r.scale;
 for (const [key, r] of Object.entries(got.rings ?? {})) {

@@ -1,4 +1,4 @@
-// What a component's test file (components/<set>/<name>/<name>.test.mjs) builds
+// @invariant: What a component's test file (components/<set>/<name>/<name>.test.mjs) builds
 // its cases from: the property lists the checks share, and the component's
 // examples (components/<set>/<name>/examples/<id>.html), the markup the Go module's
 // tests render and the cases measure.
@@ -47,7 +47,7 @@
 import { readFileSync } from 'node:fs';
 import { WIDTHS } from './reference.mjs';
 
-// the keys above, all a case and a check may carry; any other throws
+// @trap: the keys above, all a case and a check may carry; any other throws
 // (a misspelt key would be ignored, the case run without it)
 export const CASE_KEYS = ['name', 'html', 'widths', 'height', 'touch', 'reducedMotion', 'forcedColors', 'click', 'press', 'wait', 'scroll', 'hover', 'checks'];
 export const CHECK_KEYS = ['target', 'props', 'pseudo', 'state', 'on', 'apple', 'at', 'as', 'asc', 'tb', 'golden'];

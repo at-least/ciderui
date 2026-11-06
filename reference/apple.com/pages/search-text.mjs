@@ -1,4 +1,4 @@
-// The global nav's search with text in it, opened as search.mjs opens it: the
+// @external: The global nav's search with text in it, opened as search.mjs opens it: the
 // field given a value and its two buttons what apple.com's script gives them
 // while it holds text (its _updateSearchFieldButtons: tabindex 0, no
 // disabled, no aria-hidden), set by the probe (`set`), so nothing is typed
@@ -30,7 +30,7 @@ export default {
     { name: 'reset.image', select: `${RESET} .globalnav-image-regular svg`, props: ['width', 'height', 'fill', 'display'], box: true, position: true, widths: WIDE },
     { name: 'reset.image-compact', select: `${RESET} .globalnav-image-compact svg`, props: ['width', 'height', 'fill', 'display'], box: true, position: true, widths: PHONE },
     { name: 'submit', select: SUBMIT, props: BUTTON, box: true, position: true },
-    // hovered and focused last: the still style that holds a state cancels
+    // @invariant: hovered and focused last: the still style that holds a state cancels
     // the page's animations
     { name: 'reset.states', select: RESET, props: ['fill', ...FOCUS], states: ['hover', 'focus-visible'] },
     { name: 'submit.states', select: SUBMIT, props: ['fill', ...FOCUS], states: ['hover', 'focus-visible'] },

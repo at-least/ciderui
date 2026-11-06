@@ -1,6 +1,6 @@
-/* layered: a utility on the element wins */
+/* @invariant: layered: a utility on the element wins */
 @layer base {
-  /* not in tokens.css: an unlayered :root would beat `cui-dark` on <html>.
+  /* @trap: not in tokens.css: an unlayered :root would beat `cui-dark` on <html>.
      :where(): the console's own overrides it, a `cui-dark` or `cui-light` wins */
   :where(:root) {
     color-scheme: light;
@@ -24,7 +24,7 @@
     font-weight: 600;
   }
 
-  /* a color inherited from outside the block was resolved in the outside's
+  /* @trap: a color inherited from outside the block was resolved in the outside's
      scheme */
   .cui-dark,
   .cui-light {
@@ -45,7 +45,7 @@
     outline-offset: var(--cui-focus-ring-offset);
   }
 
-  /* a control that grows to 44px itself is not listed: a target round a
+  /* @trap: a control that grows to 44px itself is not listed: a target round a
      control closer than 44px to the next covers the next one's */
   @media (pointer: coarse) {
     :where(.cui-btn, .cui-footer-copyright a, .cui-console-link, .cui-console-table-sort) {

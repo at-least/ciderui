@@ -8,7 +8,7 @@
     color: var(--cui-c-console-neutral-label-primary);
     letter-spacing: normal;
     --cui-console-ground: var(--cui-c-console-card);
-    /* a panel set into it on the page's ground: gray on gray drew no panel */
+    /* @trap: a panel set into it on the page's ground: gray on gray drew no panel */
     --cui-console-inset: var(--cui-c-console-neutral-background-primary);
   }
 

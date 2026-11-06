@@ -1,4 +1,4 @@
-// apple.com's local nav, the one most product pages carry under the global
+// @external: apple.com's local nav, the one most product pages carry under the global
 // nav (MacBook Air's, light): the bar, sticky, its material and its rule,
 // the product's name, its links (the current page's marked), its Buy
 // button, and to 833px its menu, opened by its chevron. Everything is read
@@ -24,7 +24,7 @@ export const probes = [
   { name: 'localnav.chevron-image', select: '#ac-localnav .ac-ln-menucta-chevron', scroll: S, props: ['color', 'opacity', ...MOTION, ...FLEX], box: true, states: ['hover'], widths: [833, 390] },
   { name: 'localnav.chevron-svg', select: '#ac-localnav .ac-ln-menucta-chevron svg', scroll: S, props: ['width', 'height', 'transform'], box: true, position: true, widths: [833, 390] },
   { name: 'localnav.tray', select: '#ac-localnav .ac-ln-menu-tray', scroll: S, props: ['visibility', 'max-height', 'overflow-y', ...MOTION], box: true, widths: [833, 390] },
-  // its menu opened by the chevron: last, as the page stays so
+  // @invariant: its menu opened by the chevron: last, as the page stays so
   { name: 'tray.open', click: '#ac-localnav .ac-ln-menucta', animations: '#ac-localnav', select: '#ac-localnav .ac-ln-menu-tray', scroll: S, props: ['visibility', 'max-height', ...MOTION], box: true, position: true, widths: [390] },
   { name: 'tray.background', select: '#ac-localnav .ac-ln-background', scroll: S, props: ['background-color', ...BLUR, ...MOTION], box: true, widths: [390] },
   { name: 'tray.rule', select: '#ac-localnav .ac-ln-background', pseudo: '::after', scroll: S, props: ['background-color', 'height', 'top'], widths: [390] },

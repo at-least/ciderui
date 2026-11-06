@@ -20,7 +20,7 @@ try {
   for (const prop of ['font-size', 'line-height', 'font-weight', 'color', 'background-color', '-webkit-font-smoothing', 'font-synthesis', 'text-rendering']) {
     check(`body ${prop} is apple.com's home:page.body`, body[prop], ref('home', 'page.body', W, prop));
   }
-  // Firefox's, on macOS: Chromium drops it, so the stylesheet is read
+  // @external: Firefox's, on macOS: Chromium drops it, so the stylesheet is read
   check('body declares -moz-osx-font-smoothing grayscale, as apple.com\'s stylesheets do', /(^|[}\s])body\{[^}]*-moz-osx-font-smoothing:grayscale/.test(css), true);
   check('body letter-spacing is the 17px fitted value', body['letter-spacing'], `${17 * 0.0029}px`, { tolerance: 0.001 });
   check('body font-family is the stack', body['font-family'], '-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Noto Sans TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif');
@@ -34,7 +34,7 @@ try {
   for (const [id, want] of [['text', LIGHT], ['dark', DARK], ['in-dark', DARK], ['light', LIGHT], ['in-light', LIGHT]]) {
     const got = await b.read(`#${id}`, ['color', 'background-color']);
     check(`#${id} color`, got.color, want.color);
-    // a paragraph paints no ground of its own: only the blocks do
+    // @external: a paragraph paints no ground of its own: only the blocks do
     if (!id.startsWith('in-') && id !== 'text') check(`#${id} background-color`, got['background-color'], want['background-color']);
   }
   check('dark: applies in a dark block', (await b.read('#in-dark', ['text-decoration-line']))['text-decoration-line'], 'underline');

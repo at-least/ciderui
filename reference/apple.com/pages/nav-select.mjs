@@ -1,4 +1,4 @@
-// What of the home page can be selected, for the global nav's: apple.com's
+// @external: What of the home page can be selected, for the global nav's: apple.com's
 // stylesheet sets user-select: none on #globalnav and on #globalnav
 // .globalnav-list (globalheader.css, its text read 2026-10-22), nowhere else
 // in the nav, its search's field not excepted. Read here as each element

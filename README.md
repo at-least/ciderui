@@ -1,8 +1,30 @@
 # ciderui
 
-Agents write this project entirely. It is fully optimized for agent vibe coding, debugging and RSI (recursive self-improvement): this README is the only file written for people; every other document, comment and line of code is written for the agents that read and change it.
+This project is agent-native: written and maintained entirely by AI agents, and fully optimized for autonomous development (vibe coding), deterministic debugging, and recursive self-improvement (RSI). This README is the only file written for people; every other document, comment and line of code is written for the agents that read and change them. What is decided, and why, is in [DESIGN.md](DESIGN.md).
 
-apple.com's look for websites, built with Tailwind CSS v4: a small contract of variables (`--cui-*`: the colors, the type, the focus ring, the shadows), the type as classes, and apple.com's parts as classes (`cui-btn`, `cui-globalnav`, `cui-field`, …); Inter for where the system font is not SF; and a Go module that writes the parts' markup with gomponents, serves the stylesheets and fonts and draws every [Lucide](https://lucide.dev) icon. It has no JavaScript. Why it is built as it is: [DESIGN.md](DESIGN.md).
+## What it is
+
+apple.com's look for websites, as one dependency: a small contract of CSS variables (`--cui-*`) — the colors, the type, the focus ring, the shadows —, the type as classes, apple.com's parts as classes (`cui-btn`, `cui-globalnav`, `cui-field`, …), Inter where the system font is not SF, and a Go module that writes the parts' markup with gomponents, serves the stylesheets and fonts, and draws every [Lucide](https://lucide.dev) icon. It has no JavaScript: behavior comes from HTML's own elements. Every value is measured on Apple's own pages.
+
+## How it fits together
+
+```
+apple.com, measured (reference/: each value's probe, page, browser, date)
+        │
+        ▼
+tokens.css · theme.css · base.css · type.css · components/<set>/<part>.css
+        │
+        │  scripts/build-css.mjs builds each set
+        ▼
+dist/site.css, dist/console.css — embedded in the Go module
+        │  ciderui.Assets serves; site.Page, console.ConsolePage link;
+        │  site.*, console.* write the markup; lucide.* the icons
+        ▼
+a site: its pages in Go, one dependency, no JavaScript of ciderui's
+        │
+        ▼
+npm test: every part, in headless Chromium, against reference/'s values
+```
 
 ## Use it
 
@@ -12,9 +34,7 @@ mux.Handle(ciderui.AssetsPath, ciderui.Assets())
 console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Class: "", BodyClass: "", Children: body}
 ```
 
-That is the whole setup: the page links the stylesheet and the module serves it, with its fonts. Use `site.Page` for a store or a marketing page.
-
-Each part's markup is its examples, `components/<set>/<name>/examples/*.html`. Call `ciderui.CheckMarkup` on your pages in your tests.
+That is the whole setup: the page links the stylesheet and the module serves it, with its fonts. Use `site.Page` for a store or a marketing page. Each part's markup is its examples, `components/<set>/<name>/examples/*.html`. Call `ciderui.CheckMarkup` on your pages in your tests.
 
 ### Your own utilities
 
@@ -33,22 +53,9 @@ go tool ciderui-css target/ciderui
 @source "../pages/*.go";
 ```
 
-## The repository
+## Developing
 
-| path | what |
-| --- | --- |
-| `index.css` | `theme.css`, `tokens.css`, `base.css` and `type.css`: the breakpoints and utilities, the variables, the page's base, the type |
-| `fonts.css`, `fonts/` | Inter |
-| `site.css`, `console.css` | `index.css` and a set's every part: the site set (apple.com's pages) and the console set (`cui-console-*`) |
-| `dist/` | each set built, as the module serves it (`node scripts/build-css.mjs`) |
-| `utilities.css` | what a site's own utilities' stylesheet imports |
-| `components/<set>/<name>/` | a part, in its set (`site` or `console`): its stylesheet, its examples (the markup the Go module's tests render too) and its test |
-| `ciderui.go`, `markup.go`, `go/` | the Go module (`go.mod`): the root package embeds and serves the stylesheets and fonts and checks a page's markup; `go/` holds the components (`site`, `console`), the icons (`lucide`) and `ciderui-css` |
-| `reference/` | the measurements, each with its probe, page, browser and date |
-
-`npm test` runs every test. It checks each part in headless Chromium against apple.com's measured values, takes a picture of every example at every width, and tests the Go module. The browser's tests run in one Docker image.
-
-When a picture changes on purpose, run `UPDATE_GOLDEN=1 node scripts/docker.mjs node test/pictures.mjs`. A failed run leaves the new picture in `test/pictures-failed`.
+`npm install`, then `npm test`: it checks each part in headless Chromium against apple.com's measured values, takes a picture of every example at every width, and tests the Go module. The browser's tests run in one Docker image, reached through `DOCKER_HOST`.
 
 ## License
 

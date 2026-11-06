@@ -4,20 +4,20 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { ROOT, UTILITIES_ENTRY, tailwind } from './compile.mjs';
 
-// the module's package directories, not `.`: gofmt would walk node_modules,
+// @trap: the module's package directories, not `.`: gofmt would walk node_modules,
 // which go.mod's ignore keeps from go's own commands
 const dirs = execFileSync('go', ['list', '-f', '{{.Dir}}', './...'], { cwd: ROOT, encoding: 'utf8' }).trim().split('\n');
 const unformatted = execFileSync('gofmt', ['-l', ...dirs], { cwd: ROOT, encoding: 'utf8' }).trim();
 if (unformatted) throw new Error(`not gofmt'd (gofmt -w <file>):\n${unformatted}`);
 for (const args of [
   ['vet', './...'],
-  // a component's field left out of a struct literal is a default nobody chose
+  // @invariant: a component's field left out of a struct literal is a default nobody chose
   ['tool', 'exhaustruct', '-i', 'github.com/at-least/ciderui/.*', './...'],
   ['test', './...'],
 ]) {
   execFileSync('go', args, { cwd: ROOT, stdio: 'inherit' });
 }
-// what a site with utilities of its own does: its Go tool writes utilities.css,
+// @invariant: what a site with utilities of its own does: its Go tool writes utilities.css,
 // Tailwind builds its second stylesheet from there. Everything else reads the
 // checkout, so a stylesheet left out of go:embed fails here and nowhere else.
 // Written outside this repository, as a site's target/ is beside its node_modules
@@ -35,13 +35,13 @@ try {
   rmSync(written, { recursive: true });
   rmSync(site, { recursive: true });
 }
-// a part's every branch has a test: a new panic with no Break, or a new
+// @invariant: a part's every branch has a test: a new panic with no Break, or a new
 // branch no example draws, stops here
 const covered = execFileSync('go', ['test', '-cover', './go/site', './go/console'], { cwd: ROOT, encoding: 'utf8' });
 for (const line of covered.trim().split('\n')) {
   if (!line.includes('coverage: 100.0% of statements')) throw new Error(`a statement no test runs (go test -coverprofile): ${line}`);
 }
-// the button's variants a compile error, not a string: btn.go alone writes the
+// @trap: the button's variants a compile error, not a string: btn.go alone writes the
 // class. play.go's two glyphs and labels and disclosure's <summary> are no <button>
 // the type can hold.
 const OWN_BUTTON = /(^|\/)(btn|play|disclosure)\.go$/;

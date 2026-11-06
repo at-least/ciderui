@@ -1,5 +1,5 @@
 @layer components {
-  /* the glyph, its ring's box; Lucide's play and stop filled: CSS wins over
+  /* @trap: the glyph, its ring's box; Lucide's play and stop filled: CSS wins over
      the <svg>'s fill="none". Not filled and stroked: in the label's
      translucent color the stroke over the fill drew a darker outline */
   .cui-console-play-glyph {
@@ -29,7 +29,7 @@
     display: none;
   }
 
-  /* playing, a ring round the glyph fills with how much has played (the
+  /* @external: playing, a ring round the glyph fills with how much has played (the
      page's script sets --cui-console-play-progress), on a track of the
      label's color at a quarter, as Podcasts' and Voice Memos' small
      buttons */
@@ -39,7 +39,7 @@
     inset: -0.1875em;
     border-radius: 50%;
     background-image: conic-gradient(currentColor var(--cui-console-play-progress, 0%), color-mix(in srgb, currentColor 25%, transparent) 0);
-    /* a mask reads only the alpha: CanvasText is opaque in every theme,
+    /* @external: a mask reads only the alpha: CanvasText is opaque in every theme,
        where currentColor is the label's translucent one */
     mask-image: radial-gradient(farthest-side, transparent calc(100% - 0.125em), CanvasText calc(100% - 0.125em));
 

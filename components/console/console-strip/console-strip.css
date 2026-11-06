@@ -6,7 +6,7 @@
     column-gap: 24px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    /* room inside the scroller, which clips both ways, for the focus ring
+    /* @external: room inside the scroller, which clips both ways, for the focus ring
        and the current item's ring, given back outside: tv.apple.com's row */
     padding: 15px;
     margin-block: -15px;
@@ -15,13 +15,13 @@
   }
 
   .cui-console-strip-group {
-    /* the head's containing block: it is placed over the group's top */
+    /* @invariant: the head's containing block: it is placed over the group's top */
     position: relative;
     display: flex;
     gap: 12px;
     padding-top: 14px;
 
-    /* every group, so a group without captions is not stretched to one with */
+    /* @trap: every group, so a group without captions is not stretched to one with */
     .cui-console-strip:has(.cui-console-strip-caption) > & {
       padding-bottom: 14px;
     }
@@ -31,7 +31,7 @@
     }
   }
 
-  /* out of the flow, so a long name widens no group: the group's width, the
+  /* @trap: out of the flow, so a long name widens no group: the group's width, the
      track the label slides along; not clipped, or it would be the label's
      scroller and the label would stick to it */
   .cui-console-strip-head {
@@ -41,7 +41,7 @@
     right: 0;
   }
 
-  /* its own width, not the head's: a box as wide as its containing block
+  /* @trap: its own width, not the head's: a box as wide as its containing block
      has no room to stick in */
   .cui-console-strip-label {
     position: sticky;
@@ -53,7 +53,7 @@
   }
 
   .cui-console-strip-item {
-    /* the marks' containing block */
+    /* @invariant: the marks' containing block */
     position: relative;
     display: block;
     flex: none;
@@ -62,12 +62,12 @@
     border-radius: 16px;
     scroll-snap-align: start;
 
-    /* forced colors draw a transparent border in the text's color */
+    /* @external: forced colors draw a transparent border in the text's color */
     @media (forced-colors: active) {
       border-color: Canvas;
     }
 
-    /* nothing uses it: muse's assets page. Its picture alone: its lines
+    /* @trap: nothing uses it: muse's assets page. Its picture alone: its lines
        dimmed too fell to 2:1 */
     &[data-state="unused"] > img {
       opacity: 0.5;
@@ -88,7 +88,7 @@
     }
 
     & > img {
-      /* a storyboard's shot: the strip's size, not the page's */
+      /* @invariant: a storyboard's shot: the strip's size, not the page's */
       width: 160px;
       aspect-ratio: 16 / 9;
       object-fit: cover;
@@ -97,17 +97,17 @@
       background-color: var(--cui-c-console-card);
     }
 
-    /* a character sheet: its face is at its left */
+    /* @invariant: a character sheet: its face is at its left */
     &[data-variant="sheet"] > img {
       object-position: left;
     }
   }
 
-  /* out of the item's box, so its ring and its marks keep the picture's;
+  /* @trap: out of the item's box, so its ring and its marks keep the picture's;
      the group keeps its room */
   .cui-console-strip-caption {
     position: absolute;
-    /* 5px under the picture, past the item's 2px of room */
+    /* @invariant: 5px under the picture, past the item's 2px of room */
     top: calc(100% + 3px);
     left: 2px;
     right: 2px;
@@ -132,7 +132,7 @@
     color: var(--cui-c-console-neutral-label-secondary);
   }
 
-  /* who the item waits on, a dot in the picture's corner: the reader
+  /* @invariant: who the item waits on, a dot in the picture's corner: the reader
      (console-status's warning mark), or someone at work on it (its neutral
      mark), each ringed in the page's ground so it shows on any picture */
   .cui-console-strip-mark {
@@ -166,7 +166,7 @@
     }
   }
 
-  /* how far the current shot has played (the page's script sets
+  /* @invariant: how far the current shot has played (the page's script sets
      --cui-console-strip-progress): the player's scrubber's line, thin, over
      the picture's foot 8px in, as the mark is in its corner */
   .cui-console-strip-item[aria-current="true"]::after {
@@ -186,7 +186,7 @@
     }
   }
 
-  /* a line over the item while the pointer is on it (a shot's first spoken
+  /* @trap: a line over the item while the pointer is on it (a shot's first spoken
      line), in the popover's ground and type; fixed to the item by anchor
      positioning, so the scroller, which clips both ways, does not cut it */
   .cui-console-strip-tip {

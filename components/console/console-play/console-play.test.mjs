@@ -8,7 +8,7 @@ const SIZES = ['sm', 'md', 'lg'];
 const RING = 'playing, a ring round the glyph fills with how much has played (the owner, 2026-11-05: a progress ring round the icon, as Apple\'s Voice Memos and Podcasts mini buttons; no reference measured, so golden): 0.1875em out from the glyph, its line 0.125em, in the label\'s color on a track of it at a quarter (color-mix), from the top round clockwise (a conic gradient to --cui-console-play-progress, the page\'s script\'s)';
 const LABELLED_PAUSED = '.cui-console-play:not([data-state])';
 const LABELLED_PLAYING = '.cui-console-play[data-state="playing"]';
-// the page's script's progress on the playing one
+// @invariant: the page's script's progress on the playing one
 const halfway = (html) => html.replace('data-state="playing" type="button">', 'data-state="playing" type="button" style="--cui-console-play-progress: 40%">');
 const sized = (size) => (size === 'md' ? '.cui-console-play:not([data-size])' : `.cui-console-play[data-size="${size}"]`);
 

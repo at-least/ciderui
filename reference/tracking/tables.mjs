@@ -1,4 +1,4 @@
-// node tables.mjs: MEASURED.md's two tables, from results/ and cui-tracking.json.
+// @invariant: node tables.mjs: MEASURED.md's two tables, from results/ and cui-tracking.json.
 import { readFileSync } from 'node:fs';
 import { SCALE, SAMPLE } from './analyze.mjs';
 const load = name => JSON.parse(readFileSync(new URL(`./results/${name}.json`, import.meta.url), 'utf8'));

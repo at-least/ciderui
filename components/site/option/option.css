@@ -45,7 +45,7 @@
     border-color: var(--cui-c-accent);
   }
 
-  /* after the checked rule: a chosen disabled tile's edge the rest one */
+  /* @invariant: after the checked rule: a chosen disabled tile's edge the rest one */
   .cui-option-input:disabled + .cui-option-label {
     border-color: var(--cui-c-border);
     opacity: 0.42;

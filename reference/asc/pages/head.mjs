@@ -1,4 +1,4 @@
-// The app's icon is a div drawn by its background image, inside a box of its size.
+// @external: The app's icon is a div drawn by its background image, inside a box of its size.
 import { TYPE, BOX, FLEX } from '../../apple.com/pages/common.mjs';
 
 const ROOM = [...BOX, 'height', 'margin-left', 'margin-right'];

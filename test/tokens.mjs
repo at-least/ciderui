@@ -6,7 +6,7 @@ import { check, done } from './check.mjs';
 
 const css = readFileSync(join(ROOT, 'tokens.css'), 'utf8');
 const tbTokens = JSON.parse(readFileSync(join(ROOT, 'reference/asc/results/tokens.json'), 'utf8')).tokens;
-// the first block, :root's: the table a language's block overrides is not this one
+// @invariant: the first block, :root's: the table a language's block overrides is not this one
 const vars = Object.fromEntries([...css.slice(0, css.indexOf('\n}\n')).matchAll(/^\s*(--cui-[a-z0-9-]+):\s*([^;]+);/gm)].map(m => [m[1], m[2].trim()]));
 
 const sides = (name) => {
@@ -34,21 +34,21 @@ const channels = (value) => {
   if (!c) throw new Error(`not a #rrggbb, rgb(r g b / a) or oklch(l% c h / a) color: ${value}`);
   return [+c[1], +c[2], +c[3], +c[4]];
 };
-// CSS Color 4's matrices (OKLab to linear sRGB)
+// @external: CSS Color 4's matrices (OKLab to linear sRGB)
 function oklchToSrgb(l, c, h) {
   const a = c * Math.cos(h * Math.PI / 180), b = c * Math.sin(h * Math.PI / 180);
   const [l_, m_, s_] = [l + 0.3963377774 * a + 0.2158037573 * b, l - 0.1055613458 * a - 0.0638541728 * b, l - 0.0894841775 * a - 1.2914855480 * b].map(v => v ** 3);
   const lin = [4.0767416621 * l_ - 3.3077115913 * m_ + 0.2309699292 * s_, -1.2684380046 * l_ + 2.6097574011 * m_ - 0.3413193965 * s_, -0.0041960863 * l_ - 0.7034186147 * m_ + 1.7076147010 * s_];
   return lin.map(v => Math.min(1, Math.max(0, v))).map(v => (v <= 0.0031308 ? 12.92 * v : 1.055 * v ** (1 / 2.4) - 0.055) * 255);
 }
-// as the browser computes it
+// @external: as the browser computes it
 const rgb = (value) => {
   const [r, g, b, a] = channels(value);
   return a === 1 ? `rgb(${r}, ${g}, ${b})` : `rgba(${r}, ${g}, ${b}, ${a})`;
 };
 
 const W = 1200;
-// each color's light and dark side: [page, probe, width, property, state?]
+// @invariant: each color's light and dark side: [page, probe, width, property, state?]
 // where apple.com shows it, or 'fitted: why', held by the contrast checks
 const CONTRACT = {
   '--cui-c-bg': [['home', 'page.body', W, 'background-color'], ['product', 'page.body', W, 'background-color']],
@@ -62,24 +62,24 @@ const CONTRACT = {
   '--cui-c-accent-active': [['home', 'button', W, 'background-color', 'active'], ['home', 'tile.dark-button', W, 'background-color', 'active']],
   '--cui-c-on-accent': [['home', 'button', W, 'color'], ['home', 'tile.dark-button', W, 'color']],
   '--cui-c-link': [['home', 'button.secondary', W, 'color'], ['home', 'tile.dark-button-secondary', W, 'color']],
-  // the neutral in a dark block: a gallery item's (li.media-gallery-item.theme-dark)
+  // @external: the neutral in a dark block: a gallery item's (li.media-gallery-item.theme-dark)
   '--cui-c-neutral': [['store', 'button.neutral', W, 'background-color'], ['home', 'gallery.button-neutral', W, 'background-color']],
   '--cui-c-neutral-hover': [['store', 'button.neutral', W, 'background-color', 'hover'], ['home', 'gallery.button-neutral', W, 'background-color', 'hover']],
   '--cui-c-neutral-active': [['store', 'button.neutral', W, 'background-color', 'active'], ['home', 'gallery.button-neutral', W, 'background-color', 'active']],
   '--cui-c-on-neutral': [['store', 'button.neutral', W, 'color'], ['home', 'gallery.button-neutral', W, 'color']],
-  // the global nav's: the home page's, light, and the Newsroom's, a dark nav;
+  // @external: the global nav's: the home page's, light, and the Newsroom's, a dark nav;
   // its menu opened on a phone
   '--cui-c-bar': [['home', 'nav', W, 'background-color'], ['newsroom', 'nav', W, 'background-color']],
   '--cui-c-on-bar': [['home', 'nav.link', W, 'color'], ['newsroom', 'nav.link', W, 'color']],
   '--cui-c-on-bar-hover': [['home', 'nav.link', W, 'color', 'hover'], ['newsroom', 'nav.link', W, 'color', 'hover']],
   '--cui-c-menu': [['home', 'menu.content', 390, 'background-color'], ['newsroom', 'menu.content', 390, 'background-color']],
   '--cui-c-on-menu': [['home', 'menu.link', 390, 'color'], ['newsroom', 'menu.link', 390, 'color']],
-  // the search opened: the home page's, and the Newsroom's dark nav's
+  // @external: the search opened: the home page's, and the Newsroom's dark nav's
   // apple.com's local nav's rule: MacBook Air's, light, and MacBook Pro's, dark
   // apple.com's own field (the retail page's form-textbox), and in a dark
   // color scheme
   '--cui-c-field': [['retail', 'field.input', W, 'background-color'], ['retail-dark', 'field.input', W, 'background-color']],
-  // a field's states: the gift card's page's (an empty required field the
+  // @external: a field's states: the gift card's page's (an empty required field the
   // focus left, one disabled, the currency field's), and copies on the retail
   // page in a dark color scheme; the currency's ground read on the gift
   // card's page alone (a field is light on any page)
@@ -88,17 +88,17 @@ const CONTRACT = {
   '--cui-c-field-prefix': [['giftcard', 'prefix.currency', 1600, 'background-color'], ['giftcard', 'prefix.currency', 1600, 'background-color']],
   '--cui-c-border-disabled': [['giftcard', 'field.disabled', 1600, 'border-top-color'], ['retail-dark', 'field.disabled', W, 'border-top-color']],
   '--cui-c-error': [['giftcard', 'error.message', W, 'color'], 'fitted: apple.com\'s #e30000 is below 4.5:1 on black'],
-  // the bag's accordion's rule, and a rule between copy blocks on iPhone 18
+  // @external: the bag's accordion's rule, and a rule between copy blocks on iPhone 18
   // Pro's dark page
   '--cui-c-divider': [['bag', 'accordion.item', W, 'border-top-color'], ['product', 'divider', W, 'border-top-color']],
-  // the footer: the home page's, and the dark product page's, light as well
+  // @external: the footer: the home page's, and the dark product page's, light as well
   '--cui-c-on-footer': [['home', 'footer', W, 'color'], ['product', 'footer', W, 'color']],
   '--cui-c-on-footer-link': [['home', 'footer.link', W, 'color'], ['product', 'footer.link', W, 'color']],
   '--cui-c-on-footer-title': [['home', 'footer.title', W, 'color'], ['product', 'footer.title', W, 'color']],
-  // the store's overlay (iPhone 18 Pro's buy page, its Show more opened): one
+  // @external: the store's overlay (iPhone 18 Pro's buy page, its Show more opened): one
   // value each, read at a wide window and a phone's
   '--cui-c-scrim': [['overlay', 'overlay', W, 'background-color'], ['overlay', 'overlay', 390, 'background-color']],
-  // tv.apple.com's video player, paused (decision 28): one value each, a
+  // @external: tv.apple.com's video player, paused (decision 28): one value each, a
   // video dark on any page
   '--cui-c-video': [['tv-player', 'dialog', W, 'background-color'], ['tv-player', 'dialog', 1600, 'background-color']],
   '--cui-c-on-video': [['tv-player', 'play', W, 'color'], ['tv-player', 'play', 1600, 'color']],
@@ -114,13 +114,13 @@ for (const [name, [light, dark]] of Object.entries(CONTRACT)) {
   const [l, d] = sides(name);
   for (const [side, value, source] of [['light', l, light], ['dark', d, dark]]) {
     if (typeof source === 'string') continue; // fitted: held by the contrast checks
-    // a ring drawn as a box-shadow reads as its color first
+    // @external: a ring drawn as a box-shadow reads as its color first
     const want = ref(...source).match(/rgba?\([^)]*\)/)[0];
     check(`${name} ${side} is apple.com's ${source.slice(0, 2).join(':')}${source[4] ? ':' + source[4] : ''} ${source[3]}`, rgb(value), want);
   }
 }
 
-// the console's colors: light the toolkit's, dark derived (decision 18:
+// @invariant: the console's colors: light the toolkit's, dark derived (decision 18:
 // not measured). A side its job's contrast
 // finds short is fitted (decision 21): FITTED's value, a step of the same
 // ramp (or the same step at another alpha), held by the contrast checks.
@@ -214,7 +214,7 @@ for (const name of Object.keys(vars).filter(k => k.startsWith('--cui-c-console-'
 }
 for (const name of Object.keys(FITTED)) if (!(name in vars)) throw new Error(`FITTED names ${name}, which tokens.css has not`);
 
-// WCAG 2 contrast. A translucent color is what it draws over the color
+// @external: WCAG 2 contrast. A translucent color is what it draws over the color
 // under it.
 const over = (...layers) => layers.reduceRight((under, top) => {
   const [r, g, b, a] = channels(top);
@@ -230,10 +230,10 @@ const MIN = [
   ['--cui-c-text-2', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
   ['--cui-c-link', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
   ['--cui-c-text-3', ['--cui-c-bg', '--cui-c-bg-alt'], 3],
-  // a field's message on the page
+  // @invariant: a field's message on the page
   ['--cui-c-error', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
   ['--cui-c-border', ['--cui-c-bg', '--cui-c-bg-alt'], 3],
-  // the player's text and controls on its video
+  // @invariant: the player's text and controls on its video
   ['--cui-c-on-video-control', ['--cui-c-video'], 4.5],
   ['--cui-c-on-video-time', ['--cui-c-video'], 4.5],
 ];
@@ -245,7 +245,7 @@ for (const [fg, grounds, min] of MIN) {
     }
   }
 }
-// each label on the fills it is drawn on (top first; [] the bare base), each
+// @trap: each label on the fills it is drawn on (top first; [] the bare base), each
 // over both bases: pairs on a card were missed here and found by a site's
 // axe-core run
 const PAGE = '--cui-c-console-neutral-background-primary';
@@ -254,31 +254,31 @@ const BASES = [[PAGE], [CARD, PAGE]];
 const ON_FILLS = ['--cui-c-console-brand-accent-primary', '--cui-c-console-brand-fill-hover', '--cui-c-console-error-accent-primary', '--cui-c-console-error-fill-hover'];
 const GRAY = ['--cui-c-console-neutral-fill-tertiary', '--cui-c-console-gray-fill-hover', '--cui-c-console-gray-fill-press'];
 const ROLES = ['info', 'success', 'warning', 'error'];
-// a banner's tints: the neutral's and each role's
+// @invariant: a banner's tints: the neutral's and each role's
 const TINTS = [['--cui-c-console-neutral-fill-quaternary'], ...ROLES.map((role) => [`--cui-c-console-${role}-fill-tertiary`])];
 const CONSOLE_MIN = [
   ['--cui-c-console-neutral-label-primary', [[], ['--cui-c-console-neutral-accent-quaternary'], ...GRAY.map((g) => [g]), ...TINTS], 4.5],
-  // the secondary label: a current menu item's, a chip's key and its remove
+  // @invariant: the secondary label: a current menu item's, a chip's key and its remove
   // control on its gray at rest, hovered and pressed, a banner's caption, a
   // field's placeholder, a card's caption
   ['--cui-c-console-neutral-label-secondary', [[], ...GRAY.map((g) => [g]), ...TINTS], 4.5],
-  // a button's label on its fill, at rest, hovered and pressed
+  // @invariant: a button's label on its fill, at rest, hovered and pressed
   ['--cui-c-console-brand-label-on-accent-primary', [...ON_FILLS.map((f) => [f]), ['--cui-c-console-brand-fill-press'], ['--cui-c-console-error-fill-press']], 4.5],
   ['--cui-c-console-on-accent-press', [['--cui-c-console-brand-fill-press'], ['--cui-c-console-error-fill-press']], 4.5],
   ['--cui-c-console-neutral-label-hover', [['--cui-c-console-gray-fill-hover']], 4.5],
-  // a badge's label on the base, on its own tint and on the gray fill
+  // @invariant: a badge's label on the base, on its own tint and on the gray fill
   ...ROLES.map((role) => [`--cui-c-console-${role}-label-primary`, [[], [`--cui-c-console-${role}-accent-quaternary`], ['--cui-c-console-neutral-fill-tertiary']], 4.5]),
-  // a banner's icon on its tint; a card's change up or down
+  // @invariant: a banner's icon on its tint; a card's change up or down
   ...ROLES.map((role) => [`--cui-c-console-${role}-label-primary`, [[`--cui-c-console-${role}-fill-tertiary`]], 4.5]),
-  // a gray segment's blue label, at rest and hovered, on its gray
+  // @invariant: a gray segment's blue label, at rest and hovered, on its gray
   ...['--cui-c-console-brand-label-on-fill', '--cui-c-console-brand-label-hover'].map((fg) => [fg, GRAY.map((g) => [g]), 4.5]),
-  // a plain button's, a link's
+  // @invariant: a plain button's, a link's
   ...['--cui-c-console-brand-label-primary', '--cui-c-console-brand-label-hover', '--cui-c-console-brand-label-press'].map((fg) => [fg, [[]], 4.5]),
-  // a link in a banner's sentence, on the banner's tint
+  // @invariant: a link in a banner's sentence, on the banner's tint
   ['--cui-c-console-brand-label-on-tint', TINTS, 4.5],
-  // a gray button's red label, on the base and on its gray
+  // @invariant: a gray button's red label, on the base and on its gray
   ...['--cui-c-console-error-label-primary', '--cui-c-console-error-label-hover', '--cui-c-console-error-label-press'].map((fg) => [fg, [[], ...GRAY.map((g) => [g])], 4.5]),
-  // a field's edge and its red edge in error
+  // @invariant: a field's edge and its red edge in error
   ...['--cui-c-console-field-border', '--cui-c-console-error-label-primary'].map((fg) => [fg, [[]], 3]),
 ];
 for (const [fg, fills, min] of CONSOLE_MIN) {
@@ -298,7 +298,7 @@ for (const [on, fills] of [['--cui-c-on-accent', ['--cui-c-accent', '--cui-c-acc
     for (const i of [0, 1]) check(`${on} on ${fill}, ${['light', 'dark'][i]}, at least 4.5:1`, ratio(sides(on)[i], sides(fill)[i]) >= 4.5, true);
   }
 }
-// the nav's text on its bar, the bar over the page's grounds (what scrolls
+// @invariant: the nav's text on its bar, the bar over the page's grounds (what scrolls
 // under it is the page's)
 for (const [on, bar] of [['--cui-c-on-bar', '--cui-c-bar'], ['--cui-c-on-bar-hover', '--cui-c-bar']]) {
   for (const bg of ['--cui-c-bg', '--cui-c-bg-alt']) {
@@ -309,7 +309,7 @@ for (const [on, bar] of [['--cui-c-on-bar', '--cui-c-bar'], ['--cui-c-on-bar-hov
   }
 }
 
-// a field's text, its value and its label, on its ground over the field's
+// @invariant: a field's text, its value and its label, on its ground over the field's
 // own (the page's ground, light: a field keeps its light look); in error,
 // its label on the error's ground
 for (const fg of ['--cui-c-text', '--cui-c-text-2']) {
@@ -318,7 +318,7 @@ for (const fg of ['--cui-c-text', '--cui-c-text-2']) {
 }
 check('--cui-c-error on --cui-c-field-error, light, at least 4.5:1', ratio(sides('--cui-c-error')[0], sides('--cui-c-field-error')[0]) >= 4.5, true);
 
-// the footer's text on its ground, the alternate (light: the footer keeps
+// @invariant: the footer's text on its ground, the alternate (light: the footer keeps
 // its light look)
 for (const fg of ['--cui-c-on-footer', '--cui-c-on-footer-link', '--cui-c-on-footer-title']) {
   const ground = sides('--cui-c-bg-alt')[0];
@@ -327,10 +327,10 @@ for (const fg of ['--cui-c-on-footer', '--cui-c-on-footer-link', '--cui-c-on-foo
 
 const table = JSON.parse(readFileSync(join(ROOT, 'reference/tracking/cui-tracking.json'), 'utf8'));
 const tracking = Object.keys(vars).filter(k => k.startsWith('--cui-tracking-'));
-// the table is what was measured; a size no stylesheet reads has no token
+// @invariant: the table is what was measured; a size no stylesheet reads has no token
 const READ = ['theme.css', 'base.css', 'type.css', ...readdirSync(join(ROOT, 'components'), { recursive: true }).filter(f => f.endsWith('.css')).map(f => join('components', f))].map(f => readFileSync(join(ROOT, f), 'utf8')).join('\n');
 check('a letter-spacing for each size of the table a stylesheet reads', tracking.map(k => k.slice(15)).join(' '), Object.keys(table).filter(size => READ.includes(`--cui-tracking-${size})`)).join(' '));
-// a part's removal leaves no slot behind
+// @invariant: a part's removal leaves no slot behind
 check('every token a stylesheet reads', Object.keys(vars).filter(name => !(READ + css).match(new RegExp(`var\\(${name}[,)]`))).join(' '), '');
 for (const k of tracking) check(k, parseFloat(vars[k]), table[k.slice(15)]);
 
@@ -347,31 +347,31 @@ check('--cui-console-shadow-dialog is App Store Connect\'s --tb-component-Modal-
 check('--cui-console-shadow-popover is App Store Connect\'s --tb-component-Popover-variant-variant-stroked-boxShadow', vars['--cui-console-shadow-popover'], tbTokens['--tb-component-Popover-variant-variant-stroked-boxShadow']);
 
 check('--cui-video-scrim is tv.apple.com\'s tv-player:scrim.gradient background-image', vars['--cui-video-scrim'], ref('tv-player', 'scrim.gradient', W, 'background-image'));
-// golden: muse's subtitles, white under a soft shadow with no box (the owner, 2026-11-05, from Apple's view); tv.apple.com's
+// @trap: golden: muse's subtitles, white under a soft shadow with no box (the owner, 2026-11-05, from Apple's view); tv.apple.com's
 // cues are its <video>'s own text track, none read. Two layers: a tight one that edges each letter on a white picture, a wide
 // faint one that darkens round the line without a box's edge
 check('--cui-video-cue-shadow is muse\'s golden', vars['--cui-video-cue-shadow'], '0 0.05em 0.1em rgb(0 0 0 / 0.6), 0 0 0.5em rgb(0 0 0 / 0.4)');
-// golden: muse's scrubber preview (the owner, 2026-11-05: a thumbnail over the time under the pointer); tv.apple.com's
+// @trap: golden: muse's scrubber preview (the owner, 2026-11-05: a thumbnail over the time under the pointer); tv.apple.com's
 // trailers scrub with no preview. A 1px hairline edges it over a dark picture, a soft drop lifts it off a bright one
 check('--cui-video-preview-shadow is muse\'s golden', vars['--cui-video-preview-shadow'], '0 0 0 1px rgb(255 255 255 / 0.15), 0 4px 12px rgb(0 0 0 / 0.4)');
-// golden: muse's full-screen controls (回報問題, 下一個要看), a capsule of words on the picture; tv.apple.com's bar has none.
+// @trap: golden: muse's full-screen controls (回報問題, 下一個要看), a capsule of words on the picture; tv.apple.com's bar has none.
 // A faint white fill that reads on a dark or a bright picture, a little more hovered or pressed
 check('--cui-video-control-fill is muse\'s golden', vars['--cui-video-control-fill'], 'rgb(255 255 255 / 0.16)');
 check('--cui-video-control-fill-hover is muse\'s golden', vars['--cui-video-control-fill-hover'], 'rgb(255 255 255 / 0.24)');
 check('--cui-video-thumb-shadow is tv.apple.com\'s tv-player:volume.range --volume-thumb-box-shadow', vars['--cui-video-thumb-shadow'], ref('tv-player', 'volume.range', W, '--volume-thumb-box-shadow'));
 
-// every named color CSS has; not transparent, currentColor or inherit, which
+// @external: every named color CSS has; not transparent, currentColor or inherit, which
 // are no color of a stylesheet's own
 const NAMED = /\b(aliceblue|antiquewhite|aqua|aquamarine|azure|beige|bisque|black|blanchedalmond|blue|blueviolet|brown|burlywood|cadetblue|chartreuse|chocolate|coral|cornflowerblue|cornsilk|crimson|cyan|darkblue|darkcyan|darkgoldenrod|darkgray|darkgreen|darkgrey|darkkhaki|darkmagenta|darkolivegreen|darkorange|darkorchid|darkred|darksalmon|darkseagreen|darkslateblue|darkslategray|darkslategrey|darkturquoise|darkviolet|deeppink|deepskyblue|dimgray|dimgrey|dodgerblue|firebrick|floralwhite|forestgreen|fuchsia|gainsboro|ghostwhite|gold|goldenrod|gray|green|greenyellow|grey|honeydew|hotpink|indianred|indigo|ivory|khaki|lavender|lavenderblush|lawngreen|lemonchiffon|lightblue|lightcoral|lightcyan|lightgoldenrodyellow|lightgray|lightgreen|lightgrey|lightpink|lightsalmon|lightseagreen|lightskyblue|lightslategray|lightslategrey|lightsteelblue|lightyellow|lime|limegreen|linen|magenta|maroon|mediumaquamarine|mediumblue|mediumorchid|mediumpurple|mediumseagreen|mediumslateblue|mediumspringgreen|mediumturquoise|mediumvioletred|midnightblue|mintcream|mistyrose|moccasin|navajowhite|navy|oldlace|olive|olivedrab|orange|orangered|orchid|palegoldenrod|palegreen|paleturquoise|palevioletred|papayawhip|peachpuff|peru|pink|plum|powderblue|purple|rebeccapurple|red|rosybrown|royalblue|saddlebrown|salmon|sandybrown|seagreen|seashell|sienna|silver|skyblue|slateblue|slategray|slategrey|snow|springgreen|steelblue|tan|teal|thistle|tomato|turquoise|violet|wheat|white|whitesmoke|yellow|yellowgreen)\b/i;
 const sheets = ['theme.css', 'base.css', 'type.css', 'index.css',
   ...readdirSync(join(ROOT, 'components'), { recursive: true }).filter(f => f.endsWith('.css')).map(f => join('components', f))];
 for (const file of sheets) {
   const text = readFileSync(join(ROOT, file), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
-  // a custom property's name is no color (--cui-c-console-gray-fill-hover)
+  // @trap: a custom property's name is no color (--cui-c-console-gray-fill-hover)
   const values = [...text.matchAll(/:\s*([^;{}]+)[;}]/g)].map(m => m[1]).join(' ; ').replace(/--[\w-]+/g, '');
   const literal = values.match(/#[0-9a-f]{3,8}\b|\b(rgba?|hsla?|hwb|lab|lch|oklab|oklch|color)\(/i) ?? values.match(NAMED);
   check(`${file} writes no color of its own`, literal?.[0] ?? 'none', 'none');
-  // a console part reads the console's slots alone; the dialog's backdrop the
+  // @invariant: a console part reads the console's slots alone; the dialog's backdrop the
   // scrim, which the toolkit names none of, and the player the video's
   // (decision 28)
   if (file.startsWith(join('components', 'console'))) {

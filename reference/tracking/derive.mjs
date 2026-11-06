@@ -1,4 +1,4 @@
-// From the Safari and Chrome runs: how far apart the two browsers are, and the
+// @invariant: From the Safari and Chrome runs: how far apart the two browsers are, and the
 // letter-spacing system-ui needs per size to land on apple.com's widths
 // (apple.com's value minus the measured Δ, averaged over both browsers and both weights).
 import { readFileSync, writeFileSync } from 'node:fs';

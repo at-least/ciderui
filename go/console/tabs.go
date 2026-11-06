@@ -111,7 +111,7 @@ func (t ConsoleTabButtons) Render(w io.Writer) error {
 		if b.Value == "" {
 			panic("console.ConsoleTabButton needs a Value")
 		}
-		// aria-pressed="false" too: it is what makes a button a toggle to a
+		// @external: aria-pressed="false" too: it is what makes a button a toggle to a
 		// screen reader
 		ariaPressed := "false"
 		if b.Pressed {

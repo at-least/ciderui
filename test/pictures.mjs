@@ -15,7 +15,7 @@ const seen = {};
 const pages = {};
 for (const set of ['site', 'console']) {
   pages[set] = await open(shipped(set), '');
-  // every face now: one first asked for after a resize would be drawn in its fallback
+  // @external: every face now: one first asked for after a resize would be drawn in its fallback
   await pages[set].page.evaluate(() => Promise.all([...document.fonts].map((face) => face.load())));
 }
 

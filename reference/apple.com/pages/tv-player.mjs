@@ -1,4 +1,4 @@
-// tv.apple.com's video player, a trailer paused with its controls shown (the
+// @external: tv.apple.com's video player, a trailer paused with its controls shown (the
 // owner, 2026-11-05: 「播放器照 tv.apple.com」): the first trailer opened from
 // Ted Lasso's trailers, the video clicked (its controls shown), the centre
 // pause clicked; paused, the controls stay. The video is clicked at a point:
@@ -13,13 +13,13 @@ import { TYPE, BOX, MOTION, FOCUS, FLEX } from './common.mjs';
 export const URL = 'https://tv.apple.com/us/collection/trailers/uts.col.Trailers.umc.cmc.vtoh0mn0xn7t3c643xqonfzy';
 const STATES = ['hover', 'active', 'focus-visible'];
 const CONTROL = [...BOX, 'color', 'opacity', 'cursor', 'width', 'height', 'transform', ...FOCUS, ...MOTION];
-// the custom properties its range inputs are drawn by (a track, the part
+// @external: the custom properties its range inputs are drawn by (a track, the part
 // played, the thumb), read on the input: a thumb's computed style is not
 // read (getComputedStyle with ::-webkit-slider-thumb gave the input's own)
 const RANGE = ['--progress-track-height', '--progress-track-max-height', '--progress-track-color', '--progress-track-color-elapsed', '--progress-track-color-elapsed-active',
   '--progress-thumb-height', '--progress-thumb-width', '--progress-thumb-color', '--progress-thumb-color-active', '--progress-thumb-multiplier', '--progress-thumb-multiplier-active', '--progress-thumb-border-radius', '--progress-thumb-box-shadow', '--progress-thumb-outline-active', '--volume-thumb-box-shadow'];
 
-// opening the player, showing its controls and pausing it: each once, in turn
+// @invariant: opening the player, showing its controls and pausing it: each once, in turn
 export const open = [
   { name: 'dialog', click: 'a.lockup', clicked: 6000, select: 'dialog.playback-view', props: ['background-color', 'color', 'padding-top', 'padding-left'], box: true },
   { name: 'scrim', click: [700, 400], clicked: 1000, select: '.video-player-scrim', props: [...FLEX, 'grid-template-rows', 'grid-template-columns', 'padding-top', 'padding-left', 'padding-right', 'padding-bottom', 'opacity', ...MOTION], box: true },

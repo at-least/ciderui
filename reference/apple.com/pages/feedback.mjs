@@ -1,4 +1,4 @@
-// The iPhone feedback form, for apple.com's multi-line field (its
+// @external: The iPhone feedback form, for apple.com's multi-line field (its
 // form-textarea: a bordered box, its textarea inside under its label), at
 // rest; its text field's label beside it, for the page's colors. Read only:
 // nothing typed, nothing sent. Its states are feedback-states.mjs.

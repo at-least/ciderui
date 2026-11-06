@@ -1,4 +1,5 @@
-// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs: MEASURED.md holds its claims and method.
+// @invariant: BROWSER=safari|ios|chrome|chromium|firefox node run.mjs: MEASURED.md holds its claims
+// and method.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open, wait } from '../browsers.mjs';
@@ -17,9 +18,9 @@ let page;
 const got = {};
 const IOS = BROWSER === 'ios';
 const KEYBOARD = BROWSER === 'safari';
-// a button: by script on the simulator, by Return in Safari, else clicked
+// @external: a button: by script on the simulator, by Return in Safari, else clicked
 const press = (selector) => IOS ? page.script(selector, 'click') : KEYBOARD ? page.script(selector, 'focus').then(() => page.press('Enter')) : page.click(selector);
-// a click anywhere else: the browser's own, but on the simulator
+// @external: a click anywhere else: the browser's own, but on the simulator
 const click = (selector) => IOS ? page.script(selector, 'click') : page.click(selector);
 const state = () => page.run(call('state()'));
 const pixels = async (offset) => page.run(call(`pixels(${JSON.stringify(await page.shot())}, ${offset})`));
@@ -58,7 +59,7 @@ try {
   await press('#search');
   await page.run(wait(400));
   got.afterToggle = await state();
-  // text in its field (set by the page's script: what the CSS reads is the
+  // @external: text in its field (set by the page's script: what the CSS reads is the
   // value), then its clear button clicked
   await opened();
   got.empty = await state();
@@ -69,7 +70,7 @@ try {
   await page.run(wait(400));
   got.cleared = await state();
   if (!IOS) {
-    // the focus's way back to the field: Shift+Tab, from where it was
+    // @external: the focus's way back to the field: Shift+Tab, from where it was
     await page.press('Shift+Tab');
     await page.run(wait(200));
     got.clearedBack = await state();
@@ -81,7 +82,7 @@ try {
     await opened();
     await page.run(`Promise.resolve((document.querySelector('#input').value = 'iphone', true))`);
     await page.press('Enter');
-    // the page it loads: waited for here, not in the page it leaves
+    // @external: the page it loads: waited for here, not in the page it leaves
     await new Promise(r => setTimeout(r, 1500));
     got.sent = await state();
   }

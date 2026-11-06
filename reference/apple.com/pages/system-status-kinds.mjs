@@ -1,4 +1,4 @@
-// System Status's other kinds, which its stylesheet draws and the page shows
+// @external: System Status's other kinds, which its stylesheet draws and the page shows
 // only while a service has one: the legend's mark with its class set to
 // light-issue, light-outage and light-maintenance in turn (its available
 // one is system-status's), and, at 390px, the toggle's glyph opened

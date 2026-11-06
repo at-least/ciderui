@@ -1,4 +1,4 @@
-// The newer look's toolkit's tokens, on an app's analytics overview (the
+// @external: The newer look's toolkit's tokens, on an app's analytics overview (the
 // only pages that load it): what the console components (cui-console-*)
 // are built from and held to. The type, sizes, spaces, radii, borders,
 // shadows and timing; every color role and both palettes (the dark side of

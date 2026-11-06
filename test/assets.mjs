@@ -1,4 +1,4 @@
-// What a site links: dist/<set>.css as it ships, and its own utilities' stylesheet
+// @invariant: What a site links: dist/<set>.css as it ships, and its own utilities' stylesheet
 // after it.
 
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';

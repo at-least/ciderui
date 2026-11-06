@@ -144,7 +144,7 @@
     }
   }
 
-  /* not a transparent target round the button: 8px apart, each one's
+  /* @trap: not a transparent target round the button: 8px apart, each one's
      covered its neighbour's. After the sizes, the plain variant and the
      capsule, whose min-width and corners it overrides: its doubled class
      outweighs theirs */

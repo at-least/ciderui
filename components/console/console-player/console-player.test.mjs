@@ -13,7 +13,7 @@ const LINE = '.cui-console-player-subtitles > p';
 const CUE = '.cui-console-player-cue';
 const MUSE = 'muse\'s console\'s subtitles, not tv.apple.com\'s, whose cues are its <video>\'s own text track (shown, none active in the first 22s of its first trailer, 2026-11-05; ::cue unreadable): 2.4% of the width at the least 15px, so it grows with the player (full screen too), 1.6 lines, 500, white under a soft shadow (--cui-video-cue-shadow) and no box (the owner, 2026-11-05, from Apple\'s view), 42em at its widest, balanced';
 const hidden = (html) => html.replace('data-state="playing"', 'data-state="playing" data-controls="hidden"');
-// muse's player: its subtitles' Off and eleven languages, and no voices (one)
+// @external: muse's player: its subtitles' Off and eleven languages, and no voices (one)
 // or two, the player in a column beside a 288px sidebar under a 50px bar, as
 // wide as the window's height leaves (muse's player_page.go)
 const LANGUAGES = [['zh-Hant', '繁體中文'], ['zh-Hans', '简体中文'], ['en', 'English'], ['ja', '日本語'], ['ko', '한국어'], ['es', 'Español'], ['pt-BR', 'Português (Brasil)'], ['de', 'Deutsch'], ['fr', 'Français'], ['th', 'ภาษาไทย'], ['vi', 'Tiếng Việt']];
@@ -32,7 +32,8 @@ const languages = (html, voices = 1) => {
   return `<div style="height:50px"></div><div style="display:flex"><div style="flex:1;min-width:0;padding:0 24px"><div style="margin:16px auto 0;max-width:calc((100vh - 14rem) * 16 / 9)">${player}</div></div><div style="flex:none;width:288px"></div></div>`;
 };
 const LAST = '#subtitles [value="vi"]';
-// the preview as the page's script shows it: its picture, its line and the pointer's x (300px into the bar)
+// @invariant: the preview as the page's script shows it: its picture, its line and the pointer's x
+// (300px into the bar)
 const previewing = (html) => html
   .replace('aria-hidden="true" hidden>', 'aria-hidden="true" style="--cui-console-player-preview-x: 300px">')
   .replace('<img class="cui-console-player-preview-picture" alt="">', `<img class="cui-console-player-preview-picture" alt="" src="${html.match(/<img class="absolute[^>]* src="([^"]+)"/)[1]}">`)

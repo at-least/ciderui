@@ -1,4 +1,4 @@
-// apple.com's Newsroom, its archive: each month a heading over ruled rows,
+// @external: apple.com's Newsroom, its archive: each month a heading over ruled rows,
 // each row a link with its picture, its category, its headline and its
 // date. The filter bar above (a script's) and the button that loads more
 // are not read.

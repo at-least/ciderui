@@ -1,6 +1,7 @@
 @layer components {
   .cui-console-link {
-    /* not a default on --cui-console-link-color here: it would override the part's around it */
+    /* @trap: not a default on --cui-console-link-color here: it would override the part's
+       around it */
     --cui-console-link-blue: var(--cui-console-link-color, var(--cui-c-console-brand-label-primary));
 
     color: var(--cui-console-link-blue);

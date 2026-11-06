@@ -64,6 +64,16 @@ Every component follows these. The numbers are cited across the repository; they
 
 14. **Ships complete.** The stylesheet, with no header: it does not restate what Tailwind's preflight gives (`dist/<set>.css` carries it, decision 34), though what it sets against the page around it stays; its markup is its examples', its variants its rules, its sources its test's, and a comment in it only what none of those can say; its examples, its test with its golden values, and its Go component where its markup is more than one element. One commit per component, and one per step of any change, each with `npm test` green.
 
+## Comments
+
+Code, names, types and checks carry what they can; a comment carries only what none of them can, and every comment that is not an exported declaration's own godoc carries one tag naming its kind, so one grep finds every trap, invariant and outside fact in the repository (`comments_test.go` holds every file to this):
+
+- `@invariant:` a contract RSI must not break: a boundary, a state, an ordering or a coupling the types do not enforce.
+- `@trap:` a solution that failed here, or why what looks wrong is right: so the next change does not restore the failure.
+- `@external:` a limit or side-effect of an outside system (a browser, apple.com, the build, the harness), or an environment assumption.
+
+Godoc on an exported symbol is the interface itself and carries no tag. `go/lucide/lucide.go` is generated, and `scripts/build-lucide.mjs`, whose comment lines are the file's doc, writes it: edit the script, never the file; both are excepted. An Example's `Output:` comment is the test framework's assertion, not a comment.
+
 ## The token contract
 
 `tokens.css` is the contract: the colors every component reads, each one `light-dark()` pair, light first, or one value where both sides are the same; what one is for, where its name does not say, is a comment beside it.
@@ -110,7 +120,7 @@ Not measured: the store's checkout pages (the agent's recommendation, which the 
 
 ## How a component is proven
 
-`npm test` is the gate. What the measurements taught the harness, which it keeps:
+`npm test` is the gate. A picture changed on purpose is re-recorded with `UPDATE_GOLDEN=1 node scripts/docker.mjs node test/pictures.mjs`; a failed run leaves the new picture in `test/pictures-failed`. What the measurements taught the harness, which it keeps:
 
 - **Linux's hinting.** Chromium on Linux hints every glyph to a whole-pixel advance unless launched with `--font-render-hinting=none`; with it, its text widths are the Mac's within 0.00006em a character (measured, `reference/tracking/`). Every run passes the flag.
 - **The fonts differ between the two sides.** apple.com's values were read with its SF Pro webfonts; ciderui's cases render on Linux in Inter, fonts.css's, inlined into each case's page. So an `apple` check compares what does not depend on the text's width (the type's own values, colors, borders, radii, padding, heights where the line height fixes them), and a box that depends on the text's width is a `golden` check.

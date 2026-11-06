@@ -9,12 +9,12 @@ import { CASE_KEYS, CHECK_KEYS } from './harness.mjs';
 
 const UPDATE = process.env.UPDATE_GOLDEN === '1';
 const PICK = process.env.CASES ? new RegExp(process.env.CASES) : null;
-// rewriting golden.json from some cases would drop the others' values
+// @trap: rewriting golden.json from some cases would drop the others' values
 if (UPDATE && PICK) throw new Error('UPDATE_GOLDEN=1 runs every case: drop CASES');
 
 const tested = COMPONENTS.filter(c => existsSync(join(ROOT, c.dir, `${c.name}.test.mjs`)));
 const sheets = tested.map(c => `@import "${c.dir}/${c.name}.css";`).join('\n');
-// fonts.css: without Inter the stack falls through to this Linux host's
+// @external: fonts.css: without Inter the stack falls through to this Linux host's
 // Arial (Liberation Sans). Tailwind scans the test files too: their cases
 // write markup of their own (a type class around an example).
 const css = compile({ css: `@import "fonts.css";\n@import "index.css";\n${sheets}`, sources: ['components'] });
@@ -37,7 +37,7 @@ for (const { name, dir } of tested) {
     try {
       for (const width of widths) {
         await page.resize(width);
-        // once, at the first width: a menu stays open across the widths after
+        // @invariant: once, at the first width: a menu stays open across the widths after
         // it. The pointer then leaves: a click leaves it over what it clicked,
         // hovered, a state the checks force when they mean it.
         if ((c.click || c.press || c.wait !== undefined) && width === widths[0]) {
@@ -47,7 +47,7 @@ for (const { name, dir } of tested) {
           if (c.wait !== undefined) await page.page.waitForTimeout(c.wait);
           else await page.settle();
         }
-        // at every width: what the pointer shows a resize may hide. In steps,
+        // @external: at every width: what the pointer shows a resize may hide. In steps,
         // as a hand moves it.
         if (c.hover) {
           await page.page.mouse.move(0, (c.height ?? 800) - 1);
@@ -71,13 +71,13 @@ for (const { name, dir } of tested) {
             const [p, probe, state] = k.apple;
             const at = k.at?.[width] ?? width;
             for (const prop of k.props) {
-              // apple.com drew SF, ciderui draws Inter here: a width is the text's
+              // @external: apple.com drew SF, ciderui draws Inter here: a width is the text's
               if (prop === 'width' || prop === 'box-width') throw new Error(`${label}: an apple.com check reads no width (${prop})`);
               const theirs = k.as?.[prop] ?? prop;
               check(`${label} ${prop} is apple.com's ${p}:${probe}${state ? ':' + state : ''} ${theirs} at ${at}px`, got[prop], ref(p, probe, at, theirs, state));
             }
           } else if (k.asc) {
-            // App Store Connect's, read at 1920px: a value that does not
+            // @external: App Store Connect's, read at 1920px: a value that does not
             // move with the window's width (a console part's own sizes)
             const [p, probe] = k.asc;
             for (const prop of k.props) {
@@ -85,19 +85,19 @@ for (const { name, dir } of tested) {
               check(`${label} ${prop} is App Store Connect's ${p}:${probe} ${prop}`, got[prop], asc(p, probe, prop));
             }
           } else if (k.tb) {
-            // a token of App Store Connect's toolkit, one per property, as
+            // @external: a token of App Store Connect's toolkit, one per property, as
             // this page computes it where the target is (beside it, so a
             // length in em is its parent's)
             if (k.tb.length !== k.props.length) throw new Error(`${label}: tb names a token for each of props`);
             const want = await page.page.evaluate(([selector, pairs]) => {
               const el = document.querySelector(selector);
-              // an element no component's selector matches (a div would be
+              // @trap: an element no component's selector matches (a div would be
               // a banner's > div), a block where nothing sets its display
               const probe = document.createElement('cui-tb-probe');
               probe.style.display = 'block';
               el.parentElement.append(probe);
               const out = pairs.map(([prop, value]) => {
-                // the harness's box reads (test/browser.mjs) are lengths: a
+                // @invariant: the harness's box reads (test/browser.mjs) are lengths: a
                 // token for one is read as a height or a width
                 const css = prop === 'box-height' ? 'height' : ['box-width', 'box-top', 'box-left', 'box-right', 'box-x', 'box-y'].includes(prop) ? 'width' : prop;
                 probe.style.setProperty(css, value);

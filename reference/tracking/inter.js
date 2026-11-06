@@ -1,4 +1,4 @@
-// Runs inside https://www.apple.com/: Inter (ciderui's font where the system
+// @external: Runs inside https://www.apple.com/: Inter (ciderui's font where the system
 // font is not SF), added from its bytes, at ciderui's letter-spacing and at 0,
 // against apple.com's cut at apple.com's letter-spacing and at 0.
 async function inter(scale, tracking, weights, sample, fontBase64) {

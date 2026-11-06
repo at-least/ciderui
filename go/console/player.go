@@ -162,7 +162,7 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 		h.Div(h.Class("cui-console-player-overlay"),
 			h.Div(h.Class("cui-console-player-header"),
 				h.P(h.Class("cui-console-player-caption"), h.Data("control", "caption"), g.Text(p.Caption)),
-				// the range opens beside its button while the pointer is over either
+				// @invariant: the range opens beside its button while the pointer is over either
 				h.Div(h.Class("cui-console-player-volume"),
 					rangeInput("volume", p.Volume, 100, p.VolumeAriaLabel, "", float64(p.Volume)),
 					button("mute", p.MuteAriaLabel, "", g.Group{lucide.Volume2.Class("cui-console-player-glyph-volume"), lucide.VolumeX.Class("cui-console-player-glyph-muted")}),
@@ -182,7 +182,7 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 				),
 				h.Div(h.Class("cui-console-player-progress"),
 					rangeInput("scrubber", p.Position, p.Duration, p.ScrubAriaLabel, clock(p.Position), played),
-					// the range's aria-valuetext says the time: the preview is for the eye
+					// @invariant: the range's aria-valuetext says the time: the preview is for the eye
 					h.Div(h.Class("cui-console-player-preview"), h.Data("control", "preview"), h.Aria("hidden", "true"), g.Attr("hidden"),
 						h.Img(h.Class("cui-console-player-preview-picture"), h.Alt("")),
 						h.P(h.Class("cui-console-player-preview-label")),

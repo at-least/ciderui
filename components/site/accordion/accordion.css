@@ -16,7 +16,7 @@
     list-style: none;
     cursor: pointer;
 
-    /* Safari's own marker */
+    /* @external: Safari's own marker */
     &::-webkit-details-marker {
       display: none;
     }

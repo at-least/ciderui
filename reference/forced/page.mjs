@@ -1,4 +1,4 @@
-// node page.mjs: page.html, the kit's parts that draw a state or a color in
+// @invariant: node page.mjs: page.html, the kit's parts that draw a state or a color in
 // a color of their own, on the kit's CSS compiled as a site compiles it
 // (../../test/compile.mjs): an option unchecked and checked (the control: its
 // state drawn by an edge).

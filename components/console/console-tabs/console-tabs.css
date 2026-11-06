@@ -11,13 +11,13 @@
       border-bottom: 0;
     }
 
-    /* not onto a second row: it drew the hairline under each row */
+    /* @trap: not onto a second row: it drew the hairline under each row */
     &:not([data-variant="filled"]) {
       @media (width < 640px) {
         flex-wrap: nowrap;
         overflow-x: auto;
         scrollbar-width: none;
-        /* a browser's focus scrolls only a tab it judges out of view:
+        /* @external: a browser's focus scrolls only a tab it judges out of view:
            without this one 3px in the row was left under the fade */
         scroll-padding-inline: 24px;
 
@@ -29,7 +29,7 @@
           outline-offset: -2px;
         }
 
-        /* stops in currentColor: a mask reads only the alpha, and the
+        /* @external: stops in currentColor: a mask reads only the alpha, and the
            token test refuses a color literal */
         &[data-overflow]:not([data-overflow-end]) {
           mask-image: linear-gradient(to right, currentColor calc(100% - 24px), transparent);
@@ -125,7 +125,7 @@
     }
   }
 
-  /* not a target drawn round the tab: a phone's scrolling row clips it */
+  /* @trap: not a target drawn round the tab: a phone's scrolling row clips it */
   @media (pointer: coarse) {
     .cui-console-tab {
       min-height: 2.75rem;

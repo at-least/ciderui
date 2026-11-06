@@ -1,4 +1,4 @@
-// The bag's accordion, opened (clicked once, at the first width: what it
+// @external: The bag's accordion, opened (clicked once, at the first width: what it
 // opens stays so, so these probes are a spec of their own): the outer item
 // (the bag's questions, a large title) and its chevron, then, opened, its
 // compact items (a question, its chevron), the first of those opened (its
@@ -8,7 +8,7 @@ export default {
   url: 'https://www.apple.com/shop/bag',
   wait: 2500,
   probes: [
-    // the accordion, its parts: the outer item (the bag's questions, a large
+    // @external: the accordion, its parts: the outer item (the bag's questions, a large
     // title) and, opened, its compact items (a question, its chevron), the
     // first of those opened (its answer, the chevron's color)
     { name: 'accordion.title', select: '.rc-accordion-item > h2 .rc-accordion-title', props: TYPE },
@@ -21,7 +21,7 @@ export default {
     { name: 'compact.button', select: '.rc-accordion-compact > .rc-accordion-item .rc-accordion-button', props: ['padding-top', 'padding-bottom', 'display', 'text-align', 'cursor'], box: true },
     { name: 'compact.title', select: '.rc-accordion-compact .rc-accordion-title', props: TYPE },
     { name: 'compact.icon', select: '.rc-accordion-compact .rc-accordion-chevrondown', props: ['color', ...MOTION], box: true, states: ['hover'] },
-    // its button hovered: the chevron's color (the button's hover, not the icon's)
+    // @external: its button hovered: the chevron's color (the button's hover, not the icon's)
     { name: 'compact.icon-hover', select: '.rc-accordion-compact .rc-accordion-chevrondown', stateOn: '.rc-accordion-compact > .rc-accordion-item .rc-accordion-button', props: ['color'], states: ['hover'] },
     { name: 'compact.svg', select: '.rc-accordion-compact .accordion-icon-svg', props: ['width', 'height'], box: true },
     { name: 'compact.line', select: '.rc-accordion-compact .accordion-icon-svg polyline', props: ['stroke-width', 'stroke-linecap', 'stroke-linejoin'] },

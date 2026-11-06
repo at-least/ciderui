@@ -1,4 +1,4 @@
-// App Store Connect's pages, read in the owner's own Chrome, signed in by
+// @external: App Store Connect's pages, read in the owner's own Chrome, signed in by
 // the owner (no headless browser can sign in): its pages hold the account's
 // data, so the read runs in that browser through Claude in Chrome's
 // javascript tool, and its result comes back through the tool and is written
@@ -67,7 +67,7 @@ export const READER = async function reader(probes) {
   return { result, sha256: await sha(canon(result)) };
 };
 
-// TOKENS reads App Store Connect's toolkit's tokens (the custom properties
+// @external: TOKENS reads App Store Connect's toolkit's tokens (the custom properties
 // its newer look declares on :root, --tb-…) a spec names by `tokens`: those
 // whose name begins with one of its prefixes and matches none of its
 // excludes, each as the page computes it (getComputedStyle on the root: every
@@ -119,7 +119,7 @@ const canon = (x) => Array.isArray(x) ? `[${x.map(canon).join(',')}]`
 const sha = (s) => [...createHash('sha256').update(s).digest()];
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
-// The command line over root's pages/ and results/: read.mjs's own folder
+// @invariant: The command line over root's pages/ and results/: read.mjs's own folder
 // when it is run, another site's when that site's folder calls cli with its
 // own, so every signed-in site is read and checked by the one READER.
 export async function cli(root) {
@@ -140,7 +140,7 @@ export async function cli(root) {
   if (result.path !== spec.path) fails.push(`read on ${result.path}, not ${spec.path}`);
   for (const [k, v] of Object.entries(read)) if (v === null || v === '') fails.push(`${k} matched nothing`);
   if (spec.tokens) for (const p of spec.tokens.prefixes) if (!Object.keys(read).some((k) => k.startsWith(p))) fails.push(`no token begins ${p}`);
-  // nothing of the account in what was read: no id (six digits or more, not
+  // @invariant: nothing of the account in what was read: no id (six digits or more, not
   // a fraction's; a UUID), no address
   if (/(?<![\d.])\d{6,}|[0-9a-f]{8}-[0-9a-f]{4}-|@/.test(result.path + JSON.stringify(read))) fails.push('it holds what may be the account\'s: an id or an address');
   for (const f of fails) console.log(`FAIL ${name}: ${f}`);

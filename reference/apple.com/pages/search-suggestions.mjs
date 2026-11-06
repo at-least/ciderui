@@ -1,4 +1,4 @@
-// The global nav's search showing its suggestions, opened as search.mjs opens
+// @external: The global nav's search showing its suggestions, opened as search.mjs opens
 // it, with nothing typed and no suggestion asked for: the field given a value
 // and its buttons as search-text.mjs gives them, the search marked as
 // apple.com's script marks it with suggestions (globalnav-search-with-results,
@@ -57,7 +57,7 @@ export default {
     { name: 'searches.icon', ...inject, select: `${SEARCHES} .globalnav-searchresults-list-icon`, props: [...SPACE, 'display', 'fill'], box: true, position: true },
     { name: 'searches.image', ...inject, select: `${SEARCHES} .globalnav-image-regular svg`, props: ['width', 'height', 'fill', 'display'], box: true, position: true, widths: WIDE },
     { name: 'searches.image-compact', ...inject, select: `${SEARCHES} .globalnav-image-compact svg`, props: ['width', 'height', 'fill', 'display'], box: true, position: true, widths: PHONE },
-    // hovered and focused
+    // @external: hovered and focused
     { name: 'link.states', ...inject, select: `${LINKS} .globalnav-searchresults-list-link`, props: ['color', 'background-color', ...FOCUS], states: ['hover', 'focus-visible'] },
     { name: 'highlight.states', ...inject, select: `${LINKS} .globalnav-searchresults-list-text-highlight`, stateOn: `${LINKS} .globalnav-searchresults-list-link`, props: ['color'], states: ['hover', 'focus-visible'] },
     { name: 'searches.icon-states', ...inject, select: `${SEARCHES} .globalnav-searchresults-list-icon`, stateOn: `${SEARCHES} .globalnav-searchresults-list-link`, props: ['fill'], states: ['hover', 'focus-visible'] },

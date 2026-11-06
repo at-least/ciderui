@@ -1,4 +1,4 @@
-// node form.mjs: the store's form icons, apple.com's read live (never
+// @external: node form.mjs: the store's form icons, apple.com's read live (never
 // stored) and ciderui's own drawn from their numbers: the share of ink each
 // pair has in common. The error's mark, SF Pro Icons U+F312 before a
 // field's message (the gift card's page, giftcard:error.icon), drawn at 400px
@@ -13,7 +13,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 
-// ciderui's, MEASURED.md's numbers. ALERT in thousandths of an em, its box
+// @invariant: ciderui's, MEASURED.md's numbers. ALERT in thousandths of an em, its box
 // the glyph's advance (1.171em) by its ink's height (0.995em, from 0.85em
 // above the baseline): a ring at (585, 497.5), radius 456.25, 82.5 thick; the
 // stem from (584, 280) to (584, 550), 70 thick, round; the dot at (585,
@@ -26,7 +26,7 @@ const src = readFileSync(new URL('./svg.js', import.meta.url), 'utf8');
 const result = {};
 let page = await open('chromium', 'https://www.apple.com/shop/buy-giftcard/giftcard');
 try {
-  // the mark, drawn on a canvas at 400px, and ciderui's on the same one
+  // @external: the mark, drawn on a canvas at 400px, and ciderui's on the same one
   result.alert = await page.run(`(async () => {
     const size = 400, ch = String.fromCodePoint(0xF312), font = size + 'px "SF Pro Icons"';
     if (!(await document.fonts.load(font, ch)).length) throw new Error('no SF Pro Icons face on the page');
@@ -56,7 +56,7 @@ try {
   await page.close();
 }
 
-// where the mark's ink sits in its message's row: the page at four device
+// @external: where the mark's ink sits in its message's row: the page at four device
 // pixels to the CSS pixel, an empty required field the focus left
 {
   const scaled = await open('chromium', 'https://www.apple.com/shop/buy-giftcard/giftcard', { viewport: { width: 1200, height: 900 }, deviceScaleFactor: 4 });
@@ -75,7 +75,7 @@ try {
     const box = await row.boundingBox();
     const text = await p.locator(`${field} .form-message`).first().boundingBox();
     const png = (await row.screenshot()).toString('base64');
-    // the ink left of the text: its box in CSS pixels from the row's corner
+    // @external: the ink left of the text: its box in CSS pixels from the row's corner
     result.alertPlace = await p.evaluate(async ([png, textLeft]) => {
       const img = new Image(); img.src = `data:image/png;base64,${png}`; await img.decode();
       const c = document.createElement('canvas'); c.width = img.width; c.height = img.height;
@@ -86,7 +86,7 @@ try {
         const i = (y * img.width + x) * 4;
         if (d[i] - d[i + 1] > 60) { l = Math.min(l, x); r = Math.max(r, x); t = Math.min(t, y); b = Math.max(b, y); }
       }
-      // no red ink left of the text is no mark found, not a box: a box read
+      // @trap: no red ink left of the text is no mark found, not a box: a box read
       // so would be inside out (its left past its right), which the check
       // below took as a place
       if (r < l || b < t) throw new Error('no red ink left of the message\'s text: the mark is not where it was read');
@@ -98,7 +98,7 @@ try {
   }
 }
 
-// the dropdown's chevron, its background's SVG
+// @external: the dropdown's chevron, its background's SVG
 page = await open('chromium', 'https://www.apple.com/shop/buy-iphone/iphone-18-pro');
 try {
   await page.page.waitForTimeout(2500);
@@ -117,7 +117,7 @@ mkdirSync(new URL('./results/', import.meta.url), { recursive: true });
 writeFileSync(new URL('./results/form.json', import.meta.url), JSON.stringify({ browser: page.label, date: new Date().toISOString(), ours: { alert: ALERT, dropdown: DROPDOWN }, ...result }, null, 1));
 console.log(page.label);
 console.log(JSON.stringify(result, null, 1));
-// the icons compared are the ones the kit ships, in the field's error example, in
+// @invariant: the icons compared are the ones the kit ships, in the field's error example, in
 // currentColor
 const examples = ['error'].map(n => readFileSync(new URL(`../../components/site/field/examples/${n}.html`, import.meta.url), 'utf8')).join('\n');
 const shipped = [['alert', ALERT]].map(([k, inner]) => {

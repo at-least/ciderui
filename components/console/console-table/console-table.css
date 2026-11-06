@@ -47,7 +47,7 @@
       padding-inline-end: 0;
     }
 
-    /* on the first cell, flush at the table's start: a row draws no border of
+    /* @invariant: on the first cell, flush at the table's start: a row draws no border of
        its own, and forced colors drop a shadow. Its 5px and the bar's 3px are
        a cell's 8px, so its text stands clear of the bar. Before the checkbox
        cell's touch padding, which keeps its room */
@@ -114,7 +114,7 @@
     font-weight: 400;
   }
 
-  /* the row group sticks, not each cell: per cell, the shadow's negative
+  /* @trap: the row group sticks, not each cell: per cell, the shadow's negative
      spread left a gap at every column's edge */
   .cui-console-table[data-sticky] {
     --cui-console-table-sticky-top: 0px;
@@ -197,7 +197,7 @@
         content: none;
       }
 
-      /* after :where(td)'s display: same specificity */
+      /* @invariant: after :where(td)'s display: same specificity */
       :where(td[data-empty]) {
         display: none;
       }

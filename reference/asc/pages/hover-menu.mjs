@@ -1,4 +1,4 @@
-// The analytics menu's item under the pointer (the page marks it
+// @external: The analytics menu's item under the pointer (the page marks it
 // rt-Item--effect--hover): read with the pointer resting on a menu item that
 // is not the current one.
 const ITEM = ['height', 'background-color', 'border-top-left-radius', 'padding-left', 'padding-right', 'color', 'cursor'];

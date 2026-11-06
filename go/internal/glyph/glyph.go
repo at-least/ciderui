@@ -21,7 +21,7 @@ type Icon struct {
 
 // Lucide is a Lucide icon; paint is the attributes on Lucide's own <svg>.
 func Lucide(viewBox, paint, inner string) Icon {
-	// the paint on the <svg>, not on each element: a class on the <svg>
+	// @trap: the paint on the <svg>, not on each element: a class on the <svg>
 	// (stroke-[1.5]) wins over a presentation attribute there, and the
 	// elements inherit what wins
 	return Icon{width: "1em", height: "1em", viewBox: viewBox, paint: paint, inner: inner}

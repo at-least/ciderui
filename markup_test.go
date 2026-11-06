@@ -44,27 +44,27 @@ func TestCheckMarkup(t *testing.T) {
 		{"a typo in any selected attribute", `<dl class="cui-console-dl" data-orientation="vertcal"></dl>`, []string{`data-orientation="vertcal" on <dl class="cui-console-dl">: no rule of ciderui's selects it (cui-console-dl's: vertical)`}},
 		{"the value itself", `<dl class="cui-console-dl" data-orientation="vertical"></dl>`, nil},
 
-		// [data-sticky] selects any value, on its own class alone
+		// @invariant: [data-sticky] selects any value, on its own class alone
 		{"a bare selected attribute", `<table class="cui-console-table" data-sticky></table>`, nil},
 		{"a value of a bare selected attribute", `<table class="cui-console-table" data-sticky="true"></table>`, nil},
 		{"a bare selected attribute on another class", `<div class="cui-console-card" data-sticky></div>`, []string{`data-sticky="" on <div class="cui-console-card">: no rule of ciderui's selects it (cui-console-card's: none)`}},
 
-		// :not([data-x]) alone: the bare attribute leaves the default, a misspelt
+		// @invariant: :not([data-x]) alone: the bare attribute leaves the default, a misspelt
 		// value would as well, with no rule of its own
 		{"the bare attribute a :not selects", `<ul class="cui-console-tabs" data-overflow-end></ul>`, nil},
 		{"a value only a :not selects", `<ul class="cui-console-tabs" data-overflow-end="yes"></ul>`, []string{`data-overflow-end="yes" on <ul class="cui-console-tabs">: no rule of ciderui's selects it (cui-console-tabs's: "")`}},
 
-		// the data-variant of a part where no rule selects that value
+		// @invariant: the data-variant of a part where no rule selects that value
 		{"a value is not another alternative's", `<a class="cui-console-link" data-variant="more">x</a>`, []string{`data-variant="more" on <a class="cui-console-link">: no rule of ciderui's selects it (cui-console-link's: label, text)`}},
-		// .cui-console-player-end > [data-control="replay"] names no class of the element
+		// @invariant: .cui-console-player-end > [data-control="replay"] names no class of the element
 		{"an attribute only a rule for another element selects", `<p class="cui-console-player-caption" data-control="caption">x</p>`, nil},
-		// cui-console-btn-icon's sizes are its own
+		// @invariant: cui-console-btn-icon's sizes are its own
 		{"a value of another class on the element", `<button class="cui-console-btn cui-console-btn-icon" data-size="sm">x</button>`, nil},
 
 		{"a page's class and data-*", `<div class="mt-2" data-variant="whatever">a</div>`, nil},
 		{"a data-* no rule selects", `<a class="cui-console-btn" data-testid="save">x</a>`, nil},
 
-		// a site's whole page, as any writer's HTML has it
+		// @external: a site's whole page, as any writer's HTML has it
 		{"a comment", `<!-- <b class="cui-console-badg"> --><b class="cui-console-badge">a</b>`, nil},
 		{"after a comment", `<!-- a --><b class="cui-console-badg">a</b>`, noClass("b")},
 		{"a comment left open", `<!-- <b class="cui-console-badg">`, nil},
@@ -93,6 +93,18 @@ func TestCheckMarkup(t *testing.T) {
 			}
 		})
 	}
+}
+
+// a stylesheet that does not parse names itself: an unclosed comment in one
+// of forty would otherwise be found by bisection
+func TestAParseFailureNamesTheStylesheet(t *testing.T) {
+	defer func() {
+		got := fmt.Sprint(recover())
+		if want := "kit.css: an unclosed comment"; got != want {
+			t.Errorf("panicked with %q, want %q", got, want)
+		}
+	}()
+	parsed("kit.css", func() map[string]bool { return classesIn("/*") })
 }
 
 func TestCheckMarkupReadsThePagesStylesheet(t *testing.T) {
@@ -128,7 +140,7 @@ func TestClassesIn(t *testing.T) {
 	}
 }
 
-// each way a selector's compound names a class and a data-*, on one line
+// @invariant: each way a selector's compound names a class and a data-*, on one line
 func compounds(css string) string {
 	var lines []string
 	for _, c := range compoundsIn(css) {
@@ -158,7 +170,7 @@ func TestCompoundsIn(t *testing.T) {
 		{`.a:not(.b)[data-x="1"] { }`, `.a[data-x=1,true]`},
 		{`:is(.a, .b)[data-x="1"] { }`, `.a[data-x=1,true] .b[data-x=1,true]`},
 		{`:where(.a, .b[data-x="1"]) { }`, `.a .b[data-x=1,true]`},
-		// the subject's first: a compound of another element comes after
+		// @invariant: the subject's first: a compound of another element comes after
 		{`.a[data-x="1"] .b[data-y="2"] { }`, `.b[data-y=2,true] .a[data-x=1,true]`},
 		{`.a[data-x="1"] > .b { }`, `.b .a[data-x=1,true]`},
 		{`.a[data-x="1"] + .b { }`, `.b .a[data-x=1,true]`},

@@ -1,4 +1,4 @@
-// apple.com's scale (measured, ../apple.com/: the store's t- ladder and the
+// @external: apple.com's scale (measured, ../apple.com/: the store's t- ladder and the
 // home page's 56px, 2026-10-19): the size, the cut it sets at that size, and
 // its letter-spacing in em. 32px and 48px are the store's and the product
 // page's (+0.004em, -0.003em), not the home page's (+0.002em, -0.002em).
@@ -12,7 +12,7 @@ export const SCALE = {
 };
 export const WEIGHTS = [400, 600];
 export const SAMPLE = 'Sphinx of black quartz judge my vow 0123456789 AVATAR Wave';
-// decided before the run: system-ui matches apple.com's cut within 0.003em per
+// @invariant: decided before the run: system-ui matches apple.com's cut within 0.003em per
 // character (apple.com's smallest nonzero letter-spacing is 0.002em)
 export const TOLERANCE = 0.003;
 
@@ -37,7 +37,7 @@ export function analyze(label, result) {
 export const measureCall = (src) =>
   `(async () => {\n${src}\nreturn measure(${JSON.stringify(Object.keys(SCALE).map(Number))}, ${JSON.stringify(WEIGHTS)}, ${JSON.stringify(SAMPLE)});\n})()`;
 
-// verify: decided before the run, the kit's own font stack (tokens.css's
+// @invariant: verify: decided before the run, the kit's own font stack (tokens.css's
 // --cui-font, whichever of its names the browser has: -apple-system in
 // Safari, BlinkMacSystemFont in Chrome, which has no -apple-system) at
 // ciderui's letter-spacing within 0.0015em per character of apple.com's text
@@ -67,7 +67,7 @@ export function analyzeVerify(label, result) {
   return pass;
 }
 
-// inter: no pass mark for the distance, which is what is being measured; the
+// @invariant: inter: no pass mark for the distance, which is what is being measured; the
 // run fails only if Inter did not load (inter.js throws) or drew nothing.
 export function analyzeInter(label, result) {
   console.log(`\n${label}\n${result.ua}`);

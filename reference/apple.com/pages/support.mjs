@@ -1,4 +1,4 @@
-// support-dark reads the same in the dark, which Apple Support follows.
+// @external: support-dark reads the same in the dark, which Apple Support follows.
 import { TYPE, LINK, PAGE } from './common.mjs';
 
 const CELL = ['padding-top', 'padding-right', 'padding-bottom', 'padding-left', 'text-align', 'vertical-align', 'background-color', 'border-top-width', 'border-top-style', 'border-top-color', 'border-bottom-width', 'border-bottom-style', 'border-bottom-color'];

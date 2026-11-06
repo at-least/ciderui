@@ -1,4 +1,4 @@
-// The owner's feedback, already read: opening an unread item marks it read.
+// @external: The owner's feedback, already read: opening an unread item marks it read.
 import { TYPE, BOX, LINK } from '../../apple.com/pages/common.mjs';
 
 const SIDES = ['border-left-width', 'border-left-style', 'border-left-color', 'border-right-width', 'border-right-style', 'border-right-color'];

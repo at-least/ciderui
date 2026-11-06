@@ -6,14 +6,16 @@ package ciderui
 
 import (
 	"embed"
+	"fmt"
 	"io/fs"
 	"os"
 	"path/filepath"
 	"strings"
 )
 
-// by name, not a pattern: a pattern would embed a stray file in the repository's
-// root too. What [CheckMarkup] reads, [WriteCSS] writes and [Assets] serves.
+// @trap: by name, not a pattern: a pattern would embed a stray file in the
+// repository's root too. What [CheckMarkup] reads, [WriteCSS] writes and
+// [Assets] serves.
 //
 //go:embed theme.css base.css type.css utilities.css components/*/*/*.css fonts
 var kit embed.FS
@@ -46,8 +48,10 @@ func css(path string) string {
 // WriteCSS writes under dir what a site's own utilities' stylesheet imports:
 // utilities.css and the two it names.
 func WriteCSS(dir string) error {
+	// @trap: wrapped alone: MkdirAll's error names the component that failed,
+	// not the directory asked for, and a file's write error names itself
 	if err := os.MkdirAll(dir, 0o755); err != nil {
-		return err
+		return fmt.Errorf("write %s: %w", dir, err)
 	}
 	for _, path := range []string{"utilities.css", "theme.css", "type.css"} {
 		b, err := kit.ReadFile(path)

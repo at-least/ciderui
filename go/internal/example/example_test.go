@@ -12,7 +12,7 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// a comparator that has never failed proves nothing: every part's test rests on these
+// @trap: a comparator that has never failed proves nothing: every part's test rests on these
 type recorder struct {
 	testing.TB
 	failures int
@@ -104,7 +104,7 @@ func TestPagesClass(t *testing.T) {
 	if err := os.WriteFile(filepath.Join(dir, "p.go"), []byte(source), 0o644); err != nil {
 		t.Fatal(err)
 	}
-	// %T names this package's type example.classed, not p.Classed: nested stands in
+	// @external: %T names this package's type example.classed, not p.Classed: nested stands in
 	writes := ClassRow{Root: "root", Node: classed{Class: PageClass}}
 	drops := ClassRow{Root: "root", Node: classed{Class: "drop"}}
 	for _, c := range []struct {

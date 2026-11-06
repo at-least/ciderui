@@ -86,6 +86,19 @@ func TestNoPartResetsItsMarginOverAContainer(t *testing.T) {
 	}
 }
 
+// an error names the directory it could not make: MkdirAll's own error names
+// only the component that failed
+func TestWriteCSSErrorsNameTheDir(t *testing.T) {
+	blocked := filepath.Join(t.TempDir(), "not-a-dir")
+	if err := os.WriteFile(blocked, nil, 0o644); err != nil {
+		t.Fatal(err)
+	}
+	err := WriteCSS(filepath.Join(blocked, "under"))
+	if err == nil || !strings.Contains(err.Error(), filepath.Join(blocked, "under")) {
+		t.Errorf("WriteCSS under a file gave %v", err)
+	}
+}
+
 func TestWriteCSSWritesWhatUtilitiesImports(t *testing.T) {
 	dir := t.TempDir()
 	if err := WriteCSS(dir); err != nil {

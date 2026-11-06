@@ -1,4 +1,4 @@
-// The bag's flyout on a dark page (iPhone 18 Pro's: its bar clear, the
+// @external: The bag's flyout on a dark page (iPhone 18 Pro's: its bar clear, the
 // flyout dark), opened as bag-flyout.mjs opens it (the pointer into its
 // room, 100, 200), at 1600 and 390px: the
 // bar, the flyout's ground, its message, line, link, heading and profile

@@ -9,11 +9,11 @@ import (
 	"sync"
 )
 
-// selected is a value of a data-* attribute a rule selects on an element with
-// class, anyValue for a bare [data-x]. A bare :not([data-x]) has neither: it
-// tells the bare attribute from none, and a value there would draw no rule of
-// its own. A rule naming no cui-* class of the attribute's element holds nothing
-// to a class (.cui-console-player-end > [data-control="replay"], where the
+// @invariant: selected is a value of a data-* attribute a rule selects on an
+// element with class, anyValue for a bare [data-x]. A bare :not([data-x]) has
+// neither: it tells the bare attribute from none, and a value there would draw no
+// rule of its own. A rule naming no cui-* class of the attribute's element holds
+// nothing to a class (.cui-console-player-end > [data-control="replay"], where the
 // player's other data-control values are selected by no rule), so it adds none.
 type selected struct {
 	class, attribute, value string
@@ -25,17 +25,17 @@ type vocabulary struct {
 	values  []selected
 }
 
-// set "": both sets', for a fragment, which links no stylesheet to tell its own.
+// @invariant: set "": both sets', for a fragment, which links no stylesheet to tell its own.
 func vocabularyOf(set string) vocabulary {
 	inAnotherSet := func(path string) bool {
 		return set != "" && strings.HasPrefix(path, "components/") && !strings.HasPrefix(path, "components/"+set+"/")
 	}
-	// not every class a selector here names: base.css's touch target names both
+	// @trap: not every class a selector here names: base.css's touch target names both
 	// sets' parts, and that rule alone does not draw them
 	foreign := map[string]bool{}
 	for _, path := range cssFiles() {
 		if inAnotherSet(path) {
-			maps.Copy(foreign, classesIn(css(path)))
+			maps.Copy(foreign, parsed(path, func() map[string]bool { return classesIn(css(path)) }))
 		}
 	}
 	v := vocabulary{classes: map[string]bool{}, values: nil}
@@ -44,12 +44,12 @@ func vocabularyOf(set string) vocabulary {
 			continue
 		}
 		text := css(path)
-		for class := range classesIn(text) {
+		for class := range parsed(path, func() map[string]bool { return classesIn(text) }) {
 			if !foreign[class] {
 				v.classes[class] = true
 			}
 		}
-		for _, compound := range compoundsIn(text) {
+		for _, compound := range parsed(path, func() []compound { return compoundsIn(text) }) {
 			for _, class := range compound.classes {
 				if !strings.HasPrefix(class, "cui-") {
 					continue
@@ -63,11 +63,22 @@ func vocabularyOf(set string) vocabulary {
 	return v
 }
 
+// @invariant: a stylesheet's parse failure names the stylesheet it is in
+// @invariant: a stylesheet's parse failure names the stylesheet it is in
+func parsed[T any](path string, parse func() T) T {
+	defer func() {
+		if r := recover(); r != nil {
+			panic(path + ": " + fmt.Sprint(r))
+		}
+	}()
+	return parse()
+}
+
 var vocabularies = sync.OnceValue(func() map[string]vocabulary {
 	return map[string]vocabulary{"": vocabularyOf(""), "site": vocabularyOf("site"), "console": vocabularyOf("console")}
 })
 
-// linkedSet is the set whose stylesheet the page links, "" for a fragment.
+// @invariant: linkedSet is the set whose stylesheet the page links, "" for a fragment.
 func linkedSet(tags []startTag) string {
 	for _, tag := range tags {
 		if !strings.EqualFold(tag.name, "link") {
@@ -85,7 +96,7 @@ func linkedSet(tags []startTag) string {
 
 var selectorClass = regexp.MustCompile(`\.(cui-[a-zA-Z0-9-]+)`)
 
-// classesIn is every class a selector of css names and every @utility of it.
+// @invariant: classesIn is every class a selector of css names and every @utility of it.
 func classesIn(css string) map[string]bool {
 	classes := map[string]bool{}
 	styleRules, utilities := rules(css)
@@ -116,17 +127,17 @@ type selectorAttribute struct {
 	hasValue, negated bool
 }
 
-// compound is one way a compound selector matches one element.
 type compound struct {
 	classes    []string
 	attributes []selectorAttribute
 }
 
-// subjects returns the ways selector's rightmost compound matches its element,
-// and appends every other compound in it, each of another element, to others.
-// A :is or :where is the same element, one way per argument: not the last class
-// before an attribute, since :where(.a, .b[data-x]) gives .a no data-x. A :not
-// is the same element for its attributes alone; a :has is other elements.
+// @invariant: subjects returns the ways selector's rightmost compound matches
+// its element, and appends every other compound in it, each of another element,
+// to others. A :is or :where is the same element, one way per argument: not the
+// last class before an attribute, since :where(.a, .b[data-x]) gives .a no
+// data-x. A :not is the same element for its attributes alone; a :has is other
+// elements.
 func subjects(selector string, negated bool, others *[]compound) []compound {
 	var all []compound
 	for _, part := range split(selector) {
@@ -204,7 +215,6 @@ func closingParen(selector string, open int) int {
 	panic("an unclosed ( in " + selector)
 }
 
-// alongside is each way with each way of a pseudo-class's argument.
 func alongside(ways, arguments []compound, withClasses bool) []compound {
 	var out []compound
 	for _, way := range ways {
@@ -231,8 +241,8 @@ func name(text string) string {
 	return text[:end]
 }
 
-// rules is every style rule's selector in css, nesting resolved, and every
-// @utility's name, with its comments gone.
+// @invariant: rules is every style rule's selector in css, nesting resolved,
+// and every @utility's name, with its comments gone.
 func rules(css string) (selectors, utilities []string) {
 	var text strings.Builder
 	rest := css
@@ -386,7 +396,7 @@ type startTag struct {
 	attributes []attribute
 }
 
-// attribute is its value, "" for an attribute the tag does not have.
+// @invariant: attribute is its value, "" for an attribute the tag does not have.
 func (t startTag) attribute(name string) string {
 	for _, a := range t.attributes {
 		if a.name == name {

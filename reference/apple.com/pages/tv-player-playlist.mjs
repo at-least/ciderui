@@ -1,4 +1,4 @@
-// tv.apple.com's video player's playlist: the paused player's Trailers tab
+// @external: tv.apple.com's video player's playlist: the paused player's Trailers tab
 // clicked (tv-player's opening), the row of trailers it shows over the
 // video's foot: the tab chosen and not, the row, a trailer's frame, its
 // picture, its title and line, the paddle. No trailer is marked as the one

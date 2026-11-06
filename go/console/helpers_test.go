@@ -12,7 +12,7 @@ import (
 	g "maragu.dev/gomponents"
 )
 
-// not example.Read: it trims each line
+// @trap: not example.Read: it trims each line
 func readRaw(path string) string {
 	b, err := os.ReadFile(filepath.Join("../../components", path))
 	if err != nil {
@@ -21,7 +21,7 @@ func readRaw(path string) string {
 	return string(b)
 }
 
-// the src of the image of alt in the example at path, a data: URL too long to copy
+// @invariant: the src of the image of alt in the example at path, a data: URL too long to copy
 func exampleSrc(path, alt string) string {
 	raw := readRaw(path)
 	at := strings.Index(raw, `" alt="`+alt+`"`)

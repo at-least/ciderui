@@ -10,7 +10,7 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// fixed id: a page has one global nav
+// @invariant: fixed id: a page has one global nav
 const globalNavMenuID = "cui-globalnav-menu"
 
 type NavLink struct {
@@ -64,7 +64,7 @@ func (n GlobalNav) Render(w io.Writer) error {
 			continue
 		}
 		form := "cui-globalnav-post-" + strconv.Itoa(i+1)
-		// not the <li> wrapping a <form>: the rows are li:has(> .cui-globalnav-link),
+		// @trap: not the <li> wrapping a <form>: the rows are li:has(> .cui-globalnav-link),
 		// and a form between drew the item full size in a closed phone bar
 		links = append(links, h.Li(h.Button(h.Class("cui-globalnav-link"), h.Type("submit"), h.FormAttr(form), g.Text(link.Label))))
 		postForms = append(postForms, h.Form(h.ID(form), h.Action(link.Href), h.Method("post"), g.Attr("hidden")))

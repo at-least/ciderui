@@ -1,4 +1,4 @@
-// Every component's example at 390px on an emulated touch screen (SETS=…
+// @invariant: Every component's example at 390px on an emulated touch screen (SETS=…
 // for some of the sets)
 // (test/browser.mjs's `touch`): each control a finger can press, its box
 // and its target (hit-tested from its center, below), held to the HIG's
@@ -15,7 +15,7 @@ import { COMPONENTS, ROOT, exampleFiles, shipped } from '../../test/compile.mjs'
 import { open, quit } from '../../test/browser.mjs';
 
 const parts = process.env.SETS ? COMPONENTS.filter((c) => process.env.SETS.split(',').includes(c.set)) : COMPONENTS;
-// an empty list would print "0 under 44pt" and pass having checked nothing
+// @trap: an empty list would print "0 under 44pt" and pass having checked nothing
 if (!parts.length) throw new Error('no parts in COMPONENTS for these sets');
 let short = 0;
 let controls = 0;
@@ -23,26 +23,27 @@ for (const partDef of parts) {
   const { name: part, dir: partDir } = partDef;
   const dir = join(ROOT, partDir, 'examples');
   for (const file of exampleFiles(partDef)) {
-    // room round the example, so a target at its edge is not read short
+    // @external: room round the example, so a target at its edge is not read short
     // where it runs out of the window (a tap there lands nowhere)
     const html = `<div style="padding: 48px 24px">${readFileSync(join(dir, file), 'utf8')}</div>`;
     const page = await open(shipped(partDef.set), html, { width: 390, touch: true });
     const rows = await page.page.evaluate(() => {
       const sel = 'a[href], button, input:not([type=hidden]), select, textarea, summary, [role=button], [tabindex]:not([tabindex="-1"])';
       return [...document.querySelectorAll(sel)]
-        // what a finger can tap now: shown, not disabled (a gallery's paddle
+        // @external: what a finger can tap now: shown, not disabled (a gallery's paddle
         // at the row's end takes no pointer; a hidden toggle takes none
         // either, its label taking the tap)
         .filter((e) => e.checkVisibility({ visibilityProperty: true }) && !e.matches(':disabled') && (e.labels?.length || getComputedStyle(e).pointerEvents !== 'none'))
-        // a scroll box takes tabindex for the keyboard; a finger drags it and presses nothing
+        // @external: a scroll box takes tabindex for the keyboard; a finger drags it and presses
+        // nothing
         .filter((e) => e.matches('a[href], button, input, select, textarea, summary, [role=button]') || !/auto|scroll/.test(getComputedStyle(e).overflow)).map((e) => {
         const r = e.getBoundingClientRect();
-        // a link inside a sentence: WCAG 2.5.8's inline exception, listed,
+        // @external: a link inside a sentence: WCAG 2.5.8's inline exception, listed,
         // not counted (its line's height is the text's)
         let block = e.parentElement;
         while (getComputedStyle(block).display === 'inline') block = block.parentElement;
         const inText = e.tagName === 'A' && getComputedStyle(e).display === 'inline' && block.textContent.replace(e.textContent, '').trim() !== '';
-        // its labels (wrapping it or naming it by for=) are its target too: a
+        // @external: its labels (wrapping it or naming it by for=) are its target too: a
         // tap on one acts on it (a hidden toggle's chevron, a floating label)
         const labels = [...(e.labels ?? [])].filter((l) => l.checkVisibility());
         const tiny = r.width <= 1 || r.height <= 1;
@@ -50,12 +51,12 @@ for (const partDef of parts) {
           ? labels.reduce((big, l) => (l.getBoundingClientRect().width * l.getBoundingClientRect().height > big.getBoundingClientRect().width * big.getBoundingClientRect().height ? l : big))
           : null;
         const anchor = label || e;
-        // a control hidden until it is focused (the skip link): read focused
+        // @external: a control hidden until it is focused (the skip link): read focused
         if (!label && tiny) e.focus();
         anchor.scrollIntoView({ block: 'center', inline: 'center' });
         const a = anchor.getBoundingClientRect();
         const x = a.left + a.width / 2, y = a.top + a.height / 2;
-        // the target as a finger meets it: from the anchor's center, each
+        // @trap: the target as a finger meets it: from the anchor's center, each
         // way, as far as a tap still lands on the control (a ::after drawn
         // round it counts; one clipped by a scroll box or under a
         // neighbour's does not), every 0.5px up to 40px: each way reads up

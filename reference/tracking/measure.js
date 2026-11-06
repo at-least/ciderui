@@ -1,8 +1,8 @@
-// Runs inside https://www.apple.com/, where apple.com's own "SF Pro Text" and
+// @external: Runs inside https://www.apple.com/, where apple.com's own "SF Pro Text" and
 // "SF Pro Display" webfonts are already declared: the width of one sample
 // string in each webfont and in system-ui, letter-spacing 0, per size and weight.
 async function measure(sizes, weights, sample) {
-  // not document.fonts.ready: on apple.com it never settles in Safari 27 (some
+  // @trap: not document.fonts.ready: on apple.com it never settles in Safari 27 (some
   // of its icon faces stay loading); each face measured is loaded explicitly
   const faces = {};
   for (const family of ['SF Pro Text', 'SF Pro Display']) {

@@ -7,7 +7,7 @@
     letter-spacing: normal;
 
     &[popover] {
-      /* the base rule's display beats the browser's hiding of a closed
+      /* @trap: the base rule's display beats the browser's hiding of a closed
          popover, so a closed sheet says it again */
       @media (width < 1024px) {
         position: fixed;

@@ -1,4 +1,4 @@
-// BROWSER=safari|ios|chrome|chromium|firefox MODE=measure|verify|inter node run.mjs
+// @invariant: BROWSER=safari|ios|chrome|chromium|firefox MODE=measure|verify|inter node run.mjs
 // The page is https://www.apple.com/ (the browsers: ../browsers.mjs); the
 // result is results/<browser>-<mode>.json.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -12,7 +12,7 @@ const tracking = () => JSON.parse(readFileSync(new URL('./cui-tracking.json', im
 const args = {
   measure: () => [Object.keys(SCALE).map(Number), WEIGHTS, SAMPLE],
   verify: () => [SCALE, tracking(), WEIGHTS, SAMPLE, FAMILIES],
-  // INTER names the font file, by default the kit's Latin subset
+  // @invariant: INTER names the font file, by default the kit's Latin subset
   inter: () => [SCALE, tracking(), WEIGHTS, SAMPLE,
     readFileSync(process.env.INTER ?? new URL('../../fonts/inter-roman-latin.woff2', import.meta.url)).toString('base64')],
 }[MODE]();

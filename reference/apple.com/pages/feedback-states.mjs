@@ -1,4 +1,4 @@
-// The iPhone feedback form's multi-line field focused (its textarea clicked
+// @external: The iPhone feedback form's multi-line field focused (its textarea clicked
 // once, at the first width: the class apple.com's script sets on its box),
 // and left empty (the focus taken off: its script marks it in error, with
 // its message). Read only: nothing typed, nothing sent.

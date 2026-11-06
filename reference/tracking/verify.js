@@ -1,4 +1,4 @@
-// Runs inside https://www.apple.com/: apple.com's webfont cut at apple.com's
+// @external: Runs inside https://www.apple.com/: apple.com's webfont cut at apple.com's
 // letter-spacing against each system-font name at ciderui's letter-spacing,
 // per size and weight. Equal widths mean ciderui's values land on apple.com's text.
 async function verify(scale, tracking, weights, sample, families) {

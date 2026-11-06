@@ -47,7 +47,7 @@ func (f Field) Render(w io.Writer) error {
 	described := strings.Join(ids, " ")
 	return g.Group{
 		h.Div(class.Root("cui-field", f.Class),
-			// placeholder " ": the label reads :placeholder-shown to tell the field empty
+			// @trap: placeholder " ": the label reads :placeholder-shown to tell the field empty
 			h.Input(h.Class("cui-field-input"), h.ID(f.ID), h.Type(f.Type), h.Name(f.Name), h.Placeholder(" "),
 				g.If(f.Autocomplete != "", h.AutoComplete(f.Autocomplete)),
 				g.If(f.Value != "", h.Value(f.Value)),

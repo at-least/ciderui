@@ -1,4 +1,4 @@
-// node nav.mjs: the global nav's icons, apple.com's SVG read live off its
+// @external: node nav.mjs: the global nav's icons, apple.com's SVG read live off its
 // home page (never stored), rasterized at 20 pixels to the unit on a blank
 // page (svg.js), and ciderui's own drawn from their numbers: the share of ink
 // each pair has in common. The menu's
@@ -9,7 +9,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 
-// ciderui's, in apple.com's view boxes: the numbers are MEASURED.md's. The
+// @invariant: ciderui's, in apple.com's view boxes: the numbers are MEASURED.md's. The
 // menu's open lines are its closed ones turned about their middles, as
 // globalnav.css turns them (the same numbers)
 const BAR = 'fill="none" stroke="#000" stroke-width="1.2" stroke-linecap="round"';
@@ -61,7 +61,7 @@ mkdirSync(new URL('./results/', import.meta.url), { recursive: true });
 writeFileSync(new URL('./results/nav.json', import.meta.url), JSON.stringify({ browser: page.label, date: new Date().toISOString(), ours: OURS, ...result }, null, 1));
 console.log(page.label);
 console.log(JSON.stringify(result, null, 1));
-// the icons compared are the ones the kit ships: each drawing (but the open
+// @invariant: the icons compared are the ones the kit ships: each drawing (but the open
 // X, which globalnav.css turns) is in the nav's example, in currentColor
 const example = readFileSync(new URL('../../components/site/globalnav/examples/globalnav.html', import.meta.url), 'utf8');
 const shipped = Object.entries(OURS).filter(([k]) => k !== 'menu-open').map(([k, svg]) => {

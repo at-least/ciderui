@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { launch } from './chromium.mjs';
 import { ROOT } from './compile.mjs';
 
-// The stylesheet's url(fonts/…) rewritten to an origin whose fonts are served
+// @trap: The stylesheet's url(fonts/…) rewritten to an origin whose fonts are served
 // from memory: not inlined as data: URLs, which put every font into every
 // case's page. The page stays about:blank, set by setContent: navigated to that
 // origin, the pointer's place (0, 0) hovered what the page drew there; a
@@ -26,13 +26,13 @@ export async function open(css, html, { width = 1200, height = 800, reducedMotio
   const context = await (await browser).newContext({ viewport: { width, height }, reducedMotion, colorScheme, forcedColors });
   const page = await context.newPage();
   const cdp = await page.context().newCDPSession(page);
-  // the DevTools protocol's touch emulation is what makes (hover: none) match:
+  // @external: the DevTools protocol's touch emulation is what makes (hover: none) match:
   // Chromium ignores an emulated hover media feature
   if (touch) await cdp.send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
-  // about:blank's origin is opaque: a font from another needs CORS
+  // @external: about:blank's origin is opaque: a font from another needs CORS
   await context.route(`${FONTS}*`, (route) => route.fulfill({ contentType: 'font/woff2', headers: { 'access-control-allow-origin': '*' }, body: font(route.request().url().slice(FONTS.length)) }));
   const served = css.replace(/url\(fonts\//g, `url(${FONTS}`);
-  // a form not rewritten would load from about:blank, which fails silently:
+  // @trap: a form not rewritten would load from about:blank, which fails silently:
   // its text in a fallback face, every check read off that
   if (/url\(["']?(\.\.\/)*fonts\//.test(served)) throw new Error('the stylesheet names its fonts in a form not rewritten here');
   await page.setContent(`<!doctype html><html lang="en"><head><meta charset="utf-8"><style>${served}</style></head><body>${html}</body></html>`);
@@ -50,7 +50,7 @@ export async function open(css, html, { width = 1200, height = 800, reducedMotio
       const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
       ({ nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: on ?? selector }));
       if (!nodeId) throw new Error(`no element for ${on ?? selector}`);
-      // transitions off until styles are flushed after the forced state is
+      // @invariant: transitions off until styles are flushed after the forced state is
       // dropped: a state's last change must land while they are off
       // (reference/apple.com/)
       await page.addStyleTag({ content: '*, *::before, *::after { transition: none !important; animation: none !important; }' })

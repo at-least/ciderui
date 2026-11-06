@@ -3,9 +3,9 @@
   --cui-c-bg-alt: light-dark(#f5f5f7, #1d1d1f);
   --cui-c-text: light-dark(#1d1d1f, #f5f5f7);
   --cui-c-text-2: light-dark(#6e6e73, #86868b);
-  /* never body text */
+  /* @invariant: never body text */
   --cui-c-text-3: light-dark(#86868b, #6e6e73);
-  /* a control's edge; a rule is --cui-c-divider */
+  /* @invariant: a control's edge; a rule is --cui-c-divider */
   --cui-c-border: light-dark(#86868b, #6e6e73);
   --cui-c-accent: #0071e3;
   --cui-c-accent-hover: #0076df;
@@ -16,19 +16,19 @@
   --cui-c-neutral-hover: light-dark(#272729, #ffffff);
   --cui-c-neutral-active: light-dark(#18181a, #ededf2);
   --cui-c-on-neutral: light-dark(#ffffff, #000000);
-  /* the global nav's ground */
+  /* @invariant: the global nav's ground */
   --cui-c-bar: light-dark(rgb(255 255 255 / 0.8), rgb(0 0 0 / 0.8));
   --cui-c-on-bar: light-dark(rgb(0 0 0 / 0.8), rgb(255 255 255 / 0.8));
   --cui-c-on-bar-hover: light-dark(#000000, #ffffff);
-  /* an opened nav menu's ground, and the global nav's opened search's */
+  /* @invariant: an opened nav menu's ground, and the global nav's opened search's */
   --cui-c-menu: light-dark(#fafafc, #161617);
   --cui-c-on-menu: light-dark(#333336, #e8e8ed);
-  /* over the page under the global nav's opened search */
-  /* a rule between the footer's rows */
+  /* @invariant: over the page under the global nav's opened search */
+  /* @invariant: a rule between the footer's rows */
   --cui-c-field: rgb(255 255 255 / 0.8);
   --cui-c-field-error: #fff2f4;
   --cui-c-field-disabled: rgb(0 0 0 / 0.01);
-  /* a field's prefix's ground (a currency sign) */
+  /* @invariant: a field's prefix's ground (a currency sign) */
   --cui-c-field-prefix: rgb(0 0 0 / 0.02);
   --cui-c-border-disabled: rgb(134 134 139 / 0.42);
   --cui-c-error: light-dark(#e30000, #ff453a);
@@ -37,13 +37,13 @@
   --cui-c-on-footer-link: rgb(0 0 0 / 0.72);
   --cui-c-on-footer-title: rgb(0 0 0 / 0.88);
   --cui-c-scrim: rgb(0 0 0 / 0.48);
-  /* tv.apple.com's video player, the console's player (decision 28): one
+  /* @external: tv.apple.com's video player, the console's player (decision 28): one
      value each, a video dark on any page */
   --cui-c-video: #000000;
   --cui-c-on-video: #ffffff;
   --cui-c-on-video-control: rgb(255 255 255 / 0.9);
   --cui-c-on-video-time: rgb(255 255 255 / 0.55);
-  /* a range's track, under the part played (the on-video white) */
+  /* @invariant: a range's track, under the part played (the on-video white) */
   --cui-c-video-track: rgb(246 246 246 / 0.36);
 
   --cui-c-console-neutral-label-primary: light-dark(oklch(0.0% 0.000 0.0 / 0.85), oklch(100.0% 0.000 0 / 0.85));
@@ -98,10 +98,10 @@
   --cui-c-console-warning-fill-tertiary: light-dark(oklch(86.5% 0.177 90.4 / 0.12), oklch(88.5% 0.181 94.8 / 0.12));
   --cui-c-console-error-fill-tertiary: light-dark(oklch(65.4% 0.232 28.8 / 0.12), oklch(65.4% 0.232 28.8 / 0.12));
 
-  /* not system-ui: a font everywhere, so Inter would never be drawn */
+  /* @trap: not system-ui: a font everywhere, so Inter would never be drawn */
   --cui-font: -apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Noto Sans TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif;
 
-  /* ui-monospace is Safari's alone; Menlo is Chrome's on a Mac */
+  /* @external: ui-monospace is Safari's alone; Menlo is Chrome's on a Mac */
   --cui-font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
   --cui-tracking-12: -0.0105em;
@@ -124,24 +124,24 @@
   --cui-console-shadow-dialog: 0px 16px 35px oklch(0.0% 0.000 0.0 / 0.04);
   --cui-console-shadow-popover: 0px 16px 35px oklch(0.0% 0.000 0.0 / 0.04),0px 0px 0px 0.5px oklch(0.0% 0.000 0.0 / 0.15),0px 1px 1px -1px inset oklch(100.0% 0.000 0.0 / 0.24);
 
-  /* tv.apple.com's player: the gradient under its controls, and its volume's
+  /* @external: tv.apple.com's player: the gradient under its controls, and its volume's
      thumb's shadow (decision 28) */
   --cui-video-scrim: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6) 44.64%, rgba(0, 0, 0, 0.7) 75%, rgb(0, 0, 0));
   --cui-video-thumb-shadow: inset 0 0 .5px 0 rgba(0, 0, 0, 0.15), 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
-  /* a cue's shadow under its white, in em so it grows with the type: not
+  /* @external: a cue's shadow under its white, in em so it grows with the type: not
      tv.apple.com's, whose cues are its <video>'s own text track; muse's */
   --cui-video-cue-shadow: 0 0.05em 0.1em rgb(0 0 0 / 0.6), 0 0 0.5em rgb(0 0 0 / 0.4);
-  /* the scrubber's preview's picture: a hairline that edges it on a
+  /* @external: the scrubber's preview's picture: a hairline that edges it on a
      picture as dark as its own, a drop that lifts it off a bright one;
      muse's, tv.apple.com's trailers showing none */
-  /* a control of words on the picture: its fill, and hovered or pressed;
+  /* @external: a control of words on the picture: its fill, and hovered or pressed;
      muse's, tv.apple.com's bar having none */
   --cui-video-control-fill: rgb(255 255 255 / 0.16);
   --cui-video-control-fill-hover: rgb(255 255 255 / 0.24);
   --cui-video-preview-shadow: 0 0 0 1px rgb(255 255 255 / 0.15), 0 4px 12px rgb(0 0 0 / 0.4);
 }
 
-/* Traditional Chinese: apple.com/tw's (store-tw). The system's Chinese face has no
+/* @external: Traditional Chinese: apple.com/tw's (store-tw). The system's Chinese face has no
    tracking of its own at any size (1em an ideograph, measured on macOS), so these
    are its values as they are, where the others are fitted to SF's. On the element
    with the attribute, not :lang(): that would redeclare them on every element. */
@@ -159,7 +159,7 @@
   --cui-tracking-64: normal;
 }
 
-/* Reduce Transparency: what scrolls under a bar or a table's head does not show
+/* @external: Reduce Transparency: what scrolls under a bar or a table's head does not show
    through (globalnav.css drops the bar's blur) */
 @media (prefers-reduced-transparency: reduce) {
   :root {
@@ -168,7 +168,7 @@
   }
 }
 
-/* Increase Contrast: secondary text and edges at the text's color. An accent's,
+/* @trap: Increase Contrast: secondary text and edges at the text's color. An accent's,
    a link's and a status's keep theirs: hues held to 4.5:1 (decisions 6, 21), and
    nobody measured stronger ones. Not neutral-border-tertiary: it is also a
    disabled control's edge, which would then read as enabled. */

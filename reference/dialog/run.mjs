@@ -1,4 +1,5 @@
-// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs: MEASURED.md holds its claims and method.
+// @invariant: BROWSER=safari|ios|chrome|chromium|firefox node run.mjs: MEASURED.md holds its claims
+// and method.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open, wait } from '../browsers.mjs';

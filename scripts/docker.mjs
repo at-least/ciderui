@@ -1,4 +1,4 @@
-// Nothing is bind-mounted: the Docker daemon may be on another machine
+// @external: Nothing is bind-mounted: the Docker daemon may be on another machine
 // (DOCKER_HOST=ssh://…), where a bind mount would read that machine's paths.
 
 import { execFileSync, execSync, spawnSync } from 'node:child_process';
@@ -9,7 +9,7 @@ import { join } from 'node:path';
 import { ROOT } from '../test/compile.mjs';
 
 const IMAGE = 'ciderui-test';
-// The image is made from these alone (test/Dockerfile.dockerignore; not a root
+// @external: The image is made from these alone (test/Dockerfile.dockerignore; not a root
 // .dockerignore: with this -f BuildKit reads this one alone): one built from the same
 // bytes carries their hash as a label and is run by its ID, with no build
 // (a cached build still took 2s over ssh). Not by the tag: lab's daemon
@@ -21,13 +21,13 @@ const label = `ciderui.inputs=${inputs.digest('hex')}`;
 let image = execFileSync('docker', ['images', '-q', '--no-trunc', '--filter', `label=${label}`], { encoding: 'utf8' }).split('\n')[0].trim();
 if (!image) image = execFileSync('docker', ['build', '-q', '-t', IMAGE, '--label', label, '-f', join(ROOT, 'test/Dockerfile'), ROOT], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'inherit'] }).trim();
 if (!/^sha256:[0-9a-f]{64}$/.test(image)) throw new Error(`docker gave no image ID: ${image}`);
-// CIDERUI_CHROME=1: the image with Google Chrome too (reference/chrome.Dockerfile),
+// @external: CIDERUI_CHROME=1: the image with Google Chrome too (reference/chrome.Dockerfile),
 // for a probe of a page Playwright's Chromium cannot play; the tests never run in it
 if (process.env.CIDERUI_CHROME === '1') {
-  // FROM takes a name, not an ID: a tag of this image's own
+  // @external: FROM takes a name, not an ID: a tag of this image's own
   const base = `${IMAGE}:${image.slice('sha256:'.length, 'sha256:'.length + 12)}`;
   execFileSync('docker', ['tag', image, base]);
-  // no context: the Dockerfile on stdin is all it needs
+  // @external: no context: the Dockerfile on stdin is all it needs
   image = execFileSync('docker', ['build', '-q', '--build-arg', `BASE=${base}`, '-'], { input: readFileSync(join(ROOT, 'reference/chrome.Dockerfile')), encoding: 'utf8', stdio: ['pipe', 'pipe', 'inherit'] }).trim();
   if (!/^sha256:[0-9a-f]{64}$/.test(image)) throw new Error(`docker gave no image ID for Chrome's: ${image}`);
 }
@@ -35,7 +35,7 @@ if (process.env.CIDERUI_CHROME === '1') {
 const STEPS = 'node scripts/build-lucide.mjs --check && node scripts/build-css.mjs --check && node test/tokens.mjs && node test/type.mjs && node test/page.mjs && node test/components.mjs && node test/rules.mjs && node test/pictures.mjs && node test/surfaces.mjs && node reference/touch/audit.mjs && node test/probes.mjs && node test/assets.mjs && node test/settings.mjs';
 const command = process.argv.length > 2 ? process.argv.slice(2) : ['sh', '-c', STEPS];
 const pass = ['CASES', 'UPDATE_GOLDEN'].filter((k) => process.env[k] !== undefined).flatMap((k) => ['-e', `${k}=${process.env[k]}`]);
-// The image's user (root): what it writes comes back through tar as the
+// @invariant: The image's user (root): what it writes comes back through tar as the
 // caller's own, so no --user (the repository's top, the image's WORKDIR, is
 // root's). The stamp before the command: what is newer after it, the command wrote
 // (the copied files keep the checkout's mtimes)
@@ -45,7 +45,7 @@ const id = execFileSync('docker', [
   image, 'sh', '-c', wrap, 'run', ...command,
 ], { encoding: 'utf8' }).trim();
 const q = (s) => `'${s.replaceAll("'", "'\\''")}'`;
-// no extended attributes (docker cp refuses macOS's com.apple.provenance,
+// @external: no extended attributes (docker cp refuses macOS's com.apple.provenance,
 // "operation not supported", on a file that carries it), no AppleDouble
 // ._ files
 const TAR_ENV = { ...process.env, COPYFILE_DISABLE: '1' };

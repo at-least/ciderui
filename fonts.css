@@ -1,4 +1,4 @@
-/* each unicode-range is its file's subset */
+/* @external: each unicode-range is its file's subset */
 
 @font-face {
   font-family: Inter;

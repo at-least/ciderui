@@ -15,7 +15,7 @@ function state() {
     anchors: CSS.supports('top: anchor(bottom)') && CSS.supports('anchor-name: --a'),
     open, display: getComputedStyle(f).display, flyout: box(f), bar, curtain,
     panel: box(document.querySelector('.panel')),
-    // the window's width less a scrollbar's (Safari on the Mac draws one)
+    // @external: the window's width less a scrollbar's (Safari on the Mac draws one)
     windowWidth: innerWidth, pageWidth: document.documentElement.clientWidth, windowHeight: innerHeight, scrollY,
     barHit: hit(link.left + link.width / 2, link.top + link.height / 2),
     curtainHit: open && curtain.height ? hit(curtain.left + curtain.width / 2, curtain.top + curtain.height / 2) : null,
@@ -41,7 +41,7 @@ async function pixels(png, offset) {
   g.drawImage(img, 0, 0);
   const bar = document.getElementById('bar').getBoundingClientRect();
   const x = innerWidth - 40;
-  // where the page starts in the picture (the simulator's has the phone's
+  // @external: where the page starts in the picture (the simulator's has the phone's
   // status bar above it): from the bar's color at its first row, looked for
   // down that column in a picture with the flyout closed, or given
   if (offset === undefined) {

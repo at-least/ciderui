@@ -12,15 +12,15 @@ const CAPTION = `${FIRST} > .cui-console-strip-caption`;
 const CURRENT = '.cui-console-strip-item[aria-current="true"]';
 const WAITING = '.cui-console-strip-mark[data-state="waiting"]';
 const WORKING = '.cui-console-strip-mark[data-state="working"]';
-// the current shot being worked on (2.2)
+// @invariant: the current shot being worked on (2.2)
 const CURRENT_WORKING = `${CURRENT} > ${WORKING}`;
 const TIP = `${FIRST} > .cui-console-strip-tip`;
-// the page's script's progress on the current shot
+// @invariant: the page's script's progress on the current shot
 const playing = (html) => html.replace('aria-current="true"', 'aria-current="true" style="--cui-console-strip-progress: 40%"');
 const MARKS = 'two marks only (the owner, 2026-11-05, for muse\'s storyboard and assets strip): who the shot waits on, the reader or someone at work on it; nothing, no mark. Kept and to redraw went: muse no longer marks either';
-// one scene of one shot, its name longer than the shot is wide, and no caption
+// @invariant: one scene of one shot, its name longer than the shot is wide, and no caption
 const lone = (label) => `<div class="cui-console-page"><nav class="cui-console-strip" aria-label="Shots"><div class="cui-console-strip-group"><p class="cui-console-strip-head"><span class="cui-console-strip-label">${label}</span></p><a class="cui-console-strip-item" href="#a"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Shot 1"></a></div></nav></div>`;
-// tv.apple.com's player's row was read at 1600 and 1200px
+// @external: tv.apple.com's player's row was read at 1600 and 1200px
 const AT = { 390: 1200 };
 
 export const cases = [

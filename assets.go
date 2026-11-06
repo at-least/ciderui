@@ -12,7 +12,7 @@ import (
 	"sync"
 )
 
-// written by scripts/build-css.mjs; npm test fails a stale one
+// @external: written by scripts/build-css.mjs; npm test fails a stale one
 //
 //go:embed dist
 var dist embed.FS
@@ -69,7 +69,7 @@ func (s stylesheet) serve(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Encoding", "gzip")
 		body = s.gzipd
 	}
-	// a client gone mid-response has nothing to be told
+	// @trap: a client gone mid-response has nothing to be told
 	_, _ = w.Write(body)
 }
 
@@ -89,7 +89,7 @@ func Assets() http.Handler {
 			http.NotFound(w, r)
 			return
 		}
-		// not immutable: the name carries no hash
+		// @trap: not immutable: the name carries no hash
 		w.Header().Set("Cache-Control", "public, max-age=86400")
 		http.ServeFileFS(w, r, kit, "fonts/"+name)
 	})

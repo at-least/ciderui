@@ -1,4 +1,4 @@
-// dist/<set>.css, the stylesheet a site links: Tailwind's base, Inter, the set's
+// @invariant: dist/<set>.css, the stylesheet a site links: Tailwind's base, Inter, the set's
 // parts, every class of the type and every utility an example writes, so a page
 // copying an example needs nothing more. Any other utility is the site's own
 // stylesheet's (utilities.css).

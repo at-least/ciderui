@@ -1,4 +1,4 @@
-// node lines.mjs: the chevrons ciderui draws as apple.com's own lines, read
+// @external: node lines.mjs: the chevrons ciderui draws as apple.com's own lines, read
 // live (never stored): the bag's accordion's (its polyline, 17 by 8.85, the
 // bag's compact items') and the footer's (11 by 6, a phone's footer
 // section's), each rasterized at 20 pixels to the unit (svg.js) against
@@ -13,7 +13,7 @@ export const OURS = {
   disclosure: `<svg viewBox="0 0 17 8.85"><path d="M15 1.13 8.5 7.72 2 1.13" ${LINE(2.25)}/></svg>`,
 };
 const EXAMPLES = { disclosure: '../../components/site/accordion/examples/accordion.html' };
-// apple.com's: the polyline with its stroke as its page computes it
+// @external: apple.com's: the polyline with its stroke as its page computes it
 const read = (selector) => `(() => {
   const svg = document.querySelector(${JSON.stringify(selector)}).cloneNode(true);
   for (const l of svg.querySelectorAll('polyline')) {

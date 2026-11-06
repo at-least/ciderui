@@ -1,4 +1,4 @@
-// node page.mjs: page.html, the accordion's example on the kit's CSS,
+// @invariant: node page.mjs: page.html, the accordion's example on the kit's CSS,
 // compiled as a site compiles it (../../test/compile.mjs), and ring.html,
 // for the focus ring in an answer: 24px in from the window's edge, the example
 // as an answer of itself, and the example with a link beginning its first

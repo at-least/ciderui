@@ -1,5 +1,5 @@
 @layer components {
-  /* the toolkit's DisplayList: its menu variant, and its sidebar variant
+  /* @invariant: the toolkit's DisplayList: its menu variant, and its sidebar variant
      (data-variant="sidebar"), the list in a cui-console-sidebar. Each
      part's sidebar block sits after the part's base and its media queries:
      equal specificity, so the later one wins */
@@ -14,7 +14,7 @@
     }
   }
 
-  /* a choice menu's columns side by side (ConsoleChoiceMenu): the Apple TV
+  /* @invariant: a choice menu's columns side by side (ConsoleChoiceMenu): the Apple TV
      app's audio beside its subtitles; one column is the plain menu. Each
      column as wide as the popover alone may be (350px less its 16px sides),
      the popover as wide as its columns ask; a rule between them in the
@@ -87,7 +87,7 @@
     &[aria-current="page"] {
       background-color: var(--cui-c-console-neutral-fill-quaternary);
 
-      /* forced colors drop the fill: the current page would read as the others */
+      /* @external: forced colors drop the fill: the current page would read as the others */
       @media (forced-colors: active) {
         background-color: Highlight;
         color: HighlightText;
@@ -130,7 +130,7 @@
     margin-inline-start: -2.34px;
     color: var(--cui-c-console-neutral-label-secondary);
 
-    /* a choice's check: unchecked, kept in its place, so the labels line up */
+    /* @trap: a choice's check: unchecked, kept in its place, so the labels line up */
     :where(.cui-console-menu-item[aria-checked="false"]) > & {
       visibility: hidden;
     }
@@ -181,7 +181,7 @@
     border: 0;
     background-color: var(--cui-c-console-neutral-border-secondary);
 
-    /* forced colors draw this fill in the ground's color */
+    /* @external: forced colors draw this fill in the ground's color */
     @media (forced-colors: active) {
       background-color: CanvasText;
     }

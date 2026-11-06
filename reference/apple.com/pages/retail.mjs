@@ -1,4 +1,4 @@
-// The retail page, for apple.com's own text field (its form-textbox, the
+// @external: The retail page, for apple.com's own text field (its form-textbox, the
 // store's forms' field): the page's store search (with its icons) and a
 // plain field the probe adds with apple.com's classes, at rest, hovered,
 // focused; its label floated (the class apple.com's script sets on it as the
@@ -6,16 +6,16 @@
 // filled (form-textbox-entered).
 import { TYPE, BOX, MOTION, FOCUS } from './common.mjs';
 const FIELD = (id, labelClass = '', inputClass = '') => `<div class="form-textbox"><input type="text" class="form-textbox-input${inputClass}" id="${id}" required value=""><label class="form-textbox-label${labelClass}" for="${id}">Email</label></div>`;
-// a field in error, as the gift card's page marks an empty required one the
+// @external: a field in error, as the gift card's page marks an empty required one the
 // focus has left (giftcard:error*): its classes, its message and its icon
 const ERROR = `<div class="form-textbox is-error"><input type="text" class="form-textbox-input" id="cui-error" aria-invalid="true" value=""><label class="form-textbox-label" for="cui-error">Email</label><div><div class="is-error"><div class="form-message-wrapper" id="cui-error-message"><span class="form-message">Please enter a valid email.</span></div></div></div></div>`;
 const DISABLED = `<div class="form-textbox"><input type="text" class="form-textbox-input" id="cui-disabled" disabled value=""><label class="form-textbox-label" for="cui-disabled">Email</label></div>`;
-// the multi-line field, the feedback form's markup (feedback:textarea*: a
+// @external: the multi-line field, the feedback form's markup (feedback:textarea*: a
 // bordered box, its textarea in it, its label after it), with the store's
 // stylesheet here: at rest, focused and in error (the classes apple.com's
 // script sets: the box's focused, the label's eyebrow, the field's is-error)
 const AREA = (cls = '', box = '', label = '') => `<div class="form-textbox${cls}"><div class="form-textarea${box}"><textarea id="cui-area" aria-labelledby="cui-area-label"></textarea></div><span class="form-textbox-label${label}" id="cui-area-label">Comments</span></div>`;
-// the store's dropdown (tradein:dropdown*), in error and disabled: the
+// @external: the store's dropdown (tradein:dropdown*), in error and disabled: the
 // trade-in's markup, nothing chosen, with the class apple.com's script sets
 // (is-error, as the feedback form's empty required dropdowns get it)
 const DROPDOWN = (cls = '', attrs = '') => `<div class="form-dropdown${cls}"><label class="form-dropdown-label form-dropdown-label-placeholder" for="cui-dd">Choose your model</label><select id="cui-dd" class="form-dropdown-select form-dropdown-selectnone"${attrs}><option value="">Select</option></select><span class="form-dropdown-chevron" aria-hidden="true"></span></div>`;

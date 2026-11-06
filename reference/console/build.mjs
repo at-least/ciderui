@@ -1,4 +1,4 @@
-// node build.mjs <dir>
+// @invariant: node build.mjs <dir>
 // Writes the pages run.mjs serves: ciderui compiled as test/components.mjs
 // compiles it (every component's sheet), its fonts beside it, and a page per
 // console part from its example, each loaded in a frame of a set width by
@@ -17,7 +17,7 @@ cpSync(join(ROOT, 'fonts'), join(OUT, 'fonts'), { recursive: true });
 const ex = (component, name) => readFileSync(join(ROOT, componentDir(component), 'examples', `${name}.html`), 'utf8');
 const page = (body, head = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="style.css">${head}</head><body>${body}</body></html>\n`;
 
-// crashcart's syncTabs (its app.js): the bar's overflow state, marked on load
+// @external: crashcart's syncTabs (its app.js): the bar's overflow state, marked on load
 // and on the bar's scroll; sync() is the probe's, after it scrolls the bar.
 // The bar's ground a flat blue, the probe's: the fade is read off its pixels
 // (run.mjs), a mask fading the ground as it fades the tabs.
@@ -37,7 +37,7 @@ writeFileSync(join(OUT, 'tabs.html'), page(`${ex('console-tabs', 'many')}${TABS_
 
 writeFileSync(join(OUT, 'content.html'), page(ex('console-content', 'content')));
 
-// the frames, top left first: tabs is read off the window's pixels
+// @invariant: the frames, top left first: tabs is read off the window's pixels
 const FRAMES = [
   ['tabs', 320, 60],
   ['content', 900, 200],

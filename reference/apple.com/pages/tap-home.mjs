@@ -1,4 +1,4 @@
-// The home page on a touch screen, its menu's button tapped at 390px (`tap`,
+// @external: The home page on a touch screen, its menu's button tapped at 390px (`tap`,
 // the DevTools protocol's touch events: a touch screen's tap, not a forced
 // :hover): what the tap leaves hovered, against touch-home:nav.menutrigger
 // (forced: 0.8 at rest, 1 hovered) and home:menu.trigger (the menu opened by
@@ -14,7 +14,7 @@ export default {
   widths: [390],
   probes: [
     { name: 'menutrigger', tap: TRIGGER, select: TRIGGER, props: ['color', 'opacity'], matches: [':hover', ':active', ':focus', ':focus-visible'] },
-    // the menu the tap opened: the page held
+    // @external: the menu the tap opened: the page held
     { name: 'root', select: 'html', props: ['overflow-y'] },
   ],
 };

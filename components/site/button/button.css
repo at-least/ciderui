@@ -32,7 +32,7 @@
       }
     }
 
-    /* pressed keeps its edge, as apple.com's does; hovered and pressed, the
+    /* @trap: pressed keeps its edge, as apple.com's does; hovered and pressed, the
        hover's rule has cleared it */
     &:not(:disabled):active {
       background-color: var(--cui-btn-bg-active);

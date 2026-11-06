@@ -1,4 +1,4 @@
-// The store's dropdown (its form-dropdown), on iPhone 18 Pro's buy page,
+// @external: The store's dropdown (its form-dropdown), on iPhone 18 Pro's buy page,
 // where its trade-in asks for the model to trade: the buy page's choices
 // picked once, at the first width (its size, color and capacity by their
 // labels, which are over their inputs; Add a trade-in by its input, which is

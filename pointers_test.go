@@ -31,7 +31,7 @@ func number(digits string) int {
 	return n
 }
 
-// not a walk of the disk: .claude/worktrees holds whole checkouts of older commits
+// @trap: not a walk of the disk: .claude/worktrees holds whole checkouts of older commits
 func trackedFiles(t *testing.T) []string {
 	t.Helper()
 	out, err := exec.Command("git", "ls-files").Output()
@@ -41,8 +41,8 @@ func trackedFiles(t *testing.T) []string {
 	return strings.Split(strings.TrimSpace(string(out)), "\n")
 }
 
-// a path in a document's backticks is a claim that it exists: a removed file's
-// name is written without them.
+// @invariant: a path in a document's backticks is a claim that it exists: a
+// removed file's name is written without them.
 //
 // stalePaths returns the paths text names that exist neither beside file nor
 // from the repository's top, nor, a bare name, anywhere in names: a document
@@ -75,7 +75,7 @@ func stalePaths(file, text string, names, exists map[string]bool) []string {
 	return stale
 }
 
-// staleCites returns each cite of a decision or rule DESIGN.md does not hold,
+// @invariant: staleCites returns each cite of a decision or rule DESIGN.md does not hold,
 // or of a withdrawn decision on a line that does not say it is withdrawn.
 func staleCites(text string, decisions, rules int, withdrawn []int) []string {
 	var stale []string
@@ -99,7 +99,7 @@ func staleCites(text string, decisions, rules int, withdrawn []int) []string {
 	return stale
 }
 
-// staleClasses returns each cui-* class text names that classes lacks; `cui-x-*`
+// @invariant: staleClasses returns each cui-* class text names that classes lacks; `cui-x-*`
 // names a family, which at least one class must begin. A line that says it is
 // withdrawn is about what is gone.
 func staleClasses(text string, classes map[string]bool) []string {

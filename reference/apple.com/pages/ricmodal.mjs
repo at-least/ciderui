@@ -1,4 +1,4 @@
-// The marketing pages' modal (ric-modal), the iPhone page's "Read more about
+// @external: The marketing pages' modal (ric-modal), the iPhone page's "Read more about
 // Apple Trade In", opened (its button clicked once, at the first width; it
 // stays open as the window narrows): the layer over the window and its
 // scrim (its ::after: a dimming and a blur), the page held, the overlay
@@ -25,10 +25,10 @@ export default {
     { name: 'viewport', select: `${M} .ric-modal-viewport-content`, props: [...SPACE], box: true, position: true },
     { name: 'close.wrapper', select: `${M} .ric-modal-close-button-wrapper`, props: ['position', 'top', 'right', 'left', 'width', 'height', 'margin-left', 'margin-right', 'z-index', 'display', 'justify-content', 'align-items', 'order'], box: true, position: true },
     { name: 'close', select: `${M} .ric-modal-close-button`, props: ['width', 'height', ...SPACE, 'display', 'align-items', 'justify-content', 'background-color', 'color', 'cursor', 'border-top-width', ...MOTION], box: true, position: true },
-    // its circle (an element between the button and its svg) and the svg
+    // @external: its circle (an element between the button and its svg) and the svg
     { name: 'close.icon', select: `${M} .ric-modal-close-icon`, props: ['width', 'height', 'display', 'align-items', 'position', 'background-color', 'color', 'border-top-left-radius', ...MOTION], box: true, position: true },
     { name: 'close.svg', select: `${M} .ric-modal-close-icon svg`, props: ['width', 'height', 'fill', 'position'], box: true, position: true },
-    // hovered, pressed and focused last: the still style that holds a state
+    // @invariant: hovered, pressed and focused last: the still style that holds a state
     // cancels the page's animations, and taking it off starts them again
     { name: 'close.icon-states', select: `${M} .ric-modal-close-icon`, stateOn: `${M} .ric-modal-close-button`, props: ['background-color', 'color', 'outline-style', 'outline-color', 'outline-width', 'outline-offset'], states: ['hover', 'active', 'focus-visible'] },
   ],

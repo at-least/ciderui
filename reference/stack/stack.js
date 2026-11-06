@@ -1,4 +1,4 @@
-// Runs in page.html, the kit's fonts.css and ciderui's stack: which fonts the
+// @invariant: Runs in page.html, the kit's fonts.css and ciderui's stack: which fonts the
 // page fetched by the time it had drawn the stack, Inter's faces' states then,
 // and the stack's width against system-ui's and Inter's own (Inter is loaded
 // on purpose only after the first two are read).

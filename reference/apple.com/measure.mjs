@@ -1,4 +1,4 @@
-// PAGE=<name> node measure.mjs: pages/<name>.mjs's url at each of its widths,
+// @external: PAGE=<name> node measure.mjs: pages/<name>.mjs's url at each of its widths,
 // each probe's computed styles into results/<name>.json. A probe's keys are what
 // this file reads. A probe that matches nothing is recorded as null and fails the run.
 // What reading it cannot show:
@@ -31,7 +31,7 @@ const PAGE = process.env.PAGE;
 const spec = (await import(`./pages/${PAGE}.mjs`)).default;
 const widths = spec.widths ?? [1600, 1200, 900, 390];
 
-// in the frame: tag the probe's element and the one its states are forced on;
+// @invariant: in the frame: tag the probe's element and the one its states are forced on;
 // its outerHTML's head, or null
 const place = async (probe) => {
   const y = probe.scroll ?? 0;
@@ -48,7 +48,7 @@ const place = async (probe) => {
     else if (value === null) target.removeAttribute(name);
     else target.setAttribute(name, value);
   }
-  // what a blur or a set moves (the page's script checking a field, a
+  // @external: what a blur or a set moves (the page's script checking a field, a
   // label's transition) settled before it is read
   if (probe.blur || probe.set) await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 900))));
   const roots = (root) => [root, ...[...root.querySelectorAll('*')].filter(e => e.shadowRoot).flatMap(e => roots(e.shadowRoot))];
@@ -77,19 +77,19 @@ const place = async (probe) => {
   if (!on) return null;
   el.setAttribute('data-cui-probe', '');
   on.setAttribute('data-cui-state', '');
-  // without the probe's tags, and without query strings (the store's carry
+  // @external: without the probe's tags, and without query strings (the store's carry
   // session ids)
   return el.outerHTML.replace(/ data-cui-[a-z]+=""/g, '').replace(/(href|src|srcset)="([^"?]*)\?[^"]*"/g, '$1="$2?…"').slice(0, 240);
 };
 
-// the head as a result records it, without the page's words: its text, and
+// @invariant: the head as a result records it, without the page's words: its text, and
 // the values of the attributes that hold words (one the head cuts too), so a
 // result says where a value was read, not what the page says
 const strip = (head) => head
   .replace(/>[^<]*/g, '>')
   .replace(/ (aria-label|alt|title|placeholder)="[^"]+("|$)/g, ' $1="…$2');
 
-// in the frame: from now on, every 4ms, describe every animation not seen
+// @invariant: in the frame: from now on, every 4ms, describe every animation not seen
 // yet whose element is inside `within`
 const watchAnimations = (within) => {
   const seen = new Set();
@@ -107,7 +107,7 @@ const watchAnimations = (within) => {
       const prop = Object.keys(frames[0] ?? {}).find(k => !['offset', 'computedOffset', 'easing', 'composite'].includes(k));
       window.cuiAnimations.push({
         kind: a.constructor.name, what, on: name(target), duration: timing.duration, delay: Math.round(timing.delay * 100) / 100, direction: timing.direction,
-        // a transition's timing is its effect's, an animation's its keyframes'
+        // @external: a transition's timing is its effect's, an animation's its keyframes'
         easing: a.transitionProperty ? timing.easing : frames[0]?.easing,
         from: prop ? frames[0][prop] : null, to: prop ? frames.at(-1)[prop] : null,
         seen: Math.round(performance.now() - t0),
@@ -118,7 +118,7 @@ const watchAnimations = (within) => {
 };
 
 const read = (probe) => {
-  // in the document or a shadow root in it
+  // @external: in the document or a shadow root in it
   const walk = (root, s) => root.querySelector(s) ?? [...root.querySelectorAll('*')].filter(e => e.shadowRoot).map(e => walk(e.shadowRoot, s)).find(Boolean) ?? null;
   const el = walk(document, '[data-cui-probe]');
   const cs = getComputedStyle(el, probe.pseudo ?? null);
@@ -137,7 +137,7 @@ const read = (probe) => {
     for (const name of cs.animationName.split(',').map(n => n.trim()).filter(n => n !== 'none')) {
       let rule = null;
       for (const sheet of document.styleSheets) {
-        // a stylesheet from another origin cannot be read: the rule, if it is
+        // @external: a stylesheet from another origin cannot be read: the rule, if it is
         // there, stays not found, and the run fails
         let rules;
         try { rules = sheet.cssRules; } catch { continue; }
@@ -158,16 +158,16 @@ const read = (probe) => {
   return out;
 };
 
-// `options`: Playwright's page options for the run (a permission it needs)
+// @external: `options`: Playwright's page options for the run (a permission it needs)
 const page = await open(spec.browser ?? 'chromium', spec.url, spec.options);
 const pw = page.page;
-// `colorScheme`: the page read in that scheme (prefers-color-scheme), from its load
+// @external: `colorScheme`: the page read in that scheme (prefers-color-scheme), from its load
 if (spec.colorScheme) {
   await pw.emulateMedia({ colorScheme: spec.colorScheme });
   await pw.reload({ waitUntil: 'load' });
 }
 const cdp = await pw.context().newCDPSession(pw);
-// `touch`: the page read on a touch screen, from its load
+// @external: `touch`: the page read on a touch screen, from its load
 if (spec.touch) {
   await cdp.send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
   await pw.reload({ waitUntil: 'load' });
@@ -175,14 +175,14 @@ if (spec.touch) {
 }
 await cdp.send('DOM.enable');
 await cdp.send('CSS.enable');
-// the DevTools node of the element tagged data-cui-state in this frame: a
+// @external: the DevTools node of the element tagged data-cui-state in this frame: a
 // frame's document is reached through its iframe in the page's whole tree
 const stateNode = async (frame) => {
   if (frame === pw.mainFrame()) {
     const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
     const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '[data-cui-state]' });
     if (nodeId) return nodeId;
-    // in a shadow root, which DOM.querySelector does not enter
+    // @external: in a shadow root, which DOM.querySelector does not enter
     const whole = await cdp.send('DOM.getDocument', { depth: -1, pierce: true });
     const find = (n) => n.attributes?.includes('data-cui-state') ? n
       : [...(n.children ?? []), ...(n.shadowRoots ?? [])].map(find).find(Boolean);
@@ -207,7 +207,7 @@ const frameOf = (probe) => {
 
 const final = new URL(pw.url());
 const clicked = new Set();
-// a point a probe names: [x, y], or a function of the window's width giving one
+// @invariant: a point a probe names: [x, y], or a function of the window's width giving one
 const point = (p, width) => typeof p === 'function' ? p(width) : p;
 const result = { url: spec.url, finalUrl: final.origin + final.pathname, browser: page.label, date: new Date().toISOString(), widths: {} };
 const nulls = [];
@@ -221,16 +221,16 @@ try {
     for (const probe of spec.probes) {
       if (probe.widths && !probe.widths.includes(width)) continue;
       const frame = frameOf(probe);
-      // a click once, at the first width the probe is read: what it opens
+      // @external: a click once, at the first width the probe is read: what it opens
       // stays so as the window narrows
       const clicking = (probe.click || probe.type || probe.tap || probe.hover) && !clicked.has(probe.name);
       const settle = () => pw.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 900)))));
       if (probe.hover) {
-        // at every width: what the pointer opens a window's resize may close
+        // @external: at every width: what the pointer opens a window's resize may close
         if (spec.touch) throw new Error(`${probe.name}: a hover on a touch spec`);
         clicked.add(probe.name);
         if (clicking && probe.animations) await frame.evaluate(watchAnimations, probe.animations);
-        // a probe's scroll before the pointer moves, so what it hovers is in
+        // @invariant: a probe's scroll before the pointer moves, so what it hovers is in
         // the window (the read's own scroll then finds it there)
         if (probe.scroll !== undefined) {
           await frame.evaluate((y) => window.scrollTo(0, y), probe.scroll);
@@ -271,11 +271,11 @@ try {
       } else if (clicking) {
         clicked.add(probe.name);
         if (probe.animations) await frame.evaluate(watchAnimations, probe.animations);
-        // a point, [x, y]: the window clicked there (what a layer over the
+        // @invariant: a point, [x, y]: the window clicked there (what a layer over the
         // element would take a click on it for)
         if (Array.isArray(probe.click)) await pw.mouse.click(...probe.click);
         else await frame.click(probe.click);
-        // the pointer off what it clicked, which it would leave hovered, to the
+        // @external: the pointer off what it clicked, which it would leave hovered, to the
         // window's bottom corner; or, once what the click opened has opened, to
         // `pointer`, a point inside it, which the pointer leaving would close
         // (moved at once, it lands beyond what is still growing)
@@ -285,7 +285,7 @@ try {
         else await settle();
       }
       used.add(frame);
-      // what the page is handed of the probe: its data, not its functions (a
+      // @invariant: what the page is handed of the probe: its data, not its functions (a
       // point given by the width)
       const data = JSON.parse(JSON.stringify(probe));
       const html = await frame.evaluate(place, data);
@@ -303,7 +303,7 @@ try {
         if (!nodeId) throw new Error(`${probe.name}: the DevTools session does not see the tagged element`);
         await frame.addStyleTag({ content: '*, *::before, *::after { transition: none !important; }' })
           .then(h => h.evaluate(e => e.setAttribute('data-cui-still', '')));
-        // a document's style does not reach into a shadow root: one there too
+        // @external: a document's style does not reach into a shadow root: one there too
         await frame.evaluate(() => {
           const walk = (root, s) => root.querySelector(s) ?? [...root.querySelectorAll('*')].filter(e => e.shadowRoot).map(e => walk(e.shadowRoot, s)).find(Boolean) ?? null;
           const root = walk(document, '[data-cui-state]').getRootNode();
@@ -315,12 +315,12 @@ try {
         });
         at[probe.name].states = {};
         for (const state of probe.states) {
-          // a state may be several at once: 'focus+focus-visible'
+          // @invariant: a state may be several at once: 'focus+focus-visible'
           await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: state.split('+') });
           at[probe.name].states[state] = (await frame.evaluate(read, data)).styles;
           await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] });
         }
-        // the state's last change must land while transitions are still off, or
+        // @invariant: the state's last change must land while transitions are still off, or
         // it starts one that a later probe reads in flight: flush, then remove
         await frame.evaluate(() => {
           const walk = (root, s) => root.querySelector(s) ?? [...root.querySelectorAll('*')].filter(e => e.shadowRoot).map(e => walk(e.shadowRoot, s)).find(Boolean) ?? null;

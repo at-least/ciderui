@@ -1,4 +1,4 @@
-// The global nav's bag, opened (its button clicked once, at the first width
+// @external: The global nav's bag, opened (its button clicked once, at the first width
 // of each of the nav's layouts, as search.mjs opens the search): the bag's
 // flyout, a link's flyout's own (flyout.mjs's: globalnav-flyout), its
 // markup its script's, fetched (/shop/bag/flyout) and an empty bag's here:
@@ -24,7 +24,7 @@ const ITEM = ['opacity', 'transform', 'transition-delay', ...MOTION];
 const WIDE = [1600, 1200, 900, 834];
 const PHONE = [833, 390];
 const MOTIONS = '#globalnav, #globalnav-curtain';
-// the flyout's room left of its content
+// @external: the flyout's room left of its content
 const ROOM = [100, 200];
 
 export default {
@@ -37,11 +37,11 @@ export default {
     { name: 'nav.content', select: '#globalnav .globalnav-content', props: ['position', 'z-index', 'height', 'background-color', ...BLUR], box: true, position: true },
     { name: 'root', select: 'html', props: ['overflow-y'] },
     { name: 'body', select: 'body', props: ['overflow-y'] },
-    // the bag's button while it is open, another link, the search beside them
+    // @external: the bag's button while it is open, another link, the search beside them
     { name: 'link.bag', select: '#globalnav-menubutton-link-bag', props: ['color', 'opacity', 'visibility', ...MOTION], box: true, position: true },
     { name: 'link.other', select: '#globalnav .globalnav-link-mac', props: ['color', 'opacity', 'visibility'] },
     { name: 'link.search', select: '#globalnav .globalnav-link-search', props: ['color', 'opacity', 'visibility'] },
-    // to 833px the menu's button is the sheet's X
+    // @external: to 833px the menu's button is the sheet's X
     { name: 'menutrigger', select: '#globalnav-menutrigger-button', props: ['color', 'opacity', 'visibility', ...MOTION], box: true, position: true, widths: PHONE },
     { name: 'flyout', select: FLY, props: ['position', 'top', 'left', 'right', 'height', 'max-height', ...SPACE, 'background-color', ...BLUR, 'color', 'overflow-y', 'z-index', 'visibility', ...MOTION], vars: ['--r-globalnav-flyout-height', '--r-globalnav-flyout-rate'], box: true, position: true },
     { name: 'flyout.scroll', select: `${FLY} .globalnav-flyout-scroll-container`, props: ['height', 'max-height', 'overflow-y', ...SPACE], box: true, position: true },
@@ -61,17 +61,17 @@ export default {
     { name: 'bag.nav-image-compact', select: `${LINKED} .ac-gn-bagview-nav-image-compact svg`, props: ['width', 'height', 'fill', 'color'], box: true, position: true, widths: PHONE },
     { name: 'bag.nav-path-compact', select: `${LINKED} .ac-gn-bagview-nav-image-compact path`, props: ['fill'], widths: PHONE },
     { name: 'curtain', select: '#globalnav-curtain', props: ['position', 'top', 'z-index', 'background-color', ...BLUR, 'opacity', 'visibility', ...MOTION], box: true, position: true },
-    // the forced states last (search.mjs's): the sign-in link, a profile link,
+    // @invariant: the forced states last (search.mjs's): the sign-in link, a profile link,
     // its text and its icon
     { name: 'bag.subheader-link', select: `${FLY} .ac-gn-bagview-subheader a`, props: [...TYPE, ...LINK, ...FOCUS], box: true, position: true, states: ['hover', 'focus-visible'] },
     { name: 'bag.nav-link', select: LINKED, props: [...TYPE, ...SPACE, 'display', 'align-items', 'position', 'text-decoration-line', 'background-color', 'border-top-left-radius', ...FOCUS, ...MOTION], box: true, position: true, states: ['hover', 'focus-visible'] },
-    // the text hovered itself: apple.com's rule is the link's :hover and the
+    // @external: the text hovered itself: apple.com's rule is the link's :hover and the
     // text's (globalheader.css), so the pointer on the text, as a hand's
     // is, turns it #000 where the link's forced alone leaves it
     { name: 'bag.nav-text', select: `${LINKED} .ac-gn-bagview-nav-text`, props: [...TYPE, ...SPACE, 'display', ...MOTION], box: true, position: true, states: ['hover'] },
     { name: 'bag.nav-icon', select: `${LINKED} .ac-gn-bagview-nav-image-regular svg`, stateOn: LINKED, props: ['color', 'fill', ...MOTION], states: ['hover'], widths: WIDE },
     { name: 'bag.nav-icon-compact', select: `${LINKED} .ac-gn-bagview-nav-image-compact svg`, stateOn: LINKED, props: ['color', 'fill', ...MOTION], states: ['hover'], widths: PHONE },
-    // at 834px, last: the pointer off the flyout, onto the curtain
+    // @invariant: at 834px, last: the pointer off the flyout, onto the curtain
     { name: 'left', hover: [400, 800], hovered: 1500, animations: MOTIONS, select: FLY, props: ['height', 'visibility'], box: true, widths: [834] },
     { name: 'left.button', select: '#globalnav-menubutton-link-bag', props: ['color'], widths: [834] },
   ],

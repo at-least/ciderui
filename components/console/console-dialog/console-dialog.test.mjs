@@ -2,7 +2,7 @@ import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const M = 'component-Modal';
-// shown by its open attribute, not showModal(): no ::backdrop
+// @external: shown by its open attribute, not showModal(): no ::backdrop
 const open = () => ex('dialog').replace(' aria-labelledby="ignore-title">', ' aria-labelledby="ignore-title" open>');
 
 export const cases = [

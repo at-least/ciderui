@@ -1,8 +1,8 @@
-/* also inside a `cui-light` block within a dark one, where the colors are
+/* @trap: also inside a `cui-light` block within a dark one, where the colors are
    light: for what no token carries (an image's filter) */
 @custom-variant dark (&:where(.cui-dark, .cui-dark *));
 
-/* px, as apple.com's media queries are */
+/* @external: px, as apple.com's media queries are */
 @theme {
   --breakpoint-*: initial;
   --breakpoint-md: 735px;
@@ -10,7 +10,7 @@
   --breakpoint-xl: 1441px;
 }
 
-/* --text-color-* and --background-color-*, not --color-*: no bg-secondary,
+/* @trap: --text-color-* and --background-color-*, not --color-*: no bg-secondary,
    no text-alt */
 @theme inline {
   --font-sans: var(--cui-font);

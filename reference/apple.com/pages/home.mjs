@@ -1,4 +1,4 @@
-// apple.com's home page: the type scale (every typography class its stylesheets
+// @external: apple.com's home page: the type scale (every typography class its stylesheets
 // define, added to the page), the page, the global nav, the hero and its
 // buttons, a light and a dark promo tile, the gallery's dots, the footer.
 import { TYPE, BOX, MOTION, BLUR, LINK, FOCUS, PAGE, FLEX } from './common.mjs';
@@ -9,7 +9,7 @@ const STATES = ['hover', 'active', 'focus-visible'];
 export default {
   url: 'https://www.apple.com/',
   probes: [
-    // a class the page does not define reads as this paragraph does
+    // @external: a class the page does not define reads as this paragraph does
     { name: 'type.none', inject: '<p>Sample text</p>', into: 'main', props: TYPE },
     ...TYPOGRAPHY.map(c => ({ name: `type.${c}`, inject: `<p class="typography-${c}">Sample text</p>`, into: 'main', props: TYPE })),
     { name: 'page.html', select: 'html', props: ['background-color', 'color-scheme'] },
@@ -19,7 +19,8 @@ export default {
     { name: 'nav.content', select: '#globalnav .globalnav-content', props: ['height', 'max-width', 'padding-left', 'padding-right', 'background-color', ...BLUR], box: true },
     { name: 'nav.link', select: '#globalnav .globalnav-item:not(.globalnav-item-apple) .globalnav-link', props: [...TYPE, 'opacity', ...MOTION], states: ['hover'] },
     { name: 'nav.link-text', select: '#globalnav .globalnav-link-text', props: TYPE },
-    // the bar's parts: its list, a link's box, the logo's, the search's and the bag's and their images
+    // @external: the bar's parts: its list, a link's box, the logo's, the search's and the bag's
+    // and their images
     { name: 'nav.list', select: '#globalnav .globalnav-list', props: [...BOX, ...FLEX, 'margin-left', 'margin-right', 'padding-left', 'padding-right', 'height'], box: true },
     { name: 'nav.link-box', select: '#globalnav .globalnav-item-mac .globalnav-link', props: [...BOX, ...FLEX, 'padding-left', 'padding-right', 'height', 'text-decoration-line'], box: true },
     { name: 'nav.logo', select: '#globalnav .globalnav-link-apple', props: [...BOX, ...FLEX, 'padding-left', 'padding-right', 'height', 'color', ...MOTION], box: true, position: true, states: ['hover'] },
@@ -28,12 +29,14 @@ export default {
     { name: 'nav.search-image', select: '#globalnav .globalnav-link-search svg', props: ['width', 'height', 'fill'], box: true },
     { name: 'nav.bag', select: '#globalnav .globalnav-link-bag', props: [...BOX, ...FLEX, 'padding-left', 'padding-right', 'height', 'color'], box: true, position: true, states: ['hover'] },
     { name: 'nav.bag-image', select: '#globalnav .globalnav-link-bag svg', props: ['width', 'height', 'fill'], box: true },
-    // the phone's images: the compact logo, search and bag (17 by 48), and the menu's button
+    // @external: the phone's images: the compact logo, search and bag (17 by 48), and the menu's
+    // button
     { name: 'nav.logo-compact', select: '#globalnav .globalnav-link-apple .globalnav-image-compact svg', props: ['width', 'height'], box: true, widths: [390] },
     { name: 'nav.search-compact', select: '#globalnav .globalnav-link-search .globalnav-image-compact svg', props: ['width', 'height'], box: true, widths: [390] },
     { name: 'nav.bag-compact', select: '#globalnav .globalnav-link-bag .globalnav-image-compact svg', props: ['width', 'height'], box: true, widths: [390] },
     { name: 'nav.menutrigger', select: '#globalnav .globalnav-menutrigger-button', props: [...BOX, ...FLEX, 'width', 'height', 'color', 'opacity', 'cursor', ...MOTION], box: true, position: true, widths: [900, 390], states: ['hover'] },
-    // its two lines are an SVG's polylines (reference/icons/ reads their points); their box
+    // @external: its two lines are an SVG's polylines (reference/icons/ reads their points); their
+    // box
     { name: 'nav.menutrigger-bread', select: '#globalnav .globalnav-menutrigger-bread-top', props: ['stroke-width'], box: true, widths: [390] },
     { name: 'hero.section', select: '.section-hero', props: BOX, box: true },
     { name: 'hero.tile', select: '.section-hero .tile-wrapper', props: BOX, box: true },
@@ -48,7 +51,7 @@ export default {
     { name: 'tile.light', select: '.section-promo .tile-wrapper:not(.theme-dark)', props: [...BOX, ...FLEX, 'overflow', 'text-align', 'position'], box: true },
     { name: 'tile.light-headline', select: '.section-promo .tile-wrapper:not(.theme-dark) .tile-headline', props: TYPE },
     { name: 'tile.light-subhead', select: '.section-promo .tile-wrapper:not(.theme-dark) .tile-subhead', props: [...TYPE, 'margin-top'] },
-    // a promo tile's spacing: its first with a text headline and buttons
+    // @external: a promo tile's spacing: its first with a text headline and buttons
     { name: 'tile.promo-content', select: '.section-promo .tile-wrapper:has(h3.tile-headline:not(.logo-image)) .tile-content', props: [...FLEX], box: true },
     { name: 'tile.promo-headline', select: '.section-promo .tile-wrapper:has(h3.tile-headline:not(.logo-image)) .tile-headline', props: [...TYPE, 'margin-top', 'margin-bottom'] },
     { name: 'tile.promo-subhead', select: '.section-promo .tile-wrapper:has(h3.tile-headline:not(.logo-image)) .tile-subhead', props: [...TYPE, 'margin-top'] },
@@ -65,22 +68,22 @@ export default {
     { name: 'tile.dark-button-secondary', select: '.tile-wrapper.theme-dark .button-secondary', props: [...TYPE, ...BOX], states: ['hover', 'active'] },
     { name: 'gallery.dot', select: '.dotnav-item:not(.current) .dotnav-link', props: [...BOX, 'width', 'height', 'opacity'], box: true, states: ['hover'] },
     { name: 'gallery.dot-current', select: '.dotnav-item.current .dotnav-link', props: [...BOX, 'width', 'height', 'opacity'], box: true },
-    // a neutral button on a dark gallery item (li.media-gallery-item.theme-dark)
+    // @external: a neutral button on a dark gallery item (li.media-gallery-item.theme-dark)
     { name: 'gallery.button-neutral', select: '.button.button-neutral', props: [...TYPE, ...BOX], box: true, states: ['hover', 'active'] },
     { name: 'footer', select: '#ac-globalfooter', props: [...TYPE, 'background-color'] },
     { name: 'footer.content', select: '#ac-globalfooter .ac-gf-content', props: ['max-width', 'padding-left', 'padding-right', 'margin-left', 'margin-right'], box: true },
     { name: 'footer.sosumi', select: '#ac-globalfooter .ac-gf-sosumi', props: [...TYPE, ...BOX] },
-    // a link in running text: a footnote's
+    // @external: a link in running text: a footnote's
     { name: 'footer.sosumi-link', select: '#ac-globalfooter .ac-gf-sosumi a', props: [...TYPE, ...LINK], states: ['hover'] },
     { name: 'footer.title', select: '.ac-gf-directory-column-section-title-text', props: TYPE },
     { name: 'footer.link', select: '.ac-gf-directory-column-section-link', props: [...TYPE, ...LINK], states: ['hover'] },
     { name: 'footer.shop', select: '.ac-gf-footer-shop', props: [...TYPE, ...BOX] },
-    // a link in the shop line's sentence
+    // @external: a link in the shop line's sentence
     { name: 'footer.shop-link', select: '.ac-gf-footer-shop a', props: [...TYPE, ...LINK] },
     { name: 'footer.legal', select: '.ac-gf-footer-legal', props: [...TYPE, ...BOX] },
     { name: 'footer.legal-link', select: '.ac-gf-footer-legal-link', props: [...TYPE, ...LINK, 'border-right-color', 'border-right-width', 'padding-right', 'margin-right'], states: ['hover'] },
     { name: 'footer.copyright', select: '.ac-gf-footer-legal-copyright', props: [...TYPE, 'margin-top', 'margin-right'] },
-    // the footer's layout: its directory (a row of columns, a column's
+    // @external: the footer's layout: its directory (a row of columns, a column's
     // sections, a title, a list, an item), the rows below it (the shop line,
     // the legal row: its links, their separators, the locale); on a phone its
     // sections' title rows and rules (opened in pages/home-footer.mjs)
@@ -104,17 +107,19 @@ export default {
     { name: 'footer.title-button', select: '#ac-globalfooter .ac-gf-directory-column-section-title-button', props: [...TYPE, 'display', 'padding-top', 'padding-bottom', 'width', 'text-align', 'cursor'], box: true, widths: [390] },
     { name: 'footer.title-icon', select: '#ac-globalfooter .ac-gf-directory-column-section-title-icon', props: ['color', 'margin-top', 'display', 'position', 'right', 'top'], box: true, widths: [390] },
     { name: 'footer.list-closed', select: '#ac-globalfooter .ac-gf-directory-column-section-list', props: ['visibility', 'height', 'overflow'], box: true, widths: [390] },
-    // the phone's menu, opened: last, as the page stays open after the click
+    // @invariant: the phone's menu, opened: last, as the page stays open after the click
     { name: 'menu.open', click: '#globalnav-menutrigger-button', animations: '#globalnav', select: '#globalnav', props: ['background-color', 'height', ...BLUR], box: true, widths: [390] },
     { name: 'menu.content', select: '#globalnav .globalnav-content', props: [...BOX, 'height', ...BLUR, ...MOTION], box: true, position: true, widths: [390] },
-    // the page held, the logo and the search faded out, the rows come in (each 20ms after the one above)
+    // @external: the page held, the logo and the search faded out, the rows come in (each 20ms
+    // after the one above)
     { name: 'menu.root', select: 'html', props: ['overflow-y'], widths: [390] },
     { name: 'menu.body', select: 'body', props: ['overflow-y'], widths: [390] },
     { name: 'menu.logo', select: '#globalnav .globalnav-link-apple', props: ['opacity', 'visibility', ...MOTION, 'transition-delay'], widths: [390] },
     { name: 'menu.search', select: '#globalnav .globalnav-link-search', props: ['opacity', 'visibility', ...MOTION, 'transition-delay'], widths: [390] },
     { name: 'menu.row', select: '#globalnav .globalnav-item-store .globalnav-submenu-trigger-group', props: ['opacity', 'transform', ...MOTION, 'transition-delay'], widths: [390] },
     { name: 'menu.row-second', select: '#globalnav .globalnav-item-mac .globalnav-submenu-trigger-group', props: ['opacity', 'transform', ...MOTION, 'transition-delay'], widths: [390] },
-    // the rows' places in the open menu, which fills the window: the list, its first row and its second
+    // @external: the rows' places in the open menu, which fills the window: the list, its first row
+    // and its second
     { name: 'menu.list', select: '#globalnav .globalnav-menu-list', props: [...BOX, 'padding-left', 'padding-right'], box: true, position: true, widths: [390] },
     { name: 'menu.link', select: '#globalnav .globalnav-item-mac .globalnav-link', props: [...TYPE, ...BOX, 'padding-left', 'padding-right', 'height', 'display'], box: true, position: true, widths: [390], states: ['hover'] },
     { name: 'menu.link-first', select: '#globalnav .globalnav-item-store .globalnav-link', props: ['padding-top', 'margin-bottom'], box: true, position: true, widths: [390] },

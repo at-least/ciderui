@@ -1,5 +1,5 @@
 const linesOf = () => {
-  // the line's geometry box (getBBox: the same in every browser, the stroke
+  // @trap: the line's geometry box (getBBox: the same in every browser, the stroke
   // excluded) mapped through its CSS transform about its origin. The probe
   // reads no getBoundingClientRect: that box includes the stroke and, on a
   // stroked <path>, Firefox pads it by about twice the stroke-width a side

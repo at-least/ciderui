@@ -1,4 +1,4 @@
-// Only in test/Dockerfile's image: its Chromium and its fallback fonts
+// @external: Only in test/Dockerfile's image: its Chromium and its fallback fonts
 // (Liberation Mono for code) make a value or a picture the same on every
 // machine.
 //

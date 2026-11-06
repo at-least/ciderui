@@ -1,4 +1,4 @@
-// The system's settings a page must follow, read off every example as it ships, so
+// @invariant: The system's settings a page must follow, read off every example as it ships, so
 // a new part is held with no line of its own.
 
 import { readFileSync } from 'node:fs';
@@ -17,7 +17,7 @@ const emulate = async (page, name, value) => {
 
 const show = (page, part, file) => page.page.evaluate((html) => { document.body.innerHTML = html; }, exampleHtml(part, file));
 
-// a color as this page draws it
+// @external: a color as this page draws it
 const colorOf = (page, value) => page.page.evaluate((v) => {
   const probe = document.createElement('i');
   probe.style.color = v;
@@ -27,7 +27,7 @@ const colorOf = (page, value) => page.page.evaluate((v) => {
   return color;
 }, value);
 
-// Reduce Transparency: nothing blurs what is behind it, no ground lets it show.
+// @invariant: Reduce Transparency: nothing blurs what is behind it, no ground lets it show.
 // A tint or a dim is not a ground: under this alpha it colors what is behind on
 // purpose. A mark too small to hold text is not one either. A field is near white
 // on a page it is the same color as.
@@ -62,7 +62,7 @@ for (const set of ['site', 'console']) {
   await page.close();
 }
 
-// Increase Contrast: secondary text and edges at the text's color...
+// @invariant: Increase Contrast: secondary text and edges at the text's color...
 const CONTRAST = {
   site: { '--cui-c-text': ['--cui-c-text-2', '--cui-c-text-3', '--cui-c-border', '--cui-c-divider'], '--cui-c-on-bar-hover': ['--cui-c-on-bar'], '--cui-c-on-footer-title': ['--cui-c-on-footer', '--cui-c-on-footer-link'] },
   console: {
@@ -79,7 +79,7 @@ for (const [set, slots] of Object.entries(CONTRAST)) {
   await page.close();
 }
 
-// ...and so no neutral text is under AAA's 7:1 in any example; a hue, on the text
+// @invariant: ...and so no neutral text is under AAA's 7:1 in any example; a hue, on the text
 // or under it, is an accent's, a link's or a status's, held to 4.5:1 (tokens.css)
 const channels = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
 const hue = (hex) => Math.max(...channels(hex)) - Math.min(...channels(hex)) > 16;
@@ -97,7 +97,8 @@ for (const part of COMPONENTS) {
   }
 }
 
-// Appearance: the console follows the system, the site set stays light; a class holds it
+// @invariant: Appearance: the console follows the system, the site set stays light; a
+// class holds it
 const ground = async (set, rootClass, colorScheme) => {
   const page = await open(shipped(set), '<i></i>', { colorScheme });
   await page.page.evaluate((c) => { if (c) document.documentElement.classList.add(c); }, rootClass);

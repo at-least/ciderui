@@ -1,11 +1,12 @@
-// BROWSER=chromium|chrome|firefox|ios node run.mjs: MEASURED.md holds its claims and method.
+// @invariant: BROWSER=chromium|chrome|firefox|ios node run.mjs: MEASURED.md holds its claims and
+// method.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 import { taps } from '../xcuitest.mjs';
 
 const BROWSER = process.env.BROWSER;
-// what is tapped, in order: its id (the DevTools protocol's taps) and its
+// @invariant: what is tapped, in order: its id (the DevTools protocol's taps) and its
 // label (XCUITest's)
 const STEPS = [['plain', 'Plain'], ['gated', 'Gated'], ['elsewhere', 'Elsewhere'], ['menu-button', 'Menu'], ['menu-close', 'Close']];
 const html = readFileSync(new URL('./page.html', import.meta.url));
@@ -23,7 +24,7 @@ const server = createServer((req, res) => {
 await new Promise(r => server.listen(0, '127.0.0.1', r));
 const url = `http://127.0.0.1:${server.address().port}/`;
 
-// the page's report of the i-th tap
+// @invariant: the page's report of the i-th tap
 const reported = async (i, id) => {
   for (let t = 0; reports.length < i + 1; t++) {
     if (t === 100) throw new Error(`no report 10s after tapping ${id}`);
@@ -97,7 +98,7 @@ for (const [claim, ok] of claims) {
   pass &&= ok;
   console.log(`${ok ? 'ok  ' : 'FAIL'} ${claim}`);
 }
-// what is recorded beside the claims: where the hover goes with the next tap,
+// @invariant: what is recorded beside the claims: where the hover goes with the next tap,
 // and the focus a tap gives
 console.log(`seen: the plain button tapped, focused ${plain.plain.focus}; the gated one tapped, the plain one still hovered ${gated.plain.hover}, the gated one focused ${gated.gated.focus}; somewhere else tapped, the gated one still hovered ${elsewhere.gated.hover}`);
 if (!pass) console.log(JSON.stringify(reports, null, 1));

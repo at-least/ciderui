@@ -1,4 +1,4 @@
-// taps(url, steps, { device, name }): Safari on an iOS simulator opens url
+// @external: taps(url, steps, { device, name }): Safari on an iOS simulator opens url
 // and XCUITest takes the steps one after another: a label, the element it
 // names tapped, a touch of the simulator's screen through its HID, as a
 // finger's (where WebDriver's taps never click, ./popover/); press:<label>,
@@ -18,7 +18,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// a command run while the probe's server answers; its output, or an error with it
+// @invariant: a command run while the probe's server answers; its output, or an error with it
 export const run = (cmd, args, env = process.env) => new Promise((resolve, reject) => {
   const p = spawn(cmd, args, { env, stdio: ['ignore', 'pipe', 'pipe'] });
   let out = '';
@@ -38,7 +38,7 @@ export async function taps(url, steps, { device = 'iPhone-17', name = 'iPhone 17
     await run('xcrun', ['simctl', 'boot', udid]);
     await run('xcrun', ['simctl', 'bootstatus', udid, '-b']);
     await run('xcodegen', ['generate', '--spec', fileURLToPath(new URL('./xcuitest/project.yml', import.meta.url)), '--project', dir]);
-    // TEST_RUNNER_ names reach the test as the names without it
+    // @external: TEST_RUNNER_ names reach the test as the names without it
     const log = await run('xcodebuild', ['test', '-project', join(dir, 'Tap.xcodeproj'), '-scheme', 'TapUITests', '-destination', `id=${udid}`, '-derivedDataPath', join(dir, 'dd')],
       { ...process.env, TEST_RUNNER_TAP_URL: url, TEST_RUNNER_TAP_STEPS: steps.join(',') });
     return {

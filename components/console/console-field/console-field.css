@@ -13,7 +13,7 @@
     letter-spacing: normal;
     appearance: none;
 
-    /* iOS zooms the page into a focused field whose text is under 16px */
+    /* @external: iOS zooms the page into a focused field whose text is under 16px */
     @media (width < 640px) {
       font-size: 16px;
       line-height: 21px;
@@ -49,7 +49,7 @@
       cursor: default;
     }
 
-    /* the box itself, not a ::after target: an <input> draws no ::after */
+    /* @trap: the box itself, not a ::after target: an <input> draws no ::after */
     @media (pointer: coarse) {
       min-height: 2.75rem;
     }
@@ -67,7 +67,7 @@
         height: auto;
       }
 
-      /* centered by padding: a file input's text sits at its padding, not in its height */
+      /* @trap: centered by padding: a file input's text sits at its padding, not in its height */
       @media (pointer: coarse) {
         height: 2.75rem;
         padding-block: calc((2.75rem - 2px - 1lh) / 2);

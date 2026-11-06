@@ -9,7 +9,7 @@ const MESSAGE = '.cui-field-message';
 const MARK = `${MESSAGE} svg`;
 const PREFIX = '.cui-field-prefix';
 const FONT = ['font-size', 'line-height'];
-// the stylesheet's :-webkit-autofill rules copied onto a class: no script can make
+// @external: the stylesheet's :-webkit-autofill rules copied onto a class: no script can make
 // a browser autofill. Its reason is the copy's, so a rule dropped fails here
 const AUTOFILLED = `<script>
   const copy = (rules) => { for (const rule of [...rules]) {
@@ -31,7 +31,8 @@ export const cases = [
       { target: INPUT, props: [...SIZE, 'color', ...PADDING, ...EDGE, 'background-color', 'height', 'box-sizing', 'box-height', 'transition-property', 'transition-duration', 'outline-style'], apple: ['retail', 'field.input'] },
       { target: INPUT, state: 'hover', props: ['color', 'background-color', 'border-top-color'], apple: ['retail', 'field.input', 'hover'] },
       { target: INPUT, state: 'focus', props: [...PADDING, ...EDGE], apple: ['retail', 'field.input', 'focus'] },
-      // against the rest probe: focused, the 2px edge takes the padding's pixel, the box unchanged
+      // @trap: against the rest probe: focused, the 2px edge takes the padding's pixel, the box
+      // unchanged
       { target: INPUT, state: 'focus', props: ['box-height'], apple: ['retail', 'field.input'] },
       { target: INPUT, state: ['focus', 'focus-visible'], props: ['padding-left', 'border-top-width', 'border-top-color', 'outline-style'], apple: ['retail', 'field.input', 'focus+focus-visible'] },
       { target: LABEL, props: [...SIZE, 'color', 'position', 'top', 'left', 'white-space', 'transition-property', 'transition-duration', 'transition-timing-function'], apple: ['retail', 'field.label'] },
@@ -107,7 +108,7 @@ export const cases = [
     ],
   },
   {
-    // the gift card's page read at 1600px alone (before its choices)
+    // @external: the gift card's page read at 1600px alone (before its choices)
     name: 'disabled-page',
     html: ex('disabled'),
     widths: [1600],
@@ -125,7 +126,7 @@ export const cases = [
     ],
   },
   {
-    // read at 1600px alone (the gift card's page enables it at its first width)
+    // @external: read at 1600px alone (the gift card's page enables it at its first width)
     name: 'prefix',
     html: ex('prefix'),
     widths: [1600],

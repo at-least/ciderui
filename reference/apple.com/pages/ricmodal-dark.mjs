@@ -1,4 +1,4 @@
-// A dark product page modal (ric-modal theme-dark), MacBook Pro's "Explore
+// @external: A dark product page modal (ric-modal theme-dark), MacBook Pro's "Explore
 // the M5 family of chips", opened (its button clicked once, at the first
 // width): its scrim (on the layer itself here, its ::after empty), its
 // panel's ground and text, a heading's color, its close button's

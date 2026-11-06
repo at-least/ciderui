@@ -22,7 +22,7 @@ type ConsoleListItem struct {
 }
 
 func (l ConsoleListItem) Render(w io.Writer) error {
-	// rendered once, then written raw: a page's node may cost, or render
+	// @trap: rendered once, then written raw: a page's node may cost, or render
 	// differently, a second time
 	var children strings.Builder
 	if l.Children != nil {

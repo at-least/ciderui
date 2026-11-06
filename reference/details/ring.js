@@ -1,4 +1,4 @@
-// ring(selector, png): the element's box and its accent's pixels beside it
+// @invariant: ring(selector, png): the element's box and its accent's pixels beside it
 // in the window's picture (a PNG in base64, at the screen's pixels): in the
 // 8px left of its box and the 8px right of it, down the window's whole
 // height, where its ring's sides are drawn (2px of the accent 3px out:
@@ -17,7 +17,7 @@ async function ring(selector, png) {
   c.height = img.height;
   const g = c.getContext('2d', { willReadFrequently: true });
   g.drawImage(img, 0, 0);
-  // #0071e3, as the screen draws it: blue, with little red
+  // @external: #0071e3, as the screen draws it: blue, with little red
   const count = (x0, x1) => {
     const from = Math.max(0, Math.round(x0 * scale)), to = Math.min(img.width, Math.round(x1 * scale));
     if (to <= from) return 0;

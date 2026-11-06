@@ -1,4 +1,4 @@
-// tv.apple.com's video player playing (tv-player's page and opening): its
+// @external: tv.apple.com's video player playing (tv-player's page and opening): its
 // controls shown by a click on the video, the centre pause in the play's
 // place; then, the pointer still, the controls hidden by its script
 // (`video-player-scrim--hidden`, 4s on), and what that leaves. At 1600px

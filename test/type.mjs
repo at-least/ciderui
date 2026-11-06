@@ -12,7 +12,7 @@ const html = names.map(n => `<p id="${n}" class="cui-${n}">Sample text</p>`).joi
   + '<p id="variant" class="cui-headline lg:cui-headline-elevated">v</p><p id="plain" class="cui-headline text-[20px]">p</p>';
 const b = await open(css, html);
 
-// the store defines no t-body: cui-body is the page's body text
+// @external: the store defines no t-body: cui-body is the page's body text
 const reading = (page, name, width, prop) => ref(page, name === 'body' ? 'page.body' : `type.t-${name}`, width, prop);
 const apple = (name, width, prop) => reading('store', name, width, prop);
 
@@ -23,7 +23,7 @@ try {
     for (const name of names) {
       const got = await b.read(`#${name}`, ['font-size', 'line-height', 'font-weight', 'letter-spacing', 'font-family']);
       for (const prop of ['font-size', 'line-height', 'font-weight']) check(`cui-${name} ${prop} at ${width}px`, got[prop], apple(name, width, prop));
-      // for apple.com's size, not the read one: a wrong size is its own failure
+      // @trap: for apple.com's size, not the read one: a wrong size is its own failure
       const size = parseFloat(apple(name, width, 'font-size'));
       check(`cui-${name} letter-spacing at ${width}px`, got['letter-spacing'], `${size * tracking[size]}px`, { tolerance: 0.001 });
       check(`cui-${name} font-family at ${width}px`, got['font-family'], STACK);
@@ -38,7 +38,8 @@ try {
     check(`lg:cui-headline-elevated over cui-headline at ${width}px`, (await b.read('#variant', ['font-size']))['font-size'], variant);
     check(`text-[20px] over cui-headline at ${width}px`, (await b.read('#plain', ['font-size']))['font-size'], '20px');
   }
-  // Traditional Chinese: apple.com/tw's store, line height and letter-spacing as it reads them
+  // @external: Traditional Chinese: apple.com/tw's store, line height and letter-spacing
+  // as it reads them
   await b.page.evaluate(() => { document.documentElement.lang = 'zh-Hant'; });
   const ZH = ['font-size', 'line-height', 'letter-spacing'];
   for (const width of WIDTHS) {
@@ -47,7 +48,7 @@ try {
       const got = await b.read(`#${name}`, ZH);
       for (const prop of ZH) check(`zh-Hant cui-${name} ${prop} at ${width}px is apple.com/tw's`, got[prop], reading('store-tw', name, width, prop));
     }
-    // the page's own text, the base's
+    // @invariant: the page's own text, the base's
     const body = await b.read('body', ['line-height', 'letter-spacing']);
     for (const prop of ['line-height', 'letter-spacing']) check(`zh-Hant body ${prop} at ${width}px is apple.com/tw's`, body[prop], reading('store-tw', 'body', width, prop));
   }

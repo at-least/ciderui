@@ -1,4 +1,4 @@
-// The store's home: the store's own type scale (its t- classes, added to the
+// @external: The store's home: the store's own type scale (its t- classes, added to the
 // page), the buttons of its shared button styles (common-css), the header, the
 // quick links, the product nav, a shelf's header, its cards (a light one with
 // a tag, a dark one, one with a plain eyebrow; their parts and hover), the
@@ -10,12 +10,12 @@ const T = ['headline-super', 'headline-elevated', 'headline', 'headline-reduced'
 const BUTTONS = ['', 'button-secondary', 'button-neutral', 'button-secondary-neutral', 'button-super', 'button-elevated',
   'button-reduced', 'button-block', 'button-light', 'button-dark'];
 const STATES = ['hover', 'active', 'focus-visible'];
-// a card by its classes: light with a tag and its picture, dark with a tag,
+// @external: a card by its classes: light with a tag and its picture, dark with a tag,
 // light with a plain eyebrow
 const LIGHT = '.rf-ccard-40.rf-card-msgtag-orange:not(.rf-ccard-darkbg):not(.rf-ccard-withvideo)';
 const DARK = '.rf-ccard-40.rf-ccard-darkbg.rf-card-msgtag-orange:not(.rf-ccard-withvideo)';
 const PLAIN = '.rf-ccard:not([class*="msgtag"]):not(.rf-ccard-darkbg):not(.rf-ccard-withvideo)';
-// the shelf of those cards
+// @external: the shelf of those cards
 const SHELF = '.rs-cardsshelf:has(.rf-ccard-40)';
 export default {
   url: 'https://www.apple.com/store',
@@ -23,14 +23,14 @@ export default {
     { name: 'type.none', inject: '<p>Sample text</p>', into: '.rs-page-content, main, body', props: TYPE },
     ...T.map(c => ({ name: `type.t-${c}`, inject: `<p class="t-${c}">Sample text</p>`, into: '.rs-page-content, main, body', props: TYPE })),
     ...BUTTONS.map(c => ({ name: `button${c ? '.' + c.replace('button-', '') : ''}`, inject: `<a href="#" class="button ${c}">Buy</a>`, into: '.rs-page-content, main, body', props: [...TYPE, ...BOX, ...TEXT, 'width', ...FOCUS, ...MOTION], box: true, states: STATES })),
-    // disabled: a <button> with the attribute, the shared styles' own
+    // @external: disabled: a <button> with the attribute, the shared styles' own
     ...['', 'button-secondary', 'button-neutral'].map(c => ({ name: `button${c ? '.' + c.replace('button-', '') : ''}.disabled`, inject: `<button class="button ${c}" disabled>Buy</button>`, into: '.rs-page-content, main, body', props: [...TYPE, ...BOX, ...TEXT], box: true, states: ['hover'] })),
     { name: 'page.body', select: 'body', props: PAGE },
     { name: 'page.strong', select: 'main strong, main b, .rs-page-content strong, body strong', props: TYPE },
     { name: 'header', select: 'h1.rs-shop-header', props: [...TYPE, 'margin-top', 'margin-bottom'] },
     { name: 'header.tagline', select: '.rs-shop-header + *, .rs-shop-subheader', props: TYPE },
     { name: 'quicklink', select: '.rs-quicklinks-button', props: [...TYPE, ...BOX], box: true, states: ['hover'] },
-    // the quick links: their place (the shelf's inset), title, list and items
+    // @external: the quick links: their place (the shelf's inset), title, list and items
     { name: 'quicklinks', select: '.rs-quicklinks', props: ['margin-left', 'margin-right', 'padding-top', 'padding-bottom'], box: true, position: true },
     { name: 'quicklinks.title', select: '.rs-quicklinks-title', props: [...TYPE, 'margin-left', 'margin-right', 'padding-bottom', 'margin-top', 'margin-bottom'], box: true },
     { name: 'quicklinks.list', select: '.rs-quicklinks-list', props: ['display', 'flex-wrap', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left', 'margin-top'], box: true },
@@ -38,7 +38,7 @@ export default {
     { name: 'quicklinks.item-second', select: '.rs-quicklinks-item:nth-child(2)', props: ['display'], box: true, position: true },
     { name: 'productnav.title', select: '.rf-productnav-card-title', props: [...TYPE, 'display', 'text-align'] },
     { name: 'productnav.image', select: '.rf-productnav-card-image img', props: ['width', 'height'], box: true },
-    // the product nav: a shelf of small cards (the store's own shelf: its
+    // @external: the product nav: a shelf of small cards (the store's own shelf: its
     // inset, its snapping), each its image above its name
     { name: 'productnav', select: '.rs-productnav-cardsshelf', props: ['padding-top', 'padding-bottom'], box: true },
     { name: 'productnav.crop', select: '.rs-productnav-cardsshelf .rf-cards-scroller-crop', props: ['height', 'padding-bottom'], box: true },
@@ -46,7 +46,7 @@ export default {
     { name: 'productnav.card-second', select: '.rs-productnav-cardsshelf [data-core-scroller-item]:nth-child(2) .rf-cards-scroller-itemview', props: ['transform'], box: true, position: true },
     { name: 'productnav.content', select: '.rs-productnav-cardsshelf .rf-productnav-card-content', props: ['padding-top', 'padding-right', 'padding-bottom', 'padding-left'], box: true },
     { name: 'productnav.image-box', select: '.rs-productnav-cardsshelf .rf-productnav-card-image', props: ['padding-bottom', 'text-align'], box: true },
-    // a shelf of cards, the one holding the 400px cards: its header (its
+    // @external: a shelf of cards, the one holding the 400px cards: its header (its
     // headline and the secondary text after it), its scroller (in a crop that
     // hides its scrollbar), its items, the room around them
     { name: 'shelf', select: SHELF, props: ['padding-top', 'padding-bottom', 'position', 'background-color'], box: true },
@@ -60,7 +60,7 @@ export default {
     { name: 'shelf.card', select: `${SHELF} .rf-cards-scroller-itemview`, props: ['margin-right', 'transform'], box: true, position: true },
     { name: 'shelf.card-second', select: `${SHELF} [data-core-scroller-item]:nth-child(2) .rf-cards-scroller-itemview`, props: ['transform'], box: true, position: true },
     { name: 'shelf.card-last', select: `${SHELF} [data-core-scroller-item]:last-child .rf-cards-scroller-itemview`, props: ['margin-right', 'padding-right', 'transform'], box: true },
-    // the cards: a light one with a tag (rf-card-msgtag-orange: "NEW"), its
+    // @external: the cards: a light one with a tag (rf-card-msgtag-orange: "NEW"), its
     // picture filling it, its info over the picture; a dark one
     // (rf-ccard-darkbg); a light one with a plain eyebrow ("APPLE
     // SPECIALIST"); a header first in its info (no eyebrow above it); a dark
@@ -84,7 +84,7 @@ export default {
     { name: 'card.dark-link', select: `${DARK} .rf-ccard-content-headerlink`, props: ['color'] },
     { name: 'card.dark-desc', select: `${DARK} .rf-ccard-content-desc`, props: ['color'] },
     { name: 'card.dark-price', select: `${DARK} .rf-ccard-content-descprice`, props: ['color'] },
-    // the shelf's paddles, at its sides over its scroller: the next one (the
+    // @external: the shelf's paddles, at its sides over its scroller: the next one (the
     // previous disabled at the start), its place and motion; the previous
     // hidden
     { name: 'shelf.paddle', select: `${SHELF} .paddlenav-arrow-next`, props: [...BOX, 'width', 'height', 'color', 'opacity', 'transform', 'position', 'top', 'right', ...MOTION], box: true, position: true, states: ['hover', 'active'] },

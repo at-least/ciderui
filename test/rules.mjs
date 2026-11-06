@@ -1,4 +1,4 @@
-// The kit's rules that hold for every part, read off every example, not listed
+// @invariant: The kit's rules that hold for every part, read off every example, not listed
 // per part: a new part is held to them with no line of its own.
 
 import { readFileSync } from 'node:fs';
@@ -9,7 +9,7 @@ import { OUTLINE } from './harness.mjs';
 import { ref } from './reference.mjs';
 import { check, done } from './check.mjs';
 
-// rule 5: what (hover: hover) gates, a touch screen never matches
+// @invariant: rule 5: what (hover: hover) gates, a touch screen never matches
 // (test/browser.mjs throws on a touch page where it does)
 const hoverOutsideItsQuery = (text) => {
   const enclosing = [];
@@ -32,15 +32,15 @@ const hoverOutsideItsQuery = (text) => {
 };
 for (const set of ['site', 'console']) check(`${set}: every :hover sits inside (hover: hover) (rule 5)`, hoverOutsideItsQuery(shipped(set)).join(' | '), '');
 
-// rule 9's exceptions, each read in its part's test: a text field draws its
+// @invariant: rule 9's exceptions, each read in its part's test: a text field draws its
 // edge or halo in the ring's place; the others move the one ring in, where a
 // scroller or their edge would clip it
 const NO_RING = ['cui-console-field', 'cui-field-input'];
 const RING_MOVED = ['cui-console-list-item'];
-// rule 10 is a pointer's color change; these change with a panel opening, a
+// @invariant: rule 10 is a pointer's color change; these change with a panel opening, a
 // field's label rising or its text typed, each read in its part's test
 const OWN_MOTION = ['.cui-field-label'];
-// what the keyboard reaches
+// @invariant: what the keyboard reaches
 const CONTROLS = 'a[href], button, input:not([type=hidden]), select, textarea, summary, [tabindex]:not([tabindex="-1"])';
 
 const tracking = JSON.parse(readFileSync(join(ROOT, 'reference/tracking/cui-tracking.json'), 'utf8'));
@@ -66,7 +66,7 @@ const readTextAndMotion = ([set, tracking, ownMotion]) => {
       if (cs.letterSpacing !== 'normal') spacing.push(`${label(e)}: ${cs.letterSpacing}`);
     } else {
       const size = parseFloat(cs.fontSize);
-      // not "more than off": `normal` parses to NaN, which compares false either way
+      // @trap: not "more than off": `normal` parses to NaN, which compares false either way
       if (!(Math.abs(parseFloat(cs.letterSpacing) - size * tracking[size]) <= 0.001)) spacing.push(`${label(e)}: ${cs.fontSize} at ${cs.letterSpacing}`);
     }
   }
@@ -79,7 +79,7 @@ const motionUsed = new Set();
 let examples = 0;
 let controls = 0;
 let texts = 0;
-// one page a set, its body swapped: no example has a script, and a page's open is
+// @trap: one page a set, its body swapped: no example has a script, and a page's open is
 // the most of this step's time
 const pages = { site: await open(shipped('site'), ''), console: await open(shipped('console'), '') };
 
@@ -105,7 +105,7 @@ for (const part of COMPONENTS) {
       controls++;
       const noRing = NO_RING.filter((c) => own.includes(c));
       const moved = RING_MOVED.filter((c) => own.includes(c));
-      // both, as a keyboard's focus is: a field's :focus sets the ring aside
+      // @trap: both, as a keyboard's focus is: a field's :focus sets the ring aside
       const ring = await page.read(`[data-cui-control="${i}"]`, OUTLINE, { state: ['focus', 'focus-visible'] });
       const off = OUTLINE.filter((prop) => ring[prop] !== ref('home', 'button', 1200, prop, 'focus-visible'));
       if (noRing.length) {
@@ -120,11 +120,11 @@ for (const part of COMPONENTS) {
 }
 await pages.site.close();
 await pages.console.close();
-// an exception nothing needs is a part let off for nothing
+// @invariant: an exception nothing needs is a part let off for nothing
 check('every part that sets the ring aside still does', NO_RING.filter((c) => !noRingUsed.has(c)).join(' '), '');
 check('every part that moves the ring still does', RING_MOVED.filter((c) => !ringMovedUsed.has(c)).join(' '), '');
 check('every part with its own color motion still has it', OWN_MOTION.filter((s) => !motionUsed.has(s)).join(' '), '');
-// a rule read off nothing would pass having held nothing
+// @trap: a rule read off nothing would pass having held nothing
 check(`the rules read every example (${examples}), its controls (${controls}) and its text (${texts})`, examples > 0 && controls > 0 && texts > 0, true);
 
 await quit();

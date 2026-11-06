@@ -1,4 +1,4 @@
-// The home page on a touch screen 1024px wide (a tablet's: the bar's links in
+// @external: The home page on a touch screen 1024px wide (a tablet's: the bar's links in
 // a row), Mac's link in the bar tapped (`tap`, the DevTools protocol's touch
 // events): apple.com's script, having seen a touch on the bar, opens its
 // flyout in place of following the link. Read only.

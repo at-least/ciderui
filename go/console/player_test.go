@@ -13,11 +13,11 @@ import (
 
 const playerPoster = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjkwMCI+PHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjNGE2YjhhIi8+PGNpcmNsZSBjeD0iMTE4MCIgY3k9IjMwMCIgcj0iMTQwIiBmaWxsPSIjZThjMjdhIi8+PHJlY3QgeT0iNjIwIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIyODAiIGZpbGw9IiMyZjRhM2EiLz48L3N2Zz4="
 
-// a frame of stills, as muse draws them: each <img> over the last, the
+// @external: a frame of stills, as muse draws them: each <img> over the last, the
 // page's script showing one at a time
 const playerStill = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjkwMCI+PHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjNmE0YThhIi8+PGNpcmNsZSBjeD0iNDIwIiBjeT0iMzIwIiByPSIxNjAiIGZpbGw9IiNmMGQwYTAiLz48cmVjdCB5PSI2NDAiIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjI2MCIgZmlsbD0iIzNhMmE0YSIvPjwvc3ZnPg=="
 
-// the voices and the subtitles side by side, as the Apple TV app's
+// @external: the voices and the subtitles side by side, as the Apple TV app's
 func subtitlesMenu() console.ConsoleChoiceMenu {
 	return console.ConsoleChoiceMenu{ID: "subtitles", Class: "", Columns: []console.ConsoleChoiceColumn{
 		{Name: "voices", Title: "Voices", Choices: []console.ConsoleChoice{
@@ -75,7 +75,7 @@ func stills() console.ConsolePlayer {
 	return p
 }
 
-// a page's own controls in the bar while full screen, as muse's: a report and the next item to look at
+// @external: a page's own controls in the bar while full screen, as muse's: a report and the next item to look at
 func fullScreen() console.ConsolePlayer {
 	p := stills()
 	p.FullScreen = true
@@ -86,7 +86,7 @@ func fullScreen() console.ConsolePlayer {
 	return p
 }
 
-// before it first plays: the title, its length, a sentence, Play, and Start Over hidden until the page's script shows it
+// @invariant: before it first plays: the title, its length, a sentence, Play, and Start Over hidden until the page's script shows it
 func intro() console.ConsolePlayer {
 	p := stills()
 	p.State = console.ConsolePlayerStatePaused
@@ -95,7 +95,7 @@ func intro() console.ConsolePlayer {
 	return p
 }
 
-// played to the end, over its last picture: the page's next step, a sentence, a button and a link, and Play Again
+// @invariant: played to the end, over its last picture: the page's next step, a sentence, a button and a link, and Play Again
 func end() console.ConsolePlayer {
 	p := stills()
 	p.Ended = true

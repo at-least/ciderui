@@ -1,6 +1,6 @@
 @layer components {
   .cui-field {
-    /* rule 6: the containing block its label and prefix are placed in */
+    /* @invariant: rule 6: the containing block its label and prefix are placed in */
     position: relative;
     color-scheme: light;
     border-radius: 12px;
@@ -10,7 +10,7 @@
   .cui-field-input {
     display: block;
     width: 100%;
-    /* rule 6: apple.com's fixed height */
+    /* @invariant: rule 6: apple.com's fixed height */
     height: 56px;
     padding: 18px 16px 0;
     border: 1px solid var(--cui-c-border);
@@ -66,7 +66,7 @@
     letter-spacing: var(--cui-tracking-12);
   }
 
-  /* rules of their own: a browser that does not know this pseudo-class would
+  /* @external: rules of their own: a browser that does not know this pseudo-class would
      drop a selector list naming it */
   .cui-field-input:-webkit-autofill + .cui-field-label {
     top: 10px;
@@ -75,7 +75,7 @@
     letter-spacing: var(--cui-tracking-12);
   }
 
-  /* an inset shadow: the browser's own autofill ground is !important */
+  /* @external: an inset shadow: the browser's own autofill ground is !important */
   .cui-field-input:-webkit-autofill {
     box-shadow: inset 0 0 0 1000px var(--cui-c-bg);
     -webkit-text-fill-color: var(--cui-c-text);

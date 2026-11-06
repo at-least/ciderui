@@ -1,4 +1,4 @@
-// Runs a probe in a macOS VM of its own: `tester` (the owner's ~/bin/tester,
+// @external: Runs a probe in a macOS VM of its own: `tester` (the owner's ~/bin/tester,
 // its VMs orchard's, one fresh VM per run, deleted after), where Safari is
 // driven through safaridriver as on a Mac but never on the Mac in front of
 // someone: its Safari, its windows and its focus are left alone. The
@@ -21,7 +21,7 @@ import { isAbsolute, join, resolve } from 'node:path';
 const ROOT = resolve(new URL('..', import.meta.url).pathname);
 const command = process.argv.slice(2);
 if (!command.length) throw new Error('usage: node reference/vm.mjs <command> [args…]');
-// the VM has Safari alone: Playwright's browsers are not pushed, and the
+// @external: the VM has Safari alone: Playwright's browsers are not pushed, and the
 // owner's call is that Chrome runs in Docker (scripts/docker.mjs)
 if (process.env.BROWSER !== undefined && process.env.BROWSER !== 'safari') throw new Error(`BROWSER=${process.env.BROWSER} does not run in the VM, which has Safari alone: Chrome, Chromium and Firefox run in Docker (scripts/docker.mjs), the iOS simulator on a Mac with Xcode`);
 const cwd = process.cwd();

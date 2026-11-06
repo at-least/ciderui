@@ -1,10 +1,10 @@
-// Runs on a blank page: SVG markup drawn on a canvas at `scale` pixels to the
+// @invariant: Runs on a blank page: SVG markup drawn on a canvas at `scale` pixels to the
 // view box's unit, read as an ink mask; its ink's box in view box units, and
 // the ink's runs along given rows and columns (a stroke's thickness where a
 // row or column crosses it once). compare(a, b) is the share of ink the two
 // have in common (intersection over union).
 async function raster(markup, scale) {
-  // an image needs the SVG namespace, which markup inline in HTML goes without
+  // @external: an image needs the SVG namespace, which markup inline in HTML goes without
   if (!markup.includes('xmlns=')) markup = markup.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
   const svg = new DOMParser().parseFromString(markup, 'image/svg+xml').documentElement;
   const [, , vw, vh] = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
@@ -30,7 +30,7 @@ async function raster(markup, scale) {
     left = Math.min(left, x); right = Math.max(right, x); top = Math.min(top, y); bottom = Math.max(bottom, y);
   }
   const u = v => +(v / scale).toFixed(3);
-  // the runs of ink along a row (y) or a column (x), in view box units
+  // @invariant: the runs of ink along a row (y) or a column (x), in view box units
   const runs = (axis, at) => {
     const out = [];
     let start = -1;
