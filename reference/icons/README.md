@@ -64,7 +64,7 @@ The global nav's search, opened, draws four more SVGs, each a regular one from 8
 | a suggested search's magnifier | 0.9639 |
 | the magnifier, compact | 0.9792 |
 
-Intersection over union; the probe fails below 0.85, a mark set before the run, or if the search's examples (`components/globalnav/examples/search.html`, `suggestions.html`) draw others. Measured 2026-10-19 on https://www.apple.com/ in Chromium 151 on Linux, the clear mark and a suggested search's magnifier 2026-10-21 (`results/searchfield.json`).
+Intersection over union; the probe fails below 0.85, a mark set before the run, or if the search's examples (`components/site/globalnav/examples/search.html`, `suggestions.html`) draw others. Measured 2026-10-19 on https://www.apple.com/ in Chromium 151 on Linux, the clear mark and a suggested search's magnifier 2026-10-21 (`results/searchfield.json`).
 
 ## The flyouts' chevrons
 
@@ -84,7 +84,7 @@ A link's flyout in the global nav (`../apple.com/`, `flyout:*`) draws three more
 | the back button's (`FLYOUT_BACK`) | 0.9962 |
 | a hovered row's (`FLYOUT_COMPACT`) | 0.9962 |
 
-Intersection over union; `flyout.mjs` fails below 0.85, a mark set before the run, or if the flyout's example (`components/globalnav/examples/flyout.html`) draws others. Measured 2026-10-21 on https://www.apple.com/ in Chromium 151 on Linux (`results/flyout.json`).
+Intersection over union; `flyout.mjs` fails below 0.85, a mark set before the run, or if the flyout's example (`components/site/globalnav/examples/flyout.html`) draws others. Measured 2026-10-21 on https://www.apple.com/ in Chromium 151 on Linux (`results/flyout.json`).
 
 ## The field's icons
 
@@ -141,6 +141,6 @@ The global nav's bag, opened (`../apple.com/`, `bag-flyout:*`), draws an icon be
 | the person | 0.972 |
 | the person, compact | 0.986 |
 
-Intersection over union; the probe fails below 0.85, a mark set before the run, or if the bag's example (`components/globalnav/examples/bag.html`) draws others. Measured 2026-10-22 on https://www.apple.com/ in Chromium 151 on Linux (`results/bag.json`).
+Intersection over union; the probe fails below 0.85, a mark set before the run, or if the bag's example (`components/site/globalnav/examples/bag.html`) draws others. Measured 2026-10-22 on https://www.apple.com/ in Chromium 151 on Linux (`results/bag.json`).
 
 Apple's developer documentation's icons (`docc.mjs`, `results/docc.json`) were measured here for the docs set, removed 2026-11-04 with it (the owner: 「ciderui也不再支援docs」); git history has them.
