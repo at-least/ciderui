@@ -1,7 +1,8 @@
 import { execFileSync } from 'node:child_process';
 import { mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { ROOT, tailwind } from './compile.mjs';
+import { ROOT, UTILITIES_ENTRY, tailwind } from './compile.mjs';
 
 // the module's package directories, not `.`: gofmt would walk node_modules,
 // which go.mod's ignore keeps from go's own commands
@@ -19,16 +20,20 @@ for (const args of [
 // what a site with utilities of its own does: its Go tool writes utilities.css,
 // Tailwind builds its second stylesheet from there. Everything else reads the
 // checkout, so a stylesheet left out of go:embed fails here and nowhere else.
-const written = mkdtempSync(join(ROOT, 'written-kit-'));
+// Written outside this repository, as a site's target/ is beside its node_modules
+// and not under them: a bare @import in a written file would resolve from there.
+const written = mkdtempSync(join(tmpdir(), 'written-kit-'));
+const site = mkdtempSync(join(ROOT, 'site-entry-'));
 try {
   execFileSync('go', ['run', './go/cmd/ciderui-css', written], { cwd: ROOT, stdio: 'pipe' });
-  const entry = join(written, 'entry.css');
-  writeFileSync(entry, '@import "./utilities.css" source(none);\n@source inline("px-8 md:cui-headline");\n');
+  const entry = join(site, 'entry.css');
+  writeFileSync(entry, `${UTILITIES_ENTRY(`${written}/utilities.css`)}\n@source inline("px-8 md:cui-headline");\n`);
   const built = tailwind(entry);
   for (const rule of ['.px-8', '.md\\:cui-headline']) if (!built.includes(rule)) throw new Error(`utilities.css written by ciderui-css built with no ${rule}: ${built.slice(0, 200)}`);
   if (built.includes('.cui-btn')) throw new Error('utilities.css built with a part');
 } finally {
   rmSync(written, { recursive: true });
+  rmSync(site, { recursive: true });
 }
 // a part's every branch has a test: a new panic with no Break, or a new
 // branch no example draws, stops here

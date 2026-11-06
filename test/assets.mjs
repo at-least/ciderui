@@ -3,14 +3,14 @@
 
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { ROOT, shipped, tailwind } from './compile.mjs';
+import { ROOT, UTILITIES_ENTRY, shipped, tailwind } from './compile.mjs';
 import { open, quit } from './browser.mjs';
 import { check, done } from './check.mjs';
 
 const dir = mkdtempSync(join(ROOT, 'assets-'));
 let own;
 try {
-  writeFileSync(join(dir, 'entry.css'), `@import "../utilities.css" source(none);\n@source inline("px-8 md:px-8");\n`);
+  writeFileSync(join(dir, 'entry.css'), `${UTILITIES_ENTRY('../utilities.css')}\n@source inline("px-8 md:px-8");\n`);
   own = tailwind(join(dir, 'entry.css'));
 } finally {
   rmSync(dir, { recursive: true });

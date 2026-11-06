@@ -26,7 +26,10 @@ go tool ciderui-css target/ciderui
 ```
 
 ```css
-@import "../target/ciderui/utilities.css" source(none);
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../target/ciderui/utilities.css";
 @source "../pages/*.go";
 ```
 

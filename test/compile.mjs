@@ -13,6 +13,14 @@ export const COMPONENTS = ['site', 'console']
   .sort((a, b) => (a.name < b.name ? -1 : 1));
 export const componentDir = (name) => COMPONENTS.find((c) => c.name === name).dir;
 
+// the entry README.md tells a site to write, read from there so the two cannot
+// part: its own path to utilities.css, no @source of its pages
+export const UTILITIES_ENTRY = (utilities) => {
+  const [, block] = readFileSync(join(ROOT, 'README.md'), 'utf8').match(/```css\n([^]*?)```/);
+  if (!block.includes('../target/ciderui/utilities.css')) throw new Error('README.md writes no utilities.css');
+  return block.replace('../target/ciderui/utilities.css', utilities).replace(/^@source .*\n/m, '');
+};
+
 // entry, a file of its own: `@import` resolves from where it sits. Minified, as a
 // site ships it.
 export function tailwind(entry) {

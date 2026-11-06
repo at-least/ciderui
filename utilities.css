@@ -1,8 +1,5 @@
-/* A site's own utilities, its second stylesheet, after the kit's: the same
-   layers, so a utility beats a part. No preflight and no part: those are the
-   kit's stylesheet's. */
-@layer theme, base, components, utilities;
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/utilities.css" layer(utilities);
+/* What a site's own utilities need of the kit: the breakpoints and the type. Its
+   entry imports Tailwind's own beside this (README.md), resolving them from its
+   node_modules: from this written file they would not resolve. */
 @import "./theme.css";
 @import "./type.css";
