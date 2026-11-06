@@ -7,6 +7,11 @@ const LABEL = '.cui-option-label';
 
 export const cases = [
   {
+    name: 'zh-hant',
+    html: `<div lang="zh-Hant">${ex('option')}</div>`,
+    checks: [{ target: '.cui-option-title', props: ['line-height', 'letter-spacing'], apple: ['buy-tw', 'option.title'] }],
+  },
+  {
     name: 'option',
     widths: WITH_1600,
     html: ex('option'),

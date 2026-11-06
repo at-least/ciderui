@@ -32,6 +32,10 @@
     font-weight: 400;
     letter-spacing: var(--cui-tracking-17);
     color: var(--cui-c-text);
+
+    &:where(:lang(zh)) {
+      line-height: 23px;
+    }
     background-color: var(--cui-c-field);
   }
 

@@ -144,3 +144,21 @@
   --cui-video-control-fill-hover: rgb(255 255 255 / 0.24);
   --cui-video-preview-shadow: 0 0 0 1px rgb(255 255 255 / 0.15), 0 4px 12px rgb(0 0 0 / 0.4);
 }
+
+/* Traditional Chinese: apple.com/tw's (store-tw). The system's Chinese face has no
+   tracking of its own at any size (1em an ideograph, measured on macOS), so these
+   are its values as they are, where the others are fitted to SF's. On the element
+   with the attribute, not :lang(): that would redeclare them on every element. */
+[lang|="zh"] {
+  --cui-tracking-12: normal;
+  --cui-tracking-14: normal;
+  --cui-tracking-17: normal;
+  --cui-tracking-19: 0.012em;
+  --cui-tracking-21: 0.011em;
+  --cui-tracking-24: 0.009em;
+  --cui-tracking-28: 0.007em;
+  --cui-tracking-32: 0.004em;
+  --cui-tracking-40: normal;
+  --cui-tracking-48: normal;
+  --cui-tracking-64: normal;
+}

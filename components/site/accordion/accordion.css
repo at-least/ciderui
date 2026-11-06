@@ -61,6 +61,10 @@
     letter-spacing: var(--cui-tracking-14);
     color: var(--cui-c-text);
 
+    &:where(:lang(zh)) {
+      line-height: 21px;
+    }
+
     @media (width >= 735px) {
       padding-right: 35px;
     }

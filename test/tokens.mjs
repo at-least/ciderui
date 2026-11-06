@@ -6,7 +6,8 @@ import { check, done } from './check.mjs';
 
 const css = readFileSync(join(ROOT, 'tokens.css'), 'utf8');
 const tbTokens = JSON.parse(readFileSync(join(ROOT, 'reference/asc/results/tokens.json'), 'utf8')).tokens;
-const vars = Object.fromEntries([...css.matchAll(/^\s*(--cui-[a-z0-9-]+):\s*([^;]+);/gm)].map(m => [m[1], m[2].trim()]));
+// the first block, :root's: the table a language's block overrides is not this one
+const vars = Object.fromEntries([...css.slice(0, css.indexOf('\n}\n')).matchAll(/^\s*(--cui-[a-z0-9-]+):\s*([^;]+);/gm)].map(m => [m[1], m[2].trim()]));
 
 const sides = (name) => {
   const v = vars[name];

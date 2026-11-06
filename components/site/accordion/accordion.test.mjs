@@ -8,6 +8,11 @@ const Q = '.cui-accordion-question';
 
 export const cases = [
   {
+    name: 'zh-hant',
+    html: `<div lang="zh-Hant">${ex('accordion')}</div>`,
+    checks: [{ target: `${OPEN} .cui-accordion-answer`, props: ['line-height', 'letter-spacing'], apple: ['buy-tw', 'accordion.content'] }],
+  },
+  {
     name: 'accordion',
     html: ex('accordion'),
     checks: [

@@ -235,6 +235,13 @@ export const cases = [
     ],
   },
   {
+    name: 'menu-zh-hant',
+    html: `<div lang="zh-Hant">${NAV}</div>`,
+    ...OPEN,
+    reducedMotion: 'reduce',
+    checks: [{ target: LINK2, props: ['line-height', 'letter-spacing'], apple: ['home-tw', 'menu.link'] }],
+  },
+  {
     name: 'menu',
     html: NAV,
     ...OPEN,

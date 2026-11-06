@@ -116,6 +116,10 @@
     font-weight: 600;
     letter-spacing: var(--cui-tracking-28);
     color: var(--cui-c-on-menu);
+
+    &:where(:lang(zh)) {
+      letter-spacing: normal;
+    }
     /* a <button>'s own look undone, for a POST item (sign out) */
     text-align: start;
     cursor: pointer;

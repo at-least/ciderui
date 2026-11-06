@@ -13,9 +13,8 @@ const html = names.map(n => `<p id="${n}" class="cui-${n}">Sample text</p>`).joi
 const b = await open(css, html);
 
 // the store defines no t-body: cui-body is the page's body text
-const apple = (name, width, prop) => name === 'body'
-  ? ref('store', 'page.body', width, prop)
-  : ref('store', `type.t-${name}`, width, prop);
+const reading = (page, name, width, prop) => ref(page, name === 'body' ? 'page.body' : `type.t-${name}`, width, prop);
+const apple = (name, width, prop) => reading('store', name, width, prop);
 
 const STACK = '-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Noto Sans TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif';
 try {
@@ -38,6 +37,19 @@ try {
     await b.resize(width);
     check(`lg:cui-headline-elevated over cui-headline at ${width}px`, (await b.read('#variant', ['font-size']))['font-size'], variant);
     check(`text-[20px] over cui-headline at ${width}px`, (await b.read('#plain', ['font-size']))['font-size'], '20px');
+  }
+  // Traditional Chinese: apple.com/tw's store, line height and letter-spacing as it reads them
+  await b.page.evaluate(() => { document.documentElement.lang = 'zh-Hant'; });
+  const ZH = ['font-size', 'line-height', 'letter-spacing'];
+  for (const width of WIDTHS) {
+    await b.resize(width);
+    for (const name of names) {
+      const got = await b.read(`#${name}`, ZH);
+      for (const prop of ZH) check(`zh-Hant cui-${name} ${prop} at ${width}px is apple.com/tw's`, got[prop], reading('store-tw', name, width, prop));
+    }
+    // the page's own text, the base's
+    const body = await b.read('body', ['line-height', 'letter-spacing']);
+    for (const prop of ['line-height', 'letter-spacing']) check(`zh-Hant body ${prop} at ${width}px is apple.com/tw's`, body[prop], reading('store-tw', 'body', width, prop));
   }
 } finally {
   await b.close();

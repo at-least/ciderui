@@ -3,10 +3,16 @@
   line-height: 44px;
   letter-spacing: var(--cui-tracking-40);
   font-weight: 600;
+  &:where(:lang(zh)) {
+    line-height: 43.75px;
+  }
   @media (width >= 735px) {
     font-size: 64px;
     line-height: 68px;
     letter-spacing: var(--cui-tracking-64);
+    &:where(:lang(zh)) {
+      line-height: 70px;
+    }
   }
 }
 
@@ -15,6 +21,10 @@
   line-height: 36px;
   letter-spacing: var(--cui-tracking-32);
   font-weight: 600;
+  &:where(:lang(zh)) {
+    line-height: 39px;
+    letter-spacing: normal;
+  }
   @media (width >= 735px) {
     font-size: 48px;
     line-height: 52px;
@@ -27,6 +37,9 @@
   line-height: 32px;
   letter-spacing: var(--cui-tracking-28);
   font-weight: 600;
+  &:where(:lang(zh)) {
+    line-height: 35px;
+  }
   @media (width >= 735px) {
     font-size: 40px;
     line-height: 44px;
@@ -39,10 +52,16 @@
   line-height: 25px;
   letter-spacing: var(--cui-tracking-21);
   font-weight: 600;
+  &:where(:lang(zh)) {
+    line-height: 28px;
+  }
   @media (width >= 735px) {
     font-size: 28px;
     line-height: 32px;
     letter-spacing: var(--cui-tracking-28);
+    &:where(:lang(zh)) {
+      line-height: 35px;
+    }
   }
 }
 
@@ -51,10 +70,16 @@
   line-height: 25px;
   letter-spacing: var(--cui-tracking-21);
   font-weight: 600;
+  &:where(:lang(zh)) {
+    line-height: 28px;
+  }
   @media (width >= 735px) {
     font-size: 24px;
     line-height: 28px;
     letter-spacing: var(--cui-tracking-24);
+    &:where(:lang(zh)) {
+      line-height: 31px;
+    }
   }
 }
 
@@ -63,10 +88,16 @@
   line-height: 23px;
   letter-spacing: var(--cui-tracking-19);
   font-weight: 600;
+  &:where(:lang(zh)) {
+    line-height: 26px;
+  }
   @media (width >= 735px) {
     font-size: 21px;
     line-height: 25px;
     letter-spacing: var(--cui-tracking-21);
+    &:where(:lang(zh)) {
+      line-height: 28px;
+    }
   }
 }
 
@@ -75,10 +106,16 @@
   line-height: 28px;
   letter-spacing: var(--cui-tracking-24);
   font-weight: 600;
+  &:where(:lang(zh)) {
+    line-height: 31px;
+  }
   @media (width >= 735px) {
     font-size: 32px;
     line-height: 36px;
     letter-spacing: var(--cui-tracking-32);
+    &:where(:lang(zh)) {
+      line-height: 39px;
+    }
   }
 }
 
@@ -87,10 +124,16 @@
   line-height: 25px;
   letter-spacing: var(--cui-tracking-21);
   font-weight: 600;
+  &:where(:lang(zh)) {
+    line-height: 28px;
+  }
   @media (width >= 735px) {
     font-size: 24px;
     line-height: 28px;
     letter-spacing: var(--cui-tracking-24);
+    &:where(:lang(zh)) {
+      line-height: 31px;
+    }
   }
 }
 
@@ -111,10 +154,16 @@
   line-height: 32px;
   letter-spacing: var(--cui-tracking-24);
   font-weight: 400;
+  &:where(:lang(zh)) {
+    line-height: 31.5px;
+  }
   @media (width >= 735px) {
     font-size: 32px;
     line-height: 40px;
     letter-spacing: var(--cui-tracking-32);
+    &:where(:lang(zh)) {
+      line-height: 42px;
+    }
   }
 }
 
@@ -123,10 +172,16 @@
   line-height: 32px;
   letter-spacing: var(--cui-tracking-24);
   font-weight: 600;
+  &:where(:lang(zh)) {
+    line-height: 31.5px;
+  }
   @media (width >= 735px) {
     font-size: 32px;
     line-height: 40px;
     letter-spacing: var(--cui-tracking-32);
+    &:where(:lang(zh)) {
+      line-height: 42px;
+    }
   }
 }
 
@@ -159,6 +214,9 @@
   line-height: 23px;
   letter-spacing: var(--cui-tracking-19);
   font-weight: 600;
+  &:where(:lang(zh)) {
+    line-height: 26px;
+  }
 }
 
 @utility cui-body {
@@ -173,6 +231,9 @@
   line-height: 21px;
   letter-spacing: var(--cui-tracking-17);
   font-weight: 400;
+  &:where(:lang(zh)) {
+    line-height: 23px;
+  }
 }
 
 @utility cui-body-reduced {
@@ -180,6 +241,9 @@
   line-height: 20px;
   letter-spacing: var(--cui-tracking-14);
   font-weight: 400;
+  &:where(:lang(zh)) {
+    line-height: 21px;
+  }
 }
 
 @utility cui-body-reduced-tight {
@@ -187,6 +251,9 @@
   line-height: 18px;
   letter-spacing: var(--cui-tracking-14);
   font-weight: 400;
+  &:where(:lang(zh)) {
+    line-height: 19px;
+  }
 }
 
 @utility cui-caption {

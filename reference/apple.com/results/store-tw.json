@@ -1,0 +1,1044 @@
+{
+ "url": "https://www.apple.com/tw/store",
+ "finalUrl": "https://www.apple.com/tw/store",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-11-06T12:39:56.649Z",
+ "widths": {
+  "390": {
+   "type.t-headline-super": {
+    "html": "<p class=\"t-headline-super\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "48px",
+     "line-height": "52.2px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline-elevated": {
+    "html": "<p class=\"t-headline-elevated\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "43.75px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline": {
+    "html": "<p class=\"t-headline\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "39px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline-reduced": {
+    "html": "<p class=\"t-headline-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "35px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline-standalone": {
+    "html": "<p class=\"t-headline-standalone\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow-super": {
+    "html": "<p class=\"t-eyebrow-super\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "31px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow-elevated": {
+    "html": "<p class=\"t-eyebrow-elevated\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "28.0015px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow": {
+    "html": "<p class=\"t-eyebrow\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "28.0015px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow-reduced": {
+    "html": "<p class=\"t-eyebrow-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "26.0004px",
+     "font-weight": "600",
+     "letter-spacing": "0.228px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-intro-elevated": {
+    "html": "<p class=\"t-intro-elevated\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "29.001px",
+     "font-weight": "400",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-intro": {
+    "html": "<p class=\"t-intro\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "27.0009px",
+     "font-weight": "400",
+     "letter-spacing": "0.228px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body": {
+    "html": "<p class=\"t-body\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body-tight": {
+    "html": "<p class=\"t-body-tight\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "23.0003px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body-reduced": {
+    "html": "<p class=\"t-body-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body-reduced-tight": {
+    "html": "<p class=\"t-body-reduced-tight\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "19.0006px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-caption": {
+    "html": "<p class=\"t-caption\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-label": {
+    "html": "<p class=\"t-label\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "28.0015px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-callout": {
+    "html": "<p class=\"t-callout\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "31px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-tout": {
+    "html": "<p class=\"t-tout\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "26.0004px",
+     "font-weight": "600",
+     "letter-spacing": "0.228px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-quote": {
+    "html": "<p class=\"t-quote\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "36.0034px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-quote-reduced": {
+    "html": "<p class=\"t-quote-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "31.5px",
+     "font-weight": "400",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-manifesto": {
+    "html": "<p class=\"t-manifesto\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "31.5px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "page.body": {
+    "html": "<body class=\"\"><script crossorigin=\"anonymous\"></script><noscript><img src=\"https://www.apple.com/shop/mdp/echo/echo.png?…\" width=\"1\" height=\"1\" />",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(245, 245, 247)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "weight",
+     "text-rendering": "auto"
+    }
+   }
+  },
+  "900": {
+   "type.t-headline-super": {
+    "html": "<p class=\"t-headline-super\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "80px",
+     "line-height": "87px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline-elevated": {
+    "html": "<p class=\"t-headline-elevated\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "64px",
+     "line-height": "70px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline": {
+    "html": "<p class=\"t-headline\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline-reduced": {
+    "html": "<p class=\"t-headline-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "44px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline-standalone": {
+    "html": "<p class=\"t-headline-standalone\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "96px",
+     "line-height": "100px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow-super": {
+    "html": "<p class=\"t-eyebrow-super\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "39px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow-elevated": {
+    "html": "<p class=\"t-eyebrow-elevated\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "35px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow": {
+    "html": "<p class=\"t-eyebrow\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "31px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow-reduced": {
+    "html": "<p class=\"t-eyebrow-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "28.0015px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-intro-elevated": {
+    "html": "<p class=\"t-intro-elevated\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "32.0019px",
+     "font-weight": "400",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-intro": {
+    "html": "<p class=\"t-intro\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "29.001px",
+     "font-weight": "400",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body": {
+    "html": "<p class=\"t-body\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body-tight": {
+    "html": "<p class=\"t-body-tight\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "23.0003px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body-reduced": {
+    "html": "<p class=\"t-body-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body-reduced-tight": {
+    "html": "<p class=\"t-body-reduced-tight\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "19.0006px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-caption": {
+    "html": "<p class=\"t-caption\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-label": {
+    "html": "<p class=\"t-label\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "31px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-callout": {
+    "html": "<p class=\"t-callout\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "39px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-tout": {
+    "html": "<p class=\"t-tout\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "26.0004px",
+     "font-weight": "600",
+     "letter-spacing": "0.228px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-quote": {
+    "html": "<p class=\"t-quote\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "48px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-quote-reduced": {
+    "html": "<p class=\"t-quote-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "42px",
+     "font-weight": "400",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-manifesto": {
+    "html": "<p class=\"t-manifesto\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "42px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "page.body": {
+    "html": "<body class=\"\"><script crossorigin=\"anonymous\"></script><noscript><img src=\"https://www.apple.com/shop/mdp/echo/echo.png?…\" width=\"1\" height=\"1\" />",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(245, 245, 247)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "weight",
+     "text-rendering": "auto"
+    }
+   }
+  },
+  "1200": {
+   "type.t-headline-super": {
+    "html": "<p class=\"t-headline-super\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "80px",
+     "line-height": "87px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline-elevated": {
+    "html": "<p class=\"t-headline-elevated\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "64px",
+     "line-height": "70px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline": {
+    "html": "<p class=\"t-headline\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline-reduced": {
+    "html": "<p class=\"t-headline-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "44px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline-standalone": {
+    "html": "<p class=\"t-headline-standalone\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "96px",
+     "line-height": "100px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow-super": {
+    "html": "<p class=\"t-eyebrow-super\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "39px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow-elevated": {
+    "html": "<p class=\"t-eyebrow-elevated\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "35px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow": {
+    "html": "<p class=\"t-eyebrow\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "31px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow-reduced": {
+    "html": "<p class=\"t-eyebrow-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "28.0015px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-intro-elevated": {
+    "html": "<p class=\"t-intro-elevated\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "32.0019px",
+     "font-weight": "400",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-intro": {
+    "html": "<p class=\"t-intro\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "29.001px",
+     "font-weight": "400",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body": {
+    "html": "<p class=\"t-body\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body-tight": {
+    "html": "<p class=\"t-body-tight\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "23.0003px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body-reduced": {
+    "html": "<p class=\"t-body-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body-reduced-tight": {
+    "html": "<p class=\"t-body-reduced-tight\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "19.0006px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-caption": {
+    "html": "<p class=\"t-caption\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-label": {
+    "html": "<p class=\"t-label\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "31px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-callout": {
+    "html": "<p class=\"t-callout\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "39px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-tout": {
+    "html": "<p class=\"t-tout\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "26.0004px",
+     "font-weight": "600",
+     "letter-spacing": "0.228px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-quote": {
+    "html": "<p class=\"t-quote\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "48px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-quote-reduced": {
+    "html": "<p class=\"t-quote-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "42px",
+     "font-weight": "400",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-manifesto": {
+    "html": "<p class=\"t-manifesto\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "42px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "page.body": {
+    "html": "<body class=\"\"><script crossorigin=\"anonymous\"></script><noscript><img src=\"https://www.apple.com/shop/mdp/echo/echo.png?…\" width=\"1\" height=\"1\" />",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(245, 245, 247)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "weight",
+     "text-rendering": "auto"
+    }
+   }
+  },
+  "1600": {
+   "type.t-headline-super": {
+    "html": "<p class=\"t-headline-super\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "80px",
+     "line-height": "87px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline-elevated": {
+    "html": "<p class=\"t-headline-elevated\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "64px",
+     "line-height": "70px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline": {
+    "html": "<p class=\"t-headline\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "48px",
+     "line-height": "52.0077px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline-reduced": {
+    "html": "<p class=\"t-headline-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "44px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-headline-standalone": {
+    "html": "<p class=\"t-headline-standalone\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "96px",
+     "line-height": "100px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow-super": {
+    "html": "<p class=\"t-eyebrow-super\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "39px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow-elevated": {
+    "html": "<p class=\"t-eyebrow-elevated\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "35px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow": {
+    "html": "<p class=\"t-eyebrow\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "31px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-eyebrow-reduced": {
+    "html": "<p class=\"t-eyebrow-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "28.0015px",
+     "font-weight": "600",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-intro-elevated": {
+    "html": "<p class=\"t-intro-elevated\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "32.0019px",
+     "font-weight": "400",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-intro": {
+    "html": "<p class=\"t-intro\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "21px",
+     "line-height": "29.001px",
+     "font-weight": "400",
+     "letter-spacing": "0.231px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body": {
+    "html": "<p class=\"t-body\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body-tight": {
+    "html": "<p class=\"t-body-tight\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "23.0003px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body-reduced": {
+    "html": "<p class=\"t-body-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "21px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-body-reduced-tight": {
+    "html": "<p class=\"t-body-reduced-tight\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "19.0006px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-caption": {
+    "html": "<p class=\"t-caption\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-label": {
+    "html": "<p class=\"t-label\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "31px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-callout": {
+    "html": "<p class=\"t-callout\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "39px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-tout": {
+    "html": "<p class=\"t-tout\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "19px",
+     "line-height": "26.0004px",
+     "font-weight": "600",
+     "letter-spacing": "0.228px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-quote": {
+    "html": "<p class=\"t-quote\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "48px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-quote-reduced": {
+    "html": "<p class=\"t-quote-reduced\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "42px",
+     "font-weight": "400",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "type.t-manifesto": {
+    "html": "<p class=\"t-manifesto\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Display\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "42px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "page.body": {
+    "html": "<body class=\"\"><script crossorigin=\"anonymous\"></script><noscript><img src=\"https://www.apple.com/shop/mdp/echo/echo.png?…\" width=\"1\" height=\"1\" />",
+    "styles": {
+     "font-family": "\"SF Pro TC\", \"SF Pro Text\", \"SF Pro Icons\", \"PingFang TC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)",
+     "background-color": "rgb(245, 245, 247)",
+     "-webkit-font-smoothing": "antialiased",
+     "font-synthesis": "weight",
+     "text-rendering": "auto"
+    }
+   }
+  }
+ }
+}
