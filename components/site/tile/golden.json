@@ -1,10 +1,7 @@
 {
- "promo | .cui-tile-ctas | 1600 | display": "flex",
  "promo | .cui-tile-ctas | 1200 | display": "flex",
  "promo | .cui-tile-ctas | 900 | display": "flex",
  "promo | .cui-tile-ctas | 390 | display": "flex",
- "promo-callout | .cui-tile-callout | 1600 | color": "rgb(110, 110, 115)",
- "promo-callout | .cui-tile-callout | 1600 | margin-top": "8px",
  "promo-callout | .cui-tile-callout | 1200 | color": "rgb(110, 110, 115)",
  "promo-callout | .cui-tile-callout | 1200 | margin-top": "8px",
  "promo-callout | .cui-tile-callout | 900 | color": "rgb(110, 110, 115)",

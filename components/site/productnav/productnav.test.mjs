@@ -1,4 +1,4 @@
-import { examples, SIZE } from '../../../test/harness.mjs';
+import { examples, SIZE, WITH_1600 } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const ITEM = '.cui-shelf-scroller > li:first-child .cui-productnav-item';
@@ -7,6 +7,7 @@ const card = (n) => `.cui-shelf-scroller > li:nth-child(${n}) .cui-productnav-it
 export const cases = [
   {
     name: 'productnav',
+    widths: WITH_1600,
     html: ex('productnav'),
     checks: [
       { target: '.cui-productnav', props: ['padding-top', 'padding-bottom'], apple: ['store', 'productnav'] },

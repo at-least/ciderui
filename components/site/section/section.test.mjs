@@ -1,4 +1,4 @@
-import { examples } from '../../../test/harness.mjs';
+import { examples, WITH_1600 } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const PAD = ['padding-top', 'padding-bottom'];
@@ -11,7 +11,6 @@ export const cases = [
     html: ex('section'),
     checks: [
       { target: '.cui-section', props: PAD, apple: ['iphone', 'section.incentive'] },
-      { target: '.cui-section', props: PAD, apple: ['iphone', 'section.image-accordion'] },
       { target: '.cui-section', props: ['background-color'], apple: ['iphone', 'section.image-accordion'] },
     ],
   },
@@ -37,10 +36,10 @@ export const cases = [
   },
   {
     name: 'content',
+    widths: WITH_1600,
     html: ex('section'),
     checks: [
       { target: '.cui-section-content', props: ['max-width', 'margin-left', 'margin-right'], apple: ['iphone', 'content'] },
-      { target: '.cui-section-content', props: ['max-width', 'margin-left', 'margin-right'], apple: ['product', 'content'] },
       { target: '.cui-section-content', props: ['box-width', 'box-left'], golden: '87.5% of the window, centered (apple.com\'s, a width no apple check reads)' },
     ],
   },

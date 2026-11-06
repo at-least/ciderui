@@ -1,4 +1,4 @@
-import { examples, SIZE } from '../../../test/harness.mjs';
+import { examples, SIZE, WITH_1600 } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 
@@ -6,7 +6,7 @@ export const cases = [
   {
     name: 'price',
     html: ex('price'),
-    widths: [1600, 1200, 900, 390],
+    widths: WITH_1600,
     checks: [
       { target: '.cui-price', props: [...SIZE, 'color', 'display'], apple: ['buy', 'price.header'] },
       { target: '.cui-price-amount', props: [...SIZE, 'white-space', 'display'], apple: ['buy', 'price.amount'] },

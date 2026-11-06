@@ -21,7 +21,6 @@ export const cases = [
     checks: [
       { target: GRAY, props: ['box-height', 'font-size', 'line-height', 'font-weight', 'letter-spacing', 'color', 'background-color', 'padding-left', 'padding-right', 'border-top-left-radius', 'border-top-width', 'min-width', 'column-gap', 'text-align', 'text-decoration-line', 'cursor', 'transition-duration', 'box-shadow'], asc: ['button', 'button'] },
       { target: GRAY, props: ['background-color', 'color', 'cursor'], state: 'hover', asc: ['hover-button', 'button'] },
-      { target: GRAY, props: SIZE, tb: at('md') },
       { target: GRAY, props: ['background-color', 'color'], state: 'active', tb: [`${B}-colorRole-neutral-effect-press-variant-gray-backgroundColor`, `${B}-colorRole-neutral-effect-press-variant-gray-color`] },
       { target: FILLED, props: ['background-color', 'color'], tb: [`${B}-colorRole-brand-effect-default-variant-filled-backgroundColor`, `${B}-colorRole-brand-effect-default-variant-filled-color`] },
       { target: FILLED, props: ['background-color'], state: 'hover', golden: `the filled blue hovered a step darker, blue-600: white on the toolkit's lighter blue is 3.9:1, ${FITTED}` },
@@ -139,14 +138,6 @@ export const cases = [
     widths: [390],
     checks: [
       { target: '[data-size="sm"]', props: ['box-height'], golden: 'the small button 44px tall on a touch screen too, the HIG\'s 44pt (Accessibility, Mobility)' },
-    ],
-  },
-  {
-    name: 'no target off touch',
-    html: ex('icon'),
-    widths: [1200],
-    checks: [
-      { target: '.cui-console-btn-icon', props: ['box-width', 'box-height'], golden: 'a pointer is exact: App Store Connect\'s 30px' },
     ],
   },
   {

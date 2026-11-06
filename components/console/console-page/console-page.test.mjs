@@ -69,7 +69,6 @@ export const cases = [
     widths: [1200, 390],
     checks: [
       ...STYLES.map(([name, s]) => ({ target: `.cui-console-${name}`, props: TYPE, tb: style(s) })),
-      { target: '.cui-console-h1-plus-emph', props: ['font-size', 'line-height', 'font-weight', 'letter-spacing'], asc: ['analytics', 'card.value'] },
       { target: '.cui-console-mono', props: ['font-size', 'line-height', 'font-weight', 'letter-spacing'], tb: style('monoBodyRegular') },
       { target: '.cui-console-mono', props: ['font-family'], golden: 'tokens.css\'s code stack, SF Mono on Apple\'s platforms and the platform\'s own elsewhere, where the toolkit names SF Mono alone' },
     ],

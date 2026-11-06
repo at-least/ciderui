@@ -1,13 +1,7 @@
 {
- "stat | .cui-stat-caption | 1600 | color": "rgb(134, 134, 139)",
  "stat | .cui-stat-caption | 1200 | color": "rgb(134, 134, 139)",
  "stat | .cui-stat-caption | 900 | color": "rgb(134, 134, 139)",
  "stat | .cui-stat-caption | 390 | color": "rgb(134, 134, 139)",
- "large | .cui-stat-value | 1600 | font-size": "48px",
- "large | .cui-stat-value | 1600 | line-height": "48px",
- "large | .cui-stat-value | 1600 | font-weight": "600",
- "large | .cui-stat | 1600 | margin-top": "0px",
- "large | .cui-stat | 1600 | margin-bottom": "0px",
  "large | .cui-stat-value | 1200 | font-size": "48px",
  "large | .cui-stat-value | 1200 | line-height": "48px",
  "large | .cui-stat-value | 1200 | font-weight": "600",

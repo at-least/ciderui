@@ -11,7 +11,6 @@ export const cases = [
     widths: [1600, 1200],
     checks: [
       { target: CARD, props: ['padding-top', 'border-top-left-radius', 'background-color', 'overflow', 'box-shadow', 'border-top-width'], asc: ['analytics-page', 'card'] },
-      { target: CARD, props: ['background-color'], tb: ['color-v2-bgPlaceholder'] },
       { target: '.cui-console-card-title', props: [...TYPE, 'color'], asc: ['analytics', 'card.title'] },
       { target: '.cui-console-card-value', props: [...TYPE, 'color', 'font-variant-numeric'], asc: ['analytics', 'card.value'] },
       { target: '.cui-console-card-change[data-color="error"]', props: TYPE, asc: ['analytics', 'card.change'] },

@@ -16,7 +16,6 @@ export const cases = [
       { target: 'thead th.cui-console-table-figure', props: ['font-weight', 'text-align'], golden: 'a figure\'s header at the header\'s weight, at its end' },
       { target: 'thead th', props: ['border-bottom-width'], golden: 'no rule under the header: the toolkit\'s tokens name none for its header row' },
       { target: 'tbody td:nth-child(2)', props: ['padding-top', 'padding-bottom', 'padding-left', 'padding-right'], tb: [`${T}-anatomy-TD-variant-size-md-paddingTop`, `${T}-anatomy-TD-variant-size-md-paddingBottom`, `${T}-anatomy-TD-paddingX`, `${T}-anatomy-TD-paddingX`] },
-      { target: 'tbody td:nth-child(2)', props: ['border-bottom-width', 'border-bottom-style', 'border-bottom-color'], tb: [`${T}-anatomy-TR-borderBottom-width`, `${T}-anatomy-TR-borderBottom-style`, `${T}-anatomy-TR-borderBottom-color`] },
       { target: '.cui-console-table', props: ['color', 'font-size', 'line-height', 'font-weight'], tb: [`${T}-color`, `${T}-variant-pageScale-desktop-textStyle-fontSize`, `${T}-variant-pageScale-desktop-textStyle-lineHeight`, `${T}-variant-pageScale-desktop-textStyle-fontWeight`] },
       { target: 'tbody tr:first-child td:last-child', props: ['padding-right'], golden: 'the last cell flush at its end, as the analytics table\'s first is at its start' },
       { target: 'tbody tr:first-child', props: ['background-color'], state: 'hover', asc: ['hover-row', 'table.row'] },

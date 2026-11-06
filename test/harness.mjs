@@ -45,6 +45,7 @@
 //            UPDATE_GOLDEN=1 rewrites
 
 import { readFileSync } from 'node:fs';
+import { WIDTHS } from './reference.mjs';
 
 // the keys above, all a case and a check may carry; any other throws
 // (a misspelt key would be ignored, the case run without it)
@@ -64,5 +65,7 @@ export const LINK = ['text-decoration-line', 'text-decoration-color'];
 export const MOTION = ['transition-property', 'transition-duration', 'transition-timing-function'];
 export const WITH_PANEL = 'shown with its panel, the panel\'s reveal its only motion: apple.com\'s fade in after the panel opens, one after another, time the reader waits for nothing (DESIGN.md decision 25)';
 export const DIM = 'the page dimmed alone: apple.com\'s also blurs it, an effect that only draws the eye and makes the page harder to read beside what opened (DESIGN.md decision 25)';
+
+export const WITH_1600 = [1600, ...WIDTHS];
 
 export const examples = (url) => (id) => readFileSync(new URL(`examples/${id}.html`, url), 'utf8').trim();

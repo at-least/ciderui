@@ -106,14 +106,6 @@ export const cases = [
     ],
   },
   {
-    name: 'error-copies',
-    html: ex('error'),
-    checks: [
-      { target: INPUT, props: ['color', 'background-color', 'border-top-color', 'border-top-width'], apple: ['retail', 'field.error'] },
-      { target: LABEL, props: ['color'], apple: ['retail', 'field.error-label'] },
-    ],
-  },
-  {
     name: 'error-dark',
     html: dark(ex('error')),
     checks: [

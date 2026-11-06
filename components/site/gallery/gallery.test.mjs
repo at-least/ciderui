@@ -1,4 +1,4 @@
-import { examples, MOTION } from '../../../test/harness.mjs';
+import { examples, MOTION, WITH_1600 } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const SCROLLER = '.cui-gallery-scroller';
@@ -15,6 +15,7 @@ const lg = (html) => html.replace('<button class="cui-gallery-paddle" type="butt
 export const cases = [
   {
     name: 'gallery',
+    widths: WITH_1600,
     html: ex('gallery'),
     checks: [
       { target: SCROLLER, props: ['overflow-x', 'overflow-y', 'scroll-snap-type', 'scroll-padding-left', 'padding-top', 'padding-bottom', 'margin-top', 'margin-bottom'], apple: ['product', 'gallery.scroller'] },
@@ -93,10 +94,8 @@ export const cases = [
     ],
   },
   {
-    // not 1600: there four items scroll less than one
     name: 'snap',
     html: ex('gallery'),
-    widths: [1200, 900, 390],
     scroll: [SCROLLER, 250],
     checks: [
       { target: `${SCROLLER} > li:nth-child(2)`, props: ['box-left'], apple: ['product', 'gallery.item'] },

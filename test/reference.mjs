@@ -27,7 +27,10 @@ export function ref(name, probe, width, prop, state) {
   return styles[prop];
 }
 
-export const WIDTHS = [1600, 1200, 900, 390];
+// not apple.com's fourth, 1600: no part's rule starts above 1200, so only what
+// the window sizes, up to its max-width, reads otherwise there, in the cases
+// that say WITH_1600
+export const WIDTHS = [1200, 900, 390];
 
 // App Store Connect's pages were read at one width, 1920px
 const ascPages = new Map();

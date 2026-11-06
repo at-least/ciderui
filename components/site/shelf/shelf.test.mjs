@@ -1,4 +1,4 @@
-import { examples, MOTION, SIZE } from '../../../test/harness.mjs';
+import { examples, MOTION, SIZE, WITH_1600 } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const SCROLLER = '.cui-shelf-scroller';
@@ -7,6 +7,7 @@ const card = (n) => `${SCROLLER} > li:nth-child(${n}) .cui-card`;
 export const cases = [
   {
     name: 'shelf',
+    widths: WITH_1600,
     html: ex('shelf'),
     checks: [
       { target: '.cui-shelf', props: ['padding-top', 'padding-bottom', 'background-color'], apple: ['store', 'shelf'] },
@@ -30,10 +31,8 @@ export const cases = [
     ],
   },
   {
-    // not 1600: there four cards scroll less than a card
     name: 'snap',
     html: ex('shelf'),
-    widths: [1200, 900, 390],
     scroll: [SCROLLER, 300],
     checks: [
       { target: card(2), props: ['box-left'], apple: ['store', 'shelf.card'] },
@@ -70,6 +69,7 @@ export const cases = [
   },
   {
     name: 'end',
+    widths: WITH_1600,
     html: ex('shelf'),
     scroll: [SCROLLER, 99999],
     checks: [

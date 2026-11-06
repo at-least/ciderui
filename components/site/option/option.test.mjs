@@ -1,4 +1,4 @@
-import { examples, PADDING, SIZE } from '../../../test/harness.mjs';
+import { examples, PADDING, SIZE, WITH_1600 } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const EDGE = ['border-top-width', 'border-top-style', 'border-top-color', 'border-bottom-width', 'border-bottom-color', 'border-top-left-radius'];
@@ -8,6 +8,7 @@ const LABEL = '.cui-option-label';
 export const cases = [
   {
     name: 'option',
+    widths: WITH_1600,
     html: ex('option'),
     checks: [
       { target: LABEL, props: [...SIZE, 'color', ...PADDING, ...EDGE, 'background-color', 'min-height', 'transition-property', 'transition-duration'], apple: ['buy', 'option'] },
@@ -24,6 +25,7 @@ export const cases = [
   },
   {
     name: 'checked',
+    widths: WITH_1600,
     html: ex('checked'),
     checks: [
       { target: LABEL, props: [...SIZE, 'color', ...PADDING, ...EDGE, 'background-color', 'min-height', 'box-height'], apple: ['buy', 'option.checked'] },

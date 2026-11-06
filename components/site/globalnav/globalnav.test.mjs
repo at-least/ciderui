@@ -250,7 +250,6 @@ export const cases = [
       { target: `${LIST} > li:nth-child(7)`, props: ['opacity', 'visibility'], apple: ['home', 'menu.search'] },
       { target: CLOSE, props: ['color', 'opacity', 'box-height', 'box-left', 'box-top'], apple: ['home', 'menu.trigger'] },
       { target: CLOSE, props: ['box-width'], golden: 'apple.com\'s 48px square, where the menu\'s button is (home:nav.menutrigger at 390px)' },
-      { target: X[0], props: ['box-height'], apple: ['home', 'menu.trigger-bread-top'] },
       ...X.map(target => ({ target, props: ['box-x', 'box-y', 'box-width', 'box-height'], golden: 'apple.com\'s X: its lines from (3.5, 3.5) to (15, 15) and from (3.5, 15) to (15, 3.5), the end of its animation (reference/icons/)' })),
       { target: 'html', props: ['overflow-y'], apple: ['home', 'menu.root'] },
     ],

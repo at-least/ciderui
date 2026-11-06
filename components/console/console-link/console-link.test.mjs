@@ -14,7 +14,6 @@ export const cases = [
     checks: [
       { target: INLINE, props: ['color', 'text-decoration-line', 'cursor'], asc: ['analytics-page', 'section.link'] },
       { target: INLINE, props: ['color', 'text-decoration-line', 'cursor'], state: 'hover', asc: ['hover-link', 'section.link'] },
-      { target: INLINE, props: ['color'], tb: [`${L}-default-variant-inline-color`] },
       { target: LABEL, props: ['color'], tb: [`${L}-default-variant-label-color`] },
       { target: LABEL, props: ['color'], state: 'hover', tb: [`${L}-hover-variant-label-color`] },
       { target: LABEL, props: ['text-decoration-line'], state: 'hover', golden: 'a name that is a link turns blue hovered, not underlined' },

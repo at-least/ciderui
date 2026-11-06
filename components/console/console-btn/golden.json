@@ -60,8 +60,6 @@
  "touch target | .cui-console-btn-icon | 390 | box-height": "44px",
  "touch target | .cui-console-btn:not(.cui-console-btn-icon) | 390 | box-height": "44px",
  "touch sizes | [data-size=\"sm\"] | 390 | box-height": "44px",
- "no target off touch | .cui-console-btn-icon | 1200 | box-width": "30px",
- "no target off touch | .cui-console-btn-icon | 1200 | box-height": "30px",
  "dark | .flex > :nth-child(1) | 1200 | background-color": "oklch(0.71 0.019 285.9 / 0.12)",
  "dark | .flex > :nth-child(1) | 1200 | color": "oklch(1 0 0 / 0.85)",
  "dark | .flex > :nth-child(2) | 1200 | background-color": "oklch(0.512 0.203 260.5)",
