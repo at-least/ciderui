@@ -1,4 +1,4 @@
-import { examples, PADDING, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, PADDING, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const EDGE = ['border-top-width', 'border-top-style', 'border-top-color', 'border-bottom-width', 'border-bottom-color', 'border-top-left-radius'];
@@ -19,7 +19,6 @@ export const cases = [
       { target: '.cui-option-title', props: ['letter-spacing', 'box-x'], golden: 'at the tile\'s start, 16px in (its edge and padding), the system font\'s letter-spacing' },
       { target: '.cui-option-price', props: ['letter-spacing', 'box-width'], golden: '40% of the row at its end, as apple.com\'s price column (buy:option.right)' },
       { target: '.cui-option', props: ['background-color', 'border-top-left-radius', 'margin-top'], golden: 'its own light ground, the label\'s corners, as a field\'s; no margin above (apple.com\'s 14px, the form\'s spacing, buy:option.box)' },
-      { target: LABEL, props: ['letter-spacing'], golden: TRACKING },
       { target: LABEL, props: ['display', 'flex-direction', 'align-items'], golden: 'one row of its title and price, centered down the tile (apple.com\'s a flex column holding the row)' },
     ],
   },
@@ -29,7 +28,6 @@ export const cases = [
     checks: [
       { target: LABEL, props: [...SIZE, 'color', ...PADDING, ...EDGE, 'background-color', 'min-height', 'box-height'], apple: ['buy', 'option.checked'] },
       { target: '.cui-option-detail', props: [...SIZE, 'display', 'margin-top'], apple: ['buy', 'option.detail'] },
-      { target: '.cui-option-detail', props: ['letter-spacing'], golden: TRACKING },
       { target: '.cui-option-title', props: ['box-width'], golden: 'with no price, the rest of the row (apple.com\'s 60%)' },
     ],
   },

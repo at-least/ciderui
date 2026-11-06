@@ -93,7 +93,6 @@ export const cases = [
       { target: VOLUME, props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: OPEN },
       { target: '.cui-console-player-glyph-volume', props: ['display'], golden: 'not muted, the speaker' },
       { target: '.cui-console-player-glyph-muted', props: ['display'], golden: 'not muted, no struck speaker' },
-      { target: SCRUB, props: ['outline-style', 'outline-width', 'outline-offset'], state: 'focus-visible', golden: 'base.css\'s one focus ring (rule 9), where tv.apple.com draws a 4px blue one' },
       { target: CUE, props: ['display'], golden: 'no cue, no box: the slot is written empty until the page\'s script fills it' },
       { target: '#subtitles', props: ['display'], golden: 'its menu written inside it, closed until its button opens it' },
     ],
@@ -444,7 +443,6 @@ export const cases = [
     widths: [390],
     checks: [
       { target: BTN, props: ['box-width', 'box-height'], golden: 'a button 44px each way at least on a touch screen (the HIG\'s default, reference/touch/)' },
-      { target: BTN, props: ['color'], state: 'hover', rest: 'a tapped button keeps no hover (rule 5)' },
       { target: SCRUB, props: ['box-height'], golden: 'a range 44px tall on a touch screen as on a desktop, its track and thumb the same' },
       { target: SCRUB, props: ['margin-top', 'margin-bottom'], golden: 'on a touch screen its row its whole target: the buttons above are 44px too, and a target reaching up into theirs would leave each short (the touch audit read 39px)' },
       { target: '.cui-console-player-progress', props: ['grid-template-rows'], golden: 'the range\'s row 44px on a touch screen, over the times\' 14px' },

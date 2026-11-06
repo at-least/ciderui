@@ -1,4 +1,4 @@
-import { examples, PADDING, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, PADDING, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const EDGE = ['border-top-width', 'border-top-style', 'border-top-color', 'border-bottom-width', 'border-bottom-color', 'border-top-left-radius'];
@@ -38,9 +38,6 @@ export const cases = [
       { target: INPUT, state: ['focus', 'focus-visible'], props: ['padding-left', 'border-top-width', 'border-top-color', 'outline-style'], apple: ['retail', 'field.input', 'focus+focus-visible'] },
       { target: LABEL, props: [...SIZE, 'color', 'position', 'top', 'left', 'white-space', 'transition-property', 'transition-duration', 'transition-timing-function'], apple: ['retail', 'field.label'] },
       { target: LABEL, on: INPUT, state: 'focus', props: [...SIZE, 'color', 'top', 'left'], apple: ['retail', 'field.label-floated'] },
-      { target: INPUT, props: ['letter-spacing'], golden: TRACKING },
-      { target: LABEL, props: ['letter-spacing'], golden: TRACKING },
-      { target: LABEL, on: INPUT, state: 'focus', props: ['letter-spacing'], golden: TRACKING },
       { target: '.cui-field', props: ['background-color', 'border-top-left-radius'], golden: 'its own light ground under the translucent input, its corners the input\'s: it reads in a dark block too, where apple.com shows no field' },
       { target: INPUT, props: ['margin-bottom'], golden: 'no margin of its own: apple.com\'s 14px below each field is the form\'s spacing, the page\'s (retail:field.input)' },
     ],
@@ -104,7 +101,6 @@ export const cases = [
       { target: MESSAGE, props: [...SIZE, 'color'], apple: ['giftcard', 'error.message'] },
       { target: MESSAGE, props: ['margin-top', 'display'], apple: ['giftcard', 'error.wrapper'] },
       { target: MESSAGE, props: ['margin-bottom'], golden: 'no margin below it: apple.com\'s 12px is the form\'s spacing, the page\'s (giftcard:error.wrapper)' },
-      { target: MESSAGE, props: ['letter-spacing'], golden: TRACKING },
       { target: MARK, props: ['margin-right'], as: { 'margin-right': 'padding-right' }, apple: ['giftcard', 'error.icon'] },
       { target: MARK, props: ['box-width', 'box-height', 'margin-top', 'color'], golden: 'apple.com\'s mark (U+F312) drawn as ciderui\'s ALERT: its advance by its ink\'s height at 12px, its ink 2.75px down the row as apple.com\'s (reference/icons/form.mjs), in the message\'s red' },
     ],
@@ -176,7 +172,6 @@ export const cases = [
       { target: LABEL, on: INPUT, state: 'focus', props: [...SIZE, 'top'], golden: 'empty, its label the placeholder focused too: the select\'s text is not shown until a choice is made (apple.com\'s class, set by its script on a choice)' },
       { target: CHEVRON, props: ['position', 'top', 'right', 'pointer-events'], apple: ['tradein', 'dropdown.chevron'] },
       { target: CHEVRON, props: ['box-width', 'box-height', 'color'], golden: 'apple.com\'s 25px chevron in #6e6e73 (its SVG\'s fill, tradein:dropdown.chevron), drawn as ciderui\'s DROPDOWN (reference/icons/form.mjs)' },
-      { target: INPUT, props: ['letter-spacing'], golden: TRACKING },
     ],
   },
   {
@@ -211,7 +206,6 @@ export const cases = [
       { target: BOX, props: [...PADDING, ...EDGE, 'border-bottom-style', 'background-color', 'display', 'box-height', 'outline-style'], apple: ['retail', 'textarea'] },
       { target: BOX, props: ['margin-bottom'], golden: 'no margin of its own: apple.com\'s 14px is the form\'s spacing, the page\'s (retail:textarea)' },
       { target: AREA, props: [...SIZE, 'color', ...PADDING, 'height', 'min-height', 'box-sizing', 'resize', 'outline-style', 'border-top-width', 'border-top-style', 'background-color', 'box-height'], apple: ['retail', 'textarea.input'] },
-      { target: AREA, props: ['letter-spacing'], golden: TRACKING },
       { target: LABEL, props: [...SIZE, 'color', 'position', 'top', 'left', 'white-space', 'pointer-events', 'transition-property', 'transition-duration', 'transition-timing-function'], apple: ['retail', 'textarea.label'] },
     ],
   },

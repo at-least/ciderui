@@ -9,21 +9,21 @@
 //
 //   node scripts/docker.mjs node reference/touch/audit.mjs
 
-import { readdirSync, readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { COMPONENTS, ROOT, compile } from '../../test/compile.mjs';
+import { COMPONENTS, ROOT, compileKit, exampleFiles } from '../../test/compile.mjs';
 import { open, quit } from '../../test/browser.mjs';
 
 const parts = process.env.SETS ? COMPONENTS.filter((c) => process.env.SETS.split(',').includes(c.set)) : COMPONENTS;
 // an empty list would print "0 under 44pt" and pass having checked nothing
 if (!parts.length) throw new Error('no parts in COMPONENTS for these sets');
-const sheets = COMPONENTS.map((c) => `@import "${c.dir}/${c.name}.css";`).join('\n');
-const css = compile({ css: `@import "fonts.css";\n@import "index.css";\n${sheets}`, sources: ['components'] });
+const css = compileKit();
 let short = 0;
 let controls = 0;
-for (const { name: part, dir: partDir } of parts) {
+for (const partDef of parts) {
+  const { name: part, dir: partDir } = partDef;
   const dir = join(ROOT, partDir, 'examples');
-  for (const file of readdirSync(dir).filter((f) => f.endsWith('.html')).sort()) {
+  for (const file of exampleFiles(partDef)) {
     // room round the example, so a target at its edge is not read short
     // where it runs out of the window (a tap there lands nowhere)
     const html = `<div style="padding: 48px 24px">${readFileSync(join(dir, file), 'utf8')}</div>`;

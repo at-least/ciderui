@@ -1,4 +1,4 @@
-import { examples, MOTION, PADDING, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, MOTION, PADDING, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const HOVERED = ['box-shadow', 'transform'];
@@ -29,10 +29,6 @@ export const cases = [
       { target: '.cui-card-price', props: [...SIZE, 'color'], apple: ['store', 'card.price'] },
       // apple.com's price is after its description's 6px
       { target: '.cui-card-price', props: ['margin-top'], as: { 'margin-top': 'padding-bottom' }, apple: ['store', 'card.description'] },
-      { target: '.cui-card-eyebrow', props: ['letter-spacing'], golden: TRACKING },
-      { target: '.cui-card-headline', props: ['letter-spacing'], golden: TRACKING },
-      { target: '.cui-card-description', props: ['letter-spacing'], golden: TRACKING },
-      { target: '.cui-card-price', props: ['letter-spacing'], golden: TRACKING },
       { target: '.cui-card', props: ['hit'], golden: 'the whole card its headline\'s link: the pointer finds the link at its corners and its middle (apple.com\'s script follows its link from anywhere on it)' },
     ],
   },

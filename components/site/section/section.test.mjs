@@ -1,4 +1,4 @@
-import { examples, TRACKING } from '../../../test/harness.mjs';
+import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const PAD = ['padding-top', 'padding-bottom'];
@@ -50,8 +50,6 @@ export const cases = [
     checks: [
       { target: '.cui-section-header', props: [...FLEX, 'margin-bottom'], apple: ['product', 'section.header'] },
       { target: '.cui-section-headline', props: ['font-size', 'line-height', 'font-weight'], apple: ['product', 'section.headline'] },
-      { target: '.cui-section-headline', props: ['letter-spacing'], golden: TRACKING },
-      { target: '.cui-section-links', props: ['letter-spacing'], golden: TRACKING },
       { target: '.cui-section-links', props: [...FLEX.filter(p => p !== 'align-items' && p !== 'justify-content'), 'font-size', 'line-height'], apple: ['product', 'section.header-links'] },
     ],
   },

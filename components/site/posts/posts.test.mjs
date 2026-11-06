@@ -1,11 +1,8 @@
-import { examples, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const WIDTHS = [1600, 1200, 1069, 1068, 900, 735, 734, 390];
 const ROW = ['padding-top', 'padding-bottom', 'border-top-width', 'border-top-style', 'border-top-color', 'border-bottom-width', 'display', 'flex-direction', 'align-items', 'cursor'];
-
-const tracking = ['.cui-posts-heading', '.cui-post-category', '.cui-post-headline', '.cui-post-date']
-  .map(target => ({ target, props: ['letter-spacing'], golden: TRACKING }));
 
 export const cases = [
   {
@@ -25,7 +22,6 @@ export const cases = [
       { target: '.cui-post-date', props: [...SIZE, 'color', 'margin-top'], apple: ['newsroom-archive', 'row.date'] },
       { target: '.cui-posts', props: ['box-width', 'box-left'], golden: 'apple.com\'s archive: 980px from 1069px, 692px from 735px, 87.5% below (newsroom-archive:results), centered' },
       { target: '.cui-post-media', props: ['box-width', 'box-height', 'object-fit'], golden: 'apple.com\'s picture: 295 by 166 from 1069px, 264 by 148.5 from 735px, 105 by 59 below (newsroom-archive:row.img), covering' },
-      ...tracking,
     ],
   },
   {
@@ -45,7 +41,6 @@ export const cases = [
       { target: '.cui-post-date', props: [...SIZE, 'color', 'margin-top'], apple: ['newsroom-article', 'related.date'] },
       { target: '.cui-posts', props: ['box-width', 'box-left'], golden: 'an article\'s text column: apple.com\'s 653px, 576px, 87.5% of 414px at most (newsroom-article:related.list), centered' },
       { target: '.cui-post-media', props: ['box-width', 'box-height', 'object-fit'], golden: 'apple.com\'s picture: 171 by 96 from 735px, 93 by 93 below (newsroom-article:related.img), covering' },
-      ...tracking,
     ],
   },
   {

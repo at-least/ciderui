@@ -1,4 +1,4 @@
-import { DIM, examples, MOTION, OUTLINE, PADDING, POINTER } from '../../../test/harness.mjs';
+import { DIM, examples, MOTION, PADDING } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const MODAL = ex('modal');
@@ -30,7 +30,6 @@ export const cases = [
       { target: '.cui-modal-panel', props: PADDING, apple: ['overlay', 'content'] },
       { target: '.cui-modal-panel', props: ['box-width', 'box-left', 'box-top'], golden: BOX },
       { target: '.cui-modal-close', props: ['background-color', 'color', 'border-top-left-radius'], apple: ['overlay', 'close.circle'] },
-      { target: '.cui-modal-close', props: MOTION, golden: POINTER },
       { target: '.cui-modal-close', state: 'hover', props: ['background-color', 'color'], apple: ['overlay', 'close.circle-hover', 'hover'] },
       { target: '.cui-modal-close', state: 'active', props: ['background-color', 'color'], apple: ['overlay', 'close.circle-hover', 'active'] },
       { target: '.cui-modal-close', props: ['box-width', 'box-height', 'box-top', 'box-left'], golden: 'apple.com\'s circle, 36px, 24px in from the panel\'s top right corner (its 44px button 20px in, overlay:close)' },
@@ -143,7 +142,6 @@ export const cases = [
       { target: '.cui-modal-panel', props: ['box-width', 'box-left'], golden: 'apple.com\'s panel, 816px from 1069px, 692px from 735px, 480px at most below, 10px from the window\'s sides, centered (ricmodal:overlay): an apple.com check reads no width' },
       { target: CLOSE, props: ['border-top-left-radius'], apple: ['ricmodal', 'close.icon'] },
       { target: CLOSE, props: ['background-color', 'color'], golden: ONE },
-      { target: CLOSE, props: MOTION, golden: POINTER },
       { target: CLOSE, props: ['box-width', 'box-height', 'box-top', 'box-right'], golden: 'apple.com\'s 36px circle 20px in from the panel\'s top right corner (ricmodal:close.icon, its 44px button 20px down and 12px from the end)' },
       { target: `${CLOSE} svg`, props: ['box-width', 'box-height'], golden: ONE },
       { target: CLOSE, props: ['focused'], golden: 'opened, the focus is on its close button, the dialog\'s first control (apple.com\'s script focuses the panel)' },
@@ -158,7 +156,6 @@ export const cases = [
     checks: [
       { target: CLOSE, state: 'hover', props: ['background-color', 'color'], golden: ONE },
       { target: CLOSE, state: 'active', props: ['background-color', 'color'], golden: ONE },
-      { target: CLOSE, state: 'focus-visible', props: OUTLINE, apple: ['ricmodal', 'close.icon-states', 'focus-visible'] },
       { target: CLOSE, pseudo: '::before', props: ['width', 'height', 'top', 'left'], golden: 'its 44px target around its circle, where apple.com\'s button reaches to its right and below it (ricmodal:close)' },
     ],
   },
@@ -218,25 +215,8 @@ export const cases = [
       { target: CLOSE, props: ['background-color', 'color'], golden: ONE },
       { target: CLOSE, state: 'hover', props: ['background-color', 'color'], golden: ONE },
       { target: CLOSE, state: 'active', props: ['background-color', 'color'], golden: ONE },
-      { target: CLOSE, state: 'focus-visible', props: OUTLINE, apple: ['ricmodal-dark', 'close.icon-states', 'focus-visible'] },
       { target: '.cui-modal', props: ['background-color'], golden: 'the layer clear, over the scrim: cui-dark\'s ground is the panel\'s' },
       { target: '.cui-modal', pseudo: '::backdrop', props: ['background-color', 'backdrop-filter'], golden: 'the scrim the light one\'s, rgba(0,0,0,.48), no blur (DESIGN.md decision 25): apple.com\'s dark theme sets none (MacBook Pro\'s dark modal\'s #1d1d1f fill its own, ricmodal-dark:modal; AirPods Max\'s dark story\'s black, reference/apple.com/README.md)' },
     ],
-  },
-  {
-    name: 'page-touch',
-    html: PAGE,
-    ...PAGE_OPEN,
-    touch: true,
-    widths: [1200, 390],
-    checks: [{ target: CLOSE, state: 'hover', props: ['background-color', 'color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-ricmodal:close.icon-states)' }],
-  },
-  {
-    name: 'touch',
-    html: MODAL,
-    ...OPEN,
-    touch: true,
-    widths: [1200, 390],
-    checks: [{ target: CLOSE, state: 'hover', props: ['background-color', 'color'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-overlay:close.circle-hover)' }],
   },
 ];

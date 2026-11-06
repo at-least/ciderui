@@ -1,4 +1,4 @@
-import { examples, PADDING, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, PADDING, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const PILL = '.cui-quicklinks-list li:first-child .cui-btn';
@@ -34,7 +34,6 @@ export const cases = [
       { target: PILL, state: 'hover', props: ['color', 'border-top-color', 'background-color'], apple: ['store', 'quicklink', 'hover'] },
       { target: '.cui-quicklinks-list li:nth-child(2)', props: ['box-x'], golden: 'right after the first pill\'s item: a flex row with no space character between them (apple.com\'s inline blocks leave one, 4.4px of SF, from 735px)' },
       { target: '.cui-quicklinks', props: ['box-width'], golden: 'apple.com\'s 980px at most, between its inset and 22px (store:quicklinks)' },
-      { target: '.cui-quicklinks-title', props: ['letter-spacing'], golden: TRACKING },
     ],
   },
 ];

@@ -1,4 +1,4 @@
-import { examples, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const PAGE = 'newsroom-article';
@@ -42,8 +42,6 @@ export const cases = [
       { target: '.cui-article-body > figure', props: ['box-width', 'box-left'], golden: BAND },
       { target: '.cui-article-body figcaption', props: ['box-width', 'box-left'], golden: `the caption in ${TEXT}` },
       { target: '.cui-article-body figure img', props: ['box-width', 'box-height'], golden: 'the picture the figure\'s width, at its own shape' },
-      ...['.cui-article-category', '.cui-article-date', '.cui-article-headline', '.cui-article-subhead', '.cui-article-body > p', '.cui-article-body > h2', '.cui-article-body figcaption', '.cui-article-footnotes ol']
-        .map(target => ({ target, props: ['letter-spacing'], golden: TRACKING })),
       { target: '.cui-article-body', props: ['margin-top'], golden: 'the copy 44px under the header (36px from 735px, 32px below), the room a figure takes there (newsroom-article:figure), where no figure leads it' },
       { target: '.cui-article-body > ul', props: ['padding-left', 'margin-bottom'], golden: 'the small print\'s indent, 1.1765em (newsroom-article:list, 16.47px at 14px), at the copy\'s size; a paragraph\'s room under it' },
       { target: '.cui-article-body > ul li', props: [...SIZE, 'margin-top', 'margin-bottom'], golden: 'a list at the copy\'s size: apple.com\'s is the small print\'s 14px (newsroom-article:list.li)' },

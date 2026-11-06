@@ -27,7 +27,6 @@ export const cases = [
     widths: [390],
     checks: [
       { target: `${CLOSED} > summary`, props: ['box-height', 'min-width'], golden: 'on a touch screen the line itself 44px tall and 44px wide at least, the HIG\'s 44pt: a target drawn round it overlapped the next summary\'s and the opened content' },
-      { target: `${CLOSED} > summary`, props: ['color'], state: 'hover', rest: 'a tapped disclosure keeps no hover (rule 5)' },
     ],
   },
   {

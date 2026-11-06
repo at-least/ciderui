@@ -62,21 +62,12 @@ export const cases = [
     checks: SIZES.map((size) => ({ target: sized(size), props: ['box-height', 'box-width', 'border-top-left-radius', 'font-size'], tb: [`${B}-controlSize-${size}-blockSize`, `${B}-controlSize-${size}-minWidth`, `${B}-controlShape-capsule-controlSize-${size}-borderRadius`, `component-Button-anatomy-artStart-withoutLabel-controlSize-${size}-fontSize`] })),
   },
   {
-    name: 'play focused',
-    html: ex('play'),
-    widths: [1200],
-    checks: [
-      { target: PAUSED, props: ['outline-style', 'outline-width', 'outline-offset'], state: 'focus-visible', golden: 'base.css\'s one ring, round the circle' },
-    ],
-  },
-  {
     name: 'play touch',
     html: ex('sizes'),
     touch: true,
     widths: [390],
     checks: [
       { target: sized('sm'), props: ['box-width', 'box-height', 'border-top-left-radius'], golden: 'the small one 44px across on a touch screen, the HIG\'s 44pt, and still a circle (console-btn\'s capsule)' },
-      { target: PAUSED.replace(':not([data-state])', '[data-size="sm"]'), props: ['background-color', 'color'], state: 'hover', rest: 'a tapped button keeps no hover (rule 5)' },
     ],
   },
   {

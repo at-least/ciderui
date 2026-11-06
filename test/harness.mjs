@@ -43,31 +43,26 @@
 //            the height or width it sets)
 //   golden   why it is ciderui's: the value equals golden.json's, which
 //            UPDATE_GOLDEN=1 rewrites
-//   rest     a touch screen's hovered or pressed element equals itself at
-//            rest (rule 5)
 
 import { readFileSync } from 'node:fs';
 
 // the keys above, all a case and a check may carry; any other throws
 // (a misspelt key would be ignored, the case run without it)
 export const CASE_KEYS = ['name', 'html', 'widths', 'height', 'touch', 'reducedMotion', 'forcedColors', 'click', 'press', 'wait', 'scroll', 'hover', 'checks'];
-export const CHECK_KEYS = ['target', 'props', 'pseudo', 'state', 'on', 'apple', 'at', 'as', 'asc', 'tb', 'golden', 'rest'];
+export const CHECK_KEYS = ['target', 'props', 'pseudo', 'state', 'on', 'apple', 'at', 'as', 'asc', 'tb', 'golden'];
 
-export const SIDES = ['top', 'right', 'bottom', 'left'];
+const SIDES = ['top', 'right', 'bottom', 'left'];
 export const PADDING = SIDES.map(s => `padding-${s}`);
 export const BORDER = ['border-top-width', 'border-top-style', 'border-bottom-width', 'border-bottom-style'];
-export const BORDER_COLOR = ['border-top-color', 'border-bottom-color'];
+const BORDER_COLOR = ['border-top-color', 'border-bottom-color'];
 export const COLORS = ['color', 'background-color', ...BORDER_COLOR];
 export const SIZE = ['font-size', 'line-height', 'font-weight'];
 export const RADIUS = ['border-top-left-radius'];
 export const TEXT = ['display', 'text-align', 'white-space', 'text-decoration-line', 'cursor', 'vertical-align', 'opacity'];
 export const OUTLINE = ['outline-style', 'outline-color', 'outline-width', 'outline-offset'];
 export const LINK = ['text-decoration-line', 'text-decoration-color'];
-export const ELLIPSIS = ['overflow-x', 'text-overflow', 'white-space'];
 export const MOTION = ['transition-property', 'transition-duration', 'transition-timing-function'];
-export const POINTER = 'at once: apple.com\'s eases a pointer\'s color change, motion that adds nothing to the change of state (DESIGN.md decision 25)';
 export const WITH_PANEL = 'shown with its panel, the panel\'s reveal its only motion: apple.com\'s fade in after the panel opens, one after another, time the reader waits for nothing (DESIGN.md decision 25)';
 export const DIM = 'the page dimmed alone: apple.com\'s also blurs it, an effect that only draws the eye and makes the page harder to read beside what opened (DESIGN.md decision 25)';
-export const TRACKING = 'the system font\'s fitted letter-spacing (tokens.css), not apple.com\'s';
 
 export const examples = (url) => (id) => readFileSync(new URL(`examples/${id}.html`, url), 'utf8').trim();

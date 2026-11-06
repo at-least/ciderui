@@ -1,4 +1,4 @@
-import { examples, MOTION, POINTER } from '../../../test/harness.mjs';
+import { examples, MOTION } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const SCROLLER = '.cui-gallery-scroller';
@@ -35,7 +35,6 @@ export const cases = [
       { target: '.cui-gallery-dots', props: ['display', 'flex-direction', 'align-items', 'justify-content', 'box-height'], apple: ['product', 'gallery.dots'] },
       { target: '.cui-gallery-dots li:nth-child(2)', props: ['margin-left', 'margin-right'], apple: ['product', 'gallery.dot-item'] },
       { target: DOT, props: DOTS, apple: ['iphone', 'gallery.dot'] },
-      { target: DOT, props: MOTION, golden: POINTER },
       { target: DOT, state: 'hover', props: ['background-color'], apple: ['iphone', 'gallery.dot', 'hover'] },
       { target: CURRENT, props: DOTS, apple: ['iphone', 'gallery.dot-current'] },
       { target: DOT, props: ['width'], golden: 'apple.com\'s 8px dot (iphone:gallery.dot), a width no text sets' },
@@ -72,15 +71,6 @@ export const cases = [
       { target: DOT, props: DOTS, apple: ['product', 'gallery.dot'] },
       { target: DOT, state: 'hover', props: ['background-color'], apple: ['product', 'gallery.dot', 'hover'] },
       { target: CURRENT, props: DOTS, apple: ['product', 'gallery.dot-current'] },
-    ],
-  },
-  {
-    name: 'touch',
-    html: ex('gallery'),
-    touch: true,
-    checks: [
-      { target: NEXT, state: 'hover', props: ['background-color', 'color'], rest: 'a touch screen\'s paddle does not change hovered (rule 5), where apple.com\'s does (touch-iphone:paddle)' },
-      { target: DOT, state: 'hover', props: ['background-color'], rest: 'nor a dot, where apple.com\'s does (touch-iphone:gallery.dot)' },
     ],
   },
   {

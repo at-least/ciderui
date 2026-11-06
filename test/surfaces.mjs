@@ -1,10 +1,10 @@
 // Every example on every surface, not listed cases: six times a site built
 // on ciderui (crashcart) found a failing pair the cases had not listed.
 
-import { readdirSync, readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { join } from 'node:path';
-import { COMPONENTS, ROOT, compile } from './compile.mjs';
+import { COMPONENTS, ROOT, compileKit, exampleFiles } from './compile.mjs';
 import { open, quit } from './browser.mjs';
 import { check, done } from './check.mjs';
 
@@ -24,13 +24,11 @@ const SURFACES = {
   },
 };
 
-const sheets = COMPONENTS.map((c) => `@import "${c.dir}/${c.name}.css";`).join('\n');
-const css = compile({ css: `@import "fonts.css";\n@import "index.css";\n${sheets}`, sources: ['components'] });
+const css = compileKit();
 
 for (const c of COMPONENTS) {
-  const dir = join(ROOT, c.dir, 'examples');
-  for (const file of readdirSync(dir).filter((f) => f.endsWith('.html')).sort()) {
-    const example = readFileSync(join(dir, file), 'utf8');
+  for (const file of exampleFiles(c)) {
+    const example = readFileSync(join(ROOT, c.dir, 'examples', file), 'utf8');
     for (const [surface, wrap] of Object.entries(SURFACES[c.set])) {
       const page = await open(css, wrap(example));
       await page.settle();

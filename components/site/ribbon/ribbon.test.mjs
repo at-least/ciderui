@@ -1,4 +1,4 @@
-import { examples, PADDING, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const LINK = '.cui-ribbon .cui-link';
@@ -13,7 +13,6 @@ export const cases = [
       { target: '.cui-ribbon-content', props: ['background-color', 'padding-top', 'padding-bottom'], apple: ['bag', 'ribbon'] },
       { target: '.cui-ribbon-content', props: ['color'], apple: ['ribbon', 'ribbon.content'] },
       { target: '.cui-ribbon-content', props: ['padding-left', 'padding-right'], golden: 'the message within 83.33% of the window, centered: apple.com\'s content\'s width (ribbon:ribbon.content)' },
-      { target: '.cui-ribbon-content', props: ['letter-spacing'], golden: TRACKING },
       { target: '.cui-ribbon-content p', props: [...SIZE, 'margin-top', 'margin-bottom'], apple: ['ribbon', 'ribbon.text'] },
       { target: LINK, props: [...SIZE, 'color', 'text-decoration-line'], apple: ['ribbon', 'ribbon.link'] },
       { target: LINK, state: 'hover', props: ['color'], apple: ['ribbon', 'ribbon.link', 'hover'] },

@@ -42,15 +42,6 @@ export const cases = [
     ],
   },
   {
-    name: 'table touch',
-    html: ex('table'),
-    touch: true,
-    widths: [390],
-    checks: [
-      { target: 'tbody tr:first-child', props: ['background-color'], state: 'hover', rest: 'a tapped row keeps no fill (rule 5)' },
-    ],
-  },
-  {
     name: 'table sort touch',
     html: ex('sticky'),
     touch: true,

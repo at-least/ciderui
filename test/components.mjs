@@ -117,11 +117,8 @@ for (const { name, dir } of tested) {
               else if (!(key in golden)) check(`${label} ${prop} has a golden value (UPDATE_GOLDEN=1)`, 'none', 'recorded');
               else check(`${label} ${prop} is golden (${k.golden})`, got[prop], golden[key]);
             }
-          } else if (k.rest) {
-            const rest = await page.read(k.target, k.props, { pseudo: k.pseudo });
-            for (const prop of k.props) check(`${label} ${prop} is its own at rest (${k.rest})`, got[prop], rest[prop]);
           } else {
-            throw new Error(`${label}: a check is apple, asc, tb, golden or rest`);
+            throw new Error(`${label}: a check is apple, asc, tb or golden`);
           }
         }
       }

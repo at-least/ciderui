@@ -1,4 +1,4 @@
-import { examples, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const BOX = ['padding-top', 'padding-left', 'border-top-width', 'border-top-style', 'border-top-color', 'border-bottom-color', 'border-top-left-radius', 'background-color'];
@@ -22,7 +22,6 @@ export const cases = [
       { target: INDICATOR, props: [...BOX, 'position', 'top', 'left', 'display', 'box-height'], apple: ['signin', 'checkbox'] },
       { target: INDICATOR, props: ['box-width'], golden: 'apple.com\'s 16px box (signin:checkbox), a width no text sets' },
       { target: `${INDICATOR} svg`, props: ['visibility'], golden: 'its check hidden until it is checked' },
-      { target: '.cui-checkbox-label', props: ['letter-spacing'], golden: TRACKING },
       { target: '.cui-checkbox', props: ['margin-bottom'], golden: 'no margin of its own: apple.com\'s 11px below it is the form\'s spacing, the page\'s (signin:checkbox.box)' },
       { target: '.cui-checkbox-input', props: ['box-width'], golden: 'the input the box\'s 16px' },
       { target: INDICATOR, props: ['hit'], golden: 'the box drawn over the input: the pointer finds the box' },

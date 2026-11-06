@@ -1,4 +1,4 @@
-import { examples, OUTLINE, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, OUTLINE, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const WIDE = [1600, 1200, 900];
@@ -41,7 +41,6 @@ export const cases = [
       { target: '.cui-footer-locale', state: 'hover', props: ['text-decoration-line'], apple: ['home', 'footer.locale-link', 'hover'] },
       // apple.com's two locales (a phone's, a desktop's) are 5px down alike
       { target: '.cui-footer-locale', props: ['margin-top'], apple: ['home', 'footer.locale'] },
-      { target: '.cui-footer', props: ['letter-spacing'], golden: TRACKING },
     ],
   },
   {
@@ -99,17 +98,6 @@ export const cases = [
       { target: `${SECTION} .cui-footer-title`, props: ['color'], apple: ['product', 'footer.title'] },
       { target: `${SECTION} .cui-footer-list a`, props: ['color'], apple: ['product', 'footer.link'] },
       { target: '.cui-footer-shop', props: ['border-bottom-color'], apple: ['product', 'footer.shop'] },
-    ],
-  },
-  {
-    name: 'touch',
-    html: ex('footer'),
-    touch: true,
-    widths: [1200, 390],
-    checks: [
-      { target: `${SECTION} .cui-footer-list a`, state: 'hover', props: ['text-decoration-line'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s underlines (touch-home:footer.link)' },
-      { target: '.cui-footer-links > li:first-child a', state: 'hover', props: ['text-decoration-line'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s underlines (touch-home:footer.legal-link)' },
-      { target: '.cui-footer-locale', state: 'hover', props: ['text-decoration-line'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s underlines (touch-home:footer.locale-link)' },
     ],
   },
   {

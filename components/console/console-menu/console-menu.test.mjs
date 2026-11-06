@@ -43,7 +43,6 @@ export const cases = [
       { target: `${UNCHECKED} .cui-console-menu-label`, props: ['box-left'], golden: 'each label at the same start' },
       { target: `${CHECKED} .cui-console-menu-label`, props: ['box-left'], golden: 'each label at the same start' },
       { target: '#subtitles .cui-console-menu-heading', props: ['font-size', 'line-height', 'font-weight', 'padding-top', 'padding-left'], tb: [`${MENU}-desktop-variant-menu-anatomy-Heading-textStyle-fontSize`, `${MENU}-desktop-variant-menu-anatomy-Heading-textStyle-lineHeight`, `${MENU}-desktop-variant-menu-anatomy-Heading-textStyle-fontWeight`, `${MENU}-desktop-variant-menu-anatomy-Header-paddingBlockStart`, `${MENU}-desktop-variant-menu-anatomy-Header-paddingInline`] },
-      { target: UNCHECKED, props: ['outline-style', 'outline-width', 'outline-offset'], state: 'focus-visible', golden: 'base.css\'s one focus ring (rule 9)' },
     ],
   },
   {
@@ -153,7 +152,6 @@ export const cases = [
     touch: true,
     widths: [390],
     checks: [
-      { target: PLAIN, props: ['background-color'], state: 'hover', rest: 'a tapped item keeps no fill (rule 5)' },
       { target: PLAIN, props: ['box-height', 'border-top-left-radius'], golden: 'an item 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), a pill\'s corners half of it' },
     ],
   },

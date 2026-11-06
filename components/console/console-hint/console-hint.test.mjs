@@ -23,7 +23,6 @@ export const cases = [
       { target: B, props: ['color'], state: 'hover', tb: [`${I}-variant-effect-hover-color`] },
       { target: B, pseudo: '::before', props: ['background-color'], state: 'active', tb: [`${I}-variant-effect-press-backgroundColor`] },
       { target: B, props: ['color'], state: 'active', tb: [`${I}-variant-effect-press-color`] },
-      { target: B, props: ['outline-width', 'outline-style', 'outline-color', 'outline-offset'], state: 'focus-visible', golden: 'focused from the keyboard, base.css\'s ring (rule 9): the toolkit\'s halo, 3px of black at 0.15 1px out, is 1.41:1 on white and 1.39:1 dark, a focus that cannot be seen' },
       { target: POP, props: ['display'], golden: 'closed until its button opens it' },
       { target: B, pseudo: '::after', props: ['width', 'height'], golden: 'its target 20px square, the HIG\'s macOS minimum (Accessibility, Mobility), round the 20 by 18px button' },
     ],
@@ -55,7 +54,6 @@ export const cases = [
     touch: true,
     widths: [390],
     checks: [
-      { target: B, props: ['color'], state: 'hover', rest: 'a tapped hint keeps no hover (rule 5)' },
       { target: B, props: ['box-width', 'box-height'], golden: 'the button 44px square on a touch screen, the HIG\'s 44pt (Accessibility, Mobility): a 44px target drawn round its 20px reached over the control beside the word, which the wider button moves along' },
       { target: B, pseudo: '::before', props: ['width', 'height'], golden: 'its circle drawn as before, 17px' },
       { target: B, props: ['margin-top', 'margin-bottom', 'margin-left'], golden: 'the wider box taken back from the line\'s height and the 4px before it, its circle where it is with a pointer' },

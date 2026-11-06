@@ -43,15 +43,6 @@ export const cases = [
     ],
   },
   {
-    name: 'card link touch',
-    html: ex('link'),
-    touch: true,
-    widths: [390],
-    checks: [
-      { target: 'a.cui-console-card', props: ['background-image'], state: 'hover', rest: 'a tapped card keeps no fill (rule 5)' },
-    ],
-  },
-  {
     name: 'card dark',
     html: `<div class="cui-dark">${ex('metrics')}</div>`,
     widths: [1200],

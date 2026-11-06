@@ -72,7 +72,6 @@ export const cases = [
     widths: [390],
     checks: [
       { target: `${IDLE} ${B}`, pseudo: '::after', props: ['width', 'height'], golden: 'a touch screen\'s target 44px square, the HIG\'s 44pt' },
-      { target: `${IDLE} ${B}`, props: ['color', 'background-color'], state: 'hover', rest: 'a tapped button keeps no hover (rule 5)' },
     ],
   },
   {

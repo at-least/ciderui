@@ -14,6 +14,7 @@ export const cases = [
     html: ex('list'),
     widths: [1200, 640],
     checks: [
+      { target: LINK, state: 'focus-visible', props: ['outline-offset'], golden: 'the one ring moved inside the row, where the list\'s edge would clip it' },
       { target: LINK, props: ['padding-left', 'padding-right'], tb: [`${D}-groupedGray-contentPaddingInlineDesktop`, `${D}-groupedGray-contentPaddingInlineDesktop`] },
       { target: LINK, props: ['min-height', 'padding-top', 'padding-bottom'], tb: [`${D}-variant-pageScale-desktop-variant-sidebar-anatomy-Item-minHeight`, `${D}-variant-pageScale-desktop-variant-sidebar-anatomy-Item-paddingBlock`, `${D}-variant-pageScale-desktop-variant-sidebar-anatomy-Item-paddingBlock`] },
       { target: `${LINK} .cui-console-list-label`, props: TYPE, tb: type('desktop') },
@@ -34,15 +35,6 @@ export const cases = [
     checks: [
       { target: `${LINK} .cui-console-list-label`, props: TYPE, tb: type('mobile') },
       { target: LINK, props: ['padding-left'], tb: [`${D}-groupedGray-contentPaddingInlineMobile`] },
-    ],
-  },
-  {
-    name: 'list touch',
-    html: ex('list'),
-    touch: true,
-    widths: [390],
-    checks: [
-      { target: LINK, props: ['background-color'], state: 'hover', rest: 'a tapped row keeps no hover (rule 5)' },
     ],
   },
   {

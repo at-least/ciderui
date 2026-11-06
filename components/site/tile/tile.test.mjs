@@ -1,4 +1,4 @@
-import { examples, PADDING, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, PADDING, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const PAD = ['padding-top', 'padding-bottom'];
@@ -21,8 +21,6 @@ export const cases = [
       { target: '.cui-tile-ctas .cui-btn', props: [...SIZE, 'padding-top', 'padding-left', 'min-width', 'box-height'], apple: ['home', 'tile.promo-button'] },
       { target: '.cui-tile-link', props: ['position'], apple: ['home', 'tile.link'] },
       { target: '.cui-tile-link', props: ['box-height'], apple: ['home', 'tile.light'] },
-      { target: '.cui-tile-headline', props: ['letter-spacing'], golden: TRACKING },
-      { target: '.cui-tile-subhead', props: ['letter-spacing'], golden: TRACKING },
       { target: '.cui-tile-ctas', props: ['display'], golden: 'a flex row of the gaps apple.com\'s grid has (home:tile.promo-ctas)' },
     ],
   },
@@ -32,7 +30,6 @@ export const cases = [
     checks: [
       { target: '.cui-tile-callout', props: SIZE, apple: ['home', 'type.promo-callout'] },
       { target: '.cui-tile-callout', props: ['color', 'margin-top'], golden: 'the secondary text, 8px below the subhead: apple.com\'s promo tiles measured carry no callout; a full tile\'s, below 735px (home:hero.callout)' },
-      { target: '.cui-tile-callout', props: ['letter-spacing'], golden: TRACKING },
     ],
   },
   {

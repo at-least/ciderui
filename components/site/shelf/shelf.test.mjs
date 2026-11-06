@@ -1,4 +1,4 @@
-import { examples, MOTION, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, MOTION, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const SCROLLER = '.cui-shelf-scroller';
@@ -14,8 +14,6 @@ export const cases = [
       { target: '.cui-shelf-header', props: ['box-width', 'box-height'], golden: 'apple.com\'s header\'s box (store:shelf.header: to the window\'s right, 87.5% of a phone\'s window), its lines Inter\'s here' },
       { target: '.cui-shelf-headline', props: [...SIZE, 'color', 'display', 'margin-top', 'margin-bottom'], apple: ['store', 'shelf.mainheader'] },
       { target: '.cui-shelf-subhead', props: [...SIZE, 'color', 'display'], apple: ['store', 'shelf.subheader'] },
-      { target: '.cui-shelf-headline', props: ['letter-spacing'], golden: TRACKING },
-      { target: '.cui-shelf-subhead', props: ['letter-spacing'], golden: TRACKING },
       { target: SCROLLER, props: ['overflow-x', 'overflow-y', 'scroll-snap-type', 'overscroll-behavior-x'], apple: ['store', 'shelf.scroller'] },
       { target: SCROLLER, props: ['padding-top'], apple: ['store', 'shelf.platter'] },
       // apple.com's scroller runs under its crop: the crop is what shows

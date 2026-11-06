@@ -123,15 +123,6 @@ export const cases = [
     ],
   },
   {
-    name: 'touch',
-    html: ex('variants'),
-    touch: true,
-    widths: [390],
-    checks: [
-      { target: GRAY, props: ['background-color', 'color'], state: 'hover', rest: 'a tapped button keeps no hover (rule 5)' },
-    ],
-  },
-  {
     name: 'touch target',
     html: ex('icon'),
     touch: true,

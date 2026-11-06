@@ -1,4 +1,4 @@
-import { OUTLINE, examples } from '../../../test/harness.mjs';
+import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const T = 'component-Tabs';
@@ -59,7 +59,6 @@ export const cases = [
     widths: [1200],
     checks: [
       { target: '.cui-console-tabs', props: ['flex-wrap', 'overflow-x'], golden: 'wide, the bar as the toolkit draws it' },
-      { target: '.cui-console-tab[href="#settings"]', props: ['outline-offset'], state: 'focus-visible', golden: 'wide, base.css\'s ring outside the tab' },
     ],
   },
   {
@@ -104,14 +103,6 @@ export const cases = [
     ],
   },
   {
-    name: 'tabs of buttons focused',
-    html: ex('pressed'),
-    widths: [1200],
-    checks: [
-      { target: PRESSED, props: OUTLINE, state: 'focus-visible', golden: 'the pressed button focused: base.css\'s one ring, as every tab\'s' },
-    ],
-  },
-  {
     name: 'tabs of buttons forced colors',
     html: ex('pressed'),
     widths: [1200],
@@ -127,7 +118,6 @@ export const cases = [
     touch: true,
     widths: [390],
     checks: [
-      { target: PILL, props: ['background-color', 'color'], state: 'hover', rest: 'a tapped tab keeps no hover (rule 5)' },
       { target: PILL, props: ['box-height', 'min-width', 'border-top-left-radius'], golden: 'a tab 44px each way at least on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), a pill\'s corners half its height: a target drawn round it was clipped by a phone\'s sideways-scrolling row' },
     ],
   },

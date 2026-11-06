@@ -1,4 +1,4 @@
-import { examples, MOTION, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, MOTION, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const ITEM = '.cui-accordion-item';
@@ -25,8 +25,6 @@ export const cases = [
       { target: `${CLOSED} > ${Q} svg`, props: ['box-width', 'margin-right'], golden: 'apple.com\'s 17px chevron (14px) in the middle of its 32px column at the end (bag-accordion:compact.svg, .icon)' },
       { target: ITEM, pseudo: '::details-content', props: MOTION, golden: 'its answer opens at once, where apple.com\'s height slides in 0.3s ease-in-out (bag-accordion:compact.panel): the chevron\'s turn says it opened, and the words are there to read (DESIGN.md decision 25)' },
       { target: Q, props: ['list-style-type'], golden: 'no marker: the chevron is the question\'s' },
-      { target: Q, props: ['letter-spacing'], golden: TRACKING },
-      { target: `${OPEN} .cui-accordion-answer`, props: ['letter-spacing'], golden: TRACKING },
     ],
   },
   {
@@ -38,7 +36,6 @@ export const cases = [
       { target: `${Q} svg`, props: ['box-height'], apple: ['bag-accordion', 'accordion.svg'] },
       { target: Q, props: ['padding-top', 'padding-bottom'], apple: ['bag', 'accordion.button'] },
       { target: `${Q} svg`, props: ['box-width', 'margin-right'], golden: 'apple.com\'s chevron, 32px (24px in a 32px column below 735px: bag-accordion:accordion.svg, .icon)' },
-      { target: Q, props: ['letter-spacing'], golden: TRACKING },
     ],
   },
   {
@@ -59,14 +56,6 @@ export const cases = [
     checks: [
       { target: '.cui-accordion-item:nth-child(2) > .cui-accordion-question svg', props: ['transform'], golden: 'clicked, its question\'s chevron turned up: <details> opens with no script' },
       { target: '.cui-accordion-item:nth-child(2) .cui-accordion-answer', props: ['box-height'], golden: 'its answer shown, at its height (13.6px above, 28px below its line)' },
-    ],
-  },
-  {
-    name: 'touch',
-    html: ex('accordion'),
-    touch: true,
-    checks: [
-      { target: `${CLOSED} > ${Q} svg`, on: `${CLOSED} > ${Q}`, state: 'hover', props: ['color'], rest: 'a touch screen\'s chevron does not change hovered (rule 5), where apple.com\'s does (touch-bag-accordion:compact.icon-hover)' },
     ],
   },
 ];

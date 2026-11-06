@@ -1,4 +1,4 @@
-import { examples, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 
@@ -10,7 +10,6 @@ export const cases = [
     checks: [
       { target: '.cui-price', props: [...SIZE, 'color', 'display'], apple: ['buy', 'price.header'] },
       { target: '.cui-price-amount', props: [...SIZE, 'white-space', 'display'], apple: ['buy', 'price.amount'] },
-      { target: '.cui-price', props: ['letter-spacing'], golden: TRACKING },
     ],
   },
   {

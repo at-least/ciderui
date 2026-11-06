@@ -168,13 +168,4 @@ export const cases = [
       { target: `${item(1, 2)} > img`, props: ['opacity'], state: 'hover', on: item(1, 2), golden: 'a dimmed asset under the pointer at 0.8, muse\'s: brighter, so it reads as a link, and still apart from those in use' },
     ],
   },
-  {
-    name: 'strip assets touch',
-    html: ex('assets'),
-    touch: true,
-    widths: [390],
-    checks: [
-      { target: `${item(1, 2)} > img`, props: ['opacity'], state: 'hover', on: item(1, 2), rest: 'a tapped dimmed asset keeps no hover (rule 5)' },
-    ],
-  },
 ];

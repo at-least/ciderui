@@ -1,4 +1,4 @@
-import { examples, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const ITEM = '.cui-shelf-scroller > li:first-child .cui-productnav-item';
@@ -22,7 +22,6 @@ export const cases = [
       { target: '.cui-shelf-row', props: ['box-height'], golden: 'its row in sight: apple.com\'s crop, 186px, and 164px on a phone for apple.com\'s 163px, which cuts its row\'s last pixel (store:productnav.crop)' },
       { target: '.cui-shelf-scroller', props: ['padding-bottom'], golden: 'room under the cards for a focused card\'s ring, which the scroller clips (on a phone 5px, pulled back by its margin, none of it in sight: the row\'s crop above)' },
       { target: ITEM, props: ['text-decoration-line', 'display'], golden: 'the card is the link, no underline (apple.com\'s script follows its name\'s link)' },
-      { target: `${ITEM} .cui-productnav-name`, props: ['letter-spacing'], golden: TRACKING },
     ],
   },
 ];

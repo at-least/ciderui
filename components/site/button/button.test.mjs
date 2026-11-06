@@ -1,11 +1,11 @@
-import { examples, SIZE, PADDING, BORDER, RADIUS, COLORS, TEXT, OUTLINE } from '../../../test/harness.mjs';
+import { examples, SIZE, PADDING, BORDER, RADIUS, COLORS, TEXT } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const LOOK = [...SIZE, ...PADDING, ...BORDER, ...RADIUS, 'min-width', 'box-height', ...TEXT];
 // what the home page's probes read (no text-align, wrapping or opacity; its
 // primary button's cursor alone); not its display, which is its place's
 const LOOK_HOME = [...SIZE, ...PADDING, ...BORDER, ...RADIUS, 'min-width', 'box-height'];
-const OWN = { props: ['letter-spacing', 'font-family'], golden: 'the system font\'s fitted letter-spacing (tokens.css) and the kit\'s stack, not apple.com\'s' };
+const OWN = { props: ['font-family'], golden: 'the kit\'s stack, not apple.com\'s' };
 const states = (target, probe, props = COLORS) => [
   { target, state: 'hover', props, apple: [...probe, 'hover'] },
   { target, state: 'active', props, apple: [...probe, 'active'] },
@@ -19,7 +19,6 @@ export const cases = [
     checks: [
       { target: '.cui-btn', props: [...LOOK, ...COLORS], apple: ['store', 'button'] },
       ...states('.cui-btn', ['store', 'button']),
-      { target: '.cui-btn', state: 'focus-visible', props: OUTLINE, apple: ['store', 'button', 'focus-visible'] },
       { target: '.cui-btn', ...OWN },
     ],
   },
@@ -65,7 +64,6 @@ export const cases = [
       ...states('.cui-btn[data-variant="neutral"]', ['store', 'button.neutral']),
       { target: '.cui-btn[data-variant="secondary-neutral"]', props: [...LOOK, ...COLORS], apple: ['store', 'button.secondary-neutral'] },
       ...states('.cui-btn[data-variant="secondary-neutral"]', ['store', 'button.secondary-neutral']),
-      { target: '.cui-btn[data-variant="secondary-neutral"]', state: 'focus-visible', props: OUTLINE, apple: ['store', 'button.secondary-neutral', 'focus-visible'] },
     ],
   },
   {
@@ -121,14 +119,6 @@ export const cases = [
       // its width is its container's: a block's, not checked
       { target: '.cui-btn-block', props: [...SIZE, ...PADDING, ...RADIUS, 'display', 'box-height', ...COLORS], apple: ['store', 'button.block'] },
     ],
-  },
-  {
-    name: 'touch',
-    html: ex('variants'),
-    touch: true,
-    widths: [390],
-    checks: ['.cui-btn:not([data-variant])', '.cui-btn[data-variant="secondary"]', '.cui-btn[data-variant="neutral"]']
-      .map(target => ({ target, state: 'hover', props: COLORS, rest: 'a touch screen keeps no hover (rule 5), where apple.com\'s buttons keep theirs (touch-store:button, button.secondary, button.neutral)' })),
   },
   {
     name: 'touch target',

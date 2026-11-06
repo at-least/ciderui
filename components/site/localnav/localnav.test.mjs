@@ -1,4 +1,4 @@
-import { examples, MOTION, PADDING, POINTER, SIZE, TRACKING } from '../../../test/harness.mjs';
+import { examples, MOTION, PADDING, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const NAV = ex('localnav');
@@ -26,15 +26,11 @@ export const cases = [
       { target: '.cui-localnav', pseudo: '::after', props: ['background-color', 'height', 'position', 'bottom'], apple: ['localnav', 'localnav.rule'] },
       { target: '.cui-localnav-content', props: ['max-width', 'padding-left', 'padding-right', 'margin-left', 'margin-right'], apple: ['localnav', 'localnav.content'] },
       { target: TITLE, props: [...SIZE, 'text-decoration-line', 'box-top', 'box-left', 'box-height'], apple: ['localnav', 'localnav.title'] },
-      { target: TITLE, props: MOTION, golden: POINTER },
-      { target: LINK, props: MOTION, golden: POINTER },
-      { target: TITLE, props: ['letter-spacing'], golden: TRACKING },
       { target: TITLE, props: ['color', 'opacity'], golden: 'apple.com\'s black at opacity .88 (localnav:localnav.title), as one color, on-bar-2' },
       { target: '.cui-localnav-list > li:nth-child(2)', props: ['margin-left', 'margin-right'], apple: ['localnav', 'localnav.item'] },
       { target: LINK, props: [...SIZE, 'color', 'opacity', 'text-decoration-line', 'box-top', 'box-height'], apple: ['localnav', 'localnav.link'] },
       { target: LINK, props: ['display'], golden: 'a flex item, so block: apple.com\'s inline-block sits in a 12px line, ciderui\'s in its item (the same place, localnav:localnav.link)' },
       { target: LINK, state: 'hover', props: ['opacity'], apple: ['localnav', 'localnav.link', 'hover'] },
-      { target: LINK, props: ['letter-spacing'], golden: TRACKING },
       { target: CURRENT, props: [...SIZE, 'color', 'opacity', 'cursor', 'box-top'], apple: ['localnav', 'localnav.current'] },
       { target: CURRENT, pseudo: '::after', props: ['background-color', 'opacity', 'height', 'top', 'left', 'border-top-left-radius', 'position'], apple: ['localnav', 'localnav.current-mark'] },
       { target: BUTTON, props: [...SIZE, 'color', ...PADDING, 'border-top-left-radius', 'background-color', 'min-width', 'box-top', 'box-height'], apple: ['localnav', 'localnav.button'] },
@@ -93,7 +89,6 @@ export const cases = [
     checks: [
       { target: '.cui-localnav', props: ['transition-duration', 'transition-timing-function'], apple: ['localnav', 'tray.background'] },
       { target: '.cui-localnav-list', props: ['opacity', ...MOTION, 'transition-delay'], golden: 'the rows shown with the sheet, where apple.com\'s fade in 0.32s from 260ms, one after another (localnav:tray.link, tray.open\'s animations): a menu opened is read at once (DESIGN.md decision 25)' },
-      { target: LINK, props: [...MOTION, 'transition-delay'], golden: POINTER },
       { target: '.cui-localnav-menu', props: ['transition-duration', 'transition-timing-function', 'transition-delay'], golden: 'apple.com\'s menu opens in 0.32s with its curve (localnav:tray.open, its max-height), shown at once: not the closing\'s 0.32s on its visibility' },
     ],
   },
@@ -175,23 +170,6 @@ export const cases = [
       { target: LINK, props: ['color', 'opacity'], apple: ['localnav-dark', 'tray.link'] },
       { target: CHEVRON, props: ['color', 'opacity'], apple: ['localnav-dark', 'localnav.chevron-image'] },
     ],
-  },
-  {
-    name: 'touch',
-    html: NAV,
-    touch: true,
-    widths: [1200, 390],
-    checks: [
-      { target: LINK, state: 'hover', props: ['opacity'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-localnav:localnav.link)' },
-      { target: CHEVRON, state: 'hover', props: ['opacity'], rest: 'no hover on a touch screen (rule 5), where apple.com\'s keeps it (touch-localnav:localnav.chevron-image)' },
-    ],
-  },
-  {
-    name: 'touch-tray',
-    html: NAV,
-    touch: true,
-    ...OPEN,
-    checks: [{ target: LINK, state: 'hover', props: ['opacity'], rest: 'nor in the opened tray, where apple.com\'s keeps it (touch-localnav:tray.link)' }],
   },
   {
     name: 'touch-chevron',

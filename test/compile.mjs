@@ -31,3 +31,8 @@ export function compile({ css = '@import "index.css";', classes = '', sources = 
     rmSync(dir, { recursive: true });
   }
 }
+
+// every part of both sets, as a site that uses them all builds it
+export const compileKit = () => compile({ css: `@import "fonts.css";\n@import "index.css";\n${COMPONENTS.map((c) => `@import "${c.dir}/${c.name}.css";`).join('\n')}`, sources: ['components'] });
+
+export const exampleFiles = (part) => readdirSync(join(ROOT, part.dir, 'examples')).filter((f) => f.endsWith('.html')).sort();

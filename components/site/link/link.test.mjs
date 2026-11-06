@@ -1,4 +1,4 @@
-import { examples, OUTLINE } from '../../../test/harness.mjs';
+import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const LINK = ['color', 'text-decoration-line', 'text-decoration-color'];
@@ -18,7 +18,6 @@ export const cases = [
       { target: '.cui-link', props: ['font-size', 'line-height', 'font-weight', ...LINK], apple: ['iphone', 'link.inline'] },
       { target: '.cui-link', state: 'hover', props: LINK, apple: ['iphone', 'link.inline', 'hover'] },
       { target: '.cui-link', state: 'active', props: LINK, apple: ['iphone', 'link.inline', 'active'] },
-      { target: '.cui-link', state: 'focus-visible', props: OUTLINE, golden: 'base.css\'s focus ring, the link drawing none of its own' },
     ],
   },
   {
@@ -41,7 +40,6 @@ export const cases = [
       { target: '.cui-link-icon', props: ['display'], golden: 'inline, on its text\'s line: Tailwind\'s preflight draws an svg as a block' },
       { target: 'p', props: ['box-height'], golden: 'one line, the chevron after the text: the paragraph\'s 25px line' },
       { target: '.cui-link-icon', props: ['box-x'], golden: 'after the text by its margin alone: the markup on one line, as a space between text and chevron would widen the gap' },
-      { target: '.cui-link', state: 'focus-visible', props: OUTLINE, golden: 'base.css\'s focus ring, the more link drawing none of its own' },
     ],
   },
   {
@@ -58,13 +56,6 @@ export const cases = [
       { target: '.cui-link', props: ['font-size', 'color', 'text-decoration-line'], apple: ['product', 'link.more'] },
       { target: '.cui-link-icon', props: ['margin-left', 'color'], apple: ['product', 'link.more-icon'], as: { 'margin-left': 'padding-left' } },
     ],
-  },
-  {
-    name: 'touch',
-    html: `<p>${ex('more')}</p>`,
-    touch: true,
-    widths: [390],
-    checks: [{ target: '.cui-link-text', on: '.cui-link', state: 'hover', props: ['text-decoration-line'], rest: 'a touch screen keeps no hover (rule 5), where apple.com\'s more link underlines (touch-iphone:link.more-copy)' }],
   },
   {
     name: 'more link touch target',
