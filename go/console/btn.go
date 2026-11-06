@@ -39,8 +39,7 @@ type ConsoleBtn struct {
 	Variant ConsoleBtnVariant
 	Size    ConsoleBtnSize
 	// Error: a destructive action.
-	Error   bool
-	Capsule bool
+	Error bool
 	// Attrs: disabled, aria-*, an htmx attribute; nil for none.
 	Attrs g.Node
 	Class string
@@ -59,7 +58,7 @@ func (b ConsoleBtn) Render(w io.Writer) error {
 	} else if b.AriaLabel != "" {
 		panic("console.ConsoleBtn has a Label and an AriaLabel: its words name it")
 	}
-	attrs := g.Group{class.Root(root, b.Class), optionalAttr("data-variant", b.Variant.value), g.If(b.Error, h.Data("color", "error")), optionalAttr("data-size", b.Size.value), g.If(b.Capsule, h.Data("shape", "capsule"))}
+	attrs := g.Group{class.Root(root, b.Class), optionalAttr("data-variant", b.Variant.value), g.If(b.Error, h.Data("color", "error")), optionalAttr("data-size", b.Size.value)}
 	content := g.Group{g.If(b.Icon != (lucide.Icon{}), b.Icon), g.If(b.Label != "", g.Text(b.Label))}
 	if b.Href != "" {
 		return h.A(attrs, h.Href(b.Href), optionalAttr("aria-label", b.AriaLabel), b.Attrs, content).Render(w)

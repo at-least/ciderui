@@ -2,8 +2,6 @@ import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const L = '.cui-console-listing';
-const N = '.cui-console-listing-line:not([data-highlighted])';
-const H = '.cui-console-listing-line[data-highlighted]';
 
 export const cases = [
   {
@@ -20,45 +18,11 @@ export const cases = [
     ],
   },
   {
-    name: 'listing lines',
-    html: ex('lines'),
-    widths: [1200, 390],
-    checks: [
-      { target: N, props: ['display', 'box-sizing'], apple: ['docc-lines', 'line'] },
-      { target: N, props: ['width'], golden: 'the listing\'s width, a highlight across it (DocC\'s 100%)' },
-      { target: N, pseudo: '::before', props: ['display', 'text-align', 'user-select', 'padding-right', 'padding-left'], apple: ['docc-lines', 'line.number'] },
-      { target: H, pseudo: '::before', props: ['padding-left', 'border-left-width', 'border-left-style'], apple: ['docc-lines', 'highlighted.number'] },
-      { target: N, pseudo: '::before', props: ['content', 'min-width', 'color', 'font-size'], golden: 'the number from data-line, drawn, so a selection or a copy leaves it out; 2em at least (DocC\'s); the secondary label, fitted to 4.5:1 (DocC\'s rgb(110, 110, 115)); the listing\'s 13px' },
-      { target: H, props: ['background-color'], golden: 'highlighted, the brand\'s fill-quaternary (DocC\'s rgb(234, 243, 255))' },
-      { target: H, pseudo: '::before', props: ['border-left-color'], golden: 'its edge the brand label\'s blue, the accent\'s in light (DocC\'s rgb(76, 169, 255))' },
-      { target: L, props: ['padding-left', 'padding-right'], golden: 'numbered lines: no room at its sides, the numbers give it (DocC\'s pre)' },
-      { target: N, props: ['box-x'], golden: 'a line from the listing\'s edge, a highlight across it' },
-    ],
-  },
-  {
     name: 'listing nested',
     html: ex('nested'),
     widths: [1200],
     checks: [
       { target: L, props: ['background-color'], golden: 'in a console card, whose gray is its own, the page\'s white' },
-    ],
-  },
-  {
-    name: 'listing in listing',
-    html: '<div class="cui-console-page max-w-xl"><div class="cui-console-listing"><pre class="cui-console-listing"><code>Thread 0 Crashed:</code></pre></div></div>',
-    widths: [1200],
-    checks: [
-      { target: `${L} ${L}`, props: ['background-color'], golden: 'in another listing, whose gray is its own, the page\'s white' },
-    ],
-  },
-  {
-    name: 'listing lines dark',
-    html: `<div class="cui-dark">${ex('lines')}</div>`,
-    widths: [1200],
-    checks: [
-      { target: N, pseudo: '::before', props: ['color'], golden: 'the dark side derived (tokens.css, decision 18)' },
-      { target: H, props: ['background-color'], golden: 'highlighted in the dark (DocC\'s rgb(66, 66, 69))' },
-      { target: H, pseudo: '::before', props: ['border-left-color'], golden: 'its edge in the dark a step lighter than the accent, the brand label\'s, 5.31:1 on the dark highlight: the accent\'s dark side was 2.57:1, under a mark\'s 3:1 (decision 21; DocC\'s rgb(125, 193, 255))' },
     ],
   },
   {

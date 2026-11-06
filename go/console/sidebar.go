@@ -21,8 +21,8 @@ type ConsoleSidebar struct {
 	Class          string
 	// Footer: an account.
 	Footer g.Node
-	// Children: [ConsoleMenuItem]s, headings and rules, as in a [ConsoleMenu]
-	// (decision 27).
+	// Children: [ConsoleMenuItem]s, with a <p class="cui-console-menu-heading">
+	// or an <hr class="cui-console-menu-rule"> between runs of them.
 	Children g.Node
 }
 
@@ -42,7 +42,7 @@ func (s ConsoleSidebar) Render(w io.Writer) error {
 	return h.Nav(class.Root("cui-console-sidebar", s.Class), h.ID(s.ID), h.Popover(), h.Aria("label", s.AriaLabel),
 		h.Div(h.Class("cui-console-sidebar-header"),
 			h.A(h.Class("cui-console-sidebar-wordmark"), h.Href(s.Home), g.Text(s.Wordmark)),
-			ConsoleBtn{Href: "", Label: "", AriaLabel: s.CloseAriaLabel, Icon: lucide.X, Submit: false, Variant: ConsoleBtnVariantPlain, Size: ConsoleBtnSizeMedium, Error: false, Capsule: false, Attrs: g.Group{h.PopoverTarget(s.ID), h.PopoverTargetAction("hide"), h.AutoFocus()}, Class: "cui-console-sidebar-close"},
+			ConsoleBtn{Href: "", Label: "", AriaLabel: s.CloseAriaLabel, Icon: lucide.X, Submit: false, Variant: ConsoleBtnVariantPlain, Size: ConsoleBtnSizeMedium, Error: false, Attrs: g.Group{h.PopoverTarget(s.ID), h.PopoverTargetAction("hide"), h.AutoFocus()}, Class: "cui-console-sidebar-close"},
 		),
 		h.Div(h.Class("cui-console-sidebar-body cui-console-menu"), h.Data("variant", "sidebar"), s.Children),
 		h.Div(h.Class("cui-console-sidebar-footer"), s.Footer),

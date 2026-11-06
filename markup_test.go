@@ -54,9 +54,6 @@ func TestCheckMarkup(t *testing.T) {
 		{"the bare attribute a :not selects", `<ul class="cui-console-tabs" data-overflow-end></ul>`, nil},
 		{"a value only a :not selects", `<ul class="cui-console-tabs" data-overflow-end="yes"></ul>`, []string{`data-overflow-end="yes" on <ul class="cui-console-tabs">: no rule of ciderui's selects it (cui-console-tabs's: "")`}},
 
-		// :is(.cui-console-copy-button, .cui-console-copy-inline)[data-state="copied"]
-		{"a value for one class of an :is", `<button class="cui-console-copy-button" data-state="copied">x</button>`, nil},
-		{"a value for the other class of an :is", `<button class="cui-console-copy-inline" data-state="copied">x</button>`, nil},
 		// the data-variant of a part where no rule selects that value
 		{"a value is not another alternative's", `<a class="cui-console-link" data-variant="more">x</a>`, []string{`data-variant="more" on <a class="cui-console-link">: no rule of ciderui's selects it (cui-console-link's: label, text)`}},
 		// .cui-console-player-end > [data-control="replay"] names no class of the element

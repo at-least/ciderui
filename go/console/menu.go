@@ -10,34 +10,14 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleMenu is a section's pages down its left side.
-type ConsoleMenu struct {
-	AriaLabel string
-	Class     string
-	// Children: [ConsoleMenuItem]s and [ConsoleMenuGroup]s, with a
-	// <p class="cui-console-menu-heading"> or an
-	// <hr class="cui-console-menu-rule"> between runs of them.
-	Children g.Node
-}
-
-func (m ConsoleMenu) Render(w io.Writer) error {
-	if m.AriaLabel == "" {
-		panic("console.ConsoleMenu needs an AriaLabel")
-	}
-	return h.Nav(class.Root("cui-console-menu", m.Class), h.Aria("label", m.AriaLabel), m.Children).Render(w)
-}
-
-// ConsoleMenuItem is a page in a [ConsoleMenu], a [ConsoleMenuGroup] or a
-// [ConsoleSidebar].
+// ConsoleMenuItem is a page in a [ConsoleSidebar].
 type ConsoleMenuItem struct {
 	// Href: "" for an item not available now.
 	Href    string
 	Label   string
 	Icon    lucide.Icon
 	Current bool
-	// Secondary is a count at the item's end.
-	Secondary string
-	Class     string
+	Class   string
 }
 
 func (m ConsoleMenuItem) Render(w io.Writer) error {
@@ -47,37 +27,11 @@ func (m ConsoleMenuItem) Render(w io.Writer) error {
 	content := g.Group{
 		iconPart(m.Icon, "cui-console-menu-icon"),
 		h.Span(h.Class("cui-console-menu-label"), g.Text(m.Label)),
-		g.If(m.Secondary != "", h.Span(h.Class("cui-console-menu-secondary"), g.Text(m.Secondary))),
 	}
 	if m.Href == "" {
 		return h.A(class.Root("cui-console-menu-item", m.Class), h.Aria("disabled", "true"), content).Render(w)
 	}
 	return h.A(class.Root("cui-console-menu-item", m.Class), h.Href(m.Href), g.If(m.Current, h.Aria("current", "page")), content).Render(w)
-}
-
-type ConsoleMenuGroup struct {
-	Label string
-	Icon  lucide.Icon
-	Open  bool
-	Items []ConsoleMenuItem
-	Class string
-}
-
-func (m ConsoleMenuGroup) Render(w io.Writer) error {
-	if m.Label == "" {
-		panic("console.ConsoleMenuGroup needs a Label")
-	}
-	if len(m.Items) == 0 {
-		panic("console.ConsoleMenuGroup needs an Item")
-	}
-	return h.Details(class.Root("cui-console-menu-group", m.Class), g.If(m.Open, h.Open()),
-		h.Summary(h.Class("cui-console-menu-item"),
-			iconPart(m.Icon, "cui-console-menu-icon"),
-			h.Span(h.Class("cui-console-menu-label"), g.Text(m.Label)),
-			lucide.ChevronRight.Class("cui-console-menu-chevron"),
-		),
-		g.Map(m.Items, func(item ConsoleMenuItem) g.Node { return item }),
-	).Render(w)
 }
 
 // ConsoleChoiceMenu is a popover of choices in columns side by side, each its

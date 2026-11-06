@@ -56,10 +56,6 @@
     cursor: pointer;
     list-style: none;
 
-    &::-webkit-details-marker {
-      display: none;
-    }
-
     &[role="menuitemradio"] {
       width: 100%;
       text-align: start;
@@ -151,32 +147,6 @@
     flex: 1;
     min-width: 0;
     overflow-wrap: anywhere;
-  }
-
-  .cui-console-menu-secondary {
-    flex: none;
-    color: var(--cui-c-console-neutral-label-secondary);
-
-    :where(.cui-console-menu[data-variant="sidebar"]) & {
-      font-size: 13px;
-      line-height: 18px;
-      font-weight: 500;
-    }
-  }
-
-  .cui-console-menu-chevron {
-    flex: none;
-    width: 1em;
-    height: 1em;
-    color: var(--cui-c-console-neutral-label-secondary);
-
-    :where(.cui-console-menu-group[open]) > :where(summary) > & {
-      rotate: 90deg;
-    }
-  }
-
-  :where(.cui-console-menu-group) > .cui-console-menu-item:not(summary) {
-    padding-inline-start: 48px;
   }
 
   .cui-console-menu-heading {

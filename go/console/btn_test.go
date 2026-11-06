@@ -11,7 +11,7 @@ import (
 )
 
 func consoleBtn(label string) console.ConsoleBtn {
-	return console.ConsoleBtn{Href: "", Label: label, AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Error: false, Capsule: false, Attrs: nil, Class: ""}
+	return console.ConsoleBtn{Href: "", Label: label, AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Error: false, Attrs: nil, Class: ""}
 }
 
 func row(children ...g.Node) g.Node {
@@ -39,13 +39,15 @@ func TestConsoleBtnRendersTheExamples(t *testing.T) {
 		b := sized("", size)
 		b.AriaLabel = "Copy"
 		b.Icon = lucide.Copy
-		b.Capsule = capsule
+		if capsule {
+			b.Attrs = h.Data("shape", "capsule")
+		}
 		return b
 	}
 	labelled := consoleBtn("Copy")
 	labelled.Icon = lucide.Copy
 	compare := consoleBtn("Compare")
-	compare.Capsule = true
+	compare.Attrs = h.Data("shape", "capsule")
 	medium := console.ConsoleBtnSizeMedium
 	for _, c := range []struct {
 		path string

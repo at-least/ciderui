@@ -20,13 +20,8 @@ func (s ConsoleStatus) Render(w io.Writer) error {
 	if s.Label == "" {
 		panic("console.ConsoleStatus needs a Label")
 	}
-	return statusPart(s.Label, s.Color, "", s.Class).Render(w)
-}
-
-// seriesColor: a chart legend's series, as CSS; "" for color's.
-func statusPart(label string, color ConsoleColor, seriesColor, rootClass string) g.Node {
-	return h.Span(class.Root("cui-console-status", rootClass), optionalAttr("data-color", color.value),
-		h.Span(h.Class("cui-console-status-mark"), g.If(seriesColor != "", h.Style("--cui-console-status-color: "+seriesColor))),
-		g.Text(label),
-	)
+	return h.Span(class.Root("cui-console-status", s.Class), optionalAttr("data-color", s.Color.value),
+		h.Span(h.Class("cui-console-status-mark")),
+		g.Text(s.Label),
+	).Render(w)
 }

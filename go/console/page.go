@@ -18,15 +18,10 @@ type ConsolePage struct {
 	// utilities' stylesheet, a script); nil for none.
 	Head g.Node
 	// Class: the <html>'s.
-	Class     string
-	BodyClass string
-	Children  g.Node
+	Class    string
+	Children g.Node
 }
 
 func (p ConsolePage) Render(w io.Writer) error {
-	body := "cui-console-page"
-	if p.BodyClass != "" {
-		body += " " + p.BodyClass
-	}
-	return document.Document{Owner: "console.ConsolePage", Lang: p.Lang, Title: p.Title, Stylesheet: ciderui.ConsoleStylesheet(), Head: p.Head, Class: p.Class, BodyClass: body, Children: p.Children}.Render(w)
+	return document.Document{Owner: "console.ConsolePage", Lang: p.Lang, Title: p.Title, Stylesheet: ciderui.ConsoleStylesheet(), Head: p.Head, Class: p.Class, BodyClass: "cui-console-page", Children: p.Children}.Render(w)
 }

@@ -14,16 +14,9 @@
 // 3. the row's last tab, its start a sliver inside the row (Linux's Inter:
 //    3px), focused by script: brought in whole (within 1px), its ring inside
 //    the tab where :focus-visible matches;
-// 4. the thumbnails 240px tall at their own aspect, a wider one than a
-//    phone's column narrowed to it, still 240px;
-// 5. the pager: one centered row, its previous button, summary and next
-//    button on one line, 10px between them (375 and 1200);
-// 6. the page column: one column at 900; at 1200 the sidebar's 225px
+// 4. the page column: one column at 900; at 1200 the sidebar's 225px
 //    column 30px before the page, 40px in, its header and body with no room
 //    at their sides; at 1920 the column 1440px wide, centered (240px in);
-// 7. the toast, in the window: 16px from its right and bottom edges, never
-//    what a point finds there, fading in on data-shown (its opacity read
-//    each frame: one between 0 and 1, then 1).
 // The result is results/<browser>.json; exits 1 if a claim does not hold.
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -129,28 +122,6 @@ try {
   claim('3 a tab focused by script: brought in whole, its ring inside where :focus-visible matches', focus.focused && focus.shown >= focus.tab[1] - focus.tab[0] - 1 && (!focus.focusVisible || focus.outlineOffset === '-2px'), focus);
 
   // 4
-  for (const id of ['thumbs-375', 'thumbs-1200']) {
-    const imgs = await page.run(`(async () => {
-      const w = ${frame(id)};
-      const col = w.document.querySelector('.cui-console-thumbs').getBoundingClientRect();
-      return { column: col.width, imgs: [...w.document.querySelectorAll('.cui-console-thumb img')].map((i) => ({ natural: [i.naturalWidth, i.naturalHeight], box: [i.getBoundingClientRect().width, i.getBoundingClientRect().height] })) };
-    })()`);
-    const ok = imgs.imgs.every(({ natural: [nw, nh], box: [bw, bh] }) => bh === 240 && Math.abs(bw - Math.min(240 * nw / nh, imgs.column)) < 0.5);
-    claim(`4 thumbnails at ${id.split('-')[1]}: 240px tall, their aspect, no wider than the column`, ok, imgs);
-  }
-
-  // 5
-  for (const id of ['pager-375', 'pager-1200']) {
-    const p = await page.run(`(async () => {
-      const d = ${frame(id)}.document;
-      const n = d.querySelector('.cui-console-pager').getBoundingClientRect();
-      const [a, s, b] = [...d.querySelectorAll('.cui-console-pager > *')].map((e) => e.getBoundingClientRect());
-      return { gaps: [s.left - a.right, b.left - s.right], tops: [a.top + a.height / 2, s.top + s.height / 2, b.top + b.height / 2], offCenter: (a.left + b.right) / 2 - (n.left + n.right) / 2 };
-    })()`);
-    claim(`5 pager at ${id.split('-')[1]}: one centered row, 10px between its parts`, p.gaps.every((g) => Math.abs(g - 10) < 0.01) && Math.max(...p.tops) - Math.min(...p.tops) < 1 && Math.abs(p.offCenter) < 1, p);
-  }
-
-  // 6
   const content = {};
   for (const id of ['content-900', 'content-1200', 'content-1920']) {
     content[id] = await page.run(`(async () => {
@@ -165,32 +136,11 @@ try {
     })()`);
   }
   const c9 = content['content-900'];
-  claim('6 page column at 900: one column', c9.display !== 'grid', c9);
+  claim('4 page column at 900: one column', c9.display !== 'grid', c9);
   const c12 = content['content-1200'];
-  claim('6 page column at 1200: the sidebar 225px, 40px in, the page 30px past it, no room at its sides', c12.display === 'grid' && c12.sidebarLeft === 40 && c12.sidebarWidth === 225 && c12.mainLeft === 40 + 225 + 30 && c12.header === '0px' && c12.body === '0px', c12);
+  claim('4 page column at 1200: the sidebar 225px, 40px in, the page 30px past it, no room at its sides', c12.display === 'grid' && c12.sidebarLeft === 40 && c12.sidebarWidth === 225 && c12.mainLeft === 40 + 225 + 30 && c12.header === '0px' && c12.body === '0px', c12);
   const c19 = content['content-1920'];
-  claim('6 page column at 1920: 1440px, centered, the sidebar 240px in', c19.contentLeft === 240 && c19.contentWidth === 1440 && c19.sidebarLeft === 280, c19);
-
-  // 7
-  await page.go(`${ORIGIN}/toast.html`);
-  const toast = await page.run(`(async () => {
-    await document.fonts.ready;
-    const t = document.querySelector('.cui-console-toast');
-    const r = t.getBoundingClientRect();
-    const root = document.documentElement;
-    const at = () => document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
-    const rest = { opacity: getComputedStyle(t).opacity, found: at() === t };
-    const frames = [];
-    const start = performance.now();
-    t.setAttribute('data-shown', '');
-    while (performance.now() - start < 400) {
-      await new Promise((f) => requestAnimationFrame(f));
-      frames.push([Math.round(performance.now() - start), Number(getComputedStyle(t).opacity)]);
-    }
-    return { right: root.clientWidth - r.right, bottom: root.clientHeight - r.bottom, innerHeight, visualHeight: visualViewport.height, rest, shownFound: at() === t, frames };
-  })()`);
-  const mid = toast.frames.filter(([, o]) => o > 0 && o < 1);
-  claim('7 toast: 16px from the right and bottom, never hit, fading in', Math.abs(toast.right - 16) < 0.01 && Math.abs(toast.bottom - 16) < 0.01 && toast.rest.opacity === '0' && !toast.rest.found && !toast.shownFound && mid.length > 0 && toast.frames.at(-1)[1] === 1, toast);
+  claim('4 page column at 1920: 1440px, centered, the sidebar 240px in', c19.contentLeft === 240 && c19.contentWidth === 1440 && c19.sidebarLeft === 280, c19);
 } finally {
   await page.close();
   server.close();

@@ -74,25 +74,4 @@
     letter-spacing: normal;
     color: var(--cui-c-console-neutral-label-secondary);
   }
-
-  .cui-console-chart-legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 12px;
-    margin-top: 8px;
-  }
-
-  .cui-console-chart-sparkline {
-    --cui-console-chart-sparkline-color: var(--cui-c-console-brand-accent-primary);
-    overflow: visible;
-  }
-
-  .cui-console-chart-sparkline-line {
-    fill: none;
-    stroke: var(--cui-console-chart-sparkline-color);
-    stroke-width: 2px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    vector-effect: non-scaling-stroke;
-  }
 }

@@ -11,18 +11,18 @@ import (
 )
 
 func TestMenuRendersTheExample(t *testing.T) {
-	menu := console.ConsoleMenu{AriaLabel: "Analytics", Class: "", Children: g.Group{
-		console.ConsoleMenuItem{Href: "#overview", Label: "Overview", Icon: lucide.LayoutGrid, Current: true, Secondary: "", Class: ""},
-		console.ConsoleMenuGroup{Label: "Acquisition", Icon: lucide.UserPlus, Open: true, Class: "", Items: []console.ConsoleMenuItem{
-			{Href: "#sources", Label: "Sources", Icon: lucide.Icon{}, Current: false, Secondary: "", Class: ""},
-			{Href: "", Label: "Product Pages", Icon: lucide.Icon{}, Current: false, Secondary: "", Class: ""},
-		}},
-		console.ConsoleMenuGroup{Label: "Monetization", Icon: lucide.ChartLine, Open: false, Class: "", Items: []console.ConsoleMenuItem{{Href: "#sales", Label: "Sales", Icon: lucide.Icon{}, Current: false, Secondary: "", Class: ""}}},
+	item := func(href, label string, icon lucide.Icon, current bool) console.ConsoleMenuItem {
+		return console.ConsoleMenuItem{Href: href, Label: label, Icon: icon, Current: current, Class: ""}
+	}
+	menu := h.Nav(h.Class("cui-console-menu"), h.Aria("label", "Analytics"),
+		item("#overview", "Overview", lucide.LayoutGrid, true),
+		item("#sources", "Sources", lucide.Icon{}, false),
+		item("", "Product Pages", lucide.Icon{}, false),
 		h.Hr(h.Class("cui-console-menu-rule")),
 		h.P(h.Class("cui-console-menu-heading"), g.Text("Projects")),
-		console.ConsoleMenuItem{Href: "#shop", Label: "Shop", Icon: lucide.Icon{}, Current: false, Secondary: "8", Class: ""},
-		console.ConsoleMenuItem{Href: "#demo", Label: "Demo Shop", Icon: lucide.Icon{}, Current: false, Secondary: "12", Class: ""},
-	}}
+		item("#shop", "Shop", lucide.Icon{}, false),
+		item("#demo", "Demo Shop", lucide.Icon{}, false),
+	)
 	example.Check(t, menu, "console/console-menu/examples/menu.html")
 }
 
@@ -61,36 +61,19 @@ func TestChoiceMenuRendersTheExample(t *testing.T) {
 
 // not the link a current item is: no aria-current on what cannot be followed
 func TestMenuItemWithNoHrefIsNotAvailable(t *testing.T) {
-	got := example.Render(console.ConsoleMenuItem{Href: "", Label: "x", Icon: lucide.Icon{}, Current: true, Secondary: "", Class: ""})
+	got := example.Render(console.ConsoleMenuItem{Href: "", Label: "x", Icon: lucide.Icon{}, Current: true, Class: ""})
 	if want := `<a class="cui-console-menu-item" aria-disabled="true"><span class="cui-console-menu-label">x</span></a>`; got != want {
 		t.Errorf("got  %s\nwant %s", got, want)
 	}
 }
 
-func TestMenuPanics(t *testing.T) {
-	example.Panics(t, func() console.ConsoleMenu {
-		return console.ConsoleMenu{AriaLabel: "x", Class: "", Children: g.Text("x")}
-	}, []example.Break[console.ConsoleMenu]{
-		{Want: "console.ConsoleMenu needs an AriaLabel", Change: func(p *console.ConsoleMenu) { p.AriaLabel = "" }},
-	})
-}
-
 func validMenuItem() console.ConsoleMenuItem {
-	return console.ConsoleMenuItem{Href: "#x", Label: "x", Icon: lucide.Icon{}, Current: false, Secondary: "", Class: ""}
+	return console.ConsoleMenuItem{Href: "#x", Label: "x", Icon: lucide.Icon{}, Current: false, Class: ""}
 }
 
 func TestMenuItemPanics(t *testing.T) {
 	example.Panics(t, validMenuItem, []example.Break[console.ConsoleMenuItem]{
 		{Want: "console.ConsoleMenuItem needs a Label", Change: func(p *console.ConsoleMenuItem) { p.Label = "" }},
-	})
-}
-
-func TestMenuGroupPanics(t *testing.T) {
-	example.Panics(t, func() console.ConsoleMenuGroup {
-		return console.ConsoleMenuGroup{Label: "x", Icon: lucide.Icon{}, Open: false, Class: "", Items: []console.ConsoleMenuItem{validMenuItem()}}
-	}, []example.Break[console.ConsoleMenuGroup]{
-		{Want: "console.ConsoleMenuGroup needs a Label", Change: func(p *console.ConsoleMenuGroup) { p.Label = "" }},
-		{Want: "console.ConsoleMenuGroup needs an Item", Change: func(p *console.ConsoleMenuGroup) { p.Items = nil }},
 	})
 }
 

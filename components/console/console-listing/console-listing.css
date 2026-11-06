@@ -12,37 +12,4 @@
     color: var(--cui-c-console-neutral-label-primary);
     background-color: var(--cui-console-inset, var(--cui-c-console-card));
   }
-
-  :where(.cui-console-listing) .cui-console-listing {
-    --cui-console-inset: var(--cui-c-console-neutral-background-primary);
-  }
-
-  .cui-console-listing:has(.cui-console-listing-line) {
-    padding-inline: 0;
-  }
-
-  .cui-console-listing-line {
-    display: inline-block;
-    width: 100%;
-
-    &::before {
-      content: attr(data-line);
-      display: inline-block;
-      min-width: 2em;
-      padding: 0 17px 0 8px;
-      text-align: right;
-      color: var(--cui-c-console-neutral-label-secondary);
-      user-select: none;
-    }
-
-    &[data-highlighted] {
-      background-color: var(--cui-c-console-brand-fill-quaternary);
-
-      &::before {
-        /* not the accent: its dark side is under a mark's 3:1 on the dark highlight */
-        border-left: 4px solid var(--cui-c-console-brand-label-primary);
-        padding-left: 4px;
-      }
-    }
-  }
 }

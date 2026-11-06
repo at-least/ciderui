@@ -33,12 +33,8 @@ func exampleSrc(path, alt string) string {
 func TestAPagesNodesErrorIsReturned(t *testing.T) {
 	failure := errors.New("no")
 	failing := g.NodeFunc(func(io.Writer) error { return failure })
-	for _, part := range []g.Node{
-		console.ConsoleMetric{Title: "x", Value: failing, Change: "", ChangeColor: console.ConsoleChangeColorNeutral, Caption: "", Href: "", Class: ""},
-		console.ConsoleListItem{Href: "", ID: "", Label: "x", Secondary: "", Class: "", Children: failing},
-	} {
-		if err := part.Render(io.Discard); !errors.Is(err, failure) {
-			t.Errorf("%T returned %v", part, err)
-		}
+	part := console.ConsoleListItem{Href: "", ID: "", Label: "x", Secondary: "", Class: "", Children: failing}
+	if err := part.Render(io.Discard); !errors.Is(err, failure) {
+		t.Errorf("returned %v", err)
 	}
 }

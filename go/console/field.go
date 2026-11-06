@@ -2,6 +2,7 @@ package console
 
 import (
 	"io"
+	"strings"
 
 	"github.com/at-least/ciderui/go/internal/class"
 	"github.com/at-least/ciderui/go/lucide"
@@ -24,64 +25,46 @@ func (s ConsoleSelect) Render(w io.Writer) error {
 	).Render(w)
 }
 
-// ConsoleFormField: the control is the page's, so the page writes on it
-// id=ID, aria-describedby naming [ConsoleHelpID] and [ConsoleErrorID] where
-// those lines are written, and aria-invalid="true" while there is an error.
+// ConsoleFormField is a control under its label, a help line and an error under
+// it. Control gets what it must carry (its id, what describes it, whether it is
+// invalid) to write on the page's own <input>, <textarea> or <select>: the page
+// cannot forget them or get an id wrong.
 type ConsoleFormField struct {
 	ID    string
-	Label g.Node
-	// Children: the control, then a [ConsoleHelp] or a [ConsoleError].
-	Children g.Node
+	Label string
+	// Help: a line that says what to write; "" for none.
+	Help string
+	// Error: "" while there is none.
+	Error   string
+	Control func(attrs g.Node) g.Node
 }
 
 func (f ConsoleFormField) Render(w io.Writer) error {
 	if f.ID == "" {
 		panic("console.ConsoleFormField needs an ID")
 	}
-	if f.Label == nil {
+	if f.Label == "" {
 		panic("console.ConsoleFormField needs a Label")
 	}
+	if f.Control == nil {
+		panic("console.ConsoleFormField needs a Control")
+	}
+	helpID, errorID := f.ID+"-help", f.ID+"-error"
+	var described []string
+	if f.Help != "" {
+		described = append(described, helpID)
+	}
+	if f.Error != "" {
+		described = append(described, errorID)
+	}
 	return h.Div(h.Class("cui-console-form-field"),
-		h.Label(h.Class("cui-console-label"), h.For(f.ID), f.Label),
-		f.Children,
+		h.Label(h.Class("cui-console-label"), h.For(f.ID), g.Text(f.Label)),
+		f.Control(g.Group{
+			h.ID(f.ID),
+			g.If(f.Error != "", h.Aria("invalid", "true")),
+			g.If(len(described) > 0, h.Aria("describedby", strings.Join(described, " "))),
+		}),
+		g.If(f.Help != "", h.P(h.Class("cui-console-help"), h.ID(helpID), g.Text(f.Help))),
+		g.If(f.Error != "", h.P(h.Class("cui-console-error"), h.ID(errorID), g.Text(f.Error))),
 	).Render(w)
-}
-
-type ConsoleHelp struct {
-	ControlID string
-	Label     string
-}
-
-func (p ConsoleHelp) Render(w io.Writer) error {
-	if p.Label == "" {
-		panic("console.ConsoleHelp needs a Label")
-	}
-	return h.P(h.Class("cui-console-help"), h.ID(ConsoleHelpID(p.ControlID)), g.Text(p.Label)).Render(w)
-}
-
-// ConsoleError with no Label is a hidden slot the page's script fills and
-// unhides when a request fails.
-type ConsoleError struct {
-	// ControlID: "" for a form's slot.
-	ControlID string
-	Label     string
-	Class     string
-}
-
-func (e ConsoleError) Render(w io.Writer) error {
-	if e.Label == "" {
-		return h.P(class.Root("cui-console-error", e.Class), g.If(e.ControlID != "", h.ID(ConsoleErrorID(e.ControlID))), h.Role("alert"), g.Attr("hidden")).Render(w)
-	}
-	if e.ControlID == "" {
-		panic("console.ConsoleError with a Label needs a ControlID")
-	}
-	return h.P(class.Root("cui-console-error", e.Class), h.ID(ConsoleErrorID(e.ControlID)), g.Text(e.Label)).Render(w)
-}
-
-func ConsoleHelpID(id string) string {
-	return id + "-help"
-}
-
-func ConsoleErrorID(id string) string {
-	return id + "-error"
 }

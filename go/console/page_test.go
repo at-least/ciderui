@@ -12,7 +12,7 @@ import (
 )
 
 func consolePage() console.ConsolePage {
-	return console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Class: "", BodyClass: "", Children: h.P(g.Text("x"))}
+	return console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Class: "", Children: h.P(g.Text("x"))}
 }
 
 func TestConsolePageWritesTheDocument(t *testing.T) {
@@ -25,9 +25,8 @@ func TestConsolePageWritesTheDocument(t *testing.T) {
 func TestConsolePageWritesItsClasses(t *testing.T) {
 	p := consolePage()
 	p.Class = "cui-light"
-	p.BodyClass = "flex"
 	got := example.Render(p)
-	for _, want := range []string{`<html lang="en" class="cui-light">`, `<body class="cui-console-page flex">`} {
+	for _, want := range []string{`<html lang="en" class="cui-light">`, `<body class="cui-console-page">`} {
 		if !strings.Contains(got, want) {
 			t.Errorf("no %s in %s", want, got)
 		}

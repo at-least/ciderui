@@ -8,7 +8,7 @@ const LABEL = ['font-size', 'line-height', 'font-weight', 'letter-spacing', 'col
 const MENU = 'component-DisplayList-variant-pageScale';
 const FITTED = 'the secondary label fitted to 0.76 (tokens.css, decision 21): the toolkit\'s 0.60 is 3.4:1 on white';
 const CURRENT = '.cui-console-menu > [aria-current="page"]';
-const SUB = '.cui-console-menu-group[open] > a[href]';
+const SUB = '.cui-console-menu > a[href="#sources"]';
 const PLAIN = '.cui-console-menu > a[href="#shop"]';
 const OPEN = '.cui-console-btn[popovertarget]';
 const CHECKED = '[role="menuitemradio"][aria-checked="true"]';
@@ -104,12 +104,10 @@ export const cases = [
     checks: [
       { target: CURRENT, props: ITEM, asc: ['analytics', 'menu.current'] },
       { target: `${CURRENT} .cui-console-menu-label`, props: LABEL, asc: ['analytics', 'menu.current.label'] },
-      { target: SUB, props: ITEM.filter(p => p !== 'background-color'), asc: ['analytics', 'menu.item'] },
+      { target: SUB, props: ITEM.filter(p => p !== 'background-color' && p !== 'padding-left'), asc: ['analytics', 'menu.item'] },
       { target: SUB, props: ['background-color'], golden: 'no ground at rest: transparent, where the toolkit writes its transparent white, oklch(1 0 0 / 0), the same nothing' },
       { target: `${SUB} .cui-console-menu-label`, props: LABEL, asc: ['analytics', 'menu.item.label'] },
-      { target: '.cui-console-menu-group[open] > summary', props: ['box-height', 'border-top-left-radius', 'padding-left', 'padding-right', 'cursor'], asc: ['analytics-page', 'group.button'] },
-      { target: '.cui-console-menu-group[open] > summary .cui-console-menu-label', props: LABEL, asc: ['analytics-page', 'group.button.label'] },
-      { target: '[aria-disabled="true"]', props: ['box-height', 'padding-left', 'cursor'], asc: ['analytics-page', 'item.disabled'] },
+      { target: '[aria-disabled="true"]', props: ['box-height', 'cursor'], asc: ['analytics-page', 'item.disabled'] },
       { target: '[aria-disabled="true"] .cui-console-menu-label', props: LABEL, asc: ['analytics-page', 'item.disabled.label'] },
       { target: '.cui-console-menu-rule', props: ['box-height', 'background-color', 'margin-top', 'margin-bottom', 'margin-left', 'margin-right'], asc: ['analytics', 'menu.rule'] },
       { target: PLAIN, props: ['background-color'], state: 'hover', asc: ['hover-menu', 'menu.item'] },
@@ -119,18 +117,11 @@ export const cases = [
       { target: `${CURRENT} .cui-console-menu-icon`, props: ['box-width', 'margin-left'], tb: ['component-DisplayList-variant-variant-menu-anatomy-artStackWithSFSymbol-width', 'component-DisplayList-variant-variant-menu-anatomy-ArtStack-anatomy-SFSymbol-marginInlineOffset'] },
       { target: `${CURRENT} .cui-console-menu-icon`, props: ['color'], golden: FITTED },
       { target: '.cui-console-menu-heading', props: ['color'], golden: FITTED },
-      { target: '.cui-console-menu-secondary', props: ['color'], golden: FITTED },
-      { target: '.cui-console-menu-chevron', props: ['color'], golden: FITTED },
-      { target: '.cui-console-menu-group:not([open]) .cui-console-menu-chevron', props: ['rotate'], golden: 'closed, the chevron points along the row: Lucide\'s chevron-right, where the toolkit draws an SF Symbol' },
-      { target: '.cui-console-menu-group[open] .cui-console-menu-chevron', props: ['rotate'], golden: 'open, it turns down, as the toolkit\'s does' },
       { target: PLAIN, props: ['background-color'], state: 'active', golden: 'pressed as hovered: the toolkit\'s pressed fill, oklch(55.4% 0.012 286 / 0.08), is no step of its palette, so it has no dark side to derive' },
       { target: '.cui-console-menu', props: ['display'], asc: ['analytics-page', 'menu'] },
       { target: '.cui-console-menu', props: ['flex-direction'], golden: 'a column of its items' },
       { target: `${SUB} .cui-console-menu-label`, props: ['white-space', 'text-overflow', 'overflow-wrap'], golden: 'a long label wraps, whole: an ellipsis left two pages that begin alike unreadable apart' },
-      { target: '.cui-console-menu-secondary', props: ['box-right'], golden: 'at the item\'s end' },
-      { target: '.cui-console-menu-chevron', props: ['box-right'], golden: 'at the group button\'s end' },
       { target: '[aria-disabled="true"]', props: ['background-color'], state: 'hover', golden: 'a disabled item no fill hovered' },
-      { target: '.cui-console-menu-secondary', props: ['font-size', 'line-height', 'font-weight'], tb: [`${MENU}-desktop-variant-menu-anatomy-Secondary-textStyle-fontSize`, `${MENU}-desktop-variant-menu-anatomy-Secondary-textStyle-lineHeight`, `${MENU}-desktop-variant-menu-anatomy-Secondary-textStyle-fontWeight`] },
     ],
   },
   {
