@@ -17,6 +17,9 @@
  "link | [data-variant=\"text\"] | 390 | font-size": "16px",
  "link | [data-variant=\"text\"] | 390 | line-height": "21px",
  "link | [data-variant=\"text\"] | 390 | font-weight": "400",
+ "link touch | .cui-console-link:not([data-variant]):not([aria-disabled])::after | 390 | top": "10px",
+ "link touch | .cui-console-link:not([data-variant]):not([aria-disabled])::after | 390 | left": "25.875px",
+ "link touch | .cui-console-link:not([data-variant]):not([aria-disabled])::after | 390 | transform": "matrix(1, 0, 0, 1, -25.875, -22)",
  "link touch | .cui-console-link:not([data-variant]):not([aria-disabled])::after | 390 | width": "51.75px",
  "link touch | .cui-console-link:not([data-variant]):not([aria-disabled])::after | 390 | height": "44px",
  "link dark | .cui-console-link:not([data-variant]):not([aria-disabled]) | 1200 | color": "oklch(0.683 0.167 256.6)"

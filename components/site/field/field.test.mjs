@@ -30,6 +30,8 @@ export const cases = [
     name: 'field',
     html: ex('field'),
     checks: [
+      { target: INPUT, props: ['display'], golden: 'no line box under it' },
+      { target: '.cui-field', props: ['position'], golden: 'what its label and prefix are placed against, wherever it sits on a page' },
       { target: INPUT, props: [...SIZE, 'color', ...PADDING, ...EDGE, 'background-color', 'height', 'box-sizing', 'box-height', 'transition-property', 'transition-duration', 'outline-style'], apple: ['retail', 'field.input'] },
       { target: INPUT, state: 'hover', props: ['color', 'background-color', 'border-top-color'], apple: ['retail', 'field.input', 'hover'] },
       { target: INPUT, state: 'focus', props: [...PADDING, ...EDGE], apple: ['retail', 'field.input', 'focus'] },
@@ -62,6 +64,7 @@ export const cases = [
     html: ex('select').replace('>Choose your model</label>', `>${LONG}</label>`),
     widths: [390],
     checks: [
+      { target: 'select.cui-field-input option', props: ['color'], golden: 'some browsers draw the list in the select\'s color, transparent when empty' },
       { target: LABEL, props: ['box-width'], golden: 'a select\'s label stops short of its chevron too' },
     ],
   },
@@ -94,6 +97,7 @@ export const cases = [
     name: 'error',
     html: ex('error'),
     checks: [
+      { target: MARK, props: ['flex-shrink'], golden: 'a long message does not squeeze its icon' },
       { target: INPUT, props: [...SIZE, 'color', 'height', 'border-top-width', 'border-top-color', 'border-bottom-color', 'background-color'], apple: ['giftcard', 'error'] },
       { target: INPUT, state: 'focus', props: [...PADDING, 'border-top-width', 'border-top-color', 'background-color'], apple: ['giftcard', 'error', 'focus'] },
       { target: LABEL, props: [...SIZE, 'color', 'top', 'left'], apple: ['giftcard', 'error.label'] },
@@ -146,6 +150,7 @@ export const cases = [
     html: ex('prefix'),
     widths: [1600],
     checks: [
+      { target: PREFIX, props: ['pointer-events'], golden: 'a click on it reaches the input under it' },
       { target: INPUT, props: [...PADDING, ...EDGE, 'height', 'background-color'], apple: ['giftcard', 'prefix.input'] },
       { target: INPUT, state: 'focus', props: ['padding-left', 'border-top-width', 'border-top-color'], apple: ['giftcard', 'prefix.input', 'focus'] },
       { target: LABEL, props: [...SIZE, 'color', 'top', 'left', 'padding-left'], apple: ['giftcard', 'prefix.label'] },
@@ -244,6 +249,7 @@ export const cases = [
     click: AREA,
     widths: [1200],
     checks: [
+      { target: AREA, props: ['outline-style'], golden: 'its halo in the ring\'s place, and no ring over it' },
       { target: BOX, props: ['border-top-width', 'border-top-color', 'background-color'], apple: ['retail', 'textarea.focused'] },
       { target: LABEL, props: ['color'], golden: 'its label red focused too, as the field\'s' },
     ],

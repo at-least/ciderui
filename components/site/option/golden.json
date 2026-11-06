@@ -58,6 +58,8 @@
  "disabled checked | .cui-option-label | 1200 | opacity": "0.42",
  "disabled checked | .cui-option-label | 1200 | border-top-color": "rgb(134, 134, 139)",
  "disabled checked | .cui-option-label | 1200 | border-top-width": "2px",
+ "pointer | .cui-option-title | 1200 | padding-right": "35.0312px",
+ "pointer | .cui-option | 1200 | position": "relative",
  "pointer | .cui-option-input | 1200 | cursor": "pointer",
  "pointer | .cui-option-label | 1200 | hit": "input.cui-option-input input.cui-option-input input.cui-option-input input.cui-option-input input.cui-option-input"
 }

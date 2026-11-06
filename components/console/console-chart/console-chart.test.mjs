@@ -35,6 +35,8 @@ export const cases = [
     html: `<div class="cui-console-page"><div class="cui-console-card">${ex('chart')}</div></div>`,
     widths: [1200],
     checks: [
+      { target: `${C}-scale`, props: ['border-top-left-radius'], golden: 'the scale\'s rounded corners' },
+      { target: `${C}-svg`, props: ['overflow-y'], golden: 'a mark on the edge of the plot is not clipped' },
       { target: `${C}-mark`, props: ['stroke'], golden: 'in a card, the line round a mark is the card\'s ground' },
       { target: `${C}-scale`, props: ['background-color'], golden: 'in a card, the scale on the card\'s ground' },
     ],

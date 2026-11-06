@@ -41,6 +41,7 @@ export const cases = [
     touch: true,
     widths: [390],
     checks: [
+      { target: '.cui-console-radio', props: ['align-content'], golden: 'its label and caption centered in the 44px row' },
       { target: DISABLED, props: ['box-height'], golden: 'a radio with no caption 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility); 18px with a pointer' },
       { target: `${DISABLED} .cui-console-radio-input`, props: ['box-width', 'box-height'], golden: 'the radio drawn as before, 15px' },
     ],
@@ -69,6 +70,7 @@ export const cases = [
     widths: [1200],
     forcedColors: true,
     checks: [
+      { target: '.cui-console-radio-input', props: ['background-color'], golden: 'disabled and chosen, the canvas under its mark' },
       { target: '.cui-console-radio-input', props: ['border-top-color', 'background-image'], golden: 'disabled and chosen in forced colors, its edge and mark GrayText' },
     ],
   },

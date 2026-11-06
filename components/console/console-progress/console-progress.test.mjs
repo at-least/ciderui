@@ -46,6 +46,7 @@ export const cases = [
     forcedColors: true,
     widths: [1200],
     checks: [
+      { target: WAITING, props: ['background-color', 'outline-style', 'outline-width'], golden: 'forced colors draw neither its track nor its fill: an outline holds its place' },
       { target: WAITING, props: ['background-image'], golden: 'forced colors: the fill the theme\'s Highlight on its Canvas: they drop a gradient, and the bar read as still and empty' },
     ],
   },

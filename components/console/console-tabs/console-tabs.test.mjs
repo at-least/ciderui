@@ -118,6 +118,7 @@ export const cases = [
     touch: true,
     widths: [390],
     checks: [
+      { target: '.cui-console-tab', props: ['justify-content'], golden: 'its label centered in the 44px tab' },
       { target: PILL, props: ['box-height', 'min-width', 'border-top-left-radius'], golden: 'a tab 44px each way at least on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), a pill\'s corners half its height: a target drawn round it was clipped by a phone\'s sideways-scrolling row' },
     ],
   },

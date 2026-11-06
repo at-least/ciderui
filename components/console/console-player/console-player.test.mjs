@@ -173,6 +173,8 @@ export const cases = [
     widths: [1600],
     height: 900,
     checks: [
+      { target: VOLUME, on: '.cui-console-player-volume > .cui-console-player-btn', state: 'active', props: ['margin-right'], golden: 'its range stays open while a control in it is pressed' },
+      { target: BTN, state: 'active', props: ['color'], golden: 'pressed, full white, as the pointer over it shows on a screen that has one' },
       { target: CAPTION, props: ['opacity', 'visibility'], golden: 'gone while playing (the owner, 2026-11-05), the controls shown or not' },
     ],
   },
@@ -182,6 +184,7 @@ export const cases = [
     widths: [1600],
     height: 900,
     checks: [
+      { target: '.cui-console-player-volume > .cui-console-player-btn', props: ['box-height'], golden: 'the speaker a little taller than the bar\'s other buttons' },
       { target: CAPTION, props: ['display'], golden: 'empty, nothing drawn: the volume keeps the header\'s end' },
     ],
   },
@@ -211,6 +214,7 @@ export const cases = [
     widths: TV,
     height: 900,
     checks: [
+      { target: '.cui-console-player-intro-play', state: 'active', props: ['transform'], golden: 'pressed, it gives under the finger' },
       { target: '.cui-console-player-intro', props: ['display', 'flex-direction', 'justify-content', 'align-items', 'padding-left', 'padding-bottom', 'background-image', 'opacity', 'visibility'], golden: INTRO },
       { target: '.cui-console-player-overlay', props: ['visibility'], golden: 'its controls hidden under it: one Play, nothing else to press (the owner, 2026-11-05)' },
       { target: '.cui-console-player-intro-title', props: ['font-size', 'line-height', 'font-weight', 'color', 'box-left'], golden: `${INTRO}; the title as large as 4% of the player, at the least tv.apple.com's 26px bold title (tv-player:title)` },
@@ -228,6 +232,7 @@ export const cases = [
     widths: [1600],
     height: 900,
     checks: [
+      { target: '.cui-console-player-intro-actions', props: ['align-items', 'column-gap'], golden: 'its buttons on one center line, apart' },
       { target: '.cui-console-player-intro [data-control="restart"]', props: ['display', 'box-height', 'background-color'], golden: 'a saved place: start over beside Play, the bar\'s capsule of words, smaller' },
     ],
   },
@@ -281,6 +286,7 @@ export const cases = [
     widths: TV,
     height: 900,
     checks: [
+      { target: TEXT_BTN, state: 'active', props: ['background-color'], golden: 'pressed, the hovered fill' },
       { target: '.cui-console-player-full-screen-controls', props: ['display', 'column-gap', 'box-height'], golden: FULL },
       { target: TEXT_BTN, props: ['box-height', 'padding-left', 'border-top-left-radius', 'background-color', 'color', 'font-size', 'line-height', 'font-weight', 'white-space', 'cursor'], golden: FULL },
       { target: TEXT_BTN, props: ['background-color'], state: 'hover', golden: FULL },
@@ -355,10 +361,21 @@ export const cases = [
     height: 900,
     click: '[data-control="subtitles"]',
     checks: [
+      { target: '.cui-console-player-subtitles', props: ['align-items'], golden: 'a cue centered over the picture' },
       { target: '.cui-console-player', props: ['box-left', 'box-top', 'box-width', 'box-height'], golden: 'muse\'s player at 1440 by 900: 1104px wide at 24px, 66px down, beside its sidebar' },
       { target: BTN, props: ['box-left', 'box-top'], golden: 'the subtitles button, 24px: its centre the menu\'s corner' },
       { target: '#subtitles', props: ['box-x', 'box-y', 'box-width', 'box-height'], golden: 'inside the player (its parent: box-x and box-y from its corner): opening upward, its foot and its right edge on its button\'s centre, as tv.apple.com\'s (tv-player-menu:menu at 1258, 637, 185 by 142, its corner 1443, 779; tv-player:subtitles at 1434, 769, 20px: centred on 1444, 779); every choice in it, none scrolled' },
       { target: '#subtitles', props: ['max-height'], golden: 'as tall as the player leaves above its button, 20px from its top (the overlay\'s room), not the toolkit\'s 435px: tv.apple.com\'s menu has none (tv-player-menu:menu, overflow visible)' },
+    ],
+  },
+  {
+    name: 'player menu voices and languages narrow',
+    html: languages(ex('stills'), 2),
+    widths: [735],
+    height: 900,
+    click: '[data-control="subtitles"]',
+    checks: [
+      { target: '#subtitles', props: ['width'], golden: 'as wide as its columns, on a window too narrow to hold them in the browser\'s own width' },
     ],
   },
   {
@@ -420,6 +437,8 @@ export const cases = [
     height: 900,
     press: ['Tab'],
     checks: [
+      { target: VOLUME, props: ['height'], golden: 'its 44px target, whatever the line it draws' },
+      { target: '.cui-console-player-volume', props: ['align-items'], golden: 'the speaker and its range on one center line' },
       { target: VOLUME, props: ['focused'], golden: 'Tab reaches the hidden controls' },
       { target: VOLUME, props: ['box-width', 'opacity'], golden: 'focused from the keyboard, the range opens: a range that took the focus closed would be adjusted unseen' },
       { target: '.cui-console-player-footer', props: ['opacity'], golden: 'shown while the focus is inside, for the keyboard (not read on tv.apple.com, whose script shows them on a key)' },

@@ -32,6 +32,7 @@ export const cases = [
     touch: true,
     widths: [390],
     checks: [
+      { target: INLINE, pseudo: '::after', props: ['top', 'left', 'transform'], golden: 'the 44px target centered on the link, wider than it' },
       { target: INLINE, pseudo: '::after', props: ['width', 'height'], golden: 'a touch screen\'s target 44px square at least, the HIG\'s 44pt (crashcart\'s HIG pass: its See All and Open issue links, 13px tall, were the only controls without one)' },
     ],
   },

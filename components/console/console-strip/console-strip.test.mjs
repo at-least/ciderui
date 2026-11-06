@@ -29,6 +29,7 @@ export const cases = [
     html: ex('strip'),
     widths: [1200, 390],
     checks: [
+      { target: TIP, props: ['font-size', 'line-height'], golden: 'the small type on a phone too, where the console page\'s own is larger' },
       { target: STRIP, props: ['display', 'grid-auto-flow', 'overflow-x', 'scroll-snap-type', 'padding-top', 'padding-left', 'margin-top', 'margin-bottom'], apple: ['tv-player-playlist', 'row'], at: AT },
       { target: FIRST, props: ['scroll-snap-align'], apple: ['tv-player-playlist', 'item'], at: AT },
       { target: IMG, props: ['border-top-left-radius', 'border-top-width', 'border-top-style', 'box-shadow', 'cursor'], asc: ['media', 'thumb.img'] },
@@ -57,6 +58,7 @@ export const cases = [
     html: ex('strip'),
     widths: [1200],
     checks: [
+      { target: TIP, on: FIRST, state: 'focus-visible', props: ['visibility', 'opacity'], golden: 'the keyboard reaches what the pointer shows' },
       { target: IMG, props: ['border-top-left-radius', 'box-shadow'], state: 'hover', on: FIRST, asc: ['media', 'thumb.img'] },
       { target: FIRST, props: ['border-top-color'], state: 'hover', golden: 'unchanged under the pointer, as App Store Connect\'s thumbnail (media: nothing changed with the pointer on one)' },
     ],

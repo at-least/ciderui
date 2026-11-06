@@ -27,6 +27,7 @@ export const cases = [
     html: '<p class="w-40"><span class="cui-console-chip"><span class="cui-console-chip-key">id</span>60674cfe203893d8499985f493f86663</span></p>',
     widths: [390],
     checks: [
+      { target: '.cui-console-chip', props: ['vertical-align'], golden: 'between words, centered on the line, not on its baseline' },
       { target: '.cui-console-chip', props: ['box-width', 'box-height', 'max-width', 'overflow-wrap'], golden: 'a long value wraps inside its place, never past it: on one line it ran off a phone\'s page' },
     ],
   },
@@ -36,6 +37,8 @@ export const cases = [
     touch: true,
     widths: [390],
     checks: [
+      { target: '.cui-console-chip-remove', props: ['display', 'justify-content', 'align-items', 'margin-right'], golden: 'its × centered in its target, the target reaching the chip\'s edge' },
+      { target: FILTER, props: ['align-items'], golden: 'its text centered in the 44px chip' },
       { target: TAG, props: ['box-height'], golden: 'a chip that is a link 44px tall on a touch screen, the HIG\'s 44pt (Accessibility, Mobility): chips in rows 8px apart are 30px from row to row, and a target drawn round each covered the next' },
       { target: FILTER, props: ['box-height'], golden: 'a chip with a remove control 44px tall on a touch screen, for its control' },
       { target: '.cui-console-chip-remove', props: ['box-width', 'box-height'], golden: 'the remove control 44px square on a touch screen, its chip\'s end, the HIG\'s 44pt (Accessibility, Mobility)' },

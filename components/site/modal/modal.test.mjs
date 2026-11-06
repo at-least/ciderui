@@ -120,6 +120,8 @@ export const cases = [
     ...OPEN,
     widths: [1600],
     checks: [
+      { target: '.cui-modal-curtain', props: ['display'], golden: 'a button that fills the window, no line box under it' },
+      { target: CLOSE, props: ['display', 'justify-content', 'align-items'], golden: 'its × centered in its circle' },
       { target: '.cui-modal-panel', props: ['background-color', 'color'], golden: 'light in a dark block, as a field: apple.com\'s store has no dark overlay' },
       { target: '.cui-modal-close', props: ['background-color', 'color'], golden: 'the close button\'s light colors in a dark block' },
     ],

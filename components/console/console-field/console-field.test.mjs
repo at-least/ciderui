@@ -18,6 +18,7 @@ export const cases = [
     html: ex('fields'),
     widths: [1200],
     checks: [
+      { target: NAME, state: ['focus', 'focus-visible'], props: ['outline-offset'], golden: 'its halo starts at its edge, not the ring\'s gap away' },
       { target: NAME, props: SIZE, tb: size('md') },
       { target: NAME, props: ['background-color', 'border-top-width', 'border-top-style', 'color'], tb: [`${T}-colorRole-neutral-variant-stroked-backgroundColor`, `${T}-colorRole-neutral-focus-off-variant-stroked-border-width`, `${T}-colorRole-neutral-focus-off-variant-stroked-border-style`, 'component-TextInput-anatomy-input-variant-effect-default-color'] },
       { target: NAME, props: ['border-top-color'], golden: `the edge coolGray-800 at 0.58, 3:1 on white: the toolkit's 0.18 is 1.4:1, ${FITTED}` },
@@ -107,6 +108,9 @@ export const cases = [
     widths: [1200],
     press: ['Tab'],
     checks: [
+      { target: FILE_OFF, pseudo: '::file-selector-button', props: ['cursor'], golden: 'disabled, its button does nothing and does not say it does' },
+      { target: FILE_ON, pseudo: '::file-selector-button', props: ['cursor'], golden: 'its button opens the file picker' },
+      { target: FILE_ON, props: ['cursor'], golden: 'all of it opens the file picker' },
       { target: FILE_ON, props: ['border-top-color', 'outline-width', 'outline-style', 'outline-color'], golden: 'focused, the text field\'s dark edge and 3px halo (the toolkit\'s focus outline)' },
     ],
   },

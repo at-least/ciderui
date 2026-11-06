@@ -11,6 +11,8 @@ export const cases = [
     html: open(),
     widths: [1200],
     checks: [
+      { target: '.cui-console-dialog-actions', props: ['display'], golden: 'its actions in a row' },
+      { target: '.cui-console-dialog', props: ['margin-left'], golden: 'centered: the kit\'s reset takes the browser\'s margin away' },
       { target: '.cui-console-dialog', props: ['box-width', 'border-top-left-radius', 'background-color', 'border-top-color', 'box-shadow', 'color'], tb: [`${M}-variant-variant-modal-minWidth`, `${M}-variant-variant-modal-borderRadius`, `${M}-backgroundColor`, `${M}-variant-variant-modal-stroke`, `${M}-variant-variant-modal-boxShadow`, `${M}-color`] },
       { target: '.cui-console-dialog', props: ['max-width'], tb: [`${M}-variant-variant-modal-maxWidth`] },
       { target: '.cui-console-dialog', props: ['padding-top', 'padding-left', 'border-top-width'], golden: 'ciderui\'s room inside, 24px (the toolkit\'s modal names none); a 1px edge' },

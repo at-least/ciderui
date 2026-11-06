@@ -17,6 +17,8 @@ export const cases = [
     html: PAGE(ex('sidebar')),
     widths: [1600, 1200, 1024],
     checks: [
+      { target: '.cui-console-sidebar-account', state: 'hover', props: ['background-color'], golden: 'the pointer finds the account row as it finds a menu row' },
+      { target: SIDEBAR, props: ['bottom'], golden: 'in the page from 1024px, not the sheet\'s full height' },
       { target: SIDEBAR, props: ['box-width'], tb: ['size-sidebar-width'] },
       { target: SIDEBAR, props: ['color'], tb: ['color-role-neutral-label-primary'] },
       { target: SIDEBAR, props: ['flex-direction'], golden: 'a column: its header, list and account one under another' },
@@ -59,6 +61,7 @@ export const cases = [
     widths: [390],
     click: '.cui-console-sidebar-open',
     checks: [
+      { target: '.cui-console-menu-heading', props: ['padding-left', 'font-size', 'line-height'], golden: 'in the sidebar, a heading lined up with its rows, in their size' },
       { target: SIDEBAR, props: ['box-left', 'box-top', 'border-top-left-radius', 'background-color', 'box-shadow'], tb: [`${S}-inset`, `${S}-inset`, `${S}-borderRadius`, `${S}-variant-variant-opaque-backgroundColor`, `${S}-variant-variant-opaque-boxShadow`] },
       { target: SIDEBAR, props: ['position', 'display'], golden: 'below 1024px, opened, a sheet over the page: a popover, fixed' },
       { target: '.cui-console-sidebar-close', props: ['display'], golden: 'its close button shown in the sheet' },

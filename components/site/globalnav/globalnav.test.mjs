@@ -307,9 +307,10 @@ export const cases = [
     name: 'menu-widened',
     html: NAV,
     click: BUTTON,
-    widths: [390, 900],
+    widths: [390, 900, 1600],
     reducedMotion: 'reduce',
     checks: [
+      { target: LIST, props: ['width', 'left', 'right'], golden: 'the menu fills the window: the browser places a popover at its content\'s width' },
       { target: LINK2, props: ['font-size', 'box-top'], golden: 'opened, the menu is a sheet at any width: its rows' },
       { target: CLOSE, props: ['box-height', 'opacity'], golden: 'opened, the menu is a sheet at any width: its close button' },
     ],
@@ -497,6 +498,8 @@ export const cases = [
     ...SEARCHING,
     widths: [1600, 390],
     checks: [
+      { target: FLY, props: ['background-color'], golden: 'from 834px its panel draws, the popover itself clear' },
+      { target: `${QLINK} > svg`, on: QLINK, state: 'focus-visible', props: ['color'], golden: 'its arrow its row\'s color when the keyboard reaches it' },
       { target: FIELD, props: [...MOTION, 'transition-delay'], golden: WITH_PANEL },
       { target: HEADING, props: ['transition-duration', 'transition-delay'], golden: WITH_PANEL },
       { target: '.cui-globalnav-searchlinks > li:first-child', props: ['transition-duration', 'transition-delay'], golden: WITH_PANEL },
@@ -887,6 +890,8 @@ export const cases = [
     html: `${FLYOUT_NAV}\n${LOCALNAV}`,
     ...HOVERING,
     checks: [
+      { target: LIST, pseudo: '::after', props: ['content', 'top', 'bottom'], golden: 'the curtain a flyout the pointer shows dims the page with, across the window' },
+      { target: LOGO, props: ['position'], golden: 'over a flyout the pointer shows, which runs from the nav\'s top' },
       { target: FHEAD1, props: ['hit'], golden: 'over the local nav under the bar, as apple.com\'s (its nav\'s z-index 9999 over its local nav\'s 9997: flyout:nav, localnav:localnav): what the pointer finds at its first heading is the heading' },
     ],
   },
@@ -1099,6 +1104,7 @@ export const cases = [
     height: 900,
     reducedMotion: 'reduce',
     checks: [
+      { target: LAPTOPS_FLY, props: ['background-color'], golden: 'its panel draws, the popover itself clear' },
       { target: FPANEL, props: ['background-color'], apple: ['tap-flyout', 'flyout'], at: { 1200: 1024 } },
       { target: LAPTOPS_FLY, props: ['position', 'box-top'], golden: 'opened by the tap on its link as a popover from the bar\'s bottom, the link not followed (tap-flyout: apple.com\'s script opens it so)' },
     ],
@@ -1212,6 +1218,7 @@ export const cases = [
     height: 900,
     reducedMotion: 'reduce',
     checks: [
+      { target: CHEVRON_COMPACT, on: LAPTOPS_BUTTON, state: 'focus-visible', props: ['opacity'], golden: 'its chevron shows when the keyboard reaches it' },
       { target: LAPTOPS_FLY, props: ['display'], golden: 'its back button closes it (reference/flyout/)' },
       { target: LIST, props: ['position'], golden: 'the menu still open (reference/flyout/)' },
       { target: STORE_ITEM, props: ['opacity', 'transform'], golden: 'its rows back' },
@@ -1395,6 +1402,7 @@ export const cases = [
     press: 'Escape',
     reducedMotion: 'reduce',
     checks: [
+      { target: LIST, props: ['overflow-y'], golden: 'the list clips nothing once its menu is closed' },
       { target: BFLY, props: ['display'], golden: 'Escape closes it' },
       { target: BBUTTON, props: ['focused'], golden: 'the focus back on its button' },
       { target: 'html', props: ['overflow-y'], golden: 'the page scrolls again' },

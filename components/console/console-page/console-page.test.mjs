@@ -78,7 +78,7 @@ export const cases = [
     html: '<div class="cui-console-page"><p id="variant" class="cui-console-body md:cui-console-h1">v</p><p id="plain" class="cui-console-h1 text-[20px]">p</p></div>',
     widths: [900, 390],
     checks: [
-      { target: '#variant', props: ['font-size'], golden: 'utilities, not component classes, as type.css\'s: a variant composes with one (md:cui-console-h1 over cui-console-body from 735px)' },
+      { target: '#variant', props: ['font-size', 'line-height'], golden: 'utilities, not component classes, as type.css\'s: a variant composes with one (md:cui-console-h1 over cui-console-body from 735px)' },
       { target: '#plain', props: ['font-size'], golden: 'a plain utility wins over one' },
     ],
   },

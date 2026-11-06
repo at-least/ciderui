@@ -24,7 +24,7 @@ export const cases = [
       { target: '.cui-console-banner-icon', props: ['box-width'], tb: [`${D}-art-variant-layout-inline-pageScale-desktop-inlineSize`] },
       { target: '.cui-console-banner-icon', props: ['box-height', 'color'], golden: 'its icon 20px tall, the toolkit\'s art size at desktop, in the fitted label of its color (tokens.css, decision 21)' },
       { target: '.cui-console-banner-actions', props: ['column-gap'], tb: [`${D}-actions-variant-pageScale-desktop-gap`] },
-      { target: '.cui-console-banner-actions', props: ['margin-top'], golden: 'its actions 8px down, as its body' },
+      { target: '.cui-console-banner-actions', props: ['display', 'margin-top'], golden: 'its actions a row of their own, 8px down, as its body' },
     ],
   },
   {

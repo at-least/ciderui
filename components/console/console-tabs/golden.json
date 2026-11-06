@@ -52,6 +52,7 @@
  "tabs of buttons forced colors | .cui-console-tab[aria-pressed=\"true\"] | 1200 | color": "rgb(255, 255, 255)",
  "tabs of buttons forced colors | .cui-console-tab[value=\"redraw\"] | 1200 | background-color": "rgba(255, 255, 255, 0.12)",
  "tabs of buttons forced colors | .cui-console-tab[value=\"redraw\"] | 1200 | color": "rgb(0, 0, 0)",
+ "tabs touch | .cui-console-tab | 390 | justify-content": "center",
  "tabs touch | .cui-console-tab[href=\"#30d\"] | 390 | box-height": "44px",
  "tabs touch | .cui-console-tab[href=\"#30d\"] | 390 | min-width": "44px",
  "tabs touch | .cui-console-tab[href=\"#30d\"] | 390 | border-top-left-radius": "22px",

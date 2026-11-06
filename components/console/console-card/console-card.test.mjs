@@ -35,6 +35,8 @@ export const cases = [
     html: ex('link'),
     widths: [1200],
     checks: [
+      { target: '.cui-console-card-value', props: ['color'], golden: 'a card that is a link keeps the console\'s label, not the link\'s color' },
+      { target: '.cui-console-card-title', props: ['color'], golden: 'a card that is a link keeps the console\'s label, not the link\'s color' },
       { target: 'a.cui-console-card', props: ['display', 'color', 'text-decoration-line', 'background-image'], golden: 'a card that is a link: a block, the card\'s text, not underlined, no fill at rest' },
       { target: 'a.cui-console-card', props: ['background-image'], state: 'hover', golden: 'hovered, App Store Connect\'s hovered table row\'s fill, the neutral at 0.03 (hover-row: table.row), over the card\'s ground' },
       { target: 'a.cui-console-card', props: ['background-image'], state: 'active', golden: 'pressed, the toolkit\'s pressed list item\'s, the neutral at 0.08' },

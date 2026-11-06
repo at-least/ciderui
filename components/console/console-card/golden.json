@@ -28,6 +28,8 @@
  "card list | .cui-console-card-header | 1200 | display": "flex",
  "card list | .cui-console-card-header | 1200 | justify-content": "space-between",
  "card list | .cui-console-card-header | 1200 | align-items": "baseline",
+ "card link | .cui-console-card-value | 1200 | color": "oklch(0 0 0 / 0.85)",
+ "card link | .cui-console-card-title | 1200 | color": "oklch(0 0 0 / 0.85)",
  "card link | a.cui-console-card | 1200 | display": "block",
  "card link | a.cui-console-card | 1200 | color": "rgb(29, 29, 31)",
  "card link | a.cui-console-card | 1200 | text-decoration-line": "none",

@@ -69,6 +69,7 @@ export const cases = [
     ...OPEN,
     reducedMotion: 'reduce',
     checks: [
+      { target: '.cui-localnav-menu', props: ['background-color', 'right', 'box-shadow'], golden: 'the open menu across the bar, on the bar\'s fill, a line under it' },
       { target: '.cui-localnav', props: ['background-color', 'backdrop-filter'], apple: ['localnav', 'tray.background'] },
       { target: '.cui-localnav-menu', props: ['visibility'], apple: ['localnav', 'tray.open'] },
       { target: LINK, props: [...SIZE, 'color', 'opacity', 'display', 'align-items', 'box-top', 'box-left', 'box-height'], apple: ['localnav', 'tray.link'] },

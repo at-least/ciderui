@@ -1,4 +1,6 @@
 {
+ "dialog | .cui-console-dialog-actions | 1200 | display": "flex",
+ "dialog | .cui-console-dialog | 1200 | margin-left": "330px",
  "dialog | .cui-console-dialog | 1200 | padding-top": "24px",
  "dialog | .cui-console-dialog | 1200 | padding-left": "24px",
  "dialog | .cui-console-dialog | 1200 | border-top-width": "1px",

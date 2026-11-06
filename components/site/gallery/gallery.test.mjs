@@ -49,6 +49,7 @@ export const cases = [
     name: 'no paddles',
     html: noPaddles(ex('gallery')),
     checks: [
+      { target: '.cui-gallery-dot', props: ['position'], golden: 'what its touch target is placed against' },
       { target: SCROLLER, props: ['scrollbar-width'], golden: 'a thin scrollbar with no paddles, where apple.com\'s hides it, as it draws paddles: with neither, a mouse with no sideways wheel cannot reach the rest of the row, nor can anyone see there is more' },
     ],
   },

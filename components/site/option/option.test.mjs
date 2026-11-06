@@ -62,6 +62,8 @@ export const cases = [
     html: ex('option'),
     widths: [1200],
     checks: [
+      { target: '.cui-option-title', props: ['padding-right'], golden: 'its title clear of its price' },
+      { target: '.cui-option', props: ['position'], golden: 'what its input is placed against' },
       { target: INPUT, props: ['cursor'], golden: 'the pointer over a tile, apple.com\'s (its enabled tiles\' labels and inputs pointer, read 2026-10-31); the input over the tile takes it' },
       { target: LABEL, props: ['hit'], golden: 'the radio over the whole tile: the pointer finds it at the tile\'s corners and middle, so it takes the click' },
     ],

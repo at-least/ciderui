@@ -62,6 +62,8 @@ export const cases = [
     touch: true,
     widths: [390],
     checks: [
+      { target: '.cui-checkbox-label', props: ['align-items'], golden: 'its text centered on the box in the taller touch row' },
+      { target: INDICATOR, props: ['left'], golden: 'the box at the row\'s start, where the hidden input sits under it' },
       { target: '.cui-checkbox-label', props: ['box-height'], golden: 'on a touch screen its label, which takes the tap, 44px tall at least, the HIG\'s 44pt (Accessibility, Mobility; the 16px box and its 21px line are under the 28pt minimum), as the console\'s radio' },
       { target: INDICATOR, props: ['box-top', 'box-height'], golden: 'the box drawn as before, 16px, centered on the row' },
       { target: '.cui-checkbox-input', props: ['box-top', 'box-height'], golden: 'the input where the box is' },

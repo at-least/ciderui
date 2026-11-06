@@ -1,4 +1,5 @@
 {
+ "fields | #project:focus,focus-visible | 1200 | outline-offset": "0px",
  "fields | #project | 1200 | border-top-color": "oklch(0.359 0.012 285.8 / 0.58)",
  "fields | #project:focus | 1200 | outline-offset": "0px",
  "fields | #url | 1200 | border-top-color": "oklch(0.495 0.19 31.5)",
@@ -33,6 +34,9 @@
  "file | #dsym | 1200 | border-top-width": "1px",
  "file | #off | 1200 | border-top-color": "oklch(0.359 0.012 285.8 / 0.13)",
  "file | #off | 1200 | cursor": "default",
+ "file focus | #off::file-selector-button | 1200 | cursor": "default",
+ "file focus | #dsym::file-selector-button | 1200 | cursor": "pointer",
+ "file focus | #dsym | 1200 | cursor": "pointer",
  "file focus | #dsym | 1200 | border-top-color": "oklch(0 0 0)",
  "file focus | #dsym | 1200 | outline-width": "3px",
  "file focus | #dsym | 1200 | outline-style": "solid",
