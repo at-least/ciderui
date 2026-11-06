@@ -425,15 +425,17 @@
   }
 
   /* hidden by the page's script while the video plays and the pointer is
-     still; shown again while the focus is inside, for the keyboard */
-  .cui-console-player[data-controls="hidden"]:not(:focus-within) .cui-console-player-overlay {
+     still; shown again while the keyboard's focus or an open menu is inside. Not
+     :focus-within: Chrome leaves the focus on a clicked button, so one click
+     on Play kept them over the picture for the whole film */
+  .cui-console-player[data-controls="hidden"]:not(:has(:focus-visible, :popover-open)) .cui-console-player-overlay {
     &::before,
     & > :not(.cui-console-player-subtitles) {
       opacity: 0;
     }
   }
 
-  .cui-console-player[data-controls="hidden"]:not(:focus-within) .cui-console-player-subtitles {
+  .cui-console-player[data-controls="hidden"]:not(:has(:focus-visible, :popover-open)) .cui-console-player-subtitles {
     translate: none;
   }
 

@@ -351,7 +351,7 @@ export const cases = [
     checks: [
       { target: '#subtitles', props: ['display'], golden: 'the subtitles button opens its menu, a console popover (decision 27)' },
       { target: '#subtitles', props: ['box-top', 'box-height'], golden: 'above its button, its foot on the button\'s centre (the player\'s menus open upward, player menu languages)' },
-      { target: '.cui-console-player-footer', props: ['opacity'], golden: 'the controls hidden before, shown while the menu is open: the focus is inside the player, the menu too' },
+      { target: '.cui-console-player-footer', props: ['opacity'], golden: 'the controls hidden before, shown while its menu is open: a click leaves no keyboard focus, the open menu keeps them' },
     ],
   },
   {
@@ -442,6 +442,18 @@ export const cases = [
       { target: VOLUME, props: ['focused'], golden: 'Tab reaches the hidden controls' },
       { target: VOLUME, props: ['box-width', 'opacity'], golden: 'focused from the keyboard, the range opens: a range that took the focus closed would be adjusted unseen' },
       { target: '.cui-console-player-footer', props: ['opacity'], golden: 'shown while the focus is inside, for the keyboard (not read on tv.apple.com, whose script shows them on a key)' },
+    ],
+  },
+  {
+    name: 'player hidden clicked',
+    html: ex('hidden'),
+    widths: [1600],
+    height: 900,
+    click: '.cui-console-player-play',
+    checks: [
+      { target: '.cui-console-player-play', props: ['focused'], golden: 'the click leaves the focus on Play, as Chrome does' },
+      { target: '.cui-console-player-overlay', pseudo: '::before', props: ['opacity'], golden: 'a click\'s focus keeps no gradient: one click on Play kept it over the picture for the whole film (muse, the owner 2026-11-05: 「似乎太頻繁了，而不是只有滑鼠hover」)' },
+      { target: '.cui-console-player-footer', props: ['opacity'], golden: 'nor the controls: only the keyboard\'s focus keeps them (player hidden focused)' },
     ],
   },
   {
