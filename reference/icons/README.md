@@ -97,16 +97,11 @@ Intersection over union; `flyout.mjs` fails below 0.85, a mark set before the ru
 
 Intersection over union; `form.mjs` fails below 0.85, a mark set before the run, or if the field's examples (`error.html`, `select.html`) draw others. Measured 2026-10-20 in Chromium 151 on Linux (`results/form.json`).
 
-## The local nav's chevron
-
-`localnav.mjs` reads it off MacBook Air's page: a polyline in 16 by 9 through (15.265, 0.835), (8, 8.167) and (0.735, 0.835), 1.2 thick, round at the ends and the join; opened, apple.com's animation ends on the same line upside down, (15.265, 8.165), (8, 0.835), (0.735, 8.165), in 320ms, through a straight line at 4.5. ciderui's `CHEVRON` is that line; `localnav.css` turns it up with `scaleY(-1)` about its middle, which passes through the same straight line. Shared ink: 1 closed, 0.996 open (`results/localnav.json`, 2026-10-19, Chromium 151).
-
 ## Running it
 
 ```sh
 PW=…/playwright-chromium/index.mjs node run.mjs   # the "more" chevron
 PW=…/playwright-chromium/index.mjs node nav.mjs   # the global nav's icons
-PW=…/playwright-chromium/index.mjs node localnav.mjs   # the local nav's chevron
 PW=…/playwright-chromium/index.mjs node searchfield.mjs   # the search's magnifier and arrow
 PW=…/playwright-chromium/index.mjs node flyout.mjs   # the flyouts' chevrons
 PW=…/playwright-chromium/index.mjs node form.mjs   # the field's error mark and the dropdown's chevron
@@ -115,24 +110,10 @@ PW=…/playwright-chromium/index.mjs node bag.mjs   # the bag's profile icons
 
 `glyph.js` runs on apple.com's page, where its icon font is declared: it loads the face, draws the character on a canvas, reads the numbers off the ink, draws the chevron they describe on another, and compares the two. `nav.mjs` reads the nav's SVG off the page and compares on a blank one. The browsers are `../browsers.mjs`'s.
 
-## A gallery's paddles
-
-apple.com's 36px paddles draw a chevron in a 36 by 36 SVG (`icon-control-chevronleft` and `-right`, the iPhone page's and iPhone 18 Pro's): the outline of a line 3 thick, round at its ends and its corner, its ink 14.5 to 23 across and 11 to 25 down (the next; the previous mirrored, 13 to 21.5 across). ciderui's `PADDLE_NEXT` is that line through (16, 12.5), (21.5, 18) and (16, 23.5), `PADDLE_PREVIOUS` through (20, 12.5), (14.5, 18) and (20, 23.5): they share 0.9993 and 0.9995 of their ink with apple.com's (intersection over union; `paddle.mjs` fails below 0.85, and holds each drawing to the gallery's example). The store's 56px paddles draw a longer one (its ink 9.35 to 26.5 down), which ciderui does not: its large paddle is the 36px chevron, larger. Measured 2026-10-19 on https://www.apple.com/iphone/ in Chromium 151 on Linux (`results/paddle.json`).
-
-## The checkbox's check
-
-apple.com's sign-in widget draws its check as an SF Pro Icons glyph (`.form-checkbox-indicator::after`, 18px on 28px, white on the checked box). `check.mjs` captures the checked box at 20 pixels to the unit and reads its white ink inside the 14 by 14 content box: 2.65 to 11.85 across, 2.95 to 11.9 down, its strokes about 1.33 thick (a row's run across the long arm 1.55 at 58°, across the short one 1.7 at 53°). ciderui's `CHECK` is a line 1.35 thick, round at its ends and its corner, through (3.3, 7.65), (6.25, 11.35) and (11.15, 3.7), the best of a small grid of points about those the ink gives: it shares 0.9603 of its ink with apple.com's (intersection over union; the probe fails below 0.85, and holds the drawing to the checkbox's example). Measured 2026-10-19 on https://secure.store.apple.com/shop/account/home in Chromium 151 on Linux (`results/check.json`).
-
 ## The accordion's and the footer's chevrons
 
 Both are apple.com's lines, drawn as its pages draw them: the bag's accordion's a polyline through (15, 1.13), (8.5, 7.72) and (2, 1.13) in 17 by 8.85, 2.25 thick, round (`DISCLOSURE`); a phone's footer section's through (10.075, 0.675), (5.5, 5.323) and (0.925, 0.675) in 11 by 6, 1 thick, round (`FOOTER_CHEVRON`). Turned up, each is the line its animation ends on (the same points mirrored). `lines.mjs` reads both live and holds ciderui's to them: 1 and 1 of the ink shared (fails below 0.85), each in its component's example. Measured 2026-10-19 in Chromium 151 on Linux (`results/lines.json`).
 
-
-## A modal's X
-
-The store's overlay draws its close button's X as a 20px SVG with no view box (`.rc-overlay-close svg`, its units the button's pixels), the outline of two lines 3 thick, round at their ends: its ink 3.35 to 16.7 across and 3.3 to 16.6 down, each round end's middle at 4.88 and 15.12 (the arcs' points, `a1.5 1.5` between them). ciderui's `CLOSE` is those two lines, from (4.88, 4.88) to (15.12, 15.12) and from (15.12, 4.88) to (4.88, 15.12), 3 thick, round, in 20 by 20: it shares 0.9927 of its ink with apple.com's (intersection over union; `close.mjs` fails below 0.85, and holds the drawing to the modal's example), the runs across its middle and its arms the same to the twentieth of a unit. Measured 2026-10-19 on iPhone 18 Pro's buy page, its first "Show more" opened, in Chromium 151 on Linux (`results/close.json`).
-
-The marketing pages' modal (the iPhone page's trade-in modal, `ric-modal`) draws its X white in a 36 by 36 SVG over its circle: one path, its ink 12 to 24 across and down, the same strokes as the store's (3 thick, the runs across its middle 15.85 to 20.15, as `CLOSE`'s drawn in the box's middle), each arm 0.6 shorter at its ends. `CLOSE` drawn there shares 0.8875 of its ink with it (its ink 11.4 to 24.6); ciderui's `SMALL` in `close.mjs`, the same two lines from (5.5, 5.5) to (14.5, 14.5) and from (14.5, 5.5) to (5.5, 14.5) in 20 by 20, shares 0.9994; the kit draws `CLOSE` in both modals, one look for one job (decision 25), and `close.mjs` holds both examples to it. Measured 2026-10-21 in Chromium 151 on Linux (`results/close.json`'s `marketing`).
 
 ## The bag's profile icons
 

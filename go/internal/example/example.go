@@ -107,8 +107,7 @@ func panicOf(node g.Node) (message string) {
 // PageClass is the Class a ClassRow's Node is given.
 const PageClass = "page-class"
 
-// ClassRow is a part given PageClass, and the classes of its own before it; ""
-// for an element with none.
+// ClassRow is a part given PageClass, and the classes of its own before it.
 type ClassRow struct {
 	Root string
 	Node g.Node
@@ -126,7 +125,7 @@ func PagesClass(t testing.TB, dir string, nested []string, rows []ClassRow) {
 	for _, row := range rows {
 		_, name, _ := strings.Cut(fmt.Sprintf("%T", row.Node), ".")
 		held = append(held, name)
-		want := `class="` + strings.TrimSpace(row.Root+" "+PageClass) + `"`
+		want := `class="` + row.Root + " " + PageClass + `"`
 		if got := Render(row.Node); !strings.Contains(got, want) {
 			t.Errorf("%s: no %s in %s", name, want, got)
 		}

@@ -1,6 +1,5 @@
 // BROWSER=safari|ios|chrome|chromium|firefox node run.mjs
-// Can a <dialog> be the store's overlay with no script, as modal.css makes
-// it one? Serves page.html on 127.0.0.1 (the browsers: ../browsers.mjs),
+// Can a <dialog> be the store's overlay with no script? Serves page.html on 127.0.0.1 (the browsers: ../browsers.mjs),
 // clicks and presses, and reads (dialog.js): the page's button opens it as a
 // modal dialog (command="show-modal", no script), the layer over the window,
 // the page dimmed under it (::backdrop) and held, the layer scrolling the
@@ -14,14 +13,8 @@
 // script on the iOS simulator (its taps never click there), by the keyboard
 // in Safari on the Mac (a button focused, Return), by Playwright elsewhere;
 // on the simulator no key, and no focus to give back (a script's click, as a
-// tap there, focuses no button). And the marketing pages' modal, as
-// modal.css's page variant makes it: its ::backdrop's blur, the page blurred
-// and dimmed under it in a picture of the window, its scrim coming in
-// (sampled each frame), its close button stuck at the window's top as the
-// panel scrolls, closed by it; and its dark one (color-scheme: dark on the
-// dialog), its panel and close button from the root's light-dark() pairs, its
-// panel black in a picture. And a button in a form: its type button, as
-// site.ModalButton writes it, it opens the dialog; with none, the form's
+// tap there, focuses no button). And a button in a form: its type button, it
+// opens the dialog; with none, the form's
 // submit button, it does nothing at all, the dialog closed and the form not
 // sent (the control; a submit button with no command sends it). The result
 // is results/<browser>.json.
@@ -44,7 +37,6 @@ try {
   page = await open(BROWSER, `http://127.0.0.1:${server.address().port}/`);
   if (!IOS) await page.size(1440, 900);
   await page.run(wait(300));
-  got.pageClosedPixels = await page.run(call(`pixels(${JSON.stringify(await page.shot())})`));
   got.closed = await page.run(call('state()'));
   await page.run(call('watch()'));
   await click('#button');
@@ -61,29 +53,6 @@ try {
     got.afterEscape = await page.run(call('state()'));
   }
   got.samples = await page.run('Promise.resolve(window.cuiSamples)');
-  // the marketing modal: opened, its scrim sampled each frame, a picture;
-  // made taller than the window and scrolled 400px; closed by its button
-  await page.run(call('watchPage()'));
-  await click('#page-button');
-  await page.run(wait(1300));
-  got.page = await page.run(call('pageState()'));
-  got.pageColors = await page.run(call(`colors('page')`));
-  got.pageOpenPixels = await page.run(call(`pixels(${JSON.stringify(await page.shot())}, ${got.pageClosedPixels.offset})`));
-  got.pageFrames = await page.run('Promise.resolve(window.cuiPage)');
-  await page.run(`Promise.resolve((document.querySelector('#page .panel').append(Object.assign(document.createElement('div'), { className: 'tall' })), document.querySelector('#page').scrollTop = 400, true))`);
-  await page.run(wait(300));
-  got.pageScrolled = await page.run(call('pageState()'));
-  await click('#page-close');
-  await page.run(wait(300));
-  got.pageClosed = await page.run(call('pageState()'));
-  // its dark one: opened, its colors, a picture; closed by its button
-  await click('#dark-button');
-  await page.run(wait(1300));
-  got.dark = await page.run(call(`colors('dark')`));
-  got.darkPixels = await page.run(call(`pixels(${JSON.stringify(await page.shot())}, ${got.pageClosedPixels.offset})`));
-  await click('#dark-close');
-  await page.run(wait(300));
-  got.darkClosed = await page.run(call(`colors('dark')`));
   const opened = `Promise.resolve({ open: document.querySelector('#modal').open, hash: location.hash })`;
   await click('#form-button');
   await page.run(wait(500));
@@ -117,17 +86,7 @@ const claims = [
     ['the focus is back on the button that opened it', got.closedAgain.focus === 'button'],
     ['Escape closes it, the focus back on the button', got.afterEscape.open === false && got.afterEscape.focus === 'button'],
   ]),
-  ['the marketing modal\'s button opens it, its ::backdrop blur(20px)', got.page.modal === true && got.page.filter === 'blur(20px)'],
-  ['its panel centered: as far from the window\'s top as from its foot', Math.abs(got.page.panel - got.page.below) <= 1 && got.page.panel > 28],
-  ['in the picture the page under it is blurred and dimmed (the stripes\' spread under a fifth of theirs closed, their brightness 30 lower)', got.pageClosedPixels.spread > 60 && got.pageOpenPixels.spread < got.pageClosedPixels.spread / 5 && got.pageOpenPixels.mean < got.pageClosedPixels.mean - 30],
-  ['its scrim comes in: a frame whose blur is between 0 and 20px', got.pageFrames.some(([, f]) => { const v = parseFloat(f.match(/blur\(([\d.]+)px\)/)?.[1]); return v > 0 && v < 20; })],
-  ['scrolled 400px, its close button stays 20px from the window\'s top (sticky, its top the layer\'s room taken back)', got.pageScrolled.close === 20 && got.pageScrolled.panel < 0],
-  ['its close button closes it', got.pageClosed.open === false],
-  ['its dark one (color-scheme: dark on the dialog) opens, its panel black, its text #f5f5f7, its close button #f5f5f7 with a black X, from the root\'s light-dark() pairs; the light one\'s panel white, its text #1d1d1f, from the same', got.dark.modal === true && got.dark.scheme === 'dark' && got.dark.panel === 'rgb(0, 0, 0)' && got.dark.text === 'rgb(245, 245, 247)' && got.dark.close === 'rgb(245, 245, 247)' && got.dark.x === 'rgb(0, 0, 0)' && got.pageColors.scheme === 'light' && got.pageColors.panel === 'rgb(255, 255, 255)' && got.pageColors.text === 'rgb(29, 29, 31)'],
-  ['its scrim the light one\'s', got.dark.backdrop === 'rgba(0, 0, 0, 0.48)' && got.pageColors.backdrop === got.dark.backdrop],
-  ['in the picture its panel is black, the light one\'s white', got.darkPixels.panel.every(v => v <= 2) && got.pageOpenPixels.panel.every(v => v >= 253)],
-  ['its close button closes it', got.darkClosed.open === false],
-  ['a button in a form, its type button (site.ModalButton\'s), opens it, the form not sent', got.formButton.open === true && got.formButton.hash === ''],
+  ['a button in a form, its type button, opens it, the form not sent', got.formButton.open === true && got.formButton.hash === ''],
   ['a button in a form with no type does nothing, the dialog closed and the form not sent (the control)', got.formSubmit.open === false && got.formSubmit.hash === ''],
 ];
 console.log(page.label + (IOS ? ' (clicked by script; no Escape)' : KEYBOARD ? ' (by its keyboard: Return)' : ''));

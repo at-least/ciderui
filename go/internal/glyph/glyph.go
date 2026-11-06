@@ -81,14 +81,6 @@ var FlyoutCompact = Icon{width: "9", height: "48", viewBox: "0 0 9 48", paint: `
 
 var FlyoutBack = Icon{width: "9", height: "48", viewBox: "0 0 9 48", paint: ``, inner: `<path d="M7.7 17.21 .7 24.07 7.7 30.79" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>`}
 
-var Chevron = Icon{width: "16", height: "9", viewBox: "0 0 16 9", paint: ``, inner: `<path d="M15.265.835 8 8.167.735.835" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>`}
-
-var PaddlePrevious = Icon{width: "36", height: "36", viewBox: "0 0 36 36", paint: ``, inner: `<path d="M20 12.5 14.5 18 20 23.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`}
-
-var PaddleNext = Icon{width: "36", height: "36", viewBox: "0 0 36 36", paint: ``, inner: `<path d="M16 12.5 21.5 18 16 23.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`}
-
-var Check = Icon{width: "14", height: "14", viewBox: "0 0 14 14", paint: ``, inner: `<path d="M3.3 7.65 6.25 11.35 11.15 3.7" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>`}
-
 var Disclosure = Icon{width: "17", height: "17", viewBox: "0 0 17 8.85", paint: ``, inner: `<path d="M15 1.13 8.5 7.72 2 1.13" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>`}
 
 var FooterChevron = Icon{width: "11", height: "6", viewBox: "0 0 11 6", paint: ``, inner: `<path d="M10.075.675 5.5 5.323.925.675" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>`}
@@ -96,8 +88,6 @@ var FooterChevron = Icon{width: "11", height: "6", viewBox: "0 0 11 6", paint: `
 var Alert = Icon{width: "1.171em", height: "0.995em", viewBox: "0 0 1171 995", paint: ``, inner: `<circle cx="585" cy="497.5" r="456.25" fill="none" stroke="currentColor" stroke-width="82.5"/><path d="M584 280V550" fill="none" stroke="currentColor" stroke-width="70" stroke-linecap="round"/><circle cx="585" cy="692.5" r="50" fill="currentColor"/>`}
 
 var Dropdown = Icon{width: "25", height: "25", viewBox: "0 0 21 21", paint: ``, inner: `<path d="M6.075 9.275 10.5 13.7 14.925 9.275" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"/>`}
-
-var Close = Icon{width: "20", height: "20", viewBox: "0 0 20 20", paint: ``, inner: `<path d="M4.88 4.88 15.12 15.12M15.12 4.88 4.88 15.12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>`}
 
 var Orders = Icon{width: "11", height: "16", viewBox: "0 0 11 16", paint: ``, inner: `<path d="M6.033 2.843 9.198 4.628A1.0625 1.0625 0 0 1 9.738 5.553V9.063A1.0625 1.0625 0 0 1 9.198 9.989L6.033 11.774A1.0625 1.0625 0 0 1 4.989 11.774L1.825 9.989A1.0625 1.0625 0 0 1 1.285 9.063V5.553A1.0625 1.0625 0 0 1 1.825 4.628L4.989 2.843A1.0625 1.0625 0 0 1 6.033 2.843ZM1.43 5.018 5.511 7.375 9.593 5.018M5.511 7.375V11.91" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width=".875"/><path d="M3.849 3.988 7.254 5.878" fill="none" stroke="currentColor" stroke-width=".875"/>`}
 

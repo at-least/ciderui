@@ -8,10 +8,6 @@ import (
 	"sync"
 )
 
-// classes the markup writes that no rule selects: nothing else could tell them
-// from a misspelt class
-var classesWithNoRule = []string{"cui-gallery", "cui-post-content", "cui-story-head"}
-
 // selected is a value of a data-* attribute a rule selects on an element with
 // class, anyValue for a bare [data-x]. A bare :not([data-x]) has neither: it
 // tells the bare attribute from none, and a value there would draw no rule of
@@ -25,9 +21,6 @@ type selected struct {
 
 var words = sync.OnceValues(func() (map[string]bool, []selected) {
 	classes := map[string]bool{}
-	for _, class := range classesWithNoRule {
-		classes[class] = true
-	}
 	var values []selected
 	for _, path := range cssFiles() {
 		text := css(path)

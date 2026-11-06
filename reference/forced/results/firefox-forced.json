@@ -2,68 +2,9 @@
  "date": "2026-10-23T01:54:38.946Z",
  "forced": true,
  "browser": "Firefox/153.0",
- "checked": [
-  true,
-  false,
-  false
- ],
- "rings": [
-  {
-   "checked": true,
-   "edge": "rgb(12,119,228) rgb(0,113,227) rgb(243,248,254) rgb(255,255,255)",
-   "color": "rgb(92,42,46)"
-  },
-  {
-   "checked": false,
-   "edge": "rgb(255,255,255) rgb(255,255,255) rgb(255,255,255) rgb(255,255,255)",
-   "color": "rgb(227,228,229)"
-  },
-  {
-   "checked": false,
-   "edge": "rgb(255,255,255) rgb(255,255,255) rgb(255,255,255) rgb(255,255,255)",
-   "color": "rgb(245,245,247)"
-  }
- ],
- "imgRings": [
-  {
-   "checked": true,
-   "edge": "rgb(12,119,228) rgb(0,113,227) rgb(243,248,254) rgb(255,255,255)",
-   "color": "rgb(92,42,46)"
-  },
-  {
-   "checked": false,
-   "edge": "rgb(255,255,255) rgb(255,255,255) rgb(255,255,255) rgb(255,255,255)",
-   "color": "rgb(227,228,229)"
-  },
-  {
-   "checked": false,
-   "edge": "rgb(255,255,255) rgb(255,255,255) rgb(255,255,255) rgb(255,255,255)",
-   "color": "rgb(94,176,229)"
-  }
- ],
  "options": [
   "rgb(255,255,255)",
   "rgb(0,0,0)"
- ],
- "checkboxesDiffer": 37,
- "dotsInk": 560,
- "dots": [
-  {
-   "current": true,
-   "ink": 380
-  },
-  {
-   "current": false,
-   "ink": 60
-  },
-  {
-   "current": false,
-   "ink": 60
-  },
-  {
-   "current": false,
-   "ink": 60
-  }
  ],
  "select": {
   "n": 0,

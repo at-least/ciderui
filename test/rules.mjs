@@ -38,18 +38,16 @@ check('every :hover sits inside (hover: hover) (rule 5)', hoverOutsideItsQuery(c
 // edge or halo in the ring's place; the others move the one ring in, where a
 // scroller or their edge would clip it
 const NO_RING = ['cui-console-field', 'cui-field-input', 'cui-field-textarea', 'cui-globalnav-searchinput'];
-const RING_MOVED = ['cui-console-list-item', 'cui-globalnav-backbutton', 'cui-globalnav-flyoutbutton', 'cui-globalnav-flyoutlink', 'cui-tile-link'];
+const RING_MOVED = ['cui-console-list-item', 'cui-globalnav-backbutton', 'cui-globalnav-flyoutbutton', 'cui-globalnav-flyoutlink'];
 // rule 10 is a pointer's color change; these change with a panel opening, a
 // field's label rising or its text typed, each read in its part's test
-const OWN_MOTION = ['.cui-field-label', '.cui-globalnav-flyoutpanel', '.cui-globalnav-searchfield > svg', '.cui-localnav'];
-// em-sized in running text, at its parent's letter-spacing
-const OWN_TRACKING = '.cui-article-body code, .cui-article-body sup';
+const OWN_MOTION = ['.cui-field-label', '.cui-globalnav-flyoutpanel', '.cui-globalnav-searchfield > svg'];
 // what the keyboard reaches
 const CONTROLS = 'a[href], button, input:not([type=hidden]), select, textarea, summary, [tabindex]:not([tabindex="-1"])';
 
 const tracking = JSON.parse(readFileSync(join(ROOT, 'reference/tracking/cui-tracking.json'), 'utf8'));
 
-const readTextAndMotion = ([set, tracking, ownMotion, ownTracking]) => {
+const readTextAndMotion = ([set, tracking, ownMotion]) => {
   const label = (e) => `${e.tagName.toLowerCase()}${typeof e.className === 'string' && e.className ? `.${e.className.trim().split(/\s+/).join('.')}` : ''}`;
   const motion = [];
   const motionUsed = [];
@@ -66,7 +64,6 @@ const readTextAndMotion = ([set, tracking, ownMotion, ownTracking]) => {
     });
     if (!e.matches('input:not([type=checkbox], [type=radio], [type=range]), textarea, select') && ![...e.childNodes].some((n) => n.nodeType === Node.TEXT_NODE && n.textContent.trim())) continue;
     texts++;
-    if (e.closest(ownTracking)) continue;
     if (set === 'console') {
       if (cs.letterSpacing !== 'normal') spacing.push(`${label(e)}: ${cs.letterSpacing}`);
     } else {
@@ -95,7 +92,7 @@ for (const part of COMPONENTS) {
     examples++;
     for (const width of [390, 900, 1200]) {
       await page.resize(width);
-      const found = await page.page.evaluate(readTextAndMotion, [part.set, tracking, OWN_MOTION, OWN_TRACKING]);
+      const found = await page.page.evaluate(readTextAndMotion, [part.set, tracking, OWN_MOTION]);
       texts += found.texts;
       found.motionUsed.forEach((s) => motionUsed.add(s));
       check(`${name} at ${width}px: no color moves (rule 10)`, found.motion.join(' | '), '');

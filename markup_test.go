@@ -39,7 +39,6 @@ func TestCheckMarkup(t *testing.T) {
 	}{
 		{"a misspelt class", `<p>a</p><span class="cui-console-badg mt-1">b</span>`, []string{`class "cui-console-badg" on <span class="cui-console-badg mt-1">: ciderui has no such class`}},
 		{"a keyframes name is no class", `<li class="cui-globalnav-row-in">a</li>`, []string{`class "cui-globalnav-row-in" on <li class="cui-globalnav-row-in">: ciderui has no such class`}},
-		{"a class with no rule, on the list", `<div class="cui-post-content">a</div>`, nil},
 		{"a value no rule selects", `<span class="cui-console-badge" data-color="purple">b</span>`, []string{`data-color="purple" on <span class="cui-console-badge">: no rule of ciderui's selects it (cui-console-badge's: error, info, success, warning)`}},
 		{"a value is listed for each cui-* class of its element", `<a class="cui-console-badge cui-console-link" data-color="purple">b</a>`, []string{`data-color="purple" on <a class="cui-console-badge cui-console-link">: no rule of ciderui's selects it (cui-console-badge's: error, info, success, warning; cui-console-link's: none)`}},
 		{"a typo in any selected attribute", `<dl class="cui-console-dl" data-orientation="vertcal"></dl>`, []string{`data-orientation="vertcal" on <dl class="cui-console-dl">: no rule of ciderui's selects it (cui-console-dl's: vertical)`}},
@@ -54,7 +53,6 @@ func TestCheckMarkup(t *testing.T) {
 		// value would as well, with no rule of its own
 		{"the bare attribute a :not selects", `<ul class="cui-console-tabs" data-overflow-end></ul>`, nil},
 		{"a value only a :not selects", `<ul class="cui-console-tabs" data-overflow-end="yes"></ul>`, []string{`data-overflow-end="yes" on <ul class="cui-console-tabs">: no rule of ciderui's selects it (cui-console-tabs's: "")`}},
-		{"a value beside a :not", `<div class="cui-story" data-size="tiny"></div>`, []string{`data-size="tiny" on <div class="cui-story">: no rule of ciderui's selects it (cui-story's: "", lg, md)`}},
 
 		// :is(.cui-console-copy-button, .cui-console-copy-inline)[data-state="copied"]
 		{"a value for one class of an :is", `<button class="cui-console-copy-button" data-state="copied">x</button>`, nil},
@@ -171,17 +169,5 @@ func TestAStylesheetLeftOpenPanics(t *testing.T) {
 			}()
 			compoundsIn(c.css)
 		})
-	}
-}
-
-// a class that gained a rule leaves the list
-func TestClassesWithNoRuleHaveNoRule(t *testing.T) {
-	for _, path := range cssFiles() {
-		classes := classesIn(css(path))
-		for _, class := range classesWithNoRule {
-			if classes[class] {
-				t.Errorf("%s has a rule for %s", path, class)
-			}
-		}
 	}
 }

@@ -23,7 +23,7 @@ func (r *recorder) Helper() {}
 func (r *recorder) Errorf(string, ...any) { r.failures++ }
 
 func TestCheck(t *testing.T) {
-	const path = "site/skip/examples/skip.html"
+	const path = "site/ribbon/examples/ribbon.html"
 	same := g.Raw(Read(path))
 	var pass, fail recorder
 	Check(&pass, same, path)
@@ -95,7 +95,7 @@ func TestPanics(t *testing.T) {
 type classed struct{ Class string }
 
 func (c classed) Render(w io.Writer) error {
-	return h.P(g.If(c.Class != "drop", g.Attr("class", "cui-skip "+c.Class))).Render(w)
+	return h.P(g.If(c.Class != "drop", g.Attr("class", "root "+c.Class))).Render(w)
 }
 
 func TestPagesClass(t *testing.T) {
@@ -105,8 +105,8 @@ func TestPagesClass(t *testing.T) {
 		t.Fatal(err)
 	}
 	// %T names this package's type example.classed, not p.Classed: nested stands in
-	writes := ClassRow{Root: "cui-skip", Node: classed{Class: PageClass}}
-	drops := ClassRow{Root: "cui-skip", Node: classed{Class: "drop"}}
+	writes := ClassRow{Root: "root", Node: classed{Class: PageClass}}
+	drops := ClassRow{Root: "root", Node: classed{Class: "drop"}}
 	for _, c := range []struct {
 		name     string
 		nested   []string

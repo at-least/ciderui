@@ -40,11 +40,6 @@ function oklchToSrgb(l, c, h) {
   const lin = [4.0767416621 * l_ - 3.3077115913 * m_ + 0.2309699292 * s_, -1.2684380046 * l_ + 2.6097574011 * m_ - 0.3413193965 * s_, -0.0041960863 * l_ - 0.7034186147 * m_ + 1.7076147010 * s_];
   return lin.map(v => Math.min(1, Math.max(0, v))).map(v => (v <= 0.0031308 ? 12.92 * v : 1.055 * v ** (1 / 2.4) - 0.055) * 255);
 }
-const computedToSpace = (value) => {
-  const m = value.match(/^rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)$/);
-  if (!m) throw new Error(`not a computed rgb color: ${value}`);
-  return `rgb(${m[1]} ${m[2]} ${m[3]} / ${m[4] ?? 1})`;
-};
 // as the browser computes it
 const rgb = (value) => {
   const [r, g, b, a] = channels(value);
@@ -52,10 +47,8 @@ const rgb = (value) => {
 };
 
 const W = 1200;
-// each color's light and dark side: [page, probe, width, property, state?,
-// opacity?] where apple.com shows it (`opacity`: the color at the element's
-// opacity, as apple.com draws a title in black at .88), or 'fitted: why'
-// or 'golden: why' (no instance measured), each held by the contrast checks
+// each color's light and dark side: [page, probe, width, property, state?]
+// where apple.com shows it, or 'fitted: why', held by the contrast checks
 const CONTRACT = {
   '--cui-c-bg': [['home', 'page.body', W, 'background-color'], ['product', 'page.body', W, 'background-color']],
   '--cui-c-bg-alt': [['home', 'hero.tile', W, 'background-color'], ['product', 'section.dark', W, 'background-color']],
@@ -82,25 +75,8 @@ const CONTRACT = {
   '--cui-c-on-menu': [['home', 'menu.link', 390, 'color'], ['newsroom', 'menu.link', 390, 'color']],
   // the search opened: the home page's, and the Newsroom's dark nav's
   '--cui-c-curtain': [['search', 'curtain', W, 'background-color'], ['search-dark', 'curtain', 1600, 'background-color']],
-  // the local nav's: MacBook Air's, light, and MacBook Pro's, dark
-  '--cui-c-bar-2': [['localnav', 'localnav.background', W, 'background-color'], ['localnav-dark', 'localnav.background', W, 'background-color']],
-  '--cui-c-on-bar-2': [['localnav', 'localnav.title', W, 'color', undefined, 'opacity'], ['localnav-dark', 'localnav.title', W, 'color', undefined, 'opacity']],
+  // apple.com's local nav's rule: MacBook Air's, light, and MacBook Pro's, dark
   '--cui-c-separator': [['localnav', 'localnav.rule', W, 'background-color'], ['localnav-dark', 'localnav.rule', W, 'background-color']],
-  // the home page's tiles: the hero's, light, and a dark one (.tile-wrapper.theme-dark)
-  '--cui-c-tile': [['home', 'hero.tile', W, 'background-color'], ['home', 'tile.dark', W, 'background-color']],
-  // the store's cards: a light one, a dark one (rf-ccard-darkbg); a dark
-  // card's plain eyebrow on a copy the probe adds
-  '--cui-c-on-card': [['store', 'card.header', W, 'color'], ['store', 'card.dark-header', W, 'color']],
-  '--cui-c-eyebrow': [['store', 'card.eyebrow', W, 'color'], ['store', 'card.dark-eyebrow', W, 'color']],
-  // a gallery's: the iPhone page's paddles and dots, light, and iPhone 18
-  // Pro's, dark (its first paddle disabled, the next read)
-  '--cui-c-paddle': [['iphone', 'paddle', W, 'background-color'], ['product', 'paddle.next', W, 'background-color']],
-  '--cui-c-paddle-hover': [['iphone', 'paddle', W, 'background-color', 'hover'], ['product', 'paddle.next', W, 'background-color', 'hover']],
-  '--cui-c-paddle-active': [['iphone', 'paddle', W, 'background-color', 'active'], ['product', 'paddle.next', W, 'background-color', 'active']],
-  '--cui-c-on-paddle': [['iphone', 'paddle', W, 'color'], ['product', 'paddle.next', W, 'color']],
-  '--cui-c-on-paddle-hover': [['iphone', 'paddle', W, 'color', 'hover'], ['product', 'paddle.next', W, 'color', 'hover']],
-  '--cui-c-dot': [['iphone', 'gallery.dot', W, 'background-color'], ['product', 'gallery.dot', W, 'background-color']],
-  '--cui-c-dot-hover': [['iphone', 'gallery.dot', W, 'background-color', 'hover'], ['product', 'gallery.dot', W, 'background-color', 'hover']],
   // apple.com's own field (the retail page's form-textbox), and in a dark
   // color scheme
   '--cui-c-field': [['retail', 'field.input', W, 'background-color'], ['retail-dark', 'field.input', W, 'background-color']],
@@ -122,13 +98,8 @@ const CONTRACT = {
   '--cui-c-on-footer-title': [['home', 'footer.title', W, 'color'], ['product', 'footer.title', W, 'color']],
   '--cui-c-footer-rule': [['home', 'footer.legal-rule', W, 'background-color'], ['home', 'footer.legal-rule', 390, 'background-color']],
   // the store's overlay (iPhone 18 Pro's buy page, its Show more opened): one
-  // value each, read at a wide window and a phone's, a modal light on any page
+  // value each, read at a wide window and a phone's
   '--cui-c-scrim': [['overlay', 'overlay', W, 'background-color'], ['overlay', 'overlay', 390, 'background-color']],
-  '--cui-c-close': [['overlay', 'close.circle', W, 'background-color'], ['overlay', 'close.circle', 390, 'background-color']],
-  '--cui-c-close-hover': [['overlay', 'close.circle-hover', W, 'background-color', 'hover'], ['overlay', 'close.circle-hover', 390, 'background-color', 'hover']],
-  '--cui-c-close-active': [['overlay', 'close.circle-hover', W, 'background-color', 'active'], ['overlay', 'close.circle-hover', 390, 'background-color', 'active']],
-  '--cui-c-on-close': [['overlay', 'close.circle', W, 'color'], ['overlay', 'close.circle-hover', 390, 'color', 'active']],
-  '--cui-c-on-close-hover': [['overlay', 'close.circle-hover', W, 'color', 'hover'], ['overlay', 'close.circle-hover', 390, 'color', 'hover']],
   // tv.apple.com's video player, paused (decision 28): one value each, a
   // video dark on any page
   '--cui-c-video': [['tv-player', 'dialog', W, 'background-color'], ['tv-player', 'dialog', 1600, 'background-color']],
@@ -146,14 +117,8 @@ for (const [name, [light, dark]] of Object.entries(CONTRACT)) {
   for (const [side, value, source] of [['light', l, light], ['dark', d, dark]]) {
     if (typeof source === 'string') continue; // fitted: held by the contrast checks
     // a ring drawn as a box-shadow reads as its color first
-    let want = ref(...source.slice(0, 5)).match(/rgba?\([^)]*\)/)[0];
-    if (source[5]) {
-      // the color at the element's opacity
-      const [r, g, b, a] = channels(computedToSpace(want));
-      const alpha = +(a * Number(ref(source[0], source[1], source[2], source[5], source[4]))).toFixed(4);
-      want = alpha === 1 ? `rgb(${r}, ${g}, ${b})` : `rgba(${r}, ${g}, ${b}, ${alpha})`;
-    }
-    check(`${name} ${side} is apple.com's ${source.slice(0, 2).join(':')}${source[4] ? ':' + source[4] : ''} ${source[3]}${source[5] ? ' at its ' + source[5] : ''}`, rgb(value), want);
+    const want = ref(...source).match(/rgba?\([^)]*\)/)[0];
+    check(`${name} ${side} is apple.com's ${source.slice(0, 2).join(':')}${source[4] ? ':' + source[4] : ''} ${source[3]}`, rgb(value), want);
   }
 }
 
@@ -263,17 +228,13 @@ const lum = (value) => channels(value).slice(0, 3).map(v => v / 255).map(v => v 
   .reduce((s, v, i) => s + v * [0.2126, 0.7152, 0.0722][i], 0);
 const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
 const MIN = [
-  ['--cui-c-text', ['--cui-c-bg', '--cui-c-bg-alt', '--cui-c-tile'], 4.5],
-  ['--cui-c-text-2', ['--cui-c-bg', '--cui-c-bg-alt', '--cui-c-tile'], 4.5],
-  ['--cui-c-link', ['--cui-c-tile'], 4.5],
+  ['--cui-c-text', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
+  ['--cui-c-text-2', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
   ['--cui-c-link', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
   ['--cui-c-text-3', ['--cui-c-bg', '--cui-c-bg-alt'], 3],
   // a field's message on the page
   ['--cui-c-error', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
   ['--cui-c-border', ['--cui-c-bg', '--cui-c-bg-alt'], 3],
-  // a card's text on its ground, the page's
-  ['--cui-c-on-card', ['--cui-c-bg'], 4.5],
-  ['--cui-c-eyebrow', ['--cui-c-bg'], 4.5],
   // the player's text and controls on its video
   ['--cui-c-on-video-control', ['--cui-c-video'], 4.5],
   ['--cui-c-on-video-time', ['--cui-c-video'], 4.5],
@@ -341,7 +302,7 @@ for (const [on, fills] of [['--cui-c-on-accent', ['--cui-c-accent', '--cui-c-acc
 }
 // the nav's text on its bar, the bar over the page's grounds (what scrolls
 // under it is the page's)
-for (const [on, bar] of [['--cui-c-on-bar', '--cui-c-bar'], ['--cui-c-on-bar-hover', '--cui-c-bar'], ['--cui-c-on-bar', '--cui-c-bar-2'], ['--cui-c-on-bar-2', '--cui-c-bar-2']]) {
+for (const [on, bar] of [['--cui-c-on-bar', '--cui-c-bar'], ['--cui-c-on-bar-hover', '--cui-c-bar']]) {
   for (const bg of ['--cui-c-bg', '--cui-c-bg-alt']) {
     for (const i of [0, 1]) {
       const ground = over(sides(bar)[i], sides(bg)[i]);
@@ -366,29 +327,13 @@ for (const fg of ['--cui-c-on-footer', '--cui-c-on-footer-link', '--cui-c-on-foo
   check(`${fg} on --cui-c-bg-alt, light, at least 4.5:1`, ratio(over(sides(fg)[0], ground), ground) >= 4.5, true);
 }
 
-// a gallery's marks, 3:1 (WCAG 2's for what is not text): a paddle's chevron
-// on its paddle, the paddle over the page's grounds; a dot on them
-for (const [mark, layers] of [['--cui-c-on-paddle', ['--cui-c-paddle']], ['--cui-c-on-paddle-hover', ['--cui-c-paddle-hover']], ['--cui-c-on-paddle-hover', ['--cui-c-paddle-active']], ['--cui-c-dot', []], ['--cui-c-dot-hover', []]]) {
-  for (const bg of ['--cui-c-bg', '--cui-c-bg-alt']) {
-    for (const i of [0, 1]) {
-      const ground = over(...layers.map(l => sides(l)[i]), sides(bg)[i]);
-      check(`${mark}${layers.length ? ' on ' + layers[0] : ''} over ${bg}, ${['light', 'dark'][i]}, at least 3:1`, ratio(over(sides(mark)[i], ground), ground) >= 3, true);
-    }
-  }
-}
-
-// a modal's close button: its X on its circle, at rest, hovered and pressed,
-// 3:1 (a mark, not text); the circle opaque, on the modal's light ground
-for (const [mark, fill] of [['--cui-c-on-close', '--cui-c-close'], ['--cui-c-on-close-hover', '--cui-c-close-hover'], ['--cui-c-on-close', '--cui-c-close-active']]) {
-  const ground = sides(fill)[0];
-  check(`${mark} on ${fill}, at least 3:1`, ratio(over(sides(mark)[0], ground), ground) >= 3, true);
-}
-
 const table = JSON.parse(readFileSync(join(ROOT, 'reference/tracking/cui-tracking.json'), 'utf8'));
 const tracking = Object.keys(vars).filter(k => k.startsWith('--cui-tracking-'));
 // the table is what was measured; a size no stylesheet reads has no token
-const READ = ['base.css', 'type.css', ...readdirSync(join(ROOT, 'components'), { recursive: true }).filter(f => f.endsWith('.css')).map(f => join('components', f))].map(f => readFileSync(join(ROOT, f), 'utf8')).join('\n');
+const READ = ['theme.css', 'base.css', 'type.css', ...readdirSync(join(ROOT, 'components'), { recursive: true }).filter(f => f.endsWith('.css')).map(f => join('components', f))].map(f => readFileSync(join(ROOT, f), 'utf8')).join('\n');
 check('a letter-spacing for each size of the table a stylesheet reads', tracking.map(k => k.slice(15)).join(' '), Object.keys(table).filter(size => READ.includes(`--cui-tracking-${size})`)).join(' '));
+// a part's removal leaves no slot behind
+check('every token a stylesheet reads', Object.keys(vars).filter(name => !(READ + css).match(new RegExp(`var\\(${name}[,)]`))).join(' '), '');
 for (const k of tracking) check(k, parseFloat(vars[k]), table[k.slice(15)]);
 
 check('--cui-font', vars['--cui-font'], '-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Noto Sans TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif');
@@ -403,14 +348,6 @@ check('--cui-console-shadow-table-sticky is App Store Connect\'s --tb-component-
 check('--cui-console-shadow-dialog is App Store Connect\'s --tb-component-Modal-variant-variant-modal-boxShadow', vars['--cui-console-shadow-dialog'], tbTokens['--tb-component-Modal-variant-variant-modal-boxShadow']);
 check('--cui-console-shadow-popover is App Store Connect\'s --tb-component-Popover-variant-variant-stroked-boxShadow', vars['--cui-console-shadow-popover'], tbTokens['--tb-component-Popover-variant-variant-stroked-boxShadow']);
 
-// as the browser computes a shadow: its color first, the spread 0px where
-// none is written
-const shadow = (value) => {
-  const color = value.match(/rgba?\([^)]*\)/)[0];
-  const lengths = value.replace(color, '').trim().split(/\s+/);
-  while (lengths.length < 4) lengths.push('0px');
-  return `${color.includes(',') ? color : rgb(color)} ${lengths.join(' ')}`;
-};
 check('--cui-video-scrim is tv.apple.com\'s tv-player:scrim.gradient background-image', vars['--cui-video-scrim'], ref('tv-player', 'scrim.gradient', W, 'background-image'));
 // golden: muse's subtitles, white under a soft shadow with no box (the owner, 2026-11-05, from Apple's view); tv.apple.com's
 // cues are its <video>'s own text track, none read. Two layers: a tight one that edges each letter on a white picture, a wide
@@ -424,7 +361,6 @@ check('--cui-video-preview-shadow is muse\'s golden', vars['--cui-video-preview-
 check('--cui-video-control-fill is muse\'s golden', vars['--cui-video-control-fill'], 'rgb(255 255 255 / 0.16)');
 check('--cui-video-control-fill-hover is muse\'s golden', vars['--cui-video-control-fill-hover'], 'rgb(255 255 255 / 0.24)');
 check('--cui-video-thumb-shadow is tv.apple.com\'s tv-player:volume.range --volume-thumb-box-shadow', vars['--cui-video-thumb-shadow'], ref('tv-player', 'volume.range', W, '--volume-thumb-box-shadow'));
-for (const probe of ['card', 'card.dark']) check(`--cui-shadow-card is apple.com's store:${probe} box-shadow`, shadow(vars['--cui-shadow-card']), shadow(ref('store', probe, W, 'box-shadow')));
 
 // every named color CSS has; not transparent, currentColor or inherit, which
 // are no color of a stylesheet's own

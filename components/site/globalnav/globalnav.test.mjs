@@ -59,7 +59,8 @@ const HOLD = '<style>.cui-globalnav-search, .cui-globalnav-search * { transition
 const TYPE = [...SIZE, 'color'];
 
 const FLYOUT_NAV = ex('flyout');
-const LOCALNAV = examples(new URL('../localnav/', import.meta.url))('localnav');
+// a page's bar under the global nav, at apple.com's local nav's z-index (localnav:localnav)
+const PAGE_BAR = '<div style="position: sticky; top: 0; z-index: 9997; height: 52px; background: #fff"></div>';
 const FLYOUT_DARK = FLYOUT_NAV.replace('class="cui-globalnav"', 'class="cui-globalnav cui-dark"');
 const STORE_ITEM = `${LIST} > li:nth-child(3)`;
 const LAPTOPS_ITEM = `${LIST} > li:nth-child(4)`;
@@ -886,13 +887,13 @@ export const cases = [
     ],
   },
   {
-    name: 'flyout-localnav',
-    html: `${FLYOUT_NAV}\n${LOCALNAV}`,
+    name: 'flyout-page-bar',
+    html: `${FLYOUT_NAV}\n${PAGE_BAR}`,
     ...HOVERING,
     checks: [
       { target: LIST, pseudo: '::after', props: ['content', 'top', 'bottom'], golden: 'the curtain a flyout the pointer shows dims the page with, across the window' },
       { target: LOGO, props: ['position'], golden: 'over a flyout the pointer shows, which runs from the nav\'s top' },
-      { target: FHEAD1, props: ['hit'], golden: 'over the local nav under the bar, as apple.com\'s (its nav\'s z-index 9999 over its local nav\'s 9997: flyout:nav, localnav:localnav): what the pointer finds at its first heading is the heading' },
+      { target: FHEAD1, props: ['hit'], golden: 'over a bar under it, as apple.com\'s (its nav\'s z-index 9999 over its local nav\'s 9997: flyout:nav, localnav:localnav): what the pointer finds at its first heading is the heading' },
     ],
   },
   {

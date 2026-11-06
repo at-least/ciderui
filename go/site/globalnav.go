@@ -124,8 +124,8 @@ type GlobalNavText struct {
 }
 
 // GlobalNav does not position itself: put sticky top-0 in Class where the
-// nav stays. Its z-index, apple.com's 9999, puts it over the page and a
-// [LocalNav]; a z-* utility in Class replaces it.
+// nav stays. Its z-index, apple.com's 9999, puts it over the page; a z-*
+// utility in Class replaces it.
 type GlobalNav struct {
 	// Logo: an <svg> in currentColor takes the bar's color.
 	Logo          g.Node
