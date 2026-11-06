@@ -1,3 +1,11 @@
+@layer base {
+  /* the system's appearance, as the HIG asks; `cui-light` or `cui-dark` on <html>
+     sets it. In base, after base.css's: a part's layer would beat those classes. */
+  :where(:root) {
+    color-scheme: light dark;
+  }
+}
+
 @layer components {
   .cui-console-page {
     color: var(--cui-c-console-neutral-label-primary);

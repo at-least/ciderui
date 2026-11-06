@@ -1123,4 +1123,12 @@
       transition-delay: 0.12s;
     }
   }
+
+  /* Reduce Transparency: nothing shows through the bar (tokens.css solidifies its
+     ground). Last: it overrides the bar's blur in every state. */
+  @media (prefers-reduced-transparency: reduce) {
+    .cui-globalnav {
+      backdrop-filter: none;
+    }
+  }
 }

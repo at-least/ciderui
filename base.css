@@ -1,7 +1,8 @@
 /* layered: a utility on the element wins */
 @layer base {
-  /* not in tokens.css: an unlayered :root would beat `cui-dark` on <html> */
-  :root {
+  /* not in tokens.css: an unlayered :root would beat `cui-dark` on <html>.
+     :where(): the console's own overrides it, a `cui-dark` or `cui-light` wins */
+  :where(:root) {
     color-scheme: light;
   }
 

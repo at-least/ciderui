@@ -162,3 +162,35 @@
   --cui-tracking-48: normal;
   --cui-tracking-64: normal;
 }
+
+/* Reduce Transparency: what scrolls under a bar or a table's head does not show
+   through (globalnav.css drops the bar's blur) */
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --cui-c-bar: var(--cui-c-bg);
+    --cui-c-console-table-sticky: var(--cui-c-console-neutral-background-primary);
+  }
+}
+
+/* Increase Contrast: secondary text and edges at the text's color. An accent's,
+   a link's and a status's keep theirs: hues held to 4.5:1 (decisions 6, 21), and
+   nobody measured stronger ones. Not neutral-border-tertiary: it is also a
+   disabled control's edge, which would then read as enabled. */
+@media (prefers-contrast: more) {
+  :root {
+    --cui-c-text-2: var(--cui-c-text);
+    --cui-c-text-3: var(--cui-c-text);
+    --cui-c-border: var(--cui-c-text);
+    --cui-c-divider: var(--cui-c-text);
+    --cui-c-separator: var(--cui-c-text);
+    --cui-c-footer-rule: var(--cui-c-on-footer-title);
+    --cui-c-on-bar: var(--cui-c-on-bar-hover);
+    --cui-c-on-footer: var(--cui-c-on-footer-title);
+    --cui-c-on-footer-link: var(--cui-c-on-footer-title);
+    --cui-c-console-neutral-label-secondary: var(--cui-c-console-neutral-label-primary);
+    --cui-c-console-field-border: var(--cui-c-console-neutral-label-primary);
+    --cui-c-console-neutral-border-secondary: var(--cui-c-console-neutral-label-primary);
+    --cui-c-console-dialog-stroke: var(--cui-c-console-neutral-label-primary);
+    --cui-c-on-video-time: var(--cui-c-on-video);
+  }
+}
