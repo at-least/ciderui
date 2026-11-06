@@ -1,77 +1,29 @@
-// PAGE=<name> node measure.mjs
-// Opens pages/<name>.mjs's url in Playwright's Chromium (../browsers.mjs), or
-// in the browser its `browser` names (`chrome`: Google Chrome, which plays
-// what needs Widevine; run in chrome.Dockerfile's image, CIDERUI_CHROME=1), and
-// at each of its widths (after `settle` ms, 800 unless the spec says; `wait`
-// ms more once, after the load) reads every probe's computed styles. A probe either
-// selects an element of the page (`select`; ` >>> ` steps into the shadow
-// root of what the selector before it picks: tv.apple.com's controls keep
-// their parts behind theirs) or adds markup to it (`inject`,
-// into `into` or the body; `select` then picks the element inside it) for a
-// class the page defines but may not use, and reads `props`, `vars` (custom
-// properties) and `pseudo`'s, with `sections`, [section, attribute, row],
-// each section in it by that attribute's value and the number of its rows,
-// its box with `box`, and with `states` the same
-// again with each pseudo-class (or several, 'focus+focus-visible') forced
-// through the DevTools protocol on the
-// element itself or on `stateOn` (an input whose label is read), transitions
-// off while it is forced, its animations left as they run (ended, a filled
-// animation's value read as its base's, the state's own as it seemed, and
-// run again once the still style went: ribbon:ribbon.link, 2026-10-22); a
-// frame's element is found in the page's own
-// session, so only a frame in the page's process can have its states forced
-// (another fails the run). `scroll` scrolls the page to that many pixels first
-// (for what shows only once scrolled; with `hover`, before the pointer
-// moves), every other probe reading at the top;
-// `blur` takes the focus off the element that has it (a field the page
-// focuses on load) before reading, then waits as `set` does; `set`, [[selector, name, value], …], gives
-// the page's elements what its script would before reading (an attribute
-// set, or removed with null; `value` an input's value, set with no event, so
-// the page's script hears nothing; `classList` a class added), then waits for what that moves (its
-// transitions), and they keep it for the probes after; `frame` reads in the frame whose URL holds
-// that text; `widths` reads at those of the spec's widths alone; `click`
-// clicks that element first, once, at the first width the probe is read (a
-// menu's button, an accordion's: the page stays so for the probes after it
-// and at the widths after, so a spec puts such probes last, or in a spec of
-// their own; the pointer then leaves for the window's bottom corner, or, once
-// what the click opened has opened, for `pointer`, [x, y], inside it, when
-// leaving it closes it; a point, [x, y], is clicked where it is), and waits `clicked` ms, where it says, for what the
-// click loads (a video); `type` presses those keys, once, at the first
-// width the probe is read, into what has the focus (a field: typed one key
-// after another, 150ms apart, then `typed` ms, 2500 unless it says, for what
-// the page answers), and, with `animations`, records what they start; `tap`
-// taps that element, once, at the first width the probe is read, on a touch
-// spec alone: scrolled to the window's middle, its middle touched and let go
-// through the DevTools protocol's touch events, which Chromium's gesture
-// recognizer makes a tap of, as a touch screen's (its pointer events `touch`
-// and trusted, the mouse events and the click after them; a page scrolled
-// after it keeps what it hovered); `hover` moves the pointer there, at each
-// width the probe is read, on a spec that is not touch: to that element's
-// middle (or a point, [x, y], or what a function of the width gives) in
-// twelve steps, as a hand does (apple.com's script opens a flyout on its own
-// mouseover, 120ms on), then `hovered` ms, 1500 unless it says, and then, with
-// `pointer`, on to that point in six steps (a menu's own room, where the
-// pointer hovers nothing); with `animations` it records what they start at
-// the first width; `matches` records whether the element
-// matches each of those selectors (':hover', what a tap left);
-// `position` adds the box's top and left in the window (where the window is
-// what it is placed in: an open menu's rows); `animations`, with `click`,
-// records every animation and transition the click starts on an element
-// inside that selector, every 4ms for the wait after it (what it animates,
-// on what, its duration, delay, direction and timing, its first and last values, and
-// when it was first seen, in ms from the click or the first key);
-// `keyframes` records the @keyframes its animation-name names (read from
-// the page's own stylesheets; one the page's CSS does not hold is null and
-// fails the run). `image` reads those properties, each a base64 data: SVG
-// (a mark the page draws as a background), as what the picture draws (its
-// viewBox, each shape with the fill and stroke it is painted with), never
-// the picture itself, the page's asset; any other value fails the run.
-// A spec's `colorScheme` reads the page in that color scheme
-// (`prefers-color-scheme`, emulated before a reload); its `touch` on a touch
-// screen (the DevTools protocol's touch emulation before a reload, which
-// makes (hover: none) match, the page's script finding touch; the run fails
-// if (hover: hover) still matches). A probe that matches nothing is recorded as null, printed,
-// and fails the run. The result is results/<name>.json.
+// PAGE=<name> node measure.mjs: pages/<name>.mjs's url at each of its widths,
+// each probe's computed styles into results/<name>.json. A probe's keys are what
+// this file reads. A probe that matches nothing is recorded as null and fails the run.
+// What reading it cannot show:
+// - browser `chrome`: Google Chrome plays what needs Widevine (chrome.Dockerfile's
+//   image, CIDERUI_CHROME=1).
+// - select's ` >>> ` steps into a shadow root: tv.apple.com's controls keep their
+//   parts behind theirs. inject: for a class the page defines but may not use.
+// - states are forced through the DevTools protocol, transitions off, animations left
+//   running: ended, a filled animation's value read as its base's, the state's own as
+//   it seemed, and it ran again once the still style went (ribbon:ribbon.link,
+//   2026-10-22). A frame's element is found in the page's own session, so only a
+//   frame in the page's process can have its states forced; another fails the run.
+// - set's `value` sets an input's value with no event: the page's script hears nothing.
+// - click leaves the page so for later probes and widths, so a spec puts such probes
+//   last or in a spec of their own. The pointer then leaves for the window's bottom
+//   corner, or `pointer` inside what opened, where leaving it closes it.
+// - tap is on a touch spec alone, through the DevTools protocol's touch events, which
+//   Chromium's gesture recognizer makes a tap of; a page scrolled after it keeps what
+//   it hovered.
+// - hover moves in twelve steps, as a hand does: apple.com's script opens a flyout on
+//   its own mouseover, 120ms on.
+// - image never records the picture, the page's asset: what it draws (viewBox, shapes,
+//   paint); any other value than a base64 data: SVG fails the run.
+// - touch: the DevTools protocol's emulation before a reload makes (hover: none) match;
+//   the run fails if (hover: hover) still matches.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 

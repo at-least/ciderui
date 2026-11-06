@@ -92,7 +92,6 @@
     gap: 8px;
   }
 
-  /* the mute button's glyph: the speaker, struck through while muted */
   :where(.cui-console-player[data-muted]) .cui-console-player-glyph-volume,
   :where(.cui-console-player:not([data-muted])) .cui-console-player-glyph-muted {
     display: none;
@@ -122,7 +121,6 @@
     }
   }
 
-  /* the glyph of what a click does: play while paused, pause while playing */
   :where(.cui-console-player[data-state="playing"]) .cui-console-player-glyph-play,
   :where(.cui-console-player:not([data-state="playing"])) .cui-console-player-glyph-pause {
     display: none;
@@ -208,7 +206,6 @@
     }
   }
 
-  /* a control of words in the bar: a capsule on the picture */
   .cui-console-player-text-btn {
     min-width: 0;
     overflow: hidden;
@@ -355,7 +352,6 @@
       box-shadow: var(--cui-video-thumb-shadow);
     }
 
-    /* held, the line thicker under the thumb */
     &:active {
       --cui-console-player-track: 8px;
     }
@@ -536,7 +532,6 @@
     margin-top: 14px;
   }
 
-  /* the one Play: a white capsule, the picture's own color on it */
   .cui-console-player-intro-play {
     display: inline-flex;
     align-items: center;

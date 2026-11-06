@@ -9,7 +9,6 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleChangeColor is a metric's change's data-color.
 type ConsoleChangeColor struct{ value string }
 
 var (

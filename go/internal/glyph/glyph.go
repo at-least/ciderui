@@ -11,7 +11,6 @@ import (
 	g "maragu.dev/gomponents"
 )
 
-// Icon is an inline <svg>, a gomponents node.
 type Icon struct {
 	width   string
 	height  string

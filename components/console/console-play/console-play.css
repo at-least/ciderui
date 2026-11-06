@@ -19,7 +19,6 @@
     }
   }
 
-  /* the stop glyph a little smaller than the play, inside its ring */
   .cui-console-play-glyph > .cui-console-play-playing {
     width: 0.625em;
     height: 0.625em;

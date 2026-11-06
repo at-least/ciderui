@@ -1,27 +1,12 @@
-// The browsers the reference probes run in, behind one interface:
-// open(name, url, options) loads the page and gives { label, run(expr), script(selector, call), click(selector),
-// dblclick(selector), press(key), type(text), move(x, y, ms), go(url), size(width, height),
-// behind(type), shot(), close() }, where run evaluates an expression whose value is a promise and hands back
-// what it resolves to, script calls an element's method from the page's script (its
-// click(), the activation a tap's click runs, or its focus()), click, dblclick, press,
-// type and move are the browser's own input (a
-// trusted click on the element; two at its middle, a double-click; a key pressed: the
-// WebDriver key's name, as Escape, a character, or keys held together, as Alt+Tab or
-// ControlOrMeta+a, the platform's command key with another; text typed a key at a time,
-// into what has the focus; the pointer moved to a point of
-// the window over ms milliseconds, as a hand moves it: WebDriver's pointer
-// move of that duration, Playwright's in a step a frame, none on the
-// simulator, which has no pointer), go loads another page in the same window,
-// waiting for its load, size sets the window's size (Playwright's viewport;
-// Safari's window, its frame included), and shot takes a picture of what the
-// window shows, a PNG in base64 (at the screen's pixels: the window's width
-// times its pixel ratio). In Safari, behind('window') opens a second window
-// of its own in front of the page's, which is then not its key window, the
-// commands still the page's, and behind('tab') a tab of its own in the page's
-// window, selected, which hides the page, the commands the tab's (WebDriver's
-// New Window, its type a hint: it hands back the type Safari made; a tab it
-// makes is not selected, a switch to it selects it); behind(false) closes it,
-// the page in front again, the commands its own.
+// The browsers the reference probes run in, behind what open() gives.
+// move: none on the simulator, which has no pointer. size: Playwright's viewport;
+// Safari's window, its frame included. shot: at the screen's pixels, the window's
+// width times its pixel ratio.
+// In Safari, behind('window') opens a second window in front of the page's, which
+// is then not its key window, the commands still the page's; behind('tab') a tab
+// in the page's window, selected, which hides the page, the commands the tab's
+// (WebDriver's New Window, its type a hint: it hands back the type Safari made; a
+// tab it makes is not selected, a switch to it selects it).
 //   safari    Safari through safaridriver, raw WebDriver over HTTP (Safari's
 //             "Allow remote automation" on), in a Safari the run launches and
 //             quits when it closes: Safari 27 takes no session in one it did
@@ -57,8 +42,6 @@ export async function open(name, url, options) {
   return page;
 }
 
-// an expression for run(): a promise that resolves to true ms milliseconds
-// on, by the page's own clock
 // a built site served from dir on 127.0.0.1:port, a directory's
 // index.html for the directory; resolves once it listens
 const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain', '.json': 'application/json' };

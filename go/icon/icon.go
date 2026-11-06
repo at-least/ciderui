@@ -4,5 +4,4 @@ package icon
 
 import "github.com/at-least/ciderui/go/internal/glyph"
 
-// Icon is an inline <svg>, a gomponents node.
 type Icon = glyph.Icon

@@ -37,7 +37,6 @@ func Read(path string) string {
 	return JoinTrimmed(string(b))
 }
 
-// JoinTrimmed is text's lines trimmed and joined.
 func JoinTrimmed(text string) string {
 	var out strings.Builder
 	for _, line := range strings.Split(text, "\n") {

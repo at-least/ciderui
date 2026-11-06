@@ -57,12 +57,10 @@ type ConsolePlayerEnd struct {
 // data-muted (the mute button's glyph), data-fullscreen (while it fills
 // the screen: the bar's FullScreenControls show and the full-screen button
 // shows its exit glyph), each range's value and --cui-console-player-value,
-// the times, the cue, the caption. It finds each control by its
-// data-control: play, volume, mute, subtitles, full-screen, scrubber,
-// elapsed, remaining, caption, the intro's start and restart, the end's
-// replay, and the scrubber's preview
-// (preview), hidden until the page fills its picture and line and shows it
-// over the time under the pointer.
+// the times, the cue, the caption. It finds each control by its data-control
+// (TestPlayerMarksEachControl holds the names). The scrubber's preview stays
+// hidden until the page fills its picture and line and shows it over the time
+// under the pointer.
 type ConsolePlayer struct {
 	// Video is the picture, the player's first child: the page's <video>
 	// (its source and tracks; no controls attribute), or an element the
@@ -225,7 +223,6 @@ func rangeInput(control string, value, max int, label, valueText string, percent
 		h.Style("--cui-console-player-value: "+strconv.FormatFloat(percent, 'f', -1, 64)+"%"))
 }
 
-// clock is m:ss.
 func clock(seconds int) string {
 	return fmt.Sprintf("%d:%02d", seconds/60, seconds%60)
 }

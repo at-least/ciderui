@@ -9,7 +9,6 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleBtnVariant is cui-console-btn's data-variant.
 type ConsoleBtnVariant struct{ value string }
 
 var (
@@ -18,7 +17,6 @@ var (
 	ConsoleBtnVariantPlain  = ConsoleBtnVariant{"plain"}
 )
 
-// ConsoleBtnSize is cui-console-btn's data-size.
 type ConsoleBtnSize struct{ value string }
 
 var (

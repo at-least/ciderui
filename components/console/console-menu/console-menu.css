@@ -60,7 +60,6 @@
       display: none;
     }
 
-    /* a choice, a <button role="menuitemradio"> */
     &[role="menuitemradio"] {
       width: 100%;
       text-align: start;

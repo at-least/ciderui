@@ -1,6 +1,6 @@
 # The font stack
 
-The probe behind ciderui's font stack, `-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Noto Sans TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif`, with the kit's `fonts.css` declaring Inter. The two claims it holds: on Apple's platforms the stack draws the system font and the page never fetches Inter; elsewhere it draws Inter, fetching its Latin face alone.
+The probe behind ciderui's font stack, `--cui-font` in `tokens.css`, with the kit's `fonts.css` declaring Inter. The two claims it holds: on Apple's platforms the stack draws the system font and the page never fetches Inter; elsewhere it draws Inter, fetching its Latin face alone.
 
 Why these two names and not `system-ui`: `system-ui` is a font on every platform (Segoe UI, Roboto, Noto Sans), so Inter after it would never be drawn anywhere; `-apple-system` is a font in Safari alone and `BlinkMacSystemFont` in Chrome alone, both SF on Apple's platforms and no font elsewhere (`../tracking/`: each lands on apple.com's widths within 0.0006em in its own browser, and is 0.064em off in the other's).
 

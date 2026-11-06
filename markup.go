@@ -69,7 +69,6 @@ func compoundsIn(css string) []compound {
 	return append(own, others...)
 }
 
-// selectorAttribute is a [data-*] of a selector.
 type selectorAttribute struct {
 	name, value       string
 	hasValue, negated bool

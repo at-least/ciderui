@@ -8,7 +8,6 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// BtnVariant is cui-btn's data-variant.
 type BtnVariant struct{ value string }
 
 var (
@@ -18,7 +17,6 @@ var (
 	BtnVariantSecondaryNeutral = BtnVariant{"secondary-neutral"}
 )
 
-// BtnSize is cui-btn's data-size.
 type BtnSize struct{ value string }
 
 var (
