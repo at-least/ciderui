@@ -2,6 +2,7 @@ package ciderui
 
 import (
 	"fmt"
+	"maps"
 	"regexp"
 	"slices"
 	"strings"
@@ -19,13 +20,34 @@ type selected struct {
 	anyValue                bool
 }
 
-var words = sync.OnceValues(func() (map[string]bool, []selected) {
-	classes := map[string]bool{}
-	var values []selected
+type vocabulary struct {
+	classes map[string]bool
+	values  []selected
+}
+
+// set "": both sets', for a fragment, which links no stylesheet to tell its own.
+func vocabularyOf(set string) vocabulary {
+	inAnotherSet := func(path string) bool {
+		return set != "" && strings.HasPrefix(path, "components/") && !strings.HasPrefix(path, "components/"+set+"/")
+	}
+	// not every class a selector here names: base.css's touch target names both
+	// sets' parts, and that rule alone does not draw them
+	foreign := map[string]bool{}
 	for _, path := range cssFiles() {
+		if inAnotherSet(path) {
+			maps.Copy(foreign, classesIn(css(path)))
+		}
+	}
+	v := vocabulary{classes: map[string]bool{}, values: nil}
+	for _, path := range cssFiles() {
+		if inAnotherSet(path) {
+			continue
+		}
 		text := css(path)
 		for class := range classesIn(text) {
-			classes[class] = true
+			if !foreign[class] {
+				v.classes[class] = true
+			}
 		}
 		for _, compound := range compoundsIn(text) {
 			for _, class := range compound.classes {
@@ -33,13 +55,33 @@ var words = sync.OnceValues(func() (map[string]bool, []selected) {
 					continue
 				}
 				for _, a := range compound.attributes {
-					values = append(values, selected{class: class, attribute: a.name, value: a.value, anyValue: !a.hasValue && !a.negated})
+					v.values = append(v.values, selected{class: class, attribute: a.name, value: a.value, anyValue: !a.hasValue && !a.negated})
 				}
 			}
 		}
 	}
-	return classes, values
+	return v
+}
+
+var vocabularies = sync.OnceValue(func() map[string]vocabulary {
+	return map[string]vocabulary{"": vocabularyOf(""), "site": vocabularyOf("site"), "console": vocabularyOf("console")}
 })
+
+// linkedSet is the set whose stylesheet the page links, "" for a fragment.
+func linkedSet(tags []startTag) string {
+	for _, tag := range tags {
+		if !strings.EqualFold(tag.name, "link") {
+			continue
+		}
+		switch tag.attribute("href") {
+		case SiteStylesheet():
+			return "site"
+		case ConsoleStylesheet():
+			return "console"
+		}
+	}
+	return ""
+}
 
 var selectorClass = regexp.MustCompile(`\.(cui-[a-zA-Z0-9-]+)`)
 
@@ -267,23 +309,25 @@ func split(selector string) []string {
 	return append(parts, strings.TrimSpace(selector[start:]))
 }
 
-// CheckMarkup returns a line for each word of ciderui's in html that the kit's
-// stylesheets do not know, nil when there is none: a cui-* class (a misspelt
-// one styles nothing), and on an element with a cui-* class, a value of a data-*
-// attribute some rule selects that no rule selects for that element's classes
-// (it renders the default, silently). A data-* no rule selects is the page's
-// own. For a site's tests, on each page it renders.
+// CheckMarkup returns a line for each word of ciderui's in html that the
+// stylesheet the page links does not know, either set's for a fragment, nil when
+// there is none: a cui-* class (a misspelt one, or another set's, styles nothing),
+// and on an element with a cui-* class, a value of a data-* attribute some rule
+// selects that no rule selects for that element's classes (it renders the default,
+// silently). A data-* no rule selects is the page's own. For a site's tests, on
+// each page it renders.
 func CheckMarkup(html string) []string {
-	classes, values := words()
+	tags := startTags(html)
+	set := linkedSet(tags)
+	known := vocabularies()[set]
+	classes, values := known.classes, known.values
+	noSuchClass := "ciderui has no such class"
+	if set != "" {
+		noSuchClass = "the " + set + " stylesheet this page links has no such class"
+	}
 	var problems []string
-	for _, tag := range startTags(html) {
-		class := ""
-		for _, a := range tag.attributes {
-			if a.name == "class" {
-				class = a.value
-				break
-			}
-		}
+	for _, tag := range tags {
+		class := tag.attribute("class")
 		var ours []string
 		for _, c := range strings.Fields(class) {
 			if strings.HasPrefix(c, "cui-") {
@@ -292,7 +336,7 @@ func CheckMarkup(html string) []string {
 		}
 		for _, c := range ours {
 			if !classes[c] {
-				problems = append(problems, fmt.Sprintf("class %q on <%s class=%q>: ciderui has no such class", c, tag.name, class))
+				problems = append(problems, fmt.Sprintf("class %q on <%s class=%q>: %s", c, tag.name, class, noSuchClass))
 			}
 		}
 		if len(ours) == 0 {
@@ -340,6 +384,16 @@ type attribute struct{ name, value string }
 type startTag struct {
 	name       string
 	attributes []attribute
+}
+
+// attribute is its value, "" for an attribute the tag does not have.
+func (t startTag) attribute(name string) string {
+	for _, a := range t.attributes {
+		if a.name == name {
+			return a.value
+		}
+	}
+	return ""
 }
 
 func isSpace(c byte) bool { return c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\f' }

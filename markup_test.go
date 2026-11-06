@@ -98,6 +98,31 @@ func TestCheckMarkup(t *testing.T) {
 	}
 }
 
+func TestCheckMarkupReadsThePagesStylesheet(t *testing.T) {
+	page := func(stylesheet, body string) string {
+		return `<!doctype html><html><head><link rel="stylesheet" href="` + stylesheet + `"></head><body>` + body + `</body></html>`
+	}
+	for _, c := range []struct {
+		name, html string
+		want       []string
+	}{
+		{"a site part on a console page", page(ConsoleStylesheet(), `<button class="cui-btn">a</button>`), []string{`class "cui-btn" on <button class="cui-btn">: the console stylesheet this page links has no such class`}},
+		{"a console part on a site page", page(SiteStylesheet(), `<span class="cui-console-badge">a</span>`), []string{`class "cui-console-badge" on <span class="cui-console-badge">: the site stylesheet this page links has no such class`}},
+		{"a console part on a console page", page(ConsoleStylesheet(), `<span class="cui-console-badge" data-color="error">a</span>`), nil},
+		{"a site part on a site page", page(SiteStylesheet(), `<button class="cui-btn">a</button>`), nil},
+		{"the type on a console page", page(ConsoleStylesheet(), `<p class="cui-body">a</p>`), nil},
+		{"the type on a site page", page(SiteStylesheet(), `<p class="cui-body">a</p>`), nil},
+		{"a fragment links neither, so either set's parts pass", `<button class="cui-btn">a</button><span class="cui-console-badge">a</span>`, nil},
+		{"another stylesheet is the site's own", page("/own.css", `<button class="cui-btn">a</button>`), nil},
+	} {
+		t.Run(c.name, func(t *testing.T) {
+			if got := CheckMarkup(c.html); !slices.Equal(got, c.want) {
+				t.Errorf("got  %q\nwant %q", got, c.want)
+			}
+		})
+	}
+}
+
 func TestClassesIn(t *testing.T) {
 	classes := classesIn(`/* .cui-ghost { } */ .cui-real { color: red; } @media (width >= 1px) { .cui-inner { color: red; } } @utility cui-type { color: red; } @utility other { color: red; }`)
 	want := map[string]bool{"cui-real": true, "cui-inner": true, "cui-type": true}
