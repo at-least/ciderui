@@ -1,5 +1,3 @@
-// The overview's plain table's row under the pointer: read with the pointer
-// resting on a row.
 const ROW = ['background-color', 'border-bottom-color', 'cursor'];
 export default {
   path: '/apps/<app>/analytics/overview',

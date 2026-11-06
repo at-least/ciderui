@@ -1,6 +1,3 @@
-// The home page on a touch screen: its global nav's links, logo, search,
-// bag and menu button, its buttons, a gallery's dots, its footer's links, and
-// the menu's links (opened at 390px), hovered, each against itself at rest. Read only.
 import home from './home.mjs';
 import { touched } from './common.mjs';
 

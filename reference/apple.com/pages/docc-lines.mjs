@@ -1,7 +1,3 @@
-// Apple's developer documentation's (DocC) code listing with line numbers
-// and highlighted lines, as a tutorial's code step shows them: the
-// listing, its pre, a line, its number, a highlighted line and its
-// number.
 import { TYPE, BOX } from './common.mjs';
 
 const LINE = ['display', 'width', 'box-sizing', 'padding-left', 'padding-right', 'background-color', 'border-left-width', 'border-left-style', 'border-left-color'];

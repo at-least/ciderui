@@ -1,6 +1,3 @@
-// The version page's App Previews and Screenshots tab, opened: a
-// screenshot's thumbnail (the image, its frame), the item around it and its
-// side margins (two items' gap), the row they sit in.
 const THUMB = ['border-top-left-radius', 'border-top-width', 'border-top-style', 'background-color', 'object-fit', 'cursor', 'box-shadow'];
 export default {
   path: '/apps/<app>/distribution/ios/version/inflight',

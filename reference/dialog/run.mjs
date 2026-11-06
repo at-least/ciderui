@@ -1,23 +1,4 @@
-// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs
-// Can a <dialog> be the store's overlay with no script? Serves page.html on 127.0.0.1 (the browsers: ../browsers.mjs),
-// clicks and presses, and reads (dialog.js): the page's button opens it as a
-// modal dialog (command="show-modal", no script), the layer over the window,
-// the page dimmed under it (::backdrop) and held, the layer scrolling the
-// panel taller than the window, a point above the panel hitting the layer,
-// the focus on its close button (its first control, as a dialog's opening
-// gives it: Chromium 151 does so with autofocus or tabindex on the dialog
-// too), fading in (@starting-style,
-// sampled each frame from just before the click); its close button, a form's
-// (method="dialog"), closes it, the focus back on the button that opened it;
-// Escape closes it, the same. Clicked as ../popover/ clicks: by the page's
-// script on the iOS simulator (its taps never click there), by the keyboard
-// in Safari on the Mac (a button focused, Return), by Playwright elsewhere;
-// on the simulator no key, and no focus to give back (a script's click, as a
-// tap there, focuses no button). And a button in a form: its type button, it
-// opens the dialog; with none, the form's
-// submit button, it does nothing at all, the dialog closed and the form not
-// sent (the control; a submit button with no command sends it). The result
-// is results/<browser>.json.
+// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs: MEASURED.md holds its claims and method.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open, wait } from '../browsers.mjs';

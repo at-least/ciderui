@@ -1,10 +1,3 @@
-// An app's TestFlight builds: the app's tabs (Distribution, Analytics,
-// TestFlight: a link and the current one), the sidebar (a section's heading,
-// a link and the current one with its row, the rule between sections), the
-// page's title, a group of builds opened (its chevron and title), and its
-// table: the header row and a column's label, a row, a cell, the build
-// cell's version link, a status (its colored mark, its word, the line under
-// it) and a count, right-aligned, and the info button's icon.
 import { TYPE, BOX, LINK } from '../../apple.com/pages/common.mjs';
 
 const ICON = ['width', 'height', 'fill', 'color'];

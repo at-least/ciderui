@@ -1,10 +1,3 @@
-// An app's analytics overview, the newer look (its classes rt-…): the
-// sidebar's menu (the current item, an item of an opened group, indented,
-// an item's icon, the rule between groups), the date's control (the previous and next buttons beside
-// the period), a metric's card (its title, its info button, its value, its
-// change), a sparkline (its area, its line, its gradient's two stops), a
-// bar chart (a grid line, the axes' labels, a bar and its gradient's stops)
-// and the plain table beside it (a row, a cell, its text and a figure).
 import { TYPE } from '../../apple.com/pages/common.mjs';
 
 const ICON = ['width', 'height', 'fill', 'color'];

@@ -1,11 +1,3 @@
-// Apple's developer documentation (DocC), a crash report's article: the
-// page; its title block (eyebrow, title, abstract), a section's heading, its
-// text, a link and inline code; a code listing (its box, the scroller that
-// moves it sideways, its pre, its code, a line) and its copy button, at
-// rest, hovered and focused; the documentation's bar (its ground), its
-// title and, at 390px, the button that opens the navigator; the navigator
-// (an item and its link, hovered, the current one), hidden at 900px and
-// 390px; a note (its label, its text).
 import { TYPE, BOX, LINK, FOCUS, MOTION, PAGE } from './common.mjs';
 
 export const ASIDE = [...BOX, ...TYPE, 'border-left-width', 'border-left-style', 'border-left-color', 'border-right-color'];

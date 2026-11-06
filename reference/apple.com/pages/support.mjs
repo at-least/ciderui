@@ -1,7 +1,3 @@
-// Apple Support's article with a long table (Apple security releases): the
-// page; its title, subheader, a paragraph, a link (hovered), a list and the
-// small note; the table's wrapper, which moves it sideways where the window
-// is narrower, the table, a header cell, a cell and a link in it (hovered).
 // support-dark reads the same in the dark, which Apple Support follows.
 import { TYPE, LINK, PAGE } from './common.mjs';
 

@@ -1,5 +1,3 @@
-// AirPods Pro's page, a light one: its stat (a large one: its captions and
-// value) and a footnote's mark in its text.
 import { TYPE } from './common.mjs';
 export default {
   url: 'https://www.apple.com/airpods-pro/',

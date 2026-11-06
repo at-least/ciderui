@@ -1,17 +1,4 @@
-// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs: does cui-accordion's
-// <details> open with no script and at once, its answer shown and its chevron
-// turned? Serves page.html (the accordion's example on the kit's compiled CSS,
-// `node page.mjs` writes it) on 127.0.0.1 (the browsers: ../browsers.mjs);
-// clicks the second question (by the page's script on the iOS simulator, as
-// ../popover/ does) and reads the item's height 120ms on and 700ms on. Then,
-// where there is a keyboard (not the simulator), is the focus ring of what is
-// in an open answer shown whole? ring.html, at 1200 and 390px: a compact
-// question in the large one's answer and a link beginning an answer, each
-// focused by Tab (Option-Tab in Safari, whose Tab skips links), the window's
-// picture (../browsers.mjs's shot) read in the page (ring.js): the accent's
-// pixels in the 8px beside it, left and right, where its ring's sides are drawn
-// 3 to 5px out. The click and each ring's read wait for the window in front
-// (front()). The result is results/<browser>.json.
+// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs: MEASURED.md holds its claims and method.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open, wait } from '../browsers.mjs';

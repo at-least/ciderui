@@ -1,6 +1,6 @@
 # ciderui: its design
 
-ciderui is apple.com's look for websites: a Tailwind CSS v4 theme on a small token contract, apple.com's parts as CSS classes (`cui-btn`, `cui-field`, `cui-tile`, …), and a Go module that writes their markup as gomponents nodes and carries the stylesheets and fonts. It is vpkit's architecture (`../vpkit`, `../vpkit-zola`) with apple.com where vpkit has VitePress. This holds what is decided and why, which no file of code can say. What a value is is in the file that holds it (a stylesheet, tokens.css), where it was read in the check that holds it (a test); this does not copy either.
+ciderui is apple.com's look for websites: a Tailwind CSS v4 theme on a small token contract, apple.com's parts as CSS classes (`cui-btn`, `cui-field`, `cui-globalnav`, …), and a Go module that writes their markup as gomponents nodes and carries the stylesheets and fonts. It is vpkit's architecture (`../vpkit`, `../vpkit-zola`) with apple.com where vpkit has VitePress. This holds what is decided and why, which no file of code can say. What a value is is in the file that holds it (a stylesheet, tokens.css), where it was read in the check that holds it (a test); this does not copy either.
 
 *Measured* means read off a live page or a browser, recorded in `reference/` with its probe, page, browser and date; *stated* is the owner's; *guessed* is nobody's measurement.
 
@@ -38,7 +38,7 @@ Every component follows these. The numbers are cited across the repository; they
 
 1. **One component, one directory, in its set.** `components/<set>/<name>/<name>.css`, the set `site` (apple.com's parts), or `console` (`cui-console-*`, decision 19), each set's entry (`site.css`, `console.css`) importing `index.css` and then every part of it by name order, in Tailwind's `components` layer, so a utility on the same element always wins (`class="cui-btn px-8"`); `examples/<id>.html`, the canonical markup, which the Go module's tests render and the cases measure; `<name>.test.mjs`, its proof; `golden.json`, its recorded values. Nothing is unlayered; nothing uses `!important`.
 
-2. **The class says what it is; what varies is an attribute.** The block is `cui-<name>`, a part `cui-<name>-<part>`. A mutually exclusive axis is `data-variant` (`"secondary"`, `"neutral"`), `data-size` (`sm`, `lg`, `xl`), `data-color` or `data-shape` (a console button's `capsule`, the toolkit's controlShape); an orthogonal switch is a class; a state is what the markup carries anyway: an ARIA attribute (`aria-current`, `aria-invalid`, `aria-expanded`), a control's own state (`checked`, `disabled`, read as `:checked` and `:disabled`), `[open]`, or `data-state` where none says it. A variant's rule is `.cui-x[data-variant="y"]`, so a state one attribute more wins over every variant whatever the order.
+2. **The class says what it is; what varies is an attribute.** The block is `cui-<name>`, a part `cui-<name>-<part>`. A mutually exclusive axis is `data-variant` (`"secondary"`, `"neutral"`), `data-size` (`sm`, `lg`, `xl`), `data-color` or `data-shape` (a console button's `capsule`, the toolkit's controlShape); an orthogonal switch is a class; a state is what the markup carries anyway: an ARIA attribute (`aria-current`, `aria-invalid`, `aria-expanded`), a control's own state (`checked`, `disabled`, read as `:checked` and `:disabled`), `[open]`, or `data-state` where none says it. A variant's rule is `.cui-<name>[data-variant="y"]`, so a state one attribute more wins over every variant whatever the order.
 
 3. **Component-local variables.** The block sets its own `--cui-<name>-*` from the contract; a variant overrides the locals and nothing else, so a component nested in another keeps its colors and recoloring one block is one rule on it.
 
@@ -91,7 +91,7 @@ Not themed, each measured: in tokens.css, the focus ring (rule 9), the shadows (
 
 **Breakpoints.** theme.css replaces Tailwind's with apple.com's, in pixels as apple.com's media queries are (its stylesheets name `xl`'s width; nothing measured changes there) (decision 9). A component's step and a page's `md:` switch at the same width. A set or a part may step at its own widths inside itself: the global nav at 834px, the console at 640px and 1024px (decision 20).
 
-**Sections.** A section is the page's ground (`bg`), the alternate (`bg-alt`) or dark (`cui-dark`, its alternate `#1d1d1f`, measured on the product page's highlights); its content is the newer width. Their padding is a section's own (apple.com's varies by section; measured per component).
+**Sections** are the page's own: no part draws one (decision 33). A section's ground is `bg-page` or `bg-alt`, from a site's own utilities, or `cui-dark`.
 
 ## What is not built or measured
 

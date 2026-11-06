@@ -1,9 +1,3 @@
-// The account's page as it opens (its Sign-In and Security section): the
-// page's ground; the side nav (the person's block: the picture, the name's
-// line and the line under it; the list, an item, a link and the current
-// one); the page's header (its title, its description); the section's grid
-// (a column) and a card (the button it is, the card's ground and edge, its
-// padding, its title, its line, the glyph at its right).
 import { TYPE, LINK, PAGE } from '../../apple.com/pages/common.mjs';
 
 const PAD = ['padding-top', 'padding-right', 'padding-bottom', 'padding-left'];

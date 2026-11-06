@@ -1,8 +1,3 @@
-// Runs on page.html. state(): the dialog's state and place now, the root's
-// overflow, what a point above the panel hits (in its 40px of room), the focused element, and
-// whether the browser has the command attribute. watch(): from now, the
-// dialog's opacity, its backdrop's and whether it is open, every frame for
-// 600ms, into window.cuiSamples (started just before a click).
 function state() {
   const d = document.querySelector('#modal');
   const r = d.getBoundingClientRect();

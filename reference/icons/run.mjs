@@ -1,7 +1,7 @@
 // node run.mjs: the "more" chevron's numbers off apple.com's /iphone/ page,
 // in Playwright's Chromium (../browsers.mjs), at 400px; the result is
 // results/more.json. Fails if the chevron the kit ships (the more link's
-// example's, icon.rs's MORE: its box from 0.01em below the baseline to 0.53em
+// example's, glyph.More: its box from 0.01em below the baseline to 0.53em
 // above it, its view box in thousandths of an em) shares less than 0.9 of its
 // ink with apple.com's (intersection over union); a chevron drawn from the
 // numbers alone is read beside it (iou).

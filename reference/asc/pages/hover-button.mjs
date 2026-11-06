@@ -1,4 +1,3 @@
-// The sources page's gray button with the pointer resting on it.
 export default {
   path: '/apps/<app>/analytics/acquisition/sources',
   probes: [

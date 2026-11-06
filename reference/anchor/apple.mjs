@@ -2,7 +2,7 @@
 // local nav, and what puts it there. Three pages in Playwright's Chromium
 // (../browsers.mjs), at 1440 by 900 and at 390 by 900: iPhone 18 Pro's,
 // whose local nav is a newer one (nav#localnav, 72px), and MacBook Air's
-// and AirPods Pro's, whose local nav is the one ciderui's is
+// and AirPods Pro's, whose local nav is the one ciderui's was
 // (#ac-localnav, 52px, 48px to 833px). Each scrolled 2000px down, its first
 // footnote mark with a box (a link to #footnote-…) clicked, and read 2s on:
 // the note's top against the nav's foot, the page at its end or not, the

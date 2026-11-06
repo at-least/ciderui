@@ -1,23 +1,4 @@
-// BROWSER=safari|chrome|chromium|firefox|ios node run.mjs
-// What of the global nav can be selected, with the bar's user-select: none
-// (globalnav.css's, apple.com's #globalnav's: ../apple.com/, nav-select:*)?
-// Serves page.html on 127.0.0.1 (?plain the same page, its bar selectable)
-// and reads what each step leaves (the page's cuiState()): where the bar can
-// be selected, Select All on the page (the platform's command key and A)
-// takes the bar's text with the page's, and a double-click on a flyout's
-// heading, the nav's text that is no link, selects it (a link's flyout's,
-// then the search's); where it cannot, Select All takes the page's text
-// alone and the double-clicks select nothing; the search button opens its
-// flyout, the focus on its field; the field clicked, keys typed go into it,
-// and Select All in it selects its text whole. Pressed as ../search/
-// presses: the buttons by the keyboard in Safari on the Mac (focused,
-// Return), clicked elsewhere. On the iOS simulator, XCUITest
-// (../xcuitest.mjs), on a simulator of the run's own for each page, ?plain's
-// and the page's: the search button tapped, "mac" typed by its keyboard,
-// the link's flyout's button tapped (the search closed, its field left),
-// then its heading held (a long press: one with the search's field focused
-// selected nothing on either page, 2026-10-22), each reported by the page.
-// The result is results/<browser>.json.
+// BROWSER=safari|chrome|chromium|firefox|ios node run.mjs: MEASURED.md holds its claims and method.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open, wait } from '../browsers.mjs';

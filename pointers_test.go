@@ -1,6 +1,7 @@
 package ciderui
 
 import (
+	"maps"
 	"os"
 	"os/exec"
 	"path"
@@ -17,6 +18,7 @@ var (
 	backtickedPath = regexp.MustCompile("`([\\w./@-]+(?:" + pathExtension + `|/))` + "`")
 	repositoryPath = regexp.MustCompile(`(?:^|[^\w./-])((?:components|reference|scripts|test|go)/[\w./-]*` + pathExtension + `)\b`)
 	designCite     = regexp.MustCompile(`\b([Dd]ecision|[Rr]ule)s? (\d{1,2}(?:(?:, | and )\d{1,2}\b)*)`)
+	namedClass     = regexp.MustCompile(`(?:^|[^\w/-])(cui-[a-z][\w-]*)(\*?)`)
 	citedNumber    = regexp.MustCompile(`\d+`)
 	numberedItem   = regexp.MustCompile(`(?m)^(\d+)\. \*\*(Withdrawn)?`)
 )
@@ -97,6 +99,28 @@ func staleCites(text string, decisions, rules int, withdrawn []int) []string {
 	return stale
 }
 
+// staleClasses returns each cui-* class text names that classes lacks; `cui-x-*`
+// names a family, which at least one class must begin. A line that says it is
+// withdrawn is about what is gone.
+func staleClasses(text string, classes map[string]bool) []string {
+	var stale []string
+	for line := range strings.Lines(text) {
+		if strings.Contains(strings.ToLower(line), "withdrawn") {
+			continue
+		}
+		for _, m := range namedClass.FindAllStringSubmatch(line, -1) {
+			held := classes[m[1]]
+			if m[2] != "" {
+				held = slices.ContainsFunc(slices.Collect(maps.Keys(classes)), func(class string) bool { return strings.HasPrefix(class, m[1]) })
+			}
+			if !held {
+				stale = append(stale, m[1]+m[2])
+			}
+		}
+	}
+	return stale
+}
+
 func TestStalePathsAndCitesFail(t *testing.T) {
 	exists := map[string]bool{"a/here.css": true, "here.css": true}
 	names := map[string]bool{"elsewhere.html": true}
@@ -110,6 +134,10 @@ func TestStalePathsAndCitesFail(t *testing.T) {
 	got = staleCites("decision 3\nrule 2\ndecision 25, 2026-11-06\nrule 15\nsee decision 7\ndecisions 7 and 8 withdrawn\n", 25, 14, []int{7})
 	if want := []string{"rule 15", "decision 7"}; !slices.Equal(got, want) {
 		t.Errorf("staleCites: %q, want %q", got, want)
+	}
+	got = staleClasses("`cui-btn` `cui-btn-*` `--cui-gone` `cui-tile` `cui-docs-*`\n`cui-gone` withdrawn\n", map[string]bool{"cui-btn": true, "cui-btn-icon": true})
+	if want := []string{"cui-tile", "cui-docs-*"}; !slices.Equal(got, want) {
+		t.Errorf("staleClasses: %q, want %q", got, want)
 	}
 }
 
@@ -156,6 +184,7 @@ func TestPathsAndCitesResolve(t *testing.T) {
 			exists[at] = true
 		}
 	}
+	classes, _ := words()
 	for _, file := range files {
 		switch {
 		case file == "pointers_test.go", strings.HasPrefix(file, "dist/"), strings.Contains(file, "/results/"):
@@ -173,6 +202,11 @@ func TestPathsAndCitesResolve(t *testing.T) {
 		}
 		for _, cite := range staleCites(text, decisions, rules, withdrawn) {
 			t.Errorf("%s cites %s: not in DESIGN.md, or withdrawn", file, cite)
+		}
+		if file == "DESIGN.md" || file == "README.md" {
+			for _, class := range staleClasses(text, classes) {
+				t.Errorf("%s names %s, which the kit does not hold", file, class)
+			}
 		}
 	}
 }

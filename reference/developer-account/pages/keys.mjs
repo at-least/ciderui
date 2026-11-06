@@ -1,8 +1,3 @@
-// Certificates, Identifiers & Profiles' list of keys: the list's text; the
-// side nav (an item and its word, the current one and its word); the list's
-// header (its rule, the title, the add glyph, the filter's button and its
-// chevron); the header row (a column's label, a sortable one) and a row (a
-// cell, the glyph in one).
 import { TYPE } from '../../apple.com/pages/common.mjs';
 
 const PAD = ['padding-top', 'padding-right', 'padding-bottom', 'padding-left'];

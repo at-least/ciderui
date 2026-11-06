@@ -1,10 +1,3 @@
-// An app's version page (its form, read, nothing typed or pressed): the
-// tabs over a section (links: the current one, another; buttons, the media's:
-// the current one, another, and their text), the header's buttons (the
-// primary, a neutral one, the save button disabled while nothing has
-// changed), a help button, a text field and a disabled one, a field's label,
-// a multi-line field, the count under it, and the checkbox and radio (the
-// browser's own).
 import { TYPE, BOX, LINK } from '../../apple.com/pages/common.mjs';
 
 const TAB = ['height', 'padding-bottom', 'border-bottom-width', 'border-bottom-style', 'border-bottom-color'];

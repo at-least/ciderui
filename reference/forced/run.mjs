@@ -1,18 +1,4 @@
-// node run.mjs: does each of the kit's parts that draws a state or a color in
-// a color of its own still show it in forced colors (a high-contrast theme)?
-// page.html (`node page.mjs` writes it) in Playwright's Chromium, its forced
-// colors emulated (forcedColors: active, as its DevTools protocol emulates
-// them: black on white, and with a dark color scheme white on black) and
-// not, and Playwright's Firefox, its own override of a page's
-// colors on (Settings > Website contrast > Override colors, the pref
-// browser.display.document_color_use 2) and not. Each part's picture
-// (Playwright's of the element) is read in another page, unforced:
-//   the empty select's own text ("Select") not drawn where its label lies:
-//     not drawn, or drawn below the label's box;
-// and the controls, which show the picture can tell a state: forced colors
-// match as the mode says, and the checked option draws unlike the unchecked
-// one. Not in Safari: WebKit has no forced colors. The result
-// is results/<mode>.json, each mode's; exits 1 if a claim does not hold.
+// node run.mjs: MEASURED.md holds its claims and method.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { chromium, firefox } from 'playwright-core';
 

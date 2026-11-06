@@ -1,25 +1,4 @@
-// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs
-// Can a popover be the global nav's search with no script, as globalnav.css
-// makes it one? Serves page.html on 127.0.0.1 (the browsers: ../browsers.mjs;
-// ?sheet the same page as a sheet), clicks and presses, and reads (search.js)
-// and looks (pictures of the window): the bar's search button, inside the
-// bar's closed list, opens the flyout; the focus on its field (autofocus);
-// the flyout placed from the bar's bottom by anchor positioning, under a
-// banner and with the page scrolled and the bar stuck at the top; under it
-// the curtain to the window's bottom, blurring the page, the bar not under
-// it; a click on the bar's link closes it and reaches the link, one on the
-// curtain closes it and reaches nothing under it; Escape closes it, the
-// focus back on the button; the button closes it again; Return in the field
-// sends the form, GET, to the site's search page. As a sheet: over the
-// window and the bar, the page held, its close button closing it. Its
-// field's clear button, a reset button: hidden while the field is empty,
-// shown with text in it; clicked, the field empty and the button hidden, the
-// flyout still open, Shift+Tab back to the field, Escape closing it. Clicked
-// as ../popover/ clicks: by the page's script on the iOS simulator (its taps
-// never click there; no key, no click outside, no focus to give back), by
-// the keyboard in Safari on the Mac for the buttons (a button focused,
-// Return), and by the browser's own click elsewhere (the bar's link and the
-// curtain in Safari too). The result is results/<browser>.json.
+// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs: MEASURED.md holds its claims and method.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open, wait } from '../browsers.mjs';

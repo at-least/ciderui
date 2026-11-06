@@ -1,11 +1,3 @@
-// Apple Developer's System Status: the page; its title; the legend (an item,
-// its mark, its word); the services' table (a row, a cell, a service's mark,
-// its name, the link out to the service); the links and the date under it;
-// at 900 and 390px, where the table gives way to one line for all the services (its
-// mark, its words, the button that opens the list, the toggle's glyph).
-// Every mark is a picture (a data: SVG background), read as what it draws.
-// The kinds the page shows only when a service has one are
-// system-status-kinds.
 import { TYPE, BOX, LINK, PAGE } from './common.mjs';
 
 export const MARK = ['width', 'height', 'margin-right', 'position', 'top', 'left', 'vertical-align', 'display', 'background-size', 'background-repeat'];

@@ -1,8 +1,3 @@
-// An app's analytics overview, the newer look, what analytics.mjs left
-// unread: a metric's card (its ground, corners and padding), a section's
-// heading, its See All link, the menu's group (its button, open, and an
-// item in it, indented; an item the app has no data for, disabled) and the
-// menu's own box.
 import { TYPE, BOX, LINK } from '../../apple.com/pages/common.mjs';
 
 const ITEM = ['height', 'background-color', 'border-top-left-radius', 'padding-left', 'padding-right', 'column-gap', 'color', 'opacity', 'cursor'];

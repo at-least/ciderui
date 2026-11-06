@@ -1,14 +1,3 @@
-// Runs on page.html. arm(): counts the clicks the bar's link and the link
-// under the curtain get, into window.cuiClicks. state(): the flyout's state
-// and place now, the bar's and the curtain's, what a point in the bar and one
-// in the curtain's middle hit, the focused element, the root's overflow, the
-// page's address, whether the browser has anchor positioning, and open, the
-// pointer-events of the flyout's ::backdrop, the field's value and whether
-// its clear button is shown. pixels(png, offset): from a
-// picture of the window (base64), where the page starts in it (found from
-// the bar's color, or given), the bar's color and the panel's at a point
-// each, and the spread of the brightness along a row 100px above the
-// window's bottom (the page's stripes, under the curtain when it is open).
 function arm() {
   window.cuiClicks = { link: 0, under: 0 };
   for (const id of ['link', 'under']) document.getElementById(id).addEventListener('click', (e) => { e.preventDefault(); window.cuiClicks[id]++; });

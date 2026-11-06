@@ -1,6 +1,3 @@
-// An app's analytics sources page, the newer look: a gray neutral button of
-// the toolkit's (rt-Button--variant--gray, controlSize md, controlShape
-// roundedRect): its box, its type and its colors at rest.
 import { TYPE, BOX, TEXT } from '../../apple.com/pages/common.mjs';
 
 export default {

@@ -1,9 +1,3 @@
-// The apps: the page's ground; the bar (amp-nav's header, in its shadow
-// root: its ground, content, logo, links and the current one); the page's
-// sticky header (its title, the add button's icon, the status filter, the
-// rule under it); the two banners over the apps (a plain one with its icon,
-// an informational one); and an app's tile: its icon, its name, its
-// version's status (a colored mark before the line).
 import { TYPE, BOX, LINK } from '../../apple.com/pages/common.mjs';
 
 const BAR = ['height', 'position', 'top', 'z-index', 'background-color', 'border-bottom-width', 'border-bottom-style', 'border-bottom-color', 'box-shadow', 'backdrop-filter'];

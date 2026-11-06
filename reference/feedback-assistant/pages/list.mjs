@@ -1,9 +1,3 @@
-// The list as the site opens, nothing chosen: the page's ground; the bar
-// (Apple's dark local nav: its ground and the layer over it, the title, the
-// compose and help glyphs, the account's menu); the list's pane: its search
-// field, the sort and filter row, an item (an announcement, unread: its
-// card, the unread mark, its title, its kind, the line under it, its date);
-// and the other pane's empty state.
 import { TYPE, BOX, PAGE } from '../../apple.com/pages/common.mjs';
 
 const CARD = '[class*="ListItemWrapper"] a[href^="/news/"] [class^="Card-sc-"]';

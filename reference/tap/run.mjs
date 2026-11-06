@@ -1,20 +1,4 @@
-// BROWSER=chromium|chrome|firefox|ios node run.mjs
-// What does a tap leave? Serves page.html on 127.0.0.1 and taps, one after
-// another, a button whose hover is a rule of its own (apple.com's), one whose
-// hover is behind (hover: hover) (ciderui's, decision 5), somewhere else, the
-// menu's button (a popover opened from beside it, ../popover/) and its close
-// button; 800ms after each tap the page sends what it left (page.html's
-// script: the events, the pseudo-classes and colors, the menu open or not).
-// Each tap a touch screen's, never a script's click: in Chromium and Chrome
-// (../browsers.mjs) the DevTools protocol's touch events on a touch screen
-// emulated from the load, which Chromium's gesture recognizer makes a tap of;
-// in Firefox, which has no DevTools protocol in Playwright, Playwright's
-// touchscreen taps on a page with a touch screen from the load (hasTouch:
-// Gecko's own touch emulation); on the iOS simulator XCUITest's taps (../xcuitest.mjs), touches of the
-// simulator's screen through its HID, as a finger's, on an iPhone simulator
-// of the run's own, created and deleted (the booted ones are others';
-// Safari's tip over the page closed first, recorded as `tip`). The result is
-// results/<browser>.json.
+// BROWSER=chromium|chrome|firefox|ios node run.mjs: MEASURED.md holds its claims and method.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';

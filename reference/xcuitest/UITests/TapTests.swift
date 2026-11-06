@@ -1,12 +1,5 @@
 import XCTest
 
-// Opens TAP_URL in Safari and takes, one after another, the steps in
-// TAP_STEPS: an element's label, tapped, XCUITest's tap: a touch of the
-// simulator's screen through its HID, as a finger's, not WebDriver's;
-// press:<label>, the element held a second, a long press; type:<text>, the
-// text typed by XCUITest's keyboard into what has the focus. After each it
-// waits for the page's "reported N" (what the step left, sent to the probe's
-// run.mjs: ../xcuitest.mjs).
 // Safari on a new simulator puts a tip over the page ("View Bookmarks, Share
 // Menu, and Open Tabs"), a popover whose dismiss region covers the window and
 // takes the next touch: the page gets its touch events and no click. So the

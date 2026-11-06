@@ -1,7 +1,3 @@
-// Apple Developer's releases list: the page; an entry (its picture's column
-// and the picture, its title and the link around it, its date, its text and
-// a link in it, hovered, the share buttons) and the rule over the next
-// entry; the RSS link over the list.
 import { TYPE, LINK, PAGE } from './common.mjs';
 
 const ENTRY = '.article-list-wrapper article.article';

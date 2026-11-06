@@ -1,20 +1,4 @@
-// BROWSER=safari|chrome|chromium|firefox|ipad|iphone node run.mjs
-// Can the global nav's flyouts open with no script, as globalnav.css opens
-// them? Serves page.html on 127.0.0.1. In Safari, Chrome, Chromium and
-// Firefox (../browsers.mjs), at 1440 by 900: the pointer moved as a hand moves it
-// (`move`, the browser's own input) to a link, along the bar to the next, off
-// the bar to the page, and swept along the bar quicker than the flyouts
-// open, each recording which flyouts show every frame (page.html's
-// probe.watch()); pictures of the window (the curtain's blur, the bar's
-// ground); the link's button by the keyboard in Safari (focused, Return; its
-// Tab Option-Tab, which reaches links) and clicked elsewhere, Tab, Escape,
-// the curtain clicked; then at 700px, a phone's layout: the menu, a row's
-// flyout over it, its back button, its close button. On the iOS simulator
-// XCUITest's taps (../xcuitest.mjs), each reported by the page 800ms on: on
-// an iPad (`ipad`, 13-inch, a screen wider than 834px with no hover) a link
-// tapped, its flyout, then its curtain; on an iPhone (`iphone`) the menu, a
-// row, the back button, the row again, the close button. The result is
-// results/<browser>.json; it fails if a claim does not hold.
+// BROWSER=safari|chrome|chromium|firefox|ipad|iphone node run.mjs: MEASURED.md holds its claims and method.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';

@@ -1,22 +1,4 @@
-// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs
-// Does a nav's list work as its own menu, as globalnav.css makes it one?
-// Serves page.html on 127.0.0.1 (the browsers: ../browsers.mjs), clicks with
-// the browser's own input and reads (popover.js): shown closed by the page's
-// CSS; opened by the button beside it into a sheet over the window, growing
-// and its rows coming in (sampled each frame), the page held, the focus on
-// the sheet's close button (autofocus), whose lines turn into an X; Tab from
-// it to the first link (a popover's own button inside it, opening it, held
-// the focus on itself: Chromium 151's Tab went nowhere); closed by the X at
-// once (no transition back), the focus back on the button; opened and closed
-// by Escape, the same. On the iOS simulator the buttons are clicked by the
-// page's script (its click(), the activation a tap's click runs) and no key
-// is pressed: safaridriver's taps there reach a button as pointerdown and
-// touchstart and never a click, its element click as nothing, and the phone
-// has no Tab or Escape. Safari on the Mac is used as its keyboard user uses
-// it: a button focused and Return pressed (a click there focuses no button
-// and clears the focus a field had, so a menu a click opened has no button to
-// give the focus back to), Option-Tab for Tab (its Tab skips links). The
-// result is results/<browser>.json.
+// BROWSER=safari|ios|chrome|chromium|firefox node run.mjs: MEASURED.md holds its claims and method.
 import { createServer } from 'node:http';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open, wait } from '../browsers.mjs';

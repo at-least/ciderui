@@ -1,8 +1,3 @@
-// Runs on page.html. state(): the list's place and look now, its first row's
-// opacity, the root's overflow, each of the close button's lines' box in its
-// SVG, the focused element. Each toggle of the list starts sample(): its
-// height, its first row's opacity and the close button's first line's box
-// every frame for 700ms, into window.cuiSamples.
 const linesOf = () => {
   // the line's geometry box (getBBox: the same in every browser, the stroke
   // excluded) mapped through its CSS transform about its origin. The probe

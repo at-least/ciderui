@@ -1,10 +1,4 @@
-// A feedback opened (the owner's one, already read: opening an unread item
-// marks it read): its card in the list, now the current one; the detail's
-// byline (the monogram, the name, the date); the title's row and the
-// actions button; the status box (a label and its value); a section (its
-// lead, a label, its text); an attachment (its glyph, its link, the line
-// under it); and the reply area at the foot (its field, the attach glyph,
-// the send button, disabled while the field is empty).
+// The owner's feedback, already read: opening an unread item marks it read.
 import { TYPE, BOX, LINK } from '../../apple.com/pages/common.mjs';
 
 const SIDES = ['border-left-width', 'border-left-style', 'border-left-color', 'border-right-width', 'border-right-style', 'border-right-color'];

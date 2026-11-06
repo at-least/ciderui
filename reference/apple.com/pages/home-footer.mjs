@@ -1,5 +1,3 @@
-// The home page's footer on a phone, a directory section opened (clicked
-// once, so a spec of its own): its list shown, its rows, its chevron.
 import { TYPE, LINK } from './common.mjs';
 const SECTION = '#ac-globalfooter .ac-gf-directory-column-section';
 export default {

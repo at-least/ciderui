@@ -1,8 +1,3 @@
-// The account's overview: the page's ground; the tab nav (a tab, its glyph,
-// a paddle, disabled while every tab shows); a card (its ground, corners
-// and padding); the program card's title, a section's picture, title, text
-// and link; the membership's rows (a row, its label and the word in it, its
-// value) and the info button; the link that adds, a plus glyph after it.
 // Its emails card and the team's address are not read.
 import { TYPE, LINK, PAGE } from '../../apple.com/pages/common.mjs';
 

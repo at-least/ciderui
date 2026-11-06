@@ -1,8 +1,4 @@
-// An app's analytics overview, its heads: the app's head (the app's name
-// menu, its icon, name and chevron, beside the app's tabs, the current one
-// Analytics) and its wrappers' room, the content column, and a section's
-// head (its h4 title, the date control at its end). The app's icon is a
-// div drawn by its background image, inside a box of its size.
+// The app's icon is a div drawn by its background image, inside a box of its size.
 import { TYPE, BOX, FLEX } from '../../apple.com/pages/common.mjs';
 
 const ROOM = [...BOX, 'height', 'margin-left', 'margin-right'];
