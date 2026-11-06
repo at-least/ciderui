@@ -32,7 +32,7 @@ if (process.env.CIDERUI_CHROME === '1') {
   if (!/^sha256:[0-9a-f]{64}$/.test(image)) throw new Error(`docker gave no image ID for Chrome's: ${image}`);
 }
 
-const STEPS = 'node test/tokens.mjs && node test/type.mjs && node test/page.mjs && node test/components.mjs && node test/rules.mjs && node test/pictures.mjs && node test/surfaces.mjs && node reference/touch/audit.mjs && node test/probes.mjs && node scripts/build-lucide.mjs --check';
+const STEPS = 'node scripts/build-lucide.mjs --check && node scripts/build-css.mjs --check && node test/tokens.mjs && node test/type.mjs && node test/page.mjs && node test/components.mjs && node test/rules.mjs && node test/pictures.mjs && node test/surfaces.mjs && node reference/touch/audit.mjs && node test/probes.mjs && node test/assets.mjs';
 const command = process.argv.length > 2 ? process.argv.slice(2) : ['sh', '-c', STEPS];
 const pass = ['CASES', 'UPDATE_GOLDEN'].filter((k) => process.env[k] !== undefined).flatMap((k) => ['-e', `${k}=${process.env[k]}`]);
 // The image's user (root): what it writes comes back through tar as the

@@ -11,13 +11,12 @@
 
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { COMPONENTS, ROOT, compileKit, exampleFiles } from '../../test/compile.mjs';
+import { COMPONENTS, ROOT, exampleFiles, shipped } from '../../test/compile.mjs';
 import { open, quit } from '../../test/browser.mjs';
 
 const parts = process.env.SETS ? COMPONENTS.filter((c) => process.env.SETS.split(',').includes(c.set)) : COMPONENTS;
 // an empty list would print "0 under 44pt" and pass having checked nothing
 if (!parts.length) throw new Error('no parts in COMPONENTS for these sets');
-const css = compileKit();
 let short = 0;
 let controls = 0;
 for (const partDef of parts) {
@@ -27,7 +26,7 @@ for (const partDef of parts) {
     // room round the example, so a target at its edge is not read short
     // where it runs out of the window (a tap there lands nowhere)
     const html = `<div style="padding: 48px 24px">${readFileSync(join(dir, file), 'utf8')}</div>`;
-    const page = await open(css, html, { width: 390, touch: true });
+    const page = await open(shipped(partDef.set), html, { width: 390, touch: true });
     const rows = await page.page.evaluate(() => {
       const sel = 'a[href], button, input:not([type=hidden]), select, textarea, summary, [role=button], [tabindex]:not([tabindex="-1"])';
       return [...document.querySelectorAll(sel)]

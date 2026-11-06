@@ -1,7 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
-import { COMPONENTS, ROOT, compileKit, exampleFiles, exampleHtml } from './compile.mjs';
+import { COMPONENTS, ROOT, exampleFiles, exampleHtml, shipped } from './compile.mjs';
 import { open, quit } from './browser.mjs';
 import { WIDTHS } from './reference.mjs';
 import { check, done } from './check.mjs';
@@ -12,11 +12,15 @@ const FAILED = 'test/pictures-failed';
 const golden = UPDATE ? {} : JSON.parse(readFileSync(GOLDEN, 'utf8'));
 const seen = {};
 
-const page = await open(compileKit(), '');
-// every face now: one first asked for after a resize would be drawn in its fallback
-await page.page.evaluate(() => Promise.all([...document.fonts].map((face) => face.load())));
+const pages = {};
+for (const set of ['site', 'console']) {
+  pages[set] = await open(shipped(set), '');
+  // every face now: one first asked for after a resize would be drawn in its fallback
+  await pages[set].page.evaluate(() => Promise.all([...document.fonts].map((face) => face.load())));
+}
 
 for (const part of COMPONENTS) {
+  const page = pages[part.set];
   for (const file of exampleFiles(part)) {
     await page.page.evaluate((html) => { document.body.innerHTML = html; }, exampleHtml(part, file));
     for (const width of WIDTHS) {

@@ -2,25 +2,33 @@
 
 Agents write this project entirely. It is fully optimized for agent vibe coding, debugging and RSI (recursive self-improvement): this README is the only file written for people; every other document, comment and line of code is written for the agents that read and change it.
 
-apple.com's look for websites, built with Tailwind CSS v4: a small contract of variables (`--cui-*`: the colors, the type, the focus ring, the shadows), the type as classes, and apple.com's parts as classes (`cui-btn`, `cui-globalnav`, `cui-field`, …), each in a stylesheet of its own, a set's every part one import; Inter for where the system font is not SF; and a Go module that writes the parts' markup with gomponents, carries the stylesheets and fonts and draws every [Lucide](https://lucide.dev) icon. It has no JavaScript. Why it is built as it is: [DESIGN.md](DESIGN.md).
+apple.com's look for websites, built with Tailwind CSS v4: a small contract of variables (`--cui-*`: the colors, the type, the focus ring, the shadows), the type as classes, and apple.com's parts as classes (`cui-btn`, `cui-globalnav`, `cui-field`, …); Inter for where the system font is not SF; and a Go module that writes the parts' markup with gomponents, serves the stylesheets and fonts and draws every [Lucide](https://lucide.dev) icon. It has no JavaScript. Why it is built as it is: [DESIGN.md](DESIGN.md).
 
 ## Use it
+
+```go
+mux.Handle(ciderui.AssetsPath, ciderui.Assets())
+
+console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Class: "", BodyClass: "", Children: body}
+```
+
+That is the whole setup: the page links the stylesheet and the module serves it, with its fonts. Use `site.Page` for a store or a marketing page.
+
+Each part's markup is its examples, `components/<set>/<name>/examples/*.html`. Call `ciderui.CheckMarkup` on your pages in your tests.
+
+### Your own utilities
+
+A page that writes Tailwind utilities builds one more stylesheet and adds it in `Head`:
 
 ```sh
 go get -tool github.com/at-least/ciderui/go/cmd/ciderui-css@<commit>
 go tool ciderui-css target/ciderui
 ```
 
-That writes the stylesheets and the fonts under `target/ciderui`. Your Tailwind entry imports one set, with one line:
-
 ```css
-@import "tailwindcss";
-@import "../target/ciderui/site.css";    /* or console.css */
+@import "../target/ciderui/utilities.css" source(none);
+@source "../pages/*.go";
 ```
-
-To draw Inter where the system font is not SF, also add `@import "../target/ciderui/fonts.css";` and serve `target/ciderui/fonts/` as `fonts/` beside your built stylesheet: its URLs stay relative to that file. Without it, the text falls through to the platform's fonts.
-
-Each part's markup is its examples, `components/<set>/<name>/examples/*.html`. Pages rendered in Go write the same markup with the Go module, which is the one pin for markup and CSS. Call `ciderui.CheckMarkup` on your pages in your tests.
 
 ## The repository
 
@@ -28,12 +36,14 @@ Each part's markup is its examples, `components/<set>/<name>/examples/*.html`. P
 | --- | --- |
 | `index.css` | `theme.css`, `tokens.css`, `base.css` and `type.css`: the breakpoints and utilities, the variables, the page's base, the type |
 | `fonts.css`, `fonts/` | Inter |
-| `site.css`, `console.css` | `index.css` and a set's every part, the one import a site writes: the site set (apple.com's pages) and the console set (`cui-console-*`) |
+| `site.css`, `console.css` | `index.css` and a set's every part: the site set (apple.com's pages) and the console set (`cui-console-*`) |
+| `dist/` | each set built, as the module serves it (`node scripts/build-css.mjs`) |
+| `utilities.css` | what a site's own utilities' stylesheet imports |
 | `components/<set>/<name>/` | a part, in its set (`site` or `console`): its stylesheet, its examples (the markup the Go module's tests render too) and its test |
-| `ciderui.go`, `markup.go`, `go/` | the Go module (`go.mod`): the root package embeds the stylesheets and fonts and checks a page's markup; `go/` holds the components (`site`, `console`), the icons (`lucide`, and the type `icon.Icon`) and `ciderui-css` |
+| `ciderui.go`, `markup.go`, `go/` | the Go module (`go.mod`): the root package embeds and serves the stylesheets and fonts and checks a page's markup; `go/` holds the components (`site`, `console`), the icons (`lucide`, and the type `icon.Icon`) and `ciderui-css` |
 | `reference/` | the measurements, each with its probe, page, browser and date |
 
-`npm test` runs every test, the browser's in one Docker image (`test/Dockerfile`, `scripts/docker.mjs`): the variables, the type, the page, each part in headless Chromium against apple.com's measured values and its own goldens, the rules every part keeps (hover, the focus ring, color motion, letter-spacing) read off every example, a picture of every example at every width (when one changes on purpose, `UPDATE_GOLDEN=1 node scripts/docker.mjs node test/pictures.mjs`; a failure leaves the new picture in `test/pictures-failed/`), the Go module (its Lucide icons lucide-static's, gofmt, vet, exhaustruct, its tests and its examples, every statement of `site` and `console` run by a test, each set built from what `ciderui-css` writes), every control's touch target (`reference/touch/`) and the reference probes Chromium can run (`test/probes.mjs`).
+`npm test` runs every test, the browser's in one Docker image (`test/Dockerfile`, `scripts/docker.mjs`): the variables, the type, the page, each part in headless Chromium against apple.com's measured values and its own goldens, the rules every part keeps (hover, the focus ring, color motion, letter-spacing) read off every example, a picture of every example at every width (when one changes on purpose, `UPDATE_GOLDEN=1 node scripts/docker.mjs node test/pictures.mjs`; a failure leaves the new picture in `test/pictures-failed/`), the Go module (its Lucide icons lucide-static's, gofmt, vet, exhaustruct, its tests and its examples, every statement of `site` and `console` run by a test, a site's utilities built from what `ciderui-css` writes), every control's touch target (`reference/touch/`) and the reference probes Chromium can run (`test/probes.mjs`).
 
 ## License
 

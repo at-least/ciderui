@@ -1,5 +1,4 @@
-// Command ciderui-css writes the kit's stylesheets and fonts under a directory,
-// in the kit's layout, for a Tailwind build to import:
+// Command ciderui-css writes what a site's own utilities' stylesheet imports:
 //
 //	go tool ciderui-css target/ciderui
 package main
@@ -20,5 +19,5 @@ func main() {
 		fmt.Fprintf(os.Stderr, "writing %s: %v\n", os.Args[1], err)
 		os.Exit(1)
 	}
-	fmt.Printf("ciderui's stylesheets and fonts written under %s\n", os.Args[1])
+	fmt.Printf("ciderui's utilities.css written under %s\n", os.Args[1])
 }

@@ -14,7 +14,7 @@ func TestEachPartWritesThePagesClass(t *testing.T) {
 	const page = example.PageClass
 	player := pausedPlayer()
 	player.Class = page
-	example.PagesClass(t, ".", []string{}, []example.ClassRow{
+	example.PagesClass(t, ".", []string{"ConsolePage"}, []example.ClassRow{
 		{Root: "cui-console-badge", Node: console.ConsoleBadge{Label: "x", Color: console.ConsoleColorNeutral, Class: page}},
 		{Root: "cui-console-banner", Node: console.ConsoleBanner{Color: console.ConsoleColorInfo, Icon: icon.Icon{}, Title: "x", Class: page, Children: nil}},
 		{Root: "cui-console-card", Node: console.ConsoleMetric{Title: "x", Value: g.Text("1"), Change: "", ChangeColor: console.ConsoleChangeColorNeutral, Caption: "", Href: "", Class: page}},

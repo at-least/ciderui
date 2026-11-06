@@ -13,6 +13,19 @@ export const COMPONENTS = ['site', 'console']
   .sort((a, b) => (a.name < b.name ? -1 : 1));
 export const componentDir = (name) => COMPONENTS.find((c) => c.name === name).dir;
 
+// entry, a file of its own: `@import` resolves from where it sits. Minified, as a
+// site ships it.
+export function tailwind(entry) {
+  const dir = mkdtempSync(join(tmpdir(), 'ciderui-out-'));
+  try {
+    const out = join(dir, 'out.css');
+    execFileSync(join(ROOT, 'node_modules/.bin/tailwindcss'), ['-i', entry, '-o', out, '--minify'], { stdio: 'pipe' });
+    return readFileSync(out, 'utf8');
+  } finally {
+    rmSync(dir, { recursive: true });
+  }
+}
+
 // css: the entry after Tailwind's import, its @import paths relative to the
 // root; classes: class strings for Tailwind to find; sources: paths relative
 // to the root Tailwind scans, as a site's @source does
@@ -23,17 +36,15 @@ export function compile({ css = '@import "index.css";', classes = '', sources = 
     const imports = css.replace(/@import "([^"]+)"/g, (_, p) => `@import "${join(ROOT, p)}"`);
     const scanned = sources.map(s => `@source "${join(ROOT, s)}";\n`).join('');
     writeFileSync(entry, `@import "${join(ROOT, 'node_modules/tailwindcss/index.css')}" source(none);\n@source inline(${JSON.stringify(classes)});\n${scanned}${imports}\n`);
-    const out = join(dir, 'out.css');
-    // minified, as a site ships it
-    execFileSync(join(ROOT, 'node_modules/.bin/tailwindcss'), ['-i', entry, '-o', out, '--minify'], { stdio: 'pipe' });
-    return readFileSync(out, 'utf8');
+    return tailwind(entry);
   } finally {
     rmSync(dir, { recursive: true });
   }
 }
 
-// every part of both sets, as a site that uses them all builds it
-export const compileKit = () => compile({ css: `@import "fonts.css";\n@import "index.css";\n${COMPONENTS.map((c) => `@import "${c.dir}/${c.name}.css";`).join('\n')}`, sources: ['components'] });
+// what a site's page links: scripts/build-css.mjs --check, a step before the
+// tests that read it, holds it to the sources
+export const shipped = (set) => readFileSync(join(ROOT, 'dist', `${set}.css`), 'utf8');
 
 export const exampleFiles = (part) => readdirSync(join(ROOT, part.dir, 'examples')).filter((f) => f.endsWith('.html')).sort();
 

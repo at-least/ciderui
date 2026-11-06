@@ -3,13 +3,11 @@
 
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { COMPONENTS, ROOT, compileKit, exampleFiles, exampleHtml } from './compile.mjs';
+import { COMPONENTS, ROOT, exampleFiles, exampleHtml, shipped } from './compile.mjs';
 import { open, quit } from './browser.mjs';
 import { OUTLINE } from './harness.mjs';
 import { ref } from './reference.mjs';
 import { check, done } from './check.mjs';
-
-const css = compileKit();
 
 // rule 5: what (hover: hover) gates, a touch screen never matches
 // (test/browser.mjs throws on a touch page where it does)
@@ -32,7 +30,7 @@ const hoverOutsideItsQuery = (text) => {
   }
   return found;
 };
-check('every :hover sits inside (hover: hover) (rule 5)', hoverOutsideItsQuery(css).join(' | '), '');
+for (const set of ['site', 'console']) check(`${set}: every :hover sits inside (hover: hover) (rule 5)`, hoverOutsideItsQuery(shipped(set)).join(' | '), '');
 
 // rule 9's exceptions, each read in its part's test: a text field draws its
 // edge or halo in the ring's place; the others move the one ring in, where a
@@ -81,11 +79,12 @@ const motionUsed = new Set();
 let examples = 0;
 let controls = 0;
 let texts = 0;
-// one page, its body swapped: no example has a script, and a page's open is the
-// most of this step's time
-const page = await open(css, '');
+// one page a set, its body swapped: no example has a script, and a page's open is
+// the most of this step's time
+const pages = { site: await open(shipped('site'), ''), console: await open(shipped('console'), '') };
 
 for (const part of COMPONENTS) {
+  const page = pages[part.set];
   for (const file of exampleFiles(part)) {
     const name = `${part.name}/${file}`;
     await page.page.evaluate((html) => { document.body.innerHTML = html; }, exampleHtml(part, file));
@@ -119,7 +118,8 @@ for (const part of COMPONENTS) {
     }
   }
 }
-await page.close();
+await pages.site.close();
+await pages.console.close();
 // an exception nothing needs is a part let off for nothing
 check('every part that sets the ring aside still does', NO_RING.filter((c) => !noRingUsed.has(c)).join(' '), '');
 check('every part that moves the ring still does', RING_MOVED.filter((c) => !ringMovedUsed.has(c)).join(' '), '');

@@ -4,7 +4,7 @@
 import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { join } from 'node:path';
-import { COMPONENTS, ROOT, compileKit, exampleFiles } from './compile.mjs';
+import { COMPONENTS, ROOT, exampleFiles, shipped } from './compile.mjs';
 import { open, quit } from './browser.mjs';
 import { check, done } from './check.mjs';
 
@@ -24,13 +24,11 @@ const SURFACES = {
   },
 };
 
-const css = compileKit();
-
 for (const c of COMPONENTS) {
   for (const file of exampleFiles(c)) {
     const example = readFileSync(join(ROOT, c.dir, 'examples', file), 'utf8');
     for (const [surface, wrap] of Object.entries(SURFACES[c.set])) {
-      const page = await open(css, wrap(example));
+      const page = await open(shipped(c.set), wrap(example));
       await page.settle();
       await page.page.addScriptTag({ content: AXE });
       const found = await page.page.evaluate(async (rules) => {

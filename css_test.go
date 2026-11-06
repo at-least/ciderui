@@ -13,7 +13,11 @@ import (
 func TestEachSetImportsItsPartsInOrder(t *testing.T) {
 	for _, set := range []string{"site", "console"} {
 		var imported []string
-		for _, line := range strings.Split(css(set+".css"), "\n") {
+		entry, err := os.ReadFile(set + ".css")
+		if err != nil {
+			t.Fatal(err)
+		}
+		for _, line := range strings.Split(string(entry), "\n") {
 			if rest, ok := strings.CutPrefix(line, `@import "./`); ok {
 				imported = append(imported, strings.TrimSuffix(rest, `";`))
 			}
@@ -82,27 +86,18 @@ func TestNoPartResetsItsMarginOverAContainer(t *testing.T) {
 	}
 }
 
-func TestWriteCSSWritesTheKit(t *testing.T) {
+func TestWriteCSSWritesWhatUtilitiesImports(t *testing.T) {
 	dir := t.TempDir()
 	if err := WriteCSS(dir); err != nil {
 		t.Fatal(err)
 	}
-	for _, path := range kitFiles() {
-		written, err := os.ReadFile(filepath.Join(dir, path))
+	for _, match := range regexp.MustCompile(`@import "\./([^"]+)"`).FindAllStringSubmatch(css("utilities.css"), -1) {
+		written, err := os.ReadFile(filepath.Join(dir, match[1]))
 		if err != nil {
 			t.Fatal(err)
 		}
-		if string(written) != css(path) {
-			t.Errorf("%s differs from the kit's", path)
-		}
-	}
-	urls := regexp.MustCompile(`url\("([^"]+)"\)`).FindAllStringSubmatch(css("fonts.css"), -1)
-	if len(urls) == 0 {
-		t.Fatal("fonts.css names no file")
-	}
-	for _, url := range urls {
-		if _, err := os.Stat(filepath.Join(dir, url[1])); err != nil {
-			t.Error(err)
+		if string(written) != css(match[1]) {
+			t.Errorf("%s differs from the kit's", match[1])
 		}
 	}
 }

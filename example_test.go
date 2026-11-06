@@ -24,7 +24,7 @@ func ExampleWriteCSS() {
 	if err := ciderui.WriteCSS(filepath.Join(dir, "target/ciderui")); err != nil {
 		panic(err)
 	}
-	_, err = os.Stat(filepath.Join(dir, "target/ciderui/index.css"))
+	_, err = os.Stat(filepath.Join(dir, "target/ciderui/utilities.css"))
 	fmt.Println(err == nil)
 	// Output: true
 }
