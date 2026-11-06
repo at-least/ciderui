@@ -46,7 +46,9 @@ go tool ciderui-css target/ciderui
 | `ciderui.go`, `markup.go`, `go/` | the Go module (`go.mod`): the root package embeds and serves the stylesheets and fonts and checks a page's markup; `go/` holds the components (`site`, `console`), the icons (`lucide`, and the type `icon.Icon`) and `ciderui-css` |
 | `reference/` | the measurements, each with its probe, page, browser and date |
 
-`npm test` runs every test, the browser's in one Docker image (`test/Dockerfile`, `scripts/docker.mjs`): the variables, the type, the page, each part in headless Chromium against apple.com's measured values and its own goldens, the rules every part keeps (hover, the focus ring, color motion, letter-spacing) read off every example, a picture of every example at every width (when one changes on purpose, `UPDATE_GOLDEN=1 node scripts/docker.mjs node test/pictures.mjs`; a failure leaves the new picture in `test/pictures-failed/`), the Go module (its Lucide icons lucide-static's, gofmt, vet, exhaustruct, its tests and its examples, every statement of `site` and `console` run by a test, a site's utilities built from what `ciderui-css` writes), every control's touch target (`reference/touch/`) and the reference probes Chromium can run (`test/probes.mjs`).
+`npm test` runs every test. It checks each part in headless Chromium against apple.com's measured values, takes a picture of every example at every width, and tests the Go module. The browser's tests run in one Docker image.
+
+When a picture changes on purpose, run `UPDATE_GOLDEN=1 node scripts/docker.mjs node test/pictures.mjs`. A failed run leaves the new picture in `test/pictures-failed`.
 
 ## License
 

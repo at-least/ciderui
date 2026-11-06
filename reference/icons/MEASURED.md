@@ -143,4 +143,4 @@ The global nav's bag, opened (`../apple.com/`, `bag-flyout:*`), draws an icon be
 
 Intersection over union; the probe fails below 0.85, a mark set before the run, or if the bag's example (`components/site/globalnav/examples/bag.html`) draws others. Measured 2026-10-22 on https://www.apple.com/ in Chromium 151 on Linux (`results/bag.json`).
 
-Apple's developer documentation's icons (`docc.mjs`, `results/docc.json`) were measured here for the docs set, removed 2026-11-04 with it (the owner: 「ciderui也不再支援docs」); git history has them.
+Apple's developer documentation's icons (docc.mjs and its results) were measured here for the docs set, removed 2026-11-04 with it (the owner: 「ciderui也不再支援docs」); git history has them.
