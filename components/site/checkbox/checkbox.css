@@ -9,7 +9,6 @@
     left: 0;
     width: 16px;
     height: 16px;
-    margin: 0;
     opacity: 0;
   }
 
@@ -36,7 +35,6 @@
     background-color: var(--cui-c-field);
 
     svg {
-      display: block;
       visibility: hidden;
     }
   }

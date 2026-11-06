@@ -1,8 +1,4 @@
 @layer components {
-  :where(.cui-console-dl) {
-    margin: 0;
-  }
-
   .cui-console-dl {
     display: grid;
     grid-template-columns: max-content minmax(0, 1fr);
@@ -24,7 +20,6 @@
     }
 
     & > :where(dd) {
-      margin: 0;
       color: var(--cui-c-console-neutral-label-primary);
       font-weight: 400;
       overflow-wrap: anywhere;

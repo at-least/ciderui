@@ -32,10 +32,6 @@
     }
   }
 
-  :where(.cui-console-strip-head) {
-    margin: 0;
-  }
-
   /* out of the flow, so a long name widens no group: the group's width, the
      track the label slides along; not clipped, or it would be the label's
      scroller and the label would stick to it */
@@ -93,10 +89,8 @@
     }
 
     & > img {
-      display: block;
       /* a storyboard's shot: the strip's size, not the page's */
       width: 160px;
-      height: auto;
       aspect-ratio: 16 / 9;
       object-fit: cover;
       border: none;
@@ -150,7 +144,6 @@
     right: 8px;
     width: 16px;
     height: 16px;
-    box-sizing: border-box;
     border: 2px solid var(--cui-c-console-neutral-background-primary);
     border-radius: 50%;
 
@@ -215,7 +208,6 @@
       position-area: top;
       position-try-fallbacks: flip-block;
       display: block;
-      box-sizing: border-box;
       width: max-content;
       max-width: 280px;
       margin: 0 0 8px;

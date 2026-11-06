@@ -32,7 +32,6 @@
   }
 
   .cui-card-eyebrow {
-    margin: 0;
     padding-bottom: 7px;
     font-size: 12px;
     line-height: 16px;
@@ -46,7 +45,6 @@
   }
 
   .cui-card-headline {
-    margin: 0;
     padding-top: 23px;
     font-size: 21px;
     line-height: 25px;
@@ -67,7 +65,6 @@
 
   .cui-card-link {
     display: inline-block;
-    color: inherit;
     text-decoration-line: none;
 
     &::after {

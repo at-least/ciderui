@@ -1,6 +1,5 @@
 @layer components {
   .cui-console-dialog {
-    box-sizing: border-box;
     width: 540px;
     max-width: min(800px, calc(100vw - 22px));
     margin: auto;

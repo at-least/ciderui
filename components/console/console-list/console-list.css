@@ -1,11 +1,6 @@
 @layer components {
-  :where(.cui-console-list) {
-    margin: 0;
-  }
-
   .cui-console-list {
     display: block;
-    padding: 0;
     list-style: none;
     border-radius: 10px;
     overflow: hidden;
@@ -15,7 +10,6 @@
   .cui-console-list-item {
     position: relative;
     display: block;
-    box-sizing: border-box;
     min-height: 44px;
     padding: 0.4375rem 1rem;
     color: var(--cui-c-console-neutral-label-primary);

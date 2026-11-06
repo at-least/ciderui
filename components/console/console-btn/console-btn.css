@@ -16,11 +16,9 @@
     height: 1.875rem;
     min-width: 1.875rem;
     padding: 0 0.6875rem;
-    border: 0;
     border-radius: 10px;
     background-color: var(--cui-console-btn-fill);
     color: var(--cui-console-btn-label);
-    font-family: inherit;
     font-size: 13px;
     line-height: 18px;
     font-weight: 500;

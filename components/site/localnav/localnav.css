@@ -84,10 +84,7 @@
 
   .cui-localnav-list {
     min-height: 0;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
-    list-style: none;
 
     &::before,
     &::after {
@@ -168,7 +165,6 @@
     position: absolute;
     width: 1px;
     height: 1px;
-    margin: 0;
     opacity: 0;
     pointer-events: none;
 
@@ -202,7 +198,6 @@
     }
 
     svg {
-      display: block;
       margin: 6px auto 0;
       transition: transform 0.32s var(--cui-localnav-ease);
     }

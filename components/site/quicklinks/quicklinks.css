@@ -5,7 +5,6 @@
   }
 
   .cui-quicklinks-title {
-    margin: 0;
     padding-bottom: 15px;
     font-size: 21px;
     line-height: 25px;
@@ -23,9 +22,6 @@
   .cui-quicklinks-list {
     display: flex;
     flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-    list-style: none;
 
     > li {
       padding: 5px 8px 5px 0;

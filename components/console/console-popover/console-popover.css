@@ -1,12 +1,10 @@
 @layer components {
   .cui-console-popover {
-    box-sizing: border-box;
     width: max-content;
     min-width: 240px;
     max-width: min(350px, 85vw);
     max-height: 435px;
     margin: auto;
-    border: 0;
     border-radius: calc(3.125rem / 2);
     padding: 16px;
     overflow: auto;

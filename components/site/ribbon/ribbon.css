@@ -11,9 +11,5 @@
     line-height: 20px;
     letter-spacing: var(--cui-tracking-14);
     text-align: center;
-
-    p {
-      margin: 0;
-    }
   }
 }

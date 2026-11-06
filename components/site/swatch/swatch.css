@@ -3,9 +3,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px 5px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
   }
 
   .cui-swatch {
@@ -22,7 +19,6 @@
     left: 0;
     width: 36px;
     height: 36px;
-    margin: 0;
     opacity: 0;
 
     @media (pointer: coarse) {

@@ -1,8 +1,4 @@
 @layer components {
-  :where(.cui-stat) {
-    margin: 0;
-  }
-
   .cui-stat {
     padding: 2px 0;
   }

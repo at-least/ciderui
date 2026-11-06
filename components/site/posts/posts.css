@@ -64,10 +64,6 @@
   }
 
   .cui-posts-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
     .cui-posts:not([data-size]) & > li:last-child > .cui-post {
       padding-bottom: 0;
     }
@@ -134,7 +130,6 @@
   }
 
   .cui-post-category {
-    margin: 0;
     font-size: 12px;
     line-height: 16px;
     font-weight: 700;

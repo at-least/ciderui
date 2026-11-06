@@ -56,7 +56,6 @@
   .cui-console-player-caption {
     flex: 1;
     min-width: 0;
-    margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -106,9 +105,6 @@
     place-items: center;
     width: 66px;
     height: 66px;
-    padding: 0;
-    border: 0;
-    background-color: transparent;
     color: var(--cui-c-on-video);
     cursor: pointer;
     transition: opacity 0.4s cubic-bezier(0, 0, 0.2, 1), transform 0.2s ease-out;
@@ -148,7 +144,6 @@
 
     & > p {
       max-width: 42em;
-      margin: 0;
       font-size: max(15px, 2.4cqw);
       line-height: 1.6;
       font-weight: 500;
@@ -181,7 +176,6 @@
 
   .cui-console-player-title {
     grid-area: title;
-    margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -221,7 +215,6 @@
     text-overflow: ellipsis;
     height: 24px;
     padding: 0 10px;
-    border: 0;
     border-radius: 12px;
     background-color: var(--cui-video-control-fill);
     color: var(--cui-c-on-video);
@@ -253,9 +246,6 @@
     place-items: center;
     width: 24px;
     height: 24px;
-    padding: 0;
-    border: 0;
-    background-color: transparent;
     color: var(--cui-c-on-video-control);
     cursor: pointer;
 
@@ -330,9 +320,6 @@
     width: 100%;
     height: var(--cui-console-player-hit);
     margin: calc((var(--cui-console-player-thumb) - var(--cui-console-player-hit)) / 2) 0;
-    padding: 0;
-    border: 0;
-    background-color: transparent;
     appearance: none;
     cursor: pointer;
 
@@ -420,10 +407,6 @@
     gap: 6px;
     width: var(--cui-console-player-preview-width);
     pointer-events: none;
-
-    &[hidden] {
-      display: none;
-    }
   }
 
   .cui-console-player-preview-picture {
@@ -437,7 +420,6 @@
   }
 
   .cui-console-player-preview-label {
-    margin: 0;
     white-space: nowrap;
     font-size: 12px;
     line-height: 16px;
@@ -481,7 +463,6 @@
 
     & > p {
       max-width: 36em;
-      margin: 0;
       text-shadow: var(--cui-video-cue-shadow);
     }
 
@@ -541,10 +522,6 @@
     &:empty {
       display: none;
     }
-
-    & p {
-      margin: 0;
-    }
   }
 
   .cui-console-player-end > [data-control="replay"] {
@@ -566,11 +543,9 @@
     gap: 8px;
     height: 44px;
     padding: 0 24px;
-    border: 0;
     border-radius: 22px;
     background-color: var(--cui-c-on-video);
     color: var(--cui-c-video);
-    font-family: inherit;
     font-size: 17px;
     line-height: 22px;
     font-weight: 600;

@@ -20,14 +20,12 @@
 
   .cui-console-empty-heading {
     max-width: var(--cui-console-empty-measure);
-    margin: 0;
     color: var(--cui-c-console-neutral-label-primary);
     font-weight: 600;
   }
 
   .cui-console-empty-caption {
     max-width: var(--cui-console-empty-measure);
-    margin: 0;
     color: var(--cui-c-console-neutral-label-secondary);
     font-weight: 400;
   }
@@ -37,7 +35,6 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 9px;
-    margin: 0;
   }
 
   .cui-console-empty[data-size="sm"] {

@@ -57,7 +57,6 @@
   }
 
   .cui-console-banner-title {
-    margin: 0;
     color: var(--cui-c-console-neutral-label-primary);
     font-size: 16px;
     line-height: 21px;
@@ -71,8 +70,6 @@
   }
 
   .cui-console-banner-body {
-    margin: 0;
-
     :where(.cui-console-banner-title) + & {
       margin-top: 0.625rem;
 

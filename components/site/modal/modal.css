@@ -1,20 +1,13 @@
 @layer components {
-  :where(.cui-modal) {
-    margin: 0;
-  }
-
   .cui-modal {
     color-scheme: light;
     /* rule 6: a dialog's place, over the window */
     position: fixed;
     inset: 0;
-    box-sizing: border-box;
     width: 100%;
     height: 100%;
     max-width: none;
     max-height: none;
-    padding: 0;
-    border: 0;
     overflow-y: auto;
     overscroll-behavior: contain;
     color: var(--cui-c-text);
@@ -52,7 +45,6 @@
     z-index: 1;
     grid-area: 1 / 1;
     align-self: start;
-    box-sizing: border-box;
     width: 100%;
     max-width: 640px;
     min-height: calc(100vh - 20px);
@@ -83,8 +75,6 @@
     width: 36px;
     margin-top: 24px;
     height: 36px;
-    padding: 0;
-    border: 0;
     border-radius: 50%;
     color: var(--cui-c-on-close);
     background-color: var(--cui-c-close);
@@ -143,10 +133,6 @@
     display: block;
     width: 100%;
     height: 100%;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background-color: transparent;
     cursor: default;
   }
 

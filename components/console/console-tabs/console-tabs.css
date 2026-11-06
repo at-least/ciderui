@@ -58,11 +58,8 @@
     align-items: center;
     justify-content: center;
     gap: 0.25rem;
-    box-sizing: border-box;
     height: 1.875rem;
     min-width: 1.875rem;
-    padding: 0;
-    border: 0;
     border-bottom: 2px solid transparent;
     background-color: var(--cui-console-tab-fill);
     color: var(--cui-console-tab-label);
@@ -70,7 +67,6 @@
     @media (forced-colors: active) {
       border-bottom-color: Canvas;
     }
-    font-family: inherit;
     font-size: 14px;
     line-height: 19px;
     font-weight: 500;

@@ -1,8 +1,4 @@
 @layer components {
-  :where(.cui-price) {
-    margin: 0;
-  }
-
   .cui-price {
     font-size: 12px;
     line-height: 16px;

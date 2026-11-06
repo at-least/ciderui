@@ -10,10 +10,6 @@
     }
   }
 
-  :where(.cui-console-progress) {
-    margin: 0;
-  }
-
   .cui-console-progress {
     /* not brand-accent-primary: its dark side is under a mark's 3:1 on the dark track */
     --cui-console-progress-fill: var(--cui-c-console-brand-label-primary);
@@ -22,7 +18,6 @@
     display: block;
     width: 100%;
     height: 0.25rem;
-    border: 0;
     border-radius: 9999px;
     overflow: hidden;
     color: var(--cui-console-progress-fill);

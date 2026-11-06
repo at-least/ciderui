@@ -1,12 +1,5 @@
 @layer components {
-  /* zero specificity: a container's margin on it wins, whichever stylesheet
-     comes first */
-  :where(.cui-console-listing) {
-    margin: 0;
-  }
-
   .cui-console-listing {
-    box-sizing: border-box;
     border-radius: 15px;
     padding: 8px 14px;
     overflow-x: auto;
@@ -30,7 +23,6 @@
 
   .cui-console-listing-line {
     display: inline-block;
-    box-sizing: border-box;
     width: 100%;
 
     &::before {

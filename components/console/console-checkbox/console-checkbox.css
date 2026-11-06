@@ -48,7 +48,6 @@
     display: inline-grid;
     flex: none;
     place-items: center;
-    box-sizing: border-box;
     width: 15px;
     height: 15px;
     border: 1px solid var(--cui-c-console-field-border);
