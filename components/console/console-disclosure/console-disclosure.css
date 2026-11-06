@@ -41,5 +41,9 @@
     :where(.cui-console-disclosure[open]) > :where(summary) > & {
       rotate: 90deg;
     }
+
+    :where(.cui-console-disclosure[data-variant="button"][open]) > :where(summary) > & {
+      rotate: 180deg;
+    }
   }
 }

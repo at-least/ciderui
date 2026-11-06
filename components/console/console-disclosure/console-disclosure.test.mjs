@@ -30,6 +30,16 @@ export const cases = [
     ],
   },
   {
+    name: 'disclosure button',
+    html: ex('button'),
+    widths: [1200],
+    checks: [
+      { target: `${CLOSED} > summary`, props: ['list-style-type'], golden: 'a console button as the summary: no marker of the browser\'s' },
+      { target: `${CLOSED} .cui-console-disclosure-chevron`, props: ['rotate'], golden: 'closed, pointing down (the HIG\'s disclosure button)' },
+      { target: `${OPEN} .cui-console-disclosure-chevron`, props: ['rotate'], golden: 'open, pointing up (the HIG\'s disclosure button): 180deg' },
+    ],
+  },
+  {
     name: 'disclosure dark',
     html: `<div class="cui-dark">${ex('disclosure')}</div>`,
     widths: [1200],

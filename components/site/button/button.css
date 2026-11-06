@@ -51,6 +51,15 @@
     --cui-btn-border: var(--cui-c-link);
   }
 
+  .cui-btn[data-variant="secondary-neutral"] {
+    --cui-btn-bg: transparent;
+    --cui-btn-bg-hover: var(--cui-c-neutral-hover);
+    --cui-btn-bg-active: var(--cui-c-neutral-active);
+    --cui-btn-color: var(--cui-c-neutral);
+    --cui-btn-color-hover: var(--cui-c-on-neutral);
+    --cui-btn-border: var(--cui-c-neutral);
+  }
+
   .cui-btn[data-size="lg"] {
     min-width: 26px;
     padding: 11px 21px;

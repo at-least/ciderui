@@ -12,6 +12,10 @@
   --cui-c-accent-active: #006edb;
   --cui-c-on-accent: #ffffff;
   --cui-c-link: light-dark(#0066cc, #2997ff);
+  --cui-c-neutral: light-dark(#1d1d1f, #f5f5f7);
+  --cui-c-neutral-hover: light-dark(#272729, #ffffff);
+  --cui-c-neutral-active: light-dark(#18181a, #ededf2);
+  --cui-c-on-neutral: light-dark(#ffffff, #000000);
   /* the global nav's ground */
   --cui-c-bar: light-dark(rgb(255 255 255 / 0.8), rgb(0 0 0 / 0.8));
   --cui-c-on-bar: light-dark(rgb(0 0 0 / 0.8), rgb(255 255 255 / 0.8));

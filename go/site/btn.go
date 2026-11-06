@@ -11,8 +11,9 @@ import (
 type BtnVariant struct{ value string }
 
 var (
-	BtnVariantPrimary   = BtnVariant{value: ""}
-	BtnVariantSecondary = BtnVariant{"secondary"}
+	BtnVariantPrimary          = BtnVariant{value: ""}
+	BtnVariantSecondary        = BtnVariant{"secondary"}
+	BtnVariantSecondaryNeutral = BtnVariant{"secondary-neutral"}
 )
 
 type BtnSize struct{ value string }

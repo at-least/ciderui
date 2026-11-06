@@ -37,6 +37,17 @@ export const cases = [
     checks: [
       { target: '.cui-btn[data-variant="secondary"]', props: [...LOOK, ...COLORS], apple: ['store', 'button.secondary'] },
       ...states('.cui-btn[data-variant="secondary"]', ['store', 'button.secondary']),
+      { target: '.cui-btn[data-variant="secondary-neutral"]', props: [...LOOK, ...COLORS], apple: ['store', 'button.secondary-neutral'] },
+      ...states('.cui-btn[data-variant="secondary-neutral"]', ['store', 'button.secondary-neutral']),
+    ],
+  },
+  {
+    name: 'dark secondary-neutral',
+    html: '<section class="cui-dark"><a class="cui-btn" data-variant="secondary-neutral" href="#buy">Buy</a></section>',
+    widths: [1200],
+    checks: [
+      { target: '.cui-btn', props: COLORS, golden: 'the neutral\'s dark side, near-white on no ground: apple.com\'s in a dark block not measured' },
+      { target: '.cui-btn', state: 'hover', props: COLORS, golden: 'filled with it hovered' },
     ],
   },
   {

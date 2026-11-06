@@ -40,7 +40,7 @@ func ExampleConsoleDialog() {
 }
 
 func ExampleConsoleDisclosure() {
-	_ = console.ConsoleDisclosure{Open: false, Summary: "Filters", SummaryClass: "", Class: "", Children: h.P(g.Text("Level"))}.Render(os.Stdout)
+	_ = console.ConsoleDisclosure{Variant: console.ConsoleDisclosureVariantLine, Open: false, Summary: "Filters", SummaryClass: "", Class: "", Children: h.P(g.Text("Level"))}.Render(os.Stdout)
 	// Output: <details class="cui-console-disclosure"><summary class="cui-console-disclosure-summary"><svg class="cui-console-disclosure-chevron" aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Filters</summary><p>Level</p></details>
 }
 
