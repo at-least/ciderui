@@ -11,6 +11,7 @@ import (
 func TestEachPartWritesThePagesClass(t *testing.T) {
 	const page = example.PageClass
 	example.PagesClass(t, ".", []string{"AccordionItem", "Page"}, []example.ClassRow{
+		{Root: "cui-btn", Node: site.Btn{Href: "/x", Label: "x", Submit: false, Variant: site.BtnVariantPrimary, Size: site.BtnSizeMedium, Block: false, Rect: false, Attrs: nil, Class: page}},
 		{Root: "cui-accordion", Node: site.Accordion{Large: false, Class: page, Items: nil}},
 		{Root: "cui-accordion-item", Node: site.Accordion{Large: false, Class: "", Items: []site.AccordionItem{{Question: "x", Open: false, Class: page, Children: nil}}}},
 		{Root: "cui-field", Node: site.Field{ID: "x", Type: "text", Name: "x", Label: "x", Autocomplete: "", Value: "", Help: "", Error: "", Prefix: "", Attrs: nil, Class: page}},

@@ -42,7 +42,7 @@ func (d ConsoleDisclosure) Render(w io.Writer) error {
 		).Render(w)
 	}
 	return h.Details(class.Root("cui-console-disclosure", d.Class), h.Data("variant", "button"), g.If(d.Open, h.Open()),
-		h.Summary(class.Root("cui-console-btn", d.SummaryClass), g.If(d.Variant == ConsoleDisclosureVariantPlainButton, h.Data("variant", "plain")), g.Text(d.Summary), lucide.ChevronDown.Class(chevron)),
+		h.Summary(class.Root("cui-console-btn", d.SummaryClass), g.If(d.Variant == ConsoleDisclosureVariantPlainButton, h.Data("variant", ConsoleBtnVariantPlain.value)), g.Text(d.Summary), lucide.ChevronDown.Class(chevron)),
 		d.Children,
 	).Render(w)
 }

@@ -3,6 +3,7 @@ package console
 import (
 	"io"
 
+	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
@@ -49,9 +50,13 @@ func (p ConsolePager) Render(w io.Writer) error {
 		panic("console.ConsolePager needs a Summary or a page to go to")
 	}
 	return h.Nav(class.Root("cui-console-pager", p.Class), h.Aria("label", p.AriaLabel),
-		g.If(p.First != "", h.A(h.Class("cui-console-btn"), h.Href(p.First), g.Text(p.FirstLabel))),
-		g.If(p.Previous != "", h.A(h.Class("cui-console-btn cui-console-btn-icon"), h.Href(p.Previous), h.Aria("label", p.PreviousAriaLabel), lucide.ChevronLeft)),
+		g.If(p.First != "", pagerBtn(p.First, p.FirstLabel, "", icon.Icon{})),
+		g.If(p.Previous != "", pagerBtn(p.Previous, "", p.PreviousAriaLabel, lucide.ChevronLeft)),
 		g.If(p.Summary != "", h.P(h.Class("cui-console-pager-summary"), g.Text(p.Summary))),
-		g.If(p.Next != "", h.A(h.Class("cui-console-btn cui-console-btn-icon"), h.Href(p.Next), h.Aria("label", p.NextAriaLabel), lucide.ChevronRight)),
+		g.If(p.Next != "", pagerBtn(p.Next, "", p.NextAriaLabel, lucide.ChevronRight)),
 	).Render(w)
+}
+
+func pagerBtn(href, label, ariaLabel string, glyph icon.Icon) ConsoleBtn {
+	return ConsoleBtn{Href: href, Label: label, AriaLabel: ariaLabel, Icon: glyph, Submit: false, Variant: ConsoleBtnVariantGray, Size: ConsoleBtnSizeMedium, Error: false, Capsule: false, Attrs: nil, Class: ""}
 }

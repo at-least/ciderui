@@ -42,7 +42,7 @@ func (s ConsoleSidebar) Render(w io.Writer) error {
 	return h.Nav(class.Root("cui-console-sidebar", s.Class), h.ID(s.ID), h.Popover(), h.Aria("label", s.AriaLabel),
 		h.Div(h.Class("cui-console-sidebar-header"),
 			h.A(h.Class("cui-console-sidebar-wordmark"), h.Href(s.Home), g.Text(s.Wordmark)),
-			h.Button(h.Class("cui-console-btn cui-console-btn-icon cui-console-sidebar-close"), h.Data("variant", "plain"), h.Type("button"), h.PopoverTarget(s.ID), h.PopoverTargetAction("hide"), h.Aria("label", s.CloseAriaLabel), h.AutoFocus(), lucide.X),
+			ConsoleBtn{Href: "", Label: "", AriaLabel: s.CloseAriaLabel, Icon: lucide.X, Submit: false, Variant: ConsoleBtnVariantPlain, Size: ConsoleBtnSizeMedium, Error: false, Capsule: false, Attrs: g.Group{h.PopoverTarget(s.ID), h.PopoverTargetAction("hide"), h.AutoFocus()}, Class: "cui-console-sidebar-close"},
 		),
 		h.Div(h.Class("cui-console-sidebar-body cui-console-menu"), h.Data("variant", "sidebar"), s.Children),
 		h.Div(h.Class("cui-console-sidebar-footer"), s.Footer),

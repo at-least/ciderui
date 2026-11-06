@@ -9,15 +9,6 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleBtnSize is cui-console-btn's data-size.
-type ConsoleBtnSize struct{ value string }
-
-var (
-	ConsoleBtnSizeSmall  = ConsoleBtnSize{"sm"}
-	ConsoleBtnSizeMedium = ConsoleBtnSize{value: ""}
-	ConsoleBtnSizeLarge  = ConsoleBtnSize{"lg"}
-)
-
 // ConsolePlayState is what the clip is doing; the page's script sets
 // data-state as it plays and stops.
 type ConsolePlayState struct{ value string }
