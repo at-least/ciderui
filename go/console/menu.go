@@ -4,7 +4,6 @@ import (
 	"io"
 	"strconv"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
@@ -34,7 +33,7 @@ type ConsoleMenuItem struct {
 	// Href: "" for an item not available now.
 	Href    string
 	Label   string
-	Icon    icon.Icon
+	Icon    lucide.Icon
 	Current bool
 	// Secondary is a count at the item's end.
 	Secondary string
@@ -58,7 +57,7 @@ func (m ConsoleMenuItem) Render(w io.Writer) error {
 
 type ConsoleMenuGroup struct {
 	Label string
-	Icon  icon.Icon
+	Icon  lucide.Icon
 	Open  bool
 	Items []ConsoleMenuItem
 	Class string

@@ -1,12 +1,12 @@
 package console
 
 import (
-	"github.com/at-least/ciderui/go/icon"
+	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 )
 
-func iconPart(i icon.Icon, class string) g.Node {
-	if i == (icon.Icon{}) {
+func iconPart(i lucide.Icon, class string) g.Node {
+	if i == (lucide.Icon{}) {
 		return nil
 	}
 	return i.Class(class)

@@ -3,15 +3,15 @@ package console
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
 
 type ConsoleBanner struct {
 	Color ConsoleColor
-	Icon  icon.Icon
+	Icon  lucide.Icon
 	Title string
 	Class string
 	// Children: a <p class="cui-console-banner-body">, actions.

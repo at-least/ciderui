@@ -43,7 +43,7 @@ go tool ciderui-css target/ciderui
 | `dist/` | each set built, as the module serves it (`node scripts/build-css.mjs`) |
 | `utilities.css` | what a site's own utilities' stylesheet imports |
 | `components/<set>/<name>/` | a part, in its set (`site` or `console`): its stylesheet, its examples (the markup the Go module's tests render too) and its test |
-| `ciderui.go`, `markup.go`, `go/` | the Go module (`go.mod`): the root package embeds and serves the stylesheets and fonts and checks a page's markup; `go/` holds the components (`site`, `console`), the icons (`lucide`, and the type `icon.Icon`) and `ciderui-css` |
+| `ciderui.go`, `markup.go`, `go/` | the Go module (`go.mod`): the root package embeds and serves the stylesheets and fonts and checks a page's markup; `go/` holds the components (`site`, `console`), the icons (`lucide`) and `ciderui-css` |
 | `reference/` | the measurements, each with its probe, page, browser and date |
 
 `npm test` runs every test. It checks each part in headless Chromium against apple.com's measured values, takes a picture of every example at every width, and tests the Go module. The browser's tests run in one Docker image.

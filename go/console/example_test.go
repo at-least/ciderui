@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/at-least/ciderui/go/console"
-	"github.com/at-least/ciderui/go/icon"
+	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -15,7 +15,7 @@ func ExampleConsoleBadge() {
 }
 
 func ExampleConsoleBanner() {
-	_ = console.ConsoleBanner{Color: console.ConsoleColorInfo, Icon: icon.Icon{}, Title: "Saved", Class: "", Children: nil}.Render(os.Stdout)
+	_ = console.ConsoleBanner{Color: console.ConsoleColorInfo, Icon: lucide.Icon{}, Title: "Saved", Class: "", Children: nil}.Render(os.Stdout)
 	// Output: <div class="cui-console-banner" data-color="info" role="status"><div><p class="cui-console-banner-title">Saved</p></div></div>
 }
 
@@ -65,7 +65,7 @@ func ExampleConsoleDisclosure() {
 }
 
 func ExampleConsoleEmpty() {
-	_ = console.ConsoleEmpty{Size: console.ConsoleEmptySizeSmall, Backed: false, Icon: icon.Icon{}, Heading: "No Issues", Caption: "", Class: "", Children: nil}.Render(os.Stdout)
+	_ = console.ConsoleEmpty{Size: console.ConsoleEmptySizeSmall, Backed: false, Icon: lucide.Icon{}, Heading: "No Issues", Caption: "", Class: "", Children: nil}.Render(os.Stdout)
 	// Output: <div class="cui-console-empty" data-size="sm"><p class="cui-console-empty-heading">No Issues</p></div>
 }
 
@@ -106,7 +106,7 @@ func ExampleConsoleListing() {
 }
 
 func ExampleConsoleMenu() {
-	_ = console.ConsoleMenu{AriaLabel: "Analytics", Class: "", Children: console.ConsoleMenuItem{Href: "/overview", Label: "Overview", Icon: icon.Icon{}, Current: true, Secondary: "", Class: ""}}.Render(os.Stdout)
+	_ = console.ConsoleMenu{AriaLabel: "Analytics", Class: "", Children: console.ConsoleMenuItem{Href: "/overview", Label: "Overview", Icon: lucide.Icon{}, Current: true, Secondary: "", Class: ""}}.Render(os.Stdout)
 	// Output: <nav class="cui-console-menu" aria-label="Analytics"><a class="cui-console-menu-item" href="/overview" aria-current="page"><span class="cui-console-menu-label">Overview</span></a></nav>
 }
 

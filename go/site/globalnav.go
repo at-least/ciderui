@@ -4,7 +4,6 @@ import (
 	"io"
 	"strconv"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
 	"github.com/at-least/ciderui/go/internal/glyph"
 	g "maragu.dev/gomponents"
@@ -99,7 +98,7 @@ type BagLine struct {
 
 // BagLinkIcon is the glyph before a bag's profile link; its zero value panics
 // when rendered.
-type BagLinkIcon struct{ regular, compact icon.Icon }
+type BagLinkIcon struct{ regular, compact glyph.Icon }
 
 var (
 	BagLinkIconOrders  = BagLinkIcon{regular: glyph.Orders, compact: glyph.OrdersCompact}
@@ -139,7 +138,7 @@ type GlobalNav struct {
 	Class         string
 }
 
-func globalNavImages(regular, compact icon.Icon) g.Node {
+func globalNavImages(regular, compact glyph.Icon) g.Node {
 	return g.Group{regular.Class("cui-globalnav-image"), compact.Class("cui-globalnav-image-compact")}
 }
 
@@ -237,7 +236,7 @@ func (n GlobalNav) Render(w io.Writer) error {
 			if link.Label == "" || link.Href == "" {
 				panic("site.FlyoutBag's Links need their Label and Href")
 			}
-			if link.Icon.regular == (icon.Icon{}) {
+			if link.Icon.regular == (glyph.Icon{}) {
 				panic("site.FlyoutBag's Links need their Icon")
 			}
 		}

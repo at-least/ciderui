@@ -4,7 +4,6 @@ import (
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/example"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
@@ -20,7 +19,7 @@ func TestBannerRendersTheExamples(t *testing.T) {
 
 	rows := []struct {
 		color console.ConsoleColor
-		icon  icon.Icon
+		icon  lucide.Icon
 		body  g.Group
 	}{
 		{console.ConsoleColorNeutral, lucide.Info, g.Group{g.Text("Data is up to date as of 9:41. See the "), textLink("#sync-log", "sync log"), g.Text(".")}},

@@ -3,8 +3,8 @@ package console
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -22,7 +22,7 @@ var (
 type ConsoleEmpty struct {
 	Size    ConsoleEmptySize
 	Backed  bool
-	Icon    icon.Icon
+	Icon    lucide.Icon
 	Heading string
 	// Caption says what to do next.
 	Caption string

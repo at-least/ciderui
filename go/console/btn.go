@@ -3,8 +3,8 @@ package console
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -33,7 +33,7 @@ type ConsoleBtn struct {
 	Label     string
 	AriaLabel string
 	// Icon: before the Label; the zero Icon for none.
-	Icon icon.Icon
+	Icon lucide.Icon
 	// Submit: a <button> that sends its form; otherwise type="button".
 	Submit  bool
 	Variant ConsoleBtnVariant
@@ -52,7 +52,7 @@ func (b ConsoleBtn) Render(w io.Writer) error {
 	}
 	root := "cui-console-btn"
 	if b.Label == "" {
-		if b.AriaLabel == "" || b.Icon == (icon.Icon{}) {
+		if b.AriaLabel == "" || b.Icon == (lucide.Icon{}) {
 			panic("console.ConsoleBtn needs a Label, or an Icon and an AriaLabel")
 		}
 		root += " cui-console-btn-icon"
@@ -60,7 +60,7 @@ func (b ConsoleBtn) Render(w io.Writer) error {
 		panic("console.ConsoleBtn has a Label and an AriaLabel: its words name it")
 	}
 	attrs := g.Group{class.Root(root, b.Class), optionalAttr("data-variant", b.Variant.value), g.If(b.Error, h.Data("color", "error")), optionalAttr("data-size", b.Size.value), g.If(b.Capsule, h.Data("shape", "capsule"))}
-	content := g.Group{g.If(b.Icon != (icon.Icon{}), b.Icon), g.If(b.Label != "", g.Text(b.Label))}
+	content := g.Group{g.If(b.Icon != (lucide.Icon{}), b.Icon), g.If(b.Label != "", g.Text(b.Label))}
 	if b.Href != "" {
 		return h.A(attrs, h.Href(b.Href), optionalAttr("aria-label", b.AriaLabel), b.Attrs, content).Render(w)
 	}

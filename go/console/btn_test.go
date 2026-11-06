@@ -4,7 +4,6 @@ import (
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/example"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
@@ -12,7 +11,7 @@ import (
 )
 
 func consoleBtn(label string) console.ConsoleBtn {
-	return console.ConsoleBtn{Href: "", Label: label, AriaLabel: "", Icon: icon.Icon{}, Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Error: false, Capsule: false, Attrs: nil, Class: ""}
+	return console.ConsoleBtn{Href: "", Label: label, AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Error: false, Capsule: false, Attrs: nil, Class: ""}
 }
 
 func row(children ...g.Node) g.Node {

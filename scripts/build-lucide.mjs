@@ -44,6 +44,9 @@ const (
 	viewBox = "${viewBox}"
 	paint   = \`${paint}\`
 )
+
+// Icon is the type of a field or parameter that holds an icon; its zero value is none.
+type Icon = glyph.Icon
 `;
   const seen = new Map();
   for (const [name, elements] of Object.entries(nodes)) {

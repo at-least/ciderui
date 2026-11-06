@@ -4,7 +4,6 @@ import (
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/example"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
@@ -17,8 +16,8 @@ func TestSidebarRendersTheExample(t *testing.T) {
 		console.ConsoleMenuItem{Href: "#projects", Label: "All Projects", Icon: lucide.LayoutGrid, Current: false, Secondary: "", Class: ""},
 		console.ConsoleMenuItem{Href: "#issues", Label: "All Issues", Icon: lucide.Bug, Current: true, Secondary: "", Class: ""},
 		h.P(h.Class("cui-console-menu-heading"), g.Text("Projects")),
-		console.ConsoleMenuItem{Href: "#shop", Label: "Shop", Icon: icon.Icon{}, Current: false, Secondary: "8", Class: ""},
-		console.ConsoleMenuItem{Href: "#demo", Label: "Demo Shop", Icon: icon.Icon{}, Current: false, Secondary: "12", Class: ""},
+		console.ConsoleMenuItem{Href: "#shop", Label: "Shop", Icon: lucide.Icon{}, Current: false, Secondary: "8", Class: ""},
+		console.ConsoleMenuItem{Href: "#demo", Label: "Demo Shop", Icon: lucide.Icon{}, Current: false, Secondary: "12", Class: ""},
 		h.Hr(h.Class("cui-console-menu-rule")),
 		console.ConsoleMenuItem{Href: "#alerts", Label: "Alerts", Icon: lucide.Bell, Current: false, Secondary: "", Class: ""},
 	}}

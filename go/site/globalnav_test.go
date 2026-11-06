@@ -5,7 +5,6 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/example"
 	"github.com/at-least/ciderui/go/internal/glyph"
 	"github.com/at-least/ciderui/go/site"
@@ -118,7 +117,7 @@ func TestGlobalNavTheSuggestionsExampleIsTheSearchWithItsSections(t *testing.T) 
 	if got := suggestions[:c] + search[a:b] + suggestions[d:]; got != search {
 		t.Errorf("the suggestions with the search's sections\n got: %s\nwant: %s", got, search)
 	}
-	images := func(regular, compact icon.Icon) string {
+	images := func(regular, compact glyph.Icon) string {
 		return example.Render(g.Group{regular.Class("cui-globalnav-image"), compact.Class("cui-globalnav-image-compact")})
 	}
 	want := fmt.Sprintf(`href="/laptops">%s<span><mark>La</mark>ptops</span>`, images(glyph.Arrow, glyph.ArrowCompact))

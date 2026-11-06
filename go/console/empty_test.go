@@ -4,7 +4,6 @@ import (
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
-	"github.com/at-least/ciderui/go/icon"
 	"github.com/at-least/ciderui/go/internal/example"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
@@ -22,7 +21,7 @@ func TestEmptyRendersTheExamples(t *testing.T) {
 
 func TestEmptyPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleEmpty {
-		return console.ConsoleEmpty{Size: console.ConsoleEmptySizeSmall, Backed: false, Icon: icon.Icon{}, Heading: "x", Caption: "", Class: "", Children: nil}
+		return console.ConsoleEmpty{Size: console.ConsoleEmptySizeSmall, Backed: false, Icon: lucide.Icon{}, Heading: "x", Caption: "", Class: "", Children: nil}
 	}, []example.Break[console.ConsoleEmpty]{
 		{Want: "console.ConsoleEmpty needs a Heading", Change: func(p *console.ConsoleEmpty) { p.Heading = "" }},
 		{Want: "console.ConsoleEmpty needs a Size", Change: func(p *console.ConsoleEmpty) { p.Size = console.ConsoleEmptySize{} }},

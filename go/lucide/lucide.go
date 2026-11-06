@@ -14,6 +14,9 @@ const (
 	paint   = `fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"`
 )
 
+// Icon is the type of a field or parameter that holds an icon; its zero value is none.
+type Icon = glyph.Icon
+
 // AArrowDown is [a-arrow-down](https://lucide.dev/icons/a-arrow-down).
 var AArrowDown = glyph.Lucide(viewBox, paint, `<path d="m14 12 4 4 4-4"/><path d="M18 16V7"/><path d="m2 16 4.039-9.69a.5.5 0 0 1 .923 0L11 16"/><path d="M3.304 13h6.392"/>`)
 
