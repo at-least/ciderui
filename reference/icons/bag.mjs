@@ -11,7 +11,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 
-// ciderui's, in apple.com's view boxes: the numbers are the README's
+// ciderui's, in apple.com's view boxes: the numbers are MEASURED.md's
 const LINE = 'fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"';
 export const OURS = {
   'orders-regular': `<svg viewBox="0 0 11 16"><path d="M6.033 2.843 9.198 4.628A1.0625 1.0625 0 0 1 9.738 5.553V9.063A1.0625 1.0625 0 0 1 9.198 9.989L6.033 11.774A1.0625 1.0625 0 0 1 4.989 11.774L1.825 9.989A1.0625 1.0625 0 0 1 1.285 9.063V5.553A1.0625 1.0625 0 0 1 1.825 4.628L4.989 2.843A1.0625 1.0625 0 0 1 6.033 2.843ZM1.43 5.018 5.511 7.375 9.593 5.018M5.511 7.375V11.91" ${LINE} stroke-width=".875"/><path d="M3.849 3.988 7.254 5.878" fill="none" stroke="#000" stroke-width=".875"/></svg>`,

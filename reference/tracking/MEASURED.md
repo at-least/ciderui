@@ -77,7 +77,7 @@ BROWSER=safari MODE=measure node run.mjs   # safaridriver; Safari's "Allow remot
 BROWSER=ios    MODE=measure node run.mjs   # safaridriver on an iPhone simulator (Xcode)
 BROWSER=chrome MODE=measure node run.mjs   # playwright-core, the installed Google Chrome
 node derive.mjs
-node tables.mjs                            # this README's tables
+node tables.mjs                            # this file's tables
 BROWSER=safari MODE=verify node run.mjs    # and ios, chrome
 BROWSER=safari MODE=inter node run.mjs     # and chrome, chromium, firefox (Playwright's); INTER names another font file
 PW=…/playwright-chromium/index.mjs BROWSER=chromium MODE=measure node run.mjs   # the Linux control

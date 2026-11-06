@@ -109,7 +109,7 @@ func (s ConsoleSparkline) Render(w io.Writer) error {
 		}
 		largest = max(largest, v)
 	}
-	// App Store Connect's (reference/asc/README.md, Charts): the largest 2
+	// App Store Connect's (reference/asc/MEASURED.md, Charts): the largest 2
 	// below the top, nothing below Height-1, so the round stroke is never
 	// clipped
 	bottom := float64(s.Height)

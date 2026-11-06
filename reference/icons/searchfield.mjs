@@ -13,7 +13,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 
-// ciderui's, in apple.com's view boxes: the numbers are the README's. Each
+// ciderui's, in apple.com's view boxes: the numbers are MEASURED.md's. Each
 // handle starts where its round end meets the ring's inner edge
 const LINE = 'fill="none" stroke="#000"';
 export const OURS = {

@@ -10,7 +10,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 
-// ciderui's, in apple.com's view boxes: the numbers are the README's. The
+// ciderui's, in apple.com's view boxes: the numbers are MEASURED.md's. The
 // menu's open lines are its closed ones turned about their middles, as
 // globalnav.css turns them (the same numbers)
 const BAR = 'fill="none" stroke="#000" stroke-width="1.2" stroke-linecap="round"';

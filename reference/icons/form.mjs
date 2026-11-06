@@ -13,7 +13,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 
-// ciderui's, the README's numbers. ALERT in thousandths of an em, its box
+// ciderui's, MEASURED.md's numbers. ALERT in thousandths of an em, its box
 // the glyph's advance (1.171em) by its ink's height (0.995em, from 0.85em
 // above the baseline): a ring at (585, 497.5), radius 456.25, 82.5 thick; the
 // stem from (584, 280) to (584, 550), 70 thick, round; the dot at (585,

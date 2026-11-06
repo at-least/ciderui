@@ -10,7 +10,7 @@ The owner's websites, and nobody else's (stated); the repository is public (stat
 
 ## The standard
 
-**apple.com, measured, for how a part looks** (decision 2). apple.com's own pages are the original, and they can be read: `reference/apple.com/` holds the computed styles of its pages (listed in its README) at 1600, 1200, 900 and 390px. apple.com's CSS is neither licensed nor versioned (its files carry cache hashes), so none of it is copied here and there is no upstream to re-sync: what is recorded is what elements compute to, dated, and a re-measure is a deliberate act that changes the record and the checks that read it.
+**apple.com, measured, for how a part looks** (decision 2). apple.com's own pages are the original, and they can be read: `reference/apple.com/` holds the computed styles of its pages (listed in its MEASURED.md) at 1600, 1200, 900 and 390px. apple.com's CSS is neither licensed nor versioned (its files carry cache hashes), so none of it is copied here and there is no upstream to re-sync: what is recorded is what elements compute to, dated, and a re-measure is a deliberate act that changes the record and the checks that read it.
 
 **The HIG and the quietest page, for whether a part or an effect is there** (decision 25). Agents write the markup; people read the page, and nothing on it competes with the content for their attention. Where apple.com draws an effect that only draws the eye, the effect is left out, or kept to what the HIG asks of it: feedback for an action, a change of state made clear.
 

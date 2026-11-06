@@ -1,5 +1,5 @@
 // Run in a copy of the repository: a probe writes results/<browser>.json, and
-// the committed results stay the record of the runs each README names.
+// the committed results stay the record of the runs each MEASURED.md names.
 
 import { execFileSync } from 'node:child_process';
 import { cpSync, existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, symlinkSync } from 'node:fs';

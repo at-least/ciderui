@@ -14,7 +14,7 @@ export const cases = [
       { target: '.cui-footer-notes .cui-link', props: ['color', 'text-decoration-line'], golden: 'a link in the footer\'s notes the kit\'s link still, not the footer\'s (rule 4)' },
       { target: '.cui-footer-notes .cui-btn', props: ['color', 'background-color', 'text-decoration-line'], golden: 'a button in the footer\'s notes the kit\'s button still (rule 4)' },
       { target: '.cui-footer-links > li:last-child', pseudo: '::after', props: ['content'], golden: 'a rule between the legal links, none after the last' },
-      { target: '.cui-footer-locale', props: ['box-right'], golden: 'the locale at the legal row\'s end, the content\'s right edge (apple.com\'s, reference/apple.com/README.md)' },
+      { target: '.cui-footer-locale', props: ['box-right'], golden: 'the locale at the legal row\'s end, the content\'s right edge (apple.com\'s, reference/apple.com/MEASURED.md)' },
     ],
   },
   {
@@ -105,7 +105,7 @@ export const cases = [
     html: ex('footer'),
     widths: [834, 833],
     checks: [
-      { target: '.cui-footer-content', props: ['padding-left', 'padding-right'], golden: '22px in from 834px, 16px to 833px: apple.com\'s footer steps there, with the global nav (reference/apple.com/README.md, not read at these widths)' },
+      { target: '.cui-footer-content', props: ['padding-left', 'padding-right'], golden: '22px in from 834px, 16px to 833px: apple.com\'s footer steps there, with the global nav (reference/apple.com/MEASURED.md, not read at these widths)' },
       { target: '.cui-footer-directory', props: ['flex-direction'], golden: 'a row of columns from 834px, a column of sections to 833px, as apple.com\'s' },
       { target: `${SECTION} .cui-footer-toggle`, props: ['display'], golden: 'its toggle from 833px down alone' },
     ],
