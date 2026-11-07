@@ -6,11 +6,12 @@
 // browser, a phone's below the window's least width in Safari:
 // 1. the tabs' phone row (320: six tabs overflow it in every font) is one
 //    row that scrolls sideways, none of its height a scrollbar's;
-// 2. its edge fades paint, read off the window's pixels at the bar's top
-//    edge (the probe's blue ground, white behind it): at its start the right
-//    edge fades and the left is solid, scrolled to its end the left fades
-//    and the right is solid, between them both fade — the fade at the box's
-//    edges once scrolled, not moved with its content;
+// 2. its edge fades paint, in cui-light and in cui-dark, read off the
+//    window's pixels at the bar's top edge (the probe's blue ground, the
+//    page white or black behind it): at its start the right edge fades and
+//    the left is solid, scrolled to its end the left fades and the right is
+//    solid, between them both fade — the fade at the box's edges once
+//    scrolled, not moved with its content;
 // 3. the row's last tab, its start a sliver inside the row (Linux's Inter:
 //    3px), focused by script: brought in whole (within 1px), its ring inside
 //    the tab where :focus-visible matches;
@@ -28,9 +29,11 @@ if (!SITE || !existsSync(join(SITE, 'index.html'))) throw new Error('SITE=<build
 const ORIGIN = 'http://127.0.0.1:8738';
 const server = await serve(SITE, 8738);
 
-// @invariant: the red channel at points of a picture of the window (base64 PNG), each
-// [x, y] in the page's px, read in the page as ../dialog/dialog.js reads its
-const reds = (png, ratio, points) => page.run(`(async () => {
+// @invariant: how much of the page behind the blue bar shows at points of a picture of
+// the window (base64 PNG), each [x, y] in the page's px, 0 the bar to 255 the page:
+// light, the red channel (blue 0, white 255); dark, 255 less the blue (blue 255,
+// black 0). Read in the page as ../dialog/dialog.js reads its
+const grounds = (png, ratio, points, scheme) => page.run(`(async () => {
   const img = new Image();
   img.src = 'data:image/png;base64,${png}';
   await img.decode();
@@ -40,7 +43,11 @@ const reds = (png, ratio, points) => page.run(`(async () => {
   const g = c.getContext('2d');
   g.drawImage(img, 0, 0);
   const points = ${JSON.stringify(points)};
-  return Object.fromEntries(Object.entries(points).map(([k, [x, y]]) => [k, g.getImageData(Math.round(x * ${ratio}), Math.round(y * ${ratio}), 1, 1).data[0]]));
+  const dark = ${JSON.stringify(scheme === 'dark')};
+  return Object.fromEntries(Object.entries(points).map(([k, [x, y]]) => {
+    const d = g.getImageData(Math.round(x * ${ratio}), Math.round(y * ${ratio}), 1, 1).data;
+    return [k, dark ? 255 - d[2] : d[0]];
+  }));
 })()`);
 
 const got = { browser: BROWSER, claims: {} };
@@ -74,32 +81,35 @@ try {
   })()`);
   claim('1 tabs one row, scrolling sideways', row.wrap === 'nowrap' && row.scrollHeight === row.clientHeight && row.offsetHeight - row.clientHeight <= 1 && row.scrollWidth > row.clientWidth, row);
 
-  // @external: 2: the red channel 1px below the bar's top at 2px and 12px in from each
-  // edge: the blue ground 0, white 255, a fade between
-  const fades = {};
-  for (const [at, to] of [['start', '0'], ['end', 'bar.scrollWidth'], ['middle', '(bar.scrollWidth - bar.clientWidth) / 2']]) {
-    const where = await page.run(`(async () => {
-      const w = ${frame('tabs-320')};
-      const bar = w.document.querySelector('.cui-console-tabs');
-      bar.scrollLeft = ${to};
-      w.sync();
-      await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
-      const f = document.getElementById('tabs-320').getBoundingClientRect();
-      const b = bar.getBoundingClientRect();
-      return { left: f.left + b.left, right: f.left + b.right, top: f.top + b.top, ratio: devicePixelRatio, scrollLeft: bar.scrollLeft,
-        attrs: ['data-overflow', 'data-overflow-start', 'data-overflow-end'].filter((a) => bar.hasAttribute(a)), mask: w.getComputedStyle(bar).maskImage };
-    })()`);
-    const y = where.top + 1;
-    const red = await reds(await page.shot(), where.ratio, { left2: [where.left + 2, y], left12: [where.left + 12, y], right12: [where.right - 12, y], right2: [where.right - 2, y], middle: [(where.left + where.right) / 2, y] });
-    fades[at] = { ...where, red };
-  }
+  // @external: 2: the ground 1px below the bar's top at 2px and 12px in from each
+  // edge: the blue bar 0, the page 255, a fade between
   const solid = (v) => v < 40;
   const faded = (v) => v > 180;
   const between = (v) => v >= 40 && v <= 215;
-  const fadesAt = (f, left, right) => solid(f.red.middle) && (left ? faded(f.red.left2) && between(f.red.left12) : solid(f.red.left2) && solid(f.red.left12)) && (right ? faded(f.red.right2) && between(f.red.right12) : solid(f.red.right2) && solid(f.red.right12));
-  claim('2 tabs fade at the start: the right edge', fadesAt(fades.start, false, true), fades.start);
-  claim('2 tabs fade at the end: the left edge', fadesAt(fades.end, true, false), fades.end);
-  claim('2 tabs fade between: both edges', fadesAt(fades.middle, true, true), fades.middle);
+  const fadesAt = (f, left, right) => solid(f.ground.middle) && (left ? faded(f.ground.left2) && between(f.ground.left12) : solid(f.ground.left2) && solid(f.ground.left12)) && (right ? faded(f.ground.right2) && between(f.ground.right12) : solid(f.ground.right2) && solid(f.ground.right12));
+  for (const [scheme, id] of [['light', 'tabs-320'], ['dark', 'tabs-dark-320']]) {
+    const fades = {};
+    for (const [at, to] of [['start', '0'], ['end', 'bar.scrollWidth'], ['middle', '(bar.scrollWidth - bar.clientWidth) / 2']]) {
+      const where = await page.run(`(async () => {
+        const w = ${frame(id)};
+        const bar = w.document.querySelector('.cui-console-tabs');
+        bar.scrollLeft = ${to};
+        w.sync();
+        await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+        const f = document.getElementById(${JSON.stringify(id)}).getBoundingClientRect();
+        const b = bar.getBoundingClientRect();
+        return { left: f.left + b.left, right: f.left + b.right, top: f.top + b.top, ratio: devicePixelRatio, scrollLeft: bar.scrollLeft,
+          attrs: ['data-overflow', 'data-overflow-start', 'data-overflow-end'].filter((a) => bar.hasAttribute(a)), mask: w.getComputedStyle(bar).maskImage,
+          scheme: w.getComputedStyle(w.document.documentElement).colorScheme };
+      })()`);
+      const y = where.top + 1;
+      const ground = await grounds(await page.shot(), where.ratio, { left2: [where.left + 2, y], left12: [where.left + 12, y], right12: [where.right - 12, y], right2: [where.right - 2, y], middle: [(where.left + where.right) / 2, y] }, scheme);
+      fades[at] = { ...where, ground };
+    }
+    claim(`2 tabs fade at the start (${scheme}): the right edge`, fadesAt(fades.start, false, true), fades.start);
+    claim(`2 tabs fade at the end (${scheme}): the left edge`, fadesAt(fades.end, true, false), fades.end);
+    claim(`2 tabs fade between (${scheme}): both edges`, fadesAt(fades.middle, true, true), fades.middle);
+  }
 
   // @invariant: 3
   const focus = await page.run(`(async () => {

@@ -12,68 +12,139 @@
     "scrollWidth": 365
    }
   },
-  "2 tabs fade at the start: the right edge": {
+  "2 tabs fade at the start (light): the right edge": {
    "ok": true,
    "value": {
+    "scheme": "light",
     "scrollLeft": 0,
     "mask": "linear-gradient(90deg, rgb(29, 29, 31) calc(100% - 24px), rgba(0, 0, 0, 0))",
     "left": 0,
     "right": 320,
     "top": 0,
-    "ratio": 1,
+    "ratio": 2,
     "attrs": [
      "data-overflow",
      "data-overflow-start"
     ],
-    "red": {
+    "ground": {
      "left2": 0,
      "left12": 0,
-     "right12": 133,
-     "right2": 239,
-     "middle": 0
+     "right2": 235,
+     "middle": 0,
+     "right12": 129
     }
    }
   },
-  "2 tabs fade at the end: the left edge": {
+  "2 tabs fade at the end (light): the left edge": {
    "ok": true,
    "value": {
+    "scheme": "light",
     "scrollLeft": 45,
     "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(29, 29, 31) 24px)",
     "left": 0,
     "right": 320,
     "top": 0,
-    "ratio": 1,
+    "ratio": 2,
     "attrs": [
      "data-overflow",
      "data-overflow-end"
     ],
-    "red": {
-     "left2": 229,
-     "left12": 122,
-     "right12": 0,
+    "ground": {
+     "left2": 231,
+     "left12": 125,
      "right2": 0,
-     "middle": 0
+     "middle": 0,
+     "right12": 0
     }
    }
   },
-  "2 tabs fade between: both edges": {
+  "2 tabs fade between (light): both edges": {
    "ok": true,
    "value": {
+    "scheme": "light",
     "scrollLeft": 22,
     "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(29, 29, 31) 24px, rgb(29, 29, 31) calc(100% - 24px), rgba(0, 0, 0, 0))",
     "left": 0,
     "right": 320,
     "top": 0,
-    "ratio": 1,
+    "ratio": 2,
     "attrs": [
      "data-overflow"
     ],
-    "red": {
-     "left2": 229,
-     "left12": 122,
-     "right12": 133,
-     "right2": 239,
-     "middle": 0
+    "ground": {
+     "left2": 231,
+     "left12": 125,
+     "right2": 235,
+     "middle": 0,
+     "right12": 129
+    }
+   }
+  },
+  "2 tabs fade at the start (dark): the right edge": {
+   "ok": true,
+   "value": {
+    "scheme": "dark",
+    "scrollLeft": 0,
+    "mask": "linear-gradient(90deg, rgb(245, 245, 247) calc(100% - 24px), rgba(0, 0, 0, 0))",
+    "left": 0,
+    "right": 320,
+    "top": 60,
+    "ratio": 2,
+    "attrs": [
+     "data-overflow",
+     "data-overflow-start"
+    ],
+    "ground": {
+     "left2": 0,
+     "left12": 0,
+     "right2": 236,
+     "middle": 0,
+     "right12": 130
+    }
+   }
+  },
+  "2 tabs fade at the end (dark): the left edge": {
+   "ok": true,
+   "value": {
+    "scheme": "dark",
+    "scrollLeft": 45,
+    "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(245, 245, 247) 24px)",
+    "left": 0,
+    "right": 320,
+    "top": 60,
+    "ratio": 2,
+    "attrs": [
+     "data-overflow",
+     "data-overflow-end"
+    ],
+    "ground": {
+     "left2": 231,
+     "left12": 125,
+     "right2": 0,
+     "middle": 0,
+     "right12": 0
+    }
+   }
+  },
+  "2 tabs fade between (dark): both edges": {
+   "ok": true,
+   "value": {
+    "scheme": "dark",
+    "scrollLeft": 22,
+    "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(245, 245, 247) 24px, rgb(245, 245, 247) calc(100% - 24px), rgba(0, 0, 0, 0))",
+    "left": 0,
+    "right": 320,
+    "top": 60,
+    "ratio": 2,
+    "attrs": [
+     "data-overflow"
+    ],
+    "ground": {
+     "left2": 231,
+     "left12": 125,
+     "right2": 236,
+     "middle": 0,
+     "right12": 130
     }
    }
   },
@@ -92,113 +163,7 @@
     "shown": 54.546875
    }
   },
-  "4 thumbnails at 375: 240px tall, their aspect, no wider than the column": {
-   "ok": true,
-   "value": {
-    "column": 358,
-    "imgs": [
-     {
-      "natural": [
-       111,
-       240
-      ],
-      "box": [
-       111,
-       240
-      ]
-     },
-     {
-      "natural": [
-       111,
-       240
-      ],
-      "box": [
-       111,
-       240
-      ]
-     },
-     {
-      "natural": [
-       600,
-       240
-      ],
-      "box": [
-       358,
-       240
-      ]
-     }
-    ]
-   }
-  },
-  "4 thumbnails at 1200: 240px tall, their aspect, no wider than the column": {
-   "ok": true,
-   "value": {
-    "column": 1200,
-    "imgs": [
-     {
-      "natural": [
-       111,
-       240
-      ],
-      "box": [
-       111,
-       240
-      ]
-     },
-     {
-      "natural": [
-       111,
-       240
-      ],
-      "box": [
-       111,
-       240
-      ]
-     },
-     {
-      "natural": [
-       600,
-       240
-      ],
-      "box": [
-       600,
-       240
-      ]
-     }
-    ]
-   }
-  },
-  "5 pager at 375: one centered row, 10px between its parts": {
-   "ok": true,
-   "value": {
-    "gaps": [
-     10,
-     10
-    ],
-    "offCenter": -0.0078125,
-    "tops": [
-     15,
-     15,
-     15
-    ]
-   }
-  },
-  "5 pager at 1200: one centered row, 10px between its parts": {
-   "ok": true,
-   "value": {
-    "gaps": [
-     10,
-     10
-    ],
-    "offCenter": -0.0078125,
-    "tops": [
-     15,
-     15,
-     15
-    ]
-   }
-  },
-  "6 page column at 900: one column": {
+  "4 page column at 900: one column": {
    "ok": true,
    "value": {
     "header": "11px",
@@ -212,7 +177,7 @@
     "sidebarWidth": 0
    }
   },
-  "6 page column at 1200: the sidebar 225px, 40px in, the page 30px past it, no room at its sides": {
+  "4 page column at 1200: the sidebar 225px, 40px in, the page 30px past it, no room at its sides": {
    "ok": true,
    "value": {
     "header": "0px",
@@ -226,7 +191,7 @@
     "sidebarWidth": 225
    }
   },
-  "6 page column at 1920: 1440px, centered, the sidebar 240px in": {
+  "4 page column at 1920: 1440px, centered, the sidebar 240px in": {
    "ok": true,
    "value": {
     "header": "0px",
@@ -239,123 +204,7 @@
     "sidebarLeft": 280,
     "sidebarWidth": 225
    }
-  },
-  "7 toast: 16px from the right and bottom, never hit, fading in": {
-   "ok": true,
-   "value": {
-    "bottom": 16,
-    "frames": [
-     [
-      11,
-      0.009982
-     ],
-     [
-      42,
-      0.238918
-     ],
-     [
-      45,
-      0.272506
-     ],
-     [
-      61,
-      0.451861
-     ],
-     [
-      78,
-      0.613173
-     ],
-     [
-      93,
-      0.723114
-     ],
-     [
-      110,
-      0.816909
-     ],
-     [
-      127,
-      0.885229
-     ],
-     [
-      144,
-      0.933886
-     ],
-     [
-      161,
-      0.967039
-     ],
-     [
-      177,
-      0.98677
-     ],
-     [
-      194,
-      0.997653
-     ],
-     [
-      210,
-      1
-     ],
-     [
-      227,
-      1
-     ],
-     [
-      243,
-      1
-     ],
-     [
-      261,
-      1
-     ],
-     [
-      278,
-      1
-     ],
-     [
-      295,
-      1
-     ],
-     [
-      312,
-      1
-     ],
-     [
-      328,
-      1
-     ],
-     [
-      344,
-      1
-     ],
-     [
-      360,
-      1
-     ],
-     [
-      381,
-      1
-     ],
-     [
-      395,
-      1
-     ],
-     [
-      411,
-      1
-     ]
-    ],
-    "innerHeight": 940,
-    "visualHeight": 940,
-    "shownFound": false,
-    "right": 16,
-    "rest": {
-     "opacity": "0",
-     "found": false
-    }
-   }
   }
  },
- "label": "safari 27.0 on macOS 27.0"
+ "label": "safari 27.0.1 on macOS 27.0.1"
 }
