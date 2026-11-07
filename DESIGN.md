@@ -116,7 +116,7 @@ Not measured: the store's checkout pages (the agent's recommendation, which the 
 - **The markup and the CSS cannot part**: `examples/<id>.html` is the one copy of a part's markup; its Go component's test renders equal to it.
 - **`go/internal/glyph`**: the components' own icons (rule 12), private, each with the box of its one place, so a site cannot pick `glyph.Menu` (18 by 18) where it means `lucide.Menu` (1em). **`lucide`**: every Lucide icon, named by Lucide's name in Go's capitals (`shopping-bag` is `lucide.ShoppingBag`), 1em square (decision 17), and `lucide.Icon`, the type of a field or parameter that holds one. `go/lucide/lucide.go` is generated: edit `scripts/build-lucide.mjs`, never the file.
 - **The stylesheets and fonts** are embedded in the root package, so a site's dependency at a commit is the one pin for its markup and its CSS (decision 13). `ciderui.Assets` serves `dist/`, built and held fresh by `scripts/build-css.mjs`; `site.Page` and `console.ConsolePage` write the document that links it (decision 34). `go tool ciderui-css <dir>` writes what a site's own utilities' stylesheet imports.
-- **`ciderui.CheckMarkup`**: a site's tests call it on every page they render, since a misspelt class or `data-*` value draws the default with no error. What it refuses is `markup_test.go`'s.
+- **`ciderui.CheckMarkup`**: a site's tests call it on every page they render, since a misspelt class or `data-*` value draws the default with no error, and a misspelt `aria-*` state is wrong for assistive technology. What it refuses is `markup_test.go`'s.
 
 ## How a component is proven
 

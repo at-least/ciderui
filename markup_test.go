@@ -64,6 +64,15 @@ func TestCheckMarkup(t *testing.T) {
 		{"a page's class and data-*", `<div class="mt-2" data-variant="whatever">a</div>`, nil},
 		{"a data-* no rule selects", `<a class="cui-console-btn" data-testid="save">x</a>`, nil},
 
+		// @external: an aria-* state's values are ARIA's, not what a rule selects: a
+		// value no rule draws (aria-checked="true", the part's default look) is the
+		// page's own, a value ARIA does not hold is a typo assistive technology reads
+		{"a misspelt aria state", `<li class="cui-console-menu-item" aria-current="pgae">a</li>`, []string{`aria-current="pgae" on <li class="cui-console-menu-item">: not a value of aria-current (date, false, location, page, step, time, true)`}},
+		{"an aria state no rule styles", `<li class="cui-console-menu-item" aria-checked="true">a</li>`, nil},
+		{"an aria state's other legal values", `<li class="cui-console-menu-item" aria-current="location">a</li>`, nil},
+		{"an aria attribute that is not a state", `<button class="cui-console-btn" aria-label="Save">x</button>`, nil},
+		{"an aria state with no class of ciderui's", `<td aria-sort="desc">a</td>`, nil},
+
 		// @external: a site's whole page, as any writer's HTML has it
 		{"a comment", `<!-- <b class="cui-console-badg"> --><b class="cui-console-badge">a</b>`, nil},
 		{"after a comment", `<!-- a --><b class="cui-console-badg">a</b>`, noClass("b")},

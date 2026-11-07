@@ -25,6 +25,21 @@ type vocabulary struct {
 	values  []selected
 }
 
+// @external: the stateful aria-* attributes the parts carry, each with the values
+// ARIA holds for it, sorted; what a rule of the kit's selects is beside the point:
+// a value no rule draws (aria-checked="true", the part's default look) is the
+// page's own, a value ARIA does not hold is a typo assistive technology reads wrong
+var ariaValues = map[string][]string{
+	"aria-checked":  {"false", "mixed", "true"},
+	"aria-current":  {"date", "false", "location", "page", "step", "time", "true"},
+	"aria-disabled": {"false", "true"},
+	"aria-expanded": {"false", "true"},
+	"aria-invalid":  {"false", "grammar", "spelling", "true"},
+	"aria-pressed":  {"false", "mixed", "true"},
+	"aria-selected": {"false", "true"},
+	"aria-sort":     {"ascending", "descending", "none", "other"},
+}
+
 // @invariant: set "": both sets', for a fragment, which links no stylesheet to tell its own.
 func vocabularyOf(set string) vocabulary {
 	inAnotherSet := func(path string) bool {
@@ -323,8 +338,10 @@ func split(selector string) []string {
 // there is none: a cui-* class (a misspelt one, or another set's, styles nothing),
 // and on an element with a cui-* class, a value of a data-* attribute some rule
 // selects that no rule selects for that element's classes (it renders the default,
-// silently). A data-* no rule selects is the page's own. For a site's tests, on
-// each page it renders.
+// silently), and a value of a stateful aria-* attribute ARIA holds none of (it is
+// wrong for assistive technology and draws nothing). A data-* or an aria-* no rule
+// selects and every other aria-* are the page's own. For a site's tests, on each
+// page it renders.
 func CheckMarkup(html string) []string {
 	tags := startTags(html)
 	set := linkedSet(tags)
@@ -383,6 +400,13 @@ func CheckMarkup(html string) []string {
 				known = append(known, c+"'s: "+list)
 			}
 			problems = append(problems, fmt.Sprintf("%s=%q on <%s class=%q>: no rule of ciderui's selects it (%s)", a.name, a.value, tag.name, class, strings.Join(known, "; ")))
+		}
+		for _, a := range tag.attributes {
+			legal, isState := ariaValues[a.name]
+			if !isState || slices.Contains(legal, a.value) {
+				continue
+			}
+			problems = append(problems, fmt.Sprintf("%s=%q on <%s class=%q>: not a value of %s (%s)", a.name, a.value, tag.name, class, a.name, strings.Join(legal, ", ")))
 		}
 	}
 	return problems
