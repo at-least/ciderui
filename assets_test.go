@@ -3,6 +3,8 @@ package ciderui
 import (
 	"bytes"
 	"compress/gzip"
+	"crypto/sha256"
+	"encoding/hex"
 	"io"
 	"net/http"
 	"net/http/httptest"
@@ -38,10 +40,16 @@ func TestAssetsServesEachSetAtItsContentsURL(t *testing.T) {
 			t.Errorf("url %s", c.url)
 		}
 		plain := get(t, c.url, "")
-		if plain.StatusCode != 200 || plain.Header.Get("Content-Type") != "text/css; charset=utf-8" || !strings.Contains(plain.Header.Get("Cache-Control"), "immutable") {
+		if plain.StatusCode != 200 || plain.Header.Get("Content-Type") != "text/css; charset=utf-8" || !strings.Contains(plain.Header.Get("Cache-Control"), "immutable") || plain.Header.Get("Vary") != "Accept-Encoding" {
 			t.Errorf("%s: %d %v", c.url, plain.StatusCode, plain.Header)
 		}
 		text := body(t, plain)
+		// @invariant: the URL's stem is the body's hash: a browser holding the URL
+		// holds this body, none older
+		sum := sha256.Sum256(text)
+		if !strings.HasSuffix(c.url, "."+hex.EncodeToString(sum[:6])+".css") {
+			t.Errorf("%s is not the URL of the body it served (sha256 %s)", c.url, hex.EncodeToString(sum[:6]))
+		}
 		if !bytes.Contains(text, []byte(c.rule)) {
 			t.Errorf("%s has no %s", c.url, c.rule)
 		}
@@ -75,7 +83,9 @@ func TestAssetsServesEveryFontAStylesheetNames(t *testing.T) {
 		}
 		for _, font := range fonts {
 			response := get(t, AssetsPath+string(font[1]), "")
-			if response.StatusCode != 200 || response.Header.Get("Content-Type") != "font/woff2" || len(body(t, response)) == 0 {
+			// @trap: a font's name carries no hash: cached a day, never immutable,
+			// or an upgrade leaves every page its old faces
+			if response.StatusCode != 200 || response.Header.Get("Content-Type") != "font/woff2" || strings.Contains(response.Header.Get("Cache-Control"), "immutable") || len(body(t, response)) == 0 {
 				t.Errorf("%s: %d", font[1], response.StatusCode)
 			}
 		}
