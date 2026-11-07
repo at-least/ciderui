@@ -456,7 +456,7 @@
     align-items: start;
     gap: 6px;
     padding: 20px 30px 30px;
-    background-image: var(--cui-video-scrim);
+    background-image: var(--cui-video-title-scrim);
     transition: opacity 0.4s cubic-bezier(0.4, 0, 0.6, 1), visibility 0.4s;
 
     & > p {

@@ -351,6 +351,10 @@ check('--cui-video-scrim is tv.apple.com\'s tv-player:scrim.gradient background-
 // cues are its <video>'s own text track, none read. Two layers: a tight one that edges each letter on a white picture, a wide
 // faint one that darkens round the line without a box's edge
 check('--cui-video-cue-shadow is muse\'s golden', vars['--cui-video-cue-shadow'], '0 0.05em 0.1em rgb(0 0 0 / 0.6), 0 0 0.5em rgb(0 0 0 / 0.4)');
+// @trap: golden: muse's intro and end (the owner, 2026-11-08: 「修播放器還沒有開始播放的預設狀態是暗的」): tv.apple.com's scrim went
+// to black at the foot and dimmed the lower half of the cover. Dark only behind the words in the bottom-left corner, the cue's
+// shadow under them
+check('--cui-video-title-scrim is muse\'s golden', vars['--cui-video-title-scrim'], 'radial-gradient(ellipse 75% 60% at 0% 100%, rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.35) 40%, rgb(0 0 0 / 0))');
 // @trap: golden: muse's scrubber preview (the owner, 2026-11-05: a thumbnail over the time under the pointer); tv.apple.com's
 // trailers scrub with no preview. A 1px hairline edges it over a dark picture, a soft drop lifts it off a bright one
 check('--cui-video-preview-shadow is muse\'s golden', vars['--cui-video-preview-shadow'], '0 0 0 1px rgb(255 255 255 / 0.15), 0 4px 12px rgb(0 0 0 / 0.4)');
