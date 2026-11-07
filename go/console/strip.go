@@ -35,9 +35,11 @@ var (
 
 // ConsoleStrip is one row of 16:9 thumbnails scrolled sideways, in groups
 // under their names (a storyboard's shots by scene under its player), one of
-// them current. The page's script may set --cui-console-strip-progress
-// (0% to 100%) on the current item: a line over its picture's foot fills to
-// it, how far the shot has played.
+// them current. While the current item plays, the page's script sets
+// data-progress (its presence only; no value is read from it) and
+// --cui-console-strip-progress (0% to 100%), the value: a line over its
+// picture's foot fills to it, how far the shot has played; without
+// data-progress, no line draws.
 type ConsoleStrip struct {
 	AriaLabel string
 	Groups    []ConsoleStripGroup

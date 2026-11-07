@@ -167,9 +167,12 @@
   }
 
   /* @invariant: how far the current shot has played (the page's script sets
-     --cui-console-strip-progress): the player's scrubber's line, thin, over
-     the picture's foot 8px in, as the mark is in its corner */
-  .cui-console-strip-item[aria-current="true"]::after {
+     data-progress, its presence only, and --cui-console-strip-progress, the
+     value, while it plays): the player's scrubber's line, thin, over the
+     picture's foot 8px in, as the mark is in its corner. Without
+     data-progress no line draws: a current shot not playing shows its
+     picture whole (muse's, 2026-11-07) */
+  .cui-console-strip-item[aria-current="true"][data-progress]::after {
     content: "";
     position: absolute;
     right: 10px;

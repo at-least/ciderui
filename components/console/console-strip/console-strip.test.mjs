@@ -16,7 +16,7 @@ const WORKING = '.cui-console-strip-mark[data-state="working"]';
 const CURRENT_WORKING = `${CURRENT} > ${WORKING}`;
 const TIP = `${FIRST} > .cui-console-strip-tip`;
 // @invariant: the page's script's progress on the current shot
-const playing = (html) => html.replace('aria-current="true"', 'aria-current="true" style="--cui-console-strip-progress: 40%"');
+const playing = (html) => html.replace('aria-current="true"', 'aria-current="true" data-progress style="--cui-console-strip-progress: 40%"');
 const MARKS = 'two marks only (the owner, 2026-11-05, for muse\'s storyboard and assets strip): who the shot waits on, the reader or someone at work on it; nothing, no mark. Kept and to redraw went: muse no longer marks either';
 // @invariant: one scene of one shot, its name longer than the shot is wide, and no caption
 const lone = (label) => `<div class="cui-console-page"><nav class="cui-console-strip" aria-label="Shots"><div class="cui-console-strip-group"><p class="cui-console-strip-head"><span class="cui-console-strip-label">${label}</span></p><a class="cui-console-strip-item" href="#a"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Shot 1"></a></div></nav></div>`;
@@ -50,7 +50,7 @@ export const cases = [
       { target: WAITING, props: ['box-width', 'box-height', 'top', 'right', 'border-top-width', 'border-top-color', 'background-color', 'border-top-left-radius'], golden: `waiting for the reader: a dot in console-status's warning mark's color (its 12px), ringed 2px in the page's ground so it shows on any picture, 8px in from the item (6px from the picture). ${MARKS}` },
       { target: WORKING, props: ['box-width', 'box-height', 'top', 'right', 'border-top-width', 'border-top-color', 'background-color'], golden: `someone at work on it: the same dot in console-status's neutral mark's color (the secondary label). ${MARKS}` },
       { target: TIP, props: ['visibility', 'opacity', 'position'], golden: 'its line hidden until the pointer is on it' },
-      { target: CURRENT, pseudo: '::after', props: ['width', 'height', 'background-image'], golden: 'the current shot\'s progress line from the start, its track alone until the script sets how far it has played' },
+      { target: CURRENT, pseudo: '::after', props: ['content'], golden: 'the current shot at rest draws no line: only one that plays does (the owner, 2026-11-07: the scrubber says how far), so its picture shows whole' },
     ],
   },
   {
@@ -98,7 +98,7 @@ export const cases = [
   },
   {
     name: 'strip forced colors',
-    html: ex('strip'),
+    html: playing(ex('strip')),
     widths: [1200],
     forcedColors: true,
     checks: [
