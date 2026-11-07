@@ -38,7 +38,7 @@ const NOT_RUN = {
   'reference/feedback-assistant/': 'reads Feedback Assistant live, signed in',
   'reference/icons/': 'reads apple.com live',
   'reference/tracking/': 'reads apple.com live (derive.mjs and tables.mjs read what it wrote)',
-  'reference/vm.mjs': 'Safari in a tester VM',
+  'reference/air.mjs': 'Safari on air, over ssh',
   'reference/xcuitest.mjs': 'the iOS simulator',
   'reference/touch/audit.mjs': 'a step of npm test of its own',
 };
