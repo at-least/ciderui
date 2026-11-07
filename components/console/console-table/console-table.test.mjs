@@ -114,7 +114,7 @@ export const cases = [
   },
   {
     name: 'table scroll box',
-    html: ex('stack'),
+    html: ex('sticky'),
     widths: [1200, 390],
     press: ['Tab'],
     checks: [

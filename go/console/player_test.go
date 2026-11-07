@@ -174,12 +174,20 @@ func TestPlayerWritesItsFullScreenControls(t *testing.T) {
 	}
 }
 
-// the hooks a page's script finds the controls by: each once
+// the hooks a page's script finds the controls by: each once, the intro's and
+// the end's own included
 func TestPlayerMarksEachControl(t *testing.T) {
-	got := example.Render(pausedPlayer())
-	for _, control := range []string{"play", "volume", "mute", "subtitles", "full-screen", "scrubber", "elapsed", "remaining", "caption", "preview"} {
-		if n := strings.Count(got, `data-control="`+control+`"`); n != 1 {
-			t.Errorf("data-control=%q written %d times, want 1", control, n)
+	for name, player := range map[string]console.ConsolePlayer{"paused": pausedPlayer(), "intro": intro(), "end": end()} {
+		got := example.Render(player)
+		controls := map[string][]string{
+			"paused": {"play", "volume", "mute", "subtitles", "full-screen", "scrubber", "elapsed", "remaining", "caption", "preview"},
+			"intro":  {"start", "restart"},
+			"end":    {"replay"},
+		}[name]
+		for _, control := range controls {
+			if n := strings.Count(got, `data-control="`+control+`"`); n != 1 {
+				t.Errorf("%s: data-control=%q written %d times, want 1", name, control, n)
+			}
 		}
 	}
 }

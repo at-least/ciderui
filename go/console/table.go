@@ -8,15 +8,14 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleTable is a table in a scroll box the keyboard can reach, whose rows
-// stack on a phone, each cell after the first named by its column. A table
-// with sort links or a selection column is the page's own markup (the example
-// sticky.html).
+// ConsoleTable is a table whose rows stack on a phone, each cell after the
+// first named by its column. A table that scrolls or sticks the page wraps in
+// its own scroll box, the keyboard's to reach (the example sticky.html); none
+// is written here, that every table not overflowing would carry a tab stop of
+// its own.
 type ConsoleTable struct {
-	// AriaLabel names the scroll box: "Jobs".
-	AriaLabel string
-	Columns   []ConsoleTableColumn
-	Rows      []ConsoleTableRow
+	Columns []ConsoleTableColumn
+	Rows    []ConsoleTableRow
 	// BodyAttrs: the <tbody>'s attributes (an id a swap targets); nil for none.
 	BodyAttrs g.Node
 	Class     string
@@ -44,22 +43,17 @@ type ConsoleTableCell struct {
 }
 
 func (t ConsoleTable) Render(w io.Writer) error {
-	if t.AriaLabel == "" {
-		panic("console.ConsoleTable needs an AriaLabel")
-	}
 	if len(t.Columns) == 0 {
 		panic("console.ConsoleTable needs a ConsoleTableColumn")
 	}
-	return h.Div(class.Root("cui-console-table-scroll", t.Class), h.TabIndex("0"), h.Role("region"), h.Aria("label", t.AriaLabel),
-		h.Table(h.Class("cui-console-table"), g.Attr("data-stack"),
-			h.THead(h.Tr(g.Map(t.Columns, func(c ConsoleTableColumn) g.Node {
-				if c.Label == "" {
-					panic("console.ConsoleTableColumn needs a Label")
-				}
-				return h.Th(h.Scope("col"), g.If(c.Figure, h.Class("cui-console-table-figure")), g.Text(c.Label))
-			}))),
-			h.TBody(t.BodyAttrs, g.Map(t.Rows, t.Row)),
-		),
+	return h.Table(class.Root("cui-console-table", t.Class), g.Attr("data-stack"),
+		h.THead(h.Tr(g.Map(t.Columns, func(c ConsoleTableColumn) g.Node {
+			if c.Label == "" {
+				panic("console.ConsoleTableColumn needs a Label")
+			}
+			return h.Th(h.Scope("col"), g.If(c.Figure, h.Class("cui-console-table-figure")), g.Text(c.Label))
+		}))),
+		h.TBody(t.BodyAttrs, g.Map(t.Rows, t.Row)),
 	).Render(w)
 }
 

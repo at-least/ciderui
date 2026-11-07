@@ -31,7 +31,7 @@ npm test: every part, in headless Chromium, against reference/'s values
 ```go
 mux.Handle(ciderui.AssetsPath, ciderui.Assets())
 
-console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Class: "", Children: body}
+console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Class: "", Skip: "", Children: body}
 ```
 
 That is the whole setup: the page links the stylesheet and the module serves it, with its fonts. Use `site.Page` for a store or a marketing page. Each part's markup is its examples, `components/<set>/<name>/examples/*.html`. Call `ciderui.CheckMarkup` on your pages in your tests.

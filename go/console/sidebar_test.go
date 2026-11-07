@@ -10,9 +10,9 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-func TestSidebarRendersTheExample(t *testing.T) {
+func sidebarNodes() g.Node {
 	account := h.A(h.Class("cui-console-sidebar-account"), h.Href("#account"), lucide.CircleUser.Class("cui-console-sidebar-avatar"), g.Text("Alex Morgan"))
-	sidebar := console.ConsoleSidebar{ID: "sidebar", AriaLabel: "CrashCart", Home: "#home", Wordmark: "CrashCart", CloseAriaLabel: "Close", Class: "", Footer: account, Children: g.Group{
+	return console.ConsoleSidebar{ID: "sidebar", AriaLabel: "CrashCart", Home: "#home", Wordmark: "CrashCart", CloseAriaLabel: "Close", Class: "", Footer: account, Children: g.Group{
 		console.ConsoleMenuItem{Href: "#projects", Label: "All Projects", Icon: lucide.LayoutGrid, Current: false, Class: ""},
 		console.ConsoleMenuItem{Href: "#issues", Label: "All Issues", Icon: lucide.Bug, Current: true, Class: ""},
 		h.P(h.Class("cui-console-menu-heading"), g.Text("Projects")),
@@ -21,7 +21,26 @@ func TestSidebarRendersTheExample(t *testing.T) {
 		h.Hr(h.Class("cui-console-menu-rule")),
 		console.ConsoleMenuItem{Href: "#alerts", Label: "Alerts", Icon: lucide.Bell, Current: false, Class: ""},
 	}}
-	example.Check(t, sidebar, "console/console-sidebar/examples/sidebar.html")
+}
+
+func TestSidebarRendersTheExample(t *testing.T) {
+	example.Check(t, sidebarNodes(), "console/console-sidebar/examples/sidebar.html")
+}
+
+func TestSidebarOpenRendersTheExample(t *testing.T) {
+	example.Check(t, g.Group{
+		console.ConsoleSidebarOpen{Target: "sidebar", AriaLabel: "Menu", Class: ""},
+		sidebarNodes(),
+	}, "console/console-sidebar/examples/open.html")
+}
+
+func TestSidebarOpenPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleSidebarOpen {
+		return console.ConsoleSidebarOpen{Target: "s", AriaLabel: "Menu", Class: ""}
+	}, []example.Break[console.ConsoleSidebarOpen]{
+		{Want: "console.ConsoleSidebarOpen needs a Target", Change: func(p *console.ConsoleSidebarOpen) { p.Target = "" }},
+		{Want: "console.ConsoleSidebarOpen needs an AriaLabel", Change: func(p *console.ConsoleSidebarOpen) { p.AriaLabel = "" }},
+	})
 }
 
 func TestSidebarPanics(t *testing.T) {

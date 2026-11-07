@@ -48,3 +48,26 @@ func (s ConsoleSidebar) Render(w io.Writer) error {
 		h.Div(h.Class("cui-console-sidebar-footer"), s.Footer),
 	).Render(w)
 }
+
+// ConsoleSidebarOpen is the button that opens a [ConsoleSidebar] below 1024px,
+// placed in the page's own column.
+type ConsoleSidebarOpen struct {
+	// Target: the [ConsoleSidebar]'s ID.
+	Target    string
+	AriaLabel string
+	Class     string
+}
+
+func (o ConsoleSidebarOpen) Render(w io.Writer) error {
+	if o.Target == "" {
+		panic("console.ConsoleSidebarOpen needs a Target")
+	}
+	if o.AriaLabel == "" {
+		panic("console.ConsoleSidebarOpen needs an AriaLabel")
+	}
+	root := "cui-console-sidebar-open"
+	if o.Class != "" {
+		root += " " + o.Class
+	}
+	return ConsoleBtn{Href: "", Label: "", AriaLabel: o.AriaLabel, Icon: lucide.Menu, Submit: false, Variant: ConsoleBtnVariantPlain, Size: ConsoleBtnSizeMedium, Error: false, Attrs: h.PopoverTarget(o.Target), Class: root}.Render(w)
+}

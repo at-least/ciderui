@@ -12,7 +12,7 @@ import (
 )
 
 func consolePage() console.ConsolePage {
-	return console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Class: "", Children: h.P(g.Text("x"))}
+	return console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Class: "", Skip: "", Children: h.P(g.Text("x"))}
 }
 
 func TestConsolePageWritesTheDocument(t *testing.T) {
@@ -30,6 +30,28 @@ func TestConsolePageWritesItsClasses(t *testing.T) {
 		if !strings.Contains(got, want) {
 			t.Errorf("no %s in %s", want, got)
 		}
+	}
+}
+
+// the kit's stylesheet first: the page's own Head wins over a part
+func TestConsolePageWritesItsHeadAfterTheKitsStylesheet(t *testing.T) {
+	p := consolePage()
+	p.Head = h.Link(h.Rel("stylesheet"), h.Href("/own.css"))
+	got := example.Render(p)
+	want := `<link rel="stylesheet" href="` + ciderui.ConsoleStylesheet() + `"><link rel="stylesheet" href="/own.css">`
+	if !strings.Contains(got, want) {
+		t.Errorf("no %s in %s", want, got)
+	}
+}
+
+// the link before all else the keyboard reads, before the page's children
+func TestConsolePageWritesItsSkipLinkFirst(t *testing.T) {
+	p := consolePage()
+	p.Skip = "Skip to Content"
+	got := example.Render(p)
+	want := `<body class="cui-console-page"><a class="cui-console-btn cui-console-skip" data-variant="filled" href="#main">Skip to Content</a><p>x</p>`
+	if !strings.Contains(got, want) {
+		t.Errorf("no %s in %s", want, got)
 	}
 }
 

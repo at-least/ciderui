@@ -19,7 +19,6 @@ func jobsTable() console.ConsoleTable {
 		return console.ConsoleTableCell{Content: h.A(h.Class("cui-console-table-link"), h.Href(href), g.Text(label)), Empty: false}
 	}
 	return console.ConsoleTable{
-		AriaLabel: "Jobs",
 		Columns: []console.ConsoleTableColumn{
 			{Label: "Job", Figure: false},
 			{Label: "Schedule", Figure: false},
@@ -60,7 +59,6 @@ func TestTableBodyAttrsGoOnItsBody(t *testing.T) {
 
 func TestTablePanics(t *testing.T) {
 	example.Panics(t, jobsTable, []example.Break[console.ConsoleTable]{
-		{Want: "console.ConsoleTable needs an AriaLabel", Change: func(p *console.ConsoleTable) { p.AriaLabel = "" }},
 		{Want: "console.ConsoleTable needs a ConsoleTableColumn", Change: func(p *console.ConsoleTable) { p.Columns = nil }},
 		{Want: "console.ConsoleTableColumn needs a Label", Change: func(p *console.ConsoleTable) { p.Columns[1].Label = "" }},
 		{Want: "console.ConsoleTableRow needs a cell for each column", Change: func(p *console.ConsoleTable) { p.Rows[1].Cells = p.Rows[1].Cells[:3] }},
