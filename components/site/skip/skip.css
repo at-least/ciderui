@@ -1,0 +1,25 @@
+@layer components {
+  .cui-skip {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    /* @invariant: over the global nav's 9999: the keyboard's first stop lands
+       on top of the bar it skips */
+    z-index: 10000;
+
+    &:not(:focus) {
+      /* @invariant: the box a finger never meets is truly 1px, the button's
+         border in it too: the touch audit reads a link this small focused
+         (reference/touch/audit.mjs) */
+      width: 1px;
+      min-width: 0;
+      height: 1px;
+      min-height: 0;
+      padding: 0;
+      border: none;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+  }
+}

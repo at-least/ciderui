@@ -18,11 +18,19 @@ type Page struct {
 	// utilities' stylesheet, a script); nil for none.
 	Head g.Node
 	// Class: the <html>'s.
-	Class     string
+	Class string
+	// Skip: the skip link's words, the link before all else the keyboard
+	// reads; "" for none. It lands on the page's own <main id="main"
+	// tabindex="-1"> (the example skip's).
+	Skip      string
 	BodyClass string
 	Children  g.Node
 }
 
 func (p Page) Render(w io.Writer) error {
-	return document.Document{Owner: "site.Page", Lang: p.Lang, Title: p.Title, Stylesheet: ciderui.SiteStylesheet(), Head: p.Head, Class: p.Class, BodyClass: p.BodyClass, Children: p.Children}.Render(w)
+	children := p.Children
+	if p.Skip != "" {
+		children = g.Group{Btn{Href: "#main", Label: p.Skip, Icon: nil, Submit: false, Variant: BtnVariantPrimary, Size: BtnSizeMedium, Block: false, Attrs: nil, Class: "cui-skip"}, children}
+	}
+	return document.Document{Owner: "site.Page", Lang: p.Lang, Title: p.Title, Stylesheet: ciderui.SiteStylesheet(), Head: p.Head, Class: p.Class, BodyClass: p.BodyClass, Children: children}.Render(w)
 }

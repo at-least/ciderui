@@ -12,7 +12,7 @@ import (
 )
 
 func page() site.Page {
-	return site.Page{Lang: "zh-Hant", Title: "課程", Head: nil, Class: "", BodyClass: "", Children: h.P(g.Text("x"))}
+	return site.Page{Lang: "zh-Hant", Title: "課程", Head: nil, Class: "", Skip: "", BodyClass: "", Children: h.P(g.Text("x"))}
 }
 
 func TestPageWritesTheDocument(t *testing.T) {
@@ -32,6 +32,17 @@ func TestPageWritesItsClassesAndHeadAfterTheStylesheet(t *testing.T) {
 		if !strings.Contains(got, want) {
 			t.Errorf("no %s in %s", want, got)
 		}
+	}
+}
+
+// the link before all else the keyboard reads, before the page's children
+func TestPageWritesItsSkipLinkFirst(t *testing.T) {
+	p := page()
+	p.Skip = "跳到主要內容"
+	got := example.Render(p)
+	want := `<body><a class="cui-btn cui-skip" href="#main">跳到主要內容</a><p>x</p>`
+	if !strings.Contains(got, want) {
+		t.Errorf("no %s in %s", want, got)
 	}
 }
 
