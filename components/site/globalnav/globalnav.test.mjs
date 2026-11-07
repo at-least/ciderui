@@ -202,6 +202,7 @@ export const cases = [
     wait: 0,
     checks: [
       { target: `${LIST} > li:nth-child(3)`, props: ['opacity', 'transform'], golden: ROWS },
+      { target: LIST, props: ['box-height', 'background-color'], golden: 'a departure at the reveal\'s start: apple.com\'s sheet grows from the bar\'s 48px and its white ground (home:menu.open\'s animations); ciderui\'s grows from its content\'s height, transparent — this Chromium ignores a popover\'s @starting-style where the element renders closed (the bar\'s logo lives in its list), and the bar is not restructured for the first frames of a reveal (measured in the browser, 2026-11-07)' },
     ],
   },
   {

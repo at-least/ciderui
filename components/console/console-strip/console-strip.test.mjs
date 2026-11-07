@@ -81,7 +81,7 @@ export const cases = [
       { target: TIP, props: ['visibility', 'opacity', 'position', 'font-size', 'line-height', 'color', 'background-color', 'box-shadow', 'padding-top', 'padding-left', 'border-top-left-radius', 'max-width'], golden: 'the shot\'s first spoken line over it while the pointer is on it (the owner, 2026-11-05, muse\'s storyboard; its assets strip, the asset\'s description), after half a second so a pointer passing along the row raises none: the console popover\'s ground, shadow and 13px on 18px (decision 27, its floating surface), 6px by 10px, its narrow 14px corners, 280px at most; neither site has a hover tip on its row' },
       { target: TIP, props: ['box-left', 'box-top', 'box-width', 'box-height'], golden: 'centred over the item, 8px above it (the popover\'s gap), past the scroller\'s clip (fixed to the item by anchor positioning); at the window\'s edge it keeps inside' },
       { target: FIRST, props: ['box-top', 'box-left', 'box-width'], golden: 'the item it is over' },
-      { target: TIP, props: ['transition-delay'], golden: 'half a second\'s wait before it shows' },
+      { target: TIP, props: ['transition-property', 'transition-duration', 'transition-delay'], golden: 'half a second\'s wait, then shown at once: the delay alone is the device (a pointer passing along the row raises nothing), a fade on top of it an entrance flourish decision 25 leaves out; leaving hides it at once' },
     ],
   },
   {

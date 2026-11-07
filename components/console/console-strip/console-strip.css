@@ -220,7 +220,7 @@
       pointer-events: none;
       visibility: hidden;
       opacity: 0;
-      transition: opacity 0.2s, visibility 0.2s;
+      transition: visibility 0s;
 
       @media (forced-colors: active) {
         border: 1px solid CanvasText;
@@ -235,7 +235,10 @@
         :where(.cui-console-strip-item:hover) > & {
           visibility: visible;
           opacity: 1;
-          transition-delay: 0.5s;
+          /* @invariant: shown at once once half a second has passed: the delay
+             is the device, a fade on top of it an entrance flourish (decision
+             25); off it, hidden again at once (the rule above's transition) */
+          transition: visibility 0s linear 0.5s;
         }
       }
     }

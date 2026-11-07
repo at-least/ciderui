@@ -18,14 +18,24 @@
     vector-effect: non-scaling-stroke;
   }
 
-  .cui-console-chart-mark {
+  .cui-console-chart-mark,
+  .cui-console-chart-rest {
     stroke: var(--cui-console-chart-ground);
     stroke-width: 1px;
     vector-effect: non-scaling-stroke;
   }
 
+  .cui-console-chart-mark {
+    fill: var(--cui-c-console-brand-accent-primary);
+  }
+
+  .cui-console-chart-rest {
+    fill: var(--cui-c-console-neutral-label-secondary);
+  }
+
   @media (hover: hover) {
-    .cui-console-chart-bar:hover .cui-console-chart-mark {
+    .cui-console-chart-bar:hover .cui-console-chart-mark,
+    .cui-console-chart-bar:hover .cui-console-chart-rest {
       opacity: 0.85;
     }
   }

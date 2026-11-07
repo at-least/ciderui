@@ -167,6 +167,8 @@
  "menu-widened | .cui-globalnav-closebutton | 1600 | opacity": "0.8",
  "menu-start | .cui-globalnav-list > li:nth-child(3) | 390 | opacity": "1",
  "menu-start | .cui-globalnav-list > li:nth-child(3) | 390 | transform": "none",
+ "menu-start | .cui-globalnav-list | 390 | box-height": "84px",
+ "menu-start | .cui-globalnav-list | 390 | background-color": "rgba(0, 0, 0, 0)",
  "menu-focus | .cui-globalnav-closebutton | 390 | focused": "true",
  "menu-tab | .cui-globalnav-list > li:nth-child(3) > .cui-globalnav-link | 390 | focused": "true",
  "menu-escape | .cui-globalnav-list | 390 | position": "static",

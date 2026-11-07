@@ -166,6 +166,8 @@
  "strip tip | .cui-console-strip-group:nth-child(1) > .cui-console-strip-item:nth-of-type(1) | 1200 | box-top": "134px",
  "strip tip | .cui-console-strip-group:nth-child(1) > .cui-console-strip-item:nth-of-type(1) | 1200 | box-left": "0px",
  "strip tip | .cui-console-strip-group:nth-child(1) > .cui-console-strip-item:nth-of-type(1) | 1200 | box-width": "168px",
+ "strip tip | .cui-console-strip-group:nth-child(1) > .cui-console-strip-item:nth-of-type(1) > .cui-console-strip-tip | 1200 | transition-property": "visibility",
+ "strip tip | .cui-console-strip-group:nth-child(1) > .cui-console-strip-item:nth-of-type(1) > .cui-console-strip-tip | 1200 | transition-duration": "0s",
  "strip tip | .cui-console-strip-group:nth-child(1) > .cui-console-strip-item:nth-of-type(1) > .cui-console-strip-tip | 1200 | transition-delay": "0.5s",
  "strip dark | .cui-console-strip-group:first-child > .cui-console-strip-head > .cui-console-strip-label | 1200 | color": "oklch(0.879 0.015 286.1 / 0.63)",
  "strip dark | .cui-console-strip-group:nth-child(1) > .cui-console-strip-item:nth-of-type(1) > .cui-console-strip-caption | 1200 | color": "oklch(0.879 0.015 286.1 / 0.63)",
