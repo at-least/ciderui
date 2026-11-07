@@ -24,18 +24,6 @@ func TestTabsRendersTheExamples(t *testing.T) {
 	example.Check(t, console.ConsoleTabs{AriaLabel: "Period", Variant: console.ConsoleTabsVariantFilled, Tabs: filled, Class: ""}, "console/console-tabs/examples/filled.html")
 }
 
-func pressedButtons() []console.ConsoleTabButton {
-	return []console.ConsoleTabButton{
-		{Label: "None", Value: "none", Pressed: false},
-		{Label: "Keep", Value: "keep", Pressed: true},
-		{Label: "Redraw", Value: "redraw", Pressed: false},
-	}
-}
-
-func TestTabButtonsRendersTheExample(t *testing.T) {
-	example.Check(t, console.ConsoleTabButtons{AriaLabel: "Mark", Name: "mark", Buttons: pressedButtons(), Class: ""}, "console/console-tabs/examples/pressed.html")
-}
-
 func TestTabsPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleTabs {
 		return console.ConsoleTabs{AriaLabel: "X", Variant: console.ConsoleTabsVariantUnderlined, Tabs: []console.ConsoleTab{{Label: "A", Href: "#a", Current: true}, {Label: "B", Href: "#b", Current: false}}, Class: ""}
@@ -44,17 +32,5 @@ func TestTabsPanics(t *testing.T) {
 		{Want: "console.ConsoleTabs needs a Variant", Change: func(p *console.ConsoleTabs) { p.Variant = console.ConsoleTabsVariant{} }},
 		{Want: "console.ConsoleTabs has one current tab at most", Change: func(p *console.ConsoleTabs) { p.Tabs[1].Current = true }},
 		{Want: "console.ConsoleTab needs a Label", Change: func(p *console.ConsoleTabs) { p.Tabs[1].Label = "" }},
-	})
-}
-
-func TestTabButtonsPanics(t *testing.T) {
-	example.Panics(t, func() console.ConsoleTabButtons {
-		return console.ConsoleTabButtons{AriaLabel: "Mark", Name: "mark", Buttons: pressedButtons(), Class: ""}
-	}, []example.Break[console.ConsoleTabButtons]{
-		{Want: "console.ConsoleTabButtons needs an AriaLabel", Change: func(p *console.ConsoleTabButtons) { p.AriaLabel = "" }},
-		{Want: "console.ConsoleTabButtons needs a Name", Change: func(p *console.ConsoleTabButtons) { p.Name = "" }},
-		{Want: "console.ConsoleTabButtons has one pressed button at most", Change: func(p *console.ConsoleTabButtons) { p.Buttons[0].Pressed = true }},
-		{Want: "console.ConsoleTabButton needs a Label", Change: func(p *console.ConsoleTabButtons) { p.Buttons[0].Label = "" }},
-		{Want: "console.ConsoleTabButton needs a Value", Change: func(p *console.ConsoleTabButtons) { p.Buttons[0].Value = "" }},
 	})
 }

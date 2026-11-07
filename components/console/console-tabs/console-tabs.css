@@ -86,7 +86,7 @@
       color: var(--cui-console-tab-label-press);
     }
 
-    &:is([aria-current]:not([aria-current="false"]), [aria-selected="true"], [aria-pressed="true"]) {
+    &:is([aria-current]:not([aria-current="false"])) {
       --cui-console-tab-label-hover: var(--cui-c-console-brand-label-primary);
       --cui-console-tab-label-press: var(--cui-c-console-brand-label-primary);
 
@@ -109,7 +109,7 @@
       border-bottom: 0;
       border-radius: 15px;
 
-      &:is([aria-current]:not([aria-current="false"]), [aria-selected="true"], [aria-pressed="true"]) {
+      &:is([aria-current]:not([aria-current="false"]), :has(> :checked)) {
         --cui-console-tab-fill: var(--cui-c-console-brand-accent-primary);
         --cui-console-tab-fill-hover: var(--cui-c-console-brand-fill-hover);
         --cui-console-tab-fill-press: var(--cui-c-console-brand-fill-press);
@@ -122,6 +122,26 @@
           color: HighlightText;
         }
       }
+    }
+  }
+
+  /* @invariant: the form's choice is the page's own radio in a label: the
+     pill is the control's look, so the input is out of the way and its
+     checked and focus are the label's state. The ring moves from the hidden
+     input to the pill (rule 9's restatement to move it); the phone row's
+     outline offset follows it */
+  .cui-console-tab > :where(input) {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .cui-console-tab:has(> :focus-visible) {
+    outline: var(--cui-focus-ring);
+    outline-offset: var(--cui-focus-ring-offset);
+
+    @media (pointer: coarse) {
+      outline-offset: -2px;
     }
   }
 

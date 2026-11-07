@@ -10,8 +10,9 @@ const FITTED = 'fitted to 4.5:1 (tokens.css, decision 21)';
 const REST = '.cui-console-tab[href="#issues"]';
 const PILL = '.cui-console-tab[href="#30d"]';
 const CHOSEN = '.cui-console-tab[aria-current="true"]';
-const PRESSED = '.cui-console-tab[aria-pressed="true"]';
-const UNPRESSED = '.cui-console-tab[value="redraw"]';
+const RADIO = '.cui-console-tabs[aria-label="About"] .cui-console-tab';
+const PICKED = `${RADIO}:has(> :checked)`;
+const PLAIN = `${RADIO}:not(:has(> :checked))`;
 
 export const cases = [
   {
@@ -62,11 +63,10 @@ export const cases = [
     ],
   },
   {
-    name: 'tabs selected',
-    html: '<div class="cui-console-tabs" role="tablist" aria-label="Report"><button class="cui-console-tab" role="tab" type="button" aria-selected="true">Crashes</button><button class="cui-console-tab" role="tab" type="button" aria-selected="false" aria-current="false">Hangs</button></div>',
+    name: 'tabs not current',
+    html: '<div class="cui-console-tabs" aria-label="Report"><a class="cui-console-tab" href="#crashes" aria-current="false">Crashes</a></div>',
     widths: [1200],
     checks: [
-      { target: '[aria-selected="true"]', props: ['border-bottom-color'], golden: 'aria-selected="true" the current one, on its rule, as aria-current' },
       { target: '[aria-current="false"]', props: ['border-bottom-color'], golden: 'aria-current="false" not the current one: no rule' },
     ],
   },
@@ -90,26 +90,24 @@ export const cases = [
     ],
   },
   {
-    name: 'tabs of buttons',
-    html: ex('pressed'),
-    widths: [1200, 390],
+    name: 'tabs of radios',
+    html: ex('radios'),
+    widths: [1200],
     checks: [
-      { target: UNPRESSED, props: SIZE, tb: size('md') },
-      { target: UNPRESSED, props: ['background-color', 'padding-left', 'padding-right', 'border-top-left-radius'], tb: [tab('filledGray', 'default', 'false', 'backgroundColor'), `${T}-defaultMdPaddingInline`, `${T}-defaultMdPaddingInline`, `${T}-variant-controlShape-capsule-controlSize-md-borderRadius`] },
-      { target: PRESSED, props: ['background-color', 'color'], tb: [tab('filledGray', 'default', 'true', 'backgroundColor'), tab('filledGray', 'default', 'true', 'color')] },
-      { target: PRESSED, props: ['background-color', 'color'], state: 'active', tb: [tab('filledGray', 'press', 'true', 'backgroundColor'), tab('filledGray', 'press', 'true', 'color')] },
-      { target: UNPRESSED, props: ['color', 'cursor'], golden: 'aria-pressed="false" not the chosen one: a link\'s pill, the blue label on the gray, the pointer' },
-      { target: UNPRESSED, props: ['font-family', 'border-top-width'], golden: 'a <button> drawn as a link\'s tab: the page\'s font, no edge' },
+      { target: PICKED, props: ['background-color', 'color'], tb: [tab('filledGray', 'default', 'true', 'backgroundColor'), tab('filledGray', 'default', 'true', 'color')] },
+      { target: PLAIN, props: ['background-color', 'color'], golden: 'the unchecked radios\' pill, the blue label on the gray, as an unfilled link tab\'s' },
+      { target: `${RADIO} > input`, props: ['position', 'opacity', 'pointer-events'], golden: 'the page\'s own radio out of the way: the pill is the control\'s look, its words the radio\'s label' },
+      { target: PICKED, props: ['outline-style', 'outline-width'], on: `${RADIO} > input`, state: 'focus-visible', golden: 'the keyboard\'s ring on the pill, not around the hidden radio (the one ring, moved)' },
     ],
   },
   {
-    name: 'tabs of buttons forced colors',
-    html: ex('pressed'),
+    name: 'tabs of radios forced colors',
+    html: ex('radios'),
     widths: [1200],
     forcedColors: true,
     checks: [
-      { target: PRESSED, props: ['background-color', 'color'], golden: 'the pressed button the theme\'s Highlight under HighlightText, as a chosen link\'s' },
-      { target: UNPRESSED, props: ['background-color', 'color'], golden: 'the others\' gray fill forced to the ground, at its alpha, under the forced text: not Highlight' },
+      { target: PICKED, props: ['background-color', 'color'], golden: 'the chosen one the theme\'s Highlight under HighlightText, as a chosen link\'s' },
+      { target: PLAIN, props: ['background-color', 'color'], golden: 'the others\' gray fill forced to the ground, at its alpha, under the forced text: not Highlight' },
     ],
   },
   {

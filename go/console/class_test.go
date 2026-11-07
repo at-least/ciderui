@@ -40,7 +40,6 @@ func TestEachPartWritesThePagesClass(t *testing.T) {
 		{Root: "cui-console-table", Node: console.ConsoleTable{Columns: []console.ConsoleTableColumn{{Label: "x", Figure: false}}, Rows: nil, BodyAttrs: nil, Class: page}},
 		{Root: "cui-console-tabs", Node: console.ConsoleTabs{AriaLabel: "x", Variant: console.ConsoleTabsVariantUnderlined, Tabs: nil, Class: page}},
 		{Root: "cui-console-tabs", Node: console.ConsoleTabs{AriaLabel: "x", Variant: console.ConsoleTabsVariantFilled, Tabs: nil, Class: page}},
-		{Root: "cui-console-tabs", Node: console.ConsoleTabButtons{AriaLabel: "x", Name: "x", Buttons: nil, Class: page}},
 		{Root: "cui-console-player", Node: player},
 	})
 }
