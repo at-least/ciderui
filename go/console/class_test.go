@@ -17,7 +17,7 @@ func TestEachPartWritesThePagesClass(t *testing.T) {
 	example.PagesClass(t, ".", []string{"ConsolePage"}, []example.ClassRow{
 		{Root: "cui-console-btn", Node: console.ConsoleBtn{Href: "", Label: "x", AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Error: false, Attrs: nil, Class: page}},
 		{Root: "cui-console-badge", Node: console.ConsoleBadge{Label: "x", Color: console.ConsoleColorNeutral, Class: page}},
-		{Root: "cui-console-banner", Node: console.ConsoleBanner{Color: console.ConsoleColorInfo, Icon: lucide.Icon{}, Title: "x", Class: page, Children: nil}},
+		{Root: "cui-console-banner", Node: console.ConsoleBanner{Color: console.ConsoleColorInfo, Icon: lucide.Icon{}, Title: "x", Body: nil, Class: page, Children: nil}},
 		{Root: "cui-console-chart", Node: console.ConsoleChart{AriaLabel: "x", Scale: nil, Empty: "", Axis: nil, Class: page, Children: nil}},
 		{Root: "cui-console-dialog", Node: console.ConsoleDialog{ID: "x", Title: g.Text("x"), Attrs: nil, Class: page, Children: nil}},
 		{Root: "cui-console-disclosure", Node: console.ConsoleDisclosure{Variant: console.ConsoleDisclosureVariantLine, Open: false, Summary: "x", SummaryClass: "", Class: page, Children: nil}},

@@ -11,10 +11,10 @@ import (
 )
 
 func TestBannerRendersTheExamples(t *testing.T) {
-	warning := console.ConsoleBanner{Color: console.ConsoleColorWarning, Icon: lucide.TriangleAlert, Title: "Symbols are missing", Class: "", Children: g.Group{
-		h.P(h.Class("cui-console-banner-body"), g.Text("Upload a dSYM in "), textLink("#settings", "Settings"), g.Text(" to see function names in this crash.")),
-		h.P(h.Class("cui-console-banner-actions"), h.A(h.Class("cui-console-btn"), h.Data("size", "sm"), h.Href("#upload"), g.Text("Upload dSYM"))),
-	}}
+	warning := console.ConsoleBanner{Color: console.ConsoleColorWarning, Icon: lucide.TriangleAlert, Title: "Symbols are missing", Class: "",
+		Body:     g.Group{g.Text("Upload a dSYM in "), textLink("#settings", "Settings"), g.Text(" to see function names in this crash.")},
+		Children: h.P(h.Class("cui-console-banner-actions"), h.A(h.Class("cui-console-btn"), h.Data("size", "sm"), h.Href("#upload"), g.Text("Upload dSYM"))),
+	}
 	example.Check(t, warning, "console/console-banner/examples/banner.html")
 
 	rows := []struct {
@@ -29,7 +29,7 @@ func TestBannerRendersTheExamples(t *testing.T) {
 	}
 	var banners g.Group
 	for _, r := range rows {
-		banners = append(banners, console.ConsoleBanner{Color: r.color, Icon: r.icon, Title: "", Class: "", Children: h.P(h.Class("cui-console-banner-body"), r.body)})
+		banners = append(banners, console.ConsoleBanner{Color: r.color, Icon: r.icon, Title: "", Body: r.body, Class: "", Children: nil})
 	}
 	example.Check(t, h.Div(h.Class("grid gap-3"), banners), "console/console-banner/examples/colors.html")
 }
