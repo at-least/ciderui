@@ -42,6 +42,14 @@ export const cases = [
     ],
   },
   {
+    name: 'help',
+    html: ex('help'),
+    widths: [1200, 390],
+    checks: [
+      { target: '.cui-field-help', props: [...SIZE, 'color', 'letter-spacing', 'margin-top'], golden: 'the error message\'s size and place, in the secondary text: the store\'s form hints (retail: not one measured alone)' },
+    ],
+  },
+  {
     name: 'long label',
     html: ex('field').replace('>Email</label>', `>${LONG}</label>`),
     widths: [390],

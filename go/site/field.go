@@ -22,6 +22,9 @@ type Field struct {
 	// Invalid: the red edge with no message to show (a value too short to
 	// judge); the input writes aria-invalid when set or Error is.
 	Invalid bool
+	// Help: a line under the field that says what to write, wired to its
+	// input; "" for none.
+	Help string
 	// Prefix: a currency or a country code ($, +1).
 	Prefix string
 	// Attrs: nodes appended to the <input> (disabled, hx-post, inputmode, pattern, required); nil for none.
@@ -40,10 +43,14 @@ func (f Field) Render(w io.Writer) error {
 		panic("site.Field needs a Label")
 	}
 	message := f.ID + "-message"
+	help := f.ID + "-help"
 	prefix := f.ID + "-prefix"
 	var ids []string
 	if f.Prefix != "" {
 		ids = append(ids, prefix)
+	}
+	if f.Help != "" {
+		ids = append(ids, help)
 	}
 	if f.Error != "" {
 		ids = append(ids, message)
@@ -62,6 +69,7 @@ func (f Field) Render(w io.Writer) error {
 			h.Label(h.Class("cui-field-label"), h.For(f.ID), g.Text(f.Label)),
 			g.If(f.Prefix != "", h.Span(h.Class("cui-field-prefix"), h.ID(prefix), g.Text(f.Prefix))),
 		),
+		g.If(f.Help != "", h.P(h.Class("cui-field-help"), h.ID(help), g.Text(f.Help))),
 		g.If(f.Error != "", h.P(h.Class("cui-field-message"), h.ID(message), glyph.Alert, g.Text(f.Error))),
 	}.Render(w)
 }

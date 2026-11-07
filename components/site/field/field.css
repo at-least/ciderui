@@ -115,6 +115,15 @@
     }
   }
 
+  .cui-field-help {
+    margin: 8px 0 0;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: var(--cui-tracking-12);
+    color: var(--cui-c-text-2);
+  }
+
   .cui-field-message {
     display: flex;
     margin: 8px 0 0;
