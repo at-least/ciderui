@@ -23,8 +23,6 @@
   /* @invariant: an opened nav menu's ground, and the global nav's opened search's */
   --cui-c-menu: light-dark(#fafafc, #161617);
   --cui-c-on-menu: light-dark(#333336, #e8e8ed);
-  /* @invariant: over the page under the global nav's opened search */
-  /* @invariant: a rule between the footer's rows */
   --cui-c-field: rgb(255 255 255 / 0.8);
   --cui-c-field-error: #fff2f4;
   --cui-c-field-disabled: rgb(0 0 0 / 0.01);
@@ -131,13 +129,13 @@
   /* @external: a cue's shadow under its white, in em so it grows with the type: not
      tv.apple.com's, whose cues are its <video>'s own text track; muse's */
   --cui-video-cue-shadow: 0 0.05em 0.1em rgb(0 0 0 / 0.6), 0 0 0.5em rgb(0 0 0 / 0.4);
-  /* @external: the scrubber's preview's picture: a hairline that edges it on a
-     picture as dark as its own, a drop that lifts it off a bright one;
-     muse's, tv.apple.com's trailers showing none */
   /* @external: a control of words on the picture: its fill, and hovered or pressed;
      muse's, tv.apple.com's bar having none */
   --cui-video-control-fill: rgb(255 255 255 / 0.16);
   --cui-video-control-fill-hover: rgb(255 255 255 / 0.24);
+  /* @external: the scrubber's preview's picture: a hairline that edges it on a
+     picture as dark as its own, a drop that lifts it off a bright one;
+     muse's, tv.apple.com's trailers showing none */
   --cui-video-preview-shadow: 0 0 0 1px rgb(255 255 255 / 0.15), 0 4px 12px rgb(0 0 0 / 0.4);
 }
 

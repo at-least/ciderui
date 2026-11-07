@@ -61,10 +61,7 @@ export const SIZE = ['font-size', 'line-height', 'font-weight'];
 export const RADIUS = ['border-top-left-radius'];
 export const TEXT = ['display', 'text-align', 'white-space', 'text-decoration-line', 'cursor', 'vertical-align', 'opacity'];
 export const OUTLINE = ['outline-style', 'outline-color', 'outline-width', 'outline-offset'];
-export const LINK = ['text-decoration-line', 'text-decoration-color'];
 export const MOTION = ['transition-property', 'transition-duration', 'transition-timing-function'];
-export const WITH_PANEL = 'shown with its panel, the panel\'s reveal its only motion: apple.com\'s fade in after the panel opens, one after another, time the reader waits for nothing (DESIGN.md decision 25)';
-export const DIM = 'the page dimmed alone: apple.com\'s also blurs it, an effect that only draws the eye and makes the page harder to read beside what opened (DESIGN.md decision 25)';
 
 export const WITH_1600 = [1600, ...WIDTHS];
 

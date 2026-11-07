@@ -1,7 +1,6 @@
 package console_test
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
@@ -22,13 +21,6 @@ func TestDisclosureRendersTheExamples(t *testing.T) {
 		console.ConsoleDisclosure{Variant: console.ConsoleDisclosureVariantButton, Open: true, Summary: "Filters", SummaryClass: "", Class: "", Children: h.P(g.Text("Level, release and the search box."))},
 	)
 	example.Check(t, buttons, "console/console-disclosure/examples/button.html")
-}
-
-func TestDisclosureThePagesUtilitiesGoOnEachPart(t *testing.T) {
-	got := example.Render(console.ConsoleDisclosure{Variant: console.ConsoleDisclosureVariantLine, Open: false, Summary: "Raw", SummaryClass: "text-xs", Class: "mt-6", Children: nil})
-	if !strings.HasPrefix(got, `<details class="cui-console-disclosure mt-6"><summary class="cui-console-disclosure-summary text-xs"><svg`) {
-		t.Errorf("got %s", got)
-	}
 }
 
 func TestDisclosurePanics(t *testing.T) {

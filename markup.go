@@ -64,7 +64,6 @@ func vocabularyOf(set string) vocabulary {
 }
 
 // @invariant: a stylesheet's parse failure names the stylesheet it is in
-// @invariant: a stylesheet's parse failure names the stylesheet it is in
 func parsed[T any](path string, parse func() T) T {
 	defer func() {
 		if r := recover(); r != nil {

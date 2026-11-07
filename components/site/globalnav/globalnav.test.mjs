@@ -1,4 +1,4 @@
-import { DIM, examples, MOTION, OUTLINE, PADDING, SIZE, WITH_PANEL } from '../../../test/harness.mjs';
+import { examples, MOTION, PADDING, SIZE } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const NAV = ex('globalnav');
