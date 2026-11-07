@@ -17,7 +17,11 @@ type Field struct {
 	Label        string
 	Autocomplete string
 	Value        string
-	Error        string
+	// Error: the message under the field, wired to its input; implies invalid.
+	Error string
+	// Invalid: the red edge with no message to show (a value too short to
+	// judge); the input writes aria-invalid when set or Error is.
+	Invalid bool
 	// Prefix: a currency or a country code ($, +1).
 	Prefix string
 	// Attrs: nodes appended to the <input> (disabled, hx-post, inputmode, pattern, required); nil for none.
@@ -51,7 +55,7 @@ func (f Field) Render(w io.Writer) error {
 			h.Input(h.Class("cui-field-input"), h.ID(f.ID), h.Type(f.Type), h.Name(f.Name), h.Placeholder(" "),
 				g.If(f.Autocomplete != "", h.AutoComplete(f.Autocomplete)),
 				g.If(f.Value != "", h.Value(f.Value)),
-				g.If(f.Error != "", h.Aria("invalid", "true")),
+				g.If(f.Error != "" || f.Invalid, h.Aria("invalid", "true")),
 				g.If(described != "", h.Aria("describedby", described)),
 				f.Attrs,
 			),

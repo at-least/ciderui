@@ -1,16 +1,18 @@
 package site_test
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/internal/example"
+	"github.com/at-least/ciderui/go/lucide"
 	"github.com/at-least/ciderui/go/site"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
 
 func link(label, href string, variant site.BtnVariant, size site.BtnSize) site.Btn {
-	return site.Btn{Href: href, Label: label, Submit: false, Variant: variant, Size: size, Block: false, Attrs: nil, Class: ""}
+	return site.Btn{Href: href, Label: label, Icon: nil, Submit: false, Variant: variant, Size: size, Block: false, Attrs: nil, Class: ""}
 }
 
 func TestBtnRendersTheExamples(t *testing.T) {
@@ -44,6 +46,17 @@ func TestBtnSubmits(t *testing.T) {
 	want := `<button class="cui-btn" type="submit">Buy</button>`
 	if got := example.Render(b); got != want {
 		t.Errorf("got %s, want %s", got, want)
+	}
+}
+
+// the page's node before the label: Google's G, a spinner, an icon
+func TestBtnDrawsItsIconBeforeItsLabel(t *testing.T) {
+	b := link("Sign in with Google", "#login", site.BtnVariantSecondaryNeutral, site.BtnSizeLarge)
+	b.Icon = lucide.Check
+	got := example.Render(b)
+	if !strings.HasPrefix(got, `<a class="cui-btn" data-variant="secondary-neutral" data-size="lg" href="#login"><svg aria-hidden="true"`) ||
+		!strings.HasSuffix(got, `</svg>Sign in with Google</a>`) {
+		t.Errorf("got %s", got)
 	}
 }
 

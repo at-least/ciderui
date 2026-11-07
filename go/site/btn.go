@@ -28,6 +28,10 @@ type Btn struct {
 	// Href: "" for a <button>.
 	Href  string
 	Label string
+	// Icon: before the Label, the page's node — Google's G, a spinner,
+	// [lucide.Check]; nil for none. Not [lucide.Icon], the console button's
+	// type: a site's button is the store's, whose marks are its page's own.
+	Icon g.Node
 	// Submit: a <button> that sends its form; otherwise type="button".
 	Submit  bool
 	Variant BtnVariant
@@ -51,12 +55,13 @@ func (b Btn) Render(w io.Writer) error {
 		root += " cui-btn-block"
 	}
 	attrs := g.Group{class.Root(root, b.Class), g.If(b.Variant.value != "", h.Data("variant", b.Variant.value)), g.If(b.Size.value != "", h.Data("size", b.Size.value))}
+	content := g.Group{b.Icon, g.Text(b.Label)}
 	if b.Href != "" {
-		return h.A(attrs, h.Href(b.Href), b.Attrs, g.Text(b.Label)).Render(w)
+		return h.A(attrs, h.Href(b.Href), b.Attrs, content).Render(w)
 	}
 	kind := "button"
 	if b.Submit {
 		kind = "submit"
 	}
-	return h.Button(attrs, h.Type(kind), b.Attrs, g.Text(b.Label)).Render(w)
+	return h.Button(attrs, h.Type(kind), b.Attrs, content).Render(w)
 }
