@@ -371,6 +371,11 @@ for (const file of sheets) {
   const values = [...text.matchAll(/:\s*([^;{}]+)[;}]/g)].map(m => m[1]).join(' ; ').replace(/--[\w-]+/g, '');
   const literal = values.match(/#[0-9a-f]{3,8}\b|\b(rgba?|hsla?|hwb|lab|lch|oklab|oklch|color)\(/i) ?? values.match(NAMED);
   check(`${file} writes no color of its own`, literal?.[0] ?? 'none', 'none');
+  // @invariant: rule 1: nothing !important, or a utility on the same element
+  // no longer wins — the one exception cut out below, which must override every
+  // transition a part declares, whatever its layer or specificity
+  const still = text.replace(/@media \(prefers-reduced-motion: reduce\) \{[\s\S]*?\n\}/, '');
+  check(`${file} writes nothing !important (rule 1)`, /!\s*important/i.test(still) ? 'has !important' : 'none', 'none');
   // @invariant: a console part reads the console's slots alone; the dialog's backdrop the
   // scrim, which the toolkit names none of, and the player the video's
   // (decision 28)

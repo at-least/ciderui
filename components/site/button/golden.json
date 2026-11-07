@@ -37,5 +37,6 @@
  "disabled | .cui-btn[data-variant=\"secondary\"]:hover | 390 | background-color": "rgba(0, 0, 0, 0)",
  "disabled | .cui-btn[data-variant=\"secondary\"]:hover | 390 | border-top-color": "rgb(0, 102, 204)",
  "disabled | .cui-btn[data-variant=\"secondary\"]:hover | 390 | border-bottom-color": "rgb(0, 102, 204)",
- "touch target | .cui-btn:not([data-size])::after | 390 | height": "44px"
+ "touch target | .cui-btn:not([data-size])::after | 390 | height": "44px",
+ "no touch target with a mouse | .cui-btn:not([data-size])::after | 1200 | content": "none"
 }

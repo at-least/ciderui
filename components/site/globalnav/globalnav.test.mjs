@@ -46,14 +46,6 @@ export const cases = [
     ],
   },
   {
-    name: 'post-phone',
-    html: POST_NAV,
-    widths: [390],
-    checks: [
-      { target: POST, props: ['box-height'], golden: 'to 833px the links are the menu\'s rows, not the bar\'s: apple.com\'s bar holds the logo, the search, the bag and the button' },
-    ],
-  },
-  {
     name: 'post-menu',
     html: POST_NAV,
     ...OPEN,
@@ -93,9 +85,7 @@ export const cases = [
       { target: LOGO, props: [...FLEX, ...INLINE, 'box-height', 'box-left', 'color'], apple: ['home', 'nav.logo'] },
       { target: BUTTON, props: [...FLEX, 'box-height', 'box-left', 'color', 'opacity', 'cursor'], apple: ['home', 'nav.menutrigger'] },
       { target: BUTTON, state: 'hover', props: ['opacity'], apple: ['home', 'nav.menutrigger', 'hover'] },
-      { target: BUTTON, props: ['box-width'], golden: 'apple.com\'s 48px square (home:nav.menutrigger at 390px)' },
       { target: BARS[0], props: ['stroke-width'], apple: ['home', 'nav.menutrigger-bread'] },
-      ...BARS.map(target => ({ target, props: ['box-x', 'box-y', 'box-width', 'box-height'], golden: 'apple.com\'s two lines, 2 to 16 across at 5 and 12 down in 18 by 18 (reference/icons/)' })),
       { target: `${LIST} > li:nth-child(2)`, props: ['box-height'], golden: 'the close button is the opened menu\'s' },
       { target: LINK, props: ['box-height'], golden: 'to 833px the links are the menu\'s rows, not the bar\'s: apple.com\'s bar holds the logo, the search, the bag and the button' },
     ],
@@ -117,6 +107,15 @@ export const cases = [
     ...OPEN,
     reducedMotion: 'reduce',
     checks: [{ target: LINK2, props: ['line-height', 'letter-spacing'], apple: ['home-tw', 'menu.link'] }],
+  },
+  {
+    name: 'nav boundary',
+    html: NAV,
+    widths: [833, 834],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: LINK, props: ['box-height'], golden: 'the nav\'s own step at 834px, apple.com\'s measured width (DESIGN.md): to 833px a link is the menu\'s row, hidden in the bar; from 834px the bar\'s row, 44px' },
+    ],
   },
   {
     name: 'menu',

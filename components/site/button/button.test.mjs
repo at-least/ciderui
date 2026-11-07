@@ -97,6 +97,7 @@ export const cases = [
     html: ex('sizes'),
     widths: [1200],
     checks: [
+      { target: '.cui-btn:not([data-size])', pseudo: '::after', props: ['content'], golden: 'no invisible overlay where no touch screen is: the pointer finds the label, not a sheet over it' },
     ],
   },
 ];

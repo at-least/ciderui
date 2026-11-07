@@ -9,7 +9,7 @@ import { open, quit } from './browser.mjs';
 import { check, done } from './check.mjs';
 
 const AXE = readFileSync(createRequire(import.meta.url).resolve('axe-core/axe.min.js'), 'utf8');
-const RULES = ['color-contrast', 'link-in-text-block'];
+const RULES = ['color-contrast', 'link-in-text-block', 'button-name', 'link-name', 'aria-valid-attr-value'];
 
 const SURFACES = {
   site: {

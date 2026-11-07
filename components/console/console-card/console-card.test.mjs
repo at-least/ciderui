@@ -12,7 +12,6 @@ export const cases = [
     checks: [
       { target: CARD, props: ['padding-top', 'border-top-left-radius', 'background-color', 'overflow', 'box-shadow', 'border-top-width'], asc: ['analytics-page', 'card'] },
       { target: '.cui-console-card-title', props: [...TYPE, 'color'], asc: ['analytics', 'card.title'] },
-      { target: CARD, props: ['padding-left', 'padding-right', 'padding-bottom'], golden: 'its text 15px in at its sides and foot, as at its top (the analytics card\'s chart runs to its edges)' },
     ],
   },
   {

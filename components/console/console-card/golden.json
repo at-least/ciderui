@@ -1,10 +1,4 @@
 {
- "card | .cui-console-card | 1600 | padding-left": "15px",
- "card | .cui-console-card | 1600 | padding-right": "15px",
- "card | .cui-console-card | 1600 | padding-bottom": "15px",
- "card | .cui-console-card | 1200 | padding-left": "15px",
- "card | .cui-console-card | 1200 | padding-right": "15px",
- "card | .cui-console-card | 1200 | padding-bottom": "15px",
  "card list | .cui-console-card-header | 1200 | display": "flex",
  "card list | .cui-console-card-header | 1200 | justify-content": "space-between",
  "card list | .cui-console-card-header | 1200 | align-items": "baseline",

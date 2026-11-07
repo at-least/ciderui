@@ -33,12 +33,6 @@ export const cases = [
     ],
   },
   {
-    name: 'nested',
-    html: ex('accordion').replace('<details class="cui-accordion-item">', '<details class="cui-accordion-item" open>'),
-    checks: [
-    ],
-  },
-  {
     name: 'click',
     html: ex('accordion'),
     widths: [1200],
