@@ -63,7 +63,7 @@ func TestChoiceMenuRendersTheExample(t *testing.T) {
 func TestMenuItemWithNoHrefIsNotAvailable(t *testing.T) {
 	got := example.Render(console.ConsoleMenuItem{Href: "", Label: "x", Icon: lucide.Icon{}, Current: true, Class: ""})
 	if want := `<a class="cui-console-menu-item" aria-disabled="true"><span class="cui-console-menu-label">x</span></a>`; got != want {
-		t.Errorf("got  %s\nwant %s", got, want)
+		t.Errorf("an item with no Href is a link or marked current, not unavailable:\n got: %s\nwant: %s", got, want)
 	}
 }
 

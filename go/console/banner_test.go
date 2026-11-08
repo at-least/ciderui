@@ -1,6 +1,7 @@
 package console_test
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
@@ -30,6 +31,13 @@ func TestBannerRendersTheExamples(t *testing.T) {
 		banners = append(banners, console.ConsoleBanner{Color: r.color, Title: "", Body: r.body, Class: "", Children: nil})
 	}
 	example.Check(t, h.Div(h.Class("grid gap-3"), banners), "console/console-banner/examples/colors.html")
+}
+
+func TestBannerWithNoBodyWritesNoBodyBlock(t *testing.T) {
+	got := example.Render(console.ConsoleBanner{Color: console.ConsoleColorInfo, Title: "Synced", Body: nil, Class: "", Children: nil})
+	if want := `<div><p class="cui-console-banner-title">Synced</p></div></div>`; !strings.HasSuffix(got, want) {
+		t.Errorf("a banner with no Body wrote a body block after its title:\n got: %s\nwant: …%s", got, want)
+	}
 }
 
 func textLink(href, text string) g.Node {

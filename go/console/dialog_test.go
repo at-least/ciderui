@@ -23,10 +23,10 @@ func TestDialogRendersTheExample(t *testing.T) {
 	example.Check(t, dialog, "console/console-dialog/examples/dialog.html")
 }
 
-func TestDialogTakesAttributes(t *testing.T) {
+func TestDialogWritesItsAttrsAfterItsOwn(t *testing.T) {
 	got := example.Render(console.ConsoleDialog{ID: "confirm", Title: g.Text("Sure?"), Attrs: h.Aria("describedby", "confirm-detail"), Class: "", Children: nil})
 	if want := `<dialog class="cui-console-dialog" id="confirm" aria-labelledby="confirm-title" aria-describedby="confirm-detail"><h2 class="cui-console-dialog-title" id="confirm-title">Sure?</h2></dialog>`; got != want {
-		t.Errorf("got  %s\nwant %s", got, want)
+		t.Errorf("the dialog's Attrs are not after its own id and aria-labelledby:\n got: %s\nwant: %s", got, want)
 	}
 }
 

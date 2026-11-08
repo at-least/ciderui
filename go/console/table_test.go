@@ -44,7 +44,7 @@ func TestTableBodyAttrsGoOnItsBody(t *testing.T) {
 	jobs.BodyAttrs = h.ID("rows")
 	got := example.Render(jobs)
 	if want := `<tbody id="rows"></tbody>`; !strings.Contains(got, want) {
-		t.Errorf("no %s in %s", want, got)
+		t.Errorf("the table's BodyAttrs are not on its <tbody>: no %s in %s", want, got)
 	}
 }
 

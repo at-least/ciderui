@@ -121,8 +121,9 @@ func TestAssetsServesEveryFontAStylesheetNames(t *testing.T) {
 
 func TestAssetsFindsNothingElse(t *testing.T) {
 	for _, target := range []string{"/ciderui/", "/ciderui/site.css", "/ciderui/fonts/none.woff2", "/ciderui/fonts/../index.css", "/ciderui/index.css"} {
-		if got := get(t, target, "").StatusCode; got != http.StatusNotFound {
-			t.Errorf("%s served %d, want 404", target, got)
+		response := get(t, target, "")
+		if got := body(t, response); response.StatusCode != http.StatusNotFound || string(got) != "404 page not found\n" {
+			t.Errorf("%s served %d %q, want a 404 and nothing else", target, response.StatusCode, got)
 		}
 	}
 }

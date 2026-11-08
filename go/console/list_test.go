@@ -29,7 +29,7 @@ func TestListItemRendersTheContentExample(t *testing.T) {
 func TestListItemARowOfItsOwnContentNeedsNoLabel(t *testing.T) {
 	got := example.Render(console.ConsoleListItem{Href: "", Label: "", Detail: "", Class: "py-3", Children: h.P(g.Text("Shop App"))})
 	if want := `<div class="cui-console-list-item py-3"><p>Shop App</p></div>`; got != want {
-		t.Errorf("got  %s\nwant %s", got, want)
+		t.Errorf("a row of its own content wrote more than that content:\n got: %s\nwant: %s", got, want)
 	}
 }
 

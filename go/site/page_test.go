@@ -15,22 +15,13 @@ func page() site.Page {
 	return site.Page{Lang: "zh-Hant", Title: "課程", Head: nil, Class: "", SkipLabel: "", Children: h.P(g.Text("x"))}
 }
 
-func TestPageWritesTheDocument(t *testing.T) {
-	want := `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>課程</title><link rel="stylesheet" href="` + ciderui.SiteStylesheet() + `"></head><body><p>x</p></body></html>`
-	if got := example.Render(page()); got != want {
-		t.Errorf("got %s\nwant %s", got, want)
-	}
-}
-
-func TestPageWritesItsClassAndHeadAfterTheStylesheet(t *testing.T) {
+func TestPageWritesTheDocumentItsClassAndHeadAfterTheStylesheet(t *testing.T) {
 	p := page()
 	p.Class = "scroll-pt-16"
 	p.Head = h.Link(h.Rel("stylesheet"), h.Href("/own.css"))
-	got := example.Render(p)
-	for _, want := range []string{`<html lang="zh-Hant" class="scroll-pt-16">`, `.css"><link rel="stylesheet" href="/own.css"></head>`} {
-		if !strings.Contains(got, want) {
-			t.Errorf("no %s in %s", want, got)
-		}
+	want := `<!doctype html><html lang="zh-Hant" class="scroll-pt-16"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>課程</title><link rel="stylesheet" href="` + ciderui.SiteStylesheet() + `"><link rel="stylesheet" href="/own.css"></head><body><p>x</p></body></html>`
+	if got := example.Render(p); got != want {
+		t.Errorf("the page is not the document with its class on <html> and its head after the site stylesheet\n got: %s\nwant: %s", got, want)
 	}
 }
 
@@ -41,7 +32,7 @@ func TestPageWritesItsSkipLinkFirst(t *testing.T) {
 	got := example.Render(p)
 	want := `<body><a class="cui-btn cui-skip" href="#main">跳到主要內容</a><main id="main" tabindex="-1">`
 	if !strings.Contains(got, want) {
-		t.Errorf("no %s in %s", want, got)
+		t.Errorf("the skip link is not the body's first element, landing on its main: no %s in %s", want, got)
 	}
 }
 

@@ -1,10 +1,10 @@
 package example_test
 
 import (
-	"fmt"
 	"io"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui"
@@ -26,14 +26,20 @@ func (r *recorder) Errorf(string, ...any) { r.failures++ }
 func TestCheckFailsOnlyWhereTheNodeDiffersFromItsExample(t *testing.T) {
 	const path = "site/ribbon/examples/ribbon.html"
 	same := g.Raw(example.Read(path))
-	var pass, fail recorder
+	var pass recorder
 	example.Check(&pass, same, path)
 	if pass.failures != 0 {
 		t.Errorf("Check failed %d times on the example's own markup, want 0", pass.failures)
 	}
-	example.Check(&fail, g.Group{same, g.Text("x")}, path)
-	if fail.failures != 1 {
-		t.Errorf("Check failed %d times on markup the example does not have, want 1", fail.failures)
+	for name, other := range map[string]g.Node{
+		"markup the example does not have":        g.Group{same, g.Text("x")},
+		"markup as long as the example's, not it": g.Raw(strings.Replace(example.Read(path), "now.", "now!", 1)),
+	} {
+		var fail recorder
+		example.Check(&fail, other, path)
+		if fail.failures != 1 {
+			t.Errorf("Check failed %d times on %s, want 1", fail.failures, name)
+		}
 	}
 }
 
@@ -51,18 +57,19 @@ func TestRenderWritesQuotesAsTheExamplesDo(t *testing.T) {
 }
 
 func TestRenderPanicsWithEachProblemCheckMarkupFinds(t *testing.T) {
-	const html = `<p class="cui-no-such"></p><p class="cui-nor-this"></p>`
-	problems := ciderui.CheckMarkup(html)
-	if len(problems) != 2 {
-		t.Fatalf("CheckMarkup found %d problems in two unknown classes, want 2: %q", len(problems), problems)
-	}
-	want := "example.Render: " + problems[0] + "\n" + problems[1]
-	defer func() {
-		if got := fmt.Sprint(recover()); got != want {
-			t.Errorf("Render of a refused page panicked with %q, want %q", got, want)
+	for html, count := range map[string]int{
+		`<p class="cui-no-such"></p>`:                             1,
+		`<p class="cui-no-such"></p><p class="cui-nor-this"></p>`: 2,
+	} {
+		problems := ciderui.CheckMarkup(html)
+		if len(problems) != count {
+			t.Fatalf("CheckMarkup found %d problems in %s, want %d: %q", len(problems), html, count, problems)
 		}
-	}()
-	example.Render(g.Raw(html))
+		want := "example.Render: " + strings.Join(problems, "\n")
+		if got := example.PanicOf(g.Raw(html)); got != want {
+			t.Errorf("Render of %s panicked with %q, want %q", html, got, want)
+		}
+	}
 }
 
 type part struct{ name string }

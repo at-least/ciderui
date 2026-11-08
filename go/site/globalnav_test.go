@@ -17,16 +17,13 @@ func globalNav(links []site.NavLink) site.GlobalNav {
 	return site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: links, AriaLabel: "Global", MenuAriaLabel: "Menu", CloseAriaLabel: "Close", Class: ""}
 }
 
-func TestGlobalNavRendersTheExample(t *testing.T) {
+func TestGlobalNavRendersTheExamples(t *testing.T) {
 	example.Check(t, globalNav([]site.NavLink{
 		{Label: "Store", Href: "/store", Post: false},
 		{Label: "Laptops", Href: "/laptops", Post: false},
 		{Label: "Tablets", Href: "/tablets", Post: false},
 		{Label: "Support", Href: "/support", Post: false},
 	}), "site/globalnav/examples/globalnav.html")
-}
-
-func TestGlobalNavRendersThePostExample(t *testing.T) {
 	example.Check(t, globalNav([]site.NavLink{
 		{Label: "Store", Href: "/store", Post: false},
 		{Label: "Laptops", Href: "/laptops", Post: false},
@@ -35,16 +32,17 @@ func TestGlobalNavRendersThePostExample(t *testing.T) {
 	}), "site/globalnav/examples/post.html")
 }
 
-// every word the nav writes of its own is the caller's
+// every word the nav writes of its own, and its Home, are the caller's
 func TestGlobalNavWritesItsWordsInThePagesLanguage(t *testing.T) {
-	got := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: []site.NavLink{{Label: "商店", Href: "/store", Post: false}}, AriaLabel: "主要選單", MenuAriaLabel: "選單", CloseAriaLabel: "關閉", Class: ""})
+	got := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/zh-tw/", LogoAriaLabel: "回首頁", Links: []site.NavLink{{Label: "商店", Href: "/store", Post: false}}, AriaLabel: "主要選單", MenuAriaLabel: "選單", CloseAriaLabel: "關閉", Class: ""})
 	for _, want := range []string{
 		`<nav class="cui-globalnav" aria-label="主要選單">`,
+		`class="cui-globalnav-logo" href="/zh-tw/" aria-label="回首頁">`,
 		`class="cui-globalnav-menubutton" popovertarget="cui-globalnav-menu" aria-label="選單">`,
 		`popovertargetaction="hide" aria-label="關閉"`,
 	} {
 		if !strings.Contains(got, want) {
-			t.Errorf("%s has no %s", got, want)
+			t.Errorf("a word the nav writes is not the caller's: no %s in %s", want, got)
 		}
 	}
 }

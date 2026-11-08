@@ -18,7 +18,7 @@ func TestFieldRendersTheExamples(t *testing.T) {
 	example.Check(t, site.Field{Type: site.FieldTypeEmail, Name: "account", Label: "Account Email", Autocomplete: "email", Value: "", Error: "", Invalid: false, Help: "The same one you use in the app.", Prefix: "", Attrs: nil, Class: ""}, "site/field/examples/help.html")
 }
 
-func TestFieldItsPrefixAndErrorBothDescribeIt(t *testing.T) {
+func TestFieldItsPrefixHelpAndMessageDescribeItInThatOrder(t *testing.T) {
 	got := example.Render(site.Field{Type: site.FieldTypeTel, Name: "phone", Label: "Phone", Autocomplete: "", Value: "", Error: "Please enter a number.", Invalid: false, Help: "The number you signed up with.", Prefix: "+1", Attrs: nil, Class: ""})
 	for _, want := range []string{
 		`aria-describedby="phone-prefix phone-help phone-message">`,
@@ -26,8 +26,15 @@ func TestFieldItsPrefixAndErrorBothDescribeIt(t *testing.T) {
 		`<p class="cui-field-message" id="phone-message">`,
 	} {
 		if !strings.Contains(got, want) {
-			t.Errorf("%s has no %s", got, want)
+			t.Errorf("the input is not described by its prefix, help and message in that order: no %s in %s", want, got)
 		}
+	}
+}
+
+func TestFieldTypeTelWritesATelInput(t *testing.T) {
+	got := example.Render(site.Field{Type: site.FieldTypeTel, Name: "phone", Label: "Phone", Autocomplete: "", Value: "", Error: "", Invalid: false, Help: "", Prefix: "", Attrs: nil, Class: ""})
+	if !strings.Contains(got, `<input class="cui-field-input" id="phone" type="tel"`) {
+		t.Errorf("a phone field does not bring up the phone keypad: no type=\"tel\" on its input in %s", got)
 	}
 }
 

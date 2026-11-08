@@ -18,7 +18,7 @@ func consolePage() console.ConsolePage {
 func TestConsolePageWritesTheDocument(t *testing.T) {
 	want := `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Jobs</title><link rel="stylesheet" href="` + ciderui.ConsoleStylesheet() + `"></head><body class="cui-console-page"><p>x</p></body></html>`
 	if got := example.Render(consolePage()); got != want {
-		t.Errorf("got %s\nwant %s", got, want)
+		t.Errorf("the document is not the kit's skeleton linking its stylesheet:\n got: %s\nwant: %s", got, want)
 	}
 }
 
@@ -28,7 +28,7 @@ func TestConsolePageWritesItsClasses(t *testing.T) {
 	got := example.Render(p)
 	for _, want := range []string{`<html lang="en" class="cui-light">`, `<body class="cui-console-page">`} {
 		if !strings.Contains(got, want) {
-			t.Errorf("no %s in %s", want, got)
+			t.Errorf("the <html> did not take Class, or the <body> lost its own: no %s in %s", want, got)
 		}
 	}
 }
@@ -39,7 +39,7 @@ func TestConsolePageWritesItsHeadAfterTheKitsStylesheet(t *testing.T) {
 	got := example.Render(p)
 	want := `<link rel="stylesheet" href="` + ciderui.ConsoleStylesheet() + `"><link rel="stylesheet" href="/own.css">`
 	if !strings.Contains(got, want) {
-		t.Errorf("no %s in %s", want, got)
+		t.Errorf("the page's Head is not right after the kit's stylesheet: no %s in %s", want, got)
 	}
 }
 
@@ -50,7 +50,7 @@ func TestConsolePageWritesItsSkipLinkFirst(t *testing.T) {
 	got := example.Render(p)
 	want := `<body class="cui-console-page"><a class="cui-console-btn cui-console-skip" data-variant="filled" href="#main">Skip to Content</a><main id="main" tabindex="-1">`
 	if !strings.Contains(got, want) {
-		t.Errorf("no %s in %s", want, got)
+		t.Errorf("the skip link to #main is not the body's first child: no %s in %s", want, got)
 	}
 }
 

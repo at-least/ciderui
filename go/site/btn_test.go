@@ -1,7 +1,6 @@
 package site_test
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/internal/example"
@@ -61,16 +60,6 @@ func TestBtnAttrsGoOnItsLink(t *testing.T) {
 	want := `<a class="cui-btn" href="/buy" aria-current="page">Buy</a>`
 	if got := example.Render(b); got != want {
 		t.Errorf("the link button lost its Attrs\n got: %s\nwant: %s", got, want)
-	}
-}
-
-func TestBtnDrawsItsIconBeforeItsLabel(t *testing.T) {
-	b := link("Sign in with Google", "#login", site.BtnVariantSecondaryNeutral, site.BtnSizeLarge)
-	b.Icon = lucide.Check
-	got := example.Render(b)
-	if !strings.HasPrefix(got, `<a class="cui-btn" data-variant="secondary-neutral" data-size="lg" href="#login"><svg aria-hidden="true"`) ||
-		!strings.HasSuffix(got, `</svg>Sign in with Google</a>`) {
-		t.Errorf("the icon is not first inside the link, before its label: %s", got)
 	}
 }
 

@@ -16,6 +16,13 @@ func TestEmptyRendersTheExamples(t *testing.T) {
 	example.Check(t, large, "console/console-empty/examples/large.html")
 }
 
+func TestEmptyWithNoBodyWritesNoBodyLine(t *testing.T) {
+	got := example.Render(console.ConsoleEmpty{Size: console.ConsoleEmptySizeSmall, Icon: lucide.Icon{}, Title: "No Data", Body: "", Class: ""})
+	if want := `<div class="cui-console-empty" data-size="sm"><p class="cui-console-empty-title">No Data</p></div>`; got != want {
+		t.Errorf("an empty state with no Body wrote a line for one:\n got: %s\nwant: %s", got, want)
+	}
+}
+
 func TestEmptyPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleEmpty {
 		return console.ConsoleEmpty{Size: console.ConsoleEmptySizeSmall, Icon: lucide.Icon{}, Title: "x", Body: "", Class: ""}

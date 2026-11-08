@@ -4,6 +4,7 @@ import (
 	"os"
 	"path/filepath"
 	"slices"
+	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui"
@@ -82,6 +83,17 @@ func TestCheckMarkupRefusesAnAriaStateValueARIALacks(t *testing.T) {
 	})
 }
 
+// @external: ARIA's stateful attributes; a typo in any of them is read wrong by assistive technology
+func TestCheckMarkupHoldsEachAriaStateToARIAsValues(t *testing.T) {
+	for _, name := range []string{"aria-checked", "aria-current", "aria-disabled", "aria-expanded", "aria-invalid", "aria-pressed", "aria-selected", "aria-sort"} {
+		problems := ciderui.CheckMarkup(`<li class="cui-console-menu-item" ` + name + `="typo">a</li>`)
+		want := name + `="typo" on <li class="cui-console-menu-item">: not a value of ` + name + " ("
+		if len(problems) != 1 || !strings.HasPrefix(problems[0], want) {
+			t.Errorf("%s=\"typo\" on a part: CheckMarkup reported %q, want one problem beginning %q", name, problems, want)
+		}
+	}
+}
+
 // @external: a site's whole page, as any writer's HTML has it
 func TestCheckMarkupReadsHTMLAsABrowserDoes(t *testing.T) {
 	noClass := func(tag string) []string {
@@ -112,6 +124,8 @@ func TestCheckMarkupReadsThePagesStylesheet(t *testing.T) {
 		{"a console part on a site page", page(ciderui.SiteStylesheet(), `<span class="cui-console-badge">a</span>`), []string{`class "cui-console-badge" on <span class="cui-console-badge">: a console class; this page links the site stylesheet`}},
 		{"a value no rule selects on a console page", page(ciderui.ConsoleStylesheet(), `<span class="cui-console-badge" data-color="purple">a</span>`), []string{`data-color="purple" on <span class="cui-console-badge">: cui-console-badge takes data-color "error", "info", "success" or "warning", or none for its default`}},
 		{"a console part on a console page", page(ciderui.ConsoleStylesheet(), `<span class="cui-console-badge" data-color="error">a</span>`), nil},
+		{"a misspelt class on a console page", page(ciderui.ConsoleStylesheet(), `<span class="cui-console-badg">a</span>`), []string{`class "cui-console-badg" on <span class="cui-console-badg">: the console stylesheet this page links has no such class`}},
+		{"a data-* only the other set selects is the page's own", page(ciderui.SiteStylesheet(), `<a class="cui-btn" data-color="purple">a</a>`), nil},
 		{"the type on a console page", page(ciderui.ConsoleStylesheet(), `<p class="cui-body">a</p>`), nil},
 		{"another stylesheet is the site's own", page("/own.css", `<button class="cui-btn">a</button>`), nil},
 		{"a page in capitals", `<!doctype html><HTML><HEAD><LINK rel="stylesheet" href="` + ciderui.ConsoleStylesheet() + `"></HEAD><BODY><button class="cui-btn">a</button></BODY></HTML>`, []string{`class "cui-btn" on <button class="cui-btn">: a site class; this page links the console stylesheet`}},
