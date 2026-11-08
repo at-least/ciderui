@@ -41,8 +41,7 @@ function oklchToSrgb(l, c, h) {
   const lin = [4.0767416621 * l_ - 3.3077115913 * m_ + 0.2309699292 * s_, -1.2684380046 * l_ + 2.6097574011 * m_ - 0.3413193965 * s_, -0.0041960863 * l_ - 0.7034186147 * m_ + 1.7076147010 * s_];
   return lin.map(v => Math.min(1, Math.max(0, v))).map(v => (v <= 0.0031308 ? 12.92 * v : 1.055 * v ** (1 / 2.4) - 0.055) * 255);
 }
-// @external: as the browser computes it
-const rgb = (value) => {
+const computedRgb = (value) => {
   const [r, g, b, a] = channels(value);
   return a === 1 ? `rgb(${r}, ${g}, ${b})` : `rgba(${r}, ${g}, ${b}, ${a})`;
 };
@@ -74,9 +73,7 @@ const CONTRACT = {
   '--cui-c-on-bar-hover': [['home', 'nav.link', W, 'color', 'hover'], ['newsroom', 'nav.link', W, 'color', 'hover']],
   '--cui-c-menu': [['home', 'menu.content', 390, 'background-color'], ['newsroom', 'menu.content', 390, 'background-color']],
   '--cui-c-on-menu': [['home', 'menu.link', 390, 'color'], ['newsroom', 'menu.link', 390, 'color']],
-  // @external: the search opened: the home page's, and the Newsroom's dark nav's
-  // apple.com's local nav's rule: MacBook Air's, light, and MacBook Pro's, dark
-  // apple.com's own field (the retail page's form-textbox), and in a dark
+  // @external: apple.com's own field (the retail page's form-textbox), and in a dark
   // color scheme
   '--cui-c-field': [['retail', 'field.input', W, 'background-color'], ['retail-dark', 'field.input', W, 'background-color']],
   // @external: a field's states: the gift card's page's (an empty required field the
@@ -116,14 +113,14 @@ for (const [name, [light, dark]] of Object.entries(CONTRACT)) {
     if (typeof source === 'string') continue; // fitted: held by the contrast checks
     // @external: a ring drawn as a box-shadow reads as its color first
     const want = ref(...source).match(/rgba?\([^)]*\)/)[0];
-    check(`${name} ${side} is apple.com's ${source.slice(0, 2).join(':')}${source[4] ? ':' + source[4] : ''} ${source[3]}`, rgb(value), want);
+    check(`${name} ${side} is apple.com's ${source.slice(0, 2).join(':')}${source[4] ? ':' + source[4] : ''} ${source[3]}`, computedRgb(value), want);
   }
 }
 
 // @invariant: the console's colors: light the toolkit's, dark derived (decision 18:
-// not measured). A side its job's contrast
-// finds short is fitted (decision 21): FITTED's value, a step of the same
-// ramp (or the same step at another alpha), held by the contrast checks.
+// not measured). A side its job's contrast finds short is fitted (decision 21):
+// FITTED's value, a step of the same ramp (or the same step at another alpha),
+// held by the contrast checks.
 const SOURCES = {
   '--cui-c-console-brand-fill-hover': 'component-Button-variant-colorRole-brand-effect-hover-variant-filled-backgroundColor',
   '--cui-c-console-brand-fill-press': 'component-Button-variant-colorRole-brand-effect-press-variant-filled-backgroundColor',
@@ -337,7 +334,7 @@ check('--cui-font', vars['--cui-font'], '-apple-system, BlinkMacSystemFont, Inte
 check('--cui-font-mono', vars['--cui-font-mono'], 'ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace');
 check('--cui-focus-ring', vars['--cui-focus-ring'], '2px solid var(--cui-c-accent)');
 check('the focus ring is apple.com\'s width', ref('home', 'button', W, 'outline-width', 'focus-visible'), '2px');
-check('the focus ring is apple.com\'s color', rgb(sides('--cui-c-accent')[0]), ref('home', 'button', W, 'outline-color', 'focus-visible'));
+check('the focus ring is apple.com\'s color', computedRgb(sides('--cui-c-accent')[0]), ref('home', 'button', W, 'outline-color', 'focus-visible'));
 check('--cui-focus-ring-offset is apple.com\'s', vars['--cui-focus-ring-offset'], ref('home', 'button', W, 'outline-offset', 'focus-visible'));
 
 check('--cui-console-shadow-sidebar is App Store Connect\'s --tb-component-Sidebar-variant-variant-opaque-boxShadow', vars['--cui-console-shadow-sidebar'], tbTokens['--tb-component-Sidebar-variant-variant-opaque-boxShadow']);

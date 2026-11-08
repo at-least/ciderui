@@ -3,9 +3,19 @@ package ciderui
 import (
 	"fmt"
 	"maps"
+	"slices"
 	"strings"
 	"testing"
 )
+
+// CheckMarkup lists an attribute's legal values in this order
+func TestAriaValuesAreSorted(t *testing.T) {
+	for name, values := range ariaValues {
+		if !slices.IsSorted(values) {
+			t.Errorf("%s: %v is not sorted", name, values)
+		}
+	}
+}
 
 func TestClassesInReadsSelectorsAndUtilitiesNotComments(t *testing.T) {
 	classes := classesIn(`/* .cui-ghost { } */ .cui-real { color: red; } @media (width >= 1px) { .cui-inner { color: red; } } @utility cui-type { color: red; } @utility other { color: red; }`)

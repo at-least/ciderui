@@ -7,7 +7,7 @@
     color: var(--cui-c-on-video);
     letter-spacing: normal;
 
-    /* @invariant: the picture, its first child: a <video>, or the page's element of stills */
+    /* @invariant: the picture: a <video>, or the page's element of stills */
     & > :first-child {
       grid-area: 1 / 1;
       display: block;
@@ -76,16 +76,11 @@
     }
   }
 
-  /* @invariant: the full-screen button's glyph: to enter, or to leave while it fills
-     the screen */
   :where(.cui-console-player[data-fullscreen]) .cui-console-player-glyph-full-screen,
   :where(.cui-console-player:not([data-fullscreen])) .cui-console-player-glyph-exit-full-screen {
     display: none;
   }
 
-  /* @invariant: the volume: its button alone until the pointer is over it, then its
-     range opens to the button's left; open too while the range is held or
-     focused from the keyboard */
   .cui-console-player-volume {
     display: flex;
     align-items: center;
@@ -150,8 +145,7 @@
     }
   }
 
-  /* @invariant: the cue the page's script writes, white on the picture under a soft
-     shadow, in em so it grows with the type; empty, nothing drawn */
+  /* @invariant: the page's script writes the cue */
   .cui-console-player-cue {
     text-shadow: var(--cui-video-cue-shadow);
 
@@ -193,8 +187,7 @@
     gap: 14px;
   }
 
-  /* @invariant: the page's controls the bar shows only while the player fills the
-     screen (data-fullscreen, the page's script's to set) */
+  /* @invariant: the page's own controls; data-fullscreen is the page's script's to set */
   .cui-console-player-full-screen-controls {
     display: none;
     min-width: 0;
@@ -439,12 +432,9 @@
     translate: none;
   }
 
-  /* @invariant: before it first plays (data-intro, the page's script's to drop): its
-     title, length and summary over the picture's foot at the overlay's
-     room, one Play, its controls hidden; it fades out as the film plays.
-     Played to the end (data-end, the page's script's to set): the same
-     layer over the last picture, its title, the page's next step and a
-     smaller Play Again; it fades in */
+  /* @invariant: data-intro is the page's script's to drop when the film first
+     plays, data-end its to set when the film ends; the controls stay hidden
+     under either layer */
   .cui-console-player-intro,
   .cui-console-player-end {
     grid-area: 1 / 1;
@@ -485,7 +475,8 @@
     font-weight: 700;
   }
 
-  .cui-console-player-intro-detail {
+  .cui-console-player-intro-detail,
+  .cui-console-player-end-body {
     font-size: 15px;
     line-height: 20px;
     font-weight: 500;
@@ -502,8 +493,6 @@
     color: var(--cui-c-on-video-control);
   }
 
-  /* @invariant: the page's next step: its words in the length's type, its buttons
-     and links one under another */
   .cui-console-player-end-body {
     display: flex;
     flex-direction: column;
@@ -511,10 +500,6 @@
     gap: 8px;
     max-width: 36em;
     margin-top: 14px;
-    font-size: 15px;
-    line-height: 20px;
-    font-weight: 500;
-    color: var(--cui-c-on-video-control);
     text-shadow: var(--cui-video-cue-shadow);
 
     &:empty {

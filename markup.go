@@ -25,10 +25,10 @@ type vocabulary struct {
 	values  []selected
 }
 
-// @external: the stateful aria-* attributes the parts carry, each with the values
-// ARIA holds for it, sorted; what a rule of the kit's selects is beside the point:
-// a value no rule draws (aria-checked="true", the part's default look) is the
-// page's own, a value ARIA does not hold is a typo assistive technology reads wrong
+// @external: ARIA's values for each stateful aria-* attribute the parts carry,
+// not what a rule selects: a value no rule draws (aria-checked="true", the
+// part's default look) is the page's own; a value ARIA lacks is a typo
+// assistive technology reads wrong
 var ariaValues = map[string][]string{
 	"aria-checked":  {"false", "mixed", "true"},
 	"aria-current":  {"date", "false", "location", "page", "step", "time", "true"},
@@ -78,7 +78,6 @@ func vocabularyOf(set string) vocabulary {
 	return v
 }
 
-// @invariant: a stylesheet's parse failure names the stylesheet it is in
 func parsed[T any](path string, parse func() T) T {
 	defer func() {
 		if r := recover(); r != nil {
@@ -92,7 +91,6 @@ var vocabularies = sync.OnceValue(func() map[string]vocabulary {
 	return map[string]vocabulary{"": vocabularyOf(""), "site": vocabularyOf("site"), "console": vocabularyOf("console")}
 })
 
-// @invariant: linkedSet is the set whose stylesheet the page links, "" for a fragment.
 func linkedSet(tags []startTag) string {
 	for _, tag := range tags {
 		if !strings.EqualFold(tag.name, "link") {
@@ -110,7 +108,6 @@ func linkedSet(tags []startTag) string {
 
 var selectorClass = regexp.MustCompile(`\.(cui-[a-zA-Z0-9-]+)`)
 
-// @invariant: classesIn is every class a selector of css names and every @utility of it.
 func classesIn(css string) map[string]bool {
 	classes := map[string]bool{}
 	styleRules, utilities := rules(css)
@@ -451,8 +448,6 @@ func dataValueProblems(tag startTag, ours []string, values []selected, on, sheet
 	return problems
 }
 
-// @invariant: a fragment's references are not checked: the id they name may be
-// on the page around it (a sidebar's open button and the sidebar it opens)
 func isPage(tags []startTag) bool {
 	return slices.ContainsFunc(tags, func(t startTag) bool { return strings.EqualFold(t.name, "html") })
 }
@@ -497,7 +492,6 @@ type startTag struct {
 	attributes []attribute
 }
 
-// @invariant: attribute is its value, "" for an attribute the tag does not have.
 func (t startTag) attribute(name string) string {
 	for _, a := range t.attributes {
 		if a.name == name {

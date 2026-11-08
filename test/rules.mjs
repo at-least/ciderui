@@ -40,8 +40,7 @@ const RING_MOVED = ['cui-console-list-item'];
 // @invariant: rule 10 is a pointer's color change; these change with a panel opening, a
 // field's label rising or its text typed, each read in its part's test
 const OWN_MOTION = ['.cui-field-label'];
-// @invariant: what the keyboard reaches
-const CONTROLS = 'a[href], button, input:not([type=hidden]), select, textarea, summary, [tabindex]:not([tabindex="-1"])';
+const KEYBOARD_REACHABLE = 'a[href], button, input:not([type=hidden]), select, textarea, summary, [tabindex]:not([tabindex="-1"])';
 
 const tracking = JSON.parse(readFileSync(join(ROOT, 'reference/tracking/cui-tracking.json'), 'utf8'));
 
@@ -100,7 +99,7 @@ for (const part of COMPONENTS) {
     const classes = await page.page.evaluate((selector) => [...document.body.querySelectorAll(selector)].map((e, i) => {
       e.setAttribute('data-cui-control', i);
       return [...e.classList];
-    }), CONTROLS);
+    }), KEYBOARD_REACHABLE);
     for (const [i, own] of classes.entries()) {
       controls++;
       const noRing = NO_RING.filter((c) => own.includes(c));
