@@ -117,7 +117,7 @@ func stripItem(item ConsoleStripItem) g.Node {
 	if (item.Mark == ConsoleStripMarkNone) != (item.MarkAriaLabel == "") {
 		panic("console.ConsoleStripItem needs a MarkAriaLabel with a Mark, and none without")
 	}
-	return h.A(h.Class("cui-console-strip-item"), h.Href(item.Href), g.If(item.Variant != ConsoleStripItemVariantFrame, h.Data("variant", item.Variant.value)),
+	return h.A(h.Class("cui-console-strip-item"), h.Href(item.Href), optionalAttr("data-variant", item.Variant.value),
 		g.If(item.Unused, h.Data("state", "unused")), g.If(item.Current, h.Aria("current", "true")),
 		h.Img(h.Src(item.Src), h.Alt(item.Alt), h.Loading("lazy")),
 		g.If(item.Caption != "", h.Span(h.Class("cui-console-strip-caption"), g.Text(item.Caption))),

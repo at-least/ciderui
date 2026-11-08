@@ -38,8 +38,9 @@ func (l ConsoleListItem) Render(w io.Writer) error {
 		g.If(l.Detail != "", h.Span(h.Class("cui-console-list-detail"), g.Text(l.Detail))),
 		g.Raw(children.String()),
 	}
+	attrs := g.Group{class.Root("cui-console-list-item", l.Class), optionalAttr("id", l.ID)}
 	if l.Href != "" {
-		return h.A(class.Root("cui-console-list-item", l.Class), g.If(l.ID != "", h.ID(l.ID)), h.Href(l.Href), content).Render(w)
+		return h.A(attrs, h.Href(l.Href), content).Render(w)
 	}
-	return h.Div(class.Root("cui-console-list-item", l.Class), g.If(l.ID != "", h.ID(l.ID)), content).Render(w)
+	return h.Div(attrs, content).Render(w)
 }
