@@ -12,7 +12,7 @@ import (
 	g "maragu.dev/gomponents"
 )
 
-// @trap: not example.Read: it trims each line
+// @trap: not the reader example.Check compares with: it trims each line
 func readRaw(path string) string {
 	b, err := os.ReadFile(filepath.Join("../../components", path))
 	if err != nil {

@@ -27,17 +27,17 @@ var root = func() string {
 	return filepath.Join(filepath.Dir(file), "../../..")
 }()
 
-// Read is the example at path under components/, its lines trimmed and
-// joined: the markup as a component writes it.
-func Read(path string) string {
+// @invariant: the example's lines trimmed and joined are the markup as a
+// component writes it
+func read(path string) string {
 	b, err := os.ReadFile(filepath.Join(root, "components", path))
 	if err != nil {
 		panic(err)
 	}
-	return JoinTrimmed(string(b))
+	return joinTrimmed(string(b))
 }
 
-func JoinTrimmed(text string) string {
+func joinTrimmed(text string) string {
 	var out strings.Builder
 	for _, line := range strings.Split(text, "\n") {
 		out.WriteString(strings.TrimSpace(line))
@@ -63,7 +63,7 @@ func Render(node g.Node) string {
 // Check fails t where node does not write the example at path.
 func Check(t testing.TB, node g.Node, path string) {
 	t.Helper()
-	if got, want := Render(node), Read(path); got != want {
+	if got, want := Render(node), read(path); got != want {
 		t.Errorf("%s\n got: %s\nwant: %s", path, got, want)
 	}
 }
