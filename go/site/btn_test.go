@@ -21,6 +21,10 @@ func TestBtnRendersTheExamples(t *testing.T) {
 	medium := site.BtnSizeMedium
 	block := link("Buy", buy, primary, medium)
 	block.Block = true
+	blockButton := link("Buy", "", primary, medium)
+	blockButton.Block = true
+	icon := link("Added", "", primary, medium)
+	icon.Icon = lucide.Check
 	disabled := func(variant site.BtnVariant) site.Btn {
 		b := link("Buy", "", variant, medium)
 		b.Attrs = h.Disabled()
@@ -32,6 +36,8 @@ func TestBtnRendersTheExamples(t *testing.T) {
 	}{
 		{"default", link("Buy", buy, primary, medium)},
 		{"block", block},
+		{"block-button", blockButton},
+		{"icon", icon},
 		{"sizes", g.Group{link("Buy", buy, primary, medium), link("Buy", buy, primary, site.BtnSizeLarge)}},
 		{"variants", g.Group{link("Buy", buy, primary, medium), link("Buy", buy, secondary, medium), link("Buy", buy, site.BtnVariantSecondaryNeutral, medium)}},
 		{"disabled", g.Group{disabled(primary), disabled(secondary)}},

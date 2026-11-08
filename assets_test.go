@@ -141,8 +141,15 @@ func TestWriteCSSWritesUtilitiesAndWhatItImports(t *testing.T) {
 	for _, match := range regexp.MustCompile(`@import "\./([^"]+)"`).FindAllStringSubmatch(string(utilities), -1) {
 		files = append(files, match[1])
 	}
-	if len(files) < 3 {
+	if len(files) < 2 {
 		t.Fatalf("utilities.css imports %v", files[1:])
+	}
+	entries, err := os.ReadDir(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(entries) != len(files) {
+		t.Errorf("WriteCSS wrote %d files, want utilities.css and what it imports, %v", len(entries), files)
 	}
 	for _, file := range files {
 		written, err := os.ReadFile(filepath.Join(dir, file))

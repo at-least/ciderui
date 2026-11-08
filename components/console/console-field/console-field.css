@@ -1,5 +1,5 @@
 @layer components {
-  .cui-console-field {
+  .cui-console-field-input {
     width: 100%;
     height: 1.875rem;
     padding: 0 0.5rem;
@@ -112,7 +112,7 @@
     pointer-events: none;
   }
 
-  .cui-console-label {
+  .cui-console-field-label {
     display: block;
     margin: 0 0 5px;
     color: var(--cui-c-console-neutral-label-primary);
@@ -122,21 +122,16 @@
     letter-spacing: normal;
   }
 
-  .cui-console-help,
-  .cui-console-error {
+  .cui-console-field-error {
     margin: 3px 0 0;
-    color: var(--cui-c-console-neutral-label-secondary);
+    color: var(--cui-c-console-error-label-primary);
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
     letter-spacing: normal;
   }
 
-  .cui-console-error {
-    color: var(--cui-c-console-error-label-primary);
-  }
-
-  .cui-console-form-field {
+  .cui-console-field {
     display: flex;
     flex-direction: column;
     min-width: 0;

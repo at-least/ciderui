@@ -76,7 +76,7 @@ func (m ConsoleChoiceMenu) Render(w io.Writer) error {
 			panic("console.ConsoleChoiceColumn needs a Name and a Title")
 		}
 		if names[c.Name] {
-			panic("console.ConsoleChoiceMenu's columns need names of their own")
+			panic("console.ConsoleChoiceMenu has two columns named " + strconv.Quote(c.Name) + ": each needs a name of its own")
 		}
 		names[c.Name] = true
 		if len(c.Choices) == 0 {

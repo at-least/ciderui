@@ -1,6 +1,7 @@
 package console
 
 import (
+	"fmt"
 	"io"
 
 	"github.com/at-least/ciderui/go/internal/class"
@@ -34,9 +35,9 @@ type ConsoleTableRow struct {
 }
 
 type ConsoleTableCell struct {
+	// Content: nil for a cell that says nothing; the table writes "—" and
+	// leaves the cell out of its stacked row on a phone.
 	Content g.Node
-	// Empty: says nothing ("—"), left out of its stacked row on a phone.
-	Empty bool
 }
 
 func (t ConsoleTable) Render(w io.Writer) error {
@@ -57,12 +58,16 @@ func (t ConsoleTable) Render(w io.Writer) error {
 // Row is one row as this table writes it, for a response that swaps one row.
 func (t ConsoleTable) Row(r ConsoleTableRow) g.Node {
 	if len(r.Cells) != len(t.Columns) {
-		panic("console.ConsoleTableRow needs a cell for each column")
+		panic(fmt.Sprintf("console.ConsoleTableRow needs a cell for each column: %d columns, %d cells", len(t.Columns), len(r.Cells)))
 	}
 	var cells g.Group
 	for i, cell := range r.Cells {
 		column := t.Columns[i]
-		cells = append(cells, h.Td(g.If(column.Figure, h.Class("cui-console-table-figure")), g.If(i > 0, h.Data("label", column.Label)), g.If(cell.Empty, g.Attr("data-empty")), cell.Content))
+		content := cell.Content
+		if content == nil {
+			content = g.Group{g.Attr("data-empty"), g.Text("—")}
+		}
+		cells = append(cells, h.Td(g.If(column.Figure, h.Class("cui-console-table-figure")), g.If(i > 0, h.Data("label", column.Label)), content))
 	}
 	return h.Tr(cells)
 }

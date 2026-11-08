@@ -5,7 +5,7 @@ const B = 'component-Banner';
 const D = `${B}-anatomy`;
 const BANNER = '.cui-console-banner';
 const COLORS = [['info'], ['success'], ['error']];
-const DISABLED = '<div class="cui-console-banner" data-color="info" role="status"><div><p class="cui-console-banner-body">Symbols upload <a class="cui-console-link" data-variant="text" aria-disabled="true">after the build is processed</a>.</p></div></div>';
+const DISABLED = '<div class="cui-console-banner" data-color="info" role="status"><div><div class="cui-console-banner-body">Symbols upload <a class="cui-console-link" data-variant="text" aria-disabled="true">after the build is processed</a>.</div></div></div>';
 const LINK_DISABLED = 'disabled, the banner\'s blue at the toolkit\'s 0.60 (--cui-c-console-brand-label-on-tint-secondary, the toolkit\'s disabled inline link\'s alpha): one blue for a banner\'s links, not the console link\'s own disabled blue';
 const BODY = ['fontSize', 'lineHeight', 'fontWeight'].map((p) => `typography-textStyle-bodyRegular-${p}`);
 const LINK = 'a link in its sentence in the brand\'s blue fitted to the tints (--cui-c-console-brand-label-on-tint, held to 4.5:1 on each by test/tokens.mjs), not the console link\'s own';

@@ -5,6 +5,7 @@ import (
 	"maps"
 	"regexp"
 	"slices"
+	"strconv"
 	"strings"
 	"sync"
 )
@@ -354,10 +355,7 @@ func CheckMarkup(html string) []string {
 	var problems []string
 	for _, tag := range tags {
 		class := tag.attribute("class")
-		on := fmt.Sprintf("<%s class=%q>", tag.name, class)
-		if class == "" {
-			on = "<" + tag.name + ">"
-		}
+		on := tag.on()
 		var ours []string
 		for _, c := range strings.Fields(class) {
 			if strings.HasPrefix(c, "cui-") {
@@ -385,7 +383,7 @@ func CheckMarkup(html string) []string {
 		if len(ours) == 0 {
 			continue
 		}
-		problems = append(problems, dataValueProblems(tag, ours, values, on, sheet)...)
+		problems = append(problems, dataValueProblems(tag, ours, values)...)
 		for _, a := range tag.attributes {
 			legal, isState := ariaValues[a.name]
 			if !isState || slices.Contains(legal, a.value) {
@@ -410,7 +408,7 @@ func otherSet(set string) string {
 	return ""
 }
 
-func dataValueProblems(tag startTag, ours []string, values []selected, on, sheet string) []string {
+func dataValueProblems(tag startTag, ours []string, values []selected) []string {
 	var problems []string
 	for _, a := range tag.attributes {
 		if !slices.ContainsFunc(values, func(v selected) bool { return v.attribute == a.name }) {
@@ -422,28 +420,37 @@ func dataValueProblems(tag startTag, ours []string, values []selected, on, sheet
 		if ok {
 			continue
 		}
-		var known []string
+		var takes []string
 		for _, c := range ours {
 			var vs []string
 			for _, v := range values {
-				if v.class == c && v.attribute == a.name {
-					shown := v.value
-					if shown == "" {
-						shown = `""`
-					}
-					if !slices.Contains(vs, shown) {
-						vs = append(vs, shown)
-					}
+				if v.class != c || v.attribute != a.name {
+					continue
+				}
+				if q := strconv.Quote(v.value); !slices.Contains(vs, q) {
+					vs = append(vs, q)
 				}
 			}
-			slices.Sort(vs)
-			list := "none"
-			if len(vs) > 0 {
-				list = strings.Join(vs, ", ")
+			if len(vs) == 0 {
+				continue
 			}
-			known = append(known, c+": "+list)
+			slices.Sort(vs)
+			list := vs[len(vs)-1]
+			if len(vs) > 1 {
+				list = strings.Join(vs[:len(vs)-1], ", ") + " or " + list
+			}
+			takes = append(takes, fmt.Sprintf("%s takes %s %s", c, a.name, list))
 		}
-		problems = append(problems, fmt.Sprintf("%s=%q on %s: no rule of %s selects it (%s; default: no %s)", a.name, a.value, on, sheet, strings.Join(known, "; "), a.name))
+		var allowed string
+		switch len(takes) {
+		case 0:
+			allowed = "none of its classes takes " + a.name
+		case 1:
+			allowed = takes[0] + ", or none for its default"
+		default:
+			allowed = strings.Join(takes, "; ") + "; or none for their defaults"
+		}
+		problems = append(problems, fmt.Sprintf("%s=%q on %s: %s", a.name, a.value, tag.on(), allowed))
 	}
 	return problems
 }
@@ -477,7 +484,7 @@ func missingIDs(tags []startTag) []string {
 			}
 			for _, id := range named {
 				if !ids[id] {
-					problems = append(problems, fmt.Sprintf("%s=%q on <%s>: this page has no id %q", a.name, a.value, tag.name, id))
+					problems = append(problems, fmt.Sprintf("%s=%q on %s: this page has no id %q", a.name, a.value, tag.on(), id))
 				}
 			}
 		}
@@ -490,6 +497,13 @@ type attribute struct{ name, value string }
 type startTag struct {
 	name       string
 	attributes []attribute
+}
+
+func (t startTag) on() string {
+	if class := t.attribute("class"); class != "" {
+		return fmt.Sprintf("<%s class=%q>", t.name, class)
+	}
+	return "<" + t.name + ">"
 }
 
 func (t startTag) attribute(name string) string {

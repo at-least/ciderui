@@ -1,5 +1,5 @@
 @layer components {
-  .cui-console-listing {
+  .cui-console-pre {
     border-radius: 15px;
     padding: 8px 14px;
     overflow-x: auto;

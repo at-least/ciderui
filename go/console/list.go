@@ -13,7 +13,6 @@ import (
 // <div class="cui-console-list">, is the page's own.
 type ConsoleListItem struct {
 	Href   string
-	ID     string
 	Label  string
 	Detail string
 	Class  string
@@ -38,7 +37,7 @@ func (l ConsoleListItem) Render(w io.Writer) error {
 		g.If(l.Detail != "", h.Span(h.Class("cui-console-list-detail"), g.Text(l.Detail))),
 		g.Raw(children.String()),
 	}
-	attrs := g.Group{class.Root("cui-console-list-item", l.Class), optionalAttr("id", l.ID)}
+	attrs := class.Root("cui-console-list-item", l.Class)
 	if l.Href != "" {
 		return h.A(attrs, h.Href(l.Href), content).Render(w)
 	}

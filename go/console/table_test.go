@@ -11,12 +11,12 @@ import (
 )
 
 func tableText(content string) console.ConsoleTableCell {
-	return console.ConsoleTableCell{Content: g.Text(content), Empty: false}
+	return console.ConsoleTableCell{Content: g.Text(content)}
 }
 
 func jobsTable() console.ConsoleTable {
 	link := func(href, label string) console.ConsoleTableCell {
-		return console.ConsoleTableCell{Content: h.A(h.Class("cui-console-table-link"), h.Href(href), g.Text(label)), Empty: false}
+		return console.ConsoleTableCell{Content: h.A(h.Class("cui-console-table-link"), h.Href(href), g.Text(label))}
 	}
 	return console.ConsoleTable{
 		Columns: []console.ConsoleTableColumn{
@@ -26,7 +26,7 @@ func jobsTable() console.ConsoleTable {
 			{Label: "Paused until", Figure: false},
 		},
 		Rows: []console.ConsoleTableRow{
-			{Cells: []console.ConsoleTableCell{link("#backup", "nightly-backup"), tableText("every 5 minutes"), tableText("142"), {Content: g.Text("—"), Empty: true}}},
+			{Cells: []console.ConsoleTableCell{link("#backup", "nightly-backup"), tableText("every 5 minutes"), tableText("142"), {Content: nil}}},
 			{Cells: []console.ConsoleTableCell{link("#mailer", "report-mailer"), tableText("17 3 * * *"), tableText("9"), tableText("Nov 2")}},
 		},
 		BodyAttrs: nil,
@@ -52,6 +52,6 @@ func TestTablePanics(t *testing.T) {
 	example.Panics(t, jobsTable, []example.Break[console.ConsoleTable]{
 		{Want: "console.ConsoleTable needs a ConsoleTableColumn", Change: func(p *console.ConsoleTable) { p.Columns = nil }},
 		{Want: "console.ConsoleTableColumn needs a Label", Change: func(p *console.ConsoleTable) { p.Columns[1].Label = "" }},
-		{Want: "console.ConsoleTableRow needs a cell for each column", Change: func(p *console.ConsoleTable) { p.Rows[1].Cells = p.Rows[1].Cells[:3] }},
+		{Want: "console.ConsoleTableRow needs a cell for each column: 4 columns, 3 cells", Change: func(p *console.ConsoleTable) { p.Rows[1].Cells = p.Rows[1].Cells[:3] }},
 	})
 }

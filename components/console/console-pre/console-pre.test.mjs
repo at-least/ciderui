@@ -1,12 +1,12 @@
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const L = '.cui-console-listing';
+const L = '.cui-console-pre';
 
 export const cases = [
   {
-    name: 'listing',
-    html: ex('listing'),
+    name: 'pre',
+    html: ex('pre'),
     widths: [1200, 390],
     checks: [
       { target: L, props: ['border-top-left-radius'], apple: ['docc', 'listing'] },
@@ -18,7 +18,7 @@ export const cases = [
     ],
   },
   {
-    name: 'listing nested',
+    name: 'pre nested',
     html: ex('nested'),
     widths: [1200],
     checks: [
@@ -26,8 +26,8 @@ export const cases = [
     ],
   },
   {
-    name: 'listing dark',
-    html: `<div class="cui-dark">${ex('listing')}</div>`,
+    name: 'pre dark',
+    html: `<div class="cui-dark">${ex('pre')}</div>`,
     widths: [1200],
     checks: [
       { target: L, props: ['background-color', 'color'], golden: 'the dark side derived (tokens.css, decision 18)' },

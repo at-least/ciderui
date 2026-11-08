@@ -27,10 +27,10 @@ const site = mkdtempSync(join(ROOT, 'site-entry-'));
 try {
   execFileSync('go', ['run', './go/cmd/ciderui-css', written], { cwd: ROOT, stdio: 'pipe' });
   const entry = join(site, 'entry.css');
-  writeFileSync(entry, `${UTILITIES_ENTRY(`${written}/utilities.css`)}\n@source inline("px-8 md:cui-headline");\n`);
+  writeFileSync(entry, `${UTILITIES_ENTRY(`${written}/utilities.css`)}\n@source inline("px-8 md:px-8 cui-btn cui-headline");\n`);
   const built = tailwind(entry);
-  for (const rule of ['.px-8', '.md\\:cui-headline']) if (!built.includes(rule)) throw new Error(`utilities.css written by ciderui-css built with no ${rule}: ${built.slice(0, 200)}`);
-  if (built.includes('.cui-btn')) throw new Error('utilities.css built with a part');
+  for (const rule of ['.px-8', '.md\\:px-8']) if (!built.includes(rule)) throw new Error(`utilities.css written by ciderui-css built with no ${rule}: ${built.slice(0, 200)}`);
+  for (const kit of ['.cui-btn', '.cui-headline']) if (built.includes(kit)) throw new Error(`utilities.css built the kit's ${kit}, which the kit's own sheet ships (utilities.css)`);
 } finally {
   rmSync(written, { recursive: true });
   rmSync(site, { recursive: true });

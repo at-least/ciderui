@@ -3,8 +3,8 @@ import { examples } from '../../../test/harness.mjs';
 const ex = examples(import.meta.url);
 const STRIP = '.cui-console-strip';
 const GROUP = '.cui-console-strip-group:first-child';
-const HEAD = `${GROUP} > .cui-console-strip-head`;
-const LABEL = `${HEAD} > .cui-console-strip-label`;
+const HEADER = `${GROUP} > .cui-console-strip-header`;
+const LABEL = `${HEADER} > .cui-console-strip-label`;
 const item = (group, n) => `.cui-console-strip-group:nth-child(${group}) > .cui-console-strip-item:nth-of-type(${n})`;
 const FIRST = item(1, 1);
 const IMG = `${FIRST} > img`;
@@ -14,11 +14,9 @@ const WAITING = '.cui-console-strip-mark[data-state="waiting"]';
 const WORKING = '.cui-console-strip-mark[data-state="working"]';
 const CURRENT_WORKING = `${CURRENT} > ${WORKING}`;
 const TIP = `${FIRST} > .cui-console-strip-tip`;
-// @invariant: the page's script's progress on the current shot
-const playing = (html) => html.replace('aria-current="true"', 'aria-current="true" data-progress style="--cui-console-strip-progress: 40%"');
 const MARKS = 'two marks only (the owner, 2026-11-05, for muse\'s storyboard and assets strip): who the shot waits on, the reader or someone at work on it; nothing, no mark. Kept and to redraw went: muse no longer marks either';
 // @invariant: one scene of one shot, its name longer than the shot is wide, and no caption
-const lone = (label) => `<div class="cui-console-page"><nav class="cui-console-strip" aria-label="Shots"><div class="cui-console-strip-group"><p class="cui-console-strip-head"><span class="cui-console-strip-label">${label}</span></p><a class="cui-console-strip-item" href="#a"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Shot 1"></a></div></nav></div>`;
+const lone = (label) => `<div class="cui-console-page"><nav class="cui-console-strip" aria-label="Shots"><div class="cui-console-strip-group"><p class="cui-console-strip-header"><span class="cui-console-strip-label">${label}</span></p><a class="cui-console-strip-item" href="#a"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Shot 1"></a></div></nav></div>`;
 // @external: tv.apple.com's player's row was read at 1600 and 1200px
 const AT = { 390: 1200 };
 
@@ -39,7 +37,7 @@ export const cases = [
       { target: LABEL, props: ['font-size', 'line-height', 'font-weight', 'color', 'text-overflow', 'white-space'], golden: 'the scene\'s name above its shots in 11px on 13px, the secondary label, cut to its group\'s width; neither site labels a group of its row' },
       { target: `${GROUP} > .cui-console-strip-item:first-of-type > img`, props: ['box-top', 'box-left'], golden: 'the first picture 18px under its group\'s top, its name\'s 13px line and 5px (a thumbnail\'s caption\'s 5px from it), 4px in from the page\'s content edge, the items\' room for their ring' },
       { target: LABEL, props: ['box-top', 'box-left', 'padding-left', 'position', 'left'], golden: 'the scene\'s name over its first picture\'s left edge, its text 4px into its box as the picture is into its item; sticky at the scroller\'s edge, so the name of the scene scrolled half out stays in view (muse\'s storyboard, the owner, 2026-11-05)' },
-      { target: HEAD, props: ['position', 'box-top', 'box-left', 'box-width', 'overflow-x'], golden: 'the name\'s track: out of the flow so a long name widens no scene, the group\'s whole width (528px: three 168px shots, each its picture and 4px of ring room either side, 12px apart), not clipped (a clipping box would be the sticky name\'s scroller)' },
+      { target: HEADER, props: ['position', 'box-top', 'box-left', 'box-width', 'overflow-x'], golden: 'the name\'s track: out of the flow so a long name widens no scene, the group\'s whole width (528px: three 168px shots, each its picture and 4px of ring room either side, 12px apart), not clipped (a clipping box would be the sticky name\'s scroller)' },
       { target: CAPTION, props: ['font-size', 'line-height', 'font-weight', 'color', 'text-overflow', 'white-space'], golden: 'the shot\'s code under it in 11px on 13px, the secondary label, cut to the picture\'s width: muse\'s storyboard names each shot under it, not over it (the owner, 2026-11-05)' },
       { target: CAPTION, props: ['box-top', 'box-left', 'box-width'], golden: 'the caption 5px under its picture (the picture\'s foot at 108px: 18 and 90), as a console thumbnail\'s caption, outside the item\'s ring, at the picture\'s left and as wide' },
       { target: GROUP, props: ['padding-bottom'], golden: 'a scene with captions keeps their room under its shots: 1px past the ring and the 13px line, as its name\'s over them' },
@@ -49,7 +47,7 @@ export const cases = [
       { target: WAITING, props: ['box-width', 'box-height', 'top', 'right', 'border-top-width', 'border-top-color', 'background-color', 'border-top-left-radius'], golden: `waiting for the reader: a dot in console-status's warning mark's color (its 12px), ringed 2px in the page's ground so it shows on any picture, 8px in from the item (6px from the picture). ${MARKS}` },
       { target: WORKING, props: ['box-width', 'box-height', 'top', 'right', 'border-top-width', 'border-top-color', 'background-color'], golden: `someone at work on it: the same dot in console-status's neutral mark's color (the secondary label). ${MARKS}` },
       { target: TIP, props: ['visibility', 'opacity', 'position'], golden: 'its line hidden until the pointer is on it' },
-      { target: CURRENT, pseudo: '::after', props: ['content'], golden: 'the current shot at rest draws no line: only one that plays does (the owner, 2026-11-07: the scrubber says how far), so its picture shows whole' },
+      { target: CURRENT, pseudo: '::after', props: ['content'], golden: 'the current shot draws no progress line, so its picture shows whole: the player\'s scrubber says how far it has played (muse\'s owner, 2026-11-07); the line went once no page\'s script set it' },
     ],
   },
   {
@@ -60,15 +58,6 @@ export const cases = [
       { target: TIP, on: FIRST, state: 'focus-visible', props: ['visibility', 'opacity'], golden: 'the keyboard reaches what the pointer shows' },
       { target: IMG, props: ['border-top-left-radius', 'box-shadow'], state: 'hover', on: FIRST, asc: ['media', 'thumb.img'] },
       { target: FIRST, props: ['border-top-color'], state: 'hover', golden: 'unchanged under the pointer, as App Store Connect\'s thumbnail (media: nothing changed with the pointer on one)' },
-    ],
-  },
-  {
-    name: 'strip progress',
-    html: playing(ex('strip')),
-    widths: [1200],
-    checks: [
-      { target: CURRENT, pseudo: '::after', props: ['position', 'left', 'right', 'bottom', 'width', 'height', 'border-top-left-radius', 'background-image'], golden: 'how far the current shot has played (the owner, 2026-11-05: how long its picture still stays), 40% here: the player\'s scrubber\'s white on its track (--cui-c-on-video, --cui-c-video-track), 3px for the scrubber\'s 5px at a tenth of its width, over the picture\'s foot 8px in, where the mark is in its corner; Apple TV draws its own lockups\' progress over the picture\'s foot. Over the picture, not under it: the caption keeps its place under every shot' },
-      { target: `${item(1, 1)}`, pseudo: '::after', props: ['content'], golden: 'only the current shot draws it' },
     ],
   },
   {
@@ -97,7 +86,7 @@ export const cases = [
   },
   {
     name: 'strip forced colors',
-    html: playing(ex('strip')),
+    html: ex('strip'),
     widths: [1200],
     forcedColors: true,
     checks: [
@@ -105,7 +94,6 @@ export const cases = [
       { target: FIRST, props: ['border-top-color'], golden: 'the others\' clear edge the ground\'s color: forced colors drew it in the text\'s, every shot ringed as the current one' },
       { target: WAITING, props: ['background-color', 'border-top-color'], golden: 'the waiting dot the forced text color on the ground\'s ring, as console-status\'s mark' },
       { target: WORKING, props: ['background-color', 'border-top-color'], golden: 'the working dot the theme\'s GrayText, so the two keep apart where their colors are forced' },
-      { target: CURRENT, pseudo: '::after', props: ['background-image'], golden: 'the progress line in the theme\'s Highlight on GrayText' },
     ],
   },
   {
@@ -135,7 +123,7 @@ export const cases = [
       { target: STRIP, props: ['box-left'], golden: 'the scroller 15px out of the content edge, its room for the rings (tv.apple.com\'s row)' },
       { target: GROUP, props: ['box-left'], golden: 'scrolled to the first scene\'s third shot (it snaps there from 400px, 2 × 180px): the scene\'s start 360px out of view, its end still in it' },
       { target: LABEL, props: ['box-left'], golden: 'the scene\'s name stays while its scene is still in view (muse\'s storyboard, the owner, 2026-11-05), at the content edge, 15px in from the scroller\'s (Chromium sticks it inside the scroller\'s padding, its room for the rings), so its text is where the first picture starts at rest; left in the group, it would have scrolled out with the scene\'s start' },
-      { target: `.cui-console-strip-group:nth-child(2) > .cui-console-strip-head > .cui-console-strip-label`, props: ['box-left'], golden: 'the next scene\'s name over its first shot, where its scene starts (24px past the first scene\'s end)' },
+      { target: `.cui-console-strip-group:nth-child(2) > .cui-console-strip-header > .cui-console-strip-label`, props: ['box-left'], golden: 'the next scene\'s name over its first shot, where its scene starts (24px past the first scene\'s end)' },
     ],
   },
   {

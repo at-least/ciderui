@@ -8,7 +8,12 @@
     --cui-btn-border: transparent;
     --cui-btn-border-hover: transparent;
 
-    display: inline-block;
+    /* @trap: inline-flex, not apple.com's inline-block: an icon sits its gap
+       before the label and on its middle with no spacing of the page's */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
     min-width: 28px;
     padding: 8px 15px;
     border: 1px solid var(--cui-btn-border);
@@ -23,6 +28,12 @@
     white-space: nowrap;
     text-decoration-line: none;
     cursor: pointer;
+
+    & > * {
+      flex: none;
+      width: 1em;
+      height: 1em;
+    }
 
     @media (hover: hover) {
       &:not(:disabled):hover {
@@ -69,7 +80,10 @@
   }
 
   .cui-btn-block {
-    display: block;
+    display: flex;
+    /* @invariant: Block's one job, filling the row: a <button>, unlike an <a>,
+       shrinks to its label without it (rule 6's exception) */
+    width: 100%;
     border-radius: 8px;
   }
 }

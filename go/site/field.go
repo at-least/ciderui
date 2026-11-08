@@ -10,9 +10,18 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
+type FieldType struct{ value string }
+
+var (
+	FieldTypeText  = FieldType{value: ""}
+	FieldTypeEmail = FieldType{"email"}
+	FieldTypeTel   = FieldType{"tel"}
+)
+
+// Field is apple.com's text field: its input's id is its Name, and its
+// help's, message's and prefix's ids are derived from it.
 type Field struct {
-	ID           string
-	Type         string
+	Type         FieldType
 	Name         string
 	Label        string
 	Autocomplete string
@@ -33,18 +42,19 @@ type Field struct {
 }
 
 func (f Field) Render(w io.Writer) error {
-	if f.ID == "" {
-		panic("site.Field needs an ID")
-	}
 	if f.Name == "" {
 		panic("site.Field needs a Name")
 	}
 	if f.Label == "" {
 		panic("site.Field needs a Label")
 	}
-	message := f.ID + "-message"
-	help := f.ID + "-help"
-	prefix := f.ID + "-prefix"
+	message := f.Name + "-message"
+	help := f.Name + "-help"
+	prefix := f.Name + "-prefix"
+	kind := f.Type.value
+	if kind == "" {
+		kind = "text"
+	}
 	var ids []string
 	if f.Prefix != "" {
 		ids = append(ids, prefix)
@@ -59,14 +69,14 @@ func (f Field) Render(w io.Writer) error {
 	return g.Group{
 		h.Div(class.Root("cui-field", f.Class),
 			// @trap: placeholder " ": the label reads :placeholder-shown to tell the field empty
-			h.Input(h.Class("cui-field-input"), h.ID(f.ID), h.Type(f.Type), h.Name(f.Name), h.Placeholder(" "),
+			h.Input(h.Class("cui-field-input"), h.ID(f.Name), h.Type(kind), h.Name(f.Name), h.Placeholder(" "),
 				g.If(f.Autocomplete != "", h.AutoComplete(f.Autocomplete)),
 				g.If(f.Value != "", h.Value(f.Value)),
 				g.If(f.Error != "" || f.Invalid, h.Aria("invalid", "true")),
 				g.If(described != "", h.Aria("describedby", described)),
 				f.Attrs,
 			),
-			h.Label(h.Class("cui-field-label"), h.For(f.ID), g.Text(f.Label)),
+			h.Label(h.Class("cui-field-label"), h.For(f.Name), g.Text(f.Label)),
 			g.If(f.Prefix != "", h.Span(h.Class("cui-field-prefix"), h.ID(prefix), g.Text(f.Prefix))),
 		),
 		g.If(f.Help != "", h.P(h.Class("cui-field-help"), h.ID(help), g.Text(f.Help))),

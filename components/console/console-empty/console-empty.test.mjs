@@ -27,8 +27,7 @@ export const cases = [
     widths: [1200, 390],
     checks: [
       ...sized('lg', 'Lg'),
-      { target: '.cui-console-empty', props: ['background-color'], golden: 'not backed: no fill' },
-      { target: '.cui-console-empty-actions', props: ['column-gap'], golden: 'its buttons 9px apart, as a banner\'s' },
+      { target: '.cui-console-empty', props: ['background-color'], golden: 'a whole page\'s: no fill, on the page\'s ground' },
       { target: '.cui-console-empty', props: ['flex-direction', 'text-align', 'align-items'], golden: 'a column, centered' },
     ],
   },

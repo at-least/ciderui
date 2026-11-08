@@ -8,11 +8,6 @@
     letter-spacing: normal;
   }
 
-  .cui-console-empty[data-variant="backed"] {
-    border-radius: 32px;
-    background-color: var(--cui-c-console-neutral-fill-quinary);
-  }
-
   .cui-console-empty-icon {
     flex: none;
     color: var(--cui-c-console-neutral-label-secondary);
@@ -30,17 +25,12 @@
     font-weight: 400;
   }
 
-  .cui-console-empty-actions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 9px;
-  }
-
   .cui-console-empty[data-size="sm"] {
     --cui-console-empty-measure: 216px;
 
     padding-block: 1rem;
+    border-radius: 32px;
+    background-color: var(--cui-c-console-neutral-fill-quinary);
 
     .cui-console-empty-icon {
       width: 24px;

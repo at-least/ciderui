@@ -12,7 +12,7 @@ import (
 )
 
 func page() site.Page {
-	return site.Page{Lang: "zh-Hant", Title: "課程", Head: nil, Class: "", Skip: "", Children: h.P(g.Text("x"))}
+	return site.Page{Lang: "zh-Hant", Title: "課程", Head: nil, Class: "", SkipLabel: "", Children: h.P(g.Text("x"))}
 }
 
 func TestPageWritesTheDocument(t *testing.T) {
@@ -36,7 +36,7 @@ func TestPageWritesItsClassAndHeadAfterTheStylesheet(t *testing.T) {
 
 func TestPageWritesItsSkipLinkFirst(t *testing.T) {
 	p := page()
-	p.Skip = "跳到主要內容"
+	p.SkipLabel = "跳到主要內容"
 	p.Children = h.Main(h.ID("main"), h.TabIndex("-1"))
 	got := example.Render(p)
 	want := `<body><a class="cui-btn cui-skip" href="#main">跳到主要內容</a><main id="main" tabindex="-1">`
@@ -50,6 +50,6 @@ func TestPagePanics(t *testing.T) {
 		{Want: "site.Page needs a Lang", Change: func(p *site.Page) { p.Lang = "" }},
 		{Want: "site.Page needs a Title", Change: func(p *site.Page) { p.Title = "" }},
 		// @invariant: under go test a page checks itself: a skip link to no main
-		{Want: `site.Page: href="#main" on <a>: this page has no id "main"`, Change: func(p *site.Page) { p.Skip = "跳到主要內容" }},
+		{Want: `site.Page: href="#main" on <a class="cui-btn cui-skip">: this page has no id "main"`, Change: func(p *site.Page) { p.SkipLabel = "跳到主要內容" }},
 	})
 }

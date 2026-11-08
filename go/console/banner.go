@@ -9,12 +9,24 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
+// @invariant: one glyph per color, so a reader learns it once: SF Symbols'
+// info.circle, checkmark.circle, exclamationmark.triangle and
+// exclamationmark.circle in Lucide (the consumers' errors were CircleAlert
+// in crashcart and totality, CircleX in muse)
+var bannerIcons = map[ConsoleColor]lucide.Icon{
+	ConsoleColorNeutral: lucide.Info,
+	ConsoleColorInfo:    lucide.Info,
+	ConsoleColorSuccess: lucide.CircleCheck,
+	ConsoleColorWarning: lucide.TriangleAlert,
+	ConsoleColorError:   lucide.CircleAlert,
+}
+
+// ConsoleBanner is a message across the page, its icon its Color's.
 type ConsoleBanner struct {
 	Color ConsoleColor
-	Icon  lucide.Icon
 	Title string
-	// Body: the banner's words, written in its <p class="cui-console-banner-body">;
-	// nil for none.
+	// Body: the banner's words, or blocks of them, written in its
+	// <div class="cui-console-banner-body">; nil for none.
 	Body  g.Node
 	Class string
 	// Children: what follows the body, its actions; nil for none.
@@ -27,10 +39,10 @@ func (b ConsoleBanner) Render(w io.Writer) error {
 		role = "alert"
 	}
 	return h.Div(class.Root("cui-console-banner", b.Class), optionalAttr("data-color", b.Color.value), h.Role(role),
-		iconPart(b.Icon, "cui-console-banner-icon"),
+		bannerIcons[b.Color].Class("cui-console-banner-icon"),
 		h.Div(
 			g.If(b.Title != "", h.P(h.Class("cui-console-banner-title"), g.Text(b.Title))),
-			g.If(b.Body != nil, h.P(h.Class("cui-console-banner-body"), b.Body)),
+			g.If(b.Body != nil, h.Div(h.Class("cui-console-banner-body"), b.Body)),
 			b.Children,
 		),
 	).Render(w)

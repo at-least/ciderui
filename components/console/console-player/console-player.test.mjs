@@ -42,9 +42,9 @@ const PREVIEW = '.cui-console-player-preview';
 const PREVIEW_WHY = 'muse\'s, tv.apple.com\'s trailers scrubbing with no preview (the owner, 2026-11-05: the shot\'s thumbnail, its scene and the time over the pointer): the storyboard\'s 320px thumbnail at 160px, sharp at 2x; 12px above the bar, clear of the thumb; the line under it 12px semibold in the times\' tabular figures, white under the cue\'s shadow, on one line however long the scene\'s name';
 const TEXT_BTN = '.cui-console-player-text-btn';
 const FULL = 'muse\'s, for its 回報問題 and 下一個要看 while the player fills the screen (the owner, 2026-11-05); tv.apple.com\'s bar has no control of words: a 24px capsule, the bar\'s buttons\' height (tv-player:audio), white on a 16% white fill, 24% hovered or pressed, 13px medium, 8px apart; half opacity disabled';
-const CAPTION = '.cui-console-player-caption';
-// @invariant: the page's script's caption, written into the player at rest
-const captioned = (html) => html.replace('data-control="caption"></p>', 'data-control="caption">The Wedding · Scene 2　The Vows · S02-03</p>');
+const HEADING = '.cui-console-player-heading';
+// @invariant: the page's script's heading, written into the player at rest
+const withHeading = (html) => html.replace('data-control="heading"></p>', 'data-control="heading">The Wedding · Scene 2　The Vows · S02-03</p>');
 const PAUSED = 'muse\'s (the owner, 2026-11-05: paused, a small line at the picture\'s top left saying the story, the scene and the shot; gone on play): in tv.apple.com\'s header\'s first column, 711px and empty on its trailers (tv-player:header, grid-template-columns 711px 829px), on the header\'s 26px row; 15px semibold white under the cue\'s shadow (--cui-video-cue-shadow) so it reads on a bright picture with no box, cut short with an ellipsis before the volume; tv.apple.com shows no such line';
 const INTRO = 'muse\'s pre-play layer (the owner, 2026-11-05: over the cover the title large, the demo\'s length, its description\'s first sentence, one clear Play; tv.apple.com\'s pre-play page was not measured, so golden): at the picture\'s foot in the overlay\'s room (30px at the sides, tv-player:scrim), on a soft gradient in that corner alone (--cui-video-title-scrim; the owner, 2026-11-08: tv.apple.com\'s, --cui-video-scrim, darkened the cover\'s lower half to black), the lines white under the cue\'s shadow; the length 15px medium and the sentence 17px on 24px in the controls\' 90% white, two lines at most, 36em wide';
 const END = 'muse\'s end layer (the owner, 2026-11-05: on end a 「看完了」 layer fades in over the last picture, the user\'s next step under it and a small 「重新播放」; tv.apple.com\'s end of a film was not measured, so golden): the intro\'s layer, its place, gradient and title, in the other direction; the next step in the length\'s type (15px medium, the controls\' 90% white), its buttons and links one under another 8px apart, 14px under the title as the intro\'s Play is';
@@ -71,14 +71,13 @@ export const cases = [
       { target: '.cui-console-player-volume', props: ['column-gap'], apple: ['tv-player', 'volume'] },
       { target: '.cui-console-player-header', props: ['display', 'justify-content', 'align-items'], golden: 'the volume at the header\'s end, as tv.apple.com\'s (tv-player:volume at the right)' },
       { target: '.cui-console-player-buttons', props: ['column-gap', 'display'], apple: ['tv-player', 'controls'] },
-      { target: '.cui-console-player-footer', props: ['row-gap', 'column-gap', 'grid-template-areas'], golden: 'the title beside the buttons, the scrubber under them, 12px apart (tv-player:footer\'s 12px rows and gap)' },
+      { target: '.cui-console-player-footer', props: ['row-gap', 'column-gap', 'grid-template-areas'], golden: 'the buttons at the row\'s end with nothing before them (no title: the heading at the top says what plays), the scrubber under them, 12px apart (tv-player:footer\'s 12px rows and gap)' },
       { target: BTN, props: ['color', 'cursor', 'background-color', 'border-top-width'], apple: ['tv-player', 'subtitles'] },
       { target: '.cui-console-player-btn[aria-label="Full Screen"]', props: ['color'], state: 'hover', apple: ['tv-player', 'fullscreen', 'hover'] },
       { target: BTN, props: ['color'], state: 'hover', golden: 'hovered white, as tv.apple.com\'s full screen button (tv-player:fullscreen:hover); its subtitles button reads no change, one look for the row' },
       { target: BTN, props: ['box-width', 'box-height'], golden: 'tv.apple.com\'s 24px (tv-player:audio, its controls\' row 24px)' },
       { target: `${BTN} > svg`, props: ['box-width', 'box-height'], golden: 'its glyph 20px, tv.apple.com\'s (tv-player:subtitles.icon); Lucide\'s (decision 17)' },
       { target: '.cui-console-player-volume > .cui-console-player-btn', props: ['box-width', 'color'], golden: 'the mute button 26px in white, tv.apple.com\'s (tv-player:volume.button, its glyph filled white); its Lucide glyph 22px, a stroke glyph drawn smaller than a filled one' },
-      { target: '.cui-console-player-title', props: ['font-size', 'line-height', 'font-weight', 'color'], apple: ['tv-player', 'title'] },
       { target: '.cui-console-player-time', props: ['font-size', 'line-height', 'font-weight', 'color', 'font-variant-numeric'], apple: ['tv-player', 'elapsed'] },
       { target: '.cui-console-player-time:last-of-type', props: ['color'], apple: ['tv-player', 'remaining'] },
       { target: SCRUB, props: ['--cui-console-player-track', '--cui-console-player-thumb'], apple: ['tv-player', 'scrubber'], as: { '--cui-console-player-track': '--progress-track-height', '--cui-console-player-thumb': '--progress-thumb-height' } },
@@ -126,7 +125,7 @@ export const cases = [
       { target: '.cui-console-player-preview-picture', props: ['box-width', 'box-height', 'border-top-left-radius', 'object-fit', 'background-color', 'box-shadow'], golden: PREVIEW_WHY },
       { target: '.cui-console-player-preview-label', props: ['box-width', 'box-left'], golden: 'a line longer than the picture centred under it, over both its sides' },
       { target: '.cui-console-player-preview-label', props: ['font-size', 'line-height', 'font-weight', 'color', 'white-space', 'font-variant-numeric', 'text-shadow'], golden: PREVIEW_WHY },
-      { target: PREVIEW, props: ['hit'], golden: 'it takes no pointer: what is under it does (the overlay, the title), so it never flickers under the pointer that shows it' },
+      { target: PREVIEW, props: ['hit'], golden: 'it takes no pointer: what is under it does (the overlay), so it never flickers under the pointer that shows it' },
     ],
   },
   {
@@ -161,34 +160,34 @@ export const cases = [
     ],
   },
   {
-    name: 'player caption paused',
-    html: captioned(ex('paused')),
+    name: 'player heading paused',
+    html: withHeading(ex('paused')),
     widths: TV,
     height: 900,
     checks: [
-      { target: CAPTION, props: ['display', 'opacity', 'visibility', 'font-size', 'line-height', 'font-weight', 'color', 'text-shadow', 'white-space', 'text-overflow', 'box-left', 'box-top', 'box-height'], golden: PAUSED },
-      { target: CAPTION, props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: 'it comes and goes in the header\'s fade (tv-player-playing:hidden.header, 0.3s)' },
+      { target: HEADING, props: ['display', 'opacity', 'visibility', 'font-size', 'line-height', 'font-weight', 'color', 'text-shadow', 'white-space', 'text-overflow', 'box-left', 'box-top', 'box-height'], golden: PAUSED },
+      { target: HEADING, props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: 'it comes and goes in the header\'s fade (tv-player-playing:hidden.header, 0.3s)' },
     ],
   },
   {
-    name: 'player caption playing',
+    name: 'player heading playing',
     html: ex('playing'),
     widths: [1600],
     height: 900,
     checks: [
       { target: VOLUME, on: '.cui-console-player-volume > .cui-console-player-btn', state: 'active', props: ['margin-right'], golden: 'its range stays open while a control in it is pressed' },
       { target: BTN, state: 'active', props: ['color'], golden: 'pressed, full white, as the pointer over it shows on a screen that has one' },
-      { target: CAPTION, props: ['opacity', 'visibility'], golden: 'gone while playing (the owner, 2026-11-05), the controls shown or not' },
+      { target: HEADING, props: ['opacity', 'visibility'], golden: 'gone while playing (the owner, 2026-11-05), the controls shown or not' },
     ],
   },
   {
-    name: 'player caption empty',
+    name: 'player heading empty',
     html: ex('paused'),
     widths: [1600],
     height: 900,
     checks: [
       { target: '.cui-console-player-volume > .cui-console-player-btn', props: ['box-height'], golden: 'the speaker a little taller than the bar\'s other buttons' },
-      { target: CAPTION, props: ['display'], golden: 'empty, nothing drawn: the volume keeps the header\'s end' },
+      { target: HEADING, props: ['display'], golden: 'empty, nothing drawn: the volume keeps the header\'s end' },
     ],
   },
   {
@@ -217,7 +216,7 @@ export const cases = [
     widths: TV,
     height: 900,
     checks: [
-      { target: '.cui-console-player-intro-play', state: 'active', props: ['transform'], golden: 'pressed, it gives under the finger' },
+      { target: '.cui-console-player-intro-play', state: 'active', props: ['transform', 'background-color'], golden: 'pressed, the hovered fill, the controls\' 90% white (--cui-c-on-video-control), and no scale: the owner, 2026-11-09 (the centre play\'s scale is tv.apple.com\'s, measured; this button\'s had no measure)' },
       { target: '.cui-console-player-intro', props: ['display', 'flex-direction', 'justify-content', 'align-items', 'padding-left', 'padding-bottom', 'background-image', 'opacity', 'visibility'], golden: INTRO },
       { target: '.cui-console-player-overlay', props: ['visibility'], golden: 'its controls hidden under it: one Play, nothing else to press (the owner, 2026-11-05)' },
       { target: '.cui-console-player-intro-title', props: ['font-size', 'line-height', 'font-weight', 'color', 'box-left'], golden: `${INTRO}; the title as large as 4% of the player, at the least tv.apple.com's 26px bold title (tv-player:title)` },

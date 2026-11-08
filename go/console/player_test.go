@@ -20,8 +20,8 @@ const playerPoster = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53
 const playerStill = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjkwMCI+PHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjNmE0YThhIi8+PGNpcmNsZSBjeD0iNDIwIiBjeT0iMzIwIiByPSIxNjAiIGZpbGw9IiNmMGQwYTAiLz48cmVjdCB5PSI2NDAiIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjI2MCIgZmlsbD0iIzNhMmE0YSIvPjwvc3ZnPg=="
 
 // @external: the voices and the subtitles side by side, as the Apple TV app's
-func subtitlesMenu() console.ConsoleChoiceMenu {
-	return console.ConsoleChoiceMenu{ID: "subtitles", Class: "", Columns: []console.ConsoleChoiceColumn{
+func subtitlesMenu() *console.ConsoleChoiceMenu {
+	return &console.ConsoleChoiceMenu{ID: "subtitles", Class: "", Columns: []console.ConsoleChoiceColumn{
 		{Name: "voices", Title: "Voices", Choices: []console.ConsoleChoice{
 			{Label: "English", Value: "en", Lang: "en", Checked: true},
 			{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant", Checked: false},
@@ -34,14 +34,13 @@ func subtitlesMenu() console.ConsoleChoiceMenu {
 	}}
 }
 
-func player(title string) console.ConsolePlayer {
+func pausedPlayer() console.ConsolePlayer {
 	return console.ConsolePlayer{
 		Video:               h.Video(h.Poster(playerPoster), h.Preload("none"), g.Attr("playsinline")),
-		Title:               title,
 		PlayAriaLabel:       "Play",
 		VolumeAriaLabel:     "Volume",
 		MuteAriaLabel:       "Mute",
-		ScrubAriaLabel:      "Playback position",
+		ScrubberAriaLabel:   "Playback position",
 		SubtitlesMenu:       subtitlesMenu(),
 		SubtitlesAriaLabel:  "Subtitles",
 		FullScreenAriaLabel: "Full Screen",
@@ -53,12 +52,8 @@ func player(title string) console.ConsolePlayer {
 	}
 }
 
-func pausedPlayer() console.ConsolePlayer {
-	return player("")
-}
-
 func stills() console.ConsolePlayer {
-	p := player("The Wedding")
+	p := pausedPlayer()
 	p.Video = h.Div(h.Class("relative"), h.Img(h.Class("absolute inset-0 size-full object-contain"), h.Src(playerStill), h.Alt("")))
 	return p
 }
@@ -70,29 +65,28 @@ func intro() console.ConsolePlayer {
 	return p
 }
 
-// @invariant: played to the end, over its last picture: the page's next step, a sentence, a button and a link, and Play Again
+// @invariant: played to the end, over its last picture, and Play Again
 func end() console.ConsolePlayer {
 	p := stills()
-	p.End = &console.ConsolePlayerEnd{Title: "Finished", ReplayLabel: "Play Again", Body: g.Group{
-		h.P(g.Text("Once approved, the other 9 languages are recorded.")),
-		h.Button(h.Class("cui-console-btn"), h.Data("variant", "filled"), h.Type("button"), g.Text("Approve Recordings")),
-		h.A(h.Class("cui-console-player-text-btn"), h.Href("#next"), g.Text("Next: The Wedding Feast ›")),
-	}}
+	p.End = &console.ConsolePlayerEnd{Title: "Finished", ReplayLabel: "Play Again"}
 	return p
 }
 
 // @invariant: the player at rest, as ConsolePlayer writes it
 var playerExamples = map[string]console.ConsolePlayer{
 	"intro":  intro(),
-	"paused": player("The Wedding"),
+	"paused": pausedPlayer(),
 }
 
 type scriptSets struct{ old, new string }
 
 const (
-	playerRoot      = `<div class="cui-console-player aspect-video"`
-	captionAtRest   = `data-control="caption"></p>`
-	captionSet      = `data-control="caption">The Wedding · Scene 2　The Vows · S02-03</p>`
+	playerRoot    = `<div class="cui-console-player aspect-video"`
+	headingAtRest = `data-control="heading"></p>`
+	headingSet    = `data-control="heading">The Wedding · Scene 2　The Vows · S02-03</p>`
+	endBodyAtRest = `<div class="cui-console-player-end-body"></div>`
+	// @invariant: the page's next step as its script fills it: a sentence, a button and a link
+	endBodySet      = `<div class="cui-console-player-end-body"><p>Once approved, the other 9 languages are recorded.</p><button class="cui-console-btn" data-variant="filled" type="button">Approve Recordings</button><a class="cui-console-player-text-btn" href="#next">Next: The Wedding Feast ›</a></div>`
 	volumeAtRest    = `value="100" aria-label="Volume" style="--cui-console-player-value: 100%"`
 	volumeSet       = `value="50" aria-label="Volume" style="--cui-console-player-value: 50%"`
 	playAtRest      = `data-control="play" aria-label="Play"`
@@ -104,9 +98,9 @@ const (
 	remainingAtRest = `data-control="remaining">-0:00</time>`
 )
 
-// @invariant: the scrubber, its times, the caption and the volume five seconds into a 62s line
+// @invariant: the scrubber, its times, the heading and the volume five seconds into a 62s line
 var playedFiveSeconds = []scriptSets{
-	{captionAtRest, captionSet},
+	{headingAtRest, headingSet},
 	{volumeAtRest, volumeSet},
 	{playAtRest, playSet},
 	{scrubAtRest, `max="62" value="5" aria-label="Playback position" aria-valuetext="0:05" style="--cui-console-player-value: 8.064516129032258%"`},
@@ -131,13 +125,14 @@ var playerStateExamples = map[string]struct {
 	rest console.ConsolePlayer
 	sets []scriptSets
 }{
-	"playing":     {player("The Wedding"), append([]scriptSets{{playerRoot + ">", playerRoot + ` data-state="playing">`}}, playedFiveSeconds...)},
-	"hidden":      {player("The Wedding"), append([]scriptSets{{playerRoot + ">", playerRoot + ` data-state="playing" data-controls="hidden">`}}, playedFiveSeconds...)},
+	"playing":     {pausedPlayer(), append([]scriptSets{{playerRoot + ">", playerRoot + ` data-state="playing">`}}, playedFiveSeconds...)},
+	"hidden":      {pausedPlayer(), append([]scriptSets{{playerRoot + ">", playerRoot + ` data-state="playing" data-controls="hidden">`}}, playedFiveSeconds...)},
 	"stills":      {stills(), append([]scriptSets{{playerRoot + ">", playerRoot + ` data-state="playing">`}, {cueAtRest, cueSet}}, playedFiveSeconds...)},
 	"full-screen": {fullScreen(), append([]scriptSets{{playerRoot + ">", playerRoot + ` data-state="playing" data-fullscreen>`}, {cueAtRest, cueSet}}, playedFiveSeconds...)},
 	"end": {end(), []scriptSets{
 		{playerRoot + ">", playerRoot + ` data-end>`},
-		{captionAtRest, captionSet},
+		{headingAtRest, headingSet},
+		{endBodyAtRest, endBodySet},
 		{volumeAtRest, volumeSet},
 		{scrubAtRest, `max="62" value="62" aria-label="Playback position" aria-valuetext="1:02" style="--cui-console-player-value: 100%"`},
 		{elapsedAtRest, `data-control="elapsed">1:02</time>`},
@@ -194,10 +189,10 @@ func TestPlayerRendersTheExamples(t *testing.T) {
 
 func TestPlayerWritesNoMenuButtonWithoutItsMenu(t *testing.T) {
 	p := pausedPlayer()
-	p.SubtitlesMenu, p.SubtitlesAriaLabel = console.ConsoleChoiceMenu{ID: "", Columns: nil, Class: ""}, ""
+	p.SubtitlesMenu, p.SubtitlesAriaLabel = nil, ""
 	got := example.Render(p)
-	if strings.Contains(got, "popover") || strings.Contains(got, `data-control="subtitles"`) || strings.Contains(got, "cui-console-player-title") {
-		t.Errorf("a player with no menus and no title wrote one: %s", got)
+	if strings.Contains(got, "popover") || strings.Contains(got, `data-control="subtitles"`) {
+		t.Errorf("a player with no menu wrote one: %s", got)
 	}
 }
 
@@ -224,7 +219,7 @@ func TestPlayerMarksEachControl(t *testing.T) {
 	for name, player := range map[string]console.ConsolePlayer{"paused": pausedPlayer(), "intro": intro(), "end": end()} {
 		got := example.Render(player)
 		controls := map[string][]string{
-			"paused": {"play", "volume", "mute", "subtitles", "full-screen", "scrubber", "elapsed", "remaining", "caption", "preview"},
+			"paused": {"play", "volume", "mute", "subtitles", "full-screen", "scrubber", "elapsed", "remaining", "heading", "preview"},
 			"intro":  {"start", "restart"},
 			"end":    {"replay"},
 		}[name]
@@ -242,7 +237,7 @@ func TestPlayerPanics(t *testing.T) {
 		{Want: "console.ConsolePlayer needs a PlayAriaLabel", Change: func(p *console.ConsolePlayer) { p.PlayAriaLabel = "" }},
 		{Want: "console.ConsolePlayer needs a VolumeAriaLabel", Change: func(p *console.ConsolePlayer) { p.VolumeAriaLabel = "" }},
 		{Want: "console.ConsolePlayer needs a MuteAriaLabel", Change: func(p *console.ConsolePlayer) { p.MuteAriaLabel = "" }},
-		{Want: "console.ConsolePlayer needs a ScrubAriaLabel", Change: func(p *console.ConsolePlayer) { p.ScrubAriaLabel = "" }},
+		{Want: "console.ConsolePlayer needs a ScrubberAriaLabel", Change: func(p *console.ConsolePlayer) { p.ScrubberAriaLabel = "" }},
 		{Want: "console.ConsolePlayer needs a FullScreenAriaLabel", Change: func(p *console.ConsolePlayer) { p.FullScreenAriaLabel = "" }},
 		{Want: "console.ConsolePlayer needs a SubtitlesAriaLabel with a SubtitlesMenu", Change: func(p *console.ConsolePlayer) { p.SubtitlesAriaLabel = "" }},
 	})
@@ -278,9 +273,9 @@ func TestPlayerIntroWritesNoDetailOrSummaryItHasNone(t *testing.T) {
 func TestPlayerNamesEachControlByItsAriaLabel(t *testing.T) {
 	p := pausedPlayer()
 	p.PlayAriaLabel, p.VolumeAriaLabel, p.MuteAriaLabel = "Play Video", "Sound Level", "Silence"
-	p.ScrubAriaLabel, p.SubtitlesAriaLabel, p.FullScreenAriaLabel = "Position in Video", "Captions Menu", "Fill Screen"
+	p.ScrubberAriaLabel, p.SubtitlesAriaLabel, p.FullScreenAriaLabel = "Position in Video", "Captions Menu", "Fill Screen"
 	got := example.Render(p)
-	for control, label := range map[string]string{"play": p.PlayAriaLabel, "volume": p.VolumeAriaLabel, "mute": p.MuteAriaLabel, "scrubber": p.ScrubAriaLabel, "subtitles": p.SubtitlesAriaLabel, "full-screen": p.FullScreenAriaLabel} {
+	for control, label := range map[string]string{"play": p.PlayAriaLabel, "volume": p.VolumeAriaLabel, "mute": p.MuteAriaLabel, "scrubber": p.ScrubberAriaLabel, "subtitles": p.SubtitlesAriaLabel, "full-screen": p.FullScreenAriaLabel} {
 		at := strings.Index(got, `data-control="`+control+`"`)
 		if at < 0 {
 			t.Fatalf("no %s control in %s", control, got)

@@ -1,5 +1,6 @@
-/* @external: What a site's own utilities need of the kit: the breakpoints and the type. Its
-   entry imports Tailwind's own beside this (README.md), resolving them from its
-   node_modules: from this written file they would not resolve. */
+/* @external: What a site's own utilities need of the kit: the breakpoints and the
+   dark variant. Not type.css: the kit's sheet ships the type, and a copy here, in a
+   sheet linked after it, would win over the kit's own values once the kit is
+   upgraded. Its entry imports Tailwind's own beside this (README.md), resolving
+   them from its node_modules: from this written file they would not resolve. */
 @import "./theme.css";
-@import "./type.css";

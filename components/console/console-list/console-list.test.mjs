@@ -52,7 +52,7 @@ export const cases = [
     html: ex('content'),
     widths: [1200],
     checks: [
-      { target: '#nightly-backup', props: ['padding-left', 'padding-top', 'min-height', 'background-color'], golden: 'a row holding the page\'s own content after its label: a row\'s 16px in, 7px above, 44px at least, no fill of its own' },
+      { target: '.cui-console-list-item', props: ['padding-left', 'padding-top', 'min-height', 'background-color'], golden: 'a row holding the page\'s own content after its label: a row\'s 16px in, 7px above, 44px at least, no fill of its own' },
     ],
   },
   {

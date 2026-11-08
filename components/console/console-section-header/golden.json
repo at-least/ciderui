@@ -1,0 +1,12 @@
+{
+ "section header | .cui-console-section-header > :first-child | 1200 | flex-grow": "1",
+ "section header | .cui-console-section-header > :first-child | 1200 | min-width": "0px",
+ "section header | .cui-console-section-header h1 | 1200 | font-size": "26px",
+ "section header | .cui-console-section-header h1 | 1200 | line-height": "30px",
+ "section header | .cui-console-section-header > .cui-console-tabs | 1200 | box-y": "4.5px",
+ "section header | .cui-console-section-header > :first-child | 390 | flex-grow": "1",
+ "section header | .cui-console-section-header > :first-child | 390 | min-width": "0px",
+ "section header | .cui-console-section-header h1 | 390 | font-size": "26px",
+ "section header | .cui-console-section-header h1 | 390 | line-height": "30px",
+ "section header | .cui-console-section-header > .cui-console-tabs | 390 | box-y": "61px"
+}

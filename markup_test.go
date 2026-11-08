@@ -57,16 +57,17 @@ func TestCheckMarkupRefusesAClassTheKitLacks(t *testing.T) {
 
 func TestCheckMarkupRefusesADataValueNoRuleSelects(t *testing.T) {
 	checkEach(t, []markupCase{
-		{"a value no rule selects", `<span class="cui-console-badge" data-color="purple">b</span>`, []string{`data-color="purple" on <span class="cui-console-badge">: no rule of ciderui selects it (cui-console-badge: error, info, success, warning; default: no data-color)`}},
-		{"a value is listed for each cui-* class of its element", `<a class="cui-console-badge cui-console-link" data-color="purple">b</a>`, []string{`data-color="purple" on <a class="cui-console-badge cui-console-link">: no rule of ciderui selects it (cui-console-badge: error, info, success, warning; cui-console-link: none; default: no data-color)`}},
-		{"each value is listed once", `<button class="cui-console-btn" data-size="xl">a</button>`, []string{`data-size="xl" on <button class="cui-console-btn">: no rule of ciderui selects it (cui-console-btn: lg, sm; default: no data-size)`}},
+		{"a value no rule selects", `<span class="cui-console-badge" data-color="purple">b</span>`, []string{`data-color="purple" on <span class="cui-console-badge">: cui-console-badge takes data-color "error", "info", "success" or "warning", or none for its default`}},
+		{"a class that takes none of the attribute is left out", `<a class="cui-console-badge cui-console-link" data-color="purple">b</a>`, []string{`data-color="purple" on <a class="cui-console-badge cui-console-link">: cui-console-badge takes data-color "error", "info", "success" or "warning", or none for its default`}},
+		{"each class that takes the attribute", `<div class="cui-console-btn cui-console-empty" data-size="xl">a</div>`, []string{`data-size="xl" on <div class="cui-console-btn cui-console-empty">: cui-console-btn takes data-size "lg" or "sm"; cui-console-empty takes data-size "lg" or "sm"; or none for their defaults`}},
+		{"each value is listed once", `<button class="cui-console-btn cui-console-play" data-size="xl">a</button>`, []string{`data-size="xl" on <button class="cui-console-btn cui-console-play">: cui-console-btn takes data-size "lg" or "sm", or none for its default`}},
 
 		// @invariant: [data-stack] selects any value, on its own class alone
 		{"a value of a bare selected attribute", `<table class="cui-console-table" data-stack="true"></table>`, nil},
-		{"a bare selected attribute on another class", `<div class="cui-console-card" data-stack></div>`, []string{`data-stack="" on <div class="cui-console-card">: no rule of ciderui selects it (cui-console-card: none; default: no data-stack)`}},
+		{"a bare selected attribute on another class", `<div class="cui-console-card" data-stack></div>`, []string{`data-stack="" on <div class="cui-console-card">: none of its classes takes data-stack`}},
 
 		// @invariant: .cui-console-player-end > [data-control="replay"] names no class of the element
-		{"an attribute only a rule for another element selects", `<p class="cui-console-player-caption" data-control="caption">x</p>`, nil},
+		{"an attribute only a rule for another element selects", `<p class="cui-console-player-heading" data-control="heading">x</p>`, nil},
 		// @invariant: cui-console-btn-icon's sizes are its own
 		{"a value of another class on the element", `<button class="cui-console-btn cui-console-btn-icon" data-size="sm">x</button>`, nil},
 		{"a data-* no rule selects", `<a class="cui-console-btn" data-testid="save">x</a>`, nil},
@@ -109,7 +110,7 @@ func TestCheckMarkupReadsThePagesStylesheet(t *testing.T) {
 	checkEach(t, []markupCase{
 		{"a site part on a console page", page(ciderui.ConsoleStylesheet(), `<button class="cui-btn">a</button>`), []string{`class "cui-btn" on <button class="cui-btn">: a site class; this page links the console stylesheet`}},
 		{"a console part on a site page", page(ciderui.SiteStylesheet(), `<span class="cui-console-badge">a</span>`), []string{`class "cui-console-badge" on <span class="cui-console-badge">: a console class; this page links the site stylesheet`}},
-		{"a value no rule selects on a console page", page(ciderui.ConsoleStylesheet(), `<span class="cui-console-badge" data-color="purple">a</span>`), []string{`data-color="purple" on <span class="cui-console-badge">: no rule of the console stylesheet this page links selects it (cui-console-badge: error, info, success, warning; default: no data-color)`}},
+		{"a value no rule selects on a console page", page(ciderui.ConsoleStylesheet(), `<span class="cui-console-badge" data-color="purple">a</span>`), []string{`data-color="purple" on <span class="cui-console-badge">: cui-console-badge takes data-color "error", "info", "success" or "warning", or none for its default`}},
 		{"a console part on a console page", page(ciderui.ConsoleStylesheet(), `<span class="cui-console-badge" data-color="error">a</span>`), nil},
 		{"the type on a console page", page(ciderui.ConsoleStylesheet(), `<p class="cui-body">a</p>`), nil},
 		{"another stylesheet is the site's own", page("/own.css", `<button class="cui-btn">a</button>`), nil},
@@ -129,7 +130,7 @@ func TestCheckMarkupRefusesAnAttributeWrittenTwice(t *testing.T) {
 func TestCheckMarkupRefusesAReferenceToNoIDOnAPage(t *testing.T) {
 	sitePage := func(body string) string { return page(ciderui.SiteStylesheet(), body) }
 	checkEach(t, []markupCase{
-		{"a skip link to no main", sitePage(`<a class="cui-btn cui-skip" href="#main">Skip</a><main>a</main>`), []string{`href="#main" on <a>: this page has no id "main"`}},
+		{"a skip link to no main", sitePage(`<a class="cui-btn cui-skip" href="#main">Skip</a><main>a</main>`), []string{`href="#main" on <a class="cui-btn cui-skip">: this page has no id "main"`}},
 		{"a link to the top", sitePage(`<a href="#">Top</a>`), nil},
 		{"a link to another page", sitePage(`<a href="/a#b">a</a>`), nil},
 		{"a value that begins with #", sitePage(`<input value="#ffffff">`), nil},

@@ -56,7 +56,7 @@ func TestRenderPanicsWithEachProblemCheckMarkupFinds(t *testing.T) {
 	if len(problems) != 2 {
 		t.Fatalf("CheckMarkup found %d problems in two unknown classes, want 2: %q", len(problems), problems)
 	}
-	want := "example.Render: " + problems[0] + "; " + problems[1]
+	want := "example.Render: " + problems[0] + "\n" + problems[1]
 	defer func() {
 		if got := fmt.Sprint(recover()); got != want {
 			t.Errorf("Render of a refused page panicked with %q, want %q", got, want)

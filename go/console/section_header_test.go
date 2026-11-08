@@ -9,9 +9,9 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-func TestSectionHeadRendersTheExample(t *testing.T) {
-	head := h.Div(h.Class("cui-console-page max-w-4xl"),
-		console.ConsoleSectionHead{
+func TestSectionHeaderRendersTheExample(t *testing.T) {
+	header := h.Div(h.Class("cui-console-page max-w-4xl"),
+		console.ConsoleSectionHeader{
 			Title: g.Group{h.H1(h.Class("cui-console-h2"), g.Text("Issues")), h.P(g.Text("New and regressed issues in this project."))},
 			Class: "",
 			Children: console.ConsoleTabs{AriaLabel: "Time window", Class: "", Tabs: []console.ConsoleTab{
@@ -22,13 +22,13 @@ func TestSectionHeadRendersTheExample(t *testing.T) {
 		},
 		h.P(g.Text("The page’s content.")),
 	)
-	example.Check(t, head, "console/console-section-head/examples/section-head.html")
+	example.Check(t, header, "console/console-section-header/examples/section-header.html")
 }
 
-func TestSectionHeadPanics(t *testing.T) {
-	example.Panics(t, func() console.ConsoleSectionHead {
-		return console.ConsoleSectionHead{Title: g.Text("x"), Class: "", Children: nil}
-	}, []example.Break[console.ConsoleSectionHead]{
-		{Want: "console.ConsoleSectionHead needs a Title", Change: func(p *console.ConsoleSectionHead) { p.Title = nil }},
+func TestSectionHeaderPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleSectionHeader {
+		return console.ConsoleSectionHeader{Title: g.Text("x"), Class: "", Children: nil}
+	}, []example.Break[console.ConsoleSectionHeader]{
+		{Want: "console.ConsoleSectionHeader needs a Title", Change: func(p *console.ConsoleSectionHeader) { p.Title = nil }},
 	})
 }

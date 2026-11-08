@@ -31,44 +31,43 @@ type ConsolePlayerIntro struct {
 // has played to the end, in place of its controls: a title, the page's own
 // next step under it, and a smaller button that plays it again. The page's
 // script sets the player's data-end as the video ends and drops it as it
-// plays again, the layer fading in and out.
+// plays again, the layer fading in and out. The next step's element,
+// cui-console-player-end-body, is written empty: the page's script fills it
+// (its words, buttons and links, one under another) as the video ends, and
+// an empty one keeps no room.
 type ConsolePlayerEnd struct {
-	Title string
-	// Body is the page's: its words, buttons and links, one under another;
-	// nil for none.
-	Body        g.Node
+	Title       string
 	ReplayLabel string
 }
 
 // ConsolePlayer is a video's controls over it, tv.apple.com's player's,
 // written at rest: paused, the controls shown, not muted, the volume full,
-// nothing played, no cue or caption, not full screen, not ended. The page's
+// nothing played, no cue or heading, not full screen, not ended. The page's
 // script plays the video and keeps the markup current: data-state="playing"
 // (and the centre button's aria-label), data-controls="hidden" (while playing
 // and the pointer is still), data-muted (the mute button's glyph),
 // data-fullscreen (while it fills the screen: the bar's FullScreenControls
 // show and the full-screen button shows its exit glyph), data-end (the End
 // layer), each range's value, max and --cui-console-player-value, the times,
-// the cue and its lang, the caption. It finds each control by its
-// data-control (TestPlayerMarksEachControl holds the names). The scrubber's
-// preview stays hidden until the page fills its picture and line and shows it
-// over the time under the pointer.
+// the cue and its lang, the heading (the shot on screen, at the header's
+// start). It finds each control by its data-control
+// (TestPlayerMarksEachControl holds the names). The scrubber's preview stays
+// hidden until the page fills its picture and line and shows it over the
+// time under the pointer.
 type ConsolePlayer struct {
 	// Video is the picture, the player's first child: the page's <video>
 	// (its source and tracks; no controls attribute), or an element the
 	// page draws its stills in, which the player sizes as it would a video.
-	Video g.Node
-	// Title: "" for none.
-	Title           string
-	PlayAriaLabel   string
-	VolumeAriaLabel string
-	MuteAriaLabel   string
-	ScrubAriaLabel  string
+	Video             g.Node
+	PlayAriaLabel     string
+	VolumeAriaLabel   string
+	MuteAriaLabel     string
+	ScrubberAriaLabel string
 	// SubtitlesMenu is the popover the subtitles button opens, its columns
 	// such as the voices and the subtitles side by side, written
-	// inside the player, so the controls stay while the focus is in it; no
-	// ID, no button.
-	SubtitlesMenu       ConsoleChoiceMenu
+	// inside the player, so the controls stay while the focus is in it; nil
+	// for none, and no button.
+	SubtitlesMenu       *ConsoleChoiceMenu
 	SubtitlesAriaLabel  string
 	FullScreenAriaLabel string
 	// FullScreenControls are the page's own controls the bar shows before
@@ -92,12 +91,12 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 	if p.Video == nil {
 		panic("console.ConsolePlayer needs a Video")
 	}
-	for name, label := range map[string]string{"PlayAriaLabel": p.PlayAriaLabel, "VolumeAriaLabel": p.VolumeAriaLabel, "MuteAriaLabel": p.MuteAriaLabel, "ScrubAriaLabel": p.ScrubAriaLabel, "FullScreenAriaLabel": p.FullScreenAriaLabel} {
+	for name, label := range map[string]string{"PlayAriaLabel": p.PlayAriaLabel, "VolumeAriaLabel": p.VolumeAriaLabel, "MuteAriaLabel": p.MuteAriaLabel, "ScrubberAriaLabel": p.ScrubberAriaLabel, "FullScreenAriaLabel": p.FullScreenAriaLabel} {
 		if label == "" {
 			panic("console.ConsolePlayer needs a " + name)
 		}
 	}
-	if p.SubtitlesMenu.ID != "" && p.SubtitlesAriaLabel == "" {
+	if p.SubtitlesMenu != nil && p.SubtitlesAriaLabel == "" {
 		panic("console.ConsolePlayer needs a SubtitlesAriaLabel with a SubtitlesMenu")
 	}
 	if p.Intro != nil && (p.Intro.Title == "" || p.Intro.PlayLabel == "" || p.Intro.RestartLabel == "") {
@@ -113,7 +112,7 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 		p.Video,
 		h.Div(h.Class("cui-console-player-overlay"),
 			h.Div(h.Class("cui-console-player-header"),
-				h.P(h.Class("cui-console-player-caption"), h.Data("control", "caption")),
+				h.P(h.Class("cui-console-player-heading"), h.Data("control", "heading")),
 				// @invariant: the range opens beside its button while the pointer is over either
 				h.Div(h.Class("cui-console-player-volume"),
 					rangeInput("volume", "100", p.VolumeAriaLabel, "", "100%"),
@@ -126,14 +125,13 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 				h.P(h.Span(h.Class("cui-console-player-cue"))),
 			),
 			h.Div(h.Class("cui-console-player-footer"),
-				g.If(p.Title != "", h.P(h.Class("cui-console-player-title"), g.Text(p.Title))),
 				h.Div(h.Class("cui-console-player-buttons"),
 					g.If(p.FullScreenControls != nil, h.Div(h.Class("cui-console-player-full-screen-controls"), p.FullScreenControls)),
-					g.If(p.SubtitlesMenu.ID != "", button("subtitles", p.SubtitlesAriaLabel, p.SubtitlesMenu.ID, lucide.Captions)),
+					g.Iff(p.SubtitlesMenu != nil, func() g.Node { return button("subtitles", p.SubtitlesAriaLabel, p.SubtitlesMenu.ID, lucide.Captions) }),
 					button("full-screen", p.FullScreenAriaLabel, "", g.Group{lucide.Maximize2.Class("cui-console-player-glyph-full-screen"), lucide.Minimize2.Class("cui-console-player-glyph-exit-full-screen")}),
 				),
 				h.Div(h.Class("cui-console-player-progress"),
-					rangeInput("scrubber", "0", p.ScrubAriaLabel, "0:00", "0%"),
+					rangeInput("scrubber", "0", p.ScrubberAriaLabel, "0:00", "0%"),
 					// @invariant: the range's aria-valuetext says the time: the preview is for the eye
 					h.Div(h.Class("cui-console-player-preview"), h.Data("control", "preview"), h.Aria("hidden", "true"), g.Attr("hidden"),
 						h.Img(h.Class("cui-console-player-preview-picture"), h.Alt("")),
@@ -148,11 +146,11 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 		g.Iff(p.End != nil, func() g.Node {
 			return h.Div(h.Class("cui-console-player-end"),
 				h.P(h.Class("cui-console-player-end-title"), g.Text(p.End.Title)),
-				h.Div(h.Class("cui-console-player-end-body"), p.End.Body),
+				h.Div(h.Class("cui-console-player-end-body")),
 				h.Button(h.Class("cui-console-player-text-btn"), h.Type("button"), h.Data("control", "replay"), g.Text(p.End.ReplayLabel)),
 			)
 		}),
-		g.If(p.SubtitlesMenu.ID != "", p.SubtitlesMenu),
+		g.Iff(p.SubtitlesMenu != nil, func() g.Node { return *p.SubtitlesMenu }),
 		p.Popovers,
 	).Render(w)
 }

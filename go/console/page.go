@@ -20,18 +20,18 @@ type ConsolePage struct {
 	Head g.Node
 	// Class: the <html>'s.
 	Class string
-	// Skip: the skip link's words, the link before all else the keyboard reads;
+	// SkipLabel: the skip link's words, the link before all else the keyboard reads;
 	// "" for none. It lands on the page's own <main id="main" tabindex="-1">
 	// (the example console-skip's).
-	Skip     string
-	Children g.Node
+	SkipLabel string
+	Children  g.Node
 }
 
 func (p ConsolePage) Render(w io.Writer) error {
 	children := p.Children
-	if p.Skip != "" {
+	if p.SkipLabel != "" {
 		children = g.Group{
-			ConsoleBtn{Href: "#main", Label: p.Skip, AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: ConsoleBtnVariantFilled, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: "cui-console-skip"},
+			ConsoleBtn{Href: "#main", Label: p.SkipLabel, AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: ConsoleBtnVariantFilled, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: "cui-console-skip"},
 			children,
 		}
 	}

@@ -22,7 +22,7 @@ export const cases = [
       { target: '.cui-console-table-figure:not(th)', props: ['font-size', 'line-height', 'font-weight', 'letter-spacing', 'color', 'text-align', 'font-variant-numeric'], asc: ['analytics', 'table.figure'] },
       { target: 'tbody td:nth-child(2)', props: ['vertical-align', 'border-bottom-width', 'border-bottom-style', 'border-bottom-color'], asc: ['analytics', 'table.cell'] },
       { target: 'tbody td:nth-child(2)', props: ['font-size', 'line-height', 'font-weight', 'letter-spacing', 'color', 'text-align'], asc: ['analytics', 'table.text'] },
-      { target: '.cui-console-table-subtitle', props: ['font-size', 'line-height', 'font-weight', 'color', 'display'], golden: 'a line under a cell\'s text, 12px on 16px, the secondary label: the toolkit\'s display list\'s subtitle at the table\'s small size' },
+      { target: '.cui-console-table-detail', props: ['font-size', 'line-height', 'font-weight', 'color', 'display'], golden: 'a line under a cell\'s text, 12px on 16px, the secondary label: the toolkit\'s display list\'s subtitle at the table\'s small size' },
       { target: 'tbody tr:first-child', props: ['cursor'], golden: 'a row that is a link, all of it' },
       { target: '.cui-console-table', props: ['box-width'], golden: 'the full width of its place' },
       { target: 'tbody tr:first-child td:first-child', props: ['hit'], golden: 'the pointer finds the row\'s link anywhere in its first cell' },

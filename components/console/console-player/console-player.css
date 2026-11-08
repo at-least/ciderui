@@ -53,7 +53,7 @@
   /* @external: while paused, what is on screen at the header's start (tv.apple.com's
      header's first column, empty there), white under the cue's shadow on
      its row; gone while playing, in the header's own fade */
-  .cui-console-player-caption {
+  .cui-console-player-heading {
     flex: 1;
     min-width: 0;
     overflow: hidden;
@@ -160,20 +160,10 @@
     /* @invariant: the buttons as wide as they ask while there is room, then no wider
        than the player (the full-screen controls give way first) */
     grid-template-columns: minmax(0, 1fr) minmax(0, auto);
-    grid-template-areas: "title buttons" "progress progress";
+    grid-template-areas: ". buttons" "progress progress";
     align-items: center;
     gap: 12px;
     transition: opacity 0.4s cubic-bezier(0.4, 0, 0.6, 1);
-  }
-
-  .cui-console-player-title {
-    grid-area: title;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: 26px;
-    line-height: 32px;
-    font-weight: 700;
   }
 
   .cui-console-player-buttons {
@@ -546,8 +536,11 @@
       }
     }
 
+    /* @trap: pressed shows the hovered fill and does not scale (the owner,
+       2026-11-09): the centre play's scale is tv.apple.com's, measured; this
+       button's had no measure */
     &:active {
-      transform: scale(0.97);
+      background-color: var(--cui-c-on-video-control);
     }
   }
 

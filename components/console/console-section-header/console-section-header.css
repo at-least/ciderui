@@ -1,5 +1,5 @@
 @layer components {
-  .cui-console-section-head {
+  .cui-console-section-header {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;

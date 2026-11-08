@@ -60,7 +60,7 @@ func (d Document) Render(w io.Writer) error {
 // one wording of a refused page and a refused example
 func Check(owner, html string) {
 	if problems := ciderui.CheckMarkup(html); problems != nil {
-		panic(owner + ": " + strings.Join(problems, "; "))
+		panic(owner + ": " + strings.Join(problems, "\n"))
 	}
 }
 

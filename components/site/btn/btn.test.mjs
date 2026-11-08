@@ -1,7 +1,8 @@
 import { examples, SIZE, PADDING, BORDER, RADIUS, COLORS, TEXT } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const LOOK = [...SIZE, ...PADDING, ...BORDER, ...RADIUS, 'min-width', 'box-height', ...TEXT];
+const LOOK = [...SIZE, ...PADDING, ...BORDER, ...RADIUS, 'min-width', 'box-height', ...TEXT.filter((p) => p !== 'display')];
+const FLEX = { props: ['display', 'align-items', 'justify-content', 'column-gap'], golden: 'inline-flex, not apple.com\'s inline-block: an icon half an em before its label, on its middle (apple.com\'s pill holds text alone)' };
 // @external: what the home page's probes read (no text-align, wrapping or opacity; its
 // primary button's cursor alone); not its display, which is its place's
 const LOOK_HOME = [...SIZE, ...PADDING, ...BORDER, ...RADIUS, 'min-width', 'box-height'];
@@ -20,6 +21,7 @@ export const cases = [
       { target: '.cui-btn', props: [...LOOK, ...COLORS], apple: ['store', 'button'] },
       ...states('.cui-btn', ['store', 'button']),
       { target: '.cui-btn', ...OWN },
+      { target: '.cui-btn', ...FLEX },
     ],
   },
   {
@@ -29,6 +31,7 @@ export const cases = [
       { target: '.cui-btn:not([data-size])', props: LOOK, apple: ['store', 'button'] },
       { target: '.cui-btn[data-size="lg"]', props: LOOK, apple: ['store', 'button.elevated'] },
       { target: '.cui-btn[data-size="lg"]', ...OWN },
+      { target: '.cui-btn[data-size="lg"]', ...FLEX },
     ],
   },
   {
@@ -75,12 +78,21 @@ export const cases = [
       }),
     ],
   },
-  {
-    name: 'block',
-    html: ex('block'),
+  ...[['block', 'a.cui-btn-block'], ['block-button', 'button.cui-btn-block']].map(([name, target]) => ({
+    name,
+    html: ex(name),
     checks: [
-      // @external: its width is its container's: a block's, not checked
-      { target: '.cui-btn-block', props: [...SIZE, ...PADDING, ...RADIUS, 'display', 'box-height', ...COLORS], apple: ['store', 'button.block'] },
+      { target, props: [...SIZE, ...PADDING, ...RADIUS, 'box-height', ...COLORS], apple: ['store', 'button.block'] },
+      { target, props: ['display', 'box-width'], golden: 'flex, not apple.com\'s block, so an icon keeps its place; the row\'s whole width, a <button> as a link' },
+    ],
+  })),
+  {
+    name: 'icon',
+    html: ex('icon'),
+    widths: [1200],
+    checks: [
+      { target: '.cui-btn > svg', props: ['box-width', 'box-height'], golden: 'the icon 1em square, the label\'s 14px' },
+      { target: '.cui-btn', props: ['box-height'], golden: 'the icon adds no height: the 36px pill' },
     ],
   },
   {

@@ -35,7 +35,7 @@ for (const set of ['site', 'console']) check(`${set}: every :hover sits inside (
 // @invariant: rule 9's exceptions, each read in its part's test: a text field draws its
 // edge or halo in the ring's place; the others move the one ring in, where a
 // scroller or their edge would clip it
-const NO_RING = ['cui-console-field', 'cui-field-input'];
+const NO_RING = ['cui-console-field-input', 'cui-field-input'];
 const RING_MOVED = ['cui-console-list-item'];
 // @invariant: rule 10 is a pointer's color change; these change with a panel opening, a
 // field's label rising or its text typed, each read in its part's test

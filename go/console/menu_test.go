@@ -83,7 +83,7 @@ func TestChoiceMenuPanics(t *testing.T) {
 		{Want: "console.ConsoleChoiceMenu needs a column", Change: func(p *console.ConsoleChoiceMenu) { p.Columns = nil }},
 		{Want: "console.ConsoleChoiceColumn needs a Name and a Title", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Name = "" }},
 		{Want: "console.ConsoleChoiceColumn needs a Name and a Title", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Title = "" }},
-		{Want: "console.ConsoleChoiceMenu's columns need names of their own", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Name = "voices" }},
+		{Want: `console.ConsoleChoiceMenu has two columns named "voices": each needs a name of its own`, Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Name = "voices" }},
 		{Want: "console.ConsoleChoiceColumn needs a choice", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Choices = nil }},
 		{Want: "console.ConsoleChoice needs a Label and a Value", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Choices[0].Label = "" }},
 		{Want: "console.ConsoleChoice needs a Label and a Value", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Choices[0].Value = "" }},

@@ -26,20 +26,16 @@ var (
 type ConsoleStripItemVariant struct{ value string }
 
 var (
-	// ConsoleStripItemVariantFrame: round its middle, a film's frame.
-	ConsoleStripItemVariantFrame = ConsoleStripItemVariant{value: ""}
-	// ConsoleStripItemVariantSheet: to its left edge, a character sheet's
-	// face.
-	ConsoleStripItemVariantSheet = ConsoleStripItemVariant{"sheet"}
+	// ConsoleStripItemVariantCenter: round its middle, a film's frame.
+	ConsoleStripItemVariantCenter = ConsoleStripItemVariant{value: ""}
+	// ConsoleStripItemVariantLeading: to its leading edge, a character
+	// sheet's face.
+	ConsoleStripItemVariantLeading = ConsoleStripItemVariant{"leading"}
 )
 
 // ConsoleStrip is one row of 16:9 thumbnails scrolled sideways, in groups
 // under their names (a storyboard's shots by scene under its player), one of
-// them current. While the current item plays, the page's script sets
-// data-progress (its presence only; no value is read from it) and
-// --cui-console-strip-progress (0% to 100%), the value: a line over its
-// picture's foot fills to it, how far the shot has played; without
-// data-progress, no line draws.
+// them current.
 type ConsoleStrip struct {
 	AriaLabel string
 	Groups    []ConsoleStripGroup
@@ -100,7 +96,7 @@ func (s ConsoleStrip) Render(w io.Writer) error {
 				panic("console.ConsoleStripGroup needs a ConsoleStripItem")
 			}
 			return h.Div(h.Class("cui-console-strip-group"),
-				h.P(h.Class("cui-console-strip-head"), h.Span(h.Class("cui-console-strip-label"), g.Text(group.Label))),
+				h.P(h.Class("cui-console-strip-header"), h.Span(h.Class("cui-console-strip-label"), g.Text(group.Label))),
 				g.Map(group.Items, stripItem),
 			)
 		}),
