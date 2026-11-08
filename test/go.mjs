@@ -42,9 +42,8 @@ for (const line of covered.trim().split('\n')) {
   if (!line.includes('coverage: 100.0% of statements')) throw new Error(`a statement no test runs (go test -coverprofile): ${line}`);
 }
 // @trap: the button's variants a compile error, not a string: btn.go alone writes the
-// class. play.go's two glyphs and labels and disclosure's <summary> are no <button>
-// the type can hold.
-const OWN_BUTTON = /(^|\/)(btn|play|disclosure)\.go$/;
+// class. play.go's two glyphs and labels are no <button> the type can hold.
+const OWN_BUTTON = /(^|\/)(btn|play)\.go$/;
 for (const dir of ['go/site', 'go/console']) {
   for (const file of readdirSync(join(ROOT, dir)).filter((f) => f.endsWith('.go') && !f.endsWith('_test.go') && !OWN_BUTTON.test(f))) {
     if (/"cui-(console-)?btn[" ]/.test(readFileSync(join(ROOT, dir, file), 'utf8'))) throw new Error(`${dir}/${file} writes a button's class: use its Btn type`);

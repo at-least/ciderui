@@ -48,7 +48,6 @@ func TestNoPartHasAHeader(t *testing.T) {
 	}
 }
 
-// a page's md: layout and its type change at one width
 func TestTypeStepsAtTheMdBreakpoint(t *testing.T) {
 	md := regexp.MustCompile(`--breakpoint-md: (\d+px);`).FindStringSubmatch(css("theme.css"))[1]
 	steps := regexp.MustCompile(`width >= (\d+px)`).FindAllStringSubmatch(css("type.css"), -1)

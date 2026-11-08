@@ -42,8 +42,6 @@ func TestEachPartWritesThePagesClass(t *testing.T) {
 	})
 }
 
-// a part writes no words of its own: each it shows, or gives assistive
-// technology, is the page's, from the part's field
 func TestEachPartWritesThePagesWords(t *testing.T) {
 	intro := intro()
 	intro.Intro = &console.ConsolePlayerIntro{Title: "The Feast", Detail: "2 min", Summary: "A short one.", PlayLabel: "Watch", RestartLabel: "From the Top"}

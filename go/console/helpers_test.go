@@ -21,7 +21,7 @@ func readRaw(path string) string {
 	return string(b)
 }
 
-// @invariant: the src of the image of alt in the example at path, a data: URL too long to copy
+// @invariant: read from the example: a data: URL too long to copy
 func exampleSrc(path, alt string) string {
 	raw := readRaw(path)
 	at := strings.Index(raw, `" alt="`+alt+`"`)
@@ -29,7 +29,6 @@ func exampleSrc(path, alt string) string {
 	return raw[start:at]
 }
 
-// a part that renders a page's node to a string first returns what that node returned
 func TestAPagesNodesErrorIsReturned(t *testing.T) {
 	failure := errors.New("no")
 	failing := g.NodeFunc(func(io.Writer) error { return failure })

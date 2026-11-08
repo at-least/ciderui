@@ -33,7 +33,6 @@ const languages = (html, voices = 1) => {
 };
 const LAST = '#subtitles [value="vi"]';
 // @invariant: the preview as the page's script shows it: its picture, its line and the pointer's x
-// (300px into the bar)
 const previewing = (html) => html
   .replace('aria-hidden="true" hidden>', 'aria-hidden="true" style="--cui-console-player-preview-x: 300px">')
   .replace('<img class="cui-console-player-preview-picture" alt="">', `<img class="cui-console-player-preview-picture" alt="" src="${html.match(/<img class="absolute[^>]* src="([^"]+)"/)[1]}">`)

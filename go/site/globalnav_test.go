@@ -32,7 +32,6 @@ func TestGlobalNavRendersTheExamples(t *testing.T) {
 	}), "site/globalnav/examples/post.html")
 }
 
-// every word the nav writes of its own, and its Home, are the caller's
 func TestGlobalNavWritesItsWordsInThePagesLanguage(t *testing.T) {
 	got := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/zh-tw/", LogoAriaLabel: "回首頁", Links: []site.GlobalNavLink{{Label: "商店", Href: "/store", Post: false}}, AriaLabel: "主要選單", MenuAriaLabel: "選單", CloseAriaLabel: "關閉", Class: ""})
 	for _, want := range []string{

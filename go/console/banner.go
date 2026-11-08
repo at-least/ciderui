@@ -11,8 +11,7 @@ import (
 
 // @invariant: one glyph per color, so a reader learns it once: SF Symbols'
 // info.circle, checkmark.circle, exclamationmark.triangle and
-// exclamationmark.circle in Lucide (the consumers' errors were CircleAlert
-// in crashcart and totality, CircleX in muse)
+// exclamationmark.circle in Lucide
 var bannerIcons = map[ConsoleColor]lucide.Icon{
 	ConsoleColorNeutral: lucide.Info,
 	ConsoleColorInfo:    lucide.Info,

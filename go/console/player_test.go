@@ -58,14 +58,12 @@ func stills() console.ConsolePlayer {
 	return p
 }
 
-// @invariant: before it first plays: the title, its length, a sentence, Play, and Start Over hidden until the page's script shows it
 func intro() console.ConsolePlayer {
 	p := stills()
 	p.Intro = &console.ConsolePlayerIntro{Title: "The Wedding", Detail: "8 min 33 s", Summary: "The bride was late, and the old dog knew why.", PlayLabel: "Play", RestartLabel: "Start Over"}
 	return p
 }
 
-// @invariant: played to the end, over its last picture, and Play Again
 func end() console.ConsolePlayer {
 	p := stills()
 	p.End = &console.ConsolePlayerEnd{Title: "Finished", ReplayLabel: "Play Again"}
@@ -81,11 +79,10 @@ var playerExamples = map[string]console.ConsolePlayer{
 type scriptSets struct{ old, new string }
 
 const (
-	playerRoot    = `<div class="cui-console-player aspect-video"`
-	headingAtRest = `data-control="heading"></p>`
-	headingSet    = `data-control="heading">The Wedding · Scene 2　The Vows · S02-03</p>`
-	endBodyAtRest = `<div class="cui-console-player-end-body"></div>`
-	// @invariant: the page's next step as its script fills it: a sentence, a button and a link
+	playerRoot      = `<div class="cui-console-player aspect-video"`
+	headingAtRest   = `data-control="heading"></p>`
+	headingSet      = `data-control="heading">The Wedding · Scene 2　The Vows · S02-03</p>`
+	endBodyAtRest   = `<div class="cui-console-player-end-body"></div>`
 	endBodySet      = `<div class="cui-console-player-end-body"><p>Once approved, the other 9 languages are recorded.</p><button class="cui-console-btn" data-variant="filled" type="button">Approve Recordings</button><a class="cui-console-player-text-btn" href="#next">Next: The Wedding Feast ›</a></div>`
 	volumeAtRest    = `value="100" aria-label="Volume" style="--cui-console-player-value: 100%"`
 	volumeSet       = `value="50" aria-label="Volume" style="--cui-console-player-value: 50%"`
@@ -98,7 +95,6 @@ const (
 	remainingAtRest = `data-control="remaining">-0:00</time>`
 )
 
-// @invariant: the scrubber, its times, the heading and the volume five seconds into a 62s line
 var playedFiveSeconds = []scriptSets{
 	{headingAtRest, headingSet},
 	{volumeAtRest, volumeSet},
@@ -196,7 +192,6 @@ func TestPlayerWritesNoMenuButtonWithoutItsMenu(t *testing.T) {
 	}
 }
 
-// the page's full-screen controls in the bar, before its buttons; none, no wrapper
 func TestPlayerWritesItsFullScreenControls(t *testing.T) {
 	p := pausedPlayer()
 	if got := example.Render(p); strings.Contains(got, "cui-console-player-full-screen-controls") {
@@ -213,8 +208,6 @@ func TestPlayerWritesItsFullScreenControls(t *testing.T) {
 	}
 }
 
-// the hooks a page's script finds the controls by: each once, the intro's and
-// the end's own included
 func TestPlayerMarksEachControl(t *testing.T) {
 	for name, player := range map[string]console.ConsolePlayer{"paused": pausedPlayer(), "intro": intro(), "end": end()} {
 		got := example.Render(player)
@@ -269,7 +262,6 @@ func TestPlayerIntroWritesNoDetailOrSummaryItHasNone(t *testing.T) {
 	}
 }
 
-// each control the page can name is named by its own field, not a word of the kit's
 func TestPlayerNamesEachControlByItsAriaLabel(t *testing.T) {
 	p := pausedPlayer()
 	p.PlayAriaLabel, p.VolumeAriaLabel, p.MuteAriaLabel = "Play Video", "Sound Level", "Silence"
