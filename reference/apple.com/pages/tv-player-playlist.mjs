@@ -2,7 +2,7 @@
 // clicked (tv-player's opening), the row of trailers it shows over the
 // video's foot: the tab chosen and not, the row, a trailer's frame, its
 // picture, its title and line, the paddle. No trailer is marked as the one
-// playing (the second was, in the reading before this spec).
+// playing.
 import { TYPE, BOX, FLEX, FOCUS, MOTION } from './common.mjs';
 import { URL, open } from './tv-player.mjs';
 

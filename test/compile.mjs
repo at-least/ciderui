@@ -56,7 +56,6 @@ export const shipped = (set) => readFileSync(join(ROOT, 'dist', `${set}.css`), '
 
 export const exampleFiles = (part) => readdirSync(join(ROOT, part.dir, 'examples')).filter((f) => f.endsWith('.html')).sort();
 
-// @invariant: as its set's page holds it
 export const exampleHtml = (part, file) => {
   const example = readFileSync(join(ROOT, part.dir, 'examples', file), 'utf8');
   return part.set === 'console' ? `<div class="cui-console-page">${example}</div>` : example;

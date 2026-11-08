@@ -6,7 +6,7 @@
 // browser, a phone's below the window's least width in Safari:
 // 1. the tabs' phone row (320: six tabs overflow it in every font) is one
 //    row that scrolls sideways, none of its height a scrollbar's;
-// 2. (the tabs' edge fade, measured to 2026-11-07: the fade is gone)
+// 2. retired with the tabs' edge fade; the numbers stay MEASURED.md's
 // 3. the row's last tab, its start a sliver inside the row (Linux's Inter:
 //    3px), focused by script: brought in whole (within 1px), its ring inside
 //    the tab where :focus-visible matches;

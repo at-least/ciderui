@@ -1,9 +1,9 @@
 // @external: A product page, iPhone 18 Pro's, a dark page: apple.com's base type scale
-// (the classes its stylesheets define, added to the page), the global nav's
-// dark side, the content's width, a section,
-// its header, a dark and an alternate section, a rounded tile, a gallery (its
-// scroller, items, paddles and dots), the "more" link, a stat, a footnote, and the floating local nav,
-// which shows once the page is scrolled past its hero.
+// (the classes its stylesheets define, added to the page), the global nav's dark side,
+// the content's width, a section, its header, a dark and an alternate section, a
+// rounded tile, a gallery (its scroller, items, paddles and dots), the "more" link, a
+// stat, a footnote, and the floating local nav, which shows once the page is scrolled
+// past its hero.
 import { TYPE, BOX, MOTION, BLUR, LINK, PAGE, FLEX } from './common.mjs';
 const TYPOGRAPHY = ['headline-super', 'headline-elevated', 'headline', 'headline-reduced', 'eyebrow-super',
   'intro-elevated', 'intro', 'body', 'body-reduced', 'body-reduced-tight', 'callout-super', 'callout-elevated',

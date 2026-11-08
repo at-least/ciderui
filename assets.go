@@ -89,7 +89,8 @@ func Assets() http.Handler {
 			http.NotFound(w, r)
 			return
 		}
-		// @trap: not immutable: the name carries no hash
+		// @trap: not immutable: the name carries no hash, so an upgrade would leave
+		// every page its old faces
 		w.Header().Set("Cache-Control", "public, max-age=86400")
 		http.ServeFileFS(w, r, kit, "fonts/"+name)
 	})

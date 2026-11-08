@@ -13,7 +13,6 @@ export const PAGE = [...TYPE, 'background-color', '-webkit-font-smoothing', 'fon
 export const TEXT = ['display', 'text-align', 'white-space', 'text-decoration-line', 'cursor', 'vertical-align', 'opacity'];
 // @invariant: a flex or grid box's own layout
 export const FLEX = ['display', 'flex-direction', 'flex-wrap', 'align-items', 'justify-content', 'row-gap', 'column-gap'];
-// @invariant: an element's CSS animation, as it names it
 export const ANIMATION = ['animation-name', 'animation-duration', 'animation-delay', 'animation-timing-function', 'animation-fill-mode', 'animation-iteration-count'];
 
 // @invariant: a spec read again on a touch screen (`touch`): its probes of these names,

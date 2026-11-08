@@ -12,7 +12,6 @@ const CAPTION = `${FIRST} > .cui-console-strip-caption`;
 const CURRENT = '.cui-console-strip-item[aria-current="true"]';
 const WAITING = '.cui-console-strip-mark[data-state="waiting"]';
 const WORKING = '.cui-console-strip-mark[data-state="working"]';
-// @invariant: the current shot being worked on (2.2)
 const CURRENT_WORKING = `${CURRENT} > ${WORKING}`;
 const TIP = `${FIRST} > .cui-console-strip-tip`;
 // @invariant: the page's script's progress on the current shot

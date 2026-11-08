@@ -1,11 +1,10 @@
 // @external: node nav.mjs: the global nav's icons, apple.com's SVG read live off its
-// home page (never stored), rasterized at 20 pixels to the unit on a blank
-// page (svg.js), and ciderui's own drawn from their numbers: the share of ink
-// each pair has in common. The menu's
-// button closed and open (its two lines' points, open, are the end of the
-// animation apple.com runs on them). Fails below 0.85 (intersection over
-// union), a mark set before the run, or if the nav's example draws others.
-// The result is results/nav.json.
+// home page (never stored), rasterized at 20 pixels to the unit on a blank page
+// (svg.js), and ciderui's own drawn from their numbers: the share of ink each pair has
+// in common. The menu's button closed and open (its two lines' points, open, are the
+// end of the animation apple.com runs on them). Fails below 0.85 (intersection over
+// union), a mark set before the run, or if the nav's example draws others. The result
+// is results/nav.json.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 

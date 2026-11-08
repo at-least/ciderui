@@ -67,8 +67,8 @@
       border-color: Canvas;
     }
 
-    /* @trap: nothing uses it: muse's assets page. Its picture alone: its lines
-       dimmed too fell to 2:1 */
+    /* @trap: an asset nothing uses (muse's assets page): its picture alone
+       dims; its lines dimmed too fell to 2:1 */
     &[data-state="unused"] > img {
       opacity: 0.5;
     }
@@ -166,12 +166,10 @@
     }
   }
 
-  /* @invariant: how far the current shot has played (the page's script sets
-     data-progress, its presence only, and --cui-console-strip-progress, the
-     value, while it plays): the player's scrubber's line, thin, over the
-     picture's foot 8px in, as the mark is in its corner. Without
-     data-progress no line draws: a current shot not playing shows its
-     picture whole (muse's, 2026-11-07) */
+  /* @invariant: while the current shot plays, the page's script sets
+     data-progress (its presence only) and --cui-console-strip-progress (the
+     value). Without data-progress no line draws: a current shot not playing
+     shows its picture whole (muse's, 2026-11-07) */
   .cui-console-strip-item[aria-current="true"][data-progress]::after {
     content: "";
     position: absolute;

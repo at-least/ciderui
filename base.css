@@ -1,4 +1,3 @@
-/* @invariant: layered: a utility on the element wins */
 @layer base {
   /* @trap: not in tokens.css: an unlayered :root would beat `cui-dark` on <html>.
      :where(): the console's own overrides it, a `cui-dark` or `cui-light` wins */

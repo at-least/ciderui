@@ -4,6 +4,8 @@ Is every console part a finger presses big enough? The HIG's control sizes (Acce
 
 `audit.mjs` opens every console part's example at 390px with touch emulated (`test/browser.mjs`: `(hover: none)` and `(pointer: coarse)` match), 48px by 24px of room round it, takes each control a finger can press and can see (`checkVisibility()`: not one in a closed `<details>`; one hidden until focused, the skip link, read focused), and prints its box and its target: hit-tested from its center (a checkbox's or a radio's `<label>`'s), each way, as far as a tap still lands on the control, every 0.5px. A `::before` or `::after` drawn round it counts as far as it is not clipped (a scroll box) or covered (a neighbour's target); each way reads up to 0.5px short, so 43 holds a 44px target. It exits 1 while a target is under 44pt.
 
+The chips, hint, radio, head, sort links, small field, appearance choice and the footer's directory named below went by DESIGN.md decisions 27, 31, 36 and 40, the gallery, local nav and swatches by decision 33; the counts are the record of their dates.
+
 ```sh
 node scripts/docker.mjs node reference/touch/audit.mjs             # a step of npm test
 VERBOSE=1 node scripts/docker.mjs node reference/touch/audit.mjs   # every control's line

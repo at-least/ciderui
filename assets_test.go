@@ -44,8 +44,6 @@ func sets() []set {
 	}
 }
 
-// @invariant: the URL's stem is the body's hash: a browser holding the URL
-// holds this body, none older
 func TestAStylesheetsURLIsItsContentsHash(t *testing.T) {
 	for _, s := range sets() {
 		if !regexp.MustCompile(`^/ciderui/` + s.name + `\.[0-9a-f]{12}\.css$`).MatchString(s.url) {
@@ -103,7 +101,6 @@ func TestAStylesheetIsGzippedForABrowserThatAccepts(t *testing.T) {
 	}
 }
 
-// a stylesheet's relative font URLs resolve beside it
 func TestAssetsServesEveryFontAStylesheetNames(t *testing.T) {
 	for _, s := range sets() {
 		fonts := regexp.MustCompile(`url\("?(fonts/[^")]+)"?\)`).FindAllSubmatch(body(t, get(t, s.url, "")), -1)
@@ -115,8 +112,6 @@ func TestAssetsServesEveryFontAStylesheetNames(t *testing.T) {
 			if response.StatusCode != http.StatusOK || response.Header.Get("Content-Type") != "font/woff2" || len(body(t, response)) == 0 {
 				t.Errorf("%s: served %d as %q", font[1], response.StatusCode, response.Header.Get("Content-Type"))
 			}
-			// @trap: a font's name carries no hash: cached a day, never immutable,
-			// or an upgrade leaves every page its old faces
 			if got := response.Header.Get("Cache-Control"); got != "public, max-age=86400" {
 				t.Errorf("%s: Cache-Control is %q, want a day", font[1], got)
 			}
@@ -164,8 +159,6 @@ func TestWriteCSSWritesUtilitiesAndWhatItImports(t *testing.T) {
 	}
 }
 
-// an error names the directory it could not make: MkdirAll's own error names
-// only the component that failed
 func TestWriteCSSErrorsNameTheDir(t *testing.T) {
 	blocked := filepath.Join(t.TempDir(), "not-a-dir")
 	if err := os.WriteFile(blocked, nil, 0o644); err != nil {

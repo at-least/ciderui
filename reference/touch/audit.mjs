@@ -1,11 +1,9 @@
 // @invariant: Every component's example at 390px on an emulated touch screen (SETS=…
-// for some of the sets)
-// (test/browser.mjs's `touch`): each control a finger can press, its box
-// and its target (hit-tested from its center, below), held to the HIG's
-// control sizes (Accessibility, Mobility: 44x44pt the default on iOS,
-// 28x28pt the minimum). Prints a line for each control under the default
-// (each control with VERBOSE=1) and exits 1 when there is one; a step of
-// npm test (scripts/docker.mjs).
+// for some of the sets) (test/browser.mjs's `touch`): each control a finger can press,
+// its box and its target (hit-tested from its center, below), held to the HIG's control
+// sizes (Accessibility, Mobility: 44x44pt the default on iOS, 28x28pt the minimum).
+// Prints a line for each control under the default (each control with VERBOSE=1) and
+// exits 1 when there is one; a step of npm test (scripts/docker.mjs).
 //
 //   node scripts/docker.mjs node reference/touch/audit.mjs
 

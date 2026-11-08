@@ -33,7 +33,6 @@ func TestConsolePageWritesItsClasses(t *testing.T) {
 	}
 }
 
-// the kit's stylesheet first: the page's own Head wins over a part
 func TestConsolePageWritesItsHeadAfterTheKitsStylesheet(t *testing.T) {
 	p := consolePage()
 	p.Head = h.Link(h.Rel("stylesheet"), h.Href("/own.css"))
@@ -44,7 +43,6 @@ func TestConsolePageWritesItsHeadAfterTheKitsStylesheet(t *testing.T) {
 	}
 }
 
-// the link before all else the keyboard reads, before the page's children
 func TestConsolePageWritesItsSkipLinkFirst(t *testing.T) {
 	p := consolePage()
 	p.Skip = "Skip to Content"

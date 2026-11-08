@@ -58,7 +58,6 @@ func TestBtnAttrsGoOnItsLink(t *testing.T) {
 	}
 }
 
-// the page's node before the label: Google's G, a spinner, an icon
 func TestBtnDrawsItsIconBeforeItsLabel(t *testing.T) {
 	b := link("Sign in with Google", "#login", site.BtnVariantSecondaryNeutral, site.BtnSizeLarge)
 	b.Icon = lucide.Check

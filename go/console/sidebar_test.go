@@ -57,7 +57,6 @@ func TestSidebarPanics(t *testing.T) {
 	})
 }
 
-// the close button is named by the page's words, as the open button is
 func TestSidebarCloseIsNamedByItsCloseAriaLabel(t *testing.T) {
 	got := example.Render(console.ConsoleSidebar{ID: "s", AriaLabel: "Main", Home: "/", Wordmark: "Shop", CloseAriaLabel: "Hide Menu", Class: "", Footer: nil, Children: nil})
 	want := `<button class="cui-console-btn cui-console-btn-icon cui-console-sidebar-close" data-variant="plain" type="button" aria-label="Hide Menu"`

@@ -34,7 +34,6 @@ func TestPageWritesItsClassAndHeadAfterTheStylesheet(t *testing.T) {
 	}
 }
 
-// the link before all else the keyboard reads, before the page's children
 func TestPageWritesItsSkipLinkFirst(t *testing.T) {
 	p := page()
 	p.Skip = "跳到主要內容"

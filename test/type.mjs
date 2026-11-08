@@ -48,7 +48,6 @@ try {
       const got = await b.read(`#${name}`, ZH);
       for (const prop of ZH) check(`zh-Hant cui-${name} ${prop} at ${width}px is apple.com/tw's`, got[prop], reading('store-tw', name, width, prop));
     }
-    // @invariant: the page's own text, the base's
     const body = await b.read('body', ['line-height', 'letter-spacing']);
     for (const prop of ['line-height', 'letter-spacing']) check(`zh-Hant body ${prop} at ${width}px is apple.com/tw's`, body[prop], reading('store-tw', 'body', width, prop));
   }

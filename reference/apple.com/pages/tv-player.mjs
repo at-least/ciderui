@@ -1,13 +1,13 @@
 // @external: tv.apple.com's video player, a trailer paused with its controls shown (the
-// owner, 2026-11-05: 「播放器照 tv.apple.com」): the first trailer opened from
-// Ted Lasso's trailers, the video clicked (its controls shown), the centre
-// pause clicked; paused, the controls stay. The video is clicked at a point:
-// over it lies the trailers' carousel, which takes a click on an element. The overlay's gradient, its rows
-// (the header's volume, the centre play, the footer's scrubber, times and
-// buttons), each control at rest, hovered, pressed and focused. Read in
-// Google Chrome (`browser`): Playwright's Chromium opens the player and never
-// plays (its <video> never made). tv-player-playing reads the playing state,
-// tv-player-menu the subtitles menu, tv-player-playlist the trailers' row.
+// owner, 2026-11-05: 「播放器照 tv.apple.com」): the first trailer opened from Ted Lasso's
+// trailers, the video clicked (its controls shown), the centre pause clicked; paused,
+// the controls stay. The video is clicked at a point: over it lies the trailers'
+// carousel, which takes a click on an element. The overlay's gradient, its rows (the
+// header's volume, the centre play, the footer's scrubber, times and buttons), each
+// control at rest, hovered, pressed and focused. Read in Google Chrome (`browser`):
+// Playwright's Chromium opens the player and never plays (its <video> never made).
+// tv-player-playing reads the playing state, tv-player-menu the subtitles menu,
+// tv-player-playlist the trailers' row.
 import { TYPE, BOX, MOTION, FOCUS, FLEX } from './common.mjs';
 
 export const URL = 'https://tv.apple.com/us/collection/trailers/uts.col.Trailers.umc.cmc.vtoh0mn0xn7t3c643xqonfzy';

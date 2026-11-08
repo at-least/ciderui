@@ -31,7 +31,6 @@ func TestFieldItsPrefixAndErrorBothDescribeIt(t *testing.T) {
 	}
 }
 
-// a value too short to judge: the state with no words to show
 func TestFieldIsInvalidWithNoMessage(t *testing.T) {
 	got := example.Render(site.Field{ID: "email", Type: "email", Name: "email", Label: "Email", Autocomplete: "", Value: "", Error: "", Invalid: true, Help: "", Prefix: "", Attrs: nil, Class: ""})
 	if !strings.Contains(got, `aria-invalid="true"`) || strings.Contains(got, `cui-field-message`) {

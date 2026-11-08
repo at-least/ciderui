@@ -64,8 +64,6 @@ func TestConsoleBtnRendersTheExamples(t *testing.T) {
 	}
 }
 
-// an icon-only link is named by its AriaLabel and carries the page's attributes,
-// as a <button> does
 func TestConsoleBtnAnIconLinkTakesItsAriaLabelAndAttrs(t *testing.T) {
 	link := consoleBtn("")
 	link.Href, link.AriaLabel, link.Icon, link.Attrs = "/export.csv", "Download", lucide.Download, g.Attr("download")

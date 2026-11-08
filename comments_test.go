@@ -62,8 +62,8 @@ func readOrFatal(t *testing.T, file string) string {
 	return string(raw)
 }
 
-// @invariant: godoc of an exported declaration is the only comment free of a
-// tag; a doc above an unexported one is a decision and carries its tag itself.
+// @invariant: a doc above an unexported declaration is a decision and carries
+// its tag itself
 func goCommentTags(t *testing.T, name string) {
 	t.Helper()
 	fset := token.NewFileSet()

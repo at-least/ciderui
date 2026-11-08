@@ -17,7 +17,6 @@ const emulate = async (page, name, value) => {
 
 const show = (page, part, file) => page.page.evaluate((html) => { document.body.innerHTML = html; }, exampleHtml(part, file));
 
-// @external: a color as this page draws it
 const colorOf = (page, value) => page.page.evaluate((v) => {
   const probe = document.createElement('i');
   probe.style.color = v;

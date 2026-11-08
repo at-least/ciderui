@@ -73,9 +73,6 @@ func TestCheckMarkupRefusesADataValueNoRuleSelects(t *testing.T) {
 	})
 }
 
-// @external: an aria-* state's values are ARIA's, not what a rule selects: a
-// value no rule draws (aria-checked="true", the part's default look) is the
-// page's own, a value ARIA does not hold is a typo assistive technology reads
 func TestCheckMarkupRefusesAnAriaStateValueARIALacks(t *testing.T) {
 	checkEach(t, []markupCase{
 		{"a misspelt aria state", `<li class="cui-console-menu-item" aria-current="pgae">a</li>`, []string{`aria-current="pgae" on <li class="cui-console-menu-item">: not a value of aria-current (date, false, location, page, step, time, true)`}},

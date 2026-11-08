@@ -1,5 +1,7 @@
 # A popover as the global nav's search
 
+The global nav's search went by DESIGN.md decision 36; below is the record of what was read.
+
 The probe behind the global nav's search, apple.com's flyout under the bar and its sheet on a phone (`../apple.com/`, `search:*`), on HTML's popover, which needs no script: the bar's search button opens it (`popovertarget`), its field takes the focus (`autofocus`), Escape and a click outside it close it. From 834px the flyout hangs from the bar's bottom, placed there by anchor positioning (`anchor-name` on the bar, `top: anchor(bottom)` on the flyout), with the curtain under its panel to the window's bottom; to 833px it is a sheet over the window and the bar, with a close button of its own, the page held. The claims, each read by `search.js` on `page.html` (the search's techniques at their smallest: a sticky bar under a 70px banner, its list a closed popover shown as its row, as the nav's is) after the browser's own clicks and keys, and in pictures of the window:
 
 1. the browser has anchor positioning;

@@ -1,12 +1,11 @@
 // @external: The gift card's buy page, for the store's form parts a bag is not needed
-// to reach (its checkout's are not: a headless browser's Add to Bag is
-// refused, 2026-10-20): its Select button disabled before its choices, its
-// delivery fields disabled before the design and the amount; its sections; the choices that enable the fields
-// (picked once, at the first width: Email, the first design, Other Amount,
-// then $50); the amount's field with its currency before it, while Other
-// Amount is chosen; a plain field enabled; an
-// empty required field the focus has left (clicked, then the focus taken
-// off: nothing typed), its error and its message. Read only: nothing typed,
+// to reach (its checkout's are not: a headless browser's Add to Bag is refused,
+// 2026-10-20): its Select button disabled before its choices, its delivery fields
+// disabled before the design and the amount; its sections; the choices that enable the
+// fields (picked once, at the first width: Email, the first design, Other Amount, then
+// $50); the amount's field with its currency before it, while Other Amount is chosen; a
+// plain field enabled; an empty required field the focus has left (clicked, then the
+// focus taken off: nothing typed), its error and its message. Read only: nothing typed,
 // nothing sent.
 import { TYPE, BOX, MOTION, FOCUS } from './common.mjs';
 
