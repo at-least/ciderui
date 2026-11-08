@@ -45,7 +45,16 @@ func TestBtnSubmits(t *testing.T) {
 	b.Submit = true
 	want := `<button class="cui-btn" type="submit">Buy</button>`
 	if got := example.Render(b); got != want {
-		t.Errorf("got %s, want %s", got, want)
+		t.Errorf("the button does not submit its form\n got: %s\nwant: %s", got, want)
+	}
+}
+
+func TestBtnAttrsGoOnItsLink(t *testing.T) {
+	b := link("Buy", "/buy", site.BtnVariantPrimary, site.BtnSizeMedium)
+	b.Attrs = h.Aria("current", "page")
+	want := `<a class="cui-btn" href="/buy" aria-current="page">Buy</a>`
+	if got := example.Render(b); got != want {
+		t.Errorf("the link button lost its Attrs\n got: %s\nwant: %s", got, want)
 	}
 }
 
@@ -56,7 +65,7 @@ func TestBtnDrawsItsIconBeforeItsLabel(t *testing.T) {
 	got := example.Render(b)
 	if !strings.HasPrefix(got, `<a class="cui-btn" data-variant="secondary-neutral" data-size="lg" href="#login"><svg aria-hidden="true"`) ||
 		!strings.HasSuffix(got, `</svg>Sign in with Google</a>`) {
-		t.Errorf("got %s", got)
+		t.Errorf("the icon is not first inside the link, before its label: %s", got)
 	}
 }
 

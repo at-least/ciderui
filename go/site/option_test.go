@@ -17,7 +17,7 @@ func TestOptionRendersTheExamples(t *testing.T) {
 func TestOptionAttrsGoOnItsInput(t *testing.T) {
 	got := example.Render(site.Option{ID: "x", Name: "x", Value: "v", Title: "x", Detail: "", Checked: false, Attrs: h.Disabled(), Class: ""})
 	if !strings.Contains(got, `<input class="cui-option-input" type="radio" id="x" name="x" value="v" disabled>`) {
-		t.Errorf("got %s", got)
+		t.Errorf("the radio input lost its Attrs: %s", got)
 	}
 }
 

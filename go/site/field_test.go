@@ -35,7 +35,7 @@ func TestFieldItsPrefixAndErrorBothDescribeIt(t *testing.T) {
 func TestFieldIsInvalidWithNoMessage(t *testing.T) {
 	got := example.Render(site.Field{ID: "email", Type: "email", Name: "email", Label: "Email", Autocomplete: "", Value: "", Error: "", Invalid: true, Help: "", Prefix: "", Attrs: nil, Class: ""})
 	if !strings.Contains(got, `aria-invalid="true"`) || strings.Contains(got, `cui-field-message`) {
-		t.Errorf("got %s", got)
+		t.Errorf("want aria-invalid and no message under the field: %s", got)
 	}
 }
 
