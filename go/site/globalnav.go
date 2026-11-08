@@ -13,7 +13,7 @@ import (
 // @invariant: fixed id: a page has one global nav
 const globalNavMenuID = "cui-globalnav-menu"
 
-type NavLink struct {
+type GlobalNavLink struct {
 	Label string
 	Href  string
 	// Post submits a POST to the Href (sign out: a change a GET link must not make).
@@ -28,7 +28,7 @@ type GlobalNav struct {
 	Logo           g.Node
 	Home           string
 	LogoAriaLabel  string
-	Links          []NavLink
+	Links          []GlobalNavLink
 	AriaLabel      string
 	MenuAriaLabel  string
 	CloseAriaLabel string

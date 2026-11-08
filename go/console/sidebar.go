@@ -9,9 +9,8 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleSidebarID is the [ConsoleSidebar]'s id, the popovertarget of
-// [ConsoleSidebarOpen]: a page has one sidebar.
-const ConsoleSidebarID = "sidebar"
+// @invariant: a page has one sidebar, so its id is the kit's, not the page's
+const sidebarID = "sidebar"
 
 // ConsoleSidebar is a popover: below 1024px it is a sheet that a
 // [ConsoleSidebarOpen] opens.
@@ -39,10 +38,10 @@ func (s ConsoleSidebar) Render(w io.Writer) error {
 	if s.CloseAriaLabel == "" {
 		panic("console.ConsoleSidebar needs a CloseAriaLabel")
 	}
-	return h.Nav(class.Root("cui-console-sidebar", s.Class), h.ID(ConsoleSidebarID), h.Popover(), h.Aria("label", s.AriaLabel),
+	return h.Nav(class.Root("cui-console-sidebar", s.Class), h.ID(sidebarID), h.Popover(), h.Aria("label", s.AriaLabel),
 		h.Div(h.Class("cui-console-sidebar-header"),
 			h.A(h.Class("cui-console-sidebar-wordmark"), h.Href(s.Home), g.Text(s.Wordmark)),
-			ConsoleBtn{Href: "", Label: "", AriaLabel: s.CloseAriaLabel, Icon: lucide.X, Submit: false, Variant: ConsoleBtnVariantPlain, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: g.Group{h.PopoverTarget(ConsoleSidebarID), h.PopoverTargetAction("hide"), h.AutoFocus()}, Class: "cui-console-sidebar-close"},
+			ConsoleBtn{Href: "", Label: "", AriaLabel: s.CloseAriaLabel, Icon: lucide.X, Submit: false, Variant: ConsoleBtnVariantPlain, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: g.Group{h.PopoverTarget(sidebarID), h.PopoverTargetAction("hide"), h.AutoFocus()}, Class: "cui-console-sidebar-close"},
 		),
 		h.Div(h.Class("cui-console-sidebar-body cui-console-menu"), h.Data("variant", "sidebar"), s.Children),
 		h.Div(h.Class("cui-console-sidebar-footer"), s.Footer),
@@ -64,5 +63,5 @@ func (o ConsoleSidebarOpen) Render(w io.Writer) error {
 	if o.Class != "" {
 		root += " " + o.Class
 	}
-	return ConsoleBtn{Href: "", Label: "", AriaLabel: o.AriaLabel, Icon: lucide.Menu, Submit: false, Variant: ConsoleBtnVariantPlain, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: h.PopoverTarget(ConsoleSidebarID), Class: root}.Render(w)
+	return ConsoleBtn{Href: "", Label: "", AriaLabel: o.AriaLabel, Icon: lucide.Menu, Submit: false, Variant: ConsoleBtnVariantPlain, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: h.PopoverTarget(sidebarID), Class: root}.Render(w)
 }

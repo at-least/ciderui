@@ -10,13 +10,9 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-func tableText(content string) console.ConsoleTableCell {
-	return console.ConsoleTableCell{Content: g.Text(content)}
-}
-
 func jobsTable() console.ConsoleTable {
-	link := func(href, label string) console.ConsoleTableCell {
-		return console.ConsoleTableCell{Content: h.A(h.Class("cui-console-table-link"), h.Href(href), g.Text(label))}
+	link := func(href, label string) g.Node {
+		return h.A(h.Class("cui-console-table-link"), h.Href(href), g.Text(label))
 	}
 	return console.ConsoleTable{
 		Columns: []console.ConsoleTableColumn{
@@ -26,8 +22,8 @@ func jobsTable() console.ConsoleTable {
 			{Label: "Paused until", Figure: false},
 		},
 		Rows: []console.ConsoleTableRow{
-			{Cells: []console.ConsoleTableCell{link("#backup", "nightly-backup"), tableText("every 5 minutes"), tableText("142"), {Content: nil}}},
-			{Cells: []console.ConsoleTableCell{link("#mailer", "report-mailer"), tableText("17 3 * * *"), tableText("9"), tableText("Nov 2")}},
+			{Cells: []g.Node{link("#backup", "nightly-backup"), g.Text("every 5 minutes"), g.Text("142"), nil}},
+			{Cells: []g.Node{link("#mailer", "report-mailer"), g.Text("17 3 * * *"), g.Text("9"), g.Text("Nov 2")}},
 		},
 		BodyAttrs: nil,
 		Class:     "",

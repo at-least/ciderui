@@ -15,7 +15,7 @@ func TestEachPartWritesThePagesClass(t *testing.T) {
 		{Root: "cui-accordion-item", Node: site.Accordion{Items: []site.AccordionItem{{Question: "x", Class: page, Children: nil}}}},
 		{Root: "cui-field", Node: site.Field{Type: site.FieldTypeText, Name: "x", Label: "x", Autocomplete: "", Value: "", Error: "", Invalid: false, Help: "", Prefix: "", Attrs: nil, Class: page}},
 		{Root: "cui-footer", Node: site.Footer{Copyright: g.Text("©"), Class: page}},
-		{Root: "cui-globalnav", Node: site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "x", Links: []site.NavLink{{Label: "x", Href: "/x", Post: false}}, AriaLabel: "x", MenuAriaLabel: "x", CloseAriaLabel: "x", Class: page}},
+		{Root: "cui-globalnav", Node: site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "x", Links: []site.GlobalNavLink{{Label: "x", Href: "/x", Post: false}}, AriaLabel: "x", MenuAriaLabel: "x", CloseAriaLabel: "x", Class: page}},
 		{Root: "cui-option", Node: site.Option{ID: "x", Name: "x", Value: "x", Title: "x", Detail: "", Checked: false, Attrs: nil, Class: page}},
 		{Root: "cui-ribbon", Node: site.Ribbon{Class: page, Children: nil}},
 	})

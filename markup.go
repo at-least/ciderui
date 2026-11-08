@@ -246,11 +246,7 @@ func isNameByte(c byte) bool {
 }
 
 func name(text string) string {
-	end := 0
-	for end < len(text) && isNameByte(text[end]) {
-		end++
-	}
-	return text[:end]
+	return text[:indexFunc(text, func(c byte) bool { return !isNameByte(c) })]
 }
 
 // @invariant: rules is every style rule's selector in css, nesting resolved,

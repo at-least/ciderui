@@ -30,14 +30,10 @@ type ConsoleTableColumn struct {
 // ConsoleTableRow is drawn selected while a cell's own checkbox, a
 // cui-console-checkbox that is the cell's child, is checked.
 type ConsoleTableRow struct {
-	// Cells: one for each of the table's Columns.
-	Cells []ConsoleTableCell
-}
-
-type ConsoleTableCell struct {
-	// Content: nil for a cell that says nothing; the table writes "—" and
-	// leaves the cell out of its stacked row on a phone.
-	Content g.Node
+	// Cells: one for each of the table's Columns; nil for a cell that says
+	// nothing, the table writing "—" and leaving it out of its stacked row on
+	// a phone.
+	Cells []g.Node
 }
 
 func (t ConsoleTable) Render(w io.Writer) error {
@@ -61,9 +57,8 @@ func (t ConsoleTable) Row(r ConsoleTableRow) g.Node {
 		panic(fmt.Sprintf("console.ConsoleTableRow needs a cell for each column: %d columns, %d cells", len(t.Columns), len(r.Cells)))
 	}
 	var cells g.Group
-	for i, cell := range r.Cells {
+	for i, content := range r.Cells {
 		column := t.Columns[i]
-		content := cell.Content
 		if content == nil {
 			content = g.Group{g.Attr("data-empty"), g.Text("—")}
 		}
