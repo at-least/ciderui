@@ -66,9 +66,9 @@ func TestStripPanics(t *testing.T) {
 	})
 }
 
-func TestStripItemNoCaptionWritesNone(t *testing.T) {
+func TestStripItemWritesNoCaptionItHasNone(t *testing.T) {
 	want := `<a class="cui-console-strip-item" href="#a"><img src="/a.png" alt="Shot 1" loading="lazy"></a>`
 	if got := example.Render(validStrip()); !strings.Contains(got, want) {
-		t.Errorf("no %s in %s", want, got)
+		t.Errorf("an item with no Caption, Detail, Tip or Mark wrote more than its picture:\n got: %s\nwant: %s", got, want)
 	}
 }

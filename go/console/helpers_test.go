@@ -35,6 +35,6 @@ func TestAPagesNodesErrorIsReturned(t *testing.T) {
 	failing := g.NodeFunc(func(io.Writer) error { return failure })
 	part := console.ConsoleListItem{Href: "", ID: "", Label: "x", Detail: "", Class: "", Children: failing}
 	if err := part.Render(io.Discard); !errors.Is(err, failure) {
-		t.Errorf("returned %v", err)
+		t.Errorf("the list item returned %v, not its Children's error", err)
 	}
 }

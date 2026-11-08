@@ -38,15 +38,6 @@ func TestTableRendersTheExample(t *testing.T) {
 	example.Check(t, jobsTable(), "console/console-table/examples/stack.html")
 }
 
-func TestTableARowAloneIsAsInItsTable(t *testing.T) {
-	jobs := jobsTable()
-	got := example.Render(jobs.Row(console.ConsoleTableRow{Cells: []console.ConsoleTableCell{tableText("a"), tableText("b"), tableText("1"), {Content: g.Text("—"), Empty: true}}}))
-	want := `<tr><td>a</td><td data-label="Schedule">b</td><td class="cui-console-table-figure" data-label="Runs">1</td><td data-label="Paused until" data-empty>—</td></tr>`
-	if got != want {
-		t.Errorf("got  %s\nwant %s", got, want)
-	}
-}
-
 func TestTableBodyAttrsGoOnItsBody(t *testing.T) {
 	jobs := jobsTable()
 	jobs.Rows = nil

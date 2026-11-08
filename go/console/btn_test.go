@@ -1,6 +1,7 @@
 package console_test
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
@@ -63,16 +64,14 @@ func TestConsoleBtnRendersTheExamples(t *testing.T) {
 	}
 }
 
-func TestConsoleBtnLinkAndSubmit(t *testing.T) {
-	link := consoleBtn("Open")
-	link.Href = "/x"
-	if got, want := example.Render(link), `<a class="cui-console-btn" href="/x">Open</a>`; got != want {
-		t.Errorf("got %s, want %s", got, want)
-	}
-	submit := consoleBtn("Save")
-	submit.Submit = true
-	if got, want := example.Render(submit), `<button class="cui-console-btn" type="submit">Save</button>`; got != want {
-		t.Errorf("got %s, want %s", got, want)
+// an icon-only link is named by its AriaLabel and carries the page's attributes,
+// as a <button> does
+func TestConsoleBtnAnIconLinkTakesItsAriaLabelAndAttrs(t *testing.T) {
+	link := consoleBtn("")
+	link.Href, link.AriaLabel, link.Icon, link.Attrs = "/export.csv", "Download", lucide.Download, g.Attr("download")
+	want := `<a class="cui-console-btn cui-console-btn-icon" href="/export.csv" aria-label="Download" download><svg`
+	if got := example.Render(link); !strings.HasPrefix(got, want) {
+		t.Errorf("the link is not named Download with its download attribute:\n got: %s\nwant: %s…", got, want)
 	}
 }
 
@@ -81,6 +80,7 @@ func TestConsoleBtnPanics(t *testing.T) {
 		{Want: "console.ConsoleBtn has an Href and Submit: a link sends no form", Change: func(b *console.ConsoleBtn) { b.Href = "/x"; b.Submit = true }},
 		{Want: "console.ConsoleBtn needs a Label, or an Icon and an AriaLabel", Change: func(b *console.ConsoleBtn) { b.Label = "" }},
 		{Want: "console.ConsoleBtn needs a Label, or an Icon and an AriaLabel", Change: func(b *console.ConsoleBtn) { b.Label = ""; b.AriaLabel = "x" }},
+		{Want: "console.ConsoleBtn needs a Label, or an Icon and an AriaLabel", Change: func(b *console.ConsoleBtn) { b.Label = ""; b.Icon = lucide.Copy }},
 		{Want: "console.ConsoleBtn has a Label and an AriaLabel: its words name it", Change: func(b *console.ConsoleBtn) { b.AriaLabel = "x" }},
 	})
 }

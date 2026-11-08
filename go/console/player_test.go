@@ -265,11 +265,28 @@ func TestPlayerEndPanics(t *testing.T) {
 	})
 }
 
-func TestPlayerIntroNoDetailNoSummary(t *testing.T) {
+func TestPlayerIntroWritesNoDetailOrSummaryItHasNone(t *testing.T) {
 	p := intro()
 	p.Intro.Detail, p.Intro.Summary = "", ""
 	want := `<p class="cui-console-player-intro-title">The Wedding</p><div class="cui-console-player-intro-actions">`
 	if got := example.Render(p); !strings.Contains(got, want) {
-		t.Errorf("no %s in %s", want, got)
+		t.Errorf("the intro with no Detail or Summary wrote a line for one, not its title then its actions: %s", got)
+	}
+}
+
+// each control the page can name is named by its own field, not a word of the kit's
+func TestPlayerNamesEachControlByItsAriaLabel(t *testing.T) {
+	p := pausedPlayer()
+	p.PlayAriaLabel, p.VolumeAriaLabel, p.MuteAriaLabel = "Play Video", "Sound Level", "Silence"
+	p.ScrubAriaLabel, p.SubtitlesAriaLabel, p.FullScreenAriaLabel = "Position in Video", "Captions Menu", "Fill Screen"
+	got := example.Render(p)
+	for control, label := range map[string]string{"play": p.PlayAriaLabel, "volume": p.VolumeAriaLabel, "mute": p.MuteAriaLabel, "scrubber": p.ScrubAriaLabel, "subtitles": p.SubtitlesAriaLabel, "full-screen": p.FullScreenAriaLabel} {
+		at := strings.Index(got, `data-control="`+control+`"`)
+		if at < 0 {
+			t.Fatalf("no %s control in %s", control, got)
+		}
+		if tag := got[at : at+strings.Index(got[at:], ">")]; !strings.Contains(tag, `aria-label="`+label+`"`) {
+			t.Errorf("the %s control is not named %q: %s", control, label, tag)
+		}
 	}
 }

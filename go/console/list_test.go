@@ -45,6 +45,6 @@ func TestListItemPanics(t *testing.T) {
 func TestListItemALinkTakesItsID(t *testing.T) {
 	got := example.Render(console.ConsoleListItem{Href: "#a", ID: "row", Label: "x", Detail: "", Class: "", Children: nil})
 	if !strings.HasPrefix(got, `<a class="cui-console-list-item" id="row" href="#a">`) {
-		t.Errorf("got %s", got)
+		t.Errorf("the link is not the row with its id and href: %s", got)
 	}
 }
