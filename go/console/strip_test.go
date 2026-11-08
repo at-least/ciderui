@@ -14,7 +14,7 @@ func TestStripRendersTheExample(t *testing.T) {
 	const path = "console/console-strip/examples/strip.html"
 	shot := func(scene, n int, tip string, mark console.ConsoleStripMark, markAriaLabel string, current bool) console.ConsoleStripItem {
 		alt := fmt.Sprintf("Shot %d.%d", scene, n)
-		return console.ConsoleStripItem{Href: fmt.Sprintf("#shot-%d-%d", scene, n), Src: exampleSrc(path, alt), Alt: alt, Lazy: false, Current: current, Variant: console.ConsoleStripItemVariantFrame, Caption: fmt.Sprintf("S%02d-%02d", scene, n), Detail: "", Unused: false, Tip: tip, Mark: mark, MarkAriaLabel: markAriaLabel}
+		return console.ConsoleStripItem{Href: fmt.Sprintf("#shot-%d-%d", scene, n), Src: exampleSrc(path, alt), Alt: alt, Current: current, Variant: console.ConsoleStripItemVariantFrame, Caption: fmt.Sprintf("S%02d-%02d", scene, n), Detail: "", Unused: false, Tip: tip, Mark: mark, MarkAriaLabel: markAriaLabel}
 	}
 	const line = "Once upon a time, a miller had three sons."
 	none := console.ConsoleStripMarkNone
@@ -33,7 +33,7 @@ func TestStripRendersTheExample(t *testing.T) {
 func TestStripRendersTheAssetsExample(t *testing.T) {
 	const path = "console/console-strip/examples/assets.html"
 	asset := func(href, alt, caption, detail string, variant console.ConsoleStripItemVariant, unused, current bool) console.ConsoleStripItem {
-		return console.ConsoleStripItem{Href: href, Src: exampleSrc(path, alt), Alt: alt, Lazy: false, Current: current, Variant: variant, Caption: caption, Detail: detail, Unused: unused, Tip: "", Mark: console.ConsoleStripMarkNone, MarkAriaLabel: ""}
+		return console.ConsoleStripItem{Href: href, Src: exampleSrc(path, alt), Alt: alt, Current: current, Variant: variant, Caption: caption, Detail: detail, Unused: unused, Tip: "", Mark: console.ConsoleStripMarkNone, MarkAriaLabel: ""}
 	}
 	frame := console.ConsoleStripItemVariantFrame
 	sheet := console.ConsoleStripItemVariantSheet
@@ -48,7 +48,7 @@ func TestStripRendersTheAssetsExample(t *testing.T) {
 }
 
 func validStrip() console.ConsoleStrip {
-	item := console.ConsoleStripItem{Href: "#a", Src: "/a.png", Alt: "Shot 1", Lazy: false, Current: false, Variant: console.ConsoleStripItemVariantFrame, Caption: "", Detail: "", Unused: false, Tip: "", Mark: console.ConsoleStripMarkNone, MarkAriaLabel: ""}
+	item := console.ConsoleStripItem{Href: "#a", Src: "/a.png", Alt: "Shot 1", Current: false, Variant: console.ConsoleStripItemVariantFrame, Caption: "", Detail: "", Unused: false, Tip: "", Mark: console.ConsoleStripMarkNone, MarkAriaLabel: ""}
 	return console.ConsoleStrip{AriaLabel: "Shots", Groups: []console.ConsoleStripGroup{{Label: "Scene 1", Items: []console.ConsoleStripItem{item, item}}}, Class: ""}
 }
 
@@ -60,14 +60,14 @@ func TestStripPanics(t *testing.T) {
 		{Want: "console.ConsoleStripGroup needs a ConsoleStripItem", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items = nil }},
 		{Want: "console.ConsoleStrip has one current item at most", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Current, p.Groups[0].Items[1].Current = true, true }},
 		{Want: "console.ConsoleStripItem needs an Alt: it is its link's name", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Alt = "" }},
-		{Want: "console.ConsoleStripItem needs a Caption under a Detail", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Detail = "3 shots" }},
+		{Want: "console.ConsoleStripItem's Detail needs a Caption above it", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Detail = "3 shots" }},
 		{Want: "console.ConsoleStripItem needs a MarkAriaLabel with a Mark, and none without", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Mark = console.ConsoleStripMarkWaiting }},
 		{Want: "console.ConsoleStripItem needs a MarkAriaLabel with a Mark, and none without", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].MarkAriaLabel = "Waiting for you" }},
 	})
 }
 
 func TestStripItemNoCaptionWritesNone(t *testing.T) {
-	want := `<a class="cui-console-strip-item" href="#a"><img src="/a.png" alt="Shot 1"></a>`
+	want := `<a class="cui-console-strip-item" href="#a"><img src="/a.png" alt="Shot 1" loading="lazy"></a>`
 	if got := example.Render(validStrip()); !strings.Contains(got, want) {
 		t.Errorf("no %s in %s", want, got)
 	}

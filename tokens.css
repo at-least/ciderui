@@ -63,7 +63,6 @@
   --cui-c-console-brand-label-on-fill: light-dark(oklch(49.7% 0.209 260.5), oklch(68.3% 0.167 256.6));
   --cui-c-console-brand-label-on-tint: light-dark(oklch(49.7% 0.209 260.5), oklch(75.6% 0.120 260.5));
   --cui-c-console-brand-label-on-tint-secondary: light-dark(oklch(49.7% 0.209 260.5 / 0.60), oklch(75.6% 0.120 260.5 / 0.60));
-  --cui-c-console-table-sticky: light-dark(oklch(100.0% 0.000 0.0 / 0.80), oklch(0.0% 0.000 0 / 0.80));
   --cui-c-console-dialog-stroke: light-dark(oklch(84.5% 0.000 0), oklch(40.2% 0.000 0));
   --cui-c-console-brand-fill-hover: light-dark(oklch(49.7% 0.209 260.5), oklch(43.6% 0.171 260.6));
   --cui-c-console-brand-fill-press: light-dark(oklch(52.2% 0.156 251.8), oklch(43.6% 0.171 260.6));
@@ -118,7 +117,6 @@
   --cui-focus-ring-offset: 3px;
 
   --cui-console-shadow-sidebar: 0px 0px 25px 0px oklch(0.0% 0.000 0 / 0.1),0px 0px 0px 1px inset oklch(100.0% 0.000 0 / 0.10),0px 0px 10px 0px inset oklch(100.0% 0.000 0 / 0.05),0px 0px 24px 0px inset oklch(100.0% 0.000 0 / 0.05);
-  --cui-console-shadow-table-sticky: 0 3px 10px -10px oklch(0.0% 0.000 0 / 0.50);
   --cui-console-shadow-dialog: 0px 16px 35px oklch(0.0% 0.000 0.0 / 0.04);
   --cui-console-shadow-popover: 0px 16px 35px oklch(0.0% 0.000 0.0 / 0.04),0px 0px 0px 0.5px oklch(0.0% 0.000 0.0 / 0.15),0px 1px 1px -1px inset oklch(100.0% 0.000 0.0 / 0.24);
 
@@ -162,12 +160,11 @@
   --cui-tracking-64: normal;
 }
 
-/* @external: Reduce Transparency: what scrolls under a bar or a table's head does not show
-   through (globalnav.css drops the bar's blur) */
+/* @external: Reduce Transparency: what scrolls under a bar does not show through
+   (globalnav.css drops the bar's blur) */
 @media (prefers-reduced-transparency: reduce) {
   :root {
     --cui-c-bar: var(--cui-c-bg);
-    --cui-c-console-table-sticky: var(--cui-c-console-neutral-background-primary);
   }
 }
 

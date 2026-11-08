@@ -1,4 +1,16 @@
 @layer components {
+  /* @invariant: on a page shorter than the window the footer sits at its
+     bottom, with no class of the page's */
+  body:has(> .cui-footer) {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+
+  body > .cui-footer {
+    margin-top: auto;
+  }
+
   .cui-footer {
     color-scheme: light;
     font-size: 12px;

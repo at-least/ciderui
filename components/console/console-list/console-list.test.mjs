@@ -22,7 +22,7 @@ export const cases = [
       { target: `${LINK} .cui-console-list-label`, props: ['color'], tb: [`${D}-anatomy-Item-variant-colorRole-neutral-effect-default-anatomy-Label-color`] },
       { target: LINK, props: ['background-color'], state: 'active', tb: [`${D}-anatomy-Item-activeBackgroundColor`] },
       { target: LINK, props: ['background-color'], state: 'hover', golden: 'hovered, the pressed fill: the toolkit gives a grouped row no hovered one' },
-      { target: `${LINK} .cui-console-list-secondary`, props: ['color', 'font-size', 'line-height'], golden: 'the secondary label at 0.76: the toolkit\'s 0.60 is 3.4:1 on white (tokens.css, decision 21); the body\'s 13px' },
+      { target: `${LINK} .cui-console-list-detail`, props: ['color', 'font-size', 'line-height'], golden: 'the secondary label at 0.76: the toolkit\'s 0.60 is 3.4:1 on white (tokens.css, decision 21); the body\'s 13px' },
       { target: LINK, pseudo: '::before', props: ['left', 'height', 'background-color'], golden: 'a 0.5px hairline over each row after the first, from 16px in, the secondary border (the table row\'s)' },
       { target: '.cui-console-list-item[href="#shop"]', pseudo: '::before', props: ['content'], golden: 'no hairline over the first row' },
       { target: '.cui-console-list', props: ['background-color', 'border-top-left-radius'], golden: 'the group the console card\'s gray and corners' },

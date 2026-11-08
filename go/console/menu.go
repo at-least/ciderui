@@ -100,7 +100,7 @@ func (m ConsoleChoiceMenu) Render(w io.Writer) error {
 			g.Map(m.Columns, func(c ConsoleChoiceColumn) g.Node {
 				title := m.ID + "-" + c.Name + "-title"
 				return h.Div(h.Class("cui-console-menu"), h.Data("column", c.Name),
-					h.P(h.Class("cui-console-menu-heading"), h.ID(title), g.Text(c.Title)),
+					h.P(h.Class("cui-console-menu-title"), h.ID(title), g.Text(c.Title)),
 					h.Div(h.Role("menu"), h.Aria("labelledby", title),
 						g.Map(c.Choices, func(choice ConsoleChoice) g.Node {
 							return h.Button(h.Class("cui-console-menu-item"), h.Type("button"), h.Role("menuitemradio"), h.Aria("checked", strconv.FormatBool(choice.Checked)), h.Value(choice.Value),

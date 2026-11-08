@@ -142,7 +142,6 @@ const SOURCES = {
   '--cui-c-console-brand-label-on-fill': 'component-Tabs-variant-colorRole-brand-variant-filledGray-anatomy-Tab-variant-effect-default-isActive-false-color',
   '--cui-c-console-brand-label-on-tint': 'component-Link-variant-colorRole-brand-effect-default-variant-inline-color',
   '--cui-c-console-brand-label-on-tint-secondary': 'component-Link-variant-colorRole-brand-effect-disabled-variant-inline-color',
-  '--cui-c-console-table-sticky': 'component-Table-anatomy-TH-stickyBackgroundColor',
   '--cui-c-console-dialog-stroke': 'component-Modal-variant-variant-modal-stroke',
 };
 const sourceOf = (name) => `--tb-${SOURCES[name] ?? `color-role-${name.slice('--cui-c-console-'.length).replace('on-accent', 'onAccent')}`}`;
@@ -342,7 +341,6 @@ check('the focus ring is apple.com\'s color', rgb(sides('--cui-c-accent')[0]), r
 check('--cui-focus-ring-offset is apple.com\'s', vars['--cui-focus-ring-offset'], ref('home', 'button', W, 'outline-offset', 'focus-visible'));
 
 check('--cui-console-shadow-sidebar is App Store Connect\'s --tb-component-Sidebar-variant-variant-opaque-boxShadow', vars['--cui-console-shadow-sidebar'], tbTokens['--tb-component-Sidebar-variant-variant-opaque-boxShadow']);
-check('--cui-console-shadow-table-sticky is App Store Connect\'s --tb-component-Table-anatomy-TH-stickyBoxShadow', vars['--cui-console-shadow-table-sticky'], tbTokens['--tb-component-Table-anatomy-TH-stickyBoxShadow']);
 check('--cui-console-shadow-dialog is App Store Connect\'s --tb-component-Modal-variant-variant-modal-boxShadow', vars['--cui-console-shadow-dialog'], tbTokens['--tb-component-Modal-variant-variant-modal-boxShadow']);
 check('--cui-console-shadow-popover is App Store Connect\'s --tb-component-Popover-variant-variant-stroked-boxShadow', vars['--cui-console-shadow-popover'], tbTokens['--tb-component-Popover-variant-variant-stroked-boxShadow']);
 

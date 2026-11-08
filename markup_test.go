@@ -39,23 +39,18 @@ func TestCheckMarkup(t *testing.T) {
 	}{
 		{"a misspelt class", `<p>a</p><span class="cui-console-badg mt-1">b</span>`, []string{`class "cui-console-badg" on <span class="cui-console-badg mt-1">: ciderui has no such class`}},
 		{"a keyframes name is no class", `<li class="cui-globalnav-row-in">a</li>`, []string{`class "cui-globalnav-row-in" on <li class="cui-globalnav-row-in">: ciderui has no such class`}},
-		{"a value no rule selects", `<span class="cui-console-badge" data-color="purple">b</span>`, []string{`data-color="purple" on <span class="cui-console-badge">: no rule of ciderui's selects it (cui-console-badge's: error, info, success, warning)`}},
-		{"a value is listed for each cui-* class of its element", `<a class="cui-console-badge cui-console-link" data-color="purple">b</a>`, []string{`data-color="purple" on <a class="cui-console-badge cui-console-link">: no rule of ciderui's selects it (cui-console-badge's: error, info, success, warning; cui-console-link's: none)`}},
-		{"a typo in any selected attribute", `<dl class="cui-console-dl" data-orientation="vertcal"></dl>`, []string{`data-orientation="vertcal" on <dl class="cui-console-dl">: no rule of ciderui's selects it (cui-console-dl's: vertical)`}},
-		{"the value itself", `<dl class="cui-console-dl" data-orientation="vertical"></dl>`, nil},
+		{"a value no rule selects", `<span class="cui-console-badge" data-color="purple">b</span>`, []string{`data-color="purple" on <span class="cui-console-badge">: no rule of ciderui selects it (cui-console-badge: error, info, success, warning; default: no data-color)`}},
+		{"a value is listed for each cui-* class of its element", `<a class="cui-console-badge cui-console-link" data-color="purple">b</a>`, []string{`data-color="purple" on <a class="cui-console-badge cui-console-link">: no rule of ciderui selects it (cui-console-badge: error, info, success, warning; cui-console-link: none; default: no data-color)`}},
+		{"a typo in any selected attribute", `<span class="cui-console-badge" data-color="eror"></span>`, []string{`data-color="eror" on <span class="cui-console-badge">: no rule of ciderui selects it (cui-console-badge: error, info, success, warning; default: no data-color)`}},
+		{"the value itself", `<span class="cui-console-badge" data-color="error"></span>`, nil},
 
-		// @invariant: [data-sticky] selects any value, on its own class alone
-		{"a bare selected attribute", `<table class="cui-console-table" data-sticky></table>`, nil},
-		{"a value of a bare selected attribute", `<table class="cui-console-table" data-sticky="true"></table>`, nil},
-		{"a bare selected attribute on another class", `<div class="cui-console-card" data-sticky></div>`, []string{`data-sticky="" on <div class="cui-console-card">: no rule of ciderui's selects it (cui-console-card's: none)`}},
-
-		// @invariant: :not([data-x]) alone: the bare attribute leaves the default, a misspelt
-		// value would as well, with no rule of its own
-		{"the bare attribute a :not selects", `<ul class="cui-console-tabs" data-overflow-end></ul>`, nil},
-		{"a value only a :not selects", `<ul class="cui-console-tabs" data-overflow-end="yes"></ul>`, []string{`data-overflow-end="yes" on <ul class="cui-console-tabs">: no rule of ciderui's selects it (cui-console-tabs's: "")`}},
+		// @invariant: [data-stack] selects any value, on its own class alone
+		{"a bare selected attribute", `<table class="cui-console-table" data-stack></table>`, nil},
+		{"a value of a bare selected attribute", `<table class="cui-console-table" data-stack="true"></table>`, nil},
+		{"a bare selected attribute on another class", `<div class="cui-console-card" data-stack></div>`, []string{`data-stack="" on <div class="cui-console-card">: no rule of ciderui selects it (cui-console-card: none; default: no data-stack)`}},
 
 		// @invariant: the data-variant of a part where no rule selects that value
-		{"a value is not another alternative's", `<a class="cui-console-link" data-variant="more">x</a>`, []string{`data-variant="more" on <a class="cui-console-link">: no rule of ciderui's selects it (cui-console-link's: label, text)`}},
+		{"a value is not another alternative's", `<a class="cui-console-link" data-variant="more">x</a>`, []string{`data-variant="more" on <a class="cui-console-link">: no rule of ciderui selects it (cui-console-link: text; default: no data-variant)`}},
 		// @invariant: .cui-console-player-end > [data-control="replay"] names no class of the element
 		{"an attribute only a rule for another element selects", `<p class="cui-console-player-caption" data-control="caption">x</p>`, nil},
 		// @invariant: cui-console-btn-icon's sizes are its own
@@ -124,14 +119,64 @@ func TestCheckMarkupReadsThePagesStylesheet(t *testing.T) {
 		name, html string
 		want       []string
 	}{
-		{"a site part on a console page", page(ConsoleStylesheet(), `<button class="cui-btn">a</button>`), []string{`class "cui-btn" on <button class="cui-btn">: the console stylesheet this page links has no such class`}},
-		{"a console part on a site page", page(SiteStylesheet(), `<span class="cui-console-badge">a</span>`), []string{`class "cui-console-badge" on <span class="cui-console-badge">: the site stylesheet this page links has no such class`}},
+		{"a site part on a console page", page(ConsoleStylesheet(), `<button class="cui-btn">a</button>`), []string{`class "cui-btn" on <button class="cui-btn">: a site class; this page links the console stylesheet`}},
+		{"a console part on a site page", page(SiteStylesheet(), `<span class="cui-console-badge">a</span>`), []string{`class "cui-console-badge" on <span class="cui-console-badge">: a console class; this page links the site stylesheet`}},
+		{"a misspelt class on a console page", page(ConsoleStylesheet(), `<span class="cui-console-badg">a</span>`), []string{`class "cui-console-badg" on <span class="cui-console-badg">: the console stylesheet this page links has no such class`}},
+		{"a value no rule selects on a console page", page(ConsoleStylesheet(), `<span class="cui-console-badge" data-color="purple">a</span>`), []string{`data-color="purple" on <span class="cui-console-badge">: no rule of the console stylesheet this page links selects it (cui-console-badge: error, info, success, warning; default: no data-color)`}},
 		{"a console part on a console page", page(ConsoleStylesheet(), `<span class="cui-console-badge" data-color="error">a</span>`), nil},
 		{"a site part on a site page", page(SiteStylesheet(), `<button class="cui-btn">a</button>`), nil},
 		{"the type on a console page", page(ConsoleStylesheet(), `<p class="cui-body">a</p>`), nil},
 		{"the type on a site page", page(SiteStylesheet(), `<p class="cui-body">a</p>`), nil},
 		{"a fragment links neither, so either set's parts pass", `<button class="cui-btn">a</button><span class="cui-console-badge">a</span>`, nil},
 		{"another stylesheet is the site's own", page("/own.css", `<button class="cui-btn">a</button>`), nil},
+	} {
+		t.Run(c.name, func(t *testing.T) {
+			if got := CheckMarkup(c.html); !slices.Equal(got, c.want) {
+				t.Errorf("got  %q\nwant %q", got, c.want)
+			}
+		})
+	}
+}
+
+// @external: the browser keeps an attribute's first copy and drops the rest
+// with no error: a part's own aria-invalid and the page's through Attrs
+func TestCheckMarkupRefusesAnAttributeWrittenTwice(t *testing.T) {
+	for _, c := range []struct {
+		name, html string
+		want       []string
+	}{
+		{"twice", `<input aria-invalid="true" id="a" aria-invalid="true">`, []string{`aria-invalid on <input>: written twice, and the browser keeps the first`}},
+		{"in another case", `<b class="cui-body" CLASS="x">a</b>`, []string{`CLASS on <b class="cui-body">: written twice, and the browser keeps the first`}},
+		{"once each", `<input aria-invalid="true" id="a">`, nil},
+		{"on two elements", `<b id="a"></b><b id="b"></b>`, nil},
+	} {
+		t.Run(c.name, func(t *testing.T) {
+			if got := CheckMarkup(c.html); !slices.Equal(got, c.want) {
+				t.Errorf("got  %q\nwant %q", got, c.want)
+			}
+		})
+	}
+}
+
+func TestCheckMarkupRefusesAReferenceToNoIDOnAPage(t *testing.T) {
+	page := func(body string) string {
+		return `<!doctype html><html><head><link rel="stylesheet" href="` + SiteStylesheet() + `"></head><body>` + body + `</body></html>`
+	}
+	for _, c := range []struct {
+		name, html string
+		want       []string
+	}{
+		{"a skip link to no main", page(`<a class="cui-btn cui-skip" href="#main">Skip</a><main>a</main>`), []string{`href="#main" on <a>: this page has no id "main"`}},
+		{"a skip link to its main", page(`<a class="cui-btn cui-skip" href="#main">Skip</a><main id="main" tabindex="-1">a</main>`), nil},
+		{"a link to the top", page(`<a href="#">Top</a>`), nil},
+		{"a link to another page", page(`<a href="/a#b">a</a>`), nil},
+		{"each id of a list", page(`<input id="a" aria-describedby="a-help a-error"><p id="a-help">h</p>`), []string{`aria-describedby="a-help a-error" on <input>: this page has no id "a-error"`}},
+		{"a label for no input", page(`<label for="name">Name</label>`), []string{`for="name" on <label>: this page has no id "name"`}},
+		{"a popover's button", page(`<button popovertarget="menu">a</button><div id="menu" popover>b</div>`), nil},
+		{"a command's button", page(`<button commandfor="dialog" command="show-modal">a</button>`), []string{`commandfor="dialog" on <button>: this page has no id "dialog"`}},
+		{"a labelled element", page(`<section aria-labelledby="t"><h2 id="t">a</h2></section>`), nil},
+		{"a controlled element", page(`<button aria-controls="p">a</button>`), []string{`aria-controls="p" on <button>: this page has no id "p"`}},
+		{"a fragment's may be on the page around it", `<button popovertarget="menu">a</button><label for="name">Name</label>`, nil},
 	} {
 		t.Run(c.name, func(t *testing.T) {
 			if got := CheckMarkup(c.html); !slices.Equal(got, c.want) {

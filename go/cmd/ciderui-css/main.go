@@ -1,6 +1,6 @@
 // Command ciderui-css writes what a site's own utilities' stylesheet imports:
 //
-//	go tool ciderui-css target/ciderui
+//	go run github.com/at-least/ciderui/go/cmd/ciderui-css target/ciderui
 package main
 
 import (
@@ -16,7 +16,7 @@ func main() {
 		os.Exit(2)
 	}
 	if err := ciderui.WriteCSS(os.Args[1]); err != nil {
-		fmt.Fprintf(os.Stderr, "writing %s: %v\n", os.Args[1], err)
+		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
 	fmt.Printf("ciderui's utilities.css written under %s\n", os.Args[1])

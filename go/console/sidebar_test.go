@@ -11,11 +11,13 @@ import (
 )
 
 func sidebarNodes() g.Node {
-	account := h.A(h.Class("cui-console-sidebar-account"), h.Href("#account"), lucide.CircleUser.Class("cui-console-sidebar-avatar"), g.Text("Alex Morgan"))
-	return console.ConsoleSidebar{ID: "sidebar", AriaLabel: "CrashCart", Home: "#home", Wordmark: "CrashCart", CloseAriaLabel: "Close", Class: "", Footer: account, Children: g.Group{
+	signOut := h.Form(h.Action("#sign-out"), h.Method("post"),
+		console.ConsoleBtn{Href: "", Label: "Sign Out", AriaLabel: "", Icon: lucide.Icon{}, Submit: true, Variant: console.ConsoleBtnVariantPlain, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: ""},
+	)
+	return console.ConsoleSidebar{ID: "sidebar", AriaLabel: "CrashCart", Home: "#home", Wordmark: "CrashCart", CloseAriaLabel: "Close", Class: "", Footer: signOut, Children: g.Group{
 		console.ConsoleMenuItem{Href: "#projects", Label: "All Projects", Icon: lucide.LayoutGrid, Current: false, Class: ""},
 		console.ConsoleMenuItem{Href: "#issues", Label: "All Issues", Icon: lucide.Bug, Current: true, Class: ""},
-		h.P(h.Class("cui-console-menu-heading"), g.Text("Projects")),
+		h.P(h.Class("cui-console-menu-title"), g.Text("Projects")),
 		console.ConsoleMenuItem{Href: "#shop", Label: "Shop", Icon: lucide.Icon{}, Current: false, Class: ""},
 		console.ConsoleMenuItem{Href: "#demo", Label: "Demo Shop", Icon: lucide.Icon{}, Current: false, Class: ""},
 		h.Hr(h.Class("cui-console-menu-rule")),

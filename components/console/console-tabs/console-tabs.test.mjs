@@ -8,8 +8,6 @@ const size = (s) => [`${T}-variant-controlSize-${s}-anatomy-Tab-height`, `${T}-v
 const SIZE = ['box-height', 'min-width', 'column-gap', 'font-size', 'line-height', 'font-weight'];
 const FITTED = 'fitted to 4.5:1 (tokens.css, decision 21)';
 const REST = '.cui-console-tab[href="#issues"]';
-const PILL = '.cui-console-tab[href="#30d"]';
-const CHOSEN = '.cui-console-tab[aria-current="true"]';
 const RADIO = '.cui-console-tabs[aria-label="About"] .cui-console-tab';
 const PICKED = `${RADIO}:has(> :checked)`;
 const PLAIN = `${RADIO}:not(:has(> :checked))`;
@@ -38,22 +36,11 @@ export const cases = [
     widths: [375],
     checks: [
       { target: '.cui-console-tabs', props: ['flex-wrap', 'overflow-x', 'box-height'], golden: 'a phone: one row (no second hairline), scrolling sideways' },
-      { target: '.cui-console-tabs', props: ['mask-image'], golden: 'no overflow state from the host (no-JS among it), the row unfaded' },
-      { target: '.cui-console-tabs', props: ['scrollbar-width'], golden: 'no scrollbar: the side still hiding content fades instead' },
+      { target: '.cui-console-tabs', props: ['scrollbar-width'], golden: 'no scrollbar: the tab clipped at the row\'s edge says more is there' },
       { target: '.cui-console-tab[href="#settings"]', props: ['outline-offset'], state: 'focus-visible', golden: 'its focus ring inside the tab, where the scroll box would clip it' },
-      { target: '.cui-console-tabs', props: ['scroll-padding-left', 'scroll-padding-right'], golden: 'a focused tab is brought in clear of the 24px fade: a browser\'s focus scrolls only a tab it judges out of view, and left one 3px in view where it was' },
+      { target: '.cui-console-tabs', props: ['scroll-padding-left', 'scroll-padding-right'], golden: 'a focused tab is brought in whole: a browser\'s focus scrolls only a tab it judges out of view, and left one 3px in view where it was (reference/console/)' },
     ],
   },
-  ...[
-    ['start', 'data-overflow data-overflow-start', [375], 'scrolled to its start, the right edge fades over the content still hidden; the left edge stays clear'],
-    ['end', 'data-overflow data-overflow-end', [375], 'scrolled to its end, the left edge fades over the sections clipped behind; the right edge stays clear'],
-    ['middle and desktop', 'data-overflow', [375, 1200], 'between the ends, both edges fade; the fade is the phone row\'s — wide, none'],
-  ].map(([where, states, widths, golden]) => ({
-    name: `tabs overflow fade ${where}`,
-    html: ex('many').replace('cui-console-tabs"', `cui-console-tabs" ${states}`),
-    widths,
-    checks: [{ target: '.cui-console-tabs', props: ['mask-image'], golden }],
-  })),
   {
     name: 'tabs many wide',
     html: ex('many'),
@@ -71,31 +58,22 @@ export const cases = [
     ],
   },
   {
-    name: 'filled',
-    html: ex('filled'),
-    widths: [1200, 390],
-    checks: [
-      { target: PILL, props: SIZE, tb: size('md') },
-      { target: PILL, props: ['background-color', 'padding-left', 'padding-right', 'border-top-left-radius'], tb: [tab('filledGray', 'default', 'false', 'backgroundColor'), `${T}-defaultMdPaddingInline`, `${T}-defaultMdPaddingInline`, `${T}-variant-controlShape-capsule-controlSize-md-borderRadius`] },
-      { target: PILL, props: ['color'], golden: `the blue label on the gray pill blue-600: the toolkit's brand blue is 4.4:1 on it, ${FITTED}` },
-      { target: PILL, props: ['background-color'], state: 'hover', tb: [tab('filledGray', 'hover', 'false', 'backgroundColor')] },
-      { target: PILL, props: ['color'], state: 'hover', golden: `hovered, blue-600 too: the toolkit's lighter blue is 3.5:1 on white, ${FITTED}` },
-      { target: PILL, props: ['background-color'], state: 'active', tb: [tab('filledGray', 'press', 'false', 'backgroundColor')] },
-      { target: PILL, props: ['color'], state: 'active', golden: 'pressed, one pressed blue for a label (as an underlined tab\'s)' },
-      { target: '.cui-console-tabs', props: ['column-gap'], tb: [`${T}-variant-controlSize-md-variant-filledGray-gap`] },
-      { target: '.cui-console-tabs', props: ['border-bottom-width'], golden: 'no hairline under pills' },
-      { target: CHOSEN, props: ['background-color', 'color'], tb: [tab('filledGray', 'default', 'true', 'backgroundColor'), tab('filledGray', 'default', 'true', 'color')] },
-      { target: CHOSEN, props: ['background-color'], state: 'hover', golden: `the chosen pill hovered blue-600, a step darker: white on the toolkit's lighter blue is 3.9:1, ${FITTED}` },
-      { target: CHOSEN, props: ['background-color', 'color'], state: 'active', tb: [tab('filledGray', 'press', 'true', 'backgroundColor'), tab('filledGray', 'press', 'true', 'color')] },
-    ],
-  },
-  {
     name: 'tabs of radios',
     html: ex('radios'),
     widths: [1200],
     checks: [
+      { target: PLAIN, props: SIZE, tb: size('md') },
+      { target: PLAIN, props: ['background-color', 'padding-left', 'padding-right', 'border-top-left-radius'], tb: [tab('filledGray', 'default', 'false', 'backgroundColor'), `${T}-defaultMdPaddingInline`, `${T}-defaultMdPaddingInline`, `${T}-variant-controlShape-capsule-controlSize-md-borderRadius`] },
+      { target: PLAIN, props: ['color'], golden: `the blue label on the gray pill blue-600: the toolkit's brand blue is 4.4:1 on it, ${FITTED}` },
+      { target: PLAIN, props: ['background-color'], state: 'hover', tb: [tab('filledGray', 'hover', 'false', 'backgroundColor')] },
+      { target: PLAIN, props: ['color'], state: 'hover', golden: `hovered, blue-600 too: the toolkit's lighter blue is 3.5:1 on white, ${FITTED}` },
+      { target: PLAIN, props: ['background-color'], state: 'active', tb: [tab('filledGray', 'press', 'false', 'backgroundColor')] },
+      { target: PLAIN, props: ['color'], state: 'active', golden: 'pressed, one pressed blue for a label (as an underlined tab\'s)' },
+      { target: '.cui-console-tabs', props: ['column-gap'], tb: [`${T}-variant-controlSize-md-variant-filledGray-gap`] },
+      { target: '.cui-console-tabs', props: ['border-bottom-width'], golden: 'no hairline under pills' },
       { target: PICKED, props: ['background-color', 'color'], tb: [tab('filledGray', 'default', 'true', 'backgroundColor'), tab('filledGray', 'default', 'true', 'color')] },
-      { target: PLAIN, props: ['background-color', 'color'], golden: 'the unchecked radios\' pill, the blue label on the gray, as an unfilled link tab\'s' },
+      { target: PICKED, props: ['background-color'], state: 'hover', golden: `the chosen pill hovered blue-600, a step darker: white on the toolkit's lighter blue is 3.9:1, ${FITTED}` },
+      { target: PICKED, props: ['background-color', 'color'], state: 'active', tb: [tab('filledGray', 'press', 'true', 'backgroundColor'), tab('filledGray', 'press', 'true', 'color')] },
       { target: `${RADIO} > input`, props: ['position', 'opacity', 'pointer-events'], golden: 'the page\'s own radio out of the way: the pill is the control\'s look, its words the radio\'s label' },
       { target: PICKED, props: ['outline-style', 'outline-width'], on: `${RADIO} > input`, state: 'focus-visible', golden: 'the keyboard\'s ring on the pill, not around the hidden radio (the one ring, moved)' },
     ],
@@ -106,18 +84,18 @@ export const cases = [
     widths: [1200],
     forcedColors: true,
     checks: [
-      { target: PICKED, props: ['background-color', 'color'], golden: 'the chosen one the theme\'s Highlight under HighlightText, as a chosen link\'s' },
+      { target: PICKED, props: ['background-color', 'color'], golden: 'the chosen one the theme\'s Highlight under HighlightText: forced colors drop the fill, and it read as the others' },
       { target: PLAIN, props: ['background-color', 'color'], golden: 'the others\' gray fill forced to the ground, at its alpha, under the forced text: not Highlight' },
     ],
   },
   {
     name: 'tabs touch',
-    html: ex('filled'),
+    html: ex('radios'),
     touch: true,
     widths: [390],
     checks: [
       { target: '.cui-console-tab', props: ['justify-content'], golden: 'its label centered in the 44px tab' },
-      { target: PILL, props: ['box-height', 'min-width', 'border-top-left-radius'], golden: 'a tab 44px each way at least on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), a pill\'s corners half its height: a target drawn round it was clipped by a phone\'s sideways-scrolling row' },
+      { target: PLAIN, props: ['box-height', 'min-width', 'border-top-left-radius'], golden: 'a tab 44px each way at least on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), a pill\'s corners half its height: a target drawn round it was clipped by a phone\'s sideways-scrolling row' },
     ],
   },
   {
@@ -140,23 +118,13 @@ export const cases = [
     ],
   },
   {
-    name: 'filled forced colors',
-    html: ex('filled'),
-    widths: [1200],
-    forcedColors: true,
-    checks: [
-      { target: CHOSEN, props: ['background-color', 'color'], golden: 'the chosen pill the theme\'s Highlight under HighlightText: forced colors drop the fill, and it read as the others' },
-      { target: PILL, props: ['background-color'], golden: 'the others\' gray fill forced to the ground, at its alpha' },
-    ],
-  },
-  {
     name: 'tabs dark',
-    html: `<div class="cui-dark">${ex('tabs')}${ex('filled')}</div>`,
+    html: `<div class="cui-dark">${ex('tabs')}${ex('radios')}</div>`,
     widths: [1200],
     checks: [
       { target: REST, props: ['color'], golden: 'the dark side derived (tokens.css, decision 18)' },
-      { target: PILL, props: ['background-color', 'color'], golden: 'the dark side derived (tokens.css, decision 18)' },
-      { target: CHOSEN, props: ['background-color', 'color'], golden: `the chosen pill dark blue-400: white on the derived blue-600 is 2.7:1, ${FITTED}` },
+      { target: PLAIN, props: ['background-color', 'color'], golden: 'the dark side derived (tokens.css, decision 18)' },
+      { target: PICKED, props: ['background-color', 'color'], golden: `the chosen pill dark blue-400: white on the derived blue-600 is 2.7:1, ${FITTED}` },
     ],
   },
 ];

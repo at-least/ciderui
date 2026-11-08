@@ -22,9 +22,6 @@ export const cases = [
       { target: '.cui-console-table-figure:not(th)', props: ['font-size', 'line-height', 'font-weight', 'letter-spacing', 'color', 'text-align', 'font-variant-numeric'], asc: ['analytics', 'table.figure'] },
       { target: 'tbody td:nth-child(2)', props: ['vertical-align', 'border-bottom-width', 'border-bottom-style', 'border-bottom-color'], asc: ['analytics', 'table.cell'] },
       { target: 'tbody td:nth-child(2)', props: ['font-size', 'line-height', 'font-weight', 'letter-spacing', 'color', 'text-align'], asc: ['analytics', 'table.text'] },
-      { target: 'tbody tr[aria-selected="true"] > :first-child', props: ['border-left-width', 'border-left-style', 'border-left-color', 'padding-left'], golden: 'a selected row its leading bar in every mode, 3px of the brand label\'s blue, its text 8px in as a cell\'s: a fill at 0.08 alone is too faint to find by, and forced colors drop it (the HIG\'s Color: not by color alone)' },
-      { target: 'tbody tr:not([aria-selected]) > :first-child', props: ['border-left-width', 'padding-left'], golden: 'another row no bar, its first cell flush' },
-      { target: 'tbody tr[aria-selected="true"]', props: ['background-color'], golden: 'the brand\'s fill at 0.08, the toolkit\'s selected row\'s (--tb-component-Table-anatomy-TR-…-selected-fill), square: its 12px corners set out 12px are no table row\'s' },
       { target: '.cui-console-table-subtitle', props: ['font-size', 'line-height', 'font-weight', 'color', 'display'], golden: 'a line under a cell\'s text, 12px on 16px, the secondary label: the toolkit\'s display list\'s subtitle at the table\'s small size' },
       { target: 'tbody tr:first-child', props: ['cursor'], golden: 'a row that is a link, all of it' },
       { target: '.cui-console-table', props: ['box-width'], golden: 'the full width of its place' },
@@ -41,28 +38,14 @@ export const cases = [
     ],
   },
   {
-    name: 'table sort touch',
-    html: ex('sticky'),
-    touch: true,
-    widths: [390],
-    checks: [
-      { target: '.cui-console-table-sort', pseudo: '::after', props: ['width', 'height'], golden: 'a header\'s sort link: its target 44px at least each way on a touch screen, the HIG\'s 44pt (Accessibility, Mobility)' },
-    ],
-  },
-  {
-    name: 'table sticky',
-    html: ex('sticky'),
+    name: 'table scroll',
+    html: ex('scroll'),
     widths: [1200, 390],
     checks: [
-      { target: 'thead th:nth-child(2)', props: ['background-color'], tb: [`${T}-anatomy-TH-stickyBackgroundColor`] },
-      { target: 'thead', props: ['box-shadow'], tb: [`${T}-anatomy-TH-stickyBoxShadow`] },
-      { target: 'thead', props: ['position', 'top', 'z-index'], golden: 'a sticky header sticks to the top of its scroll container, at --cui-console-table-sticky-top (0 unless the page sets it), over the rows: the row group, so its shadow runs under every column (drawn per cell, its negative spread left a gap at each column\'s edge)' },
       { target: '.cui-console-table-scroll', props: ['overflow-x'], golden: 'a table wider than its place scrolls sideways in its box' },
-      { target: 'th[aria-sort="none"] > .cui-console-table-sort', props: ['color', 'text-decoration-line'], golden: `an unsorted header's label a header's, ${FITTED}; no underline` },
-      { target: 'th[aria-sort="none"] > .cui-console-table-sort', props: ['color'], state: 'hover', golden: 'hovered, the label\'s color' },
-      { target: 'th[aria-sort="descending"] > .cui-console-table-sort', props: ['color'], golden: 'the sorted column\'s label the label\'s color' },
-      { target: '.cui-console-table-sort-icon', props: ['box-width', 'box-height'], golden: 'its arrow, Lucide\'s, 12px: the toolkit names no sort control' },
-      { target: 'tbody tr:first-child', props: ['background-color'], golden: 'a row whose checkbox is checked is selected: the brand\'s fill at 0.08, as aria-selected' },
+      { target: 'tbody tr:first-child', props: ['background-color'], golden: 'a row whose checkbox is checked is selected: the brand\'s fill at 0.08, the toolkit\'s selected row\'s (--tb-component-Table-anatomy-TR-…-selected-fill), square: its 12px corners set out 12px are no table row\'s' },
+      { target: 'tbody tr:first-child > :first-child', props: ['border-left-width', 'border-left-style', 'border-left-color', 'padding-left'], golden: 'a selected row its leading bar in every mode, 3px of the brand label\'s blue, its text 8px in as a cell\'s: a fill at 0.08 alone is too faint to find by, and forced colors drop it (the HIG\'s Color: not by color alone)' },
+      { target: 'tbody tr:last-child > :first-child', props: ['border-left-width', 'padding-left'], golden: 'another row no bar, its first cell flush' },
       { target: 'tbody tr:first-child .cui-console-checkbox-input', props: ['hit'], golden: 'the pointer finds a linked row\'s checkbox, not the row\'s link: the link\'s ::after covers the row and comes later in it, and took the checkbox\'s click' },
       { target: 'tbody tr:first-child td:nth-child(3)', props: ['hit'], golden: 'elsewhere in the row the pointer still finds its link' },
     ],
@@ -90,12 +73,12 @@ export const cases = [
   },
   {
     name: 'table checkbox touch',
-    html: ex('sticky'),
+    html: ex('scroll'),
     widths: [390],
     touch: true,
     checks: [
       { target: 'tbody tr:first-child .cui-console-checkbox', props: ['hit'], golden: 'on a touch screen too a tap on a linked row\'s checkbox finds the checkbox, not the row\'s link' },
-      { target: 'tbody tr:first-child > td:first-child', props: ['padding-left', 'padding-right'], golden: 'a cell with a checkbox 14.5px in each way on a touch screen, room for its input\'s 44px: flush at the table\'s start the scroll box clipped it to 29px, and 8px from the next cell it met a sort link\'s target' },
+      { target: 'tbody tr:first-child > td:first-child', props: ['padding-left', 'padding-right'], golden: 'a cell with a checkbox 14.5px in each way on a touch screen, room for its input\'s 44px: flush at the table\'s start the scroll box clipped it to 29px' },
     ],
   },
   {
@@ -114,7 +97,7 @@ export const cases = [
   },
   {
     name: 'table scroll box',
-    html: ex('sticky'),
+    html: ex('scroll'),
     widths: [1200, 390],
     press: ['Tab'],
     checks: [
@@ -132,22 +115,22 @@ export const cases = [
   },
   {
     name: 'table forced colors',
-    html: ex('table'),
+    html: ex('scroll'),
     widths: [1200],
     forcedColors: true,
     checks: [
-      { target: 'tbody tr[aria-selected="true"] > :first-child', props: ['border-left-width', 'border-left-style', 'border-left-color'], golden: 'a selected row its leading edge, 3px of the theme\'s Highlight on its first cell: forced colors drop the fill, and the row read as the others' },
-      { target: 'tbody tr:not([aria-selected]) > :first-child', props: ['border-left-width'], golden: 'another row no edge' },
+      { target: 'tbody tr:first-child > :first-child', props: ['border-left-width', 'border-left-style', 'border-left-color'], golden: 'a selected row its leading edge, 3px of the theme\'s Highlight on its first cell: forced colors drop the fill, and the row read as the others' },
+      { target: 'tbody tr:last-child > :first-child', props: ['border-left-width'], golden: 'another row no edge' },
     ],
   },
   {
     name: 'table dark',
-    html: `<div class="cui-dark">${ex('table')}</div>`,
+    html: `<div class="cui-dark">${ex('scroll')}</div>`,
     widths: [1200],
     checks: [
       { target: 'tbody td:nth-child(2)', props: ['border-bottom-color', 'color'], golden: 'the dark side derived (tokens.css, decision 18)' },
-      { target: 'tbody tr[aria-selected="true"] > :first-child', props: ['border-left-color'], golden: 'the bar in the dark, the brand label\'s blue, a step lighter than the accent (decision 21)' },
-      { target: 'tbody tr[aria-selected="true"]', props: ['background-color'], golden: 'the dark side derived: the brand blue, no step of the palette, takes the blue ramp\'s step nearest its lightness (tokens.css, decision 18)' },
+      { target: 'tbody tr:first-child > :first-child', props: ['border-left-color'], golden: 'the bar in the dark, the brand label\'s blue, a step lighter than the accent (decision 21)' },
+      { target: 'tbody tr:first-child', props: ['background-color'], golden: 'the dark side derived: the brand blue, no step of the palette, takes the blue ramp\'s step nearest its lightness (tokens.css, decision 18)' },
     ],
   },
 ];

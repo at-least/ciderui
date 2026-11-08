@@ -11,7 +11,7 @@ import (
 )
 
 func consoleBtn(label string) console.ConsoleBtn {
-	return console.ConsoleBtn{Href: "", Label: label, AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Error: false, Attrs: nil, Class: ""}
+	return console.ConsoleBtn{Href: "", Label: label, AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: ""}
 }
 
 func row(children ...g.Node) g.Node {
@@ -19,10 +19,10 @@ func row(children ...g.Node) g.Node {
 }
 
 func TestConsoleBtnRendersTheExamples(t *testing.T) {
-	withVariant := func(label string, v console.ConsoleBtnVariant, isError bool) console.ConsoleBtn {
+	withVariant := func(label string, v console.ConsoleBtnVariant, destructive bool) console.ConsoleBtn {
 		b := consoleBtn(label)
 		b.Variant = v
-		b.Error = isError
+		b.Destructive = destructive
 		return b
 	}
 	gray, filled, plain := console.ConsoleBtnVariantGray, console.ConsoleBtnVariantFilled, console.ConsoleBtnVariantPlain

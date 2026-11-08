@@ -51,7 +51,7 @@
        its own, and forced colors drop a shadow. Its 5px and the bar's 3px are
        a cell's 8px, so its text stands clear of the bar. Before the checkbox
        cell's touch padding, which keeps its room */
-    :where(tbody tr[aria-selected="true"], tbody tr:has(> :is(td, th) > .cui-console-checkbox > .cui-console-checkbox-input:checked)) > :first-child {
+    :where(tbody tr:has(> :is(td, th) > .cui-console-checkbox > .cui-console-checkbox-input:checked)) > :first-child {
       padding-inline-start: 5px;
       border-inline-start: 3px solid var(--cui-c-console-brand-label-primary);
 
@@ -82,7 +82,6 @@
       }
     }
 
-    :where(tbody tr[aria-selected="true"]),
     :where(tbody tr:has(> :is(td, th) > .cui-console-checkbox > .cui-console-checkbox-input:checked)) {
       background-color: var(--cui-c-console-brand-fill-quaternary);
     }
@@ -114,48 +113,8 @@
     font-weight: 400;
   }
 
-  /* @trap: the row group sticks, not each cell: per cell, the shadow's negative
-     spread left a gap at every column's edge */
-  .cui-console-table[data-sticky] {
-    --cui-console-table-sticky-top: 0px;
-
-    :where(thead) {
-      position: sticky;
-      top: var(--cui-console-table-sticky-top);
-      z-index: 1;
-      box-shadow: var(--cui-console-shadow-table-sticky);
-    }
-
-    :where(thead th) {
-      background-color: var(--cui-c-console-table-sticky);
-    }
-  }
-
   .cui-console-table-scroll {
     overflow-x: auto;
-  }
-
-  .cui-console-table-sort {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    text-decoration: none;
-
-    @media (hover: hover) {
-      &:hover {
-        color: var(--cui-c-console-neutral-label-primary);
-      }
-    }
-  }
-
-  :is(th[aria-sort="ascending"], th[aria-sort="descending"]) > .cui-console-table-sort {
-    color: var(--cui-c-console-neutral-label-primary);
-  }
-
-  .cui-console-table-sort-icon {
-    flex: none;
-    width: 12px;
-    height: 12px;
   }
 
   .cui-console-table[data-stack] {

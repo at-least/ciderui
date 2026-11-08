@@ -36,7 +36,7 @@ func TestBtnRendersTheExamples(t *testing.T) {
 		{"variants", g.Group{link("Buy", buy, primary, medium), link("Buy", buy, secondary, medium), link("Buy", buy, site.BtnVariantSecondaryNeutral, medium)}},
 		{"disabled", g.Group{disabled(primary), disabled(secondary)}},
 	} {
-		example.Check(t, c.node, "site/button/examples/"+c.path+".html")
+		example.Check(t, c.node, "site/btn/examples/"+c.path+".html")
 	}
 }
 

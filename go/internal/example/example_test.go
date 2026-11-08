@@ -1,10 +1,10 @@
 package example
 
 import (
-	"fmt"
 	"io"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui"
@@ -52,7 +52,7 @@ func TestRenderWritesQuotesAsTheExamplesDo(t *testing.T) {
 
 func TestRenderPanicsOnWhatCheckMarkupRefuses(t *testing.T) {
 	const html = `<p class="cui-no-such"></p>`
-	if got, want := panicOf(g.Raw(html)), fmt.Sprintf("%q", ciderui.CheckMarkup(html)); got != want || got == "[]" {
+	if got, want := panicOf(g.Raw(html)), "example.Render: "+strings.Join(ciderui.CheckMarkup(html), "; "); got != want || got == "example.Render: " {
 		t.Errorf("got %s", got)
 	}
 }

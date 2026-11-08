@@ -56,8 +56,7 @@ type ConsoleStripItem struct {
 	Src  string
 	// Alt is the link's name, with Caption, Detail, Tip and MarkAriaLabel
 	// after it.
-	Alt  string
-	Lazy bool
+	Alt string
 	// Current: aria-current="true", ringed.
 	Current bool
 	Variant ConsoleStripItemVariant
@@ -113,14 +112,14 @@ func stripItem(item ConsoleStripItem) g.Node {
 		panic("console.ConsoleStripItem needs an Alt: it is its link's name")
 	}
 	if item.Detail != "" && item.Caption == "" {
-		panic("console.ConsoleStripItem needs a Caption under a Detail")
+		panic("console.ConsoleStripItem's Detail needs a Caption above it")
 	}
 	if (item.Mark == ConsoleStripMarkNone) != (item.MarkAriaLabel == "") {
 		panic("console.ConsoleStripItem needs a MarkAriaLabel with a Mark, and none without")
 	}
 	return h.A(h.Class("cui-console-strip-item"), h.Href(item.Href), g.If(item.Variant != ConsoleStripItemVariantFrame, h.Data("variant", item.Variant.value)),
 		g.If(item.Unused, h.Data("state", "unused")), g.If(item.Current, h.Aria("current", "true")),
-		h.Img(h.Src(item.Src), h.Alt(item.Alt), g.If(item.Lazy, h.Loading("lazy"))),
+		h.Img(h.Src(item.Src), h.Alt(item.Alt), h.Loading("lazy")),
 		g.If(item.Caption != "", h.Span(h.Class("cui-console-strip-caption"), g.Text(item.Caption))),
 		g.If(item.Detail != "", h.Span(h.Class("cui-console-strip-detail"), g.Text(item.Detail))),
 		g.If(item.Tip != "", h.Span(h.Class("cui-console-strip-tip"), g.Text(item.Tip))),

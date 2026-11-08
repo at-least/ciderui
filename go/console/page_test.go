@@ -48,8 +48,9 @@ func TestConsolePageWritesItsHeadAfterTheKitsStylesheet(t *testing.T) {
 func TestConsolePageWritesItsSkipLinkFirst(t *testing.T) {
 	p := consolePage()
 	p.Skip = "Skip to Content"
+	p.Children = h.Main(h.ID("main"), h.TabIndex("-1"))
 	got := example.Render(p)
-	want := `<body class="cui-console-page"><a class="cui-console-btn cui-console-skip" data-variant="filled" href="#main">Skip to Content</a><p>x</p>`
+	want := `<body class="cui-console-page"><a class="cui-console-btn cui-console-skip" data-variant="filled" href="#main">Skip to Content</a><main id="main" tabindex="-1">`
 	if !strings.Contains(got, want) {
 		t.Errorf("no %s in %s", want, got)
 	}

@@ -22,9 +22,8 @@ type Page struct {
 	// Skip: the skip link's words, the link before all else the keyboard
 	// reads; "" for none. It lands on the page's own <main id="main"
 	// tabindex="-1"> (the example skip's).
-	Skip      string
-	BodyClass string
-	Children  g.Node
+	Skip     string
+	Children g.Node
 }
 
 func (p Page) Render(w io.Writer) error {
@@ -32,5 +31,5 @@ func (p Page) Render(w io.Writer) error {
 	if p.Skip != "" {
 		children = g.Group{Btn{Href: "#main", Label: p.Skip, Icon: nil, Submit: false, Variant: BtnVariantPrimary, Size: BtnSizeMedium, Block: false, Attrs: nil, Class: "cui-skip"}, children}
 	}
-	return document.Document{Owner: "site.Page", Lang: p.Lang, Title: p.Title, Stylesheet: ciderui.SiteStylesheet(), Head: p.Head, Class: p.Class, BodyClass: p.BodyClass, Children: children}.Render(w)
+	return document.Document{Owner: "site.Page", Lang: p.Lang, Title: p.Title, Stylesheet: ciderui.SiteStylesheet(), Head: p.Head, Class: p.Class, BodyClass: "", Children: children}.Render(w)
 }

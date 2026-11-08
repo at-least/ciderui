@@ -5,9 +5,9 @@ const E = 'component-EmptyState';
 const sized = (s, M) => [
   { target: '.cui-console-empty', props: ['padding-top', 'padding-bottom'], tb: [`${E}-variant-size-${s}-paddingBlock`, `${E}-variant-size-${s}-paddingBlock`] },
   { target: '.cui-console-empty-icon', props: ['box-height', 'margin-bottom'], tb: [`${E}-variant-size-${s}-anatomy-Art-fontSize`, `${E}-variant-size-${s}-anatomy-Art-marginBlockEnd`] },
-  { target: '.cui-console-empty-heading', props: ['font-size', 'line-height', 'font-weight', 'max-width', 'margin-bottom', 'color'], tb: ['fontSize', 'lineHeight', 'fontWeight'].map((p) => `${E}-variant-size-${s}-anatomy-Heading-textStyle-${p}`).concat([`${E}-maxInlineSize${M}`, `${E}-variant-size-${s}-anatomy-Heading-marginBlockEnd`, `${E}-anatomy-Heading-color`]) },
-  { target: '.cui-console-empty-caption', props: ['font-size', 'line-height', 'font-weight', 'max-width', 'margin-bottom'], tb: ['fontSize', 'lineHeight', 'fontWeight'].map((p) => `${E}-variant-size-${s}-anatomy-Caption-textStyle-${p}`).concat([`${E}-maxInlineSize${M}`, `${E}-variant-size-${s}-anatomy-Caption-marginBlockEnd`]) },
-  { target: '.cui-console-empty-caption', props: ['color'], golden: 'the secondary label fitted to 0.76 (tokens.css, decision 21)' },
+  { target: '.cui-console-empty-title', props: ['font-size', 'line-height', 'font-weight', 'max-width', 'margin-bottom', 'color'], tb: ['fontSize', 'lineHeight', 'fontWeight'].map((p) => `${E}-variant-size-${s}-anatomy-Heading-textStyle-${p}`).concat([`${E}-maxInlineSize${M}`, `${E}-variant-size-${s}-anatomy-Heading-marginBlockEnd`, `${E}-anatomy-Heading-color`]) },
+  { target: '.cui-console-empty-body', props: ['font-size', 'line-height', 'font-weight', 'max-width', 'margin-bottom'], tb: ['fontSize', 'lineHeight', 'fontWeight'].map((p) => `${E}-variant-size-${s}-anatomy-Caption-textStyle-${p}`).concat([`${E}-maxInlineSize${M}`, `${E}-variant-size-${s}-anatomy-Caption-marginBlockEnd`]) },
+  { target: '.cui-console-empty-body', props: ['color'], golden: 'the secondary label fitted to 0.76 (tokens.css, decision 21)' },
   { target: '.cui-console-empty-icon', props: ['color'], golden: 'the secondary label fitted to 0.76 (tokens.css, decision 21)' },
 ];
 

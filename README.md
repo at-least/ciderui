@@ -34,15 +34,16 @@ mux.Handle(ciderui.AssetsPath, ciderui.Assets())
 console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Class: "", Skip: "", Children: body}
 ```
 
-That is the whole setup: the page links the stylesheet and the module serves it, with its fonts. Use `site.Page` for a store or a marketing page. Each part's markup is its examples, `components/<set>/<name>/examples/*.html`. Call `ciderui.CheckMarkup` on your pages in your tests.
+That is the whole setup: the page links the stylesheet and the module serves it, with its fonts. Use `site.Page` for a store or a marketing page. Each part's markup is its examples, `components/<set>/<name>/examples/*.html`. Under `go test`, every page `site.Page` or `console.ConsolePage` renders checks itself with `ciderui.CheckMarkup`; call it yourself on a fragment.
+
+Add `go tool exhaustruct -i 'github.com/at-least/ciderui/.*' ./...` to your site's checks (after `go get -tool github.com/GaijinEntertainment/go-exhaustruct/v3/cmd/exhaustruct`), so a field the module adds fails your build instead of rendering a default nobody chose.
 
 ### Your own utilities
 
-A set's stylesheet ships the utilities its examples write and no other: any other utility a page writes needs this second stylesheet. A page that writes Tailwind utilities builds it and adds it in `Head`:
+A set's stylesheet ships the utilities its examples write and no other: any other utility a page writes needs this second stylesheet. A page that writes Tailwind utilities builds it and adds it in `Head`. This writes what it imports, from the version your `go.mod` pins:
 
 ```sh
-go get -tool github.com/at-least/ciderui/go/cmd/ciderui-css@<commit>
-go tool ciderui-css target/ciderui
+go run github.com/at-least/ciderui/go/cmd/ciderui-css target/ciderui
 ```
 
 ```css

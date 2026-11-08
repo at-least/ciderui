@@ -8,9 +8,8 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// OptionTile is apple.com's buy-page choice. Not Option: that is a
-// [Select]'s choice.
-type OptionTile struct {
+// Option is apple.com's buy-page choice, a radio drawn as a tile.
+type Option struct {
 	ID      string
 	Name    string
 	Value   string
@@ -22,15 +21,15 @@ type OptionTile struct {
 	Class string
 }
 
-func (o OptionTile) Render(w io.Writer) error {
+func (o Option) Render(w io.Writer) error {
 	if o.ID == "" {
-		panic("site.OptionTile needs an ID")
+		panic("site.Option needs an ID")
 	}
 	if o.Name == "" {
-		panic("site.OptionTile needs a Name")
+		panic("site.Option needs a Name")
 	}
 	if o.Title == "" {
-		panic("site.OptionTile needs a Title")
+		panic("site.Option needs a Title")
 	}
 	return h.Div(class.Root("cui-option", o.Class),
 		h.Input(h.Class("cui-option-input"), h.Type("radio"), h.ID(o.ID), h.Name(o.Name), h.Value(o.Value), g.If(o.Checked, h.Checked()), o.Attrs),

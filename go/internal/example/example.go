@@ -15,7 +15,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/at-least/ciderui"
+	"github.com/at-least/ciderui/go/internal/document"
 	g "maragu.dev/gomponents"
 )
 
@@ -56,9 +56,7 @@ func Render(node g.Node) string {
 		panic(err)
 	}
 	html := strings.NewReplacer("&#39;", "'", "&#34;", "&quot;").Replace(b.String())
-	if problems := ciderui.CheckMarkup(html); problems != nil {
-		panic(fmt.Sprintf("%q", problems))
-	}
+	document.Check("example.Render", html)
 	return html
 }
 

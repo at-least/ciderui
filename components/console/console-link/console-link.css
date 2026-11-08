@@ -1,10 +1,8 @@
 @layer components {
   .cui-console-link {
-    /* @trap: not a default on --cui-console-link-color here: it would override the part's
-       around it */
-    --cui-console-link-blue: var(--cui-console-link-color, var(--cui-c-console-brand-label-primary));
-
-    color: var(--cui-console-link-blue);
+    /* @trap: the fallback on the use, not a default on --cui-console-link-color here: it
+       would override the part's around it */
+    color: var(--cui-console-link-color, var(--cui-c-console-brand-label-primary));
     text-decoration-line: none;
     cursor: pointer;
 
@@ -16,17 +14,6 @@
 
     &[data-variant="text"] {
       text-decoration-line: underline;
-    }
-
-    &[data-variant="label"] {
-      color: var(--cui-c-console-neutral-label-primary);
-
-      @media (hover: hover) {
-        &:hover {
-          color: var(--cui-console-link-blue);
-          text-decoration-line: none;
-        }
-      }
     }
 
     &[aria-disabled="true"] {

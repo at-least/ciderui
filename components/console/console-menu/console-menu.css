@@ -149,7 +149,7 @@
     overflow-wrap: anywhere;
   }
 
-  .cui-console-menu-heading {
+  .cui-console-menu-title {
     padding: 4.5px 0.625rem 6.5px;
     color: var(--cui-c-console-neutral-label-secondary);
     font-size: 14px;

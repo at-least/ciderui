@@ -333,27 +333,34 @@ func split(selector string) []string {
 	return append(parts, strings.TrimSpace(selector[start:]))
 }
 
-// CheckMarkup returns a line for each word of ciderui's in html that the
-// stylesheet the page links does not know, either set's for a fragment, nil when
-// there is none: a cui-* class (a misspelt one, or another set's, styles nothing),
-// and on an element with a cui-* class, a value of a data-* attribute some rule
-// selects that no rule selects for that element's classes (it renders the default,
-// silently), and a value of a stateful aria-* attribute ARIA holds none of (it is
-// wrong for assistive technology and draws nothing). A data-* or an aria-* no rule
-// selects and every other aria-* are the page's own. For a site's tests, on each
-// page it renders.
+// CheckMarkup returns a line for each problem in html, nil when there is none.
+// A cui-* class the stylesheet the page links does not hold, either set's for a
+// fragment (a misspelt one, or the other set's, styles nothing). On an element
+// with a cui-* class: a value of a data-* attribute some rule selects that no
+// rule selects for that element's classes (it renders the default, silently),
+// and a value of a stateful aria-* attribute ARIA holds none of (wrong for
+// assistive technology, drawn by nothing). On any element, an attribute written
+// twice (the browser keeps the first, silently). On a whole page, a reference to
+// an id the page lacks (a skip link to no #main moves nothing); a fragment's
+// may name the page around it. A data-* or an aria-* no rule selects and every
+// other aria-* are the page's own. For a site's tests, on each page it renders;
+// site.Page and console.ConsolePage check themselves under go test.
 func CheckMarkup(html string) []string {
 	tags := startTags(html)
 	set := linkedSet(tags)
 	known := vocabularies()[set]
 	classes, values := known.classes, known.values
-	noSuchClass := "ciderui has no such class"
+	sheet := "ciderui"
 	if set != "" {
-		noSuchClass = "the " + set + " stylesheet this page links has no such class"
+		sheet = "the " + set + " stylesheet this page links"
 	}
 	var problems []string
 	for _, tag := range tags {
 		class := tag.attribute("class")
+		on := fmt.Sprintf("<%s class=%q>", tag.name, class)
+		if class == "" {
+			on = "<" + tag.name + ">"
+		}
 		var ours []string
 		for _, c := range strings.Fields(class) {
 			if strings.HasPrefix(c, "cui-") {
@@ -361,52 +368,123 @@ func CheckMarkup(html string) []string {
 			}
 		}
 		for _, c := range ours {
-			if !classes[c] {
-				problems = append(problems, fmt.Sprintf("class %q on <%s class=%q>: %s", c, tag.name, class, noSuchClass))
+			if classes[c] {
+				continue
 			}
+			if other := otherSet(set); other != "" && vocabularies()[other].classes[c] {
+				problems = append(problems, fmt.Sprintf("class %q on %s: a %s class; this page links the %s stylesheet", c, on, other, set))
+			} else {
+				problems = append(problems, fmt.Sprintf("class %q on %s: %s has no such class", c, on, sheet))
+			}
+		}
+		var seen []string
+		for _, a := range tag.attributes {
+			name := strings.ToLower(a.name)
+			if slices.Contains(seen, name) {
+				problems = append(problems, fmt.Sprintf("%s on %s: written twice, and the browser keeps the first", a.name, on))
+			}
+			seen = append(seen, name)
 		}
 		if len(ours) == 0 {
 			continue
 		}
-		for _, a := range tag.attributes {
-			if !slices.ContainsFunc(values, func(v selected) bool { return v.attribute == a.name }) {
-				continue
-			}
-			ok := slices.ContainsFunc(values, func(v selected) bool {
-				return v.attribute == a.name && slices.Contains(ours, v.class) && (v.anyValue || v.value == a.value)
-			})
-			if ok {
-				continue
-			}
-			var known []string
-			for _, c := range ours {
-				var vs []string
-				for _, v := range values {
-					if v.class == c && v.attribute == a.name {
-						shown := v.value
-						if shown == "" {
-							shown = `""`
-						}
-						if !slices.Contains(vs, shown) {
-							vs = append(vs, shown)
-						}
-					}
-				}
-				slices.Sort(vs)
-				list := "none"
-				if len(vs) > 0 {
-					list = strings.Join(vs, ", ")
-				}
-				known = append(known, c+"'s: "+list)
-			}
-			problems = append(problems, fmt.Sprintf("%s=%q on <%s class=%q>: no rule of ciderui's selects it (%s)", a.name, a.value, tag.name, class, strings.Join(known, "; ")))
-		}
+		problems = append(problems, dataValueProblems(tag, ours, values, on, sheet)...)
 		for _, a := range tag.attributes {
 			legal, isState := ariaValues[a.name]
 			if !isState || slices.Contains(legal, a.value) {
 				continue
 			}
-			problems = append(problems, fmt.Sprintf("%s=%q on <%s class=%q>: not a value of %s (%s)", a.name, a.value, tag.name, class, a.name, strings.Join(legal, ", ")))
+			problems = append(problems, fmt.Sprintf("%s=%q on %s: not a value of %s (%s)", a.name, a.value, on, a.name, strings.Join(legal, ", ")))
+		}
+	}
+	if isPage(tags) {
+		problems = append(problems, missingIDs(tags)...)
+	}
+	return problems
+}
+
+func otherSet(set string) string {
+	switch set {
+	case "site":
+		return "console"
+	case "console":
+		return "site"
+	}
+	return ""
+}
+
+func dataValueProblems(tag startTag, ours []string, values []selected, on, sheet string) []string {
+	var problems []string
+	for _, a := range tag.attributes {
+		if !slices.ContainsFunc(values, func(v selected) bool { return v.attribute == a.name }) {
+			continue
+		}
+		ok := slices.ContainsFunc(values, func(v selected) bool {
+			return v.attribute == a.name && slices.Contains(ours, v.class) && (v.anyValue || v.value == a.value)
+		})
+		if ok {
+			continue
+		}
+		var known []string
+		for _, c := range ours {
+			var vs []string
+			for _, v := range values {
+				if v.class == c && v.attribute == a.name {
+					shown := v.value
+					if shown == "" {
+						shown = `""`
+					}
+					if !slices.Contains(vs, shown) {
+						vs = append(vs, shown)
+					}
+				}
+			}
+			slices.Sort(vs)
+			list := "none"
+			if len(vs) > 0 {
+				list = strings.Join(vs, ", ")
+			}
+			known = append(known, c+": "+list)
+		}
+		problems = append(problems, fmt.Sprintf("%s=%q on %s: no rule of %s selects it (%s; default: no %s)", a.name, a.value, on, sheet, strings.Join(known, "; "), a.name))
+	}
+	return problems
+}
+
+// @invariant: a fragment's references are not checked: the id they name may be
+// on the page around it (a sidebar's open button and the sidebar it opens)
+func isPage(tags []startTag) bool {
+	return slices.ContainsFunc(tags, func(t startTag) bool { return strings.EqualFold(t.name, "html") })
+}
+
+// @external: the attributes that name ids of the same page; an id holds no
+// space, so each is read as a list (aria-describedby's and <output for>'s are)
+var idReferences = []string{"popovertarget", "commandfor", "for", "aria-labelledby", "aria-describedby", "aria-controls"}
+
+func missingIDs(tags []startTag) []string {
+	ids := map[string]bool{}
+	for _, tag := range tags {
+		for _, a := range tag.attributes {
+			if strings.EqualFold(a.name, "id") {
+				ids[a.value] = true
+			}
+		}
+	}
+	var problems []string
+	for _, tag := range tags {
+		for _, a := range tag.attributes {
+			name := strings.ToLower(a.name)
+			var named []string
+			if slices.Contains(idReferences, name) {
+				named = strings.Fields(a.value)
+			} else if fragment, ok := strings.CutPrefix(a.value, "#"); ok && name == "href" && fragment != "" {
+				named = []string{fragment}
+			}
+			for _, id := range named {
+				if !ids[id] {
+					problems = append(problems, fmt.Sprintf("%s=%q on <%s>: this page has no id %q", a.name, a.value, tag.name, id))
+				}
+			}
 		}
 	}
 	return problems

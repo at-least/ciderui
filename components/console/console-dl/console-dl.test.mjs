@@ -30,16 +30,6 @@ export const cases = [
     ],
   },
   {
-    name: 'dl vertical strong',
-    html: ex('vertical'),
-    widths: [1200],
-    checks: [
-      { target: 'dd:first-of-type', props: ['margin-bottom'], tb: [`${D}-anatomy-DD-variant-orientation-vertical-marginBottom`] },
-      { target: 'dt:first-of-type', props: [...TYPE, 'color'], tb: [...style('DT', 'desktop', 'strong'), `${D}-anatomy-DT-variant-variant-strong-color`] },
-      { target: '.cui-console-dl', props: ['display'], golden: 'vertical, each label over its value' },
-    ],
-  },
-  {
     name: 'dl dark',
     html: `<div class="cui-dark">${ex('dl')}</div>`,
     widths: [1200],

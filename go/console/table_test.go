@@ -26,8 +26,8 @@ func jobsTable() console.ConsoleTable {
 			{Label: "Paused until", Figure: false},
 		},
 		Rows: []console.ConsoleTableRow{
-			{Selected: false, Attrs: nil, Cells: []console.ConsoleTableCell{link("#backup", "nightly-backup"), tableText("every 5 minutes"), tableText("142"), {Content: g.Text("—"), Empty: true}}},
-			{Selected: false, Attrs: nil, Cells: []console.ConsoleTableCell{link("#mailer", "report-mailer"), tableText("17 3 * * *"), tableText("9"), tableText("Nov 2")}},
+			{Cells: []console.ConsoleTableCell{link("#backup", "nightly-backup"), tableText("every 5 minutes"), tableText("142"), {Content: g.Text("—"), Empty: true}}},
+			{Cells: []console.ConsoleTableCell{link("#mailer", "report-mailer"), tableText("17 3 * * *"), tableText("9"), tableText("Nov 2")}},
 		},
 		BodyAttrs: nil,
 		Class:     "",
@@ -40,8 +40,8 @@ func TestTableRendersTheExample(t *testing.T) {
 
 func TestTableARowAloneIsAsInItsTable(t *testing.T) {
 	jobs := jobsTable()
-	got := example.Render(jobs.Row(console.ConsoleTableRow{Selected: true, Attrs: h.ID("row"), Cells: []console.ConsoleTableCell{tableText("a"), tableText("b"), tableText("1"), {Content: g.Text("—"), Empty: true}}}))
-	want := `<tr aria-selected="true" id="row"><td>a</td><td data-label="Schedule">b</td><td class="cui-console-table-figure" data-label="Runs">1</td><td data-label="Paused until" data-empty>—</td></tr>`
+	got := example.Render(jobs.Row(console.ConsoleTableRow{Cells: []console.ConsoleTableCell{tableText("a"), tableText("b"), tableText("1"), {Content: g.Text("—"), Empty: true}}}))
+	want := `<tr><td>a</td><td data-label="Schedule">b</td><td class="cui-console-table-figure" data-label="Runs">1</td><td data-label="Paused until" data-empty>—</td></tr>`
 	if got != want {
 		t.Errorf("got  %s\nwant %s", got, want)
 	}

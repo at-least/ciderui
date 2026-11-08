@@ -5,16 +5,20 @@ const ITEM = '.cui-accordion-item';
 const OPEN = '.cui-accordion-item[open]';
 const CLOSED = '.cui-accordion-item:not([open])';
 const Q = '.cui-accordion-question';
+// @invariant: an item renders closed; a case reads an open one after a click opens the first
+const OPEN_FIRST = `${ITEM}:nth-child(1) > ${Q}`;
 
 export const cases = [
   {
     name: 'zh-hant',
     html: `<div lang="zh-Hant">${ex('accordion')}</div>`,
+    click: OPEN_FIRST,
     checks: [{ target: `${OPEN} .cui-accordion-answer`, props: ['line-height', 'letter-spacing'], apple: ['buy-tw', 'accordion.content'] }],
   },
   {
     name: 'accordion',
     html: ex('accordion'),
+    click: OPEN_FIRST,
     checks: [
       { target: ITEM, props: ['border-top-width', 'border-top-style', 'border-top-color', 'padding-top', 'margin-top'], apple: ['bag', 'accordion.item'] },
       { target: `${CLOSED} > ${Q}`, props: ['padding-top', 'padding-bottom', 'display', 'cursor', 'box-height'], apple: ['bag-accordion', 'compact.button'] },

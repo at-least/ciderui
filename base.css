@@ -48,11 +48,11 @@
   /* @trap: a control that grows to 44px itself is not listed: a target round a
      control closer than 44px to the next covers the next one's */
   @media (pointer: coarse) {
-    :where(.cui-btn, .cui-footer-copyright a, .cui-console-link, .cui-console-table-sort) {
+    :where(.cui-btn, .cui-footer-copyright a, .cui-console-link) {
       position: relative;
     }
 
-    :where(.cui-btn, .cui-footer-copyright a, .cui-console-link, .cui-console-table-sort)::after {
+    :where(.cui-btn, .cui-footer-copyright a, .cui-console-link)::after {
       content: "";
       position: absolute;
       top: 50%;

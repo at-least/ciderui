@@ -43,6 +43,8 @@ const PREVIEW_WHY = 'muse\'s, tv.apple.com\'s trailers scrubbing with no preview
 const TEXT_BTN = '.cui-console-player-text-btn';
 const FULL = 'muse\'s, for its 回報問題 and 下一個要看 while the player fills the screen (the owner, 2026-11-05); tv.apple.com\'s bar has no control of words: a 24px capsule, the bar\'s buttons\' height (tv-player:audio), white on a 16% white fill, 24% hovered or pressed, 13px medium, 8px apart; half opacity disabled';
 const CAPTION = '.cui-console-player-caption';
+// @invariant: the page's script's caption, written into the player at rest
+const captioned = (html) => html.replace('data-control="caption"></p>', 'data-control="caption">The Wedding · Scene 2　The Vows · S02-03</p>');
 const PAUSED = 'muse\'s (the owner, 2026-11-05: paused, a small line at the picture\'s top left saying the story, the scene and the shot; gone on play): in tv.apple.com\'s header\'s first column, 711px and empty on its trailers (tv-player:header, grid-template-columns 711px 829px), on the header\'s 26px row; 15px semibold white under the cue\'s shadow (--cui-video-cue-shadow) so it reads on a bright picture with no box, cut short with an ellipsis before the volume; tv.apple.com shows no such line';
 const INTRO = 'muse\'s pre-play layer (the owner, 2026-11-05: over the cover the title large, the demo\'s length, its description\'s first sentence, one clear Play; tv.apple.com\'s pre-play page was not measured, so golden): at the picture\'s foot in the overlay\'s room (30px at the sides, tv-player:scrim), on a soft gradient in that corner alone (--cui-video-title-scrim; the owner, 2026-11-08: tv.apple.com\'s, --cui-video-scrim, darkened the cover\'s lower half to black), the lines white under the cue\'s shadow; the length 15px medium and the sentence 17px on 24px in the controls\' 90% white, two lines at most, 36em wide';
 const END = 'muse\'s end layer (the owner, 2026-11-05: on end a 「看完了」 layer fades in over the last picture, the user\'s next step under it and a small 「重新播放」; tv.apple.com\'s end of a film was not measured, so golden): the intro\'s layer, its place, gradient and title, in the other direction; the next step in the length\'s type (15px medium, the controls\' 90% white), its buttons and links one under another 8px apart, 14px under the title as the intro\'s Play is';
@@ -160,7 +162,7 @@ export const cases = [
   },
   {
     name: 'player caption paused',
-    html: ex('paused'),
+    html: captioned(ex('paused')),
     widths: TV,
     height: 900,
     checks: [
@@ -181,7 +183,7 @@ export const cases = [
   },
   {
     name: 'player caption empty',
-    html: ex('paused').replace(/(data-control="caption">)[^<]*/, '$1'),
+    html: ex('paused'),
     widths: [1600],
     height: 900,
     checks: [

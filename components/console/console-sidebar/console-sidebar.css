@@ -97,41 +97,4 @@
     margin-top: auto;
     padding: 3rem 0 9px;
   }
-
-  .cui-console-sidebar-account {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    min-height: 44px;
-    margin-inline: 9px;
-    padding: 0 13px 0 6px;
-    border-radius: 22px;
-    color: var(--cui-c-console-neutral-label-primary);
-    font-size: 16px;
-    line-height: 21px;
-    font-weight: 500;
-    text-decoration: none;
-
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--cui-c-console-neutral-fill-quinary);
-      }
-    }
-
-    &[aria-current="page"] {
-      background-color: var(--cui-c-console-neutral-fill-quaternary);
-
-      @media (forced-colors: active) {
-        background-color: Highlight;
-        color: HighlightText;
-      }
-    }
-  }
-
-  .cui-console-sidebar-avatar {
-    flex: none;
-    width: 32px;
-    height: 32px;
-    color: var(--cui-c-console-brand-label-primary);
-  }
 }

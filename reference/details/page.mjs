@@ -11,7 +11,9 @@ const page = (body, style = '') => `<!doctype html><html lang="en"><head><meta c
 const html = example('accordion');
 writeFileSync(new URL('./page.html', import.meta.url), page(html));
 const FIRST = '<p>Add your address at checkout to see a delivery date.</p>';
-const nested = html.replace(FIRST, html);
-const linked = html.replace(FIRST, '<p><a href="#store">Visit a store</a> to collect your order.</p>');
-if (nested === html || linked === html) throw new Error('the examples changed: ring.html is not what it says');
+// @invariant: the example's items render closed; the page opens the first, as a page wanting one open writes it
+const opened = html.replace('<details class="cui-accordion-item">', '<details class="cui-accordion-item" open>');
+const nested = opened.replace(FIRST, html);
+const linked = opened.replace(FIRST, '<p><a href="#store">Visit a store</a> to collect your order.</p>');
+if (opened === html || nested === opened || linked === opened) throw new Error('the examples changed: ring.html is not what it says');
 writeFileSync(new URL('./ring.html', import.meta.url), page(`<main style="padding: 24px"><div id="nested">${nested}</div><div id="linked">${linked}</div></main>`));

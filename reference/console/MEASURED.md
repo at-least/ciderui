@@ -24,3 +24,5 @@ BROWSER=firefox SITE=/tmp/ciderui-console node run.mjs   # Playwright's Firefox,
 BROWSER=safari SITE=/tmp/ciderui-console node ../air.mjs node run.mjs   # on air (../air.mjs)
 BROWSER=ios SITE=/tmp/ciderui-console node run.mjs     # on a Mac with Xcode; and chrome
 ```
+
+2026-11-08: the edge fade is gone (no consumer set its `data-overflow` state); `run.mjs` no longer reads claim 2, and its pages no longer carry the fade's script, blue ground or dark twin. The table's claim 2 column stays the record of the runs above. `scroll-padding-inline: 24px` stays: claim 3's measurement holds without the fade.

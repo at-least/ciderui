@@ -1,7 +1,9 @@
 package console_test
 
 import (
+	"maps"
 	"os"
+	"slices"
 	"strings"
 	"testing"
 
@@ -32,65 +34,38 @@ func subtitlesMenu() console.ConsoleChoiceMenu {
 	}}
 }
 
-func player(state console.ConsolePlayerState, hidden bool, title string) console.ConsolePlayer {
+func player(title string) console.ConsolePlayer {
 	return console.ConsolePlayer{
 		Video:               h.Video(h.Poster(playerPoster), h.Preload("none"), g.Attr("playsinline")),
-		State:               state,
-		ControlsHidden:      hidden,
 		Title:               title,
-		Caption:             "The Wedding · Scene 2　The Vows · S02-03",
 		PlayAriaLabel:       "Play",
-		PauseAriaLabel:      "Pause",
-		Volume:              50,
-		FullScreen:          false,
-		Muted:               false,
 		VolumeAriaLabel:     "Volume",
 		MuteAriaLabel:       "Mute",
-		Position:            5,
-		Duration:            62,
 		ScrubAriaLabel:      "Playback position",
-		Cue:                 "",
-		CueLang:             "",
 		SubtitlesMenu:       subtitlesMenu(),
 		SubtitlesAriaLabel:  "Subtitles",
 		FullScreenAriaLabel: "Full Screen",
 		FullScreenControls:  nil,
 		Intro:               nil,
 		End:                 nil,
-		Ended:               false,
 		Popovers:            nil,
 		Class:               "aspect-video",
 	}
 }
 
 func pausedPlayer() console.ConsolePlayer {
-	return player(console.ConsolePlayerStatePaused, false, "")
+	return player("")
 }
 
 func stills() console.ConsolePlayer {
-	p := player(console.ConsolePlayerStatePlaying, false, "The Wedding")
+	p := player("The Wedding")
 	p.Video = h.Div(h.Class("relative"), h.Img(h.Class("absolute inset-0 size-full object-contain"), h.Src(playerStill), h.Alt("")))
-	p.Cue = "Everyone stood when the bride came in, and the old dog barked once."
-	p.CueLang = "en"
-	return p
-}
-
-// @external: a page's own controls in the bar while full screen, as muse's: a report and the next item to look at
-func fullScreen() console.ConsolePlayer {
-	p := stills()
-	p.FullScreen = true
-	p.FullScreenControls = g.Group{
-		h.Button(h.Class("cui-console-player-text-btn"), h.Type("button"), g.Text("Report a Problem")),
-		h.Button(h.Class("cui-console-player-text-btn"), h.Type("button"), g.Text("Next to Watch › 3")),
-	}
 	return p
 }
 
 // @invariant: before it first plays: the title, its length, a sentence, Play, and Start Over hidden until the page's script shows it
 func intro() console.ConsolePlayer {
 	p := stills()
-	p.State = console.ConsolePlayerStatePaused
-	p.Cue, p.CueLang = "", ""
 	p.Intro = &console.ConsolePlayerIntro{Title: "The Wedding", Detail: "8 min 33 s", Summary: "The bride was late, and the old dog knew why.", PlayLabel: "Play", RestartLabel: "Start Over"}
 	return p
 }
@@ -98,10 +73,6 @@ func intro() console.ConsolePlayer {
 // @invariant: played to the end, over its last picture: the page's next step, a sentence, a button and a link, and Play Again
 func end() console.ConsolePlayer {
 	p := stills()
-	p.Ended = true
-	p.State = console.ConsolePlayerStatePaused
-	p.Position = p.Duration
-	p.Cue, p.CueLang = "", ""
 	p.End = &console.ConsolePlayerEnd{Title: "Finished", ReplayLabel: "Play Again", Body: g.Group{
 		h.P(g.Text("Once approved, the other 9 languages are recorded.")),
 		h.Button(h.Class("cui-console-btn"), h.Data("variant", "filled"), h.Type("button"), g.Text("Approve Recordings")),
@@ -110,14 +81,99 @@ func end() console.ConsolePlayer {
 	return p
 }
 
+// @invariant: the player at rest, as ConsolePlayer writes it
 var playerExamples = map[string]console.ConsolePlayer{
-	"end":         end(),
-	"intro":       intro(),
-	"full-screen": fullScreen(),
-	"paused":      player(console.ConsolePlayerStatePaused, false, "The Wedding"),
-	"playing":     player(console.ConsolePlayerStatePlaying, false, "The Wedding"),
-	"hidden":      player(console.ConsolePlayerStatePlaying, true, "The Wedding"),
-	"stills":      stills(),
+	"intro":  intro(),
+	"paused": player("The Wedding"),
+}
+
+type scriptSets struct{ old, new string }
+
+const (
+	playerRoot      = `<div class="cui-console-player aspect-video"`
+	captionAtRest   = `data-control="caption"></p>`
+	captionSet      = `data-control="caption">The Wedding · Scene 2　The Vows · S02-03</p>`
+	volumeAtRest    = `value="100" aria-label="Volume" style="--cui-console-player-value: 100%"`
+	volumeSet       = `value="50" aria-label="Volume" style="--cui-console-player-value: 50%"`
+	playAtRest      = `data-control="play" aria-label="Play"`
+	playSet         = `data-control="play" aria-label="Pause"`
+	cueAtRest       = `<span class="cui-console-player-cue"></span>`
+	cueSet          = `<span class="cui-console-player-cue" lang="en">Everyone stood when the bride came in, and the old dog barked once.</span>`
+	scrubAtRest     = `max="0" value="0" aria-label="Playback position" aria-valuetext="0:00" style="--cui-console-player-value: 0%"`
+	elapsedAtRest   = `data-control="elapsed">0:00</time>`
+	remainingAtRest = `data-control="remaining">-0:00</time>`
+)
+
+// @invariant: the scrubber, its times, the caption and the volume five seconds into a 62s line
+var playedFiveSeconds = []scriptSets{
+	{captionAtRest, captionSet},
+	{volumeAtRest, volumeSet},
+	{playAtRest, playSet},
+	{scrubAtRest, `max="62" value="5" aria-label="Playback position" aria-valuetext="0:05" style="--cui-console-player-value: 8.064516129032258%"`},
+	{elapsedAtRest, `data-control="elapsed">0:05</time>`},
+	{remainingAtRest, `data-control="remaining">-0:57</time>`},
+}
+
+func fullScreen() console.ConsolePlayer {
+	p := stills()
+	p.FullScreenControls = g.Group{
+		h.Button(h.Class("cui-console-player-text-btn"), h.Type("button"), g.Text("Report a Problem")),
+		h.Button(h.Class("cui-console-player-text-btn"), h.Type("button"), g.Text("Next to Watch › 3")),
+	}
+	return p
+}
+
+// @invariant: the player as the page's script has set it (playing, the controls
+// hidden, full screen, a cue, ended): ConsolePlayer's output at rest with the
+// script's changes, each found exactly once, so the browser suite measures
+// markup a page gets
+var playerStateExamples = map[string]struct {
+	rest console.ConsolePlayer
+	sets []scriptSets
+}{
+	"playing":     {player("The Wedding"), append([]scriptSets{{playerRoot + ">", playerRoot + ` data-state="playing">`}}, playedFiveSeconds...)},
+	"hidden":      {player("The Wedding"), append([]scriptSets{{playerRoot + ">", playerRoot + ` data-state="playing" data-controls="hidden">`}}, playedFiveSeconds...)},
+	"stills":      {stills(), append([]scriptSets{{playerRoot + ">", playerRoot + ` data-state="playing">`}, {cueAtRest, cueSet}}, playedFiveSeconds...)},
+	"full-screen": {fullScreen(), append([]scriptSets{{playerRoot + ">", playerRoot + ` data-state="playing" data-fullscreen>`}, {cueAtRest, cueSet}}, playedFiveSeconds...)},
+	"end": {end(), []scriptSets{
+		{playerRoot + ">", playerRoot + ` data-end>`},
+		{captionAtRest, captionSet},
+		{volumeAtRest, volumeSet},
+		{scrubAtRest, `max="62" value="62" aria-label="Playback position" aria-valuetext="1:02" style="--cui-console-player-value: 100%"`},
+		{elapsedAtRest, `data-control="elapsed">1:02</time>`},
+	}},
+}
+
+func TestPlayerStateExamplesAreItsOutputAsTheScriptSetsIt(t *testing.T) {
+	for id, c := range playerStateExamples {
+		html := example.Render(c.rest)
+		for _, set := range c.sets {
+			if n := strings.Count(html, set.old); n != 1 {
+				t.Fatalf("%s: the script's change from %q found %d times in the player at rest, want 1", id, set.old, n)
+			}
+			html = strings.Replace(html, set.old, set.new, 1)
+		}
+		example.Check(t, g.Raw(html), "console/console-player/examples/"+id+".html")
+	}
+}
+
+// each example is one ConsolePlayer writes or one the page's script makes, so
+// a new one is held to the type or named as the script's
+func TestPlayerExamplesAreRenderedOrState(t *testing.T) {
+	entries, err := os.ReadDir("../../components/console/console-player/examples")
+	if err != nil {
+		t.Fatal(err)
+	}
+	var got []string
+	for _, e := range entries {
+		got = append(got, strings.TrimSuffix(e.Name(), ".html"))
+	}
+	want := slices.Collect(maps.Keys(playerExamples))
+	want = slices.AppendSeq(want, maps.Keys(playerStateExamples))
+	slices.Sort(want)
+	if !slices.Equal(got, want) {
+		t.Errorf("examples %q, want the rendered and the state ones %q", got, want)
+	}
 }
 
 func TestPlayerRendersTheExamples(t *testing.T) {
@@ -142,18 +198,6 @@ func TestPlayerWritesNoMenuButtonWithoutItsMenu(t *testing.T) {
 	got := example.Render(p)
 	if strings.Contains(got, "popover") || strings.Contains(got, `data-control="subtitles"`) || strings.Contains(got, "cui-console-player-title") {
 		t.Errorf("a player with no menus and no title wrote one: %s", got)
-	}
-}
-
-// muted, the player says so for the mute button's glyph; it holds both glyphs
-func TestPlayerWritesMuted(t *testing.T) {
-	p := pausedPlayer()
-	if got := example.Render(p); strings.Contains(got, "data-muted") || !strings.Contains(got, "cui-console-player-glyph-muted") {
-		t.Errorf("a player not muted wrote data-muted, or no muted glyph: %s", got)
-	}
-	p.Muted = true
-	if got := example.Render(p); !strings.Contains(got, `<div class="cui-console-player aspect-video" data-muted>`) {
-		t.Errorf("a muted player wrote no data-muted: %s", got)
 	}
 }
 
@@ -196,40 +240,12 @@ func TestPlayerPanics(t *testing.T) {
 	example.Panics(t, pausedPlayer, []example.Break[console.ConsolePlayer]{
 		{Want: "console.ConsolePlayer needs a Video", Change: func(p *console.ConsolePlayer) { p.Video = nil }},
 		{Want: "console.ConsolePlayer needs a PlayAriaLabel", Change: func(p *console.ConsolePlayer) { p.PlayAriaLabel = "" }},
-		{Want: "console.ConsolePlayer needs a PauseAriaLabel", Change: func(p *console.ConsolePlayer) { p.PauseAriaLabel = "" }},
 		{Want: "console.ConsolePlayer needs a VolumeAriaLabel", Change: func(p *console.ConsolePlayer) { p.VolumeAriaLabel = "" }},
 		{Want: "console.ConsolePlayer needs a MuteAriaLabel", Change: func(p *console.ConsolePlayer) { p.MuteAriaLabel = "" }},
 		{Want: "console.ConsolePlayer needs a ScrubAriaLabel", Change: func(p *console.ConsolePlayer) { p.ScrubAriaLabel = "" }},
 		{Want: "console.ConsolePlayer needs a FullScreenAriaLabel", Change: func(p *console.ConsolePlayer) { p.FullScreenAriaLabel = "" }},
 		{Want: "console.ConsolePlayer needs a SubtitlesAriaLabel with a SubtitlesMenu", Change: func(p *console.ConsolePlayer) { p.SubtitlesAriaLabel = "" }},
-		{Want: "console.ConsolePlayer needs a Cue with a CueLang", Change: func(p *console.ConsolePlayer) { p.CueLang = "en" }},
-		{Want: "console.ConsolePlayer's Volume is 0 to 100", Change: func(p *console.ConsolePlayer) { p.Volume = 101 }},
-		{Want: "console.ConsolePlayer's Volume is 0 to 100", Change: func(p *console.ConsolePlayer) { p.Volume = -1 }},
-		{Want: "console.ConsolePlayer's Position is 0 to its Duration", Change: func(p *console.ConsolePlayer) { p.Position = 63 }},
-		{Want: "console.ConsolePlayer's Position is 0 to its Duration", Change: func(p *console.ConsolePlayer) { p.Position = -1 }},
-		{Want: "console.ConsolePlayer's Position is 0 to its Duration", Change: func(p *console.ConsolePlayer) { p.Duration, p.Position = -1, -1 }},
-		{Want: "console.ConsolePlayer needs an End to be Ended", Change: func(p *console.ConsolePlayer) { p.Ended = true }},
 	})
-}
-
-// each end of each range is in range; an empty video has played nothing, not NaN
-func TestPlayerRanges(t *testing.T) {
-	for _, c := range []struct {
-		name                       string
-		volume, position, duration int
-		want                       string
-	}{
-		{"silent", 0, 5, 62, `data-control="volume" min="0" max="100" value="0"`},
-		{"full", 100, 5, 62, `data-control="volume" min="0" max="100" value="100"`},
-		{"at the start", 50, 0, 62, `value="0" aria-label="Playback position" aria-valuetext="0:00" style="--cui-console-player-value: 0%"`},
-		{"an empty video", 50, 0, 0, `max="0" value="0" aria-label="Playback position" aria-valuetext="0:00" style="--cui-console-player-value: 0%"`},
-	} {
-		p := pausedPlayer()
-		p.Volume, p.Position, p.Duration = c.volume, c.position, c.duration
-		if got := example.Render(p); !strings.Contains(got, c.want) {
-			t.Errorf("%s: no %s in %s", c.name, c.want, got)
-		}
-	}
 }
 
 func TestPlayerIntroPanics(t *testing.T) {

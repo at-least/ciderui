@@ -9,10 +9,9 @@ import (
 )
 
 // ConsoleTable is a table whose rows stack on a phone, each cell after the
-// first named by its column. A table that scrolls or sticks the page wraps in
-// its own scroll box, the keyboard's to reach (the example sticky.html); none
-// is written here, that every table not overflowing would carry a tab stop of
-// its own.
+// first named by its column. A table that scrolls wraps in its own scroll box,
+// the keyboard's to reach (the example scroll.html); none is written here,
+// that every table not overflowing would carry a tab stop of its own.
 type ConsoleTable struct {
 	Columns []ConsoleTableColumn
 	Rows    []ConsoleTableRow
@@ -27,11 +26,9 @@ type ConsoleTableColumn struct {
 	Figure bool
 }
 
+// ConsoleTableRow is drawn selected while a cell's own checkbox, a
+// cui-console-checkbox that is the cell's child, is checked.
 type ConsoleTableRow struct {
-	// Selected: aria-selected="true".
-	Selected bool
-	// Attrs: the <tr>'s other attributes; nil for none.
-	Attrs g.Node
 	// Cells: one for each of the table's Columns.
 	Cells []ConsoleTableCell
 }
@@ -67,5 +64,5 @@ func (t ConsoleTable) Row(r ConsoleTableRow) g.Node {
 		column := t.Columns[i]
 		cells = append(cells, h.Td(g.If(column.Figure, h.Class("cui-console-table-figure")), g.If(i > 0, h.Data("label", column.Label)), g.If(cell.Empty, g.Attr("data-empty")), cell.Content))
 	}
-	return h.Tr(g.If(r.Selected, h.Aria("selected", "true")), r.Attrs, cells)
+	return h.Tr(cells)
 }

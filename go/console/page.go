@@ -31,7 +31,7 @@ func (p ConsolePage) Render(w io.Writer) error {
 	children := p.Children
 	if p.Skip != "" {
 		children = g.Group{
-			ConsoleBtn{Href: "#main", Label: p.Skip, AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: ConsoleBtnVariantFilled, Size: ConsoleBtnSizeMedium, Error: false, Attrs: nil, Class: "cui-console-skip"},
+			ConsoleBtn{Href: "#main", Label: p.Skip, AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: ConsoleBtnVariantFilled, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: "cui-console-skip"},
 			children,
 		}
 	}

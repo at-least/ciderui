@@ -12,7 +12,7 @@ import (
 )
 
 func page() site.Page {
-	return site.Page{Lang: "zh-Hant", Title: "課程", Head: nil, Class: "", Skip: "", BodyClass: "", Children: h.P(g.Text("x"))}
+	return site.Page{Lang: "zh-Hant", Title: "課程", Head: nil, Class: "", Skip: "", Children: h.P(g.Text("x"))}
 }
 
 func TestPageWritesTheDocument(t *testing.T) {
@@ -22,13 +22,12 @@ func TestPageWritesTheDocument(t *testing.T) {
 	}
 }
 
-func TestPageWritesItsClassesAndHeadAfterTheStylesheet(t *testing.T) {
+func TestPageWritesItsClassAndHeadAfterTheStylesheet(t *testing.T) {
 	p := page()
 	p.Class = "scroll-pt-16"
-	p.BodyClass = "flex"
 	p.Head = h.Link(h.Rel("stylesheet"), h.Href("/own.css"))
 	got := example.Render(p)
-	for _, want := range []string{`<html lang="zh-Hant" class="scroll-pt-16">`, `<body class="flex">`, `.css"><link rel="stylesheet" href="/own.css"></head>`} {
+	for _, want := range []string{`<html lang="zh-Hant" class="scroll-pt-16">`, `.css"><link rel="stylesheet" href="/own.css"></head>`} {
 		if !strings.Contains(got, want) {
 			t.Errorf("no %s in %s", want, got)
 		}
@@ -39,8 +38,9 @@ func TestPageWritesItsClassesAndHeadAfterTheStylesheet(t *testing.T) {
 func TestPageWritesItsSkipLinkFirst(t *testing.T) {
 	p := page()
 	p.Skip = "跳到主要內容"
+	p.Children = h.Main(h.ID("main"), h.TabIndex("-1"))
 	got := example.Render(p)
-	want := `<body><a class="cui-btn cui-skip" href="#main">跳到主要內容</a><p>x</p>`
+	want := `<body><a class="cui-btn cui-skip" href="#main">跳到主要內容</a><main id="main" tabindex="-1">`
 	if !strings.Contains(got, want) {
 		t.Errorf("no %s in %s", want, got)
 	}
@@ -50,5 +50,7 @@ func TestPagePanics(t *testing.T) {
 	example.Panics(t, page, []example.Break[site.Page]{
 		{Want: "site.Page needs a Lang", Change: func(p *site.Page) { p.Lang = "" }},
 		{Want: "site.Page needs a Title", Change: func(p *site.Page) { p.Title = "" }},
+		// @invariant: under go test a page checks itself: a skip link to no main
+		{Want: `site.Page: href="#main" on <a>: this page has no id "main"`, Change: func(p *site.Page) { p.Skip = "跳到主要內容" }},
 	})
 }

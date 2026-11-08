@@ -19,7 +19,7 @@ func TestMenuRendersTheExample(t *testing.T) {
 		item("#sources", "Sources", lucide.Icon{}, false),
 		item("", "Product Pages", lucide.Icon{}, false),
 		h.Hr(h.Class("cui-console-menu-rule")),
-		h.P(h.Class("cui-console-menu-heading"), g.Text("Projects")),
+		h.P(h.Class("cui-console-menu-title"), g.Text("Projects")),
 		item("#shop", "Shop", lucide.Icon{}, false),
 		item("#demo", "Demo Shop", lucide.Icon{}, false),
 	)

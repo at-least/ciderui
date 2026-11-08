@@ -14,7 +14,7 @@ func TestSectionHeadRendersTheExample(t *testing.T) {
 		console.ConsoleSectionHead{
 			Title: g.Group{h.H1(h.Class("cui-console-h2"), g.Text("Issues")), h.P(g.Text("New and regressed issues in this project."))},
 			Class: "",
-			Children: console.ConsoleTabs{AriaLabel: "Time window", Variant: console.ConsoleTabsVariantFilled, Class: "", Tabs: []console.ConsoleTab{
+			Children: console.ConsoleTabs{AriaLabel: "Time window", Class: "", Tabs: []console.ConsoleTab{
 				{Label: "24h", Href: "#24h", Current: false},
 				{Label: "7d", Href: "#7d", Current: true},
 				{Label: "30d", Href: "#30d", Current: false},

@@ -20,13 +20,13 @@ var (
 
 // ConsoleEmpty is the empty state where a list or a chart has nothing to show.
 type ConsoleEmpty struct {
-	Size    ConsoleEmptySize
-	Backed  bool
-	Icon    lucide.Icon
-	Heading string
-	// Caption says what to do next.
-	Caption string
-	Class   string
+	Size   ConsoleEmptySize
+	Backed bool
+	Icon   lucide.Icon
+	Title  string
+	// Body says what to do next.
+	Body  string
+	Class string
 	// Children: its actions, in a <p class="cui-console-empty-actions">.
 	Children g.Node
 }
@@ -35,13 +35,13 @@ func (e ConsoleEmpty) Render(w io.Writer) error {
 	if e.Size.value == "" {
 		panic("console.ConsoleEmpty needs a Size")
 	}
-	if e.Heading == "" {
-		panic("console.ConsoleEmpty needs a Heading")
+	if e.Title == "" {
+		panic("console.ConsoleEmpty needs a Title")
 	}
 	return h.Div(class.Root("cui-console-empty", e.Class), h.Data("size", e.Size.value), g.If(e.Backed, h.Data("variant", "backed")),
 		iconPart(e.Icon, "cui-console-empty-icon"),
-		h.P(h.Class("cui-console-empty-heading"), g.Text(e.Heading)),
-		g.If(e.Caption != "", h.P(h.Class("cui-console-empty-caption"), g.Text(e.Caption))),
+		h.P(h.Class("cui-console-empty-title"), g.Text(e.Title)),
+		g.If(e.Body != "", h.P(h.Class("cui-console-empty-body"), g.Text(e.Body))),
 		e.Children,
 	).Render(w)
 }

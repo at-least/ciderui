@@ -20,7 +20,6 @@ func (a Accordion) Render(w io.Writer) error {
 
 type AccordionItem struct {
 	Question string
-	Open     bool
 	Class    string
 	Children g.Node
 }
@@ -29,7 +28,7 @@ func (i AccordionItem) node() g.Node {
 	if i.Question == "" {
 		panic("site.AccordionItem needs a Question")
 	}
-	return h.Details(class.Root("cui-accordion-item", i.Class), g.If(i.Open, h.Open()),
+	return h.Details(class.Root("cui-accordion-item", i.Class),
 		h.Summary(h.Class("cui-accordion-question"), g.Text(i.Question), glyph.Disclosure),
 		h.Div(h.Class("cui-accordion-answer"), i.Children),
 	)

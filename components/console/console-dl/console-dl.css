@@ -24,18 +24,5 @@
       font-weight: 400;
       overflow-wrap: anywhere;
     }
-
-    &[data-variant="strong"] > :where(dt) {
-      color: var(--cui-c-console-neutral-label-primary);
-      font-weight: 600;
-    }
-
-    &[data-orientation="vertical"] {
-      display: block;
-
-      & > :where(dd) {
-        margin-bottom: 1.5rem;
-      }
-    }
   }
 }

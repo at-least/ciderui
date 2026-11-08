@@ -17,11 +17,10 @@ export const cases = [
     html: PAGE(ex('sidebar')),
     widths: [1600, 1200, 1024],
     checks: [
-      { target: '.cui-console-sidebar-account', state: 'hover', props: ['background-color'], golden: 'the pointer finds the account row as it finds a menu row' },
       { target: SIDEBAR, props: ['bottom'], golden: 'in the page from 1024px, not the sheet\'s full height' },
       { target: SIDEBAR, props: ['box-width'], tb: ['size-sidebar-width'] },
       { target: SIDEBAR, props: ['color'], tb: ['color-role-neutral-label-primary'] },
-      { target: SIDEBAR, props: ['flex-direction'], golden: 'a column: its header, list and account one under another' },
+      { target: SIDEBAR, props: ['flex-direction'], golden: 'a column: its header, list and footer one under another' },
       { target: SIDEBAR, props: ['display', 'position', 'background-color', 'box-shadow'], golden: 'from 1024px it stands in the page: the toolkit\'s plain sidebar, no ground, no shadow' },
       { target: '.cui-console-sidebar-header', props: ['padding-top', 'padding-bottom', 'padding-left', 'padding-right', 'column-gap', 'min-height'], tb: [`${S}-anatomy-Header-paddingBlockStart`, `${S}-anatomy-Header-paddingBlockEnd`, `${S}-anatomy-Header-paddingInline`, `${S}-anatomy-Header-paddingInline`, `${S}-anatomy-Header-anatomy-Nav-gap`, `${S}-anatomy-Header-anatomy-Nav-minHeight`] },
       { target: '.cui-console-sidebar-wordmark', props: ['margin-left'], tb: [`${S}-anatomy-Header-anatomy-Nav-anatomy-Wordmark-marginInlineStart`] },
@@ -33,14 +32,12 @@ export const cases = [
       { target: ITEM, props: ['background-color'], state: 'hover', tb: [`${D}-variant-sidebar-anatomy-Item-variant-effect-hover-focus-off-selected-none-backgroundColor`] },
       { target: ITEM, props: ['background-color'], state: 'active', golden: 'pressed as hovered: the toolkit\'s pressed fill, oklch(42.6% 0.008 286 / 0.03), is no step of its palette' },
       { target: CURRENT, props: ['background-color', 'font-weight'], tb: [`${D}-variant-sidebar-anatomy-Item-variant-effect-default-focus-off-selected-fill-backgroundColor`, `${DS}-anatomy-Item-variant-selected-fill-anatomy-Label-textStyle-fontWeight`] },
-      { target: '.cui-console-sidebar .cui-console-menu-heading', props: ['font-size', 'line-height', 'font-weight', 'padding-top', 'padding-bottom', 'padding-left', 'margin-top'], tb: [`${DS}-anatomy-Heading-textStyle-fontSize`, `${DS}-anatomy-Heading-textStyle-lineHeight`, `${DS}-anatomy-Heading-textStyle-fontWeight`, `${DS}-anatomy-Header-paddingBlockStart`, `${DS}-anatomy-Header-paddingBlockEnd`, `${DS}-anatomy-Header-paddingInline`, `${D}-variant-sidebar-anatomy-groupGap-marginBlockEnd`] },
-      { target: '.cui-console-sidebar .cui-console-menu-heading', props: ['color'], golden: FITTED },
+      { target: '.cui-console-sidebar .cui-console-menu-title', props: ['font-size', 'line-height', 'font-weight', 'padding-top', 'padding-bottom', 'padding-left', 'margin-top'], tb: [`${DS}-anatomy-Heading-textStyle-fontSize`, `${DS}-anatomy-Heading-textStyle-lineHeight`, `${DS}-anatomy-Heading-textStyle-fontWeight`, `${DS}-anatomy-Header-paddingBlockStart`, `${DS}-anatomy-Header-paddingBlockEnd`, `${DS}-anatomy-Header-paddingInline`, `${D}-variant-sidebar-anatomy-groupGap-marginBlockEnd`] },
+      { target: '.cui-console-sidebar .cui-console-menu-title', props: ['color'], golden: FITTED },
       { target: `${ITEM} .cui-console-menu-label`, props: ['white-space', 'text-overflow', 'overflow-wrap'], golden: 'a long label wraps, whole, as a menu\'s' },
       { target: '.cui-console-sidebar .cui-console-menu-rule', props: ['margin-top', 'margin-left', 'background-color', 'box-height'], tb: [`${D}-variant-sidebar-anatomy-HR-marginBlock`, `${DS}-anatomy-HR-marginInline`, 'color-role-neutral-border-secondary', 'border-width-fine'] },
       { target: '.cui-console-sidebar .cui-console-menu-icon', props: ['box-width', 'box-height'], golden: 'its icon Lucide\'s, 20px in 24px (the toolkit\'s art\'s least width): the toolkit draws SF Symbols at its text\'s size' },
       { target: '.cui-console-sidebar-footer', props: ['padding-top', 'padding-bottom'], tb: [`${S}-anatomy-UniversalIDFooter-paddingBlockStart`, `${S}-anatomy-UniversalIDFooter-paddingBlockEnd`] },
-      { target: '.cui-console-sidebar-account', props: ['min-height', 'border-top-left-radius', 'column-gap', 'margin-left', 'padding-left', 'padding-right', 'font-size', 'line-height', 'font-weight', 'color'], tb: ['minHeight', 'borderRadius', 'gap', 'marginInline', 'paddingInlineStart', 'paddingInlineEnd'].map((p) => `${S}-anatomy-UniversalIDFooter-anatomy-ID-${p}`).concat(['fontSize', 'lineHeight', 'fontWeight'].map((p) => `${S}-anatomy-UniversalIDFooter-anatomy-ID-anatomy-Name-textStyle-${p}`), [`${S}-anatomy-UniversalIDFooter-anatomy-ID-anatomy-Name-color`]) },
-      { target: '.cui-console-sidebar-avatar', props: ['box-height', 'color'], tb: [`${S}-anatomy-UniversalIDFooter-anatomy-ID-anatomy-Art-fontSize`, `${S}-anatomy-UniversalIDFooter-anatomy-ID-anatomy-Art-color`] },
     ],
   },
   {
@@ -50,7 +47,7 @@ export const cases = [
     height: 1400,
     click: '.cui-console-sidebar-open',
     checks: [
-      { target: '.cui-console-sidebar-footer', props: ['box-top', 'box-height'], golden: 'the account at the sheet\'s foot, 11px above the window\'s: the body takes the rest of the column' },
+      { target: '.cui-console-sidebar-footer', props: ['box-top', 'box-height'], golden: 'the footer at the sheet\'s foot, 11px above the window\'s: the body takes the rest of the column' },
     ],
   },
   {
@@ -59,7 +56,7 @@ export const cases = [
     widths: [390],
     click: '.cui-console-sidebar-open',
     checks: [
-      { target: '.cui-console-menu-heading', props: ['padding-left', 'font-size', 'line-height'], golden: 'in the sidebar, a heading lined up with its rows, in their size' },
+      { target: '.cui-console-menu-title', props: ['padding-left', 'font-size', 'line-height'], golden: 'in the sidebar, a heading lined up with its rows, in their size' },
       { target: SIDEBAR, props: ['box-left', 'box-top', 'border-top-left-radius', 'background-color', 'box-shadow'], tb: [`${S}-inset`, `${S}-inset`, `${S}-borderRadius`, `${S}-variant-variant-opaque-backgroundColor`, `${S}-variant-variant-opaque-boxShadow`] },
       { target: SIDEBAR, props: ['position', 'display'], golden: 'below 1024px, opened, a sheet over the page: a popover, fixed' },
       { target: '.cui-console-sidebar-close', props: ['display'], golden: 'its close button shown in the sheet' },

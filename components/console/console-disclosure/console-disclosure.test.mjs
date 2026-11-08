@@ -4,11 +4,14 @@ const ex = examples(import.meta.url);
 const D = '.cui-console-disclosure';
 const CLOSED = `${D}:not([open])`;
 const OPEN = `${D}[open]`;
+// @invariant: a disclosure renders closed; a case reads an open one after a click opens the last
+const OPEN_LAST = `${D}:last-child > summary`;
 
 export const cases = [
   {
     name: 'disclosure',
     html: ex('disclosure'),
+    click: OPEN_LAST,
     widths: [1200],
     checks: [
       { target: `${CLOSED} > summary`, props: ['list-style-type', 'display', 'column-gap', 'color', 'cursor'], golden: 'no marker of the browser\'s; its chevron 4px before its label; the secondary label (the menu group\'s chevron\'s)' },
@@ -32,6 +35,7 @@ export const cases = [
   {
     name: 'disclosure button',
     html: ex('button'),
+    click: OPEN_LAST,
     widths: [1200],
     checks: [
       { target: `${CLOSED} > summary`, props: ['list-style-type'], golden: 'a console button as the summary: no marker of the browser\'s' },

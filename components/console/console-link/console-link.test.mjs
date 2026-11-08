@@ -3,7 +3,6 @@ import { examples, SIZE } from '../../../test/harness.mjs';
 const ex = examples(import.meta.url);
 const L = 'component-Link-variant-colorRole-brand-effect';
 const INLINE = '.cui-console-link:not([data-variant]):not([aria-disabled])';
-const LABEL = '[data-variant="label"]';
 const TEXT = '[data-variant="text"]';
 
 export const cases = [
@@ -14,9 +13,6 @@ export const cases = [
     checks: [
       { target: INLINE, props: ['color', 'text-decoration-line', 'cursor'], asc: ['analytics-page', 'section.link'] },
       { target: INLINE, props: ['color', 'text-decoration-line', 'cursor'], state: 'hover', asc: ['hover-link', 'section.link'] },
-      { target: LABEL, props: ['color'], tb: [`${L}-default-variant-label-color`] },
-      { target: LABEL, props: ['color'], state: 'hover', tb: [`${L}-hover-variant-label-color`] },
-      { target: LABEL, props: ['text-decoration-line'], state: 'hover', golden: 'a name that is a link turns blue hovered, not underlined' },
       { target: '[aria-disabled="true"]', props: ['color'], tb: [`${L}-disabled-variant-inline-color`] },
       { target: '[aria-disabled="true"]', props: ['cursor', 'text-decoration-line'], state: 'hover', golden: 'no pointer, no underline over a disabled link' },
       { target: INLINE, pseudo: '::after', props: ['content'], golden: 'with a mouse, no target drawn: none' },

@@ -26,10 +26,6 @@
         & .cui-console-sidebar-body {
           padding-inline: 0;
         }
-
-        & .cui-console-sidebar-account {
-          margin-inline: 0;
-        }
       }
     }
   }

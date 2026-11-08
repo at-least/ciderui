@@ -1,5 +1,4 @@
 {
- "link | [data-variant=\"label\"]:hover | 1200 | text-decoration-line": "none",
  "link | [aria-disabled=\"true\"]:hover | 1200 | cursor": "default",
  "link | [aria-disabled=\"true\"]:hover | 1200 | text-decoration-line": "none",
  "link | .cui-console-link:not([data-variant]):not([aria-disabled])::after | 1200 | content": "none",
@@ -8,7 +7,6 @@
  "link | [data-variant=\"text\"] | 1200 | font-size": "13px",
  "link | [data-variant=\"text\"] | 1200 | line-height": "18px",
  "link | [data-variant=\"text\"] | 1200 | font-weight": "400",
- "link | [data-variant=\"label\"]:hover | 390 | text-decoration-line": "none",
  "link | [aria-disabled=\"true\"]:hover | 390 | cursor": "default",
  "link | [aria-disabled=\"true\"]:hover | 390 | text-decoration-line": "none",
  "link | .cui-console-link:not([data-variant]):not([aria-disabled])::after | 390 | content": "none",
