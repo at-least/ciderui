@@ -44,7 +44,11 @@ for (const { name, dir } of tested) {
           for (const selector of [].concat(c.click ?? [])) await page.page.click(selector);
           if (c.click) await page.page.mouse.move(0, (c.height ?? 800) - 1);
           for (const key of [].concat(c.press ?? [])) await page.page.keyboard.press(key);
-          if (c.wait !== undefined) await page.page.waitForTimeout(c.wait);
+          // @trap: a wait of 0 is the motion's first frame, not a timeout of 0: the click's
+          // round trip let a transition start before the read (globalnav's menu-start read
+          // rgba(250, 250, 252, 0.004) for transparent in one run of three)
+          if (c.wait === 0) await page.page.evaluate(() => { for (const a of document.getAnimations()) { a.pause(); a.currentTime = 0; } });
+          else if (c.wait !== undefined) await page.page.waitForTimeout(c.wait);
           else await page.settle();
         }
         // @external: at every width: what the pointer shows a resize may hide. In steps,

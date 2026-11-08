@@ -78,7 +78,6 @@ export async function open(css, html, { width = 1200, height = 800, reducedMotio
     return values;
   };
 
-  const resize = (w) => page.setViewportSize({ width: w, height });
   const settle = () => page.evaluate(async () => {
     const frames = () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
     await frames();
@@ -86,5 +85,9 @@ export async function open(css, html, { width = 1200, height = 800, reducedMotio
     await Promise.all(running.map((a) => a.finished.catch((e) => { if (e.name !== 'AbortError') throw e; })));
     await frames();
   });
+  // @trap: a resize starts the transitions a width drives (the field label's `all` runs
+  // its max-width): a read or a shot before they end missed by one level at five pixels
+  // in one run of four
+  const resize = async (w) => { await page.setViewportSize({ width: w, height }); await settle(); };
   return { page, read, resize, settle, close: () => context.close() };
 }

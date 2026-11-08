@@ -1,4 +1,4 @@
-package glyph
+package glyph_test
 
 import (
 	"os"
@@ -6,15 +6,17 @@ import (
 	"strconv"
 	"strings"
 	"testing"
+
+	"github.com/at-least/ciderui/go/internal/glyph"
 )
 
-func TestEscapesItsClass(t *testing.T) {
+func TestClassEscapesItsClassOnTheSVG(t *testing.T) {
 	var b strings.Builder
-	if err := Menu.Class(`a"b<c&d`).Render(&b); err != nil {
+	if err := glyph.Menu.Class(`a"b<c&d`).Render(&b); err != nil {
 		t.Fatal(err)
 	}
-	if got := b.String(); !strings.HasPrefix(got, `<svg class="a&#34;b&lt;c&amp;d"`) {
-		t.Errorf("got %s", got)
+	if got, want := b.String(), `<svg class="a&#34;b&lt;c&amp;d"`; !strings.HasPrefix(got, want) {
+		t.Errorf("the icon starts %s, want its class escaped: %s", got, want)
 	}
 }
 
@@ -25,7 +27,11 @@ func TestGlobalnavCSSTurnsMenusLinesIntoAnX(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	lines := regexp.MustCompile(`M(\d+) (\d+)H(\d+)`).FindAllStringSubmatch(Menu.inner, -1)
+	var menu strings.Builder
+	if err := glyph.Menu.Render(&menu); err != nil {
+		t.Fatal(err)
+	}
+	lines := regexp.MustCompile(`M(\d+) (\d+)H(\d+)`).FindAllStringSubmatch(menu.String(), -1)
 	turns := regexp.MustCompile(`transform-origin: (\d+)px (\d+)px;\s+transform: translate\((-?[\d.]+)px, (-?[\d.]+)px\) rotate`).FindAllStringSubmatch(string(stylesheet), -1)
 	if len(lines) != 2 || len(turns) != 2 {
 		t.Fatalf("%d lines in Menu, %d transforms in globalnav.css", len(lines), len(turns))
