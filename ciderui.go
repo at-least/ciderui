@@ -54,11 +54,7 @@ func WriteCSS(dir string) error {
 		return fmt.Errorf("write %s: %w", dir, err)
 	}
 	for _, path := range []string{"utilities.css", "theme.css", "type.css"} {
-		b, err := kit.ReadFile(path)
-		if err != nil {
-			return err
-		}
-		if err := os.WriteFile(filepath.Join(dir, path), b, 0o644); err != nil {
+		if err := os.WriteFile(filepath.Join(dir, path), []byte(css(path)), 0o644); err != nil {
 			return err
 		}
 	}
