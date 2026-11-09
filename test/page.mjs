@@ -48,7 +48,7 @@ try {
   check('a transition moves without the preference', (await b.read('#moving', ['transition-duration']))['transition-duration'], '1s');
 
   const BREAKPOINTS = [['md', 734, 735], ['lg', 1068, 1069], ['xl', 1440, 1441]];
-  check('the kit\'s breakpoints alone: no sm: or 2xl:', ownSheet('../utilities.css', 'sm:underline md:underline lg:underline xl:underline 2xl:underline').match(/min-width:[^)]+/g).join(' '), BREAKPOINTS.map(([, , at]) => `min-width:${at}px`).join(' '));
+  check('the kit\'s breakpoints alone: no sm: or 2xl:', ownSheet('utilities.css', 'sm:underline md:underline lg:underline xl:underline 2xl:underline').match(/min-width:[^)]+/g).join(' '), BREAKPOINTS.map(([, , at]) => `min-width:${at}px`).join(' '));
   for (const [id, below, at] of BREAKPOINTS) {
     await b.resize(below);
     check(`${id}: not at ${below}px`, (await b.read(`#${id}`, ['text-decoration-line']))['text-decoration-line'], 'none');
@@ -77,11 +77,10 @@ try {
   await b.close();
 }
 
-// @invariant: what a site does (README.md): its own utilities' sheet, built once, linked
-// after the set's dist sheet; each name draws the set's color, a spinner keeps
-// turning under Reduce Motion
+// @invariant: a site's setup as README.md tells it: its own utilities' sheet, built once,
+// linked after the set's dist sheet
 const OWN_CLASSES = 'text-body text-secondary bg-page bg-alt border border-t border-border border-divider text-link animate-spin';
-const own = ownSheet('../utilities.css', OWN_CLASSES);
+const own = ownSheet('utilities.css', OWN_CLASSES);
 const DIVIDER = { site: '--cui-c-divider', console: '--cui-c-console-neutral-border-tertiary' };
 const SET_COLORS = [
   ['body', 'text-body', 'color', { site: '--cui-c-text', console: '--cui-c-console-neutral-label-primary' }],

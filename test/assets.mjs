@@ -5,7 +5,7 @@ import { ownSheet, shipped } from './compile.mjs';
 import { open, quit } from './browser.mjs';
 import { check, done } from './check.mjs';
 
-const own = ownSheet('../utilities.css', 'px-8 md:px-8');
+const own = ownSheet('utilities.css', 'px-8 md:px-8');
 
 const site = await open(shipped('site'), `<h1 id="headline" class="cui-headline">a</h1><a id="plain" class="cui-btn">a</a><a id="own" class="cui-btn px-8">a</a><a id="fixed" class="cui-btn md:px-8">a</a>`);
 await site.page.addStyleTag({ content: own });

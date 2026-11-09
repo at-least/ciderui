@@ -1,7 +1,7 @@
 import { execFileSync } from 'node:child_process';
 import { mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { dirname, join } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -21,12 +21,12 @@ export const UTILITIES_ENTRY = (utilities) => {
   return block.replace('../target/ciderui/utilities.css', utilities).replace(/^@source .*\n/m, '');
 };
 
-// @invariant: utilities, the path to utilities.css, is relative to the entry, written in a
-// directory of its own under ROOT
+// @trap: the entry under ROOT, not tmpdir: its bare `tailwindcss/...` imports resolve from
+// node_modules
 export function ownSheet(utilities, classes) {
   const dir = mkdtempSync(join(ROOT, 'own-'));
   try {
-    writeFileSync(join(dir, 'entry.css'), `${UTILITIES_ENTRY(utilities)}\n@source inline("${classes}");\n`);
+    writeFileSync(join(dir, 'entry.css'), `${UTILITIES_ENTRY(resolve(ROOT, utilities))}\n@source inline("${classes}");\n`);
     return tailwind(join(dir, 'entry.css'));
   } finally {
     rmSync(dir, { recursive: true });

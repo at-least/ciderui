@@ -325,10 +325,14 @@ const tracking = Object.keys(vars).filter(k => k.startsWith('--cui-tracking-'));
 const SHEETS = ['theme.css', 'base.css', 'type.css', 'index.css', 'site.css', 'console.css',
   ...readdirSync(join(ROOT, 'components'), { recursive: true }).filter(f => f.endsWith('.css')).map(f => join('components', f))];
 const READ = SHEETS.map(f => readFileSync(join(ROOT, f), 'utf8')).join('\n');
+const UNCOMMENTED = Object.fromEntries(SHEETS.map(f => [f, readFileSync(join(ROOT, f), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '')]));
 check('a letter-spacing for each size of the table a stylesheet reads', tracking.map(k => k.slice(15)).join(' '), Object.keys(table).filter(size => READ.includes(`--cui-tracking-${size})`)).join(' '));
 // @invariant: a part's removal leaves no slot behind
 check('every token a stylesheet reads', Object.keys(vars).filter(name => !(READ + css).match(new RegExp(`var\\(${name}[,)]`))).join(' '), '');
 for (const k of tracking) check(k, parseFloat(vars[k]), table[k.slice(15)]);
+const setSlots = (files) => [...new Set(files.flatMap(f => UNCOMMENTED[f].match(/--cui-set-[\w-]+/g)))].sort().join(' ');
+const SLOTS_READ = setSlots(['theme.css', 'base.css']);
+for (const sheet of ['site.css', 'console.css']) check(`${sheet} declares the --cui-set-* slots theme.css and base.css read, no more`, setSlots([sheet]), SLOTS_READ);
 
 check('--cui-font', vars['--cui-font'], '-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Noto Sans TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif');
 check('--cui-font-mono', vars['--cui-font-mono'], 'ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace');
@@ -363,7 +367,7 @@ check('--cui-video-thumb-shadow is tv.apple.com\'s tv-player:volume.range --volu
 // are no color of a stylesheet's own
 const NAMED = /\b(aliceblue|antiquewhite|aqua|aquamarine|azure|beige|bisque|black|blanchedalmond|blue|blueviolet|brown|burlywood|cadetblue|chartreuse|chocolate|coral|cornflowerblue|cornsilk|crimson|cyan|darkblue|darkcyan|darkgoldenrod|darkgray|darkgreen|darkgrey|darkkhaki|darkmagenta|darkolivegreen|darkorange|darkorchid|darkred|darksalmon|darkseagreen|darkslateblue|darkslategray|darkslategrey|darkturquoise|darkviolet|deeppink|deepskyblue|dimgray|dimgrey|dodgerblue|firebrick|floralwhite|forestgreen|fuchsia|gainsboro|ghostwhite|gold|goldenrod|gray|green|greenyellow|grey|honeydew|hotpink|indianred|indigo|ivory|khaki|lavender|lavenderblush|lawngreen|lemonchiffon|lightblue|lightcoral|lightcyan|lightgoldenrodyellow|lightgray|lightgreen|lightgrey|lightpink|lightsalmon|lightseagreen|lightskyblue|lightslategray|lightslategrey|lightsteelblue|lightyellow|lime|limegreen|linen|magenta|maroon|mediumaquamarine|mediumblue|mediumorchid|mediumpurple|mediumseagreen|mediumslateblue|mediumspringgreen|mediumturquoise|mediumvioletred|midnightblue|mintcream|mistyrose|moccasin|navajowhite|navy|oldlace|olive|olivedrab|orange|orangered|orchid|palegoldenrod|palegreen|paleturquoise|palevioletred|papayawhip|peachpuff|peru|pink|plum|powderblue|purple|rebeccapurple|red|rosybrown|royalblue|saddlebrown|salmon|sandybrown|seagreen|seashell|sienna|silver|skyblue|slateblue|slategray|slategrey|snow|springgreen|steelblue|tan|teal|thistle|tomato|turquoise|violet|wheat|white|whitesmoke|yellow|yellowgreen)\b/i;
 for (const file of SHEETS) {
-  const text = readFileSync(join(ROOT, file), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+  const text = UNCOMMENTED[file];
   // @trap: a custom property's name is no color (--cui-c-console-gray-fill-hover)
   const values = [...text.matchAll(/:\s*([^;{}]+)[;}]/g)].map(m => m[1]).join(' ; ').replace(/--[\w-]+/g, '');
   const literal = values.match(/#[0-9a-f]{3,8}\b|\b(rgba?|hsla?|hwb|lab|lch|oklab|oklch|color)\(/i) ?? values.match(NAMED);
