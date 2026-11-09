@@ -47,18 +47,18 @@ func (f Field) Render(w io.Writer) error {
 		panic("site.Field needs a Label")
 	}
 	errorID := f.Name + "-error"
-	help := f.Name + "-help"
-	prefix := f.Name + "-prefix"
+	helpID := f.Name + "-help"
+	prefixID := f.Name + "-prefix"
 	kind := f.Type.value
 	if kind == "" {
 		kind = "text"
 	}
 	var ids []string
 	if f.Prefix != "" {
-		ids = append(ids, prefix)
+		ids = append(ids, prefixID)
 	}
 	if f.Help != "" {
-		ids = append(ids, help)
+		ids = append(ids, helpID)
 	}
 	if f.Error != "" {
 		ids = append(ids, errorID)
@@ -75,9 +75,9 @@ func (f Field) Render(w io.Writer) error {
 				f.Attrs,
 			),
 			h.Label(h.Class("cui-field-label"), h.For(f.Name), g.Text(f.Label)),
-			g.If(f.Prefix != "", h.Span(h.Class("cui-field-prefix"), h.ID(prefix), g.Text(f.Prefix))),
+			g.If(f.Prefix != "", h.Span(h.Class("cui-field-prefix"), h.ID(prefixID), g.Text(f.Prefix))),
 		),
-		g.If(f.Help != "", h.P(h.Class("cui-field-help"), h.ID(help), g.Text(f.Help))),
+		g.If(f.Help != "", h.P(h.Class("cui-field-help"), h.ID(helpID), g.Text(f.Help))),
 		g.If(f.Error != "", h.P(h.Class("cui-field-error"), h.ID(errorID), glyph.Alert, g.Text(f.Error))),
 	}.Render(w)
 }

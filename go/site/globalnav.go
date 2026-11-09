@@ -59,11 +59,11 @@ func (n GlobalNav) Render(w io.Writer) error {
 			links = append(links, h.Li(h.A(h.Class("cui-globalnav-link"), h.Href(link.Href), g.Text(link.Label))))
 			continue
 		}
-		form := "cui-globalnav-post-" + strconv.Itoa(i+1)
+		formID := "cui-globalnav-post-" + strconv.Itoa(i+1)
 		// @trap: not the <li> wrapping a <form>: the rows are li:has(> .cui-globalnav-link),
 		// and a form between drew the item full size in a closed phone bar
-		links = append(links, h.Li(h.Button(h.Class("cui-globalnav-link"), h.Type("submit"), h.FormAttr(form), g.Text(link.Label))))
-		postForms = append(postForms, h.Form(h.ID(form), h.Action(link.Href), h.Method("post"), g.Attr("hidden")))
+		links = append(links, h.Li(h.Button(h.Class("cui-globalnav-link"), h.Type("submit"), h.FormAttr(formID), g.Text(link.Label))))
+		postForms = append(postForms, h.Form(h.ID(formID), h.Action(link.Href), h.Method("post"), g.Attr("hidden")))
 	}
 	return h.Nav(h.Class("cui-globalnav"), h.Aria("label", n.AriaLabel),
 		h.Div(h.Class("cui-globalnav-content"),

@@ -25,7 +25,6 @@ var (
 
 // Btn is apple.com's pill: a link with an Href, otherwise a <button>.
 type Btn struct {
-	// Href: "" for a <button>.
 	Href  string
 	Label string
 	// Icon: before the Label, the page's node — Google's G, a spinner,
