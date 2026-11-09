@@ -28,9 +28,8 @@
 @import "./components/console/console-table/console-table.css";
 @import "./components/console/console-tabs/console-tabs.css";
 
-/* @invariant: the colors theme.css's utility names draw on a console page (site.css
-   has the site's). bg-alt is a card's ground; the divider a table row's line, the
-   1px a `border` draws, not the 0.5px hairline of a list or the tabs */
+/* @invariant: bg-alt a card's ground; divider a table row's 1px line, not the 0.5px
+   hairline of a list or the tabs */
 :root {
   --cui-set-text-body: var(--cui-c-console-neutral-label-primary);
   --cui-set-text-secondary: var(--cui-c-console-neutral-label-secondary);

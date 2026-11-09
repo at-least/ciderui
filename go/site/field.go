@@ -17,18 +17,17 @@ var (
 	FieldTypeTel   = FieldType{"tel"}
 )
 
-// Field is apple.com's text field: its input's id is its Name, and its
-// help's, error's and prefix's ids are derived from it.
+// Field is apple.com's text field: its input's id is its Name.
 type Field struct {
 	Type         FieldType
 	Name         string
 	Label        string
 	Autocomplete string
 	Value        string
-	// Error: the message under the field, wired to its input; implies invalid.
+	// Error: the message under the field, wired to its input; implies Invalid.
 	Error string
 	// Invalid: the red edge with no message to show (a value too short to
-	// judge); the input writes aria-invalid when set or Error is.
+	// judge).
 	Invalid bool
 	// Help: a line under the field that says what to write, wired to its
 	// input; "" for none.

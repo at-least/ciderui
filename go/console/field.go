@@ -25,8 +25,7 @@ func (s ConsoleSelect) Render(w io.Writer) error {
 }
 
 // ConsoleField is a control under its label, and an error under it. Control
-// gets what it must carry (its class, its id, what describes it, whether it is
-// invalid) to write on the page's own <input>, <textarea> or <select>: the page
+// writes attrs on the page's own <input>, <textarea> or <select>: the page
 // cannot forget them or get an id wrong.
 type ConsoleField struct {
 	ID    string

@@ -8,21 +8,18 @@
   }
 
   .cui-console-chart-svg {
-    /* @invariant: positioned after the grid, so its marks paint over the gridlines */
     position: relative;
     width: 100%;
     overflow: visible;
   }
 
   .cui-console-chart-grid {
-    /* @invariant: laid over the plot, the gridlines' y the plot's height's share */
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     stroke: var(--cui-c-console-neutral-border-tertiary);
     stroke-width: 1px;
-    /* @invariant: the top gridline at y 0, its stroke half above the plot */
     overflow: visible;
     pointer-events: none;
   }

@@ -9,7 +9,7 @@ import (
 )
 
 // ConsoleStripMark is who an item waits on, a dot in its picture's corner:
-// the reader, or someone at work on it. An item with neither has no mark.
+// the reader, or someone at work on it.
 type ConsoleStripMark struct{ value string }
 
 var (
@@ -53,14 +53,14 @@ type ConsoleStripItem struct {
 	// Alt is the link's name, with Caption, Detail, Tip and MarkAriaLabel
 	// after it.
 	Alt string
-	// Current: aria-current="true", ringed.
+	// Current: ringed.
 	Current bool
 	Crop    ConsoleStripItemCrop
 	// Caption: the shot's name under its picture.
 	Caption string
 	// Detail: a second line under the Caption.
 	Detail string
-	// Unused: nothing uses it, dimmed (data-state="unused").
+	// Unused: dimmed.
 	Unused bool
 	// Tip: a line shown over the item while the pointer is on it (a shot's
 	// first spoken line); "" none.

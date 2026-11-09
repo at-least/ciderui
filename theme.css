@@ -11,9 +11,8 @@
 }
 
 /* @trap: --text-color-* and --background-color-*, not --color-*: no bg-secondary,
-   no text-alt. Each reads a --cui-set-* the set's sheet declares (site.css,
-   console.css), not a --cui-c-* token: a site's own sheet, built once, then draws
-   the colors of the set its page links. */
+   no text-alt. Each reads a --cui-set-*, not a --cui-c-*: a site's own sheet, built
+   once, draws the colors of whichever set's sheet its page links. */
 @theme inline {
   --font-sans: var(--cui-font);
 
@@ -23,8 +22,7 @@
   --background-color-page: var(--cui-set-bg-page);
   --background-color-alt: var(--cui-set-bg-alt);
 
-  /* @invariant: border a control's edge; divider a rule's, and a bare `border`'s
-     (base.css) */
+  /* @invariant: border a control's edge; divider a rule's */
   --color-border: var(--cui-set-border);
   --color-divider: var(--cui-set-divider);
   --color-link: var(--cui-set-link);

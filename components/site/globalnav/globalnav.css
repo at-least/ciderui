@@ -1,5 +1,4 @@
 @layer components {
-  /* @invariant: on :root, not the bar: the page's scroll padding reads it too */
   :root {
     --cui-globalnav-height: 48px;
 
@@ -11,8 +10,7 @@
   .cui-globalnav {
     --cui-globalnav-ease: cubic-bezier(0.4, 0, 0.6, 1);
 
-    /* @invariant: rule 6's exception: the bar stays at the top as the page scrolls, over
-       it at apple.com's 9999; the scroll padding below keeps a target clear of it */
+    /* @invariant: rule 6's exception (decision 42): over the page at apple.com's 9999 */
     position: sticky;
     top: 0;
     z-index: 9999;
@@ -176,7 +174,7 @@
     }
   }
 
-  /* @invariant: #main and an in-page target land below the sticky bar, its height */
+  /* @invariant: rule 6's exception (decision 42), the sticky bar's match */
   :root:has(.cui-globalnav) {
     scroll-padding-top: var(--cui-globalnav-height);
   }

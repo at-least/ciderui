@@ -27,11 +27,10 @@ var (
 type Btn struct {
 	Href  string
 	Label string
-	// Icon: before the Label, the page's node — Google's G, a spinner,
-	// [lucide.Check]; nil for none. The button sets it half an em before the
-	// Label, centred on it, 1em square. Not [lucide.Icon], the console
-	// button's type: a site's button is the store's, whose marks are its page's
-	// own.
+	// Icon: the page's node — Google's G, a spinner, [lucide.Check]; nil for
+	// none. The button sets it half an em before the Label, centred on it, 1em
+	// square. Not [lucide.Icon], the console button's type: a site's button is
+	// the store's, whose marks are its page's own.
 	Icon g.Node
 	// Submit: a <button> that sends its form; otherwise type="button".
 	Submit  bool
