@@ -1,7 +1,6 @@
 package console_test
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
@@ -26,11 +25,8 @@ func sidebarNodes() g.Node {
 	}}
 }
 
-func TestSidebarRendersTheExample(t *testing.T) {
+func TestSidebarRendersTheExamples(t *testing.T) {
 	example.Check(t, sidebarNodes(), "console/console-sidebar/examples/sidebar.html")
-}
-
-func TestSidebarOpenRendersTheExample(t *testing.T) {
 	example.Check(t, g.Group{
 		console.ConsoleSidebarOpen{AriaLabel: "Menu", Class: ""},
 		sidebarNodes(),
@@ -53,12 +49,4 @@ func TestSidebarPanics(t *testing.T) {
 		{Want: "console.ConsoleSidebar needs a Wordmark", Change: func(p *console.ConsoleSidebar) { p.Wordmark = "" }},
 		{Want: "console.ConsoleSidebar needs a CloseAriaLabel", Change: func(p *console.ConsoleSidebar) { p.CloseAriaLabel = "" }},
 	})
-}
-
-func TestSidebarCloseIsNamedByItsCloseAriaLabel(t *testing.T) {
-	got := example.Render(console.ConsoleSidebar{AriaLabel: "Main", Home: "/", Wordmark: "Shop", CloseAriaLabel: "Hide Menu", Footer: nil, Children: nil})
-	want := `<button class="cui-console-btn cui-console-btn-icon cui-console-sidebar-close" data-variant="plain" type="button" aria-label="Hide Menu"`
-	if !strings.Contains(got, want) {
-		t.Errorf("the close button is not named Hide Menu:\n got: %s\nwant: %s…", got, want)
-	}
 }

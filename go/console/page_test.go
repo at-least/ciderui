@@ -15,31 +15,13 @@ func consolePage() console.ConsolePage {
 	return console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Class: "", SkipLabel: "", Children: h.P(g.Text("x"))}
 }
 
-func TestConsolePageWritesTheDocument(t *testing.T) {
-	want := `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Jobs</title><link rel="stylesheet" href="` + ciderui.ConsoleStylesheet() + `"></head><body class="cui-console-page"><p>x</p></body></html>`
-	if got := example.Render(consolePage()); got != want {
-		t.Errorf("the document is not the kit's skeleton linking its stylesheet:\n got: %s\nwant: %s", got, want)
-	}
-}
-
-func TestConsolePageWritesItsClasses(t *testing.T) {
+func TestConsolePageWritesTheDocumentItsHeadAfterTheStylesheet(t *testing.T) {
 	p := consolePage()
 	p.Class = "cui-light"
-	got := example.Render(p)
-	for _, want := range []string{`<html lang="en" class="cui-light">`, `<body class="cui-console-page">`} {
-		if !strings.Contains(got, want) {
-			t.Errorf("the <html> did not take Class, or the <body> lost its own: no %s in %s", want, got)
-		}
-	}
-}
-
-func TestConsolePageWritesItsHeadAfterTheKitsStylesheet(t *testing.T) {
-	p := consolePage()
 	p.Head = h.Link(h.Rel("stylesheet"), h.Href("/own.css"))
-	got := example.Render(p)
-	want := `<link rel="stylesheet" href="` + ciderui.ConsoleStylesheet() + `"><link rel="stylesheet" href="/own.css">`
-	if !strings.Contains(got, want) {
-		t.Errorf("the page's Head is not right after the kit's stylesheet: no %s in %s", want, got)
+	want := `<!doctype html><html lang="en" class="cui-light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Jobs</title><link rel="stylesheet" href="` + ciderui.ConsoleStylesheet() + `"><link rel="stylesheet" href="/own.css"></head><body class="cui-console-page"><p>x</p></body></html>`
+	if got := example.Render(p); got != want {
+		t.Errorf("the page is not the document, its <html> taking Class, its head after the console stylesheet, its <body> cui-console-page:\n got: %s\nwant: %s", got, want)
 	}
 }
 

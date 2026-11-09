@@ -10,7 +10,7 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-func TestMenuRendersTheExample(t *testing.T) {
+func TestMenuRendersTheExamples(t *testing.T) {
 	item := func(href, label string, icon lucide.Icon, current bool) console.ConsoleMenuItem {
 		return console.ConsoleMenuItem{Href: href, Label: label, Icon: icon, Current: current}
 	}
@@ -24,6 +24,16 @@ func TestMenuRendersTheExample(t *testing.T) {
 		item("#demo", "Demo Shop", lucide.Icon{}, false),
 	)
 	example.Check(t, menu, "console/console-menu/examples/menu.html")
+	choices := h.Div(h.Class("flex justify-center"),
+		h.Button(h.Type("button"), h.Class("cui-console-btn"), h.PopoverTarget("subtitles"), g.Text("Subtitles")),
+		choiceMenu(),
+	)
+	example.Check(t, choices, "console/console-menu/examples/choices.html")
+	columns := h.Div(h.Class("flex justify-center"),
+		h.Button(h.Type("button"), h.Class("cui-console-btn"), h.PopoverTarget("subtitles"), g.Text("Audio and Subtitles")),
+		columnsMenu(),
+	)
+	example.Check(t, columns, "console/console-menu/examples/columns.html")
 }
 
 func choiceMenu() console.ConsoleChoiceMenu {
@@ -44,19 +54,6 @@ func columnsMenu() console.ConsoleChoiceMenu {
 		{Label: "日本語", Value: "ja", Lang: "ja", Checked: false},
 	}}}, m.Columns...)
 	return m
-}
-
-func TestChoiceMenuRendersTheExample(t *testing.T) {
-	page := h.Div(h.Class("flex justify-center"),
-		h.Button(h.Type("button"), h.Class("cui-console-btn"), h.PopoverTarget("subtitles"), g.Text("Subtitles")),
-		choiceMenu(),
-	)
-	example.Check(t, page, "console/console-menu/examples/choices.html")
-	page = h.Div(h.Class("flex justify-center"),
-		h.Button(h.Type("button"), h.Class("cui-console-btn"), h.PopoverTarget("subtitles"), g.Text("Audio and Subtitles")),
-		columnsMenu(),
-	)
-	example.Check(t, page, "console/console-menu/examples/columns.html")
 }
 
 // not the link a current item is: no aria-current on what cannot be followed

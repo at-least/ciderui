@@ -21,6 +21,8 @@ export const cases = [
       { target: `${C}-mark`, props: ['fill'], golden: 'the class owns its color: the toolkit\'s theme blue (tokens.css, decision 18), never a fill of the page\'s — a consumer once filled its bars with the site set\'s blue' },
       { target: `${C}-svg`, props: ['box-height', 'display'], golden: 'its height the page\'s, the svg\'s 140' },
       { target: `${C}-svg`, props: ['box-width'], golden: 'as wide as its plot' },
+      { target: `${C}-svg`, props: ['position'], golden: 'positioned, after the grid: its marks paint over the gridlines' },
+      { target: `${C}-grid`, props: ['overflow-y'], golden: 'the top gridline drawn whole: at y 0, half its stroke is above the plot' },
     ],
   },
   {
@@ -47,7 +49,7 @@ export const cases = [
     html: ex('empty'),
     widths: [1200],
     checks: [
-      { target: `${C}-empty`, props: ['font-size', 'color', 'box-top', 'box-height'], golden: 'centered on the plot, 13px, the secondary label' },
+      { target: `${C}-empty`, props: ['font-size', 'color', 'box-top', 'box-height', 'align-items', 'justify-content'], golden: 'centered on the plot, 13px, the secondary label' },
     ],
   },
   {

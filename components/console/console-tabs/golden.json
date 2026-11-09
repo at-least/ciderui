@@ -22,6 +22,7 @@
  "tabs of radios | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:not(:has(> :checked)):hover | 1200 | color": "oklch(0.497 0.209 260.5)",
  "tabs of radios | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:not(:has(> :checked)):active | 1200 | color": "oklch(0.462 0.136 251.3)",
  "tabs of radios | .cui-console-tabs | 1200 | border-bottom-width": "0px",
+ "tabs of radios | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:not(:has(> :checked)) | 1200 | border-bottom-width": "0px",
  "tabs of radios | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:has(> :checked):hover | 1200 | background-color": "oklch(0.497 0.209 260.5)",
  "tabs of radios | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab > input | 1200 | position": "absolute",
  "tabs of radios | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab > input | 1200 | opacity": "0",

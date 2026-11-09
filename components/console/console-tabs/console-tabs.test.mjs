@@ -77,6 +77,7 @@ export const cases = [
       { target: PLAIN, props: ['color'], state: 'active', golden: 'pressed, one pressed blue for a label (as an underlined tab\'s)' },
       { target: '.cui-console-tabs', props: ['column-gap'], tb: [`${T}-variant-controlSize-md-variant-filledGray-gap`] },
       { target: '.cui-console-tabs', props: ['border-bottom-width'], golden: 'no hairline under pills' },
+      { target: PLAIN, props: ['border-bottom-width'], golden: 'no underline under a pill: an underlined tab\'s transparent 2px rule lifted its label 1px off its fill\'s middle' },
       { target: PICKED, props: ['background-color', 'color'], tb: [tab('filledGray', 'default', 'true', 'backgroundColor'), tab('filledGray', 'default', 'true', 'color')] },
       { target: PICKED, props: ['background-color'], state: 'hover', golden: `the chosen pill hovered blue-600, a step darker: white on the toolkit's lighter blue is 3.9:1, ${FITTED}` },
       { target: PICKED, props: ['background-color', 'color'], state: 'active', tb: [tab('filledGray', 'press', 'true', 'backgroundColor'), tab('filledGray', 'press', 'true', 'color')] },
