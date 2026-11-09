@@ -27,7 +27,6 @@ var (
 
 // ConsoleBtn is the console's button: a link with an Href, otherwise a <button>.
 type ConsoleBtn struct {
-	// Href: "" for a <button>.
 	Href string
 	// Label: "" for a button of its Icon alone, named by AriaLabel: a capsule,
 	// round, in the gray and filled variants.

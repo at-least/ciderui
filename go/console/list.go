@@ -29,10 +29,9 @@ func (l ConsoleListItem) Render(w io.Writer) error {
 	if l.Label == "" && children.Len() == 0 {
 		panic("console.ConsoleListItem needs a Label or its own content")
 	}
-	content := g.Group{
+	return h.Div(h.Class("cui-console-list-item"),
 		g.If(l.Label != "", h.Span(h.Class("cui-console-list-label"), g.Text(l.Label))),
 		g.If(l.Detail != "", h.Span(h.Class("cui-console-list-detail"), g.Text(l.Detail))),
 		g.Raw(children.String()),
-	}
-	return h.Div(h.Class("cui-console-list-item"), content).Render(w)
+	).Render(w)
 }
