@@ -20,8 +20,8 @@ type ConsolePlayerIntro struct {
 	// Detail: the length ("8 min 33 s"); "" none.
 	Detail string
 	// Summary: a sentence of what it is about; "" none.
-	Summary   string
-	PlayLabel string
+	Summary    string
+	StartLabel string
 	// RestartLabel is the smaller button's words, hidden until the page's
 	// script shows it.
 	RestartLabel string
@@ -99,8 +99,8 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 	if p.SubtitlesMenu != nil && p.SubtitlesAriaLabel == "" {
 		panic("console.ConsolePlayer needs a SubtitlesAriaLabel with a SubtitlesMenu")
 	}
-	if p.Intro != nil && (p.Intro.Title == "" || p.Intro.PlayLabel == "" || p.Intro.RestartLabel == "") {
-		panic("console.ConsolePlayerIntro needs a Title, a PlayLabel and a RestartLabel")
+	if p.Intro != nil && (p.Intro.Title == "" || p.Intro.StartLabel == "" || p.Intro.RestartLabel == "") {
+		panic("console.ConsolePlayerIntro needs a Title, a StartLabel and a RestartLabel")
 	}
 	if p.End != nil && (p.End.Title == "" || p.End.ReplayLabel == "") {
 		panic("console.ConsolePlayerEnd needs a Title and a ReplayLabel")
@@ -161,7 +161,7 @@ func intro(i ConsolePlayerIntro) g.Node {
 		g.If(i.Detail != "", h.P(h.Class("cui-console-player-intro-detail"), g.Text(i.Detail))),
 		g.If(i.Summary != "", h.P(h.Class("cui-console-player-intro-summary"), g.Text(i.Summary))),
 		h.Div(h.Class("cui-console-player-intro-actions"),
-			h.Button(h.Class("cui-console-player-intro-play"), h.Type("button"), h.Data("control", "start"), lucide.Play, h.Span(g.Text(i.PlayLabel))),
+			h.Button(h.Class("cui-console-player-intro-play"), h.Type("button"), h.Data("control", "start"), lucide.Play, h.Span(g.Text(i.StartLabel))),
 			h.Button(h.Class("cui-console-player-text-btn"), h.Type("button"), h.Data("control", "restart"), g.Attr("hidden"), g.Text(i.RestartLabel)),
 		),
 	)

@@ -29,7 +29,8 @@ var (
 type ConsoleBtn struct {
 	// Href: "" for a <button>.
 	Href string
-	// Label: "" for a button of its Icon alone, named by AriaLabel.
+	// Label: "" for a button of its Icon alone, named by AriaLabel: a capsule,
+	// round, in the gray and filled variants.
 	Label     string
 	AriaLabel string
 	// Icon: before the Label; the zero Icon for none.
@@ -49,15 +50,19 @@ func (b ConsoleBtn) Render(w io.Writer) error {
 		panic("console.ConsoleBtn has an Href and Submit: a link sends no form")
 	}
 	root := "cui-console-btn"
+	shape := ""
 	if b.Label == "" {
 		if b.AriaLabel == "" || b.Icon == (lucide.Icon{}) {
 			panic("console.ConsoleBtn needs a Label, or an Icon and an AriaLabel")
 		}
 		root += " cui-console-btn-icon"
+		if b.Variant != ConsoleBtnVariantPlain {
+			shape = "capsule"
+		}
 	} else if b.AriaLabel != "" {
 		panic("console.ConsoleBtn has a Label and an AriaLabel: its words name it")
 	}
-	attrs := g.Group{class.Root(root, b.Class), optionalAttr("data-variant", b.Variant.value), g.If(b.Destructive, h.Data("color", "error")), optionalAttr("data-size", b.Size.value)}
+	attrs := g.Group{class.Root(root, b.Class), optionalAttr("data-variant", b.Variant.value), g.If(b.Destructive, h.Data("color", "error")), optionalAttr("data-size", b.Size.value), optionalAttr("data-shape", shape)}
 	content := g.Group{g.If(b.Icon != (lucide.Icon{}), b.Icon), g.If(b.Label != "", g.Text(b.Label))}
 	if b.Href != "" {
 		return h.A(attrs, h.Href(b.Href), optionalAttr("aria-label", b.AriaLabel), b.Attrs, content).Render(w)

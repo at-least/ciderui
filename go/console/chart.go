@@ -3,7 +3,6 @@ package console
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/internal/class"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -25,16 +24,14 @@ type ConsoleChart struct {
 	// AriaLabel: what the chart shows, in words ("Events: 96, peak 24 in one
 	// day"): the scale and the axis are hidden from assistive technology.
 	AriaLabel string
-	// Scale: nil for none.
+	// Scale: nil for none; with one, the part draws the gridlines it labels.
 	Scale *ConsoleChartScale
 	// Empty is the note centered on a plot with no data ("No data in this
 	// window"); "" for a plot with data.
 	Empty string
 	// Axis: nil for none.
-	Axis  *ConsoleChartAxis
-	Class string
-	// Children: <svg class="cui-console-chart-svg"> holding the gridlines and
-	// marks.
+	Axis *ConsoleChartAxis
+	// Children: <svg class="cui-console-chart-svg"> holding the marks.
 	Children g.Node
 }
 
@@ -48,10 +45,11 @@ func (c ConsoleChart) Render(w io.Writer) error {
 	if c.Axis != nil && (c.Axis.Start == "" || c.Axis.End == "") {
 		panic("console.ConsoleChartAxis needs a Start and an End")
 	}
-	return h.Figure(class.Root("cui-console-chart", c.Class), h.Aria("label", c.AriaLabel),
+	return h.Figure(h.Class("cui-console-chart"), h.Aria("label", c.AriaLabel),
 		h.Div(h.Class("cui-console-chart-plot"),
 			g.Iff(c.Scale != nil, func() g.Node {
 				return g.Group{
+					h.SVG(h.Class("cui-console-chart-grid"), h.Aria("hidden", "true"), gridLine("0"), gridLine("50%")),
 					h.Span(h.Class("cui-console-chart-scale"), h.Aria("hidden", "true"), g.Text(c.Scale.Peak)),
 					h.Span(h.Class("cui-console-chart-scale"), h.Data("at", "half"), h.Aria("hidden", "true"), g.Text(c.Scale.Half)),
 				}
@@ -63,4 +61,8 @@ func (c ConsoleChart) Render(w io.Writer) error {
 			return h.Div(h.Class("cui-console-chart-axis"), h.Aria("hidden", "true"), h.Span(g.Text(c.Axis.Start)), h.Span(g.Text(c.Axis.End)))
 		}),
 	).Render(w)
+}
+
+func gridLine(y string) g.Node {
+	return g.El("line", g.Attr("x1", "0"), g.Attr("x2", "100%"), g.Attr("y1", y), g.Attr("y2", y))
 }

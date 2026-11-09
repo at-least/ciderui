@@ -36,13 +36,10 @@ func TestConsoleBtnRendersTheExamples(t *testing.T) {
 		b.Attrs = h.Disabled()
 		return b
 	}
-	copyIcon := func(size console.ConsoleBtnSize, capsule bool) console.ConsoleBtn {
+	copyIcon := func(size console.ConsoleBtnSize) console.ConsoleBtn {
 		b := sized("", size)
 		b.AriaLabel = "Copy"
 		b.Icon = lucide.Copy
-		if capsule {
-			b.Attrs = h.Data("shape", "capsule")
-		}
 		return b
 	}
 	labelled := consoleBtn("Copy")
@@ -57,8 +54,8 @@ func TestConsoleBtnRendersTheExamples(t *testing.T) {
 		{"variants", row(withVariant("Compare", gray, false), withVariant("Resolve", filled, false), withVariant("See All", plain, false), withVariant("Delete", gray, true), withVariant("Delete Project", filled, true), withVariant("Remove", plain, true))},
 		{"sizes", row(sized("Small", console.ConsoleBtnSizeSmall), sized("Medium", medium), sized("Large", console.ConsoleBtnSizeLarge))},
 		{"disabled", row(disabled(withVariant("Compare", gray, false)), disabled(withVariant("Resolve", filled, false)), disabled(withVariant("See All", plain, false)), disabled(withVariant("Delete", gray, true)))},
-		{"icon", row(copyIcon(medium, false), labelled)},
-		{"capsule", row(copyIcon(console.ConsoleBtnSizeSmall, true), copyIcon(medium, true), copyIcon(console.ConsoleBtnSizeLarge, true), compare)},
+		{"icon", row(copyIcon(medium), labelled)},
+		{"capsule", row(copyIcon(console.ConsoleBtnSizeSmall), copyIcon(medium), copyIcon(console.ConsoleBtnSizeLarge), compare)},
 	} {
 		example.Check(t, c.node, "console/console-btn/examples/"+c.path+".html")
 	}
@@ -67,7 +64,7 @@ func TestConsoleBtnRendersTheExamples(t *testing.T) {
 func TestConsoleBtnAnIconLinkTakesItsAriaLabelAndAttrs(t *testing.T) {
 	link := consoleBtn("")
 	link.Href, link.AriaLabel, link.Icon, link.Attrs = "/export.csv", "Download", lucide.Download, g.Attr("download")
-	want := `<a class="cui-console-btn cui-console-btn-icon" href="/export.csv" aria-label="Download" download><svg`
+	want := `<a class="cui-console-btn cui-console-btn-icon" data-shape="capsule" href="/export.csv" aria-label="Download" download><svg`
 	if got := example.Render(link); !strings.HasPrefix(got, want) {
 		t.Errorf("the link is not named Download with its download attribute:\n got: %s\nwant: %s…", got, want)
 	}

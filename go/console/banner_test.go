@@ -41,5 +41,5 @@ func TestBannerWithNoBodyWritesNoBodyBlock(t *testing.T) {
 }
 
 func textLink(href, text string) g.Node {
-	return h.A(h.Class("cui-console-link"), h.Data("variant", "text"), h.Href(href), g.Text(text))
+	return h.A(h.Class("cui-console-link"), h.Href(href), g.Text(text))
 }

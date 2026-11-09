@@ -13,12 +13,12 @@ export const cases = [
       { target: `${C}-scale`, props: ['font-size', 'font-weight'], asc: ['analytics', 'chart.y'] },
       { target: `${C}-axis`, props: ['font-size', 'font-weight'], asc: ['analytics', 'chart.x'] },
       { target: `${C}-grid`, props: ['stroke'], golden: 'the tertiary hairline, where App Store Connect\'s is rgb(214, 214, 214)' },
+      { target: `${C}-grid line:nth-child(2)`, props: ['box-y'], golden: 'the kit\'s gridlines where its scale labels them, the plot\'s top and middle: the middle one under the half scale' },
       { target: `${C}-scale`, props: ['color', 'background-color', 'right', 'top'], golden: 'the fitted secondary label (App Store Connect\'s rgb(136, 136, 136) is 3.5:1 on white, decision 21) on the ground, at the plot\'s trailing top (the HIG keeps the leading edge clean)' },
       { target: `${C}-scale[data-at="half"]`, props: ['box-top'], golden: 'the half scale on the middle gridline' },
       { target: `${C}-axis`, props: ['color', 'margin-top', 'justify-content'], golden: 'the first and last labels at the plot\'s ends, 6px under it, the fitted secondary label' },
       { target: `${C}-mark`, props: ['stroke', 'stroke-width'], golden: 'a 1px line of the ground round each mark: stacked marks stand apart (the HIG\'s Color)' },
       { target: `${C}-mark`, props: ['fill'], golden: 'the class owns its color: the toolkit\'s theme blue (tokens.css, decision 18), never a fill of the page\'s — a consumer once filled its bars with the site set\'s blue' },
-      { target: `${C}-rest`, props: ['fill', 'stroke'], golden: 'the bucket a mark leaves unfilled: the secondary label\'s gray, the ground\'s line round it' },
       { target: `${C}-svg`, props: ['box-height', 'display'], golden: 'its height the page\'s, the svg\'s 140' },
       { target: `${C}-svg`, props: ['box-width'], golden: 'as wide as its plot' },
     ],
@@ -29,7 +29,6 @@ export const cases = [
     widths: [1200],
     checks: [
       { target: `${C}-bar:last-of-type ${C}-mark`, props: ['opacity'], state: 'hover', on: `${C}-bar:last-of-type`, golden: 'the only cue naming the bar under the pointer, at once: no date pill to read (ASC\'s chart hover), no motion (the HIG\'s feedback)' },
-      { target: `${C}-bar:last-of-type ${C}-rest`, props: ['opacity'], state: 'hover', on: `${C}-bar:last-of-type`, golden: 'its remainder with it: the whole bar named' },
     ],
   },
   {
@@ -59,7 +58,6 @@ export const cases = [
       { target: `${C}-grid`, props: ['stroke'], golden: 'the dark side derived (tokens.css, decision 18)' },
       { target: `${C}-scale`, props: ['color', 'background-color'], golden: 'the dark side derived (tokens.css, decision 18)' },
       { target: `${C}-mark`, props: ['fill'], golden: 'the dark side derived (tokens.css, decision 18)' },
-      { target: `${C}-rest`, props: ['fill'], golden: 'the dark side derived (tokens.css, decision 18)' },
     ],
   },
 ];

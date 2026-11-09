@@ -14,7 +14,7 @@ func TestStripRendersTheExample(t *testing.T) {
 	const path = "console/console-strip/examples/strip.html"
 	shot := func(scene, n int, tip string, mark console.ConsoleStripMark, markAriaLabel string, current bool) console.ConsoleStripItem {
 		alt := fmt.Sprintf("Shot %d.%d", scene, n)
-		return console.ConsoleStripItem{Href: fmt.Sprintf("#shot-%d-%d", scene, n), Src: exampleSrc(path, alt), Alt: alt, Current: current, Variant: console.ConsoleStripItemVariantCenter, Caption: fmt.Sprintf("S%02d-%02d", scene, n), Detail: "", Unused: false, Tip: tip, Mark: mark, MarkAriaLabel: markAriaLabel}
+		return console.ConsoleStripItem{Href: fmt.Sprintf("#shot-%d-%d", scene, n), Src: exampleSrc(path, alt), Alt: alt, Current: current, Crop: console.ConsoleStripItemCropCenter, Caption: fmt.Sprintf("S%02d-%02d", scene, n), Detail: "", Unused: false, Tip: tip, Mark: mark, MarkAriaLabel: markAriaLabel}
 	}
 	const line = "Once upon a time, a miller had three sons."
 	none := console.ConsoleStripMarkNone
@@ -32,11 +32,11 @@ func TestStripRendersTheExample(t *testing.T) {
 
 func TestStripRendersTheAssetsExample(t *testing.T) {
 	const path = "console/console-strip/examples/assets.html"
-	asset := func(href, alt, caption, detail string, variant console.ConsoleStripItemVariant, unused, current bool) console.ConsoleStripItem {
-		return console.ConsoleStripItem{Href: href, Src: exampleSrc(path, alt), Alt: alt, Current: current, Variant: variant, Caption: caption, Detail: detail, Unused: unused, Tip: "", Mark: console.ConsoleStripMarkNone, MarkAriaLabel: ""}
+	asset := func(href, alt, caption, detail string, crop console.ConsoleStripItemCrop, unused, current bool) console.ConsoleStripItem {
+		return console.ConsoleStripItem{Href: href, Src: exampleSrc(path, alt), Alt: alt, Current: current, Crop: crop, Caption: caption, Detail: detail, Unused: unused, Tip: "", Mark: console.ConsoleStripMarkNone, MarkAriaLabel: ""}
 	}
-	center := console.ConsoleStripItemVariantCenter
-	leading := console.ConsoleStripItemVariantLeading
+	center := console.ConsoleStripItemCropCenter
+	leading := console.ConsoleStripItemCropLeading
 	strip := h.Div(h.Class("cui-console-page"),
 		console.ConsoleStrip{AriaLabel: "Assets", Class: "", Groups: []console.ConsoleStripGroup{
 			{Label: "Characters", Items: []console.ConsoleStripItem{asset("#ann", "Ann’s sheet", "Ann", "3 shots", leading, false, true), asset("#ben", "Ben’s sheet", "Ben", "Not used", leading, true, false)}},
@@ -48,7 +48,7 @@ func TestStripRendersTheAssetsExample(t *testing.T) {
 }
 
 func validStrip() console.ConsoleStrip {
-	item := console.ConsoleStripItem{Href: "#a", Src: "/a.png", Alt: "Shot 1", Current: false, Variant: console.ConsoleStripItemVariantCenter, Caption: "", Detail: "", Unused: false, Tip: "", Mark: console.ConsoleStripMarkNone, MarkAriaLabel: ""}
+	item := console.ConsoleStripItem{Href: "#a", Src: "/a.png", Alt: "Shot 1", Current: false, Crop: console.ConsoleStripItemCropCenter, Caption: "", Detail: "", Unused: false, Tip: "", Mark: console.ConsoleStripMarkNone, MarkAriaLabel: ""}
 	return console.ConsoleStrip{AriaLabel: "Shots", Groups: []console.ConsoleStripGroup{{Label: "Scene 1", Items: []console.ConsoleStripItem{item, item}}}, Class: ""}
 }
 

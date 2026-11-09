@@ -22,15 +22,15 @@ var (
 	ConsoleStripMarkWorking = ConsoleStripMark{"working"}
 )
 
-// ConsoleStripItemVariant is how an item's picture is cropped to 16:9.
-type ConsoleStripItemVariant struct{ value string }
+// ConsoleStripItemCrop is how an item's picture is cropped to 16:9.
+type ConsoleStripItemCrop struct{ value string }
 
 var (
-	// ConsoleStripItemVariantCenter: round its middle, a film's frame.
-	ConsoleStripItemVariantCenter = ConsoleStripItemVariant{value: ""}
-	// ConsoleStripItemVariantLeading: to its leading edge, a character
+	// ConsoleStripItemCropCenter: round its middle, a film's frame.
+	ConsoleStripItemCropCenter = ConsoleStripItemCrop{value: ""}
+	// ConsoleStripItemCropLeading: to its leading edge, a character
 	// sheet's face.
-	ConsoleStripItemVariantLeading = ConsoleStripItemVariant{"leading"}
+	ConsoleStripItemCropLeading = ConsoleStripItemCrop{"leading"}
 )
 
 // ConsoleStrip is one row of 16:9 thumbnails scrolled sideways, in groups
@@ -55,7 +55,7 @@ type ConsoleStripItem struct {
 	Alt string
 	// Current: aria-current="true", ringed.
 	Current bool
-	Variant ConsoleStripItemVariant
+	Crop    ConsoleStripItemCrop
 	// Caption: the shot's name under its picture.
 	Caption string
 	// Detail: a second line under the Caption.
@@ -113,7 +113,7 @@ func stripItem(item ConsoleStripItem) g.Node {
 	if (item.Mark == ConsoleStripMarkNone) != (item.MarkAriaLabel == "") {
 		panic("console.ConsoleStripItem needs a MarkAriaLabel with a Mark, and none without")
 	}
-	return h.A(h.Class("cui-console-strip-item"), h.Href(item.Href), optionalAttr("data-variant", item.Variant.value),
+	return h.A(h.Class("cui-console-strip-item"), h.Href(item.Href), optionalAttr("data-crop", item.Crop.value),
 		g.If(item.Unused, h.Data("state", "unused")), g.If(item.Current, h.Aria("current", "true")),
 		h.Img(h.Src(item.Src), h.Alt(item.Alt), h.Loading("lazy")),
 		g.If(item.Caption != "", h.Span(h.Class("cui-console-strip-caption"), g.Text(item.Caption))),

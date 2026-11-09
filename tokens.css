@@ -62,7 +62,6 @@
   --cui-c-console-brand-label-on-accent-primary: light-dark(oklch(100.0% 0.000 0.0 / 0.95), oklch(100.0% 0.000 0.0 / 0.95));
   --cui-c-console-brand-label-on-fill: light-dark(oklch(49.7% 0.209 260.5), oklch(68.3% 0.167 256.6));
   --cui-c-console-brand-label-on-tint: light-dark(oklch(49.7% 0.209 260.5), oklch(75.6% 0.120 260.5));
-  --cui-c-console-brand-label-on-tint-secondary: light-dark(oklch(49.7% 0.209 260.5 / 0.60), oklch(75.6% 0.120 260.5 / 0.60));
   --cui-c-console-dialog-stroke: light-dark(oklch(84.5% 0.000 0), oklch(40.2% 0.000 0));
   --cui-c-console-brand-fill-hover: light-dark(oklch(49.7% 0.209 260.5), oklch(43.6% 0.171 260.6));
   --cui-c-console-brand-fill-press: light-dark(oklch(52.2% 0.156 251.8), oklch(43.6% 0.171 260.6));

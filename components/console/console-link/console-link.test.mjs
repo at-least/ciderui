@@ -1,9 +1,7 @@
-import { examples, SIZE } from '../../../test/harness.mjs';
+import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const L = 'component-Link-variant-colorRole-brand-effect';
-const INLINE = '.cui-console-link:not([data-variant]):not([aria-disabled])';
-const TEXT = '[data-variant="text"]';
+const LINK = '.cui-console-link';
 
 export const cases = [
   {
@@ -11,15 +9,9 @@ export const cases = [
     html: ex('link'),
     widths: [1200, 390],
     checks: [
-      { target: INLINE, props: ['color', 'text-decoration-line', 'cursor'], asc: ['analytics-page', 'section.link'] },
-      { target: INLINE, props: ['color', 'text-decoration-line', 'cursor'], state: 'hover', asc: ['hover-link', 'section.link'] },
-      { target: '[aria-disabled="true"]', props: ['color'], tb: [`${L}-disabled-variant-inline-color`] },
-      { target: '[aria-disabled="true"]', props: ['cursor', 'text-decoration-line'], state: 'hover', golden: 'no pointer, no underline over a disabled link' },
-      { target: INLINE, pseudo: '::after', props: ['content'], golden: 'with a mouse, no target drawn: none' },
-      { target: TEXT, props: ['color'], tb: [`${L}-default-variant-inline-color`] },
-      { target: TEXT, props: ['text-decoration-line'], golden: 'a link inside a sentence underlined at rest: told apart from the words around it by more than its color (WCAG 1.4.1; crashcart\'s links in a secondary caption measured 1.03:1 against it)' },
-      { target: TEXT, props: ['text-decoration-line'], state: 'hover', golden: 'hovered, still underlined' },
-      { target: TEXT, props: SIZE, golden: 'the type of the text around it' },
+      { target: LINK, props: ['color', 'text-decoration-line', 'cursor'], asc: ['analytics-page', 'section.link'] },
+      { target: LINK, props: ['color', 'text-decoration-line', 'cursor'], state: 'hover', asc: ['hover-link', 'section.link'] },
+      { target: LINK, pseudo: '::after', props: ['content'], golden: 'with a mouse, no target drawn: none' },
     ],
   },
   {
@@ -28,8 +20,8 @@ export const cases = [
     touch: true,
     widths: [390],
     checks: [
-      { target: INLINE, pseudo: '::after', props: ['top', 'left', 'transform'], golden: 'the 44px target centered on the link, wider than it' },
-      { target: INLINE, pseudo: '::after', props: ['width', 'height'], golden: 'a touch screen\'s target 44px square at least, the HIG\'s 44pt (crashcart\'s HIG pass: its See All and Open issue links, 13px tall, were the only controls without one)' },
+      { target: LINK, pseudo: '::after', props: ['top', 'left', 'transform'], golden: 'the 44px target centered on the link, wider than it' },
+      { target: LINK, pseudo: '::after', props: ['width', 'height'], golden: 'a touch screen\'s target 44px square at least, the HIG\'s 44pt (crashcart\'s HIG pass: its See All and Open issue links, 13px tall, were the only controls without one)' },
     ],
   },
   {
@@ -37,7 +29,7 @@ export const cases = [
     html: `<div class="cui-dark">${ex('link')}</div>`,
     widths: [1200],
     checks: [
-      { target: INLINE, props: ['color'], golden: 'the dark side derived (tokens.css, decision 18)' },
+      { target: LINK, props: ['color'], golden: 'the dark side derived (tokens.css, decision 18)' },
     ],
   },
 ];

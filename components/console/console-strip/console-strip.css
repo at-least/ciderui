@@ -98,7 +98,7 @@
     }
 
     /* @invariant: a character sheet: its face is at its left */
-    &[data-variant="leading"] > img {
+    &[data-crop="leading"] > img {
       object-position: left;
     }
   }

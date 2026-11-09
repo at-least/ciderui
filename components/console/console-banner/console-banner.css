@@ -3,7 +3,8 @@
     --cui-console-banner-fill: var(--cui-c-console-neutral-fill-quaternary);
     --cui-console-banner-icon: var(--cui-c-console-neutral-label-secondary);
     --cui-console-link-color: var(--cui-c-console-brand-label-on-tint);
-    --cui-console-link-color-disabled: var(--cui-c-console-brand-label-on-tint-secondary);
+    /* @invariant: a banner's links sit in its sentences, told apart by more than color (WCAG 1.4.1) */
+    --cui-console-link-line: underline;
 
     display: flex;
     align-items: flex-start;

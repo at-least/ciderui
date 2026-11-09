@@ -4,6 +4,9 @@ const ex = examples(import.meta.url);
 const T = 'component-Tabs';
 const V = `${T}-variant-colorRole-brand-variant`;
 const tab = (variant, effect, active, prop) => `${V}-${variant}-anatomy-Tab-variant-effect-${effect}-isActive-${active}-${prop}`;
+// @external: App Store Connect's version page draws its underlined tabs' labels gray, rgb(51, 51, 51)
+// (asc version: tab.button.text), the current one marked by its rule alone: the toolkit's neutral tab
+const underlined = (effect, active, prop) => `${T}-variant-colorRole-neutral-variant-underlined-anatomy-Tab-variant-effect-${effect}-isActive-${active}-${prop}`;
 const size = (s) => [`${T}-variant-controlSize-${s}-anatomy-Tab-height`, `${T}-variant-controlSize-${s}-anatomy-Tab-minWidth`, `${T}-variant-controlSize-${s}-anatomy-Tab-gap`, `${T}-variant-controlSize-${s}-textStyle-fontSize`, `${T}-variant-controlSize-${s}-textStyle-lineHeight`, `${T}-variant-controlSize-${s}-textStyle-fontWeight`];
 const SIZE = ['box-height', 'min-width', 'column-gap', 'font-size', 'line-height', 'font-weight'];
 const FITTED = 'fitted to 4.5:1 (tokens.css, decision 21)';
@@ -19,14 +22,17 @@ export const cases = [
     widths: [1600, 1200, 390],
     checks: [
       { target: REST, props: SIZE, tb: size('md') },
-      { target: REST, props: ['color', 'padding-left', 'padding-right'], tb: [tab('underlined', 'default', 'false', 'color'), `${T}-underlinedPaddingInline`, `${T}-underlinedPaddingInline`] },
-      { target: REST, props: ['color'], state: 'active', golden: 'pressed, the plain button\'s pressed blue (tokens.css\'s brand label pressed), where the toolkit\'s tab presses to its gray button\'s, oklch(52.2% 0.156 251.8), a hair lighter: one pressed blue for a label' },
-      { target: REST, props: ['color'], state: 'hover', golden: `hovered, the brand's label a step darker, blue-600 (the button's hovered blue): the toolkit's lighter one is 4.1:1 on white, ${FITTED}` },
+      { target: REST, props: ['color', 'padding-left', 'padding-right'], tb: [underlined('default', 'false', 'color'), `${T}-underlinedPaddingInline`, `${T}-underlinedPaddingInline`] },
+      { target: REST, props: ['border-bottom-width', 'border-bottom-style', 'border-bottom-color'], asc: ['version', 'tab.button'] },
+      { target: REST, props: ['color'], state: 'active', tb: [underlined('press', 'false', 'color')] },
+      { target: REST, props: ['color'], state: 'hover', golden: 'hovered, the gray button\'s hovered label (tokens.css\'s neutral label hovered), where the toolkit\'s tab hovers to oklch(23.8% 0 0 / 0.85): one hovered gray for a label' },
       { target: '.cui-console-tabs', props: ['column-gap', 'border-bottom-width', 'border-bottom-style', 'border-bottom-color'], tb: [`${T}-variant-controlSize-md-variant-underlined-gap`, `${T}-underlinedFullWidthKeyline-width`, `${T}-underlinedFullWidthKeyline-style`, `${T}-underlinedFullWidthKeyline-color`] },
-      { target: '[aria-current="page"]', props: ['color', 'border-bottom-width'], tb: [tab('underlined', 'default', 'true', 'color'), `${T}-underlinedActiveBorderBottomWidth`] },
-      { target: '[aria-current="page"]', props: ['border-bottom-color', 'border-bottom-style'], golden: 'the current tab\'s rule in its label\'s color' },
-      { target: '[aria-current="page"]', props: ['color'], state: 'hover', tb: [tab('underlined', 'hover', 'true', 'color')] },
-      { target: '[aria-disabled="true"]', props: ['color'], tb: [tab('underlined', 'disabled', 'false', 'color')] },
+      { target: '[aria-current="page"]', props: ['color', 'border-bottom-width'], tb: [underlined('default', 'true', 'color'), `${T}-underlinedActiveBorderBottomWidth`] },
+      { target: '[aria-current="page"]', props: ['border-bottom-width', 'border-bottom-style'], asc: ['version', 'tab.button.current'] },
+      { target: '[aria-current="page"]', props: ['border-bottom-color'], golden: 'the current tab\'s rule in its label\'s color, as App Store Connect\'s (asc version: tab.button.current, its label\'s rgb(51, 51, 51))' },
+      { target: '[aria-current="page"]', props: ['color'], state: 'hover', tb: [underlined('hover', 'true', 'color')] },
+      { target: '[aria-current="page"]', props: ['color'], state: 'active', tb: [underlined('press', 'true', 'color')] },
+      { target: '[aria-disabled="true"]', props: ['color'], tb: [underlined('disabled', 'false', 'color')] },
       { target: '[aria-disabled="true"]', props: ['cursor'], golden: 'no pointer over a disabled tab' },
     ],
   },

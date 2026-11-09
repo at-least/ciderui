@@ -5,8 +5,6 @@ const B = 'component-Banner';
 const D = `${B}-anatomy`;
 const BANNER = '.cui-console-banner';
 const COLORS = [['info'], ['success'], ['error']];
-const DISABLED = '<div class="cui-console-banner" data-color="info" role="status"><div><div class="cui-console-banner-body">Symbols upload <a class="cui-console-link" data-variant="text" aria-disabled="true">after the build is processed</a>.</div></div></div>';
-const LINK_DISABLED = 'disabled, the banner\'s blue at the toolkit\'s 0.60 (--cui-c-console-brand-label-on-tint-secondary, the toolkit\'s disabled inline link\'s alpha): one blue for a banner\'s links, not the console link\'s own disabled blue';
 const BODY = ['fontSize', 'lineHeight', 'fontWeight'].map((p) => `typography-textStyle-bodyRegular-${p}`);
 const LINK = 'a link in its sentence in the brand\'s blue fitted to the tints (--cui-c-console-brand-label-on-tint, held to 4.5:1 on each by test/tokens.mjs), not the console link\'s own';
 
@@ -48,15 +46,7 @@ export const cases = [
       ...COLORS.map(([c]) => ({ target: `${BANNER}[data-color="${c}"]`, props: ['background-color'], tb: [`${B}-variant-colorRole-${c}-variant-tinted-backgroundColor`] })),
       ...COLORS.map(([c]) => ({ target: `${BANNER}[data-color="${c}"] .cui-console-banner-icon`, props: ['color'], golden: `its icon in the fitted ${c} label (tokens.css, decision 21)` })),
       { target: `${BANNER}[data-color="info"] .cui-console-link`, props: ['color'], golden: LINK },
-    ],
-  },
-  {
-    name: 'banner disabled link',
-    html: `${DISABLED}<div class="cui-dark">${DISABLED}</div>`,
-    widths: [1200],
-    checks: [
-      { target: `${BANNER} .cui-console-link`, props: ['color'], golden: LINK_DISABLED },
-      { target: `.cui-dark ${BANNER} .cui-console-link`, props: ['color'], golden: LINK_DISABLED },
+      { target: `${BANNER}[data-color="info"] .cui-console-link`, props: ['text-decoration-line'], golden: 'a link in its sentence underlined, not told apart by color alone (WCAG 1.4.1)' },
     ],
   },
   {

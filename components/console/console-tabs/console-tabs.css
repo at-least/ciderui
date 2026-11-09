@@ -36,9 +36,9 @@
     --cui-console-tab-fill: transparent;
     --cui-console-tab-fill-hover: transparent;
     --cui-console-tab-fill-press: transparent;
-    --cui-console-tab-label: var(--cui-c-console-brand-label-primary);
-    --cui-console-tab-label-hover: var(--cui-c-console-brand-label-hover);
-    --cui-console-tab-label-press: var(--cui-c-console-brand-label-press);
+    --cui-console-tab-label: var(--cui-c-console-neutral-label-primary);
+    --cui-console-tab-label-hover: var(--cui-c-console-neutral-label-hover);
+    --cui-console-tab-label-press: var(--cui-console-tab-label);
 
     display: inline-flex;
     align-items: center;
@@ -73,14 +73,13 @@
     }
 
     &:is([aria-current]:not([aria-current="false"])) {
-      --cui-console-tab-label-hover: var(--cui-c-console-brand-label-primary);
-      --cui-console-tab-label-press: var(--cui-c-console-brand-label-primary);
+      --cui-console-tab-label-hover: var(--cui-console-tab-label);
 
       border-bottom-color: currentColor;
     }
 
     &[aria-disabled="true"] {
-      color: var(--cui-c-console-brand-label-secondary);
+      color: var(--cui-c-console-neutral-label-disabled);
       background-color: var(--cui-console-tab-fill);
       cursor: default;
     }
@@ -90,6 +89,8 @@
       --cui-console-tab-fill-hover: var(--cui-c-console-gray-fill-hover);
       --cui-console-tab-fill-press: var(--cui-c-console-gray-fill-press);
       --cui-console-tab-label: var(--cui-c-console-brand-label-on-fill);
+      --cui-console-tab-label-hover: var(--cui-c-console-brand-label-hover);
+      --cui-console-tab-label-press: var(--cui-c-console-brand-label-press);
 
       padding-inline: 12px;
       border-bottom: 0;

@@ -8,34 +8,34 @@
   }
 
   .cui-console-chart-svg {
+    /* @invariant: positioned after the grid, so its marks paint over the gridlines */
+    position: relative;
     width: 100%;
     overflow: visible;
   }
 
   .cui-console-chart-grid {
+    /* @invariant: laid over the plot, the gridlines' y the plot's height's share */
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     stroke: var(--cui-c-console-neutral-border-tertiary);
     stroke-width: 1px;
-    vector-effect: non-scaling-stroke;
-  }
-
-  .cui-console-chart-mark,
-  .cui-console-chart-rest {
-    stroke: var(--cui-console-chart-ground);
-    stroke-width: 1px;
-    vector-effect: non-scaling-stroke;
+    /* @invariant: the top gridline at y 0, its stroke half above the plot */
+    overflow: visible;
+    pointer-events: none;
   }
 
   .cui-console-chart-mark {
+    stroke: var(--cui-console-chart-ground);
+    stroke-width: 1px;
+    vector-effect: non-scaling-stroke;
     fill: var(--cui-c-console-brand-accent-primary);
   }
 
-  .cui-console-chart-rest {
-    fill: var(--cui-c-console-neutral-label-secondary);
-  }
-
   @media (hover: hover) {
-    .cui-console-chart-bar:hover .cui-console-chart-mark,
-    .cui-console-chart-bar:hover .cui-console-chart-rest {
+    .cui-console-chart-bar:hover .cui-console-chart-mark {
       opacity: 0.85;
     }
   }
