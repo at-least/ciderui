@@ -11,18 +11,18 @@ import (
 
 func TestBadgeRendersTheExample(t *testing.T) {
 	badges := g.Group{
-		console.ConsoleBadge{Label: "Unhandled", Color: console.ConsoleColorNeutral, Class: ""},
-		console.ConsoleBadge{Label: "Info", Color: console.ConsoleColorInfo, Class: ""},
-		console.ConsoleBadge{Label: "Resolved", Color: console.ConsoleColorSuccess, Class: ""},
-		console.ConsoleBadge{Label: "Warning", Color: console.ConsoleColorWarning, Class: ""},
-		console.ConsoleBadge{Label: "Fatal", Color: console.ConsoleColorError, Class: ""},
+		console.ConsoleBadge{Label: "Unhandled", Color: console.ConsoleColorNeutral},
+		console.ConsoleBadge{Label: "Info", Color: console.ConsoleColorInfo},
+		console.ConsoleBadge{Label: "Resolved", Color: console.ConsoleColorSuccess},
+		console.ConsoleBadge{Label: "Warning", Color: console.ConsoleColorWarning},
+		console.ConsoleBadge{Label: "Fatal", Color: console.ConsoleColorError},
 	}
 	example.Check(t, h.P(h.Class("flex flex-wrap gap-2"), badges), "console/console-badge/examples/badges.html")
 }
 
 func TestBadgePanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleBadge {
-		return console.ConsoleBadge{Label: "x", Color: console.ConsoleColorNeutral, Class: ""}
+		return console.ConsoleBadge{Label: "x", Color: console.ConsoleColorNeutral}
 	}, []example.Break[console.ConsoleBadge]{
 		{Want: "console.ConsoleBadge needs a Label", Change: func(p *console.ConsoleBadge) { p.Label = "" }},
 	})

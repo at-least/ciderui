@@ -13,7 +13,6 @@
     min-height: 44px;
     padding: 0.4375rem 1rem;
     color: var(--cui-c-console-neutral-label-primary);
-    text-decoration: none;
 
     & + &::before {
       content: "";
@@ -28,22 +27,6 @@
       @media (forced-colors: active) {
         background-color: CanvasText;
       }
-    }
-  }
-
-  a.cui-console-list-item {
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--cui-c-console-neutral-fill-quaternary);
-      }
-    }
-
-    &:active {
-      background-color: var(--cui-c-console-neutral-fill-quaternary);
-    }
-
-    &:focus-visible {
-      outline-offset: -2px;
     }
   }
 

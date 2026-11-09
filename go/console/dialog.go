@@ -3,7 +3,6 @@ package console
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/internal/class"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -16,7 +15,6 @@ type ConsoleDialog struct {
 	Title g.Node
 	// Attrs: the <dialog>'s other attributes (aria-describedby); nil for none.
 	Attrs g.Node
-	Class string
 	// Children: what it asks, then its buttons in a
 	// <form method="dialog" class="cui-console-dialog-actions"> or the page's
 	// own form.
@@ -31,7 +29,7 @@ func (d ConsoleDialog) Render(w io.Writer) error {
 		panic("console.ConsoleDialog needs a Title")
 	}
 	titleID := d.ID + "-title"
-	return h.Dialog(class.Root("cui-console-dialog", d.Class), h.ID(d.ID), h.Aria("labelledby", titleID), d.Attrs,
+	return h.Dialog(h.Class("cui-console-dialog"), h.ID(d.ID), h.Aria("labelledby", titleID), d.Attrs,
 		h.H2(h.Class("cui-console-dialog-title"), h.ID(titleID), d.Title),
 		d.Children,
 	).Render(w)

@@ -13,6 +13,16 @@ export const cases = [
       { target: `${S} > :first-child`, props: ['flex-grow', 'min-width'], golden: 'the title takes the room, the controls at the row\'s end (App Store Connect\'s title 941px of 1105px)' },
       { target: `${S} h1`, props: ['font-size', 'line-height'], golden: 'the title\'s type its own class\'s (cui-console-h2), none from the header: App Store Connect\'s section heading is its h4, 18px on 22px' },
       { target: `${S} > .cui-console-tabs`, props: ['box-y'], golden: 'at 1200px on the title\'s row; at 390px under it (the row wraps; App Store Connect\'s does not)' },
+      { target: `${S}-detail`, props: ['color', 'margin-top', 'max-width'], golden: 'a page\'s line under its title: the secondary label, 8px under the title, a readable measure (the shape crashcart and totality wrote with utilities)' },
+    ],
+  },
+  {
+    name: 'section header section',
+    html: ex('section'),
+    widths: [1200],
+    checks: [
+      { target: `${S} h2`, props: ['font-size', 'line-height', 'font-weight'], golden: 'a section\'s title its own class\'s (cui-console-h4-emph): App Store Connect\'s section heading, 18px on 22px' },
+      { target: `${S}-detail`, props: ['color', 'margin-top'], golden: 'a section\'s line under its title: the secondary label, 4px under its smaller title' },
     ],
   },
 ];

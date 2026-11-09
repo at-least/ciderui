@@ -14,12 +14,12 @@ func TestTabsRendersTheExamples(t *testing.T) {
 		{Label: "Releases", Href: "#releases", Current: false},
 		{Label: "Jobs", Href: "", Current: false},
 	}
-	example.Check(t, console.ConsoleTabs{AriaLabel: "Project", Tabs: underlined, Class: ""}, "console/console-tabs/examples/tabs.html")
+	example.Check(t, console.ConsoleTabs{AriaLabel: "Project", Tabs: underlined}, "console/console-tabs/examples/tabs.html")
 }
 
 func TestTabsPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleTabs {
-		return console.ConsoleTabs{AriaLabel: "X", Tabs: []console.ConsoleTab{{Label: "A", Href: "#a", Current: true}, {Label: "B", Href: "#b", Current: false}}, Class: ""}
+		return console.ConsoleTabs{AriaLabel: "X", Tabs: []console.ConsoleTab{{Label: "A", Href: "#a", Current: true}, {Label: "B", Href: "#b", Current: false}}}
 	}, []example.Break[console.ConsoleTabs]{
 		{Want: "console.ConsoleTabs needs an AriaLabel", Change: func(p *console.ConsoleTabs) { p.AriaLabel = "" }},
 		{Want: "console.ConsoleTabs has one current tab at most", Change: func(p *console.ConsoleTabs) { p.Tabs[1].Current = true }},

@@ -26,7 +26,6 @@ func jobsTable() console.ConsoleTable {
 			{Cells: []g.Node{link("#mailer", "report-mailer"), g.Text("17 3 * * *"), g.Text("9"), g.Text("Nov 2")}},
 		},
 		BodyAttrs: nil,
-		Class:     "",
 	}
 }
 

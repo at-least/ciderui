@@ -12,7 +12,7 @@ import (
 
 func TestMenuRendersTheExample(t *testing.T) {
 	item := func(href, label string, icon lucide.Icon, current bool) console.ConsoleMenuItem {
-		return console.ConsoleMenuItem{Href: href, Label: label, Icon: icon, Current: current, Class: ""}
+		return console.ConsoleMenuItem{Href: href, Label: label, Icon: icon, Current: current}
 	}
 	menu := h.Nav(h.Class("cui-console-menu"), h.Aria("label", "Analytics"),
 		item("#overview", "Overview", lucide.LayoutGrid, true),
@@ -27,7 +27,7 @@ func TestMenuRendersTheExample(t *testing.T) {
 }
 
 func choiceMenu() console.ConsoleChoiceMenu {
-	return console.ConsoleChoiceMenu{ID: "subtitles", Class: "", Columns: []console.ConsoleChoiceColumn{
+	return console.ConsoleChoiceMenu{ID: "subtitles", Columns: []console.ConsoleChoiceColumn{
 		{Name: "subtitles", Title: "Subtitles", Choices: []console.ConsoleChoice{
 			{Label: "Off", Value: "off", Lang: "", Checked: false},
 			{Label: "English", Value: "en", Lang: "en", Checked: true},
@@ -61,14 +61,14 @@ func TestChoiceMenuRendersTheExample(t *testing.T) {
 
 // not the link a current item is: no aria-current on what cannot be followed
 func TestMenuItemWithNoHrefIsNotAvailable(t *testing.T) {
-	got := example.Render(console.ConsoleMenuItem{Href: "", Label: "x", Icon: lucide.Icon{}, Current: true, Class: ""})
+	got := example.Render(console.ConsoleMenuItem{Href: "", Label: "x", Icon: lucide.Icon{}, Current: true})
 	if want := `<a class="cui-console-menu-item" aria-disabled="true"><span class="cui-console-menu-label">x</span></a>`; got != want {
 		t.Errorf("an item with no Href is a link or marked current, not unavailable:\n got: %s\nwant: %s", got, want)
 	}
 }
 
 func validMenuItem() console.ConsoleMenuItem {
-	return console.ConsoleMenuItem{Href: "#x", Label: "x", Icon: lucide.Icon{}, Current: false, Class: ""}
+	return console.ConsoleMenuItem{Href: "#x", Label: "x", Icon: lucide.Icon{}, Current: false}
 }
 
 func TestMenuItemPanics(t *testing.T) {

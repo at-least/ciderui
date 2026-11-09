@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/at-least/ciderui/go/internal/class"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -18,7 +17,6 @@ type ConsoleTable struct {
 	Rows    []ConsoleTableRow
 	// BodyAttrs: the <tbody>'s attributes (an id a swap targets); nil for none.
 	BodyAttrs g.Node
-	Class     string
 }
 
 type ConsoleTableColumn struct {
@@ -40,7 +38,7 @@ func (t ConsoleTable) Render(w io.Writer) error {
 	if len(t.Columns) == 0 {
 		panic("console.ConsoleTable needs a ConsoleTableColumn")
 	}
-	return h.Table(class.Root("cui-console-table", t.Class), g.Attr("data-stack"),
+	return h.Table(h.Class("cui-console-table"), g.Attr("data-stack"),
 		h.THead(h.Tr(g.Map(t.Columns, func(c ConsoleTableColumn) g.Node {
 			if c.Label == "" {
 				panic("console.ConsoleTableColumn needs a Label")

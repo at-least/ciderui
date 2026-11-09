@@ -3,7 +3,6 @@ package console
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/internal/class"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -15,7 +14,6 @@ type ConsoleStatus struct {
 	Color ConsoleColor
 	// Detail: the line under the word ("200 · 410 ms"); "" for none.
 	Detail string
-	Class  string
 }
 
 func (s ConsoleStatus) Render(w io.Writer) error {
@@ -23,7 +21,7 @@ func (s ConsoleStatus) Render(w io.Writer) error {
 		panic("console.ConsoleStatus needs a Label")
 	}
 	return g.Group{
-		h.Span(class.Root("cui-console-status", s.Class), optionalAttr("data-color", s.Color.value),
+		h.Span(h.Class("cui-console-status"), optionalAttr("data-color", s.Color.value),
 			h.Span(h.Class("cui-console-status-mark")),
 			g.Text(s.Label),
 		),

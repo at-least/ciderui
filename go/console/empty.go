@@ -3,7 +3,6 @@ package console
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/internal/class"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -24,8 +23,7 @@ type ConsoleEmpty struct {
 	Icon  lucide.Icon
 	Title string
 	// Body says what to do next.
-	Body  string
-	Class string
+	Body string
 }
 
 func (e ConsoleEmpty) Render(w io.Writer) error {
@@ -35,7 +33,7 @@ func (e ConsoleEmpty) Render(w io.Writer) error {
 	if e.Title == "" {
 		panic("console.ConsoleEmpty needs a Title")
 	}
-	return h.Div(class.Root("cui-console-empty", e.Class), h.Data("size", e.Size.value),
+	return h.Div(h.Class("cui-console-empty"), h.Data("size", e.Size.value),
 		iconPart(e.Icon, "cui-console-empty-icon"),
 		h.P(h.Class("cui-console-empty-title"), g.Text(e.Title)),
 		g.If(e.Body != "", h.P(h.Class("cui-console-empty-body"), g.Text(e.Body))),

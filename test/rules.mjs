@@ -33,10 +33,8 @@ const hoverOutsideItsQuery = (text) => {
 for (const set of ['site', 'console']) check(`${set}: every :hover sits inside (hover: hover) (rule 5)`, hoverOutsideItsQuery(shipped(set)).join(' | '), '');
 
 // @invariant: rule 9's exceptions, each read in its part's test: a text field draws its
-// edge or halo in the ring's place; the others move the one ring in, where a
-// scroller or their edge would clip it
+// edge or halo in the ring's place
 const NO_RING = ['cui-console-field-input', 'cui-field-input'];
-const RING_MOVED = ['cui-console-list-item'];
 // @invariant: rule 10 is a pointer's color change; these change with a panel opening, a
 // field's label rising or its text typed, each read in its part's test
 const OWN_MOTION = ['.cui-field-label'];
@@ -73,7 +71,6 @@ const readTextAndMotion = ([set, tracking, ownMotion]) => {
 };
 
 const noRingUsed = new Set();
-const ringMovedUsed = new Set();
 const motionUsed = new Set();
 let examples = 0;
 let controls = 0;
@@ -103,14 +100,11 @@ for (const part of COMPONENTS) {
     for (const [i, own] of classes.entries()) {
       controls++;
       const noRing = NO_RING.filter((c) => own.includes(c));
-      const moved = RING_MOVED.filter((c) => own.includes(c));
       // @trap: both, as a keyboard's focus is: a field's :focus sets the ring aside
       const ring = await page.read(`[data-cui-control="${i}"]`, OUTLINE, { state: ['focus', 'focus-visible'] });
       const off = OUTLINE.filter((prop) => ring[prop] !== ref('home', 'button', 1200, prop, 'focus-visible'));
       if (noRing.length) {
         if (off.length) noRing.forEach((c) => noRingUsed.add(c));
-      } else if (moved.length && off.join() === 'outline-offset') {
-        moved.forEach((c) => ringMovedUsed.add(c));
       } else {
         check(`${name}: control ${i}'s focus is base.css's one ring, apple.com's (rule 9)`, off.map((prop) => `${prop} ${ring[prop]}`).join(' '), '');
       }
@@ -121,7 +115,6 @@ await pages.site.close();
 await pages.console.close();
 // @invariant: an exception nothing needs is a part let off for nothing
 check('every part that sets the ring aside still does', NO_RING.filter((c) => !noRingUsed.has(c)).join(' '), '');
-check('every part that moves the ring still does', RING_MOVED.filter((c) => !ringMovedUsed.has(c)).join(' '), '');
 check('every part with its own color motion still has it', OWN_MOTION.filter((s) => !motionUsed.has(s)).join(' '), '');
 // @trap: a rule read off nothing would pass having held nothing
 check(`the rules read every example (${examples}), its controls (${controls}) and its text (${texts})`, examples > 0 && controls > 0 && texts > 0, true);

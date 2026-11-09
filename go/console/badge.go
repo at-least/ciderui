@@ -3,7 +3,6 @@ package console
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/internal/class"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -24,14 +23,13 @@ var (
 type ConsoleBadge struct {
 	Label string
 	Color ConsoleColor
-	Class string
 }
 
 func (b ConsoleBadge) Render(w io.Writer) error {
 	if b.Label == "" {
 		panic("console.ConsoleBadge needs a Label")
 	}
-	return h.Span(class.Root("cui-console-badge", b.Class),
+	return h.Span(h.Class("cui-console-badge"),
 		optionalAttr("data-color", b.Color.value),
 		g.Text(b.Label),
 	).Render(w)

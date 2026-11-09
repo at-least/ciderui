@@ -9,11 +9,11 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleSelect boxes the page's own <select>. A text field is the page's own
-// <input> or <textarea> with cui-console-field-input and needs no type here.
+// ConsoleSelect boxes the page's own <select>: a [ConsoleField]'s Control, or
+// a <select class="cui-console-field-input"> of the page's outside one. A text
+// field is the page's own <input> or <textarea> and needs no type here.
 type ConsoleSelect struct {
-	Class string
-	// Children: <select class="cui-console-field-input">.
+	Class    string
 	Children g.Node
 }
 
@@ -25,9 +25,9 @@ func (s ConsoleSelect) Render(w io.Writer) error {
 }
 
 // ConsoleField is a control under its label, and an error under it. Control
-// gets what it must carry (its id, what describes it, whether it is invalid) to
-// write on the page's own <input>, <textarea> or <select>: the page cannot
-// forget them or get an id wrong.
+// gets what it must carry (its class, its id, what describes it, whether it is
+// invalid) to write on the page's own <input>, <textarea> or <select>: the page
+// cannot forget them or get an id wrong.
 type ConsoleField struct {
 	ID    string
 	Label string
@@ -50,6 +50,7 @@ func (f ConsoleField) Render(w io.Writer) error {
 	return h.Div(h.Class("cui-console-field"),
 		h.Label(h.Class("cui-console-field-label"), h.For(f.ID), g.Text(f.Label)),
 		f.Control(g.Group{
+			h.Class("cui-console-field-input"),
 			h.ID(f.ID),
 			g.If(f.Error != "", g.Group{h.Aria("invalid", "true"), h.Aria("describedby", errorID)}),
 		}),

@@ -4,7 +4,6 @@ import (
 	"io"
 	"strconv"
 
-	"github.com/at-least/ciderui/go/internal/class"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -17,7 +16,6 @@ type ConsoleMenuItem struct {
 	Label   string
 	Icon    lucide.Icon
 	Current bool
-	Class   string
 }
 
 func (m ConsoleMenuItem) Render(w io.Writer) error {
@@ -29,9 +27,9 @@ func (m ConsoleMenuItem) Render(w io.Writer) error {
 		h.Span(h.Class("cui-console-menu-label"), g.Text(m.Label)),
 	}
 	if m.Href == "" {
-		return h.A(class.Root("cui-console-menu-item", m.Class), h.Aria("disabled", "true"), content).Render(w)
+		return h.A(h.Class("cui-console-menu-item"), h.Aria("disabled", "true"), content).Render(w)
 	}
-	return h.A(class.Root("cui-console-menu-item", m.Class), h.Href(m.Href), g.If(m.Current, h.Aria("current", "page")), content).Render(w)
+	return h.A(h.Class("cui-console-menu-item"), h.Href(m.Href), g.If(m.Current, h.Aria("current", "page")), content).Render(w)
 }
 
 // ConsoleChoiceMenu is a popover of choices in columns side by side, each its
@@ -44,7 +42,6 @@ type ConsoleChoiceMenu struct {
 	// ID is the popover's id, the popovertarget of the button that opens it.
 	ID      string
 	Columns []ConsoleChoiceColumn
-	Class   string
 }
 
 type ConsoleChoiceColumn struct {
@@ -95,7 +92,7 @@ func (m ConsoleChoiceMenu) Render(w io.Writer) error {
 			panic("console.ConsoleChoiceColumn needs one choice checked")
 		}
 	}
-	return h.Div(class.Root("cui-console-popover", m.Class), h.ID(m.ID), h.Popover(),
+	return h.Div(h.Class("cui-console-popover"), h.ID(m.ID), h.Popover(),
 		h.Div(h.Class("cui-console-menu-columns"),
 			g.Map(m.Columns, func(c ConsoleChoiceColumn) g.Node {
 				title := m.ID + "-" + c.Name + "-title"

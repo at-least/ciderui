@@ -11,13 +11,13 @@ import (
 
 func input(rest ...g.Node) func(g.Node) g.Node {
 	return func(attrs g.Node) g.Node {
-		return h.Input(h.Class("cui-console-field-input"), attrs, g.Group(rest))
+		return h.Input(attrs, g.Group(rest))
 	}
 }
 
 func TestSelectRendersTheExample(t *testing.T) {
 	field := console.ConsoleField{ID: "level", Label: "Level", Error: "", Control: func(attrs g.Node) g.Node {
-		return console.ConsoleSelect{Class: "", Children: h.Select(h.Class("cui-console-field-input"), attrs, h.Name("level"),
+		return console.ConsoleSelect{Class: "", Children: h.Select(attrs, h.Name("level"),
 			h.Option(g.Text("Any Level")),
 			h.Option(g.Text("Fatal")),
 			h.Option(g.Text("Error")),
@@ -33,7 +33,7 @@ func TestFieldRendersTheFieldsExample(t *testing.T) {
 		console.ConsoleField{ID: "url", Label: "Webhook URL", Error: "Enter a URL that starts with https://.", Control: input(h.Value("htp:/example"))},
 		console.ConsoleField{ID: "dsn", Label: "DSN", Error: "", Control: input(h.Value("https://key@crashcart.test/1"), h.Disabled())},
 		console.ConsoleField{ID: "note", Label: "Note", Error: "", Control: func(attrs g.Node) g.Node {
-			return h.Textarea(h.Class("cui-console-field-input"), attrs, h.Rows("3"), h.Placeholder("What did you decide?"))
+			return h.Textarea(attrs, h.Rows("3"), h.Placeholder("What did you decide?"))
 		}},
 	)
 	example.Check(t, fields, "console/console-field/examples/fields.html")
@@ -46,5 +46,6 @@ func TestFieldPanics(t *testing.T) {
 		{Want: "console.ConsoleField needs an ID", Change: func(p *console.ConsoleField) { p.ID = "" }},
 		{Want: "console.ConsoleField needs a Label", Change: func(p *console.ConsoleField) { p.Label = "" }},
 		{Want: "console.ConsoleField needs a Control", Change: func(p *console.ConsoleField) { p.Control = nil }},
+		{Want: `example.Render: class on <input class="cui-console-field-input">: written twice, and the browser keeps the first`, Change: func(p *console.ConsoleField) { p.Control = input(h.Class("cui-console-field-input")) }},
 	})
 }

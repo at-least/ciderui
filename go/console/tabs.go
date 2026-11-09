@@ -3,7 +3,6 @@ package console
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/internal/class"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -15,7 +14,6 @@ import (
 type ConsoleTabs struct {
 	AriaLabel string
 	Tabs      []ConsoleTab
-	Class     string
 }
 
 type ConsoleTab struct {
@@ -47,5 +45,5 @@ func (t ConsoleTabs) Render(w io.Writer) error {
 		}
 		return h.A(h.Class("cui-console-tab"), h.Href(tab.Href), g.If(tab.Current, h.Aria("current", "page")), g.Text(tab.Label))
 	})
-	return h.Nav(class.Root("cui-console-tabs", t.Class), h.Aria("label", t.AriaLabel), tabs).Render(w)
+	return h.Nav(h.Class("cui-console-tabs"), h.Aria("label", t.AriaLabel), tabs).Render(w)
 }

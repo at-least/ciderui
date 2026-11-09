@@ -4,7 +4,6 @@ import (
 	"io"
 	"strings"
 
-	"github.com/at-least/ciderui/go/internal/class"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -12,10 +11,8 @@ import (
 // ConsoleListItem is a row of a grouped list; the group,
 // <div class="cui-console-list">, is the page's own.
 type ConsoleListItem struct {
-	Href   string
 	Label  string
 	Detail string
-	Class  string
 	// Children: the row's controls or lines, after its label.
 	Children g.Node
 }
@@ -37,9 +34,5 @@ func (l ConsoleListItem) Render(w io.Writer) error {
 		g.If(l.Detail != "", h.Span(h.Class("cui-console-list-detail"), g.Text(l.Detail))),
 		g.Raw(children.String()),
 	}
-	attrs := class.Root("cui-console-list-item", l.Class)
-	if l.Href != "" {
-		return h.A(attrs, h.Href(l.Href), content).Render(w)
-	}
-	return h.Div(attrs, content).Render(w)
+	return h.Div(h.Class("cui-console-list-item"), content).Render(w)
 }
