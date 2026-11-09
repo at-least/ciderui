@@ -19,7 +19,7 @@ import (
 func TestReadmesGoExampleCompiles(t *testing.T) {
 	types := map[string]any{
 		"console.ConsolePage": console.ConsolePage{Lang: "", Title: "", Head: nil, Class: "", SkipLabel: "", Children: nil},
-		"site.Page":           site.Page{Lang: "", Title: "", Head: nil, Class: "", SkipLabel: "", Children: nil},
+		"site.Page":           site.Page{Lang: "", Title: "", Head: nil, SkipLabel: "", Children: nil},
 	}
 	raw, err := os.ReadFile("README.md")
 	if err != nil {

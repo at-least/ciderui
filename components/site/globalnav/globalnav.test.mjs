@@ -8,7 +8,7 @@ const DESKTOP = [1600, 1200, 900];
 const FLEX = ['display', 'flex-direction', 'flex-wrap', 'align-items', 'justify-content'];
 const INLINE = ['padding-left', 'padding-right'];
 const LIST = '.cui-globalnav-list';
-const LOGO = '.cui-globalnav-logo';
+const WORDMARK = '.cui-globalnav-wordmark';
 const BUTTON = '.cui-globalnav-menubutton';
 const CLOSE = '.cui-globalnav-closebutton';
 const LINK = `${LIST} > li:nth-child(3) > .cui-globalnav-link`;
@@ -20,6 +20,12 @@ const TRIGGER_AT = { 1600: 900, 1200: 900 };
 // @external: apple.com's phone bar draws its ground on its content, ciderui's on the
 // nav at every width: the same ground, apple.com's at 900px
 const GROUND_AT = { 390: 900 };
+const TYPE = ['font-size', 'line-height', 'font-weight', 'letter-spacing'];
+const NAME = 'the site\'s name in the kit\'s type, cui-body-reduced\'s at 600: apple.com\'s bar draws its logo, no name (the one site\'s bar wrote this type)';
+// @trap: a page longer than the window, so the bar has somewhere to stay
+const SCROLLED = `${NAV}<div style="height: 2000px"></div><p id="target">Target</p><div style="height: 2000px"></div><a class="to" href="#target">To</a>`;
+const STAYS = { target: '.cui-globalnav', props: ['position', 'top', 'z-index', 'box-top'], golden: 'the bar stays at the top as the page scrolls, over it (DESIGN.md rule 6\'s exception)' };
+const CLEAR = 'an in-page target (the skip link\'s #main) lands below the bar: the page\'s scroll padding is the bar\'s height';
 const OPEN = { click: BUTTON, widths: [390], height: 900 };
 const ROWS = 'shown with the sheet, where apple.com\'s fade in 240ms from 200ms (home:menu.row, home:menu.open\'s animations): a phone\'s menu is read at once (DESIGN.md decision 25)';
 
@@ -68,8 +74,9 @@ export const cases = [
       { target: LINK, props: ['font-size', 'line-height', 'font-weight', 'color'], apple: ['home', 'nav.link'] },
       { target: LINK, state: 'hover', props: ['color'], apple: ['home', 'nav.link', 'hover'] },
       { target: LINK, props: [...FLEX, ...INLINE, 'box-height', 'text-decoration-line'], apple: ['home', 'nav.link-box'] },
-      { target: LOGO, props: [...FLEX, ...INLINE, 'box-height', 'box-left', 'color'], apple: ['home', 'nav.logo'] },
-      { target: LOGO, state: 'hover', props: ['color'], apple: ['home', 'nav.logo', 'hover'] },
+      { target: WORDMARK, props: [...FLEX, ...INLINE, 'box-height', 'box-left', 'color'], apple: ['home', 'nav.logo'] },
+      { target: WORDMARK, state: 'hover', props: ['color'], apple: ['home', 'nav.logo', 'hover'] },
+      { target: WORDMARK, props: TYPE, golden: NAME },
       { target: BUTTON, props: ['box-height'], apple: ['home', 'nav.menutrigger'], at: TRIGGER_AT },
     ],
   },
@@ -82,7 +89,8 @@ export const cases = [
       { target: '.cui-globalnav', props: ['background-color', 'backdrop-filter'], apple: ['home', 'nav'], at: GROUND_AT },
       { target: '.cui-globalnav-content', props: ['max-width', ...INLINE], apple: ['home', 'nav.content'] },
       { target: LIST, props: ['box-height'], apple: ['home', 'nav.list'] },
-      { target: LOGO, props: [...FLEX, ...INLINE, 'box-height', 'box-left', 'color'], apple: ['home', 'nav.logo'] },
+      { target: WORDMARK, props: [...FLEX, ...INLINE, 'box-height', 'box-left', 'color'], apple: ['home', 'nav.logo'] },
+      { target: WORDMARK, props: TYPE, golden: NAME },
       { target: BUTTON, props: [...FLEX, 'box-height', 'box-left', 'color', 'opacity', 'cursor'], apple: ['home', 'nav.menutrigger'] },
       { target: BUTTON, state: 'hover', props: ['opacity'], apple: ['home', 'nav.menutrigger', 'hover'] },
       { target: BARS[0], props: ['stroke-width'], apple: ['home', 'nav.menutrigger-bread'] },
@@ -97,7 +105,7 @@ export const cases = [
     checks: [
       { target: '.cui-globalnav', props: ['user-select'], apple: ['nav-select', 'nav'] },
       { target: LIST, props: ['user-select'], apple: ['nav-select', 'list'] },
-      { target: LOGO, props: ['user-select'], apple: ['nav-select', 'logo'] },
+      { target: WORDMARK, props: ['user-select'], apple: ['nav-select', 'logo'] },
       { target: BUTTON, props: ['user-select'], apple: ['nav-select', 'menutrigger'], at: { 1600: 390 } },
     ],
   },
@@ -220,7 +228,7 @@ export const cases = [
     press: 'Tab',
     reducedMotion: 'reduce',
     checks: [
-      { target: LINK, props: ['focused'], golden: 'Tab goes from the X to the first link, not back to a button (reference/popover/): the X second in the list, after the logo' },
+      { target: LINK, props: ['focused'], golden: 'Tab goes from the X to the first link, not back to a button (reference/popover/): the X second in the list, after the wordmark' },
     ],
   },
   {
@@ -265,12 +273,18 @@ export const cases = [
     ],
   },
   {
-    name: 'sticky',
-    html: NAV.replace('class="cui-globalnav"', 'class="cui-globalnav sticky top-0 z-0"'),
+    name: 'sticky-phone',
+    html: SCROLLED,
+    widths: [390],
+    click: '.to',
+    checks: [STAYS, { target: '#target', props: ['box-top'], golden: CLEAR }],
+  },
+  {
+    name: 'sticky-bar',
+    html: SCROLLED,
     widths: [1200],
-    checks: [
-      { target: '.cui-globalnav', props: ['position', 'z-index'], golden: 'a site\'s sticky and z-index, utilities, win over its position and 9999: its place the page\'s' },
-    ],
+    click: '.to',
+    checks: [STAYS, { target: '#target', props: ['box-top'], golden: CLEAR }],
   },
 
 ];

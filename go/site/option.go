@@ -3,7 +3,6 @@ package site
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/internal/class"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -18,7 +17,6 @@ type Option struct {
 	Checked bool
 	// Attrs: nodes appended to the <input> (disabled, required); nil for none.
 	Attrs g.Node
-	Class string
 }
 
 func (o Option) Render(w io.Writer) error {
@@ -31,7 +29,7 @@ func (o Option) Render(w io.Writer) error {
 	if o.Title == "" {
 		panic("site.Option needs a Title")
 	}
-	return h.Div(class.Root("cui-option", o.Class),
+	return h.Div(h.Class("cui-option"),
 		h.Input(h.Class("cui-option-input"), h.Type("radio"), h.ID(o.ID), h.Name(o.Name), h.Value(o.Value), g.If(o.Checked, h.Checked()), o.Attrs),
 		h.Label(h.Class("cui-option-label"), h.For(o.ID),
 			h.Span(h.Class("cui-option-title"),

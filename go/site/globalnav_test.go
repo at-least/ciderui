@@ -6,15 +6,10 @@ import (
 
 	"github.com/at-least/ciderui/go/internal/example"
 	"github.com/at-least/ciderui/go/site"
-	g "maragu.dev/gomponents"
 )
 
-func globalNavLogo() g.Node {
-	return g.Raw(`<svg aria-hidden="true" width="14" height="44" viewBox="0 0 14 44"><circle cx="7" cy="22" r="6" fill="currentColor"/></svg>`)
-}
-
 func globalNav(links []site.GlobalNavLink) site.GlobalNav {
-	return site.GlobalNav{Logo: globalNavLogo(), Home: "/", LogoAriaLabel: "Cider", Links: links, AriaLabel: "Global", MenuAriaLabel: "Menu", CloseAriaLabel: "Close", Class: ""}
+	return site.GlobalNav{Wordmark: "Cider", Home: "/", Links: links, AriaLabel: "Global", MenuAriaLabel: "Menu", CloseAriaLabel: "Close"}
 }
 
 func TestGlobalNavRendersTheExamples(t *testing.T) {
@@ -33,10 +28,10 @@ func TestGlobalNavRendersTheExamples(t *testing.T) {
 }
 
 func TestGlobalNavWritesItsWordsInThePagesLanguage(t *testing.T) {
-	got := example.Render(site.GlobalNav{Logo: globalNavLogo(), Home: "/zh-tw/", LogoAriaLabel: "回首頁", Links: []site.GlobalNavLink{{Label: "商店", Href: "/store", Post: false}}, AriaLabel: "主要選單", MenuAriaLabel: "選單", CloseAriaLabel: "關閉", Class: ""})
+	got := example.Render(site.GlobalNav{Wordmark: "西打", Home: "/zh-tw/", Links: []site.GlobalNavLink{{Label: "商店", Href: "/store", Post: false}}, AriaLabel: "主要選單", MenuAriaLabel: "選單", CloseAriaLabel: "關閉"})
 	for _, want := range []string{
 		`<nav class="cui-globalnav" aria-label="主要選單">`,
-		`class="cui-globalnav-logo" href="/zh-tw/" aria-label="回首頁">`,
+		`<a class="cui-globalnav-wordmark" href="/zh-tw/">西打</a>`,
 		`class="cui-globalnav-menubutton" popovertarget="cui-globalnav-menu" aria-label="選單">`,
 		`popovertargetaction="hide" aria-label="關閉"`,
 	} {
@@ -51,7 +46,7 @@ func TestGlobalNavPanics(t *testing.T) {
 		return globalNav([]site.GlobalNavLink{{Label: "Store", Href: "/store", Post: false}})
 	}, []example.Break[site.GlobalNav]{
 		{Want: "site.GlobalNav needs a Home", Change: func(p *site.GlobalNav) { p.Home = "" }},
-		{Want: "site.GlobalNav needs a LogoAriaLabel", Change: func(p *site.GlobalNav) { p.LogoAriaLabel = "" }},
+		{Want: "site.GlobalNav needs a Wordmark", Change: func(p *site.GlobalNav) { p.Wordmark = "" }},
 		{Want: "site.GlobalNav needs Links", Change: func(p *site.GlobalNav) { p.Links = nil }},
 		{Want: "site.GlobalNav needs an AriaLabel", Change: func(p *site.GlobalNav) { p.AriaLabel = "" }},
 		{Want: "site.GlobalNav needs a MenuAriaLabel", Change: func(p *site.GlobalNav) { p.MenuAriaLabel = "" }},

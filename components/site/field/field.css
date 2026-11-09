@@ -124,7 +124,7 @@
     color: var(--cui-c-text-2);
   }
 
-  .cui-field-message {
+  .cui-field-error {
     display: flex;
     margin: 8px 0 0;
     font-size: 12px;

@@ -4,7 +4,6 @@ import (
 	"io"
 	"strconv"
 
-	"github.com/at-least/ciderui/go/internal/class"
 	"github.com/at-least/ciderui/go/internal/glyph"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -20,27 +19,24 @@ type GlobalNavLink struct {
 	Post bool
 }
 
-// GlobalNav does not position itself: put sticky top-0 in Class where the
-// nav stays. Its z-index, apple.com's 9999, puts it over the page; a z-*
-// utility in Class replaces it.
+// GlobalNav stays at the top of the page, over it (globalnav.css).
 type GlobalNav struct {
-	// Logo: an <svg> in currentColor takes the bar's color.
-	Logo           g.Node
+	// Wordmark: the site's name, drawn in the kit's type; the home link's
+	// text and so its accessible name.
+	Wordmark       string
 	Home           string
-	LogoAriaLabel  string
 	Links          []GlobalNavLink
 	AriaLabel      string
 	MenuAriaLabel  string
 	CloseAriaLabel string
-	Class          string
 }
 
 func (n GlobalNav) Render(w io.Writer) error {
 	if n.Home == "" {
 		panic("site.GlobalNav needs a Home")
 	}
-	if n.LogoAriaLabel == "" {
-		panic("site.GlobalNav needs a LogoAriaLabel")
+	if n.Wordmark == "" {
+		panic("site.GlobalNav needs a Wordmark")
 	}
 	if len(n.Links) == 0 {
 		panic("site.GlobalNav needs Links")
@@ -69,10 +65,10 @@ func (n GlobalNav) Render(w io.Writer) error {
 		links = append(links, h.Li(h.Button(h.Class("cui-globalnav-link"), h.Type("submit"), h.FormAttr(form), g.Text(link.Label))))
 		postForms = append(postForms, h.Form(h.ID(form), h.Action(link.Href), h.Method("post"), g.Attr("hidden")))
 	}
-	return h.Nav(class.Root("cui-globalnav", n.Class), h.Aria("label", n.AriaLabel),
+	return h.Nav(h.Class("cui-globalnav"), h.Aria("label", n.AriaLabel),
 		h.Div(h.Class("cui-globalnav-content"),
 			h.Ul(h.Class("cui-globalnav-list"), h.ID(globalNavMenuID), h.Popover(),
-				h.Li(h.A(h.Class("cui-globalnav-logo"), h.Href(n.Home), h.Aria("label", n.LogoAriaLabel), n.Logo)),
+				h.Li(h.A(h.Class("cui-globalnav-wordmark"), h.Href(n.Home), g.Text(n.Wordmark))),
 				h.Li(h.Button(h.Class("cui-globalnav-closebutton"), h.PopoverTarget(globalNavMenuID), h.PopoverTargetAction("hide"), h.Aria("label", n.CloseAriaLabel), h.AutoFocus(), glyph.Menu)),
 				links,
 			),

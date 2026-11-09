@@ -5,8 +5,8 @@ const EDGE = ['border-top-width', 'border-top-style', 'border-top-color', 'borde
 const INPUT = '.cui-field-input';
 const LABEL = '.cui-field-label';
 const dark = (html) => `<div class="cui-dark">${html}</div>`;
-const MESSAGE = '.cui-field-message';
-const MARK = `${MESSAGE} svg`;
+const ERROR = '.cui-field-error';
+const MARK = `${ERROR} svg`;
 const PREFIX = '.cui-field-prefix';
 const FONT = ['font-size', 'line-height'];
 // @external: the stylesheet's :-webkit-autofill rules copied onto a class: no script can make
@@ -91,9 +91,9 @@ export const cases = [
       { target: INPUT, state: 'focus', props: [...PADDING, 'border-top-width', 'border-top-color', 'background-color'], apple: ['giftcard', 'error', 'focus'] },
       { target: LABEL, props: [...SIZE, 'color', 'top', 'left'], apple: ['giftcard', 'error.label'] },
       { target: LABEL, on: INPUT, state: 'focus', props: ['color'], golden: 'its label red focused too: apple.com\'s keeps the class that makes it so (giftcard:error.label), not read focused' },
-      { target: MESSAGE, props: [...SIZE, 'color'], apple: ['giftcard', 'error.message'] },
-      { target: MESSAGE, props: ['margin-top', 'display'], apple: ['giftcard', 'error.wrapper'] },
-      { target: MESSAGE, props: ['margin-bottom'], golden: 'no margin below it: apple.com\'s 12px is the form\'s spacing, the page\'s (giftcard:error.wrapper)' },
+      { target: ERROR, props: [...SIZE, 'color'], apple: ['giftcard', 'error.message'] },
+      { target: ERROR, props: ['margin-top', 'display'], apple: ['giftcard', 'error.wrapper'] },
+      { target: ERROR, props: ['margin-bottom'], golden: 'no margin below it: apple.com\'s 12px is the form\'s spacing, the page\'s (giftcard:error.wrapper)' },
       { target: MARK, props: ['margin-right'], as: { 'margin-right': 'padding-right' }, apple: ['giftcard', 'error.icon'] },
       { target: MARK, props: ['box-width', 'box-height', 'margin-top', 'color'], golden: 'apple.com\'s mark (U+F312) drawn as ciderui\'s ALERT: its advance by its ink\'s height at 12px, its ink 2.75px down the row as apple.com\'s (reference/icons/form.mjs), in the message\'s red' },
     ],
@@ -104,7 +104,7 @@ export const cases = [
     checks: [
       { target: INPUT, props: ['color', 'background-color', 'border-top-color', 'border-top-width'], apple: ['retail-dark', 'field.error'] },
       { target: LABEL, props: ['color'], apple: ['retail-dark', 'field.error-label'] },
-      { target: MESSAGE, props: ['color'], golden: 'on the dark block, the fitted dark red (tokens.css: apple.com\'s #e30000 is below 4.5:1 on black; its forms show no message on a dark page)' },
+      { target: ERROR, props: ['color'], golden: 'on the dark block, the fitted dark red (tokens.css: apple.com\'s #e30000 is below 4.5:1 on black; its forms show no message on a dark page)' },
     ],
   },
   {

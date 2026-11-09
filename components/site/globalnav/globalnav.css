@@ -1,22 +1,28 @@
 @layer components {
+  /* @invariant: on :root, not the bar: the page's scroll padding reads it too */
+  :root {
+    --cui-globalnav-height: 48px;
+
+    @media (width >= 834px) {
+      --cui-globalnav-height: 44px;
+    }
+  }
+
   .cui-globalnav {
     --cui-globalnav-ease: cubic-bezier(0.4, 0, 0.6, 1);
 
-    /* @invariant: rule 6's exception: over the page, apple.com's 9999; a site's sticky
-       replaces the position */
-    position: relative;
+    /* @invariant: rule 6's exception: the bar stays at the top as the page scrolls, over
+       it at apple.com's 9999; the scroll padding below keeps a target clear of it */
+    position: sticky;
+    top: 0;
     z-index: 9999;
-    height: 48px;
+    height: var(--cui-globalnav-height);
     background-color: var(--cui-c-bar);
     backdrop-filter: saturate(1.8) blur(20px);
     /* @external: Safari has the prefixed property alone: for a site whose build adds
        no prefixes */
     -webkit-user-select: none;
     user-select: none;
-
-    @media (width >= 834px) {
-      height: 44px;
-    }
   }
 
   .cui-globalnav-content {
@@ -43,7 +49,7 @@
     color: inherit;
     background-color: transparent;
 
-    > li:has(> .cui-globalnav-logo) {
+    > li:has(> .cui-globalnav-wordmark) {
       margin-right: auto;
     }
 
@@ -57,7 +63,7 @@
     }
   }
 
-  .cui-globalnav-logo,
+  .cui-globalnav-wordmark,
   .cui-globalnav-link {
     display: flex;
     color: var(--cui-c-on-bar);
@@ -70,11 +76,15 @@
     }
   }
 
-  .cui-globalnav-logo {
+  .cui-globalnav-wordmark {
     align-items: center;
     justify-content: center;
     height: 48px;
     padding-inline: 16px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    letter-spacing: var(--cui-tracking-14);
   }
 
   .cui-globalnav-link {
@@ -138,7 +148,7 @@
     background-color: var(--cui-c-menu);
     transition: height 0.45s var(--cui-globalnav-ease), background-color 0.45s var(--cui-globalnav-ease);
 
-    > li:has(> .cui-globalnav-logo) {
+    > li:has(> .cui-globalnav-wordmark) {
       order: -3;
     }
 
@@ -147,7 +157,7 @@
       order: -1;
     }
 
-    > li:has(> .cui-globalnav-logo) {
+    > li:has(> .cui-globalnav-wordmark) {
       visibility: hidden;
       opacity: 0;
       transition: opacity 0.24s var(--cui-globalnav-ease), visibility 0.24s step-end;
@@ -166,6 +176,11 @@
     }
   }
 
+  /* @invariant: #main and an in-page target land below the sticky bar, its height */
+  :root:has(.cui-globalnav) {
+    scroll-padding-top: var(--cui-globalnav-height);
+  }
+
   :root:has(.cui-globalnav-list:popover-open) {
     overflow: hidden;
   }
@@ -181,7 +196,7 @@
       height: 44px;
       margin-inline: -8px;
 
-      > li:has(> .cui-globalnav-logo) {
+      > li:has(> .cui-globalnav-wordmark) {
         margin-right: 0;
       }
 
@@ -190,7 +205,7 @@
         flex-basis: auto;
       }
 
-      .cui-globalnav-logo,
+      .cui-globalnav-wordmark,
       .cui-globalnav-link {
         align-items: center;
         justify-content: center;

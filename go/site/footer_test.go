@@ -11,7 +11,7 @@ import (
 )
 
 func TestFooterRendersTheExample(t *testing.T) {
-	example.Check(t, site.Footer{Copyright: h.A(h.Href("/company/"), g.Text("Example Inc.")), Class: ""}, "site/footer/examples/footer.html")
+	example.Check(t, site.Footer{Copyright: h.A(h.Href("/company/"), g.Text("Example Inc."))}, "site/footer/examples/footer.html")
 }
 
 type counted struct{ n *int }
@@ -26,7 +26,7 @@ func (c counted) Render(w io.Writer) error {
 // differently the second time
 func TestFooterItsCopyrightRenderedOnce(t *testing.T) {
 	var copyright int
-	example.Render(site.Footer{Copyright: counted{&copyright}, Class: ""})
+	example.Render(site.Footer{Copyright: counted{&copyright}})
 	if copyright != 1 {
 		t.Errorf("copyright rendered %d times, want 1", copyright)
 	}
@@ -34,7 +34,7 @@ func TestFooterItsCopyrightRenderedOnce(t *testing.T) {
 
 func TestFooterPanics(t *testing.T) {
 	example.Panics(t, func() site.Footer {
-		return site.Footer{Copyright: g.Text("©"), Class: ""}
+		return site.Footer{Copyright: g.Text("©")}
 	}, []example.Break[site.Footer]{
 		{Want: "site.Footer needs a Copyright", Change: func(p *site.Footer) { p.Copyright = nil }},
 	})

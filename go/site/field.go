@@ -4,7 +4,6 @@ import (
 	"io"
 	"strings"
 
-	"github.com/at-least/ciderui/go/internal/class"
 	"github.com/at-least/ciderui/go/internal/glyph"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -19,7 +18,7 @@ var (
 )
 
 // Field is apple.com's text field: its input's id is its Name, and its
-// help's, message's and prefix's ids are derived from it.
+// help's, error's and prefix's ids are derived from it.
 type Field struct {
 	Type         FieldType
 	Name         string
@@ -38,7 +37,6 @@ type Field struct {
 	Prefix string
 	// Attrs: nodes appended to the <input> (disabled, hx-post, inputmode, pattern, required); nil for none.
 	Attrs g.Node
-	Class string
 }
 
 func (f Field) Render(w io.Writer) error {
@@ -48,7 +46,7 @@ func (f Field) Render(w io.Writer) error {
 	if f.Label == "" {
 		panic("site.Field needs a Label")
 	}
-	message := f.Name + "-message"
+	errorID := f.Name + "-error"
 	help := f.Name + "-help"
 	prefix := f.Name + "-prefix"
 	kind := f.Type.value
@@ -63,11 +61,11 @@ func (f Field) Render(w io.Writer) error {
 		ids = append(ids, help)
 	}
 	if f.Error != "" {
-		ids = append(ids, message)
+		ids = append(ids, errorID)
 	}
 	described := strings.Join(ids, " ")
 	return g.Group{
-		h.Div(class.Root("cui-field", f.Class),
+		h.Div(h.Class("cui-field"),
 			// @trap: placeholder " ": the label reads :placeholder-shown to tell the field empty
 			h.Input(h.Class("cui-field-input"), h.ID(f.Name), h.Type(kind), h.Name(f.Name), h.Placeholder(" "),
 				g.If(f.Autocomplete != "", h.AutoComplete(f.Autocomplete)),
@@ -80,6 +78,6 @@ func (f Field) Render(w io.Writer) error {
 			g.If(f.Prefix != "", h.Span(h.Class("cui-field-prefix"), h.ID(prefix), g.Text(f.Prefix))),
 		),
 		g.If(f.Help != "", h.P(h.Class("cui-field-help"), h.ID(help), g.Text(f.Help))),
-		g.If(f.Error != "", h.P(h.Class("cui-field-message"), h.ID(message), glyph.Alert, g.Text(f.Error))),
+		g.If(f.Error != "", h.P(h.Class("cui-field-error"), h.ID(errorID), glyph.Alert, g.Text(f.Error))),
 	}.Render(w)
 }
