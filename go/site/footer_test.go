@@ -24,11 +24,11 @@ func (c counted) Render(w io.Writer) error {
 
 // Copyright is the page's node: rendering one twice may cost, or render
 // differently the second time
-func TestFooterItsCopyrightRenderedOnce(t *testing.T) {
+func TestFooterRendersItsCopyrightOnce(t *testing.T) {
 	var copyright int
 	example.Render(site.Footer{Copyright: counted{&copyright}})
 	if copyright != 1 {
-		t.Errorf("copyright rendered %d times, want 1", copyright)
+		t.Errorf("the footer rendered the page's copyright %d times, want once", copyright)
 	}
 }
 

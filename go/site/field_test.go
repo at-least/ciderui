@@ -38,10 +38,10 @@ func TestFieldTypeTelWritesATelInput(t *testing.T) {
 	}
 }
 
-func TestFieldIsInvalidWithNoError(t *testing.T) {
+func TestFieldInvalidWithNoErrorMarksItsInputAlone(t *testing.T) {
 	got := example.Render(site.Field{Type: site.FieldTypeEmail, Name: "email", Label: "Email", Autocomplete: "", Value: "", Error: "", Invalid: true, Help: "", Prefix: "", Attrs: nil})
 	if !strings.Contains(got, `aria-invalid="true"`) || strings.Contains(got, `cui-field-error`) {
-		t.Errorf("want aria-invalid and no error under the field: %s", got)
+		t.Errorf("an Invalid field with no Error does not mark its input invalid with no message under it: %s", got)
 	}
 }
 
