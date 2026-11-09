@@ -1,8 +1,8 @@
 import { execFileSync } from 'node:child_process';
-import { mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, readdirSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { ROOT, UTILITIES_ENTRY, tailwind } from './compile.mjs';
+import { ROOT, ownSheet } from './compile.mjs';
 
 // @trap: the module's package directories, not `.`: gofmt would walk node_modules,
 // which go.mod's ignore keeps from go's own commands
@@ -23,17 +23,13 @@ for (const args of [
 // Written outside this repository, as a site's target/ is beside its node_modules
 // and not under them: a bare @import in a written file would resolve from there.
 const written = mkdtempSync(join(tmpdir(), 'written-kit-'));
-const site = mkdtempSync(join(ROOT, 'site-entry-'));
 try {
   execFileSync('go', ['run', './go/cmd/ciderui-css', written], { cwd: ROOT, stdio: 'pipe' });
-  const entry = join(site, 'entry.css');
-  writeFileSync(entry, `${UTILITIES_ENTRY(`${written}/utilities.css`)}\n@source inline("px-8 md:px-8 cui-btn cui-headline");\n`);
-  const built = tailwind(entry);
+  const built = ownSheet(`${written}/utilities.css`, 'px-8 md:px-8 cui-btn cui-headline');
   for (const rule of ['.px-8', '.md\\:px-8']) if (!built.includes(rule)) throw new Error(`utilities.css written by ciderui-css built with no ${rule}: ${built.slice(0, 200)}`);
   for (const kit of ['.cui-btn', '.cui-headline']) if (built.includes(kit)) throw new Error(`utilities.css built the kit's ${kit}, which the kit's own sheet ships (utilities.css)`);
 } finally {
   rmSync(written, { recursive: true });
-  rmSync(site, { recursive: true });
 }
 // @invariant: a part's every branch has a test: a new panic with no Break, or a new
 // branch no example draws, stops here

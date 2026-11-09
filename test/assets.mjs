@@ -1,20 +1,11 @@
 // @invariant: What a site links: dist/<set>.css as it ships, and its own utilities' stylesheet
 // after it.
 
-import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
-import { ROOT, UTILITIES_ENTRY, shipped, tailwind } from './compile.mjs';
+import { ownSheet, shipped } from './compile.mjs';
 import { open, quit } from './browser.mjs';
 import { check, done } from './check.mjs';
 
-const dir = mkdtempSync(join(ROOT, 'assets-'));
-let own;
-try {
-  writeFileSync(join(dir, 'entry.css'), `${UTILITIES_ENTRY('../utilities.css')}\n@source inline("px-8 md:px-8");\n`);
-  own = tailwind(join(dir, 'entry.css'));
-} finally {
-  rmSync(dir, { recursive: true });
-}
+const own = ownSheet('../utilities.css', 'px-8 md:px-8');
 
 const site = await open(shipped('site'), `<h1 id="headline" class="cui-headline">a</h1><a id="plain" class="cui-btn">a</a><a id="own" class="cui-btn px-8">a</a><a id="fixed" class="cui-btn md:px-8">a</a>`);
 await site.page.addStyleTag({ content: own });

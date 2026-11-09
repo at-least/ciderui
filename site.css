@@ -8,3 +8,16 @@
 @import "./components/site/option/option.css";
 @import "./components/site/ribbon/ribbon.css";
 @import "./components/site/skip/skip.css";
+
+/* @invariant: the colors theme.css's utility names draw on a page of this set, the
+   console's in console.css: a site's own utilities' sheet, built once for either set,
+   writes var(--cui-set-*) and the set's sheet the page links resolves it */
+:root {
+  --cui-set-text-body: var(--cui-c-text);
+  --cui-set-text-secondary: var(--cui-c-text-2);
+  --cui-set-bg-page: var(--cui-c-bg);
+  --cui-set-bg-alt: var(--cui-c-bg-alt);
+  --cui-set-border: var(--cui-c-border);
+  --cui-set-divider: var(--cui-c-divider);
+  --cui-set-link: var(--cui-c-link);
+}

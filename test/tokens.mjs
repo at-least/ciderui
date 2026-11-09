@@ -138,7 +138,6 @@ const SOURCES = {
   '--cui-c-console-field-border': 'component-TextInput-variant-colorRole-neutral-focus-off-variant-stroked-border-color',
   '--cui-c-console-brand-label-on-fill': 'component-Tabs-variant-colorRole-brand-variant-filledGray-anatomy-Tab-variant-effect-default-isActive-false-color',
   '--cui-c-console-brand-label-on-tint': 'component-Link-variant-colorRole-brand-effect-default-variant-inline-color',
-  '--cui-c-console-brand-label-on-tint-secondary': 'component-Link-variant-colorRole-brand-effect-disabled-variant-inline-color',
   '--cui-c-console-dialog-stroke': 'component-Modal-variant-variant-modal-stroke',
 };
 const sourceOf = (name) => `--tb-${SOURCES[name] ?? `color-role-${name.slice('--cui-c-console-'.length).replace('on-accent', 'onAccent')}`}`;
@@ -183,7 +182,6 @@ const FITTED = {
   '--cui-c-console-field-border': { light: 'oklch(35.9% 0.012 285.8 / 0.58)', dark: 'oklch(87.9% 0.015 286.1 / 0.42)', why: 'a field\'s edge, at the toolkit\'s 0.18, is 1.4:1 on white; a control\'s edge is held to 3:1' },
   '--cui-c-console-brand-label-on-fill': { light: 'oklch(49.7% 0.209 260.5)', why: 'the brand\'s label on the gray fill is 4.4:1' },
   '--cui-c-console-brand-label-on-tint': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(75.6% 0.120 260.5)', why: 'a link in a banner\'s sentence: the toolkit\'s blue 3.9:1 on the info tint over a card, its derived dark blue-600 4.47:1 on the warning tint over a card (crashcart\'s unsymbolicated notice)' },
-  '--cui-c-console-brand-label-on-tint-secondary': { light: 'oklch(49.7% 0.209 260.5 / 0.60)', dark: 'oklch(75.6% 0.120 260.5 / 0.60)', why: 'a disabled link in a banner\'s sentence: on-tint\'s blue at the toolkit\'s disabled 0.60, so a banner\'s links are one blue (disabled, it has no contrast minimum, WCAG 1.4.3)' },
   '--cui-c-console-info-label-primary': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(68.3% 0.167 256.6)', why: 'the toolkit\'s info blue is 4.0:1 on white; its derived dark blue-500 short of 4.5:1 on its tint over a card' },
   '--cui-c-console-success-label-primary': { light: 'oklch(38.5% 0.094 150.1)', why: 'the toolkit\'s green is 2.2:1 on white, green-800 short of 4.5:1 on the gray fill over a card' },
   '--cui-c-console-warning-label-primary': { light: 'oklch(48.6% 0.112 61.8)', why: 'the toolkit\'s yellow is 1.6:1 on white' },
@@ -324,7 +322,9 @@ for (const fg of ['--cui-c-on-footer', '--cui-c-on-footer-link', '--cui-c-on-foo
 const table = JSON.parse(readFileSync(join(ROOT, 'reference/tracking/cui-tracking.json'), 'utf8'));
 const tracking = Object.keys(vars).filter(k => k.startsWith('--cui-tracking-'));
 // @invariant: the table is what was measured; a size no stylesheet reads has no token
-const READ = ['theme.css', 'base.css', 'type.css', ...readdirSync(join(ROOT, 'components'), { recursive: true }).filter(f => f.endsWith('.css')).map(f => join('components', f))].map(f => readFileSync(join(ROOT, f), 'utf8')).join('\n');
+const SHEETS = ['theme.css', 'base.css', 'type.css', 'index.css', 'site.css', 'console.css',
+  ...readdirSync(join(ROOT, 'components'), { recursive: true }).filter(f => f.endsWith('.css')).map(f => join('components', f))];
+const READ = SHEETS.map(f => readFileSync(join(ROOT, f), 'utf8')).join('\n');
 check('a letter-spacing for each size of the table a stylesheet reads', tracking.map(k => k.slice(15)).join(' '), Object.keys(table).filter(size => READ.includes(`--cui-tracking-${size})`)).join(' '));
 // @invariant: a part's removal leaves no slot behind
 check('every token a stylesheet reads', Object.keys(vars).filter(name => !(READ + css).match(new RegExp(`var\\(${name}[,)]`))).join(' '), '');
@@ -362,9 +362,7 @@ check('--cui-video-thumb-shadow is tv.apple.com\'s tv-player:volume.range --volu
 // @external: every named color CSS has; not transparent, currentColor or inherit, which
 // are no color of a stylesheet's own
 const NAMED = /\b(aliceblue|antiquewhite|aqua|aquamarine|azure|beige|bisque|black|blanchedalmond|blue|blueviolet|brown|burlywood|cadetblue|chartreuse|chocolate|coral|cornflowerblue|cornsilk|crimson|cyan|darkblue|darkcyan|darkgoldenrod|darkgray|darkgreen|darkgrey|darkkhaki|darkmagenta|darkolivegreen|darkorange|darkorchid|darkred|darksalmon|darkseagreen|darkslateblue|darkslategray|darkslategrey|darkturquoise|darkviolet|deeppink|deepskyblue|dimgray|dimgrey|dodgerblue|firebrick|floralwhite|forestgreen|fuchsia|gainsboro|ghostwhite|gold|goldenrod|gray|green|greenyellow|grey|honeydew|hotpink|indianred|indigo|ivory|khaki|lavender|lavenderblush|lawngreen|lemonchiffon|lightblue|lightcoral|lightcyan|lightgoldenrodyellow|lightgray|lightgreen|lightgrey|lightpink|lightsalmon|lightseagreen|lightskyblue|lightslategray|lightslategrey|lightsteelblue|lightyellow|lime|limegreen|linen|magenta|maroon|mediumaquamarine|mediumblue|mediumorchid|mediumpurple|mediumseagreen|mediumslateblue|mediumspringgreen|mediumturquoise|mediumvioletred|midnightblue|mintcream|mistyrose|moccasin|navajowhite|navy|oldlace|olive|olivedrab|orange|orangered|orchid|palegoldenrod|palegreen|paleturquoise|palevioletred|papayawhip|peachpuff|peru|pink|plum|powderblue|purple|rebeccapurple|red|rosybrown|royalblue|saddlebrown|salmon|sandybrown|seagreen|seashell|sienna|silver|skyblue|slateblue|slategray|slategrey|snow|springgreen|steelblue|tan|teal|thistle|tomato|turquoise|violet|wheat|white|whitesmoke|yellow|yellowgreen)\b/i;
-const sheets = ['theme.css', 'base.css', 'type.css', 'index.css',
-  ...readdirSync(join(ROOT, 'components'), { recursive: true }).filter(f => f.endsWith('.css')).map(f => join('components', f))];
-for (const file of sheets) {
+for (const file of SHEETS) {
   const text = readFileSync(join(ROOT, file), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
   // @trap: a custom property's name is no color (--cui-c-console-gray-fill-hover)
   const values = [...text.matchAll(/:\s*([^;{}]+)[;}]/g)].map(m => m[1]).join(' ; ').replace(/--[\w-]+/g, '');

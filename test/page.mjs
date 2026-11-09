@@ -1,9 +1,9 @@
-import { compile } from './compile.mjs';
+import { compile, ownSheet, shipped } from './compile.mjs';
 import { open, quit } from './browser.mjs';
 import { ref } from './reference.mjs';
 import { check, done } from './check.mjs';
 
-const css = compile({ classes: 'dark:underline outline-none md:underline lg:underline xl:underline text-secondary bg-secondary text-alt bg-alt' });
+const css = compile({ css: '@import "site.css";', classes: 'dark:underline outline-none md:underline lg:underline xl:underline text-secondary bg-secondary text-alt bg-alt' });
 const html = `<p id="text">Text <strong id="strong">bold</strong></p><button id="button">Buy</button>
 <section id="dark" class="cui-dark"><p id="in-dark" class="dark:underline">in a dark block</p>
   <div id="light" class="cui-light"><p id="in-light" class="dark:underline">light inside dark</p></div><p id="secondary-dark" class="text-secondary">secondary</p></section>
@@ -75,6 +75,48 @@ try {
 } finally {
   await b.close();
 }
+
+// @invariant: what a site does (README.md): its own utilities' sheet, built once, linked
+// after the set's dist sheet; each name draws the set's color, a spinner keeps
+// turning under Reduce Motion
+const OWN_CLASSES = 'text-body text-secondary bg-page bg-alt border border-t border-border border-divider text-link animate-spin';
+const own = ownSheet('../utilities.css', OWN_CLASSES);
+const SET_COLORS = [
+  ['body', 'text-body', 'color', { site: '--cui-c-text', console: '--cui-c-console-neutral-label-primary' }],
+  ['secondary', 'text-secondary', 'color', { site: '--cui-c-text-2', console: '--cui-c-console-neutral-label-secondary' }],
+  ['page', 'bg-page', 'background-color', { site: '--cui-c-bg', console: '--cui-c-console-neutral-background-primary' }],
+  ['alt', 'bg-alt', 'background-color', { site: '--cui-c-bg-alt', console: '--cui-c-console-card' }],
+  ['edge', 'border border-border', 'border-top-color', { site: '--cui-c-border', console: '--cui-c-console-field-border' }],
+  ['bare', 'border', 'border-top-color', { site: '--cui-c-divider', console: '--cui-c-console-neutral-border-tertiary' }],
+  ['top', 'border-t', 'border-top-color', { site: '--cui-c-divider', console: '--cui-c-console-neutral-border-tertiary' }],
+  ['divider', 'border border-divider', 'border-top-color', { site: '--cui-c-divider', console: '--cui-c-console-neutral-border-tertiary' }],
+  ['link', 'text-link', 'color', { site: '--cui-c-link', console: '--cui-c-console-brand-label-primary' }],
+];
+const drawn = {};
+for (const set of ['site', 'console']) {
+  const html = SET_COLORS.map(([id, classes, prop, token]) => `<p id="${id}" class="${classes}">a</p><p id="${id}-want" style="${prop}: var(${token[set]}); border-style: solid">a</p>`).join('')
+    + '<span id="spinner" class="animate-spin">a</span><span id="still" style="animation: spin 1s infinite">a</span>';
+  b = await open(shipped(set), html, { reducedMotion: 'reduce' });
+  try {
+    await b.page.addStyleTag({ content: own });
+    drawn[set] = {};
+    for (const [id, classes, prop, token] of SET_COLORS) {
+      const got = (await b.read(`#${id}`, [prop]))[prop];
+      drawn[set][id] = got;
+      check(`${set}: a site's own ${classes} draws ${token[set]}`, got, (await b.read(`#${id}-want`, [prop]))[prop]);
+    }
+    const spinner = await b.read('#spinner', ['animation-name', 'animation-duration', 'animation-iteration-count']);
+    check(`${set}: under reduced motion animate-spin still turns, its own duration`, spinner['animation-duration'], '1s');
+    check(`${set}: under reduced motion animate-spin still turns, without end`, spinner['animation-iteration-count'], 'infinite');
+    check(`${set}: under reduced motion another animation still ends at once`, (await b.read('#still', ['animation-duration']))['animation-duration'], '0.001s');
+  } finally {
+    await b.close();
+  }
+}
+// @trap: a set whose names drew the other set's colors would pass the checks above were
+// the two the same
+check('the sets draw text-secondary apart', drawn.site.secondary !== drawn.console.secondary, true);
+check('the sets draw a bare border apart', drawn.site.bare !== drawn.console.bare, true);
 
 await quit();
 done('page');

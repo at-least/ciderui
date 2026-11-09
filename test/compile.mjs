@@ -21,6 +21,18 @@ export const UTILITIES_ENTRY = (utilities) => {
   return block.replace('../target/ciderui/utilities.css', utilities).replace(/^@source .*\n/m, '');
 };
 
+// @invariant: utilities, the path to utilities.css, is relative to the entry, written in a
+// directory of its own under ROOT
+export function ownSheet(utilities, classes) {
+  const dir = mkdtempSync(join(ROOT, 'own-'));
+  try {
+    writeFileSync(join(dir, 'entry.css'), `${UTILITIES_ENTRY(utilities)}\n@source inline("${classes}");\n`);
+    return tailwind(join(dir, 'entry.css'));
+  } finally {
+    rmSync(dir, { recursive: true });
+  }
+}
+
 // @external: entry, a file of its own: `@import` resolves from where it sits. Minified, as a
 // site ships it.
 export function tailwind(entry) {

@@ -18,6 +18,16 @@
     font-synthesis: none;
   }
 
+  /* @invariant: a bare `border` or `divide-y` draws the set's rule, not the text's
+     color Tailwind's preflight leaves; in base, so any color utility wins */
+  *,
+  ::before,
+  ::after,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--cui-set-divider);
+  }
+
   b,
   strong {
     font-weight: 600;
@@ -68,12 +78,20 @@
   ::before,
   ::after,
   ::backdrop {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
     background-attachment: initial !important;
     scroll-behavior: auto !important;
     transition-duration: 0s !important;
     transition-delay: 0s !important;
+  }
+
+  /* @external: a spinner keeps turning, as iOS's activity indicator does under Reduce
+     Motion: frozen, it reads as a hang, not as progress */
+  :not(.animate-spin),
+  ::before,
+  ::after,
+  ::backdrop {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
