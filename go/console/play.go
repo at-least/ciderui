@@ -22,7 +22,10 @@ type ConsolePlay struct {
 	Label        string
 	PlayingLabel string
 	Size         ConsoleBtnSize
-	Class        string
+	// Attrs: the root's other attributes, for the page's script (data-*, an
+	// htmx attribute); nil for none.
+	Attrs g.Node
+	Class string
 }
 
 func (p ConsolePlay) Render(w io.Writer) error {
@@ -39,7 +42,7 @@ func (p ConsolePlay) Render(w io.Writer) error {
 	}
 	return h.Button(class.Root(root, p.Class),
 		optionalAttr("data-size", p.Size.value), h.Data("shape", "capsule"),
-		h.Type("button"), optionalAttr("aria-label", p.AriaLabel),
+		h.Type("button"), optionalAttr("aria-label", p.AriaLabel), p.Attrs,
 		h.Span(h.Class("cui-console-play-glyph"), lucide.Play.Class("cui-console-play-paused"), lucide.Square.Class("cui-console-play-playing")),
 		g.If(labelled, g.Group{
 			h.Span(h.Class("cui-console-play-paused"), g.Text(p.Label)),

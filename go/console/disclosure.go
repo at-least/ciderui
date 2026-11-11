@@ -10,7 +10,10 @@ import (
 
 // ConsoleDisclosure is the HIG's disclosure control.
 type ConsoleDisclosure struct {
-	Summary  string
+	Summary string
+	// Attrs: the root's other attributes, for the page's script (data-*, an
+	// htmx attribute); nil for none.
+	Attrs    g.Node
 	Children g.Node
 }
 
@@ -18,7 +21,7 @@ func (d ConsoleDisclosure) Render(w io.Writer) error {
 	if d.Summary == "" {
 		panic("console.ConsoleDisclosure needs a Summary")
 	}
-	return h.Details(h.Class("cui-console-disclosure"),
+	return h.Details(h.Class("cui-console-disclosure"), d.Attrs,
 		h.Summary(h.Class("cui-console-disclosure-summary"), lucide.ChevronRight.Class("cui-console-disclosure-chevron"), g.Text(d.Summary)),
 		d.Children,
 	).Render(w)

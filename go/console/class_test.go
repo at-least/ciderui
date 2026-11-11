@@ -17,9 +17,9 @@ func TestEachPartWritesThePagesClass(t *testing.T) {
 	player.Class = page
 	example.PagesClass(t, ".", []string{"ConsolePage"}, []example.ClassRow{
 		{Root: "cui-console-btn", Node: console.ConsoleBtn{Href: "", Label: "x", AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: page}},
-		{Root: "cui-console-banner", Node: console.ConsoleBanner{Color: console.ConsoleColorInfo, Title: "x", Body: nil, Class: page, Children: nil}},
+		{Root: "cui-console-banner", Node: console.ConsoleBanner{Attrs: nil, Color: console.ConsoleColorInfo, Title: "x", Body: nil, Class: page, Children: nil}},
 		{Root: "cui-console-select", Node: console.ConsoleSelect{Class: page, Children: h.Select(h.Class("cui-console-field-input"))}},
-		{Root: "cui-console-btn cui-console-btn-icon cui-console-play", Node: console.ConsolePlay{AriaLabel: "x", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: page}},
+		{Root: "cui-console-btn cui-console-btn-icon cui-console-play", Node: console.ConsolePlay{Attrs: nil, AriaLabel: "x", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: page}},
 		{Root: "cui-console-btn cui-console-btn-icon cui-console-sidebar-open", Node: console.ConsoleSidebarOpen{AriaLabel: "x", Class: page}},
 		{Root: "cui-console-strip", Node: console.ConsoleStrip{AriaLabel: "x", Class: page, Groups: validStrip().Groups}},
 		{Root: "cui-console-player", Node: player},
@@ -40,12 +40,12 @@ func TestEachPartWritesThePagesWords(t *testing.T) {
 		node  g.Node
 		words []string
 	}{
-		{"ConsoleBanner", console.ConsoleBanner{Color: console.ConsoleColorInfo, Title: "Synced", Body: nil, Class: "", Children: nil}, []string{">Synced<"}},
+		{"ConsoleBanner", console.ConsoleBanner{Attrs: nil, Color: console.ConsoleColorInfo, Title: "Synced", Body: nil, Class: "", Children: nil}, []string{">Synced<"}},
 		{"ConsoleChart", console.ConsoleChart{AriaLabel: "Events: 9", Scale: &console.ConsoleChartScale{Peak: "peak 9", Half: "4.5"}, Empty: "Nothing yet", Axis: &console.ConsoleChartAxis{Start: "Nov 1", End: "Nov 7"}, Children: nil},
 			[]string{`aria-label="Events: 9"`, ">peak 9<", ">4.5<", ">Nothing yet<", ">Nov 1<", ">Nov 7<"}},
 		{"ConsoleField", console.ConsoleField{ID: "name", Label: "Name", Error: "Too short.", Control: input()}, []string{">Name<", ">Too short.<"}},
-		{"ConsolePlay", console.ConsolePlay{AriaLabel: "Listen", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: ""}, []string{`aria-label="Listen"`}},
-		{"ConsolePlay", console.ConsolePlay{AriaLabel: "", Label: "Hear It", PlayingLabel: "Halt", Size: console.ConsoleBtnSizeMedium, Class: ""}, []string{">Hear It<", ">Halt<"}},
+		{"ConsolePlay", console.ConsolePlay{Attrs: nil, AriaLabel: "Listen", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: ""}, []string{`aria-label="Listen"`}},
+		{"ConsolePlay", console.ConsolePlay{Attrs: nil, AriaLabel: "", Label: "Hear It", PlayingLabel: "Halt", Size: console.ConsoleBtnSizeMedium, Class: ""}, []string{">Hear It<", ">Halt<"}},
 		{"ConsolePage", skip, []string{">Jump to Main<"}},
 		{"ConsolePlayerIntro", intro, []string{">The Feast<", ">2 min<", ">A short one.<", ">Watch<", ">From the Top<"}},
 		{"ConsolePlayerEnd", end, []string{">All Done<", ">Watch Again<"}},
@@ -59,6 +59,25 @@ func TestEachPartWritesThePagesWords(t *testing.T) {
 			if !strings.Contains(got, word) {
 				t.Errorf("%s does not write the page's %s: %s", c.part, word, got)
 			}
+		}
+	}
+}
+
+func TestEachPartWritesThePagesAttrs(t *testing.T) {
+	hook := g.Attr("data-hook", "on")
+	for _, c := range []struct {
+		part string
+		node g.Node
+	}{
+		{"ConsoleBanner", console.ConsoleBanner{Color: console.ConsoleColorInfo, Title: "x", Body: nil, Attrs: hook, Class: "", Children: nil}},
+		{"ConsoleDisclosure", console.ConsoleDisclosure{Summary: "x", Attrs: hook, Children: nil}},
+		{"ConsoleEmpty", console.ConsoleEmpty{Size: console.ConsoleEmptySizeSmall, Icon: lucide.Icon{}, Title: "x", Body: "", Attrs: hook}},
+		{"ConsolePlay", console.ConsolePlay{AriaLabel: "x", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Attrs: hook, Class: ""}},
+	} {
+		got := example.Render(c.node)
+		root, _, _ := strings.Cut(got, ">")
+		if !strings.Contains(root, ` data-hook="on"`) {
+			t.Errorf("%s does not write the page's Attrs on its root: %s", c.part, got)
 		}
 	}
 }

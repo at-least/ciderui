@@ -26,7 +26,10 @@ type ConsoleBanner struct {
 	Title string
 	// Body: the banner's words, or blocks of them, written in its
 	// <div class="cui-console-banner-body">; nil for none.
-	Body  g.Node
+	Body g.Node
+	// Attrs: the root's other attributes, for the page's script (data-*, an
+	// htmx attribute); nil for none.
+	Attrs g.Node
 	Class string
 	// Children: what follows the body, its actions; nil for none.
 	Children g.Node
@@ -37,7 +40,7 @@ func (b ConsoleBanner) Render(w io.Writer) error {
 	if b.Color == ConsoleColorError {
 		role = "alert"
 	}
-	return h.Div(class.Root("cui-console-banner", b.Class), optionalAttr("data-color", b.Color.value), h.Role(role),
+	return h.Div(class.Root("cui-console-banner", b.Class), optionalAttr("data-color", b.Color.value), h.Role(role), b.Attrs,
 		bannerIcons[b.Color].Class("cui-console-banner-icon"),
 		h.Div(
 			g.If(b.Title != "", h.P(h.Class("cui-console-banner-title"), g.Text(b.Title))),

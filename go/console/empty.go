@@ -24,6 +24,9 @@ type ConsoleEmpty struct {
 	Title string
 	// Body says what to do next.
 	Body string
+	// Attrs: the root's other attributes, for the page's script (data-*, an
+	// htmx attribute); nil for none.
+	Attrs g.Node
 }
 
 func (e ConsoleEmpty) Render(w io.Writer) error {
@@ -33,7 +36,7 @@ func (e ConsoleEmpty) Render(w io.Writer) error {
 	if e.Title == "" {
 		panic("console.ConsoleEmpty needs a Title")
 	}
-	return h.Div(h.Class("cui-console-empty"), h.Data("size", e.Size.value),
+	return h.Div(h.Class("cui-console-empty"), h.Data("size", e.Size.value), e.Attrs,
 		iconPart(e.Icon, "cui-console-empty-icon"),
 		h.P(h.Class("cui-console-empty-title"), g.Text(e.Title)),
 		g.If(e.Body != "", h.P(h.Class("cui-console-empty-body"), g.Text(e.Body))),
