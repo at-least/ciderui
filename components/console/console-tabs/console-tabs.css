@@ -88,21 +88,18 @@
       --cui-console-tab-fill: var(--cui-c-console-neutral-fill-tertiary);
       --cui-console-tab-fill-hover: var(--cui-c-console-gray-fill-hover);
       --cui-console-tab-fill-press: var(--cui-c-console-gray-fill-press);
-      --cui-console-tab-label: var(--cui-c-console-brand-label-on-fill);
-      --cui-console-tab-label-hover: var(--cui-c-console-brand-label-hover);
-      --cui-console-tab-label-press: var(--cui-c-console-brand-label-press);
 
       padding-inline: 12px;
       border-bottom: 0;
       border-radius: 15px;
 
       &:has(> :checked) {
-        --cui-console-tab-fill: var(--cui-c-console-brand-accent-primary);
-        --cui-console-tab-fill-hover: var(--cui-c-console-brand-fill-hover);
-        --cui-console-tab-fill-press: var(--cui-c-console-brand-fill-press);
-        --cui-console-tab-label: var(--cui-c-console-brand-label-on-accent-primary);
-        --cui-console-tab-label-hover: var(--cui-c-console-brand-label-on-accent-primary);
-        --cui-console-tab-label-press: var(--cui-c-console-on-accent-press);
+        --cui-console-tab-fill: var(--cui-c-console-neutral-accent-primary);
+        --cui-console-tab-fill-hover: var(--cui-c-console-neutral-fill-hover);
+        --cui-console-tab-fill-press: var(--cui-c-console-neutral-accent-primary);
+        --cui-console-tab-label: var(--cui-c-console-neutral-label-on-accent-primary);
+        --cui-console-tab-label-hover: var(--cui-c-console-neutral-label-on-accent-primary);
+        --cui-console-tab-label-press: var(--cui-c-console-neutral-on-accent-press);
 
         @media (forced-colors: active) {
           background-color: Highlight;

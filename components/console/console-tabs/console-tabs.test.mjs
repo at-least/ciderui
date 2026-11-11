@@ -2,14 +2,15 @@ import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const T = 'component-Tabs';
-const V = `${T}-variant-colorRole-brand-variant`;
+// @external: the toolkit's neutral filled tab: the picked one black under white, the
+// others the neutral label on gray; blue stays for the page's primary action
+const V = `${T}-variant-colorRole-neutral-variant`;
 const tab = (variant, effect, active, prop) => `${V}-${variant}-anatomy-Tab-variant-effect-${effect}-isActive-${active}-${prop}`;
 // @external: App Store Connect's version page draws its underlined tabs' labels gray, rgb(51, 51, 51)
 // (asc version: tab.button.text), the current one marked by its rule alone: the toolkit's neutral tab
 const underlined = (effect, active, prop) => `${T}-variant-colorRole-neutral-variant-underlined-anatomy-Tab-variant-effect-${effect}-isActive-${active}-${prop}`;
 const size = (s) => [`${T}-variant-controlSize-${s}-anatomy-Tab-height`, `${T}-variant-controlSize-${s}-anatomy-Tab-minWidth`, `${T}-variant-controlSize-${s}-anatomy-Tab-gap`, `${T}-variant-controlSize-${s}-textStyle-fontSize`, `${T}-variant-controlSize-${s}-textStyle-lineHeight`, `${T}-variant-controlSize-${s}-textStyle-fontWeight`];
 const SIZE = ['box-height', 'min-width', 'column-gap', 'font-size', 'line-height', 'font-weight'];
-const FITTED = 'fitted to 4.5:1 (tokens.css, decision 21)';
 const REST = '.cui-console-tab[href="#issues"]';
 const RADIO = '.cui-console-tabs[aria-label="About"] .cui-console-tab';
 const PICKED = `${RADIO}:has(> :checked)`;
@@ -70,16 +71,16 @@ export const cases = [
     checks: [
       { target: PLAIN, props: SIZE, tb: size('md') },
       { target: PLAIN, props: ['background-color', 'padding-left', 'padding-right', 'border-top-left-radius'], tb: [tab('filledGray', 'default', 'false', 'backgroundColor'), `${T}-defaultMdPaddingInline`, `${T}-defaultMdPaddingInline`, `${T}-variant-controlShape-capsule-controlSize-md-borderRadius`] },
-      { target: PLAIN, props: ['color'], golden: `the blue label on the gray pill blue-600: the toolkit's brand blue is 4.4:1 on it, ${FITTED}` },
+      { target: PLAIN, props: ['color'], tb: [tab('filledGray', 'default', 'false', 'color')] },
       { target: PLAIN, props: ['background-color'], state: 'hover', tb: [tab('filledGray', 'hover', 'false', 'backgroundColor')] },
-      { target: PLAIN, props: ['color'], state: 'hover', golden: `hovered, blue-600 too: the toolkit's lighter blue is 3.5:1 on white, ${FITTED}` },
+      { target: PLAIN, props: ['color'], state: 'hover', tb: [tab('filledGray', 'hover', 'false', 'color')] },
       { target: PLAIN, props: ['background-color'], state: 'active', tb: [tab('filledGray', 'press', 'false', 'backgroundColor')] },
-      { target: PLAIN, props: ['color'], state: 'active', golden: 'pressed, one pressed blue for a label (as an underlined tab\'s)' },
+      { target: PLAIN, props: ['color'], state: 'active', tb: [tab('filledGray', 'press', 'false', 'color')] },
       { target: '.cui-console-tabs', props: ['column-gap'], tb: [`${T}-variant-controlSize-md-variant-filledGray-gap`] },
       { target: '.cui-console-tabs', props: ['border-bottom-width'], golden: 'no hairline under pills' },
       { target: PLAIN, props: ['border-bottom-width'], golden: 'no underline under a pill: an underlined tab\'s transparent 2px rule lifted its label 1px off its fill\'s middle' },
       { target: PICKED, props: ['background-color', 'color'], tb: [tab('filledGray', 'default', 'true', 'backgroundColor'), tab('filledGray', 'default', 'true', 'color')] },
-      { target: PICKED, props: ['background-color'], state: 'hover', golden: `the chosen pill hovered blue-600, a step darker: white on the toolkit's lighter blue is 3.9:1, ${FITTED}` },
+      { target: PICKED, props: ['background-color', 'color'], state: 'hover', tb: [tab('filledGray', 'hover', 'true', 'backgroundColor'), tab('filledGray', 'hover', 'true', 'color')] },
       { target: PICKED, props: ['background-color', 'color'], state: 'active', tb: [tab('filledGray', 'press', 'true', 'backgroundColor'), tab('filledGray', 'press', 'true', 'color')] },
       { target: `${RADIO} > input`, props: ['position', 'opacity', 'pointer-events'], golden: 'the page\'s own radio out of the way: the pill is the control\'s look, its words the radio\'s label' },
       { target: PICKED, props: ['outline-style', 'outline-width'], on: `${RADIO} > input`, state: 'focus-visible', golden: 'the keyboard\'s ring on the pill, not around the hidden radio (the one ring, moved)' },
@@ -131,7 +132,7 @@ export const cases = [
     checks: [
       { target: REST, props: ['color'], golden: 'the dark side derived (tokens.css, decision 18)' },
       { target: PLAIN, props: ['background-color', 'color'], golden: 'the dark side derived (tokens.css, decision 18)' },
-      { target: PICKED, props: ['background-color', 'color'], golden: `the chosen pill dark blue-400: white on the derived blue-600 is 2.7:1, ${FITTED}` },
+      { target: PICKED, props: ['background-color', 'color'], golden: 'the dark side derived (tokens.css, decision 18): the chosen pill white under black' },
     ],
   },
 ];

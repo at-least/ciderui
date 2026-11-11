@@ -130,13 +130,14 @@ const SOURCES = {
   '--cui-c-console-gray-fill-hover': 'component-Button-variant-colorRole-neutral-effect-hover-variant-gray-backgroundColor',
   '--cui-c-console-gray-fill-press': 'component-Button-variant-colorRole-neutral-effect-press-variant-gray-backgroundColor',
   '--cui-c-console-neutral-label-hover': 'component-Button-variant-colorRole-neutral-effect-hover-variant-gray-color',
+  '--cui-c-console-neutral-fill-hover': 'component-Button-variant-colorRole-neutral-effect-hover-variant-filled-backgroundColor',
+  '--cui-c-console-neutral-on-accent-press': 'component-Button-variant-colorRole-neutral-effect-press-variant-filled-color',
   '--cui-c-console-error-fill-hover': 'component-Button-variant-colorRole-error-effect-hover-variant-filled-backgroundColor',
   '--cui-c-console-error-fill-press': 'component-Button-variant-colorRole-error-effect-press-variant-filled-backgroundColor',
   '--cui-c-console-error-label-hover': 'component-Button-variant-colorRole-error-effect-hover-variant-gray-color',
   '--cui-c-console-error-label-press': 'component-Button-variant-colorRole-error-effect-press-variant-gray-color',
   '--cui-c-console-card': 'color-v2-bgPlaceholder',
   '--cui-c-console-field-border': 'component-TextInput-variant-colorRole-neutral-focus-off-variant-stroked-border-color',
-  '--cui-c-console-brand-label-on-fill': 'component-Tabs-variant-colorRole-brand-variant-filledGray-anatomy-Tab-variant-effect-default-isActive-false-color',
   '--cui-c-console-brand-label-on-tint': 'component-Link-variant-colorRole-brand-effect-default-variant-inline-color',
   '--cui-c-console-dialog-stroke': 'component-Modal-variant-variant-modal-stroke',
 };
@@ -167,7 +168,9 @@ const stepOf = (value, side) => {
 const withAlpha = (opaque, alpha) => (alpha === undefined ? opaque : opaque.replace(/\)$/, ` / ${alpha})`));
 const darkOf = (name, light) => {
   const { l, c, alpha } = lch(light);
-  if (name.includes('on-accent')) return light;
+  // @invariant: a label on a brand or error accent keeps its white, the accent a dark hue on
+  // either side; the neutral's accent is black, white in dark, so its label turns with it
+  if (name.includes('on-accent') && !name.startsWith('--cui-c-console-neutral-')) return light;
   if (l === 0 && c === 0) return withAlpha('oklch(100.0% 0.000 0)', alpha);
   if (l === 100 && c === 0) return withAlpha('oklch(0.0% 0.000 0)', alpha);
   return withAlpha(tbTokens[stepOf(light, 'light')[0].replace('-palette-light-', '-palette-dark-')], alpha);
@@ -177,10 +180,9 @@ const FITTED = {
   '--cui-c-console-brand-accent-primary': { dark: 'oklch(51.2% 0.203 260.5)', why: 'white on the derived blue-600 is 2.7:1' },
   '--cui-c-console-brand-fill-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the toolkit\'s lighter blue is 3.9:1' },
   '--cui-c-console-brand-fill-press': { dark: 'oklch(43.6% 0.171 260.6)', why: 'white on the derived blue-600 is 2.7:1' },
-  '--cui-c-console-brand-label-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(68.3% 0.167 256.6)', why: 'the toolkit\'s lighter blue is 3.5:1 on white, its derived dark 3.5:1 on black; dark-blue-500 short of 4.5:1 on a gray segment over a card' },
+  '--cui-c-console-brand-label-hover': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(68.3% 0.167 256.6)', why: 'the toolkit\'s lighter blue is 3.5:1 on white, its derived dark 3.5:1 on black' },
   '--cui-c-console-error-accent-primary': { light: 'oklch(49.5% 0.190 31.5)', dark: 'oklch(50.0% 0.186 31.4)', why: 'white on the toolkit\'s red is 3.3:1' },
   '--cui-c-console-field-border': { light: 'oklch(35.9% 0.012 285.8 / 0.58)', dark: 'oklch(87.9% 0.015 286.1 / 0.42)', why: 'a field\'s edge, at the toolkit\'s 0.18, is 1.4:1 on white; a control\'s edge is held to 3:1' },
-  '--cui-c-console-brand-label-on-fill': { light: 'oklch(49.7% 0.209 260.5)', why: 'the brand\'s label on the gray fill is 4.4:1' },
   '--cui-c-console-brand-label-on-tint': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(75.6% 0.120 260.5)', why: 'a link in a banner\'s sentence: the toolkit\'s blue 3.9:1 on the info tint over a card, its derived dark blue-600 4.47:1 on the warning tint over a card (crashcart\'s unsymbolicated notice)' },
   '--cui-c-console-info-label-primary': { light: 'oklch(49.7% 0.209 260.5)', dark: 'oklch(68.3% 0.167 256.6)', why: 'the toolkit\'s info blue is 4.0:1 on white; its derived dark blue-500 short of 4.5:1 on its tint over a card' },
   '--cui-c-console-success-label-primary': { light: 'oklch(38.5% 0.094 150.1)', why: 'the toolkit\'s green is 2.2:1 on white, green-800 short of 4.5:1 on the gray fill over a card' },
@@ -260,12 +262,13 @@ const CONSOLE_MIN = [
   ['--cui-c-console-brand-label-on-accent-primary', [...ON_FILLS.map((f) => [f]), ['--cui-c-console-brand-fill-press'], ['--cui-c-console-error-fill-press']], 4.5],
   ['--cui-c-console-on-accent-press', [['--cui-c-console-brand-fill-press'], ['--cui-c-console-error-fill-press']], 4.5],
   ['--cui-c-console-neutral-label-hover', [['--cui-c-console-gray-fill-hover']], 4.5],
+  // @invariant: a picked segment's label on its black (white in dark), at rest, hovered and pressed
+  ['--cui-c-console-neutral-label-on-accent-primary', [['--cui-c-console-neutral-accent-primary'], ['--cui-c-console-neutral-fill-hover']], 4.5],
+  ['--cui-c-console-neutral-on-accent-press', [['--cui-c-console-neutral-accent-primary']], 4.5],
   // @invariant: a badge's label on the base, on its own tint and on the gray fill
   ...ROLES.map((role) => [`--cui-c-console-${role}-label-primary`, [[], [`--cui-c-console-${role}-accent-quaternary`], ['--cui-c-console-neutral-fill-tertiary']], 4.5]),
   // @invariant: a banner's icon on its tint; a card's change up or down
   ...ROLES.map((role) => [`--cui-c-console-${role}-label-primary`, [[`--cui-c-console-${role}-fill-tertiary`]], 4.5]),
-  // @invariant: a gray segment's blue label, at rest and hovered, on its gray
-  ...['--cui-c-console-brand-label-on-fill', '--cui-c-console-brand-label-hover'].map((fg) => [fg, GRAY.map((g) => [g]), 4.5]),
   // @invariant: a plain button's, a link's
   ...['--cui-c-console-brand-label-primary', '--cui-c-console-brand-label-hover', '--cui-c-console-brand-label-press'].map((fg) => [fg, [[]], 4.5]),
   // @invariant: a link in a banner's sentence, on the banner's tint

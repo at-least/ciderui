@@ -18,12 +18,8 @@
  "tabs many wide | .cui-console-tabs | 1200 | flex-wrap": "wrap",
  "tabs many wide | .cui-console-tabs | 1200 | overflow-x": "visible",
  "tabs not current | [aria-current=\"false\"] | 1200 | border-bottom-color": "rgba(0, 0, 0, 0)",
- "tabs of radios | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:not(:has(> :checked)) | 1200 | color": "oklch(0.497 0.209 260.5)",
- "tabs of radios | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:not(:has(> :checked)):hover | 1200 | color": "oklch(0.497 0.209 260.5)",
- "tabs of radios | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:not(:has(> :checked)):active | 1200 | color": "oklch(0.462 0.136 251.3)",
  "tabs of radios | .cui-console-tabs | 1200 | border-bottom-width": "0px",
  "tabs of radios | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:not(:has(> :checked)) | 1200 | border-bottom-width": "0px",
- "tabs of radios | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:has(> :checked):hover | 1200 | background-color": "oklch(0.497 0.209 260.5)",
  "tabs of radios | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab > input | 1200 | position": "absolute",
  "tabs of radios | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab > input | 1200 | opacity": "0",
  "tabs of radios | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab > input | 1200 | pointer-events": "none",
@@ -45,7 +41,7 @@
  "tabs forced colors | .cui-console-tab[href=\"#issues\"] | 1200 | border-bottom-width": "2px",
  "tabs dark | .cui-console-tab[href=\"#issues\"] | 1200 | color": "oklch(1 0 0 / 0.85)",
  "tabs dark | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:not(:has(> :checked)) | 1200 | background-color": "oklch(0.71 0.019 285.9 / 0.12)",
- "tabs dark | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:not(:has(> :checked)) | 1200 | color": "oklch(0.683 0.167 256.6)",
- "tabs dark | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:has(> :checked) | 1200 | background-color": "oklch(0.512 0.203 260.5)",
- "tabs dark | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:has(> :checked) | 1200 | color": "oklch(1 0 0 / 0.95)"
+ "tabs dark | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:not(:has(> :checked)) | 1200 | color": "oklch(1 0 0 / 0.85)",
+ "tabs dark | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:has(> :checked) | 1200 | background-color": "oklch(1 0 0)",
+ "tabs dark | .cui-console-tabs[aria-label=\"About\"] .cui-console-tab:has(> :checked) | 1200 | color": "oklch(0 0 0 / 0.95)"
 }

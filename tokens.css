@@ -60,7 +60,6 @@
   --cui-c-console-brand-label-primary: light-dark(oklch(54.2% 0.162 251.9), oklch(68.3% 0.167 256.6));
   --cui-c-console-brand-label-secondary: light-dark(oklch(54.2% 0.162 251.9 / 0.60), oklch(68.3% 0.167 256.6 / 0.60));
   --cui-c-console-brand-label-on-accent-primary: light-dark(oklch(100.0% 0.000 0.0 / 0.95), oklch(100.0% 0.000 0.0 / 0.95));
-  --cui-c-console-brand-label-on-fill: light-dark(oklch(49.7% 0.209 260.5), oklch(68.3% 0.167 256.6));
   --cui-c-console-brand-label-on-tint: light-dark(oklch(49.7% 0.209 260.5), oklch(75.6% 0.120 260.5));
   --cui-c-console-dialog-stroke: light-dark(oklch(84.5% 0.000 0), oklch(40.2% 0.000 0));
   --cui-c-console-brand-fill-hover: light-dark(oklch(49.7% 0.209 260.5), oklch(43.6% 0.171 260.6));
@@ -81,6 +80,9 @@
   --cui-c-console-error-label-hover: light-dark(oklch(49.5% 0.190 31.5), oklch(70.6% 0.184 29.4));
   --cui-c-console-error-label-press: light-dark(oklch(49.5% 0.190 31.5), oklch(70.6% 0.184 29.4));
   --cui-c-console-neutral-accent-primary: light-dark(oklch(0.0% 0.000 0), oklch(100.0% 0.000 0));
+  --cui-c-console-neutral-fill-hover: light-dark(oklch(23.8% 0.000 0.0), oklch(94.3% 0.000 0));
+  --cui-c-console-neutral-label-on-accent-primary: light-dark(oklch(100.0% 0.000 0.0 / 0.95), oklch(0.0% 0.000 0 / 0.95));
+  --cui-c-console-neutral-on-accent-press: light-dark(oklch(96.2% 0.000 0.0 / 0.95), oklch(22.6% 0.000 0 / 0.95));
   --cui-c-console-neutral-accent-quaternary: light-dark(oklch(0.0% 0.000 0.0 / 0.15), oklch(100.0% 0.000 0 / 0.15));
   --cui-c-console-info-accent-quaternary: light-dark(oklch(60.3% 0.218 257.4 / 0.15), oklch(62.4% 0.206 255.5 / 0.15));
   --cui-c-console-info-label-primary: light-dark(oklch(49.7% 0.209 260.5), oklch(68.3% 0.167 256.6));
