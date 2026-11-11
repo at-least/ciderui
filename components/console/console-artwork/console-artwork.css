@@ -1,0 +1,29 @@
+@layer components {
+  /* @invariant: as wide as the page's room for it (rule 6: its width in a row is the page's); its
+     shape one of two, so no page writes a pixel size */
+  .cui-console-artwork {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: var(--cui-c-console-card);
+    object-fit: cover;
+
+    &[data-aspect="square"] {
+      aspect-ratio: 1;
+    }
+
+    &:is(span) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      color: var(--cui-c-console-neutral-label-secondary);
+      font-size: 11px;
+      line-height: 13px;
+      text-align: center;
+      overflow-wrap: anywhere;
+    }
+  }
+}

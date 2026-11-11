@@ -1,4 +1,5 @@
 @import "./index.css";
+@import "./components/console/console-artwork/console-artwork.css";
 @import "./components/console/console-badge/console-badge.css";
 @import "./components/console/console-banner/console-banner.css";
 @import "./components/console/console-btn/console-btn.css";
