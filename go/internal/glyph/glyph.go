@@ -28,21 +28,17 @@ func Lucide(viewBox, paint, inner string) Icon {
 }
 
 func (i Icon) Render(w io.Writer) error {
-	return i.write(w, "", false)
+	return i.write(w, "")
 }
 
 // Class is the icon with a class on its <svg>: a component's part
 // (`cui-link-icon`) or a utility.
 func (i Icon) Class(class string) g.Node {
-	return g.NodeFunc(func(w io.Writer) error { return i.write(w, class, true) })
+	return g.NodeFunc(func(w io.Writer) error { return i.write(w, ` class="`+html.EscapeString(class)+`"`) })
 }
 
-func (i Icon) write(w io.Writer, class string, classed bool) error {
-	svg := "<svg"
-	if classed {
-		svg += ` class="` + html.EscapeString(class) + `"`
-	}
-	svg += ` aria-hidden="true" width="` + i.width + `" height="` + i.height + `" viewBox="` + i.viewBox + `"`
+func (i Icon) write(w io.Writer, classAttribute string) error {
+	svg := "<svg" + classAttribute + ` aria-hidden="true" width="` + i.width + `" height="` + i.height + `" viewBox="` + i.viewBox + `"`
 	if i.paint != "" {
 		svg += " " + i.paint
 	}
