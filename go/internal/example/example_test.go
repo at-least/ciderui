@@ -1,6 +1,8 @@
 package example_test
 
 import (
+	"errors"
+	"fmt"
 	"io"
 	"os"
 	"path/filepath"
@@ -23,29 +25,23 @@ func (r *recorder) Helper() {}
 
 func (r *recorder) Errorf(string, ...any) { r.failures++ }
 
-func TestCheckFailsOnlyWhereTheNodeDiffersFromItsExample(t *testing.T) {
-	const path = "site/ribbon/examples/ribbon.html"
-	same := g.Raw(example.Read(path))
-	var pass recorder
-	example.Check(&pass, same, path)
-	if pass.failures != 0 {
-		t.Errorf("Check failed %d times on the example's own markup, want 0", pass.failures)
-	}
-	for name, other := range map[string]g.Node{
-		"markup the example does not have":        g.Group{same, g.Text("x")},
-		"markup as long as the example's, not it": g.Raw(strings.Replace(example.Read(path), "now.", "now!", 1)),
+func TestCheckComparesTheExamplesLinesTrimmedAndJoined(t *testing.T) {
+	const path = "../go/internal/example/testdata/indented.html"
+	for _, c := range []struct {
+		name     string
+		node     g.Node
+		failures int
+	}{
+		{"the example's lines trimmed and joined", g.Raw("<p><b>a b</b></p>"), 0},
+		{"the example's lines as written", g.Raw("<p>\n  <b>a b</b>\t\n</p>\n"), 1},
+		{"markup the example does not have", g.Raw("<p><b>a b</b></p>x"), 1},
+		{"markup as long as the example's, not it", g.Raw("<p><b>a c</b></p>"), 1},
 	} {
-		var fail recorder
-		example.Check(&fail, other, path)
-		if fail.failures != 1 {
-			t.Errorf("Check failed %d times on %s, want 1", fail.failures, name)
+		var r recorder
+		example.Check(&r, c.node, path)
+		if r.failures != c.failures {
+			t.Errorf("Check failed %d times on %s, want %d", r.failures, c.name, c.failures)
 		}
-	}
-}
-
-func TestJoinTrimmedTrimsEachLineAndJoinsThem(t *testing.T) {
-	if got, want := example.JoinTrimmed("<p>\n  <b>a b</b>\t\n</p>\n"), "<p><b>a b</b></p>"; got != want {
-		t.Errorf("JoinTrimmed wrote %s, want %s", got, want)
 	}
 }
 
@@ -66,10 +62,30 @@ func TestRenderPanicsWithEachProblemCheckMarkupFinds(t *testing.T) {
 			t.Fatalf("CheckMarkup found %d problems in %s, want %d: %q", len(problems), html, count, problems)
 		}
 		want := "example.Render: " + strings.Join(problems, "\n")
-		if got := example.PanicOf(g.Raw(html)); got != want {
+		if got := panicOf(func() { example.Render(g.Raw(html)) }); got != want {
 			t.Errorf("Render of %s panicked with %q, want %q", html, got, want)
 		}
 	}
+}
+
+type failing struct{}
+
+func (failing) Render(io.Writer) error { return errors.New("disk full") }
+
+func TestRenderPanicsWithTheNodesError(t *testing.T) {
+	if got := panicOf(func() { example.Render(failing{}) }); got != "disk full" {
+		t.Errorf("Render of a node that cannot write panicked with %q, want its error", got)
+	}
+}
+
+func panicOf(f func()) (message string) {
+	defer func() {
+		if r := recover(); r != nil {
+			message = fmt.Sprint(r)
+		}
+	}()
+	f()
+	return ""
 }
 
 type part struct{ name string }
@@ -85,19 +101,22 @@ func (p part) Render(w io.Writer) error {
 func TestPanicsFailsUnlessEachBreakPanicsWithItsWant(t *testing.T) {
 	valid := func() part { return part{name: "a"} }
 	blank := func(p *part) { p.name = "" }
+	panics := example.Break[part]{Want: "part needs a name", Change: blank}
+	stays := example.Break[part]{Want: "part needs a name", Change: func(*part) {}}
 	for _, c := range []struct {
 		name     string
 		valid    func() part
-		brk      example.Break[part]
+		breaks   []example.Break[part]
 		failures int
 	}{
-		{"a break that panics with its want", valid, example.Break[part]{Want: "part needs a name", Change: blank}, 0},
-		{"a break that panics with another message", valid, example.Break[part]{Want: "part needs", Change: blank}, 1},
-		{"a break that does not panic", valid, example.Break[part]{Want: "part needs a name", Change: func(*part) {}}, 1},
-		{"a valid part that panics", func() part { return part{name: ""} }, example.Break[part]{Want: "part needs a name", Change: blank}, 1},
+		{"a break that panics with its want", valid, []example.Break[part]{panics}, 0},
+		{"a break that panics with another message", valid, []example.Break[part]{{Want: "part needs", Change: blank}}, 1},
+		{"a break that does not panic", valid, []example.Break[part]{stays}, 1},
+		{"a second break that does not panic", valid, []example.Break[part]{panics, stays}, 1},
+		{"a valid part that panics", func() part { return part{name: ""} }, []example.Break[part]{panics}, 1},
 	} {
 		var r recorder
-		example.Panics(&r, c.valid, []example.Break[part]{c.brk})
+		example.Panics(&r, c.valid, c.breaks)
 		if r.failures != c.failures {
 			t.Errorf("%s: Panics failed %d times, want %d", c.name, r.failures, c.failures)
 		}
@@ -110,7 +129,7 @@ func (c classed) Render(w io.Writer) error {
 	return h.P(g.If(c.Class != "drop", g.Attr("class", "root "+c.Class))).Render(w)
 }
 
-func TestPagesClassFailsOnAPartThatDropsItsClassOrHasNoRow(t *testing.T) {
+func TestPagesClassFailsOnAPartWithoutThePagesClassAfterItsRootOrARow(t *testing.T) {
 	dir := t.TempDir()
 	for name, source := range map[string]string{
 		"p.go":      "package p\n\ntype Classed struct{ Class string }\n\ntype hidden struct{ Class string }\n\ntype Plain struct{ Name string }\n",
@@ -131,6 +150,7 @@ func TestPagesClassFailsOnAPartThatDropsItsClassOrHasNoRow(t *testing.T) {
 	}{
 		{"each exported struct of the package held", []string{"Classed"}, []example.ClassRow{writes}, 0},
 		{"a part that drops its Class", []string{"Classed"}, []example.ClassRow{drops}, 1},
+		{"a part that writes the page's class after classes not its Root", []string{"Classed"}, []example.ClassRow{{Root: "other", Node: writes.Node}}, 1},
 		{"a struct with a Class and no row", nil, []example.ClassRow{writes}, 1},
 	} {
 		var r recorder
