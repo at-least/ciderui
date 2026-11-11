@@ -18,6 +18,10 @@
  "popover open phone | .cui-console-popover | 390 | box-left": "46px",
  "popover open phone | .cui-console-popover | 390 | box-width": "298px",
  "popover open phone | .cui-console-popover | 390 | max-width": "331.5px",
+ "popover open forced colors | .cui-console-popover | 1200 | border-top-width": "1px",
+ "popover open forced colors | .cui-console-popover | 1200 | border-top-style": "solid",
+ "popover open forced colors | .cui-console-popover | 1200 | border-top-color": "rgb(0, 0, 0)",
+ "popover open forced colors | .cui-console-popover | 1200 | box-shadow": "none",
  "popover dark | .cui-console-popover | 1200 | background-color": "oklch(0 0 0)",
  "popover dark | .cui-console-popover | 1200 | color": "oklch(1 0 0 / 0.85)"
 }

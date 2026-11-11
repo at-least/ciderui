@@ -32,26 +32,28 @@ const colorOf = (page, value) => page.page.evaluate((v) => {
 // on a page it is the same color as.
 const TINT = 0.5;
 const MARK = 24;
-const FIELD_GROUND = ['--cui-c-field'];
+// @trap: the field's ground allowed on a field's own box alone: the bar's translucent
+// white is the same color, and its Reduce Transparency side read as a field's
+const FIELD_GROUND = { token: '--cui-c-field', on: '.cui-field-input, .cui-option-label' };
 for (const set of ['site', 'console']) {
   const page = await open(shipped(set), '');
   await emulate(page, 'prefers-reduced-transparency', 'reduce');
-  const allowed = await Promise.all(FIELD_GROUND.map((name) => colorOf(page, `var(${name})`)));
+  const field = await colorOf(page, `var(${FIELD_GROUND.token})`);
   let read = 0;
   for (const width of [1200, 390]) {
     await page.resize(width);
     for (const part of COMPONENTS.filter((c) => c.set === set)) {
       for (const file of exampleFiles(part)) {
         await show(page, part, file);
-        const found = await page.page.evaluate(([tint, mark, allowed]) => [...document.body.querySelectorAll('*')].flatMap((e) => [null, '::before', '::after'].flatMap((pseudo) => {
+        const found = await page.page.evaluate(([tint, mark, field, fieldOn]) => [...document.body.querySelectorAll('*')].flatMap((e) => [null, '::before', '::after'].flatMap((pseudo) => {
           const cs = getComputedStyle(e, pseudo);
           const name = `${e.tagName.toLowerCase()}.${e.className}${pseudo ?? ''}`;
           const alpha = Number(cs.backgroundColor.match(/, ([\d.]+)\)$/)?.[1] ?? cs.backgroundColor.match(/\/ ([\d.]+)\)$/)?.[1] ?? 1);
           return [
             ...(cs.backdropFilter !== 'none' ? [`${name} blurs`] : []),
-            ...(alpha > tint && alpha < 1 && e.getBoundingClientRect().height >= mark && !allowed.includes(cs.backgroundColor) ? [`${name} on ${cs.backgroundColor}`] : []),
+            ...(alpha > tint && alpha < 1 && e.getBoundingClientRect().height >= mark && !(pseudo === null && e.matches(fieldOn) && cs.backgroundColor === field) ? [`${name} on ${cs.backgroundColor}`] : []),
           ];
-        })), [TINT, MARK, allowed]);
+        })), [TINT, MARK, field, FIELD_GROUND.on]);
         read++;
         check(`${part.name}/${file} at ${width}px: nothing shows through under Reduce Transparency`, found.join(' | '), '');
       }

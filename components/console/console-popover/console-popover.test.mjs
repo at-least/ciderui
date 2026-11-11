@@ -49,6 +49,16 @@ export const cases = [
     ],
   },
   {
+    name: 'popover open forced colors',
+    html: page(ex('popover')),
+    click: BUTTON,
+    widths: [1200],
+    forcedColors: true,
+    checks: [
+      { target: POP, props: ['border-top-width', 'border-top-style', 'border-top-color', 'box-shadow'], golden: 'a 1px CanvasText edge, as the sidebar\'s sheet: forced colors drop its shadow, and its ground is the page\'s' },
+    ],
+  },
+  {
     name: 'popover dark',
     html: `<div class="cui-dark">${page(ex('popover'))}</div>`,
     click: BUTTON,

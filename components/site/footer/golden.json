@@ -1,6 +1,9 @@
 {
+ "footer | .cui-footer | 1200 | box-top": "731px",
  "footer | .cui-footer-copyright a:hover | 1200 | text-decoration-line": "underline",
+ "footer | .cui-footer | 900 | box-top": "731px",
  "footer | .cui-footer-copyright a:hover | 900 | text-decoration-line": "underline",
+ "footer | .cui-footer | 390 | box-top": "753px",
  "footer | .cui-footer-copyright a:hover | 390 | text-decoration-line": "underline",
  "touch target | .cui-footer-copyright a::after | 390 | height": "44px"
 }

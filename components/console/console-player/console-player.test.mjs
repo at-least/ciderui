@@ -295,6 +295,18 @@ export const cases = [
     ],
   },
   {
+    // @external: no example has a disabled control of words: the page disables one
+    // (muse's 下一個要看 with nothing next)
+    name: 'player full screen control disabled',
+    html: ex('full-screen').replace('type="button">Next to Watch', 'type="button" disabled>Next to Watch'),
+    widths: [1600],
+    height: 900,
+    checks: [
+      { target: `${TEXT_BTN}:disabled`, props: ['opacity', 'cursor', 'background-color'], golden: FULL },
+      { target: `${TEXT_BTN}:disabled`, state: 'hover', props: ['background-color'], golden: 'disabled, the fill at rest under the pointer' },
+    ],
+  },
+  {
     name: 'player full screen controls not full screen',
     html: ex('full-screen').replace(' data-fullscreen', ''),
     widths: [1600],

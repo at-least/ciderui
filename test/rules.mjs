@@ -106,7 +106,7 @@ for (const part of COMPONENTS) {
       if (noRing.length) {
         if (off.length) noRing.forEach((c) => noRingUsed.add(c));
       } else {
-        check(`${name}: control ${i}'s focus is base.css's one ring, apple.com's (rule 9)`, off.map((prop) => `${prop} ${ring[prop]}`).join(' '), '');
+        check(`${name}: control ${i} (${own.length ? `.${own.join('.')}` : 'no class'})'s focus is base.css's one ring, apple.com's (rule 9)`, off.map((prop) => `${prop} ${ring[prop]}`).join(' '), '');
       }
     }
   }
