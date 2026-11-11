@@ -6,6 +6,7 @@ import (
 
 	"github.com/at-least/ciderui/go/console"
 	"github.com/at-least/ciderui/go/internal/example"
+	h "maragu.dev/gomponents/html"
 )
 
 func TestTabsRendersTheExamples(t *testing.T) {
@@ -32,5 +33,35 @@ func TestTabsPanics(t *testing.T) {
 		{Want: "console.ConsoleTabs needs an AriaLabel", Change: func(p *console.ConsoleTabs) { p.AriaLabel = "" }},
 		{Want: "console.ConsoleTabs has one current tab at most", Change: func(p *console.ConsoleTabs) { p.Tabs[1].Current = true }},
 		{Want: "console.ConsoleTab needs a Label", Change: func(p *console.ConsoleTabs) { p.Tabs[1].Label = "" }},
+	})
+}
+
+func tabsChoice() console.ConsoleTabsChoice {
+	return console.ConsoleTabsChoice{AriaLabel: "About", Name: "about", Attrs: nil, Options: []console.ConsoleTabsOption{
+		{Value: "picture", Label: "The picture", Checked: true},
+		{Value: "line", Label: "The line", Checked: false},
+	}}
+}
+
+func TestTabsChoiceRendersTheExample(t *testing.T) {
+	example.Check(t, tabsChoice(), "console/console-tabs/examples/radios.html")
+}
+
+func TestTabsChoiceWritesThePagesAttrs(t *testing.T) {
+	c := tabsChoice()
+	c.Attrs = h.Data("report-about", "")
+	if got := example.Render(c); !strings.HasPrefix(got, `<div class="cui-console-tabs" data-variant="filled" role="group" aria-label="About" data-report-about="">`) {
+		t.Errorf("the choice does not write the page's Attrs on its group: %s", got)
+	}
+}
+
+func TestTabsChoicePanics(t *testing.T) {
+	example.Panics(t, tabsChoice, []example.Break[console.ConsoleTabsChoice]{
+		{Want: "console.ConsoleTabsChoice needs an AriaLabel", Change: func(p *console.ConsoleTabsChoice) { p.AriaLabel = "" }},
+		{Want: "console.ConsoleTabsChoice needs a Name", Change: func(p *console.ConsoleTabsChoice) { p.Name = "" }},
+		{Want: "console.ConsoleTabsChoice needs two Options at least: one is no choice", Change: func(p *console.ConsoleTabsChoice) { p.Options = p.Options[:1] }},
+		{Want: "console.ConsoleTabsOption needs a Label", Change: func(p *console.ConsoleTabsChoice) { p.Options[1].Label = "" }},
+		{Want: "console.ConsoleTabsChoice has one Checked option: a radio group starts with its value", Change: func(p *console.ConsoleTabsChoice) { p.Options[0].Checked = false }},
+		{Want: "console.ConsoleTabsChoice has one Checked option: a radio group starts with its value", Change: func(p *console.ConsoleTabsChoice) { p.Options[1].Checked = true }},
 	})
 }

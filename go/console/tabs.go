@@ -8,9 +8,7 @@ import (
 )
 
 // ConsoleTabs is a page's sections, each its own page: App Store Connect's
-// app tabs. A form's choice is not these links but the page's own radios in
-// labels, in a <div class="cui-console-tabs" data-variant="filled"> (the
-// example radios.html): the pill draws the radio's checked and focus.
+// app tabs. A form's choice in their look is a [ConsoleTabsChoice].
 type ConsoleTabs struct {
 	AriaLabel string
 	Tabs      []ConsoleTab
@@ -46,4 +44,52 @@ func (t ConsoleTabs) Render(w io.Writer) error {
 		return h.A(h.Class("cui-console-tab"), h.Href(tab.Href), g.If(tab.Current, h.Aria("current", "page")), g.Text(tab.Label))
 	})
 	return h.Nav(h.Class("cui-console-tabs"), h.Aria("label", t.AriaLabel), tabs).Render(w)
+}
+
+// ConsoleTabsChoice is a form's choice of one value, drawn as filled tabs (a
+// segmented control): radios in labels, each pill drawing its radio's checked
+// and focus.
+type ConsoleTabsChoice struct {
+	AriaLabel string
+	// Name: the radios' form field.
+	Name    string
+	Options []ConsoleTabsOption
+	// Attrs: the group's other attributes, for the page's script (data-*);
+	// nil for none.
+	Attrs g.Node
+}
+
+type ConsoleTabsOption struct {
+	Value   string
+	Label   string
+	Checked bool
+}
+
+func (c ConsoleTabsChoice) Render(w io.Writer) error {
+	if c.AriaLabel == "" {
+		panic("console.ConsoleTabsChoice needs an AriaLabel")
+	}
+	if c.Name == "" {
+		panic("console.ConsoleTabsChoice needs a Name")
+	}
+	if len(c.Options) < 2 {
+		panic("console.ConsoleTabsChoice needs two Options at least: one is no choice")
+	}
+	checked := 0
+	for _, o := range c.Options {
+		if o.Label == "" {
+			panic("console.ConsoleTabsOption needs a Label")
+		}
+		if o.Checked {
+			checked++
+		}
+	}
+	if checked != 1 {
+		panic("console.ConsoleTabsChoice has one Checked option: a radio group starts with its value")
+	}
+	return h.Div(h.Class("cui-console-tabs"), h.Data("variant", "filled"), h.Role("group"), h.Aria("label", c.AriaLabel), c.Attrs,
+		g.Map(c.Options, func(o ConsoleTabsOption) g.Node {
+			return h.Label(h.Class("cui-console-tab"), h.Input(h.Type("radio"), h.Name(c.Name), h.Value(o.Value), g.If(o.Checked, h.Checked())), g.Text(o.Label))
+		}),
+	).Render(w)
 }
