@@ -1,0 +1,9 @@
+@layer components {
+  /* @invariant: a container's room (rule 6): its header, then its blocks, each 20px apart */
+  .cui-console-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1.25rem;
+    min-width: 0;
+  }
+}

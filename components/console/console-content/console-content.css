@@ -29,4 +29,17 @@
       }
     }
   }
+
+  /* @invariant: a container's room (rule 6): a grid, so a part the page hides (the sidebar's open button at 1024px) leaves no gap */
+  .cui-console-content-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 2.5rem;
+    min-width: 0;
+    padding-block: 2rem 4rem;
+
+    & > :where(.cui-console-sidebar-open) {
+      justify-self: start;
+    }
+  }
 }

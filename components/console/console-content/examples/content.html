@@ -1,17 +1,24 @@
 <div class="cui-console-page">
   <div class="cui-console-content">
-    <nav class="cui-console-sidebar" id="sidebar" popover aria-label="Main">
+    <nav class="cui-console-sidebar" id="sidebar" popover aria-label="CrashCart">
       <div class="cui-console-sidebar-header">
         <a class="cui-console-sidebar-wordmark" href="#home">CrashCart</a>
+        <button class="cui-console-btn cui-console-btn-icon cui-console-sidebar-close" data-variant="plain" type="button" aria-label="Close" popovertarget="sidebar" popovertargetaction="hide" autofocus><svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
       </div>
       <div class="cui-console-sidebar-body cui-console-menu" data-variant="sidebar">
         <a class="cui-console-menu-item" href="#projects" aria-current="page"><span class="cui-console-menu-label">All Projects</span></a>
         <a class="cui-console-menu-item" href="#issues"><span class="cui-console-menu-label">All Issues</span></a>
       </div>
+      <div class="cui-console-sidebar-footer"></div>
     </nav>
-    <main>
-      <h1 class="cui-console-h3-emph">All Projects</h1>
-      <p>Every project you can see, the ones that need you first.</p>
+    <main id="main" tabindex="-1" class="cui-console-content-main">
+      <button class="cui-console-btn cui-console-btn-icon cui-console-sidebar-open" data-variant="plain" type="button" aria-label="Menu" popovertarget="sidebar"><svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></button>
+      <header class="cui-console-section-header">
+        <div>
+          <h1 class="cui-console-h2">All Projects</h1>
+          <p class="cui-console-section-header-detail">Every project you can see, the ones that need you first.</p>
+        </div>
+      </header>
     </main>
   </div>
 </div>

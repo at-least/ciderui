@@ -17,6 +17,7 @@ export const cases = [
       { target: `${C} .cui-console-menu-item[aria-current]`, props: ['box-left', 'box-width'], golden: 'the sidebar\'s items flush with the column, as the analytics menu\'s are' },
       { target: `${C} main`, props: ['box-left'], golden: 'the page 30px past the sidebar\'s column' },
       { target: `${C} .cui-console-sidebar-header`, props: ['padding-left', 'padding-right'], golden: ROOM },
+      { target: `${C}-main`, props: ['padding-top', 'padding-bottom'], golden: 'the page 32px under the window\'s top and 64px over its foot: crashcart\'s and totality\'s own (pt-8, pb-16), App Store Connect\'s unread' },
       { target: `${C} .cui-console-sidebar-body`, props: ['padding-left', 'padding-right'], golden: ROOM },
     ],
   },
@@ -36,6 +37,24 @@ export const cases = [
     widths: [639, 390],
     checks: [
       { target: C, props: ['padding-left', 'padding-right'], tb: [`${L}-sm-paddingInline`, `${L}-sm-paddingInline`] },
+    ],
+  },
+  {
+    name: 'content rhythm',
+    html: ex('rhythm'),
+    widths: [1200, 390],
+    checks: [
+      { target: `${C}-main`, props: ['display', 'row-gap'], golden: 'the page\'s head and its sections 40px apart, the room crashcart and totality each wrote (gap-10); a grid, so a part the page hides leaves no room' },
+      { target: `${C}-main > .cui-console-section:last-child`, props: ['box-y'], golden: 'the second section 40px under the first' },
+    ],
+  },
+  {
+    name: 'content open',
+    html: ex('content'),
+    widths: [390],
+    checks: [
+      { target: `${C}-main > .cui-console-sidebar-open`, props: ['justify-self', 'box-width'], golden: 'the sheet\'s button its own size, not the column\'s' },
+      { target: `${C}-main > header`, props: ['box-y'], golden: '40px under the button' },
     ],
   },
 ];
