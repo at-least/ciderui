@@ -1,0 +1,23 @@
+{
+ "dl | .cui-dl | 1200 | display": "grid",
+ "dl | .cui-dl | 1200 | grid-template-columns": "334px 334px",
+ "dl | .cui-dl | 1200 | row-gap": "12px",
+ "dl | .cui-dl | 1200 | column-gap": "24px",
+ "dl | .cui-dl > div:first-child > dt | 1200 | color": "rgb(110, 110, 115)",
+ "dl | .cui-dl > div:first-child > dt | 1200 | font-size": "14px",
+ "dl | .cui-dl > div:first-child > dt | 1200 | line-height": "20px",
+ "dl | .cui-dl > div:first-child > dd | 1200 | color": "rgb(29, 29, 31)",
+ "dl | .cui-dl > div:first-child > dd | 1200 | margin-left": "0px",
+ "dl | .cui-dl | 735 | display": "grid",
+ "dl | .cui-dl | 735 | grid-template-columns": "334px 334px",
+ "dl | .cui-dl | 735 | row-gap": "12px",
+ "dl | .cui-dl | 735 | column-gap": "24px",
+ "dl | .cui-dl > div:first-child > dt | 735 | color": "rgb(110, 110, 115)",
+ "dl | .cui-dl > div:first-child > dt | 735 | font-size": "14px",
+ "dl | .cui-dl > div:first-child > dt | 735 | line-height": "20px",
+ "dl | .cui-dl > div:first-child > dd | 735 | color": "rgb(29, 29, 31)",
+ "dl | .cui-dl > div:first-child > dd | 735 | margin-left": "0px",
+ "dl phone | .cui-dl | 734 | grid-template-columns": "692px",
+ "dl phone | .cui-dl | 390 | grid-template-columns": "390px",
+ "dl zh | .cui-dl > div:first-child > dt | 1200 | line-height": "21px"
+}

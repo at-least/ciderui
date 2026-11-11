@@ -1,0 +1,28 @@
+@layer components {
+  /* @invariant: each term over its value in a <div>, the pairs in two columns from 735px: a
+     store's order details, read down then across */
+  .cui-dl {
+    display: grid;
+    gap: 12px 24px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: var(--cui-tracking-14);
+
+    &:where(:lang(zh)) {
+      line-height: 21px;
+    }
+
+    @media (width >= 735px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    & > :where(div) > :where(dt) {
+      color: var(--cui-c-text-2);
+    }
+
+    & > :where(div) > :where(dd) {
+      color: var(--cui-c-text);
+      overflow-wrap: anywhere;
+    }
+  }
+}
