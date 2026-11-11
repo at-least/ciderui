@@ -9,17 +9,21 @@ import { join } from 'node:path';
 import { ROOT } from '../test/compile.mjs';
 
 const IMAGE = 'ciderui-test';
-// @external: The image is made from these alone (test/Dockerfile.dockerignore; not a root
-// .dockerignore: with this -f BuildKit reads this one alone): one built from the same
-// bytes carries their hash as a label and is run by its ID, with no build
-// (a cached build still took 2s over ssh). Not by the tag: lab's daemon
-// serves every Mac and checkout, and another's build can move the tag
+const DOCKERFILE = 'test/Dockerfile';
+const CONTEXT = ['package.json', 'package-lock.json'];
+// @trap: test/Dockerfile.dockerignore, not a root .dockerignore: with this -f BuildKit
+// reads this one alone
+const admitted = readFileSync(join(ROOT, `${DOCKERFILE}.dockerignore`), 'utf8').split('\n').filter((l) => l.startsWith('!')).map((l) => l.slice(1));
+if (admitted.join(' ') !== CONTEXT.join(' ')) throw new Error(`${DOCKERFILE}.dockerignore admits ${admitted.join(' ')}, docker.mjs hashes ${CONTEXT.join(' ')}: a file the image reads and the hash leaves out reuses a stale image`);
+// @external: an image built from the same bytes carries their hash as a label and is run by
+// its ID, with no build (a cached build still took 2s over ssh). Not by the tag: lab's
+// daemon serves every Mac and checkout, and another's build can move the tag
 // meanwhile.
 const inputs = createHash('sha256');
-for (const f of ['test/Dockerfile', 'package.json', 'package-lock.json']) inputs.update(f).update(readFileSync(join(ROOT, f)));
+for (const f of [DOCKERFILE, ...CONTEXT]) inputs.update(f).update(readFileSync(join(ROOT, f)));
 const label = `ciderui.inputs=${inputs.digest('hex')}`;
 let image = execFileSync('docker', ['images', '-q', '--no-trunc', '--filter', `label=${label}`], { encoding: 'utf8' }).split('\n')[0].trim();
-if (!image) image = execFileSync('docker', ['build', '-q', '-t', IMAGE, '--label', label, '-f', join(ROOT, 'test/Dockerfile'), ROOT], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'inherit'] }).trim();
+if (!image) image = execFileSync('docker', ['build', '-q', '-t', IMAGE, '--label', label, '-f', join(ROOT, DOCKERFILE), ROOT], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'inherit'] }).trim();
 if (!/^sha256:[0-9a-f]{64}$/.test(image)) throw new Error(`docker gave no image ID: ${image}`);
 // @external: CIDERUI_CHROME=1: the image with Google Chrome too (reference/chrome.Dockerfile),
 // for a probe of a page Playwright's Chromium cannot play; the tests never run in it

@@ -1,5 +1,5 @@
-# @invariant: the image needs the lock file alone: the repository reaches a container
-# through scripts/docker.mjs's docker cp
+# @invariant: the repository reaches a container through scripts/docker.mjs's
+# docker cp, not this context; scripts/docker.mjs hashes the files admitted here
 *
 !package.json
 !package-lock.json

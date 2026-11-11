@@ -184,7 +184,7 @@ func TestPathsAndCitesResolve(t *testing.T) {
 			exists[at] = true
 		}
 	}
-	classes := vocabularies()[""].classes
+	classes := vocabularies()[bothSets].classes
 	for _, file := range files {
 		switch {
 		case file == "pointers_test.go", strings.HasPrefix(file, "dist/"), strings.Contains(file, "/results/"):

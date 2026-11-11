@@ -40,10 +40,13 @@ var ariaValues = map[string][]string{
 	"aria-sort":     {"ascending", "descending", "none", "other"},
 }
 
-// @invariant: set "": both sets', for a fragment, which links no stylesheet to tell its own.
+// @invariant: a fragment links no stylesheet to tell its own set, so it is
+// held to both sets'
+const bothSets = ""
+
 func vocabularyOf(set string) vocabulary {
 	inAnotherSet := func(path string) bool {
-		return set != "" && strings.HasPrefix(path, "components/") && !strings.HasPrefix(path, "components/"+set+"/")
+		return set != bothSets && strings.HasPrefix(path, "components/") && !strings.HasPrefix(path, "components/"+set+"/")
 	}
 	// @trap: not every class a selector here names: base.css's touch target names both
 	// sets' parts, and that rule alone does not draw them
@@ -89,7 +92,7 @@ func parsed[T any](path string, parse func() T) T {
 }
 
 var vocabularies = sync.OnceValue(func() map[string]vocabulary {
-	return map[string]vocabulary{"": vocabularyOf(""), "site": vocabularyOf("site"), "console": vocabularyOf("console")}
+	return map[string]vocabulary{bothSets: vocabularyOf(bothSets), "site": vocabularyOf("site"), "console": vocabularyOf("console")}
 })
 
 func linkedSet(tags []startTag) string {
@@ -104,7 +107,7 @@ func linkedSet(tags []startTag) string {
 			return "console"
 		}
 	}
-	return ""
+	return bothSets
 }
 
 func classesIn(css string) map[string]bool {
@@ -340,7 +343,7 @@ func CheckMarkup(html string) []string {
 	set := linkedSet(tags)
 	known := vocabularies()[set]
 	sheet := "ciderui"
-	if set != "" {
+	if set != bothSets {
 		sheet = "the " + set + " stylesheet this page links"
 	}
 	var problems []string
