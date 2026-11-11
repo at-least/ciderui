@@ -49,3 +49,18 @@ func TestFieldPanics(t *testing.T) {
 		{Want: `example.Render: class on <input class="cui-console-field-input">: written twice, and the browser keeps the first`, Change: func(p *console.ConsoleField) { p.Control = input(h.Class("cui-console-field-input")) }},
 	})
 }
+
+func search() console.ConsoleSearch {
+	return console.ConsoleSearch{AriaLabel: "Search Accounts", Control: input(h.Name("q"), h.Placeholder("Name, email or phone"))}
+}
+
+func TestSearchRendersTheExample(t *testing.T) {
+	example.Check(t, h.Form(h.Class("max-w-80"), h.Role("search"), h.Action("#accounts"), search()), "console/console-field/examples/search.html")
+}
+
+func TestSearchPanics(t *testing.T) {
+	example.Panics(t, search, []example.Break[console.ConsoleSearch]{
+		{Want: "console.ConsoleSearch needs an AriaLabel", Change: func(p *console.ConsoleSearch) { p.AriaLabel = "" }},
+		{Want: "console.ConsoleSearch needs a Control", Change: func(p *console.ConsoleSearch) { p.Control = nil }},
+	})
+}

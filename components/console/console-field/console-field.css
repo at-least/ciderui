@@ -136,4 +136,24 @@
     flex-direction: column;
     min-width: 0;
   }
+
+  /* @invariant: the containing block its magnifier is placed in (rule 6), the text past it */
+  .cui-console-search {
+    position: relative;
+    display: block;
+
+    & > .cui-console-field-input {
+      padding-inline-start: 1.75rem;
+    }
+  }
+
+  .cui-console-search-icon {
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    translate: 0 -50%;
+    color: var(--cui-c-console-neutral-label-secondary);
+    font-size: 13px;
+    pointer-events: none;
+  }
 }

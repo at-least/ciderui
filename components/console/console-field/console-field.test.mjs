@@ -129,4 +129,13 @@ export const cases = [
       { target: FILE_ON, pseudo: '::file-selector-button', props: ['color'], golden: 'the dark side derived (tokens.css, decision 18)' },
     ],
   },
+  {
+    name: 'search',
+    html: ex('search'),
+    widths: [1200, 390],
+    checks: [
+      { target: '.cui-console-search > input', props: ['padding-left', 'height', 'border-top-left-radius'], golden: 'a field\'s box, its text 28px in, past the magnifier' },
+      { target: '.cui-console-search-icon', props: ['position', 'left', 'color', 'width', 'box-y'], golden: 'the magnifier 8px in, on the field\'s middle, in the secondary label, at the body\'s size' },
+    ],
+  },
 ];
