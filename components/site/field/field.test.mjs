@@ -147,4 +147,26 @@ export const cases = [
       { target: PREFIX, props: ['box-width', 'letter-spacing'], golden: 'its text\'s width and 16px either side, as apple.com\'s (43.34px in SF: giftcard:prefix.currency); the fitted letter-spacing' },
     ],
   },
+  {
+    name: 'search',
+    html: ex('search'),
+    widths: [1200, 900, 390],
+    checks: [
+      { target: INPUT, props: ['font-size', 'font-weight', 'color', ...PADDING, ...EDGE, 'background-color', 'height'], apple: ['search-serp', 'input'] },
+      { target: INPUT, state: 'focus', props: ['padding-left', 'padding-right', 'border-top-width', 'border-top-color'], apple: ['search-serp', 'input', 'focus'] },
+      { target: '.cui-field-icon', props: ['position', 'left', 'top', 'height'], apple: ['search-serp', 'icon.left'] },
+      { target: '.cui-field-icon', props: ['box-width', 'box-height'], golden: 'apple.com\'s 25 by 25 (search-serp:icon.left, a box read beside its width)' },
+      { target: '.cui-field-icon', props: ['color'], golden: 'the magnifier in the tertiary text, its SVG\'s fill on apple.com (rgb(134, 134, 139), reference/icons/search.mjs)' },
+      { target: '.cui-field-clear', props: ['visibility'], golden: 'no clear link while the field is empty' },
+      { target: INPUT, props: ['line-height'], golden: 'the field\'s own 21px, where apple.com\'s computes 21.0012px' },
+    ],
+  },
+  {
+    name: 'search filled',
+    html: ex('search-filled'),
+    widths: [1200, 390],
+    checks: [
+      { target: '.cui-field-clear', props: ['visibility', 'color', 'top', 'right', 'width', 'height'], golden: 'the clear link once there is text, its icon where apple.com\'s reset is (14px from the end, 16px down, search-serp:icon.right) in a 44 by 44 target about it, the magnifier\'s color' },
+    ],
+  },
 ];

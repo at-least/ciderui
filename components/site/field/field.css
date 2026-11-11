@@ -137,4 +137,48 @@
       margin: 2.75px 3px 0 0;
     }
   }
+
+  .cui-field-input[type="search"] {
+    padding: 0 49px 0 44px;
+    appearance: none;
+
+    &:focus {
+      padding-left: 43px;
+    }
+
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
+      appearance: none;
+    }
+
+    &::placeholder {
+      color: var(--cui-c-text-2);
+      opacity: 1;
+    }
+  }
+
+  .cui-field-icon {
+    position: absolute;
+    top: 16px;
+    left: 13px;
+    color: var(--cui-c-text-3);
+    pointer-events: none;
+  }
+
+  /* @invariant: rule 6: 44 by 44 about apple.com's 25px icon (14px from the end, 16px down),
+     a finger's target */
+  .cui-field-clear {
+    position: absolute;
+    top: 6.5px;
+    right: 5px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    color: var(--cui-c-text-3);
+  }
+
+  .cui-field-input:placeholder-shown ~ .cui-field-clear {
+    visibility: hidden;
+  }
 }

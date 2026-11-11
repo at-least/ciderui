@@ -40,3 +40,15 @@ PW=…/playwright-chromium/index.mjs node nav.mjs     # the global nav's icons
 PW=…/playwright-chromium/index.mjs node form.mjs    # the field's error mark
 PW=…/playwright-chromium/index.mjs node lines.mjs   # the accordion's chevron
 ```
+
+## The search field's icons
+
+`search.mjs` reads the two icons of apple.com's search page's field (`../apple.com/`'s `search-serp`), each an SVG its button's background draws in `rgb(134, 134, 139)`, 25 by 25: the magnifier before the text and the reset after it. It rasterizes each at 20 pixels to the unit (`svg.js`) beside ciderui's own, drawn from their numbers, read along the ring's middle row (10.87):
+
+| icon | apple.com's ink | ciderui's | shared ink |
+| --- | --- | --- | --- |
+| `MAGNIFIER` | a ring 3.85 to 17.5 across, 1.1 thick at its middle row; a handle to 21 by 21, round | a ring about (10.69, 10.87), radius 6.28, 1.1 thick; a line from (15.25, 15.35) to (20.15, 20.05), 1.7 thick, round | 0.9783 |
+| `RESET` | a disc 3 to 22 each way; an X cut from it | a disc of radius 9.5 about the middle; an X cut to 3.5 each way of it, 1.1 thick, round | 0.9995 |
+
+Intersection over union; the probe fails below 0.85, a mark set before the run, and failed at 0.1843 with the magnifier's pair given the reset as ciderui's. Measured 2026-11-12 in Chromium 151 on macOS (`results/search.json`); `go/internal/glyph`'s test holds `Magnifier` and `Reset` to the shapes recorded there.
+
