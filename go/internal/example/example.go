@@ -27,24 +27,6 @@ var root = func() string {
 	return filepath.Join(filepath.Dir(file), "../../..")
 }()
 
-// @invariant: the example's lines trimmed and joined are the markup as a
-// component writes it
-func read(path string) string {
-	b, err := os.ReadFile(filepath.Join(root, "components", path))
-	if err != nil {
-		panic(err)
-	}
-	return joinTrimmed(string(b))
-}
-
-func joinTrimmed(text string) string {
-	var out strings.Builder
-	for _, line := range strings.Split(text, "\n") {
-		out.WriteString(strings.TrimSpace(line))
-	}
-	return out.String()
-}
-
 // Render is node's HTML, with gomponents' two escapes the examples write
 // otherwise put as they do: ' as itself (gomponents writes &#39;), " as
 // &quot; (&#34;). Each pair means the same in text and in a double-quoted
@@ -63,8 +45,18 @@ func Render(node g.Node) string {
 // Check fails t where node does not write the example at path.
 func Check(t testing.TB, node g.Node, path string) {
 	t.Helper()
-	if got, want := Render(node), read(path); got != want {
-		t.Errorf("%s\n got: %s\nwant: %s", path, got, want)
+	b, err := os.ReadFile(filepath.Join(root, "components", path))
+	if err != nil {
+		panic(err)
+	}
+	// @invariant: the example's lines trimmed and joined are the markup as a
+	// component writes it
+	var want strings.Builder
+	for _, line := range strings.Split(string(b), "\n") {
+		want.WriteString(strings.TrimSpace(line))
+	}
+	if got := Render(node); got != want.String() {
+		t.Errorf("%s\n got: %s\nwant: %s", path, got, want.String())
 	}
 }
 
@@ -111,12 +103,13 @@ type ClassRow struct {
 }
 
 // PagesClass fails t where a row's Node does not write PageClass after its Root,
-// and for each exported struct of the package in dir with a Class field that no
-// row's Node is and nested does not name. A part that drops its Class draws fine,
+// and for each exported struct of the package under test (the working
+// directory's) with a Class field that no row's Node is and nested does not
+// name. A part that drops its Class draws fine,
 // in the wrong place: this stops a new part going without a row. nested: a part
 // only inside another part (that part's row), or one whose Class is its whole
 // class attribute.
-func PagesClass(t testing.TB, dir string, nested []string, rows []ClassRow) {
+func PagesClass(t testing.TB, nested []string, rows []ClassRow) {
 	t.Helper()
 	held := slices.Clone(nested)
 	for _, row := range rows {
@@ -127,15 +120,15 @@ func PagesClass(t testing.TB, dir string, nested []string, rows []ClassRow) {
 			t.Errorf("%s: no %s in %s", name, want, got)
 		}
 	}
-	for _, name := range structsWithClass(dir) {
+	for _, name := range structsWithClass() {
 		if !slices.Contains(held, name) {
 			t.Errorf("%s has a Class and no ClassRow", name)
 		}
 	}
 }
 
-func structsWithClass(dir string) []string {
-	paths, err := filepath.Glob(filepath.Join(dir, "*.go"))
+func structsWithClass() []string {
+	paths, err := filepath.Glob("*.go")
 	if err != nil {
 		panic(err)
 	}

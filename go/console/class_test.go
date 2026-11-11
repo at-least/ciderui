@@ -14,7 +14,7 @@ func TestEachPartWritesThePagesClass(t *testing.T) {
 	const page = example.PageClass
 	player := pausedPlayer()
 	player.Class = page
-	example.PagesClass(t, ".", []string{"ConsolePage"}, []example.ClassRow{
+	example.PagesClass(t, []string{"ConsolePage"}, []example.ClassRow{
 		{Root: "cui-console-btn", Node: console.ConsoleBtn{Href: "", Label: "x", AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: page}},
 		{Root: "cui-console-btn cui-console-btn-icon cui-console-play", Node: console.ConsolePlay{Attrs: nil, AriaLabel: "x", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: page}},
 		{Root: "cui-console-player", Node: player},

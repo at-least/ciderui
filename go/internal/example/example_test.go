@@ -131,6 +131,7 @@ func (c classed) Render(w io.Writer) error {
 
 func TestPagesClassFailsOnAPartWithoutThePagesClassAfterItsRootOrARow(t *testing.T) {
 	dir := t.TempDir()
+	t.Chdir(dir)
 	for name, source := range map[string]string{
 		"p.go":      "package p\n\ntype Classed struct{ Class string }\n\ntype hidden struct{ Class string }\n\ntype Plain struct{ Name string }\n",
 		"p_test.go": "package p\n\ntype TestOnly struct{ Class string }\n",
@@ -154,7 +155,7 @@ func TestPagesClassFailsOnAPartWithoutThePagesClassAfterItsRootOrARow(t *testing
 		{"a struct with a Class and no row", nil, []example.ClassRow{writes}, 1},
 	} {
 		var r recorder
-		example.PagesClass(&r, dir, c.nested, c.rows)
+		example.PagesClass(&r, c.nested, c.rows)
 		if r.failures != c.failures {
 			t.Errorf("%s: PagesClass failed %d times, want %d", c.name, r.failures, c.failures)
 		}
