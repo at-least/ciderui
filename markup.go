@@ -3,7 +3,6 @@ package ciderui
 import (
 	"fmt"
 	"maps"
-	"regexp"
 	"slices"
 	"strconv"
 	"strings"
@@ -71,7 +70,8 @@ func vocabularyOf(set string) vocabulary {
 					continue
 				}
 				for _, a := range compound.attributes {
-					v.values = append(v.values, selected{class: class, attribute: a.name, value: a.value, anyValue: !a.hasValue && !a.negated})
+					a.class = class
+					v.values = append(v.values, a)
 				}
 			}
 		}
@@ -107,14 +107,14 @@ func linkedSet(tags []startTag) string {
 	return ""
 }
 
-var selectorClass = regexp.MustCompile(`\.(cui-[a-zA-Z0-9-]+)`)
-
 func classesIn(css string) map[string]bool {
 	classes := map[string]bool{}
 	styleRules, utilities := rules(css)
 	for _, selector := range styleRules {
-		for _, match := range selectorClass.FindAllStringSubmatch(selector, -1) {
-			classes[match[1]] = true
+		for i := range len(selector) {
+			if class := name(selector[i+1:]); selector[i] == '.' && strings.HasPrefix(class, "cui-") && len(class) > len("cui-") {
+				classes[class] = true
+			}
 		}
 	}
 	for _, utility := range utilities {
@@ -134,14 +134,10 @@ func compoundsIn(css string) []compound {
 	return append(own, others...)
 }
 
-type selectorAttribute struct {
-	name, value       string
-	hasValue, negated bool
-}
-
 type compound struct {
-	classes    []string
-	attributes []selectorAttribute
+	classes []string
+	// @invariant: each without its class, which the compound's classes give
+	attributes []selected
 }
 
 // @invariant: subjects returns the ways selector's rightmost compound matches
@@ -175,7 +171,7 @@ func subjects(selector string, negated bool, others *[]compound) []compound {
 				inside := part[i+1 : i+end]
 				if strings.HasPrefix(inside, "data-") {
 					attribute, value, hasValue := strings.Cut(inside, "=")
-					a := selectorAttribute{name: attribute, value: strings.Trim(value, `"`), hasValue: hasValue, negated: negated}
+					a := selected{class: "", attribute: attribute, value: strings.Trim(value, `"`), anyValue: !hasValue && !negated}
 					for w := range ways {
 						ways[w].attributes = append(slices.Clip(ways[w].attributes), a)
 					}
@@ -343,23 +339,21 @@ func CheckMarkup(html string) []string {
 	tags := startTags(html)
 	set := linkedSet(tags)
 	known := vocabularies()[set]
-	classes, values := known.classes, known.values
 	sheet := "ciderui"
 	if set != "" {
 		sheet = "the " + set + " stylesheet this page links"
 	}
 	var problems []string
 	for _, tag := range tags {
-		class := tag.attribute("class")
 		on := tag.on()
 		var ours []string
-		for _, c := range strings.Fields(class) {
+		for _, c := range strings.Fields(tag.attribute("class")) {
 			if strings.HasPrefix(c, "cui-") {
 				ours = append(ours, c)
 			}
 		}
 		for _, c := range ours {
-			if classes[c] {
+			if known.classes[c] {
 				continue
 			}
 			if other := otherSet(set); other != "" && vocabularies()[other].classes[c] {
@@ -378,7 +372,7 @@ func CheckMarkup(html string) []string {
 		if len(ours) == 0 {
 			continue
 		}
-		problems = append(problems, dataValueProblems(tag, ours, values)...)
+		problems = append(problems, dataValueProblems(tag, ours, known.values)...)
 		for _, a := range tag.attributes {
 			legal, isState := ariaValues[a.name]
 			if !isState || slices.Contains(legal, a.value) {
