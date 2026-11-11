@@ -83,13 +83,21 @@
   }
 
   /* @external: a spinner keeps turning, as iOS's activity indicator does under Reduce
-     Motion: frozen, it reads as a hang, not as progress */
+     Motion: frozen, it reads as a hang, not as progress; a busy button's is its ::before */
   :not(.animate-spin),
-  ::before,
+  :not([aria-busy="true"])::before,
   ::after,
   ::backdrop {
     animation-delay: -1ms !important;
     animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+/* @invariant: a busy button's spinner (cui-btn, cui-console-btn), one turn a second as
+   Tailwind's animate-spin */
+@keyframes cui-busy {
+  to {
+    transform: rotate(360deg);
   }
 }

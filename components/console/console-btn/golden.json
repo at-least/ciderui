@@ -66,5 +66,21 @@
  "dark | .flex > :nth-child(2) | 1200 | color": "oklch(1 0 0 / 0.95)",
  "dark | .flex > :nth-child(3) | 1200 | color": "oklch(0.683 0.167 256.6)",
  "dark | .flex > :nth-child(4) | 1200 | color": "oklch(0.706 0.184 29.4)",
- "dark | .flex > :nth-child(5) | 1200 | background-color": "oklch(0.5 0.186 31.4)"
+ "dark | .flex > :nth-child(5) | 1200 | background-color": "oklch(0.5 0.186 31.4)",
+ "busy | .cui-console-btn | 1200 | cursor": "progress",
+ "busy | .cui-console-btn::before | 1200 | width": "13px",
+ "busy | .cui-console-btn::before | 1200 | height": "13px",
+ "busy | .cui-console-btn::before | 1200 | border-top-width": "2px",
+ "busy | .cui-console-btn::before | 1200 | border-top-left-radius": "50%",
+ "busy | .cui-console-btn::before | 1200 | animation-name": "cui-busy",
+ "busy | .cui-console-btn::before | 1200 | animation-duration": "1s",
+ "busy | .cui-console-btn::before | 1200 | animation-iteration-count": "infinite",
+ "busy | .cui-console-btn | 390 | cursor": "progress",
+ "busy | .cui-console-btn::before | 390 | width": "13px",
+ "busy | .cui-console-btn::before | 390 | height": "13px",
+ "busy | .cui-console-btn::before | 390 | border-top-width": "2px",
+ "busy | .cui-console-btn::before | 390 | border-top-left-radius": "50%",
+ "busy | .cui-console-btn::before | 390 | animation-name": "cui-busy",
+ "busy | .cui-console-btn::before | 390 | animation-duration": "1s",
+ "busy | .cui-console-btn::before | 390 | animation-iteration-count": "infinite"
 }

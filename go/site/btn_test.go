@@ -29,11 +29,14 @@ func TestBtnRendersTheExamples(t *testing.T) {
 		b.Attrs = h.Disabled()
 		return b
 	}
+	busy := link("Sign In", "", primary, medium)
+	busy.Submit, busy.Attrs = true, h.Aria("busy", "true")
 	for _, c := range []struct {
 		path string
 		node g.Node
 	}{
 		{"default", link("Buy", buy, primary, medium)},
+		{"busy", busy},
 		{"block", block},
 		{"block-button", blockButton},
 		{"icon", icon},

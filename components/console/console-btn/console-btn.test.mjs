@@ -152,4 +152,14 @@ export const cases = [
       { target: RED_FILLED, props: ['background-color'], golden: `the dark red fill dark red-300: ${FITTED}` },
     ],
   },
+  {
+    name: 'busy',
+    html: ex('busy'),
+    widths: [1200, 390],
+    reducedMotion: 'reduce',
+    checks: [
+      { target: '.cui-console-btn', props: ['cursor'], golden: 'aria-busy, set by the page\'s script while the request runs: the pointer says so' },
+      { target: '.cui-console-btn', pseudo: '::before', props: ['width', 'height', 'border-top-width', 'border-top-left-radius', 'animation-name', 'animation-duration', 'animation-iteration-count'], golden: 'a spinner before the label, at the label\'s size, the label kept so the button keeps its width and its name; under Reduce Motion it keeps turning, as iOS\'s activity indicator does (base.css)' },
+    ],
+  },
 ];

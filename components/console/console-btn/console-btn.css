@@ -51,6 +51,24 @@
       color: var(--cui-console-btn-label-disabled);
       cursor: default;
     }
+
+    /* @invariant: the page's script sets aria-busy while the button's request runs: a
+       spinner before its label, the label kept so the button keeps its width and name */
+    &[aria-busy="true"] {
+      cursor: progress;
+
+      &::before {
+        content: "";
+        flex: none;
+        width: 1em;
+        height: 1em;
+        box-sizing: border-box;
+        border: 2px solid currentColor;
+        border-inline-end-color: transparent;
+        border-radius: 50%;
+        animation: cui-busy 1s linear infinite;
+      }
+    }
   }
 
   .cui-console-btn[data-color="error"] {

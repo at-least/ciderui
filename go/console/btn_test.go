@@ -46,6 +46,8 @@ func TestConsoleBtnRendersTheExamples(t *testing.T) {
 	labelled.Icon = lucide.Copy
 	compare := consoleBtn("Compare")
 	compare.Attrs = h.Data("shape", "capsule")
+	busy := withVariant("Save", filled, false)
+	busy.Submit, busy.Attrs = true, h.Aria("busy", "true")
 	medium := console.ConsoleBtnSizeMedium
 	for _, c := range []struct {
 		path string
@@ -55,6 +57,7 @@ func TestConsoleBtnRendersTheExamples(t *testing.T) {
 		{"sizes", row(sized("Small", console.ConsoleBtnSizeSmall), sized("Medium", medium), sized("Large", console.ConsoleBtnSizeLarge))},
 		{"disabled", row(disabled(withVariant("Compare", gray, false)), disabled(withVariant("Resolve", filled, false)), disabled(withVariant("See All", plain, false)), disabled(withVariant("Delete", gray, true)))},
 		{"icon", row(copyIcon(medium), labelled)},
+		{"busy", busy},
 		{"capsule", row(copyIcon(console.ConsoleBtnSizeSmall), copyIcon(medium), copyIcon(console.ConsoleBtnSizeLarge), compare)},
 	} {
 		example.Check(t, c.node, "console/console-btn/examples/"+c.path+".html")
