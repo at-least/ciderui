@@ -9,7 +9,17 @@ import (
 )
 
 func globalNav(links []site.GlobalNavLink) site.GlobalNav {
-	return site.GlobalNav{Wordmark: "Cider", Home: "/", Links: links, AriaLabel: "Global", SkipLabel: "Skip to Content", MenuAriaLabel: "Menu", CloseAriaLabel: "Close"}
+	return site.GlobalNav{Wordmark: "Cider", Home: "/", Links: links, AriaLabel: "Global", SkipLabel: "Skip to Content", MenuAriaLabel: "Menu", CloseAriaLabel: "Close", SearchHref: "", SearchAriaLabel: ""}
+}
+
+func TestGlobalNavRendersTheSearchExample(t *testing.T) {
+	nav := globalNav([]site.GlobalNavLink{
+		{Label: "Store", Href: "/store", Post: false},
+		{Label: "Support", Href: "/support", Post: false},
+	})
+	nav.SearchHref = "/search"
+	nav.SearchAriaLabel = "Search"
+	example.Check(t, nav, "site/globalnav/examples/search.html")
 }
 
 func TestGlobalNavRendersTheExamples(t *testing.T) {
@@ -28,7 +38,7 @@ func TestGlobalNavRendersTheExamples(t *testing.T) {
 }
 
 func TestGlobalNavWritesItsWordsInThePagesLanguage(t *testing.T) {
-	got := example.Render(site.GlobalNav{Wordmark: "西打", Home: "/zh-tw/", Links: []site.GlobalNavLink{{Label: "商店", Href: "/store", Post: false}}, AriaLabel: "主要選單", SkipLabel: "跳到主要內容", MenuAriaLabel: "選單", CloseAriaLabel: "關閉"})
+	got := example.Render(site.GlobalNav{Wordmark: "西打", Home: "/zh-tw/", Links: []site.GlobalNavLink{{Label: "商店", Href: "/store", Post: false}}, AriaLabel: "主要選單", SkipLabel: "跳到主要內容", MenuAriaLabel: "選單", CloseAriaLabel: "關閉", SearchHref: "", SearchAriaLabel: ""})
 	for _, want := range []string{
 		`<a class="cui-btn cui-skip" href="#main">跳到主要內容</a><nav class="cui-globalnav" aria-label="主要選單">`,
 		`<a class="cui-globalnav-wordmark" href="/zh-tw/">西打</a>`,
@@ -54,5 +64,7 @@ func TestGlobalNavPanics(t *testing.T) {
 		{Want: "site.GlobalNav needs a CloseAriaLabel", Change: func(p *site.GlobalNav) { p.CloseAriaLabel = "" }},
 		{Want: "site.GlobalNav's Links need their Label and Href", Change: func(p *site.GlobalNav) { p.Links[0].Label = "" }},
 		{Want: "site.GlobalNav's Links need their Label and Href", Change: func(p *site.GlobalNav) { p.Links[0].Href = "" }},
+		{Want: "site.GlobalNav has a SearchHref or a SearchAriaLabel without the other", Change: func(p *site.GlobalNav) { p.SearchHref = "/search" }},
+		{Want: "site.GlobalNav has a SearchHref or a SearchAriaLabel without the other", Change: func(p *site.GlobalNav) { p.SearchAriaLabel = "Search" }},
 	})
 }

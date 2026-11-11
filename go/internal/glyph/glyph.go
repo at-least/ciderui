@@ -46,6 +46,13 @@ func (i Icon) write(w io.Writer, classAttribute string) error {
 	return err
 }
 
+// NavSearch and NavSearchCompact: the global nav's search link's, in the bar from
+// 834px and on a phone (reference/icons/nav.mjs's search and search-compact, in
+// currentColor).
+var NavSearch = Icon{width: "15", height: "44", viewBox: "0 0 15 44", paint: ``, inner: `<circle cx="5.95" cy="19.95" r="4.96" fill="none" stroke="currentColor" stroke-width="1.08"/><path d="M9.46 23.46 13.74 27.74" fill="none" stroke="currentColor" stroke-width="1.52" stroke-linecap="round"/>`}
+
+var NavSearchCompact = Icon{width: "17", height: "48", viewBox: "0 0 17 48", paint: ``, inner: `<circle cx="6.94" cy="21.94" r="5.86" fill="none" stroke="currentColor" stroke-width="1.22"/><path d="M11.08 26.08 15.6 30.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>`}
+
 var Menu = Icon{width: "18", height: "18", viewBox: "0 0 18 18", paint: ``, inner: `<path d="M2 5H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 12H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>`}
 
 var Disclosure = Icon{width: "17", height: "17", viewBox: "0 0 17 8.85", paint: ``, inner: `<path d="M15 1.13 8.5 7.72 2 1.13" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>`}

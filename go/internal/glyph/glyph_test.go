@@ -57,8 +57,8 @@ func TestGlobalnavCSSTurnsMenusLinesIntoAnX(t *testing.T) {
 	}
 }
 
-// The search field's and the pager's icons are the shapes reference/icons/search.mjs
-// and pager.mjs held to Apple's: a change to one is a change to the other, and a new
+// The search field's, the pager's and the nav's search icons are the shapes
+// reference/icons/search.mjs, pager.mjs and nav.mjs held to Apple's: a change to one is a change to the other, and a new
 // run
 func TestIconsAreTheMeasuredOnes(t *testing.T) {
 	for _, c := range []struct {
@@ -69,6 +69,8 @@ func TestIconsAreTheMeasuredOnes(t *testing.T) {
 		{"search.json", "reset", "0 0 25 25", glyph.Reset},
 		{"pager.json", "left", "0 -10 74.561 90", glyph.ChevronLeft},
 		{"pager.json", "right", "0 -10 74.561 90", glyph.ChevronRight},
+		{"nav.json", "search", "0 0 15 44", glyph.NavSearch},
+		{"nav.json", "search-compact", "0 0 17 48", glyph.NavSearchCompact},
 	} {
 		record, err := os.ReadFile("../../../reference/icons/results/" + c.record)
 		if err != nil {

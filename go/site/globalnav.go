@@ -33,6 +33,10 @@ type GlobalNav struct {
 	SkipLabel      string
 	MenuAriaLabel  string
 	CloseAriaLabel string
+	// SearchHref: the site's search page, linked by a magnifier at the bar's
+	// end, as apple.com's nav links its own; "" draws none.
+	SearchHref      string
+	SearchAriaLabel string
 }
 
 func (n GlobalNav) Render(w io.Writer) error {
@@ -56,6 +60,9 @@ func (n GlobalNav) Render(w io.Writer) error {
 	}
 	if n.CloseAriaLabel == "" {
 		panic("site.GlobalNav needs a CloseAriaLabel")
+	}
+	if (n.SearchHref == "") != (n.SearchAriaLabel == "") {
+		panic("site.GlobalNav has a SearchHref or a SearchAriaLabel without the other")
 	}
 	var links, postForms g.Group
 	for i, link := range n.Links {
@@ -81,6 +88,7 @@ func (n GlobalNav) Render(w io.Writer) error {
 					h.Li(h.Button(h.Class("cui-globalnav-closebutton"), h.PopoverTarget(globalNavMenuID), h.PopoverTargetAction("hide"), h.Aria("label", n.CloseAriaLabel), h.AutoFocus(), glyph.Menu)),
 					links,
 				),
+				g.If(n.SearchHref != "", h.A(h.Class("cui-globalnav-search"), h.Href(n.SearchHref), h.Aria("label", n.SearchAriaLabel), glyph.NavSearchCompact, glyph.NavSearch)),
 				h.Button(h.Class("cui-globalnav-menubutton"), h.PopoverTarget(globalNavMenuID), h.Aria("label", n.MenuAriaLabel), glyph.Menu),
 				postForms,
 			),

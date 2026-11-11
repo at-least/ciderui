@@ -103,6 +103,43 @@
     cursor: pointer;
   }
 
+  .cui-globalnav-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0 8px;
+    color: var(--cui-c-on-bar);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--cui-c-on-bar-hover);
+      }
+    }
+
+    > svg {
+      flex: none;
+    }
+
+    > svg:last-child {
+      display: none;
+    }
+
+    @media (width >= 834px) {
+      width: auto;
+      height: 44px;
+
+      > svg:first-child {
+        display: none;
+      }
+
+      > svg:last-child {
+        display: block;
+      }
+    }
+  }
+
   .cui-globalnav-menubutton,
   .cui-globalnav-closebutton {
     display: flex;
