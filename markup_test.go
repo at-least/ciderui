@@ -4,7 +4,6 @@ import (
 	"os"
 	"path/filepath"
 	"slices"
-	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui"
@@ -63,6 +62,8 @@ func TestCheckMarkupRefusesADataValueNoRuleSelects(t *testing.T) {
 		{"each class that takes the attribute", `<div class="cui-console-btn cui-console-empty" data-size="xl">a</div>`, []string{`data-size="xl" on <div class="cui-console-btn cui-console-empty">: cui-console-btn takes data-size "lg" or "sm"; cui-console-empty takes data-size "lg" or "sm"; or none for their defaults`}},
 		{"each value is listed once", `<button class="cui-console-btn cui-console-play" data-size="xl">a</button>`, []string{`data-size="xl" on <button class="cui-console-btn cui-console-play">: cui-console-btn takes data-size "lg" or "sm", or none for its default`}},
 
+		{"a value selected next to a :not", `<div class="cui-console-player" data-controls="hiden"></div>`, []string{`data-controls="hiden" on <div class="cui-console-player">: cui-console-player takes data-controls "hidden", or none for its default`}},
+
 		// @invariant: [data-stack] selects any value, on its own class alone
 		{"a value of a bare selected attribute", `<table class="cui-console-table" data-stack="true"></table>`, nil},
 		{"a bare selected attribute on another class", `<div class="cui-console-card" data-stack></div>`, []string{`data-stack="" on <div class="cui-console-card">: none of its classes takes data-stack`}},
@@ -75,23 +76,25 @@ func TestCheckMarkupRefusesADataValueNoRuleSelects(t *testing.T) {
 	})
 }
 
+// @external: ARIA's values of each stateful attribute, in the order the problem lists them
 func TestCheckMarkupRefusesAnAriaStateValueARIALacks(t *testing.T) {
-	checkEach(t, []markupCase{
-		{"a misspelt aria state", `<li class="cui-console-menu-item" aria-current="pgae">a</li>`, []string{`aria-current="pgae" on <li class="cui-console-menu-item">: not a value of aria-current (date, false, location, page, step, time, true)`}},
+	cases := []markupCase{
 		{"an aria state's other legal values", `<li class="cui-console-menu-item" aria-current="location">a</li>`, nil},
 		{"an aria state with no class of ciderui's", `<td aria-sort="desc">a</td>`, nil},
-	})
-}
-
-// @external: ARIA's stateful attributes; a typo in any of them is read wrong by assistive technology
-func TestCheckMarkupHoldsEachAriaStateToARIAsValues(t *testing.T) {
-	for _, name := range []string{"aria-checked", "aria-current", "aria-disabled", "aria-expanded", "aria-invalid", "aria-pressed", "aria-selected", "aria-sort"} {
-		problems := ciderui.CheckMarkup(`<li class="cui-console-menu-item" ` + name + `="typo">a</li>`)
-		want := name + `="typo" on <li class="cui-console-menu-item">: not a value of ` + name + " ("
-		if len(problems) != 1 || !strings.HasPrefix(problems[0], want) {
-			t.Errorf("%s=\"typo\" on a part: CheckMarkup reported %q, want one problem beginning %q", name, problems, want)
-		}
 	}
+	for name, values := range map[string]string{
+		"aria-checked":  "false, mixed, true",
+		"aria-current":  "date, false, location, page, step, time, true",
+		"aria-disabled": "false, true",
+		"aria-expanded": "false, true",
+		"aria-invalid":  "false, grammar, spelling, true",
+		"aria-pressed":  "false, mixed, true",
+		"aria-selected": "false, true",
+		"aria-sort":     "ascending, descending, none, other",
+	} {
+		cases = append(cases, markupCase{"a typo in " + name, `<li class="cui-console-menu-item" ` + name + `="typo">a</li>`, []string{name + `="typo" on <li class="cui-console-menu-item">: not a value of ` + name + " (" + values + ")"}})
+	}
+	checkEach(t, cases)
 }
 
 // @external: a site's whole page, as any writer's HTML has it
@@ -114,7 +117,11 @@ func TestCheckMarkupReadsHTMLAsABrowserDoes(t *testing.T) {
 		{"no quotes, then an attribute", `<b class=cui-console-badg id=x>a</b>`, noClass("b")},
 		{"a quote left open", `<b class="cui-console-badg`, noClass("b")},
 		{"self-closed", `<img class="cui-console-badg"/><br/>`, noClass("img")},
-		{"lines and tabs between attributes", "<b\r\tid=\"x\"\n\fclass=\"cui-console-badg\">a</b>", noClass("b")},
+		{"slashes between attributes", `<img/hidden/class="cui-console-badg">`, noClass("img")},
+		{"tabs between attributes", "<b\tid=\"x\"\tclass=\"cui-console-badg\">a</b>", noClass("b")},
+		{"lines between attributes", "<b\nid=\"x\"\nclass=\"cui-console-badg\">a</b>", noClass("b")},
+		{"carriage returns between attributes", "<b\rid=\"x\"\rclass=\"cui-console-badg\">a</b>", noClass("b")},
+		{"form feeds between attributes", "<b\fid=\"x\"\fclass=\"cui-console-badg\">a</b>", noClass("b")},
 	})
 }
 
