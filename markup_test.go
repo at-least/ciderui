@@ -125,6 +125,15 @@ func TestCheckMarkupReadsHTMLAsABrowserDoes(t *testing.T) {
 	})
 }
 
+// @external: HTML's attribute names are case-insensitive: CLASS is the class
+func TestCheckMarkupReadsAnAttributeNameInAnyCase(t *testing.T) {
+	checkEach(t, []markupCase{
+		{"a class in capitals", `<b CLASS="cui-console-badg">a</b>`, []string{`class "cui-console-badg" on <b class="cui-console-badg">: ciderui has no such class`}},
+		{"an aria state in capitals", `<li class="cui-console-menu-item" ARIA-CURRENT="pgae">a</li>`, []string{`ARIA-CURRENT="pgae" on <li class="cui-console-menu-item">: not a value of aria-current (date, false, location, page, step, time, true)`}},
+		{"a data-* in capitals", `<span class="cui-console-badge" DATA-COLOR="purple">b</span>`, []string{`DATA-COLOR="purple" on <span class="cui-console-badge">: cui-console-badge takes data-color "error", "info", "success" or "warning", or none for its default`}},
+	})
+}
+
 func TestCheckMarkupReadsThePagesStylesheet(t *testing.T) {
 	checkEach(t, []markupCase{
 		{"a site part on a console page", page(ciderui.ConsoleStylesheet(), `<button class="cui-btn">a</button>`), []string{`class "cui-btn" on <button class="cui-btn">: a site class; this page links the console stylesheet`}},

@@ -370,11 +370,10 @@ func CheckMarkup(html string) []string {
 		}
 		var seen []string
 		for _, a := range tag.attributes {
-			name := strings.ToLower(a.name)
-			if slices.Contains(seen, name) {
-				problems = append(problems, fmt.Sprintf("%s on %s: written twice, and the browser keeps the first", a.name, on))
+			if slices.Contains(seen, a.name) {
+				problems = append(problems, fmt.Sprintf("%s on %s: written twice, and the browser keeps the first", a.written, on))
 			}
-			seen = append(seen, name)
+			seen = append(seen, a.name)
 		}
 		if len(ours) == 0 {
 			continue
@@ -385,7 +384,7 @@ func CheckMarkup(html string) []string {
 			if !isState || slices.Contains(legal, a.value) {
 				continue
 			}
-			problems = append(problems, fmt.Sprintf("%s=%q on %s: not a value of %s (%s)", a.name, a.value, on, a.name, strings.Join(legal, ", ")))
+			problems = append(problems, fmt.Sprintf("%s=%q on %s: not a value of %s (%s)", a.written, a.value, on, a.name, strings.Join(legal, ", ")))
 		}
 	}
 	if isPage(tags) {
@@ -446,7 +445,7 @@ func dataValueProblems(tag startTag, ours []string, values []selected) []string 
 		default:
 			allowed = strings.Join(takes, "; ") + "; or none for their defaults"
 		}
-		problems = append(problems, fmt.Sprintf("%s=%q on %s: %s", a.name, a.value, tag.on(), allowed))
+		problems = append(problems, fmt.Sprintf("%s=%q on %s: %s", a.written, a.value, tag.on(), allowed))
 	}
 	return problems
 }
@@ -463,7 +462,7 @@ func missingIDs(tags []startTag) []string {
 	ids := map[string]bool{}
 	for _, tag := range tags {
 		for _, a := range tag.attributes {
-			if strings.EqualFold(a.name, "id") {
+			if a.name == "id" {
 				ids[a.value] = true
 			}
 		}
@@ -471,16 +470,15 @@ func missingIDs(tags []startTag) []string {
 	var problems []string
 	for _, tag := range tags {
 		for _, a := range tag.attributes {
-			name := strings.ToLower(a.name)
 			var named []string
-			if slices.Contains(idReferences, name) {
+			if slices.Contains(idReferences, a.name) {
 				named = strings.Fields(a.value)
-			} else if fragment, ok := strings.CutPrefix(a.value, "#"); ok && name == "href" && fragment != "" {
+			} else if fragment, ok := strings.CutPrefix(a.value, "#"); ok && a.name == "href" && fragment != "" {
 				named = []string{fragment}
 			}
 			for _, id := range named {
 				if !ids[id] {
-					problems = append(problems, fmt.Sprintf("%s=%q on %s: this page has no id %q", a.name, a.value, tag.on(), id))
+					problems = append(problems, fmt.Sprintf("%s=%q on %s: this page has no id %q", a.written, a.value, tag.on(), id))
 				}
 			}
 		}
@@ -488,7 +486,9 @@ func missingIDs(tags []startTag) []string {
 	return problems
 }
 
-type attribute struct{ name, value string }
+// @external: the browser reads an attribute's name in lower case (CLASS is the class);
+// written is the page's own spelling, for the messages
+type attribute struct{ name, written, value string }
 
 type startTag struct {
 	name       string
@@ -556,7 +556,7 @@ func startTags(html string) []startTag {
 				break
 			}
 			end := indexFunc(rest, func(c byte) bool { return isSpace(c) || c == '=' || c == '>' || c == '/' })
-			a := attribute{name: rest[:end]}
+			a := attribute{name: strings.ToLower(rest[:end]), written: rest[:end]}
 			rest = rest[end:]
 			if after, ok := strings.CutPrefix(rest, "="); ok {
 				if after != "" && (after[0] == '"' || after[0] == '\'') {
