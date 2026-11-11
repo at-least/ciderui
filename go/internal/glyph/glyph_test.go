@@ -57,29 +57,35 @@ func TestGlobalnavCSSTurnsMenusLinesIntoAnX(t *testing.T) {
 	}
 }
 
-// The search field's icons are the shapes reference/icons/search.mjs held to
-// apple.com's: a change to one is a change to the other, and a new run
-func TestSearchIconsAreTheMeasuredOnes(t *testing.T) {
-	record, err := os.ReadFile("../../../reference/icons/results/search.json")
-	if err != nil {
-		t.Fatal(err)
-	}
+// The search field's and the pager's icons are the shapes reference/icons/search.mjs
+// and pager.mjs held to Apple's: a change to one is a change to the other, and a new
+// run
+func TestIconsAreTheMeasuredOnes(t *testing.T) {
 	for _, c := range []struct {
-		name string
-		icon glyph.Icon
-	}{{"magnifier", glyph.Magnifier}, {"reset", glyph.Reset}} {
+		record, name, viewBox string
+		icon                  glyph.Icon
+	}{
+		{"search.json", "magnifier", "0 0 25 25", glyph.Magnifier},
+		{"search.json", "reset", "0 0 25 25", glyph.Reset},
+		{"pager.json", "left", "0 -10 74.561 90", glyph.ChevronLeft},
+		{"pager.json", "right", "0 -10 74.561 90", glyph.ChevronRight},
+	} {
+		record, err := os.ReadFile("../../../reference/icons/results/" + c.record)
+		if err != nil {
+			t.Fatal(err)
+		}
 		var drawn strings.Builder
 		if err := c.icon.Render(&drawn); err != nil {
 			t.Fatal(err)
 		}
 		inner := regexp.MustCompile(`^<svg[^>]*>(.*)</svg>$`).FindStringSubmatch(drawn.String())[1]
-		measured := regexp.MustCompile(`"` + c.name + `": "<svg viewBox=\\"0 0 25 25\\">(.*?)</svg>"`).FindSubmatch(record)
+		measured := regexp.MustCompile(`"` + c.name + `": "<svg viewBox=\\"` + regexp.QuoteMeta(c.viewBox) + `\\">(.*?)</svg>"`).FindSubmatch(record)
 		if measured == nil {
-			t.Fatalf("search.json records no %s", c.name)
+			t.Fatalf("%s records no %s", c.record, c.name)
 		}
 		want := strings.ReplaceAll(strings.ReplaceAll(string(measured[1]), `\"`, `"`), "#000", "currentColor")
 		if inner != want {
-			t.Errorf("%s draws\n%s\nsearch.mjs measured\n%s", c.name, inner, want)
+			t.Errorf("%s draws\n%s\n%s records\n%s", c.name, inner, c.record, want)
 		}
 	}
 }

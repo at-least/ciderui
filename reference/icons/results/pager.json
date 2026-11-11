@@ -1,0 +1,38 @@
+{
+ "browser": "chromium 151.0.7922.34 on darwin",
+ "date": "2026-11-11T23:30:37.326Z",
+ "ours": {
+  "left": "<svg viewBox=\"0 -10 74.561 90\"><path d=\"M49.9 -2.3 11.78 35.2 49.9 72.7\" fill=\"none\" stroke=\"#000\" stroke-width=\"11.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "right": "<svg viewBox=\"0 -10 74.561 90\"><path d=\"M24.661 -2.3 62.781 35.2 24.661 72.7\" fill=\"none\" stroke=\"#000\" stroke-width=\"11.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+ },
+ "left": {
+  "appleBox": {
+   "left": 6,
+   "right": 55.5,
+   "top": 2,
+   "bottom": 88.5
+  },
+  "oursBox": {
+   "left": 6,
+   "right": 55.5,
+   "top": 2,
+   "bottom": 88.5
+  },
+  "iou": 0.9852
+ },
+ "right": {
+  "appleBox": {
+   "left": 19,
+   "right": 68.5,
+   "top": 2,
+   "bottom": 88.5
+  },
+  "oursBox": {
+   "left": 19,
+   "right": 68.5,
+   "top": 2,
+   "bottom": 88.5
+  },
+  "iou": 0.9839
+ }
+}

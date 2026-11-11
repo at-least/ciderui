@@ -1,0 +1,21 @@
+{
+ "pager | .cui-pager-button[aria-label=\"Previous page\"] svg | 1200 | box-height": "12.59375px",
+ "pager | .cui-pager-button:first-child | 1200 | height": "28px",
+ "pager | .cui-pager-button:first-child | 1200 | background-color": "rgb(29, 29, 31)",
+ "pager | .cui-pager-button:first-child | 1200 | border-top-left-radius": "5px",
+ "pager | .cui-pager-page | 1200 | color": "rgb(29, 29, 31)",
+ "pager | .cui-pager-page, .cui-pager-button:first-child | 1200 | font-size": "14px",
+ "pager | .cui-pager-page, .cui-pager-button:first-child | 1200 | line-height": "20px",
+ "pager | .cui-pager-button[aria-label=\"Previous page\"]::before | 1200 | width": "44px",
+ "pager | .cui-pager-button[aria-label=\"Previous page\"]::before | 1200 | height": "44px",
+ "pager | .cui-pager-button[aria-label=\"Previous page\"] svg | 390 | box-height": "12.59375px",
+ "pager | .cui-pager-button:first-child | 390 | height": "28px",
+ "pager | .cui-pager-button:first-child | 390 | background-color": "rgb(29, 29, 31)",
+ "pager | .cui-pager-button:first-child | 390 | border-top-left-radius": "5px",
+ "pager | .cui-pager-page | 390 | color": "rgb(29, 29, 31)",
+ "pager | .cui-pager-page, .cui-pager-button:first-child | 390 | font-size": "14px",
+ "pager | .cui-pager-page, .cui-pager-button:first-child | 390 | line-height": "20px",
+ "pager | .cui-pager-button[aria-label=\"Previous page\"]::before | 390 | width": "44px",
+ "pager | .cui-pager-button[aria-label=\"Previous page\"]::before | 390 | height": "44px",
+ "pager first | .cui-pager > :first-child | 1200 | display": "block"
+}

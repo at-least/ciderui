@@ -57,3 +57,10 @@ var Alert = Icon{width: "1.171em", height: "0.995em", viewBox: "0 0 1171 995", p
 var Magnifier = Icon{width: "25", height: "25", viewBox: "0 0 25 25", paint: ``, inner: `<circle cx="10.69" cy="10.87" r="6.28" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M15.25 15.35 20.15 20.05" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>`}
 
 var Reset = Icon{width: "25", height: "25", viewBox: "0 0 25 25", paint: ``, inner: `<path d="M12.5 3A9.5 9.5 0 1 0 12.5 22 9.5 9.5 0 1 0 12.5 3ZM13.2778 12.5 16.3889 15.6111A.55.55 0 0 1 15.6111 16.3889L12.5 13.2778 9.3889 16.3889A.55.55 0 0 1 8.6111 15.6111L11.7222 12.5 8.6111 9.3889A.55.55 0 0 1 9.3889 8.6111L12.5 11.7222 15.6111 8.6111A.55.55 0 0 1 16.3889 9.3889Z" fill="currentColor" fill-rule="evenodd"/>`}
+
+// ChevronLeft and ChevronRight: the pager's, SF Symbols' chevrons at medium weight
+// (reference/icons/pager.mjs's LEFT and RIGHT, in currentColor), the ink's whole box
+// in em.
+var ChevronLeft = Icon{width: "0.74561em", height: "0.9em", viewBox: "0 -10 74.561 90", paint: ``, inner: `<path d="M49.9 -2.3 11.78 35.2 49.9 72.7" fill="none" stroke="currentColor" stroke-width="11.5" stroke-linecap="round" stroke-linejoin="round"/>`}
+
+var ChevronRight = Icon{width: "0.74561em", height: "0.9em", viewBox: "0 -10 74.561 90", paint: ``, inner: `<path d="M24.661 -2.3 62.781 35.2 24.661 72.7" fill="none" stroke="currentColor" stroke-width="11.5" stroke-linecap="round" stroke-linejoin="round"/>`}

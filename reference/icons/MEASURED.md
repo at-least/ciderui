@@ -52,3 +52,14 @@ PW=…/playwright-chromium/index.mjs node lines.mjs   # the accordion's chevron
 
 Intersection over union; the probe fails below 0.85, a mark set before the run, and failed at 0.1843 with the magnifier's pair given the reset as ciderui's. Measured 2026-11-12 in Chromium 151 on macOS (`results/search.json`); `go/internal/glyph`'s test holds `Magnifier` and `Reset` to the shapes recorded there.
 
+## The pager's chevrons
+
+`pager.mjs` reads Apple Developer Forums' pager's two chevrons (`../apple.com/`'s `forums-pager`), SF Symbols' chevron.left and chevron.right at medium weight, each a filled path in a 74.561 by 70.459 view box drawn past it (overflow visible), 0.74561em wide at the button's size. It rasterizes each over the ink's whole box (0 −10 74.561 90) at 4 pixels to the unit (`svg.js`) beside ciderui's own, drawn from their numbers:
+
+| icon | Apple's ink | ciderui's | shared ink |
+| --- | --- | --- | --- |
+| `LEFT` | 6 to 55.5 across, −8 to 78.5 down | two strokes 11.5 thick, round, from (49.9, −2.3) to (11.78, 35.2) to (49.9, 72.7) | 0.9852 |
+| `RIGHT` | 19 to 68.5 across, the same down | the left mirrored in the 74.561 advance | 0.9839 |
+
+Intersection over union; the probe fails below 0.85, a mark set before the run, and failed at 0.1097 with the left's pair given the right as ciderui's. The forums' Content-Security-Policy refuses the `blob:` images `svg.js` draws, so the rasterizing runs on `about:blank`. Measured 2026-11-12 in Chromium 151 on macOS (`results/pager.json`); `go/internal/glyph`'s test holds `ChevronLeft` and `ChevronRight` to the shapes recorded there.
+
