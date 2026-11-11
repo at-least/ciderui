@@ -1,0 +1,53 @@
+@layer components {
+  /* @invariant: a modal in the top layer, so its own size is the window's less a margin (rule 6's
+     sizes a part fixes), and the containing block its close button is placed in */
+  .cui-console-viewer {
+    max-width: calc(100vw - 32px);
+    max-height: calc(100dvh - 32px);
+    margin: auto;
+    padding: 8px;
+    border: 1px solid var(--cui-c-console-dialog-stroke);
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--cui-c-console-neutral-background-primary);
+    box-shadow: var(--cui-console-shadow-dialog);
+    color: var(--cui-c-console-neutral-label-secondary);
+
+    &[open] {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &::backdrop {
+      background-color: var(--cui-c-scrim);
+    }
+  }
+
+  .cui-console-viewer-image {
+    display: block;
+    flex: 0 1 auto;
+    min-height: 0;
+    max-width: 100%;
+    max-height: calc(100dvh - 50px);
+    border-radius: 12px;
+    object-fit: contain;
+  }
+
+  .cui-console-viewer-caption {
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .cui-console-viewer-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+}

@@ -1,0 +1,46 @@
+package console
+
+import (
+	"io"
+
+	"github.com/at-least/ciderui/go/lucide"
+	g "maragu.dev/gomponents"
+	h "maragu.dev/gomponents/html"
+)
+
+// ConsoleViewer is a picture shown whole over the page, fit to the window
+// (Quick Look), its caption under it and a close button over its corner. The
+// page opens it as a [ConsoleDialog]; a page whose one viewer shows each of
+// many pictures writes Src, Alt and Caption "" and its script sets them
+// before it opens it.
+type ConsoleViewer struct {
+	ID         string
+	AriaLabel  string
+	CloseLabel string
+	Src        string
+	Alt        string
+	// Caption: "" for none.
+	Caption string
+}
+
+func (v ConsoleViewer) Render(w io.Writer) error {
+	if v.ID == "" {
+		panic("console.ConsoleViewer needs an ID")
+	}
+	if v.AriaLabel == "" {
+		panic("console.ConsoleViewer needs an AriaLabel")
+	}
+	if v.CloseLabel == "" {
+		panic("console.ConsoleViewer needs a CloseLabel")
+	}
+	if v.Src == "" && (v.Alt != "" || v.Caption != "") {
+		panic("console.ConsoleViewer with no Src has no Alt or Caption: the page's script sets all three")
+	}
+	return h.Dialog(h.Class("cui-console-viewer"), h.ID(v.ID), h.Aria("label", v.AriaLabel),
+		h.Img(h.Class("cui-console-viewer-image"), optionalAttr("src", v.Src), h.Alt(v.Alt)),
+		h.P(h.Class("cui-console-viewer-caption"), g.Text(v.Caption)),
+		h.Form(h.Method("dialog"), h.Class("cui-console-viewer-close"),
+			ConsoleBtn{Href: "", Label: "", AriaLabel: v.CloseLabel, Icon: lucide.X, Submit: true, Variant: ConsoleBtnVariantGray, Size: ConsoleBtnSizeSmall, Destructive: false, Attrs: nil, Class: ""},
+		),
+	).Render(w)
+}
