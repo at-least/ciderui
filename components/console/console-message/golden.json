@@ -1,0 +1,12 @@
+{
+ "message | .cui-console-message:not([data-state]) | 1200 | color": "oklch(0 0 0 / 0.85)",
+ "message | .cui-console-message:not([data-state]) | 1200 | font-size": "13px",
+ "message | .cui-console-message:not([data-state]) | 1200 | line-height": "18px",
+ "message | .cui-console-message[data-state=\"error\"] | 1200 | color": "oklch(0.495 0.19 31.5)",
+ "message | .cui-console-message:empty | 1200 | display": "none",
+ "message | .cui-console-message:not([data-state]) | 390 | color": "oklch(0 0 0 / 0.85)",
+ "message | .cui-console-message:not([data-state]) | 390 | font-size": "16px",
+ "message | .cui-console-message:not([data-state]) | 390 | line-height": "21px",
+ "message | .cui-console-message[data-state=\"error\"] | 390 | color": "oklch(0.495 0.19 31.5)",
+ "message | .cui-console-message:empty | 390 | display": "none"
+}

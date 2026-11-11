@@ -1,0 +1,12 @@
+{
+ "message | .cui-message:not([data-state]) | 1200 | color": "rgb(29, 29, 31)",
+ "message | .cui-message:not([data-state]) | 1200 | font-size": "17px",
+ "message | .cui-message:not([data-state]) | 1200 | line-height": "25px",
+ "message | .cui-message[data-state=\"error\"] | 1200 | color": "rgb(227, 0, 0)",
+ "message | .cui-message:empty | 1200 | display": "none",
+ "message | .cui-message:not([data-state]) | 390 | color": "rgb(29, 29, 31)",
+ "message | .cui-message:not([data-state]) | 390 | font-size": "17px",
+ "message | .cui-message:not([data-state]) | 390 | line-height": "25px",
+ "message | .cui-message[data-state=\"error\"] | 390 | color": "rgb(227, 0, 0)",
+ "message | .cui-message:empty | 390 | display": "none"
+}

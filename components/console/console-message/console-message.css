@@ -1,0 +1,15 @@
+@layer components {
+  /* @invariant: a live line the page's script fills with what its request did (role="status"),
+     data-state="error" when it failed; empty, it takes no room */
+  .cui-console-message {
+    color: var(--cui-c-console-neutral-label-primary);
+
+    &[data-state="error"] {
+      color: var(--cui-c-console-error-label-primary);
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+}

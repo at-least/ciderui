@@ -1,0 +1,18 @@
+@layer components {
+  /* @invariant: a live line the page's script fills with what its request did (role="status"),
+     data-state="error" when it failed; empty, it takes no room */
+  .cui-message {
+    color: var(--cui-c-text);
+    font-size: 17px;
+    line-height: 25px;
+    letter-spacing: var(--cui-tracking-17);
+
+    &[data-state="error"] {
+      color: var(--cui-c-error);
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+}
