@@ -1,0 +1,1172 @@
+{
+ "url": "https://developer.apple.com/forums/tags/swiftui",
+ "finalUrl": "https://developer.apple.com/forums/tags/swiftui",
+ "browser": "chromium 151.0.7922.34 on darwin",
+ "date": "2026-11-11T22:43:55.644Z",
+ "widths": {
+  "390": {
+   "header": {
+    "html": "<section class=\"tag-overview\" role=\"region\" aria-label=\"…\"><div class=\"tag-content no-image\"><div class=\"tag-title-and-rss\"><h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title",
+    "styles": {
+     "padding-top": "20px",
+     "padding-right": "16px",
+     "padding-bottom": "20px",
+     "padding-left": "16px",
+     "margin-top": "0px",
+     "margin-bottom": "20px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "4.25px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "310px"
+    },
+    "box": {
+     "width": 342,
+     "height": 167
+    }
+   },
+   "header.content": {
+    "html": "<div class=\"tag-content no-image\"><div class=\"tag-title-and-rss\"><h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title=\"SwiftUI\" tabindex=\"0\"></h2><a href=\"/forums/tags/rssFeed/sw",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal"
+    },
+    "box": {
+     "width": 310,
+     "height": 127
+    }
+   },
+   "header.title": {
+    "html": "<h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title=\"SwiftUI\" tabindex=\"0\"></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 79.09375,
+     "height": 30
+    }
+   },
+   "header.info": {
+    "html": "<p class=\"tag-info\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "6px",
+     "margin-bottom": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 310,
+     "height": 63
+    }
+   },
+   "header.links": {
+    "html": "<p class=\"tag-links\"><a href=\"https://developer.apple.com/documentation/SwiftUI\" target=\"_blank\" class=\"icon icon-after icon-chevronright\" aria-label=\"…\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "10px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 310,
+     "height": 18
+    }
+   },
+   "header.link": {
+    "html": "<a href=\"https://developer.apple.com/documentation/SwiftUI\" target=\"_blank\" class=\"icon icon-after icon-chevronright\" aria-label=\"…\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18.0008px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "count.bar": {
+    "html": "<div class=\"header\"><span class=\"search-results\"></span><div class=\"post-filters\"><div class=\"sort-by\"><div id=\"r",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "20px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "space-between",
+     "row-gap": "normal",
+     "column-gap": "normal"
+    },
+    "box": {
+     "width": 342,
+     "height": 56
+    }
+   },
+   "count": {
+    "html": "<span class=\"search-results\"></span>",
+    "styles": {
+     "font-family": "-apple-system, \"SF Pro Text\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+     "font-size": "16px",
+     "line-height": "20px",
+     "font-weight": "400",
+     "letter-spacing": "-0.096px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 75.1875,
+     "height": 20
+    }
+   }
+  },
+  "734": {
+   "header": {
+    "html": "<section class=\"tag-overview\" role=\"region\" aria-label=\"…\"><div class=\"tag-content no-image\"><div class=\"tag-title-and-rss\"><h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title",
+    "styles": {
+     "padding-top": "20px",
+     "padding-right": "16px",
+     "padding-bottom": "20px",
+     "padding-left": "16px",
+     "margin-top": "0px",
+     "margin-bottom": "20px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "4.25px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "654px"
+    },
+    "box": {
+     "width": 686,
+     "height": 146
+    }
+   },
+   "header.content": {
+    "html": "<div class=\"tag-content no-image\"><div class=\"tag-title-and-rss\"><h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title=\"SwiftUI\" tabindex=\"0\"></h2><a href=\"/forums/tags/rssFeed/sw",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal"
+    },
+    "box": {
+     "width": 654,
+     "height": 106
+    }
+   },
+   "header.title": {
+    "html": "<h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title=\"SwiftUI\" tabindex=\"0\"></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 79.09375,
+     "height": 30
+    }
+   },
+   "header.info": {
+    "html": "<p class=\"tag-info\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "6px",
+     "margin-bottom": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 654,
+     "height": 42
+    }
+   },
+   "header.links": {
+    "html": "<p class=\"tag-links\"><a href=\"https://developer.apple.com/documentation/SwiftUI\" target=\"_blank\" class=\"icon icon-after icon-chevronright\" aria-label=\"…\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "10px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 654,
+     "height": 18
+    }
+   },
+   "header.link": {
+    "html": "<a href=\"https://developer.apple.com/documentation/SwiftUI\" target=\"_blank\" class=\"icon icon-after icon-chevronright\" aria-label=\"…\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18.0008px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "count.bar": {
+    "html": "<div class=\"header\"><span class=\"search-results\"></span><div class=\"post-filters\"><div class=\"sort-by\"><div id=\"r",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "20px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "space-between",
+     "row-gap": "normal",
+     "column-gap": "normal"
+    },
+    "box": {
+     "width": 686,
+     "height": 56
+    }
+   },
+   "count": {
+    "html": "<span class=\"search-results\"></span>",
+    "styles": {
+     "font-family": "-apple-system, \"SF Pro Text\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+     "font-size": "16px",
+     "line-height": "20px",
+     "font-weight": "400",
+     "letter-spacing": "-0.096px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 75.1875,
+     "height": 20
+    }
+   }
+  },
+  "735": {
+   "header": {
+    "html": "<section class=\"tag-overview\" role=\"region\" aria-label=\"…\"><div class=\"tag-content no-image\"><div class=\"tag-title-and-rss\"><h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title",
+    "styles": {
+     "padding-top": "20px",
+     "padding-right": "20px",
+     "padding-bottom": "20px",
+     "padding-left": "20px",
+     "margin-top": "0px",
+     "margin-bottom": "40px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "4.25px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "603.125px"
+    },
+    "box": {
+     "width": 643.125,
+     "height": 155
+    }
+   },
+   "header.content": {
+    "html": "<div class=\"tag-content no-image\"><div class=\"tag-title-and-rss\"><h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title=\"SwiftUI\" tabindex=\"0\"></h2><a href=\"/forums/tags/rssFeed/sw",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal"
+    },
+    "box": {
+     "width": 603.125,
+     "height": 115
+    }
+   },
+   "header.title": {
+    "html": "<h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title=\"SwiftUI\" tabindex=\"0\"></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 91.890625,
+     "height": 36
+    }
+   },
+   "header.info": {
+    "html": "<p class=\"tag-info\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "6px",
+     "margin-bottom": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 603.125,
+     "height": 42
+    }
+   },
+   "header.links": {
+    "html": "<p class=\"tag-links\"><a href=\"https://developer.apple.com/documentation/SwiftUI\" target=\"_blank\" class=\"icon icon-after icon-chevronright\" aria-label=\"…\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "10px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 603.125,
+     "height": 21
+    }
+   },
+   "header.link": {
+    "html": "<a href=\"https://developer.apple.com/documentation/SwiftUI\" target=\"_blank\" class=\"icon icon-after icon-chevronright\" aria-label=\"…\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18.0008px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "count.bar": {
+    "html": "<div class=\"header\"><span class=\"search-results\"></span><div class=\"post-filters\"><div class=\"sort-by\"><div id=\"r",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "20px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "space-between",
+     "row-gap": "normal",
+     "column-gap": "normal"
+    },
+    "box": {
+     "width": 643.125,
+     "height": 56
+    }
+   },
+   "count": {
+    "html": "<span class=\"search-results\"></span>",
+    "styles": {
+     "font-family": "-apple-system, \"SF Pro Text\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+     "font-size": "16px",
+     "line-height": "20px",
+     "font-weight": "400",
+     "letter-spacing": "-0.096px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 75.1875,
+     "height": 20
+    }
+   }
+  },
+  "900": {
+   "header": {
+    "html": "<section class=\"tag-overview\" role=\"region\" aria-label=\"…\"><div class=\"tag-content no-image\"><div class=\"tag-title-and-rss\"><h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title",
+    "styles": {
+     "padding-top": "20px",
+     "padding-right": "20px",
+     "padding-bottom": "20px",
+     "padding-left": "20px",
+     "margin-top": "0px",
+     "margin-bottom": "40px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "4.25px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "747.5px"
+    },
+    "box": {
+     "width": 787.5,
+     "height": 155
+    }
+   },
+   "header.content": {
+    "html": "<div class=\"tag-content no-image\"><div class=\"tag-title-and-rss\"><h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title=\"SwiftUI\" tabindex=\"0\"></h2><a href=\"/forums/tags/rssFeed/sw",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal"
+    },
+    "box": {
+     "width": 747.5,
+     "height": 115
+    }
+   },
+   "header.title": {
+    "html": "<h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title=\"SwiftUI\" tabindex=\"0\"></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 91.890625,
+     "height": 36
+    }
+   },
+   "header.info": {
+    "html": "<p class=\"tag-info\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "6px",
+     "margin-bottom": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 747.5,
+     "height": 42
+    }
+   },
+   "header.links": {
+    "html": "<p class=\"tag-links\"><a href=\"https://developer.apple.com/documentation/SwiftUI\" target=\"_blank\" class=\"icon icon-after icon-chevronright\" aria-label=\"…\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "10px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 747.5,
+     "height": 21
+    }
+   },
+   "header.link": {
+    "html": "<a href=\"https://developer.apple.com/documentation/SwiftUI\" target=\"_blank\" class=\"icon icon-after icon-chevronright\" aria-label=\"…\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18.0008px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "count.bar": {
+    "html": "<div class=\"header\"><span class=\"search-results\"></span><div class=\"post-filters\"><div class=\"sort-by\"><div id=\"r",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "20px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "space-between",
+     "row-gap": "normal",
+     "column-gap": "normal"
+    },
+    "box": {
+     "width": 787.5,
+     "height": 56
+    }
+   },
+   "count": {
+    "html": "<span class=\"search-results\"></span>",
+    "styles": {
+     "font-family": "-apple-system, \"SF Pro Text\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+     "font-size": "16px",
+     "line-height": "20px",
+     "font-weight": "400",
+     "letter-spacing": "-0.096px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 75.1875,
+     "height": 20
+    }
+   }
+  },
+  "1200": {
+   "header": {
+    "html": "<section class=\"tag-overview\" role=\"region\" aria-label=\"…\"><div class=\"tag-content no-image\"><div class=\"tag-title-and-rss\"><h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title",
+    "styles": {
+     "padding-top": "20px",
+     "padding-right": "20px",
+     "padding-bottom": "20px",
+     "padding-left": "20px",
+     "margin-top": "0px",
+     "margin-bottom": "40px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "4.25px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "940px"
+    },
+    "box": {
+     "width": 980,
+     "height": 134
+    }
+   },
+   "header.content": {
+    "html": "<div class=\"tag-content no-image\"><div class=\"tag-title-and-rss\"><h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title=\"SwiftUI\" tabindex=\"0\"></h2><a href=\"/forums/tags/rssFeed/sw",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal"
+    },
+    "box": {
+     "width": 940,
+     "height": 94
+    }
+   },
+   "header.title": {
+    "html": "<h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title=\"SwiftUI\" tabindex=\"0\"></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 104.34375,
+     "height": 36
+    }
+   },
+   "header.info": {
+    "html": "<p class=\"tag-info\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "6px",
+     "margin-bottom": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 940,
+     "height": 21
+    }
+   },
+   "header.links": {
+    "html": "<p class=\"tag-links\"><a href=\"https://developer.apple.com/documentation/SwiftUI\" target=\"_blank\" class=\"icon icon-after icon-chevronright\" aria-label=\"…\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "10px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 940,
+     "height": 21
+    }
+   },
+   "header.link": {
+    "html": "<a href=\"https://developer.apple.com/documentation/SwiftUI\" target=\"_blank\" class=\"icon icon-after icon-chevronright\" aria-label=\"…\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18.0008px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "count.bar": {
+    "html": "<div class=\"header\"><span class=\"search-results\"></span><div class=\"post-filters\"><div class=\"sort-by\"><div id=\"r",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "20px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "space-between",
+     "row-gap": "normal",
+     "column-gap": "normal"
+    },
+    "box": {
+     "width": 980,
+     "height": 56
+    }
+   },
+   "count": {
+    "html": "<span class=\"search-results\"></span>",
+    "styles": {
+     "font-family": "-apple-system, \"SF Pro Text\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+     "font-size": "16px",
+     "line-height": "20px",
+     "font-weight": "400",
+     "letter-spacing": "-0.096px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 75.1875,
+     "height": 20
+    }
+   }
+  },
+  "1600": {
+   "header": {
+    "html": "<section class=\"tag-overview\" role=\"region\" aria-label=\"…\"><div class=\"tag-content no-image\"><div class=\"tag-title-and-rss\"><h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title",
+    "styles": {
+     "padding-top": "20px",
+     "padding-right": "20px",
+     "padding-bottom": "20px",
+     "padding-left": "20px",
+     "margin-top": "0px",
+     "margin-bottom": "40px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "4.25px",
+     "background-color": "rgb(255, 255, 255)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "940px"
+    },
+    "box": {
+     "width": 980,
+     "height": 134
+    }
+   },
+   "header.content": {
+    "html": "<div class=\"tag-content no-image\"><div class=\"tag-title-and-rss\"><h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title=\"SwiftUI\" tabindex=\"0\"></h2><a href=\"/forums/tags/rssFeed/sw",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "display": "block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal"
+    },
+    "box": {
+     "width": 940,
+     "height": 94
+    }
+   },
+   "header.title": {
+    "html": "<h2 data-cy=\"tagTitle\" class=\"tag-title\" data-action=\"tag-title\" data-tag-title=\"SwiftUI\" tabindex=\"0\"></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 104.34375,
+     "height": 36
+    }
+   },
+   "header.info": {
+    "html": "<p class=\"tag-info\"></p>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "6px",
+     "margin-bottom": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 940,
+     "height": 21
+    }
+   },
+   "header.links": {
+    "html": "<p class=\"tag-links\"><a href=\"https://developer.apple.com/documentation/SwiftUI\" target=\"_blank\" class=\"icon icon-after icon-chevronright\" aria-label=\"…\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "10px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 940,
+     "height": 21
+    }
+   },
+   "header.link": {
+    "html": "<a href=\"https://developer.apple.com/documentation/SwiftUI\" target=\"_blank\" class=\"icon icon-after icon-chevronright\" aria-label=\"…\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "18.0008px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "18.0008px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "count.bar": {
+    "html": "<div class=\"header\"><span class=\"search-results\"></span><div class=\"post-filters\"><div class=\"sort-by\"><div id=\"r",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "20px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(51, 51, 51)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(51, 51, 51)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "center",
+     "justify-content": "space-between",
+     "row-gap": "normal",
+     "column-gap": "normal"
+    },
+    "box": {
+     "width": 980,
+     "height": 56
+    }
+   },
+   "count": {
+    "html": "<span class=\"search-results\"></span>",
+    "styles": {
+     "font-family": "-apple-system, \"SF Pro Text\", \"Helvetica Neue\", HelveticaNeue, Helvetica, Arial, sans-serif",
+     "font-size": "16px",
+     "line-height": "20px",
+     "font-weight": "400",
+     "letter-spacing": "-0.096px",
+     "color": "rgb(51, 51, 51)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 75.1875,
+     "height": 20
+    }
+   }
+  }
+ }
+}

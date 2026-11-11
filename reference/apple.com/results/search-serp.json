@@ -1,0 +1,1888 @@
+{
+ "url": "https://www.apple.com/us/search/airpods?src=globalnav",
+ "finalUrl": "https://www.apple.com/us/search/airpods",
+ "browser": "chromium 151.0.7922.34 on darwin",
+ "date": "2026-11-11T22:44:14.391Z",
+ "widths": {
+  "390": {
+   "search": {
+    "html": "<div class=\"rf-serp-search\"><div class=\"rf-serp-search-wrapper\" data-analytics-id=\"serp\"><div><h1 class=\"visuallyhidden\"></h1></div><div class=\"as-l-container\"><form class=\"rf-serp-form\" action=\"/us/search\" data-analytics-region=",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 390,
+     "height": 4034.71875
+    }
+   },
+   "box": {
+    "html": "<div class=\"rf-serp-searchbox-wrapper\"><div class=\"form-textbox form-textbox-with-lefticon form-textbox-with-righticon\"><label id=\"_r_0__label\" for=\"_r_0_\" class=\"form-textbox-label form-textbox-eyebrow-label\"></label><input id=\"_r_0_\" cla",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "341.25px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 56
+    }
+   },
+   "field": {
+    "html": "<div class=\"form-textbox form-textbox-with-lefticon form-textbox-with-righticon\"><label id=\"_r_0__label\" for=\"_r_0_\" class=\"form-textbox-label form-textbox-eyebrow-label\"></label><input id=\"_r_0_\" class=\"form-textbox-input rf-serp-search-i",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "341.25px",
+     "position": "relative"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 56
+    }
+   },
+   "input": {
+    "html": "<input id=\"_r_0_\" class=\"form-textbox-input rf-serp-search-input form-textbox-entered\" aria-label=\"…\" aria-invalid=\"false\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" data-autom=\"searchInputBox\" role=\"c",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "49px",
+     "padding-bottom": "0px",
+     "padding-left": "44px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(134, 134, 139)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(134, 134, 139)",
+     "border-top-left-radius": "12px",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "height": "56px",
+     "border-left-width": "1px",
+     "border-left-color": "rgb(134, 134, 139)",
+     "border-top-right-radius": "12px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 56
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "padding-top": "0px",
+      "padding-right": "49px",
+      "padding-bottom": "0px",
+      "padding-left": "44px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(134, 134, 139)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(134, 134, 139)",
+      "border-top-left-radius": "12px",
+      "background-color": "rgba(255, 255, 255, 0.8)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "height": "56px",
+      "border-left-width": "1px",
+      "border-left-color": "rgb(134, 134, 139)",
+      "border-top-right-radius": "12px"
+     },
+     "focus": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "padding-top": "0px",
+      "padding-right": "49px",
+      "padding-bottom": "0px",
+      "padding-left": "43px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "2px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-bottom-width": "2px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(0, 113, 227)",
+      "border-top-left-radius": "12px",
+      "background-color": "rgba(255, 255, 255, 0.8)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "height": "56px",
+      "border-left-width": "2px",
+      "border-left-color": "rgb(0, 113, 227)",
+      "border-top-right-radius": "12px"
+     }
+    }
+   },
+   "label": {
+    "html": "<label id=\"_r_0__label\" for=\"_r_0_\" class=\"form-textbox-label form-textbox-eyebrow-label\"></label>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "top": "10px",
+     "left": "45px",
+     "position": "absolute"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    }
+   },
+   "icon.left": {
+    "html": "<div class=\"form-textbox-lefticon\"><button class=\"form-icons form-icons-search15\" type=\"submit\"><span class=\"visuallyhidden\"></span></button></div>",
+    "styles": {
+     "position": "absolute",
+     "left": "13px",
+     "top": "16px",
+     "width": "25px",
+     "height": "25px",
+     "color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 25,
+     "height": 25
+    }
+   },
+   "icon.left.button": {
+    "html": "<button class=\"form-icons form-icons-search15\" type=\"submit\"><span class=\"visuallyhidden\"></span></button>",
+    "styles": {
+     "width": "25px",
+     "height": "25px",
+     "color": "rgb(29, 29, 31)",
+     "font-size": "32px",
+     "line-height": "35px"
+    },
+    "box": {
+     "width": 25,
+     "height": 25
+    }
+   },
+   "icon.right": {
+    "html": "<div class=\"form-textbox-righticon\"><button type=\"button\" class=\"form-icons form-icons-reset\"><span class=\"visuallyhidden\"></span></button></div>",
+    "styles": {
+     "position": "absolute",
+     "right": "14px",
+     "top": "16px",
+     "width": "26px",
+     "height": "25px",
+     "visibility": "visible",
+     "opacity": "1"
+    },
+    "box": {
+     "width": 26,
+     "height": 25
+    }
+   },
+   "count": {
+    "html": "<div class=\"rf-accessories-section-resultcount rf-serp-resultcount as-l-container\" tabindex=\"-1\"></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "padding-top": "8px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(110, 110, 115)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(110, 110, 115)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 24
+    }
+   },
+   "grid": {
+    "html": "<div class=\"rf-accessoriesgrid column\" data-analytics-region=\"results\" role=\"list\"><div class=\"rf-producttile small-6 large-4\" data-autom=\"product-tile\" role=\"listitem\"><h3 class=\"visuallyhidden\"></h3><div class=\"rf-producttile",
+    "styles": {
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "wrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "grid-template-columns": "none",
+     "width": "390px"
+    },
+    "box": {
+     "width": 390,
+     "height": 3755.71875
+    }
+   },
+   "tile": {
+    "html": "<div class=\"rf-producttile small-6 large-4\" data-autom=\"product-tile\" role=\"listitem\"><h3 class=\"visuallyhidden\"></h3><div class=\"rf-producttile-gallery\" data-autom=\"productgallery-0\"><img width=\"445\" height=\"445\" alt=\"…",
+    "styles": {
+     "padding-top": "38px",
+     "padding-right": "0px",
+     "padding-bottom": "38px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(214, 214, 214)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "50%",
+     "width": "195px",
+     "flex-basis": "50%"
+    },
+    "box": {
+     "width": 195,
+     "height": 420.09375
+    }
+   },
+   "tile.gallery": {
+    "html": "<div class=\"rf-producttile-gallery\" data-autom=\"productgallery-0\"><img width=\"445\" height=\"445\" alt=\"…",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "13.6px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "194px",
+     "height": "174.594px",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 194,
+     "height": 174.59375
+    }
+   },
+   "tile.img": {
+    "html": "<img width=\"445\" height=\"445\" alt=\"…\" class=\"rf-producttile-image\" data-trigger-",
+    "styles": {
+     "width": "174.594px",
+     "height": "174.594px",
+     "object-fit": "fill",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 174.59375,
+     "height": 174.59375
+    }
+   },
+   "tile.info": {
+    "html": "<div class=\"rf-producttile-info\" data-autom=\"productTileInfo-0\"><div class=\"rf-producttile-colorgallery-section\"></div><div class=\"rf-producttile-violator\"><span class=\"badge badge-reduced badge-no-scrim\"></span></div><div cla",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "26px",
+     "padding-bottom": "0px",
+     "padding-left": "26px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "text-align": "center"
+    },
+    "box": {
+     "width": 194,
+     "height": 146
+    }
+   },
+   "tile.name": {
+    "html": "<div class=\"rf-producttile-name\" data-autom=\"productTile-0\"><a href=\"/shop/buy-airpods/airpods-pro-3?…\" data-relatedlink=\"_r_b_\" data-feedback=\"/shop/searchfeedback?feedType=SEARCHSELECTED&amp;id=qIeq4VHLTkO7ASf9XMZsjg&amp;position=0&amp;se",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 142,
+     "height": 45
+    }
+   },
+   "tile.name.link": {
+    "html": "<a href=\"/shop/buy-airpods/airpods-pro-3?…\" data-relatedlink=\"_r_b_\" data-feedback=\"/shop/searchfeedback?feedType=SEARCHSELECTED&amp;id=qIeq4VHLTkO7ASf9XMZsjg&amp;position=0&amp;section=accessories\" data-evar11=\"MFHP4|search\" data-var-name=",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(29, 29, 31)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(29, 29, 31)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "tile.price": {
+    "html": "<div class=\"rf-producttile-priceinfo\" data-autom=\"productPrice-0\"><span class=\"rf-producttile-pricecurrent\"></span></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "16px"
+    },
+    "box": {
+     "width": 142,
+     "height": 20
+    }
+   }
+  },
+  "900": {
+   "search": {
+    "html": "<div class=\"rf-serp-search\"><div class=\"rf-serp-search-wrapper\" data-analytics-id=\"serp\"><div><h1 class=\"visuallyhidden\"></h1></div><div class=\"as-l-container\"><form class=\"rf-serp-form\" action=\"/us/search\" data-analytics-region=",
+    "styles": {
+     "padding-top": "40px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 1024,
+     "height": 2901.203125
+    }
+   },
+   "box": {
+    "html": "<div class=\"rf-serp-searchbox-wrapper\"><div class=\"form-textbox form-textbox-with-lefticon form-textbox-with-righticon\"><label id=\"_r_0__label\" for=\"_r_0_\" class=\"form-textbox-label form-textbox-eyebrow-label\"></label><input id=\"_r_0_\" cla",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "580px"
+    },
+    "box": {
+     "width": 580,
+     "height": 56
+    }
+   },
+   "field": {
+    "html": "<div class=\"form-textbox form-textbox-with-lefticon form-textbox-with-righticon\"><label id=\"_r_0__label\" for=\"_r_0_\" class=\"form-textbox-label form-textbox-eyebrow-label\"></label><input id=\"_r_0_\" class=\"form-textbox-input rf-serp-search-i",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "580px",
+     "position": "relative"
+    },
+    "box": {
+     "width": 580,
+     "height": 56
+    }
+   },
+   "input": {
+    "html": "<input id=\"_r_0_\" class=\"form-textbox-input rf-serp-search-input form-textbox-entered\" aria-label=\"…\" aria-invalid=\"false\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" data-autom=\"searchInputBox\" role=\"c",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "49px",
+     "padding-bottom": "0px",
+     "padding-left": "44px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(134, 134, 139)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(134, 134, 139)",
+     "border-top-left-radius": "12px",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "height": "56px",
+     "border-left-width": "1px",
+     "border-left-color": "rgb(134, 134, 139)",
+     "border-top-right-radius": "12px"
+    },
+    "box": {
+     "width": 580,
+     "height": 56
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "padding-top": "0px",
+      "padding-right": "49px",
+      "padding-bottom": "0px",
+      "padding-left": "44px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(134, 134, 139)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(134, 134, 139)",
+      "border-top-left-radius": "12px",
+      "background-color": "rgba(255, 255, 255, 0.8)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "height": "56px",
+      "border-left-width": "1px",
+      "border-left-color": "rgb(134, 134, 139)",
+      "border-top-right-radius": "12px"
+     },
+     "focus": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "padding-top": "0px",
+      "padding-right": "49px",
+      "padding-bottom": "0px",
+      "padding-left": "43px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "2px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-bottom-width": "2px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(0, 113, 227)",
+      "border-top-left-radius": "12px",
+      "background-color": "rgba(255, 255, 255, 0.8)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "height": "56px",
+      "border-left-width": "2px",
+      "border-left-color": "rgb(0, 113, 227)",
+      "border-top-right-radius": "12px"
+     }
+    }
+   },
+   "label": {
+    "html": "<label id=\"_r_0__label\" for=\"_r_0_\" class=\"form-textbox-label form-textbox-eyebrow-label\"></label>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "top": "10px",
+     "left": "45px",
+     "position": "absolute"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    }
+   },
+   "icon.left": {
+    "html": "<div class=\"form-textbox-lefticon\"><button class=\"form-icons form-icons-search15\" type=\"submit\"><span class=\"visuallyhidden\"></span></button></div>",
+    "styles": {
+     "position": "absolute",
+     "left": "13px",
+     "top": "16px",
+     "width": "25px",
+     "height": "25px",
+     "color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 25,
+     "height": 25
+    }
+   },
+   "icon.left.button": {
+    "html": "<button class=\"form-icons form-icons-search15\" type=\"submit\"><span class=\"visuallyhidden\"></span></button>",
+    "styles": {
+     "width": "25px",
+     "height": "25px",
+     "color": "rgb(29, 29, 31)",
+     "font-size": "32px",
+     "line-height": "35px"
+    },
+    "box": {
+     "width": 25,
+     "height": 25
+    }
+   },
+   "icon.right": {
+    "html": "<div class=\"form-textbox-righticon\"><button type=\"button\" class=\"form-icons form-icons-reset\"><span class=\"visuallyhidden\"></span></button></div>",
+    "styles": {
+     "position": "absolute",
+     "right": "14px",
+     "top": "16px",
+     "width": "26px",
+     "height": "25px",
+     "visibility": "visible",
+     "opacity": "1"
+    },
+    "box": {
+     "width": 26,
+     "height": 25
+    }
+   },
+   "count": {
+    "html": "<div class=\"rf-accessories-section-resultcount rf-serp-resultcount as-l-container\" tabindex=\"-1\"></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "padding-top": "8px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(110, 110, 115)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(110, 110, 115)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 980,
+     "height": 24
+    }
+   },
+   "grid": {
+    "html": "<div class=\"rf-accessoriesgrid column\" data-analytics-region=\"results\" role=\"list\"><div class=\"rf-producttile small-6 large-4\" data-autom=\"product-tile\" role=\"listitem\"><h3 class=\"visuallyhidden\"></h3><div class=\"rf-producttile",
+    "styles": {
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "wrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "grid-template-columns": "none",
+     "width": "786px"
+    },
+    "box": {
+     "width": 786,
+     "height": 2644.203125
+    }
+   },
+   "tile": {
+    "html": "<div class=\"rf-producttile small-6 large-4\" data-autom=\"product-tile\" role=\"listitem\"><h3 class=\"visuallyhidden\"></h3><div class=\"rf-producttile-gallery\" data-autom=\"productgallery-0\"><div class=\"rc-inline-gallery\"><div id=\"_r_",
+    "styles": {
+     "padding-top": "38px",
+     "padding-right": "0px",
+     "padding-bottom": "38px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(214, 214, 214)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "33.3333%",
+     "width": "261.656px",
+     "flex-basis": "33.3333%"
+    },
+    "box": {
+     "width": 261.65625,
+     "height": 487.078125
+    }
+   },
+   "tile.gallery": {
+    "html": "<div class=\"rf-producttile-gallery\" data-autom=\"productgallery-0\"><div class=\"rc-inline-gallery\"><div id=\"_r_1t_\" data-core-gallery=\"true\" data-core-gallery-fade=\"false\"><div data-core-gallery-scroller=\"true\" style=\"transform: translateX(0p",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "13.6px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "260.656px",
+     "height": "241.578px",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 260.65625,
+     "height": 241.578125
+    }
+   },
+   "tile.img": {
+    "html": "<img width=\"445\" height=\"445\" alt=\"…\" class=\"rc-inline-gallery-image\" src=\"https",
+    "styles": {
+     "width": "217.406px",
+     "height": "217.406px",
+     "object-fit": "fill",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 217.40625,
+     "height": 217.40625
+    }
+   },
+   "tile.info": {
+    "html": "<div class=\"rf-producttile-info\" data-autom=\"productTileInfo-0\"><div class=\"rf-producttile-colorgallery-section\"></div><div class=\"rf-producttile-violator\"><span class=\"badge badge-reduced badge-no-scrim\"></span></div><div cla",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "26px",
+     "padding-bottom": "0px",
+     "padding-left": "26px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "text-align": "center"
+    },
+    "box": {
+     "width": 260.65625,
+     "height": 146
+    }
+   },
+   "tile.name": {
+    "html": "<div class=\"rf-producttile-name\" data-autom=\"productTile-0\"><a href=\"/shop/buy-airpods/airpods-pro-3?…\" data-relatedlink=\"_r_b_\" data-feedback=\"/shop/searchfeedback?feedType=SEARCHSELECTED&amp;id=qIeq4VHLTkO7ASf9XMZsjg&amp;position=0&amp;se",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 208.65625,
+     "height": 45
+    }
+   },
+   "tile.name.link": {
+    "html": "<a href=\"/shop/buy-airpods/airpods-pro-3?…\" data-relatedlink=\"_r_b_\" data-feedback=\"/shop/searchfeedback?feedType=SEARCHSELECTED&amp;id=qIeq4VHLTkO7ASf9XMZsjg&amp;position=0&amp;section=accessories\" data-evar11=\"MFHP4|search\" data-var-name=",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "14px",
+      "line-height": "20.0003px",
+      "font-weight": "400",
+      "letter-spacing": "-0.224px",
+      "color": "rgb(29, 29, 31)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(29, 29, 31)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "tile.price": {
+    "html": "<div class=\"rf-producttile-priceinfo\" data-autom=\"productPrice-0\"><span class=\"rf-producttile-pricecurrent\"></span></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "14px",
+     "line-height": "20.0003px",
+     "font-weight": "400",
+     "letter-spacing": "-0.224px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "16px"
+    },
+    "box": {
+     "width": 208.65625,
+     "height": 20
+    }
+   }
+  },
+  "1200": {
+   "search": {
+    "html": "<div class=\"rf-serp-search\"><div class=\"rf-serp-search-wrapper\" data-analytics-id=\"serp\"><div><h1 class=\"visuallyhidden\"></h1></div><div class=\"as-l-container\"><form class=\"rf-serp-form\" action=\"/us/search\" data-analytics-region=",
+    "styles": {
+     "padding-top": "40px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 1200,
+     "height": 3176.921875
+    }
+   },
+   "box": {
+    "html": "<div class=\"rf-serp-searchbox-wrapper\"><div class=\"form-textbox form-textbox-with-lefticon form-textbox-with-righticon\"><label id=\"_r_0__label\" for=\"_r_0_\" class=\"form-textbox-label form-textbox-eyebrow-label\"></label><input id=\"_r_0_\" cla",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "580px"
+    },
+    "box": {
+     "width": 580,
+     "height": 56
+    }
+   },
+   "field": {
+    "html": "<div class=\"form-textbox form-textbox-with-lefticon form-textbox-with-righticon\"><label id=\"_r_0__label\" for=\"_r_0_\" class=\"form-textbox-label form-textbox-eyebrow-label\"></label><input id=\"_r_0_\" class=\"form-textbox-input rf-serp-search-i",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "580px",
+     "position": "relative"
+    },
+    "box": {
+     "width": 580,
+     "height": 56
+    }
+   },
+   "input": {
+    "html": "<input id=\"_r_0_\" class=\"form-textbox-input rf-serp-search-input form-textbox-entered\" aria-label=\"…\" aria-invalid=\"false\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" data-autom=\"searchInputBox\" role=\"c",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "49px",
+     "padding-bottom": "0px",
+     "padding-left": "44px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(134, 134, 139)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(134, 134, 139)",
+     "border-top-left-radius": "12px",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "height": "56px",
+     "border-left-width": "1px",
+     "border-left-color": "rgb(134, 134, 139)",
+     "border-top-right-radius": "12px"
+    },
+    "box": {
+     "width": 580,
+     "height": 56
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "padding-top": "0px",
+      "padding-right": "49px",
+      "padding-bottom": "0px",
+      "padding-left": "44px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(134, 134, 139)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(134, 134, 139)",
+      "border-top-left-radius": "12px",
+      "background-color": "rgba(255, 255, 255, 0.8)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "height": "56px",
+      "border-left-width": "1px",
+      "border-left-color": "rgb(134, 134, 139)",
+      "border-top-right-radius": "12px"
+     },
+     "focus": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "padding-top": "0px",
+      "padding-right": "49px",
+      "padding-bottom": "0px",
+      "padding-left": "43px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "2px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-bottom-width": "2px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(0, 113, 227)",
+      "border-top-left-radius": "12px",
+      "background-color": "rgba(255, 255, 255, 0.8)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "height": "56px",
+      "border-left-width": "2px",
+      "border-left-color": "rgb(0, 113, 227)",
+      "border-top-right-radius": "12px"
+     }
+    }
+   },
+   "label": {
+    "html": "<label id=\"_r_0__label\" for=\"_r_0_\" class=\"form-textbox-label form-textbox-eyebrow-label\"></label>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "top": "10px",
+     "left": "45px",
+     "position": "absolute"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    }
+   },
+   "icon.left": {
+    "html": "<div class=\"form-textbox-lefticon\"><button class=\"form-icons form-icons-search15\" type=\"submit\"><span class=\"visuallyhidden\"></span></button></div>",
+    "styles": {
+     "position": "absolute",
+     "left": "13px",
+     "top": "16px",
+     "width": "25px",
+     "height": "25px",
+     "color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 25,
+     "height": 25
+    }
+   },
+   "icon.left.button": {
+    "html": "<button class=\"form-icons form-icons-search15\" type=\"submit\"><span class=\"visuallyhidden\"></span></button>",
+    "styles": {
+     "width": "25px",
+     "height": "25px",
+     "color": "rgb(29, 29, 31)",
+     "font-size": "32px",
+     "line-height": "35px"
+    },
+    "box": {
+     "width": 25,
+     "height": 25
+    }
+   },
+   "icon.right": {
+    "html": "<div class=\"form-textbox-righticon\"><button type=\"button\" class=\"form-icons form-icons-reset\"><span class=\"visuallyhidden\"></span></button></div>",
+    "styles": {
+     "position": "absolute",
+     "right": "14px",
+     "top": "16px",
+     "width": "26px",
+     "height": "25px",
+     "visibility": "visible",
+     "opacity": "1"
+    },
+    "box": {
+     "width": 26,
+     "height": 25
+    }
+   },
+   "count": {
+    "html": "<div class=\"rf-accessories-section-resultcount rf-serp-resultcount as-l-container\" tabindex=\"-1\"></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "padding-top": "8px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(110, 110, 115)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(110, 110, 115)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 980,
+     "height": 24
+    }
+   },
+   "grid": {
+    "html": "<div class=\"rf-accessoriesgrid column\" data-analytics-region=\"results\" role=\"list\"><div class=\"rf-producttile small-6 large-4\" data-autom=\"product-tile\" role=\"listitem\"><h3 class=\"visuallyhidden\"></h3><div class=\"rf-producttile",
+    "styles": {
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "wrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "grid-template-columns": "none",
+     "width": "962px"
+    },
+    "box": {
+     "width": 962,
+     "height": 2919.921875
+    }
+   },
+   "tile": {
+    "html": "<div class=\"rf-producttile small-6 large-4\" data-autom=\"product-tile\" role=\"listitem\"><h3 class=\"visuallyhidden\"></h3><div class=\"rf-producttile-gallery\" data-autom=\"productgallery-0\"><div class=\"rc-inline-gallery\"><div id=\"_r_",
+    "styles": {
+     "padding-top": "38px",
+     "padding-right": "0px",
+     "padding-bottom": "38px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(210, 210, 215)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "33.3333%",
+     "width": "320.328px",
+     "flex-basis": "33.3333%"
+    },
+    "box": {
+     "width": 320.328125,
+     "height": 553.984375
+    }
+   },
+   "tile.gallery": {
+    "html": "<div class=\"rf-producttile-gallery\" data-autom=\"productgallery-0\"><div class=\"rc-inline-gallery\"><div id=\"_r_1t_\" data-core-gallery=\"true\" data-core-gallery-fade=\"false\"><div data-core-gallery-scroller=\"true\" style=\"transform: translateX(0p",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "13.6px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "319.328px",
+     "height": "294.391px",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 319.328125,
+     "height": 294.390625
+    }
+   },
+   "tile.img": {
+    "html": "<img width=\"445\" height=\"445\" alt=\"…\" class=\"rc-inline-gallery-image\" src=\"https",
+    "styles": {
+     "width": "264.938px",
+     "height": "264.938px",
+     "object-fit": "fill",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 264.9375,
+     "height": 264.9375
+    }
+   },
+   "tile.info": {
+    "html": "<div class=\"rf-producttile-info\" data-autom=\"productTileInfo-0\"><div class=\"rf-producttile-colorgallery-section\"></div><div class=\"rf-producttile-violator\"><span class=\"badge badge-reduced badge-no-scrim\"></span></div><div cla",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "26px",
+     "padding-bottom": "0px",
+     "padding-left": "26px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "text-align": "center"
+    },
+    "box": {
+     "width": 319.328125,
+     "height": 161
+    }
+   },
+   "tile.name": {
+    "html": "<div class=\"rf-producttile-name\" data-autom=\"productTile-0\"><a href=\"/shop/buy-airpods/airpods-pro-3?…\" data-relatedlink=\"_r_b_\" data-feedback=\"/shop/searchfeedback?feedType=SEARCHSELECTED&amp;id=qIeq4VHLTkO7ASf9XMZsjg&amp;position=0&amp;se",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 267.328125,
+     "height": 55
+    }
+   },
+   "tile.name.link": {
+    "html": "<a href=\"/shop/buy-airpods/airpods-pro-3?…\" data-relatedlink=\"_r_b_\" data-feedback=\"/shop/searchfeedback?feedType=SEARCHSELECTED&amp;id=qIeq4VHLTkO7ASf9XMZsjg&amp;position=0&amp;section=accessories\" data-evar11=\"MFHP4|search\" data-var-name=",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(29, 29, 31)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "tile.price": {
+    "html": "<div class=\"rf-producttile-priceinfo\" data-autom=\"productPrice-0\"><span class=\"rf-producttile-pricecurrent\"></span></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "16px"
+    },
+    "box": {
+     "width": 267.328125,
+     "height": 25
+    }
+   }
+  },
+  "1600": {
+   "search": {
+    "html": "<div class=\"rf-serp-search\"><div class=\"rf-serp-search-wrapper\" data-analytics-id=\"serp\"><div><h1 class=\"visuallyhidden\"></h1></div><div class=\"as-l-container\"><form class=\"rf-serp-form\" action=\"/us/search\" data-analytics-region=",
+    "styles": {
+     "padding-top": "40px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 1600,
+     "height": 3391.09375
+    }
+   },
+   "box": {
+    "html": "<div class=\"rf-serp-searchbox-wrapper\"><div class=\"form-textbox form-textbox-with-lefticon form-textbox-with-righticon\"><label id=\"_r_0__label\" for=\"_r_0_\" class=\"form-textbox-label form-textbox-eyebrow-label\"></label><input id=\"_r_0_\" cla",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "580px"
+    },
+    "box": {
+     "width": 580,
+     "height": 56
+    }
+   },
+   "field": {
+    "html": "<div class=\"form-textbox form-textbox-with-lefticon form-textbox-with-righticon\"><label id=\"_r_0__label\" for=\"_r_0_\" class=\"form-textbox-label form-textbox-eyebrow-label\"></label><input id=\"_r_0_\" class=\"form-textbox-input rf-serp-search-i",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "580px",
+     "position": "relative"
+    },
+    "box": {
+     "width": 580,
+     "height": 56
+    }
+   },
+   "input": {
+    "html": "<input id=\"_r_0_\" class=\"form-textbox-input rf-serp-search-input form-textbox-entered\" aria-label=\"…\" aria-invalid=\"false\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" data-autom=\"searchInputBox\" role=\"c",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "padding-top": "0px",
+     "padding-right": "49px",
+     "padding-bottom": "0px",
+     "padding-left": "44px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(134, 134, 139)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(134, 134, 139)",
+     "border-top-left-radius": "12px",
+     "background-color": "rgba(255, 255, 255, 0.8)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "height": "56px",
+     "border-left-width": "1px",
+     "border-left-color": "rgb(134, 134, 139)",
+     "border-top-right-radius": "12px"
+    },
+    "box": {
+     "width": 580,
+     "height": 56
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "padding-top": "0px",
+      "padding-right": "49px",
+      "padding-bottom": "0px",
+      "padding-left": "44px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(134, 134, 139)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(134, 134, 139)",
+      "border-top-left-radius": "12px",
+      "background-color": "rgba(255, 255, 255, 0.8)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "height": "56px",
+      "border-left-width": "1px",
+      "border-left-color": "rgb(134, 134, 139)",
+      "border-top-right-radius": "12px"
+     },
+     "focus": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "padding-top": "0px",
+      "padding-right": "49px",
+      "padding-bottom": "0px",
+      "padding-left": "43px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "2px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(0, 113, 227)",
+      "border-bottom-width": "2px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(0, 113, 227)",
+      "border-top-left-radius": "12px",
+      "background-color": "rgba(255, 255, 255, 0.8)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "0px",
+      "max-width": "none",
+      "height": "56px",
+      "border-left-width": "2px",
+      "border-left-color": "rgb(0, 113, 227)",
+      "border-top-right-radius": "12px"
+     }
+    }
+   },
+   "label": {
+    "html": "<label id=\"_r_0__label\" for=\"_r_0_\" class=\"form-textbox-label form-textbox-eyebrow-label\"></label>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "top": "10px",
+     "left": "45px",
+     "position": "absolute"
+    },
+    "box": {
+     "width": 0,
+     "height": 0
+    }
+   },
+   "icon.left": {
+    "html": "<div class=\"form-textbox-lefticon\"><button class=\"form-icons form-icons-search15\" type=\"submit\"><span class=\"visuallyhidden\"></span></button></div>",
+    "styles": {
+     "position": "absolute",
+     "left": "13px",
+     "top": "16px",
+     "width": "25px",
+     "height": "25px",
+     "color": "rgb(29, 29, 31)"
+    },
+    "box": {
+     "width": 25,
+     "height": 25
+    }
+   },
+   "icon.left.button": {
+    "html": "<button class=\"form-icons form-icons-search15\" type=\"submit\"><span class=\"visuallyhidden\"></span></button>",
+    "styles": {
+     "width": "25px",
+     "height": "25px",
+     "color": "rgb(29, 29, 31)",
+     "font-size": "32px",
+     "line-height": "35px"
+    },
+    "box": {
+     "width": 25,
+     "height": 25
+    }
+   },
+   "icon.right": {
+    "html": "<div class=\"form-textbox-righticon\"><button type=\"button\" class=\"form-icons form-icons-reset\"><span class=\"visuallyhidden\"></span></button></div>",
+    "styles": {
+     "position": "absolute",
+     "right": "14px",
+     "top": "16px",
+     "width": "26px",
+     "height": "25px",
+     "visibility": "visible",
+     "opacity": "1"
+    },
+    "box": {
+     "width": 26,
+     "height": 25
+    }
+   },
+   "count": {
+    "html": "<div class=\"rf-accessories-section-resultcount rf-serp-resultcount as-l-container\" tabindex=\"-1\"></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "12px",
+     "line-height": "16.0005px",
+     "font-weight": "400",
+     "letter-spacing": "-0.12px",
+     "color": "rgb(110, 110, 115)",
+     "padding-top": "8px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(110, 110, 115)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(110, 110, 115)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 980,
+     "height": 24
+    }
+   },
+   "grid": {
+    "html": "<div class=\"rf-accessoriesgrid column\" data-analytics-region=\"results\" role=\"list\"><div class=\"rf-producttile small-6 large-4\" data-autom=\"product-tile\" role=\"listitem\"><h3 class=\"visuallyhidden\"></h3><div class=\"rf-producttile",
+    "styles": {
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "wrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "grid-template-columns": "none",
+     "width": "1200px"
+    },
+    "box": {
+     "width": 1200,
+     "height": 3134.09375
+    }
+   },
+   "tile": {
+    "html": "<div class=\"rf-producttile small-6 large-4\" data-autom=\"product-tile\" role=\"listitem\"><h3 class=\"visuallyhidden\"></h3><div class=\"rf-producttile-gallery\" data-autom=\"productgallery-0\"><div class=\"rc-inline-gallery\"><div id=\"_r_",
+    "styles": {
+     "padding-top": "38px",
+     "padding-right": "0px",
+     "padding-bottom": "38px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(210, 210, 215)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "33.3333%",
+     "width": "399.656px",
+     "flex-basis": "33.3333%"
+    },
+    "box": {
+     "width": 399.65625,
+     "height": 625.375
+    }
+   },
+   "tile.gallery": {
+    "html": "<div class=\"rf-producttile-gallery\" data-autom=\"productgallery-0\"><div class=\"rc-inline-gallery\"><div id=\"_r_1t_\" data-core-gallery=\"true\" data-core-gallery-fade=\"false\"><div data-core-gallery-scroller=\"true\" style=\"transform: translateX(0p",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "13.6px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "398.656px",
+     "height": "365.781px",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 398.65625,
+     "height": 365.78125
+    }
+   },
+   "tile.img": {
+    "html": "<img width=\"445\" height=\"445\" alt=\"…\" class=\"rc-inline-gallery-image\" src=\"https",
+    "styles": {
+     "width": "329.203px",
+     "height": "329.203px",
+     "object-fit": "fill",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 329.203125,
+     "height": 329.203125
+    }
+   },
+   "tile.info": {
+    "html": "<div class=\"rf-producttile-info\" data-autom=\"productTileInfo-0\"><div class=\"rf-producttile-colorgallery-section\"></div><div class=\"rf-producttile-violator\"><span class=\"badge badge-reduced badge-no-scrim\"></span></div><div cla",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "26px",
+     "padding-bottom": "0px",
+     "padding-left": "26px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "text-align": "center"
+    },
+    "box": {
+     "width": 398.65625,
+     "height": 161
+    }
+   },
+   "tile.name": {
+    "html": "<div class=\"rf-producttile-name\" data-autom=\"productTile-0\"><a href=\"/shop/buy-airpods/airpods-pro-3?…\" data-relatedlink=\"_r_b_\" data-feedback=\"/shop/searchfeedback?feedType=SEARCHSELECTED&amp;id=qIeq4VHLTkO7ASf9XMZsjg&amp;position=0&amp;se",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 346.65625,
+     "height": 55
+    }
+   },
+   "tile.name.link": {
+    "html": "<a href=\"/shop/buy-airpods/airpods-pro-3?…\" data-relatedlink=\"_r_b_\" data-feedback=\"/shop/searchfeedback?feedType=SEARCHSELECTED&amp;id=qIeq4VHLTkO7ASf9XMZsjg&amp;position=0&amp;section=accessories\" data-evar11=\"MFHP4|search\" data-var-name=",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none",
+     "text-decoration-color": "rgb(29, 29, 31)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     },
+     "focus-visible": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "text-decoration-line": "none",
+      "text-decoration-color": "rgb(29, 29, 31)",
+      "text-underline-offset": "auto"
+     }
+    }
+   },
+   "tile.price": {
+    "html": "<div class=\"rf-producttile-priceinfo\" data-autom=\"productPrice-0\"><span class=\"rf-producttile-pricecurrent\"></span></div>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "16px"
+    },
+    "box": {
+     "width": 346.65625,
+     "height": 25
+    }
+   }
+  }
+ }
+}

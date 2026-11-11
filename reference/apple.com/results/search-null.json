@@ -1,0 +1,1092 @@
+{
+ "url": "https://www.apple.com/us/search/xqzvwqk?src=globalnav",
+ "finalUrl": "https://www.apple.com/us/search/xqzvwqk",
+ "browser": "chromium 151.0.7922.34 on darwin",
+ "date": "2026-11-11T22:44:05.821Z",
+ "widths": {
+  "390": {
+   "null": {
+    "html": "<div class=\"rf-serp-nullsearch\"><div class=\"rf-serp-nullsearch-heading\"><div class=\"rf-serp-nullsearch-title\"></div><div class=\"rf-serp-nullsearch-desc\"></div></div><div c",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "30px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "341.25px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 1525
+    }
+   },
+   "null.heading": {
+    "html": "<div class=\"rf-serp-nullsearch-heading\"><div class=\"rf-serp-nullsearch-title\"></div><div class=\"rf-serp-nullsearch-desc\"></div></div>",
+    "styles": {
+     "padding-top": "37px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 133
+    }
+   },
+   "null.title": {
+    "html": "<div class=\"rf-serp-nullsearch-title\"></div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "32.0019px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 322.953125,
+     "height": 29
+    }
+   },
+   "null.desc": {
+    "html": "<div class=\"rf-serp-nullsearch-desc\"></div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "32.0019px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 292.015625,
+     "height": 61
+    }
+   },
+   "null.results": {
+    "html": "<div class=\"rf-serp-nullsearch-results\"><div class=\"rf-serp-nullsearch-product\" data-analytics-region=\"product and accessories\"><h2 class=\"rf-serp-product-sectionlabel\"></h2><div class=\"rf-serp-scroller\"><div ",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 1392
+    }
+   },
+   "section.label": {
+    "html": "<h2 class=\"rf-serp-product-sectionlabel\"></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 341.25,
+     "height": 45
+    }
+   },
+   "tile": {
+    "html": "<div class=\"rf-serp-product-tile\" data-trigger-click=\"click [data-relatedlink='accessories_0']\"><img width=\"274\" height=\"220\" alt=\"\" class=\"rf-serp-product-img\" src=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MTJY3?…\">",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(210, 210, 215)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "216px",
+     "max-width": "none",
+     "display": "inline-block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "width": "233px",
+     "text-align": "center",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 233,
+     "height": 216
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(110, 110, 115)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(110, 110, 115)",
+      "border-top-left-radius": "15px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "216px",
+      "max-width": "none",
+      "display": "inline-block",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "normal",
+      "justify-content": "normal",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "width": "233px",
+      "text-align": "center",
+      "overflow": "visible"
+     }
+    }
+   },
+   "tile.img": {
+    "html": "<img width=\"274\" height=\"220\" alt=\"\" class=\"rf-serp-product-img\" src=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MTJY3?…\">",
+    "styles": {
+     "width": "137px",
+     "height": "110px",
+     "object-fit": "fill",
+     "border-top-left-radius": "0px",
+     "margin-bottom": "0px",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 231,
+     "height": 154
+    }
+   },
+   "tile.title": {
+    "html": "<div class=\"rf-serp-product-title\"><span class=\"icon icon-before icon-search rf-serp-product-searchicon\"></span><a href=\"/search/EarPods-(USB-C)?…\" class=\"rf-serp-product-link\" data-relatedlink=\"accessories_0\" title=\"…\" data-f",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "text-align": "center",
+     "-webkit-line-clamp": "none",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 184.796875,
+     "height": 26
+    }
+   },
+   "tile.link": {
+    "html": "<a href=\"/search/EarPods-(USB-C)?…\" class=\"rf-serp-product-link\" data-relatedlink=\"accessories_0\" title=\"…\" data-feedback=\"/shop/searchfeedback?feedType=SEARCHSELECTED&amp;id=OKc6z5lERa6DADpp5tlSXA&amp;origIndex=0&amp;position",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "text-decoration-line": "underline"
+     }
+    }
+   }
+  },
+  "900": {
+   "null": {
+    "html": "<div class=\"rf-serp-nullsearch\"><div class=\"rf-serp-nullsearch-heading\"><div class=\"rf-serp-nullsearch-title\"></div><div class=\"rf-serp-nullsearch-desc\"></div></div><div c",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "105px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "980px"
+    },
+    "box": {
+     "width": 980,
+     "height": 955
+    }
+   },
+   "null.heading": {
+    "html": "<div class=\"rf-serp-nullsearch-heading\"><div class=\"rf-serp-nullsearch-title\"></div><div class=\"rf-serp-nullsearch-desc\"></div></div>",
+    "styles": {
+     "padding-top": "56px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 980,
+     "height": 136
+    }
+   },
+   "null.title": {
+    "html": "<div class=\"rf-serp-nullsearch-title\"></div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "40px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 980,
+     "height": 40
+    }
+   },
+   "null.desc": {
+    "html": "<div class=\"rf-serp-nullsearch-desc\"></div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "40px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 980,
+     "height": 40
+    }
+   },
+   "null.results": {
+    "html": "<div class=\"rf-serp-nullsearch-results\"><div class=\"rf-serp-nullsearch-product\" data-analytics-region=\"product and accessories\"><h2 class=\"rf-serp-product-sectionlabel\"></h2><div class=\"rf-serp-scroller\"><div ",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 980,
+     "height": 819
+    }
+   },
+   "section.label": {
+    "html": "<h2 class=\"rf-serp-product-sectionlabel\"></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 60
+    }
+   },
+   "tile": {
+    "html": "<div class=\"rf-serp-product-tile\" data-trigger-click=\"click [data-relatedlink='accessories_0']\"><img width=\"274\" height=\"220\" alt=\"\" class=\"rf-serp-product-img\" src=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MTJY3?…\">",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(210, 210, 215)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "216px",
+     "max-width": "none",
+     "display": "inline-block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "width": "233px",
+     "text-align": "center",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 233,
+     "height": 216
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(110, 110, 115)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(110, 110, 115)",
+      "border-top-left-radius": "15px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "216px",
+      "max-width": "none",
+      "display": "inline-block",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "normal",
+      "justify-content": "normal",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "width": "233px",
+      "text-align": "center",
+      "overflow": "visible"
+     }
+    }
+   },
+   "tile.img": {
+    "html": "<img width=\"274\" height=\"220\" alt=\"\" class=\"rf-serp-product-img\" src=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MTJY3?…\">",
+    "styles": {
+     "width": "137px",
+     "height": "110px",
+     "object-fit": "fill",
+     "border-top-left-radius": "0px",
+     "margin-bottom": "0px",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 231,
+     "height": 154
+    }
+   },
+   "tile.title": {
+    "html": "<div class=\"rf-serp-product-title\"><span class=\"icon icon-before icon-search rf-serp-product-searchicon\"></span><a href=\"/search/EarPods-(USB-C)?…\" class=\"rf-serp-product-link\" data-relatedlink=\"accessories_0\" title=\"…\" data-f",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "text-align": "center",
+     "-webkit-line-clamp": "none",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 184.796875,
+     "height": 26
+    }
+   },
+   "tile.link": {
+    "html": "<a href=\"/search/EarPods-(USB-C)?…\" class=\"rf-serp-product-link\" data-relatedlink=\"accessories_0\" title=\"…\" data-feedback=\"/shop/searchfeedback?feedType=SEARCHSELECTED&amp;id=OKc6z5lERa6DADpp5tlSXA&amp;origIndex=0&amp;position",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "text-decoration-line": "underline"
+     }
+    }
+   }
+  },
+  "1200": {
+   "null": {
+    "html": "<div class=\"rf-serp-nullsearch\"><div class=\"rf-serp-nullsearch-heading\"><div class=\"rf-serp-nullsearch-title\"></div><div class=\"rf-serp-nullsearch-desc\"></div></div><div c",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "105px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "980px"
+    },
+    "box": {
+     "width": 980,
+     "height": 955
+    }
+   },
+   "null.heading": {
+    "html": "<div class=\"rf-serp-nullsearch-heading\"><div class=\"rf-serp-nullsearch-title\"></div><div class=\"rf-serp-nullsearch-desc\"></div></div>",
+    "styles": {
+     "padding-top": "56px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 980,
+     "height": 136
+    }
+   },
+   "null.title": {
+    "html": "<div class=\"rf-serp-nullsearch-title\"></div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "40px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 980,
+     "height": 40
+    }
+   },
+   "null.desc": {
+    "html": "<div class=\"rf-serp-nullsearch-desc\"></div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "40px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 980,
+     "height": 40
+    }
+   },
+   "null.results": {
+    "html": "<div class=\"rf-serp-nullsearch-results\"><div class=\"rf-serp-nullsearch-product\" data-analytics-region=\"product and accessories\"><h2 class=\"rf-serp-product-sectionlabel\"></h2><div class=\"rf-serp-scroller\"><div ",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 980,
+     "height": 819
+    }
+   },
+   "section.label": {
+    "html": "<h2 class=\"rf-serp-product-sectionlabel\"></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 60
+    }
+   },
+   "tile": {
+    "html": "<div class=\"rf-serp-product-tile\" data-trigger-click=\"click [data-relatedlink='accessories_0']\"><img width=\"274\" height=\"220\" alt=\"\" class=\"rf-serp-product-img\" src=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MTJY3?…\">",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(210, 210, 215)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "216px",
+     "max-width": "none",
+     "display": "inline-block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "width": "233px",
+     "text-align": "center",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 233,
+     "height": 216
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(110, 110, 115)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(110, 110, 115)",
+      "border-top-left-radius": "15px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "216px",
+      "max-width": "none",
+      "display": "inline-block",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "normal",
+      "justify-content": "normal",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "width": "233px",
+      "text-align": "center",
+      "overflow": "visible"
+     }
+    }
+   },
+   "tile.img": {
+    "html": "<img width=\"274\" height=\"220\" alt=\"\" class=\"rf-serp-product-img\" src=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MTJY3?…\">",
+    "styles": {
+     "width": "137px",
+     "height": "110px",
+     "object-fit": "fill",
+     "border-top-left-radius": "0px",
+     "margin-bottom": "0px",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 231,
+     "height": 154
+    }
+   },
+   "tile.title": {
+    "html": "<div class=\"rf-serp-product-title\"><span class=\"icon icon-before icon-search rf-serp-product-searchicon\"></span><a href=\"/search/EarPods-(USB-C)?…\" class=\"rf-serp-product-link\" data-relatedlink=\"accessories_0\" title=\"…\" data-f",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "text-align": "center",
+     "-webkit-line-clamp": "none",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 184.796875,
+     "height": 26
+    }
+   },
+   "tile.link": {
+    "html": "<a href=\"/search/EarPods-(USB-C)?…\" class=\"rf-serp-product-link\" data-relatedlink=\"accessories_0\" title=\"…\" data-feedback=\"/shop/searchfeedback?feedType=SEARCHSELECTED&amp;id=OKc6z5lERa6DADpp5tlSXA&amp;origIndex=0&amp;position",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "text-decoration-line": "underline"
+     }
+    }
+   }
+  },
+  "1600": {
+   "null": {
+    "html": "<div class=\"rf-serp-nullsearch\"><div class=\"rf-serp-nullsearch-heading\"><div class=\"rf-serp-nullsearch-title\"></div><div class=\"rf-serp-nullsearch-desc\"></div></div><div c",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "105px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "width": "980px"
+    },
+    "box": {
+     "width": 980,
+     "height": 955
+    }
+   },
+   "null.heading": {
+    "html": "<div class=\"rf-serp-nullsearch-heading\"><div class=\"rf-serp-nullsearch-title\"></div><div class=\"rf-serp-nullsearch-desc\"></div></div>",
+    "styles": {
+     "padding-top": "56px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 980,
+     "height": 136
+    }
+   },
+   "null.title": {
+    "html": "<div class=\"rf-serp-nullsearch-title\"></div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "40px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 980,
+     "height": 40
+    }
+   },
+   "null.desc": {
+    "html": "<div class=\"rf-serp-nullsearch-desc\"></div>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "40px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "text-align": "start"
+    },
+    "box": {
+     "width": 980,
+     "height": 40
+    }
+   },
+   "null.results": {
+    "html": "<div class=\"rf-serp-nullsearch-results\"><div class=\"rf-serp-nullsearch-product\" data-analytics-region=\"product and accessories\"><h2 class=\"rf-serp-product-sectionlabel\"></h2><div class=\"rf-serp-scroller\"><div ",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgb(29, 29, 31)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgb(29, 29, 31)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none"
+    },
+    "box": {
+     "width": 980,
+     "height": 819
+    }
+   },
+   "section.label": {
+    "html": "<h2 class=\"rf-serp-product-sectionlabel\"></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "margin-bottom": "0px"
+    },
+    "box": {
+     "width": 980,
+     "height": 60
+    }
+   },
+   "tile": {
+    "html": "<div class=\"rf-serp-product-tile\" data-trigger-click=\"click [data-relatedlink='accessories_0']\"><img width=\"274\" height=\"220\" alt=\"\" class=\"rf-serp-product-img\" src=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MTJY3?…\">",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "1px",
+     "border-top-style": "solid",
+     "border-top-color": "rgb(210, 210, 215)",
+     "border-bottom-width": "1px",
+     "border-bottom-style": "solid",
+     "border-bottom-color": "rgb(210, 210, 215)",
+     "border-top-left-radius": "15px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "216px",
+     "max-width": "none",
+     "display": "inline-block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "width": "233px",
+     "text-align": "center",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 233,
+     "height": 216
+    },
+    "states": {
+     "hover": {
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "border-top-width": "1px",
+      "border-top-style": "solid",
+      "border-top-color": "rgb(110, 110, 115)",
+      "border-bottom-width": "1px",
+      "border-bottom-style": "solid",
+      "border-bottom-color": "rgb(110, 110, 115)",
+      "border-top-left-radius": "15px",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "box-shadow": "none",
+      "min-width": "0px",
+      "min-height": "216px",
+      "max-width": "none",
+      "display": "inline-block",
+      "flex-direction": "row",
+      "flex-wrap": "nowrap",
+      "align-items": "normal",
+      "justify-content": "normal",
+      "row-gap": "normal",
+      "column-gap": "normal",
+      "width": "233px",
+      "text-align": "center",
+      "overflow": "visible"
+     }
+    }
+   },
+   "tile.img": {
+    "html": "<img width=\"274\" height=\"220\" alt=\"\" class=\"rf-serp-product-img\" src=\"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MTJY3?…\">",
+    "styles": {
+     "width": "137px",
+     "height": "110px",
+     "object-fit": "fill",
+     "border-top-left-radius": "0px",
+     "margin-bottom": "0px",
+     "background-color": "rgba(0, 0, 0, 0)"
+    },
+    "box": {
+     "width": 231,
+     "height": 154
+    }
+   },
+   "tile.title": {
+    "html": "<div class=\"rf-serp-product-title\"><span class=\"icon icon-before icon-search rf-serp-product-searchicon\"></span><a href=\"/search/EarPods-(USB-C)?…\" class=\"rf-serp-product-link\" data-relatedlink=\"accessories_0\" title=\"…\" data-f",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "0px",
+     "text-align": "center",
+     "-webkit-line-clamp": "none",
+     "overflow": "visible"
+    },
+    "box": {
+     "width": 184.796875,
+     "height": 26
+    }
+   },
+   "tile.link": {
+    "html": "<a href=\"/search/EarPods-(USB-C)?…\" class=\"rf-serp-product-link\" data-relatedlink=\"accessories_0\" title=\"…\" data-feedback=\"/shop/searchfeedback?feedType=SEARCHSELECTED&amp;id=OKc6z5lERa6DADpp5tlSXA&amp;origIndex=0&amp;position",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "21.0012px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "text-decoration-line": "none"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "21.0012px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(29, 29, 31)",
+      "text-decoration-line": "underline"
+     }
+    }
+   }
+  }
+ }
+}
