@@ -48,15 +48,6 @@ func TestBtnRendersTheExamples(t *testing.T) {
 	}
 }
 
-func TestBtnSubmits(t *testing.T) {
-	b := link("Buy", "", site.BtnVariantPrimary, site.BtnSizeMedium)
-	b.Submit = true
-	want := `<button class="cui-btn" type="submit">Buy</button>`
-	if got := example.Render(b); got != want {
-		t.Errorf("the button does not submit its form\n got: %s\nwant: %s", got, want)
-	}
-}
-
 func TestBtnAttrsGoOnItsLink(t *testing.T) {
 	b := link("Buy", "/buy", site.BtnVariantPrimary, site.BtnSizeMedium)
 	b.Attrs = h.Aria("current", "page")

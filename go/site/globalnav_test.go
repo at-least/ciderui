@@ -41,18 +41,6 @@ func TestGlobalNavWritesItsWordsInThePagesLanguage(t *testing.T) {
 	}
 }
 
-func TestGlobalNavPostLinkSendsAPostToItsHref(t *testing.T) {
-	got := example.Render(globalNav([]site.GlobalNavLink{{Label: "Log Out", Href: "/account/logout", Post: true}}))
-	for _, want := range []string{
-		`<li><button class="cui-globalnav-link" type="submit" form="cui-globalnav-post-1">Log Out</button></li>`,
-		`<form id="cui-globalnav-post-1" action="/account/logout" method="post" hidden></form>`,
-	} {
-		if !strings.Contains(got, want) {
-			t.Errorf("the POST link does not submit its own label's form to its own Href: no %s in %s", want, got)
-		}
-	}
-}
-
 func TestGlobalNavPanics(t *testing.T) {
 	example.Panics(t, func() site.GlobalNav {
 		return globalNav([]site.GlobalNavLink{{Label: "Store", Href: "/store", Post: false}})

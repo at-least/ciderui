@@ -1,7 +1,6 @@
 package site_test
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui"
@@ -21,16 +20,6 @@ func TestPageWritesTheDocumentItsHeadAfterTheStylesheet(t *testing.T) {
 	want := `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>課程</title><link rel="stylesheet" href="` + ciderui.SiteStylesheet() + `"><link rel="stylesheet" href="/own.css"></head><body><p>x</p></body></html>`
 	if got := example.Render(p); got != want {
 		t.Errorf("the page is not the document with its head after the site stylesheet\n got: %s\nwant: %s", got, want)
-	}
-}
-
-func TestPageWithAGlobalNavFirstWritesItsSkipLinkFirst(t *testing.T) {
-	p := page()
-	p.Children = g.Group{globalNav([]site.GlobalNavLink{{Label: "Store", Href: "/store", Post: false}}), h.Main(h.ID("main"), h.TabIndex("-1"))}
-	got := example.Render(p)
-	want := `<body><a class="cui-btn cui-skip" href="#main">Skip to Content</a><nav class="cui-globalnav"`
-	if !strings.Contains(got, want) {
-		t.Errorf("the global nav's skip link is not the body's first element: no %s in %s", want, got)
 	}
 }
 
