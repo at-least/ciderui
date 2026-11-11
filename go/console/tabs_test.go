@@ -31,7 +31,7 @@ func TestTabsPanics(t *testing.T) {
 		return console.ConsoleTabs{AriaLabel: "X", Tabs: []console.ConsoleTab{{Label: "A", Href: "#a", Current: true}, {Label: "B", Href: "#b", Current: false}}}
 	}, []example.Break[console.ConsoleTabs]{
 		{Want: "console.ConsoleTabs needs an AriaLabel", Change: func(p *console.ConsoleTabs) { p.AriaLabel = "" }},
-		{Want: "console.ConsoleTabs has one current tab at most", Change: func(p *console.ConsoleTabs) { p.Tabs[1].Current = true }},
+		{Want: "console.ConsoleTabs has 2 current tabs: one at most", Change: func(p *console.ConsoleTabs) { p.Tabs[1].Current = true }},
 		{Want: "console.ConsoleTab needs a Label", Change: func(p *console.ConsoleTabs) { p.Tabs[1].Label = "" }},
 	})
 }
@@ -61,7 +61,7 @@ func TestTabsChoicePanics(t *testing.T) {
 		{Want: "console.ConsoleTabsChoice needs a Name", Change: func(p *console.ConsoleTabsChoice) { p.Name = "" }},
 		{Want: "console.ConsoleTabsChoice needs two Options at least: one is no choice", Change: func(p *console.ConsoleTabsChoice) { p.Options = p.Options[:1] }},
 		{Want: "console.ConsoleTabsOption needs a Label", Change: func(p *console.ConsoleTabsChoice) { p.Options[1].Label = "" }},
-		{Want: "console.ConsoleTabsChoice has one Checked option: a radio group starts with its value", Change: func(p *console.ConsoleTabsChoice) { p.Options[0].Checked = false }},
-		{Want: "console.ConsoleTabsChoice has one Checked option: a radio group starts with its value", Change: func(p *console.ConsoleTabsChoice) { p.Options[1].Checked = true }},
+		{Want: "console.ConsoleTabsChoice needs one Checked option, has 0: a radio group starts with its value", Change: func(p *console.ConsoleTabsChoice) { p.Options[0].Checked = false }},
+		{Want: "console.ConsoleTabsChoice needs one Checked option, has 2: a radio group starts with its value", Change: func(p *console.ConsoleTabsChoice) { p.Options[1].Checked = true }},
 	})
 }

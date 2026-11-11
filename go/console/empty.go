@@ -17,7 +17,8 @@ var (
 	ConsoleEmptySizeLarge = ConsoleEmptySize{"lg"}
 )
 
-// ConsoleEmpty is the empty state where a list or a chart has nothing to show.
+// ConsoleEmpty is the empty state where a list or a table has nothing to
+// show; an empty chart is its [ConsoleChart.Empty].
 type ConsoleEmpty struct {
 	Size  ConsoleEmptySize
 	Icon  lucide.Icon

@@ -1,9 +1,9 @@
 package console
 
 import (
+	"fmt"
 	"io"
 
-	"github.com/at-least/ciderui/go/internal/class"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -39,7 +39,6 @@ var (
 type ConsoleStrip struct {
 	AriaLabel string
 	Groups    []ConsoleStripGroup
-	Class     string
 }
 
 type ConsoleStripGroup struct {
@@ -85,9 +84,9 @@ func (s ConsoleStrip) Render(w io.Writer) error {
 		}
 	}
 	if currents > 1 {
-		panic("console.ConsoleStrip has one current item at most")
+		panic(fmt.Sprintf("console.ConsoleStrip has %d current items: one at most", currents))
 	}
-	return h.Nav(class.Root("cui-console-strip", s.Class), h.Aria("label", s.AriaLabel),
+	return h.Nav(h.Class("cui-console-strip"), h.Aria("label", s.AriaLabel),
 		g.Map(s.Groups, func(group ConsoleStripGroup) g.Node {
 			if group.Label == "" {
 				panic("console.ConsoleStripGroup needs a Label")

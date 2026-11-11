@@ -17,7 +17,7 @@ func input(rest ...g.Node) func(g.Node) g.Node {
 
 func TestSelectRendersTheExample(t *testing.T) {
 	field := console.ConsoleField{ID: "level", Label: "Level", Error: "", Control: func(attrs g.Node) g.Node {
-		return console.ConsoleSelect{Class: "", Children: h.Select(attrs, h.Name("level"),
+		return console.ConsoleSelect{Children: h.Select(attrs, h.Name("level"),
 			h.Option(g.Text("Any Level")),
 			h.Option(g.Text("Fatal")),
 			h.Option(g.Text("Error")),

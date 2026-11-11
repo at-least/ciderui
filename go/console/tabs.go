@@ -1,6 +1,7 @@
 package console
 
 import (
+	"fmt"
 	"io"
 
 	g "maragu.dev/gomponents"
@@ -32,7 +33,7 @@ func (t ConsoleTabs) Render(w io.Writer) error {
 		}
 	}
 	if currents > 1 {
-		panic("console.ConsoleTabs has one current tab at most")
+		panic(fmt.Sprintf("console.ConsoleTabs has %d current tabs: one at most", currents))
 	}
 	tabs := g.Map(t.Tabs, func(tab ConsoleTab) g.Node {
 		if tab.Label == "" {
@@ -85,7 +86,7 @@ func (c ConsoleTabsChoice) Render(w io.Writer) error {
 		}
 	}
 	if checked != 1 {
-		panic("console.ConsoleTabsChoice has one Checked option: a radio group starts with its value")
+		panic(fmt.Sprintf("console.ConsoleTabsChoice needs one Checked option, has %d: a radio group starts with its value", checked))
 	}
 	return h.Div(h.Class("cui-console-tabs"), h.Data("variant", "filled"), h.Role("group"), h.Aria("label", c.AriaLabel), c.Attrs,
 		g.Map(c.Options, func(o ConsoleTabsOption) g.Node {

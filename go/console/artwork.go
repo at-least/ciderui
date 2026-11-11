@@ -32,12 +32,12 @@ func (a ConsoleArtwork) Render(w io.Writer) error {
 			panic("console.ConsoleArtwork needs a Src or a Placeholder")
 		}
 		if a.Alt != "" {
-			panic("console.ConsoleArtwork with no Src has no Alt: its Placeholder's words are read")
+			panic("console.ConsoleArtwork has an Alt and no Src: its Placeholder's words are read")
 		}
 		return h.Span(h.Class("cui-console-artwork"), optionalAttr("data-aspect", a.Aspect.value), g.Text(a.Placeholder)).Render(w)
 	}
 	if a.Placeholder != "" {
-		panic("console.ConsoleArtwork with a Src has no Placeholder")
+		panic("console.ConsoleArtwork has a Src and a Placeholder: the Placeholder is for no picture")
 	}
 	return h.Img(h.Class("cui-console-artwork"), optionalAttr("data-aspect", a.Aspect.value), h.Src(a.Src), h.Alt(a.Alt), h.Loading("lazy")).Render(w)
 }

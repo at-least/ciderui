@@ -11,7 +11,7 @@ import (
 )
 
 func viewer() console.ConsoleViewer {
-	return console.ConsoleViewer{ID: "cover", AriaLabel: "Cover", CloseLabel: "Close", Src: exampleSrc("console/console-viewer/examples/viewer.html", "The cover"), Alt: "The cover", Caption: "Drawn 2 November"}
+	return console.ConsoleViewer{ID: "cover", AriaLabel: "Cover", CloseAriaLabel: "Close", Src: exampleSrc("console/console-viewer/examples/viewer.html", "The cover"), Alt: "The cover", Caption: "Drawn 2 November"}
 }
 
 func TestViewerRendersTheExample(t *testing.T) {
@@ -35,7 +35,7 @@ func TestViewerPanics(t *testing.T) {
 	example.Panics(t, viewer, []example.Break[console.ConsoleViewer]{
 		{Want: "console.ConsoleViewer needs an ID", Change: func(p *console.ConsoleViewer) { p.ID = "" }},
 		{Want: "console.ConsoleViewer needs an AriaLabel", Change: func(p *console.ConsoleViewer) { p.AriaLabel = "" }},
-		{Want: "console.ConsoleViewer needs a CloseLabel", Change: func(p *console.ConsoleViewer) { p.CloseLabel = "" }},
-		{Want: "console.ConsoleViewer with no Src has no Alt or Caption: the page's script sets all three", Change: func(p *console.ConsoleViewer) { p.Src = "" }},
+		{Want: "console.ConsoleViewer needs a CloseAriaLabel", Change: func(p *console.ConsoleViewer) { p.CloseAriaLabel = "" }},
+		{Want: "console.ConsoleViewer has an Alt or a Caption and no Src: the page's script sets all three", Change: func(p *console.ConsoleViewer) { p.Src = "" }},
 	})
 }

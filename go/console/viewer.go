@@ -14,11 +14,11 @@ import (
 // many pictures writes Src, Alt and Caption "" and its script sets them
 // before it opens it.
 type ConsoleViewer struct {
-	ID         string
-	AriaLabel  string
-	CloseLabel string
-	Src        string
-	Alt        string
+	ID             string
+	AriaLabel      string
+	CloseAriaLabel string
+	Src            string
+	Alt            string
 	// Caption: "" for none.
 	Caption string
 }
@@ -30,17 +30,17 @@ func (v ConsoleViewer) Render(w io.Writer) error {
 	if v.AriaLabel == "" {
 		panic("console.ConsoleViewer needs an AriaLabel")
 	}
-	if v.CloseLabel == "" {
-		panic("console.ConsoleViewer needs a CloseLabel")
+	if v.CloseAriaLabel == "" {
+		panic("console.ConsoleViewer needs a CloseAriaLabel")
 	}
 	if v.Src == "" && (v.Alt != "" || v.Caption != "") {
-		panic("console.ConsoleViewer with no Src has no Alt or Caption: the page's script sets all three")
+		panic("console.ConsoleViewer has an Alt or a Caption and no Src: the page's script sets all three")
 	}
 	return h.Dialog(h.Class("cui-console-viewer"), h.ID(v.ID), h.Aria("label", v.AriaLabel),
 		h.Img(h.Class("cui-console-viewer-image"), optionalAttr("src", v.Src), h.Alt(v.Alt)),
 		h.P(h.Class("cui-console-viewer-caption"), g.Text(v.Caption)),
 		h.Form(h.Method("dialog"), h.Class("cui-console-viewer-close"),
-			ConsoleBtn{Href: "", Label: "", AriaLabel: v.CloseLabel, Icon: lucide.X, Submit: true, Variant: ConsoleBtnVariantGray, Size: ConsoleBtnSizeSmall, Destructive: false, Attrs: nil, Class: ""},
+			ConsoleBtn{Href: "", Label: "", AriaLabel: v.CloseAriaLabel, Icon: lucide.X, Submit: true, Variant: ConsoleBtnVariantGray, Size: ConsoleBtnSizeSmall, Destructive: false, Attrs: nil, Class: ""},
 		),
 	).Render(w)
 }

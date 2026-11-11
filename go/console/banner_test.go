@@ -11,7 +11,7 @@ import (
 )
 
 func TestBannerRendersTheExamples(t *testing.T) {
-	warning := console.ConsoleBanner{Attrs: nil, Color: console.ConsoleColorWarning, Title: "Symbols are missing", Class: "",
+	warning := console.ConsoleBanner{Attrs: nil, Color: console.ConsoleColorWarning, Title: "Symbols are missing",
 		Body:     g.Group{g.Text("Upload a dSYM in "), textLink("#settings", "Settings"), g.Text(" to see function names in this crash.")},
 		Children: h.P(h.Class("cui-console-banner-actions"), h.A(h.Class("cui-console-btn"), h.Data("size", "sm"), h.Href("#upload"), g.Text("Upload dSYM"))),
 	}
@@ -28,13 +28,13 @@ func TestBannerRendersTheExamples(t *testing.T) {
 	}
 	var banners g.Group
 	for _, r := range rows {
-		banners = append(banners, console.ConsoleBanner{Attrs: nil, Color: r.color, Title: "", Body: r.body, Class: "", Children: nil})
+		banners = append(banners, console.ConsoleBanner{Attrs: nil, Color: r.color, Title: "", Body: r.body, Children: nil})
 	}
 	example.Check(t, h.Div(h.Class("grid gap-3"), banners), "console/console-banner/examples/colors.html")
 }
 
 func TestBannerWithNoBodyWritesNoBodyBlock(t *testing.T) {
-	got := example.Render(console.ConsoleBanner{Attrs: nil, Color: console.ConsoleColorInfo, Title: "Synced", Body: nil, Class: "", Children: nil})
+	got := example.Render(console.ConsoleBanner{Attrs: nil, Color: console.ConsoleColorInfo, Title: "Synced", Body: nil, Children: nil})
 	if want := `<div><p class="cui-console-banner-title">Synced</p></div></div>`; !strings.HasSuffix(got, want) {
 		t.Errorf("a banner with no Body wrote a body block after its title:\n got: %s\nwant: …%s", got, want)
 	}

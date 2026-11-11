@@ -3,7 +3,6 @@ package console
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/internal/class"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -13,12 +12,11 @@ import (
 // a <select class="cui-console-field-input"> of the page's outside one. A text
 // field is the page's own <input> or <textarea> and needs no type here.
 type ConsoleSelect struct {
-	Class    string
 	Children g.Node
 }
 
 func (s ConsoleSelect) Render(w io.Writer) error {
-	return h.Span(class.Root("cui-console-select", s.Class),
+	return h.Span(h.Class("cui-console-select"),
 		s.Children,
 		lucide.ChevronsUpDown.Class("cui-console-select-chevron"),
 	).Render(w)

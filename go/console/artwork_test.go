@@ -25,7 +25,7 @@ func TestArtworkRendersTheExample(t *testing.T) {
 func TestArtworkPanics(t *testing.T) {
 	example.Panics(t, artwork, []example.Break[console.ConsoleArtwork]{
 		{Want: "console.ConsoleArtwork needs a Src or a Placeholder", Change: func(p *console.ConsoleArtwork) { p.Src, p.Alt = "", "" }},
-		{Want: "console.ConsoleArtwork with no Src has no Alt: its Placeholder's words are read", Change: func(p *console.ConsoleArtwork) { p.Src, p.Placeholder = "", "x" }},
-		{Want: "console.ConsoleArtwork with a Src has no Placeholder", Change: func(p *console.ConsoleArtwork) { p.Placeholder = "x" }},
+		{Want: "console.ConsoleArtwork has an Alt and no Src: its Placeholder's words are read", Change: func(p *console.ConsoleArtwork) { p.Src, p.Placeholder = "", "x" }},
+		{Want: "console.ConsoleArtwork has a Src and a Placeholder: the Placeholder is for no picture", Change: func(p *console.ConsoleArtwork) { p.Placeholder = "x" }},
 	})
 }
