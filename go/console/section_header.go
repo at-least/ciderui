@@ -3,6 +3,7 @@ package console
 import (
 	"io"
 
+	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -17,10 +18,19 @@ var (
 	ConsoleSectionHeaderLevelSection = ConsoleSectionHeaderLevel{"section"}
 )
 
+// ConsoleSectionHeaderBack is the way back to the page a page is under, over
+// its title, named by that page (iOS's back button).
+type ConsoleSectionHeaderBack struct {
+	Href  string
+	Label string
+}
+
 // ConsoleSectionHeader is a page's or a section's title, the line under it,
 // and its controls at the row's end.
 type ConsoleSectionHeader struct {
 	Level ConsoleSectionHeaderLevel
+	// Back: the zero value for none; a page's alone.
+	Back  ConsoleSectionHeaderBack
 	Title string
 	// Detail: the line under the title, what the page or section is for; ""
 	// for none.
@@ -33,6 +43,12 @@ func (s ConsoleSectionHeader) Render(w io.Writer) error {
 	if s.Title == "" {
 		panic("console.ConsoleSectionHeader needs a Title")
 	}
+	if (s.Back.Href == "") != (s.Back.Label == "") {
+		panic("console.ConsoleSectionHeader needs a Back with both an Href and a Label, or neither")
+	}
+	if s.Back.Href != "" && s.Level != ConsoleSectionHeaderLevelPage {
+		panic("console.ConsoleSectionHeader's Back is a page's: a section is on the page it belongs to")
+	}
 	var title g.Node
 	switch s.Level {
 	case ConsoleSectionHeaderLevelPage:
@@ -43,7 +59,9 @@ func (s ConsoleSectionHeader) Render(w io.Writer) error {
 		panic("console.ConsoleSectionHeader needs a Level: ConsoleSectionHeaderLevelPage (a whole page) or ConsoleSectionHeaderLevelSection (one of its sections)")
 	}
 	return h.Header(h.Class("cui-console-section-header"),
-		h.Div(title, g.If(s.Detail != "", h.P(h.Class("cui-console-section-header-detail"), g.Text(s.Detail)))),
+		h.Div(
+			g.If(s.Back.Href != "", h.A(h.Class("cui-console-link cui-console-section-header-back"), h.Href(s.Back.Href), lucide.ChevronLeft, g.Text(s.Back.Label))),
+			title, g.If(s.Detail != "", h.P(h.Class("cui-console-section-header-detail"), g.Text(s.Detail)))),
 		s.Children,
 	).Render(w)
 }

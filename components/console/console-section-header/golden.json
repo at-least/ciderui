@@ -21,5 +21,17 @@
  "section header section | .cui-console-section-header h2 | 1200 | line-height": "22px",
  "section header section | .cui-console-section-header h2 | 1200 | font-weight": "600",
  "section header section | .cui-console-section-header-detail | 1200 | color": "oklch(0.359 0.012 285.8 / 0.76)",
- "section header section | .cui-console-section-header-detail | 1200 | margin-top": "4px"
+ "section header section | .cui-console-section-header-detail | 1200 | margin-top": "4px",
+ "section header back | .cui-console-section-header-back | 1200 | display": "flex",
+ "section header back | .cui-console-section-header-back | 1200 | color": "oklch(0.542 0.162 251.9)",
+ "section header back | .cui-console-section-header-back | 1200 | font-size": "13px",
+ "section header back | .cui-console-section-header-back | 1200 | margin-bottom": "8px",
+ "section header back | .cui-console-section-header-back | 1200 | box-width": "81.75px",
+ "section header back | .cui-console-section-header-back > svg | 1200 | box-width": "13px",
+ "section header back | .cui-console-section-header-back | 390 | display": "flex",
+ "section header back | .cui-console-section-header-back | 390 | color": "oklch(0.542 0.162 251.9)",
+ "section header back | .cui-console-section-header-back | 390 | font-size": "16px",
+ "section header back | .cui-console-section-header-back | 390 | margin-bottom": "8px",
+ "section header back | .cui-console-section-header-back | 390 | box-width": "99.390625px",
+ "section header back | .cui-console-section-header-back > svg | 390 | box-width": "16px"
 }

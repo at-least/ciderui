@@ -17,13 +17,13 @@ func contentNodes() g.Node {
 	}}
 	return h.Div(h.Class("cui-console-page"), console.ConsoleContent{Sidebar: &sidebar, Children: g.Group{
 		console.ConsoleSidebarOpen{AriaLabel: "Menu", Class: ""},
-		console.ConsoleSectionHeader{Level: console.ConsoleSectionHeaderLevelPage, Title: "All Projects", Detail: "Every project you can see, the ones that need you first.", Children: nil},
+		console.ConsoleSectionHeader{Level: console.ConsoleSectionHeaderLevelPage, Back: console.ConsoleSectionHeaderBack{Href: "", Label: ""}, Title: "All Projects", Detail: "Every project you can see, the ones that need you first.", Children: nil},
 	}})
 }
 
 func rhythmNodes() g.Node {
 	return h.Div(h.Class("cui-console-page"), console.ConsoleContent{Sidebar: nil, Children: g.Group{
-		console.ConsoleSectionHeader{Level: console.ConsoleSectionHeaderLevelPage, Title: "Findings", Detail: "", Children: nil},
+		console.ConsoleSectionHeader{Level: console.ConsoleSectionHeaderLevelPage, Back: console.ConsoleSectionHeaderBack{Href: "", Label: ""}, Title: "Findings", Detail: "", Children: nil},
 		console.ConsoleSection{Title: "Needs You", Detail: "", Controls: nil, Children: g.Group{h.P(g.Text("A section’s first block.")), h.P(g.Text("Its second."))}},
 		console.ConsoleSection{Title: "Closed", Detail: "", Controls: nil, Children: h.P(g.Text("The next section’s block."))},
 	}})

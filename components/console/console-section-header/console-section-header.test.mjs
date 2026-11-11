@@ -26,4 +26,13 @@ export const cases = [
       { target: `${S}-detail`, props: ['color', 'margin-top'], golden: 'a section\'s line under its title: the secondary label, 4px under its smaller title' },
     ],
   },
+  {
+    name: 'section header back',
+    html: ex('back'),
+    widths: [1200, 390],
+    checks: [
+      { target: `${S}-back`, props: ['display', 'color', 'font-size', 'margin-bottom', 'box-width'], golden: 'the way back over the title, named by the page it goes to with a chevron before it (iOS\'s back button), a console link at the body\'s size, 8px over the title, as wide as its words' },
+      { target: `${S}-back > svg`, props: ['box-width'], golden: 'the chevron at the text\'s size' },
+    ],
+  },
 ];

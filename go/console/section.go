@@ -20,7 +20,7 @@ type ConsoleSection struct {
 
 func (s ConsoleSection) Render(w io.Writer) error {
 	return h.Section(h.Class("cui-console-section"),
-		ConsoleSectionHeader{Level: ConsoleSectionHeaderLevelSection, Title: s.Title, Detail: s.Detail, Children: s.Controls},
+		ConsoleSectionHeader{Level: ConsoleSectionHeaderLevelSection, Back: ConsoleSectionHeaderBack{Href: "", Label: ""}, Title: s.Title, Detail: s.Detail, Children: s.Controls},
 		s.Children,
 	).Render(w)
 }

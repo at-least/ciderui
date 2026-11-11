@@ -8,8 +8,19 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleListItem is a row of a grouped list; the group,
-// <div class="cui-console-list">, is the page's own.
+// ConsoleList is a grouped list: its rows on one card, a hairline between.
+type ConsoleList struct {
+	Items []ConsoleListItem
+}
+
+func (l ConsoleList) Render(w io.Writer) error {
+	if len(l.Items) == 0 {
+		panic("console.ConsoleList needs Items: a page with none shows a ConsoleEmpty")
+	}
+	return h.Div(h.Class("cui-console-list"), g.Map(l.Items, func(i ConsoleListItem) g.Node { return i })).Render(w)
+}
+
+// ConsoleListItem is a row of a [ConsoleList].
 type ConsoleListItem struct {
 	Label  string
 	Detail string

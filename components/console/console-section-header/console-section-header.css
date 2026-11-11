@@ -11,6 +11,18 @@
     }
   }
 
+  .cui-console-section-header-back {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 8px;
+
+    & > svg {
+      flex: none;
+    }
+  }
+
   .cui-console-section-header-detail {
     max-width: 65ch;
     margin-top: 4px;
