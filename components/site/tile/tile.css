@@ -23,6 +23,7 @@
     aspect-ratio: 1;
     object-fit: cover;
     margin-bottom: 16px;
+    background-color: var(--cui-c-bg-alt);
   }
 
   .cui-tile-title {

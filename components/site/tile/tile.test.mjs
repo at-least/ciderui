@@ -21,6 +21,7 @@ export const cases = [
       { target: TILE, props: ['padding-left', 'padding-right'], golden: 'the text\'s column, apple.com\'s 26px each side (search-serp:tile.info), the picture in it too' },
       { target: '.cui-tiles', props: ['grid-template-columns'], golden: 'three across from 735px, two below (search-serp:tile, a third at 900 and 1200px, a half at 390px; the step between not read)' },
       { target: MEDIA, props: ['aspect-ratio', 'object-fit', 'margin-bottom'], golden: 'a square picture, as apple.com\'s (search-serp:tile.img), filled where a page\'s picture is not square (apple.com\'s pictures are), 16px over the title' },
+      { target: '.cui-tile:last-child .cui-tile-media', props: ['display', 'aspect-ratio', 'background-color'], golden: 'a tile with no picture keeps the square, in the alternate ground' },
       { target: TITLE, pseudo: '::after', props: ['position', 'top', 'bottom', 'left', 'right'], golden: 'the whole tile, picture and all, is the title\'s target: apple.com links its picture and its name apart' },
     ],
   },

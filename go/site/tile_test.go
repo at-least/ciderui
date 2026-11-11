@@ -15,19 +15,19 @@ const (
 
 func TestTilesRendersTheExamples(t *testing.T) {
 	example.Check(t, site.Tiles{Items: []site.Tile{
-		{Href: "#airpods-pro", Image: tileCircle, Title: "AirPods Pro 3", Detail: "$249.00"},
-		{Href: "#airpods", Image: tileCase, Title: "AirPods 5 with Wireless Charging Case", Detail: "$179.00"},
-		{Href: "#case", Image: tileBand, Title: "Silicone Case", Detail: ""},
-	}}, "site/tile/examples/tiles.html")
+		{Href: "#airpods-pro", Image: tileCircle, Title: "AirPods Pro 3", Detail: "$249.00", Attrs: nil},
+		{Href: "#airpods", Image: tileCase, Title: "AirPods 5 with Wireless Charging Case", Detail: "$179.00", Attrs: nil},
+		{Href: "#case", Image: tileBand, Title: "Silicone Case", Detail: "", Attrs: nil},
+		{Href: "#band", Image: "", Title: "Sport Band", Detail: "$49.00", Attrs: nil},
+	}, Attrs: nil}, "site/tile/examples/tiles.html")
 }
 
 func TestTilesPanics(t *testing.T) {
 	example.Panics(t, func() site.Tiles {
-		return site.Tiles{Items: []site.Tile{{Href: "#x", Image: "x.png", Title: "x", Detail: ""}}}
+		return site.Tiles{Items: []site.Tile{{Href: "#x", Image: "x.png", Title: "x", Detail: "", Attrs: nil}}, Attrs: nil}
 	}, []example.Break[site.Tiles]{
 		{Want: "site.Tiles needs Items: a page with none says so in its own words", Change: func(t *site.Tiles) { t.Items = nil }},
-		{Want: "site.Tile needs an Href, an Image and a Title", Change: func(t *site.Tiles) { t.Items[0].Href = "" }},
-		{Want: "site.Tile needs an Href, an Image and a Title", Change: func(t *site.Tiles) { t.Items[0].Image = "" }},
-		{Want: "site.Tile needs an Href, an Image and a Title", Change: func(t *site.Tiles) { t.Items[0].Title = "" }},
+		{Want: "site.Tile needs an Href and a Title", Change: func(t *site.Tiles) { t.Items[0].Href = "" }},
+		{Want: "site.Tile needs an Href and a Title", Change: func(t *site.Tiles) { t.Items[0].Title = "" }},
 	})
 }
