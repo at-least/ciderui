@@ -47,6 +47,7 @@ func TestEachPartWritesThePagesWords(t *testing.T) {
 		{"ConsoleSidebar", sidebar, []string{`aria-label="Main"`, `href="/home"`, ">Muse<", ">Jump to Main<", `aria-label="Hide"`}},
 		{"ConsoleStatus", console.ConsoleStatus{Label: "Down", Color: console.ConsoleColorError, Detail: "500 · 2 s"}, []string{">Down<", ">500 · 2 s<"}},
 		{"ConsoleStrip", tip, []string{">Hello there.<"}},
+		{"ConsoleViewer", console.ConsoleViewer{ID: "art", AriaLabel: "Artwork", CloseAriaLabel: "Shut", Src: "/art.png", Alt: "The art", Caption: "Drawn today"}, []string{`aria-label="Artwork"`, `src="/art.png"`, `alt="The art"`, ">Drawn today<", `aria-label="Shut"`}},
 	} {
 		got := example.Render(c.node)
 		for _, word := range c.words {

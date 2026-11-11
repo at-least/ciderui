@@ -36,6 +36,7 @@ func TestViewerPanics(t *testing.T) {
 		{Want: "console.ConsoleViewer needs an ID", Change: func(p *console.ConsoleViewer) { p.ID = "" }},
 		{Want: "console.ConsoleViewer needs an AriaLabel", Change: func(p *console.ConsoleViewer) { p.AriaLabel = "" }},
 		{Want: "console.ConsoleViewer needs a CloseAriaLabel", Change: func(p *console.ConsoleViewer) { p.CloseAriaLabel = "" }},
-		{Want: "console.ConsoleViewer has an Alt or a Caption and no Src: the page's script sets all three", Change: func(p *console.ConsoleViewer) { p.Src = "" }},
+		{Want: "console.ConsoleViewer has an Alt or a Caption and no Src: the page's script sets all three", Change: func(p *console.ConsoleViewer) { p.Src, p.Caption = "", "" }},
+		{Want: "console.ConsoleViewer has an Alt or a Caption and no Src: the page's script sets all three", Change: func(p *console.ConsoleViewer) { p.Src, p.Alt = "", "" }},
 	})
 }

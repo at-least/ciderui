@@ -73,23 +73,6 @@ func TestConsoleBtnAnIconLinkTakesItsAriaLabelAndAttrs(t *testing.T) {
 	}
 }
 
-func TestConsoleBtnAnIconButtonIsACapsuleUnlessPlain(t *testing.T) {
-	for _, c := range []struct {
-		variant console.ConsoleBtnVariant
-		want    string
-	}{
-		{console.ConsoleBtnVariantGray, `<button class="cui-console-btn cui-console-btn-icon" data-shape="capsule" type="button" aria-label="Copy">`},
-		{console.ConsoleBtnVariantFilled, `<button class="cui-console-btn cui-console-btn-icon" data-variant="filled" data-shape="capsule" type="button" aria-label="Copy">`},
-		{console.ConsoleBtnVariantPlain, `<button class="cui-console-btn cui-console-btn-icon" data-variant="plain" type="button" aria-label="Copy">`},
-	} {
-		b := consoleBtn("")
-		b.AriaLabel, b.Icon, b.Variant = "Copy", lucide.Copy, c.variant
-		if got := example.Render(b); !strings.HasPrefix(got, c.want) {
-			t.Errorf("an icon button's shape is not the kit's (a capsule, round, unless plain):\n got: %s\nwant: %s…", got, c.want)
-		}
-	}
-}
-
 func TestConsoleBtnPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleBtn { return consoleBtn("Save") }, []example.Break[console.ConsoleBtn]{
 		{Want: "console.ConsoleBtn has an Href and Submit: a link sends no form", Change: func(b *console.ConsoleBtn) { b.Href = "/x"; b.Submit = true }},

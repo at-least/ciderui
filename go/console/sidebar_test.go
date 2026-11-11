@@ -1,6 +1,7 @@
 package console_test
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
@@ -10,7 +11,7 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-func sidebarNodes() g.Node {
+func sidebarNodes() console.ConsoleSidebar {
 	signOut := h.Form(h.Action("#sign-out"), h.Method("post"),
 		console.ConsoleBtn{Href: "", Label: "Sign Out", AriaLabel: "", Icon: lucide.Icon{}, Submit: true, Variant: console.ConsoleBtnVariantPlain, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: ""},
 	)
@@ -27,10 +28,18 @@ func sidebarNodes() g.Node {
 
 func TestSidebarRendersTheExamples(t *testing.T) {
 	example.Check(t, sidebarNodes(), "console/console-sidebar/examples/sidebar.html")
-	example.Check(t, g.Group{
-		console.SidebarOpen("Menu"),
-		sidebarNodes(),
-	}, "console/console-sidebar/examples/open.html")
+}
+
+func TestContentWritesTheSidebarsOpenButtonExample(t *testing.T) {
+	sidebar := sidebarNodes()
+	got := example.Render(console.ConsoleContent{Sidebar: &sidebar, Back: console.ConsoleContentBack{Href: "", Label: ""}, Title: "x", Detail: "", Controls: nil, Children: nil})
+	nav, found := strings.CutPrefix(got, contentOpen)
+	nav, main, foundMain := strings.Cut(nav, contentMain)
+	open, _, foundHeader := strings.Cut(main, `<header class="cui-console-section-header">`)
+	if !found || !foundMain || !foundHeader {
+		t.Fatalf("the content is not its sidebar, then its <main> with the open button first: %s", got)
+	}
+	example.Check(t, g.Group{g.Raw(open), g.Raw(nav)}, "console/console-sidebar/examples/open.html")
 }
 
 func TestSidebarPanics(t *testing.T) {

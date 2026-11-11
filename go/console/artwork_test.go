@@ -22,6 +22,13 @@ func TestArtworkRendersTheExample(t *testing.T) {
 	), "console/console-artwork/examples/artwork.html")
 }
 
+func TestArtworkPlaceholderTakesItsAspect(t *testing.T) {
+	got := example.Render(console.ConsoleArtwork{Src: "", Alt: "", Aspect: console.ConsoleArtworkAspectSquare, Placeholder: "The Little Red Hen"})
+	if want := `<span class="cui-console-artwork" data-aspect="square">The Little Red Hen</span>`; got != want {
+		t.Errorf("a square artwork with no picture is not a square placeholder:\n got: %s\nwant: %s", got, want)
+	}
+}
+
 func TestArtworkPanics(t *testing.T) {
 	example.Panics(t, artwork, []example.Break[console.ConsoleArtwork]{
 		{Want: "console.ConsoleArtwork needs a Src or a Placeholder", Change: func(p *console.ConsoleArtwork) { p.Src, p.Alt = "", "" }},

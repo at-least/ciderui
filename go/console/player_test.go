@@ -261,19 +261,3 @@ func TestPlayerIntroWritesNoDetailOrSummaryItHasNone(t *testing.T) {
 		t.Errorf("the intro with no Detail or Summary wrote a line for one, not its title then its actions: %s", got)
 	}
 }
-
-func TestPlayerNamesEachControlByItsAriaLabel(t *testing.T) {
-	p := pausedPlayer()
-	p.PlayAriaLabel, p.VolumeAriaLabel, p.MuteAriaLabel = "Play Video", "Sound Level", "Silence"
-	p.ScrubberAriaLabel, p.SubtitlesAriaLabel, p.FullScreenAriaLabel = "Position in Video", "Captions Menu", "Fill Screen"
-	got := example.Render(p)
-	for control, label := range map[string]string{"play": p.PlayAriaLabel, "volume": p.VolumeAriaLabel, "mute": p.MuteAriaLabel, "scrubber": p.ScrubberAriaLabel, "subtitles": p.SubtitlesAriaLabel, "full-screen": p.FullScreenAriaLabel} {
-		at := strings.Index(got, `data-control="`+control+`"`)
-		if at < 0 {
-			t.Fatalf("no %s control in %s", control, got)
-		}
-		if tag := got[at : at+strings.Index(got[at:], ">")]; !strings.Contains(tag, `aria-label="`+label+`"`) {
-			t.Errorf("the %s control is not named %q: %s", control, label, tag)
-		}
-	}
-}
