@@ -1,0 +1,78 @@
+@layer components {
+  .cui-list {
+    list-style: none;
+  }
+
+  .cui-list-row {
+    /* @invariant: the title's ::after covers the row, a finger's target as tall as the row */
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 16px 0;
+
+    & + & {
+      border-top: 1px solid var(--cui-c-divider);
+    }
+
+    @media (width >= 735px) {
+      grid-template-columns: minmax(0, 1fr) auto;
+      column-gap: 42.5px;
+      padding: 20px 0;
+    }
+  }
+
+  .cui-list-title {
+    font-size: 17px;
+    line-height: 21px;
+    letter-spacing: var(--cui-tracking-17);
+    font-weight: 600;
+    color: var(--cui-c-text);
+    overflow-wrap: anywhere;
+
+    &:where(:lang(zh)) {
+      line-height: 23px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  .cui-list-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: var(--cui-tracking-14);
+    color: var(--cui-c-text-2);
+
+    &:where(:lang(zh)) {
+      line-height: 19px;
+    }
+  }
+
+  /* @invariant: positioned after the title's ::after, so a link of the page's in it takes its own tap */
+  .cui-list-aside {
+    position: relative;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: var(--cui-tracking-14);
+    color: var(--cui-c-text-2);
+    font-variant-numeric: tabular-nums;
+
+    &:where(:lang(zh)) {
+      line-height: 21px;
+    }
+
+    @media (width >= 735px) {
+      margin-top: 0;
+      text-align: end;
+    }
+  }
+}
