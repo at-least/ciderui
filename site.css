@@ -11,6 +11,7 @@
 @import "./components/site/option/option.css";
 @import "./components/site/ribbon/ribbon.css";
 @import "./components/site/skip/skip.css";
+@import "./components/site/tile/tile.css";
 
 :root {
   --cui-set-text-body: var(--cui-c-text);
