@@ -26,7 +26,7 @@ type ConsoleEmpty struct {
 	// Body says what to do next.
 	Body string
 	// Attrs: the root's other attributes, for the page's script (data-*, an
-	// htmx attribute); nil for none.
+	// htmx attribute).
 	Attrs g.Node
 }
 

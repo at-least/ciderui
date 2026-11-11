@@ -17,11 +17,9 @@ var decisionTag = regexp.MustCompile(`^@(invariant|trap|external): `)
 var cssComment = regexp.MustCompile(`(?s)/\*.*?\*/`)
 
 // TestCommentsCarryDecisionTags holds every comment in the repository to
-// DESIGN.md's Comments section: godoc on an exported declaration is the
-// interface and needs no tag; every other comment, in Go, CSS, a script or a
-// Dockerfile, names its kind. go/lucide/lucide.go is written by
-// scripts/build-lucide.mjs (excepted with it: its comment lines are the file's
-// doc), and dist/ holds what the build ships.
+// DESIGN.md's Comments section. Excepted: go/lucide/lucide.go and
+// scripts/build-lucide.mjs, which writes that file's per-icon godoc as text of
+// its own, and dist/, the build's output.
 func TestCommentsCarryDecisionTags(t *testing.T) {
 	for _, file := range trackedFiles(t) {
 		if file == "go/lucide/lucide.go" || file == "scripts/build-lucide.mjs" || strings.HasPrefix(file, "dist/") {
@@ -281,7 +279,6 @@ func TestLineCommentTagsFail(t *testing.T) {
 	if got := lineCommentTags("Dockerfile", "# @external: the image\nRUN x\n", "#"); got != nil {
 		t.Errorf("a Dockerfile's tagged comment: %q", got)
 	}
-	// @external: test/probes.mjs names a path with three backticks in a regex
 	regex := "// @invariant: before it\nconst paths = [...html.matchAll(/['`](\\.{1,2}\\/[^'`\\n]*)['`]/g)];\n"
 	if got := lineCommentTags("probes.mjs", regex, "//"); got != nil {
 		t.Errorf("backticks inside a regular expression: %q", got)

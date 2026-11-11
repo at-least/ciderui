@@ -1,4 +1,4 @@
-// icon-nodes.json, not icons/: it holds Lucide's names without their aliases,
+// @trap: icon-nodes.json, not icons/: it holds Lucide's names without their aliases,
 // which the files under icons/ carry both of.
 
 import { readFileSync, writeFileSync } from 'node:fs';

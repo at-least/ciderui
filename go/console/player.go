@@ -17,9 +17,9 @@ import (
 // layer fading out.
 type ConsolePlayerIntro struct {
 	Title string
-	// Detail: the length ("8 min 33 s"); "" none.
+	// Detail: the length ("8 min 33 s").
 	Detail string
-	// Summary: a sentence of what it is about; "" none.
+	// Summary: a sentence of what it is about.
 	Summary    string
 	StartLabel string
 	// RestartLabel is the smaller button's words, hidden until the page's
@@ -66,23 +66,22 @@ type ConsolePlayer struct {
 	// SubtitlesMenu is the popover the subtitles button opens, its columns
 	// such as the voices and the subtitles side by side, written
 	// inside the player, so the controls stay while the focus is in it; nil
-	// for none, and no button.
+	// writes no subtitles button.
 	SubtitlesMenu       *ConsoleChoiceMenu
 	SubtitlesAriaLabel  string
 	FullScreenAriaLabel string
 	// FullScreenControls are the page's own controls the bar shows before
 	// its buttons while the player fills the screen (data-fullscreen), and
-	// hides otherwise; nil for none.
+	// hides otherwise.
 	FullScreenControls g.Node
-	// Intro: the layer before it first plays (data-intro); nil for none.
+	// Intro: the layer before it first plays (data-intro).
 	Intro *ConsolePlayerIntro
 	// End: the layer once it has played to the end (data-end, the page's
-	// script's to set); nil for none.
+	// script's to set).
 	End *ConsolePlayerEnd
 	// Popovers are the page's own (cui-console-popover, a field its
 	// FullScreenControls open), written inside the player after its menus,
-	// so they open over it in full screen and are placed as its menus are;
-	// nil for none.
+	// so they open over it in full screen and are placed as its menus are.
 	Popovers g.Node
 	Class    string
 }

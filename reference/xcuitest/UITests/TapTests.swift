@@ -1,6 +1,6 @@
 import XCTest
 
-// Safari on a new simulator puts a tip over the page ("View Bookmarks, Share
+// @external: Safari on a new simulator puts a tip over the page ("View Bookmarks, Share
 // Menu, and Open Tabs"), a popover whose dismiss region covers the window and
 // takes the next touch: the page gets its touch events and no click. So the
 // tip is closed first, and no popover of Safari's may be up when a tap lands.

@@ -110,7 +110,7 @@ check('the contract\'s colors are tokens.css\'s', colors.join(' '), Object.keys(
 for (const [name, [light, dark]] of Object.entries(CONTRACT)) {
   const [l, d] = sides(name);
   for (const [side, value, source] of [['light', l, light], ['dark', d, dark]]) {
-    if (typeof source === 'string') continue; // fitted: held by the contrast checks
+    if (typeof source === 'string') continue;
     // @external: a ring drawn as a box-shadow reads as its color first
     const want = ref(...source).match(/rgba?\([^)]*\)/)[0];
     check(`${name} ${side} is apple.com's ${source.slice(0, 2).join(':')}${source[4] ? ':' + source[4] : ''} ${source[3]}`, computedRgb(value), want);

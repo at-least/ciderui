@@ -129,7 +129,6 @@
     }
   }
 
-  /* @trap: not a target drawn round the tab: a phone's scrolling row clips it */
   @media (pointer: coarse) {
     .cui-console-tab {
       min-height: 2.75rem;

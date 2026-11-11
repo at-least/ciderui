@@ -11,9 +11,9 @@ import (
 // which it spaces (rule 6).
 type ConsoleSection struct {
 	Title string
-	// Detail: the line under the title, what the section is for; "" for none.
+	// Detail: the line under the title, what the section is for.
 	Detail string
-	// Controls: at the header's end; nil for none.
+	// Controls: at the header's end.
 	Controls g.Node
 	Children g.Node
 }

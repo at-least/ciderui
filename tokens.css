@@ -35,8 +35,6 @@
   --cui-c-on-footer-link: rgb(0 0 0 / 0.72);
   --cui-c-on-footer-title: rgb(0 0 0 / 0.88);
   --cui-c-scrim: rgb(0 0 0 / 0.48);
-  /* @external: tv.apple.com's video player, the console's player (decision 28): one
-     value each, a video dark on any page */
   --cui-c-video: #000000;
   --cui-c-on-video: #ffffff;
   --cui-c-on-video-control: rgb(255 255 255 / 0.9);
@@ -121,25 +119,12 @@
   --cui-console-shadow-dialog: 0px 16px 35px oklch(0.0% 0.000 0.0 / 0.04);
   --cui-console-shadow-popover: 0px 16px 35px oklch(0.0% 0.000 0.0 / 0.04),0px 0px 0px 0.5px oklch(0.0% 0.000 0.0 / 0.15),0px 1px 1px -1px inset oklch(100.0% 0.000 0.0 / 0.24);
 
-  /* @external: tv.apple.com's player: the gradient under its controls, and its volume's
-     thumb's shadow (decision 28) */
   --cui-video-scrim: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6) 44.64%, rgba(0, 0, 0, 0.7) 75%, rgb(0, 0, 0));
   --cui-video-thumb-shadow: inset 0 0 .5px 0 rgba(0, 0, 0, 0.15), 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
-  /* @external: the gradient behind the player's words over a still picture (its intro's,
-     its end's), soft and in their corner, the picture at its own brightness
-     elsewhere; muse's (the owner, 2026-11-08), tv.apple.com's pre-play page
-     not measured */
   --cui-video-title-scrim: radial-gradient(ellipse 75% 60% at 0% 100%, rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.35) 40%, rgb(0 0 0 / 0));
-  /* @external: a cue's shadow under its white, in em so it grows with the type: not
-     tv.apple.com's, whose cues are its <video>'s own text track; muse's */
   --cui-video-cue-shadow: 0 0.05em 0.1em rgb(0 0 0 / 0.6), 0 0 0.5em rgb(0 0 0 / 0.4);
-  /* @external: a control of words on the picture: its fill, and hovered or pressed;
-     muse's, tv.apple.com's bar having none */
   --cui-video-control-fill: rgb(255 255 255 / 0.16);
   --cui-video-control-fill-hover: rgb(255 255 255 / 0.24);
-  /* @external: the scrubber's preview's picture: a hairline that edges it on a
-     picture as dark as its own, a drop that lifts it off a bright one;
-     muse's, tv.apple.com's trailers showing none */
   --cui-video-preview-shadow: 0 0 0 1px rgb(255 255 255 / 0.15), 0 4px 12px rgb(0 0 0 / 0.4);
 }
 

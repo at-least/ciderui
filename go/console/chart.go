@@ -24,13 +24,12 @@ type ConsoleChart struct {
 	// AriaLabel: what the chart shows, in words ("Events: 96, peak 24 in one
 	// day"): the scale and the axis are hidden from assistive technology.
 	AriaLabel string
-	// Scale: nil for none; with one, the part draws the gridlines it labels.
+	// Scale: with one, the part draws the gridlines it labels.
 	Scale *ConsoleChartScale
 	// Empty is the note centered on a plot with no data ("No data in this
 	// window"); "" for a plot with data.
 	Empty string
-	// Axis: nil for none.
-	Axis *ConsoleChartAxis
+	Axis  *ConsoleChartAxis
 	// Children: <svg class="cui-console-chart-svg"> holding the marks.
 	Children g.Node
 }

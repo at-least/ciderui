@@ -7,7 +7,7 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     /* @external: room inside the scroller, which clips both ways, for the focus ring
-       and the current item's ring, given back outside: tv.apple.com's row */
+       and the current item's ring, given back outside */
     padding: 15px;
     margin-block: -15px;
     margin-inline: -15px;
@@ -31,9 +31,6 @@
     }
   }
 
-  /* @trap: out of the flow, so a long name widens no group: the group's width, the
-     track the label slides along; not clipped, or it would be the label's
-     scroller and the label would stick to it */
   .cui-console-strip-header {
     position: absolute;
     top: 0;
@@ -62,13 +59,10 @@
     border-radius: 16px;
     scroll-snap-align: start;
 
-    /* @external: forced colors draw a transparent border in the text's color */
     @media (forced-colors: active) {
       border-color: Canvas;
     }
 
-    /* @trap: an asset nothing uses (muse's assets page): its picture alone
-       dims; its lines dimmed too fell to 2:1 */
     &[data-state="unused"] > img {
       opacity: 0.5;
     }
@@ -97,7 +91,6 @@
       background-color: var(--cui-c-console-card);
     }
 
-    /* @invariant: a character sheet: its face is at its left */
     &[data-crop="leading"] > img {
       object-position: left;
     }
@@ -132,9 +125,6 @@
     color: var(--cui-c-console-neutral-label-secondary);
   }
 
-  /* @invariant: who the item waits on, a dot in the picture's corner: the reader
-     (console-status's warning mark), or someone at work on it (its neutral
-     mark), each ringed in the page's ground so it shows on any picture */
   .cui-console-strip-mark {
     position: absolute;
     top: 8px;
@@ -166,9 +156,6 @@
     }
   }
 
-  /* @trap: a line over the item while the pointer is on it (a shot's first spoken
-     line), in the popover's ground and type; fixed to the item by anchor
-     positioning, so the scroller, which clips both ways, does not cut it */
   .cui-console-strip-tip {
     display: none;
   }
@@ -215,9 +202,6 @@
         :where(.cui-console-strip-item:hover) > & {
           visibility: visible;
           opacity: 1;
-          /* @invariant: shown at once once half a second has passed: the delay
-             is the device, a fade on top of it an entrance flourish (decision
-             25); off it, hidden again at once (the rule above's transition) */
           transition: visibility 0s linear 0.5s;
         }
       }

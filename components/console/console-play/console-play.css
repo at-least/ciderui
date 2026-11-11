@@ -29,10 +29,6 @@
     display: none;
   }
 
-  /* @external: playing, a ring round the glyph fills with how much has played (the
-     page's script sets --cui-console-play-progress), on a track of the
-     label's color at a quarter, as Podcasts' and Voice Memos' small
-     buttons */
   .cui-console-play[data-state="playing"] .cui-console-play-glyph::before {
     content: "";
     position: absolute;

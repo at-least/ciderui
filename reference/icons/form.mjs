@@ -7,18 +7,17 @@
 // empty required field the focus has left: nothing typed); the dropdown's
 // chevron, the SVG its background draws (iPhone 18 Pro's buy page, its
 // trade-in, tradein:dropdown.chevron), rasterized at 20 pixels to the unit
-// (svg.js) against ciderui's DROPDOWN. Fails below 0.85 (intersection over
-// union), a mark set before the run, or if the field's examples draw others.
+// (svg.js) against ciderui's DROPDOWN, recorded alone: no part draws it
+// (decision 36). Fails if the mark shares below 0.85 (intersection over
+// union), a mark set before the run, or if the field's error example draws
+// another.
 // The result is results/form.json.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 
-// @invariant: ciderui's, MEASURED.md's numbers. ALERT in thousandths of an em, its box
-// the glyph's advance (1.171em) by its ink's height (0.995em, from 0.85em
-// above the baseline): a ring at (585, 497.5), radius 456.25, 82.5 thick; the
-// stem from (584, 280) to (584, 550), 70 thick, round; the dot at (585,
-// 692.5), radius 50. DROPDOWN in apple.com's 21 by 21: a line through
-// (6.075, 9.275), (10.5, 13.7) and (14.925, 9.275), 1.45 thick, round.
+// @invariant: ciderui's, drawn from MEASURED.md's numbers: ALERT in thousandths of an
+// em, its box the glyph's advance (1.171em) by its ink's height (0.995em, from
+// 0.85em above the baseline); DROPDOWN in apple.com's 21 by 21.
 export const ALERT = '<circle cx="585" cy="497.5" r="456.25" fill="none" stroke="#000" stroke-width="82.5"/><path d="M584 280V550" fill="none" stroke="#000" stroke-width="70" stroke-linecap="round"/><circle cx="585" cy="692.5" r="50" fill="#000"/>';
 export const DROPDOWN = '<svg viewBox="0 0 21 21"><path d="M6.075 9.275 10.5 13.7 14.925 9.275" fill="none" stroke="#000" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
@@ -88,7 +87,7 @@ try {
       }
       // @trap: no red ink left of the text is no mark found, not a box: a box read
       // so would be inside out (its left past its right), which the check
-      // below took as a place
+      // below would take as a place
       if (r < l || b < t) throw new Error('no red ink left of the message\'s text: the mark is not where it was read');
       return { scale: k, ink: { left: l / k, right: (r + 1) / k, top: t / k, bottom: (b + 1) / k }, textLeft: textLeft.at };
     }, [png, { row: box.width, at: text.x - box.x }]);

@@ -38,7 +38,7 @@ type ConsoleBtn struct {
 	Variant     ConsoleBtnVariant
 	Size        ConsoleBtnSize
 	Destructive bool
-	// Attrs: disabled, aria-*, an htmx attribute; nil for none.
+	// Attrs: disabled, aria-*, an htmx attribute.
 	Attrs g.Node
 	Class string
 }

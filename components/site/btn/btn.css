@@ -8,8 +8,6 @@
     --cui-btn-border: transparent;
     --cui-btn-border-hover: transparent;
 
-    /* @trap: inline-flex, not apple.com's inline-block: an icon sits its gap
-       before the label and on its middle with no spacing of the page's */
     display: inline-flex;
     align-items: center;
     justify-content: center;

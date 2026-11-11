@@ -20,7 +20,6 @@ var (
 // ConsoleArtwork is a picture's thumbnail, as wide as the page's room for it,
 // or its Placeholder's words in its place where there is no picture.
 type ConsoleArtwork struct {
-	// Src: "" for none, its Placeholder shown.
 	Src         string
 	Alt         string
 	Aspect      ConsoleArtworkAspect

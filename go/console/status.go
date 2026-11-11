@@ -13,7 +13,7 @@ import (
 type ConsoleStatus struct {
 	Label string
 	Color ConsoleColor
-	// Detail: the line under the word ("200 · 410 ms"); "" for none.
+	// Detail: the line under the word ("200 · 410 ms").
 	Detail string
 }
 

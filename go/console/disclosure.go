@@ -12,7 +12,7 @@ import (
 type ConsoleDisclosure struct {
 	Summary string
 	// Attrs: the root's other attributes, for the page's script (data-*, an
-	// htmx attribute); nil for none.
+	// htmx attribute).
 	Attrs    g.Node
 	Children g.Node
 }

@@ -13,7 +13,7 @@ import (
 type ConsoleDialog struct {
 	ID    string
 	Title g.Node
-	// Attrs: the <dialog>'s other attributes (aria-describedby); nil for none.
+	// Attrs: the <dialog>'s other attributes (aria-describedby).
 	Attrs g.Node
 	// Children: what it asks, then its buttons in a
 	// <form method="dialog" class="cui-console-dialog-actions"> or the page's

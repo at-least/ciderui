@@ -14,7 +14,7 @@ import (
 )
 
 // @invariant: README's Go example is a literal a call could write: every field
-// of every kit type it names is set and none the type no longer holds, or a
+// of every kit type it names is set and none the type lacks, or a
 // reader copies markup that does not compile
 func TestReadmesGoExampleCompiles(t *testing.T) {
 	types := map[string]any{

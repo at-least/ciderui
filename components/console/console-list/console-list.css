@@ -23,7 +23,6 @@
       height: 0.5px;
       background-color: var(--cui-c-console-neutral-border-secondary);
 
-      /* @external: forced colors draw the fill in the ground's color, at its alpha */
       @media (forced-colors: active) {
         background-color: CanvasText;
       }

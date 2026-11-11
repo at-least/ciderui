@@ -25,12 +25,12 @@ type ConsoleBanner struct {
 	Color ConsoleColor
 	Title string
 	// Body: the banner's words, or blocks of them, written in its
-	// <div class="cui-console-banner-body">; nil for none.
+	// <div class="cui-console-banner-body">.
 	Body g.Node
 	// Attrs: the root's other attributes, for the page's script (data-*, an
-	// htmx attribute); nil for none.
+	// htmx attribute).
 	Attrs g.Node
-	// Children: what follows the body, its actions; nil for none.
+	// Children: what follows the body, its actions.
 	Children g.Node
 }
 

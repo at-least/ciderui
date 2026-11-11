@@ -1,10 +1,9 @@
-// @external: node lines.mjs: the chevrons ciderui draws as apple.com's own lines, read
+// @external: node lines.mjs: the chevron ciderui draws as apple.com's own line, read
 // live (never stored): the bag's accordion's (its polyline, 17 by 8.85, the
-// bag's compact items') and the footer's (11 by 6, a phone's footer
-// section's), each rasterized at 20 pixels to the unit (svg.js) against
+// bag's compact items'), rasterized at 20 pixels to the unit (svg.js) against
 // ciderui's: the share of ink in common. Fails below 0.85 (intersection over
-// union), a mark set before the run, and if a drawing is not its
-// component's example's. The result is results/lines.json.
+// union), a mark set before the run, and if the drawing is not the
+// accordion's example's. The result is results/lines.json.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../browsers.mjs';
 

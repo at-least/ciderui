@@ -26,9 +26,8 @@ func (s ConsoleSelect) Render(w io.Writer) error {
 // writes attrs on the page's own <input>, <textarea> or <select>: the page
 // cannot forget them or get an id wrong.
 type ConsoleField struct {
-	ID    string
-	Label string
-	// Error: "" while there is none.
+	ID      string
+	Label   string
 	Error   string
 	Control func(attrs g.Node) g.Node
 }

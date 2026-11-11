@@ -15,7 +15,7 @@ type ConsolePage struct {
 	Lang  string
 	Title string
 	// Head: what the page's head adds after the kit's stylesheet (a site's own
-	// utilities' stylesheet, a script); nil for none.
+	// utilities' stylesheet, a script).
 	Head g.Node
 	// Class: the <html>'s.
 	Class    string

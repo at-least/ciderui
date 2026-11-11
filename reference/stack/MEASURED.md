@@ -20,7 +20,7 @@ iOS Safari's text autosizing drew the stack's line 1.31 times as wide (645.435px
 
 ## The method
 
-`run.mjs` serves the repository on 127.0.0.1 and opens `page.html`, one line of text in the stack (17px) under the kit's `fonts.css`. `stack.js` waits two frames and a second, reads which `.woff2` files the page has fetched (resource timing) and the states of Inter's faces, then the line's width against the same text in `system-ui` and, loading it on purpose only then, in Inter. Widths equal within 0.01px are the same font.
+`run.mjs` serves the repository on 127.0.0.1 and opens `page.html`, one line of text in the stack (17px) under the kit's `fonts.css`. `stack.js` waits two frames and a second, reads which `.woff2` files the page has fetched (resource timing) and the states of Inter's faces, then the line's width against the same text in `system-ui` and, loading it on purpose only then, in Inter.
 
 ```sh
 BROWSER=safari EXPECT=sf node run.mjs      # and ios, chrome
@@ -28,4 +28,4 @@ PW=…/playwright-chromium/index.mjs BROWSER=chromium EXPECT=inter node run.mjs
 BROWSER=firefox EXPECT=inter node run.mjs   # Playwright's Firefox: playwright-core install firefox
 ```
 
-`EXPECT=sf` passes if the line is the system font's width and not Inter's, no Inter face was fetched and every one is still `unloaded`; `EXPECT=inter` if the line is Inter's width and not the system font's, and Inter's Latin face was fetched. The browsers are `../browsers.mjs`'s; on the Mac it runs from a copy of the repository with `playwright-core` in a `node_modules` above it.
+`run.mjs` holds what each `EXPECT` checks. The browsers are `../browsers.mjs`'s; on the Mac it runs from a copy of the repository with `playwright-core` in a `node_modules` above it.

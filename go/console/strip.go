@@ -63,7 +63,7 @@ type ConsoleStripItem struct {
 	// Unused: dimmed.
 	Unused bool
 	// Tip: a line shown over the item while the pointer is on it (a shot's
-	// first spoken line); "" none.
+	// first spoken line).
 	Tip           string
 	Mark          ConsoleStripMark
 	MarkAriaLabel string

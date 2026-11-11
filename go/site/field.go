@@ -31,11 +31,11 @@ type Field struct {
 	// judge).
 	Invalid bool
 	// Help: a line under the field that says what to write, wired to its
-	// input; "" for none.
+	// input.
 	Help string
 	// Prefix: a currency or a country code ($, +1).
 	Prefix string
-	// Attrs: nodes appended to the <input> (disabled, hx-post, inputmode, pattern, required); nil for none.
+	// Attrs: nodes appended to the <input> (disabled, hx-post, inputmode, pattern, required).
 	Attrs g.Node
 }
 

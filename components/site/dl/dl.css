@@ -1,6 +1,4 @@
 @layer components {
-  /* @invariant: each term over its value in a <div>, the pairs in two columns from 735px: a
-     store's order details, read down then across */
   .cui-dl {
     display: grid;
     gap: 12px 24px;

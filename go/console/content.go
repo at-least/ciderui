@@ -19,14 +19,13 @@ type ConsoleContentBack struct {
 // holds (rule 6): the sidebar's open button, the page's header, then
 // Children, its [ConsoleSection]s.
 type ConsoleContent struct {
-	// Sidebar: nil for a page with none.
 	Sidebar *ConsoleSidebar
 	// Back: the zero value for none.
 	Back  ConsoleContentBack
 	Title string
-	// Detail: the line under the title, what the page is for; "" for none.
+	// Detail: the line under the title, what the page is for.
 	Detail string
-	// Controls: at the header's end; nil for none.
+	// Controls: at the header's end.
 	Controls g.Node
 	Children g.Node
 }

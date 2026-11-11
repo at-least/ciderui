@@ -28,9 +28,8 @@ for (const partDef of parts) {
     const rows = await page.page.evaluate(() => {
       const sel = 'a[href], button, input:not([type=hidden]), select, textarea, summary, [role=button], [tabindex]:not([tabindex="-1"])';
       return [...document.querySelectorAll(sel)]
-        // @external: what a finger can tap now: shown, not disabled (a gallery's paddle
-        // at the row's end takes no pointer; a hidden toggle takes none
-        // either, its label taking the tap)
+        // @external: what a finger can tap now: shown, not disabled, and taking the
+        // pointer itself or through a label
         .filter((e) => e.checkVisibility({ visibilityProperty: true }) && !e.matches(':disabled') && (e.labels?.length || getComputedStyle(e).pointerEvents !== 'none'))
         // @external: a scroll box takes tabindex for the keyboard; a finger drags it and presses
         // nothing
@@ -42,7 +41,7 @@ for (const partDef of parts) {
         while (getComputedStyle(block).display === 'inline') block = block.parentElement;
         const inText = e.tagName === 'A' && getComputedStyle(e).display === 'inline' && block.textContent.replace(e.textContent, '').trim() !== '';
         // @external: its labels (wrapping it or naming it by for=) are its target too: a
-        // tap on one acts on it (a hidden toggle's chevron, a floating label)
+        // tap on one acts on it (a floating label)
         const labels = [...(e.labels ?? [])].filter((l) => l.checkVisibility());
         const tiny = r.width <= 1 || r.height <= 1;
         const label = labels.length && (tiny || e.type === 'checkbox' || e.type === 'radio')

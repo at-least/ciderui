@@ -97,7 +97,6 @@ func TestCheckMarkupRefusesAnAriaStateValueARIALacks(t *testing.T) {
 	checkEach(t, cases)
 }
 
-// @external: a site's whole page, as any writer's HTML has it
 func TestCheckMarkupReadsHTMLAsABrowserDoes(t *testing.T) {
 	noClass := func(tag string) []string {
 		return []string{`class "cui-console-badg" on <` + tag + ` class="cui-console-badg">: ciderui has no such class`}
@@ -125,7 +124,6 @@ func TestCheckMarkupReadsHTMLAsABrowserDoes(t *testing.T) {
 	})
 }
 
-// @external: HTML's attribute names are case-insensitive: CLASS is the class
 func TestCheckMarkupReadsAnAttributeNameInAnyCase(t *testing.T) {
 	checkEach(t, []markupCase{
 		{"a class in capitals", `<b CLASS="cui-console-badg">a</b>`, []string{`class "cui-console-badg" on <b class="cui-console-badg">: ciderui has no such class`}},

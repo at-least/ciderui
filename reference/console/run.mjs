@@ -6,7 +6,8 @@
 // browser, a phone's below the window's least width in Safari:
 // 1. the tabs' phone row (320: six tabs overflow it in every font) is one
 //    row that scrolls sideways, none of its height a scrollbar's;
-// 2. retired with the tabs' edge fade; the numbers stay MEASURED.md's
+// 2. not read: the tabs' edge fade, removed by decision 40 (its runs are
+//    MEASURED.md's);
 // 3. the row's last tab, its start a sliver inside the row (Linux's Inter:
 //    3px), focused by script: brought in whole (within 1px), its ring inside
 //    the tab where :focus-visible matches;
@@ -47,7 +48,6 @@ try {
   })()`);
   const frame = (id) => `document.getElementById(${JSON.stringify(id)}).contentWindow`;
 
-  // @invariant: 1
   const row = await page.run(`(async () => {
     const w = ${frame('tabs-320')};
     const bar = w.document.querySelector('.cui-console-tabs');
@@ -55,14 +55,13 @@ try {
   })()`);
   claim('1 tabs one row, scrolling sideways', row.wrap === 'nowrap' && row.scrollHeight === row.clientHeight && row.offsetHeight - row.clientHeight <= 1 && row.scrollWidth > row.clientWidth, row);
 
-  // @invariant: 3
   const focus = await page.run(`(async () => {
     const w = ${frame('tabs-320')};
     const bar = w.document.querySelector('.cui-console-tabs');
     bar.scrollLeft = 0;
     const tab = bar.querySelector('[href="#settings"]');
     tab.focus();
-    // read once the row has not moved for 200ms: a focus's scroll may land
+    // @external: read once the row has not moved for 200ms: a focus's scroll may land
     // after the next frame
     for (let last = -1, still = performance.now(); performance.now() - still < 200;) {
       await new Promise((r) => requestAnimationFrame(r));
@@ -75,7 +74,6 @@ try {
   focus.shown = Math.min(focus.tab[1], focus.row) - Math.max(focus.tab[0], 0);
   claim('3 a tab focused by script: brought in whole, its ring inside where :focus-visible matches', focus.focused && focus.shown >= focus.tab[1] - focus.tab[0] - 1 && (!focus.focusVisible || focus.outlineOffset === '-2px'), focus);
 
-  // @invariant: 4
   const content = {};
   for (const id of ['content-900', 'content-1200', 'content-1920']) {
     content[id] = await page.run(`(async () => {

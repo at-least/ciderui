@@ -20,8 +20,7 @@ type ConsoleViewer struct {
 	CloseAriaLabel string
 	Src            string
 	Alt            string
-	// Caption: "" for none.
-	Caption string
+	Caption        string
 }
 
 func (v ConsoleViewer) Render(w io.Writer) error {

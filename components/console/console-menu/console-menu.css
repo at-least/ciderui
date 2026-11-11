@@ -14,10 +14,8 @@
     }
   }
 
-  /* @invariant: a choice menu's columns side by side (ConsoleChoiceMenu): the Apple TV
-     app's audio beside its subtitles; one column is the plain menu. Each
-     column as wide as the popover alone may be (350px less its 16px sides),
-     the popover as wide as its columns ask; a rule between them in the
+  /* @invariant: one column is the plain menu. Each column as wide as the popover
+     alone may be (350px less its 16px sides); a rule between them in the
      popover's own 8px gap */
   .cui-console-menu-columns {
     display: flex;
@@ -87,7 +85,6 @@
     &[aria-current="page"] {
       background-color: var(--cui-c-console-neutral-fill-quaternary);
 
-      /* @external: forced colors drop the fill: the current page would read as the others */
       @media (forced-colors: active) {
         background-color: Highlight;
         color: HighlightText;
@@ -181,7 +178,6 @@
     border: 0;
     background-color: var(--cui-c-console-neutral-border-secondary);
 
-    /* @external: forced colors draw this fill in the ground's color */
     @media (forced-colors: active) {
       background-color: CanvasText;
     }

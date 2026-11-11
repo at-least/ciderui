@@ -15,7 +15,7 @@ import (
 type ConsoleTable struct {
 	Columns []ConsoleTableColumn
 	Rows    []ConsoleTableRow
-	// BodyAttrs: the <tbody>'s attributes (an id a swap targets); nil for none.
+	// BodyAttrs: the <tbody>'s attributes (an id a swap targets).
 	BodyAttrs g.Node
 }
 

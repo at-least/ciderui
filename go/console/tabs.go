@@ -48,8 +48,7 @@ type ConsoleTabsChoice struct {
 	// Name: the radios' form field.
 	Name    string
 	Options []ConsoleTabsOption
-	// Attrs: the group's other attributes, for the page's script (data-*);
-	// nil for none.
+	// Attrs: the group's other attributes, for the page's script (data-*).
 	Attrs g.Node
 }
 

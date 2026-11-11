@@ -15,7 +15,7 @@ type Option struct {
 	Title   string
 	Detail  string
 	Checked bool
-	// Attrs: nodes appended to the <input> (disabled, required); nil for none.
+	// Attrs: nodes appended to the <input> (disabled, required).
 	Attrs g.Node
 }
 
