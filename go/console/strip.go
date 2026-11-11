@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/at-least/ciderui/go/internal/attr"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -69,9 +70,7 @@ type ConsoleStripItem struct {
 }
 
 func (s ConsoleStrip) Render(w io.Writer) error {
-	if s.AriaLabel == "" {
-		panic("console.ConsoleStrip needs an AriaLabel")
-	}
+	need("console.ConsoleStrip", "an AriaLabel", s.AriaLabel)
 	if len(s.Groups) == 0 {
 		panic("console.ConsoleStrip needs a ConsoleStripGroup")
 	}
@@ -88,9 +87,7 @@ func (s ConsoleStrip) Render(w io.Writer) error {
 	}
 	return h.Nav(h.Class("cui-console-strip"), h.Aria("label", s.AriaLabel),
 		g.Map(s.Groups, func(group ConsoleStripGroup) g.Node {
-			if group.Label == "" {
-				panic("console.ConsoleStripGroup needs a Label")
-			}
+			need("console.ConsoleStripGroup", "a Label", group.Label)
 			if len(group.Items) == 0 {
 				panic("console.ConsoleStripGroup needs a ConsoleStripItem")
 			}
@@ -112,12 +109,12 @@ func stripItem(item ConsoleStripItem) g.Node {
 	if (item.Mark == ConsoleStripMarkNone) != (item.MarkAriaLabel == "") {
 		panic("console.ConsoleStripItem needs a MarkAriaLabel with a Mark, and none without")
 	}
-	return h.A(h.Class("cui-console-strip-item"), h.Href(item.Href), optionalAttr("data-crop", item.Crop.value),
+	return h.A(h.Class("cui-console-strip-item"), h.Href(item.Href), attr.Optional("data-crop", item.Crop.value),
 		g.If(item.Unused, h.Data("state", "unused")), g.If(item.Current, h.Aria("current", "true")),
 		h.Img(h.Src(item.Src), h.Alt(item.Alt), h.Loading("lazy")),
-		g.If(item.Caption != "", h.Span(h.Class("cui-console-strip-caption"), g.Text(item.Caption))),
-		g.If(item.Detail != "", h.Span(h.Class("cui-console-strip-detail"), g.Text(item.Detail))),
-		g.If(item.Tip != "", h.Span(h.Class("cui-console-strip-tip"), g.Text(item.Tip))),
+		optionalText(h.Span, "cui-console-strip-caption", item.Caption),
+		optionalText(h.Span, "cui-console-strip-detail", item.Detail),
+		optionalText(h.Span, "cui-console-strip-tip", item.Tip),
 		g.If(item.Mark != ConsoleStripMarkNone, h.Span(h.Class("cui-console-strip-mark"), h.Data("state", item.Mark.value), h.Role("img"), h.Aria("label", item.MarkAriaLabel))),
 	)
 }

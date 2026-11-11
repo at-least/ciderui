@@ -32,21 +32,11 @@ type ConsoleSidebar struct {
 }
 
 func (s ConsoleSidebar) Render(w io.Writer) error {
-	if s.AriaLabel == "" {
-		panic("console.ConsoleSidebar needs an AriaLabel")
-	}
-	if s.Wordmark == "" {
-		panic("console.ConsoleSidebar needs a Wordmark")
-	}
-	if s.SkipLabel == "" {
-		panic("console.ConsoleSidebar needs a SkipLabel")
-	}
-	if s.OpenAriaLabel == "" {
-		panic("console.ConsoleSidebar needs an OpenAriaLabel")
-	}
-	if s.CloseAriaLabel == "" {
-		panic("console.ConsoleSidebar needs a CloseAriaLabel")
-	}
+	need("console.ConsoleSidebar", "an AriaLabel", s.AriaLabel)
+	need("console.ConsoleSidebar", "a Wordmark", s.Wordmark)
+	need("console.ConsoleSidebar", "a SkipLabel", s.SkipLabel)
+	need("console.ConsoleSidebar", "an OpenAriaLabel", s.OpenAriaLabel)
+	need("console.ConsoleSidebar", "a CloseAriaLabel", s.CloseAriaLabel)
 	return g.Group{
 		ConsoleBtn{Href: "#main", Label: s.SkipLabel, AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: ConsoleBtnVariantFilled, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: "cui-console-skip"},
 		h.Nav(h.Class("cui-console-sidebar"), h.ID(sidebarID), h.Popover(), h.Aria("label", s.AriaLabel),

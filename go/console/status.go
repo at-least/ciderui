@@ -3,6 +3,7 @@ package console
 import (
 	"io"
 
+	"github.com/at-least/ciderui/go/internal/attr"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -17,14 +18,12 @@ type ConsoleStatus struct {
 }
 
 func (s ConsoleStatus) Render(w io.Writer) error {
-	if s.Label == "" {
-		panic("console.ConsoleStatus needs a Label")
-	}
+	need("console.ConsoleStatus", "a Label", s.Label)
 	return g.Group{
-		h.Span(h.Class("cui-console-status"), optionalAttr("data-color", s.Color.value),
+		h.Span(h.Class("cui-console-status"), attr.Optional("data-color", s.Color.value),
 			h.Span(h.Class("cui-console-status-mark")),
 			g.Text(s.Label),
 		),
-		g.If(s.Detail != "", h.Span(h.Class("cui-console-status-detail"), g.Text(s.Detail))),
+		optionalText(h.Span, "cui-console-status-detail", s.Detail),
 	}.Render(w)
 }

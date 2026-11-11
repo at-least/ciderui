@@ -3,7 +3,7 @@ package console
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/internal/attr"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -60,14 +60,15 @@ func (b ConsoleBtn) Render(w io.Writer) error {
 	} else if b.AriaLabel != "" {
 		panic("console.ConsoleBtn has a Label and an AriaLabel: its words name it")
 	}
-	attrs := g.Group{class.Root(root, b.Class), optionalAttr("data-variant", b.Variant.value), g.If(b.Destructive, h.Data("color", "error")), optionalAttr("data-size", b.Size.value), optionalAttr("data-shape", shape)}
+	attrs := g.Group{attr.Class(root, b.Class), attr.Optional("data-variant", b.Variant.value), g.If(b.Destructive, h.Data("color", "error")), attr.Optional("data-size", b.Size.value), attr.Optional("data-shape", shape)}
 	content := g.Group{g.If(b.Icon != (lucide.Icon{}), b.Icon), g.If(b.Label != "", g.Text(b.Label))}
+	rest := g.Group{attr.Optional("aria-label", b.AriaLabel), b.Attrs, content}
 	if b.Href != "" {
-		return h.A(attrs, h.Href(b.Href), optionalAttr("aria-label", b.AriaLabel), b.Attrs, content).Render(w)
+		return h.A(attrs, h.Href(b.Href), rest).Render(w)
 	}
 	kind := "button"
 	if b.Submit {
 		kind = "submit"
 	}
-	return h.Button(attrs, h.Type(kind), optionalAttr("aria-label", b.AriaLabel), b.Attrs, content).Render(w)
+	return h.Button(attrs, h.Type(kind), rest).Render(w)
 }

@@ -40,9 +40,7 @@ func (t ConsoleTable) Render(w io.Writer) error {
 	}
 	return h.Table(h.Class("cui-console-table"), g.Attr("data-stack"),
 		h.THead(h.Tr(g.Map(t.Columns, func(c ConsoleTableColumn) g.Node {
-			if c.Label == "" {
-				panic("console.ConsoleTableColumn needs a Label")
-			}
+			need("console.ConsoleTableColumn", "a Label", c.Label)
 			return h.Th(h.Scope("col"), g.If(c.Figure, h.Class("cui-console-table-figure")), g.Text(c.Label))
 		}))),
 		h.TBody(t.BodyAttrs, g.Map(t.Rows, t.Row)),

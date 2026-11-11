@@ -3,7 +3,7 @@ package site
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/internal/attr"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -54,7 +54,7 @@ func (b Btn) Render(w io.Writer) error {
 	if b.Block {
 		root += " cui-btn-block"
 	}
-	attrs := g.Group{class.Root(root, b.Class), g.If(b.Variant.value != "", h.Data("variant", b.Variant.value)), g.If(b.Size.value != "", h.Data("size", b.Size.value))}
+	attrs := g.Group{attr.Class(root, b.Class), attr.Optional("data-variant", b.Variant.value), attr.Optional("data-size", b.Size.value)}
 	content := g.Group{b.Icon, g.Text(b.Label)}
 	if b.Href != "" {
 		return h.A(attrs, h.Href(b.Href), b.Attrs, content).Render(w)

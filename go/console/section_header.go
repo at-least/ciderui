@@ -19,7 +19,7 @@ func sectionHeader(title, detail string, controls g.Node) g.Node {
 
 func header(heading g.Node, detail string, controls g.Node) g.Node {
 	return h.Header(h.Class("cui-console-section-header"),
-		h.Div(heading, g.If(detail != "", h.P(h.Class("cui-console-section-header-detail"), g.Text(detail)))),
+		h.Div(heading, optionalText(h.P, "cui-console-section-header-detail", detail)),
 		controls,
 	)
 }

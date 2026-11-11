@@ -22,9 +22,7 @@ type ConsoleDialog struct {
 }
 
 func (d ConsoleDialog) Render(w io.Writer) error {
-	if d.ID == "" {
-		panic("console.ConsoleDialog needs an ID")
-	}
+	need("console.ConsoleDialog", "an ID", d.ID)
 	if d.Title == nil {
 		panic("console.ConsoleDialog needs a Title")
 	}

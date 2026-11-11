@@ -3,6 +3,7 @@ package console
 import (
 	"io"
 
+	"github.com/at-least/ciderui/go/internal/attr"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -34,10 +35,10 @@ func (a ConsoleArtwork) Render(w io.Writer) error {
 		if a.Alt != "" {
 			panic("console.ConsoleArtwork has an Alt and no Src: its Placeholder's words are read")
 		}
-		return h.Span(h.Class("cui-console-artwork"), optionalAttr("data-aspect", a.Aspect.value), g.Text(a.Placeholder)).Render(w)
+		return h.Span(h.Class("cui-console-artwork"), attr.Optional("data-aspect", a.Aspect.value), g.Text(a.Placeholder)).Render(w)
 	}
 	if a.Placeholder != "" {
 		panic("console.ConsoleArtwork has a Src and a Placeholder: the Placeholder is for no picture")
 	}
-	return h.Img(h.Class("cui-console-artwork"), optionalAttr("data-aspect", a.Aspect.value), h.Src(a.Src), h.Alt(a.Alt), h.Loading("lazy")).Render(w)
+	return h.Img(h.Class("cui-console-artwork"), attr.Optional("data-aspect", a.Aspect.value), h.Src(a.Src), h.Alt(a.Alt), h.Loading("lazy")).Render(w)
 }

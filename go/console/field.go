@@ -34,12 +34,8 @@ type ConsoleField struct {
 }
 
 func (f ConsoleField) Render(w io.Writer) error {
-	if f.ID == "" {
-		panic("console.ConsoleField needs an ID")
-	}
-	if f.Label == "" {
-		panic("console.ConsoleField needs a Label")
-	}
+	need("console.ConsoleField", "an ID", f.ID)
+	need("console.ConsoleField", "a Label", f.Label)
 	if f.Control == nil {
 		panic("console.ConsoleField needs a Control")
 	}
@@ -65,9 +61,7 @@ type ConsoleSearch struct {
 }
 
 func (s ConsoleSearch) Render(w io.Writer) error {
-	if s.AriaLabel == "" {
-		panic("console.ConsoleSearch needs an AriaLabel")
-	}
+	need("console.ConsoleSearch", "an AriaLabel", s.AriaLabel)
 	if s.Control == nil {
 		panic("console.ConsoleSearch needs a Control")
 	}

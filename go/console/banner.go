@@ -3,6 +3,7 @@ package console
 import (
 	"io"
 
+	"github.com/at-least/ciderui/go/internal/attr"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -38,10 +39,10 @@ func (b ConsoleBanner) Render(w io.Writer) error {
 	if b.Color == ConsoleColorError {
 		role = "alert"
 	}
-	return h.Div(h.Class("cui-console-banner"), optionalAttr("data-color", b.Color.value), h.Role(role), b.Attrs,
+	return h.Div(h.Class("cui-console-banner"), attr.Optional("data-color", b.Color.value), h.Role(role), b.Attrs,
 		bannerIcons[b.Color].Class("cui-console-banner-icon"),
 		h.Div(
-			g.If(b.Title != "", h.P(h.Class("cui-console-banner-title"), g.Text(b.Title))),
+			optionalText(h.P, "cui-console-banner-title", b.Title),
 			g.If(b.Body != nil, h.Div(h.Class("cui-console-banner-body"), b.Body)),
 			b.Children,
 		),

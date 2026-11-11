@@ -41,8 +41,8 @@ func (l ConsoleListItem) Render(w io.Writer) error {
 		panic("console.ConsoleListItem needs a Label or its own content")
 	}
 	return h.Div(h.Class("cui-console-list-item"),
-		g.If(l.Label != "", h.Span(h.Class("cui-console-list-label"), g.Text(l.Label))),
-		g.If(l.Detail != "", h.Span(h.Class("cui-console-list-detail"), g.Text(l.Detail))),
+		optionalText(h.Span, "cui-console-list-label", l.Label),
+		optionalText(h.Span, "cui-console-list-detail", l.Detail),
 		g.Raw(children.String()),
 	).Render(w)
 }

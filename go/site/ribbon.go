@@ -3,7 +3,7 @@ package site
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/internal/attr"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -15,7 +15,7 @@ type Ribbon struct {
 }
 
 func (r Ribbon) Render(w io.Writer) error {
-	return h.Div(class.Root("cui-ribbon", r.Class),
+	return h.Div(attr.Class("cui-ribbon", r.Class),
 		h.Div(h.Class("cui-ribbon-content"), r.Children),
 	).Render(w)
 }

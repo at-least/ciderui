@@ -1,6 +1,7 @@
 package site
 
 import (
+	"github.com/at-least/ciderui/go/internal/attr"
 	"io"
 	"strings"
 
@@ -67,10 +68,10 @@ func (f Field) Render(w io.Writer) error {
 		h.Div(h.Class("cui-field"),
 			// @trap: placeholder " ": the label reads :placeholder-shown to tell the field empty
 			h.Input(h.Class("cui-field-input"), h.ID(f.Name), h.Type(kind), h.Name(f.Name), h.Placeholder(" "),
-				g.If(f.Autocomplete != "", h.AutoComplete(f.Autocomplete)),
-				g.If(f.Value != "", h.Value(f.Value)),
+				attr.Optional("autocomplete", f.Autocomplete),
+				attr.Optional("value", f.Value),
 				g.If(f.Error != "" || f.Invalid, h.Aria("invalid", "true")),
-				g.If(described != "", h.Aria("describedby", described)),
+				attr.Optional("aria-describedby", described),
 				f.Attrs,
 			),
 			h.Label(h.Class("cui-field-label"), h.For(f.Name), g.Text(f.Label)),

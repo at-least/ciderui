@@ -32,9 +32,7 @@ type ConsoleContent struct {
 }
 
 func (c ConsoleContent) Render(w io.Writer) error {
-	if c.Title == "" {
-		panic("console.ConsoleContent needs a Title")
-	}
+	need("console.ConsoleContent", "a Title", c.Title)
 	if (c.Back.Href == "") != (c.Back.Label == "") {
 		panic("console.ConsoleContent needs a Back with both an Href and a Label, or neither")
 	}

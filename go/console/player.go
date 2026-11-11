@@ -3,7 +3,7 @@ package console
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/internal/attr"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -91,11 +91,11 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 	if p.Video == nil {
 		panic("console.ConsolePlayer needs a Video")
 	}
-	for name, label := range map[string]string{"PlayAriaLabel": p.PlayAriaLabel, "VolumeAriaLabel": p.VolumeAriaLabel, "MuteAriaLabel": p.MuteAriaLabel, "ScrubberAriaLabel": p.ScrubberAriaLabel, "FullScreenAriaLabel": p.FullScreenAriaLabel} {
-		if label == "" {
-			panic("console.ConsolePlayer needs a " + name)
-		}
-	}
+	need("console.ConsolePlayer", "a PlayAriaLabel", p.PlayAriaLabel)
+	need("console.ConsolePlayer", "a VolumeAriaLabel", p.VolumeAriaLabel)
+	need("console.ConsolePlayer", "a MuteAriaLabel", p.MuteAriaLabel)
+	need("console.ConsolePlayer", "a ScrubberAriaLabel", p.ScrubberAriaLabel)
+	need("console.ConsolePlayer", "a FullScreenAriaLabel", p.FullScreenAriaLabel)
 	if p.SubtitlesMenu != nil && p.SubtitlesAriaLabel == "" {
 		panic("console.ConsolePlayer needs a SubtitlesAriaLabel with a SubtitlesMenu")
 	}
@@ -106,9 +106,9 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 		panic("console.ConsolePlayerEnd needs a Title and a ReplayLabel")
 	}
 	button := func(control, label, menu string, glyph g.Node) g.Node {
-		return h.Button(h.Class("cui-console-player-btn"), h.Type("button"), h.Data("control", control), h.Aria("label", label), optionalAttr("popovertarget", menu), glyph)
+		return h.Button(h.Class("cui-console-player-btn"), h.Type("button"), h.Data("control", control), h.Aria("label", label), attr.Optional("popovertarget", menu), glyph)
 	}
-	return h.Div(class.Root("cui-console-player", p.Class), g.If(p.Intro != nil, g.Attr("data-intro")),
+	return h.Div(attr.Class("cui-console-player", p.Class), g.If(p.Intro != nil, g.Attr("data-intro")),
 		p.Video,
 		h.Div(h.Class("cui-console-player-overlay"),
 			h.Div(h.Class("cui-console-player-header"),
@@ -158,8 +158,8 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 func intro(i ConsolePlayerIntro) g.Node {
 	return h.Div(h.Class("cui-console-player-intro"),
 		h.P(h.Class("cui-console-player-intro-title"), g.Text(i.Title)),
-		g.If(i.Detail != "", h.P(h.Class("cui-console-player-intro-detail"), g.Text(i.Detail))),
-		g.If(i.Summary != "", h.P(h.Class("cui-console-player-intro-summary"), g.Text(i.Summary))),
+		optionalText(h.P, "cui-console-player-intro-detail", i.Detail),
+		optionalText(h.P, "cui-console-player-intro-summary", i.Summary),
 		h.Div(h.Class("cui-console-player-intro-actions"),
 			h.Button(h.Class("cui-console-player-intro-play"), h.Type("button"), h.Data("control", "start"), lucide.Play, h.Span(g.Text(i.StartLabel))),
 			h.Button(h.Class("cui-console-player-text-btn"), h.Type("button"), h.Data("control", "restart"), g.Attr("hidden"), g.Text(i.RestartLabel)),
@@ -170,6 +170,6 @@ func intro(i ConsolePlayerIntro) g.Node {
 // @invariant: at rest each range is at its max: the volume full, the scrubber 0 of 0
 func rangeInput(control, max, label, valueText, percent string) g.Node {
 	return h.Input(h.Class("cui-console-player-range"), h.Type("range"), h.Data("control", control), h.Min("0"), h.Max(max), h.Value(max),
-		h.Aria("label", label), optionalAttr("aria-valuetext", valueText),
+		h.Aria("label", label), attr.Optional("aria-valuetext", valueText),
 		h.Style("--cui-console-player-value: "+percent))
 }

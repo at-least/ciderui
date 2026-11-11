@@ -23,9 +23,7 @@ type ConsoleTab struct {
 }
 
 func (t ConsoleTabs) Render(w io.Writer) error {
-	if t.AriaLabel == "" {
-		panic("console.ConsoleTabs needs an AriaLabel")
-	}
+	need("console.ConsoleTabs", "an AriaLabel", t.AriaLabel)
 	currents := 0
 	for _, tab := range t.Tabs {
 		if tab.Current {
@@ -36,13 +34,8 @@ func (t ConsoleTabs) Render(w io.Writer) error {
 		panic(fmt.Sprintf("console.ConsoleTabs has %d current tabs: one at most", currents))
 	}
 	tabs := g.Map(t.Tabs, func(tab ConsoleTab) g.Node {
-		if tab.Label == "" {
-			panic("console.ConsoleTab needs a Label")
-		}
-		if tab.Href == "" {
-			return h.A(h.Class("cui-console-tab"), h.Aria("disabled", "true"), g.Text(tab.Label))
-		}
-		return h.A(h.Class("cui-console-tab"), h.Href(tab.Href), g.If(tab.Current, h.Aria("current", "page")), g.Text(tab.Label))
+		need("console.ConsoleTab", "a Label", tab.Label)
+		return pageLink("cui-console-tab", tab.Href, tab.Current, g.Text(tab.Label))
 	})
 	return h.Nav(h.Class("cui-console-tabs"), h.Aria("label", t.AriaLabel), tabs).Render(w)
 }
@@ -67,20 +60,14 @@ type ConsoleTabsOption struct {
 }
 
 func (c ConsoleTabsChoice) Render(w io.Writer) error {
-	if c.AriaLabel == "" {
-		panic("console.ConsoleTabsChoice needs an AriaLabel")
-	}
-	if c.Name == "" {
-		panic("console.ConsoleTabsChoice needs a Name")
-	}
+	need("console.ConsoleTabsChoice", "an AriaLabel", c.AriaLabel)
+	need("console.ConsoleTabsChoice", "a Name", c.Name)
 	if len(c.Options) < 2 {
 		panic("console.ConsoleTabsChoice needs two Options at least: one is no choice")
 	}
 	checked := 0
 	for _, o := range c.Options {
-		if o.Label == "" {
-			panic("console.ConsoleTabsOption needs a Label")
-		}
+		need("console.ConsoleTabsOption", "a Label", o.Label)
 		if o.Checked {
 			checked++
 		}

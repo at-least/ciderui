@@ -36,9 +36,7 @@ type ConsoleChart struct {
 }
 
 func (c ConsoleChart) Render(w io.Writer) error {
-	if c.AriaLabel == "" {
-		panic("console.ConsoleChart needs an AriaLabel")
-	}
+	need("console.ConsoleChart", "an AriaLabel", c.AriaLabel)
 	if c.Scale != nil && (c.Scale.Peak == "" || c.Scale.Half == "") {
 		panic("console.ConsoleChartScale needs a Peak and a Half")
 	}
@@ -54,7 +52,7 @@ func (c ConsoleChart) Render(w io.Writer) error {
 					h.Span(h.Class("cui-console-chart-scale"), h.Data("at", "half"), h.Aria("hidden", "true"), g.Text(c.Scale.Half)),
 				}
 			}),
-			g.If(c.Empty != "", h.P(h.Class("cui-console-chart-empty"), g.Text(c.Empty))),
+			optionalText(h.P, "cui-console-chart-empty", c.Empty),
 			c.Children,
 		),
 		g.Iff(c.Axis != nil, func() g.Node {

@@ -34,12 +34,10 @@ func (e ConsoleEmpty) Render(w io.Writer) error {
 	if e.Size.value == "" {
 		panic("console.ConsoleEmpty needs a Size: ConsoleEmptySizeSmall (a card) or ConsoleEmptySizeLarge (a whole page)")
 	}
-	if e.Title == "" {
-		panic("console.ConsoleEmpty needs a Title")
-	}
+	need("console.ConsoleEmpty", "a Title", e.Title)
 	return h.Div(h.Class("cui-console-empty"), h.Data("size", e.Size.value), e.Attrs,
 		iconPart(e.Icon, "cui-console-empty-icon"),
 		h.P(h.Class("cui-console-empty-title"), g.Text(e.Title)),
-		g.If(e.Body != "", h.P(h.Class("cui-console-empty-body"), g.Text(e.Body))),
+		optionalText(h.P, "cui-console-empty-body", e.Body),
 	).Render(w)
 }

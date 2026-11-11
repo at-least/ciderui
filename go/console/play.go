@@ -3,7 +3,7 @@ package console
 import (
 	"io"
 
-	"github.com/at-least/ciderui/go/internal/class"
+	"github.com/at-least/ciderui/go/internal/attr"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -40,9 +40,9 @@ func (p ConsolePlay) Render(w io.Writer) error {
 	if labelled {
 		root = "cui-console-btn cui-console-play"
 	}
-	return h.Button(class.Root(root, p.Class),
-		optionalAttr("data-size", p.Size.value), h.Data("shape", "capsule"),
-		h.Type("button"), optionalAttr("aria-label", p.AriaLabel), p.Attrs,
+	return h.Button(attr.Class(root, p.Class),
+		attr.Optional("data-size", p.Size.value), h.Data("shape", "capsule"),
+		h.Type("button"), attr.Optional("aria-label", p.AriaLabel), p.Attrs,
 		h.Span(h.Class("cui-console-play-glyph"), lucide.Play.Class("cui-console-play-paused"), lucide.Square.Class("cui-console-play-playing")),
 		g.If(labelled, g.Group{
 			h.Span(h.Class("cui-console-play-paused"), g.Text(p.Label)),
