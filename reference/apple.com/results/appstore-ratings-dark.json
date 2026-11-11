@@ -1,0 +1,212 @@
+{
+ "url": "https://apps.apple.com/us/app/pages/id361309726",
+ "finalUrl": "https://apps.apple.com/us/app/pages-create-documents/id361309726",
+ "browser": "chromium 151.0.7922.34 on darwin",
+ "date": "2026-11-11T23:10:35.143Z",
+ "widths": {
+  "390": {
+   "graph": {
+    "html": "<div class=\"numbers__star-graph svelte-z92vmb\"><div role=\"text\" class=\"numbers__star-graph__row row-0 svelte-z92vmb\" aria-label=\"…\"><div class=\"numbers__star-graph__row__stars sve",
+    "styles": {
+     "display": "block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "grid-template-columns": "none",
+     "width": "252.672px"
+    },
+    "box": {
+     "width": 252.671875,
+     "height": 40
+    }
+   },
+   "row": {
+    "html": "<div role=\"text\" class=\"numbers__star-graph__row row-0 svelte-z92vmb\" aria-label=\"…\"><div class=\"numbers__star-graph__row__stars svelte-z92vmb\"><div class=\"star\"><svg class=\"icon\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(255, 255, 255, 0.92)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(255, 255, 255, 0.92)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "grid-template-columns": "none",
+     "height": "8px"
+    },
+    "box": {
+     "width": 252.671875,
+     "height": 8
+    }
+   },
+   "track": {
+    "html": "<div class=\"numbers__star-graph__row__bar svelte-z92vmb\"><div class=\"numbers__star-graph__row__bar__foreground svelte-z92vmb\" style=\"width: 82%\" data-testid=\"star-row-5\"></div></div>",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "3px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(255, 255, 255, 0.92)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(255, 255, 255, 0.92)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(255, 255, 255, 0.1)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "height": "2px",
+     "width": "201.672px",
+     "border-bottom-left-radius": "0px",
+     "overflow": "visible",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 201.671875,
+     "height": 2
+    }
+   },
+   "fill": {
+    "html": "<div class=\"numbers__star-graph__row__bar__foreground svelte-z92vmb\" style=\"width: 82%\" data-testid=\"star-row-5\"></div>",
+    "styles": {
+     "background-color": "rgba(255, 255, 255, 0.92)",
+     "height": "2px",
+     "width": "165.359px",
+     "border-top-left-radius": "0px",
+     "border-top-right-radius": "0px"
+    },
+    "box": {
+     "width": 165.359375,
+     "height": 2
+    }
+   }
+  },
+  "1200": {
+   "graph": {
+    "html": "<div class=\"numbers__star-graph svelte-z92vmb\"><div role=\"text\" class=\"numbers__star-graph__row row-0 svelte-z92vmb\" aria-label=\"…\"><div class=\"numbers__star-graph__row__stars sve",
+    "styles": {
+     "display": "block",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "grid-template-columns": "none",
+     "width": "332.672px"
+    },
+    "box": {
+     "width": 332.671875,
+     "height": 40
+    }
+   },
+   "row": {
+    "html": "<div role=\"text\" class=\"numbers__star-graph__row row-0 svelte-z92vmb\" aria-label=\"…\"><div class=\"numbers__star-graph__row__stars svelte-z92vmb\"><div class=\"star\"><svg class=\"icon\"",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "0px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(255, 255, 255, 0.92)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(255, 255, 255, 0.92)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(0, 0, 0, 0)",
+     "box-shadow": "none",
+     "min-width": "0px",
+     "min-height": "0px",
+     "max-width": "none",
+     "display": "flex",
+     "flex-direction": "row",
+     "flex-wrap": "nowrap",
+     "align-items": "normal",
+     "justify-content": "normal",
+     "row-gap": "normal",
+     "column-gap": "normal",
+     "grid-template-columns": "none",
+     "height": "8px"
+    },
+    "box": {
+     "width": 332.671875,
+     "height": 8
+    }
+   },
+   "track": {
+    "html": "<div class=\"numbers__star-graph__row__bar svelte-z92vmb\"><div class=\"numbers__star-graph__row__bar__foreground svelte-z92vmb\" style=\"width: 82%\" data-testid=\"star-row-5\"></div></div>",
+    "styles": {
+     "padding-top": "0px",
+     "padding-right": "0px",
+     "padding-bottom": "0px",
+     "padding-left": "0px",
+     "margin-top": "3px",
+     "margin-bottom": "0px",
+     "border-top-width": "0px",
+     "border-top-style": "none",
+     "border-top-color": "rgba(255, 255, 255, 0.92)",
+     "border-bottom-width": "0px",
+     "border-bottom-style": "none",
+     "border-bottom-color": "rgba(255, 255, 255, 0.92)",
+     "border-top-left-radius": "0px",
+     "background-color": "rgba(255, 255, 255, 0.1)",
+     "box-shadow": "none",
+     "min-width": "auto",
+     "min-height": "auto",
+     "max-width": "none",
+     "height": "2px",
+     "width": "281.672px",
+     "border-bottom-left-radius": "0px",
+     "overflow": "visible",
+     "margin-left": "0px"
+    },
+    "box": {
+     "width": 281.671875,
+     "height": 2
+    }
+   },
+   "fill": {
+    "html": "<div class=\"numbers__star-graph__row__bar__foreground svelte-z92vmb\" style=\"width: 82%\" data-testid=\"star-row-5\"></div>",
+    "styles": {
+     "background-color": "rgba(255, 255, 255, 0.92)",
+     "height": "2px",
+     "width": "230.969px",
+     "border-top-left-radius": "0px",
+     "border-top-right-radius": "0px"
+    },
+    "box": {
+     "width": 230.96875,
+     "height": 2
+    }
+   }
+  }
+ }
+}

@@ -95,6 +95,8 @@ const CONTRACT = {
   // @external: the store's overlay (iPhone 18 Pro's buy page, its Show more opened): one
   // value each, read at a wide window and a phone's
   '--cui-c-scrim': [['overlay', 'overlay', W, 'background-color'], ['overlay', 'overlay', 390, 'background-color']],
+  '--cui-c-meter': [['appstore-ratings', 'fill', W, 'background-color'], ['appstore-ratings-dark', 'fill', W, 'background-color']],
+  '--cui-c-meter-track': [['appstore-ratings', 'track', W, 'background-color'], ['appstore-ratings-dark', 'track', W, 'background-color']],
   // @external: tv.apple.com's video player, paused (decision 28): one value each, a
   // video dark on any page
   '--cui-c-video': [['tv-player', 'dialog', W, 'background-color'], ['tv-player', 'dialog', 1600, 'background-color']],
@@ -229,6 +231,8 @@ const MIN = [
   // @invariant: a field's message on the page
   ['--cui-c-error', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
   ['--cui-c-border', ['--cui-c-bg', '--cui-c-bg-alt'], 3],
+  // @invariant: a share's filled part, a graphic that carries its meaning (WCAG 1.4.11)
+  ['--cui-c-meter', ['--cui-c-bg', '--cui-c-bg-alt'], 3],
   // @invariant: the player's text and controls on its video
   ['--cui-c-on-video-control', ['--cui-c-video'], 4.5],
   ['--cui-c-on-video-time', ['--cui-c-video'], 4.5],

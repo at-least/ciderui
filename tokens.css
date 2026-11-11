@@ -35,6 +35,9 @@
   --cui-c-on-footer-link: rgb(0 0 0 / 0.72);
   --cui-c-on-footer-title: rgb(0 0 0 / 0.88);
   --cui-c-scrim: rgb(0 0 0 / 0.48);
+  /* @invariant: a share's bar (cui-meter): its filled part, then the track under it */
+  --cui-c-meter: light-dark(rgb(0 0 0 / 0.88), rgb(255 255 255 / 0.92));
+  --cui-c-meter-track: light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
   --cui-c-video: #000000;
   --cui-c-on-video: #ffffff;
   --cui-c-on-video-control: rgb(255 255 255 / 0.9);
