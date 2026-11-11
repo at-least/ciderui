@@ -24,3 +24,11 @@ func sectionNodes() g.Node {
 func TestSectionRendersTheExamples(t *testing.T) {
 	example.Check(t, sectionNodes(), "console/console-section/examples/section.html")
 }
+
+func TestSectionPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleSection {
+		return console.ConsoleSection{Title: "x", Detail: "", Controls: nil, Children: nil}
+	}, []example.Break[console.ConsoleSection]{
+		{Want: "console.ConsoleSection needs a Title", Change: func(p *console.ConsoleSection) { p.Title = "" }},
+	})
+}

@@ -49,8 +49,10 @@ for (const partDef of parts) {
           ? labels.reduce((big, l) => (l.getBoundingClientRect().width * l.getBoundingClientRect().height > big.getBoundingClientRect().width * big.getBoundingClientRect().height ? l : big))
           : null;
         const anchor = label || e;
-        // @external: a control hidden until it is focused (the skip link): read focused
-        if (!label && tiny) e.focus();
+        // @external: a control hidden until it is focused (the skip link): read focused,
+        // then blurred, as shown it covers the bar after it (the global nav's wordmark)
+        const focused = !label && tiny;
+        if (focused) e.focus();
         anchor.scrollIntoView({ block: 'center', inline: 'center' });
         const a = anchor.getBoundingClientRect();
         const x = a.left + a.width / 2, y = a.top + a.height / 2;
@@ -71,6 +73,7 @@ for (const partDef of parts) {
         };
         const w = ours(x, y) ? reach(-1, 0) + reach(1, 0) : 0;
         const h = ours(x, y) ? reach(0, -1) + reach(0, 1) : 0;
+        if (focused) e.blur();
         const name = e.tagName.toLowerCase() + (e.className && typeof e.className === 'string' ? '.' + e.className.trim().split(/\s+/)[0] : '') + (e.type && e.tagName === 'INPUT' ? `[${e.type}]` : '');
         return { name, inText, box: [+r.width.toFixed(1), +r.height.toFixed(1)], target: [w, h] };
       });

@@ -16,18 +16,10 @@ type Page struct {
 	Title string
 	// Head: what the page's head adds after the kit's stylesheet (a site's own
 	// utilities' stylesheet, a script); nil for none.
-	Head g.Node
-	// SkipLabel: the skip link's words, the link before all else the keyboard
-	// reads; "" for none. It lands on the page's own <main id="main"
-	// tabindex="-1"> (the example skip's).
-	SkipLabel string
-	Children  g.Node
+	Head     g.Node
+	Children g.Node
 }
 
 func (p Page) Render(w io.Writer) error {
-	children := p.Children
-	if p.SkipLabel != "" {
-		children = g.Group{Btn{Href: "#main", Label: p.SkipLabel, Icon: nil, Submit: false, Variant: BtnVariantPrimary, Size: BtnSizeMedium, Block: false, Attrs: nil, Class: "cui-skip"}, children}
-	}
-	return document.Document{Owner: "site.Page", Lang: p.Lang, Title: p.Title, Stylesheet: ciderui.SiteStylesheet(), Head: p.Head, Class: "", BodyClass: "", Children: children}.Render(w)
+	return document.Document{Owner: "site.Page", Lang: p.Lang, Title: p.Title, Stylesheet: ciderui.SiteStylesheet(), Head: p.Head, Class: "", BodyClass: "", Children: p.Children}.Render(w)
 }

@@ -12,7 +12,7 @@ import (
 )
 
 func consolePage() console.ConsolePage {
-	return console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Class: "", SkipLabel: "", Children: h.P(g.Text("x"))}
+	return console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Class: "", Children: h.P(g.Text("x"))}
 }
 
 func TestConsolePageWritesTheDocumentItsHeadAfterTheStylesheet(t *testing.T) {
@@ -25,14 +25,14 @@ func TestConsolePageWritesTheDocumentItsHeadAfterTheStylesheet(t *testing.T) {
 	}
 }
 
-func TestConsolePageWritesItsSkipLinkFirst(t *testing.T) {
+func TestConsolePageWithASidebarWritesItsSkipLinkFirst(t *testing.T) {
 	p := consolePage()
-	p.SkipLabel = "Skip to Content"
-	p.Children = h.Main(h.ID("main"), h.TabIndex("-1"))
+	sidebar := console.ConsoleSidebar{AriaLabel: "Main", Home: "/", Wordmark: "Jobs", SkipLabel: "Skip to Content", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: nil, Children: nil}
+	p.Children = console.ConsoleContent{Sidebar: &sidebar, Back: console.ConsoleContentBack{Href: "", Label: ""}, Title: "Jobs", Detail: "", Controls: nil, Children: nil}
 	got := example.Render(p)
-	want := `<body class="cui-console-page"><a class="cui-console-btn cui-console-skip" data-variant="filled" href="#main">Skip to Content</a><main id="main" tabindex="-1">`
+	want := `<body class="cui-console-page"><div class="cui-console-content"><a class="cui-console-btn cui-console-skip" data-variant="filled" href="#main">Skip to Content</a><nav class="cui-console-sidebar"`
 	if !strings.Contains(got, want) {
-		t.Errorf("the skip link to #main is not the body's first child: no %s in %s", want, got)
+		t.Errorf("the sidebar's skip link to #main is not the page's first element: no %s in %s", want, got)
 	}
 }
 

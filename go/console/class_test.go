@@ -8,7 +8,6 @@ import (
 	"github.com/at-least/ciderui/go/internal/example"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
-	h "maragu.dev/gomponents/html"
 )
 
 func TestEachPartWritesThePagesClass(t *testing.T) {
@@ -18,7 +17,6 @@ func TestEachPartWritesThePagesClass(t *testing.T) {
 	example.PagesClass(t, ".", []string{"ConsolePage"}, []example.ClassRow{
 		{Root: "cui-console-btn", Node: console.ConsoleBtn{Href: "", Label: "x", AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: page}},
 		{Root: "cui-console-btn cui-console-btn-icon cui-console-play", Node: console.ConsolePlay{Attrs: nil, AriaLabel: "x", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: page}},
-		{Root: "cui-console-btn cui-console-btn-icon cui-console-sidebar-open", Node: console.ConsoleSidebarOpen{AriaLabel: "x", Class: page}},
 		{Root: "cui-console-player", Node: player},
 	})
 }
@@ -30,8 +28,7 @@ func TestEachPartWritesThePagesWords(t *testing.T) {
 	end.End = &console.ConsolePlayerEnd{Title: "All Done", ReplayLabel: "Watch Again"}
 	tip := validStrip()
 	tip.Groups[0].Items[0].Tip = "Hello there."
-	skip := consolePage()
-	skip.SkipLabel, skip.Children = "Jump to Main", h.Main(h.ID("main"), h.TabIndex("-1"))
+	sidebar := console.ConsoleSidebar{AriaLabel: "Main", Home: "/home", Wordmark: "Muse", SkipLabel: "Jump to Main", OpenAriaLabel: "Show Menu", CloseAriaLabel: "Hide", Footer: nil, Children: nil}
 	for _, c := range []struct {
 		part  string
 		node  g.Node
@@ -43,11 +40,11 @@ func TestEachPartWritesThePagesWords(t *testing.T) {
 		{"ConsoleField", console.ConsoleField{ID: "name", Label: "Name", Error: "Too short.", Control: input()}, []string{">Name<", ">Too short.<"}},
 		{"ConsolePlay", console.ConsolePlay{Attrs: nil, AriaLabel: "Listen", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: ""}, []string{`aria-label="Listen"`}},
 		{"ConsolePlay", console.ConsolePlay{Attrs: nil, AriaLabel: "", Label: "Hear It", PlayingLabel: "Halt", Size: console.ConsoleBtnSizeMedium, Class: ""}, []string{">Hear It<", ">Halt<"}},
-		{"ConsolePage", skip, []string{">Jump to Main<"}},
+		{"ConsoleContent", console.ConsoleContent{Sidebar: &sidebar, Back: console.ConsoleContentBack{Href: "/up", Label: "Up"}, Title: "Takes", Detail: "Every take.", Controls: nil, Children: nil},
+			[]string{`aria-label="Show Menu"`, `href="/up"`, ">Up<", ">Takes<", ">Every take.<"}},
 		{"ConsolePlayerIntro", intro, []string{">The Feast<", ">2 min<", ">A short one.<", ">Watch<", ">From the Top<"}},
 		{"ConsolePlayerEnd", end, []string{">All Done<", ">Watch Again<"}},
-		{"ConsoleSidebar", console.ConsoleSidebar{AriaLabel: "Main", Home: "/home", Wordmark: "Muse", CloseAriaLabel: "Hide", Footer: nil, Children: nil}, []string{`aria-label="Main"`, `href="/home"`, ">Muse<", `aria-label="Hide"`}},
-		{"ConsoleSidebarOpen", console.ConsoleSidebarOpen{AriaLabel: "Show Menu", Class: ""}, []string{`aria-label="Show Menu"`}},
+		{"ConsoleSidebar", sidebar, []string{`aria-label="Main"`, `href="/home"`, ">Muse<", ">Jump to Main<", `aria-label="Hide"`}},
 		{"ConsoleStatus", console.ConsoleStatus{Label: "Down", Color: console.ConsoleColorError, Detail: "500 · 2 s"}, []string{">Down<", ">500 · 2 s<"}},
 		{"ConsoleStrip", tip, []string{">Hello there.<"}},
 	} {

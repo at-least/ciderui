@@ -23,10 +23,14 @@ type GlobalNavLink struct {
 type GlobalNav struct {
 	// Wordmark: the site's name, drawn in the kit's type; the home link's
 	// text and so its accessible name.
-	Wordmark       string
-	Home           string
-	Links          []GlobalNavLink
-	AriaLabel      string
+	Wordmark  string
+	Home      string
+	Links     []GlobalNavLink
+	AriaLabel string
+	// SkipLabel: the words of the skip link written right before the nav, the
+	// first stop the keyboard reaches; it lands on the page's own
+	// <main id="main" tabindex="-1">.
+	SkipLabel      string
 	MenuAriaLabel  string
 	CloseAriaLabel string
 }
@@ -43,6 +47,9 @@ func (n GlobalNav) Render(w io.Writer) error {
 	}
 	if n.AriaLabel == "" {
 		panic("site.GlobalNav needs an AriaLabel")
+	}
+	if n.SkipLabel == "" {
+		panic("site.GlobalNav needs a SkipLabel")
 	}
 	if n.MenuAriaLabel == "" {
 		panic("site.GlobalNav needs a MenuAriaLabel")
@@ -65,15 +72,18 @@ func (n GlobalNav) Render(w io.Writer) error {
 		links = append(links, h.Li(h.Button(h.Class("cui-globalnav-link"), h.Type("submit"), h.FormAttr(formID), g.Text(link.Label))))
 		postForms = append(postForms, h.Form(h.ID(formID), h.Action(link.Href), h.Method("post"), g.Attr("hidden")))
 	}
-	return h.Nav(h.Class("cui-globalnav"), h.Aria("label", n.AriaLabel),
-		h.Div(h.Class("cui-globalnav-content"),
-			h.Ul(h.Class("cui-globalnav-list"), h.ID(globalNavMenuID), h.Popover(),
-				h.Li(h.A(h.Class("cui-globalnav-wordmark"), h.Href(n.Home), g.Text(n.Wordmark))),
-				h.Li(h.Button(h.Class("cui-globalnav-closebutton"), h.PopoverTarget(globalNavMenuID), h.PopoverTargetAction("hide"), h.Aria("label", n.CloseAriaLabel), h.AutoFocus(), glyph.Menu)),
-				links,
+	return g.Group{
+		Btn{Href: "#main", Label: n.SkipLabel, Icon: nil, Submit: false, Variant: BtnVariantPrimary, Size: BtnSizeMedium, Block: false, Attrs: nil, Class: "cui-skip"},
+		h.Nav(h.Class("cui-globalnav"), h.Aria("label", n.AriaLabel),
+			h.Div(h.Class("cui-globalnav-content"),
+				h.Ul(h.Class("cui-globalnav-list"), h.ID(globalNavMenuID), h.Popover(),
+					h.Li(h.A(h.Class("cui-globalnav-wordmark"), h.Href(n.Home), g.Text(n.Wordmark))),
+					h.Li(h.Button(h.Class("cui-globalnav-closebutton"), h.PopoverTarget(globalNavMenuID), h.PopoverTargetAction("hide"), h.Aria("label", n.CloseAriaLabel), h.AutoFocus(), glyph.Menu)),
+					links,
+				),
+				h.Button(h.Class("cui-globalnav-menubutton"), h.PopoverTarget(globalNavMenuID), h.Aria("label", n.MenuAriaLabel), glyph.Menu),
+				postForms,
 			),
-			h.Button(h.Class("cui-globalnav-menubutton"), h.PopoverTarget(globalNavMenuID), h.Aria("label", n.MenuAriaLabel), glyph.Menu),
-			postForms,
 		),
-	).Render(w)
+	}.Render(w)
 }

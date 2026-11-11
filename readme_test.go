@@ -18,8 +18,8 @@ import (
 // reader copies markup that does not compile
 func TestReadmesGoExampleCompiles(t *testing.T) {
 	types := map[string]any{
-		"console.ConsolePage": console.ConsolePage{Lang: "", Title: "", Head: nil, Class: "", SkipLabel: "", Children: nil},
-		"site.Page":           site.Page{Lang: "", Title: "", Head: nil, SkipLabel: "", Children: nil},
+		"console.ConsolePage": console.ConsolePage{Lang: "", Title: "", Head: nil, Class: "", Children: nil},
+		"site.Page":           site.Page{Lang: "", Title: "", Head: nil, Children: nil},
 	}
 	raw, err := os.ReadFile("README.md")
 	if err != nil {

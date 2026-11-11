@@ -19,8 +19,11 @@ type ConsoleSection struct {
 }
 
 func (s ConsoleSection) Render(w io.Writer) error {
+	if s.Title == "" {
+		panic("console.ConsoleSection needs a Title")
+	}
 	return h.Section(h.Class("cui-console-section"),
-		ConsoleSectionHeader{Level: ConsoleSectionHeaderLevelSection, Back: ConsoleSectionHeaderBack{Href: "", Label: ""}, Title: s.Title, Detail: s.Detail, Children: s.Controls},
+		sectionHeader(s.Title, s.Detail, s.Controls),
 		s.Children,
 	).Render(w)
 }
