@@ -41,6 +41,130 @@
     }
   }
 
+  .cui-footer-directory {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+
+    @media (width >= 834px) {
+      flex-direction: row;
+    }
+  }
+
+  .cui-footer-title {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: 400;
+    color: var(--cui-c-on-footer-title);
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      cursor: pointer;
+    }
+
+    svg {
+      flex: none;
+      margin-top: 5px;
+      transition: transform 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+    }
+  }
+
+  .cui-footer-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+
+    &:focus-visible + .cui-footer-title label {
+      outline: var(--cui-focus-ring);
+      outline-offset: var(--cui-focus-ring-offset);
+    }
+  }
+
+  .cui-footer-section {
+    /* @invariant: the containing block of its toggle and its rule */
+    position: relative;
+    margin-left: -4px;
+    padding: 0 4px 1px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 4px;
+      bottom: 0;
+      left: 4px;
+      height: 1px;
+      background-color: var(--cui-c-footer-separator);
+    }
+  }
+
+  .cui-footer-list {
+    display: none;
+    padding: 5px 0 16px;
+
+    :where(a:not([class*="cui-"])) {
+      display: block;
+      padding: 6px 14px;
+    }
+  }
+
+  .cui-footer-toggle:checked ~ .cui-footer-list {
+    display: block;
+  }
+
+  .cui-footer-toggle:checked + .cui-footer-title svg {
+    transform: scaleY(-1);
+  }
+
+  @media (width >= 834px) {
+    .cui-footer-section {
+      flex: 0 1 25%;
+      margin-left: 0;
+      padding: 0;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    .cui-footer-toggle {
+      display: none;
+    }
+
+    .cui-footer-title {
+      margin: 0 20px 9.6px 0;
+      font-weight: 600;
+
+      label {
+        display: block;
+        padding: 0;
+        cursor: auto;
+      }
+
+      svg {
+        display: none;
+      }
+    }
+
+    .cui-footer-list {
+      display: block;
+      margin-right: 20px;
+      padding: 0;
+
+      li:not(:last-child) {
+        margin-bottom: 9.6px;
+      }
+
+      :where(a:not([class*="cui-"])) {
+        display: inline;
+        padding: 0;
+      }
+    }
+  }
+
   .cui-footer-legal {
     padding: 17px 0 9px;
 
@@ -51,5 +175,22 @@
 
   .cui-footer-copyright {
     margin-top: 5px;
+  }
+
+  @media (pointer: coarse) {
+    .cui-footer-list {
+      li:not(:last-child) {
+        margin-bottom: 0;
+      }
+
+      :where(a:not([class*="cui-"])) {
+        display: block;
+        padding-block: 14px;
+      }
+    }
+
+    .cui-footer-title label {
+      padding-block: 14px;
+    }
   }
 }

@@ -34,6 +34,7 @@
   --cui-c-on-footer: rgb(0 0 0 / 0.56);
   --cui-c-on-footer-link: rgb(0 0 0 / 0.72);
   --cui-c-on-footer-title: rgb(0 0 0 / 0.88);
+  --cui-c-footer-separator: rgb(0 0 0 / 0.16);
   --cui-c-scrim: rgb(0 0 0 / 0.48);
   /* @invariant: a share's bar (cui-meter): its filled part, then the track under it */
   --cui-c-meter: light-dark(rgb(0 0 0 / 0.88), rgb(255 255 255 / 0.92));
@@ -170,6 +171,7 @@
     --cui-c-on-bar: var(--cui-c-on-bar-hover);
     --cui-c-on-footer: var(--cui-c-on-footer-title);
     --cui-c-on-footer-link: var(--cui-c-on-footer-title);
+    --cui-c-footer-separator: var(--cui-c-on-footer-title);
     --cui-c-console-neutral-label-secondary: var(--cui-c-console-neutral-label-primary);
     --cui-c-console-field-border: var(--cui-c-console-neutral-label-primary);
     --cui-c-console-neutral-border-secondary: var(--cui-c-console-neutral-label-primary);

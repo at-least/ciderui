@@ -92,6 +92,7 @@ const CONTRACT = {
   '--cui-c-on-footer': [['home', 'footer', W, 'color'], ['product', 'footer', W, 'color']],
   '--cui-c-on-footer-link': [['home', 'footer.link', W, 'color'], ['product', 'footer.link', W, 'color']],
   '--cui-c-on-footer-title': [['home', 'footer.title', W, 'color'], ['product', 'footer.title', W, 'color']],
+  '--cui-c-footer-separator': [['home', 'footer.section-rule', 390, 'background-color'], ['home', 'footer.section-rule', 390, 'background-color']],
   // @external: the store's overlay (iPhone 18 Pro's buy page, its Show more opened): one
   // value each, read at a wide window and a phone's
   '--cui-c-scrim': [['overlay', 'overlay', W, 'background-color'], ['overlay', 'overlay', 390, 'background-color']],
