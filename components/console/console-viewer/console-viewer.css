@@ -1,6 +1,6 @@
 @layer components {
   /* @invariant: a modal in the top layer, so its own size is the window's less a margin (rule 6's
-     sizes a part fixes), and the containing block its close button is placed in */
+     sizes a part fixes) */
   .cui-console-viewer {
     max-width: calc(100vw - 32px);
     max-height: calc(100dvh - 32px);
@@ -30,7 +30,9 @@
     flex: 0 1 auto;
     min-height: 0;
     max-width: 100%;
-    max-height: calc(100dvh - 50px);
+    /* @invariant: the window less the dialog's margin, padding and border (50px) and the close button's row
+       with its gap (30px) */
+    max-height: calc(100dvh - 80px);
     border-radius: 12px;
     object-fit: contain;
   }
@@ -45,9 +47,10 @@
     }
   }
 
+  /* @trap: its own row above the picture, as Quick Look's title bar. Over the picture's corner
+     the gray button vanished on a white picture (muse's character sheets, 2026-11-12) */
   .cui-console-viewer-close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
+    display: flex;
+    align-self: flex-end;
   }
 }
