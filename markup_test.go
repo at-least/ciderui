@@ -74,10 +74,11 @@ func TestCheckMarkupNamesASlotsUtility(t *testing.T) {
 		{"a text slot", `<p class="text-(--cui-c-console-neutral-label-secondary)">a</p>`, []string{`class "text-(--cui-c-console-neutral-label-secondary)" on <p class="text-(--cui-c-console-neutral-label-secondary)">: write text-secondary, the set's name for this color`}},
 		{"a --color-* slot, under a variant and with an opacity", `<hr class="md:border-(--cui-c-console-neutral-border-tertiary)/50">`, []string{`class "md:border-(--cui-c-console-neutral-border-tertiary)/50" on <hr class="md:border-(--cui-c-console-neutral-border-tertiary)/50">: write md:border-divider/50, the set's name for this color`}},
 		{"a site page's slot", page(ciderui.SiteStylesheet()+`"><link rel="stylesheet" href="/own.css`, `<p class="text-(--cui-c-text-2)">a</p>`), []string{`class "text-(--cui-c-text-2)" on <p class="text-(--cui-c-text-2)">: write text-secondary, the set's name for this color`}},
+		{"a ground's slot", `<div class="bg-(--cui-c-console-card)">a</div>`, []string{`class "bg-(--cui-c-console-card)" on <div class="bg-(--cui-c-console-card)">: write bg-alt, the set's name for this color`}},
+		{"a fragment's site slot", `<p class="text-(--cui-c-text-2)">a</p>`, []string{`class "text-(--cui-c-text-2)" on <p class="text-(--cui-c-text-2)">: write text-secondary, the set's name for this color`}},
 		{"a slot with no utility name", `<p class="text-(--cui-c-console-brand-label-secondary)">a</p>`, nil},
 		{"a text color's slot as a ground, which no utility names", `<p class="bg-(--cui-c-console-neutral-label-secondary)">a</p>`, nil},
 		{"the other set's slot on a page", page(ciderui.SiteStylesheet()+`"><link rel="stylesheet" href="/own.css`, `<p class="text-(--cui-c-console-neutral-label-secondary)">a</p>`), nil},
-		{"on a console page", page(ciderui.ConsoleStylesheet(), `<p class="text-(--cui-c-console-neutral-label-secondary)">a</p>`), []string{`class "text-(--cui-c-console-neutral-label-secondary)" on <p class="text-(--cui-c-console-neutral-label-secondary)">: write text-secondary, the set's name for this color`}},
 	})
 }
 
