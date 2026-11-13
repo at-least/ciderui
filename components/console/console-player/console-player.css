@@ -78,8 +78,8 @@
     }
   }
 
-  :where(.cui-console-player[data-fullscreen]) .cui-console-player-glyph-full-screen,
-  :where(.cui-console-player:not([data-fullscreen])) .cui-console-player-glyph-exit-full-screen {
+  :where(.cui-console-player[data-full-screen]) .cui-console-player-glyph-full-screen,
+  :where(.cui-console-player:not([data-full-screen])) .cui-console-player-glyph-exit-full-screen {
     display: none;
   }
 
@@ -135,7 +135,6 @@
     align-items: center;
     translate: 0 calc(-100% - 12px);
     pointer-events: none;
-    transition: translate 0.4s cubic-bezier(0.4, 0, 0.6, 1);
 
     & > p {
       max-width: 42em;
@@ -179,14 +178,14 @@
     gap: 14px;
   }
 
-  /* @invariant: the page's own controls; data-fullscreen is the page's script's to set */
+  /* @invariant: the page's own controls; data-full-screen is the page's script's to set */
   .cui-console-player-full-screen-controls {
     display: none;
     min-width: 0;
     align-items: center;
     gap: 8px;
 
-    :where(.cui-console-player[data-fullscreen]) & {
+    :where(.cui-console-player[data-full-screen]) & {
       display: flex;
     }
   }

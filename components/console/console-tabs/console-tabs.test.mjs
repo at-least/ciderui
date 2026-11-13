@@ -33,8 +33,6 @@ export const cases = [
       { target: '[aria-current="page"]', props: ['border-bottom-color'], golden: 'the current tab\'s rule in its label\'s color, as App Store Connect\'s (asc version: tab.button.current, its label\'s rgb(51, 51, 51))' },
       { target: '[aria-current="page"]', props: ['color'], state: 'hover', tb: [underlined('hover', 'true', 'color')] },
       { target: '[aria-current="page"]', props: ['color'], state: 'active', tb: [underlined('press', 'true', 'color')] },
-      { target: '[aria-disabled="true"]', props: ['color'], tb: [underlined('disabled', 'false', 'color')] },
-      { target: '[aria-disabled="true"]', props: ['cursor'], golden: 'no pointer over a disabled tab' },
     ],
   },
   {

@@ -29,14 +29,11 @@ func TestBtnRendersTheExamples(t *testing.T) {
 		b.Attrs = h.Disabled()
 		return b
 	}
-	busy := link("Sign In", "", primary, medium)
-	busy.Submit, busy.Attrs = true, h.Aria("busy", "true")
 	for _, c := range []struct {
 		path string
 		node g.Node
 	}{
 		{"default", link("Buy", buy, primary, medium)},
-		{"busy", busy},
 		{"block", block},
 		{"block-button", blockButton},
 		{"icon", icon},
@@ -54,6 +51,15 @@ func TestBtnAttrsGoOnItsLink(t *testing.T) {
 	want := `<a class="cui-btn" href="/buy" aria-current="page">Buy</a>`
 	if got := example.Render(b); got != want {
 		t.Errorf("the link button lost its Attrs\n got: %s\nwant: %s", got, want)
+	}
+}
+
+func TestBtnSubmitsItsForm(t *testing.T) {
+	b := link("Sign In", "", site.BtnVariantPrimary, site.BtnSizeMedium)
+	b.Submit = true
+	want := `<button class="cui-btn" type="submit">Sign In</button>`
+	if got := example.Render(b); got != want {
+		t.Errorf("the submit button lost its type\n got: %s\nwant: %s", got, want)
 	}
 }
 

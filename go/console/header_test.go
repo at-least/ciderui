@@ -31,16 +31,15 @@ const (
 )
 
 func TestContentAndSectionWriteTheHeaderExamples(t *testing.T) {
-	none := console.ConsoleContentBack{Href: "", Label: ""}
 	tabs := console.ConsoleTabs{AriaLabel: "Time window", Tabs: []console.ConsoleTab{
 		{Label: "24h", Href: "#24h", Current: false},
 		{Label: "7d", Href: "#7d", Current: true},
 		{Label: "30d", Href: "#30d", Current: false},
 	}}
-	page := headerOf(t, console.ConsoleContent{Sidebar: nil, Back: none, Title: "Issues", Detail: "New and regressed issues in this project.", Controls: tabs, Children: nil}, contentBefore, contentAfter)
+	page := headerOf(t, console.ConsoleContent{Sidebar: nil, Back: nil, Title: "Issues", Detail: "New and regressed issues in this project.", Controls: tabs, Children: nil}, contentBefore, contentAfter)
 	example.Check(t, h.Div(h.Class("cui-console-page max-w-4xl"), page, h.P(g.Text("The page’s content."))), "console/console-header/examples/page.html")
 	section := headerOf(t, console.ConsoleSection{Title: "Alerts", Detail: "Who hears about a new issue, and how.", Children: nil}, `<section class="cui-console-section">`, `</section>`)
 	example.Check(t, h.Div(h.Class("cui-console-page max-w-4xl"), section, h.P(g.Text("The section’s content."))), "console/console-header/examples/section.html")
-	back := headerOf(t, console.ConsoleContent{Sidebar: nil, Back: console.ConsoleContentBack{Href: "#needs-you", Label: "Needs You"}, Title: "Checkout times out", Detail: "", Controls: nil, Children: nil}, contentBefore, contentAfter)
+	back := headerOf(t, console.ConsoleContent{Sidebar: nil, Back: &console.ConsoleContentBack{Href: "#needs-you", Label: "Needs You"}, Title: "Checkout times out", Detail: "", Controls: nil, Children: nil}, contentBefore, contentAfter)
 	example.Check(t, h.Div(h.Class("cui-console-page max-w-4xl"), back), "console/console-header/examples/back.html")
 }

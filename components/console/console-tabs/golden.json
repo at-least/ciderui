@@ -1,13 +1,10 @@
 {
  "tabs | .cui-console-tab[href=\"#issues\"]:hover | 1600 | color": "oklch(0.371 0 0 / 0.85)",
  "tabs | [aria-current=\"page\"] | 1600 | border-bottom-color": "oklch(0 0 0 / 0.85)",
- "tabs | [aria-disabled=\"true\"] | 1600 | cursor": "default",
  "tabs | .cui-console-tab[href=\"#issues\"]:hover | 1200 | color": "oklch(0.371 0 0 / 0.85)",
  "tabs | [aria-current=\"page\"] | 1200 | border-bottom-color": "oklch(0 0 0 / 0.85)",
- "tabs | [aria-disabled=\"true\"] | 1200 | cursor": "default",
  "tabs | .cui-console-tab[href=\"#issues\"]:hover | 390 | color": "oklch(0.371 0 0 / 0.85)",
  "tabs | [aria-current=\"page\"] | 390 | border-bottom-color": "oklch(0 0 0 / 0.85)",
- "tabs | [aria-disabled=\"true\"] | 390 | cursor": "default",
  "tabs many on a phone | .cui-console-tabs | 375 | flex-wrap": "nowrap",
  "tabs many on a phone | .cui-console-tabs | 375 | overflow-x": "auto",
  "tabs many on a phone | .cui-console-tabs | 375 | box-height": "31px",

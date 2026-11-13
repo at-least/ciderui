@@ -47,6 +47,7 @@ const withHeading = (html) => html.replace('data-control="heading"></p>', 'data-
 const PAUSED = 'muse\'s (the owner, 2026-11-05: paused, a small line at the picture\'s top left saying the story, the scene and the shot; gone on play): in tv.apple.com\'s header\'s first column, 720px and empty on its trailers (tv-player:header, grid-template-columns 720px 820px), on the header\'s row; 15px semibold white under the cue\'s shadow (--cui-video-cue-shadow) so it reads on a bright picture with no box, cut short with an ellipsis before the volume; tv.apple.com shows no such line';
 const INTRO = 'muse\'s pre-play layer (the owner, 2026-11-05: over the cover the title large, the demo\'s length, its description\'s first sentence, one clear Play; tv.apple.com\'s pre-play page was not measured, so golden): at the picture\'s foot in the overlay\'s room (30px at the sides, tv-player:scrim), on a soft gradient in that corner alone (--cui-video-title-scrim; the owner, 2026-11-08: tv.apple.com\'s, --cui-video-scrim, darkened the cover\'s lower half to black), the lines white under the cue\'s shadow; the length 15px medium and the sentence 17px on 24px in the controls\' 90% white, two lines at most, 36em wide';
 const END = 'muse\'s end layer (the owner, 2026-11-05: on end a 「看完了」 layer fades in over the last picture, the user\'s next step under it and a small 「重新播放」; tv.apple.com\'s end of a film was not measured, so golden): the intro\'s layer, its place, gradient and title, in the other direction; the next step in the length\'s type (15px medium, the controls\' 90% white), its buttons and links one under another 8px apart, 14px under the title as the intro\'s Play is';
+const SUBTITLES_NO_SLIDE = 'at its other place at once as the controls show and hide: a slide between the two only draws the eye (DESIGN.md decision 25)';
 const NO_SLIDE = 'faded where they are: tv.apple.com\'s header goes 20px up and its footer 20px down as they hide (tv-player-playing:hidden.*), a slide that only draws the eye (DESIGN.md decision 25); the fades\' durations and curves its own';
 
 export const cases = [
@@ -111,7 +112,8 @@ export const cases = [
       { target: CUE, props: ['text-shadow', 'background-color', 'padding-top', 'padding-left', 'border-top-left-radius'], golden: MUSE },
       { target: LINE, props: ['box-top', 'box-height'], golden: 'over the footer while the controls show: its foot 12px above the footer\'s top, the footer\'s own gap (tv-player:footer\'s 12px)' },
       { target: '.cui-console-player-footer', props: ['box-top'], golden: 'the footer, under the subtitles, where it is with none' },
-      { target: '.cui-console-player-subtitles', props: ['pointer-events', 'transition-property', 'transition-duration', 'transition-timing-function'], golden: 'the controls under it take the pointer; it moves as the footer fades, in the footer\'s 0.4s (tv-player-playing:hidden.footer)' },
+      { target: '.cui-console-player-subtitles', props: ['pointer-events'], golden: 'the controls under it take the pointer' },
+      { target: '.cui-console-player-subtitles', props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: SUBTITLES_NO_SLIDE },
       { target: CUE, props: ['hit'], golden: 'a click on the cue reaches the overlay under it, which the page\'s script hears (a click on the picture plays or pauses)' },
     ],
   },
@@ -226,7 +228,7 @@ export const cases = [
       { target: '.cui-console-player-intro-play', props: ['box-height', 'padding-left', 'border-top-left-radius', 'background-color', 'color', 'font-size', 'font-weight', 'column-gap'], golden: `${INTRO}; Play a white 44px capsule in the picture's black, the HIG's 44pt target` },
       { target: '.cui-console-player-intro-play', props: ['background-color'], state: 'hover', golden: 'hovered, the controls\' 90% white (--cui-c-on-video-control)' },
       { target: '.cui-console-player-intro [data-control="restart"]', props: ['display'], golden: 'the smaller start-over hidden until the page\'s script finds a saved place' },
-      { target: '.cui-console-player-intro', props: ['transition-property', 'transition-duration'], golden: 'it fades out in the subtitles\' 0.4s curve (tv-player-playing:hidden.footer)' },
+      { target: '.cui-console-player-intro', props: ['transition-property', 'transition-duration'], golden: 'it fades out in the footer\'s 0.4s curve (tv-player-playing:hidden.footer)' },
     ],
   },
   {
@@ -261,7 +263,7 @@ export const cases = [
       { target: '.cui-console-player-end-body', props: ['display', 'flex-direction', 'align-items', 'row-gap', 'margin-top', 'max-width', 'font-size', 'line-height', 'font-weight', 'color'], golden: END },
       { target: '.cui-console-player-end-body > p', props: ['margin-top', 'margin-bottom'], golden: 'its words without a paragraph\'s margin: the 8px gap spaces them' },
       { target: '.cui-console-player-end [data-control="replay"]', props: ['display', 'box-height', 'background-color', 'margin-top'], golden: 'Play Again, the bar\'s capsule of words, smaller than the next step, 14px under it' },
-      { target: '.cui-console-player-end', props: ['transition-property', 'transition-duration'], golden: 'it fades in in the subtitles\' 0.4s curve, as the intro fades out' },
+      { target: '.cui-console-player-end', props: ['transition-property', 'transition-duration'], golden: 'it fades in in the footer\'s 0.4s curve, as the intro fades out' },
     ],
   },
   {
@@ -310,7 +312,7 @@ export const cases = [
   },
   {
     name: 'player full screen controls not full screen',
-    html: ex('full-screen').replace(' data-fullscreen', ''),
+    html: ex('full-screen').replace(' data-full-screen', ''),
     widths: [1600],
     height: 900,
     checks: [

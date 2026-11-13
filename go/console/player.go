@@ -46,7 +46,7 @@ type ConsolePlayerEnd struct {
 // script plays the video and keeps the markup current: data-state="playing"
 // (and the centre button's aria-label), data-controls="hidden" (while playing
 // and the pointer is still), data-muted (the mute button's glyph),
-// data-fullscreen (while it fills the screen: the bar's FullScreenControls
+// data-full-screen (while it fills the screen: the bar's FullScreenControls
 // show and the full-screen button shows its exit glyph), data-end (the End
 // layer), each range's value, max and --cui-console-player-value, the times,
 // the cue and its lang, the heading (the shot on screen, at the header's
@@ -71,7 +71,7 @@ type ConsolePlayer struct {
 	SubtitlesAriaLabel  string
 	FullScreenAriaLabel string
 	// FullScreenControls are the page's own controls the bar shows before
-	// its buttons while the player fills the screen (data-fullscreen), and
+	// its buttons while the player fills the screen (data-full-screen), and
 	// hides otherwise.
 	FullScreenControls g.Node
 	// Intro: the layer before it first plays (data-intro).

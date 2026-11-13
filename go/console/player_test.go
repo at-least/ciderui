@@ -123,7 +123,7 @@ var playerStateExamples = map[string]struct {
 	"playing":     {pausedPlayer(), append([]scriptSets{{playerRoot + ">", playerRoot + ` data-state="playing">`}}, playedFiveSeconds...)},
 	"hidden":      {pausedPlayer(), append([]scriptSets{{playerRoot + ">", playerRoot + ` data-state="playing" data-controls="hidden">`}}, playedFiveSeconds...)},
 	"stills":      {stills(), append([]scriptSets{{playerRoot + ">", playerRoot + ` data-state="playing">`}, {cueAtRest, cueSet}}, playedFiveSeconds...)},
-	"full-screen": {fullScreen(), append([]scriptSets{{playerRoot + ">", playerRoot + ` data-state="playing" data-fullscreen>`}, {cueAtRest, cueSet}}, playedFiveSeconds...)},
+	"full-screen": {fullScreen(), append([]scriptSets{{playerRoot + ">", playerRoot + ` data-state="playing" data-full-screen>`}, {cueAtRest, cueSet}}, playedFiveSeconds...)},
 	"end": {end(), []scriptSets{
 		{playerRoot + ">", playerRoot + ` data-end>`},
 		{headingAtRest, headingSet},

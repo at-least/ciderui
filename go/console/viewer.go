@@ -9,9 +9,9 @@ import (
 
 // ConsoleViewer is a picture shown whole over the page, fit to the window
 // (Quick Look), its caption under it and a close button in a row above it. The
-// page opens it as a [ConsoleDialog]; its script sets the picture's src and alt
-// and the caption's words before it opens it, so one viewer shows each of many
-// pictures.
+// page opens it as a <dialog> (showModal() or a button's command="show-modal");
+// its script sets the picture's src and alt and the caption's words before it
+// opens it, so one viewer shows each of many pictures.
 type ConsoleViewer struct {
 	ID             string
 	AriaLabel      string

@@ -100,6 +100,8 @@ func (s ConsoleStrip) Render(w io.Writer) error {
 }
 
 func stripItem(item ConsoleStripItem) g.Node {
+	need("console.ConsoleStripItem", "an Href", item.Href)
+	need("console.ConsoleStripItem", "a Src", item.Src)
 	if item.Alt == "" {
 		panic("console.ConsoleStripItem needs an Alt: it is its link's name")
 	}

@@ -91,12 +91,6 @@
       }
     }
 
-    &[aria-disabled="true"] {
-      color: var(--cui-c-console-neutral-label-disabled);
-      background-color: transparent;
-      cursor: default;
-    }
-
     :where(.cui-console-menu[data-variant="sidebar"]) > & {
       gap: 11.5px;
       min-height: 3rem;

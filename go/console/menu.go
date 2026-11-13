@@ -13,7 +13,6 @@ import (
 
 // ConsoleMenuItem is a page in a [ConsoleSidebar].
 type ConsoleMenuItem struct {
-	// Href: "" for an item not available now.
 	Href    string
 	Label   string
 	Icon    lucide.Icon
@@ -21,6 +20,7 @@ type ConsoleMenuItem struct {
 }
 
 func (m ConsoleMenuItem) Render(w io.Writer) error {
+	need("console.ConsoleMenuItem", "an Href", m.Href)
 	need("console.ConsoleMenuItem", "a Label", m.Label)
 	return pageLink("cui-console-menu-item", m.Href, m.Current, g.Group{
 		iconPart(m.Icon, "cui-console-menu-icon"),

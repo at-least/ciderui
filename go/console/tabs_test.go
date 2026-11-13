@@ -12,7 +12,6 @@ func TestTabsRendersTheExamples(t *testing.T) {
 		{Label: "Overview", Href: "#overview", Current: true},
 		{Label: "Issues", Href: "#issues", Current: false},
 		{Label: "Releases", Href: "#releases", Current: false},
-		{Label: "Jobs", Href: "", Current: false},
 	}
 	example.Check(t, console.ConsoleTabs{AriaLabel: "Project", Tabs: underlined}, "console/console-tabs/examples/tabs.html")
 }
@@ -24,6 +23,7 @@ func TestTabsPanics(t *testing.T) {
 		{Want: "console.ConsoleTabs needs an AriaLabel", Change: func(p *console.ConsoleTabs) { p.AriaLabel = "" }},
 		{Want: "console.ConsoleTabs has 2 current tabs: one at most", Change: func(p *console.ConsoleTabs) { p.Tabs[1].Current = true }},
 		{Want: "console.ConsoleTab needs a Label", Change: func(p *console.ConsoleTabs) { p.Tabs[1].Label = "" }},
+		{Want: "console.ConsoleTab needs an Href", Change: func(p *console.ConsoleTabs) { p.Tabs[1].Href = "" }},
 	})
 }
 

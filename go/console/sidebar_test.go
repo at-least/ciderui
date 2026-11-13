@@ -36,7 +36,7 @@ func TestSidebarRendersTheExamples(t *testing.T) {
 
 func TestContentWritesTheSidebarsOpenButtonExample(t *testing.T) {
 	sidebar := sidebarNodes()
-	got := example.Render(console.ConsoleContent{Sidebar: &sidebar, Back: console.ConsoleContentBack{Href: "", Label: ""}, Title: "x", Detail: "", Controls: nil, Children: nil})
+	got := example.Render(console.ConsoleContent{Sidebar: &sidebar, Back: nil, Title: "x", Detail: "", Controls: nil, Children: nil})
 	nav, found := strings.CutPrefix(got, contentOpen)
 	nav, main, foundMain := strings.Cut(nav, contentMain)
 	open, _, foundHeader := strings.Cut(main, `<header class="cui-console-header">`)
@@ -51,6 +51,7 @@ func TestSidebarPanics(t *testing.T) {
 		return console.ConsoleSidebar{AriaLabel: "x", Home: "/", Wordmark: "x", SkipLabel: "Skip", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: nil, Sections: nil}
 	}, []example.Break[console.ConsoleSidebar]{
 		{Want: "console.ConsoleSidebar needs an AriaLabel", Change: func(p *console.ConsoleSidebar) { p.AriaLabel = "" }},
+		{Want: "console.ConsoleSidebar needs a Home", Change: func(p *console.ConsoleSidebar) { p.Home = "" }},
 		{Want: "console.ConsoleSidebar needs a Wordmark", Change: func(p *console.ConsoleSidebar) { p.Wordmark = "" }},
 		{Want: "console.ConsoleSidebar needs a SkipLabel", Change: func(p *console.ConsoleSidebar) { p.SkipLabel = "" }},
 		{Want: "console.ConsoleSidebar needs an OpenAriaLabel", Change: func(p *console.ConsoleSidebar) { p.OpenAriaLabel = "" }},

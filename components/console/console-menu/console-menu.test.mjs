@@ -107,8 +107,6 @@ export const cases = [
       { target: SUB, props: ITEM.filter(p => p !== 'background-color' && p !== 'padding-left'), asc: ['analytics', 'menu.item'] },
       { target: SUB, props: ['background-color'], golden: 'no ground at rest: transparent, where the toolkit writes its transparent white, oklch(1 0 0 / 0), the same nothing' },
       { target: `${SUB} .cui-console-menu-label`, props: LABEL, asc: ['analytics', 'menu.item.label'] },
-      { target: '[aria-disabled="true"]', props: ['box-height', 'cursor'], asc: ['analytics-page', 'item.disabled'] },
-      { target: '[aria-disabled="true"] .cui-console-menu-label', props: LABEL, asc: ['analytics-page', 'item.disabled.label'] },
       { target: '.cui-console-menu-rule', props: ['box-height', 'background-color', 'margin-top', 'margin-bottom', 'margin-left', 'margin-right'], asc: ['analytics', 'menu.rule'] },
       { target: PLAIN, props: ['background-color'], state: 'hover', asc: ['hover-menu', 'menu.item'] },
       { target: `${PLAIN} .cui-console-menu-label`, props: ['color', 'font-weight'], state: 'hover', on: PLAIN, asc: ['hover-menu', 'menu.item.label'] },
@@ -121,7 +119,6 @@ export const cases = [
       { target: '.cui-console-menu', props: ['display'], asc: ['analytics-page', 'menu'] },
       { target: '.cui-console-menu', props: ['flex-direction'], golden: 'a column of its items' },
       { target: `${SUB} .cui-console-menu-label`, props: ['white-space', 'text-overflow', 'overflow-wrap'], golden: 'a long label wraps, whole: an ellipsis left two pages that begin alike unreadable apart' },
-      { target: '[aria-disabled="true"]', props: ['background-color'], state: 'hover', golden: 'a disabled item no fill hovered' },
     ],
   },
   {
@@ -163,7 +160,6 @@ export const cases = [
     widths: [1200],
     checks: [
       { target: CURRENT, props: ['background-color', 'color'], golden: 'the dark side derived (tokens.css, decision 18)' },
-      { target: '[aria-disabled="true"]', props: ['color'], golden: 'the dark side derived (tokens.css, decision 18)' },
       { target: '.cui-console-menu-rule', props: ['background-color'], golden: 'the dark side derived (tokens.css, decision 18)' },
     ],
   },

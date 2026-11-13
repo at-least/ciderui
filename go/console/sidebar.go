@@ -54,6 +54,7 @@ func menuSections(sections []ConsoleMenuSection) g.Node {
 
 func (s ConsoleSidebar) Render(w io.Writer) error {
 	need("console.ConsoleSidebar", "an AriaLabel", s.AriaLabel)
+	need("console.ConsoleSidebar", "a Home", s.Home)
 	need("console.ConsoleSidebar", "a Wordmark", s.Wordmark)
 	need("console.ConsoleSidebar", "a SkipLabel", s.SkipLabel)
 	need("console.ConsoleSidebar", "an OpenAriaLabel", s.OpenAriaLabel)

@@ -112,14 +112,4 @@ export const cases = [
       { target: '.cui-btn:not([data-size])', pseudo: '::after', props: ['content'], golden: 'no invisible overlay where no touch screen is: the pointer finds the label, not a sheet over it' },
     ],
   },
-  {
-    name: 'busy',
-    html: ex('busy'),
-    widths: [1200, 390],
-    reducedMotion: 'reduce',
-    checks: [
-      { target: '.cui-btn', props: ['cursor'], golden: 'aria-busy, set by the page\'s script while the request runs: the pointer says so' },
-      { target: '.cui-btn', pseudo: '::before', props: ['width', 'height', 'border-top-width', 'border-top-color', 'border-right-color', 'border-top-left-radius', 'animation-name', 'animation-duration', 'animation-iteration-count'], golden: 'a spinner before the label, at the label\'s size, a ring open on one side so its turn shows, the label kept so the button keeps its width and its name; under Reduce Motion it keeps turning, as iOS\'s activity indicator does (base.css)' },
-    ],
-  },
 ];

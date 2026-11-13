@@ -25,7 +25,6 @@ type ConsolePlayButton struct {
 	// Attrs: the root's other attributes, for the page's script (data-*, an
 	// htmx attribute).
 	Attrs g.Node
-	Class string
 }
 
 func (p ConsolePlayButton) Render(w io.Writer) error {
@@ -40,7 +39,7 @@ func (p ConsolePlayButton) Render(w io.Writer) error {
 	if labelled {
 		root = "cui-console-btn cui-console-play-button"
 	}
-	return h.Button(attr.Class(root, p.Class),
+	return h.Button(h.Class(root),
 		attr.Optional("data-size", p.Size.value), h.Data("shape", "capsule"),
 		h.Type("button"), attr.Optional("aria-label", p.AriaLabel), p.Attrs,
 		h.Span(h.Class("cui-console-play-button-glyph"), lucide.Play.Class("cui-console-play-button-paused"), lucide.Square.Class("cui-console-play-button-playing")),

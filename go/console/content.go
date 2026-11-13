@@ -21,8 +21,8 @@ type ConsoleContentBack struct {
 // Children, its [ConsoleSection]s.
 type ConsoleContent struct {
 	Sidebar *ConsoleSidebar
-	// Back: the zero value for none.
-	Back  ConsoleContentBack
+	// Back: nil for none.
+	Back  *ConsoleContentBack
 	Title string
 	// Detail: the line under the title, what the page is for.
 	Detail string
@@ -33,19 +33,21 @@ type ConsoleContent struct {
 
 func (c ConsoleContent) Render(w io.Writer) error {
 	need("console.ConsoleContent", "a Title", c.Title)
-	if (c.Back.Href == "") != (c.Back.Label == "") {
-		panic("console.ConsoleContent needs a Back with both an Href and a Label, or neither")
-	}
-	var sidebar, open g.Node
+	var sidebar, open, back g.Node
 	if c.Sidebar != nil {
 		sidebar, open = *c.Sidebar, sidebarOpen(c.Sidebar.OpenAriaLabel)
+	}
+	if c.Back != nil {
+		need("console.ConsoleContentBack", "an Href", c.Back.Href)
+		need("console.ConsoleContentBack", "a Label", c.Back.Label)
+		back = h.A(h.Class("cui-console-link cui-console-header-back"), h.Href(c.Back.Href), lucide.ChevronLeft, g.Text(c.Back.Label))
 	}
 	return h.Div(h.Class("cui-console-content"),
 		sidebar,
 		h.Main(h.ID("main"), h.TabIndex("-1"), h.Class("cui-console-content-main"),
 			open,
 			header(g.Group{
-				g.If(c.Back.Href != "", h.A(h.Class("cui-console-link cui-console-header-back"), h.Href(c.Back.Href), lucide.ChevronLeft, g.Text(c.Back.Label))),
+				back,
 				h.H1(h.Class("cui-console-h2"), g.Text(c.Title)),
 			}, c.Detail, c.Controls),
 			c.Children,

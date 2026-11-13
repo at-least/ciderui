@@ -78,12 +78,6 @@
       border-bottom-color: currentColor;
     }
 
-    &[aria-disabled="true"] {
-      color: var(--cui-c-console-neutral-label-disabled);
-      background-color: var(--cui-console-tab-fill);
-      cursor: default;
-    }
-
     :where(.cui-console-tabs[data-variant="filled"]) > & {
       --cui-console-tab-fill: var(--cui-c-console-neutral-fill-tertiary);
       --cui-console-tab-fill-hover: var(--cui-c-console-gray-fill-hover);

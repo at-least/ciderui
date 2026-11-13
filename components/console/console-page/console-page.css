@@ -65,13 +65,6 @@
   letter-spacing: normal;
 }
 
-@utility cui-console-h3-medium {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 500;
-  letter-spacing: normal;
-}
-
 @utility cui-console-h3-emph {
   font-size: 20px;
   line-height: 24px;
@@ -83,13 +76,6 @@
   font-size: 18px;
   line-height: 22px;
   font-weight: 400;
-  letter-spacing: normal;
-}
-
-@utility cui-console-h4-medium {
-  font-size: 18px;
-  line-height: 22px;
-  font-weight: 500;
   letter-spacing: normal;
 }
 
@@ -107,13 +93,6 @@
   letter-spacing: normal;
 }
 
-@utility cui-console-h5-medium {
-  font-size: 15px;
-  line-height: 20px;
-  font-weight: 500;
-  letter-spacing: normal;
-}
-
 @utility cui-console-h5-emph {
   font-size: 15px;
   line-height: 20px;
@@ -125,13 +104,6 @@
   font-size: 14px;
   line-height: 19px;
   font-weight: 400;
-  letter-spacing: normal;
-}
-
-@utility cui-console-h6-medium {
-  font-size: 14px;
-  line-height: 19px;
-  font-weight: 500;
   letter-spacing: normal;
 }
 
@@ -149,13 +121,6 @@
   letter-spacing: normal;
 }
 
-@utility cui-console-body-medium {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 500;
-  letter-spacing: normal;
-}
-
 @utility cui-console-body-emph {
   font-size: 13px;
   line-height: 18px;
@@ -170,13 +135,6 @@
   letter-spacing: normal;
 }
 
-@utility cui-console-small-medium {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 500;
-  letter-spacing: normal;
-}
-
 @utility cui-console-small-emph {
   font-size: 12px;
   line-height: 16px;
@@ -188,13 +146,6 @@
   font-size: 11px;
   line-height: 13px;
   font-weight: 400;
-  letter-spacing: normal;
-}
-
-@utility cui-console-xs-medium {
-  font-size: 11px;
-  line-height: 13px;
-  font-weight: 500;
   letter-spacing: normal;
 }
 

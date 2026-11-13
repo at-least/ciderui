@@ -94,7 +94,7 @@
   }
 }
 
-/* @invariant: a busy button's spinner (cui-btn, cui-console-btn), one turn a second as
+/* @invariant: a busy button's spinner (cui-console-btn), one turn a second as
    Tailwind's animate-spin */
 @keyframes cui-busy {
   to {

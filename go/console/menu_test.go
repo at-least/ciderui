@@ -17,7 +17,6 @@ func TestMenuRendersTheExamples(t *testing.T) {
 	menu := h.Nav(h.Class("cui-console-menu"), h.Aria("label", "Analytics"),
 		item("#overview", "Overview", lucide.LayoutGrid, true),
 		item("#sources", "Sources", lucide.Icon{}, false),
-		item("", "Product Pages", lucide.Icon{}, false),
 		h.Hr(h.Class("cui-console-menu-rule")),
 		h.P(h.Class("cui-console-menu-title"), g.Text("Projects")),
 		item("#shop", "Shop", lucide.Icon{}, false),
@@ -56,27 +55,13 @@ func columnsMenu() console.ConsoleChoiceMenu {
 	return m
 }
 
-func TestAPageWithNoHrefIsNotAvailableEvenIfCurrent(t *testing.T) {
-	for _, c := range []struct {
-		part string
-		node g.Node
-		want string
-	}{
-		{"ConsoleMenuItem", console.ConsoleMenuItem{Href: "", Label: "x", Icon: lucide.Icon{}, Current: true}, `<a class="cui-console-menu-item" aria-disabled="true"><span class="cui-console-menu-label">x</span></a>`},
-		{"ConsoleTabs", console.ConsoleTabs{AriaLabel: "Project", Tabs: []console.ConsoleTab{{Label: "Jobs", Href: "", Current: true}}}, `<nav class="cui-console-tabs" aria-label="Project"><a class="cui-console-tab" aria-disabled="true">Jobs</a></nav>`},
-	} {
-		if got := example.Render(c.node); got != c.want {
-			t.Errorf("%s: a page with no Href is a link or marked current, not unavailable:\n got: %s\nwant: %s", c.part, got, c.want)
-		}
-	}
-}
-
 func validMenuItem() console.ConsoleMenuItem {
 	return console.ConsoleMenuItem{Href: "#x", Label: "x", Icon: lucide.Icon{}, Current: false}
 }
 
 func TestMenuItemPanics(t *testing.T) {
 	example.Panics(t, validMenuItem, []example.Break[console.ConsoleMenuItem]{
+		{Want: "console.ConsoleMenuItem needs an Href", Change: func(p *console.ConsoleMenuItem) { p.Href = "" }},
 		{Want: "console.ConsoleMenuItem needs a Label", Change: func(p *console.ConsoleMenuItem) { p.Label = "" }},
 	})
 }

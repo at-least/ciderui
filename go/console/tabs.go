@@ -16,8 +16,7 @@ type ConsoleTabs struct {
 }
 
 type ConsoleTab struct {
-	Label string
-	// Href: "" for a tab not available now.
+	Label   string
 	Href    string
 	Current bool
 }
@@ -35,6 +34,7 @@ func (t ConsoleTabs) Render(w io.Writer) error {
 	}
 	tabs := g.Map(t.Tabs, func(tab ConsoleTab) g.Node {
 		need("console.ConsoleTab", "a Label", tab.Label)
+		need("console.ConsoleTab", "an Href", tab.Href)
 		return pageLink("cui-console-tab", tab.Href, tab.Current, g.Text(tab.Label))
 	})
 	return h.Nav(h.Class("cui-console-tabs"), h.Aria("label", t.AriaLabel), tabs).Render(w)

@@ -59,6 +59,8 @@ func TestStripPanics(t *testing.T) {
 		{Want: "console.ConsoleStripGroup needs a Label", Change: func(p *console.ConsoleStrip) { p.Groups[0].Label = "" }},
 		{Want: "console.ConsoleStripGroup needs a ConsoleStripItem", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items = nil }},
 		{Want: "console.ConsoleStrip has 2 current items: one at most", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Current, p.Groups[0].Items[1].Current = true, true }},
+		{Want: "console.ConsoleStripItem needs an Href", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Href = "" }},
+		{Want: "console.ConsoleStripItem needs a Src", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Src = "" }},
 		{Want: "console.ConsoleStripItem needs an Alt: it is its link's name", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Alt = "" }},
 		{Want: "console.ConsoleStripItem's Detail needs a Caption above it", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Detail = "3 shots" }},
 		{Want: "console.ConsoleStripItem needs a MarkAriaLabel with a Mark, and none without", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Mark = console.ConsoleStripMarkWaiting }},

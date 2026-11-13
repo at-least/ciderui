@@ -28,11 +28,6 @@ func optionalText(el func(...g.Node) g.Node, class, text string) g.Node {
 	return el(h.Class(class), g.Text(text))
 }
 
-// @invariant: no href is a page not available now: aria-disabled, never
-// current
 func pageLink(class, href string, current bool, content g.Node) g.Node {
-	if href == "" {
-		return h.A(h.Class(class), h.Aria("disabled", "true"), content)
-	}
 	return h.A(h.Class(class), h.Href(href), g.If(current, h.Aria("current", "page")), content)
 }

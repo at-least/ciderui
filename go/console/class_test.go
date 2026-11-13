@@ -14,7 +14,6 @@ func TestEachPartWritesThePagesClass(t *testing.T) {
 	const page = example.PageClass
 	example.PagesClass(t, []example.ClassRow{
 		{Root: "cui-console-btn", Node: console.ConsoleBtn{Href: "", Label: "x", AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: page}},
-		{Root: "cui-console-btn cui-console-btn-icon cui-console-play-button", Node: console.ConsolePlayButton{Attrs: nil, AriaLabel: "x", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: page}},
 	})
 }
 
@@ -45,9 +44,9 @@ func TestEachPartWritesThePagesWords(t *testing.T) {
 		{"ConsoleChoiceMenu", *menu, []string{`id="langs" popover`, `id="langs-voices-title"`, `aria-labelledby="langs-voices-title"`, `popovertarget="langs"`}},
 		{"ConsolePlayer", player, []string{`data-control="play" aria-label="Go"`, `data-control="volume" min="0" max="100" value="100" aria-label="Loudness"`, `data-control="mute" aria-label="Silence"`,
 			`data-control="scrubber" min="0" max="0" value="0" aria-label="Position"`, `data-control="subtitles" aria-label="Captions" popovertarget="langs"`, `data-control="full-screen" aria-label="Fill Screen"`}},
-		{"ConsolePlayButton", console.ConsolePlayButton{Attrs: nil, AriaLabel: "Listen", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: ""}, []string{`aria-label="Listen"`}},
-		{"ConsolePlayButton", console.ConsolePlayButton{Attrs: nil, AriaLabel: "", Label: "Hear It", PlayingLabel: "Halt", Size: console.ConsoleBtnSizeMedium, Class: ""}, []string{">Hear It<", ">Halt<"}},
-		{"ConsoleContent", console.ConsoleContent{Sidebar: &sidebar, Back: console.ConsoleContentBack{Href: "/up", Label: "Up"}, Title: "Takes", Detail: "Every take.", Controls: nil, Children: nil},
+		{"ConsolePlayButton", console.ConsolePlayButton{Attrs: nil, AriaLabel: "Listen", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium}, []string{`aria-label="Listen"`}},
+		{"ConsolePlayButton", console.ConsolePlayButton{Attrs: nil, AriaLabel: "", Label: "Hear It", PlayingLabel: "Halt", Size: console.ConsoleBtnSizeMedium}, []string{">Hear It<", ">Halt<"}},
+		{"ConsoleContent", console.ConsoleContent{Sidebar: &sidebar, Back: &console.ConsoleContentBack{Href: "/up", Label: "Up"}, Title: "Takes", Detail: "Every take.", Controls: nil, Children: nil},
 			[]string{`aria-label="Show Menu"`, `href="/up"`, ">Up<", ">Takes<", ">Every take.<"}},
 		{"ConsolePlayerIntro", intro, []string{">The Feast<", ">2 min<", ">A short one.<", ">Watch<", ">From the Top<"}},
 		{"ConsolePlayerEnd", end, []string{">All Done<", ">Watch Again<"}},
@@ -74,7 +73,7 @@ func TestEachPartWritesThePagesAttrs(t *testing.T) {
 	}{
 		{"ConsoleDisclosure", console.ConsoleDisclosure{Summary: "x", Attrs: hook, Children: nil}},
 		{"ConsoleEmpty", console.ConsoleEmpty{Size: console.ConsoleEmptySizeSmall, Title: "x", Body: "", Attrs: hook}},
-		{"ConsolePlayButton", console.ConsolePlayButton{AriaLabel: "x", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Attrs: hook, Class: ""}},
+		{"ConsolePlayButton", console.ConsolePlayButton{AriaLabel: "x", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Attrs: hook}},
 	} {
 		got := example.Render(c.node)
 		root, _, _ := strings.Cut(got, ">")

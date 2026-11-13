@@ -26,21 +26,21 @@ func TestPlayRendersTheExamples(t *testing.T) {
 		path, stopAriaLabel string
 		rest                console.ConsolePlayButton
 	}{
-		{"console/console-play-button/examples/play.html", "Stop", console.ConsolePlayButton{Attrs: nil, AriaLabel: "Play", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: ""}},
-		{"console/console-play-button/examples/labelled.html", "", console.ConsolePlayButton{Attrs: nil, AriaLabel: "", Label: "Play This Line", PlayingLabel: "Stop", Size: console.ConsoleBtnSizeSmall, Class: ""}},
+		{"console/console-play-button/examples/play.html", "Stop", console.ConsolePlayButton{Attrs: nil, AriaLabel: "Play", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium}},
+		{"console/console-play-button/examples/labelled.html", "", console.ConsolePlayButton{Attrs: nil, AriaLabel: "", Label: "Play This Line", PlayingLabel: "Stop", Size: console.ConsoleBtnSizeSmall}},
 	} {
 		example.Check(t, h.Div(h.Class("flex flex-wrap items-center gap-3"), c.rest, g.Raw(playing(example.Render(c.rest), c.stopAriaLabel))), c.path)
 	}
 	example.Check(t, h.Div(h.Class("flex flex-wrap items-center gap-3"),
-		console.ConsolePlayButton{Attrs: nil, AriaLabel: "Play", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeSmall, Class: ""},
-		console.ConsolePlayButton{Attrs: nil, AriaLabel: "Play", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: ""},
-		console.ConsolePlayButton{Attrs: nil, AriaLabel: "Play", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeLarge, Class: ""},
+		console.ConsolePlayButton{Attrs: nil, AriaLabel: "Play", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeSmall},
+		console.ConsolePlayButton{Attrs: nil, AriaLabel: "Play", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium},
+		console.ConsolePlayButton{Attrs: nil, AriaLabel: "Play", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeLarge},
 	), "console/console-play-button/examples/sizes.html")
 }
 
 func TestPlayPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsolePlayButton {
-		return console.ConsolePlayButton{Attrs: nil, AriaLabel: "Play", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: ""}
+		return console.ConsolePlayButton{Attrs: nil, AriaLabel: "Play", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium}
 	}, []example.Break[console.ConsolePlayButton]{
 		{Want: "console.ConsolePlayButton needs an AriaLabel without a Label, and none with one", Change: func(p *console.ConsolePlayButton) { p.AriaLabel = "" }},
 		{Want: "console.ConsolePlayButton needs an AriaLabel without a Label, and none with one", Change: func(p *console.ConsolePlayButton) { p.Label, p.PlayingLabel = "Play This Line", "Stop" }},
