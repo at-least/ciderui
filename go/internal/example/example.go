@@ -42,7 +42,8 @@ func Render(node g.Node) string {
 	return html
 }
 
-// Check fails t where node does not write the example at path.
+// Check fails t where node does not write the example at path, naming the
+// first byte that differs: a player's markup is kilobytes on one line.
 func Check(t testing.TB, node g.Node, path string) {
 	t.Helper()
 	b, err := os.ReadFile(filepath.Join(root, "components", path))
@@ -55,9 +56,19 @@ func Check(t testing.TB, node g.Node, path string) {
 	for _, line := range strings.Split(string(b), "\n") {
 		want.WriteString(strings.TrimSpace(line))
 	}
-	if got := Render(node); got != want.String() {
-		t.Errorf("%s\n got: %s\nwant: %s", path, got, want.String())
+	if got, want := Render(node), want.String(); got != want {
+		at := 0
+		for at < min(len(got), len(want)) && got[at] == want[at] {
+			at++
+		}
+		t.Errorf("%s\n got: %s\nwant: %s\nfirst differs at byte %d:\n got: %q\nwant: %q", path, got, want, at, around(got, at), around(want, at))
 	}
+}
+
+const differenceContext = 40
+
+func around(markup string, at int) string {
+	return markup[max(0, at-differenceContext):min(len(markup), at+differenceContext)]
 }
 
 // Break is one thing wrong with a part, and the panic it draws.

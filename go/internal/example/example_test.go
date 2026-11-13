@@ -19,11 +19,15 @@ import (
 type recorder struct {
 	testing.TB
 	failures int
+	message  string
 }
 
 func (r *recorder) Helper() {}
 
-func (r *recorder) Errorf(string, ...any) { r.failures++ }
+func (r *recorder) Errorf(format string, args ...any) {
+	r.failures++
+	r.message = fmt.Sprintf(format, args...)
+}
 
 func TestCheckComparesTheExamplesLinesTrimmedAndJoined(t *testing.T) {
 	const path = "../go/internal/example/testdata/indented.html"
@@ -41,6 +45,27 @@ func TestCheckComparesTheExamplesLinesTrimmedAndJoined(t *testing.T) {
 		example.Check(&r, c.node, path)
 		if r.failures != c.failures {
 			t.Errorf("Check failed %d times on %s, want %d", r.failures, c.name, c.failures)
+		}
+	}
+}
+
+func TestCheckNamesWhereTheMarkupFirstDiffersFromTheExample(t *testing.T) {
+	long := strings.Repeat("x", 100)
+	for _, c := range []struct{ name, got, want string }{
+		{"a byte of another value", "<p><b>a c</b></p>", `first differs at byte 8:
+ got: "<p><b>a c</b></p>"
+want: "<p><b>a b</b></p>"`},
+		{"markup that ends where the example goes on", "<p><b>a b</b>", `first differs at byte 13:
+ got: "<p><b>a b</b>"
+want: "<p><b>a b</b></p>"`},
+		{"long markup, 40 bytes each side of the difference", "<p><b>a b</b></p>" + long + "y" + long, `first differs at byte 17:
+ got: "<p><b>a b</b></p>` + long[:40] + `"
+want: "<p><b>a b</b></p>"`},
+	} {
+		var r recorder
+		example.Check(&r, g.Raw(c.got), "../go/internal/example/testdata/indented.html")
+		if !strings.HasSuffix(r.message, c.want) {
+			t.Errorf("%s: Check's failure is\n%s\nwant it to end\n%s", c.name, r.message, c.want)
 		}
 	}
 }
