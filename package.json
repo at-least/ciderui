@@ -3,7 +3,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "node scripts/docker.mjs && node test/go.mjs"
+    "test": "node test/go.mjs && node scripts/docker.mjs"
   },
   "devDependencies": {
     "@tailwindcss/cli": "4.3.3",
