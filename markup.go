@@ -1,6 +1,7 @@
 package ciderui
 
 import (
+	"cmp"
 	"fmt"
 	"maps"
 	"slices"
@@ -66,7 +67,8 @@ func vocabularyOf(set string) vocabulary {
 	foreign := map[string]bool{}
 	for _, path := range cssFiles() {
 		if inAnotherSet(path) {
-			maps.Copy(foreign, parsed(path, func() map[string]bool { return classesIn(css(path)) }))
+			classes, _ := parse(path)
+			maps.Copy(foreign, classes)
 		}
 	}
 	v := vocabulary{classes: map[string]bool{}, values: nil}
@@ -74,13 +76,13 @@ func vocabularyOf(set string) vocabulary {
 		if inAnotherSet(path) {
 			continue
 		}
-		text := css(path)
-		for class := range parsed(path, func() map[string]bool { return classesIn(text) }) {
+		classes, compounds := parse(path)
+		for class := range classes {
 			if !foreign[class] {
 				v.classes[class] = true
 			}
 		}
-		for _, compound := range parsed(path, func() []compound { return compoundsIn(text) }) {
+		for _, compound := range compounds {
 			for _, class := range compound.classes {
 				if !strings.HasPrefix(class, "cui-") {
 					continue
@@ -95,13 +97,14 @@ func vocabularyOf(set string) vocabulary {
 	return v
 }
 
-func parsed[T any](path string, parse func() T) T {
+func parse(path string) (classes map[string]bool, compounds []compound) {
 	defer func() {
 		if r := recover(); r != nil {
 			panic(path + ": " + fmt.Sprint(r))
 		}
 	}()
-	return parse()
+	selectors, utilities := rules(css(path))
+	return classesIn(selectors, utilities), compoundsIn(selectors)
 }
 
 var vocabularies = sync.OnceValue(func() map[string]vocabulary {
@@ -129,10 +132,9 @@ func linkedSet(tags []startTag) string {
 	return bothSets
 }
 
-func classesIn(css string) map[string]bool {
+func classesIn(selectors, utilities []string) map[string]bool {
 	classes := map[string]bool{}
-	styleRules, utilities := rules(css)
-	for _, selector := range styleRules {
+	for _, selector := range selectors {
 		for i := range len(selector) {
 			if class := name(selector[i+1:]); selector[i] == '.' && strings.HasPrefix(class, "cui-") {
 				classes[class] = true
@@ -147,10 +149,9 @@ func classesIn(css string) map[string]bool {
 	return classes
 }
 
-func compoundsIn(css string) []compound {
+func compoundsIn(selectors []string) []compound {
 	var own, others []compound
-	styleRules, _ := rules(css)
-	for _, selector := range styleRules {
+	for _, selector := range selectors {
 		own = append(own, subjects(selector, false, &others)...)
 	}
 	return append(own, others...)
@@ -273,18 +274,15 @@ func rules(css string) (selectors, utilities []string) {
 	var text strings.Builder
 	rest := css
 	for {
-		i := strings.Index(rest, "/*")
-		if i < 0 {
+		before, comment, found := strings.Cut(rest, "/*")
+		text.WriteString(before)
+		if !found {
 			break
 		}
-		text.WriteString(rest[:i])
-		end := strings.Index(rest[i:], "*/")
-		if end < 0 {
+		if _, rest, found = strings.Cut(comment, "*/"); !found {
 			panic("an unclosed comment")
 		}
-		rest = rest[i+end+2:]
 	}
-	text.WriteString(rest)
 	stack := [][]string{nil}
 	var head strings.Builder
 	for _, c := range text.String() {
@@ -368,10 +366,6 @@ func CheckMarkup(html string) []string {
 	if set != bothSets {
 		sheet = "the " + set + " stylesheet this page links"
 	}
-	slotSets := []string{set}
-	if set == bothSets {
-		slotSets = []string{"site", "console"}
-	}
 	var problems []string
 	for _, tag := range tags {
 		on := tag.on()
@@ -381,7 +375,7 @@ func CheckMarkup(html string) []string {
 				ours = append(ours, c)
 				continue
 			}
-			if utility := slotUtility(c, slotSets); utility != "" {
+			if utility := slotUtility(c, set); utility != "" {
 				problems = append(problems, fmt.Sprintf("class %q on %s: write %s, the set's name for this color", c, on, utility))
 			}
 		}
@@ -396,10 +390,7 @@ func CheckMarkup(html string) []string {
 			if other := otherSet(set); other != "" && vocabularies()[other].classes[c] {
 				problems = append(problems, fmt.Sprintf("class %q on %s: a %s class; this page links the %s stylesheet", c, on, other, set))
 			} else {
-				hint := partClasses(c, known.classes)
-				if hint == "" {
-					hint = nearest(c, known.classes)
-				}
+				hint := cmp.Or(partClasses(c, known.classes), nearest(c, known.classes))
 				problems = append(problems, fmt.Sprintf("class %q on %s: %s has no such class%s", c, on, sheet, hint))
 			}
 		}
@@ -622,12 +613,7 @@ func startTags(html string) []startTag {
 		}
 		rest = rest[i+1:]
 		if after, ok := strings.CutPrefix(rest, "!--"); ok {
-			end := strings.Index(after, "-->")
-			if end < 0 {
-				rest = ""
-			} else {
-				rest = after[end+3:]
-			}
+			_, rest, _ = strings.Cut(after, "-->")
 			continue
 		}
 		if rest == "" || !(rest[0] >= 'a' && rest[0] <= 'z' || rest[0] >= 'A' && rest[0] <= 'Z') {
@@ -650,12 +636,7 @@ func startTags(html string) []startTag {
 			rest = rest[end:]
 			if after, ok := strings.CutPrefix(rest, "="); ok {
 				if after != "" && (after[0] == '"' || after[0] == '\'') {
-					close := strings.IndexByte(after[1:], after[0])
-					if close < 0 {
-						a.value, rest = after[1:], ""
-					} else {
-						a.value, rest = after[1:close+1], after[close+2:]
-					}
+					a.value, rest, _ = strings.Cut(after[1:], after[:1])
 				} else {
 					end := indexFunc(after, func(c byte) bool { return isSpace(c) || c == '>' })
 					a.value, rest = after[:end], after[end:]
@@ -664,12 +645,7 @@ func startTags(html string) []startTag {
 			tag.attributes = append(tag.attributes, a)
 		}
 		if strings.EqualFold(tag.name, "script") || strings.EqualFold(tag.name, "style") {
-			close := strings.Index(rest, "</"+tag.name)
-			if close < 0 {
-				rest = ""
-			} else {
-				rest = rest[close:]
-			}
+			_, rest, _ = strings.Cut(rest, "</"+tag.name)
 		}
 		tags = append(tags, tag)
 	}

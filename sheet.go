@@ -2,6 +2,7 @@ package ciderui
 
 import (
 	"fmt"
+	"maps"
 	"strings"
 	"sync"
 )
@@ -17,11 +18,12 @@ var themeUtilities = []struct{ variable, prefix string }{
 }
 
 // @invariant: slotNames[set]["prefix --slot"] is the utility the set names
-// that slot by under that prefix ("text --cui-c-text-2" is text-secondary)
+// that slot by under that prefix ("text --cui-c-text-2" is text-secondary);
+// bothSets holds each set's, the site's where both name a slot (it is copied last)
 var slotNames = sync.OnceValue(func() map[string]map[string]string {
 	theme := themeNames()
-	out := map[string]map[string]string{}
-	for _, set := range []string{"site", "console"} {
+	out := map[string]map[string]string{bothSets: {}}
+	for _, set := range []string{"console", "site"} {
 		named := map[string]string{}
 		for setVariable, slot := range setSlots(string(built(set).plain)) {
 			for _, t := range theme[setVariable] {
@@ -29,6 +31,7 @@ var slotNames = sync.OnceValue(func() map[string]map[string]string {
 			}
 		}
 		out[set] = named
+		maps.Copy(out[bothSets], named)
 	}
 	return out
 })
@@ -81,7 +84,7 @@ func setSlots(built string) map[string]string {
 // @invariant: slotUtility keeps class's variants and opacity around the
 // utility (md:border-(--cui-c-divider)/50 is md:border-divider/50); "" when no
 // utility names the slot
-func slotUtility(class string, sets []string) string {
+func slotUtility(class, set string) string {
 	open := strings.Index(class, "-(--cui-c-")
 	if open < 0 {
 		return ""
@@ -95,10 +98,8 @@ func slotUtility(class string, sets []string) string {
 		variants, prefix = prefix[:colon+1], prefix[colon+1:]
 	}
 	slot := class[open+2 : open+end]
-	for _, set := range sets {
-		if name := slotNames()[set][prefix+" "+slot]; name != "" {
-			return variants + name + class[open+end+1:]
-		}
+	if name := slotNames()[set][prefix+" "+slot]; name != "" {
+		return variants + name + class[open+end+1:]
 	}
 	return ""
 }
