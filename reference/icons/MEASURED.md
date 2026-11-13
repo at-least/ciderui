@@ -31,7 +31,7 @@ Intersection over union; `form.mjs` fails if `ALERT` shares below 0.85, a mark s
 
 ## The accordion's chevron
 
-apple.com's line, drawn as the bag's accordion draws it: a polyline through (15, 1.13), (8.5, 7.72) and (2, 1.13) in 17 by 8.85, 2.25 thick, round (`glyph.Disclosure`). Turned up, it is the line its animation ends on (the same points mirrored). `lines.mjs` reads it live and holds ciderui's to it: 1 of the ink shared (fails below 0.85), in the accordion's example. Measured 2026-10-19 in Chromium 151 on Linux (`results/lines.json`; it holds the footer's chevron too, a phone's footer section's, through (10.075, 0.675), (5.5, 5.323) and (0.925, 0.675) in 11 by 6, 1 thick, round, 1 of the ink shared: `glyph.FooterChevron`, which `lines.mjs` does not read).
+apple.com's line, drawn as the bag's accordion draws it: a polyline through (15, 1.13), (8.5, 7.72) and (2, 1.13) in 17 by 8.85, 2.25 thick, round (`glyph.Disclosure`). Turned up, it is the line its animation ends on (the same points mirrored). `lines.mjs` reads it live and holds ciderui's to it: 1 of the ink shared (fails below 0.85), in the accordion's example. Measured 2026-10-19 in Chromium 151 on Linux (`results/lines.json`; it holds the footer's chevron too, a phone's footer section's, through (10.075, 0.675), (5.5, 5.323) and (0.925, 0.675) in 11 by 6, 1 thick, round, 1 of the ink shared, the footer directory's example's chevron, which `lines.mjs` does not read).
 
 ## Running it
 
