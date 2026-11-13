@@ -9,11 +9,11 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsolePlay is a button that plays one audio clip and stops it, written
+// ConsolePlayButton is a button that plays one audio clip and stops it, written
 // at rest: paused. It holds both glyphs and both labels; the page's script
 // sets data-state="playing" (and an icon-only one's aria-label) and, while
-// playing, --cui-console-play-progress (0% to 100%), the ring round the glyph.
-type ConsolePlay struct {
+// playing, --cui-console-play-button-progress (0% to 100%), the ring round the glyph.
+type ConsolePlayButton struct {
 	// AriaLabel is an icon-only button's name at rest, what pressing it does
 	// ("Play"); "" with a Label, whose words name it.
 	AriaLabel string
@@ -28,25 +28,25 @@ type ConsolePlay struct {
 	Class string
 }
 
-func (p ConsolePlay) Render(w io.Writer) error {
+func (p ConsolePlayButton) Render(w io.Writer) error {
 	labelled := p.Label != ""
 	if labelled != (p.PlayingLabel != "") {
-		panic("console.ConsolePlay needs a Label and a PlayingLabel, or neither")
+		panic("console.ConsolePlayButton needs a Label and a PlayingLabel, or neither")
 	}
 	if labelled == (p.AriaLabel != "") {
-		panic("console.ConsolePlay needs an AriaLabel without a Label, and none with one")
+		panic("console.ConsolePlayButton needs an AriaLabel without a Label, and none with one")
 	}
-	root := "cui-console-btn cui-console-btn-icon cui-console-play"
+	root := "cui-console-btn cui-console-btn-icon cui-console-play-button"
 	if labelled {
-		root = "cui-console-btn cui-console-play"
+		root = "cui-console-btn cui-console-play-button"
 	}
 	return h.Button(attr.Class(root, p.Class),
 		attr.Optional("data-size", p.Size.value), h.Data("shape", "capsule"),
 		h.Type("button"), attr.Optional("aria-label", p.AriaLabel), p.Attrs,
-		h.Span(h.Class("cui-console-play-glyph"), lucide.Play.Class("cui-console-play-paused"), lucide.Square.Class("cui-console-play-playing")),
+		h.Span(h.Class("cui-console-play-button-glyph"), lucide.Play.Class("cui-console-play-button-paused"), lucide.Square.Class("cui-console-play-button-playing")),
 		g.If(labelled, g.Group{
-			h.Span(h.Class("cui-console-play-paused"), g.Text(p.Label)),
-			h.Span(h.Class("cui-console-play-playing"), g.Text(p.PlayingLabel)),
+			h.Span(h.Class("cui-console-play-button-paused"), g.Text(p.Label)),
+			h.Span(h.Class("cui-console-play-button-playing"), g.Text(p.PlayingLabel)),
 		}),
 	).Render(w)
 }

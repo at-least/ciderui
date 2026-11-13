@@ -1,6 +1,6 @@
 @layer components {
   .cui-console-status {
-    --cui-console-status-color: var(--cui-c-console-neutral-label-secondary);
+    --cui-console-status-color: var(--cui-c-console-warning-label-primary);
 
     display: inline-flex;
     align-items: center;
@@ -8,22 +8,6 @@
     line-height: 18px;
     letter-spacing: normal;
     color: var(--cui-c-console-neutral-label-primary);
-  }
-
-  .cui-console-status[data-color="info"] {
-    --cui-console-status-color: var(--cui-c-console-info-label-primary);
-  }
-
-  .cui-console-status[data-color="success"] {
-    --cui-console-status-color: var(--cui-c-console-success-label-primary);
-  }
-
-  .cui-console-status[data-color="warning"] {
-    --cui-console-status-color: var(--cui-c-console-warning-label-primary);
-  }
-
-  .cui-console-status[data-color="error"] {
-    --cui-console-status-color: var(--cui-c-console-error-label-primary);
   }
 
   .cui-console-status-mark {

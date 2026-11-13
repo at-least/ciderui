@@ -10,6 +10,7 @@
     --cui-console-btn-fill-disabled: var(--cui-c-console-neutral-fill-tertiary);
 
     display: inline-flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
     gap: 0.25rem;

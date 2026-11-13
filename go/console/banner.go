@@ -13,7 +13,6 @@ import (
 // info.circle, checkmark.circle, exclamationmark.triangle and
 // exclamationmark.circle in Lucide
 var bannerIcons = map[ConsoleColor]lucide.Icon{
-	ConsoleColorNeutral: lucide.Info,
 	ConsoleColorInfo:    lucide.Info,
 	ConsoleColorSuccess: lucide.CircleCheck,
 	ConsoleColorWarning: lucide.TriangleAlert,
@@ -27,11 +26,15 @@ type ConsoleBanner struct {
 	// Body: the banner's words, or blocks of them, written in its
 	// <div class="cui-console-banner-body">.
 	Body g.Node
-	// Children: what follows the body, its actions.
-	Children g.Node
+	// Actions: the buttons or links under the body, written in its
+	// <p class="cui-console-banner-actions">.
+	Actions g.Node
 }
 
 func (b ConsoleBanner) Render(w io.Writer) error {
+	if b.Color == ConsoleColorNeutral {
+		panic("console.ConsoleBanner needs a Color: a banner's color is info, success, warning or error")
+	}
 	role := "status"
 	if b.Color == ConsoleColorError {
 		role = "alert"
@@ -41,7 +44,7 @@ func (b ConsoleBanner) Render(w io.Writer) error {
 		h.Div(
 			optionalText(h.P, "cui-console-banner-title", b.Title),
 			g.If(b.Body != nil, h.Div(h.Class("cui-console-banner-body"), b.Body)),
-			b.Children,
+			g.If(b.Actions != nil, h.P(h.Class("cui-console-banner-actions"), b.Actions)),
 		),
 	).Render(w)
 }

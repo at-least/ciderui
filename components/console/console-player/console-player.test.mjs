@@ -222,7 +222,7 @@ export const cases = [
       { target: '.cui-console-player-overlay', props: ['visibility'], golden: 'its controls hidden under it: one Play, nothing else to press (the owner, 2026-11-05)' },
       { target: '.cui-console-player-intro-title', props: ['font-size', 'line-height', 'font-weight', 'color', 'box-left'], golden: `${INTRO}; the title as large as 4% of the player, at the least tv.apple.com's 26px bold title (tv-player:title)` },
       { target: '.cui-console-player-intro-detail', props: ['font-size', 'line-height', 'font-weight', 'color'], golden: INTRO },
-      { target: '.cui-console-player-intro-summary', props: ['font-size', 'line-height', 'color', 'max-width', '-webkit-line-clamp'], golden: INTRO },
+      { target: '.cui-console-player-intro-body', props: ['font-size', 'line-height', 'color', 'max-width', '-webkit-line-clamp'], golden: INTRO },
       { target: '.cui-console-player-intro-play', props: ['box-height', 'padding-left', 'border-top-left-radius', 'background-color', 'color', 'font-size', 'font-weight', 'column-gap'], golden: `${INTRO}; Play a white 44px capsule in the picture's black, the HIG's 44pt target` },
       { target: '.cui-console-player-intro-play', props: ['background-color'], state: 'hover', golden: 'hovered, the controls\' 90% white (--cui-c-on-video-control)' },
       { target: '.cui-console-player-intro [data-control="restart"]', props: ['display'], golden: 'the smaller start-over hidden until the page\'s script finds a saved place' },

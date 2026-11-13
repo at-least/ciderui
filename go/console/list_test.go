@@ -10,13 +10,13 @@ import (
 )
 
 func TestListItemRendersTheExamples(t *testing.T) {
-	list := h.Div(h.Class("max-w-md"), console.ConsoleList{Items: []console.ConsoleListItem{
+	list := h.Div(h.Class("max-w-md"), console.ConsoleList{Rows: []console.ConsoleListRow{
 		{Label: "Shop App", Detail: "8 open issues · crash-free 99.2%", Children: nil},
 		{Label: "Orders API", Detail: "2 open issues", Children: nil},
 		{Label: "nightly-backup", Detail: "Last run 4 hours ago", Children: nil},
 	}})
 	example.Check(t, list, "console/console-list/examples/list.html")
-	content := h.Div(h.Class("max-w-md"), console.ConsoleList{Items: []console.ConsoleListItem{
+	content := h.Div(h.Class("max-w-md"), console.ConsoleList{Rows: []console.ConsoleListRow{
 		{Label: "nightly-backup", Detail: "Last run 4 hours ago",
 			Children: h.P(h.Class("mt-2"), h.Button(h.Class("cui-console-btn"), h.Type("button"), g.Text("Pause")))},
 	}})
@@ -24,24 +24,24 @@ func TestListItemRendersTheExamples(t *testing.T) {
 }
 
 func TestListItemARowOfItsOwnContentNeedsNoLabel(t *testing.T) {
-	got := example.Render(console.ConsoleListItem{Label: "", Detail: "", Children: h.P(g.Text("Shop App"))})
-	if want := `<div class="cui-console-list-item"><p>Shop App</p></div>`; got != want {
+	got := example.Render(console.ConsoleListRow{Label: "", Detail: "", Children: h.P(g.Text("Shop App"))})
+	if want := `<div class="cui-console-list-row"><p>Shop App</p></div>`; got != want {
 		t.Errorf("a row of its own content wrote more than that content:\n got: %s\nwant: %s", got, want)
 	}
 }
 
 func TestListPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleList {
-		return console.ConsoleList{Items: []console.ConsoleListItem{{Label: "x", Detail: "", Children: nil}}}
+		return console.ConsoleList{Rows: []console.ConsoleListRow{{Label: "x", Detail: "", Children: nil}}}
 	}, []example.Break[console.ConsoleList]{
-		{Want: "console.ConsoleList needs Items: a page with none shows a ConsoleEmpty", Change: func(p *console.ConsoleList) { p.Items = nil }},
+		{Want: "console.ConsoleList needs Rows: a page with none shows a ConsoleEmpty", Change: func(p *console.ConsoleList) { p.Rows = nil }},
 	})
 }
 
 func TestListItemPanics(t *testing.T) {
-	example.Panics(t, func() console.ConsoleListItem {
-		return console.ConsoleListItem{Label: "x", Detail: "", Children: nil}
-	}, []example.Break[console.ConsoleListItem]{
-		{Want: "console.ConsoleListItem needs a Label or its own content", Change: func(p *console.ConsoleListItem) { p.Label = "" }},
+	example.Panics(t, func() console.ConsoleListRow {
+		return console.ConsoleListRow{Label: "x", Detail: "", Children: nil}
+	}, []example.Break[console.ConsoleListRow]{
+		{Want: "console.ConsoleListRow needs a Label or its own content", Change: func(p *console.ConsoleListRow) { p.Label = "" }},
 	})
 }

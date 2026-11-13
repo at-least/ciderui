@@ -490,7 +490,7 @@
     color: var(--cui-c-on-video-control);
   }
 
-  .cui-console-player-intro-summary {
+  .cui-console-player-intro-body {
     display: -webkit-box;
     overflow: hidden;
     -webkit-box-orient: vertical;

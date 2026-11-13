@@ -1,9 +1,8 @@
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const COLORS = ['neutral', 'info', 'success', 'warning', 'error'];
-const at = (c) => `.cui-console-status${c === 'neutral' ? ':not([data-color])' : `[data-color="${c}"]`}`;
-const MARK = (c) => `${at(c)} .cui-console-status-mark`;
+const STATUS = '.cui-console-status';
+const MARK = '.cui-console-status-mark';
 
 export const cases = [
   {
@@ -11,12 +10,12 @@ export const cases = [
     html: ex('status'),
     widths: [1200, 390],
     checks: [
-      { target: MARK('success'), props: ['height', 'margin-right'], asc: ['testflight', 'status.icon'] },
-      { target: at('success'), props: ['font-size', 'line-height'], asc: ['testflight', 'status.word'] },
-      { target: at('success'), props: ['display', 'align-items'], golden: 'the mark and the word on one line, the mark centered on it' },
-      { target: at('success'), props: ['color'], golden: 'the word in the console\'s label: App Store Connect\'s older look wrote rgb(51, 51, 51)' },
-      { target: MARK('success'), props: ['box-width'], golden: 'as wide as App Store Connect\'s 12px (an asc check reads no width: its text was SF)' },
-      ...COLORS.map((c) => ({ target: MARK(c), props: ['background-color', 'border-top-left-radius'], golden: `${c}: the mark in the console's ${c} label (tokens.css, fitted to 4.5:1, decision 21), a circle (App Store Connect's glyph's shape is unread)` })),
+      { target: MARK, props: ['height', 'margin-right'], asc: ['testflight', 'status.icon'] },
+      { target: STATUS, props: ['font-size', 'line-height'], asc: ['testflight', 'status.word'] },
+      { target: STATUS, props: ['display', 'align-items'], golden: 'the mark and the word on one line, the mark centered on it' },
+      { target: STATUS, props: ['color'], golden: 'the word in the console\'s label: App Store Connect\'s older look wrote rgb(51, 51, 51)' },
+      { target: MARK, props: ['box-width'], golden: 'as wide as App Store Connect\'s 12px (an asc check reads no width: its text was SF)' },
+      { target: MARK, props: ['background-color', 'border-top-left-radius'], golden: 'the mark in the console\'s warning label, the one color a status takes: it says look here (tokens.css, fitted to 4.5:1, decision 21), a circle (App Store Connect\'s glyph\'s shape is unread)' },
     ],
   },
   {
@@ -34,13 +33,13 @@ export const cases = [
     widths: [1200],
     forcedColors: true,
     checks: [
-      { target: MARK('error'), props: ['background-color'], golden: 'CanvasText: forced colors would drop the fill and the mark with it' },
+      { target: MARK, props: ['background-color'], golden: 'CanvasText: forced colors would drop the fill and the mark with it' },
     ],
   },
   {
     name: 'statuses dark',
     html: `<div class="cui-dark">${ex('status')}</div>`,
     widths: [1200],
-    checks: COLORS.map((c) => ({ target: MARK(c), props: ['background-color'], golden: 'the dark side derived (tokens.css, decision 18)' })),
+    checks: [{ target: MARK, props: ['background-color'], golden: 'the dark side derived (tokens.css, decision 18)' }],
   },
 ];

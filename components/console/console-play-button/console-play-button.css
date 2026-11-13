@@ -2,7 +2,7 @@
   /* @trap: the glyph, its ring's box; Lucide's play and stop filled: CSS wins over
      the <svg>'s fill="none". Not filled and stroked: in the label's
      translucent color the stroke over the fill drew a darker outline */
-  .cui-console-play-glyph {
+  .cui-console-play-button-glyph {
     flex: none;
     position: relative;
     display: inline-grid;
@@ -19,29 +19,29 @@
     }
   }
 
-  .cui-console-play-glyph > .cui-console-play-playing {
+  .cui-console-play-button-glyph > .cui-console-play-button-playing {
     width: 0.625em;
     height: 0.625em;
   }
 
-  .cui-console-play[data-state="playing"] .cui-console-play-paused,
-  .cui-console-play:not([data-state="playing"]) .cui-console-play-playing {
+  .cui-console-play-button[data-state="playing"] .cui-console-play-button-paused,
+  .cui-console-play-button:not([data-state="playing"]) .cui-console-play-button-playing {
     display: none;
   }
 
-  .cui-console-play[data-state="playing"] .cui-console-play-glyph::before {
+  .cui-console-play-button[data-state="playing"] .cui-console-play-button-glyph::before {
     content: "";
     position: absolute;
     inset: -0.1875em;
     border-radius: 50%;
-    background-image: conic-gradient(currentColor var(--cui-console-play-progress, 0%), color-mix(in srgb, currentColor 25%, transparent) 0);
+    background-image: conic-gradient(currentColor var(--cui-console-play-button-progress, 0%), color-mix(in srgb, currentColor 25%, transparent) 0);
     /* @external: a mask reads only the alpha: CanvasText is opaque in every theme,
        where currentColor is the label's translucent one */
     mask-image: radial-gradient(farthest-side, transparent calc(100% - 0.125em), CanvasText calc(100% - 0.125em));
 
     @media (forced-colors: active) {
       forced-color-adjust: none;
-      background-image: conic-gradient(ButtonText var(--cui-console-play-progress, 0%), GrayText 0);
+      background-image: conic-gradient(ButtonText var(--cui-console-play-button-progress, 0%), GrayText 0);
     }
   }
 }

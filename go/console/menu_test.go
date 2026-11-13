@@ -38,7 +38,7 @@ func TestMenuRendersTheExamples(t *testing.T) {
 
 func choiceMenu() console.ConsoleChoiceMenu {
 	return console.ConsoleChoiceMenu{ID: "subtitles", Columns: []console.ConsoleChoiceColumn{
-		{Name: "subtitles", Title: "Subtitles", Options: []console.ConsoleChoiceOption{
+		{Column: "subtitles", Title: "Subtitles", Options: []console.ConsoleChoiceOption{
 			{Label: "Off", Value: "off", Lang: "", Checked: false},
 			{Label: "English", Value: "en", Lang: "en", Checked: true},
 			{Label: "日本語", Value: "ja", Lang: "ja", Checked: false},
@@ -49,7 +49,7 @@ func choiceMenu() console.ConsoleChoiceMenu {
 // @external: two columns, the voices beside the subtitles, as the Apple TV app's
 func columnsMenu() console.ConsoleChoiceMenu {
 	m := choiceMenu()
-	m.Columns = append([]console.ConsoleChoiceColumn{{Name: "voices", Title: "Voices", Options: []console.ConsoleChoiceOption{
+	m.Columns = append([]console.ConsoleChoiceColumn{{Column: "voices", Title: "Voices", Options: []console.ConsoleChoiceOption{
 		{Label: "English", Value: "en", Lang: "en", Checked: true},
 		{Label: "日本語", Value: "ja", Lang: "ja", Checked: false},
 	}}}, m.Columns...)
@@ -85,9 +85,9 @@ func TestChoiceMenuPanics(t *testing.T) {
 	example.Panics(t, columnsMenu, []example.Break[console.ConsoleChoiceMenu]{
 		{Want: "console.ConsoleChoiceMenu needs an ID", Change: func(p *console.ConsoleChoiceMenu) { p.ID = "" }},
 		{Want: "console.ConsoleChoiceMenu needs a column", Change: func(p *console.ConsoleChoiceMenu) { p.Columns = nil }},
-		{Want: "console.ConsoleChoiceColumn needs a Name and a Title", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Name = "" }},
-		{Want: "console.ConsoleChoiceColumn needs a Name and a Title", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Title = "" }},
-		{Want: `console.ConsoleChoiceMenu has two columns named "voices": each needs a name of its own`, Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Name = "voices" }},
+		{Want: "console.ConsoleChoiceColumn needs a Column and a Title", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Column = "" }},
+		{Want: "console.ConsoleChoiceColumn needs a Column and a Title", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Title = "" }},
+		{Want: `console.ConsoleChoiceMenu has two columns "voices": each needs a Column of its own`, Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Column = "voices" }},
 		{Want: "console.ConsoleChoiceColumn needs an Option", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Options = nil }},
 		{Want: "console.ConsoleChoiceOption needs a Label and a Value", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Options[0].Label = "" }},
 		{Want: "console.ConsoleChoiceOption needs a Label and a Value", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Options[0].Value = "" }},

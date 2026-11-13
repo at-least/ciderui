@@ -22,11 +22,11 @@ const playerStill = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M
 // @external: the voices and the subtitles side by side, as the Apple TV app's
 func subtitlesMenu() *console.ConsoleChoiceMenu {
 	return &console.ConsoleChoiceMenu{ID: "subtitles", Columns: []console.ConsoleChoiceColumn{
-		{Name: "voices", Title: "Voices", Options: []console.ConsoleChoiceOption{
+		{Column: "voices", Title: "Voices", Options: []console.ConsoleChoiceOption{
 			{Label: "English", Value: "en", Lang: "en", Checked: true},
 			{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant", Checked: false},
 		}},
-		{Name: "subtitles", Title: "Subtitles", Options: []console.ConsoleChoiceOption{
+		{Column: "subtitles", Title: "Subtitles", Options: []console.ConsoleChoiceOption{
 			{Label: "Off", Value: "off", Lang: "", Checked: false},
 			{Label: "English", Value: "en", Lang: "en", Checked: true},
 			{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant", Checked: false},
@@ -59,7 +59,7 @@ func stills() console.ConsolePlayer {
 
 func intro() console.ConsolePlayer {
 	p := stills()
-	p.Intro = &console.ConsolePlayerIntro{Title: "The Wedding", Detail: "8 min 33 s", Summary: "The bride was late, and the old dog knew why.", StartLabel: "Play", RestartLabel: "Start Over"}
+	p.Intro = &console.ConsolePlayerIntro{Title: "The Wedding", Detail: "8 min 33 s", Body: "The bride was late, and the old dog knew why.", StartLabel: "Play", RestartLabel: "Start Over"}
 	return p
 }
 
@@ -252,11 +252,11 @@ func TestPlayerEndPanics(t *testing.T) {
 	})
 }
 
-func TestPlayerIntroWritesNoDetailOrSummaryItHasNone(t *testing.T) {
+func TestPlayerIntroWritesNoDetailOrBodyItHasNone(t *testing.T) {
 	p := intro()
-	p.Intro.Detail, p.Intro.Summary = "", ""
+	p.Intro.Detail, p.Intro.Body = "", ""
 	want := `<p class="cui-console-player-intro-title">The Wedding</p><div class="cui-console-player-intro-actions">`
 	if got := example.Render(p); !strings.Contains(got, want) {
-		t.Errorf("the intro with no Detail or Summary wrote a line for one, not its title then its actions: %s", got)
+		t.Errorf("the intro with no Detail or Body wrote a line for one, not its title then its actions: %s", got)
 	}
 }

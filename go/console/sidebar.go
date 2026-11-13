@@ -26,9 +26,30 @@ type ConsoleSidebar struct {
 	CloseAriaLabel string
 	// Footer: at the sidebar's foot (a sign-out form).
 	Footer g.Node
-	// Children: [ConsoleMenuItem]s, with a <p class="cui-console-menu-title">
-	// or an <hr class="cui-console-menu-rule"> between runs of them.
-	Children g.Node
+	// Sections: each one's Title above its items; a section after the first
+	// with no Title is set apart by a rule.
+	Sections []ConsoleMenuSection
+}
+
+type ConsoleMenuSection struct {
+	Title string
+	Items []ConsoleMenuItem
+}
+
+func menuSections(sections []ConsoleMenuSection) g.Node {
+	var nodes g.Group
+	for i, s := range sections {
+		switch {
+		case s.Title != "":
+			nodes = append(nodes, h.P(h.Class("cui-console-menu-title"), g.Text(s.Title)))
+		case i > 0:
+			nodes = append(nodes, h.Hr(h.Class("cui-console-menu-rule")))
+		}
+		for _, item := range s.Items {
+			nodes = append(nodes, item)
+		}
+	}
+	return nodes
 }
 
 func (s ConsoleSidebar) Render(w io.Writer) error {
@@ -44,7 +65,7 @@ func (s ConsoleSidebar) Render(w io.Writer) error {
 				h.A(h.Class("cui-console-sidebar-wordmark"), h.Href(s.Home), g.Text(s.Wordmark)),
 				ConsoleBtn{Href: "", Label: "", AriaLabel: s.CloseAriaLabel, Icon: lucide.X, Submit: false, Variant: ConsoleBtnVariantPlain, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: g.Group{h.PopoverTarget(sidebarID), h.PopoverTargetAction("hide"), h.AutoFocus()}, Class: "cui-console-sidebar-close"},
 			),
-			h.Div(h.Class("cui-console-sidebar-body cui-console-menu"), h.Data("variant", "sidebar"), s.Children),
+			h.Div(h.Class("cui-console-sidebar-body cui-console-menu"), h.Data("variant", "sidebar"), menuSections(s.Sections)),
 			h.Div(h.Class("cui-console-sidebar-footer"), s.Footer),
 		),
 	}.Render(w)

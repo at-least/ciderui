@@ -11,7 +11,7 @@ import (
 
 // ConsolePlayerIntro is what the player shows over its picture before it
 // first plays, in place of its controls: the title, a line of detail and a
-// summary, a button that plays and a smaller one that starts over. The page's
+// sentence, a button that plays and a smaller one that starts over. The page's
 // script labels the buttons (a saved position: "Resume from 3:12", and the
 // smaller one shown) and drops the player's data-intro as it plays, the
 // layer fading out.
@@ -19,8 +19,8 @@ type ConsolePlayerIntro struct {
 	Title string
 	// Detail: the length ("8 min 33 s").
 	Detail string
-	// Summary: a sentence of what it is about.
-	Summary    string
+	// Body: a sentence of what it is about.
+	Body       string
 	StartLabel string
 	// RestartLabel is the smaller button's words, hidden until the page's
 	// script shows it.
@@ -157,7 +157,7 @@ func intro(i ConsolePlayerIntro) g.Node {
 	return h.Div(h.Class("cui-console-player-intro"),
 		h.P(h.Class("cui-console-player-intro-title"), g.Text(i.Title)),
 		optionalText(h.P, "cui-console-player-intro-detail", i.Detail),
-		optionalText(h.P, "cui-console-player-intro-summary", i.Summary),
+		optionalText(h.P, "cui-console-player-intro-body", i.Body),
 		h.Div(h.Class("cui-console-player-intro-actions"),
 			h.Button(h.Class("cui-console-player-intro-play"), h.Type("button"), h.Data("control", "start"), lucide.Play, h.Span(g.Text(i.StartLabel))),
 			h.Button(h.Class("cui-console-player-text-btn"), h.Type("button"), h.Data("control", "restart"), g.Attr("hidden"), g.Text(i.RestartLabel)),

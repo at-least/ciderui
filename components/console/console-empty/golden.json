@@ -1,6 +1,5 @@
 {
  "empty small | .cui-console-empty-body | 1200 | color": "oklch(0.359 0.012 285.8 / 0.76)",
- "empty small | .cui-console-empty-icon | 1200 | color": "oklch(0.359 0.012 285.8 / 0.76)",
  "empty large | .cui-console-empty-body | 1200 | color": "oklch(0.359 0.012 285.8 / 0.76)",
  "empty large | .cui-console-empty-icon | 1200 | color": "oklch(0.359 0.012 285.8 / 0.76)",
  "empty large | .cui-console-empty | 1200 | background-color": "rgba(0, 0, 0, 0)",

@@ -20,8 +20,9 @@ var (
 // ConsoleEmpty is the empty state where a list or a table has nothing to
 // show; an empty chart is its [ConsoleChart.Empty].
 type ConsoleEmpty struct {
+	// Size: a large one, a whole page's, draws the kit's inbox above its
+	// title; a small one, a card's, no glyph.
 	Size  ConsoleEmptySize
-	Icon  lucide.Icon
 	Title string
 	// Body says what to do next.
 	Body string
@@ -36,7 +37,7 @@ func (e ConsoleEmpty) Render(w io.Writer) error {
 	}
 	need("console.ConsoleEmpty", "a Title", e.Title)
 	return h.Div(h.Class("cui-console-empty"), h.Data("size", e.Size.value), e.Attrs,
-		iconPart(e.Icon, "cui-console-empty-icon"),
+		g.If(e.Size == ConsoleEmptySizeLarge, iconPart(lucide.Inbox, "cui-console-empty-icon")),
 		h.P(h.Class("cui-console-empty-title"), g.Text(e.Title)),
 		optionalText(h.P, "cui-console-empty-body", e.Body),
 	).Render(w)

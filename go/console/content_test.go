@@ -11,10 +11,10 @@ import (
 )
 
 func contentNodes() g.Node {
-	sidebar := console.ConsoleSidebar{AriaLabel: "CrashCart", Home: "#home", Wordmark: "CrashCart", SkipLabel: "Skip to Content", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: nil, Children: g.Group{
-		console.ConsoleMenuItem{Href: "#projects", Label: "All Projects", Icon: lucide.Icon{}, Current: true},
-		console.ConsoleMenuItem{Href: "#issues", Label: "All Issues", Icon: lucide.Icon{}, Current: false},
-	}}
+	sidebar := console.ConsoleSidebar{AriaLabel: "CrashCart", Home: "#home", Wordmark: "CrashCart", SkipLabel: "Skip to Content", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: nil, Sections: []console.ConsoleMenuSection{{Title: "", Items: []console.ConsoleMenuItem{
+		{Href: "#projects", Label: "All Projects", Icon: lucide.Icon{}, Current: true},
+		{Href: "#issues", Label: "All Issues", Icon: lucide.Icon{}, Current: false},
+	}}}}
 	return h.Div(h.Class("cui-console-page"), console.ConsoleContent{Sidebar: &sidebar, Back: console.ConsoleContentBack{Href: "", Label: ""}, Title: "All Projects", Detail: "Every project you can see, the ones that need you first.", Controls: nil, Children: nil})
 }
 

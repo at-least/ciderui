@@ -17,14 +17,14 @@
  "banner colors | .cui-console-banner[data-color=\"success\"] .cui-console-banner-icon | 1200 | color": "oklch(0.385 0.094 150.1)",
  "banner colors | .cui-console-banner[data-color=\"error\"] .cui-console-banner-icon | 1200 | color": "oklch(0.495 0.19 31.5)",
  "banner colors | .cui-console-banner[data-color=\"info\"] .cui-console-link | 1200 | color": "oklch(0.497 0.209 260.5)",
+ "banner colors | .cui-console-banner[data-color=\"info\"] .cui-console-link | 1200 | text-decoration-line": "underline",
  "banner colors | .cui-console-banner[data-color=\"info\"] .cui-console-banner-icon | 390 | color": "oklch(0.497 0.209 260.5)",
  "banner colors | .cui-console-banner[data-color=\"success\"] .cui-console-banner-icon | 390 | color": "oklch(0.385 0.094 150.1)",
  "banner colors | .cui-console-banner[data-color=\"error\"] .cui-console-banner-icon | 390 | color": "oklch(0.495 0.19 31.5)",
  "banner colors | .cui-console-banner[data-color=\"info\"] .cui-console-link | 390 | color": "oklch(0.497 0.209 260.5)",
+ "banner colors | .cui-console-banner[data-color=\"info\"] .cui-console-link | 390 | text-decoration-line": "underline",
  "banner dark | [data-color=\"warning\"] | 1200 | background-color": "oklch(0.885 0.181 94.8 / 0.12)",
  "banner dark | [data-color=\"warning\"] | 1200 | color": "oklch(1 0 0 / 0.85)",
  "banner dark | [data-color=\"error\"] | 1200 | background-color": "oklch(0.654 0.232 28.8 / 0.12)",
- "banner dark | [data-color=\"warning\"] .cui-console-link | 1200 | color": "oklch(0.756 0.12 260.5)",
- "banner colors | .cui-console-banner[data-color=\"info\"] .cui-console-link | 1200 | text-decoration-line": "underline",
- "banner colors | .cui-console-banner[data-color=\"info\"] .cui-console-link | 390 | text-decoration-line": "underline"
+ "banner dark | [data-color=\"warning\"] .cui-console-link | 1200 | color": "oklch(0.756 0.12 260.5)"
 }

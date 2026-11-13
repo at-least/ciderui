@@ -4,10 +4,12 @@ const ex = examples(import.meta.url);
 const E = 'component-EmptyState';
 const sized = (s, M) => [
   { target: '.cui-console-empty', props: ['padding-top', 'padding-bottom'], tb: [`${E}-variant-size-${s}-paddingBlock`, `${E}-variant-size-${s}-paddingBlock`] },
-  { target: '.cui-console-empty-icon', props: ['box-height', 'margin-bottom'], tb: [`${E}-variant-size-${s}-anatomy-Art-fontSize`, `${E}-variant-size-${s}-anatomy-Art-marginBlockEnd`] },
   { target: '.cui-console-empty-title', props: ['font-size', 'line-height', 'font-weight', 'max-width', 'margin-bottom', 'color'], tb: ['fontSize', 'lineHeight', 'fontWeight'].map((p) => `${E}-variant-size-${s}-anatomy-Heading-textStyle-${p}`).concat([`${E}-maxInlineSize${M}`, `${E}-variant-size-${s}-anatomy-Heading-marginBlockEnd`, `${E}-anatomy-Heading-color`]) },
   { target: '.cui-console-empty-body', props: ['font-size', 'line-height', 'font-weight', 'max-width', 'margin-bottom'], tb: ['fontSize', 'lineHeight', 'fontWeight'].map((p) => `${E}-variant-size-${s}-anatomy-Caption-textStyle-${p}`).concat([`${E}-maxInlineSize${M}`, `${E}-variant-size-${s}-anatomy-Caption-marginBlockEnd`]) },
   { target: '.cui-console-empty-body', props: ['color'], golden: 'the secondary label fitted to 0.76 (tokens.css, decision 21)' },
+];
+const ICON = [
+  { target: '.cui-console-empty-icon', props: ['box-height', 'margin-bottom'], tb: [`${E}-variant-size-lg-anatomy-Art-fontSize`, `${E}-variant-size-lg-anatomy-Art-marginBlockEnd`] },
   { target: '.cui-console-empty-icon', props: ['color'], golden: 'the secondary label fitted to 0.76 (tokens.css, decision 21)' },
 ];
 
@@ -27,6 +29,7 @@ export const cases = [
     widths: [1200, 390],
     checks: [
       ...sized('lg', 'Lg'),
+      ...ICON,
       { target: '.cui-console-empty', props: ['background-color'], golden: 'a whole page\'s: no fill, on the page\'s ground' },
       { target: '.cui-console-empty', props: ['flex-direction', 'text-align', 'align-items'], golden: 'a column, centered' },
     ],

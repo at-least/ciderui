@@ -41,8 +41,8 @@ type ConsoleChoiceMenu struct {
 }
 
 type ConsoleChoiceColumn struct {
-	// Name is the column's data-column, what the script reads.
-	Name    string
+	// Column is the column's data-column, what the script reads.
+	Column  string
 	Title   string
 	Options []ConsoleChoiceOption
 }
@@ -61,15 +61,15 @@ func (m ConsoleChoiceMenu) Render(w io.Writer) error {
 	if len(m.Columns) == 0 {
 		panic("console.ConsoleChoiceMenu needs a column")
 	}
-	names := map[string]bool{}
+	columns := map[string]bool{}
 	for _, c := range m.Columns {
-		if c.Name == "" || c.Title == "" {
-			panic("console.ConsoleChoiceColumn needs a Name and a Title")
+		if c.Column == "" || c.Title == "" {
+			panic("console.ConsoleChoiceColumn needs a Column and a Title")
 		}
-		if names[c.Name] {
-			panic("console.ConsoleChoiceMenu has two columns named " + strconv.Quote(c.Name) + ": each needs a name of its own")
+		if columns[c.Column] {
+			panic("console.ConsoleChoiceMenu has two columns " + strconv.Quote(c.Column) + ": each needs a Column of its own")
 		}
-		names[c.Name] = true
+		columns[c.Column] = true
 		if len(c.Options) == 0 {
 			panic("console.ConsoleChoiceColumn needs an Option")
 		}
@@ -89,8 +89,8 @@ func (m ConsoleChoiceMenu) Render(w io.Writer) error {
 	return h.Div(h.Class("cui-console-popover"), h.ID(m.ID), h.Popover(),
 		h.Div(h.Class("cui-console-menu-columns"),
 			g.Map(m.Columns, func(c ConsoleChoiceColumn) g.Node {
-				titleID := m.ID + "-" + c.Name + "-title"
-				return h.Div(h.Class("cui-console-menu"), h.Data("column", c.Name),
+				titleID := m.ID + "-" + c.Column + "-title"
+				return h.Div(h.Class("cui-console-menu"), h.Data("column", c.Column),
 					h.P(h.Class("cui-console-menu-title"), h.ID(titleID), g.Text(c.Title)),
 					h.Div(h.Role("menu"), h.Aria("labelledby", titleID),
 						g.Map(c.Options, func(o ConsoleChoiceOption) g.Node {

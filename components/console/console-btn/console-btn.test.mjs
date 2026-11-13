@@ -54,6 +54,14 @@ export const cases = [
     ],
   },
   {
+    name: 'in a row',
+    html: '<div style="display: flex; width: 300px"><input style="flex: 1"><button class="cui-console-btn" type="button">Generate Again</button></div>',
+    widths: [1200],
+    checks: [
+      { target: '.cui-console-btn', props: ['flex-shrink', 'box-width', 'box-height', 'white-space'], golden: 'a control keeps its size beside a field that fills the row: as wide as its label, which stays on one line in its 30px (squashed, the label wrapped out of it; muse wrote shrink-0 on seven buttons); its white-space App Store Connect\'s normal' },
+    ],
+  },
+  {
     name: 'disabled',
     html: ex('disabled'),
     widths: [1200],

@@ -5,7 +5,7 @@ const D = 'component-DisplayList';
 const L = `${D}-anatomy-Item-anatomy-Label-variant-pageScale`;
 const TYPE = ['font-size', 'font-weight', 'line-height'];
 const type = (scale) => ['fontSize', 'fontWeight', 'lineHeight'].map((p) => `${L}-${scale}-textStyle-${p}`);
-const ROW = '.cui-console-list-item:nth-child(2)';
+const ROW = '.cui-console-list-row:nth-child(2)';
 
 export const cases = [
   {
@@ -20,7 +20,7 @@ export const cases = [
       { target: `${ROW} .cui-console-list-label`, props: ['color'], tb: [`${D}-anatomy-Item-variant-colorRole-neutral-effect-default-anatomy-Label-color`] },
       { target: `${ROW} .cui-console-list-detail`, props: ['color', 'font-size', 'line-height'], golden: 'the secondary label at 0.76: the toolkit\'s 0.60 is 3.4:1 on white (tokens.css, decision 21); the body\'s 13px' },
       { target: ROW, pseudo: '::before', props: ['left', 'height', 'background-color'], golden: 'a 0.5px hairline over each row after the first, from 16px in, the secondary border (the table row\'s)' },
-      { target: '.cui-console-list-item:first-child', pseudo: '::before', props: ['content'], golden: 'no hairline over the first row' },
+      { target: '.cui-console-list-row:first-child', pseudo: '::before', props: ['content'], golden: 'no hairline over the first row' },
       { target: '.cui-console-list', props: ['background-color', 'border-top-left-radius'], golden: 'the group the console card\'s gray and corners' },
       { target: ROW, props: ['background-color'], state: 'hover', golden: 'a row is no link and does not fill' },
     ],
@@ -48,7 +48,7 @@ export const cases = [
     html: ex('content'),
     widths: [1200],
     checks: [
-      { target: '.cui-console-list-item', props: ['padding-left', 'padding-top', 'min-height', 'background-color'], golden: 'a row holding the page\'s own content after its label: a row\'s 16px in, 7px above, 44px at least, no fill of its own' },
+      { target: '.cui-console-list-row', props: ['padding-left', 'padding-top', 'min-height', 'background-color'], golden: 'a row holding the page\'s own content after its label: a row\'s 16px in, 7px above, 44px at least, no fill of its own' },
     ],
   },
   {

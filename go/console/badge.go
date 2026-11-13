@@ -8,7 +8,7 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleColor is a badge's, a status's or a banner's data-color, the toolkit's color roles.
+// ConsoleColor is a badge's or a banner's data-color, the toolkit's color roles.
 type ConsoleColor struct{ value string }
 
 var (

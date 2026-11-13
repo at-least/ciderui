@@ -15,14 +15,18 @@ func sidebarNodes() console.ConsoleSidebar {
 	signOut := h.Form(h.Action("#sign-out"), h.Method("post"),
 		console.ConsoleBtn{Href: "", Label: "Sign Out", AriaLabel: "", Icon: lucide.Icon{}, Submit: true, Variant: console.ConsoleBtnVariantPlain, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: ""},
 	)
-	return console.ConsoleSidebar{AriaLabel: "CrashCart", Home: "#home", Wordmark: "CrashCart", SkipLabel: "Skip to Content", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: signOut, Children: g.Group{
-		console.ConsoleMenuItem{Href: "#projects", Label: "All Projects", Icon: lucide.LayoutGrid, Current: false},
-		console.ConsoleMenuItem{Href: "#issues", Label: "All Issues", Icon: lucide.Bug, Current: true},
-		h.P(h.Class("cui-console-menu-title"), g.Text("Projects")),
-		console.ConsoleMenuItem{Href: "#shop", Label: "Shop", Icon: lucide.Icon{}, Current: false},
-		console.ConsoleMenuItem{Href: "#demo", Label: "Demo Shop", Icon: lucide.Icon{}, Current: false},
-		h.Hr(h.Class("cui-console-menu-rule")),
-		console.ConsoleMenuItem{Href: "#alerts", Label: "Alerts", Icon: lucide.Bell, Current: false},
+	return console.ConsoleSidebar{AriaLabel: "CrashCart", Home: "#home", Wordmark: "CrashCart", SkipLabel: "Skip to Content", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: signOut, Sections: []console.ConsoleMenuSection{
+		{Title: "", Items: []console.ConsoleMenuItem{
+			{Href: "#projects", Label: "All Projects", Icon: lucide.LayoutGrid, Current: false},
+			{Href: "#issues", Label: "All Issues", Icon: lucide.Bug, Current: true},
+		}},
+		{Title: "Projects", Items: []console.ConsoleMenuItem{
+			{Href: "#shop", Label: "Shop", Icon: lucide.Icon{}, Current: false},
+			{Href: "#demo", Label: "Demo Shop", Icon: lucide.Icon{}, Current: false},
+		}},
+		{Title: "", Items: []console.ConsoleMenuItem{
+			{Href: "#alerts", Label: "Alerts", Icon: lucide.Bell, Current: false},
+		}},
 	}}
 }
 
@@ -44,7 +48,7 @@ func TestContentWritesTheSidebarsOpenButtonExample(t *testing.T) {
 
 func TestSidebarPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleSidebar {
-		return console.ConsoleSidebar{AriaLabel: "x", Home: "/", Wordmark: "x", SkipLabel: "Skip", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: nil, Children: nil}
+		return console.ConsoleSidebar{AriaLabel: "x", Home: "/", Wordmark: "x", SkipLabel: "Skip", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: nil, Sections: nil}
 	}, []example.Break[console.ConsoleSidebar]{
 		{Want: "console.ConsoleSidebar needs an AriaLabel", Change: func(p *console.ConsoleSidebar) { p.AriaLabel = "" }},
 		{Want: "console.ConsoleSidebar needs a Wordmark", Change: func(p *console.ConsoleSidebar) { p.Wordmark = "" }},

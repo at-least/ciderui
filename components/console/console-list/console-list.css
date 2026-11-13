@@ -7,7 +7,7 @@
     background-color: var(--cui-c-console-card);
   }
 
-  .cui-console-list-item {
+  .cui-console-list-row {
     position: relative;
     display: block;
     min-height: 44px;

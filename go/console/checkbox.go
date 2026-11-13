@@ -4,15 +4,36 @@ import (
 	"io"
 
 	"github.com/at-least/ciderui/go/lucide"
+	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleCheckboxBox goes right after the page's own
-// <input class="cui-console-checkbox-input" type="checkbox">, both in a
-// <label class="cui-console-checkbox"> (or a <span>, the input then carrying
-// an aria-label). The input stays the page's so it keeps its own attributes.
-type ConsoleCheckboxBox struct{}
+// ConsoleCheckbox is a checkbox and its words. Control writes attrs on the
+// page's own <input>, which keeps its name, value and state.
+type ConsoleCheckbox struct {
+	// Label: the words beside the box. AriaLabel: the name of a box with no
+	// words beside it, as a table row's. One of the two, not both.
+	Label     string
+	AriaLabel string
+	Control   func(attrs g.Node) g.Node
+}
 
-func (ConsoleCheckboxBox) Render(w io.Writer) error {
-	return h.Span(h.Class("cui-console-checkbox-box"), h.Aria("hidden", "true"), lucide.Check, lucide.Minus).Render(w)
+func (c ConsoleCheckbox) Render(w io.Writer) error {
+	if (c.Label == "") == (c.AriaLabel == "") {
+		panic("console.ConsoleCheckbox needs a Label or an AriaLabel, not both")
+	}
+	if c.Control == nil {
+		panic("console.ConsoleCheckbox needs a Control")
+	}
+	attrs := g.Group{h.Class("cui-console-checkbox-input"), h.Type("checkbox")}
+	root := h.Label
+	if c.AriaLabel != "" {
+		attrs = append(attrs, h.Aria("label", c.AriaLabel))
+		root = h.Span
+	}
+	return root(h.Class("cui-console-checkbox"),
+		c.Control(attrs),
+		h.Span(h.Class("cui-console-checkbox-box"), h.Aria("hidden", "true"), lucide.Check, lucide.Minus),
+		g.If(c.Label != "", g.Text(c.Label)),
+	).Render(w)
 }

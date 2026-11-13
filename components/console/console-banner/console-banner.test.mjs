@@ -42,7 +42,6 @@ export const cases = [
     html: ex('colors'),
     widths: [1200, 390],
     checks: [
-      { target: `${BANNER}:not([data-color])`, props: ['background-color'], tb: [`${B}-variant-colorRole-neutral-variant-tinted-backgroundColor`] },
       ...COLORS.map(([c]) => ({ target: `${BANNER}[data-color="${c}"]`, props: ['background-color'], tb: [`${B}-variant-colorRole-${c}-variant-tinted-backgroundColor`] })),
       ...COLORS.map(([c]) => ({ target: `${BANNER}[data-color="${c}"] .cui-console-banner-icon`, props: ['color'], golden: `its icon in the fitted ${c} label (tokens.css, decision 21)` })),
       { target: `${BANNER}[data-color="info"] .cui-console-link`, props: ['color'], golden: LINK },
