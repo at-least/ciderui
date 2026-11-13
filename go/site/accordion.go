@@ -23,9 +23,7 @@ type AccordionItem struct {
 }
 
 func (i AccordionItem) node() g.Node {
-	if i.Question == "" {
-		panic("site.AccordionItem needs a Question")
-	}
+	need("site.AccordionItem", "a Question", i.Question)
 	return h.Details(h.Class("cui-accordion-item"),
 		h.Summary(h.Class("cui-accordion-question"), g.Text(i.Question), glyph.Disclosure),
 		h.Div(h.Class("cui-accordion-answer"), i.Children),

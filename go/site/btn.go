@@ -44,9 +44,7 @@ type Btn struct {
 }
 
 func (b Btn) Render(w io.Writer) error {
-	if b.Label == "" {
-		panic("site.Btn needs a Label")
-	}
+	need("site.Btn", "a Label", b.Label)
 	if b.Href != "" && b.Submit {
 		panic("site.Btn has an Href and Submit: a link sends no form")
 	}

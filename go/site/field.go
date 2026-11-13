@@ -40,12 +40,8 @@ type Field struct {
 }
 
 func (f Field) Render(w io.Writer) error {
-	if f.Name == "" {
-		panic("site.Field needs a Name")
-	}
-	if f.Label == "" {
-		panic("site.Field needs a Label")
-	}
+	need("site.Field", "a Name", f.Name)
+	need("site.Field", "a Label", f.Label)
 	errorID := f.Name + "-error"
 	helpID := f.Name + "-help"
 	prefixID := f.Name + "-prefix"

@@ -36,27 +36,15 @@ type GlobalNav struct {
 }
 
 func (n GlobalNav) Render(w io.Writer) error {
-	if n.Home == "" {
-		panic("site.GlobalNav needs a Home")
-	}
-	if n.Wordmark == "" {
-		panic("site.GlobalNav needs a Wordmark")
-	}
+	need("site.GlobalNav", "a Home", n.Home)
+	need("site.GlobalNav", "a Wordmark", n.Wordmark)
 	if len(n.Links) == 0 {
 		panic("site.GlobalNav needs Links")
 	}
-	if n.AriaLabel == "" {
-		panic("site.GlobalNav needs an AriaLabel")
-	}
-	if n.SkipLabel == "" {
-		panic("site.GlobalNav needs a SkipLabel")
-	}
-	if n.OpenAriaLabel == "" {
-		panic("site.GlobalNav needs an OpenAriaLabel")
-	}
-	if n.CloseAriaLabel == "" {
-		panic("site.GlobalNav needs a CloseAriaLabel")
-	}
+	need("site.GlobalNav", "an AriaLabel", n.AriaLabel)
+	need("site.GlobalNav", "a SkipLabel", n.SkipLabel)
+	need("site.GlobalNav", "an OpenAriaLabel", n.OpenAriaLabel)
+	need("site.GlobalNav", "a CloseAriaLabel", n.CloseAriaLabel)
 	var links, postForms g.Group
 	for i, link := range n.Links {
 		if link.Label == "" || link.Href == "" {

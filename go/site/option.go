@@ -19,15 +19,9 @@ type Option struct {
 }
 
 func (o Option) Render(w io.Writer) error {
-	if o.Name == "" {
-		panic("site.Option needs a Name")
-	}
-	if o.Value == "" {
-		panic("site.Option needs a Value")
-	}
-	if o.Title == "" {
-		panic("site.Option needs a Title")
-	}
+	need("site.Option", "a Name", o.Name)
+	need("site.Option", "a Value", o.Value)
+	need("site.Option", "a Title", o.Title)
 	id := o.Name + "-" + o.Value
 	return h.Div(h.Class("cui-option"),
 		h.Input(h.Class("cui-option-input"), h.Type("radio"), h.ID(id), h.Name(o.Name), h.Value(o.Value), g.If(o.Checked, h.Checked()), o.Attrs),
