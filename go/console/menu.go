@@ -23,7 +23,7 @@ func (m ConsoleMenuItem) Render(w io.Writer) error {
 	need("console.ConsoleMenuItem", "an Href", m.Href)
 	need("console.ConsoleMenuItem", "a Label", m.Label)
 	return pageLink("cui-console-menu-item", m.Href, m.Current, g.Group{
-		iconPart(m.Icon, "cui-console-menu-icon"),
+		g.If(m.Icon != (lucide.Icon{}), m.Icon.Class("cui-console-menu-icon")),
 		h.Span(h.Class("cui-console-menu-label"), g.Text(m.Label)),
 	}).Render(w)
 }

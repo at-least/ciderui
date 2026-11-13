@@ -1,7 +1,6 @@
 package console
 
 import (
-	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -12,13 +11,6 @@ func need(part, what, value string) {
 	if value == "" {
 		panic(part + " needs " + what)
 	}
-}
-
-func iconPart(i lucide.Icon, class string) g.Node {
-	if i == (lucide.Icon{}) {
-		return nil
-	}
-	return i.Class(class)
 }
 
 func optionalText(el func(...g.Node) g.Node, class, text string) g.Node {

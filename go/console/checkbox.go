@@ -34,6 +34,6 @@ func (c ConsoleCheckbox) Render(w io.Writer) error {
 	return root(h.Class("cui-console-checkbox"),
 		c.Control(attrs),
 		h.Span(h.Class("cui-console-checkbox-box"), h.Aria("hidden", "true"), lucide.Check, lucide.Minus),
-		g.If(c.Label != "", g.Text(c.Label)),
+		g.Text(c.Label),
 	).Render(w)
 }

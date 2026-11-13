@@ -37,7 +37,7 @@ func (e ConsoleEmpty) Render(w io.Writer) error {
 	}
 	need("console.ConsoleEmpty", "a Title", e.Title)
 	return h.Div(h.Class("cui-console-empty"), h.Data("size", e.Size.value), e.Attrs,
-		g.If(e.Size == ConsoleEmptySizeLarge, iconPart(lucide.Inbox, "cui-console-empty-icon")),
+		g.If(e.Size == ConsoleEmptySizeLarge, lucide.Inbox.Class("cui-console-empty-icon")),
 		h.P(h.Class("cui-console-empty-title"), g.Text(e.Title)),
 		optionalText(h.P, "cui-console-empty-body", e.Body),
 	).Render(w)
