@@ -33,3 +33,13 @@ func TestDocumentReturnsTheErrorOfAPartThatCannotWrite(t *testing.T) {
 		t.Errorf("a page whose part cannot write returned %v, want the part's error", err)
 	}
 }
+
+type full struct{}
+
+func (full) Write([]byte) (int, error) { return 0, errors.New("disk full") }
+
+func TestDocumentReturnsTheErrorOfAWriterThatCannotTakeIt(t *testing.T) {
+	if err := page("Saved", nil).Render(full{}); err == nil || err.Error() != "disk full" {
+		t.Errorf("a page written to a full disk returned %v, want the writer's error", err)
+	}
+}
