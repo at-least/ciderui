@@ -328,7 +328,8 @@ func split(selector string) []string {
 
 // CheckMarkup returns a line for each problem in html, nil when there is none.
 // A cui-* class the stylesheet the page links does not hold, either set's for a
-// fragment (a misspelt one, or the other set's, styles nothing). On an element
+// fragment (a misspelt one, or the other set's, styles nothing). A color written
+// by its slot (text-(--cui-c-…)) that the set names by a utility. On an element
 // with a cui-* class: a value of a data-* attribute some rule selects that no
 // rule selects for that element's classes (it renders the default, silently),
 // and a value of a stateful aria-* attribute ARIA holds none of (wrong for
@@ -346,6 +347,10 @@ func CheckMarkup(html string) []string {
 	if set != bothSets {
 		sheet = "the " + set + " stylesheet this page links"
 	}
+	slotSets := []string{set}
+	if set == bothSets {
+		slotSets = []string{"site", "console"}
+	}
 	var problems []string
 	for _, tag := range tags {
 		on := tag.on()
@@ -353,6 +358,10 @@ func CheckMarkup(html string) []string {
 		for _, c := range strings.Fields(tag.attribute("class")) {
 			if strings.HasPrefix(c, "cui-") {
 				ours = append(ours, c)
+				continue
+			}
+			if utility := slotUtility(c, slotSets); utility != "" {
+				problems = append(problems, fmt.Sprintf("class %q on %s: write %s, the set's name for this color", c, on, utility))
 			}
 		}
 		for _, c := range ours {
@@ -362,7 +371,11 @@ func CheckMarkup(html string) []string {
 			if other := otherSet(set); other != "" && vocabularies()[other].classes[c] {
 				problems = append(problems, fmt.Sprintf("class %q on %s: a %s class; this page links the %s stylesheet", c, on, other, set))
 			} else {
-				problems = append(problems, fmt.Sprintf("class %q on %s: %s has no such class%s", c, on, sheet, partClasses(c, known.classes)))
+				hint := partClasses(c, known.classes)
+				if hint == "" {
+					hint = nearest(c, known.classes)
+				}
+				problems = append(problems, fmt.Sprintf("class %q on %s: %s has no such class%s", c, on, sheet, hint))
 			}
 		}
 		var seen []string
