@@ -61,6 +61,10 @@ const readTextAndMotion = ([set, tracking, ownMotion]) => {
     texts++;
     if (set === 'console') {
       if (cs.letterSpacing !== 'normal') spacing.push(`${label(e)}: ${cs.letterSpacing}`);
+    } else if (/monospace\s*$/.test(cs.fontFamily)) {
+      // @external: the mono font is not the system font, whose tracking tokens.css fits:
+      // code keeps its own spacing, as the console's does
+      if (cs.letterSpacing !== 'normal') spacing.push(`${label(e)}: mono at ${cs.letterSpacing}`);
     } else {
       const size = parseFloat(cs.fontSize);
       // @trap: not "more than off": `normal` parses to NaN, which compares false either way

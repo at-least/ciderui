@@ -9,6 +9,27 @@
       margin-top: 14px;
     }
 
+    /* @trap: 1.6 of the text's 17px, DocC's: em on a listing would be its own 15px */
+    & > :where(* + pre, * + blockquote, * + hr) {
+      margin-top: 27.2px;
+    }
+
+    & > :where(* + .footnote-definition, * + .footnotes) {
+      margin-top: 32px;
+
+      @media (width >= 735px) {
+        margin-top: 36px;
+      }
+
+      @media (width >= 1069px) {
+        margin-top: 44px;
+      }
+    }
+
+    & > :where(.footnote-definition + .footnote-definition) {
+      margin-top: 0;
+    }
+
     & :where(h2) {
       font-size: 28px;
       line-height: 32px;
@@ -106,6 +127,70 @@
 
       @media (width >= 1069px) {
         margin-bottom: 32px;
+      }
+    }
+
+    & :where(code) {
+      font-family: var(--cui-font-mono);
+      letter-spacing: normal;
+    }
+
+    /* @trap: preflight's sup is 75% of its text, a size with no tracking of the kit's */
+    & :where(sup) {
+      font-size: 12px;
+      letter-spacing: var(--cui-tracking-12);
+    }
+
+    & :where(pre) {
+      padding: 8px 14px;
+      overflow-x: auto;
+      border-radius: 15px;
+      background-color: var(--cui-c-bg-alt);
+      font-family: var(--cui-font-mono);
+      font-size: 15px;
+      line-height: 25px;
+      letter-spacing: normal;
+      tab-size: 4;
+
+      & :where(code) {
+        font-size: inherit;
+      }
+    }
+
+    & :where(blockquote) {
+      padding: 16px;
+      border-radius: 15px;
+      background-color: var(--cui-c-bg-alt);
+
+      & > :where(* + *) {
+        margin-top: 14px;
+      }
+    }
+
+    & :where(hr) {
+      border: 0;
+      border-top: 1px solid var(--cui-c-divider);
+    }
+
+    & :where(.footnote-definition, .footnotes) {
+      color: var(--cui-c-text-2);
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: var(--cui-tracking-12);
+    }
+
+    /* @external: Zola (pulldown-cmark) writes a note's number and its text as two
+       blocks; on one line, as Newsroom's numbered notes */
+    & :where(.footnote-definition) {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5em;
+
+      /* @trap: preflight sets a sup 0 tall and 0.5em up: the number stood above its line */
+      & > :where(.footnote-definition-label) {
+        top: 0;
+        font-size: inherit;
+        line-height: inherit;
       }
     }
 
