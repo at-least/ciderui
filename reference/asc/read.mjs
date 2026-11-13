@@ -1,13 +1,24 @@
-// @external: App Store Connect's pages, read in the owner's own Chrome, signed in by
-// the owner (no headless browser can sign in): its pages hold the account's
-// data, so the read runs in that browser through Claude in Chrome's
-// javascript tool, and its result comes back through the tool and is written
-// here by hand.
+// @external: App Store Connect's pages, read in a Chrome the owner signed in to (no
+// headless browser can sign in): its pages hold the account's data.
 //
-//   node read.mjs <spec>          prints the script to run in the page
-//                                 (pages/<spec>.mjs's probes in READER)
+//   node read.mjs --login         opens Google Chrome on the site with PROFILE, the
+//                                 one profile every signed-in site shares, for the
+//                                 owner to sign in; it ends when the window closes
+//   node read.mjs --run <spec>    reads the spec in that profile through Playwright
+//                                 and writes results/<spec>.json, then checks it
+//   node read.mjs <spec>          prints the script to run in a page by hand
+//                                 (Claude in Chrome's javascript tool, as read
+//                                 until 2026-11-13)
 //   node read.mjs --check <spec>  holds results/<spec>.json to what the page
 //                                 handed back and to the account's privacy
+//
+// PROFILE is outside the repository: it holds the owner's session. IDS, beside it,
+// holds each site's ids a path's <app> and <team> stand for (written by the
+// owner or by an agent from the signed-in page), so no id reaches the repository.
+// A spec's `hover` (a selector) rests the pointer on that element and `click`
+// clicks it before the read: Playwright's pointer, where Claude in Chrome's hover
+// was. A read is at 1920 by 907 at 2 device pixels, the window the head spec was
+// read in.
 //
 // READER finds each probe's element (`select` in the document, or in
 // `shadow`'s shadow root, among those with a box unless `unseen`, as a
@@ -22,9 +33,16 @@
 // the result holds the digests of the probes it was given and of its own
 // source, so --check fails on a script pasted wrong too. A probe that
 // matches nothing is null and fails --check.
-import { readFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
+import { homedir } from 'node:os';
+import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+export const PROFILE = join(homedir(), 'Library', 'Application Support', 'ciderui-signed-in');
+const IDS = join(PROFILE, 'ids.json');
+const COOKIES = join(PROFILE, 'cookies.json');
+const ORIGIN = 'https://appstoreconnect.apple.com';
 
 export const READER = async function reader(probes) {
   const canon = (x) => Array.isArray(x) ? `[${x.map(canon).join(',')}]`
@@ -122,9 +140,57 @@ const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 // @invariant: The command line over root's pages/ and results/: read.mjs's own folder
 // when it is run, another site's when that site's folder calls cli with its
 // own, so every signed-in site is read and checked by the one READER.
-export async function cli(root) {
-  const [flag, name] = process.argv[2] === '--check' ? ['--check', process.argv[3]] : [null, process.argv[2]];
+export async function cli(root, origin) {
+  const [flag, name] = ['--check', '--run', '--login'].includes(process.argv[2]) ? [process.argv[2], process.argv[3]] : [null, process.argv[2]];
+  if (flag === '--login') {
+    const context = await chrome();
+    const page = context.pages()[0] ?? await context.newPage();
+    await page.goto(origin);
+    console.log(`sign in to ${origin} in the window, then quit Chrome`);
+    // @external: the cookies are kept every 5s while the window is open: closing a
+    // window on the Mac leaves Chrome running with a page no one sees (2026-11-13),
+    // so no close is waited for
+    const keep = async () => writeFileSync(COOKIES, JSON.stringify(await context.cookies()));
+    const timer = setInterval(() => keep().catch(() => {}), 5000);
+    await new Promise((r) => context.on('close', r));
+    clearInterval(timer);
+    process.exit(0);
+  }
   const spec = (await import(new URL(`pages/${name}.mjs`, root))).default;
+  if (flag === '--run') {
+    const site = fileURLToPath(root).split('/').filter(Boolean).at(-1);
+    const ids = existsSync(IDS) ? JSON.parse(readFileSync(IDS, 'utf8'))[site] ?? {} : {};
+    const path = spec.path.replace(/<(app|team)>/g, (_, k) => {
+      if (!ids[k]) throw new Error(`${IDS} has no ${site}.${k} for ${spec.path}`);
+      return ids[k];
+    });
+    const context = await chrome();
+    try {
+      const page = context.pages()[0] ?? await context.newPage();
+      await page.goto(origin + path, { waitUntil: 'load', timeout: 120000 });
+      // @external: App Store Connect's page is empty at load and drawn by its script
+      // about 2s on (body text 0 at 2s, 841 characters at 10s, 2026-11-13)
+      await page.waitForFunction(() => document.body.innerText.trim().length > 0, null, { timeout: 60000 });
+      await page.waitForTimeout(spec.wait ?? 3000);
+      // @external: the sign-in redirect can come after the load; nothing is written then.
+      // The message names the spec's path, never the ids
+      if (new URL(page.url()).pathname !== path) throw new Error(`${name}: not on ${spec.path} (sent to ${new URL(page.url()).host}${new URL(page.url()).pathname.replace(/\d{6,}/g, '<app>')}): sign in again (node read.mjs --login)`);
+      if (spec.click) { await page.click(spec.click); await page.waitForTimeout(1500); }
+      if (spec.hover) { await page.hover(spec.hover); await page.waitForTimeout(800); }
+      let text;
+      if (spec.tokens) {
+        const [download] = await Promise.all([page.waitForEvent('download'), page.evaluate(`(${TOKENS.toString()})(${JSON.stringify(spec.tokens)}, ${JSON.stringify(`${name}.json`)})`)]);
+        text = readFileSync(await download.path(), 'utf8');
+      } else {
+        const { result, sha256 } = await page.evaluate(`(${READER.toString()})(${JSON.stringify(spec.probes)})`);
+        text = JSON.stringify({ ...result, sha256 }, null, 1) + '\n';
+      }
+      mkdirSync(new URL('results/', root), { recursive: true });
+      writeFileSync(new URL(`results/${name}.json`, root), text);
+    } finally {
+      await context.close();
+    }
+  }
   if (!flag) {
     if (spec.tokens) console.log(`await (${TOKENS.toString()})(${JSON.stringify(spec.tokens)}, ${JSON.stringify(`${name}.json`)})`);
     else console.log(`await (${READER.toString()})(${JSON.stringify(spec.probes)})`);
@@ -148,4 +214,16 @@ export async function cli(root) {
   process.exit(fails.length ? 1 : 0);
 }
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) await cli(new URL('.', import.meta.url));
+// @external: Google Chrome with PROFILE, a window on the Mac: Apple's sign-in asks a
+// person (a code on their device), so the profile is signed in by hand once and
+// read by Playwright after
+// Apple's sign-in cookies are the session's (no expiry), which Chrome drops when it
+// quits: --login keeps every cookie in COOKIES, and each launch puts them back.
+async function chrome() {
+  const { chromium } = await import('playwright-core');
+  const context = await chromium.launchPersistentContext(PROFILE, { channel: 'chrome', headless: false, viewport: { width: 1920, height: 907 }, deviceScaleFactor: 2 });
+  if (existsSync(COOKIES)) await context.addCookies(JSON.parse(readFileSync(COOKIES, 'utf8')));
+  return context;
+}
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) await cli(new URL('.', import.meta.url), ORIGIN);

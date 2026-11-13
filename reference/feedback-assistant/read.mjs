@@ -3,4 +3,4 @@
 //   node read.mjs --check <spec>  once results/<spec>.json is written
 import { cli } from '../asc/read.mjs';
 
-await cli(new URL('.', import.meta.url));
+await cli(new URL('.', import.meta.url), 'https://feedbackassistant.apple.com');

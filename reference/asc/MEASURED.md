@@ -21,6 +21,10 @@ Chrome 154 on Linux, its window 1920 by 954 at 2 device pixels; read 2026-10-23 
 | `button`, `hover-button` | `/apps/<app>/analytics/acquisition/sources` | the toolkit's gray button (its rounded rectangle, 30px, 13px at 500) at rest and with the pointer resting on it |
 | `hover-menu`, `hover-row`, `hover-link`, `hover-date` | `/apps/<app>/analytics/overview` | each with the pointer resting on it (Claude in Chrome's hover): a menu item that is not the current one, the plain table's row, a See All link, the date control's period |
 
+## Read again 2026-11-13
+
+By `read.mjs --run`, Playwright in Google Chrome 157 on the Mac (1920 by 907 at 2 device pixels) with the signed-in profile, the specs a page let read whole: `tokens` (3647 tokens, none changed, none gone or added), `head`, `controlrow` (no value changed), `button` (its font-family's `BlinkMacSystemFont` written `"system-ui"`, Chrome on the Mac's serializing of it, not the page's) and `apps` (its status's color and its banners, the account's state that day). Nothing of the toolkit moved, so no result was written again. `testflight`, `crashes`, `analytics`, `version` and `analytics-page` miss elements on the account's first app, which has other data than the one read in October (its builds, its crashes, its version in flight); the `hover-*` specs and `media` wait for a selector to hover or click. Beside them: Feedback Assistant's `list` and the developer account's `overview` and `keys` matched, but for heights within a pixel (the Mac's text against Linux's); Apple Account's `manage` stayed on its loading spinner in the automated Chrome, and was not read.
+
 ## What it showed
 
 **Light only.** With the system set to dark, no `prefers-color-scheme` rule is in the page's stylesheets (10 on the apps page, 16 on the analytics page) or in the shadow roots of the bar and the footer (`amp-nav`, 234 rules; `amp-footer`, 34); the `--tb-color-…` tokens (827 declarations) are set on `:root` alone, the `html.dark` rules are an alert box's (`tb-alertbox`), and `html` has no `dark` class. Read by a script in the page, not recorded in a result.
