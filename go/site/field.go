@@ -1,10 +1,10 @@
 package site
 
 import (
-	"github.com/at-least/ciderui/go/internal/attr"
 	"io"
 	"strings"
 
+	"github.com/at-least/ciderui/go/internal/attr"
 	"github.com/at-least/ciderui/go/internal/glyph"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
