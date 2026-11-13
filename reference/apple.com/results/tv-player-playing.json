@@ -1,8 +1,8 @@
 {
  "url": "https://tv.apple.com/us/collection/trailers/uts.col.Trailers.umc.cmc.vtoh0mn0xn7t3c643xqonfzy",
  "finalUrl": "https://tv.apple.com/us/collection/trailers/uts.col.Trailers.umc.cmc.vtoh0mn0xn7t3c643xqonfzy",
- "browser": "chrome 157.0.8103.38 on linux",
- "date": "2026-11-04T19:08:23.208Z",
+ "browser": "chrome 157.0.8103.78 on linux",
+ "date": "2026-11-13T08:59:33.703Z",
  "widths": {
   "1600": {
    "dialog": {
@@ -19,7 +19,7 @@
     }
    },
    "scrim": {
-    "html": "<div class=\"video-player-scrim svelte-1610apj\" data-testid=\"video-player-scrim\"><div class=\"scrim__gradient svelte-1610apj\"></div><div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-19l0lnx\"><div",
+    "html": "<div class=\"video-player-scrim svelte-1610apj\" data-testid=\"video-player-scrim\"><div class=\"scrim__gradient svelte-1610apj\"></div><div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-z8v5pn\"><div ",
     "styles": {
      "display": "grid",
      "flex-direction": "row",
@@ -28,7 +28,7 @@
      "justify-content": "normal",
      "row-gap": "normal",
      "column-gap": "normal",
-     "grid-template-rows": "20px 26px 713px 121px 20px",
+     "grid-template-rows": "20px 36px 699px 125px 20px",
      "grid-template-columns": "30px 1540px 30px",
      "padding-top": "0px",
      "padding-left": "0px",
@@ -116,7 +116,7 @@
     }
    },
    "hidden.header": {
-    "html": "<div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-19l0lnx\" inert=\"\"><div class=\"close-button-group svelte-19l0lnx\"><button class=\"close-button svelte-19l0lnx\" data-testid=\"close-button\" aria-lab",
+    "html": "<div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-z8v5pn\" inert=\"\"><div class=\"close-button-group svelte-z8v5pn\"><button class=\"close-button svelte-z8v5pn\" data-testid=\"close-button\" aria-label=",
     "styles": {
      "opacity": "0",
      "visibility": "visible",
@@ -128,7 +128,7 @@
     }
    },
    "hidden.body": {
-    "html": "<div class=\"scrim__body svelte-1610apj\"><div slot=\"body\" class=\"video-player__body svelte-19l0lnx\" inert=\"\"><amp-playback-controls-unified hydrated=\"\"><div class=\"unified-controls\"><amp-playback-controls-skip class=\"playback-controls-skip\" ",
+    "html": "<div class=\"scrim__body svelte-1610apj\"><div slot=\"body\" class=\"video-player__body svelte-z8v5pn\" inert=\"\"><amp-playback-controls-unified hydrated=\"\"><div class=\"unified-controls\"><amp-playback-controls-skip class=\"playback-controls-skip\" h",
     "styles": {
      "opacity": "0",
      "visibility": "visible",
@@ -140,7 +140,7 @@
     }
    },
    "hidden.footer": {
-    "html": "<div class=\"scrim__footer svelte-1610apj\"><div slot=\"footer\" class=\"video-player__footer svelte-19l0lnx scrubbing-enabled\" inert=\"\"><div class=\"video-player__metadata svelte-19l0lnx\"><div class=\"video-metadata\"><div class=\"title svelte-1xe",
+    "html": "<div class=\"scrim__footer svelte-1610apj\"><div slot=\"footer\" class=\"video-player__footer svelte-z8v5pn scrubbing-enabled\" inert=\"\"><div class=\"video-player__metadata svelte-z8v5pn\"><div class=\"video-metadata\"><div class=\"title svelte-jhlls",
     "styles": {
      "opacity": "0",
      "visibility": "visible",

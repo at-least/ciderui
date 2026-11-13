@@ -1,8 +1,8 @@
 {
  "url": "https://tv.apple.com/us/collection/trailers/uts.col.Trailers.umc.cmc.vtoh0mn0xn7t3c643xqonfzy",
  "finalUrl": "https://tv.apple.com/us/collection/trailers/uts.col.Trailers.umc.cmc.vtoh0mn0xn7t3c643xqonfzy",
- "browser": "chrome 157.0.8103.38 on linux",
- "date": "2026-11-04T19:11:03.612Z",
+ "browser": "chrome 157.0.8103.78 on linux",
+ "date": "2026-11-13T08:59:51.095Z",
  "widths": {
   "1600": {
    "dialog": {
@@ -19,7 +19,7 @@
     }
    },
    "scrim": {
-    "html": "<div class=\"video-player-scrim svelte-1610apj\" data-testid=\"video-player-scrim\"><div class=\"scrim__gradient svelte-1610apj\"></div><div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-19l0lnx\"><div",
+    "html": "<div class=\"video-player-scrim svelte-1610apj\" data-testid=\"video-player-scrim\"><div class=\"scrim__gradient svelte-1610apj\"></div><div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-z8v5pn\"><div ",
     "styles": {
      "display": "grid",
      "flex-direction": "row",
@@ -28,7 +28,7 @@
      "justify-content": "normal",
      "row-gap": "normal",
      "column-gap": "normal",
-     "grid-template-rows": "20px 26px 713px 121px 20px",
+     "grid-template-rows": "20px 36px 699px 125px 20px",
      "grid-template-columns": "30px 1540px 30px",
      "padding-top": "0px",
      "padding-left": "0px",
@@ -51,7 +51,7 @@
     }
    },
    "menu": {
-    "html": "<div class=\"contextual-menu contextual-menu--subtitles\"><ul class=\"contextual-menu__list\" role=\"menu\"><div class=\"contextual-menu__group\"><span class=\"contextual-menu__group-title\"></span><amp-contextual-menu-item data-menu-id=\"9e4",
+    "html": "<div class=\"contextual-menu contextual-menu--subtitles\"><ul class=\"contextual-menu__list\" role=\"menu\"><div class=\"contextual-menu__group\"><span class=\"contextual-menu__group-title\"></span><amp-contextual-menu-item data-menu-id=\"eec",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -81,12 +81,12 @@
     "box": {
      "width": 185,
      "height": 142,
-     "top": 637,
+     "top": 633,
      "left": 1258
     }
    },
    "menu.before": {
-    "html": "<div class=\"contextual-menu contextual-menu--subtitles\"><ul class=\"contextual-menu__list\" role=\"menu\"><div class=\"contextual-menu__group\"><span class=\"contextual-menu__group-title\"></span><amp-contextual-menu-item data-menu-id=\"9e4",
+    "html": "<div class=\"contextual-menu contextual-menu--subtitles\"><ul class=\"contextual-menu__list\" role=\"menu\"><div class=\"contextual-menu__group\"><span class=\"contextual-menu__group-title\"></span><amp-contextual-menu-item data-menu-id=\"eec",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -144,7 +144,7 @@
     }
    },
    "menu.list": {
-    "html": "<ul class=\"contextual-menu__list\" role=\"menu\"><div class=\"contextual-menu__group\"><span class=\"contextual-menu__group-title\"></span><amp-contextual-menu-item data-menu-id=\"9e48771076ab493b\" hydrated=\"\"><li class=\"contextual-menu-it",
+    "html": "<ul class=\"contextual-menu__list\" role=\"menu\"><div class=\"contextual-menu__group\"><span class=\"contextual-menu__group-title\"></span><amp-contextual-menu-item data-menu-id=\"eec8ec0f64a9f566\" hydrated=\"\"><li class=\"contextual-menu-it",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -174,7 +174,7 @@
     }
    },
    "group": {
-    "html": "<div class=\"contextual-menu__group\"><span class=\"contextual-menu__group-title\"></span><amp-contextual-menu-item data-menu-id=\"9e48771076ab493b\" hydrated=\"\"><li class=\"contextual-menu-item\"><button title=\"…\" data-focus-method=\"mous",
+    "html": "<div class=\"contextual-menu__group\"><span class=\"contextual-menu__group-title\"></span><amp-contextual-menu-item data-menu-id=\"eec8ec0f64a9f566\" hydrated=\"\"><li class=\"contextual-menu-item\"><button title=\"…\" data-focus-method=\"mous",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -201,7 +201,7 @@
     }
    },
    "group.next": {
-    "html": "<div class=\"contextual-menu__group\"><amp-contextual-menu-item data-menu-id=\"9e48771076ab493b\" hydrated=\"\"><li class=\"contextual-menu-item contextual-menu-item--use-html-select contextual-menu-item--flushed-text-start-icon\"><label for=\"conte",
+    "html": "<div class=\"contextual-menu__group\"><amp-contextual-menu-item data-menu-id=\"eec8ec0f64a9f566\" hydrated=\"\"><li class=\"contextual-menu-item contextual-menu-item--use-html-select contextual-menu-item--flushed-text-start-icon\"><label for=\"conte",
     "styles": {
      "padding-top": "0px",
      "padding-right": "0px",
@@ -472,7 +472,7 @@
     "box": {
      "width": 17.625,
      "height": 16,
-     "top": 669,
+     "top": 665,
      "left": 1294
     }
    },
@@ -528,12 +528,12 @@
     "box": {
      "width": 16,
      "height": 16,
-     "top": 701.5,
+     "top": 697.5,
      "left": 1268
     }
    },
    "sub": {
-    "html": "<label for=\"contextual-select-d11e8d21bcb03872\" class=\"\"><span class=\"contextual-menu-item__option-wrapper\"><span class=\"contextual-menu-item__option-text\"><span class=\"contextual-menu-item__subtext\"></span></span><span class",
+    "html": "<label for=\"contextual-select-dcb079744e7898b4\" class=\"\"><span class=\"contextual-menu-item__option-wrapper\"><span class=\"contextual-menu-item__option-text\"><span class=\"contextual-menu-item__subtext\"></span></span><span class",
     "styles": {
      "font-family": "-apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "13px",
@@ -599,7 +599,7 @@
     "box": {
      "width": 16,
      "height": 16,
-     "top": 745,
+     "top": 741,
      "left": 1417
     }
    }

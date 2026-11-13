@@ -353,13 +353,13 @@ check('--cui-console-shadow-sidebar is App Store Connect\'s --tb-component-Sideb
 check('--cui-console-shadow-dialog is App Store Connect\'s --tb-component-Modal-variant-variant-modal-boxShadow', vars['--cui-console-shadow-dialog'], tbTokens['--tb-component-Modal-variant-variant-modal-boxShadow']);
 check('--cui-console-shadow-popover is App Store Connect\'s --tb-component-Popover-variant-variant-stroked-boxShadow', vars['--cui-console-shadow-popover'], tbTokens['--tb-component-Popover-variant-variant-stroked-boxShadow']);
 
-check('--cui-video-scrim is tv.apple.com\'s tv-player:scrim.gradient background-image', vars['--cui-video-scrim'], ref('tv-player', 'scrim.gradient', W, 'background-image'));
+check('--cui-video-scrim is tv.apple.com\'s tv-player:scrim.gradient background-color', vars['--cui-video-scrim'], ref('tv-player', 'scrim.gradient', W, 'background-color'));
 // @trap: golden: muse's subtitles, white under a soft shadow with no box (the owner, 2026-11-05, from Apple's view); tv.apple.com's
 // cues are its <video>'s own text track, none read. Two layers: a tight one that edges each letter on a white picture, a wide
 // faint one that darkens round the line without a box's edge
 check('--cui-video-cue-shadow is muse\'s golden', vars['--cui-video-cue-shadow'], '0 0.05em 0.1em rgb(0 0 0 / 0.6), 0 0 0.5em rgb(0 0 0 / 0.4)');
 // @trap: golden: muse's intro and end (the owner, 2026-11-08: 「修播放器還沒有開始播放的預設狀態是暗的」): tv.apple.com's scrim went
-// to black at the foot and dimmed the lower half of the cover. Dark only behind the words in the bottom-left corner, the cue's
+// to black at the foot and dimmed the lower half of the cover (2026-11-04; a flat 40% dim over all of it from 2026-11-13). Dark only behind the words in the bottom-left corner, the cue's
 // shadow under them
 check('--cui-video-title-scrim is muse\'s golden', vars['--cui-video-title-scrim'], 'radial-gradient(ellipse 75% 60% at 0% 100%, rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.35) 40%, rgb(0 0 0 / 0))');
 // @trap: golden: muse's scrubber preview (the owner, 2026-11-05: a thumbnail over the time under the pointer); tv.apple.com's

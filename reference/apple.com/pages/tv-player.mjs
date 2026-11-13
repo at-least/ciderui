@@ -29,7 +29,7 @@ export const probes = [
   { name: 'play', click: 'button.playback-play__pause', clicked: 1500, pointer: [800, 200], select: 'button.playback-play__play', props: CONTROL, box: true, states: STATES },
   { name: 'play.icon', select: 'button.playback-play__play amp-icon[slot="play"]', props: ['color', 'width', 'height'], box: true },
   { name: 'pause.hidden', select: 'button.playback-play__pause', props: ['opacity', 'visibility', 'pointer-events', ...MOTION] },
-  { name: 'scrim.gradient', select: '.scrim__gradient', props: ['background-image', 'opacity', ...MOTION], box: true, position: true },
+  { name: 'scrim.gradient', select: '.scrim__gradient', props: ['background-image', 'background-color', 'opacity', ...MOTION], box: true, position: true },
   { name: 'scrim.header', select: '.scrim__header', props: ['opacity', ...MOTION], box: true, position: true },
   { name: 'scrim.footer', select: '.scrim__footer', props: ['opacity', 'padding-left', 'padding-right', 'padding-bottom', ...MOTION], box: true, position: true },
   { name: 'header', select: '.video-player__header', props: [...FLEX, 'grid-template-columns', 'padding-left', 'padding-right', 'padding-top'], box: true, position: true },

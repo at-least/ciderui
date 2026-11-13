@@ -7,7 +7,7 @@ const SCRUB = '.cui-console-player-progress > .cui-console-player-range';
 const VOLUME = '.cui-console-player-volume > .cui-console-player-range';
 const OPEN = 'the owner\'s (2026-11-05: only the speaker until hovered, the range opening beside it): tv.apple.com\'s range is 100px open beside its button with the pointer elsewhere (tv-player:volume.range, the pointer at 800,200), so none of the closing is measured; it opens over 0.3s on the header\'s own fade curve (tv-player-playing:hidden.header)';
 const TV = [1600, 1200];
-const LAYOUT = 'tv.apple.com\'s player\'s room: 30px at the sides, 20px at the top and foot (tv-player:scrim\'s grid, 20px 26px 713px 121px 20px by 30px 1540px 30px); its rows the header, the centre and the footer, whatever the video\'s size';
+const LAYOUT = 'tv.apple.com\'s player\'s room: 30px at the sides, 20px at the top and foot (tv-player:scrim\'s grid, 20px 36px 699px 125px 20px by 30px 1540px 30px); its rows the header, the centre and the footer, whatever the video\'s size';
 const STAGE = '.cui-console-player > :first-child';
 const LINE = '.cui-console-player-subtitles > p';
 const CUE = '.cui-console-player-cue';
@@ -44,7 +44,7 @@ const FULL = 'muse\'s, for its 回報問題 and 下一個要看 while the player
 const HEADING = '.cui-console-player-heading';
 // @invariant: the page's script's heading, written into the player at rest
 const withHeading = (html) => html.replace('data-control="heading"></p>', 'data-control="heading">The Wedding · Scene 2　The Vows · S02-03</p>');
-const PAUSED = 'muse\'s (the owner, 2026-11-05: paused, a small line at the picture\'s top left saying the story, the scene and the shot; gone on play): in tv.apple.com\'s header\'s first column, 711px and empty on its trailers (tv-player:header, grid-template-columns 711px 829px), on the header\'s 26px row; 15px semibold white under the cue\'s shadow (--cui-video-cue-shadow) so it reads on a bright picture with no box, cut short with an ellipsis before the volume; tv.apple.com shows no such line';
+const PAUSED = 'muse\'s (the owner, 2026-11-05: paused, a small line at the picture\'s top left saying the story, the scene and the shot; gone on play): in tv.apple.com\'s header\'s first column, 720px and empty on its trailers (tv-player:header, grid-template-columns 720px 820px), on the header\'s row; 15px semibold white under the cue\'s shadow (--cui-video-cue-shadow) so it reads on a bright picture with no box, cut short with an ellipsis before the volume; tv.apple.com shows no such line';
 const INTRO = 'muse\'s pre-play layer (the owner, 2026-11-05: over the cover the title large, the demo\'s length, its description\'s first sentence, one clear Play; tv.apple.com\'s pre-play page was not measured, so golden): at the picture\'s foot in the overlay\'s room (30px at the sides, tv-player:scrim), on a soft gradient in that corner alone (--cui-video-title-scrim; the owner, 2026-11-08: tv.apple.com\'s, --cui-video-scrim, darkened the cover\'s lower half to black), the lines white under the cue\'s shadow; the length 15px medium and the sentence 17px on 24px in the controls\' 90% white, two lines at most, 36em wide';
 const END = 'muse\'s end layer (the owner, 2026-11-05: on end a 「看完了」 layer fades in over the last picture, the user\'s next step under it and a small 「重新播放」; tv.apple.com\'s end of a film was not measured, so golden): the intro\'s layer, its place, gradient and title, in the other direction; the next step in the length\'s type (15px medium, the controls\' 90% white), its buttons and links one under another 8px apart, 14px under the title as the intro\'s Play is';
 const NO_SLIDE = 'faded where they are: tv.apple.com\'s header goes 20px up and its footer 20px down as they hide (tv-player-playing:hidden.*), a slide that only draws the eye (DESIGN.md decision 25); the fades\' durations and curves its own';
@@ -59,7 +59,7 @@ export const cases = [
       { target: P, props: ['background-color'], apple: ['tv-player', 'dialog'] },
       { target: P, props: ['position', 'overflow-x'], golden: 'the containing block its overlay is laid over its video in; not clipped: a window too small for its controls grows it to them (its aspect-ratio\'s automatic minimum, which a clip would drop)' },
       { target: '.cui-console-player-overlay', props: ['display', 'grid-template-columns', 'grid-template-rows'], golden: LAYOUT },
-      { target: '.cui-console-player-overlay', pseudo: '::before', props: ['background-image', 'opacity'], apple: ['tv-player', 'scrim.gradient'] },
+      { target: '.cui-console-player-overlay', pseudo: '::before', props: ['background-image', 'background-color', 'opacity'], apple: ['tv-player', 'scrim.gradient'] },
       { target: '.cui-console-player-overlay', pseudo: '::before', props: ['transition-property', 'transition-duration'], apple: ['tv-player', 'scrim.gradient'] },
       { target: '.cui-console-player-play', props: ['color', 'cursor', 'opacity', 'background-color', 'border-top-width', 'padding-top'], apple: ['tv-player', 'play'] },
       { target: '.cui-console-player-play', props: ['box-width', 'box-height'], golden: 'tv.apple.com\'s centre button, 66px (tv-player:play\'s box: an apple check reads no width)' },
@@ -79,18 +79,18 @@ export const cases = [
       { target: '.cui-console-player-volume > .cui-console-player-btn', props: ['box-width', 'color'], golden: 'the mute button 26px in white, tv.apple.com\'s (tv-player:volume.button, its glyph filled white); its Lucide glyph 22px, a stroke glyph drawn smaller than a filled one' },
       { target: '.cui-console-player-time', props: ['font-size', 'line-height', 'font-weight', 'color', 'font-variant-numeric'], apple: ['tv-player', 'elapsed'] },
       { target: '.cui-console-player-time:last-of-type', props: ['color'], apple: ['tv-player', 'remaining'] },
-      { target: SCRUB, props: ['--cui-console-player-track', '--cui-console-player-thumb'], apple: ['tv-player', 'scrubber'], as: { '--cui-console-player-track': '--progress-track-height', '--cui-console-player-thumb': '--progress-thumb-height' } },
+      { target: SCRUB, props: ['--cui-console-player-track', '--cui-console-player-thumb', '--cui-console-player-thumb-width'], apple: ['tv-player', 'scrubber'], as: { '--cui-console-player-track': '--progress-track-height', '--cui-console-player-thumb': '--progress-thumb-height', '--cui-console-player-thumb-width': '--progress-thumb-width' } },
       { target: SCRUB, props: ['cursor'], apple: ['tv-player', 'scrubber'] },
       { target: SCRUB, props: ['box-height', 'appearance', '--cui-console-player-value'], golden: 'a 44px target for any pointer, the HIG\'s default (reference/touch/), where tv.apple.com\'s is 25px (tv-player:scrubber\'s box); the share played the page\'s, written as a percentage' },
       { target: SCRUB, props: ['position'], golden: 'positioned, over the times\' text its target reaches down into: unpositioned, a point on the time played hit the <time>, not the range' },
-      { target: SCRUB, props: ['margin-top', 'margin-bottom'], golden: 'its margins give back all but the thumb\'s 11px, tv.apple.com\'s row (tv-player:progress.bar 11px 14px): the bar sits where it did, the line as thin' },
+      { target: SCRUB, props: ['margin-top', 'margin-bottom'], golden: 'its margins give back all but the thumb\'s 13px, tv.apple.com\'s row (tv-player:progress.bar 13px 14px): the bar sits where it did, the line as thin' },
       { target: '.cui-console-player-progress', props: ['grid-template-rows'], apple: ['tv-player', 'progress.bar'] },
       { target: SCRUB, props: ['--cui-console-player-track'], state: 'active', golden: 'held, the line 8px, thicker under the thumb (the owner, 2026-11-05: 「thicker while dragged」); tv.apple.com\'s forced :active reads 5px (tv-player:scrubber:active), its drag drawn by its script' },
       { target: '.cui-console-player-buttons', props: ['z-index', 'position'], golden: 'over the scrubber\'s target, which reaches 4.5px up into their row: a click on a button\'s foot is the button\'s' },
       { target: PREVIEW, props: ['display', 'pointer-events'], golden: 'the preview hidden until the page\'s script shows it, and never in the pointer\'s way' },
-      { target: VOLUME, props: ['--cui-console-player-track', '--cui-console-player-thumb'], apple: ['tv-player', 'volume.range'], as: { '--cui-console-player-track': '--progress-track-height', '--cui-console-player-thumb': '--progress-thumb-height' } },
+      { target: VOLUME, props: ['--cui-console-player-track', '--cui-console-player-thumb', '--cui-console-player-thumb-width'], apple: ['tv-player', 'volume.range'], as: { '--cui-console-player-track': '--progress-track-height', '--cui-console-player-thumb': '--progress-thumb-height', '--cui-console-player-thumb-width': '--progress-thumb-width' } },
       { target: VOLUME, props: ['box-width', 'opacity', 'margin-right'], golden: 'closed, the speaker alone: no range and none of the 8px gap before the button; ' + OPEN },
-      { target: VOLUME, props: ['pointer-events'], golden: 'closed, it takes no pointer: its 11px thumb overflows its 0px over the button, and took 6px of the button\'s target (the touch audit read the button 38px wide)' },
+      { target: VOLUME, props: ['pointer-events'], golden: 'closed, it takes no pointer: its 24 by 13px thumb overflows its 0px over the button, and took 6px of the button\'s target (the touch audit read the button 38px wide)' },
       { target: VOLUME, props: ['transition-property', 'transition-duration', 'transition-timing-function'], golden: OPEN },
       { target: '.cui-console-player-glyph-volume', props: ['display'], golden: 'not muted, the speaker' },
       { target: '.cui-console-player-glyph-muted', props: ['display'], golden: 'not muted, no struck speaker' },
@@ -144,7 +144,7 @@ export const cases = [
     hover: '[data-control="mute"]',
     checks: [
       { target: VOLUME, props: ['pointer-events'], golden: 'open, it takes the pointer' },
-      { target: VOLUME, props: ['box-width', 'opacity', 'margin-right'], golden: 'the pointer over its button, the range open: tv.apple.com\'s 100px (tv-player:volume.range), its thumb white as the scrubber\'s, where tv.apple.com\'s is #d0d0d0 until hovered: one thumb; ' + OPEN },
+      { target: VOLUME, props: ['box-width', 'opacity', 'margin-right'], golden: 'the pointer over its button, the range open: tv.apple.com\'s 100px (tv-player:volume.range), its thumb white as the scrubber\'s (tv-player:volume.range --progress-thumb-color); ' + OPEN },
       { target: '.cui-console-player-volume > .cui-console-player-btn', props: ['box-left'], golden: 'the button where it was: the range opens to its left (tv-player:volume.button at the header\'s end)' },
     ],
   },

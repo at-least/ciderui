@@ -1,8 +1,8 @@
 {
  "url": "https://tv.apple.com/us/collection/trailers/uts.col.Trailers.umc.cmc.vtoh0mn0xn7t3c643xqonfzy",
  "finalUrl": "https://tv.apple.com/us/collection/trailers/uts.col.Trailers.umc.cmc.vtoh0mn0xn7t3c643xqonfzy",
- "browser": "chrome 157.0.8103.38 on linux",
- "date": "2026-11-04T19:08:08.375Z",
+ "browser": "chrome 157.0.8103.78 on linux",
+ "date": "2026-11-13T08:59:19.021Z",
  "widths": {
   "1200": {
    "dialog": {
@@ -19,7 +19,7 @@
     }
    },
    "scrim": {
-    "html": "<div class=\"video-player-scrim svelte-1610apj\" data-testid=\"video-player-scrim\"><div class=\"scrim__gradient svelte-1610apj\"></div><div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-19l0lnx\"><div",
+    "html": "<div class=\"video-player-scrim svelte-1610apj\" data-testid=\"video-player-scrim\"><div class=\"scrim__gradient svelte-1610apj\"></div><div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-z8v5pn\"><div ",
     "styles": {
      "display": "grid",
      "flex-direction": "row",
@@ -28,7 +28,7 @@
      "justify-content": "normal",
      "row-gap": "normal",
      "column-gap": "normal",
-     "grid-template-rows": "20px 26px 713px 121px 20px",
+     "grid-template-rows": "20px 36px 699px 125px 20px",
      "grid-template-columns": "30px 1140px 30px",
      "padding-top": "0px",
      "padding-left": "0px",
@@ -211,7 +211,8 @@
    "scrim.gradient": {
     "html": "<div class=\"scrim__gradient svelte-1610apj\"></div>",
     "styles": {
-     "background-image": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6) 44.64%, rgba(0, 0, 0, 0.7) 75%, rgb(0, 0, 0))",
+     "background-image": "none",
+     "background-color": "rgba(0, 0, 0, 0.4)",
      "opacity": "1",
      "transition-property": "opacity",
      "transition-duration": "0.1s",
@@ -225,7 +226,7 @@
     }
    },
    "scrim.header": {
-    "html": "<div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-19l0lnx\"><div class=\"close-button-group svelte-19l0lnx\"><button class=\"close-button svelte-19l0lnx\" data-testid=\"close-button\" aria-label=\"…",
+    "html": "<div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-z8v5pn\"><div class=\"close-button-group svelte-z8v5pn\"><button class=\"close-button svelte-z8v5pn\" data-testid=\"close-button\" aria-label=\"…\"><",
     "styles": {
      "opacity": "1",
      "transition-property": "opacity, transform",
@@ -234,13 +235,13 @@
     },
     "box": {
      "width": 1140,
-     "height": 26,
+     "height": 36,
      "top": 20,
      "left": 30
     }
    },
    "scrim.footer": {
-    "html": "<div class=\"scrim__footer svelte-1610apj\"><div slot=\"footer\" class=\"video-player__footer svelte-19l0lnx scrubbing-enabled\"><div class=\"video-player__metadata svelte-19l0lnx\"><div class=\"video-metadata\"><div class=\"title svelte-1xeutm\" data",
+    "html": "<div class=\"scrim__footer svelte-1610apj\"><div slot=\"footer\" class=\"video-player__footer svelte-z8v5pn scrubbing-enabled\"><div class=\"video-player__metadata svelte-z8v5pn\"><div class=\"video-metadata\"><div class=\"title svelte-jhlls7\" data-t",
     "styles": {
      "opacity": "1",
      "padding-left": "0px",
@@ -252,13 +253,13 @@
     },
     "box": {
      "width": 1200,
-     "height": 121,
-     "top": 759,
+     "height": 125,
+     "top": 755,
      "left": 0
     }
    },
    "header": {
-    "html": "<div slot=\"header\" class=\"video-player__header svelte-19l0lnx\"><div class=\"close-button-group svelte-19l0lnx\"><button class=\"close-button svelte-19l0lnx\" data-testid=\"close-button\" aria-label=\"…\"><svg width=\"18\" height=\"18\" aria-hidden=",
+    "html": "<div slot=\"header\" class=\"video-player__header svelte-z8v5pn\"><div class=\"close-button-group svelte-z8v5pn\"><button class=\"close-button svelte-z8v5pn\" data-testid=\"close-button\" aria-label=\"…\"><svg width=\"18\" height=\"18\" aria-hidden=\"tr",
     "styles": {
      "display": "grid",
      "flex-direction": "row",
@@ -267,20 +268,20 @@
      "justify-content": "normal",
      "row-gap": "normal",
      "column-gap": "normal",
-     "grid-template-columns": "511px 629px",
+     "grid-template-columns": "520px 620px",
      "padding-left": "0px",
      "padding-right": "0px",
      "padding-top": "0px"
     },
     "box": {
      "width": 1140,
-     "height": 26,
+     "height": 36,
      "top": 20,
      "left": 30
     }
    },
    "footer": {
-    "html": "<div slot=\"footer\" class=\"video-player__footer svelte-19l0lnx scrubbing-enabled\"><div class=\"video-player__metadata svelte-19l0lnx\"><div class=\"video-metadata\"><div class=\"title svelte-1xeutm\" data-testid=\"player-metadata-title\">",
+    "html": "<div slot=\"footer\" class=\"video-player__footer svelte-z8v5pn scrubbing-enabled\"><div class=\"video-player__metadata svelte-z8v5pn\"><div class=\"video-metadata\"><div class=\"title svelte-jhlls7\" data-testid=\"player-metadata-title\">",
     "styles": {
      "display": "grid",
      "flex-direction": "row",
@@ -290,7 +291,7 @@
      "row-gap": "normal",
      "column-gap": "12px",
      "grid-template-columns": "912px 216px",
-     "grid-template-rows": "32px 12px 25px 12px 40px",
+     "grid-template-rows": "32px 12px 25px 12px 44px",
      "grid-template-areas": "\"info controls\" \". .\" \"scrub scrub\" \". .\" \"tabs auto-subs\"",
      "padding-left": "30px",
      "padding-right": "30px",
@@ -298,13 +299,13 @@
     },
     "box": {
      "width": 1200,
-     "height": 121,
-     "top": 759,
+     "height": 125,
+     "top": 755,
      "left": 0
     }
    },
    "title": {
-    "html": "<div class=\"title svelte-1xeutm\" data-testid=\"player-metadata-title\"></div>",
+    "html": "<div class=\"title svelte-jhlls7\" data-testid=\"player-metadata-title\"></div>",
     "styles": {
      "font-family": "-apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "26px",
@@ -316,12 +317,12 @@
     "box": {
      "width": 912,
      "height": 32,
-     "top": 759,
+     "top": 755,
      "left": 30
     }
    },
    "progress": {
-    "html": "<div class=\"video-player__progress svelte-19l0lnx\" aria-live=\"off\"><amp-playback-controls-progress hydrated=\"\"></amp-playback-controls-progress></div>",
+    "html": "<div class=\"video-player__progress svelte-z8v5pn\" aria-live=\"off\"><amp-playback-controls-progress hydrated=\"\"></amp-playback-controls-progress></div>",
     "styles": {
      "padding-top": "0px",
      "padding-bottom": "0px",
@@ -329,8 +330,8 @@
     },
     "box": {
      "width": 1140,
-     "height": 36,
-     "top": 803,
+     "height": 38,
+     "top": 799,
      "left": 30
     }
    },
@@ -345,13 +346,13 @@
      "row-gap": "0px",
      "column-gap": "0px",
      "grid-template-columns": "24.7656px 1085.23px 30px",
-     "grid-template-rows": "11px 14px",
+     "grid-template-rows": "13px 14px",
      "grid-template-areas": "\"scrubber scrubber scrubber\" \"elapsed . remaining\""
     },
     "box": {
      "width": 1140,
-     "height": 25,
-     "top": 803,
+     "height": 27,
+     "top": 799,
      "left": 30
     }
    },
@@ -372,7 +373,7 @@
     "box": {
      "width": 24.765625,
      "height": 14,
-     "top": 814,
+     "top": 812,
      "left": 30
     }
    },
@@ -393,7 +394,7 @@
     "box": {
      "width": 30,
      "height": 14,
-     "top": 814,
+     "top": 812,
      "left": 1140
     }
    },
@@ -413,13 +414,13 @@
      "--progress-track-color": "#f6f6f65c",
      "--progress-track-color-elapsed": "#fff",
      "--progress-track-color-elapsed-active": "#fff",
-     "--progress-thumb-height": "11px",
-     "--progress-thumb-width": "",
+     "--progress-thumb-height": "13px",
+     "--progress-thumb-width": "24px",
      "--progress-thumb-color": "",
      "--progress-thumb-color-active": "",
      "--progress-thumb-multiplier": "",
      "--progress-thumb-multiplier-active": "",
-     "--progress-thumb-border-radius": "",
+     "--progress-thumb-border-radius": "6.5px",
      "--progress-thumb-box-shadow": "inset 0 0 .5px 0 #00000026,1px 1px 1px 0 #0000001a",
      "--progress-thumb-outline-active": "",
      "--volume-thumb-box-shadow": ""
@@ -427,7 +428,7 @@
     "box": {
      "width": 1140,
      "height": 25,
-     "top": 796,
+     "top": 793,
      "left": 30
     },
     "states": {
@@ -445,13 +446,13 @@
       "--progress-track-color": "#f6f6f65c",
       "--progress-track-color-elapsed": "#fff",
       "--progress-track-color-elapsed-active": "#fff",
-      "--progress-thumb-height": "11px",
-      "--progress-thumb-width": "",
+      "--progress-thumb-height": "13px",
+      "--progress-thumb-width": "24px",
       "--progress-thumb-color": "white",
       "--progress-thumb-color-active": "",
       "--progress-thumb-multiplier": "",
       "--progress-thumb-multiplier-active": "1",
-      "--progress-thumb-border-radius": "",
+      "--progress-thumb-border-radius": "6.5px",
       "--progress-thumb-box-shadow": "inset 0 0 .5px 0 #00000026,1px 1px 1px 0 #0000001a",
       "--progress-thumb-outline-active": "",
       "--volume-thumb-box-shadow": ""
@@ -470,13 +471,13 @@
       "--progress-track-color": "#f6f6f65c",
       "--progress-track-color-elapsed": "#fff",
       "--progress-track-color-elapsed-active": "#fff",
-      "--progress-thumb-height": "11px",
-      "--progress-thumb-width": "",
+      "--progress-thumb-height": "13px",
+      "--progress-thumb-width": "24px",
       "--progress-thumb-color": "white",
       "--progress-thumb-color-active": "",
       "--progress-thumb-multiplier": "",
       "--progress-thumb-multiplier-active": "1",
-      "--progress-thumb-border-radius": "",
+      "--progress-thumb-border-radius": "6.5px",
       "--progress-thumb-box-shadow": "inset 0 0 .5px 0 #00000026,1px 1px 1px 0 #0000001a",
       "--progress-thumb-outline-active": "",
       "--volume-thumb-box-shadow": ""
@@ -495,13 +496,13 @@
       "--progress-track-color": "#f6f6f65c",
       "--progress-track-color-elapsed": "#fff",
       "--progress-track-color-elapsed-active": "#fff",
-      "--progress-thumb-height": "11px",
-      "--progress-thumb-width": "",
+      "--progress-thumb-height": "13px",
+      "--progress-thumb-width": "24px",
       "--progress-thumb-color": "",
       "--progress-thumb-color-active": "",
       "--progress-thumb-multiplier": "",
       "--progress-thumb-multiplier-active": "",
-      "--progress-thumb-border-radius": "",
+      "--progress-thumb-border-radius": "6.5px",
       "--progress-thumb-box-shadow": "inset 0 0 .5px 0 #00000026,1px 1px 1px 0 #0000001a",
       "--progress-thumb-outline-active": "",
       "--volume-thumb-box-shadow": ""
@@ -509,7 +510,7 @@
     }
    },
    "volume": {
-    "html": "<div class=\"video-player__volume svelte-19l0lnx\"><amp-volume-control-unified hydrated=\"\"><div class=\"volume-unified\"><amp-volume-control hydrated=\"\"></amp-volume-control><button class=\"volume-unified__indicator\"><svg class=\"volume-unified__",
+    "html": "<div class=\"video-player__volume svelte-z8v5pn\"><amp-volume-control-unified hydrated=\"\"><div class=\"volume-unified\"><amp-volume-control hydrated=\"\"></amp-volume-control><button class=\"volume-unified__indicator\"><svg class=\"volume-unified__i",
     "styles": {
      "display": "grid",
      "flex-direction": "row",
@@ -522,7 +523,7 @@
     },
     "box": {
      "width": 136,
-     "height": 26,
+     "height": 36,
      "top": 20,
      "left": 1034
     }
@@ -543,13 +544,13 @@
      "--progress-track-color": "rgba(246, 246, 246, 0.36)",
      "--progress-track-color-elapsed": "white",
      "--progress-track-color-elapsed-active": "white",
-     "--progress-thumb-height": "11px",
-     "--progress-thumb-width": "",
-     "--progress-thumb-color": "#d0d0d0",
+     "--progress-thumb-height": "13px",
+     "--progress-thumb-width": "24px",
+     "--progress-thumb-color": "#fff",
      "--progress-thumb-color-active": "",
      "--progress-thumb-multiplier": "",
      "--progress-thumb-multiplier-active": "",
-     "--progress-thumb-border-radius": "",
+     "--progress-thumb-border-radius": "6.5px",
      "--progress-thumb-box-shadow": "",
      "--progress-thumb-outline-active": "",
      "--volume-thumb-box-shadow": "inset 0 0 .5px 0 rgba(0, 0, 0, 0.15), 1px 1px 1px 0 rgba(0, 0, 0, 0.1)"
@@ -557,7 +558,7 @@
     "box": {
      "width": 100,
      "height": 5,
-     "top": 30.5,
+     "top": 35.5,
      "left": 1034
     },
     "states": {
@@ -575,13 +576,13 @@
       "--progress-track-color": "rgba(246, 246, 246, 0.36)",
       "--progress-track-color-elapsed": "white",
       "--progress-track-color-elapsed-active": "white",
-      "--progress-thumb-height": "11px",
-      "--progress-thumb-width": "",
+      "--progress-thumb-height": "13px",
+      "--progress-thumb-width": "24px",
       "--progress-thumb-color": "white",
       "--progress-thumb-color-active": "",
       "--progress-thumb-multiplier": "",
       "--progress-thumb-multiplier-active": "1",
-      "--progress-thumb-border-radius": "",
+      "--progress-thumb-border-radius": "6.5px",
       "--progress-thumb-box-shadow": "",
       "--progress-thumb-outline-active": "",
       "--volume-thumb-box-shadow": "inset 0 0 .5px 0 rgba(0, 0, 0, 0.15), 1px 1px 1px 0 rgba(0, 0, 0, 0.1)"
@@ -600,13 +601,13 @@
       "--progress-track-color": "rgba(246, 246, 246, 0.36)",
       "--progress-track-color-elapsed": "white",
       "--progress-track-color-elapsed-active": "white",
-      "--progress-thumb-height": "11px",
-      "--progress-thumb-width": "",
+      "--progress-thumb-height": "13px",
+      "--progress-thumb-width": "24px",
       "--progress-thumb-color": "white",
       "--progress-thumb-color-active": "",
       "--progress-thumb-multiplier": "",
       "--progress-thumb-multiplier-active": "1",
-      "--progress-thumb-border-radius": "",
+      "--progress-thumb-border-radius": "6.5px",
       "--progress-thumb-box-shadow": "",
       "--progress-thumb-outline-active": "",
       "--volume-thumb-box-shadow": "inset 0 0 .5px 0 rgba(0, 0, 0, 0.15), 1px 1px 1px 0 rgba(0, 0, 0, 0.1)"
@@ -625,13 +626,13 @@
       "--progress-track-color": "rgba(246, 246, 246, 0.36)",
       "--progress-track-color-elapsed": "white",
       "--progress-track-color-elapsed-active": "white",
-      "--progress-thumb-height": "11px",
-      "--progress-thumb-width": "",
-      "--progress-thumb-color": "#d0d0d0",
+      "--progress-thumb-height": "13px",
+      "--progress-thumb-width": "24px",
+      "--progress-thumb-color": "#fff",
       "--progress-thumb-color-active": "",
       "--progress-thumb-multiplier": "",
       "--progress-thumb-multiplier-active": "",
-      "--progress-thumb-border-radius": "",
+      "--progress-thumb-border-radius": "6.5px",
       "--progress-thumb-box-shadow": "",
       "--progress-thumb-outline-active": "",
       "--volume-thumb-box-shadow": "inset 0 0 .5px 0 rgba(0, 0, 0, 0.15), 1px 1px 1px 0 rgba(0, 0, 0, 0.1)"
@@ -676,7 +677,7 @@
     "box": {
      "width": 26,
      "height": 26,
-     "top": 20,
+     "top": 25,
      "left": 1142
     },
     "states": {
@@ -795,7 +796,7 @@
     }
    },
    "controls": {
-    "html": "<div class=\"video-player__controls svelte-19l0lnx\"><amp-jump-to-live-control class=\"video-player__control svelte-19l0lnx unsupported\" hydrated=\"\"></amp-jump-to-live-control><amp-captions-control class=\"video-player__control video-player__",
+    "html": "<div class=\"video-player__controls svelte-z8v5pn\"><amp-jump-to-live-control class=\"video-player__control svelte-z8v5pn unsupported\" hydrated=\"\"></amp-jump-to-live-control><amp-captions-control class=\"video-player__control video-player__co",
     "styles": {
      "display": "flex",
      "flex-direction": "row",
@@ -809,7 +810,7 @@
     "box": {
      "width": 216,
      "height": 24,
-     "top": 767,
+     "top": 763,
      "left": 954
     }
    },
@@ -852,7 +853,7 @@
     "box": {
      "width": 20,
      "height": 20,
-     "top": 769,
+     "top": 765,
      "left": 1034
     },
     "states": {
@@ -1010,7 +1011,7 @@
     "box": {
      "width": 24,
      "height": 24,
-     "top": 767,
+     "top": 763,
      "left": 1070
     },
     "states": {
@@ -1135,7 +1136,7 @@
     "box": {
      "width": 24,
      "height": 22,
-     "top": 768,
+     "top": 764,
      "left": 1146
     },
     "states": {
@@ -1268,7 +1269,7 @@
     }
    },
    "scrim": {
-    "html": "<div class=\"video-player-scrim svelte-1610apj\" data-testid=\"video-player-scrim\"><div class=\"scrim__gradient svelte-1610apj\"></div><div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-19l0lnx\"><div",
+    "html": "<div class=\"video-player-scrim svelte-1610apj\" data-testid=\"video-player-scrim\"><div class=\"scrim__gradient svelte-1610apj\"></div><div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-z8v5pn\"><div ",
     "styles": {
      "display": "grid",
      "flex-direction": "row",
@@ -1277,7 +1278,7 @@
      "justify-content": "normal",
      "row-gap": "normal",
      "column-gap": "normal",
-     "grid-template-rows": "20px 26px 713px 121px 20px",
+     "grid-template-rows": "20px 36px 699px 125px 20px",
      "grid-template-columns": "30px 1540px 30px",
      "padding-top": "0px",
      "padding-left": "0px",
@@ -1460,7 +1461,8 @@
    "scrim.gradient": {
     "html": "<div class=\"scrim__gradient svelte-1610apj\"></div>",
     "styles": {
-     "background-image": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6) 44.64%, rgba(0, 0, 0, 0.7) 75%, rgb(0, 0, 0))",
+     "background-image": "none",
+     "background-color": "rgba(0, 0, 0, 0.4)",
      "opacity": "1",
      "transition-property": "opacity",
      "transition-duration": "0.1s",
@@ -1474,7 +1476,7 @@
     }
    },
    "scrim.header": {
-    "html": "<div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-19l0lnx\"><div class=\"close-button-group svelte-19l0lnx\"><button class=\"close-button svelte-19l0lnx\" data-testid=\"close-button\" aria-label=\"…",
+    "html": "<div class=\"scrim__header svelte-1610apj\"><div slot=\"header\" class=\"video-player__header svelte-z8v5pn\"><div class=\"close-button-group svelte-z8v5pn\"><button class=\"close-button svelte-z8v5pn\" data-testid=\"close-button\" aria-label=\"…\"><",
     "styles": {
      "opacity": "1",
      "transition-property": "opacity, transform",
@@ -1483,13 +1485,13 @@
     },
     "box": {
      "width": 1540,
-     "height": 26,
+     "height": 36,
      "top": 20,
      "left": 30
     }
    },
    "scrim.footer": {
-    "html": "<div class=\"scrim__footer svelte-1610apj\"><div slot=\"footer\" class=\"video-player__footer svelte-19l0lnx scrubbing-enabled\"><div class=\"video-player__metadata svelte-19l0lnx\"><div class=\"video-metadata\"><div class=\"title svelte-1xeutm\" data",
+    "html": "<div class=\"scrim__footer svelte-1610apj\"><div slot=\"footer\" class=\"video-player__footer svelte-z8v5pn scrubbing-enabled\"><div class=\"video-player__metadata svelte-z8v5pn\"><div class=\"video-metadata\"><div class=\"title svelte-jhlls7\" data-t",
     "styles": {
      "opacity": "1",
      "padding-left": "0px",
@@ -1501,13 +1503,13 @@
     },
     "box": {
      "width": 1600,
-     "height": 121,
-     "top": 759,
+     "height": 125,
+     "top": 755,
      "left": 0
     }
    },
    "header": {
-    "html": "<div slot=\"header\" class=\"video-player__header svelte-19l0lnx\"><div class=\"close-button-group svelte-19l0lnx\"><button class=\"close-button svelte-19l0lnx\" data-testid=\"close-button\" aria-label=\"…\"><svg width=\"18\" height=\"18\" aria-hidden=",
+    "html": "<div slot=\"header\" class=\"video-player__header svelte-z8v5pn\"><div class=\"close-button-group svelte-z8v5pn\"><button class=\"close-button svelte-z8v5pn\" data-testid=\"close-button\" aria-label=\"…\"><svg width=\"18\" height=\"18\" aria-hidden=\"tr",
     "styles": {
      "display": "grid",
      "flex-direction": "row",
@@ -1516,20 +1518,20 @@
      "justify-content": "normal",
      "row-gap": "normal",
      "column-gap": "normal",
-     "grid-template-columns": "711px 829px",
+     "grid-template-columns": "720px 820px",
      "padding-left": "0px",
      "padding-right": "0px",
      "padding-top": "0px"
     },
     "box": {
      "width": 1540,
-     "height": 26,
+     "height": 36,
      "top": 20,
      "left": 30
     }
    },
    "footer": {
-    "html": "<div slot=\"footer\" class=\"video-player__footer svelte-19l0lnx scrubbing-enabled\"><div class=\"video-player__metadata svelte-19l0lnx\"><div class=\"video-metadata\"><div class=\"title svelte-1xeutm\" data-testid=\"player-metadata-title\">",
+    "html": "<div slot=\"footer\" class=\"video-player__footer svelte-z8v5pn scrubbing-enabled\"><div class=\"video-player__metadata svelte-z8v5pn\"><div class=\"video-metadata\"><div class=\"title svelte-jhlls7\" data-testid=\"player-metadata-title\">",
     "styles": {
      "display": "grid",
      "flex-direction": "row",
@@ -1539,7 +1541,7 @@
      "row-gap": "normal",
      "column-gap": "12px",
      "grid-template-columns": "1312px 216px",
-     "grid-template-rows": "32px 12px 25px 12px 40px",
+     "grid-template-rows": "32px 12px 25px 12px 44px",
      "grid-template-areas": "\"info controls\" \". .\" \"scrub scrub\" \". .\" \"tabs auto-subs\"",
      "padding-left": "30px",
      "padding-right": "30px",
@@ -1547,13 +1549,13 @@
     },
     "box": {
      "width": 1600,
-     "height": 121,
-     "top": 759,
+     "height": 125,
+     "top": 755,
      "left": 0
     }
    },
    "title": {
-    "html": "<div class=\"title svelte-1xeutm\" data-testid=\"player-metadata-title\"></div>",
+    "html": "<div class=\"title svelte-jhlls7\" data-testid=\"player-metadata-title\"></div>",
     "styles": {
      "font-family": "-apple-system, BlinkMacSystemFont, \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "26px",
@@ -1565,12 +1567,12 @@
     "box": {
      "width": 1312,
      "height": 32,
-     "top": 759,
+     "top": 755,
      "left": 30
     }
    },
    "progress": {
-    "html": "<div class=\"video-player__progress svelte-19l0lnx\" aria-live=\"off\"><amp-playback-controls-progress hydrated=\"\"></amp-playback-controls-progress></div>",
+    "html": "<div class=\"video-player__progress svelte-z8v5pn\" aria-live=\"off\"><amp-playback-controls-progress hydrated=\"\"></amp-playback-controls-progress></div>",
     "styles": {
      "padding-top": "0px",
      "padding-bottom": "0px",
@@ -1578,8 +1580,8 @@
     },
     "box": {
      "width": 1540,
-     "height": 36,
-     "top": 803,
+     "height": 38,
+     "top": 799,
      "left": 30
     }
    },
@@ -1594,13 +1596,13 @@
      "row-gap": "0px",
      "column-gap": "0px",
      "grid-template-columns": "24.7656px 1485.23px 30px",
-     "grid-template-rows": "11px 14px",
+     "grid-template-rows": "13px 14px",
      "grid-template-areas": "\"scrubber scrubber scrubber\" \"elapsed . remaining\""
     },
     "box": {
      "width": 1540,
-     "height": 25,
-     "top": 803,
+     "height": 27,
+     "top": 799,
      "left": 30
     }
    },
@@ -1621,7 +1623,7 @@
     "box": {
      "width": 24.765625,
      "height": 14,
-     "top": 814,
+     "top": 812,
      "left": 30
     }
    },
@@ -1642,7 +1644,7 @@
     "box": {
      "width": 30,
      "height": 14,
-     "top": 814,
+     "top": 812,
      "left": 1540
     }
    },
@@ -1662,13 +1664,13 @@
      "--progress-track-color": "#f6f6f65c",
      "--progress-track-color-elapsed": "#fff",
      "--progress-track-color-elapsed-active": "#fff",
-     "--progress-thumb-height": "11px",
-     "--progress-thumb-width": "",
+     "--progress-thumb-height": "13px",
+     "--progress-thumb-width": "24px",
      "--progress-thumb-color": "",
      "--progress-thumb-color-active": "",
      "--progress-thumb-multiplier": "",
      "--progress-thumb-multiplier-active": "",
-     "--progress-thumb-border-radius": "",
+     "--progress-thumb-border-radius": "6.5px",
      "--progress-thumb-box-shadow": "inset 0 0 .5px 0 #00000026,1px 1px 1px 0 #0000001a",
      "--progress-thumb-outline-active": "",
      "--volume-thumb-box-shadow": ""
@@ -1676,7 +1678,7 @@
     "box": {
      "width": 1540,
      "height": 25,
-     "top": 796,
+     "top": 793,
      "left": 30
     },
     "states": {
@@ -1694,13 +1696,13 @@
       "--progress-track-color": "#f6f6f65c",
       "--progress-track-color-elapsed": "#fff",
       "--progress-track-color-elapsed-active": "#fff",
-      "--progress-thumb-height": "11px",
-      "--progress-thumb-width": "",
+      "--progress-thumb-height": "13px",
+      "--progress-thumb-width": "24px",
       "--progress-thumb-color": "white",
       "--progress-thumb-color-active": "",
       "--progress-thumb-multiplier": "",
       "--progress-thumb-multiplier-active": "1",
-      "--progress-thumb-border-radius": "",
+      "--progress-thumb-border-radius": "6.5px",
       "--progress-thumb-box-shadow": "inset 0 0 .5px 0 #00000026,1px 1px 1px 0 #0000001a",
       "--progress-thumb-outline-active": "",
       "--volume-thumb-box-shadow": ""
@@ -1719,13 +1721,13 @@
       "--progress-track-color": "#f6f6f65c",
       "--progress-track-color-elapsed": "#fff",
       "--progress-track-color-elapsed-active": "#fff",
-      "--progress-thumb-height": "11px",
-      "--progress-thumb-width": "",
+      "--progress-thumb-height": "13px",
+      "--progress-thumb-width": "24px",
       "--progress-thumb-color": "white",
       "--progress-thumb-color-active": "",
       "--progress-thumb-multiplier": "",
       "--progress-thumb-multiplier-active": "1",
-      "--progress-thumb-border-radius": "",
+      "--progress-thumb-border-radius": "6.5px",
       "--progress-thumb-box-shadow": "inset 0 0 .5px 0 #00000026,1px 1px 1px 0 #0000001a",
       "--progress-thumb-outline-active": "",
       "--volume-thumb-box-shadow": ""
@@ -1744,13 +1746,13 @@
       "--progress-track-color": "#f6f6f65c",
       "--progress-track-color-elapsed": "#fff",
       "--progress-track-color-elapsed-active": "#fff",
-      "--progress-thumb-height": "11px",
-      "--progress-thumb-width": "",
+      "--progress-thumb-height": "13px",
+      "--progress-thumb-width": "24px",
       "--progress-thumb-color": "",
       "--progress-thumb-color-active": "",
       "--progress-thumb-multiplier": "",
       "--progress-thumb-multiplier-active": "",
-      "--progress-thumb-border-radius": "",
+      "--progress-thumb-border-radius": "6.5px",
       "--progress-thumb-box-shadow": "inset 0 0 .5px 0 #00000026,1px 1px 1px 0 #0000001a",
       "--progress-thumb-outline-active": "",
       "--volume-thumb-box-shadow": ""
@@ -1758,7 +1760,7 @@
     }
    },
    "volume": {
-    "html": "<div class=\"video-player__volume svelte-19l0lnx\"><amp-volume-control-unified hydrated=\"\"><div class=\"volume-unified\"><amp-volume-control hydrated=\"\"></amp-volume-control><button class=\"volume-unified__indicator\"><svg class=\"volume-unified__",
+    "html": "<div class=\"video-player__volume svelte-z8v5pn\"><amp-volume-control-unified hydrated=\"\"><div class=\"volume-unified\"><amp-volume-control hydrated=\"\"></amp-volume-control><button class=\"volume-unified__indicator\"><svg class=\"volume-unified__i",
     "styles": {
      "display": "grid",
      "flex-direction": "row",
@@ -1771,7 +1773,7 @@
     },
     "box": {
      "width": 136,
-     "height": 26,
+     "height": 36,
      "top": 20,
      "left": 1434
     }
@@ -1792,13 +1794,13 @@
      "--progress-track-color": "rgba(246, 246, 246, 0.36)",
      "--progress-track-color-elapsed": "white",
      "--progress-track-color-elapsed-active": "white",
-     "--progress-thumb-height": "11px",
-     "--progress-thumb-width": "",
-     "--progress-thumb-color": "#d0d0d0",
+     "--progress-thumb-height": "13px",
+     "--progress-thumb-width": "24px",
+     "--progress-thumb-color": "#fff",
      "--progress-thumb-color-active": "",
      "--progress-thumb-multiplier": "",
      "--progress-thumb-multiplier-active": "",
-     "--progress-thumb-border-radius": "",
+     "--progress-thumb-border-radius": "6.5px",
      "--progress-thumb-box-shadow": "",
      "--progress-thumb-outline-active": "",
      "--volume-thumb-box-shadow": "inset 0 0 .5px 0 rgba(0, 0, 0, 0.15), 1px 1px 1px 0 rgba(0, 0, 0, 0.1)"
@@ -1806,7 +1808,7 @@
     "box": {
      "width": 100,
      "height": 5,
-     "top": 30.5,
+     "top": 35.5,
      "left": 1434
     },
     "states": {
@@ -1824,13 +1826,13 @@
       "--progress-track-color": "rgba(246, 246, 246, 0.36)",
       "--progress-track-color-elapsed": "white",
       "--progress-track-color-elapsed-active": "white",
-      "--progress-thumb-height": "11px",
-      "--progress-thumb-width": "",
+      "--progress-thumb-height": "13px",
+      "--progress-thumb-width": "24px",
       "--progress-thumb-color": "white",
       "--progress-thumb-color-active": "",
       "--progress-thumb-multiplier": "",
       "--progress-thumb-multiplier-active": "1",
-      "--progress-thumb-border-radius": "",
+      "--progress-thumb-border-radius": "6.5px",
       "--progress-thumb-box-shadow": "",
       "--progress-thumb-outline-active": "",
       "--volume-thumb-box-shadow": "inset 0 0 .5px 0 rgba(0, 0, 0, 0.15), 1px 1px 1px 0 rgba(0, 0, 0, 0.1)"
@@ -1849,13 +1851,13 @@
       "--progress-track-color": "rgba(246, 246, 246, 0.36)",
       "--progress-track-color-elapsed": "white",
       "--progress-track-color-elapsed-active": "white",
-      "--progress-thumb-height": "11px",
-      "--progress-thumb-width": "",
+      "--progress-thumb-height": "13px",
+      "--progress-thumb-width": "24px",
       "--progress-thumb-color": "white",
       "--progress-thumb-color-active": "",
       "--progress-thumb-multiplier": "",
       "--progress-thumb-multiplier-active": "1",
-      "--progress-thumb-border-radius": "",
+      "--progress-thumb-border-radius": "6.5px",
       "--progress-thumb-box-shadow": "",
       "--progress-thumb-outline-active": "",
       "--volume-thumb-box-shadow": "inset 0 0 .5px 0 rgba(0, 0, 0, 0.15), 1px 1px 1px 0 rgba(0, 0, 0, 0.1)"
@@ -1874,13 +1876,13 @@
       "--progress-track-color": "rgba(246, 246, 246, 0.36)",
       "--progress-track-color-elapsed": "white",
       "--progress-track-color-elapsed-active": "white",
-      "--progress-thumb-height": "11px",
-      "--progress-thumb-width": "",
-      "--progress-thumb-color": "#d0d0d0",
+      "--progress-thumb-height": "13px",
+      "--progress-thumb-width": "24px",
+      "--progress-thumb-color": "#fff",
       "--progress-thumb-color-active": "",
       "--progress-thumb-multiplier": "",
       "--progress-thumb-multiplier-active": "",
-      "--progress-thumb-border-radius": "",
+      "--progress-thumb-border-radius": "6.5px",
       "--progress-thumb-box-shadow": "",
       "--progress-thumb-outline-active": "",
       "--volume-thumb-box-shadow": "inset 0 0 .5px 0 rgba(0, 0, 0, 0.15), 1px 1px 1px 0 rgba(0, 0, 0, 0.1)"
@@ -1925,7 +1927,7 @@
     "box": {
      "width": 26,
      "height": 26,
-     "top": 20,
+     "top": 25,
      "left": 1542
     },
     "states": {
@@ -2044,7 +2046,7 @@
     }
    },
    "controls": {
-    "html": "<div class=\"video-player__controls svelte-19l0lnx\"><amp-jump-to-live-control class=\"video-player__control svelte-19l0lnx unsupported\" hydrated=\"\"></amp-jump-to-live-control><amp-captions-control class=\"video-player__control video-player__",
+    "html": "<div class=\"video-player__controls svelte-z8v5pn\"><amp-jump-to-live-control class=\"video-player__control svelte-z8v5pn unsupported\" hydrated=\"\"></amp-jump-to-live-control><amp-captions-control class=\"video-player__control video-player__co",
     "styles": {
      "display": "flex",
      "flex-direction": "row",
@@ -2058,7 +2060,7 @@
     "box": {
      "width": 216,
      "height": 24,
-     "top": 767,
+     "top": 763,
      "left": 1354
     }
    },
@@ -2101,7 +2103,7 @@
     "box": {
      "width": 20,
      "height": 20,
-     "top": 769,
+     "top": 765,
      "left": 1434
     },
     "states": {
@@ -2259,7 +2261,7 @@
     "box": {
      "width": 24,
      "height": 24,
-     "top": 767,
+     "top": 763,
      "left": 1470
     },
     "states": {
@@ -2384,7 +2386,7 @@
     "box": {
      "width": 24,
      "height": 22,
-     "top": 768,
+     "top": 764,
      "left": 1546
     },
     "states": {
