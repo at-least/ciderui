@@ -104,13 +104,11 @@ type ClassRow struct {
 
 // PagesClass fails t where a row's Node does not write PageClass after its
 // Root, and for each exported struct with a Class field in the package under
-// test (the working directory's) that no row's Node is and nested does not
-// name: a part that drops its Class draws fine, in the wrong place, so a new
-// part cannot go without a row. nested: a part only inside another part (that
-// part's row), or one whose Class is its whole class attribute.
-func PagesClass(t testing.TB, nested []string, rows []ClassRow) {
+// test (the working directory's) that no row's Node is: a part that drops its
+// Class draws fine, in the wrong place, so a new part cannot go without a row.
+func PagesClass(t testing.TB, rows []ClassRow) {
 	t.Helper()
-	held := slices.Clone(nested)
+	var held []string
 	for _, row := range rows {
 		_, name, _ := strings.Cut(fmt.Sprintf("%T", row.Node), ".")
 		held = append(held, name)

@@ -152,18 +152,16 @@ func TestPagesClassFailsOnAPartWithoutThePagesClassAfterItsRootOrARow(t *testing
 	drops := example.ClassRow{Root: "root", Node: Classed{Class: "drop"}}
 	for _, c := range []struct {
 		name     string
-		nested   []string
 		rows     []example.ClassRow
 		failures int
 	}{
-		{"each exported struct of the package a row's part", nil, []example.ClassRow{writes}, 0},
-		{"each exported struct of the package nested", []string{"Classed"}, nil, 0},
-		{"a part that drops its Class", nil, []example.ClassRow{drops}, 1},
-		{"a part that writes the page's class after classes not its Root", nil, []example.ClassRow{{Root: "other", Node: writes.Node}}, 1},
-		{"a struct with a Class and no row", nil, nil, 1},
+		{"each exported struct of the package a row's part", []example.ClassRow{writes}, 0},
+		{"a part that drops its Class", []example.ClassRow{drops}, 1},
+		{"a part that writes the page's class after classes not its Root", []example.ClassRow{{Root: "other", Node: writes.Node}}, 1},
+		{"a struct with a Class and no row", nil, 1},
 	} {
 		var r recorder
-		example.PagesClass(&r, c.nested, c.rows)
+		example.PagesClass(&r, c.rows)
 		if r.failures != c.failures {
 			t.Errorf("%s: PagesClass failed %d times, want %d", c.name, r.failures, c.failures)
 		}
