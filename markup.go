@@ -40,6 +40,19 @@ var ariaValues = map[string][]string{
 	"aria-sort":     {"ascending", "descending", "none", "other"},
 }
 
+// @invariant: a class here draws no whole part without its attribute, and its
+// Go part refuses the zero value (console.ConsoleBanner needs a Color); every
+// other class that takes a data-* draws a default without it.
+// @trap: not read from the stylesheets: a selector tells cui-console-banner's
+// colors from cui-console-badge's, which has a neutral default, by nothing; the
+// difference is a custom property only the [data-color] rules set, and
+// cui-console-strip-mark has not even that
+var attributeOfNoDefault = map[string]string{
+	"cui-console-banner":     "data-color",
+	"cui-console-empty":      "data-size",
+	"cui-console-strip-mark": "data-state",
+}
+
 // @invariant: a fragment links no stylesheet to tell its own set, so it is
 // held to both sets'
 const bothSets = ""
@@ -92,7 +105,13 @@ func parsed[T any](path string, parse func() T) T {
 }
 
 var vocabularies = sync.OnceValue(func() map[string]vocabulary {
-	return map[string]vocabulary{bothSets: vocabularyOf(bothSets), "site": vocabularyOf("site"), "console": vocabularyOf("console")}
+	all := vocabularyOf(bothSets)
+	for class, attribute := range attributeOfNoDefault {
+		if len(valuesTaken(class, attribute, all.values)) == 0 {
+			panic("attributeOfNoDefault: no rule selects a " + attribute + " value on " + class)
+		}
+	}
+	return map[string]vocabulary{bothSets: all, "site": vocabularyOf("site"), "console": vocabularyOf("console")}
 })
 
 func linkedSet(tags []startTag) string {
@@ -328,8 +347,10 @@ func split(selector string) []string {
 
 // CheckMarkup returns a line for each problem in html, nil when there is none.
 // A cui-* class the stylesheet the page links does not hold, either set's for a
-// fragment (a misspelt one, or the other set's, styles nothing). A color written
-// by its slot (text-(--cui-c-…)) that the set names by a utility. On an element
+// fragment (a misspelt one, or the other set's, styles nothing). A class with no
+// default written without its data-* attribute (cui-console-banner with no
+// data-color). A color written by its slot (text-(--cui-c-…)) that the set
+// names by a utility. On an element
 // with a cui-* class: a value of a data-* attribute some rule selects that no
 // rule selects for that element's classes (it renders the default, silently),
 // and a value of a stateful aria-* attribute ARIA holds none of (wrong for
@@ -366,6 +387,10 @@ func CheckMarkup(html string) []string {
 		}
 		for _, c := range ours {
 			if known.classes[c] {
+				needed, needsOne := attributeOfNoDefault[c]
+				if needsOne && !slices.ContainsFunc(tag.attributes, func(a attribute) bool { return a.name == needed }) {
+					problems = append(problems, fmt.Sprintf("class %q on %s: write %s %s; it has no default", c, on, needed, inWords(valuesTaken(c, needed, known.values), "or")))
+				}
 				continue
 			}
 			if other := otherSet(set); other != "" && vocabularies()[other].classes[c] {
@@ -500,16 +525,15 @@ func dataValueProblems(tag startTag, ours []string, values []selected) []string 
 			if len(vs) == 0 {
 				continue
 			}
-			takes = append(takes, fmt.Sprintf("%s takes %s %s", c, a.name, inWords(vs, "or")))
+			take := fmt.Sprintf("%s takes %s %s", c, a.name, inWords(vs, "or"))
+			if attributeOfNoDefault[c] != a.name {
+				take += ", or none for its default"
+			}
+			takes = append(takes, take)
 		}
-		var allowed string
-		switch len(takes) {
-		case 0:
+		allowed := strings.Join(takes, "; ")
+		if len(takes) == 0 {
 			allowed = "none of its classes takes " + a.name + attributesTaken(ours, values)
-		case 1:
-			allowed = takes[0] + ", or none for its default"
-		default:
-			allowed = strings.Join(takes, "; ") + "; or none for their defaults"
 		}
 		problems = append(problems, fmt.Sprintf("%s=%q on %s: %s", a.written, a.value, tag.on(), allowed))
 	}

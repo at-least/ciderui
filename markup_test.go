@@ -80,7 +80,10 @@ func TestCheckMarkupNamesASlotsUtility(t *testing.T) {
 
 func TestCheckMarkupRefusesADataValueNoRuleSelects(t *testing.T) {
 	checkEach(t, []markupCase{
-		{"each class that takes the attribute", `<div class="cui-console-btn cui-console-empty" data-size="xl">a</div>`, []string{`data-size="xl" on <div class="cui-console-btn cui-console-empty">: cui-console-btn takes data-size "lg" or "sm"; cui-console-empty takes data-size "lg" or "sm"; or none for their defaults`}},
+		{"each class that takes the attribute", `<div class="cui-console-btn cui-console-empty" data-size="xl">a</div>`, []string{`data-size="xl" on <div class="cui-console-btn cui-console-empty">: cui-console-btn takes data-size "lg" or "sm", or none for its default; cui-console-empty takes data-size "lg" or "sm"`}},
+		{"each class with a default", `<a class="cui-btn cui-console-btn" data-size="xl">a</a>`, []string{`data-size="xl" on <a class="cui-btn cui-console-btn">: cui-btn takes data-size "lg", or none for its default; cui-console-btn takes data-size "lg" or "sm", or none for its default`}},
+		{"a class with no default lists its values alone", `<div class="cui-console-banner" data-color="neutral">a</div>`, []string{`data-color="neutral" on <div class="cui-console-banner">: cui-console-banner takes data-color "error", "info", "success" or "warning"`}},
+		{"a size of a class with no default", `<div class="cui-console-empty" data-size="md">a</div>`, []string{`data-size="md" on <div class="cui-console-empty">: cui-console-empty takes data-size "lg" or "sm"`}},
 
 		{"a value selected next to a :not", `<div class="cui-console-player" data-controls="hiden"></div>`, []string{`data-controls="hiden" on <div class="cui-console-player">: cui-console-player takes data-controls "hidden", or none for its default`}},
 
@@ -94,6 +97,17 @@ func TestCheckMarkupRefusesADataValueNoRuleSelects(t *testing.T) {
 		{"an attribute only a rule for another element selects", `<p class="cui-console-player-heading" data-control="heading">x</p>`, nil},
 		// @invariant: cui-console-btn-icon's sizes are its own
 		{"a value of another class on the element", `<button class="cui-console-btn cui-console-btn-icon" data-size="sm">x</button>`, nil},
+	})
+}
+
+func TestCheckMarkupRefusesAClassWithNoDefaultWithoutItsAttribute(t *testing.T) {
+	checkEach(t, []markupCase{
+		{"a banner of no color", `<div class="cui-console-banner">a</div>`, []string{`class "cui-console-banner" on <div class="cui-console-banner">: write data-color "error", "info", "success" or "warning"; it has no default`}},
+		{"an empty state of no size", `<div class="cui-console-empty">a</div>`, []string{`class "cui-console-empty" on <div class="cui-console-empty">: write data-size "lg" or "sm"; it has no default`}},
+		{"a mark of no state", `<span class="cui-console-strip-mark">a</span>`, []string{`class "cui-console-strip-mark" on <span class="cui-console-strip-mark">: write data-state "waiting" or "working"; it has no default`}},
+		{"the attribute in capitals", `<div class="cui-console-empty" DATA-SIZE="sm">a</div>`, nil},
+		{"a class with a default", `<span class="cui-console-badge">a</span>`, nil},
+		{"on a page of the other set, the class alone", page(ciderui.SiteStylesheet(), `<div class="cui-console-banner">a</div>`), []string{`class "cui-console-banner" on <div class="cui-console-banner">: a console class; this page links the site stylesheet`}},
 	})
 }
 
