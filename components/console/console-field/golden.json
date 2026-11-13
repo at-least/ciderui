@@ -43,21 +43,5 @@
  "file dark | #dsym | 1200 | background-color": "oklch(0 0 0)",
  "file dark | #dsym | 1200 | border-top-color": "oklch(0.879 0.015 286.1 / 0.42)",
  "file dark | #dsym | 1200 | color": "oklch(1 0 0 / 0.85)",
- "file dark | #dsym::file-selector-button | 1200 | color": "oklch(0.683 0.167 256.6)",
- "search | .cui-console-search > input | 1200 | padding-left": "28px",
- "search | .cui-console-search > input | 1200 | height": "30px",
- "search | .cui-console-search > input | 1200 | border-top-left-radius": "10px",
- "search | .cui-console-search-icon | 1200 | position": "absolute",
- "search | .cui-console-search-icon | 1200 | left": "8px",
- "search | .cui-console-search-icon | 1200 | color": "oklch(0.359 0.012 285.8 / 0.76)",
- "search | .cui-console-search-icon | 1200 | width": "13px",
- "search | .cui-console-search-icon | 1200 | box-y": "8.5px",
- "search | .cui-console-search > input | 390 | padding-left": "28px",
- "search | .cui-console-search > input | 390 | height": "30px",
- "search | .cui-console-search > input | 390 | border-top-left-radius": "10px",
- "search | .cui-console-search-icon | 390 | position": "absolute",
- "search | .cui-console-search-icon | 390 | left": "8px",
- "search | .cui-console-search-icon | 390 | color": "oklch(0.359 0.012 285.8 / 0.76)",
- "search | .cui-console-search-icon | 390 | width": "13px",
- "search | .cui-console-search-icon | 390 | box-y": "8.5px"
+ "file dark | #dsym::file-selector-button | 1200 | color": "oklch(0.683 0.167 256.6)"
 }

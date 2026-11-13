@@ -6,7 +6,6 @@ import (
 
 	"github.com/at-least/ciderui/go/console"
 	"github.com/at-least/ciderui/go/internal/example"
-	h "maragu.dev/gomponents/html"
 )
 
 func TestTabsRendersTheExamples(t *testing.T) {
@@ -37,7 +36,7 @@ func TestTabsPanics(t *testing.T) {
 }
 
 func tabsChoice() console.ConsoleTabsChoice {
-	return console.ConsoleTabsChoice{AriaLabel: "About", Name: "about", Attrs: nil, Options: []console.ConsoleTabsOption{
+	return console.ConsoleTabsChoice{AriaLabel: "About", Name: "about", Options: []console.ConsoleTabsOption{
 		{Value: "picture", Label: "The picture", Checked: true},
 		{Value: "line", Label: "The line", Checked: false},
 	}}
@@ -45,14 +44,6 @@ func tabsChoice() console.ConsoleTabsChoice {
 
 func TestTabsChoiceRendersTheExample(t *testing.T) {
 	example.Check(t, tabsChoice(), "console/console-tabs/examples/radios.html")
-}
-
-func TestTabsChoiceWritesThePagesAttrs(t *testing.T) {
-	c := tabsChoice()
-	c.Attrs = h.Data("report-about", "")
-	if got := example.Render(c); !strings.HasPrefix(got, `<div class="cui-console-tabs" data-variant="filled" role="group" aria-label="About" data-report-about="">`) {
-		t.Errorf("the choice does not write the page's Attrs on its group: %s", got)
-	}
 }
 
 func TestTabsChoicePanics(t *testing.T) {

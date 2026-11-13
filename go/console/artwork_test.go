@@ -9,24 +9,14 @@ import (
 )
 
 func artwork() console.ConsoleArtwork {
-	return console.ConsoleArtwork{Src: exampleSrc("console/console-artwork/examples/artwork.html", "The feast"), Alt: "The feast", Aspect: console.ConsoleArtworkAspectWide, Placeholder: ""}
+	return console.ConsoleArtwork{Src: exampleSrc("console/console-artwork/examples/artwork.html", "The feast"), Alt: "The feast", Placeholder: ""}
 }
 
 func TestArtworkRendersTheExample(t *testing.T) {
-	square := artwork()
-	square.Alt, square.Aspect = "The cover", console.ConsoleArtworkAspectSquare
 	example.Check(t, h.Div(h.Class("grid w-80 grid-cols-3 gap-2"),
 		artwork(),
-		console.ConsoleArtwork{Src: "", Alt: "", Aspect: console.ConsoleArtworkAspectWide, Placeholder: "The Little Red Hen"},
-		square,
+		console.ConsoleArtwork{Src: "", Alt: "", Placeholder: "The Little Red Hen"},
 	), "console/console-artwork/examples/artwork.html")
-}
-
-func TestArtworkPlaceholderTakesItsAspect(t *testing.T) {
-	got := example.Render(console.ConsoleArtwork{Src: "", Alt: "", Aspect: console.ConsoleArtworkAspectSquare, Placeholder: "The Little Red Hen"})
-	if want := `<span class="cui-console-artwork" data-aspect="square">The Little Red Hen</span>`; got != want {
-		t.Errorf("a square artwork with no picture is not a square placeholder:\n got: %s\nwant: %s", got, want)
-	}
 }
 
 func TestArtworkPanics(t *testing.T) {

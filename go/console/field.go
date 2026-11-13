@@ -49,23 +49,3 @@ func (f ConsoleField) Render(w io.Writer) error {
 		g.If(f.Error != "", h.P(h.Class("cui-console-field-error"), h.ID(errorID), g.Text(f.Error))),
 	).Render(w)
 }
-
-// ConsoleSearch is a search field: the magnifier in its box, its name read
-// from AriaLabel, not shown (the placeholder the page writes says what to
-// type). Control writes attrs on the page's own <input>; the page's <form>
-// carries role="search".
-type ConsoleSearch struct {
-	AriaLabel string
-	Control   func(attrs g.Node) g.Node
-}
-
-func (s ConsoleSearch) Render(w io.Writer) error {
-	need("console.ConsoleSearch", "an AriaLabel", s.AriaLabel)
-	if s.Control == nil {
-		panic("console.ConsoleSearch needs a Control")
-	}
-	return h.Span(h.Class("cui-console-search"),
-		lucide.Search.Class("cui-console-search-icon"),
-		s.Control(g.Group{h.Class("cui-console-field-input"), h.Type("search"), h.Aria("label", s.AriaLabel)}),
-	).Render(w)
-}

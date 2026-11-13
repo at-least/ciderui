@@ -48,8 +48,6 @@ type ConsoleTabsChoice struct {
 	// Name: the radios' form field.
 	Name    string
 	Options []ConsoleTabsOption
-	// Attrs: the group's other attributes, for the page's script (data-*).
-	Attrs g.Node
 }
 
 type ConsoleTabsOption struct {
@@ -74,7 +72,7 @@ func (c ConsoleTabsChoice) Render(w io.Writer) error {
 	if checked != 1 {
 		panic(fmt.Sprintf("console.ConsoleTabsChoice needs one Checked option, has %d: a radio group starts with its value", checked))
 	}
-	return h.Div(h.Class("cui-console-tabs"), h.Data("variant", "filled"), h.Role("group"), h.Aria("label", c.AriaLabel), c.Attrs,
+	return h.Div(h.Class("cui-console-tabs"), h.Data("variant", "filled"), h.Role("group"), h.Aria("label", c.AriaLabel),
 		g.Map(c.Options, func(o ConsoleTabsOption) g.Node {
 			return h.Label(h.Class("cui-console-tab"), h.Input(h.Type("radio"), h.Name(c.Name), h.Value(o.Value), g.If(o.Checked, h.Checked())), g.Text(o.Label))
 		}),

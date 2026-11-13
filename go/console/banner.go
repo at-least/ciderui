@@ -27,9 +27,6 @@ type ConsoleBanner struct {
 	// Body: the banner's words, or blocks of them, written in its
 	// <div class="cui-console-banner-body">.
 	Body g.Node
-	// Attrs: the root's other attributes, for the page's script (data-*, an
-	// htmx attribute).
-	Attrs g.Node
 	// Children: what follows the body, its actions.
 	Children g.Node
 }
@@ -39,7 +36,7 @@ func (b ConsoleBanner) Render(w io.Writer) error {
 	if b.Color == ConsoleColorError {
 		role = "alert"
 	}
-	return h.Div(h.Class("cui-console-banner"), attr.Optional("data-color", b.Color.value), h.Role(role), b.Attrs,
+	return h.Div(h.Class("cui-console-banner"), attr.Optional("data-color", b.Color.value), h.Role(role),
 		bannerIcons[b.Color].Class("cui-console-banner-icon"),
 		h.Div(
 			optionalText(h.P, "cui-console-banner-title", b.Title),

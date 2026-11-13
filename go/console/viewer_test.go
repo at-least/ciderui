@@ -1,7 +1,6 @@
 package console_test
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
@@ -11,7 +10,7 @@ import (
 )
 
 func viewer() console.ConsoleViewer {
-	return console.ConsoleViewer{ID: "cover", AriaLabel: "Cover", CloseAriaLabel: "Close", Src: exampleSrc("console/console-viewer/examples/viewer.html", "The cover"), Alt: "The cover", Caption: "Drawn 2 November"}
+	return console.ConsoleViewer{ID: "cover", AriaLabel: "Cover", CloseAriaLabel: "Close"}
 }
 
 func TestViewerRendersTheExample(t *testing.T) {
@@ -21,22 +20,10 @@ func TestViewerRendersTheExample(t *testing.T) {
 	}, "console/console-viewer/examples/viewer.html")
 }
 
-func TestViewerTheScriptFillsWritesNoSrc(t *testing.T) {
-	v := viewer()
-	v.Src, v.Alt, v.Caption = "", "", ""
-	got := example.Render(v)
-	want := `<img class="cui-console-viewer-image" alt=""><p class="cui-console-viewer-caption"></p>`
-	if !strings.Contains(got, want) {
-		t.Errorf("a viewer the script fills wrote a src or words:\n got: %s\nwant within: %s", got, want)
-	}
-}
-
 func TestViewerPanics(t *testing.T) {
 	example.Panics(t, viewer, []example.Break[console.ConsoleViewer]{
 		{Want: "console.ConsoleViewer needs an ID", Change: func(p *console.ConsoleViewer) { p.ID = "" }},
 		{Want: "console.ConsoleViewer needs an AriaLabel", Change: func(p *console.ConsoleViewer) { p.AriaLabel = "" }},
 		{Want: "console.ConsoleViewer needs a CloseAriaLabel", Change: func(p *console.ConsoleViewer) { p.CloseAriaLabel = "" }},
-		{Want: "console.ConsoleViewer has an Alt or a Caption and no Src: the page's script sets all three", Change: func(p *console.ConsoleViewer) { p.Src, p.Caption = "", "" }},
-		{Want: "console.ConsoleViewer has an Alt or a Caption and no Src: the page's script sets all three", Change: func(p *console.ConsoleViewer) { p.Src, p.Alt = "", "" }},
 	})
 }

@@ -2,11 +2,17 @@ import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
 const V = '.cui-console-viewer';
+// @invariant: the example renders the viewer empty; a page's script sets the picture and the caption before
+// it opens it, as this does (a 1600x900 gray picture)
+const PICTURE = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjkwMCI+PHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjOGU4ZTkzIi8+PC9zdmc+';
+const filled = (caption) => ex('viewer')
+  .replace('<img class="cui-console-viewer-image" alt="">', `<img class="cui-console-viewer-image" src="${PICTURE}" alt="The cover">`)
+  .replace('<p class="cui-console-viewer-caption"></p>', `<p class="cui-console-viewer-caption">${caption}</p>`);
 
 export const cases = [
   {
     name: 'viewer',
-    html: ex('viewer'),
+    html: filled('Drawn 2 November'),
     click: '[command="show-modal"]',
     widths: [1200, 390],
     checks: [
@@ -22,7 +28,7 @@ export const cases = [
   },
   {
     name: 'viewer no caption',
-    html: ex('viewer').replace('Drawn 2 November', ''),
+    html: filled(''),
     click: '[command="show-modal"]',
     widths: [1200],
     checks: [

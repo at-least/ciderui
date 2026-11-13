@@ -1,6 +1,7 @@
 package console
 
 import (
+	"fmt"
 	"io"
 	"strconv"
 
@@ -27,11 +28,11 @@ func (m ConsoleMenuItem) Render(w io.Writer) error {
 	}).Render(w)
 }
 
-// ConsoleChoiceMenu is a popover of choices in columns side by side, each its
-// title over its choices, one of them checked: a [ConsolePlayer]'s voices
-// and subtitles. The page's script hears a choice's click (its value, and
+// ConsoleChoiceMenu is a popover of options in columns side by side, each its
+// title over its options, one of them checked: a [ConsolePlayer]'s voices
+// and subtitles. The page's script hears an option's click (its value, and
 // its column's data-column), moves aria-checked to it and moves the focus
-// among the choices by the arrow keys; the click closes the popover itself
+// among the options by the arrow keys; the click closes the popover itself
 // (popovertargetaction="hide").
 type ConsoleChoiceMenu struct {
 	// ID is the popover's id, the popovertarget of the button that opens it.
@@ -43,10 +44,10 @@ type ConsoleChoiceColumn struct {
 	// Name is the column's data-column, what the script reads.
 	Name    string
 	Title   string
-	Choices []ConsoleChoice
+	Options []ConsoleChoiceOption
 }
 
-type ConsoleChoice struct {
+type ConsoleChoiceOption struct {
 	Label string
 	// Value is the <button>'s value, what the script reads.
 	Value string
@@ -69,20 +70,20 @@ func (m ConsoleChoiceMenu) Render(w io.Writer) error {
 			panic("console.ConsoleChoiceMenu has two columns named " + strconv.Quote(c.Name) + ": each needs a name of its own")
 		}
 		names[c.Name] = true
-		if len(c.Choices) == 0 {
-			panic("console.ConsoleChoiceColumn needs a choice")
+		if len(c.Options) == 0 {
+			panic("console.ConsoleChoiceColumn needs an Option")
 		}
 		checked := 0
-		for _, choice := range c.Choices {
-			if choice.Label == "" || choice.Value == "" {
-				panic("console.ConsoleChoice needs a Label and a Value")
+		for _, o := range c.Options {
+			if o.Label == "" || o.Value == "" {
+				panic("console.ConsoleChoiceOption needs a Label and a Value")
 			}
-			if choice.Checked {
+			if o.Checked {
 				checked++
 			}
 		}
 		if checked != 1 {
-			panic("console.ConsoleChoiceColumn needs one choice checked")
+			panic(fmt.Sprintf("console.ConsoleChoiceColumn needs one Checked option, has %d", checked))
 		}
 	}
 	return h.Div(h.Class("cui-console-popover"), h.ID(m.ID), h.Popover(),
@@ -92,11 +93,11 @@ func (m ConsoleChoiceMenu) Render(w io.Writer) error {
 				return h.Div(h.Class("cui-console-menu"), h.Data("column", c.Name),
 					h.P(h.Class("cui-console-menu-title"), h.ID(titleID), g.Text(c.Title)),
 					h.Div(h.Role("menu"), h.Aria("labelledby", titleID),
-						g.Map(c.Choices, func(choice ConsoleChoice) g.Node {
-							return h.Button(h.Class("cui-console-menu-item"), h.Type("button"), h.Role("menuitemradio"), h.Aria("checked", strconv.FormatBool(choice.Checked)), h.Value(choice.Value),
+						g.Map(c.Options, func(o ConsoleChoiceOption) g.Node {
+							return h.Button(h.Class("cui-console-menu-item"), h.Type("button"), h.Role("menuitemradio"), h.Aria("checked", strconv.FormatBool(o.Checked)), h.Value(o.Value),
 								h.PopoverTarget(m.ID), h.PopoverTargetAction("hide"),
 								lucide.Check.Class("cui-console-menu-icon"),
-								h.Span(h.Class("cui-console-menu-label"), attr.Optional("lang", choice.Lang), g.Text(choice.Label)),
+								h.Span(h.Class("cui-console-menu-label"), attr.Optional("lang", o.Lang), g.Text(o.Label)),
 							)
 						}),
 					),
