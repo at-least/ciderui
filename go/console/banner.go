@@ -26,8 +26,7 @@ type ConsoleBanner struct {
 	// Body: the banner's words, or blocks of them, written in its
 	// <div class="cui-console-banner-body">.
 	Body g.Node
-	// Actions: the buttons or links under the body, written in its
-	// <p class="cui-console-banner-actions">.
+	// Actions: the buttons or links under the body.
 	Actions g.Node
 }
 

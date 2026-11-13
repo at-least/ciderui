@@ -7,8 +7,7 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// Option is apple.com's buy-page choice, a radio drawn as a tile: its
-// input's id is Name-Value.
+// Option is apple.com's buy-page choice, a radio drawn as a tile.
 type Option struct {
 	Name    string
 	Value   string

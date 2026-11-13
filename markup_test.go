@@ -56,8 +56,6 @@ func TestCheckMarkupRefusesAClassTheKitLacks(t *testing.T) {
 	})
 }
 
-// @invariant: a class of no part is told the nearest class two edits or fewer
-// away; one further is a class of the page's own, misnamed with cui-
 func TestCheckMarkupNamesTheNearestClass(t *testing.T) {
 	checkEach(t, []markupCase{
 		{"one edit away", `<span class="cui-console-bange">a</span>`, []string{`class "cui-console-bange" on <span class="cui-console-bange">: ciderui has no such class; did you mean cui-console-badge`}},
@@ -67,8 +65,6 @@ func TestCheckMarkupNamesTheNearestClass(t *testing.T) {
 	})
 }
 
-// @invariant: theme.css's --text-color-secondary reads --cui-set-text-secondary,
-// which each set's stylesheet points at its own slot
 func TestCheckMarkupNamesASlotsUtility(t *testing.T) {
 	checkEach(t, []markupCase{
 		{"a text slot", `<p class="text-(--cui-c-console-neutral-label-secondary)">a</p>`, []string{`class "text-(--cui-c-console-neutral-label-secondary)" on <p class="text-(--cui-c-console-neutral-label-secondary)">: write text-secondary, the set's name for this color`}},
