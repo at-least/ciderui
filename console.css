@@ -13,6 +13,7 @@
 @import "./components/console/console-dl/console-dl.css";
 @import "./components/console/console-empty/console-empty.css";
 @import "./components/console/console-field/console-field.css";
+@import "./components/console/console-header/console-header.css";
 @import "./components/console/console-link/console-link.css";
 @import "./components/console/console-list/console-list.css";
 @import "./components/console/console-menu/console-menu.css";
@@ -23,7 +24,6 @@
 @import "./components/console/console-popover/console-popover.css";
 @import "./components/console/console-pre/console-pre.css";
 @import "./components/console/console-section/console-section.css";
-@import "./components/console/console-section-header/console-section-header.css";
 @import "./components/console/console-sidebar/console-sidebar.css";
 @import "./components/console/console-skip/console-skip.css";
 @import "./components/console/console-status/console-status.css";

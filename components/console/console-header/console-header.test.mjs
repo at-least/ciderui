@@ -1,12 +1,12 @@
 import { examples } from '../../../test/harness.mjs';
 
 const ex = examples(import.meta.url);
-const S = '.cui-console-section-header';
+const S = '.cui-console-header';
 
 export const cases = [
   {
-    name: 'section header',
-    html: ex('section-header'),
+    name: 'header',
+    html: ex('page'),
     widths: [1200, 390],
     checks: [
       { target: S, props: ['display', 'align-items', 'row-gap', 'column-gap'], asc: ['head', 'section.head'] },
@@ -18,7 +18,7 @@ export const cases = [
     ],
   },
   {
-    name: 'section header section',
+    name: 'header section',
     html: ex('section'),
     widths: [1200],
     checks: [
@@ -27,7 +27,7 @@ export const cases = [
     ],
   },
   {
-    name: 'section header back',
+    name: 'header back',
     html: ex('back'),
     widths: [1200, 390],
     checks: [

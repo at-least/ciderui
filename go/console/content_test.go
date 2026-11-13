@@ -20,8 +20,8 @@ func contentNodes() g.Node {
 
 func rhythmNodes() g.Node {
 	return h.Div(h.Class("cui-console-page"), console.ConsoleContent{Sidebar: nil, Back: console.ConsoleContentBack{Href: "", Label: ""}, Title: "Findings", Detail: "", Controls: nil, Children: g.Group{
-		console.ConsoleSection{Title: "Needs You", Detail: "", Controls: nil, Children: g.Group{h.P(g.Text("A section’s first block.")), h.P(g.Text("Its second."))}},
-		console.ConsoleSection{Title: "Closed", Detail: "", Controls: nil, Children: h.P(g.Text("The next section’s block."))},
+		console.ConsoleSection{Title: "Needs You", Detail: "", Children: g.Group{h.P(g.Text("A section’s first block.")), h.P(g.Text("Its second."))}},
+		console.ConsoleSection{Title: "Closed", Detail: "", Children: h.P(g.Text("The next section’s block."))},
 	}})
 }
 

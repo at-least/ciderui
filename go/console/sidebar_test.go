@@ -35,7 +35,7 @@ func TestContentWritesTheSidebarsOpenButtonExample(t *testing.T) {
 	got := example.Render(console.ConsoleContent{Sidebar: &sidebar, Back: console.ConsoleContentBack{Href: "", Label: ""}, Title: "x", Detail: "", Controls: nil, Children: nil})
 	nav, found := strings.CutPrefix(got, contentOpen)
 	nav, main, foundMain := strings.Cut(nav, contentMain)
-	open, _, foundHeader := strings.Cut(main, `<header class="cui-console-section-header">`)
+	open, _, foundHeader := strings.Cut(main, `<header class="cui-console-header">`)
 	if !found || !foundMain || !foundHeader {
 		t.Fatalf("the content is not its sidebar, then its <main> with the open button first: %s", got)
 	}

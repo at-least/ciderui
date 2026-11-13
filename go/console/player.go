@@ -83,7 +83,6 @@ type ConsolePlayer struct {
 	// FullScreenControls open), written inside the player after its menus,
 	// so they open over it in full screen and are placed as its menus are.
 	Popovers g.Node
-	Class    string
 }
 
 func (p ConsolePlayer) Render(w io.Writer) error {
@@ -107,7 +106,7 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 	button := func(control, label, menu string, glyph g.Node) g.Node {
 		return h.Button(h.Class("cui-console-player-btn"), h.Type("button"), h.Data("control", control), h.Aria("label", label), attr.Optional("popovertarget", menu), glyph)
 	}
-	return h.Div(attr.Class("cui-console-player", p.Class), g.If(p.Intro != nil, g.Attr("data-intro")),
+	return h.Div(h.Class("cui-console-player"), g.If(p.Intro != nil, g.Attr("data-intro")),
 		p.Video,
 		h.Div(h.Class("cui-console-player-overlay"),
 			h.Div(h.Class("cui-console-player-header"),

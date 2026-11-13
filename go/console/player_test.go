@@ -22,11 +22,11 @@ const playerStill = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M
 // @external: the voices and the subtitles side by side, as the Apple TV app's
 func subtitlesMenu() *console.ConsoleChoiceMenu {
 	return &console.ConsoleChoiceMenu{ID: "subtitles", Columns: []console.ConsoleChoiceColumn{
-		{Name: "voices", Title: "Voices", Choices: []console.ConsoleChoice{
+		{Name: "voices", Title: "Voices", Options: []console.ConsoleChoiceOption{
 			{Label: "English", Value: "en", Lang: "en", Checked: true},
 			{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant", Checked: false},
 		}},
-		{Name: "subtitles", Title: "Subtitles", Choices: []console.ConsoleChoice{
+		{Name: "subtitles", Title: "Subtitles", Options: []console.ConsoleChoiceOption{
 			{Label: "Off", Value: "off", Lang: "", Checked: false},
 			{Label: "English", Value: "en", Lang: "en", Checked: true},
 			{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant", Checked: false},
@@ -48,7 +48,6 @@ func pausedPlayer() console.ConsolePlayer {
 		Intro:               nil,
 		End:                 nil,
 		Popovers:            nil,
-		Class:               "aspect-video",
 	}
 }
 
@@ -79,7 +78,7 @@ var playerExamples = map[string]console.ConsolePlayer{
 type scriptSets struct{ old, new string }
 
 const (
-	playerRoot      = `<div class="cui-console-player aspect-video"`
+	playerRoot      = `<div class="cui-console-player"`
 	headingAtRest   = `data-control="heading"></p>`
 	headingSet      = `data-control="heading">The Wedding · Scene 2　The Vows · S02-03</p>`
 	endBodyAtRest   = `<div class="cui-console-player-end-body"></div>`

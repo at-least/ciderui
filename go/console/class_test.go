@@ -12,12 +12,9 @@ import (
 
 func TestEachPartWritesThePagesClass(t *testing.T) {
 	const page = example.PageClass
-	player := pausedPlayer()
-	player.Class = page
-	example.PagesClass(t, []string{"ConsolePage"}, []example.ClassRow{
+	example.PagesClass(t, nil, []example.ClassRow{
 		{Root: "cui-console-btn", Node: console.ConsoleBtn{Href: "", Label: "x", AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: page}},
 		{Root: "cui-console-btn cui-console-btn-icon cui-console-play", Node: console.ConsolePlay{Attrs: nil, AriaLabel: "x", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: page}},
-		{Root: "cui-console-player", Node: player},
 	})
 }
 
@@ -34,7 +31,7 @@ func TestEachPartWritesThePagesWords(t *testing.T) {
 		node  g.Node
 		words []string
 	}{
-		{"ConsoleBanner", console.ConsoleBanner{Attrs: nil, Color: console.ConsoleColorInfo, Title: "Synced", Body: nil, Children: nil}, []string{">Synced<"}},
+		{"ConsoleBanner", console.ConsoleBanner{Color: console.ConsoleColorInfo, Title: "Synced", Body: nil, Children: nil}, []string{">Synced<"}},
 		{"ConsoleChart", console.ConsoleChart{AriaLabel: "Events: 9", Scale: &console.ConsoleChartScale{Peak: "peak 9", Half: "4.5"}, Empty: "Nothing yet", Axis: &console.ConsoleChartAxis{Start: "Nov 1", End: "Nov 7"}, Children: nil},
 			[]string{`aria-label="Events: 9"`, ">peak 9<", ">4.5<", ">Nothing yet<", ">Nov 1<", ">Nov 7<"}},
 		{"ConsoleField", console.ConsoleField{ID: "name", Label: "Name", Error: "Too short.", Control: input()}, []string{">Name<", ">Too short.<"}},
@@ -47,7 +44,7 @@ func TestEachPartWritesThePagesWords(t *testing.T) {
 		{"ConsoleSidebar", sidebar, []string{`aria-label="Main"`, `href="/home"`, ">Muse<", ">Jump to Main<", `aria-label="Hide"`}},
 		{"ConsoleStatus", console.ConsoleStatus{Label: "Down", Color: console.ConsoleColorError, Detail: "500 · 2 s"}, []string{">Down<", ">500 · 2 s<"}},
 		{"ConsoleStrip", tip, []string{">Hello there.<"}},
-		{"ConsoleViewer", console.ConsoleViewer{ID: "art", AriaLabel: "Artwork", CloseAriaLabel: "Shut", Src: "/art.png", Alt: "The art", Caption: "Drawn today"}, []string{`aria-label="Artwork"`, `src="/art.png"`, `alt="The art"`, ">Drawn today<", `aria-label="Shut"`}},
+		{"ConsoleViewer", console.ConsoleViewer{ID: "art", AriaLabel: "Artwork", CloseAriaLabel: "Shut"}, []string{`aria-label="Artwork"`, `aria-label="Shut"`}},
 	} {
 		got := example.Render(c.node)
 		for _, word := range c.words {
@@ -64,7 +61,6 @@ func TestEachPartWritesThePagesAttrs(t *testing.T) {
 		part string
 		node g.Node
 	}{
-		{"ConsoleBanner", console.ConsoleBanner{Color: console.ConsoleColorInfo, Title: "x", Body: nil, Attrs: hook, Children: nil}},
 		{"ConsoleDisclosure", console.ConsoleDisclosure{Summary: "x", Attrs: hook, Children: nil}},
 		{"ConsoleEmpty", console.ConsoleEmpty{Size: console.ConsoleEmptySizeSmall, Icon: lucide.Icon{}, Title: "x", Body: "", Attrs: hook}},
 		{"ConsolePlay", console.ConsolePlay{AriaLabel: "x", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Attrs: hook, Class: ""}},

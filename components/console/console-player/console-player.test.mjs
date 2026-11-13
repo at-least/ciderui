@@ -57,6 +57,7 @@ export const cases = [
     height: 900,
     checks: [
       { target: P, props: ['background-color'], apple: ['tv-player', 'dialog'] },
+      { target: P, props: ['aspect-ratio'], golden: 'its own 16:9, tv.apple.com\'s player\'s (tv-player:scrim, 1600px by 900px): a page\'s element of stills has no size of its own' },
       { target: P, props: ['position', 'overflow-x'], golden: 'the containing block its overlay is laid over its video in; not clipped: a window too small for its controls grows it to them (its aspect-ratio\'s automatic minimum, which a clip would drop)' },
       { target: '.cui-console-player-overlay', props: ['display', 'grid-template-columns', 'grid-template-rows'], golden: LAYOUT },
       { target: '.cui-console-player-overlay', pseudo: '::before', props: ['background-image', 'background-color', 'opacity'], apple: ['tv-player', 'scrim.gradient'] },
@@ -150,7 +151,7 @@ export const cases = [
   },
   {
     name: 'player muted',
-    html: ex('paused').replace('<div class="cui-console-player aspect-video">', '<div class="cui-console-player aspect-video" data-muted>'),
+    html: ex('paused').replace('<div class="cui-console-player">', '<div class="cui-console-player" data-muted>'),
     widths: [1600],
     height: 900,
     checks: [
@@ -336,6 +337,8 @@ export const cases = [
       { target: LINE, props: ['box-top', 'box-height'], golden: 'the controls hidden, the subtitles at the foot: 20px up, the overlay\'s room (the footer\'s row\'s foot)' },
       { target: '.cui-console-player-subtitles', props: ['opacity'], golden: 'shown while the controls are hidden' },
       { target: '.cui-console-player-footer', props: ['opacity'], apple: ['tv-player-playing', 'hidden.footer'] },
+      { target: P, props: ['cursor'], apple: ['tv-player-playing', 'hidden.scrim'] },
+      { target: '.cui-console-player-play', props: ['cursor'], golden: 'no pointer over a hidden button either, where its own pointer cursor would show (tv-player-playing:hidden.scrim, cursor none)' },
     ],
   },
   {
@@ -346,6 +349,21 @@ export const cases = [
     press: ['Tab'],
     checks: [
       { target: LINE, props: ['box-top'], golden: 'the focus inside shows the controls, and the subtitles go back over the footer' },
+      { target: P, props: ['cursor'], golden: 'and the pointer with them' },
+    ],
+  },
+  {
+    // @external: the probe puts the player's parent in full screen as muse's
+    // script does, by a click (the Fullscreen API needs a user's gesture)
+    name: 'player full screen parent',
+    html: `<button type="button" onclick="document.getElementById('stage').requestFullscreen()">Enter</button><div id="stage">${ex('stills')}</div>`,
+    widths: [1600],
+    height: 576,
+    click: 'button[onclick]',
+    wait: 500,
+    checks: [
+      { target: '#stage', props: ['position'], golden: 'the parent in full screen, fixed by the browser\'s own :fullscreen rule: the check under it reads full screen' },
+      { target: P, props: ['box-width', 'box-height'], golden: 'muse\'s (its [:fullscreen>&] width, moved into the kit): in full screen the player as large as the screen allows at 16:9, here min(100vw, 100vh * 16 / 9), 576px tall and 1024px wide in a 1600px by 576px screen' },
     ],
   },
   {
@@ -441,7 +459,6 @@ export const cases = [
       { target: '.cui-console-player-footer', props: ['opacity'], apple: ['tv-player-playing', 'hidden.footer'] },
       { target: '.cui-console-player-header', props: ['transform', 'transition-duration', 'transition-timing-function'], golden: NO_SLIDE },
       { target: '.cui-console-player-footer', props: ['transform', 'transition-duration', 'transition-timing-function'], golden: NO_SLIDE },
-      { target: '.cui-console-player-overlay', props: ['cursor'], golden: 'the pointer kept, as tv.apple.com keeps it (tv-player-playing:hidden.scrim)' },
     ],
   },
   {

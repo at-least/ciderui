@@ -506,7 +506,6 @@
  "player hidden | .cui-console-player-footer | 1600 | transform": "none",
  "player hidden | .cui-console-player-footer | 1600 | transition-duration": "0.4s",
  "player hidden | .cui-console-player-footer | 1600 | transition-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)",
- "player hidden | .cui-console-player-overlay | 1600 | cursor": "auto",
  "player hidden focused | .cui-console-player-volume > .cui-console-player-range | 1600 | height": "44px",
  "player hidden focused | .cui-console-player-volume | 1600 | align-items": "center",
  "player hidden focused | .cui-console-player-volume > .cui-console-player-range | 1600 | focused": "true",
@@ -521,5 +520,12 @@
  "player touch | .cui-console-player-progress > .cui-console-player-range | 390 | box-height": "44px",
  "player touch | .cui-console-player-progress > .cui-console-player-range | 390 | margin-top": "0px",
  "player touch | .cui-console-player-progress > .cui-console-player-range | 390 | margin-bottom": "0px",
- "player touch | .cui-console-player-progress | 390 | grid-template-rows": "44px 14px"
+ "player touch | .cui-console-player-progress | 390 | grid-template-rows": "44px 14px",
+ "player paused | .cui-console-player | 1600 | aspect-ratio": "16 / 9",
+ "player paused | .cui-console-player | 1200 | aspect-ratio": "16 / 9",
+ "player stills hidden | .cui-console-player-play | 1600 | cursor": "none",
+ "player stills hidden focused | .cui-console-player | 1600 | cursor": "auto",
+ "player full screen parent | #stage | 1600 | position": "fixed",
+ "player full screen parent | .cui-console-player | 1600 | box-width": "1024px",
+ "player full screen parent | .cui-console-player | 1600 | box-height": "576px"
 }

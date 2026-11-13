@@ -1,8 +1,8 @@
 {
  "section | .cui-console-section | 1200 | display": "grid",
  "section | .cui-console-section | 1200 | row-gap": "20px",
- "section | .cui-console-section > p:last-child | 1200 | box-y": "105px",
+ "section | .cui-console-section > p:last-child | 1200 | box-y": "102px",
  "section | .cui-console-section | 390 | display": "grid",
  "section | .cui-console-section | 390 | row-gap": "20px",
- "section | .cui-console-section > p:last-child | 390 | box-y": "111px"
+ "section | .cui-console-section > p:last-child | 390 | box-y": "108px"
 }

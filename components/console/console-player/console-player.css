@@ -6,6 +6,13 @@
     background-color: var(--cui-c-video);
     color: var(--cui-c-on-video);
     letter-spacing: normal;
+    aspect-ratio: 16 / 9;
+
+    /* @external: muse's script puts the player's parent in full screen, not
+       the player */
+    :fullscreen > & {
+      width: min(100vw, 100vh * 16 / 9);
+    }
 
     /* @invariant: the picture: a <video>, or the page's element of stills */
     & > :first-child {
@@ -422,6 +429,15 @@
 
   .cui-console-player[data-controls="hidden"]:not(:has(:focus-visible, :popover-open)) .cui-console-player-subtitles {
     translate: none;
+  }
+
+  /* @trap: on every element inside too: each button sets its own cursor:
+     pointer, which a hidden button under a still pointer would show */
+  .cui-console-player[data-controls="hidden"]:not(:has(:focus-visible, :popover-open)) {
+    &,
+    & * {
+      cursor: none;
+    }
   }
 
   /* @invariant: data-intro is the page's script's to drop when the film first

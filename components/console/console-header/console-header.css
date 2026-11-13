@@ -1,5 +1,5 @@
 @layer components {
-  .cui-console-section-header {
+  .cui-console-header {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
@@ -11,7 +11,7 @@
     }
   }
 
-  .cui-console-section-header-back {
+  .cui-console-header-back {
     display: flex;
     width: fit-content;
     align-items: center;
@@ -23,7 +23,7 @@
     }
   }
 
-  .cui-console-section-header-detail {
+  .cui-console-header-detail {
     max-width: 65ch;
     margin-top: 4px;
     color: var(--cui-c-console-neutral-label-secondary);
