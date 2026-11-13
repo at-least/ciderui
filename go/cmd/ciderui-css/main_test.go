@@ -35,14 +35,16 @@ func run(t *testing.T, args ...string) (code int, stdout, stderr string) {
 	return cmd.ProcessState.ExitCode(), out.String(), errOut.String()
 }
 
-func TestCommandWritesTheUtilitiesUnderItsDir(t *testing.T) {
+func TestCommandWritesItsStylesheetsUnderItsDirSilently(t *testing.T) {
 	dir := filepath.Join(t.TempDir(), "target", "ciderui")
 	code, stdout, stderr := run(t, dir)
-	if want := "ciderui's utilities.css written under " + dir + "\n"; code != 0 || stdout != want || stderr != "" {
-		t.Errorf("ciderui-css %s exited %d, wrote %q and %q to stderr, want 0 and %q", dir, code, stdout, stderr, want)
+	if code != 0 || stdout != "" || stderr != "" {
+		t.Errorf("ciderui-css %s exited %d, wrote %q and %q to stderr, want 0 and nothing", dir, code, stdout, stderr)
 	}
-	if _, err := os.Stat(filepath.Join(dir, "utilities.css")); err != nil {
-		t.Errorf("ciderui-css wrote no utilities.css: %v", err)
+	for _, file := range []string{"utilities.css", "theme.css"} {
+		if _, err := os.Stat(filepath.Join(dir, file)); err != nil {
+			t.Errorf("ciderui-css wrote no %s: %v", file, err)
+		}
 	}
 }
 

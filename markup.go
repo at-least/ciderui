@@ -362,7 +362,7 @@ func CheckMarkup(html string) []string {
 			if other := otherSet(set); other != "" && vocabularies()[other].classes[c] {
 				problems = append(problems, fmt.Sprintf("class %q on %s: a %s class; this page links the %s stylesheet", c, on, other, set))
 			} else {
-				problems = append(problems, fmt.Sprintf("class %q on %s: %s has no such class", c, on, sheet))
+				problems = append(problems, fmt.Sprintf("class %q on %s: %s has no such class%s", c, on, sheet, partClasses(c, known.classes)))
 			}
 		}
 		var seen []string
@@ -400,6 +400,75 @@ func otherSet(set string) string {
 	return ""
 }
 
+func partClasses(class string, known map[string]bool) string {
+	rest := strings.TrimPrefix(class, "cui-")
+	prefix := "cui-"
+	if after, ok := strings.CutPrefix(rest, "console-"); ok {
+		prefix, rest = "cui-console-", after
+	}
+	block := prefix + strings.SplitN(rest, "-", 2)[0]
+	var part []string
+	for k := range known {
+		if k == block || strings.HasPrefix(k, block+"-") {
+			part = append(part, k)
+		}
+	}
+	slices.Sort(part)
+	switch len(part) {
+	case 0:
+		return ""
+	case 1:
+		return fmt.Sprintf("; the only %s class is %s", block, part[0])
+	}
+	return fmt.Sprintf("; the %s classes are %s", block, inWords(part, "and"))
+}
+
+func inWords(items []string, conjunction string) string {
+	last := items[len(items)-1]
+	if len(items) == 1 {
+		return last
+	}
+	return strings.Join(items[:len(items)-1], ", ") + " " + conjunction + " " + last
+}
+
+func valuesTaken(class, attribute string, values []selected) []string {
+	var vs []string
+	for _, v := range values {
+		if v.class != class || v.attribute != attribute {
+			continue
+		}
+		if q := strconv.Quote(v.value); !slices.Contains(vs, q) {
+			vs = append(vs, q)
+		}
+	}
+	slices.Sort(vs)
+	return vs
+}
+
+func attributesTaken(classes []string, values []selected) string {
+	var takes []string
+	for _, c := range classes {
+		var attributes []string
+		for _, v := range values {
+			if v.class == c && !slices.Contains(attributes, v.attribute) {
+				attributes = append(attributes, v.attribute)
+			}
+		}
+		slices.Sort(attributes)
+		for _, attribute := range attributes {
+			if slices.ContainsFunc(values, func(v selected) bool { return v.class == c && v.attribute == attribute && v.anyValue }) {
+				takes = append(takes, fmt.Sprintf("%s takes %s", c, attribute))
+				continue
+			}
+			takes = append(takes, fmt.Sprintf("%s takes %s %s", c, attribute, inWords(valuesTaken(c, attribute, values), "or")))
+		}
+	}
+	if len(takes) == 0 {
+		return ""
+	}
+	return "; " + strings.Join(takes, "; ")
+}
+
 func dataValueProblems(tag startTag, ours []string, values []selected) []string {
 	var problems []string
 	for _, a := range tag.attributes {
@@ -414,29 +483,16 @@ func dataValueProblems(tag startTag, ours []string, values []selected) []string 
 		}
 		var takes []string
 		for _, c := range ours {
-			var vs []string
-			for _, v := range values {
-				if v.class != c || v.attribute != a.name {
-					continue
-				}
-				if q := strconv.Quote(v.value); !slices.Contains(vs, q) {
-					vs = append(vs, q)
-				}
-			}
+			vs := valuesTaken(c, a.name, values)
 			if len(vs) == 0 {
 				continue
 			}
-			slices.Sort(vs)
-			list := vs[len(vs)-1]
-			if len(vs) > 1 {
-				list = strings.Join(vs[:len(vs)-1], ", ") + " or " + list
-			}
-			takes = append(takes, fmt.Sprintf("%s takes %s %s", c, a.name, list))
+			takes = append(takes, fmt.Sprintf("%s takes %s %s", c, a.name, inWords(vs, "or")))
 		}
 		var allowed string
 		switch len(takes) {
 		case 0:
-			allowed = "none of its classes takes " + a.name
+			allowed = "none of its classes takes " + a.name + attributesTaken(ours, values)
 		case 1:
 			allowed = takes[0] + ", or none for its default"
 		default:

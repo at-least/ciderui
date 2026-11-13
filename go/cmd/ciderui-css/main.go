@@ -19,5 +19,4 @@ func main() {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
-	fmt.Printf("ciderui's utilities.css written under %s\n", os.Args[1])
 }

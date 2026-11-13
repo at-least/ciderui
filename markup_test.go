@@ -51,6 +51,8 @@ func TestEveryExamplePasses(t *testing.T) {
 func TestCheckMarkupRefusesAClassTheKitLacks(t *testing.T) {
 	checkEach(t, []markupCase{
 		{"a misspelt class", `<p>a</p><span class="cui-console-badg mt-1">b</span>`, []string{`class "cui-console-badg" on <span class="cui-console-badg mt-1">: ciderui has no such class`}},
+		{"a misspelt class names its part's classes", `<li class="cui-list-detial">a</li>`, []string{`class "cui-list-detial" on <li class="cui-list-detial">: ciderui has no such class; the cui-list classes are cui-list, cui-list-aside, cui-list-detail, cui-list-row and cui-list-title`}},
+		{"a misspelt console class names its part's classes", `<span class="cui-console-badge-lg">a</span>`, []string{`class "cui-console-badge-lg" on <span class="cui-console-badge-lg">: ciderui has no such class; the only cui-console-badge class is cui-console-badge`}},
 		{"lines between classes", "<b class=\"cui-console-badge\n\tcui-console-badg\">a</b>", []string{"class \"cui-console-badg\" on <b class=\"cui-console-badge\\n\\tcui-console-badg\">: ciderui has no such class"}},
 	})
 }
@@ -66,6 +68,8 @@ func TestCheckMarkupRefusesADataValueNoRuleSelects(t *testing.T) {
 
 		// @invariant: [data-stack] selects any value, on its own class alone
 		{"a value of a bare selected attribute", `<table class="cui-console-table" data-stack="true"></table>`, nil},
+		{"an attribute none of its classes takes names those they take", `<span class="cui-console-badge" data-size="sm">b</span>`, []string{`data-size="sm" on <span class="cui-console-badge">: none of its classes takes data-size; cui-console-badge takes data-color "error", "info", "success" or "warning"`}},
+		{"a bare selected attribute among those it takes", `<table class="cui-console-table" data-size="sm"></table>`, []string{`data-size="sm" on <table class="cui-console-table">: none of its classes takes data-size; cui-console-table takes data-stack`}},
 		{"a bare selected attribute on another class", `<div class="cui-console-card" data-stack></div>`, []string{`data-stack="" on <div class="cui-console-card">: none of its classes takes data-stack`}},
 
 		// @invariant: .cui-console-player-end > [data-control="replay"] names no class of the element
