@@ -70,7 +70,6 @@ if (process.argv[2] === '--check') {
     console.log('go/lucide/lucide.go is stale: node scripts/build-lucide.mjs');
     process.exit(1);
   }
-  console.log('go/lucide/lucide.go is up to date');
 } else {
   writeFileSync(OUT, text);
 }

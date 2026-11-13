@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { COMPONENTS, ROOT, exampleFiles, exampleHtml, shipped } from './compile.mjs';
 import { open, quit } from './browser.mjs';
 import { WIDTHS } from './reference.mjs';
-import { check, done } from './check.mjs';
+import { check, done, hold } from './check.mjs';
 
 const UPDATE = process.env.UPDATE_GOLDEN === '1';
 const GOLDEN = join(ROOT, 'test/pictures.json');
@@ -30,7 +30,7 @@ for (const part of COMPONENTS) {
       const name = `${part.name}/${file} at ${width}`;
       seen[name] = hash;
       const saved = `${FAILED}/${part.name}-${file}-${width}.png`;
-      if (!UPDATE && !check(`${name}px: the picture changed, see ${saved} (UPDATE_GOLDEN=1 if meant)`, hash, golden[name])) {
+      if (!UPDATE && !hold(hash === golden[name], `${name}px: the picture changed, see ${saved} (if meant: UPDATE_GOLDEN=1 node scripts/docker.mjs node test/pictures.mjs)`)) {
         mkdirSync(join(ROOT, FAILED), { recursive: true });
         writeFileSync(join(ROOT, saved), picture);
       }

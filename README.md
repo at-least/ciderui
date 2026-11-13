@@ -39,14 +39,16 @@ go get -tool github.com/GaijinEntertainment/go-exhaustruct/v3/cmd/exhaustruct
 go tool exhaustruct -i 'github.com/at-least/ciderui/.*' ./...   # in your site's checks
 ```
 
-That is the whole setup: the page links the stylesheet and the module serves it, with its fonts, and the check fails your build on a field you left out, where it would otherwise render a default nobody chose. Use `site.Page` for a store or a marketing page. Each part's markup is its examples, `components/<set>/<name>/examples/*.html`. Under `go test`, every page `site.Page` or `console.ConsolePage` renders checks itself with `ciderui.CheckMarkup`; call it yourself on a fragment.
+That is the whole setup: the page links the stylesheet and the module serves it, with its fonts, and the check fails your build on a field you left out, where it would otherwise render a default nobody chose. Use `site.Page` for a store or a marketing page. Each part's markup is its examples, `components/<set>/<name>/examples/*.html`; from your site's checkout they are in `$(go list -m -f '{{.Dir}}' github.com/at-least/ciderui)/components/<set>/<name>/examples/`. Under `go test`, every page `site.Page` or `console.ConsolePage` renders checks itself with `ciderui.CheckMarkup`; call it yourself on a fragment.
 
 ### Your own utilities
 
-A set's stylesheet ships the utilities its examples write and no other: any other utility a page writes needs this second stylesheet. A page that writes Tailwind utilities builds it and adds it in `Head`. This writes what it imports, from the version your `go.mod` pins:
+A set's stylesheet ships the utilities its examples write and no other: any other utility a page writes needs a second stylesheet, which your site builds with Tailwind and adds in `Head`. The first command writes the two files the entry below imports, from the version your `go.mod` pins. The last builds the entry:
 
 ```sh
 go run github.com/at-least/ciderui/go/cmd/ciderui-css target/ciderui
+npm install --save-dev tailwindcss@4.3.3 @tailwindcss/cli@4.3.3   # once
+npx tailwindcss -i tailwind/site.css -o public/tailwind.css --minify
 ```
 
 ```css

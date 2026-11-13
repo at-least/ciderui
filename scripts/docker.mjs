@@ -54,6 +54,9 @@ const q = (s) => `'${s.replaceAll("'", "'\\''")}'`;
 // ._ files
 const TAR_ENV = { ...process.env, COPYFILE_DISABLE: '1' };
 
+// @invariant: emptied here, not in test/pictures.mjs: that runs in the container, which
+// never holds this directory (excluded below), and the copy back only adds files
+rmSync(join(ROOT, 'test/pictures-failed'), { recursive: true, force: true });
 let status = 1;
 try {
   const exclude = '--exclude ./node_modules --exclude ./.git --exclude ./test/pictures-failed';

@@ -1,21 +1,44 @@
-import { execFileSync } from 'node:child_process';
+import { spawnSync } from 'node:child_process';
 import { mkdtempSync, readdirSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { join, relative } from 'node:path';
 import { ROOT, ownSheet } from './compile.mjs';
 
-// @trap: the module's package directories, not `.`: gofmt would walk node_modules,
-// which go.mod's ignore keeps from go's own commands
-const dirs = execFileSync('go', ['list', '-f', '{{.Dir}}', './...'], { cwd: ROOT, encoding: 'utf8' }).trim().split('\n');
-const unformatted = execFileSync('gofmt', ['-l', ...dirs], { cwd: ROOT, encoding: 'utf8' }).trim();
-if (unformatted) throw new Error(`not gofmt'd (gofmt -w <file>):\n${unformatted}`);
-for (const args of [
-  ['vet', './...'],
-  // @invariant: a component's field left out of a struct literal is a default nobody chose
-  ['tool', 'exhaustruct', '-i', 'github.com/at-least/ciderui/.*', './...'],
-  ['test', './...'],
-]) {
-  execFileSync('go', args, { cwd: ROOT, stdio: 'inherit' });
+const fail = (message) => {
+  console.log(message);
+  process.exit(1);
+};
+function run(command, ...args) {
+  const { status, stdout, stderr, error } = spawnSync(command, args, { cwd: ROOT, encoding: 'utf8' });
+  if (error) fail(`go: ${command}: ${error.message}`);
+  if (status !== 0) {
+    process.stdout.write(stdout + stderr);
+    fail(`go: ${[command, ...args].join(' ')} failed (exit ${status})`);
+  }
+  return stdout;
+}
+
+// @invariant: every check that opens no browser runs here, before the image starts
+// (the owner, 2026-11-14): a stale dist stops in a second, not after the browser steps
+run('node', 'scripts/build-lucide.mjs', '--check');
+run('node', 'scripts/build-css.mjs', '--check');
+run('node', 'test/tokens.mjs');
+// @trap: the module's Go files, not `.` nor a package's directory: gofmt walks a
+// directory, the top's node_modules with it, which go.mod's ignore keeps from go's
+// own commands
+const each = (files) => `{{range .${files}}}{{$.Dir}}/{{.}}{{"\\n"}}{{end}}`;
+const sources = run('go', 'list', '-f', each('GoFiles') + each('TestGoFiles') + each('XTestGoFiles'), './...').split('\n').filter(Boolean).map((file) => relative(ROOT, file));
+const unformatted = run('gofmt', '-l', ...sources).trim();
+if (unformatted) fail(`${unformatted}\ngo: not gofmt'd: gofmt -w <file>`);
+run('go', 'vet', './...');
+// @invariant: a component's field left out of a struct literal is a default nobody chose
+run('go', 'tool', 'exhaustruct', '-i', 'github.com/at-least/ciderui/.*', './...');
+// @invariant: a part's every branch has a test: a new panic with no Break, or a new
+// branch no example draws, stops here
+const tested = run('go', 'test', '-cover', './...').split('\n');
+for (const set of ['go/site', 'go/console']) {
+  const line = tested.find((l) => l.split('\t')[1] === `github.com/at-least/ciderui/${set}`);
+  if (!line.includes('coverage: 100.0% of statements')) fail(`go: a statement of ${set} no test runs (go test -coverprofile): ${line}`);
 }
 // @invariant: what a site with utilities of its own does: its Go tool writes utilities.css,
 // Tailwind builds its second stylesheet from there. Everything else reads the
@@ -23,26 +46,17 @@ for (const args of [
 // Written outside this repository, as a site's target/ is beside its node_modules
 // and not under them: a bare @import in a written file would resolve from there.
 const written = mkdtempSync(join(tmpdir(), 'written-kit-'));
-try {
-  execFileSync('go', ['run', './go/cmd/ciderui-css', written], { cwd: ROOT, stdio: 'pipe' });
-  const built = ownSheet(`${written}/utilities.css`, 'px-8 md:px-8 cui-btn cui-headline');
-  for (const rule of ['.px-8', '.md\\:px-8']) if (!built.includes(rule)) throw new Error(`utilities.css written by ciderui-css built with no ${rule}: ${built.slice(0, 200)}`);
-  for (const kit of ['.cui-btn', '.cui-headline']) if (built.includes(kit)) throw new Error(`utilities.css built the kit's ${kit}, which the kit's own sheet ships (utilities.css)`);
-} finally {
-  rmSync(written, { recursive: true });
-}
-// @invariant: a part's every branch has a test: a new panic with no Break, or a new
-// branch no example draws, stops here
-const covered = execFileSync('go', ['test', '-cover', './go/site', './go/console'], { cwd: ROOT, encoding: 'utf8' });
-for (const line of covered.trim().split('\n')) {
-  if (!line.includes('coverage: 100.0% of statements')) throw new Error(`a statement no test runs (go test -coverprofile): ${line}`);
-}
+process.on('exit', () => rmSync(written, { recursive: true }));
+run('go', 'run', './go/cmd/ciderui-css', written);
+const built = ownSheet(`${written}/utilities.css`, 'px-8 md:px-8 cui-btn cui-headline');
+for (const rule of ['.px-8', '.md\\:px-8']) if (!built.includes(rule)) fail(`go: utilities.css written by ciderui-css built with no ${rule}: ${built.slice(0, 200)}`);
+for (const kit of ['.cui-btn', '.cui-headline']) if (built.includes(kit)) fail(`go: utilities.css built the kit's ${kit}, which the kit's own sheet ships (utilities.css)`);
 // @trap: the button's variants a compile error, not a string: btn.go alone writes the
 // class. play_button.go's two glyphs and labels are no <button> the type can hold.
 const OWN_BUTTON = /(^|\/)(btn|play_button)\.go$/;
 for (const dir of ['go/site', 'go/console']) {
   for (const file of readdirSync(join(ROOT, dir)).filter((f) => f.endsWith('.go') && !f.endsWith('_test.go') && !OWN_BUTTON.test(f))) {
-    if (/"cui-(console-)?btn[" ]/.test(readFileSync(join(ROOT, dir, file), 'utf8'))) throw new Error(`${dir}/${file} writes a button's class: use its Btn type`);
+    if (/"cui-(console-)?btn[" ]/.test(readFileSync(join(ROOT, dir, file), 'utf8'))) fail(`go: ${dir}/${file} writes a button's class: use its Btn type`);
   }
 }
-console.log('go: gofmt, vet, exhaustruct and tests clean');
+console.log('go: lucide.go, dist, tokens, gofmt, vet, exhaustruct and tests clean');

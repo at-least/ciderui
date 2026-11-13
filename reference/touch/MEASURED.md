@@ -8,7 +8,7 @@ The chips, hint, radio, head, sort links, small field and appearance choice name
 
 ```sh
 node scripts/docker.mjs node reference/touch/audit.mjs             # a step of npm test
-VERBOSE=1 node scripts/docker.mjs node reference/touch/audit.mjs   # every control's line
+node scripts/docker.mjs sh -c 'VERBOSE=1 node reference/touch/audit.mjs'   # every control's line
 ```
 
 ## What it showed (Chromium 151, 2026-10-29)

@@ -2,9 +2,12 @@ const failures = [];
 let passed = 0;
 
 export function check(name, got, want, { tolerance = 1 / 32 } = {}) {
-  const ok = same(got, want, tolerance);
+  return hold(same(got, want, tolerance), `${name}: ${got} (want ${want})`);
+}
+
+export function hold(ok, failure) {
   if (ok) passed++;
-  else failures.push(`${name}: ${got} (want ${want})`);
+  else failures.push(failure);
   return ok;
 }
 

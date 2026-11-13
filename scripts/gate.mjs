@@ -1,15 +1,16 @@
-// @invariant: The gate inside the test image: the checks that open no browser first, one
-// after another, and the browser steps only once they pass (the owner, 2026-11-14: a
-// failure a fast check finds wastes no browser run); then every browser step at once,
-// each one's output held and printed whole in this order, so two steps' lines never
-// interleave. Run one after another they took 359s on lab (surfaces 116s, probes 69s,
-// components 64s); at once, about the slowest.
+// @invariant: The gate inside the test image: the browser steps only once the checks
+// that open no browser pass (the owner, 2026-11-14: a failure a fast check finds wastes
+// no browser run). test/go.mjs runs those on the host before the image starts; the one
+// held here too is the one whose result the host's node_modules can change: the image's
+// Tailwind is package-lock.json's by its build, the host's whatever was last installed,
+// and the browser steps read the dist that check holds. Then every browser step at
+// once, each one's output held and printed whole in this order, so two steps' lines
+// never interleave. Run one after another they took 359s on lab (surfaces 116s, probes
+// 69s, components 64s); at once, about the slowest.
 import { spawn, spawnSync } from 'node:child_process';
 
 const STATIC = [
-  'node scripts/build-lucide.mjs --check',
   'node scripts/build-css.mjs --check',
-  'node test/tokens.mjs',
 ];
 const BROWSER = [
   'node test/type.mjs',
