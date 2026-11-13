@@ -70,6 +70,22 @@ Measured 2026-10-19 in Playwright's Chromium 151 on Linux, with `--font-render-h
 
 Each is read at 1600, 1200, 900 and 390px wide (one width inside each of apple.com's bands) unless its row names its own, `breakpoints` at the boundaries, the Newsroom's at both (and 1069/1068, 735/734).
 
+## Read again 2026-11-13
+
+Every spec was read again in the same browsers (the owner: re-read every Apple page and follow what changed). The results stay those of the dates above, except `tv-player*`, `ribbon` and `giftcard`, written again: every value a check reads matched today but tv.apple.com's player's (decision 28, followed) and the ribbon's ground (a page's own, now held to `bag:ribbon`). These no longer read whole, apple.com's pages having moved; no check reads what they miss, so their results stand as the record of their date:
+
+| spec | what is gone |
+| --- | --- |
+| `home`, `home-tw` | `hero.callout`; the global nav is dark today (a campaign's hero), so a read would overwrite the light nav the checks read |
+| `iphone` | `section.image-accordion` |
+| `appstore-ratings-dark` | the ratings' graph at 390px |
+| `newsroom-index` | the fourth tile at 390px |
+| `ricmodal` | the trade-in modal's container to 735px |
+| `ricmodal-dark`, `localnav-dark` | the page's trigger (a timeout): the M5 modal's link, the local nav's menu button |
+| `store`, `touch-store` | the dark card with an orange tag at 390px, and the light one to 900px |
+
+The search's, the flyouts' and the bag's flyout's values moved most (300 to 450 each); decision 36 removed those parts.
+
 ## What it showed
 
 **The text's smoothing.** `home:page.body` reads `-webkit-font-smoothing: antialiased`; beside it apple.com declares Firefox's `-moz-osx-font-smoothing: grayscale`, which Chromium drops and so no probe here reads: `body,input,textarea,select,button{font-synthesis:none;-moz-font-feature-settings:"kern";-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}` in the home page's `/v/homepage/a/styles/main.built.css` and `/autopush/us/fam-gallery/styles/home-gallery.built.css`, and under `#ac-globalfooter` in `/ac/globalfooter/8/en_US/styles/ac-globalfooter.built.css` (their text read 2026-10-21). Only Firefox on macOS knows the property (Firefox 153 on Linux: `CSS.supports` false).
