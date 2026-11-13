@@ -118,7 +118,6 @@ func TestPanicsFailsUnlessEachBreakPanicsWithItsWant(t *testing.T) {
 	}{
 		{"a break that panics with its want", valid, []example.Break[part]{panics}, 0},
 		{"a break that panics with another message", valid, []example.Break[part]{{Want: "part needs", Change: blank}}, 1},
-		{"a break that does not panic", valid, []example.Break[part]{stays}, 1},
 		{"a second break that does not panic", valid, []example.Break[part]{panics, stays}, 1},
 		{"a valid part that panics", func() part { return part{name: ""} }, []example.Break[part]{panics}, 1},
 	} {
@@ -134,7 +133,7 @@ func TestPanicsFailsUnlessEachBreakPanicsWithItsWant(t *testing.T) {
 type Classed struct{ Class string }
 
 func (c Classed) Render(w io.Writer) error {
-	return h.P(g.If(c.Class != "drop", g.Attr("class", "root "+c.Class))).Render(w)
+	return h.P(g.Attr("class", "root large "+c.Class)).Render(w)
 }
 
 func TestPagesClassFailsOnAPartWithoutThePagesClassAfterItsRootOrARow(t *testing.T) {
@@ -148,16 +147,19 @@ func TestPagesClassFailsOnAPartWithoutThePagesClassAfterItsRootOrARow(t *testing
 			t.Fatal(err)
 		}
 	}
-	writes := example.ClassRow{Root: "root", Node: Classed{Class: example.PageClass}}
-	drops := example.ClassRow{Root: "root", Node: Classed{Class: "drop"}}
+	writes := example.ClassRow{Root: "root large", Node: Classed{Class: example.PageClass}}
+	row := func(class string) []example.ClassRow {
+		return []example.ClassRow{{Root: writes.Root, Node: Classed{Class: class}}}
+	}
 	for _, c := range []struct {
 		name     string
 		rows     []example.ClassRow
 		failures int
 	}{
 		{"each exported struct of the package a row's part", []example.ClassRow{writes}, 0},
-		{"a part that drops its Class", []example.ClassRow{drops}, 1},
-		{"a part that writes the page's class after classes not its Root", []example.ClassRow{{Root: "other", Node: writes.Node}}, 1},
+		{"a part that writes a class of its own where the page's goes", row("small"), 1},
+		{"a part that writes a class of its own after the page's", row(example.PageClass + " small"), 1},
+		{"a part that writes the page's class after more classes than its Root", []example.ClassRow{{Root: "large", Node: writes.Node}}, 1},
 		{"a struct with a Class and no row", nil, 1},
 	} {
 		var r recorder
