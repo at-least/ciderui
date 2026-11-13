@@ -1,0 +1,131 @@
+@layer components {
+  .cui-prose {
+    color: var(--cui-c-text);
+    font-size: 17px;
+    line-height: 25px;
+    letter-spacing: var(--cui-tracking-17);
+
+    & > :where(* + *) {
+      margin-top: 14px;
+    }
+
+    & :where(h2) {
+      font-size: 28px;
+      line-height: 32px;
+      letter-spacing: var(--cui-tracking-28);
+      font-weight: 600;
+    }
+
+    & > :where(* + h2) {
+      margin-top: 40px;
+    }
+
+    & :where(h3) {
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing: var(--cui-tracking-24);
+      font-weight: 600;
+    }
+
+    & > :where(* + h3) {
+      margin-top: 28px;
+    }
+
+    @media (width >= 735px) {
+      & :where(h2) {
+        font-size: 32px;
+        line-height: 36px;
+        letter-spacing: var(--cui-tracking-32);
+      }
+
+      & > :where(* + h2) {
+        margin-top: 48px;
+      }
+
+      & :where(h3) {
+        font-size: 28px;
+        line-height: 32px;
+        letter-spacing: var(--cui-tracking-28);
+      }
+    }
+
+    @media (width >= 1069px) {
+      & :where(h2) {
+        font-size: 40px;
+        line-height: 44px;
+        letter-spacing: var(--cui-tracking-40);
+      }
+
+      & > :where(* + h2) {
+        margin-top: 52px;
+      }
+
+      & :where(h3) {
+        font-size: 32px;
+        line-height: 36px;
+        letter-spacing: var(--cui-tracking-32);
+      }
+
+      & > :where(* + h3) {
+        margin-top: 32px;
+      }
+    }
+
+    & :where(ul, ol) {
+      margin-left: 20px;
+      padding-left: 0;
+      list-style-position: outside;
+    }
+
+    & :where(ul) {
+      list-style-type: disc;
+    }
+
+    & :where(ol) {
+      list-style-type: decimal;
+    }
+
+    & :where(li) {
+      margin-top: 0.4em;
+    }
+
+    & :where(b, strong) {
+      font-weight: 600;
+    }
+
+    & :where(a) {
+      color: var(--cui-c-link);
+      text-decoration-line: underline;
+    }
+
+    & :where(img) {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 28px;
+
+      @media (width >= 1069px) {
+        margin-bottom: 32px;
+      }
+    }
+
+    /* @trap: markdown writes a table with no wrapper, so the table scrolls itself
+       (block, its rows still a table's) where Apple Support wraps it */
+    & :where(table) {
+      display: block;
+      overflow-x: auto;
+      border-collapse: collapse;
+    }
+
+    & :where(th, td) {
+      padding: 14px;
+      border-bottom: 1px solid var(--cui-c-divider);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    & :where(th) {
+      font-weight: 600;
+    }
+  }
+}

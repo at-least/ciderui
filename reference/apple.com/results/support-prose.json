@@ -1,0 +1,712 @@
+{
+ "url": "https://support.apple.com/en-us/102631",
+ "finalUrl": "https://support.apple.com/en-us/102631",
+ "browser": "chromium 151.0.7922.34 on linux",
+ "date": "2026-11-13T15:59:02.353Z",
+ "widths": {
+  "390": {
+   "p": {
+    "html": "<p class=\"gb-paragraph\">",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    }
+   },
+   "h2": {
+    "html": "<h2 class=\"gb-header\"></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "40px",
+     "margin-bottom": "0px"
+    }
+   },
+   "h2.next": {
+    "html": "<p class=\"gb-paragraph\"></p>",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    }
+   },
+   "h3": {
+    "html": "<h3 class=\"gb-header\"></h3>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "24px",
+     "line-height": "28px",
+     "font-weight": "600",
+     "letter-spacing": "0.216px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "28px",
+     "margin-bottom": "0px"
+    }
+   },
+   "ul": {
+    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px",
+     "padding-left": "0px",
+     "margin-left": "20px",
+     "list-style-type": "disc",
+     "list-style-position": "outside"
+    }
+   },
+   "ol": {
+    "html": "<ol role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\">",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px",
+     "padding-left": "0px",
+     "margin-left": "20px",
+     "list-style-type": "decimal",
+     "list-style-position": "outside"
+    }
+   },
+   "li": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "6.8px",
+     "margin-bottom": "0px",
+     "padding-left": "0px"
+    }
+   },
+   "li.next": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "ol.li": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "li.marker": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "list.next": {
+    "html": "<p class=\"gb-paragraph\"><a href=\"https://support.apple.com/en-us/102678\" class=\"gb-anchor\" link-type=\"ICON\"></a></p>",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    }
+   },
+   "img": {
+    "html": "<img class=\"gb-image\" alt=\"…\" src=\"https://cdsassets.apple.com/live/7WUAS350/images/apple-account/ios-26-iphone-17-pro-settings-sign-in-security-legacy-contact.png\" height=\"1320\" width=\"640\" style=\"",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "28px",
+     "width": "320px",
+     "max-width": "min(100%, 320px)",
+     "height": "660px",
+     "display": "block",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 320,
+     "height": 660
+    }
+   },
+   "b": {
+    "html": "<b></b>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "link": {
+    "html": "<a href=\"https://support.apple.com/en-us/103128\" class=\"gb-anchor\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   }
+  },
+  "900": {
+   "p": {
+    "html": "<p class=\"gb-paragraph\">",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    }
+   },
+   "h2": {
+    "html": "<h2 class=\"gb-header\"></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "48px",
+     "margin-bottom": "0px"
+    }
+   },
+   "h2.next": {
+    "html": "<p class=\"gb-paragraph\"></p>",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    }
+   },
+   "h3": {
+    "html": "<h3 class=\"gb-header\"></h3>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "28px",
+     "line-height": "32px",
+     "font-weight": "600",
+     "letter-spacing": "0.196px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "28px",
+     "margin-bottom": "0px"
+    }
+   },
+   "ul": {
+    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px",
+     "padding-left": "0px",
+     "margin-left": "20px",
+     "list-style-type": "disc",
+     "list-style-position": "outside"
+    }
+   },
+   "ol": {
+    "html": "<ol role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\">",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px",
+     "padding-left": "0px",
+     "margin-left": "20px",
+     "list-style-type": "decimal",
+     "list-style-position": "outside"
+    }
+   },
+   "li": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "6.8px",
+     "margin-bottom": "0px",
+     "padding-left": "0px"
+    }
+   },
+   "li.next": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "ol.li": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "li.marker": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "list.next": {
+    "html": "<p class=\"gb-paragraph\"><a href=\"https://support.apple.com/en-us/102678\" class=\"gb-anchor\" link-type=\"ICON\"></a></p>",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    }
+   },
+   "img": {
+    "html": "<img class=\"gb-image\" alt=\"…\" src=\"https://cdsassets.apple.com/live/7WUAS350/images/apple-account/ios-26-iphone-17-pro-settings-sign-in-security-legacy-contact.png\" height=\"1320\" width=\"640\" style=\"",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "28px",
+     "width": "320px",
+     "max-width": "min(100%, 320px)",
+     "height": "660px",
+     "display": "block",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 320,
+     "height": 660
+    }
+   },
+   "b": {
+    "html": "<b></b>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "link": {
+    "html": "<a href=\"https://support.apple.com/en-us/103128\" class=\"gb-anchor\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   }
+  },
+  "1200": {
+   "p": {
+    "html": "<p class=\"gb-paragraph\">",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    }
+   },
+   "h2": {
+    "html": "<h2 class=\"gb-header\"></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "44px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "52px",
+     "margin-bottom": "0px"
+    }
+   },
+   "h2.next": {
+    "html": "<p class=\"gb-paragraph\"></p>",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    }
+   },
+   "h3": {
+    "html": "<h3 class=\"gb-header\"></h3>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "32px",
+     "margin-bottom": "0px"
+    }
+   },
+   "ul": {
+    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px",
+     "padding-left": "0px",
+     "margin-left": "20px",
+     "list-style-type": "disc",
+     "list-style-position": "outside"
+    }
+   },
+   "ol": {
+    "html": "<ol role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\">",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px",
+     "padding-left": "0px",
+     "margin-left": "20px",
+     "list-style-type": "decimal",
+     "list-style-position": "outside"
+    }
+   },
+   "li": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "6.8px",
+     "margin-bottom": "0px",
+     "padding-left": "0px"
+    }
+   },
+   "li.next": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "ol.li": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "li.marker": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "list.next": {
+    "html": "<p class=\"gb-paragraph\"><a href=\"https://support.apple.com/en-us/102678\" class=\"gb-anchor\" link-type=\"ICON\"></a></p>",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    }
+   },
+   "img": {
+    "html": "<img class=\"gb-image\" alt=\"…\" src=\"https://cdsassets.apple.com/live/7WUAS350/images/apple-account/ios-26-iphone-17-pro-settings-sign-in-security-legacy-contact.png\" height=\"1320\" width=\"640\" style=\"",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "32px",
+     "width": "320px",
+     "max-width": "min(100%, 320px)",
+     "height": "660px",
+     "display": "block",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 320,
+     "height": 660
+    }
+   },
+   "b": {
+    "html": "<b></b>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "link": {
+    "html": "<a href=\"https://support.apple.com/en-us/103128\" class=\"gb-anchor\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   }
+  },
+  "1600": {
+   "p": {
+    "html": "<p class=\"gb-paragraph\">",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    }
+   },
+   "h2": {
+    "html": "<h2 class=\"gb-header\"></h2>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "40px",
+     "line-height": "44px",
+     "font-weight": "600",
+     "letter-spacing": "normal",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "52px",
+     "margin-bottom": "0px"
+    }
+   },
+   "h2.next": {
+    "html": "<p class=\"gb-paragraph\"></p>",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    }
+   },
+   "h3": {
+    "html": "<h3 class=\"gb-header\"></h3>",
+    "styles": {
+     "font-family": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "32px",
+     "line-height": "36px",
+     "font-weight": "600",
+     "letter-spacing": "0.128px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "32px",
+     "margin-bottom": "0px"
+    }
+   },
+   "ul": {
+    "html": "<ul role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px",
+     "padding-left": "0px",
+     "margin-left": "20px",
+     "list-style-type": "disc",
+     "list-style-position": "outside"
+    }
+   },
+   "ol": {
+    "html": "<ol role=\"list\" class=\"list gb-list\"><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li><li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\">",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px",
+     "padding-left": "0px",
+     "margin-left": "20px",
+     "list-style-type": "decimal",
+     "list-style-position": "outside"
+    }
+   },
+   "li": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "6.8px",
+     "margin-bottom": "0px",
+     "padding-left": "0px"
+    }
+   },
+   "li.next": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "ol.li": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)",
+     "margin-top": "6.8px",
+     "margin-bottom": "0px"
+    }
+   },
+   "li.marker": {
+    "html": "<li role=\"listitem\" class=\"gb-list_item\"><p class=\"gb-paragraph\"></p></li>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "list.next": {
+    "html": "<p class=\"gb-paragraph\"><a href=\"https://support.apple.com/en-us/102678\" class=\"gb-anchor\" link-type=\"ICON\"></a></p>",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "0px"
+    }
+   },
+   "img": {
+    "html": "<img class=\"gb-image\" alt=\"…\" src=\"https://cdsassets.apple.com/live/7WUAS350/images/apple-account/ios-26-iphone-17-pro-settings-sign-in-security-legacy-contact.png\" height=\"1320\" width=\"640\" style=\"",
+    "styles": {
+     "margin-top": "14px",
+     "margin-bottom": "32px",
+     "width": "320px",
+     "max-width": "min(100%, 320px)",
+     "height": "660px",
+     "display": "block",
+     "border-top-left-radius": "0px"
+    },
+    "box": {
+     "width": 320,
+     "height": 660
+    }
+   },
+   "b": {
+    "html": "<b></b>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "600",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(29, 29, 31)"
+    }
+   },
+   "link": {
+    "html": "<a href=\"https://support.apple.com/en-us/103128\" class=\"gb-anchor\"></a>",
+    "styles": {
+     "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "font-size": "17px",
+     "line-height": "25px",
+     "font-weight": "400",
+     "letter-spacing": "-0.374px",
+     "color": "rgb(0, 102, 204)",
+     "text-decoration-line": "underline",
+     "text-decoration-color": "rgb(0, 102, 204)",
+     "text-underline-offset": "auto"
+    },
+    "states": {
+     "hover": {
+      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "font-size": "17px",
+      "line-height": "25px",
+      "font-weight": "400",
+      "letter-spacing": "-0.374px",
+      "color": "rgb(0, 102, 204)",
+      "text-decoration-line": "underline",
+      "text-decoration-color": "rgb(0, 102, 204)",
+      "text-underline-offset": "auto"
+     }
+    }
+   }
+  }
+ }
+}
