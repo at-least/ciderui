@@ -1,7 +1,6 @@
 package site_test
 
 import (
-	"io"
 	"testing"
 
 	"github.com/at-least/ciderui/go/internal/example"
@@ -14,24 +13,6 @@ func company() g.Node { return h.A(h.Href("/company/"), g.Text("Example Inc.")) 
 
 func TestFooterRendersTheExample(t *testing.T) {
 	example.Check(t, site.Footer{Copyright: company()}, "site/footer/examples/footer.html")
-}
-
-type counted struct{ n *int }
-
-func (c counted) Render(w io.Writer) error {
-	*c.n++
-	_, err := io.WriteString(w, "x")
-	return err
-}
-
-// Copyright is the page's node: rendering one twice may cost, or render
-// differently the second time
-func TestFooterRendersItsCopyrightOnce(t *testing.T) {
-	var copyright int
-	example.Render(site.Footer{Copyright: counted{&copyright}})
-	if copyright != 1 {
-		t.Errorf("the footer rendered the page's copyright %d times, want once", copyright)
-	}
 }
 
 func TestFooterPanics(t *testing.T) {

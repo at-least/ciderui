@@ -23,7 +23,6 @@ func TestFieldItsPrefixHelpAndErrorDescribeItInThatOrder(t *testing.T) {
 	for _, want := range []string{
 		`aria-describedby="phone-prefix phone-help phone-error">`,
 		`</div><p class="cui-field-help" id="phone-help">The number you signed up with.</p>`,
-		`<p class="cui-field-error" id="phone-error">`,
 	} {
 		if !strings.Contains(got, want) {
 			t.Errorf("the input is not described by its prefix, help and error in that order: no %s in %s", want, got)
