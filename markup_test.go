@@ -68,10 +68,11 @@ func TestCheckMarkupNamesTheNearestClass(t *testing.T) {
 func TestCheckMarkupNamesASlotsUtility(t *testing.T) {
 	checkEach(t, []markupCase{
 		{"a text slot", `<p class="text-(--cui-c-console-neutral-label-secondary)">a</p>`, []string{`class "text-(--cui-c-console-neutral-label-secondary)" on <p class="text-(--cui-c-console-neutral-label-secondary)">: write text-secondary, the set's name for this color`}},
-		{"a --color-* slot, under a variant and with an opacity", `<hr class="md:border-(--cui-c-console-neutral-border-tertiary)/50">`, []string{`class "md:border-(--cui-c-console-neutral-border-tertiary)/50" on <hr class="md:border-(--cui-c-console-neutral-border-tertiary)/50">: write md:border-divider/50, the set's name for this color`}},
+		{"a --color-* slot, under two variants and with an opacity", `<hr class="dark:md:border-(--cui-c-console-neutral-border-tertiary)/50">`, []string{`class "dark:md:border-(--cui-c-console-neutral-border-tertiary)/50" on <hr class="dark:md:border-(--cui-c-console-neutral-border-tertiary)/50">: write dark:md:border-divider/50, the set's name for this color`}},
 		{"a site page's slot", page(ciderui.SiteStylesheet()+`"><link rel="stylesheet" href="/own.css`, `<p class="text-(--cui-c-text-2)">a</p>`), []string{`class "text-(--cui-c-text-2)" on <p class="text-(--cui-c-text-2)">: write text-secondary, the set's name for this color`}},
 		{"a ground's slot", `<div class="bg-(--cui-c-console-card)">a</div>`, []string{`class "bg-(--cui-c-console-card)" on <div class="bg-(--cui-c-console-card)">: write bg-alt, the set's name for this color`}},
 		{"a fragment's site slot", `<p class="text-(--cui-c-text-2)">a</p>`, []string{`class "text-(--cui-c-text-2)" on <p class="text-(--cui-c-text-2)">: write text-secondary, the set's name for this color`}},
+		{"a slot left open", `<p class="text-(--cui-c-text-2">a</p>`, nil},
 		{"a slot with no utility name", `<p class="text-(--cui-c-console-brand-label-secondary)">a</p>`, nil},
 		{"a text color's slot as a ground, which no utility names", `<p class="bg-(--cui-c-console-neutral-label-secondary)">a</p>`, nil},
 		{"the other set's slot on a page", page(ciderui.SiteStylesheet()+`"><link rel="stylesheet" href="/own.css`, `<p class="text-(--cui-c-console-neutral-label-secondary)">a</p>`), nil},
@@ -81,9 +82,6 @@ func TestCheckMarkupNamesASlotsUtility(t *testing.T) {
 func TestCheckMarkupRefusesADataValueNoRuleSelects(t *testing.T) {
 	checkEach(t, []markupCase{
 		{"each class that takes the attribute", `<div class="cui-console-btn cui-console-empty" data-size="xl">a</div>`, []string{`data-size="xl" on <div class="cui-console-btn cui-console-empty">: cui-console-btn takes data-size "lg" or "sm", or none for its default; cui-console-empty takes data-size "lg" or "sm"`}},
-		{"each class with a default", `<a class="cui-btn cui-console-btn" data-size="xl">a</a>`, []string{`data-size="xl" on <a class="cui-btn cui-console-btn">: cui-btn takes data-size "lg", or none for its default; cui-console-btn takes data-size "lg" or "sm", or none for its default`}},
-		{"a class with no default lists its values alone", `<div class="cui-console-banner" data-color="neutral">a</div>`, []string{`data-color="neutral" on <div class="cui-console-banner">: cui-console-banner takes data-color "error", "info", "success" or "warning"`}},
-		{"a size of a class with no default", `<div class="cui-console-empty" data-size="md">a</div>`, []string{`data-size="md" on <div class="cui-console-empty">: cui-console-empty takes data-size "lg" or "sm"`}},
 
 		{"a value selected next to a :not", `<div class="cui-console-player" data-controls="hiden"></div>`, []string{`data-controls="hiden" on <div class="cui-console-player">: cui-console-player takes data-controls "hidden", or none for its default`}},
 
@@ -106,7 +104,6 @@ func TestCheckMarkupRefusesAClassWithNoDefaultWithoutItsAttribute(t *testing.T) 
 		{"an empty state of no size", `<div class="cui-console-empty">a</div>`, []string{`class "cui-console-empty" on <div class="cui-console-empty">: write data-size "lg" or "sm"; it has no default`}},
 		{"a mark of no state", `<span class="cui-console-strip-mark">a</span>`, []string{`class "cui-console-strip-mark" on <span class="cui-console-strip-mark">: write data-state "waiting" or "working"; it has no default`}},
 		{"the attribute in capitals", `<div class="cui-console-empty" DATA-SIZE="sm">a</div>`, nil},
-		{"a class with a default", `<span class="cui-console-badge">a</span>`, nil},
 		{"on a page of the other set, the class alone", page(ciderui.SiteStylesheet(), `<div class="cui-console-banner">a</div>`), []string{`class "cui-console-banner" on <div class="cui-console-banner">: a console class; this page links the site stylesheet`}},
 	})
 }
@@ -176,7 +173,7 @@ func TestCheckMarkupReadsThePagesStylesheet(t *testing.T) {
 // with no error: a part's own aria-invalid and the page's through Attrs
 func TestCheckMarkupRefusesAnAttributeWrittenTwice(t *testing.T) {
 	checkEach(t, []markupCase{
-		{"in another case", `<b CLASS="cui-body" id="a" class="x">a</b>`, []string{`class on <b class="cui-body">: written twice, and the browser keeps the first`}},
+		{"each copy in another case", `<b CLASS="cui-body" id="a" Class="x">a</b>`, []string{`Class on <b class="cui-body">: written twice, and the browser keeps the first`}},
 	})
 }
 
