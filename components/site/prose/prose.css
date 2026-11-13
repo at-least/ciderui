@@ -14,7 +14,7 @@
       margin-top: 27.2px;
     }
 
-    & > :where(* + .footnote-definition, * + .footnotes) {
+    & > :where(* + .footnotes) {
       margin-top: 32px;
 
       @media (width >= 735px) {
@@ -24,10 +24,6 @@
       @media (width >= 1069px) {
         margin-top: 44px;
       }
-    }
-
-    & > :where(.footnote-definition + .footnote-definition) {
-      margin-top: 0;
     }
 
     & :where(h2) {
@@ -174,25 +170,21 @@
       border-top: 1px solid var(--cui-c-divider);
     }
 
-    & :where(.footnote-definition, .footnotes) {
+    /* @external: Zola 0.23.6 writes notes as a section of class footnotes over an
+       ol, each li a p and its way back: Newsroom's numbered notes */
+    & :where(.footnotes) {
       color: var(--cui-c-text-2);
       font-size: 12px;
       line-height: 16px;
       letter-spacing: var(--cui-tracking-12);
-    }
 
-    /* @external: Zola (pulldown-cmark) writes a note's number and its text as two
-       blocks; on one line, as Newsroom's numbered notes */
-    & :where(.footnote-definition) {
-      display: flex;
-      align-items: baseline;
-      gap: 0.5em;
+      & :where(ol) {
+        margin-left: 0;
+        padding-left: 12px;
+      }
 
-      /* @trap: preflight sets a sup 0 tall and 0.5em up: the number stood above its line */
-      & > :where(.footnote-definition-label) {
-        top: 0;
-        font-size: inherit;
-        line-height: inherit;
+      & :where(li) {
+        margin-top: 0;
       }
     }
 
