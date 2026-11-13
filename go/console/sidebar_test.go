@@ -46,6 +46,19 @@ func TestContentWritesTheSidebarsOpenButtonExample(t *testing.T) {
 	example.Check(t, g.Group{g.Raw(open), g.Raw(nav)}, "console/console-sidebar/examples/open.html")
 }
 
+func TestSidebarRulesOffEachUntitledSectionAfterTheFirst(t *testing.T) {
+	item := func(href, label string) console.ConsoleMenuSection {
+		return console.ConsoleMenuSection{Title: "", Items: []console.ConsoleMenuItem{{Href: href, Label: label, Icon: lucide.Icon{}, Current: false}}}
+	}
+	sidebar := sidebarNodes()
+	sidebar.Sections = []console.ConsoleMenuSection{item("#a", "A"), item("#b", "B")}
+	want := `data-variant="sidebar"><a class="cui-console-menu-item" href="#a"><span class="cui-console-menu-label">A</span></a>` +
+		`<hr class="cui-console-menu-rule"><a class="cui-console-menu-item" href="#b"><span class="cui-console-menu-label">B</span></a></div>`
+	if got := example.Render(sidebar); !strings.Contains(got, want) {
+		t.Errorf("two untitled sections are not the first's items, a rule, then the second's:\n got: %s\nwant: …%s…", got, want)
+	}
+}
+
 func TestSidebarPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleSidebar {
 		return console.ConsoleSidebar{AriaLabel: "x", Home: "/", Wordmark: "x", SkipLabel: "Skip", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: nil, Sections: nil}

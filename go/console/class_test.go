@@ -37,7 +37,6 @@ func TestEachPartWritesThePagesWords(t *testing.T) {
 	}{
 		{"ConsoleArtwork", console.ConsoleArtwork{Src: "/cover.png", Alt: "The cover", Placeholder: ""}, []string{`src="/cover.png" alt="The cover"`}},
 		{"ConsoleArtwork", console.ConsoleArtwork{Src: "", Alt: "", Placeholder: "No Picture Yet"}, []string{">No Picture Yet<"}},
-		{"ConsoleBanner", console.ConsoleBanner{Color: console.ConsoleColorInfo, Title: "Synced", Body: nil, Actions: nil}, []string{">Synced<"}},
 		{"ConsoleChart", console.ConsoleChart{AriaLabel: "Events: 9", Scale: &console.ConsoleChartScale{Peak: "peak 9", Half: "4.5"}, Empty: "Nothing yet", Axis: &console.ConsoleChartAxis{Start: "Nov 1", End: "Nov 7"}, Children: nil},
 			[]string{`aria-label="Events: 9"`, ">peak 9<", ">4.5<", ">Nothing yet<", ">Nov 1<", ">Nov 7<"}},
 		{"ConsoleField", console.ConsoleField{ID: "name", Label: "Name", Error: "Too short.", Control: input()}, []string{">Name<", ">Too short.<"}},

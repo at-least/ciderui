@@ -1,6 +1,7 @@
 package console_test
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
@@ -60,6 +61,15 @@ func TestConsoleBtnRendersTheExamples(t *testing.T) {
 		{"capsule", row(copyIcon(console.ConsoleBtnSizeSmall), copyIcon(medium), copyIcon(console.ConsoleBtnSizeLarge), compare)},
 	} {
 		example.Check(t, c.node, "console/console-btn/examples/"+c.path+".html")
+	}
+}
+
+func TestConsoleBtnFilledWithAnIconAloneIsACapsule(t *testing.T) {
+	b := consoleBtn("")
+	b.AriaLabel, b.Icon, b.Variant = "Copy", lucide.Copy, console.ConsoleBtnVariantFilled
+	want := `<button class="cui-console-btn cui-console-btn-icon" data-variant="filled" data-shape="capsule" type="button" aria-label="Copy">`
+	if got := example.Render(b); !strings.HasPrefix(got, want) {
+		t.Errorf("a filled button of an icon alone is not a capsule:\n got: %s\nwant: %s…", got, want)
 	}
 }
 

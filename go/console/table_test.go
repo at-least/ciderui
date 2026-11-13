@@ -48,5 +48,6 @@ func TestTablePanics(t *testing.T) {
 		{Want: "console.ConsoleTable needs a ConsoleTableColumn", Change: func(p *console.ConsoleTable) { p.Columns = nil }},
 		{Want: "console.ConsoleTableColumn needs a Label", Change: func(p *console.ConsoleTable) { p.Columns[1].Label = "" }},
 		{Want: "console.ConsoleTableRow needs a cell for each column: 4 columns, 3 cells", Change: func(p *console.ConsoleTable) { p.Rows[1].Cells = p.Rows[1].Cells[:3] }},
+		{Want: "console.ConsoleTableRow needs a cell for each column: 4 columns, 5 cells", Change: func(p *console.ConsoleTable) { p.Rows[1].Cells = append(p.Rows[1].Cells, g.Text("x")) }},
 	})
 }
