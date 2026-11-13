@@ -5,8 +5,8 @@
 // a console color is its light role's step of the dark palette, so the
 // light palette names the step and the dark one gives the value); its
 // v2 colors (a metric's card's ground is v2-bgPlaceholder); and the
-// components ciderui builds a console part from (Radio and Alert read
-// with the third pass, for the choice and the toast), without the variants it
+// components ciderui builds a console part from (Radio and Alert for the
+// choice and the toast, which decision 36 removed), without the variants it
 // builds none of (a display list's grouped and plain lists; a tab bar's
 // elevated, filled, tinted and gray-plain ones).
 export default {

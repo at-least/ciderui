@@ -31,7 +31,7 @@ Intersection over union; `form.mjs` fails if `ALERT` shares below 0.85, a mark s
 
 ## The accordion's chevron
 
-apple.com's line, drawn as the bag's accordion draws it: a polyline through (15, 1.13), (8.5, 7.72) and (2, 1.13) in 17 by 8.85, 2.25 thick, round (`glyph.Disclosure`). Turned up, it is the line its animation ends on (the same points mirrored). `lines.mjs` reads it live and holds ciderui's to it: 1 of the ink shared (fails below 0.85), in the accordion's example. Measured 2026-10-19 in Chromium 151 on Linux (`results/lines.json`; it holds the footer's chevron too, a phone's footer section's, through (10.075, 0.675), (5.5, 5.323) and (0.925, 0.675) in 11 by 6, 1 thick, round, 1 of the ink shared, which went with the footer's directory).
+apple.com's line, drawn as the bag's accordion draws it: a polyline through (15, 1.13), (8.5, 7.72) and (2, 1.13) in 17 by 8.85, 2.25 thick, round (`glyph.Disclosure`). Turned up, it is the line its animation ends on (the same points mirrored). `lines.mjs` reads it live and holds ciderui's to it: 1 of the ink shared (fails below 0.85), in the accordion's example. Measured 2026-10-19 in Chromium 151 on Linux (`results/lines.json`; it holds the footer's chevron too, a phone's footer section's, through (10.075, 0.675), (5.5, 5.323) and (0.925, 0.675) in 11 by 6, 1 thick, round, 1 of the ink shared: `glyph.FooterChevron`, which `lines.mjs` does not read).
 
 ## Running it
 
@@ -50,7 +50,7 @@ PW=…/playwright-chromium/index.mjs node lines.mjs   # the accordion's chevron
 | `MAGNIFIER` | a ring 3.85 to 17.5 across, 1.1 thick at its middle row; a handle to 21 by 21, round | a ring about (10.69, 10.87), radius 6.28, 1.1 thick; a line from (15.25, 15.35) to (20.15, 20.05), 1.7 thick, round | 0.9783 |
 | `RESET` | a disc 3 to 22 each way; an X cut from it | a disc of radius 9.5 about the middle; an X cut to 3.5 each way of it, 1.1 thick, round | 0.9995 |
 
-Intersection over union; the probe fails below 0.85, a mark set before the run, and failed at 0.1843 with the magnifier's pair given the reset as ciderui's. Measured 2026-11-12 in Chromium 151 on macOS (`results/search.json`); `go/internal/glyph`'s test holds `Magnifier` and `Reset` to the shapes recorded there.
+Intersection over union; the probe fails below 0.85, a mark set before the run, and failed at 0.1843 with the magnifier's pair given the reset as ciderui's. Measured 2026-11-12 in Chromium 151 on macOS (`results/search.json`). The search field and its glyphs went by DESIGN.md decision 49.
 
 ## The pager's chevrons
 
@@ -61,5 +61,5 @@ Intersection over union; the probe fails below 0.85, a mark set before the run, 
 | `LEFT` | 6 to 55.5 across, −8 to 78.5 down | two strokes 11.5 thick, round, from (49.9, −2.3) to (11.78, 35.2) to (49.9, 72.7) | 0.9852 |
 | `RIGHT` | 19 to 68.5 across, the same down | the left mirrored in the 74.561 advance | 0.9839 |
 
-Intersection over union; the probe fails below 0.85, a mark set before the run, and failed at 0.1097 with the left's pair given the right as ciderui's. The forums' Content-Security-Policy refuses the `blob:` images `svg.js` draws, so the rasterizing runs on `about:blank`. Measured 2026-11-12 in Chromium 151 on macOS (`results/pager.json`); `go/internal/glyph`'s test holds `ChevronLeft` and `ChevronRight` to the shapes recorded there.
+Intersection over union; the probe fails below 0.85, a mark set before the run, and failed at 0.1097 with the left's pair given the right as ciderui's. The forums' Content-Security-Policy refuses the `blob:` images `svg.js` draws, so the rasterizing runs on `about:blank`. Measured 2026-11-12 in Chromium 151 on macOS (`results/pager.json`). The pager and its glyphs went by DESIGN.md decision 49.
 

@@ -52,7 +52,7 @@ export const cases = [
     widths: [390],
     checks: [
       { target: `${OFF} .cui-console-checkbox-input`, props: ['box-width', 'box-height', 'box-left', 'box-top'], golden: 'the transparent input 44px square on a touch screen, the HIG\'s 44pt (Accessibility, Mobility), centered on the box' },
-      { target: `${OFF} .cui-console-checkbox-box`, props: ['box-width', 'box-height', 'box-left', 'box-top'], golden: 'the box drawn as before, 15px' },
+      { target: `${OFF} .cui-console-checkbox-box`, props: ['box-width', 'box-height', 'box-left', 'box-top'], golden: 'the box unchanged by touch, 15px' },
       { target: 'span.cui-console-checkbox', props: ['box-height'], golden: 'a table row\'s <span> not made 44px tall: its row is taller than the input already' },
       { target: OFF, props: ['box-height'], golden: 'a checkbox with its label 44px tall on a touch screen, as the radio, so its input\'s 44px fits its row: stacked 12px apart, the next one\'s reached 14px into it' },
     ],

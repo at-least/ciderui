@@ -2,7 +2,7 @@
 
 Apple's own console, for a site that is one (crashcart, the owner's error tracker: its tables, statuses, sidebar and charts), where apple.com's pages show none of these. Its pages hold an account's data, and only a signed-in browser reaches them (a headless one lands on `/login?targetUrl=%2Fapps&authResult=FAILED`), so they were read in the owner's own Chrome, signed in by the owner, who asked for them to be measured with their account (2026-10-23).
 
-`node read.mjs <spec>` prints a script; Claude in Chrome's javascript tool runs it in the page; what it hands back is written by hand to `results/<spec>.json`, and `node read.mjs --check <spec>` holds the file to the page's digest of it (a value copied wrong fails), to the spec's probes and the reader's source (a script pasted wrong fails), and to the account's privacy (an id or an address fails). `read.mjs`'s command line is `cli(root)`, which another site's folder calls with its own pages and results (`../feedback-assistant/`). An element is recorded by its tag, classes and role, never its text, link or label; the app's and the team's ids are `<app>` and `<team>`. Read only: the pages were reached by their own links and the address bar; nothing was typed, dismissed, saved or submitted.
+`node read.mjs --login` opens Google Chrome on a profile outside the repository for the owner to sign in; `node read.mjs --run <spec>` reads the spec in it through Playwright and writes `results/<spec>.json`. The October results were read by hand: `node read.mjs <spec>` printed a script, Claude in Chrome's javascript tool ran it in the page, and what it handed back was written to `results/<spec>.json`. `node read.mjs --check <spec>` holds the file to the page's digest of it (a value copied wrong fails), to the spec's probes and the reader's source (a script pasted wrong fails), and to the account's privacy (an id or an address fails). `read.mjs`'s command line is `cli(root)`, which another site's folder calls with its own pages and results (`../feedback-assistant/`). An element is recorded by its tag, classes and role, never its text, link or label; the app's and the team's ids are `<app>` and `<team>`. Read only: the pages were reached by their own links and the address bar; nothing was typed, dismissed, saved or submitted.
 
 Chrome 154 on Linux, its window 1920 by 954 at 2 device pixels; read 2026-10-23 (17:02 to 17:07 UTC on the 22nd).
 
@@ -17,7 +17,7 @@ Chrome 154 on Linux, its window 1920 by 954 at 2 device pixels; read 2026-10-23 
 | `analytics-page` | `/apps/<app>/analytics/overview` | what `analytics` left: a metric's card, a section's heading and its See All link, the menu's box, a group's button and chevron, an item in the open group, a disabled item |
 | `head` | `/apps/<app>/analytics/overview` | the heads, read 2026-10-29 (19:38 UTC) in Chrome 156 on the owner's Mac, 1920 by 907 at 2 device pixels: the app's head (the row, its wrappers, the name menu's button, icon, name and chevron, the tabs, a tab, its link and the current one), the content column, a section's head and its title. The places the part takes beside these were read before the probes and are not in the result: the name 272px to 499px across, the tabs from 518px, the row 92px to 145px down, the content from 169px |
 | `media` | `/apps/<app>/distribution/ios/version/inflight` | the App Previews and Screenshots tab opened (its tab clicked): a screenshot's thumbnail, its frame, the item around it, the row |
-| `controlrow` | `/apps/<app>/analytics/overview` | the toolkit's control row's room after a button and after a section, each size, read off the root by `READER` (the token pass named no ControlRow; another `TOKENS` pass would be a download) |
+| `controlrow` | `/apps/<app>/analytics/overview` | the toolkit's control row's room after a button and after a section, each size, read off the root by `READER` (`pages/tokens.mjs` names no ControlRow) |
 | `button`, `hover-button` | `/apps/<app>/analytics/acquisition/sources` | the toolkit's gray button (its rounded rectangle, 30px, 13px at 500) at rest and with the pointer resting on it |
 | `hover-menu`, `hover-row`, `hover-link`, `hover-date` | `/apps/<app>/analytics/overview` | each with the pointer resting on it (Claude in Chrome's hover): a menu item that is not the current one, the plain table's row, a See All link, the date control's period |
 
@@ -63,6 +63,8 @@ By `read.mjs --run`, Playwright in Google Chrome 157 on the Mac (1920 by 907 at 
 - Xcode Cloud; Users and Access (its table the builds' component); the sales, payments and business pages, not opened.
 
 ```sh
-node read.mjs <spec>           # the script to run in the page
+node read.mjs --login          # sign in, in the profile's Chrome
+node read.mjs --run <spec>     # read, write results/<spec>.json, check it
+node read.mjs <spec>           # the script to run in a page by hand
 node read.mjs --check <spec>   # once results/<spec>.json is written
 ```

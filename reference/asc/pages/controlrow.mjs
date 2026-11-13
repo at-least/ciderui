@@ -1,7 +1,6 @@
 // @external: The newer look's toolkit's control row (--tb-component-ControlRow-*: the
 // room after a control in a row of them, a section's after a group), read
-// off the root as the page computes it: tokens.json's pass named no
-// ControlRow, and a fourth TOKENS pass would be a download.
+// off the root as the page computes it: tokens.mjs names no ControlRow.
 const SIZES = ['sm', 'md', 'lg', 'xl'];
 export default {
   path: '/apps/<app>/analytics/overview',

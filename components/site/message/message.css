@@ -12,7 +12,7 @@
     }
 
     /* @trap: not display: none, which takes a live region out of the accessibility
-       tree, so what arrives is not announced (totality wrote its own Result for it):
+       tree, so what arrives is not announced:
        out of the flow, an empty one leaves no margin or gap behind */
     &:empty {
       position: absolute;

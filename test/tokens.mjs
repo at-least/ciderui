@@ -230,7 +230,6 @@ const MIN = [
   // @invariant: a field's message on the page
   ['--cui-c-error', ['--cui-c-bg', '--cui-c-bg-alt'], 4.5],
   ['--cui-c-border', ['--cui-c-bg', '--cui-c-bg-alt'], 3],
-  // @invariant: a share's filled part, a graphic that carries its meaning (WCAG 1.4.11)
   // @invariant: the player's text and controls on its video
   ['--cui-c-on-video-control', ['--cui-c-video'], 4.5],
   ['--cui-c-on-video-time', ['--cui-c-video'], 4.5],
@@ -256,9 +255,8 @@ const ROLES = ['info', 'success', 'warning', 'error'];
 const TINTS = [['--cui-c-console-neutral-fill-quaternary'], ...ROLES.map((role) => [`--cui-c-console-${role}-fill-tertiary`])];
 const CONSOLE_MIN = [
   ['--cui-c-console-neutral-label-primary', [[], ['--cui-c-console-neutral-accent-quaternary'], ...GRAY.map((g) => [g]), ...TINTS], 4.5],
-  // @invariant: the secondary label: a current menu item's, a chip's key and its remove
-  // control on its gray at rest, hovered and pressed, a banner's caption, a
-  // field's placeholder, a card's caption
+  // @invariant: the secondary label: a current menu item's, a banner's neutral icon, a
+  // field's placeholder
   ['--cui-c-console-neutral-label-secondary', [[], ...GRAY.map((g) => [g]), ...TINTS], 4.5],
   // @invariant: a button's label on its fill, at rest, hovered and pressed
   ['--cui-c-console-brand-label-on-accent-primary', [...ON_FILLS.map((f) => [f]), ['--cui-c-console-brand-fill-press'], ['--cui-c-console-error-fill-press']], 4.5],
@@ -269,7 +267,7 @@ const CONSOLE_MIN = [
   ['--cui-c-console-neutral-on-accent-press', [['--cui-c-console-neutral-accent-primary']], 4.5],
   // @invariant: a badge's label on the base, on its own tint and on the gray fill
   ...ROLES.map((role) => [`--cui-c-console-${role}-label-primary`, [[], [`--cui-c-console-${role}-accent-quaternary`], ['--cui-c-console-neutral-fill-tertiary']], 4.5]),
-  // @invariant: a banner's icon on its tint; a card's change up or down
+  // @invariant: a banner's icon on its tint
   ...ROLES.map((role) => [`--cui-c-console-${role}-label-primary`, [[`--cui-c-console-${role}-fill-tertiary`]], 4.5]),
   // @invariant: a plain button's, a link's
   ...['--cui-c-console-brand-label-primary', '--cui-c-console-brand-label-hover', '--cui-c-console-brand-label-press'].map((fg) => [fg, [[]], 4.5]),
@@ -355,8 +353,8 @@ check('--cui-video-scrim is tv.apple.com\'s tv-player:scrim.gradient background-
 // cues are its <video>'s own text track, none read. Two layers: a tight one that edges each letter on a white picture, a wide
 // faint one that darkens round the line without a box's edge
 check('--cui-video-cue-shadow is muse\'s golden', vars['--cui-video-cue-shadow'], '0 0.05em 0.1em rgb(0 0 0 / 0.6), 0 0 0.5em rgb(0 0 0 / 0.4)');
-// @trap: golden: muse's intro and end (the owner, 2026-11-08: 「修播放器還沒有開始播放的預設狀態是暗的」): tv.apple.com's scrim went
-// to black at the foot and dimmed the lower half of the cover (2026-11-04; a flat 40% dim over all of it from 2026-11-13). Dark only behind the words in the bottom-left corner, the cue's
+// @trap: golden: muse's intro and end (the owner, 2026-11-08: 「修播放器還沒有開始播放的預設狀態是暗的」): tv.apple.com's scrim is
+// a flat 40% dim over the whole cover (read 2026-11-13). Dark only behind the words in the bottom-left corner, the cue's
 // shadow under them
 check('--cui-video-title-scrim is muse\'s golden', vars['--cui-video-title-scrim'], 'radial-gradient(ellipse 75% 60% at 0% 100%, rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.35) 40%, rgb(0 0 0 / 0))');
 // @trap: golden: muse's scrubber preview (the owner, 2026-11-05: a thumbnail over the time under the pointer); tv.apple.com's

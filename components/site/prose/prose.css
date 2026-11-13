@@ -110,8 +110,8 @@
       font-weight: 600;
     }
 
-    /* @trap: a part's link (cui-btn, cui-link) keeps its own look: the same weight as
-       this rule, which comes later, it took the link's color */
+    /* @trap: a part's link (cui-btn, cui-link) keeps its own look: at the same weight as
+       this rule, which comes later, it would take the prose link's color */
     & :where(a:not([class*="cui-"])) {
       color: var(--cui-c-link);
       text-decoration-line: underline;

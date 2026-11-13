@@ -3,12 +3,11 @@
 //
 //   node read.mjs --login         opens Google Chrome on the site with PROFILE, the
 //                                 one profile every signed-in site shares, for the
-//                                 owner to sign in; it ends when the window closes
+//                                 owner to sign in; it ends when Chrome quits
 //   node read.mjs --run <spec>    reads the spec in that profile through Playwright
 //                                 and writes results/<spec>.json, then checks it
 //   node read.mjs <spec>          prints the script to run in a page by hand
-//                                 (Claude in Chrome's javascript tool, as read
-//                                 until 2026-11-13)
+//                                 (Claude in Chrome's javascript tool)
 //   node read.mjs --check <spec>  holds results/<spec>.json to what the page
 //                                 handed back and to the account's privacy
 //
@@ -16,8 +15,7 @@
 // holds each site's ids a path's <app> and <team> stand for (written by the
 // owner or by an agent from the signed-in page), so no id reaches the repository.
 // A spec's `hover` (a selector) rests the pointer on that element and `click`
-// clicks it before the read: Playwright's pointer, where Claude in Chrome's hover
-// was. A read is at 1920 by 907 at 2 device pixels, the window the head spec was
+// clicks it before the read, by Playwright's pointer. A read is at 1920 by 907 at 2 device pixels, the window the head spec was
 // read in.
 //
 // READER finds each probe's element (`select` in the document, or in

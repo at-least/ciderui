@@ -133,7 +133,7 @@ export const cases = [
     touch: true,
     widths: [1200],
     checks: [
-      { target: '.cui-console-sidebar-wordmark', props: ['box-height'], golden: 'the wordmark drawn as before, its 22px line' },
+      { target: '.cui-console-sidebar-wordmark', props: ['box-height'], golden: 'the wordmark unchanged by touch, its 22px line' },
       { target: '.cui-console-sidebar-wordmark', pseudo: '::after', props: ['height'], golden: 'its target a transparent ::after 44px tall at least on a touch screen, the HIG\'s 44pt (22px is under its 28pt minimum), as the console\'s link draws one' },
     ],
   },

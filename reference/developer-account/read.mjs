@@ -1,7 +1,5 @@
 // @invariant: The Apple Developer account's pages (developer.apple.com/account), read
-// and checked as App Store Connect's are:
-//   node read.mjs <spec>          the script to run in the page
-//   node read.mjs --check <spec>  once results/<spec>.json is written
+// and checked by App Store Connect's command line (../asc/read.mjs).
 import { cli } from '../asc/read.mjs';
 
 await cli(new URL('.', import.meta.url), 'https://developer.apple.com');
