@@ -378,7 +378,7 @@ export const cases = [
       { target: '.cui-console-player', props: ['box-left', 'box-top', 'box-width', 'box-height'], golden: 'muse\'s player at 1440 by 900: 1104px wide at 24px, 66px down, beside its sidebar' },
       { target: BTN, props: ['box-left', 'box-top'], golden: 'the subtitles button, 24px: its centre the menu\'s corner' },
       { target: '#subtitles', props: ['box-x', 'box-y', 'box-width', 'box-height'], golden: 'inside the player (its parent: box-x and box-y from its corner): opening upward, its foot and its right edge on its button\'s centre, as tv.apple.com\'s (tv-player-menu:menu at 1258, 637, 185 by 142, its corner 1443, 779; tv-player:subtitles at 1434, 769, 20px: centred on 1444, 779); every choice in it, none scrolled' },
-      { target: '#subtitles', props: ['max-height'], golden: 'as tall as the player leaves above its button, 20px from its top (the overlay\'s room), not the toolkit\'s 435px: tv.apple.com\'s menu has none (tv-player-menu:menu, overflow visible)' },
+      { target: '#subtitles', props: ['max-height'], golden: 'as tall as the window leaves above its button, 8px from its top, not the toolkit\'s 435px: tv.apple.com\'s menu has none (tv-player-menu:menu, overflow visible)' },
     ],
   },
   {
@@ -412,8 +412,8 @@ export const cases = [
     press: Array(12).fill('Tab'),
     checks: [
       { target: '.cui-console-player', props: ['box-width', 'box-height'], golden: 'muse\'s player at 1440 by 700: 846px wide, too short for twelve choices above its button' },
-      { target: '#subtitles', props: ['box-x', 'box-y', 'box-width', 'box-height', 'overflow-y'], golden: 'still inside the player: 20px from its top (the overlay\'s room) to its button\'s centre, the choices scrolled inside it' },
-      { target: LAST, props: ['focused', 'hit'], golden: 'the last choice reached: the focus Tabbed to it scrolls it into the menu, the pointer finds it there' },
+      { target: '#subtitles', props: ['box-x', 'box-y', 'box-width', 'box-height', 'overflow-y'], golden: 'above the player\'s top where its choices need the room, its foot on its button\'s centre, every choice shown and none scrolled (the owner, 2026-11-14: 「A」; scrolled, WebKit 26.5 put it back to its top on every layout of the player)' },
+      { target: LAST, props: ['focused', 'hit'], golden: 'the last choice reached: the focus Tabbed to it, the pointer finds it there' },
     ],
   },
   {

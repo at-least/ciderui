@@ -551,7 +551,16 @@
          position-area it gave anchor() no anchor (Chromium 151) */
       position-anchor: auto;
       position-try-fallbacks: none;
-      inset: calc(anchor(--cui-console-player top) + 20px) anchor(center) anchor(center) calc(anchor(--cui-console-player left) + 30px);
+      /* @trap: its top the window's, 8px in (the popover's margin), not the
+         player's: from its foot on the button it rises only as far as its
+         choices need, so it stays inside the player wherever they fit and
+         runs above it in a short one instead of scrolling (the owner,
+         2026-11-14: 「A」). A menu held to the player and scrolled went back
+         to its top on every layout of the player in WebKit 26.5 (a cue, a
+         hover), its choices below the fold out of reach; Safari 27.0.1 did
+         not hold it at all (max-height: stretch) and ran it down over the
+         progress bar (muse, air, 2026-11-14) */
+      inset: 8px anchor(center) anchor(center) calc(anchor(--cui-console-player left) + 30px);
       margin: 0;
       align-self: end;
       justify-self: end;
