@@ -45,6 +45,13 @@ func TestCheckComparesTheExamplesLinesTrimmedAndJoined(t *testing.T) {
 	}
 }
 
+func TestCheckPanicsOnAnExampleThatIsNotThere(t *testing.T) {
+	var r recorder
+	if got := panicOf(func() { example.Check(&r, g.Raw(""), "no-such/example.html") }); !strings.Contains(got, "no-such/example.html") {
+		t.Errorf("Check of an example that is not there panicked with %q, want the missing file named", got)
+	}
+}
+
 func TestRenderWritesQuotesAsTheExamplesDo(t *testing.T) {
 	got := example.Render(h.P(h.Title(`it's "a"`), g.Text(`it's "a"`)))
 	if want := `<p title="it's &quot;a&quot;">it's &quot;a&quot;</p>`; got != want {
@@ -123,9 +130,10 @@ func TestPanicsFailsUnlessEachBreakPanicsWithItsWant(t *testing.T) {
 	}
 }
 
-type classed struct{ Class string }
+// @invariant: named as p.go's Classed, since PagesClass holds a row by its Node's type name
+type Classed struct{ Class string }
 
-func (c classed) Render(w io.Writer) error {
+func (c Classed) Render(w io.Writer) error {
 	return h.P(g.If(c.Class != "drop", g.Attr("class", "root "+c.Class))).Render(w)
 }
 
@@ -140,19 +148,19 @@ func TestPagesClassFailsOnAPartWithoutThePagesClassAfterItsRootOrARow(t *testing
 			t.Fatal(err)
 		}
 	}
-	// @external: %T names this package's type example_test.classed, not p.Classed: nested stands in
-	writes := example.ClassRow{Root: "root", Node: classed{Class: example.PageClass}}
-	drops := example.ClassRow{Root: "root", Node: classed{Class: "drop"}}
+	writes := example.ClassRow{Root: "root", Node: Classed{Class: example.PageClass}}
+	drops := example.ClassRow{Root: "root", Node: Classed{Class: "drop"}}
 	for _, c := range []struct {
 		name     string
 		nested   []string
 		rows     []example.ClassRow
 		failures int
 	}{
-		{"each exported struct of the package held", []string{"Classed"}, []example.ClassRow{writes}, 0},
-		{"a part that drops its Class", []string{"Classed"}, []example.ClassRow{drops}, 1},
-		{"a part that writes the page's class after classes not its Root", []string{"Classed"}, []example.ClassRow{{Root: "other", Node: writes.Node}}, 1},
-		{"a struct with a Class and no row", nil, []example.ClassRow{writes}, 1},
+		{"each exported struct of the package a row's part", nil, []example.ClassRow{writes}, 0},
+		{"each exported struct of the package nested", []string{"Classed"}, nil, 0},
+		{"a part that drops its Class", nil, []example.ClassRow{drops}, 1},
+		{"a part that writes the page's class after classes not its Root", nil, []example.ClassRow{{Root: "other", Node: writes.Node}}, 1},
+		{"a struct with a Class and no row", nil, nil, 1},
 	} {
 		var r recorder
 		example.PagesClass(&r, c.nested, c.rows)
