@@ -56,10 +56,18 @@ func columnsMenu() console.ConsoleChoiceMenu {
 	return m
 }
 
-func TestMenuItemWithNoHrefIsNotAvailableEvenIfCurrent(t *testing.T) {
-	got := example.Render(console.ConsoleMenuItem{Href: "", Label: "x", Icon: lucide.Icon{}, Current: true})
-	if want := `<a class="cui-console-menu-item" aria-disabled="true"><span class="cui-console-menu-label">x</span></a>`; got != want {
-		t.Errorf("an item with no Href is a link or marked current, not unavailable:\n got: %s\nwant: %s", got, want)
+func TestAPageWithNoHrefIsNotAvailableEvenIfCurrent(t *testing.T) {
+	for _, c := range []struct {
+		part string
+		node g.Node
+		want string
+	}{
+		{"ConsoleMenuItem", console.ConsoleMenuItem{Href: "", Label: "x", Icon: lucide.Icon{}, Current: true}, `<a class="cui-console-menu-item" aria-disabled="true"><span class="cui-console-menu-label">x</span></a>`},
+		{"ConsoleTabs", console.ConsoleTabs{AriaLabel: "Project", Tabs: []console.ConsoleTab{{Label: "Jobs", Href: "", Current: true}}}, `<nav class="cui-console-tabs" aria-label="Project"><a class="cui-console-tab" aria-disabled="true">Jobs</a></nav>`},
+	} {
+		if got := example.Render(c.node); got != c.want {
+			t.Errorf("%s: a page with no Href is a link or marked current, not unavailable:\n got: %s\nwant: %s", c.part, got, c.want)
+		}
 	}
 }
 

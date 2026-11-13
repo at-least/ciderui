@@ -25,16 +25,26 @@ func TestEachPartWritesThePagesWords(t *testing.T) {
 	end.End = &console.ConsolePlayerEnd{Title: "All Done", ReplayLabel: "Watch Again"}
 	tip := validStrip()
 	tip.Groups[0].Items[0].Tip = "Hello there."
+	menu := subtitlesMenu()
+	menu.ID = "langs"
+	player := pausedPlayer()
+	player.PlayAriaLabel, player.VolumeAriaLabel, player.MuteAriaLabel, player.ScrubberAriaLabel = "Go", "Loudness", "Silence", "Position"
+	player.SubtitlesMenu, player.SubtitlesAriaLabel, player.FullScreenAriaLabel = menu, "Captions", "Fill Screen"
 	sidebar := console.ConsoleSidebar{AriaLabel: "Main", Home: "/home", Wordmark: "Muse", SkipLabel: "Jump to Main", OpenAriaLabel: "Show Menu", CloseAriaLabel: "Hide", Footer: nil, Children: nil}
 	for _, c := range []struct {
 		part  string
 		node  g.Node
 		words []string
 	}{
+		{"ConsoleArtwork", console.ConsoleArtwork{Src: "/cover.png", Alt: "The cover", Placeholder: ""}, []string{`src="/cover.png" alt="The cover"`}},
+		{"ConsoleArtwork", console.ConsoleArtwork{Src: "", Alt: "", Placeholder: "No Picture Yet"}, []string{">No Picture Yet<"}},
 		{"ConsoleBanner", console.ConsoleBanner{Color: console.ConsoleColorInfo, Title: "Synced", Body: nil, Children: nil}, []string{">Synced<"}},
 		{"ConsoleChart", console.ConsoleChart{AriaLabel: "Events: 9", Scale: &console.ConsoleChartScale{Peak: "peak 9", Half: "4.5"}, Empty: "Nothing yet", Axis: &console.ConsoleChartAxis{Start: "Nov 1", End: "Nov 7"}, Children: nil},
 			[]string{`aria-label="Events: 9"`, ">peak 9<", ">4.5<", ">Nothing yet<", ">Nov 1<", ">Nov 7<"}},
 		{"ConsoleField", console.ConsoleField{ID: "name", Label: "Name", Error: "Too short.", Control: input()}, []string{">Name<", ">Too short.<"}},
+		{"ConsoleChoiceMenu", *menu, []string{`id="langs" popover`, `id="langs-voices-title"`, `aria-labelledby="langs-voices-title"`, `popovertarget="langs"`}},
+		{"ConsolePlayer", player, []string{`data-control="play" aria-label="Go"`, `data-control="volume" min="0" max="100" value="100" aria-label="Loudness"`, `data-control="mute" aria-label="Silence"`,
+			`data-control="scrubber" min="0" max="0" value="0" aria-label="Position"`, `data-control="subtitles" aria-label="Captions" popovertarget="langs"`, `data-control="full-screen" aria-label="Fill Screen"`}},
 		{"ConsolePlay", console.ConsolePlay{Attrs: nil, AriaLabel: "Listen", Label: "", PlayingLabel: "", Size: console.ConsoleBtnSizeMedium, Class: ""}, []string{`aria-label="Listen"`}},
 		{"ConsolePlay", console.ConsolePlay{Attrs: nil, AriaLabel: "", Label: "Hear It", PlayingLabel: "Halt", Size: console.ConsoleBtnSizeMedium, Class: ""}, []string{">Hear It<", ">Halt<"}},
 		{"ConsoleContent", console.ConsoleContent{Sidebar: &sidebar, Back: console.ConsoleContentBack{Href: "/up", Label: "Up"}, Title: "Takes", Detail: "Every take.", Controls: nil, Children: nil},
@@ -44,7 +54,8 @@ func TestEachPartWritesThePagesWords(t *testing.T) {
 		{"ConsoleSidebar", sidebar, []string{`aria-label="Main"`, `href="/home"`, ">Muse<", ">Jump to Main<", `aria-label="Hide"`}},
 		{"ConsoleStatus", console.ConsoleStatus{Label: "Down", Color: console.ConsoleColorError, Detail: "500 · 2 s"}, []string{">Down<", ">500 · 2 s<"}},
 		{"ConsoleStrip", tip, []string{">Hello there.<"}},
-		{"ConsoleViewer", console.ConsoleViewer{ID: "art", AriaLabel: "Artwork", CloseAriaLabel: "Shut"}, []string{`aria-label="Artwork"`, `aria-label="Shut"`}},
+		{"ConsoleTabsChoice", console.ConsoleTabsChoice{AriaLabel: "Show", Name: "show", Options: tabsChoice().Options}, []string{`role="group" aria-label="Show"`, `name="show"`}},
+		{"ConsoleViewer", console.ConsoleViewer{ID: "art", AriaLabel: "Artwork", CloseAriaLabel: "Shut"}, []string{`id="art"`, `aria-label="Artwork"`, `aria-label="Shut"`}},
 	} {
 		got := example.Render(c.node)
 		for _, word := range c.words {

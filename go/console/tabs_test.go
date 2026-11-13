@@ -1,7 +1,6 @@
 package console_test
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
@@ -16,13 +15,6 @@ func TestTabsRendersTheExamples(t *testing.T) {
 		{Label: "Jobs", Href: "", Current: false},
 	}
 	example.Check(t, console.ConsoleTabs{AriaLabel: "Project", Tabs: underlined}, "console/console-tabs/examples/tabs.html")
-}
-
-func TestTabWithNoHrefIsNotAvailableEvenIfCurrent(t *testing.T) {
-	got := example.Render(console.ConsoleTabs{AriaLabel: "Project", Tabs: []console.ConsoleTab{{Label: "Jobs", Href: "", Current: true}}})
-	if want := `<a class="cui-console-tab" aria-disabled="true">Jobs</a>`; !strings.Contains(got, want) {
-		t.Errorf("a tab with no Href is a link or marked current, not unavailable:\n got: %s\nwant: …%s…", got, want)
-	}
 }
 
 func TestTabsPanics(t *testing.T) {

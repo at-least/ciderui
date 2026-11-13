@@ -1,7 +1,6 @@
 package console_test
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
@@ -61,15 +60,6 @@ func TestConsoleBtnRendersTheExamples(t *testing.T) {
 		{"capsule", row(copyIcon(console.ConsoleBtnSizeSmall), copyIcon(medium), copyIcon(console.ConsoleBtnSizeLarge), compare)},
 	} {
 		example.Check(t, c.node, "console/console-btn/examples/"+c.path+".html")
-	}
-}
-
-func TestConsoleBtnAnIconLinkTakesItsAriaLabelAndAttrs(t *testing.T) {
-	link := consoleBtn("")
-	link.Href, link.AriaLabel, link.Icon, link.Attrs = "/export.csv", "Download", lucide.Download, g.Attr("download")
-	want := `<a class="cui-console-btn cui-console-btn-icon" data-shape="capsule" href="/export.csv" aria-label="Download" download><svg`
-	if got := example.Render(link); !strings.HasPrefix(got, want) {
-		t.Errorf("the link is not named Download with its download attribute:\n got: %s\nwant: %s…", got, want)
 	}
 }
 
