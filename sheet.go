@@ -56,7 +56,6 @@ func themeNames() map[string][]themeName {
 			for _, p := range prefixes {
 				names[setVariable] = append(names[setVariable], themeName{prefix: p, name: p + "-" + name})
 			}
-			break
 		}
 	}
 	return names
@@ -111,7 +110,7 @@ const nearestEdits = 2
 func nearest(class string, known map[string]bool) string {
 	best, bestDistance := "", nearestEdits+1
 	for k := range known {
-		if d := editDistance(class, k); d < bestDistance || d == bestDistance && best != "" && k < best {
+		if d := editDistance(class, k); d < bestDistance || d == bestDistance && k < best {
 			best, bestDistance = k, d
 		}
 	}
