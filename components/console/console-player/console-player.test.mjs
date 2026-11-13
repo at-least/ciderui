@@ -175,6 +175,7 @@ export const cases = [
     height: 900,
     checks: [
       { target: VOLUME, on: '.cui-console-player-volume > .cui-console-player-btn', state: 'active', props: ['margin-right'], golden: 'its range stays open while a control in it is pressed' },
+      { target: VOLUME, on: '.cui-console-player-volume > .cui-console-player-btn', state: 'active', props: ['pointer-events'], golden: 'but takes no pointer while its button alone is pressed: opening from 0px, its thumb lay over the button, and on a screen with no hover the release landed on it and the speaker did not mute (muse, at 30%)' },
       { target: BTN, state: 'active', props: ['color'], golden: 'pressed, full white, as the pointer over it shows on a screen that has one' },
       { target: HEADING, props: ['opacity', 'visibility'], golden: 'gone while playing (the owner, 2026-11-05), the controls shown or not' },
     ],

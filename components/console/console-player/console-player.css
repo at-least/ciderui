@@ -348,6 +348,14 @@
       width: 100px;
       margin-inline-end: 0;
       opacity: 1;
+    }
+
+    /* @trap: not while its button alone is pressed: opening from 0px, its
+       thumb (24px since the 2026-11-13 redesign) lay over the button's
+       centre, so on a screen with no hover the release landed on the range
+       and the click on neither: at 30% the speaker did not mute (muse,
+       Chromium 156: pointerup on the range, click on their parent) */
+    :where(.cui-console-player-volume:has(:focus-visible, > :active:not(.cui-console-player-btn))) > & {
       pointer-events: auto;
     }
 
