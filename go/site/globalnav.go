@@ -31,12 +31,8 @@ type GlobalNav struct {
 	// first stop the keyboard reaches; it lands on the page's own
 	// <main id="main" tabindex="-1">.
 	SkipLabel      string
-	MenuAriaLabel  string
+	OpenAriaLabel  string
 	CloseAriaLabel string
-	// SearchHref: the site's search page, linked by a magnifier at the bar's
-	// end, as apple.com's nav links its own; "" draws none.
-	SearchHref      string
-	SearchAriaLabel string
 }
 
 func (n GlobalNav) Render(w io.Writer) error {
@@ -55,14 +51,11 @@ func (n GlobalNav) Render(w io.Writer) error {
 	if n.SkipLabel == "" {
 		panic("site.GlobalNav needs a SkipLabel")
 	}
-	if n.MenuAriaLabel == "" {
-		panic("site.GlobalNav needs a MenuAriaLabel")
+	if n.OpenAriaLabel == "" {
+		panic("site.GlobalNav needs an OpenAriaLabel")
 	}
 	if n.CloseAriaLabel == "" {
 		panic("site.GlobalNav needs a CloseAriaLabel")
-	}
-	if (n.SearchHref == "") != (n.SearchAriaLabel == "") {
-		panic("site.GlobalNav has a SearchHref or a SearchAriaLabel without the other")
 	}
 	var links, postForms g.Group
 	for i, link := range n.Links {
@@ -85,11 +78,10 @@ func (n GlobalNav) Render(w io.Writer) error {
 			h.Div(h.Class("cui-globalnav-content"),
 				h.Ul(h.Class("cui-globalnav-list"), h.ID(globalNavMenuID), h.Popover(),
 					h.Li(h.A(h.Class("cui-globalnav-wordmark"), h.Href(n.Home), g.Text(n.Wordmark))),
-					h.Li(h.Button(h.Class("cui-globalnav-closebutton"), h.PopoverTarget(globalNavMenuID), h.PopoverTargetAction("hide"), h.Aria("label", n.CloseAriaLabel), h.AutoFocus(), glyph.Menu)),
+					h.Li(h.Button(h.Class("cui-globalnav-close"), h.PopoverTarget(globalNavMenuID), h.PopoverTargetAction("hide"), h.Aria("label", n.CloseAriaLabel), h.AutoFocus(), glyph.Menu)),
 					links,
 				),
-				g.If(n.SearchHref != "", h.A(h.Class("cui-globalnav-search"), h.Href(n.SearchHref), h.Aria("label", n.SearchAriaLabel), glyph.NavSearchCompact, glyph.NavSearch)),
-				h.Button(h.Class("cui-globalnav-menubutton"), h.PopoverTarget(globalNavMenuID), h.Aria("label", n.MenuAriaLabel), glyph.Menu),
+				h.Button(h.Class("cui-globalnav-open"), h.PopoverTarget(globalNavMenuID), h.Aria("label", n.OpenAriaLabel), glyph.Menu),
 				postForms,
 			),
 		),

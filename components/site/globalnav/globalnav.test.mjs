@@ -9,8 +9,8 @@ const FLEX = ['display', 'flex-direction', 'flex-wrap', 'align-items', 'justify-
 const INLINE = ['padding-left', 'padding-right'];
 const LIST = '.cui-globalnav-list';
 const WORDMARK = '.cui-globalnav-wordmark';
-const BUTTON = '.cui-globalnav-menubutton';
-const CLOSE = '.cui-globalnav-closebutton';
+const BUTTON = '.cui-globalnav-open';
+const CLOSE = '.cui-globalnav-close';
 const LINK = `${LIST} > li:nth-child(3) > .cui-globalnav-link`;
 const LINK2 = `${LIST} > li:nth-child(4) > .cui-globalnav-link`;
 const BARS = [`${BUTTON} path:first-child`, `${BUTTON} path:last-child`];
@@ -285,28 +285,5 @@ export const cases = [
     widths: [1200],
     click: '.to',
     checks: [STAYS, { target: '#target', props: ['box-top'], golden: CLEAR }],
-  },
-
-  {
-    name: 'search-bar',
-    html: ex('search'),
-    widths: [1600, 1200, 900],
-    checks: [
-      { target: '.cui-globalnav-search', props: [...FLEX, ...INLINE, 'box-height', 'color'], apple: ['home', 'nav.search'] },
-      { target: '.cui-globalnav-search', state: 'hover', props: ['color'], apple: ['home', 'nav.search', 'hover'] },
-      { target: '.cui-globalnav-search > svg:last-child', props: ['box-width', 'box-height'], golden: 'apple.com\'s regular magnifier, 15 by 44 (home:nav.search-image, a box read beside its width), its numbers reference/icons/nav.mjs\'s' },
-      { target: '.cui-globalnav-search > svg:first-child', props: ['display'], golden: 'the compact magnifier not drawn from 834px' },
-      { target: '.cui-globalnav-search', props: ['box-left'], golden: 'at the bar\'s end after the links, where apple.com\'s sits among them before its bag: the kit\'s bar has no bag' },
-    ],
-  },
-  {
-    name: 'search-phone',
-    html: ex('search'),
-    widths: [390],
-    checks: [
-      { target: '.cui-globalnav-search', props: [...FLEX, ...INLINE, 'box-height', 'color'], apple: ['home', 'nav.search'] },
-      { target: '.cui-globalnav-search > svg:first-child', props: ['box-width', 'box-height'], golden: 'apple.com\'s compact magnifier, 17 by 48 (home:nav.search-compact), its numbers reference/icons/nav.mjs\'s' },
-      { target: '.cui-globalnav-search', props: ['box-width', 'box-left'], golden: 'a 48px square beside the menu\'s button, as apple.com\'s (home:nav.search, 48 by 48 before its bag)' },
-    ],
   },
 ];

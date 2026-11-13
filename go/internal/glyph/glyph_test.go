@@ -56,38 +56,3 @@ func TestGlobalnavCSSTurnsMenusLinesIntoAnX(t *testing.T) {
 		t.Errorf("the X's lines cross at no one point: %v", crossings)
 	}
 }
-
-// The search field's, the pager's and the nav's search icons are the shapes
-// reference/icons/search.mjs, pager.mjs and nav.mjs held to Apple's: a change to one is a change to the other, and a new
-// run
-func TestIconsAreTheMeasuredOnes(t *testing.T) {
-	for _, c := range []struct {
-		record, name, viewBox string
-		icon                  glyph.Icon
-	}{
-		{"search.json", "magnifier", "0 0 25 25", glyph.Magnifier},
-		{"search.json", "reset", "0 0 25 25", glyph.Reset},
-		{"pager.json", "left", "0 -10 74.561 90", glyph.ChevronLeft},
-		{"pager.json", "right", "0 -10 74.561 90", glyph.ChevronRight},
-		{"nav.json", "search", "0 0 15 44", glyph.NavSearch},
-		{"nav.json", "search-compact", "0 0 17 48", glyph.NavSearchCompact},
-	} {
-		record, err := os.ReadFile("../../../reference/icons/results/" + c.record)
-		if err != nil {
-			t.Fatal(err)
-		}
-		var drawn strings.Builder
-		if err := c.icon.Render(&drawn); err != nil {
-			t.Fatal(err)
-		}
-		inner := regexp.MustCompile(`^<svg[^>]*>(.*)</svg>$`).FindStringSubmatch(drawn.String())[1]
-		measured := regexp.MustCompile(`"` + c.name + `": "<svg viewBox=\\"` + regexp.QuoteMeta(c.viewBox) + `\\">(.*?)</svg>"`).FindSubmatch(record)
-		if measured == nil {
-			t.Fatalf("%s records no %s", c.record, c.name)
-		}
-		want := strings.ReplaceAll(strings.ReplaceAll(string(measured[1]), `\"`, `"`), "#000", "currentColor")
-		if inner != want {
-			t.Errorf("%s draws\n%s\n%s records\n%s", c.name, inner, c.record, want)
-		}
-	}
-}

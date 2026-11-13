@@ -51,7 +51,7 @@
       margin-right: auto;
     }
 
-    > li:has(> .cui-globalnav-closebutton),
+    > li:has(> .cui-globalnav-close),
     > li:has(> .cui-globalnav-link) {
       display: none;
     }
@@ -103,45 +103,8 @@
     cursor: pointer;
   }
 
-  .cui-globalnav-search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    padding: 0 8px;
-    color: var(--cui-c-on-bar);
-
-    @media (hover: hover) {
-      &:hover {
-        color: var(--cui-c-on-bar-hover);
-      }
-    }
-
-    > svg {
-      flex: none;
-    }
-
-    > svg:last-child {
-      display: none;
-    }
-
-    @media (width >= 834px) {
-      width: auto;
-      height: 44px;
-
-      > svg:first-child {
-        display: none;
-      }
-
-      > svg:last-child {
-        display: block;
-      }
-    }
-  }
-
-  .cui-globalnav-menubutton,
-  .cui-globalnav-closebutton {
+  .cui-globalnav-open,
+  .cui-globalnav-close {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,16 +121,16 @@
     }
   }
 
-  .cui-globalnav-closebutton path {
+  .cui-globalnav-close path {
     transition: transform 0.24s var(--cui-globalnav-ease);
   }
 
-  .cui-globalnav-closebutton path:first-child {
+  .cui-globalnav-close path:first-child {
     transform-origin: 9px 5px;
     transform: translate(0.25px, 4.25px) rotate(45deg) scaleX(1.16168);
   }
 
-  .cui-globalnav-closebutton path:last-child {
+  .cui-globalnav-close path:last-child {
     transform-origin: 9px 12px;
     transform: translate(0.25px, -2.75px) rotate(-45deg) scaleX(1.16168);
   }
@@ -187,7 +150,7 @@
       order: -3;
     }
 
-    > li:has(> .cui-globalnav-closebutton) {
+    > li:has(> .cui-globalnav-close) {
       display: block;
       order: -1;
     }
@@ -206,7 +169,7 @@
   }
 
   @starting-style {
-    .cui-globalnav-list:popover-open .cui-globalnav-closebutton path {
+    .cui-globalnav-list:popover-open .cui-globalnav-close path {
       transform: none;
     }
   }
@@ -221,7 +184,7 @@
   }
 
   @media (width >= 834px) {
-    .cui-globalnav-menubutton {
+    .cui-globalnav-open {
       display: none;
     }
 

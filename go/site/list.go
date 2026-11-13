@@ -17,9 +17,9 @@ type List struct {
 type ListRow struct {
 	Title string
 	Href  string
-	// Text: two lines at most; the rest is cut with an ellipsis.
-	Text  string
-	Aside g.Node
+	// Detail: two lines at most; the rest is cut with an ellipsis.
+	Detail string
+	Aside  g.Node
 }
 
 func (l List) Render(w io.Writer) error {
@@ -36,7 +36,7 @@ func (r ListRow) node() g.Node {
 	return h.Li(h.Class("cui-list-row"),
 		h.Div(
 			h.A(h.Class("cui-list-title"), h.Href(r.Href), g.Text(r.Title)),
-			g.If(r.Text != "", h.P(h.Class("cui-list-text"), g.Text(r.Text))),
+			g.If(r.Detail != "", h.P(h.Class("cui-list-detail"), g.Text(r.Detail))),
 		),
 		g.If(r.Aside != nil, h.Div(h.Class("cui-list-aside"), r.Aside)),
 	)

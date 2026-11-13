@@ -46,13 +46,6 @@ func (i Icon) write(w io.Writer, classAttribute string) error {
 	return err
 }
 
-// NavSearch and NavSearchCompact: the global nav's search link's, in the bar from
-// 834px and on a phone (reference/icons/nav.mjs's search and search-compact, in
-// currentColor).
-var NavSearch = Icon{width: "15", height: "44", viewBox: "0 0 15 44", paint: ``, inner: `<circle cx="5.95" cy="19.95" r="4.96" fill="none" stroke="currentColor" stroke-width="1.08"/><path d="M9.46 23.46 13.74 27.74" fill="none" stroke="currentColor" stroke-width="1.52" stroke-linecap="round"/>`}
-
-var NavSearchCompact = Icon{width: "17", height: "48", viewBox: "0 0 17 48", paint: ``, inner: `<circle cx="6.94" cy="21.94" r="5.86" fill="none" stroke="currentColor" stroke-width="1.22"/><path d="M11.08 26.08 15.6 30.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>`}
-
 var Menu = Icon{width: "18", height: "18", viewBox: "0 0 18 18", paint: ``, inner: `<path d="M2 5H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 12H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>`}
 
 var Disclosure = Icon{width: "17", height: "17", viewBox: "0 0 17 8.85", paint: ``, inner: `<path d="M15 1.13 8.5 7.72 2 1.13" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>`}
@@ -60,16 +53,3 @@ var Disclosure = Icon{width: "17", height: "17", viewBox: "0 0 17 8.85", paint: 
 var FooterChevron = Icon{width: "11", height: "6", viewBox: "0 0 11 6", paint: ``, inner: `<path d="M10.075.675 5.5 5.323.925.675" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>`}
 
 var Alert = Icon{width: "1.171em", height: "0.995em", viewBox: "0 0 1171 995", paint: ``, inner: `<circle cx="585" cy="497.5" r="456.25" fill="none" stroke="currentColor" stroke-width="82.5"/><path d="M584 280V550" fill="none" stroke="currentColor" stroke-width="70" stroke-linecap="round"/><circle cx="585" cy="692.5" r="50" fill="currentColor"/>`}
-
-// Magnifier and Reset: the search field's, at the start and the end of its text
-// (reference/icons/search.mjs's MAGNIFIER and RESET, in currentColor).
-var Magnifier = Icon{width: "25", height: "25", viewBox: "0 0 25 25", paint: ``, inner: `<circle cx="10.69" cy="10.87" r="6.28" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M15.25 15.35 20.15 20.05" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>`}
-
-var Reset = Icon{width: "25", height: "25", viewBox: "0 0 25 25", paint: ``, inner: `<path d="M12.5 3A9.5 9.5 0 1 0 12.5 22 9.5 9.5 0 1 0 12.5 3ZM13.2778 12.5 16.3889 15.6111A.55.55 0 0 1 15.6111 16.3889L12.5 13.2778 9.3889 16.3889A.55.55 0 0 1 8.6111 15.6111L11.7222 12.5 8.6111 9.3889A.55.55 0 0 1 9.3889 8.6111L12.5 11.7222 15.6111 8.6111A.55.55 0 0 1 16.3889 9.3889Z" fill="currentColor" fill-rule="evenodd"/>`}
-
-// ChevronLeft and ChevronRight: the pager's, SF Symbols' chevrons at medium weight
-// (reference/icons/pager.mjs's LEFT and RIGHT, in currentColor), the ink's whole box
-// in em.
-var ChevronLeft = Icon{width: "0.74561em", height: "0.9em", viewBox: "0 -10 74.561 90", paint: ``, inner: `<path d="M49.9 -2.3 11.78 35.2 49.9 72.7" fill="none" stroke="currentColor" stroke-width="11.5" stroke-linecap="round" stroke-linejoin="round"/>`}
-
-var ChevronRight = Icon{width: "0.74561em", height: "0.9em", viewBox: "0 -10 74.561 90", paint: ``, inner: `<path d="M24.661 -2.3 62.781 35.2 24.661 72.7" fill="none" stroke="currentColor" stroke-width="11.5" stroke-linecap="round" stroke-linejoin="round"/>`}

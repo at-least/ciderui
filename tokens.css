@@ -20,7 +20,7 @@
   --cui-c-bar: light-dark(rgb(255 255 255 / 0.8), rgb(0 0 0 / 0.8));
   --cui-c-on-bar: light-dark(rgb(0 0 0 / 0.8), rgb(255 255 255 / 0.8));
   --cui-c-on-bar-hover: light-dark(#000000, #ffffff);
-  /* @invariant: an opened nav menu's ground, and the global nav's opened search's */
+  /* @invariant: an opened nav menu's ground */
   --cui-c-menu: light-dark(#fafafc, #161617);
   --cui-c-on-menu: light-dark(#333336, #e8e8ed);
   --cui-c-field: rgb(255 255 255 / 0.8);
@@ -36,9 +36,6 @@
   --cui-c-on-footer-title: rgb(0 0 0 / 0.88);
   --cui-c-footer-separator: rgb(0 0 0 / 0.16);
   --cui-c-scrim: rgb(0 0 0 / 0.48);
-  /* @invariant: a share's bar (cui-meter): its filled part, then the track under it */
-  --cui-c-meter: light-dark(rgb(0 0 0 / 0.88), rgb(255 255 255 / 0.92));
-  --cui-c-meter-track: light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
   --cui-c-video: #000000;
   --cui-c-on-video: #ffffff;
   --cui-c-on-video-control: rgb(255 255 255 / 0.9);
