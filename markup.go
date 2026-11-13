@@ -115,7 +115,7 @@ func classesIn(css string) map[string]bool {
 	styleRules, utilities := rules(css)
 	for _, selector := range styleRules {
 		for i := range len(selector) {
-			if class := name(selector[i+1:]); selector[i] == '.' && strings.HasPrefix(class, "cui-") && len(class) > len("cui-") {
+			if class := name(selector[i+1:]); selector[i] == '.' && strings.HasPrefix(class, "cui-") {
 				classes[class] = true
 			}
 		}
@@ -166,7 +166,7 @@ func subjects(selector string, negated bool, others *[]compound) []compound {
 			case c == '.':
 				class := name(part[i+1:])
 				for w := range ways {
-					ways[w].classes = append(slices.Clip(ways[w].classes), class)
+					ways[w].classes = append(ways[w].classes, class)
 				}
 				i += 1 + len(class)
 			case c == '[':
@@ -176,7 +176,7 @@ func subjects(selector string, negated bool, others *[]compound) []compound {
 					attribute, value, hasValue := strings.Cut(inside, "=")
 					a := selected{class: "", attribute: attribute, value: strings.Trim(value, `"`), anyValue: !hasValue && !negated}
 					for w := range ways {
-						ways[w].attributes = append(slices.Clip(ways[w].attributes), a)
+						ways[w].attributes = append(ways[w].attributes, a)
 					}
 				}
 				i += end + 1
