@@ -1,6 +1,7 @@
 package glyph_test
 
 import (
+	"errors"
 	"os"
 	"regexp"
 	"strconv"
@@ -20,8 +21,18 @@ func TestClassEscapesItsClassOnTheSVG(t *testing.T) {
 	}
 }
 
-// globalnav.css turns Menu's two lines into the close button's X, each about its
-// own middle, onto one point: a move of a line must move those transforms too
+type full struct{}
+
+func (full) Write([]byte) (int, error) { return 0, errors.New("disk full") }
+
+func TestIconReturnsTheErrorOfAWriterThatCannotTakeIt(t *testing.T) {
+	if err := glyph.Menu.Render(full{}); err == nil || err.Error() != "disk full" {
+		t.Errorf("an icon written to a full disk returned %v, want the writer's error", err)
+	}
+}
+
+// @invariant: globalnav.css turns Menu's two lines into the close button's X, each
+// about its own middle, onto one point: a move of a line must move those transforms too
 func TestGlobalnavCSSTurnsMenusLinesIntoAnX(t *testing.T) {
 	stylesheet, err := os.ReadFile("../../../components/site/globalnav/globalnav.css")
 	if err != nil {
