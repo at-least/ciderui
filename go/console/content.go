@@ -3,6 +3,7 @@ package console
 import (
 	"io"
 
+	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -43,7 +44,10 @@ func (c ConsoleContent) Render(w io.Writer) error {
 		sidebar,
 		h.Main(h.ID("main"), h.TabIndex("-1"), h.Class("cui-console-content-main"),
 			open,
-			pageHeader(c.Back, c.Title, c.Detail, c.Controls),
+			header(g.Group{
+				g.If(c.Back.Href != "", h.A(h.Class("cui-console-link cui-console-header-back"), h.Href(c.Back.Href), lucide.ChevronLeft, g.Text(c.Back.Label))),
+				h.H1(h.Class("cui-console-h2"), g.Text(c.Title)),
+			}, c.Detail, c.Controls),
 			c.Children,
 		),
 	).Render(w)

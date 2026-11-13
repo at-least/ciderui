@@ -19,7 +19,7 @@ type ConsoleSection struct {
 func (s ConsoleSection) Render(w io.Writer) error {
 	need("console.ConsoleSection", "a Title", s.Title)
 	return h.Section(h.Class("cui-console-section"),
-		sectionHeader(s.Title, s.Detail),
+		header(h.H2(h.Class("cui-console-h4-emph"), g.Text(s.Title)), s.Detail, nil),
 		s.Children,
 	).Render(w)
 }
