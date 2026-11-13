@@ -7,6 +7,7 @@ import (
 	"testing"
 
 	"github.com/at-least/ciderui"
+	"github.com/at-least/ciderui/go/internal/attr"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -34,7 +35,7 @@ func (d Document) Render(w io.Writer) error {
 	if d.Title == "" {
 		panic(d.Owner + " needs a Title")
 	}
-	page := h.Doctype(h.HTML(h.Lang(d.Lang), classAttr(d.Class),
+	page := h.Doctype(h.HTML(h.Lang(d.Lang), attr.Optional("class", d.Class),
 		h.Head(
 			h.Meta(h.Charset("utf-8")),
 			h.Meta(h.Name("viewport"), h.Content("width=device-width, initial-scale=1")),
@@ -42,7 +43,7 @@ func (d Document) Render(w io.Writer) error {
 			h.Link(h.Rel("stylesheet"), h.Href(d.Stylesheet)),
 			d.Head,
 		),
-		h.Body(classAttr(d.BodyClass), d.Children),
+		h.Body(attr.Optional("class", d.BodyClass), d.Children),
 	))
 	if !testing.Testing() {
 		return page.Render(w)
@@ -62,11 +63,4 @@ func Check(owner, html string) {
 	if problems := ciderui.CheckMarkup(html); problems != nil {
 		panic(owner + ": " + strings.Join(problems, "\n"))
 	}
-}
-
-func classAttr(value string) g.Node {
-	if value == "" {
-		return nil
-	}
-	return h.Class(value)
 }
