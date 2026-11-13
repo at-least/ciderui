@@ -59,6 +59,8 @@
  "prose code, quote and notes | .cui-prose > hr | 390 | border-top-color": "rgb(210, 210, 215)",
  "prose code, quote and notes | .cui-prose > .footnote-definition | 390 | display": "flex",
  "prose code, quote and notes | .cui-prose > .footnote-definition | 390 | column-gap": "6px",
+ "prose with a part | .cui-prose .cui-btn | 1200 | color": "rgb(255, 255, 255)",
+ "prose with a part | .cui-prose .cui-btn | 1200 | text-decoration-line": "none",
  "prose picture | .cui-prose > img | 1200 | box-width": "300px",
  "prose picture | .cui-prose > img | 1200 | box-height": "150px",
  "prose picture | .cui-prose > img | 390 | box-width": "300px",

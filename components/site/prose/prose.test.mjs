@@ -51,6 +51,14 @@ export const cases = [
     ],
   },
   {
+    name: 'prose with a part',
+    html: '<div class="cui-prose"><p>Ready?</p><p><a class="cui-btn" href="#">Buy</a></p></div>',
+    widths: [1200],
+    checks: [
+      { target: '.cui-prose .cui-btn', props: ['color', 'text-decoration-line'], golden: 'a button in the text keeps its own white and no underline: the text\'s link rule leaves a part\'s link alone' },
+    ],
+  },
+  {
     name: 'prose picture',
     html: '<div class="cui-prose" style="width: 300px"><p>Step one.</p><img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22640%22 height=%22320%22/%3E" alt=""><p>Step two.</p></div>',
     widths: [1200, 390],
