@@ -34,9 +34,12 @@ mux.Handle(ciderui.AssetsPath, ciderui.Assets())
 console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Scheme: console.ConsoleSchemeSystem, Children: body}
 ```
 
-That is the whole setup: the page links the stylesheet and the module serves it, with its fonts. Use `site.Page` for a store or a marketing page. Each part's markup is its examples, `components/<set>/<name>/examples/*.html`. Under `go test`, every page `site.Page` or `console.ConsolePage` renders checks itself with `ciderui.CheckMarkup`; call it yourself on a fragment.
+```sh
+go get -tool github.com/GaijinEntertainment/go-exhaustruct/v3/cmd/exhaustruct
+go tool exhaustruct -i 'github.com/at-least/ciderui/.*' ./...   # in your site's checks
+```
 
-Add `go tool exhaustruct -i 'github.com/at-least/ciderui/.*' ./...` to your site's checks (after `go get -tool github.com/GaijinEntertainment/go-exhaustruct/v3/cmd/exhaustruct`), so a field the module adds fails your build instead of rendering a default nobody chose.
+That is the whole setup: the page links the stylesheet and the module serves it, with its fonts, and the check fails your build on a field you left out, where it would otherwise render a default nobody chose. Use `site.Page` for a store or a marketing page. Each part's markup is its examples, `components/<set>/<name>/examples/*.html`. Under `go test`, every page `site.Page` or `console.ConsolePage` renders checks itself with `ciderui.CheckMarkup`; call it yourself on a fragment.
 
 ### Your own utilities
 
