@@ -1,12 +1,12 @@
 {
- "url": "https://www.apple.com/iphone/",
- "finalUrl": "https://www.apple.com/iphone/",
+ "url": "https://www.apple.com/airpods/",
+ "finalUrl": "https://www.apple.com/airpods/",
  "browser": "chromium 151.0.7922.34 on linux",
- "date": "2026-10-22T06:09:36.079Z",
+ "date": "2026-11-13T09:18:25.361Z",
  "widths": {
   "390": {
    "ribbon": {
-    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div cl",
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color ribbon-drop-wrapper\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-content-wrapper ribbon-wrapper\"><div class=\"ribbon-content\"><p>",
     "styles": {
      "overflow": "hidden",
      "height": "72px"
@@ -17,7 +17,7 @@
     }
    },
    "ribbon.drop": {
-    "html": "<div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p>",
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color ribbon-drop-wrapper\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-content-wrapper ribbon-wrapper\"><div class=\"ribbon-content\"><p>",
     "styles": {
      "animation-name": "ribbon-drop",
      "animation-duration": "0.8s",
@@ -40,7 +40,7 @@
     }
    },
    "ribbon.ground": {
-    "html": "<div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-lin",
+    "html": "<div class=\"ribbon-content-wrapper ribbon-wrapper\"><div class=\"ribbon-content\"><p><span class=\"footnote footnote-supglyph\"><a href=\"#footnote-1\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -61,7 +61,7 @@
      "border-bottom-style": "none",
      "border-bottom-color": "rgb(29, 29, 31)",
      "border-top-left-radius": "0px",
-     "background-color": "rgb(245, 245, 247)",
+     "background-color": "rgb(255, 255, 255)",
      "box-shadow": "none",
      "min-width": "0px",
      "min-height": "0px",
@@ -74,10 +74,10 @@
      "animation-fill-mode": "forwards",
      "animation-iteration-count": "1",
      "--ribbon-background-color-initial": "rgb(0,113,227)",
-     "--ribbon-background-color": "rgb(245,245,247)",
-     "--ribbon-text-color-initial": "rgb(245,245,247)",
+     "--ribbon-background-color": "rgb(255,255,255)",
+     "--ribbon-text-color-initial": "rgb(255,255,255)",
      "--ribbon-text-color": "rgb(29,29,31)",
-     "--ribbon-link-color-initial": "rgb(245,245,247)",
+     "--ribbon-link-color-initial": "rgb(255,255,255)",
      "--ribbon-link-color": "rgb(0,102,204)"
     },
     "keyframes": {
@@ -98,7 +98,7 @@
     }
    },
    "ribbon.content": {
-    "html": "<div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "html": "<div class=\"ribbon-content\"><p><span class=\"footnote footnote-supglyph\"><a href=\"#footnote-1\" aria-label=\"…\" data-modal-close=\"\"></a></span><",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -135,7 +135,7 @@
     }
    },
    "ribbon.text": {
-    "html": "<p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…",
+    "html": "<p><span class=\"footnote footnote-supglyph\"><a href=\"#footnote-1\" aria-label=\"…\" data-modal-close=\"\"></a></span><a class=\"ribbon-link more icon ico",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -152,7 +152,7 @@
     }
    },
    "ribbon.link": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
+    "html": "<a class=\"ribbon-link more icon icon-copy icon-after icon-chevronright\" href=\"/us/shop/goto/buy_airpods/airpods_5\" data-analytics-title=\"buy - airpods 5\" aria-label=\"…\"><span></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -203,7 +203,7 @@
     }
    },
    "ribbon.link-hovered": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
+    "html": "<a class=\"ribbon-link more icon icon-copy icon-after icon-chevronright\" href=\"/us/shop/goto/buy_airpods/airpods_5\" data-analytics-title=\"buy - airpods 5\" aria-label=\"…\"><span></span></a>",
     "styles": {
      "color": "rgb(0, 102, 204)",
      "text-decoration-line": "underline",
@@ -223,7 +223,7 @@
   },
   "900": {
    "ribbon": {
-    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div cl",
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color ribbon-drop-wrapper\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-content-wrapper ribbon-wrapper\"><div class=\"ribbon-content\"><p>",
     "styles": {
      "overflow": "hidden",
      "height": "52px"
@@ -234,7 +234,7 @@
     }
    },
    "ribbon.drop": {
-    "html": "<div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p>",
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color ribbon-drop-wrapper\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-content-wrapper ribbon-wrapper\"><div class=\"ribbon-content\"><p>",
     "styles": {
      "animation-name": "ribbon-drop",
      "animation-duration": "0.8s",
@@ -257,7 +257,7 @@
     }
    },
    "ribbon.ground": {
-    "html": "<div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-lin",
+    "html": "<div class=\"ribbon-content-wrapper ribbon-wrapper\"><div class=\"ribbon-content\"><p><span class=\"footnote footnote-supglyph\"><a href=\"#footnote-1\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -278,7 +278,7 @@
      "border-bottom-style": "none",
      "border-bottom-color": "rgb(29, 29, 31)",
      "border-top-left-radius": "0px",
-     "background-color": "rgb(245, 245, 247)",
+     "background-color": "rgb(255, 255, 255)",
      "box-shadow": "none",
      "min-width": "0px",
      "min-height": "0px",
@@ -291,10 +291,10 @@
      "animation-fill-mode": "forwards",
      "animation-iteration-count": "1",
      "--ribbon-background-color-initial": "rgb(0,113,227)",
-     "--ribbon-background-color": "rgb(245,245,247)",
-     "--ribbon-text-color-initial": "rgb(245,245,247)",
+     "--ribbon-background-color": "rgb(255,255,255)",
+     "--ribbon-text-color-initial": "rgb(255,255,255)",
      "--ribbon-text-color": "rgb(29,29,31)",
-     "--ribbon-link-color-initial": "rgb(245,245,247)",
+     "--ribbon-link-color-initial": "rgb(255,255,255)",
      "--ribbon-link-color": "rgb(0,102,204)"
     },
     "keyframes": {
@@ -315,7 +315,7 @@
     }
    },
    "ribbon.content": {
-    "html": "<div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "html": "<div class=\"ribbon-content\"><p><span class=\"footnote footnote-supglyph\"><a href=\"#footnote-1\" aria-label=\"…\" data-modal-close=\"\"></a></span><",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -352,7 +352,7 @@
     }
    },
    "ribbon.text": {
-    "html": "<p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…",
+    "html": "<p><span class=\"footnote footnote-supglyph\"><a href=\"#footnote-1\" aria-label=\"…\" data-modal-close=\"\"></a></span><a class=\"ribbon-link more icon ico",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -364,12 +364,12 @@
      "margin-bottom": "0px"
     },
     "box": {
-     "width": 567.953125,
+     "width": 749.984375,
      "height": 20
     }
    },
    "ribbon.link": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
+    "html": "<a class=\"ribbon-link more icon icon-copy icon-after icon-chevronright\" href=\"/us/shop/goto/buy_airpods/airpods_5\" data-analytics-title=\"buy - airpods 5\" aria-label=\"…\"><span></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -420,7 +420,7 @@
     }
    },
    "ribbon.link-hovered": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
+    "html": "<a class=\"ribbon-link more icon icon-copy icon-after icon-chevronright\" href=\"/us/shop/goto/buy_airpods/airpods_5\" data-analytics-title=\"buy - airpods 5\" aria-label=\"…\"><span></span></a>",
     "styles": {
      "color": "rgb(0, 102, 204)",
      "text-decoration-line": "underline",
@@ -440,7 +440,7 @@
   },
   "1200": {
    "ribbon": {
-    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div cl",
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color ribbon-drop-wrapper\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-content-wrapper ribbon-wrapper\"><div class=\"ribbon-content\"><p>",
     "styles": {
      "overflow": "hidden",
      "height": "52px"
@@ -451,7 +451,7 @@
     }
    },
    "ribbon.drop": {
-    "html": "<div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p>",
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color ribbon-drop-wrapper\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-content-wrapper ribbon-wrapper\"><div class=\"ribbon-content\"><p>",
     "styles": {
      "animation-name": "ribbon-drop",
      "animation-duration": "0.8s",
@@ -474,7 +474,7 @@
     }
    },
    "ribbon.ground": {
-    "html": "<div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-lin",
+    "html": "<div class=\"ribbon-content-wrapper ribbon-wrapper\"><div class=\"ribbon-content\"><p><span class=\"footnote footnote-supglyph\"><a href=\"#footnote-1\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -495,7 +495,7 @@
      "border-bottom-style": "none",
      "border-bottom-color": "rgb(29, 29, 31)",
      "border-top-left-radius": "0px",
-     "background-color": "rgb(245, 245, 247)",
+     "background-color": "rgb(255, 255, 255)",
      "box-shadow": "none",
      "min-width": "0px",
      "min-height": "0px",
@@ -508,10 +508,10 @@
      "animation-fill-mode": "forwards",
      "animation-iteration-count": "1",
      "--ribbon-background-color-initial": "rgb(0,113,227)",
-     "--ribbon-background-color": "rgb(245,245,247)",
-     "--ribbon-text-color-initial": "rgb(245,245,247)",
+     "--ribbon-background-color": "rgb(255,255,255)",
+     "--ribbon-text-color-initial": "rgb(255,255,255)",
      "--ribbon-text-color": "rgb(29,29,31)",
-     "--ribbon-link-color-initial": "rgb(245,245,247)",
+     "--ribbon-link-color-initial": "rgb(255,255,255)",
      "--ribbon-link-color": "rgb(0,102,204)"
     },
     "keyframes": {
@@ -532,7 +532,7 @@
     }
    },
    "ribbon.content": {
-    "html": "<div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "html": "<div class=\"ribbon-content\"><p><span class=\"footnote footnote-supglyph\"><a href=\"#footnote-1\" aria-label=\"…\" data-modal-close=\"\"></a></span><",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -569,7 +569,7 @@
     }
    },
    "ribbon.text": {
-    "html": "<p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…",
+    "html": "<p><span class=\"footnote footnote-supglyph\"><a href=\"#footnote-1\" aria-label=\"…\" data-modal-close=\"\"></a></span><a class=\"ribbon-link more icon ico",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -581,12 +581,12 @@
      "margin-bottom": "0px"
     },
     "box": {
-     "width": 567.953125,
+     "width": 999.984375,
      "height": 20
     }
    },
    "ribbon.link": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
+    "html": "<a class=\"ribbon-link more icon icon-copy icon-after icon-chevronright\" href=\"/us/shop/goto/buy_airpods/airpods_5\" data-analytics-title=\"buy - airpods 5\" aria-label=\"…\"><span></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -637,7 +637,7 @@
     }
    },
    "ribbon.link-hovered": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
+    "html": "<a class=\"ribbon-link more icon icon-copy icon-after icon-chevronright\" href=\"/us/shop/goto/buy_airpods/airpods_5\" data-analytics-title=\"buy - airpods 5\" aria-label=\"…\"><span></span></a>",
     "styles": {
      "color": "rgb(0, 102, 204)",
      "text-decoration-line": "underline",
@@ -657,7 +657,7 @@
   },
   "1600": {
    "ribbon": {
-    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div cl",
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color ribbon-drop-wrapper\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-content-wrapper ribbon-wrapper\"><div class=\"ribbon-content\"><p>",
     "styles": {
      "overflow": "hidden",
      "height": "52px"
@@ -668,7 +668,7 @@
     }
    },
    "ribbon.drop": {
-    "html": "<div class=\"ribbon-drop-wrapper\"><div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p>",
+    "html": "<div class=\"ribbon ribbon-blue-to-default ribbon-animate-color ribbon-drop-wrapper\" data-analytics-activitymap-region-id=\"ribbon\"><div class=\"ribbon-content-wrapper ribbon-wrapper\"><div class=\"ribbon-content\"><p>",
     "styles": {
      "animation-name": "ribbon-drop",
      "animation-duration": "0.8s",
@@ -691,7 +691,7 @@
     }
    },
    "ribbon.ground": {
-    "html": "<div class=\"ribbon-content-wrapper\"><div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-lin",
+    "html": "<div class=\"ribbon-content-wrapper ribbon-wrapper\"><div class=\"ribbon-content\"><p><span class=\"footnote footnote-supglyph\"><a href=\"#footnote-1\" aria-label=\"…",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -712,7 +712,7 @@
      "border-bottom-style": "none",
      "border-bottom-color": "rgb(29, 29, 31)",
      "border-top-left-radius": "0px",
-     "background-color": "rgb(245, 245, 247)",
+     "background-color": "rgb(255, 255, 255)",
      "box-shadow": "none",
      "min-width": "0px",
      "min-height": "0px",
@@ -725,10 +725,10 @@
      "animation-fill-mode": "forwards",
      "animation-iteration-count": "1",
      "--ribbon-background-color-initial": "rgb(0,113,227)",
-     "--ribbon-background-color": "rgb(245,245,247)",
-     "--ribbon-text-color-initial": "rgb(245,245,247)",
+     "--ribbon-background-color": "rgb(255,255,255)",
+     "--ribbon-text-color-initial": "rgb(255,255,255)",
      "--ribbon-text-color": "rgb(29,29,31)",
-     "--ribbon-link-color-initial": "rgb(245,245,247)",
+     "--ribbon-link-color-initial": "rgb(255,255,255)",
      "--ribbon-link-color": "rgb(0,102,204)"
     },
     "keyframes": {
@@ -749,7 +749,7 @@
     }
    },
    "ribbon.content": {
-    "html": "<div class=\"ribbon-content row\"><div class=\"column small-12 large-centered\"><p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iph",
+    "html": "<div class=\"ribbon-content\"><p><span class=\"footnote footnote-supglyph\"><a href=\"#footnote-1\" aria-label=\"…\" data-modal-close=\"\"></a></span><",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -786,7 +786,7 @@
     }
    },
    "ribbon.text": {
-    "html": "<p><a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…",
+    "html": "<p><span class=\"footnote footnote-supglyph\"><a href=\"#footnote-1\" aria-label=\"…\" data-modal-close=\"\"></a></span><a class=\"ribbon-link more icon ico",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -798,12 +798,12 @@
      "margin-bottom": "0px"
     },
     "box": {
-     "width": 567.953125,
+     "width": 1333.328125,
      "height": 20
     }
    },
    "ribbon.link": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
+    "html": "<a class=\"ribbon-link more icon icon-copy icon-after icon-chevronright\" href=\"/us/shop/goto/buy_airpods/airpods_5\" data-analytics-title=\"buy - airpods 5\" aria-label=\"…\"><span></span></a>",
     "styles": {
      "font-family": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
      "font-size": "14px",
@@ -854,7 +854,7 @@
     }
    },
    "ribbon.link-hovered": {
-    "html": "<a class=\"ribbon-link more\" href=\"/us/shop/goto/buy_iphone/iphone_duo\" data-analytics-title=\"check out now - iphone duo pre-order\" aria-label=\"…\"></a>",
+    "html": "<a class=\"ribbon-link more icon icon-copy icon-after icon-chevronright\" href=\"/us/shop/goto/buy_airpods/airpods_5\" data-analytics-title=\"buy - airpods 5\" aria-label=\"…\"><span></span></a>",
     "styles": {
      "color": "rgb(0, 102, 204)",
      "text-decoration-line": "underline",

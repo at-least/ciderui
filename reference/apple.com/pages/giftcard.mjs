@@ -6,7 +6,9 @@
 // $50); the amount's field with its currency before it, while Other Amount is chosen; a
 // plain field enabled; an empty required field the focus has left (clicked, then the
 // focus taken off: nothing typed), its error and its message. Read only: nothing typed,
-// nothing sent.
+// nothing sent. Email is clicked on its label: from 2026-11-13 the
+// delivery's label covers its radio, which takes no click (the design's and the
+// amount's radios still lie over their labels).
 import { TYPE, BOX, MOTION, FOCUS } from './common.mjs';
 
 const FIELDS = '.rf-giftcard-delivery-section-fields';
@@ -28,7 +30,7 @@ export default {
     { name: 'section', select: '.rf-giftcard-selection-group', props: [...BOX, 'border-top-width', 'border-top-style', 'border-top-color'], box: true },
     { name: 'section.title', select: '.rf-choose-amount-section-title', props: [...TYPE, 'margin-top', 'margin-bottom'] },
     // @external: the choices that enable the fields, each clicked once
-    { name: 'choose.type', click: 'input[name=dimensionGiftCardType][value=electronic]', select: 'input[name=dimensionGiftCardType][value=electronic]', props: ['opacity'] },
+    { name: 'choose.type', click: 'input[name=dimensionGiftCardType][value=electronic] + label', select: 'input[name=dimensionGiftCardType][value=electronic]', props: ['opacity'] },
     // @external: its delivery fields shown, disabled until a design and an amount are
     // chosen
     { name: 'field.disabled', select: `${NAME} .form-textbox-input`, props: [...TYPE, 'background-color', 'border-top-color', 'border-top-width', 'opacity', 'cursor', 'height'], widths: [1600] },
