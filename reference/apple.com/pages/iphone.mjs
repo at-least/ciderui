@@ -1,7 +1,6 @@
 // @external: The iPhone page, a light one: its links (the "more" link, its copy and its
-// chevron; a section header's link). Its ribbon is ribbon.mjs's, read once
-// its motion has run: read here 800ms in, it was mid-motion, and its three
-// probes are dropped from the record (2026-10-22).
+// chevron; a section header's link). No ribbon is read here: 800ms in, it
+// was mid-motion (2026-10-22); ribbon.mjs reads one once its motion has run.
 import { TYPE, BOX, LINK, PAGE, TEXT, FLEX, MOTION } from './common.mjs';
 export default {
   url: 'https://www.apple.com/iphone/',

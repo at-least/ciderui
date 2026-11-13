@@ -21,9 +21,8 @@ type ConsoleContentBack struct {
 // Children, its [ConsoleSection]s.
 type ConsoleContent struct {
 	Sidebar *ConsoleSidebar
-	// Back: nil for none.
-	Back  *ConsoleContentBack
-	Title string
+	Back    *ConsoleContentBack
+	Title   string
 	// Detail: the line under the title, what the page is for.
 	Detail string
 	// Controls: at the header's end.

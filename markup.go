@@ -348,8 +348,8 @@ func split(selector string) []string {
 // fragment (a misspelt one, or the other set's, styles nothing). A class with no
 // default written without its data-* attribute (cui-console-banner with no
 // data-color). A color written by its slot (text-(--cui-c-…)) that the set
-// names by a utility. On an element
-// with a cui-* class: a value of a data-* attribute some rule selects that no
+// names by a utility. On an element with a cui-* class:
+// a value of a data-* attribute some rule selects that no
 // rule selects for that element's classes (it renders the default, silently),
 // and a value of a stateful aria-* attribute ARIA holds none of (wrong for
 // assistive technology, drawn by nothing). On any element, an attribute written

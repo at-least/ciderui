@@ -11,7 +11,7 @@ Measured 2026-10-19 in Playwright's Chromium 151 on Linux, with `--font-render-h
 | `breakpoints` | https://www.apple.com/ | a headline and the global nav stepped across each boundary, 733 to 1442px |
 | `home` | https://www.apple.com/ | the type its stylesheets define, the page, the global nav, the hero and its buttons, light and dark tiles, the gallery's dots, the footer |
 | `product` | https://www.apple.com/iphone-18-pro/ | a dark page: the base type scale, the content's width, sections light, dark and alternate, a rounded tile, a gallery (its scroller, its paddles, a media card gallery's dots), the "more" link, a stat, the floating local nav |
-| `iphone` | https://www.apple.com/iphone/ | a light page: its links (the more link, a section header's), its sections, a gallery's paddles (enabled, disabled) and dots (its ribbon is `ribbon`'s) |
+| `iphone` | https://www.apple.com/iphone/ | a light page: its links (the more link, a section header's), its sections, a gallery's paddles (enabled, disabled) and dots |
 | `store` | https://www.apple.com/store | the store's own type scale (`t-`), its shared buttons (`common-css@1.3.3`), the header, quick links, product nav, a shelf of cards (its header, scroller and items), its cards (light with a tag, dark, with a plain eyebrow), their parts and hover |
 | `home-tw`, `buy-tw` | https://www.apple.com/tw/, https://www.apple.com/tw/shop/buy-iphone/iphone-18-pro | `home`'s and `buy`'s probes on the Traditional Chinese pages: the parts' line heights and letter-spacing there |
 | `store-tw` | https://www.apple.com/tw/store | the Traditional Chinese store's type scale (`t-`), which differs by language: the line heights of the larger sizes, no letter-spacing on some |

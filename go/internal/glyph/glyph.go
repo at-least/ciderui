@@ -32,7 +32,7 @@ func (i Icon) Render(w io.Writer) error {
 }
 
 // Class is the icon with a class on its <svg>: a component's part
-// (`cui-link-icon`) or a utility.
+// (`cui-console-menu-icon`) or a utility.
 func (i Icon) Class(class string) g.Node {
 	return g.NodeFunc(func(w io.Writer) error { return i.write(w, ` class="`+html.EscapeString(class)+`"`) })
 }
