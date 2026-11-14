@@ -39,6 +39,13 @@ func TestBannerWithNoBodyOrActionsWritesNoBlockForThem(t *testing.T) {
 	}
 }
 
+func TestBannerOfActionsAloneWritesThem(t *testing.T) {
+	got := example.Render(console.ConsoleBanner{Color: console.ConsoleColorInfo, Title: "", Body: nil, Actions: g.Text("Try Again")})
+	if want := `<div><p class="cui-console-banner-actions">Try Again</p></div></div>`; !strings.HasSuffix(got, want) {
+		t.Errorf("a banner of Actions alone is not its actions after the icon:\n got: %s\nwant: …%s", got, want)
+	}
+}
+
 func TestBannerPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleBanner {
 		return console.ConsoleBanner{Color: console.ConsoleColorInfo, Title: "x", Body: nil, Actions: nil}

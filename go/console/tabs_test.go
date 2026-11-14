@@ -16,6 +16,13 @@ func TestTabsRendersTheExamples(t *testing.T) {
 	example.Check(t, console.ConsoleTabs{AriaLabel: "Project", Tabs: underlined}, "console/console-tabs/examples/tabs.html")
 }
 
+func TestTabsOfOneTabRenders(t *testing.T) {
+	got := example.Render(console.ConsoleTabs{AriaLabel: "Project", Tabs: []console.ConsoleTab{{Label: "Overview", Href: "#overview", Current: false}}})
+	if want := `<nav class="cui-console-tabs" aria-label="Project"><a class="cui-console-tab" href="#overview">Overview</a></nav>`; got != want {
+		t.Errorf("tabs of one tab are not that tab:\n got: %s\nwant: %s", got, want)
+	}
+}
+
 func TestTabsPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleTabs {
 		return console.ConsoleTabs{AriaLabel: "X", Tabs: []console.ConsoleTab{{Label: "A", Href: "#a", Current: true}, {Label: "B", Href: "#b", Current: false}}}

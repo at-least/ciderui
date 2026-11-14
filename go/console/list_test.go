@@ -1,6 +1,7 @@
 package console_test
 
 import (
+	"io"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
@@ -30,11 +31,25 @@ func TestListItemARowOfItsOwnContentNeedsNoLabel(t *testing.T) {
 	}
 }
 
+func TestListRowRendersItsChildrenOnce(t *testing.T) {
+	renders := 0
+	children := g.NodeFunc(func(w io.Writer) error {
+		renders++
+		_, err := io.WriteString(w, "<p>Shop App</p>")
+		return err
+	})
+	example.Render(console.ConsoleList{Rows: []console.ConsoleListRow{{Label: "", Detail: "", Children: children}}})
+	if renders != 1 {
+		t.Errorf("a row rendered its Children %d times, want once", renders)
+	}
+}
+
 func TestListPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleList {
 		return console.ConsoleList{Rows: []console.ConsoleListRow{{Label: "x", Detail: "", Children: nil}}}
 	}, []example.Break[console.ConsoleList]{
 		{Want: "console.ConsoleList needs Rows: a page with none shows a ConsoleEmpty", Change: func(p *console.ConsoleList) { p.Rows = nil }},
 		{Want: "console.ConsoleListRow needs a Label or Children", Change: func(p *console.ConsoleList) { p.Rows[0].Label = "" }},
+		{Want: "console.ConsoleListRow needs a Label or Children", Change: func(p *console.ConsoleList) { p.Rows[0].Label, p.Rows[0].Children = "", g.Group{} }},
 	})
 }
