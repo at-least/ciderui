@@ -84,7 +84,7 @@ func TestCommandThatCannotWriteExitsOneNamingTheDir(t *testing.T) {
 		t.Fatal(err)
 	}
 	dir := filepath.Join(blocked, "under")
-	if code, stdout, stderr := run(t, dir); code != 1 || stdout != "" || !strings.Contains(stderr, dir) {
-		t.Errorf("ciderui-css under a file exited %d, wrote %q and %q to stderr, want 1 and an error naming %s", code, stdout, stderr, dir)
+	if code, stdout, stderr := run(t, dir); code != 1 || stdout != "" || !strings.HasPrefix(stderr, "write "+dir+": ") || !strings.HasSuffix(stderr, "\n") {
+		t.Errorf("ciderui-css under a file exited %d, wrote %q and %q to stderr, want 1 and a line starting %q", code, stdout, stderr, "write "+dir+": ")
 	}
 }
