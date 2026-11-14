@@ -603,6 +603,15 @@ func indexFunc(s string, stop func(byte) bool) int {
 	return len(s)
 }
 
+func afterFold(s, sep string) string {
+	for i := 0; i+len(sep) <= len(s); i++ {
+		if strings.EqualFold(s[i:i+len(sep)], sep) {
+			return s[i+len(sep):]
+		}
+	}
+	return ""
+}
+
 func startTags(html string) []startTag {
 	var tags []startTag
 	rest := html
@@ -645,7 +654,7 @@ func startTags(html string) []startTag {
 			tag.attributes = append(tag.attributes, a)
 		}
 		if strings.EqualFold(tag.name, "script") || strings.EqualFold(tag.name, "style") {
-			_, rest, _ = strings.Cut(rest, "</"+tag.name)
+			rest = afterFold(rest, "</"+tag.name)
 		}
 		tags = append(tags, tag)
 	}

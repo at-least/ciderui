@@ -154,6 +154,7 @@ func TestCheckMarkupReadsHTMLAsABrowserDoes(t *testing.T) {
 		{"a script that writes a closing tag", `<script>let s = '</b><a class="cui-console-badg">';</script>`, nil},
 		{"a style in capitals", `<STYLE>/* <a class="cui-console-badg"> */</STYLE>`, nil},
 		{"a script left open", `<SCRIPT>let s = '<a class="cui-console-badg">';`, nil},
+		{"after a script closed in another case", `<SCRIPT>a</script><b class="cui-console-badg">a</b>`, noClass("b")},
 		{"after a script", `<script>a</script><b class="cui-console-badg">a</b>`, noClass("b")},
 		{"a < in text", `1 < 2 <3 <b class="cui-console-badg">a</b>`, noClass("b")},
 		{"a < at the end", `<b class="cui-console-badg">a</b><`, noClass("b")},
