@@ -22,8 +22,6 @@ func TestMain(m *testing.M) {
 
 const complete = `Href: "", Label: "Buy", Icon: nil, Submit: false, Variant: site.BtnVariantPrimary, Size: site.BtnSizeMedium, Block: false, Attrs: nil, Class: ""`
 
-// siteModule is a site's module that requires this checkout, its one file a site.Btn
-// literal of fields.
 func siteModule(t *testing.T, fields string) string {
 	t.Helper()
 	checkout, err := filepath.Abs("../../..")
@@ -46,8 +44,8 @@ func run(t *testing.T, dir string, args ...string) (code int, stdout, stderr str
 	t.Helper()
 	cmd := exec.Command(os.Args[0], args...)
 	cmd.Dir = dir
-	// -mod=mod: the site's go.mod names ciderui alone and has no go.sum; without it
-	// the command says "./... matched no packages".
+	// @trap: -mod=mod: the site's go.mod names ciderui alone and has no go.sum; without
+	// it the command says "./... matched no packages".
 	cmd.Env = append(os.Environ(), runMain+"=1", "GOFLAGS=-mod=mod")
 	var out, errOut bytes.Buffer
 	cmd.Stdout, cmd.Stderr = &out, &errOut
