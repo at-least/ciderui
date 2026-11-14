@@ -49,23 +49,44 @@ func TestCheckComparesTheExamplesLinesTrimmedAndJoined(t *testing.T) {
 	}
 }
 
-func TestCheckNamesWhereTheMarkupFirstDiffersFromTheExample(t *testing.T) {
-	long := strings.Repeat("x", 100)
-	for _, c := range []struct{ name, got, want string }{
-		{"a byte of another value", "<p><b>a c</b></p>", `first differs at byte 8:
- got: "<p><b>a c</b></p>"
-want: "<p><b>a b</b></p>"`},
-		{"markup that ends where the example goes on", "<p><b>a b</b>", `first differs at byte 13:
- got: "<p><b>a b</b>"
-want: "<p><b>a b</b></p>"`},
-		{"long markup, 40 bytes each side of the difference", "<p><b>a b</b></p>" + long + "y" + long, `first differs at byte 17:
- got: "<p><b>a b</b></p>` + long[:40] + `"
-want: "<p><b>a b</b></p>"`},
+// @trap: an example of the test's own, by its path from components/: indented.html's
+// 17 bytes reach no difference with 40 bytes before it
+func exampleOf(t *testing.T, markup string) string {
+	components, err := filepath.Abs("../../../components")
+	if err != nil {
+		t.Fatal(err)
+	}
+	file := filepath.Join(t.TempDir(), "example.html")
+	if err := os.WriteFile(file, []byte(markup), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	path, err := filepath.Rel(components, file)
+	if err != nil {
+		t.Fatal(err)
+	}
+	return path
+}
+
+func TestCheckNamesTheExampleBothMarkupsAndWhereTheyFirstDiffer(t *testing.T) {
+	const short = "<p><b>a b</b></p>"
+	digits := strings.Repeat("0123456789", 10)
+	for _, c := range []struct {
+		name, example, got string
+		at                 int
+		gotAround          string
+		exampleAround      string
+	}{
+		{"a byte of another value", short, "<p><b>a c</b></p>", 8, "<p><b>a c</b></p>", short},
+		{"the first byte", short, "a", 0, "a", short},
+		{"markup that ends where the example goes on", short, "<p><b>a b</b>", 13, "<p><b>a b</b>", short},
+		{"long markup, 40 bytes each side of the difference", digits, digits[:50] + "x" + digits[51:], 50, digits[10:50] + "x" + digits[51:90], digits[10:90]},
 	} {
+		path := exampleOf(t, c.example)
+		want := fmt.Sprintf("%s\n got: %s\nwant: %s\nfirst differs at byte %d:\n got: %q\nwant: %q", path, c.got, c.example, c.at, c.gotAround, c.exampleAround)
 		var r recorder
-		example.Check(&r, g.Raw(c.got), "../go/internal/example/testdata/indented.html")
-		if !strings.HasSuffix(r.message, c.want) {
-			t.Errorf("%s: Check's failure is\n%s\nwant it to end\n%s", c.name, r.message, c.want)
+		example.Check(&r, g.Raw(c.got), path)
+		if r.message != want {
+			t.Errorf("%s: Check's failure is\n%s\nwant\n%s", c.name, r.message, want)
 		}
 	}
 }
