@@ -15,7 +15,7 @@ import (
 const pathExtension = `\.(?:md|css|go|mjs|js|json|html|swift|yml)`
 
 var (
-	backtickedPath = regexp.MustCompile("`([\\w./@-]+(?:" + pathExtension + `|/))` + "`")
+	backtickedPath = regexp.MustCompile("`([\\w./@*-]+(?:" + pathExtension + `|/))` + "`")
 	repositoryPath = regexp.MustCompile(`(?:^|[^\w./-])((?:components|reference|scripts|test|go)/[\w./-]*` + pathExtension + `)\b`)
 	designCite     = regexp.MustCompile(`\b([Dd]ecision|[Rr]ule)s? (\d{1,2}(?:(?:, | and )\d{1,2}\b)*)`)
 	namedClass     = regexp.MustCompile(`(?:^|[^\w/-])(cui-[a-z][\w-]*)(\*?)`)
@@ -31,10 +31,12 @@ func number(digits string) int {
 	return n
 }
 
-// @trap: not a walk of the disk: .claude/worktrees holds whole checkouts of older commits
-func trackedFiles(t *testing.T) []string {
+// @trap: git's list, not a walk of the disk: .claude/worktrees holds whole
+// checkouts of older commits. With --others: a file not added yet is held as a
+// tracked one is, where a gate run before git add passed on what the next failed.
+func repositoryFiles(t *testing.T) []string {
 	t.Helper()
-	out, err := exec.Command("git", "ls-files").Output()
+	out, err := exec.Command("git", "ls-files", "--cached", "--others", "--exclude-standard").Output()
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -46,7 +48,8 @@ func trackedFiles(t *testing.T) []string {
 //
 // stalePaths returns the paths text names that exist neither beside file nor
 // from the repository's top, nor, a bare name, anywhere in names: a document
-// names a file of the part it is about by its name alone.
+// names a file of the part it is about by its name alone. A path with a *
+// names at least one file.
 func stalePaths(file, text string, names, exists map[string]bool) []string {
 	var stale []string
 	check := func(p string) {
@@ -54,6 +57,22 @@ func stalePaths(file, text string, names, exists map[string]bool) []string {
 			return
 		}
 		clean := strings.TrimSuffix(p, "/")
+		if strings.Contains(clean, "*") {
+			matches := func(pattern string) bool {
+				for name := range exists {
+					if ok, err := path.Match(pattern, name); err != nil {
+						panic(err)
+					} else if ok {
+						return true
+					}
+				}
+				return false
+			}
+			if !matches(path.Join(path.Dir(file), clean)) && !matches(path.Clean(clean)) && !slices.Contains(stale, p) {
+				stale = append(stale, p)
+			}
+			return
+		}
 		if exists[path.Join(path.Dir(file), clean)] || exists[path.Clean(clean)] {
 			return
 		}
@@ -124,8 +143,8 @@ func staleClasses(text string, classes map[string]bool) []string {
 func TestStalePathsAndCitesFail(t *testing.T) {
 	exists := map[string]bool{"a/here.css": true, "here.css": true}
 	names := map[string]bool{"elsewhere.html": true}
-	got := stalePaths("a/doc.md", "`here.css` `elsewhere.html` `/v/url.css` `pkg@1/x.js` `gone.css` `a/gone/` test/gone.mjs", names, exists)
-	if want := []string{"gone.css", "a/gone/", "test/gone.mjs"}; !slices.Equal(got, want) {
+	got := stalePaths("a/doc.md", "`here.css` `elsewhere.html` `/v/url.css` `pkg@1/x.js` `gone.css` `a/gone/` `*.css` `a/*.css` `gone/*.css` test/gone.mjs", names, exists)
+	if want := []string{"gone.css", "a/gone/", "gone/*.css", "test/gone.mjs"}; !slices.Equal(got, want) {
 		t.Errorf("stalePaths: %q, want %q", got, want)
 	}
 	if got := stalePaths("a/code.go", "`gone.css`", names, exists); got != nil {
@@ -143,7 +162,7 @@ func TestStalePathsAndCitesFail(t *testing.T) {
 
 // the root's alone is written for people; a second would read as another
 func TestOneReadme(t *testing.T) {
-	for _, file := range trackedFiles(t) {
+	for _, file := range repositoryFiles(t) {
 		if path.Base(file) == "README.md" && file != "README.md" {
 			t.Errorf("%s: an agent's document takes another name", file)
 		}
@@ -175,7 +194,7 @@ func TestPathsAndCitesResolve(t *testing.T) {
 		t.Fatalf("read %d decisions, %d rules, %d withdrawn from DESIGN.md", decisions, rules, len(withdrawn))
 	}
 
-	files := trackedFiles(t)
+	files := repositoryFiles(t)
 	names := map[string]bool{}
 	exists := map[string]bool{}
 	for _, file := range files {

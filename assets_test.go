@@ -83,6 +83,9 @@ func TestAStylesheetIsGzippedForABrowserThatAccepts(t *testing.T) {
 			t.Errorf("%s with no Accept-Encoding came as %s", s.url, got)
 		}
 		text := body(t, plain)
+		if got := get(t, s.url, "br").Header.Get("Content-Encoding"); got != "" {
+			t.Errorf("%s for a browser that accepts br alone came as %s", s.url, got)
+		}
 		zipped := get(t, s.url, "br, gzip")
 		if got := zipped.Header.Get("Content-Encoding"); got != "gzip" {
 			t.Fatalf("%s for a browser that accepts gzip came as %q", s.url, got)

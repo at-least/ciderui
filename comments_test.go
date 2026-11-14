@@ -21,7 +21,7 @@ var cssComment = regexp.MustCompile(`(?s)/\*.*?\*/`)
 // scripts/build-lucide.mjs, which writes that file's per-icon godoc as text of
 // its own, and dist/, the build's output.
 func TestCommentsCarryDecisionTags(t *testing.T) {
-	for _, file := range trackedFiles(t) {
+	for _, file := range repositoryFiles(t) {
 		if file == "go/lucide/lucide.go" || file == "scripts/build-lucide.mjs" || strings.HasPrefix(file, "dist/") {
 			continue
 		}

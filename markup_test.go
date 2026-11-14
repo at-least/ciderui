@@ -51,53 +51,65 @@ func TestEveryExamplePasses(t *testing.T) {
 func TestCheckMarkupRefusesAClassTheKitLacks(t *testing.T) {
 	checkEach(t, []markupCase{
 		{"a misspelt class of a part names the nearest class", `<li class="cui-list-detial">a</li>`, []string{`class "cui-list-detial" on <li class="cui-list-detial">: ciderui has no such class; did you mean cui-list-detail`}},
-		{"a misspelt class of a part of many classes names the nearest class", `<div class="cui-console-player-headr">a</div>`, []string{`class "cui-console-player-headr" on <div class="cui-console-player-headr">: ciderui has no such class; did you mean cui-console-player-header`}},
-		{"a misspelt modifier names the nearest class", `<a class="cui-btn-blok">a</a>`, []string{`class "cui-btn-blok" on <a class="cui-btn-blok">: ciderui has no such class; did you mean cui-btn-block`}},
 		{"a class of a part with none near names its part's classes", `<li class="cui-list-zzzzzz">a</li>`, []string{`class "cui-list-zzzzzz" on <li class="cui-list-zzzzzz">: ciderui has no such class; the cui-list classes are cui-list, cui-list-aside, cui-list-detail, cui-list-row and cui-list-title`}},
-		{"a class of a part of one class with none near names that class", `<span class="cui-console-badge-lg">a</span>`, []string{`class "cui-console-badge-lg" on <span class="cui-console-badge-lg">: ciderui has no such class; the only cui-console-badge class is cui-console-badge`}},
+		{"a class of a part of one class with none near names that class", `<span class="cui-console-tab-zzzzzz">a</span>`, []string{`class "cui-console-tab-zzzzzz" on <span class="cui-console-tab-zzzzzz">: ciderui has no such class; the only cui-console-tab class is cui-console-tab`}},
+		{"the prefix alone", `<p class="cui-">a</p>`, []string{`class "cui-" on <p class="cui-">: ciderui has no such class; did you mean cui-dl`}},
 		{"a misspelt class among others, lines between them", "<p>a</p><b class=\"cui-console-badge\n\tcui-console-badg mt-1\">a</b>", []string{"class \"cui-console-badg\" on <b class=\"cui-console-badge\\n\\tcui-console-badg mt-1\">: ciderui has no such class; did you mean cui-console-badge"}},
 	})
 }
 
 func TestCheckMarkupNamesTheNearestClass(t *testing.T) {
 	checkEach(t, []markupCase{
-		{"one edit away", `<span class="cui-console-bange">a</span>`, []string{`class "cui-console-bange" on <span class="cui-console-bange">: ciderui has no such class; did you mean cui-console-badge`}},
-		{"two edits away", `<span class="cui-console-bnage">a</span>`, []string{`class "cui-console-bnage" on <span class="cui-console-bnage">: ciderui has no such class; did you mean cui-console-badge`}},
 		{"three edits away", `<span class="cui-console-bnagx">a</span>`, []string{`class "cui-console-bnagx" on <span class="cui-console-bnagx">: ciderui has no such class`}},
-		{"on a page, its own set's", page(ciderui.ConsoleStylesheet(), `<span class="cui-console-bange">a</span>`), []string{`class "cui-console-bange" on <span class="cui-console-bange">: the console stylesheet this page links has no such class; did you mean cui-console-badge`}},
+		{"two letters replaced", `<span class="cui-console-bxxge">a</span>`, []string{`class "cui-console-bxxge" on <span class="cui-console-bxxge">: ciderui has no such class; did you mean cui-console-badge`}},
+		{"two letters too many", `<span class="cui-console-baddgee">a</span>`, []string{`class "cui-console-baddgee" on <span class="cui-console-baddgee">: ciderui has no such class; did you mean cui-console-badge`}},
+		{"two letters missing", `<span class="cui-console-bge">a</span>`, []string{`class "cui-console-bge" on <span class="cui-console-bge">: ciderui has no such class; did you mean cui-console-badge`}},
+		{"a class after other letters", `<a class="cui-cui-btn">a</a>`, []string{`class "cui-cui-btn" on <a class="cui-cui-btn">: ciderui has no such class`}},
+		{"on a page, not the other set's nearest", page(ciderui.ConsoleStylesheet(), `<a class="cui-bnt">a</a>`), []string{`class "cui-bnt" on <a class="cui-bnt">: the console stylesheet this page links has no such class`}},
+		{"on a page, not the other set's part", page(ciderui.ConsoleStylesheet(), `<li class="cui-list-zzzzzz">a</li>`), []string{`class "cui-list-zzzzzz" on <li class="cui-list-zzzzzz">: the console stylesheet this page links has no such class`}},
 	})
 }
 
+// @invariant: cui-console-tab and cui-console-tabs are one edit from it; a
+// map's order differs between calls, so one call alone passes half the time
+func TestCheckMarkupNamesTheFirstByNameOfTwoClassesAsNear(t *testing.T) {
+	want := []string{`class "cui-console-tabz" on <b class="cui-console-tabz">: ciderui has no such class; did you mean cui-console-tab`}
+	for range 20 {
+		if got := ciderui.CheckMarkup(`<b class="cui-console-tabz">a</b>`); !slices.Equal(got, want) {
+			t.Fatalf("CheckMarkup reported %q\nwant     %q", got, want)
+		}
+	}
+}
+
 func TestCheckMarkupNamesASlotsUtility(t *testing.T) {
-	checkEach(t, []markupCase{
-		{"a text slot", `<p class="text-(--cui-c-console-neutral-label-secondary)">a</p>`, []string{`class "text-(--cui-c-console-neutral-label-secondary)" on <p class="text-(--cui-c-console-neutral-label-secondary)">: write text-secondary, the set's name for this color`}},
+	var cases []markupCase
+	for _, prefix := range []string{"text", "bg", "border", "outline", "decoration", "fill", "stroke", "ring", "divide", "accent", "caret"} {
+		class := prefix + "-(--cui-c-console-brand-label-primary)"
+		cases = append(cases, markupCase{"a --color-* slot under " + prefix, `<p class="` + class + `">a</p>`, []string{`class "` + class + `" on <p class="` + class + `">: write ` + prefix + `-link, the set's name for this color`}})
+	}
+	checkEach(t, append(cases, []markupCase{
 		{"a --color-* slot, under two variants and with an opacity", `<hr class="dark:md:border-(--cui-c-console-neutral-border-tertiary)/50">`, []string{`class "dark:md:border-(--cui-c-console-neutral-border-tertiary)/50" on <hr class="dark:md:border-(--cui-c-console-neutral-border-tertiary)/50">: write dark:md:border-divider/50, the set's name for this color`}},
 		{"a site page's slot", page(ciderui.SiteStylesheet()+`"><link rel="stylesheet" href="/own.css`, `<p class="text-(--cui-c-text-2)">a</p>`), []string{`class "text-(--cui-c-text-2)" on <p class="text-(--cui-c-text-2)">: write text-secondary, the set's name for this color`}},
 		{"a ground's slot", `<div class="bg-(--cui-c-console-card)">a</div>`, []string{`class "bg-(--cui-c-console-card)" on <div class="bg-(--cui-c-console-card)">: write bg-alt, the set's name for this color`}},
 		{"a fragment's site slot", `<p class="text-(--cui-c-text-2)">a</p>`, []string{`class "text-(--cui-c-text-2)" on <p class="text-(--cui-c-text-2)">: write text-secondary, the set's name for this color`}},
 		{"a slot left open", `<p class="text-(--cui-c-text-2">a</p>`, nil},
-		{"a slot with no utility name", `<p class="text-(--cui-c-console-brand-label-secondary)">a</p>`, nil},
+		{"a slot with no utility name, under a variant and with an opacity", `<p class="md:text-(--cui-c-console-brand-label-secondary)/50">a</p>`, nil},
 		{"a text color's slot as a ground, which no utility names", `<p class="bg-(--cui-c-console-neutral-label-secondary)">a</p>`, nil},
 		{"the other set's slot on a page", page(ciderui.SiteStylesheet()+`"><link rel="stylesheet" href="/own.css`, `<p class="text-(--cui-c-console-neutral-label-secondary)">a</p>`), nil},
-	})
+	}...))
 }
 
 func TestCheckMarkupRefusesADataValueNoRuleSelects(t *testing.T) {
 	checkEach(t, []markupCase{
 		{"each class that takes the attribute", `<div class="cui-console-btn cui-console-empty" data-size="xl">a</div>`, []string{`data-size="xl" on <div class="cui-console-btn cui-console-empty">: cui-console-btn takes data-size "lg" or "sm", or none for its default; cui-console-empty takes data-size "lg" or "sm"`}},
 
-		{"a value selected next to a :not", `<div class="cui-console-player" data-controls="hiden"></div>`, []string{`data-controls="hiden" on <div class="cui-console-player">: cui-console-player takes data-controls "hidden", or none for its default`}},
-
-		// @invariant: [data-stack] selects any value, on its own class alone
-		{"a value of a bare selected attribute", `<table class="cui-console-table" data-stack="true"></table>`, nil},
-		{"an attribute none of its classes takes names those they take, in order", `<a class="cui-btn" data-color="red">b</a>`, []string{`data-color="red" on <a class="cui-btn">: none of its classes takes data-color; cui-btn takes data-size "lg"; cui-btn takes data-variant "secondary" or "secondary-neutral"`}},
-		{"a bare selected attribute among those it takes", `<table class="cui-console-table" data-size="sm"></table>`, []string{`data-size="sm" on <table class="cui-console-table">: none of its classes takes data-size; cui-console-table takes data-stack`}},
+		// @invariant: [data-intro] selects any value, on its own class alone
+		{"a value of an attribute selected bare in a list of selectors", `<div class="cui-console-player" data-intro="x"></div>`, nil},
+		{"an attribute none of its classes takes names those they take, bare and with values", `<div class="cui-console-player" data-color="red"></div>`, []string{`data-color="red" on <div class="cui-console-player">: none of its classes takes data-color; cui-console-player takes data-controls "hidden"; cui-console-player takes data-end; cui-console-player takes data-full-screen; cui-console-player takes data-intro; cui-console-player takes data-muted; cui-console-player takes data-state "playing"`}},
 		{"a bare selected attribute on another class", `<div class="cui-console-card" data-stack></div>`, []string{`data-stack="" on <div class="cui-console-card">: none of its classes takes data-stack`}},
 
 		// @invariant: .cui-console-player-end > [data-control="replay"] names no class of the element
 		{"an attribute only a rule for another element selects", `<p class="cui-console-player-heading" data-control="heading">x</p>`, nil},
-		// @invariant: cui-console-btn-icon's sizes are its own
-		{"a value of another class on the element", `<button class="cui-console-btn cui-console-btn-icon" data-size="sm">x</button>`, nil},
 	})
 }
 
@@ -138,8 +150,9 @@ func TestCheckMarkupReadsHTMLAsABrowserDoes(t *testing.T) {
 	checkEach(t, []markupCase{
 		{"after a comment", `<!-- a --><b class="cui-console-badg">a</b>`, noClass("b")},
 		{"a comment left open", `<!-- <b class="cui-console-badg">`, nil},
-		{"a script", `<script>let s = '<a class="cui-console-badg">';</script>`, nil},
-		{"a style", `<style>/* <a class="cui-console-badg"> */</style>`, nil},
+		{"a > in a comment", `<!-- a > <b class="cui-console-badg"> -->`, nil},
+		{"a script that writes a closing tag", `<script>let s = '</b><a class="cui-console-badg">';</script>`, nil},
+		{"a style in capitals", `<STYLE>/* <a class="cui-console-badg"> */</STYLE>`, nil},
 		{"a script left open", `<SCRIPT>let s = '<a class="cui-console-badg">';`, nil},
 		{"after a script", `<script>a</script><b class="cui-console-badg">a</b>`, noClass("b")},
 		{"a < in text", `1 < 2 <3 <b class="cui-console-badg">a</b>`, noClass("b")},
@@ -147,6 +160,8 @@ func TestCheckMarkupReadsHTMLAsABrowserDoes(t *testing.T) {
 		{"single quotes", `<b class='cui-console-badg'>a</b>`, noClass("b")},
 		{"no quotes, between attributes and at the tag's end", `<b id=x class=cui-console-badg>a</b>`, noClass("b")},
 		{"a quote left open", `<b class="cui-console-badg`, noClass("b")},
+		{"an = at the end", `<b class=`, nil},
+		{"an attribute of no value before the class", `<button disabled class="cui-console-badg">a</button>`, noClass("button")},
 		{"slashes between attributes", `<img/hidden/class="cui-console-badg">`, noClass("img")},
 		{"tabs between attributes", "<b\tid=\"x\"\tclass=\"cui-console-badg\">a</b>", noClass("b")},
 		{"lines between attributes", "<b\nid=\"x\"\nclass=\"cui-console-badg\">a</b>", noClass("b")},
@@ -164,10 +179,8 @@ func TestCheckMarkupReadsAnAttributeNameInAnyCase(t *testing.T) {
 
 func TestCheckMarkupReadsThePagesStylesheet(t *testing.T) {
 	checkEach(t, []markupCase{
-		{"a console part on a site page", page(ciderui.SiteStylesheet(), `<span class="cui-console-badge">a</span>`), []string{`class "cui-console-badge" on <span class="cui-console-badge">: a console class; this page links the site stylesheet`}},
-		{"a misspelt class on a console page", page(ciderui.ConsoleStylesheet(), `<span class="cui-console-badg">a</span>`), []string{`class "cui-console-badg" on <span class="cui-console-badg">: the console stylesheet this page links has no such class; did you mean cui-console-badge`}},
 		{"a data-* only the other set selects is the page's own", page(ciderui.SiteStylesheet(), `<a class="cui-btn" data-color="purple">a</a>`), nil},
-		{"the type on a console page", page(ciderui.ConsoleStylesheet(), `<p class="cui-body">a</p>`), nil},
+		{"a link in the text to a stylesheet is not the page's", `<a href="` + ciderui.ConsoleStylesheet() + `">a</a><button class="cui-btn">a</button>`, nil},
 		{"a site part on a console page in capitals", `<!doctype html><HTML><HEAD><LINK rel="stylesheet" href="` + ciderui.ConsoleStylesheet() + `"></HEAD><BODY><button class="cui-btn">a</button></BODY></HTML>`, []string{`class "cui-btn" on <button class="cui-btn">: a site class; this page links the console stylesheet`}},
 	})
 }
@@ -183,7 +196,6 @@ func TestCheckMarkupRefusesAnAttributeWrittenTwice(t *testing.T) {
 func TestCheckMarkupRefusesAReferenceToNoIDOnAPage(t *testing.T) {
 	sitePage := func(body string) string { return page(ciderui.SiteStylesheet(), body) }
 	checkEach(t, []markupCase{
-		{"a skip link to no main", sitePage(`<a class="cui-btn cui-skip" href="#main">Skip</a><main>a</main>`), []string{`href="#main" on <a class="cui-btn cui-skip">: this page has no id "main"`}},
 		{"a link to the top", sitePage(`<a href="#">Top</a>`), nil},
 		{"a link to another page", sitePage(`<a href="/a#b">a</a>`), nil},
 		{"a value that begins with #", sitePage(`<input value="#ffffff">`), nil},
@@ -192,6 +204,7 @@ func TestCheckMarkupRefusesAReferenceToNoIDOnAPage(t *testing.T) {
 		{"a command's button", sitePage(`<button commandfor="dialog" command="show-modal">a</button>`), []string{`commandfor="dialog" on <button>: this page has no id "dialog"`}},
 		{"a section labelled by no heading", sitePage(`<section aria-labelledby="t"><h2>a</h2></section>`), []string{`aria-labelledby="t" on <section>: this page has no id "t"`}},
 		{"a controlled element", sitePage(`<button aria-controls="p">a</button>`), []string{`aria-controls="p" on <button>: this page has no id "p"`}},
+		{"a skip link in capitals", sitePage(`<A HREF="#main">Skip</A>`), []string{`HREF="#main" on <A>: this page has no id "main"`}},
 		{"a page in capitals", `<!DOCTYPE html><HTML><BODY><LABEL FOR="name">Name</LABEL></BODY></HTML>`, []string{`FOR="name" on <LABEL>: this page has no id "name"`}},
 		{"an ID in capitals", sitePage(`<label for="name">Name</label><input ID="name">`), nil},
 		{"a fragment's may be on the page around it", `<button popovertarget="menu">a</button><label for="name">Name</label>`, nil},
