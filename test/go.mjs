@@ -59,4 +59,4 @@ for (const dir of ['go/site', 'go/console']) {
     if (/"cui-(console-)?btn[" ]/.test(readFileSync(join(ROOT, dir, file), 'utf8'))) fail(`go: ${dir}/${file} writes a button's class: use its Btn type`);
   }
 }
-console.log('go: lucide.go, dist, tokens, gofmt, vet, exhaustruct and tests clean');
+console.log('go: lucide.go, dist, tokens, gofmt, vet, ciderui-check and tests clean');
