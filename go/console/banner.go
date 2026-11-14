@@ -34,6 +34,9 @@ func (b ConsoleBanner) Render(w io.Writer) error {
 	if b.Color == ConsoleColorNeutral {
 		panic("console.ConsoleBanner needs a Color: a banner's color is info, success, warning or error")
 	}
+	if b.Title == "" && b.Body == nil && b.Actions == nil {
+		panic("console.ConsoleBanner needs a Title, a Body or Actions")
+	}
 	role := "status"
 	if b.Color == ConsoleColorError {
 		role = "alert"

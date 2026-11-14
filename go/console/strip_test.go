@@ -22,9 +22,9 @@ func TestStripRendersTheExample(t *testing.T) {
 	working := console.ConsoleStripMarkWorking
 	strip := h.Div(h.Class("cui-console-page"),
 		console.ConsoleStrip{AriaLabel: "Shots", Groups: []console.ConsoleStripGroup{
-			{Label: "Scene 1", Items: []console.ConsoleStripItem{shot(1, 1, line, none, "", false), shot(1, 2, "", none, "", false), shot(1, 3, "", waiting, "Waiting for you", false)}},
-			{Label: "Scene 2", Items: []console.ConsoleStripItem{shot(2, 1, "", none, "", false), shot(2, 2, "", working, "To redraw", true), shot(2, 3, "", none, "", false), shot(2, 4, "", waiting, "Waiting for you", false)}},
-			{Label: "Scene 3", Items: []console.ConsoleStripItem{shot(3, 1, "", none, "", false), shot(3, 2, "", working, "Being fixed", false), shot(3, 3, "", none, "", false)}},
+			{Title: "Scene 1", Items: []console.ConsoleStripItem{shot(1, 1, line, none, "", false), shot(1, 2, "", none, "", false), shot(1, 3, "", waiting, "Waiting for you", false)}},
+			{Title: "Scene 2", Items: []console.ConsoleStripItem{shot(2, 1, "", none, "", false), shot(2, 2, "", working, "To redraw", true), shot(2, 3, "", none, "", false), shot(2, 4, "", waiting, "Waiting for you", false)}},
+			{Title: "Scene 3", Items: []console.ConsoleStripItem{shot(3, 1, "", none, "", false), shot(3, 2, "", working, "Being fixed", false), shot(3, 3, "", none, "", false)}},
 		}},
 	)
 	example.Check(t, strip, path)
@@ -39,9 +39,9 @@ func TestStripRendersTheAssetsExample(t *testing.T) {
 	leading := console.ConsoleStripItemCropLeading
 	strip := h.Div(h.Class("cui-console-page"),
 		console.ConsoleStrip{AriaLabel: "Assets", Groups: []console.ConsoleStripGroup{
-			{Label: "Characters", Items: []console.ConsoleStripItem{asset("#ann", "Ann’s sheet", "Ann", "3 shots", leading, false, true), asset("#ben", "Ben’s sheet", "Ben", "Not used", leading, true, false)}},
-			{Label: "Props", Items: []console.ConsoleStripItem{asset("#lamp", "The lamp", "Lamp", "1 shot", center, false, false)}},
-			{Label: "Places", Items: []console.ConsoleStripItem{asset("#field", "The field", "Field", "5 shots", center, false, false)}},
+			{Title: "Characters", Items: []console.ConsoleStripItem{asset("#ann", "Ann’s sheet", "Ann", "3 shots", leading, false, true), asset("#ben", "Ben’s sheet", "Ben", "Not used", leading, true, false)}},
+			{Title: "Props", Items: []console.ConsoleStripItem{asset("#lamp", "The lamp", "Lamp", "1 shot", center, false, false)}},
+			{Title: "Places", Items: []console.ConsoleStripItem{asset("#field", "The field", "Field", "5 shots", center, false, false)}},
 		}},
 	)
 	example.Check(t, strip, path)
@@ -49,15 +49,15 @@ func TestStripRendersTheAssetsExample(t *testing.T) {
 
 func validStrip() console.ConsoleStrip {
 	item := console.ConsoleStripItem{Href: "#a", Src: "/a.png", Alt: "Shot 1", Current: false, Crop: console.ConsoleStripItemCropCenter, Caption: "", Detail: "", Unused: false, Tip: "", Mark: console.ConsoleStripMarkNone, MarkAriaLabel: ""}
-	return console.ConsoleStrip{AriaLabel: "Shots", Groups: []console.ConsoleStripGroup{{Label: "Scene 1", Items: []console.ConsoleStripItem{item, item}}}}
+	return console.ConsoleStrip{AriaLabel: "Shots", Groups: []console.ConsoleStripGroup{{Title: "Scene 1", Items: []console.ConsoleStripItem{item, item}}}}
 }
 
 func TestStripPanics(t *testing.T) {
 	example.Panics(t, validStrip, []example.Break[console.ConsoleStrip]{
 		{Want: "console.ConsoleStrip needs an AriaLabel", Change: func(p *console.ConsoleStrip) { p.AriaLabel = "" }},
-		{Want: "console.ConsoleStrip needs a ConsoleStripGroup", Change: func(p *console.ConsoleStrip) { p.Groups = nil }},
-		{Want: "console.ConsoleStripGroup needs a Label", Change: func(p *console.ConsoleStrip) { p.Groups[0].Label = "" }},
-		{Want: "console.ConsoleStripGroup needs a ConsoleStripItem", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items = nil }},
+		{Want: "console.ConsoleStrip needs Groups", Change: func(p *console.ConsoleStrip) { p.Groups = nil }},
+		{Want: "console.ConsoleStripGroup needs a Title", Change: func(p *console.ConsoleStrip) { p.Groups[0].Title = "" }},
+		{Want: "console.ConsoleStripGroup needs Items", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items = nil }},
 		{Want: "console.ConsoleStrip has 2 current items: one at most", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Current, p.Groups[0].Items[1].Current = true, true }},
 		{Want: "console.ConsoleStripItem needs an Href", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Href = "" }},
 		{Want: "console.ConsoleStripItem needs a Src", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Src = "" }},

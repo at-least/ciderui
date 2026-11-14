@@ -61,7 +61,9 @@ func TestSidebarRulesOffEachUntitledSectionAfterTheFirst(t *testing.T) {
 
 func TestSidebarPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleSidebar {
-		return console.ConsoleSidebar{AriaLabel: "x", Home: "/", Wordmark: "x", SkipLabel: "Skip", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: nil, Sections: nil}
+		return console.ConsoleSidebar{AriaLabel: "x", Home: "/", Wordmark: "x", SkipLabel: "Skip", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: nil, Sections: []console.ConsoleMenuSection{
+			{Title: "", Items: []console.ConsoleMenuItem{{Href: "#x", Label: "x", Icon: lucide.Icon{}, Current: false}}},
+		}}
 	}, []example.Break[console.ConsoleSidebar]{
 		{Want: "console.ConsoleSidebar needs an AriaLabel", Change: func(p *console.ConsoleSidebar) { p.AriaLabel = "" }},
 		{Want: "console.ConsoleSidebar needs a Home", Change: func(p *console.ConsoleSidebar) { p.Home = "" }},
@@ -69,5 +71,9 @@ func TestSidebarPanics(t *testing.T) {
 		{Want: "console.ConsoleSidebar needs a SkipLabel", Change: func(p *console.ConsoleSidebar) { p.SkipLabel = "" }},
 		{Want: "console.ConsoleSidebar needs an OpenAriaLabel", Change: func(p *console.ConsoleSidebar) { p.OpenAriaLabel = "" }},
 		{Want: "console.ConsoleSidebar needs a CloseAriaLabel", Change: func(p *console.ConsoleSidebar) { p.CloseAriaLabel = "" }},
+		{Want: "console.ConsoleSidebar needs Sections", Change: func(p *console.ConsoleSidebar) { p.Sections = nil }},
+		{Want: "console.ConsoleMenuSection needs Items", Change: func(p *console.ConsoleSidebar) { p.Sections[0].Items = nil }},
+		{Want: "console.ConsoleMenuItem needs an Href", Change: func(p *console.ConsoleSidebar) { p.Sections[0].Items[0].Href = "" }},
+		{Want: "console.ConsoleMenuItem needs a Label", Change: func(p *console.ConsoleSidebar) { p.Sections[0].Items[0].Label = "" }},
 	})
 }

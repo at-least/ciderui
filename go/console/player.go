@@ -125,7 +125,7 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 			h.Div(h.Class("cui-console-player-footer"),
 				h.Div(h.Class("cui-console-player-buttons"),
 					g.If(p.FullScreenControls != nil, h.Div(h.Class("cui-console-player-full-screen-controls"), p.FullScreenControls)),
-					g.Iff(p.SubtitlesMenu != nil, func() g.Node { return button("subtitles", p.SubtitlesAriaLabel, p.SubtitlesMenu.ID, lucide.Captions) }),
+					g.Iff(p.SubtitlesMenu != nil, func() g.Node { return button("subtitles", p.SubtitlesAriaLabel, subtitlesMenuID, lucide.Captions) }),
 					button("full-screen", p.FullScreenAriaLabel, "", g.Group{lucide.Maximize2.Class("cui-console-player-glyph-full-screen"), lucide.Minimize2.Class("cui-console-player-glyph-exit-full-screen")}),
 				),
 				h.Div(h.Class("cui-console-player-progress"),

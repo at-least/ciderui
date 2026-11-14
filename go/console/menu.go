@@ -19,14 +19,18 @@ type ConsoleMenuItem struct {
 	Current bool
 }
 
-func (m ConsoleMenuItem) Render(w io.Writer) error {
+func (m ConsoleMenuItem) node() g.Node {
 	need("console.ConsoleMenuItem", "an Href", m.Href)
 	need("console.ConsoleMenuItem", "a Label", m.Label)
 	return pageLink("cui-console-menu-item", m.Href, m.Current, g.Group{
 		g.If(m.Icon != (lucide.Icon{}), m.Icon.Class("cui-console-menu-icon")),
 		h.Span(h.Class("cui-console-menu-label"), g.Text(m.Label)),
-	}).Render(w)
+	})
 }
+
+// @invariant: a page has one subtitles menu, its player's, so its id is the
+// kit's, not the page's
+const subtitlesMenuID = "subtitles"
 
 // ConsoleChoiceMenu is a popover of options in columns side by side, each its
 // title over its options, one of them checked: a [ConsolePlayer]'s voices
@@ -35,8 +39,6 @@ func (m ConsoleMenuItem) Render(w io.Writer) error {
 // among the options by the arrow keys; the click closes the popover itself
 // (popovertargetaction="hide").
 type ConsoleChoiceMenu struct {
-	// ID is the popover's id, the popovertarget of the button that opens it.
-	ID      string
 	Columns []ConsoleChoiceColumn
 }
 
@@ -57,9 +59,8 @@ type ConsoleChoiceOption struct {
 }
 
 func (m ConsoleChoiceMenu) Render(w io.Writer) error {
-	need("console.ConsoleChoiceMenu", "an ID", m.ID)
 	if len(m.Columns) == 0 {
-		panic("console.ConsoleChoiceMenu needs a column")
+		panic("console.ConsoleChoiceMenu needs Columns")
 	}
 	columns := map[string]bool{}
 	for _, c := range m.Columns {
@@ -71,7 +72,7 @@ func (m ConsoleChoiceMenu) Render(w io.Writer) error {
 		}
 		columns[c.Column] = true
 		if len(c.Options) == 0 {
-			panic("console.ConsoleChoiceColumn needs an Option")
+			panic("console.ConsoleChoiceColumn needs Options")
 		}
 		checked := 0
 		for _, o := range c.Options {
@@ -86,16 +87,16 @@ func (m ConsoleChoiceMenu) Render(w io.Writer) error {
 			panic(fmt.Sprintf("console.ConsoleChoiceColumn needs one Checked option, has %d", checked))
 		}
 	}
-	return h.Div(h.Class("cui-console-popover"), h.ID(m.ID), h.Popover(),
+	return h.Div(h.Class("cui-console-popover"), h.ID(subtitlesMenuID), h.Popover(),
 		h.Div(h.Class("cui-console-menu-columns"),
 			g.Map(m.Columns, func(c ConsoleChoiceColumn) g.Node {
-				titleID := m.ID + "-" + c.Column + "-title"
+				titleID := subtitlesMenuID + "-" + c.Column + "-title"
 				return h.Div(h.Class("cui-console-menu"), h.Data("column", c.Column),
 					h.P(h.Class("cui-console-menu-title"), h.ID(titleID), g.Text(c.Title)),
 					h.Div(h.Role("menu"), h.Aria("labelledby", titleID),
 						g.Map(c.Options, func(o ConsoleChoiceOption) g.Node {
 							return h.Button(h.Class("cui-console-menu-item"), h.Type("button"), h.Role("menuitemradio"), h.Aria("checked", strconv.FormatBool(o.Checked)), h.Value(o.Value),
-								h.PopoverTarget(m.ID), h.PopoverTargetAction("hide"),
+								h.PopoverTarget(subtitlesMenuID), h.PopoverTargetAction("hide"),
 								lucide.Check.Class("cui-console-menu-icon"),
 								h.Span(h.Class("cui-console-menu-label"), attr.Optional("lang", o.Lang), g.Text(o.Label)),
 							)

@@ -5,6 +5,9 @@ const C = 'component-Checkbox-variant';
 const OFF = 'label:nth-child(1)';
 const ON = 'label:nth-child(2)';
 const DISABLED = 'label:nth-child(3)';
+// @invariant: a box with no words beside it, as a table's cell writes it by hand
+// (console-table's scroll.html): no Go type writes it, so no example of this part holds it
+const UNLABELED = '<div class="grid gap-3"><span class="cui-console-checkbox"><input class="cui-console-checkbox-input" type="checkbox" aria-label="Select all" name="all"><span class="cui-console-checkbox-box" aria-hidden="true"><svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></span></span></div>';
 
 export const cases = [
   {
@@ -36,7 +39,7 @@ export const cases = [
   },
   {
     name: 'checkbox indeterminate',
-    html: `${ex('checkbox')}<script>document.querySelector('[name="all"]').indeterminate = true</script>`,
+    html: `${UNLABELED}<script>document.querySelector('[name="all"]').indeterminate = true</script>`,
     widths: [1200],
     checks: [
       { target: '[name="all"] + .cui-console-checkbox-box', props: ['background-color'], golden: 'indeterminate, the brand\'s blue' },
@@ -47,7 +50,7 @@ export const cases = [
   },
   {
     name: 'checkbox touch',
-    html: ex('checkbox'),
+    html: ex('checkbox') + UNLABELED,
     touch: true,
     widths: [390],
     checks: [

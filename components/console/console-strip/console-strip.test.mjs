@@ -4,7 +4,7 @@ const ex = examples(import.meta.url);
 const STRIP = '.cui-console-strip';
 const GROUP = '.cui-console-strip-group:first-child';
 const HEADER = `${GROUP} > .cui-console-strip-header`;
-const LABEL = `${HEADER} > .cui-console-strip-label`;
+const TITLE = `${HEADER} > .cui-console-strip-title`;
 const item = (group, n) => `.cui-console-strip-group:nth-child(${group}) > .cui-console-strip-item:nth-of-type(${n})`;
 const FIRST = item(1, 1);
 const IMG = `${FIRST} > img`;
@@ -16,7 +16,7 @@ const CURRENT_WORKING = `${CURRENT} > ${WORKING}`;
 const TIP = `${FIRST} > .cui-console-strip-tip`;
 const MARKS = 'two marks only (the owner, 2026-11-05, for muse\'s storyboard and assets strip): who the shot waits on, the reader or someone at work on it; nothing, no mark';
 // @invariant: one scene of one shot, its name longer than the shot is wide, and no caption
-const lone = (label) => `<div class="cui-console-page"><nav class="cui-console-strip" aria-label="Shots"><div class="cui-console-strip-group"><p class="cui-console-strip-header"><span class="cui-console-strip-label">${label}</span></p><a class="cui-console-strip-item" href="#a"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Shot 1"></a></div></nav></div>`;
+const lone = (title) => `<div class="cui-console-page"><nav class="cui-console-strip" aria-label="Shots"><div class="cui-console-strip-group"><p class="cui-console-strip-header"><span class="cui-console-strip-title">${title}</span></p><a class="cui-console-strip-item" href="#a"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Shot 1"></a></div></nav></div>`;
 // @external: tv.apple.com's player's row was read at 1600 and 1200px
 const AT = { 390: 1200 };
 
@@ -34,9 +34,9 @@ export const cases = [
       { target: IMG, props: ['background-color'], golden: 'the console card\'s gray while it loads, as a console thumbnail\'s' },
       { target: GROUP, props: ['column-gap'], golden: 'a scene\'s shots 12px apart: App Store Connect\'s 6px either side of each (media.json thumb.item), where tv.apple.com\'s trailers are 20px apart' },
       { target: STRIP, props: ['column-gap', 'overflow-y'], golden: 'one row, scrolled sideways only as tv.apple.com\'s (its grid of columns); a scene\'s shots twice as close to each other as to the next scene\'s, so they read as its group: neither site groups its row' },
-      { target: LABEL, props: ['font-size', 'line-height', 'font-weight', 'color', 'text-overflow', 'white-space'], golden: 'the scene\'s name above its shots in 11px on 13px, the secondary label, cut to its group\'s width; neither site labels a group of its row' },
+      { target: TITLE, props: ['font-size', 'line-height', 'font-weight', 'color', 'text-overflow', 'white-space'], golden: 'the scene\'s name above its shots in 11px on 13px, the secondary label, cut to its group\'s width; neither site labels a group of its row' },
       { target: `${GROUP} > .cui-console-strip-item:first-of-type > img`, props: ['box-top', 'box-left'], golden: 'the first picture 18px under its group\'s top, its name\'s 13px line and 5px (a thumbnail\'s caption\'s 5px from it), 4px in from the page\'s content edge, the items\' room for their ring' },
-      { target: LABEL, props: ['box-top', 'box-left', 'padding-left', 'position', 'left'], golden: 'the scene\'s name over its first picture\'s left edge, its text 4px into its box as the picture is into its item; sticky at the scroller\'s edge, so the name of the scene scrolled half out stays in view (muse\'s storyboard, the owner, 2026-11-05)' },
+      { target: TITLE, props: ['box-top', 'box-left', 'padding-left', 'position', 'left'], golden: 'the scene\'s name over its first picture\'s left edge, its text 4px into its box as the picture is into its item; sticky at the scroller\'s edge, so the name of the scene scrolled half out stays in view (muse\'s storyboard, the owner, 2026-11-05)' },
       { target: HEADER, props: ['position', 'box-top', 'box-left', 'box-width', 'overflow-x'], golden: 'the name\'s track: out of the flow so a long name widens no scene, the group\'s whole width (528px: three 168px shots, each its picture and 4px of ring room either side, 12px apart), not clipped (a clipping box would be the sticky name\'s scroller)' },
       { target: CAPTION, props: ['font-size', 'line-height', 'font-weight', 'color', 'text-overflow', 'white-space'], golden: 'the shot\'s code under it in 11px on 13px, the secondary label, cut to the picture\'s width: muse\'s storyboard names each shot under it, not over it (the owner, 2026-11-05)' },
       { target: CAPTION, props: ['box-top', 'box-left', 'box-width'], golden: 'the caption 5px under its picture (the picture\'s foot at 108px: 18 and 90), as a console thumbnail\'s caption, outside the item\'s ring, at the picture\'s left and as wide' },
@@ -77,7 +77,7 @@ export const cases = [
     html: `<div class="cui-dark">${ex('strip')}</div>`,
     widths: [1200],
     checks: [
-      { target: LABEL, props: ['color'], golden: 'the dark side derived (tokens.css, decision 18)' },
+      { target: TITLE, props: ['color'], golden: 'the dark side derived (tokens.css, decision 18)' },
       { target: CAPTION, props: ['color'], golden: 'the dark side derived (tokens.css, decision 18)' },
       { target: CURRENT, props: ['border-top-color'], golden: 'the dark side derived (tokens.css, decision 18)' },
       { target: WAITING, props: ['background-color', 'border-top-color'], golden: 'the dark side derived (tokens.css, decision 18), the ring the dark page\'s ground' },
@@ -122,16 +122,16 @@ export const cases = [
     checks: [
       { target: STRIP, props: ['box-left'], golden: 'the scroller 15px out of the content edge, its room for the rings (tv.apple.com\'s row)' },
       { target: GROUP, props: ['box-left'], golden: 'scrolled to the first scene\'s third shot (it snaps there from 400px, 2 × 180px): the scene\'s start 360px out of view, its end still in it' },
-      { target: LABEL, props: ['box-left'], golden: 'the scene\'s name stays while its scene is still in view (muse\'s storyboard, the owner, 2026-11-05), at the content edge, 15px in from the scroller\'s (Chromium sticks it inside the scroller\'s padding, its room for the rings), so its text is where the first picture starts at rest; left in the group, it would have scrolled out with the scene\'s start' },
-      { target: `.cui-console-strip-group:nth-child(2) > .cui-console-strip-header > .cui-console-strip-label`, props: ['box-left'], golden: 'the next scene\'s name over its first shot, where its scene starts (24px past the first scene\'s end)' },
+      { target: TITLE, props: ['box-left'], golden: 'the scene\'s name stays while its scene is still in view (muse\'s storyboard, the owner, 2026-11-05), at the content edge, 15px in from the scroller\'s (Chromium sticks it inside the scroller\'s padding, its room for the rings), so its text is where the first picture starts at rest; left in the group, it would have scrolled out with the scene\'s start' },
+      { target: `.cui-console-strip-group:nth-child(2) > .cui-console-strip-header > .cui-console-strip-title`, props: ['box-left'], golden: 'the next scene\'s name over its first shot, where its scene starts (24px past the first scene\'s end)' },
     ],
   },
   {
-    name: 'strip long label',
+    name: 'strip long title',
     html: lone('A scene whose name is longer than its one shot is wide'),
     widths: [1200],
     checks: [
-      { target: LABEL, props: ['box-width', 'text-overflow'], golden: 'a name longer than its scene cut to the scene\'s width (one shot, 168px), widening nothing' },
+      { target: TITLE, props: ['box-width', 'text-overflow'], golden: 'a name longer than its scene cut to the scene\'s width (one shot, 168px), widening nothing' },
       { target: '.cui-console-strip-group', props: ['box-width', 'padding-bottom'], golden: 'the scene its shot\'s width, whatever its name; no caption, so no room under it' },
     ],
   },

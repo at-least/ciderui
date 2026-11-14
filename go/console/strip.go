@@ -43,7 +43,7 @@ type ConsoleStrip struct {
 }
 
 type ConsoleStripGroup struct {
-	Label string
+	Title string
 	Items []ConsoleStripItem
 }
 
@@ -72,7 +72,7 @@ type ConsoleStripItem struct {
 func (s ConsoleStrip) Render(w io.Writer) error {
 	need("console.ConsoleStrip", "an AriaLabel", s.AriaLabel)
 	if len(s.Groups) == 0 {
-		panic("console.ConsoleStrip needs a ConsoleStripGroup")
+		panic("console.ConsoleStrip needs Groups")
 	}
 	currents := 0
 	for _, group := range s.Groups {
@@ -87,12 +87,12 @@ func (s ConsoleStrip) Render(w io.Writer) error {
 	}
 	return h.Nav(h.Class("cui-console-strip"), h.Aria("label", s.AriaLabel),
 		g.Map(s.Groups, func(group ConsoleStripGroup) g.Node {
-			need("console.ConsoleStripGroup", "a Label", group.Label)
+			need("console.ConsoleStripGroup", "a Title", group.Title)
 			if len(group.Items) == 0 {
-				panic("console.ConsoleStripGroup needs a ConsoleStripItem")
+				panic("console.ConsoleStripGroup needs Items")
 			}
 			return h.Div(h.Class("cui-console-strip-group"),
-				h.P(h.Class("cui-console-strip-header"), h.Span(h.Class("cui-console-strip-label"), g.Text(group.Label))),
+				h.P(h.Class("cui-console-strip-header"), h.Span(h.Class("cui-console-strip-title"), g.Text(group.Title))),
 				g.Map(group.Items, stripItem),
 			)
 		}),

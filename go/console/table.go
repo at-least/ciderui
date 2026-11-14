@@ -36,7 +36,7 @@ type ConsoleTableRow struct {
 
 func (t ConsoleTable) Render(w io.Writer) error {
 	if len(t.Columns) == 0 {
-		panic("console.ConsoleTable needs a ConsoleTableColumn")
+		panic("console.ConsoleTable needs Columns")
 	}
 	return h.Table(h.Class("cui-console-table"), g.Attr("data-stack"),
 		h.THead(h.Tr(g.Map(t.Columns, func(c ConsoleTableColumn) g.Node {

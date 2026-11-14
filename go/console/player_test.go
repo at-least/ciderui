@@ -21,7 +21,7 @@ const playerStill = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M
 
 // @external: the voices and the subtitles side by side, as the Apple TV app's
 func subtitlesMenu() *console.ConsoleChoiceMenu {
-	return &console.ConsoleChoiceMenu{ID: "subtitles", Columns: []console.ConsoleChoiceColumn{
+	return &console.ConsoleChoiceMenu{Columns: []console.ConsoleChoiceColumn{
 		{Column: "voices", Title: "Voices", Options: []console.ConsoleChoiceOption{
 			{Label: "English", Value: "en", Lang: "en", Checked: true},
 			{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant", Checked: false},
