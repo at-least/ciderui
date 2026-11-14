@@ -70,7 +70,6 @@ for (const [dir, { env, commands }] of Object.entries(PROBES)) {
     for (const [file, ...args] of commands) {
       execFileSync(file, args, { cwd: join(tree, 'reference', dir), env: { ...process.env, BROWSER: 'chromium', ...env }, stdio: ['ignore', 'pipe', 'pipe'] });
     }
-    console.log(`ok   ${dir} (${((Date.now() - start) / 1000).toFixed(1)}s)`);
   } catch (e) {
     failed.push(dir);
     console.log(`FAIL ${dir} (${((Date.now() - start) / 1000).toFixed(1)}s)\n${e.stdout ?? ''}${e.stderr ?? ''}${e.stdout === undefined ? e.message : ''}`);

@@ -4,9 +4,11 @@
 // held here too is the one whose result the host's node_modules can change: the image's
 // Tailwind is package-lock.json's by its build, the host's whatever was last installed,
 // and the browser steps read the dist that check holds. Then every browser step at
-// once, each one's output held and printed whole in this order, so two steps' lines
-// never interleave. Run one after another they took 359s on lab (surfaces 116s, probes
-// 69s, components 64s); at once, about the slowest.
+// once, each one's output held: a failed step's is printed whole in this order, so two
+// steps' lines never interleave, and a passed step's is dropped. The last line names
+// every failed step: it is the one a reader of the tail sees. Run one after another
+// they took 359s on lab (surfaces 116s, probes 69s, components 64s); at once, about
+// the slowest.
 import { spawn, spawnSync } from 'node:child_process';
 
 const STATIC = [
@@ -42,12 +44,15 @@ const runs = BROWSER.map((step) => new Promise((resolve) => {
   const t = Date.now();
   child.on('close', (code) => resolve({ step, code, out: Buffer.concat(out), seconds: Math.round((Date.now() - t) / 1000) }));
 }));
-let failed = 0;
+const failed = [];
 for (const run of runs) {
   const { step, code, out, seconds } = await run;
+  if (code === 0) continue;
+  failed.push(`${step} failed`);
   process.stdout.write(out);
-  if (code !== 0) failed++;
-  console.log(`gate: ${step} ${code === 0 ? 'passed' : `failed (exit ${code})`} in ${seconds}s`);
+  console.log(`gate: ${step} failed (exit ${code}) in ${seconds}s`);
 }
-console.log(`gate: ${BROWSER.length - failed} of ${BROWSER.length} browser steps passed in ${Math.round((Date.now() - started) / 1000)}s`);
-process.exit(failed ? 1 : 0);
+const seconds = Math.round((Date.now() - started) / 1000);
+if (failed.length) console.log(`gate: ${failed.join(', ')}; ${BROWSER.length - failed.length} of ${BROWSER.length} browser steps passed in ${seconds}s`);
+else console.log(`gate: ${BROWSER.length} browser steps passed in ${seconds}s`);
+process.exit(failed.length ? 1 : 0);

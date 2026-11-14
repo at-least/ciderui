@@ -8,6 +8,15 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { ROOT } from '../test/compile.mjs';
 
+const STEPS = 'node scripts/gate.mjs';
+const command = process.argv.length > 2 ? process.argv.slice(2) : ['sh', '-c', STEPS];
+// @trap: CASES picks some of one step's cases: the whole gate run with it would report
+// "passed" for cases it never ran
+if (process.env.CASES && process.argv.length <= 2) {
+  console.log(`docker.mjs: CASES runs one step, not the gate: CASES=${process.env.CASES} node scripts/docker.mjs node test/components.mjs`);
+  process.exit(1);
+}
+
 const IMAGE = 'ciderui-test';
 const DOCKERFILE = 'test/Dockerfile';
 const CONTEXT = ['package.json', 'package-lock.json'];
@@ -36,8 +45,6 @@ if (process.env.CIDERUI_CHROME === '1') {
   if (!/^sha256:[0-9a-f]{64}$/.test(image)) throw new Error(`docker gave no image ID for Chrome's: ${image}`);
 }
 
-const STEPS = 'node scripts/gate.mjs';
-const command = process.argv.length > 2 ? process.argv.slice(2) : ['sh', '-c', STEPS];
 const pass = ['CASES', 'UPDATE_GOLDEN'].filter((k) => process.env[k] !== undefined).flatMap((k) => ['-e', `${k}=${process.env[k]}`]);
 // @invariant: The image's user (root): what it writes comes back through tar as the
 // caller's own, so no --user (the repository's top, the image's WORKDIR, is

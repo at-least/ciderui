@@ -12,16 +12,19 @@ const PICK = process.env.CASES ? new RegExp(process.env.CASES) : null;
 // @trap: rewriting golden.json from some cases would drop the others' values
 if (UPDATE && PICK) throw new Error('UPDATE_GOLDEN=1 runs every case: drop CASES');
 
-const tested = COMPONENTS.filter(c => existsSync(join(ROOT, c.dir, `${c.name}.test.mjs`)));
+const tested = await Promise.all(COMPONENTS.filter(c => existsSync(join(ROOT, c.dir, `${c.name}.test.mjs`)))
+  .map(async c => ({ ...c, cases: (await import(pathToFileURL(join(ROOT, c.dir, `${c.name}.test.mjs`)))).cases })));
+if (PICK && !tested.some(c => c.cases.some(k => PICK.test(k.name)))) {
+  console.log(`components: CASES=${process.env.CASES} matches no case's name`);
+  process.exit(1);
+}
 const sheets = tested.map(c => `@import "${c.dir}/${c.name}.css";`).join('\n');
 // @external: fonts.css: without Inter the stack falls through to this Linux host's
 // Arial (Liberation Sans). Tailwind scans the test files too: their cases
 // write markup of their own (a type class around an example).
 const css = compile({ css: `@import "fonts.css";\n@import "index.css";\n${sheets}`, sources: ['components'] });
 
-for (const { name, dir } of tested) {
-  const file = join(ROOT, dir, `${name}.test.mjs`);
-  const { cases } = await import(pathToFileURL(file));
+for (const { name, dir, cases } of tested) {
   const goldenFile = join(ROOT, dir, 'golden.json');
   const golden = existsSync(goldenFile) ? JSON.parse(readFileSync(goldenFile, 'utf8')) : {};
   const used = new Set();
