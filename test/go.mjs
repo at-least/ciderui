@@ -32,7 +32,7 @@ const unformatted = run('gofmt', '-l', ...sources).trim();
 if (unformatted) fail(`${unformatted}\ngo: not gofmt'd: gofmt -w <file>`);
 run('go', 'vet', './...');
 // @invariant: a component's field left out of a struct literal is a default nobody chose
-run('go', 'tool', 'exhaustruct', '-i', 'github.com/at-least/ciderui/.*', './...');
+run('go', 'run', './go/cmd/ciderui-check', './...');
 // @invariant: a part's every branch has a test: a new panic with no Break, or a new
 // branch no example draws, stops here
 const tested = run('go', 'test', '-cover', './...').split('\n');
