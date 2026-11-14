@@ -8,9 +8,7 @@ import (
 )
 
 // @invariant: a utility named here reads a --cui-set-* that each set's
-// stylesheet points at one of its own --cui-c-* slots; a utility of
-// --color-* takes any color prefix (border-divider, text-link), one of
-// --text-color-* only text-, one of --background-color-* only bg-
+// stylesheet points at one of its own --cui-c-* slots
 var themeUtilities = []struct {
 	variable string
 	prefixes []string

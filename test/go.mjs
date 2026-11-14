@@ -42,9 +42,8 @@ for (const set of ['go/site', 'go/console']) {
 // @invariant: what a site with utilities of its own does: its Go tool writes utilities.css,
 // Tailwind builds its second stylesheet from there. Everything else reads the
 // checkout, so a stylesheet left out of go:embed fails here and nowhere else.
-// Written under this repository, as a site's target/ is beside its node_modules:
-// the written utilities.css imports Tailwind's own, which resolve from a
-// node_modules above it.
+// Written under this repository, as a site's target/ is beside its node_modules
+// (ownSheet's @trap).
 const written = mkdtempSync(join(ROOT, 'written-kit-'));
 process.on('exit', () => rmSync(written, { recursive: true }));
 run('go', 'run', './go/cmd/ciderui-css', written);

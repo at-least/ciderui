@@ -18,8 +18,6 @@ const read = (path) => readFileSync(join(ROOT, path), 'utf8');
 
 const build = (set) => {
   const parts = COMPONENTS.filter((c) => c.set === set);
-  // @invariant: COMPONENTS' name order: a part's rule over another's of the same
-  // specificity relies on it
   const partSheets = parts.map((c) => `${c.dir}/${c.name}.css`);
   const classes = ['type.css', ...partSheets].flatMap((sheet) => [...read(sheet).matchAll(/^@utility (cui-[\w-]+)/gm)].map((m) => m[1]));
   const imports = ['fonts.css', 'index.css', ...partSheets, `${set}.css`];

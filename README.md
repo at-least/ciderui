@@ -12,7 +12,7 @@ apple.com's look for websites, as one dependency: a small contract of CSS variab
 apple.com, measured (reference/: each value's probe, page, browser, date)
         │
         ▼
-tokens.css · theme.css · base.css · type.css · components/<set>/<part>.css
+tokens.css · theme.css · base.css · type.css · components/<set>/<part>/
         │
         │  scripts/build-css.mjs builds each set
         ▼
@@ -39,11 +39,11 @@ go get -tool github.com/at-least/ciderui/go/cmd/ciderui-check
 go tool ciderui-check ./...   # in your site's checks
 ```
 
-That is the whole setup: the page links the stylesheet and the module serves it, with its fonts, and the check fails your build on a field you left out, where it would otherwise render a default nobody chose. Use `site.Page` for a store or a marketing page. Each part's markup is its examples, in the directory named as its class without `cui-`: `components/site/btn/examples/*.html`, `components/console/console-banner/examples/*.html`; from your site's checkout they are under `$(go list -m -f '{{.Dir}}' github.com/at-least/ciderui)/`. The Go literal that writes each example is beside the part's type, in `go/<set>/<part>_test.go`. Under `go test`, every page `site.Page` or `console.ConsolePage` renders checks itself with `ciderui.CheckMarkup`; call it yourself on a fragment.
+That is the whole setup: the page links the stylesheet and the module serves it, with its fonts, and the check fails your build on a field you left out, where it would otherwise render a default nobody chose. Use `site.Page` for a store or a marketing page. Each part's markup is its examples, in the directory named as its class without `cui-`: `components/site/btn/examples/*.html`, `components/console/console-banner/examples/*.html`; from your site's checkout they are under `$(go list -m -f '{{.Dir}}' github.com/at-least/ciderui)/`. The Go literal that writes each example is beside the part's type: `go/site/btn_test.go`, `go/console/banner_test.go`. Under `go test`, every page `site.Page` or `console.ConsolePage` renders checks itself with `ciderui.CheckMarkup`; call it yourself on a fragment.
 
 ### Your own utilities
 
-A set's stylesheet ships the utilities its examples write and no other: any other utility a page writes needs a second stylesheet, which your site builds with Tailwind and adds in `Head`. The first command writes `utilities.css` and the `theme.css` it imports, from the version your `go.mod` pins; `utilities.css` imports Tailwind's own, so `target/ciderui` sits beside `node_modules` or below it. The last builds the entry:
+A set's stylesheet ships the utilities its examples write and no other: any other utility a page writes needs a second stylesheet, which your site builds with Tailwind and adds in `Head`. The first command writes `utilities.css` and the `theme.css` it imports, from the version your `go.mod` pins; `utilities.css` imports Tailwind's own, so `target/ciderui` is under the directory that holds `node_modules`. The last builds the entry:
 
 ```sh
 go run github.com/at-least/ciderui/go/cmd/ciderui-css target/ciderui

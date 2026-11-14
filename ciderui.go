@@ -45,7 +45,7 @@ func css(path string) string {
 }
 
 // WriteCSS writes under dir what a site's own utilities' stylesheet imports:
-// utilities.css and the one it names.
+// utilities.css and the kit's file it imports.
 func WriteCSS(dir string) error {
 	// @trap: wrapped alone: MkdirAll's error names the component that failed,
 	// not the directory asked for, and a file's write error names itself

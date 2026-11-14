@@ -6,8 +6,9 @@ import { fileURLToPath } from 'node:url';
 
 export const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
-// @invariant: sorted by name across the sets: the order the tests' stylesheets import
-// them in
+// @invariant: sorted by name across the sets: the order the tests' stylesheets and
+// dist's import them in, which a part's rule over another's of the same specificity
+// relies on
 export const COMPONENTS = ['site', 'console']
   .flatMap((set) => readdirSync(join(ROOT, 'components', set)).map((name) => ({ set, name, dir: `components/${set}/${name}` })))
   .sort((a, b) => (a.name < b.name ? -1 : 1));
