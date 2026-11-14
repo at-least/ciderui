@@ -14,9 +14,7 @@ type ConsoleList struct {
 }
 
 func (l ConsoleList) Render(w io.Writer) error {
-	if len(l.Rows) == 0 {
-		panic("console.ConsoleList needs Rows: a page with none shows a ConsoleEmpty")
-	}
+	needSome("console.ConsoleList", "Rows: a page with none shows a ConsoleEmpty", l.Rows)
 	return h.Div(h.Class("cui-console-list"), g.Map(l.Rows, ConsoleListRow.node)).Render(w)
 }
 

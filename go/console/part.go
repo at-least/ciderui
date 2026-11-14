@@ -13,6 +13,12 @@ func need(part, what, value string) {
 	}
 }
 
+func needSome[T any](part, what string, values []T) {
+	if len(values) == 0 {
+		panic(part + " needs " + what)
+	}
+}
+
 func optionalText(el func(...g.Node) g.Node, class, text string) g.Node {
 	if text == "" {
 		return nil

@@ -39,18 +39,14 @@ type ConsoleMenuSection struct {
 func menuSections(sections []ConsoleMenuSection) g.Node {
 	var nodes g.Group
 	for i, s := range sections {
-		if len(s.Items) == 0 {
-			panic("console.ConsoleMenuSection needs Items")
-		}
+		needSome("console.ConsoleMenuSection", "Items", s.Items)
 		switch {
 		case s.Title != "":
 			nodes = append(nodes, h.P(h.Class("cui-console-menu-title"), g.Text(s.Title)))
 		case i > 0:
 			nodes = append(nodes, h.Hr(h.Class("cui-console-menu-rule")))
 		}
-		for _, item := range s.Items {
-			nodes = append(nodes, item.node())
-		}
+		nodes = append(nodes, g.Map(s.Items, ConsoleMenuItem.node))
 	}
 	return nodes
 }
@@ -62,9 +58,7 @@ func (s ConsoleSidebar) Render(w io.Writer) error {
 	need("console.ConsoleSidebar", "a SkipLabel", s.SkipLabel)
 	need("console.ConsoleSidebar", "an OpenAriaLabel", s.OpenAriaLabel)
 	need("console.ConsoleSidebar", "a CloseAriaLabel", s.CloseAriaLabel)
-	if len(s.Sections) == 0 {
-		panic("console.ConsoleSidebar needs Sections")
-	}
+	needSome("console.ConsoleSidebar", "Sections", s.Sections)
 	return g.Group{
 		ConsoleBtn{Href: "#main", Label: s.SkipLabel, AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: ConsoleBtnVariantFilled, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: "cui-console-skip"},
 		h.Nav(h.Class("cui-console-sidebar"), h.ID(sidebarID), h.Popover(), h.Aria("label", s.AriaLabel),

@@ -32,9 +32,7 @@ type ConsoleEmpty struct {
 }
 
 func (e ConsoleEmpty) Render(w io.Writer) error {
-	if e.Size.value == "" {
-		panic("console.ConsoleEmpty needs a Size: ConsoleEmptySizeSmall (a card) or ConsoleEmptySizeLarge (a whole page)")
-	}
+	need("console.ConsoleEmpty", "a Size: ConsoleEmptySizeSmall (a card) or ConsoleEmptySizeLarge (a whole page)", e.Size.value)
 	need("console.ConsoleEmpty", "a Title", e.Title)
 	return h.Div(h.Class("cui-console-empty"), h.Data("size", e.Size.value), e.Attrs,
 		g.If(e.Size == ConsoleEmptySizeLarge, lucide.Inbox.Class("cui-console-empty-icon")),

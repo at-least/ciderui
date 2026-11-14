@@ -23,9 +23,7 @@ type ConsoleTab struct {
 
 func (t ConsoleTabs) Render(w io.Writer) error {
 	need("console.ConsoleTabs", "an AriaLabel", t.AriaLabel)
-	if len(t.Tabs) == 0 {
-		panic("console.ConsoleTabs needs Tabs")
-	}
+	needSome("console.ConsoleTabs", "Tabs", t.Tabs)
 	currents := 0
 	for _, tab := range t.Tabs {
 		if tab.Current {

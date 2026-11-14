@@ -71,9 +71,7 @@ type ConsoleStripItem struct {
 
 func (s ConsoleStrip) Render(w io.Writer) error {
 	need("console.ConsoleStrip", "an AriaLabel", s.AriaLabel)
-	if len(s.Groups) == 0 {
-		panic("console.ConsoleStrip needs Groups")
-	}
+	needSome("console.ConsoleStrip", "Groups", s.Groups)
 	currents := 0
 	for _, group := range s.Groups {
 		for _, item := range group.Items {
@@ -88,9 +86,7 @@ func (s ConsoleStrip) Render(w io.Writer) error {
 	return h.Nav(h.Class("cui-console-strip"), h.Aria("label", s.AriaLabel),
 		g.Map(s.Groups, func(group ConsoleStripGroup) g.Node {
 			need("console.ConsoleStripGroup", "a Title", group.Title)
-			if len(group.Items) == 0 {
-				panic("console.ConsoleStripGroup needs Items")
-			}
+			needSome("console.ConsoleStripGroup", "Items", group.Items)
 			return h.Div(h.Class("cui-console-strip-group"),
 				h.P(h.Class("cui-console-strip-header"), h.Span(h.Class("cui-console-strip-title"), g.Text(group.Title))),
 				g.Map(group.Items, stripItem),
@@ -102,9 +98,7 @@ func (s ConsoleStrip) Render(w io.Writer) error {
 func stripItem(item ConsoleStripItem) g.Node {
 	need("console.ConsoleStripItem", "an Href", item.Href)
 	need("console.ConsoleStripItem", "a Src", item.Src)
-	if item.Alt == "" {
-		panic("console.ConsoleStripItem needs an Alt: it is its link's name")
-	}
+	need("console.ConsoleStripItem", "an Alt: it is its link's name", item.Alt)
 	if item.Detail != "" && item.Caption == "" {
 		panic("console.ConsoleStripItem's Detail needs a Caption above it")
 	}

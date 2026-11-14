@@ -59,9 +59,7 @@ type ConsoleChoiceOption struct {
 }
 
 func (m ConsoleChoiceMenu) Render(w io.Writer) error {
-	if len(m.Columns) == 0 {
-		panic("console.ConsoleChoiceMenu needs Columns")
-	}
+	needSome("console.ConsoleChoiceMenu", "Columns", m.Columns)
 	columns := map[string]bool{}
 	for _, c := range m.Columns {
 		if c.Column == "" || c.Title == "" {
@@ -71,9 +69,7 @@ func (m ConsoleChoiceMenu) Render(w io.Writer) error {
 			panic("console.ConsoleChoiceMenu has two columns " + strconv.Quote(c.Column) + ": each needs a Column of its own")
 		}
 		columns[c.Column] = true
-		if len(c.Options) == 0 {
-			panic("console.ConsoleChoiceColumn needs Options")
-		}
+		needSome("console.ConsoleChoiceColumn", "Options", c.Options)
 		checked := 0
 		for _, o := range c.Options {
 			if o.Label == "" || o.Value == "" {
