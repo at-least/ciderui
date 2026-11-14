@@ -35,15 +35,15 @@ console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Scheme: console.Consol
 ```
 
 ```sh
-go get -tool github.com/GaijinEntertainment/go-exhaustruct/v3/cmd/exhaustruct
-go tool exhaustruct -i 'github.com/at-least/ciderui/.*' ./...   # in your site's checks
+go get -tool github.com/at-least/ciderui/go/cmd/ciderui-check
+go tool ciderui-check ./...   # in your site's checks
 ```
 
-That is the whole setup: the page links the stylesheet and the module serves it, with its fonts, and the check fails your build on a field you left out, where it would otherwise render a default nobody chose. Use `site.Page` for a store or a marketing page. Each part's markup is its examples, `components/<set>/<name>/examples/*.html`; from your site's checkout they are in `$(go list -m -f '{{.Dir}}' github.com/at-least/ciderui)/components/<set>/<name>/examples/`. Under `go test`, every page `site.Page` or `console.ConsolePage` renders checks itself with `ciderui.CheckMarkup`; call it yourself on a fragment.
+That is the whole setup: the page links the stylesheet and the module serves it, with its fonts, and the check fails your build on a field you left out, where it would otherwise render a default nobody chose. Use `site.Page` for a store or a marketing page. Each part's markup is its examples, in the directory named as its class without `cui-`: `components/site/btn/examples/*.html`, `components/console/console-banner/examples/*.html`; from your site's checkout they are under `$(go list -m -f '{{.Dir}}' github.com/at-least/ciderui)/`. The Go literal that writes each example is beside the part's type, in `go/<set>/<part>_test.go`. Under `go test`, every page `site.Page` or `console.ConsolePage` renders checks itself with `ciderui.CheckMarkup`; call it yourself on a fragment.
 
 ### Your own utilities
 
-A set's stylesheet ships the utilities its examples write and no other: any other utility a page writes needs a second stylesheet, which your site builds with Tailwind and adds in `Head`. The first command writes the two files the entry below imports, from the version your `go.mod` pins. The last builds the entry:
+A set's stylesheet ships the utilities its examples write and no other: any other utility a page writes needs a second stylesheet, which your site builds with Tailwind and adds in `Head`. The first command writes `utilities.css` and the `theme.css` it imports, from the version your `go.mod` pins; `utilities.css` imports Tailwind's own, so `target/ciderui` sits beside `node_modules` or below it. The last builds the entry:
 
 ```sh
 go run github.com/at-least/ciderui/go/cmd/ciderui-css target/ciderui
@@ -52,9 +52,6 @@ npx tailwindcss -i tailwind/site.css -o public/tailwind.css --minify
 ```
 
 ```css
-@layer theme, base, components, utilities;
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/utilities.css" layer(utilities) source(none);
 @import "../target/ciderui/utilities.css";
 @source "../pages/*.go";
 ```
