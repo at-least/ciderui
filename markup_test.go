@@ -50,8 +50,11 @@ func TestEveryExamplePasses(t *testing.T) {
 
 func TestCheckMarkupRefusesAClassTheKitLacks(t *testing.T) {
 	checkEach(t, []markupCase{
-		{"a misspelt class names its part's classes", `<li class="cui-list-detial">a</li>`, []string{`class "cui-list-detial" on <li class="cui-list-detial">: ciderui has no such class; the cui-list classes are cui-list, cui-list-aside, cui-list-detail, cui-list-row and cui-list-title`}},
-		{"a misspelt console class names its part's classes", `<span class="cui-console-badge-lg">a</span>`, []string{`class "cui-console-badge-lg" on <span class="cui-console-badge-lg">: ciderui has no such class; the only cui-console-badge class is cui-console-badge`}},
+		{"a misspelt class of a part names the nearest class", `<li class="cui-list-detial">a</li>`, []string{`class "cui-list-detial" on <li class="cui-list-detial">: ciderui has no such class; did you mean cui-list-detail`}},
+		{"a misspelt class of a part of many classes names the nearest class", `<div class="cui-console-player-headr">a</div>`, []string{`class "cui-console-player-headr" on <div class="cui-console-player-headr">: ciderui has no such class; did you mean cui-console-player-header`}},
+		{"a misspelt modifier names the nearest class", `<a class="cui-btn-blok">a</a>`, []string{`class "cui-btn-blok" on <a class="cui-btn-blok">: ciderui has no such class; did you mean cui-btn-block`}},
+		{"a class of a part with none near names its part's classes", `<li class="cui-list-zzzzzz">a</li>`, []string{`class "cui-list-zzzzzz" on <li class="cui-list-zzzzzz">: ciderui has no such class; the cui-list classes are cui-list, cui-list-aside, cui-list-detail, cui-list-row and cui-list-title`}},
+		{"a class of a part of one class with none near names that class", `<span class="cui-console-badge-lg">a</span>`, []string{`class "cui-console-badge-lg" on <span class="cui-console-badge-lg">: ciderui has no such class; the only cui-console-badge class is cui-console-badge`}},
 		{"a misspelt class among others, lines between them", "<p>a</p><b class=\"cui-console-badge\n\tcui-console-badg mt-1\">a</b>", []string{"class \"cui-console-badg\" on <b class=\"cui-console-badge\\n\\tcui-console-badg mt-1\">: ciderui has no such class; did you mean cui-console-badge"}},
 	})
 }

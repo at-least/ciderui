@@ -390,7 +390,7 @@ func CheckMarkup(html string) []string {
 			if other := otherSet(set); other != "" && vocabularies()[other].classes[c] {
 				problems = append(problems, fmt.Sprintf("class %q on %s: a %s class; this page links the %s stylesheet", c, on, other, set))
 			} else {
-				hint := cmp.Or(partClasses(c, known.classes), nearest(c, known.classes))
+				hint := cmp.Or(nearest(c, known.classes), partClasses(c, known.classes))
 				problems = append(problems, fmt.Sprintf("class %q on %s: %s has no such class%s", c, on, sheet, hint))
 			}
 		}
