@@ -30,7 +30,7 @@ func (r *recorder) Errorf(format string, args ...any) {
 }
 
 func TestCheckComparesTheExamplesLinesTrimmedAndJoined(t *testing.T) {
-	const path = "../go/internal/example/testdata/indented.html"
+	path := exampleOf(t, "<p>\n  <b>a b</b>\t\n</p>\n")
 	for _, c := range []struct {
 		name     string
 		node     g.Node
@@ -49,8 +49,6 @@ func TestCheckComparesTheExamplesLinesTrimmedAndJoined(t *testing.T) {
 	}
 }
 
-// @trap: an example of the test's own, by its path from components/: indented.html's
-// 17 bytes reach no difference with 40 bytes before it
 func exampleOf(t *testing.T, markup string) string {
 	components, err := filepath.Abs("../../../components")
 	if err != nil {
