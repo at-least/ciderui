@@ -1,18 +1,3 @@
-@import "./index.css";
-@import "./components/site/accordion/accordion.css";
-@import "./components/site/btn/btn.css";
-@import "./components/site/dl/dl.css";
-@import "./components/site/field/field.css";
-@import "./components/site/footer/footer.css";
-@import "./components/site/globalnav/globalnav.css";
-@import "./components/site/link/link.css";
-@import "./components/site/list/list.css";
-@import "./components/site/message/message.css";
-@import "./components/site/option/option.css";
-@import "./components/site/prose/prose.css";
-@import "./components/site/ribbon/ribbon.css";
-@import "./components/site/skip/skip.css";
-
 :root {
   --cui-set-text-body: var(--cui-c-text);
   --cui-set-text-secondary: var(--cui-c-text-2);

@@ -1,6 +1,5 @@
 import { spawnSync } from 'node:child_process';
 import { mkdtempSync, readdirSync, readFileSync, rmSync } from 'node:fs';
-import { tmpdir } from 'node:os';
 import { join, relative } from 'node:path';
 import { ROOT, ownSheet } from './compile.mjs';
 
@@ -43,9 +42,10 @@ for (const set of ['go/site', 'go/console']) {
 // @invariant: what a site with utilities of its own does: its Go tool writes utilities.css,
 // Tailwind builds its second stylesheet from there. Everything else reads the
 // checkout, so a stylesheet left out of go:embed fails here and nowhere else.
-// Written outside this repository, as a site's target/ is beside its node_modules
-// and not under them: a bare @import in a written file would resolve from there.
-const written = mkdtempSync(join(tmpdir(), 'written-kit-'));
+// Written under this repository, as a site's target/ is beside its node_modules:
+// the written utilities.css imports Tailwind's own, which resolve from a
+// node_modules above it.
+const written = mkdtempSync(join(ROOT, 'written-kit-'));
 process.on('exit', () => rmSync(written, { recursive: true }));
 run('go', 'run', './go/cmd/ciderui-css', written);
 const built = ownSheet(`${written}/utilities.css`, 'px-8 md:px-8 cui-btn cui-headline');

@@ -3,7 +3,7 @@ import { open, quit } from './browser.mjs';
 import { ref } from './reference.mjs';
 import { check, done } from './check.mjs';
 
-const css = compile({ css: '@import "site.css";', classes: 'dark:underline outline-none md:underline lg:underline xl:underline bg-secondary text-alt bg-alt font-sans' });
+const css = compile({ css: '@import "index.css";\n@import "site.css";', classes: 'dark:underline outline-none md:underline lg:underline xl:underline bg-secondary text-alt bg-alt font-sans' });
 const html = `<p id="text">Text <strong id="strong">bold</strong> <b id="b">bold</b></p><p id="sans" class="font-sans">sans</p><button id="button">Buy</button>
 <section id="dark" class="cui-dark dark:underline"><p id="in-dark" class="dark:underline">in a dark block</p>
   <div id="light" class="cui-light"><p id="in-light" class="dark:underline">light inside dark</p></div></section>

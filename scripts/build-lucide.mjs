@@ -5,6 +5,13 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { ROOT } from '../test/compile.mjs';
 
+const args = process.argv.slice(2);
+if (args.length > 1 || (args.length === 1 && args[0] !== '--check')) {
+  console.error('usage: node scripts/build-lucide.mjs [--check]');
+  process.exit(2);
+}
+const checking = args.length === 1;
+
 const OUT = join(ROOT, 'go/lucide/lucide.go');
 const PACKAGE = join(ROOT, 'node_modules/lucide-static');
 
@@ -65,7 +72,7 @@ func icon(inner string) Icon {
 }
 
 const text = source();
-if (process.argv[2] === '--check') {
+if (checking) {
   if (readFileSync(OUT, 'utf8') !== text) {
     console.log('go/lucide/lucide.go is stale: node scripts/build-lucide.mjs');
     process.exit(1);

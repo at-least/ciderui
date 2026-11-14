@@ -21,8 +21,8 @@ export const UTILITIES_ENTRY = (utilities) => {
   return block.replace('../target/ciderui/utilities.css', utilities).replace(/^@source .*\n/m, '');
 };
 
-// @trap: the entry under ROOT, not tmpdir: its bare `tailwindcss/...` imports resolve from
-// node_modules
+// @trap: utilities under ROOT, not tmpdir: its bare `tailwindcss/...` imports resolve from
+// a node_modules above it
 export function ownSheet(utilities, classes) {
   const dir = mkdtempSync(join(ROOT, 'own-'));
   try {

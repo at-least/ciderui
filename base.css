@@ -94,11 +94,3 @@
     animation-iteration-count: 1 !important;
   }
 }
-
-/* @invariant: a busy cui-console-btn's spinner turns by this; the
-   :not([aria-busy="true"])::before above keeps it turning under Reduce Motion */
-@keyframes cui-busy {
-  to {
-    transform: rotate(360deg);
-  }
-}

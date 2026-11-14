@@ -178,3 +178,11 @@
     }
   }
 }
+
+/* @invariant: base.css's :not([aria-busy="true"])::before keeps this turning under
+   Reduce Motion */
+@keyframes cui-busy {
+  to {
+    transform: rotate(360deg);
+  }
+}
