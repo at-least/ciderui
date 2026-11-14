@@ -11,10 +11,13 @@ import (
 // stylesheet points at one of its own --cui-c-* slots; a utility of
 // --color-* takes any color prefix (border-divider, text-link), one of
 // --text-color-* only text-, one of --background-color-* only bg-
-var themeUtilities = []struct{ variable, prefix string }{
-	{"--text-color-", "text"},
-	{"--background-color-", "bg"},
-	{"--color-", ""},
+var themeUtilities = []struct {
+	variable string
+	prefixes []string
+}{
+	{"--text-color-", []string{"text"}},
+	{"--background-color-", []string{"bg"}},
+	{"--color-", []string{"text", "bg", "border", "outline", "decoration", "fill", "stroke", "ring", "divide", "accent", "caret"}},
 }
 
 // @invariant: slotNames[set]["prefix --slot"] is the utility the set names
@@ -52,11 +55,7 @@ func themeNames() map[string][]themeName {
 			if !ok {
 				continue
 			}
-			prefixes := []string{t.prefix}
-			if t.prefix == "" {
-				prefixes = []string{"text", "bg", "border", "outline", "decoration", "fill", "stroke", "ring", "divide", "accent", "caret"}
-			}
-			for _, p := range prefixes {
+			for _, p := range t.prefixes {
 				names[setVariable] = append(names[setVariable], themeName{prefix: p, name: p + "-" + name})
 			}
 		}
