@@ -3,6 +3,8 @@
 //
 //	go run ./scripts/docker go test -count=1 -tags browser ./components/site/field
 //
+// With no command it runs the browser half of the gate.
+//
 // @external: Nothing is bind-mounted: the Docker daemon may be on another machine
 // (DOCKER_HOST=ssh://…), where a bind mount would read that machine's paths.
 package main
@@ -27,6 +29,10 @@ const (
 	dockerfile = "test/Dockerfile"
 )
 
+// @external: the browser half of the gate. -count=1: go test would serve a passed
+// package's result from its cache, which knows nothing of the browser
+var browserHalf = []string{"go", "test", "-count=1", "-tags", "browser", "./components/...", "./test/..."}
+
 // @invariant: the files the image's build reads: test/Dockerfile.dockerignore admits these
 // alone, and their bytes name the image
 var context = []string{"go.mod", "go.sum", "internal/pinned/pinned.go", "scripts/fetch/main.go"}
@@ -34,11 +40,11 @@ var context = []string{"go.mod", "go.sum", "internal/pinned/pinned.go", "scripts
 var imageID = regexp.MustCompile(`^sha256:[0-9a-f]{64}$`)
 
 func main() {
-	if len(os.Args) == 1 {
-		fmt.Fprintln(os.Stderr, "usage: go run ./scripts/docker <command> [argument…]")
-		os.Exit(2)
+	command := os.Args[1:]
+	if len(command) == 0 {
+		command = browserHalf
 	}
-	status, err := run(os.Args[1:])
+	status, err := run(command)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "docker:", err)
 		os.Exit(1)
@@ -136,11 +142,8 @@ func run(command []string) (int, error) {
 	// @invariant: The image's user (root): what it writes comes back through tar as the
 	// caller's own, so no --user (the repository's top, the image's WORKDIR, is root's).
 	// The stamp before the command: what is newer after it, the command wrote (the
-	// copied files keep the checkout's mtimes).
-	// @external: git init: the checkout's .git stays behind, and pointers_test.go reads
-	// the repository's files from git (untracked ones, .gitignore's left out); the
-	// container's own .git never comes back
-	const wrap = `git init -q && touch /tmp/stamp && "$@"; status=$?; find . -path ./.git -prune -o -type f -newer /tmp/stamp -print > /tmp/written && tar -cf /tmp/written.tar -T /tmp/written; exit $status`
+	// copied files keep the checkout's mtimes)
+	const wrap = `touch /tmp/stamp && "$@"; status=$?; find . -type f -newer /tmp/stamp > /tmp/written && tar -cf /tmp/written.tar -T /tmp/written; exit $status`
 	args = append(append(args, id, "sh", "-c", wrap, "run"), command...)
 	container, err := docker(args...)
 	if err != nil {
