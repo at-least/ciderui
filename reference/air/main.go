@@ -1,10 +1,10 @@
 // Command air runs a probe on air (the owner's Mac that nobody sits at, `ssh air`),
 // whose Safari is driven through safaridriver: never the Safari of the Mac in front
 // of someone. The probe's command is built here for air (darwin/arm64); the
-// repository goes to the same path on air (no .git or .claude), SITE and
-// INTER too where they name a path, the binary beside them; it runs in the probe's
-// directory with BROWSER, SITE, MODE, EXPECT and INTER passed through, and the
-// directory's results/ comes back. air's Safari takes automation (Develop > Allow
+// repository goes to ~/ciderui-air on air (no .git or .claude), SITE and INTER to
+// ~/ciderui-air-env/<name> where they name a path, the binary beside them; it runs in
+// the probe's directory with BROWSER, SITE, MODE, EXPECT and INTER passed through
+// (SITE and INTER as air's copies), and the directory's results/ comes back. air's Safari takes automation (Develop > Allow
 // Remote Automation, on).
 //
 //	BROWSER=safari go run ./reference/air ./reference/scheme
@@ -89,13 +89,26 @@ func run(args []string) (int, error) {
 	if !strings.HasPrefix(dir, build.Root+string(filepath.Separator)) {
 		return 0, fmt.Errorf("%s is not a package of the repository (%s)", pkg, build.Root)
 	}
+	// @trap: not this machine's path on air: lab's /home/newlix cannot be made on macOS
+	// ("mkdir: /home/newlix: Operation not supported", 2026-11-15); the binary finds the
+	// repository from the directory it runs in, so any place serves
+	const remoteRoot, remoteEnv = "ciderui-air", "ciderui-air-env"
+	rel, err := filepath.Rel(build.Root, dir)
+	if err != nil {
+		return 0, err
+	}
 	var pass []string
-	for _, k := range []string{"BROWSER", "SITE", "MODE", "EXPECT", "INTER"} {
+	for _, k := range []string{"BROWSER", "MODE", "EXPECT"} {
 		if v, set := os.LookupEnv(k); set {
 			pass = append(pass, k+"="+quote(v))
 		}
 	}
-	var paths []string
+	for _, k := range []string{"SITE", "INTER"} {
+		if _, set := os.LookupEnv(k); set {
+			pass = append(pass, k+`="$HOME"/`+remoteEnv+"/"+k)
+		}
+	}
+	paths := map[string]string{}
 	for _, k := range []string{"SITE", "INTER"} {
 		p, set := os.LookupEnv(k)
 		if !set {
@@ -104,7 +117,7 @@ func run(args []string) (int, error) {
 		if _, err := os.Stat(p); err != nil || !filepath.IsAbs(p) {
 			return 0, fmt.Errorf("%s must name an existing absolute path: %s", k, p)
 		}
-		paths = append(paths, p)
+		paths[k] = p
 	}
 
 	// @external: built here for air: air needs no Go, and the binary finds the
@@ -133,22 +146,18 @@ func run(args []string) (int, error) {
 	}
 	defer ssh("rm -rf " + lock)
 
-	mkdirs := []string{quote(build.Root), quote(filepath.Dir(remoteBinary))}
-	for _, p := range paths {
-		mkdirs = append(mkdirs, quote(filepath.Dir(p)))
-	}
-	if err := ssh("mkdir -p " + strings.Join(mkdirs, " ")); err != nil {
+	if err := ssh("mkdir -p " + strings.Join([]string{remoteRoot, remoteEnv, quote(filepath.Dir(remoteBinary))}, " ")); err != nil {
 		return 0, err
 	}
-	if err := sync(build.Root, host+":"+build.Root, true, ".git", ".claude"); err != nil {
+	if err := sync(build.Root, host+":"+remoteRoot, true, ".git", ".claude"); err != nil {
 		return 0, err
 	}
-	for _, p := range paths {
+	for k, p := range paths {
 		info, err := os.Stat(p)
 		if err != nil {
 			return 0, err
 		}
-		if err := sync(p, host+":"+p, info.IsDir()); err != nil {
+		if err := sync(p, host+":"+remoteEnv+"/"+k, info.IsDir()); err != nil {
 			return 0, err
 		}
 	}
@@ -164,7 +173,7 @@ func run(args []string) (int, error) {
 	// asleep, Safari's picture came back all black
 	probe := exec.Command("ssh", host, strings.Join([]string{
 		"pkill -x Safari; while pgrep -x Safari >/dev/null; do sleep 0.2; done;",
-		"cd " + quote(dir) + " &&",
+		"cd " + quote(remoteRoot+"/"+rel) + " &&",
 		"exec env " + strings.Join(pass, " ") + " caffeinate -du " + strings.Join(command, " "),
 	}, " "))
 	probe.Stdin, probe.Stdout, probe.Stderr = os.Stdin, os.Stdout, os.Stderr
@@ -176,11 +185,11 @@ func run(args []string) (int, error) {
 		}
 	}
 	results := filepath.Join(dir, "results")
-	if exec.Command("ssh", host, "test -d "+quote(results)).Run() == nil {
+	if exec.Command("ssh", host, "test -d "+quote(remoteRoot+"/"+rel+"/results")).Run() == nil {
 		if err := os.MkdirAll(results, 0o755); err != nil {
 			return status, err
 		}
-		if err := sync(host+":"+results, results, true); err != nil {
+		if err := sync(host+":"+remoteRoot+"/"+rel+"/results", results, true); err != nil {
 			return status, err
 		}
 	}
