@@ -63,7 +63,7 @@ export function compile({ css = '@import "index.css";', classes = '', sources = 
   }
 }
 
-// @invariant: what a site's page links: scripts/build-css.mjs --check, a step before the
+// @invariant: what a site's page links: go run ./scripts/build-css --check, a step before the
 // tests that read it, holds it to the sources
 export const shipped = (set) => readFileSync(join(ROOT, 'dist', `${set}.css`), 'utf8');
 

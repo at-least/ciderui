@@ -1,7 +1,6 @@
 package ciderui_test
 
 import (
-	"encoding/json"
 	"go/ast"
 	"go/parser"
 	"go/token"
@@ -12,6 +11,7 @@ import (
 
 	"github.com/at-least/ciderui/go/console"
 	"github.com/at-least/ciderui/go/site"
+	"github.com/at-least/ciderui/internal/pinned"
 )
 
 // @invariant: README's Go example is a literal a call could write: every field
@@ -82,27 +82,13 @@ func TestReadmesGoExampleCompiles(t *testing.T) {
 // @invariant: README's Tailwind is the one dist/ is built with: a site's second
 // stylesheet from another version could part from the first
 func TestReadmesTailwindIsThePinned(t *testing.T) {
-	var pinned struct {
-		DevDependencies map[string]string `json:"devDependencies"`
-	}
-	raw, err := os.ReadFile("package.json")
-	if err != nil {
-		t.Fatal(err)
-	}
-	if err := json.Unmarshal(raw, &pinned); err != nil {
-		t.Fatal(err)
-	}
 	readme, err := os.ReadFile("README.md")
 	if err != nil {
 		t.Fatal(err)
 	}
 	for _, name := range []string{"tailwindcss", "@tailwindcss/cli"} {
-		version, ok := pinned.DevDependencies[name]
-		if !ok {
-			t.Fatalf("package.json pins no %s", name)
-		}
-		if install := " " + name + "@" + version + " "; !strings.Contains(string(readme), install) {
-			t.Errorf("README.md installs no%s: package.json pins it", install)
+		if install := " " + name + "@" + pinned.TailwindVersion + " "; !strings.Contains(string(readme), install) {
+			t.Errorf("README.md installs no%s: internal/pinned pins it", install)
 		}
 	}
 }

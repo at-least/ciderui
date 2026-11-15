@@ -12,7 +12,7 @@ import (
 	"sync"
 )
 
-// @external: written by scripts/build-css.mjs; npm test fails a stale one
+// @external: written by scripts/build-css; the gate fails a stale one
 //
 //go:embed dist
 var dist embed.FS

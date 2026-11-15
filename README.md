@@ -14,7 +14,7 @@ apple.com, measured (reference/: each value's probe, page, browser, date)
         ▼
 tokens.css · theme.css · base.css · type.css · components/<set>/<part>/
         │
-        │  scripts/build-css.mjs builds each set
+        │  scripts/build-css builds each set
         ▼
 dist/site.css, dist/console.css — embedded in the Go module
         │  ciderui.Assets serves; site.Page, console.ConsolePage link;

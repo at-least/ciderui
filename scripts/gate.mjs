@@ -1,19 +1,12 @@
-// @invariant: The gate inside the test image: the browser steps only once the checks
-// that open no browser pass (the owner, 2026-11-14: a failure a fast check finds wastes
-// no browser run). test/go.mjs runs those on the host before the image starts; the one
-// held here too is the one whose result the host's node_modules can change: the image's
-// Tailwind is package-lock.json's by its build, the host's whatever was last installed,
-// and the browser steps read the dist that check holds. Then every browser step at
-// once, each one's output held: a failed step's is printed whole in this order, so two
-// steps' lines never interleave, and a passed step's is dropped. The last line names
-// every failed step: it is the one a reader of the tail sees. Run one after another
-// they took 359s on lab (surfaces 116s, probes 69s, components 64s); at once, about
-// the slowest.
-import { spawn, spawnSync } from 'node:child_process';
+// @invariant: The gate inside the test image, once test/go.mjs's checks that open no
+// browser pass on the host (the owner, 2026-11-14: a failure a fast check finds wastes
+// no browser run). Every browser step at once, each one's output held: a failed step's
+// is printed whole in this order, so two steps' lines never interleave, and a passed
+// step's is dropped. The last line names every failed step: it is the one a reader of
+// the tail sees. Run one after another they took 359s on lab (surfaces 116s, probes
+// 69s, components 64s); at once, about the slowest.
+import { spawn } from 'node:child_process';
 
-const STATIC = [
-  'node scripts/build-css.mjs --check',
-];
 const BROWSER = [
   'node test/type.mjs',
   'node test/page.mjs',
@@ -26,14 +19,6 @@ const BROWSER = [
   'node test/assets.mjs',
   'node test/settings.mjs',
 ];
-
-for (const step of STATIC) {
-  const { status } = spawnSync('sh', ['-c', step], { stdio: 'inherit' });
-  if (status !== 0) {
-    console.log(`gate: ${step} failed (exit ${status}); no browser step run`);
-    process.exit(1);
-  }
-}
 
 const started = Date.now();
 const runs = BROWSER.map((step) => new Promise((resolve) => {
