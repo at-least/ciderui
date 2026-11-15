@@ -21,7 +21,6 @@ function run(command, ...args) {
 // (the owner, 2026-11-14): a stale dist stops in a second, not after the browser steps
 run('go', 'run', './scripts/build-lucide', '--check');
 run('go', 'run', './scripts/build-css', '--check');
-run('node', 'test/tokens.mjs');
 // @trap: the module's Go files, not `.` nor a package's directory: gofmt walks a
 // directory, the top's node_modules with it, which go.mod's ignore keeps from go's
 // own commands

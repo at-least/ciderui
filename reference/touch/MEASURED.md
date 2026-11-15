@@ -2,18 +2,18 @@
 
 Is every control a finger presses big enough? The HIG's control sizes (Accessibility, Mobility, read 2026-10-29 from developer.apple.com's JSON for the page): on iOS 44x44pt by default, 28x28pt at least; on macOS 28x28pt, 20x20pt at least. App Store Connect's toolkit draws its controls 30px whatever the screen (its tokens name no larger control on its mobile page scale, `../asc/results/tokens.json`).
 
-`audit.mjs` hit-tests the target of each control in every component's example on a 390px touch screen (its comments hold the method) and exits 1 while one is under 44pt.
+`test/touch/` hit-tests the target of each control in every component's example on a 390px touch screen (its comments hold the method) and fails while one is under 44pt.
 
 The chips, hint, radio, head, sort links, small field and appearance choice named below went by DESIGN.md decisions 27, 31, 36 and 40, the gallery, local nav and swatches by decision 33; the counts are the record of their dates.
 
 ```sh
-node scripts/docker.mjs node reference/touch/audit.mjs             # a step of npm test
-node scripts/docker.mjs sh -c 'VERBOSE=1 node reference/touch/audit.mjs'   # every control's line
+node scripts/docker.mjs go test -count=1 -tags browser ./test/touch      # a step of the gate
+node scripts/docker.mjs go test -count=1 -v -tags browser ./test/touch   # every control's line
 ```
 
 ## What it showed (Chromium 151, 2026-10-29)
 
-On a touch screen a button of any size, a chip that is a link, a remove ×, a sort link: a transparent `::after` 44px at least each way, round it (the hint's way, apple.com's modal's close button's); a checkbox's transparent input 44px square on its 15px box; a radio's label 44px tall at least (not a larger target round it: stacked 12px apart, one reached the radio above); since 2026-10-31 a checkbox's `<label>` 44px tall at least too and a disclosure's line 44px each way, for the same reason (stacked 12px and 15px apart, the next one's target reached 14px into the checkbox above and 12px toward the summary above, and an opened summary's into its content; `audit.mjs` then: 0 under 28pt). Under 28pt: the links in running text (17px, exempt as text is: WCAG 2.5.8's inline exception), the small field (`data-size="sm"`, a page's choice), and the skip link while hidden (clipped, `clip-path: inset(50%)`, which clips its target's hits too).
+On a touch screen a button of any size, a chip that is a link, a remove ×, a sort link: a transparent `::after` 44px at least each way, round it (the hint's way, apple.com's modal's close button's); a checkbox's transparent input 44px square on its 15px box; a radio's label 44px tall at least (not a larger target round it: stacked 12px apart, one reached the radio above); since 2026-10-31 a checkbox's `<label>` 44px tall at least too and a disclosure's line 44px each way, for the same reason (stacked 12px and 15px apart, the next one's target reached 14px into the checkbox above and 12px toward the summary above, and an opened summary's into its content; `test/touch/` then: 0 under 28pt). Under 28pt: the links in running text (17px, exempt as text is: WCAG 2.5.8's inline exception), the small field (`data-size="sm"`, a page's choice), and the skip link while hidden (clipped, `clip-path: inset(50%)`, which clips its target's hits too).
 
 Left between 28 and 44pt, at the HIG's minimum and App Store Connect's own size: the tabs (30px; an underlined row on a phone scrolls sideways, and its scroll box would clip a target drawn outside it), the fields (30px), the menu's items (37px).
 
@@ -25,6 +25,4 @@ The owner asked for every console control at the HIG's 44pt default on a touch s
 
 A control's target counts every label it has (`control.labels`: one wrapping it or naming it by `for=`), so a hidden toggle is read at its chevron's label and a field under its floating label at either. A link inside a sentence (an inline `<a>` whose nearest block holds other text: an article's, a footnote mark's) is listed `text`, not counted: WCAG 2.5.8's inline exception. What cannot be tapped now is left out: hidden (`visibility`, a closed `<details>`), disabled, or taking no pointer with no label to take it. Then the site's controls under 44pt, at apple.com's own sizes, grew on a touch screen too (the owner: "Grow to 44"): the footer's directory and legal links, section titles and locale; the gallery's paddles, and its dots' row with room for each dot's target (the dots drawn as before); the local nav's title and menu button (its chevron where it was); the swatches, with room round each ring. Every set is in the gate: site 121 controls, the console 123, 0 under 44pt (2026-11-04).
 
-```sh
-node scripts/docker.mjs sh -c 'SETS=site node reference/touch/audit.mjs'   # some of the sets
-```
+(The audit's SETS, some of the sets, went with its move to Go: every set is read.)

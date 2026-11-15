@@ -40,7 +40,6 @@ const NOT_RUN = {
   'reference/tracking/': 'reads apple.com live (derive.mjs and tables.mjs read what it wrote)',
   'reference/air.mjs': 'Safari on air, over ssh',
   'reference/xcuitest.mjs': 'the iOS simulator',
-  'reference/touch/audit.mjs': 'a step of npm test of its own',
 };
 // @invariant: read by the probes above, not run on their own
 const READ = ['reference/browsers.mjs', ...Object.keys(PROBES).map((d) => `reference/${d}/`)];

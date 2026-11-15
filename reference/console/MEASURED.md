@@ -1,6 +1,6 @@
 # The console parts in each browser
 
-Do the console parts crashcart draws (the tabs' phone row, the page column) do in each browser what `test/components.mjs` holds them to in Chromium? `build.mjs` writes the pages: ciderui compiled as a site compiles it, each part's example in a frame of a set width (the index.html it writes), so its media queries read the frame's width in every browser, a phone's too in Safari, whose window is wider. `run.mjs` reads its claims (its header) through `../browsers.mjs`.
+Do the console parts crashcart draws (the tabs' phone row, the page column) do in each browser what their tests (`internal/harness`) hold them to in Chromium? `build.mjs` writes the pages: ciderui compiled as a site compiles it, each part's example in a frame of a set width (the index.html it writes), so its media queries read the frame's width in every browser, a phone's too in Safari, whose window is wider. `run.mjs` reads its claims (its header) through `../browsers.mjs`.
 
 | browser | 1 one row, scrolling | 2 fade: start, end, between | 3 focused tab brought in whole, its ring inside | 4 page column (900, 1200, 1920) |
 | --- | --- | --- | --- | --- |

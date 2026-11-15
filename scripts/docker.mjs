@@ -10,12 +10,6 @@ import { ROOT } from '../test/compile.mjs';
 
 const STEPS = 'node scripts/gate.mjs';
 const command = process.argv.length > 2 ? process.argv.slice(2) : ['sh', '-c', STEPS];
-// @trap: CASES picks some of one step's cases: the whole gate run with it would report
-// "passed" for cases it never ran
-if (process.env.CASES && process.argv.length <= 2) {
-  console.log(`docker.mjs: CASES runs one step, not the gate: CASES=${process.env.CASES} node scripts/docker.mjs node test/components.mjs`);
-  process.exit(1);
-}
 
 const IMAGE = 'ciderui-test';
 const DOCKERFILE = 'test/Dockerfile';
@@ -45,7 +39,7 @@ if (process.env.CIDERUI_CHROME === '1') {
   if (!/^sha256:[0-9a-f]{64}$/.test(image)) throw new Error(`docker gave no image ID for Chrome's: ${image}`);
 }
 
-const pass = ['CASES', 'UPDATE_GOLDEN'].filter((k) => process.env[k] !== undefined).flatMap((k) => ['-e', `${k}=${process.env[k]}`]);
+const pass = ['UPDATE_GOLDEN', 'CIDERUI_CHECKS'].filter((k) => process.env[k] !== undefined).flatMap((k) => ['-e', `${k}=${process.env[k]}`]);
 // @invariant: The image's user (root): what it writes comes back through tar as the
 // caller's own, so no --user (the repository's top, the image's WORKDIR, is
 // root's). The stamp before the command: what is newer after it, the command wrote
@@ -63,7 +57,7 @@ const q = (s) => `'${s.replaceAll("'", "'\\''")}'`;
 // ._ files
 const TAR_ENV = { ...process.env, COPYFILE_DISABLE: '1' };
 
-// @invariant: emptied here, not in test/pictures.mjs: that runs in the container, which
+// @invariant: emptied here, not in test/pictures/: that runs in the container, which
 // never holds this directory (excluded below), and the copy back only adds files
 rmSync(join(ROOT, 'test/pictures-failed'), { recursive: true, force: true });
 let status = 1;

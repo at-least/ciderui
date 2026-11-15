@@ -1,5 +1,5 @@
 // @external: BROWSER=safari|ios|chrome|chromium|firefox SITE=<dir> node run.mjs
-// Do the console parts test/components.mjs holds in Chromium do the same in
+// Do the console parts their tests (internal/harness) hold in Chromium do the same in
 // this browser? SITE is build.mjs's pages, served at http://127.0.0.1:8738
 // (the browsers: ../browsers.mjs). Each part in a frame of a set width
 // (index.html), so its media queries read the frame's width in every

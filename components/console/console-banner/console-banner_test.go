@@ -12,7 +12,7 @@ const (
 	b      = "component-Banner"
 	d      = b + "-anatomy"
 	banner = ".cui-console-banner"
-	link   = "a link in its sentence in the brand's blue fitted to the tints (--cui-c-console-brand-label-on-tint, held to 4.5:1 on each by test/tokens.mjs), not the console link's own"
+	link   = "a link in its sentence in the brand's blue fitted to the tints (--cui-c-console-brand-label-on-tint, held to 4.5:1 on each by test/tokens/), not the console link's own"
 )
 
 var (

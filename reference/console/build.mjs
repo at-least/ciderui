@@ -1,5 +1,5 @@
 // @invariant: node build.mjs <dir>
-// Writes the pages run.mjs serves: ciderui compiled as test/components.mjs
+// Writes the pages run.mjs serves: ciderui compiled as internal/harness
 // compiles it (every component's sheet), its fonts beside it, and a page per
 // console part from its example, each loaded in a frame of a set width by
 // index.html (run.mjs reads the frames).

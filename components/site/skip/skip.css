@@ -10,7 +10,7 @@
     &:not(:focus) {
       /* @invariant: the box a finger never meets is truly 1px, the button's
          border in it too: the touch audit reads a link this small focused
-         (reference/touch/audit.mjs) */
+         (test/touch/) */
       width: 1px;
       min-width: 0;
       height: 1px;

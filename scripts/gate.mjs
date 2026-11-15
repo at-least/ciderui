@@ -8,19 +8,10 @@
 import { spawn } from 'node:child_process';
 
 const BROWSER = [
-  'node test/type.mjs',
-  'node test/page.mjs',
-  'node test/components.mjs',
   // @external: -count=1: go test would serve a passed package's result from its cache,
   // which knows nothing of the browser
   'go test -count=1 -tags browser ./components/... ./test/...',
-  'node test/rules.mjs',
-  'node test/pictures.mjs',
-  'node test/surfaces.mjs',
-  'node reference/touch/audit.mjs',
   'node test/probes.mjs',
-  'node test/assets.mjs',
-  'node test/settings.mjs',
 ];
 
 const started = Date.now();
