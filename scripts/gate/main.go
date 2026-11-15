@@ -39,12 +39,12 @@ func main() {
 func run(name string, args ...string) (string, error) {
 	cmd := exec.Command(name, args...)
 	cmd.Dir = build.Root
-	var out bytes.Buffer
-	cmd.Stdout, cmd.Stderr = &out, &out
+	var stdout, both bytes.Buffer
+	cmd.Stdout, cmd.Stderr = io.MultiWriter(&stdout, &both), &both
 	if err := cmd.Run(); err != nil {
-		return "", fmt.Errorf("%s %s failed (%w)\n%s", name, strings.Join(args, " "), err, out.String())
+		return "", fmt.Errorf("%s %s failed (%w)\n%s", name, strings.Join(args, " "), err, both.String())
 	}
-	return out.String(), nil
+	return stdout.String(), nil
 }
 
 // @trap: a part's button class is a compile error, not a string: btn.go alone writes it.
