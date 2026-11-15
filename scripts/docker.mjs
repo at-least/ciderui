@@ -19,7 +19,7 @@ if (process.env.CASES && process.argv.length <= 2) {
 
 const IMAGE = 'ciderui-test';
 const DOCKERFILE = 'test/Dockerfile';
-const CONTEXT = ['package.json', 'package-lock.json'];
+const CONTEXT = ['package.json', 'package-lock.json', 'go.mod', 'go.sum', 'internal/pinned/pinned.go', 'scripts/fetch/main.go'];
 // @trap: test/Dockerfile.dockerignore, not a root .dockerignore: with this -f BuildKit
 // reads this one alone
 const admitted = readFileSync(join(ROOT, `${DOCKERFILE}.dockerignore`), 'utf8').split('\n').filter((l) => l.startsWith('!')).map((l) => l.slice(1));
@@ -52,7 +52,9 @@ const pass = ['CASES', 'UPDATE_GOLDEN'].filter((k) => process.env[k] !== undefin
 // (the copied files keep the checkout's mtimes)
 const wrap = 'touch /tmp/stamp && "$@"; status=$?; find . -type f -newer /tmp/stamp -not -path "./node_modules/*" > /tmp/written && tar -cf /tmp/written.tar -T /tmp/written; exit $status';
 const id = execFileSync('docker', [
-  'create', '--init', '--ipc=host', ...pass,
+  // @external: Go's build cache a volume on the daemon's machine, no bind mount: a run
+  // compiles what changed since the last, not the whole module
+  'create', '--init', '--ipc=host', '-v', 'ciderui-gocache:/root/.cache/go-build', ...pass,
   image, 'sh', '-c', wrap, 'run', ...command,
 ], { encoding: 'utf8' }).trim();
 const q = (s) => `'${s.replaceAll("'", "'\\''")}'`;

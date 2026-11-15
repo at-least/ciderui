@@ -3,3 +3,7 @@
 *
 !package.json
 !package-lock.json
+!go.mod
+!go.sum
+!internal/pinned/pinned.go
+!scripts/fetch/main.go

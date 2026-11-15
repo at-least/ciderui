@@ -131,6 +131,10 @@ func goCommentTags(t *testing.T, name string) {
 		if strings.HasPrefix(first, "Output:") {
 			continue
 		}
+		// @external: a build constraint is the toolchain's line, not a comment
+		if strings.HasPrefix(group.List[0].Text, "//go:build ") {
+			continue
+		}
 		if !decisionTag.MatchString(first) {
 			t.Errorf("%s: %q carries no @invariant/@trap/@external tag", fset.Position(group.Pos()), first)
 		}

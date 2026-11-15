@@ -26,10 +26,12 @@ run('node', 'test/tokens.mjs');
 // directory, the top's node_modules with it, which go.mod's ignore keeps from go's
 // own commands
 const each = (files) => `{{range .${files}}}{{$.Dir}}/{{.}}{{"\\n"}}{{end}}`;
-const sources = run('go', 'list', '-f', each('GoFiles') + each('TestGoFiles') + each('XTestGoFiles'), './...').split('\n').filter(Boolean).map((file) => relative(ROOT, file));
+// @trap: -tags browser: the browser tests' files are no package's otherwise, and gofmt
+// and vet would pass them unread
+const sources = run('go', 'list', '-tags', 'browser', '-f', each('GoFiles') + each('TestGoFiles') + each('XTestGoFiles'), './...').split('\n').filter(Boolean).map((file) => relative(ROOT, file));
 const unformatted = run('gofmt', '-l', ...sources).trim();
 if (unformatted) fail(`${unformatted}\ngo: not gofmt'd: gofmt -w <file>`);
-run('go', 'vet', './...');
+run('go', 'vet', '-tags', 'browser', './...');
 // @invariant: a component's field left out of a struct literal is a default nobody chose
 run('go', 'run', './go/cmd/ciderui-check', './...');
 // @invariant: a part's every branch has a test: a new panic with no Break, or a new

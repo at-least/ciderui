@@ -1,3 +1,5 @@
+import { appendFileSync } from 'node:fs';
+
 const failures = [];
 let passed = 0;
 
@@ -5,7 +7,10 @@ export function check(name, got, want, { tolerance = 1 / 32 } = {}) {
   return hold(same(got, want, tolerance), `${name}: ${got} (want ${want})`);
 }
 
+// @invariant: CIDERUI_CHECKS=<file> appends every check, passed or not, one line each, as
+// internal/check does: the two runs' checks diff line for line while the tests move to Go
 export function hold(ok, failure) {
+  if (process.env.CIDERUI_CHECKS) appendFileSync(process.env.CIDERUI_CHECKS, `${Boolean(ok)}\t${failure}\n`);
   if (ok) passed++;
   else failures.push(failure);
   return ok;

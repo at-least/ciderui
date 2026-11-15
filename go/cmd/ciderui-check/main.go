@@ -23,7 +23,9 @@ func main() {
 		fmt.Fprintln(os.Stderr, usage)
 		os.Exit(2)
 	}
-	check, err := analyzer.NewAnalyzer([]string{`github\.com/at-least/ciderui/.*`}, nil)
+	// @invariant: the repository's own test tooling (internal/) is no kit type a site
+	// writes: a case leaves out what it does not use
+	check, err := analyzer.NewAnalyzer([]string{`github\.com/at-least/ciderui/.*`}, []string{`github\.com/at-least/ciderui/internal/.*`})
 	if err != nil {
 		panic(err)
 	}
