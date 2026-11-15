@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	h "github.com/at-least/ciderui/internal/harness"
+	asc "github.com/at-least/ciderui/reference/asc/results"
 )
 
 const (
@@ -29,10 +30,10 @@ func TestCases(t *testing.T) {
 				{Target: "tbody td:nth-child(2)", Props: []string{"padding-top", "padding-bottom", "padding-left", "padding-right"}, TB: []string{tt + "-anatomy-TD-variant-size-md-paddingTop", tt + "-anatomy-TD-variant-size-md-paddingBottom", tt + "-anatomy-TD-paddingX", tt + "-anatomy-TD-paddingX"}},
 				{Target: ".cui-console-table", Props: []string{"color", "font-size", "line-height", "font-weight"}, TB: []string{tt + "-color", tt + "-variant-pageScale-desktop-textStyle-fontSize", tt + "-variant-pageScale-desktop-textStyle-lineHeight", tt + "-variant-pageScale-desktop-textStyle-fontWeight"}},
 				{Target: "tbody tr:first-child td:last-child", Props: []string{"padding-right"}, Golden: "the last cell flush at its end, as the analytics table's first is at its start"},
-				{Target: "tbody tr:first-child", Props: []string{"background-color"}, State: []string{"hover"}, ASC: h.ASCProbe("hover-row", "table.row")},
-				{Target: ".cui-console-table-figure:not(th)", Props: []string{"font-size", "line-height", "font-weight", "letter-spacing", "color", "text-align", "font-variant-numeric"}, ASC: h.ASCProbe("analytics", "table.figure")},
-				{Target: "tbody td:nth-child(2)", Props: []string{"vertical-align", "border-bottom-width", "border-bottom-style", "border-bottom-color"}, ASC: h.ASCProbe("analytics", "table.cell")},
-				{Target: "tbody td:nth-child(2)", Props: []string{"font-size", "line-height", "font-weight", "letter-spacing", "color", "text-align"}, ASC: h.ASCProbe("analytics", "table.text")},
+				{Target: "tbody tr:first-child", Props: []string{"background-color"}, State: []string{"hover"}, ASC: h.ASCProbe(asc.HoverRow, "table.row")},
+				{Target: ".cui-console-table-figure:not(th)", Props: []string{"font-size", "line-height", "font-weight", "letter-spacing", "color", "text-align", "font-variant-numeric"}, ASC: h.ASCProbe(asc.Analytics, "table.figure")},
+				{Target: "tbody td:nth-child(2)", Props: []string{"vertical-align", "border-bottom-width", "border-bottom-style", "border-bottom-color"}, ASC: h.ASCProbe(asc.Analytics, "table.cell")},
+				{Target: "tbody td:nth-child(2)", Props: []string{"font-size", "line-height", "font-weight", "letter-spacing", "color", "text-align"}, ASC: h.ASCProbe(asc.Analytics, "table.text")},
 				{Target: ".cui-console-table-detail", Props: []string{"font-size", "line-height", "font-weight", "color", "display"}, Golden: "a line under a cell's text, 12px on 16px, the secondary label: the toolkit's display list's subtitle at the table's small size"},
 				{Target: "tbody tr:first-child", Props: []string{"cursor"}, Golden: "a row that is a link, all of it"},
 				{Target: ".cui-console-table", Props: []string{"box-width"}, Golden: "the full width of its place"},

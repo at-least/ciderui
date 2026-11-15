@@ -1,6 +1,6 @@
 # Feedback Assistant, measured
 
-Apple's tracker for the reports developers send it: a list of items, each opened beside it, for a site that is one (crashcart, the owner's error tracker: its issues and an issue). Its pages hold the account's reports and only a signed-in browser reaches them (signed out, it sends the browser to Apple's sign-in), so they are read as App Store Connect's are (`../asc/`): in the owner's own Chrome, signed in by the owner, who asked for more of Apple's sites to be measured (2026-10-23: 「淺色，但找更多apple 網站」), through Claude in Chrome's javascript tool. `read.mjs` runs App Store Connect's reader and check over this folder's pages and results.
+Apple's tracker for the reports developers send it: a list of items, each opened beside it, for a site that is one (crashcart, the owner's error tracker: its issues and an issue). Its pages hold the account's reports and only a signed-in browser reaches them (signed out, it sends the browser to Apple's sign-in), so they are read as App Store Connect's are (`../asc/`): in the owner's own Chrome, signed in by the owner, who asked for more of Apple's sites to be measured (2026-10-23: 「淺色，但找更多apple 網站」), through Claude in Chrome's javascript tool. `go run ./reference/feedback-assistant` runs App Store Connect's reader and check (`internal/signedin`) over this folder's pages and results, each record Go, `results/<spec>.go`.
 
 An element is recorded by its tag, classes and role, never its text, link or label; the reader writes a run of six digits or more as `<app>` (App Store Connect's word for it), here the feedback's number. Read only: the pages were reached by the address bar; nothing was typed, clicked, saved or sent. The list's other items are Apple's announcements, unread, and opening one marks it read, so none was opened; the feedback opened is the owner's own, already read.
 
@@ -36,6 +36,7 @@ Chrome 154 on Linux at 2 device pixels; read 2026-10-23: `item` at 00:21 UTC in 
 Claude in Chrome's output hid the values of every probe named `author…` (as it hides a hex digest), so the byline's probes are named `byline`.
 
 ```sh
-node read.mjs <spec>           # the script to run in the page
-node read.mjs --check <spec>   # once results/<spec>.json is written
+go run ./reference/feedback-assistant <spec>                 # the script to run in the page
+go run ./reference/feedback-assistant --save <spec> <file>   # check what it handed back, write results/<spec>.go
+go run ./reference/feedback-assistant --check <spec>         # check results/<spec>.go
 ```

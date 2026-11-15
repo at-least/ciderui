@@ -35,9 +35,9 @@ Measured 2026-10-19, and again in every row 2026-10-22 with claims 13 and 14 (`r
 ## Running it
 
 ```sh
-BROWSER=safari node run.mjs      # Safari quit first (../browsers.mjs); and ios, chrome
-PW=…/playwright-chromium/index.mjs BROWSER=chromium node run.mjs
-BROWSER=firefox node run.mjs     # Playwright's Firefox (playwright-core install firefox), Xvfb and ImageMagick
+BROWSER=safari go run ./reference/dialog      # Safari quit first (internal/probe); and ios, chrome
+BROWSER=chromium go run ./reference/dialog
+BROWSER=firefox go run ./reference/dialog     # Playwright's Firefox (go run github.com/mxschmitt/playwright-go/cmd/playwright install firefox), Xvfb and ImageMagick
 ```
 
-`run.mjs` serves `page.html` on 127.0.0.1, clicks and presses through `../browsers.mjs` and fails if a claim does not hold.
+`main.go` serves `page.html` on 127.0.0.1, clicks and presses through `internal/probe` and fails if a claim does not hold.

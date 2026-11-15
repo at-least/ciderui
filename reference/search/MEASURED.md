@@ -51,16 +51,16 @@ What the probe found:
 - Safari on the Mac draws a 17px scrollbar: the flyout is the page's width (`clientWidth`), not the window's.
 - The simulator's picture has the phone's status bar above the page (62px): the page's place in it is found from the bar's color with the flyout closed.
 
-In Firefox (2026-10-22) the pictures are the virtual display's pixels (`../browsers.mjs`): Playwright's picture of a Firefox page leaves the curtain's blur out (the stripes' spread 76.5 under it, its ground drawn, the stripes sharp), so claim 9 failed in the first run, 2026-10-21; read from the display the spread is 0, from 127.5 closed.
+In Firefox (2026-10-22) the pictures are the virtual display's pixels (`internal/probe`): Playwright's picture of a Firefox page leaves the curtain's blur out (the stripes' spread 76.5 under it, its ground drawn, the stripes sharp), so claim 9 failed in the first run, 2026-10-21; read from the display the spread is 0, from 127.5 closed.
 
 Not measured: Firefox on macOS, a real iPhone or iPad; a tap outside the flyout on a phone (no tap clicks on the simulator); the flyout's motion (the component's tests read it in Chromium).
 
 ## Running it
 
 ```sh
-BROWSER=safari node run.mjs      # Safari quit first (../browsers.mjs); and ios, chrome
-PW=…/playwright-chromium/index.mjs BROWSER=chromium node run.mjs
-BROWSER=firefox node run.mjs     # Playwright's Firefox (playwright-core install firefox), Xvfb and ImageMagick
+BROWSER=safari go run ./reference/search      # Safari quit first (internal/probe); and ios, chrome
+BROWSER=chromium go run ./reference/search
+BROWSER=firefox go run ./reference/search     # Playwright's Firefox (go run github.com/mxschmitt/playwright-go/cmd/playwright install firefox), Xvfb and ImageMagick
 ```
 
-`run.mjs` serves `page.html` on 127.0.0.1 (`?sheet` the same page as a sheet), clicks and presses through `../browsers.mjs`, takes its pictures (`shot()`) and fails if a claim does not hold.
+`main.go` serves `page.html` on 127.0.0.1 (`?sheet` the same page as a sheet), clicks and presses through `internal/probe`, takes its pictures (`shot()`) and fails if a claim does not hold.

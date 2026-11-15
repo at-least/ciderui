@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	h "github.com/at-least/ciderui/internal/harness"
+	asc "github.com/at-least/ciderui/reference/asc/results"
 )
 
 const (
@@ -45,11 +46,11 @@ func TestCases(t *testing.T) {
 			Click:  []string{open},
 			Checks: []h.Check{
 				{Target: "#subtitles", Props: []string{"display"}, Golden: "its button opens it, a console popover (decision 27)"},
-				{Target: unchecked, Props: []string{"box-height", "border-top-left-radius", "padding-left", "padding-right"}, ASC: h.ASCProbe("hover-menu", "menu.item")},
-				{Target: unchecked + " .cui-console-menu-label", Props: label, ASC: h.ASCProbe("analytics", "menu.item.label")},
+				{Target: unchecked, Props: []string{"box-height", "border-top-left-radius", "padding-left", "padding-right"}, ASC: h.ASCProbe(asc.HoverMenu, "menu.item")},
+				{Target: unchecked + " .cui-console-menu-label", Props: label, ASC: h.ASCProbe(asc.Analytics, "menu.item.label")},
 				{Target: unchecked, Props: []string{"background-color", "border-top-width", "text-align", "font-family"}, Golden: "a <button> drawn as the menu's <a>: no ground, no edge, its label at its start in the page's face"},
 				{Target: checked, Props: []string{"background-color"}, Golden: "the chosen one unfilled, its check alone marking it, as tv.apple.com's chosen subtitles (tv-player-menu:chosen, no fill): a fill is the current page's"},
-				{Target: unchecked, Props: []string{"background-color"}, State: []string{"hover"}, ASC: h.ASCProbe("hover-menu", "menu.item")},
+				{Target: unchecked, Props: []string{"background-color"}, State: []string{"hover"}, ASC: h.ASCProbe(asc.HoverMenu, "menu.item")},
 				{Target: unchecked, Props: []string{"box-width"}, Golden: "a row the menu's width, as an <a> item is"},
 				{Target: checked + " .cui-console-menu-icon", Props: []string{"box-width", "margin-left"}, TB: []string{"component-DisplayList-anatomy-Item-anatomy-Indicator-variant-inlinePosition-start-width", "component-DisplayList-anatomy-Item-anatomy-Indicator-variant-inlinePosition-start-marginInlineStart"}},
 				{Target: checked + " .cui-console-menu-icon", Props: []string{"visibility", "color"}, Golden: "the check in the toolkit's indicator's place at its start, where tv.apple.com draws its own (tv-player-menu:chosen.check, 10px in); Lucide's check (decision 17); " + fitted},
@@ -69,7 +70,7 @@ func TestCases(t *testing.T) {
 				{Target: `#subtitles [data-column="voices"]`, Props: []string{"box-x", "box-width"}, Golden: "the first column at the popover's 16px side, as wide as its choices ask"},
 				{Target: `#subtitles [data-column="subtitles"]`, Props: []string{"box-x", "border-left-width", "border-left-style", "border-left-color", "margin-left", "padding-left"}, Golden: "the next after a rule, the menu's own 0.5px in its border color (cui-console-menu-rule), in the middle of the popover's 8px gap (cui-console-popover)"},
 				{Target: "#subtitles", Props: []string{"box-width", "max-width"}, Golden: "the popover as wide as its columns ask, past the one column's 350px"},
-				{Target: `[data-column="subtitles"] ` + unchecked + " .cui-console-menu-label", Props: label, ASC: h.ASCProbe("analytics", "menu.item.label")},
+				{Target: `[data-column="subtitles"] ` + unchecked + " .cui-console-menu-label", Props: label, ASC: h.ASCProbe(asc.Analytics, "menu.item.label")},
 				{Target: `[data-column="voices"] ` + checked + " .cui-console-menu-icon", Props: []string{"visibility"}, Golden: "each column its own check"},
 			},
 		},
@@ -116,21 +117,21 @@ func TestCases(t *testing.T) {
 			HTML:   h.Example("menu"),
 			Widths: desktop,
 			Checks: []h.Check{
-				{Target: current, Props: item, ASC: h.ASCProbe("analytics", "menu.current")},
-				{Target: current + " .cui-console-menu-label", Props: label, ASC: h.ASCProbe("analytics", "menu.current.label")},
-				{Target: sub, Props: []string{"box-height", "border-top-left-radius", "padding-right"}, ASC: h.ASCProbe("analytics", "menu.item")},
+				{Target: current, Props: item, ASC: h.ASCProbe(asc.Analytics, "menu.current")},
+				{Target: current + " .cui-console-menu-label", Props: label, ASC: h.ASCProbe(asc.Analytics, "menu.current.label")},
+				{Target: sub, Props: []string{"box-height", "border-top-left-radius", "padding-right"}, ASC: h.ASCProbe(asc.Analytics, "menu.item")},
 				{Target: sub, Props: []string{"background-color"}, Golden: "no ground at rest: transparent, where the toolkit writes its transparent white, oklch(1 0 0 / 0), the same nothing"},
-				{Target: sub + " .cui-console-menu-label", Props: label, ASC: h.ASCProbe("analytics", "menu.item.label")},
-				{Target: ".cui-console-menu-rule", Props: []string{"box-height", "background-color", "margin-top", "margin-bottom", "margin-left", "margin-right"}, ASC: h.ASCProbe("analytics", "menu.rule")},
-				{Target: plain, Props: []string{"background-color"}, State: []string{"hover"}, ASC: h.ASCProbe("hover-menu", "menu.item")},
-				{Target: plain + " .cui-console-menu-label", Props: []string{"color", "font-weight"}, State: []string{"hover"}, On: plain, ASC: h.ASCProbe("hover-menu", "menu.item.label")},
+				{Target: sub + " .cui-console-menu-label", Props: label, ASC: h.ASCProbe(asc.Analytics, "menu.item.label")},
+				{Target: ".cui-console-menu-rule", Props: []string{"box-height", "background-color", "margin-top", "margin-bottom", "margin-left", "margin-right"}, ASC: h.ASCProbe(asc.Analytics, "menu.rule")},
+				{Target: plain, Props: []string{"background-color"}, State: []string{"hover"}, ASC: h.ASCProbe(asc.HoverMenu, "menu.item")},
+				{Target: plain + " .cui-console-menu-label", Props: []string{"color", "font-weight"}, State: []string{"hover"}, On: plain, ASC: h.ASCProbe(asc.HoverMenu, "menu.item.label")},
 				{Target: ".cui-console-menu-title", Props: []string{"font-size", "line-height", "font-weight", "padding-top", "padding-bottom", "padding-left"}, TB: []string{menu + "-desktop-variant-menu-anatomy-Heading-textStyle-fontSize", menu + "-desktop-variant-menu-anatomy-Heading-textStyle-lineHeight", menu + "-desktop-variant-menu-anatomy-Heading-textStyle-fontWeight", menu + "-desktop-variant-menu-anatomy-Header-paddingBlockStart", menu + "-desktop-variant-menu-anatomy-Header-paddingBlockEnd", menu + "-desktop-variant-menu-anatomy-Header-paddingInline"}},
 				{Target: current, Props: []string{"column-gap"}, TB: []string{menu + "-desktop-variant-menu-anatomy-Item-gap"}},
 				{Target: current + " .cui-console-menu-icon", Props: []string{"box-width", "margin-left"}, TB: []string{"component-DisplayList-variant-variant-menu-anatomy-artStackWithSFSymbol-width", "component-DisplayList-variant-variant-menu-anatomy-ArtStack-anatomy-SFSymbol-marginInlineOffset"}},
 				{Target: current + " .cui-console-menu-icon", Props: []string{"color"}, Golden: fitted},
 				{Target: ".cui-console-menu-title", Props: []string{"color"}, Golden: fitted},
 				{Target: plain, Props: []string{"background-color"}, State: []string{"active"}, Golden: "pressed as hovered: the toolkit's pressed fill, oklch(55.4% 0.012 286 / 0.08), is no step of its palette, so it has no dark side to derive"},
-				{Target: ".cui-console-menu", Props: []string{"display"}, ASC: h.ASCProbe("analytics-page", "menu")},
+				{Target: ".cui-console-menu", Props: []string{"display"}, ASC: h.ASCProbe(asc.AnalyticsPage, "menu")},
 				{Target: ".cui-console-menu", Props: []string{"flex-direction"}, Golden: "a column of its items"},
 				{Target: sub + " .cui-console-menu-label", Props: []string{"white-space", "text-overflow", "overflow-wrap"}, Golden: "a long label wraps, whole: an ellipsis left two pages that begin alike unreadable apart"},
 			},

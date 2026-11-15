@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	h "github.com/at-least/ciderui/internal/harness"
+	asc "github.com/at-least/ciderui/reference/asc/results"
 )
 
 const stack = "tokens.css's stack, SF on Apple's platforms and Inter elsewhere, where the toolkit names -system-ui first (decision 4)"
@@ -65,7 +66,7 @@ func TestCases(t *testing.T) {
 				{Target: ".cui-console-page", Props: []string{"color", "background-color"}, TB: []string{"color-role-neutral-label-primary", "color-role-neutral-background-primary"}},
 				{Target: ".cui-console-page", Props: typeProps, TB: style("bodyRegular")},
 				{Target: ".cui-console-page", Props: []string{"font-family"}, Golden: stack},
-				{Target: ".cui-console-h4-emph", Props: []string{"font-size", "line-height", "font-weight", "letter-spacing", "color"}, ASC: h.ASCProbe("analytics-page", "section.heading")},
+				{Target: ".cui-console-h4-emph", Props: []string{"font-size", "line-height", "font-weight", "letter-spacing", "color"}, ASC: h.ASCProbe(asc.AnalyticsPage, "section.heading")},
 			},
 		},
 		{

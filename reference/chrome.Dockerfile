@@ -4,4 +4,4 @@
 # a result records the one it read in.
 ARG BASE
 FROM ${BASE}
-RUN npx -y playwright@1.62.1 install --with-deps chrome
+RUN go run github.com/mxschmitt/playwright-go/cmd/playwright install --with-deps chrome

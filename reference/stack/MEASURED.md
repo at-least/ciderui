@@ -14,18 +14,18 @@ Why these two names and not `system-ui`: `system-ui` is a font on every platform
 | Chromium 151, Linux | `inter-roman-latin.woff2` alone | 512.813px | 504.797px | 512.813px | Inter |
 | Firefox 153.0 (Playwright's), Linux | `inter-roman-latin.woff2` alone | 512.817px | 504.617px | 512.817px | Inter |
 
-Measured 2026-10-19 (`results/`), Firefox on 2026-10-22 (Playwright's build, Gecko with its automation patched in, in its window on a virtual X display: `../browsers.mjs`), with the stack before its four Traditional Chinese names after Arial; with them, Chromium 151 on Linux read the same (stack 512.813px, `inter-roman-latin.woff2` alone, 2026-11-06), the others not re-read. Not measured: Firefox on macOS (Playwright's does not run on the Mac over SSH), Windows, Android, a real iPhone.
+Measured 2026-10-19 (`results/`), Firefox on 2026-10-22 (Playwright's build, Gecko with its automation patched in, in its window on a virtual X display: `internal/probe`), with the stack before its four Traditional Chinese names after Arial; with them, Chromium 151 on Linux read the same (stack 512.813px, `inter-roman-latin.woff2` alone, 2026-11-06), the others not re-read. Not measured: Firefox on macOS (Playwright's does not run on the Mac over SSH), Windows, Android, a real iPhone.
 
 iOS Safari's text autosizing drew the stack's line 1.31 times as wide (645.435px) until the page had `-webkit-text-size-adjust: 100%`, which Tailwind's preflight (4.3.3) sets on every ciderui page; `page.html` sets it as the preflight does.
 
 ## The method
 
-`run.mjs` serves the repository on 127.0.0.1 and opens `page.html`, one line of text in the stack (17px) under the kit's `fonts.css`. `stack.js` waits two frames and a second, reads which `.woff2` files the page has fetched (resource timing) and the states of Inter's faces, then the line's width against the same text in `system-ui` and, loading it on purpose only then, in Inter.
+`main.go` serves the repository on 127.0.0.1 and opens `page.html`, one line of text in the stack (17px) under the kit's `fonts.css`. `stack.js` waits two frames and a second, reads which `.woff2` files the page has fetched (resource timing) and the states of Inter's faces, then the line's width against the same text in `system-ui` and, loading it on purpose only then, in Inter.
 
 ```sh
-BROWSER=safari EXPECT=sf node run.mjs      # and ios, chrome
-PW=…/playwright-chromium/index.mjs BROWSER=chromium EXPECT=inter node run.mjs
-BROWSER=firefox EXPECT=inter node run.mjs   # Playwright's Firefox: playwright-core install firefox
+BROWSER=safari EXPECT=sf go run ./reference/stack      # and ios, chrome
+BROWSER=chromium EXPECT=inter go run ./reference/stack
+BROWSER=firefox EXPECT=inter go run ./reference/stack   # Playwright's Firefox: go run github.com/mxschmitt/playwright-go/cmd/playwright install firefox
 ```
 
-`run.mjs` holds what each `EXPECT` checks. The browsers are `../browsers.mjs`'s; on the Mac it runs from a copy of the repository with `playwright-core` in a `node_modules` above it.
+`main.go` holds what each `EXPECT` checks. The browsers are `internal/probe`'s; on the Mac Playwright's driver comes with the command (`go run github.com/mxschmitt/playwright-go/cmd/playwright install --with-deps chrome` once for Chrome).

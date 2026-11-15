@@ -28,7 +28,7 @@ type Browser struct {
 func Launch(t testing.TB) *Browser {
 	t.Helper()
 	if os.Getenv("CIDERUI_CONTAINER") != "1" {
-		t.Fatal("the browser runs only in test/Dockerfile's image: node scripts/docker.mjs go test -tags browser <package>")
+		t.Fatal("the browser runs only in test/Dockerfile's image: go run ./scripts/docker go test -tags browser <package>")
 	}
 	pw, err := playwright.Run(&playwright.RunOptions{SkipInstallBrowsers: true})
 	if err != nil {

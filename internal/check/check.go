@@ -3,7 +3,6 @@ package check
 
 import (
 	"fmt"
-	"os"
 	"regexp"
 	"strconv"
 	"testing"
@@ -47,29 +46,10 @@ func Within(t testing.TB, name, got, want string, tolerance float64) bool {
 // Hold fails t with failure where ok is false.
 func Hold(t testing.TB, ok bool, failure string) bool {
 	t.Helper()
-	dump(ok, failure)
 	if !ok {
 		t.Error(failure)
 	}
 	return ok
-}
-
-// @invariant: CIDERUI_CHECKS=<file> appends every check, passed or not, to the file,
-// one line each: the Node harness wrote the same lines, so the two runs' checks diff
-// line for line while the tests move to Go
-func dump(ok bool, failure string) {
-	path := os.Getenv("CIDERUI_CHECKS")
-	if path == "" {
-		return
-	}
-	f, err := os.OpenFile(path, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0o644)
-	if err != nil {
-		panic(err)
-	}
-	defer f.Close()
-	if _, err := fmt.Fprintf(f, "%v\t%s\n", ok, failure); err != nil {
-		panic(err)
-	}
 }
 
 // Number is v as JavaScript writes it in a template, for the values a page reports:

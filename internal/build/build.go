@@ -9,20 +9,34 @@ import (
 	"os/exec"
 	"path/filepath"
 	"regexp"
-	"runtime"
 	"slices"
 	"strings"
 
 	"github.com/at-least/ciderui/internal/pinned"
 )
 
-// Root is the repository's top directory.
+// Root is the repository's top directory: the nearest above the working directory
+// that holds this module's go.mod.
+//
+// @invariant: found from the working directory, not from where this file was compiled: a
+// binary runs on another machine (a probe on air) or in a copy of the repository
+// (test/probes), and reads and writes the tree it runs in
 var Root = func() string {
-	_, file, _, ok := runtime.Caller(0)
-	if !ok {
-		panic("no caller")
+	dir, err := os.Getwd()
+	if err != nil {
+		panic(err)
 	}
-	return filepath.Join(filepath.Dir(file), "../..")
+	for {
+		mod, err := os.ReadFile(filepath.Join(dir, "go.mod"))
+		if err == nil && strings.HasPrefix(string(mod), "module github.com/at-least/ciderui\n") {
+			return dir
+		}
+		parent := filepath.Dir(dir)
+		if parent == dir {
+			panic("build: no github.com/at-least/ciderui go.mod above " + dir)
+		}
+		dir = parent
+	}
 }()
 
 // Sets are the component sets, each a directory of components/ and a dist/ sheet.
@@ -102,8 +116,8 @@ func Compile(s Sheet) (string, error) {
 		return "", fmt.Errorf("build: %w", err)
 	}
 	var entry strings.Builder
-	// @external: the standalone binary's own Tailwind: the bare import is the one the npm
-	// CLI resolved from node_modules/tailwindcss/index.css, dist/ byte-identical
+	// @external: the standalone binary's own Tailwind: dist/ byte-identical to the npm
+	// CLI's build from node_modules/tailwindcss/index.css (2026-11-15)
 	entry.WriteString(`@import "tailwindcss" source(none);` + "\n")
 	fmt.Fprintf(&entry, "@source inline(%s);\n", classes)
 	for _, src := range s.Sources {

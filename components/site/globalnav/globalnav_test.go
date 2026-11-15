@@ -8,6 +8,8 @@ import (
 	"testing"
 
 	h "github.com/at-least/ciderui/internal/harness"
+	"github.com/at-least/ciderui/internal/reference"
+	apple "github.com/at-least/ciderui/reference/apple.com/results"
 )
 
 const (
@@ -47,11 +49,11 @@ var (
 	menuOwn    = h.Props(slices.DeleteFunc(slices.Clone(buttonsOwn), func(p string) bool { return p == "box-top" }), []string{"box-left", "box-width"})
 )
 
-func apple(page, probe string, at map[int]int) *h.Apple {
+func appleAt(page reference.Page, probe string, at map[int]int) *h.Apple {
 	return &h.Apple{Page: page, Probe: probe, State: "", At: at, As: nil}
 }
 
-func appleState(page, probe, state string, at map[int]int) *h.Apple {
+func appleState(page reference.Page, probe, state string, at map[int]int) *h.Apple {
 	return &h.Apple{Page: page, Probe: probe, State: state, At: at, As: nil}
 }
 
@@ -62,9 +64,9 @@ func TestCases(t *testing.T) {
 			HTML:   postNav,
 			Widths: desktop,
 			Checks: []h.Check{
-				{Target: post, Props: []string{"font-size", "line-height", "font-weight", "color"}, Apple: h.AppleProbe("home", "nav.link")},
-				{Target: post, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe("home", "nav.link", "hover")},
-				{Target: post, Props: h.Props(flex, inline, []string{"box-height", "text-decoration-line"}), Apple: h.AppleProbe("home", "nav.link-box")},
+				{Target: post, Props: []string{"font-size", "line-height", "font-weight", "color"}, Apple: h.AppleProbe(apple.Home, "nav.link")},
+				{Target: post, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe(apple.Home, "nav.link", "hover")},
+				{Target: post, Props: h.Props(flex, inline, []string{"box-height", "text-decoration-line"}), Apple: h.AppleProbe(apple.Home, "nav.link-box")},
 				{Target: link, Props: buttonsOwn, Golden: asLink},
 				{Target: post, Props: buttonsOwn, Golden: asLink},
 			},
@@ -77,8 +79,8 @@ func TestCases(t *testing.T) {
 			Height:        900,
 			ReducedMotion: true,
 			Checks: []h.Check{
-				{Target: post, Props: h.Props([]string{"font-size", "line-height", "font-weight", "color", "display"}, h.Padding, []string{"box-height"}), Apple: h.AppleProbe("home", "menu.link")},
-				{Target: post, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe("home", "menu.link", "hover")},
+				{Target: post, Props: h.Props([]string{"font-size", "line-height", "font-weight", "color", "display"}, h.Padding, []string{"box-height"}), Apple: h.AppleProbe(apple.Home, "menu.link")},
+				{Target: post, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe(apple.Home, "menu.link", "hover")},
 				{Target: link2, Props: menuOwn, Golden: asLink},
 				{Target: post, Props: menuOwn, Golden: asLink},
 			},
@@ -88,16 +90,16 @@ func TestCases(t *testing.T) {
 			HTML:   nav,
 			Widths: desktop,
 			Checks: []h.Check{
-				{Target: ".cui-globalnav", Props: []string{"box-height", "background-color", "backdrop-filter"}, Apple: h.AppleProbe("home", "nav")},
-				{Target: ".cui-globalnav-content", Props: h.Props([]string{"max-width"}, inline), Apple: h.AppleProbe("home", "nav.content")},
-				{Target: list, Props: h.Props(flex, []string{"margin-left", "margin-right", "box-height"}), Apple: h.AppleProbe("home", "nav.list")},
-				{Target: link, Props: []string{"font-size", "line-height", "font-weight", "color"}, Apple: h.AppleProbe("home", "nav.link")},
-				{Target: link, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe("home", "nav.link", "hover")},
-				{Target: link, Props: h.Props(flex, inline, []string{"box-height", "text-decoration-line"}), Apple: h.AppleProbe("home", "nav.link-box")},
-				{Target: wordmark, Props: h.Props(flex, inline, []string{"box-height", "box-left", "color"}), Apple: h.AppleProbe("home", "nav.logo")},
-				{Target: wordmark, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe("home", "nav.logo", "hover")},
+				{Target: ".cui-globalnav", Props: []string{"box-height", "background-color", "backdrop-filter"}, Apple: h.AppleProbe(apple.Home, "nav")},
+				{Target: ".cui-globalnav-content", Props: h.Props([]string{"max-width"}, inline), Apple: h.AppleProbe(apple.Home, "nav.content")},
+				{Target: list, Props: h.Props(flex, []string{"margin-left", "margin-right", "box-height"}), Apple: h.AppleProbe(apple.Home, "nav.list")},
+				{Target: link, Props: []string{"font-size", "line-height", "font-weight", "color"}, Apple: h.AppleProbe(apple.Home, "nav.link")},
+				{Target: link, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe(apple.Home, "nav.link", "hover")},
+				{Target: link, Props: h.Props(flex, inline, []string{"box-height", "text-decoration-line"}), Apple: h.AppleProbe(apple.Home, "nav.link-box")},
+				{Target: wordmark, Props: h.Props(flex, inline, []string{"box-height", "box-left", "color"}), Apple: h.AppleProbe(apple.Home, "nav.logo")},
+				{Target: wordmark, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe(apple.Home, "nav.logo", "hover")},
 				{Target: wordmark, Props: typeP, Golden: name},
-				{Target: button, Props: []string{"box-height"}, Apple: apple("home", "nav.menutrigger", triggerAt)},
+				{Target: button, Props: []string{"box-height"}, Apple: appleAt(apple.Home, "nav.menutrigger", triggerAt)},
 			},
 		},
 		{
@@ -105,15 +107,15 @@ func TestCases(t *testing.T) {
 			HTML:   nav,
 			Widths: []int{390},
 			Checks: []h.Check{
-				{Target: ".cui-globalnav", Props: []string{"box-height"}, Apple: h.AppleProbe("home", "nav")},
-				{Target: ".cui-globalnav", Props: []string{"background-color", "backdrop-filter"}, Apple: apple("home", "nav", groundAt)},
-				{Target: ".cui-globalnav-content", Props: h.Props([]string{"max-width"}, inline), Apple: h.AppleProbe("home", "nav.content")},
-				{Target: list, Props: []string{"box-height"}, Apple: h.AppleProbe("home", "nav.list")},
-				{Target: wordmark, Props: h.Props(flex, inline, []string{"box-height", "box-left", "color"}), Apple: h.AppleProbe("home", "nav.logo")},
+				{Target: ".cui-globalnav", Props: []string{"box-height"}, Apple: h.AppleProbe(apple.Home, "nav")},
+				{Target: ".cui-globalnav", Props: []string{"background-color", "backdrop-filter"}, Apple: appleAt(apple.Home, "nav", groundAt)},
+				{Target: ".cui-globalnav-content", Props: h.Props([]string{"max-width"}, inline), Apple: h.AppleProbe(apple.Home, "nav.content")},
+				{Target: list, Props: []string{"box-height"}, Apple: h.AppleProbe(apple.Home, "nav.list")},
+				{Target: wordmark, Props: h.Props(flex, inline, []string{"box-height", "box-left", "color"}), Apple: h.AppleProbe(apple.Home, "nav.logo")},
 				{Target: wordmark, Props: typeP, Golden: name},
-				{Target: button, Props: h.Props(flex, []string{"box-height", "box-left", "color", "opacity", "cursor"}), Apple: h.AppleProbe("home", "nav.menutrigger")},
-				{Target: button, State: []string{"hover"}, Props: []string{"opacity"}, Apple: h.AppleProbe("home", "nav.menutrigger", "hover")},
-				{Target: bars[0], Props: []string{"stroke-width"}, Apple: h.AppleProbe("home", "nav.menutrigger-bread")},
+				{Target: button, Props: h.Props(flex, []string{"box-height", "box-left", "color", "opacity", "cursor"}), Apple: h.AppleProbe(apple.Home, "nav.menutrigger")},
+				{Target: button, State: []string{"hover"}, Props: []string{"opacity"}, Apple: h.AppleProbe(apple.Home, "nav.menutrigger", "hover")},
+				{Target: bars[0], Props: []string{"stroke-width"}, Apple: h.AppleProbe(apple.Home, "nav.menutrigger-bread")},
 				{Target: list + " > li:nth-child(2)", Props: []string{"box-height"}, Golden: "the close button is the opened menu's"},
 				{Target: link, Props: []string{"box-height"}, Golden: "to 833px the links are the menu's rows, not the bar's: apple.com's bar holds the logo, the search, the bag and the button"},
 			},
@@ -123,10 +125,10 @@ func TestCases(t *testing.T) {
 			HTML:   nav,
 			Widths: []int{1600, 390},
 			Checks: []h.Check{
-				{Target: ".cui-globalnav", Props: []string{"user-select"}, Apple: h.AppleProbe("nav-select", "nav")},
-				{Target: list, Props: []string{"user-select"}, Apple: h.AppleProbe("nav-select", "list")},
-				{Target: wordmark, Props: []string{"user-select"}, Apple: h.AppleProbe("nav-select", "logo")},
-				{Target: button, Props: []string{"user-select"}, Apple: apple("nav-select", "menutrigger", map[int]int{1600: 390})},
+				{Target: ".cui-globalnav", Props: []string{"user-select"}, Apple: h.AppleProbe(apple.NavSelect, "nav")},
+				{Target: list, Props: []string{"user-select"}, Apple: h.AppleProbe(apple.NavSelect, "list")},
+				{Target: wordmark, Props: []string{"user-select"}, Apple: h.AppleProbe(apple.NavSelect, "logo")},
+				{Target: button, Props: []string{"user-select"}, Apple: appleAt(apple.NavSelect, "menutrigger", map[int]int{1600: 390})},
 			},
 		},
 		{
@@ -136,7 +138,7 @@ func TestCases(t *testing.T) {
 			Widths:        []int{390},
 			Height:        900,
 			ReducedMotion: true,
-			Checks:        []h.Check{{Target: link2, Props: []string{"line-height", "letter-spacing"}, Apple: h.AppleProbe("home-tw", "menu.link")}},
+			Checks:        []h.Check{{Target: link2, Props: []string{"line-height", "letter-spacing"}, Apple: h.AppleProbe(apple.HomeTw, "menu.link")}},
 		},
 		{
 			Name:          "nav boundary",
@@ -155,18 +157,18 @@ func TestCases(t *testing.T) {
 			Height:        900,
 			ReducedMotion: true,
 			Checks: slices.Concat([]h.Check{
-				{Target: ".cui-globalnav", Props: []string{"box-height"}, Apple: h.AppleProbe("home", "menu.open")},
-				{Target: list, Props: []string{"background-color", "box-top", "box-left", "box-height"}, Apple: h.AppleProbe("home", "menu.content")},
-				{Target: list, Props: []string{"padding-bottom"}, Apple: h.AppleProbe("home", "menu.list")},
-				{Target: link, Props: []string{"padding-top", "box-top", "box-height"}, Apple: h.AppleProbe("home", "menu.link-first")},
-				{Target: link2, Props: h.Props([]string{"font-size", "line-height", "font-weight", "color", "display"}, h.Padding, []string{"box-top", "box-height"}), Apple: h.AppleProbe("home", "menu.link")},
-				{Target: link2, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe("home", "menu.link", "hover")},
+				{Target: ".cui-globalnav", Props: []string{"box-height"}, Apple: h.AppleProbe(apple.Home, "menu.open")},
+				{Target: list, Props: []string{"background-color", "box-top", "box-left", "box-height"}, Apple: h.AppleProbe(apple.Home, "menu.content")},
+				{Target: list, Props: []string{"padding-bottom"}, Apple: h.AppleProbe(apple.Home, "menu.list")},
+				{Target: link, Props: []string{"padding-top", "box-top", "box-height"}, Apple: h.AppleProbe(apple.Home, "menu.link-first")},
+				{Target: link2, Props: h.Props([]string{"font-size", "line-height", "font-weight", "color", "display"}, h.Padding, []string{"box-top", "box-height"}), Apple: h.AppleProbe(apple.Home, "menu.link")},
+				{Target: link2, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe(apple.Home, "menu.link", "hover")},
 				// @external: apple.com fades the links themselves; ciderui their items
-				{Target: list + " > li:nth-child(1)", Props: []string{"opacity", "visibility"}, Apple: h.AppleProbe("home", "menu.logo")},
-				{Target: closeX, Props: []string{"color", "opacity", "box-height", "box-left", "box-top"}, Apple: h.AppleProbe("home", "menu.trigger")},
+				{Target: list + " > li:nth-child(1)", Props: []string{"opacity", "visibility"}, Apple: h.AppleProbe(apple.Home, "menu.logo")},
+				{Target: closeX, Props: []string{"color", "opacity", "box-height", "box-left", "box-top"}, Apple: h.AppleProbe(apple.Home, "menu.trigger")},
 				{Target: closeX, Props: []string{"box-width"}, Golden: "apple.com's 48px square, where the menu's button is (home:nav.menutrigger at 390px)"},
 			}, xLines(), []h.Check{
-				{Target: "html", Props: []string{"overflow-y"}, Apple: h.AppleProbe("home", "menu.root")},
+				{Target: "html", Props: []string{"overflow-y"}, Apple: h.AppleProbe(apple.Home, "menu.root")},
 			}),
 		},
 		{
@@ -176,7 +178,7 @@ func TestCases(t *testing.T) {
 			Widths: []int{390},
 			Height: 900,
 			Checks: []h.Check{
-				{Target: list + " > li:nth-child(1)", Props: h.Props(h.Motion, []string{"transition-delay"}), Apple: h.AppleProbe("home", "menu.logo")},
+				{Target: list + " > li:nth-child(1)", Props: h.Props(h.Motion, []string{"transition-delay"}), Apple: h.AppleProbe(apple.Home, "menu.logo")},
 				{Target: list + " > li:nth-child(3)", Props: []string{"transition-duration", "animation-name", "animation-duration", "animation-delay"}, Golden: rows},
 				{Target: list, Props: h.Motion, Golden: "apple.com's ground and height in 450ms (home:menu.open's animations; its computed transition names its ground alone, its height's declared in a state between)"},
 				{Target: x[0], Props: h.Motion, Golden: "apple.com's lines turn in 0.24s (their SVG animation, reference/icons/)"},
@@ -190,7 +192,7 @@ func TestCases(t *testing.T) {
 			Height:        900,
 			ReducedMotion: true,
 			Checks: []h.Check{
-				{Target: list, Props: []string{"box-height"}, Apple: h.AppleProbe("home", "nav.list")},
+				{Target: list, Props: []string{"box-height"}, Apple: h.AppleProbe(apple.Home, "nav.list")},
 				{Target: list, Props: []string{"position", "background-color"}, Golden: "closed, the bar's row again (reference/popover/)"},
 				{Target: "html", Props: []string{"overflow-y"}, Golden: "the page scrolls again"},
 				{Target: link, Props: []string{"box-height"}, Golden: "the links are the menu's again"},
@@ -284,9 +286,9 @@ func TestCases(t *testing.T) {
 			Name: "dark",
 			HTML: dark,
 			Checks: []h.Check{
-				{Target: ".cui-globalnav", Props: []string{"background-color", "backdrop-filter"}, Apple: apple("newsroom", "nav", groundAt)},
-				{Target: button, Props: []string{"color", "opacity"}, Apple: apple("newsroom", "nav.menutrigger", triggerAt)},
-				{Target: button, State: []string{"hover"}, Props: []string{"opacity"}, Apple: appleState("newsroom", "nav.menutrigger", "hover", triggerAt)},
+				{Target: ".cui-globalnav", Props: []string{"background-color", "backdrop-filter"}, Apple: appleAt(apple.Newsroom, "nav", groundAt)},
+				{Target: button, Props: []string{"color", "opacity"}, Apple: appleAt(apple.Newsroom, "nav.menutrigger", triggerAt)},
+				{Target: button, State: []string{"hover"}, Props: []string{"opacity"}, Apple: appleState(apple.Newsroom, "nav.menutrigger", "hover", triggerAt)},
 			},
 		},
 		{
@@ -294,8 +296,8 @@ func TestCases(t *testing.T) {
 			HTML:   dark,
 			Widths: desktop,
 			Checks: []h.Check{
-				{Target: link, Props: []string{"color"}, Apple: h.AppleProbe("newsroom", "nav.link")},
-				{Target: link, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe("newsroom", "nav.link", "hover")},
+				{Target: link, Props: []string{"color"}, Apple: h.AppleProbe(apple.Newsroom, "nav.link")},
+				{Target: link, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe(apple.Newsroom, "nav.link", "hover")},
 			},
 		},
 		{
@@ -306,10 +308,10 @@ func TestCases(t *testing.T) {
 			Height:        900,
 			ReducedMotion: true,
 			Checks: []h.Check{
-				{Target: list, Props: []string{"background-color"}, Apple: h.AppleProbe("newsroom", "menu.content")},
-				{Target: link2, Props: []string{"color"}, Apple: h.AppleProbe("newsroom", "menu.link")},
-				{Target: link2, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe("newsroom", "menu.link", "hover")},
-				{Target: closeX, Props: []string{"color", "opacity"}, Apple: h.AppleProbe("newsroom", "menu.trigger")},
+				{Target: list, Props: []string{"background-color"}, Apple: h.AppleProbe(apple.Newsroom, "menu.content")},
+				{Target: link2, Props: []string{"color"}, Apple: h.AppleProbe(apple.Newsroom, "menu.link")},
+				{Target: link2, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe(apple.Newsroom, "menu.link", "hover")},
+				{Target: closeX, Props: []string{"color", "opacity"}, Apple: h.AppleProbe(apple.Newsroom, "menu.trigger")},
 			},
 		},
 		{

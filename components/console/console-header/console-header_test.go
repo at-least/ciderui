@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	h "github.com/at-least/ciderui/internal/harness"
+	asc "github.com/at-least/ciderui/reference/asc/results"
 )
 
 const s = ".cui-console-header"
@@ -17,7 +18,7 @@ func TestCases(t *testing.T) {
 			HTML:   h.Example("page"),
 			Widths: []int{1200, 390},
 			Checks: []h.Check{
-				{Target: s, Props: []string{"display", "align-items", "row-gap", "column-gap"}, ASC: h.ASCProbe("head", "section.head")},
+				{Target: s, Props: []string{"display", "align-items", "row-gap", "column-gap"}, ASC: h.ASCProbe(asc.Head, "section.head")},
 				{Target: s, Props: []string{"margin-bottom"}, Golden: "none of its own: the room under it is its container's (rule 6), App Store Connect's 20px a section's (console-section)"},
 				{Target: s + " > :first-child", Props: []string{"flex-grow", "min-width"}, Golden: "the title takes the room, the controls at the row's end (App Store Connect's title 941px of 1105px)"},
 				{Target: s + " h1", Props: []string{"font-size", "line-height"}, Golden: "the title's type its own class's (cui-console-h2), none from the header: App Store Connect's section heading is its h4, 18px on 22px"},

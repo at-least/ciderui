@@ -2,8 +2,6 @@ module github.com/at-least/ciderui
 
 go 1.26.0
 
-ignore ./node_modules
-
 require (
 	github.com/GaijinEntertainment/go-exhaustruct/v3 v3.3.1
 	github.com/mxschmitt/playwright-go v0.6201.0

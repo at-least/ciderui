@@ -12,13 +12,13 @@ The probe behind ciderui's dark sections. apple.com's dark is a section's, not t
 | Chromium 151, Linux | light | dark | dark | light |
 | Firefox 153.0 (Playwright's), Linux | light | dark | dark | light |
 
-Each element's color and ground are exactly the pair's side (`rgb(29, 29, 31)` on `rgb(255, 255, 255)`, `rgb(245, 245, 247)` on `rgb(0, 0, 0)`); measured 2026-10-19 (`results/`), Firefox 2026-10-22 (Playwright's build, in its window on a virtual X display: `../browsers.mjs`). The pairs are unregistered custom properties, whose computed value is the `light-dark()` itself, resolved where it is used. Not measured: Firefox on macOS.
+Each element's color and ground are exactly the pair's side (`rgb(29, 29, 31)` on `rgb(255, 255, 255)`, `rgb(245, 245, 247)` on `rgb(0, 0, 0)`); measured 2026-10-19 (`results/`), Firefox 2026-10-22 (Playwright's build, in its window on a virtual X display: `internal/probe`). The pairs are unregistered custom properties, whose computed value is the `light-dark()` itself, resolved where it is used. Not measured: Firefox on macOS.
 
 ## Running it
 
 ```sh
-BROWSER=safari node run.mjs      # and ios, chrome, firefox (Playwright's: playwright-core install firefox)
-PW=…/playwright-chromium/index.mjs BROWSER=chromium node run.mjs
+BROWSER=safari go run ./reference/scheme      # and ios, chrome, firefox (Playwright's: go run github.com/mxschmitt/playwright-go/cmd/playwright install firefox)
+BROWSER=chromium go run ./reference/scheme
 ```
 
-`run.mjs` serves `page.html` on 127.0.0.1, reads each element's color and ground (`scheme.js`) and fails if one is not its side of the pair. The browsers are `../browsers.mjs`'s.
+`main.go` serves `page.html` on 127.0.0.1, reads each element's color and ground (`scheme.js`) and fails if one is not its side of the pair. The browsers are `internal/probe`'s.

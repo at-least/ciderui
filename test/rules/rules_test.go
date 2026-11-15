@@ -5,10 +5,7 @@
 package rules
 
 import (
-	"encoding/json"
 	"fmt"
-	"os"
-	"path/filepath"
 	"slices"
 	"strconv"
 	"strings"
@@ -18,7 +15,8 @@ import (
 	"github.com/at-least/ciderui/internal/build"
 	"github.com/at-least/ciderui/internal/check"
 	"github.com/at-least/ciderui/internal/harness"
-	"github.com/at-least/ciderui/internal/reference"
+	apple "github.com/at-least/ciderui/reference/apple.com/results"
+	"github.com/at-least/ciderui/reference/tracking/table"
 )
 
 // @invariant: rule 5: what (hover: hover) gates, a touch screen never matches
@@ -104,19 +102,15 @@ func TestRules(t *testing.T) {
 		}
 		check.Equal(t, set+": every :hover sits inside (hover: hover) (rule 5)", strings.Join(hoverOutsideItsQuery(css), " | "), "")
 	}
-	raw, err := os.ReadFile(filepath.Join(build.Root, "reference/tracking/cui-tracking.json"))
-	if err != nil {
-		t.Fatal(err)
-	}
 	// @external: map[string]any: playwright-go's argument serializer panics on any other
 	// map type ("interface {} is map[string]float64, not map[string]interface {}")
-	var tracking map[string]any
-	if err := json.Unmarshal(raw, &tracking); err != nil {
-		t.Fatal(err)
+	tracking := map[string]any{}
+	for _, r := range table.CUITracking {
+		tracking[strconv.Itoa(r.Size)] = r.Em
 	}
 	ring := map[string]string{}
 	for _, prop := range harness.Outline {
-		v, err := reference.Apple("home", "button", 1200, prop, "focus-visible")
+		v, err := apple.Home.Value("button", 1200, prop, "focus-visible")
 		if err != nil {
 			t.Fatal(err)
 		}

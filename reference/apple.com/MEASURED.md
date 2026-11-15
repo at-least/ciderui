@@ -2,7 +2,7 @@
 
 What ciderui's tokens and components are held to: apple.com's computed styles, read off its live pages in a browser. Not its stylesheets: apple.com's CSS is Apple's, unlicensed and unversioned (its files carry cache hashes, not versions), so none of it is in this repository; what is recorded is what an element computes to (a color, a size, a radius), with the page, the element and the date beside it.
 
-Measured 2026-10-19 in Playwright's Chromium 151 on Linux, with `--font-render-hinting=none` (`../browsers.mjs`; without it Linux hints every glyph to a whole pixel, `../tracking/`); apple.com draws its own SF Pro webfonts there (`../stack/`), so text-sized boxes are the Mac's.
+Measured 2026-10-19 in Playwright's Chromium 151 on Linux, with `--font-render-hinting=none` (`internal/probe`; without it Linux hints every glyph to a whole pixel, `../tracking/`); apple.com draws its own SF Pro webfonts there (`../stack/`), so text-sized boxes are the Mac's.
 
 ## The pages
 
@@ -251,16 +251,16 @@ Typed into (`search-typed:*`, read 2026-10-21 with the owner's leave to type on 
 ## Running it
 
 ```sh
-PW=…/playwright-chromium/index.mjs PAGE=home node measure.mjs   # results/home.json
-node report.mjs home [probe-prefix]                               # its values across the widths
+PAGE=home go run ./reference/apple.com                   # results/home.go, and results/pages.go
+go run ./reference/apple.com report home [probe-prefix]   # its values across the widths
 ```
 
-`pages/<name>.mjs` is a page's spec: its URL and its probes; `measure.mjs`'s header holds what a probe can do and what reading it cannot show, `report.mjs` a class a page does not define. What a reading taught the harness that neither holds:
+`pages/<name>.go` is a page's spec: its URL and its probes; `main.go`'s header holds what a probe can do and what reading it cannot show, `report.go` a class a page does not define. A record is Go (`reference.Page`, generated: measure rewrites it, never a hand). What a reading taught the harness that neither holds:
 
 - The store's elements rename after hydration (`rf-ccard-content-eyebrow` in the served HTML is `rf-ccard-content-header-eyebrow` in the page).
 - A touch screen is emulated before the page's load, as its script reads it then (`html.touch`); emulated after, the page keeps `no-touch` and the store's card lifts.
 - The iPhone page's gallery marks its current item once its script has run: read with no `wait`, it had none (`tap-iphone`).
 
-Not measured on tv.apple.com: its player in Playwright's Chromium, which cannot play it (2026-11-04, the trailers' page: `requestMediaKeySystemAccess('com.widevine.alpha')` NotSupportedError in Chromium 151, granted in Chrome 157; 8s after a trailer's click Chromium had made no `<video>`, its player 0 by 0 at 0 opacity, Chrome one, playing), so `tv-player*` run in Chrome (`../chrome.Dockerfile`: `CIDERUI_CHROME=1 node ../../scripts/docker.mjs …`); a range's thumb and track as computed (`getComputedStyle` with `::-webkit-slider-thumb` gave the input's own), so its custom properties are read instead; below 1200px, a touch screen and Safari; the audio menu, which is the platform's own `<select>` laid transparent over its glyph; an episode's player, which needs a subscription and a sign-in (UNVERIFIED that it is the trailers' player). Its subtitles' cues: read once on 2026-11-05 in Chrome by a one-off script (not kept as a spec; nothing to record), the first trailer playing with the subtitles menu's On chosen: its `<video>`'s text tracks, the English one `showing` (the browser draws its cues, `::cue`, which `getComputedStyle` does not reach), had no active cue at any of six reads from 9s to 22s in, and no element of the page or its shadow roots held cue text; the console's cue is muse's (`console-player`'s goldens).
+Not measured on tv.apple.com: its player in Playwright's Chromium, which cannot play it (2026-11-04, the trailers' page: `requestMediaKeySystemAccess('com.widevine.alpha')` NotSupportedError in Chromium 151, granted in Chrome 157; 8s after a trailer's click Chromium had made no `<video>`, its player 0 by 0 at 0 opacity, Chrome one, playing), so `tv-player*` run in Chrome (`../chrome.Dockerfile`: `CIDERUI_CHROME=1 node scripts/docker …`); a range's thumb and track as computed (`getComputedStyle` with `::-webkit-slider-thumb` gave the input's own), so its custom properties are read instead; below 1200px, a touch screen and Safari; the audio menu, which is the platform's own `<select>` laid transparent over its glyph; an episode's player, which needs a subscription and a sign-in (UNVERIFIED that it is the trailers' player). Its subtitles' cues: read once on 2026-11-05 in Chrome by a one-off script (not kept as a spec; nothing to record), the first trailer playing with the subtitles menu's On chosen: its `<video>`'s text tracks, the English one `showing` (the browser draws its cues, `::cue`, which `getComputedStyle` does not reach), had no active cue at any of six reads from 9s to 22s in, and no element of the page or its shadow roots held cue text; the console's cue is muse's (`console-player`'s goldens).
 
 Not measured: what a tap leaves on apple.com on iOS (WebDriver's taps do not tap there, `../popover/`; XCUITest's, which do, `../tap/`, read none of its pages), the checkout (its bag refused to a headless browser), the bag's flyout with something in the bag, and every page in Safari.

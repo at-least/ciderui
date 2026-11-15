@@ -19,7 +19,8 @@ var cssComment = regexp.MustCompile(`(?s)/\*.*?\*/`)
 // TestCommentsCarryDecisionTags holds every comment in the repository to
 // DESIGN.md's Comments section. Excepted: go/lucide/lucide.go and
 // scripts/build-lucide, which writes that file's per-icon godoc as text of
-// its own, and dist/, the build's output.
+// its own, dist/, the build's output, and a Go file whose header says it is
+// generated (reference/apple.com/results/).
 func TestCommentsCarryDecisionTags(t *testing.T) {
 	for _, file := range repositoryFiles(t) {
 		if file == "go/lucide/lucide.go" || file == "scripts/build-lucide/main.go" || strings.HasPrefix(file, "dist/") {
@@ -36,7 +37,7 @@ func TestCommentsCarryDecisionTags(t *testing.T) {
 					t.Errorf("%s: %q carries no @invariant/@trap/@external tag", file, first)
 				}
 			}
-		case path.Ext(file) == ".mjs" || path.Ext(file) == ".js":
+		case path.Ext(file) == ".js":
 			report(t, lineCommentTags(file, readOrFatal(t, file), "//"))
 		case strings.HasSuffix(file, "Dockerfile"):
 			report(t, lineCommentTags(file, readOrFatal(t, file), "#"))
@@ -68,6 +69,9 @@ func goCommentTags(t *testing.T, name string) {
 	file, err := parser.ParseFile(fset, name, nil, parser.ParseComments)
 	if err != nil {
 		t.Fatal(err)
+	}
+	if ast.IsGenerated(file) {
+		return
 	}
 	free := map[*ast.CommentGroup]bool{file.Doc: true}
 	names := func(spec ast.Spec) (out []*ast.Ident) {
@@ -183,7 +187,7 @@ func lineCommentTags(name, text, mark string) []string {
 }
 
 // @external: only a backtick outside a quoted string, a regular expression
-// and a comment opens or closes a template literal: test/probes.mjs names a
+// and a comment opens or closes a template literal: a probe once named a
 // path with three of them inside one regular expression, and a comment's
 // paired ones name code. A slash opens a regular expression only where an
 // expression can start, not after a value (division).
@@ -267,36 +271,36 @@ func (s scan) line(text string) scan {
 }
 
 func TestLineCommentTagsFail(t *testing.T) {
-	if got := lineCommentTags("a.mjs", "// @trap: a rejected way\nconst x = 1;\n", "//"); got != nil {
+	if got := lineCommentTags("a.js", "// @trap: a rejected way\nconst x = 1;\n", "//"); got != nil {
 		t.Errorf("a tagged comment: %q", got)
 	}
-	if got := lineCommentTags("a.mjs", "// plain\nconst x = 1;\n", "//"); len(got) != 1 {
+	if got := lineCommentTags("a.js", "// plain\nconst x = 1;\n", "//"); len(got) != 1 {
 		t.Errorf("an untagged comment: %q", got)
 	}
 	payload := "const page = `<script>\n// the page's own comment, payload\n</script>`;\n// @external: after it\n"
-	if got := lineCommentTags("probe.mjs", payload, "//"); got != nil {
+	if got := lineCommentTags("probe.js", payload, "//"); got != nil {
 		t.Errorf("a template literal's comment lines: %q", got)
 	}
-	if got := lineCommentTags("a.mjs", "// plain\nconst s = `open\n", "//"); len(got) != 2 {
+	if got := lineCommentTags("a.js", "// plain\nconst s = `open\n", "//"); len(got) != 2 {
 		t.Errorf("an open template literal: %q", got)
 	}
 	if got := lineCommentTags("Dockerfile", "# @external: the image\nRUN x\n", "#"); got != nil {
 		t.Errorf("a Dockerfile's tagged comment: %q", got)
 	}
 	regex := "// @invariant: before it\nconst paths = [...html.matchAll(/['`](\\.{1,2}\\/[^'`\\n]*)['`]/g)];\n"
-	if got := lineCommentTags("probes.mjs", regex, "//"); got != nil {
+	if got := lineCommentTags("probes.js", regex, "//"); got != nil {
 		t.Errorf("backticks inside a regular expression: %q", got)
 	}
 	interpolated := "const run = `(async () => {\n  const w = ${frame('tabs')};\n  // payload\n})();`;\n"
-	if got := lineCommentTags("run.mjs", interpolated, "//"); got != nil {
+	if got := lineCommentTags("run.js", interpolated, "//"); got != nil {
 		t.Errorf("an interpolation inside a template literal: %q", got)
 	}
 	block := "/* a block comment with a ` inside */\n// @trap: after it\n"
-	if got := lineCommentTags("a.mjs", block, "//"); got != nil {
+	if got := lineCommentTags("a.js", block, "//"); got != nil {
 		t.Errorf("a block comment on one line: %q", got)
 	}
 	division := "const half = width / 2 / 1;\n// @external: after it\n"
-	if got := lineCommentTags("a.mjs", division, "//"); got != nil {
+	if got := lineCommentTags("a.js", division, "//"); got != nil {
 		t.Errorf("division read as a regular expression: %q", got)
 	}
 }

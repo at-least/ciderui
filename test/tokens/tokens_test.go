@@ -1,8 +1,6 @@
 package tokens
 
 import (
-	"bytes"
-	"encoding/json"
 	"fmt"
 	"math"
 	"os"
@@ -16,6 +14,9 @@ import (
 	"github.com/at-least/ciderui/internal/build"
 	"github.com/at-least/ciderui/internal/check"
 	"github.com/at-least/ciderui/internal/reference"
+	apple "github.com/at-least/ciderui/reference/apple.com/results"
+	asc "github.com/at-least/ciderui/reference/asc/results"
+	"github.com/at-least/ciderui/reference/tracking/table"
 )
 
 const W = 1200
@@ -23,22 +24,23 @@ const W = 1200
 // @invariant: one side of a contract: an apple.com reference
 // (page, probe, width, property, state) or Fitted's reason
 type source struct {
-	page, probe string
+	page        reference.Page
+	probe       string
 	width       int
 	prop, state string
 	fitted      string
 }
 
-func apple(page, probe string, width int, prop string) source {
+func appleAt(page reference.Page, probe string, width int, prop string) source {
 	return source{page: page, probe: probe, width: width, prop: prop, state: "", fitted: ""}
 }
 
-func appleIn(page, probe string, width int, prop, state string) source {
+func appleIn(page reference.Page, probe string, width int, prop, state string) source {
 	return source{page: page, probe: probe, width: width, prop: prop, state: state, fitted: ""}
 }
 
 func fitted(why string) source {
-	return source{page: "", probe: "", width: 0, prop: "", state: "", fitted: why}
+	return source{page: reference.Page{}, probe: "", width: 0, prop: "", state: "", fitted: why}
 }
 
 // @invariant: each color's light and dark side: [page, probe, width, property, state?]
@@ -47,59 +49,59 @@ var contract = []struct {
 	name        string
 	light, dark source
 }{
-	{"--cui-c-bg", apple("home", "page.body", W, "background-color"), apple("product", "page.body", W, "background-color")},
-	{"--cui-c-bg-alt", apple("home", "hero.tile", W, "background-color"), apple("product", "section.dark", W, "background-color")},
-	{"--cui-c-text", apple("home", "page.body", W, "color"), apple("home", "tile.dark-headline", W, "color")},
-	{"--cui-c-text-2", apple("product", "stat.caption", W, "color"), fitted("fitted: apple.com's dark #6e6e73 is below 4.5:1")},
-	{"--cui-c-text-3", apple("buy", "option", W, "border-top-color"), apple("product", "localnav.explore", W, "box-shadow")},
-	{"--cui-c-border", apple("buy", "option", W, "border-top-color"), apple("product", "localnav.explore", W, "box-shadow")},
-	{"--cui-c-accent", apple("home", "button", W, "background-color"), apple("home", "tile.dark-button", W, "background-color")},
-	{"--cui-c-accent-hover", appleIn("home", "button", W, "background-color", "hover"), appleIn("home", "tile.dark-button", W, "background-color", "hover")},
-	{"--cui-c-accent-active", appleIn("home", "button", W, "background-color", "active"), appleIn("home", "tile.dark-button", W, "background-color", "active")},
-	{"--cui-c-on-accent", apple("home", "button", W, "color"), apple("home", "tile.dark-button", W, "color")},
-	{"--cui-c-link", apple("home", "button.secondary", W, "color"), apple("home", "tile.dark-button-secondary", W, "color")},
+	{"--cui-c-bg", appleAt(apple.Home, "page.body", W, "background-color"), appleAt(apple.Product, "page.body", W, "background-color")},
+	{"--cui-c-bg-alt", appleAt(apple.Home, "hero.tile", W, "background-color"), appleAt(apple.Product, "section.dark", W, "background-color")},
+	{"--cui-c-text", appleAt(apple.Home, "page.body", W, "color"), appleAt(apple.Home, "tile.dark-headline", W, "color")},
+	{"--cui-c-text-2", appleAt(apple.Product, "stat.caption", W, "color"), fitted("fitted: apple.com's dark #6e6e73 is below 4.5:1")},
+	{"--cui-c-text-3", appleAt(apple.Buy, "option", W, "border-top-color"), appleAt(apple.Product, "localnav.explore", W, "box-shadow")},
+	{"--cui-c-border", appleAt(apple.Buy, "option", W, "border-top-color"), appleAt(apple.Product, "localnav.explore", W, "box-shadow")},
+	{"--cui-c-accent", appleAt(apple.Home, "button", W, "background-color"), appleAt(apple.Home, "tile.dark-button", W, "background-color")},
+	{"--cui-c-accent-hover", appleIn(apple.Home, "button", W, "background-color", "hover"), appleIn(apple.Home, "tile.dark-button", W, "background-color", "hover")},
+	{"--cui-c-accent-active", appleIn(apple.Home, "button", W, "background-color", "active"), appleIn(apple.Home, "tile.dark-button", W, "background-color", "active")},
+	{"--cui-c-on-accent", appleAt(apple.Home, "button", W, "color"), appleAt(apple.Home, "tile.dark-button", W, "color")},
+	{"--cui-c-link", appleAt(apple.Home, "button.secondary", W, "color"), appleAt(apple.Home, "tile.dark-button-secondary", W, "color")},
 	// @external: the neutral in a dark block: a gallery item's (li.media-gallery-item.theme-dark)
-	{"--cui-c-neutral", apple("store", "button.neutral", W, "background-color"), apple("home", "gallery.button-neutral", W, "background-color")},
-	{"--cui-c-neutral-hover", appleIn("store", "button.neutral", W, "background-color", "hover"), appleIn("home", "gallery.button-neutral", W, "background-color", "hover")},
-	{"--cui-c-neutral-active", appleIn("store", "button.neutral", W, "background-color", "active"), appleIn("home", "gallery.button-neutral", W, "background-color", "active")},
-	{"--cui-c-on-neutral", apple("store", "button.neutral", W, "color"), apple("home", "gallery.button-neutral", W, "color")},
+	{"--cui-c-neutral", appleAt(apple.Store, "button.neutral", W, "background-color"), appleAt(apple.Home, "gallery.button-neutral", W, "background-color")},
+	{"--cui-c-neutral-hover", appleIn(apple.Store, "button.neutral", W, "background-color", "hover"), appleIn(apple.Home, "gallery.button-neutral", W, "background-color", "hover")},
+	{"--cui-c-neutral-active", appleIn(apple.Store, "button.neutral", W, "background-color", "active"), appleIn(apple.Home, "gallery.button-neutral", W, "background-color", "active")},
+	{"--cui-c-on-neutral", appleAt(apple.Store, "button.neutral", W, "color"), appleAt(apple.Home, "gallery.button-neutral", W, "color")},
 	// @external: the global nav's: the home page's, light, and the Newsroom's, a dark nav;
 	// its menu opened on a phone
-	{"--cui-c-bar", apple("home", "nav", W, "background-color"), apple("newsroom", "nav", W, "background-color")},
-	{"--cui-c-on-bar", apple("home", "nav.link", W, "color"), apple("newsroom", "nav.link", W, "color")},
-	{"--cui-c-on-bar-hover", appleIn("home", "nav.link", W, "color", "hover"), appleIn("newsroom", "nav.link", W, "color", "hover")},
-	{"--cui-c-menu", apple("home", "menu.content", 390, "background-color"), apple("newsroom", "menu.content", 390, "background-color")},
-	{"--cui-c-on-menu", apple("home", "menu.link", 390, "color"), apple("newsroom", "menu.link", 390, "color")},
+	{"--cui-c-bar", appleAt(apple.Home, "nav", W, "background-color"), appleAt(apple.Newsroom, "nav", W, "background-color")},
+	{"--cui-c-on-bar", appleAt(apple.Home, "nav.link", W, "color"), appleAt(apple.Newsroom, "nav.link", W, "color")},
+	{"--cui-c-on-bar-hover", appleIn(apple.Home, "nav.link", W, "color", "hover"), appleIn(apple.Newsroom, "nav.link", W, "color", "hover")},
+	{"--cui-c-menu", appleAt(apple.Home, "menu.content", 390, "background-color"), appleAt(apple.Newsroom, "menu.content", 390, "background-color")},
+	{"--cui-c-on-menu", appleAt(apple.Home, "menu.link", 390, "color"), appleAt(apple.Newsroom, "menu.link", 390, "color")},
 	// @external: apple.com's own field (the retail page's form-textbox), and in a dark
 	// color scheme
-	{"--cui-c-field", apple("retail", "field.input", W, "background-color"), apple("retail-dark", "field.input", W, "background-color")},
+	{"--cui-c-field", appleAt(apple.Retail, "field.input", W, "background-color"), appleAt(apple.RetailDark, "field.input", W, "background-color")},
 	// @external: a field's states: the gift card's page's (an empty required field the
 	// focus left, one disabled, the currency field's), and copies on the retail
 	// page in a dark color scheme; the currency's ground read on the gift
 	// card's page alone (a field is light on any page)
-	{"--cui-c-field-error", apple("giftcard", "error", W, "background-color"), apple("retail-dark", "field.error", W, "background-color")},
-	{"--cui-c-field-disabled", apple("giftcard", "field.disabled", 1600, "background-color"), apple("retail-dark", "field.disabled", W, "background-color")},
-	{"--cui-c-field-prefix", apple("giftcard", "prefix.currency", 1600, "background-color"), apple("giftcard", "prefix.currency", 1600, "background-color")},
-	{"--cui-c-border-disabled", apple("giftcard", "field.disabled", 1600, "border-top-color"), apple("retail-dark", "field.disabled", W, "border-top-color")},
-	{"--cui-c-error", apple("giftcard", "error.message", W, "color"), fitted("fitted: apple.com's #e30000 is below 4.5:1 on black")},
+	{"--cui-c-field-error", appleAt(apple.Giftcard, "error", W, "background-color"), appleAt(apple.RetailDark, "field.error", W, "background-color")},
+	{"--cui-c-field-disabled", appleAt(apple.Giftcard, "field.disabled", 1600, "background-color"), appleAt(apple.RetailDark, "field.disabled", W, "background-color")},
+	{"--cui-c-field-prefix", appleAt(apple.Giftcard, "prefix.currency", 1600, "background-color"), appleAt(apple.Giftcard, "prefix.currency", 1600, "background-color")},
+	{"--cui-c-border-disabled", appleAt(apple.Giftcard, "field.disabled", 1600, "border-top-color"), appleAt(apple.RetailDark, "field.disabled", W, "border-top-color")},
+	{"--cui-c-error", appleAt(apple.Giftcard, "error.message", W, "color"), fitted("fitted: apple.com's #e30000 is below 4.5:1 on black")},
 	// @external: the bag's accordion's rule, and a rule between copy blocks on iPhone 18
 	// Pro's dark page
-	{"--cui-c-divider", apple("bag", "accordion.item", W, "border-top-color"), apple("product", "divider", W, "border-top-color")},
+	{"--cui-c-divider", appleAt(apple.Bag, "accordion.item", W, "border-top-color"), appleAt(apple.Product, "divider", W, "border-top-color")},
 	// @external: the footer: the home page's, and the dark product page's, light as well
-	{"--cui-c-on-footer", apple("home", "footer", W, "color"), apple("product", "footer", W, "color")},
-	{"--cui-c-on-footer-link", apple("home", "footer.link", W, "color"), apple("product", "footer.link", W, "color")},
-	{"--cui-c-on-footer-title", apple("home", "footer.title", W, "color"), apple("product", "footer.title", W, "color")},
-	{"--cui-c-footer-separator", apple("home", "footer.section-rule", 390, "background-color"), apple("home", "footer.section-rule", 390, "background-color")},
+	{"--cui-c-on-footer", appleAt(apple.Home, "footer", W, "color"), appleAt(apple.Product, "footer", W, "color")},
+	{"--cui-c-on-footer-link", appleAt(apple.Home, "footer.link", W, "color"), appleAt(apple.Product, "footer.link", W, "color")},
+	{"--cui-c-on-footer-title", appleAt(apple.Home, "footer.title", W, "color"), appleAt(apple.Product, "footer.title", W, "color")},
+	{"--cui-c-footer-separator", appleAt(apple.Home, "footer.section-rule", 390, "background-color"), appleAt(apple.Home, "footer.section-rule", 390, "background-color")},
 	// @external: the store's overlay (iPhone 18 Pro's buy page, its Show more opened): one
 	// value each, read at a wide window and a phone's
-	{"--cui-c-scrim", apple("overlay", "overlay", W, "background-color"), apple("overlay", "overlay", 390, "background-color")},
+	{"--cui-c-scrim", appleAt(apple.Overlay, "overlay", W, "background-color"), appleAt(apple.Overlay, "overlay", 390, "background-color")},
 	// @external: tv.apple.com's video player, paused (decision 28): one value each, a
 	// video dark on any page
-	{"--cui-c-video", apple("tv-player", "dialog", W, "background-color"), apple("tv-player", "dialog", 1600, "background-color")},
-	{"--cui-c-on-video", apple("tv-player", "play", W, "color"), apple("tv-player", "play", 1600, "color")},
-	{"--cui-c-on-video-control", apple("tv-player", "subtitles", W, "color"), apple("tv-player", "fullscreen", W, "color")},
-	{"--cui-c-on-video-time", apple("tv-player", "elapsed", W, "color"), apple("tv-player", "remaining", W, "color")},
-	{"--cui-c-video-track", apple("tv-player", "volume.range", W, "--progress-track-color"), apple("tv-player", "volume.range", 1600, "--progress-track-color")},
+	{"--cui-c-video", appleAt(apple.TvPlayer, "dialog", W, "background-color"), appleAt(apple.TvPlayer, "dialog", 1600, "background-color")},
+	{"--cui-c-on-video", appleAt(apple.TvPlayer, "play", W, "color"), appleAt(apple.TvPlayer, "play", 1600, "color")},
+	{"--cui-c-on-video-control", appleAt(apple.TvPlayer, "subtitles", W, "color"), appleAt(apple.TvPlayer, "fullscreen", W, "color")},
+	{"--cui-c-on-video-time", appleAt(apple.TvPlayer, "elapsed", W, "color"), appleAt(apple.TvPlayer, "remaining", W, "color")},
+	{"--cui-c-video-track", appleAt(apple.TvPlayer, "volume.range", W, "--progress-track-color"), appleAt(apple.TvPlayer, "volume.range", 1600, "--progress-track-color")},
 }
 
 // @invariant: the console's colors: light the toolkit's, dark derived (decision 18:
@@ -172,36 +174,6 @@ var (
 	videoName   = regexp.MustCompile(`^--cui-c-(on-)?video`)
 )
 
-// @trap: a JSON object's keys in file order, as JavaScript's Object.keys gives them
-// for keys that are no array index; a Go map forgets the order
-func orderedObject(raw []byte) ([]string, map[string]json.RawMessage, error) {
-	dec := json.NewDecoder(bytes.NewReader(raw))
-	if _, err := dec.Token(); err != nil {
-		return nil, nil, err
-	}
-	var keys []string
-	values := map[string]json.RawMessage{}
-	for dec.More() {
-		tok, err := dec.Token()
-		if err != nil {
-			return nil, nil, err
-		}
-		key, ok := tok.(string)
-		if !ok {
-			return nil, nil, fmt.Errorf("a key that is no string: %v", tok)
-		}
-		var v json.RawMessage
-		if err := dec.Decode(&v); err != nil {
-			return nil, nil, err
-		}
-		if _, seen := values[key]; !seen {
-			keys = append(keys, key)
-		}
-		values[key] = v
-	}
-	return keys, values, nil
-}
-
 func jsRound(x float64) float64 { return math.Floor(x + 0.5) }
 
 func parseFloat(s string) float64 {
@@ -255,24 +227,10 @@ func TestTokens(t *testing.T) {
 	css := read("tokens.css")
 	var tbTokens map[string]string
 	var tbKeys []string
-	{
-		var top map[string]json.RawMessage
-		if err := json.Unmarshal([]byte(read("reference/asc/results/tokens.json")), &top); err != nil {
-			t.Fatal(err)
-		}
-		keys, raw, err := orderedObject(top["tokens"])
-		if err != nil {
-			t.Fatal(err)
-		}
-		tbKeys = keys
-		tbTokens = map[string]string{}
-		for _, k := range keys {
-			var v string
-			if err := json.Unmarshal(raw[k], &v); err != nil {
-				t.Fatal(err)
-			}
-			tbTokens[k] = v
-		}
+	tbTokens = map[string]string{}
+	for _, token := range asc.Tokens.Tokens {
+		tbKeys = append(tbKeys, token.Name)
+		tbTokens[token.Name] = token.Value
 	}
 	tb := func(k string) string {
 		v, ok := tbTokens[k]
@@ -357,8 +315,8 @@ func TestTokens(t *testing.T) {
 		}
 		return fmt.Sprintf("rgba(%s, %s, %s, %s)", check.Number(c[0]), check.Number(c[1]), check.Number(c[2]), check.Number(c[3]))
 	}
-	ref := func(page, probe string, width int, prop, state string) string {
-		v, err := reference.Apple(page, probe, width, prop, state)
+	ref := func(page reference.Page, probe string, width int, prop, state string) string {
+		v, err := page.Value(probe, width, prop, state)
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -396,7 +354,7 @@ func TestTokens(t *testing.T) {
 			if src.state != "" {
 				state = ":" + src.state
 			}
-			check.Equal(t, fmt.Sprintf("%s %s is apple.com's %s:%s%s %s", c.name, side.side, src.page, src.probe, state, src.prop), computedRgb(side.value), want)
+			check.Equal(t, fmt.Sprintf("%s %s is apple.com's %s:%s%s %s", c.name, side.side, src.page.Name, src.probe, state, src.prop), computedRgb(side.value), want)
 		}
 	}
 
@@ -734,9 +692,11 @@ func TestTokens(t *testing.T) {
 		atLeast(fg+" on --cui-c-bg-alt, light, at least 4.5:1", ratio(over(sides(fg)[0], ground), ground) >= 4.5)
 	}
 
-	tableKeys, tableRaw, err := orderedObject([]byte(read("reference/tracking/cui-tracking.json")))
-	if err != nil {
-		t.Fatal(err)
+	var tableKeys []string
+	tableEm := map[string]float64{}
+	for _, r := range table.CUITracking {
+		tableKeys = append(tableKeys, strconv.Itoa(r.Size))
+		tableEm[strconv.Itoa(r.Size)] = r.Em
 	}
 	var tracking []string
 	for _, k := range varNames {
@@ -776,11 +736,7 @@ func TestTokens(t *testing.T) {
 	check.Equal(t, "every token a stylesheet reads", strings.Join(unread, " "), "")
 	for _, k := range tracking {
 		want := "undefined"
-		if raw, ok := tableRaw[k[15:]]; ok {
-			var v float64
-			if err := json.Unmarshal(raw, &v); err != nil {
-				t.Fatal(err)
-			}
+		if v, ok := tableEm[k[15:]]; ok {
 			want = check.Number(v)
 		}
 		check.Equal(t, k, check.Number(parseFloat(vars[k])), want)
@@ -805,15 +761,15 @@ func TestTokens(t *testing.T) {
 	check.Equal(t, "--cui-font", varOf("--cui-font"), `-apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Noto Sans TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif`)
 	check.Equal(t, "--cui-font-mono", varOf("--cui-font-mono"), `ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace`)
 	check.Equal(t, "--cui-focus-ring", varOf("--cui-focus-ring"), "2px solid var(--cui-c-accent)")
-	check.Equal(t, "the focus ring is apple.com's width", ref("home", "button", W, "outline-width", "focus-visible"), "2px")
-	check.Equal(t, "the focus ring is apple.com's color", computedRgb(sides("--cui-c-accent")[0]), ref("home", "button", W, "outline-color", "focus-visible"))
-	check.Equal(t, "--cui-focus-ring-offset is apple.com's", varOf("--cui-focus-ring-offset"), ref("home", "button", W, "outline-offset", "focus-visible"))
+	check.Equal(t, "the focus ring is apple.com's width", ref(apple.Home, "button", W, "outline-width", "focus-visible"), "2px")
+	check.Equal(t, "the focus ring is apple.com's color", computedRgb(sides("--cui-c-accent")[0]), ref(apple.Home, "button", W, "outline-color", "focus-visible"))
+	check.Equal(t, "--cui-focus-ring-offset is apple.com's", varOf("--cui-focus-ring-offset"), ref(apple.Home, "button", W, "outline-offset", "focus-visible"))
 
 	check.Equal(t, "--cui-console-shadow-sidebar is App Store Connect's --tb-component-Sidebar-variant-variant-opaque-boxShadow", varOf("--cui-console-shadow-sidebar"), tb("--tb-component-Sidebar-variant-variant-opaque-boxShadow"))
 	check.Equal(t, "--cui-console-shadow-dialog is App Store Connect's --tb-component-Modal-variant-variant-modal-boxShadow", varOf("--cui-console-shadow-dialog"), tb("--tb-component-Modal-variant-variant-modal-boxShadow"))
 	check.Equal(t, "--cui-console-shadow-popover is App Store Connect's --tb-component-Popover-variant-variant-stroked-boxShadow", varOf("--cui-console-shadow-popover"), tb("--tb-component-Popover-variant-variant-stroked-boxShadow"))
 
-	check.Equal(t, "--cui-video-scrim is tv.apple.com's tv-player:scrim.gradient background-color", varOf("--cui-video-scrim"), ref("tv-player", "scrim.gradient", W, "background-color", ""))
+	check.Equal(t, "--cui-video-scrim is tv.apple.com's tv-player:scrim.gradient background-color", varOf("--cui-video-scrim"), ref(apple.TvPlayer, "scrim.gradient", W, "background-color", ""))
 	// @trap: golden: muse's subtitles, white under a soft shadow with no box (the owner, 2026-11-05, from Apple's view); tv.apple.com's
 	// cues are its <video>'s own text track, none read. Two layers: a tight one that edges each letter on a white picture, a wide
 	// faint one that darkens round the line without a box's edge
@@ -829,7 +785,7 @@ func TestTokens(t *testing.T) {
 	// A faint white fill that reads on a dark or a bright picture, a little more hovered or pressed
 	check.Equal(t, "--cui-video-control-fill is muse's golden", varOf("--cui-video-control-fill"), "rgb(255 255 255 / 0.16)")
 	check.Equal(t, "--cui-video-control-fill-hover is muse's golden", varOf("--cui-video-control-fill-hover"), "rgb(255 255 255 / 0.24)")
-	check.Equal(t, "--cui-video-thumb-shadow is tv.apple.com's tv-player:volume.range --volume-thumb-box-shadow", varOf("--cui-video-thumb-shadow"), ref("tv-player", "volume.range", W, "--volume-thumb-box-shadow", ""))
+	check.Equal(t, "--cui-video-thumb-shadow is tv.apple.com's tv-player:volume.range --volume-thumb-box-shadow", varOf("--cui-video-thumb-shadow"), ref(apple.TvPlayer, "volume.range", W, "--volume-thumb-box-shadow", ""))
 
 	for _, file := range sheets {
 		text := uncommented[file]

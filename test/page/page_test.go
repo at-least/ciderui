@@ -13,6 +13,7 @@ import (
 	"github.com/at-least/ciderui/internal/build"
 	"github.com/at-least/ciderui/internal/check"
 	"github.com/at-least/ciderui/internal/reference"
+	apple "github.com/at-least/ciderui/reference/apple.com/results"
 	"github.com/mxschmitt/playwright-go"
 )
 
@@ -90,9 +91,9 @@ func (p page) resize(width int) {
 	}
 }
 
-func apple(t *testing.T, page, probe, prop, state string) string {
+func appleValue(t *testing.T, page reference.Page, probe, prop, state string) string {
 	t.Helper()
-	v, err := reference.Apple(page, probe, w, prop, state)
+	v, err := page.Value(probe, w, prop, state)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -109,7 +110,7 @@ func TestPage(t *testing.T) {
 	p := open(t, b, css, html, browser.Options{})
 	body := p.read("body", []string{"font-size", "line-height", "font-weight", "color", "background-color", "-webkit-font-smoothing", "font-synthesis", "text-rendering", "letter-spacing", "font-family"}, browser.ReadOptions{})
 	for _, prop := range []string{"font-size", "line-height", "font-weight", "color", "background-color", "-webkit-font-smoothing", "font-synthesis", "text-rendering"} {
-		check.Equal(t, fmt.Sprintf("body %s is apple.com's home:page.body", prop), body[prop], apple(t, "home", "page.body", prop, ""))
+		check.Equal(t, fmt.Sprintf("body %s is apple.com's home:page.body", prop), body[prop], appleValue(t, apple.Home, "page.body", prop, ""))
 	}
 	// @external: Firefox's, on macOS: Chromium drops it, so the stylesheet is read
 	check.Equal(t, "body declares -moz-osx-font-smoothing grayscale, as apple.com's stylesheets do", strconv.FormatBool(mozSmooth.MatchString(css)), "true")
@@ -119,7 +120,7 @@ func TestPage(t *testing.T) {
 	check.Equal(t, "font-sans is the stack, not Tailwind's", p.one("#sans", "font-family"), stack)
 	for _, id := range []string{"strong", "b"} {
 		check.Equal(t, fmt.Sprintf("%s is apple.com's store:page.strong weight", id), p.one("#"+id, "font-weight"), func() string {
-			v, err := reference.Apple("store", "page.strong", w, "font-weight", "")
+			v, err := apple.Store.Value("page.strong", w, "font-weight", "")
 			if err != nil {
 				t.Fatal(err)
 			}
@@ -130,7 +131,7 @@ func TestPage(t *testing.T) {
 	ringProps := []string{"outline-style", "outline-color", "outline-width", "outline-offset"}
 	ring := p.read("#button", ringProps, browser.ReadOptions{State: []string{"focus-visible"}})
 	for _, prop := range ringProps {
-		check.Equal(t, fmt.Sprintf("the focus ring's %s is apple.com's home:button:focus-visible", prop), ring[prop], apple(t, "home", "button", prop, "focus-visible"))
+		check.Equal(t, fmt.Sprintf("the focus ring's %s is apple.com's home:button:focus-visible", prop), ring[prop], appleValue(t, apple.Home, "button", prop, "focus-visible"))
 	}
 	check.Equal(t, "no ring at rest", p.one("#button", "outline-style"), "none")
 	check.Equal(t, "a utility on the element wins over base.css: outline-none drops the ring", p.read("#plain", []string{"outline-style"}, browser.ReadOptions{State: []string{"focus-visible"}})["outline-style"], "none")

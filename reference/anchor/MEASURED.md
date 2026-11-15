@@ -1,6 +1,6 @@
 # A link to a place on the page, under the local nav
 
-Where does a link to a place on its page (a footnote's mark) land its target, on a page whose local nav sticks to the window's top? `apple.mjs` records apple.com's: three of its pages in Playwright's Chromium at 1440 and 390px, each scrolled 2000px down, its first footnote mark clicked, the note's top read 2s on against the nav's foot, with what sets the note's `scroll-margin-top` (the rules in the page's stylesheets that set it on the note, its inline style) and the root's `scroll-padding-top`.
+Where does a link to a place on its page (a footnote's mark) land its target, on a page whose local nav sticks to the window's top? `main.go` records apple.com's: three of its pages in Playwright's Chromium at 1440 and 390px, each scrolled 2000px down, its first footnote mark clicked, the note's top read 2s on against the nav's foot, with what sets the note's `scroll-margin-top` (the rules in the page's stylesheets that set it on the note, its inline style) and the root's `scroll-padding-top`.
 
 | page | its local nav | 1440px | 390px |
 | --- | --- | --- | --- |
@@ -13,5 +13,5 @@ On iPhone 18 Pro's page the note's `scroll-margin-top` is 0px before the click a
 ciderui has no local nav (decision 33). A local nav brought back wants iPhone 18 Pro's way, `:target`'s `scroll-margin-top` the bar's height: without it the note lands 0px down, under the bar.
 
 ```sh
-node apple.mjs     # PW=…/playwright-chromium/index.mjs, as ../browsers.mjs takes it
+go run ./reference/anchor
 ```

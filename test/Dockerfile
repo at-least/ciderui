@@ -6,10 +6,8 @@ ADD --checksum=sha256:7226736c2339719cda28fbf3a54d71aa63bcefe376e98cef00034268da
 RUN tar -C /usr/local -xzf /tmp/go.tar.gz && rm /tmp/go.tar.gz
 ENV CIDERUI_CONTAINER=1 PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 PATH=/usr/local/go/bin:$PATH GOTOOLCHAIN=local
 WORKDIR /src/ciderui
-COPY package.json package-lock.json ./
-RUN npm ci --no-audit --no-fund && chmod -R a+rX node_modules
 # @invariant: the module's requirements, the pinned tools and Playwright's driver in the
-# image: a run fetches nothing, and its build cache (a volume, scripts/docker.mjs)
+# image: a run fetches nothing, and its build cache (a volume, scripts/docker)
 # compiles the repository alone
 COPY go.mod go.sum ./
 COPY internal/pinned internal/pinned

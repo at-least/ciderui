@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	h "github.com/at-least/ciderui/internal/harness"
+	asc "github.com/at-least/ciderui/reference/asc/results"
 )
 
 const (
@@ -55,8 +56,8 @@ func TestCases(t *testing.T) {
 			HTML:   h.Example("variants"),
 			Widths: desktop,
 			Checks: []h.Check{
-				{Target: gray, Props: []string{"box-height", "font-size", "line-height", "font-weight", "letter-spacing", "color", "background-color", "padding-left", "padding-right", "border-top-left-radius", "border-top-width", "min-width", "column-gap", "text-align", "text-decoration-line", "cursor", "transition-duration", "box-shadow"}, ASC: h.ASCProbe("button", "button")},
-				{Target: gray, Props: []string{"background-color", "color", "cursor"}, State: []string{"hover"}, ASC: h.ASCProbe("hover-button", "button")},
+				{Target: gray, Props: []string{"box-height", "font-size", "line-height", "font-weight", "letter-spacing", "color", "background-color", "padding-left", "padding-right", "border-top-left-radius", "border-top-width", "min-width", "column-gap", "text-align", "text-decoration-line", "cursor", "transition-duration", "box-shadow"}, ASC: h.ASCProbe(asc.Button, "button")},
+				{Target: gray, Props: []string{"background-color", "color", "cursor"}, State: []string{"hover"}, ASC: h.ASCProbe(asc.HoverButton, "button")},
 				{Target: gray, Props: []string{"background-color", "color"}, State: []string{"active"}, TB: []string{b + "-colorRole-neutral-effect-press-variant-gray-backgroundColor", b + "-colorRole-neutral-effect-press-variant-gray-color"}},
 				{Target: filled, Props: []string{"background-color", "color"}, TB: []string{b + "-colorRole-brand-effect-default-variant-filled-backgroundColor", b + "-colorRole-brand-effect-default-variant-filled-color"}},
 				{Target: filled, Props: []string{"background-color"}, State: []string{"hover"}, Golden: "the filled blue hovered a step darker, blue-600: white on the toolkit's lighter blue is 3.9:1, " + fitted},
@@ -86,7 +87,7 @@ func TestCases(t *testing.T) {
 			HTML:   `<p><button class="cui-console-btn" type="button">Compare</button></p>`,
 			Widths: []int{1200},
 			Checks: []h.Check{
-				{Target: ".cui-console-btn", Props: []string{"display", "vertical-align", "white-space"}, ASC: h.ASCProbe("button", "button")},
+				{Target: ".cui-console-btn", Props: []string{"display", "vertical-align", "white-space"}, ASC: h.ASCProbe(asc.Button, "button")},
 			},
 		},
 		{

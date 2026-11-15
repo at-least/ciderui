@@ -1,8 +1,6 @@
-# @invariant: the repository reaches a container through scripts/docker.mjs's
-# docker cp, not this context; scripts/docker.mjs hashes the files admitted here
+# @invariant: the repository reaches a container through scripts/docker's
+# docker cp, not this context; scripts/docker hashes the files admitted here
 *
-!package.json
-!package-lock.json
 !go.mod
 !go.sum
 !internal/pinned/pinned.go

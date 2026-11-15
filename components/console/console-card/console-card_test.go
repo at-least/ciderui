@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	h "github.com/at-least/ciderui/internal/harness"
+	asc "github.com/at-least/ciderui/reference/asc/results"
 )
 
 const card = ".cui-console-card"
@@ -19,8 +20,8 @@ func TestCases(t *testing.T) {
 			HTML:   h.Example("list"),
 			Widths: []int{1600, 1200},
 			Checks: []h.Check{
-				{Target: card, Props: []string{"padding-top", "border-top-left-radius", "background-color", "overflow", "box-shadow", "border-top-width"}, ASC: h.ASCProbe("analytics-page", "card")},
-				{Target: ".cui-console-card-title", Props: h.Props(typeProps, []string{"color"}), ASC: h.ASCProbe("analytics", "card.title")},
+				{Target: card, Props: []string{"padding-top", "border-top-left-radius", "background-color", "overflow", "box-shadow", "border-top-width"}, ASC: h.ASCProbe(asc.AnalyticsPage, "card")},
+				{Target: ".cui-console-card-title", Props: h.Props(typeProps, []string{"color"}), ASC: h.ASCProbe(asc.Analytics, "card.title")},
 			},
 		},
 		{

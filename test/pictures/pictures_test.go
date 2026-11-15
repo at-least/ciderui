@@ -21,7 +21,7 @@ import (
 	"github.com/mxschmitt/playwright-go"
 )
 
-// @invariant: a changed picture is written here for a reader to see; scripts/docker.mjs
+// @invariant: a changed picture is written here for a reader to see; scripts/docker
 // empties it before a run and copies it back after
 const failedDir = "test/pictures-failed"
 
@@ -89,7 +89,7 @@ func TestPictures(t *testing.T) {
 				name := fmt.Sprintf("%s/%s at %d", part.Name, file, width)
 				seen = append(seen, [2]string{name, hash})
 				saved := fmt.Sprintf("%s/%s-%s-%d.png", failedDir, part.Name, file, width)
-				if !update && !check.Hold(t, hash == golden[name], fmt.Sprintf("%spx: the picture changed, see %s (if meant: UPDATE_GOLDEN=1 node scripts/docker.mjs go test -count=1 -tags browser ./test/pictures)", name, saved)) {
+				if !update && !check.Hold(t, hash == golden[name], fmt.Sprintf("%spx: the picture changed, see %s (if meant: UPDATE_GOLDEN=1 go run ./scripts/docker go test -count=1 -tags browser ./test/pictures)", name, saved)) {
 					if err := os.MkdirAll(filepath.Join(build.Root, failedDir), 0o755); err != nil {
 						t.Fatal(err)
 					}

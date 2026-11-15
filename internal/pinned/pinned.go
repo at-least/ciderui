@@ -1,6 +1,6 @@
 // Package pinned fetches the tools the repository's own checks run, each at one
 // version and checksum, into the user's cache: Tailwind's standalone binary and
-// the npm packages the checks read. The repository holds no node_modules.
+// the npm packages the checks read, unpacked. The repository holds no node_modules.
 package pinned
 
 import (

@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	h "github.com/at-least/ciderui/internal/harness"
+	asc "github.com/at-least/ciderui/reference/asc/results"
 )
 
 const (
@@ -44,12 +45,12 @@ func TestCases(t *testing.T) {
 			Checks: []h.Check{
 				{Target: rest, Props: sizeProps, TB: size("md")},
 				{Target: rest, Props: []string{"color", "padding-left", "padding-right"}, TB: []string{underlined("default", "false", "color"), tb + "-underlinedPaddingInline", tb + "-underlinedPaddingInline"}},
-				{Target: rest, Props: []string{"border-bottom-width", "border-bottom-style", "border-bottom-color"}, ASC: h.ASCProbe("version", "tab.button")},
+				{Target: rest, Props: []string{"border-bottom-width", "border-bottom-style", "border-bottom-color"}, ASC: h.ASCProbe(asc.Version, "tab.button")},
 				{Target: rest, Props: []string{"color"}, State: []string{"active"}, TB: []string{underlined("press", "false", "color")}},
 				{Target: rest, Props: []string{"color"}, State: []string{"hover"}, Golden: "hovered, the gray button's hovered label (tokens.css's neutral label hovered), where the toolkit's tab hovers to oklch(23.8% 0 0 / 0.85): one hovered gray for a label"},
 				{Target: ".cui-console-tabs", Props: []string{"column-gap", "border-bottom-width", "border-bottom-style", "border-bottom-color"}, TB: []string{tb + "-variant-controlSize-md-variant-underlined-gap", tb + "-underlinedFullWidthKeyline-width", tb + "-underlinedFullWidthKeyline-style", tb + "-underlinedFullWidthKeyline-color"}},
 				{Target: `[aria-current="page"]`, Props: []string{"color", "border-bottom-width"}, TB: []string{underlined("default", "true", "color"), tb + "-underlinedActiveBorderBottomWidth"}},
-				{Target: `[aria-current="page"]`, Props: []string{"border-bottom-width", "border-bottom-style"}, ASC: h.ASCProbe("version", "tab.button.current")},
+				{Target: `[aria-current="page"]`, Props: []string{"border-bottom-width", "border-bottom-style"}, ASC: h.ASCProbe(asc.Version, "tab.button.current")},
 				{Target: `[aria-current="page"]`, Props: []string{"border-bottom-color"}, Golden: "the current tab's rule in its label's color, as App Store Connect's (asc version: tab.button.current, its label's rgb(51, 51, 51))"},
 				{Target: `[aria-current="page"]`, Props: []string{"color"}, State: []string{"hover"}, TB: []string{underlined("hover", "true", "color")}},
 				{Target: `[aria-current="page"]`, Props: []string{"color"}, State: []string{"active"}, TB: []string{underlined("press", "true", "color")}},

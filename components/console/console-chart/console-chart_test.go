@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	h "github.com/at-least/ciderui/internal/harness"
+	asc "github.com/at-least/ciderui/reference/asc/results"
 )
 
 const c = ".cui-console-chart"
@@ -17,9 +18,9 @@ func TestCases(t *testing.T) {
 			HTML:   h.Example("chart"),
 			Widths: []int{1200, 390},
 			Checks: []h.Check{
-				{Target: c + "-grid", Props: []string{"stroke-width"}, ASC: h.ASCProbe("analytics", "chart.grid")},
-				{Target: c + "-scale", Props: []string{"font-size", "font-weight"}, ASC: h.ASCProbe("analytics", "chart.y")},
-				{Target: c + "-axis", Props: []string{"font-size", "font-weight"}, ASC: h.ASCProbe("analytics", "chart.x")},
+				{Target: c + "-grid", Props: []string{"stroke-width"}, ASC: h.ASCProbe(asc.Analytics, "chart.grid")},
+				{Target: c + "-scale", Props: []string{"font-size", "font-weight"}, ASC: h.ASCProbe(asc.Analytics, "chart.y")},
+				{Target: c + "-axis", Props: []string{"font-size", "font-weight"}, ASC: h.ASCProbe(asc.Analytics, "chart.x")},
 				{Target: c + "-grid", Props: []string{"stroke"}, Golden: "the tertiary hairline, where App Store Connect's is rgb(214, 214, 214)"},
 				{Target: c + "-grid line:nth-child(2)", Props: []string{"box-y"}, Golden: "the kit's gridlines where its scale labels them, the plot's top and middle: the middle one under the half scale"},
 				{Target: c + "-scale", Props: []string{"color", "background-color", "right", "top"}, Golden: "the fitted secondary label (App Store Connect's rgb(136, 136, 136) is 3.5:1 on white, decision 21) on the ground, at the plot's trailing top (the HIG keeps the leading edge clean)"},

@@ -7,6 +7,7 @@ import (
 	"testing"
 
 	h "github.com/at-least/ciderui/internal/harness"
+	asc "github.com/at-least/ciderui/reference/asc/results"
 )
 
 const v = ".cui-console-viewer"
@@ -30,7 +31,7 @@ func TestCases(t *testing.T) {
 			Checks: []h.Check{
 				{Target: v, Props: []string{"display", "flex-direction", "row-gap", "padding-top", "border-top-left-radius", "background-color"}, Golden: "Quick Look's: the picture on the console's ground, 8px in, 20px corners, its caption 8px under it"},
 				{Target: v, Props: []string{"box-width", "box-height"}, Golden: "the picture whole, fit to the window less 16px at each side, never past it"},
-				{Target: v + "-image", Props: []string{"border-top-left-radius"}, ASC: h.ASCProbe("media", "thumb.img")},
+				{Target: v + "-image", Props: []string{"border-top-left-radius"}, ASC: h.ASCProbe(asc.Media, "thumb.img")},
 				{Target: v + "-image", Props: []string{"object-fit"}, Golden: "contain, not App Store Connect's thumbnail's fill: the picture whole, at its own shape"},
 				{Target: v + "-caption", Props: []string{"color", "font-size", "line-height", "text-align"}, Golden: "the secondary label at the body's size, centered under the picture"},
 				{Target: v + "-close", Props: []string{"position", "align-self", "box-top"}, Golden: "the close button in its own row at the trailing end above the picture, as Quick Look's title bar: over the picture's corner a white picture hid it"},

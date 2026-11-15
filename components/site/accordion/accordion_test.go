@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	h "github.com/at-least/ciderui/internal/harness"
+	apple "github.com/at-least/ciderui/reference/apple.com/results"
 )
 
 const (
@@ -24,7 +25,7 @@ func TestCases(t *testing.T) {
 			HTML:  `<div lang="zh-Hant">` + h.Example("accordion") + `</div>`,
 			Click: []string{openFirst},
 			Checks: []h.Check{
-				{Target: open + " .cui-accordion-answer", Props: []string{"line-height", "letter-spacing"}, Apple: h.AppleProbe("buy-tw", "accordion.content")},
+				{Target: open + " .cui-accordion-answer", Props: []string{"line-height", "letter-spacing"}, Apple: h.AppleProbe(apple.BuyTw, "accordion.content")},
 			},
 		},
 		{
@@ -32,16 +33,16 @@ func TestCases(t *testing.T) {
 			HTML:  h.Example("accordion"),
 			Click: []string{openFirst},
 			Checks: []h.Check{
-				{Target: item, Props: []string{"border-top-width", "border-top-style", "border-top-color", "padding-top", "margin-top"}, Apple: h.AppleProbe("bag", "accordion.item")},
-				{Target: closed + " > " + q, Props: []string{"padding-top", "padding-bottom", "display", "cursor", "box-height"}, Apple: h.AppleProbe("bag-accordion", "compact.button")},
-				{Target: closed + " > " + q, Props: h.Props(h.Size, []string{"color"}), Apple: h.AppleProbe("bag-accordion", "compact.title")},
-				{Target: closed + " > " + q + " svg", Props: []string{"color"}, Apple: h.AppleProbe("bag-accordion", "compact.icon")},
-				{Target: closed + " > " + q + " svg", Props: []string{"box-height"}, Apple: h.AppleProbe("bag-accordion", "compact.svg")},
+				{Target: item, Props: []string{"border-top-width", "border-top-style", "border-top-color", "padding-top", "margin-top"}, Apple: h.AppleProbe(apple.Bag, "accordion.item")},
+				{Target: closed + " > " + q, Props: []string{"padding-top", "padding-bottom", "display", "cursor", "box-height"}, Apple: h.AppleProbe(apple.BagAccordion, "compact.button")},
+				{Target: closed + " > " + q, Props: h.Props(h.Size, []string{"color"}), Apple: h.AppleProbe(apple.BagAccordion, "compact.title")},
+				{Target: closed + " > " + q + " svg", Props: []string{"color"}, Apple: h.AppleProbe(apple.BagAccordion, "compact.icon")},
+				{Target: closed + " > " + q + " svg", Props: []string{"box-height"}, Apple: h.AppleProbe(apple.BagAccordion, "compact.svg")},
 				{Target: closed + " > " + q + " svg", Props: []string{"transition-property", "transition-duration", "transition-timing-function"}, Golden: "its turn in 0.32s, its color at once, where apple.com's eases in 0.1s linear (bag-accordion:compact.icon): motion that adds nothing to a pointer's color change (DESIGN.md decision 25)"},
-				{Target: closed + " > " + q + " svg", On: closed + " > " + q, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe("bag-accordion", "compact.icon-hover", "hover")},
-				{Target: open + " > " + q + " svg", Props: []string{"color"}, Apple: h.AppleProbe("bag-accordion", "compact.open")},
-				{Target: open + " .cui-accordion-answer", Props: h.Props(h.Size, []string{"color", "padding-right", "padding-bottom"}), Apple: h.AppleProbe("bag-accordion", "compact.answer")},
-				{Target: open + " .cui-accordion-answer", Props: []string{"padding-top"}, Apple: &h.Apple{Page: "bag-accordion", Probe: "compact.panel", As: map[string]string{"padding-top": "margin-top"}}},
+				{Target: closed + " > " + q + " svg", On: closed + " > " + q, State: []string{"hover"}, Props: []string{"color"}, Apple: h.AppleProbe(apple.BagAccordion, "compact.icon-hover", "hover")},
+				{Target: open + " > " + q + " svg", Props: []string{"color"}, Apple: h.AppleProbe(apple.BagAccordion, "compact.open")},
+				{Target: open + " .cui-accordion-answer", Props: h.Props(h.Size, []string{"color", "padding-right", "padding-bottom"}), Apple: h.AppleProbe(apple.BagAccordion, "compact.answer")},
+				{Target: open + " .cui-accordion-answer", Props: []string{"padding-top"}, Apple: &h.Apple{Page: apple.BagAccordion, Probe: "compact.panel", As: map[string]string{"padding-top": "margin-top"}}},
 				{Target: open + " > " + q + " svg", Props: []string{"transform"}, Golden: "open, turned up: apple.com's line moved to the same points, through a flat one, in 320ms"},
 				{Target: closed + " > " + q + " svg", Props: []string{"box-width", "margin-right"}, Golden: "apple.com's 17px chevron (14px) in the middle of its 32px column at the end (bag-accordion:compact.svg, .icon)"},
 				{Target: item, Pseudo: "::details-content", Props: h.Motion, Golden: "its answer opens at once, where apple.com's height slides in 0.3s ease-in-out (bag-accordion:compact.panel): the chevron's turn says it opened, and the words are there to read (DESIGN.md decision 25)"},

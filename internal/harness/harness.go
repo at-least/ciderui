@@ -23,6 +23,7 @@ import (
 	"github.com/at-least/ciderui/internal/build"
 	"github.com/at-least/ciderui/internal/check"
 	"github.com/at-least/ciderui/internal/reference"
+	asc "github.com/at-least/ciderui/reference/asc/results"
 	"github.com/mxschmitt/playwright-go"
 )
 
@@ -79,12 +80,12 @@ type Check struct {
 	On     string
 	// Apple holds each value to apple.com's measured one.
 	Apple *Apple
-	// ASC holds each value to App Store Connect's measured one
-	// (reference/asc/results/<page>.json, read at 1920px), at every width; never a
-	// width (its text was SF).
+	// ASC holds each value to App Store Connect's measured one (a record in
+	// reference/asc/results/, read at 1920px), at every width; never a width (its
+	// text was SF).
 	ASC *ASC
 	// TB names a token of App Store Connect's toolkit for each of Props, in its order,
-	// by its name without --tb- (reference/asc/results/tokens.json): the value equals
+	// by its name without --tb- (reference/asc/results/tokens.go): the value equals
 	// the token as the page computes it beside the target (a box read, box-height,
 	// box-left, …, as the height or width it sets).
 	TB []string
@@ -93,32 +94,36 @@ type Check struct {
 	Golden string
 }
 
-// Apple is apple.com's probe (reference/apple.com/results/<Page>.json), in State if
-// one is named, read at the same width, or at At[width] for a width the reference
-// was not read at; never a box's width or a `width` (apple.com's text was SF,
-// ciderui's here is Inter). As maps a property to apple.com's that does the same
+// Apple is apple.com's probe (Page, a record in reference/apple.com/results/), in
+// State if one is named, read at the same width, or at At[width] for a width the
+// reference was not read at; never a box's width or a `width` (apple.com's text was
+// SF, ciderui's here is Inter). As maps a property to apple.com's that does the same
 // (an icon's margin-left to its glyph's padding-left).
 type Apple struct {
-	Page, Probe, State string
-	At                 map[int]int
-	As                 map[string]string
+	Page         reference.Page
+	Probe, State string
+	At           map[int]int
+	As           map[string]string
 }
 
 // ASC is App Store Connect's probe.
 type ASC struct {
-	Page, Probe string
+	Page  reference.SignedInPage
+	Probe string
 }
 
 // AppleProbe is apple.com's probe at rest, or in the one state named.
-func AppleProbe(page, probe string, state ...string) *Apple {
+func AppleProbe(page reference.Page, probe string, state ...string) *Apple {
 	if len(state) > 1 {
-		panic(fmt.Sprintf("harness: %s:%s in %d states: a probe was read in one", page, probe, len(state)))
+		panic(fmt.Sprintf("harness: %s:%s in %d states: a probe was read in one", page.Name, probe, len(state)))
 	}
 	return &Apple{Page: page, Probe: probe, State: strings.Join(state, ""), At: nil, As: nil}
 }
 
 // ASCProbe is App Store Connect's probe.
-func ASCProbe(page, probe string) *ASC { return &ASC{Page: page, Probe: probe} }
+func ASCProbe(page reference.SignedInPage, probe string) *ASC {
+	return &ASC{Page: page, Probe: probe}
+}
 
 // The property lists the checks share.
 var (
@@ -351,11 +356,11 @@ func (r *run) check(t *testing.T, page *browser.Page, c Case, k Check, width int
 			if as, ok := k.Apple.As[prop]; ok {
 				theirs = as
 			}
-			want, err := reference.Apple(k.Apple.Page, k.Apple.Probe, at, theirs, k.Apple.State)
+			want, err := k.Apple.Page.Value(k.Apple.Probe, at, theirs, k.Apple.State)
 			if err != nil {
 				t.Fatal(err)
 			}
-			check.Equal(t, fmt.Sprintf("%s %s is apple.com's %s:%s%s %s at %dpx", label, prop, k.Apple.Page, k.Apple.Probe, state, theirs, at), got[prop], want)
+			check.Equal(t, fmt.Sprintf("%s %s is apple.com's %s:%s%s %s at %dpx", label, prop, k.Apple.Page.Name, k.Apple.Probe, state, theirs, at), got[prop], want)
 		}
 	case k.ASC != nil:
 		// @external: App Store Connect's, read at 1920px: a value that does not move with
@@ -364,11 +369,11 @@ func (r *run) check(t *testing.T, page *browser.Page, c Case, k Check, width int
 			if prop == "width" || prop == "box-width" {
 				t.Fatalf("%s: an asc check reads no width (%s)", label, prop)
 			}
-			want, err := reference.ASC(k.ASC.Page, k.ASC.Probe, prop)
+			want, err := k.ASC.Page.Value(k.ASC.Probe, prop)
 			if err != nil {
 				t.Fatal(err)
 			}
-			check.Equal(t, fmt.Sprintf("%s %s is App Store Connect's %s:%s %s", label, prop, k.ASC.Page, k.ASC.Probe, prop), got[prop], want)
+			check.Equal(t, fmt.Sprintf("%s %s is App Store Connect's %s:%s %s", label, prop, k.ASC.Page.Name, k.ASC.Probe, prop), got[prop], want)
 		}
 	case k.TB != nil:
 		if len(k.TB) != len(k.Props) {
@@ -376,7 +381,7 @@ func (r *run) check(t *testing.T, page *browser.Page, c Case, k Check, width int
 		}
 		pairs := make([]any, len(k.Props))
 		for i, prop := range k.Props {
-			token, err := reference.Token(k.TB[i])
+			token, err := asc.Tokens.Token(k.TB[i])
 			if err != nil {
 				t.Fatal(err)
 			}

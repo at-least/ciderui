@@ -134,7 +134,7 @@ func run(command []string) (int, error) {
 		// @external: Go's build cache a volume on the daemon's machine, no bind mount: a run
 		// compiles what changed since the last, not the whole module
 		"-v", "ciderui-gocache:/root/.cache/go-build"}
-	for _, k := range []string{"UPDATE_GOLDEN", "CIDERUI_CHECKS"} {
+	for _, k := range []string{"UPDATE_GOLDEN"} {
 		if v, ok := os.LookupEnv(k); ok {
 			args = append(args, "-e", k+"="+v)
 		}
@@ -158,7 +158,7 @@ func run(command []string) (int, error) {
 	}
 	// @external: no extended attributes (docker cp refuses macOS's com.apple.provenance,
 	// "operation not supported", on a file that carries it), no AppleDouble ._ files
-	if err := shell(fmt.Sprintf(`tar -c --no-xattrs -C %s --exclude ./node_modules --exclude ./.git --exclude ./test/pictures-failed . | docker cp - %s:/src/ciderui`, quote(root), container)); err != nil {
+	if err := shell(fmt.Sprintf(`tar -c --no-xattrs -C %s --exclude ./.git --exclude ./test/pictures-failed . | docker cp - %s:/src/ciderui`, quote(root), container)); err != nil {
 		return 0, err
 	}
 	start := exec.Command("docker", "start", "-a", container)

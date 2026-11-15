@@ -1,14 +1,14 @@
 # Touch targets
 
-Is every control a finger presses big enough? The HIG's control sizes (Accessibility, Mobility, read 2026-10-29 from developer.apple.com's JSON for the page): on iOS 44x44pt by default, 28x28pt at least; on macOS 28x28pt, 20x20pt at least. App Store Connect's toolkit draws its controls 30px whatever the screen (its tokens name no larger control on its mobile page scale, `../asc/results/tokens.json`).
+Is every control a finger presses big enough? The HIG's control sizes (Accessibility, Mobility, read 2026-10-29 from developer.apple.com's JSON for the page): on iOS 44x44pt by default, 28x28pt at least; on macOS 28x28pt, 20x20pt at least. App Store Connect's toolkit draws its controls 30px whatever the screen (its tokens name no larger control on its mobile page scale, `../asc/results/tokens.go`).
 
 `test/touch/` hit-tests the target of each control in every component's example on a 390px touch screen (its comments hold the method) and fails while one is under 44pt.
 
 The chips, hint, radio, head, sort links, small field and appearance choice named below went by DESIGN.md decisions 27, 31, 36 and 40, the gallery, local nav and swatches by decision 33; the counts are the record of their dates.
 
 ```sh
-node scripts/docker.mjs go test -count=1 -tags browser ./test/touch      # a step of the gate
-node scripts/docker.mjs go test -count=1 -v -tags browser ./test/touch   # every control's line
+go run ./scripts/docker go test -count=1 -tags browser ./test/touch      # a step of the gate
+go run ./scripts/docker go test -count=1 -v -tags browser ./test/touch   # every control's line
 ```
 
 ## What it showed (Chromium 151, 2026-10-29)

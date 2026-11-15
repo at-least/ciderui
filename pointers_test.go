@@ -208,7 +208,7 @@ func TestPathsAndCitesResolve(t *testing.T) {
 		switch {
 		case file == "pointers_test.go", strings.HasPrefix(file, "dist/"), strings.Contains(file, "/results/"):
 			continue
-		case !slices.Contains([]string{".md", ".go", ".css", ".mjs", ".js"}, path.Ext(file)):
+		case !slices.Contains([]string{".md", ".go", ".css", ".js"}, path.Ext(file)):
 			continue
 		}
 		raw, err := os.ReadFile(file)

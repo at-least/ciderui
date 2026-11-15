@@ -7,6 +7,8 @@ import (
 	"testing"
 
 	h "github.com/at-least/ciderui/internal/harness"
+	"github.com/at-least/ciderui/internal/reference"
+	apple "github.com/at-least/ciderui/reference/apple.com/results"
 )
 
 const (
@@ -31,7 +33,7 @@ func own(target string) h.Check {
 	return h.Check{Target: target, Props: ownProp, Golden: ownGolden}
 }
 
-func states(target, page, probe string, props []string) []h.Check {
+func states(target string, page reference.Page, probe string, props []string) []h.Check {
 	return []h.Check{
 		{Target: target, State: []string{"hover"}, Props: props, Apple: h.AppleProbe(page, probe, "hover")},
 		{Target: target, State: []string{"active"}, Props: props, Apple: h.AppleProbe(page, probe, "active")},
@@ -47,7 +49,7 @@ func TestCases(t *testing.T) {
 		}
 		disabled = append(disabled,
 			// @external: a <button>: the class over the preflight's reset of the element
-			h.Check{Target: target, Props: h.Props(look, h.Colors), Apple: h.AppleProbe("store", v[1])},
+			h.Check{Target: target, Props: h.Props(look, h.Colors), Apple: h.AppleProbe(apple.Store, v[1])},
 			h.Check{Target: target, State: []string{"hover"}, Props: h.Colors, Golden: "a disabled button keeps its ground under the pointer, where apple.com's changes it"},
 		)
 	}
@@ -56,8 +58,8 @@ func TestCases(t *testing.T) {
 			Name: "default",
 			HTML: h.Example("default"),
 			Checks: slices.Concat(
-				[]h.Check{{Target: ".cui-btn", Props: h.Props(look, h.Colors), Apple: h.AppleProbe("store", "button")}},
-				states(".cui-btn", "store", "button", h.Colors),
+				[]h.Check{{Target: ".cui-btn", Props: h.Props(look, h.Colors), Apple: h.AppleProbe(apple.Store, "button")}},
+				states(".cui-btn", apple.Store, "button", h.Colors),
 				[]h.Check{own(".cui-btn"), flex(".cui-btn")},
 			),
 		},
@@ -65,8 +67,8 @@ func TestCases(t *testing.T) {
 			Name: "sizes",
 			HTML: h.Example("sizes"),
 			Checks: []h.Check{
-				{Target: ".cui-btn:not([data-size])", Props: look, Apple: h.AppleProbe("store", "button")},
-				{Target: `.cui-btn[data-size="lg"]`, Props: look, Apple: h.AppleProbe("store", "button.elevated")},
+				{Target: ".cui-btn:not([data-size])", Props: look, Apple: h.AppleProbe(apple.Store, "button")},
+				{Target: `.cui-btn[data-size="lg"]`, Props: look, Apple: h.AppleProbe(apple.Store, "button.elevated")},
 				own(`.cui-btn[data-size="lg"]`),
 				flex(`.cui-btn[data-size="lg"]`),
 			},
@@ -75,10 +77,10 @@ func TestCases(t *testing.T) {
 			Name: "variants",
 			HTML: h.Example("variants"),
 			Checks: slices.Concat(
-				[]h.Check{{Target: `.cui-btn[data-variant="secondary"]`, Props: h.Props(look, h.Colors), Apple: h.AppleProbe("store", "button.secondary")}},
-				states(`.cui-btn[data-variant="secondary"]`, "store", "button.secondary", h.Colors),
-				[]h.Check{{Target: `.cui-btn[data-variant="secondary-neutral"]`, Props: h.Props(look, h.Colors), Apple: h.AppleProbe("store", "button.secondary-neutral")}},
-				states(`.cui-btn[data-variant="secondary-neutral"]`, "store", "button.secondary-neutral", h.Colors),
+				[]h.Check{{Target: `.cui-btn[data-variant="secondary"]`, Props: h.Props(look, h.Colors), Apple: h.AppleProbe(apple.Store, "button.secondary")}},
+				states(`.cui-btn[data-variant="secondary"]`, apple.Store, "button.secondary", h.Colors),
+				[]h.Check{{Target: `.cui-btn[data-variant="secondary-neutral"]`, Props: h.Props(look, h.Colors), Apple: h.AppleProbe(apple.Store, "button.secondary-neutral")}},
+				states(`.cui-btn[data-variant="secondary-neutral"]`, apple.Store, "button.secondary-neutral", h.Colors),
 			),
 		},
 		{
@@ -95,10 +97,10 @@ func TestCases(t *testing.T) {
 			HTML:   h.Example("dark"),
 			Widths: []int{1600, 1200, 900},
 			Checks: slices.Concat(
-				[]h.Check{{Target: ".cui-btn:not([data-variant])", Props: h.Props(h.Size, h.Padding, h.Radius, []string{"min-width"}, h.Colors), Apple: h.AppleProbe("home", "tile.dark-button")}},
-				states(".cui-btn:not([data-variant])", "home", "tile.dark-button", h.Colors),
-				[]h.Check{{Target: `.cui-btn[data-variant="secondary"]`, Props: h.Props(h.Size, h.Padding, h.Radius, []string{"min-width"}, h.Colors), Apple: h.AppleProbe("home", "tile.dark-button-secondary")}},
-				states(`.cui-btn[data-variant="secondary"]`, "home", "tile.dark-button-secondary", h.Colors),
+				[]h.Check{{Target: ".cui-btn:not([data-variant])", Props: h.Props(h.Size, h.Padding, h.Radius, []string{"min-width"}, h.Colors), Apple: h.AppleProbe(apple.Home, "tile.dark-button")}},
+				states(".cui-btn:not([data-variant])", apple.Home, "tile.dark-button", h.Colors),
+				[]h.Check{{Target: `.cui-btn[data-variant="secondary"]`, Props: h.Props(h.Size, h.Padding, h.Radius, []string{"min-width"}, h.Colors), Apple: h.AppleProbe(apple.Home, "tile.dark-button-secondary")}},
+				states(`.cui-btn[data-variant="secondary"]`, apple.Home, "tile.dark-button-secondary", h.Colors),
 			),
 		},
 		{
@@ -113,7 +115,7 @@ func TestCases(t *testing.T) {
 			Name: name,
 			HTML: h.Example(name),
 			Checks: []h.Check{
-				{Target: target, Props: h.Props(h.Size, h.Padding, h.Radius, []string{"box-height"}, h.Colors), Apple: h.AppleProbe("store", "button.block")},
+				{Target: target, Props: h.Props(h.Size, h.Padding, h.Radius, []string{"box-height"}, h.Colors), Apple: h.AppleProbe(apple.Store, "button.block")},
 				{Target: target, Props: []string{"display", "box-width"}, Golden: "flex, not apple.com's block, so an icon keeps its place; the row's whole width, a <button> as a link"},
 			},
 		})

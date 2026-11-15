@@ -7,6 +7,8 @@ import (
 	"testing"
 
 	h "github.com/at-least/ciderui/internal/harness"
+	apple "github.com/at-least/ciderui/reference/apple.com/results"
+	asc "github.com/at-least/ciderui/reference/asc/results"
 )
 
 const (
@@ -47,9 +49,9 @@ func TestCases(t *testing.T) {
 			Widths: []int{1200, 390},
 			Checks: []h.Check{
 				{Target: tip, Props: []string{"font-size", "line-height"}, Golden: "the small type on a phone too, where the console page's own is larger"},
-				{Target: strip, Props: []string{"display", "grid-auto-flow", "overflow-x", "scroll-snap-type", "padding-top", "padding-left", "margin-top", "margin-bottom"}, Apple: &h.Apple{Page: "tv-player-playlist", Probe: "row", At: at}},
-				{Target: first, Props: []string{"scroll-snap-align"}, Apple: &h.Apple{Page: "tv-player-playlist", Probe: "item", At: at}},
-				{Target: img, Props: []string{"border-top-left-radius", "border-top-width", "border-top-style", "box-shadow", "cursor"}, ASC: h.ASCProbe("media", "thumb.img")},
+				{Target: strip, Props: []string{"display", "grid-auto-flow", "overflow-x", "scroll-snap-type", "padding-top", "padding-left", "margin-top", "margin-bottom"}, Apple: &h.Apple{Page: apple.TvPlayerPlaylist, Probe: "row", At: at}},
+				{Target: first, Props: []string{"scroll-snap-align"}, Apple: &h.Apple{Page: apple.TvPlayerPlaylist, Probe: "item", At: at}},
+				{Target: img, Props: []string{"border-top-left-radius", "border-top-width", "border-top-style", "box-shadow", "cursor"}, ASC: h.ASCProbe(asc.Media, "thumb.img")},
 				{Target: img, Props: []string{"box-width", "box-height", "object-fit"}, Golden: "a 16:9 shot 160px wide, cropped to fill: a storyboard's frames are a film's shape (App Store Connect's are a device's), more of them in view than tv.apple.com's 288px trailers (tv-player-playlist lockup, five at 1600px)"},
 				{Target: img, Props: []string{"background-color"}, Golden: "the console card's gray while it loads, as a console thumbnail's"},
 				{Target: group, Props: []string{"column-gap"}, Golden: "a scene's shots 12px apart: App Store Connect's 6px either side of each (media.json thumb.item), where tv.apple.com's trailers are 20px apart"},
@@ -76,7 +78,7 @@ func TestCases(t *testing.T) {
 			Widths: []int{1200},
 			Checks: []h.Check{
 				{Target: tip, On: first, State: []string{"focus-visible"}, Props: []string{"visibility", "opacity"}, Golden: "the keyboard reaches what the pointer shows"},
-				{Target: img, Props: []string{"border-top-left-radius", "box-shadow"}, State: []string{"hover"}, On: first, ASC: h.ASCProbe("media", "thumb.img")},
+				{Target: img, Props: []string{"border-top-left-radius", "box-shadow"}, State: []string{"hover"}, On: first, ASC: h.ASCProbe(asc.Media, "thumb.img")},
 				{Target: first, Props: []string{"border-top-color"}, State: []string{"hover"}, Golden: "unchanged under the pointer, as App Store Connect's thumbnail (media: nothing changed with the pointer on one)"},
 			},
 		},

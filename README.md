@@ -23,7 +23,7 @@ dist/site.css, dist/console.css — embedded in the Go module
 a site: its pages in Go, one dependency, no JavaScript of ciderui's
         │
         ▼
-npm test: every part, in headless Chromium, against reference/'s values
+go run ./scripts/gate: every part, in headless Chromium, against reference/'s values
 ```
 
 ## Use it
@@ -58,7 +58,7 @@ npx tailwindcss -i tailwind/site.css -o public/tailwind.css --minify
 
 ## Developing
 
-`npm install`, then `npm test`: it checks each part in headless Chromium against apple.com's measured values, takes a picture of every example at every width, and tests the Go module. The browser's tests run in one Docker image, reached through `DOCKER_HOST`.
+Go is the one tool to install. `go run ./scripts/gate`: it checks each part in headless Chromium against apple.com's measured values, takes a picture of every example at every width, and tests the Go module. The browser's tests run in one Docker image, reached through `DOCKER_HOST`.
 
 ## License
 

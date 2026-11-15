@@ -1,6 +1,6 @@
 # Apple Account, measured
 
-account.apple.com's page for managing an Apple Account, the owner's example of the sites they asked for (2026-10-23: 「淺色，但找更多apple 網站，例如 https://account.apple.com/account/manage」): settings laid out as a side nav of sections and cards that each open their own sheet, for a site with settings of its own (crashcart: a project's settings, the account's users and keys). Its page holds the account's personal data and only a signed-in browser reaches it, so it is read as App Store Connect's are (`../asc/`): in the owner's own Chrome, signed in by the owner, through Claude in Chrome's javascript tool; `read.mjs` runs App Store Connect's reader and check over this folder's pages and results.
+account.apple.com's page for managing an Apple Account, the owner's example of the sites they asked for (2026-10-23: 「淺色，但找更多apple 網站，例如 https://account.apple.com/account/manage」): settings laid out as a side nav of sections and cards that each open their own sheet, for a site with settings of its own (crashcart: a project's settings, the account's users and keys). Its page holds the account's personal data and only a signed-in browser reaches it, so it is read as App Store Connect's are (`../asc/`): in the owner's own Chrome, signed in by the owner, through Claude in Chrome's javascript tool; `go run ./reference/apple-account` runs App Store Connect's reader and check (`internal/signedin`) over this folder's pages and results, each record Go, `results/<spec>.go`.
 
 An element is recorded by its tag, classes and role, never its text, link or label. Read only: the page was reached by the address bar; nothing was typed, clicked, saved or sent. The page holds several sections' markup at once (five page headers): each probe reads the first match in the document's order, at the page's top, the Sign-In and Security section the page opens on; the payment, subscriptions and family sections' own pages were never opened.
 
@@ -27,6 +27,7 @@ Chrome 154 on Linux, its window 1920 by 898 at 2 device pixels; read 2026-10-23 
 - A narrower window: Claude in Chrome's resize did not take for App Store Connect, and this page was read at 1920px alone.
 
 ```sh
-node read.mjs <spec>           # the script to run in the page
-node read.mjs --check <spec>   # once results/<spec>.json is written
+go run ./reference/apple-account <spec>                 # the script to run in the page
+go run ./reference/apple-account --save <spec> <file>   # check what it handed back, write results/<spec>.go
+go run ./reference/apple-account --check <spec>         # check results/<spec>.go
 ```

@@ -7,6 +7,7 @@ import (
 	"testing"
 
 	h "github.com/at-least/ciderui/internal/harness"
+	apple "github.com/at-least/ciderui/reference/apple.com/results"
 )
 
 const (
@@ -22,7 +23,7 @@ func TestCases(t *testing.T) {
 			Name: "zh-hant",
 			HTML: `<div lang="zh-Hant">` + h.Example("option") + `</div>`,
 			Checks: []h.Check{
-				{Target: ".cui-option-title", Props: []string{"line-height", "letter-spacing"}, Apple: h.AppleProbe("buy-tw", "option.title")},
+				{Target: ".cui-option-title", Props: []string{"line-height", "letter-spacing"}, Apple: h.AppleProbe(apple.BuyTw, "option.title")},
 			},
 		},
 		{
@@ -30,11 +31,11 @@ func TestCases(t *testing.T) {
 			Widths: h.With1600,
 			HTML:   h.Example("option"),
 			Checks: []h.Check{
-				{Target: label, Props: h.Props(h.Size, []string{"color"}, h.Padding, edge, []string{"background-color", "min-height", "transition-property", "transition-duration"}), Apple: h.AppleProbe("buy", "option")},
-				{Target: label, State: []string{"hover"}, Props: []string{"background-color", "border-top-color", "color"}, Apple: h.AppleProbe("buy", "option", "hover")},
-				{Target: label, On: input, State: []string{"focus-visible"}, Props: []string{"outline-style", "outline-width", "outline-color", "outline-offset"}, Apple: h.AppleProbe("buy", "option.focus", "focus-visible")},
-				{Target: input, Props: []string{"position", "top", "left", "opacity", "margin-top", "margin-left", "display"}, Apple: h.AppleProbe("buy", "option.input")},
-				{Target: ".cui-option-title", Props: h.Size, Apple: h.AppleProbe("buy", "option.title")},
+				{Target: label, Props: h.Props(h.Size, []string{"color"}, h.Padding, edge, []string{"background-color", "min-height", "transition-property", "transition-duration"}), Apple: h.AppleProbe(apple.Buy, "option")},
+				{Target: label, State: []string{"hover"}, Props: []string{"background-color", "border-top-color", "color"}, Apple: h.AppleProbe(apple.Buy, "option", "hover")},
+				{Target: label, On: input, State: []string{"focus-visible"}, Props: []string{"outline-style", "outline-width", "outline-color", "outline-offset"}, Apple: h.AppleProbe(apple.Buy, "option.focus", "focus-visible")},
+				{Target: input, Props: []string{"position", "top", "left", "opacity", "margin-top", "margin-left", "display"}, Apple: h.AppleProbe(apple.Buy, "option.input")},
+				{Target: ".cui-option-title", Props: h.Size, Apple: h.AppleProbe(apple.Buy, "option.title")},
 				{Target: ".cui-option-title", Props: []string{"letter-spacing", "box-x"}, Golden: "at the tile's start, 16px in (its edge and padding), the system font's letter-spacing"},
 				{Target: ".cui-option", Props: []string{"background-color", "border-top-left-radius", "margin-top"}, Golden: "its own light ground, the label's corners, as a field's; no margin above (apple.com's 14px, the form's spacing, buy:option.box)"},
 				{Target: label, Props: []string{"display", "flex-direction", "align-items"}, Golden: "its title centered down the tile (apple.com's a flex column holding the row)"},
@@ -45,8 +46,8 @@ func TestCases(t *testing.T) {
 			Widths: h.With1600,
 			HTML:   h.Example("checked"),
 			Checks: []h.Check{
-				{Target: label, Props: h.Props(h.Size, []string{"color"}, h.Padding, edge, []string{"background-color", "min-height", "box-height"}), Apple: h.AppleProbe("buy", "option.checked")},
-				{Target: ".cui-option-detail", Props: h.Props(h.Size, []string{"display", "margin-top"}), Apple: h.AppleProbe("buy", "option.detail")},
+				{Target: label, Props: h.Props(h.Size, []string{"color"}, h.Padding, edge, []string{"background-color", "min-height", "box-height"}), Apple: h.AppleProbe(apple.Buy, "option.checked")},
+				{Target: ".cui-option-detail", Props: h.Props(h.Size, []string{"display", "margin-top"}), Apple: h.AppleProbe(apple.Buy, "option.detail")},
 				{Target: ".cui-option-title", Props: []string{"box-width"}, Golden: "the rest of the row: nothing beside it"},
 			},
 		},

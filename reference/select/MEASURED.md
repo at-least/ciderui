@@ -1,6 +1,6 @@
 # What of the nav can be selected
 
-The probe behind the global nav's `user-select: none`, apple.com's on `#globalnav` (`../apple.com/`, `nav-select:*`): nothing in the nav can be selected, and its search's field, inside it, still takes text. `page.html` is the technique at its smallest: a bar with `-webkit-user-select: none; user-select: none` (what `globalnav.css` compiles to), its list a closed popover shown as its row, a link, a button opening a link's flyout (a heading in it) and one opening the search (a heading and a text field, `autofocus`), the page's own text under them; `?plain` is the same page with the bar selectable, so that each claim of nothing selected has its control. The claims, each read by `run.mjs` from what the page reports (`cuiState()`):
+The probe behind the global nav's `user-select: none`, apple.com's on `#globalnav` (`../apple.com/`, `nav-select:*`): nothing in the nav can be selected, and its search's field, inside it, still takes text. `page.html` is the technique at its smallest: a bar with `-webkit-user-select: none; user-select: none` (what `globalnav.css` compiles to), its list a closed popover shown as its row, a link, a button opening a link's flyout (a heading in it) and one opening the search (a heading and a text field, `autofocus`), the page's own text under them; `?plain` is the same page with the bar selectable, so that each claim of nothing selected has its control. The claims, each read by `main.go` from what the page reports (`cuiState()`):
 
 1. the bar computes `user-select: none` (`-webkit-user-select` where the browser has no other);
 2. where the bar can be selected, Select All on the page (the platform's command key and A) takes the bar's text with the page's;
@@ -13,7 +13,7 @@ The probe behind the global nav's `user-select: none`, apple.com's on `#globalna
 9. the field clicked, keys typed go into it ("mac");
 10. Select All in the field selects its text whole.
 
-On the iOS simulator, by XCUITest (`../xcuitest.mjs`: its taps, its keyboard and a long press), each page on a simulator of its own:
+On the iOS simulator, by XCUITest (`internal/xcuitest`: its taps, its keyboard and a long press), each page on a simulator of its own:
 
 11. the search button, tapped, opens its flyout, the focus on its field;
 12. XCUITest's keyboard types into the field ("mac");
@@ -31,7 +31,7 @@ On the iOS simulator, by XCUITest (`../xcuitest.mjs`: its taps, its keyboard and
 | Chromium 151, Linux | ok | not run |
 | Firefox 153.0 (Playwright's), Linux, in its window on a virtual X display | ok | not run |
 
-Measured 2026-10-22 (`results/`). In Safari on the Mac the buttons are pressed as `../search/` presses them, by the keyboard (a button focused, Return), the double-clicks and keys WebDriver's (`../browsers.mjs`); Playwright's elsewhere.
+Measured 2026-10-22 (`results/`). In Safari on the Mac the buttons are pressed as `../search/` presses them, by the keyboard (a button focused, Return), the double-clicks and keys WebDriver's (`internal/probe`); Playwright's elsewhere.
 
 What the probe found:
 
@@ -45,10 +45,10 @@ Not measured: Firefox on macOS, a real iPhone or iPad; a selection dragged from 
 ## Running it
 
 ```sh
-BROWSER=safari node run.mjs      # Safari quit first (../browsers.mjs); and chrome
-BROWSER=ios node run.mjs         # on the Mac: Xcode, XcodeGen (Homebrew)
-PW=…/playwright-chromium/index.mjs BROWSER=chromium node run.mjs
-BROWSER=firefox node run.mjs     # Playwright's Firefox: playwright-core install firefox
+BROWSER=safari go run ./reference/select      # Safari quit first (internal/probe); and chrome
+BROWSER=ios go run ./reference/select         # on the Mac: Xcode, XcodeGen (Homebrew)
+BROWSER=chromium go run ./reference/select
+BROWSER=firefox go run ./reference/select     # Playwright's Firefox: go run github.com/mxschmitt/playwright-go/cmd/playwright install firefox
 ```
 
-`run.mjs` serves `page.html` on 127.0.0.1 and fails if a claim does not hold, printing what each step left. For `ios` it creates an iPhone 17 simulator on the newest iOS runtime that has one, once for `?plain` and once for the page, runs the UI test (`../xcuitest/`) with the steps `Search`, `type:mac`, `More`, `press:Explore`, and shuts each down and deletes it after: the simulators already booted are left alone.
+`main.go` serves `page.html` on 127.0.0.1 and fails if a claim does not hold, printing what each step left. For `ios` it creates an iPhone 17 simulator on the newest iOS runtime that has one, once for `?plain` and once for the page, runs the UI test (`../xcuitest/`) with the steps `Search`, `type:mac`, `More`, `press:Explore`, and shuts each down and deletes it after: the simulators already booted are left alone.
