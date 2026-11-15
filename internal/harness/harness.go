@@ -133,6 +133,9 @@ var (
 	Motion      = []string{"transition-property", "transition-duration", "transition-timing-function"}
 )
 
+// With1600 is reference.Widths with 1600 first.
+var With1600 = append([]int{1600}, reference.Widths...)
+
 // Props joins property lists into one.
 func Props(lists ...[]string) []string { return slices.Concat(lists...) }
 
@@ -228,7 +231,7 @@ func Run(t *testing.T, cases []Case) {
 		}
 		slices.Sort(keys)
 		for _, key := range keys {
-			check.Equal(t, fmt.Sprintf("%s golden.json's %q is read by a check", part, key), strconv.FormatBool(r.used[key]), "true")
+			check.Equal(t, fmt.Sprintf("%s golden.json's \"%s\" is read by a check", part, key), strconv.FormatBool(r.used[key]), "true")
 		}
 	}
 }

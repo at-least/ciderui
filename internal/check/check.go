@@ -71,3 +71,7 @@ func dump(ok bool, failure string) {
 		panic(err)
 	}
 }
+
+// Number is v as JavaScript writes it in a template, for the values a page reports:
+// the shortest form that reads back as v.
+func Number(v float64) string { return strconv.FormatFloat(v, 'f', -1, 64) }

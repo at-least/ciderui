@@ -144,13 +144,13 @@ func UtilitiesEntry(utilities string) (string, error) {
 }
 
 // OwnSheet is a site's own utilities' stylesheet: README.md's entry over the
-// utilities.css at utilities, built with Tailwind for classes.
+// utilities.css at utilities (from Root where relative), built with Tailwind for
+// classes.
 func OwnSheet(utilities, classes string) (string, error) {
-	abs, err := filepath.Abs(utilities)
-	if err != nil {
-		return "", fmt.Errorf("build: %w", err)
+	if !filepath.IsAbs(utilities) {
+		utilities = filepath.Join(Root, utilities)
 	}
-	entry, err := UtilitiesEntry(abs)
+	entry, err := UtilitiesEntry(utilities)
 	if err != nil {
 		return "", err
 	}
@@ -213,4 +213,33 @@ func Dist(set string) (string, error) {
 		css = append(css, fmt.Sprintf("@import %q;", sheet))
 	}
 	return Compile(Sheet{CSS: strings.Join(css, "\n"), Classes: strings.Join(classes, " "), Sources: sources})
+}
+
+// ExampleFiles are the part's examples' file names, examples/<id>.html, sorted.
+func ExampleFiles(p Part) ([]string, error) {
+	entries, err := os.ReadDir(filepath.Join(Root, p.Dir, "examples"))
+	if err != nil {
+		return nil, fmt.Errorf("build: %w", err)
+	}
+	var files []string
+	for _, e := range entries {
+		if strings.HasSuffix(e.Name(), ".html") {
+			files = append(files, e.Name())
+		}
+	}
+	slices.Sort(files)
+	return files, nil
+}
+
+// ExampleHTML is the part's example file as a page holds it: a console part's
+// inside the console's page.
+func ExampleHTML(p Part, file string) (string, error) {
+	b, err := os.ReadFile(filepath.Join(Root, p.Dir, "examples", file))
+	if err != nil {
+		return "", fmt.Errorf("build: %w", err)
+	}
+	if p.Set == "console" {
+		return `<div class="cui-console-page">` + string(b) + `</div>`, nil
+	}
+	return string(b), nil
 }

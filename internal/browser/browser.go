@@ -3,6 +3,7 @@
 package browser
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -292,4 +293,16 @@ func (p *Page) Resize(width int) error {
 		return fmt.Errorf("browser: resize %d: %w", width, err)
 	}
 	return p.Settle()
+}
+
+// Decode reads a value the page gave (Evaluate's) into a typed one.
+func Decode(v any, into any) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return fmt.Errorf("browser: decode: %w", err)
+	}
+	if err := json.Unmarshal(b, into); err != nil {
+		return fmt.Errorf("browser: decode: %w", err)
+	}
+	return nil
 }

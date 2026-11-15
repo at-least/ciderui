@@ -21,11 +21,8 @@ import (
 //
 // @trap: not apple.com's fourth, 1600: no part's rule starts above 1200, so only what
 // the window sizes, up to its max-width, reads otherwise there, in the cases that say
-// With1600
+// harness.With1600
 var Widths = []int{1200, 900, 390}
-
-// With1600 is Widths with 1600 first.
-var With1600 = []int{1600, 1200, 900, 390}
 
 type box map[string]float64
 

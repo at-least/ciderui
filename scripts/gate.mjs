@@ -13,7 +13,7 @@ const BROWSER = [
   'node test/components.mjs',
   // @external: -count=1: go test would serve a passed package's result from its cache,
   // which knows nothing of the browser
-  'go test -count=1 -tags browser ./components/...',
+  'go test -count=1 -tags browser ./components/... ./test/...',
   'node test/rules.mjs',
   'node test/pictures.mjs',
   'node test/surfaces.mjs',
