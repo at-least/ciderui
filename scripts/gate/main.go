@@ -1,8 +1,11 @@
-// Command gate is the repository's gate: the checks that open no browser, on this
-// machine, then the browser tests in the test image (scripts/docker).
+// Command gate is the repository's gate: the checks that open no browser, then the
+// browser tests, both in the test image (scripts/docker).
 //
 //	go run ./scripts/gate
 //
+// @invariant: everything Docker can run, runs there (the owner, 2026-11-15: 「gate
+// 能利用docker 跑在 lab 就用」): this machine compiles the two launchers alone, and
+// the checks read the image's Go, Tailwind and Chromium on every machine.
 // @invariant: the browser half only once the other passes (the owner, 2026-11-14: a
 // failure a fast check finds wastes no browser run). On success it prints one line a
 // half; a failure prints its output and the step that failed.
@@ -27,6 +30,15 @@ func main() {
 	if len(os.Args) != 1 {
 		fmt.Fprintln(os.Stderr, "usage: go run ./scripts/gate")
 		os.Exit(2)
+	}
+	if os.Getenv("CIDERUI_CONTAINER") != "1" {
+		cmd := exec.Command("go", "run", "./scripts/docker", "go", "run", "./scripts/gate")
+		cmd.Dir = build.Root
+		cmd.Stdout, cmd.Stderr = os.Stdout, os.Stderr
+		if err := cmd.Run(); err != nil {
+			os.Exit(1)
+		}
+		return
 	}
 	if err := host(); err != nil {
 		fmt.Println("gate:", err)
@@ -160,7 +172,9 @@ func ownSheet() error {
 // the last line names every failed package, the one a reader of the tail sees
 func browser() int {
 	started := time.Now()
-	cmd := exec.Command("go", "run", "./scripts/docker")
+	// @external: -count=1: go test would serve a passed package's result from its cache,
+	// which knows nothing of the browser
+	cmd := exec.Command("go", "test", "-count=1", "-tags", "browser", "./components/...", "./test/...")
 	cmd.Dir = build.Root
 	cmd.Stderr = os.Stderr
 	pipe, err := cmd.StdoutPipe()
