@@ -141,17 +141,15 @@ func TestCSSOfAFileExitsOneNamingIt(t *testing.T) {
 	}
 }
 
-// @invariant: the command reads the kit's embedded utilities.css where everything else
-// reads the checkout, so a stylesheet left out of go:embed fails here and nowhere else
+// @invariant: the command builds from the kit's embedded utilities.css and theme.css,
+// where internal/build reads the checkout's: this test is the build that sees go:embed
 func TestCSSWritesTheUtilitiesOfEachDirectorysGoFilesMinifiedLeavingOutTestFilesAndTheKitsOwn(t *testing.T) {
 	dir := t.TempDir()
-	// @trap: TMPDIR is the command's own: the scratch directory the kit's sheet is
-	// written to must be gone after it
-	scratch := filepath.Join(dir, "tmp")
-	if err := os.Mkdir(scratch, 0o755); err != nil {
+	commandsTMPDIR := filepath.Join(dir, "tmp")
+	if err := os.Mkdir(commandsTMPDIR, 0o755); err != nil {
 		t.Fatal(err)
 	}
-	t.Setenv("TMPDIR", scratch)
+	t.Setenv("TMPDIR", commandsTMPDIR)
 	for file, class := range map[string]string{"pages/page.go": "px-8 md:px-8 cui-btn cui-headline", "pages/page_test.go": "px-9", "admin/admin.go": "py-7"} {
 		path := filepath.Join(dir, file)
 		if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
@@ -182,7 +180,7 @@ func TestCSSWritesTheUtilitiesOfEachDirectorysGoFilesMinifiedLeavingOutTestFiles
 	if strings.Contains(built, "{\n") {
 		t.Errorf("ciderui css wrote an unminified sheet: %.300s", built)
 	}
-	if left, err := os.ReadDir(scratch); err != nil || len(left) != 0 {
+	if left, err := os.ReadDir(commandsTMPDIR); err != nil || len(left) != 0 {
 		t.Errorf("ciderui css left %v in its temporary directory (%v)", left, err)
 	}
 }

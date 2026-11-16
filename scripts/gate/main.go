@@ -3,9 +3,8 @@
 //
 //	go run ./scripts/gate
 //
-// @invariant: the browser half only once the other passes (the owner, 2026-11-14: a
-// failure a fast check finds wastes no browser run). On success it prints one line a
-// half; a failure prints its output and the step that failed.
+// @invariant: the browser half only once the other passes (the owner's decision: a
+// failure a fast check finds wastes no browser run).
 package main
 
 import (
@@ -32,7 +31,7 @@ func main() {
 		fmt.Println("gate:", err)
 		os.Exit(1)
 	}
-	fmt.Println("gate: dist written; lucide.go, gofmt, vet, ciderui check, ciderui css and tests clean")
+	fmt.Println("gate: dist written; lucide.go, gofmt, vet, ciderui check and tests clean")
 	os.Exit(browser())
 }
 
@@ -56,7 +55,7 @@ var (
 )
 
 func host() error {
-	// @invariant: dist/ is written, not checked (the owner, 2026-11-16): a CSS edit is
+	// @invariant: dist/ is written, not checked (the owner's decision): a CSS edit is
 	// one gate run, and the commit carries the dist/ the gate built
 	for _, step := range [][]string{
 		{"go", "run", "./scripts/build-lucide", "--check"},
