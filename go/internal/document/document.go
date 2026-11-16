@@ -8,6 +8,7 @@ import (
 
 	"github.com/at-least/ciderui"
 	"github.com/at-least/ciderui/go/internal/attr"
+	"github.com/at-least/ciderui/go/internal/need"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -29,12 +30,8 @@ type Document struct {
 // @invariant: under go test, a page ciderui.CheckMarkup refuses panics, so every
 // test of a site that renders a page checks it, with no call of the site's own
 func (d Document) Render(w io.Writer) error {
-	if d.Lang == "" {
-		panic(d.Owner + " needs a Lang")
-	}
-	if d.Title == "" {
-		panic(d.Owner + " needs a Title")
-	}
+	need.Field(d.Owner, "a Lang", d.Lang)
+	need.Field(d.Owner, "a Title", d.Title)
 	page := h.Doctype(h.HTML(h.Lang(d.Lang), attr.Optional("class", d.Class),
 		h.Head(
 			h.Meta(h.Charset("utf-8")),
