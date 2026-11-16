@@ -46,10 +46,10 @@ func TestListRowRendersItsChildrenOnce(t *testing.T) {
 
 func TestListPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleList {
-		return console.ConsoleList{Rows: []console.ConsoleListRow{{Label: "x", Detail: "", Children: nil}}}
+		return console.ConsoleList{Rows: []console.ConsoleListRow{{Label: "x", Detail: "", Children: nil}, {Label: "y", Detail: "", Children: nil}}}
 	}, []example.Break[console.ConsoleList]{
 		{Want: "console.ConsoleList needs Rows: a page with none shows a ConsoleEmpty", Change: func(p *console.ConsoleList) { p.Rows = nil }},
-		{Want: "console.ConsoleList.Rows[0] needs a Label or Children", Change: func(p *console.ConsoleList) { p.Rows[0].Label = "" }},
-		{Want: "console.ConsoleList.Rows[0] needs a Label or Children", Change: func(p *console.ConsoleList) { p.Rows[0].Label, p.Rows[0].Children = "", g.Group{} }},
+		{Want: "console.ConsoleList.Rows[1] needs a Label or Children", Change: func(p *console.ConsoleList) { p.Rows[1].Label = "" }},
+		{Want: "console.ConsoleList.Rows[1] needs a Label or Children", Change: func(p *console.ConsoleList) { p.Rows[1].Label, p.Rows[1].Children = "", g.Group{} }},
 	})
 }

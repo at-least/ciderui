@@ -2,6 +2,7 @@ package console_test
 
 import (
 	"fmt"
+	"slices"
 	"strings"
 	"testing"
 
@@ -61,7 +62,10 @@ func TestStripPanics(t *testing.T) {
 			p.Groups = append(p.Groups, console.ConsoleStripGroup{Title: "Scene 2", Items: nil})
 		}},
 		{Want: "console.ConsoleStrip has 2 current items: one at most", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Current, p.Groups[0].Items[1].Current = true, true }},
-		{Want: "console.ConsoleStrip.Groups[0].Items[1] needs an Href", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[1].Href = "" }},
+		{Want: "console.ConsoleStrip.Groups[1].Items[1] needs an Href", Change: func(p *console.ConsoleStrip) {
+			p.Groups = append(p.Groups, console.ConsoleStripGroup{Title: "Scene 2", Items: slices.Clone(p.Groups[0].Items)})
+			p.Groups[1].Items[1].Href = ""
+		}},
 		{Want: "console.ConsoleStrip.Groups[0].Items[0] needs a Src", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Src = "" }},
 		{Want: "console.ConsoleStrip.Groups[0].Items[0] needs an Alt: it is its link's name", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Alt = "" }},
 		{Want: "console.ConsoleStrip.Groups[0].Items[0] needs a Label with a Detail", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Detail = "3 shots" }},

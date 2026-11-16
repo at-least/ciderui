@@ -49,9 +49,9 @@ func TestChoiceMenuPanics(t *testing.T) {
 		{Want: "console.ConsoleChoiceMenu.Columns[1] needs a Title", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Title = "" }},
 		{Want: `console.ConsoleChoiceMenu has two columns "voices": each needs a Column of its own`, Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Column = "voices" }},
 		{Want: "console.ConsoleChoiceMenu.Columns[1] needs Options", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Options = nil }},
-		{Want: "console.ConsoleChoiceMenu.Columns[1].Options[0] needs a Label", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Options[0].Label = "" }},
-		{Want: "console.ConsoleChoiceMenu.Columns[1].Options[0] needs a Value", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Options[0].Value = "" }},
+		{Want: "console.ConsoleChoiceMenu.Columns[1].Options[2] needs a Label", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Options[2].Label = "" }},
+		{Want: "console.ConsoleChoiceMenu.Columns[1].Options[1] needs a Value", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Options[1].Value = "" }},
 		{Want: "console.ConsoleChoiceMenu.Columns[1] needs one Checked option, has 2", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Options[0].Checked = true }},
-		{Want: "console.ConsoleChoiceMenu.Columns[1] needs one Checked option, has 0", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Options[1].Checked = false }},
+		{Want: "console.ConsoleChoiceMenu.Columns[0] needs one Checked option, has 0", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[0].Options[0].Checked = false }},
 	})
 }
