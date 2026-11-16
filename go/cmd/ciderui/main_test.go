@@ -110,21 +110,23 @@ func TestCSSOfAMissingDirectoryExitsOneNamingItAndWritesNothing(t *testing.T) {
 	}
 }
 
-func TestCSSOfADirectoryWithOnlyATestFileExitsOneNamingItAndWritesNothing(t *testing.T) {
-	dir := t.TempDir()
-	pages := filepath.Join(dir, "pages")
-	if err := os.Mkdir(pages, 0o755); err != nil {
-		t.Fatal(err)
-	}
-	if err := os.WriteFile(filepath.Join(pages, "page_test.go"), []byte("package pages\n"), 0o644); err != nil {
-		t.Fatal(err)
-	}
-	code, stdout, stderr := run(t, dir, "css", "out.css", "pages")
-	if want := "css: pages holds no Go files\n"; code != 1 || stdout != "" || stderr != want {
-		t.Errorf("ciderui css out.css pages exited %d, wrote %q and %q to stderr, want 1 and %q", code, stdout, stderr, want)
-	}
-	if _, err := os.Stat(filepath.Join(dir, "out.css")); !errors.Is(err, os.ErrNotExist) {
-		t.Errorf("ciderui css of a directory of no Go files wrote out.css: %v", err)
+func TestCSSOfADirectoryWithNoGoFileButTestsExitsOneNamingItAndWritesNothing(t *testing.T) {
+	for _, file := range []string{"page_test.go", "page.html"} {
+		dir := t.TempDir()
+		pages := filepath.Join(dir, "pages")
+		if err := os.Mkdir(pages, 0o755); err != nil {
+			t.Fatal(err)
+		}
+		if err := os.WriteFile(filepath.Join(pages, file), []byte("package pages\n"), 0o644); err != nil {
+			t.Fatal(err)
+		}
+		code, stdout, stderr := run(t, dir, "css", "out.css", "pages")
+		if want := "css: pages holds no Go files\n"; code != 1 || stdout != "" || stderr != want {
+			t.Errorf("ciderui css out.css pages, holding only %s, exited %d, wrote %q and %q to stderr, want 1 and %q", file, code, stdout, stderr, want)
+		}
+		if _, err := os.Stat(filepath.Join(dir, "out.css")); !errors.Is(err, os.ErrNotExist) {
+			t.Errorf("ciderui css of a directory holding only %s wrote out.css: %v", file, err)
+		}
 	}
 }
 
@@ -136,5 +138,65 @@ func TestCSSOfAFileExitsOneNamingIt(t *testing.T) {
 	code, stdout, stderr := run(t, dir, "css", "out.css", "page.go")
 	if want := "css: page.go is not a directory\n"; code != 1 || stdout != "" || stderr != want {
 		t.Errorf("ciderui css out.css page.go exited %d, wrote %q and %q to stderr, want 1 and %q", code, stdout, stderr, want)
+	}
+}
+
+func TestCSSWritesTheUtilitiesOfEachDirectorysGoFilesMinifiedLeavingOutTestFilesAndTheKitsOwn(t *testing.T) {
+	dir := t.TempDir()
+	// @trap: TMPDIR is the command's own: the scratch directory the kit's sheet is
+	// written to must be gone after it
+	scratch := filepath.Join(dir, "tmp")
+	if err := os.Mkdir(scratch, 0o755); err != nil {
+		t.Fatal(err)
+	}
+	t.Setenv("TMPDIR", scratch)
+	for file, class := range map[string]string{"pages/page.go": "px-8 md:px-8 cui-btn cui-headline", "pages/page_test.go": "px-9", "admin/admin.go": "py-7"} {
+		path := filepath.Join(dir, file)
+		if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+			t.Fatal(err)
+		}
+		if err := os.WriteFile(path, []byte("package p\n\nconst class = \""+class+"\"\n"), 0o644); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if code, stdout, stderr := run(t, dir, "css", "out.css", "pages", "admin"); code != 0 || stdout != "" || stderr != "" {
+		t.Fatalf("ciderui css out.css pages admin exited %d, wrote %q and %q to stderr, want 0 and nothing", code, stdout, stderr)
+	}
+	b, err := os.ReadFile(filepath.Join(dir, "out.css"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	built := string(b)
+	for _, rule := range []string{".px-8{", `.md\:px-8{`, ".py-7{"} {
+		if !strings.Contains(built, rule) {
+			t.Errorf("ciderui css built no %s, which a page's Go writes: %.300s", rule, built)
+		}
+	}
+	for _, rule := range []string{".px-9", ".cui-btn", ".cui-headline"} {
+		if strings.Contains(built, rule) {
+			t.Errorf("ciderui css built %s, which only a _test.go or the kit's own sheet holds", rule)
+		}
+	}
+	if strings.Contains(built, "{\n") {
+		t.Errorf("ciderui css wrote an unminified sheet: %.300s", built)
+	}
+	if left, err := os.ReadDir(scratch); err != nil || len(left) != 0 {
+		t.Errorf("ciderui css left %v in its temporary directory (%v)", left, err)
+	}
+}
+
+func TestCSSThatTailwindFailsToWriteExitsOneWithTailwindsMessage(t *testing.T) {
+	dir := t.TempDir()
+	for _, sub := range []string{"pages", "out.css"} {
+		if err := os.Mkdir(filepath.Join(dir, sub), 0o755); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if err := os.WriteFile(filepath.Join(dir, "pages", "page.go"), []byte("package pages\n"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	code, stdout, stderr := run(t, dir, "css", "out.css", "pages")
+	if code != 1 || stdout != "" || !strings.HasPrefix(stderr, "css: tailwindcss: exit status ") || !strings.Contains(stderr, "EISDIR") {
+		t.Errorf("ciderui css onto a directory exited %d, wrote %q and %q to stderr, want 1 and Tailwind's EISDIR", code, stdout, stderr)
 	}
 }
