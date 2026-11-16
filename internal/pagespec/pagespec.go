@@ -1,7 +1,7 @@
 // Package pagespec is what reference/apple.com reads off a live page: a Spec (the page,
 // its widths, how it is loaded) and its Probes (an element, what is read of it, and
 // what is done to the page first). It is a package under internal/ so that
-// ciderui-check, which holds every literal of the module's other types to every field,
+// `ciderui check`, which holds every literal of the module's other types to every field,
 // leaves a probe to name only the fields it uses.
 package pagespec
 

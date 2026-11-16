@@ -35,25 +35,18 @@ console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Scheme: console.Consol
 ```
 
 ```sh
-go get -tool github.com/at-least/ciderui/go/cmd/ciderui-check
-go tool ciderui-check ./...   # in your site's checks
+go get -tool github.com/at-least/ciderui/go/cmd/ciderui
+go tool ciderui check ./...   # in your site's checks
 ```
 
-That is the whole setup: the page links the stylesheet and the module serves it, with its fonts, and the check fails your build on a field you left out, where it would otherwise render a default nobody chose. Use `site.Page` for a store or a marketing page. Each part's markup is its examples, in the directory named as its class without `cui-`: `components/site/btn/examples/*.html`, `components/console/console-banner/examples/*.html`; from your site's checkout they are under `$(go list -m -f '{{.Dir}}' github.com/at-least/ciderui)/`. The Go literal that writes each example is beside the part's type: `go/site/btn_test.go`, `go/console/banner_test.go`. Under `go test`, every page `site.Page` or `console.ConsolePage` renders checks itself with `ciderui.CheckMarkup`; call it yourself on a fragment.
+That is the whole setup: the page links the stylesheet and the module serves it, with its fonts, and the check fails your build on a field you left out, where it would otherwise render a default nobody chose. Use `site.Page` for a store or a marketing page. Each part's markup is its examples, in the directory named as its class without `cui-`: `components/site/btn/examples/*.html`, `components/console/console-banner/examples/*.html`; from your site's checkout they are under `$(go list -m -f '{{.Dir}}' github.com/at-least/ciderui)/`. The Go literal that writes each example is beside the part's type: `go/site/btn_test.go`, `go/console/banner_test.go`. Under `go test`, every page `site.Page` or `console.ConsolePage` renders checks itself with `ciderui.CheckMarkup`; call it yourself on a fragment. A refused page served by `httptest.NewServer` comes back as EOF, the reason in the server's log.
 
 ### Your own utilities
 
-A set's stylesheet ships the utilities its examples write and no other: any other utility a page writes needs a second stylesheet, which your site builds with Tailwind and adds in `Head`. The first command writes `utilities.css` and the `theme.css` it imports, from the version your `go.mod` pins; `utilities.css` imports Tailwind's own, so `target/ciderui` is under the directory that holds `node_modules`. The last builds the entry:
+A set's stylesheet ships the utilities its examples write and no other: any other utility a page writes needs a second stylesheet, which you add in `Head`. This builds it from the Go files of each package directory you name, not their tests, with the Tailwind the kit's own is built with; it needs no npm:
 
 ```sh
-go run github.com/at-least/ciderui/go/cmd/ciderui-css target/ciderui
-npm install --save-dev tailwindcss@4.3.3 @tailwindcss/cli@4.3.3   # once
-npx tailwindcss -i tailwind/site.css -o public/tailwind.css --minify
-```
-
-```css
-@import "../target/ciderui/utilities.css";
-@source "../pages/*.go";
+go tool ciderui css public/utilities.css ./pages ./layout
 ```
 
 ## Developing

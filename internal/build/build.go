@@ -134,39 +134,11 @@ func Compile(s Sheet) (string, error) {
 	return Tailwind(path)
 }
 
-var cssBlock = regexp.MustCompile("(?s)```css\n(.*?)```")
-
-// UtilitiesEntry is the entry README.md tells a site to write, its path to
-// utilities.css the one given, no @source of its pages: read from there so the two
-// cannot part.
-func UtilitiesEntry(utilities string) (string, error) {
-	readme, err := os.ReadFile(filepath.Join(Root, "README.md"))
-	if err != nil {
-		return "", fmt.Errorf("build: %w", err)
-	}
-	m := cssBlock.FindSubmatch(readme)
-	if m == nil {
-		return "", fmt.Errorf("build: README.md has no css block")
-	}
-	block := string(m[1])
-	const written = "../target/ciderui/utilities.css"
-	if !strings.Contains(block, written) {
-		return "", fmt.Errorf("build: README.md writes no utilities.css")
-	}
-	block = strings.Replace(block, written, utilities, 1)
-	return regexp.MustCompile(`(?m)^@source .*\n`).ReplaceAllString(block, ""), nil
-}
-
-// OwnSheet is a site's own utilities' stylesheet: README.md's entry over the
-// utilities.css at utilities (from Root where relative), built with Tailwind for
-// classes.
+// OwnSheet is a site's own utilities' stylesheet: the utilities.css at utilities
+// (from Root where relative), built with Tailwind for classes.
 func OwnSheet(utilities, classes string) (string, error) {
 	if !filepath.IsAbs(utilities) {
 		utilities = filepath.Join(Root, utilities)
-	}
-	entry, err := UtilitiesEntry(utilities)
-	if err != nil {
-		return "", err
 	}
 	dir, err := os.MkdirTemp("", "ciderui-own-")
 	if err != nil {
@@ -174,7 +146,7 @@ func OwnSheet(utilities, classes string) (string, error) {
 	}
 	defer os.RemoveAll(dir)
 	path := filepath.Join(dir, "entry.css")
-	if err := os.WriteFile(path, fmt.Appendf(nil, "%s\n@source inline(%q);\n", entry, classes), 0o644); err != nil {
+	if err := os.WriteFile(path, pinned.UtilitiesEntry(utilities, []string{fmt.Sprintf("inline(%q)", classes)}), 0o644); err != nil {
 		return "", fmt.Errorf("build: %w", err)
 	}
 	return Tailwind(path)

@@ -32,7 +32,7 @@ func main() {
 		fmt.Println("gate:", err)
 		os.Exit(1)
 	}
-	fmt.Println("gate: lucide.go, dist, gofmt, vet, ciderui-check and tests clean")
+	fmt.Println("gate: dist written; lucide.go, gofmt, vet, ciderui check, ciderui css and tests clean")
 	os.Exit(browser())
 }
 
@@ -56,9 +56,11 @@ var (
 )
 
 func host() error {
+	// @invariant: dist/ is written, not checked (the owner, 2026-11-16): a CSS edit is
+	// one gate run, and the commit carries the dist/ the gate built
 	for _, step := range [][]string{
 		{"go", "run", "./scripts/build-lucide", "--check"},
-		{"go", "run", "./scripts/build-css", "--check"},
+		{"go", "run", "./scripts/build-css"},
 	} {
 		if _, err := run(step[0], step[1:]...); err != nil {
 			return err
@@ -82,25 +84,8 @@ func host() error {
 		return err
 	}
 	// @invariant: a component's field left out of a struct literal is a default nobody chose
-	if _, err := run("go", "run", "./go/cmd/ciderui-check", "./..."); err != nil {
+	if _, err := run("go", "run", "./go/cmd/ciderui", "check", "./..."); err != nil {
 		return err
-	}
-	// @invariant: a part's every branch has a test: a new panic with no Break, or a new
-	// branch no example draws, stops here
-	tested, err := run("go", "test", "-count=1", "-cover", "./...")
-	if err != nil {
-		return err
-	}
-	for _, set := range statementsOf {
-		var line string
-		for l := range strings.SplitSeq(tested, "\n") {
-			if f := strings.Split(l, "\t"); len(f) > 1 && f[1] == "github.com/at-least/ciderui/"+set {
-				line = l
-			}
-		}
-		if !strings.Contains(line, "coverage: 100.0% of statements") {
-			return fmt.Errorf("a statement of %s no test runs (go test -coverprofile): %s", set, line)
-		}
 	}
 	if err := ownSheet(); err != nil {
 		return err
@@ -124,33 +109,65 @@ func host() error {
 			}
 		}
 	}
+	// @invariant: a part's every branch has a test: a new panic with no Break, or a new
+	// branch no example draws, stops here
+	tested, err := run("go", "test", "-count=1", "-cover", "./...")
+	if err != nil {
+		return err
+	}
+	for _, set := range statementsOf {
+		var line string
+		for l := range strings.SplitSeq(tested, "\n") {
+			if f := strings.Split(l, "\t"); len(f) > 1 && f[1] == "github.com/at-least/ciderui/"+set {
+				line = l
+			}
+		}
+		if !strings.Contains(line, "coverage: 100.0% of statements") {
+			return fmt.Errorf("a statement of %s no test runs (go test -coverprofile): %s", set, line)
+		}
+	}
 	return nil
 }
 
-// @invariant: what a site with utilities of its own does: its Go tool writes
-// utilities.css, Tailwind builds its second stylesheet from there. Everything else
-// reads the checkout, so a stylesheet left out of go:embed fails here and nowhere else.
+// @invariant: what a site with utilities of its own does: `ciderui css` over a
+// package of its own. The command reads the kit's embedded utilities.css where
+// everything else reads the checkout, so a stylesheet left out of go:embed fails
+// here and nowhere else.
 func ownSheet() error {
-	written, err := os.MkdirTemp("", "ciderui-written-kit-")
+	dir, err := os.MkdirTemp("", "ciderui-own-")
 	if err != nil {
 		return err
 	}
-	defer os.RemoveAll(written)
-	if _, err := run("go", "run", "./go/cmd/ciderui-css", written); err != nil {
+	defer os.RemoveAll(dir)
+	pages := filepath.Join(dir, "pages")
+	if err := os.Mkdir(pages, 0o755); err != nil {
 		return err
 	}
-	built, err := build.OwnSheet(filepath.Join(written, "utilities.css"), "px-8 md:px-8 cui-btn cui-headline")
+	for name, class := range map[string]string{"page.go": "px-8 md:px-8 cui-btn cui-headline", "page_test.go": "px-9"} {
+		if err := os.WriteFile(filepath.Join(pages, name), fmt.Appendf(nil, "package pages\n\nconst class = %q\n", class), 0o644); err != nil {
+			return err
+		}
+	}
+	out := filepath.Join(dir, "utilities.css")
+	if _, err := run("go", "run", "./go/cmd/ciderui", "css", out, pages); err != nil {
+		return err
+	}
+	b, err := os.ReadFile(out)
 	if err != nil {
 		return err
 	}
+	built := string(b)
 	for _, rule := range []string{".px-8", `.md\:px-8`} {
 		if !strings.Contains(built, rule) {
-			return fmt.Errorf("utilities.css written by ciderui-css built with no %s: %.200s", rule, built)
+			return fmt.Errorf("ciderui css built no %s of a page's Go: %.200s", rule, built)
 		}
+	}
+	if strings.Contains(built, ".px-9") {
+		return fmt.Errorf("ciderui css built .px-9, which only a _test.go writes")
 	}
 	for _, kit := range []string{".cui-btn", ".cui-headline"} {
 		if strings.Contains(built, kit) {
-			return fmt.Errorf("utilities.css built the kit's %s, which the kit's own sheet ships", kit)
+			return fmt.Errorf("ciderui css built the kit's %s, which the kit's own sheet ships", kit)
 		}
 	}
 	return nil

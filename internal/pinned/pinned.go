@@ -1,6 +1,8 @@
-// Package pinned fetches the tools the repository's own checks run, each at one
-// version and checksum, into the user's cache: Tailwind's standalone binary and
-// the npm packages the checks read, unpacked. The repository holds no node_modules.
+// Package pinned fetches the tools the repository's own checks and the kit's
+// command run, each at one version and checksum, into the user's cache: Tailwind's
+// standalone binary and the npm packages the checks read, unpacked. The repository
+// holds no node_modules, and a site needs none. It also writes the entry of a site's
+// own utilities' sheet, which the kit's command and the tests both build.
 package pinned
 
 import (
@@ -18,8 +20,8 @@ import (
 	"strings"
 )
 
-// TailwindVersion is the Tailwind README.md tells a site to install: readme_test.go
-// holds the two the same.
+// TailwindVersion builds dist/ and, through `ciderui css`, a site's own utilities:
+// one version, so the two sheets cannot part.
 const TailwindVersion = "4.3.3"
 
 type artifact struct {
@@ -57,6 +59,18 @@ func Tailwind() (string, error) {
 		return "", fmt.Errorf("pinned: %w", err)
 	}
 	return path, nil
+}
+
+// UtilitiesEntry is the Tailwind entry of a site's own utilities' sheet: the
+// utilities.css at utilities, an absolute path, then one `@source <s>;` line for
+// each of sources. `ciderui css` writes its @source of a site's packages, and the
+// tests' pages their classes inline.
+func UtilitiesEntry(utilities string, sources []string) []byte {
+	entry := fmt.Appendf(nil, "@import %q;\n", utilities)
+	for _, s := range sources {
+		entry = fmt.Appendf(entry, "@source %s;\n", s)
+	}
+	return entry
 }
 
 // Lucide is the directory of the lucide-static package, unpacked.

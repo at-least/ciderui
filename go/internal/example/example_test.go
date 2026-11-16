@@ -112,7 +112,7 @@ func TestRenderPanicsWithEachProblemCheckMarkupFinds(t *testing.T) {
 		if len(problems) != count {
 			t.Fatalf("CheckMarkup found %d problems in %s, want %d: %q", len(problems), html, count, problems)
 		}
-		want := "example.Render: " + strings.Join(problems, "\n")
+		want := "example.Render, refused by ciderui.CheckMarkup under go test: " + strings.Join(problems, "\n")
 		if got := panicOf(func() { example.Render(g.Raw(html)) }); got != want {
 			t.Errorf("Render of %s panicked with %q, want %q", html, got, want)
 		}

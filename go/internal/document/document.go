@@ -58,9 +58,12 @@ func (d Document) Render(w io.Writer) error {
 }
 
 // Check panics, naming owner, on what ciderui.CheckMarkup refuses in html: the
-// one wording of a refused page and a refused example
+// one wording of a refused page and a refused example.
+//
+// @external: the panic opens by saying what refused the page: under
+// httptest.NewServer net/http recovers it, logs it, and the client reads only EOF
 func Check(owner, html string) {
 	if problems := ciderui.CheckMarkup(html); problems != nil {
-		panic(owner + ": " + strings.Join(problems, "\n"))
+		panic(owner + ", refused by ciderui.CheckMarkup under go test: " + strings.Join(problems, "\n"))
 	}
 }

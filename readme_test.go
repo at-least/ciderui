@@ -6,12 +6,12 @@ import (
 	"go/token"
 	"os"
 	"reflect"
+	"regexp"
 	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
 	"github.com/at-least/ciderui/go/site"
-	"github.com/at-least/ciderui/internal/pinned"
 )
 
 // @invariant: README's Go example is a literal a call could write: every field
@@ -79,16 +79,45 @@ func TestReadmesGoExampleCompiles(t *testing.T) {
 	})
 }
 
-// @invariant: README's Tailwind is the one dist/ is built with: a site's second
-// stylesheet from another version could part from the first
-func TestReadmesTailwindIsThePinned(t *testing.T) {
+var (
+	readmeTool    = regexp.MustCompile(`(?m)^go get -tool github\.com/at-least/ciderui/(\S+)$`)
+	readmeCommand = regexp.MustCompile(`(?m)^go tool ciderui (\w+) `)
+	usageVerb     = regexp.MustCompile(`(?m)^\s*(?:const usage = .)?(?:usage: )?ciderui (\w+) `)
+)
+
+// @invariant: README's commands are the kit command's: the one `tool` line names
+// go/cmd/ciderui, and each `go tool ciderui <verb>` is a verb its usage lists, or a
+// reader copies a command that prints its usage
+func TestReadmesCommandsAreTheKitCommands(t *testing.T) {
 	readme, err := os.ReadFile("README.md")
 	if err != nil {
 		t.Fatal(err)
 	}
-	for _, name := range []string{"tailwindcss", "@tailwindcss/cli"} {
-		if install := " " + name + "@" + pinned.TailwindVersion + " "; !strings.Contains(string(readme), install) {
-			t.Errorf("README.md installs no%s: internal/pinned pins it", install)
+	tools := readmeTool.FindAllSubmatch(readme, -1)
+	if len(tools) != 1 || string(tools[0][1]) != "go/cmd/ciderui" {
+		t.Errorf("README.md's go get -tool lines name %q, want go/cmd/ciderui alone", tools)
+	}
+	main, err := os.ReadFile("go/cmd/ciderui/main.go")
+	if err != nil {
+		t.Fatal(err)
+	}
+	verbs := map[string]bool{}
+	for _, m := range usageVerb.FindAllSubmatch(main, -1) {
+		verbs[string(m[1])] = true
+	}
+	if !verbs["check"] || !verbs["css"] {
+		t.Fatalf("go/cmd/ciderui's usage lists %v, want check and css: this test reads it wrong", verbs)
+	}
+	written := map[string]bool{}
+	for _, m := range readmeCommand.FindAllSubmatch(readme, -1) {
+		written[string(m[1])] = true
+		if !verbs[string(m[1])] {
+			t.Errorf("README.md runs go tool ciderui %s, which go/cmd/ciderui's usage does not list", m[1])
+		}
+	}
+	for verb := range verbs {
+		if !written[verb] {
+			t.Errorf("README.md never runs go tool ciderui %s", verb)
 		}
 	}
 }

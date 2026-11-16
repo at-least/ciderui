@@ -28,7 +28,7 @@ func TestPagePanics(t *testing.T) {
 		{Want: "site.Page needs a Lang", Change: func(p *site.Page) { p.Lang = "" }},
 		{Want: "site.Page needs a Title", Change: func(p *site.Page) { p.Title = "" }},
 		// @invariant: under go test a page checks itself: a skip link to no main
-		{Want: `site.Page: href="#main" on <a class="cui-btn cui-skip">: this page has no id "main"`, Change: func(p *site.Page) {
+		{Want: `site.Page, refused by ciderui.CheckMarkup under go test: href="#main" on <a class="cui-btn cui-skip">: this page has no id "main"`, Change: func(p *site.Page) {
 			p.Children = globalNav([]site.GlobalNavLink{{Label: "Store", Href: "/store", Post: false}})
 		}},
 	})

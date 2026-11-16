@@ -1,7 +1,7 @@
 // Package ciderui embeds the kit's stylesheets and fonts, so a site's one Go
 // dependency on this module, at a commit, pins both its markup (the packages
 // under go/) and its CSS: [Assets] serves them. A site with utilities of its own
-// builds a second stylesheet from what go/cmd/ciderui-css writes.
+// builds a second stylesheet with `go tool ciderui css`.
 package ciderui
 
 import (

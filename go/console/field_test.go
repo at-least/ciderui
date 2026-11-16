@@ -46,6 +46,6 @@ func TestFieldPanics(t *testing.T) {
 		{Want: "console.ConsoleField needs an ID", Change: func(p *console.ConsoleField) { p.ID = "" }},
 		{Want: "console.ConsoleField needs a Label", Change: func(p *console.ConsoleField) { p.Label = "" }},
 		{Want: "console.ConsoleField needs a Control", Change: func(p *console.ConsoleField) { p.Control = nil }},
-		{Want: `example.Render: class on <input class="cui-console-field-input">: written twice, and the browser keeps the first`, Change: func(p *console.ConsoleField) { p.Control = input(h.Class("cui-console-field-input")) }},
+		{Want: `example.Render, refused by ciderui.CheckMarkup under go test: class on <input class="cui-console-field-input">: written twice, and the browser keeps the first`, Change: func(p *console.ConsoleField) { p.Control = input(h.Class("cui-console-field-input")) }},
 	})
 }
