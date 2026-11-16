@@ -38,7 +38,7 @@ func one(t *testing.T, p *browser.Page, selector, prop string) string {
 }
 
 func TestAssets(t *testing.T) {
-	own, err := build.OwnSheet("utilities.css", "px-8 md:px-8")
+	own, err := build.OwnSheet("px-8 md:px-8")
 	if err != nil {
 		t.Fatal(err)
 	}

@@ -165,7 +165,7 @@ func TestPage(t *testing.T) {
 		id        string
 		below, at int
 	}{{"md", 734, 735}, {"lg", 1068, 1069}, {"xl", 1440, 1441}}
-	kit, err := build.OwnSheet("utilities.css", "sm:underline md:underline lg:underline xl:underline 2xl:underline")
+	kit, err := build.OwnSheet("sm:underline md:underline lg:underline xl:underline 2xl:underline")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -198,7 +198,7 @@ func TestPage(t *testing.T) {
 
 	// @invariant: a site's setup as README.md tells it: its own utilities' sheet, built once,
 	// linked after the set's dist sheet
-	own, err := build.OwnSheet("utilities.css", ownClasses)
+	own, err := build.OwnSheet(ownClasses)
 	if err != nil {
 		t.Fatal(err)
 	}

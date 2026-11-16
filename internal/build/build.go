@@ -68,11 +68,9 @@ func Parts() ([]Part, error) {
 	return parts, nil
 }
 
-// Tailwind builds the stylesheet whose entry is the file at entry, minified, as a
-// site ships it.
-//
-// @external: entry, a file of its own: `@import` resolves from where it sits
-func Tailwind(entry string) (string, error) {
+// @external: entry, a file of its own: `@import` resolves from where it sits. Minified,
+// as a site ships it.
+func tailwind(entry string) (string, error) {
 	bin, err := pinned.Tailwind()
 	if err != nil {
 		return "", err
@@ -131,25 +129,22 @@ func Compile(s Sheet) (string, error) {
 	if err := os.WriteFile(path, []byte(entry.String()), 0o644); err != nil {
 		return "", fmt.Errorf("build: %w", err)
 	}
-	return Tailwind(path)
+	return tailwind(path)
 }
 
-// OwnSheet is a site's own utilities' stylesheet: the utilities.css at utilities
-// (from Root where relative), built with Tailwind for classes.
-func OwnSheet(utilities, classes string) (string, error) {
-	if !filepath.IsAbs(utilities) {
-		utilities = filepath.Join(Root, utilities)
-	}
+// OwnSheet is a site's own utilities' stylesheet: the checkout's utilities.css,
+// built with Tailwind for classes.
+func OwnSheet(classes string) (string, error) {
 	dir, err := os.MkdirTemp("", "ciderui-own-")
 	if err != nil {
 		return "", fmt.Errorf("build: %w", err)
 	}
 	defer os.RemoveAll(dir)
 	path := filepath.Join(dir, "entry.css")
-	if err := os.WriteFile(path, pinned.UtilitiesEntry(utilities, []string{fmt.Sprintf("inline(%q)", classes)}), 0o644); err != nil {
+	if err := os.WriteFile(path, pinned.UtilitiesEntry(filepath.Join(Root, "utilities.css"), []string{fmt.Sprintf("inline(%q)", classes)}), 0o644); err != nil {
 		return "", fmt.Errorf("build: %w", err)
 	}
-	return Tailwind(path)
+	return tailwind(path)
 }
 
 // Shipped is dist/<set>.css, what a site's page links.
