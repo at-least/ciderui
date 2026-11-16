@@ -50,7 +50,7 @@
   }
 
   .cui-console-strip-item {
-    /* @invariant: the marks' containing block */
+    /* @invariant: the containing block of the marks, the label and the detail */
     position: relative;
     display: block;
     flex: none;

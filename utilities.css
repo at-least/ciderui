@@ -1,9 +1,7 @@
-/* @external: What a site's own utilities need of Tailwind and of the kit: the
-   breakpoints and the dark variant. Not type.css: the kit's sheet ships the type,
-   and a copy here, in a sheet linked after it, would win over the kit's own values
-   once the kit is upgraded. `ciderui css` writes this file and
-   builds it with the pinned standalone Tailwind, which resolves Tailwind's own
-   imports with no node_modules. */
+/* @trap: no type.css here: the kit's sheet ships the type, and a copy in this
+   sheet, linked after the kit's, would win over a newer kit's values (decision 41).
+   `ciderui css` builds this file with the pinned standalone Tailwind, which
+   resolves the tailwindcss/ imports with no node_modules. */
 @layer theme, base, components, utilities;
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities) source(none);

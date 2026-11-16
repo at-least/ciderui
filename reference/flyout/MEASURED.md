@@ -1,8 +1,8 @@
 # The global nav's flyouts, with no script
 
-The global nav's flyouts went by DESIGN.md decision 36; below is the record of what was read.
+The global nav's flyouts went by DESIGN.md decision 36, their probe by decision 55; below is the record of what was read.
 
-The probe behind the global nav's flyouts, apple.com's menus under its links (`../apple.com/`, `flyout:*`), which apple.com's script opens: the pointer resting 120ms on a link, and on a touch screen a tap on the link; the link's button for the keyboard; to 833px a row of the menu opening its flyout over it. page.html holds the techniques at their smallest (a sticky bar under a 70px banner, its list a closed popover shown as its row, as the nav's is; two links with a flyout each and one without), and nothing in it is a script but what reads it:
+The probe behind the global nav's flyouts, apple.com's menus under its links (`../apple.com/`, `flyout:*`), which apple.com's script opens: the pointer resting 120ms on a link, and on a touch screen a tap on the link; the link's button for the keyboard; to 833px a row of the menu opening its flyout over it. page.html held the techniques at their smallest (a sticky bar under a 70px banner, its list a closed popover shown as its row, as the nav's is; two links with a flyout each and one without), and nothing in it was a script but what read it:
 
 - From 834px with a pointer (`(hover: hover)`), a link's flyout, a popover after the link, is shown by the page closed (the browser's own style hides a closed popover; the page's wins), from the bar's top, behind the bar's links (theirs the higher `z-index`), hidden (`visibility`) and the bar's height (so that no hidden flyout is laid out below the bar, where a page shorter than it would scroll to its foot: its height and its visibility flipped together, `transition-behavior: allow-discrete`) until the pointer is on its item: `:hover`, with a transition's delay of 120ms, so that a pointer passing over a link shows nothing. Its panel is revealed down from the bar (`clip-path`), and under it the list's curtain (its `::after`) is fixed over the window, blurring the page, taking no pointer, so that the pointer on the curtain is off the item; the bar's own blur is off while a flyout shows (a `backdrop-filter` on the bar would hold the curtain to the bar, as its containing block, and keep it from the page, as its backdrop root), and back after the curtain has gone. The pointer moved on along the bar keeps the flyout it left until the next is shown (`:hover` on the list, a longer delay), and the pointer off the bar and the flyout hides it.
 - The link's button (`popovertarget`) opens the flyout as a popover, from the bar's bottom (anchor positioning), its curtain a button that closes it; on a screen with no hover the button lies over the link, so a tap opens the flyout and does not follow the link, as apple.com's script does there.
@@ -64,13 +64,6 @@ What the probe found:
 
 Not measured: Firefox on macOS, a real iPhone or iPad; an iPad with a trackpad or mouse (its pointer hovers: the page's hover rules would apply); the flyouts' motion (the component's tests read it in Chromium).
 
-## Running it
+## The probe
 
-```sh
-BROWSER=safari go run ./reference/flyout      # Safari quit first (internal/probe); and chrome
-BROWSER=ipad go run ./reference/flyout        # on the Mac: Xcode, XcodeGen (Homebrew); and iphone
-BROWSER=chromium go run ./reference/flyout
-BROWSER=firefox go run ./reference/flyout     # Playwright's Firefox (go run github.com/mxschmitt/playwright-go/cmd/playwright install firefox), Xvfb and ImageMagick
-```
-
-main.go serves page.html on 127.0.0.1, moves the pointer, clicks and presses through `internal/probe` (Safari's buttons by its keyboard: focused, Return, Option-Tab for Tab), takes its pictures (`shot()`), or taps through XCUITest on a simulator of its own (`internal/xcuitest`: an iPad Pro 13-inch or an iPhone 17, created and deleted, the booted ones left alone), and fails if a claim does not hold.
+Gone by decision 55 with its page; git holds both at 9d7a763's parent. It served page.html on 127.0.0.1, moved the pointer, clicked and pressed through `internal/probe` (Safari's buttons by its keyboard: focused, Return, Option-Tab for Tab), took its pictures, or tapped through XCUITest on a simulator of its own (`internal/xcuitest`: an iPad Pro 13-inch or an iPhone 17, created and deleted, the booted ones left alone), and failed if a claim did not hold.

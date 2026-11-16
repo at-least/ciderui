@@ -23,8 +23,8 @@ func Some[T any](part, what string, values []T) {
 
 // At names a part's i-th item ("console.ConsoleTabs.Tabs[2]").
 //
-// @invariant: a site builds items in a loop from data, and a panic naming the
-// part alone left it to bisect that data.
+// @invariant: a site builds items in a loop from data; a panic naming the part
+// alone would leave it to bisect that data.
 func At(path string, i int) string {
 	return path + "[" + strconv.Itoa(i) + "]"
 }

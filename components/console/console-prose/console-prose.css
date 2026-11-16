@@ -25,8 +25,8 @@
       }
     }
 
-    /* @invariant: one rung under the section's title (cui-console-h4-emph), as the text
-       sits in a section: h1 and h2 the h5, the rest the body's own size */
+    /* @invariant: h1 and h2 one rung under the section's title (cui-console-h4-emph),
+       as the text sits in a section: cui-console-h5-emph from 640px */
     & :where(h1, h2) {
       font-size: 18px;
       line-height: 22px;

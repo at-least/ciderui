@@ -30,8 +30,8 @@ type Btn struct {
 	Label string
 	// Icon: the page's node — Google's G, a spinner, [lucide.Check]. The
 	// button sets it half an em before the Label, centred on it, 1em square.
-	// Not [lucide.Icon], the console button's type: a site's button is the
-	// store's, whose marks are its page's own.
+	// Not [lucide.Icon]: a site's button is the store's, whose marks are its
+	// page's own.
 	Icon g.Node
 	// Submit: a <button> that sends its form; otherwise type="button".
 	Submit  bool

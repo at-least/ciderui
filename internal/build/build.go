@@ -115,7 +115,7 @@ func Compile(s Sheet) (string, error) {
 	}
 	var entry strings.Builder
 	// @external: the standalone binary's own Tailwind: dist/ byte-identical to the npm
-	// CLI's build from node_modules/tailwindcss/index.css (2026-11-15)
+	// CLI's build from node_modules/tailwindcss/index.css
 	entry.WriteString(`@import "tailwindcss" source(none);` + "\n")
 	fmt.Fprintf(&entry, "@source inline(%s);\n", classes)
 	for _, src := range s.Sources {

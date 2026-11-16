@@ -4,7 +4,7 @@ This project is agent-native: written and maintained entirely by AI agents, and 
 
 ## What it is
 
-apple.com's look for websites, as one dependency: a small contract of CSS variables (`--cui-*`) — the colors, the type, the focus ring, the shadows —, the type as classes, apple.com's parts as classes (`cui-btn`, `cui-globalnav`, `cui-field`, …), Inter where the system font is not SF, and a Go module that writes the parts' markup with gomponents, serves the stylesheets and fonts, and draws every [Lucide](https://lucide.dev) icon. It has no JavaScript: behavior comes from HTML's own elements. Every value is measured on Apple's own pages.
+apple.com's look for websites, as one dependency: a small contract of CSS variables (`--cui-*`) — the colors, the type, the focus ring, the shadows —, the type as classes, apple.com's parts as classes (`cui-btn`, `cui-globalnav`, `cui-field`, …), Inter where the system font is not SF, and a Go module that writes the parts' markup with gomponents, serves the stylesheets and fonts, and draws every [Lucide](https://lucide.dev) icon. It has no JavaScript: behavior comes from HTML's own elements. Its values are measured on Apple's own pages; where one departs, its test says why.
 
 ## How it fits together
 

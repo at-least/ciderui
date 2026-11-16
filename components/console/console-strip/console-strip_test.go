@@ -36,7 +36,6 @@ var (
 	at = map[int]int{390: 1200}
 )
 
-// @invariant: one scene of one shot, its name longer than the shot is wide, and no label
 func lone(title string) string {
 	return `<div class="cui-console-page"><nav class="cui-console-strip" aria-label="Shots"><div class="cui-console-strip-group"><p class="cui-console-strip-header"><span class="cui-console-strip-title">` + title + `</span></p><a class="cui-console-strip-item" href="#a"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Shot 1"></a></div></nav></div>`
 }

@@ -1,6 +1,6 @@
 # A popover as the global nav's search
 
-The global nav's search went by DESIGN.md decision 36; below is the record of what was read.
+The global nav's search went by DESIGN.md decision 36, its probe by decision 55; below is the record of what was read.
 
 The probe behind the global nav's search, apple.com's flyout under the bar and its sheet on a phone (`../apple.com/`, `search:*`), on HTML's popover, which needs no script: the bar's search button opens it (`popovertarget`), its field takes the focus (`autofocus`), Escape and a click outside it close it. From 834px the flyout hangs from the bar's bottom, placed there by anchor positioning (`anchor-name` on the bar, `top: anchor(bottom)` on the flyout), with the curtain under its panel to the window's bottom; to 833px it is a sheet over the window and the bar, with a close button of its own, the page held. The claims, each read by search.js on page.html (the search's techniques at their smallest: a sticky bar under a 70px banner, its list a closed popover shown as its row, as the nav's is) after the browser's own clicks and keys, and in pictures of the window:
 
@@ -55,12 +55,6 @@ In Firefox (2026-10-22) the pictures are the virtual display's pixels (`internal
 
 Not measured: Firefox on macOS, a real iPhone or iPad; a tap outside the flyout on a phone (no tap clicks on the simulator); the flyout's motion (the component's tests read it in Chromium).
 
-## Running it
+## The probe
 
-```sh
-BROWSER=safari go run ./reference/search      # Safari quit first (internal/probe); and ios, chrome
-BROWSER=chromium go run ./reference/search
-BROWSER=firefox go run ./reference/search     # Playwright's Firefox (go run github.com/mxschmitt/playwright-go/cmd/playwright install firefox), Xvfb and ImageMagick
-```
-
-main.go serves page.html on 127.0.0.1 (`?sheet` the same page as a sheet), clicks and presses through `internal/probe`, takes its pictures (`shot()`) and fails if a claim does not hold.
+Gone by decision 55 with its page and search.js; git holds them at 9d7a763's parent. It served page.html on 127.0.0.1 (`?sheet` the same page as a sheet), clicked and pressed through `internal/probe`, took its pictures and failed if a claim did not hold.

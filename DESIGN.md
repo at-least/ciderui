@@ -106,7 +106,7 @@ Not themed, each measured: in tokens.css, the focus ring (rule 9), the shadows (
 
 ## What is not built or measured
 
-Not built: anything of Apple's developer documentation but the console's listing (decision 29).
+Not built: anything of Apple's developer documentation but DocC's listing, a `<pre>` in `cui-console-prose` (decisions 29, 55).
 
 Not measured: the store's checkout pages (the agent's recommendation, which the owner took, 「都按照你的推薦」, 2026-10-21): they are not reachable without a bag, a headless browser's Add to Bag is refused (a 541), and getting past that would be getting past apple.com's bot protection; their form parts were read on the gift card's, the trade-in's and the feedback form's pages. Nor a phone's own screen: the taps are the iOS simulator's and Chromium's (`reference/tap/`); apple.com's pages are tapped in Chromium alone (`tap-*:*`). When a part is built, its probes are added where the reference's are not enough.
 
@@ -200,7 +200,7 @@ Numbered as cited across the repository; a new one takes the next number.
 ## Assumptions
 
 - **Measured**:
-  - apple.com's values (`reference/apple.com/`, from 2026-10-19), App Store Connect's (`reference/asc/`), Apple's other sites' (`reference/apple-account/`, `reference/feedback-assistant/`, `reference/developer-account/`, `reference/developer-forums/`), and DocC's page (`reference/apple.com/`'s `docc`), read by the console's listing.
+  - apple.com's values (`reference/apple.com/`, from 2026-10-19), App Store Connect's (`reference/asc/`), Apple's other sites' (`reference/apple-account/`, `reference/feedback-assistant/`, `reference/developer-account/`, `reference/developer-forums/`), and DocC's page (`reference/apple.com/`'s `docc`), read by `cui-console-prose`'s listing.
   - The system font's tracking and its fix (`reference/tracking/`); the stack's fonts and fetching (`reference/stack/`); a section's color scheme (`reference/scheme/`); the palette's contrast, computed from the measured values.
   - The nav's popover menu and the accordion's `<details>` in each browser listed (`reference/popover/`, `reference/details/`); what a tap leaves and the menu opened by one (`reference/tap/`); what of the nav can be selected (`reference/select/`).
   - The console's tabs' phone row and page column (its edge fade, measured there too, removed by decision 40) (`reference/console/`: Chromium 151 and Playwright's Firefox 153 on Linux, 2026-10-28; Safari 27.0 on macOS 27.0 in a `tester` VM, 2026-10-29, and Safari 27.0.1 on air, light and dark, 2026-11-07; not yet in Chrome or on the iOS simulator).

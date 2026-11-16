@@ -29,8 +29,8 @@ type artifact struct {
 	sha256 string
 }
 
-// @external: the sums are the release's sha256sums.txt (Tailwind) and the registry's
-// tarballs, whose sha512 matched package-lock.json's integrity when they were pinned
+// @external: Tailwind's sums are its release's sha256sums.txt; a registry tarball's is
+// its own, checked against the registry's sha512 integrity
 var tailwind = map[string]artifact{
 	"linux/amd64":  {url: "https://github.com/tailwindlabs/tailwindcss/releases/download/v" + tailwindVersion + "/tailwindcss-linux-x64", sha256: "dc61b3ac6b8c9ca874c0cc4c57b2409791a64c5540404ca5f5367360babc313a"},
 	"darwin/arm64": {url: "https://github.com/tailwindlabs/tailwindcss/releases/download/v" + tailwindVersion + "/tailwindcss-macos-arm64", sha256: "cdf646702987a743464dff4d9c60fd4480d1c1e73dd819a9a67f1078815dce9d"},
@@ -63,8 +63,8 @@ func Tailwind() (string, error) {
 
 // UtilitiesEntry is the Tailwind entry of a site's own utilities' sheet: the
 // utilities.css at utilities, an absolute path, then one `@source <s>;` line for
-// each of sources. `ciderui css` writes its @source of a site's packages, and the
-// tests' pages their classes inline.
+// each of sources, each an @source argument as written: a quoted glob, `not` one,
+// or inline(...).
 func UtilitiesEntry(utilities string, sources []string) []byte {
 	entry := fmt.Appendf(nil, "@import %q;\n", utilities)
 	for _, s := range sources {

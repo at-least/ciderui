@@ -13,8 +13,8 @@ import (
 	"strings"
 )
 
-// @trap: by name, not a pattern: a pattern would embed a stray file in the
-// repository's root too.
+// @trap: the root's stylesheets by name, not *.css: a pattern would embed a stray
+// file there too.
 //
 //go:embed theme.css base.css type.css utilities.css components/*/*/*.css fonts
 var kit embed.FS
