@@ -51,7 +51,7 @@ go tool ciderui css public/utilities.css ./pages ./layout
 
 ## Developing
 
-Go is the one tool to install. `go run ./scripts/gate`: it checks each part in headless Chromium against apple.com's measured values, takes a picture of every example at every width, and tests the Go module. The browser's tests run in one Docker image, reached through `DOCKER_HOST`.
+Go is the one tool to install. `go run ./scripts/gate`: it checks each part in headless Chromium against apple.com's measured values, takes a picture of every example at every width, and tests the Go module. The browser's tests run in one arm64 Docker image, on the Mac's own Docker (OrbStack).
 
 ## License
 

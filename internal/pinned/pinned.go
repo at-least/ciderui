@@ -32,7 +32,7 @@ type artifact struct {
 // @external: Tailwind's sums are its release's sha256sums.txt; a registry tarball's is
 // its own, checked against the registry's sha512 integrity
 var tailwind = map[string]artifact{
-	"linux/amd64":  {url: "https://github.com/tailwindlabs/tailwindcss/releases/download/v" + tailwindVersion + "/tailwindcss-linux-x64", sha256: "dc61b3ac6b8c9ca874c0cc4c57b2409791a64c5540404ca5f5367360babc313a"},
+	"linux/arm64":  {url: "https://github.com/tailwindlabs/tailwindcss/releases/download/v" + tailwindVersion + "/tailwindcss-linux-arm64", sha256: "55fd0b241214eff3de1e8ee4f22796662f2d2e7a49bcfca7477cfd0bac398195"},
 	"darwin/arm64": {url: "https://github.com/tailwindlabs/tailwindcss/releases/download/v" + tailwindVersion + "/tailwindcss-macos-arm64", sha256: "cdf646702987a743464dff4d9c60fd4480d1c1e73dd819a9a67f1078815dce9d"},
 }
 
