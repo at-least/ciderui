@@ -113,6 +113,8 @@
  "console prose code, quote and rule | .cui-console-prose > hr | 390 | border-top-width": "1px",
  "console prose code, quote and rule | .cui-console-prose > hr | 390 | border-top-style": "solid",
  "console prose code, quote and rule | .cui-console-prose > hr | 390 | border-top-color": "oklch(0.359 0.012 285.8 / 0.13)",
+ "console prose long word | .cui-console-prose li | 390 | overflow-wrap": "break-word",
+ "console prose long word | .cui-console-prose li | 390 | box-width": "180px",
  "console prose in a card | .cui-console-prose > pre | 1200 | background-color": "oklch(1 0 0)",
  "console prose with a part | .cui-console-prose .cui-console-link | 1200 | text-decoration-line": "none",
  "console prose dark | .cui-console-prose > p + p | 1200 | color": "oklch(1 0 0 / 0.85)",

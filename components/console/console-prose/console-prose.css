@@ -5,6 +5,9 @@
     line-height: 21px;
     font-weight: 400;
     letter-spacing: normal;
+    /* @trap: a consumer's text holds words with no space (a stack frame, a URL); at
+       normal one runs past the column and the page scrolls sideways */
+    overflow-wrap: break-word;
 
     @media (width >= 640px) {
       font-size: 13px;

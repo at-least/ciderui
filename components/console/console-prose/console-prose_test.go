@@ -45,6 +45,14 @@ func TestCases(t *testing.T) {
 			},
 		},
 		{
+			Name:   "console prose long word",
+			HTML:   `<div class="cui-console-page" style="width: 200px"><div class="cui-console-prose"><ul><li>claude: at com.example.store.backup.BackupScheduler$RetryingUploader.uploadSnapshotToColdStorage(BackupScheduler.kt:412)</li></ul></div></div>`,
+			Widths: []int{390},
+			Checks: []h.Check{
+				{Target: p + " li", Props: []string{"overflow-wrap", "box-width"}, Golden: "a word with no space breaks at the column's edge, so the page never scrolls sideways"},
+			},
+		},
+		{
 			Name:   "console prose in a card",
 			HTML:   `<div class="cui-console-page"><div class="cui-console-card"><div class="cui-console-prose"><pre><code>x</code></pre></div></div></div>`,
 			Widths: []int{1200},
