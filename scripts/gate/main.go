@@ -87,9 +87,6 @@ func host() error {
 	if _, err := run("go", "run", "./go/cmd/ciderui", "check", "./..."); err != nil {
 		return err
 	}
-	if err := ownSheet(); err != nil {
-		return err
-	}
 	for _, dir := range statementsOf {
 		entries, err := os.ReadDir(filepath.Join(build.Root, dir))
 		if err != nil {
@@ -124,50 +121,6 @@ func host() error {
 		}
 		if !strings.Contains(line, "coverage: 100.0% of statements") {
 			return fmt.Errorf("a statement of %s no test runs (go test -coverprofile): %s", set, line)
-		}
-	}
-	return nil
-}
-
-// @invariant: what a site with utilities of its own does: `ciderui css` over a
-// package of its own. The command reads the kit's embedded utilities.css where
-// everything else reads the checkout, so a stylesheet left out of go:embed fails
-// here and nowhere else.
-func ownSheet() error {
-	dir, err := os.MkdirTemp("", "ciderui-own-")
-	if err != nil {
-		return err
-	}
-	defer os.RemoveAll(dir)
-	pages := filepath.Join(dir, "pages")
-	if err := os.Mkdir(pages, 0o755); err != nil {
-		return err
-	}
-	for name, class := range map[string]string{"page.go": "px-8 md:px-8 cui-btn cui-headline", "page_test.go": "px-9"} {
-		if err := os.WriteFile(filepath.Join(pages, name), fmt.Appendf(nil, "package pages\n\nconst class = %q\n", class), 0o644); err != nil {
-			return err
-		}
-	}
-	out := filepath.Join(dir, "utilities.css")
-	if _, err := run("go", "run", "./go/cmd/ciderui", "css", out, pages); err != nil {
-		return err
-	}
-	b, err := os.ReadFile(out)
-	if err != nil {
-		return err
-	}
-	built := string(b)
-	for _, rule := range []string{".px-8", `.md\:px-8`} {
-		if !strings.Contains(built, rule) {
-			return fmt.Errorf("ciderui css built no %s of a page's Go: %.200s", rule, built)
-		}
-	}
-	if strings.Contains(built, ".px-9") {
-		return fmt.Errorf("ciderui css built .px-9, which only a _test.go writes")
-	}
-	for _, kit := range []string{".cui-btn", ".cui-headline"} {
-		if strings.Contains(built, kit) {
-			return fmt.Errorf("ciderui css built the kit's %s, which the kit's own sheet ships", kit)
 		}
 	}
 	return nil

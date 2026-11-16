@@ -141,6 +141,8 @@ func TestCSSOfAFileExitsOneNamingIt(t *testing.T) {
 	}
 }
 
+// @invariant: the command reads the kit's embedded utilities.css where everything else
+// reads the checkout, so a stylesheet left out of go:embed fails here and nowhere else
 func TestCSSWritesTheUtilitiesOfEachDirectorysGoFilesMinifiedLeavingOutTestFilesAndTheKitsOwn(t *testing.T) {
 	dir := t.TempDir()
 	// @trap: TMPDIR is the command's own: the scratch directory the kit's sheet is
