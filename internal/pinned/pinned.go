@@ -20,9 +20,9 @@ import (
 	"strings"
 )
 
-// TailwindVersion builds dist/ and, through `ciderui css`, a site's own utilities:
-// one version, so the two sheets cannot part.
-const TailwindVersion = "4.3.3"
+// @invariant: one version builds dist/ and, through `ciderui css`, a site's own
+// utilities, so the two sheets cannot part
+const tailwindVersion = "4.3.3"
 
 type artifact struct {
 	url    string
@@ -32,8 +32,8 @@ type artifact struct {
 // @external: the sums are the release's sha256sums.txt (Tailwind) and the registry's
 // tarballs, whose sha512 matched package-lock.json's integrity when they were pinned
 var tailwind = map[string]artifact{
-	"linux/amd64":  {url: "https://github.com/tailwindlabs/tailwindcss/releases/download/v" + TailwindVersion + "/tailwindcss-linux-x64", sha256: "dc61b3ac6b8c9ca874c0cc4c57b2409791a64c5540404ca5f5367360babc313a"},
-	"darwin/arm64": {url: "https://github.com/tailwindlabs/tailwindcss/releases/download/v" + TailwindVersion + "/tailwindcss-macos-arm64", sha256: "cdf646702987a743464dff4d9c60fd4480d1c1e73dd819a9a67f1078815dce9d"},
+	"linux/amd64":  {url: "https://github.com/tailwindlabs/tailwindcss/releases/download/v" + tailwindVersion + "/tailwindcss-linux-x64", sha256: "dc61b3ac6b8c9ca874c0cc4c57b2409791a64c5540404ca5f5367360babc313a"},
+	"darwin/arm64": {url: "https://github.com/tailwindlabs/tailwindcss/releases/download/v" + tailwindVersion + "/tailwindcss-macos-arm64", sha256: "cdf646702987a743464dff4d9c60fd4480d1c1e73dd819a9a67f1078815dce9d"},
 }
 
 // LucideVersion is the lucide-static whose icons go/lucide/lucide.go holds.
