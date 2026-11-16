@@ -1,0 +1,21 @@
+<div class="cui-console-page max-w-xl">
+  <div class="cui-console-prose">
+    <p>Deploy 41 of <b>shop</b> 2.4.0 (commit 9f3c2a1) at 2026-11-16 09:12 UTC. <a href="#">Open the deploy</a>.</p>
+    <p>Compared with the previous release 2.3.2 over the hour before the deploy.</p>
+    <h2>Verdict</h2>
+    <p>The crash in <code>Cart.total()</code> started with this release.</p>
+    <ul>
+      <li>412 users met it.</li>
+      <li>iOS 18.2 holds most of it.</li>
+    </ul>
+    <h3>Operations judged together</h3>
+    <ol>
+      <li>Open the cart.</li>
+      <li>Check out.</li>
+    </ol>
+    <table>
+      <thead><tr><th>Operation</th><th>Before</th><th>After</th></tr></thead>
+      <tbody><tr><td>GET /cart</td><td>120 ms</td><td>480 ms</td></tr><tr><td>POST /checkout</td><td>210 ms</td><td>230 ms</td></tr></tbody>
+    </table>
+  </div>
+</div>

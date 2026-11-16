@@ -1,0 +1,158 @@
+@layer components {
+  .cui-console-prose {
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+    letter-spacing: normal;
+
+    @media (width >= 640px) {
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    /* @invariant: cui-prose's 14px on its 25px line, in the console's line: 12px under 21px,
+       10px under 18px */
+    & > :where(* + *),
+    & :where(blockquote) > :where(* + *) {
+      margin-top: 12px;
+
+      @media (width >= 640px) {
+        margin-top: 10px;
+      }
+    }
+
+    /* @invariant: one rung under the section's title (cui-console-h4-emph), as the text
+       sits in a section: h1 and h2 the h5, the rest the body's own size */
+    & :where(h1, h2) {
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 600;
+
+      @media (width >= 640px) {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+
+    & :where(h3, h4, h5, h6) {
+      font-weight: 600;
+    }
+
+    /* @invariant: the section's 20px between blocks above a heading, so a heading opens
+       what follows it */
+    & > :where(* + :is(h1, h2, h3, h4, h5, h6)) {
+      margin-top: 1.25rem;
+    }
+
+    & :where(ul, ol) {
+      margin-left: 20px;
+      padding-left: 0;
+      list-style-position: outside;
+    }
+
+    & :where(ul) {
+      list-style-type: disc;
+    }
+
+    & :where(ol) {
+      list-style-type: decimal;
+    }
+
+    & :where(li + li) {
+      margin-top: 0.4em;
+    }
+
+    & :where(b, strong) {
+      font-weight: 600;
+    }
+
+    /* @trap: a part's link keeps its own look: at the same weight as this rule, which
+       comes later, it would take the text's link color and line */
+    & :where(a:not([class*="cui-"])) {
+      color: var(--cui-c-console-brand-label-primary);
+      text-decoration-line: underline;
+    }
+
+    & :where(img) {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    & :where(code) {
+      font-family: var(--cui-font-mono);
+      letter-spacing: normal;
+    }
+
+    /* @invariant: cui-console-pre's listing, which markdown cannot write the class of */
+    & :where(pre) {
+      border-radius: 15px;
+      padding: 8px 14px;
+      overflow-x: auto;
+      font-family: var(--cui-font-mono);
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: normal;
+      tab-size: 4;
+      color: var(--cui-c-console-neutral-label-primary);
+      background-color: var(--cui-console-inset, var(--cui-c-console-card));
+
+      & :where(code) {
+        font-size: inherit;
+      }
+    }
+
+    & :where(blockquote) {
+      padding: 8px 14px;
+      border-radius: 15px;
+      background-color: var(--cui-console-inset, var(--cui-c-console-card));
+    }
+
+    & :where(hr) {
+      border: 0;
+      border-top: 1px solid var(--cui-c-console-neutral-border-tertiary);
+    }
+
+    /* @trap: markdown writes a table with no wrapper, so the table scrolls itself (block,
+       its rows still a table's); its cells are cui-console-table's */
+    & :where(table) {
+      display: block;
+      overflow-x: auto;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+
+    & :where(th) {
+      padding: 0.5625rem 0.5rem;
+      color: var(--cui-c-console-neutral-label-secondary);
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: 500;
+      text-align: left;
+      vertical-align: bottom;
+
+      @media (width >= 640px) {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 600;
+      }
+    }
+
+    & :where(td) {
+      padding: 0.9375rem 0.5rem;
+      border-bottom: 1px solid var(--cui-c-console-neutral-border-tertiary);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    & :where(th, td):first-child {
+      padding-inline-start: 0;
+    }
+
+    & :where(th, td):last-child {
+      padding-inline-end: 0;
+    }
+  }
+}
