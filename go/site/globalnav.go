@@ -39,9 +39,7 @@ type GlobalNav struct {
 func (n GlobalNav) Render(w io.Writer) error {
 	need.Field("site.GlobalNav", "a Home", n.Home)
 	need.Field("site.GlobalNav", "a Wordmark", n.Wordmark)
-	if len(n.Links) == 0 {
-		panic("site.GlobalNav needs Links")
-	}
+	need.Some("site.GlobalNav", "Links", n.Links)
 	need.Field("site.GlobalNav", "an AriaLabel", n.AriaLabel)
 	need.Field("site.GlobalNav", "a SkipLabel", n.SkipLabel)
 	need.Field("site.GlobalNav", "an OpenAriaLabel", n.OpenAriaLabel)
