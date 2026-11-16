@@ -60,7 +60,7 @@ func TestGlobalNavEachPostLinkSubmitsAFormOfItsOwn(t *testing.T) {
 
 func TestGlobalNavPanics(t *testing.T) {
 	example.Panics(t, func() site.GlobalNav {
-		return globalNav([]site.GlobalNavLink{{Label: "Store", Href: "/store", Post: false}})
+		return globalNav([]site.GlobalNavLink{{Label: "Store", Href: "/store", Post: false}, {Label: "Support", Href: "/support", Post: false}})
 	}, []example.Break[site.GlobalNav]{
 		{Want: "site.GlobalNav needs a Home", Change: func(p *site.GlobalNav) { p.Home = "" }},
 		{Want: "site.GlobalNav needs a Wordmark", Change: func(p *site.GlobalNav) { p.Wordmark = "" }},
@@ -69,7 +69,7 @@ func TestGlobalNavPanics(t *testing.T) {
 		{Want: "site.GlobalNav needs a SkipLabel", Change: func(p *site.GlobalNav) { p.SkipLabel = "" }},
 		{Want: "site.GlobalNav needs an OpenAriaLabel", Change: func(p *site.GlobalNav) { p.OpenAriaLabel = "" }},
 		{Want: "site.GlobalNav needs a CloseAriaLabel", Change: func(p *site.GlobalNav) { p.CloseAriaLabel = "" }},
-		{Want: "site.GlobalNav.Links[0] needs a Label", Change: func(p *site.GlobalNav) { p.Links[0].Label = "" }},
-		{Want: "site.GlobalNav.Links[0] needs an Href", Change: func(p *site.GlobalNav) { p.Links[0].Href = "" }},
+		{Want: "site.GlobalNav.Links[1] needs a Label", Change: func(p *site.GlobalNav) { p.Links[1].Label = "" }},
+		{Want: "site.GlobalNav.Links[1] needs an Href", Change: func(p *site.GlobalNav) { p.Links[1].Href = "" }},
 	})
 }

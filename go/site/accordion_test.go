@@ -18,8 +18,8 @@ func TestAccordionRendersTheExamples(t *testing.T) {
 
 func TestAccordionPanics(t *testing.T) {
 	example.Panics(t, func() site.Accordion {
-		return site.Accordion{Items: []site.AccordionItem{{Question: "x", Children: g.Text("x")}}}
+		return site.Accordion{Items: []site.AccordionItem{{Question: "x", Children: g.Text("x")}, {Question: "y", Children: g.Text("y")}}}
 	}, []example.Break[site.Accordion]{
-		{Want: "site.Accordion.Items[0] needs a Question", Change: func(p *site.Accordion) { p.Items[0].Question = "" }},
+		{Want: "site.Accordion.Items[1] needs a Question", Change: func(p *site.Accordion) { p.Items[1].Question = "" }},
 	})
 }
