@@ -223,7 +223,12 @@ func TestSettings(t *testing.T) {
 				FG     string `json:"fg"`
 				BG     string `json:"bg"`
 			}
+			// @external: the switch to more contrast starts transitions (a field label's
+			// `transition: all` took its color from #6e6e73 through #5d5d61); axe reads them done.
+			// Transitions alone: an infinite animation (a busy spinner) never finishes, and
+			// waiting on every animation hung the test until go test's timeout
 			if err := browser.Decode(p.eval(`async () => {
+  await Promise.all(document.getAnimations().filter((a) => a instanceof CSSTransition).map((a) => a.finished));
   const r = await axe.run(document, { runOnly: { type: 'rule', values: ['color-contrast-enhanced'] }, resultTypes: ['violations'] });
   return r.violations.flatMap((v) => v.nodes.map((n) => ({ target: n.target.join(' '), fg: n.any[0].data.fgColor, bg: n.any[0].data.bgColor })));
 }`), &found); err != nil {
