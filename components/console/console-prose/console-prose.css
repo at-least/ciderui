@@ -88,7 +88,8 @@
       letter-spacing: normal;
     }
 
-    /* @invariant: cui-console-pre's listing, which markdown cannot write the class of */
+    /* @invariant: DocC's listing (docc:listing) at the console's 13px mono body, its line
+       in DocC's proportion, 25px on 15px */
     & :where(pre) {
       border-radius: 15px;
       padding: 8px 14px;

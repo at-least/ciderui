@@ -3,6 +3,7 @@ package console
 import (
 	"io"
 
+	"github.com/at-least/ciderui/go/internal/need"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -39,32 +40,35 @@ type ConsoleMenuSection struct {
 func menuSections(sections []ConsoleMenuSection) g.Node {
 	var nodes g.Group
 	for i, s := range sections {
-		needSome("console.ConsoleMenuSection", "Items", s.Items)
+		section := need.At("console.ConsoleSidebar.Sections", i)
+		need.Some(section, "Items", s.Items)
 		switch {
 		case s.Title != "":
 			nodes = append(nodes, h.P(h.Class("cui-console-menu-title"), g.Text(s.Title)))
 		case i > 0:
 			nodes = append(nodes, h.Hr(h.Class("cui-console-menu-rule")))
 		}
-		nodes = append(nodes, g.Map(s.Items, ConsoleMenuItem.node))
+		for j, item := range s.Items {
+			nodes = append(nodes, item.node(need.At(section+".Items", j)))
+		}
 	}
 	return nodes
 }
 
 func (s ConsoleSidebar) Render(w io.Writer) error {
-	need("console.ConsoleSidebar", "an AriaLabel", s.AriaLabel)
-	need("console.ConsoleSidebar", "a Home", s.Home)
-	need("console.ConsoleSidebar", "a Wordmark", s.Wordmark)
-	need("console.ConsoleSidebar", "a SkipLabel", s.SkipLabel)
-	need("console.ConsoleSidebar", "an OpenAriaLabel", s.OpenAriaLabel)
-	need("console.ConsoleSidebar", "a CloseAriaLabel", s.CloseAriaLabel)
-	needSome("console.ConsoleSidebar", "Sections", s.Sections)
+	need.Field("console.ConsoleSidebar", "an AriaLabel", s.AriaLabel)
+	need.Field("console.ConsoleSidebar", "a Home", s.Home)
+	need.Field("console.ConsoleSidebar", "a Wordmark", s.Wordmark)
+	need.Field("console.ConsoleSidebar", "a SkipLabel", s.SkipLabel)
+	need.Field("console.ConsoleSidebar", "an OpenAriaLabel", s.OpenAriaLabel)
+	need.Field("console.ConsoleSidebar", "a CloseAriaLabel", s.CloseAriaLabel)
+	need.Some("console.ConsoleSidebar", "Sections", s.Sections)
 	return g.Group{
-		ConsoleBtn{Href: "#main", Label: s.SkipLabel, AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: ConsoleBtnVariantFilled, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: "cui-console-skip"},
+		ConsoleBtn{Href: "#main", Label: s.SkipLabel, Submit: false, Variant: ConsoleBtnVariantFilled, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: "cui-console-skip"},
 		h.Nav(h.Class("cui-console-sidebar"), h.ID(sidebarID), h.Popover(), h.Aria("label", s.AriaLabel),
 			h.Div(h.Class("cui-console-sidebar-header"),
 				h.A(h.Class("cui-console-sidebar-wordmark"), h.Href(s.Home), g.Text(s.Wordmark)),
-				ConsoleBtn{Href: "", Label: "", AriaLabel: s.CloseAriaLabel, Icon: lucide.X, Submit: false, Variant: ConsoleBtnVariantPlain, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: g.Group{h.PopoverTarget(sidebarID), h.PopoverTargetAction("hide"), h.AutoFocus()}, Class: "cui-console-sidebar-close"},
+				iconButton(lucide.X, s.CloseAriaLabel, g.Group{h.PopoverTarget(sidebarID), h.PopoverTargetAction("hide"), h.AutoFocus()}, "cui-console-sidebar-close"),
 			),
 			h.Div(h.Class("cui-console-sidebar-body cui-console-menu"), h.Data("variant", "sidebar"), menuSections(s.Sections)),
 			h.Div(h.Class("cui-console-sidebar-footer"), s.Footer),
@@ -73,5 +77,5 @@ func (s ConsoleSidebar) Render(w io.Writer) error {
 }
 
 func sidebarOpen(ariaLabel string) g.Node {
-	return ConsoleBtn{Href: "", Label: "", AriaLabel: ariaLabel, Icon: lucide.Menu, Submit: false, Variant: ConsoleBtnVariantPlain, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: h.PopoverTarget(sidebarID), Class: "cui-console-sidebar-open"}
+	return iconButton(lucide.Menu, ariaLabel, h.PopoverTarget(sidebarID), "cui-console-sidebar-open")
 }

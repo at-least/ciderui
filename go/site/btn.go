@@ -4,6 +4,7 @@ import (
 	"io"
 
 	"github.com/at-least/ciderui/go/internal/attr"
+	"github.com/at-least/ciderui/go/internal/need"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -44,7 +45,7 @@ type Btn struct {
 }
 
 func (b Btn) Render(w io.Writer) error {
-	need("site.Btn", "a Label", b.Label)
+	need.Field("site.Btn", "a Label", b.Label)
 	if b.Href != "" && b.Submit {
 		panic("site.Btn has an Href and Submit: a link sends no form")
 	}

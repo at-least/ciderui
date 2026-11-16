@@ -3,6 +3,7 @@ package console
 import (
 	"io"
 
+	"github.com/at-least/ciderui/go/internal/need"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -33,8 +34,8 @@ type ConsoleField struct {
 }
 
 func (f ConsoleField) Render(w io.Writer) error {
-	need("console.ConsoleField", "an ID", f.ID)
-	need("console.ConsoleField", "a Label", f.Label)
+	need.Field("console.ConsoleField", "an ID", f.ID)
+	need.Field("console.ConsoleField", "a Label", f.Label)
 	if f.Control == nil {
 		panic("console.ConsoleField needs a Control")
 	}

@@ -5,6 +5,7 @@ import (
 	"io"
 
 	"github.com/at-least/ciderui/go/internal/attr"
+	"github.com/at-least/ciderui/go/internal/need"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -50,15 +51,15 @@ type ConsoleStripGroup struct {
 type ConsoleStripItem struct {
 	Href string
 	Src  string
-	// Alt is the link's name, with Caption, Detail, Tip and MarkAriaLabel
+	// Alt is the link's name, with Label, Detail, Tip and MarkAriaLabel
 	// after it.
 	Alt string
 	// Current: ringed.
 	Current bool
 	Crop    ConsoleStripItemCrop
-	// Caption: the shot's name under its picture.
-	Caption string
-	// Detail: a second line under the Caption.
+	// Label: the shot's name under its picture.
+	Label string
+	// Detail: a second line under the Label.
 	Detail string
 	// Unused: dimmed.
 	Unused bool
@@ -70,8 +71,8 @@ type ConsoleStripItem struct {
 }
 
 func (s ConsoleStrip) Render(w io.Writer) error {
-	need("console.ConsoleStrip", "an AriaLabel", s.AriaLabel)
-	needSome("console.ConsoleStrip", "Groups", s.Groups)
+	need.Field("console.ConsoleStrip", "an AriaLabel", s.AriaLabel)
+	need.Some("console.ConsoleStrip", "Groups", s.Groups)
 	currents := 0
 	for _, group := range s.Groups {
 		for _, item := range group.Items {
@@ -83,32 +84,37 @@ func (s ConsoleStrip) Render(w io.Writer) error {
 	if currents > 1 {
 		panic(fmt.Sprintf("console.ConsoleStrip has %d current items: one at most", currents))
 	}
-	return h.Nav(h.Class("cui-console-strip"), h.Aria("label", s.AriaLabel),
-		g.Map(s.Groups, func(group ConsoleStripGroup) g.Node {
-			need("console.ConsoleStripGroup", "a Title", group.Title)
-			needSome("console.ConsoleStripGroup", "Items", group.Items)
-			return h.Div(h.Class("cui-console-strip-group"),
-				h.P(h.Class("cui-console-strip-header"), h.Span(h.Class("cui-console-strip-title"), g.Text(group.Title))),
-				g.Map(group.Items, stripItem),
-			)
-		}),
-	).Render(w)
+	groups := make(g.Group, len(s.Groups))
+	for i, group := range s.Groups {
+		path := need.At("console.ConsoleStrip.Groups", i)
+		need.Field(path, "a Title", group.Title)
+		need.Some(path, "Items", group.Items)
+		items := make(g.Group, len(group.Items))
+		for j, item := range group.Items {
+			items[j] = stripItem(need.At(path+".Items", j), item)
+		}
+		groups[i] = h.Div(h.Class("cui-console-strip-group"),
+			h.P(h.Class("cui-console-strip-header"), h.Span(h.Class("cui-console-strip-title"), g.Text(group.Title))),
+			items,
+		)
+	}
+	return h.Nav(h.Class("cui-console-strip"), h.Aria("label", s.AriaLabel), groups).Render(w)
 }
 
-func stripItem(item ConsoleStripItem) g.Node {
-	need("console.ConsoleStripItem", "an Href", item.Href)
-	need("console.ConsoleStripItem", "a Src", item.Src)
-	need("console.ConsoleStripItem", "an Alt: it is its link's name", item.Alt)
-	if item.Detail != "" && item.Caption == "" {
-		panic("console.ConsoleStripItem's Detail needs a Caption above it")
+func stripItem(path string, item ConsoleStripItem) g.Node {
+	need.Field(path, "an Href", item.Href)
+	need.Field(path, "a Src", item.Src)
+	need.Field(path, "an Alt: it is its link's name", item.Alt)
+	if item.Detail != "" && item.Label == "" {
+		panic(path + " needs a Label with a Detail")
 	}
 	if (item.Mark == ConsoleStripMarkNone) != (item.MarkAriaLabel == "") {
-		panic("console.ConsoleStripItem needs a MarkAriaLabel with a Mark, and none without")
+		panic(path + " needs a MarkAriaLabel with a Mark, and none without")
 	}
 	return h.A(h.Class("cui-console-strip-item"), h.Href(item.Href), attr.Optional("data-crop", item.Crop.value),
 		g.If(item.Unused, h.Data("state", "unused")), g.If(item.Current, h.Aria("current", "true")),
 		h.Img(h.Src(item.Src), h.Alt(item.Alt), h.Loading("lazy")),
-		optionalText(h.Span, "cui-console-strip-caption", item.Caption),
+		optionalText(h.Span, "cui-console-strip-label", item.Label),
 		optionalText(h.Span, "cui-console-strip-detail", item.Detail),
 		optionalText(h.Span, "cui-console-strip-tip", item.Tip),
 		g.If(item.Mark != ConsoleStripMarkNone, h.Span(h.Class("cui-console-strip-mark"), h.Data("state", item.Mark.value), h.Role("img"), h.Aria("label", item.MarkAriaLabel))),

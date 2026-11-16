@@ -46,8 +46,23 @@ func TestTableBodyAttrsGoOnItsBody(t *testing.T) {
 func TestTablePanics(t *testing.T) {
 	example.Panics(t, jobsTable, []example.Break[console.ConsoleTable]{
 		{Want: "console.ConsoleTable needs Columns", Change: func(p *console.ConsoleTable) { p.Columns = nil }},
-		{Want: "console.ConsoleTableColumn needs a Label", Change: func(p *console.ConsoleTable) { p.Columns[1].Label = "" }},
-		{Want: "console.ConsoleTableRow needs a cell for each column: 4 columns, 3 cells", Change: func(p *console.ConsoleTable) { p.Rows[1].Cells = p.Rows[1].Cells[:3] }},
-		{Want: "console.ConsoleTableRow needs a cell for each column: 4 columns, 5 cells", Change: func(p *console.ConsoleTable) { p.Rows[1].Cells = append(p.Rows[1].Cells, g.Text("x")) }},
+		{Want: "console.ConsoleTable.Columns[1] needs a Label", Change: func(p *console.ConsoleTable) { p.Columns[1].Label = "" }},
+		{Want: "console.ConsoleTable.Rows[1] needs a cell for each column: 4 columns, 3 cells", Change: func(p *console.ConsoleTable) { p.Rows[1].Cells = p.Rows[1].Cells[:3] }},
+		{Want: "console.ConsoleTable.Rows[1] needs a cell for each column: 4 columns, 5 cells", Change: func(p *console.ConsoleTable) { p.Rows[1].Cells = append(p.Rows[1].Cells, g.Text("x")) }},
 	})
+}
+
+func TestTableRowIsTheRowTheTableWrites(t *testing.T) {
+	jobs := jobsTable()
+	row := example.Render(jobs.Row(jobs.Rows[1]))
+	if table := example.Render(jobs); !strings.Contains(table, row) {
+		t.Errorf("Row wrote %s, which the table does not hold: %s", row, table)
+	}
+	jobs.Rows[1].Cells = jobs.Rows[1].Cells[:3]
+	defer func() {
+		if got, want := recover(), "console.ConsoleTableRow needs a cell for each column: 4 columns, 3 cells"; got != want {
+			t.Errorf("Row of 3 cells panicked with %v, want %q", got, want)
+		}
+	}()
+	jobs.Row(jobs.Rows[1])
 }

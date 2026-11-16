@@ -3,6 +3,7 @@ package site
 import (
 	"io"
 
+	"github.com/at-least/ciderui/go/internal/need"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -19,9 +20,9 @@ type Option struct {
 }
 
 func (o Option) Render(w io.Writer) error {
-	need("site.Option", "a Name", o.Name)
-	need("site.Option", "a Value", o.Value)
-	need("site.Option", "a Title", o.Title)
+	need.Field("site.Option", "a Name", o.Name)
+	need.Field("site.Option", "a Value", o.Value)
+	need.Field("site.Option", "a Title", o.Title)
 	id := o.Name + "-" + o.Value
 	return h.Div(h.Class("cui-option"),
 		h.Input(h.Class("cui-option-input"), h.Type("radio"), h.ID(id), h.Name(o.Name), h.Value(o.Value), g.If(o.Checked, h.Checked()), o.Attrs),

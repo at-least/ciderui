@@ -3,6 +3,7 @@ package console
 import (
 	"io"
 
+	"github.com/at-least/ciderui/go/internal/need"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -17,7 +18,7 @@ type ConsoleSection struct {
 }
 
 func (s ConsoleSection) Render(w io.Writer) error {
-	need("console.ConsoleSection", "a Title", s.Title)
+	need.Field("console.ConsoleSection", "a Title", s.Title)
 	return h.Section(h.Class("cui-console-section"),
 		header(h.H2(h.Class("cui-console-h4-emph"), g.Text(s.Title)), s.Detail, nil),
 		s.Children,

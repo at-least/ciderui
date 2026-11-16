@@ -167,9 +167,10 @@ func TestPlayerExamplesAreRenderedOrState(t *testing.T) {
 }
 
 func TestPlayerRendersTheExamples(t *testing.T) {
+	update := os.Getenv("UPDATE_GOLDEN") == "1"
 	for id, p := range playerExamples {
 		path := "console/console-player/examples/" + id + ".html"
-		if os.Getenv("WRITE_PLAYER_EXAMPLES") == "1" {
+		if update {
 			html := example.Render(p)
 			for _, tag := range []string{"<video", "<div", "<input", "<button", "<p ", "<p>", "<time", "<img"} {
 				html = strings.ReplaceAll(html, "><"+tag[1:], ">\n"+tag)
@@ -236,19 +237,17 @@ func TestPlayerPanics(t *testing.T) {
 }
 
 func TestPlayerIntroPanics(t *testing.T) {
-	const want = "console.ConsolePlayerIntro needs a Title, a StartLabel and a RestartLabel"
 	example.Panics(t, intro, []example.Break[console.ConsolePlayer]{
-		{Want: want, Change: func(p *console.ConsolePlayer) { p.Intro.Title = "" }},
-		{Want: want, Change: func(p *console.ConsolePlayer) { p.Intro.StartLabel = "" }},
-		{Want: want, Change: func(p *console.ConsolePlayer) { p.Intro.RestartLabel = "" }},
+		{Want: "console.ConsolePlayer.Intro needs a Title", Change: func(p *console.ConsolePlayer) { p.Intro.Title = "" }},
+		{Want: "console.ConsolePlayer.Intro needs a StartLabel", Change: func(p *console.ConsolePlayer) { p.Intro.StartLabel = "" }},
+		{Want: "console.ConsolePlayer.Intro needs a RestartLabel", Change: func(p *console.ConsolePlayer) { p.Intro.RestartLabel = "" }},
 	})
 }
 
 func TestPlayerEndPanics(t *testing.T) {
-	const want = "console.ConsolePlayerEnd needs a Title and a ReplayLabel"
 	example.Panics(t, end, []example.Break[console.ConsolePlayer]{
-		{Want: want, Change: func(p *console.ConsolePlayer) { p.End.Title = "" }},
-		{Want: want, Change: func(p *console.ConsolePlayer) { p.End.ReplayLabel = "" }},
+		{Want: "console.ConsolePlayer.End needs a Title", Change: func(p *console.ConsolePlayer) { p.End.Title = "" }},
+		{Want: "console.ConsolePlayer.End needs a ReplayLabel", Change: func(p *console.ConsolePlayer) { p.End.ReplayLabel = "" }},
 	})
 }
 

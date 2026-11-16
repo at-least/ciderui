@@ -3,6 +3,7 @@ package console
 import (
 	"io"
 
+	"github.com/at-least/ciderui/go/internal/need"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -32,8 +33,8 @@ type ConsoleEmpty struct {
 }
 
 func (e ConsoleEmpty) Render(w io.Writer) error {
-	need("console.ConsoleEmpty", "a Size: ConsoleEmptySizeSmall (a card) or ConsoleEmptySizeLarge (a whole page)", e.Size.value)
-	need("console.ConsoleEmpty", "a Title", e.Title)
+	need.Field("console.ConsoleEmpty", "a Size: ConsoleEmptySizeSmall (a card) or ConsoleEmptySizeLarge (a whole page)", e.Size.value)
+	need.Field("console.ConsoleEmpty", "a Title", e.Title)
 	return h.Div(h.Class("cui-console-empty"), h.Data("size", e.Size.value), e.Attrs,
 		g.If(e.Size == ConsoleEmptySizeLarge, lucide.Inbox.Class("cui-console-empty-icon")),
 		h.P(h.Class("cui-console-empty-title"), g.Text(e.Title)),

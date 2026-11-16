@@ -14,7 +14,7 @@ func TestStripRendersTheExample(t *testing.T) {
 	const path = "console/console-strip/examples/strip.html"
 	shot := func(scene, n int, tip string, mark console.ConsoleStripMark, markAriaLabel string, current bool) console.ConsoleStripItem {
 		alt := fmt.Sprintf("Shot %d.%d", scene, n)
-		return console.ConsoleStripItem{Href: fmt.Sprintf("#shot-%d-%d", scene, n), Src: exampleSrc(path, alt), Alt: alt, Current: current, Crop: console.ConsoleStripItemCropCenter, Caption: fmt.Sprintf("S%02d-%02d", scene, n), Detail: "", Unused: false, Tip: tip, Mark: mark, MarkAriaLabel: markAriaLabel}
+		return console.ConsoleStripItem{Href: fmt.Sprintf("#shot-%d-%d", scene, n), Src: exampleSrc(path, alt), Alt: alt, Current: current, Crop: console.ConsoleStripItemCropCenter, Label: fmt.Sprintf("S%02d-%02d", scene, n), Detail: "", Unused: false, Tip: tip, Mark: mark, MarkAriaLabel: markAriaLabel}
 	}
 	const line = "Once upon a time, a miller had three sons."
 	none := console.ConsoleStripMarkNone
@@ -32,8 +32,8 @@ func TestStripRendersTheExample(t *testing.T) {
 
 func TestStripRendersTheAssetsExample(t *testing.T) {
 	const path = "console/console-strip/examples/assets.html"
-	asset := func(href, alt, caption, detail string, crop console.ConsoleStripItemCrop, unused, current bool) console.ConsoleStripItem {
-		return console.ConsoleStripItem{Href: href, Src: exampleSrc(path, alt), Alt: alt, Current: current, Crop: crop, Caption: caption, Detail: detail, Unused: unused, Tip: "", Mark: console.ConsoleStripMarkNone, MarkAriaLabel: ""}
+	asset := func(href, alt, label, detail string, crop console.ConsoleStripItemCrop, unused, current bool) console.ConsoleStripItem {
+		return console.ConsoleStripItem{Href: href, Src: exampleSrc(path, alt), Alt: alt, Current: current, Crop: crop, Label: label, Detail: detail, Unused: unused, Tip: "", Mark: console.ConsoleStripMarkNone, MarkAriaLabel: ""}
 	}
 	center := console.ConsoleStripItemCropCenter
 	leading := console.ConsoleStripItemCropLeading
@@ -48,7 +48,7 @@ func TestStripRendersTheAssetsExample(t *testing.T) {
 }
 
 func validStrip() console.ConsoleStrip {
-	item := console.ConsoleStripItem{Href: "#a", Src: "/a.png", Alt: "Shot 1", Current: false, Crop: console.ConsoleStripItemCropCenter, Caption: "", Detail: "", Unused: false, Tip: "", Mark: console.ConsoleStripMarkNone, MarkAriaLabel: ""}
+	item := console.ConsoleStripItem{Href: "#a", Src: "/a.png", Alt: "Shot 1", Current: false, Crop: console.ConsoleStripItemCropCenter, Label: "", Detail: "", Unused: false, Tip: "", Mark: console.ConsoleStripMarkNone, MarkAriaLabel: ""}
 	return console.ConsoleStrip{AriaLabel: "Shots", Groups: []console.ConsoleStripGroup{{Title: "Scene 1", Items: []console.ConsoleStripItem{item, item}}}}
 }
 
@@ -56,21 +56,23 @@ func TestStripPanics(t *testing.T) {
 	example.Panics(t, validStrip, []example.Break[console.ConsoleStrip]{
 		{Want: "console.ConsoleStrip needs an AriaLabel", Change: func(p *console.ConsoleStrip) { p.AriaLabel = "" }},
 		{Want: "console.ConsoleStrip needs Groups", Change: func(p *console.ConsoleStrip) { p.Groups = nil }},
-		{Want: "console.ConsoleStripGroup needs a Title", Change: func(p *console.ConsoleStrip) { p.Groups[0].Title = "" }},
-		{Want: "console.ConsoleStripGroup needs Items", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items = nil }},
+		{Want: "console.ConsoleStrip.Groups[0] needs a Title", Change: func(p *console.ConsoleStrip) { p.Groups[0].Title = "" }},
+		{Want: "console.ConsoleStrip.Groups[1] needs Items", Change: func(p *console.ConsoleStrip) {
+			p.Groups = append(p.Groups, console.ConsoleStripGroup{Title: "Scene 2", Items: nil})
+		}},
 		{Want: "console.ConsoleStrip has 2 current items: one at most", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Current, p.Groups[0].Items[1].Current = true, true }},
-		{Want: "console.ConsoleStripItem needs an Href", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Href = "" }},
-		{Want: "console.ConsoleStripItem needs a Src", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Src = "" }},
-		{Want: "console.ConsoleStripItem needs an Alt: it is its link's name", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Alt = "" }},
-		{Want: "console.ConsoleStripItem's Detail needs a Caption above it", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Detail = "3 shots" }},
-		{Want: "console.ConsoleStripItem needs a MarkAriaLabel with a Mark, and none without", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Mark = console.ConsoleStripMarkWaiting }},
-		{Want: "console.ConsoleStripItem needs a MarkAriaLabel with a Mark, and none without", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].MarkAriaLabel = "Waiting for you" }},
+		{Want: "console.ConsoleStrip.Groups[0].Items[1] needs an Href", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[1].Href = "" }},
+		{Want: "console.ConsoleStrip.Groups[0].Items[0] needs a Src", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Src = "" }},
+		{Want: "console.ConsoleStrip.Groups[0].Items[0] needs an Alt: it is its link's name", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Alt = "" }},
+		{Want: "console.ConsoleStrip.Groups[0].Items[0] needs a Label with a Detail", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Detail = "3 shots" }},
+		{Want: "console.ConsoleStrip.Groups[0].Items[0] needs a MarkAriaLabel with a Mark, and none without", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].Mark = console.ConsoleStripMarkWaiting }},
+		{Want: "console.ConsoleStrip.Groups[0].Items[0] needs a MarkAriaLabel with a Mark, and none without", Change: func(p *console.ConsoleStrip) { p.Groups[0].Items[0].MarkAriaLabel = "Waiting for you" }},
 	})
 }
 
-func TestStripItemWritesNoCaptionItHasNone(t *testing.T) {
+func TestStripItemWritesNoLabelItHasNone(t *testing.T) {
 	want := `<a class="cui-console-strip-item" href="#a"><img src="/a.png" alt="Shot 1" loading="lazy"></a>`
 	if got := example.Render(validStrip()); !strings.Contains(got, want) {
-		t.Errorf("an item with no Caption, Detail, Tip or Mark wrote more than its picture:\n got: %s\nwant: %s", got, want)
+		t.Errorf("an item with no Label, Detail, Tip or Mark wrote more than its picture:\n got: %s\nwant: %s", got, want)
 	}
 }

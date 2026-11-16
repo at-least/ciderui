@@ -10,19 +10,18 @@ import (
 )
 
 func viewer() console.ConsoleViewer {
-	return console.ConsoleViewer{ID: "cover", AriaLabel: "Cover", CloseAriaLabel: "Close"}
+	return console.ConsoleViewer{AriaLabel: "Cover", CloseAriaLabel: "Close"}
 }
 
 func TestViewerRendersTheExample(t *testing.T) {
 	example.Check(t, g.Group{
-		h.Button(h.Class("cui-console-btn"), h.Type("button"), g.Attr("commandfor", "cover"), g.Attr("command", "show-modal"), g.Text("View Cover")),
+		h.Button(h.Class("cui-console-btn"), h.Type("button"), g.Attr("commandfor", console.ConsoleViewerID), g.Attr("command", "show-modal"), g.Text("View Cover")),
 		viewer(),
 	}, "console/console-viewer/examples/viewer.html")
 }
 
 func TestViewerPanics(t *testing.T) {
 	example.Panics(t, viewer, []example.Break[console.ConsoleViewer]{
-		{Want: "console.ConsoleViewer needs an ID", Change: func(p *console.ConsoleViewer) { p.ID = "" }},
 		{Want: "console.ConsoleViewer needs an AriaLabel", Change: func(p *console.ConsoleViewer) { p.AriaLabel = "" }},
 		{Want: "console.ConsoleViewer needs a CloseAriaLabel", Change: func(p *console.ConsoleViewer) { p.CloseAriaLabel = "" }},
 	})

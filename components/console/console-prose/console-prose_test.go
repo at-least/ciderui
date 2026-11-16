@@ -37,7 +37,7 @@ func TestCases(t *testing.T) {
 			HTML:   h.Example("code"),
 			Widths: []int{1200, 390},
 			Checks: []h.Check{
-				{Target: p + " > pre", Props: h.Props(h.Size, []string{"border-top-left-radius", "padding-top", "padding-left", "background-color", "overflow-x"}), Golden: "cui-console-pre's listing: a long line scrolls inside the box"},
+				{Target: p + " > pre", Props: h.Props(h.Size, []string{"border-top-left-radius", "padding-top", "padding-left", "background-color", "overflow-x"}), Golden: "DocC's listing at the console's size: a long line scrolls inside the box"},
 				{Target: p + " > pre code", Props: []string{"font-size"}, Golden: "the listing's 13px, not the code's own"},
 				{Target: p + " > blockquote", Props: []string{"border-top-left-radius", "padding-top", "padding-left", "background-color", "border-top-width"}, Golden: "the listing's box with no edge, the text's size"},
 				{Target: p + " > blockquote > p + p", Props: []string{"margin-top"}, Golden: "a quote's paragraphs as far apart as the text's"},
@@ -57,7 +57,7 @@ func TestCases(t *testing.T) {
 			HTML:   `<div class="cui-console-page"><div class="cui-console-card"><div class="cui-console-prose"><pre><code>x</code></pre></div></div></div>`,
 			Widths: []int{1200},
 			Checks: []h.Check{
-				{Target: p + " > pre", Props: []string{"background-color"}, Golden: "in a card, whose gray is its own, the page's white, as cui-console-pre"},
+				{Target: p + " > pre", Props: []string{"background-color"}, Golden: "in a card, whose gray is its own, the page's white"},
 			},
 		},
 		{

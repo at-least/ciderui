@@ -5,20 +5,6 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// @trap: what carries its own article ("an ID"): a vowel rule would write
-// "an URL"
-func need(part, what, value string) {
-	if value == "" {
-		panic(part + " needs " + what)
-	}
-}
-
-func needSome[T any](part, what string, values []T) {
-	if len(values) == 0 {
-		panic(part + " needs " + what)
-	}
-}
-
 func optionalText(el func(...g.Node) g.Node, class, text string) g.Node {
 	if text == "" {
 		return nil

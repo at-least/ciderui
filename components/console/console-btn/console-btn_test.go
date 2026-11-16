@@ -139,7 +139,6 @@ func TestCases(t *testing.T) {
 			Checks: []h.Check{
 				{Target: ".cui-console-btn-icon", Props: []string{"box-height", "box-width", "font-size"}, TB: []string{b + "-controlSize-md-blockSize", b + "-controlSize-md-minWidth", "component-Button-anatomy-artStart-withoutLabel-controlSize-md-fontSize"}},
 				{Target: ".cui-console-btn-icon svg", Props: []string{"box-height", "box-width"}, TB: []string{"component-Button-anatomy-artStart-withoutLabel-controlSize-md-fontSize", "component-Button-anatomy-artStart-withoutLabel-controlSize-md-fontSize"}},
-				{Target: ".cui-console-btn:not(.cui-console-btn-icon) svg", Props: []string{"box-height", "box-width"}, Golden: "an icon beside a label at the label's size, 1em"},
 			},
 		},
 		{
@@ -161,6 +160,7 @@ func TestCases(t *testing.T) {
 			Widths: []int{390},
 			Checks: []h.Check{
 				{Target: `.cui-console-btn-icon[data-size="sm"]`, Props: []string{"box-width", "box-height", "border-top-left-radius"}, Golden: "a capsule icon button 44px square on a touch screen, its corners half that: a circle still, as the toolkit's capsule is at each size"},
+				{Target: ".cui-console-btn:not(.cui-console-btn-icon)", Props: []string{"box-height"}, Golden: "a labelled button 44px tall on a touch screen, the HIG's 44pt (Accessibility, Mobility)"},
 			},
 		},
 		{
@@ -170,7 +170,6 @@ func TestCases(t *testing.T) {
 			Widths: []int{390},
 			Checks: []h.Check{
 				{Target: ".cui-console-btn-icon", Props: []string{"box-width", "box-height"}, Golden: "an icon button 44px square on a touch screen, the HIG's 44pt (Accessibility, Mobility): a target drawn round a 30px button covered its neighbour's, 8px away"},
-				{Target: ".cui-console-btn:not(.cui-console-btn-icon)", Props: []string{"box-height"}, Golden: "a labelled button 44px tall on a touch screen, the HIG's 44pt (Accessibility, Mobility)"},
 			},
 		},
 		{

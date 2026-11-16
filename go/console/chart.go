@@ -3,6 +3,7 @@ package console
 import (
 	"io"
 
+	"github.com/at-least/ciderui/go/internal/need"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -29,19 +30,19 @@ type ConsoleChart struct {
 	// Empty is the note centered on a plot with no data ("No data in this
 	// window"); "" for a plot with data.
 	Empty string
-	Axis  *ConsoleChartAxis
+	Axis  ConsoleChartAxis
 	// Children: <svg class="cui-console-chart-svg"> holding the marks.
 	Children g.Node
 }
 
 func (c ConsoleChart) Render(w io.Writer) error {
-	need("console.ConsoleChart", "an AriaLabel", c.AriaLabel)
-	if c.Scale != nil && (c.Scale.Peak == "" || c.Scale.Half == "") {
-		panic("console.ConsoleChartScale needs a Peak and a Half")
+	need.Field("console.ConsoleChart", "an AriaLabel", c.AriaLabel)
+	if c.Scale != nil {
+		need.Field("console.ConsoleChart.Scale", "a Peak", c.Scale.Peak)
+		need.Field("console.ConsoleChart.Scale", "a Half", c.Scale.Half)
 	}
-	if c.Axis != nil && (c.Axis.Start == "" || c.Axis.End == "") {
-		panic("console.ConsoleChartAxis needs a Start and an End")
-	}
+	need.Field("console.ConsoleChart.Axis", "a Start", c.Axis.Start)
+	need.Field("console.ConsoleChart.Axis", "an End", c.Axis.End)
 	return h.Figure(h.Class("cui-console-chart"), h.Aria("label", c.AriaLabel),
 		h.Div(h.Class("cui-console-chart-plot"),
 			g.Iff(c.Scale != nil, func() g.Node {
@@ -54,9 +55,7 @@ func (c ConsoleChart) Render(w io.Writer) error {
 			optionalText(h.P, "cui-console-chart-empty", c.Empty),
 			c.Children,
 		),
-		g.Iff(c.Axis != nil, func() g.Node {
-			return h.Div(h.Class("cui-console-chart-axis"), h.Aria("hidden", "true"), h.Span(g.Text(c.Axis.Start)), h.Span(g.Text(c.Axis.End)))
-		}),
+		h.Div(h.Class("cui-console-chart-axis"), h.Aria("hidden", "true"), h.Span(g.Text(c.Axis.Start)), h.Span(g.Text(c.Axis.End))),
 	).Render(w)
 }
 

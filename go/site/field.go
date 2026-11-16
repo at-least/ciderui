@@ -6,6 +6,7 @@ import (
 
 	"github.com/at-least/ciderui/go/internal/attr"
 	"github.com/at-least/ciderui/go/internal/glyph"
+	"github.com/at-least/ciderui/go/internal/need"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -40,8 +41,8 @@ type Field struct {
 }
 
 func (f Field) Render(w io.Writer) error {
-	need("site.Field", "a Name", f.Name)
-	need("site.Field", "a Label", f.Label)
+	need.Field("site.Field", "a Name", f.Name)
+	need.Field("site.Field", "a Label", f.Label)
 	errorID := f.Name + "-error"
 	helpID := f.Name + "-help"
 	prefixID := f.Name + "-prefix"

@@ -49,7 +49,7 @@ func TestListPanics(t *testing.T) {
 		return console.ConsoleList{Rows: []console.ConsoleListRow{{Label: "x", Detail: "", Children: nil}}}
 	}, []example.Break[console.ConsoleList]{
 		{Want: "console.ConsoleList needs Rows: a page with none shows a ConsoleEmpty", Change: func(p *console.ConsoleList) { p.Rows = nil }},
-		{Want: "console.ConsoleListRow needs a Label or Children", Change: func(p *console.ConsoleList) { p.Rows[0].Label = "" }},
-		{Want: "console.ConsoleListRow needs a Label or Children", Change: func(p *console.ConsoleList) { p.Rows[0].Label, p.Rows[0].Children = "", g.Group{} }},
+		{Want: "console.ConsoleList.Rows[0] needs a Label or Children", Change: func(p *console.ConsoleList) { p.Rows[0].Label = "" }},
+		{Want: "console.ConsoleList.Rows[0] needs a Label or Children", Change: func(p *console.ConsoleList) { p.Rows[0].Label, p.Rows[0].Children = "", g.Group{} }},
 	})
 }

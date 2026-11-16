@@ -3,6 +3,7 @@ package console
 import (
 	"io"
 
+	"github.com/at-least/ciderui/go/internal/need"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -16,7 +17,7 @@ type ConsoleCheckbox struct {
 }
 
 func (c ConsoleCheckbox) Render(w io.Writer) error {
-	need("console.ConsoleCheckbox", "a Label", c.Label)
+	need.Field("console.ConsoleCheckbox", "a Label", c.Label)
 	if c.Control == nil {
 		panic("console.ConsoleCheckbox needs a Control")
 	}

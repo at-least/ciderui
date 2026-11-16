@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/at-least/ciderui/go/internal/need"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -35,20 +36,29 @@ type ConsoleTableRow struct {
 }
 
 func (t ConsoleTable) Render(w io.Writer) error {
-	needSome("console.ConsoleTable", "Columns", t.Columns)
+	need.Some("console.ConsoleTable", "Columns", t.Columns)
+	var headers, rows g.Group
+	for i, c := range t.Columns {
+		need.Field(need.At("console.ConsoleTable.Columns", i), "a Label", c.Label)
+		headers = append(headers, h.Th(h.Scope("col"), g.If(c.Figure, h.Class("cui-console-table-figure")), g.Text(c.Label)))
+	}
+	for i, r := range t.Rows {
+		rows = append(rows, t.row(need.At("console.ConsoleTable.Rows", i), r))
+	}
 	return h.Table(h.Class("cui-console-table"), g.Attr("data-stack"),
-		h.THead(h.Tr(g.Map(t.Columns, func(c ConsoleTableColumn) g.Node {
-			need("console.ConsoleTableColumn", "a Label", c.Label)
-			return h.Th(h.Scope("col"), g.If(c.Figure, h.Class("cui-console-table-figure")), g.Text(c.Label))
-		}))),
-		h.TBody(t.BodyAttrs, g.Map(t.Rows, t.Row)),
+		h.THead(h.Tr(headers)),
+		h.TBody(t.BodyAttrs, rows),
 	).Render(w)
 }
 
 // Row is one row as this table writes it, for a response that swaps one row.
 func (t ConsoleTable) Row(r ConsoleTableRow) g.Node {
+	return t.row("console.ConsoleTableRow", r)
+}
+
+func (t ConsoleTable) row(path string, r ConsoleTableRow) g.Node {
 	if len(r.Cells) != len(t.Columns) {
-		panic(fmt.Sprintf("console.ConsoleTableRow needs a cell for each column: %d columns, %d cells", len(t.Columns), len(r.Cells)))
+		panic(fmt.Sprintf("%s needs a cell for each column: %d columns, %d cells", path, len(t.Columns), len(r.Cells)))
 	}
 	var cells g.Group
 	for i, content := range r.Cells {

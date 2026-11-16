@@ -13,7 +13,7 @@ import (
 func TestEachPartWritesThePagesClass(t *testing.T) {
 	const page = example.PageClass
 	example.PagesClass(t, []example.ClassRow{
-		{Root: "cui-console-btn", Node: console.ConsoleBtn{Href: "", Label: "x", AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: page}},
+		{Root: "cui-console-btn", Node: console.ConsoleBtn{Href: "", Label: "x", Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: page}},
 	})
 }
 
@@ -37,7 +37,7 @@ func TestEachPartWritesThePagesWords(t *testing.T) {
 	}{
 		{"ConsoleArtwork", console.ConsoleArtwork{Src: "/cover.png", Alt: "The cover", Placeholder: ""}, []string{`src="/cover.png" alt="The cover"`}},
 		{"ConsoleArtwork", console.ConsoleArtwork{Src: "", Alt: "", Placeholder: "No Picture Yet"}, []string{">No Picture Yet<"}},
-		{"ConsoleChart", console.ConsoleChart{AriaLabel: "Events: 9", Scale: &console.ConsoleChartScale{Peak: "peak 9", Half: "4.5"}, Empty: "Nothing yet", Axis: &console.ConsoleChartAxis{Start: "Nov 1", End: "Nov 7"}, Children: nil},
+		{"ConsoleChart", console.ConsoleChart{AriaLabel: "Events: 9", Scale: &console.ConsoleChartScale{Peak: "peak 9", Half: "4.5"}, Empty: "Nothing yet", Axis: console.ConsoleChartAxis{Start: "Nov 1", End: "Nov 7"}, Children: nil},
 			[]string{`aria-label="Events: 9"`, ">peak 9<", ">4.5<", ">Nothing yet<", ">Nov 1<", ">Nov 7<"}},
 		{"ConsoleField", console.ConsoleField{ID: "name", Label: "Name", Error: "Too short.", Control: input()}, []string{">Name<", ">Too short.<"}},
 		{"ConsolePlayer", player, []string{`data-control="play" aria-label="Go"`, `data-control="volume" min="0" max="100" value="100" aria-label="Loudness"`, `data-control="mute" aria-label="Silence"`,
@@ -52,7 +52,7 @@ func TestEachPartWritesThePagesWords(t *testing.T) {
 		{"ConsoleStatus", console.ConsoleStatus{Label: "Down", Detail: "500 · 2 s"}, []string{">Down<", ">500 · 2 s<"}},
 		{"ConsoleStrip", tip, []string{">Hello there.<"}},
 		{"ConsoleTabsChoice", console.ConsoleTabsChoice{AriaLabel: "Show", Name: "show", Options: tabsChoice().Options}, []string{`role="group" aria-label="Show"`, `name="show"`}},
-		{"ConsoleViewer", console.ConsoleViewer{ID: "art", AriaLabel: "Artwork", CloseAriaLabel: "Shut"}, []string{`id="art"`, `aria-label="Artwork"`, `aria-label="Shut"`}},
+		{"ConsoleViewer", console.ConsoleViewer{AriaLabel: "Artwork", CloseAriaLabel: "Shut"}, []string{`aria-label="Artwork"`, `aria-label="Shut"`}},
 	} {
 		got := example.Render(c.node)
 		for _, word := range c.words {

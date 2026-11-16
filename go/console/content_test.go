@@ -35,7 +35,7 @@ func TestContentPanics(t *testing.T) {
 		return console.ConsoleContent{Sidebar: nil, Back: nil, Title: "x", Detail: "", Controls: nil, Children: nil}
 	}, []example.Break[console.ConsoleContent]{
 		{Want: "console.ConsoleContent needs a Title", Change: func(p *console.ConsoleContent) { p.Title = "" }},
-		{Want: "console.ConsoleContentBack needs an Href", Change: func(p *console.ConsoleContent) { p.Back = &console.ConsoleContentBack{Href: "", Label: "Home"} }},
-		{Want: "console.ConsoleContentBack needs a Label", Change: func(p *console.ConsoleContent) { p.Back = &console.ConsoleContentBack{Href: "/", Label: ""} }},
+		{Want: "console.ConsoleContent.Back needs an Href", Change: func(p *console.ConsoleContent) { p.Back = &console.ConsoleContentBack{Href: "", Label: "Home"} }},
+		{Want: "console.ConsoleContent.Back needs a Label", Change: func(p *console.ConsoleContent) { p.Back = &console.ConsoleContentBack{Href: "/", Label: ""} }},
 	})
 }

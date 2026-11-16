@@ -4,6 +4,7 @@ import (
 	"io"
 
 	"github.com/at-least/ciderui/go/internal/attr"
+	"github.com/at-least/ciderui/go/internal/need"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -27,12 +28,8 @@ var (
 
 // ConsoleBtn is the console's button: a link with an Href, otherwise a <button>.
 type ConsoleBtn struct {
-	Href string
-	// Label: "" for a button of its Icon alone, named by AriaLabel.
-	Label     string
-	AriaLabel string
-	// Icon: before the Label; the zero Icon for none.
-	Icon lucide.Icon
+	Href  string
+	Label string
 	// Submit: a <button> that sends its form; otherwise type="button".
 	Submit      bool
 	Variant     ConsoleBtnVariant
@@ -47,22 +44,9 @@ func (b ConsoleBtn) Render(w io.Writer) error {
 	if b.Href != "" && b.Submit {
 		panic("console.ConsoleBtn has an Href and Submit: a link sends no form")
 	}
-	root := "cui-console-btn"
-	shape := ""
-	if b.Label == "" {
-		if b.AriaLabel == "" || b.Icon == (lucide.Icon{}) {
-			panic("console.ConsoleBtn needs a Label, or an Icon and an AriaLabel")
-		}
-		root += " cui-console-btn-icon"
-		if b.Variant != ConsoleBtnVariantPlain {
-			shape = "capsule"
-		}
-	} else if b.AriaLabel != "" {
-		panic("console.ConsoleBtn has a Label and an AriaLabel: its words name it")
-	}
-	attrs := g.Group{attr.Class(root, b.Class), attr.Optional("data-variant", b.Variant.value), g.If(b.Destructive, h.Data("color", "error")), attr.Optional("data-size", b.Size.value), attr.Optional("data-shape", shape)}
-	content := g.Group{g.If(b.Icon != (lucide.Icon{}), b.Icon), g.Text(b.Label)}
-	rest := g.Group{attr.Optional("aria-label", b.AriaLabel), b.Attrs, content}
+	need.Field("console.ConsoleBtn", "a Label", b.Label)
+	attrs := g.Group{attr.Class("cui-console-btn", b.Class), attr.Optional("data-variant", b.Variant.value), g.If(b.Destructive, h.Data("color", "error")), attr.Optional("data-size", b.Size.value)}
+	rest := g.Group{b.Attrs, g.Text(b.Label)}
 	if b.Href != "" {
 		return h.A(attrs, h.Href(b.Href), rest).Render(w)
 	}
@@ -71,4 +55,17 @@ func (b ConsoleBtn) Render(w io.Writer) error {
 		kind = "submit"
 	}
 	return h.Button(attrs, h.Type(kind), rest).Render(w)
+}
+
+// @invariant: iconButton (the sidebar's open and close) and viewerCloseButton are
+// the kit's buttons of an icon alone, here because the gate holds every button
+// class to this file: a console button a page writes is words alone, and a
+// page's own icon button is these classes on its <button> (examples/icon.html,
+// capsule.html).
+func iconButton(icon lucide.Icon, ariaLabel string, attrs g.Node, class string) g.Node {
+	return h.Button(attr.Class("cui-console-btn cui-console-btn-icon", class), h.Data("variant", "plain"), h.Type("button"), h.Aria("label", ariaLabel), attrs, icon)
+}
+
+func viewerCloseButton(ariaLabel string) g.Node {
+	return h.Button(h.Class("cui-console-btn cui-console-btn-icon"), h.Data("size", "sm"), h.Data("shape", "capsule"), h.Type("submit"), h.Aria("label", ariaLabel), lucide.X)
 }

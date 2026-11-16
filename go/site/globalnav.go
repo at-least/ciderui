@@ -5,6 +5,7 @@ import (
 	"strconv"
 
 	"github.com/at-least/ciderui/go/internal/glyph"
+	"github.com/at-least/ciderui/go/internal/need"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -36,20 +37,19 @@ type GlobalNav struct {
 }
 
 func (n GlobalNav) Render(w io.Writer) error {
-	need("site.GlobalNav", "a Home", n.Home)
-	need("site.GlobalNav", "a Wordmark", n.Wordmark)
+	need.Field("site.GlobalNav", "a Home", n.Home)
+	need.Field("site.GlobalNav", "a Wordmark", n.Wordmark)
 	if len(n.Links) == 0 {
 		panic("site.GlobalNav needs Links")
 	}
-	need("site.GlobalNav", "an AriaLabel", n.AriaLabel)
-	need("site.GlobalNav", "a SkipLabel", n.SkipLabel)
-	need("site.GlobalNav", "an OpenAriaLabel", n.OpenAriaLabel)
-	need("site.GlobalNav", "a CloseAriaLabel", n.CloseAriaLabel)
+	need.Field("site.GlobalNav", "an AriaLabel", n.AriaLabel)
+	need.Field("site.GlobalNav", "a SkipLabel", n.SkipLabel)
+	need.Field("site.GlobalNav", "an OpenAriaLabel", n.OpenAriaLabel)
+	need.Field("site.GlobalNav", "a CloseAriaLabel", n.CloseAriaLabel)
 	var links, postForms g.Group
 	for i, link := range n.Links {
-		if link.Label == "" || link.Href == "" {
-			panic("site.GlobalNav's Links need their Label and Href")
-		}
+		need.Field(need.At("site.GlobalNav.Links", i), "a Label", link.Label)
+		need.Field(need.At("site.GlobalNav.Links", i), "an Href", link.Href)
 		if !link.Post {
 			links = append(links, h.Li(h.A(h.Class("cui-globalnav-link"), h.Href(link.Href), g.Text(link.Label))))
 			continue

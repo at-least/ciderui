@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/at-least/ciderui/go/internal/need"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -22,8 +23,8 @@ type ConsoleTab struct {
 }
 
 func (t ConsoleTabs) Render(w io.Writer) error {
-	need("console.ConsoleTabs", "an AriaLabel", t.AriaLabel)
-	needSome("console.ConsoleTabs", "Tabs", t.Tabs)
+	need.Field("console.ConsoleTabs", "an AriaLabel", t.AriaLabel)
+	need.Some("console.ConsoleTabs", "Tabs", t.Tabs)
 	currents := 0
 	for _, tab := range t.Tabs {
 		if tab.Current {
@@ -33,11 +34,12 @@ func (t ConsoleTabs) Render(w io.Writer) error {
 	if currents > 1 {
 		panic(fmt.Sprintf("console.ConsoleTabs has %d current tabs: one at most", currents))
 	}
-	tabs := g.Map(t.Tabs, func(tab ConsoleTab) g.Node {
-		need("console.ConsoleTab", "a Label", tab.Label)
-		need("console.ConsoleTab", "an Href", tab.Href)
-		return pageLink("cui-console-tab", tab.Href, tab.Current, g.Text(tab.Label))
-	})
+	var tabs g.Group
+	for i, tab := range t.Tabs {
+		need.Field(need.At("console.ConsoleTabs.Tabs", i), "a Label", tab.Label)
+		need.Field(need.At("console.ConsoleTabs.Tabs", i), "an Href", tab.Href)
+		tabs = append(tabs, pageLink("cui-console-tab", tab.Href, tab.Current, g.Text(tab.Label)))
+	}
 	return h.Nav(h.Class("cui-console-tabs"), h.Aria("label", t.AriaLabel), tabs).Render(w)
 }
 
@@ -58,14 +60,14 @@ type ConsoleTabsOption struct {
 }
 
 func (c ConsoleTabsChoice) Render(w io.Writer) error {
-	need("console.ConsoleTabsChoice", "an AriaLabel", c.AriaLabel)
-	need("console.ConsoleTabsChoice", "a Name", c.Name)
+	need.Field("console.ConsoleTabsChoice", "an AriaLabel", c.AriaLabel)
+	need.Field("console.ConsoleTabsChoice", "a Name", c.Name)
 	if len(c.Options) < 2 {
 		panic("console.ConsoleTabsChoice needs two Options at least: one is no choice")
 	}
 	checked := 0
-	for _, o := range c.Options {
-		need("console.ConsoleTabsOption", "a Label", o.Label)
+	for i, o := range c.Options {
+		need.Field(need.At("console.ConsoleTabsChoice.Options", i), "a Label", o.Label)
 		if o.Checked {
 			checked++
 		}

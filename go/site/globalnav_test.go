@@ -69,7 +69,7 @@ func TestGlobalNavPanics(t *testing.T) {
 		{Want: "site.GlobalNav needs a SkipLabel", Change: func(p *site.GlobalNav) { p.SkipLabel = "" }},
 		{Want: "site.GlobalNav needs an OpenAriaLabel", Change: func(p *site.GlobalNav) { p.OpenAriaLabel = "" }},
 		{Want: "site.GlobalNav needs a CloseAriaLabel", Change: func(p *site.GlobalNav) { p.CloseAriaLabel = "" }},
-		{Want: "site.GlobalNav's Links need their Label and Href", Change: func(p *site.GlobalNav) { p.Links[0].Label = "" }},
-		{Want: "site.GlobalNav's Links need their Label and Href", Change: func(p *site.GlobalNav) { p.Links[0].Href = "" }},
+		{Want: "site.GlobalNav.Links[0] needs a Label", Change: func(p *site.GlobalNav) { p.Links[0].Label = "" }},
+		{Want: "site.GlobalNav.Links[0] needs an Href", Change: func(p *site.GlobalNav) { p.Links[0].Href = "" }},
 	})
 }

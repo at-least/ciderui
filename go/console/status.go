@@ -3,6 +3,7 @@ package console
 import (
 	"io"
 
+	"github.com/at-least/ciderui/go/internal/need"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -16,7 +17,7 @@ type ConsoleStatus struct {
 }
 
 func (s ConsoleStatus) Render(w io.Writer) error {
-	need("console.ConsoleStatus", "a Label", s.Label)
+	need.Field("console.ConsoleStatus", "a Label", s.Label)
 	return g.Group{
 		h.Span(h.Class("cui-console-status"),
 			h.Span(h.Class("cui-console-status-mark")),

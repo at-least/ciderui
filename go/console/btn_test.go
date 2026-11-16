@@ -1,7 +1,6 @@
 package console_test
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
@@ -12,7 +11,7 @@ import (
 )
 
 func consoleBtn(label string) console.ConsoleBtn {
-	return console.ConsoleBtn{Href: "", Label: label, AriaLabel: "", Icon: lucide.Icon{}, Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: ""}
+	return console.ConsoleBtn{Href: "", Label: label, Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: ""}
 }
 
 func row(children ...g.Node) g.Node {
@@ -36,14 +35,11 @@ func TestConsoleBtnRendersTheExamples(t *testing.T) {
 		b.Attrs = h.Disabled()
 		return b
 	}
-	copyIcon := func(size console.ConsoleBtnSize) console.ConsoleBtn {
-		b := sized("", size)
-		b.AriaLabel = "Copy"
-		b.Icon = lucide.Copy
-		return b
+	// @invariant: a console button is words alone; a page's icon button is
+	// these classes on its own <button>, written here as a page writes them
+	copyIcon := func(size string) g.Node {
+		return h.Button(h.Class("cui-console-btn cui-console-btn-icon"), g.If(size != "", h.Data("size", size)), h.Data("shape", "capsule"), h.Type("button"), h.Aria("label", "Copy"), lucide.Copy)
 	}
-	labelled := consoleBtn("Copy")
-	labelled.Icon = lucide.Copy
 	compare := consoleBtn("Compare")
 	compare.Attrs = h.Data("shape", "capsule")
 	busy := withVariant("Save", filled, false)
@@ -56,29 +52,17 @@ func TestConsoleBtnRendersTheExamples(t *testing.T) {
 		{"variants", row(withVariant("Compare", gray, false), withVariant("Resolve", filled, false), withVariant("See All", plain, false), withVariant("Delete", gray, true), withVariant("Delete Project", filled, true), withVariant("Remove", plain, true))},
 		{"sizes", row(sized("Small", console.ConsoleBtnSizeSmall), sized("Medium", medium), sized("Large", console.ConsoleBtnSizeLarge))},
 		{"disabled", row(disabled(withVariant("Compare", gray, false)), disabled(withVariant("Resolve", filled, false)), disabled(withVariant("See All", plain, false)), disabled(withVariant("Delete", gray, true)))},
-		{"icon", row(copyIcon(medium), labelled)},
+		{"icon", copyIcon("")},
 		{"busy", busy},
-		{"capsule", row(copyIcon(console.ConsoleBtnSizeSmall), copyIcon(medium), copyIcon(console.ConsoleBtnSizeLarge), compare)},
+		{"capsule", row(copyIcon("sm"), copyIcon(""), copyIcon("lg"), compare)},
 	} {
 		example.Check(t, c.node, "console/console-btn/examples/"+c.path+".html")
-	}
-}
-
-func TestConsoleBtnFilledWithAnIconAloneIsACapsule(t *testing.T) {
-	b := consoleBtn("")
-	b.AriaLabel, b.Icon, b.Variant = "Copy", lucide.Copy, console.ConsoleBtnVariantFilled
-	want := `<button class="cui-console-btn cui-console-btn-icon" data-variant="filled" data-shape="capsule" type="button" aria-label="Copy">`
-	if got := example.Render(b); !strings.HasPrefix(got, want) {
-		t.Errorf("a filled button of an icon alone is not a capsule:\n got: %s\nwant: %s…", got, want)
 	}
 }
 
 func TestConsoleBtnPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleBtn { return consoleBtn("Save") }, []example.Break[console.ConsoleBtn]{
 		{Want: "console.ConsoleBtn has an Href and Submit: a link sends no form", Change: func(b *console.ConsoleBtn) { b.Href = "/x"; b.Submit = true }},
-		{Want: "console.ConsoleBtn needs a Label, or an Icon and an AriaLabel", Change: func(b *console.ConsoleBtn) { b.Label = "" }},
-		{Want: "console.ConsoleBtn needs a Label, or an Icon and an AriaLabel", Change: func(b *console.ConsoleBtn) { b.Label = ""; b.AriaLabel = "x" }},
-		{Want: "console.ConsoleBtn needs a Label, or an Icon and an AriaLabel", Change: func(b *console.ConsoleBtn) { b.Label = ""; b.Icon = lucide.Copy }},
-		{Want: "console.ConsoleBtn has a Label and an AriaLabel: its words name it", Change: func(b *console.ConsoleBtn) { b.AriaLabel = "x" }},
+		{Want: "console.ConsoleBtn needs a Label", Change: func(b *console.ConsoleBtn) { b.Label = "" }},
 	})
 }

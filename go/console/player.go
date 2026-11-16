@@ -4,6 +4,7 @@ import (
 	"io"
 
 	"github.com/at-least/ciderui/go/internal/attr"
+	"github.com/at-least/ciderui/go/internal/need"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -89,19 +90,22 @@ func (p ConsolePlayer) Render(w io.Writer) error {
 	if p.Video == nil {
 		panic("console.ConsolePlayer needs a Video")
 	}
-	need("console.ConsolePlayer", "a PlayAriaLabel", p.PlayAriaLabel)
-	need("console.ConsolePlayer", "a VolumeAriaLabel", p.VolumeAriaLabel)
-	need("console.ConsolePlayer", "a MuteAriaLabel", p.MuteAriaLabel)
-	need("console.ConsolePlayer", "a ScrubberAriaLabel", p.ScrubberAriaLabel)
-	need("console.ConsolePlayer", "a FullScreenAriaLabel", p.FullScreenAriaLabel)
+	need.Field("console.ConsolePlayer", "a PlayAriaLabel", p.PlayAriaLabel)
+	need.Field("console.ConsolePlayer", "a VolumeAriaLabel", p.VolumeAriaLabel)
+	need.Field("console.ConsolePlayer", "a MuteAriaLabel", p.MuteAriaLabel)
+	need.Field("console.ConsolePlayer", "a ScrubberAriaLabel", p.ScrubberAriaLabel)
+	need.Field("console.ConsolePlayer", "a FullScreenAriaLabel", p.FullScreenAriaLabel)
 	if p.SubtitlesMenu != nil && p.SubtitlesAriaLabel == "" {
 		panic("console.ConsolePlayer needs a SubtitlesAriaLabel with a SubtitlesMenu")
 	}
-	if p.Intro != nil && (p.Intro.Title == "" || p.Intro.StartLabel == "" || p.Intro.RestartLabel == "") {
-		panic("console.ConsolePlayerIntro needs a Title, a StartLabel and a RestartLabel")
+	if p.Intro != nil {
+		need.Field("console.ConsolePlayer.Intro", "a Title", p.Intro.Title)
+		need.Field("console.ConsolePlayer.Intro", "a StartLabel", p.Intro.StartLabel)
+		need.Field("console.ConsolePlayer.Intro", "a RestartLabel", p.Intro.RestartLabel)
 	}
-	if p.End != nil && (p.End.Title == "" || p.End.ReplayLabel == "") {
-		panic("console.ConsolePlayerEnd needs a Title and a ReplayLabel")
+	if p.End != nil {
+		need.Field("console.ConsolePlayer.End", "a Title", p.End.Title)
+		need.Field("console.ConsolePlayer.End", "a ReplayLabel", p.End.ReplayLabel)
 	}
 	button := func(control, label, menu string, glyph g.Node) g.Node {
 		return h.Button(h.Class("cui-console-player-btn"), h.Type("button"), h.Data("control", control), h.Aria("label", label), attr.Optional("popovertarget", menu), glyph)

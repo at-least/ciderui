@@ -28,15 +28,15 @@ func item(group, n int) string {
 }
 
 var (
-	first   = item(1, 1)
-	img     = first + " > img"
-	caption = first + " > .cui-console-strip-caption"
-	tip     = first + " > .cui-console-strip-tip"
+	first = item(1, 1)
+	img   = first + " > img"
+	label = first + " > .cui-console-strip-label"
+	tip   = first + " > .cui-console-strip-tip"
 	// @external: tv.apple.com's player's row was read at 1600 and 1200px
 	at = map[int]int{390: 1200}
 )
 
-// @invariant: one scene of one shot, its name longer than the shot is wide, and no caption
+// @invariant: one scene of one shot, its name longer than the shot is wide, and no label
 func lone(title string) string {
 	return `<div class="cui-console-page"><nav class="cui-console-strip" aria-label="Shots"><div class="cui-console-strip-group"><p class="cui-console-strip-header"><span class="cui-console-strip-title">` + title + `</span></p><a class="cui-console-strip-item" href="#a"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Shot 1"></a></div></nav></div>`
 }
@@ -57,12 +57,12 @@ func TestCases(t *testing.T) {
 				{Target: group, Props: []string{"column-gap"}, Golden: "a scene's shots 12px apart: App Store Connect's 6px either side of each (media.json thumb.item), where tv.apple.com's trailers are 20px apart"},
 				{Target: strip, Props: []string{"column-gap", "overflow-y"}, Golden: "one row, scrolled sideways only as tv.apple.com's (its grid of columns); a scene's shots twice as close to each other as to the next scene's, so they read as its group: neither site groups its row"},
 				{Target: title, Props: []string{"font-size", "line-height", "font-weight", "color", "text-overflow", "white-space"}, Golden: "the scene's name above its shots in 11px on 13px, the secondary label, cut to its group's width; neither site labels a group of its row"},
-				{Target: group + " > .cui-console-strip-item:first-of-type > img", Props: []string{"box-top", "box-left"}, Golden: "the first picture 18px under its group's top, its name's 13px line and 5px (a thumbnail's caption's 5px from it), 4px in from the page's content edge, the items' room for their ring"},
+				{Target: group + " > .cui-console-strip-item:first-of-type > img", Props: []string{"box-top", "box-left"}, Golden: "the first picture 18px under its group's top, its name's 13px line and 5px (a thumbnail's label's 5px from it), 4px in from the page's content edge, the items' room for their ring"},
 				{Target: title, Props: []string{"box-top", "box-left", "padding-left", "position", "left"}, Golden: "the scene's name over its first picture's left edge, its text 4px into its box as the picture is into its item; sticky at the scroller's edge, so the name of the scene scrolled half out stays in view (muse's storyboard, the owner, 2026-11-05)"},
 				{Target: header, Props: []string{"position", "box-top", "box-left", "box-width", "overflow-x"}, Golden: "the name's track: out of the flow so a long name widens no scene, the group's whole width (528px: three 168px shots, each its picture and 4px of ring room either side, 12px apart), not clipped (a clipping box would be the sticky name's scroller)"},
-				{Target: caption, Props: []string{"font-size", "line-height", "font-weight", "color", "text-overflow", "white-space"}, Golden: "the shot's code under it in 11px on 13px, the secondary label, cut to the picture's width: muse's storyboard names each shot under it, not over it (the owner, 2026-11-05)"},
-				{Target: caption, Props: []string{"box-top", "box-left", "box-width"}, Golden: "the caption 5px under its picture (the picture's foot at 108px: 18 and 90), as a console thumbnail's caption, outside the item's ring, at the picture's left and as wide"},
-				{Target: group, Props: []string{"padding-bottom"}, Golden: "a scene with captions keeps their room under its shots: 1px past the ring and the 13px line, as its name's over them"},
+				{Target: label, Props: []string{"font-size", "line-height", "font-weight", "color", "text-overflow", "white-space"}, Golden: "the shot's code under it in 11px on 13px, the secondary label, cut to the picture's width: muse's storyboard names each shot under it, not over it (the owner, 2026-11-05)"},
+				{Target: label, Props: []string{"box-top", "box-left", "box-width"}, Golden: "the label 5px under its picture (the picture's foot at 108px: 18 and 90), as a console thumbnail's label, outside the item's ring, at the picture's left and as wide"},
+				{Target: group, Props: []string{"padding-bottom"}, Golden: "a scene with labels keeps their room under its shots: 1px past the ring and the 13px line, as its name's over them"},
 				{Target: currentWorking, Props: []string{"box-width", "top", "right", "background-color"}, Golden: "the current shot's dot drawn as any shot's, inside its ring"},
 				{Target: first, Props: []string{"border-top-width", "border-top-color", "padding-top", "border-top-left-radius"}, Golden: "a 2px edge 2px out from the picture, clear at rest, so the current shot's ring takes no room of its own"},
 				{Target: current, Props: []string{"border-top-color", "border-top-width"}, Golden: "the current shot ringed in the brand accent, 2px out from its picture (Keynote's and Photos' chosen thumbnail): neither site marks one current (tv-player-playlist, none marked as playing); a ring, not a fill, so its picture shows whole"},
@@ -100,7 +100,7 @@ func TestCases(t *testing.T) {
 			Widths: []int{1200},
 			Checks: []h.Check{
 				{Target: title, Props: []string{"color"}, Golden: "the dark side derived (tokens.css, decision 18)"},
-				{Target: caption, Props: []string{"color"}, Golden: "the dark side derived (tokens.css, decision 18)"},
+				{Target: label, Props: []string{"color"}, Golden: "the dark side derived (tokens.css, decision 18)"},
 				{Target: current, Props: []string{"border-top-color"}, Golden: "the dark side derived (tokens.css, decision 18)"},
 				{Target: waiting, Props: []string{"background-color", "border-top-color"}, Golden: "the dark side derived (tokens.css, decision 18), the ring the dark page's ground"},
 				{Target: working, Props: []string{"background-color"}, Golden: "the dark side derived (tokens.css, decision 18)"},
@@ -154,7 +154,7 @@ func TestCases(t *testing.T) {
 			Widths: []int{1200},
 			Checks: []h.Check{
 				{Target: title, Props: []string{"box-width", "text-overflow"}, Golden: "a name longer than its scene cut to the scene's width (one shot, 168px), widening nothing"},
-				{Target: ".cui-console-strip-group", Props: []string{"box-width", "padding-bottom"}, Golden: "the scene its shot's width, whatever its name; no caption, so no room under it"},
+				{Target: ".cui-console-strip-group", Props: []string{"box-width", "padding-bottom"}, Golden: "the scene its shot's width, whatever its name; no label, so no room under it"},
 			},
 		},
 		{
@@ -162,12 +162,12 @@ func TestCases(t *testing.T) {
 			HTML:   h.Example("assets"),
 			Widths: []int{1200, 390},
 			Checks: []h.Check{
-				{Target: first + " > .cui-console-strip-detail", Props: []string{"font-size", "line-height", "color", "text-overflow", "white-space", "box-top", "box-left", "box-width"}, Golden: "a second line under the caption, in its type, the next line down (126px: the caption's 113 and its 13px line), cut to the picture's width: muse's assets page says under each asset's name how many shots use it (the owner, 2026-11-05)"},
+				{Target: first + " > .cui-console-strip-detail", Props: []string{"font-size", "line-height", "color", "text-overflow", "white-space", "box-top", "box-left", "box-width"}, Golden: "a second line under the label, in its type, the next line down (126px: the label's 113 and its 13px line), cut to the picture's width: muse's assets page says under each asset's name how many shots use it (the owner, 2026-11-05)"},
 				{Target: group, Props: []string{"padding-bottom"}, Golden: "a strip with a detail line keeps both lines' room under every group's shots: 1px past the ring and two 13px lines"},
-				{Target: first + " > img", Props: []string{"object-position", "object-fit", "box-width", "box-height"}, Golden: "a character sheet cropped to its left edge, where its face is (muse's assets page), at the row's 16:9 and not muse's square: a square would narrow its item, its caption and its marks' places in a row of 16:9 shots"},
+				{Target: first + " > img", Props: []string{"object-position", "object-fit", "box-width", "box-height"}, Golden: "a character sheet cropped to its left edge, where its face is (muse's assets page), at the row's 16:9 and not muse's square: a square would narrow its item, its label and its marks' places in a row of 16:9 shots"},
 				{Target: item(2, 1) + " > img", Props: []string{"object-position"}, Golden: "any other picture cropped round its middle"},
-				{Target: item(1, 2) + " > img", Props: []string{"opacity"}, Golden: "an asset no shot uses: its picture dimmed to half, muse's; not its lines, which its words already say (dimmed, the caption fell to 2:1 on the page, the surfaces' contrast check)"},
-				{Target: item(1, 2) + " > .cui-console-strip-caption", Props: []string{"opacity"}, Golden: "its caption not dimmed"},
+				{Target: item(1, 2) + " > img", Props: []string{"opacity"}, Golden: "an asset no shot uses: its picture dimmed to half, muse's; not its lines, which its words already say (dimmed, the label fell to 2:1 on the page, the surfaces' contrast check)"},
+				{Target: item(1, 2) + " > .cui-console-strip-label", Props: []string{"opacity"}, Golden: "its label not dimmed"},
 				{Target: first + " > img", Props: []string{"opacity"}, Golden: "one in use not dimmed"},
 			},
 		},

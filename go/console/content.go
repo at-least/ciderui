@@ -3,6 +3,7 @@ package console
 import (
 	"io"
 
+	"github.com/at-least/ciderui/go/internal/need"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -31,14 +32,14 @@ type ConsoleContent struct {
 }
 
 func (c ConsoleContent) Render(w io.Writer) error {
-	need("console.ConsoleContent", "a Title", c.Title)
+	need.Field("console.ConsoleContent", "a Title", c.Title)
 	var sidebar, open, back g.Node
 	if c.Sidebar != nil {
 		sidebar, open = *c.Sidebar, sidebarOpen(c.Sidebar.OpenAriaLabel)
 	}
 	if c.Back != nil {
-		need("console.ConsoleContentBack", "an Href", c.Back.Href)
-		need("console.ConsoleContentBack", "a Label", c.Back.Label)
+		need.Field("console.ConsoleContent.Back", "an Href", c.Back.Href)
+		need.Field("console.ConsoleContent.Back", "a Label", c.Back.Label)
 		back = h.A(h.Class("cui-console-link cui-console-header-back"), h.Href(c.Back.Href), lucide.ChevronLeft, g.Text(c.Back.Label))
 	}
 	return h.Div(h.Class("cui-console-content"),

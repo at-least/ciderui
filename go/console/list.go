@@ -4,6 +4,7 @@ import (
 	"io"
 	"strings"
 
+	"github.com/at-least/ciderui/go/internal/need"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -14,8 +15,12 @@ type ConsoleList struct {
 }
 
 func (l ConsoleList) Render(w io.Writer) error {
-	needSome("console.ConsoleList", "Rows: a page with none shows a ConsoleEmpty", l.Rows)
-	return h.Div(h.Class("cui-console-list"), g.Map(l.Rows, ConsoleListRow.node)).Render(w)
+	need.Some("console.ConsoleList", "Rows: a page with none shows a ConsoleEmpty", l.Rows)
+	var rows g.Group
+	for i, r := range l.Rows {
+		rows = append(rows, r.node(need.At("console.ConsoleList.Rows", i)))
+	}
+	return h.Div(h.Class("cui-console-list"), rows).Render(w)
 }
 
 // ConsoleListRow is a row of a [ConsoleList].
@@ -26,7 +31,7 @@ type ConsoleListRow struct {
 	Children g.Node
 }
 
-func (l ConsoleListRow) node() g.Node {
+func (l ConsoleListRow) node(path string) g.Node {
 	return g.NodeFunc(func(w io.Writer) error {
 		// @trap: rendered once, then written raw: a page's node may cost, or
 		// render differently, a second time
@@ -37,7 +42,7 @@ func (l ConsoleListRow) node() g.Node {
 			}
 		}
 		if l.Label == "" && children.Len() == 0 {
-			panic("console.ConsoleListRow needs a Label or Children")
+			panic(path + " needs a Label or Children")
 		}
 		return h.Div(h.Class("cui-console-list-row"),
 			optionalText(h.Span, "cui-console-list-label", l.Label),

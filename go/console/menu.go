@@ -6,6 +6,7 @@ import (
 	"strconv"
 
 	"github.com/at-least/ciderui/go/internal/attr"
+	"github.com/at-least/ciderui/go/internal/need"
 	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
@@ -19,9 +20,9 @@ type ConsoleMenuItem struct {
 	Current bool
 }
 
-func (m ConsoleMenuItem) node() g.Node {
-	need("console.ConsoleMenuItem", "an Href", m.Href)
-	need("console.ConsoleMenuItem", "a Label", m.Label)
+func (m ConsoleMenuItem) node(path string) g.Node {
+	need.Field(path, "an Href", m.Href)
+	need.Field(path, "a Label", m.Label)
 	return pageLink("cui-console-menu-item", m.Href, m.Current, g.Group{
 		g.If(m.Icon != (lucide.Icon{}), m.Icon.Class("cui-console-menu-icon")),
 		h.Span(h.Class("cui-console-menu-label"), g.Text(m.Label)),
@@ -59,28 +60,27 @@ type ConsoleChoiceOption struct {
 }
 
 func (m ConsoleChoiceMenu) Render(w io.Writer) error {
-	needSome("console.ConsoleChoiceMenu", "Columns", m.Columns)
+	need.Some("console.ConsoleChoiceMenu", "Columns", m.Columns)
 	columns := map[string]bool{}
-	for _, c := range m.Columns {
-		if c.Column == "" || c.Title == "" {
-			panic("console.ConsoleChoiceColumn needs a Column and a Title")
-		}
+	for i, c := range m.Columns {
+		column := need.At("console.ConsoleChoiceMenu.Columns", i)
+		need.Field(column, "a Column", c.Column)
+		need.Field(column, "a Title", c.Title)
 		if columns[c.Column] {
 			panic("console.ConsoleChoiceMenu has two columns " + strconv.Quote(c.Column) + ": each needs a Column of its own")
 		}
 		columns[c.Column] = true
-		needSome("console.ConsoleChoiceColumn", "Options", c.Options)
+		need.Some(column, "Options", c.Options)
 		checked := 0
-		for _, o := range c.Options {
-			if o.Label == "" || o.Value == "" {
-				panic("console.ConsoleChoiceOption needs a Label and a Value")
-			}
+		for j, o := range c.Options {
+			need.Field(need.At(column+".Options", j), "a Label", o.Label)
+			need.Field(need.At(column+".Options", j), "a Value", o.Value)
 			if o.Checked {
 				checked++
 			}
 		}
 		if checked != 1 {
-			panic(fmt.Sprintf("console.ConsoleChoiceColumn needs one Checked option, has %d", checked))
+			panic(fmt.Sprintf("%s needs one Checked option, has %d", column, checked))
 		}
 	}
 	return h.Div(h.Class("cui-console-popover"), h.ID(subtitlesMenuID), h.Popover(),

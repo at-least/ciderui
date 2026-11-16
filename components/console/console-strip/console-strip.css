@@ -21,8 +21,8 @@
     gap: 12px;
     padding-top: 14px;
 
-    /* @trap: every group, so a group without captions is not stretched to one with */
-    .cui-console-strip:has(.cui-console-strip-caption) > & {
+    /* @trap: every group, so a group without labels is not stretched to one with */
+    .cui-console-strip:has(.cui-console-strip-label) > & {
       padding-bottom: 14px;
     }
 
@@ -98,7 +98,7 @@
 
   /* @trap: out of the item's box, so its ring and its marks keep the picture's;
      the group keeps its room */
-  .cui-console-strip-caption {
+  .cui-console-strip-label {
     position: absolute;
     /* @invariant: 5px under the picture, past the item's 2px of room */
     top: calc(100% + 3px);
@@ -114,7 +114,7 @@
   }
 
   .cui-console-strip-title,
-  .cui-console-strip-caption,
+  .cui-console-strip-label,
   .cui-console-strip-detail {
     overflow: hidden;
     text-overflow: ellipsis;

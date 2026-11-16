@@ -20,6 +20,6 @@ func TestAccordionPanics(t *testing.T) {
 	example.Panics(t, func() site.Accordion {
 		return site.Accordion{Items: []site.AccordionItem{{Question: "x", Children: g.Text("x")}}}
 	}, []example.Break[site.Accordion]{
-		{Want: "site.AccordionItem needs a Question", Change: func(p *site.Accordion) { p.Items[0].Question = "" }},
+		{Want: "site.Accordion.Items[0] needs a Question", Change: func(p *site.Accordion) { p.Items[0].Question = "" }},
 	})
 }
