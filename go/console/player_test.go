@@ -21,15 +21,15 @@ const playerStill = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M
 
 // @external: the voices and the subtitles side by side, as the Apple TV app's
 func subtitlesMenu() *console.ConsoleChoiceMenu {
-	return &console.ConsoleChoiceMenu{Columns: []console.ConsoleChoiceColumn{
+	return &console.ConsoleChoiceMenu{AriaLabel: "Subtitles", Columns: []console.ConsoleChoiceColumn{
 		{Column: "voices", Title: "Voices", Options: []console.ConsoleChoiceOption{
-			{Label: "English", Value: "en", Lang: "en", Checked: true},
-			{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant", Checked: false},
+			{Label: "English", Value: "en", Lang: "en"},
+			{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant"},
 		}},
 		{Column: "subtitles", Title: "Subtitles", Options: []console.ConsoleChoiceOption{
-			{Label: "Off", Value: "off", Lang: "", Checked: false},
-			{Label: "English", Value: "en", Lang: "en", Checked: true},
-			{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant", Checked: false},
+			{Label: "Off", Value: "off", Lang: ""},
+			{Label: "English", Value: "en", Lang: "en"},
+			{Label: "中文", Value: "zh-Hant", Lang: "zh-Hant"},
 		}},
 	}}
 }
@@ -42,7 +42,6 @@ func pausedPlayer() console.ConsolePlayer {
 		MuteAriaLabel:       "Mute",
 		ScrubberAriaLabel:   "Playback position",
 		SubtitlesMenu:       subtitlesMenu(),
-		SubtitlesAriaLabel:  "Subtitles",
 		FullScreenAriaLabel: "Full Screen",
 		FullScreenControls:  nil,
 		Intro:               nil,
@@ -185,7 +184,7 @@ func TestPlayerRendersTheExamples(t *testing.T) {
 
 func TestPlayerWritesNoMenuButtonWithoutItsMenu(t *testing.T) {
 	p := pausedPlayer()
-	p.SubtitlesMenu, p.SubtitlesAriaLabel = nil, ""
+	p.SubtitlesMenu = nil
 	got := example.Render(p)
 	if strings.Contains(got, "popover") || strings.Contains(got, `data-control="subtitles"`) {
 		t.Errorf("a player with no menu wrote one: %s", got)
@@ -232,7 +231,7 @@ func TestPlayerPanics(t *testing.T) {
 		{Want: "console.ConsolePlayer needs a MuteAriaLabel", Change: func(p *console.ConsolePlayer) { p.MuteAriaLabel = "" }},
 		{Want: "console.ConsolePlayer needs a ScrubberAriaLabel", Change: func(p *console.ConsolePlayer) { p.ScrubberAriaLabel = "" }},
 		{Want: "console.ConsolePlayer needs a FullScreenAriaLabel", Change: func(p *console.ConsolePlayer) { p.FullScreenAriaLabel = "" }},
-		{Want: "console.ConsolePlayer needs a SubtitlesAriaLabel with a SubtitlesMenu", Change: func(p *console.ConsolePlayer) { p.SubtitlesAriaLabel = "" }},
+		{Want: "console.ConsolePlayer.SubtitlesMenu needs an AriaLabel", Change: func(p *console.ConsolePlayer) { p.SubtitlesMenu.AriaLabel = "" }},
 	})
 }
 

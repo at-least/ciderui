@@ -40,8 +40,6 @@ func TestConsoleBtnRendersTheExamples(t *testing.T) {
 	copyIcon := func(size string) g.Node {
 		return h.Button(h.Class("cui-console-btn cui-console-btn-icon"), g.If(size != "", h.Data("size", size)), h.Data("shape", "capsule"), h.Type("button"), h.Aria("label", "Copy"), lucide.Copy)
 	}
-	compare := consoleBtn("Compare")
-	compare.Attrs = h.Data("shape", "capsule")
 	busy := withVariant("Save", filled, false)
 	busy.Submit, busy.Attrs = true, h.Aria("busy", "true")
 	medium := console.ConsoleBtnSizeMedium
@@ -54,7 +52,7 @@ func TestConsoleBtnRendersTheExamples(t *testing.T) {
 		{"disabled", row(disabled(withVariant("Compare", gray, false)), disabled(withVariant("Resolve", filled, false)), disabled(withVariant("See All", plain, false)), disabled(withVariant("Delete", gray, true)))},
 		{"icon", copyIcon("")},
 		{"busy", busy},
-		{"capsule", row(copyIcon("sm"), copyIcon(""), copyIcon("lg"), compare)},
+		{"capsule", row(copyIcon("sm"), copyIcon(""), copyIcon("lg"))},
 	} {
 		example.Check(t, c.node, "console/console-btn/examples/"+c.path+".html")
 	}

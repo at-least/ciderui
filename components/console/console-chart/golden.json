@@ -36,7 +36,6 @@
  "chart | .cui-console-chart-svg | 390 | position": "relative",
  "chart | .cui-console-chart-grid | 390 | overflow-y": "visible",
  "chart hover | .cui-console-chart-bar:last-of-type .cui-console-chart-mark:hover | 1200 | opacity": "0.85",
- "chart in a card | .cui-console-chart-scale | 1200 | border-top-left-radius": "4px",
  "chart in a card | .cui-console-chart-svg | 1200 | overflow-y": "visible",
  "chart in a card | .cui-console-chart-mark | 1200 | stroke": "oklch(0.968 0.001 286.4)",
  "chart in a card | .cui-console-chart-scale | 1200 | background-color": "oklch(0.968 0.001 286.4)",

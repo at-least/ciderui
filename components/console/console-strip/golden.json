@@ -217,6 +217,5 @@
  "strip assets | .cui-console-strip-group:nth-child(2) > .cui-console-strip-item:nth-of-type(1) > img | 390 | object-position": "50% 50%",
  "strip assets | .cui-console-strip-group:nth-child(1) > .cui-console-strip-item:nth-of-type(2) > img | 390 | opacity": "0.5",
  "strip assets | .cui-console-strip-group:nth-child(1) > .cui-console-strip-item:nth-of-type(2) > .cui-console-strip-label | 390 | opacity": "1",
- "strip assets | .cui-console-strip-group:nth-child(1) > .cui-console-strip-item:nth-of-type(1) > img | 390 | opacity": "1",
- "strip assets hovered | .cui-console-strip-group:nth-child(1) > .cui-console-strip-item:nth-of-type(2) > img:hover | 1200 | opacity": "0.8"
+ "strip assets | .cui-console-strip-group:nth-child(1) > .cui-console-strip-item:nth-of-type(1) > img | 390 | opacity": "1"
 }

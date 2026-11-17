@@ -20,12 +20,7 @@
       top: 0;
       right: 0;
       left: 1rem;
-      height: 0.5px;
-      background-color: var(--cui-c-console-neutral-border-secondary);
-
-      @media (forced-colors: active) {
-        background-color: CanvasText;
-      }
+      border-bottom: 1px solid var(--cui-c-console-neutral-border-tertiary);
     }
   }
 

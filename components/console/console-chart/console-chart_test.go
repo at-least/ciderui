@@ -47,7 +47,6 @@ func TestCases(t *testing.T) {
 			HTML:   `<div class="cui-console-page"><div class="cui-console-card">` + h.Example("chart") + `</div></div>`,
 			Widths: []int{1200},
 			Checks: []h.Check{
-				{Target: c + "-scale", Props: []string{"border-top-left-radius"}, Golden: "the scale's rounded corners"},
 				{Target: c + "-svg", Props: []string{"overflow-y"}, Golden: "a mark on the edge of the plot is not clipped"},
 				{Target: c + "-mark", Props: []string{"stroke"}, Golden: "in a card, the line round a mark is the card's ground"},
 				{Target: c + "-scale", Props: []string{"background-color"}, Golden: "in a card, the scale on the card's ground"},

@@ -11,7 +11,7 @@ import (
 //
 // @invariant: one viewer shows each of a page's pictures, so its id is the
 // kit's, not the page's
-const ConsoleViewerID = "viewer"
+const ConsoleViewerID = "cui-console-viewer"
 
 // ConsoleViewer is a picture shown whole over the page, fit to the window
 // (Quick Look), its label under it and a close button in a row above it. The

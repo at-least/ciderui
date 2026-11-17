@@ -11,23 +11,23 @@ import (
 
 func TestChoiceMenuRendersTheExamples(t *testing.T) {
 	choices := h.Div(h.Class("flex justify-center"),
-		h.Button(h.Type("button"), h.Class("cui-console-btn"), h.PopoverTarget("subtitles"), g.Text("Subtitles")),
+		h.Button(h.Type("button"), h.Class("cui-console-btn"), h.PopoverTarget(console.ConsoleSubtitlesMenuID), g.Text("Subtitles")),
 		choiceMenu(),
 	)
 	example.Check(t, choices, "console/console-menu/examples/choices.html")
 	columns := h.Div(h.Class("flex justify-center"),
-		h.Button(h.Type("button"), h.Class("cui-console-btn"), h.PopoverTarget("subtitles"), g.Text("Audio and Subtitles")),
+		h.Button(h.Type("button"), h.Class("cui-console-btn"), h.PopoverTarget(console.ConsoleSubtitlesMenuID), g.Text("Audio and Subtitles")),
 		columnsMenu(),
 	)
 	example.Check(t, columns, "console/console-menu/examples/columns.html")
 }
 
 func choiceMenu() console.ConsoleChoiceMenu {
-	return console.ConsoleChoiceMenu{Columns: []console.ConsoleChoiceColumn{
+	return console.ConsoleChoiceMenu{AriaLabel: "Subtitles", Columns: []console.ConsoleChoiceColumn{
 		{Column: "subtitles", Title: "Subtitles", Options: []console.ConsoleChoiceOption{
-			{Label: "Off", Value: "off", Lang: "", Checked: false},
-			{Label: "English", Value: "en", Lang: "en", Checked: true},
-			{Label: "日本語", Value: "ja", Lang: "ja", Checked: false},
+			{Label: "Off", Value: "off", Lang: ""},
+			{Label: "English", Value: "en", Lang: "en"},
+			{Label: "日本語", Value: "ja", Lang: "ja"},
 		}},
 	}}
 }
@@ -36,8 +36,8 @@ func choiceMenu() console.ConsoleChoiceMenu {
 func columnsMenu() console.ConsoleChoiceMenu {
 	m := choiceMenu()
 	m.Columns = append([]console.ConsoleChoiceColumn{{Column: "voices", Title: "Voices", Options: []console.ConsoleChoiceOption{
-		{Label: "English", Value: "en", Lang: "en", Checked: true},
-		{Label: "日本語", Value: "ja", Lang: "ja", Checked: false},
+		{Label: "English", Value: "en", Lang: "en"},
+		{Label: "日本語", Value: "ja", Lang: "ja"},
 	}}}, m.Columns...)
 	return m
 }
@@ -51,7 +51,5 @@ func TestChoiceMenuPanics(t *testing.T) {
 		{Want: "console.ConsoleChoiceMenu.Columns[1] needs Options", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Options = nil }},
 		{Want: "console.ConsoleChoiceMenu.Columns[1].Options[2] needs a Label", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Options[2].Label = "" }},
 		{Want: "console.ConsoleChoiceMenu.Columns[1].Options[1] needs a Value", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Options[1].Value = "" }},
-		{Want: "console.ConsoleChoiceMenu.Columns[1] needs one Checked option, has 2", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[1].Options[0].Checked = true }},
-		{Want: "console.ConsoleChoiceMenu.Columns[0] needs one Checked option, has 0", Change: func(p *console.ConsoleChoiceMenu) { p.Columns[0].Options[0].Checked = false }},
 	})
 }

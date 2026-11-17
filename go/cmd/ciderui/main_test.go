@@ -21,7 +21,7 @@ func TestMain(m *testing.M) {
 }
 
 const (
-	completeBtn    = `site.Btn{Href: "", Label: "Buy", Icon: nil, Submit: false, Variant: site.BtnVariantPrimary, Size: site.BtnSizeMedium, Block: false, Attrs: nil, Class: ""}.Render(os.Stdout)`
+	completeBtn    = `site.Btn{Href: "", Label: "Buy", Icon: nil, Submit: false, Variant: site.BtnVariantPrimary, Size: site.BtnSizeMedium, FullWidth: false, Attrs: nil, Class: ""}.Render(os.Stdout)`
 	completeBanner = `console.ConsoleBanner{Color: console.ConsoleColorInfo, Title: "Paid", Body: nil, Actions: nil}.Render(os.Stdout)`
 )
 
@@ -69,8 +69,8 @@ func TestCommandPassesACompleteLiteralAndAnotherModulesIncompleteOneSilently(t *
 
 func TestCommandFailsALiteralOfEitherSetWithAFieldLeftOutNamingTheTypeAndTheField(t *testing.T) {
 	for statement, want := range map[string]string{
-		strings.Replace(completeBtn, " Block: false,", "", 1):    "main.go:15:2: site.Btn is missing field Block\n",
-		strings.Replace(completeBanner, ", Actions: nil", "", 1): "main.go:15:2: console.ConsoleBanner is missing field Actions\n",
+		strings.Replace(completeBtn, " FullWidth: false,", "", 1): "main.go:15:2: site.Btn is missing field FullWidth\n",
+		strings.Replace(completeBanner, ", Actions: nil", "", 1):  "main.go:15:2: console.ConsoleBanner is missing field Actions\n",
 	} {
 		if code, stdout, stderr := run(t, siteModule(t, statement), "check", "./..."); code == 0 || stdout != "" || !strings.HasSuffix(stderr, want) {
 			t.Errorf("ciderui check ./... exited %d, wrote %q and %q to stderr, want non-zero and a line ending %q", code, stdout, stderr, want)
@@ -79,9 +79,9 @@ func TestCommandFailsALiteralOfEitherSetWithAFieldLeftOutNamingTheTypeAndTheFiel
 }
 
 func TestCommandWithoutAVerbItsArgumentsOrWithAFlagExitsTwoWithItsUsageAndWritesNothing(t *testing.T) {
-	const want = "usage: ciderui check <packages>: fails a ciderui struct literal that leaves a field out\n" +
-		"       ciderui css <out.css> <package dir>...: writes the utilities the directories' Go files use to <out.css>\n"
-	dir := siteModule(t, strings.Replace(completeBtn, " Block: false,", "", 1))
+	const want = "usage: go tool ciderui check ./...: fails a ciderui struct literal that leaves a field out\n" +
+		"       go tool ciderui css <out.css> <package dir>...: writes the utilities the directories' Go files use to <out.css>\n"
+	dir := siteModule(t, strings.Replace(completeBtn, " FullWidth: false,", "", 1))
 	for _, args := range [][]string{nil, {"./..."}, {"check"}, {"check", "-h"}, {"check", "-e", ".*", "./..."}, {"css"}, {"css", "out.css"}, {"css", "-h", "."}, {"css", "out.css", "-h"}, {"lint", "./..."}} {
 		if code, stdout, stderr := run(t, dir, args...); code != 2 || stdout != "" || stderr != want {
 			t.Errorf("ciderui %v exited %d, wrote %q and %q to stderr, want 2 and %q", args, code, stdout, stderr, want)

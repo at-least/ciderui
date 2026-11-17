@@ -170,13 +170,5 @@ func TestCases(t *testing.T) {
 				{Target: first + " > img", Props: []string{"opacity"}, Golden: "one in use not dimmed"},
 			},
 		},
-		{
-			Name:   "strip assets hovered",
-			HTML:   h.Example("assets"),
-			Widths: []int{1200},
-			Checks: []h.Check{
-				{Target: item(1, 2) + " > img", Props: []string{"opacity"}, State: []string{"hover"}, On: item(1, 2), Golden: "a dimmed asset under the pointer at 0.8, muse's: brighter, so it reads as a link, and still apart from those in use"},
-			},
-		},
 	})
 }

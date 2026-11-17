@@ -109,8 +109,8 @@ func TestCases(t *testing.T) {
 			Checks: disabled,
 		},
 	}
-	for _, block := range [][2]string{{"block", "a.cui-btn-block"}, {"block-button", "button.cui-btn-block"}} {
-		name, target := block[0], block[1]
+	for _, fullWidth := range [][2]string{{"full-width", "a.cui-btn-full-width"}, {"full-width-button", "button.cui-btn-full-width"}} {
+		name, target := fullWidth[0], fullWidth[1]
 		cases = append(cases, h.Case{
 			Name: name,
 			HTML: h.Example(name),

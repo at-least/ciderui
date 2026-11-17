@@ -55,7 +55,9 @@
     color: var(--cui-c-text-2);
     text-overflow: ellipsis;
     white-space: nowrap;
-    transition: all 0.125s ease-in;
+    transition-property: top, font-size, line-height, letter-spacing;
+    transition-duration: 0.125s;
+    transition-timing-function: ease-in;
   }
 
   .cui-field-input:focus + .cui-field-label,

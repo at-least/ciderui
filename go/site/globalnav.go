@@ -10,8 +10,9 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// @invariant: fixed id: a page has one global nav
-const globalNavMenuID = "cui-globalnav-menu"
+// GlobalNavMenuID is the id of the global nav's menu, for a page's script or
+// test. Fixed: a page has one global nav.
+const GlobalNavMenuID = "cui-globalnav-menu"
 
 type GlobalNavLink struct {
 	Label string
@@ -59,15 +60,15 @@ func (n GlobalNav) Render(w io.Writer) error {
 		postForms = append(postForms, h.Form(h.ID(formID), h.Action(link.Href), h.Method("post"), g.Attr("hidden")))
 	}
 	return g.Group{
-		Btn{Href: "#main", Label: n.SkipLabel, Icon: nil, Submit: false, Variant: BtnVariantPrimary, Size: BtnSizeMedium, Block: false, Attrs: nil, Class: "cui-skip"},
+		Btn{Href: "#main", Label: n.SkipLabel, Icon: nil, Submit: false, Variant: BtnVariantPrimary, Size: BtnSizeMedium, FullWidth: false, Attrs: nil, Class: "cui-skip"},
 		h.Nav(h.Class("cui-globalnav"), h.Aria("label", n.AriaLabel),
 			h.Div(h.Class("cui-globalnav-content"),
-				h.Ul(h.Class("cui-globalnav-list"), h.ID(globalNavMenuID), h.Popover(),
+				h.Ul(h.Class("cui-globalnav-list"), h.ID(GlobalNavMenuID), h.Popover(),
 					h.Li(h.A(h.Class("cui-globalnav-wordmark"), h.Href(n.Home), g.Text(n.Wordmark))),
-					h.Li(h.Button(h.Class("cui-globalnav-close"), h.PopoverTarget(globalNavMenuID), h.PopoverTargetAction("hide"), h.Aria("label", n.CloseAriaLabel), h.AutoFocus(), glyph.Menu)),
+					h.Li(h.Button(h.Class("cui-globalnav-close"), h.PopoverTarget(GlobalNavMenuID), h.PopoverTargetAction("hide"), h.Aria("label", n.CloseAriaLabel), h.AutoFocus(), glyph.Menu)),
 					links,
 				),
-				h.Button(h.Class("cui-globalnav-open"), h.PopoverTarget(globalNavMenuID), h.Aria("label", n.OpenAriaLabel), glyph.Menu),
+				h.Button(h.Class("cui-globalnav-open"), h.PopoverTarget(GlobalNavMenuID), h.Aria("label", n.OpenAriaLabel), glyph.Menu),
 				postForms,
 			),
 		),

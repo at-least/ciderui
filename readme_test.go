@@ -19,8 +19,9 @@ import (
 // reader copies markup that does not compile
 func TestReadmesGoExampleCompiles(t *testing.T) {
 	types := map[string]any{
-		"console.ConsolePage": console.ConsolePage{Lang: "", Title: "", Head: nil, Scheme: console.ConsoleSchemeSystem, Children: nil},
-		"site.Page":           site.Page{Lang: "", Title: "", Head: nil, Children: nil},
+		"console.ConsolePage":    console.ConsolePage{Lang: "", Head: nil, Scheme: console.ConsoleSchemeSystem, Content: console.ConsoleContent{Sidebar: nil, Back: nil, Title: "", Detail: "", Actions: nil, Children: nil}, Overlays: nil},
+		"console.ConsoleContent": console.ConsoleContent{Sidebar: nil, Back: nil, Title: "", Detail: "", Actions: nil, Children: nil},
+		"site.Page":              site.Page{Lang: "", Title: "", Head: nil, Children: nil},
 	}
 	raw, err := os.ReadFile("README.md")
 	if err != nil {
@@ -82,7 +83,7 @@ func TestReadmesGoExampleCompiles(t *testing.T) {
 var (
 	readmeTool    = regexp.MustCompile(`(?m)^go get -tool github\.com/at-least/ciderui/(\S+)$`)
 	readmeCommand = regexp.MustCompile(`(?m)^go tool ciderui (\w+) `)
-	usageVerb     = regexp.MustCompile(`(?m)^\s*(?:const usage = .)?(?:usage: )?ciderui (\w+) `)
+	usageVerb     = regexp.MustCompile(`(?m)^\s*(?:const usage = .)?(?:usage: )?go tool ciderui (\w+) `)
 )
 
 // @invariant: README's commands are the kit command's: the one `tool` line names

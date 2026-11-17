@@ -1,8 +1,8 @@
 package console
 
 import (
-	"fmt"
 	"io"
+	"strconv"
 
 	"github.com/at-least/ciderui/go/internal/attr"
 	"github.com/at-least/ciderui/go/internal/need"
@@ -15,7 +15,6 @@ import (
 type ConsoleStripMark struct{ value string }
 
 var (
-	ConsoleStripMarkNone = ConsoleStripMark{value: ""}
 	// ConsoleStripMarkWaiting: waiting for the reader (a call to make, a fix
 	// to look at), a dot in console-status's warning color.
 	ConsoleStripMarkWaiting = ConsoleStripMark{"waiting"}
@@ -41,6 +40,8 @@ var (
 type ConsoleStrip struct {
 	AriaLabel string
 	Groups    []ConsoleStripGroup
+	// Current is the current item's Href, ringed; "" for none.
+	Current string
 }
 
 type ConsoleStripGroup struct {
@@ -51,12 +52,10 @@ type ConsoleStripGroup struct {
 type ConsoleStripItem struct {
 	Href string
 	Src  string
-	// Alt is the link's name, with Label, Detail, Tip and MarkAriaLabel
+	// Alt is the link's name, with Label, Detail, Tip and Mark's AriaLabel
 	// after it.
-	Alt string
-	// Current: ringed.
-	Current bool
-	Crop    ConsoleStripItemCrop
+	Alt  string
+	Crop ConsoleStripItemCrop
 	// Label: the shot's name under its picture.
 	Label string
 	// Detail: a second line under the Label.
@@ -65,25 +64,21 @@ type ConsoleStripItem struct {
 	Unused bool
 	// Tip: a line shown over the item while the pointer is on it (a shot's
 	// first spoken line).
-	Tip           string
-	Mark          ConsoleStripMark
-	MarkAriaLabel string
+	Tip  string
+	Mark *ConsoleStripItemMark
+}
+
+// ConsoleStripItemMark is the dot in an item's picture's corner; an item
+// with no mark has a nil one.
+type ConsoleStripItemMark struct {
+	State     ConsoleStripMark
+	AriaLabel string
 }
 
 func (s ConsoleStrip) Render(w io.Writer) error {
 	need.Field("console.ConsoleStrip", "an AriaLabel", s.AriaLabel)
 	need.Some("console.ConsoleStrip", "Groups", s.Groups)
-	currents := 0
-	for _, group := range s.Groups {
-		for _, item := range group.Items {
-			if item.Current {
-				currents++
-			}
-		}
-	}
-	if currents > 1 {
-		panic(fmt.Sprintf("console.ConsoleStrip has %d current items: one at most", currents))
-	}
+	currentFound := false
 	groups := make(g.Group, len(s.Groups))
 	for i, group := range s.Groups {
 		path := need.At("console.ConsoleStrip.Groups", i)
@@ -91,32 +86,40 @@ func (s ConsoleStrip) Render(w io.Writer) error {
 		need.Some(path, "Items", group.Items)
 		items := make(g.Group, len(group.Items))
 		for j, item := range group.Items {
-			items[j] = stripItem(need.At(path+".Items", j), item)
+			current := s.Current != "" && item.Href == s.Current
+			currentFound = currentFound || current
+			items[j] = stripItem(need.At(path+".Items", j), item, current)
 		}
 		groups[i] = h.Div(h.Class("cui-console-strip-group"),
 			h.P(h.Class("cui-console-strip-header"), h.Span(h.Class("cui-console-strip-title"), g.Text(group.Title))),
 			items,
 		)
 	}
+	if s.Current != "" && !currentFound {
+		panic("console.ConsoleStrip.Current " + strconv.Quote(s.Current) + " matches no item's Href")
+	}
 	return h.Nav(h.Class("cui-console-strip"), h.Aria("label", s.AriaLabel), groups).Render(w)
 }
 
-func stripItem(path string, item ConsoleStripItem) g.Node {
+func stripItem(path string, item ConsoleStripItem, current bool) g.Node {
 	need.Field(path, "an Href", item.Href)
 	need.Field(path, "a Src", item.Src)
 	need.Field(path, "an Alt: it is its link's name", item.Alt)
 	if item.Detail != "" && item.Label == "" {
 		panic(path + " needs a Label with a Detail")
 	}
-	if (item.Mark == ConsoleStripMarkNone) != (item.MarkAriaLabel == "") {
-		panic(path + " needs a MarkAriaLabel with a Mark, and none without")
+	var mark g.Node
+	if item.Mark != nil {
+		need.Field(path+".Mark", "a State: ConsoleStripMarkWaiting or ConsoleStripMarkWorking", item.Mark.State.value)
+		need.Field(path+".Mark", "an AriaLabel", item.Mark.AriaLabel)
+		mark = h.Span(h.Class("cui-console-strip-mark"), h.Data("state", item.Mark.State.value), h.Role("img"), h.Aria("label", item.Mark.AriaLabel))
 	}
 	return h.A(h.Class("cui-console-strip-item"), h.Href(item.Href), attr.Optional("data-crop", item.Crop.value),
-		g.If(item.Unused, h.Data("state", "unused")), g.If(item.Current, h.Aria("current", "true")),
+		g.If(item.Unused, h.Data("state", "unused")), g.If(current, h.Aria("current", "true")),
 		h.Img(h.Src(item.Src), h.Alt(item.Alt), h.Loading("lazy")),
 		optionalText(h.Span, "cui-console-strip-label", item.Label),
 		optionalText(h.Span, "cui-console-strip-detail", item.Detail),
 		optionalText(h.Span, "cui-console-strip-tip", item.Tip),
-		g.If(item.Mark != ConsoleStripMarkNone, h.Span(h.Class("cui-console-strip-mark"), h.Data("state", item.Mark.value), h.Role("img"), h.Aria("label", item.MarkAriaLabel))),
+		mark,
 	)
 }

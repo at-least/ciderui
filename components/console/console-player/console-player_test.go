@@ -25,7 +25,7 @@ const (
 	line             = ".cui-console-player-subtitles > p"
 	cue              = ".cui-console-player-cue"
 	muse             = "muse's console's subtitles, not tv.apple.com's, whose cues are its <video>'s own text track (shown, none active in the first 22s of its first trailer, 2026-11-05; ::cue unreadable): 2.4% of the width at the least 15px, so it grows with the player (full screen too), 1.6 lines, 500, white under a soft shadow (--cui-video-cue-shadow) and no box (the owner, 2026-11-05, from Apple's view), 42em at its widest, balanced"
-	last             = `#subtitles [value="vi"]`
+	last             = `#cui-console-subtitles [value="vi"]`
 	preview          = ".cui-console-player-preview"
 	previewWhy       = "muse's, tv.apple.com's trailers scrubbing with no preview (the owner, 2026-11-05: the shot's thumbnail, its scene and the time over the pointer): the storyboard's 320px thumbnail at 160px, sharp at 2x; 12px above the bar, clear of the thumb; the line under it 12px semibold in the times' tabular figures, white under the cue's shadow, on one line however long the scene's name"
 	textBtn          = ".cui-console-player-text-btn"
@@ -54,9 +54,9 @@ var languageNames = [][2]string{{"zh-Hant", "繁體中文"}, {"zh-Hans", "简体
 
 var (
 	offRe          = regexp.MustCompile(`<button class="cui-console-menu-item"[^>]*value="off"[\s\S]*?</button>`)
-	subtitlesRe    = regexp.MustCompile(`(<div role="menu" aria-labelledby="subtitles-subtitles-title">)[\s\S]*?(</div></div></div></div></div>$)`)
+	subtitlesRe    = regexp.MustCompile(`(<div role="menu" aria-labelledby="cui-console-subtitles-subtitles-title">)[\s\S]*?(</div></div></div></div></div>$)`)
 	voicesColumnRe = regexp.MustCompile(`<div class="cui-console-menu" data-column="voices">[\s\S]*?</div></div>\n`)
-	voicedRe       = regexp.MustCompile(`(<div role="menu" aria-labelledby="subtitles-voices-title">)[\s\S]*?(</div></div>\n)$`)
+	voicedRe       = regexp.MustCompile(`(<div role="menu" aria-labelledby="cui-console-subtitles-voices-title">)[\s\S]*?(</div></div>\n)$`)
 	pictureRe      = regexp.MustCompile(`<img class="absolute[^>]* src="([^"]+)"`)
 	endBodyRe      = regexp.MustCompile(`<div class="cui-console-player-end-body">[\s\S]*?</div>\n?<button class="cui-console-player-text-btn" type="button" data-control="replay">`)
 )
@@ -78,15 +78,16 @@ func languages(html string, voices int) string {
 	if off == "" {
 		panic("the stills example has no Off choice where languages() looks")
 	}
-	choice := func(i int, language [2]string) string {
-		c := strings.Replace(off, `aria-checked="false"`, `aria-checked="`+strconv.FormatBool(i == 0)+`"`, 1)
+	// @invariant: Off is checked at rest, the column's first; a voices column checks its first language
+	choice := func(checked bool, language [2]string) string {
+		c := strings.Replace(off, `aria-checked="true"`, `aria-checked="`+strconv.FormatBool(checked)+`"`, 1)
 		c = strings.Replace(c, `value="off"`, `value="`+language[0]+`"`, 1)
 		return strings.Replace(c, `<span class="cui-console-menu-label">Off</span>`, `<span class="cui-console-menu-label" lang="`+language[0]+`">`+language[1]+`</span>`, 1)
 	}
-	choices := func(n int) []string {
+	choices := func(n int, checkFirst bool) []string {
 		var out []string
 		for i, language := range languageNames[:n] {
-			out = append(out, choice(i, language))
+			out = append(out, choice(checkFirst && i == 0, language))
 		}
 		return out
 	}
@@ -98,11 +99,11 @@ func languages(html string, voices int) string {
 	}
 	voiced := func(column string) string {
 		return replaceFirst(voicedRe, column, func(g []string) string {
-			return g[1] + "\n" + strings.Join(choices(voices), "\n") + g[2]
+			return g[1] + "\n" + strings.Join(choices(voices, true), "\n") + g[2]
 		})
 	}
 	player := replaceFirst(subtitlesRe, html, func(g []string) string {
-		return g[1] + "\n" + strings.Join(append([]string{off}, choices(len(languageNames))...), "\n") + g[2]
+		return g[1] + "\n" + strings.Join(append([]string{off}, choices(len(languageNames), false)...), "\n") + g[2]
 	})
 	player = replaceFirst(voicesColumnRe, player, func(g []string) string {
 		if voices > 1 {
@@ -177,7 +178,7 @@ func TestCases(t *testing.T) {
 				{Target: ".cui-console-player-glyph-volume", Props: []string{"display"}, Golden: "not muted, the speaker"},
 				{Target: ".cui-console-player-glyph-muted", Props: []string{"display"}, Golden: "not muted, no struck speaker"},
 				{Target: cue, Props: []string{"display"}, Golden: "no cue, no box: the slot is written empty until the page's script fills it"},
-				{Target: "#subtitles", Props: []string{"display"}, Golden: "its menu written inside it, closed until its button opens it"},
+				{Target: "#cui-console-subtitles", Props: []string{"display"}, Golden: "its menu written inside it, closed until its button opens it"},
 			},
 		},
 		{
@@ -465,8 +466,8 @@ func TestCases(t *testing.T) {
 			Height: 900,
 			Click:  []string{`[data-control="subtitles"]`},
 			Checks: []h.Check{
-				{Target: "#subtitles", Props: []string{"display"}, Golden: "the subtitles button opens its menu, a console popover (decision 27)"},
-				{Target: "#subtitles", Props: []string{"box-top", "box-height"}, Golden: "above its button, its foot on the button's centre (the player's menus open upward, player menu languages)"},
+				{Target: "#cui-console-subtitles", Props: []string{"display"}, Golden: "the subtitles button opens its menu, a console popover (decision 27)"},
+				{Target: "#cui-console-subtitles", Props: []string{"box-top", "box-height"}, Golden: "above its button, its foot on the button's centre (the player's menus open upward, player menu languages)"},
 				{Target: ".cui-console-player-footer", Props: []string{"opacity"}, Golden: "the controls hidden before, shown while its menu is open: a click leaves no keyboard focus, the open menu keeps them"},
 			},
 		},
@@ -480,8 +481,8 @@ func TestCases(t *testing.T) {
 				{Target: ".cui-console-player-subtitles", Props: []string{"align-items"}, Golden: "a cue centered over the picture"},
 				{Target: ".cui-console-player", Props: []string{"box-left", "box-top", "box-width", "box-height"}, Golden: "muse's player at 1440 by 900: 1104px wide at 24px, 66px down, beside its sidebar"},
 				{Target: btn, Props: []string{"box-left", "box-top"}, Golden: "the subtitles button, 24px: its centre the menu's corner"},
-				{Target: "#subtitles", Props: []string{"box-x", "box-y", "box-width", "box-height"}, Golden: "inside the player (its parent: box-x and box-y from its corner): opening upward, its foot and its right edge on its button's centre, as tv.apple.com's (tv-player-menu:menu at 1258, 637, 185 by 142, its corner 1443, 779; tv-player:subtitles at 1434, 769, 20px: centred on 1444, 779); every choice in it, none scrolled"},
-				{Target: "#subtitles", Props: []string{"max-height"}, Golden: "as tall as the window leaves above its button, 8px from its top, not the toolkit's 435px: tv.apple.com's menu has none (tv-player-menu:menu, overflow visible)"},
+				{Target: "#cui-console-subtitles", Props: []string{"box-x", "box-y", "box-width", "box-height"}, Golden: "inside the player (its parent: box-x and box-y from its corner): opening upward, its foot and its right edge on its button's centre, as tv.apple.com's (tv-player-menu:menu at 1258, 637, 185 by 142, its corner 1443, 779; tv-player:subtitles at 1434, 769, 20px: centred on 1444, 779); every choice in it, none scrolled"},
+				{Target: "#cui-console-subtitles", Props: []string{"max-height"}, Golden: "as tall as the window leaves above its button, 8px from its top, not the toolkit's 435px: tv.apple.com's menu has none (tv-player-menu:menu, overflow visible)"},
 			},
 		},
 		{
@@ -491,7 +492,7 @@ func TestCases(t *testing.T) {
 			Height: 900,
 			Click:  []string{`[data-control="subtitles"]`},
 			Checks: []h.Check{
-				{Target: "#subtitles", Props: []string{"width"}, Golden: "as wide as its columns, on a window too narrow to hold them in the browser's own width"},
+				{Target: "#cui-console-subtitles", Props: []string{"width"}, Golden: "as wide as its columns, on a window too narrow to hold them in the browser's own width"},
 			},
 		},
 		{
@@ -501,9 +502,9 @@ func TestCases(t *testing.T) {
 			Height: 900,
 			Click:  []string{`[data-control="subtitles"]`},
 			Checks: []h.Check{
-				{Target: "#subtitles", Props: []string{"box-x", "box-y", "box-width", "box-height"}, Golden: "one menu of two columns, muse's voices beside its subtitles (the owner, 2026-11-05: one button, one panel, as the Apple TV app's Audio and Subtitles; tv.apple.com's own menu is one column of groups, its audio a platform <select>, tv-player-menu): inside the player, opening upward, its foot and right edge on its button's centre as one column's"},
-				{Target: `#subtitles [data-column="voices"]`, Props: []string{"box-x", "box-width", "box-height"}, Golden: "the voices first, at the start, as wide as its longest name asks"},
-				{Target: `#subtitles [data-column="subtitles"]`, Props: []string{"box-x", "box-width", "box-height", "border-left-width", "border-left-style", "padding-left", "margin-left"}, Golden: "the subtitles beside them, after a rule in the popover's 8px gap, each column as tall as the menu"},
+				{Target: "#cui-console-subtitles", Props: []string{"box-x", "box-y", "box-width", "box-height"}, Golden: "one menu of two columns, muse's voices beside its subtitles (the owner, 2026-11-05: one button, one panel, as the Apple TV app's Audio and Subtitles; tv.apple.com's own menu is one column of groups, its audio a platform <select>, tv-player-menu): inside the player, opening upward, its foot and right edge on its button's centre as one column's"},
+				{Target: `#cui-console-subtitles [data-column="voices"]`, Props: []string{"box-x", "box-width", "box-height"}, Golden: "the voices first, at the start, as wide as its longest name asks"},
+				{Target: `#cui-console-subtitles [data-column="subtitles"]`, Props: []string{"box-x", "box-width", "box-height", "border-left-width", "border-left-style", "padding-left", "margin-left"}, Golden: "the subtitles beside them, after a rule in the popover's 8px gap, each column as tall as the menu"},
 			},
 		},
 		{
@@ -515,7 +516,7 @@ func TestCases(t *testing.T) {
 			Press:  slices.Repeat([]string{"Tab"}, 12),
 			Checks: []h.Check{
 				{Target: ".cui-console-player", Props: []string{"box-width", "box-height"}, Golden: "muse's player at 1440 by 700: 846px wide, too short for twelve choices above its button"},
-				{Target: "#subtitles", Props: []string{"box-x", "box-y", "box-width", "box-height", "overflow-y"}, Golden: "above the player's top where its choices need the room, its foot on its button's centre, every choice shown and none scrolled (the owner, 2026-11-14: 「A」; scrolled, WebKit 26.5 put it back to its top on every layout of the player)"},
+				{Target: "#cui-console-subtitles", Props: []string{"box-x", "box-y", "box-width", "box-height", "overflow-y"}, Golden: "above the player's top where its choices need the room, its foot on its button's centre, every choice shown and none scrolled (the owner, 2026-11-14: 「A」; scrolled, WebKit 26.5 put it back to its top on every layout of the player)"},
 				{Target: last, Props: []string{"focused", "hit"}, Golden: "the last choice reached: the focus Tabbed to it, the pointer finds it there"},
 			},
 		},

@@ -15,17 +15,17 @@ func sidebarNodes() console.ConsoleSidebar {
 	signOut := h.Form(h.Action("#sign-out"), h.Method("post"),
 		console.ConsoleBtn{Href: "", Label: "Sign Out", Submit: true, Variant: console.ConsoleBtnVariantPlain, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: ""},
 	)
-	return console.ConsoleSidebar{AriaLabel: "CrashCart", Home: "#home", Wordmark: "CrashCart", SkipLabel: "Skip to Content", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: signOut, Sections: []console.ConsoleMenuSection{
+	return console.ConsoleSidebar{AriaLabel: "CrashCart", Home: "#home", Wordmark: "CrashCart", SkipLabel: "Skip to Content", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: signOut, Current: "#issues", Sections: []console.ConsoleMenuSection{
 		{Title: "", Items: []console.ConsoleMenuItem{
-			{Href: "#projects", Label: "All Projects", Icon: lucide.LayoutGrid, Current: false},
-			{Href: "#issues", Label: "All Issues", Icon: lucide.Bug, Current: true},
+			{Href: "#projects", Label: "All Projects", Icon: lucide.LayoutGrid},
+			{Href: "#issues", Label: "All Issues", Icon: lucide.Bug},
 		}},
 		{Title: "Projects", Items: []console.ConsoleMenuItem{
-			{Href: "#shop", Label: "Shop", Icon: lucide.Icon{}, Current: false},
-			{Href: "#demo", Label: "Demo Shop", Icon: lucide.Icon{}, Current: false},
+			{Href: "#shop", Label: "Shop", Icon: lucide.Icon{}},
+			{Href: "#demo", Label: "Demo Shop", Icon: lucide.Icon{}},
 		}},
 		{Title: "", Items: []console.ConsoleMenuItem{
-			{Href: "#alerts", Label: "Alerts", Icon: lucide.Bell, Current: false},
+			{Href: "#alerts", Label: "Alerts", Icon: lucide.Bell},
 		}},
 	}}
 }
@@ -36,7 +36,7 @@ func TestSidebarRendersTheExamples(t *testing.T) {
 
 func TestContentWritesTheSidebarsOpenButtonExample(t *testing.T) {
 	sidebar := sidebarNodes()
-	got := example.Render(console.ConsoleContent{Sidebar: &sidebar, Back: nil, Title: "x", Detail: "", Controls: nil, Children: nil})
+	got := example.Render(console.ConsoleContent{Sidebar: &sidebar, Back: nil, Title: "x", Detail: "", Actions: nil, Children: nil})
 	nav, found := strings.CutPrefix(got, contentOpen)
 	nav, main, foundMain := strings.Cut(nav, contentMain)
 	open, _, foundHeader := strings.Cut(main, `<header class="cui-console-header">`)
@@ -48,10 +48,10 @@ func TestContentWritesTheSidebarsOpenButtonExample(t *testing.T) {
 
 func TestSidebarRulesOffEachUntitledSectionAfterTheFirst(t *testing.T) {
 	item := func(href, label string) console.ConsoleMenuSection {
-		return console.ConsoleMenuSection{Title: "", Items: []console.ConsoleMenuItem{{Href: href, Label: label, Icon: lucide.Icon{}, Current: false}}}
+		return console.ConsoleMenuSection{Title: "", Items: []console.ConsoleMenuItem{{Href: href, Label: label, Icon: lucide.Icon{}}}}
 	}
 	sidebar := sidebarNodes()
-	sidebar.Sections = []console.ConsoleMenuSection{item("#a", "A"), item("#b", "B")}
+	sidebar.Sections, sidebar.Current = []console.ConsoleMenuSection{item("#a", "A"), item("#b", "B")}, ""
 	want := `data-variant="sidebar"><a class="cui-console-menu-item" href="#a"><span class="cui-console-menu-label">A</span></a>` +
 		`<hr class="cui-console-menu-rule"><a class="cui-console-menu-item" href="#b"><span class="cui-console-menu-label">B</span></a></div>`
 	if got := example.Render(sidebar); !strings.Contains(got, want) {
@@ -61,9 +61,9 @@ func TestSidebarRulesOffEachUntitledSectionAfterTheFirst(t *testing.T) {
 
 func TestSidebarPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleSidebar {
-		return console.ConsoleSidebar{AriaLabel: "x", Home: "/", Wordmark: "x", SkipLabel: "Skip", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: nil, Sections: []console.ConsoleMenuSection{
-			{Title: "", Items: []console.ConsoleMenuItem{{Href: "#x", Label: "x", Icon: lucide.Icon{}, Current: false}}},
-			{Title: "", Items: []console.ConsoleMenuItem{{Href: "#y", Label: "y", Icon: lucide.Icon{}, Current: false}, {Href: "#z", Label: "z", Icon: lucide.Icon{}, Current: false}}},
+		return console.ConsoleSidebar{AriaLabel: "x", Home: "/", Wordmark: "x", SkipLabel: "Skip", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: nil, Current: "#y", Sections: []console.ConsoleMenuSection{
+			{Title: "", Items: []console.ConsoleMenuItem{{Href: "#x", Label: "x", Icon: lucide.Icon{}}}},
+			{Title: "", Items: []console.ConsoleMenuItem{{Href: "#y", Label: "y", Icon: lucide.Icon{}}, {Href: "#z", Label: "z", Icon: lucide.Icon{}}}},
 		}}
 	}, []example.Break[console.ConsoleSidebar]{
 		{Want: "console.ConsoleSidebar needs an AriaLabel", Change: func(p *console.ConsoleSidebar) { p.AriaLabel = "" }},
@@ -76,5 +76,6 @@ func TestSidebarPanics(t *testing.T) {
 		{Want: "console.ConsoleSidebar.Sections[1] needs Items", Change: func(p *console.ConsoleSidebar) { p.Sections[1].Items = nil }},
 		{Want: "console.ConsoleSidebar.Sections[1].Items[1] needs an Href", Change: func(p *console.ConsoleSidebar) { p.Sections[1].Items[1].Href = "" }},
 		{Want: "console.ConsoleSidebar.Sections[1].Items[1] needs a Label", Change: func(p *console.ConsoleSidebar) { p.Sections[1].Items[1].Label = "" }},
+		{Want: `console.ConsoleSidebar.Current "#nowhere" matches no item's Href`, Change: func(p *console.ConsoleSidebar) { p.Current = "#nowhere" }},
 	})
 }

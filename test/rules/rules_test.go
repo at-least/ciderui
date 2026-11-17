@@ -49,16 +49,11 @@ func hoverOutsideItsQuery(text string) []string {
 // edge or halo in the ring's place
 var noRing = []string{"cui-console-field-input", "cui-field-input"}
 
-// @invariant: rule 10 is a pointer's color change; these change with a panel opening, a
-// field's label rising or its text typed, each read in its part's test
-var ownMotion = []string{".cui-field-label"}
-
 const keyboardReachable = `a[href], button, input:not([type=hidden]), select, textarea, summary, [tabindex]:not([tabindex="-1"])`
 
-const readTextAndMotion = `([set, tracking, ownMotion]) => {
+const readTextAndMotion = `([set, tracking]) => {
   const label = (e) => e.tagName.toLowerCase() + (typeof e.className === 'string' && e.className ? '.' + e.className.trim().split(/\s+/).join('.') : '');
   const motion = [];
-  const motionUsed = [];
   const spacing = [];
   let texts = 0;
   for (const e of document.body.querySelectorAll('*')) {
@@ -66,9 +61,7 @@ const readTextAndMotion = `([set, tracking, ownMotion]) => {
     const durations = cs.transitionDuration.split(', ');
     cs.transitionProperty.split(', ').forEach((prop, i) => {
       if (!(parseFloat(durations[i % durations.length]) > 0 && /(^|-)color$|^background$|^all$|^fill$|^stroke$/.test(prop))) return;
-      const own = ownMotion.filter((s) => e.matches(s));
-      if (own.length) motionUsed.push(...own);
-      else motion.push(label(e) + ': ' + prop);
+      motion.push(label(e) + ': ' + prop);
     });
     if (!e.matches('input:not([type=checkbox], [type=radio], [type=range]), textarea, select') && ![...e.childNodes].some((n) => n.nodeType === Node.TEXT_NODE && n.textContent.trim())) continue;
     texts++;
@@ -84,14 +77,13 @@ const readTextAndMotion = `([set, tracking, ownMotion]) => {
       if (!(Math.abs(parseFloat(cs.letterSpacing) - size * tracking[size]) <= 0.001)) spacing.push(label(e) + ': ' + cs.fontSize + ' at ' + cs.letterSpacing);
     }
   }
-  return { motion, motionUsed, spacing, texts };
+  return { motion, spacing, texts };
 }`
 
 type found struct {
-	Motion     []string `json:"motion"`
-	MotionUsed []string `json:"motionUsed"`
-	Spacing    []string `json:"spacing"`
-	Texts      int      `json:"texts"`
+	Motion  []string `json:"motion"`
+	Spacing []string `json:"spacing"`
+	Texts   int      `json:"texts"`
 }
 
 func TestRules(t *testing.T) {
@@ -118,7 +110,6 @@ func TestRules(t *testing.T) {
 	}
 
 	noRingUsed := map[string]bool{}
-	motionUsed := map[string]bool{}
 	examples, controls, texts := 0, 0, 0
 	b := browser.Launch(t)
 	// @trap: one page a set, its body swapped: no example has a script, and a page's open is
@@ -160,7 +151,7 @@ func TestRules(t *testing.T) {
 				if err := page.Resize(width); err != nil {
 					t.Fatal(err)
 				}
-				v, err := page.Page.Evaluate(readTextAndMotion, []any{part.Set, tracking, ownMotion})
+				v, err := page.Page.Evaluate(readTextAndMotion, []any{part.Set, tracking})
 				if err != nil {
 					t.Fatal(err)
 				}
@@ -169,9 +160,6 @@ func TestRules(t *testing.T) {
 					t.Fatal(err)
 				}
 				texts += f.Texts
-				for _, s := range f.MotionUsed {
-					motionUsed[s] = true
-				}
 				check.Equal(t, fmt.Sprintf("%s at %dpx: no color moves (rule 10)", name, width), strings.Join(f.Motion, " | "), "")
 				what := "each size its fitted letter-spacing (tokens.css)"
 				if part.Set == "console" {
@@ -233,13 +221,6 @@ func TestRules(t *testing.T) {
 		}
 	}
 	check.Equal(t, "every part that sets the ring aside still does", strings.Join(idle, " "), "")
-	idle = nil
-	for _, s := range ownMotion {
-		if !motionUsed[s] {
-			idle = append(idle, s)
-		}
-	}
-	check.Equal(t, "every part with its own color motion still has it", strings.Join(idle, " "), "")
 	// @trap: a rule read off nothing would pass having held nothing
 	check.Equal(t, fmt.Sprintf("the rules read every example (%d), its controls (%d) and its text (%d)", examples, controls, texts), strconv.FormatBool(examples > 0 && controls > 0 && texts > 0), "true")
 }

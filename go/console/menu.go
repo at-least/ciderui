@@ -1,7 +1,6 @@
 package console
 
 import (
-	"fmt"
 	"io"
 	"strconv"
 
@@ -14,33 +13,39 @@ import (
 
 // ConsoleMenuItem is a page in a [ConsoleSidebar].
 type ConsoleMenuItem struct {
-	Href    string
-	Label   string
-	Icon    lucide.Icon
-	Current bool
+	Href  string
+	Label string
+	Icon  lucide.Icon
 }
 
-func (m ConsoleMenuItem) node(path string) g.Node {
+func (m ConsoleMenuItem) node(path string, current bool) g.Node {
 	need.Field(path, "an Href", m.Href)
 	need.Field(path, "a Label", m.Label)
-	return pageLink("cui-console-menu-item", m.Href, m.Current, g.Group{
+	return pageLink("cui-console-menu-item", m.Href, current, g.Group{
 		g.If(m.Icon != (lucide.Icon{}), m.Icon.Class("cui-console-menu-icon")),
 		h.Span(h.Class("cui-console-menu-label"), g.Text(m.Label)),
 	})
 }
 
+// ConsoleSubtitlesMenuID is the [ConsoleChoiceMenu]'s id, for a page's
+// popovertarget and script.
+//
 // @invariant: a page has one subtitles menu, its player's, so its id is the
 // kit's, not the page's
-const subtitlesMenuID = "subtitles"
+const ConsoleSubtitlesMenuID = "cui-console-subtitles"
 
 // ConsoleChoiceMenu is a popover of options in columns side by side, each its
-// title over its options, one of them checked: a [ConsolePlayer]'s voices
-// and subtitles. The page's script hears an option's click (its value, and
-// its column's data-column), moves aria-checked to it and moves the focus
-// among the options by the arrow keys; the click closes the popover itself
-// (popovertargetaction="hide").
+// title over its options, written at rest: each column's first option
+// checked. The page's script checks the stored choice, hears an option's
+// click (its value, and its column's data-column), moves aria-checked to it
+// and moves the focus among the options by the arrow keys; the click closes
+// the popover itself (popovertargetaction="hide"). A [ConsolePlayer]'s voices
+// and subtitles.
 type ConsoleChoiceMenu struct {
-	Columns []ConsoleChoiceColumn
+	// AriaLabel names the button that opens the menu, the player's subtitles
+	// button.
+	AriaLabel string
+	Columns   []ConsoleChoiceColumn
 }
 
 type ConsoleChoiceColumn struct {
@@ -55,8 +60,7 @@ type ConsoleChoiceOption struct {
 	// Value is the <button>'s value, what the script reads.
 	Value string
 	// Lang is the label's language, a BCP 47 tag; "" for the page's.
-	Lang    string
-	Checked bool
+	Lang string
 }
 
 func (m ConsoleChoiceMenu) Render(w io.Writer) error {
@@ -71,33 +75,26 @@ func (m ConsoleChoiceMenu) Render(w io.Writer) error {
 		}
 		columns[c.Column] = true
 		need.Some(column, "Options", c.Options)
-		checked := 0
 		for j, o := range c.Options {
 			need.Field(need.At(column+".Options", j), "a Label", o.Label)
 			need.Field(need.At(column+".Options", j), "a Value", o.Value)
-			if o.Checked {
-				checked++
-			}
-		}
-		if checked != 1 {
-			panic(fmt.Sprintf("%s needs one Checked option, has %d", column, checked))
 		}
 	}
-	return h.Div(h.Class("cui-console-popover"), h.ID(subtitlesMenuID), h.Popover(),
+	return h.Div(h.Class("cui-console-popover"), h.ID(ConsoleSubtitlesMenuID), h.Popover(),
 		h.Div(h.Class("cui-console-menu-columns"),
 			g.Map(m.Columns, func(c ConsoleChoiceColumn) g.Node {
-				titleID := subtitlesMenuID + "-" + c.Column + "-title"
+				titleID := ConsoleSubtitlesMenuID + "-" + c.Column + "-title"
+				var options g.Group
+				for j, o := range c.Options {
+					options = append(options, h.Button(h.Class("cui-console-menu-item"), h.Type("button"), h.Role("menuitemradio"), h.Aria("checked", strconv.FormatBool(j == 0)), h.Value(o.Value),
+						h.PopoverTarget(ConsoleSubtitlesMenuID), h.PopoverTargetAction("hide"),
+						lucide.Check.Class("cui-console-menu-icon"),
+						h.Span(h.Class("cui-console-menu-label"), attr.Optional("lang", o.Lang), g.Text(o.Label)),
+					))
+				}
 				return h.Div(h.Class("cui-console-menu"), h.Data("column", c.Column),
 					h.P(h.Class("cui-console-menu-title"), h.ID(titleID), g.Text(c.Title)),
-					h.Div(h.Role("menu"), h.Aria("labelledby", titleID),
-						g.Map(c.Options, func(o ConsoleChoiceOption) g.Node {
-							return h.Button(h.Class("cui-console-menu-item"), h.Type("button"), h.Role("menuitemradio"), h.Aria("checked", strconv.FormatBool(o.Checked)), h.Value(o.Value),
-								h.PopoverTarget(subtitlesMenuID), h.PopoverTargetAction("hide"),
-								lucide.Check.Class("cui-console-menu-icon"),
-								h.Span(h.Class("cui-console-menu-label"), attr.Optional("lang", o.Lang), g.Text(o.Label)),
-							)
-						}),
-					),
+					h.Div(h.Role("menu"), h.Aria("labelledby", titleID), options),
 				)
 			}),
 		),

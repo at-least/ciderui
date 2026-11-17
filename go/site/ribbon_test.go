@@ -10,7 +10,7 @@ import (
 )
 
 func TestRibbonRendersTheExamples(t *testing.T) {
-	example.Check(t, site.Ribbon{Class: "", Children: h.P(
+	example.Check(t, site.Ribbon{Children: h.P(
 		g.Text("Pre-order Cider Phone Fold now. Already have one saved for pre-order? "),
 		h.A(h.Class("cui-link"), h.Href("#checkout"), g.Text("Check out now")),
 	)}, "site/ribbon/examples/ribbon.html")

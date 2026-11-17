@@ -1,13 +1,6 @@
 @layer components {
   .cui-console-code {
-    padding: 0 4px;
-    border-radius: 4px;
     font-family: var(--cui-font-mono);
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
     letter-spacing: normal;
-    color: var(--cui-c-console-neutral-label-primary);
-    background-color: var(--cui-c-console-neutral-fill-tertiary);
   }
 }

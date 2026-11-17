@@ -50,7 +50,7 @@ func TestBannerPanics(t *testing.T) {
 	example.Panics(t, func() console.ConsoleBanner {
 		return console.ConsoleBanner{Color: console.ConsoleColorInfo, Title: "x", Body: nil, Actions: nil}
 	}, []example.Break[console.ConsoleBanner]{
-		{Want: "console.ConsoleBanner needs a Color: a banner's color is info, success, warning or error", Change: func(p *console.ConsoleBanner) { p.Color = console.ConsoleColorNeutral }},
+		{Want: "console.ConsoleBanner needs a Color: ConsoleColorInfo, ConsoleColorSuccess, ConsoleColorWarning or ConsoleColorError", Change: func(p *console.ConsoleBanner) { p.Color = console.ConsoleColorNeutral }},
 		{Want: "console.ConsoleBanner needs a Title, a Body or Actions", Change: func(p *console.ConsoleBanner) { p.Title = "" }},
 	})
 }

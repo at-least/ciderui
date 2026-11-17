@@ -32,7 +32,7 @@ type ConsoleBanner struct {
 
 func (b ConsoleBanner) Render(w io.Writer) error {
 	if b.Color == ConsoleColorNeutral {
-		panic("console.ConsoleBanner needs a Color: a banner's color is info, success, warning or error")
+		panic("console.ConsoleBanner needs a Color: ConsoleColorInfo, ConsoleColorSuccess, ConsoleColorWarning or ConsoleColorError")
 	}
 	if b.Title == "" && b.Body == nil && b.Actions == nil {
 		panic("console.ConsoleBanner needs a Title, a Body or Actions")

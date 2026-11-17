@@ -2,6 +2,7 @@ package console
 
 import (
 	"io"
+	"strconv"
 
 	"github.com/at-least/ciderui/go/internal/need"
 	"github.com/at-least/ciderui/go/lucide"
@@ -9,8 +10,11 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
+// ConsoleSidebarID is the [ConsoleSidebar]'s id, for a page's popovertarget
+// and script.
+//
 // @invariant: a page has one sidebar, so its id is the kit's, not the page's
-const sidebarID = "sidebar"
+const ConsoleSidebarID = "cui-console-sidebar"
 
 // ConsoleSidebar is a popover: below 1024px it is a sheet that its open
 // button, which [ConsoleContent] writes first in the page's <main>, opens.
@@ -30,6 +34,9 @@ type ConsoleSidebar struct {
 	// Sections: each one's Title above its items; a section after the first
 	// with no Title is set apart by a rule.
 	Sections []ConsoleMenuSection
+	// Current is the Href of the item for the page shown (aria-current);
+	// "" for none.
+	Current string
 }
 
 type ConsoleMenuSection struct {
@@ -37,8 +44,9 @@ type ConsoleMenuSection struct {
 	Items []ConsoleMenuItem
 }
 
-func menuSections(sections []ConsoleMenuSection) g.Node {
+func menuSections(sections []ConsoleMenuSection, current string) g.Node {
 	var nodes g.Group
+	found := current == ""
 	for i, s := range sections {
 		section := need.At("console.ConsoleSidebar.Sections", i)
 		need.Some(section, "Items", s.Items)
@@ -49,8 +57,13 @@ func menuSections(sections []ConsoleMenuSection) g.Node {
 			nodes = append(nodes, h.Hr(h.Class("cui-console-menu-rule")))
 		}
 		for j, item := range s.Items {
-			nodes = append(nodes, item.node(need.At(section+".Items", j)))
+			isCurrent := current != "" && item.Href == current
+			found = found || isCurrent
+			nodes = append(nodes, item.node(need.At(section+".Items", j), isCurrent))
 		}
+	}
+	if !found {
+		panic("console.ConsoleSidebar.Current " + strconv.Quote(current) + " matches no item's Href")
 	}
 	return nodes
 }
@@ -65,17 +78,17 @@ func (s ConsoleSidebar) Render(w io.Writer) error {
 	need.Some("console.ConsoleSidebar", "Sections", s.Sections)
 	return g.Group{
 		ConsoleBtn{Href: "#main", Label: s.SkipLabel, Submit: false, Variant: ConsoleBtnVariantFilled, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: "cui-console-skip"},
-		h.Nav(h.Class("cui-console-sidebar"), h.ID(sidebarID), h.Popover(), h.Aria("label", s.AriaLabel),
+		h.Nav(h.Class("cui-console-sidebar"), h.ID(ConsoleSidebarID), h.Popover(), h.Aria("label", s.AriaLabel),
 			h.Div(h.Class("cui-console-sidebar-header"),
 				h.A(h.Class("cui-console-sidebar-wordmark"), h.Href(s.Home), g.Text(s.Wordmark)),
-				iconButton(lucide.X, s.CloseAriaLabel, g.Group{h.PopoverTarget(sidebarID), h.PopoverTargetAction("hide"), h.AutoFocus()}, "cui-console-sidebar-close"),
+				iconButton(lucide.X, s.CloseAriaLabel, g.Group{h.PopoverTarget(ConsoleSidebarID), h.PopoverTargetAction("hide"), h.AutoFocus()}, "cui-console-sidebar-close"),
 			),
-			h.Div(h.Class("cui-console-sidebar-body cui-console-menu"), h.Data("variant", "sidebar"), menuSections(s.Sections)),
+			h.Div(h.Class("cui-console-sidebar-body cui-console-menu"), h.Data("variant", "sidebar"), menuSections(s.Sections, s.Current)),
 			h.Div(h.Class("cui-console-sidebar-footer"), s.Footer),
 		),
 	}.Render(w)
 }
 
 func sidebarOpen(ariaLabel string) g.Node {
-	return iconButton(lucide.Menu, ariaLabel, h.PopoverTarget(sidebarID), "cui-console-sidebar-open")
+	return iconButton(lucide.Menu, ariaLabel, h.PopoverTarget(ConsoleSidebarID), "cui-console-sidebar-open")
 }

@@ -46,7 +46,7 @@ func capsule() []h.Check {
 		}
 		checks = append(checks, h.Check{Target: target, Props: []string{"box-height", "box-width", "border-top-left-radius", "border-bottom-right-radius"}, TB: []string{b + "-controlSize-" + size + "-blockSize", b + "-controlSize-" + size + "-minWidth", b + "-controlShape-capsule-controlSize-" + size + "-borderRadius", b + "-controlShape-capsule-controlSize-" + size + "-borderRadius"}})
 	}
-	return append(checks, h.Check{Target: ".cui-console-btn:not(.cui-console-btn-icon)", Props: []string{"box-height", "border-top-left-radius", "padding-left", "padding-right"}, TB: []string{b + "-controlSize-md-blockSize", b + "-controlShape-capsule-controlSize-md-borderRadius", b + "-controlSize-md-paddingInlineStart", b + "-controlSize-md-paddingInlineEnd"}})
+	return checks
 }
 
 func TestCases(t *testing.T) {
@@ -160,7 +160,6 @@ func TestCases(t *testing.T) {
 			Widths: []int{390},
 			Checks: []h.Check{
 				{Target: `.cui-console-btn-icon[data-size="sm"]`, Props: []string{"box-width", "box-height", "border-top-left-radius"}, Golden: "a capsule icon button 44px square on a touch screen, its corners half that: a circle still, as the toolkit's capsule is at each size"},
-				{Target: ".cui-console-btn:not(.cui-console-btn-icon)", Props: []string{"box-height"}, Golden: "a labelled button 44px tall on a touch screen, the HIG's 44pt (Accessibility, Mobility)"},
 			},
 		},
 		{

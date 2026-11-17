@@ -3,16 +3,18 @@
 //
 //	go run ./scripts/docker go test -count=1 -tags browser ./components/site/field
 //
-// With no command it runs the browser half of the gate.
+// With no command it runs the browser half of the gate. A browser test first rebuilds
+// dist/ on the host (scripts/build-css): a part's test alone would read a stale one.
 //
-// @external: Nothing is bind-mounted: the Docker daemon may be on another machine
-// (DOCKER_HOST=ssh://…), where a bind mount would read that machine's paths.
+// @invariant: Nothing is bind-mounted: the container works on a copy, and what it wrote
+// comes back as the files newer than its start.
 package main
 
 import (
 	"bytes"
 	"crypto/sha256"
 	"encoding/hex"
+	"errors"
 	"fmt"
 	"os"
 	"os/exec"
@@ -64,6 +66,14 @@ func docker(args ...string) (string, error) {
 
 func run(command []string) (int, error) {
 	root := build.Root
+	if i := slices.Index(command, "-tags"); i >= 0 && i+1 < len(command) && command[i+1] == "browser" {
+		css := exec.Command("go", "run", "./scripts/build-css")
+		css.Dir = root
+		css.Stdout, css.Stderr = os.Stderr, os.Stderr
+		if err := css.Run(); err != nil {
+			return 0, fmt.Errorf("build-css: %w", err)
+		}
+	}
 	ignore, err := os.ReadFile(filepath.Join(root, dockerfile+".dockerignore"))
 	if err != nil {
 		return 0, err
@@ -79,9 +89,8 @@ func run(command []string) (int, error) {
 		return 0, fmt.Errorf("%s.dockerignore admits %v, the hash reads %v", dockerfile, admitted, context)
 	}
 	// @external: an image built from the same bytes carries their hash as a label and is
-	// run by its ID, with no build (a cached build still took 2s over ssh). Not by the
-	// tag: lab's daemon serves every Mac and checkout, and another's build can move the
-	// tag meanwhile.
+	// run by its ID, with no build. Not by the tag: every checkout and worktree on the
+	// Mac shares OrbStack's one daemon, and another's build can move the tag meanwhile.
 	inputs := sha256.New()
 	for _, f := range append([]string{dockerfile}, context...) {
 		b, err := os.ReadFile(filepath.Join(root, f))
@@ -131,8 +140,8 @@ func run(command []string) (int, error) {
 	}
 
 	args := []string{"create", "--init", "--ipc=host",
-		// @external: Go's build cache a volume on the daemon's machine, no bind mount: a run
-		// compiles what changed since the last, not the whole module
+		// @external: Go's build cache a volume: a run compiles what changed since the last,
+		// not the whole module
 		"-v", "ciderui-gocache:/root/.cache/go-build"}
 	for _, k := range []string{"UPDATE_GOLDEN"} {
 		if v, ok := os.LookupEnv(k); ok {
@@ -156,9 +165,13 @@ func run(command []string) (int, error) {
 	if err := os.RemoveAll(filepath.Join(root, "test/pictures-failed")); err != nil {
 		return 0, err
 	}
+	files, err := repositoryFiles(root)
+	if err != nil {
+		return 0, err
+	}
 	// @external: no extended attributes (docker cp refuses macOS's com.apple.provenance,
 	// "operation not supported", on a file that carries it), no AppleDouble ._ files
-	if err := shell(fmt.Sprintf(`tar -c --no-xattrs -C %s --exclude ./.git --exclude ./test/pictures-failed . | docker cp - %s:/src/ciderui`, quote(root), container)); err != nil {
+	if err := shell(fmt.Sprintf(`tar -c --no-xattrs -C %s --null -T - | docker cp - %s:/src/ciderui`, quote(root), container), strings.Join(files, "\x00")); err != nil {
 		return 0, err
 	}
 	start := exec.Command("docker", "start", "-a", container)
@@ -176,7 +189,7 @@ func run(command []string) (int, error) {
 		return 0, err
 	}
 	defer os.RemoveAll(out)
-	if err := shell(fmt.Sprintf(`docker cp %s:/tmp/written.tar - | tar -xOf - written.tar | tar -xf - -C %s`, container, quote(out))); err != nil {
+	if err := shell(fmt.Sprintf(`docker cp %s:/tmp/written.tar - | tar -xOf - written.tar | tar -xf - -C %s`, container, quote(out)), ""); err != nil {
 		return 0, err
 	}
 	var written []string
@@ -203,8 +216,36 @@ func run(command []string) (int, error) {
 	return status, nil
 }
 
-func shell(script string) error {
+// @external: the files git tracks or would track, as they are on disk: a copy of the
+// whole checkout carried an untracked node_modules (101MB) and .claude/worktrees (124MB)
+// beside the repository's 11MB. test/pictures-failed stays out: the copy back fills it.
+func repositoryFiles(root string) ([]string, error) {
+	cmd := exec.Command("git", "ls-files", "-z", "-co", "--exclude-standard")
+	cmd.Dir = root
+	cmd.Stderr = os.Stderr
+	out, err := cmd.Output()
+	if err != nil {
+		return nil, fmt.Errorf("git ls-files: %w", err)
+	}
+	var files []string
+	for f := range strings.SplitSeq(strings.TrimSuffix(string(out), "\x00"), "\x00") {
+		if strings.HasPrefix(f, "test/pictures-failed/") {
+			continue
+		}
+		// @external: ls-files lists a tracked file deleted on disk, which tar fails on
+		if _, err := os.Lstat(filepath.Join(root, f)); errors.Is(err, os.ErrNotExist) {
+			continue
+		} else if err != nil {
+			return nil, err
+		}
+		files = append(files, f)
+	}
+	return files, nil
+}
+
+func shell(script, stdin string) error {
 	cmd := exec.Command("sh", "-c", script)
+	cmd.Stdin = strings.NewReader(stdin)
 	cmd.Env = append(os.Environ(), "COPYFILE_DISABLE=1")
 	cmd.Stderr = os.Stderr
 	if err := cmd.Run(); err != nil {

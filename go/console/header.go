@@ -5,9 +5,9 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-func header(heading g.Node, detail string, controls g.Node) g.Node {
+func header(heading g.Node, detail string, actions g.Node) g.Node {
 	return h.Header(h.Class("cui-console-header"),
 		h.Div(heading, optionalText(h.P, "cui-console-header-detail", detail)),
-		controls,
+		actions,
 	)
 }

@@ -37,8 +37,8 @@ type Btn struct {
 	Submit  bool
 	Variant BtnVariant
 	Size    BtnSize
-	// Block fills the row.
-	Block bool
+	// FullWidth fills the row and squares the corners to 8px.
+	FullWidth bool
 	// Attrs: disabled, aria-*, an htmx attribute.
 	Attrs g.Node
 	Class string
@@ -50,8 +50,8 @@ func (b Btn) Render(w io.Writer) error {
 		panic("site.Btn has an Href and Submit: a link sends no form")
 	}
 	root := "cui-btn"
-	if b.Block {
-		root += " cui-btn-block"
+	if b.FullWidth {
+		root += " cui-btn-full-width"
 	}
 	attrs := g.Group{attr.Class(root, b.Class), attr.Optional("data-variant", b.Variant.value), attr.Optional("data-size", b.Size.value)}
 	content := g.Group{b.Icon, g.Text(b.Label)}

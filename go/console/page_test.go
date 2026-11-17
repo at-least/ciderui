@@ -11,24 +11,37 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
+func consoleContent() console.ConsoleContent {
+	return console.ConsoleContent{Sidebar: nil, Back: nil, Title: "Jobs", Detail: "", Actions: nil, Children: nil}
+}
+
 func consolePage() console.ConsolePage {
-	return console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Scheme: console.ConsoleSchemeSystem, Children: h.P(g.Text("x"))}
+	return console.ConsolePage{Lang: "en", Head: nil, Scheme: console.ConsoleSchemeSystem, Content: consoleContent(), Overlays: h.P(g.Text("x"))}
 }
 
 func TestConsolePageWritesTheDocumentItsHeadAfterTheStylesheet(t *testing.T) {
 	p := consolePage()
 	p.Scheme = console.ConsoleSchemeLight
 	p.Head = h.Link(h.Rel("stylesheet"), h.Href("/own.css"))
-	want := `<!doctype html><html lang="en" class="cui-light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Jobs</title><link rel="stylesheet" href="` + ciderui.ConsoleStylesheet() + `"><link rel="stylesheet" href="/own.css"></head><body class="cui-console-page"><p>x</p></body></html>`
+	want := `<!doctype html><html lang="en" class="cui-light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Jobs</title><link rel="stylesheet" href="` + ciderui.ConsoleStylesheet() + `"><link rel="stylesheet" href="/own.css"></head><body class="cui-console-page">` + example.Render(consoleContent()) + `<p>x</p></body></html>`
 	if got := example.Render(p); got != want {
-		t.Errorf("the page is not the document, its <html> taking the scheme's class, its head after the console stylesheet, its <body> cui-console-page:\n got: %s\nwant: %s", got, want)
+		t.Errorf("the page is not the document, its <title> its content's Title, its <html> taking the scheme's class, its head after the console stylesheet, its <body> cui-console-page holding its content then its overlays:\n got: %s\nwant: %s", got, want)
+	}
+}
+
+func TestConsolePageWithoutOverlaysWritesItsContentAlone(t *testing.T) {
+	p := consolePage()
+	p.Overlays = nil
+	want := `<body class="cui-console-page">` + example.Render(consoleContent()) + `</body>`
+	if got := example.Render(p); !strings.Contains(got, want) {
+		t.Errorf("the page with no Overlays does not write its content alone in <body>:\n got: %s\nwant within: %s", got, want)
 	}
 }
 
 func TestConsolePagePanics(t *testing.T) {
 	example.Panics(t, consolePage, []example.Break[console.ConsolePage]{
 		{Want: "console.ConsolePage needs a Lang", Change: func(p *console.ConsolePage) { p.Lang = "" }},
-		{Want: "console.ConsolePage needs a Title", Change: func(p *console.ConsolePage) { p.Title = "" }},
+		{Want: "console.ConsolePage.Content needs a Title", Change: func(p *console.ConsolePage) { p.Content.Title = "" }},
 	})
 }
 

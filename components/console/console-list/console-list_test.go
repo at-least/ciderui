@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	h "github.com/at-least/ciderui/internal/harness"
+	asc "github.com/at-least/ciderui/reference/asc/results"
 )
 
 const (
@@ -37,7 +38,8 @@ func TestCases(t *testing.T) {
 				{Target: row + " .cui-console-list-label", Props: typeProps, TB: typeTokens("desktop")},
 				{Target: row + " .cui-console-list-label", Props: []string{"color"}, TB: []string{d + "-anatomy-Item-variant-colorRole-neutral-effect-default-anatomy-Label-color"}},
 				{Target: row + " .cui-console-list-detail", Props: []string{"color", "font-size", "line-height"}, Golden: "the secondary label at 0.76: the toolkit's 0.60 is 3.4:1 on white (tokens.css, decision 21); the body's 13px"},
-				{Target: row, Pseudo: "::before", Props: []string{"left", "height", "background-color"}, Golden: "a 0.5px hairline over each row after the first, from 16px in, the secondary border (the table row's)"},
+				{Target: row, Pseudo: "::before", Props: []string{"border-bottom-width", "border-bottom-style", "border-bottom-color"}, ASC: h.ASCProbe(asc.Analytics, "table.cell")},
+				{Target: row, Pseudo: "::before", Props: []string{"left"}, Golden: "the line over each row after the first, the table row's (asc analytics:table.cell), from the row's 16px in"},
 				{Target: ".cui-console-list-row:first-child", Pseudo: "::before", Props: []string{"content"}, Golden: "no hairline over the first row"},
 				{Target: ".cui-console-list", Props: []string{"background-color", "border-top-left-radius"}, Golden: "the group the console card's gray and corners"},
 				{Target: row, Props: []string{"background-color"}, State: []string{"hover"}, Golden: "a row is no link and does not fill"},
@@ -58,7 +60,7 @@ func TestCases(t *testing.T) {
 			Widths:       []int{1200},
 			ForcedColors: true,
 			Checks: []h.Check{
-				{Target: row, Pseudo: "::before", Props: []string{"background-color", "height"}, Golden: "the hairline between rows CanvasText: forced colors drew its fill in the ground's color, at its alpha"},
+				{Target: row, Pseudo: "::before", Props: []string{"border-bottom-color", "border-bottom-width"}, Golden: "the line between rows CanvasText: forced colors draws a border in the text's color"},
 			},
 		},
 		{
@@ -76,7 +78,7 @@ func TestCases(t *testing.T) {
 			Checks: []h.Check{
 				{Target: ".cui-console-list", Props: []string{"background-color"}, Golden: "the dark side derived (tokens.css, decision 18)"},
 				{Target: row + " .cui-console-list-label", Props: []string{"color"}, Golden: "the dark side derived (tokens.css, decision 18)"},
-				{Target: row, Pseudo: "::before", Props: []string{"background-color"}, Golden: "the dark side derived (tokens.css, decision 18)"},
+				{Target: row, Pseudo: "::before", Props: []string{"border-bottom-color"}, Golden: "the dark side derived (tokens.css, decision 18)"},
 			},
 		},
 	})

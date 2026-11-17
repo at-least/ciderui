@@ -11,17 +11,17 @@ import (
 )
 
 func link(label, href string, variant site.BtnVariant, size site.BtnSize) site.Btn {
-	return site.Btn{Href: href, Label: label, Icon: nil, Submit: false, Variant: variant, Size: size, Block: false, Attrs: nil, Class: ""}
+	return site.Btn{Href: href, Label: label, Icon: nil, Submit: false, Variant: variant, Size: size, FullWidth: false, Attrs: nil, Class: ""}
 }
 
 func TestBtnRendersTheExamples(t *testing.T) {
 	buy := "#buy"
 	primary, secondary := site.BtnVariantPrimary, site.BtnVariantSecondary
 	medium := site.BtnSizeMedium
-	block := link("Buy", buy, primary, medium)
-	block.Block = true
-	blockButton := link("Buy", "", primary, medium)
-	blockButton.Block = true
+	fullWidth := link("Buy", buy, primary, medium)
+	fullWidth.FullWidth = true
+	fullWidthButton := link("Buy", "", primary, medium)
+	fullWidthButton.FullWidth = true
 	icon := link("Added", "", primary, medium)
 	icon.Icon = lucide.Check
 	disabled := func(variant site.BtnVariant) site.Btn {
@@ -34,8 +34,8 @@ func TestBtnRendersTheExamples(t *testing.T) {
 		node g.Node
 	}{
 		{"default", link("Buy", buy, primary, medium)},
-		{"block", block},
-		{"block-button", blockButton},
+		{"full-width", fullWidth},
+		{"full-width-button", fullWidthButton},
 		{"icon", icon},
 		{"sizes", g.Group{link("Buy", buy, primary, medium), link("Buy", buy, primary, site.BtnSizeLarge)}},
 		{"variants", g.Group{link("Buy", buy, primary, medium), link("Buy", buy, secondary, medium), link("Buy", buy, site.BtnVariantSecondaryNeutral, medium)}},

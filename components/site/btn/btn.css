@@ -77,9 +77,9 @@
     letter-spacing: var(--cui-tracking-17);
   }
 
-  .cui-btn-block {
+  .cui-btn-full-width {
     display: flex;
-    /* @invariant: Block's one job, filling the row: a <button>, unlike an <a>,
+    /* @invariant: FullWidth's one job, filling the row: a <button>, unlike an <a>,
        shrinks to its label without it (rule 6's exception) */
     width: 100%;
     border-radius: 8px;

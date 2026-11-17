@@ -52,7 +52,8 @@ func TestCases(t *testing.T) {
 				// unchanged
 				{Target: input, State: []string{"focus"}, Props: []string{"box-height"}, Apple: h.AppleProbe(apple.Retail, "field.input")},
 				{Target: input, State: []string{"focus", "focus-visible"}, Props: []string{"padding-left", "border-top-width", "border-top-color", "outline-style"}, Apple: h.AppleProbe(apple.Retail, "field.input", "focus+focus-visible")},
-				{Target: label, Props: h.Props(h.Size, []string{"color", "position", "top", "left", "white-space", "transition-property", "transition-duration", "transition-timing-function"}), Apple: h.AppleProbe(apple.Retail, "field.label")},
+				{Target: label, Props: h.Props(h.Size, []string{"color", "position", "top", "left", "white-space"}), Apple: h.AppleProbe(apple.Retail, "field.label")},
+				{Target: label, Props: []string{"transition-property", "transition-duration", "transition-timing-function"}, Golden: "what floats (its place, size, line and tracking) moves in apple.com's 0.125s ease-in, its color at once, where apple.com's `all` eases that too (retail:field.label): the invalid red and Increase Contrast's color are there at once (DESIGN.md decision 25)"},
 				{Target: label, On: input, State: []string{"focus"}, Props: h.Props(h.Size, []string{"color", "top", "left"}), Apple: h.AppleProbe(apple.Retail, "field.label-floated")},
 				{Target: ".cui-field", Props: []string{"background-color", "border-top-left-radius"}, Golden: "its own light ground under the translucent input, its corners the input's: it reads in a dark block too, where apple.com shows no field"},
 				{Target: input, Props: []string{"margin-bottom"}, Golden: "no margin of its own: apple.com's 14px below each field is the form's spacing, the page's (retail:field.input)"},

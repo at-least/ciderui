@@ -13,6 +13,7 @@ import (
 // at rest: paused. It holds both glyphs and both labels; the page's script
 // sets data-state="playing" (and an icon-only one's aria-label) and, while
 // playing, --cui-console-play-button-progress (0% to 100%), the ring round the glyph.
+// An icon-only one is large, a labelled one small.
 type ConsolePlayButton struct {
 	// AriaLabel is an icon-only button's name at rest, what pressing it does
 	// ("Play"); "" with a Label, whose words name it.
@@ -21,7 +22,6 @@ type ConsolePlayButton struct {
 	// playing; "" both for a round button of the glyph alone.
 	Label        string
 	PlayingLabel string
-	Size         ConsoleBtnSize
 	// Attrs: the root's other attributes, for the page's script (data-*, an
 	// htmx attribute).
 	Attrs g.Node
@@ -35,12 +35,12 @@ func (p ConsolePlayButton) Render(w io.Writer) error {
 	if labelled == (p.AriaLabel != "") {
 		panic("console.ConsolePlayButton needs an AriaLabel without a Label, and none with one")
 	}
-	root := "cui-console-btn cui-console-btn-icon cui-console-play-button"
+	root, size := "cui-console-btn cui-console-btn-icon cui-console-play-button", ConsoleBtnSizeLarge
 	if labelled {
-		root = "cui-console-btn cui-console-play-button"
+		root, size = "cui-console-btn cui-console-play-button", ConsoleBtnSizeSmall
 	}
 	return h.Button(h.Class(root),
-		attr.Optional("data-size", p.Size.value), h.Data("shape", "capsule"),
+		h.Data("size", size.value), h.Data("shape", "capsule"),
 		h.Type("button"), attr.Optional("aria-label", p.AriaLabel), p.Attrs,
 		h.Span(h.Class("cui-console-play-button-glyph"), lucide.Play.Class("cui-console-play-button-paused"), lucide.Square.Class("cui-console-play-button-playing")),
 		g.If(labelled, g.Group{

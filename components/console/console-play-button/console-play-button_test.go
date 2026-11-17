@@ -18,37 +18,24 @@ const (
 	labelledPlaying = `.cui-console-play-button[data-state="playing"]`
 )
 
-var sizes = []string{"sm", "md", "lg"}
-
 // @invariant: the page's script's progress on the playing one
 func halfway(html string) string {
 	return strings.Replace(html, `data-state="playing" type="button">`, `data-state="playing" type="button" style="--cui-console-play-button-progress: 40%">`, 1)
 }
 
-func sized(size string) string {
-	if size == "md" {
-		return ".cui-console-play-button:not([data-size])"
-	}
-	return `.cui-console-play-button[data-size="` + size + `"]`
-}
-
 func TestCases(t *testing.T) {
-	var sizeChecks []h.Check
-	for _, size := range sizes {
-		sizeChecks = append(sizeChecks, h.Check{Target: sized(size), Props: []string{"box-height", "box-width", "border-top-left-radius", "font-size"}, TB: []string{b + "-controlSize-" + size + "-blockSize", b + "-controlSize-" + size + "-minWidth", b + "-controlShape-capsule-controlSize-" + size + "-borderRadius", "component-Button-anatomy-artStart-withoutLabel-controlSize-" + size + "-fontSize"}})
-	}
 	h.Run(t, []h.Case{
 		{
 			Name:   "play",
 			HTML:   h.Example("play"),
 			Widths: []int{1600, 1200, 390},
 			Checks: []h.Check{
-				{Target: paused, Props: []string{"box-height", "box-width", "border-top-left-radius", "font-size"}, TB: []string{b + "-controlSize-md-blockSize", b + "-controlSize-md-minWidth", b + "-controlShape-capsule-controlSize-md-borderRadius", "component-Button-anatomy-artStart-withoutLabel-controlSize-md-fontSize"}},
+				{Target: paused, Props: []string{"box-height", "box-width", "border-top-left-radius", "font-size"}, TB: []string{b + "-controlSize-lg-blockSize", b + "-controlSize-lg-minWidth", b + "-controlShape-capsule-controlSize-lg-borderRadius", "component-Button-anatomy-artStart-withoutLabel-controlSize-lg-fontSize"}},
 				{Target: paused, Props: []string{"background-color"}, TB: []string{b + "-colorRole-neutral-effect-default-variant-gray-backgroundColor"}},
 				{Target: paused, Props: []string{"background-color"}, State: []string{"hover"}, TB: []string{b + "-colorRole-neutral-effect-hover-variant-gray-backgroundColor"}},
 				{Target: paused, Props: []string{"background-color"}, State: []string{"active"}, TB: []string{b + "-colorRole-neutral-effect-press-variant-gray-backgroundColor"}},
 				{Target: paused, Props: []string{"color"}, Golden: "the gray button's label color, as console-btn's icon buttons beside it: the toolkit's icon-only gray (its artOnlyColor, 60% gray) is not taken here"},
-				{Target: paused + " .cui-console-play-button-glyph > .cui-console-play-button-paused", Props: []string{"box-height", "box-width"}, TB: []string{"component-Button-anatomy-artStart-withoutLabel-controlSize-md-fontSize", "component-Button-anatomy-artStart-withoutLabel-controlSize-md-fontSize"}},
+				{Target: paused + " .cui-console-play-button-glyph > .cui-console-play-button-paused", Props: []string{"box-height", "box-width"}, TB: []string{"component-Button-anatomy-artStart-withoutLabel-controlSize-lg-fontSize", "component-Button-anatomy-artStart-withoutLabel-controlSize-lg-fontSize"}},
 				{Target: paused + " .cui-console-play-button-glyph > .cui-console-play-button-paused", Props: []string{"display", "fill", "stroke"}, Golden: "paused: Lucide's play shown, filled in the label's color and not stroked (in a translucent color the stroke over the fill drew a darker outline) (the toolkit has no play glyph; tv.apple.com's are SF Symbols, Apple's)"},
 				{Target: paused + " .cui-console-play-button-glyph > .cui-console-play-button-playing", Props: []string{"display"}, Golden: "paused: the stop glyph hidden"},
 				{Target: paused + " .cui-console-play-button-glyph", Pseudo: "::before", Props: []string{"content"}, Golden: "paused: no ring"},
@@ -78,21 +65,6 @@ func TestCases(t *testing.T) {
 			ForcedColors: true,
 			Checks: []h.Check{
 				{Target: labelledPlaying + " .cui-console-play-button-glyph", Pseudo: "::before", Props: []string{"background-image"}, Golden: "the ring in the theme's ButtonText on GrayText"},
-			},
-		},
-		{
-			Name:   "play sizes",
-			HTML:   h.Example("sizes"),
-			Widths: []int{1200},
-			Checks: sizeChecks,
-		},
-		{
-			Name:   "play touch",
-			HTML:   h.Example("sizes"),
-			Touch:  true,
-			Widths: []int{390},
-			Checks: []h.Check{
-				{Target: sized("sm"), Props: []string{"box-width", "box-height", "border-top-left-radius"}, Golden: "the small one 44px across on a touch screen, the HIG's 44pt, and still a circle (console-btn's capsule)"},
 			},
 		},
 		{

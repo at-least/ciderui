@@ -20,8 +20,8 @@ import (
 	"golang.org/x/tools/go/analysis/singlechecker"
 )
 
-const usage = `usage: ciderui check <packages>: fails a ciderui struct literal that leaves a field out
-       ciderui css <out.css> <package dir>...: writes the utilities the directories' Go files use to <out.css>`
+const usage = `usage: go tool ciderui check ./...: fails a ciderui struct literal that leaves a field out
+       go tool ciderui css <out.css> <package dir>...: writes the utilities the directories' Go files use to <out.css>`
 
 func main() {
 	args := os.Args[1:]

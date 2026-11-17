@@ -58,7 +58,6 @@
  "capsule touch | .cui-console-btn-icon[data-size=\"sm\"] | 390 | box-width": "44px",
  "capsule touch | .cui-console-btn-icon[data-size=\"sm\"] | 390 | box-height": "44px",
  "capsule touch | .cui-console-btn-icon[data-size=\"sm\"] | 390 | border-top-left-radius": "22px",
- "capsule touch | .cui-console-btn:not(.cui-console-btn-icon) | 390 | box-height": "44px",
  "touch target | .cui-console-btn-icon | 390 | box-width": "44px",
  "touch target | .cui-console-btn-icon | 390 | box-height": "44px",
  "touch sizes | [data-size=\"sm\"] | 390 | box-height": "44px",

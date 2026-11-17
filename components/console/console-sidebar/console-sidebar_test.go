@@ -78,7 +78,7 @@ func TestCases(t *testing.T) {
 		},
 		{
 			Name:   "sidebar opened focus",
-			HTML:   strings.Replace(h.Example("sidebar"), `<nav class="cui-console-sidebar"`, `<button id="open" popovertarget="sidebar">Open</button><nav class="cui-console-sidebar"`, 1),
+			HTML:   strings.Replace(h.Example("sidebar"), `<nav class="cui-console-sidebar"`, `<button id="open" popovertarget="cui-console-sidebar">Open</button><nav class="cui-console-sidebar"`, 1),
 			Click:  []string{"#open"},
 			Widths: []int{390},
 			Checks: []h.Check{

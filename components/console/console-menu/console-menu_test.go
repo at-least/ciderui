@@ -45,7 +45,7 @@ func TestCases(t *testing.T) {
 			Widths: []int{1200},
 			Click:  []string{open},
 			Checks: []h.Check{
-				{Target: "#subtitles", Props: []string{"display"}, Golden: "its button opens it, a console popover (decision 27)"},
+				{Target: "#cui-console-subtitles", Props: []string{"display"}, Golden: "its button opens it, a console popover (decision 27)"},
 				{Target: unchecked, Props: []string{"box-height", "border-top-left-radius", "padding-left", "padding-right"}, ASC: h.ASCProbe(asc.HoverMenu, "menu.item")},
 				{Target: unchecked + " .cui-console-menu-label", Props: label, ASC: h.ASCProbe(asc.Analytics, "menu.item.label")},
 				{Target: unchecked, Props: []string{"background-color", "border-top-width", "text-align", "font-family"}, Golden: "a <button> drawn as the menu's <a>: no ground, no edge, its label at its start in the page's face"},
@@ -57,7 +57,7 @@ func TestCases(t *testing.T) {
 				{Target: unchecked + " .cui-console-menu-icon", Props: []string{"visibility", "box-width"}, Golden: "unchecked, its check hidden in its place: every label lines up, as tv.apple.com's (its text 36px in on every row)"},
 				{Target: unchecked + " .cui-console-menu-label", Props: []string{"box-left"}, Golden: "each label at the same start"},
 				{Target: checked + " .cui-console-menu-label", Props: []string{"box-left"}, Golden: "each label at the same start"},
-				{Target: "#subtitles .cui-console-menu-title", Props: []string{"font-size", "line-height", "font-weight", "padding-top", "padding-left"}, TB: []string{menu + "-desktop-variant-menu-anatomy-Heading-textStyle-fontSize", menu + "-desktop-variant-menu-anatomy-Heading-textStyle-lineHeight", menu + "-desktop-variant-menu-anatomy-Heading-textStyle-fontWeight", menu + "-desktop-variant-menu-anatomy-Header-paddingBlockStart", menu + "-desktop-variant-menu-anatomy-Header-paddingInline"}},
+				{Target: "#cui-console-subtitles .cui-console-menu-title", Props: []string{"font-size", "line-height", "font-weight", "padding-top", "padding-left"}, TB: []string{menu + "-desktop-variant-menu-anatomy-Heading-textStyle-fontSize", menu + "-desktop-variant-menu-anatomy-Heading-textStyle-lineHeight", menu + "-desktop-variant-menu-anatomy-Heading-textStyle-fontWeight", menu + "-desktop-variant-menu-anatomy-Header-paddingBlockStart", menu + "-desktop-variant-menu-anatomy-Header-paddingInline"}},
 			},
 		},
 		{
@@ -66,10 +66,10 @@ func TestCases(t *testing.T) {
 			Widths: []int{1200},
 			Click:  []string{open},
 			Checks: []h.Check{
-				{Target: "#subtitles .cui-console-menu-columns", Props: []string{"display", "align-items"}, Golden: "the columns side by side, the Apple TV app's Audio beside its Subtitles (the owner, 2026-11-05, for muse's player: one button, one panel), each as tall as the menu so the rule runs its height"},
-				{Target: `#subtitles [data-column="voices"]`, Props: []string{"box-x", "box-width"}, Golden: "the first column at the popover's 16px side, as wide as its choices ask"},
-				{Target: `#subtitles [data-column="subtitles"]`, Props: []string{"box-x", "border-left-width", "border-left-style", "border-left-color", "margin-left", "padding-left"}, Golden: "the next after a rule, the menu's own 0.5px in its border color (cui-console-menu-rule), in the middle of the popover's 8px gap (cui-console-popover)"},
-				{Target: "#subtitles", Props: []string{"box-width", "max-width"}, Golden: "the popover as wide as its columns ask, past the one column's 350px"},
+				{Target: "#cui-console-subtitles .cui-console-menu-columns", Props: []string{"display", "align-items"}, Golden: "the columns side by side, the Apple TV app's Audio beside its Subtitles (the owner, 2026-11-05, for muse's player: one button, one panel), each as tall as the menu so the rule runs its height"},
+				{Target: `#cui-console-subtitles [data-column="voices"]`, Props: []string{"box-x", "box-width"}, Golden: "the first column at the popover's 16px side, as wide as its choices ask"},
+				{Target: `#cui-console-subtitles [data-column="subtitles"]`, Props: []string{"box-x", "border-left-width", "border-left-style", "border-left-color", "margin-left", "padding-left"}, Golden: "the next after a rule, the menu's own 0.5px in its border color (cui-console-menu-rule), in the middle of the popover's 8px gap (cui-console-popover)"},
+				{Target: "#cui-console-subtitles", Props: []string{"box-width", "max-width"}, Golden: "the popover as wide as its columns ask, past the one column's 350px"},
 				{Target: `[data-column="subtitles"] ` + unchecked + " .cui-console-menu-label", Props: label, ASC: h.ASCProbe(asc.Analytics, "menu.item.label")},
 				{Target: `[data-column="voices"] ` + checked + " .cui-console-menu-icon", Props: []string{"visibility"}, Golden: "each column its own check"},
 			},
@@ -80,8 +80,8 @@ func TestCases(t *testing.T) {
 			Widths: []int{390},
 			Click:  []string{open},
 			Checks: []h.Check{
-				{Target: "#subtitles", Props: []string{"box-width"}, Golden: "no wider than 85% of a phone's window, the popover's own cap"},
-				{Target: `#subtitles [data-column="subtitles"]`, Props: []string{"box-right"}, Golden: "both columns inside it"},
+				{Target: "#cui-console-subtitles", Props: []string{"box-width"}, Golden: "no wider than 85% of a phone's window, the popover's own cap"},
+				{Target: `#cui-console-subtitles [data-column="subtitles"]`, Props: []string{"box-right"}, Golden: "both columns inside it"},
 			},
 		},
 		{
@@ -90,7 +90,7 @@ func TestCases(t *testing.T) {
 			Widths: []int{1200},
 			Click:  []string{open, `[role="menuitemradio"][value="ja"]`},
 			Checks: []h.Check{
-				{Target: "#subtitles", Props: []string{"display"}, Golden: `a choice closes its popover with no script (popovertargetaction="hide"); its check is the page's script's to move`},
+				{Target: "#cui-console-subtitles", Props: []string{"display"}, Golden: `a choice closes its popover with no script (popovertargetaction="hide"); its check is the page's script's to move`},
 			},
 		},
 		{
@@ -108,7 +108,7 @@ func TestCases(t *testing.T) {
 			Widths: []int{1200},
 			Click:  []string{open},
 			Checks: []h.Check{
-				{Target: "#subtitles", Props: []string{"background-color", "color"}, Golden: "dark over a dark page: the console popover's derived dark (decision 18), a menu over the video in muse's dark console"},
+				{Target: "#cui-console-subtitles", Props: []string{"background-color", "color"}, Golden: "dark over a dark page: the console popover's derived dark (decision 18), a menu over the video in muse's dark console"},
 				{Target: checked + " .cui-console-menu-icon", Props: []string{"color"}, Golden: "the check in the dark secondary label"},
 			},
 		},

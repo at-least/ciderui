@@ -31,7 +31,7 @@ go run ./scripts/gate: every part, in headless Chromium, against reference/'s va
 ```go
 mux.Handle(ciderui.AssetsPath, ciderui.Assets())
 
-console.ConsolePage{Lang: "en", Title: "Jobs", Head: nil, Scheme: console.ConsoleSchemeSystem, Children: body}
+console.ConsolePage{Lang: "en", Head: nil, Scheme: console.ConsoleSchemeSystem, Content: console.ConsoleContent{Sidebar: nil, Back: nil, Title: "Jobs", Detail: "", Actions: nil, Children: body}, Overlays: nil}
 ```
 
 ```sh

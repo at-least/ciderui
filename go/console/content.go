@@ -26,8 +26,8 @@ type ConsoleContent struct {
 	Title   string
 	// Detail: the line under the title, what the page is for.
 	Detail string
-	// Controls: at the header's end.
-	Controls g.Node
+	// Actions: the buttons, links or tabs at the header's end.
+	Actions  g.Node
 	Children g.Node
 }
 
@@ -49,7 +49,7 @@ func (c ConsoleContent) Render(w io.Writer) error {
 			header(g.Group{
 				back,
 				h.H1(h.Class("cui-console-h2"), g.Text(c.Title)),
-			}, c.Detail, c.Controls),
+			}, c.Detail, c.Actions),
 			c.Children,
 		),
 	).Render(w)
