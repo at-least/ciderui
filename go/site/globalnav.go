@@ -47,8 +47,9 @@ func (n GlobalNav) Render(w io.Writer) error {
 	need.Field("site.GlobalNav", "a CloseAriaLabel", n.CloseAriaLabel)
 	var links, postForms g.Group
 	for i, link := range n.Links {
-		need.Field(need.At("site.GlobalNav.Links", i), "a Label", link.Label)
-		need.Field(need.At("site.GlobalNav.Links", i), "an Href", link.Href)
+		path := need.At("site.GlobalNav.Links", i)
+		need.Field(path, "a Label", link.Label)
+		need.Field(path, "an Href", link.Href)
 		if !link.Post {
 			links = append(links, h.Li(h.A(h.Class("cui-globalnav-link"), h.Href(link.Href), g.Text(link.Label))))
 			continue
