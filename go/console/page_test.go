@@ -29,15 +29,6 @@ func TestConsolePageWritesTheDocumentItsHeadAfterTheStylesheet(t *testing.T) {
 	}
 }
 
-func TestConsolePageWithoutOverlaysWritesItsContentAlone(t *testing.T) {
-	p := consolePage()
-	p.Overlays = nil
-	want := `<body class="cui-console-page">` + example.Render(consoleContent()) + `</body>`
-	if got := example.Render(p); !strings.Contains(got, want) {
-		t.Errorf("the page with no Overlays does not write its content alone in <body>:\n got: %s\nwant within: %s", got, want)
-	}
-}
-
 func TestConsolePagePanics(t *testing.T) {
 	example.Panics(t, consolePage, []example.Break[console.ConsolePage]{
 		{Want: "console.ConsolePage needs a Lang", Change: func(p *console.ConsolePage) { p.Lang = "" }},

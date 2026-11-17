@@ -1,6 +1,7 @@
 package console_test
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/at-least/ciderui/go/console"
@@ -16,10 +17,10 @@ func TestTabsRendersTheExamples(t *testing.T) {
 	example.Check(t, console.ConsoleTabs{AriaLabel: "Project", Tabs: underlined, Current: "#overview"}, "console/console-tabs/examples/tabs.html")
 }
 
-func TestTabsOfOneTabRenders(t *testing.T) {
+func TestTabsWithNoCurrentMarkNoTab(t *testing.T) {
 	got := example.Render(console.ConsoleTabs{AriaLabel: "Project", Tabs: []console.ConsoleTab{{Label: "Overview", Href: "#overview"}}, Current: ""})
 	if want := `<nav class="cui-console-tabs" aria-label="Project"><a class="cui-console-tab" href="#overview">Overview</a></nav>`; got != want {
-		t.Errorf("tabs of one tab are not that tab:\n got: %s\nwant: %s", got, want)
+		t.Errorf("tabs with no Current marked a tab current or wrote more than the tab:\n got: %s\nwant: %s", got, want)
 	}
 }
 
@@ -56,4 +57,21 @@ func TestSegmentedControlPanics(t *testing.T) {
 		{Want: "console.ConsoleSegmentedControl needs a Value that is one of its Segments' Value: a radio group starts with its value", Change: func(p *console.ConsoleSegmentedControl) { p.Value = "" }},
 		{Want: "console.ConsoleSegmentedControl needs a Value that is one of its Segments' Value: a radio group starts with its value", Change: func(p *console.ConsoleSegmentedControl) { p.Segments[1].Value = "picture" }},
 	})
+}
+
+func TestSegmentedControlChecksTheSegmentOfItsValue(t *testing.T) {
+	c := segmentedControl()
+	c.Segments = append(c.Segments, console.ConsoleSegment{Value: "sound", Label: "The sound"})
+	c.Value = "line"
+	got := example.Render(c)
+	for _, s := range c.Segments {
+		radio := `<input type="radio" name="about" value="` + s.Value + `"`
+		checked := radio + ` checked>`
+		if s.Value == c.Value && !strings.Contains(got, checked) {
+			t.Errorf("the segment of the Value %q is not checked: %s", s.Value, got)
+		}
+		if s.Value != c.Value && (strings.Contains(got, checked) || !strings.Contains(got, radio+`>`)) {
+			t.Errorf("the segment %q, not the Value's, is checked or missing: %s", s.Value, got)
+		}
+	}
 }
