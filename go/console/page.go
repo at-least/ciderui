@@ -22,7 +22,9 @@ var (
 
 // ConsolePage is a whole document, its <body> cui-console-page, linking the set's
 // stylesheet: mount [ciderui.Assets] for it. Its <title> is its Content's
-// Title, so the tab names the page its header names.
+// Title, then its sidebar's Wordmark when it has one ("Jobs - Acme", as
+// apple.com writes "iPhone - Apple"), so a tab names the page its header
+// names and the site it belongs to (decision 57).
 type ConsolePage struct {
 	// Lang: the document's language, "zh-Hant".
 	Lang string
@@ -39,5 +41,9 @@ type ConsolePage struct {
 
 func (p ConsolePage) Render(w io.Writer) error {
 	need.Field("console.ConsolePage.Content", "a Title", p.Content.Title)
-	return document.Document{Owner: "console.ConsolePage", Lang: p.Lang, Title: p.Content.Title, Stylesheet: ciderui.ConsoleStylesheet(), Head: p.Head, Class: p.Scheme.class, BodyClass: "cui-console-page", Children: g.Group{p.Content, p.Overlays}}.Render(w)
+	title := p.Content.Title
+	if p.Content.Sidebar != nil && p.Content.Sidebar.Wordmark != title {
+		title += " - " + p.Content.Sidebar.Wordmark
+	}
+	return document.Document{Owner: "console.ConsolePage", Lang: p.Lang, Title: title, Stylesheet: ciderui.ConsoleStylesheet(), Head: p.Head, Class: p.Scheme.class, BodyClass: "cui-console-page", Children: g.Group{p.Content, p.Overlays}}.Render(w)
 }

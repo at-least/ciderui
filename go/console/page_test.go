@@ -7,6 +7,7 @@ import (
 	"github.com/at-least/ciderui"
 	"github.com/at-least/ciderui/go/console"
 	"github.com/at-least/ciderui/go/internal/example"
+	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -26,6 +27,30 @@ func TestConsolePageWritesTheDocumentItsHeadAfterTheStylesheet(t *testing.T) {
 	want := `<!doctype html><html lang="en" class="cui-light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Jobs</title><link rel="stylesheet" href="` + ciderui.ConsoleStylesheet() + `"><link rel="stylesheet" href="/own.css"></head><body class="cui-console-page">` + example.Render(consoleContent()) + `<p>x</p></body></html>`
 	if got := example.Render(p); got != want {
 		t.Errorf("the page is not the document, its <title> its content's Title, its <html> taking the scheme's class, its head after the console stylesheet, its <body> cui-console-page holding its content then its overlays:\n got: %s\nwant: %s", got, want)
+	}
+}
+
+// A tab names the page and, on a page with a sidebar, the site its wordmark
+// names; a page titled as its site says it once (decision 57).
+func TestConsolePageTitleAddsTheSidebarsWordmark(t *testing.T) {
+	sidebar := console.ConsoleSidebar{AriaLabel: "Main", Home: "/", Wordmark: "CrashCart", SkipLabel: "Skip", OpenAriaLabel: "Menu", CloseAriaLabel: "Close", Footer: nil, Current: "/jobs", Sections: []console.ConsoleMenuSection{
+		{Title: "", Items: []console.ConsoleMenuItem{{Href: "/jobs", Label: "Jobs", Icon: lucide.Icon{}}}},
+	}}
+	for _, c := range []struct {
+		sidebar *console.ConsoleSidebar
+		title   string
+		want    string
+	}{
+		{nil, "Jobs", "<title>Jobs</title>"},
+		{&sidebar, "Jobs", "<title>Jobs - CrashCart</title>"},
+		{&sidebar, "CrashCart", "<title>CrashCart</title>"},
+	} {
+		p := consolePage()
+		p.Content.Sidebar = c.sidebar
+		p.Content.Title = c.title
+		if got := example.Render(p); !strings.Contains(got, c.want) {
+			t.Errorf("the page does not write %s: %s", c.want, got)
+		}
 	}
 }
 
