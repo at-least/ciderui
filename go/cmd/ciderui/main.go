@@ -70,14 +70,15 @@ func css(out string, dirs []string) error {
 		if !info.IsDir() {
 			return fmt.Errorf("%s is not a directory", dir)
 		}
-		files, err := filepath.Glob(filepath.Join(abs, "*.go"))
+		glob := filepath.Join(abs, "*.go")
+		files, err := filepath.Glob(glob)
 		if err != nil {
 			return err
 		}
 		if !slices.ContainsFunc(files, func(f string) bool { return !strings.HasSuffix(f, "_test.go") }) {
 			return fmt.Errorf("%s holds no Go files", dir)
 		}
-		sources = append(sources, fmt.Sprintf("%q", filepath.Join(abs, "*.go")), fmt.Sprintf("not %q", filepath.Join(abs, "*_test.go")))
+		sources = append(sources, fmt.Sprintf("%q", glob), fmt.Sprintf("not %q", filepath.Join(abs, "*_test.go")))
 	}
 	tailwind, err := pinned.Tailwind()
 	if err != nil {
