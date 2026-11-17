@@ -74,79 +74,16 @@ func run(command []string) (int, error) {
 			return 0, fmt.Errorf("build-css: %w", err)
 		}
 	}
-	ignore, err := os.ReadFile(filepath.Join(root, dockerfile+".dockerignore"))
+	id, err := testImage(root)
 	if err != nil {
 		return 0, err
 	}
-	var admitted []string
-	for _, line := range strings.Split(string(ignore), "\n") {
-		if strings.HasPrefix(line, "!") {
-			admitted = append(admitted, line[1:])
-		}
-	}
-	// @trap: a file the image reads and the hash leaves out reuses a stale image
-	if !slices.Equal(admitted, context) {
-		return 0, fmt.Errorf("%s.dockerignore admits %v, the hash reads %v", dockerfile, admitted, context)
-	}
-	// @external: an image built from the same bytes carries their hash as a label and is
-	// run by its ID, with no build. Not by the tag: every checkout and worktree on the
-	// Mac shares OrbStack's one daemon, and another's build can move the tag meanwhile.
-	inputs := sha256.New()
-	for _, f := range append([]string{dockerfile}, context...) {
-		b, err := os.ReadFile(filepath.Join(root, f))
-		if err != nil {
-			return 0, err
-		}
-		inputs.Write([]byte(f))
-		inputs.Write(b)
-	}
-	label := "ciderui.inputs=" + hex.EncodeToString(inputs.Sum(nil))
-	listed, err := docker("images", "-q", "--no-trunc", "--filter", "label="+label)
-	if err != nil {
-		return 0, err
-	}
-	id, _, _ := strings.Cut(listed, "\n")
-	if id == "" {
-		if id, err = docker("build", "-q", "-t", image, "--label", label, "-f", filepath.Join(root, dockerfile), root); err != nil {
-			return 0, err
-		}
-	}
-	if !imageID.MatchString(id) {
-		return 0, fmt.Errorf("docker gave no image ID: %s", id)
-	}
-	// @external: CIDERUI_CHROME=1: the image with Google Chrome too
-	// (reference/chrome.Dockerfile), for a probe of a page Playwright's Chromium cannot
-	// play; the tests never run in it
-	if os.Getenv("CIDERUI_CHROME") == "1" {
-		// @external: FROM takes a name, not an ID: a tag of this image's own
-		base := image + ":" + id[len("sha256:"):len("sha256:")+12]
-		if _, err := docker("tag", id, base); err != nil {
-			return 0, err
-		}
-		chrome, err := os.ReadFile(filepath.Join(root, "reference/chrome.Dockerfile"))
-		if err != nil {
-			return 0, err
-		}
-		cmd := exec.Command("docker", "build", "-q", "--build-arg", "BASE="+base, "-")
-		cmd.Stdin = bytes.NewReader(chrome)
-		cmd.Stderr = os.Stderr
-		out, err := cmd.Output()
-		if err != nil {
-			return 0, fmt.Errorf("docker build chrome: %w", err)
-		}
-		if id = strings.TrimSpace(string(out)); !imageID.MatchString(id) {
-			return 0, fmt.Errorf("docker gave no image ID for Chrome's: %s", id)
-		}
-	}
-
 	args := []string{"create", "--init", "--ipc=host",
 		// @external: Go's build cache a volume: a run compiles what changed since the last,
 		// not the whole module
 		"-v", "ciderui-gocache:/root/.cache/go-build"}
-	for _, k := range []string{"UPDATE_GOLDEN"} {
-		if v, ok := os.LookupEnv(k); ok {
-			args = append(args, "-e", k+"="+v)
-		}
+	if v, ok := os.LookupEnv("UPDATE_GOLDEN"); ok {
+		args = append(args, "-e", "UPDATE_GOLDEN="+v)
 	}
 	// @invariant: The image's user (root): what it writes comes back through tar as the
 	// caller's own, so no --user (the repository's top, the image's WORKDIR, is root's).
@@ -161,7 +98,7 @@ func run(command []string) (int, error) {
 	defer exec.Command("docker", "rm", "-f", container).Run()
 
 	// @invariant: emptied here, not in the test: that runs in the container, which never
-	// holds this directory (left out below), and the copy back only adds files
+	// holds this directory (left out by repositoryFiles), and the copy back only adds files
 	if err := os.RemoveAll(filepath.Join(root, "test/pictures-failed")); err != nil {
 		return 0, err
 	}
@@ -178,19 +115,95 @@ func run(command []string) (int, error) {
 	start.Stdout, start.Stderr = os.Stdout, os.Stderr
 	status := 0
 	if err := start.Run(); err != nil {
-		exit, ok := err.(*exec.ExitError)
-		if !ok {
+		var exit *exec.ExitError
+		if !errors.As(err, &exit) {
 			return 0, fmt.Errorf("docker start: %w", err)
 		}
 		status = exit.ExitCode()
 	}
+	if err := copyBack(container, root); err != nil {
+		return 0, err
+	}
+	return status, nil
+}
+
+func testImage(root string) (string, error) {
+	ignore, err := os.ReadFile(filepath.Join(root, dockerfile+".dockerignore"))
+	if err != nil {
+		return "", err
+	}
+	var admitted []string
+	for _, line := range strings.Split(string(ignore), "\n") {
+		if strings.HasPrefix(line, "!") {
+			admitted = append(admitted, line[1:])
+		}
+	}
+	// @trap: a file the image reads and the hash leaves out reuses a stale image
+	if !slices.Equal(admitted, context) {
+		return "", fmt.Errorf("%s.dockerignore admits %v, the hash reads %v", dockerfile, admitted, context)
+	}
+	// @external: an image built from the same bytes carries their hash as a label and is
+	// run by its ID, with no build. Not by the tag: every checkout and worktree on the
+	// Mac shares OrbStack's one daemon, and another's build can move the tag meanwhile.
+	inputs := sha256.New()
+	for _, f := range append([]string{dockerfile}, context...) {
+		b, err := os.ReadFile(filepath.Join(root, f))
+		if err != nil {
+			return "", err
+		}
+		inputs.Write([]byte(f))
+		inputs.Write(b)
+	}
+	label := "ciderui.inputs=" + hex.EncodeToString(inputs.Sum(nil))
+	listed, err := docker("images", "-q", "--no-trunc", "--filter", "label="+label)
+	if err != nil {
+		return "", err
+	}
+	id, _, _ := strings.Cut(listed, "\n")
+	if id == "" {
+		if id, err = docker("build", "-q", "-t", image, "--label", label, "-f", filepath.Join(root, dockerfile), root); err != nil {
+			return "", err
+		}
+	}
+	if !imageID.MatchString(id) {
+		return "", fmt.Errorf("docker gave no image ID: %s", id)
+	}
+	// @external: CIDERUI_CHROME=1: the image with Google Chrome too
+	// (reference/chrome.Dockerfile), for a probe of a page Playwright's Chromium cannot
+	// play; the tests never run in it
+	if os.Getenv("CIDERUI_CHROME") != "1" {
+		return id, nil
+	}
+	// @external: FROM takes a name, not an ID: a tag of this image's own
+	base := image + ":" + id[len("sha256:"):len("sha256:")+12]
+	if _, err := docker("tag", id, base); err != nil {
+		return "", err
+	}
+	chrome, err := os.ReadFile(filepath.Join(root, "reference/chrome.Dockerfile"))
+	if err != nil {
+		return "", err
+	}
+	cmd := exec.Command("docker", "build", "-q", "--build-arg", "BASE="+base, "-")
+	cmd.Stdin = bytes.NewReader(chrome)
+	cmd.Stderr = os.Stderr
+	out, err := cmd.Output()
+	if err != nil {
+		return "", fmt.Errorf("docker build chrome: %w", err)
+	}
+	if id = strings.TrimSpace(string(out)); !imageID.MatchString(id) {
+		return "", fmt.Errorf("docker gave no image ID for Chrome's: %s", id)
+	}
+	return id, nil
+}
+
+func copyBack(container, root string) error {
 	out, err := os.MkdirTemp("", "ciderui-written-")
 	if err != nil {
-		return 0, err
+		return err
 	}
 	defer os.RemoveAll(out)
 	if err := shell(fmt.Sprintf(`docker cp %s:/tmp/written.tar - | tar -xOf - written.tar | tar -xf - -C %s`, container, quote(out)), ""); err != nil {
-		return 0, err
+		return err
 	}
 	var written []string
 	err = filepath.WalkDir(out, func(path string, d os.DirEntry, err error) error {
@@ -202,18 +215,19 @@ func run(command []string) (int, error) {
 		return err
 	})
 	if err != nil {
-		return 0, err
+		return err
 	}
-	if len(written) > 0 {
-		cmd := exec.Command("sh", "-c", fmt.Sprintf(`tar -c -C %s -T - | tar -xf - -C %s`, quote(out), quote(root)))
-		cmd.Stdin = strings.NewReader(strings.Join(written, "\n"))
-		cmd.Stderr = os.Stderr
-		if err := cmd.Run(); err != nil {
-			return 0, fmt.Errorf("copy back: %w", err)
-		}
-		fmt.Printf("docker: %d written file(s) copied back\n", len(written))
+	if len(written) == 0 {
+		return nil
 	}
-	return status, nil
+	cmd := exec.Command("sh", "-c", fmt.Sprintf(`tar -c -C %s -T - | tar -xf - -C %s`, quote(out), quote(root)))
+	cmd.Stdin = strings.NewReader(strings.Join(written, "\n"))
+	cmd.Stderr = os.Stderr
+	if err := cmd.Run(); err != nil {
+		return fmt.Errorf("copy back: %w", err)
+	}
+	fmt.Printf("docker: %d written file(s) copied back\n", len(written))
+	return nil
 }
 
 // @external: the files git tracks or would track, as they are on disk: a copy of the
