@@ -2,7 +2,6 @@ package console
 
 import (
 	"io"
-	"strconv"
 
 	"github.com/at-least/ciderui/go/internal/need"
 	"github.com/at-least/ciderui/go/lucide"
@@ -34,8 +33,7 @@ type ConsoleSidebar struct {
 	// Sections: each one's Title above its items; a section after the first
 	// with no Title is set apart by a rule.
 	Sections []ConsoleMenuSection
-	// Current is the Href of the item for the page shown (aria-current);
-	// "" for none.
+	// Current: the Href of the item for the page shown; "" for none.
 	Current string
 }
 
@@ -44,28 +42,11 @@ type ConsoleMenuSection struct {
 	Items []ConsoleMenuItem
 }
 
-func menuSections(sections []ConsoleMenuSection, current string) g.Node {
-	var nodes g.Group
-	found := current == ""
-	for i, s := range sections {
-		section := need.At("console.ConsoleSidebar.Sections", i)
-		need.Some(section, "Items", s.Items)
-		switch {
-		case s.Title != "":
-			nodes = append(nodes, h.P(h.Class("cui-console-menu-title"), g.Text(s.Title)))
-		case i > 0:
-			nodes = append(nodes, h.Hr(h.Class("cui-console-menu-rule")))
-		}
-		for j, item := range s.Items {
-			isCurrent := current != "" && item.Href == current
-			found = found || isCurrent
-			nodes = append(nodes, item.node(need.At(section+".Items", j), isCurrent))
-		}
-	}
-	if !found {
-		panic("console.ConsoleSidebar.Current " + strconv.Quote(current) + " matches no item's Href")
-	}
-	return nodes
+// ConsoleMenuItem is a page in a [ConsoleSidebar].
+type ConsoleMenuItem struct {
+	Href  string
+	Label string
+	Icon  lucide.Icon
 }
 
 func (s ConsoleSidebar) Render(w io.Writer) error {
@@ -76,6 +57,23 @@ func (s ConsoleSidebar) Render(w io.Writer) error {
 	need.Field("console.ConsoleSidebar", "an OpenAriaLabel", s.OpenAriaLabel)
 	need.Field("console.ConsoleSidebar", "a CloseAriaLabel", s.CloseAriaLabel)
 	need.Some("console.ConsoleSidebar", "Sections", s.Sections)
+	var menu g.Group
+	var hrefs []string
+	for i, section := range s.Sections {
+		path := need.At("console.ConsoleSidebar.Sections", i)
+		need.Some(path, "Items", section.Items)
+		switch {
+		case section.Title != "":
+			menu = append(menu, h.P(h.Class("cui-console-menu-title"), g.Text(section.Title)))
+		case i > 0:
+			menu = append(menu, h.Hr(h.Class("cui-console-menu-rule")))
+		}
+		for j, item := range section.Items {
+			menu = append(menu, menuItem(need.At(path+".Items", j), item, item.Href == s.Current))
+			hrefs = append(hrefs, item.Href)
+		}
+	}
+	needCurrent("console.ConsoleSidebar", s.Current, hrefs)
 	return g.Group{
 		ConsoleBtn{Href: "#main", Label: s.SkipLabel, Submit: false, Variant: ConsoleBtnVariantFilled, Size: ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: "cui-console-skip"},
 		h.Nav(h.Class("cui-console-sidebar"), h.ID(ConsoleSidebarID), h.Popover(), h.Aria("label", s.AriaLabel),
@@ -83,10 +81,19 @@ func (s ConsoleSidebar) Render(w io.Writer) error {
 				h.A(h.Class("cui-console-sidebar-wordmark"), h.Href(s.Home), g.Text(s.Wordmark)),
 				iconButton(lucide.X, s.CloseAriaLabel, g.Group{h.PopoverTarget(ConsoleSidebarID), h.PopoverTargetAction("hide"), h.AutoFocus()}, "cui-console-sidebar-close"),
 			),
-			h.Div(h.Class("cui-console-sidebar-body cui-console-menu"), h.Data("variant", "sidebar"), menuSections(s.Sections, s.Current)),
+			h.Div(h.Class("cui-console-sidebar-body cui-console-menu"), h.Data("variant", "sidebar"), menu),
 			h.Div(h.Class("cui-console-sidebar-footer"), s.Footer),
 		),
 	}.Render(w)
+}
+
+func menuItem(path string, item ConsoleMenuItem, current bool) g.Node {
+	need.Field(path, "an Href", item.Href)
+	need.Field(path, "a Label", item.Label)
+	return pageLink("cui-console-menu-item", item.Href, current, g.Group{
+		g.If(item.Icon != (lucide.Icon{}), item.Icon.Class("cui-console-menu-icon")),
+		h.Span(h.Class("cui-console-menu-label"), g.Text(item.Label)),
+	})
 }
 
 func sidebarOpen(ariaLabel string) g.Node {

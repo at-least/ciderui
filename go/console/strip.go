@@ -2,7 +2,6 @@ package console
 
 import (
 	"io"
-	"strconv"
 
 	"github.com/at-least/ciderui/go/internal/attr"
 	"github.com/at-least/ciderui/go/internal/need"
@@ -40,7 +39,7 @@ var (
 type ConsoleStrip struct {
 	AriaLabel string
 	Groups    []ConsoleStripGroup
-	// Current is the current item's Href, ringed; "" for none.
+	// Current: the current item's Href, ringed; "" for none.
 	Current string
 }
 
@@ -78,7 +77,7 @@ type ConsoleStripItemMark struct {
 func (s ConsoleStrip) Render(w io.Writer) error {
 	need.Field("console.ConsoleStrip", "an AriaLabel", s.AriaLabel)
 	need.Some("console.ConsoleStrip", "Groups", s.Groups)
-	currentFound := false
+	var hrefs []string
 	groups := make(g.Group, len(s.Groups))
 	for i, group := range s.Groups {
 		path := need.At("console.ConsoleStrip.Groups", i)
@@ -86,18 +85,15 @@ func (s ConsoleStrip) Render(w io.Writer) error {
 		need.Some(path, "Items", group.Items)
 		items := make(g.Group, len(group.Items))
 		for j, item := range group.Items {
-			current := s.Current != "" && item.Href == s.Current
-			currentFound = currentFound || current
-			items[j] = stripItem(need.At(path+".Items", j), item, current)
+			items[j] = stripItem(need.At(path+".Items", j), item, item.Href == s.Current)
+			hrefs = append(hrefs, item.Href)
 		}
 		groups[i] = h.Div(h.Class("cui-console-strip-group"),
 			h.P(h.Class("cui-console-strip-header"), h.Span(h.Class("cui-console-strip-title"), g.Text(group.Title))),
 			items,
 		)
 	}
-	if s.Current != "" && !currentFound {
-		panic("console.ConsoleStrip.Current " + strconv.Quote(s.Current) + " matches no item's Href")
-	}
+	needCurrent("console.ConsoleStrip", s.Current, hrefs)
 	return h.Nav(h.Class("cui-console-strip"), h.Aria("label", s.AriaLabel), groups).Render(w)
 }
 

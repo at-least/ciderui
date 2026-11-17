@@ -13,7 +13,7 @@ import (
 type ConsoleTabs struct {
 	AriaLabel string
 	Tabs      []ConsoleTab
-	// Current: the current tab's Href; "" when no tab is current.
+	// Current: the current tab's Href; "" for none.
 	Current string
 }
 
