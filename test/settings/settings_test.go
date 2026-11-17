@@ -223,8 +223,9 @@ func TestSettings(t *testing.T) {
 				FG     string `json:"fg"`
 				BG     string `json:"bg"`
 			}
-			// @external: the switch to more contrast starts transitions (a field label's
-			// `transition: all` took its color from #6e6e73 through #5d5d61); axe reads them done.
+			// @external: a transition the switch to more contrast starts is read mid-way (a
+			// field label under `transition: all` read #5d5d61 between #6e6e73 and its contrast
+			// color); axe reads them done.
 			// Transitions alone: an infinite animation (a busy spinner) never finishes, and
 			// waiting on every animation hung the test until go test's timeout
 			if err := browser.Decode(p.eval(`async () => {
