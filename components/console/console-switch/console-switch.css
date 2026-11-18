@@ -1,0 +1,106 @@
+@layer components {
+  .cui-console-switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: var(--cui-c-console-neutral-label-primary);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: normal;
+    vertical-align: middle;
+
+    &:has(> .cui-console-switch-input:disabled) {
+      color: var(--cui-c-console-neutral-label-disabled);
+    }
+
+    @media (pointer: coarse) {
+      min-height: 44px;
+    }
+  }
+
+  .cui-console-switch-input {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 30px;
+    height: 18px;
+    margin: -9px 0 0;
+    opacity: 0;
+    cursor: pointer;
+
+    &:disabled {
+      cursor: default;
+    }
+
+    @media (pointer: coarse) {
+      left: -7px;
+      width: 44px;
+      height: 44px;
+      margin-top: -22px;
+    }
+  }
+
+  /* @invariant: its edge a border, not the toolkit's 1px shadow: forced colors drop a box-shadow and keep a border */
+  .cui-console-switch-track {
+    position: relative;
+    display: inline-block;
+    flex: none;
+    box-sizing: border-box;
+    width: 30px;
+    height: 18px;
+    border: 1px solid var(--cui-c-console-field-border);
+    border-radius: 9px;
+    background-color: var(--cui-c-console-neutral-fill-secondary);
+    pointer-events: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: var(--cui-c-console-brand-label-on-accent-primary);
+      box-shadow: var(--cui-console-shadow-switch-knob);
+      /* @external: the toolkit's spring-responsive timing (--tb-timingFunctions-spring-responsive-*); which of its parts moves on it is not recorded */
+      transition: translate 250ms linear(0, 0.4966, 0.9016, 1.0089, 1.0123, 1.0038, 1.0003, 1);
+    }
+
+    :where(.cui-console-switch-input:checked) + & {
+      border-color: transparent;
+      background-color: var(--cui-c-console-brand-accent-primary);
+
+      &::before {
+        translate: 12px 0;
+      }
+    }
+
+    :where(.cui-console-switch-input:disabled) + & {
+      opacity: 0.5;
+    }
+
+    :where(.cui-console-switch-input:focus-visible) + & {
+      outline: var(--cui-focus-ring);
+      outline-offset: var(--cui-focus-ring-offset);
+    }
+
+    @media (forced-colors: active) {
+      &::before {
+        background-color: CanvasText;
+      }
+
+      :where(.cui-console-switch-input:checked) + & {
+        forced-color-adjust: none;
+        border-color: Highlight;
+        background-color: Highlight;
+
+        &::before {
+          background-color: HighlightText;
+        }
+      }
+    }
+  }
+}

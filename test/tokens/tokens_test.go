@@ -768,6 +768,7 @@ func TestTokens(t *testing.T) {
 	check.Equal(t, "--cui-console-shadow-sidebar is App Store Connect's --tb-component-Sidebar-variant-variant-opaque-boxShadow", varOf("--cui-console-shadow-sidebar"), tb("--tb-component-Sidebar-variant-variant-opaque-boxShadow"))
 	check.Equal(t, "--cui-console-shadow-dialog is App Store Connect's --tb-component-Modal-variant-variant-modal-boxShadow", varOf("--cui-console-shadow-dialog"), tb("--tb-component-Modal-variant-variant-modal-boxShadow"))
 	check.Equal(t, "--cui-console-shadow-popover is App Store Connect's --tb-component-Popover-variant-variant-stroked-boxShadow", varOf("--cui-console-shadow-popover"), tb("--tb-component-Popover-variant-variant-stroked-boxShadow"))
+	check.Equal(t, "--cui-console-shadow-switch-knob is App Store Connect's --tb-component-Toggle-anatomy-knob-boxShadow", varOf("--cui-console-shadow-switch-knob"), tb("--tb-component-Toggle-anatomy-knob-boxShadow"))
 
 	check.Equal(t, "--cui-video-scrim is tv.apple.com's tv-player:scrim.gradient background-color", varOf("--cui-video-scrim"), ref(apple.TvPlayer, "scrim.gradient", W, "background-color", ""))
 	// @trap: golden: muse's subtitles, white under a soft shadow with no box (the owner, 2026-11-05, from Apple's view); tv.apple.com's
