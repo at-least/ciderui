@@ -66,3 +66,26 @@ func TestTableRowIsTheRowTheTableWrites(t *testing.T) {
 	}()
 	jobs.Row(jobs.Rows[1])
 }
+
+func TestTableCellRendersTheExamplesCells(t *testing.T) {
+	table := readRaw("console/console-table/examples/table.html")
+	for _, cell := range []console.ConsoleTableCell{
+		{Href: "#v1", Label: "2025.10.16", Detail: "iOS"},
+		{Href: "", Label: "2.12", Detail: "iOS"},
+	} {
+		if got := example.Render(cell); !strings.Contains(table, "<td>"+got+"</td>") {
+			t.Errorf("the cell wrote %s, which table.html holds in no <td>", got)
+		}
+	}
+	if got, want := example.Render(console.ConsoleTableCell{Href: "#v1", Label: "2025.10.16", Detail: ""}), `<a class="cui-console-table-link" href="#v1">2025.10.16</a>`; got != want {
+		t.Errorf("a cell with no Detail wrote %s, not %s", got, want)
+	}
+}
+
+func TestTableCellPanics(t *testing.T) {
+	example.Panics(t, func() console.ConsoleTableCell {
+		return console.ConsoleTableCell{Href: "#v1", Label: "x", Detail: ""}
+	}, []example.Break[console.ConsoleTableCell]{
+		{Want: "console.ConsoleTableCell needs a Label", Change: func(p *console.ConsoleTableCell) { p.Label = "" }},
+	})
+}

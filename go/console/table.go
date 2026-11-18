@@ -35,6 +35,24 @@ type ConsoleTableRow struct {
 	Cells []g.Node
 }
 
+// ConsoleTableCell is a cell's words: its Label, a link where Href is set
+// (the whole row its target, as a row has one link), and a quieter Detail
+// line under it ("" for none).
+type ConsoleTableCell struct {
+	Href   string
+	Label  string
+	Detail string
+}
+
+func (c ConsoleTableCell) Render(w io.Writer) error {
+	need.Field("console.ConsoleTableCell", "a Label", c.Label)
+	label := g.Text(c.Label)
+	if c.Href != "" {
+		label = h.A(h.Class("cui-console-table-link"), h.Href(c.Href), label)
+	}
+	return g.Group{label, optionalText(h.Span, "cui-console-table-detail", c.Detail)}.Render(w)
+}
+
 func (t ConsoleTable) Render(w io.Writer) error {
 	need.Some("console.ConsoleTable", "Columns", t.Columns)
 	var headers, rows g.Group
