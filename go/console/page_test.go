@@ -45,9 +45,10 @@ func TestConsolePageTitleAddsTheSidebarsWordmark(t *testing.T) {
 		{&sidebar, "Jobs", "<title>Jobs - CrashCart</title>"},
 		{&sidebar, "CrashCart", "<title>CrashCart</title>"},
 	} {
+		content := consoleContent()
+		content.Sidebar, content.Title = c.sidebar, c.title
 		p := consolePage()
-		p.Content.Sidebar = c.sidebar
-		p.Content.Title = c.title
+		p.Content = content
 		if got := example.Render(p); !strings.Contains(got, c.want) {
 			t.Errorf("the page does not write %s: %s", c.want, got)
 		}
@@ -57,8 +58,28 @@ func TestConsolePageTitleAddsTheSidebarsWordmark(t *testing.T) {
 func TestConsolePagePanics(t *testing.T) {
 	example.Panics(t, consolePage, []example.Break[console.ConsolePage]{
 		{Want: "console.ConsolePage needs a Lang", Change: func(p *console.ConsolePage) { p.Lang = "" }},
-		{Want: "console.ConsolePage.Content needs a Title", Change: func(p *console.ConsolePage) { p.Content.Title = "" }},
+		{Want: "console.ConsolePage needs a Content", Change: func(p *console.ConsolePage) { p.Content = nil }},
+		{Want: "console.ConsolePage.Content needs a Title", Change: func(p *console.ConsolePage) {
+			content := consoleContent()
+			content.Title = ""
+			p.Content = content
+		}},
+		{Want: "console.ConsolePage.Content needs a Title", Change: func(p *console.ConsolePage) {
+			p.Content = console.ConsoleCanvas{Title: "", Children: nil}
+		}},
 	})
+}
+
+// A canvas page is its own layout: the body holds its Children as written, no
+// column, header or <h1> around them, and the tab its Title alone.
+func TestConsolePageOfACanvasWritesItsChildrenAlone(t *testing.T) {
+	p := consolePage()
+	p.Content = console.ConsoleCanvas{Title: "Player", Children: h.Main(g.Text("film"))}
+	want := `<title>Player</title>`
+	got := example.Render(p)
+	if !strings.Contains(got, want) || !strings.Contains(got, `<body class="cui-console-page"><main>film</main><p>x</p></body>`) {
+		t.Errorf("the canvas page is not its title and its children then its overlays in the body: %s", got)
+	}
 }
 
 func TestConsolePageWritesItsScheme(t *testing.T) {
