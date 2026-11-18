@@ -1,0 +1,65 @@
+@layer components {
+  /* @invariant: sticky at the top of the page as the global nav (rule 6's exceptions): its one caller, muse, wrote it on every canvas, its side panels sticky 50px down under it */
+  .cui-console-canvas-bar {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, auto) minmax(0, 1fr);
+    align-items: center;
+    column-gap: 8px;
+    min-height: 50px;
+    padding-inline: 1rem;
+    background-color: var(--cui-c-console-card);
+    color: var(--cui-c-console-neutral-label-primary);
+
+    /* @invariant: below 640px iOS's large-title bar: the way back and the actions on the first row, the title under them at the start; three columns left the title and a switch's words a word a line at 390px */
+    @media (width < 640px) {
+      grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+      row-gap: 4px;
+      padding-block: 8px;
+    }
+
+    @media (width >= 640px) {
+      padding-inline: 1.5rem;
+    }
+
+    @media (width >= 1024px) {
+      padding-inline: 2.5rem;
+    }
+
+    & > :where(h1) {
+      grid-column: 2;
+      text-align: center;
+
+      @media (width < 640px) {
+        grid-row: 2;
+        grid-column: 1 / -1;
+        text-align: start;
+      }
+    }
+  }
+
+  .cui-console-canvas-back {
+    display: flex;
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: start;
+    align-items: center;
+    gap: 2px;
+    min-width: 0;
+
+    & > svg {
+      flex: none;
+    }
+  }
+
+  .cui-console-canvas-actions {
+    display: flex;
+    grid-row: 1;
+    grid-column: -2;
+    justify-self: end;
+    align-items: center;
+    gap: 8px;
+  }
+}

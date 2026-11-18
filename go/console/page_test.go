@@ -65,20 +65,20 @@ func TestConsolePagePanics(t *testing.T) {
 			p.Content = content
 		}},
 		{Want: "console.ConsolePage.Content needs a Title", Change: func(p *console.ConsolePage) {
-			p.Content = console.ConsoleCanvas{Title: "", Children: nil}
+			p.Content = console.ConsoleCanvas{Back: nil, Title: "", Actions: nil, Children: nil}
 		}},
 	})
 }
 
-// A canvas page is its own layout: the body holds its Children as written, no
-// column, header or <h1> around them, and the tab its Title alone.
-func TestConsolePageOfACanvasWritesItsChildrenAlone(t *testing.T) {
+// A canvas page is its own layout: the body holds its bar, then its Children as
+// written, no column around them, and the tab its Title alone.
+func TestConsolePageOfACanvasWritesItsBarThenItsChildren(t *testing.T) {
 	p := consolePage()
-	p.Content = console.ConsoleCanvas{Title: "Player", Children: h.Main(g.Text("film"))}
+	p.Content = console.ConsoleCanvas{Back: nil, Title: "Player", Actions: nil, Children: h.Main(g.Text("film"))}
 	want := `<title>Player</title>`
 	got := example.Render(p)
-	if !strings.Contains(got, want) || !strings.Contains(got, `<body class="cui-console-page"><main>film</main><p>x</p></body>`) {
-		t.Errorf("the canvas page is not its title and its children then its overlays in the body: %s", got)
+	if !strings.Contains(got, want) || !strings.Contains(got, `<body class="cui-console-page"><header class="cui-console-canvas-bar"><h1 class="cui-console-h6-emph">Player</h1></header><main>film</main><p>x</p></body>`) {
+		t.Errorf("the canvas page is not its title, then its bar, its children and its overlays in the body: %s", got)
 	}
 }
 
@@ -97,4 +97,36 @@ func TestConsolePageWritesItsScheme(t *testing.T) {
 			t.Errorf("the page does not write %s: %s", c.html, got)
 		}
 	}
+}
+
+func canvasBar() console.ConsoleCanvas {
+	return console.ConsoleCanvas{
+		Back:  &console.ConsoleContentBack{Href: "#story", Label: "Shore Story"},
+		Title: "Episode 1",
+		Actions: g.Group{
+			console.ConsoleSwitch{Label: "Only what needs you", Control: input(h.Name("todo"))},
+			console.ConsoleBtn{Href: "#assets", Label: "Assets", Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: ""},
+		},
+		Children: nil,
+	}
+}
+
+func TestCanvasRendersTheExample(t *testing.T) {
+	example.Check(t, canvasBar(), "console/console-canvas/examples/bar.html")
+}
+
+func TestCanvasWithoutBackOrActionsWritesTheTitleAlone(t *testing.T) {
+	c := canvasBar()
+	c.Back, c.Actions = nil, nil
+	if got, want := example.Render(c), `<header class="cui-console-canvas-bar"><h1 class="cui-console-h6-emph">Episode 1</h1></header>`; got != want {
+		t.Errorf("a canvas with no Back or Actions wrote %s, not %s", got, want)
+	}
+}
+
+func TestCanvasPanics(t *testing.T) {
+	example.Panics(t, canvasBar, []example.Break[console.ConsoleCanvas]{
+		{Want: "console.ConsoleCanvas needs a Title", Change: func(c *console.ConsoleCanvas) { c.Title = "" }},
+		{Want: "console.ConsoleCanvas.Back needs an Href", Change: func(c *console.ConsoleCanvas) { c.Back.Href = "" }},
+		{Want: "console.ConsoleCanvas.Back needs a Label", Change: func(c *console.ConsoleCanvas) { c.Back.Label = "" }},
+	})
 }

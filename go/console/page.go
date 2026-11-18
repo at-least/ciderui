@@ -6,7 +6,9 @@ import (
 	"github.com/at-least/ciderui"
 	"github.com/at-least/ciderui/go/internal/document"
 	"github.com/at-least/ciderui/go/internal/need"
+	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
+	h "maragu.dev/gomponents/html"
 )
 
 // ConsoleScheme is the page's colors: the zero value follows the system's
@@ -62,12 +64,16 @@ func (c ConsoleContent) pageTitle() string {
 	return c.Title
 }
 
-// ConsoleCanvas is a page that fills the window with its own layout, its
-// Children writing its <main> (muse's player and its picture review: a strip
-// and a film edge to edge, a tool bar in place of the column's header).
-// Title is the page's <title> alone: it has no header to show it.
+// ConsoleCanvas is a page that fills the window with its own layout (muse's
+// player and its picture review: a strip and a film edge to edge): App Store
+// Connect's bar across its top, holding the way back, the Title and the
+// page's Actions, kept in view as the page scrolls, then Children, which
+// write the page's <main>.
 type ConsoleCanvas struct {
-	Title    string
+	Back  *ConsoleContentBack
+	Title string
+	// Actions: the bar's controls at its end (a switch, a link).
+	Actions  g.Node
 	Children g.Node
 }
 
@@ -77,5 +83,18 @@ func (c ConsoleCanvas) pageTitle() string {
 }
 
 func (c ConsoleCanvas) Render(w io.Writer) error {
-	return g.Group{c.Children}.Render(w)
+	need.Field("console.ConsoleCanvas", "a Title", c.Title)
+	var back, actions g.Node
+	if c.Back != nil {
+		need.Field("console.ConsoleCanvas.Back", "an Href", c.Back.Href)
+		need.Field("console.ConsoleCanvas.Back", "a Label", c.Back.Label)
+		back = h.A(h.Class("cui-console-link cui-console-canvas-back"), h.Href(c.Back.Href), lucide.ChevronLeft, g.Text(c.Back.Label))
+	}
+	if c.Actions != nil {
+		actions = h.Div(h.Class("cui-console-canvas-actions"), c.Actions)
+	}
+	return g.Group{
+		h.Header(h.Class("cui-console-canvas-bar"), back, h.H1(h.Class("cui-console-h6-emph"), g.Text(c.Title)), actions),
+		c.Children,
+	}.Render(w)
 }
