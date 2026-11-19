@@ -34,7 +34,7 @@ type ConsolePage struct {
 	Head    g.Node
 	Scheme  ConsoleScheme
 	Content ConsolePageContent
-	// Overlays: what the page shows over its column, written after it in
+	// Overlays: what the page shows over its Content, written after it in
 	// <body>, outside the <main> a page's script may swap: its <dialog>s, a
 	// [ConsoleViewer].
 	Overlays g.Node

@@ -9,8 +9,9 @@ import (
 	h "maragu.dev/gomponents/html"
 )
 
-// ConsoleContentBack is the way back to the page a page is under, over its
-// title, named by that page (iOS's back button).
+// ConsoleContentBack is the way back to the page a page is under, named by
+// that page (iOS's back button): over a column's title, at the start of a
+// canvas's bar.
 type ConsoleContentBack struct {
 	Href  string
 	Label string
