@@ -40,18 +40,11 @@
     }
   }
 
-  .cui-console-canvas-back {
-    display: flex;
+  .cui-console-canvas-bar > :where(.cui-console-link-back) {
     grid-row: 1;
     grid-column: 1;
     justify-self: start;
-    align-items: center;
-    gap: 2px;
     min-width: 0;
-
-    & > svg {
-      flex: none;
-    }
   }
 
   .cui-console-canvas-actions {

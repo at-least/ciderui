@@ -6,7 +6,6 @@ import (
 	"github.com/at-least/ciderui"
 	"github.com/at-least/ciderui/go/internal/document"
 	"github.com/at-least/ciderui/go/internal/need"
-	"github.com/at-least/ciderui/go/lucide"
 	g "maragu.dev/gomponents"
 	h "maragu.dev/gomponents/html"
 )
@@ -67,8 +66,9 @@ func (c ConsoleContent) pageTitle() string {
 // ConsoleCanvas is a page that fills the window with its own layout (muse's
 // player and its picture review: a strip and a film edge to edge): App Store
 // Connect's bar across its top, holding the way back, the Title and the
-// page's Actions, kept in view as the page scrolls, then Children, which
-// write the page's <main>.
+// page's Actions, kept in view as the page scrolls, then the page's
+// <main id="main" tabindex="-1">, as the column's, holding Children with no
+// width, header or room of the column's.
 type ConsoleCanvas struct {
 	Back  *ConsoleContentBack
 	Title string
@@ -86,15 +86,13 @@ func (c ConsoleCanvas) Render(w io.Writer) error {
 	need.Field("console.ConsoleCanvas", "a Title", c.Title)
 	var back, actions g.Node
 	if c.Back != nil {
-		need.Field("console.ConsoleCanvas.Back", "an Href", c.Back.Href)
-		need.Field("console.ConsoleCanvas.Back", "a Label", c.Back.Label)
-		back = h.A(h.Class("cui-console-link cui-console-canvas-back"), h.Href(c.Back.Href), lucide.ChevronLeft, g.Text(c.Back.Label))
+		back = c.Back.link("console.ConsoleCanvas.Back")
 	}
 	if c.Actions != nil {
 		actions = h.Div(h.Class("cui-console-canvas-actions"), c.Actions)
 	}
 	return g.Group{
 		h.Header(h.Class("cui-console-canvas-bar"), back, h.H1(h.Class("cui-console-h6-emph"), g.Text(c.Title)), actions),
-		c.Children,
+		h.Main(h.ID("main"), h.TabIndex("-1"), c.Children),
 	}.Render(w)
 }

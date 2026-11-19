@@ -12,13 +12,13 @@ import (
 
 const (
 	bar     = ".cui-console-canvas-bar"
-	back    = ".cui-console-canvas-back"
+	back    = ".cui-console-link-back"
 	title   = bar + " > h1"
 	actions = ".cui-console-canvas-actions"
 )
 
 func TestCases(t *testing.T) {
-	scrolled := h.Example("bar") + `<main style="height: 3000px"></main><script>scrollTo(0, 1000)</script>`
+	scrolled := strings.Replace(h.Example("bar"), "</main>", `<div style="height: 3000px"></div></main><script>scrollTo(0, 1000)</script>`, 1)
 	long := strings.Replace(h.Example("bar"), "Episode 1", "Episode 1, the night the lighthouse keeper's daughter first saw the ship", 1)
 	h.Run(t, []h.Case{
 		{

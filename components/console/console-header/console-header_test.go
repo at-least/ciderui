@@ -40,8 +40,8 @@ func TestCases(t *testing.T) {
 			HTML:   h.Example("back"),
 			Widths: []int{1200, 390},
 			Checks: []h.Check{
-				{Target: s + "-back", Props: []string{"display", "color", "font-size", "margin-bottom", "box-width"}, Golden: "the way back over the title, named by the page it goes to with a chevron before it (iOS's back button), a console link at the body's size, 8px over the title, as wide as its words"},
-				{Target: s + "-back > svg", Props: []string{"box-width"}, Golden: "the chevron at the text's size"},
+				{Target: ".cui-console-link-back", Props: []string{"display", "color", "font-size", "margin-bottom", "box-width"}, Golden: "the way back over the title, named by the page it goes to with a chevron before it (iOS's back button), a console link at the body's size, 8px over the title, as wide as its words"},
+				{Target: ".cui-console-link-back > svg", Props: []string{"box-width"}, Golden: "the chevron at the text's size"},
 			},
 		},
 	})

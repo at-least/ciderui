@@ -16,6 +16,12 @@ type ConsoleContentBack struct {
 	Label string
 }
 
+func (b ConsoleContentBack) link(owner string) g.Node {
+	need.Field(owner, "an Href", b.Href)
+	need.Field(owner, "a Label", b.Label)
+	return h.A(h.Class("cui-console-link cui-console-link-back"), h.Href(b.Href), lucide.ChevronLeft, g.Text(b.Label))
+}
+
 // ConsoleContent is a console page's column: its [ConsoleSidebar], if any,
 // beside the page's <main id="main" tabindex="-1">, which spaces what it
 // holds (rule 6): the sidebar's open button, the page's header, then
@@ -38,9 +44,7 @@ func (c ConsoleContent) Render(w io.Writer) error {
 		sidebar, open = *c.Sidebar, sidebarOpen(c.Sidebar.OpenAriaLabel)
 	}
 	if c.Back != nil {
-		need.Field("console.ConsoleContent.Back", "an Href", c.Back.Href)
-		need.Field("console.ConsoleContent.Back", "a Label", c.Back.Label)
-		back = h.A(h.Class("cui-console-link cui-console-header-back"), h.Href(c.Back.Href), lucide.ChevronLeft, g.Text(c.Back.Label))
+		back = c.Back.link("console.ConsoleContent.Back")
 	}
 	return h.Div(h.Class("cui-console-content"),
 		sidebar,

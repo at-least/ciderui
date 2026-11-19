@@ -12,4 +12,15 @@
       }
     }
   }
+
+  .cui-console-link-back {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 2px;
+
+    & > svg {
+      flex: none;
+    }
+  }
 }

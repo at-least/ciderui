@@ -70,14 +70,14 @@ func TestConsolePagePanics(t *testing.T) {
 	})
 }
 
-// A canvas page is its own layout: the body holds its bar, then its Children as
-// written, no column around them, and the tab its Title alone.
+// A canvas page is its own layout: the body holds its bar, then its Children in
+// the page's <main>, no column around them, and the tab its Title alone.
 func TestConsolePageOfACanvasWritesItsBarThenItsChildren(t *testing.T) {
 	p := consolePage()
-	p.Content = console.ConsoleCanvas{Back: nil, Title: "Player", Actions: nil, Children: h.Main(g.Text("film"))}
+	p.Content = console.ConsoleCanvas{Back: nil, Title: "Player", Actions: nil, Children: g.Text("film")}
 	want := `<title>Player</title>`
 	got := example.Render(p)
-	if !strings.Contains(got, want) || !strings.Contains(got, `<body class="cui-console-page"><header class="cui-console-canvas-bar"><h1 class="cui-console-h6-emph">Player</h1></header><main>film</main><p>x</p></body>`) {
+	if !strings.Contains(got, want) || !strings.Contains(got, `<body class="cui-console-page"><header class="cui-console-canvas-bar"><h1 class="cui-console-h6-emph">Player</h1></header><main id="main" tabindex="-1">film</main><p>x</p></body>`) {
 		t.Errorf("the canvas page is not its title, then its bar, its children and its overlays in the body: %s", got)
 	}
 }
@@ -107,7 +107,7 @@ func canvasBar() console.ConsoleCanvas {
 			console.ConsoleSwitch{Label: "Only what needs you", Control: input(h.Name("todo"))},
 			console.ConsoleBtn{Href: "#assets", Label: "Assets", Submit: false, Variant: console.ConsoleBtnVariantGray, Size: console.ConsoleBtnSizeMedium, Destructive: false, Attrs: nil, Class: ""},
 		},
-		Children: nil,
+		Children: h.P(g.Text("The film")),
 	}
 }
 
@@ -118,7 +118,7 @@ func TestCanvasRendersTheExample(t *testing.T) {
 func TestCanvasWithoutBackOrActionsWritesTheTitleAlone(t *testing.T) {
 	c := canvasBar()
 	c.Back, c.Actions = nil, nil
-	if got, want := example.Render(c), `<header class="cui-console-canvas-bar"><h1 class="cui-console-h6-emph">Episode 1</h1></header>`; got != want {
+	if got, want := example.Render(c), `<header class="cui-console-canvas-bar"><h1 class="cui-console-h6-emph">Episode 1</h1></header><main id="main" tabindex="-1"><p>The film</p></main>`; got != want {
 		t.Errorf("a canvas with no Back or Actions wrote %s, not %s", got, want)
 	}
 }

@@ -11,16 +11,8 @@
     }
   }
 
-  .cui-console-header-back {
-    display: flex;
-    width: fit-content;
-    align-items: center;
-    gap: 2px;
+  .cui-console-header :where(.cui-console-link-back) {
     margin-bottom: 8px;
-
-    & > svg {
-      flex: none;
-    }
   }
 
   .cui-console-header-detail {
