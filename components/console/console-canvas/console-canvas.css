@@ -43,7 +43,6 @@
   .cui-console-canvas-bar > :where(.cui-console-link-back) {
     grid-row: 1;
     grid-column: 1;
-    justify-self: start;
     min-width: 0;
   }
 
