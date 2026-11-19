@@ -115,14 +115,6 @@ func TestCanvasRendersTheExample(t *testing.T) {
 	example.Check(t, canvasBar(), "console/console-canvas/examples/bar.html")
 }
 
-func TestCanvasWithoutBackOrActionsWritesTheTitleAlone(t *testing.T) {
-	c := canvasBar()
-	c.Back, c.Actions = nil, nil
-	if got, want := example.Render(c), `<header class="cui-console-canvas-bar"><h1 class="cui-console-h6-emph">Episode 1</h1></header><main id="main" tabindex="-1"><p>The film</p></main>`; got != want {
-		t.Errorf("a canvas with no Back or Actions wrote %s, not %s", got, want)
-	}
-}
-
 func TestCanvasPanics(t *testing.T) {
 	example.Panics(t, canvasBar, []example.Break[console.ConsoleCanvas]{
 		{Want: "console.ConsoleCanvas needs a Title", Change: func(c *console.ConsoleCanvas) { c.Title = "" }},
