@@ -32,6 +32,7 @@ func TestCases(tt *testing.T) {
 				{Target: on + " .cui-console-switch-track", Props: []string{"border-top-color"}, Golden: "on, its edge gone into the blue"},
 				{Target: off + " .cui-console-switch-track", Pseudo: "::before", Props: []string{"left", "top", "translate", "background-color"}, Golden: "off, the knob white at the start of the track's 1px edge, 1px from its outer edge as the toolkit's state-off-left"},
 				{Target: on + " .cui-console-switch-track", Pseudo: "::before", Props: []string{"translate"}, Golden: "on, the knob moved 12px, 13px from the track's outer edge as the toolkit's state-on-left"},
+				{Target: on + " .cui-console-switch-track", Pseudo: "::before", Props: []string{"transition-property", "transition-duration", "transition-timing-function"}, Golden: "the knob slides, on the toolkit's spring-responsive timing (rule 10), its color changing at once"},
 				{Target: disabled + " .cui-console-switch-track", Props: []string{"opacity"}, TB: []string{"component-Toggle-disabledOpacity"}},
 				{Target: disabled, Props: []string{"color"}, Golden: "a disabled switch's label the disabled label, as the checkbox's"},
 				{Target: off + " .cui-console-switch-input", Props: []string{"opacity", "box-width", "box-height", "box-left", "box-top"}, Golden: "the input transparent, the track's size, over it"},
