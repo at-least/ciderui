@@ -76,7 +76,7 @@ copyright = { text = "Copyright © 2026 Example Inc.", href = "/about/" }
 
 ## Developing
 
-Go is the one tool to install. `go run ./scripts/gate`: it checks each part in headless Chromium against apple.com's measured values, takes a picture of every example at every width, and tests the Go module and the Zola theme. The browser's tests run in one arm64 Docker image, on the Mac's own Docker (OrbStack).
+Go is the one tool to install. `go run ./scripts/gate`: it checks each part in headless Chromium against apple.com's measured values, takes a picture of every example at every width, and tests the Go module and the Zola theme. The browser's tests run in one amd64 Docker image, on lab's Docker.
 
 ## License
 

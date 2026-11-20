@@ -32,7 +32,7 @@ type artifact struct {
 // @external: Tailwind's sums are its release's sha256sums.txt; a registry tarball's is
 // its own, checked against the registry's sha512 integrity
 var tailwind = map[string]artifact{
-	"linux/arm64":  {url: "https://github.com/tailwindlabs/tailwindcss/releases/download/v" + tailwindVersion + "/tailwindcss-linux-arm64", sha256: "55fd0b241214eff3de1e8ee4f22796662f2d2e7a49bcfca7477cfd0bac398195"},
+	"linux/amd64":  {url: "https://github.com/tailwindlabs/tailwindcss/releases/download/v" + tailwindVersion + "/tailwindcss-linux-x64", sha256: "dc61b3ac6b8c9ca874c0cc4c57b2409791a64c5540404ca5f5367360babc313a"},
 	"darwin/arm64": {url: "https://github.com/tailwindlabs/tailwindcss/releases/download/v" + tailwindVersion + "/tailwindcss-macos-arm64", sha256: "cdf646702987a743464dff4d9c60fd4480d1c1e73dd819a9a67f1078815dce9d"},
 }
 
@@ -42,7 +42,7 @@ const zolaVersion = "0.23.6"
 
 // @external: the sums are the release assets' sha256 digests GitHub lists
 var zola = map[string]artifact{
-	"linux/arm64":  {url: "https://github.com/getzola/zola/releases/download/v" + zolaVersion + "/zola-v" + zolaVersion + "-aarch64-unknown-linux-gnu.tar.gz", sha256: "266448fffbf7c7004ca399d0e76dd699541771096d8a42aede98cebe2a029d02"},
+	"linux/amd64":  {url: "https://github.com/getzola/zola/releases/download/v" + zolaVersion + "/zola-v" + zolaVersion + "-x86_64-unknown-linux-gnu.tar.gz", sha256: "8f5132b3522412d04e395e0b25f6d68613ad272a873e54a2b3ebf664873024a4"},
 	"darwin/arm64": {url: "https://github.com/getzola/zola/releases/download/v" + zolaVersion + "/zola-v" + zolaVersion + "-aarch64-apple-darwin.tar.gz", sha256: "cbffbd29b3f59c3f52633507c8cb945a7a02d8b1399b43b235f5932912297aa3"},
 }
 
