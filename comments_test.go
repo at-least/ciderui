@@ -19,11 +19,11 @@ var cssComment = regexp.MustCompile(`(?s)/\*.*?\*/`)
 // TestCommentsCarryDecisionTags holds every comment in the repository to
 // DESIGN.md's Comments section. Excepted: go/lucide/lucide.go and
 // scripts/build-lucide, which writes that file's per-icon godoc as text of
-// its own, dist/, the build's output, and a Go file whose header says it is
+// its own, dist/ and zola/static/, the build's output, and a Go file whose header says it is
 // generated (reference/apple.com/results/).
 func TestCommentsCarryDecisionTags(t *testing.T) {
 	for _, file := range repositoryFiles(t) {
-		if file == "go/lucide/lucide.go" || file == "scripts/build-lucide/main.go" || strings.HasPrefix(file, "dist/") {
+		if file == "go/lucide/lucide.go" || file == "scripts/build-lucide/main.go" || strings.HasPrefix(file, "dist/") || strings.HasPrefix(file, "zola/static/") {
 			continue
 		}
 		switch {

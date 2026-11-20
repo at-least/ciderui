@@ -1,13 +1,15 @@
-/* The theme's own stylesheet, after ciderui's (static/ciderui.css): the page's
-   column and the markdown's elements, which ciderui leaves to the page.
-   Built into static/ciderui-zola.css by `npm run build`; the type is
-   ciderui's classes by @apply, so a size is never copied here. */
+/* @invariant: after dist/site.css on every page (base.html links them in that
+   order), and only what the kit leaves to a page: the column and what follows
+   the markdown. The type is the kit's classes by @apply, so no size, line
+   height or tracking is copied here. */
 
-@import "../node_modules/ciderui/type.css";
+@import "../../type.css";
 
 @layer components {
-  /* the footer's column (cui-footer-content), so the page's edges and the
-     footer's line up */
+  /* @invariant: the footer's column (cui-footer-content: 980px, 16px and from
+     834px 22px gutters), so the page's left edge and the footer's line up;
+     zola/layout_test.go holds the two edges equal. The 52px and 80px are
+     guessed, not measured. */
   .cz-main {
     width: 100%;
     max-width: 980px;
@@ -19,7 +21,6 @@
     }
   }
 
-  /* a page's title, its description and its date: the store's ladder */
   .cz-header {
     margin-bottom: 40px;
   }
@@ -41,13 +42,12 @@
     color: var(--cui-c-text-2);
   }
 
-  /* the markdown's column; its elements are ciderui's cui-prose (Apple Support's
-     and DocC's article text, decision 48 of ciderui) */
+  /* @invariant: the markdown's measure, 692px, is guessed (apple.com's article
+     width at 735px); its elements are cui-prose's (decision 48) */
   .cz-prose {
     max-width: 692px;
   }
 
-  /* what follows the markdown: a section's pages and their heading */
   .cz-pages-heading {
     @apply cui-eyebrow;
   }

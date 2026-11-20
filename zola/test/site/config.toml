@@ -1,9 +1,10 @@
 # The checks' site: every template and the markdown's elements. The checks
-# build a copy with the theme linked in as themes/ciderui-zola.
+# build a copy with this checkout linked in as themes/ciderui, as a site's
+# submodule of ciderui sits.
 base_url = "https://check.test"
 title = "Cider"
 description = "The pages ciderui-zola's checks build."
-theme = "ciderui-zola"
+theme = "ciderui/zola"
 compile_sass = false
 
 [markdown]

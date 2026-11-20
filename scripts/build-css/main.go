@@ -1,5 +1,5 @@
-// Command build-css writes dist/<set>.css, the stylesheet a site links, from the
-// sources.
+// Command build-css writes dist/<set>.css, the stylesheet a site links, and the Zola
+// theme's own zola/static/ciderui-zola.css, from the sources.
 package main
 
 import (
@@ -27,5 +27,14 @@ func main() {
 			fmt.Fprintln(os.Stderr, err)
 			os.Exit(1)
 		}
+	}
+	css, err := build.ZolaTheme()
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
+	if err := os.WriteFile(filepath.Join(build.Root, "zola/static/ciderui-zola.css"), []byte(css), 0o644); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
 	}
 }

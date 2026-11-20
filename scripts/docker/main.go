@@ -33,7 +33,7 @@ const (
 
 // @external: the browser half of the gate. -count=1: go test would serve a passed
 // package's result from its cache, which knows nothing of the browser
-var browserHalf = []string{"go", "test", "-count=1", "-tags", "browser", "./components/...", "./test/..."}
+var browserHalf = []string{"go", "test", "-count=1", "-tags", "browser", "./components/...", "./test/...", "./zola"}
 
 // @invariant: the files the image's build reads: test/Dockerfile.dockerignore admits these
 // alone, and their bytes name the image

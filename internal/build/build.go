@@ -196,6 +196,12 @@ func Dist(set string) (string, error) {
 	return Compile(Sheet{CSS: strings.Join(css, "\n"), Classes: strings.Join(classes, " "), Sources: sources})
 }
 
+// ZolaTheme is zola/static/ciderui-zola.css as zola/css/ciderui-zola.css builds it:
+// the theme's own rules, after dist/site.css on its pages.
+func ZolaTheme() (string, error) {
+	return tailwind(filepath.Join(Root, "zola/css/ciderui-zola.css"))
+}
+
 // ExampleFiles are the part's examples' file names, examples/<id>.html, sorted.
 func ExampleFiles(p Part) ([]string, error) {
 	entries, err := os.ReadDir(filepath.Join(Root, p.Dir, "examples"))

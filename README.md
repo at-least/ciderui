@@ -49,9 +49,34 @@ A set's stylesheet ships the utilities its examples write and no other: any othe
 go tool ciderui css public/utilities.css ./pages ./layout
 ```
 
+### A Zola site
+
+The theme in `zola/` draws a [Zola](https://www.getzola.org) site (0.23.6 or later) in the same look: the global nav, the footer, its pages as a list, the markdown in apple.com's article type. It needs nothing but Zola. Add ciderui as a submodule and name the theme:
+
+```sh
+git submodule add https://github.com/at-least/ciderui themes/ciderui
+```
+
+```toml
+theme = "ciderui/zola"
+
+[extra]
+nav = [{ text = "News", href = "/news/" }, { text = "Products", href = "/products/" }]
+copyright = { text = "Copyright © 2026 Example Inc.", href = "/about/" }
+```
+
+| setting | what |
+| --- | --- |
+| `nav` | the global nav's links, beside the site's `title`; `[]` for no global nav |
+| `copyright` | the footer's line, a link when `href` is set; `text = ""` for no footer |
+| `directory` | the footer's link columns, `[{ title, links = [{ text, href }] }]`, folded under their titles on a phone; `[]` for none |
+| `words` | what the theme writes (Skip to Content, Menu, the date's format, …), in English; a site in another language sets the ones it changes. `zola/theme.toml` lists them all |
+
+`index.html` is the home and `section.html` a section: its title, description and markdown, then its pages as rows (with `[extra] heading`, a heading over them). `page.html` is a page, and `404.html` a headline with a link home. `[extra] dark = true` on a page or a section makes the whole page dark. There is no pager, so the build stops on `paginate_by`.
+
 ## Developing
 
-Go is the one tool to install. `go run ./scripts/gate`: it checks each part in headless Chromium against apple.com's measured values, takes a picture of every example at every width, and tests the Go module. The browser's tests run in one arm64 Docker image, on the Mac's own Docker (OrbStack).
+Go is the one tool to install. `go run ./scripts/gate`: it checks each part in headless Chromium against apple.com's measured values, takes a picture of every example at every width, and tests the Go module and the Zola theme. The browser's tests run in one arm64 Docker image, on the Mac's own Docker (OrbStack).
 
 ## License
 

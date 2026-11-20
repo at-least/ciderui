@@ -109,6 +109,51 @@ func (b *Browser) Open(css, html string, o Options) (*Page, error) {
 	return p, nil
 }
 
+var siteTypes = map[string]string{".html": "text/html", ".css": "text/css", ".woff2": "font/woff2", ".png": "image/png", ".svg": "image/svg+xml"}
+
+// OpenSite opens a blank page whose context serves the built site in dir at origin
+// (its base_url, ending in /), a directory's path its index.html, for the caller to
+// Goto; closing its context closes it.
+func (b *Browser) OpenSite(origin, dir string, o Options) (playwright.Page, error) {
+	if o.Width == 0 {
+		o.Width = 1200
+	}
+	if o.Height == 0 {
+		o.Height = 800
+	}
+	context, err := b.browser.NewContext(playwright.BrowserNewContextOptions{Viewport: &playwright.Size{Width: o.Width, Height: o.Height}})
+	if err != nil {
+		return nil, fmt.Errorf("browser: context: %w", err)
+	}
+	err = context.Route(origin+"**", func(r playwright.Route) {
+		path := strings.TrimPrefix(strings.SplitN(r.Request().URL(), "?", 2)[0], origin)
+		if path == "" || strings.HasSuffix(path, "/") {
+			path += "index.html"
+		}
+		body, err := os.ReadFile(filepath.Join(dir, path))
+		if err != nil {
+			panic(fmt.Sprintf("browser: site %s: %v", path, err))
+		}
+		kind, ok := siteTypes[filepath.Ext(path)]
+		if !ok {
+			panic(fmt.Sprintf("browser: site %s: no content type for its extension", path))
+		}
+		if err := r.Fulfill(playwright.RouteFulfillOptions{ContentType: playwright.String(kind), Body: body}); err != nil {
+			panic(fmt.Sprintf("browser: site %s: %v", path, err))
+		}
+	})
+	if err != nil {
+		context.Close()
+		return nil, fmt.Errorf("browser: route: %w", err)
+	}
+	page, err := context.NewPage()
+	if err != nil {
+		context.Close()
+		return nil, fmt.Errorf("browser: page: %w", err)
+	}
+	return page, nil
+}
+
 func open(context playwright.BrowserContext, css, html string, o Options) (*Page, error) {
 	page, err := context.NewPage()
 	if err != nil {

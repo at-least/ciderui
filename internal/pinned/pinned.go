@@ -1,6 +1,6 @@
 // Package pinned fetches the tools the repository's own checks and the kit's
 // command run, each at one version and checksum, into the user's cache: Tailwind's
-// standalone binary and the npm packages the checks read, unpacked. The repository
+// standalone binary, Zola's binary and the npm packages the checks read, unpacked. The repository
 // holds no node_modules, and a site needs none. It also writes the entry of a site's
 // own utilities' sheet, which the kit's command and the tests both build.
 package pinned
@@ -36,6 +36,16 @@ var tailwind = map[string]artifact{
 	"darwin/arm64": {url: "https://github.com/tailwindlabs/tailwindcss/releases/download/v" + tailwindVersion + "/tailwindcss-macos-arm64", sha256: "cdf646702987a743464dff4d9c60fd4480d1c1e73dd819a9a67f1078815dce9d"},
 }
 
+// @invariant: the theme's min_version (zola/theme.toml): its checks build with the
+// oldest Zola a site may use
+const zolaVersion = "0.23.6"
+
+// @external: the sums are the release assets' sha256 digests GitHub lists
+var zola = map[string]artifact{
+	"linux/arm64":  {url: "https://github.com/getzola/zola/releases/download/v" + zolaVersion + "/zola-v" + zolaVersion + "-aarch64-unknown-linux-gnu.tar.gz", sha256: "266448fffbf7c7004ca399d0e76dd699541771096d8a42aede98cebe2a029d02"},
+	"darwin/arm64": {url: "https://github.com/getzola/zola/releases/download/v" + zolaVersion + "/zola-v" + zolaVersion + "-aarch64-apple-darwin.tar.gz", sha256: "cbffbd29b3f59c3f52633507c8cb945a7a02d8b1399b43b235f5932912297aa3"},
+}
+
 // LucideVersion is the lucide-static whose icons go/lucide/lucide.go holds.
 const LucideVersion = "1.61.0"
 
@@ -61,6 +71,40 @@ func Tailwind() (string, error) {
 	return path, nil
 }
 
+// Zola is the path of Zola's binary for this machine.
+func Zola() (string, error) {
+	platform := runtime.GOOS + "/" + runtime.GOARCH
+	a, ok := zola[platform]
+	if !ok {
+		return "", fmt.Errorf("pinned: no Zola binary pinned for %s", platform)
+	}
+	tgz, err := fetch(a)
+	if err != nil {
+		return "", err
+	}
+	out := filepath.Join(filepath.Dir(tgz), "zola")
+	if _, err := os.Stat(out); err == nil {
+		return out, nil
+	} else if !errors.Is(err, os.ErrNotExist) {
+		return "", fmt.Errorf("pinned: %w", err)
+	}
+	tmp, err := os.MkdirTemp(filepath.Dir(tgz), "unpack-")
+	if err != nil {
+		return "", fmt.Errorf("pinned: %w", err)
+	}
+	defer os.RemoveAll(tmp)
+	if err := untar(tgz, tmp, func(name string) bool { return name == "zola" }); err != nil {
+		return "", fmt.Errorf("pinned: unpack %s: %w", tgz, err)
+	}
+	if err := os.Chmod(filepath.Join(tmp, "zola"), 0o755); err != nil {
+		return "", fmt.Errorf("pinned: %w", err)
+	}
+	if err := os.Rename(filepath.Join(tmp, "zola"), out); err != nil {
+		return "", fmt.Errorf("pinned: %w", err)
+	}
+	return out, nil
+}
+
 // UtilitiesEntry is the Tailwind entry of a site's own utilities' sheet: the
 // utilities.css at utilities, an absolute path, then one `@source <s>;` line for
 // each of sources, each an @source argument as written: a quoted glob, `not` one,
@@ -83,6 +127,9 @@ func Axe() (string, error) { return unpacked(axe) }
 // runs it, so a run in the image reaches no network.
 func Fetch() error {
 	if _, err := Tailwind(); err != nil {
+		return err
+	}
+	if _, err := Zola(); err != nil {
 		return err
 	}
 	if _, err := Lucide(); err != nil {
@@ -163,7 +210,10 @@ func unpacked(a artifact) (string, error) {
 		return "", fmt.Errorf("pinned: %w", err)
 	}
 	defer os.RemoveAll(tmp)
-	if err := untar(tgz, tmp); err != nil {
+	inPackage := func(name string) bool {
+		return strings.HasPrefix(name, "package"+string(filepath.Separator))
+	}
+	if err := untar(tgz, tmp, inPackage); err != nil {
 		return "", fmt.Errorf("pinned: unpack %s: %w", tgz, err)
 	}
 	// @external: a rename onto a run's that unpacked it meanwhile fails (directory not
@@ -176,7 +226,9 @@ func unpacked(a artifact) (string, error) {
 	return out, nil
 }
 
-func untar(tgz, into string) error {
+// @external: a name keep refuses is skipped, not refused: Zola's archive holds its
+// manual pages and licenses beside its binary, and each archive's sum is pinned
+func untar(tgz, into string, keep func(name string) bool) error {
 	f, err := os.Open(tgz)
 	if err != nil {
 		return err
@@ -199,8 +251,8 @@ func untar(tgz, into string) error {
 			continue
 		}
 		name := filepath.Clean(h.Name)
-		if !strings.HasPrefix(name, "package"+string(filepath.Separator)) {
-			return fmt.Errorf("%s is outside package/", h.Name)
+		if !keep(name) {
+			continue
 		}
 		path := filepath.Join(into, name)
 		if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
