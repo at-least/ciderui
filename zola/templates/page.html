@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{#- A page: its title, its description, its date, then its markdown. -#}
+{% block title %}{{ page.title }} - {{ config.title }}{% endblock title %}
+{% block description %}{{ page.description or config.description }}{% endblock description %}
+{% block content -%}
+<header class="cz-header">
+<h1 class="cz-title">{{ page.title }}</h1>
+{%- if page.description %}<p class="cz-description">{{ page.description }}</p>{% endif %}
+{%- if page.date %}<time class="cz-date" datetime="{{ page.date }}">{{ page.date | date(format=config.extra.words.date) }}</time>{% endif %}
+</header>
+{%- if page.content %}
+<div class="cui-prose cz-prose">{{ page.content | safe }}</div>
+{%- endif %}
+{%- endblock content %}

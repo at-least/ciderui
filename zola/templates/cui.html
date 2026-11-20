@@ -1,0 +1,79 @@
+{#- ciderui's site parts as Tera components, each writing the markup its Go
+    type in ciderui's go/site writes, its fields as parameters;
+    test/markup.mjs holds each to ciderui's examples. What the Go type
+    panics on throws here. The glyphs are go/internal/glyph's, copied from
+    the examples. -#}
+
+{% component cui_menu_glyph() -%}
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18"><path d="M2 5H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 12H16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+{%- endcomponent cui_menu_glyph %}
+
+{#- cui_globalnav: site.GlobalNav without search or POST links, the skip
+    link before it; links [{ text, href }]. -#}
+{% component cui_globalnav(wordmark, home, links, aria_label, skip_label, open_aria_label, close_aria_label) -%}
+{%- if not home %}{{ throw(message="ciderui-zola: cui_globalnav needs a home") }}{% endif -%}
+{%- if not wordmark %}{{ throw(message="ciderui-zola: cui_globalnav needs a wordmark") }}{% endif -%}
+{%- if not links %}{{ throw(message="ciderui-zola: cui_globalnav needs links") }}{% endif -%}
+{%- if not (aria_label and skip_label and open_aria_label and close_aria_label) %}{{ throw(message="ciderui-zola: cui_globalnav needs its words: aria_label, skip_label, open_aria_label, close_aria_label") }}{% endif -%}
+<a class="cui-btn cui-skip" href="#main">{{ skip_label }}</a>
+<nav class="cui-globalnav" aria-label="{{ aria_label }}">
+<div class="cui-globalnav-content">
+<ul class="cui-globalnav-list" id="cui-globalnav-menu" popover>
+<li><a class="cui-globalnav-wordmark" href="{{ home }}">{{ wordmark }}</a></li>
+<li><button class="cui-globalnav-close" popovertarget="cui-globalnav-menu" popovertargetaction="hide" aria-label="{{ close_aria_label }}" autofocus>{{ <cui_menu_glyph /> }}</button></li>
+{%- for link in links %}
+{%- if not (link.text and link.href) %}{{ throw(message="ciderui-zola: a global nav link needs its text and href") }}{% endif %}
+<li><a class="cui-globalnav-link" href="{{ link.href }}">{{ link.text }}</a></li>
+{%- endfor %}
+</ul>
+<button class="cui-globalnav-open" popovertarget="cui-globalnav-menu" aria-label="{{ open_aria_label }}">{{ <cui_menu_glyph /> }}</button>
+</div>
+</nav>
+{%- endcomponent cui_globalnav %}
+
+{#- cui_footer: site.Footer, its copyright text, a link when href is
+    given; its directory, sections [{ title, links: [{ text, href }] }]
+    ([] for none), named by directory_aria_label. -#}
+{% component cui_footer(copyright, href="", directory=[], directory_aria_label="") -%}
+{%- if not copyright %}{{ throw(message="ciderui-zola: cui_footer needs a copyright") }}{% endif -%}
+{%- if (directory | length > 0) != (directory_aria_label != "") %}{{ throw(message="ciderui-zola: cui_footer has a directory or a directory_aria_label without the other") }}{% endif -%}
+<footer class="cui-footer">
+<div class="cui-footer-content">
+{%- if directory %}
+<nav class="cui-footer-directory" aria-label="{{ directory_aria_label }}">
+{%- for section in directory %}
+{%- if not (section.title and section.links) %}{{ throw(message="ciderui-zola: a footer section needs its title and links") }}{% endif %}
+{%- set id = "cui-footer-section-" ~ loop.index %}
+<div class="cui-footer-section">
+<input class="cui-footer-toggle" type="checkbox" id="{{ id }}">
+<h3 class="cui-footer-title"><label for="{{ id }}">{{ section.title }}<svg aria-hidden="true" width="11" height="6" viewBox="0 0 11 6"><path d="M10.075.675 5.5 5.323.925.675" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></label></h3>
+<ul class="cui-footer-list">
+{%- for link in section.links %}
+{%- if not (link.text and link.href) %}{{ throw(message="ciderui-zola: a footer link needs its text and href") }}{% endif %}
+<li><a href="{{ link.href }}">{{ link.text }}</a></li>
+{%- endfor %}
+</ul>
+</div>
+{%- endfor %}
+</nav>
+{%- endif %}
+<div class="cui-footer-legal">
+<p class="cui-footer-copyright">{% if href %}<a href="{{ href }}">{{ copyright }}</a>{% else %}{{ copyright }}{% endif %}</p>
+</div>
+</div>
+</footer>
+{%- endcomponent cui_footer %}
+
+{#- cui_list: site.List, its rows the body, each a cui_list_row
+    (site.ListRow: title, href, detail and aside, "" for none). -#}
+{% component cui_list(class="") -%}
+{%- if not body | trim %}{{ throw(message="ciderui-zola: cui_list needs rows") }}{% endif -%}
+<ul class="cui-list{% if class %} {{ class }}{% endif %}">
+{{ body | safe }}
+</ul>
+{%- endcomponent cui_list %}
+
+{% component cui_list_row(title, href, detail="", aside="") -%}
+{%- if not (title and href) %}{{ throw(message="ciderui-zola: a list row needs its title and href") }}{% endif -%}
+<li class="cui-list-row"><div><a class="cui-list-title" href="{{ href }}">{{ title }}</a>{% if detail %}<p class="cui-list-detail">{{ detail }}</p>{% endif %}</div>{% if aside %}<div class="cui-list-aside">{{ aside }}</div>{% endif %}</li>
+{%- endcomponent cui_list_row %}

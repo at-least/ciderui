@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{#- Zola's 404: its headline and a link home, from [extra] words. -#}
+{% block title %}{{ config.extra.words.not_found }} - {{ config.title }}{% endblock title %}
+{% block content -%}
+<header class="cz-header">
+<h1 class="cz-title">{{ config.extra.words.not_found }}</h1>
+</header>
+<p><a class="cui-link" href="{{ get_url(path='/') }}">{{ config.extra.words.home }}</a></p>
+{%- endblock content %}

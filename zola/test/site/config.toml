@@ -1,0 +1,22 @@
+# The checks' site: every template and the markdown's elements. The checks
+# build a copy with the theme linked in as themes/ciderui-zola.
+base_url = "https://check.test"
+title = "Cider"
+description = "The pages ciderui-zola's checks build."
+theme = "ciderui-zola"
+compile_sass = false
+
+[markdown]
+bottom_footnotes = true
+
+[extra]
+nav = [
+  { text = "News", href = "/news/" },
+  { text = "Products", href = "/products/" },
+  { text = "Writing", href = "/writing/" },
+]
+directory = [
+  { title = "Products", links = [{ text = "Store", href = "/products/" }, { text = "News", href = "/news/" }] },
+  { title = "Account", links = [{ text = "Writing", href = "/writing/" }] },
+]
+copyright = { text = "Copyright © 2026 Example Inc. All rights reserved.", href = "/writing/" }

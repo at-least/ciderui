@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{#- A section: its title, its description and its markdown, then its pages
+    as rows (cui-list: title, description, date), under [extra] heading if
+    it is set. paginate_by throws: ciderui has no pager, and without one
+    the pages after the first would be unreachable. -#}
+{% block title %}{% if section.path == "/" %}{{ config.title }}{% else %}{{ section.title }} - {{ config.title }}{% endif %}{% endblock title %}
+{% block description %}{{ section.description or config.description }}{% endblock description %}
+{% block content -%}
+{%- if paginator is defined %}{{ throw(message="ciderui-zola: no pager; remove paginate_by from " ~ section.relative_path) }}{% endif -%}
+{%- set words = config.extra.words -%}
+{%- if section.title %}
+<header class="cz-header">
+<h1 class="cz-title">{{ section.title }}</h1>
+{%- if section.description %}<p class="cz-description">{{ section.description }}</p>{% endif %}
+</header>
+{%- endif %}
+{%- if section.content %}
+<div class="cui-prose cz-prose">{{ section.content | safe }}</div>
+{%- endif %}
+{%- if section.pages %}
+{%- if section.extra.heading %}
+<h2 class="cz-pages-heading">{{ section.extra.heading }}</h2>
+{%- endif %}
+{% <cui_list class="cz-pages"> %}
+{%- for p in section.pages %}
+{{ <cui_list_row title={p.title} href={p.permalink} detail={p.description or ""} aside={p.date | date(format=words.date) if p.date else ""} /> }}
+{%- endfor %}
+{% </cui_list> %}
+{%- endif %}
+{%- endblock content %}

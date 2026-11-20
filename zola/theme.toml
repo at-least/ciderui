@@ -1,0 +1,35 @@
+name = "ciderui-zola"
+description = "apple.com's look for Zola sites, built on ciderui"
+license = "MIT"
+homepage = ""
+min_version = "0.23.6"
+demo = ""
+
+[author]
+name = "newlix"
+homepage = ""
+
+# The theme's settings, each set in the site's [extra]:
+# - nav: the global nav's links, [{ text, href }], beside the site's title;
+#   [] for no global nav.
+# - copyright: the footer's line, { text, href } (href "" for no link);
+#   text "" for no footer.
+# - directory: the footer's link columns, [{ title, links = [{ text, href }] }],
+#   folded under their titles on a phone; [] for none.
+# - words: what the theme writes, in English; a site in another language
+#   sets the ones it changes (Zola merges [extra.words] key by key). date is
+#   a Zola date format.
+[extra]
+nav = []
+copyright = { text = "", href = "" }
+directory = []
+
+[extra.words]
+skip = "Skip to Content"
+nav = "Global"
+menu = "Menu"
+close = "Close"
+directory = "Directory"
+date = "%B %-d, %Y"
+not_found = "The page you’re looking for can’t be found."
+home = "Go to the home page"

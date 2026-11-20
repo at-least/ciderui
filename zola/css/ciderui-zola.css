@@ -1,0 +1,62 @@
+/* The theme's own stylesheet, after ciderui's (static/ciderui.css): the page's
+   column and the markdown's elements, which ciderui leaves to the page.
+   Built into static/ciderui-zola.css by `npm run build`; the type is
+   ciderui's classes by @apply, so a size is never copied here. */
+
+@import "../node_modules/ciderui/type.css";
+
+@layer components {
+  /* the footer's column (cui-footer-content), so the page's edges and the
+     footer's line up */
+  .cz-main {
+    width: 100%;
+    max-width: 980px;
+    margin-inline: auto;
+    padding: 52px 16px 80px;
+
+    @media (width >= 834px) {
+      padding-inline: 22px;
+    }
+  }
+
+  /* a page's title, its description and its date: the store's ladder */
+  .cz-header {
+    margin-bottom: 40px;
+  }
+
+  .cz-title {
+    @apply cui-headline;
+  }
+
+  .cz-description {
+    @apply cui-intro;
+    margin-top: 12px;
+    color: var(--cui-c-text-2);
+  }
+
+  .cz-date {
+    @apply cui-caption;
+    display: block;
+    margin-top: 12px;
+    color: var(--cui-c-text-2);
+  }
+
+  /* the markdown's column; its elements are ciderui's cui-prose (Apple Support's
+     and DocC's article text, decision 48 of ciderui) */
+  .cz-prose {
+    max-width: 692px;
+  }
+
+  /* what follows the markdown: a section's pages and their heading */
+  .cz-pages-heading {
+    @apply cui-eyebrow;
+  }
+
+  :is(.cz-prose, .cz-header) + :is(.cz-pages, .cz-pages-heading) {
+    margin-top: 52px;
+  }
+
+  .cz-pages-heading + .cz-pages {
+    margin-top: 12px;
+  }
+}

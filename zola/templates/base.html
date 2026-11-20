@@ -1,0 +1,29 @@
+{#- The page around every template: ciderui's stylesheet, then the theme's;
+    the global nav from [extra] nav, the footer from [extra] copyright; the
+    content in <main id="main">, the skip link's target. Dark (cui-dark on
+    <html>) where the page's or section's [extra] dark is true. -#}
+{%- set extra = config.extra -%}
+{%- set words = extra.words -%}
+{%- set dark = (page.extra.dark if page is defined and page.extra.dark is defined else (section.extra.dark if section is defined and section.extra.dark is defined else false)) -%}
+<!doctype html>
+<html lang="{{ lang }}"{% if dark %} class="cui-dark"{% endif %}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ config.title }}{% endblock title %}</title>
+<meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+<link rel="stylesheet" href="{{ get_url(path='ciderui.css', cachebust=true) }}">
+<link rel="stylesheet" href="{{ get_url(path='ciderui-zola.css', cachebust=true) }}">
+</head>
+<body>
+{%- if extra.nav %}
+{{ <cui_globalnav wordmark={config.title} home={get_url(path="/", trailing_slash=true)} links={extra.nav} aria_label={words.nav} skip_label={words.skip} open_aria_label={words.menu} close_aria_label={words.close} /> }}
+{%- endif %}
+<main id="main" tabindex="-1" class="cz-main">
+{% block content %}{% endblock content %}
+</main>
+{%- if extra.copyright.text %}
+{{ <cui_footer copyright={extra.copyright.text} href={extra.copyright.href} directory={extra.directory} directory_aria_label={words.directory if extra.directory else ""} /> }}
+{%- endif %}
+</body>
+</html>
