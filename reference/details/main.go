@@ -5,6 +5,7 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"math"
 	"net"
@@ -71,7 +72,11 @@ func run() error {
 		}
 		w.Write(html)
 	})}
-	go server.Serve(l)
+	go func() {
+		if err := server.Serve(l); !errors.Is(err, http.ErrServerClosed) {
+			fmt.Fprintln(os.Stderr, "serve:", err)
+		}
+	}()
 	defer server.Close()
 	origin := fmt.Sprintf("http://127.0.0.1:%d", l.Addr().(*net.TCPAddr).Port)
 	src, err := os.ReadFile(filepath.Join(dir, "ring.js"))
@@ -113,8 +118,10 @@ func run() error {
 		if name == "question" {
 			what, right = "question in an answer", ", and its right"
 		}
-		claims = append(claims, claim{fmt.Sprintf("the %s, focused by the keyboard at %spx: its ring's left side shown%s", what, width, right),
-			shown(m.Value, "left") && (name != "question" || shown(m.Value, "right"))})
+		claims = append(claims, claim{
+			fmt.Sprintf("the %s, focused by the keyboard at %spx: its ring's left side shown%s", what, width, right),
+			shown(m.Value, "left") && (name != "question" || shown(m.Value, "right")),
+		})
 	}
 	fmt.Println(label)
 	pass := true

@@ -18,8 +18,10 @@ func TestListItemRendersTheExamples(t *testing.T) {
 	}})
 	example.Check(t, list, "console/console-list/examples/list.html")
 	content := h.Div(h.Class("max-w-md"), console.ConsoleList{Rows: []console.ConsoleListRow{
-		{Label: "nightly-backup", Detail: "Last run 4 hours ago",
-			Children: h.P(h.Class("mt-2"), h.Button(h.Class("cui-console-btn"), h.Type("button"), g.Text("Pause")))},
+		{
+			Label: "nightly-backup", Detail: "Last run 4 hours ago",
+			Children: h.P(h.Class("mt-2"), h.Button(h.Class("cui-console-btn"), h.Type("button"), g.Text("Pause"))),
+		},
 	}})
 	example.Check(t, content, "console/console-list/examples/content.html")
 }

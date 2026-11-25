@@ -1,0 +1,12 @@
+// Cleanup calls, excluded by the owner's choice (2026-11-25): errcheck cannot tell a read's Close from a write's, and every write
+// here returns its Close's error on the success path; the unchecked ones are reads, error paths and deferred cleanup.
+(*os.File).Close
+(io.Closer).Close
+(*net/http.Server).Close
+(github.com/mxschmitt/playwright-go.Browser).Close
+(github.com/mxschmitt/playwright-go.BrowserContext).Close
+(*github.com/at-least/ciderui/internal/browser.Page).Close
+os.Remove
+os.RemoveAll
+// a reply's body after its status is sent: a failed write is the client gone, and nobody is left to tell
+(net/http.ResponseWriter).Write

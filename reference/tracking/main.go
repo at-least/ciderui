@@ -45,10 +45,20 @@ var scale = []struct {
 	cut           string
 	letterSpacing float64
 }{
-	{12, "Text", -0.01}, {14, "Text", -0.016}, {17, "Text", -0.022},
-	{19, "Display", 0.012}, {21, "Display", 0.011}, {24, "Display", 0.009}, {28, "Display", 0.007},
-	{32, "Display", 0.004}, {40, "Display", 0}, {48, "Display", -0.003}, {56, "Display", -0.005},
-	{64, "Display", -0.009}, {80, "Display", -0.015}, {96, "Display", -0.015},
+	{12, "Text", -0.01},
+	{14, "Text", -0.016},
+	{17, "Text", -0.022},
+	{19, "Display", 0.012},
+	{21, "Display", 0.011},
+	{24, "Display", 0.009},
+	{28, "Display", 0.007},
+	{32, "Display", 0.004},
+	{40, "Display", 0},
+	{48, "Display", -0.003},
+	{56, "Display", -0.005},
+	{64, "Display", -0.009},
+	{80, "Display", -0.015},
+	{96, "Display", -0.015},
 }
 
 func scaleAt(size float64) (cut string, letterSpacing float64) {

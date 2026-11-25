@@ -11,7 +11,8 @@ import (
 )
 
 func TestBannerRendersTheExamples(t *testing.T) {
-	warning := console.ConsoleBanner{Color: console.ConsoleColorWarning, Title: "Symbols are missing",
+	warning := console.ConsoleBanner{
+		Color: console.ConsoleColorWarning, Title: "Symbols are missing",
 		Body:    g.Group{g.Text("Upload a dSYM in "), textLink("#settings", "Settings"), g.Text(" to see function names in this crash.")},
 		Actions: h.A(h.Class("cui-console-btn"), h.Data("size", "sm"), h.Href("#upload"), g.Text("Upload dSYM")),
 	}

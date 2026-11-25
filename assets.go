@@ -70,7 +70,7 @@ func (s stylesheet) serve(w http.ResponseWriter, r *http.Request) {
 		body = s.gzipd
 	}
 	// @trap: a client gone mid-response has nothing to be told
-	_, _ = w.Write(body)
+	w.Write(body)
 }
 
 // Assets serves the sets' stylesheets and the fonts under [AssetsPath].

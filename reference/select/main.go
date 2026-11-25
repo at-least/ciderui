@@ -5,6 +5,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"math"
@@ -81,7 +82,11 @@ func run() error {
 		}
 		w.Write(raw)
 	})}
-	go server.Serve(l)
+	go func() {
+		if err := server.Serve(l); !errors.Is(err, http.ErrServerClosed) {
+			fmt.Fprintln(os.Stderr, "serve:", err)
+		}
+	}()
 	defer server.Close()
 	origin := fmt.Sprintf("http://127.0.0.1:%d", l.Addr().(*net.TCPAddr).Port)
 

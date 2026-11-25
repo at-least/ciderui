@@ -32,8 +32,10 @@ func tvPlayer() pagespec.Spec {
 	// @external: the custom properties its range inputs are drawn by (a track, the part
 	// played, the thumb), read on the input: a thumb's computed style is not
 	// read (getComputedStyle with ::-webkit-slider-thumb gave the input's own)
-	RANGE := []string{"--progress-track-height", "--progress-track-max-height", "--progress-track-color", "--progress-track-color-elapsed", "--progress-track-color-elapsed-active",
-		"--progress-thumb-height", "--progress-thumb-width", "--progress-thumb-color", "--progress-thumb-color-active", "--progress-thumb-multiplier", "--progress-thumb-multiplier-active", "--progress-thumb-border-radius", "--progress-thumb-box-shadow", "--progress-thumb-outline-active", "--volume-thumb-box-shadow"}
+	RANGE := []string{
+		"--progress-track-height", "--progress-track-max-height", "--progress-track-color", "--progress-track-color-elapsed", "--progress-track-color-elapsed-active",
+		"--progress-thumb-height", "--progress-thumb-width", "--progress-thumb-color", "--progress-thumb-color-active", "--progress-thumb-multiplier", "--progress-thumb-multiplier-active", "--progress-thumb-border-radius", "--progress-thumb-box-shadow", "--progress-thumb-outline-active", "--volume-thumb-box-shadow",
+	}
 
 	return pagespec.Spec{
 		URL:     tvPlayerURL,

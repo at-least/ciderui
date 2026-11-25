@@ -4,6 +4,7 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"math"
@@ -85,7 +86,11 @@ func run() error {
 		w.Header().Set("content-type", "text/html; charset=utf-8")
 		w.Write(html)
 	})}
-	go server.Serve(l)
+	go func() {
+		if err := server.Serve(l); !errors.Is(err, http.ErrServerClosed) {
+			fmt.Fprintln(os.Stderr, "serve:", err)
+		}
+	}()
 	defer server.Close()
 	url := fmt.Sprintf("http://127.0.0.1:%d/", l.Addr().(*net.TCPAddr).Port)
 

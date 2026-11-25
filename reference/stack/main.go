@@ -8,6 +8,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"math"
 	"math/big"
@@ -61,7 +62,11 @@ func run() error {
 		w.Header().Set("content-type", t)
 		w.Write(body)
 	})}
-	go server.Serve(l)
+	go func() {
+		if err := server.Serve(l); !errors.Is(err, http.ErrServerClosed) {
+			fmt.Fprintln(os.Stderr, "serve:", err)
+		}
+	}()
 	defer server.Close()
 	pageURL := fmt.Sprintf("http://127.0.0.1:%d/reference/stack/page.html", l.Addr().(*net.TCPAddr).Port)
 

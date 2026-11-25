@@ -144,7 +144,11 @@ func run(args []string) (int, error) {
 	if err := ssh(fmt.Sprintf(`mkdir %s 2>/dev/null || { echo "air is busy with another probe (%s: $(cat %s/owner 2>/dev/null))" >&2; exit 1; }; echo %s > %s/owner`, lock, lock, lock, quote(owner), lock)); err != nil {
 		return 0, fmt.Errorf("lock %s on air: %w", lock, err)
 	}
-	defer ssh("rm -rf " + lock)
+	defer func() {
+		if err := ssh("rm -rf " + lock); err != nil {
+			fmt.Fprintf(os.Stderr, "unlock %s on air: %v\n", lock, err)
+		}
+	}()
 
 	if err := ssh("mkdir -p " + strings.Join([]string{remoteRoot, remoteEnv, quote(filepath.Dir(remoteBinary))}, " ")); err != nil {
 		return 0, err

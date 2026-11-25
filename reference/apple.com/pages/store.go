@@ -13,11 +13,15 @@ import (
 // a tag, a dark one, one with a plain eyebrow; their parts and hover), the
 // shelf's paddles.
 func store() pagespec.Spec {
-	T := []string{"headline-super", "headline-elevated", "headline", "headline-reduced", "headline-standalone", "eyebrow-super",
+	T := []string{
+		"headline-super", "headline-elevated", "headline", "headline-reduced", "headline-standalone", "eyebrow-super",
 		"eyebrow-elevated", "eyebrow", "eyebrow-reduced", "intro-elevated", "intro", "body", "body-tight", "body-reduced",
-		"body-reduced-tight", "caption", "label", "callout", "tout", "quote", "quote-reduced", "manifesto"}
-	BUTTONS := []string{"", "button-secondary", "button-neutral", "button-secondary-neutral", "button-super", "button-elevated",
-		"button-reduced", "button-block", "button-light", "button-dark"}
+		"body-reduced-tight", "caption", "label", "callout", "tout", "quote", "quote-reduced", "manifesto",
+	}
+	BUTTONS := []string{
+		"", "button-secondary", "button-neutral", "button-secondary-neutral", "button-super", "button-elevated",
+		"button-reduced", "button-block", "button-light", "button-dark",
+	}
 	STATES := []string{"hover", "active", "focus-visible"}
 	// @invariant: a button's probe name: button, or button.<its class without button->
 	buttonName := func(c string) string {

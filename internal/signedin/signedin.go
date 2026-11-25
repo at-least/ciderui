@@ -90,9 +90,11 @@ type Spec struct {
 // The property lists the specs read, apple.com's specs' own.
 var (
 	Type = []string{"font-family", "font-size", "line-height", "font-weight", "letter-spacing", "color"}
-	Box  = []string{"padding-top", "padding-right", "padding-bottom", "padding-left", "margin-top", "margin-bottom",
+	Box  = []string{
+		"padding-top", "padding-right", "padding-bottom", "padding-left", "margin-top", "margin-bottom",
 		"border-top-width", "border-top-style", "border-top-color", "border-bottom-width", "border-bottom-style", "border-bottom-color",
-		"border-top-left-radius", "background-color", "box-shadow", "min-width", "min-height", "max-width"}
+		"border-top-left-radius", "background-color", "box-shadow", "min-width", "min-height", "max-width",
+	}
 	Link = []string{"text-decoration-line", "text-decoration-color", "text-underline-offset"}
 	// Page is the page's own: its text, its ground, how its text is drawn.
 	Page = slices.Concat(Type, []string{"background-color", "-webkit-font-smoothing", "font-synthesis", "text-rendering"})
@@ -478,8 +480,7 @@ func chrome() (*playwright.Playwright, playwright.BrowserContext, error) {
 		DeviceScaleFactor: playwright.Float(2),
 	})
 	if err != nil {
-		pw.Stop()
-		return nil, nil, fmt.Errorf("launch chrome: %w", err)
+		return nil, nil, errors.Join(fmt.Errorf("launch chrome: %w", err), pw.Stop())
 	}
 	raw, err := os.ReadFile(cookiesFile)
 	if errors.Is(err, os.ErrNotExist) {
@@ -493,8 +494,7 @@ func chrome() (*playwright.Playwright, playwright.BrowserContext, error) {
 	}
 	if err != nil {
 		context.Close()
-		pw.Stop()
-		return nil, nil, fmt.Errorf("%s: %w", cookiesFile, err)
+		return nil, nil, errors.Join(fmt.Errorf("%s: %w", cookiesFile, err), pw.Stop())
 	}
 	return pw, context, nil
 }
@@ -506,12 +506,12 @@ func firstPage(context playwright.BrowserContext) (playwright.Page, error) {
 	return context.NewPage()
 }
 
-func login(origin string) error {
+func login(origin string) (err error) {
 	pw, context, err := chrome()
 	if err != nil {
 		return err
 	}
-	defer pw.Stop()
+	defer func() { err = errors.Join(err, pw.Stop()) }()
 	page, err := firstPage(context)
 	if err != nil {
 		return err
@@ -534,7 +534,9 @@ func login(origin string) error {
 		if err != nil {
 			return
 		}
-		os.WriteFile(cookiesFile, raw, 0o600)
+		if err := os.WriteFile(cookiesFile, raw, 0o600); err != nil {
+			fmt.Fprintln(os.Stderr, "keep cookies:", err)
+		}
 	}
 	tick := time.NewTicker(5 * time.Second)
 	defer tick.Stop()
@@ -548,7 +550,7 @@ func login(origin string) error {
 	}
 }
 
-func run(site, origin, name string, spec Spec) ([]byte, error) {
+func run(site, origin, name string, spec Spec) (shot []byte, err error) {
 	ids := map[string]string{}
 	if raw, err := os.ReadFile(idsFile); err == nil {
 		var all map[string]map[string]string
@@ -576,7 +578,7 @@ func run(site, origin, name string, spec Spec) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer pw.Stop()
+	defer func() { err = errors.Join(err, pw.Stop()) }()
 	defer context.Close()
 	page, err := firstPage(context)
 	if err != nil {

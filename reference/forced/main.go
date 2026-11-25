@@ -82,7 +82,7 @@ func run() (pass bool, err error) {
 	if err != nil {
 		return false, fmt.Errorf("playwright: %w", err)
 	}
-	defer pw.Stop()
+	defer func() { err = errors.Join(err, pw.Stop()) }()
 	reader, err := pw.Chromium.Launch()
 	if err != nil {
 		return false, err

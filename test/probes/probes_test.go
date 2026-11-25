@@ -57,7 +57,11 @@ func TestProbes(t *testing.T) {
 		if !e.IsDir() {
 			continue
 		}
-		if gos, _ := filepath.Glob(filepath.Join(build.Root, "reference", e.Name(), "*.go")); len(gos) > 0 {
+		gos, err := filepath.Glob(filepath.Join(build.Root, "reference", e.Name(), "*.go"))
+		if err != nil {
+			t.Fatal(err)
+		}
+		if len(gos) > 0 {
 			commands = append(commands, e.Name())
 		}
 	}

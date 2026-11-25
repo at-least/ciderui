@@ -20,9 +20,11 @@ var tokens = func() signedin.Spec {
 		"--tb-space-", "--tb-size-", "--tb-radius-", "--tb-border-", "--tb-boxShadow-", "--tb-timingFunctions-", "--tb-breakpoint-",
 		"--tb-color-role-", "--tb-color-palette-", "--tb-color-system-", "--tb-color-effect-", "--tb-color-v2-", "--tb-color-black", "--tb-color-white", "--tb-color-transparent",
 	}
-	for _, c := range []string{"Sidebar", "DisplayList", "Content", "Table", "Badge", "Banner", "Tabs", "EmptyState", "Popover", "Modal", "Button", "InfoSystemButton",
+	for _, c := range []string{
+		"Sidebar", "DisplayList", "Content", "Table", "Badge", "Banner", "Tabs", "EmptyState", "Popover", "Modal", "Button", "InfoSystemButton",
 		"TextInput", "Select", "TextArea", "FileUpload", "Checkbox", "Toggle", "Label", "HelpText", "InputError", "FormField",
-		"Chip", "DL", "Progress", "Text", "Link", "Radio", "Alert"} {
+		"Chip", "DL", "Progress", "Text", "Link", "Radio", "Alert",
+	} {
 		prefixes = append(prefixes, "--tb-component-"+c+"-")
 	}
 	return signedin.Spec{

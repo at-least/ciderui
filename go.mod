@@ -13,6 +13,13 @@ require (
 	github.com/deckarep/golang-set/v2 v2.8.0 // indirect
 	github.com/go-jose/go-jose/v3 v3.0.5 // indirect
 	github.com/go-stack/stack v1.8.1 // indirect
+	github.com/kisielk/errcheck v1.30.0 // indirect
 	golang.org/x/mod v0.41.0 // indirect
 	golang.org/x/sync v0.23.0 // indirect
+	mvdan.cc/gofumpt v0.12.0 // indirect
+)
+
+tool (
+	github.com/kisielk/errcheck
+	mvdan.cc/gofumpt
 )

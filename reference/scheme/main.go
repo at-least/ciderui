@@ -5,6 +5,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"net"
 	"net/http"
@@ -42,7 +43,11 @@ func run() error {
 		w.Header().Set("content-type", "text/html; charset=utf-8")
 		w.Write(html)
 	})}
-	go server.Serve(l)
+	go func() {
+		if err := server.Serve(l); !errors.Is(err, http.ErrServerClosed) {
+			fmt.Fprintln(os.Stderr, "serve:", err)
+		}
+	}()
 	defer server.Close()
 	page, err := probe.Open(browser, fmt.Sprintf("http://127.0.0.1:%d/", l.Addr().(*net.TCPAddr).Port), nil)
 	if err != nil {

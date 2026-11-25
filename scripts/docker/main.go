@@ -78,10 +78,12 @@ func run(command []string) (int, error) {
 	if err != nil {
 		return 0, err
 	}
-	args := []string{"create", "--init", "--ipc=host",
+	args := []string{
+		"create", "--init", "--ipc=host",
 		// @external: Go's build cache a volume: a run compiles what changed since the last,
 		// not the whole module
-		"-v", "ciderui-gocache:/root/.cache/go-build"}
+		"-v", "ciderui-gocache:/root/.cache/go-build",
+	}
 	if v, ok := os.LookupEnv("UPDATE_GOLDEN"); ok {
 		args = append(args, "-e", "UPDATE_GOLDEN="+v)
 	}
@@ -95,7 +97,11 @@ func run(command []string) (int, error) {
 	if err != nil {
 		return 0, err
 	}
-	defer exec.Command("docker", "rm", "-f", container).Run()
+	defer func() {
+		if err := exec.Command("docker", "rm", "-f", container).Run(); err != nil {
+			fmt.Fprintf(os.Stderr, "docker: rm %s: %v\n", container, err)
+		}
+	}()
 
 	// @invariant: emptied here, not in the test: that runs in the container, which never
 	// holds this directory (left out by repositoryFiles), and the copy back only adds files

@@ -4,6 +4,7 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"math"
 	"net"
@@ -36,7 +37,11 @@ func run() error {
 		w.Header().Set("content-type", "text/html; charset=utf-8")
 		w.Write(html)
 	})}
-	go server.Serve(l)
+	go func() {
+		if err := server.Serve(l); !errors.Is(err, http.ErrServerClosed) {
+			fmt.Fprintln(os.Stderr, "serve:", err)
+		}
+	}()
 	defer server.Close()
 	src, err := os.ReadFile(filepath.Join(probe.Dir("popover"), "popover.js"))
 	if err != nil {

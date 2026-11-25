@@ -13,10 +13,12 @@ import (
 // stat, a footnote, and the floating local nav, which shows once the page is scrolled
 // past its hero.
 func product() pagespec.Spec {
-	TYPOGRAPHY := []string{"headline-super", "headline-elevated", "headline", "headline-reduced", "eyebrow-super",
+	TYPOGRAPHY := []string{
+		"headline-super", "headline-elevated", "headline", "headline-reduced", "eyebrow-super",
 		"intro-elevated", "intro", "body", "body-reduced", "body-reduced-tight", "callout-super", "callout-elevated",
 		"callout-base", "callout-cta", "caption-elevated", "caption", "caption-cta", "caption-sosumi",
-		"caption-elevated-sosumi", "label", "section-header-eyebrow", "section-header-headline", "section-header-link"}
+		"caption-elevated-sosumi", "label", "section-header-eyebrow", "section-header-headline", "section-header-link",
+	}
 	var typography []pagespec.Probe
 	for _, c := range TYPOGRAPHY {
 		typography = append(typography, pagespec.Probe{Name: "type." + c, Inject: `<p class="typography-` + c + `">Sample text</p>`, Into: "main", Props: TYPE})

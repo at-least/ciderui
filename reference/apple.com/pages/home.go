@@ -10,9 +10,11 @@ import (
 // define, added to the page), the page, the global nav, the hero and its
 // buttons, a light and a dark promo tile, the gallery's dots, the footer.
 func home() pagespec.Spec {
-	TYPOGRAPHY := []string{"headline-super", "headline-elevated", "headline", "headline-reduced", "intro-elevated", "intro",
+	TYPOGRAPHY := []string{
+		"headline-super", "headline-elevated", "headline", "headline-reduced", "intro-elevated", "intro",
 		"body", "body-reduced", "callout", "caption", "cta-medium", "tile-headline", "tile-subhead", "tile-callout",
-		"promo-headline", "promo-subhead", "promo-callout"}
+		"promo-headline", "promo-subhead", "promo-callout",
+	}
 	var typography []pagespec.Probe
 	for _, c := range TYPOGRAPHY {
 		typography = append(typography, pagespec.Probe{Name: "type." + c, Inject: `<p class="typography-` + c + `">Sample text</p>`, Into: "main", Props: TYPE})

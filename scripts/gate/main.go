@@ -11,6 +11,9 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
+	"go/ast"
+	"go/parser"
+	"go/token"
 	"io"
 	"os"
 	"os/exec"
@@ -31,7 +34,7 @@ func main() {
 		fmt.Println("gate:", err)
 		os.Exit(1)
 	}
-	fmt.Println("gate: dist written; lucide.go, gofmt, vet, ciderui check and tests clean")
+	fmt.Println("gate: dist written; lucide.go, gofumpt, vet, errcheck, ciderui check and tests clean")
 	os.Exit(browser())
 }
 
@@ -65,21 +68,28 @@ func host() error {
 			return err
 		}
 	}
-	// @trap: the module's Go files, -tags browser with them, not `.`: gofmt walks a
+	// @trap: the module's Go files, -tags browser with them, not `.`: gofumpt walks a
 	// directory whole, and the browser tests' files are no package's without the tag
 	each := func(files string) string { return "{{range ." + files + "}}{{$.Dir}}/{{.}}{{\"\\n\"}}{{end}}" }
 	listed, err := run("go", "list", "-tags", "browser", "-f", each("GoFiles")+each("TestGoFiles")+each("XTestGoFiles"), "./...")
 	if err != nil {
 		return err
 	}
-	unformatted, err := run("gofmt", append([]string{"-l"}, strings.Fields(listed)...)...)
+	written, err := handWritten(strings.Fields(listed))
+	if err != nil {
+		return err
+	}
+	unformatted, err := run("go", append([]string{"tool", "gofumpt", "-l"}, written...)...)
 	if err != nil {
 		return err
 	}
 	if strings.TrimSpace(unformatted) != "" {
-		return fmt.Errorf("not gofmt'd (gofmt -w <file>):\n%s", unformatted)
+		return fmt.Errorf("not gofumpt'd (go tool gofumpt -w <file>):\n%s", unformatted)
 	}
 	if _, err := run("go", "vet", "-tags", "browser", "./..."); err != nil {
+		return err
+	}
+	if _, err := run("go", "tool", "errcheck", "-blank", "-tags", "browser", "-exclude", "errcheck_excludes.txt", "./..."); err != nil {
 		return err
 	}
 	// @invariant: a component's field left out of a struct literal is a default nobody chose
@@ -125,6 +135,23 @@ func host() error {
 	return nil
 }
 
+// @external: gofumpt applies its rules to a file named on its command line, generated
+// or not (it skips a generated file only when it walks a directory), and the generators
+// write gofmt's form: handWritten leaves the generated files out
+func handWritten(files []string) ([]string, error) {
+	var written []string
+	for _, f := range files {
+		parsed, err := parser.ParseFile(token.NewFileSet(), f, nil, parser.PackageClauseOnly|parser.ParseComments)
+		if err != nil {
+			return nil, err
+		}
+		if !ast.IsGenerated(parsed) {
+			written = append(written, f)
+		}
+	}
+	return written, nil
+}
+
 // @invariant: a passed package's line is dropped and a failed one's output printed whole:
 // the last line names every failed package, the one a reader of the tail sees
 func browser() int {
@@ -159,8 +186,12 @@ func browser() int {
 	}
 	if err := lines.Err(); err != nil {
 		fmt.Println("gate:", err)
-		io.Copy(io.Discard, pipe)
-		cmd.Wait()
+		if _, err := io.Copy(io.Discard, pipe); err != nil {
+			fmt.Println("gate:", err)
+		}
+		if err := cmd.Wait(); err != nil {
+			fmt.Println("gate:", err)
+		}
 		return 1
 	}
 	err = cmd.Wait()

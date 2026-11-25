@@ -144,7 +144,11 @@ func Serve(dir string, port int) (*http.Server, error) {
 	if err != nil {
 		return nil, fmt.Errorf("probe: serve: %w", err)
 	}
-	go server.Serve(l)
+	go func() {
+		if err := server.Serve(l); !errors.Is(err, http.ErrServerClosed) {
+			fmt.Fprintln(os.Stderr, "probe: serve:", err)
+		}
+	}()
 	return server, nil
 }
 
@@ -181,8 +185,7 @@ func viaPlaywright(engine, channel, url string, options *playwright.BrowserNewPa
 	switch {
 	case engine == "firefox":
 		if screen, err = startXvfb(); err != nil {
-			pw.Stop()
-			return nil, err
+			return nil, errors.Join(err, pw.Stop())
 		}
 		launch.Headless = playwright.Bool(false)
 		launch.Env = screen.env
@@ -197,9 +200,8 @@ func viaPlaywright(engine, channel, url string, options *playwright.BrowserNewPa
 	}
 	browser, err := browserType.Launch(launch)
 	if err != nil {
-		screen.close()
-		pw.Stop()
-		return nil, fmt.Errorf("probe: launch %s: %w", engine, err)
+		screenErr := screen.close()
+		return nil, errors.Join(fmt.Errorf("probe: launch %s: %w", engine, err), screenErr, pw.Stop())
 	}
 	p := &playwrightPage{pw: pw, browser: browser, screen: screen}
 	opts := playwright.BrowserNewPageOptions{}
@@ -210,12 +212,10 @@ func viaPlaywright(engine, channel, url string, options *playwright.BrowserNewPa
 		opts.Viewport = &playwright.Size{Width: 1440, Height: 900}
 	}
 	if p.page, err = browser.NewPage(opts); err != nil {
-		p.Close()
-		return nil, fmt.Errorf("probe: page: %w", err)
+		return nil, errors.Join(fmt.Errorf("probe: page: %w", err), p.Close())
 	}
 	if err := p.Go(url); err != nil {
-		p.Close()
-		return nil, err
+		return nil, errors.Join(err, p.Close())
 	}
 	name := engine
 	if channel != "" {
@@ -275,8 +275,8 @@ func (p *playwrightPage) Shot() (string, error) {
 
 func (p *playwrightPage) Close() error {
 	err := p.browser.Close()
-	p.screen.close()
-	return errors.Join(err, p.pw.Stop())
+	screenErr := p.screen.close()
+	return errors.Join(err, screenErr, p.pw.Stop())
 }
 
 func (p *playwrightPage) Playwright() playwright.Page { return p.page }
@@ -319,8 +319,7 @@ func startXvfb() (*xvfb, error) {
 	select {
 	case n := <-number:
 		if n == "" {
-			server.Process.Kill()
-			return nil, fmt.Errorf("probe: Xvfb named no display: %s", log.String())
+			return nil, errors.Join(fmt.Errorf("probe: Xvfb named no display: %s", log.String()), server.Process.Kill())
 		}
 		// @external: Firefox on X, not on the desktop's Wayland
 		env := map[string]string{"DISPLAY": ":" + n, "GDK_BACKEND": "x11", "MOZ_ENABLE_WAYLAND": "0", "WAYLAND_DISPLAY": ""}
@@ -333,8 +332,7 @@ func startXvfb() (*xvfb, error) {
 		delete(env, "WAYLAND_DISPLAY")
 		return &xvfb{server: server, display: ":" + n, env: env}, nil
 	case <-time.After(10 * time.Second):
-		server.Process.Kill()
-		return nil, fmt.Errorf("probe: Xvfb named no display in 10s: %s", log.String())
+		return nil, errors.Join(fmt.Errorf("probe: Xvfb named no display in 10s: %s", log.String()), server.Process.Kill())
 	}
 }
 
@@ -358,11 +356,26 @@ func (x *xvfb) shot(page playwright.Page) (string, error) {
 	return base64.StdEncoding.EncodeToString(png), nil
 }
 
-func (x *xvfb) close() {
-	if x != nil {
-		x.server.Process.Kill()
-		x.server.Wait()
+func (x *xvfb) close() error {
+	if x == nil {
+		return nil
 	}
+	return kill(x.server)
+}
+
+// @external: Wait after Kill reports the exit the kill caused (an *exec.ExitError), and
+// Kill of a process already gone os.ErrProcessDone: neither is a failure, and Wait reaps
+// the process either way
+func kill(cmd *exec.Cmd) error {
+	var errs []error
+	if err := cmd.Process.Kill(); err != nil && !errors.Is(err, os.ErrProcessDone) {
+		errs = append(errs, fmt.Errorf("kill %s: %w", cmd.Path, err))
+	}
+	var exit *exec.ExitError
+	if err := cmd.Wait(); err != nil && !errors.As(err, &exit) {
+		errs = append(errs, fmt.Errorf("wait %s: %w", cmd.Path, err))
+	}
+	return errors.Join(errs...)
 }
 
 // @external: WebDriver's code points for the keys a probe presses (ControlOrMeta is
@@ -431,8 +444,7 @@ func viaSafariDriver(capabilities map[string]any, url string) (Page, error) {
 		return nil, fmt.Errorf("probe: safaridriver: %w", err)
 	}
 	if err := s.open(capabilities, url); err != nil {
-		s.Close()
-		return nil, err
+		return nil, errors.Join(err, s.Close())
 	}
 	return s, nil
 }
@@ -601,8 +613,10 @@ func (s *safariPage) Move(x, y, ms float64) error {
 	var actions []map[string]any
 	for i := range steps {
 		f := float64(i+1) / float64(steps)
-		actions = append(actions, map[string]any{"type": "pointerMove", "duration": math.Floor(ms/float64(steps) + 0.5), "origin": "viewport",
-			"x": math.Floor(x0 + (x-x0)*f + 0.5), "y": math.Floor(y0 + (y-y0)*f + 0.5)})
+		actions = append(actions, map[string]any{
+			"type": "pointerMove", "duration": math.Floor(ms/float64(steps) + 0.5), "origin": "viewport",
+			"x": math.Floor(x0 + (x-x0)*f + 0.5), "y": math.Floor(y0 + (y-y0)*f + 0.5),
+		})
 	}
 	if err := s.pointerActions(actions); err != nil {
 		return err
@@ -674,8 +688,9 @@ func (s *safariPage) Close() error {
 			fmt.Fprintln(os.Stderr, "delete session:", err)
 		}
 	}
-	s.driver.Process.Kill()
-	s.driver.Wait()
+	if err := kill(s.driver); err != nil {
+		errs = append(errs, err)
+	}
 	if s.launched && safariRunning() {
 		if err := exec.Command("osascript", "-e", `quit app "Safari"`).Run(); err != nil {
 			errs = append(errs, err)
